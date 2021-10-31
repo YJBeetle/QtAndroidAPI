@@ -30,7 +30,6 @@ namespace android::net::sip
 		void onCalling(android::net::sip::SipAudioCall arg0);
 		void onChanged(android::net::sip::SipAudioCall arg0);
 		void onError(android::net::sip::SipAudioCall arg0, jint arg1, jstring arg2);
-		void onError(android::net::sip::SipAudioCall arg0, jint arg1, const QString &arg2);
 		void onReadyToCall(android::net::sip::SipAudioCall arg0);
 		void onRinging(android::net::sip::SipAudioCall arg0, android::net::sip::SipProfile arg1);
 		void onRingingBack(android::net::sip::SipAudioCall arg0);

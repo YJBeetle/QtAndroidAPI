@@ -109,15 +109,13 @@ namespace android::graphics
 		// Constructors
 		Paint();
 		Paint(android::graphics::Paint &arg0);
-		Paint(jint &arg0);
+		Paint(jint arg0);
 		
 		// Methods
 		jfloat ascent();
 		jint breakText(jstring arg0, jboolean arg1, jfloat arg2, jfloatArray arg3);
-		jint breakText(const QString &arg0, jboolean arg1, jfloat arg2, jfloatArray arg3);
 		jint breakText(jcharArray arg0, jint arg1, jint arg2, jfloat arg3, jfloatArray arg4);
 		jint breakText(jstring arg0, jint arg1, jint arg2, jboolean arg3, jfloat arg4, jfloatArray arg5);
-		jint breakText(const QString &arg0, jint arg1, jint arg2, jboolean arg3, jfloat arg4, jfloatArray arg5);
 		void clearShadowLayer();
 		jfloat descent();
 		jboolean equalsForTextMeasurement(android::graphics::Paint arg0);
@@ -141,11 +139,9 @@ namespace android::graphics
 		QAndroidJniObject getMaskFilter();
 		jint getOffsetForAdvance(jcharArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jfloat arg6);
 		jint getOffsetForAdvance(jstring arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jfloat arg6);
-		jint getOffsetForAdvance(const QString &arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jfloat arg6);
 		QAndroidJniObject getPathEffect();
 		jfloat getRunAdvance(jcharArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jint arg6);
 		jfloat getRunAdvance(jstring arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jint arg6);
-		jfloat getRunAdvance(const QString &arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jint arg6);
 		QAndroidJniObject getShader();
 		jint getShadowLayerColor();
 		jlong getShadowLayerColorLong();
@@ -163,31 +159,25 @@ namespace android::graphics
 		QAndroidJniObject getTextAlign();
 		void getTextBounds(jcharArray arg0, jint arg1, jint arg2, android::graphics::Rect arg3);
 		void getTextBounds(jstring arg0, jint arg1, jint arg2, android::graphics::Rect arg3);
-		void getTextBounds(const QString &arg0, jint arg1, jint arg2, android::graphics::Rect arg3);
 		QAndroidJniObject getTextLocale();
 		QAndroidJniObject getTextLocales();
 		void getTextPath(jcharArray arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, android::graphics::Path arg5);
 		void getTextPath(jstring arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, android::graphics::Path arg5);
-		void getTextPath(const QString &arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, android::graphics::Path arg5);
 		jfloat getTextRunAdvances(jcharArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jfloatArray arg6, jint arg7);
 		jint getTextRunCursor(jcharArray arg0, jint arg1, jint arg2, jboolean arg3, jint arg4, jint arg5);
 		jint getTextRunCursor(jstring arg0, jint arg1, jint arg2, jboolean arg3, jint arg4, jint arg5);
-		jint getTextRunCursor(const QString &arg0, jint arg1, jint arg2, jboolean arg3, jint arg4, jint arg5);
 		jfloat getTextScaleX();
 		jfloat getTextSize();
 		jfloat getTextSkewX();
 		jint getTextWidths(jstring arg0, jfloatArray arg1);
-		jint getTextWidths(const QString &arg0, jfloatArray arg1);
 		jint getTextWidths(jcharArray arg0, jint arg1, jint arg2, jfloatArray arg3);
 		jint getTextWidths(jstring arg0, jint arg1, jint arg2, jfloatArray arg3);
-		jint getTextWidths(const QString &arg0, jint arg1, jint arg2, jfloatArray arg3);
 		QAndroidJniObject getTypeface();
 		jfloat getUnderlinePosition();
 		jfloat getUnderlineThickness();
 		jfloat getWordSpacing();
 		QAndroidJniObject getXfermode();
 		jboolean hasGlyph(jstring arg0);
-		jboolean hasGlyph(const QString &arg0);
 		jboolean isAntiAlias();
 		jboolean isDither();
 		jboolean isElegantTextHeight();
@@ -198,10 +188,8 @@ namespace android::graphics
 		jboolean isSubpixelText();
 		jboolean isUnderlineText();
 		jfloat measureText(jstring arg0);
-		jfloat measureText(const QString &arg0);
 		jfloat measureText(jcharArray arg0, jint arg1, jint arg2);
 		jfloat measureText(jstring arg0, jint arg1, jint arg2);
-		jfloat measureText(const QString &arg0, jint arg1, jint arg2);
 		void reset();
 		void set(android::graphics::Paint arg0);
 		void setARGB(jint arg0, jint arg1, jint arg2, jint arg3);
@@ -218,9 +206,7 @@ namespace android::graphics
 		void setFilterBitmap(jboolean arg0);
 		void setFlags(jint arg0);
 		void setFontFeatureSettings(jstring arg0);
-		void setFontFeatureSettings(const QString &arg0);
 		jboolean setFontVariationSettings(jstring arg0);
-		jboolean setFontVariationSettings(const QString &arg0);
 		void setHinting(jint arg0);
 		void setLetterSpacing(jfloat arg0);
 		void setLinearText(jboolean arg0);

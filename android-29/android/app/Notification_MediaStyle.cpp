@@ -15,7 +15,7 @@ namespace android::app
 			"()V"
 		);
 	}
-	Notification_MediaStyle::Notification_MediaStyle(android::app::Notification_Builder &arg0)
+	Notification_MediaStyle::Notification_MediaStyle(android::app::Notification_Builder arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.Notification$MediaStyle",

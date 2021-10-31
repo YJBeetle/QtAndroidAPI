@@ -20,13 +20,11 @@ namespace java::text
 		
 		AttributedString(QAndroidJniObject obj);
 		// Constructors
-		AttributedString(jstring &arg0);
-		AttributedString(const QString &arg0);
-		AttributedString(__JniBaseClass &arg0);
-		AttributedString(jstring &arg0, __JniBaseClass &arg1);
-		AttributedString(const QString &arg0, __JniBaseClass &arg1);
-		AttributedString(__JniBaseClass &arg0, jint &arg1, jint &arg2);
-		AttributedString(__JniBaseClass &arg0, jint &arg1, jint &arg2, jarray &arg3);
+		AttributedString(jstring arg0);
+		AttributedString(__JniBaseClass arg0);
+		AttributedString(jstring arg0, __JniBaseClass arg1);
+		AttributedString(__JniBaseClass arg0, jint arg1, jint arg2);
+		AttributedString(__JniBaseClass arg0, jint arg1, jint arg2, jarray arg3);
 		AttributedString() = default;
 		
 		// Methods

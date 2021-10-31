@@ -33,7 +33,6 @@ namespace java::util
 		static jarray getAvailableIDs(jint arg0);
 		static QAndroidJniObject getDefault();
 		static QAndroidJniObject getTimeZone(jstring arg0);
-		static QAndroidJniObject getTimeZone(const QString &arg0);
 		static QAndroidJniObject getTimeZone(java::time::ZoneId arg0);
 		static void setDefault(java::util::TimeZone arg0);
 		jobject clone();
@@ -50,7 +49,6 @@ namespace java::util
 		jboolean inDaylightTime(java::util::Date arg0);
 		jboolean observesDaylightTime();
 		void setID(jstring arg0);
-		void setID(const QString &arg0);
 		void setRawOffset(jint arg0);
 		QAndroidJniObject toZoneId();
 		jboolean useDaylightTime();

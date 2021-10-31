@@ -7,7 +7,7 @@ namespace java::security::spec
 	
 	RSAOtherPrimeInfo::RSAOtherPrimeInfo(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	RSAOtherPrimeInfo::RSAOtherPrimeInfo(java::math::BigInteger &arg0, java::math::BigInteger &arg1, java::math::BigInteger &arg2)
+	RSAOtherPrimeInfo::RSAOtherPrimeInfo(java::math::BigInteger arg0, java::math::BigInteger arg1, java::math::BigInteger arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.spec.RSAOtherPrimeInfo",

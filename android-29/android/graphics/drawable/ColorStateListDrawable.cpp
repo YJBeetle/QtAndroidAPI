@@ -21,7 +21,7 @@ namespace android::graphics::drawable
 			"()V"
 		);
 	}
-	ColorStateListDrawable::ColorStateListDrawable(android::content::res::ColorStateList &arg0)
+	ColorStateListDrawable::ColorStateListDrawable(android::content::res::ColorStateList arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.ColorStateListDrawable",

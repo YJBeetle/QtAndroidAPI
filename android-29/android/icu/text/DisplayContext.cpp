@@ -106,15 +106,6 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject DisplayContext::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.DisplayContext",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/icu/text/DisplayContext;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray DisplayContext::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

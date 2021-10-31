@@ -13,20 +13,12 @@ namespace java::util::zip
 			"()V"
 		);
 	}
-	DataFormatException::DataFormatException(jstring &arg0)
+	DataFormatException::DataFormatException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.zip.DataFormatException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	DataFormatException::DataFormatException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.zip.DataFormatException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

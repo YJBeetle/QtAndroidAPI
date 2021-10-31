@@ -27,7 +27,7 @@ namespace android::media::audiofx
 		
 		EnvironmentalReverb(QAndroidJniObject obj);
 		// Constructors
-		EnvironmentalReverb(jint &arg0, jint &arg1);
+		EnvironmentalReverb(jint arg0, jint arg1);
 		EnvironmentalReverb() = default;
 		
 		// Methods

@@ -35,14 +35,14 @@ namespace android::icu::text
 		DateFormatSymbols(QAndroidJniObject obj);
 		// Constructors
 		DateFormatSymbols();
-		DateFormatSymbols(android::icu::util::ULocale &arg0);
-		DateFormatSymbols(java::util::Locale &arg0);
-		DateFormatSymbols(android::icu::util::Calendar &arg0, android::icu::util::ULocale &arg1);
-		DateFormatSymbols(android::icu::util::Calendar &arg0, java::util::Locale &arg1);
-		DateFormatSymbols(jclass &arg0, android::icu::util::ULocale &arg1);
-		DateFormatSymbols(jclass &arg0, java::util::Locale &arg1);
-		DateFormatSymbols(java::util::ResourceBundle &arg0, android::icu::util::ULocale &arg1);
-		DateFormatSymbols(java::util::ResourceBundle &arg0, java::util::Locale &arg1);
+		DateFormatSymbols(android::icu::util::ULocale arg0);
+		DateFormatSymbols(java::util::Locale arg0);
+		DateFormatSymbols(android::icu::util::Calendar arg0, android::icu::util::ULocale arg1);
+		DateFormatSymbols(android::icu::util::Calendar arg0, java::util::Locale arg1);
+		DateFormatSymbols(jclass arg0, android::icu::util::ULocale arg1);
+		DateFormatSymbols(jclass arg0, java::util::Locale arg1);
+		DateFormatSymbols(java::util::ResourceBundle arg0, android::icu::util::ULocale arg1);
+		DateFormatSymbols(java::util::ResourceBundle arg0, java::util::Locale arg1);
 		
 		// Methods
 		static jarray getAvailableLocales();
@@ -70,7 +70,6 @@ namespace android::icu::text
 		void setEraNames(jarray arg0);
 		void setEras(jarray arg0);
 		void setLocalPatternChars(jstring arg0);
-		void setLocalPatternChars(const QString &arg0);
 		void setMonths(jarray arg0);
 		void setMonths(jarray arg0, jint arg1, jint arg2);
 		void setQuarters(jarray arg0, jint arg1, jint arg2);

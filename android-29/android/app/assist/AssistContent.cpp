@@ -108,14 +108,6 @@ namespace android::app::assist
 			arg0
 		);
 	}
-	void AssistContent::setStructuredData(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setStructuredData",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void AssistContent::setWebUri(android::net::Uri arg0)
 	{
 		__thiz.callMethod<void>(

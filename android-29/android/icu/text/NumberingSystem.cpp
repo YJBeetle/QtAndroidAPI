@@ -70,17 +70,6 @@ namespace android::icu::text
 			arg2
 		);
 	}
-	QAndroidJniObject NumberingSystem::getInstance(jint arg0, jboolean arg1, const QString &arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.NumberingSystem",
-			"getInstance",
-			"(IZLjava/lang/String;)Landroid/icu/text/NumberingSystem;",
-			arg0,
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	QAndroidJniObject NumberingSystem::getInstanceByName(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -90,15 +79,6 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject NumberingSystem::getInstanceByName(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.NumberingSystem",
-			"getInstanceByName",
-			"(Ljava/lang/String;)Landroid/icu/text/NumberingSystem;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jboolean NumberingSystem::isValidDigitString(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
@@ -106,15 +86,6 @@ namespace android::icu::text
 			"isValidDigitString",
 			"(Ljava/lang/String;)Z",
 			arg0
-		);
-	}
-	jboolean NumberingSystem::isValidDigitString(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.icu.text.NumberingSystem",
-			"isValidDigitString",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring NumberingSystem::getDescription()

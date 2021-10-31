@@ -11,7 +11,7 @@ namespace android::graphics::drawable::shapes
 	
 	ArcShape::ArcShape(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ArcShape::ArcShape(jfloat &arg0, jfloat &arg1)
+	ArcShape::ArcShape(jfloat arg0, jfloat arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.shapes.ArcShape",

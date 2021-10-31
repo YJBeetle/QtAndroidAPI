@@ -12,13 +12,11 @@ namespace android::graphics::fonts
 		
 		FontVariationAxis(QAndroidJniObject obj);
 		// Constructors
-		FontVariationAxis(jstring &arg0, jfloat &arg1);
-		FontVariationAxis(const QString &arg0, jfloat &arg1);
+		FontVariationAxis(jstring arg0, jfloat arg1);
 		FontVariationAxis() = default;
 		
 		// Methods
 		static jarray fromFontVariationSettings(jstring arg0);
-		static jarray fromFontVariationSettings(const QString &arg0);
 		static jstring toFontVariationSettings(jarray arg0);
 		jboolean equals(jobject arg0);
 		jfloat getStyleValue();

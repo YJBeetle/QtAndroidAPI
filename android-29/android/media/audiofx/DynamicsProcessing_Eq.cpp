@@ -15,7 +15,7 @@ namespace android::media::audiofx
 			arg0.__jniObject().object()
 		);
 	}
-	DynamicsProcessing_Eq::DynamicsProcessing_Eq(jboolean &arg0, jboolean &arg1, jint &arg2)
+	DynamicsProcessing_Eq::DynamicsProcessing_Eq(jboolean arg0, jboolean arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.audiofx.DynamicsProcessing$Eq",

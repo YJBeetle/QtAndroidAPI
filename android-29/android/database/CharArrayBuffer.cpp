@@ -19,7 +19,7 @@ namespace android::database
 	
 	CharArrayBuffer::CharArrayBuffer(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	CharArrayBuffer::CharArrayBuffer(jcharArray &arg0)
+	CharArrayBuffer::CharArrayBuffer(jcharArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.database.CharArrayBuffer",
@@ -27,7 +27,7 @@ namespace android::database
 			arg0
 		);
 	}
-	CharArrayBuffer::CharArrayBuffer(jint &arg0)
+	CharArrayBuffer::CharArrayBuffer(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.database.CharArrayBuffer",

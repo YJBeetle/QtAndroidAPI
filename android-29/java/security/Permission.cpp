@@ -7,20 +7,12 @@ namespace java::security
 	
 	Permission::Permission(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Permission::Permission(jstring &arg0)
+	Permission::Permission(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.Permission",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	Permission::Permission(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.Permission",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

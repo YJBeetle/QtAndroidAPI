@@ -62,16 +62,6 @@ namespace android::net::http
 			arg2.__jniObject().object()
 		);
 	}
-	QAndroidJniObject HttpResponseCache::get(java::net::URI arg0, const QString &arg1, __JniBaseClass arg2)
-	{
-		return __thiz.callObjectMethod(
-			"get",
-			"(Ljava/net/URI;Ljava/lang/String;Ljava/util/Map;)Ljava/net/CacheResponse;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object()
-		);
-	}
 	jint HttpResponseCache::getHitCount()
 	{
 		return __thiz.callMethod<jint>(

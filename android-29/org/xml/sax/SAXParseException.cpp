@@ -7,7 +7,7 @@ namespace org::xml::sax
 	
 	SAXParseException::SAXParseException(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SAXParseException::SAXParseException(jstring &arg0, __JniBaseClass &arg1)
+	SAXParseException::SAXParseException(jstring arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"org.xml.sax.SAXParseException",
@@ -16,16 +16,7 @@ namespace org::xml::sax
 			arg1.__jniObject().object()
 		);
 	}
-	SAXParseException::SAXParseException(const QString &arg0, __JniBaseClass &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"org.xml.sax.SAXParseException",
-			"(Ljava/lang/String;Lorg/xml/sax/Locator;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
-	SAXParseException::SAXParseException(jstring &arg0, __JniBaseClass &arg1, java::lang::Exception &arg2)
+	SAXParseException::SAXParseException(jstring arg0, __JniBaseClass arg1, java::lang::Exception arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"org.xml.sax.SAXParseException",
@@ -35,17 +26,7 @@ namespace org::xml::sax
 			arg2.__jniObject().object()
 		);
 	}
-	SAXParseException::SAXParseException(const QString &arg0, __JniBaseClass &arg1, java::lang::Exception &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"org.xml.sax.SAXParseException",
-			"(Ljava/lang/String;Lorg/xml/sax/Locator;Ljava/lang/Exception;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	SAXParseException::SAXParseException(jstring &arg0, jstring &arg1, jstring &arg2, jint &arg3, jint &arg4)
+	SAXParseException::SAXParseException(jstring arg0, jstring arg1, jstring arg2, jint arg3, jint arg4)
 	{
 		__thiz = QAndroidJniObject(
 			"org.xml.sax.SAXParseException",
@@ -57,19 +38,7 @@ namespace org::xml::sax
 			arg4
 		);
 	}
-	SAXParseException::SAXParseException(const QString &arg0, const QString &arg1, const QString &arg2, jint &arg3, jint &arg4)
-	{
-		__thiz = QAndroidJniObject(
-			"org.xml.sax.SAXParseException",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;II)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			arg3,
-			arg4
-		);
-	}
-	SAXParseException::SAXParseException(jstring &arg0, jstring &arg1, jstring &arg2, jint &arg3, jint &arg4, java::lang::Exception &arg5)
+	SAXParseException::SAXParseException(jstring arg0, jstring arg1, jstring arg2, jint arg3, jint arg4, java::lang::Exception arg5)
 	{
 		__thiz = QAndroidJniObject(
 			"org.xml.sax.SAXParseException",
@@ -77,19 +46,6 @@ namespace org::xml::sax
 			arg0,
 			arg1,
 			arg2,
-			arg3,
-			arg4,
-			arg5.__jniObject().object()
-		);
-	}
-	SAXParseException::SAXParseException(const QString &arg0, const QString &arg1, const QString &arg2, jint &arg3, jint &arg4, java::lang::Exception &arg5)
-	{
-		__thiz = QAndroidJniObject(
-			"org.xml.sax.SAXParseException",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IILjava/lang/Exception;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
 			arg3,
 			arg4,
 			arg5.__jniObject().object()

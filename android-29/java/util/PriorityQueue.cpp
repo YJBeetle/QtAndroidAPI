@@ -15,7 +15,7 @@ namespace java::util
 			"()V"
 		);
 	}
-	PriorityQueue::PriorityQueue(jint &arg0)
+	PriorityQueue::PriorityQueue(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.PriorityQueue",
@@ -23,7 +23,7 @@ namespace java::util
 			arg0
 		);
 	}
-	PriorityQueue::PriorityQueue(__JniBaseClass &arg0)
+	PriorityQueue::PriorityQueue(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.PriorityQueue",
@@ -39,7 +39,7 @@ namespace java::util
 			arg0.__jniObject().object()
 		);
 	}
-	PriorityQueue::PriorityQueue(jint &arg0, __JniBaseClass &arg1)
+	PriorityQueue::PriorityQueue(jint arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.PriorityQueue",

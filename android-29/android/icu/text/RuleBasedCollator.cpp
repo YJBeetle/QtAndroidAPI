@@ -12,20 +12,12 @@ namespace android::icu::text
 	
 	RuleBasedCollator::RuleBasedCollator(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	RuleBasedCollator::RuleBasedCollator(jstring &arg0)
+	RuleBasedCollator::RuleBasedCollator(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.RuleBasedCollator",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	RuleBasedCollator::RuleBasedCollator(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.text.RuleBasedCollator",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	
@@ -51,15 +43,6 @@ namespace android::icu::text
 			"(Ljava/lang/String;Ljava/lang/String;)I",
 			arg0,
 			arg1
-		);
-	}
-	jint RuleBasedCollator::compare(const QString &arg0, const QString &arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"compare",
-			"(Ljava/lang/String;Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	jboolean RuleBasedCollator::equals(jobject arg0)
@@ -93,14 +76,6 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject RuleBasedCollator::getCollationElementIterator(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getCollationElementIterator",
-			"(Ljava/lang/String;)Landroid/icu/text/CollationElementIterator;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject RuleBasedCollator::getCollationElementIterator(__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -115,14 +90,6 @@ namespace android::icu::text
 			"getCollationKey",
 			"(Ljava/lang/String;)Landroid/icu/text/CollationKey;",
 			arg0
-		);
-	}
-	QAndroidJniObject RuleBasedCollator::getCollationKey(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getCollationKey",
-			"(Ljava/lang/String;)Landroid/icu/text/CollationKey;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void RuleBasedCollator::getContractionsAndExpansions(android::icu::text::UnicodeSet arg0, android::icu::text::UnicodeSet arg1, jboolean arg2)

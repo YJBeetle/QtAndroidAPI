@@ -17,7 +17,7 @@ namespace android::database
 		
 		CrossProcessCursorWrapper(QAndroidJniObject obj);
 		// Constructors
-		CrossProcessCursorWrapper(__JniBaseClass &arg0);
+		CrossProcessCursorWrapper(__JniBaseClass arg0);
 		CrossProcessCursorWrapper() = default;
 		
 		// Methods

@@ -15,11 +15,9 @@ namespace android::accounts
 		OperationCanceledException(QAndroidJniObject obj);
 		// Constructors
 		OperationCanceledException();
-		OperationCanceledException(jstring &arg0);
-		OperationCanceledException(const QString &arg0);
-		OperationCanceledException(jthrowable &arg0);
-		OperationCanceledException(jstring &arg0, jthrowable &arg1);
-		OperationCanceledException(const QString &arg0, jthrowable &arg1);
+		OperationCanceledException(jstring arg0);
+		OperationCanceledException(jthrowable arg0);
+		OperationCanceledException(jstring arg0, jthrowable arg1);
 		
 		// Methods
 	};

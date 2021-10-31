@@ -20,7 +20,7 @@ namespace android::content::pm
 		
 		ApplicationInfo_DisplayNameComparator(QAndroidJniObject obj);
 		// Constructors
-		ApplicationInfo_DisplayNameComparator(android::content::pm::PackageManager &arg0);
+		ApplicationInfo_DisplayNameComparator(android::content::pm::PackageManager arg0);
 		ApplicationInfo_DisplayNameComparator() = default;
 		
 		// Methods

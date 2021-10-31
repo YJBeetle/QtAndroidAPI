@@ -8,7 +8,7 @@ namespace android::security
 	
 	KeyStoreParameter_Builder::KeyStoreParameter_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	KeyStoreParameter_Builder::KeyStoreParameter_Builder(android::content::Context &arg0)
+	KeyStoreParameter_Builder::KeyStoreParameter_Builder(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.security.KeyStoreParameter$Builder",

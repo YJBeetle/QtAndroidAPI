@@ -38,14 +38,6 @@ namespace android::companion
 			arg0
 		);
 	}
-	void CompanionDeviceManager::disassociate(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"disassociate",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject CompanionDeviceManager::getAssociations()
 	{
 		return __thiz.callObjectMethod(

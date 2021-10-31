@@ -8,7 +8,7 @@ namespace android::preference
 	
 	TwoStatePreference::TwoStatePreference(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	TwoStatePreference::TwoStatePreference(android::content::Context &arg0)
+	TwoStatePreference::TwoStatePreference(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.preference.TwoStatePreference",
@@ -16,7 +16,7 @@ namespace android::preference
 			arg0.__jniObject().object()
 		);
 	}
-	TwoStatePreference::TwoStatePreference(android::content::Context &arg0, __JniBaseClass &arg1)
+	TwoStatePreference::TwoStatePreference(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.preference.TwoStatePreference",
@@ -25,7 +25,7 @@ namespace android::preference
 			arg1.__jniObject().object()
 		);
 	}
-	TwoStatePreference::TwoStatePreference(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	TwoStatePreference::TwoStatePreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.preference.TwoStatePreference",
@@ -35,7 +35,7 @@ namespace android::preference
 			arg2
 		);
 	}
-	TwoStatePreference::TwoStatePreference(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	TwoStatePreference::TwoStatePreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.preference.TwoStatePreference",
@@ -108,14 +108,6 @@ namespace android::preference
 			arg0
 		);
 	}
-	void TwoStatePreference::setSummaryOff(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSummaryOff",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void TwoStatePreference::setSummaryOn(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -130,14 +122,6 @@ namespace android::preference
 			"setSummaryOn",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
-		);
-	}
-	void TwoStatePreference::setSummaryOn(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSummaryOn",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean TwoStatePreference::shouldDisableDependents()

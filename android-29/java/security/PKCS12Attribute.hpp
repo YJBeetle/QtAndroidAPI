@@ -16,9 +16,8 @@ namespace java::security
 		
 		PKCS12Attribute(QAndroidJniObject obj);
 		// Constructors
-		PKCS12Attribute(jbyteArray &arg0);
-		PKCS12Attribute(jstring &arg0, jstring &arg1);
-		PKCS12Attribute(const QString &arg0, const QString &arg1);
+		PKCS12Attribute(jbyteArray arg0);
+		PKCS12Attribute(jstring arg0, jstring arg1);
 		PKCS12Attribute() = default;
 		
 		// Methods

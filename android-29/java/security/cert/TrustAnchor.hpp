@@ -20,10 +20,9 @@ namespace java::security::cert
 		
 		TrustAnchor(QAndroidJniObject obj);
 		// Constructors
-		TrustAnchor(java::security::cert::X509Certificate &arg0, jbyteArray &arg1);
-		TrustAnchor(jstring &arg0, __JniBaseClass &arg1, jbyteArray &arg2);
-		TrustAnchor(const QString &arg0, __JniBaseClass &arg1, jbyteArray &arg2);
-		TrustAnchor(javax::security::auth::x500::X500Principal &arg0, __JniBaseClass &arg1, jbyteArray &arg2);
+		TrustAnchor(java::security::cert::X509Certificate arg0, jbyteArray arg1);
+		TrustAnchor(jstring arg0, __JniBaseClass arg1, jbyteArray arg2);
+		TrustAnchor(javax::security::auth::x500::X500Principal arg0, __JniBaseClass arg1, jbyteArray arg2);
 		TrustAnchor() = default;
 		
 		// Methods

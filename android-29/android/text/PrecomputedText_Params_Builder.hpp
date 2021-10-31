@@ -20,8 +20,8 @@ namespace android::text
 		
 		PrecomputedText_Params_Builder(QAndroidJniObject obj);
 		// Constructors
-		PrecomputedText_Params_Builder(android::text::PrecomputedText_Params &arg0);
-		PrecomputedText_Params_Builder(android::text::TextPaint &arg0);
+		PrecomputedText_Params_Builder(android::text::PrecomputedText_Params arg0);
+		PrecomputedText_Params_Builder(android::text::TextPaint arg0);
 		PrecomputedText_Params_Builder() = default;
 		
 		// Methods

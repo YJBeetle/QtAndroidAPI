@@ -24,8 +24,8 @@ namespace java::lang
 		
 		ProcessBuilder(QAndroidJniObject obj);
 		// Constructors
-		ProcessBuilder(jarray &arg0);
-		ProcessBuilder(__JniBaseClass &arg0);
+		ProcessBuilder(jarray arg0);
+		ProcessBuilder(__JniBaseClass arg0);
 		ProcessBuilder() = default;
 		
 		// Methods

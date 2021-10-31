@@ -56,37 +56,29 @@ namespace java::util
 		
 		Scanner(QAndroidJniObject obj);
 		// Constructors
-		Scanner(java::io::File &arg0);
-		Scanner(java::io::InputStream &arg0);
-		Scanner(__JniBaseClass &arg0);
-		Scanner(jstring &arg0);
-		Scanner(const QString &arg0);
-		Scanner(java::io::File &arg0, jstring &arg1);
-		Scanner(java::io::File &arg0, const QString &arg1);
-		Scanner(java::io::File &arg0, java::nio::charset::Charset &arg1);
-		Scanner(java::io::InputStream &arg0, jstring &arg1);
-		Scanner(java::io::InputStream &arg0, const QString &arg1);
-		Scanner(java::io::InputStream &arg0, java::nio::charset::Charset &arg1);
-		Scanner(__JniBaseClass &arg0, jstring &arg1);
-		Scanner(__JniBaseClass &arg0, const QString &arg1);
-		Scanner(__JniBaseClass &arg0, java::nio::charset::Charset &arg1);
+		Scanner(java::io::File arg0);
+		Scanner(java::io::InputStream arg0);
+		Scanner(__JniBaseClass arg0);
+		Scanner(jstring arg0);
+		Scanner(java::io::File arg0, jstring arg1);
+		Scanner(java::io::File arg0, java::nio::charset::Charset arg1);
+		Scanner(java::io::InputStream arg0, jstring arg1);
+		Scanner(java::io::InputStream arg0, java::nio::charset::Charset arg1);
+		Scanner(__JniBaseClass arg0, jstring arg1);
+		Scanner(__JniBaseClass arg0, java::nio::charset::Charset arg1);
 		Scanner() = default;
 		
 		// Methods
 		void close();
 		QAndroidJniObject delimiter();
 		QAndroidJniObject findAll(jstring arg0);
-		QAndroidJniObject findAll(const QString &arg0);
 		QAndroidJniObject findAll(java::util::regex::Pattern arg0);
 		jstring findInLine(jstring arg0);
-		jstring findInLine(const QString &arg0);
 		jstring findInLine(java::util::regex::Pattern arg0);
 		jstring findWithinHorizon(jstring arg0, jint arg1);
-		jstring findWithinHorizon(const QString &arg0, jint arg1);
 		jstring findWithinHorizon(java::util::regex::Pattern arg0, jint arg1);
 		jboolean hasNext();
 		jboolean hasNext(jstring arg0);
-		jboolean hasNext(const QString &arg0);
 		jboolean hasNext(java::util::regex::Pattern arg0);
 		jboolean hasNextBigDecimal();
 		jboolean hasNextBigInteger();
@@ -108,7 +100,6 @@ namespace java::util
 		QAndroidJniObject match();
 		jstring next();
 		jstring next(jstring arg0);
-		jstring next(const QString &arg0);
 		jstring next(java::util::regex::Pattern arg0);
 		QAndroidJniObject nextBigDecimal();
 		QAndroidJniObject nextBigInteger();
@@ -129,12 +120,10 @@ namespace java::util
 		void remove();
 		QAndroidJniObject reset();
 		QAndroidJniObject skip(jstring arg0);
-		QAndroidJniObject skip(const QString &arg0);
 		QAndroidJniObject skip(java::util::regex::Pattern arg0);
 		jstring toString();
 		QAndroidJniObject tokens();
 		QAndroidJniObject useDelimiter(jstring arg0);
-		QAndroidJniObject useDelimiter(const QString &arg0);
 		QAndroidJniObject useDelimiter(java::util::regex::Pattern arg0);
 		QAndroidJniObject useLocale(java::util::Locale arg0);
 		QAndroidJniObject useRadix(jint arg0);

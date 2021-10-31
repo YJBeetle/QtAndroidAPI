@@ -90,7 +90,7 @@ namespace android::icu::text
 	
 	StringPrepParseException::StringPrepParseException(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	StringPrepParseException::StringPrepParseException(jstring &arg0, jint &arg1)
+	StringPrepParseException::StringPrepParseException(jstring arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.StringPrepParseException",
@@ -99,16 +99,7 @@ namespace android::icu::text
 			arg1
 		);
 	}
-	StringPrepParseException::StringPrepParseException(const QString &arg0, jint &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.text.StringPrepParseException",
-			"(Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
-	StringPrepParseException::StringPrepParseException(jstring &arg0, jint &arg1, jstring &arg2, jint &arg3)
+	StringPrepParseException::StringPrepParseException(jstring arg0, jint arg1, jstring arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.StringPrepParseException",
@@ -119,18 +110,7 @@ namespace android::icu::text
 			arg3
 		);
 	}
-	StringPrepParseException::StringPrepParseException(const QString &arg0, jint &arg1, const QString &arg2, jint &arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.text.StringPrepParseException",
-			"(Ljava/lang/String;ILjava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			arg3
-		);
-	}
-	StringPrepParseException::StringPrepParseException(jstring &arg0, jint &arg1, jstring &arg2, jint &arg3, jint &arg4)
+	StringPrepParseException::StringPrepParseException(jstring arg0, jint arg1, jstring arg2, jint arg3, jint arg4)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.StringPrepParseException",
@@ -138,18 +118,6 @@ namespace android::icu::text
 			arg0,
 			arg1,
 			arg2,
-			arg3,
-			arg4
-		);
-	}
-	StringPrepParseException::StringPrepParseException(const QString &arg0, jint &arg1, const QString &arg2, jint &arg3, jint &arg4)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.text.StringPrepParseException",
-			"(Ljava/lang/String;ILjava/lang/String;II)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
 			arg3,
 			arg4
 		);

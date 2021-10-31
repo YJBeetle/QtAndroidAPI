@@ -12,7 +12,7 @@ namespace android::widget
 	
 	CheckedTextView::CheckedTextView(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	CheckedTextView::CheckedTextView(android::content::Context &arg0)
+	CheckedTextView::CheckedTextView(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.CheckedTextView",
@@ -20,7 +20,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	CheckedTextView::CheckedTextView(android::content::Context &arg0, __JniBaseClass &arg1)
+	CheckedTextView::CheckedTextView(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.CheckedTextView",
@@ -29,7 +29,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	CheckedTextView::CheckedTextView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	CheckedTextView::CheckedTextView(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.CheckedTextView",
@@ -39,7 +39,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	CheckedTextView::CheckedTextView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	CheckedTextView::CheckedTextView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.CheckedTextView",

@@ -10,7 +10,7 @@ namespace java::security
 	
 	ProtectionDomain::ProtectionDomain(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ProtectionDomain::ProtectionDomain(java::security::CodeSource &arg0, java::security::PermissionCollection &arg1)
+	ProtectionDomain::ProtectionDomain(java::security::CodeSource arg0, java::security::PermissionCollection arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.ProtectionDomain",
@@ -19,7 +19,7 @@ namespace java::security
 			arg1.__jniObject().object()
 		);
 	}
-	ProtectionDomain::ProtectionDomain(java::security::CodeSource &arg0, java::security::PermissionCollection &arg1, java::lang::ClassLoader &arg2, jarray &arg3)
+	ProtectionDomain::ProtectionDomain(java::security::CodeSource arg0, java::security::PermissionCollection arg1, java::lang::ClassLoader arg2, jarray arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.ProtectionDomain",

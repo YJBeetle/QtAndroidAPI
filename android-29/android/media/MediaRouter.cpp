@@ -100,15 +100,6 @@ namespace android::media
 			arg1
 		);
 	}
-	QAndroidJniObject MediaRouter::createRouteCategory(const QString &arg0, jboolean arg1)
-	{
-		return __thiz.callObjectMethod(
-			"createRouteCategory",
-			"(Ljava/lang/CharSequence;Z)Landroid/media/MediaRouter$RouteCategory;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	QAndroidJniObject MediaRouter::createUserRoute(android::media::MediaRouter_RouteCategory arg0)
 	{
 		return __thiz.callObjectMethod(

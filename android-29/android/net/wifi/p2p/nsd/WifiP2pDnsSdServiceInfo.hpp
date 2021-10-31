@@ -17,7 +17,6 @@ namespace android::net::wifi::p2p::nsd
 		
 		// Methods
 		static QAndroidJniObject newInstance(jstring arg0, jstring arg1, __JniBaseClass arg2);
-		static QAndroidJniObject newInstance(const QString &arg0, const QString &arg1, __JniBaseClass arg2);
 	};
 } // namespace android::net::wifi::p2p::nsd
 

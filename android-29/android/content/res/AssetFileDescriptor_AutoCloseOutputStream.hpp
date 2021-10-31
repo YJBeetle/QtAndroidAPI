@@ -19,7 +19,7 @@ namespace android::content::res
 		
 		AssetFileDescriptor_AutoCloseOutputStream(QAndroidJniObject obj);
 		// Constructors
-		AssetFileDescriptor_AutoCloseOutputStream(android::content::res::AssetFileDescriptor &arg0);
+		AssetFileDescriptor_AutoCloseOutputStream(android::content::res::AssetFileDescriptor arg0);
 		AssetFileDescriptor_AutoCloseOutputStream() = default;
 		
 		// Methods

@@ -24,14 +24,6 @@ namespace android::provider
 			arg0
 		);
 	}
-	QAndroidJniObject ContactsContract_Contacts_AggregationSuggestions_Builder::addNameParameter(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"addNameParameter",
-			"(Ljava/lang/String;)Landroid/provider/ContactsContract$Contacts$AggregationSuggestions$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject ContactsContract_Contacts_AggregationSuggestions_Builder::build()
 	{
 		return __thiz.callObjectMethod(

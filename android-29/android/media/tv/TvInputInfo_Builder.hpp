@@ -28,7 +28,7 @@ namespace android::media::tv
 		
 		TvInputInfo_Builder(QAndroidJniObject obj);
 		// Constructors
-		TvInputInfo_Builder(android::content::Context &arg0, android::content::ComponentName &arg1);
+		TvInputInfo_Builder(android::content::Context arg0, android::content::ComponentName arg1);
 		TvInputInfo_Builder() = default;
 		
 		// Methods

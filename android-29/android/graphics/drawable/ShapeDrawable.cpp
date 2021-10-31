@@ -26,7 +26,7 @@ namespace android::graphics::drawable
 			"()V"
 		);
 	}
-	ShapeDrawable::ShapeDrawable(android::graphics::drawable::shapes::Shape &arg0)
+	ShapeDrawable::ShapeDrawable(android::graphics::drawable::shapes::Shape arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.ShapeDrawable",

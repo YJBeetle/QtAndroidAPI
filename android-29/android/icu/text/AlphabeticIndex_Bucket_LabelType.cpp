@@ -49,15 +49,6 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject AlphabeticIndex_Bucket_LabelType::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.AlphabeticIndex$Bucket$LabelType",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/icu/text/AlphabeticIndex$Bucket$LabelType;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray AlphabeticIndex_Bucket_LabelType::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

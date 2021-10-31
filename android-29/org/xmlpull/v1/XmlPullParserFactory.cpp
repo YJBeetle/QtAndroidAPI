@@ -36,30 +36,12 @@ namespace org::xmlpull::v1
 			arg1
 		);
 	}
-	QAndroidJniObject XmlPullParserFactory::newInstance(const QString &arg0, jclass arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"org.xmlpull.v1.XmlPullParserFactory",
-			"newInstance",
-			"(Ljava/lang/String;Ljava/lang/Class;)Lorg/xmlpull/v1/XmlPullParserFactory;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	jboolean XmlPullParserFactory::getFeature(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"getFeature",
 			"(Ljava/lang/String;)Z",
 			arg0
-		);
-	}
-	jboolean XmlPullParserFactory::getFeature(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"getFeature",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean XmlPullParserFactory::isNamespaceAware()
@@ -96,15 +78,6 @@ namespace org::xmlpull::v1
 			"setFeature",
 			"(Ljava/lang/String;Z)V",
 			arg0,
-			arg1
-		);
-	}
-	void XmlPullParserFactory::setFeature(const QString &arg0, jboolean arg1)
-	{
-		__thiz.callMethod<void>(
-			"setFeature",
-			"(Ljava/lang/String;Z)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

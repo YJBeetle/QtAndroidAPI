@@ -10,7 +10,7 @@ namespace javax::xml::xpath
 	
 	XPathException::XPathException(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	XPathException::XPathException(jstring &arg0)
+	XPathException::XPathException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.xpath.XPathException",
@@ -18,15 +18,7 @@ namespace javax::xml::xpath
 			arg0
 		);
 	}
-	XPathException::XPathException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.xml.xpath.XPathException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	XPathException::XPathException(jthrowable &arg0)
+	XPathException::XPathException(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.xpath.XPathException",

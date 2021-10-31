@@ -309,15 +309,6 @@ namespace android::telecom
 			arg1
 		);
 	}
-	void Call::reject(jboolean arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"reject",
-			"(ZLjava/lang/String;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	void Call::removeExtras(jarray arg0)
 	{
 		__thiz.callMethod<void>(
@@ -349,15 +340,6 @@ namespace android::telecom
 			"sendCallEvent",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void Call::sendCallEvent(const QString &arg0, android::os::Bundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"sendCallEvent",
-			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

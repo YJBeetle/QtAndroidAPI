@@ -24,8 +24,7 @@ namespace android::view::textclassifier
 		
 		ConversationAction_Builder(QAndroidJniObject obj);
 		// Constructors
-		ConversationAction_Builder(jstring &arg0);
-		ConversationAction_Builder(const QString &arg0);
+		ConversationAction_Builder(jstring arg0);
 		ConversationAction_Builder() = default;
 		
 		// Methods
@@ -34,7 +33,6 @@ namespace android::view::textclassifier
 		QAndroidJniObject setConfidenceScore(jfloat arg0);
 		QAndroidJniObject setExtras(android::os::Bundle arg0);
 		QAndroidJniObject setTextReply(jstring arg0);
-		QAndroidJniObject setTextReply(const QString &arg0);
 	};
 } // namespace android::view::textclassifier
 

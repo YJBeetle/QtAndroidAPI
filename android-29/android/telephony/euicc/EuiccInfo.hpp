@@ -17,8 +17,7 @@ namespace android::telephony::euicc
 		
 		EuiccInfo(QAndroidJniObject obj);
 		// Constructors
-		EuiccInfo(jstring &arg0);
-		EuiccInfo(const QString &arg0);
+		EuiccInfo(jstring arg0);
 		EuiccInfo() = default;
 		
 		// Methods

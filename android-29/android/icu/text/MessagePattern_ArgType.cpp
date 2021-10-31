@@ -65,15 +65,6 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject MessagePattern_ArgType::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.MessagePattern$ArgType",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/icu/text/MessagePattern$ArgType;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray MessagePattern_ArgType::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

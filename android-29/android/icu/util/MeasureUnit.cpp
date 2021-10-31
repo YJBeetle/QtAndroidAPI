@@ -1106,15 +1106,6 @@ namespace android::icu::util
 			arg0
 		);
 	}
-	QAndroidJniObject MeasureUnit::getAvailable(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.util.MeasureUnit",
-			"getAvailable",
-			"(Ljava/lang/String;)Ljava/util/Set;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject MeasureUnit::getAvailableTypes()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

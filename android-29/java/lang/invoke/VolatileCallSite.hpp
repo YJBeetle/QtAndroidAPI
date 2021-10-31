@@ -21,8 +21,8 @@ namespace java::lang::invoke
 		
 		VolatileCallSite(QAndroidJniObject obj);
 		// Constructors
-		VolatileCallSite(java::lang::invoke::MethodHandle &arg0);
-		VolatileCallSite(java::lang::invoke::MethodType &arg0);
+		VolatileCallSite(java::lang::invoke::MethodHandle arg0);
+		VolatileCallSite(java::lang::invoke::MethodType arg0);
 		VolatileCallSite() = default;
 		
 		// Methods

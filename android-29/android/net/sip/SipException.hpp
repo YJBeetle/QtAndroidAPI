@@ -14,10 +14,8 @@ namespace android::net::sip
 		SipException(QAndroidJniObject obj);
 		// Constructors
 		SipException();
-		SipException(jstring &arg0);
-		SipException(const QString &arg0);
-		SipException(jstring &arg0, jthrowable &arg1);
-		SipException(const QString &arg0, jthrowable &arg1);
+		SipException(jstring arg0);
+		SipException(jstring arg0, jthrowable arg1);
 		
 		// Methods
 	};

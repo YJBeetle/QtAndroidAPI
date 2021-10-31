@@ -41,15 +41,6 @@ namespace android::text
 			arg0
 		);
 	}
-	QAndroidJniObject Layout_Alignment::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.text.Layout$Alignment",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/text/Layout$Alignment;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray Layout_Alignment::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

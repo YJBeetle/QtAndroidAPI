@@ -28,10 +28,10 @@ namespace android::widget
 		
 		StackView(QAndroidJniObject obj);
 		// Constructors
-		StackView(android::content::Context &arg0);
-		StackView(android::content::Context &arg0, __JniBaseClass &arg1);
-		StackView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		StackView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		StackView(android::content::Context arg0);
+		StackView(android::content::Context arg0, __JniBaseClass arg1);
+		StackView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		StackView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		StackView() = default;
 		
 		// Methods

@@ -394,28 +394,12 @@ namespace android::net::wifi
 			arg0
 		);
 	}
-	QAndroidJniObject WifiManager::createMulticastLock(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"createMulticastLock",
-			"(Ljava/lang/String;)Landroid/net/wifi/WifiManager$MulticastLock;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject WifiManager::createWifiLock(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"createWifiLock",
 			"(Ljava/lang/String;)Landroid/net/wifi/WifiManager$WifiLock;",
 			arg0
-		);
-	}
-	QAndroidJniObject WifiManager::createWifiLock(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"createWifiLock",
-			"(Ljava/lang/String;)Landroid/net/wifi/WifiManager$WifiLock;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject WifiManager::createWifiLock(jint arg0, jstring arg1)
@@ -425,15 +409,6 @@ namespace android::net::wifi
 			"(ILjava/lang/String;)Landroid/net/wifi/WifiManager$WifiLock;",
 			arg0,
 			arg1
-		);
-	}
-	QAndroidJniObject WifiManager::createWifiLock(jint arg0, const QString &arg1)
-	{
-		return __thiz.callObjectMethod(
-			"createWifiLock",
-			"(ILjava/lang/String;)Landroid/net/wifi/WifiManager$WifiLock;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	jboolean WifiManager::disableNetwork(jint arg0)
@@ -638,14 +613,6 @@ namespace android::net::wifi
 			arg0
 		);
 	}
-	void WifiManager::removePasspointConfiguration(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"removePasspointConfiguration",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jboolean WifiManager::saveConfiguration()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -668,15 +635,6 @@ namespace android::net::wifi
 			"setTdlsEnabledWithMacAddress",
 			"(Ljava/lang/String;Z)V",
 			arg0,
-			arg1
-		);
-	}
-	void WifiManager::setTdlsEnabledWithMacAddress(const QString &arg0, jboolean arg1)
-	{
-		__thiz.callMethod<void>(
-			"setTdlsEnabledWithMacAddress",
-			"(Ljava/lang/String;Z)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

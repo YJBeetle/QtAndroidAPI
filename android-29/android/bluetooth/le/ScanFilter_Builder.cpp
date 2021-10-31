@@ -32,28 +32,12 @@ namespace android::bluetooth::le
 			arg0
 		);
 	}
-	QAndroidJniObject ScanFilter_Builder::setDeviceAddress(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setDeviceAddress",
-			"(Ljava/lang/String;)Landroid/bluetooth/le/ScanFilter$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject ScanFilter_Builder::setDeviceName(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setDeviceName",
 			"(Ljava/lang/String;)Landroid/bluetooth/le/ScanFilter$Builder;",
 			arg0
-		);
-	}
-	QAndroidJniObject ScanFilter_Builder::setDeviceName(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setDeviceName",
-			"(Ljava/lang/String;)Landroid/bluetooth/le/ScanFilter$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject ScanFilter_Builder::setManufacturerData(jint arg0, jbyteArray arg1)

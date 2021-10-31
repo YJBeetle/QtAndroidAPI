@@ -8,7 +8,7 @@ namespace android::widget
 	
 	ToggleButton::ToggleButton(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ToggleButton::ToggleButton(android::content::Context &arg0)
+	ToggleButton::ToggleButton(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ToggleButton",
@@ -16,7 +16,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	ToggleButton::ToggleButton(android::content::Context &arg0, __JniBaseClass &arg1)
+	ToggleButton::ToggleButton(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ToggleButton",
@@ -25,7 +25,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	ToggleButton::ToggleButton(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	ToggleButton::ToggleButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ToggleButton",
@@ -35,7 +35,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	ToggleButton::ToggleButton(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	ToggleButton::ToggleButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ToggleButton",
@@ -100,28 +100,12 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ToggleButton::setTextOff(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTextOff",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void ToggleButton::setTextOn(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTextOn",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
-		);
-	}
-	void ToggleButton::setTextOn(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTextOn",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace android::widget

@@ -113,15 +113,6 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject RelativeDateTimeFormatter_AbsoluteUnit::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.RelativeDateTimeFormatter$AbsoluteUnit",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/icu/text/RelativeDateTimeFormatter$AbsoluteUnit;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray RelativeDateTimeFormatter_AbsoluteUnit::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

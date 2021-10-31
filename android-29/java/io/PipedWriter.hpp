@@ -18,7 +18,7 @@ namespace java::io
 		PipedWriter(QAndroidJniObject obj);
 		// Constructors
 		PipedWriter();
-		PipedWriter(java::io::PipedReader &arg0);
+		PipedWriter(java::io::PipedReader arg0);
 		
 		// Methods
 		void close();

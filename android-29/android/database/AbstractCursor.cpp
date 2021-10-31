@@ -77,28 +77,12 @@ namespace android::database
 			arg0
 		);
 	}
-	jint AbstractCursor::getColumnIndex(const QString &arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getColumnIndex",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jint AbstractCursor::getColumnIndexOrThrow(jstring arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getColumnIndexOrThrow",
 			"(Ljava/lang/String;)I",
 			arg0
-		);
-	}
-	jint AbstractCursor::getColumnIndexOrThrow(const QString &arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getColumnIndexOrThrow",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring AbstractCursor::getColumnName(jint arg0)

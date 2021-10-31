@@ -22,10 +22,10 @@ namespace android::preference
 		
 		CheckBoxPreference(QAndroidJniObject obj);
 		// Constructors
-		CheckBoxPreference(android::content::Context &arg0);
-		CheckBoxPreference(android::content::Context &arg0, __JniBaseClass &arg1);
-		CheckBoxPreference(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		CheckBoxPreference(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		CheckBoxPreference(android::content::Context arg0);
+		CheckBoxPreference(android::content::Context arg0, __JniBaseClass arg1);
+		CheckBoxPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		CheckBoxPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		CheckBoxPreference() = default;
 		
 		// Methods

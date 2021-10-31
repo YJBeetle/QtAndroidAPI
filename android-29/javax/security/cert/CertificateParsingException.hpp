@@ -15,8 +15,7 @@ namespace javax::security::cert
 		CertificateParsingException(QAndroidJniObject obj);
 		// Constructors
 		CertificateParsingException();
-		CertificateParsingException(jstring &arg0);
-		CertificateParsingException(const QString &arg0);
+		CertificateParsingException(jstring arg0);
 		
 		// Methods
 	};

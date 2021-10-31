@@ -32,8 +32,7 @@ namespace android::graphics
 		
 		RenderNode(QAndroidJniObject obj);
 		// Constructors
-		RenderNode(jstring &arg0);
-		RenderNode(const QString &arg0);
+		RenderNode(jstring arg0);
 		RenderNode() = default;
 		
 		// Methods

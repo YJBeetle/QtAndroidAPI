@@ -14,7 +14,7 @@ namespace android::system
 		
 		StructTimespec(QAndroidJniObject obj);
 		// Constructors
-		StructTimespec(jlong &arg0, jlong &arg1);
+		StructTimespec(jlong arg0, jlong arg1);
 		StructTimespec() = default;
 		
 		// Methods

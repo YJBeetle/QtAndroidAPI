@@ -16,8 +16,7 @@ namespace java::lang
 		InstantiationError(QAndroidJniObject obj);
 		// Constructors
 		InstantiationError();
-		InstantiationError(jstring &arg0);
-		InstantiationError(const QString &arg0);
+		InstantiationError(jstring arg0);
 		
 		// Methods
 	};

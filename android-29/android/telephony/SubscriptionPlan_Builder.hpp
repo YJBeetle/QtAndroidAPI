@@ -33,9 +33,7 @@ namespace android::telephony
 		QAndroidJniObject setDataLimit(jlong arg0, jint arg1);
 		QAndroidJniObject setDataUsage(jlong arg0, jlong arg1);
 		QAndroidJniObject setSummary(jstring arg0);
-		QAndroidJniObject setSummary(const QString &arg0);
 		QAndroidJniObject setTitle(jstring arg0);
-		QAndroidJniObject setTitle(const QString &arg0);
 	};
 } // namespace android::telephony
 

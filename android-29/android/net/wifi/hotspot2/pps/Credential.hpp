@@ -52,7 +52,6 @@ namespace android::net::wifi::hotspot2::pps
 		void setClientCertificateChain(jarray arg0);
 		void setClientPrivateKey(__JniBaseClass arg0);
 		void setRealm(jstring arg0);
-		void setRealm(const QString &arg0);
 		void setSimCredential(android::net::wifi::hotspot2::pps::Credential_SimCredential arg0);
 		void setUserCredential(android::net::wifi::hotspot2::pps::Credential_UserCredential arg0);
 		jstring toString();

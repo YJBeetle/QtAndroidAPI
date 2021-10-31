@@ -113,15 +113,6 @@ namespace java::lang::annotation
 			arg0
 		);
 	}
-	QAndroidJniObject ElementType::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.lang.annotation.ElementType",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/lang/annotation/ElementType;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray ElementType::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

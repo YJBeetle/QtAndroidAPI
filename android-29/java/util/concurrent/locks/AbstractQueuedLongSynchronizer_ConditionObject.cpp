@@ -9,7 +9,7 @@ namespace java::util::concurrent::locks
 	
 	AbstractQueuedLongSynchronizer_ConditionObject::AbstractQueuedLongSynchronizer_ConditionObject(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AbstractQueuedLongSynchronizer_ConditionObject::AbstractQueuedLongSynchronizer_ConditionObject(java::util::concurrent::locks::AbstractQueuedLongSynchronizer &arg0)
+	AbstractQueuedLongSynchronizer_ConditionObject::AbstractQueuedLongSynchronizer_ConditionObject(java::util::concurrent::locks::AbstractQueuedLongSynchronizer arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.locks.AbstractQueuedLongSynchronizer$ConditionObject",

@@ -15,8 +15,7 @@ namespace java::net
 		ProtocolException(QAndroidJniObject obj);
 		// Constructors
 		ProtocolException();
-		ProtocolException(jstring &arg0);
-		ProtocolException(const QString &arg0);
+		ProtocolException(jstring arg0);
 		
 		// Methods
 	};

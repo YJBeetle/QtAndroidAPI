@@ -17,8 +17,8 @@ namespace android::view::animation
 		
 		CycleInterpolator(QAndroidJniObject obj);
 		// Constructors
-		CycleInterpolator(jfloat &arg0);
-		CycleInterpolator(android::content::Context &arg0, __JniBaseClass &arg1);
+		CycleInterpolator(jfloat arg0);
+		CycleInterpolator(android::content::Context arg0, __JniBaseClass arg1);
 		CycleInterpolator() = default;
 		
 		// Methods

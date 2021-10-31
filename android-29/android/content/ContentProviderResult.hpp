@@ -27,9 +27,9 @@ namespace android::content
 		
 		ContentProviderResult(QAndroidJniObject obj);
 		// Constructors
-		ContentProviderResult(android::net::Uri &arg0);
-		ContentProviderResult(android::os::Parcel &arg0);
-		ContentProviderResult(jint &arg0);
+		ContentProviderResult(android::net::Uri arg0);
+		ContentProviderResult(android::os::Parcel arg0);
+		ContentProviderResult(jint arg0);
 		ContentProviderResult() = default;
 		
 		// Methods

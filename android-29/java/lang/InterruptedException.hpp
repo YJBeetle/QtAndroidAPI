@@ -14,8 +14,7 @@ namespace java::lang
 		InterruptedException(QAndroidJniObject obj);
 		// Constructors
 		InterruptedException();
-		InterruptedException(jstring &arg0);
-		InterruptedException(const QString &arg0);
+		InterruptedException(jstring arg0);
 		
 		// Methods
 	};

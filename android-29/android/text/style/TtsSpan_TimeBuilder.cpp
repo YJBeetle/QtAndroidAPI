@@ -13,7 +13,7 @@ namespace android::text::style
 			"()V"
 		);
 	}
-	TtsSpan_TimeBuilder::TtsSpan_TimeBuilder(jint &arg0, jint &arg1)
+	TtsSpan_TimeBuilder::TtsSpan_TimeBuilder(jint arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.TtsSpan$TimeBuilder",

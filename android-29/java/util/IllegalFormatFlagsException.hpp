@@ -16,8 +16,7 @@ namespace java::util
 		
 		IllegalFormatFlagsException(QAndroidJniObject obj);
 		// Constructors
-		IllegalFormatFlagsException(jstring &arg0);
-		IllegalFormatFlagsException(const QString &arg0);
+		IllegalFormatFlagsException(jstring arg0);
 		IllegalFormatFlagsException() = default;
 		
 		// Methods

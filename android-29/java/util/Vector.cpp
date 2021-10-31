@@ -15,7 +15,7 @@ namespace java::util
 			"()V"
 		);
 	}
-	Vector::Vector(jint &arg0)
+	Vector::Vector(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Vector",
@@ -23,7 +23,7 @@ namespace java::util
 			arg0
 		);
 	}
-	Vector::Vector(__JniBaseClass &arg0)
+	Vector::Vector(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Vector",
@@ -31,7 +31,7 @@ namespace java::util
 			arg0.__jniObject().object()
 		);
 	}
-	Vector::Vector(jint &arg0, jint &arg1)
+	Vector::Vector(jint arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Vector",

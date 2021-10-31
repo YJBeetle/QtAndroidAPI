@@ -9,7 +9,7 @@ namespace android::content
 	
 	AsyncTaskLoader::AsyncTaskLoader(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AsyncTaskLoader::AsyncTaskLoader(android::content::Context &arg0)
+	AsyncTaskLoader::AsyncTaskLoader(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.AsyncTaskLoader",
@@ -32,17 +32,6 @@ namespace android::content
 			"dump",
 			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3
-		);
-	}
-	void AsyncTaskLoader::dump(const QString &arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
 			arg3

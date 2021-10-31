@@ -22,7 +22,7 @@ namespace android::text::method
 			"()V"
 		);
 	}
-	DateTimeKeyListener::DateTimeKeyListener(java::util::Locale &arg0)
+	DateTimeKeyListener::DateTimeKeyListener(java::util::Locale arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.method.DateTimeKeyListener",

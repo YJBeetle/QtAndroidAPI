@@ -28,12 +28,9 @@ namespace java::net
 		
 		// Methods
 		static jarray getAllByName(jstring arg0);
-		static jarray getAllByName(const QString &arg0);
 		static QAndroidJniObject getByAddress(jbyteArray arg0);
 		static QAndroidJniObject getByAddress(jstring arg0, jbyteArray arg1);
-		static QAndroidJniObject getByAddress(const QString &arg0, jbyteArray arg1);
 		static QAndroidJniObject getByName(jstring arg0);
-		static QAndroidJniObject getByName(const QString &arg0);
 		static QAndroidJniObject getLocalHost();
 		static QAndroidJniObject getLoopbackAddress();
 		jboolean equals(jobject arg0);

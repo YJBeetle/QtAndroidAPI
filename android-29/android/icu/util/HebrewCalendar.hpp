@@ -43,14 +43,14 @@ namespace android::icu::util
 		HebrewCalendar(QAndroidJniObject obj);
 		// Constructors
 		HebrewCalendar();
-		HebrewCalendar(android::icu::util::TimeZone &arg0);
-		HebrewCalendar(android::icu::util::ULocale &arg0);
-		HebrewCalendar(java::util::Date &arg0);
-		HebrewCalendar(java::util::Locale &arg0);
-		HebrewCalendar(android::icu::util::TimeZone &arg0, android::icu::util::ULocale &arg1);
-		HebrewCalendar(android::icu::util::TimeZone &arg0, java::util::Locale &arg1);
-		HebrewCalendar(jint &arg0, jint &arg1, jint &arg2);
-		HebrewCalendar(jint &arg0, jint &arg1, jint &arg2, jint &arg3, jint &arg4, jint &arg5);
+		HebrewCalendar(android::icu::util::TimeZone arg0);
+		HebrewCalendar(android::icu::util::ULocale arg0);
+		HebrewCalendar(java::util::Date arg0);
+		HebrewCalendar(java::util::Locale arg0);
+		HebrewCalendar(android::icu::util::TimeZone arg0, android::icu::util::ULocale arg1);
+		HebrewCalendar(android::icu::util::TimeZone arg0, java::util::Locale arg1);
+		HebrewCalendar(jint arg0, jint arg1, jint arg2);
+		HebrewCalendar(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
 		
 		// Methods
 		void add(jint arg0, jint arg1);

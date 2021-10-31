@@ -57,15 +57,6 @@ namespace android::webkit
 			arg0
 		);
 	}
-	QAndroidJniObject WebSettings_TextSize::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.webkit.WebSettings$TextSize",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/webkit/WebSettings$TextSize;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray WebSettings_TextSize::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

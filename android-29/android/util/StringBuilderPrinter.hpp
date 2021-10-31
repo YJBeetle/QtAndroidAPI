@@ -16,12 +16,11 @@ namespace android::util
 		
 		StringBuilderPrinter(QAndroidJniObject obj);
 		// Constructors
-		StringBuilderPrinter(java::lang::StringBuilder &arg0);
+		StringBuilderPrinter(java::lang::StringBuilder arg0);
 		StringBuilderPrinter() = default;
 		
 		// Methods
 		void println(jstring arg0);
-		void println(const QString &arg0);
 	};
 } // namespace android::util
 

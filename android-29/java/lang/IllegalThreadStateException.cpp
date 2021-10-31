@@ -13,20 +13,12 @@ namespace java::lang
 			"()V"
 		);
 	}
-	IllegalThreadStateException::IllegalThreadStateException(jstring &arg0)
+	IllegalThreadStateException::IllegalThreadStateException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.IllegalThreadStateException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	IllegalThreadStateException::IllegalThreadStateException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.IllegalThreadStateException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

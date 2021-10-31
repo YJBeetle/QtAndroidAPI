@@ -65,15 +65,6 @@ namespace android::view
 			arg0
 		);
 	}
-	QAndroidJniObject ViewDebug_RecyclerTraceType::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.view.ViewDebug$RecyclerTraceType",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/view/ViewDebug$RecyclerTraceType;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray ViewDebug_RecyclerTraceType::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

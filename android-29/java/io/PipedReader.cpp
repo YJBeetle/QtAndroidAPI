@@ -15,7 +15,7 @@ namespace java::io
 			"()V"
 		);
 	}
-	PipedReader::PipedReader(jint &arg0)
+	PipedReader::PipedReader(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.PipedReader",
@@ -23,7 +23,7 @@ namespace java::io
 			arg0
 		);
 	}
-	PipedReader::PipedReader(java::io::PipedWriter &arg0)
+	PipedReader::PipedReader(java::io::PipedWriter arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.PipedReader",
@@ -31,7 +31,7 @@ namespace java::io
 			arg0.__jniObject().object()
 		);
 	}
-	PipedReader::PipedReader(java::io::PipedWriter &arg0, jint &arg1)
+	PipedReader::PipedReader(java::io::PipedWriter arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.PipedReader",

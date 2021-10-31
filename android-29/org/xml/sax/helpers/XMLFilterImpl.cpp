@@ -15,7 +15,7 @@ namespace org::xml::sax::helpers
 			"()V"
 		);
 	}
-	XMLFilterImpl::XMLFilterImpl(__JniBaseClass &arg0)
+	XMLFilterImpl::XMLFilterImpl(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"org.xml.sax.helpers.XMLFilterImpl",
@@ -52,30 +52,12 @@ namespace org::xml::sax::helpers
 			arg2
 		);
 	}
-	void XMLFilterImpl::endElement(const QString &arg0, const QString &arg1, const QString &arg2)
-	{
-		__thiz.callMethod<void>(
-			"endElement",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	void XMLFilterImpl::endPrefixMapping(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"endPrefixMapping",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void XMLFilterImpl::endPrefixMapping(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"endPrefixMapping",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void XMLFilterImpl::error(org::xml::sax::SAXParseException arg0)
@@ -130,14 +112,6 @@ namespace org::xml::sax::helpers
 			arg0
 		);
 	}
-	jboolean XMLFilterImpl::getFeature(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"getFeature",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject XMLFilterImpl::getParent()
 	{
 		return __thiz.callObjectMethod(
@@ -151,14 +125,6 @@ namespace org::xml::sax::helpers
 			"getProperty",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
 			arg0
-		).object<jobject>();
-	}
-	jobject XMLFilterImpl::getProperty(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getProperty",
-			"(Ljava/lang/String;)Ljava/lang/Object;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jobject>();
 	}
 	void XMLFilterImpl::ignorableWhitespace(jcharArray arg0, jint arg1, jint arg2)
@@ -181,30 +147,12 @@ namespace org::xml::sax::helpers
 			arg2
 		);
 	}
-	void XMLFilterImpl::notationDecl(const QString &arg0, const QString &arg1, const QString &arg2)
-	{
-		__thiz.callMethod<void>(
-			"notationDecl",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	void XMLFilterImpl::parse(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"parse",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void XMLFilterImpl::parse(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"parse",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void XMLFilterImpl::parse(org::xml::sax::InputSource arg0)
@@ -224,15 +172,6 @@ namespace org::xml::sax::helpers
 			arg1
 		);
 	}
-	void XMLFilterImpl::processingInstruction(const QString &arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"processingInstruction",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	QAndroidJniObject XMLFilterImpl::resolveEntity(jstring arg0, jstring arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -240,15 +179,6 @@ namespace org::xml::sax::helpers
 			"(Ljava/lang/String;Ljava/lang/String;)Lorg/xml/sax/InputSource;",
 			arg0,
 			arg1
-		);
-	}
-	QAndroidJniObject XMLFilterImpl::resolveEntity(const QString &arg0, const QString &arg1)
-	{
-		return __thiz.callObjectMethod(
-			"resolveEntity",
-			"(Ljava/lang/String;Ljava/lang/String;)Lorg/xml/sax/InputSource;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void XMLFilterImpl::setContentHandler(__JniBaseClass arg0)
@@ -300,15 +230,6 @@ namespace org::xml::sax::helpers
 			arg1
 		);
 	}
-	void XMLFilterImpl::setFeature(const QString &arg0, jboolean arg1)
-	{
-		__thiz.callMethod<void>(
-			"setFeature",
-			"(Ljava/lang/String;Z)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	void XMLFilterImpl::setParent(__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
@@ -326,29 +247,12 @@ namespace org::xml::sax::helpers
 			arg1
 		);
 	}
-	void XMLFilterImpl::setProperty(const QString &arg0, jobject arg1)
-	{
-		__thiz.callMethod<void>(
-			"setProperty",
-			"(Ljava/lang/String;Ljava/lang/Object;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	void XMLFilterImpl::skippedEntity(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"skippedEntity",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void XMLFilterImpl::skippedEntity(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"skippedEntity",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void XMLFilterImpl::startDocument()
@@ -369,17 +273,6 @@ namespace org::xml::sax::helpers
 			arg3.__jniObject().object()
 		);
 	}
-	void XMLFilterImpl::startElement(const QString &arg0, const QString &arg1, const QString &arg2, __JniBaseClass arg3)
-	{
-		__thiz.callMethod<void>(
-			"startElement",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/xml/sax/Attributes;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			arg3.__jniObject().object()
-		);
-	}
 	void XMLFilterImpl::startPrefixMapping(jstring arg0, jstring arg1)
 	{
 		__thiz.callMethod<void>(
@@ -387,15 +280,6 @@ namespace org::xml::sax::helpers
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	void XMLFilterImpl::startPrefixMapping(const QString &arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"startPrefixMapping",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void XMLFilterImpl::unparsedEntityDecl(jstring arg0, jstring arg1, jstring arg2, jstring arg3)
@@ -407,17 +291,6 @@ namespace org::xml::sax::helpers
 			arg1,
 			arg2,
 			arg3
-		);
-	}
-	void XMLFilterImpl::unparsedEntityDecl(const QString &arg0, const QString &arg1, const QString &arg2, const QString &arg3)
-	{
-		__thiz.callMethod<void>(
-			"unparsedEntityDecl",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			QAndroidJniObject::fromString(arg3).object<jstring>()
 		);
 	}
 	void XMLFilterImpl::warning(org::xml::sax::SAXParseException arg0)

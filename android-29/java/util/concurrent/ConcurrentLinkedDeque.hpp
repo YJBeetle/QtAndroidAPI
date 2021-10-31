@@ -22,7 +22,7 @@ namespace java::util::concurrent
 		ConcurrentLinkedDeque(QAndroidJniObject obj);
 		// Constructors
 		ConcurrentLinkedDeque();
-		ConcurrentLinkedDeque(__JniBaseClass &arg0);
+		ConcurrentLinkedDeque(__JniBaseClass arg0);
 		
 		// Methods
 		jboolean add(jobject arg0);

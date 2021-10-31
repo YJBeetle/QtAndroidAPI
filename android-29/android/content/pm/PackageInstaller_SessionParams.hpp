@@ -28,16 +28,14 @@ namespace android::content::pm
 		
 		PackageInstaller_SessionParams(QAndroidJniObject obj);
 		// Constructors
-		PackageInstaller_SessionParams(jint &arg0);
+		PackageInstaller_SessionParams(jint arg0);
 		PackageInstaller_SessionParams() = default;
 		
 		// Methods
 		jint describeContents();
 		void setAppIcon(android::graphics::Bitmap arg0);
 		void setAppLabel(jstring arg0);
-		void setAppLabel(const QString &arg0);
 		void setAppPackageName(jstring arg0);
-		void setAppPackageName(const QString &arg0);
 		void setInstallLocation(jint arg0);
 		void setInstallReason(jint arg0);
 		void setMultiPackage();

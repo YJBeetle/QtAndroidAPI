@@ -108,7 +108,7 @@ namespace android::icu::util
 			"()V"
 		);
 	}
-	CopticCalendar::CopticCalendar(android::icu::util::TimeZone &arg0)
+	CopticCalendar::CopticCalendar(android::icu::util::TimeZone arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.CopticCalendar",
@@ -116,7 +116,7 @@ namespace android::icu::util
 			arg0.__jniObject().object()
 		);
 	}
-	CopticCalendar::CopticCalendar(android::icu::util::ULocale &arg0)
+	CopticCalendar::CopticCalendar(android::icu::util::ULocale arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.CopticCalendar",
@@ -124,7 +124,7 @@ namespace android::icu::util
 			arg0.__jniObject().object()
 		);
 	}
-	CopticCalendar::CopticCalendar(java::util::Date &arg0)
+	CopticCalendar::CopticCalendar(java::util::Date arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.CopticCalendar",
@@ -132,7 +132,7 @@ namespace android::icu::util
 			arg0.__jniObject().object()
 		);
 	}
-	CopticCalendar::CopticCalendar(java::util::Locale &arg0)
+	CopticCalendar::CopticCalendar(java::util::Locale arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.CopticCalendar",
@@ -140,7 +140,7 @@ namespace android::icu::util
 			arg0.__jniObject().object()
 		);
 	}
-	CopticCalendar::CopticCalendar(android::icu::util::TimeZone &arg0, android::icu::util::ULocale &arg1)
+	CopticCalendar::CopticCalendar(android::icu::util::TimeZone arg0, android::icu::util::ULocale arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.CopticCalendar",
@@ -149,7 +149,7 @@ namespace android::icu::util
 			arg1.__jniObject().object()
 		);
 	}
-	CopticCalendar::CopticCalendar(android::icu::util::TimeZone &arg0, java::util::Locale &arg1)
+	CopticCalendar::CopticCalendar(android::icu::util::TimeZone arg0, java::util::Locale arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.CopticCalendar",
@@ -158,7 +158,7 @@ namespace android::icu::util
 			arg1.__jniObject().object()
 		);
 	}
-	CopticCalendar::CopticCalendar(jint &arg0, jint &arg1, jint &arg2)
+	CopticCalendar::CopticCalendar(jint arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.CopticCalendar",
@@ -168,7 +168,7 @@ namespace android::icu::util
 			arg2
 		);
 	}
-	CopticCalendar::CopticCalendar(jint &arg0, jint &arg1, jint &arg2, jint &arg3, jint &arg4, jint &arg5)
+	CopticCalendar::CopticCalendar(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.CopticCalendar",

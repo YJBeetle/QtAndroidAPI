@@ -16,14 +16,12 @@ namespace android::net::http
 		
 		X509TrustManagerExtensions(QAndroidJniObject obj);
 		// Constructors
-		X509TrustManagerExtensions(__JniBaseClass &arg0);
+		X509TrustManagerExtensions(__JniBaseClass arg0);
 		X509TrustManagerExtensions() = default;
 		
 		// Methods
 		QAndroidJniObject checkServerTrusted(jarray arg0, jstring arg1, jstring arg2);
-		QAndroidJniObject checkServerTrusted(jarray arg0, const QString &arg1, const QString &arg2);
 		jboolean isSameTrustConfiguration(jstring arg0, jstring arg1);
-		jboolean isSameTrustConfiguration(const QString &arg0, const QString &arg1);
 		jboolean isUserAddedCertificate(java::security::cert::X509Certificate arg0);
 	};
 } // namespace android::net::http

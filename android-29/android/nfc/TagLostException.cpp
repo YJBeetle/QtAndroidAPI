@@ -13,20 +13,12 @@ namespace android::nfc
 			"()V"
 		);
 	}
-	TagLostException::TagLostException(jstring &arg0)
+	TagLostException::TagLostException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.nfc.TagLostException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	TagLostException::TagLostException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.nfc.TagLostException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

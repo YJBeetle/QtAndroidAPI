@@ -24,9 +24,7 @@ namespace android::text::method
 		
 		// Methods
 		jstring getTransformation(jstring arg0, android::view::View arg1);
-		jstring getTransformation(const QString &arg0, android::view::View arg1);
 		void onFocusChanged(android::view::View arg0, jstring arg1, jboolean arg2, jint arg3, android::graphics::Rect arg4);
-		void onFocusChanged(android::view::View arg0, const QString &arg1, jboolean arg2, jint arg3, android::graphics::Rect arg4);
 	};
 } // namespace android::text::method
 

@@ -38,28 +38,12 @@ namespace javax::xml::transform
 			arg0
 		).object<jstring>();
 	}
-	jstring Transformer::getOutputProperty(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getOutputProperty",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
 	jobject Transformer::getParameter(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getParameter",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
 			arg0
-		).object<jobject>();
-	}
-	jobject Transformer::getParameter(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getParameter",
-			"(Ljava/lang/String;)Ljava/lang/Object;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jobject>();
 	}
 	QAndroidJniObject Transformer::getURIResolver()
@@ -101,30 +85,12 @@ namespace javax::xml::transform
 			arg1
 		);
 	}
-	void Transformer::setOutputProperty(const QString &arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"setOutputProperty",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	void Transformer::setParameter(jstring arg0, jobject arg1)
 	{
 		__thiz.callMethod<void>(
 			"setParameter",
 			"(Ljava/lang/String;Ljava/lang/Object;)V",
 			arg0,
-			arg1
-		);
-	}
-	void Transformer::setParameter(const QString &arg0, jobject arg1)
-	{
-		__thiz.callMethod<void>(
-			"setParameter",
-			"(Ljava/lang/String;Ljava/lang/Object;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

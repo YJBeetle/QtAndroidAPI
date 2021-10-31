@@ -13,20 +13,12 @@ namespace javax::crypto
 			"()V"
 		);
 	}
-	ExemptionMechanismException::ExemptionMechanismException(jstring &arg0)
+	ExemptionMechanismException::ExemptionMechanismException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.crypto.ExemptionMechanismException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	ExemptionMechanismException::ExemptionMechanismException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.crypto.ExemptionMechanismException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

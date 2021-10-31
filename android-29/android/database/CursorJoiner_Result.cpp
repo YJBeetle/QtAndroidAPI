@@ -41,15 +41,6 @@ namespace android::database
 			arg0
 		);
 	}
-	QAndroidJniObject CursorJoiner_Result::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.database.CursorJoiner$Result",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/database/CursorJoiner$Result;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray CursorJoiner_Result::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

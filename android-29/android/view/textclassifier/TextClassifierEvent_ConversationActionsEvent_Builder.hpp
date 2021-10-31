@@ -17,7 +17,7 @@ namespace android::view::textclassifier
 		
 		TextClassifierEvent_ConversationActionsEvent_Builder(QAndroidJniObject obj);
 		// Constructors
-		TextClassifierEvent_ConversationActionsEvent_Builder(jint &arg0);
+		TextClassifierEvent_ConversationActionsEvent_Builder(jint arg0);
 		TextClassifierEvent_ConversationActionsEvent_Builder() = default;
 		
 		// Methods

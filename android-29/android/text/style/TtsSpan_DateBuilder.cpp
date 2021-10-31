@@ -14,7 +14,7 @@ namespace android::text::style
 			"()V"
 		);
 	}
-	TtsSpan_DateBuilder::TtsSpan_DateBuilder(java::lang::Integer &arg0, java::lang::Integer &arg1, java::lang::Integer &arg2, java::lang::Integer &arg3)
+	TtsSpan_DateBuilder::TtsSpan_DateBuilder(java::lang::Integer arg0, java::lang::Integer arg1, java::lang::Integer arg2, java::lang::Integer arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.TtsSpan$DateBuilder",

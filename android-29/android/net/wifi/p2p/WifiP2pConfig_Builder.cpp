@@ -64,28 +64,12 @@ namespace android::net::wifi::p2p
 			arg0
 		);
 	}
-	QAndroidJniObject WifiP2pConfig_Builder::setNetworkName(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setNetworkName",
-			"(Ljava/lang/String;)Landroid/net/wifi/p2p/WifiP2pConfig$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject WifiP2pConfig_Builder::setPassphrase(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setPassphrase",
 			"(Ljava/lang/String;)Landroid/net/wifi/p2p/WifiP2pConfig$Builder;",
 			arg0
-		);
-	}
-	QAndroidJniObject WifiP2pConfig_Builder::setPassphrase(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setPassphrase",
-			"(Ljava/lang/String;)Landroid/net/wifi/p2p/WifiP2pConfig$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace android::net::wifi::p2p

@@ -16,10 +16,10 @@ namespace android::widget
 		
 		OverScroller(QAndroidJniObject obj);
 		// Constructors
-		OverScroller(android::content::Context &arg0);
-		OverScroller(android::content::Context &arg0, __JniBaseClass &arg1);
-		OverScroller(android::content::Context &arg0, __JniBaseClass &arg1, jfloat &arg2, jfloat &arg3);
-		OverScroller(android::content::Context &arg0, __JniBaseClass &arg1, jfloat &arg2, jfloat &arg3, jboolean &arg4);
+		OverScroller(android::content::Context arg0);
+		OverScroller(android::content::Context arg0, __JniBaseClass arg1);
+		OverScroller(android::content::Context arg0, __JniBaseClass arg1, jfloat arg2, jfloat arg3);
+		OverScroller(android::content::Context arg0, __JniBaseClass arg1, jfloat arg2, jfloat arg3, jboolean arg4);
 		OverScroller() = default;
 		
 		// Methods

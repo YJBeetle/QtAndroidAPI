@@ -14,8 +14,7 @@ namespace android::media::audiofx
 		Virtualizer_Settings(QAndroidJniObject obj);
 		// Constructors
 		Virtualizer_Settings();
-		Virtualizer_Settings(jstring &arg0);
-		Virtualizer_Settings(const QString &arg0);
+		Virtualizer_Settings(jstring arg0);
 		
 		// Methods
 		jstring toString();

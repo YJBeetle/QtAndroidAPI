@@ -42,25 +42,17 @@ namespace android::icu::text
 		
 		MessageFormat(QAndroidJniObject obj);
 		// Constructors
-		MessageFormat(jstring &arg0);
-		MessageFormat(const QString &arg0);
-		MessageFormat(jstring &arg0, android::icu::util::ULocale &arg1);
-		MessageFormat(const QString &arg0, android::icu::util::ULocale &arg1);
-		MessageFormat(jstring &arg0, java::util::Locale &arg1);
-		MessageFormat(const QString &arg0, java::util::Locale &arg1);
+		MessageFormat(jstring arg0);
+		MessageFormat(jstring arg0, android::icu::util::ULocale arg1);
+		MessageFormat(jstring arg0, java::util::Locale arg1);
 		MessageFormat() = default;
 		
 		// Methods
 		static jstring autoQuoteApostrophe(jstring arg0);
-		static jstring autoQuoteApostrophe(const QString &arg0);
 		static jstring format(jstring arg0, jobjectArray arg1);
-		static jstring format(const QString &arg0, jobjectArray arg1);
 		static jstring format(jstring arg0, __JniBaseClass arg1);
-		static jstring format(const QString &arg0, __JniBaseClass arg1);
 		void applyPattern(jstring arg0);
-		void applyPattern(const QString &arg0);
 		void applyPattern(jstring arg0, android::icu::text::MessagePattern_ApostropheMode arg1);
-		void applyPattern(const QString &arg0, android::icu::text::MessagePattern_ApostropheMode arg1);
 		jobject clone();
 		jboolean equals(jobject arg0);
 		QAndroidJniObject format(jobjectArray arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
@@ -70,26 +62,19 @@ namespace android::icu::text
 		QAndroidJniObject getApostropheMode();
 		QAndroidJniObject getArgumentNames();
 		QAndroidJniObject getFormatByArgumentName(jstring arg0);
-		QAndroidJniObject getFormatByArgumentName(const QString &arg0);
 		jarray getFormats();
 		jarray getFormatsByArgumentIndex();
 		QAndroidJniObject getLocale();
 		QAndroidJniObject getULocale();
 		jint hashCode();
 		jobjectArray parse(jstring arg0);
-		jobjectArray parse(const QString &arg0);
 		jobjectArray parse(jstring arg0, java::text::ParsePosition arg1);
-		jobjectArray parse(const QString &arg0, java::text::ParsePosition arg1);
 		jobject parseObject(jstring arg0, java::text::ParsePosition arg1);
-		jobject parseObject(const QString &arg0, java::text::ParsePosition arg1);
 		QAndroidJniObject parseToMap(jstring arg0);
-		QAndroidJniObject parseToMap(const QString &arg0);
 		QAndroidJniObject parseToMap(jstring arg0, java::text::ParsePosition arg1);
-		QAndroidJniObject parseToMap(const QString &arg0, java::text::ParsePosition arg1);
 		void setFormat(jint arg0, java::text::Format arg1);
 		void setFormatByArgumentIndex(jint arg0, java::text::Format arg1);
 		void setFormatByArgumentName(jstring arg0, java::text::Format arg1);
-		void setFormatByArgumentName(const QString &arg0, java::text::Format arg1);
 		void setFormats(jarray arg0);
 		void setFormatsByArgumentIndex(jarray arg0);
 		void setFormatsByArgumentName(__JniBaseClass arg0);

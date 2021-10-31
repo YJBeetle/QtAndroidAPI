@@ -42,21 +42,17 @@ namespace android::app
 		QAndroidJniObject getNextAlarmClock();
 		void set(jint arg0, jlong arg1, android::app::PendingIntent arg2);
 		void set(jint arg0, jlong arg1, jstring arg2, __JniBaseClass arg3, android::os::Handler arg4);
-		void set(jint arg0, jlong arg1, const QString &arg2, __JniBaseClass arg3, android::os::Handler arg4);
 		void setAlarmClock(android::app::AlarmManager_AlarmClockInfo arg0, android::app::PendingIntent arg1);
 		void setAndAllowWhileIdle(jint arg0, jlong arg1, android::app::PendingIntent arg2);
 		void setExact(jint arg0, jlong arg1, android::app::PendingIntent arg2);
 		void setExact(jint arg0, jlong arg1, jstring arg2, __JniBaseClass arg3, android::os::Handler arg4);
-		void setExact(jint arg0, jlong arg1, const QString &arg2, __JniBaseClass arg3, android::os::Handler arg4);
 		void setExactAndAllowWhileIdle(jint arg0, jlong arg1, android::app::PendingIntent arg2);
 		void setInexactRepeating(jint arg0, jlong arg1, jlong arg2, android::app::PendingIntent arg3);
 		void setRepeating(jint arg0, jlong arg1, jlong arg2, android::app::PendingIntent arg3);
 		void setTime(jlong arg0);
 		void setTimeZone(jstring arg0);
-		void setTimeZone(const QString &arg0);
 		void setWindow(jint arg0, jlong arg1, jlong arg2, android::app::PendingIntent arg3);
 		void setWindow(jint arg0, jlong arg1, jlong arg2, jstring arg3, __JniBaseClass arg4, android::os::Handler arg5);
-		void setWindow(jint arg0, jlong arg1, jlong arg2, const QString &arg3, __JniBaseClass arg4, android::os::Handler arg5);
 	};
 } // namespace android::app
 

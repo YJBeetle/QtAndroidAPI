@@ -13,20 +13,12 @@ namespace java::lang
 			"()V"
 		);
 	}
-	NoSuchFieldError::NoSuchFieldError(jstring &arg0)
+	NoSuchFieldError::NoSuchFieldError(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.NoSuchFieldError",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	NoSuchFieldError::NoSuchFieldError(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.NoSuchFieldError",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

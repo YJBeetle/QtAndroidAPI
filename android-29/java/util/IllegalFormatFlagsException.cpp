@@ -6,20 +6,12 @@ namespace java::util
 	
 	IllegalFormatFlagsException::IllegalFormatFlagsException(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	IllegalFormatFlagsException::IllegalFormatFlagsException(jstring &arg0)
+	IllegalFormatFlagsException::IllegalFormatFlagsException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.IllegalFormatFlagsException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	IllegalFormatFlagsException::IllegalFormatFlagsException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.IllegalFormatFlagsException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

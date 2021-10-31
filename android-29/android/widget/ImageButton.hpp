@@ -26,10 +26,10 @@ namespace android::widget
 		
 		ImageButton(QAndroidJniObject obj);
 		// Constructors
-		ImageButton(android::content::Context &arg0);
-		ImageButton(android::content::Context &arg0, __JniBaseClass &arg1);
-		ImageButton(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		ImageButton(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		ImageButton(android::content::Context arg0);
+		ImageButton(android::content::Context arg0, __JniBaseClass arg1);
+		ImageButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		ImageButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		ImageButton() = default;
 		
 		// Methods

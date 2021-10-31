@@ -37,14 +37,6 @@ namespace java::nio::charset
 			arg0
 		);
 	}
-	jboolean CharsetEncoder::canEncode(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"canEncode",
-			"(Ljava/lang/CharSequence;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject CharsetEncoder::charset()
 	{
 		return __thiz.callObjectMethod(

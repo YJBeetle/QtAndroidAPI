@@ -10,22 +10,12 @@ namespace android::view::textclassifier
 	
 	TextClassification_Request_Builder::TextClassification_Request_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	TextClassification_Request_Builder::TextClassification_Request_Builder(jstring &arg0, jint &arg1, jint &arg2)
+	TextClassification_Request_Builder::TextClassification_Request_Builder(jstring arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.textclassifier.TextClassification$Request$Builder",
 			"(Ljava/lang/CharSequence;II)V",
 			arg0,
-			arg1,
-			arg2
-		);
-	}
-	TextClassification_Request_Builder::TextClassification_Request_Builder(const QString &arg0, jint &arg1, jint &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.textclassifier.TextClassification$Request$Builder",
-			"(Ljava/lang/CharSequence;II)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2
 		);

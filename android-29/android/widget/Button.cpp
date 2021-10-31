@@ -9,7 +9,7 @@ namespace android::widget
 	
 	Button::Button(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Button::Button(android::content::Context &arg0)
+	Button::Button(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.Button",
@@ -17,7 +17,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	Button::Button(android::content::Context &arg0, __JniBaseClass &arg1)
+	Button::Button(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.Button",
@@ -26,7 +26,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	Button::Button(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	Button::Button(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.Button",
@@ -36,7 +36,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	Button::Button(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	Button::Button(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.Button",

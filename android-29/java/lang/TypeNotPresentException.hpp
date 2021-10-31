@@ -14,8 +14,7 @@ namespace java::lang
 		
 		TypeNotPresentException(QAndroidJniObject obj);
 		// Constructors
-		TypeNotPresentException(jstring &arg0, jthrowable &arg1);
-		TypeNotPresentException(const QString &arg0, jthrowable &arg1);
+		TypeNotPresentException(jstring arg0, jthrowable arg1);
 		TypeNotPresentException() = default;
 		
 		// Methods

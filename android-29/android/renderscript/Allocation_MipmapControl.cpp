@@ -41,15 +41,6 @@ namespace android::renderscript
 			arg0
 		);
 	}
-	QAndroidJniObject Allocation_MipmapControl::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.renderscript.Allocation$MipmapControl",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/renderscript/Allocation$MipmapControl;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray Allocation_MipmapControl::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

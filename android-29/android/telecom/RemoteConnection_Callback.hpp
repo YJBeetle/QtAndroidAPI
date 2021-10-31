@@ -45,19 +45,16 @@ namespace android::telecom
 		// Methods
 		void onAddressChanged(android::telecom::RemoteConnection arg0, android::net::Uri arg1, jint arg2);
 		void onCallerDisplayNameChanged(android::telecom::RemoteConnection arg0, jstring arg1, jint arg2);
-		void onCallerDisplayNameChanged(android::telecom::RemoteConnection arg0, const QString &arg1, jint arg2);
 		void onConferenceChanged(android::telecom::RemoteConnection arg0, android::telecom::RemoteConference arg1);
 		void onConferenceableConnectionsChanged(android::telecom::RemoteConnection arg0, __JniBaseClass arg1);
 		void onConnectionCapabilitiesChanged(android::telecom::RemoteConnection arg0, jint arg1);
 		void onConnectionEvent(android::telecom::RemoteConnection arg0, jstring arg1, android::os::Bundle arg2);
-		void onConnectionEvent(android::telecom::RemoteConnection arg0, const QString &arg1, android::os::Bundle arg2);
 		void onConnectionPropertiesChanged(android::telecom::RemoteConnection arg0, jint arg1);
 		void onDestroyed(android::telecom::RemoteConnection arg0);
 		void onDisconnected(android::telecom::RemoteConnection arg0, android::telecom::DisconnectCause arg1);
 		void onExtrasChanged(android::telecom::RemoteConnection arg0, android::os::Bundle arg1);
 		void onPostDialChar(android::telecom::RemoteConnection arg0, jchar arg1);
 		void onPostDialWait(android::telecom::RemoteConnection arg0, jstring arg1);
-		void onPostDialWait(android::telecom::RemoteConnection arg0, const QString &arg1);
 		void onRingbackRequested(android::telecom::RemoteConnection arg0, jboolean arg1);
 		void onStateChanged(android::telecom::RemoteConnection arg0, jint arg1);
 		void onStatusHintsChanged(android::telecom::RemoteConnection arg0, android::telecom::StatusHints arg1);

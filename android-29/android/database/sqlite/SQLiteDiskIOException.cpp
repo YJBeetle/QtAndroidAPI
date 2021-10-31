@@ -13,20 +13,12 @@ namespace android::database::sqlite
 			"()V"
 		);
 	}
-	SQLiteDiskIOException::SQLiteDiskIOException(jstring &arg0)
+	SQLiteDiskIOException::SQLiteDiskIOException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.database.sqlite.SQLiteDiskIOException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	SQLiteDiskIOException::SQLiteDiskIOException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.database.sqlite.SQLiteDiskIOException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

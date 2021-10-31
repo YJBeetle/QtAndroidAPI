@@ -18,15 +18,6 @@ namespace android::net
 			arg0
 		);
 	}
-	jboolean InetAddresses::isNumericAddress(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.net.InetAddresses",
-			"isNumericAddress",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject InetAddresses::parseNumericAddress(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -34,15 +25,6 @@ namespace android::net
 			"parseNumericAddress",
 			"(Ljava/lang/String;)Ljava/net/InetAddress;",
 			arg0
-		);
-	}
-	QAndroidJniObject InetAddresses::parseNumericAddress(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.net.InetAddresses",
-			"parseNumericAddress",
-			"(Ljava/lang/String;)Ljava/net/InetAddress;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace android::net

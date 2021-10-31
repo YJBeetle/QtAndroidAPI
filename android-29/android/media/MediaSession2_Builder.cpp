@@ -11,7 +11,7 @@ namespace android::media
 	
 	MediaSession2_Builder::MediaSession2_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MediaSession2_Builder::MediaSession2_Builder(android::content::Context &arg0)
+	MediaSession2_Builder::MediaSession2_Builder(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.MediaSession2$Builder",
@@ -42,14 +42,6 @@ namespace android::media
 			"setId",
 			"(Ljava/lang/String;)Landroid/media/MediaSession2$Builder;",
 			arg0
-		);
-	}
-	QAndroidJniObject MediaSession2_Builder::setId(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setId",
-			"(Ljava/lang/String;)Landroid/media/MediaSession2$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject MediaSession2_Builder::setSessionActivity(android::app::PendingIntent arg0)

@@ -31,8 +31,7 @@ namespace android::speech::tts
 		
 		Voice(QAndroidJniObject obj);
 		// Constructors
-		Voice(jstring &arg0, java::util::Locale &arg1, jint &arg2, jint &arg3, jboolean &arg4, __JniBaseClass &arg5);
-		Voice(const QString &arg0, java::util::Locale &arg1, jint &arg2, jint &arg3, jboolean &arg4, __JniBaseClass &arg5);
+		Voice(jstring arg0, java::util::Locale arg1, jint arg2, jint arg3, jboolean arg4, __JniBaseClass arg5);
 		Voice() = default;
 		
 		// Methods

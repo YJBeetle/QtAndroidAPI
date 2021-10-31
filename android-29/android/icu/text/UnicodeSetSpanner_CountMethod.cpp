@@ -33,15 +33,6 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject UnicodeSetSpanner_CountMethod::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.UnicodeSetSpanner$CountMethod",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/icu/text/UnicodeSetSpanner$CountMethod;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray UnicodeSetSpanner_CountMethod::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

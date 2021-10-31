@@ -62,15 +62,6 @@ namespace android::database::sqlite
 			arg1
 		);
 	}
-	void SQLiteProgram::bindString(jint arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"bindString",
-			"(ILjava/lang/String;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	void SQLiteProgram::clearBindings()
 	{
 		__thiz.callMethod<void>(

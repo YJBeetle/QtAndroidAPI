@@ -44,7 +44,7 @@ namespace android::mtp
 		
 		MtpDevice(QAndroidJniObject obj);
 		// Constructors
-		MtpDevice(android::hardware::usb::UsbDevice &arg0);
+		MtpDevice(android::hardware::usb::UsbDevice arg0);
 		MtpDevice() = default;
 		
 		// Methods
@@ -65,7 +65,6 @@ namespace android::mtp
 		jbyteArray getThumbnail(jint arg0);
 		jboolean importFile(jint arg0, android::os::ParcelFileDescriptor arg1);
 		jboolean importFile(jint arg0, jstring arg1);
-		jboolean importFile(jint arg0, const QString &arg1);
 		jboolean open(android::hardware::usb::UsbDeviceConnection arg0);
 		QAndroidJniObject readEvent(android::os::CancellationSignal arg0);
 		jboolean sendObject(jint arg0, jlong arg1, android::os::ParcelFileDescriptor arg2);

@@ -15,7 +15,7 @@ namespace android::service::autofill
 	
 	LuhnChecksumValidator::LuhnChecksumValidator(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	LuhnChecksumValidator::LuhnChecksumValidator(jarray &arg0)
+	LuhnChecksumValidator::LuhnChecksumValidator(jarray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.service.autofill.LuhnChecksumValidator",

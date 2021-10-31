@@ -28,9 +28,7 @@ namespace android::provider
 		
 		// Methods
 		static jstring getSetting(android::content::ContentResolver arg0, jstring arg1, jstring arg2);
-		static jstring getSetting(android::content::ContentResolver arg0, const QString &arg1, const QString &arg2);
 		static void setSetting(android::content::ContentResolver arg0, jstring arg1, jstring arg2, jstring arg3);
-		static void setSetting(android::content::ContentResolver arg0, const QString &arg1, const QString &arg2, const QString &arg3);
 	};
 } // namespace android::provider
 

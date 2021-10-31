@@ -13,20 +13,12 @@ namespace android::database::sqlite
 			"()V"
 		);
 	}
-	SQLiteDatabaseCorruptException::SQLiteDatabaseCorruptException(jstring &arg0)
+	SQLiteDatabaseCorruptException::SQLiteDatabaseCorruptException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.database.sqlite.SQLiteDatabaseCorruptException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	SQLiteDatabaseCorruptException::SQLiteDatabaseCorruptException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.database.sqlite.SQLiteDatabaseCorruptException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

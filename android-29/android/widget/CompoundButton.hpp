@@ -43,10 +43,10 @@ namespace android::widget
 		
 		CompoundButton(QAndroidJniObject obj);
 		// Constructors
-		CompoundButton(android::content::Context &arg0);
-		CompoundButton(android::content::Context &arg0, __JniBaseClass &arg1);
-		CompoundButton(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		CompoundButton(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		CompoundButton(android::content::Context arg0);
+		CompoundButton(android::content::Context arg0, __JniBaseClass arg1);
+		CompoundButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		CompoundButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		CompoundButton() = default;
 		
 		// Methods

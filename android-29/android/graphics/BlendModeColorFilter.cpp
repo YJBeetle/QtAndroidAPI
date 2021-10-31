@@ -7,7 +7,7 @@ namespace android::graphics
 	
 	BlendModeColorFilter::BlendModeColorFilter(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	BlendModeColorFilter::BlendModeColorFilter(jint &arg0, android::graphics::BlendMode &arg1)
+	BlendModeColorFilter::BlendModeColorFilter(jint arg0, android::graphics::BlendMode arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.BlendModeColorFilter",

@@ -30,7 +30,7 @@ namespace android::transition
 		ChangeScroll(QAndroidJniObject obj);
 		// Constructors
 		ChangeScroll();
-		ChangeScroll(android::content::Context &arg0, __JniBaseClass &arg1);
+		ChangeScroll(android::content::Context arg0, __JniBaseClass arg1);
 		
 		// Methods
 		void captureEndValues(android::transition::TransitionValues arg0);

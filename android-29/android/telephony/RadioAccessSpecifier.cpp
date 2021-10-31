@@ -15,7 +15,7 @@ namespace android::telephony
 	
 	RadioAccessSpecifier::RadioAccessSpecifier(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	RadioAccessSpecifier::RadioAccessSpecifier(jint &arg0, jintArray &arg1, jintArray &arg2)
+	RadioAccessSpecifier::RadioAccessSpecifier(jint arg0, jintArray arg1, jintArray arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.telephony.RadioAccessSpecifier",

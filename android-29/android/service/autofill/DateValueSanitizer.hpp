@@ -21,7 +21,7 @@ namespace android::service::autofill
 		
 		DateValueSanitizer(QAndroidJniObject obj);
 		// Constructors
-		DateValueSanitizer(android::icu::text::DateFormat &arg0);
+		DateValueSanitizer(android::icu::text::DateFormat arg0);
 		DateValueSanitizer() = default;
 		
 		// Methods

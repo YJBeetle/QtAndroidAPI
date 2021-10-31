@@ -81,30 +81,12 @@ namespace java::util::prefs
 			arg1
 		).object<jstring>();
 	}
-	jstring AbstractPreferences::get(const QString &arg0, const QString &arg1)
-	{
-		return __thiz.callObjectMethod(
-			"get",
-			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		).object<jstring>();
-	}
 	jboolean AbstractPreferences::getBoolean(jstring arg0, jboolean arg1)
 	{
 		return __thiz.callMethod<jboolean>(
 			"getBoolean",
 			"(Ljava/lang/String;Z)Z",
 			arg0,
-			arg1
-		);
-	}
-	jboolean AbstractPreferences::getBoolean(const QString &arg0, jboolean arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"getBoolean",
-			"(Ljava/lang/String;Z)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -117,30 +99,12 @@ namespace java::util::prefs
 			arg1
 		).object<jbyteArray>();
 	}
-	jbyteArray AbstractPreferences::getByteArray(const QString &arg0, jbyteArray arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getByteArray",
-			"(Ljava/lang/String;[B)[B",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		).object<jbyteArray>();
-	}
 	jdouble AbstractPreferences::getDouble(jstring arg0, jdouble arg1)
 	{
 		return __thiz.callMethod<jdouble>(
 			"getDouble",
 			"(Ljava/lang/String;D)D",
 			arg0,
-			arg1
-		);
-	}
-	jdouble AbstractPreferences::getDouble(const QString &arg0, jdouble arg1)
-	{
-		return __thiz.callMethod<jdouble>(
-			"getDouble",
-			"(Ljava/lang/String;D)D",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -153,15 +117,6 @@ namespace java::util::prefs
 			arg1
 		);
 	}
-	jfloat AbstractPreferences::getFloat(const QString &arg0, jfloat arg1)
-	{
-		return __thiz.callMethod<jfloat>(
-			"getFloat",
-			"(Ljava/lang/String;F)F",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	jint AbstractPreferences::getInt(jstring arg0, jint arg1)
 	{
 		return __thiz.callMethod<jint>(
@@ -171,30 +126,12 @@ namespace java::util::prefs
 			arg1
 		);
 	}
-	jint AbstractPreferences::getInt(const QString &arg0, jint arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"getInt",
-			"(Ljava/lang/String;I)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	jlong AbstractPreferences::getLong(jstring arg0, jlong arg1)
 	{
 		return __thiz.callMethod<jlong>(
 			"getLong",
 			"(Ljava/lang/String;J)J",
 			arg0,
-			arg1
-		);
-	}
-	jlong AbstractPreferences::getLong(const QString &arg0, jlong arg1)
-	{
-		return __thiz.callMethod<jlong>(
-			"getLong",
-			"(Ljava/lang/String;J)J",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -227,28 +164,12 @@ namespace java::util::prefs
 			arg0
 		);
 	}
-	QAndroidJniObject AbstractPreferences::node(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"node",
-			"(Ljava/lang/String;)Ljava/util/prefs/Preferences;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jboolean AbstractPreferences::nodeExists(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"nodeExists",
 			"(Ljava/lang/String;)Z",
 			arg0
-		);
-	}
-	jboolean AbstractPreferences::nodeExists(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"nodeExists",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject AbstractPreferences::parent()
@@ -267,30 +188,12 @@ namespace java::util::prefs
 			arg1
 		);
 	}
-	void AbstractPreferences::put(const QString &arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"put",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	void AbstractPreferences::putBoolean(jstring arg0, jboolean arg1)
 	{
 		__thiz.callMethod<void>(
 			"putBoolean",
 			"(Ljava/lang/String;Z)V",
 			arg0,
-			arg1
-		);
-	}
-	void AbstractPreferences::putBoolean(const QString &arg0, jboolean arg1)
-	{
-		__thiz.callMethod<void>(
-			"putBoolean",
-			"(Ljava/lang/String;Z)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -303,30 +206,12 @@ namespace java::util::prefs
 			arg1
 		);
 	}
-	void AbstractPreferences::putByteArray(const QString &arg0, jbyteArray arg1)
-	{
-		__thiz.callMethod<void>(
-			"putByteArray",
-			"(Ljava/lang/String;[B)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	void AbstractPreferences::putDouble(jstring arg0, jdouble arg1)
 	{
 		__thiz.callMethod<void>(
 			"putDouble",
 			"(Ljava/lang/String;D)V",
 			arg0,
-			arg1
-		);
-	}
-	void AbstractPreferences::putDouble(const QString &arg0, jdouble arg1)
-	{
-		__thiz.callMethod<void>(
-			"putDouble",
-			"(Ljava/lang/String;D)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -339,30 +224,12 @@ namespace java::util::prefs
 			arg1
 		);
 	}
-	void AbstractPreferences::putFloat(const QString &arg0, jfloat arg1)
-	{
-		__thiz.callMethod<void>(
-			"putFloat",
-			"(Ljava/lang/String;F)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	void AbstractPreferences::putInt(jstring arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
 			"putInt",
 			"(Ljava/lang/String;I)V",
 			arg0,
-			arg1
-		);
-	}
-	void AbstractPreferences::putInt(const QString &arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"putInt",
-			"(Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -375,29 +242,12 @@ namespace java::util::prefs
 			arg1
 		);
 	}
-	void AbstractPreferences::putLong(const QString &arg0, jlong arg1)
-	{
-		__thiz.callMethod<void>(
-			"putLong",
-			"(Ljava/lang/String;J)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	void AbstractPreferences::remove(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"remove",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void AbstractPreferences::remove(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"remove",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void AbstractPreferences::removeNode()

@@ -12,10 +12,8 @@ namespace android::webkit
 		
 		WebMessage(QAndroidJniObject obj);
 		// Constructors
-		WebMessage(jstring &arg0);
-		WebMessage(const QString &arg0);
-		WebMessage(jstring &arg0, jarray &arg1);
-		WebMessage(const QString &arg0, jarray &arg1);
+		WebMessage(jstring arg0);
+		WebMessage(jstring arg0, jarray arg1);
 		WebMessage() = default;
 		
 		// Methods

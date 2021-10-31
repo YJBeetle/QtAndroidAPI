@@ -41,15 +41,11 @@ namespace java::security
 		
 		// Methods
 		static QAndroidJniObject getInstance(jstring arg0);
-		static QAndroidJniObject getInstance(const QString &arg0);
 		static QAndroidJniObject getInstance(jstring arg0, jstring arg1);
-		static QAndroidJniObject getInstance(const QString &arg0, const QString &arg1);
 		static QAndroidJniObject getInstance(jstring arg0, java::security::Provider arg1);
-		static QAndroidJniObject getInstance(const QString &arg0, java::security::Provider arg1);
 		jobject clone();
 		jstring getAlgorithm();
 		jobject getParameter(jstring arg0);
-		jobject getParameter(const QString &arg0);
 		QAndroidJniObject getParameters();
 		QAndroidJniObject getProvider();
 		void initSign(__JniBaseClass arg0);
@@ -58,7 +54,6 @@ namespace java::security
 		void initVerify(java::security::cert::Certificate arg0);
 		void setParameter(__JniBaseClass arg0);
 		void setParameter(jstring arg0, jobject arg1);
-		void setParameter(const QString &arg0, jobject arg1);
 		jbyteArray sign();
 		jint sign(jbyteArray arg0, jint arg1, jint arg2);
 		jstring toString();

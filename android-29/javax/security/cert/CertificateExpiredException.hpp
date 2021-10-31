@@ -15,8 +15,7 @@ namespace javax::security::cert
 		CertificateExpiredException(QAndroidJniObject obj);
 		// Constructors
 		CertificateExpiredException();
-		CertificateExpiredException(jstring &arg0);
-		CertificateExpiredException(const QString &arg0);
+		CertificateExpiredException(jstring arg0);
 		
 		// Methods
 	};

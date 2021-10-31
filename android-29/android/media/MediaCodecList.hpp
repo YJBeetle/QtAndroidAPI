@@ -22,7 +22,7 @@ namespace android::media
 		
 		MediaCodecList(QAndroidJniObject obj);
 		// Constructors
-		MediaCodecList(jint &arg0);
+		MediaCodecList(jint arg0);
 		MediaCodecList() = default;
 		
 		// Methods

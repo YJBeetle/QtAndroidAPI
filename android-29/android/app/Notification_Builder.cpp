@@ -20,7 +20,7 @@ namespace android::app
 	
 	Notification_Builder::Notification_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Notification_Builder::Notification_Builder(android::content::Context &arg0)
+	Notification_Builder::Notification_Builder(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.Notification$Builder",
@@ -28,22 +28,13 @@ namespace android::app
 			arg0.__jniObject().object()
 		);
 	}
-	Notification_Builder::Notification_Builder(android::content::Context &arg0, jstring &arg1)
+	Notification_Builder::Notification_Builder(android::content::Context arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.Notification$Builder",
 			"(Landroid/content/Context;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	Notification_Builder::Notification_Builder(android::content::Context &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.app.Notification$Builder",
-			"(Landroid/content/Context;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	
@@ -76,16 +67,6 @@ namespace android::app
 			arg2.__jniObject().object()
 		);
 	}
-	QAndroidJniObject Notification_Builder::addAction(jint arg0, const QString &arg1, android::app::PendingIntent arg2)
-	{
-		return __thiz.callObjectMethod(
-			"addAction",
-			"(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)Landroid/app/Notification$Builder;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object()
-		);
-	}
 	QAndroidJniObject Notification_Builder::addExtras(android::os::Bundle arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -108,14 +89,6 @@ namespace android::app
 			"addPerson",
 			"(Ljava/lang/String;)Landroid/app/Notification$Builder;",
 			arg0
-		);
-	}
-	QAndroidJniObject Notification_Builder::addPerson(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"addPerson",
-			"(Ljava/lang/String;)Landroid/app/Notification$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Notification_Builder::build()
@@ -223,28 +196,12 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Builder::setCategory(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setCategory",
-			"(Ljava/lang/String;)Landroid/app/Notification$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Notification_Builder::setChannelId(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setChannelId",
 			"(Ljava/lang/String;)Landroid/app/Notification$Builder;",
 			arg0
-		);
-	}
-	QAndroidJniObject Notification_Builder::setChannelId(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setChannelId",
-			"(Ljava/lang/String;)Landroid/app/Notification$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Notification_Builder::setChronometerCountDown(jboolean arg0)
@@ -287,14 +244,6 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Builder::setContentInfo(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setContentInfo",
-			"(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Notification_Builder::setContentIntent(android::app::PendingIntent arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -311,28 +260,12 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Builder::setContentText(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setContentText",
-			"(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Notification_Builder::setContentTitle(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setContentTitle",
 			"(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;",
 			arg0
-		);
-	}
-	QAndroidJniObject Notification_Builder::setContentTitle(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setContentTitle",
-			"(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Notification_Builder::setCustomBigContentView(android::widget::RemoteViews arg0)
@@ -398,14 +331,6 @@ namespace android::app
 			"setGroup",
 			"(Ljava/lang/String;)Landroid/app/Notification$Builder;",
 			arg0
-		);
-	}
-	QAndroidJniObject Notification_Builder::setGroup(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setGroup",
-			"(Ljava/lang/String;)Landroid/app/Notification$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Notification_Builder::setGroupAlertBehavior(jint arg0)
@@ -532,28 +457,12 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Builder::setSettingsText(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setSettingsText",
-			"(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Notification_Builder::setShortcutId(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setShortcutId",
 			"(Ljava/lang/String;)Landroid/app/Notification$Builder;",
 			arg0
-		);
-	}
-	QAndroidJniObject Notification_Builder::setShortcutId(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setShortcutId",
-			"(Ljava/lang/String;)Landroid/app/Notification$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Notification_Builder::setShowWhen(jboolean arg0)
@@ -595,14 +504,6 @@ namespace android::app
 			"setSortKey",
 			"(Ljava/lang/String;)Landroid/app/Notification$Builder;",
 			arg0
-		);
-	}
-	QAndroidJniObject Notification_Builder::setSortKey(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setSortKey",
-			"(Ljava/lang/String;)Landroid/app/Notification$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Notification_Builder::setSound(android::net::Uri arg0)
@@ -647,14 +548,6 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Builder::setSubText(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setSubText",
-			"(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Notification_Builder::setTicker(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -663,29 +556,12 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Builder::setTicker(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setTicker",
-			"(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Notification_Builder::setTicker(jstring arg0, android::widget::RemoteViews arg1)
 	{
 		return __thiz.callObjectMethod(
 			"setTicker",
 			"(Ljava/lang/CharSequence;Landroid/widget/RemoteViews;)Landroid/app/Notification$Builder;",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Notification_Builder::setTicker(const QString &arg0, android::widget::RemoteViews arg1)
-	{
-		return __thiz.callObjectMethod(
-			"setTicker",
-			"(Ljava/lang/CharSequence;Landroid/widget/RemoteViews;)Landroid/app/Notification$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

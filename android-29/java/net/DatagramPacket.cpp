@@ -8,7 +8,7 @@ namespace java::net
 	
 	DatagramPacket::DatagramPacket(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DatagramPacket::DatagramPacket(jbyteArray &arg0, jint &arg1)
+	DatagramPacket::DatagramPacket(jbyteArray arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.DatagramPacket",
@@ -17,7 +17,7 @@ namespace java::net
 			arg1
 		);
 	}
-	DatagramPacket::DatagramPacket(jbyteArray &arg0, jint &arg1, jint &arg2)
+	DatagramPacket::DatagramPacket(jbyteArray arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.DatagramPacket",
@@ -27,7 +27,7 @@ namespace java::net
 			arg2
 		);
 	}
-	DatagramPacket::DatagramPacket(jbyteArray &arg0, jint &arg1, java::net::SocketAddress &arg2)
+	DatagramPacket::DatagramPacket(jbyteArray arg0, jint arg1, java::net::SocketAddress arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.DatagramPacket",
@@ -37,7 +37,7 @@ namespace java::net
 			arg2.__jniObject().object()
 		);
 	}
-	DatagramPacket::DatagramPacket(jbyteArray &arg0, jint &arg1, jint &arg2, java::net::SocketAddress &arg3)
+	DatagramPacket::DatagramPacket(jbyteArray arg0, jint arg1, jint arg2, java::net::SocketAddress arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.DatagramPacket",
@@ -48,7 +48,7 @@ namespace java::net
 			arg3.__jniObject().object()
 		);
 	}
-	DatagramPacket::DatagramPacket(jbyteArray &arg0, jint &arg1, java::net::InetAddress &arg2, jint &arg3)
+	DatagramPacket::DatagramPacket(jbyteArray arg0, jint arg1, java::net::InetAddress arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.DatagramPacket",
@@ -59,7 +59,7 @@ namespace java::net
 			arg3
 		);
 	}
-	DatagramPacket::DatagramPacket(jbyteArray &arg0, jint &arg1, jint &arg2, java::net::InetAddress &arg3, jint &arg4)
+	DatagramPacket::DatagramPacket(jbyteArray arg0, jint arg1, jint arg2, java::net::InetAddress arg3, jint arg4)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.DatagramPacket",

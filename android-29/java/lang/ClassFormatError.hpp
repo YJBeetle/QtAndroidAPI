@@ -15,8 +15,7 @@ namespace java::lang
 		ClassFormatError(QAndroidJniObject obj);
 		// Constructors
 		ClassFormatError();
-		ClassFormatError(jstring &arg0);
-		ClassFormatError(const QString &arg0);
+		ClassFormatError(jstring arg0);
 		
 		// Methods
 	};

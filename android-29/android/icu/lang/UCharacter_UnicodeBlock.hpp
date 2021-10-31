@@ -606,7 +606,6 @@ namespace android::icu::lang
 		
 		// Methods
 		static QAndroidJniObject forName(jstring arg0);
-		static QAndroidJniObject forName(const QString &arg0);
 		static QAndroidJniObject getInstance(jint arg0);
 		static QAndroidJniObject of(jint arg0);
 		jint getID();

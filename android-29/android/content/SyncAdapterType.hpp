@@ -20,14 +20,12 @@ namespace android::content
 		
 		SyncAdapterType(QAndroidJniObject obj);
 		// Constructors
-		SyncAdapterType(android::os::Parcel &arg0);
-		SyncAdapterType(jstring &arg0, jstring &arg1, jboolean &arg2, jboolean &arg3);
-		SyncAdapterType(const QString &arg0, const QString &arg1, jboolean &arg2, jboolean &arg3);
+		SyncAdapterType(android::os::Parcel arg0);
+		SyncAdapterType(jstring arg0, jstring arg1, jboolean arg2, jboolean arg3);
 		SyncAdapterType() = default;
 		
 		// Methods
 		static QAndroidJniObject newKey(jstring arg0, jstring arg1);
-		static QAndroidJniObject newKey(const QString &arg0, const QString &arg1);
 		jboolean allowParallelSyncs();
 		jint describeContents();
 		jboolean equals(jobject arg0);

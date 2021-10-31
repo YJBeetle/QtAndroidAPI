@@ -15,7 +15,7 @@ namespace android::renderscript
 		Long2(QAndroidJniObject obj);
 		// Constructors
 		Long2();
-		Long2(jlong &arg0, jlong &arg1);
+		Long2(jlong arg0, jlong arg1);
 		
 		// Methods
 	};

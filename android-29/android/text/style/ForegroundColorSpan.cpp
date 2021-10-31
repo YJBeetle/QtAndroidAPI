@@ -8,7 +8,7 @@ namespace android::text::style
 	
 	ForegroundColorSpan::ForegroundColorSpan(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ForegroundColorSpan::ForegroundColorSpan(android::os::Parcel &arg0)
+	ForegroundColorSpan::ForegroundColorSpan(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.ForegroundColorSpan",
@@ -16,7 +16,7 @@ namespace android::text::style
 			arg0.__jniObject().object()
 		);
 	}
-	ForegroundColorSpan::ForegroundColorSpan(jint &arg0)
+	ForegroundColorSpan::ForegroundColorSpan(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.ForegroundColorSpan",

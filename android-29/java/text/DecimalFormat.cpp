@@ -24,7 +24,7 @@ namespace java::text
 			"()V"
 		);
 	}
-	DecimalFormat::DecimalFormat(jstring &arg0)
+	DecimalFormat::DecimalFormat(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.text.DecimalFormat",
@@ -32,29 +32,12 @@ namespace java::text
 			arg0
 		);
 	}
-	DecimalFormat::DecimalFormat(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.text.DecimalFormat",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	DecimalFormat::DecimalFormat(jstring &arg0, java::text::DecimalFormatSymbols &arg1)
+	DecimalFormat::DecimalFormat(jstring arg0, java::text::DecimalFormatSymbols arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.text.DecimalFormat",
 			"(Ljava/lang/String;Ljava/text/DecimalFormatSymbols;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	DecimalFormat::DecimalFormat(const QString &arg0, java::text::DecimalFormatSymbols &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.text.DecimalFormat",
-			"(Ljava/lang/String;Ljava/text/DecimalFormatSymbols;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -68,28 +51,12 @@ namespace java::text
 			arg0
 		);
 	}
-	void DecimalFormat::applyLocalizedPattern(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"applyLocalizedPattern",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void DecimalFormat::applyPattern(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"applyPattern",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void DecimalFormat::applyPattern(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"applyPattern",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jobject DecimalFormat::clone()
@@ -266,15 +233,6 @@ namespace java::text
 			arg1.__jniObject().object()
 		);
 	}
-	QAndroidJniObject DecimalFormat::parse(const QString &arg0, java::text::ParsePosition arg1)
-	{
-		return __thiz.callObjectMethod(
-			"parse",
-			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Number;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	void DecimalFormat::setCurrency(java::util::Currency arg0)
 	{
 		__thiz.callMethod<void>(
@@ -363,28 +321,12 @@ namespace java::text
 			arg0
 		);
 	}
-	void DecimalFormat::setNegativePrefix(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setNegativePrefix",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void DecimalFormat::setNegativeSuffix(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setNegativeSuffix",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void DecimalFormat::setNegativeSuffix(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setNegativeSuffix",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void DecimalFormat::setParseBigDecimal(jboolean arg0)
@@ -403,28 +345,12 @@ namespace java::text
 			arg0
 		);
 	}
-	void DecimalFormat::setPositivePrefix(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPositivePrefix",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void DecimalFormat::setPositiveSuffix(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setPositiveSuffix",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void DecimalFormat::setPositiveSuffix(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPositiveSuffix",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void DecimalFormat::setRoundingMode(java::math::RoundingMode arg0)

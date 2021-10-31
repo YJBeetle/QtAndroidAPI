@@ -21,7 +21,7 @@ namespace android::text::style
 		
 		MaskFilterSpan(QAndroidJniObject obj);
 		// Constructors
-		MaskFilterSpan(android::graphics::MaskFilter &arg0);
+		MaskFilterSpan(android::graphics::MaskFilter arg0);
 		MaskFilterSpan() = default;
 		
 		// Methods

@@ -66,7 +66,7 @@ namespace android::graphics::drawable
 		ShapeDrawable(QAndroidJniObject obj);
 		// Constructors
 		ShapeDrawable();
-		ShapeDrawable(android::graphics::drawable::shapes::Shape &arg0);
+		ShapeDrawable(android::graphics::drawable::shapes::Shape arg0);
 		
 		// Methods
 		void applyTheme(android::content::res::Resources_Theme arg0);

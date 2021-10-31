@@ -17,8 +17,7 @@ namespace java::sql
 		
 		DriverPropertyInfo(QAndroidJniObject obj);
 		// Constructors
-		DriverPropertyInfo(jstring &arg0, jstring &arg1);
-		DriverPropertyInfo(const QString &arg0, const QString &arg1);
+		DriverPropertyInfo(jstring arg0, jstring arg1);
 		DriverPropertyInfo() = default;
 		
 		// Methods

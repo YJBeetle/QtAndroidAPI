@@ -6,7 +6,7 @@ namespace java::text
 	
 	ParsePosition::ParsePosition(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ParsePosition::ParsePosition(jint &arg0)
+	ParsePosition::ParsePosition(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.text.ParsePosition",

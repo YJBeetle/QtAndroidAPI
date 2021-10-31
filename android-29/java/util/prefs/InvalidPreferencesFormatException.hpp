@@ -13,11 +13,9 @@ namespace java::util::prefs
 		
 		InvalidPreferencesFormatException(QAndroidJniObject obj);
 		// Constructors
-		InvalidPreferencesFormatException(jstring &arg0);
-		InvalidPreferencesFormatException(const QString &arg0);
-		InvalidPreferencesFormatException(jthrowable &arg0);
-		InvalidPreferencesFormatException(jstring &arg0, jthrowable &arg1);
-		InvalidPreferencesFormatException(const QString &arg0, jthrowable &arg1);
+		InvalidPreferencesFormatException(jstring arg0);
+		InvalidPreferencesFormatException(jthrowable arg0);
+		InvalidPreferencesFormatException(jstring arg0, jthrowable arg1);
 		InvalidPreferencesFormatException() = default;
 		
 		// Methods

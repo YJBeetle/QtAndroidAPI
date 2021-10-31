@@ -72,7 +72,7 @@ namespace android::view::animation
 	
 	GridLayoutAnimationController::GridLayoutAnimationController(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	GridLayoutAnimationController::GridLayoutAnimationController(android::view::animation::Animation &arg0)
+	GridLayoutAnimationController::GridLayoutAnimationController(android::view::animation::Animation arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.GridLayoutAnimationController",
@@ -80,7 +80,7 @@ namespace android::view::animation
 			arg0.__jniObject().object()
 		);
 	}
-	GridLayoutAnimationController::GridLayoutAnimationController(android::content::Context &arg0, __JniBaseClass &arg1)
+	GridLayoutAnimationController::GridLayoutAnimationController(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.GridLayoutAnimationController",
@@ -89,7 +89,7 @@ namespace android::view::animation
 			arg1.__jniObject().object()
 		);
 	}
-	GridLayoutAnimationController::GridLayoutAnimationController(android::view::animation::Animation &arg0, jfloat &arg1, jfloat &arg2)
+	GridLayoutAnimationController::GridLayoutAnimationController(android::view::animation::Animation arg0, jfloat arg1, jfloat arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.GridLayoutAnimationController",

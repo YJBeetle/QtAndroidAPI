@@ -15,8 +15,7 @@ namespace android::os
 		ParcelFormatException(QAndroidJniObject obj);
 		// Constructors
 		ParcelFormatException();
-		ParcelFormatException(jstring &arg0);
-		ParcelFormatException(const QString &arg0);
+		ParcelFormatException(jstring arg0);
 		
 		// Methods
 	};

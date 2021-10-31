@@ -16,7 +16,7 @@ namespace java::util
 		
 		IllegalFormatCodePointException(QAndroidJniObject obj);
 		// Constructors
-		IllegalFormatCodePointException(jint &arg0);
+		IllegalFormatCodePointException(jint arg0);
 		IllegalFormatCodePointException() = default;
 		
 		// Methods

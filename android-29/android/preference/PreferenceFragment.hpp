@@ -51,7 +51,6 @@ namespace android::preference
 		void addPreferencesFromIntent(android::content::Intent arg0);
 		void addPreferencesFromResource(jint arg0);
 		QAndroidJniObject findPreference(jstring arg0);
-		QAndroidJniObject findPreference(const QString &arg0);
 		QAndroidJniObject getPreferenceManager();
 		QAndroidJniObject getPreferenceScreen();
 		void onActivityCreated(android::os::Bundle arg0);

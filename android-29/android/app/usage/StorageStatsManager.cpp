@@ -47,16 +47,6 @@ namespace android::app::usage
 			arg2.__jniObject().object()
 		);
 	}
-	QAndroidJniObject StorageStatsManager::queryStatsForPackage(java::util::UUID arg0, const QString &arg1, android::os::UserHandle arg2)
-	{
-		return __thiz.callObjectMethod(
-			"queryStatsForPackage",
-			"(Ljava/util/UUID;Ljava/lang/String;Landroid/os/UserHandle;)Landroid/app/usage/StorageStats;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object()
-		);
-	}
 	QAndroidJniObject StorageStatsManager::queryStatsForUid(java::util::UUID arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(

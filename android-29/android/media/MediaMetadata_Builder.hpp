@@ -25,20 +25,15 @@ namespace android::media
 		MediaMetadata_Builder(QAndroidJniObject obj);
 		// Constructors
 		MediaMetadata_Builder();
-		MediaMetadata_Builder(android::media::MediaMetadata &arg0);
+		MediaMetadata_Builder(android::media::MediaMetadata arg0);
 		
 		// Methods
 		QAndroidJniObject build();
 		QAndroidJniObject putBitmap(jstring arg0, android::graphics::Bitmap arg1);
-		QAndroidJniObject putBitmap(const QString &arg0, android::graphics::Bitmap arg1);
 		QAndroidJniObject putLong(jstring arg0, jlong arg1);
-		QAndroidJniObject putLong(const QString &arg0, jlong arg1);
 		QAndroidJniObject putRating(jstring arg0, android::media::Rating arg1);
-		QAndroidJniObject putRating(const QString &arg0, android::media::Rating arg1);
 		QAndroidJniObject putString(jstring arg0, jstring arg1);
-		QAndroidJniObject putString(const QString &arg0, const QString &arg1);
 		QAndroidJniObject putText(jstring arg0, jstring arg1);
-		QAndroidJniObject putText(const QString &arg0, const QString &arg1);
 	};
 } // namespace android::media
 

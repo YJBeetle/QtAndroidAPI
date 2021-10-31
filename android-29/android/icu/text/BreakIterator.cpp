@@ -364,14 +364,6 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void BreakIterator::setText(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setText",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void BreakIterator::setText(__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(

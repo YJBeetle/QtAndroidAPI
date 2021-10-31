@@ -13,7 +13,7 @@ namespace java::security
 			"()V"
 		);
 	}
-	NoSuchAlgorithmException::NoSuchAlgorithmException(jstring &arg0)
+	NoSuchAlgorithmException::NoSuchAlgorithmException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.NoSuchAlgorithmException",
@@ -21,15 +21,7 @@ namespace java::security
 			arg0
 		);
 	}
-	NoSuchAlgorithmException::NoSuchAlgorithmException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.NoSuchAlgorithmException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	NoSuchAlgorithmException::NoSuchAlgorithmException(jthrowable &arg0)
+	NoSuchAlgorithmException::NoSuchAlgorithmException(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.NoSuchAlgorithmException",
@@ -37,21 +29,12 @@ namespace java::security
 			arg0
 		);
 	}
-	NoSuchAlgorithmException::NoSuchAlgorithmException(jstring &arg0, jthrowable &arg1)
+	NoSuchAlgorithmException::NoSuchAlgorithmException(jstring arg0, jthrowable arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.NoSuchAlgorithmException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
-			arg1
-		);
-	}
-	NoSuchAlgorithmException::NoSuchAlgorithmException(const QString &arg0, jthrowable &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.NoSuchAlgorithmException",
-			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

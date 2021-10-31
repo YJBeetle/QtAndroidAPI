@@ -17,8 +17,8 @@ namespace android::view::inputmethod
 		
 		InputBinding(QAndroidJniObject obj);
 		// Constructors
-		InputBinding(__JniBaseClass &arg0, android::view::inputmethod::InputBinding &arg1);
-		InputBinding(__JniBaseClass &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		InputBinding(__JniBaseClass arg0, android::view::inputmethod::InputBinding &arg1);
+		InputBinding(__JniBaseClass arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		InputBinding() = default;
 		
 		// Methods

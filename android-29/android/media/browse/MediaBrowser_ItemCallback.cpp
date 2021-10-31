@@ -24,14 +24,6 @@ namespace android::media::browse
 			arg0
 		);
 	}
-	void MediaBrowser_ItemCallback::onError(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"onError",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void MediaBrowser_ItemCallback::onItemLoaded(android::media::browse::MediaBrowser_MediaItem arg0)
 	{
 		__thiz.callMethod<void>(

@@ -55,15 +55,12 @@ namespace java::time::format
 		QAndroidJniObject appendInstant(jint arg0);
 		QAndroidJniObject appendLiteral(jchar arg0);
 		QAndroidJniObject appendLiteral(jstring arg0);
-		QAndroidJniObject appendLiteral(const QString &arg0);
 		QAndroidJniObject appendLocalized(java::time::format::FormatStyle arg0, java::time::format::FormatStyle arg1);
 		QAndroidJniObject appendLocalizedOffset(java::time::format::TextStyle arg0);
 		QAndroidJniObject appendOffset(jstring arg0, jstring arg1);
-		QAndroidJniObject appendOffset(const QString &arg0, const QString &arg1);
 		QAndroidJniObject appendOffsetId();
 		QAndroidJniObject appendOptional(java::time::format::DateTimeFormatter arg0);
 		QAndroidJniObject appendPattern(jstring arg0);
-		QAndroidJniObject appendPattern(const QString &arg0);
 		QAndroidJniObject appendText(__JniBaseClass arg0);
 		QAndroidJniObject appendText(__JniBaseClass arg0, java::time::format::TextStyle arg1);
 		QAndroidJniObject appendText(__JniBaseClass arg0, __JniBaseClass arg1);

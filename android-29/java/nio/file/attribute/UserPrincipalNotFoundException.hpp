@@ -14,8 +14,7 @@ namespace java::nio::file::attribute
 		
 		UserPrincipalNotFoundException(QAndroidJniObject obj);
 		// Constructors
-		UserPrincipalNotFoundException(jstring &arg0);
-		UserPrincipalNotFoundException(const QString &arg0);
+		UserPrincipalNotFoundException(jstring arg0);
 		UserPrincipalNotFoundException() = default;
 		
 		// Methods

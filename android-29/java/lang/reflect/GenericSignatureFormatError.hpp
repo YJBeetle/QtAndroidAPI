@@ -16,8 +16,7 @@ namespace java::lang::reflect
 		GenericSignatureFormatError(QAndroidJniObject obj);
 		// Constructors
 		GenericSignatureFormatError();
-		GenericSignatureFormatError(jstring &arg0);
-		GenericSignatureFormatError(const QString &arg0);
+		GenericSignatureFormatError(jstring arg0);
 		
 		// Methods
 	};

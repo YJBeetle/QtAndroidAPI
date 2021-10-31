@@ -40,10 +40,10 @@ namespace android::widget
 		
 		LinearLayout(QAndroidJniObject obj);
 		// Constructors
-		LinearLayout(android::content::Context &arg0);
-		LinearLayout(android::content::Context &arg0, __JniBaseClass &arg1);
-		LinearLayout(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		LinearLayout(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		LinearLayout(android::content::Context arg0);
+		LinearLayout(android::content::Context arg0, __JniBaseClass arg1);
+		LinearLayout(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		LinearLayout(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		LinearLayout() = default;
 		
 		// Methods

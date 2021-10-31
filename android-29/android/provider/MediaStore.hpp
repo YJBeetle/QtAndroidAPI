@@ -67,7 +67,6 @@ namespace android::provider
 		static QAndroidJniObject getMediaUri(android::content::Context arg0, android::net::Uri arg1);
 		static jstring getVersion(android::content::Context arg0);
 		static jstring getVersion(android::content::Context arg0, jstring arg1);
-		static jstring getVersion(android::content::Context arg0, const QString &arg1);
 		static jstring getVolumeName(android::net::Uri arg0);
 		static QAndroidJniObject setIncludePending(android::net::Uri arg0);
 		static QAndroidJniObject setRequireOriginal(android::net::Uri arg0);

@@ -13,7 +13,7 @@ namespace android::text
 			"()V"
 		);
 	}
-	LoginFilter_PasswordFilterGMail::LoginFilter_PasswordFilterGMail(jboolean &arg0)
+	LoginFilter_PasswordFilterGMail::LoginFilter_PasswordFilterGMail(jboolean arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.LoginFilter$PasswordFilterGMail",

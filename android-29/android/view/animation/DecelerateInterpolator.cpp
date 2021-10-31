@@ -14,7 +14,7 @@ namespace android::view::animation
 			"()V"
 		);
 	}
-	DecelerateInterpolator::DecelerateInterpolator(jfloat &arg0)
+	DecelerateInterpolator::DecelerateInterpolator(jfloat arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.DecelerateInterpolator",
@@ -22,7 +22,7 @@ namespace android::view::animation
 			arg0
 		);
 	}
-	DecelerateInterpolator::DecelerateInterpolator(android::content::Context &arg0, __JniBaseClass &arg1)
+	DecelerateInterpolator::DecelerateInterpolator(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.DecelerateInterpolator",

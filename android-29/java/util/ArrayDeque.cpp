@@ -15,7 +15,7 @@ namespace java::util
 			"()V"
 		);
 	}
-	ArrayDeque::ArrayDeque(jint &arg0)
+	ArrayDeque::ArrayDeque(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.ArrayDeque",
@@ -23,7 +23,7 @@ namespace java::util
 			arg0
 		);
 	}
-	ArrayDeque::ArrayDeque(__JniBaseClass &arg0)
+	ArrayDeque::ArrayDeque(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.ArrayDeque",

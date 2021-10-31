@@ -106,7 +106,6 @@ namespace android::accessibilityservice
 		QAndroidJniObject getServiceInfo();
 		QAndroidJniObject getSoftKeyboardController();
 		jobject getSystemService(jstring arg0);
-		jobject getSystemService(const QString &arg0);
 		QAndroidJniObject getWindows();
 		void onAccessibilityEvent(android::view::accessibility::AccessibilityEvent arg0);
 		QAndroidJniObject onBind(android::content::Intent arg0);

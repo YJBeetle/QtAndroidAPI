@@ -14,8 +14,7 @@ namespace android::media
 		
 		MediaPlayer_NoDrmSchemeException(QAndroidJniObject obj);
 		// Constructors
-		MediaPlayer_NoDrmSchemeException(jstring &arg0);
-		MediaPlayer_NoDrmSchemeException(const QString &arg0);
+		MediaPlayer_NoDrmSchemeException(jstring arg0);
 		MediaPlayer_NoDrmSchemeException() = default;
 		
 		// Methods

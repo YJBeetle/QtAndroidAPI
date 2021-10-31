@@ -17,7 +17,6 @@ namespace android::print
 		// Methods
 		void onWriteCancelled();
 		void onWriteFailed(jstring arg0);
-		void onWriteFailed(const QString &arg0);
 		void onWriteFinished(jarray arg0);
 	};
 } // namespace android::print

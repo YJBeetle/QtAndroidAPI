@@ -64,7 +64,7 @@ namespace android::bluetooth
 		
 		BluetoothGattCharacteristic(QAndroidJniObject obj);
 		// Constructors
-		BluetoothGattCharacteristic(java::util::UUID &arg0, jint &arg1, jint &arg2);
+		BluetoothGattCharacteristic(java::util::UUID arg0, jint arg1, jint arg2);
 		BluetoothGattCharacteristic() = default;
 		
 		// Methods
@@ -84,7 +84,6 @@ namespace android::bluetooth
 		jint getWriteType();
 		jboolean setValue(jbyteArray arg0);
 		jboolean setValue(jstring arg0);
-		jboolean setValue(const QString &arg0);
 		jboolean setValue(jint arg0, jint arg1, jint arg2);
 		jboolean setValue(jint arg0, jint arg1, jint arg2, jint arg3);
 		void setWriteType(jint arg0);

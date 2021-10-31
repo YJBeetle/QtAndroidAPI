@@ -12,7 +12,7 @@ namespace android::text::style
 	
 	TextAppearanceSpan::TextAppearanceSpan(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	TextAppearanceSpan::TextAppearanceSpan(android::os::Parcel &arg0)
+	TextAppearanceSpan::TextAppearanceSpan(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.TextAppearanceSpan",
@@ -20,7 +20,7 @@ namespace android::text::style
 			arg0.__jniObject().object()
 		);
 	}
-	TextAppearanceSpan::TextAppearanceSpan(android::content::Context &arg0, jint &arg1)
+	TextAppearanceSpan::TextAppearanceSpan(android::content::Context arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.TextAppearanceSpan",
@@ -29,7 +29,7 @@ namespace android::text::style
 			arg1
 		);
 	}
-	TextAppearanceSpan::TextAppearanceSpan(android::content::Context &arg0, jint &arg1, jint &arg2)
+	TextAppearanceSpan::TextAppearanceSpan(android::content::Context arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.TextAppearanceSpan",
@@ -39,24 +39,12 @@ namespace android::text::style
 			arg2
 		);
 	}
-	TextAppearanceSpan::TextAppearanceSpan(jstring &arg0, jint &arg1, jint &arg2, android::content::res::ColorStateList &arg3, android::content::res::ColorStateList &arg4)
+	TextAppearanceSpan::TextAppearanceSpan(jstring arg0, jint arg1, jint arg2, android::content::res::ColorStateList arg3, android::content::res::ColorStateList arg4)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.TextAppearanceSpan",
 			"(Ljava/lang/String;IILandroid/content/res/ColorStateList;Landroid/content/res/ColorStateList;)V",
 			arg0,
-			arg1,
-			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object()
-		);
-	}
-	TextAppearanceSpan::TextAppearanceSpan(const QString &arg0, jint &arg1, jint &arg2, android::content::res::ColorStateList &arg3, android::content::res::ColorStateList &arg4)
-	{
-		__thiz = QAndroidJniObject(
-			"android.text.style.TextAppearanceSpan",
-			"(Ljava/lang/String;IILandroid/content/res/ColorStateList;Landroid/content/res/ColorStateList;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2,
 			arg3.__jniObject().object(),

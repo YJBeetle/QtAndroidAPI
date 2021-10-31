@@ -18,7 +18,7 @@ namespace android::print
 		
 		PageRange(QAndroidJniObject obj);
 		// Constructors
-		PageRange(jint &arg0, jint &arg1);
+		PageRange(jint arg0, jint arg1);
 		PageRange() = default;
 		
 		// Methods

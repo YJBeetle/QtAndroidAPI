@@ -1274,15 +1274,6 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject Character_UnicodeScript::forName(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.lang.Character$UnicodeScript",
-			"forName",
-			"(Ljava/lang/String;)Ljava/lang/Character$UnicodeScript;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Character_UnicodeScript::of(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -1299,15 +1290,6 @@ namespace java::lang
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/lang/Character$UnicodeScript;",
 			arg0
-		);
-	}
-	QAndroidJniObject Character_UnicodeScript::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.lang.Character$UnicodeScript",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/lang/Character$UnicodeScript;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jarray Character_UnicodeScript::values()

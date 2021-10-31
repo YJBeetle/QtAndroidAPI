@@ -24,10 +24,8 @@ namespace android::app
 		
 		Notification_MessagingStyle_Message(QAndroidJniObject obj);
 		// Constructors
-		Notification_MessagingStyle_Message(jstring &arg0, jlong &arg1, android::app::Person &arg2);
-		Notification_MessagingStyle_Message(const QString &arg0, jlong &arg1, android::app::Person &arg2);
-		Notification_MessagingStyle_Message(jstring &arg0, jlong &arg1, jstring &arg2);
-		Notification_MessagingStyle_Message(const QString &arg0, jlong &arg1, const QString &arg2);
+		Notification_MessagingStyle_Message(jstring arg0, jlong arg1, android::app::Person arg2);
+		Notification_MessagingStyle_Message(jstring arg0, jlong arg1, jstring arg2);
 		Notification_MessagingStyle_Message() = default;
 		
 		// Methods
@@ -39,7 +37,6 @@ namespace android::app
 		jstring getText();
 		jlong getTimestamp();
 		QAndroidJniObject setData(jstring arg0, android::net::Uri arg1);
-		QAndroidJniObject setData(const QString &arg0, android::net::Uri arg1);
 	};
 } // namespace android::app
 

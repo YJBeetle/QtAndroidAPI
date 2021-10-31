@@ -15,10 +15,8 @@ namespace android::database
 		SQLException(QAndroidJniObject obj);
 		// Constructors
 		SQLException();
-		SQLException(jstring &arg0);
-		SQLException(const QString &arg0);
-		SQLException(jstring &arg0, jthrowable &arg1);
-		SQLException(const QString &arg0, jthrowable &arg1);
+		SQLException(jstring arg0);
+		SQLException(jstring arg0, jthrowable arg1);
 		
 		// Methods
 	};

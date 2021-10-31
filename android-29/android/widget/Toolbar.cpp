@@ -11,7 +11,7 @@ namespace android::widget
 	
 	Toolbar::Toolbar(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Toolbar::Toolbar(android::content::Context &arg0)
+	Toolbar::Toolbar(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.Toolbar",
@@ -19,7 +19,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	Toolbar::Toolbar(android::content::Context &arg0, __JniBaseClass &arg1)
+	Toolbar::Toolbar(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.Toolbar",
@@ -28,7 +28,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	Toolbar::Toolbar(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	Toolbar::Toolbar(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.Toolbar",
@@ -38,7 +38,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	Toolbar::Toolbar(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	Toolbar::Toolbar(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.Toolbar",
@@ -309,14 +309,6 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Toolbar::setCollapseContentDescription(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setCollapseContentDescription",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void Toolbar::setCollapseIcon(android::graphics::drawable::Drawable arg0)
 	{
 		__thiz.callMethod<void>(
@@ -399,14 +391,6 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Toolbar::setLogoDescription(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setLogoDescription",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void Toolbar::setNavigationContentDescription(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -421,14 +405,6 @@ namespace android::widget
 			"setNavigationContentDescription",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
-		);
-	}
-	void Toolbar::setNavigationContentDescription(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setNavigationContentDescription",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void Toolbar::setNavigationIcon(android::graphics::drawable::Drawable arg0)
@@ -495,14 +471,6 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Toolbar::setSubtitle(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSubtitle",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void Toolbar::setSubtitleTextAppearance(android::content::Context arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
@@ -534,14 +502,6 @@ namespace android::widget
 			"setTitle",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
-		);
-	}
-	void Toolbar::setTitle(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTitle",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void Toolbar::setTitleMargin(jint arg0, jint arg1, jint arg2, jint arg3)

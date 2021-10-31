@@ -15,11 +15,9 @@ namespace android::accounts
 		NetworkErrorException(QAndroidJniObject obj);
 		// Constructors
 		NetworkErrorException();
-		NetworkErrorException(jstring &arg0);
-		NetworkErrorException(const QString &arg0);
-		NetworkErrorException(jthrowable &arg0);
-		NetworkErrorException(jstring &arg0, jthrowable &arg1);
-		NetworkErrorException(const QString &arg0, jthrowable &arg1);
+		NetworkErrorException(jstring arg0);
+		NetworkErrorException(jthrowable arg0);
+		NetworkErrorException(jstring arg0, jthrowable arg1);
 		
 		// Methods
 	};

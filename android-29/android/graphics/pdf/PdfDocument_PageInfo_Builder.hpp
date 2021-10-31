@@ -20,7 +20,7 @@ namespace android::graphics::pdf
 		
 		PdfDocument_PageInfo_Builder(QAndroidJniObject obj);
 		// Constructors
-		PdfDocument_PageInfo_Builder(jint &arg0, jint &arg1, jint &arg2);
+		PdfDocument_PageInfo_Builder(jint arg0, jint arg1, jint arg2);
 		PdfDocument_PageInfo_Builder() = default;
 		
 		// Methods

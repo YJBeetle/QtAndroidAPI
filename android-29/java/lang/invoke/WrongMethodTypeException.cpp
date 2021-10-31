@@ -13,20 +13,12 @@ namespace java::lang::invoke
 			"()V"
 		);
 	}
-	WrongMethodTypeException::WrongMethodTypeException(jstring &arg0)
+	WrongMethodTypeException::WrongMethodTypeException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.invoke.WrongMethodTypeException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	WrongMethodTypeException::WrongMethodTypeException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.invoke.WrongMethodTypeException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

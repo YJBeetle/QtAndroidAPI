@@ -18,7 +18,7 @@ namespace java::net
 			"()V"
 		);
 	}
-	MulticastSocket::MulticastSocket(jint &arg0)
+	MulticastSocket::MulticastSocket(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.MulticastSocket",
@@ -26,7 +26,7 @@ namespace java::net
 			arg0
 		);
 	}
-	MulticastSocket::MulticastSocket(java::net::SocketAddress &arg0)
+	MulticastSocket::MulticastSocket(java::net::SocketAddress arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.MulticastSocket",

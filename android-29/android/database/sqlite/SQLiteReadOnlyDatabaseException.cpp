@@ -13,20 +13,12 @@ namespace android::database::sqlite
 			"()V"
 		);
 	}
-	SQLiteReadOnlyDatabaseException::SQLiteReadOnlyDatabaseException(jstring &arg0)
+	SQLiteReadOnlyDatabaseException::SQLiteReadOnlyDatabaseException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.database.sqlite.SQLiteReadOnlyDatabaseException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	SQLiteReadOnlyDatabaseException::SQLiteReadOnlyDatabaseException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.database.sqlite.SQLiteReadOnlyDatabaseException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

@@ -8,7 +8,7 @@ namespace java::sql
 	
 	Date::Date(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Date::Date(jlong &arg0)
+	Date::Date(jlong arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.sql.Date",
@@ -16,7 +16,7 @@ namespace java::sql
 			arg0
 		);
 	}
-	Date::Date(jint &arg0, jint &arg1, jint &arg2)
+	Date::Date(jint arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.sql.Date",
@@ -35,15 +35,6 @@ namespace java::sql
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/sql/Date;",
 			arg0
-		);
-	}
-	QAndroidJniObject Date::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.sql.Date",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/sql/Date;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Date::valueOf(java::time::LocalDate arg0)

@@ -55,18 +55,6 @@ namespace android::companion
 			arg4.__jniObject().object()
 		);
 	}
-	QAndroidJniObject BluetoothLeDeviceFilter_Builder::setRenameFromBytes(const QString &arg0, const QString &arg1, jint arg2, jint arg3, java::nio::ByteOrder arg4)
-	{
-		return __thiz.callObjectMethod(
-			"setRenameFromBytes",
-			"(Ljava/lang/String;Ljava/lang/String;IILjava/nio/ByteOrder;)Landroid/companion/BluetoothLeDeviceFilter$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2,
-			arg3,
-			arg4.__jniObject().object()
-		);
-	}
 	QAndroidJniObject BluetoothLeDeviceFilter_Builder::setRenameFromName(jstring arg0, jstring arg1, jint arg2, jint arg3)
 	{
 		return __thiz.callObjectMethod(
@@ -74,17 +62,6 @@ namespace android::companion
 			"(Ljava/lang/String;Ljava/lang/String;II)Landroid/companion/BluetoothLeDeviceFilter$Builder;",
 			arg0,
 			arg1,
-			arg2,
-			arg3
-		);
-	}
-	QAndroidJniObject BluetoothLeDeviceFilter_Builder::setRenameFromName(const QString &arg0, const QString &arg1, jint arg2, jint arg3)
-	{
-		return __thiz.callObjectMethod(
-			"setRenameFromName",
-			"(Ljava/lang/String;Ljava/lang/String;II)Landroid/companion/BluetoothLeDeviceFilter$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2,
 			arg3
 		);

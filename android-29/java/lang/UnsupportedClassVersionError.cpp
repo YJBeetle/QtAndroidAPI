@@ -13,20 +13,12 @@ namespace java::lang
 			"()V"
 		);
 	}
-	UnsupportedClassVersionError::UnsupportedClassVersionError(jstring &arg0)
+	UnsupportedClassVersionError::UnsupportedClassVersionError(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.UnsupportedClassVersionError",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	UnsupportedClassVersionError::UnsupportedClassVersionError(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.UnsupportedClassVersionError",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

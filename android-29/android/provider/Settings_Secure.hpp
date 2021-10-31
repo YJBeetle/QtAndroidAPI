@@ -91,33 +91,19 @@ namespace android::provider
 		
 		// Methods
 		static jfloat getFloat(android::content::ContentResolver arg0, jstring arg1);
-		static jfloat getFloat(android::content::ContentResolver arg0, const QString &arg1);
 		static jfloat getFloat(android::content::ContentResolver arg0, jstring arg1, jfloat arg2);
-		static jfloat getFloat(android::content::ContentResolver arg0, const QString &arg1, jfloat arg2);
 		static jint getInt(android::content::ContentResolver arg0, jstring arg1);
-		static jint getInt(android::content::ContentResolver arg0, const QString &arg1);
 		static jint getInt(android::content::ContentResolver arg0, jstring arg1, jint arg2);
-		static jint getInt(android::content::ContentResolver arg0, const QString &arg1, jint arg2);
 		static jlong getLong(android::content::ContentResolver arg0, jstring arg1);
-		static jlong getLong(android::content::ContentResolver arg0, const QString &arg1);
 		static jlong getLong(android::content::ContentResolver arg0, jstring arg1, jlong arg2);
-		static jlong getLong(android::content::ContentResolver arg0, const QString &arg1, jlong arg2);
 		static jstring getString(android::content::ContentResolver arg0, jstring arg1);
-		static jstring getString(android::content::ContentResolver arg0, const QString &arg1);
 		static QAndroidJniObject getUriFor(jstring arg0);
-		static QAndroidJniObject getUriFor(const QString &arg0);
 		static jboolean isLocationProviderEnabled(android::content::ContentResolver arg0, jstring arg1);
-		static jboolean isLocationProviderEnabled(android::content::ContentResolver arg0, const QString &arg1);
 		static jboolean putFloat(android::content::ContentResolver arg0, jstring arg1, jfloat arg2);
-		static jboolean putFloat(android::content::ContentResolver arg0, const QString &arg1, jfloat arg2);
 		static jboolean putInt(android::content::ContentResolver arg0, jstring arg1, jint arg2);
-		static jboolean putInt(android::content::ContentResolver arg0, const QString &arg1, jint arg2);
 		static jboolean putLong(android::content::ContentResolver arg0, jstring arg1, jlong arg2);
-		static jboolean putLong(android::content::ContentResolver arg0, const QString &arg1, jlong arg2);
 		static jboolean putString(android::content::ContentResolver arg0, jstring arg1, jstring arg2);
-		static jboolean putString(android::content::ContentResolver arg0, const QString &arg1, const QString &arg2);
 		static void setLocationProviderEnabled(android::content::ContentResolver arg0, jstring arg1, jboolean arg2);
-		static void setLocationProviderEnabled(android::content::ContentResolver arg0, const QString &arg1, jboolean arg2);
 	};
 } // namespace android::provider
 

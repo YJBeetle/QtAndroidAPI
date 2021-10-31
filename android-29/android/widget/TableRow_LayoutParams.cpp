@@ -29,7 +29,7 @@ namespace android::widget
 			"()V"
 		);
 	}
-	TableRow_LayoutParams::TableRow_LayoutParams(android::view::ViewGroup_LayoutParams &arg0)
+	TableRow_LayoutParams::TableRow_LayoutParams(android::view::ViewGroup_LayoutParams arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.TableRow$LayoutParams",
@@ -37,7 +37,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	TableRow_LayoutParams::TableRow_LayoutParams(android::view::ViewGroup_MarginLayoutParams &arg0)
+	TableRow_LayoutParams::TableRow_LayoutParams(android::view::ViewGroup_MarginLayoutParams arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.TableRow$LayoutParams",
@@ -45,7 +45,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	TableRow_LayoutParams::TableRow_LayoutParams(jint &arg0)
+	TableRow_LayoutParams::TableRow_LayoutParams(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.TableRow$LayoutParams",
@@ -53,7 +53,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	TableRow_LayoutParams::TableRow_LayoutParams(android::content::Context &arg0, __JniBaseClass &arg1)
+	TableRow_LayoutParams::TableRow_LayoutParams(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.TableRow$LayoutParams",
@@ -62,7 +62,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	TableRow_LayoutParams::TableRow_LayoutParams(jint &arg0, jint &arg1)
+	TableRow_LayoutParams::TableRow_LayoutParams(jint arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.TableRow$LayoutParams",
@@ -71,7 +71,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	TableRow_LayoutParams::TableRow_LayoutParams(jint &arg0, jint &arg1, jfloat &arg2)
+	TableRow_LayoutParams::TableRow_LayoutParams(jint arg0, jint arg1, jfloat arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.TableRow$LayoutParams",

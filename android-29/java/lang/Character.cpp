@@ -498,7 +498,7 @@ namespace java::lang
 	
 	Character::Character(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Character::Character(jchar &arg0)
+	Character::Character(jchar arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.Character",
@@ -537,16 +537,6 @@ namespace java::lang
 			arg1
 		);
 	}
-	jint Character::codePointAt(const QString &arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"java.lang.Character",
-			"codePointAt",
-			"(Ljava/lang/CharSequence;I)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	jint Character::codePointAt(jcharArray arg0, jint arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -575,16 +565,6 @@ namespace java::lang
 			"codePointBefore",
 			"(Ljava/lang/CharSequence;I)I",
 			arg0,
-			arg1
-		);
-	}
-	jint Character::codePointBefore(const QString &arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"java.lang.Character",
-			"codePointBefore",
-			"(Ljava/lang/CharSequence;I)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -621,17 +601,6 @@ namespace java::lang
 			arg2
 		);
 	}
-	jint Character::codePointCount(const QString &arg0, jint arg1, jint arg2)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"java.lang.Character",
-			"codePointCount",
-			"(Ljava/lang/CharSequence;II)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2
-		);
-	}
 	jint Character::codePointOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -639,15 +608,6 @@ namespace java::lang
 			"codePointOf",
 			"(Ljava/lang/String;)I",
 			arg0
-		);
-	}
-	jint Character::codePointOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"java.lang.Character",
-			"codePointOf",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jint Character::compare(jchar arg0, jchar arg1)
@@ -1184,17 +1144,6 @@ namespace java::lang
 			"offsetByCodePoints",
 			"(Ljava/lang/CharSequence;II)I",
 			arg0,
-			arg1,
-			arg2
-		);
-	}
-	jint Character::offsetByCodePoints(const QString &arg0, jint arg1, jint arg2)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"java.lang.Character",
-			"offsetByCodePoints",
-			"(Ljava/lang/CharSequence;II)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2
 		);

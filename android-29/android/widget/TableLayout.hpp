@@ -35,8 +35,8 @@ namespace android::widget
 		
 		TableLayout(QAndroidJniObject obj);
 		// Constructors
-		TableLayout(android::content::Context &arg0);
-		TableLayout(android::content::Context &arg0, __JniBaseClass &arg1);
+		TableLayout(android::content::Context arg0);
+		TableLayout(android::content::Context arg0, __JniBaseClass arg1);
 		TableLayout() = default;
 		
 		// Methods

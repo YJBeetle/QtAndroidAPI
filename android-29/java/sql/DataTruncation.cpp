@@ -6,7 +6,7 @@ namespace java::sql
 	
 	DataTruncation::DataTruncation(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DataTruncation::DataTruncation(jint &arg0, jboolean &arg1, jboolean &arg2, jint &arg3, jint &arg4)
+	DataTruncation::DataTruncation(jint arg0, jboolean arg1, jboolean arg2, jint arg3, jint arg4)
 	{
 		__thiz = QAndroidJniObject(
 			"java.sql.DataTruncation",
@@ -18,7 +18,7 @@ namespace java::sql
 			arg4
 		);
 	}
-	DataTruncation::DataTruncation(jint &arg0, jboolean &arg1, jboolean &arg2, jint &arg3, jint &arg4, jthrowable &arg5)
+	DataTruncation::DataTruncation(jint arg0, jboolean arg1, jboolean arg2, jint arg3, jint arg4, jthrowable arg5)
 	{
 		__thiz = QAndroidJniObject(
 			"java.sql.DataTruncation",

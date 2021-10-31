@@ -8,7 +8,7 @@ namespace android::app
 	
 	FragmentBreadCrumbs::FragmentBreadCrumbs(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	FragmentBreadCrumbs::FragmentBreadCrumbs(android::content::Context &arg0)
+	FragmentBreadCrumbs::FragmentBreadCrumbs(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.FragmentBreadCrumbs",
@@ -16,7 +16,7 @@ namespace android::app
 			arg0.__jniObject().object()
 		);
 	}
-	FragmentBreadCrumbs::FragmentBreadCrumbs(android::content::Context &arg0, __JniBaseClass &arg1)
+	FragmentBreadCrumbs::FragmentBreadCrumbs(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.FragmentBreadCrumbs",
@@ -25,7 +25,7 @@ namespace android::app
 			arg1.__jniObject().object()
 		);
 	}
-	FragmentBreadCrumbs::FragmentBreadCrumbs(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	FragmentBreadCrumbs::FragmentBreadCrumbs(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.FragmentBreadCrumbs",
@@ -78,16 +78,6 @@ namespace android::app
 			arg2.__jniObject().object()
 		);
 	}
-	void FragmentBreadCrumbs::setParentTitle(const QString &arg0, const QString &arg1, __JniBaseClass arg2)
-	{
-		__thiz.callMethod<void>(
-			"setParentTitle",
-			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/view/View$OnClickListener;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object()
-		);
-	}
 	void FragmentBreadCrumbs::setTitle(jstring arg0, jstring arg1)
 	{
 		__thiz.callMethod<void>(
@@ -95,15 +85,6 @@ namespace android::app
 			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V",
 			arg0,
 			arg1
-		);
-	}
-	void FragmentBreadCrumbs::setTitle(const QString &arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"setTitle",
-			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 } // namespace android::app

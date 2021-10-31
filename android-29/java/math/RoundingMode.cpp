@@ -90,15 +90,6 @@ namespace java::math
 			arg0
 		);
 	}
-	QAndroidJniObject RoundingMode::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.math.RoundingMode",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/math/RoundingMode;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray RoundingMode::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

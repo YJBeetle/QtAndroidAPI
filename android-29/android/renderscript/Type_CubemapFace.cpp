@@ -89,15 +89,6 @@ namespace android::renderscript
 			arg0
 		);
 	}
-	QAndroidJniObject Type_CubemapFace::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.renderscript.Type$CubemapFace",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/renderscript/Type$CubemapFace;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray Type_CubemapFace::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

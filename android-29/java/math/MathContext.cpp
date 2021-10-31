@@ -40,7 +40,7 @@ namespace java::math
 	
 	MathContext::MathContext(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MathContext::MathContext(jint &arg0)
+	MathContext::MathContext(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.math.MathContext",
@@ -48,7 +48,7 @@ namespace java::math
 			arg0
 		);
 	}
-	MathContext::MathContext(jstring &arg0)
+	MathContext::MathContext(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.math.MathContext",
@@ -56,15 +56,7 @@ namespace java::math
 			arg0
 		);
 	}
-	MathContext::MathContext(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.math.MathContext",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	MathContext::MathContext(jint &arg0, java::math::RoundingMode &arg1)
+	MathContext::MathContext(jint arg0, java::math::RoundingMode arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.math.MathContext",

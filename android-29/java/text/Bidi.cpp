@@ -34,7 +34,7 @@ namespace java::text
 	
 	Bidi::Bidi(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Bidi::Bidi(__JniBaseClass &arg0)
+	Bidi::Bidi(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.text.Bidi",
@@ -42,7 +42,7 @@ namespace java::text
 			arg0.__jniObject().object()
 		);
 	}
-	Bidi::Bidi(jstring &arg0, jint &arg1)
+	Bidi::Bidi(jstring arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.text.Bidi",
@@ -51,16 +51,7 @@ namespace java::text
 			arg1
 		);
 	}
-	Bidi::Bidi(const QString &arg0, jint &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.text.Bidi",
-			"(Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
-	Bidi::Bidi(jcharArray &arg0, jint &arg1, jbyteArray &arg2, jint &arg3, jint &arg4, jint &arg5)
+	Bidi::Bidi(jcharArray arg0, jint arg1, jbyteArray arg2, jint arg3, jint arg4, jint arg5)
 	{
 		__thiz = QAndroidJniObject(
 			"java.text.Bidi",

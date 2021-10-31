@@ -93,14 +93,6 @@ namespace android::app
 			arg0
 		);
 	}
-	void ListFragment::setEmptyText(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setEmptyText",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void ListFragment::setListAdapter(__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(

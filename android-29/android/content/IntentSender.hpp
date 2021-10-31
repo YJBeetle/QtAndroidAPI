@@ -47,7 +47,6 @@ namespace android::content
 		jint hashCode();
 		void sendIntent(android::content::Context arg0, jint arg1, android::content::Intent arg2, __JniBaseClass arg3, android::os::Handler arg4);
 		void sendIntent(android::content::Context arg0, jint arg1, android::content::Intent arg2, __JniBaseClass arg3, android::os::Handler arg4, jstring arg5);
-		void sendIntent(android::content::Context arg0, jint arg1, android::content::Intent arg2, __JniBaseClass arg3, android::os::Handler arg4, const QString &arg5);
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

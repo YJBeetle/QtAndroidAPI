@@ -21,9 +21,9 @@ namespace java::util::concurrent
 		Phaser(QAndroidJniObject obj);
 		// Constructors
 		Phaser();
-		Phaser(jint &arg0);
+		Phaser(jint arg0);
 		Phaser(java::util::concurrent::Phaser &arg0);
-		Phaser(java::util::concurrent::Phaser &arg0, jint &arg1);
+		Phaser(java::util::concurrent::Phaser &arg0, jint arg1);
 		
 		// Methods
 		jint arrive();

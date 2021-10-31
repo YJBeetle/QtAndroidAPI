@@ -25,8 +25,8 @@ namespace java::lang::invoke
 		
 		MutableCallSite(QAndroidJniObject obj);
 		// Constructors
-		MutableCallSite(java::lang::invoke::MethodHandle &arg0);
-		MutableCallSite(java::lang::invoke::MethodType &arg0);
+		MutableCallSite(java::lang::invoke::MethodHandle arg0);
+		MutableCallSite(java::lang::invoke::MethodType arg0);
 		MutableCallSite() = default;
 		
 		// Methods

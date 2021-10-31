@@ -8,22 +8,13 @@ namespace android::os
 	
 	TokenWatcher::TokenWatcher(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	TokenWatcher::TokenWatcher(android::os::Handler &arg0, jstring &arg1)
+	TokenWatcher::TokenWatcher(android::os::Handler arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.TokenWatcher",
 			"(Landroid/os/Handler;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	TokenWatcher::TokenWatcher(android::os::Handler &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.os.TokenWatcher",
-			"(Landroid/os/Handler;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	
@@ -35,15 +26,6 @@ namespace android::os
 			"(Landroid/os/IBinder;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	void TokenWatcher::acquire(__JniBaseClass arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"acquire",
-			"(Landroid/os/IBinder;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void TokenWatcher::acquired()

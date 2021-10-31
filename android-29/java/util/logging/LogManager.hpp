@@ -70,10 +70,8 @@ namespace java::util::logging
 		jboolean addLogger(java::util::logging::Logger arg0);
 		void checkAccess();
 		QAndroidJniObject getLogger(jstring arg0);
-		QAndroidJniObject getLogger(const QString &arg0);
 		QAndroidJniObject getLoggerNames();
 		jstring getProperty(jstring arg0);
-		jstring getProperty(const QString &arg0);
 		void readConfiguration();
 		void readConfiguration(java::io::InputStream arg0);
 		void removeConfigurationListener(__JniBaseClass arg0);

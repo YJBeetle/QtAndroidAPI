@@ -17,7 +17,7 @@ namespace java::util::concurrent
 			"()V"
 		);
 	}
-	DelayQueue::DelayQueue(__JniBaseClass &arg0)
+	DelayQueue::DelayQueue(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.DelayQueue",

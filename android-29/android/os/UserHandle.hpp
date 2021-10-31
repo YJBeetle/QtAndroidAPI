@@ -17,7 +17,7 @@ namespace android::os
 		
 		UserHandle(QAndroidJniObject obj);
 		// Constructors
-		UserHandle(android::os::Parcel &arg0);
+		UserHandle(android::os::Parcel arg0);
 		UserHandle() = default;
 		
 		// Methods

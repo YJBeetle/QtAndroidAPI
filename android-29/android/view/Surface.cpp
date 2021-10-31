@@ -47,7 +47,7 @@ namespace android::view
 	
 	Surface::Surface(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Surface::Surface(android::graphics::SurfaceTexture &arg0)
+	Surface::Surface(android::graphics::SurfaceTexture arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.Surface",
@@ -55,7 +55,7 @@ namespace android::view
 			arg0.__jniObject().object()
 		);
 	}
-	Surface::Surface(android::view::SurfaceControl &arg0)
+	Surface::Surface(android::view::SurfaceControl arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.Surface",

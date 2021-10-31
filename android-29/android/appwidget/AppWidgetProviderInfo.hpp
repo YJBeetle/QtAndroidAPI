@@ -63,7 +63,7 @@ namespace android::appwidget
 		AppWidgetProviderInfo(QAndroidJniObject obj);
 		// Constructors
 		AppWidgetProviderInfo();
-		AppWidgetProviderInfo(android::os::Parcel &arg0);
+		AppWidgetProviderInfo(android::os::Parcel arg0);
 		
 		// Methods
 		QAndroidJniObject clone();

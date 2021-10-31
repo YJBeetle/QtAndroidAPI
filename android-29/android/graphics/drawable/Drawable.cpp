@@ -39,15 +39,6 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	QAndroidJniObject Drawable::createFromPath(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.drawable.Drawable",
-			"createFromPath",
-			"(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Drawable::createFromResourceStream(android::content::res::Resources arg0, android::util::TypedValue arg1, java::io::InputStream arg2, jstring arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -58,18 +49,6 @@ namespace android::graphics::drawable
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
 			arg3
-		);
-	}
-	QAndroidJniObject Drawable::createFromResourceStream(android::content::res::Resources arg0, android::util::TypedValue arg1, java::io::InputStream arg2, const QString &arg3)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.drawable.Drawable",
-			"createFromResourceStream",
-			"(Landroid/content/res/Resources;Landroid/util/TypedValue;Ljava/io/InputStream;Ljava/lang/String;)Landroid/graphics/drawable/Drawable;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			QAndroidJniObject::fromString(arg3).object<jstring>()
 		);
 	}
 	QAndroidJniObject Drawable::createFromResourceStream(android::content::res::Resources arg0, android::util::TypedValue arg1, java::io::InputStream arg2, jstring arg3, android::graphics::BitmapFactory_Options arg4)
@@ -85,19 +64,6 @@ namespace android::graphics::drawable
 			arg4.__jniObject().object()
 		);
 	}
-	QAndroidJniObject Drawable::createFromResourceStream(android::content::res::Resources arg0, android::util::TypedValue arg1, java::io::InputStream arg2, const QString &arg3, android::graphics::BitmapFactory_Options arg4)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.drawable.Drawable",
-			"createFromResourceStream",
-			"(Landroid/content/res/Resources;Landroid/util/TypedValue;Ljava/io/InputStream;Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/drawable/Drawable;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			QAndroidJniObject::fromString(arg3).object<jstring>(),
-			arg4.__jniObject().object()
-		);
-	}
 	QAndroidJniObject Drawable::createFromStream(java::io::InputStream arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -106,16 +72,6 @@ namespace android::graphics::drawable
 			"(Ljava/io/InputStream;Ljava/lang/String;)Landroid/graphics/drawable/Drawable;",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	QAndroidJniObject Drawable::createFromStream(java::io::InputStream arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.drawable.Drawable",
-			"createFromStream",
-			"(Ljava/io/InputStream;Ljava/lang/String;)Landroid/graphics/drawable/Drawable;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	QAndroidJniObject Drawable::createFromXml(android::content::res::Resources arg0, __JniBaseClass arg1)

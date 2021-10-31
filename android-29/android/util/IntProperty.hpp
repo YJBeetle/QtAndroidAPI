@@ -17,8 +17,7 @@ namespace android::util
 		
 		IntProperty(QAndroidJniObject obj);
 		// Constructors
-		IntProperty(jstring &arg0);
-		IntProperty(const QString &arg0);
+		IntProperty(jstring arg0);
 		IntProperty() = default;
 		
 		// Methods

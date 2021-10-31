@@ -178,14 +178,6 @@ namespace android::app::slice
 			arg0
 		);
 	}
-	jboolean SliceItem::hasHint(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasHint",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void SliceItem::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(

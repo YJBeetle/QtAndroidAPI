@@ -32,7 +32,7 @@ namespace android::media::session
 	
 	MediaSession::MediaSession(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MediaSession::MediaSession(android::content::Context &arg0, jstring &arg1)
+	MediaSession::MediaSession(android::content::Context arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.session.MediaSession",
@@ -41,32 +41,13 @@ namespace android::media::session
 			arg1
 		);
 	}
-	MediaSession::MediaSession(android::content::Context &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.media.session.MediaSession",
-			"(Landroid/content/Context;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	MediaSession::MediaSession(android::content::Context &arg0, jstring &arg1, android::os::Bundle &arg2)
+	MediaSession::MediaSession(android::content::Context arg0, jstring arg1, android::os::Bundle arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.session.MediaSession",
 			"(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	MediaSession::MediaSession(android::content::Context &arg0, const QString &arg1, android::os::Bundle &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.media.session.MediaSession",
-			"(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}
@@ -113,15 +94,6 @@ namespace android::media::session
 			"sendSessionEvent",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void MediaSession::sendSessionEvent(const QString &arg0, android::os::Bundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"sendSessionEvent",
-			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -220,14 +192,6 @@ namespace android::media::session
 			"setQueueTitle",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
-		);
-	}
-	void MediaSession::setQueueTitle(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setQueueTitle",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void MediaSession::setRatingType(jint arg0)

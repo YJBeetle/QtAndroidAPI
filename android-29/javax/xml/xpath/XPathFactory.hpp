@@ -24,16 +24,11 @@ namespace javax::xml::xpath
 		static QAndroidJniObject newDefaultInstance();
 		static QAndroidJniObject newInstance();
 		static QAndroidJniObject newInstance(jstring arg0);
-		static QAndroidJniObject newInstance(const QString &arg0);
 		static QAndroidJniObject newInstance(jstring arg0, jstring arg1, java::lang::ClassLoader arg2);
-		static QAndroidJniObject newInstance(const QString &arg0, const QString &arg1, java::lang::ClassLoader arg2);
 		jboolean getFeature(jstring arg0);
-		jboolean getFeature(const QString &arg0);
 		jboolean isObjectModelSupported(jstring arg0);
-		jboolean isObjectModelSupported(const QString &arg0);
 		QAndroidJniObject newXPath();
 		void setFeature(jstring arg0, jboolean arg1);
-		void setFeature(const QString &arg0, jboolean arg1);
 		void setXPathFunctionResolver(__JniBaseClass arg0);
 		void setXPathVariableResolver(__JniBaseClass arg0);
 	};

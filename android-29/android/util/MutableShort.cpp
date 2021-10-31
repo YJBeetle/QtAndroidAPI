@@ -12,7 +12,7 @@ namespace android::util
 	
 	MutableShort::MutableShort(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MutableShort::MutableShort(jshort &arg0)
+	MutableShort::MutableShort(jshort arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.MutableShort",

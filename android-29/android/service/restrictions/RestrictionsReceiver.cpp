@@ -39,17 +39,5 @@ namespace android::service::restrictions
 			arg4.__jniObject().object()
 		);
 	}
-	void RestrictionsReceiver::onRequestPermission(android::content::Context arg0, const QString &arg1, const QString &arg2, const QString &arg3, android::os::PersistableBundle arg4)
-	{
-		__thiz.callMethod<void>(
-			"onRequestPermission",
-			"(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/PersistableBundle;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			QAndroidJniObject::fromString(arg3).object<jstring>(),
-			arg4.__jniObject().object()
-		);
-	}
 } // namespace android::service::restrictions
 

@@ -14,10 +14,8 @@ namespace javax::security::auth
 		
 		AuthPermission(QAndroidJniObject obj);
 		// Constructors
-		AuthPermission(jstring &arg0);
-		AuthPermission(const QString &arg0);
-		AuthPermission(jstring &arg0, jstring &arg1);
-		AuthPermission(const QString &arg0, const QString &arg1);
+		AuthPermission(jstring arg0);
+		AuthPermission(jstring arg0, jstring arg1);
 		AuthPermission() = default;
 		
 		// Methods

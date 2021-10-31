@@ -6,20 +6,12 @@ namespace android::renderscript
 	
 	RSDriverException::RSDriverException(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	RSDriverException::RSDriverException(jstring &arg0)
+	RSDriverException::RSDriverException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.renderscript.RSDriverException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	RSDriverException::RSDriverException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.renderscript.RSDriverException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

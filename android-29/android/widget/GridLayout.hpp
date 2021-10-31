@@ -52,10 +52,10 @@ namespace android::widget
 		
 		GridLayout(QAndroidJniObject obj);
 		// Constructors
-		GridLayout(android::content::Context &arg0);
-		GridLayout(android::content::Context &arg0, __JniBaseClass &arg1);
-		GridLayout(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		GridLayout(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		GridLayout(android::content::Context arg0);
+		GridLayout(android::content::Context arg0, __JniBaseClass arg1);
+		GridLayout(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		GridLayout(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		GridLayout() = default;
 		
 		// Methods

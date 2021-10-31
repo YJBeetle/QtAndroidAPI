@@ -8,7 +8,7 @@ namespace android::media
 	
 	MediaCas::MediaCas(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MediaCas::MediaCas(jint &arg0)
+	MediaCas::MediaCas(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.MediaCas",
@@ -73,14 +73,6 @@ namespace android::media
 			"provision",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void MediaCas::provision(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"provision",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void MediaCas::refreshEntitlements(jint arg0, jbyteArray arg1)

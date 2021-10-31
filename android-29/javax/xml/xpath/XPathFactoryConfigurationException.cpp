@@ -6,7 +6,7 @@ namespace javax::xml::xpath
 	
 	XPathFactoryConfigurationException::XPathFactoryConfigurationException(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	XPathFactoryConfigurationException::XPathFactoryConfigurationException(jstring &arg0)
+	XPathFactoryConfigurationException::XPathFactoryConfigurationException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.xpath.XPathFactoryConfigurationException",
@@ -14,15 +14,7 @@ namespace javax::xml::xpath
 			arg0
 		);
 	}
-	XPathFactoryConfigurationException::XPathFactoryConfigurationException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.xml.xpath.XPathFactoryConfigurationException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	XPathFactoryConfigurationException::XPathFactoryConfigurationException(jthrowable &arg0)
+	XPathFactoryConfigurationException::XPathFactoryConfigurationException(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.xpath.XPathFactoryConfigurationException",

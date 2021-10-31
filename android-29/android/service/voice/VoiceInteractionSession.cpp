@@ -87,7 +87,7 @@ namespace android::service::voice
 	
 	VoiceInteractionSession::VoiceInteractionSession(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	VoiceInteractionSession::VoiceInteractionSession(android::content::Context &arg0)
+	VoiceInteractionSession::VoiceInteractionSession(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.service.voice.VoiceInteractionSession",
@@ -95,7 +95,7 @@ namespace android::service::voice
 			arg0.__jniObject().object()
 		);
 	}
-	VoiceInteractionSession::VoiceInteractionSession(android::content::Context &arg0, android::os::Handler &arg1)
+	VoiceInteractionSession::VoiceInteractionSession(android::content::Context arg0, android::os::Handler arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.service.voice.VoiceInteractionSession",
@@ -119,17 +119,6 @@ namespace android::service::voice
 			"dump",
 			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3
-		);
-	}
-	void VoiceInteractionSession::dump(const QString &arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
 			arg3

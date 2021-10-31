@@ -17,7 +17,7 @@ namespace android::view::accessibility
 	
 	AccessibilityNodeInfo_TouchDelegateInfo::AccessibilityNodeInfo_TouchDelegateInfo(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AccessibilityNodeInfo_TouchDelegateInfo::AccessibilityNodeInfo_TouchDelegateInfo(__JniBaseClass &arg0)
+	AccessibilityNodeInfo_TouchDelegateInfo::AccessibilityNodeInfo_TouchDelegateInfo(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.accessibility.AccessibilityNodeInfo$TouchDelegateInfo",

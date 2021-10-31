@@ -325,15 +325,6 @@ namespace android::media
 			arg1
 		);
 	}
-	void MediaPlayer::addTimedTextSource(java::io::FileDescriptor arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"addTimedTextSource",
-			"(Ljava/io/FileDescriptor;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	void MediaPlayer::addTimedTextSource(jstring arg0, jstring arg1)
 	{
 		__thiz.callMethod<void>(
@@ -341,15 +332,6 @@ namespace android::media
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	void MediaPlayer::addTimedTextSource(const QString &arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"addTimedTextSource",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void MediaPlayer::addTimedTextSource(android::content::Context arg0, android::net::Uri arg1, jstring arg2)
@@ -362,16 +344,6 @@ namespace android::media
 			arg2
 		);
 	}
-	void MediaPlayer::addTimedTextSource(android::content::Context arg0, android::net::Uri arg1, const QString &arg2)
-	{
-		__thiz.callMethod<void>(
-			"addTimedTextSource",
-			"(Landroid/content/Context;Landroid/net/Uri;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	void MediaPlayer::addTimedTextSource(java::io::FileDescriptor arg0, jlong arg1, jlong arg2, jstring arg3)
 	{
 		__thiz.callMethod<void>(
@@ -381,17 +353,6 @@ namespace android::media
 			arg1,
 			arg2,
 			arg3
-		);
-	}
-	void MediaPlayer::addTimedTextSource(java::io::FileDescriptor arg0, jlong arg1, jlong arg2, const QString &arg3)
-	{
-		__thiz.callMethod<void>(
-			"addTimedTextSource",
-			"(Ljava/io/FileDescriptor;JJLjava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2,
-			QAndroidJniObject::fromString(arg3).object<jstring>()
 		);
 	}
 	void MediaPlayer::attachAuxEffect(jint arg0)
@@ -461,14 +422,6 @@ namespace android::media
 			arg0
 		).object<jstring>();
 	}
-	jstring MediaPlayer::getDrmPropertyString(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getDrmPropertyString",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
 	jint MediaPlayer::getDuration()
 	{
 		return __thiz.callMethod<jint>(
@@ -484,18 +437,6 @@ namespace android::media
 			arg0,
 			arg1,
 			arg2,
-			arg3,
-			arg4.__jniObject().object()
-		);
-	}
-	QAndroidJniObject MediaPlayer::getKeyRequest(jbyteArray arg0, jbyteArray arg1, const QString &arg2, jint arg3, __JniBaseClass arg4)
-	{
-		return __thiz.callObjectMethod(
-			"getKeyRequest",
-			"([B[BLjava/lang/String;ILjava/util/Map;)Landroid/media/MediaDrm$KeyRequest;",
-			arg0,
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
 			arg3,
 			arg4.__jniObject().object()
 		);
@@ -749,14 +690,6 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaPlayer::setDataSource(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDataSource",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void MediaPlayer::setDataSource(android::content::Context arg0, android::net::Uri arg1)
 	{
 		__thiz.callMethod<void>(
@@ -812,15 +745,6 @@ namespace android::media
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	void MediaPlayer::setDrmPropertyString(const QString &arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"setDrmPropertyString",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void MediaPlayer::setLooping(jboolean arg0)

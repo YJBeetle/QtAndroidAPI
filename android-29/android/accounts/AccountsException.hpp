@@ -14,11 +14,9 @@ namespace android::accounts
 		AccountsException(QAndroidJniObject obj);
 		// Constructors
 		AccountsException();
-		AccountsException(jstring &arg0);
-		AccountsException(const QString &arg0);
-		AccountsException(jthrowable &arg0);
-		AccountsException(jstring &arg0, jthrowable &arg1);
-		AccountsException(const QString &arg0, jthrowable &arg1);
+		AccountsException(jstring arg0);
+		AccountsException(jthrowable arg0);
+		AccountsException(jstring arg0, jthrowable arg1);
 		
 		// Methods
 	};

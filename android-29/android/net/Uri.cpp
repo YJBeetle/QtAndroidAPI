@@ -36,15 +36,6 @@ namespace android::net
 			arg0
 		).object<jstring>();
 	}
-	jstring Uri::decode(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.net.Uri",
-			"decode",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
 	jstring Uri::encode(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -52,15 +43,6 @@ namespace android::net
 			"encode",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
-	}
-	jstring Uri::encode(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.net.Uri",
-			"encode",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	jstring Uri::encode(jstring arg0, jstring arg1)
@@ -71,16 +53,6 @@ namespace android::net
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
 			arg0,
 			arg1
-		).object<jstring>();
-	}
-	jstring Uri::encode(const QString &arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.net.Uri",
-			"encode",
-			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		).object<jstring>();
 	}
 	QAndroidJniObject Uri::fromFile(java::io::File arg0)
@@ -103,17 +75,6 @@ namespace android::net
 			arg2
 		);
 	}
-	QAndroidJniObject Uri::fromParts(const QString &arg0, const QString &arg1, const QString &arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.net.Uri",
-			"fromParts",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	QAndroidJniObject Uri::parse(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -121,15 +82,6 @@ namespace android::net
 			"parse",
 			"(Ljava/lang/String;)Landroid/net/Uri;",
 			arg0
-		);
-	}
-	QAndroidJniObject Uri::parse(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.net.Uri",
-			"parse",
-			"(Ljava/lang/String;)Landroid/net/Uri;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Uri::withAppendedPath(android::net::Uri arg0, jstring arg1)
@@ -140,16 +92,6 @@ namespace android::net
 			"(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	QAndroidJniObject Uri::withAppendedPath(android::net::Uri arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.net.Uri",
-			"withAppendedPath",
-			"(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void Uri::writeToParcel(android::os::Parcel arg0, android::net::Uri arg1)
@@ -206,15 +148,6 @@ namespace android::net
 			"getBooleanQueryParameter",
 			"(Ljava/lang/String;Z)Z",
 			arg0,
-			arg1
-		);
-	}
-	jboolean Uri::getBooleanQueryParameter(const QString &arg0, jboolean arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"getBooleanQueryParameter",
-			"(Ljava/lang/String;Z)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -317,14 +250,6 @@ namespace android::net
 			arg0
 		).object<jstring>();
 	}
-	jstring Uri::getQueryParameter(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getQueryParameter",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
 	QAndroidJniObject Uri::getQueryParameterNames()
 	{
 		return __thiz.callObjectMethod(
@@ -338,14 +263,6 @@ namespace android::net
 			"getQueryParameters",
 			"(Ljava/lang/String;)Ljava/util/List;",
 			arg0
-		);
-	}
-	QAndroidJniObject Uri::getQueryParameters(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getQueryParameters",
-			"(Ljava/lang/String;)Ljava/util/List;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring Uri::getScheme()

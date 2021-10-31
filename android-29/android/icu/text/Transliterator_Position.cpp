@@ -45,7 +45,7 @@ namespace android::icu::text
 			arg0.__jniObject().object()
 		);
 	}
-	Transliterator_Position::Transliterator_Position(jint &arg0, jint &arg1, jint &arg2)
+	Transliterator_Position::Transliterator_Position(jint arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.Transliterator$Position",
@@ -55,7 +55,7 @@ namespace android::icu::text
 			arg2
 		);
 	}
-	Transliterator_Position::Transliterator_Position(jint &arg0, jint &arg1, jint &arg2, jint &arg3)
+	Transliterator_Position::Transliterator_Position(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.Transliterator$Position",

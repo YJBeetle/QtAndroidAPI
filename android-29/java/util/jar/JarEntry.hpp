@@ -21,10 +21,9 @@ namespace java::util::jar
 		
 		JarEntry(QAndroidJniObject obj);
 		// Constructors
-		JarEntry(jstring &arg0);
-		JarEntry(const QString &arg0);
+		JarEntry(jstring arg0);
 		JarEntry(java::util::jar::JarEntry &arg0);
-		JarEntry(java::util::zip::ZipEntry &arg0);
+		JarEntry(java::util::zip::ZipEntry arg0);
 		JarEntry() = default;
 		
 		// Methods

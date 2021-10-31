@@ -59,7 +59,7 @@ namespace android::accounts
 	
 	AuthenticatorDescription::AuthenticatorDescription(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AuthenticatorDescription::AuthenticatorDescription(jstring &arg0, jstring &arg1, jint &arg2, jint &arg3, jint &arg4, jint &arg5)
+	AuthenticatorDescription::AuthenticatorDescription(jstring arg0, jstring arg1, jint arg2, jint arg3, jint arg4, jint arg5)
 	{
 		__thiz = QAndroidJniObject(
 			"android.accounts.AuthenticatorDescription",
@@ -72,40 +72,13 @@ namespace android::accounts
 			arg5
 		);
 	}
-	AuthenticatorDescription::AuthenticatorDescription(const QString &arg0, const QString &arg1, jint &arg2, jint &arg3, jint &arg4, jint &arg5)
-	{
-		__thiz = QAndroidJniObject(
-			"android.accounts.AuthenticatorDescription",
-			"(Ljava/lang/String;Ljava/lang/String;IIII)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2,
-			arg3,
-			arg4,
-			arg5
-		);
-	}
-	AuthenticatorDescription::AuthenticatorDescription(jstring &arg0, jstring &arg1, jint &arg2, jint &arg3, jint &arg4, jint &arg5, jboolean &arg6)
+	AuthenticatorDescription::AuthenticatorDescription(jstring arg0, jstring arg1, jint arg2, jint arg3, jint arg4, jint arg5, jboolean arg6)
 	{
 		__thiz = QAndroidJniObject(
 			"android.accounts.AuthenticatorDescription",
 			"(Ljava/lang/String;Ljava/lang/String;IIIIZ)V",
 			arg0,
 			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5,
-			arg6
-		);
-	}
-	AuthenticatorDescription::AuthenticatorDescription(const QString &arg0, const QString &arg1, jint &arg2, jint &arg3, jint &arg4, jint &arg5, jboolean &arg6)
-	{
-		__thiz = QAndroidJniObject(
-			"android.accounts.AuthenticatorDescription",
-			"(Ljava/lang/String;Ljava/lang/String;IIIIZ)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2,
 			arg3,
 			arg4,
@@ -122,15 +95,6 @@ namespace android::accounts
 			"newKey",
 			"(Ljava/lang/String;)Landroid/accounts/AuthenticatorDescription;",
 			arg0
-		);
-	}
-	QAndroidJniObject AuthenticatorDescription::newKey(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.accounts.AuthenticatorDescription",
-			"newKey",
-			"(Ljava/lang/String;)Landroid/accounts/AuthenticatorDescription;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jint AuthenticatorDescription::describeContents()

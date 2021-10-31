@@ -20,7 +20,7 @@ namespace android::media
 		
 		AudioPlaybackCaptureConfiguration_Builder(QAndroidJniObject obj);
 		// Constructors
-		AudioPlaybackCaptureConfiguration_Builder(android::media::projection::MediaProjection &arg0);
+		AudioPlaybackCaptureConfiguration_Builder(android::media::projection::MediaProjection arg0);
 		AudioPlaybackCaptureConfiguration_Builder() = default;
 		
 		// Methods

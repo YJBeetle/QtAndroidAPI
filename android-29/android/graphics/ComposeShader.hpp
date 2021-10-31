@@ -29,9 +29,9 @@ namespace android::graphics
 		
 		ComposeShader(QAndroidJniObject obj);
 		// Constructors
-		ComposeShader(android::graphics::Shader &arg0, android::graphics::Shader &arg1, android::graphics::BlendMode &arg2);
-		ComposeShader(android::graphics::Shader &arg0, android::graphics::Shader &arg1, android::graphics::PorterDuff_Mode &arg2);
-		ComposeShader(android::graphics::Shader &arg0, android::graphics::Shader &arg1, android::graphics::Xfermode &arg2);
+		ComposeShader(android::graphics::Shader arg0, android::graphics::Shader arg1, android::graphics::BlendMode arg2);
+		ComposeShader(android::graphics::Shader arg0, android::graphics::Shader arg1, android::graphics::PorterDuff_Mode arg2);
+		ComposeShader(android::graphics::Shader arg0, android::graphics::Shader arg1, android::graphics::Xfermode arg2);
 		ComposeShader() = default;
 		
 		// Methods

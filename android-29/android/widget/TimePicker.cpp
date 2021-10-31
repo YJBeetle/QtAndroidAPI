@@ -11,7 +11,7 @@ namespace android::widget
 	
 	TimePicker::TimePicker(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	TimePicker::TimePicker(android::content::Context &arg0)
+	TimePicker::TimePicker(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.TimePicker",
@@ -19,7 +19,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	TimePicker::TimePicker(android::content::Context &arg0, __JniBaseClass &arg1)
+	TimePicker::TimePicker(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.TimePicker",
@@ -28,7 +28,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	TimePicker::TimePicker(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	TimePicker::TimePicker(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.TimePicker",
@@ -38,7 +38,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	TimePicker::TimePicker(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	TimePicker::TimePicker(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.TimePicker",

@@ -12,7 +12,7 @@ namespace android::text::style
 		
 		TabStopSpan_Standard(QAndroidJniObject obj);
 		// Constructors
-		TabStopSpan_Standard(jint &arg0);
+		TabStopSpan_Standard(jint arg0);
 		TabStopSpan_Standard() = default;
 		
 		// Methods

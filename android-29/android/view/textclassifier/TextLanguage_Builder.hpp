@@ -31,7 +31,6 @@ namespace android::view::textclassifier
 		QAndroidJniObject putLocale(android::icu::util::ULocale arg0, jfloat arg1);
 		QAndroidJniObject setExtras(android::os::Bundle arg0);
 		QAndroidJniObject setId(jstring arg0);
-		QAndroidJniObject setId(const QString &arg0);
 	};
 } // namespace android::view::textclassifier
 

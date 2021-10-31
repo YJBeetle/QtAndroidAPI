@@ -55,29 +55,19 @@ namespace android::content
 		// Constructors
 		IntentFilter();
 		IntentFilter(android::content::IntentFilter &arg0);
-		IntentFilter(jstring &arg0);
-		IntentFilter(const QString &arg0);
-		IntentFilter(jstring &arg0, jstring &arg1);
-		IntentFilter(const QString &arg0, const QString &arg1);
+		IntentFilter(jstring arg0);
+		IntentFilter(jstring arg0, jstring arg1);
 		
 		// Methods
 		static QAndroidJniObject create(jstring arg0, jstring arg1);
-		static QAndroidJniObject create(const QString &arg0, const QString &arg1);
 		QAndroidJniObject actionsIterator();
 		void addAction(jstring arg0);
-		void addAction(const QString &arg0);
 		void addCategory(jstring arg0);
-		void addCategory(const QString &arg0);
 		void addDataAuthority(jstring arg0, jstring arg1);
-		void addDataAuthority(const QString &arg0, const QString &arg1);
 		void addDataPath(jstring arg0, jint arg1);
-		void addDataPath(const QString &arg0, jint arg1);
 		void addDataScheme(jstring arg0);
-		void addDataScheme(const QString &arg0);
 		void addDataSchemeSpecificPart(jstring arg0, jint arg1);
-		void addDataSchemeSpecificPart(const QString &arg0, jint arg1);
 		void addDataType(jstring arg0);
-		void addDataType(const QString &arg0);
 		QAndroidJniObject authoritiesIterator();
 		QAndroidJniObject categoriesIterator();
 		jint countActions();
@@ -89,7 +79,6 @@ namespace android::content
 		jint countDataTypes();
 		jint describeContents();
 		void dump(__JniBaseClass arg0, jstring arg1);
-		void dump(__JniBaseClass arg0, const QString &arg1);
 		jstring getAction(jint arg0);
 		jstring getCategory(jint arg0);
 		QAndroidJniObject getDataAuthority(jint arg0);
@@ -99,27 +88,17 @@ namespace android::content
 		jstring getDataType(jint arg0);
 		jint getPriority();
 		jboolean hasAction(jstring arg0);
-		jboolean hasAction(const QString &arg0);
 		jboolean hasCategory(jstring arg0);
-		jboolean hasCategory(const QString &arg0);
 		jboolean hasDataAuthority(android::net::Uri arg0);
 		jboolean hasDataPath(jstring arg0);
-		jboolean hasDataPath(const QString &arg0);
 		jboolean hasDataScheme(jstring arg0);
-		jboolean hasDataScheme(const QString &arg0);
 		jboolean hasDataSchemeSpecificPart(jstring arg0);
-		jboolean hasDataSchemeSpecificPart(const QString &arg0);
 		jboolean hasDataType(jstring arg0);
-		jboolean hasDataType(const QString &arg0);
 		jint match(android::content::ContentResolver arg0, android::content::Intent arg1, jboolean arg2, jstring arg3);
-		jint match(android::content::ContentResolver arg0, android::content::Intent arg1, jboolean arg2, const QString &arg3);
 		jint match(jstring arg0, jstring arg1, jstring arg2, android::net::Uri arg3, __JniBaseClass arg4, jstring arg5);
-		jint match(const QString &arg0, const QString &arg1, const QString &arg2, android::net::Uri arg3, __JniBaseClass arg4, const QString &arg5);
 		jboolean matchAction(jstring arg0);
-		jboolean matchAction(const QString &arg0);
 		jstring matchCategories(__JniBaseClass arg0);
 		jint matchData(jstring arg0, jstring arg1, android::net::Uri arg2);
-		jint matchData(const QString &arg0, const QString &arg1, android::net::Uri arg2);
 		jint matchDataAuthority(android::net::Uri arg0);
 		QAndroidJniObject pathsIterator();
 		void readFromXml(__JniBaseClass arg0);

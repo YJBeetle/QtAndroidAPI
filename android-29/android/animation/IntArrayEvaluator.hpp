@@ -13,7 +13,7 @@ namespace android::animation
 		IntArrayEvaluator(QAndroidJniObject obj);
 		// Constructors
 		IntArrayEvaluator();
-		IntArrayEvaluator(jintArray &arg0);
+		IntArrayEvaluator(jintArray arg0);
 		
 		// Methods
 		jintArray evaluate(jfloat arg0, jintArray arg1, jintArray arg2);

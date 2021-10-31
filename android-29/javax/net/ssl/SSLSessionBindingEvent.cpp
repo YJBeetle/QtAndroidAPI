@@ -6,22 +6,13 @@ namespace javax::net::ssl
 	
 	SSLSessionBindingEvent::SSLSessionBindingEvent(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SSLSessionBindingEvent::SSLSessionBindingEvent(__JniBaseClass &arg0, jstring &arg1)
+	SSLSessionBindingEvent::SSLSessionBindingEvent(__JniBaseClass arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.net.ssl.SSLSessionBindingEvent",
 			"(Ljavax/net/ssl/SSLSession;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	SSLSessionBindingEvent::SSLSessionBindingEvent(__JniBaseClass &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.net.ssl.SSLSessionBindingEvent",
-			"(Ljavax/net/ssl/SSLSession;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	

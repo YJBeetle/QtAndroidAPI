@@ -14,11 +14,9 @@ namespace java::io
 		IOException(QAndroidJniObject obj);
 		// Constructors
 		IOException();
-		IOException(jstring &arg0);
-		IOException(const QString &arg0);
-		IOException(jthrowable &arg0);
-		IOException(jstring &arg0, jthrowable &arg1);
-		IOException(const QString &arg0, jthrowable &arg1);
+		IOException(jstring arg0);
+		IOException(jthrowable arg0);
+		IOException(jstring arg0, jthrowable arg1);
 		
 		// Methods
 	};

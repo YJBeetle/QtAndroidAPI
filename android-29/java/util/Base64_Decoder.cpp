@@ -26,14 +26,6 @@ namespace java::util
 			arg0
 		).object<jbyteArray>();
 	}
-	jbyteArray Base64_Decoder::decode(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"decode",
-			"(Ljava/lang/String;)[B",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jbyteArray>();
-	}
 	jint Base64_Decoder::decode(jbyteArray arg0, jbyteArray arg1)
 	{
 		return __thiz.callMethod<jint>(

@@ -21,10 +21,10 @@ namespace android::widget
 		
 		Space(QAndroidJniObject obj);
 		// Constructors
-		Space(android::content::Context &arg0);
-		Space(android::content::Context &arg0, __JniBaseClass &arg1);
-		Space(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		Space(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		Space(android::content::Context arg0);
+		Space(android::content::Context arg0, __JniBaseClass arg1);
+		Space(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		Space(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		Space() = default;
 		
 		// Methods

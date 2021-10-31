@@ -23,8 +23,7 @@ namespace java::util::logging
 		SocketHandler(QAndroidJniObject obj);
 		// Constructors
 		SocketHandler();
-		SocketHandler(jstring &arg0, jint &arg1);
-		SocketHandler(const QString &arg0, jint &arg1);
+		SocketHandler(jstring arg0, jint arg1);
 		
 		// Methods
 		void close();

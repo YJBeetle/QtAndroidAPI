@@ -43,15 +43,6 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject UCharacterIterator::getInstance(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.UCharacterIterator",
-			"getInstance",
-			"(Ljava/lang/String;)Landroid/icu/text/UCharacterIterator;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject UCharacterIterator::getInstance(java::lang::StringBuffer arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

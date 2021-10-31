@@ -16,8 +16,7 @@ namespace android::print
 		
 		PrintDocumentInfo_Builder(QAndroidJniObject obj);
 		// Constructors
-		PrintDocumentInfo_Builder(jstring &arg0);
-		PrintDocumentInfo_Builder(const QString &arg0);
+		PrintDocumentInfo_Builder(jstring arg0);
 		PrintDocumentInfo_Builder() = default;
 		
 		// Methods

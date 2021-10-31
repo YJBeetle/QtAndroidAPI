@@ -39,7 +39,7 @@ namespace android::net
 			"()V"
 		);
 	}
-	LocalSocket::LocalSocket(jint &arg0)
+	LocalSocket::LocalSocket(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.LocalSocket",

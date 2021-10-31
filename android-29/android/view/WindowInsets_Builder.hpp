@@ -25,7 +25,7 @@ namespace android::view
 		WindowInsets_Builder(QAndroidJniObject obj);
 		// Constructors
 		WindowInsets_Builder();
-		WindowInsets_Builder(android::view::WindowInsets &arg0);
+		WindowInsets_Builder(android::view::WindowInsets arg0);
 		
 		// Methods
 		QAndroidJniObject build();

@@ -36,7 +36,7 @@ namespace android::bluetooth
 		
 		BluetoothGattDescriptor(QAndroidJniObject obj);
 		// Constructors
-		BluetoothGattDescriptor(java::util::UUID &arg0, jint &arg1);
+		BluetoothGattDescriptor(java::util::UUID arg0, jint arg1);
 		BluetoothGattDescriptor() = default;
 		
 		// Methods

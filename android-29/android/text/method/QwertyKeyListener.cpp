@@ -9,7 +9,7 @@ namespace android::text::method
 	
 	QwertyKeyListener::QwertyKeyListener(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	QwertyKeyListener::QwertyKeyListener(android::text::method::TextKeyListener_Capitalize &arg0, jboolean &arg1)
+	QwertyKeyListener::QwertyKeyListener(android::text::method::TextKeyListener_Capitalize arg0, jboolean arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.method.QwertyKeyListener",
@@ -48,18 +48,6 @@ namespace android::text::method
 			arg1,
 			arg2,
 			arg3
-		);
-	}
-	void QwertyKeyListener::markAsReplaced(__JniBaseClass arg0, jint arg1, jint arg2, const QString &arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.text.method.QwertyKeyListener",
-			"markAsReplaced",
-			"(Landroid/text/Spannable;IILjava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2,
-			QAndroidJniObject::fromString(arg3).object<jstring>()
 		);
 	}
 	jint QwertyKeyListener::getInputType()

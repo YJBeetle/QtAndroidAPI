@@ -33,8 +33,7 @@ namespace java::io
 		
 		FilePermission(QAndroidJniObject obj);
 		// Constructors
-		FilePermission(jstring &arg0, jstring &arg1);
-		FilePermission(const QString &arg0, const QString &arg1);
+		FilePermission(jstring arg0, jstring arg1);
 		FilePermission() = default;
 		
 		// Methods

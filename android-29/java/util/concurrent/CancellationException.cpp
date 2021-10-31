@@ -13,20 +13,12 @@ namespace java::util::concurrent
 			"()V"
 		);
 	}
-	CancellationException::CancellationException(jstring &arg0)
+	CancellationException::CancellationException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.CancellationException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	CancellationException::CancellationException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.concurrent.CancellationException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

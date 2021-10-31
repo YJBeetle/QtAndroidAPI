@@ -6,7 +6,7 @@ namespace android::media
 	
 	SubtitleData::SubtitleData(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SubtitleData::SubtitleData(jint &arg0, jlong &arg1, jlong &arg2, jbyteArray &arg3)
+	SubtitleData::SubtitleData(jint arg0, jlong arg1, jlong arg2, jbyteArray arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.SubtitleData",

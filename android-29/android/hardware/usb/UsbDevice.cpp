@@ -28,15 +28,6 @@ namespace android::hardware::usb
 			arg0
 		);
 	}
-	jint UsbDevice::getDeviceId(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.hardware.usb.UsbDevice",
-			"getDeviceId",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jstring UsbDevice::getDeviceName(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

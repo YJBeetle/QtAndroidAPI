@@ -56,15 +56,6 @@ namespace android::gesture
 			arg1.__jniObject().object()
 		);
 	}
-	void GestureStore::addGesture(const QString &arg0, android::gesture::Gesture arg1)
-	{
-		__thiz.callMethod<void>(
-			"addGesture",
-			"(Ljava/lang/String;Landroid/gesture/Gesture;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	QAndroidJniObject GestureStore::getGestureEntries()
 	{
 		return __thiz.callObjectMethod(
@@ -78,14 +69,6 @@ namespace android::gesture
 			"getGestures",
 			"(Ljava/lang/String;)Ljava/util/ArrayList;",
 			arg0
-		);
-	}
-	QAndroidJniObject GestureStore::getGestures(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getGestures",
-			"(Ljava/lang/String;)Ljava/util/ArrayList;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jint GestureStore::getOrientationStyle()
@@ -142,29 +125,12 @@ namespace android::gesture
 			arg0
 		);
 	}
-	void GestureStore::removeEntry(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"removeEntry",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void GestureStore::removeGesture(jstring arg0, android::gesture::Gesture arg1)
 	{
 		__thiz.callMethod<void>(
 			"removeGesture",
 			"(Ljava/lang/String;Landroid/gesture/Gesture;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void GestureStore::removeGesture(const QString &arg0, android::gesture::Gesture arg1)
-	{
-		__thiz.callMethod<void>(
-			"removeGesture",
-			"(Ljava/lang/String;Landroid/gesture/Gesture;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

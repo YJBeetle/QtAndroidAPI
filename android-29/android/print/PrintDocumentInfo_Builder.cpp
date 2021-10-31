@@ -7,20 +7,12 @@ namespace android::print
 	
 	PrintDocumentInfo_Builder::PrintDocumentInfo_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PrintDocumentInfo_Builder::PrintDocumentInfo_Builder(jstring &arg0)
+	PrintDocumentInfo_Builder::PrintDocumentInfo_Builder(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.print.PrintDocumentInfo$Builder",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	PrintDocumentInfo_Builder::PrintDocumentInfo_Builder(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.print.PrintDocumentInfo$Builder",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

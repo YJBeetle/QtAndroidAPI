@@ -34,7 +34,7 @@ namespace android::net
 		
 		SSLCertificateSocketFactory(QAndroidJniObject obj);
 		// Constructors
-		SSLCertificateSocketFactory(jint &arg0);
+		SSLCertificateSocketFactory(jint arg0);
 		SSLCertificateSocketFactory() = default;
 		
 		// Methods
@@ -43,18 +43,14 @@ namespace android::net
 		static QAndroidJniObject getInsecure(jint arg0, android::net::SSLSessionCache arg1);
 		QAndroidJniObject createSocket();
 		QAndroidJniObject createSocket(jstring arg0, jint arg1);
-		QAndroidJniObject createSocket(const QString &arg0, jint arg1);
 		QAndroidJniObject createSocket(java::net::InetAddress arg0, jint arg1);
 		QAndroidJniObject createSocket(jstring arg0, jint arg1, java::net::InetAddress arg2, jint arg3);
-		QAndroidJniObject createSocket(const QString &arg0, jint arg1, java::net::InetAddress arg2, jint arg3);
 		QAndroidJniObject createSocket(java::net::InetAddress arg0, jint arg1, java::net::InetAddress arg2, jint arg3);
 		QAndroidJniObject createSocket(java::net::Socket arg0, jstring arg1, jint arg2, jboolean arg3);
-		QAndroidJniObject createSocket(java::net::Socket arg0, const QString &arg1, jint arg2, jboolean arg3);
 		jarray getDefaultCipherSuites();
 		jbyteArray getNpnSelectedProtocol(java::net::Socket arg0);
 		jarray getSupportedCipherSuites();
 		void setHostname(java::net::Socket arg0, jstring arg1);
-		void setHostname(java::net::Socket arg0, const QString &arg1);
 		void setKeyManagers(jarray arg0);
 		void setNpnProtocols(jarray arg0);
 		void setTrustManagers(jarray arg0);

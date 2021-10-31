@@ -14,7 +14,7 @@ namespace java::util::zip
 			"()V"
 		);
 	}
-	Inflater::Inflater(jboolean &arg0)
+	Inflater::Inflater(jboolean arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.zip.Inflater",

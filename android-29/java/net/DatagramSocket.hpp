@@ -41,9 +41,9 @@ namespace java::net
 		DatagramSocket(QAndroidJniObject obj);
 		// Constructors
 		DatagramSocket();
-		DatagramSocket(jint &arg0);
-		DatagramSocket(java::net::SocketAddress &arg0);
-		DatagramSocket(jint &arg0, java::net::InetAddress &arg1);
+		DatagramSocket(jint arg0);
+		DatagramSocket(java::net::SocketAddress arg0);
+		DatagramSocket(jint arg0, java::net::InetAddress arg1);
 		
 		// Methods
 		static void setDatagramSocketImplFactory(__JniBaseClass arg0);

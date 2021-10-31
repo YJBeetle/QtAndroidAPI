@@ -6,7 +6,7 @@ namespace java::io
 	
 	IOError::IOError(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	IOError::IOError(jthrowable &arg0)
+	IOError::IOError(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.IOError",

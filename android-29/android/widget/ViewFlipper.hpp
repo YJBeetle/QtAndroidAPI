@@ -20,8 +20,8 @@ namespace android::widget
 		
 		ViewFlipper(QAndroidJniObject obj);
 		// Constructors
-		ViewFlipper(android::content::Context &arg0);
-		ViewFlipper(android::content::Context &arg0, __JniBaseClass &arg1);
+		ViewFlipper(android::content::Context arg0);
+		ViewFlipper(android::content::Context arg0, __JniBaseClass arg1);
 		ViewFlipper() = default;
 		
 		// Methods

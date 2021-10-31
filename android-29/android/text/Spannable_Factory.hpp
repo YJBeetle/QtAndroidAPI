@@ -17,7 +17,6 @@ namespace android::text
 		// Methods
 		static QAndroidJniObject getInstance();
 		QAndroidJniObject newSpannable(jstring arg0);
-		QAndroidJniObject newSpannable(const QString &arg0);
 	};
 } // namespace android::text
 

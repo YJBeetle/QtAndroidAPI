@@ -73,20 +73,12 @@ namespace android::media::audiofx
 			"()V"
 		);
 	}
-	EnvironmentalReverb_Settings::EnvironmentalReverb_Settings(jstring &arg0)
+	EnvironmentalReverb_Settings::EnvironmentalReverb_Settings(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.audiofx.EnvironmentalReverb$Settings",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	EnvironmentalReverb_Settings::EnvironmentalReverb_Settings(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.media.audiofx.EnvironmentalReverb$Settings",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

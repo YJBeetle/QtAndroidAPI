@@ -12,7 +12,7 @@ namespace android::widget
 	
 	DatePicker::DatePicker(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DatePicker::DatePicker(android::content::Context &arg0)
+	DatePicker::DatePicker(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.DatePicker",
@@ -20,7 +20,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	DatePicker::DatePicker(android::content::Context &arg0, __JniBaseClass &arg1)
+	DatePicker::DatePicker(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.DatePicker",
@@ -29,7 +29,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	DatePicker::DatePicker(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	DatePicker::DatePicker(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.DatePicker",
@@ -39,7 +39,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	DatePicker::DatePicker(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	DatePicker::DatePicker(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.DatePicker",

@@ -49,15 +49,6 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject DateFormat_BooleanAttribute::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.DateFormat$BooleanAttribute",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/icu/text/DateFormat$BooleanAttribute;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray DateFormat_BooleanAttribute::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

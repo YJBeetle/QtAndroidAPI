@@ -37,7 +37,6 @@ namespace android::content
 		QAndroidJniObject setNoRetry(jboolean arg0);
 		QAndroidJniObject setRequiresCharging(jboolean arg0);
 		QAndroidJniObject setSyncAdapter(android::accounts::Account arg0, jstring arg1);
-		QAndroidJniObject setSyncAdapter(android::accounts::Account arg0, const QString &arg1);
 		QAndroidJniObject syncOnce();
 		QAndroidJniObject syncPeriodic(jlong arg0, jlong arg1);
 	};

@@ -12,7 +12,7 @@ namespace javax::crypto::spec
 		
 		DHGenParameterSpec(QAndroidJniObject obj);
 		// Constructors
-		DHGenParameterSpec(jint &arg0, jint &arg1);
+		DHGenParameterSpec(jint arg0, jint arg1);
 		DHGenParameterSpec() = default;
 		
 		// Methods

@@ -16,9 +16,7 @@ namespace android::drm
 		
 		// Methods
 		void addFileSuffix(jstring arg0);
-		void addFileSuffix(const QString &arg0);
 		void addMimeType(jstring arg0);
-		void addMimeType(const QString &arg0);
 		jboolean equals(jobject arg0);
 		jstring getDescriprition();
 		jstring getDescription();
@@ -26,7 +24,6 @@ namespace android::drm
 		QAndroidJniObject getMimeTypeIterator();
 		jint hashCode();
 		void setDescription(jstring arg0);
-		void setDescription(const QString &arg0);
 	};
 } // namespace android::drm
 

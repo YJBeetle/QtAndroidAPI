@@ -21,7 +21,7 @@ namespace android::icu::text
 		UnicodeSetIterator(QAndroidJniObject obj);
 		// Constructors
 		UnicodeSetIterator();
-		UnicodeSetIterator(android::icu::text::UnicodeSet &arg0);
+		UnicodeSetIterator(android::icu::text::UnicodeSet arg0);
 		
 		// Methods
 		jstring getString();

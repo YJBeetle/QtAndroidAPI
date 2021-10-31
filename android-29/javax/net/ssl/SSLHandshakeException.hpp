@@ -15,8 +15,7 @@ namespace javax::net::ssl
 		
 		SSLHandshakeException(QAndroidJniObject obj);
 		// Constructors
-		SSLHandshakeException(jstring &arg0);
-		SSLHandshakeException(const QString &arg0);
+		SSLHandshakeException(jstring arg0);
 		SSLHandshakeException() = default;
 		
 		// Methods

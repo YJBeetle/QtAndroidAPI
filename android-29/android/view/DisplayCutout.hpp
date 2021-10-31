@@ -20,8 +20,8 @@ namespace android::view
 		
 		DisplayCutout(QAndroidJniObject obj);
 		// Constructors
-		DisplayCutout(android::graphics::Rect &arg0, __JniBaseClass &arg1);
-		DisplayCutout(android::graphics::Insets &arg0, android::graphics::Rect &arg1, android::graphics::Rect &arg2, android::graphics::Rect &arg3, android::graphics::Rect &arg4);
+		DisplayCutout(android::graphics::Rect arg0, __JniBaseClass arg1);
+		DisplayCutout(android::graphics::Insets arg0, android::graphics::Rect arg1, android::graphics::Rect arg2, android::graphics::Rect arg3, android::graphics::Rect arg4);
 		DisplayCutout() = default;
 		
 		// Methods

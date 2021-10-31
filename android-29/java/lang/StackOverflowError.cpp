@@ -13,20 +13,12 @@ namespace java::lang
 			"()V"
 		);
 	}
-	StackOverflowError::StackOverflowError(jstring &arg0)
+	StackOverflowError::StackOverflowError(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.StackOverflowError",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	StackOverflowError::StackOverflowError(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.StackOverflowError",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

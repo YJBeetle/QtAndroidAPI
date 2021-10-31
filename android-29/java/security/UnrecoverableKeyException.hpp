@@ -16,8 +16,7 @@ namespace java::security
 		UnrecoverableKeyException(QAndroidJniObject obj);
 		// Constructors
 		UnrecoverableKeyException();
-		UnrecoverableKeyException(jstring &arg0);
-		UnrecoverableKeyException(const QString &arg0);
+		UnrecoverableKeyException(jstring arg0);
 		
 		// Methods
 	};

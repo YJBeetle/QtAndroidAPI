@@ -35,9 +35,9 @@ namespace java::util::concurrent
 		PriorityBlockingQueue(QAndroidJniObject obj);
 		// Constructors
 		PriorityBlockingQueue();
-		PriorityBlockingQueue(jint &arg0);
-		PriorityBlockingQueue(__JniBaseClass &arg0);
-		PriorityBlockingQueue(jint &arg0, __JniBaseClass &arg1);
+		PriorityBlockingQueue(jint arg0);
+		PriorityBlockingQueue(__JniBaseClass arg0);
+		PriorityBlockingQueue(jint arg0, __JniBaseClass arg1);
 		
 		// Methods
 		jboolean add(jobject arg0);

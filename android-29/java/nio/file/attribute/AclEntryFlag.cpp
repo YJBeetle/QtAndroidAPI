@@ -49,15 +49,6 @@ namespace java::nio::file::attribute
 			arg0
 		);
 	}
-	QAndroidJniObject AclEntryFlag::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.nio.file.attribute.AclEntryFlag",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/nio/file/attribute/AclEntryFlag;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray AclEntryFlag::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

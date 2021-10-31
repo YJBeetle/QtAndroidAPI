@@ -30,12 +30,9 @@ namespace android::speech::tts
 		void onCreate();
 		void onDestroy();
 		jstring onGetDefaultVoiceNameFor(jstring arg0, jstring arg1, jstring arg2);
-		jstring onGetDefaultVoiceNameFor(const QString &arg0, const QString &arg1, const QString &arg2);
 		QAndroidJniObject onGetVoices();
 		jint onIsValidVoiceName(jstring arg0);
-		jint onIsValidVoiceName(const QString &arg0);
 		jint onLoadVoice(jstring arg0);
-		jint onLoadVoice(const QString &arg0);
 	};
 } // namespace android::speech::tts
 

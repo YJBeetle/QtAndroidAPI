@@ -14,7 +14,7 @@ namespace android::database::sqlite
 			"()V"
 		);
 	}
-	SQLiteDatabase_OpenParams_Builder::SQLiteDatabase_OpenParams_Builder(android::database::sqlite::SQLiteDatabase_OpenParams &arg0)
+	SQLiteDatabase_OpenParams_Builder::SQLiteDatabase_OpenParams_Builder(android::database::sqlite::SQLiteDatabase_OpenParams arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.database.sqlite.SQLiteDatabase$OpenParams$Builder",
@@ -79,14 +79,6 @@ namespace android::database::sqlite
 			arg0
 		);
 	}
-	QAndroidJniObject SQLiteDatabase_OpenParams_Builder::setJournalMode(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setJournalMode",
-			"(Ljava/lang/String;)Landroid/database/sqlite/SQLiteDatabase$OpenParams$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject SQLiteDatabase_OpenParams_Builder::setLookasideConfig(jint arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -110,14 +102,6 @@ namespace android::database::sqlite
 			"setSynchronousMode",
 			"(Ljava/lang/String;)Landroid/database/sqlite/SQLiteDatabase$OpenParams$Builder;",
 			arg0
-		);
-	}
-	QAndroidJniObject SQLiteDatabase_OpenParams_Builder::setSynchronousMode(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setSynchronousMode",
-			"(Ljava/lang/String;)Landroid/database/sqlite/SQLiteDatabase$OpenParams$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace android::database::sqlite

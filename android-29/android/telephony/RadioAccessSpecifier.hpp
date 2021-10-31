@@ -17,7 +17,7 @@ namespace android::telephony
 		
 		RadioAccessSpecifier(QAndroidJniObject obj);
 		// Constructors
-		RadioAccessSpecifier(jint &arg0, jintArray &arg1, jintArray &arg2);
+		RadioAccessSpecifier(jint arg0, jintArray arg1, jintArray arg2);
 		RadioAccessSpecifier() = default;
 		
 		// Methods

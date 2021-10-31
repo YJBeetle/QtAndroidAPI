@@ -171,15 +171,6 @@ namespace android::provider
 			arg0
 		).object<jobject>();
 	}
-	jobject Contacts_ContactMethods::decodeImProtocol(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.Contacts$ContactMethods",
-			"decodeImProtocol",
-			"(Ljava/lang/String;)Ljava/lang/Object;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jobject>();
-	}
 	jstring Contacts_ContactMethods::encodeCustomImProtocol(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -187,15 +178,6 @@ namespace android::provider
 			"encodeCustomImProtocol",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
-	}
-	jstring Contacts_ContactMethods::encodeCustomImProtocol(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.Contacts$ContactMethods",
-			"encodeCustomImProtocol",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	jstring Contacts_ContactMethods::encodePredefinedImProtocol(jint arg0)
@@ -217,18 +199,6 @@ namespace android::provider
 			arg1,
 			arg2,
 			arg3
-		).object<jstring>();
-	}
-	jstring Contacts_ContactMethods::getDisplayLabel(android::content::Context arg0, jint arg1, jint arg2, const QString &arg3)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.Contacts$ContactMethods",
-			"getDisplayLabel",
-			"(Landroid/content/Context;IILjava/lang/CharSequence;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2,
-			QAndroidJniObject::fromString(arg3).object<jstring>()
 		).object<jstring>();
 	}
 	void Contacts_ContactMethods::addPostalLocation(android::content::Context arg0, jlong arg1, jdouble arg2, jdouble arg3)

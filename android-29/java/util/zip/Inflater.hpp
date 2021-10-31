@@ -17,7 +17,7 @@ namespace java::util::zip
 		Inflater(QAndroidJniObject obj);
 		// Constructors
 		Inflater();
-		Inflater(jboolean &arg0);
+		Inflater(jboolean arg0);
 		
 		// Methods
 		void end();

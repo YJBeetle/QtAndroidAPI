@@ -13,7 +13,7 @@ namespace android::renderscript
 	
 	ScriptGroup_Builder2::ScriptGroup_Builder2(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ScriptGroup_Builder2::ScriptGroup_Builder2(android::renderscript::RenderScript &arg0)
+	ScriptGroup_Builder2::ScriptGroup_Builder2(android::renderscript::RenderScript arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.renderscript.ScriptGroup$Builder2",
@@ -55,15 +55,6 @@ namespace android::renderscript
 			"create",
 			"(Ljava/lang/String;[Landroid/renderscript/ScriptGroup$Future;)Landroid/renderscript/ScriptGroup;",
 			arg0,
-			arg1
-		);
-	}
-	QAndroidJniObject ScriptGroup_Builder2::create(const QString &arg0, jarray arg1)
-	{
-		return __thiz.callObjectMethod(
-			"create",
-			"(Ljava/lang/String;[Landroid/renderscript/ScriptGroup$Future;)Landroid/renderscript/ScriptGroup;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

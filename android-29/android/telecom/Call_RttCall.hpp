@@ -23,7 +23,6 @@ namespace android::telecom
 		jstring readImmediately();
 		void setRttMode(jint arg0);
 		void write(jstring arg0);
-		void write(const QString &arg0);
 	};
 } // namespace android::telecom
 

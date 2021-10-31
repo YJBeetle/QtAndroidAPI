@@ -16,8 +16,7 @@ namespace android::os
 		DeadObjectException(QAndroidJniObject obj);
 		// Constructors
 		DeadObjectException();
-		DeadObjectException(jstring &arg0);
-		DeadObjectException(const QString &arg0);
+		DeadObjectException(jstring arg0);
 		
 		// Methods
 	};

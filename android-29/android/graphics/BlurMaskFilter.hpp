@@ -17,7 +17,7 @@ namespace android::graphics
 		
 		BlurMaskFilter(QAndroidJniObject obj);
 		// Constructors
-		BlurMaskFilter(jfloat &arg0, android::graphics::BlurMaskFilter_Blur &arg1);
+		BlurMaskFilter(jfloat arg0, android::graphics::BlurMaskFilter_Blur arg1);
 		BlurMaskFilter() = default;
 		
 		// Methods

@@ -313,15 +313,6 @@ namespace java::awt::font
 			arg0
 		);
 	}
-	QAndroidJniObject NumericShaper_Range::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.awt.font.NumericShaper$Range",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/awt/font/NumericShaper$Range;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray NumericShaper_Range::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

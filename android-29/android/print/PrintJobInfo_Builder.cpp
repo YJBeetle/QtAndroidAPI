@@ -8,7 +8,7 @@ namespace android::print
 	
 	PrintJobInfo_Builder::PrintJobInfo_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PrintJobInfo_Builder::PrintJobInfo_Builder(android::print::PrintJobInfo &arg0)
+	PrintJobInfo_Builder::PrintJobInfo_Builder(android::print::PrintJobInfo arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.print.PrintJobInfo$Builder",
@@ -34,15 +34,6 @@ namespace android::print
 			arg1
 		);
 	}
-	void PrintJobInfo_Builder::putAdvancedOption(const QString &arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"putAdvancedOption",
-			"(Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	void PrintJobInfo_Builder::putAdvancedOption(jstring arg0, jstring arg1)
 	{
 		__thiz.callMethod<void>(
@@ -50,15 +41,6 @@ namespace android::print
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	void PrintJobInfo_Builder::putAdvancedOption(const QString &arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"putAdvancedOption",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void PrintJobInfo_Builder::setAttributes(android::print::PrintAttributes arg0)

@@ -51,7 +51,7 @@ namespace android::telecom
 	
 	CallAudioState::CallAudioState(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	CallAudioState::CallAudioState(jboolean &arg0, jint &arg1, jint &arg2)
+	CallAudioState::CallAudioState(jboolean arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.telecom.CallAudioState",

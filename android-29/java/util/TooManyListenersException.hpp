@@ -14,8 +14,7 @@ namespace java::util
 		TooManyListenersException(QAndroidJniObject obj);
 		// Constructors
 		TooManyListenersException();
-		TooManyListenersException(jstring &arg0);
-		TooManyListenersException(const QString &arg0);
+		TooManyListenersException(jstring arg0);
 		
 		// Methods
 	};

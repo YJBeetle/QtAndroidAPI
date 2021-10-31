@@ -175,14 +175,6 @@ namespace android::telecom
 			arg0
 		);
 	}
-	void Connection_VideoProvider::onSetCamera(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"onSetCamera",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void Connection_VideoProvider::onSetDeviceOrientation(jint arg0)
 	{
 		__thiz.callMethod<void>(

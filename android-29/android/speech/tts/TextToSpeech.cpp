@@ -141,7 +141,7 @@ namespace android::speech::tts
 	
 	TextToSpeech::TextToSpeech(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	TextToSpeech::TextToSpeech(android::content::Context &arg0, __JniBaseClass &arg1)
+	TextToSpeech::TextToSpeech(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.speech.tts.TextToSpeech",
@@ -150,7 +150,7 @@ namespace android::speech::tts
 			arg1.__jniObject().object()
 		);
 	}
-	TextToSpeech::TextToSpeech(android::content::Context &arg0, __JniBaseClass &arg1, jstring &arg2)
+	TextToSpeech::TextToSpeech(android::content::Context arg0, __JniBaseClass arg1, jstring arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.speech.tts.TextToSpeech",
@@ -158,16 +158,6 @@ namespace android::speech::tts
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2
-		);
-	}
-	TextToSpeech::TextToSpeech(android::content::Context &arg0, __JniBaseClass &arg1, const QString &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.speech.tts.TextToSpeech",
-			"(Landroid/content/Context;Landroid/speech/tts/TextToSpeech$OnInitListener;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	
@@ -189,15 +179,6 @@ namespace android::speech::tts
 			arg1.__jniObject().object()
 		);
 	}
-	jint TextToSpeech::addEarcon(const QString &arg0, java::io::File arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"addEarcon",
-			"(Ljava/lang/String;Ljava/io/File;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	jint TextToSpeech::addEarcon(jstring arg0, jstring arg1)
 	{
 		return __thiz.callMethod<jint>(
@@ -205,15 +186,6 @@ namespace android::speech::tts
 			"(Ljava/lang/String;Ljava/lang/String;)I",
 			arg0,
 			arg1
-		);
-	}
-	jint TextToSpeech::addEarcon(const QString &arg0, const QString &arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"addEarcon",
-			"(Ljava/lang/String;Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	jint TextToSpeech::addEarcon(jstring arg0, jstring arg1, jint arg2)
@@ -226,31 +198,12 @@ namespace android::speech::tts
 			arg2
 		);
 	}
-	jint TextToSpeech::addEarcon(const QString &arg0, const QString &arg1, jint arg2)
-	{
-		return __thiz.callMethod<jint>(
-			"addEarcon",
-			"(Ljava/lang/String;Ljava/lang/String;I)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2
-		);
-	}
 	jint TextToSpeech::addSpeech(jstring arg0, java::io::File arg1)
 	{
 		return __thiz.callMethod<jint>(
 			"addSpeech",
 			"(Ljava/lang/CharSequence;Ljava/io/File;)I",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	jint TextToSpeech::addSpeech(const QString &arg0, java::io::File arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"addSpeech",
-			"(Ljava/lang/CharSequence;Ljava/io/File;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -263,15 +216,6 @@ namespace android::speech::tts
 			arg1
 		);
 	}
-	jint TextToSpeech::addSpeech(const QString &arg0, const QString &arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"addSpeech",
-			"(Ljava/lang/String;Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	jint TextToSpeech::addSpeech(jstring arg0, jstring arg1, jint arg2)
 	{
 		return __thiz.callMethod<jint>(
@@ -279,16 +223,6 @@ namespace android::speech::tts
 			"(Ljava/lang/CharSequence;Ljava/lang/String;I)I",
 			arg0,
 			arg1,
-			arg2
-		);
-	}
-	jint TextToSpeech::addSpeech(const QString &arg0, const QString &arg1, jint arg2)
-	{
-		return __thiz.callMethod<jint>(
-			"addSpeech",
-			"(Ljava/lang/CharSequence;Ljava/lang/String;I)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}
@@ -388,16 +322,6 @@ namespace android::speech::tts
 			arg2.__jniObject().object()
 		);
 	}
-	jint TextToSpeech::playEarcon(const QString &arg0, jint arg1, java::util::HashMap arg2)
-	{
-		return __thiz.callMethod<jint>(
-			"playEarcon",
-			"(Ljava/lang/String;ILjava/util/HashMap;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
 	jint TextToSpeech::playEarcon(jstring arg0, jint arg1, android::os::Bundle arg2, jstring arg3)
 	{
 		return __thiz.callMethod<jint>(
@@ -407,17 +331,6 @@ namespace android::speech::tts
 			arg1,
 			arg2.__jniObject().object(),
 			arg3
-		);
-	}
-	jint TextToSpeech::playEarcon(const QString &arg0, jint arg1, android::os::Bundle arg2, const QString &arg3)
-	{
-		return __thiz.callMethod<jint>(
-			"playEarcon",
-			"(Ljava/lang/String;ILandroid/os/Bundle;Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2.__jniObject().object(),
-			QAndroidJniObject::fromString(arg3).object<jstring>()
 		);
 	}
 	jint TextToSpeech::playSilence(jlong arg0, jint arg1, java::util::HashMap arg2)
@@ -440,16 +353,6 @@ namespace android::speech::tts
 			arg2
 		);
 	}
-	jint TextToSpeech::playSilentUtterance(jlong arg0, jint arg1, const QString &arg2)
-	{
-		return __thiz.callMethod<jint>(
-			"playSilentUtterance",
-			"(JILjava/lang/String;)I",
-			arg0,
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	jint TextToSpeech::setAudioAttributes(android::media::AudioAttributes arg0)
 	{
 		return __thiz.callMethod<jint>(
@@ -464,14 +367,6 @@ namespace android::speech::tts
 			"setEngineByPackageName",
 			"(Ljava/lang/String;)I",
 			arg0
-		);
-	}
-	jint TextToSpeech::setEngineByPackageName(const QString &arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"setEngineByPackageName",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jint TextToSpeech::setLanguage(java::util::Locale arg0)
@@ -539,16 +434,6 @@ namespace android::speech::tts
 			arg2.__jniObject().object()
 		);
 	}
-	jint TextToSpeech::speak(const QString &arg0, jint arg1, java::util::HashMap arg2)
-	{
-		return __thiz.callMethod<jint>(
-			"speak",
-			"(Ljava/lang/String;ILjava/util/HashMap;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
 	jint TextToSpeech::speak(jstring arg0, jint arg1, android::os::Bundle arg2, jstring arg3)
 	{
 		return __thiz.callMethod<jint>(
@@ -558,17 +443,6 @@ namespace android::speech::tts
 			arg1,
 			arg2.__jniObject().object(),
 			arg3
-		);
-	}
-	jint TextToSpeech::speak(const QString &arg0, jint arg1, android::os::Bundle arg2, const QString &arg3)
-	{
-		return __thiz.callMethod<jint>(
-			"speak",
-			"(Ljava/lang/CharSequence;ILandroid/os/Bundle;Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2.__jniObject().object(),
-			QAndroidJniObject::fromString(arg3).object<jstring>()
 		);
 	}
 	jint TextToSpeech::stop()
@@ -588,16 +462,6 @@ namespace android::speech::tts
 			arg2
 		);
 	}
-	jint TextToSpeech::synthesizeToFile(const QString &arg0, java::util::HashMap arg1, const QString &arg2)
-	{
-		return __thiz.callMethod<jint>(
-			"synthesizeToFile",
-			"(Ljava/lang/String;Ljava/util/HashMap;Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	jint TextToSpeech::synthesizeToFile(jstring arg0, android::os::Bundle arg1, java::io::File arg2, jstring arg3)
 	{
 		return __thiz.callMethod<jint>(
@@ -607,17 +471,6 @@ namespace android::speech::tts
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
 			arg3
-		);
-	}
-	jint TextToSpeech::synthesizeToFile(const QString &arg0, android::os::Bundle arg1, java::io::File arg2, const QString &arg3)
-	{
-		return __thiz.callMethod<jint>(
-			"synthesizeToFile",
-			"(Ljava/lang/CharSequence;Landroid/os/Bundle;Ljava/io/File;Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			QAndroidJniObject::fromString(arg3).object<jstring>()
 		);
 	}
 } // namespace android::speech::tts

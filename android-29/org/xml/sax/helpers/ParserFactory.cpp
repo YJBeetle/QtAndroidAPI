@@ -25,14 +25,5 @@ namespace org::xml::sax::helpers
 			arg0
 		);
 	}
-	QAndroidJniObject ParserFactory::makeParser(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"org.xml.sax.helpers.ParserFactory",
-			"makeParser",
-			"(Ljava/lang/String;)Lorg/xml/sax/Parser;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 } // namespace org::xml::sax::helpers
 

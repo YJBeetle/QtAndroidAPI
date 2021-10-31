@@ -13,22 +13,18 @@ namespace org::xml::sax::helpers
 		AttributeListImpl(QAndroidJniObject obj);
 		// Constructors
 		AttributeListImpl();
-		AttributeListImpl(__JniBaseClass &arg0);
+		AttributeListImpl(__JniBaseClass arg0);
 		
 		// Methods
 		void addAttribute(jstring arg0, jstring arg1, jstring arg2);
-		void addAttribute(const QString &arg0, const QString &arg1, const QString &arg2);
 		void clear();
 		jint getLength();
 		jstring getName(jint arg0);
 		jstring getType(jint arg0);
 		jstring getType(jstring arg0);
-		jstring getType(const QString &arg0);
 		jstring getValue(jint arg0);
 		jstring getValue(jstring arg0);
-		jstring getValue(const QString &arg0);
 		void removeAttribute(jstring arg0);
-		void removeAttribute(const QString &arg0);
 		void setAttributeList(__JniBaseClass arg0);
 	};
 } // namespace org::xml::sax::helpers

@@ -32,7 +32,7 @@ namespace android::view
 		
 		TouchDelegate(QAndroidJniObject obj);
 		// Constructors
-		TouchDelegate(android::graphics::Rect &arg0, android::view::View &arg1);
+		TouchDelegate(android::graphics::Rect arg0, android::view::View arg1);
 		TouchDelegate() = default;
 		
 		// Methods

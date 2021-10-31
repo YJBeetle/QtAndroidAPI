@@ -8,7 +8,7 @@ namespace android::security::keystore
 	
 	KeyProtection_Builder::KeyProtection_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	KeyProtection_Builder::KeyProtection_Builder(jint &arg0)
+	KeyProtection_Builder::KeyProtection_Builder(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.security.keystore.KeyProtection$Builder",

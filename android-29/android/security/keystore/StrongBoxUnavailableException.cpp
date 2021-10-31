@@ -13,7 +13,7 @@ namespace android::security::keystore
 			"()V"
 		);
 	}
-	StrongBoxUnavailableException::StrongBoxUnavailableException(jstring &arg0)
+	StrongBoxUnavailableException::StrongBoxUnavailableException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.security.keystore.StrongBoxUnavailableException",
@@ -21,15 +21,7 @@ namespace android::security::keystore
 			arg0
 		);
 	}
-	StrongBoxUnavailableException::StrongBoxUnavailableException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.security.keystore.StrongBoxUnavailableException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	StrongBoxUnavailableException::StrongBoxUnavailableException(jthrowable &arg0)
+	StrongBoxUnavailableException::StrongBoxUnavailableException(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.security.keystore.StrongBoxUnavailableException",
@@ -37,21 +29,12 @@ namespace android::security::keystore
 			arg0
 		);
 	}
-	StrongBoxUnavailableException::StrongBoxUnavailableException(jstring &arg0, jthrowable &arg1)
+	StrongBoxUnavailableException::StrongBoxUnavailableException(jstring arg0, jthrowable arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.security.keystore.StrongBoxUnavailableException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
-			arg1
-		);
-	}
-	StrongBoxUnavailableException::StrongBoxUnavailableException(const QString &arg0, jthrowable &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.security.keystore.StrongBoxUnavailableException",
-			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

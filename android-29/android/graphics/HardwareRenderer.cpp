@@ -124,14 +124,6 @@ namespace android::graphics
 			arg0
 		);
 	}
-	void HardwareRenderer::setName(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setName",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void HardwareRenderer::setOpaque(jboolean arg0)
 	{
 		__thiz.callMethod<void>(

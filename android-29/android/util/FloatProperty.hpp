@@ -17,8 +17,7 @@ namespace android::util
 		
 		FloatProperty(QAndroidJniObject obj);
 		// Constructors
-		FloatProperty(jstring &arg0);
-		FloatProperty(const QString &arg0);
+		FloatProperty(jstring arg0);
 		FloatProperty() = default;
 		
 		// Methods

@@ -20,10 +20,9 @@ namespace android::telephony
 		NeighboringCellInfo(QAndroidJniObject obj);
 		// Constructors
 		NeighboringCellInfo();
-		NeighboringCellInfo(android::os::Parcel &arg0);
-		NeighboringCellInfo(jint &arg0, jint &arg1);
-		NeighboringCellInfo(jint &arg0, jstring &arg1, jint &arg2);
-		NeighboringCellInfo(jint &arg0, const QString &arg1, jint &arg2);
+		NeighboringCellInfo(android::os::Parcel arg0);
+		NeighboringCellInfo(jint arg0, jint arg1);
+		NeighboringCellInfo(jint arg0, jstring arg1, jint arg2);
 		
 		// Methods
 		jint describeContents();

@@ -13,7 +13,7 @@ namespace java::security
 			"()V"
 		);
 	}
-	GeneralSecurityException::GeneralSecurityException(jstring &arg0)
+	GeneralSecurityException::GeneralSecurityException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.GeneralSecurityException",
@@ -21,15 +21,7 @@ namespace java::security
 			arg0
 		);
 	}
-	GeneralSecurityException::GeneralSecurityException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.GeneralSecurityException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	GeneralSecurityException::GeneralSecurityException(jthrowable &arg0)
+	GeneralSecurityException::GeneralSecurityException(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.GeneralSecurityException",
@@ -37,21 +29,12 @@ namespace java::security
 			arg0
 		);
 	}
-	GeneralSecurityException::GeneralSecurityException(jstring &arg0, jthrowable &arg1)
+	GeneralSecurityException::GeneralSecurityException(jstring arg0, jthrowable arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.GeneralSecurityException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
-			arg1
-		);
-	}
-	GeneralSecurityException::GeneralSecurityException(const QString &arg0, jthrowable &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.GeneralSecurityException",
-			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

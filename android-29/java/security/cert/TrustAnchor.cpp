@@ -8,7 +8,7 @@ namespace java::security::cert
 	
 	TrustAnchor::TrustAnchor(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	TrustAnchor::TrustAnchor(java::security::cert::X509Certificate &arg0, jbyteArray &arg1)
+	TrustAnchor::TrustAnchor(java::security::cert::X509Certificate arg0, jbyteArray arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.cert.TrustAnchor",
@@ -17,7 +17,7 @@ namespace java::security::cert
 			arg1
 		);
 	}
-	TrustAnchor::TrustAnchor(jstring &arg0, __JniBaseClass &arg1, jbyteArray &arg2)
+	TrustAnchor::TrustAnchor(jstring arg0, __JniBaseClass arg1, jbyteArray arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.cert.TrustAnchor",
@@ -27,17 +27,7 @@ namespace java::security::cert
 			arg2
 		);
 	}
-	TrustAnchor::TrustAnchor(const QString &arg0, __JniBaseClass &arg1, jbyteArray &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.cert.TrustAnchor",
-			"(Ljava/lang/String;Ljava/security/PublicKey;[B)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2
-		);
-	}
-	TrustAnchor::TrustAnchor(javax::security::auth::x500::X500Principal &arg0, __JniBaseClass &arg1, jbyteArray &arg2)
+	TrustAnchor::TrustAnchor(javax::security::auth::x500::X500Principal arg0, __JniBaseClass arg1, jbyteArray arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.cert.TrustAnchor",

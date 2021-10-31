@@ -12,7 +12,7 @@ namespace android::util
 		
 		LruCache(QAndroidJniObject obj);
 		// Constructors
-		LruCache(jint &arg0);
+		LruCache(jint arg0);
 		LruCache() = default;
 		
 		// Methods

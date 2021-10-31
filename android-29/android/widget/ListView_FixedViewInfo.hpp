@@ -23,7 +23,7 @@ namespace android::widget
 		
 		ListView_FixedViewInfo(QAndroidJniObject obj);
 		// Constructors
-		ListView_FixedViewInfo(android::widget::ListView &arg0);
+		ListView_FixedViewInfo(android::widget::ListView arg0);
 		ListView_FixedViewInfo() = default;
 		
 		// Methods

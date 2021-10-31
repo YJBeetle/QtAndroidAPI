@@ -20,9 +20,7 @@ namespace java::text
 		
 		// Methods
 		static jboolean isNormalized(jstring arg0, java::text::Normalizer_Form arg1);
-		static jboolean isNormalized(const QString &arg0, java::text::Normalizer_Form arg1);
 		static jstring normalize(jstring arg0, java::text::Normalizer_Form arg1);
-		static jstring normalize(const QString &arg0, java::text::Normalizer_Form arg1);
 	};
 } // namespace java::text
 

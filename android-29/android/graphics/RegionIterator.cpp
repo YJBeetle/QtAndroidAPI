@@ -8,7 +8,7 @@ namespace android::graphics
 	
 	RegionIterator::RegionIterator(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	RegionIterator::RegionIterator(android::graphics::Region &arg0)
+	RegionIterator::RegionIterator(android::graphics::Region arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.RegionIterator",

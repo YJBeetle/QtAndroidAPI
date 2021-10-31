@@ -6,7 +6,7 @@ namespace javax::crypto::spec
 	
 	RC2ParameterSpec::RC2ParameterSpec(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	RC2ParameterSpec::RC2ParameterSpec(jint &arg0)
+	RC2ParameterSpec::RC2ParameterSpec(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.crypto.spec.RC2ParameterSpec",
@@ -14,7 +14,7 @@ namespace javax::crypto::spec
 			arg0
 		);
 	}
-	RC2ParameterSpec::RC2ParameterSpec(jint &arg0, jbyteArray &arg1)
+	RC2ParameterSpec::RC2ParameterSpec(jint arg0, jbyteArray arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.crypto.spec.RC2ParameterSpec",
@@ -23,7 +23,7 @@ namespace javax::crypto::spec
 			arg1
 		);
 	}
-	RC2ParameterSpec::RC2ParameterSpec(jint &arg0, jbyteArray &arg1, jint &arg2)
+	RC2ParameterSpec::RC2ParameterSpec(jint arg0, jbyteArray arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.crypto.spec.RC2ParameterSpec",

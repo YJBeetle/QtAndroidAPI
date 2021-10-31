@@ -14,7 +14,7 @@ namespace android::media::audiofx
 		DynamicsProcessing_EqBand(QAndroidJniObject obj);
 		// Constructors
 		DynamicsProcessing_EqBand(android::media::audiofx::DynamicsProcessing_EqBand &arg0);
-		DynamicsProcessing_EqBand(jboolean &arg0, jfloat &arg1, jfloat &arg2);
+		DynamicsProcessing_EqBand(jboolean arg0, jfloat arg1, jfloat arg2);
 		DynamicsProcessing_EqBand() = default;
 		
 		// Methods

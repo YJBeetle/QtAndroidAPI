@@ -22,8 +22,7 @@ namespace java::security
 		AllPermission(QAndroidJniObject obj);
 		// Constructors
 		AllPermission();
-		AllPermission(jstring &arg0, jstring &arg1);
-		AllPermission(const QString &arg0, const QString &arg1);
+		AllPermission(jstring arg0, jstring arg1);
 		
 		// Methods
 		jboolean equals(jobject arg0);

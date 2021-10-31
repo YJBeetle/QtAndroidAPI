@@ -20,8 +20,7 @@ namespace android::database
 		
 		DatabaseUtils_InsertHelper(QAndroidJniObject obj);
 		// Constructors
-		DatabaseUtils_InsertHelper(android::database::sqlite::SQLiteDatabase &arg0, jstring &arg1);
-		DatabaseUtils_InsertHelper(android::database::sqlite::SQLiteDatabase &arg0, const QString &arg1);
+		DatabaseUtils_InsertHelper(android::database::sqlite::SQLiteDatabase arg0, jstring arg1);
 		DatabaseUtils_InsertHelper() = default;
 		
 		// Methods
@@ -31,13 +30,11 @@ namespace android::database
 		void bind(jint arg0, jfloat arg1);
 		void bind(jint arg0, jint arg1);
 		void bind(jint arg0, jstring arg1);
-		void bind(jint arg0, const QString &arg1);
 		void bind(jint arg0, jlong arg1);
 		void bindNull(jint arg0);
 		void close();
 		jlong execute();
 		jint getColumnIndex(jstring arg0);
-		jint getColumnIndex(const QString &arg0);
 		jlong insert(android::content::ContentValues arg0);
 		void prepareForInsert();
 		void prepareForReplace();

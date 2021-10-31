@@ -16,7 +16,7 @@ namespace java::util::concurrent::locks
 			"()V"
 		);
 	}
-	ReentrantReadWriteLock::ReentrantReadWriteLock(jboolean &arg0)
+	ReentrantReadWriteLock::ReentrantReadWriteLock(jboolean arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.locks.ReentrantReadWriteLock",

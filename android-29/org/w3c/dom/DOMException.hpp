@@ -32,8 +32,7 @@ namespace org::w3c::dom
 		
 		DOMException(QAndroidJniObject obj);
 		// Constructors
-		DOMException(jshort &arg0, jstring &arg1);
-		DOMException(jshort &arg0, const QString &arg1);
+		DOMException(jshort arg0, jstring arg1);
 		DOMException() = default;
 		
 		// Methods

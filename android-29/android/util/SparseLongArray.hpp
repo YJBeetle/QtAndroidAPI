@@ -13,7 +13,7 @@ namespace android::util
 		SparseLongArray(QAndroidJniObject obj);
 		// Constructors
 		SparseLongArray();
-		SparseLongArray(jint &arg0);
+		SparseLongArray(jint arg0);
 		
 		// Methods
 		void append(jint arg0, jlong arg1);

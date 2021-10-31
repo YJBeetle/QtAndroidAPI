@@ -78,9 +78,9 @@ namespace android::media
 		
 		AudioTrack(QAndroidJniObject obj);
 		// Constructors
-		AudioTrack(android::media::AudioAttributes &arg0, android::media::AudioFormat &arg1, jint &arg2, jint &arg3, jint &arg4);
-		AudioTrack(jint &arg0, jint &arg1, jint &arg2, jint &arg3, jint &arg4, jint &arg5);
-		AudioTrack(jint &arg0, jint &arg1, jint &arg2, jint &arg3, jint &arg4, jint &arg5, jint &arg6);
+		AudioTrack(android::media::AudioAttributes arg0, android::media::AudioFormat arg1, jint arg2, jint arg3, jint arg4);
+		AudioTrack(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
+		AudioTrack(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6);
 		AudioTrack() = default;
 		
 		// Methods

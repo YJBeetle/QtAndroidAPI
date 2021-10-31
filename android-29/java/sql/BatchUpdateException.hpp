@@ -23,23 +23,16 @@ namespace java::sql
 		BatchUpdateException(QAndroidJniObject obj);
 		// Constructors
 		BatchUpdateException();
-		BatchUpdateException(jintArray &arg0);
-		BatchUpdateException(jthrowable &arg0);
-		BatchUpdateException(jintArray &arg0, jthrowable &arg1);
-		BatchUpdateException(jstring &arg0, jintArray &arg1);
-		BatchUpdateException(const QString &arg0, jintArray &arg1);
-		BatchUpdateException(jstring &arg0, jintArray &arg1, jthrowable &arg2);
-		BatchUpdateException(const QString &arg0, jintArray &arg1, jthrowable &arg2);
-		BatchUpdateException(jstring &arg0, jstring &arg1, jintArray &arg2);
-		BatchUpdateException(const QString &arg0, const QString &arg1, jintArray &arg2);
-		BatchUpdateException(jstring &arg0, jstring &arg1, jintArray &arg2, jthrowable &arg3);
-		BatchUpdateException(const QString &arg0, const QString &arg1, jintArray &arg2, jthrowable &arg3);
-		BatchUpdateException(jstring &arg0, jstring &arg1, jint &arg2, jintArray &arg3);
-		BatchUpdateException(const QString &arg0, const QString &arg1, jint &arg2, jintArray &arg3);
-		BatchUpdateException(jstring &arg0, jstring &arg1, jint &arg2, jintArray &arg3, jthrowable &arg4);
-		BatchUpdateException(const QString &arg0, const QString &arg1, jint &arg2, jintArray &arg3, jthrowable &arg4);
-		BatchUpdateException(jstring &arg0, jstring &arg1, jint &arg2, jlongArray &arg3, jthrowable &arg4);
-		BatchUpdateException(const QString &arg0, const QString &arg1, jint &arg2, jlongArray &arg3, jthrowable &arg4);
+		BatchUpdateException(jintArray arg0);
+		BatchUpdateException(jthrowable arg0);
+		BatchUpdateException(jintArray arg0, jthrowable arg1);
+		BatchUpdateException(jstring arg0, jintArray arg1);
+		BatchUpdateException(jstring arg0, jintArray arg1, jthrowable arg2);
+		BatchUpdateException(jstring arg0, jstring arg1, jintArray arg2);
+		BatchUpdateException(jstring arg0, jstring arg1, jintArray arg2, jthrowable arg3);
+		BatchUpdateException(jstring arg0, jstring arg1, jint arg2, jintArray arg3);
+		BatchUpdateException(jstring arg0, jstring arg1, jint arg2, jintArray arg3, jthrowable arg4);
+		BatchUpdateException(jstring arg0, jstring arg1, jint arg2, jlongArray arg3, jthrowable arg4);
 		
 		// Methods
 		jlongArray getLargeUpdateCounts();

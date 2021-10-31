@@ -23,7 +23,7 @@ namespace java::util::concurrent
 		ConcurrentLinkedQueue(QAndroidJniObject obj);
 		// Constructors
 		ConcurrentLinkedQueue();
-		ConcurrentLinkedQueue(__JniBaseClass &arg0);
+		ConcurrentLinkedQueue(__JniBaseClass arg0);
 		
 		// Methods
 		jboolean add(jobject arg0);

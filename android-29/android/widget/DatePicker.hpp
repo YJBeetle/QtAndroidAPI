@@ -39,10 +39,10 @@ namespace android::widget
 		
 		DatePicker(QAndroidJniObject obj);
 		// Constructors
-		DatePicker(android::content::Context &arg0);
-		DatePicker(android::content::Context &arg0, __JniBaseClass &arg1);
-		DatePicker(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		DatePicker(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		DatePicker(android::content::Context arg0);
+		DatePicker(android::content::Context arg0, __JniBaseClass arg1);
+		DatePicker(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		DatePicker(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		DatePicker() = default;
 		
 		// Methods

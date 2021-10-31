@@ -13,7 +13,7 @@ namespace android::animation
 		FloatArrayEvaluator(QAndroidJniObject obj);
 		// Constructors
 		FloatArrayEvaluator();
-		FloatArrayEvaluator(jfloatArray &arg0);
+		FloatArrayEvaluator(jfloatArray arg0);
 		
 		// Methods
 		jfloatArray evaluate(jfloat arg0, jfloatArray arg1, jfloatArray arg2);

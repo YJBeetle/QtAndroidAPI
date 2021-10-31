@@ -25,7 +25,7 @@ namespace android::graphics::drawable
 		
 		PictureDrawable(QAndroidJniObject obj);
 		// Constructors
-		PictureDrawable(android::graphics::Picture &arg0);
+		PictureDrawable(android::graphics::Picture arg0);
 		PictureDrawable() = default;
 		
 		// Methods

@@ -24,28 +24,12 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	void TvRecordingClient_RecordingCallback::onConnectionFailed(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"onConnectionFailed",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void TvRecordingClient_RecordingCallback::onDisconnected(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"onDisconnected",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void TvRecordingClient_RecordingCallback::onDisconnected(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"onDisconnected",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void TvRecordingClient_RecordingCallback::onError(jint arg0)

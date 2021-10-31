@@ -6,7 +6,7 @@ namespace android::util
 	
 	Range::Range(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Range::Range(__JniBaseClass &arg0, __JniBaseClass &arg1)
+	Range::Range(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.Range",

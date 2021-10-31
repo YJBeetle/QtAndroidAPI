@@ -16,7 +16,7 @@ namespace java::net
 	
 	Proxy::Proxy(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Proxy::Proxy(java::net::Proxy_Type &arg0, java::net::SocketAddress &arg1)
+	Proxy::Proxy(java::net::Proxy_Type arg0, java::net::SocketAddress arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.Proxy",

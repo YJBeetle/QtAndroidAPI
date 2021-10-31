@@ -7,7 +7,7 @@ namespace android::graphics
 	
 	SurfaceTexture::SurfaceTexture(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SurfaceTexture::SurfaceTexture(jboolean &arg0)
+	SurfaceTexture::SurfaceTexture(jboolean arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.SurfaceTexture",
@@ -15,7 +15,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	SurfaceTexture::SurfaceTexture(jint &arg0)
+	SurfaceTexture::SurfaceTexture(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.SurfaceTexture",
@@ -23,7 +23,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	SurfaceTexture::SurfaceTexture(jint &arg0, jboolean &arg1)
+	SurfaceTexture::SurfaceTexture(jint arg0, jboolean arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.SurfaceTexture",

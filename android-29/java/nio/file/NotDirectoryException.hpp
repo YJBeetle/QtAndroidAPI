@@ -15,8 +15,7 @@ namespace java::nio::file
 		
 		NotDirectoryException(QAndroidJniObject obj);
 		// Constructors
-		NotDirectoryException(jstring &arg0);
-		NotDirectoryException(const QString &arg0);
+		NotDirectoryException(jstring arg0);
 		NotDirectoryException() = default;
 		
 		// Methods

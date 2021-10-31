@@ -7,7 +7,7 @@ namespace java::io
 	
 	FilterOutputStream::FilterOutputStream(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	FilterOutputStream::FilterOutputStream(java::io::OutputStream &arg0)
+	FilterOutputStream::FilterOutputStream(java::io::OutputStream arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.FilterOutputStream",

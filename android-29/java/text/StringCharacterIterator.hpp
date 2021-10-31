@@ -12,12 +12,9 @@ namespace java::text
 		
 		StringCharacterIterator(QAndroidJniObject obj);
 		// Constructors
-		StringCharacterIterator(jstring &arg0);
-		StringCharacterIterator(const QString &arg0);
-		StringCharacterIterator(jstring &arg0, jint &arg1);
-		StringCharacterIterator(const QString &arg0, jint &arg1);
-		StringCharacterIterator(jstring &arg0, jint &arg1, jint &arg2, jint &arg3);
-		StringCharacterIterator(const QString &arg0, jint &arg1, jint &arg2, jint &arg3);
+		StringCharacterIterator(jstring arg0);
+		StringCharacterIterator(jstring arg0, jint arg1);
+		StringCharacterIterator(jstring arg0, jint arg1, jint arg2, jint arg3);
 		StringCharacterIterator() = default;
 		
 		// Methods
@@ -34,7 +31,6 @@ namespace java::text
 		jchar previous();
 		jchar setIndex(jint arg0);
 		void setText(jstring arg0);
-		void setText(const QString &arg0);
 	};
 } // namespace java::text
 

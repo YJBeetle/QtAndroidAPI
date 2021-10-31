@@ -24,7 +24,7 @@ namespace android::graphics
 		
 		Typeface_CustomFallbackBuilder(QAndroidJniObject obj);
 		// Constructors
-		Typeface_CustomFallbackBuilder(android::graphics::fonts::FontFamily &arg0);
+		Typeface_CustomFallbackBuilder(android::graphics::fonts::FontFamily arg0);
 		Typeface_CustomFallbackBuilder() = default;
 		
 		// Methods
@@ -33,7 +33,6 @@ namespace android::graphics
 		QAndroidJniObject build();
 		QAndroidJniObject setStyle(android::graphics::fonts::FontStyle arg0);
 		QAndroidJniObject setSystemFallback(jstring arg0);
-		QAndroidJniObject setSystemFallback(const QString &arg0);
 	};
 } // namespace android::graphics
 

@@ -16,8 +16,8 @@ namespace android::hardware::camera2::params
 		
 		ColorSpaceTransform(QAndroidJniObject obj);
 		// Constructors
-		ColorSpaceTransform(jintArray &arg0);
-		ColorSpaceTransform(jarray &arg0);
+		ColorSpaceTransform(jintArray arg0);
+		ColorSpaceTransform(jarray arg0);
 		ColorSpaceTransform() = default;
 		
 		// Methods

@@ -1376,15 +1376,6 @@ namespace android::icu::lang
 			arg0
 		).object<jintArray>();
 	}
-	jintArray UScript::getCode(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.lang.UScript",
-			"getCode",
-			"(Ljava/lang/String;)[I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jintArray>();
-	}
 	jintArray UScript::getCode(java::util::Locale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -1401,15 +1392,6 @@ namespace android::icu::lang
 			"getCodeFromName",
 			"(Ljava/lang/String;)I",
 			arg0
-		);
-	}
-	jint UScript::getCodeFromName(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.icu.lang.UScript",
-			"getCodeFromName",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring UScript::getName(jint arg0)

@@ -29,10 +29,10 @@ namespace android::view
 		
 		SurfaceView(QAndroidJniObject obj);
 		// Constructors
-		SurfaceView(android::content::Context &arg0);
-		SurfaceView(android::content::Context &arg0, __JniBaseClass &arg1);
-		SurfaceView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		SurfaceView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		SurfaceView(android::content::Context arg0);
+		SurfaceView(android::content::Context arg0, __JniBaseClass arg1);
+		SurfaceView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		SurfaceView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		SurfaceView() = default;
 		
 		// Methods

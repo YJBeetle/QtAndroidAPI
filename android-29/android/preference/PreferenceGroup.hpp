@@ -25,16 +25,15 @@ namespace android::preference
 		
 		PreferenceGroup(QAndroidJniObject obj);
 		// Constructors
-		PreferenceGroup(android::content::Context &arg0, __JniBaseClass &arg1);
-		PreferenceGroup(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		PreferenceGroup(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		PreferenceGroup(android::content::Context arg0, __JniBaseClass arg1);
+		PreferenceGroup(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		PreferenceGroup(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		PreferenceGroup() = default;
 		
 		// Methods
 		void addItemFromInflater(android::preference::Preference arg0);
 		jboolean addPreference(android::preference::Preference arg0);
 		QAndroidJniObject findPreference(jstring arg0);
-		QAndroidJniObject findPreference(const QString &arg0);
 		QAndroidJniObject getPreference(jint arg0);
 		jint getPreferenceCount();
 		jboolean isOrderingAsAdded();

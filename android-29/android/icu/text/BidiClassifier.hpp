@@ -12,7 +12,7 @@ namespace android::icu::text
 		
 		BidiClassifier(QAndroidJniObject obj);
 		// Constructors
-		BidiClassifier(jobject &arg0);
+		BidiClassifier(jobject arg0);
 		BidiClassifier() = default;
 		
 		// Methods

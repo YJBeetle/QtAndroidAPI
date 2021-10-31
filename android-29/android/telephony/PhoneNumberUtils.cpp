@@ -156,16 +156,6 @@ namespace android::telephony
 			arg1
 		);
 	}
-	jboolean PhoneNumberUtils::compare(const QString &arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.telephony.PhoneNumberUtils",
-			"compare",
-			"(Ljava/lang/String;Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	jboolean PhoneNumberUtils::compare(android::content::Context arg0, jstring arg1, jstring arg2)
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
@@ -177,17 +167,6 @@ namespace android::telephony
 			arg2
 		);
 	}
-	jboolean PhoneNumberUtils::compare(android::content::Context arg0, const QString &arg1, const QString &arg2)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.telephony.PhoneNumberUtils",
-			"compare",
-			"(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Z",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	jstring PhoneNumberUtils::convertKeypadLettersToDigits(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -195,15 +174,6 @@ namespace android::telephony
 			"convertKeypadLettersToDigits",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
-	}
-	jstring PhoneNumberUtils::convertKeypadLettersToDigits(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.telephony.PhoneNumberUtils",
-			"convertKeypadLettersToDigits",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	QAndroidJniObject PhoneNumberUtils::createTtsSpan(jstring arg0)
@@ -215,15 +185,6 @@ namespace android::telephony
 			arg0
 		);
 	}
-	QAndroidJniObject PhoneNumberUtils::createTtsSpan(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.telephony.PhoneNumberUtils",
-			"createTtsSpan",
-			"(Ljava/lang/String;)Landroid/text/style/TtsSpan;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jstring PhoneNumberUtils::createTtsSpannable(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -231,15 +192,6 @@ namespace android::telephony
 			"createTtsSpannable",
 			"(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;",
 			arg0
-		).object<jstring>();
-	}
-	jstring PhoneNumberUtils::createTtsSpannable(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.telephony.PhoneNumberUtils",
-			"createTtsSpannable",
-			"(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	jstring PhoneNumberUtils::extractNetworkPortion(jstring arg0)
@@ -251,15 +203,6 @@ namespace android::telephony
 			arg0
 		).object<jstring>();
 	}
-	jstring PhoneNumberUtils::extractNetworkPortion(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.telephony.PhoneNumberUtils",
-			"extractNetworkPortion",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
 	jstring PhoneNumberUtils::extractPostDialPortion(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -267,15 +210,6 @@ namespace android::telephony
 			"extractPostDialPortion",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
-	}
-	jstring PhoneNumberUtils::extractPostDialPortion(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.telephony.PhoneNumberUtils",
-			"extractPostDialPortion",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	void PhoneNumberUtils::formatJapaneseNumber(__JniBaseClass arg0)
@@ -305,15 +239,6 @@ namespace android::telephony
 			arg0
 		).object<jstring>();
 	}
-	jstring PhoneNumberUtils::formatNumber(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.telephony.PhoneNumberUtils",
-			"formatNumber",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
 	jstring PhoneNumberUtils::formatNumber(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -322,16 +247,6 @@ namespace android::telephony
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
 			arg0,
 			arg1
-		).object<jstring>();
-	}
-	jstring PhoneNumberUtils::formatNumber(const QString &arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.telephony.PhoneNumberUtils",
-			"formatNumber",
-			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		).object<jstring>();
 	}
 	jstring PhoneNumberUtils::formatNumber(jstring arg0, jstring arg1, jstring arg2)
@@ -343,17 +258,6 @@ namespace android::telephony
 			arg0,
 			arg1,
 			arg2
-		).object<jstring>();
-	}
-	jstring PhoneNumberUtils::formatNumber(const QString &arg0, const QString &arg1, const QString &arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.telephony.PhoneNumberUtils",
-			"formatNumber",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
 		).object<jstring>();
 	}
 	void PhoneNumberUtils::formatNumber(__JniBaseClass arg0, jint arg1)
@@ -376,16 +280,6 @@ namespace android::telephony
 			arg1
 		).object<jstring>();
 	}
-	jstring PhoneNumberUtils::formatNumberToE164(const QString &arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.telephony.PhoneNumberUtils",
-			"formatNumberToE164",
-			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		).object<jstring>();
-	}
 	jstring PhoneNumberUtils::formatNumberToRFC3966(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -394,16 +288,6 @@ namespace android::telephony
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
 			arg0,
 			arg1
-		).object<jstring>();
-	}
-	jstring PhoneNumberUtils::formatNumberToRFC3966(const QString &arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.telephony.PhoneNumberUtils",
-			"formatNumberToRFC3966",
-			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		).object<jstring>();
 	}
 	jint PhoneNumberUtils::getFormatTypeForLocale(java::util::Locale arg0)
@@ -434,15 +318,6 @@ namespace android::telephony
 			arg0
 		).object<jstring>();
 	}
-	jstring PhoneNumberUtils::getStrippedReversed(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.telephony.PhoneNumberUtils",
-			"getStrippedReversed",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
 	jboolean PhoneNumberUtils::is12Key(jchar arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
@@ -470,15 +345,6 @@ namespace android::telephony
 			arg0
 		);
 	}
-	jboolean PhoneNumberUtils::isEmergencyNumber(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.telephony.PhoneNumberUtils",
-			"isEmergencyNumber",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jboolean PhoneNumberUtils::isGlobalPhoneNumber(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
@@ -486,15 +352,6 @@ namespace android::telephony
 			"isGlobalPhoneNumber",
 			"(Ljava/lang/String;)Z",
 			arg0
-		);
-	}
-	jboolean PhoneNumberUtils::isGlobalPhoneNumber(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.telephony.PhoneNumberUtils",
-			"isGlobalPhoneNumber",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean PhoneNumberUtils::isISODigit(jchar arg0)
@@ -514,16 +371,6 @@ namespace android::telephony
 			"(Landroid/content/Context;Ljava/lang/String;)Z",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jboolean PhoneNumberUtils::isLocalEmergencyNumber(android::content::Context arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.telephony.PhoneNumberUtils",
-			"isLocalEmergencyNumber",
-			"(Landroid/content/Context;Ljava/lang/String;)Z",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	jboolean PhoneNumberUtils::isNonSeparator(jchar arg0)
@@ -562,15 +409,6 @@ namespace android::telephony
 			arg0
 		);
 	}
-	jboolean PhoneNumberUtils::isVoiceMailNumber(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.telephony.PhoneNumberUtils",
-			"isVoiceMailNumber",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jboolean PhoneNumberUtils::isWellFormedSmsAddress(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
@@ -578,15 +416,6 @@ namespace android::telephony
 			"isWellFormedSmsAddress",
 			"(Ljava/lang/String;)Z",
 			arg0
-		);
-	}
-	jboolean PhoneNumberUtils::isWellFormedSmsAddress(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.telephony.PhoneNumberUtils",
-			"isWellFormedSmsAddress",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jbyteArray PhoneNumberUtils::networkPortionToCalledPartyBCD(jstring arg0)
@@ -598,15 +427,6 @@ namespace android::telephony
 			arg0
 		).object<jbyteArray>();
 	}
-	jbyteArray PhoneNumberUtils::networkPortionToCalledPartyBCD(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.telephony.PhoneNumberUtils",
-			"networkPortionToCalledPartyBCD",
-			"(Ljava/lang/String;)[B",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jbyteArray>();
-	}
 	jbyteArray PhoneNumberUtils::networkPortionToCalledPartyBCDWithLength(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -614,15 +434,6 @@ namespace android::telephony
 			"networkPortionToCalledPartyBCDWithLength",
 			"(Ljava/lang/String;)[B",
 			arg0
-		).object<jbyteArray>();
-	}
-	jbyteArray PhoneNumberUtils::networkPortionToCalledPartyBCDWithLength(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.telephony.PhoneNumberUtils",
-			"networkPortionToCalledPartyBCDWithLength",
-			"(Ljava/lang/String;)[B",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jbyteArray>();
 	}
 	jstring PhoneNumberUtils::normalizeNumber(jstring arg0)
@@ -634,15 +445,6 @@ namespace android::telephony
 			arg0
 		).object<jstring>();
 	}
-	jstring PhoneNumberUtils::normalizeNumber(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.telephony.PhoneNumberUtils",
-			"normalizeNumber",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
 	jbyteArray PhoneNumberUtils::numberToCalledPartyBCD(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -650,15 +452,6 @@ namespace android::telephony
 			"numberToCalledPartyBCD",
 			"(Ljava/lang/String;)[B",
 			arg0
-		).object<jbyteArray>();
-	}
-	jbyteArray PhoneNumberUtils::numberToCalledPartyBCD(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.telephony.PhoneNumberUtils",
-			"numberToCalledPartyBCD",
-			"(Ljava/lang/String;)[B",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jbyteArray>();
 	}
 	jbyteArray PhoneNumberUtils::numberToCalledPartyBCD(jstring arg0, jint arg1)
@@ -671,16 +464,6 @@ namespace android::telephony
 			arg1
 		).object<jbyteArray>();
 	}
-	jbyteArray PhoneNumberUtils::numberToCalledPartyBCD(const QString &arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.telephony.PhoneNumberUtils",
-			"numberToCalledPartyBCD",
-			"(Ljava/lang/String;I)[B",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		).object<jbyteArray>();
-	}
 	jstring PhoneNumberUtils::replaceUnicodeDigits(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -688,15 +471,6 @@ namespace android::telephony
 			"replaceUnicodeDigits",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
-	}
-	jstring PhoneNumberUtils::replaceUnicodeDigits(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.telephony.PhoneNumberUtils",
-			"replaceUnicodeDigits",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	jstring PhoneNumberUtils::stringFromStringAndTOA(jstring arg0, jint arg1)
@@ -709,16 +483,6 @@ namespace android::telephony
 			arg1
 		).object<jstring>();
 	}
-	jstring PhoneNumberUtils::stringFromStringAndTOA(const QString &arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.telephony.PhoneNumberUtils",
-			"stringFromStringAndTOA",
-			"(Ljava/lang/String;I)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		).object<jstring>();
-	}
 	jstring PhoneNumberUtils::stripSeparators(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -726,15 +490,6 @@ namespace android::telephony
 			"stripSeparators",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
-	}
-	jstring PhoneNumberUtils::stripSeparators(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.telephony.PhoneNumberUtils",
-			"stripSeparators",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	jstring PhoneNumberUtils::toCallerIDMinMatch(jstring arg0)
@@ -746,15 +501,6 @@ namespace android::telephony
 			arg0
 		).object<jstring>();
 	}
-	jstring PhoneNumberUtils::toCallerIDMinMatch(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.telephony.PhoneNumberUtils",
-			"toCallerIDMinMatch",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
 	jint PhoneNumberUtils::toaFromString(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -762,15 +508,6 @@ namespace android::telephony
 			"toaFromString",
 			"(Ljava/lang/String;)I",
 			arg0
-		);
-	}
-	jint PhoneNumberUtils::toaFromString(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.telephony.PhoneNumberUtils",
-			"toaFromString",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace android::telephony

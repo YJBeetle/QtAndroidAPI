@@ -28,8 +28,8 @@ namespace java::util::zip
 		Deflater(QAndroidJniObject obj);
 		// Constructors
 		Deflater();
-		Deflater(jint &arg0);
-		Deflater(jint &arg0, jboolean &arg1);
+		Deflater(jint arg0);
+		Deflater(jint arg0, jboolean arg1);
 		
 		// Methods
 		jint deflate(jbyteArray arg0);

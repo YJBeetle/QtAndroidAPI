@@ -119,7 +119,7 @@ namespace android::widget
 	
 	GridLayout::GridLayout(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	GridLayout::GridLayout(android::content::Context &arg0)
+	GridLayout::GridLayout(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.GridLayout",
@@ -127,7 +127,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	GridLayout::GridLayout(android::content::Context &arg0, __JniBaseClass &arg1)
+	GridLayout::GridLayout(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.GridLayout",
@@ -136,7 +136,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	GridLayout::GridLayout(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	GridLayout::GridLayout(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.GridLayout",
@@ -146,7 +146,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	GridLayout::GridLayout(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	GridLayout::GridLayout(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.GridLayout",

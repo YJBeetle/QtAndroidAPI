@@ -81,15 +81,6 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	QAndroidJniObject GradientDrawable_Orientation::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.drawable.GradientDrawable$Orientation",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/graphics/drawable/GradientDrawable$Orientation;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray GradientDrawable_Orientation::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

@@ -15,7 +15,7 @@ namespace android::text::style
 		TtsSpan_TimeBuilder(QAndroidJniObject obj);
 		// Constructors
 		TtsSpan_TimeBuilder();
-		TtsSpan_TimeBuilder(jint &arg0, jint &arg1);
+		TtsSpan_TimeBuilder(jint arg0, jint arg1);
 		
 		// Methods
 		QAndroidJniObject setHours(jint arg0);

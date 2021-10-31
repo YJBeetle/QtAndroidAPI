@@ -13,20 +13,12 @@ namespace java::lang
 			"()V"
 		);
 	}
-	ArrayStoreException::ArrayStoreException(jstring &arg0)
+	ArrayStoreException::ArrayStoreException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.ArrayStoreException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	ArrayStoreException::ArrayStoreException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.ArrayStoreException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

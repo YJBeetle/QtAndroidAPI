@@ -189,7 +189,7 @@ namespace android::appwidget
 			"()V"
 		);
 	}
-	AppWidgetProviderInfo::AppWidgetProviderInfo(android::os::Parcel &arg0)
+	AppWidgetProviderInfo::AppWidgetProviderInfo(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.appwidget.AppWidgetProviderInfo",

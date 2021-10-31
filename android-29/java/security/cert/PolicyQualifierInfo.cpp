@@ -6,7 +6,7 @@ namespace java::security::cert
 	
 	PolicyQualifierInfo::PolicyQualifierInfo(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PolicyQualifierInfo::PolicyQualifierInfo(jbyteArray &arg0)
+	PolicyQualifierInfo::PolicyQualifierInfo(jbyteArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.cert.PolicyQualifierInfo",

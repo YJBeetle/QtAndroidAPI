@@ -35,22 +35,17 @@ namespace android::nfc
 		
 		NdefRecord(QAndroidJniObject obj);
 		// Constructors
-		NdefRecord(jbyteArray &arg0);
-		NdefRecord(jshort &arg0, jbyteArray &arg1, jbyteArray &arg2, jbyteArray &arg3);
+		NdefRecord(jbyteArray arg0);
+		NdefRecord(jshort arg0, jbyteArray arg1, jbyteArray arg2, jbyteArray arg3);
 		NdefRecord() = default;
 		
 		// Methods
 		static QAndroidJniObject createApplicationRecord(jstring arg0);
-		static QAndroidJniObject createApplicationRecord(const QString &arg0);
 		static QAndroidJniObject createExternal(jstring arg0, jstring arg1, jbyteArray arg2);
-		static QAndroidJniObject createExternal(const QString &arg0, const QString &arg1, jbyteArray arg2);
 		static QAndroidJniObject createMime(jstring arg0, jbyteArray arg1);
-		static QAndroidJniObject createMime(const QString &arg0, jbyteArray arg1);
 		static QAndroidJniObject createTextRecord(jstring arg0, jstring arg1);
-		static QAndroidJniObject createTextRecord(const QString &arg0, const QString &arg1);
 		static QAndroidJniObject createUri(android::net::Uri arg0);
 		static QAndroidJniObject createUri(jstring arg0);
-		static QAndroidJniObject createUri(const QString &arg0);
 		jint describeContents();
 		jboolean equals(jobject arg0);
 		jbyteArray getId();

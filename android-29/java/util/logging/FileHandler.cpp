@@ -16,7 +16,7 @@ namespace java::util::logging
 			"()V"
 		);
 	}
-	FileHandler::FileHandler(jstring &arg0)
+	FileHandler::FileHandler(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.logging.FileHandler",
@@ -24,15 +24,7 @@ namespace java::util::logging
 			arg0
 		);
 	}
-	FileHandler::FileHandler(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.logging.FileHandler",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	FileHandler::FileHandler(jstring &arg0, jboolean &arg1)
+	FileHandler::FileHandler(jstring arg0, jboolean arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.logging.FileHandler",
@@ -41,16 +33,7 @@ namespace java::util::logging
 			arg1
 		);
 	}
-	FileHandler::FileHandler(const QString &arg0, jboolean &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.logging.FileHandler",
-			"(Ljava/lang/String;Z)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
-	FileHandler::FileHandler(jstring &arg0, jint &arg1, jint &arg2)
+	FileHandler::FileHandler(jstring arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.logging.FileHandler",
@@ -60,17 +43,7 @@ namespace java::util::logging
 			arg2
 		);
 	}
-	FileHandler::FileHandler(const QString &arg0, jint &arg1, jint &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.logging.FileHandler",
-			"(Ljava/lang/String;II)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2
-		);
-	}
-	FileHandler::FileHandler(jstring &arg0, jint &arg1, jint &arg2, jboolean &arg3)
+	FileHandler::FileHandler(jstring arg0, jint arg1, jint arg2, jboolean arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.logging.FileHandler",
@@ -81,34 +54,12 @@ namespace java::util::logging
 			arg3
 		);
 	}
-	FileHandler::FileHandler(const QString &arg0, jint &arg1, jint &arg2, jboolean &arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.logging.FileHandler",
-			"(Ljava/lang/String;IIZ)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	FileHandler::FileHandler(jstring &arg0, jlong &arg1, jint &arg2, jboolean &arg3)
+	FileHandler::FileHandler(jstring arg0, jlong arg1, jint arg2, jboolean arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.logging.FileHandler",
 			"(Ljava/lang/String;JIZ)V",
 			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	FileHandler::FileHandler(const QString &arg0, jlong &arg1, jint &arg2, jboolean &arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.logging.FileHandler",
-			"(Ljava/lang/String;JIZ)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2,
 			arg3

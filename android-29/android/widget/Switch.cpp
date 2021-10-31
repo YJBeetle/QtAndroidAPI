@@ -14,7 +14,7 @@ namespace android::widget
 	
 	Switch::Switch(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Switch::Switch(android::content::Context &arg0)
+	Switch::Switch(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.Switch",
@@ -22,7 +22,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	Switch::Switch(android::content::Context &arg0, __JniBaseClass &arg1)
+	Switch::Switch(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.Switch",
@@ -31,7 +31,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	Switch::Switch(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	Switch::Switch(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.Switch",
@@ -41,7 +41,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	Switch::Switch(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	Switch::Switch(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.Switch",
@@ -295,28 +295,12 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Switch::setTextOff(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTextOff",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void Switch::setTextOn(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTextOn",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
-		);
-	}
-	void Switch::setTextOn(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTextOn",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void Switch::setThumbDrawable(android::graphics::drawable::Drawable arg0)

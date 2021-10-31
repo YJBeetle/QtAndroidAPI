@@ -37,17 +37,15 @@ namespace android::content
 		
 		AbstractThreadedSyncAdapter(QAndroidJniObject obj);
 		// Constructors
-		AbstractThreadedSyncAdapter(android::content::Context &arg0, jboolean &arg1);
-		AbstractThreadedSyncAdapter(android::content::Context &arg0, jboolean &arg1, jboolean &arg2);
+		AbstractThreadedSyncAdapter(android::content::Context arg0, jboolean arg1);
+		AbstractThreadedSyncAdapter(android::content::Context arg0, jboolean arg1, jboolean arg2);
 		AbstractThreadedSyncAdapter() = default;
 		
 		// Methods
 		QAndroidJniObject getContext();
 		QAndroidJniObject getSyncAdapterBinder();
 		void onPerformSync(android::accounts::Account arg0, android::os::Bundle arg1, jstring arg2, android::content::ContentProviderClient arg3, android::content::SyncResult arg4);
-		void onPerformSync(android::accounts::Account arg0, android::os::Bundle arg1, const QString &arg2, android::content::ContentProviderClient arg3, android::content::SyncResult arg4);
 		void onSecurityException(android::accounts::Account arg0, android::os::Bundle arg1, jstring arg2, android::content::SyncResult arg3);
-		void onSecurityException(android::accounts::Account arg0, android::os::Bundle arg1, const QString &arg2, android::content::SyncResult arg3);
 		void onSyncCanceled();
 		void onSyncCanceled(java::lang::Thread arg0);
 		jboolean onUnsyncableAccount();

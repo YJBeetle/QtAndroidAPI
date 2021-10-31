@@ -8,20 +8,12 @@ namespace android::view::textclassifier
 	
 	TextLanguage_Request_Builder::TextLanguage_Request_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	TextLanguage_Request_Builder::TextLanguage_Request_Builder(jstring &arg0)
+	TextLanguage_Request_Builder::TextLanguage_Request_Builder(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.textclassifier.TextLanguage$Request$Builder",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
-		);
-	}
-	TextLanguage_Request_Builder::TextLanguage_Request_Builder(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.textclassifier.TextLanguage$Request$Builder",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

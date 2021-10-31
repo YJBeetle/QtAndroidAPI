@@ -12,7 +12,7 @@ namespace android::util
 		
 		Range(QAndroidJniObject obj);
 		// Constructors
-		Range(__JniBaseClass &arg0, __JniBaseClass &arg1);
+		Range(__JniBaseClass arg0, __JniBaseClass arg1);
 		Range() = default;
 		
 		// Methods

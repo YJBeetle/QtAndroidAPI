@@ -16,7 +16,7 @@ namespace java::security
 		
 		GuardedObject(QAndroidJniObject obj);
 		// Constructors
-		GuardedObject(jobject &arg0, __JniBaseClass &arg1);
+		GuardedObject(jobject arg0, __JniBaseClass arg1);
 		GuardedObject() = default;
 		
 		// Methods

@@ -8,7 +8,7 @@ namespace android::security
 	
 	ConfirmationPrompt_Builder::ConfirmationPrompt_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ConfirmationPrompt_Builder::ConfirmationPrompt_Builder(android::content::Context &arg0)
+	ConfirmationPrompt_Builder::ConfirmationPrompt_Builder(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.security.ConfirmationPrompt$Builder",
@@ -39,14 +39,6 @@ namespace android::security
 			"setPromptText",
 			"(Ljava/lang/CharSequence;)Landroid/security/ConfirmationPrompt$Builder;",
 			arg0
-		);
-	}
-	QAndroidJniObject ConfirmationPrompt_Builder::setPromptText(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setPromptText",
-			"(Ljava/lang/CharSequence;)Landroid/security/ConfirmationPrompt$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace android::security

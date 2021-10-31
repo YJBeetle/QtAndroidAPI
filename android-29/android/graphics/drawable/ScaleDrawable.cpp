@@ -11,7 +11,7 @@ namespace android::graphics::drawable
 	
 	ScaleDrawable::ScaleDrawable(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ScaleDrawable::ScaleDrawable(android::graphics::drawable::Drawable &arg0, jint &arg1, jfloat &arg2, jfloat &arg3)
+	ScaleDrawable::ScaleDrawable(android::graphics::drawable::Drawable arg0, jint arg1, jfloat arg2, jfloat arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.ScaleDrawable",

@@ -20,7 +20,7 @@ namespace java::util
 	
 	Locale_LanguageRange::Locale_LanguageRange(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Locale_LanguageRange::Locale_LanguageRange(jstring &arg0)
+	Locale_LanguageRange::Locale_LanguageRange(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Locale$LanguageRange",
@@ -28,29 +28,12 @@ namespace java::util
 			arg0
 		);
 	}
-	Locale_LanguageRange::Locale_LanguageRange(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.Locale$LanguageRange",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	Locale_LanguageRange::Locale_LanguageRange(jstring &arg0, jdouble &arg1)
+	Locale_LanguageRange::Locale_LanguageRange(jstring arg0, jdouble arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Locale$LanguageRange",
 			"(Ljava/lang/String;D)V",
 			arg0,
-			arg1
-		);
-	}
-	Locale_LanguageRange::Locale_LanguageRange(const QString &arg0, jdouble &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.Locale$LanguageRange",
-			"(Ljava/lang/String;D)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -75,15 +58,6 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject Locale_LanguageRange::parse(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.util.Locale$LanguageRange",
-			"parse",
-			"(Ljava/lang/String;)Ljava/util/List;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Locale_LanguageRange::parse(jstring arg0, __JniBaseClass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -91,16 +65,6 @@ namespace java::util
 			"parse",
 			"(Ljava/lang/String;Ljava/util/Map;)Ljava/util/List;",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Locale_LanguageRange::parse(const QString &arg0, __JniBaseClass arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.util.Locale$LanguageRange",
-			"parse",
-			"(Ljava/lang/String;Ljava/util/Map;)Ljava/util/List;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

@@ -33,7 +33,6 @@ namespace android::app
 		void select();
 		QAndroidJniObject setContentDescription(jint arg0);
 		QAndroidJniObject setContentDescription(jstring arg0);
-		QAndroidJniObject setContentDescription(const QString &arg0);
 		QAndroidJniObject setCustomView(android::view::View arg0);
 		QAndroidJniObject setCustomView(jint arg0);
 		QAndroidJniObject setIcon(android::graphics::drawable::Drawable arg0);
@@ -42,7 +41,6 @@ namespace android::app
 		QAndroidJniObject setTag(jobject arg0);
 		QAndroidJniObject setText(jint arg0);
 		QAndroidJniObject setText(jstring arg0);
-		QAndroidJniObject setText(const QString &arg0);
 	};
 } // namespace android::app
 

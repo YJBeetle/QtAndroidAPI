@@ -19,7 +19,7 @@ namespace android::content::pm
 		
 		ActivityInfo_WindowLayout(QAndroidJniObject obj);
 		// Constructors
-		ActivityInfo_WindowLayout(jint &arg0, jfloat &arg1, jint &arg2, jfloat &arg3, jint &arg4, jint &arg5, jint &arg6);
+		ActivityInfo_WindowLayout(jint arg0, jfloat arg1, jint arg2, jfloat arg3, jint arg4, jint arg5, jint arg6);
 		ActivityInfo_WindowLayout() = default;
 		
 		// Methods

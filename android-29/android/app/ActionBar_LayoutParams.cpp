@@ -22,7 +22,7 @@ namespace android::app
 			arg0.__jniObject().object()
 		);
 	}
-	ActionBar_LayoutParams::ActionBar_LayoutParams(android::view::ViewGroup_LayoutParams &arg0)
+	ActionBar_LayoutParams::ActionBar_LayoutParams(android::view::ViewGroup_LayoutParams arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.ActionBar$LayoutParams",
@@ -30,7 +30,7 @@ namespace android::app
 			arg0.__jniObject().object()
 		);
 	}
-	ActionBar_LayoutParams::ActionBar_LayoutParams(jint &arg0)
+	ActionBar_LayoutParams::ActionBar_LayoutParams(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.ActionBar$LayoutParams",
@@ -38,7 +38,7 @@ namespace android::app
 			arg0
 		);
 	}
-	ActionBar_LayoutParams::ActionBar_LayoutParams(android::content::Context &arg0, __JniBaseClass &arg1)
+	ActionBar_LayoutParams::ActionBar_LayoutParams(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.ActionBar$LayoutParams",
@@ -47,7 +47,7 @@ namespace android::app
 			arg1.__jniObject().object()
 		);
 	}
-	ActionBar_LayoutParams::ActionBar_LayoutParams(jint &arg0, jint &arg1)
+	ActionBar_LayoutParams::ActionBar_LayoutParams(jint arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.ActionBar$LayoutParams",
@@ -56,7 +56,7 @@ namespace android::app
 			arg1
 		);
 	}
-	ActionBar_LayoutParams::ActionBar_LayoutParams(jint &arg0, jint &arg1, jint &arg2)
+	ActionBar_LayoutParams::ActionBar_LayoutParams(jint arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.ActionBar$LayoutParams",

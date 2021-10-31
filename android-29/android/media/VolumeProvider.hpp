@@ -15,7 +15,7 @@ namespace android::media
 		
 		VolumeProvider(QAndroidJniObject obj);
 		// Constructors
-		VolumeProvider(jint &arg0, jint &arg1, jint &arg2);
+		VolumeProvider(jint arg0, jint arg1, jint arg2);
 		VolumeProvider() = default;
 		
 		// Methods

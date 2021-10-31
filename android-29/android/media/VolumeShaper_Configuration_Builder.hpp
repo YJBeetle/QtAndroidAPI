@@ -17,7 +17,7 @@ namespace android::media
 		VolumeShaper_Configuration_Builder(QAndroidJniObject obj);
 		// Constructors
 		VolumeShaper_Configuration_Builder();
-		VolumeShaper_Configuration_Builder(android::media::VolumeShaper_Configuration &arg0);
+		VolumeShaper_Configuration_Builder(android::media::VolumeShaper_Configuration arg0);
 		
 		// Methods
 		QAndroidJniObject build();

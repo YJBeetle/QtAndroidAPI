@@ -25,7 +25,6 @@ namespace java::io
 		void write(jint arg0);
 		void write(jcharArray arg0, jint arg1, jint arg2);
 		void write(jstring arg0, jint arg1, jint arg2);
-		void write(const QString &arg0, jint arg1, jint arg2);
 	};
 } // namespace java::io
 

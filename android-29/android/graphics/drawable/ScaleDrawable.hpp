@@ -34,7 +34,7 @@ namespace android::graphics::drawable
 		
 		ScaleDrawable(QAndroidJniObject obj);
 		// Constructors
-		ScaleDrawable(android::graphics::drawable::Drawable &arg0, jint &arg1, jfloat &arg2, jfloat &arg3);
+		ScaleDrawable(android::graphics::drawable::Drawable arg0, jint arg1, jfloat arg2, jfloat arg3);
 		ScaleDrawable() = default;
 		
 		// Methods

@@ -22,7 +22,7 @@ namespace android::view::contentcapture
 		
 		ContentCaptureCondition(QAndroidJniObject obj);
 		// Constructors
-		ContentCaptureCondition(android::content::LocusId &arg0, jint &arg1);
+		ContentCaptureCondition(android::content::LocusId arg0, jint arg1);
 		ContentCaptureCondition() = default;
 		
 		// Methods

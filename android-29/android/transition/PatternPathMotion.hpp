@@ -22,8 +22,8 @@ namespace android::transition
 		PatternPathMotion(QAndroidJniObject obj);
 		// Constructors
 		PatternPathMotion();
-		PatternPathMotion(android::graphics::Path &arg0);
-		PatternPathMotion(android::content::Context &arg0, __JniBaseClass &arg1);
+		PatternPathMotion(android::graphics::Path arg0);
+		PatternPathMotion(android::content::Context arg0, __JniBaseClass arg1);
 		
 		// Methods
 		QAndroidJniObject getPath(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);

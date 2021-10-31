@@ -30,7 +30,7 @@ namespace android::transition
 		ChangeClipBounds(QAndroidJniObject obj);
 		// Constructors
 		ChangeClipBounds();
-		ChangeClipBounds(android::content::Context &arg0, __JniBaseClass &arg1);
+		ChangeClipBounds(android::content::Context arg0, __JniBaseClass arg1);
 		
 		// Methods
 		void captureEndValues(android::transition::TransitionValues arg0);

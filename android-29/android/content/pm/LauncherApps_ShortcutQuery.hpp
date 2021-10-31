@@ -27,7 +27,6 @@ namespace android::content::pm
 		QAndroidJniObject setActivity(android::content::ComponentName arg0);
 		QAndroidJniObject setChangedSince(jlong arg0);
 		QAndroidJniObject setPackage(jstring arg0);
-		QAndroidJniObject setPackage(const QString &arg0);
 		QAndroidJniObject setQueryFlags(jint arg0);
 		QAndroidJniObject setShortcutIds(__JniBaseClass arg0);
 	};

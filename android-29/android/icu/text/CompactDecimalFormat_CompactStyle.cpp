@@ -33,15 +33,6 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject CompactDecimalFormat_CompactStyle::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.CompactDecimalFormat$CompactStyle",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/icu/text/CompactDecimalFormat$CompactStyle;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray CompactDecimalFormat_CompactStyle::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

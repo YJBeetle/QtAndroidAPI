@@ -91,7 +91,7 @@ namespace java::util::zip
 			"()V"
 		);
 	}
-	Deflater::Deflater(jint &arg0)
+	Deflater::Deflater(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.zip.Deflater",
@@ -99,7 +99,7 @@ namespace java::util::zip
 			arg0
 		);
 	}
-	Deflater::Deflater(jint &arg0, jboolean &arg1)
+	Deflater::Deflater(jint arg0, jboolean arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.zip.Deflater",

@@ -12,7 +12,7 @@ namespace android::media::audiofx
 		
 		DynamicsProcessing_Stage(QAndroidJniObject obj);
 		// Constructors
-		DynamicsProcessing_Stage(jboolean &arg0, jboolean &arg1);
+		DynamicsProcessing_Stage(jboolean arg0, jboolean arg1);
 		DynamicsProcessing_Stage() = default;
 		
 		// Methods

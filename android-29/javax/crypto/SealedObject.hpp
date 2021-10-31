@@ -20,7 +20,7 @@ namespace javax::crypto
 		
 		SealedObject(QAndroidJniObject obj);
 		// Constructors
-		SealedObject(__JniBaseClass &arg0, javax::crypto::Cipher &arg1);
+		SealedObject(__JniBaseClass arg0, javax::crypto::Cipher arg1);
 		SealedObject() = default;
 		
 		// Methods
@@ -28,7 +28,6 @@ namespace javax::crypto
 		jobject getObject(__JniBaseClass arg0);
 		jobject getObject(javax::crypto::Cipher arg0);
 		jobject getObject(__JniBaseClass arg0, jstring arg1);
-		jobject getObject(__JniBaseClass arg0, const QString &arg1);
 	};
 } // namespace javax::crypto
 

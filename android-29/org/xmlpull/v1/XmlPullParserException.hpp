@@ -13,10 +13,8 @@ namespace org::xmlpull::v1
 		
 		XmlPullParserException(QAndroidJniObject obj);
 		// Constructors
-		XmlPullParserException(jstring &arg0);
-		XmlPullParserException(const QString &arg0);
-		XmlPullParserException(jstring &arg0, __JniBaseClass &arg1, jthrowable &arg2);
-		XmlPullParserException(const QString &arg0, __JniBaseClass &arg1, jthrowable &arg2);
+		XmlPullParserException(jstring arg0);
+		XmlPullParserException(jstring arg0, __JniBaseClass arg1, jthrowable arg2);
 		XmlPullParserException() = default;
 		
 		// Methods

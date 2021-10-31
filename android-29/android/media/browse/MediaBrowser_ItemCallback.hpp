@@ -20,7 +20,6 @@ namespace android::media::browse
 		
 		// Methods
 		void onError(jstring arg0);
-		void onError(const QString &arg0);
 		void onItemLoaded(android::media::browse::MediaBrowser_MediaItem arg0);
 	};
 } // namespace android::media::browse

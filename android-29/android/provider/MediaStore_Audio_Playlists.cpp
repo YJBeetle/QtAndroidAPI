@@ -65,14 +65,5 @@ namespace android::provider
 			arg0
 		);
 	}
-	QAndroidJniObject MediaStore_Audio_Playlists::getContentUri(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.MediaStore$Audio$Playlists",
-			"getContentUri",
-			"(Ljava/lang/String;)Landroid/net/Uri;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 } // namespace android::provider
 

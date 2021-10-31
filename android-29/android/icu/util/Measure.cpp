@@ -8,7 +8,7 @@ namespace android::icu::util
 	
 	Measure::Measure(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Measure::Measure(java::lang::Number &arg0, android::icu::util::MeasureUnit &arg1)
+	Measure::Measure(java::lang::Number arg0, android::icu::util::MeasureUnit arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.Measure",

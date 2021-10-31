@@ -19,20 +19,12 @@ namespace android::media::audiofx
 			"()V"
 		);
 	}
-	PresetReverb_Settings::PresetReverb_Settings(jstring &arg0)
+	PresetReverb_Settings::PresetReverb_Settings(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.audiofx.PresetReverb$Settings",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	PresetReverb_Settings::PresetReverb_Settings(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.media.audiofx.PresetReverb$Settings",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

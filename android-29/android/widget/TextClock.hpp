@@ -20,10 +20,10 @@ namespace android::widget
 		
 		TextClock(QAndroidJniObject obj);
 		// Constructors
-		TextClock(android::content::Context &arg0);
-		TextClock(android::content::Context &arg0, __JniBaseClass &arg1);
-		TextClock(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		TextClock(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		TextClock(android::content::Context arg0);
+		TextClock(android::content::Context arg0, __JniBaseClass arg1);
+		TextClock(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		TextClock(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		TextClock() = default;
 		
 		// Methods
@@ -33,11 +33,8 @@ namespace android::widget
 		jboolean is24HourModeEnabled();
 		void onVisibilityAggregated(jboolean arg0);
 		void setFormat12Hour(jstring arg0);
-		void setFormat12Hour(const QString &arg0);
 		void setFormat24Hour(jstring arg0);
-		void setFormat24Hour(const QString &arg0);
 		void setTimeZone(jstring arg0);
-		void setTimeZone(const QString &arg0);
 	};
 } // namespace android::widget
 

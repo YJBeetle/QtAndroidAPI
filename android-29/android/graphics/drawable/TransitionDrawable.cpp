@@ -7,7 +7,7 @@ namespace android::graphics::drawable
 	
 	TransitionDrawable::TransitionDrawable(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	TransitionDrawable::TransitionDrawable(jarray &arg0)
+	TransitionDrawable::TransitionDrawable(jarray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.TransitionDrawable",

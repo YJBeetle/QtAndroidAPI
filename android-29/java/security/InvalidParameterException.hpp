@@ -16,8 +16,7 @@ namespace java::security
 		InvalidParameterException(QAndroidJniObject obj);
 		// Constructors
 		InvalidParameterException();
-		InvalidParameterException(jstring &arg0);
-		InvalidParameterException(const QString &arg0);
+		InvalidParameterException(jstring arg0);
 		
 		// Methods
 	};

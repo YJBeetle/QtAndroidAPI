@@ -15,10 +15,8 @@ namespace java::nio::file
 		
 		NoSuchFileException(QAndroidJniObject obj);
 		// Constructors
-		NoSuchFileException(jstring &arg0);
-		NoSuchFileException(const QString &arg0);
-		NoSuchFileException(jstring &arg0, jstring &arg1, jstring &arg2);
-		NoSuchFileException(const QString &arg0, const QString &arg1, const QString &arg2);
+		NoSuchFileException(jstring arg0);
+		NoSuchFileException(jstring arg0, jstring arg1, jstring arg2);
 		NoSuchFileException() = default;
 		
 		// Methods

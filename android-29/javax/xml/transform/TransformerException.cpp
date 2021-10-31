@@ -9,7 +9,7 @@ namespace javax::xml::transform
 	
 	TransformerException::TransformerException(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	TransformerException::TransformerException(jstring &arg0)
+	TransformerException::TransformerException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.transform.TransformerException",
@@ -17,15 +17,7 @@ namespace javax::xml::transform
 			arg0
 		);
 	}
-	TransformerException::TransformerException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.xml.transform.TransformerException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	TransformerException::TransformerException(jthrowable &arg0)
+	TransformerException::TransformerException(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.transform.TransformerException",
@@ -33,7 +25,7 @@ namespace javax::xml::transform
 			arg0
 		);
 	}
-	TransformerException::TransformerException(jstring &arg0, jthrowable &arg1)
+	TransformerException::TransformerException(jstring arg0, jthrowable arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.transform.TransformerException",
@@ -42,16 +34,7 @@ namespace javax::xml::transform
 			arg1
 		);
 	}
-	TransformerException::TransformerException(const QString &arg0, jthrowable &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.xml.transform.TransformerException",
-			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
-	TransformerException::TransformerException(jstring &arg0, __JniBaseClass &arg1)
+	TransformerException::TransformerException(jstring arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.transform.TransformerException",
@@ -60,31 +43,12 @@ namespace javax::xml::transform
 			arg1.__jniObject().object()
 		);
 	}
-	TransformerException::TransformerException(const QString &arg0, __JniBaseClass &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.xml.transform.TransformerException",
-			"(Ljava/lang/String;Ljavax/xml/transform/SourceLocator;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
-	TransformerException::TransformerException(jstring &arg0, __JniBaseClass &arg1, jthrowable &arg2)
+	TransformerException::TransformerException(jstring arg0, __JniBaseClass arg1, jthrowable arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.transform.TransformerException",
 			"(Ljava/lang/String;Ljavax/xml/transform/SourceLocator;Ljava/lang/Throwable;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2
-		);
-	}
-	TransformerException::TransformerException(const QString &arg0, __JniBaseClass &arg1, jthrowable &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.xml.transform.TransformerException",
-			"(Ljava/lang/String;Ljavax/xml/transform/SourceLocator;Ljava/lang/Throwable;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2
 		);

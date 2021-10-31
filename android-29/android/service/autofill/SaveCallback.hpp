@@ -20,7 +20,6 @@ namespace android::service::autofill
 		
 		// Methods
 		void onFailure(jstring arg0);
-		void onFailure(const QString &arg0);
 		void onSuccess();
 		void onSuccess(android::content::IntentSender arg0);
 	};

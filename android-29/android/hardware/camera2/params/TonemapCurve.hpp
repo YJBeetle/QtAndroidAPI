@@ -22,7 +22,7 @@ namespace android::hardware::camera2::params
 		
 		TonemapCurve(QAndroidJniObject obj);
 		// Constructors
-		TonemapCurve(jfloatArray &arg0, jfloatArray &arg1, jfloatArray &arg2);
+		TonemapCurve(jfloatArray arg0, jfloatArray arg1, jfloatArray arg2);
 		TonemapCurve() = default;
 		
 		// Methods

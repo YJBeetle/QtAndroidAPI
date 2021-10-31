@@ -618,14 +618,5 @@ namespace android::media::tv
 			arg0
 		).object<jstring>();
 	}
-	jstring TvContract_Channels::getVideoResolution(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.media.tv.TvContract$Channels",
-			"getVideoResolution",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
 } // namespace android::media::tv
 

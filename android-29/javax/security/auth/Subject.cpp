@@ -17,7 +17,7 @@ namespace javax::security::auth
 			"()V"
 		);
 	}
-	Subject::Subject(jboolean &arg0, __JniBaseClass &arg1, __JniBaseClass &arg2, __JniBaseClass &arg3)
+	Subject::Subject(jboolean arg0, __JniBaseClass arg1, __JniBaseClass arg2, __JniBaseClass arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.security.auth.Subject",

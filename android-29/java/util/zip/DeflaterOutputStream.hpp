@@ -22,12 +22,12 @@ namespace java::util::zip
 		
 		DeflaterOutputStream(QAndroidJniObject obj);
 		// Constructors
-		DeflaterOutputStream(java::io::OutputStream &arg0);
-		DeflaterOutputStream(java::io::OutputStream &arg0, jboolean &arg1);
-		DeflaterOutputStream(java::io::OutputStream &arg0, java::util::zip::Deflater &arg1);
-		DeflaterOutputStream(java::io::OutputStream &arg0, java::util::zip::Deflater &arg1, jboolean &arg2);
-		DeflaterOutputStream(java::io::OutputStream &arg0, java::util::zip::Deflater &arg1, jint &arg2);
-		DeflaterOutputStream(java::io::OutputStream &arg0, java::util::zip::Deflater &arg1, jint &arg2, jboolean &arg3);
+		DeflaterOutputStream(java::io::OutputStream arg0);
+		DeflaterOutputStream(java::io::OutputStream arg0, jboolean arg1);
+		DeflaterOutputStream(java::io::OutputStream arg0, java::util::zip::Deflater arg1);
+		DeflaterOutputStream(java::io::OutputStream arg0, java::util::zip::Deflater arg1, jboolean arg2);
+		DeflaterOutputStream(java::io::OutputStream arg0, java::util::zip::Deflater arg1, jint arg2);
+		DeflaterOutputStream(java::io::OutputStream arg0, java::util::zip::Deflater arg1, jint arg2, jboolean arg3);
 		DeflaterOutputStream() = default;
 		
 		// Methods

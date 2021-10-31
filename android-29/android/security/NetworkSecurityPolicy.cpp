@@ -31,13 +31,5 @@ namespace android::security
 			arg0
 		);
 	}
-	jboolean NetworkSecurityPolicy::isCleartextTrafficPermitted(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isCleartextTrafficPermitted",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 } // namespace android::security
 

@@ -24,13 +24,9 @@ namespace javax::net::ssl
 		
 		// Methods
 		void checkClientTrusted(jarray arg0, jstring arg1, java::net::Socket arg2);
-		void checkClientTrusted(jarray arg0, const QString &arg1, java::net::Socket arg2);
 		void checkClientTrusted(jarray arg0, jstring arg1, javax::net::ssl::SSLEngine arg2);
-		void checkClientTrusted(jarray arg0, const QString &arg1, javax::net::ssl::SSLEngine arg2);
 		void checkServerTrusted(jarray arg0, jstring arg1, java::net::Socket arg2);
-		void checkServerTrusted(jarray arg0, const QString &arg1, java::net::Socket arg2);
 		void checkServerTrusted(jarray arg0, jstring arg1, javax::net::ssl::SSLEngine arg2);
-		void checkServerTrusted(jarray arg0, const QString &arg1, javax::net::ssl::SSLEngine arg2);
 	};
 } // namespace javax::net::ssl
 

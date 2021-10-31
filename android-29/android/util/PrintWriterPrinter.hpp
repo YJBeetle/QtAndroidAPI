@@ -16,12 +16,11 @@ namespace android::util
 		
 		PrintWriterPrinter(QAndroidJniObject obj);
 		// Constructors
-		PrintWriterPrinter(java::io::PrintWriter &arg0);
+		PrintWriterPrinter(java::io::PrintWriter arg0);
 		PrintWriterPrinter() = default;
 		
 		// Methods
 		void println(jstring arg0);
-		void println(const QString &arg0);
 	};
 } // namespace android::util
 

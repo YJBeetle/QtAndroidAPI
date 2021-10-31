@@ -24,15 +24,6 @@ namespace android::telephony::mbms
 			arg1
 		);
 	}
-	void MbmsStreamingSessionCallback::onError(jint arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"onError",
-			"(ILjava/lang/String;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	void MbmsStreamingSessionCallback::onMiddlewareReady()
 	{
 		__thiz.callMethod<void>(

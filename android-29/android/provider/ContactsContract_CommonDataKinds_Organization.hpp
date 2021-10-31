@@ -34,7 +34,6 @@ namespace android::provider
 		
 		// Methods
 		static jstring getTypeLabel(android::content::res::Resources arg0, jint arg1, jstring arg2);
-		static jstring getTypeLabel(android::content::res::Resources arg0, jint arg1, const QString &arg2);
 		static jint getTypeLabelResource(jint arg0);
 	};
 } // namespace android::provider

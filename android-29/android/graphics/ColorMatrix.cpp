@@ -13,7 +13,7 @@ namespace android::graphics
 			"()V"
 		);
 	}
-	ColorMatrix::ColorMatrix(jfloatArray &arg0)
+	ColorMatrix::ColorMatrix(jfloatArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.ColorMatrix",

@@ -21,8 +21,8 @@ namespace android::text
 		BidiFormatter_Builder(QAndroidJniObject obj);
 		// Constructors
 		BidiFormatter_Builder();
-		BidiFormatter_Builder(jboolean &arg0);
-		BidiFormatter_Builder(java::util::Locale &arg0);
+		BidiFormatter_Builder(jboolean arg0);
+		BidiFormatter_Builder(java::util::Locale arg0);
 		
 		// Methods
 		QAndroidJniObject build();

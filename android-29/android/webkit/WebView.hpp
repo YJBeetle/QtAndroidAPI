@@ -157,11 +157,11 @@ namespace android::webkit
 		
 		WebView(QAndroidJniObject obj);
 		// Constructors
-		WebView(android::content::Context &arg0);
-		WebView(android::content::Context &arg0, __JniBaseClass &arg1);
-		WebView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		WebView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jboolean &arg3);
-		WebView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		WebView(android::content::Context arg0);
+		WebView(android::content::Context arg0, __JniBaseClass arg1);
+		WebView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		WebView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jboolean arg3);
+		WebView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		WebView() = default;
 		
 		// Methods
@@ -169,17 +169,14 @@ namespace android::webkit
 		static void disableWebView();
 		static void enableSlowWholeDocumentDraw();
 		static jstring findAddress(jstring arg0);
-		static jstring findAddress(const QString &arg0);
 		static QAndroidJniObject getCurrentWebViewPackage();
 		static QAndroidJniObject getSafeBrowsingPrivacyPolicyUrl();
 		static QAndroidJniObject getWebViewClassLoader();
 		static void setDataDirectorySuffix(jstring arg0);
-		static void setDataDirectorySuffix(const QString &arg0);
 		static void setSafeBrowsingWhitelist(__JniBaseClass arg0, __JniBaseClass arg1);
 		static void setWebContentsDebuggingEnabled(jboolean arg0);
 		static void startSafeBrowsing(android::content::Context arg0, __JniBaseClass arg1);
 		void addJavascriptInterface(jobject arg0, jstring arg1);
-		void addJavascriptInterface(jobject arg0, const QString &arg1);
 		void autofill(android::util::SparseArray arg0);
 		jboolean canGoBack();
 		jboolean canGoBackOrForward(jint arg0);
@@ -197,17 +194,13 @@ namespace android::webkit
 		QAndroidJniObject copyBackForwardList();
 		QAndroidJniObject createPrintDocumentAdapter();
 		QAndroidJniObject createPrintDocumentAdapter(jstring arg0);
-		QAndroidJniObject createPrintDocumentAdapter(const QString &arg0);
 		jarray createWebMessageChannel();
 		void destroy();
 		jboolean dispatchKeyEvent(android::view::KeyEvent arg0);
 		void documentHasImages(android::os::Message arg0);
 		void evaluateJavascript(jstring arg0, __JniBaseClass arg1);
-		void evaluateJavascript(const QString &arg0, __JniBaseClass arg1);
 		jint findAll(jstring arg0);
-		jint findAll(const QString &arg0);
 		void findAllAsync(jstring arg0);
-		void findAllAsync(const QString &arg0);
 		QAndroidJniObject findFocus();
 		void findNext(jboolean arg0);
 		void flingScroll(jint arg0, jint arg1);
@@ -220,7 +213,6 @@ namespace android::webkit
 		QAndroidJniObject getHandler();
 		QAndroidJniObject getHitTestResult();
 		jarray getHttpAuthUsernamePassword(jstring arg0, jstring arg1);
-		jarray getHttpAuthUsernamePassword(const QString &arg0, const QString &arg1);
 		jstring getOriginalUrl();
 		jint getProgress();
 		jboolean getRendererPriorityWaivedWhenNotVisible();
@@ -242,13 +234,9 @@ namespace android::webkit
 		jboolean isPrivateBrowsingEnabled();
 		jboolean isVisibleToUserForAutofill(jint arg0);
 		void loadData(jstring arg0, jstring arg1, jstring arg2);
-		void loadData(const QString &arg0, const QString &arg1, const QString &arg2);
 		void loadDataWithBaseURL(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4);
-		void loadDataWithBaseURL(const QString &arg0, const QString &arg1, const QString &arg2, const QString &arg3, const QString &arg4);
 		void loadUrl(jstring arg0);
-		void loadUrl(const QString &arg0);
 		void loadUrl(jstring arg0, __JniBaseClass arg1);
-		void loadUrl(const QString &arg0, __JniBaseClass arg1);
 		jboolean onCheckIsTextEditor();
 		void onChildViewAdded(android::view::View arg0, android::view::View arg1);
 		void onChildViewRemoved(android::view::View arg0, android::view::View arg1);
@@ -276,12 +264,10 @@ namespace android::webkit
 		void pauseTimers();
 		jboolean performLongClick();
 		void postUrl(jstring arg0, jbyteArray arg1);
-		void postUrl(const QString &arg0, jbyteArray arg1);
 		void postVisualStateCallback(jlong arg0, android::webkit::WebView_VisualStateCallback arg1);
 		void postWebMessage(android::webkit::WebMessage arg0, android::net::Uri arg1);
 		void reload();
 		void removeJavascriptInterface(jstring arg0);
-		void removeJavascriptInterface(const QString &arg0);
 		jboolean requestChildRectangleOnScreen(android::view::View arg0, android::graphics::Rect arg1, jboolean arg2);
 		jboolean requestFocus(jint arg0, android::graphics::Rect arg1);
 		void requestFocusNodeHref(android::os::Message arg0);
@@ -289,19 +275,15 @@ namespace android::webkit
 		QAndroidJniObject restoreState(android::os::Bundle arg0);
 		void resumeTimers();
 		void savePassword(jstring arg0, jstring arg1, jstring arg2);
-		void savePassword(const QString &arg0, const QString &arg1, const QString &arg2);
 		QAndroidJniObject saveState(android::os::Bundle arg0);
 		void saveWebArchive(jstring arg0);
-		void saveWebArchive(const QString &arg0);
 		void saveWebArchive(jstring arg0, jboolean arg1, __JniBaseClass arg2);
-		void saveWebArchive(const QString &arg0, jboolean arg1, __JniBaseClass arg2);
 		void setBackgroundColor(jint arg0);
 		void setCertificate(android::net::http::SslCertificate arg0);
 		void setDownloadListener(__JniBaseClass arg0);
 		void setFindListener(__JniBaseClass arg0);
 		void setHorizontalScrollbarOverlay(jboolean arg0);
 		void setHttpAuthUsernamePassword(jstring arg0, jstring arg1, jstring arg2, jstring arg3);
-		void setHttpAuthUsernamePassword(const QString &arg0, const QString &arg1, const QString &arg2, const QString &arg3);
 		void setInitialScale(jint arg0);
 		void setLayerType(jint arg0, android::graphics::Paint arg1);
 		void setLayoutParams(android::view::ViewGroup_LayoutParams arg0);
@@ -319,7 +301,6 @@ namespace android::webkit
 		void setWebViewRenderProcessClient(__JniBaseClass arg0, android::webkit::WebViewRenderProcessClient arg1);
 		jboolean shouldDelayChildPressedState();
 		jboolean showFindDialog(jstring arg0, jboolean arg1);
-		jboolean showFindDialog(const QString &arg0, jboolean arg1);
 		void stopLoading();
 		void zoomBy(jfloat arg0);
 		jboolean zoomIn();

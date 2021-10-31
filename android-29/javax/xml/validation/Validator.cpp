@@ -23,28 +23,12 @@ namespace javax::xml::validation
 			arg0
 		);
 	}
-	jboolean Validator::getFeature(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"getFeature",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jobject Validator::getProperty(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getProperty",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
 			arg0
-		).object<jobject>();
-	}
-	jobject Validator::getProperty(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getProperty",
-			"(Ljava/lang/String;)Ljava/lang/Object;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jobject>();
 	}
 	QAndroidJniObject Validator::getResourceResolver()
@@ -78,30 +62,12 @@ namespace javax::xml::validation
 			arg1
 		);
 	}
-	void Validator::setFeature(const QString &arg0, jboolean arg1)
-	{
-		__thiz.callMethod<void>(
-			"setFeature",
-			"(Ljava/lang/String;Z)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	void Validator::setProperty(jstring arg0, jobject arg1)
 	{
 		__thiz.callMethod<void>(
 			"setProperty",
 			"(Ljava/lang/String;Ljava/lang/Object;)V",
 			arg0,
-			arg1
-		);
-	}
-	void Validator::setProperty(const QString &arg0, jobject arg1)
-	{
-		__thiz.callMethod<void>(
-			"setProperty",
-			"(Ljava/lang/String;Ljava/lang/Object;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

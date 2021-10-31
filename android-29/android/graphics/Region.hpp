@@ -30,9 +30,9 @@ namespace android::graphics
 		Region(QAndroidJniObject obj);
 		// Constructors
 		Region();
-		Region(android::graphics::Rect &arg0);
+		Region(android::graphics::Rect arg0);
 		Region(android::graphics::Region &arg0);
-		Region(jint &arg0, jint &arg1, jint &arg2, jint &arg3);
+		Region(jint arg0, jint arg1, jint arg2, jint arg3);
 		
 		// Methods
 		jboolean contains(jint arg0, jint arg1);

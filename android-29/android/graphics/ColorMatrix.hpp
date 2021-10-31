@@ -13,7 +13,7 @@ namespace android::graphics
 		ColorMatrix(QAndroidJniObject obj);
 		// Constructors
 		ColorMatrix();
-		ColorMatrix(jfloatArray &arg0);
+		ColorMatrix(jfloatArray arg0);
 		ColorMatrix(android::graphics::ColorMatrix &arg0);
 		
 		// Methods

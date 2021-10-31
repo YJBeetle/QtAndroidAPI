@@ -6,7 +6,7 @@ namespace android::graphics
 	
 	CornerPathEffect::CornerPathEffect(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	CornerPathEffect::CornerPathEffect(jfloat &arg0)
+	CornerPathEffect::CornerPathEffect(jfloat arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.CornerPathEffect",

@@ -11,7 +11,7 @@ namespace android::inputmethodservice
 	
 	InputMethodService_InputMethodSessionImpl::InputMethodService_InputMethodSessionImpl(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	InputMethodService_InputMethodSessionImpl::InputMethodService_InputMethodSessionImpl(android::inputmethodservice::InputMethodService &arg0)
+	InputMethodService_InputMethodSessionImpl::InputMethodService_InputMethodSessionImpl(android::inputmethodservice::InputMethodService arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.inputmethodservice.InputMethodService$InputMethodSessionImpl",
@@ -27,15 +27,6 @@ namespace android::inputmethodservice
 			"appPrivateCommand",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void InputMethodService_InputMethodSessionImpl::appPrivateCommand(const QString &arg0, android::os::Bundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"appPrivateCommand",
-			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

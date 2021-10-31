@@ -10,7 +10,7 @@ namespace android::app::backup
 	
 	FileBackupHelper::FileBackupHelper(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	FileBackupHelper::FileBackupHelper(android::content::Context &arg0, jarray &arg1)
+	FileBackupHelper::FileBackupHelper(android::content::Context arg0, jarray arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.backup.FileBackupHelper",

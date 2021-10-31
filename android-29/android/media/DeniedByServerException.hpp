@@ -14,8 +14,7 @@ namespace android::media
 		
 		DeniedByServerException(QAndroidJniObject obj);
 		// Constructors
-		DeniedByServerException(jstring &arg0);
-		DeniedByServerException(const QString &arg0);
+		DeniedByServerException(jstring arg0);
 		DeniedByServerException() = default;
 		
 		// Methods

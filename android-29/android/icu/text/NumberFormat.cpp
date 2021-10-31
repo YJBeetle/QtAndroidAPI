@@ -524,29 +524,12 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject NumberFormat::parse(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"parse",
-			"(Ljava/lang/String;)Ljava/lang/Number;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject NumberFormat::parse(jstring arg0, java::text::ParsePosition arg1)
 	{
 		return __thiz.callObjectMethod(
 			"parse",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Number;",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject NumberFormat::parse(const QString &arg0, java::text::ParsePosition arg1)
-	{
-		return __thiz.callObjectMethod(
-			"parse",
-			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Number;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -559,30 +542,12 @@ namespace android::icu::text
 			arg1.__jniObject().object()
 		);
 	}
-	QAndroidJniObject NumberFormat::parseCurrency(const QString &arg0, java::text::ParsePosition arg1)
-	{
-		return __thiz.callObjectMethod(
-			"parseCurrency",
-			"(Ljava/lang/CharSequence;Ljava/text/ParsePosition;)Landroid/icu/util/CurrencyAmount;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	jobject NumberFormat::parseObject(jstring arg0, java::text::ParsePosition arg1)
 	{
 		return __thiz.callObjectMethod(
 			"parseObject",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object()
-		).object<jobject>();
-	}
-	jobject NumberFormat::parseObject(const QString &arg0, java::text::ParsePosition arg1)
-	{
-		return __thiz.callObjectMethod(
-			"parseObject",
-			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Object;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		).object<jobject>();
 	}

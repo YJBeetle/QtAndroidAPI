@@ -110,14 +110,6 @@ namespace android::net::sip
 			arg0
 		);
 	}
-	void SipManager::close(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"close",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject SipManager::createSipSession(android::net::sip::SipProfile arg0, android::net::sip::SipSession_Listener arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -143,28 +135,12 @@ namespace android::net::sip
 			arg0
 		);
 	}
-	jboolean SipManager::isOpened(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isOpened",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jboolean SipManager::isRegistered(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isRegistered",
 			"(Ljava/lang/String;)Z",
 			arg0
-		);
-	}
-	jboolean SipManager::isRegistered(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isRegistered",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject SipManager::makeAudioCall(android::net::sip::SipProfile arg0, android::net::sip::SipProfile arg1, android::net::sip::SipAudioCall_Listener arg2, jint arg3)
@@ -185,17 +161,6 @@ namespace android::net::sip
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/net/sip/SipAudioCall$Listener;I)Landroid/net/sip/SipAudioCall;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
-			arg3
-		);
-	}
-	QAndroidJniObject SipManager::makeAudioCall(const QString &arg0, const QString &arg1, android::net::sip::SipAudioCall_Listener arg2, jint arg3)
-	{
-		return __thiz.callObjectMethod(
-			"makeAudioCall",
-			"(Ljava/lang/String;Ljava/lang/String;Landroid/net/sip/SipAudioCall$Listener;I)Landroid/net/sip/SipAudioCall;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object(),
 			arg3
 		);
@@ -234,15 +199,6 @@ namespace android::net::sip
 			"setRegistrationListener",
 			"(Ljava/lang/String;Landroid/net/sip/SipRegistrationListener;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void SipManager::setRegistrationListener(const QString &arg0, __JniBaseClass arg1)
-	{
-		__thiz.callMethod<void>(
-			"setRegistrationListener",
-			"(Ljava/lang/String;Landroid/net/sip/SipRegistrationListener;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

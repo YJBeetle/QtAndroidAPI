@@ -37,13 +37,12 @@ namespace android::service::autofill
 		Dataset_Builder(QAndroidJniObject obj);
 		// Constructors
 		Dataset_Builder();
-		Dataset_Builder(android::widget::RemoteViews &arg0);
+		Dataset_Builder(android::widget::RemoteViews arg0);
 		
 		// Methods
 		QAndroidJniObject build();
 		QAndroidJniObject setAuthentication(android::content::IntentSender arg0);
 		QAndroidJniObject setId(jstring arg0);
-		QAndroidJniObject setId(const QString &arg0);
 		QAndroidJniObject setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1);
 		QAndroidJniObject setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1, android::widget::RemoteViews arg2);
 		QAndroidJniObject setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1, java::util::regex::Pattern arg2);

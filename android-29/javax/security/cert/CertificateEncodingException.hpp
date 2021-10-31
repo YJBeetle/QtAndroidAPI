@@ -15,8 +15,7 @@ namespace javax::security::cert
 		CertificateEncodingException(QAndroidJniObject obj);
 		// Constructors
 		CertificateEncodingException();
-		CertificateEncodingException(jstring &arg0);
-		CertificateEncodingException(const QString &arg0);
+		CertificateEncodingException(jstring arg0);
 		
 		// Methods
 	};

@@ -14,11 +14,9 @@ namespace java::lang
 		ReflectiveOperationException(QAndroidJniObject obj);
 		// Constructors
 		ReflectiveOperationException();
-		ReflectiveOperationException(jstring &arg0);
-		ReflectiveOperationException(const QString &arg0);
-		ReflectiveOperationException(jthrowable &arg0);
-		ReflectiveOperationException(jstring &arg0, jthrowable &arg1);
-		ReflectiveOperationException(const QString &arg0, jthrowable &arg1);
+		ReflectiveOperationException(jstring arg0);
+		ReflectiveOperationException(jthrowable arg0);
+		ReflectiveOperationException(jstring arg0, jthrowable arg1);
 		
 		// Methods
 	};

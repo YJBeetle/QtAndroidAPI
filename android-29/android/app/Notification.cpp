@@ -886,7 +886,7 @@ namespace android::app
 			"()V"
 		);
 	}
-	Notification::Notification(android::os::Parcel &arg0)
+	Notification::Notification(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.Notification",
@@ -894,23 +894,13 @@ namespace android::app
 			arg0.__jniObject().object()
 		);
 	}
-	Notification::Notification(jint &arg0, jstring &arg1, jlong &arg2)
+	Notification::Notification(jint arg0, jstring arg1, jlong arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.Notification",
 			"(ILjava/lang/CharSequence;J)V",
 			arg0,
 			arg1,
-			arg2
-		);
-	}
-	Notification::Notification(jint &arg0, const QString &arg1, jlong &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.app.Notification",
-			"(ILjava/lang/CharSequence;J)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}

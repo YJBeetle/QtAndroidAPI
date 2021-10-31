@@ -30,16 +30,6 @@ namespace android::text::format
 			arg1.__jniObject().object()
 		).object<jstring>();
 	}
-	jstring DateFormat::format(const QString &arg0, java::util::Calendar arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.text.format.DateFormat",
-			"format",
-			"(Ljava/lang/CharSequence;Ljava/util/Calendar;)Ljava/lang/CharSequence;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		).object<jstring>();
-	}
 	jstring DateFormat::format(jstring arg0, java::util::Date arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -47,16 +37,6 @@ namespace android::text::format
 			"format",
 			"(Ljava/lang/CharSequence;Ljava/util/Date;)Ljava/lang/CharSequence;",
 			arg0,
-			arg1.__jniObject().object()
-		).object<jstring>();
-	}
-	jstring DateFormat::format(const QString &arg0, java::util::Date arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.text.format.DateFormat",
-			"format",
-			"(Ljava/lang/CharSequence;Ljava/util/Date;)Ljava/lang/CharSequence;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		).object<jstring>();
 	}
@@ -70,16 +50,6 @@ namespace android::text::format
 			arg1
 		).object<jstring>();
 	}
-	jstring DateFormat::format(const QString &arg0, jlong arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.text.format.DateFormat",
-			"format",
-			"(Ljava/lang/CharSequence;J)Ljava/lang/CharSequence;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		).object<jstring>();
-	}
 	jstring DateFormat::getBestDateTimePattern(java::util::Locale arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -88,16 +58,6 @@ namespace android::text::format
 			"(Ljava/util/Locale;Ljava/lang/String;)Ljava/lang/String;",
 			arg0.__jniObject().object(),
 			arg1
-		).object<jstring>();
-	}
-	jstring DateFormat::getBestDateTimePattern(java::util::Locale arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.text.format.DateFormat",
-			"getBestDateTimePattern",
-			"(Ljava/util/Locale;Ljava/lang/String;)Ljava/lang/String;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		).object<jstring>();
 	}
 	QAndroidJniObject DateFormat::getDateFormat(android::content::Context arg0)

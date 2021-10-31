@@ -19,9 +19,8 @@ namespace android::accounts
 		
 		Account(QAndroidJniObject obj);
 		// Constructors
-		Account(android::os::Parcel &arg0);
-		Account(jstring &arg0, jstring &arg1);
-		Account(const QString &arg0, const QString &arg1);
+		Account(android::os::Parcel arg0);
+		Account(jstring arg0, jstring arg1);
 		Account() = default;
 		
 		// Methods

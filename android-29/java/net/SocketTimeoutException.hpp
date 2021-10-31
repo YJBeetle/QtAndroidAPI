@@ -16,8 +16,7 @@ namespace java::net
 		SocketTimeoutException(QAndroidJniObject obj);
 		// Constructors
 		SocketTimeoutException();
-		SocketTimeoutException(jstring &arg0);
-		SocketTimeoutException(const QString &arg0);
+		SocketTimeoutException(jstring arg0);
 		
 		// Methods
 	};

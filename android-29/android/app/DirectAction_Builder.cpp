@@ -9,20 +9,12 @@ namespace android::app
 	
 	DirectAction_Builder::DirectAction_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DirectAction_Builder::DirectAction_Builder(jstring &arg0)
+	DirectAction_Builder::DirectAction_Builder(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.DirectAction$Builder",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	DirectAction_Builder::DirectAction_Builder(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.app.DirectAction$Builder",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

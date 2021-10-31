@@ -19,7 +19,7 @@ namespace android::graphics::drawable
 		PaintDrawable(QAndroidJniObject obj);
 		// Constructors
 		PaintDrawable();
-		PaintDrawable(jint &arg0);
+		PaintDrawable(jint arg0);
 		
 		// Methods
 		void setCornerRadii(jfloatArray arg0);

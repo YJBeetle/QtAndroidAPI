@@ -17,7 +17,7 @@ namespace android::view::textclassifier
 		
 		TextClassifierEvent_LanguageDetectionEvent_Builder(QAndroidJniObject obj);
 		// Constructors
-		TextClassifierEvent_LanguageDetectionEvent_Builder(jint &arg0);
+		TextClassifierEvent_LanguageDetectionEvent_Builder(jint arg0);
 		TextClassifierEvent_LanguageDetectionEvent_Builder() = default;
 		
 		// Methods

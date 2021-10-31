@@ -40,7 +40,6 @@ namespace android::provider
 		// Methods
 		static QAndroidJniObject query(android::content::ContentResolver arg0, jarray arg1, jlong arg2, jlong arg3);
 		static QAndroidJniObject query(android::content::ContentResolver arg0, jarray arg1, jlong arg2, jlong arg3, jstring arg4);
-		static QAndroidJniObject query(android::content::ContentResolver arg0, jarray arg1, jlong arg2, jlong arg3, const QString &arg4);
 	};
 } // namespace android::provider
 

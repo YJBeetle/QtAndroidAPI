@@ -19,10 +19,10 @@ namespace java::util
 		LinkedHashMap(QAndroidJniObject obj);
 		// Constructors
 		LinkedHashMap();
-		LinkedHashMap(jint &arg0);
-		LinkedHashMap(__JniBaseClass &arg0);
-		LinkedHashMap(jint &arg0, jfloat &arg1);
-		LinkedHashMap(jint &arg0, jfloat &arg1, jboolean &arg2);
+		LinkedHashMap(jint arg0);
+		LinkedHashMap(__JniBaseClass arg0);
+		LinkedHashMap(jint arg0, jfloat arg1);
+		LinkedHashMap(jint arg0, jfloat arg1, jboolean arg2);
 		
 		// Methods
 		void clear();

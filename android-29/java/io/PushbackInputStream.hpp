@@ -18,8 +18,8 @@ namespace java::io
 		
 		PushbackInputStream(QAndroidJniObject obj);
 		// Constructors
-		PushbackInputStream(java::io::InputStream &arg0);
-		PushbackInputStream(java::io::InputStream &arg0, jint &arg1);
+		PushbackInputStream(java::io::InputStream arg0);
+		PushbackInputStream(java::io::InputStream arg0, jint arg1);
 		PushbackInputStream() = default;
 		
 		// Methods

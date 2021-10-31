@@ -37,7 +37,6 @@ namespace java::util::concurrent
 		// Methods
 		static QAndroidJniObject of(java::time::temporal::ChronoUnit arg0);
 		static QAndroidJniObject valueOf(jstring arg0);
-		static QAndroidJniObject valueOf(const QString &arg0);
 		static jarray values();
 		jlong convert(java::time::Duration arg0);
 		jlong convert(jlong arg0, java::util::concurrent::TimeUnit arg1);

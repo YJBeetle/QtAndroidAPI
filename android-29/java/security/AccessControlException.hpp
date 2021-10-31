@@ -19,10 +19,8 @@ namespace java::security
 		
 		AccessControlException(QAndroidJniObject obj);
 		// Constructors
-		AccessControlException(jstring &arg0);
-		AccessControlException(const QString &arg0);
-		AccessControlException(jstring &arg0, java::security::Permission &arg1);
-		AccessControlException(const QString &arg0, java::security::Permission &arg1);
+		AccessControlException(jstring arg0);
+		AccessControlException(jstring arg0, java::security::Permission arg1);
 		AccessControlException() = default;
 		
 		// Methods

@@ -82,9 +82,7 @@ namespace java::util::stream
 		static QAndroidJniObject groupingByConcurrent(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2);
 		static QAndroidJniObject joining();
 		static QAndroidJniObject joining(jstring arg0);
-		static QAndroidJniObject joining(const QString &arg0);
 		static QAndroidJniObject joining(jstring arg0, jstring arg1, jstring arg2);
-		static QAndroidJniObject joining(const QString &arg0, const QString &arg1, const QString &arg2);
 		static QAndroidJniObject mapping(__JniBaseClass arg0, __JniBaseClass arg1);
 		static QAndroidJniObject maxBy(__JniBaseClass arg0);
 		static QAndroidJniObject minBy(__JniBaseClass arg0);

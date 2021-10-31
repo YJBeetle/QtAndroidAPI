@@ -6,7 +6,7 @@ namespace android::security::keystore
 	
 	WrappedKeyEntry::WrappedKeyEntry(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	WrappedKeyEntry::WrappedKeyEntry(jbyteArray &arg0, jstring &arg1, jstring &arg2, __JniBaseClass &arg3)
+	WrappedKeyEntry::WrappedKeyEntry(jbyteArray arg0, jstring arg1, jstring arg2, __JniBaseClass arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.security.keystore.WrappedKeyEntry",
@@ -14,17 +14,6 @@ namespace android::security::keystore
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
-		);
-	}
-	WrappedKeyEntry::WrappedKeyEntry(jbyteArray &arg0, const QString &arg1, const QString &arg2, __JniBaseClass &arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"android.security.keystore.WrappedKeyEntry",
-			"([BLjava/lang/String;Ljava/lang/String;Ljava/security/spec/AlgorithmParameterSpec;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
 			arg3.__jniObject().object()
 		);
 	}

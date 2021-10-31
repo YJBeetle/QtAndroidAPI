@@ -21,7 +21,7 @@ namespace android::app::slice
 			arg0.__jniObject().object()
 		);
 	}
-	Slice_Builder::Slice_Builder(android::net::Uri &arg0, android::app::slice::SliceSpec &arg1)
+	Slice_Builder::Slice_Builder(android::net::Uri arg0, android::app::slice::SliceSpec arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.slice.Slice$Builder",
@@ -42,16 +42,6 @@ namespace android::app::slice
 			arg2
 		);
 	}
-	QAndroidJniObject Slice_Builder::addAction(android::app::PendingIntent arg0, android::app::slice::Slice arg1, const QString &arg2)
-	{
-		return __thiz.callObjectMethod(
-			"addAction",
-			"(Landroid/app/PendingIntent;Landroid/app/slice/Slice;Ljava/lang/String;)Landroid/app/slice/Slice$Builder;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	QAndroidJniObject Slice_Builder::addBundle(android::os::Bundle arg0, jstring arg1, __JniBaseClass arg2)
 	{
 		return __thiz.callObjectMethod(
@@ -59,16 +49,6 @@ namespace android::app::slice
 			"(Landroid/os/Bundle;Ljava/lang/String;Ljava/util/List;)Landroid/app/slice/Slice$Builder;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Slice_Builder::addBundle(android::os::Bundle arg0, const QString &arg1, __JniBaseClass arg2)
-	{
-		return __thiz.callObjectMethod(
-			"addBundle",
-			"(Landroid/os/Bundle;Ljava/lang/String;Ljava/util/List;)Landroid/app/slice/Slice$Builder;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}
@@ -90,16 +70,6 @@ namespace android::app::slice
 			arg2.__jniObject().object()
 		);
 	}
-	QAndroidJniObject Slice_Builder::addIcon(android::graphics::drawable::Icon arg0, const QString &arg1, __JniBaseClass arg2)
-	{
-		return __thiz.callObjectMethod(
-			"addIcon",
-			"(Landroid/graphics/drawable/Icon;Ljava/lang/String;Ljava/util/List;)Landroid/app/slice/Slice$Builder;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object()
-		);
-	}
 	QAndroidJniObject Slice_Builder::addInt(jint arg0, jstring arg1, __JniBaseClass arg2)
 	{
 		return __thiz.callObjectMethod(
@@ -107,16 +77,6 @@ namespace android::app::slice
 			"(ILjava/lang/String;Ljava/util/List;)Landroid/app/slice/Slice$Builder;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Slice_Builder::addInt(jint arg0, const QString &arg1, __JniBaseClass arg2)
-	{
-		return __thiz.callObjectMethod(
-			"addInt",
-			"(ILjava/lang/String;Ljava/util/List;)Landroid/app/slice/Slice$Builder;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}
@@ -130,16 +90,6 @@ namespace android::app::slice
 			arg2.__jniObject().object()
 		);
 	}
-	QAndroidJniObject Slice_Builder::addLong(jlong arg0, const QString &arg1, __JniBaseClass arg2)
-	{
-		return __thiz.callObjectMethod(
-			"addLong",
-			"(JLjava/lang/String;Ljava/util/List;)Landroid/app/slice/Slice$Builder;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object()
-		);
-	}
 	QAndroidJniObject Slice_Builder::addRemoteInput(android::app::RemoteInput arg0, jstring arg1, __JniBaseClass arg2)
 	{
 		return __thiz.callObjectMethod(
@@ -147,16 +97,6 @@ namespace android::app::slice
 			"(Landroid/app/RemoteInput;Ljava/lang/String;Ljava/util/List;)Landroid/app/slice/Slice$Builder;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Slice_Builder::addRemoteInput(android::app::RemoteInput arg0, const QString &arg1, __JniBaseClass arg2)
-	{
-		return __thiz.callObjectMethod(
-			"addRemoteInput",
-			"(Landroid/app/RemoteInput;Ljava/lang/String;Ljava/util/List;)Landroid/app/slice/Slice$Builder;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}
@@ -169,15 +109,6 @@ namespace android::app::slice
 			arg1
 		);
 	}
-	QAndroidJniObject Slice_Builder::addSubSlice(android::app::slice::Slice arg0, const QString &arg1)
-	{
-		return __thiz.callObjectMethod(
-			"addSubSlice",
-			"(Landroid/app/slice/Slice;Ljava/lang/String;)Landroid/app/slice/Slice$Builder;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	QAndroidJniObject Slice_Builder::addText(jstring arg0, jstring arg1, __JniBaseClass arg2)
 	{
 		return __thiz.callObjectMethod(
@@ -185,16 +116,6 @@ namespace android::app::slice
 			"(Ljava/lang/CharSequence;Ljava/lang/String;Ljava/util/List;)Landroid/app/slice/Slice$Builder;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Slice_Builder::addText(const QString &arg0, const QString &arg1, __JniBaseClass arg2)
-	{
-		return __thiz.callObjectMethod(
-			"addText",
-			"(Ljava/lang/CharSequence;Ljava/lang/String;Ljava/util/List;)Landroid/app/slice/Slice$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}

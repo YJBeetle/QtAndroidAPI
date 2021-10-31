@@ -86,17 +86,16 @@ namespace android::widget
 		
 		AbsListView(QAndroidJniObject obj);
 		// Constructors
-		AbsListView(android::content::Context &arg0);
-		AbsListView(android::content::Context &arg0, __JniBaseClass &arg1);
-		AbsListView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		AbsListView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		AbsListView(android::content::Context arg0);
+		AbsListView(android::content::Context arg0, __JniBaseClass arg1);
+		AbsListView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		AbsListView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		AbsListView() = default;
 		
 		// Methods
 		void addTouchables(java::util::ArrayList arg0);
 		void afterTextChanged(__JniBaseClass arg0);
 		void beforeTextChanged(jstring arg0, jint arg1, jint arg2, jint arg3);
-		void beforeTextChanged(const QString &arg0, jint arg1, jint arg2, jint arg3);
 		jboolean canScrollList(jint arg0);
 		jboolean checkInputConnectionProxy(android::view::View arg0);
 		void clearChoices();
@@ -158,7 +157,6 @@ namespace android::widget
 		QAndroidJniObject onSaveInstanceState();
 		jboolean onStartNestedScroll(android::view::View arg0, android::view::View arg1, jint arg2);
 		void onTextChanged(jstring arg0, jint arg1, jint arg2, jint arg3);
-		void onTextChanged(const QString &arg0, jint arg1, jint arg2, jint arg3);
 		jboolean onTouchEvent(android::view::MotionEvent arg0);
 		void onTouchModeChanged(jboolean arg0);
 		void onWindowFocusChanged(jboolean arg0);
@@ -180,7 +178,6 @@ namespace android::widget
 		void setFastScrollEnabled(jboolean arg0);
 		void setFastScrollStyle(jint arg0);
 		void setFilterText(jstring arg0);
-		void setFilterText(const QString &arg0);
 		void setFriction(jfloat arg0);
 		void setItemChecked(jint arg0, jboolean arg1);
 		void setMultiChoiceModeListener(__JniBaseClass arg0);

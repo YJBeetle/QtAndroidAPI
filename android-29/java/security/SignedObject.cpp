@@ -8,7 +8,7 @@ namespace java::security
 	
 	SignedObject::SignedObject(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SignedObject::SignedObject(__JniBaseClass &arg0, __JniBaseClass &arg1, java::security::Signature &arg2)
+	SignedObject::SignedObject(__JniBaseClass arg0, __JniBaseClass arg1, java::security::Signature arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.SignedObject",

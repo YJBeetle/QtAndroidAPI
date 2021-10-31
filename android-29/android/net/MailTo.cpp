@@ -25,15 +25,6 @@ namespace android::net
 			arg0
 		);
 	}
-	jboolean MailTo::isMailTo(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.net.MailTo",
-			"isMailTo",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject MailTo::parse(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -41,15 +32,6 @@ namespace android::net
 			"parse",
 			"(Ljava/lang/String;)Landroid/net/MailTo;",
 			arg0
-		);
-	}
-	QAndroidJniObject MailTo::parse(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.net.MailTo",
-			"parse",
-			"(Ljava/lang/String;)Landroid/net/MailTo;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring MailTo::getBody()

@@ -10,7 +10,7 @@ namespace android::text::style
 	
 	ImageSpan::ImageSpan(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ImageSpan::ImageSpan(android::graphics::Bitmap &arg0)
+	ImageSpan::ImageSpan(android::graphics::Bitmap arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.ImageSpan",
@@ -18,7 +18,7 @@ namespace android::text::style
 			arg0.__jniObject().object()
 		);
 	}
-	ImageSpan::ImageSpan(android::graphics::drawable::Drawable &arg0)
+	ImageSpan::ImageSpan(android::graphics::drawable::Drawable arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.ImageSpan",
@@ -26,7 +26,7 @@ namespace android::text::style
 			arg0.__jniObject().object()
 		);
 	}
-	ImageSpan::ImageSpan(android::content::Context &arg0, android::graphics::Bitmap &arg1)
+	ImageSpan::ImageSpan(android::content::Context arg0, android::graphics::Bitmap arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.ImageSpan",
@@ -35,7 +35,7 @@ namespace android::text::style
 			arg1.__jniObject().object()
 		);
 	}
-	ImageSpan::ImageSpan(android::content::Context &arg0, android::net::Uri &arg1)
+	ImageSpan::ImageSpan(android::content::Context arg0, android::net::Uri arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.ImageSpan",
@@ -44,7 +44,7 @@ namespace android::text::style
 			arg1.__jniObject().object()
 		);
 	}
-	ImageSpan::ImageSpan(android::content::Context &arg0, jint &arg1)
+	ImageSpan::ImageSpan(android::content::Context arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.ImageSpan",
@@ -53,7 +53,7 @@ namespace android::text::style
 			arg1
 		);
 	}
-	ImageSpan::ImageSpan(android::graphics::Bitmap &arg0, jint &arg1)
+	ImageSpan::ImageSpan(android::graphics::Bitmap arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.ImageSpan",
@@ -62,7 +62,7 @@ namespace android::text::style
 			arg1
 		);
 	}
-	ImageSpan::ImageSpan(android::graphics::drawable::Drawable &arg0, jint &arg1)
+	ImageSpan::ImageSpan(android::graphics::drawable::Drawable arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.ImageSpan",
@@ -71,7 +71,7 @@ namespace android::text::style
 			arg1
 		);
 	}
-	ImageSpan::ImageSpan(android::graphics::drawable::Drawable &arg0, jstring &arg1)
+	ImageSpan::ImageSpan(android::graphics::drawable::Drawable arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.ImageSpan",
@@ -80,16 +80,7 @@ namespace android::text::style
 			arg1
 		);
 	}
-	ImageSpan::ImageSpan(android::graphics::drawable::Drawable &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.text.style.ImageSpan",
-			"(Landroid/graphics/drawable/Drawable;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	ImageSpan::ImageSpan(android::content::Context &arg0, android::graphics::Bitmap &arg1, jint &arg2)
+	ImageSpan::ImageSpan(android::content::Context arg0, android::graphics::Bitmap arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.ImageSpan",
@@ -99,7 +90,7 @@ namespace android::text::style
 			arg2
 		);
 	}
-	ImageSpan::ImageSpan(android::content::Context &arg0, android::net::Uri &arg1, jint &arg2)
+	ImageSpan::ImageSpan(android::content::Context arg0, android::net::Uri arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.ImageSpan",
@@ -109,7 +100,7 @@ namespace android::text::style
 			arg2
 		);
 	}
-	ImageSpan::ImageSpan(android::content::Context &arg0, jint &arg1, jint &arg2)
+	ImageSpan::ImageSpan(android::content::Context arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.ImageSpan",
@@ -119,23 +110,13 @@ namespace android::text::style
 			arg2
 		);
 	}
-	ImageSpan::ImageSpan(android::graphics::drawable::Drawable &arg0, jstring &arg1, jint &arg2)
+	ImageSpan::ImageSpan(android::graphics::drawable::Drawable arg0, jstring arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.ImageSpan",
 			"(Landroid/graphics/drawable/Drawable;Ljava/lang/String;I)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2
-		);
-	}
-	ImageSpan::ImageSpan(android::graphics::drawable::Drawable &arg0, const QString &arg1, jint &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.text.style.ImageSpan",
-			"(Landroid/graphics/drawable/Drawable;Ljava/lang/String;I)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}

@@ -9,7 +9,7 @@ namespace java::lang::invoke
 	
 	MutableCallSite::MutableCallSite(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MutableCallSite::MutableCallSite(java::lang::invoke::MethodHandle &arg0)
+	MutableCallSite::MutableCallSite(java::lang::invoke::MethodHandle arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.invoke.MutableCallSite",
@@ -17,7 +17,7 @@ namespace java::lang::invoke
 			arg0.__jniObject().object()
 		);
 	}
-	MutableCallSite::MutableCallSite(java::lang::invoke::MethodType &arg0)
+	MutableCallSite::MutableCallSite(java::lang::invoke::MethodType arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.invoke.MutableCallSite",

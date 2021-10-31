@@ -7,7 +7,7 @@ namespace java::util::concurrent
 	
 	Semaphore::Semaphore(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Semaphore::Semaphore(jint &arg0)
+	Semaphore::Semaphore(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.Semaphore",
@@ -15,7 +15,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	Semaphore::Semaphore(jint &arg0, jboolean &arg1)
+	Semaphore::Semaphore(jint arg0, jboolean arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.Semaphore",

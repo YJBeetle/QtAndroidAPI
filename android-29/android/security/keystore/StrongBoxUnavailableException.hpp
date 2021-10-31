@@ -16,11 +16,9 @@ namespace android::security::keystore
 		StrongBoxUnavailableException(QAndroidJniObject obj);
 		// Constructors
 		StrongBoxUnavailableException();
-		StrongBoxUnavailableException(jstring &arg0);
-		StrongBoxUnavailableException(const QString &arg0);
-		StrongBoxUnavailableException(jthrowable &arg0);
-		StrongBoxUnavailableException(jstring &arg0, jthrowable &arg1);
-		StrongBoxUnavailableException(const QString &arg0, jthrowable &arg1);
+		StrongBoxUnavailableException(jstring arg0);
+		StrongBoxUnavailableException(jthrowable arg0);
+		StrongBoxUnavailableException(jstring arg0, jthrowable arg1);
 		
 		// Methods
 	};

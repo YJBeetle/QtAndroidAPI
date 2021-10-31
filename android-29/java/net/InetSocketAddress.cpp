@@ -9,7 +9,7 @@ namespace java::net
 	
 	InetSocketAddress::InetSocketAddress(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	InetSocketAddress::InetSocketAddress(jint &arg0)
+	InetSocketAddress::InetSocketAddress(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.InetSocketAddress",
@@ -17,7 +17,7 @@ namespace java::net
 			arg0
 		);
 	}
-	InetSocketAddress::InetSocketAddress(jstring &arg0, jint &arg1)
+	InetSocketAddress::InetSocketAddress(jstring arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.InetSocketAddress",
@@ -26,16 +26,7 @@ namespace java::net
 			arg1
 		);
 	}
-	InetSocketAddress::InetSocketAddress(const QString &arg0, jint &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.InetSocketAddress",
-			"(Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
-	InetSocketAddress::InetSocketAddress(java::net::InetAddress &arg0, jint &arg1)
+	InetSocketAddress::InetSocketAddress(java::net::InetAddress arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.InetSocketAddress",
@@ -53,16 +44,6 @@ namespace java::net
 			"createUnresolved",
 			"(Ljava/lang/String;I)Ljava/net/InetSocketAddress;",
 			arg0,
-			arg1
-		);
-	}
-	QAndroidJniObject InetSocketAddress::createUnresolved(const QString &arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.net.InetSocketAddress",
-			"createUnresolved",
-			"(Ljava/lang/String;I)Ljava/net/InetSocketAddress;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

@@ -23,7 +23,7 @@ namespace android::text::style
 		SuperscriptSpan(QAndroidJniObject obj);
 		// Constructors
 		SuperscriptSpan();
-		SuperscriptSpan(android::os::Parcel &arg0);
+		SuperscriptSpan(android::os::Parcel arg0);
 		
 		// Methods
 		jint describeContents();

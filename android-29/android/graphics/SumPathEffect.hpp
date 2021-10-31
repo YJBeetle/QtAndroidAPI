@@ -17,7 +17,7 @@ namespace android::graphics
 		
 		SumPathEffect(QAndroidJniObject obj);
 		// Constructors
-		SumPathEffect(android::graphics::PathEffect &arg0, android::graphics::PathEffect &arg1);
+		SumPathEffect(android::graphics::PathEffect arg0, android::graphics::PathEffect arg1);
 		SumPathEffect() = default;
 		
 		// Methods

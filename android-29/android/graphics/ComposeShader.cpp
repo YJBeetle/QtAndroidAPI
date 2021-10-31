@@ -10,7 +10,7 @@ namespace android::graphics
 	
 	ComposeShader::ComposeShader(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ComposeShader::ComposeShader(android::graphics::Shader &arg0, android::graphics::Shader &arg1, android::graphics::BlendMode &arg2)
+	ComposeShader::ComposeShader(android::graphics::Shader arg0, android::graphics::Shader arg1, android::graphics::BlendMode arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.ComposeShader",
@@ -20,7 +20,7 @@ namespace android::graphics
 			arg2.__jniObject().object()
 		);
 	}
-	ComposeShader::ComposeShader(android::graphics::Shader &arg0, android::graphics::Shader &arg1, android::graphics::PorterDuff_Mode &arg2)
+	ComposeShader::ComposeShader(android::graphics::Shader arg0, android::graphics::Shader arg1, android::graphics::PorterDuff_Mode arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.ComposeShader",
@@ -30,7 +30,7 @@ namespace android::graphics
 			arg2.__jniObject().object()
 		);
 	}
-	ComposeShader::ComposeShader(android::graphics::Shader &arg0, android::graphics::Shader &arg1, android::graphics::Xfermode &arg2)
+	ComposeShader::ComposeShader(android::graphics::Shader arg0, android::graphics::Shader arg1, android::graphics::Xfermode arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.ComposeShader",

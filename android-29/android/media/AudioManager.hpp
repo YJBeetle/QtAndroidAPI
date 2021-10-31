@@ -174,9 +174,7 @@ namespace android::media
 		QAndroidJniObject getMicrophones();
 		jint getMode();
 		jstring getParameters(jstring arg0);
-		jstring getParameters(const QString &arg0);
 		jstring getProperty(jstring arg0);
-		jstring getProperty(const QString &arg0);
 		jint getRingerMode();
 		jint getRouting(jint arg0);
 		jint getStreamMaxVolume(jint arg0);
@@ -211,7 +209,6 @@ namespace android::media
 		void setMicrophoneMute(jboolean arg0);
 		void setMode(jint arg0);
 		void setParameters(jstring arg0);
-		void setParameters(const QString &arg0);
 		void setRingerMode(jint arg0);
 		void setRouting(jint arg0, jint arg1, jint arg2);
 		void setSpeakerphoneOn(jboolean arg0);

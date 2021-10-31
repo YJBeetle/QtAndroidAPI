@@ -7,7 +7,7 @@ namespace java::security
 	
 	DomainLoadStoreParameter::DomainLoadStoreParameter(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DomainLoadStoreParameter::DomainLoadStoreParameter(java::net::URI &arg0, __JniBaseClass &arg1)
+	DomainLoadStoreParameter::DomainLoadStoreParameter(java::net::URI arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.DomainLoadStoreParameter",

@@ -38,7 +38,6 @@ namespace android::animation
 		jfloat getAnimatedFraction();
 		jobject getAnimatedValue();
 		jobject getAnimatedValue(jstring arg0);
-		jobject getAnimatedValue(const QString &arg0);
 		jlong getCurrentPlayTime();
 		jlong getDuration();
 		QAndroidJniObject getInterpolator();

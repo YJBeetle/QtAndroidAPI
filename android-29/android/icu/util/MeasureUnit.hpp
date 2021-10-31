@@ -156,7 +156,6 @@ namespace android::icu::util
 		// Methods
 		static QAndroidJniObject getAvailable();
 		static QAndroidJniObject getAvailable(jstring arg0);
-		static QAndroidJniObject getAvailable(const QString &arg0);
 		static QAndroidJniObject getAvailableTypes();
 		jboolean equals(jobject arg0);
 		jstring getSubtype();

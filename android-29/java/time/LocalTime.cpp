@@ -155,15 +155,6 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject LocalTime::parse(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.time.LocalTime",
-			"parse",
-			"(Ljava/lang/CharSequence;)Ljava/time/LocalTime;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject LocalTime::parse(jstring arg0, java::time::format::DateTimeFormatter arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -171,16 +162,6 @@ namespace java::time
 			"parse",
 			"(Ljava/lang/CharSequence;Ljava/time/format/DateTimeFormatter;)Ljava/time/LocalTime;",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject LocalTime::parse(const QString &arg0, java::time::format::DateTimeFormatter arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.time.LocalTime",
-			"parse",
-			"(Ljava/lang/CharSequence;Ljava/time/format/DateTimeFormatter;)Ljava/time/LocalTime;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

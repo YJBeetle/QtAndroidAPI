@@ -21,10 +21,10 @@ namespace android::preference
 		
 		TwoStatePreference(QAndroidJniObject obj);
 		// Constructors
-		TwoStatePreference(android::content::Context &arg0);
-		TwoStatePreference(android::content::Context &arg0, __JniBaseClass &arg1);
-		TwoStatePreference(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		TwoStatePreference(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		TwoStatePreference(android::content::Context arg0);
+		TwoStatePreference(android::content::Context arg0, __JniBaseClass arg1);
+		TwoStatePreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		TwoStatePreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		TwoStatePreference() = default;
 		
 		// Methods
@@ -36,10 +36,8 @@ namespace android::preference
 		void setDisableDependentsState(jboolean arg0);
 		void setSummaryOff(jint arg0);
 		void setSummaryOff(jstring arg0);
-		void setSummaryOff(const QString &arg0);
 		void setSummaryOn(jint arg0);
 		void setSummaryOn(jstring arg0);
-		void setSummaryOn(const QString &arg0);
 		jboolean shouldDisableDependents();
 	};
 } // namespace android::preference

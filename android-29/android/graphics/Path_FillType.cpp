@@ -49,15 +49,6 @@ namespace android::graphics
 			arg0
 		);
 	}
-	QAndroidJniObject Path_FillType::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.Path$FillType",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/graphics/Path$FillType;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray Path_FillType::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

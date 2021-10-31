@@ -25,22 +25,17 @@ namespace android::view::inputmethod
 		
 		InputMethodSubtype(QAndroidJniObject obj);
 		// Constructors
-		InputMethodSubtype(jint &arg0, jint &arg1, jstring &arg2, jstring &arg3, jstring &arg4, jboolean &arg5, jboolean &arg6);
-		InputMethodSubtype(jint &arg0, jint &arg1, const QString &arg2, const QString &arg3, const QString &arg4, jboolean &arg5, jboolean &arg6);
-		InputMethodSubtype(jint &arg0, jint &arg1, jstring &arg2, jstring &arg3, jstring &arg4, jboolean &arg5, jboolean &arg6, jint &arg7);
-		InputMethodSubtype(jint &arg0, jint &arg1, const QString &arg2, const QString &arg3, const QString &arg4, jboolean &arg5, jboolean &arg6, jint &arg7);
+		InputMethodSubtype(jint arg0, jint arg1, jstring arg2, jstring arg3, jstring arg4, jboolean arg5, jboolean arg6);
+		InputMethodSubtype(jint arg0, jint arg1, jstring arg2, jstring arg3, jstring arg4, jboolean arg5, jboolean arg6, jint arg7);
 		InputMethodSubtype() = default;
 		
 		// Methods
 		jboolean containsExtraValueKey(jstring arg0);
-		jboolean containsExtraValueKey(const QString &arg0);
 		jint describeContents();
 		jboolean equals(jobject arg0);
 		jstring getDisplayName(android::content::Context arg0, jstring arg1, android::content::pm::ApplicationInfo arg2);
-		jstring getDisplayName(android::content::Context arg0, const QString &arg1, android::content::pm::ApplicationInfo arg2);
 		jstring getExtraValue();
 		jstring getExtraValueOf(jstring arg0);
-		jstring getExtraValueOf(const QString &arg0);
 		jint getIconResId();
 		jstring getLanguageTag();
 		jstring getLocale();

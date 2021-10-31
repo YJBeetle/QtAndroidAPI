@@ -8,24 +8,13 @@ namespace android::content
 	
 	ContentQueryMap::ContentQueryMap(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ContentQueryMap::ContentQueryMap(__JniBaseClass &arg0, jstring &arg1, jboolean &arg2, android::os::Handler &arg3)
+	ContentQueryMap::ContentQueryMap(__JniBaseClass arg0, jstring arg1, jboolean arg2, android::os::Handler arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.ContentQueryMap",
 			"(Landroid/database/Cursor;Ljava/lang/String;ZLandroid/os/Handler;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2,
-			arg3.__jniObject().object()
-		);
-	}
-	ContentQueryMap::ContentQueryMap(__JniBaseClass &arg0, const QString &arg1, jboolean &arg2, android::os::Handler &arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.ContentQueryMap",
-			"(Landroid/database/Cursor;Ljava/lang/String;ZLandroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2,
 			arg3.__jniObject().object()
 		);
@@ -52,14 +41,6 @@ namespace android::content
 			"getValues",
 			"(Ljava/lang/String;)Landroid/content/ContentValues;",
 			arg0
-		);
-	}
-	QAndroidJniObject ContentQueryMap::getValues(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getValues",
-			"(Ljava/lang/String;)Landroid/content/ContentValues;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void ContentQueryMap::requery()

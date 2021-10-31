@@ -31,21 +31,12 @@ namespace android::service::media
 	
 	MediaBrowserService_BrowserRoot::MediaBrowserService_BrowserRoot(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MediaBrowserService_BrowserRoot::MediaBrowserService_BrowserRoot(jstring &arg0, android::os::Bundle &arg1)
+	MediaBrowserService_BrowserRoot::MediaBrowserService_BrowserRoot(jstring arg0, android::os::Bundle arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.service.media.MediaBrowserService$BrowserRoot",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	MediaBrowserService_BrowserRoot::MediaBrowserService_BrowserRoot(const QString &arg0, android::os::Bundle &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.service.media.MediaBrowserService$BrowserRoot",
-			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

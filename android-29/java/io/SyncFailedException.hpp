@@ -14,8 +14,7 @@ namespace java::io
 		
 		SyncFailedException(QAndroidJniObject obj);
 		// Constructors
-		SyncFailedException(jstring &arg0);
-		SyncFailedException(const QString &arg0);
+		SyncFailedException(jstring arg0);
 		SyncFailedException() = default;
 		
 		// Methods

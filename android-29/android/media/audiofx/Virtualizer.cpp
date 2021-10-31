@@ -49,7 +49,7 @@ namespace android::media::audiofx
 	
 	Virtualizer::Virtualizer(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Virtualizer::Virtualizer(jint &arg0, jint &arg1)
+	Virtualizer::Virtualizer(jint arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.audiofx.Virtualizer",

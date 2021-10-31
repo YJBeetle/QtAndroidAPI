@@ -37,8 +37,8 @@ namespace android::view
 		
 		Surface(QAndroidJniObject obj);
 		// Constructors
-		Surface(android::graphics::SurfaceTexture &arg0);
-		Surface(android::view::SurfaceControl &arg0);
+		Surface(android::graphics::SurfaceTexture arg0);
+		Surface(android::view::SurfaceControl arg0);
 		Surface() = default;
 		
 		// Methods

@@ -27,7 +27,7 @@ namespace android::content
 		SyncStats(QAndroidJniObject obj);
 		// Constructors
 		SyncStats();
-		SyncStats(android::os::Parcel &arg0);
+		SyncStats(android::os::Parcel arg0);
 		
 		// Methods
 		void clear();

@@ -163,15 +163,6 @@ namespace android::app
 			arg1
 		);
 	}
-	void ActivityManager::dumpPackageState(java::io::FileDescriptor arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"dumpPackageState",
-			"(Ljava/io/FileDescriptor;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	QAndroidJniObject ActivityManager::getAppTaskThumbnailSize()
 	{
 		return __thiz.callObjectMethod(
@@ -330,14 +321,6 @@ namespace android::app
 			arg0
 		);
 	}
-	void ActivityManager::killBackgroundProcesses(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"killBackgroundProcesses",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void ActivityManager::moveTaskToFront(jint arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
@@ -363,14 +346,6 @@ namespace android::app
 			"restartPackage",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void ActivityManager::restartPackage(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"restartPackage",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void ActivityManager::setWatchHeapLimit(jlong arg0)

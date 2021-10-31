@@ -15,7 +15,7 @@ namespace android::app
 			"()V"
 		);
 	}
-	Notification_Action_WearableExtender::Notification_Action_WearableExtender(android::app::Notification_Action &arg0)
+	Notification_Action_WearableExtender::Notification_Action_WearableExtender(android::app::Notification_Action arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.Notification$Action$WearableExtender",
@@ -98,28 +98,12 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Action_WearableExtender::setCancelLabel(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setCancelLabel",
-			"(Ljava/lang/CharSequence;)Landroid/app/Notification$Action$WearableExtender;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Notification_Action_WearableExtender::setConfirmLabel(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setConfirmLabel",
 			"(Ljava/lang/CharSequence;)Landroid/app/Notification$Action$WearableExtender;",
 			arg0
-		);
-	}
-	QAndroidJniObject Notification_Action_WearableExtender::setConfirmLabel(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setConfirmLabel",
-			"(Ljava/lang/CharSequence;)Landroid/app/Notification$Action$WearableExtender;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Notification_Action_WearableExtender::setHintDisplayActionInline(jboolean arg0)
@@ -144,14 +128,6 @@ namespace android::app
 			"setInProgressLabel",
 			"(Ljava/lang/CharSequence;)Landroid/app/Notification$Action$WearableExtender;",
 			arg0
-		);
-	}
-	QAndroidJniObject Notification_Action_WearableExtender::setInProgressLabel(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setInProgressLabel",
-			"(Ljava/lang/CharSequence;)Landroid/app/Notification$Action$WearableExtender;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace android::app

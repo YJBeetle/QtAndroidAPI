@@ -11,7 +11,7 @@ namespace android::net::sip
 	
 	SipAudioCall::SipAudioCall(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SipAudioCall::SipAudioCall(android::content::Context &arg0, android::net::sip::SipProfile &arg1)
+	SipAudioCall::SipAudioCall(android::content::Context arg0, android::net::sip::SipProfile arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.sip.SipAudioCall",
@@ -37,15 +37,6 @@ namespace android::net::sip
 			"(Landroid/net/sip/SipSession;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	void SipAudioCall::attachCall(android::net::sip::SipSession arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"attachCall",
-			"(Landroid/net/sip/SipSession;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void SipAudioCall::close()

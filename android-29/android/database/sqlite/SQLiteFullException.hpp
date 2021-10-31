@@ -17,8 +17,7 @@ namespace android::database::sqlite
 		SQLiteFullException(QAndroidJniObject obj);
 		// Constructors
 		SQLiteFullException();
-		SQLiteFullException(jstring &arg0);
-		SQLiteFullException(const QString &arg0);
+		SQLiteFullException(jstring arg0);
 		
 		// Methods
 	};

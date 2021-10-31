@@ -20,7 +20,7 @@ namespace java::security::spec
 		
 		ECPrivateKeySpec(QAndroidJniObject obj);
 		// Constructors
-		ECPrivateKeySpec(java::math::BigInteger &arg0, java::security::spec::ECParameterSpec &arg1);
+		ECPrivateKeySpec(java::math::BigInteger arg0, java::security::spec::ECParameterSpec arg1);
 		ECPrivateKeySpec() = default;
 		
 		// Methods

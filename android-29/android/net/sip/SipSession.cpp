@@ -19,30 +19,12 @@ namespace android::net::sip
 			arg1
 		);
 	}
-	void SipSession::answerCall(const QString &arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"answerCall",
-			"(Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	void SipSession::changeCall(jstring arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
 			"changeCall",
 			"(Ljava/lang/String;I)V",
 			arg0,
-			arg1
-		);
-	}
-	void SipSession::changeCall(const QString &arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"changeCall",
-			"(Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -102,16 +84,6 @@ namespace android::net::sip
 			"(Landroid/net/sip/SipProfile;Ljava/lang/String;I)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2
-		);
-	}
-	void SipSession::makeCall(android::net::sip::SipProfile arg0, const QString &arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"makeCall",
-			"(Landroid/net/sip/SipProfile;Ljava/lang/String;I)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}

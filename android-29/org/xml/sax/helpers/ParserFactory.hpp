@@ -17,7 +17,6 @@ namespace org::xml::sax::helpers
 		// Methods
 		static QAndroidJniObject makeParser();
 		static QAndroidJniObject makeParser(jstring arg0);
-		static QAndroidJniObject makeParser(const QString &arg0);
 	};
 } // namespace org::xml::sax::helpers
 

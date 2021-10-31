@@ -12,8 +12,7 @@ namespace javax::security::auth::callback
 		
 		PasswordCallback(QAndroidJniObject obj);
 		// Constructors
-		PasswordCallback(jstring &arg0, jboolean &arg1);
-		PasswordCallback(const QString &arg0, jboolean &arg1);
+		PasswordCallback(jstring arg0, jboolean arg1);
 		PasswordCallback() = default;
 		
 		// Methods

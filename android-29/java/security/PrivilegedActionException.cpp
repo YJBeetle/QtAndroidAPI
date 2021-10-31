@@ -9,7 +9,7 @@ namespace java::security
 	
 	PrivilegedActionException::PrivilegedActionException(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PrivilegedActionException::PrivilegedActionException(java::lang::Exception &arg0)
+	PrivilegedActionException::PrivilegedActionException(java::lang::Exception arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.PrivilegedActionException",

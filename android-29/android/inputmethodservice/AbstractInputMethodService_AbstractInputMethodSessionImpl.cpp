@@ -9,7 +9,7 @@ namespace android::inputmethodservice
 	
 	AbstractInputMethodService_AbstractInputMethodSessionImpl::AbstractInputMethodService_AbstractInputMethodSessionImpl(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AbstractInputMethodService_AbstractInputMethodSessionImpl::AbstractInputMethodService_AbstractInputMethodSessionImpl(android::inputmethodservice::AbstractInputMethodService &arg0)
+	AbstractInputMethodService_AbstractInputMethodSessionImpl::AbstractInputMethodService_AbstractInputMethodSessionImpl(android::inputmethodservice::AbstractInputMethodService arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.inputmethodservice.AbstractInputMethodService$AbstractInputMethodSessionImpl",

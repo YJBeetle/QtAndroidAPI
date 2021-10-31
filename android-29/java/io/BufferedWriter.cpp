@@ -7,7 +7,7 @@ namespace java::io
 	
 	BufferedWriter::BufferedWriter(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	BufferedWriter::BufferedWriter(java::io::Writer &arg0)
+	BufferedWriter::BufferedWriter(java::io::Writer arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.BufferedWriter",
@@ -15,7 +15,7 @@ namespace java::io
 			arg0.__jniObject().object()
 		);
 	}
-	BufferedWriter::BufferedWriter(java::io::Writer &arg0, jint &arg1)
+	BufferedWriter::BufferedWriter(java::io::Writer arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.BufferedWriter",
@@ -71,16 +71,6 @@ namespace java::io
 			"write",
 			"(Ljava/lang/String;II)V",
 			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void BufferedWriter::write(const QString &arg0, jint arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"write",
-			"(Ljava/lang/String;II)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2
 		);

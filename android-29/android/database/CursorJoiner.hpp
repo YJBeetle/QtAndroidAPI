@@ -16,7 +16,7 @@ namespace android::database
 		
 		CursorJoiner(QAndroidJniObject obj);
 		// Constructors
-		CursorJoiner(__JniBaseClass &arg0, jarray &arg1, __JniBaseClass &arg2, jarray &arg3);
+		CursorJoiner(__JniBaseClass arg0, jarray arg1, __JniBaseClass arg2, jarray arg3);
 		CursorJoiner() = default;
 		
 		// Methods

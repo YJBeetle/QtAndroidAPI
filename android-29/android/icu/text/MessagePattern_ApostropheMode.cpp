@@ -33,15 +33,6 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject MessagePattern_ApostropheMode::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.MessagePattern$ApostropheMode",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/icu/text/MessagePattern$ApostropheMode;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray MessagePattern_ApostropheMode::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

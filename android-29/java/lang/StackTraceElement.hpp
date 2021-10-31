@@ -12,10 +12,8 @@ namespace java::lang
 		
 		StackTraceElement(QAndroidJniObject obj);
 		// Constructors
-		StackTraceElement(jstring &arg0, jstring &arg1, jstring &arg2, jint &arg3);
-		StackTraceElement(const QString &arg0, const QString &arg1, const QString &arg2, jint &arg3);
-		StackTraceElement(jstring &arg0, jstring &arg1, jstring &arg2, jstring &arg3, jstring &arg4, jstring &arg5, jint &arg6);
-		StackTraceElement(const QString &arg0, const QString &arg1, const QString &arg2, const QString &arg3, const QString &arg4, const QString &arg5, jint &arg6);
+		StackTraceElement(jstring arg0, jstring arg1, jstring arg2, jint arg3);
+		StackTraceElement(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4, jstring arg5, jint arg6);
 		StackTraceElement() = default;
 		
 		// Methods

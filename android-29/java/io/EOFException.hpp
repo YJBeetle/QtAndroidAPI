@@ -15,8 +15,7 @@ namespace java::io
 		EOFException(QAndroidJniObject obj);
 		// Constructors
 		EOFException();
-		EOFException(jstring &arg0);
-		EOFException(const QString &arg0);
+		EOFException(jstring arg0);
 		
 		// Methods
 	};

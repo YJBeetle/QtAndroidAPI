@@ -24,10 +24,8 @@ namespace java::lang
 		
 		ThreadGroup(QAndroidJniObject obj);
 		// Constructors
-		ThreadGroup(jstring &arg0);
-		ThreadGroup(const QString &arg0);
-		ThreadGroup(java::lang::ThreadGroup &arg0, jstring &arg1);
-		ThreadGroup(java::lang::ThreadGroup &arg0, const QString &arg1);
+		ThreadGroup(jstring arg0);
+		ThreadGroup(java::lang::ThreadGroup &arg0, jstring arg1);
 		ThreadGroup() = default;
 		
 		// Methods

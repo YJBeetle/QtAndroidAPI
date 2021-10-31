@@ -17,8 +17,7 @@ namespace android::database::sqlite
 		SQLiteReadOnlyDatabaseException(QAndroidJniObject obj);
 		// Constructors
 		SQLiteReadOnlyDatabaseException();
-		SQLiteReadOnlyDatabaseException(jstring &arg0);
-		SQLiteReadOnlyDatabaseException(const QString &arg0);
+		SQLiteReadOnlyDatabaseException(jstring arg0);
 		
 		// Methods
 	};

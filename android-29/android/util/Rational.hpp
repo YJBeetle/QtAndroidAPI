@@ -17,12 +17,11 @@ namespace android::util
 		
 		Rational(QAndroidJniObject obj);
 		// Constructors
-		Rational(jint &arg0, jint &arg1);
+		Rational(jint arg0, jint arg1);
 		Rational() = default;
 		
 		// Methods
 		static QAndroidJniObject parseRational(jstring arg0);
-		static QAndroidJniObject parseRational(const QString &arg0);
 		jint compareTo(android::util::Rational arg0);
 		jint compareTo(jobject arg0);
 		jdouble doubleValue();

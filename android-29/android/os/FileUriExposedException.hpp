@@ -14,8 +14,7 @@ namespace android::os
 		
 		FileUriExposedException(QAndroidJniObject obj);
 		// Constructors
-		FileUriExposedException(jstring &arg0);
-		FileUriExposedException(const QString &arg0);
+		FileUriExposedException(jstring arg0);
 		FileUriExposedException() = default;
 		
 		// Methods

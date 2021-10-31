@@ -25,14 +25,13 @@ namespace java::sql
 		
 		Timestamp(QAndroidJniObject obj);
 		// Constructors
-		Timestamp(jlong &arg0);
-		Timestamp(jint &arg0, jint &arg1, jint &arg2, jint &arg3, jint &arg4, jint &arg5, jint &arg6);
+		Timestamp(jlong arg0);
+		Timestamp(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6);
 		Timestamp() = default;
 		
 		// Methods
 		static QAndroidJniObject from(java::time::Instant arg0);
 		static QAndroidJniObject valueOf(jstring arg0);
-		static QAndroidJniObject valueOf(const QString &arg0);
 		static QAndroidJniObject valueOf(java::time::LocalDateTime arg0);
 		jboolean after(java::sql::Timestamp arg0);
 		jboolean before(java::sql::Timestamp arg0);

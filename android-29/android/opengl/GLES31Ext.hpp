@@ -234,7 +234,6 @@ namespace android::opengl
 		static void glDebugMessageControlKHR(jint arg0, jint arg1, jint arg2, jint arg3, java::nio::IntBuffer arg4, jboolean arg5);
 		static void glDebugMessageControlKHR(jint arg0, jint arg1, jint arg2, jint arg3, jintArray arg4, jint arg5, jboolean arg6);
 		static void glDebugMessageInsertKHR(jint arg0, jint arg1, jint arg2, jint arg3, jstring arg4);
-		static void glDebugMessageInsertKHR(jint arg0, jint arg1, jint arg2, jint arg3, const QString &arg4);
 		static void glDisableiEXT(jint arg0, jint arg1);
 		static void glEnableiEXT(jint arg0, jint arg1);
 		static void glFramebufferTextureEXT(jint arg0, jint arg1, jint arg2, jint arg3);
@@ -256,14 +255,11 @@ namespace android::opengl
 		static jboolean glIsEnablediEXT(jint arg0, jint arg1);
 		static void glMinSampleShadingOES(jfloat arg0);
 		static void glObjectLabelKHR(jint arg0, jint arg1, jint arg2, jstring arg3);
-		static void glObjectLabelKHR(jint arg0, jint arg1, jint arg2, const QString &arg3);
 		static void glObjectPtrLabelKHR(jlong arg0, jstring arg1);
-		static void glObjectPtrLabelKHR(jlong arg0, const QString &arg1);
 		static void glPatchParameteriEXT(jint arg0, jint arg1);
 		static void glPopDebugGroupKHR();
 		static void glPrimitiveBoundingBoxEXT(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5, jfloat arg6, jfloat arg7);
 		static void glPushDebugGroupKHR(jint arg0, jint arg1, jint arg2, jstring arg3);
-		static void glPushDebugGroupKHR(jint arg0, jint arg1, jint arg2, const QString &arg3);
 		static void glSamplerParameterIivEXT(jint arg0, jint arg1, java::nio::IntBuffer arg2);
 		static void glSamplerParameterIivEXT(jint arg0, jint arg1, jintArray arg2, jint arg3);
 		static void glSamplerParameterIuivEXT(jint arg0, jint arg1, java::nio::IntBuffer arg2);

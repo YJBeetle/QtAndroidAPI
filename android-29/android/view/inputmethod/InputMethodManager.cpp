@@ -225,31 +225,12 @@ namespace android::view::inputmethod
 			arg2.__jniObject().object()
 		);
 	}
-	void InputMethodManager::sendAppPrivateCommand(android::view::View arg0, const QString &arg1, android::os::Bundle arg2)
-	{
-		__thiz.callMethod<void>(
-			"sendAppPrivateCommand",
-			"(Landroid/view/View;Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object()
-		);
-	}
 	void InputMethodManager::setAdditionalInputMethodSubtypes(jstring arg0, jarray arg1)
 	{
 		__thiz.callMethod<void>(
 			"setAdditionalInputMethodSubtypes",
 			"(Ljava/lang/String;[Landroid/view/inputmethod/InputMethodSubtype;)V",
 			arg0,
-			arg1
-		);
-	}
-	void InputMethodManager::setAdditionalInputMethodSubtypes(const QString &arg0, jarray arg1)
-	{
-		__thiz.callMethod<void>(
-			"setAdditionalInputMethodSubtypes",
-			"(Ljava/lang/String;[Landroid/view/inputmethod/InputMethodSubtype;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -270,15 +251,6 @@ namespace android::view::inputmethod
 			arg1
 		);
 	}
-	void InputMethodManager::setInputMethod(__JniBaseClass arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"setInputMethod",
-			"(Landroid/os/IBinder;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	void InputMethodManager::setInputMethodAndSubtype(__JniBaseClass arg0, jstring arg1, android::view::inputmethod::InputMethodSubtype arg2)
 	{
 		__thiz.callMethod<void>(
@@ -286,16 +258,6 @@ namespace android::view::inputmethod
 			"(Landroid/os/IBinder;Ljava/lang/String;Landroid/view/inputmethod/InputMethodSubtype;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void InputMethodManager::setInputMethodAndSubtype(__JniBaseClass arg0, const QString &arg1, android::view::inputmethod::InputMethodSubtype arg2)
-	{
-		__thiz.callMethod<void>(
-			"setInputMethodAndSubtype",
-			"(Landroid/os/IBinder;Ljava/lang/String;Landroid/view/inputmethod/InputMethodSubtype;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}
@@ -313,14 +275,6 @@ namespace android::view::inputmethod
 			"showInputMethodAndSubtypeEnabler",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void InputMethodManager::showInputMethodAndSubtypeEnabler(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"showInputMethodAndSubtypeEnabler",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void InputMethodManager::showInputMethodPicker()
@@ -365,16 +319,6 @@ namespace android::view::inputmethod
 			"(Landroid/os/IBinder;Ljava/lang/String;I)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2
-		);
-	}
-	void InputMethodManager::showStatusIcon(__JniBaseClass arg0, const QString &arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"showStatusIcon",
-			"(Landroid/os/IBinder;Ljava/lang/String;I)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}

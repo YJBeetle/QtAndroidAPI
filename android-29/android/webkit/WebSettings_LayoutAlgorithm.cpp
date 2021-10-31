@@ -49,15 +49,6 @@ namespace android::webkit
 			arg0
 		);
 	}
-	QAndroidJniObject WebSettings_LayoutAlgorithm::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.webkit.WebSettings$LayoutAlgorithm",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/webkit/WebSettings$LayoutAlgorithm;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray WebSettings_LayoutAlgorithm::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

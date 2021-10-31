@@ -17,7 +17,7 @@ namespace android::telecom
 	
 	PhoneAccountHandle::PhoneAccountHandle(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PhoneAccountHandle::PhoneAccountHandle(android::content::ComponentName &arg0, jstring &arg1)
+	PhoneAccountHandle::PhoneAccountHandle(android::content::ComponentName arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.telecom.PhoneAccountHandle",
@@ -26,32 +26,13 @@ namespace android::telecom
 			arg1
 		);
 	}
-	PhoneAccountHandle::PhoneAccountHandle(android::content::ComponentName &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.telecom.PhoneAccountHandle",
-			"(Landroid/content/ComponentName;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	PhoneAccountHandle::PhoneAccountHandle(android::content::ComponentName &arg0, jstring &arg1, android::os::UserHandle &arg2)
+	PhoneAccountHandle::PhoneAccountHandle(android::content::ComponentName arg0, jstring arg1, android::os::UserHandle arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.telecom.PhoneAccountHandle",
 			"(Landroid/content/ComponentName;Ljava/lang/String;Landroid/os/UserHandle;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	PhoneAccountHandle::PhoneAccountHandle(android::content::ComponentName &arg0, const QString &arg1, android::os::UserHandle &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.telecom.PhoneAccountHandle",
-			"(Landroid/content/ComponentName;Ljava/lang/String;Landroid/os/UserHandle;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}

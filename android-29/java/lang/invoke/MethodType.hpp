@@ -36,7 +36,6 @@ namespace java::lang::invoke
 		
 		// Methods
 		static QAndroidJniObject fromMethodDescriptorString(jstring arg0, java::lang::ClassLoader arg1);
-		static QAndroidJniObject fromMethodDescriptorString(const QString &arg0, java::lang::ClassLoader arg1);
 		static QAndroidJniObject genericMethodType(jint arg0);
 		static QAndroidJniObject genericMethodType(jint arg0, jboolean arg1);
 		static QAndroidJniObject methodType(jclass arg0);

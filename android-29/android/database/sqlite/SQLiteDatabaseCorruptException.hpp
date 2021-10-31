@@ -17,8 +17,7 @@ namespace android::database::sqlite
 		SQLiteDatabaseCorruptException(QAndroidJniObject obj);
 		// Constructors
 		SQLiteDatabaseCorruptException();
-		SQLiteDatabaseCorruptException(jstring &arg0);
-		SQLiteDatabaseCorruptException(const QString &arg0);
+		SQLiteDatabaseCorruptException(jstring arg0);
 		
 		// Methods
 	};

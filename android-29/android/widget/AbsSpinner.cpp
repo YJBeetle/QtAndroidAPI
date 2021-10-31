@@ -11,7 +11,7 @@ namespace android::widget
 	
 	AbsSpinner::AbsSpinner(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AbsSpinner::AbsSpinner(android::content::Context &arg0)
+	AbsSpinner::AbsSpinner(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.AbsSpinner",
@@ -19,7 +19,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	AbsSpinner::AbsSpinner(android::content::Context &arg0, __JniBaseClass &arg1)
+	AbsSpinner::AbsSpinner(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.AbsSpinner",
@@ -28,7 +28,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	AbsSpinner::AbsSpinner(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	AbsSpinner::AbsSpinner(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.AbsSpinner",
@@ -38,7 +38,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	AbsSpinner::AbsSpinner(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	AbsSpinner::AbsSpinner(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.AbsSpinner",

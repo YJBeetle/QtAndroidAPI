@@ -12,7 +12,7 @@ namespace android::text
 		
 		TextUtils_SimpleStringSplitter(QAndroidJniObject obj);
 		// Constructors
-		TextUtils_SimpleStringSplitter(jchar &arg0);
+		TextUtils_SimpleStringSplitter(jchar arg0);
 		TextUtils_SimpleStringSplitter() = default;
 		
 		// Methods
@@ -21,7 +21,6 @@ namespace android::text
 		jstring next();
 		void remove();
 		void setString(jstring arg0);
-		void setString(const QString &arg0);
 	};
 } // namespace android::text
 

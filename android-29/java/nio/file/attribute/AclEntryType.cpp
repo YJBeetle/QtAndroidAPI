@@ -49,15 +49,6 @@ namespace java::nio::file::attribute
 			arg0
 		);
 	}
-	QAndroidJniObject AclEntryType::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.nio.file.attribute.AclEntryType",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/nio/file/attribute/AclEntryType;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray AclEntryType::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

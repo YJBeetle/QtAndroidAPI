@@ -21,7 +21,7 @@ namespace android::util
 			arg0.__jniObject().object()
 		);
 	}
-	ArraySet::ArraySet(jint &arg0)
+	ArraySet::ArraySet(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.ArraySet",
@@ -29,7 +29,7 @@ namespace android::util
 			arg0
 		);
 	}
-	ArraySet::ArraySet(__JniBaseClass &arg0)
+	ArraySet::ArraySet(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.ArraySet",

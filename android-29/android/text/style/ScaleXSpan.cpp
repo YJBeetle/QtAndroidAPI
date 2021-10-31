@@ -8,7 +8,7 @@ namespace android::text::style
 	
 	ScaleXSpan::ScaleXSpan(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ScaleXSpan::ScaleXSpan(android::os::Parcel &arg0)
+	ScaleXSpan::ScaleXSpan(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.ScaleXSpan",
@@ -16,7 +16,7 @@ namespace android::text::style
 			arg0.__jniObject().object()
 		);
 	}
-	ScaleXSpan::ScaleXSpan(jfloat &arg0)
+	ScaleXSpan::ScaleXSpan(jfloat arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.ScaleXSpan",

@@ -44,12 +44,10 @@ namespace android::os
 		static jlong getElapsedCpuTime();
 		static jintArray getExclusiveCores();
 		static jint getGidForName(jstring arg0);
-		static jint getGidForName(const QString &arg0);
 		static jlong getStartElapsedRealtime();
 		static jlong getStartUptimeMillis();
 		static jint getThreadPriority(jint arg0);
 		static jint getUidForName(jstring arg0);
-		static jint getUidForName(const QString &arg0);
 		static jboolean is64Bit();
 		static jboolean isApplicationUid(jint arg0);
 		static jboolean isIsolated();

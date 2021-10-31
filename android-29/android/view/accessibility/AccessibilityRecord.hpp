@@ -52,12 +52,9 @@ namespace android::view::accessibility
 		void recycle();
 		void setAddedCount(jint arg0);
 		void setBeforeText(jstring arg0);
-		void setBeforeText(const QString &arg0);
 		void setChecked(jboolean arg0);
 		void setClassName(jstring arg0);
-		void setClassName(const QString &arg0);
 		void setContentDescription(jstring arg0);
-		void setContentDescription(const QString &arg0);
 		void setCurrentItemIndex(jint arg0);
 		void setEnabled(jboolean arg0);
 		void setFromIndex(jint arg0);

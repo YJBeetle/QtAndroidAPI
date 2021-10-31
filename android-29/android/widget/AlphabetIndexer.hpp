@@ -13,8 +13,7 @@ namespace android::widget
 		
 		AlphabetIndexer(QAndroidJniObject obj);
 		// Constructors
-		AlphabetIndexer(__JniBaseClass &arg0, jint &arg1, jstring &arg2);
-		AlphabetIndexer(__JniBaseClass &arg0, jint &arg1, const QString &arg2);
+		AlphabetIndexer(__JniBaseClass arg0, jint arg1, jstring arg2);
 		AlphabetIndexer() = default;
 		
 		// Methods

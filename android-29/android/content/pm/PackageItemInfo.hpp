@@ -46,7 +46,6 @@ namespace android::content::pm
 		QAndroidJniObject loadLogo(android::content::pm::PackageManager arg0);
 		QAndroidJniObject loadUnbadgedIcon(android::content::pm::PackageManager arg0);
 		QAndroidJniObject loadXmlMetaData(android::content::pm::PackageManager arg0, jstring arg1);
-		QAndroidJniObject loadXmlMetaData(android::content::pm::PackageManager arg0, const QString &arg1);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::content::pm

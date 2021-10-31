@@ -20,8 +20,8 @@ namespace java::security
 		
 		AccessControlContext(QAndroidJniObject obj);
 		// Constructors
-		AccessControlContext(jarray &arg0);
-		AccessControlContext(java::security::AccessControlContext &arg0, __JniBaseClass &arg1);
+		AccessControlContext(jarray arg0);
+		AccessControlContext(java::security::AccessControlContext &arg0, __JniBaseClass arg1);
 		AccessControlContext() = default;
 		
 		// Methods

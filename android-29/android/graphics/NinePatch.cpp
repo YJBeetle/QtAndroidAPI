@@ -12,7 +12,7 @@ namespace android::graphics
 	
 	NinePatch::NinePatch(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	NinePatch::NinePatch(android::graphics::Bitmap &arg0, jbyteArray &arg1)
+	NinePatch::NinePatch(android::graphics::Bitmap arg0, jbyteArray arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.NinePatch",
@@ -21,7 +21,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	NinePatch::NinePatch(android::graphics::Bitmap &arg0, jbyteArray &arg1, jstring &arg2)
+	NinePatch::NinePatch(android::graphics::Bitmap arg0, jbyteArray arg1, jstring arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.NinePatch",
@@ -29,16 +29,6 @@ namespace android::graphics
 			arg0.__jniObject().object(),
 			arg1,
 			arg2
-		);
-	}
-	NinePatch::NinePatch(android::graphics::Bitmap &arg0, jbyteArray &arg1, const QString &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.graphics.NinePatch",
-			"(Landroid/graphics/Bitmap;[BLjava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	

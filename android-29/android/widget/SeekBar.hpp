@@ -19,10 +19,10 @@ namespace android::widget
 		
 		SeekBar(QAndroidJniObject obj);
 		// Constructors
-		SeekBar(android::content::Context &arg0);
-		SeekBar(android::content::Context &arg0, __JniBaseClass &arg1);
-		SeekBar(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		SeekBar(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		SeekBar(android::content::Context arg0);
+		SeekBar(android::content::Context arg0, __JniBaseClass arg1);
+		SeekBar(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		SeekBar(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		SeekBar() = default;
 		
 		// Methods

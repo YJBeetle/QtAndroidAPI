@@ -10,7 +10,7 @@ namespace android::icu::text
 	
 	StringSearch::StringSearch(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	StringSearch::StringSearch(jstring &arg0, jstring &arg1)
+	StringSearch::StringSearch(jstring arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.StringSearch",
@@ -19,16 +19,7 @@ namespace android::icu::text
 			arg1
 		);
 	}
-	StringSearch::StringSearch(const QString &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.text.StringSearch",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	StringSearch::StringSearch(jstring &arg0, __JniBaseClass &arg1, android::icu::text::RuleBasedCollator &arg2)
+	StringSearch::StringSearch(jstring arg0, __JniBaseClass arg1, android::icu::text::RuleBasedCollator arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.StringSearch",
@@ -38,17 +29,7 @@ namespace android::icu::text
 			arg2.__jniObject().object()
 		);
 	}
-	StringSearch::StringSearch(const QString &arg0, __JniBaseClass &arg1, android::icu::text::RuleBasedCollator &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.text.StringSearch",
-			"(Ljava/lang/String;Ljava/text/CharacterIterator;Landroid/icu/text/RuleBasedCollator;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	StringSearch::StringSearch(jstring &arg0, __JniBaseClass &arg1, android::icu::util::ULocale &arg2)
+	StringSearch::StringSearch(jstring arg0, __JniBaseClass arg1, android::icu::util::ULocale arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.StringSearch",
@@ -58,17 +39,7 @@ namespace android::icu::text
 			arg2.__jniObject().object()
 		);
 	}
-	StringSearch::StringSearch(const QString &arg0, __JniBaseClass &arg1, android::icu::util::ULocale &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.text.StringSearch",
-			"(Ljava/lang/String;Ljava/text/CharacterIterator;Landroid/icu/util/ULocale;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	StringSearch::StringSearch(jstring &arg0, __JniBaseClass &arg1, java::util::Locale &arg2)
+	StringSearch::StringSearch(jstring arg0, __JniBaseClass arg1, java::util::Locale arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.StringSearch",
@@ -78,33 +49,12 @@ namespace android::icu::text
 			arg2.__jniObject().object()
 		);
 	}
-	StringSearch::StringSearch(const QString &arg0, __JniBaseClass &arg1, java::util::Locale &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.text.StringSearch",
-			"(Ljava/lang/String;Ljava/text/CharacterIterator;Ljava/util/Locale;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	StringSearch::StringSearch(jstring &arg0, __JniBaseClass &arg1, android::icu::text::RuleBasedCollator &arg2, android::icu::text::BreakIterator &arg3)
+	StringSearch::StringSearch(jstring arg0, __JniBaseClass arg1, android::icu::text::RuleBasedCollator arg2, android::icu::text::BreakIterator arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.StringSearch",
 			"(Ljava/lang/String;Ljava/text/CharacterIterator;Landroid/icu/text/RuleBasedCollator;Landroid/icu/text/BreakIterator;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
-		);
-	}
-	StringSearch::StringSearch(const QString &arg0, __JniBaseClass &arg1, android::icu::text::RuleBasedCollator &arg2, android::icu::text::BreakIterator &arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.text.StringSearch",
-			"(Ljava/lang/String;Ljava/text/CharacterIterator;Landroid/icu/text/RuleBasedCollator;Landroid/icu/text/BreakIterator;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object()
@@ -177,14 +127,6 @@ namespace android::icu::text
 			"setPattern",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void StringSearch::setPattern(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPattern",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void StringSearch::setTarget(__JniBaseClass arg0)

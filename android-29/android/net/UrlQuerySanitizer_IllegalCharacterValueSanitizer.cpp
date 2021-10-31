@@ -160,7 +160,7 @@ namespace android::net
 	
 	UrlQuerySanitizer_IllegalCharacterValueSanitizer::UrlQuerySanitizer_IllegalCharacterValueSanitizer(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	UrlQuerySanitizer_IllegalCharacterValueSanitizer::UrlQuerySanitizer_IllegalCharacterValueSanitizer(jint &arg0)
+	UrlQuerySanitizer_IllegalCharacterValueSanitizer::UrlQuerySanitizer_IllegalCharacterValueSanitizer(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
@@ -176,14 +176,6 @@ namespace android::net
 			"sanitize",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
-	}
-	jstring UrlQuerySanitizer_IllegalCharacterValueSanitizer::sanitize(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"sanitize",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 } // namespace android::net

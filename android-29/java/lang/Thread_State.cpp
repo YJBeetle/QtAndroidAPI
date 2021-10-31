@@ -65,15 +65,6 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject Thread_State::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.lang.Thread$State",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/lang/Thread$State;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray Thread_State::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

@@ -49,10 +49,10 @@ namespace android::widget
 		
 		RelativeLayout(QAndroidJniObject obj);
 		// Constructors
-		RelativeLayout(android::content::Context &arg0);
-		RelativeLayout(android::content::Context &arg0, __JniBaseClass &arg1);
-		RelativeLayout(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		RelativeLayout(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		RelativeLayout(android::content::Context arg0);
+		RelativeLayout(android::content::Context arg0, __JniBaseClass arg1);
+		RelativeLayout(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		RelativeLayout(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		RelativeLayout() = default;
 		
 		// Methods

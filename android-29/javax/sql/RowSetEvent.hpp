@@ -13,7 +13,7 @@ namespace javax::sql
 		
 		RowSetEvent(QAndroidJniObject obj);
 		// Constructors
-		RowSetEvent(__JniBaseClass &arg0);
+		RowSetEvent(__JniBaseClass arg0);
 		RowSetEvent() = default;
 		
 		// Methods

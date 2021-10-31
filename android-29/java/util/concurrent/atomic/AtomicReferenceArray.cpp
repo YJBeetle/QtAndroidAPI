@@ -8,7 +8,7 @@ namespace java::util::concurrent::atomic
 	
 	AtomicReferenceArray::AtomicReferenceArray(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AtomicReferenceArray::AtomicReferenceArray(jobjectArray &arg0)
+	AtomicReferenceArray::AtomicReferenceArray(jobjectArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.atomic.AtomicReferenceArray",
@@ -16,7 +16,7 @@ namespace java::util::concurrent::atomic
 			arg0
 		);
 	}
-	AtomicReferenceArray::AtomicReferenceArray(jint &arg0)
+	AtomicReferenceArray::AtomicReferenceArray(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.atomic.AtomicReferenceArray",

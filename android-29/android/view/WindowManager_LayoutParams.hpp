@@ -146,24 +146,22 @@ namespace android::view
 		WindowManager_LayoutParams(QAndroidJniObject obj);
 		// Constructors
 		WindowManager_LayoutParams();
-		WindowManager_LayoutParams(android::os::Parcel &arg0);
-		WindowManager_LayoutParams(jint &arg0);
-		WindowManager_LayoutParams(jint &arg0, jint &arg1);
-		WindowManager_LayoutParams(jint &arg0, jint &arg1, jint &arg2);
-		WindowManager_LayoutParams(jint &arg0, jint &arg1, jint &arg2, jint &arg3, jint &arg4);
-		WindowManager_LayoutParams(jint &arg0, jint &arg1, jint &arg2, jint &arg3, jint &arg4, jint &arg5, jint &arg6);
+		WindowManager_LayoutParams(android::os::Parcel arg0);
+		WindowManager_LayoutParams(jint arg0);
+		WindowManager_LayoutParams(jint arg0, jint arg1);
+		WindowManager_LayoutParams(jint arg0, jint arg1, jint arg2);
+		WindowManager_LayoutParams(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
+		WindowManager_LayoutParams(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6);
 		
 		// Methods
 		static jboolean mayUseInputMethod(jint arg0);
 		jint copyFrom(android::view::WindowManager_LayoutParams arg0);
 		jstring debug(jstring arg0);
-		jstring debug(const QString &arg0);
 		jint describeContents();
 		jint getColorMode();
 		jstring getTitle();
 		void setColorMode(jint arg0);
 		void setTitle(jstring arg0);
-		void setTitle(const QString &arg0);
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

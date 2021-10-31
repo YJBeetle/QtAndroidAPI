@@ -7,7 +7,7 @@ namespace java::lang::ref
 	
 	PhantomReference::PhantomReference(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PhantomReference::PhantomReference(jobject &arg0, java::lang::ref::ReferenceQueue &arg1)
+	PhantomReference::PhantomReference(jobject arg0, java::lang::ref::ReferenceQueue arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.ref.PhantomReference",

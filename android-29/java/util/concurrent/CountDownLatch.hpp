@@ -16,7 +16,7 @@ namespace java::util::concurrent
 		
 		CountDownLatch(QAndroidJniObject obj);
 		// Constructors
-		CountDownLatch(jint &arg0);
+		CountDownLatch(jint arg0);
 		CountDownLatch() = default;
 		
 		// Methods

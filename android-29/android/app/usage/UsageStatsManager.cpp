@@ -87,14 +87,6 @@ namespace android::app::usage
 			arg0
 		);
 	}
-	jboolean UsageStatsManager::isAppInactive(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isAppInactive",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject UsageStatsManager::queryAndAggregateUsageStats(jlong arg0, jlong arg1)
 	{
 		return __thiz.callObjectMethod(

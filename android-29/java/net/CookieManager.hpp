@@ -22,7 +22,7 @@ namespace java::net
 		CookieManager(QAndroidJniObject obj);
 		// Constructors
 		CookieManager();
-		CookieManager(__JniBaseClass &arg0, __JniBaseClass &arg1);
+		CookieManager(__JniBaseClass arg0, __JniBaseClass arg1);
 		
 		// Methods
 		QAndroidJniObject get(java::net::URI arg0, __JniBaseClass arg1);

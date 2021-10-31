@@ -15,8 +15,7 @@ namespace android::content
 		ActivityNotFoundException(QAndroidJniObject obj);
 		// Constructors
 		ActivityNotFoundException();
-		ActivityNotFoundException(jstring &arg0);
-		ActivityNotFoundException(const QString &arg0);
+		ActivityNotFoundException(jstring arg0);
 		
 		// Methods
 	};

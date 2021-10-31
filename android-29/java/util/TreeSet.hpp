@@ -23,7 +23,7 @@ namespace java::util
 		TreeSet(QAndroidJniObject obj);
 		// Constructors
 		TreeSet();
-		TreeSet(__JniBaseClass &arg0);
+		TreeSet(__JniBaseClass arg0);
 		
 		// Methods
 		jboolean add(jobject arg0);

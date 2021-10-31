@@ -16,7 +16,7 @@ namespace android::view
 			"()V"
 		);
 	}
-	View_DragShadowBuilder::View_DragShadowBuilder(android::view::View &arg0)
+	View_DragShadowBuilder::View_DragShadowBuilder(android::view::View arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.View$DragShadowBuilder",

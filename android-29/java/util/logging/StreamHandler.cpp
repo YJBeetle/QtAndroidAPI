@@ -18,7 +18,7 @@ namespace java::util::logging
 			"()V"
 		);
 	}
-	StreamHandler::StreamHandler(java::io::OutputStream &arg0, java::util::logging::Formatter &arg1)
+	StreamHandler::StreamHandler(java::io::OutputStream arg0, java::util::logging::Formatter arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.logging.StreamHandler",
@@ -65,14 +65,6 @@ namespace java::util::logging
 			"setEncoding",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void StreamHandler::setEncoding(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setEncoding",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace java::util::logging

@@ -16,8 +16,7 @@ namespace android::media
 		
 		MediaDrm_SessionException(QAndroidJniObject obj);
 		// Constructors
-		MediaDrm_SessionException(jint &arg0, jstring &arg1);
-		MediaDrm_SessionException(jint &arg0, const QString &arg1);
+		MediaDrm_SessionException(jint arg0, jstring arg1);
 		MediaDrm_SessionException() = default;
 		
 		// Methods

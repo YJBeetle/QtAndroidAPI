@@ -11,22 +11,13 @@ namespace java::io
 	
 	FilePermission::FilePermission(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	FilePermission::FilePermission(jstring &arg0, jstring &arg1)
+	FilePermission::FilePermission(jstring arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.FilePermission",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	FilePermission::FilePermission(const QString &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.io.FilePermission",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	

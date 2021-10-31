@@ -48,7 +48,7 @@ namespace android::media::tv
 		
 		TvInputService_Session(QAndroidJniObject obj);
 		// Constructors
-		TvInputService_Session(android::content::Context &arg0);
+		TvInputService_Session(android::content::Context arg0);
 		TvInputService_Session() = default;
 		
 		// Methods
@@ -58,12 +58,10 @@ namespace android::media::tv
 		void notifyContentBlocked(android::media::tv::TvContentRating arg0);
 		void notifyTimeShiftStatusChanged(jint arg0);
 		void notifyTrackSelected(jint arg0, jstring arg1);
-		void notifyTrackSelected(jint arg0, const QString &arg1);
 		void notifyTracksChanged(__JniBaseClass arg0);
 		void notifyVideoAvailable();
 		void notifyVideoUnavailable(jint arg0);
 		void onAppPrivateCommand(jstring arg0, android::os::Bundle arg1);
-		void onAppPrivateCommand(const QString &arg0, android::os::Bundle arg1);
 		QAndroidJniObject onCreateOverlayView();
 		jboolean onGenericMotionEvent(android::view::MotionEvent arg0);
 		jboolean onKeyDown(jint arg0, android::view::KeyEvent arg1);
@@ -73,7 +71,6 @@ namespace android::media::tv
 		void onOverlayViewSizeChanged(jint arg0, jint arg1);
 		void onRelease();
 		jboolean onSelectTrack(jint arg0, jstring arg1);
-		jboolean onSelectTrack(jint arg0, const QString &arg1);
 		void onSetCaptionEnabled(jboolean arg0);
 		void onSetStreamVolume(jfloat arg0);
 		jboolean onSetSurface(android::view::Surface arg0);

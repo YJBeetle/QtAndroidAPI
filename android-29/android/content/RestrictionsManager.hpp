@@ -61,12 +61,9 @@ namespace android::content
 		QAndroidJniObject createLocalApprovalIntent();
 		QAndroidJniObject getApplicationRestrictions();
 		QAndroidJniObject getManifestRestrictions(jstring arg0);
-		QAndroidJniObject getManifestRestrictions(const QString &arg0);
 		jboolean hasRestrictionsProvider();
 		void notifyPermissionResponse(jstring arg0, android::os::PersistableBundle arg1);
-		void notifyPermissionResponse(const QString &arg0, android::os::PersistableBundle arg1);
 		void requestPermission(jstring arg0, jstring arg1, android::os::PersistableBundle arg2);
-		void requestPermission(const QString &arg0, const QString &arg1, android::os::PersistableBundle arg2);
 	};
 } // namespace android::content
 

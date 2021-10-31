@@ -13,20 +13,12 @@ namespace android::content::pm
 			"()V"
 		);
 	}
-	PackageManager_NameNotFoundException::PackageManager_NameNotFoundException(jstring &arg0)
+	PackageManager_NameNotFoundException::PackageManager_NameNotFoundException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.pm.PackageManager$NameNotFoundException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	PackageManager_NameNotFoundException::PackageManager_NameNotFoundException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.pm.PackageManager$NameNotFoundException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

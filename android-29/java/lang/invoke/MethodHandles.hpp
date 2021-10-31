@@ -48,9 +48,7 @@ namespace java::lang::invoke
 		static QAndroidJniObject byteBufferViewVarHandle(jclass arg0, java::nio::ByteOrder arg1);
 		static QAndroidJniObject catchException(java::lang::invoke::MethodHandle arg0, jclass arg1, java::lang::invoke::MethodHandle arg2);
 		static jobject classData(java::lang::invoke::MethodHandles_Lookup arg0, jstring arg1, jclass arg2);
-		static jobject classData(java::lang::invoke::MethodHandles_Lookup arg0, const QString &arg1, jclass arg2);
 		static jobject classDataAt(java::lang::invoke::MethodHandles_Lookup arg0, jstring arg1, jclass arg2, jint arg3);
-		static jobject classDataAt(java::lang::invoke::MethodHandles_Lookup arg0, const QString &arg1, jclass arg2, jint arg3);
 		static QAndroidJniObject collectArguments(java::lang::invoke::MethodHandle arg0, jint arg1, java::lang::invoke::MethodHandle arg2);
 		static QAndroidJniObject constant(jclass arg0, jobject arg1);
 		static QAndroidJniObject countedLoop(java::lang::invoke::MethodHandle arg0, java::lang::invoke::MethodHandle arg1, java::lang::invoke::MethodHandle arg2);

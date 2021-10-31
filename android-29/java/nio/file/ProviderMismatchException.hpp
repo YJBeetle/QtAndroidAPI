@@ -16,8 +16,7 @@ namespace java::nio::file
 		ProviderMismatchException(QAndroidJniObject obj);
 		// Constructors
 		ProviderMismatchException();
-		ProviderMismatchException(jstring &arg0);
-		ProviderMismatchException(const QString &arg0);
+		ProviderMismatchException(jstring arg0);
 		
 		// Methods
 	};

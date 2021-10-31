@@ -41,7 +41,6 @@ namespace android::app
 		void onContentChanged();
 		void setDefaultTab(jint arg0);
 		void setDefaultTab(jstring arg0);
-		void setDefaultTab(const QString &arg0);
 	};
 } // namespace android::app
 

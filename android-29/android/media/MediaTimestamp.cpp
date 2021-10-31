@@ -14,7 +14,7 @@ namespace android::media
 	
 	MediaTimestamp::MediaTimestamp(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MediaTimestamp::MediaTimestamp(jlong &arg0, jlong &arg1, jfloat &arg2)
+	MediaTimestamp::MediaTimestamp(jlong arg0, jlong arg1, jfloat arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.MediaTimestamp",

@@ -15,7 +15,7 @@ namespace android::renderscript
 		Int2(QAndroidJniObject obj);
 		// Constructors
 		Int2();
-		Int2(jint &arg0, jint &arg1);
+		Int2(jint arg0, jint arg1);
 		
 		// Methods
 	};

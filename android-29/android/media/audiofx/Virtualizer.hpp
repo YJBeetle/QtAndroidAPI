@@ -23,7 +23,7 @@ namespace android::media::audiofx
 		
 		Virtualizer(QAndroidJniObject obj);
 		// Constructors
-		Virtualizer(jint &arg0, jint &arg1);
+		Virtualizer(jint arg0, jint arg1);
 		Virtualizer() = default;
 		
 		// Methods

@@ -77,16 +77,6 @@ namespace android::net::nsd
 			arg2.__jniObject().object()
 		);
 	}
-	void NsdManager::discoverServices(const QString &arg0, jint arg1, __JniBaseClass arg2)
-	{
-		__thiz.callMethod<void>(
-			"discoverServices",
-			"(Ljava/lang/String;ILandroid/net/nsd/NsdManager$DiscoveryListener;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
 	void NsdManager::registerService(android::net::nsd::NsdServiceInfo arg0, jint arg1, __JniBaseClass arg2)
 	{
 		__thiz.callMethod<void>(

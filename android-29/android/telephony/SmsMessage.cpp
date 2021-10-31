@@ -92,16 +92,6 @@ namespace android::telephony
 			arg1
 		).object<jintArray>();
 	}
-	jintArray SmsMessage::calculateLength(const QString &arg0, jboolean arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.telephony.SmsMessage",
-			"calculateLength",
-			"(Ljava/lang/CharSequence;Z)[I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		).object<jintArray>();
-	}
 	QAndroidJniObject SmsMessage::createFromPdu(jbyteArray arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -121,16 +111,6 @@ namespace android::telephony
 			arg1
 		);
 	}
-	QAndroidJniObject SmsMessage::createFromPdu(jbyteArray arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.telephony.SmsMessage",
-			"createFromPdu",
-			"([BLjava/lang/String;)Landroid/telephony/SmsMessage;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	QAndroidJniObject SmsMessage::getSubmitPdu(jstring arg0, jstring arg1, jstring arg2, jboolean arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -140,18 +120,6 @@ namespace android::telephony
 			arg0,
 			arg1,
 			arg2,
-			arg3
-		);
-	}
-	QAndroidJniObject SmsMessage::getSubmitPdu(const QString &arg0, const QString &arg1, const QString &arg2, jboolean arg3)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.telephony.SmsMessage",
-			"getSubmitPdu",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)Landroid/telephony/SmsMessage$SubmitPdu;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
 			arg3
 		);
 	}
@@ -168,19 +136,6 @@ namespace android::telephony
 			arg4
 		);
 	}
-	QAndroidJniObject SmsMessage::getSubmitPdu(const QString &arg0, const QString &arg1, jshort arg2, jbyteArray arg3, jboolean arg4)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.telephony.SmsMessage",
-			"getSubmitPdu",
-			"(Ljava/lang/String;Ljava/lang/String;S[BZ)Landroid/telephony/SmsMessage$SubmitPdu;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2,
-			arg3,
-			arg4
-		);
-	}
 	jint SmsMessage::getTPLayerLengthForPDU(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -188,15 +143,6 @@ namespace android::telephony
 			"getTPLayerLengthForPDU",
 			"(Ljava/lang/String;)I",
 			arg0
-		);
-	}
-	jint SmsMessage::getTPLayerLengthForPDU(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.telephony.SmsMessage",
-			"getTPLayerLengthForPDU",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring SmsMessage::getDisplayMessageBody()

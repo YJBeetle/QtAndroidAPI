@@ -17,10 +17,8 @@ namespace android::security::keystore
 		UserNotAuthenticatedException(QAndroidJniObject obj);
 		// Constructors
 		UserNotAuthenticatedException();
-		UserNotAuthenticatedException(jstring &arg0);
-		UserNotAuthenticatedException(const QString &arg0);
-		UserNotAuthenticatedException(jstring &arg0, jthrowable &arg1);
-		UserNotAuthenticatedException(const QString &arg0, jthrowable &arg1);
+		UserNotAuthenticatedException(jstring arg0);
+		UserNotAuthenticatedException(jstring arg0, jthrowable arg1);
 		
 		// Methods
 	};

@@ -23,10 +23,10 @@ namespace android::inputmethodservice
 		
 		ExtractEditText(QAndroidJniObject obj);
 		// Constructors
-		ExtractEditText(android::content::Context &arg0);
-		ExtractEditText(android::content::Context &arg0, __JniBaseClass &arg1);
-		ExtractEditText(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		ExtractEditText(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		ExtractEditText(android::content::Context arg0);
+		ExtractEditText(android::content::Context arg0, __JniBaseClass arg1);
+		ExtractEditText(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		ExtractEditText(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		ExtractEditText() = default;
 		
 		// Methods

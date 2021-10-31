@@ -14,7 +14,7 @@ namespace android::widget
 	
 	ListView::ListView(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ListView::ListView(android::content::Context &arg0)
+	ListView::ListView(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ListView",
@@ -22,7 +22,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	ListView::ListView(android::content::Context &arg0, __JniBaseClass &arg1)
+	ListView::ListView(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ListView",
@@ -31,7 +31,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	ListView::ListView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	ListView::ListView(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ListView",
@@ -41,7 +41,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	ListView::ListView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	ListView::ListView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ListView",

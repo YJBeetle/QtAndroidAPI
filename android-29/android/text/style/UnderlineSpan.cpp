@@ -15,7 +15,7 @@ namespace android::text::style
 			"()V"
 		);
 	}
-	UnderlineSpan::UnderlineSpan(android::os::Parcel &arg0)
+	UnderlineSpan::UnderlineSpan(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.UnderlineSpan",

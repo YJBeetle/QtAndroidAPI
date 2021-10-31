@@ -14,7 +14,7 @@ namespace javax::xml::parsers
 			"()V"
 		);
 	}
-	FactoryConfigurationError::FactoryConfigurationError(java::lang::Exception &arg0)
+	FactoryConfigurationError::FactoryConfigurationError(java::lang::Exception arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.parsers.FactoryConfigurationError",
@@ -22,7 +22,7 @@ namespace javax::xml::parsers
 			arg0.__jniObject().object()
 		);
 	}
-	FactoryConfigurationError::FactoryConfigurationError(jstring &arg0)
+	FactoryConfigurationError::FactoryConfigurationError(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.parsers.FactoryConfigurationError",
@@ -30,30 +30,13 @@ namespace javax::xml::parsers
 			arg0
 		);
 	}
-	FactoryConfigurationError::FactoryConfigurationError(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.xml.parsers.FactoryConfigurationError",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	FactoryConfigurationError::FactoryConfigurationError(java::lang::Exception &arg0, jstring &arg1)
+	FactoryConfigurationError::FactoryConfigurationError(java::lang::Exception arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.parsers.FactoryConfigurationError",
 			"(Ljava/lang/Exception;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	FactoryConfigurationError::FactoryConfigurationError(java::lang::Exception &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.xml.parsers.FactoryConfigurationError",
-			"(Ljava/lang/Exception;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	

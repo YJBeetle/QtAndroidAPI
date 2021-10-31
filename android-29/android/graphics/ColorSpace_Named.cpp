@@ -145,15 +145,6 @@ namespace android::graphics
 			arg0
 		);
 	}
-	QAndroidJniObject ColorSpace_Named::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.ColorSpace$Named",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/graphics/ColorSpace$Named;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray ColorSpace_Named::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

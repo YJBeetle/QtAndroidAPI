@@ -29,7 +29,7 @@ namespace android::accounts
 	
 	Account::Account(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Account::Account(android::os::Parcel &arg0)
+	Account::Account(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.accounts.Account",
@@ -37,22 +37,13 @@ namespace android::accounts
 			arg0.__jniObject().object()
 		);
 	}
-	Account::Account(jstring &arg0, jstring &arg1)
+	Account::Account(jstring arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.accounts.Account",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	Account::Account(const QString &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.accounts.Account",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	

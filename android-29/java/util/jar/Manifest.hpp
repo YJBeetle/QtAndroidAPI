@@ -29,7 +29,7 @@ namespace java::util::jar
 		Manifest(QAndroidJniObject obj);
 		// Constructors
 		Manifest();
-		Manifest(java::io::InputStream &arg0);
+		Manifest(java::io::InputStream arg0);
 		Manifest(java::util::jar::Manifest &arg0);
 		
 		// Methods
@@ -37,7 +37,6 @@ namespace java::util::jar
 		jobject clone();
 		jboolean equals(jobject arg0);
 		QAndroidJniObject getAttributes(jstring arg0);
-		QAndroidJniObject getAttributes(const QString &arg0);
 		QAndroidJniObject getEntries();
 		QAndroidJniObject getMainAttributes();
 		jint hashCode();

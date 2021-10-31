@@ -7,7 +7,7 @@ namespace android::view::textclassifier
 	
 	TextClassifierEvent_ConversationActionsEvent_Builder::TextClassifierEvent_ConversationActionsEvent_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	TextClassifierEvent_ConversationActionsEvent_Builder::TextClassifierEvent_ConversationActionsEvent_Builder(jint &arg0)
+	TextClassifierEvent_ConversationActionsEvent_Builder::TextClassifierEvent_ConversationActionsEvent_Builder(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.textclassifier.TextClassifierEvent$ConversationActionsEvent$Builder",

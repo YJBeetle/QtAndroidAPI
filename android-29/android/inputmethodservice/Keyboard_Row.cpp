@@ -44,7 +44,7 @@ namespace android::inputmethodservice
 	
 	Keyboard_Row::Keyboard_Row(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Keyboard_Row::Keyboard_Row(android::inputmethodservice::Keyboard &arg0)
+	Keyboard_Row::Keyboard_Row(android::inputmethodservice::Keyboard arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.inputmethodservice.Keyboard$Row",
@@ -52,7 +52,7 @@ namespace android::inputmethodservice
 			arg0.__jniObject().object()
 		);
 	}
-	Keyboard_Row::Keyboard_Row(android::content::res::Resources &arg0, android::inputmethodservice::Keyboard &arg1, __JniBaseClass &arg2)
+	Keyboard_Row::Keyboard_Row(android::content::res::Resources arg0, android::inputmethodservice::Keyboard arg1, __JniBaseClass arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.inputmethodservice.Keyboard$Row",

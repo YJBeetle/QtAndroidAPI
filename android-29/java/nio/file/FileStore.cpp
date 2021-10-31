@@ -16,14 +16,6 @@ namespace java::nio::file
 			arg0
 		).object<jobject>();
 	}
-	jobject FileStore::getAttribute(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getAttribute",
-			"(Ljava/lang/String;)Ljava/lang/Object;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jobject>();
-	}
 	jlong FileStore::getBlockSize()
 	{
 		return __thiz.callMethod<jlong>(
@@ -88,14 +80,6 @@ namespace java::nio::file
 			"supportsFileAttributeView",
 			"(Ljava/lang/String;)Z",
 			arg0
-		);
-	}
-	jboolean FileStore::supportsFileAttributeView(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"supportsFileAttributeView",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring FileStore::type()

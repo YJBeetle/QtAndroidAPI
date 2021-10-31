@@ -23,16 +23,6 @@ namespace java::lang::invoke
 			arg1.__jniObject().object()
 		);
 	}
-	QAndroidJniObject MethodType::fromMethodDescriptorString(const QString &arg0, java::lang::ClassLoader arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.lang.invoke.MethodType",
-			"fromMethodDescriptorString",
-			"(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljava/lang/invoke/MethodType;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	QAndroidJniObject MethodType::genericMethodType(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

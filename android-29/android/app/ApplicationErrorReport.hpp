@@ -60,10 +60,8 @@ namespace android::app
 		
 		// Methods
 		static QAndroidJniObject getErrorReportReceiver(android::content::Context arg0, jstring arg1, jint arg2);
-		static QAndroidJniObject getErrorReportReceiver(android::content::Context arg0, const QString &arg1, jint arg2);
 		jint describeContents();
 		void dump(__JniBaseClass arg0, jstring arg1);
-		void dump(__JniBaseClass arg0, const QString &arg1);
 		void readFromParcel(android::os::Parcel arg0);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

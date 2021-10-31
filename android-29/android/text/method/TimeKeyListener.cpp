@@ -22,7 +22,7 @@ namespace android::text::method
 			"()V"
 		);
 	}
-	TimeKeyListener::TimeKeyListener(java::util::Locale &arg0)
+	TimeKeyListener::TimeKeyListener(java::util::Locale arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.method.TimeKeyListener",

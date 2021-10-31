@@ -12,7 +12,7 @@ namespace android::graphics::drawable
 	
 	InsetDrawable::InsetDrawable(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	InsetDrawable::InsetDrawable(android::graphics::drawable::Drawable &arg0, jfloat &arg1)
+	InsetDrawable::InsetDrawable(android::graphics::drawable::Drawable arg0, jfloat arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.InsetDrawable",
@@ -21,7 +21,7 @@ namespace android::graphics::drawable
 			arg1
 		);
 	}
-	InsetDrawable::InsetDrawable(android::graphics::drawable::Drawable &arg0, jint &arg1)
+	InsetDrawable::InsetDrawable(android::graphics::drawable::Drawable arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.InsetDrawable",
@@ -30,7 +30,7 @@ namespace android::graphics::drawable
 			arg1
 		);
 	}
-	InsetDrawable::InsetDrawable(android::graphics::drawable::Drawable &arg0, jfloat &arg1, jfloat &arg2, jfloat &arg3, jfloat &arg4)
+	InsetDrawable::InsetDrawable(android::graphics::drawable::Drawable arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.InsetDrawable",
@@ -42,7 +42,7 @@ namespace android::graphics::drawable
 			arg4
 		);
 	}
-	InsetDrawable::InsetDrawable(android::graphics::drawable::Drawable &arg0, jint &arg1, jint &arg2, jint &arg3, jint &arg4)
+	InsetDrawable::InsetDrawable(android::graphics::drawable::Drawable arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.InsetDrawable",

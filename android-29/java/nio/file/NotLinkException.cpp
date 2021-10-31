@@ -6,7 +6,7 @@ namespace java::nio::file
 	
 	NotLinkException::NotLinkException(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	NotLinkException::NotLinkException(jstring &arg0)
+	NotLinkException::NotLinkException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.nio.file.NotLinkException",
@@ -14,15 +14,7 @@ namespace java::nio::file
 			arg0
 		);
 	}
-	NotLinkException::NotLinkException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.nio.file.NotLinkException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	NotLinkException::NotLinkException(jstring &arg0, jstring &arg1, jstring &arg2)
+	NotLinkException::NotLinkException(jstring arg0, jstring arg1, jstring arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.nio.file.NotLinkException",
@@ -30,16 +22,6 @@ namespace java::nio::file
 			arg0,
 			arg1,
 			arg2
-		);
-	}
-	NotLinkException::NotLinkException(const QString &arg0, const QString &arg1, const QString &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"java.nio.file.NotLinkException",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	

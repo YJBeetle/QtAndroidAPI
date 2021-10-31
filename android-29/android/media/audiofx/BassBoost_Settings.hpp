@@ -14,8 +14,7 @@ namespace android::media::audiofx
 		BassBoost_Settings(QAndroidJniObject obj);
 		// Constructors
 		BassBoost_Settings();
-		BassBoost_Settings(jstring &arg0);
-		BassBoost_Settings(const QString &arg0);
+		BassBoost_Settings(jstring arg0);
 		
 		// Methods
 		jstring toString();

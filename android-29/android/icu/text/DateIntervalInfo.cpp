@@ -9,7 +9,7 @@ namespace android::icu::text
 	
 	DateIntervalInfo::DateIntervalInfo(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DateIntervalInfo::DateIntervalInfo(android::icu::util::ULocale &arg0)
+	DateIntervalInfo::DateIntervalInfo(android::icu::util::ULocale arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.DateIntervalInfo",
@@ -17,7 +17,7 @@ namespace android::icu::text
 			arg0.__jniObject().object()
 		);
 	}
-	DateIntervalInfo::DateIntervalInfo(java::util::Locale &arg0)
+	DateIntervalInfo::DateIntervalInfo(java::util::Locale arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.DateIntervalInfo",
@@ -79,15 +79,6 @@ namespace android::icu::text
 			arg1
 		);
 	}
-	QAndroidJniObject DateIntervalInfo::getIntervalPattern(const QString &arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getIntervalPattern",
-			"(Ljava/lang/String;I)Landroid/icu/text/DateIntervalInfo$PatternInfo;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	jint DateIntervalInfo::hashCode()
 	{
 		return __thiz.callMethod<jint>(
@@ -110,14 +101,6 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void DateIntervalInfo::setFallbackIntervalPattern(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setFallbackIntervalPattern",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void DateIntervalInfo::setIntervalPattern(jstring arg0, jint arg1, jstring arg2)
 	{
 		__thiz.callMethod<void>(
@@ -126,16 +109,6 @@ namespace android::icu::text
 			arg0,
 			arg1,
 			arg2
-		);
-	}
-	void DateIntervalInfo::setIntervalPattern(const QString &arg0, jint arg1, const QString &arg2)
-	{
-		__thiz.callMethod<void>(
-			"setIntervalPattern",
-			"(Ljava/lang/String;ILjava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 } // namespace android::icu::text

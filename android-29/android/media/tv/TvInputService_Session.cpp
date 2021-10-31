@@ -15,7 +15,7 @@ namespace android::media::tv
 	
 	TvInputService_Session::TvInputService_Session(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	TvInputService_Session::TvInputService_Session(android::content::Context &arg0)
+	TvInputService_Session::TvInputService_Session(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.tv.TvInputService$Session",
@@ -76,15 +76,6 @@ namespace android::media::tv
 			arg1
 		);
 	}
-	void TvInputService_Session::notifyTrackSelected(jint arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"notifyTrackSelected",
-			"(ILjava/lang/String;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	void TvInputService_Session::notifyTracksChanged(__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
@@ -114,15 +105,6 @@ namespace android::media::tv
 			"onAppPrivateCommand",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void TvInputService_Session::onAppPrivateCommand(const QString &arg0, android::os::Bundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"onAppPrivateCommand",
-			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -201,15 +183,6 @@ namespace android::media::tv
 			"(ILjava/lang/String;)Z",
 			arg0,
 			arg1
-		);
-	}
-	jboolean TvInputService_Session::onSelectTrack(jint arg0, const QString &arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onSelectTrack",
-			"(ILjava/lang/String;)Z",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void TvInputService_Session::onSetCaptionEnabled(jboolean arg0)

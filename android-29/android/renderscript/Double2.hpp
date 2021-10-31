@@ -15,7 +15,7 @@ namespace android::renderscript
 		Double2(QAndroidJniObject obj);
 		// Constructors
 		Double2();
-		Double2(jdouble &arg0, jdouble &arg1);
+		Double2(jdouble arg0, jdouble arg1);
 		
 		// Methods
 	};

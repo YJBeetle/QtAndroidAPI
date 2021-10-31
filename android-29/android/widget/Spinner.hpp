@@ -38,13 +38,13 @@ namespace android::widget
 		
 		Spinner(QAndroidJniObject obj);
 		// Constructors
-		Spinner(android::content::Context &arg0);
-		Spinner(android::content::Context &arg0, __JniBaseClass &arg1);
-		Spinner(android::content::Context &arg0, jint &arg1);
-		Spinner(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		Spinner(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
-		Spinner(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3, jint &arg4);
-		Spinner(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3, jint &arg4, android::content::res::Resources_Theme &arg5);
+		Spinner(android::content::Context arg0);
+		Spinner(android::content::Context arg0, __JniBaseClass arg1);
+		Spinner(android::content::Context arg0, jint arg1);
+		Spinner(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		Spinner(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		Spinner(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3, jint arg4);
+		Spinner(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3, jint arg4, android::content::res::Resources_Theme arg5);
 		Spinner() = default;
 		
 		// Methods
@@ -73,7 +73,6 @@ namespace android::widget
 		void setPopupBackgroundDrawable(android::graphics::drawable::Drawable arg0);
 		void setPopupBackgroundResource(jint arg0);
 		void setPrompt(jstring arg0);
-		void setPrompt(const QString &arg0);
 		void setPromptId(jint arg0);
 	};
 } // namespace android::widget

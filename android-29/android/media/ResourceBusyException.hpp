@@ -14,8 +14,7 @@ namespace android::media
 		
 		ResourceBusyException(QAndroidJniObject obj);
 		// Constructors
-		ResourceBusyException(jstring &arg0);
-		ResourceBusyException(const QString &arg0);
+		ResourceBusyException(jstring arg0);
 		ResourceBusyException() = default;
 		
 		// Methods

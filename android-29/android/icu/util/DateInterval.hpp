@@ -12,7 +12,7 @@ namespace android::icu::util
 		
 		DateInterval(QAndroidJniObject obj);
 		// Constructors
-		DateInterval(jlong &arg0, jlong &arg1);
+		DateInterval(jlong arg0, jlong arg1);
 		DateInterval() = default;
 		
 		// Methods

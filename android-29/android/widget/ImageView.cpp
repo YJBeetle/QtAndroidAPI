@@ -18,7 +18,7 @@ namespace android::widget
 	
 	ImageView::ImageView(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ImageView::ImageView(android::content::Context &arg0)
+	ImageView::ImageView(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ImageView",
@@ -26,7 +26,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	ImageView::ImageView(android::content::Context &arg0, __JniBaseClass &arg1)
+	ImageView::ImageView(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ImageView",
@@ -35,7 +35,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	ImageView::ImageView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	ImageView::ImageView(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ImageView",
@@ -45,7 +45,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	ImageView::ImageView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	ImageView::ImageView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ImageView",

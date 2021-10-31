@@ -539,15 +539,6 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	void ApplicationInfo::dump(__JniBaseClass arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Landroid/util/Printer;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	jboolean ApplicationInfo::isProfileableByShell()
 	{
 		return __thiz.callMethod<jboolean>(

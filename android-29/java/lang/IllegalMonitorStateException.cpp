@@ -13,20 +13,12 @@ namespace java::lang
 			"()V"
 		);
 	}
-	IllegalMonitorStateException::IllegalMonitorStateException(jstring &arg0)
+	IllegalMonitorStateException::IllegalMonitorStateException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.IllegalMonitorStateException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	IllegalMonitorStateException::IllegalMonitorStateException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.IllegalMonitorStateException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

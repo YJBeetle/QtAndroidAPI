@@ -26,23 +26,19 @@ namespace android::content
 		ClipDescription(QAndroidJniObject obj);
 		// Constructors
 		ClipDescription(android::content::ClipDescription &arg0);
-		ClipDescription(jstring &arg0, jarray &arg1);
-		ClipDescription(const QString &arg0, jarray &arg1);
+		ClipDescription(jstring arg0, jarray arg1);
 		ClipDescription() = default;
 		
 		// Methods
 		static jboolean compareMimeTypes(jstring arg0, jstring arg1);
-		static jboolean compareMimeTypes(const QString &arg0, const QString &arg1);
 		jint describeContents();
 		jarray filterMimeTypes(jstring arg0);
-		jarray filterMimeTypes(const QString &arg0);
 		QAndroidJniObject getExtras();
 		jstring getLabel();
 		jstring getMimeType(jint arg0);
 		jint getMimeTypeCount();
 		jlong getTimestamp();
 		jboolean hasMimeType(jstring arg0);
-		jboolean hasMimeType(const QString &arg0);
 		void setExtras(android::os::PersistableBundle arg0);
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

@@ -49,13 +49,12 @@ namespace android::hardware::camera2
 		
 		DngCreator(QAndroidJniObject obj);
 		// Constructors
-		DngCreator(android::hardware::camera2::CameraCharacteristics &arg0, android::hardware::camera2::CaptureResult &arg1);
+		DngCreator(android::hardware::camera2::CameraCharacteristics arg0, android::hardware::camera2::CaptureResult arg1);
 		DngCreator() = default;
 		
 		// Methods
 		void close();
 		QAndroidJniObject setDescription(jstring arg0);
-		QAndroidJniObject setDescription(const QString &arg0);
 		QAndroidJniObject setLocation(android::location::Location arg0);
 		QAndroidJniObject setOrientation(jint arg0);
 		QAndroidJniObject setThumbnail(android::graphics::Bitmap arg0);

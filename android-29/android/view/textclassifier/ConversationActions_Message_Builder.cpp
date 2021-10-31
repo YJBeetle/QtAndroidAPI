@@ -10,7 +10,7 @@ namespace android::view::textclassifier
 	
 	ConversationActions_Message_Builder::ConversationActions_Message_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ConversationActions_Message_Builder::ConversationActions_Message_Builder(android::app::Person &arg0)
+	ConversationActions_Message_Builder::ConversationActions_Message_Builder(android::app::Person arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.textclassifier.ConversationActions$Message$Builder",
@@ -49,14 +49,6 @@ namespace android::view::textclassifier
 			"setText",
 			"(Ljava/lang/CharSequence;)Landroid/view/textclassifier/ConversationActions$Message$Builder;",
 			arg0
-		);
-	}
-	QAndroidJniObject ConversationActions_Message_Builder::setText(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setText",
-			"(Ljava/lang/CharSequence;)Landroid/view/textclassifier/ConversationActions$Message$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace android::view::textclassifier

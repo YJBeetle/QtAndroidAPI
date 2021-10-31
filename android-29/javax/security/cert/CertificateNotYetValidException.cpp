@@ -13,20 +13,12 @@ namespace javax::security::cert
 			"()V"
 		);
 	}
-	CertificateNotYetValidException::CertificateNotYetValidException(jstring &arg0)
+	CertificateNotYetValidException::CertificateNotYetValidException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.security.cert.CertificateNotYetValidException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	CertificateNotYetValidException::CertificateNotYetValidException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.security.cert.CertificateNotYetValidException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

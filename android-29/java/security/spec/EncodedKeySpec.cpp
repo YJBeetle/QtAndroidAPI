@@ -6,7 +6,7 @@ namespace java::security::spec
 	
 	EncodedKeySpec::EncodedKeySpec(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	EncodedKeySpec::EncodedKeySpec(jbyteArray &arg0)
+	EncodedKeySpec::EncodedKeySpec(jbyteArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.spec.EncodedKeySpec",

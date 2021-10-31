@@ -47,14 +47,6 @@ namespace android::preference
 			arg0
 		);
 	}
-	QAndroidJniObject PreferenceFragment::findPreference(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"findPreference",
-			"(Ljava/lang/CharSequence;)Landroid/preference/Preference;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject PreferenceFragment::getPreferenceManager()
 	{
 		return __thiz.callObjectMethod(

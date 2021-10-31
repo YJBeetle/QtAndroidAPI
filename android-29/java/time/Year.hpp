@@ -60,9 +60,7 @@ namespace java::time
 		static QAndroidJniObject now(java::time::ZoneId arg0);
 		static QAndroidJniObject of(jint arg0);
 		static QAndroidJniObject parse(jstring arg0);
-		static QAndroidJniObject parse(const QString &arg0);
 		static QAndroidJniObject parse(jstring arg0, java::time::format::DateTimeFormatter arg1);
-		static QAndroidJniObject parse(const QString &arg0, java::time::format::DateTimeFormatter arg1);
 		QAndroidJniObject adjustInto(__JniBaseClass arg0);
 		QAndroidJniObject atDay(jint arg0);
 		QAndroidJniObject atMonth(jint arg0);

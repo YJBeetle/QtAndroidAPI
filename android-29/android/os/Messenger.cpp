@@ -17,7 +17,7 @@ namespace android::os
 	
 	Messenger::Messenger(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Messenger::Messenger(android::os::Handler &arg0)
+	Messenger::Messenger(android::os::Handler arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.Messenger",
@@ -25,7 +25,7 @@ namespace android::os
 			arg0.__jniObject().object()
 		);
 	}
-	Messenger::Messenger(__JniBaseClass &arg0)
+	Messenger::Messenger(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.Messenger",

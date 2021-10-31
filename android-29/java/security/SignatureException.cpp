@@ -13,7 +13,7 @@ namespace java::security
 			"()V"
 		);
 	}
-	SignatureException::SignatureException(jstring &arg0)
+	SignatureException::SignatureException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.SignatureException",
@@ -21,15 +21,7 @@ namespace java::security
 			arg0
 		);
 	}
-	SignatureException::SignatureException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.SignatureException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	SignatureException::SignatureException(jthrowable &arg0)
+	SignatureException::SignatureException(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.SignatureException",
@@ -37,21 +29,12 @@ namespace java::security
 			arg0
 		);
 	}
-	SignatureException::SignatureException(jstring &arg0, jthrowable &arg1)
+	SignatureException::SignatureException(jstring arg0, jthrowable arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.SignatureException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
-			arg1
-		);
-	}
-	SignatureException::SignatureException(const QString &arg0, jthrowable &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.SignatureException",
-			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

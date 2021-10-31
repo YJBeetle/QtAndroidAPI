@@ -61,7 +61,6 @@ namespace android::telecom
 		
 		// Methods
 		static QAndroidJniObject builder(android::telecom::PhoneAccountHandle arg0, jstring arg1);
-		static QAndroidJniObject builder(android::telecom::PhoneAccountHandle arg0, const QString &arg1);
 		jint describeContents();
 		jboolean equals(jobject arg0);
 		QAndroidJniObject getAccountHandle();
@@ -78,7 +77,6 @@ namespace android::telecom
 		jint hashCode();
 		jboolean isEnabled();
 		jboolean supportsUriScheme(jstring arg0);
-		jboolean supportsUriScheme(const QString &arg0);
 		QAndroidJniObject toBuilder();
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

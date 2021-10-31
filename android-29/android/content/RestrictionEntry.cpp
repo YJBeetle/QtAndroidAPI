@@ -72,7 +72,7 @@ namespace android::content
 	
 	RestrictionEntry::RestrictionEntry(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	RestrictionEntry::RestrictionEntry(android::os::Parcel &arg0)
+	RestrictionEntry::RestrictionEntry(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.RestrictionEntry",
@@ -80,7 +80,7 @@ namespace android::content
 			arg0.__jniObject().object()
 		);
 	}
-	RestrictionEntry::RestrictionEntry(jint &arg0, jstring &arg1)
+	RestrictionEntry::RestrictionEntry(jint arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.RestrictionEntry",
@@ -89,16 +89,7 @@ namespace android::content
 			arg1
 		);
 	}
-	RestrictionEntry::RestrictionEntry(jint &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.RestrictionEntry",
-			"(ILjava/lang/String;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	RestrictionEntry::RestrictionEntry(jstring &arg0, jarray &arg1)
+	RestrictionEntry::RestrictionEntry(jstring arg0, jarray arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.RestrictionEntry",
@@ -107,16 +98,7 @@ namespace android::content
 			arg1
 		);
 	}
-	RestrictionEntry::RestrictionEntry(const QString &arg0, jarray &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.RestrictionEntry",
-			"(Ljava/lang/String;[Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
-	RestrictionEntry::RestrictionEntry(jstring &arg0, jboolean &arg1)
+	RestrictionEntry::RestrictionEntry(jstring arg0, jboolean arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.RestrictionEntry",
@@ -125,16 +107,7 @@ namespace android::content
 			arg1
 		);
 	}
-	RestrictionEntry::RestrictionEntry(const QString &arg0, jboolean &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.RestrictionEntry",
-			"(Ljava/lang/String;Z)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
-	RestrictionEntry::RestrictionEntry(jstring &arg0, jint &arg1)
+	RestrictionEntry::RestrictionEntry(jstring arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.RestrictionEntry",
@@ -143,31 +116,13 @@ namespace android::content
 			arg1
 		);
 	}
-	RestrictionEntry::RestrictionEntry(const QString &arg0, jint &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.RestrictionEntry",
-			"(Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
-	RestrictionEntry::RestrictionEntry(jstring &arg0, jstring &arg1)
+	RestrictionEntry::RestrictionEntry(jstring arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.RestrictionEntry",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	RestrictionEntry::RestrictionEntry(const QString &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.RestrictionEntry",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	
@@ -182,16 +137,6 @@ namespace android::content
 			arg1
 		);
 	}
-	QAndroidJniObject RestrictionEntry::createBundleArrayEntry(const QString &arg0, jarray arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.content.RestrictionEntry",
-			"createBundleArrayEntry",
-			"(Ljava/lang/String;[Landroid/content/RestrictionEntry;)Landroid/content/RestrictionEntry;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	QAndroidJniObject RestrictionEntry::createBundleEntry(jstring arg0, jarray arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -199,16 +144,6 @@ namespace android::content
 			"createBundleEntry",
 			"(Ljava/lang/String;[Landroid/content/RestrictionEntry;)Landroid/content/RestrictionEntry;",
 			arg0,
-			arg1
-		);
-	}
-	QAndroidJniObject RestrictionEntry::createBundleEntry(const QString &arg0, jarray arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.content.RestrictionEntry",
-			"createBundleEntry",
-			"(Ljava/lang/String;[Landroid/content/RestrictionEntry;)Landroid/content/RestrictionEntry;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -361,14 +296,6 @@ namespace android::content
 			arg0
 		);
 	}
-	void RestrictionEntry::setDescription(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDescription",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void RestrictionEntry::setIntValue(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -401,28 +328,12 @@ namespace android::content
 			arg0
 		);
 	}
-	void RestrictionEntry::setSelectedString(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSelectedString",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void RestrictionEntry::setTitle(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTitle",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void RestrictionEntry::setTitle(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTitle",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void RestrictionEntry::setType(jint arg0)

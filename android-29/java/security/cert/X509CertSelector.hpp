@@ -41,10 +41,8 @@ namespace java::security::cert
 		// Methods
 		void addPathToName(jint arg0, jbyteArray arg1);
 		void addPathToName(jint arg0, jstring arg1);
-		void addPathToName(jint arg0, const QString &arg1);
 		void addSubjectAlternativeName(jint arg0, jbyteArray arg1);
 		void addSubjectAlternativeName(jint arg0, jstring arg1);
-		void addSubjectAlternativeName(jint arg0, const QString &arg1);
 		jobject clone();
 		jbyteArray getAuthorityKeyIdentifier();
 		jint getBasicConstraints();
@@ -76,7 +74,6 @@ namespace java::security::cert
 		void setExtendedKeyUsage(__JniBaseClass arg0);
 		void setIssuer(jbyteArray arg0);
 		void setIssuer(jstring arg0);
-		void setIssuer(const QString &arg0);
 		void setIssuer(javax::security::auth::x500::X500Principal arg0);
 		void setKeyUsage(jbooleanArray arg0);
 		void setMatchAllSubjectAltNames(jboolean arg0);
@@ -87,14 +84,12 @@ namespace java::security::cert
 		void setSerialNumber(java::math::BigInteger arg0);
 		void setSubject(jbyteArray arg0);
 		void setSubject(jstring arg0);
-		void setSubject(const QString &arg0);
 		void setSubject(javax::security::auth::x500::X500Principal arg0);
 		void setSubjectAlternativeNames(__JniBaseClass arg0);
 		void setSubjectKeyIdentifier(jbyteArray arg0);
 		void setSubjectPublicKey(jbyteArray arg0);
 		void setSubjectPublicKey(__JniBaseClass arg0);
 		void setSubjectPublicKeyAlgID(jstring arg0);
-		void setSubjectPublicKeyAlgID(const QString &arg0);
 		jstring toString();
 	};
 } // namespace java::security::cert

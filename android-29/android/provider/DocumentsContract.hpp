@@ -70,26 +70,16 @@ namespace android::provider
 		
 		// Methods
 		static QAndroidJniObject buildChildDocumentsUri(jstring arg0, jstring arg1);
-		static QAndroidJniObject buildChildDocumentsUri(const QString &arg0, const QString &arg1);
 		static QAndroidJniObject buildChildDocumentsUriUsingTree(android::net::Uri arg0, jstring arg1);
-		static QAndroidJniObject buildChildDocumentsUriUsingTree(android::net::Uri arg0, const QString &arg1);
 		static QAndroidJniObject buildDocumentUri(jstring arg0, jstring arg1);
-		static QAndroidJniObject buildDocumentUri(const QString &arg0, const QString &arg1);
 		static QAndroidJniObject buildDocumentUriUsingTree(android::net::Uri arg0, jstring arg1);
-		static QAndroidJniObject buildDocumentUriUsingTree(android::net::Uri arg0, const QString &arg1);
 		static QAndroidJniObject buildRecentDocumentsUri(jstring arg0, jstring arg1);
-		static QAndroidJniObject buildRecentDocumentsUri(const QString &arg0, const QString &arg1);
 		static QAndroidJniObject buildRootUri(jstring arg0, jstring arg1);
-		static QAndroidJniObject buildRootUri(const QString &arg0, const QString &arg1);
 		static QAndroidJniObject buildRootsUri(jstring arg0);
-		static QAndroidJniObject buildRootsUri(const QString &arg0);
 		static QAndroidJniObject buildSearchDocumentsUri(jstring arg0, jstring arg1, jstring arg2);
-		static QAndroidJniObject buildSearchDocumentsUri(const QString &arg0, const QString &arg1, const QString &arg2);
 		static QAndroidJniObject buildTreeDocumentUri(jstring arg0, jstring arg1);
-		static QAndroidJniObject buildTreeDocumentUri(const QString &arg0, const QString &arg1);
 		static QAndroidJniObject copyDocument(android::content::ContentResolver arg0, android::net::Uri arg1, android::net::Uri arg2);
 		static QAndroidJniObject createDocument(android::content::ContentResolver arg0, android::net::Uri arg1, jstring arg2, jstring arg3);
-		static QAndroidJniObject createDocument(android::content::ContentResolver arg0, android::net::Uri arg1, const QString &arg2, const QString &arg3);
 		static QAndroidJniObject createWebLinkIntent(android::content::ContentResolver arg0, android::net::Uri arg1, android::os::Bundle arg2);
 		static jboolean deleteDocument(android::content::ContentResolver arg0, android::net::Uri arg1);
 		static void ejectRoot(android::content::ContentResolver arg0, android::net::Uri arg1);
@@ -108,7 +98,6 @@ namespace android::provider
 		static QAndroidJniObject moveDocument(android::content::ContentResolver arg0, android::net::Uri arg1, android::net::Uri arg2, android::net::Uri arg3);
 		static jboolean removeDocument(android::content::ContentResolver arg0, android::net::Uri arg1, android::net::Uri arg2);
 		static QAndroidJniObject renameDocument(android::content::ContentResolver arg0, android::net::Uri arg1, jstring arg2);
-		static QAndroidJniObject renameDocument(android::content::ContentResolver arg0, android::net::Uri arg1, const QString &arg2);
 	};
 } // namespace android::provider
 

@@ -225,10 +225,8 @@ namespace android::icu::lang
 		static jboolean breaksBetweenLetters(jint arg0);
 		static jintArray getCode(android::icu::util::ULocale arg0);
 		static jintArray getCode(jstring arg0);
-		static jintArray getCode(const QString &arg0);
 		static jintArray getCode(java::util::Locale arg0);
 		static jint getCodeFromName(jstring arg0);
-		static jint getCodeFromName(const QString &arg0);
 		static jstring getName(jint arg0);
 		static jstring getSampleString(jint arg0);
 		static jint getScript(jint arg0);

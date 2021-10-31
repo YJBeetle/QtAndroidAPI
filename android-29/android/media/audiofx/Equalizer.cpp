@@ -77,7 +77,7 @@ namespace android::media::audiofx
 	
 	Equalizer::Equalizer(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Equalizer::Equalizer(jint &arg0, jint &arg1)
+	Equalizer::Equalizer(jint arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.audiofx.Equalizer",

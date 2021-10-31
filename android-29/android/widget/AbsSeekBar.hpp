@@ -46,10 +46,10 @@ namespace android::widget
 		
 		AbsSeekBar(QAndroidJniObject obj);
 		// Constructors
-		AbsSeekBar(android::content::Context &arg0);
-		AbsSeekBar(android::content::Context &arg0, __JniBaseClass &arg1);
-		AbsSeekBar(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		AbsSeekBar(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		AbsSeekBar(android::content::Context arg0);
+		AbsSeekBar(android::content::Context arg0, __JniBaseClass arg1);
+		AbsSeekBar(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		AbsSeekBar(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		AbsSeekBar() = default;
 		
 		// Methods

@@ -15,8 +15,7 @@ namespace java::net
 		UnknownServiceException(QAndroidJniObject obj);
 		// Constructors
 		UnknownServiceException();
-		UnknownServiceException(jstring &arg0);
-		UnknownServiceException(const QString &arg0);
+		UnknownServiceException(jstring arg0);
 		
 		// Methods
 	};

@@ -83,16 +83,6 @@ namespace java::lang::invoke
 			arg2.__jniObject().object()
 		);
 	}
-	QAndroidJniObject MethodHandles_Lookup::bind(jobject arg0, const QString &arg1, java::lang::invoke::MethodType arg2)
-	{
-		return __thiz.callObjectMethod(
-			"bind",
-			"(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/MethodHandle;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object()
-		);
-	}
 	jclass MethodHandles_Lookup::defineClass(jbyteArray arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -146,14 +136,6 @@ namespace java::lang::invoke
 			arg0
 		).object<jclass>();
 	}
-	jclass MethodHandles_Lookup::findClass(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"findClass",
-			"(Ljava/lang/String;)Ljava/lang/Class;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jclass>();
-	}
 	QAndroidJniObject MethodHandles_Lookup::findConstructor(jclass arg0, java::lang::invoke::MethodType arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -173,16 +155,6 @@ namespace java::lang::invoke
 			arg2
 		);
 	}
-	QAndroidJniObject MethodHandles_Lookup::findGetter(jclass arg0, const QString &arg1, jclass arg2)
-	{
-		return __thiz.callObjectMethod(
-			"findGetter",
-			"(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/invoke/MethodHandle;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2
-		);
-	}
 	QAndroidJniObject MethodHandles_Lookup::findSetter(jclass arg0, jstring arg1, jclass arg2)
 	{
 		return __thiz.callObjectMethod(
@@ -190,16 +162,6 @@ namespace java::lang::invoke
 			"(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/invoke/MethodHandle;",
 			arg0,
 			arg1,
-			arg2
-		);
-	}
-	QAndroidJniObject MethodHandles_Lookup::findSetter(jclass arg0, const QString &arg1, jclass arg2)
-	{
-		return __thiz.callObjectMethod(
-			"findSetter",
-			"(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/invoke/MethodHandle;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}
@@ -214,17 +176,6 @@ namespace java::lang::invoke
 			arg3
 		);
 	}
-	QAndroidJniObject MethodHandles_Lookup::findSpecial(jclass arg0, const QString &arg1, java::lang::invoke::MethodType arg2, jclass arg3)
-	{
-		return __thiz.callObjectMethod(
-			"findSpecial",
-			"(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/Class;)Ljava/lang/invoke/MethodHandle;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object(),
-			arg3
-		);
-	}
 	QAndroidJniObject MethodHandles_Lookup::findStatic(jclass arg0, jstring arg1, java::lang::invoke::MethodType arg2)
 	{
 		return __thiz.callObjectMethod(
@@ -232,16 +183,6 @@ namespace java::lang::invoke
 			"(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/MethodHandle;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	QAndroidJniObject MethodHandles_Lookup::findStatic(jclass arg0, const QString &arg1, java::lang::invoke::MethodType arg2)
-	{
-		return __thiz.callObjectMethod(
-			"findStatic",
-			"(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/MethodHandle;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}
@@ -255,16 +196,6 @@ namespace java::lang::invoke
 			arg2
 		);
 	}
-	QAndroidJniObject MethodHandles_Lookup::findStaticGetter(jclass arg0, const QString &arg1, jclass arg2)
-	{
-		return __thiz.callObjectMethod(
-			"findStaticGetter",
-			"(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/invoke/MethodHandle;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2
-		);
-	}
 	QAndroidJniObject MethodHandles_Lookup::findStaticSetter(jclass arg0, jstring arg1, jclass arg2)
 	{
 		return __thiz.callObjectMethod(
@@ -272,16 +203,6 @@ namespace java::lang::invoke
 			"(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/invoke/MethodHandle;",
 			arg0,
 			arg1,
-			arg2
-		);
-	}
-	QAndroidJniObject MethodHandles_Lookup::findStaticSetter(jclass arg0, const QString &arg1, jclass arg2)
-	{
-		return __thiz.callObjectMethod(
-			"findStaticSetter",
-			"(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/invoke/MethodHandle;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}
@@ -295,16 +216,6 @@ namespace java::lang::invoke
 			arg2
 		);
 	}
-	QAndroidJniObject MethodHandles_Lookup::findStaticVarHandle(jclass arg0, const QString &arg1, jclass arg2)
-	{
-		return __thiz.callObjectMethod(
-			"findStaticVarHandle",
-			"(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/invoke/VarHandle;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2
-		);
-	}
 	QAndroidJniObject MethodHandles_Lookup::findVarHandle(jclass arg0, jstring arg1, jclass arg2)
 	{
 		return __thiz.callObjectMethod(
@@ -315,16 +226,6 @@ namespace java::lang::invoke
 			arg2
 		);
 	}
-	QAndroidJniObject MethodHandles_Lookup::findVarHandle(jclass arg0, const QString &arg1, jclass arg2)
-	{
-		return __thiz.callObjectMethod(
-			"findVarHandle",
-			"(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/invoke/VarHandle;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2
-		);
-	}
 	QAndroidJniObject MethodHandles_Lookup::findVirtual(jclass arg0, jstring arg1, java::lang::invoke::MethodType arg2)
 	{
 		return __thiz.callObjectMethod(
@@ -332,16 +233,6 @@ namespace java::lang::invoke
 			"(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/MethodHandle;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	QAndroidJniObject MethodHandles_Lookup::findVirtual(jclass arg0, const QString &arg1, java::lang::invoke::MethodType arg2)
-	{
-		return __thiz.callObjectMethod(
-			"findVirtual",
-			"(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/MethodHandle;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}

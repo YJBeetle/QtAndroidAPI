@@ -16,8 +16,7 @@ namespace java::lang
 		NoSuchFieldError(QAndroidJniObject obj);
 		// Constructors
 		NoSuchFieldError();
-		NoSuchFieldError(jstring &arg0);
-		NoSuchFieldError(const QString &arg0);
+		NoSuchFieldError(jstring arg0);
 		
 		// Methods
 	};

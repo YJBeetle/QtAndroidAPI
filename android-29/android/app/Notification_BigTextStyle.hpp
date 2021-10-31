@@ -18,15 +18,12 @@ namespace android::app
 		Notification_BigTextStyle(QAndroidJniObject obj);
 		// Constructors
 		Notification_BigTextStyle();
-		Notification_BigTextStyle(android::app::Notification_Builder &arg0);
+		Notification_BigTextStyle(android::app::Notification_Builder arg0);
 		
 		// Methods
 		QAndroidJniObject bigText(jstring arg0);
-		QAndroidJniObject bigText(const QString &arg0);
 		QAndroidJniObject setBigContentTitle(jstring arg0);
-		QAndroidJniObject setBigContentTitle(const QString &arg0);
 		QAndroidJniObject setSummaryText(jstring arg0);
-		QAndroidJniObject setSummaryText(const QString &arg0);
 	};
 } // namespace android::app
 

@@ -21,17 +21,6 @@ namespace android::icu::text
 			arg2
 		);
 	}
-	QAndroidJniObject ScientificNumberFormatter::getMarkupInstance(android::icu::text::DecimalFormat arg0, const QString &arg1, const QString &arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.ScientificNumberFormatter",
-			"getMarkupInstance",
-			"(Landroid/icu/text/DecimalFormat;Ljava/lang/String;Ljava/lang/String;)Landroid/icu/text/ScientificNumberFormatter;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	QAndroidJniObject ScientificNumberFormatter::getMarkupInstance(android::icu::util::ULocale arg0, jstring arg1, jstring arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -41,17 +30,6 @@ namespace android::icu::text
 			arg0.__jniObject().object(),
 			arg1,
 			arg2
-		);
-	}
-	QAndroidJniObject ScientificNumberFormatter::getMarkupInstance(android::icu::util::ULocale arg0, const QString &arg1, const QString &arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.ScientificNumberFormatter",
-			"getMarkupInstance",
-			"(Landroid/icu/util/ULocale;Ljava/lang/String;Ljava/lang/String;)Landroid/icu/text/ScientificNumberFormatter;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	QAndroidJniObject ScientificNumberFormatter::getSuperscriptInstance(android::icu::text::DecimalFormat arg0)

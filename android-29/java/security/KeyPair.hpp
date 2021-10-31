@@ -12,7 +12,7 @@ namespace java::security
 		
 		KeyPair(QAndroidJniObject obj);
 		// Constructors
-		KeyPair(__JniBaseClass &arg0, __JniBaseClass &arg1);
+		KeyPair(__JniBaseClass arg0, __JniBaseClass arg1);
 		KeyPair() = default;
 		
 		// Methods

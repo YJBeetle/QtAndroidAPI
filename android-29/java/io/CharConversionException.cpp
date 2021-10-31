@@ -13,20 +13,12 @@ namespace java::io
 			"()V"
 		);
 	}
-	CharConversionException::CharConversionException(jstring &arg0)
+	CharConversionException::CharConversionException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.CharConversionException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	CharConversionException::CharConversionException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.io.CharConversionException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

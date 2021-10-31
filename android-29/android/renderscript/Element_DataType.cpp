@@ -257,15 +257,6 @@ namespace android::renderscript
 			arg0
 		);
 	}
-	QAndroidJniObject Element_DataType::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.renderscript.Element$DataType",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/renderscript/Element$DataType;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray Element_DataType::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

@@ -13,7 +13,7 @@ namespace android::util
 		
 		MutableFloat(QAndroidJniObject obj);
 		// Constructors
-		MutableFloat(jfloat &arg0);
+		MutableFloat(jfloat arg0);
 		MutableFloat() = default;
 		
 		// Methods

@@ -84,11 +84,8 @@ namespace java::text
 		jboolean isGroupingUsed();
 		jboolean isParseIntegerOnly();
 		QAndroidJniObject parse(jstring arg0);
-		QAndroidJniObject parse(const QString &arg0);
 		QAndroidJniObject parse(jstring arg0, java::text::ParsePosition arg1);
-		QAndroidJniObject parse(const QString &arg0, java::text::ParsePosition arg1);
 		jobject parseObject(jstring arg0, java::text::ParsePosition arg1);
-		jobject parseObject(const QString &arg0, java::text::ParsePosition arg1);
 		void setCurrency(java::util::Currency arg0);
 		void setGroupingUsed(jboolean arg0);
 		void setMaximumFractionDigits(jint arg0);

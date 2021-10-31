@@ -195,15 +195,6 @@ namespace android::os
 			arg0
 		);
 	}
-	jint Process::getGidForName(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.os.Process",
-			"getGidForName",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jlong Process::getStartElapsedRealtime()
 	{
 		return QAndroidJniObject::callStaticMethod<jlong>(
@@ -236,15 +227,6 @@ namespace android::os
 			"getUidForName",
 			"(Ljava/lang/String;)I",
 			arg0
-		);
-	}
-	jint Process::getUidForName(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.os.Process",
-			"getUidForName",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean Process::is64Bit()

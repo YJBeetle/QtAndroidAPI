@@ -15,7 +15,7 @@ namespace android::text::style
 			"()V"
 		);
 	}
-	StrikethroughSpan::StrikethroughSpan(android::os::Parcel &arg0)
+	StrikethroughSpan::StrikethroughSpan(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.StrikethroughSpan",

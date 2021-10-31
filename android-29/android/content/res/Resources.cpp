@@ -26,7 +26,7 @@ namespace android::content::res
 	
 	Resources::Resources(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Resources::Resources(android::content::res::AssetManager &arg0, android::util::DisplayMetrics &arg1, android::content::res::Configuration &arg2)
+	Resources::Resources(android::content::res::AssetManager arg0, android::util::DisplayMetrics arg1, android::content::res::Configuration arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.res.Resources",
@@ -236,16 +236,6 @@ namespace android::content::res
 			arg2
 		);
 	}
-	jint Resources::getIdentifier(const QString &arg0, const QString &arg1, const QString &arg2)
-	{
-		return __thiz.callMethod<jint>(
-			"getIdentifier",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	jintArray Resources::getIntArray(jint arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -380,15 +370,6 @@ namespace android::content::res
 			arg1
 		).object<jstring>();
 	}
-	jstring Resources::getText(jint arg0, const QString &arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getText",
-			"(ILjava/lang/CharSequence;)Ljava/lang/CharSequence;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		).object<jstring>();
-	}
 	jarray Resources::getTextArray(jint arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -413,16 +394,6 @@ namespace android::content::res
 			"getValue",
 			"(Ljava/lang/String;Landroid/util/TypedValue;Z)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2
-		);
-	}
-	void Resources::getValue(const QString &arg0, android::util::TypedValue arg1, jboolean arg2)
-	{
-		__thiz.callMethod<void>(
-			"getValue",
-			"(Ljava/lang/String;Landroid/util/TypedValue;Z)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2
 		);
@@ -501,16 +472,6 @@ namespace android::content::res
 			"parseBundleExtra",
 			"(Ljava/lang/String;Landroid/util/AttributeSet;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	void Resources::parseBundleExtra(const QString &arg0, __JniBaseClass arg1, android::os::Bundle arg2)
-	{
-		__thiz.callMethod<void>(
-			"parseBundleExtra",
-			"(Ljava/lang/String;Landroid/util/AttributeSet;Landroid/os/Bundle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object()
 		);

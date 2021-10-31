@@ -12,12 +12,11 @@ namespace android::util
 		
 		Size(QAndroidJniObject obj);
 		// Constructors
-		Size(jint &arg0, jint &arg1);
+		Size(jint arg0, jint arg1);
 		Size() = default;
 		
 		// Methods
 		static QAndroidJniObject parseSize(jstring arg0);
-		static QAndroidJniObject parseSize(const QString &arg0);
 		jboolean equals(jobject arg0);
 		jint getHeight();
 		jint getWidth();

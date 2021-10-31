@@ -25,8 +25,7 @@ namespace android::telecom
 		
 		StatusHints(QAndroidJniObject obj);
 		// Constructors
-		StatusHints(jstring &arg0, android::graphics::drawable::Icon &arg1, android::os::Bundle &arg2);
-		StatusHints(const QString &arg0, android::graphics::drawable::Icon &arg1, android::os::Bundle &arg2);
+		StatusHints(jstring arg0, android::graphics::drawable::Icon arg1, android::os::Bundle arg2);
 		StatusHints() = default;
 		
 		// Methods

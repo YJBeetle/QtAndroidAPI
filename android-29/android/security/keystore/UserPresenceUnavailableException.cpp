@@ -13,7 +13,7 @@ namespace android::security::keystore
 			"()V"
 		);
 	}
-	UserPresenceUnavailableException::UserPresenceUnavailableException(jstring &arg0)
+	UserPresenceUnavailableException::UserPresenceUnavailableException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.security.keystore.UserPresenceUnavailableException",
@@ -21,29 +21,12 @@ namespace android::security::keystore
 			arg0
 		);
 	}
-	UserPresenceUnavailableException::UserPresenceUnavailableException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.security.keystore.UserPresenceUnavailableException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	UserPresenceUnavailableException::UserPresenceUnavailableException(jstring &arg0, jthrowable &arg1)
+	UserPresenceUnavailableException::UserPresenceUnavailableException(jstring arg0, jthrowable arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.security.keystore.UserPresenceUnavailableException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
-			arg1
-		);
-	}
-	UserPresenceUnavailableException::UserPresenceUnavailableException(const QString &arg0, jthrowable &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.security.keystore.UserPresenceUnavailableException",
-			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

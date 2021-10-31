@@ -13,20 +13,12 @@ namespace javax::security::cert
 			"()V"
 		);
 	}
-	CertificateParsingException::CertificateParsingException(jstring &arg0)
+	CertificateParsingException::CertificateParsingException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.security.cert.CertificateParsingException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	CertificateParsingException::CertificateParsingException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.security.cert.CertificateParsingException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

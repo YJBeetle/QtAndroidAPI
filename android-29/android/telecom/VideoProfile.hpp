@@ -26,8 +26,8 @@ namespace android::telecom
 		
 		VideoProfile(QAndroidJniObject obj);
 		// Constructors
-		VideoProfile(jint &arg0);
-		VideoProfile(jint &arg0, jint &arg1);
+		VideoProfile(jint arg0);
+		VideoProfile(jint arg0, jint arg1);
 		VideoProfile() = default;
 		
 		// Methods

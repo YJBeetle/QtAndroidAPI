@@ -888,7 +888,7 @@ namespace android::view
 			"()V"
 		);
 	}
-	WindowManager_LayoutParams::WindowManager_LayoutParams(android::os::Parcel &arg0)
+	WindowManager_LayoutParams::WindowManager_LayoutParams(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.WindowManager$LayoutParams",
@@ -896,7 +896,7 @@ namespace android::view
 			arg0.__jniObject().object()
 		);
 	}
-	WindowManager_LayoutParams::WindowManager_LayoutParams(jint &arg0)
+	WindowManager_LayoutParams::WindowManager_LayoutParams(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.WindowManager$LayoutParams",
@@ -904,7 +904,7 @@ namespace android::view
 			arg0
 		);
 	}
-	WindowManager_LayoutParams::WindowManager_LayoutParams(jint &arg0, jint &arg1)
+	WindowManager_LayoutParams::WindowManager_LayoutParams(jint arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.WindowManager$LayoutParams",
@@ -913,7 +913,7 @@ namespace android::view
 			arg1
 		);
 	}
-	WindowManager_LayoutParams::WindowManager_LayoutParams(jint &arg0, jint &arg1, jint &arg2)
+	WindowManager_LayoutParams::WindowManager_LayoutParams(jint arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.WindowManager$LayoutParams",
@@ -923,7 +923,7 @@ namespace android::view
 			arg2
 		);
 	}
-	WindowManager_LayoutParams::WindowManager_LayoutParams(jint &arg0, jint &arg1, jint &arg2, jint &arg3, jint &arg4)
+	WindowManager_LayoutParams::WindowManager_LayoutParams(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.WindowManager$LayoutParams",
@@ -935,7 +935,7 @@ namespace android::view
 			arg4
 		);
 	}
-	WindowManager_LayoutParams::WindowManager_LayoutParams(jint &arg0, jint &arg1, jint &arg2, jint &arg3, jint &arg4, jint &arg5, jint &arg6)
+	WindowManager_LayoutParams::WindowManager_LayoutParams(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.WindowManager$LayoutParams",
@@ -976,14 +976,6 @@ namespace android::view
 			arg0
 		).object<jstring>();
 	}
-	jstring WindowManager_LayoutParams::debug(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"debug",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
 	jint WindowManager_LayoutParams::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -1019,14 +1011,6 @@ namespace android::view
 			"setTitle",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
-		);
-	}
-	void WindowManager_LayoutParams::setTitle(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTitle",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring WindowManager_LayoutParams::toString()

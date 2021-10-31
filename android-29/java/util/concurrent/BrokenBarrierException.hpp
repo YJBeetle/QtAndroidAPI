@@ -14,8 +14,7 @@ namespace java::util::concurrent
 		BrokenBarrierException(QAndroidJniObject obj);
 		// Constructors
 		BrokenBarrierException();
-		BrokenBarrierException(jstring &arg0);
-		BrokenBarrierException(const QString &arg0);
+		BrokenBarrierException(jstring arg0);
 		
 		// Methods
 	};

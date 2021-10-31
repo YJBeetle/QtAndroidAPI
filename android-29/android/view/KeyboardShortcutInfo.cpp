@@ -15,7 +15,7 @@ namespace android::view
 	
 	KeyboardShortcutInfo::KeyboardShortcutInfo(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	KeyboardShortcutInfo::KeyboardShortcutInfo(jstring &arg0, jchar &arg1, jint &arg2)
+	KeyboardShortcutInfo::KeyboardShortcutInfo(jstring arg0, jchar arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.KeyboardShortcutInfo",
@@ -25,32 +25,12 @@ namespace android::view
 			arg2
 		);
 	}
-	KeyboardShortcutInfo::KeyboardShortcutInfo(const QString &arg0, jchar &arg1, jint &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.KeyboardShortcutInfo",
-			"(Ljava/lang/CharSequence;CI)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2
-		);
-	}
-	KeyboardShortcutInfo::KeyboardShortcutInfo(jstring &arg0, jint &arg1, jint &arg2)
+	KeyboardShortcutInfo::KeyboardShortcutInfo(jstring arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.KeyboardShortcutInfo",
 			"(Ljava/lang/CharSequence;II)V",
 			arg0,
-			arg1,
-			arg2
-		);
-	}
-	KeyboardShortcutInfo::KeyboardShortcutInfo(const QString &arg0, jint &arg1, jint &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.KeyboardShortcutInfo",
-			"(Ljava/lang/CharSequence;II)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2
 		);

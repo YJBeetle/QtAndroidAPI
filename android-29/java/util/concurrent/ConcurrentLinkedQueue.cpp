@@ -15,7 +15,7 @@ namespace java::util::concurrent
 			"()V"
 		);
 	}
-	ConcurrentLinkedQueue::ConcurrentLinkedQueue(__JniBaseClass &arg0)
+	ConcurrentLinkedQueue::ConcurrentLinkedQueue(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.ConcurrentLinkedQueue",

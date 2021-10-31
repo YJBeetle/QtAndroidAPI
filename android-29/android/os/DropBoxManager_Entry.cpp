@@ -18,7 +18,7 @@ namespace android::os
 	
 	DropBoxManager_Entry::DropBoxManager_Entry(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DropBoxManager_Entry::DropBoxManager_Entry(jstring &arg0, jlong &arg1)
+	DropBoxManager_Entry::DropBoxManager_Entry(jstring arg0, jlong arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.DropBoxManager$Entry",
@@ -27,16 +27,7 @@ namespace android::os
 			arg1
 		);
 	}
-	DropBoxManager_Entry::DropBoxManager_Entry(const QString &arg0, jlong &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.os.DropBoxManager$Entry",
-			"(Ljava/lang/String;J)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
-	DropBoxManager_Entry::DropBoxManager_Entry(jstring &arg0, jlong &arg1, jstring &arg2)
+	DropBoxManager_Entry::DropBoxManager_Entry(jstring arg0, jlong arg1, jstring arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.DropBoxManager$Entry",
@@ -46,17 +37,7 @@ namespace android::os
 			arg2
 		);
 	}
-	DropBoxManager_Entry::DropBoxManager_Entry(const QString &arg0, jlong &arg1, const QString &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.os.DropBoxManager$Entry",
-			"(Ljava/lang/String;JLjava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
-	DropBoxManager_Entry::DropBoxManager_Entry(jstring &arg0, jlong &arg1, jbyteArray &arg2, jint &arg3)
+	DropBoxManager_Entry::DropBoxManager_Entry(jstring arg0, jlong arg1, jbyteArray arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.DropBoxManager$Entry",
@@ -67,18 +48,7 @@ namespace android::os
 			arg3
 		);
 	}
-	DropBoxManager_Entry::DropBoxManager_Entry(const QString &arg0, jlong &arg1, jbyteArray &arg2, jint &arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"android.os.DropBoxManager$Entry",
-			"(Ljava/lang/String;J[BI)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	DropBoxManager_Entry::DropBoxManager_Entry(jstring &arg0, jlong &arg1, android::os::ParcelFileDescriptor &arg2, jint &arg3)
+	DropBoxManager_Entry::DropBoxManager_Entry(jstring arg0, jlong arg1, android::os::ParcelFileDescriptor arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.DropBoxManager$Entry",
@@ -89,34 +59,12 @@ namespace android::os
 			arg3
 		);
 	}
-	DropBoxManager_Entry::DropBoxManager_Entry(const QString &arg0, jlong &arg1, android::os::ParcelFileDescriptor &arg2, jint &arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"android.os.DropBoxManager$Entry",
-			"(Ljava/lang/String;JLandroid/os/ParcelFileDescriptor;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2.__jniObject().object(),
-			arg3
-		);
-	}
-	DropBoxManager_Entry::DropBoxManager_Entry(jstring &arg0, jlong &arg1, java::io::File &arg2, jint &arg3)
+	DropBoxManager_Entry::DropBoxManager_Entry(jstring arg0, jlong arg1, java::io::File arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.DropBoxManager$Entry",
 			"(Ljava/lang/String;JLjava/io/File;I)V",
 			arg0,
-			arg1,
-			arg2.__jniObject().object(),
-			arg3
-		);
-	}
-	DropBoxManager_Entry::DropBoxManager_Entry(const QString &arg0, jlong &arg1, java::io::File &arg2, jint &arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"android.os.DropBoxManager$Entry",
-			"(Ljava/lang/String;JLjava/io/File;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2.__jniObject().object(),
 			arg3

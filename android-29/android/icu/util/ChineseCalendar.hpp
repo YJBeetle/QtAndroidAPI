@@ -34,16 +34,16 @@ namespace android::icu::util
 		ChineseCalendar(QAndroidJniObject obj);
 		// Constructors
 		ChineseCalendar();
-		ChineseCalendar(android::icu::util::TimeZone &arg0);
-		ChineseCalendar(android::icu::util::ULocale &arg0);
-		ChineseCalendar(java::util::Date &arg0);
-		ChineseCalendar(java::util::Locale &arg0);
-		ChineseCalendar(android::icu::util::TimeZone &arg0, android::icu::util::ULocale &arg1);
-		ChineseCalendar(android::icu::util::TimeZone &arg0, java::util::Locale &arg1);
-		ChineseCalendar(jint &arg0, jint &arg1, jint &arg2, jint &arg3);
-		ChineseCalendar(jint &arg0, jint &arg1, jint &arg2, jint &arg3, jint &arg4);
-		ChineseCalendar(jint &arg0, jint &arg1, jint &arg2, jint &arg3, jint &arg4, jint &arg5, jint &arg6);
-		ChineseCalendar(jint &arg0, jint &arg1, jint &arg2, jint &arg3, jint &arg4, jint &arg5, jint &arg6, jint &arg7);
+		ChineseCalendar(android::icu::util::TimeZone arg0);
+		ChineseCalendar(android::icu::util::ULocale arg0);
+		ChineseCalendar(java::util::Date arg0);
+		ChineseCalendar(java::util::Locale arg0);
+		ChineseCalendar(android::icu::util::TimeZone arg0, android::icu::util::ULocale arg1);
+		ChineseCalendar(android::icu::util::TimeZone arg0, java::util::Locale arg1);
+		ChineseCalendar(jint arg0, jint arg1, jint arg2, jint arg3);
+		ChineseCalendar(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
+		ChineseCalendar(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6);
+		ChineseCalendar(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7);
 		
 		// Methods
 		void add(jint arg0, jint arg1);

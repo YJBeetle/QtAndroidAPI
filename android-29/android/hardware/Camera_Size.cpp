@@ -19,7 +19,7 @@ namespace android::hardware
 	
 	Camera_Size::Camera_Size(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Camera_Size::Camera_Size(android::hardware::Camera &arg0, jint &arg1, jint &arg2)
+	Camera_Size::Camera_Size(android::hardware::Camera arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.hardware.Camera$Size",

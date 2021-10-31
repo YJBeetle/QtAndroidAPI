@@ -16,8 +16,7 @@ namespace java::util::concurrent
 		CancellationException(QAndroidJniObject obj);
 		// Constructors
 		CancellationException();
-		CancellationException(jstring &arg0);
-		CancellationException(const QString &arg0);
+		CancellationException(jstring arg0);
 		
 		// Methods
 	};

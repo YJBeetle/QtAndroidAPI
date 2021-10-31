@@ -34,7 +34,6 @@ namespace java::net
 		static QAndroidJniObject getDefault();
 		static void setDefault(java::net::ResponseCache arg0);
 		QAndroidJniObject get(java::net::URI arg0, jstring arg1, __JniBaseClass arg2);
-		QAndroidJniObject get(java::net::URI arg0, const QString &arg1, __JniBaseClass arg2);
 		QAndroidJniObject put(java::net::URI arg0, java::net::URLConnection arg1);
 	};
 } // namespace java::net

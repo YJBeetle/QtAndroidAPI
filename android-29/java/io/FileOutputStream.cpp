@@ -9,7 +9,7 @@ namespace java::io
 	
 	FileOutputStream::FileOutputStream(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	FileOutputStream::FileOutputStream(java::io::File &arg0)
+	FileOutputStream::FileOutputStream(java::io::File arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.FileOutputStream",
@@ -17,7 +17,7 @@ namespace java::io
 			arg0.__jniObject().object()
 		);
 	}
-	FileOutputStream::FileOutputStream(java::io::FileDescriptor &arg0)
+	FileOutputStream::FileOutputStream(java::io::FileDescriptor arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.FileOutputStream",
@@ -25,7 +25,7 @@ namespace java::io
 			arg0.__jniObject().object()
 		);
 	}
-	FileOutputStream::FileOutputStream(jstring &arg0)
+	FileOutputStream::FileOutputStream(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.FileOutputStream",
@@ -33,15 +33,7 @@ namespace java::io
 			arg0
 		);
 	}
-	FileOutputStream::FileOutputStream(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.io.FileOutputStream",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	FileOutputStream::FileOutputStream(java::io::File &arg0, jboolean &arg1)
+	FileOutputStream::FileOutputStream(java::io::File arg0, jboolean arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.FileOutputStream",
@@ -50,21 +42,12 @@ namespace java::io
 			arg1
 		);
 	}
-	FileOutputStream::FileOutputStream(jstring &arg0, jboolean &arg1)
+	FileOutputStream::FileOutputStream(jstring arg0, jboolean arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.FileOutputStream",
 			"(Ljava/lang/String;Z)V",
 			arg0,
-			arg1
-		);
-	}
-	FileOutputStream::FileOutputStream(const QString &arg0, jboolean &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.io.FileOutputStream",
-			"(Ljava/lang/String;Z)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

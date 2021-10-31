@@ -12,8 +12,8 @@ namespace android::util
 		
 		MonthDisplayHelper(QAndroidJniObject obj);
 		// Constructors
-		MonthDisplayHelper(jint &arg0, jint &arg1);
-		MonthDisplayHelper(jint &arg0, jint &arg1, jint &arg2);
+		MonthDisplayHelper(jint arg0, jint arg1);
+		MonthDisplayHelper(jint arg0, jint arg1, jint arg2);
 		MonthDisplayHelper() = default;
 		
 		// Methods

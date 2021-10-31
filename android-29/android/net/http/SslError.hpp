@@ -27,12 +27,10 @@ namespace android::net::http
 		
 		SslError(QAndroidJniObject obj);
 		// Constructors
-		SslError(jint &arg0, android::net::http::SslCertificate &arg1);
-		SslError(jint &arg0, java::security::cert::X509Certificate &arg1);
-		SslError(jint &arg0, android::net::http::SslCertificate &arg1, jstring &arg2);
-		SslError(jint &arg0, android::net::http::SslCertificate &arg1, const QString &arg2);
-		SslError(jint &arg0, java::security::cert::X509Certificate &arg1, jstring &arg2);
-		SslError(jint &arg0, java::security::cert::X509Certificate &arg1, const QString &arg2);
+		SslError(jint arg0, android::net::http::SslCertificate arg1);
+		SslError(jint arg0, java::security::cert::X509Certificate arg1);
+		SslError(jint arg0, android::net::http::SslCertificate arg1, jstring arg2);
+		SslError(jint arg0, java::security::cert::X509Certificate arg1, jstring arg2);
 		SslError() = default;
 		
 		// Methods

@@ -27,7 +27,6 @@ namespace android::view::inputmethod
 		QAndroidJniObject build();
 		void reset();
 		QAndroidJniObject setComposingText(jint arg0, jstring arg1);
-		QAndroidJniObject setComposingText(jint arg0, const QString &arg1);
 		QAndroidJniObject setInsertionMarkerLocation(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jint arg4);
 		QAndroidJniObject setMatrix(android::graphics::Matrix arg0);
 		QAndroidJniObject setSelectionRange(jint arg0, jint arg1);

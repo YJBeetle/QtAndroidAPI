@@ -38,11 +38,10 @@ namespace android::inputmethodservice
 		
 		Keyboard(QAndroidJniObject obj);
 		// Constructors
-		Keyboard(android::content::Context &arg0, jint &arg1);
-		Keyboard(android::content::Context &arg0, jint &arg1, jint &arg2);
-		Keyboard(android::content::Context &arg0, jint &arg1, jint &arg2, jint &arg3, jint &arg4);
-		Keyboard(android::content::Context &arg0, jint &arg1, jstring &arg2, jint &arg3, jint &arg4);
-		Keyboard(android::content::Context &arg0, jint &arg1, const QString &arg2, jint &arg3, jint &arg4);
+		Keyboard(android::content::Context arg0, jint arg1);
+		Keyboard(android::content::Context arg0, jint arg1, jint arg2);
+		Keyboard(android::content::Context arg0, jint arg1, jint arg2, jint arg3, jint arg4);
+		Keyboard(android::content::Context arg0, jint arg1, jstring arg2, jint arg3, jint arg4);
 		Keyboard() = default;
 		
 		// Methods

@@ -13,20 +13,12 @@ namespace java::nio::file
 			"()V"
 		);
 	}
-	FileSystemAlreadyExistsException::FileSystemAlreadyExistsException(jstring &arg0)
+	FileSystemAlreadyExistsException::FileSystemAlreadyExistsException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.nio.file.FileSystemAlreadyExistsException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	FileSystemAlreadyExistsException::FileSystemAlreadyExistsException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.nio.file.FileSystemAlreadyExistsException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

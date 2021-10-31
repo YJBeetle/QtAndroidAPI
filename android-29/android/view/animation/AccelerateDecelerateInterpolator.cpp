@@ -14,7 +14,7 @@ namespace android::view::animation
 			"()V"
 		);
 	}
-	AccelerateDecelerateInterpolator::AccelerateDecelerateInterpolator(android::content::Context &arg0, __JniBaseClass &arg1)
+	AccelerateDecelerateInterpolator::AccelerateDecelerateInterpolator(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.AccelerateDecelerateInterpolator",

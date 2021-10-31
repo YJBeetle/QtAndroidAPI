@@ -20,10 +20,10 @@ namespace android::widget
 		
 		RadioButton(QAndroidJniObject obj);
 		// Constructors
-		RadioButton(android::content::Context &arg0);
-		RadioButton(android::content::Context &arg0, __JniBaseClass &arg1);
-		RadioButton(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		RadioButton(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		RadioButton(android::content::Context arg0);
+		RadioButton(android::content::Context arg0, __JniBaseClass arg1);
+		RadioButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		RadioButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		RadioButton() = default;
 		
 		// Methods

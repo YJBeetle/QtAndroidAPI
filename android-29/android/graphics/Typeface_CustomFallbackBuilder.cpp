@@ -9,7 +9,7 @@ namespace android::graphics
 	
 	Typeface_CustomFallbackBuilder::Typeface_CustomFallbackBuilder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Typeface_CustomFallbackBuilder::Typeface_CustomFallbackBuilder(android::graphics::fonts::FontFamily &arg0)
+	Typeface_CustomFallbackBuilder::Typeface_CustomFallbackBuilder(android::graphics::fonts::FontFamily arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.Typeface$CustomFallbackBuilder",
@@ -56,14 +56,6 @@ namespace android::graphics
 			"setSystemFallback",
 			"(Ljava/lang/String;)Landroid/graphics/Typeface$CustomFallbackBuilder;",
 			arg0
-		);
-	}
-	QAndroidJniObject Typeface_CustomFallbackBuilder::setSystemFallback(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setSystemFallback",
-			"(Ljava/lang/String;)Landroid/graphics/Typeface$CustomFallbackBuilder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace android::graphics

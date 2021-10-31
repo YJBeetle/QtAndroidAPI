@@ -15,19 +15,13 @@ namespace java::sql
 		SQLRecoverableException(QAndroidJniObject obj);
 		// Constructors
 		SQLRecoverableException();
-		SQLRecoverableException(jstring &arg0);
-		SQLRecoverableException(const QString &arg0);
-		SQLRecoverableException(jthrowable &arg0);
-		SQLRecoverableException(jstring &arg0, jstring &arg1);
-		SQLRecoverableException(const QString &arg0, const QString &arg1);
-		SQLRecoverableException(jstring &arg0, jthrowable &arg1);
-		SQLRecoverableException(const QString &arg0, jthrowable &arg1);
-		SQLRecoverableException(jstring &arg0, jstring &arg1, jint &arg2);
-		SQLRecoverableException(const QString &arg0, const QString &arg1, jint &arg2);
-		SQLRecoverableException(jstring &arg0, jstring &arg1, jthrowable &arg2);
-		SQLRecoverableException(const QString &arg0, const QString &arg1, jthrowable &arg2);
-		SQLRecoverableException(jstring &arg0, jstring &arg1, jint &arg2, jthrowable &arg3);
-		SQLRecoverableException(const QString &arg0, const QString &arg1, jint &arg2, jthrowable &arg3);
+		SQLRecoverableException(jstring arg0);
+		SQLRecoverableException(jthrowable arg0);
+		SQLRecoverableException(jstring arg0, jstring arg1);
+		SQLRecoverableException(jstring arg0, jthrowable arg1);
+		SQLRecoverableException(jstring arg0, jstring arg1, jint arg2);
+		SQLRecoverableException(jstring arg0, jstring arg1, jthrowable arg2);
+		SQLRecoverableException(jstring arg0, jstring arg1, jint arg2, jthrowable arg3);
 		
 		// Methods
 	};

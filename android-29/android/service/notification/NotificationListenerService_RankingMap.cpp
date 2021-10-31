@@ -49,15 +49,6 @@ namespace android::service::notification
 			arg1.__jniObject().object()
 		);
 	}
-	jboolean NotificationListenerService_RankingMap::getRanking(const QString &arg0, android::service::notification::NotificationListenerService_Ranking arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"getRanking",
-			"(Ljava/lang/String;Landroid/service/notification/NotificationListenerService$Ranking;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	void NotificationListenerService_RankingMap::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(

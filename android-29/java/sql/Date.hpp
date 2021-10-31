@@ -21,13 +21,12 @@ namespace java::sql
 		
 		Date(QAndroidJniObject obj);
 		// Constructors
-		Date(jlong &arg0);
-		Date(jint &arg0, jint &arg1, jint &arg2);
+		Date(jlong arg0);
+		Date(jint arg0, jint arg1, jint arg2);
 		Date() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);
-		static QAndroidJniObject valueOf(const QString &arg0);
 		static QAndroidJniObject valueOf(java::time::LocalDate arg0);
 		jint getHours();
 		jint getMinutes();

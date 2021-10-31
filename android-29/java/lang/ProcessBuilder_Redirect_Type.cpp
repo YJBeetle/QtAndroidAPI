@@ -57,15 +57,6 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject ProcessBuilder_Redirect_Type::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.lang.ProcessBuilder$Redirect$Type",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/lang/ProcessBuilder$Redirect$Type;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray ProcessBuilder_Redirect_Type::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

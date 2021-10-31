@@ -151,20 +151,17 @@ namespace android::widget
 		
 		TextView(QAndroidJniObject obj);
 		// Constructors
-		TextView(android::content::Context &arg0);
-		TextView(android::content::Context &arg0, __JniBaseClass &arg1);
-		TextView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		TextView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		TextView(android::content::Context arg0);
+		TextView(android::content::Context arg0, __JniBaseClass arg1);
+		TextView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		TextView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		TextView() = default;
 		
 		// Methods
 		void addExtraDataToAccessibilityNodeInfo(android::view::accessibility::AccessibilityNodeInfo arg0, jstring arg1, android::os::Bundle arg2);
-		void addExtraDataToAccessibilityNodeInfo(android::view::accessibility::AccessibilityNodeInfo arg0, const QString &arg1, android::os::Bundle arg2);
 		void addTextChangedListener(__JniBaseClass arg0);
 		void append(jstring arg0);
-		void append(const QString &arg0);
 		void append(jstring arg0, jint arg1, jint arg2);
-		void append(const QString &arg0, jint arg1, jint arg2);
 		void autofill(android::view::autofill::AutofillValue arg0);
 		void beginBatchEdit();
 		jboolean bringPointIntoView(jint arg0);
@@ -177,7 +174,6 @@ namespace android::widget
 		void endBatchEdit();
 		jboolean extractText(android::view::inputmethod::ExtractedTextRequest arg0, android::view::inputmethod::ExtractedText arg1);
 		void findViewsWithText(java::util::ArrayList arg0, jstring arg1, jint arg2);
-		void findViewsWithText(java::util::ArrayList arg0, const QString &arg1, jint arg2);
 		jstring getAccessibilityClassName();
 		jint getAutoLinkMask();
 		jint getAutoSizeMaxTextSize();
@@ -314,7 +310,6 @@ namespace android::widget
 		jboolean onKeyUp(jint arg0, android::view::KeyEvent arg1);
 		jboolean onPreDraw();
 		jboolean onPrivateIMECommand(jstring arg0, android::os::Bundle arg1);
-		jboolean onPrivateIMECommand(const QString &arg0, android::os::Bundle arg1);
 		QAndroidJniObject onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1);
 		void onRestoreInstanceState(__JniBaseClass arg0);
 		void onRtlPropertiesChanged(jint arg0);
@@ -352,30 +347,24 @@ namespace android::widget
 		void setEms(jint arg0);
 		void setEnabled(jboolean arg0);
 		void setError(jstring arg0);
-		void setError(const QString &arg0);
 		void setError(jstring arg0, android::graphics::drawable::Drawable arg1);
-		void setError(const QString &arg0, android::graphics::drawable::Drawable arg1);
 		void setExtractedText(android::view::inputmethod::ExtractedText arg0);
 		void setFallbackLineSpacing(jboolean arg0);
 		void setFilters(jarray arg0);
 		void setFirstBaselineToTopHeight(jint arg0);
 		void setFontFeatureSettings(jstring arg0);
-		void setFontFeatureSettings(const QString &arg0);
 		jboolean setFontVariationSettings(jstring arg0);
-		jboolean setFontVariationSettings(const QString &arg0);
 		void setFreezesText(jboolean arg0);
 		void setGravity(jint arg0);
 		void setHeight(jint arg0);
 		void setHighlightColor(jint arg0);
 		void setHint(jint arg0);
 		void setHint(jstring arg0);
-		void setHint(const QString &arg0);
 		void setHintTextColor(android::content::res::ColorStateList arg0);
 		void setHintTextColor(jint arg0);
 		void setHorizontallyScrolling(jboolean arg0);
 		void setHyphenationFrequency(jint arg0);
 		void setImeActionLabel(jstring arg0, jint arg1);
-		void setImeActionLabel(const QString &arg0, jint arg1);
 		void setImeHintLocales(android::os::LocaleList arg0);
 		void setImeOptions(jint arg0);
 		void setIncludeFontPadding(jboolean arg0);
@@ -406,7 +395,6 @@ namespace android::widget
 		void setPaddingRelative(jint arg0, jint arg1, jint arg2, jint arg3);
 		void setPaintFlags(jint arg0);
 		void setPrivateImeOptions(jstring arg0);
-		void setPrivateImeOptions(const QString &arg0);
 		void setRawInputType(jint arg0);
 		void setScroller(android::widget::Scroller arg0);
 		void setSelectAllOnFocus(jboolean arg0);
@@ -418,10 +406,8 @@ namespace android::widget
 		void setSpannableFactory(android::text::Spannable_Factory arg0);
 		void setText(jint arg0);
 		void setText(jstring arg0);
-		void setText(const QString &arg0);
 		void setText(jint arg0, android::widget::TextView_BufferType arg1);
 		void setText(jstring arg0, android::widget::TextView_BufferType arg1);
-		void setText(const QString &arg0, android::widget::TextView_BufferType arg1);
 		void setText(jcharArray arg0, jint arg1, jint arg2);
 		void setTextAppearance(jint arg0);
 		void setTextAppearance(android::content::Context arg0, jint arg1);
@@ -432,9 +418,7 @@ namespace android::widget
 		void setTextCursorDrawable(jint arg0);
 		void setTextIsSelectable(jboolean arg0);
 		void setTextKeepState(jstring arg0);
-		void setTextKeepState(const QString &arg0);
 		void setTextKeepState(jstring arg0, android::widget::TextView_BufferType arg1);
-		void setTextKeepState(const QString &arg0, android::widget::TextView_BufferType arg1);
 		void setTextLocale(java::util::Locale arg0);
 		void setTextLocales(android::os::LocaleList arg0);
 		void setTextMetricsParams(android::text::PrecomputedText_Params arg0);

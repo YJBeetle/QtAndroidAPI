@@ -16,7 +16,7 @@ namespace java::text
 			"()V"
 		);
 	}
-	DecimalFormatSymbols::DecimalFormatSymbols(java::util::Locale &arg0)
+	DecimalFormatSymbols::DecimalFormatSymbols(java::util::Locale arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.text.DecimalFormatSymbols",
@@ -201,14 +201,6 @@ namespace java::text
 			arg0
 		);
 	}
-	void DecimalFormatSymbols::setCurrencySymbol(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setCurrencySymbol",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void DecimalFormatSymbols::setDecimalSeparator(jchar arg0)
 	{
 		__thiz.callMethod<void>(
@@ -233,14 +225,6 @@ namespace java::text
 			arg0
 		);
 	}
-	void DecimalFormatSymbols::setExponentSeparator(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setExponentSeparator",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void DecimalFormatSymbols::setGroupingSeparator(jchar arg0)
 	{
 		__thiz.callMethod<void>(
@@ -257,28 +241,12 @@ namespace java::text
 			arg0
 		);
 	}
-	void DecimalFormatSymbols::setInfinity(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setInfinity",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void DecimalFormatSymbols::setInternationalCurrencySymbol(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setInternationalCurrencySymbol",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void DecimalFormatSymbols::setInternationalCurrencySymbol(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setInternationalCurrencySymbol",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void DecimalFormatSymbols::setMinusSign(jchar arg0)
@@ -311,14 +279,6 @@ namespace java::text
 			"setNaN",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void DecimalFormatSymbols::setNaN(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setNaN",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void DecimalFormatSymbols::setPatternSeparator(jchar arg0)

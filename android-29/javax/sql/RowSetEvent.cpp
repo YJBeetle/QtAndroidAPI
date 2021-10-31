@@ -6,7 +6,7 @@ namespace javax::sql
 	
 	RowSetEvent::RowSetEvent(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	RowSetEvent::RowSetEvent(__JniBaseClass &arg0)
+	RowSetEvent::RowSetEvent(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.sql.RowSetEvent",

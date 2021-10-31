@@ -7,7 +7,7 @@ namespace javax::sql
 	
 	ConnectionEvent::ConnectionEvent(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ConnectionEvent::ConnectionEvent(__JniBaseClass &arg0)
+	ConnectionEvent::ConnectionEvent(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.sql.ConnectionEvent",
@@ -15,7 +15,7 @@ namespace javax::sql
 			arg0.__jniObject().object()
 		);
 	}
-	ConnectionEvent::ConnectionEvent(__JniBaseClass &arg0, java::sql::SQLException &arg1)
+	ConnectionEvent::ConnectionEvent(__JniBaseClass arg0, java::sql::SQLException arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.sql.ConnectionEvent",

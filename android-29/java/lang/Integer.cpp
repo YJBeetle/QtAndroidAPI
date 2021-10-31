@@ -44,7 +44,7 @@ namespace java::lang
 	
 	Integer::Integer(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Integer::Integer(jint &arg0)
+	Integer::Integer(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.Integer",
@@ -52,20 +52,12 @@ namespace java::lang
 			arg0
 		);
 	}
-	Integer::Integer(jstring &arg0)
+	Integer::Integer(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.Integer",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	Integer::Integer(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.Integer",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	
@@ -108,15 +100,6 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject Integer::decode(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.lang.Integer",
-			"decode",
-			"(Ljava/lang/String;)Ljava/lang/Integer;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jint Integer::divideUnsigned(jint arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -136,15 +119,6 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject Integer::getInteger(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.lang.Integer",
-			"getInteger",
-			"(Ljava/lang/String;)Ljava/lang/Integer;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Integer::getInteger(jstring arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -155,16 +129,6 @@ namespace java::lang
 			arg1
 		);
 	}
-	QAndroidJniObject Integer::getInteger(const QString &arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.lang.Integer",
-			"getInteger",
-			"(Ljava/lang/String;I)Ljava/lang/Integer;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	QAndroidJniObject Integer::getInteger(jstring arg0, java::lang::Integer arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -172,16 +136,6 @@ namespace java::lang
 			"getInteger",
 			"(Ljava/lang/String;Ljava/lang/Integer;)Ljava/lang/Integer;",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Integer::getInteger(const QString &arg0, java::lang::Integer arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.lang.Integer",
-			"getInteger",
-			"(Ljava/lang/String;Ljava/lang/Integer;)Ljava/lang/Integer;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -259,15 +213,6 @@ namespace java::lang
 			arg0
 		);
 	}
-	jint Integer::parseInt(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"java.lang.Integer",
-			"parseInt",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jint Integer::parseInt(jstring arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -275,16 +220,6 @@ namespace java::lang
 			"parseInt",
 			"(Ljava/lang/String;I)I",
 			arg0,
-			arg1
-		);
-	}
-	jint Integer::parseInt(const QString &arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"java.lang.Integer",
-			"parseInt",
-			"(Ljava/lang/String;I)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -300,18 +235,6 @@ namespace java::lang
 			arg3
 		);
 	}
-	jint Integer::parseInt(const QString &arg0, jint arg1, jint arg2, jint arg3)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"java.lang.Integer",
-			"parseInt",
-			"(Ljava/lang/CharSequence;III)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2,
-			arg3
-		);
-	}
 	jint Integer::parseUnsignedInt(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -319,15 +242,6 @@ namespace java::lang
 			"parseUnsignedInt",
 			"(Ljava/lang/String;)I",
 			arg0
-		);
-	}
-	jint Integer::parseUnsignedInt(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"java.lang.Integer",
-			"parseUnsignedInt",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jint Integer::parseUnsignedInt(jstring arg0, jint arg1)
@@ -340,16 +254,6 @@ namespace java::lang
 			arg1
 		);
 	}
-	jint Integer::parseUnsignedInt(const QString &arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"java.lang.Integer",
-			"parseUnsignedInt",
-			"(Ljava/lang/String;I)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	jint Integer::parseUnsignedInt(jstring arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -357,18 +261,6 @@ namespace java::lang
 			"parseUnsignedInt",
 			"(Ljava/lang/CharSequence;III)I",
 			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	jint Integer::parseUnsignedInt(const QString &arg0, jint arg1, jint arg2, jint arg3)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"java.lang.Integer",
-			"parseUnsignedInt",
-			"(Ljava/lang/CharSequence;III)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2,
 			arg3
@@ -533,15 +425,6 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject Integer::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.lang.Integer",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/lang/Integer;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Integer::valueOf(jstring arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -549,16 +432,6 @@ namespace java::lang
 			"valueOf",
 			"(Ljava/lang/String;I)Ljava/lang/Integer;",
 			arg0,
-			arg1
-		);
-	}
-	QAndroidJniObject Integer::valueOf(const QString &arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.lang.Integer",
-			"valueOf",
-			"(Ljava/lang/String;I)Ljava/lang/Integer;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

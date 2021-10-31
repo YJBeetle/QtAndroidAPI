@@ -7,7 +7,7 @@ namespace java::security::spec
 	
 	ECFieldF2m::ECFieldF2m(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ECFieldF2m::ECFieldF2m(jint &arg0)
+	ECFieldF2m::ECFieldF2m(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.spec.ECFieldF2m",
@@ -15,7 +15,7 @@ namespace java::security::spec
 			arg0
 		);
 	}
-	ECFieldF2m::ECFieldF2m(jint &arg0, jintArray &arg1)
+	ECFieldF2m::ECFieldF2m(jint arg0, jintArray arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.spec.ECFieldF2m",
@@ -24,7 +24,7 @@ namespace java::security::spec
 			arg1
 		);
 	}
-	ECFieldF2m::ECFieldF2m(jint &arg0, java::math::BigInteger &arg1)
+	ECFieldF2m::ECFieldF2m(jint arg0, java::math::BigInteger arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.spec.ECFieldF2m",

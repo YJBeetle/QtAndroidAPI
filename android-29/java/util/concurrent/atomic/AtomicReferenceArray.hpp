@@ -20,8 +20,8 @@ namespace java::util::concurrent::atomic
 		
 		AtomicReferenceArray(QAndroidJniObject obj);
 		// Constructors
-		AtomicReferenceArray(jobjectArray &arg0);
-		AtomicReferenceArray(jint &arg0);
+		AtomicReferenceArray(jobjectArray arg0);
+		AtomicReferenceArray(jint arg0);
 		AtomicReferenceArray() = default;
 		
 		// Methods

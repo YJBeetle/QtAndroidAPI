@@ -14,10 +14,8 @@ namespace java::time
 		
 		DateTimeException(QAndroidJniObject obj);
 		// Constructors
-		DateTimeException(jstring &arg0);
-		DateTimeException(const QString &arg0);
-		DateTimeException(jstring &arg0, jthrowable &arg1);
-		DateTimeException(const QString &arg0, jthrowable &arg1);
+		DateTimeException(jstring arg0);
+		DateTimeException(jstring arg0, jthrowable arg1);
 		DateTimeException() = default;
 		
 		// Methods

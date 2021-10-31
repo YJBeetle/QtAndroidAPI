@@ -35,7 +35,6 @@ namespace android::content::pm
 		QAndroidJniObject createShortcutResultIntent(android::content::pm::ShortcutInfo arg0);
 		void disableShortcuts(__JniBaseClass arg0);
 		void disableShortcuts(__JniBaseClass arg0, jstring arg1);
-		void disableShortcuts(__JniBaseClass arg0, const QString &arg1);
 		void enableShortcuts(__JniBaseClass arg0);
 		QAndroidJniObject getDynamicShortcuts();
 		jint getIconMaxHeight();
@@ -48,7 +47,6 @@ namespace android::content::pm
 		void removeAllDynamicShortcuts();
 		void removeDynamicShortcuts(__JniBaseClass arg0);
 		void reportShortcutUsed(jstring arg0);
-		void reportShortcutUsed(const QString &arg0);
 		jboolean requestPinShortcut(android::content::pm::ShortcutInfo arg0, android::content::IntentSender arg1);
 		jboolean setDynamicShortcuts(__JniBaseClass arg0);
 		jboolean updateShortcuts(__JniBaseClass arg0);

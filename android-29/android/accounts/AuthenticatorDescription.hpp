@@ -24,15 +24,12 @@ namespace android::accounts
 		
 		AuthenticatorDescription(QAndroidJniObject obj);
 		// Constructors
-		AuthenticatorDescription(jstring &arg0, jstring &arg1, jint &arg2, jint &arg3, jint &arg4, jint &arg5);
-		AuthenticatorDescription(const QString &arg0, const QString &arg1, jint &arg2, jint &arg3, jint &arg4, jint &arg5);
-		AuthenticatorDescription(jstring &arg0, jstring &arg1, jint &arg2, jint &arg3, jint &arg4, jint &arg5, jboolean &arg6);
-		AuthenticatorDescription(const QString &arg0, const QString &arg1, jint &arg2, jint &arg3, jint &arg4, jint &arg5, jboolean &arg6);
+		AuthenticatorDescription(jstring arg0, jstring arg1, jint arg2, jint arg3, jint arg4, jint arg5);
+		AuthenticatorDescription(jstring arg0, jstring arg1, jint arg2, jint arg3, jint arg4, jint arg5, jboolean arg6);
 		AuthenticatorDescription() = default;
 		
 		// Methods
 		static QAndroidJniObject newKey(jstring arg0);
-		static QAndroidJniObject newKey(const QString &arg0);
 		jint describeContents();
 		jboolean equals(jobject arg0);
 		jint hashCode();

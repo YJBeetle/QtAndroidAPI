@@ -39,7 +39,7 @@ namespace android::content::pm
 	
 	PackageInstaller_SessionParams::PackageInstaller_SessionParams(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PackageInstaller_SessionParams::PackageInstaller_SessionParams(jint &arg0)
+	PackageInstaller_SessionParams::PackageInstaller_SessionParams(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.pm.PackageInstaller$SessionParams",
@@ -72,28 +72,12 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	void PackageInstaller_SessionParams::setAppLabel(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setAppLabel",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void PackageInstaller_SessionParams::setAppPackageName(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setAppPackageName",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void PackageInstaller_SessionParams::setAppPackageName(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setAppPackageName",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void PackageInstaller_SessionParams::setInstallLocation(jint arg0)

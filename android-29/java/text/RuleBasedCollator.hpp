@@ -25,20 +25,16 @@ namespace java::text
 		
 		RuleBasedCollator(QAndroidJniObject obj);
 		// Constructors
-		RuleBasedCollator(jstring &arg0);
-		RuleBasedCollator(const QString &arg0);
+		RuleBasedCollator(jstring arg0);
 		RuleBasedCollator() = default;
 		
 		// Methods
 		jobject clone();
 		jint compare(jstring arg0, jstring arg1);
-		jint compare(const QString &arg0, const QString &arg1);
 		jboolean equals(jobject arg0);
 		QAndroidJniObject getCollationElementIterator(jstring arg0);
-		QAndroidJniObject getCollationElementIterator(const QString &arg0);
 		QAndroidJniObject getCollationElementIterator(__JniBaseClass arg0);
 		QAndroidJniObject getCollationKey(jstring arg0);
-		QAndroidJniObject getCollationKey(const QString &arg0);
 		jstring getRules();
 		jint hashCode();
 	};

@@ -7,7 +7,7 @@ namespace android::graphics
 	
 	Interpolator::Interpolator(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Interpolator::Interpolator(jint &arg0)
+	Interpolator::Interpolator(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.Interpolator",
@@ -15,7 +15,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	Interpolator::Interpolator(jint &arg0, jint &arg1)
+	Interpolator::Interpolator(jint arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.Interpolator",

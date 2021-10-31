@@ -19,7 +19,7 @@ namespace android::media::audiofx
 		
 		BassBoost(QAndroidJniObject obj);
 		// Constructors
-		BassBoost(jint &arg0, jint &arg1);
+		BassBoost(jint arg0, jint arg1);
 		BassBoost() = default;
 		
 		// Methods

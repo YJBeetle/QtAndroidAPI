@@ -13,7 +13,7 @@ namespace android::widget
 	
 	CompoundButton::CompoundButton(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	CompoundButton::CompoundButton(android::content::Context &arg0)
+	CompoundButton::CompoundButton(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.CompoundButton",
@@ -21,7 +21,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	CompoundButton::CompoundButton(android::content::Context &arg0, __JniBaseClass &arg1)
+	CompoundButton::CompoundButton(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.CompoundButton",
@@ -30,7 +30,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	CompoundButton::CompoundButton(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	CompoundButton::CompoundButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.CompoundButton",
@@ -40,7 +40,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	CompoundButton::CompoundButton(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	CompoundButton::CompoundButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.CompoundButton",

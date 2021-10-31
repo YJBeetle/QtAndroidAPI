@@ -12,7 +12,7 @@ namespace android::service::carrier
 		
 		CarrierMessagingService_SendSmsResult(QAndroidJniObject obj);
 		// Constructors
-		CarrierMessagingService_SendSmsResult(jint &arg0, jint &arg1);
+		CarrierMessagingService_SendSmsResult(jint arg0, jint arg1);
 		CarrierMessagingService_SendSmsResult() = default;
 		
 		// Methods

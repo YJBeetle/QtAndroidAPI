@@ -8,7 +8,7 @@ namespace android::database
 	
 	MergeCursor::MergeCursor(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MergeCursor::MergeCursor(jarray &arg0)
+	MergeCursor::MergeCursor(jarray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.database.MergeCursor",

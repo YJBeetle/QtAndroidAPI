@@ -31,7 +31,7 @@ namespace android::app
 			arg0.__jniObject().object()
 		);
 	}
-	ActivityManager_TaskDescription::ActivityManager_TaskDescription(jstring &arg0)
+	ActivityManager_TaskDescription::ActivityManager_TaskDescription(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.ActivityManager$TaskDescription",
@@ -39,15 +39,7 @@ namespace android::app
 			arg0
 		);
 	}
-	ActivityManager_TaskDescription::ActivityManager_TaskDescription(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.app.ActivityManager$TaskDescription",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	ActivityManager_TaskDescription::ActivityManager_TaskDescription(jstring &arg0, android::graphics::Bitmap &arg1)
+	ActivityManager_TaskDescription::ActivityManager_TaskDescription(jstring arg0, android::graphics::Bitmap arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.ActivityManager$TaskDescription",
@@ -56,16 +48,7 @@ namespace android::app
 			arg1.__jniObject().object()
 		);
 	}
-	ActivityManager_TaskDescription::ActivityManager_TaskDescription(const QString &arg0, android::graphics::Bitmap &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.app.ActivityManager$TaskDescription",
-			"(Ljava/lang/String;Landroid/graphics/Bitmap;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
-	ActivityManager_TaskDescription::ActivityManager_TaskDescription(jstring &arg0, jint &arg1)
+	ActivityManager_TaskDescription::ActivityManager_TaskDescription(jstring arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.ActivityManager$TaskDescription",
@@ -74,16 +57,7 @@ namespace android::app
 			arg1
 		);
 	}
-	ActivityManager_TaskDescription::ActivityManager_TaskDescription(const QString &arg0, jint &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.app.ActivityManager$TaskDescription",
-			"(Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
-	ActivityManager_TaskDescription::ActivityManager_TaskDescription(jstring &arg0, android::graphics::Bitmap &arg1, jint &arg2)
+	ActivityManager_TaskDescription::ActivityManager_TaskDescription(jstring arg0, android::graphics::Bitmap arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.ActivityManager$TaskDescription",
@@ -93,32 +67,12 @@ namespace android::app
 			arg2
 		);
 	}
-	ActivityManager_TaskDescription::ActivityManager_TaskDescription(const QString &arg0, android::graphics::Bitmap &arg1, jint &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.app.ActivityManager$TaskDescription",
-			"(Ljava/lang/String;Landroid/graphics/Bitmap;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2
-		);
-	}
-	ActivityManager_TaskDescription::ActivityManager_TaskDescription(jstring &arg0, jint &arg1, jint &arg2)
+	ActivityManager_TaskDescription::ActivityManager_TaskDescription(jstring arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.ActivityManager$TaskDescription",
 			"(Ljava/lang/String;II)V",
 			arg0,
-			arg1,
-			arg2
-		);
-	}
-	ActivityManager_TaskDescription::ActivityManager_TaskDescription(const QString &arg0, jint &arg1, jint &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.app.ActivityManager$TaskDescription",
-			"(Ljava/lang/String;II)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2
 		);

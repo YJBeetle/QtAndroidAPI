@@ -16,9 +16,8 @@ namespace android::text
 		
 		Annotation(QAndroidJniObject obj);
 		// Constructors
-		Annotation(android::os::Parcel &arg0);
-		Annotation(jstring &arg0, jstring &arg1);
-		Annotation(const QString &arg0, const QString &arg1);
+		Annotation(android::os::Parcel arg0);
+		Annotation(jstring arg0, jstring arg1);
 		Annotation() = default;
 		
 		// Methods

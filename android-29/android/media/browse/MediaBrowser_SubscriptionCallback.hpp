@@ -20,13 +20,9 @@ namespace android::media::browse
 		
 		// Methods
 		void onChildrenLoaded(jstring arg0, __JniBaseClass arg1);
-		void onChildrenLoaded(const QString &arg0, __JniBaseClass arg1);
 		void onChildrenLoaded(jstring arg0, __JniBaseClass arg1, android::os::Bundle arg2);
-		void onChildrenLoaded(const QString &arg0, __JniBaseClass arg1, android::os::Bundle arg2);
 		void onError(jstring arg0);
-		void onError(const QString &arg0);
 		void onError(jstring arg0, android::os::Bundle arg1);
-		void onError(const QString &arg0, android::os::Bundle arg1);
 	};
 } // namespace android::media::browse
 

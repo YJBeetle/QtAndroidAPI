@@ -10,7 +10,7 @@ namespace javax::crypto
 	
 	EncryptedPrivateKeyInfo::EncryptedPrivateKeyInfo(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	EncryptedPrivateKeyInfo::EncryptedPrivateKeyInfo(jbyteArray &arg0)
+	EncryptedPrivateKeyInfo::EncryptedPrivateKeyInfo(jbyteArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.crypto.EncryptedPrivateKeyInfo",
@@ -18,7 +18,7 @@ namespace javax::crypto
 			arg0
 		);
 	}
-	EncryptedPrivateKeyInfo::EncryptedPrivateKeyInfo(jstring &arg0, jbyteArray &arg1)
+	EncryptedPrivateKeyInfo::EncryptedPrivateKeyInfo(jstring arg0, jbyteArray arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.crypto.EncryptedPrivateKeyInfo",
@@ -27,16 +27,7 @@ namespace javax::crypto
 			arg1
 		);
 	}
-	EncryptedPrivateKeyInfo::EncryptedPrivateKeyInfo(const QString &arg0, jbyteArray &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.crypto.EncryptedPrivateKeyInfo",
-			"(Ljava/lang/String;[B)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
-	EncryptedPrivateKeyInfo::EncryptedPrivateKeyInfo(java::security::AlgorithmParameters &arg0, jbyteArray &arg1)
+	EncryptedPrivateKeyInfo::EncryptedPrivateKeyInfo(java::security::AlgorithmParameters arg0, jbyteArray arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.crypto.EncryptedPrivateKeyInfo",
@@ -98,15 +89,6 @@ namespace javax::crypto
 			"(Ljava/security/Key;Ljava/lang/String;)Ljava/security/spec/PKCS8EncodedKeySpec;",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	QAndroidJniObject EncryptedPrivateKeyInfo::getKeySpec(__JniBaseClass arg0, const QString &arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getKeySpec",
-			"(Ljava/security/Key;Ljava/lang/String;)Ljava/security/spec/PKCS8EncodedKeySpec;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	QAndroidJniObject EncryptedPrivateKeyInfo::getKeySpec(__JniBaseClass arg0, java::security::Provider arg1)

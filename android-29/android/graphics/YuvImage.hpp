@@ -20,7 +20,7 @@ namespace android::graphics
 		
 		YuvImage(QAndroidJniObject obj);
 		// Constructors
-		YuvImage(jbyteArray &arg0, jint &arg1, jint &arg2, jint &arg3, jintArray &arg4);
+		YuvImage(jbyteArray arg0, jint arg1, jint arg2, jint arg3, jintArray arg4);
 		YuvImage() = default;
 		
 		// Methods

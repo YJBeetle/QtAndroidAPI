@@ -21,7 +21,7 @@ namespace android::widget
 	
 	LinearLayout_LayoutParams::LinearLayout_LayoutParams(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	LinearLayout_LayoutParams::LinearLayout_LayoutParams(android::view::ViewGroup_LayoutParams &arg0)
+	LinearLayout_LayoutParams::LinearLayout_LayoutParams(android::view::ViewGroup_LayoutParams arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.LinearLayout$LayoutParams",
@@ -29,7 +29,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	LinearLayout_LayoutParams::LinearLayout_LayoutParams(android::view::ViewGroup_MarginLayoutParams &arg0)
+	LinearLayout_LayoutParams::LinearLayout_LayoutParams(android::view::ViewGroup_MarginLayoutParams arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.LinearLayout$LayoutParams",
@@ -45,7 +45,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	LinearLayout_LayoutParams::LinearLayout_LayoutParams(android::content::Context &arg0, __JniBaseClass &arg1)
+	LinearLayout_LayoutParams::LinearLayout_LayoutParams(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.LinearLayout$LayoutParams",
@@ -54,7 +54,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	LinearLayout_LayoutParams::LinearLayout_LayoutParams(jint &arg0, jint &arg1)
+	LinearLayout_LayoutParams::LinearLayout_LayoutParams(jint arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.LinearLayout$LayoutParams",
@@ -63,7 +63,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	LinearLayout_LayoutParams::LinearLayout_LayoutParams(jint &arg0, jint &arg1, jfloat &arg2)
+	LinearLayout_LayoutParams::LinearLayout_LayoutParams(jint arg0, jint arg1, jfloat arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.LinearLayout$LayoutParams",
@@ -81,14 +81,6 @@ namespace android::widget
 			"debug",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
-	}
-	jstring LinearLayout_LayoutParams::debug(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"debug",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 } // namespace android::widget

@@ -32,20 +32,18 @@ namespace android::text::style
 		
 		ImageSpan(QAndroidJniObject obj);
 		// Constructors
-		ImageSpan(android::graphics::Bitmap &arg0);
-		ImageSpan(android::graphics::drawable::Drawable &arg0);
-		ImageSpan(android::content::Context &arg0, android::graphics::Bitmap &arg1);
-		ImageSpan(android::content::Context &arg0, android::net::Uri &arg1);
-		ImageSpan(android::content::Context &arg0, jint &arg1);
-		ImageSpan(android::graphics::Bitmap &arg0, jint &arg1);
-		ImageSpan(android::graphics::drawable::Drawable &arg0, jint &arg1);
-		ImageSpan(android::graphics::drawable::Drawable &arg0, jstring &arg1);
-		ImageSpan(android::graphics::drawable::Drawable &arg0, const QString &arg1);
-		ImageSpan(android::content::Context &arg0, android::graphics::Bitmap &arg1, jint &arg2);
-		ImageSpan(android::content::Context &arg0, android::net::Uri &arg1, jint &arg2);
-		ImageSpan(android::content::Context &arg0, jint &arg1, jint &arg2);
-		ImageSpan(android::graphics::drawable::Drawable &arg0, jstring &arg1, jint &arg2);
-		ImageSpan(android::graphics::drawable::Drawable &arg0, const QString &arg1, jint &arg2);
+		ImageSpan(android::graphics::Bitmap arg0);
+		ImageSpan(android::graphics::drawable::Drawable arg0);
+		ImageSpan(android::content::Context arg0, android::graphics::Bitmap arg1);
+		ImageSpan(android::content::Context arg0, android::net::Uri arg1);
+		ImageSpan(android::content::Context arg0, jint arg1);
+		ImageSpan(android::graphics::Bitmap arg0, jint arg1);
+		ImageSpan(android::graphics::drawable::Drawable arg0, jint arg1);
+		ImageSpan(android::graphics::drawable::Drawable arg0, jstring arg1);
+		ImageSpan(android::content::Context arg0, android::graphics::Bitmap arg1, jint arg2);
+		ImageSpan(android::content::Context arg0, android::net::Uri arg1, jint arg2);
+		ImageSpan(android::content::Context arg0, jint arg1, jint arg2);
+		ImageSpan(android::graphics::drawable::Drawable arg0, jstring arg1, jint arg2);
 		ImageSpan() = default;
 		
 		// Methods

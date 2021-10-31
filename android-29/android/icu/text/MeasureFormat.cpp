@@ -178,14 +178,5 @@ namespace android::icu::text
 			arg1.__jniObject().object()
 		);
 	}
-	QAndroidJniObject MeasureFormat::parseObject(const QString &arg0, java::text::ParsePosition arg1)
-	{
-		return __thiz.callObjectMethod(
-			"parseObject",
-			"(Ljava/lang/String;Ljava/text/ParsePosition;)Landroid/icu/util/Measure;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 } // namespace android::icu::text
 

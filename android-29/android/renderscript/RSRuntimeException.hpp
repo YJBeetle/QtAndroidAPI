@@ -14,8 +14,7 @@ namespace android::renderscript
 		
 		RSRuntimeException(QAndroidJniObject obj);
 		// Constructors
-		RSRuntimeException(jstring &arg0);
-		RSRuntimeException(const QString &arg0);
+		RSRuntimeException(jstring arg0);
 		RSRuntimeException() = default;
 		
 		// Methods

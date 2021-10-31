@@ -337,10 +337,10 @@ namespace android::view
 		
 		View(QAndroidJniObject obj);
 		// Constructors
-		View(android::content::Context &arg0);
-		View(android::content::Context &arg0, __JniBaseClass &arg1);
-		View(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		View(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		View(android::content::Context arg0);
+		View(android::content::Context arg0, __JniBaseClass arg1);
+		View(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		View(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		View() = default;
 		
 		// Methods
@@ -352,7 +352,6 @@ namespace android::view
 		static jint resolveSizeAndState(jint arg0, jint arg1, jint arg2);
 		void addChildrenForAccessibility(java::util::ArrayList arg0);
 		void addExtraDataToAccessibilityNodeInfo(android::view::accessibility::AccessibilityNodeInfo arg0, jstring arg1, android::os::Bundle arg2);
-		void addExtraDataToAccessibilityNodeInfo(android::view::accessibility::AccessibilityNodeInfo arg0, const QString &arg1, android::os::Bundle arg2);
 		void addFocusables(java::util::ArrayList arg0, jint arg1);
 		void addFocusables(java::util::ArrayList arg0, jint arg1, jint arg2);
 		void addKeyboardNavigationClusters(__JniBaseClass arg0, jint arg1);
@@ -362,7 +361,6 @@ namespace android::view
 		void addTouchables(java::util::ArrayList arg0);
 		QAndroidJniObject animate();
 		void announceForAccessibility(jstring arg0);
-		void announceForAccessibility(const QString &arg0);
 		void autofill(android::util::SparseArray arg0);
 		void autofill(android::view::autofill::AutofillValue arg0);
 		void bringToFront();
@@ -420,7 +418,6 @@ namespace android::view
 		QAndroidJniObject findViewById(jint arg0);
 		QAndroidJniObject findViewWithTag(jobject arg0);
 		void findViewsWithText(java::util::ArrayList arg0, jstring arg1, jint arg2);
-		void findViewsWithText(java::util::ArrayList arg0, const QString &arg1, jint arg2);
 		QAndroidJniObject focusSearch(jint arg0);
 		void forceHasOverlappingRendering(jboolean arg0);
 		void forceLayout();
@@ -736,7 +733,6 @@ namespace android::view
 		void setAccessibilityHeading(jboolean arg0);
 		void setAccessibilityLiveRegion(jint arg0);
 		void setAccessibilityPaneTitle(jstring arg0);
-		void setAccessibilityPaneTitle(const QString &arg0);
 		void setAccessibilityTraversalAfter(jint arg0);
 		void setAccessibilityTraversalBefore(jint arg0);
 		void setActivated(jboolean arg0);
@@ -759,7 +755,6 @@ namespace android::view
 		void setClipToOutline(jboolean arg0);
 		void setContentCaptureSession(android::view::contentcapture::ContentCaptureSession arg0);
 		void setContentDescription(jstring arg0);
-		void setContentDescription(const QString &arg0);
 		void setContextClickable(jboolean arg0);
 		void setDefaultFocusHighlightEnabled(jboolean arg0);
 		void setDrawingCacheBackgroundColor(jint arg0);
@@ -864,12 +859,10 @@ namespace android::view
 		void setTextAlignment(jint arg0);
 		void setTextDirection(jint arg0);
 		void setTooltipText(jstring arg0);
-		void setTooltipText(const QString &arg0);
 		void setTop(jint arg0);
 		void setTouchDelegate(android::view::TouchDelegate arg0);
 		void setTransitionAlpha(jfloat arg0);
 		void setTransitionName(jstring arg0);
-		void setTransitionName(const QString &arg0);
 		void setTransitionVisibility(jint arg0);
 		void setTranslationX(jfloat arg0);
 		void setTranslationY(jfloat arg0);

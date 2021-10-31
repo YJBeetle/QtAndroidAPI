@@ -7,7 +7,7 @@ namespace java::security::spec
 	
 	DSAParameterSpec::DSAParameterSpec(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DSAParameterSpec::DSAParameterSpec(java::math::BigInteger &arg0, java::math::BigInteger &arg1, java::math::BigInteger &arg2)
+	DSAParameterSpec::DSAParameterSpec(java::math::BigInteger arg0, java::math::BigInteger arg1, java::math::BigInteger arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.spec.DSAParameterSpec",

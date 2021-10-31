@@ -8,7 +8,7 @@ namespace android::app::slice
 	
 	SliceMetrics::SliceMetrics(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SliceMetrics::SliceMetrics(android::content::Context &arg0, android::net::Uri &arg1)
+	SliceMetrics::SliceMetrics(android::content::Context arg0, android::net::Uri arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.slice.SliceMetrics",

@@ -25,7 +25,7 @@ namespace android::service::autofill
 		
 		RegexValidator(QAndroidJniObject obj);
 		// Constructors
-		RegexValidator(android::view::autofill::AutofillId &arg0, java::util::regex::Pattern &arg1);
+		RegexValidator(android::view::autofill::AutofillId arg0, java::util::regex::Pattern arg1);
 		RegexValidator() = default;
 		
 		// Methods

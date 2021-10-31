@@ -92,7 +92,7 @@ namespace android::media
 	
 	AudioRecord::AudioRecord(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AudioRecord::AudioRecord(jint &arg0, jint &arg1, jint &arg2, jint &arg3, jint &arg4)
+	AudioRecord::AudioRecord(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.AudioRecord",

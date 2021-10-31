@@ -15,8 +15,7 @@ namespace java::lang
 		IncompatibleClassChangeError(QAndroidJniObject obj);
 		// Constructors
 		IncompatibleClassChangeError();
-		IncompatibleClassChangeError(jstring &arg0);
-		IncompatibleClassChangeError(const QString &arg0);
+		IncompatibleClassChangeError(jstring arg0);
 		
 		// Methods
 	};

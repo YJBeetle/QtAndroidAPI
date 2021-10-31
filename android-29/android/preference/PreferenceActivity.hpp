@@ -69,7 +69,6 @@ namespace android::preference
 		void addPreferencesFromIntent(android::content::Intent arg0);
 		void addPreferencesFromResource(jint arg0);
 		QAndroidJniObject findPreference(jstring arg0);
-		QAndroidJniObject findPreference(const QString &arg0);
 		void finishPreferencePanel(android::app::Fragment arg0, jint arg1, android::content::Intent arg2);
 		QAndroidJniObject getPreferenceManager();
 		QAndroidJniObject getPreferenceScreen();
@@ -80,7 +79,6 @@ namespace android::preference
 		void onBackPressed();
 		void onBuildHeaders(__JniBaseClass arg0);
 		QAndroidJniObject onBuildStartFragmentIntent(jstring arg0, android::os::Bundle arg1, jint arg2, jint arg3);
-		QAndroidJniObject onBuildStartFragmentIntent(const QString &arg0, android::os::Bundle arg1, jint arg2, jint arg3);
 		void onContentChanged();
 		QAndroidJniObject onGetInitialHeader();
 		QAndroidJniObject onGetNewHeader();
@@ -92,20 +90,14 @@ namespace android::preference
 		jboolean onPreferenceTreeClick(android::preference::PreferenceScreen arg0, android::preference::Preference arg1);
 		void setListFooter(android::view::View arg0);
 		void setParentTitle(jstring arg0, jstring arg1, __JniBaseClass arg2);
-		void setParentTitle(const QString &arg0, const QString &arg1, __JniBaseClass arg2);
 		void setPreferenceScreen(android::preference::PreferenceScreen arg0);
 		void showBreadCrumbs(jstring arg0, jstring arg1);
-		void showBreadCrumbs(const QString &arg0, const QString &arg1);
 		void startPreferenceFragment(android::app::Fragment arg0, jboolean arg1);
 		void startPreferencePanel(jstring arg0, android::os::Bundle arg1, jint arg2, jstring arg3, android::app::Fragment arg4, jint arg5);
-		void startPreferencePanel(const QString &arg0, android::os::Bundle arg1, jint arg2, const QString &arg3, android::app::Fragment arg4, jint arg5);
 		void startWithFragment(jstring arg0, android::os::Bundle arg1, android::app::Fragment arg2, jint arg3);
-		void startWithFragment(const QString &arg0, android::os::Bundle arg1, android::app::Fragment arg2, jint arg3);
 		void startWithFragment(jstring arg0, android::os::Bundle arg1, android::app::Fragment arg2, jint arg3, jint arg4, jint arg5);
-		void startWithFragment(const QString &arg0, android::os::Bundle arg1, android::app::Fragment arg2, jint arg3, jint arg4, jint arg5);
 		void switchToHeader(android::preference::PreferenceActivity_Header arg0);
 		void switchToHeader(jstring arg0, android::os::Bundle arg1);
-		void switchToHeader(const QString &arg0, android::os::Bundle arg1);
 	};
 } // namespace android::preference
 

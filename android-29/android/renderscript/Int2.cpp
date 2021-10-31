@@ -25,7 +25,7 @@ namespace android::renderscript
 			"()V"
 		);
 	}
-	Int2::Int2(jint &arg0, jint &arg1)
+	Int2::Int2(jint arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.renderscript.Int2",

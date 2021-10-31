@@ -70,7 +70,6 @@ namespace android::renderscript
 		static QAndroidJniObject createFromBitmapResource(android::renderscript::RenderScript arg0, android::content::res::Resources arg1, jint arg2);
 		static QAndroidJniObject createFromBitmapResource(android::renderscript::RenderScript arg0, android::content::res::Resources arg1, jint arg2, android::renderscript::Allocation_MipmapControl arg3, jint arg4);
 		static QAndroidJniObject createFromString(android::renderscript::RenderScript arg0, jstring arg1, jint arg2);
-		static QAndroidJniObject createFromString(android::renderscript::RenderScript arg0, const QString &arg1, jint arg2);
 		static QAndroidJniObject createSized(android::renderscript::RenderScript arg0, android::renderscript::Element arg1, jint arg2);
 		static QAndroidJniObject createSized(android::renderscript::RenderScript arg0, android::renderscript::Element arg1, jint arg2, jint arg3);
 		static QAndroidJniObject createTyped(android::renderscript::RenderScript arg0, android::renderscript::Type arg1);

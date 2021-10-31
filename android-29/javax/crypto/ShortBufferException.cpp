@@ -13,20 +13,12 @@ namespace javax::crypto
 			"()V"
 		);
 	}
-	ShortBufferException::ShortBufferException(jstring &arg0)
+	ShortBufferException::ShortBufferException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.crypto.ShortBufferException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	ShortBufferException::ShortBufferException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.crypto.ShortBufferException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

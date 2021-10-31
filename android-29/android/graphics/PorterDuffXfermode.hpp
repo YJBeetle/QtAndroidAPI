@@ -17,7 +17,7 @@ namespace android::graphics
 		
 		PorterDuffXfermode(QAndroidJniObject obj);
 		// Constructors
-		PorterDuffXfermode(android::graphics::PorterDuff_Mode &arg0);
+		PorterDuffXfermode(android::graphics::PorterDuff_Mode arg0);
 		PorterDuffXfermode() = default;
 		
 		// Methods

@@ -31,15 +31,6 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject Currency::getInstance(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.util.Currency",
-			"getInstance",
-			"(Ljava/lang/String;)Ljava/util/Currency;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Currency::getInstance(java::util::Locale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

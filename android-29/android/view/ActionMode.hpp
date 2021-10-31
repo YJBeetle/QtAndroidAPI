@@ -43,11 +43,9 @@ namespace android::view
 		void setCustomView(android::view::View arg0);
 		void setSubtitle(jint arg0);
 		void setSubtitle(jstring arg0);
-		void setSubtitle(const QString &arg0);
 		void setTag(jobject arg0);
 		void setTitle(jint arg0);
 		void setTitle(jstring arg0);
-		void setTitle(const QString &arg0);
 		void setTitleOptionalHint(jboolean arg0);
 		void setType(jint arg0);
 	};

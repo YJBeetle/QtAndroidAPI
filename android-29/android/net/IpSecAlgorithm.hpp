@@ -24,10 +24,8 @@ namespace android::net
 		
 		IpSecAlgorithm(QAndroidJniObject obj);
 		// Constructors
-		IpSecAlgorithm(jstring &arg0, jbyteArray &arg1);
-		IpSecAlgorithm(const QString &arg0, jbyteArray &arg1);
-		IpSecAlgorithm(jstring &arg0, jbyteArray &arg1, jint &arg2);
-		IpSecAlgorithm(const QString &arg0, jbyteArray &arg1, jint &arg2);
+		IpSecAlgorithm(jstring arg0, jbyteArray arg1);
+		IpSecAlgorithm(jstring arg0, jbyteArray arg1, jint arg2);
 		IpSecAlgorithm() = default;
 		
 		// Methods

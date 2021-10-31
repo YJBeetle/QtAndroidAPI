@@ -1550,19 +1550,6 @@ namespace android::opengl
 			arg4
 		);
 	}
-	void GLES31Ext::glDebugMessageInsertKHR(jint arg0, jint arg1, jint arg2, jint arg3, const QString &arg4)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES31Ext",
-			"glDebugMessageInsertKHR",
-			"(IIIILjava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			QAndroidJniObject::fromString(arg4).object<jstring>()
-		);
-	}
 	void GLES31Ext::glDisableiEXT(jint arg0, jint arg1)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -1812,18 +1799,6 @@ namespace android::opengl
 			arg3
 		);
 	}
-	void GLES31Ext::glObjectLabelKHR(jint arg0, jint arg1, jint arg2, const QString &arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES31Ext",
-			"glObjectLabelKHR",
-			"(IIILjava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2,
-			QAndroidJniObject::fromString(arg3).object<jstring>()
-		);
-	}
 	void GLES31Ext::glObjectPtrLabelKHR(jlong arg0, jstring arg1)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -1832,16 +1807,6 @@ namespace android::opengl
 			"(JLjava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	void GLES31Ext::glObjectPtrLabelKHR(jlong arg0, const QString &arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES31Ext",
-			"glObjectPtrLabelKHR",
-			"(JLjava/lang/String;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void GLES31Ext::glPatchParameteriEXT(jint arg0, jint arg1)
@@ -1888,18 +1853,6 @@ namespace android::opengl
 			arg1,
 			arg2,
 			arg3
-		);
-	}
-	void GLES31Ext::glPushDebugGroupKHR(jint arg0, jint arg1, jint arg2, const QString &arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES31Ext",
-			"glPushDebugGroupKHR",
-			"(IIILjava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2,
-			QAndroidJniObject::fromString(arg3).object<jstring>()
 		);
 	}
 	void GLES31Ext::glSamplerParameterIivEXT(jint arg0, jint arg1, java::nio::IntBuffer arg2)

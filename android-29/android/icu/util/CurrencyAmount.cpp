@@ -9,7 +9,7 @@ namespace android::icu::util
 	
 	CurrencyAmount::CurrencyAmount(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	CurrencyAmount::CurrencyAmount(jdouble &arg0, android::icu::util::Currency &arg1)
+	CurrencyAmount::CurrencyAmount(jdouble arg0, android::icu::util::Currency arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.CurrencyAmount",
@@ -18,7 +18,7 @@ namespace android::icu::util
 			arg1.__jniObject().object()
 		);
 	}
-	CurrencyAmount::CurrencyAmount(jdouble &arg0, java::util::Currency &arg1)
+	CurrencyAmount::CurrencyAmount(jdouble arg0, java::util::Currency arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.CurrencyAmount",
@@ -27,7 +27,7 @@ namespace android::icu::util
 			arg1.__jniObject().object()
 		);
 	}
-	CurrencyAmount::CurrencyAmount(java::lang::Number &arg0, android::icu::util::Currency &arg1)
+	CurrencyAmount::CurrencyAmount(java::lang::Number arg0, android::icu::util::Currency arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.CurrencyAmount",
@@ -36,7 +36,7 @@ namespace android::icu::util
 			arg1.__jniObject().object()
 		);
 	}
-	CurrencyAmount::CurrencyAmount(java::lang::Number &arg0, java::util::Currency &arg1)
+	CurrencyAmount::CurrencyAmount(java::lang::Number arg0, java::util::Currency arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.CurrencyAmount",

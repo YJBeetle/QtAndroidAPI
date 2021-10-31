@@ -200,16 +200,6 @@ namespace android::app::admin
 			arg2
 		);
 	}
-	void DeviceAdminReceiver::onBugreportShared(android::content::Context arg0, android::content::Intent arg1, const QString &arg2)
-	{
-		__thiz.callMethod<void>(
-			"onBugreportShared",
-			"(Landroid/content/Context;Landroid/content/Intent;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	void DeviceAdminReceiver::onBugreportSharingDeclined(android::content::Context arg0, android::content::Intent arg1)
 	{
 		__thiz.callMethod<void>(
@@ -229,18 +219,6 @@ namespace android::app::admin
 			arg2,
 			arg3.__jniObject().object(),
 			arg4
-		).object<jstring>();
-	}
-	jstring DeviceAdminReceiver::onChoosePrivateKeyAlias(android::content::Context arg0, android::content::Intent arg1, jint arg2, android::net::Uri arg3, const QString &arg4)
-	{
-		return __thiz.callObjectMethod(
-			"onChoosePrivateKeyAlias",
-			"(Landroid/content/Context;Landroid/content/Intent;ILandroid/net/Uri;Ljava/lang/String;)Ljava/lang/String;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2,
-			arg3.__jniObject().object(),
-			QAndroidJniObject::fromString(arg4).object<jstring>()
 		).object<jstring>();
 	}
 	jstring DeviceAdminReceiver::onDisableRequested(android::content::Context arg0, android::content::Intent arg1)
@@ -278,16 +256,6 @@ namespace android::app::admin
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2
-		);
-	}
-	void DeviceAdminReceiver::onLockTaskModeEntering(android::content::Context arg0, android::content::Intent arg1, const QString &arg2)
-	{
-		__thiz.callMethod<void>(
-			"onLockTaskModeEntering",
-			"(Landroid/content/Context;Landroid/content/Intent;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	void DeviceAdminReceiver::onLockTaskModeExiting(android::content::Context arg0, android::content::Intent arg1)

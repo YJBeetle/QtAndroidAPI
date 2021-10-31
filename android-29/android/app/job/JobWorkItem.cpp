@@ -16,7 +16,7 @@ namespace android::app::job
 	
 	JobWorkItem::JobWorkItem(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	JobWorkItem::JobWorkItem(android::content::Intent &arg0)
+	JobWorkItem::JobWorkItem(android::content::Intent arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.job.JobWorkItem",
@@ -24,7 +24,7 @@ namespace android::app::job
 			arg0.__jniObject().object()
 		);
 	}
-	JobWorkItem::JobWorkItem(android::content::Intent &arg0, jlong &arg1, jlong &arg2)
+	JobWorkItem::JobWorkItem(android::content::Intent arg0, jlong arg1, jlong arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.job.JobWorkItem",

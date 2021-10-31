@@ -27,7 +27,7 @@ namespace android::media::audiofx
 		
 		Equalizer(QAndroidJniObject obj);
 		// Constructors
-		Equalizer(jint &arg0, jint &arg1);
+		Equalizer(jint arg0, jint arg1);
 		Equalizer() = default;
 		
 		// Methods

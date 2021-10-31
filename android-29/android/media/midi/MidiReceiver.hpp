@@ -13,7 +13,7 @@ namespace android::media::midi
 		MidiReceiver(QAndroidJniObject obj);
 		// Constructors
 		MidiReceiver();
-		MidiReceiver(jint &arg0);
+		MidiReceiver(jint arg0);
 		
 		// Methods
 		void flush();

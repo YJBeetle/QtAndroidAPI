@@ -34,8 +34,8 @@ namespace java::net
 		MulticastSocket(QAndroidJniObject obj);
 		// Constructors
 		MulticastSocket();
-		MulticastSocket(jint &arg0);
-		MulticastSocket(java::net::SocketAddress &arg0);
+		MulticastSocket(jint arg0);
+		MulticastSocket(java::net::SocketAddress arg0);
 		
 		// Methods
 		QAndroidJniObject getInterface();

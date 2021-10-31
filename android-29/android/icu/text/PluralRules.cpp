@@ -83,15 +83,6 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject PluralRules::createRules(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.PluralRules",
-			"createRules",
-			"(Ljava/lang/String;)Landroid/icu/text/PluralRules;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject PluralRules::forLocale(android::icu::util::ULocale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -139,15 +130,6 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject PluralRules::parseDescription(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.PluralRules",
-			"parseDescription",
-			"(Ljava/lang/String;)Landroid/icu/text/PluralRules;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jboolean PluralRules::equals(android::icu::text::PluralRules arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -172,14 +154,6 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject PluralRules::getAllKeywordValues(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getAllKeywordValues",
-			"(Ljava/lang/String;)Ljava/util/Collection;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject PluralRules::getKeywords()
 	{
 		return __thiz.callObjectMethod(
@@ -195,28 +169,12 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject PluralRules::getSamples(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getSamples",
-			"(Ljava/lang/String;)Ljava/util/Collection;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jdouble PluralRules::getUniqueKeywordValue(jstring arg0)
 	{
 		return __thiz.callMethod<jdouble>(
 			"getUniqueKeywordValue",
 			"(Ljava/lang/String;)D",
 			arg0
-		);
-	}
-	jdouble PluralRules::getUniqueKeywordValue(const QString &arg0)
-	{
-		return __thiz.callMethod<jdouble>(
-			"getUniqueKeywordValue",
-			"(Ljava/lang/String;)D",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jint PluralRules::hashCode()

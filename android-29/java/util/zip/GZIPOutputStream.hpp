@@ -23,10 +23,10 @@ namespace java::util::zip
 		
 		GZIPOutputStream(QAndroidJniObject obj);
 		// Constructors
-		GZIPOutputStream(java::io::OutputStream &arg0);
-		GZIPOutputStream(java::io::OutputStream &arg0, jboolean &arg1);
-		GZIPOutputStream(java::io::OutputStream &arg0, jint &arg1);
-		GZIPOutputStream(java::io::OutputStream &arg0, jint &arg1, jboolean &arg2);
+		GZIPOutputStream(java::io::OutputStream arg0);
+		GZIPOutputStream(java::io::OutputStream arg0, jboolean arg1);
+		GZIPOutputStream(java::io::OutputStream arg0, jint arg1);
+		GZIPOutputStream(java::io::OutputStream arg0, jint arg1, jboolean arg2);
 		GZIPOutputStream() = default;
 		
 		// Methods

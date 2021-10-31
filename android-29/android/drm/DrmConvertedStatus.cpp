@@ -46,7 +46,7 @@ namespace android::drm
 	
 	DrmConvertedStatus::DrmConvertedStatus(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DrmConvertedStatus::DrmConvertedStatus(jint &arg0, jbyteArray &arg1, jint &arg2)
+	DrmConvertedStatus::DrmConvertedStatus(jint arg0, jbyteArray arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.drm.DrmConvertedStatus",

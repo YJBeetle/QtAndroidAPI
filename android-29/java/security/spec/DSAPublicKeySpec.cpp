@@ -7,7 +7,7 @@ namespace java::security::spec
 	
 	DSAPublicKeySpec::DSAPublicKeySpec(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DSAPublicKeySpec::DSAPublicKeySpec(java::math::BigInteger &arg0, java::math::BigInteger &arg1, java::math::BigInteger &arg2, java::math::BigInteger &arg3)
+	DSAPublicKeySpec::DSAPublicKeySpec(java::math::BigInteger arg0, java::math::BigInteger arg1, java::math::BigInteger arg2, java::math::BigInteger arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.spec.DSAPublicKeySpec",

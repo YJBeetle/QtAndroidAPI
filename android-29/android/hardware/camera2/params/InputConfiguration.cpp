@@ -6,7 +6,7 @@ namespace android::hardware::camera2::params
 	
 	InputConfiguration::InputConfiguration(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	InputConfiguration::InputConfiguration(jint &arg0, jint &arg1, jint &arg2)
+	InputConfiguration::InputConfiguration(jint arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.hardware.camera2.params.InputConfiguration",

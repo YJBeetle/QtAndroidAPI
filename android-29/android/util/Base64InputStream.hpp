@@ -18,7 +18,7 @@ namespace android::util
 		
 		Base64InputStream(QAndroidJniObject obj);
 		// Constructors
-		Base64InputStream(java::io::InputStream &arg0, jint &arg1);
+		Base64InputStream(java::io::InputStream arg0, jint arg1);
 		Base64InputStream() = default;
 		
 		// Methods

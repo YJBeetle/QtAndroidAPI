@@ -23,7 +23,7 @@ namespace java::util::jar
 	
 	JarFile::JarFile(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	JarFile::JarFile(java::io::File &arg0)
+	JarFile::JarFile(java::io::File arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.jar.JarFile",
@@ -31,7 +31,7 @@ namespace java::util::jar
 			arg0.__jniObject().object()
 		);
 	}
-	JarFile::JarFile(jstring &arg0)
+	JarFile::JarFile(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.jar.JarFile",
@@ -39,15 +39,7 @@ namespace java::util::jar
 			arg0
 		);
 	}
-	JarFile::JarFile(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.jar.JarFile",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	JarFile::JarFile(java::io::File &arg0, jboolean &arg1)
+	JarFile::JarFile(java::io::File arg0, jboolean arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.jar.JarFile",
@@ -56,7 +48,7 @@ namespace java::util::jar
 			arg1
 		);
 	}
-	JarFile::JarFile(jstring &arg0, jboolean &arg1)
+	JarFile::JarFile(jstring arg0, jboolean arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.jar.JarFile",
@@ -65,16 +57,7 @@ namespace java::util::jar
 			arg1
 		);
 	}
-	JarFile::JarFile(const QString &arg0, jboolean &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.jar.JarFile",
-			"(Ljava/lang/String;Z)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
-	JarFile::JarFile(java::io::File &arg0, jboolean &arg1, jint &arg2)
+	JarFile::JarFile(java::io::File arg0, jboolean arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.jar.JarFile",
@@ -84,7 +67,7 @@ namespace java::util::jar
 			arg2
 		);
 	}
-	JarFile::JarFile(java::io::File &arg0, jboolean &arg1, jint &arg2, __JniBaseClass &arg3)
+	JarFile::JarFile(java::io::File arg0, jboolean arg1, jint arg2, __JniBaseClass arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.jar.JarFile",
@@ -128,14 +111,6 @@ namespace java::util::jar
 			arg0
 		);
 	}
-	QAndroidJniObject JarFile::getEntry(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getEntry",
-			"(Ljava/lang/String;)Ljava/util/zip/ZipEntry;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject JarFile::getInputStream(java::util::zip::ZipEntry arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -150,14 +125,6 @@ namespace java::util::jar
 			"getJarEntry",
 			"(Ljava/lang/String;)Ljava/util/jar/JarEntry;",
 			arg0
-		);
-	}
-	QAndroidJniObject JarFile::getJarEntry(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getJarEntry",
-			"(Ljava/lang/String;)Ljava/util/jar/JarEntry;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject JarFile::getManifest()

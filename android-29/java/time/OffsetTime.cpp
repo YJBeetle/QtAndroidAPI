@@ -111,15 +111,6 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject OffsetTime::parse(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.time.OffsetTime",
-			"parse",
-			"(Ljava/lang/CharSequence;)Ljava/time/OffsetTime;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject OffsetTime::parse(jstring arg0, java::time::format::DateTimeFormatter arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -127,16 +118,6 @@ namespace java::time
 			"parse",
 			"(Ljava/lang/CharSequence;Ljava/time/format/DateTimeFormatter;)Ljava/time/OffsetTime;",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject OffsetTime::parse(const QString &arg0, java::time::format::DateTimeFormatter arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.time.OffsetTime",
-			"parse",
-			"(Ljava/lang/CharSequence;Ljava/time/format/DateTimeFormatter;)Ljava/time/OffsetTime;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

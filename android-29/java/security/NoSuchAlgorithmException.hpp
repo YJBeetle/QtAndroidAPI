@@ -15,11 +15,9 @@ namespace java::security
 		NoSuchAlgorithmException(QAndroidJniObject obj);
 		// Constructors
 		NoSuchAlgorithmException();
-		NoSuchAlgorithmException(jstring &arg0);
-		NoSuchAlgorithmException(const QString &arg0);
-		NoSuchAlgorithmException(jthrowable &arg0);
-		NoSuchAlgorithmException(jstring &arg0, jthrowable &arg1);
-		NoSuchAlgorithmException(const QString &arg0, jthrowable &arg1);
+		NoSuchAlgorithmException(jstring arg0);
+		NoSuchAlgorithmException(jthrowable arg0);
+		NoSuchAlgorithmException(jstring arg0, jthrowable arg1);
 		
 		// Methods
 	};

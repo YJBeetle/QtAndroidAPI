@@ -17,7 +17,7 @@ namespace android::hardware::camera2::params
 		
 		RggbChannelVector(QAndroidJniObject obj);
 		// Constructors
-		RggbChannelVector(jfloat &arg0, jfloat &arg1, jfloat &arg2, jfloat &arg3);
+		RggbChannelVector(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
 		RggbChannelVector() = default;
 		
 		// Methods

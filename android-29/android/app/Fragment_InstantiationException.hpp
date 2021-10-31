@@ -19,8 +19,7 @@ namespace android::app
 		
 		Fragment_InstantiationException(QAndroidJniObject obj);
 		// Constructors
-		Fragment_InstantiationException(jstring &arg0, java::lang::Exception &arg1);
-		Fragment_InstantiationException(const QString &arg0, java::lang::Exception &arg1);
+		Fragment_InstantiationException(jstring arg0, java::lang::Exception arg1);
 		Fragment_InstantiationException() = default;
 		
 		// Methods

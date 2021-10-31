@@ -17,7 +17,7 @@ namespace android::media
 		AudioAttributes_Builder(QAndroidJniObject obj);
 		// Constructors
 		AudioAttributes_Builder();
-		AudioAttributes_Builder(android::media::AudioAttributes &arg0);
+		AudioAttributes_Builder(android::media::AudioAttributes arg0);
 		
 		// Methods
 		QAndroidJniObject build();

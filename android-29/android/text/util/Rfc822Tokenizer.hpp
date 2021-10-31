@@ -16,15 +16,10 @@ namespace android::text::util
 		
 		// Methods
 		static jarray tokenize(jstring arg0);
-		static jarray tokenize(const QString &arg0);
 		static void tokenize(jstring arg0, __JniBaseClass arg1);
-		static void tokenize(const QString &arg0, __JniBaseClass arg1);
 		jint findTokenEnd(jstring arg0, jint arg1);
-		jint findTokenEnd(const QString &arg0, jint arg1);
 		jint findTokenStart(jstring arg0, jint arg1);
-		jint findTokenStart(const QString &arg0, jint arg1);
 		jstring terminateToken(jstring arg0);
-		jstring terminateToken(const QString &arg0);
 	};
 } // namespace android::text::util
 

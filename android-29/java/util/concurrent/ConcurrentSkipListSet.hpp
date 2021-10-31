@@ -19,7 +19,7 @@ namespace java::util::concurrent
 		ConcurrentSkipListSet(QAndroidJniObject obj);
 		// Constructors
 		ConcurrentSkipListSet();
-		ConcurrentSkipListSet(__JniBaseClass &arg0);
+		ConcurrentSkipListSet(__JniBaseClass arg0);
 		
 		// Methods
 		jboolean add(jobject arg0);

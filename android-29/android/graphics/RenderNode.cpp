@@ -11,20 +11,12 @@ namespace android::graphics
 	
 	RenderNode::RenderNode(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	RenderNode::RenderNode(jstring &arg0)
+	RenderNode::RenderNode(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.RenderNode",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	RenderNode::RenderNode(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.graphics.RenderNode",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

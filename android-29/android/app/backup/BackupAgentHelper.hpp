@@ -31,7 +31,6 @@ namespace android::app::backup
 		
 		// Methods
 		void addHelper(jstring arg0, __JniBaseClass arg1);
-		void addHelper(const QString &arg0, __JniBaseClass arg1);
 		void onBackup(android::os::ParcelFileDescriptor arg0, android::app::backup::BackupDataOutput arg1, android::os::ParcelFileDescriptor arg2);
 		void onRestore(android::app::backup::BackupDataInput arg0, jint arg1, android::os::ParcelFileDescriptor arg2);
 	};

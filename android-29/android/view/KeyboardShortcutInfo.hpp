@@ -17,10 +17,8 @@ namespace android::view
 		
 		KeyboardShortcutInfo(QAndroidJniObject obj);
 		// Constructors
-		KeyboardShortcutInfo(jstring &arg0, jchar &arg1, jint &arg2);
-		KeyboardShortcutInfo(const QString &arg0, jchar &arg1, jint &arg2);
-		KeyboardShortcutInfo(jstring &arg0, jint &arg1, jint &arg2);
-		KeyboardShortcutInfo(const QString &arg0, jint &arg1, jint &arg2);
+		KeyboardShortcutInfo(jstring arg0, jchar arg1, jint arg2);
+		KeyboardShortcutInfo(jstring arg0, jint arg1, jint arg2);
 		KeyboardShortcutInfo() = default;
 		
 		// Methods

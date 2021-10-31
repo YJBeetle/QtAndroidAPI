@@ -19,7 +19,7 @@ namespace android::media::audiofx
 			arg0.__jniObject().object()
 		);
 	}
-	DynamicsProcessing_Channel::DynamicsProcessing_Channel(jfloat &arg0, jboolean &arg1, jint &arg2, jboolean &arg3, jint &arg4, jboolean &arg5, jint &arg6, jboolean &arg7)
+	DynamicsProcessing_Channel::DynamicsProcessing_Channel(jfloat arg0, jboolean arg1, jint arg2, jboolean arg3, jint arg4, jboolean arg5, jint arg6, jboolean arg7)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.audiofx.DynamicsProcessing$Channel",

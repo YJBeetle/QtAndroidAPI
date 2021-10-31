@@ -69,7 +69,7 @@ namespace android::graphics::drawable
 		GradientDrawable(QAndroidJniObject obj);
 		// Constructors
 		GradientDrawable();
-		GradientDrawable(android::graphics::drawable::GradientDrawable_Orientation &arg0, jintArray &arg1);
+		GradientDrawable(android::graphics::drawable::GradientDrawable_Orientation arg0, jintArray arg1);
 		
 		// Methods
 		void applyTheme(android::content::res::Resources_Theme arg0);

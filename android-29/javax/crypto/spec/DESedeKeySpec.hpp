@@ -13,8 +13,8 @@ namespace javax::crypto::spec
 		
 		DESedeKeySpec(QAndroidJniObject obj);
 		// Constructors
-		DESedeKeySpec(jbyteArray &arg0);
-		DESedeKeySpec(jbyteArray &arg0, jint &arg1);
+		DESedeKeySpec(jbyteArray arg0);
+		DESedeKeySpec(jbyteArray arg0, jint arg1);
 		DESedeKeySpec() = default;
 		
 		// Methods

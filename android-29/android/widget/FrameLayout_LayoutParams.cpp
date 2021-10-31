@@ -22,7 +22,7 @@ namespace android::widget
 	
 	FrameLayout_LayoutParams::FrameLayout_LayoutParams(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	FrameLayout_LayoutParams::FrameLayout_LayoutParams(android::view::ViewGroup_LayoutParams &arg0)
+	FrameLayout_LayoutParams::FrameLayout_LayoutParams(android::view::ViewGroup_LayoutParams arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.FrameLayout$LayoutParams",
@@ -30,7 +30,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	FrameLayout_LayoutParams::FrameLayout_LayoutParams(android::view::ViewGroup_MarginLayoutParams &arg0)
+	FrameLayout_LayoutParams::FrameLayout_LayoutParams(android::view::ViewGroup_MarginLayoutParams arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.FrameLayout$LayoutParams",
@@ -46,7 +46,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	FrameLayout_LayoutParams::FrameLayout_LayoutParams(android::content::Context &arg0, __JniBaseClass &arg1)
+	FrameLayout_LayoutParams::FrameLayout_LayoutParams(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.FrameLayout$LayoutParams",
@@ -55,7 +55,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	FrameLayout_LayoutParams::FrameLayout_LayoutParams(jint &arg0, jint &arg1)
+	FrameLayout_LayoutParams::FrameLayout_LayoutParams(jint arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.FrameLayout$LayoutParams",
@@ -64,7 +64,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	FrameLayout_LayoutParams::FrameLayout_LayoutParams(jint &arg0, jint &arg1, jint &arg2)
+	FrameLayout_LayoutParams::FrameLayout_LayoutParams(jint arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.FrameLayout$LayoutParams",

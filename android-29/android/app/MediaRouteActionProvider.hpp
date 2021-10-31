@@ -21,7 +21,7 @@ namespace android::app
 		
 		MediaRouteActionProvider(QAndroidJniObject obj);
 		// Constructors
-		MediaRouteActionProvider(android::content::Context &arg0);
+		MediaRouteActionProvider(android::content::Context arg0);
 		MediaRouteActionProvider() = default;
 		
 		// Methods

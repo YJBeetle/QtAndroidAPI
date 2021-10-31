@@ -40,20 +40,12 @@ namespace android::location
 	
 	SettingInjectorService::SettingInjectorService(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SettingInjectorService::SettingInjectorService(jstring &arg0)
+	SettingInjectorService::SettingInjectorService(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.location.SettingInjectorService",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	SettingInjectorService::SettingInjectorService(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.location.SettingInjectorService",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

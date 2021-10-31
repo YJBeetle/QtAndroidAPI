@@ -28,8 +28,8 @@ namespace java::security::cert
 		
 		PKIXParameters(QAndroidJniObject obj);
 		// Constructors
-		PKIXParameters(java::security::KeyStore &arg0);
-		PKIXParameters(__JniBaseClass &arg0);
+		PKIXParameters(java::security::KeyStore arg0);
+		PKIXParameters(__JniBaseClass arg0);
 		PKIXParameters() = default;
 		
 		// Methods
@@ -58,7 +58,6 @@ namespace java::security::cert
 		void setPolicyQualifiersRejected(jboolean arg0);
 		void setRevocationEnabled(jboolean arg0);
 		void setSigProvider(jstring arg0);
-		void setSigProvider(const QString &arg0);
 		void setTargetCertConstraints(__JniBaseClass arg0);
 		void setTrustAnchors(__JniBaseClass arg0);
 		jstring toString();

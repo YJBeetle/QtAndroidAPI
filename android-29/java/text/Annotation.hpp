@@ -12,7 +12,7 @@ namespace java::text
 		
 		Annotation(QAndroidJniObject obj);
 		// Constructors
-		Annotation(jobject &arg0);
+		Annotation(jobject arg0);
 		Annotation() = default;
 		
 		// Methods

@@ -13,7 +13,7 @@ namespace java::security::cert
 		CollectionCertStoreParameters(QAndroidJniObject obj);
 		// Constructors
 		CollectionCertStoreParameters();
-		CollectionCertStoreParameters(__JniBaseClass &arg0);
+		CollectionCertStoreParameters(__JniBaseClass arg0);
 		
 		// Methods
 		jobject clone();

@@ -43,7 +43,7 @@ namespace java::lang
 	
 	Short::Short(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Short::Short(jstring &arg0)
+	Short::Short(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.Short",
@@ -51,15 +51,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	Short::Short(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.Short",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	Short::Short(jshort &arg0)
+	Short::Short(jshort arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.Short",
@@ -98,15 +90,6 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject Short::decode(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.lang.Short",
-			"decode",
-			"(Ljava/lang/String;)Ljava/lang/Short;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jint Short::hashCode(jshort arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -125,15 +108,6 @@ namespace java::lang
 			arg0
 		);
 	}
-	jshort Short::parseShort(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jshort>(
-			"java.lang.Short",
-			"parseShort",
-			"(Ljava/lang/String;)S",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jshort Short::parseShort(jstring arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticMethod<jshort>(
@@ -141,16 +115,6 @@ namespace java::lang
 			"parseShort",
 			"(Ljava/lang/String;I)S",
 			arg0,
-			arg1
-		);
-	}
-	jshort Short::parseShort(const QString &arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jshort>(
-			"java.lang.Short",
-			"parseShort",
-			"(Ljava/lang/String;I)S",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -199,15 +163,6 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject Short::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.lang.Short",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/lang/Short;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Short::valueOf(jshort arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -224,16 +179,6 @@ namespace java::lang
 			"valueOf",
 			"(Ljava/lang/String;I)Ljava/lang/Short;",
 			arg0,
-			arg1
-		);
-	}
-	QAndroidJniObject Short::valueOf(const QString &arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.lang.Short",
-			"valueOf",
-			"(Ljava/lang/String;I)Ljava/lang/Short;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

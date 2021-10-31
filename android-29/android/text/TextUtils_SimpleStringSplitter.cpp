@@ -6,7 +6,7 @@ namespace android::text
 	
 	TextUtils_SimpleStringSplitter::TextUtils_SimpleStringSplitter(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	TextUtils_SimpleStringSplitter::TextUtils_SimpleStringSplitter(jchar &arg0)
+	TextUtils_SimpleStringSplitter::TextUtils_SimpleStringSplitter(jchar arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.TextUtils$SimpleStringSplitter",
@@ -50,14 +50,6 @@ namespace android::text
 			"setString",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void TextUtils_SimpleStringSplitter::setString(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setString",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace android::text

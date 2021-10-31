@@ -22,8 +22,8 @@ namespace android::opengl
 		
 		GLSurfaceView(QAndroidJniObject obj);
 		// Constructors
-		GLSurfaceView(android::content::Context &arg0);
-		GLSurfaceView(android::content::Context &arg0, __JniBaseClass &arg1);
+		GLSurfaceView(android::content::Context arg0);
+		GLSurfaceView(android::content::Context arg0, __JniBaseClass arg1);
 		GLSurfaceView() = default;
 		
 		// Methods

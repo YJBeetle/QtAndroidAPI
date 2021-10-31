@@ -46,13 +46,5 @@ namespace android::renderscript
 			arg0
 		);
 	}
-	void BaseObj::setName(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setName",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 } // namespace android::renderscript
 

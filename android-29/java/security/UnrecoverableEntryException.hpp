@@ -15,8 +15,7 @@ namespace java::security
 		UnrecoverableEntryException(QAndroidJniObject obj);
 		// Constructors
 		UnrecoverableEntryException();
-		UnrecoverableEntryException(jstring &arg0);
-		UnrecoverableEntryException(const QString &arg0);
+		UnrecoverableEntryException(jstring arg0);
 		
 		// Methods
 	};

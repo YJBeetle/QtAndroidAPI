@@ -14,7 +14,7 @@ namespace java::util
 			"()V"
 		);
 	}
-	SplittableRandom::SplittableRandom(jlong &arg0)
+	SplittableRandom::SplittableRandom(jlong arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.SplittableRandom",

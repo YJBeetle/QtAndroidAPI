@@ -63,14 +63,6 @@ namespace android::media
 			arg0
 		);
 	}
-	jboolean JetPlayer::loadJetFile(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"loadJetFile",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jboolean JetPlayer::pause()
 	{
 		return __thiz.callMethod<jboolean>(

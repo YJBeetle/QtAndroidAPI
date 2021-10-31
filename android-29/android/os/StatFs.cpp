@@ -6,20 +6,12 @@ namespace android::os
 	
 	StatFs::StatFs(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	StatFs::StatFs(jstring &arg0)
+	StatFs::StatFs(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.StatFs",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	StatFs::StatFs(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.os.StatFs",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	
@@ -107,14 +99,6 @@ namespace android::os
 			"restat",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void StatFs::restat(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"restat",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace android::os

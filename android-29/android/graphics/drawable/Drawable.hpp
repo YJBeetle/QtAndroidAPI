@@ -76,13 +76,9 @@ namespace android::graphics::drawable
 		
 		// Methods
 		static QAndroidJniObject createFromPath(jstring arg0);
-		static QAndroidJniObject createFromPath(const QString &arg0);
 		static QAndroidJniObject createFromResourceStream(android::content::res::Resources arg0, android::util::TypedValue arg1, java::io::InputStream arg2, jstring arg3);
-		static QAndroidJniObject createFromResourceStream(android::content::res::Resources arg0, android::util::TypedValue arg1, java::io::InputStream arg2, const QString &arg3);
 		static QAndroidJniObject createFromResourceStream(android::content::res::Resources arg0, android::util::TypedValue arg1, java::io::InputStream arg2, jstring arg3, android::graphics::BitmapFactory_Options arg4);
-		static QAndroidJniObject createFromResourceStream(android::content::res::Resources arg0, android::util::TypedValue arg1, java::io::InputStream arg2, const QString &arg3, android::graphics::BitmapFactory_Options arg4);
 		static QAndroidJniObject createFromStream(java::io::InputStream arg0, jstring arg1);
-		static QAndroidJniObject createFromStream(java::io::InputStream arg0, const QString &arg1);
 		static QAndroidJniObject createFromXml(android::content::res::Resources arg0, __JniBaseClass arg1);
 		static QAndroidJniObject createFromXml(android::content::res::Resources arg0, __JniBaseClass arg1, android::content::res::Resources_Theme arg2);
 		static QAndroidJniObject createFromXmlInner(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2);

@@ -47,7 +47,7 @@ namespace android::graphics
 			"()V"
 		);
 	}
-	RectF::RectF(android::graphics::Rect &arg0)
+	RectF::RectF(android::graphics::Rect arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.RectF",
@@ -63,7 +63,7 @@ namespace android::graphics
 			arg0.__jniObject().object()
 		);
 	}
-	RectF::RectF(jfloat &arg0, jfloat &arg1, jfloat &arg2, jfloat &arg3)
+	RectF::RectF(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.RectF",

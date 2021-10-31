@@ -17,7 +17,7 @@ namespace java::util
 			"()V"
 		);
 	}
-	Date::Date(jstring &arg0)
+	Date::Date(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Date",
@@ -25,15 +25,7 @@ namespace java::util
 			arg0
 		);
 	}
-	Date::Date(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.Date",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	Date::Date(jlong &arg0)
+	Date::Date(jlong arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Date",
@@ -41,7 +33,7 @@ namespace java::util
 			arg0
 		);
 	}
-	Date::Date(jint &arg0, jint &arg1, jint &arg2)
+	Date::Date(jint arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Date",
@@ -51,7 +43,7 @@ namespace java::util
 			arg2
 		);
 	}
-	Date::Date(jint &arg0, jint &arg1, jint &arg2, jint &arg3, jint &arg4)
+	Date::Date(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Date",
@@ -63,7 +55,7 @@ namespace java::util
 			arg4
 		);
 	}
-	Date::Date(jint &arg0, jint &arg1, jint &arg2, jint &arg3, jint &arg4, jint &arg5)
+	Date::Date(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Date",
@@ -108,15 +100,6 @@ namespace java::util
 			"parse",
 			"(Ljava/lang/String;)J",
 			arg0
-		);
-	}
-	jlong Date::parse(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
-			"java.util.Date",
-			"parse",
-			"(Ljava/lang/String;)J",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean Date::after(java::util::Date arg0)

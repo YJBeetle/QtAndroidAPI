@@ -14,7 +14,7 @@ namespace javax::crypto::spec
 		
 		PSource_PSpecified(QAndroidJniObject obj);
 		// Constructors
-		PSource_PSpecified(jbyteArray &arg0);
+		PSource_PSpecified(jbyteArray arg0);
 		PSource_PSpecified() = default;
 		
 		// Methods

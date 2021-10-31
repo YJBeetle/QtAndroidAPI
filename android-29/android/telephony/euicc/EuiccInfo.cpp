@@ -15,20 +15,12 @@ namespace android::telephony::euicc
 	
 	EuiccInfo::EuiccInfo(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	EuiccInfo::EuiccInfo(jstring &arg0)
+	EuiccInfo::EuiccInfo(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.telephony.euicc.EuiccInfo",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	EuiccInfo::EuiccInfo(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.telephony.euicc.EuiccInfo",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

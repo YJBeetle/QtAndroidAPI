@@ -18,7 +18,7 @@ namespace java::io
 		
 		LineNumberInputStream(QAndroidJniObject obj);
 		// Constructors
-		LineNumberInputStream(java::io::InputStream &arg0);
+		LineNumberInputStream(java::io::InputStream arg0);
 		LineNumberInputStream() = default;
 		
 		// Methods

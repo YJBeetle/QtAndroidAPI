@@ -7,7 +7,7 @@ namespace android::graphics
 	
 	LinearGradient::LinearGradient(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	LinearGradient::LinearGradient(jfloat &arg0, jfloat &arg1, jfloat &arg2, jfloat &arg3, jintArray &arg4, jfloatArray &arg5, android::graphics::Shader_TileMode &arg6)
+	LinearGradient::LinearGradient(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jintArray arg4, jfloatArray arg5, android::graphics::Shader_TileMode arg6)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.LinearGradient",
@@ -21,7 +21,7 @@ namespace android::graphics
 			arg6.__jniObject().object()
 		);
 	}
-	LinearGradient::LinearGradient(jfloat &arg0, jfloat &arg1, jfloat &arg2, jfloat &arg3, jlongArray &arg4, jfloatArray &arg5, android::graphics::Shader_TileMode &arg6)
+	LinearGradient::LinearGradient(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jlongArray arg4, jfloatArray arg5, android::graphics::Shader_TileMode arg6)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.LinearGradient",
@@ -35,7 +35,7 @@ namespace android::graphics
 			arg6.__jniObject().object()
 		);
 	}
-	LinearGradient::LinearGradient(jfloat &arg0, jfloat &arg1, jfloat &arg2, jfloat &arg3, jint &arg4, jint &arg5, android::graphics::Shader_TileMode &arg6)
+	LinearGradient::LinearGradient(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jint arg4, jint arg5, android::graphics::Shader_TileMode arg6)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.LinearGradient",
@@ -49,7 +49,7 @@ namespace android::graphics
 			arg6.__jniObject().object()
 		);
 	}
-	LinearGradient::LinearGradient(jfloat &arg0, jfloat &arg1, jfloat &arg2, jfloat &arg3, jlong &arg4, jlong &arg5, android::graphics::Shader_TileMode &arg6)
+	LinearGradient::LinearGradient(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jlong arg4, jlong arg5, android::graphics::Shader_TileMode arg6)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.LinearGradient",

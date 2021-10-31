@@ -20,8 +20,7 @@ namespace android::view::textclassifier
 		
 		TextLanguage_Request_Builder(QAndroidJniObject obj);
 		// Constructors
-		TextLanguage_Request_Builder(jstring &arg0);
-		TextLanguage_Request_Builder(const QString &arg0);
+		TextLanguage_Request_Builder(jstring arg0);
 		TextLanguage_Request_Builder() = default;
 		
 		// Methods

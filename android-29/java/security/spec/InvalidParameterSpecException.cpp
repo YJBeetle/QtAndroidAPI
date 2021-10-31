@@ -13,20 +13,12 @@ namespace java::security::spec
 			"()V"
 		);
 	}
-	InvalidParameterSpecException::InvalidParameterSpecException(jstring &arg0)
+	InvalidParameterSpecException::InvalidParameterSpecException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.spec.InvalidParameterSpecException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	InvalidParameterSpecException::InvalidParameterSpecException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.spec.InvalidParameterSpecException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

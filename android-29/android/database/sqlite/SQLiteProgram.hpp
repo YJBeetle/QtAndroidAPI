@@ -30,7 +30,6 @@ namespace android::database::sqlite
 		void bindLong(jint arg0, jlong arg1);
 		void bindNull(jint arg0);
 		void bindString(jint arg0, jstring arg1);
-		void bindString(jint arg0, const QString &arg1);
 		void clearBindings();
 		jint getUniqueId();
 	};

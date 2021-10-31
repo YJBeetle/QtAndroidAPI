@@ -26,9 +26,9 @@ namespace android::widget
 		
 		ResourceCursorTreeAdapter(QAndroidJniObject obj);
 		// Constructors
-		ResourceCursorTreeAdapter(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
-		ResourceCursorTreeAdapter(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3, jint &arg4);
-		ResourceCursorTreeAdapter(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3, jint &arg4, jint &arg5);
+		ResourceCursorTreeAdapter(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		ResourceCursorTreeAdapter(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3, jint arg4);
+		ResourceCursorTreeAdapter(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3, jint arg4, jint arg5);
 		ResourceCursorTreeAdapter() = default;
 		
 		// Methods

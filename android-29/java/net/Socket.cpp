@@ -21,7 +21,7 @@ namespace java::net
 			"()V"
 		);
 	}
-	Socket::Socket(java::net::Proxy &arg0)
+	Socket::Socket(java::net::Proxy arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.Socket",
@@ -29,7 +29,7 @@ namespace java::net
 			arg0.__jniObject().object()
 		);
 	}
-	Socket::Socket(jstring &arg0, jint &arg1)
+	Socket::Socket(jstring arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.Socket",
@@ -38,16 +38,7 @@ namespace java::net
 			arg1
 		);
 	}
-	Socket::Socket(const QString &arg0, jint &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.Socket",
-			"(Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
-	Socket::Socket(java::net::InetAddress &arg0, jint &arg1)
+	Socket::Socket(java::net::InetAddress arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.Socket",
@@ -56,7 +47,7 @@ namespace java::net
 			arg1
 		);
 	}
-	Socket::Socket(jstring &arg0, jint &arg1, jboolean &arg2)
+	Socket::Socket(jstring arg0, jint arg1, jboolean arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.Socket",
@@ -66,17 +57,7 @@ namespace java::net
 			arg2
 		);
 	}
-	Socket::Socket(const QString &arg0, jint &arg1, jboolean &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.Socket",
-			"(Ljava/lang/String;IZ)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2
-		);
-	}
-	Socket::Socket(java::net::InetAddress &arg0, jint &arg1, jboolean &arg2)
+	Socket::Socket(java::net::InetAddress arg0, jint arg1, jboolean arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.Socket",
@@ -86,7 +67,7 @@ namespace java::net
 			arg2
 		);
 	}
-	Socket::Socket(jstring &arg0, jint &arg1, java::net::InetAddress &arg2, jint &arg3)
+	Socket::Socket(jstring arg0, jint arg1, java::net::InetAddress arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.Socket",
@@ -97,18 +78,7 @@ namespace java::net
 			arg3
 		);
 	}
-	Socket::Socket(const QString &arg0, jint &arg1, java::net::InetAddress &arg2, jint &arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.Socket",
-			"(Ljava/lang/String;ILjava/net/InetAddress;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2.__jniObject().object(),
-			arg3
-		);
-	}
-	Socket::Socket(java::net::InetAddress &arg0, jint &arg1, java::net::InetAddress &arg2, jint &arg3)
+	Socket::Socket(java::net::InetAddress arg0, jint arg1, java::net::InetAddress arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.Socket",

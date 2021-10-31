@@ -227,7 +227,7 @@ namespace android::graphics
 			arg0.__jniObject().object()
 		);
 	}
-	Paint::Paint(jint &arg0)
+	Paint::Paint(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.Paint",
@@ -255,17 +255,6 @@ namespace android::graphics
 			arg3
 		);
 	}
-	jint Paint::breakText(const QString &arg0, jboolean arg1, jfloat arg2, jfloatArray arg3)
-	{
-		return __thiz.callMethod<jint>(
-			"breakText",
-			"(Ljava/lang/String;ZF[F)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2,
-			arg3
-		);
-	}
 	jint Paint::breakText(jcharArray arg0, jint arg1, jint arg2, jfloat arg3, jfloatArray arg4)
 	{
 		return __thiz.callMethod<jint>(
@@ -284,19 +273,6 @@ namespace android::graphics
 			"breakText",
 			"(Ljava/lang/CharSequence;IIZF[F)I",
 			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5
-		);
-	}
-	jint Paint::breakText(const QString &arg0, jint arg1, jint arg2, jboolean arg3, jfloat arg4, jfloatArray arg5)
-	{
-		return __thiz.callMethod<jint>(
-			"breakText",
-			"(Ljava/lang/CharSequence;IIZF[F)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2,
 			arg3,
@@ -484,20 +460,6 @@ namespace android::graphics
 			arg6
 		);
 	}
-	jint Paint::getOffsetForAdvance(const QString &arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jfloat arg6)
-	{
-		return __thiz.callMethod<jint>(
-			"getOffsetForAdvance",
-			"(Ljava/lang/CharSequence;IIIIZF)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5,
-			arg6
-		);
-	}
 	QAndroidJniObject Paint::getPathEffect()
 	{
 		return __thiz.callObjectMethod(
@@ -525,20 +487,6 @@ namespace android::graphics
 			"getRunAdvance",
 			"(Ljava/lang/CharSequence;IIIIZI)F",
 			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5,
-			arg6
-		);
-	}
-	jfloat Paint::getRunAdvance(const QString &arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jint arg6)
-	{
-		return __thiz.callMethod<jfloat>(
-			"getRunAdvance",
-			"(Ljava/lang/CharSequence;IIIIZI)F",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2,
 			arg3,
@@ -674,17 +622,6 @@ namespace android::graphics
 			arg3.__jniObject().object()
 		);
 	}
-	void Paint::getTextBounds(const QString &arg0, jint arg1, jint arg2, android::graphics::Rect arg3)
-	{
-		__thiz.callMethod<void>(
-			"getTextBounds",
-			"(Ljava/lang/CharSequence;IILandroid/graphics/Rect;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2,
-			arg3.__jniObject().object()
-		);
-	}
 	QAndroidJniObject Paint::getTextLocale()
 	{
 		return __thiz.callObjectMethod(
@@ -718,19 +655,6 @@ namespace android::graphics
 			"getTextPath",
 			"(Ljava/lang/String;IIFFLandroid/graphics/Path;)V",
 			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5.__jniObject().object()
-		);
-	}
-	void Paint::getTextPath(const QString &arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, android::graphics::Path arg5)
-	{
-		__thiz.callMethod<void>(
-			"getTextPath",
-			"(Ljava/lang/String;IIFFLandroid/graphics/Path;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2,
 			arg3,
@@ -779,19 +703,6 @@ namespace android::graphics
 			arg5
 		);
 	}
-	jint Paint::getTextRunCursor(const QString &arg0, jint arg1, jint arg2, jboolean arg3, jint arg4, jint arg5)
-	{
-		return __thiz.callMethod<jint>(
-			"getTextRunCursor",
-			"(Ljava/lang/CharSequence;IIZII)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5
-		);
-	}
 	jfloat Paint::getTextScaleX()
 	{
 		return __thiz.callMethod<jfloat>(
@@ -822,15 +733,6 @@ namespace android::graphics
 			arg1
 		);
 	}
-	jint Paint::getTextWidths(const QString &arg0, jfloatArray arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"getTextWidths",
-			"(Ljava/lang/String;[F)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	jint Paint::getTextWidths(jcharArray arg0, jint arg1, jint arg2, jfloatArray arg3)
 	{
 		return __thiz.callMethod<jint>(
@@ -848,17 +750,6 @@ namespace android::graphics
 			"getTextWidths",
 			"(Ljava/lang/CharSequence;II[F)I",
 			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	jint Paint::getTextWidths(const QString &arg0, jint arg1, jint arg2, jfloatArray arg3)
-	{
-		return __thiz.callMethod<jint>(
-			"getTextWidths",
-			"(Ljava/lang/CharSequence;II[F)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2,
 			arg3
@@ -905,14 +796,6 @@ namespace android::graphics
 			"hasGlyph",
 			"(Ljava/lang/String;)Z",
 			arg0
-		);
-	}
-	jboolean Paint::hasGlyph(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasGlyph",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean Paint::isAntiAlias()
@@ -986,14 +869,6 @@ namespace android::graphics
 			arg0
 		);
 	}
-	jfloat Paint::measureText(const QString &arg0)
-	{
-		return __thiz.callMethod<jfloat>(
-			"measureText",
-			"(Ljava/lang/String;)F",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jfloat Paint::measureText(jcharArray arg0, jint arg1, jint arg2)
 	{
 		return __thiz.callMethod<jfloat>(
@@ -1010,16 +885,6 @@ namespace android::graphics
 			"measureText",
 			"(Ljava/lang/CharSequence;II)F",
 			arg0,
-			arg1,
-			arg2
-		);
-	}
-	jfloat Paint::measureText(const QString &arg0, jint arg1, jint arg2)
-	{
-		return __thiz.callMethod<jfloat>(
-			"measureText",
-			"(Ljava/lang/CharSequence;II)F",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2
 		);
@@ -1154,28 +1019,12 @@ namespace android::graphics
 			arg0
 		);
 	}
-	void Paint::setFontFeatureSettings(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setFontFeatureSettings",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jboolean Paint::setFontVariationSettings(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"setFontVariationSettings",
 			"(Ljava/lang/String;)Z",
 			arg0
-		);
-	}
-	jboolean Paint::setFontVariationSettings(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"setFontVariationSettings",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void Paint::setHinting(jint arg0)

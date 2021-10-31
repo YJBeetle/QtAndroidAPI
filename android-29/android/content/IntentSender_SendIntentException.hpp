@@ -19,9 +19,8 @@ namespace android::content
 		IntentSender_SendIntentException(QAndroidJniObject obj);
 		// Constructors
 		IntentSender_SendIntentException();
-		IntentSender_SendIntentException(java::lang::Exception &arg0);
-		IntentSender_SendIntentException(jstring &arg0);
-		IntentSender_SendIntentException(const QString &arg0);
+		IntentSender_SendIntentException(java::lang::Exception arg0);
+		IntentSender_SendIntentException(jstring arg0);
 		
 		// Methods
 	};

@@ -6,7 +6,7 @@ namespace java::security::cert
 	
 	CertStoreSpi::CertStoreSpi(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	CertStoreSpi::CertStoreSpi(__JniBaseClass &arg0)
+	CertStoreSpi::CertStoreSpi(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.cert.CertStoreSpi",

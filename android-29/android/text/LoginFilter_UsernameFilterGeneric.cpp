@@ -13,7 +13,7 @@ namespace android::text
 			"()V"
 		);
 	}
-	LoginFilter_UsernameFilterGeneric::LoginFilter_UsernameFilterGeneric(jboolean &arg0)
+	LoginFilter_UsernameFilterGeneric::LoginFilter_UsernameFilterGeneric(jboolean arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.LoginFilter$UsernameFilterGeneric",

@@ -65,15 +65,6 @@ namespace android::net
 			arg0
 		);
 	}
-	QAndroidJniObject NetworkInfo_State::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.net.NetworkInfo$State",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/net/NetworkInfo$State;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray NetworkInfo_State::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

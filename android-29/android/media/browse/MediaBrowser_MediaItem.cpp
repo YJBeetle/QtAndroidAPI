@@ -30,7 +30,7 @@ namespace android::media::browse
 	
 	MediaBrowser_MediaItem::MediaBrowser_MediaItem(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MediaBrowser_MediaItem::MediaBrowser_MediaItem(android::media::MediaDescription &arg0, jint &arg1)
+	MediaBrowser_MediaItem::MediaBrowser_MediaItem(android::media::MediaDescription arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.browse.MediaBrowser$MediaItem",

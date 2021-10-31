@@ -12,7 +12,7 @@ namespace java::security::cert
 		
 		PolicyQualifierInfo(QAndroidJniObject obj);
 		// Constructors
-		PolicyQualifierInfo(jbyteArray &arg0);
+		PolicyQualifierInfo(jbyteArray arg0);
 		PolicyQualifierInfo() = default;
 		
 		// Methods

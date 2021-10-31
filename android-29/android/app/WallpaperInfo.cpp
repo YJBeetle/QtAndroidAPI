@@ -22,7 +22,7 @@ namespace android::app
 	
 	WallpaperInfo::WallpaperInfo(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	WallpaperInfo::WallpaperInfo(android::content::Context &arg0, android::content::pm::ResolveInfo &arg1)
+	WallpaperInfo::WallpaperInfo(android::content::Context arg0, android::content::pm::ResolveInfo arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.WallpaperInfo",
@@ -47,15 +47,6 @@ namespace android::app
 			"(Landroid/util/Printer;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	void WallpaperInfo::dump(__JniBaseClass arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Landroid/util/Printer;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	QAndroidJniObject WallpaperInfo::getComponent()

@@ -102,7 +102,7 @@ namespace android::icu::util
 			"()V"
 		);
 	}
-	IslamicCalendar::IslamicCalendar(android::icu::util::TimeZone &arg0)
+	IslamicCalendar::IslamicCalendar(android::icu::util::TimeZone arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.IslamicCalendar",
@@ -110,7 +110,7 @@ namespace android::icu::util
 			arg0.__jniObject().object()
 		);
 	}
-	IslamicCalendar::IslamicCalendar(android::icu::util::ULocale &arg0)
+	IslamicCalendar::IslamicCalendar(android::icu::util::ULocale arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.IslamicCalendar",
@@ -118,7 +118,7 @@ namespace android::icu::util
 			arg0.__jniObject().object()
 		);
 	}
-	IslamicCalendar::IslamicCalendar(java::util::Date &arg0)
+	IslamicCalendar::IslamicCalendar(java::util::Date arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.IslamicCalendar",
@@ -126,7 +126,7 @@ namespace android::icu::util
 			arg0.__jniObject().object()
 		);
 	}
-	IslamicCalendar::IslamicCalendar(java::util::Locale &arg0)
+	IslamicCalendar::IslamicCalendar(java::util::Locale arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.IslamicCalendar",
@@ -134,7 +134,7 @@ namespace android::icu::util
 			arg0.__jniObject().object()
 		);
 	}
-	IslamicCalendar::IslamicCalendar(android::icu::util::TimeZone &arg0, android::icu::util::ULocale &arg1)
+	IslamicCalendar::IslamicCalendar(android::icu::util::TimeZone arg0, android::icu::util::ULocale arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.IslamicCalendar",
@@ -143,7 +143,7 @@ namespace android::icu::util
 			arg1.__jniObject().object()
 		);
 	}
-	IslamicCalendar::IslamicCalendar(android::icu::util::TimeZone &arg0, java::util::Locale &arg1)
+	IslamicCalendar::IslamicCalendar(android::icu::util::TimeZone arg0, java::util::Locale arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.IslamicCalendar",
@@ -152,7 +152,7 @@ namespace android::icu::util
 			arg1.__jniObject().object()
 		);
 	}
-	IslamicCalendar::IslamicCalendar(jint &arg0, jint &arg1, jint &arg2)
+	IslamicCalendar::IslamicCalendar(jint arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.IslamicCalendar",
@@ -162,7 +162,7 @@ namespace android::icu::util
 			arg2
 		);
 	}
-	IslamicCalendar::IslamicCalendar(jint &arg0, jint &arg1, jint &arg2, jint &arg3, jint &arg4, jint &arg5)
+	IslamicCalendar::IslamicCalendar(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.IslamicCalendar",

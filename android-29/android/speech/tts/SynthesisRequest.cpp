@@ -7,21 +7,12 @@ namespace android::speech::tts
 	
 	SynthesisRequest::SynthesisRequest(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SynthesisRequest::SynthesisRequest(jstring &arg0, android::os::Bundle &arg1)
+	SynthesisRequest::SynthesisRequest(jstring arg0, android::os::Bundle arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.speech.tts.SynthesisRequest",
 			"(Ljava/lang/CharSequence;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	SynthesisRequest::SynthesisRequest(const QString &arg0, android::os::Bundle &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.speech.tts.SynthesisRequest",
-			"(Ljava/lang/CharSequence;Landroid/os/Bundle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

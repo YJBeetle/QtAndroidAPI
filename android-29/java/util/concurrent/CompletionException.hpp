@@ -14,9 +14,8 @@ namespace java::util::concurrent
 		
 		CompletionException(QAndroidJniObject obj);
 		// Constructors
-		CompletionException(jthrowable &arg0);
-		CompletionException(jstring &arg0, jthrowable &arg1);
-		CompletionException(const QString &arg0, jthrowable &arg1);
+		CompletionException(jthrowable arg0);
+		CompletionException(jstring arg0, jthrowable arg1);
 		CompletionException() = default;
 		
 		// Methods

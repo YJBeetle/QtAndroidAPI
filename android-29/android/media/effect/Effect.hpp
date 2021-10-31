@@ -19,7 +19,6 @@ namespace android::media::effect
 		jstring getName();
 		void release();
 		void setParameter(jstring arg0, jobject arg1);
-		void setParameter(const QString &arg0, jobject arg1);
 		void setUpdateListener(__JniBaseClass arg0);
 	};
 } // namespace android::media::effect

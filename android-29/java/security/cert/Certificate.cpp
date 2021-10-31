@@ -69,15 +69,6 @@ namespace java::security::cert
 			arg1
 		);
 	}
-	void Certificate::verify(__JniBaseClass arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"verify",
-			"(Ljava/security/PublicKey;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	void Certificate::verify(__JniBaseClass arg0, java::security::Provider arg1)
 	{
 		__thiz.callMethod<void>(

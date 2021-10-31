@@ -18,7 +18,7 @@ namespace android::app
 	
 	AutomaticZenRule::AutomaticZenRule(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AutomaticZenRule::AutomaticZenRule(android::os::Parcel &arg0)
+	AutomaticZenRule::AutomaticZenRule(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.AutomaticZenRule",
@@ -26,7 +26,7 @@ namespace android::app
 			arg0.__jniObject().object()
 		);
 	}
-	AutomaticZenRule::AutomaticZenRule(jstring &arg0, android::content::ComponentName &arg1, android::net::Uri &arg2, jint &arg3, jboolean &arg4)
+	AutomaticZenRule::AutomaticZenRule(jstring arg0, android::content::ComponentName arg1, android::net::Uri arg2, jint arg3, jboolean arg4)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.AutomaticZenRule",
@@ -38,38 +38,12 @@ namespace android::app
 			arg4
 		);
 	}
-	AutomaticZenRule::AutomaticZenRule(const QString &arg0, android::content::ComponentName &arg1, android::net::Uri &arg2, jint &arg3, jboolean &arg4)
-	{
-		__thiz = QAndroidJniObject(
-			"android.app.AutomaticZenRule",
-			"(Ljava/lang/String;Landroid/content/ComponentName;Landroid/net/Uri;IZ)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3,
-			arg4
-		);
-	}
-	AutomaticZenRule::AutomaticZenRule(jstring &arg0, android::content::ComponentName &arg1, android::content::ComponentName &arg2, android::net::Uri &arg3, android::service::notification::ZenPolicy &arg4, jint &arg5, jboolean &arg6)
+	AutomaticZenRule::AutomaticZenRule(jstring arg0, android::content::ComponentName arg1, android::content::ComponentName arg2, android::net::Uri arg3, android::service::notification::ZenPolicy arg4, jint arg5, jboolean arg6)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.AutomaticZenRule",
 			"(Ljava/lang/String;Landroid/content/ComponentName;Landroid/content/ComponentName;Landroid/net/Uri;Landroid/service/notification/ZenPolicy;IZ)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
-			arg5,
-			arg6
-		);
-	}
-	AutomaticZenRule::AutomaticZenRule(const QString &arg0, android::content::ComponentName &arg1, android::content::ComponentName &arg2, android::net::Uri &arg3, android::service::notification::ZenPolicy &arg4, jint &arg5, jboolean &arg6)
-	{
-		__thiz = QAndroidJniObject(
-			"android.app.AutomaticZenRule",
-			"(Ljava/lang/String;Landroid/content/ComponentName;Landroid/content/ComponentName;Landroid/net/Uri;Landroid/service/notification/ZenPolicy;IZ)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object(),
@@ -196,14 +170,6 @@ namespace android::app
 			"setName",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void AutomaticZenRule::setName(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setName",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void AutomaticZenRule::setZenPolicy(android::service::notification::ZenPolicy arg0)

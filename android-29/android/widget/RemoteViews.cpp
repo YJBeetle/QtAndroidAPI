@@ -33,7 +33,7 @@ namespace android::widget
 	
 	RemoteViews::RemoteViews(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	RemoteViews::RemoteViews(android::os::Parcel &arg0)
+	RemoteViews::RemoteViews(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.RemoteViews",
@@ -58,21 +58,12 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	RemoteViews::RemoteViews(jstring &arg0, jint &arg1)
+	RemoteViews::RemoteViews(jstring arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.RemoteViews",
 			"(Ljava/lang/String;I)V",
 			arg0,
-			arg1
-		);
-	}
-	RemoteViews::RemoteViews(const QString &arg0, jint &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.widget.RemoteViews",
-			"(Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -177,16 +168,6 @@ namespace android::widget
 			arg2.__jniObject().object()
 		);
 	}
-	void RemoteViews::setBitmap(jint arg0, const QString &arg1, android::graphics::Bitmap arg2)
-	{
-		__thiz.callMethod<void>(
-			"setBitmap",
-			"(ILjava/lang/String;Landroid/graphics/Bitmap;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object()
-		);
-	}
 	void RemoteViews::setBoolean(jint arg0, jstring arg1, jboolean arg2)
 	{
 		__thiz.callMethod<void>(
@@ -194,16 +175,6 @@ namespace android::widget
 			"(ILjava/lang/String;Z)V",
 			arg0,
 			arg1,
-			arg2
-		);
-	}
-	void RemoteViews::setBoolean(jint arg0, const QString &arg1, jboolean arg2)
-	{
-		__thiz.callMethod<void>(
-			"setBoolean",
-			"(ILjava/lang/String;Z)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}
@@ -217,16 +188,6 @@ namespace android::widget
 			arg2.__jniObject().object()
 		);
 	}
-	void RemoteViews::setBundle(jint arg0, const QString &arg1, android::os::Bundle arg2)
-	{
-		__thiz.callMethod<void>(
-			"setBundle",
-			"(ILjava/lang/String;Landroid/os/Bundle;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object()
-		);
-	}
 	void RemoteViews::setByte(jint arg0, jstring arg1, jbyte arg2)
 	{
 		__thiz.callMethod<void>(
@@ -234,16 +195,6 @@ namespace android::widget
 			"(ILjava/lang/String;B)V",
 			arg0,
 			arg1,
-			arg2
-		);
-	}
-	void RemoteViews::setByte(jint arg0, const QString &arg1, jbyte arg2)
-	{
-		__thiz.callMethod<void>(
-			"setByte",
-			"(ILjava/lang/String;B)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}
@@ -257,16 +208,6 @@ namespace android::widget
 			arg2
 		);
 	}
-	void RemoteViews::setChar(jint arg0, const QString &arg1, jchar arg2)
-	{
-		__thiz.callMethod<void>(
-			"setChar",
-			"(ILjava/lang/String;C)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2
-		);
-	}
 	void RemoteViews::setCharSequence(jint arg0, jstring arg1, jstring arg2)
 	{
 		__thiz.callMethod<void>(
@@ -277,16 +218,6 @@ namespace android::widget
 			arg2
 		);
 	}
-	void RemoteViews::setCharSequence(jint arg0, const QString &arg1, const QString &arg2)
-	{
-		__thiz.callMethod<void>(
-			"setCharSequence",
-			"(ILjava/lang/String;Ljava/lang/CharSequence;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	void RemoteViews::setChronometer(jint arg0, jlong arg1, jstring arg2, jboolean arg3)
 	{
 		__thiz.callMethod<void>(
@@ -295,17 +226,6 @@ namespace android::widget
 			arg0,
 			arg1,
 			arg2,
-			arg3
-		);
-	}
-	void RemoteViews::setChronometer(jint arg0, jlong arg1, const QString &arg2, jboolean arg3)
-	{
-		__thiz.callMethod<void>(
-			"setChronometer",
-			"(IJLjava/lang/String;Z)V",
-			arg0,
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
 			arg3
 		);
 	}
@@ -327,15 +247,6 @@ namespace android::widget
 			arg1
 		);
 	}
-	void RemoteViews::setContentDescription(jint arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"setContentDescription",
-			"(ILjava/lang/CharSequence;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	void RemoteViews::setDisplayedChild(jint arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
@@ -352,16 +263,6 @@ namespace android::widget
 			"(ILjava/lang/String;D)V",
 			arg0,
 			arg1,
-			arg2
-		);
-	}
-	void RemoteViews::setDouble(jint arg0, const QString &arg1, jdouble arg2)
-	{
-		__thiz.callMethod<void>(
-			"setDouble",
-			"(ILjava/lang/String;D)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}
@@ -384,16 +285,6 @@ namespace android::widget
 			arg2
 		);
 	}
-	void RemoteViews::setFloat(jint arg0, const QString &arg1, jfloat arg2)
-	{
-		__thiz.callMethod<void>(
-			"setFloat",
-			"(ILjava/lang/String;F)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2
-		);
-	}
 	void RemoteViews::setIcon(jint arg0, jstring arg1, android::graphics::drawable::Icon arg2)
 	{
 		__thiz.callMethod<void>(
@@ -401,16 +292,6 @@ namespace android::widget
 			"(ILjava/lang/String;Landroid/graphics/drawable/Icon;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void RemoteViews::setIcon(jint arg0, const QString &arg1, android::graphics::drawable::Icon arg2)
-	{
-		__thiz.callMethod<void>(
-			"setIcon",
-			"(ILjava/lang/String;Landroid/graphics/drawable/Icon;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}
@@ -460,16 +341,6 @@ namespace android::widget
 			arg2
 		);
 	}
-	void RemoteViews::setInt(jint arg0, const QString &arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"setInt",
-			"(ILjava/lang/String;I)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2
-		);
-	}
 	void RemoteViews::setIntent(jint arg0, jstring arg1, android::content::Intent arg2)
 	{
 		__thiz.callMethod<void>(
@@ -477,16 +348,6 @@ namespace android::widget
 			"(ILjava/lang/String;Landroid/content/Intent;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void RemoteViews::setIntent(jint arg0, const QString &arg1, android::content::Intent arg2)
-	{
-		__thiz.callMethod<void>(
-			"setIntent",
-			"(ILjava/lang/String;Landroid/content/Intent;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}
@@ -514,16 +375,6 @@ namespace android::widget
 			"(ILjava/lang/String;J)V",
 			arg0,
 			arg1,
-			arg2
-		);
-	}
-	void RemoteViews::setLong(jint arg0, const QString &arg1, jlong arg2)
-	{
-		__thiz.callMethod<void>(
-			"setLong",
-			"(ILjava/lang/String;J)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}
@@ -621,16 +472,6 @@ namespace android::widget
 			arg2
 		);
 	}
-	void RemoteViews::setShort(jint arg0, const QString &arg1, jshort arg2)
-	{
-		__thiz.callMethod<void>(
-			"setShort",
-			"(ILjava/lang/String;S)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2
-		);
-	}
 	void RemoteViews::setString(jint arg0, jstring arg1, jstring arg2)
 	{
 		__thiz.callMethod<void>(
@@ -639,16 +480,6 @@ namespace android::widget
 			arg0,
 			arg1,
 			arg2
-		);
-	}
-	void RemoteViews::setString(jint arg0, const QString &arg1, const QString &arg2)
-	{
-		__thiz.callMethod<void>(
-			"setString",
-			"(ILjava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	void RemoteViews::setTextColor(jint arg0, jint arg1)
@@ -693,15 +524,6 @@ namespace android::widget
 			arg1
 		);
 	}
-	void RemoteViews::setTextViewText(jint arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"setTextViewText",
-			"(ILjava/lang/CharSequence;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	void RemoteViews::setTextViewTextSize(jint arg0, jint arg1, jfloat arg2)
 	{
 		__thiz.callMethod<void>(
@@ -719,16 +541,6 @@ namespace android::widget
 			"(ILjava/lang/String;Landroid/net/Uri;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void RemoteViews::setUri(jint arg0, const QString &arg1, android::net::Uri arg2)
-	{
-		__thiz.callMethod<void>(
-			"setUri",
-			"(ILjava/lang/String;Landroid/net/Uri;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}

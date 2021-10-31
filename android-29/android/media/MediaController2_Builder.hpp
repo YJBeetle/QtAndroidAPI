@@ -32,7 +32,7 @@ namespace android::media
 		
 		MediaController2_Builder(QAndroidJniObject obj);
 		// Constructors
-		MediaController2_Builder(android::content::Context &arg0, android::media::Session2Token &arg1);
+		MediaController2_Builder(android::content::Context arg0, android::media::Session2Token arg1);
 		MediaController2_Builder() = default;
 		
 		// Methods

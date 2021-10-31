@@ -15,8 +15,7 @@ namespace android::view
 		WindowManager_BadTokenException(QAndroidJniObject obj);
 		// Constructors
 		WindowManager_BadTokenException();
-		WindowManager_BadTokenException(jstring &arg0);
-		WindowManager_BadTokenException(const QString &arg0);
+		WindowManager_BadTokenException(jstring arg0);
 		
 		// Methods
 	};

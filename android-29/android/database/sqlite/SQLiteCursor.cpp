@@ -9,7 +9,7 @@ namespace android::database::sqlite
 	
 	SQLiteCursor::SQLiteCursor(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SQLiteCursor::SQLiteCursor(__JniBaseClass &arg0, jstring &arg1, android::database::sqlite::SQLiteQuery &arg2)
+	SQLiteCursor::SQLiteCursor(__JniBaseClass arg0, jstring arg1, android::database::sqlite::SQLiteQuery arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.database.sqlite.SQLiteCursor",
@@ -19,17 +19,7 @@ namespace android::database::sqlite
 			arg2.__jniObject().object()
 		);
 	}
-	SQLiteCursor::SQLiteCursor(__JniBaseClass &arg0, const QString &arg1, android::database::sqlite::SQLiteQuery &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.database.sqlite.SQLiteCursor",
-			"(Landroid/database/sqlite/SQLiteCursorDriver;Ljava/lang/String;Landroid/database/sqlite/SQLiteQuery;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object()
-		);
-	}
-	SQLiteCursor::SQLiteCursor(android::database::sqlite::SQLiteDatabase &arg0, __JniBaseClass &arg1, jstring &arg2, android::database::sqlite::SQLiteQuery &arg3)
+	SQLiteCursor::SQLiteCursor(android::database::sqlite::SQLiteDatabase arg0, __JniBaseClass arg1, jstring arg2, android::database::sqlite::SQLiteQuery arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.database.sqlite.SQLiteCursor",
@@ -37,17 +27,6 @@ namespace android::database::sqlite
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3.__jniObject().object()
-		);
-	}
-	SQLiteCursor::SQLiteCursor(android::database::sqlite::SQLiteDatabase &arg0, __JniBaseClass &arg1, const QString &arg2, android::database::sqlite::SQLiteQuery &arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"android.database.sqlite.SQLiteCursor",
-			"(Landroid/database/sqlite/SQLiteDatabase;Landroid/database/sqlite/SQLiteCursorDriver;Ljava/lang/String;Landroid/database/sqlite/SQLiteQuery;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
 			arg3.__jniObject().object()
 		);
 	}
@@ -73,14 +52,6 @@ namespace android::database::sqlite
 			"getColumnIndex",
 			"(Ljava/lang/String;)I",
 			arg0
-		);
-	}
-	jint SQLiteCursor::getColumnIndex(const QString &arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getColumnIndex",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jarray SQLiteCursor::getColumnNames()

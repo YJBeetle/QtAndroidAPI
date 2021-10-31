@@ -12,7 +12,7 @@ namespace android::util
 	
 	MutableByte::MutableByte(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MutableByte::MutableByte(jbyte &arg0)
+	MutableByte::MutableByte(jbyte arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.MutableByte",

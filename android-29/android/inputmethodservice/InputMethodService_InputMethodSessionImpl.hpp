@@ -33,12 +33,11 @@ namespace android::inputmethodservice
 		
 		InputMethodService_InputMethodSessionImpl(QAndroidJniObject obj);
 		// Constructors
-		InputMethodService_InputMethodSessionImpl(android::inputmethodservice::InputMethodService &arg0);
+		InputMethodService_InputMethodSessionImpl(android::inputmethodservice::InputMethodService arg0);
 		InputMethodService_InputMethodSessionImpl() = default;
 		
 		// Methods
 		void appPrivateCommand(jstring arg0, android::os::Bundle arg1);
-		void appPrivateCommand(const QString &arg0, android::os::Bundle arg1);
 		void displayCompletions(jarray arg0);
 		void finishInput();
 		void toggleSoftInput(jint arg0, jint arg1);

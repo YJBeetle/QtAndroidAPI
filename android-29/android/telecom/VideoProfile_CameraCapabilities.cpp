@@ -15,7 +15,7 @@ namespace android::telecom
 	
 	VideoProfile_CameraCapabilities::VideoProfile_CameraCapabilities(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	VideoProfile_CameraCapabilities::VideoProfile_CameraCapabilities(jint &arg0, jint &arg1)
+	VideoProfile_CameraCapabilities::VideoProfile_CameraCapabilities(jint arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.telecom.VideoProfile$CameraCapabilities",
@@ -24,7 +24,7 @@ namespace android::telecom
 			arg1
 		);
 	}
-	VideoProfile_CameraCapabilities::VideoProfile_CameraCapabilities(jint &arg0, jint &arg1, jboolean &arg2, jfloat &arg3)
+	VideoProfile_CameraCapabilities::VideoProfile_CameraCapabilities(jint arg0, jint arg1, jboolean arg2, jfloat arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.telecom.VideoProfile$CameraCapabilities",

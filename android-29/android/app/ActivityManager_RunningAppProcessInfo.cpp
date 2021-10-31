@@ -198,22 +198,12 @@ namespace android::app
 			"()V"
 		);
 	}
-	ActivityManager_RunningAppProcessInfo::ActivityManager_RunningAppProcessInfo(jstring &arg0, jint &arg1, jarray &arg2)
+	ActivityManager_RunningAppProcessInfo::ActivityManager_RunningAppProcessInfo(jstring arg0, jint arg1, jarray arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.ActivityManager$RunningAppProcessInfo",
 			"(Ljava/lang/String;I[Ljava/lang/String;)V",
 			arg0,
-			arg1,
-			arg2
-		);
-	}
-	ActivityManager_RunningAppProcessInfo::ActivityManager_RunningAppProcessInfo(const QString &arg0, jint &arg1, jarray &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.app.ActivityManager$RunningAppProcessInfo",
-			"(Ljava/lang/String;I[Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2
 		);

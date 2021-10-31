@@ -19,8 +19,7 @@ namespace android::app
 		
 		IntentService(QAndroidJniObject obj);
 		// Constructors
-		IntentService(jstring &arg0);
-		IntentService(const QString &arg0);
+		IntentService(jstring arg0);
 		IntentService() = default;
 		
 		// Methods

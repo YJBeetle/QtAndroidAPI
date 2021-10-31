@@ -13,7 +13,7 @@ namespace java::util::concurrent
 			"()V"
 		);
 	}
-	RejectedExecutionException::RejectedExecutionException(jstring &arg0)
+	RejectedExecutionException::RejectedExecutionException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.RejectedExecutionException",
@@ -21,15 +21,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	RejectedExecutionException::RejectedExecutionException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.concurrent.RejectedExecutionException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	RejectedExecutionException::RejectedExecutionException(jthrowable &arg0)
+	RejectedExecutionException::RejectedExecutionException(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.RejectedExecutionException",
@@ -37,21 +29,12 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	RejectedExecutionException::RejectedExecutionException(jstring &arg0, jthrowable &arg1)
+	RejectedExecutionException::RejectedExecutionException(jstring arg0, jthrowable arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.RejectedExecutionException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
-			arg1
-		);
-	}
-	RejectedExecutionException::RejectedExecutionException(const QString &arg0, jthrowable &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.concurrent.RejectedExecutionException",
-			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

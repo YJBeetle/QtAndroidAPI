@@ -28,7 +28,6 @@ namespace android::net::wifi::hotspot2::pps
 		jint hashCode();
 		void setEapType(jint arg0);
 		void setImsi(jstring arg0);
-		void setImsi(const QString &arg0);
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

@@ -6,20 +6,12 @@ namespace java::util
 	
 	MissingFormatArgumentException::MissingFormatArgumentException(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MissingFormatArgumentException::MissingFormatArgumentException(jstring &arg0)
+	MissingFormatArgumentException::MissingFormatArgumentException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.MissingFormatArgumentException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	MissingFormatArgumentException::MissingFormatArgumentException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.MissingFormatArgumentException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

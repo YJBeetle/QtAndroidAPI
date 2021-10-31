@@ -45,15 +45,13 @@ namespace android::view::inputmethod
 		
 		InputMethodInfo(QAndroidJniObject obj);
 		// Constructors
-		InputMethodInfo(android::content::Context &arg0, android::content::pm::ResolveInfo &arg1);
-		InputMethodInfo(jstring &arg0, jstring &arg1, jstring &arg2, jstring &arg3);
-		InputMethodInfo(const QString &arg0, const QString &arg1, const QString &arg2, const QString &arg3);
+		InputMethodInfo(android::content::Context arg0, android::content::pm::ResolveInfo arg1);
+		InputMethodInfo(jstring arg0, jstring arg1, jstring arg2, jstring arg3);
 		InputMethodInfo() = default;
 		
 		// Methods
 		jint describeContents();
 		void dump(__JniBaseClass arg0, jstring arg1);
-		void dump(__JniBaseClass arg0, const QString &arg1);
 		jboolean equals(jobject arg0);
 		QAndroidJniObject getComponent();
 		jstring getId();

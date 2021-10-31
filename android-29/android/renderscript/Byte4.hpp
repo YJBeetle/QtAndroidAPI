@@ -17,7 +17,7 @@ namespace android::renderscript
 		Byte4(QAndroidJniObject obj);
 		// Constructors
 		Byte4();
-		Byte4(jbyte &arg0, jbyte &arg1, jbyte &arg2, jbyte &arg3);
+		Byte4(jbyte arg0, jbyte arg1, jbyte arg2, jbyte arg3);
 		
 		// Methods
 	};

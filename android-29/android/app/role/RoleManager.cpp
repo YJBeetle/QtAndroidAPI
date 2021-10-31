@@ -81,14 +81,6 @@ namespace android::app::role
 			arg0
 		);
 	}
-	QAndroidJniObject RoleManager::createRequestRoleIntent(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"createRequestRoleIntent",
-			"(Ljava/lang/String;)Landroid/content/Intent;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jboolean RoleManager::isRoleAvailable(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -97,28 +89,12 @@ namespace android::app::role
 			arg0
 		);
 	}
-	jboolean RoleManager::isRoleAvailable(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isRoleAvailable",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jboolean RoleManager::isRoleHeld(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isRoleHeld",
 			"(Ljava/lang/String;)Z",
 			arg0
-		);
-	}
-	jboolean RoleManager::isRoleHeld(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isRoleHeld",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace android::app::role

@@ -282,15 +282,6 @@ namespace android::icu::util
 			arg0
 		);
 	}
-	QAndroidJniObject VersionInfo::getInstance(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.util.VersionInfo",
-			"getInstance",
-			"(Ljava/lang/String;)Landroid/icu/util/VersionInfo;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject VersionInfo::getInstance(jint arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

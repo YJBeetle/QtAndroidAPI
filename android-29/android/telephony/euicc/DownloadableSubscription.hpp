@@ -21,7 +21,6 @@ namespace android::telephony::euicc
 		
 		// Methods
 		static QAndroidJniObject forActivationCode(jstring arg0);
-		static QAndroidJniObject forActivationCode(const QString &arg0);
 		jint describeContents();
 		jstring getConfirmationCode();
 		jstring getEncodedActivationCode();

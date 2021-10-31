@@ -142,14 +142,6 @@ namespace android::net
 			arg0
 		);
 	}
-	void LinkProperties::setDomains(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDomains",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void LinkProperties::setHttpProxy(android::net::ProxyInfo arg0)
 	{
 		__thiz.callMethod<void>(
@@ -164,14 +156,6 @@ namespace android::net
 			"setInterfaceName",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void LinkProperties::setInterfaceName(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setInterfaceName",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void LinkProperties::setLinkAddresses(__JniBaseClass arg0)

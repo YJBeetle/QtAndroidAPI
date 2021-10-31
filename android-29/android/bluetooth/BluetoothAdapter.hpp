@@ -68,7 +68,6 @@ namespace android::bluetooth
 		
 		// Methods
 		static jboolean checkBluetoothAddress(jstring arg0);
-		static jboolean checkBluetoothAddress(const QString &arg0);
 		static QAndroidJniObject getDefaultAdapter();
 		jboolean cancelDiscovery();
 		void closeProfileProxy(jint arg0, __JniBaseClass arg1);
@@ -84,7 +83,6 @@ namespace android::bluetooth
 		jboolean getProfileProxy(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		QAndroidJniObject getRemoteDevice(jbyteArray arg0);
 		QAndroidJniObject getRemoteDevice(jstring arg0);
-		QAndroidJniObject getRemoteDevice(const QString &arg0);
 		jint getScanMode();
 		jint getState();
 		jboolean isDiscovering();
@@ -98,12 +96,9 @@ namespace android::bluetooth
 		jboolean isOffloadedScanBatchingSupported();
 		QAndroidJniObject listenUsingInsecureL2capChannel();
 		QAndroidJniObject listenUsingInsecureRfcommWithServiceRecord(jstring arg0, java::util::UUID arg1);
-		QAndroidJniObject listenUsingInsecureRfcommWithServiceRecord(const QString &arg0, java::util::UUID arg1);
 		QAndroidJniObject listenUsingL2capChannel();
 		QAndroidJniObject listenUsingRfcommWithServiceRecord(jstring arg0, java::util::UUID arg1);
-		QAndroidJniObject listenUsingRfcommWithServiceRecord(const QString &arg0, java::util::UUID arg1);
 		jboolean setName(jstring arg0);
-		jboolean setName(const QString &arg0);
 		jboolean startDiscovery();
 		jboolean startLeScan(__JniBaseClass arg0);
 		jboolean startLeScan(jarray arg0, __JniBaseClass arg1);

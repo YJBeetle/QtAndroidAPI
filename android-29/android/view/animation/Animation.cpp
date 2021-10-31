@@ -85,7 +85,7 @@ namespace android::view::animation
 			"()V"
 		);
 	}
-	Animation::Animation(android::content::Context &arg0, __JniBaseClass &arg1)
+	Animation::Animation(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.Animation",

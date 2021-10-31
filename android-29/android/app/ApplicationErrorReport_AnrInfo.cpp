@@ -35,7 +35,7 @@ namespace android::app
 			"()V"
 		);
 	}
-	ApplicationErrorReport_AnrInfo::ApplicationErrorReport_AnrInfo(android::os::Parcel &arg0)
+	ApplicationErrorReport_AnrInfo::ApplicationErrorReport_AnrInfo(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.ApplicationErrorReport$AnrInfo",
@@ -52,15 +52,6 @@ namespace android::app
 			"(Landroid/util/Printer;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	void ApplicationErrorReport_AnrInfo::dump(__JniBaseClass arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Landroid/util/Printer;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void ApplicationErrorReport_AnrInfo::writeToParcel(android::os::Parcel arg0, jint arg1)

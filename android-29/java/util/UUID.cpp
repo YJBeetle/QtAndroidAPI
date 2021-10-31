@@ -6,7 +6,7 @@ namespace java::util
 	
 	UUID::UUID(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	UUID::UUID(jlong &arg0, jlong &arg1)
+	UUID::UUID(jlong arg0, jlong arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.UUID",
@@ -24,15 +24,6 @@ namespace java::util
 			"fromString",
 			"(Ljava/lang/String;)Ljava/util/UUID;",
 			arg0
-		);
-	}
-	QAndroidJniObject UUID::fromString(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.util.UUID",
-			"fromString",
-			"(Ljava/lang/String;)Ljava/util/UUID;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject UUID::nameUUIDFromBytes(jbyteArray arg0)

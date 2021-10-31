@@ -25,7 +25,7 @@ namespace android::widget
 	
 	CursorAdapter::CursorAdapter(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	CursorAdapter::CursorAdapter(android::content::Context &arg0, __JniBaseClass &arg1)
+	CursorAdapter::CursorAdapter(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.CursorAdapter",
@@ -34,7 +34,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	CursorAdapter::CursorAdapter(android::content::Context &arg0, __JniBaseClass &arg1, jboolean &arg2)
+	CursorAdapter::CursorAdapter(android::content::Context arg0, __JniBaseClass arg1, jboolean arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.CursorAdapter",
@@ -44,7 +44,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	CursorAdapter::CursorAdapter(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	CursorAdapter::CursorAdapter(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.CursorAdapter",
@@ -186,14 +186,6 @@ namespace android::widget
 			"runQueryOnBackgroundThread",
 			"(Ljava/lang/CharSequence;)Landroid/database/Cursor;",
 			arg0
-		);
-	}
-	QAndroidJniObject CursorAdapter::runQueryOnBackgroundThread(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"runQueryOnBackgroundThread",
-			"(Ljava/lang/CharSequence;)Landroid/database/Cursor;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void CursorAdapter::setDropDownViewTheme(android::content::res::Resources_Theme arg0)

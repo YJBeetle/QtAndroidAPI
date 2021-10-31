@@ -17,8 +17,7 @@ namespace android::content
 		
 		LocusId(QAndroidJniObject obj);
 		// Constructors
-		LocusId(jstring &arg0);
-		LocusId(const QString &arg0);
+		LocusId(jstring arg0);
 		LocusId() = default;
 		
 		// Methods

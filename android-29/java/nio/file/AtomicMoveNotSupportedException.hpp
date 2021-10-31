@@ -15,8 +15,7 @@ namespace java::nio::file
 		
 		AtomicMoveNotSupportedException(QAndroidJniObject obj);
 		// Constructors
-		AtomicMoveNotSupportedException(jstring &arg0, jstring &arg1, jstring &arg2);
-		AtomicMoveNotSupportedException(const QString &arg0, const QString &arg1, const QString &arg2);
+		AtomicMoveNotSupportedException(jstring arg0, jstring arg1, jstring arg2);
 		AtomicMoveNotSupportedException() = default;
 		
 		// Methods

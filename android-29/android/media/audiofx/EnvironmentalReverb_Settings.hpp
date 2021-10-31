@@ -23,8 +23,7 @@ namespace android::media::audiofx
 		EnvironmentalReverb_Settings(QAndroidJniObject obj);
 		// Constructors
 		EnvironmentalReverb_Settings();
-		EnvironmentalReverb_Settings(jstring &arg0);
-		EnvironmentalReverb_Settings(const QString &arg0);
+		EnvironmentalReverb_Settings(jstring arg0);
 		
 		// Methods
 		jstring toString();

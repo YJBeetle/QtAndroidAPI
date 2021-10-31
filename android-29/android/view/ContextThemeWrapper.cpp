@@ -18,7 +18,7 @@ namespace android::view
 			"()V"
 		);
 	}
-	ContextThemeWrapper::ContextThemeWrapper(android::content::Context &arg0, android::content::res::Resources_Theme &arg1)
+	ContextThemeWrapper::ContextThemeWrapper(android::content::Context arg0, android::content::res::Resources_Theme arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.ContextThemeWrapper",
@@ -27,7 +27,7 @@ namespace android::view
 			arg1.__jniObject().object()
 		);
 	}
-	ContextThemeWrapper::ContextThemeWrapper(android::content::Context &arg0, jint &arg1)
+	ContextThemeWrapper::ContextThemeWrapper(android::content::Context arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.ContextThemeWrapper",
@@ -66,14 +66,6 @@ namespace android::view
 			"getSystemService",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
 			arg0
-		).object<jobject>();
-	}
-	jobject ContextThemeWrapper::getSystemService(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getSystemService",
-			"(Ljava/lang/String;)Ljava/lang/Object;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jobject>();
 	}
 	QAndroidJniObject ContextThemeWrapper::getTheme()

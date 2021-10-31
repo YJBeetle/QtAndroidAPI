@@ -155,18 +155,5 @@ namespace android::provider
 			arg4
 		);
 	}
-	QAndroidJniObject CalendarContract_Instances::query(android::content::ContentResolver arg0, jarray arg1, jlong arg2, jlong arg3, const QString &arg4)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.CalendarContract$Instances",
-			"query",
-			"(Landroid/content/ContentResolver;[Ljava/lang/String;JJLjava/lang/String;)Landroid/database/Cursor;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2,
-			arg3,
-			QAndroidJniObject::fromString(arg4).object<jstring>()
-		);
-	}
 } // namespace android::provider
 

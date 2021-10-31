@@ -24,15 +24,13 @@ namespace android::service::autofill
 		
 		ImageTransformation_Builder(QAndroidJniObject obj);
 		// Constructors
-		ImageTransformation_Builder(android::view::autofill::AutofillId &arg0, java::util::regex::Pattern &arg1, jint &arg2);
-		ImageTransformation_Builder(android::view::autofill::AutofillId &arg0, java::util::regex::Pattern &arg1, jint &arg2, jstring &arg3);
-		ImageTransformation_Builder(android::view::autofill::AutofillId &arg0, java::util::regex::Pattern &arg1, jint &arg2, const QString &arg3);
+		ImageTransformation_Builder(android::view::autofill::AutofillId arg0, java::util::regex::Pattern arg1, jint arg2);
+		ImageTransformation_Builder(android::view::autofill::AutofillId arg0, java::util::regex::Pattern arg1, jint arg2, jstring arg3);
 		ImageTransformation_Builder() = default;
 		
 		// Methods
 		QAndroidJniObject addOption(java::util::regex::Pattern arg0, jint arg1);
 		QAndroidJniObject addOption(java::util::regex::Pattern arg0, jint arg1, jstring arg2);
-		QAndroidJniObject addOption(java::util::regex::Pattern arg0, jint arg1, const QString &arg2);
 		QAndroidJniObject build();
 	};
 } // namespace android::service::autofill

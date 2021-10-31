@@ -13,7 +13,7 @@ namespace java::util::concurrent::atomic
 			"()V"
 		);
 	}
-	AtomicLong::AtomicLong(jlong &arg0)
+	AtomicLong::AtomicLong(jlong arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.atomic.AtomicLong",

@@ -10,7 +10,7 @@ namespace android::widget
 	
 	RadioGroup_LayoutParams::RadioGroup_LayoutParams(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	RadioGroup_LayoutParams::RadioGroup_LayoutParams(android::view::ViewGroup_LayoutParams &arg0)
+	RadioGroup_LayoutParams::RadioGroup_LayoutParams(android::view::ViewGroup_LayoutParams arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.RadioGroup$LayoutParams",
@@ -18,7 +18,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	RadioGroup_LayoutParams::RadioGroup_LayoutParams(android::view::ViewGroup_MarginLayoutParams &arg0)
+	RadioGroup_LayoutParams::RadioGroup_LayoutParams(android::view::ViewGroup_MarginLayoutParams arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.RadioGroup$LayoutParams",
@@ -26,7 +26,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	RadioGroup_LayoutParams::RadioGroup_LayoutParams(android::content::Context &arg0, __JniBaseClass &arg1)
+	RadioGroup_LayoutParams::RadioGroup_LayoutParams(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.RadioGroup$LayoutParams",
@@ -35,7 +35,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	RadioGroup_LayoutParams::RadioGroup_LayoutParams(jint &arg0, jint &arg1)
+	RadioGroup_LayoutParams::RadioGroup_LayoutParams(jint arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.RadioGroup$LayoutParams",
@@ -44,7 +44,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	RadioGroup_LayoutParams::RadioGroup_LayoutParams(jint &arg0, jint &arg1, jfloat &arg2)
+	RadioGroup_LayoutParams::RadioGroup_LayoutParams(jint arg0, jint arg1, jfloat arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.RadioGroup$LayoutParams",

@@ -14,8 +14,7 @@ namespace android::util
 		
 		NoSuchPropertyException(QAndroidJniObject obj);
 		// Constructors
-		NoSuchPropertyException(jstring &arg0);
-		NoSuchPropertyException(const QString &arg0);
+		NoSuchPropertyException(jstring arg0);
 		NoSuchPropertyException() = default;
 		
 		// Methods

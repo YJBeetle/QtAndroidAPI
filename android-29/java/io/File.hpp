@@ -32,20 +32,15 @@ namespace java::io
 		
 		File(QAndroidJniObject obj);
 		// Constructors
-		File(jstring &arg0);
-		File(const QString &arg0);
-		File(java::net::URI &arg0);
-		File(java::io::File &arg0, jstring &arg1);
-		File(java::io::File &arg0, const QString &arg1);
-		File(jstring &arg0, jstring &arg1);
-		File(const QString &arg0, const QString &arg1);
+		File(jstring arg0);
+		File(java::net::URI arg0);
+		File(java::io::File &arg0, jstring arg1);
+		File(jstring arg0, jstring arg1);
 		File() = default;
 		
 		// Methods
 		static QAndroidJniObject createTempFile(jstring arg0, jstring arg1);
-		static QAndroidJniObject createTempFile(const QString &arg0, const QString &arg1);
 		static QAndroidJniObject createTempFile(jstring arg0, jstring arg1, java::io::File arg2);
-		static QAndroidJniObject createTempFile(const QString &arg0, const QString &arg1, java::io::File arg2);
 		static jarray listRoots();
 		jboolean canExecute();
 		jboolean canRead();

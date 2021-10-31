@@ -97,15 +97,6 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	QAndroidJniObject Icon::createWithContentUri(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.drawable.Icon",
-			"createWithContentUri",
-			"(Ljava/lang/String;)Landroid/graphics/drawable/Icon;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Icon::createWithData(jbyteArray arg0, jint arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -126,15 +117,6 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	QAndroidJniObject Icon::createWithFilePath(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.drawable.Icon",
-			"createWithFilePath",
-			"(Ljava/lang/String;)Landroid/graphics/drawable/Icon;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Icon::createWithResource(android::content::Context arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -152,16 +134,6 @@ namespace android::graphics::drawable
 			"createWithResource",
 			"(Ljava/lang/String;I)Landroid/graphics/drawable/Icon;",
 			arg0,
-			arg1
-		);
-	}
-	QAndroidJniObject Icon::createWithResource(const QString &arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.drawable.Icon",
-			"createWithResource",
-			"(Ljava/lang/String;I)Landroid/graphics/drawable/Icon;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

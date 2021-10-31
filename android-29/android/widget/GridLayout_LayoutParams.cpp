@@ -32,7 +32,7 @@ namespace android::widget
 			"()V"
 		);
 	}
-	GridLayout_LayoutParams::GridLayout_LayoutParams(android::view::ViewGroup_LayoutParams &arg0)
+	GridLayout_LayoutParams::GridLayout_LayoutParams(android::view::ViewGroup_LayoutParams arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.GridLayout$LayoutParams",
@@ -40,7 +40,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	GridLayout_LayoutParams::GridLayout_LayoutParams(android::view::ViewGroup_MarginLayoutParams &arg0)
+	GridLayout_LayoutParams::GridLayout_LayoutParams(android::view::ViewGroup_MarginLayoutParams arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.GridLayout$LayoutParams",
@@ -56,7 +56,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	GridLayout_LayoutParams::GridLayout_LayoutParams(android::content::Context &arg0, __JniBaseClass &arg1)
+	GridLayout_LayoutParams::GridLayout_LayoutParams(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.GridLayout$LayoutParams",
@@ -65,7 +65,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	GridLayout_LayoutParams::GridLayout_LayoutParams(android::widget::GridLayout_Spec &arg0, android::widget::GridLayout_Spec &arg1)
+	GridLayout_LayoutParams::GridLayout_LayoutParams(android::widget::GridLayout_Spec arg0, android::widget::GridLayout_Spec arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.GridLayout$LayoutParams",

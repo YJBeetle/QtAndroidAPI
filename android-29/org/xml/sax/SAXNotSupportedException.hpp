@@ -15,8 +15,7 @@ namespace org::xml::sax
 		SAXNotSupportedException(QAndroidJniObject obj);
 		// Constructors
 		SAXNotSupportedException();
-		SAXNotSupportedException(jstring &arg0);
-		SAXNotSupportedException(const QString &arg0);
+		SAXNotSupportedException(jstring arg0);
 		
 		// Methods
 	};

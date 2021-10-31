@@ -7,7 +7,7 @@ namespace android::util
 	
 	Base64OutputStream::Base64OutputStream(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Base64OutputStream::Base64OutputStream(java::io::OutputStream &arg0, jint &arg1)
+	Base64OutputStream::Base64OutputStream(java::io::OutputStream arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.Base64OutputStream",

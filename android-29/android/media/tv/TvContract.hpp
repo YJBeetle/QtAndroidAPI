@@ -40,9 +40,7 @@ namespace android::media::tv
 		static QAndroidJniObject buildChannelLogoUri(jlong arg0);
 		static QAndroidJniObject buildChannelUri(jlong arg0);
 		static QAndroidJniObject buildChannelUriForPassthroughInput(jstring arg0);
-		static QAndroidJniObject buildChannelUriForPassthroughInput(const QString &arg0);
 		static QAndroidJniObject buildChannelsUriForInput(jstring arg0);
-		static QAndroidJniObject buildChannelsUriForInput(const QString &arg0);
 		static jstring buildInputId(android::content::ComponentName arg0);
 		static QAndroidJniObject buildPreviewProgramUri(jlong arg0);
 		static QAndroidJniObject buildPreviewProgramsUriForChannel(android::net::Uri arg0);

@@ -44,7 +44,7 @@ namespace android::widget
 	
 	DialerFilter::DialerFilter(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DialerFilter::DialerFilter(android::content::Context &arg0)
+	DialerFilter::DialerFilter(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.DialerFilter",
@@ -52,7 +52,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	DialerFilter::DialerFilter(android::content::Context &arg0, __JniBaseClass &arg1)
+	DialerFilter::DialerFilter(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.DialerFilter",
@@ -69,14 +69,6 @@ namespace android::widget
 			"append",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void DialerFilter::append(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"append",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void DialerFilter::clearText()

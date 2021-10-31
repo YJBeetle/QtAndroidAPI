@@ -35,10 +35,10 @@ namespace android::widget
 		
 		TimePicker(QAndroidJniObject obj);
 		// Constructors
-		TimePicker(android::content::Context &arg0);
-		TimePicker(android::content::Context &arg0, __JniBaseClass &arg1);
-		TimePicker(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		TimePicker(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		TimePicker(android::content::Context arg0);
+		TimePicker(android::content::Context arg0, __JniBaseClass arg1);
+		TimePicker(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		TimePicker(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		TimePicker() = default;
 		
 		// Methods

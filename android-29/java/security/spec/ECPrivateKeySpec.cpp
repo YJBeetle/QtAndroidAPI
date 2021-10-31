@@ -8,7 +8,7 @@ namespace java::security::spec
 	
 	ECPrivateKeySpec::ECPrivateKeySpec(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ECPrivateKeySpec::ECPrivateKeySpec(java::math::BigInteger &arg0, java::security::spec::ECParameterSpec &arg1)
+	ECPrivateKeySpec::ECPrivateKeySpec(java::math::BigInteger arg0, java::security::spec::ECParameterSpec arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.spec.ECPrivateKeySpec",

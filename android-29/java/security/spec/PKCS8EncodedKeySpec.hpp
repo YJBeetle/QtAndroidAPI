@@ -13,9 +13,8 @@ namespace java::security::spec
 		
 		PKCS8EncodedKeySpec(QAndroidJniObject obj);
 		// Constructors
-		PKCS8EncodedKeySpec(jbyteArray &arg0);
-		PKCS8EncodedKeySpec(jbyteArray &arg0, jstring &arg1);
-		PKCS8EncodedKeySpec(jbyteArray &arg0, const QString &arg1);
+		PKCS8EncodedKeySpec(jbyteArray arg0);
+		PKCS8EncodedKeySpec(jbyteArray arg0, jstring arg1);
 		PKCS8EncodedKeySpec() = default;
 		
 		// Methods

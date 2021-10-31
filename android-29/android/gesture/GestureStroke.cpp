@@ -30,7 +30,7 @@ namespace android::gesture
 	
 	GestureStroke::GestureStroke(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	GestureStroke::GestureStroke(java::util::ArrayList &arg0)
+	GestureStroke::GestureStroke(java::util::ArrayList arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.gesture.GestureStroke",

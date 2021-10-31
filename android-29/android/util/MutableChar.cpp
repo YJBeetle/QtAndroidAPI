@@ -12,7 +12,7 @@ namespace android::util
 	
 	MutableChar::MutableChar(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MutableChar::MutableChar(jchar &arg0)
+	MutableChar::MutableChar(jchar arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.MutableChar",

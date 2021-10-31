@@ -131,15 +131,6 @@ namespace android::net::wifi
 			arg0
 		);
 	}
-	QAndroidJniObject SupplicantState::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.net.wifi.SupplicantState",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/net/wifi/SupplicantState;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray SupplicantState::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

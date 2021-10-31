@@ -21,8 +21,7 @@ namespace android::telecom
 		
 		GatewayInfo(QAndroidJniObject obj);
 		// Constructors
-		GatewayInfo(jstring &arg0, android::net::Uri &arg1, android::net::Uri &arg2);
-		GatewayInfo(const QString &arg0, android::net::Uri &arg1, android::net::Uri &arg2);
+		GatewayInfo(jstring arg0, android::net::Uri arg1, android::net::Uri arg2);
 		GatewayInfo() = default;
 		
 		// Methods

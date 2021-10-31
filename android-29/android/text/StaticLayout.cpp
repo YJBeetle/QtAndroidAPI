@@ -10,7 +10,7 @@ namespace android::text
 	
 	StaticLayout::StaticLayout(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	StaticLayout::StaticLayout(jstring &arg0, android::text::TextPaint &arg1, jint &arg2, android::text::Layout_Alignment &arg3, jfloat &arg4, jfloat &arg5, jboolean &arg6)
+	StaticLayout::StaticLayout(jstring arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, jboolean arg6)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.StaticLayout",
@@ -24,21 +24,7 @@ namespace android::text
 			arg6
 		);
 	}
-	StaticLayout::StaticLayout(const QString &arg0, android::text::TextPaint &arg1, jint &arg2, android::text::Layout_Alignment &arg3, jfloat &arg4, jfloat &arg5, jboolean &arg6)
-	{
-		__thiz = QAndroidJniObject(
-			"android.text.StaticLayout",
-			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFZ)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2,
-			arg3.__jniObject().object(),
-			arg4,
-			arg5,
-			arg6
-		);
-	}
-	StaticLayout::StaticLayout(jstring &arg0, jint &arg1, jint &arg2, android::text::TextPaint &arg3, jint &arg4, android::text::Layout_Alignment &arg5, jfloat &arg6, jfloat &arg7, jboolean &arg8)
+	StaticLayout::StaticLayout(jstring arg0, jint arg1, jint arg2, android::text::TextPaint arg3, jint arg4, android::text::Layout_Alignment arg5, jfloat arg6, jfloat arg7, jboolean arg8)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.StaticLayout",
@@ -54,46 +40,12 @@ namespace android::text
 			arg8
 		);
 	}
-	StaticLayout::StaticLayout(const QString &arg0, jint &arg1, jint &arg2, android::text::TextPaint &arg3, jint &arg4, android::text::Layout_Alignment &arg5, jfloat &arg6, jfloat &arg7, jboolean &arg8)
-	{
-		__thiz = QAndroidJniObject(
-			"android.text.StaticLayout",
-			"(Ljava/lang/CharSequence;IILandroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFZ)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2,
-			arg3.__jniObject().object(),
-			arg4,
-			arg5.__jniObject().object(),
-			arg6,
-			arg7,
-			arg8
-		);
-	}
-	StaticLayout::StaticLayout(jstring &arg0, jint &arg1, jint &arg2, android::text::TextPaint &arg3, jint &arg4, android::text::Layout_Alignment &arg5, jfloat &arg6, jfloat &arg7, jboolean &arg8, android::text::TextUtils_TruncateAt &arg9, jint &arg10)
+	StaticLayout::StaticLayout(jstring arg0, jint arg1, jint arg2, android::text::TextPaint arg3, jint arg4, android::text::Layout_Alignment arg5, jfloat arg6, jfloat arg7, jboolean arg8, android::text::TextUtils_TruncateAt arg9, jint arg10)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.StaticLayout",
 			"(Ljava/lang/CharSequence;IILandroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFZLandroid/text/TextUtils$TruncateAt;I)V",
 			arg0,
-			arg1,
-			arg2,
-			arg3.__jniObject().object(),
-			arg4,
-			arg5.__jniObject().object(),
-			arg6,
-			arg7,
-			arg8,
-			arg9.__jniObject().object(),
-			arg10
-		);
-	}
-	StaticLayout::StaticLayout(const QString &arg0, jint &arg1, jint &arg2, android::text::TextPaint &arg3, jint &arg4, android::text::Layout_Alignment &arg5, jfloat &arg6, jfloat &arg7, jboolean &arg8, android::text::TextUtils_TruncateAt &arg9, jint &arg10)
-	{
-		__thiz = QAndroidJniObject(
-			"android.text.StaticLayout",
-			"(Ljava/lang/CharSequence;IILandroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFZLandroid/text/TextUtils$TruncateAt;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2,
 			arg3.__jniObject().object(),

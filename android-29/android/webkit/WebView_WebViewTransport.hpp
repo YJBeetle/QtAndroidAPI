@@ -16,7 +16,7 @@ namespace android::webkit
 		
 		WebView_WebViewTransport(QAndroidJniObject obj);
 		// Constructors
-		WebView_WebViewTransport(android::webkit::WebView &arg0);
+		WebView_WebViewTransport(android::webkit::WebView arg0);
 		WebView_WebViewTransport() = default;
 		
 		// Methods

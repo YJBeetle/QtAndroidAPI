@@ -41,15 +41,6 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject UnicodeSet_ComparisonStyle::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.UnicodeSet$ComparisonStyle",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/icu/text/UnicodeSet$ComparisonStyle;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray UnicodeSet_ComparisonStyle::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

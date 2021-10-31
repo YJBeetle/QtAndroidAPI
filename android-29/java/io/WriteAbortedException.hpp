@@ -20,8 +20,7 @@ namespace java::io
 		
 		WriteAbortedException(QAndroidJniObject obj);
 		// Constructors
-		WriteAbortedException(jstring &arg0, java::lang::Exception &arg1);
-		WriteAbortedException(const QString &arg0, java::lang::Exception &arg1);
+		WriteAbortedException(jstring arg0, java::lang::Exception arg1);
 		WriteAbortedException() = default;
 		
 		// Methods

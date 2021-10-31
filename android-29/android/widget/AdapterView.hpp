@@ -38,10 +38,10 @@ namespace android::widget
 		
 		AdapterView(QAndroidJniObject obj);
 		// Constructors
-		AdapterView(android::content::Context &arg0);
-		AdapterView(android::content::Context &arg0, __JniBaseClass &arg1);
-		AdapterView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		AdapterView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		AdapterView(android::content::Context arg0);
+		AdapterView(android::content::Context arg0, __JniBaseClass arg1);
+		AdapterView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		AdapterView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		AdapterView() = default;
 		
 		// Methods

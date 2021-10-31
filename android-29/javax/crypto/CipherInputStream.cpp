@@ -8,7 +8,7 @@ namespace javax::crypto
 	
 	CipherInputStream::CipherInputStream(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	CipherInputStream::CipherInputStream(java::io::InputStream &arg0, javax::crypto::Cipher &arg1)
+	CipherInputStream::CipherInputStream(java::io::InputStream arg0, javax::crypto::Cipher arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.crypto.CipherInputStream",

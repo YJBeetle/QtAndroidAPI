@@ -29,7 +29,6 @@ namespace android::hardware::usb
 		
 		// Methods
 		static jint getDeviceId(jstring arg0);
-		static jint getDeviceId(const QString &arg0);
 		static jstring getDeviceName(jint arg0);
 		jint describeContents();
 		jboolean equals(jobject arg0);

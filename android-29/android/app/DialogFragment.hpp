@@ -55,7 +55,6 @@ namespace android::app
 		void dismiss();
 		void dismissAllowingStateLoss();
 		void dump(jstring arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3);
-		void dump(const QString &arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3);
 		QAndroidJniObject getDialog();
 		jboolean getShowsDialog();
 		jint getTheme();
@@ -76,9 +75,7 @@ namespace android::app
 		void setShowsDialog(jboolean arg0);
 		void setStyle(jint arg0, jint arg1);
 		jint show(android::app::FragmentTransaction arg0, jstring arg1);
-		jint show(android::app::FragmentTransaction arg0, const QString &arg1);
 		void show(android::app::FragmentManager arg0, jstring arg1);
-		void show(android::app::FragmentManager arg0, const QString &arg1);
 	};
 } // namespace android::app
 

@@ -124,14 +124,6 @@ namespace java::time::format
 			arg0
 		);
 	}
-	QAndroidJniObject DateTimeFormatterBuilder::appendLiteral(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"appendLiteral",
-			"(Ljava/lang/String;)Ljava/time/format/DateTimeFormatterBuilder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject DateTimeFormatterBuilder::appendLocalized(java::time::format::FormatStyle arg0, java::time::format::FormatStyle arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -158,15 +150,6 @@ namespace java::time::format
 			arg1
 		);
 	}
-	QAndroidJniObject DateTimeFormatterBuilder::appendOffset(const QString &arg0, const QString &arg1)
-	{
-		return __thiz.callObjectMethod(
-			"appendOffset",
-			"(Ljava/lang/String;Ljava/lang/String;)Ljava/time/format/DateTimeFormatterBuilder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	QAndroidJniObject DateTimeFormatterBuilder::appendOffsetId()
 	{
 		return __thiz.callObjectMethod(
@@ -188,14 +171,6 @@ namespace java::time::format
 			"appendPattern",
 			"(Ljava/lang/String;)Ljava/time/format/DateTimeFormatterBuilder;",
 			arg0
-		);
-	}
-	QAndroidJniObject DateTimeFormatterBuilder::appendPattern(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"appendPattern",
-			"(Ljava/lang/String;)Ljava/time/format/DateTimeFormatterBuilder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject DateTimeFormatterBuilder::appendText(__JniBaseClass arg0)

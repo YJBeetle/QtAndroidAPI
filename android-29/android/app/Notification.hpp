@@ -170,9 +170,8 @@ namespace android::app
 		Notification(QAndroidJniObject obj);
 		// Constructors
 		Notification();
-		Notification(android::os::Parcel &arg0);
-		Notification(jint &arg0, jstring &arg1, jlong &arg2);
-		Notification(jint &arg0, const QString &arg1, jlong &arg2);
+		Notification(android::os::Parcel arg0);
+		Notification(jint arg0, jstring arg1, jlong arg2);
 		
 		// Methods
 		QAndroidJniObject clone();

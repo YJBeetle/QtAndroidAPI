@@ -17,7 +17,7 @@ namespace android::service::autofill
 		
 		LuhnChecksumValidator(QAndroidJniObject obj);
 		// Constructors
-		LuhnChecksumValidator(jarray &arg0);
+		LuhnChecksumValidator(jarray arg0);
 		LuhnChecksumValidator() = default;
 		
 		// Methods

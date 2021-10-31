@@ -14,10 +14,8 @@ namespace java::nio::file
 		
 		FileSystemException(QAndroidJniObject obj);
 		// Constructors
-		FileSystemException(jstring &arg0);
-		FileSystemException(const QString &arg0);
-		FileSystemException(jstring &arg0, jstring &arg1, jstring &arg2);
-		FileSystemException(const QString &arg0, const QString &arg1, const QString &arg2);
+		FileSystemException(jstring arg0);
+		FileSystemException(jstring arg0, jstring arg1, jstring arg2);
 		FileSystemException() = default;
 		
 		// Methods

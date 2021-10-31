@@ -37,8 +37,8 @@ namespace android::transition
 		Fade(QAndroidJniObject obj);
 		// Constructors
 		Fade();
-		Fade(jint &arg0);
-		Fade(android::content::Context &arg0, __JniBaseClass &arg1);
+		Fade(jint arg0);
+		Fade(android::content::Context arg0, __JniBaseClass arg1);
 		
 		// Methods
 		void captureStartValues(android::transition::TransitionValues arg0);

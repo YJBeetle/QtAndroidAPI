@@ -25,7 +25,7 @@ namespace android::content::res
 		
 		ColorStateList(QAndroidJniObject obj);
 		// Constructors
-		ColorStateList(jarray &arg0, jintArray &arg1);
+		ColorStateList(jarray arg0, jintArray arg1);
 		ColorStateList() = default;
 		
 		// Methods

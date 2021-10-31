@@ -17,7 +17,7 @@ namespace android::content::pm
 		
 		ChangedPackages(QAndroidJniObject obj);
 		// Constructors
-		ChangedPackages(jint &arg0, __JniBaseClass &arg1);
+		ChangedPackages(jint arg0, __JniBaseClass arg1);
 		ChangedPackages() = default;
 		
 		// Methods

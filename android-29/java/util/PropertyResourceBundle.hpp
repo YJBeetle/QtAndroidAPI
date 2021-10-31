@@ -21,14 +21,13 @@ namespace java::util
 		
 		PropertyResourceBundle(QAndroidJniObject obj);
 		// Constructors
-		PropertyResourceBundle(java::io::InputStream &arg0);
-		PropertyResourceBundle(java::io::Reader &arg0);
+		PropertyResourceBundle(java::io::InputStream arg0);
+		PropertyResourceBundle(java::io::Reader arg0);
 		PropertyResourceBundle() = default;
 		
 		// Methods
 		QAndroidJniObject getKeys();
 		jobject handleGetObject(jstring arg0);
-		jobject handleGetObject(const QString &arg0);
 	};
 } // namespace java::util
 

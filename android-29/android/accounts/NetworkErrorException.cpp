@@ -13,7 +13,7 @@ namespace android::accounts
 			"()V"
 		);
 	}
-	NetworkErrorException::NetworkErrorException(jstring &arg0)
+	NetworkErrorException::NetworkErrorException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.accounts.NetworkErrorException",
@@ -21,15 +21,7 @@ namespace android::accounts
 			arg0
 		);
 	}
-	NetworkErrorException::NetworkErrorException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.accounts.NetworkErrorException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	NetworkErrorException::NetworkErrorException(jthrowable &arg0)
+	NetworkErrorException::NetworkErrorException(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.accounts.NetworkErrorException",
@@ -37,21 +29,12 @@ namespace android::accounts
 			arg0
 		);
 	}
-	NetworkErrorException::NetworkErrorException(jstring &arg0, jthrowable &arg1)
+	NetworkErrorException::NetworkErrorException(jstring arg0, jthrowable arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.accounts.NetworkErrorException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
-			arg1
-		);
-	}
-	NetworkErrorException::NetworkErrorException(const QString &arg0, jthrowable &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.accounts.NetworkErrorException",
-			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

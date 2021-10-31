@@ -32,7 +32,6 @@ namespace android::icu::text
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);
-		static QAndroidJniObject valueOf(const QString &arg0);
 		static jarray values();
 		QAndroidJniObject type();
 		jint value();

@@ -21,7 +21,7 @@ namespace android::app
 		
 		VoiceInteractor_AbortVoiceRequest(QAndroidJniObject obj);
 		// Constructors
-		VoiceInteractor_AbortVoiceRequest(android::app::VoiceInteractor_Prompt &arg0, android::os::Bundle &arg1);
+		VoiceInteractor_AbortVoiceRequest(android::app::VoiceInteractor_Prompt arg0, android::os::Bundle arg1);
 		VoiceInteractor_AbortVoiceRequest() = default;
 		
 		// Methods

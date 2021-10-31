@@ -17,7 +17,7 @@ namespace android::service::autofill
 	
 	RegexValidator::RegexValidator(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	RegexValidator::RegexValidator(android::view::autofill::AutofillId &arg0, java::util::regex::Pattern &arg1)
+	RegexValidator::RegexValidator(android::view::autofill::AutofillId arg0, java::util::regex::Pattern arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.service.autofill.RegexValidator",

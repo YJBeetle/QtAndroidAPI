@@ -104,15 +104,6 @@ namespace android::text
 			arg0
 		);
 	}
-	jint Selection::getSelectionEnd(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.text.Selection",
-			"getSelectionEnd",
-			"(Ljava/lang/CharSequence;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jint Selection::getSelectionStart(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -120,15 +111,6 @@ namespace android::text
 			"getSelectionStart",
 			"(Ljava/lang/CharSequence;)I",
 			arg0
-		);
-	}
-	jint Selection::getSelectionStart(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.text.Selection",
-			"getSelectionStart",
-			"(Ljava/lang/CharSequence;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean Selection::moveDown(__JniBaseClass arg0, android::text::Layout arg1)

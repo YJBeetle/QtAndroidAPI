@@ -41,15 +41,6 @@ namespace android::net
 			arg0
 		);
 	}
-	QAndroidJniObject LocalSocketAddress_Namespace::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.net.LocalSocketAddress$Namespace",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/net/LocalSocketAddress$Namespace;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray LocalSocketAddress_Namespace::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

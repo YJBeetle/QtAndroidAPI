@@ -6,22 +6,13 @@ namespace java::lang::annotation
 	
 	IncompleteAnnotationException::IncompleteAnnotationException(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	IncompleteAnnotationException::IncompleteAnnotationException(jclass &arg0, jstring &arg1)
+	IncompleteAnnotationException::IncompleteAnnotationException(jclass arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.annotation.IncompleteAnnotationException",
 			"(Ljava/lang/Class;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	IncompleteAnnotationException::IncompleteAnnotationException(jclass &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.annotation.IncompleteAnnotationException",
-			"(Ljava/lang/Class;Ljava/lang/String;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	

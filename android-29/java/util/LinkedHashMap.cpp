@@ -14,7 +14,7 @@ namespace java::util
 			"()V"
 		);
 	}
-	LinkedHashMap::LinkedHashMap(jint &arg0)
+	LinkedHashMap::LinkedHashMap(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.LinkedHashMap",
@@ -22,7 +22,7 @@ namespace java::util
 			arg0
 		);
 	}
-	LinkedHashMap::LinkedHashMap(__JniBaseClass &arg0)
+	LinkedHashMap::LinkedHashMap(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.LinkedHashMap",
@@ -30,7 +30,7 @@ namespace java::util
 			arg0.__jniObject().object()
 		);
 	}
-	LinkedHashMap::LinkedHashMap(jint &arg0, jfloat &arg1)
+	LinkedHashMap::LinkedHashMap(jint arg0, jfloat arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.LinkedHashMap",
@@ -39,7 +39,7 @@ namespace java::util
 			arg1
 		);
 	}
-	LinkedHashMap::LinkedHashMap(jint &arg0, jfloat &arg1, jboolean &arg2)
+	LinkedHashMap::LinkedHashMap(jint arg0, jfloat arg1, jboolean arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.LinkedHashMap",

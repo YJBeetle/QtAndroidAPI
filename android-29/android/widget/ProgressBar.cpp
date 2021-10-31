@@ -12,7 +12,7 @@ namespace android::widget
 	
 	ProgressBar::ProgressBar(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ProgressBar::ProgressBar(android::content::Context &arg0)
+	ProgressBar::ProgressBar(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ProgressBar",
@@ -20,7 +20,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	ProgressBar::ProgressBar(android::content::Context &arg0, __JniBaseClass &arg1)
+	ProgressBar::ProgressBar(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ProgressBar",
@@ -29,7 +29,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	ProgressBar::ProgressBar(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	ProgressBar::ProgressBar(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ProgressBar",
@@ -39,7 +39,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	ProgressBar::ProgressBar(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	ProgressBar::ProgressBar(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ProgressBar",

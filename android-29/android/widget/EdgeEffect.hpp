@@ -25,7 +25,7 @@ namespace android::widget
 		
 		EdgeEffect(QAndroidJniObject obj);
 		// Constructors
-		EdgeEffect(android::content::Context &arg0);
+		EdgeEffect(android::content::Context arg0);
 		EdgeEffect() = default;
 		
 		// Methods

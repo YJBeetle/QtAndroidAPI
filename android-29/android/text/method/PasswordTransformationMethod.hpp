@@ -26,13 +26,9 @@ namespace android::text::method
 		static QAndroidJniObject getInstance();
 		void afterTextChanged(__JniBaseClass arg0);
 		void beforeTextChanged(jstring arg0, jint arg1, jint arg2, jint arg3);
-		void beforeTextChanged(const QString &arg0, jint arg1, jint arg2, jint arg3);
 		jstring getTransformation(jstring arg0, android::view::View arg1);
-		jstring getTransformation(const QString &arg0, android::view::View arg1);
 		void onFocusChanged(android::view::View arg0, jstring arg1, jboolean arg2, jint arg3, android::graphics::Rect arg4);
-		void onFocusChanged(android::view::View arg0, const QString &arg1, jboolean arg2, jint arg3, android::graphics::Rect arg4);
 		void onTextChanged(jstring arg0, jint arg1, jint arg2, jint arg3);
-		void onTextChanged(const QString &arg0, jint arg1, jint arg2, jint arg3);
 	};
 } // namespace android::text::method
 

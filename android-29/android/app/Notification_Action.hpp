@@ -43,8 +43,7 @@ namespace android::app
 		
 		Notification_Action(QAndroidJniObject obj);
 		// Constructors
-		Notification_Action(jint &arg0, jstring &arg1, android::app::PendingIntent &arg2);
-		Notification_Action(jint &arg0, const QString &arg1, android::app::PendingIntent &arg2);
+		Notification_Action(jint arg0, jstring arg1, android::app::PendingIntent arg2);
 		Notification_Action() = default;
 		
 		// Methods

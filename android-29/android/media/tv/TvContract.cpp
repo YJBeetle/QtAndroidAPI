@@ -119,15 +119,6 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	QAndroidJniObject TvContract::buildChannelUriForPassthroughInput(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.media.tv.TvContract",
-			"buildChannelUriForPassthroughInput",
-			"(Ljava/lang/String;)Landroid/net/Uri;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject TvContract::buildChannelsUriForInput(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -135,15 +126,6 @@ namespace android::media::tv
 			"buildChannelsUriForInput",
 			"(Ljava/lang/String;)Landroid/net/Uri;",
 			arg0
-		);
-	}
-	QAndroidJniObject TvContract::buildChannelsUriForInput(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.media.tv.TvContract",
-			"buildChannelsUriForInput",
-			"(Ljava/lang/String;)Landroid/net/Uri;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring TvContract::buildInputId(android::content::ComponentName arg0)

@@ -26,9 +26,9 @@ namespace android::graphics
 		RectF(QAndroidJniObject obj);
 		// Constructors
 		RectF();
-		RectF(android::graphics::Rect &arg0);
+		RectF(android::graphics::Rect arg0);
 		RectF(android::graphics::RectF &arg0);
-		RectF(jfloat &arg0, jfloat &arg1, jfloat &arg2, jfloat &arg3);
+		RectF(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
 		
 		// Methods
 		static jboolean intersects(android::graphics::RectF arg0, android::graphics::RectF arg1);

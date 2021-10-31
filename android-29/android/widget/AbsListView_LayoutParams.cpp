@@ -8,7 +8,7 @@ namespace android::widget
 	
 	AbsListView_LayoutParams::AbsListView_LayoutParams(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AbsListView_LayoutParams::AbsListView_LayoutParams(android::view::ViewGroup_LayoutParams &arg0)
+	AbsListView_LayoutParams::AbsListView_LayoutParams(android::view::ViewGroup_LayoutParams arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.AbsListView$LayoutParams",
@@ -16,7 +16,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	AbsListView_LayoutParams::AbsListView_LayoutParams(android::content::Context &arg0, __JniBaseClass &arg1)
+	AbsListView_LayoutParams::AbsListView_LayoutParams(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.AbsListView$LayoutParams",
@@ -25,7 +25,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	AbsListView_LayoutParams::AbsListView_LayoutParams(jint &arg0, jint &arg1)
+	AbsListView_LayoutParams::AbsListView_LayoutParams(jint arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.AbsListView$LayoutParams",
@@ -34,7 +34,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	AbsListView_LayoutParams::AbsListView_LayoutParams(jint &arg0, jint &arg1, jint &arg2)
+	AbsListView_LayoutParams::AbsListView_LayoutParams(jint arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.AbsListView$LayoutParams",

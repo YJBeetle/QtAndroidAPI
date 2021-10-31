@@ -9,7 +9,7 @@ namespace android::content
 	
 	Entity::Entity(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Entity::Entity(android::content::ContentValues &arg0)
+	Entity::Entity(android::content::ContentValues arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.Entity",

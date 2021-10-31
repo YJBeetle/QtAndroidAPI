@@ -23,7 +23,6 @@ namespace android::view::autofill
 		static QAndroidJniObject forDate(jlong arg0);
 		static QAndroidJniObject forList(jint arg0);
 		static QAndroidJniObject forText(jstring arg0);
-		static QAndroidJniObject forText(const QString &arg0);
 		static QAndroidJniObject forToggle(jboolean arg0);
 		jint describeContents();
 		jboolean equals(jobject arg0);

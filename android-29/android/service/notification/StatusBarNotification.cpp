@@ -17,7 +17,7 @@ namespace android::service::notification
 	
 	StatusBarNotification::StatusBarNotification(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	StatusBarNotification::StatusBarNotification(android::os::Parcel &arg0)
+	StatusBarNotification::StatusBarNotification(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.service.notification.StatusBarNotification",
@@ -25,7 +25,7 @@ namespace android::service::notification
 			arg0.__jniObject().object()
 		);
 	}
-	StatusBarNotification::StatusBarNotification(jstring &arg0, jstring &arg1, jint &arg2, jstring &arg3, jint &arg4, jint &arg5, jint &arg6, android::app::Notification &arg7, android::os::UserHandle &arg8, jlong &arg9)
+	StatusBarNotification::StatusBarNotification(jstring arg0, jstring arg1, jint arg2, jstring arg3, jint arg4, jint arg5, jint arg6, android::app::Notification arg7, android::os::UserHandle arg8, jlong arg9)
 	{
 		__thiz = QAndroidJniObject(
 			"android.service.notification.StatusBarNotification",
@@ -34,23 +34,6 @@ namespace android::service::notification
 			arg1,
 			arg2,
 			arg3,
-			arg4,
-			arg5,
-			arg6,
-			arg7.__jniObject().object(),
-			arg8.__jniObject().object(),
-			arg9
-		);
-	}
-	StatusBarNotification::StatusBarNotification(const QString &arg0, const QString &arg1, jint &arg2, const QString &arg3, jint &arg4, jint &arg5, jint &arg6, android::app::Notification &arg7, android::os::UserHandle &arg8, jlong &arg9)
-	{
-		__thiz = QAndroidJniObject(
-			"android.service.notification.StatusBarNotification",
-			"(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;IIILandroid/app/Notification;Landroid/os/UserHandle;J)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2,
-			QAndroidJniObject::fromString(arg3).object<jstring>(),
 			arg4,
 			arg5,
 			arg6,
@@ -186,14 +169,6 @@ namespace android::service::notification
 			"setOverrideGroupKey",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void StatusBarNotification::setOverrideGroupKey(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setOverrideGroupKey",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring StatusBarNotification::toString()

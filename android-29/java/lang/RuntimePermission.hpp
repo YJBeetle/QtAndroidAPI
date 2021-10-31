@@ -14,10 +14,8 @@ namespace java::lang
 		
 		RuntimePermission(QAndroidJniObject obj);
 		// Constructors
-		RuntimePermission(jstring &arg0);
-		RuntimePermission(const QString &arg0);
-		RuntimePermission(jstring &arg0, jstring &arg1);
-		RuntimePermission(const QString &arg0, const QString &arg1);
+		RuntimePermission(jstring arg0);
+		RuntimePermission(jstring arg0, jstring arg1);
 		RuntimePermission() = default;
 		
 		// Methods

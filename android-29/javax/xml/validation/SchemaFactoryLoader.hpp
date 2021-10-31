@@ -20,7 +20,6 @@ namespace javax::xml::validation
 		
 		// Methods
 		QAndroidJniObject newFactory(jstring arg0);
-		QAndroidJniObject newFactory(const QString &arg0);
 	};
 } // namespace javax::xml::validation
 

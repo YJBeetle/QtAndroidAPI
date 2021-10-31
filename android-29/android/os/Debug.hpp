@@ -32,12 +32,9 @@ namespace android::os
 		
 		// Methods
 		static void attachJvmtiAgent(jstring arg0, jstring arg1, java::lang::ClassLoader arg2);
-		static void attachJvmtiAgent(const QString &arg0, const QString &arg1, java::lang::ClassLoader arg2);
 		static void changeDebugPort(jint arg0);
 		static void dumpHprofData(jstring arg0);
-		static void dumpHprofData(const QString &arg0);
 		static jboolean dumpService(jstring arg0, java::io::FileDescriptor arg1, jarray arg2);
-		static jboolean dumpService(const QString &arg0, java::io::FileDescriptor arg1, jarray arg2);
 		static void enableEmulatorTraceOutput();
 		static jint getBinderDeathObjectCount();
 		static jint getBinderLocalObjectCount();
@@ -62,7 +59,6 @@ namespace android::os
 		static jlong getNativeHeapSize();
 		static jlong getPss();
 		static jstring getRuntimeStat(jstring arg0);
-		static jstring getRuntimeStat(const QString &arg0);
 		static QAndroidJniObject getRuntimeStats();
 		static jint getThreadAllocCount();
 		static jint getThreadAllocSize();
@@ -93,13 +89,9 @@ namespace android::os
 		static void startAllocCounting();
 		static void startMethodTracing();
 		static void startMethodTracing(jstring arg0);
-		static void startMethodTracing(const QString &arg0);
 		static void startMethodTracing(jstring arg0, jint arg1);
-		static void startMethodTracing(const QString &arg0, jint arg1);
 		static void startMethodTracing(jstring arg0, jint arg1, jint arg2);
-		static void startMethodTracing(const QString &arg0, jint arg1, jint arg2);
 		static void startMethodTracingSampling(jstring arg0, jint arg1, jint arg2);
-		static void startMethodTracingSampling(const QString &arg0, jint arg1, jint arg2);
 		static void startNativeTracing();
 		static void stopAllocCounting();
 		static void stopMethodTracing();

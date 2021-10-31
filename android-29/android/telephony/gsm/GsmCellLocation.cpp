@@ -14,7 +14,7 @@ namespace android::telephony::gsm
 			"()V"
 		);
 	}
-	GsmCellLocation::GsmCellLocation(android::os::Bundle &arg0)
+	GsmCellLocation::GsmCellLocation(android::os::Bundle arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.telephony.gsm.GsmCellLocation",

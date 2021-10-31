@@ -43,14 +43,14 @@ namespace android::icu::util
 		IndianCalendar(QAndroidJniObject obj);
 		// Constructors
 		IndianCalendar();
-		IndianCalendar(android::icu::util::TimeZone &arg0);
-		IndianCalendar(android::icu::util::ULocale &arg0);
-		IndianCalendar(java::util::Date &arg0);
-		IndianCalendar(java::util::Locale &arg0);
-		IndianCalendar(android::icu::util::TimeZone &arg0, android::icu::util::ULocale &arg1);
-		IndianCalendar(android::icu::util::TimeZone &arg0, java::util::Locale &arg1);
-		IndianCalendar(jint &arg0, jint &arg1, jint &arg2);
-		IndianCalendar(jint &arg0, jint &arg1, jint &arg2, jint &arg3, jint &arg4, jint &arg5);
+		IndianCalendar(android::icu::util::TimeZone arg0);
+		IndianCalendar(android::icu::util::ULocale arg0);
+		IndianCalendar(java::util::Date arg0);
+		IndianCalendar(java::util::Locale arg0);
+		IndianCalendar(android::icu::util::TimeZone arg0, android::icu::util::ULocale arg1);
+		IndianCalendar(android::icu::util::TimeZone arg0, java::util::Locale arg1);
+		IndianCalendar(jint arg0, jint arg1, jint arg2);
+		IndianCalendar(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
 		
 		// Methods
 		jstring getType();

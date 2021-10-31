@@ -29,13 +29,11 @@ namespace dalvik::system
 		
 		BaseDexClassLoader(QAndroidJniObject obj);
 		// Constructors
-		BaseDexClassLoader(jstring &arg0, java::io::File &arg1, jstring &arg2, java::lang::ClassLoader &arg3);
-		BaseDexClassLoader(const QString &arg0, java::io::File &arg1, const QString &arg2, java::lang::ClassLoader &arg3);
+		BaseDexClassLoader(jstring arg0, java::io::File arg1, jstring arg2, java::lang::ClassLoader arg3);
 		BaseDexClassLoader() = default;
 		
 		// Methods
 		jstring findLibrary(jstring arg0);
-		jstring findLibrary(const QString &arg0);
 		jstring toString();
 	};
 } // namespace dalvik::system

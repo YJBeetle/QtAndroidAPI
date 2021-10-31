@@ -70,16 +70,14 @@ namespace android::media
 		
 		MediaDrm(QAndroidJniObject obj);
 		// Constructors
-		MediaDrm(java::util::UUID &arg0);
+		MediaDrm(java::util::UUID arg0);
 		MediaDrm() = default;
 		
 		// Methods
 		static jint getMaxSecurityLevel();
 		static jboolean isCryptoSchemeSupported(java::util::UUID arg0);
 		static jboolean isCryptoSchemeSupported(java::util::UUID arg0, jstring arg1);
-		static jboolean isCryptoSchemeSupported(java::util::UUID arg0, const QString &arg1);
 		static jboolean isCryptoSchemeSupported(java::util::UUID arg0, jstring arg1, jint arg2);
-		static jboolean isCryptoSchemeSupported(java::util::UUID arg0, const QString &arg1, jint arg2);
 		void clearOnEventListener();
 		void clearOnExpirationUpdateListener();
 		void clearOnKeyStatusChangeListener();
@@ -88,9 +86,7 @@ namespace android::media
 		void closeSession(jbyteArray arg0);
 		jint getConnectedHdcpLevel();
 		QAndroidJniObject getCryptoSession(jbyteArray arg0, jstring arg1, jstring arg2);
-		QAndroidJniObject getCryptoSession(jbyteArray arg0, const QString &arg1, const QString &arg2);
 		QAndroidJniObject getKeyRequest(jbyteArray arg0, jbyteArray arg1, jstring arg2, jint arg3, java::util::HashMap arg4);
-		QAndroidJniObject getKeyRequest(jbyteArray arg0, jbyteArray arg1, const QString &arg2, jint arg3, java::util::HashMap arg4);
 		jint getMaxHdcpLevel();
 		jint getMaxSessionCount();
 		QAndroidJniObject getMetrics();
@@ -98,9 +94,7 @@ namespace android::media
 		jint getOfflineLicenseState(jbyteArray arg0);
 		jint getOpenSessionCount();
 		jbyteArray getPropertyByteArray(jstring arg0);
-		jbyteArray getPropertyByteArray(const QString &arg0);
 		jstring getPropertyString(jstring arg0);
-		jstring getPropertyString(const QString &arg0);
 		QAndroidJniObject getProvisionRequest();
 		jbyteArray getSecureStop(jbyteArray arg0);
 		QAndroidJniObject getSecureStopIds();
@@ -129,9 +123,7 @@ namespace android::media
 		void setOnSessionLostStateListener(__JniBaseClass arg0, android::os::Handler arg1);
 		void setOnSessionLostStateListener(__JniBaseClass arg0, __JniBaseClass arg1);
 		void setPropertyByteArray(jstring arg0, jbyteArray arg1);
-		void setPropertyByteArray(const QString &arg0, jbyteArray arg1);
 		void setPropertyString(jstring arg0, jstring arg1);
-		void setPropertyString(const QString &arg0, const QString &arg1);
 	};
 } // namespace android::media
 

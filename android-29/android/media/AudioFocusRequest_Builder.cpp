@@ -9,7 +9,7 @@ namespace android::media
 	
 	AudioFocusRequest_Builder::AudioFocusRequest_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AudioFocusRequest_Builder::AudioFocusRequest_Builder(android::media::AudioFocusRequest &arg0)
+	AudioFocusRequest_Builder::AudioFocusRequest_Builder(android::media::AudioFocusRequest arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.AudioFocusRequest$Builder",
@@ -17,7 +17,7 @@ namespace android::media
 			arg0.__jniObject().object()
 		);
 	}
-	AudioFocusRequest_Builder::AudioFocusRequest_Builder(jint &arg0)
+	AudioFocusRequest_Builder::AudioFocusRequest_Builder(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.AudioFocusRequest$Builder",

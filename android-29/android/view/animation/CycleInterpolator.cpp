@@ -7,7 +7,7 @@ namespace android::view::animation
 	
 	CycleInterpolator::CycleInterpolator(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	CycleInterpolator::CycleInterpolator(jfloat &arg0)
+	CycleInterpolator::CycleInterpolator(jfloat arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.CycleInterpolator",
@@ -15,7 +15,7 @@ namespace android::view::animation
 			arg0
 		);
 	}
-	CycleInterpolator::CycleInterpolator(android::content::Context &arg0, __JniBaseClass &arg1)
+	CycleInterpolator::CycleInterpolator(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.CycleInterpolator",

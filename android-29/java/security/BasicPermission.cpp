@@ -9,7 +9,7 @@ namespace java::security
 	
 	BasicPermission::BasicPermission(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	BasicPermission::BasicPermission(jstring &arg0)
+	BasicPermission::BasicPermission(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.BasicPermission",
@@ -17,30 +17,13 @@ namespace java::security
 			arg0
 		);
 	}
-	BasicPermission::BasicPermission(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.BasicPermission",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	BasicPermission::BasicPermission(jstring &arg0, jstring &arg1)
+	BasicPermission::BasicPermission(jstring arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.BasicPermission",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	BasicPermission::BasicPermission(const QString &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.BasicPermission",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	

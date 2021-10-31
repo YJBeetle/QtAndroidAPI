@@ -12,7 +12,7 @@ namespace android::hardware::camera2::params
 		
 		InputConfiguration(QAndroidJniObject obj);
 		// Constructors
-		InputConfiguration(jint &arg0, jint &arg1, jint &arg2);
+		InputConfiguration(jint arg0, jint arg1, jint arg2);
 		InputConfiguration() = default;
 		
 		// Methods

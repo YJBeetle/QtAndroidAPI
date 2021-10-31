@@ -6,21 +6,12 @@ namespace android::icu::text
 	
 	CollationKey::CollationKey(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	CollationKey::CollationKey(jstring &arg0, jbyteArray &arg1)
+	CollationKey::CollationKey(jstring arg0, jbyteArray arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.CollationKey",
 			"(Ljava/lang/String;[B)V",
 			arg0,
-			arg1
-		);
-	}
-	CollationKey::CollationKey(const QString &arg0, jbyteArray &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.text.CollationKey",
-			"(Ljava/lang/String;[B)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

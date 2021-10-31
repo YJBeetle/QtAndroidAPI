@@ -37,10 +37,10 @@ namespace android::widget
 		
 		ProgressBar(QAndroidJniObject obj);
 		// Constructors
-		ProgressBar(android::content::Context &arg0);
-		ProgressBar(android::content::Context &arg0, __JniBaseClass &arg1);
-		ProgressBar(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		ProgressBar(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		ProgressBar(android::content::Context arg0);
+		ProgressBar(android::content::Context arg0, __JniBaseClass arg1);
+		ProgressBar(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		ProgressBar(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		ProgressBar() = default;
 		
 		// Methods

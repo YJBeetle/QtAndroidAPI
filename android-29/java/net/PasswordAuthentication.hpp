@@ -12,8 +12,7 @@ namespace java::net
 		
 		PasswordAuthentication(QAndroidJniObject obj);
 		// Constructors
-		PasswordAuthentication(jstring &arg0, jcharArray &arg1);
-		PasswordAuthentication(const QString &arg0, jcharArray &arg1);
+		PasswordAuthentication(jstring arg0, jcharArray arg1);
 		PasswordAuthentication() = default;
 		
 		// Methods

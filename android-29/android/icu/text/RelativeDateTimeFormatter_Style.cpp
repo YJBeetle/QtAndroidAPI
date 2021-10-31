@@ -41,15 +41,6 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject RelativeDateTimeFormatter_Style::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.RelativeDateTimeFormatter$Style",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/icu/text/RelativeDateTimeFormatter$Style;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray RelativeDateTimeFormatter_Style::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

@@ -26,7 +26,6 @@ namespace java::math
 		// Methods
 		static QAndroidJniObject valueOf(jint arg0);
 		static QAndroidJniObject valueOf(jstring arg0);
-		static QAndroidJniObject valueOf(const QString &arg0);
 		static jarray values();
 	};
 } // namespace java::math

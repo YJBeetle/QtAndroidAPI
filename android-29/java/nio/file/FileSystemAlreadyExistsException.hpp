@@ -15,8 +15,7 @@ namespace java::nio::file
 		FileSystemAlreadyExistsException(QAndroidJniObject obj);
 		// Constructors
 		FileSystemAlreadyExistsException();
-		FileSystemAlreadyExistsException(jstring &arg0);
-		FileSystemAlreadyExistsException(const QString &arg0);
+		FileSystemAlreadyExistsException(jstring arg0);
 		
 		// Methods
 	};

@@ -15,11 +15,9 @@ namespace java::lang
 		BootstrapMethodError(QAndroidJniObject obj);
 		// Constructors
 		BootstrapMethodError();
-		BootstrapMethodError(jstring &arg0);
-		BootstrapMethodError(const QString &arg0);
-		BootstrapMethodError(jthrowable &arg0);
-		BootstrapMethodError(jstring &arg0, jthrowable &arg1);
-		BootstrapMethodError(const QString &arg0, jthrowable &arg1);
+		BootstrapMethodError(jstring arg0);
+		BootstrapMethodError(jthrowable arg0);
+		BootstrapMethodError(jstring arg0, jthrowable arg1);
 		
 		// Methods
 	};

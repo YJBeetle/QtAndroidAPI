@@ -9,22 +9,13 @@ namespace javax::security::auth
 	
 	PrivateCredentialPermission::PrivateCredentialPermission(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PrivateCredentialPermission::PrivateCredentialPermission(jstring &arg0, jstring &arg1)
+	PrivateCredentialPermission::PrivateCredentialPermission(jstring arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.security.auth.PrivateCredentialPermission",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	PrivateCredentialPermission::PrivateCredentialPermission(const QString &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.security.auth.PrivateCredentialPermission",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	

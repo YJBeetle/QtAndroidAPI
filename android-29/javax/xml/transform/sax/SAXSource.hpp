@@ -18,8 +18,8 @@ namespace javax::xml::transform::sax
 		SAXSource(QAndroidJniObject obj);
 		// Constructors
 		SAXSource();
-		SAXSource(org::xml::sax::InputSource &arg0);
-		SAXSource(__JniBaseClass &arg0, org::xml::sax::InputSource &arg1);
+		SAXSource(org::xml::sax::InputSource arg0);
+		SAXSource(__JniBaseClass arg0, org::xml::sax::InputSource arg1);
 		
 		// Methods
 		static QAndroidJniObject sourceToInputSource(__JniBaseClass arg0);
@@ -29,7 +29,6 @@ namespace javax::xml::transform::sax
 		jboolean isEmpty();
 		void setInputSource(org::xml::sax::InputSource arg0);
 		void setSystemId(jstring arg0);
-		void setSystemId(const QString &arg0);
 		void setXMLReader(__JniBaseClass arg0);
 	};
 } // namespace javax::xml::transform::sax

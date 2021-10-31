@@ -15,8 +15,7 @@ namespace android::content::pm
 		PackageManager_NameNotFoundException(QAndroidJniObject obj);
 		// Constructors
 		PackageManager_NameNotFoundException();
-		PackageManager_NameNotFoundException(jstring &arg0);
-		PackageManager_NameNotFoundException(const QString &arg0);
+		PackageManager_NameNotFoundException(jstring arg0);
 		
 		// Methods
 	};

@@ -78,32 +78,12 @@ namespace android::icu::text
 			arg2.__jniObject().object()
 		);
 	}
-	QAndroidJniObject IDNA::labelToASCII(const QString &arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2)
-	{
-		return __thiz.callObjectMethod(
-			"labelToASCII",
-			"(Ljava/lang/CharSequence;Ljava/lang/StringBuilder;Landroid/icu/text/IDNA$Info;)Ljava/lang/StringBuilder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
 	QAndroidJniObject IDNA::labelToUnicode(jstring arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2)
 	{
 		return __thiz.callObjectMethod(
 			"labelToUnicode",
 			"(Ljava/lang/CharSequence;Ljava/lang/StringBuilder;Landroid/icu/text/IDNA$Info;)Ljava/lang/StringBuilder;",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	QAndroidJniObject IDNA::labelToUnicode(const QString &arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2)
-	{
-		return __thiz.callObjectMethod(
-			"labelToUnicode",
-			"(Ljava/lang/CharSequence;Ljava/lang/StringBuilder;Landroid/icu/text/IDNA$Info;)Ljava/lang/StringBuilder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object()
 		);
@@ -118,32 +98,12 @@ namespace android::icu::text
 			arg2.__jniObject().object()
 		);
 	}
-	QAndroidJniObject IDNA::nameToASCII(const QString &arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2)
-	{
-		return __thiz.callObjectMethod(
-			"nameToASCII",
-			"(Ljava/lang/CharSequence;Ljava/lang/StringBuilder;Landroid/icu/text/IDNA$Info;)Ljava/lang/StringBuilder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
 	QAndroidJniObject IDNA::nameToUnicode(jstring arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2)
 	{
 		return __thiz.callObjectMethod(
 			"nameToUnicode",
 			"(Ljava/lang/CharSequence;Ljava/lang/StringBuilder;Landroid/icu/text/IDNA$Info;)Ljava/lang/StringBuilder;",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	QAndroidJniObject IDNA::nameToUnicode(const QString &arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2)
-	{
-		return __thiz.callObjectMethod(
-			"nameToUnicode",
-			"(Ljava/lang/CharSequence;Ljava/lang/StringBuilder;Landroid/icu/text/IDNA$Info;)Ljava/lang/StringBuilder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object()
 		);

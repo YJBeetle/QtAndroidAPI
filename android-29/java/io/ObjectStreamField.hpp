@@ -20,10 +20,8 @@ namespace java::io
 		
 		ObjectStreamField(QAndroidJniObject obj);
 		// Constructors
-		ObjectStreamField(jstring &arg0, jclass &arg1);
-		ObjectStreamField(const QString &arg0, jclass &arg1);
-		ObjectStreamField(jstring &arg0, jclass &arg1, jboolean &arg2);
-		ObjectStreamField(const QString &arg0, jclass &arg1, jboolean &arg2);
+		ObjectStreamField(jstring arg0, jclass arg1);
+		ObjectStreamField(jstring arg0, jclass arg1, jboolean arg2);
 		ObjectStreamField() = default;
 		
 		// Methods

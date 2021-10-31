@@ -14,7 +14,7 @@ namespace android::media
 			"()V"
 		);
 	}
-	AudioFormat_Builder::AudioFormat_Builder(android::media::AudioFormat &arg0)
+	AudioFormat_Builder::AudioFormat_Builder(android::media::AudioFormat arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.AudioFormat$Builder",

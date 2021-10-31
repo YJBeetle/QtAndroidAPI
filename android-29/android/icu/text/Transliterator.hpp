@@ -38,23 +38,15 @@ namespace android::icu::text
 		
 		// Methods
 		static QAndroidJniObject createFromRules(jstring arg0, jstring arg1, jint arg2);
-		static QAndroidJniObject createFromRules(const QString &arg0, const QString &arg1, jint arg2);
 		static QAndroidJniObject getAvailableIDs();
 		static QAndroidJniObject getAvailableSources();
 		static QAndroidJniObject getAvailableTargets(jstring arg0);
-		static QAndroidJniObject getAvailableTargets(const QString &arg0);
 		static QAndroidJniObject getAvailableVariants(jstring arg0, jstring arg1);
-		static QAndroidJniObject getAvailableVariants(const QString &arg0, const QString &arg1);
 		static jstring getDisplayName(jstring arg0);
-		static jstring getDisplayName(const QString &arg0);
 		static jstring getDisplayName(jstring arg0, android::icu::util::ULocale arg1);
-		static jstring getDisplayName(const QString &arg0, android::icu::util::ULocale arg1);
 		static jstring getDisplayName(jstring arg0, java::util::Locale arg1);
-		static jstring getDisplayName(const QString &arg0, java::util::Locale arg1);
 		static QAndroidJniObject getInstance(jstring arg0);
-		static QAndroidJniObject getInstance(const QString &arg0);
 		static QAndroidJniObject getInstance(jstring arg0, jint arg1);
-		static QAndroidJniObject getInstance(const QString &arg0, jint arg1);
 		void filteredTransliterate(__JniBaseClass arg0, android::icu::text::Transliterator_Position arg1, jboolean arg2);
 		void finishTransliteration(__JniBaseClass arg0, android::icu::text::Transliterator_Position arg1);
 		jarray getElements();
@@ -68,12 +60,10 @@ namespace android::icu::text
 		jstring toRules(jboolean arg0);
 		jint transliterate(__JniBaseClass arg0, jint arg1, jint arg2);
 		jstring transliterate(jstring arg0);
-		jstring transliterate(const QString &arg0);
 		void transliterate(__JniBaseClass arg0);
 		void transliterate(__JniBaseClass arg0, android::icu::text::Transliterator_Position arg1);
 		void transliterate(__JniBaseClass arg0, android::icu::text::Transliterator_Position arg1, jint arg2);
 		void transliterate(__JniBaseClass arg0, android::icu::text::Transliterator_Position arg1, jstring arg2);
-		void transliterate(__JniBaseClass arg0, android::icu::text::Transliterator_Position arg1, const QString &arg2);
 	};
 } // namespace android::icu::text
 

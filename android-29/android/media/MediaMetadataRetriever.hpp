@@ -95,10 +95,8 @@ namespace android::media
 		void setDataSource(android::media::MediaDataSource arg0);
 		void setDataSource(java::io::FileDescriptor arg0);
 		void setDataSource(jstring arg0);
-		void setDataSource(const QString &arg0);
 		void setDataSource(android::content::Context arg0, android::net::Uri arg1);
 		void setDataSource(jstring arg0, __JniBaseClass arg1);
-		void setDataSource(const QString &arg0, __JniBaseClass arg1);
 		void setDataSource(java::io::FileDescriptor arg0, jlong arg1, jlong arg2);
 	};
 } // namespace android::media

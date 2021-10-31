@@ -9,7 +9,7 @@ namespace android::view::animation
 	
 	AnimationSet::AnimationSet(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AnimationSet::AnimationSet(jboolean &arg0)
+	AnimationSet::AnimationSet(jboolean arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.AnimationSet",
@@ -17,7 +17,7 @@ namespace android::view::animation
 			arg0
 		);
 	}
-	AnimationSet::AnimationSet(android::content::Context &arg0, __JniBaseClass &arg1)
+	AnimationSet::AnimationSet(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.AnimationSet",

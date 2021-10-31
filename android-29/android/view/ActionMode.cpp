@@ -162,14 +162,6 @@ namespace android::view
 			arg0
 		);
 	}
-	void ActionMode::setSubtitle(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSubtitle",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void ActionMode::setTag(jobject arg0)
 	{
 		__thiz.callMethod<void>(
@@ -192,14 +184,6 @@ namespace android::view
 			"setTitle",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
-		);
-	}
-	void ActionMode::setTitle(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTitle",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void ActionMode::setTitleOptionalHint(jboolean arg0)

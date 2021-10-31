@@ -15,22 +15,13 @@ namespace android::view::textclassifier
 	
 	ConversationActions::ConversationActions(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ConversationActions::ConversationActions(__JniBaseClass &arg0, jstring &arg1)
+	ConversationActions::ConversationActions(__JniBaseClass arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.textclassifier.ConversationActions",
 			"(Ljava/util/List;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	ConversationActions::ConversationActions(__JniBaseClass &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.textclassifier.ConversationActions",
-			"(Ljava/util/List;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	

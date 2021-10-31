@@ -16,8 +16,7 @@ namespace java::net
 		ConnectException(QAndroidJniObject obj);
 		// Constructors
 		ConnectException();
-		ConnectException(jstring &arg0);
-		ConnectException(const QString &arg0);
+		ConnectException(jstring arg0);
 		
 		// Methods
 	};

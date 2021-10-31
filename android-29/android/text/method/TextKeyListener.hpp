@@ -26,7 +26,7 @@ namespace android::text::method
 		
 		TextKeyListener(QAndroidJniObject obj);
 		// Constructors
-		TextKeyListener(android::text::method::TextKeyListener_Capitalize &arg0, jboolean &arg1);
+		TextKeyListener(android::text::method::TextKeyListener_Capitalize arg0, jboolean arg1);
 		TextKeyListener() = default;
 		
 		// Methods
@@ -34,7 +34,6 @@ namespace android::text::method
 		static QAndroidJniObject getInstance();
 		static QAndroidJniObject getInstance(jboolean arg0, android::text::method::TextKeyListener_Capitalize arg1);
 		static jboolean shouldCap(android::text::method::TextKeyListener_Capitalize arg0, jstring arg1, jint arg2);
-		static jboolean shouldCap(android::text::method::TextKeyListener_Capitalize arg0, const QString &arg1, jint arg2);
 		jint getInputType();
 		jboolean onKeyDown(android::view::View arg0, __JniBaseClass arg1, jint arg2, android::view::KeyEvent arg3);
 		jboolean onKeyOther(android::view::View arg0, __JniBaseClass arg1, android::view::KeyEvent arg2);

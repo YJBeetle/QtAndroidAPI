@@ -22,10 +22,10 @@ namespace android::widget
 		
 		AbsoluteLayout(QAndroidJniObject obj);
 		// Constructors
-		AbsoluteLayout(android::content::Context &arg0);
-		AbsoluteLayout(android::content::Context &arg0, __JniBaseClass &arg1);
-		AbsoluteLayout(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		AbsoluteLayout(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		AbsoluteLayout(android::content::Context arg0);
+		AbsoluteLayout(android::content::Context arg0, __JniBaseClass arg1);
+		AbsoluteLayout(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		AbsoluteLayout(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		AbsoluteLayout() = default;
 		
 		// Methods

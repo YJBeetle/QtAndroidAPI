@@ -13,8 +13,8 @@ namespace java::io
 		
 		CharArrayReader(QAndroidJniObject obj);
 		// Constructors
-		CharArrayReader(jcharArray &arg0);
-		CharArrayReader(jcharArray &arg0, jint &arg1, jint &arg2);
+		CharArrayReader(jcharArray arg0);
+		CharArrayReader(jcharArray arg0, jint arg1, jint arg2);
 		CharArrayReader() = default;
 		
 		// Methods

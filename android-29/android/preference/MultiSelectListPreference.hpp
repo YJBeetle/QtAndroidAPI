@@ -26,15 +26,14 @@ namespace android::preference
 		
 		MultiSelectListPreference(QAndroidJniObject obj);
 		// Constructors
-		MultiSelectListPreference(android::content::Context &arg0);
-		MultiSelectListPreference(android::content::Context &arg0, __JniBaseClass &arg1);
-		MultiSelectListPreference(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		MultiSelectListPreference(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		MultiSelectListPreference(android::content::Context arg0);
+		MultiSelectListPreference(android::content::Context arg0, __JniBaseClass arg1);
+		MultiSelectListPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		MultiSelectListPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		MultiSelectListPreference() = default;
 		
 		// Methods
 		jint findIndexOfValue(jstring arg0);
-		jint findIndexOfValue(const QString &arg0);
 		jarray getEntries();
 		jarray getEntryValues();
 		QAndroidJniObject getValues();

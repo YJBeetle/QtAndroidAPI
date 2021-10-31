@@ -27,7 +27,7 @@ namespace java::util::concurrent
 		LinkedTransferQueue(QAndroidJniObject obj);
 		// Constructors
 		LinkedTransferQueue();
-		LinkedTransferQueue(__JniBaseClass &arg0);
+		LinkedTransferQueue(__JniBaseClass arg0);
 		
 		// Methods
 		jboolean add(jobject arg0);

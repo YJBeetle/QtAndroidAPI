@@ -13,7 +13,7 @@ namespace android::graphics
 		
 		DiscretePathEffect(QAndroidJniObject obj);
 		// Constructors
-		DiscretePathEffect(jfloat &arg0, jfloat &arg1);
+		DiscretePathEffect(jfloat arg0, jfloat arg1);
 		DiscretePathEffect() = default;
 		
 		// Methods

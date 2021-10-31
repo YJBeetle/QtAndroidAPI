@@ -19,15 +19,6 @@ namespace java::security
 			arg0
 		);
 	}
-	QAndroidJniObject KeyFactory::getInstance(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.security.KeyFactory",
-			"getInstance",
-			"(Ljava/lang/String;)Ljava/security/KeyFactory;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject KeyFactory::getInstance(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -38,16 +29,6 @@ namespace java::security
 			arg1
 		);
 	}
-	QAndroidJniObject KeyFactory::getInstance(const QString &arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.security.KeyFactory",
-			"getInstance",
-			"(Ljava/lang/String;Ljava/lang/String;)Ljava/security/KeyFactory;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	QAndroidJniObject KeyFactory::getInstance(jstring arg0, java::security::Provider arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -55,16 +36,6 @@ namespace java::security
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/KeyFactory;",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject KeyFactory::getInstance(const QString &arg0, java::security::Provider arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.security.KeyFactory",
-			"getInstance",
-			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/KeyFactory;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

@@ -15,24 +15,13 @@ namespace javax::crypto::spec
 	
 	OAEPParameterSpec::OAEPParameterSpec(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	OAEPParameterSpec::OAEPParameterSpec(jstring &arg0, jstring &arg1, __JniBaseClass &arg2, javax::crypto::spec::PSource &arg3)
+	OAEPParameterSpec::OAEPParameterSpec(jstring arg0, jstring arg1, __JniBaseClass arg2, javax::crypto::spec::PSource arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.crypto.spec.OAEPParameterSpec",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/security/spec/AlgorithmParameterSpec;Ljavax/crypto/spec/PSource;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
-		);
-	}
-	OAEPParameterSpec::OAEPParameterSpec(const QString &arg0, const QString &arg1, __JniBaseClass &arg2, javax::crypto::spec::PSource &arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.crypto.spec.OAEPParameterSpec",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/security/spec/AlgorithmParameterSpec;Ljavax/crypto/spec/PSource;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object()
 		);

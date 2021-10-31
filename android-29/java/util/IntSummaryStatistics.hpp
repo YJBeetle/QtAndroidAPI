@@ -13,7 +13,7 @@ namespace java::util
 		IntSummaryStatistics(QAndroidJniObject obj);
 		// Constructors
 		IntSummaryStatistics();
-		IntSummaryStatistics(jlong &arg0, jint &arg1, jint &arg2, jlong &arg3);
+		IntSummaryStatistics(jlong arg0, jint arg1, jint arg2, jlong arg3);
 		
 		// Methods
 		void accept(jint arg0);

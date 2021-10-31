@@ -13,20 +13,12 @@ namespace java::io
 			"()V"
 		);
 	}
-	StreamCorruptedException::StreamCorruptedException(jstring &arg0)
+	StreamCorruptedException::StreamCorruptedException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.StreamCorruptedException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	StreamCorruptedException::StreamCorruptedException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.io.StreamCorruptedException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

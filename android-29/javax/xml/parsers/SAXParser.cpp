@@ -29,14 +29,6 @@ namespace javax::xml::parsers
 			arg0
 		).object<jobject>();
 	}
-	jobject SAXParser::getProperty(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getProperty",
-			"(Ljava/lang/String;)Ljava/lang/Object;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jobject>();
-	}
 	QAndroidJniObject SAXParser::getSchema()
 	{
 		return __thiz.callObjectMethod(
@@ -117,30 +109,12 @@ namespace javax::xml::parsers
 			arg1.__jniObject().object()
 		);
 	}
-	void SAXParser::parse(const QString &arg0, org::xml::sax::HandlerBase arg1)
-	{
-		__thiz.callMethod<void>(
-			"parse",
-			"(Ljava/lang/String;Lorg/xml/sax/HandlerBase;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	void SAXParser::parse(jstring arg0, org::xml::sax::helpers::DefaultHandler arg1)
 	{
 		__thiz.callMethod<void>(
 			"parse",
 			"(Ljava/lang/String;Lorg/xml/sax/helpers/DefaultHandler;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void SAXParser::parse(const QString &arg0, org::xml::sax::helpers::DefaultHandler arg1)
-	{
-		__thiz.callMethod<void>(
-			"parse",
-			"(Ljava/lang/String;Lorg/xml/sax/helpers/DefaultHandler;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -172,16 +146,6 @@ namespace javax::xml::parsers
 			arg2
 		);
 	}
-	void SAXParser::parse(java::io::InputStream arg0, org::xml::sax::HandlerBase arg1, const QString &arg2)
-	{
-		__thiz.callMethod<void>(
-			"parse",
-			"(Ljava/io/InputStream;Lorg/xml/sax/HandlerBase;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	void SAXParser::parse(java::io::InputStream arg0, org::xml::sax::helpers::DefaultHandler arg1, jstring arg2)
 	{
 		__thiz.callMethod<void>(
@@ -190,16 +154,6 @@ namespace javax::xml::parsers
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2
-		);
-	}
-	void SAXParser::parse(java::io::InputStream arg0, org::xml::sax::helpers::DefaultHandler arg1, const QString &arg2)
-	{
-		__thiz.callMethod<void>(
-			"parse",
-			"(Ljava/io/InputStream;Lorg/xml/sax/helpers/DefaultHandler;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	void SAXParser::reset()
@@ -215,15 +169,6 @@ namespace javax::xml::parsers
 			"setProperty",
 			"(Ljava/lang/String;Ljava/lang/Object;)V",
 			arg0,
-			arg1
-		);
-	}
-	void SAXParser::setProperty(const QString &arg0, jobject arg1)
-	{
-		__thiz.callMethod<void>(
-			"setProperty",
-			"(Ljava/lang/String;Ljava/lang/Object;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

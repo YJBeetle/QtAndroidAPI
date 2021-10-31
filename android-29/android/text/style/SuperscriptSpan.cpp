@@ -15,7 +15,7 @@ namespace android::text::style
 			"()V"
 		);
 	}
-	SuperscriptSpan::SuperscriptSpan(android::os::Parcel &arg0)
+	SuperscriptSpan::SuperscriptSpan(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.SuperscriptSpan",

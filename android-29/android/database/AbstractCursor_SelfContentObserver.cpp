@@ -7,7 +7,7 @@ namespace android::database
 	
 	AbstractCursor_SelfContentObserver::AbstractCursor_SelfContentObserver(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AbstractCursor_SelfContentObserver::AbstractCursor_SelfContentObserver(android::database::AbstractCursor &arg0)
+	AbstractCursor_SelfContentObserver::AbstractCursor_SelfContentObserver(android::database::AbstractCursor arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.database.AbstractCursor$SelfContentObserver",

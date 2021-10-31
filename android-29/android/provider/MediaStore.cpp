@@ -377,16 +377,6 @@ namespace android::provider
 			arg1
 		).object<jstring>();
 	}
-	jstring MediaStore::getVersion(android::content::Context arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.MediaStore",
-			"getVersion",
-			"(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		).object<jstring>();
-	}
 	jstring MediaStore::getVolumeName(android::net::Uri arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

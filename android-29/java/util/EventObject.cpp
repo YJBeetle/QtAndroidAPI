@@ -6,7 +6,7 @@ namespace java::util
 	
 	EventObject::EventObject(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	EventObject::EventObject(jobject &arg0)
+	EventObject::EventObject(jobject arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.EventObject",

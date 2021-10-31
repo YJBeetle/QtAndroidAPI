@@ -16,11 +16,9 @@ namespace java::security
 		KeyManagementException(QAndroidJniObject obj);
 		// Constructors
 		KeyManagementException();
-		KeyManagementException(jstring &arg0);
-		KeyManagementException(const QString &arg0);
-		KeyManagementException(jthrowable &arg0);
-		KeyManagementException(jstring &arg0, jthrowable &arg1);
-		KeyManagementException(const QString &arg0, jthrowable &arg1);
+		KeyManagementException(jstring arg0);
+		KeyManagementException(jthrowable arg0);
+		KeyManagementException(jstring arg0, jthrowable arg1);
 		
 		// Methods
 	};

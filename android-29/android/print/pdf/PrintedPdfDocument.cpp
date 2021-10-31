@@ -10,7 +10,7 @@ namespace android::print::pdf
 	
 	PrintedPdfDocument::PrintedPdfDocument(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PrintedPdfDocument::PrintedPdfDocument(android::content::Context &arg0, android::print::PrintAttributes &arg1)
+	PrintedPdfDocument::PrintedPdfDocument(android::content::Context arg0, android::print::PrintAttributes arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.print.pdf.PrintedPdfDocument",

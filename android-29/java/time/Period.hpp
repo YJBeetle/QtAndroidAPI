@@ -40,7 +40,6 @@ namespace java::time
 		static QAndroidJniObject ofWeeks(jint arg0);
 		static QAndroidJniObject ofYears(jint arg0);
 		static QAndroidJniObject parse(jstring arg0);
-		static QAndroidJniObject parse(const QString &arg0);
 		QAndroidJniObject addTo(__JniBaseClass arg0);
 		jboolean equals(jobject arg0);
 		jlong get(__JniBaseClass arg0);

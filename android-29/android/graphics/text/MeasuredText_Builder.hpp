@@ -20,8 +20,8 @@ namespace android::graphics::text
 		
 		MeasuredText_Builder(QAndroidJniObject obj);
 		// Constructors
-		MeasuredText_Builder(jcharArray &arg0);
-		MeasuredText_Builder(android::graphics::text::MeasuredText &arg0);
+		MeasuredText_Builder(jcharArray arg0);
+		MeasuredText_Builder(android::graphics::text::MeasuredText arg0);
 		MeasuredText_Builder() = default;
 		
 		// Methods

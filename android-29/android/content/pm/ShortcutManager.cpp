@@ -45,15 +45,6 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	void ShortcutManager::disableShortcuts(__JniBaseClass arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"disableShortcuts",
-			"(Ljava/util/List;Ljava/lang/CharSequence;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	void ShortcutManager::enableShortcuts(__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
@@ -139,14 +130,6 @@ namespace android::content::pm
 			"reportShortcutUsed",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void ShortcutManager::reportShortcutUsed(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"reportShortcutUsed",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean ShortcutManager::requestPinShortcut(android::content::pm::ShortcutInfo arg0, android::content::IntentSender arg1)

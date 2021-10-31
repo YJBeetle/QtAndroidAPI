@@ -25,7 +25,7 @@ namespace android::renderscript
 			"()V"
 		);
 	}
-	Byte2::Byte2(jbyte &arg0, jbyte &arg1)
+	Byte2::Byte2(jbyte arg0, jbyte arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.renderscript.Byte2",

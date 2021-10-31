@@ -17,7 +17,7 @@ namespace java::util
 	
 	Scanner::Scanner(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Scanner::Scanner(java::io::File &arg0)
+	Scanner::Scanner(java::io::File arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Scanner",
@@ -25,7 +25,7 @@ namespace java::util
 			arg0.__jniObject().object()
 		);
 	}
-	Scanner::Scanner(java::io::InputStream &arg0)
+	Scanner::Scanner(java::io::InputStream arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Scanner",
@@ -33,7 +33,7 @@ namespace java::util
 			arg0.__jniObject().object()
 		);
 	}
-	Scanner::Scanner(__JniBaseClass &arg0)
+	Scanner::Scanner(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Scanner",
@@ -41,7 +41,7 @@ namespace java::util
 			arg0.__jniObject().object()
 		);
 	}
-	Scanner::Scanner(jstring &arg0)
+	Scanner::Scanner(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Scanner",
@@ -49,15 +49,7 @@ namespace java::util
 			arg0
 		);
 	}
-	Scanner::Scanner(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.Scanner",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	Scanner::Scanner(java::io::File &arg0, jstring &arg1)
+	Scanner::Scanner(java::io::File arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Scanner",
@@ -66,16 +58,7 @@ namespace java::util
 			arg1
 		);
 	}
-	Scanner::Scanner(java::io::File &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.Scanner",
-			"(Ljava/io/File;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	Scanner::Scanner(java::io::File &arg0, java::nio::charset::Charset &arg1)
+	Scanner::Scanner(java::io::File arg0, java::nio::charset::Charset arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Scanner",
@@ -84,7 +67,7 @@ namespace java::util
 			arg1.__jniObject().object()
 		);
 	}
-	Scanner::Scanner(java::io::InputStream &arg0, jstring &arg1)
+	Scanner::Scanner(java::io::InputStream arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Scanner",
@@ -93,16 +76,7 @@ namespace java::util
 			arg1
 		);
 	}
-	Scanner::Scanner(java::io::InputStream &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.Scanner",
-			"(Ljava/io/InputStream;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	Scanner::Scanner(java::io::InputStream &arg0, java::nio::charset::Charset &arg1)
+	Scanner::Scanner(java::io::InputStream arg0, java::nio::charset::Charset arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Scanner",
@@ -111,7 +85,7 @@ namespace java::util
 			arg1.__jniObject().object()
 		);
 	}
-	Scanner::Scanner(__JniBaseClass &arg0, jstring &arg1)
+	Scanner::Scanner(__JniBaseClass arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Scanner",
@@ -120,16 +94,7 @@ namespace java::util
 			arg1
 		);
 	}
-	Scanner::Scanner(__JniBaseClass &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.Scanner",
-			"(Ljava/nio/channels/ReadableByteChannel;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	Scanner::Scanner(__JniBaseClass &arg0, java::nio::charset::Charset &arg1)
+	Scanner::Scanner(__JniBaseClass arg0, java::nio::charset::Charset arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Scanner",
@@ -162,14 +127,6 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject Scanner::findAll(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"findAll",
-			"(Ljava/lang/String;)Ljava/util/stream/Stream;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Scanner::findAll(java::util::regex::Pattern arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -186,14 +143,6 @@ namespace java::util
 			arg0
 		).object<jstring>();
 	}
-	jstring Scanner::findInLine(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"findInLine",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
 	jstring Scanner::findInLine(java::util::regex::Pattern arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -208,15 +157,6 @@ namespace java::util
 			"findWithinHorizon",
 			"(Ljava/lang/String;I)Ljava/lang/String;",
 			arg0,
-			arg1
-		).object<jstring>();
-	}
-	jstring Scanner::findWithinHorizon(const QString &arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"findWithinHorizon",
-			"(Ljava/lang/String;I)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		).object<jstring>();
 	}
@@ -242,14 +182,6 @@ namespace java::util
 			"hasNext",
 			"(Ljava/lang/String;)Z",
 			arg0
-		);
-	}
-	jboolean Scanner::hasNext(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasNext",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean Scanner::hasNext(java::util::regex::Pattern arg0)
@@ -406,14 +338,6 @@ namespace java::util
 			arg0
 		).object<jstring>();
 	}
-	jstring Scanner::next(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"next",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
 	jstring Scanner::next(java::util::regex::Pattern arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -561,14 +485,6 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject Scanner::skip(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"skip",
-			"(Ljava/lang/String;)Ljava/util/Scanner;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Scanner::skip(java::util::regex::Pattern arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -597,14 +513,6 @@ namespace java::util
 			"useDelimiter",
 			"(Ljava/lang/String;)Ljava/util/Scanner;",
 			arg0
-		);
-	}
-	QAndroidJniObject Scanner::useDelimiter(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"useDelimiter",
-			"(Ljava/lang/String;)Ljava/util/Scanner;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Scanner::useDelimiter(java::util::regex::Pattern arg0)

@@ -8,23 +8,13 @@ namespace android::media::session
 	
 	PlaybackState_CustomAction_Builder::PlaybackState_CustomAction_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PlaybackState_CustomAction_Builder::PlaybackState_CustomAction_Builder(jstring &arg0, jstring &arg1, jint &arg2)
+	PlaybackState_CustomAction_Builder::PlaybackState_CustomAction_Builder(jstring arg0, jstring arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.session.PlaybackState$CustomAction$Builder",
 			"(Ljava/lang/String;Ljava/lang/CharSequence;I)V",
 			arg0,
 			arg1,
-			arg2
-		);
-	}
-	PlaybackState_CustomAction_Builder::PlaybackState_CustomAction_Builder(const QString &arg0, const QString &arg1, jint &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.media.session.PlaybackState$CustomAction$Builder",
-			"(Ljava/lang/String;Ljava/lang/CharSequence;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}

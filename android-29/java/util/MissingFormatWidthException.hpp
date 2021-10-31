@@ -16,8 +16,7 @@ namespace java::util
 		
 		MissingFormatWidthException(QAndroidJniObject obj);
 		// Constructors
-		MissingFormatWidthException(jstring &arg0);
-		MissingFormatWidthException(const QString &arg0);
+		MissingFormatWidthException(jstring arg0);
 		MissingFormatWidthException() = default;
 		
 		// Methods

@@ -93,15 +93,6 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject Year::parse(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.time.Year",
-			"parse",
-			"(Ljava/lang/CharSequence;)Ljava/time/Year;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Year::parse(jstring arg0, java::time::format::DateTimeFormatter arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -109,16 +100,6 @@ namespace java::time
 			"parse",
 			"(Ljava/lang/CharSequence;Ljava/time/format/DateTimeFormatter;)Ljava/time/Year;",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Year::parse(const QString &arg0, java::time::format::DateTimeFormatter arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.time.Year",
-			"parse",
-			"(Ljava/lang/CharSequence;Ljava/time/format/DateTimeFormatter;)Ljava/time/Year;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

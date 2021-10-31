@@ -14,7 +14,7 @@ namespace android::graphics::drawable
 			"()V"
 		);
 	}
-	PaintDrawable::PaintDrawable(jint &arg0)
+	PaintDrawable::PaintDrawable(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.PaintDrawable",

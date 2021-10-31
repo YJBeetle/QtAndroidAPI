@@ -39,11 +39,8 @@ namespace java::time
 		static QAndroidJniObject from(__JniBaseClass arg0);
 		static QAndroidJniObject getAvailableZoneIds();
 		static QAndroidJniObject of(jstring arg0);
-		static QAndroidJniObject of(const QString &arg0);
 		static QAndroidJniObject of(jstring arg0, __JniBaseClass arg1);
-		static QAndroidJniObject of(const QString &arg0, __JniBaseClass arg1);
 		static QAndroidJniObject ofOffset(jstring arg0, java::time::ZoneOffset arg1);
-		static QAndroidJniObject ofOffset(const QString &arg0, java::time::ZoneOffset arg1);
 		static QAndroidJniObject systemDefault();
 		jboolean equals(jobject arg0);
 		jstring getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1);

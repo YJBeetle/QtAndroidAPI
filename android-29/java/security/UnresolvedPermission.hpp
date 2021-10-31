@@ -29,8 +29,7 @@ namespace java::security
 		
 		UnresolvedPermission(QAndroidJniObject obj);
 		// Constructors
-		UnresolvedPermission(jstring &arg0, jstring &arg1, jstring &arg2, jarray &arg3);
-		UnresolvedPermission(const QString &arg0, const QString &arg1, const QString &arg2, jarray &arg3);
+		UnresolvedPermission(jstring arg0, jstring arg1, jstring arg2, jarray arg3);
 		UnresolvedPermission() = default;
 		
 		// Methods

@@ -14,7 +14,7 @@ namespace android::view::animation
 			"()V"
 		);
 	}
-	OvershootInterpolator::OvershootInterpolator(jfloat &arg0)
+	OvershootInterpolator::OvershootInterpolator(jfloat arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.OvershootInterpolator",
@@ -22,7 +22,7 @@ namespace android::view::animation
 			arg0
 		);
 	}
-	OvershootInterpolator::OvershootInterpolator(android::content::Context &arg0, __JniBaseClass &arg1)
+	OvershootInterpolator::OvershootInterpolator(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.OvershootInterpolator",

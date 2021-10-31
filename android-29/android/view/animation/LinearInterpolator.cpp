@@ -14,7 +14,7 @@ namespace android::view::animation
 			"()V"
 		);
 	}
-	LinearInterpolator::LinearInterpolator(android::content::Context &arg0, __JniBaseClass &arg1)
+	LinearInterpolator::LinearInterpolator(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.LinearInterpolator",

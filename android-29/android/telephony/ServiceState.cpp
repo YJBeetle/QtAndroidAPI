@@ -78,7 +78,7 @@ namespace android::telephony
 			"()V"
 		);
 	}
-	ServiceState::ServiceState(android::os::Parcel &arg0)
+	ServiceState::ServiceState(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.telephony.ServiceState",
@@ -211,16 +211,6 @@ namespace android::telephony
 			arg0,
 			arg1,
 			arg2
-		);
-	}
-	void ServiceState::setOperatorName(const QString &arg0, const QString &arg1, const QString &arg2)
-	{
-		__thiz.callMethod<void>(
-			"setOperatorName",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	void ServiceState::setRoaming(jboolean arg0)

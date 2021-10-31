@@ -20,7 +20,6 @@ namespace android::content::res
 		
 		// Methods
 		static QAndroidJniObject getObbInfo(jstring arg0);
-		static QAndroidJniObject getObbInfo(const QString &arg0);
 	};
 } // namespace android::content::res
 

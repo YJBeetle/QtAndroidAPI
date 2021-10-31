@@ -23,8 +23,8 @@ namespace java::util
 		ArrayList(QAndroidJniObject obj);
 		// Constructors
 		ArrayList();
-		ArrayList(jint &arg0);
-		ArrayList(__JniBaseClass &arg0);
+		ArrayList(jint arg0);
+		ArrayList(__JniBaseClass arg0);
 		
 		// Methods
 		jboolean add(jobject arg0);

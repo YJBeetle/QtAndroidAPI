@@ -20,7 +20,7 @@ namespace android::util
 		
 		JsonWriter(QAndroidJniObject obj);
 		// Constructors
-		JsonWriter(java::io::Writer &arg0);
+		JsonWriter(java::io::Writer arg0);
 		JsonWriter() = default;
 		
 		// Methods
@@ -32,16 +32,13 @@ namespace android::util
 		void flush();
 		jboolean isLenient();
 		QAndroidJniObject name(jstring arg0);
-		QAndroidJniObject name(const QString &arg0);
 		QAndroidJniObject nullValue();
 		void setIndent(jstring arg0);
-		void setIndent(const QString &arg0);
 		void setLenient(jboolean arg0);
 		QAndroidJniObject value(jboolean arg0);
 		QAndroidJniObject value(jdouble arg0);
 		QAndroidJniObject value(java::lang::Number arg0);
 		QAndroidJniObject value(jstring arg0);
-		QAndroidJniObject value(const QString &arg0);
 		QAndroidJniObject value(jlong arg0);
 	};
 } // namespace android::util

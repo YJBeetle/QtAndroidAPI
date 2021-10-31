@@ -22,7 +22,7 @@ namespace android::graphics::drawable
 	
 	NinePatchDrawable::NinePatchDrawable(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	NinePatchDrawable::NinePatchDrawable(android::graphics::NinePatch &arg0)
+	NinePatchDrawable::NinePatchDrawable(android::graphics::NinePatch arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.NinePatchDrawable",
@@ -30,7 +30,7 @@ namespace android::graphics::drawable
 			arg0.__jniObject().object()
 		);
 	}
-	NinePatchDrawable::NinePatchDrawable(android::content::res::Resources &arg0, android::graphics::NinePatch &arg1)
+	NinePatchDrawable::NinePatchDrawable(android::content::res::Resources arg0, android::graphics::NinePatch arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.NinePatchDrawable",
@@ -39,7 +39,7 @@ namespace android::graphics::drawable
 			arg1.__jniObject().object()
 		);
 	}
-	NinePatchDrawable::NinePatchDrawable(android::graphics::Bitmap &arg0, jbyteArray &arg1, android::graphics::Rect &arg2, jstring &arg3)
+	NinePatchDrawable::NinePatchDrawable(android::graphics::Bitmap arg0, jbyteArray arg1, android::graphics::Rect arg2, jstring arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.NinePatchDrawable",
@@ -50,18 +50,7 @@ namespace android::graphics::drawable
 			arg3
 		);
 	}
-	NinePatchDrawable::NinePatchDrawable(android::graphics::Bitmap &arg0, jbyteArray &arg1, android::graphics::Rect &arg2, const QString &arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"android.graphics.drawable.NinePatchDrawable",
-			"(Landroid/graphics/Bitmap;[BLandroid/graphics/Rect;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2.__jniObject().object(),
-			QAndroidJniObject::fromString(arg3).object<jstring>()
-		);
-	}
-	NinePatchDrawable::NinePatchDrawable(android::content::res::Resources &arg0, android::graphics::Bitmap &arg1, jbyteArray &arg2, android::graphics::Rect &arg3, jstring &arg4)
+	NinePatchDrawable::NinePatchDrawable(android::content::res::Resources arg0, android::graphics::Bitmap arg1, jbyteArray arg2, android::graphics::Rect arg3, jstring arg4)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.NinePatchDrawable",
@@ -71,18 +60,6 @@ namespace android::graphics::drawable
 			arg2,
 			arg3.__jniObject().object(),
 			arg4
-		);
-	}
-	NinePatchDrawable::NinePatchDrawable(android::content::res::Resources &arg0, android::graphics::Bitmap &arg1, jbyteArray &arg2, android::graphics::Rect &arg3, const QString &arg4)
-	{
-		__thiz = QAndroidJniObject(
-			"android.graphics.drawable.NinePatchDrawable",
-			"(Landroid/content/res/Resources;Landroid/graphics/Bitmap;[BLandroid/graphics/Rect;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2,
-			arg3.__jniObject().object(),
-			QAndroidJniObject::fromString(arg4).object<jstring>()
 		);
 	}
 	

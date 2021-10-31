@@ -42,7 +42,7 @@ namespace java::math
 	
 	BigInteger::BigInteger(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	BigInteger::BigInteger(jbyteArray &arg0)
+	BigInteger::BigInteger(jbyteArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.math.BigInteger",
@@ -50,7 +50,7 @@ namespace java::math
 			arg0
 		);
 	}
-	BigInteger::BigInteger(jstring &arg0)
+	BigInteger::BigInteger(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.math.BigInteger",
@@ -58,15 +58,7 @@ namespace java::math
 			arg0
 		);
 	}
-	BigInteger::BigInteger(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.math.BigInteger",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	BigInteger::BigInteger(jint &arg0, jbyteArray &arg1)
+	BigInteger::BigInteger(jint arg0, jbyteArray arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.math.BigInteger",
@@ -75,7 +67,7 @@ namespace java::math
 			arg1
 		);
 	}
-	BigInteger::BigInteger(jint &arg0, java::util::Random &arg1)
+	BigInteger::BigInteger(jint arg0, java::util::Random arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.math.BigInteger",
@@ -84,7 +76,7 @@ namespace java::math
 			arg1.__jniObject().object()
 		);
 	}
-	BigInteger::BigInteger(jstring &arg0, jint &arg1)
+	BigInteger::BigInteger(jstring arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.math.BigInteger",
@@ -93,16 +85,7 @@ namespace java::math
 			arg1
 		);
 	}
-	BigInteger::BigInteger(const QString &arg0, jint &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.math.BigInteger",
-			"(Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
-	BigInteger::BigInteger(jbyteArray &arg0, jint &arg1, jint &arg2)
+	BigInteger::BigInteger(jbyteArray arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.math.BigInteger",
@@ -112,7 +95,7 @@ namespace java::math
 			arg2
 		);
 	}
-	BigInteger::BigInteger(jint &arg0, jint &arg1, java::util::Random &arg2)
+	BigInteger::BigInteger(jint arg0, jint arg1, java::util::Random arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.math.BigInteger",
@@ -122,7 +105,7 @@ namespace java::math
 			arg2.__jniObject().object()
 		);
 	}
-	BigInteger::BigInteger(jint &arg0, jbyteArray &arg1, jint &arg2, jint &arg3)
+	BigInteger::BigInteger(jint arg0, jbyteArray arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"java.math.BigInteger",

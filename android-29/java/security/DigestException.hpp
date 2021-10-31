@@ -15,11 +15,9 @@ namespace java::security
 		DigestException(QAndroidJniObject obj);
 		// Constructors
 		DigestException();
-		DigestException(jstring &arg0);
-		DigestException(const QString &arg0);
-		DigestException(jthrowable &arg0);
-		DigestException(jstring &arg0, jthrowable &arg1);
-		DigestException(const QString &arg0, jthrowable &arg1);
+		DigestException(jstring arg0);
+		DigestException(jthrowable arg0);
+		DigestException(jstring arg0, jthrowable arg1);
 		
 		// Methods
 	};

@@ -20,7 +20,7 @@ namespace android::security
 		
 		KeyStoreParameter_Builder(QAndroidJniObject obj);
 		// Constructors
-		KeyStoreParameter_Builder(android::content::Context &arg0);
+		KeyStoreParameter_Builder(android::content::Context arg0);
 		KeyStoreParameter_Builder() = default;
 		
 		// Methods

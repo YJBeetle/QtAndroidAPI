@@ -43,7 +43,6 @@ namespace android::app
 		QAndroidJniObject makeListItems();
 		void setTitle(jint arg0);
 		void setTitle(jstring arg0);
-		void setTitle(const QString &arg0);
 	};
 } // namespace android::app
 

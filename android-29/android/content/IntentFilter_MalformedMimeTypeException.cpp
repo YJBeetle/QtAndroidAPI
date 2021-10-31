@@ -13,20 +13,12 @@ namespace android::content
 			"()V"
 		);
 	}
-	IntentFilter_MalformedMimeTypeException::IntentFilter_MalformedMimeTypeException(jstring &arg0)
+	IntentFilter_MalformedMimeTypeException::IntentFilter_MalformedMimeTypeException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.IntentFilter$MalformedMimeTypeException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	IntentFilter_MalformedMimeTypeException::IntentFilter_MalformedMimeTypeException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.IntentFilter$MalformedMimeTypeException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

@@ -7,7 +7,7 @@ namespace java::io
 	
 	ByteArrayInputStream::ByteArrayInputStream(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ByteArrayInputStream::ByteArrayInputStream(jbyteArray &arg0)
+	ByteArrayInputStream::ByteArrayInputStream(jbyteArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.ByteArrayInputStream",
@@ -15,7 +15,7 @@ namespace java::io
 			arg0
 		);
 	}
-	ByteArrayInputStream::ByteArrayInputStream(jbyteArray &arg0, jint &arg1, jint &arg2)
+	ByteArrayInputStream::ByteArrayInputStream(jbyteArray arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.ByteArrayInputStream",

@@ -71,7 +71,7 @@ namespace android::widget
 	
 	AbsListView::AbsListView(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AbsListView::AbsListView(android::content::Context &arg0)
+	AbsListView::AbsListView(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.AbsListView",
@@ -79,7 +79,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	AbsListView::AbsListView(android::content::Context &arg0, __JniBaseClass &arg1)
+	AbsListView::AbsListView(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.AbsListView",
@@ -88,7 +88,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	AbsListView::AbsListView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	AbsListView::AbsListView(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.AbsListView",
@@ -98,7 +98,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	AbsListView::AbsListView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	AbsListView::AbsListView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.AbsListView",
@@ -133,17 +133,6 @@ namespace android::widget
 			"beforeTextChanged",
 			"(Ljava/lang/CharSequence;III)V",
 			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	void AbsListView::beforeTextChanged(const QString &arg0, jint arg1, jint arg2, jint arg3)
-	{
-		__thiz.callMethod<void>(
-			"beforeTextChanged",
-			"(Ljava/lang/CharSequence;III)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2,
 			arg3
@@ -620,17 +609,6 @@ namespace android::widget
 			arg3
 		);
 	}
-	void AbsListView::onTextChanged(const QString &arg0, jint arg1, jint arg2, jint arg3)
-	{
-		__thiz.callMethod<void>(
-			"onTextChanged",
-			"(Ljava/lang/CharSequence;III)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2,
-			arg3
-		);
-	}
 	jboolean AbsListView::onTouchEvent(android::view::MotionEvent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -800,14 +778,6 @@ namespace android::widget
 			"setFilterText",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void AbsListView::setFilterText(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setFilterText",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void AbsListView::setFriction(jfloat arg0)

@@ -24,9 +24,7 @@ namespace android::icu::text
 		
 		// Methods
 		static QAndroidJniObject getMarkupInstance(android::icu::text::DecimalFormat arg0, jstring arg1, jstring arg2);
-		static QAndroidJniObject getMarkupInstance(android::icu::text::DecimalFormat arg0, const QString &arg1, const QString &arg2);
 		static QAndroidJniObject getMarkupInstance(android::icu::util::ULocale arg0, jstring arg1, jstring arg2);
-		static QAndroidJniObject getMarkupInstance(android::icu::util::ULocale arg0, const QString &arg1, const QString &arg2);
 		static QAndroidJniObject getSuperscriptInstance(android::icu::text::DecimalFormat arg0);
 		static QAndroidJniObject getSuperscriptInstance(android::icu::util::ULocale arg0);
 		jstring format(jobject arg0);

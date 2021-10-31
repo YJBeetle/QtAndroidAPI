@@ -34,7 +34,6 @@ namespace android::app
 		static void enableDebugLogging(jboolean arg0);
 		void destroyLoader(jint arg0);
 		void dump(jstring arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3);
-		void dump(const QString &arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3);
 		QAndroidJniObject getLoader(jint arg0);
 		QAndroidJniObject initLoader(jint arg0, android::os::Bundle arg1, __JniBaseClass arg2);
 		QAndroidJniObject restartLoader(jint arg0, android::os::Bundle arg1, __JniBaseClass arg2);

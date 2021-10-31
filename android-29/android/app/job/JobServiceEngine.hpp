@@ -20,7 +20,7 @@ namespace android::app::job
 		
 		JobServiceEngine(QAndroidJniObject obj);
 		// Constructors
-		JobServiceEngine(android::app::Service &arg0);
+		JobServiceEngine(android::app::Service arg0);
 		JobServiceEngine() = default;
 		
 		// Methods

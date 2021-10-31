@@ -38,15 +38,11 @@ namespace android::content::pm
 		jboolean isMultiPackage();
 		jboolean isStaged();
 		QAndroidJniObject openRead(jstring arg0);
-		QAndroidJniObject openRead(const QString &arg0);
 		QAndroidJniObject openWrite(jstring arg0, jlong arg1, jlong arg2);
-		QAndroidJniObject openWrite(const QString &arg0, jlong arg1, jlong arg2);
 		void removeChildSessionId(jint arg0);
 		void removeSplit(jstring arg0);
-		void removeSplit(const QString &arg0);
 		void setStagingProgress(jfloat arg0);
 		void transfer(jstring arg0);
-		void transfer(const QString &arg0);
 	};
 } // namespace android::content::pm
 

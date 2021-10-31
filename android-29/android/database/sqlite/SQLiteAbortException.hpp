@@ -17,8 +17,7 @@ namespace android::database::sqlite
 		SQLiteAbortException(QAndroidJniObject obj);
 		// Constructors
 		SQLiteAbortException();
-		SQLiteAbortException(jstring &arg0);
-		SQLiteAbortException(const QString &arg0);
+		SQLiteAbortException(jstring arg0);
 		
 		// Methods
 	};

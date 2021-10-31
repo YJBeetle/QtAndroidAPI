@@ -15,7 +15,7 @@ namespace android::service::carrier
 	
 	CarrierIdentifier::CarrierIdentifier(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	CarrierIdentifier::CarrierIdentifier(jbyteArray &arg0, jstring &arg1, jstring &arg2)
+	CarrierIdentifier::CarrierIdentifier(jbyteArray arg0, jstring arg1, jstring arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.service.carrier.CarrierIdentifier",
@@ -25,17 +25,7 @@ namespace android::service::carrier
 			arg2
 		);
 	}
-	CarrierIdentifier::CarrierIdentifier(jbyteArray &arg0, const QString &arg1, const QString &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.service.carrier.CarrierIdentifier",
-			"([BLjava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
-	CarrierIdentifier::CarrierIdentifier(jstring &arg0, jstring &arg1, jstring &arg2, jstring &arg3, jstring &arg4, jstring &arg5)
+	CarrierIdentifier::CarrierIdentifier(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4, jstring arg5)
 	{
 		__thiz = QAndroidJniObject(
 			"android.service.carrier.CarrierIdentifier",
@@ -48,20 +38,7 @@ namespace android::service::carrier
 			arg5
 		);
 	}
-	CarrierIdentifier::CarrierIdentifier(const QString &arg0, const QString &arg1, const QString &arg2, const QString &arg3, const QString &arg4, const QString &arg5)
-	{
-		__thiz = QAndroidJniObject(
-			"android.service.carrier.CarrierIdentifier",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			QAndroidJniObject::fromString(arg3).object<jstring>(),
-			QAndroidJniObject::fromString(arg4).object<jstring>(),
-			QAndroidJniObject::fromString(arg5).object<jstring>()
-		);
-	}
-	CarrierIdentifier::CarrierIdentifier(jstring &arg0, jstring &arg1, jstring &arg2, jstring &arg3, jstring &arg4, jstring &arg5, jint &arg6, jint &arg7)
+	CarrierIdentifier::CarrierIdentifier(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4, jstring arg5, jint arg6, jint arg7)
 	{
 		__thiz = QAndroidJniObject(
 			"android.service.carrier.CarrierIdentifier",
@@ -72,21 +49,6 @@ namespace android::service::carrier
 			arg3,
 			arg4,
 			arg5,
-			arg6,
-			arg7
-		);
-	}
-	CarrierIdentifier::CarrierIdentifier(const QString &arg0, const QString &arg1, const QString &arg2, const QString &arg3, const QString &arg4, const QString &arg5, jint &arg6, jint &arg7)
-	{
-		__thiz = QAndroidJniObject(
-			"android.service.carrier.CarrierIdentifier",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;II)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			QAndroidJniObject::fromString(arg3).object<jstring>(),
-			QAndroidJniObject::fromString(arg4).object<jstring>(),
-			QAndroidJniObject::fromString(arg5).object<jstring>(),
 			arg6,
 			arg7
 		);

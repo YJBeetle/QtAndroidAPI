@@ -19,8 +19,7 @@ namespace android::service::media
 		
 		MediaBrowserService_BrowserRoot(QAndroidJniObject obj);
 		// Constructors
-		MediaBrowserService_BrowserRoot(jstring &arg0, android::os::Bundle &arg1);
-		MediaBrowserService_BrowserRoot(const QString &arg0, android::os::Bundle &arg1);
+		MediaBrowserService_BrowserRoot(jstring arg0, android::os::Bundle arg1);
 		MediaBrowserService_BrowserRoot() = default;
 		
 		// Methods

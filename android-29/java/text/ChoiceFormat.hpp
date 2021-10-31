@@ -34,9 +34,8 @@ namespace java::text
 		
 		ChoiceFormat(QAndroidJniObject obj);
 		// Constructors
-		ChoiceFormat(jstring &arg0);
-		ChoiceFormat(const QString &arg0);
-		ChoiceFormat(jdoubleArray &arg0, jarray &arg1);
+		ChoiceFormat(jstring arg0);
+		ChoiceFormat(jdoubleArray arg0, jarray arg1);
 		ChoiceFormat() = default;
 		
 		// Methods
@@ -44,7 +43,6 @@ namespace java::text
 		static jdouble nextDouble(jdouble arg0, jboolean arg1);
 		static jdouble previousDouble(jdouble arg0);
 		void applyPattern(jstring arg0);
-		void applyPattern(const QString &arg0);
 		jobject clone();
 		jboolean equals(jobject arg0);
 		QAndroidJniObject format(jdouble arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
@@ -53,7 +51,6 @@ namespace java::text
 		jdoubleArray getLimits();
 		jint hashCode();
 		QAndroidJniObject parse(jstring arg0, java::text::ParsePosition arg1);
-		QAndroidJniObject parse(const QString &arg0, java::text::ParsePosition arg1);
 		void setChoices(jdoubleArray arg0, jarray arg1);
 		jstring toPattern();
 	};

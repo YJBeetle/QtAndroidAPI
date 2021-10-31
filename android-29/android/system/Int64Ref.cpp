@@ -12,7 +12,7 @@ namespace android::system
 	
 	Int64Ref::Int64Ref(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Int64Ref::Int64Ref(jlong &arg0)
+	Int64Ref::Int64Ref(jlong arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.system.Int64Ref",

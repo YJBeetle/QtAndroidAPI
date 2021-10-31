@@ -16,8 +16,7 @@ namespace java::util
 		
 		UnknownFormatFlagsException(QAndroidJniObject obj);
 		// Constructors
-		UnknownFormatFlagsException(jstring &arg0);
-		UnknownFormatFlagsException(const QString &arg0);
+		UnknownFormatFlagsException(jstring arg0);
 		UnknownFormatFlagsException() = default;
 		
 		// Methods

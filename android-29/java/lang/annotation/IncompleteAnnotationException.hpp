@@ -14,8 +14,7 @@ namespace java::lang::annotation
 		
 		IncompleteAnnotationException(QAndroidJniObject obj);
 		// Constructors
-		IncompleteAnnotationException(jclass &arg0, jstring &arg1);
-		IncompleteAnnotationException(jclass &arg0, const QString &arg1);
+		IncompleteAnnotationException(jclass arg0, jstring arg1);
 		IncompleteAnnotationException() = default;
 		
 		// Methods

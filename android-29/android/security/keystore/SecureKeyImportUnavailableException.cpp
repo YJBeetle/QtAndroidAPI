@@ -13,7 +13,7 @@ namespace android::security::keystore
 			"()V"
 		);
 	}
-	SecureKeyImportUnavailableException::SecureKeyImportUnavailableException(jstring &arg0)
+	SecureKeyImportUnavailableException::SecureKeyImportUnavailableException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.security.keystore.SecureKeyImportUnavailableException",
@@ -21,15 +21,7 @@ namespace android::security::keystore
 			arg0
 		);
 	}
-	SecureKeyImportUnavailableException::SecureKeyImportUnavailableException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.security.keystore.SecureKeyImportUnavailableException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	SecureKeyImportUnavailableException::SecureKeyImportUnavailableException(jthrowable &arg0)
+	SecureKeyImportUnavailableException::SecureKeyImportUnavailableException(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.security.keystore.SecureKeyImportUnavailableException",
@@ -37,21 +29,12 @@ namespace android::security::keystore
 			arg0
 		);
 	}
-	SecureKeyImportUnavailableException::SecureKeyImportUnavailableException(jstring &arg0, jthrowable &arg1)
+	SecureKeyImportUnavailableException::SecureKeyImportUnavailableException(jstring arg0, jthrowable arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.security.keystore.SecureKeyImportUnavailableException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
-			arg1
-		);
-	}
-	SecureKeyImportUnavailableException::SecureKeyImportUnavailableException(const QString &arg0, jthrowable &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.security.keystore.SecureKeyImportUnavailableException",
-			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

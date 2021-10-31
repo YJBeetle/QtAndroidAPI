@@ -29,15 +29,6 @@ namespace java::lang
 			arg1
 		);
 	}
-	void SecurityManager::checkAccept(const QString &arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"checkAccept",
-			"(Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	void SecurityManager::checkAccess(java::lang::Thread arg0)
 	{
 		__thiz.callMethod<void>(
@@ -63,31 +54,12 @@ namespace java::lang
 			arg1
 		);
 	}
-	void SecurityManager::checkConnect(const QString &arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"checkConnect",
-			"(Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	void SecurityManager::checkConnect(jstring arg0, jint arg1, jobject arg2)
 	{
 		__thiz.callMethod<void>(
 			"checkConnect",
 			"(Ljava/lang/String;ILjava/lang/Object;)V",
 			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void SecurityManager::checkConnect(const QString &arg0, jint arg1, jobject arg2)
-	{
-		__thiz.callMethod<void>(
-			"checkConnect",
-			"(Ljava/lang/String;ILjava/lang/Object;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2
 		);
@@ -107,28 +79,12 @@ namespace java::lang
 			arg0
 		);
 	}
-	void SecurityManager::checkDelete(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"checkDelete",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void SecurityManager::checkExec(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"checkExec",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void SecurityManager::checkExec(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"checkExec",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void SecurityManager::checkExit(jint arg0)
@@ -145,14 +101,6 @@ namespace java::lang
 			"checkLink",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void SecurityManager::checkLink(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"checkLink",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void SecurityManager::checkListen(jint arg0)
@@ -188,28 +136,12 @@ namespace java::lang
 			arg0
 		);
 	}
-	void SecurityManager::checkPackageAccess(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"checkPackageAccess",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void SecurityManager::checkPackageDefinition(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"checkPackageDefinition",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void SecurityManager::checkPackageDefinition(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"checkPackageDefinition",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void SecurityManager::checkPermission(java::security::Permission arg0)
@@ -251,14 +183,6 @@ namespace java::lang
 			arg0
 		);
 	}
-	void SecurityManager::checkPropertyAccess(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"checkPropertyAccess",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void SecurityManager::checkRead(java::io::FileDescriptor arg0)
 	{
 		__thiz.callMethod<void>(
@@ -275,14 +199,6 @@ namespace java::lang
 			arg0
 		);
 	}
-	void SecurityManager::checkRead(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"checkRead",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void SecurityManager::checkRead(jstring arg0, jobject arg1)
 	{
 		__thiz.callMethod<void>(
@@ -292,29 +208,12 @@ namespace java::lang
 			arg1
 		);
 	}
-	void SecurityManager::checkRead(const QString &arg0, jobject arg1)
-	{
-		__thiz.callMethod<void>(
-			"checkRead",
-			"(Ljava/lang/String;Ljava/lang/Object;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	void SecurityManager::checkSecurityAccess(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"checkSecurityAccess",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void SecurityManager::checkSecurityAccess(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"checkSecurityAccess",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void SecurityManager::checkSetFactory()
@@ -338,14 +237,6 @@ namespace java::lang
 			"checkWrite",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void SecurityManager::checkWrite(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"checkWrite",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jobject SecurityManager::getSecurityContext()

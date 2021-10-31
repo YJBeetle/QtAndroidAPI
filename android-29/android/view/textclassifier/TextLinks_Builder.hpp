@@ -20,8 +20,7 @@ namespace android::view::textclassifier
 		
 		TextLinks_Builder(QAndroidJniObject obj);
 		// Constructors
-		TextLinks_Builder(jstring &arg0);
-		TextLinks_Builder(const QString &arg0);
+		TextLinks_Builder(jstring arg0);
 		TextLinks_Builder() = default;
 		
 		// Methods

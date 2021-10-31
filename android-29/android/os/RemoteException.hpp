@@ -15,8 +15,7 @@ namespace android::os
 		RemoteException(QAndroidJniObject obj);
 		// Constructors
 		RemoteException();
-		RemoteException(jstring &arg0);
-		RemoteException(const QString &arg0);
+		RemoteException(jstring arg0);
 		
 		// Methods
 	};

@@ -18,7 +18,7 @@ namespace java::util::concurrent
 			"()V"
 		);
 	}
-	LinkedBlockingQueue::LinkedBlockingQueue(jint &arg0)
+	LinkedBlockingQueue::LinkedBlockingQueue(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.LinkedBlockingQueue",
@@ -26,7 +26,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	LinkedBlockingQueue::LinkedBlockingQueue(__JniBaseClass &arg0)
+	LinkedBlockingQueue::LinkedBlockingQueue(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.LinkedBlockingQueue",

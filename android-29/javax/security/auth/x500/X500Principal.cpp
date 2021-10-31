@@ -33,7 +33,7 @@ namespace javax::security::auth::x500
 	
 	X500Principal::X500Principal(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	X500Principal::X500Principal(jbyteArray &arg0)
+	X500Principal::X500Principal(jbyteArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.security.auth.x500.X500Principal",
@@ -41,7 +41,7 @@ namespace javax::security::auth::x500
 			arg0
 		);
 	}
-	X500Principal::X500Principal(java::io::InputStream &arg0)
+	X500Principal::X500Principal(java::io::InputStream arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.security.auth.x500.X500Principal",
@@ -49,7 +49,7 @@ namespace javax::security::auth::x500
 			arg0.__jniObject().object()
 		);
 	}
-	X500Principal::X500Principal(jstring &arg0)
+	X500Principal::X500Principal(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.security.auth.x500.X500Principal",
@@ -57,29 +57,12 @@ namespace javax::security::auth::x500
 			arg0
 		);
 	}
-	X500Principal::X500Principal(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.security.auth.x500.X500Principal",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	X500Principal::X500Principal(jstring &arg0, __JniBaseClass &arg1)
+	X500Principal::X500Principal(jstring arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.security.auth.x500.X500Principal",
 			"(Ljava/lang/String;Ljava/util/Map;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	X500Principal::X500Principal(const QString &arg0, __JniBaseClass &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.security.auth.x500.X500Principal",
-			"(Ljava/lang/String;Ljava/util/Map;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -115,29 +98,12 @@ namespace javax::security::auth::x500
 			arg0
 		).object<jstring>();
 	}
-	jstring X500Principal::getName(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getName",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
 	jstring X500Principal::getName(jstring arg0, __JniBaseClass arg1)
 	{
 		return __thiz.callObjectMethod(
 			"getName",
 			"(Ljava/lang/String;Ljava/util/Map;)Ljava/lang/String;",
 			arg0,
-			arg1.__jniObject().object()
-		).object<jstring>();
-	}
-	jstring X500Principal::getName(const QString &arg0, __JniBaseClass arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getName",
-			"(Ljava/lang/String;Ljava/util/Map;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		).object<jstring>();
 	}

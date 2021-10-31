@@ -32,25 +32,19 @@ namespace android::net
 		
 		VpnService_Builder(QAndroidJniObject obj);
 		// Constructors
-		VpnService_Builder(android::net::VpnService &arg0);
+		VpnService_Builder(android::net::VpnService arg0);
 		VpnService_Builder() = default;
 		
 		// Methods
 		QAndroidJniObject addAddress(jstring arg0, jint arg1);
-		QAndroidJniObject addAddress(const QString &arg0, jint arg1);
 		QAndroidJniObject addAddress(java::net::InetAddress arg0, jint arg1);
 		QAndroidJniObject addAllowedApplication(jstring arg0);
-		QAndroidJniObject addAllowedApplication(const QString &arg0);
 		QAndroidJniObject addDisallowedApplication(jstring arg0);
-		QAndroidJniObject addDisallowedApplication(const QString &arg0);
 		QAndroidJniObject addDnsServer(jstring arg0);
-		QAndroidJniObject addDnsServer(const QString &arg0);
 		QAndroidJniObject addDnsServer(java::net::InetAddress arg0);
 		QAndroidJniObject addRoute(jstring arg0, jint arg1);
-		QAndroidJniObject addRoute(const QString &arg0, jint arg1);
 		QAndroidJniObject addRoute(java::net::InetAddress arg0, jint arg1);
 		QAndroidJniObject addSearchDomain(jstring arg0);
-		QAndroidJniObject addSearchDomain(const QString &arg0);
 		QAndroidJniObject allowBypass();
 		QAndroidJniObject allowFamily(jint arg0);
 		QAndroidJniObject establish();
@@ -60,7 +54,6 @@ namespace android::net
 		QAndroidJniObject setMetered(jboolean arg0);
 		QAndroidJniObject setMtu(jint arg0);
 		QAndroidJniObject setSession(jstring arg0);
-		QAndroidJniObject setSession(const QString &arg0);
 		QAndroidJniObject setUnderlyingNetworks(jarray arg0);
 	};
 } // namespace android::net

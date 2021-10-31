@@ -20,7 +20,7 @@ namespace android::icu::util
 		
 		Measure(QAndroidJniObject obj);
 		// Constructors
-		Measure(java::lang::Number &arg0, android::icu::util::MeasureUnit &arg1);
+		Measure(java::lang::Number arg0, android::icu::util::MeasureUnit arg1);
 		Measure() = default;
 		
 		// Methods

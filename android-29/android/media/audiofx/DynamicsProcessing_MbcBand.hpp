@@ -14,7 +14,7 @@ namespace android::media::audiofx
 		DynamicsProcessing_MbcBand(QAndroidJniObject obj);
 		// Constructors
 		DynamicsProcessing_MbcBand(android::media::audiofx::DynamicsProcessing_MbcBand &arg0);
-		DynamicsProcessing_MbcBand(jboolean &arg0, jfloat &arg1, jfloat &arg2, jfloat &arg3, jfloat &arg4, jfloat &arg5, jfloat &arg6, jfloat &arg7, jfloat &arg8, jfloat &arg9, jfloat &arg10);
+		DynamicsProcessing_MbcBand(jboolean arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5, jfloat arg6, jfloat arg7, jfloat arg8, jfloat arg9, jfloat arg10);
 		DynamicsProcessing_MbcBand() = default;
 		
 		// Methods

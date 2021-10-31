@@ -15,8 +15,7 @@ namespace java::lang
 		UnsatisfiedLinkError(QAndroidJniObject obj);
 		// Constructors
 		UnsatisfiedLinkError();
-		UnsatisfiedLinkError(jstring &arg0);
-		UnsatisfiedLinkError(const QString &arg0);
+		UnsatisfiedLinkError(jstring arg0);
 		
 		// Methods
 	};

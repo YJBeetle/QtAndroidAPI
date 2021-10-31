@@ -17,8 +17,8 @@ namespace java::lang::ref
 		
 		SoftReference(QAndroidJniObject obj);
 		// Constructors
-		SoftReference(jobject &arg0);
-		SoftReference(jobject &arg0, java::lang::ref::ReferenceQueue &arg1);
+		SoftReference(jobject arg0);
+		SoftReference(jobject arg0, java::lang::ref::ReferenceQueue arg1);
 		SoftReference() = default;
 		
 		// Methods

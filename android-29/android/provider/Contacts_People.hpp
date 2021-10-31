@@ -53,7 +53,6 @@ namespace android::provider
 		
 		// Methods
 		static QAndroidJniObject addToGroup(android::content::ContentResolver arg0, jlong arg1, jstring arg2);
-		static QAndroidJniObject addToGroup(android::content::ContentResolver arg0, jlong arg1, const QString &arg2);
 		static QAndroidJniObject addToGroup(android::content::ContentResolver arg0, jlong arg1, jlong arg2);
 		static QAndroidJniObject addToMyContactsGroup(android::content::ContentResolver arg0, jlong arg1);
 		static QAndroidJniObject createPersonInMyContactsGroup(android::content::ContentResolver arg0, android::content::ContentValues arg1);

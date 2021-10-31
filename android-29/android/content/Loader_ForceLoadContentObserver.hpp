@@ -17,7 +17,7 @@ namespace android::content
 		
 		Loader_ForceLoadContentObserver(QAndroidJniObject obj);
 		// Constructors
-		Loader_ForceLoadContentObserver(android::content::Loader &arg0);
+		Loader_ForceLoadContentObserver(android::content::Loader arg0);
 		Loader_ForceLoadContentObserver() = default;
 		
 		// Methods

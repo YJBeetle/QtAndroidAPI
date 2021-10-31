@@ -17,7 +17,7 @@ namespace android::service::autofill
 	
 	DateTransformation::DateTransformation(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DateTransformation::DateTransformation(android::view::autofill::AutofillId &arg0, android::icu::text::DateFormat &arg1)
+	DateTransformation::DateTransformation(android::view::autofill::AutofillId arg0, android::icu::text::DateFormat arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.service.autofill.DateTransformation",

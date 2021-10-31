@@ -16,23 +16,13 @@ namespace android::app
 	
 	RecoverableSecurityException::RecoverableSecurityException(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	RecoverableSecurityException::RecoverableSecurityException(jthrowable &arg0, jstring &arg1, android::app::RemoteAction &arg2)
+	RecoverableSecurityException::RecoverableSecurityException(jthrowable arg0, jstring arg1, android::app::RemoteAction arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.RecoverableSecurityException",
 			"(Ljava/lang/Throwable;Ljava/lang/CharSequence;Landroid/app/RemoteAction;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	RecoverableSecurityException::RecoverableSecurityException(jthrowable &arg0, const QString &arg1, android::app::RemoteAction &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.app.RecoverableSecurityException",
-			"(Ljava/lang/Throwable;Ljava/lang/CharSequence;Landroid/app/RemoteAction;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}

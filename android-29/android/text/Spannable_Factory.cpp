@@ -31,13 +31,5 @@ namespace android::text
 			arg0
 		);
 	}
-	QAndroidJniObject Spannable_Factory::newSpannable(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"newSpannable",
-			"(Ljava/lang/CharSequence;)Landroid/text/Spannable;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 } // namespace android::text
 

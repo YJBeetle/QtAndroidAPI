@@ -29,25 +29,21 @@ namespace java::io
 		
 		OutputStreamWriter(QAndroidJniObject obj);
 		// Constructors
-		OutputStreamWriter(java::io::OutputStream &arg0);
-		OutputStreamWriter(java::io::OutputStream &arg0, jstring &arg1);
-		OutputStreamWriter(java::io::OutputStream &arg0, const QString &arg1);
-		OutputStreamWriter(java::io::OutputStream &arg0, java::nio::charset::Charset &arg1);
-		OutputStreamWriter(java::io::OutputStream &arg0, java::nio::charset::CharsetEncoder &arg1);
+		OutputStreamWriter(java::io::OutputStream arg0);
+		OutputStreamWriter(java::io::OutputStream arg0, jstring arg1);
+		OutputStreamWriter(java::io::OutputStream arg0, java::nio::charset::Charset arg1);
+		OutputStreamWriter(java::io::OutputStream arg0, java::nio::charset::CharsetEncoder arg1);
 		OutputStreamWriter() = default;
 		
 		// Methods
 		QAndroidJniObject append(jstring arg0);
-		QAndroidJniObject append(const QString &arg0);
 		QAndroidJniObject append(jstring arg0, jint arg1, jint arg2);
-		QAndroidJniObject append(const QString &arg0, jint arg1, jint arg2);
 		void close();
 		void flush();
 		jstring getEncoding();
 		void write(jint arg0);
 		void write(jcharArray arg0, jint arg1, jint arg2);
 		void write(jstring arg0, jint arg1, jint arg2);
-		void write(const QString &arg0, jint arg1, jint arg2);
 	};
 } // namespace java::io
 

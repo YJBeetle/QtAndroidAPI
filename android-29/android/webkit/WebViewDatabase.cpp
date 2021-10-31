@@ -55,15 +55,6 @@ namespace android::webkit
 			arg1
 		).object<jarray>();
 	}
-	jarray WebViewDatabase::getHttpAuthUsernamePassword(const QString &arg0, const QString &arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getHttpAuthUsernamePassword",
-			"(Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		).object<jarray>();
-	}
 	jboolean WebViewDatabase::hasFormData()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -94,17 +85,6 @@ namespace android::webkit
 			arg1,
 			arg2,
 			arg3
-		);
-	}
-	void WebViewDatabase::setHttpAuthUsernamePassword(const QString &arg0, const QString &arg1, const QString &arg2, const QString &arg3)
-	{
-		__thiz.callMethod<void>(
-			"setHttpAuthUsernamePassword",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			QAndroidJniObject::fromString(arg3).object<jstring>()
 		);
 	}
 } // namespace android::webkit

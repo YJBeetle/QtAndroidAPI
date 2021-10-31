@@ -65,13 +65,10 @@ namespace android::graphics::drawable
 		static QAndroidJniObject createWithBitmap(android::graphics::Bitmap arg0);
 		static QAndroidJniObject createWithContentUri(android::net::Uri arg0);
 		static QAndroidJniObject createWithContentUri(jstring arg0);
-		static QAndroidJniObject createWithContentUri(const QString &arg0);
 		static QAndroidJniObject createWithData(jbyteArray arg0, jint arg1, jint arg2);
 		static QAndroidJniObject createWithFilePath(jstring arg0);
-		static QAndroidJniObject createWithFilePath(const QString &arg0);
 		static QAndroidJniObject createWithResource(android::content::Context arg0, jint arg1);
 		static QAndroidJniObject createWithResource(jstring arg0, jint arg1);
-		static QAndroidJniObject createWithResource(const QString &arg0, jint arg1);
 		jint describeContents();
 		jint getResId();
 		jstring getResPackage();

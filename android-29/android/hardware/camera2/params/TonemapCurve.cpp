@@ -49,7 +49,7 @@ namespace android::hardware::camera2::params
 	
 	TonemapCurve::TonemapCurve(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	TonemapCurve::TonemapCurve(jfloatArray &arg0, jfloatArray &arg1, jfloatArray &arg2)
+	TonemapCurve::TonemapCurve(jfloatArray arg0, jfloatArray arg1, jfloatArray arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.hardware.camera2.params.TonemapCurve",

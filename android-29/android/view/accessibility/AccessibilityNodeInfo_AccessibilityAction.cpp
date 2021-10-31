@@ -302,22 +302,13 @@ namespace android::view::accessibility
 	
 	AccessibilityNodeInfo_AccessibilityAction::AccessibilityNodeInfo_AccessibilityAction(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AccessibilityNodeInfo_AccessibilityAction::AccessibilityNodeInfo_AccessibilityAction(jint &arg0, jstring &arg1)
+	AccessibilityNodeInfo_AccessibilityAction::AccessibilityNodeInfo_AccessibilityAction(jint arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction",
 			"(ILjava/lang/CharSequence;)V",
 			arg0,
 			arg1
-		);
-	}
-	AccessibilityNodeInfo_AccessibilityAction::AccessibilityNodeInfo_AccessibilityAction(jint &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction",
-			"(ILjava/lang/CharSequence;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	

@@ -29,18 +29,16 @@ namespace java::util
 		Date(QAndroidJniObject obj);
 		// Constructors
 		Date();
-		Date(jstring &arg0);
-		Date(const QString &arg0);
-		Date(jlong &arg0);
-		Date(jint &arg0, jint &arg1, jint &arg2);
-		Date(jint &arg0, jint &arg1, jint &arg2, jint &arg3, jint &arg4);
-		Date(jint &arg0, jint &arg1, jint &arg2, jint &arg3, jint &arg4, jint &arg5);
+		Date(jstring arg0);
+		Date(jlong arg0);
+		Date(jint arg0, jint arg1, jint arg2);
+		Date(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
+		Date(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
 		
 		// Methods
 		static jlong UTC(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
 		static QAndroidJniObject from(java::time::Instant arg0);
 		static jlong parse(jstring arg0);
-		static jlong parse(const QString &arg0);
 		jboolean after(java::util::Date arg0);
 		jboolean before(java::util::Date arg0);
 		jobject clone();

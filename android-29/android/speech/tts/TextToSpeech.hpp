@@ -62,25 +62,18 @@ namespace android::speech::tts
 		
 		TextToSpeech(QAndroidJniObject obj);
 		// Constructors
-		TextToSpeech(android::content::Context &arg0, __JniBaseClass &arg1);
-		TextToSpeech(android::content::Context &arg0, __JniBaseClass &arg1, jstring &arg2);
-		TextToSpeech(android::content::Context &arg0, __JniBaseClass &arg1, const QString &arg2);
+		TextToSpeech(android::content::Context arg0, __JniBaseClass arg1);
+		TextToSpeech(android::content::Context arg0, __JniBaseClass arg1, jstring arg2);
 		TextToSpeech() = default;
 		
 		// Methods
 		static jint getMaxSpeechInputLength();
 		jint addEarcon(jstring arg0, java::io::File arg1);
-		jint addEarcon(const QString &arg0, java::io::File arg1);
 		jint addEarcon(jstring arg0, jstring arg1);
-		jint addEarcon(const QString &arg0, const QString &arg1);
 		jint addEarcon(jstring arg0, jstring arg1, jint arg2);
-		jint addEarcon(const QString &arg0, const QString &arg1, jint arg2);
 		jint addSpeech(jstring arg0, java::io::File arg1);
-		jint addSpeech(const QString &arg0, java::io::File arg1);
 		jint addSpeech(jstring arg0, jstring arg1);
-		jint addSpeech(const QString &arg0, const QString &arg1);
 		jint addSpeech(jstring arg0, jstring arg1, jint arg2);
-		jint addSpeech(const QString &arg0, const QString &arg1, jint arg2);
 		jboolean areDefaultsEnforced();
 		QAndroidJniObject getAvailableLanguages();
 		jstring getDefaultEngine();
@@ -94,15 +87,11 @@ namespace android::speech::tts
 		jint isLanguageAvailable(java::util::Locale arg0);
 		jboolean isSpeaking();
 		jint playEarcon(jstring arg0, jint arg1, java::util::HashMap arg2);
-		jint playEarcon(const QString &arg0, jint arg1, java::util::HashMap arg2);
 		jint playEarcon(jstring arg0, jint arg1, android::os::Bundle arg2, jstring arg3);
-		jint playEarcon(const QString &arg0, jint arg1, android::os::Bundle arg2, const QString &arg3);
 		jint playSilence(jlong arg0, jint arg1, java::util::HashMap arg2);
 		jint playSilentUtterance(jlong arg0, jint arg1, jstring arg2);
-		jint playSilentUtterance(jlong arg0, jint arg1, const QString &arg2);
 		jint setAudioAttributes(android::media::AudioAttributes arg0);
 		jint setEngineByPackageName(jstring arg0);
-		jint setEngineByPackageName(const QString &arg0);
 		jint setLanguage(java::util::Locale arg0);
 		jint setOnUtteranceCompletedListener(__JniBaseClass arg0);
 		jint setOnUtteranceProgressListener(android::speech::tts::UtteranceProgressListener arg0);
@@ -111,14 +100,10 @@ namespace android::speech::tts
 		jint setVoice(android::speech::tts::Voice arg0);
 		void shutdown();
 		jint speak(jstring arg0, jint arg1, java::util::HashMap arg2);
-		jint speak(const QString &arg0, jint arg1, java::util::HashMap arg2);
 		jint speak(jstring arg0, jint arg1, android::os::Bundle arg2, jstring arg3);
-		jint speak(const QString &arg0, jint arg1, android::os::Bundle arg2, const QString &arg3);
 		jint stop();
 		jint synthesizeToFile(jstring arg0, java::util::HashMap arg1, jstring arg2);
-		jint synthesizeToFile(const QString &arg0, java::util::HashMap arg1, const QString &arg2);
 		jint synthesizeToFile(jstring arg0, android::os::Bundle arg1, java::io::File arg2, jstring arg3);
-		jint synthesizeToFile(const QString &arg0, android::os::Bundle arg1, java::io::File arg2, const QString &arg3);
 	};
 } // namespace android::speech::tts
 

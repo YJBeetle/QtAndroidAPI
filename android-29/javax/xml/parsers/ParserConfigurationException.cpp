@@ -13,20 +13,12 @@ namespace javax::xml::parsers
 			"()V"
 		);
 	}
-	ParserConfigurationException::ParserConfigurationException(jstring &arg0)
+	ParserConfigurationException::ParserConfigurationException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.parsers.ParserConfigurationException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	ParserConfigurationException::ParserConfigurationException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.xml.parsers.ParserConfigurationException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

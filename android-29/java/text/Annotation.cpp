@@ -6,7 +6,7 @@ namespace java::text
 	
 	Annotation::Annotation(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Annotation::Annotation(jobject &arg0)
+	Annotation::Annotation(jobject arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.text.Annotation",

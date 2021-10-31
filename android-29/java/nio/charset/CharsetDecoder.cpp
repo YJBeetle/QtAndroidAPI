@@ -112,14 +112,6 @@ namespace java::nio::charset
 			arg0
 		);
 	}
-	QAndroidJniObject CharsetDecoder::replaceWith(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"replaceWith",
-			"(Ljava/lang/String;)Ljava/nio/charset/CharsetDecoder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jstring CharsetDecoder::replacement()
 	{
 		return __thiz.callObjectMethod(

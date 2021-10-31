@@ -29,7 +29,6 @@ namespace android::print
 		// Methods
 		QAndroidJniObject getPrintJobs();
 		QAndroidJniObject print(jstring arg0, android::print::PrintDocumentAdapter arg1, android::print::PrintAttributes arg2);
-		QAndroidJniObject print(const QString &arg0, android::print::PrintDocumentAdapter arg1, android::print::PrintAttributes arg2);
 	};
 } // namespace android::print
 

@@ -34,16 +34,11 @@ namespace android::telephony
 		
 		// Methods
 		static jintArray calculateLength(jstring arg0, jboolean arg1);
-		static jintArray calculateLength(const QString &arg0, jboolean arg1);
 		static QAndroidJniObject createFromPdu(jbyteArray arg0);
 		static QAndroidJniObject createFromPdu(jbyteArray arg0, jstring arg1);
-		static QAndroidJniObject createFromPdu(jbyteArray arg0, const QString &arg1);
 		static QAndroidJniObject getSubmitPdu(jstring arg0, jstring arg1, jstring arg2, jboolean arg3);
-		static QAndroidJniObject getSubmitPdu(const QString &arg0, const QString &arg1, const QString &arg2, jboolean arg3);
 		static QAndroidJniObject getSubmitPdu(jstring arg0, jstring arg1, jshort arg2, jbyteArray arg3, jboolean arg4);
-		static QAndroidJniObject getSubmitPdu(const QString &arg0, const QString &arg1, jshort arg2, jbyteArray arg3, jboolean arg4);
 		static jint getTPLayerLengthForPDU(jstring arg0);
-		static jint getTPLayerLengthForPDU(const QString &arg0);
 		jstring getDisplayMessageBody();
 		jstring getDisplayOriginatingAddress();
 		jstring getEmailBody();

@@ -35,9 +35,9 @@ namespace android::widget
 		
 		CursorAdapter(QAndroidJniObject obj);
 		// Constructors
-		CursorAdapter(android::content::Context &arg0, __JniBaseClass &arg1);
-		CursorAdapter(android::content::Context &arg0, __JniBaseClass &arg1, jboolean &arg2);
-		CursorAdapter(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
+		CursorAdapter(android::content::Context arg0, __JniBaseClass arg1);
+		CursorAdapter(android::content::Context arg0, __JniBaseClass arg1, jboolean arg2);
+		CursorAdapter(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		CursorAdapter() = default;
 		
 		// Methods
@@ -57,7 +57,6 @@ namespace android::widget
 		QAndroidJniObject newDropDownView(android::content::Context arg0, __JniBaseClass arg1, android::view::ViewGroup arg2);
 		QAndroidJniObject newView(android::content::Context arg0, __JniBaseClass arg1, android::view::ViewGroup arg2);
 		QAndroidJniObject runQueryOnBackgroundThread(jstring arg0);
-		QAndroidJniObject runQueryOnBackgroundThread(const QString &arg0);
 		void setDropDownViewTheme(android::content::res::Resources_Theme arg0);
 		void setFilterQueryProvider(__JniBaseClass arg0);
 		QAndroidJniObject swapCursor(__JniBaseClass arg0);

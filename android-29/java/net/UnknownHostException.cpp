@@ -13,20 +13,12 @@ namespace java::net
 			"()V"
 		);
 	}
-	UnknownHostException::UnknownHostException(jstring &arg0)
+	UnknownHostException::UnknownHostException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.UnknownHostException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	UnknownHostException::UnknownHostException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.UnknownHostException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

@@ -28,7 +28,7 @@ namespace android::content
 			arg0.__jniObject().object()
 		);
 	}
-	ClipData::ClipData(android::content::ClipDescription &arg0, android::content::ClipData_Item &arg1)
+	ClipData::ClipData(android::content::ClipDescription arg0, android::content::ClipData_Item arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.ClipData",
@@ -37,22 +37,12 @@ namespace android::content
 			arg1.__jniObject().object()
 		);
 	}
-	ClipData::ClipData(jstring &arg0, jarray &arg1, android::content::ClipData_Item &arg2)
+	ClipData::ClipData(jstring arg0, jarray arg1, android::content::ClipData_Item arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.ClipData",
 			"(Ljava/lang/CharSequence;[Ljava/lang/String;Landroid/content/ClipData$Item;)V",
 			arg0,
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	ClipData::ClipData(const QString &arg0, jarray &arg1, android::content::ClipData_Item &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.ClipData",
-			"(Ljava/lang/CharSequence;[Ljava/lang/String;Landroid/content/ClipData$Item;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2.__jniObject().object()
 		);
@@ -70,17 +60,6 @@ namespace android::content
 			arg2
 		);
 	}
-	QAndroidJniObject ClipData::newHtmlText(const QString &arg0, const QString &arg1, const QString &arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.content.ClipData",
-			"newHtmlText",
-			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/String;)Landroid/content/ClipData;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	QAndroidJniObject ClipData::newIntent(jstring arg0, android::content::Intent arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -88,16 +67,6 @@ namespace android::content
 			"newIntent",
 			"(Ljava/lang/CharSequence;Landroid/content/Intent;)Landroid/content/ClipData;",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject ClipData::newIntent(const QString &arg0, android::content::Intent arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.content.ClipData",
-			"newIntent",
-			"(Ljava/lang/CharSequence;Landroid/content/Intent;)Landroid/content/ClipData;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -111,16 +80,6 @@ namespace android::content
 			arg1
 		);
 	}
-	QAndroidJniObject ClipData::newPlainText(const QString &arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.content.ClipData",
-			"newPlainText",
-			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Landroid/content/ClipData;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	QAndroidJniObject ClipData::newRawUri(jstring arg0, android::net::Uri arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -128,16 +87,6 @@ namespace android::content
 			"newRawUri",
 			"(Ljava/lang/CharSequence;Landroid/net/Uri;)Landroid/content/ClipData;",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject ClipData::newRawUri(const QString &arg0, android::net::Uri arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.content.ClipData",
-			"newRawUri",
-			"(Ljava/lang/CharSequence;Landroid/net/Uri;)Landroid/content/ClipData;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -149,17 +98,6 @@ namespace android::content
 			"(Landroid/content/ContentResolver;Ljava/lang/CharSequence;Landroid/net/Uri;)Landroid/content/ClipData;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	QAndroidJniObject ClipData::newUri(android::content::ContentResolver arg0, const QString &arg1, android::net::Uri arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.content.ClipData",
-			"newUri",
-			"(Landroid/content/ContentResolver;Ljava/lang/CharSequence;Landroid/net/Uri;)Landroid/content/ClipData;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}

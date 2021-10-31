@@ -18,7 +18,6 @@ namespace java::lang
 		static jobject command(jobject arg0);
 		static jboolean compileClass(jclass arg0);
 		static jboolean compileClasses(jstring arg0);
-		static jboolean compileClasses(const QString &arg0);
 		static void disable();
 		static void enable();
 	};

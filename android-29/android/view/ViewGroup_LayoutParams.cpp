@@ -57,7 +57,7 @@ namespace android::view
 			arg0.__jniObject().object()
 		);
 	}
-	ViewGroup_LayoutParams::ViewGroup_LayoutParams(android::content::Context &arg0, __JniBaseClass &arg1)
+	ViewGroup_LayoutParams::ViewGroup_LayoutParams(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.ViewGroup$LayoutParams",
@@ -66,7 +66,7 @@ namespace android::view
 			arg1.__jniObject().object()
 		);
 	}
-	ViewGroup_LayoutParams::ViewGroup_LayoutParams(jint &arg0, jint &arg1)
+	ViewGroup_LayoutParams::ViewGroup_LayoutParams(jint arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.ViewGroup$LayoutParams",

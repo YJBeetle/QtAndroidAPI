@@ -147,7 +147,7 @@ namespace android::content
 			arg0.__jniObject().object()
 		);
 	}
-	IntentFilter::IntentFilter(jstring &arg0)
+	IntentFilter::IntentFilter(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.IntentFilter",
@@ -155,30 +155,13 @@ namespace android::content
 			arg0
 		);
 	}
-	IntentFilter::IntentFilter(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.IntentFilter",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	IntentFilter::IntentFilter(jstring &arg0, jstring &arg1)
+	IntentFilter::IntentFilter(jstring arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.IntentFilter",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	IntentFilter::IntentFilter(const QString &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.IntentFilter",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	
@@ -191,16 +174,6 @@ namespace android::content
 			"(Ljava/lang/String;Ljava/lang/String;)Landroid/content/IntentFilter;",
 			arg0,
 			arg1
-		);
-	}
-	QAndroidJniObject IntentFilter::create(const QString &arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.content.IntentFilter",
-			"create",
-			"(Ljava/lang/String;Ljava/lang/String;)Landroid/content/IntentFilter;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	QAndroidJniObject IntentFilter::actionsIterator()
@@ -218,28 +191,12 @@ namespace android::content
 			arg0
 		);
 	}
-	void IntentFilter::addAction(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"addAction",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void IntentFilter::addCategory(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"addCategory",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void IntentFilter::addCategory(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"addCategory",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void IntentFilter::addDataAuthority(jstring arg0, jstring arg1)
@@ -251,30 +208,12 @@ namespace android::content
 			arg1
 		);
 	}
-	void IntentFilter::addDataAuthority(const QString &arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"addDataAuthority",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	void IntentFilter::addDataPath(jstring arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
 			"addDataPath",
 			"(Ljava/lang/String;I)V",
 			arg0,
-			arg1
-		);
-	}
-	void IntentFilter::addDataPath(const QString &arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"addDataPath",
-			"(Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -286,14 +225,6 @@ namespace android::content
 			arg0
 		);
 	}
-	void IntentFilter::addDataScheme(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"addDataScheme",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void IntentFilter::addDataSchemeSpecificPart(jstring arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
@@ -303,29 +234,12 @@ namespace android::content
 			arg1
 		);
 	}
-	void IntentFilter::addDataSchemeSpecificPart(const QString &arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"addDataSchemeSpecificPart",
-			"(Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	void IntentFilter::addDataType(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"addDataType",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void IntentFilter::addDataType(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"addDataType",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject IntentFilter::authoritiesIterator()
@@ -407,15 +321,6 @@ namespace android::content
 			arg1
 		);
 	}
-	void IntentFilter::dump(__JniBaseClass arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Landroid/util/Printer;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	jstring IntentFilter::getAction(jint arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -487,28 +392,12 @@ namespace android::content
 			arg0
 		);
 	}
-	jboolean IntentFilter::hasAction(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasAction",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jboolean IntentFilter::hasCategory(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasCategory",
 			"(Ljava/lang/String;)Z",
 			arg0
-		);
-	}
-	jboolean IntentFilter::hasCategory(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasCategory",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean IntentFilter::hasDataAuthority(android::net::Uri arg0)
@@ -527,28 +416,12 @@ namespace android::content
 			arg0
 		);
 	}
-	jboolean IntentFilter::hasDataPath(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasDataPath",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jboolean IntentFilter::hasDataScheme(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasDataScheme",
 			"(Ljava/lang/String;)Z",
 			arg0
-		);
-	}
-	jboolean IntentFilter::hasDataScheme(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasDataScheme",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean IntentFilter::hasDataSchemeSpecificPart(jstring arg0)
@@ -559,28 +432,12 @@ namespace android::content
 			arg0
 		);
 	}
-	jboolean IntentFilter::hasDataSchemeSpecificPart(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasDataSchemeSpecificPart",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jboolean IntentFilter::hasDataType(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasDataType",
 			"(Ljava/lang/String;)Z",
 			arg0
-		);
-	}
-	jboolean IntentFilter::hasDataType(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasDataType",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jint IntentFilter::match(android::content::ContentResolver arg0, android::content::Intent arg1, jboolean arg2, jstring arg3)
@@ -592,17 +449,6 @@ namespace android::content
 			arg1.__jniObject().object(),
 			arg2,
 			arg3
-		);
-	}
-	jint IntentFilter::match(android::content::ContentResolver arg0, android::content::Intent arg1, jboolean arg2, const QString &arg3)
-	{
-		return __thiz.callMethod<jint>(
-			"match",
-			"(Landroid/content/ContentResolver;Landroid/content/Intent;ZLjava/lang/String;)I",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2,
-			QAndroidJniObject::fromString(arg3).object<jstring>()
 		);
 	}
 	jint IntentFilter::match(jstring arg0, jstring arg1, jstring arg2, android::net::Uri arg3, __JniBaseClass arg4, jstring arg5)
@@ -618,33 +464,12 @@ namespace android::content
 			arg5
 		);
 	}
-	jint IntentFilter::match(const QString &arg0, const QString &arg1, const QString &arg2, android::net::Uri arg3, __JniBaseClass arg4, const QString &arg5)
-	{
-		return __thiz.callMethod<jint>(
-			"match",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/net/Uri;Ljava/util/Set;Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
-			QAndroidJniObject::fromString(arg5).object<jstring>()
-		);
-	}
 	jboolean IntentFilter::matchAction(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"matchAction",
 			"(Ljava/lang/String;)Z",
 			arg0
-		);
-	}
-	jboolean IntentFilter::matchAction(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"matchAction",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring IntentFilter::matchCategories(__JniBaseClass arg0)
@@ -662,16 +487,6 @@ namespace android::content
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/net/Uri;)I",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	jint IntentFilter::matchData(const QString &arg0, const QString &arg1, android::net::Uri arg2)
-	{
-		return __thiz.callMethod<jint>(
-			"matchData",
-			"(Ljava/lang/String;Ljava/lang/String;Landroid/net/Uri;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}

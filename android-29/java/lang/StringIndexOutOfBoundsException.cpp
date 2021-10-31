@@ -13,7 +13,7 @@ namespace java::lang
 			"()V"
 		);
 	}
-	StringIndexOutOfBoundsException::StringIndexOutOfBoundsException(jint &arg0)
+	StringIndexOutOfBoundsException::StringIndexOutOfBoundsException(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.StringIndexOutOfBoundsException",
@@ -21,20 +21,12 @@ namespace java::lang
 			arg0
 		);
 	}
-	StringIndexOutOfBoundsException::StringIndexOutOfBoundsException(jstring &arg0)
+	StringIndexOutOfBoundsException::StringIndexOutOfBoundsException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.StringIndexOutOfBoundsException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	StringIndexOutOfBoundsException::StringIndexOutOfBoundsException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.StringIndexOutOfBoundsException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

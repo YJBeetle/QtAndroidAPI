@@ -56,19 +56,13 @@ namespace android::service::media
 		QAndroidJniObject getCurrentBrowserInfo();
 		QAndroidJniObject getSessionToken();
 		void notifyChildrenChanged(jstring arg0);
-		void notifyChildrenChanged(const QString &arg0);
 		void notifyChildrenChanged(jstring arg0, android::os::Bundle arg1);
-		void notifyChildrenChanged(const QString &arg0, android::os::Bundle arg1);
 		QAndroidJniObject onBind(android::content::Intent arg0);
 		void onCreate();
 		QAndroidJniObject onGetRoot(jstring arg0, jint arg1, android::os::Bundle arg2);
-		QAndroidJniObject onGetRoot(const QString &arg0, jint arg1, android::os::Bundle arg2);
 		void onLoadChildren(jstring arg0, android::service::media::MediaBrowserService_Result arg1);
-		void onLoadChildren(const QString &arg0, android::service::media::MediaBrowserService_Result arg1);
 		void onLoadChildren(jstring arg0, android::service::media::MediaBrowserService_Result arg1, android::os::Bundle arg2);
-		void onLoadChildren(const QString &arg0, android::service::media::MediaBrowserService_Result arg1, android::os::Bundle arg2);
 		void onLoadItem(jstring arg0, android::service::media::MediaBrowserService_Result arg1);
-		void onLoadItem(const QString &arg0, android::service::media::MediaBrowserService_Result arg1);
 		void setSessionToken(android::media::session::MediaSession_Token arg0);
 	};
 } // namespace android::service::media

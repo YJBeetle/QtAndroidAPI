@@ -15,8 +15,7 @@ namespace java::lang
 		NegativeArraySizeException(QAndroidJniObject obj);
 		// Constructors
 		NegativeArraySizeException();
-		NegativeArraySizeException(jstring &arg0);
-		NegativeArraySizeException(const QString &arg0);
+		NegativeArraySizeException(jstring arg0);
 		
 		// Methods
 	};

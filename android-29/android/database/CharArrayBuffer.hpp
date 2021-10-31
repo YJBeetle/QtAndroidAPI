@@ -14,8 +14,8 @@ namespace android::database
 		
 		CharArrayBuffer(QAndroidJniObject obj);
 		// Constructors
-		CharArrayBuffer(jcharArray &arg0);
-		CharArrayBuffer(jint &arg0);
+		CharArrayBuffer(jcharArray arg0);
+		CharArrayBuffer(jint arg0);
 		CharArrayBuffer() = default;
 		
 		// Methods

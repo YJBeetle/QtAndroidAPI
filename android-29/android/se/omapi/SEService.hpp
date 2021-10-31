@@ -16,7 +16,7 @@ namespace android::se::omapi
 		
 		SEService(QAndroidJniObject obj);
 		// Constructors
-		SEService(android::content::Context &arg0, __JniBaseClass &arg1, __JniBaseClass &arg2);
+		SEService(android::content::Context arg0, __JniBaseClass arg1, __JniBaseClass arg2);
 		SEService() = default;
 		
 		// Methods

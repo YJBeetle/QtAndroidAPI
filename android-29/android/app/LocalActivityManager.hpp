@@ -28,25 +28,22 @@ namespace android::app
 		
 		LocalActivityManager(QAndroidJniObject obj);
 		// Constructors
-		LocalActivityManager(android::app::Activity &arg0, jboolean &arg1);
+		LocalActivityManager(android::app::Activity arg0, jboolean arg1);
 		LocalActivityManager() = default;
 		
 		// Methods
 		QAndroidJniObject destroyActivity(jstring arg0, jboolean arg1);
-		QAndroidJniObject destroyActivity(const QString &arg0, jboolean arg1);
 		void dispatchCreate(android::os::Bundle arg0);
 		void dispatchDestroy(jboolean arg0);
 		void dispatchPause(jboolean arg0);
 		void dispatchResume();
 		void dispatchStop();
 		QAndroidJniObject getActivity(jstring arg0);
-		QAndroidJniObject getActivity(const QString &arg0);
 		QAndroidJniObject getCurrentActivity();
 		jstring getCurrentId();
 		void removeAllActivities();
 		QAndroidJniObject saveInstanceState();
 		QAndroidJniObject startActivity(jstring arg0, android::content::Intent arg1);
-		QAndroidJniObject startActivity(const QString &arg0, android::content::Intent arg1);
 	};
 } // namespace android::app
 

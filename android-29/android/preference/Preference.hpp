@@ -49,10 +49,10 @@ namespace android::preference
 		
 		Preference(QAndroidJniObject obj);
 		// Constructors
-		Preference(android::content::Context &arg0);
-		Preference(android::content::Context &arg0, __JniBaseClass &arg1);
-		Preference(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		Preference(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		Preference(android::content::Context arg0);
+		Preference(android::content::Context arg0, __JniBaseClass arg1);
+		Preference(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		Preference(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		Preference() = default;
 		
 		// Methods
@@ -97,16 +97,13 @@ namespace android::preference
 		void saveHierarchyState(android::os::Bundle arg0);
 		void setDefaultValue(jobject arg0);
 		void setDependency(jstring arg0);
-		void setDependency(const QString &arg0);
 		void setEnabled(jboolean arg0);
 		void setFragment(jstring arg0);
-		void setFragment(const QString &arg0);
 		void setIcon(android::graphics::drawable::Drawable arg0);
 		void setIcon(jint arg0);
 		void setIconSpaceReserved(jboolean arg0);
 		void setIntent(android::content::Intent arg0);
 		void setKey(jstring arg0);
-		void setKey(const QString &arg0);
 		void setLayoutResource(jint arg0);
 		void setOnPreferenceChangeListener(__JniBaseClass arg0);
 		void setOnPreferenceClickListener(__JniBaseClass arg0);
@@ -119,10 +116,8 @@ namespace android::preference
 		void setSingleLineTitle(jboolean arg0);
 		void setSummary(jint arg0);
 		void setSummary(jstring arg0);
-		void setSummary(const QString &arg0);
 		void setTitle(jint arg0);
 		void setTitle(jstring arg0);
-		void setTitle(const QString &arg0);
 		void setWidgetLayoutResource(jint arg0);
 		jboolean shouldCommit();
 		jboolean shouldDisableDependents();

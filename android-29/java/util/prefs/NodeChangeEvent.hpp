@@ -25,7 +25,7 @@ namespace java::util::prefs
 		
 		NodeChangeEvent(QAndroidJniObject obj);
 		// Constructors
-		NodeChangeEvent(java::util::prefs::Preferences &arg0, java::util::prefs::Preferences &arg1);
+		NodeChangeEvent(java::util::prefs::Preferences arg0, java::util::prefs::Preferences arg1);
 		NodeChangeEvent() = default;
 		
 		// Methods

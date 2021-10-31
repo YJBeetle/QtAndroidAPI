@@ -39,10 +39,10 @@ namespace android::widget
 		
 		TabWidget(QAndroidJniObject obj);
 		// Constructors
-		TabWidget(android::content::Context &arg0);
-		TabWidget(android::content::Context &arg0, __JniBaseClass &arg1);
-		TabWidget(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		TabWidget(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		TabWidget(android::content::Context arg0);
+		TabWidget(android::content::Context arg0, __JniBaseClass arg1);
+		TabWidget(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		TabWidget(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		TabWidget() = default;
 		
 		// Methods

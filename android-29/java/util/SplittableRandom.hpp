@@ -17,7 +17,7 @@ namespace java::util
 		SplittableRandom(QAndroidJniObject obj);
 		// Constructors
 		SplittableRandom();
-		SplittableRandom(jlong &arg0);
+		SplittableRandom(jlong arg0);
 		
 		// Methods
 		QAndroidJniObject doubles();

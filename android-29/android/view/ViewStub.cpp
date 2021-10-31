@@ -10,7 +10,7 @@ namespace android::view
 	
 	ViewStub::ViewStub(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ViewStub::ViewStub(android::content::Context &arg0)
+	ViewStub::ViewStub(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.ViewStub",
@@ -18,7 +18,7 @@ namespace android::view
 			arg0.__jniObject().object()
 		);
 	}
-	ViewStub::ViewStub(android::content::Context &arg0, __JniBaseClass &arg1)
+	ViewStub::ViewStub(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.ViewStub",
@@ -27,7 +27,7 @@ namespace android::view
 			arg1.__jniObject().object()
 		);
 	}
-	ViewStub::ViewStub(android::content::Context &arg0, jint &arg1)
+	ViewStub::ViewStub(android::content::Context arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.ViewStub",
@@ -36,7 +36,7 @@ namespace android::view
 			arg1
 		);
 	}
-	ViewStub::ViewStub(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	ViewStub::ViewStub(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.ViewStub",
@@ -46,7 +46,7 @@ namespace android::view
 			arg2
 		);
 	}
-	ViewStub::ViewStub(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	ViewStub::ViewStub(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.ViewStub",

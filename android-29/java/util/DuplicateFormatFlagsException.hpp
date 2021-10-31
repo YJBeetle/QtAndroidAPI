@@ -16,8 +16,7 @@ namespace java::util
 		
 		DuplicateFormatFlagsException(QAndroidJniObject obj);
 		// Constructors
-		DuplicateFormatFlagsException(jstring &arg0);
-		DuplicateFormatFlagsException(const QString &arg0);
+		DuplicateFormatFlagsException(jstring arg0);
 		DuplicateFormatFlagsException() = default;
 		
 		// Methods

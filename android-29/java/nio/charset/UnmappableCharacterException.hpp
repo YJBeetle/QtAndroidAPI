@@ -15,7 +15,7 @@ namespace java::nio::charset
 		
 		UnmappableCharacterException(QAndroidJniObject obj);
 		// Constructors
-		UnmappableCharacterException(jint &arg0);
+		UnmappableCharacterException(jint arg0);
 		UnmappableCharacterException() = default;
 		
 		// Methods

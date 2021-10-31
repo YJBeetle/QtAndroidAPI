@@ -16,8 +16,7 @@ namespace javax::crypto
 		AEADBadTagException(QAndroidJniObject obj);
 		// Constructors
 		AEADBadTagException();
-		AEADBadTagException(jstring &arg0);
-		AEADBadTagException(const QString &arg0);
+		AEADBadTagException(jstring arg0);
 		
 		// Methods
 	};

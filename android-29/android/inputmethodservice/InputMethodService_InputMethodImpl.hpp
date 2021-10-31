@@ -33,7 +33,7 @@ namespace android::inputmethodservice
 		
 		InputMethodService_InputMethodImpl(QAndroidJniObject obj);
 		// Constructors
-		InputMethodService_InputMethodImpl(android::inputmethodservice::InputMethodService &arg0);
+		InputMethodService_InputMethodImpl(android::inputmethodservice::InputMethodService arg0);
 		InputMethodService_InputMethodImpl() = default;
 		
 		// Methods

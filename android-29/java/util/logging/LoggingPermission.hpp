@@ -14,8 +14,7 @@ namespace java::util::logging
 		
 		LoggingPermission(QAndroidJniObject obj);
 		// Constructors
-		LoggingPermission(jstring &arg0, jstring &arg1);
-		LoggingPermission(const QString &arg0, const QString &arg1);
+		LoggingPermission(jstring arg0, jstring arg1);
 		LoggingPermission() = default;
 		
 		// Methods

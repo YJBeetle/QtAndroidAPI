@@ -14,7 +14,7 @@ namespace android::util
 		
 		Pair(QAndroidJniObject obj);
 		// Constructors
-		Pair(jobject &arg0, jobject &arg1);
+		Pair(jobject arg0, jobject arg1);
 		Pair() = default;
 		
 		// Methods

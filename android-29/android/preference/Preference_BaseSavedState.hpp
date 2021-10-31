@@ -18,8 +18,8 @@ namespace android::preference
 		
 		Preference_BaseSavedState(QAndroidJniObject obj);
 		// Constructors
-		Preference_BaseSavedState(android::os::Parcel &arg0);
-		Preference_BaseSavedState(__JniBaseClass &arg0);
+		Preference_BaseSavedState(android::os::Parcel arg0);
+		Preference_BaseSavedState(__JniBaseClass arg0);
 		Preference_BaseSavedState() = default;
 		
 		// Methods

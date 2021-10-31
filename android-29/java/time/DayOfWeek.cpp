@@ -94,15 +94,6 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject DayOfWeek::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.time.DayOfWeek",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/time/DayOfWeek;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray DayOfWeek::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

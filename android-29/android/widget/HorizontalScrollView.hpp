@@ -43,10 +43,10 @@ namespace android::widget
 		
 		HorizontalScrollView(QAndroidJniObject obj);
 		// Constructors
-		HorizontalScrollView(android::content::Context &arg0);
-		HorizontalScrollView(android::content::Context &arg0, __JniBaseClass &arg1);
-		HorizontalScrollView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		HorizontalScrollView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		HorizontalScrollView(android::content::Context arg0);
+		HorizontalScrollView(android::content::Context arg0, __JniBaseClass arg1);
+		HorizontalScrollView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		HorizontalScrollView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		HorizontalScrollView() = default;
 		
 		// Methods

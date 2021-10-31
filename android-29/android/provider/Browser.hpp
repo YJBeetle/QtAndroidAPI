@@ -24,7 +24,6 @@ namespace android::provider
 		
 		// Methods
 		static void sendString(android::content::Context arg0, jstring arg1);
-		static void sendString(android::content::Context arg0, const QString &arg1);
 	};
 } // namespace android::provider
 

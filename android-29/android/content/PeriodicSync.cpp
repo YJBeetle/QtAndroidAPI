@@ -44,24 +44,13 @@ namespace android::content
 	
 	PeriodicSync::PeriodicSync(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PeriodicSync::PeriodicSync(android::accounts::Account &arg0, jstring &arg1, android::os::Bundle &arg2, jlong &arg3)
+	PeriodicSync::PeriodicSync(android::accounts::Account arg0, jstring arg1, android::os::Bundle arg2, jlong arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.PeriodicSync",
 			"(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;J)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object(),
-			arg3
-		);
-	}
-	PeriodicSync::PeriodicSync(android::accounts::Account &arg0, const QString &arg1, android::os::Bundle &arg2, jlong &arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.PeriodicSync",
-			"(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;J)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object(),
 			arg3
 		);

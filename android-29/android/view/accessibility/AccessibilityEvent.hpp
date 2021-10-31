@@ -94,7 +94,6 @@ namespace android::view::accessibility
 		void setEventType(jint arg0);
 		void setMovementGranularity(jint arg0);
 		void setPackageName(jstring arg0);
-		void setPackageName(const QString &arg0);
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

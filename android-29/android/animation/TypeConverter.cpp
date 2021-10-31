@@ -6,7 +6,7 @@ namespace android::animation
 	
 	TypeConverter::TypeConverter(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	TypeConverter::TypeConverter(jclass &arg0, jclass &arg1)
+	TypeConverter::TypeConverter(jclass arg0, jclass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.animation.TypeConverter",

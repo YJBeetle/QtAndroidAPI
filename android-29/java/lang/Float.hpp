@@ -32,10 +32,9 @@ namespace java::lang
 		
 		Float(QAndroidJniObject obj);
 		// Constructors
-		Float(jdouble &arg0);
-		Float(jfloat &arg0);
-		Float(jstring &arg0);
-		Float(const QString &arg0);
+		Float(jdouble arg0);
+		Float(jfloat arg0);
+		Float(jstring arg0);
 		Float() = default;
 		
 		// Methods
@@ -50,13 +49,11 @@ namespace java::lang
 		static jfloat max(jfloat arg0, jfloat arg1);
 		static jfloat min(jfloat arg0, jfloat arg1);
 		static jfloat parseFloat(jstring arg0);
-		static jfloat parseFloat(const QString &arg0);
 		static jfloat sum(jfloat arg0, jfloat arg1);
 		static jstring toHexString(jfloat arg0);
 		static jstring toString(jfloat arg0);
 		static QAndroidJniObject valueOf(jfloat arg0);
 		static QAndroidJniObject valueOf(jstring arg0);
-		static QAndroidJniObject valueOf(const QString &arg0);
 		jbyte byteValue();
 		jint compareTo(java::lang::Float arg0);
 		jint compareTo(jobject arg0);

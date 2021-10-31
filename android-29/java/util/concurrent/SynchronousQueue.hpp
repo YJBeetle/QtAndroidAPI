@@ -31,7 +31,7 @@ namespace java::util::concurrent
 		SynchronousQueue(QAndroidJniObject obj);
 		// Constructors
 		SynchronousQueue();
-		SynchronousQueue(jboolean &arg0);
+		SynchronousQueue(jboolean arg0);
 		
 		// Methods
 		void clear();

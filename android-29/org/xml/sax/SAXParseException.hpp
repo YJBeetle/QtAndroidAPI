@@ -18,14 +18,10 @@ namespace org::xml::sax
 		
 		SAXParseException(QAndroidJniObject obj);
 		// Constructors
-		SAXParseException(jstring &arg0, __JniBaseClass &arg1);
-		SAXParseException(const QString &arg0, __JniBaseClass &arg1);
-		SAXParseException(jstring &arg0, __JniBaseClass &arg1, java::lang::Exception &arg2);
-		SAXParseException(const QString &arg0, __JniBaseClass &arg1, java::lang::Exception &arg2);
-		SAXParseException(jstring &arg0, jstring &arg1, jstring &arg2, jint &arg3, jint &arg4);
-		SAXParseException(const QString &arg0, const QString &arg1, const QString &arg2, jint &arg3, jint &arg4);
-		SAXParseException(jstring &arg0, jstring &arg1, jstring &arg2, jint &arg3, jint &arg4, java::lang::Exception &arg5);
-		SAXParseException(const QString &arg0, const QString &arg1, const QString &arg2, jint &arg3, jint &arg4, java::lang::Exception &arg5);
+		SAXParseException(jstring arg0, __JniBaseClass arg1);
+		SAXParseException(jstring arg0, __JniBaseClass arg1, java::lang::Exception arg2);
+		SAXParseException(jstring arg0, jstring arg1, jstring arg2, jint arg3, jint arg4);
+		SAXParseException(jstring arg0, jstring arg1, jstring arg2, jint arg3, jint arg4, java::lang::Exception arg5);
 		SAXParseException() = default;
 		
 		// Methods

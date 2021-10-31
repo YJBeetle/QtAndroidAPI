@@ -18,11 +18,9 @@ namespace android::util
 		AndroidException(QAndroidJniObject obj);
 		// Constructors
 		AndroidException();
-		AndroidException(java::lang::Exception &arg0);
-		AndroidException(jstring &arg0);
-		AndroidException(const QString &arg0);
-		AndroidException(jstring &arg0, jthrowable &arg1);
-		AndroidException(const QString &arg0, jthrowable &arg1);
+		AndroidException(java::lang::Exception arg0);
+		AndroidException(jstring arg0);
+		AndroidException(jstring arg0, jthrowable arg1);
 		
 		// Methods
 	};

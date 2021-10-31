@@ -9,7 +9,7 @@ namespace android::app
 	
 	MediaRouteButton::MediaRouteButton(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MediaRouteButton::MediaRouteButton(android::content::Context &arg0)
+	MediaRouteButton::MediaRouteButton(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.MediaRouteButton",
@@ -17,7 +17,7 @@ namespace android::app
 			arg0.__jniObject().object()
 		);
 	}
-	MediaRouteButton::MediaRouteButton(android::content::Context &arg0, __JniBaseClass &arg1)
+	MediaRouteButton::MediaRouteButton(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.MediaRouteButton",
@@ -26,7 +26,7 @@ namespace android::app
 			arg1.__jniObject().object()
 		);
 	}
-	MediaRouteButton::MediaRouteButton(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	MediaRouteButton::MediaRouteButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.MediaRouteButton",
@@ -36,7 +36,7 @@ namespace android::app
 			arg2
 		);
 	}
-	MediaRouteButton::MediaRouteButton(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	MediaRouteButton::MediaRouteButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.MediaRouteButton",
@@ -90,14 +90,6 @@ namespace android::app
 			"setContentDescription",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
-		);
-	}
-	void MediaRouteButton::setContentDescription(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setContentDescription",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void MediaRouteButton::setExtendedSettingsClickListener(__JniBaseClass arg0)

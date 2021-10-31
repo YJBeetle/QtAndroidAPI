@@ -13,7 +13,7 @@ namespace android::media::audiofx
 	
 	LoudnessEnhancer::LoudnessEnhancer(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	LoudnessEnhancer::LoudnessEnhancer(jint &arg0)
+	LoudnessEnhancer::LoudnessEnhancer(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.audiofx.LoudnessEnhancer",

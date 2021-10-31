@@ -19,9 +19,8 @@ namespace android::app
 		PendingIntent_CanceledException(QAndroidJniObject obj);
 		// Constructors
 		PendingIntent_CanceledException();
-		PendingIntent_CanceledException(java::lang::Exception &arg0);
-		PendingIntent_CanceledException(jstring &arg0);
-		PendingIntent_CanceledException(const QString &arg0);
+		PendingIntent_CanceledException(java::lang::Exception arg0);
+		PendingIntent_CanceledException(jstring arg0);
 		
 		// Methods
 	};

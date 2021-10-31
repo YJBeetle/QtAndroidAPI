@@ -20,7 +20,7 @@ namespace android::security::keystore
 		
 		KeyProtection_Builder(QAndroidJniObject obj);
 		// Constructors
-		KeyProtection_Builder(jint &arg0);
+		KeyProtection_Builder(jint arg0);
 		KeyProtection_Builder() = default;
 		
 		// Methods

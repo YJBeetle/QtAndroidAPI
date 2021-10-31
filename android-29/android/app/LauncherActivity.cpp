@@ -43,13 +43,5 @@ namespace android::app
 			arg0
 		);
 	}
-	void LauncherActivity::setTitle(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTitle",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 } // namespace android::app
 

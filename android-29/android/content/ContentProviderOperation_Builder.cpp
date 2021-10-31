@@ -35,15 +35,6 @@ namespace android::content
 			arg1
 		);
 	}
-	QAndroidJniObject ContentProviderOperation_Builder::withSelection(const QString &arg0, jarray arg1)
-	{
-		return __thiz.callObjectMethod(
-			"withSelection",
-			"(Ljava/lang/String;[Ljava/lang/String;)Landroid/content/ContentProviderOperation$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	QAndroidJniObject ContentProviderOperation_Builder::withSelectionBackReference(jint arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -62,30 +53,12 @@ namespace android::content
 			arg1
 		);
 	}
-	QAndroidJniObject ContentProviderOperation_Builder::withValue(const QString &arg0, jobject arg1)
-	{
-		return __thiz.callObjectMethod(
-			"withValue",
-			"(Ljava/lang/String;Ljava/lang/Object;)Landroid/content/ContentProviderOperation$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	QAndroidJniObject ContentProviderOperation_Builder::withValueBackReference(jstring arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
 			"withValueBackReference",
 			"(Ljava/lang/String;I)Landroid/content/ContentProviderOperation$Builder;",
 			arg0,
-			arg1
-		);
-	}
-	QAndroidJniObject ContentProviderOperation_Builder::withValueBackReference(const QString &arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"withValueBackReference",
-			"(Ljava/lang/String;I)Landroid/content/ContentProviderOperation$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

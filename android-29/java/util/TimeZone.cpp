@@ -66,15 +66,6 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject TimeZone::getTimeZone(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.util.TimeZone",
-			"getTimeZone",
-			"(Ljava/lang/String;)Ljava/util/TimeZone;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject TimeZone::getTimeZone(java::time::ZoneId arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -205,14 +196,6 @@ namespace java::util
 			"setID",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void TimeZone::setID(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setID",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void TimeZone::setRawOffset(jint arg0)

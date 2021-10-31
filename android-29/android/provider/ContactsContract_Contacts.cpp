@@ -167,16 +167,6 @@ namespace android::provider
 			arg1
 		);
 	}
-	QAndroidJniObject ContactsContract_Contacts::getLookupUri(jlong arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.ContactsContract$Contacts",
-			"getLookupUri",
-			"(JLjava/lang/String;)Landroid/net/Uri;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	jboolean ContactsContract_Contacts::isEnterpriseContactId(jlong arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(

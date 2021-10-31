@@ -27,7 +27,7 @@ namespace android::media::audiofx
 	
 	DynamicsProcessing::DynamicsProcessing(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DynamicsProcessing::DynamicsProcessing(jint &arg0)
+	DynamicsProcessing::DynamicsProcessing(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.audiofx.DynamicsProcessing",
@@ -35,7 +35,7 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	DynamicsProcessing::DynamicsProcessing(jint &arg0, jint &arg1, android::media::audiofx::DynamicsProcessing_Config &arg2)
+	DynamicsProcessing::DynamicsProcessing(jint arg0, jint arg1, android::media::audiofx::DynamicsProcessing_Config arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.audiofx.DynamicsProcessing",

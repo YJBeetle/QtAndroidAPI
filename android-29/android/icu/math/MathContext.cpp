@@ -91,7 +91,7 @@ namespace android::icu::math
 	
 	MathContext::MathContext(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MathContext::MathContext(jint &arg0)
+	MathContext::MathContext(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.math.MathContext",
@@ -99,7 +99,7 @@ namespace android::icu::math
 			arg0
 		);
 	}
-	MathContext::MathContext(jint &arg0, jint &arg1)
+	MathContext::MathContext(jint arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.math.MathContext",
@@ -108,7 +108,7 @@ namespace android::icu::math
 			arg1
 		);
 	}
-	MathContext::MathContext(jint &arg0, jint &arg1, jboolean &arg2)
+	MathContext::MathContext(jint arg0, jint arg1, jboolean arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.math.MathContext",
@@ -118,7 +118,7 @@ namespace android::icu::math
 			arg2
 		);
 	}
-	MathContext::MathContext(jint &arg0, jint &arg1, jboolean &arg2, jint &arg3)
+	MathContext::MathContext(jint arg0, jint arg1, jboolean arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.math.MathContext",

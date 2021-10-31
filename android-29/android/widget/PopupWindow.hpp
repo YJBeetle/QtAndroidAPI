@@ -36,14 +36,14 @@ namespace android::widget
 		PopupWindow(QAndroidJniObject obj);
 		// Constructors
 		PopupWindow();
-		PopupWindow(android::content::Context &arg0);
-		PopupWindow(android::view::View &arg0);
-		PopupWindow(android::content::Context &arg0, __JniBaseClass &arg1);
-		PopupWindow(jint &arg0, jint &arg1);
-		PopupWindow(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		PopupWindow(android::view::View &arg0, jint &arg1, jint &arg2);
-		PopupWindow(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
-		PopupWindow(android::view::View &arg0, jint &arg1, jint &arg2, jboolean &arg3);
+		PopupWindow(android::content::Context arg0);
+		PopupWindow(android::view::View arg0);
+		PopupWindow(android::content::Context arg0, __JniBaseClass arg1);
+		PopupWindow(jint arg0, jint arg1);
+		PopupWindow(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		PopupWindow(android::view::View arg0, jint arg1, jint arg2);
+		PopupWindow(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		PopupWindow(android::view::View arg0, jint arg1, jint arg2, jboolean arg3);
 		
 		// Methods
 		void dismiss();

@@ -70,9 +70,7 @@ namespace java::time
 		static QAndroidJniObject ofNanoOfDay(jlong arg0);
 		static QAndroidJniObject ofSecondOfDay(jlong arg0);
 		static QAndroidJniObject parse(jstring arg0);
-		static QAndroidJniObject parse(const QString &arg0);
 		static QAndroidJniObject parse(jstring arg0, java::time::format::DateTimeFormatter arg1);
-		static QAndroidJniObject parse(const QString &arg0, java::time::format::DateTimeFormatter arg1);
 		QAndroidJniObject adjustInto(__JniBaseClass arg0);
 		QAndroidJniObject atDate(java::time::LocalDate arg0);
 		QAndroidJniObject atOffset(java::time::ZoneOffset arg0);

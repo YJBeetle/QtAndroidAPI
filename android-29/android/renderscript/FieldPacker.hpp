@@ -100,8 +100,8 @@ namespace android::renderscript
 		
 		FieldPacker(QAndroidJniObject obj);
 		// Constructors
-		FieldPacker(jbyteArray &arg0);
-		FieldPacker(jint &arg0);
+		FieldPacker(jbyteArray arg0);
+		FieldPacker(jint arg0);
 		FieldPacker() = default;
 		
 		// Methods

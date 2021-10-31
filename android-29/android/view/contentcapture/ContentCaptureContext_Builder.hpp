@@ -24,7 +24,7 @@ namespace android::view::contentcapture
 		
 		ContentCaptureContext_Builder(QAndroidJniObject obj);
 		// Constructors
-		ContentCaptureContext_Builder(android::content::LocusId &arg0);
+		ContentCaptureContext_Builder(android::content::LocusId arg0);
 		ContentCaptureContext_Builder() = default;
 		
 		// Methods

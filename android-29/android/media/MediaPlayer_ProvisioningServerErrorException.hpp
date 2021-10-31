@@ -14,8 +14,7 @@ namespace android::media
 		
 		MediaPlayer_ProvisioningServerErrorException(QAndroidJniObject obj);
 		// Constructors
-		MediaPlayer_ProvisioningServerErrorException(jstring &arg0);
-		MediaPlayer_ProvisioningServerErrorException(const QString &arg0);
+		MediaPlayer_ProvisioningServerErrorException(jstring arg0);
 		MediaPlayer_ProvisioningServerErrorException() = default;
 		
 		// Methods

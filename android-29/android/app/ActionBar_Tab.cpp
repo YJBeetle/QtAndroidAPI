@@ -89,14 +89,6 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject ActionBar_Tab::setContentDescription(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setContentDescription",
-			"(Ljava/lang/CharSequence;)Landroid/app/ActionBar$Tab;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject ActionBar_Tab::setCustomView(android::view::View arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -159,14 +151,6 @@ namespace android::app
 			"setText",
 			"(Ljava/lang/CharSequence;)Landroid/app/ActionBar$Tab;",
 			arg0
-		);
-	}
-	QAndroidJniObject ActionBar_Tab::setText(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setText",
-			"(Ljava/lang/CharSequence;)Landroid/app/ActionBar$Tab;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace android::app

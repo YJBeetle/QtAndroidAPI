@@ -16,19 +16,13 @@ namespace java::sql
 		SQLInvalidAuthorizationSpecException(QAndroidJniObject obj);
 		// Constructors
 		SQLInvalidAuthorizationSpecException();
-		SQLInvalidAuthorizationSpecException(jstring &arg0);
-		SQLInvalidAuthorizationSpecException(const QString &arg0);
-		SQLInvalidAuthorizationSpecException(jthrowable &arg0);
-		SQLInvalidAuthorizationSpecException(jstring &arg0, jstring &arg1);
-		SQLInvalidAuthorizationSpecException(const QString &arg0, const QString &arg1);
-		SQLInvalidAuthorizationSpecException(jstring &arg0, jthrowable &arg1);
-		SQLInvalidAuthorizationSpecException(const QString &arg0, jthrowable &arg1);
-		SQLInvalidAuthorizationSpecException(jstring &arg0, jstring &arg1, jint &arg2);
-		SQLInvalidAuthorizationSpecException(const QString &arg0, const QString &arg1, jint &arg2);
-		SQLInvalidAuthorizationSpecException(jstring &arg0, jstring &arg1, jthrowable &arg2);
-		SQLInvalidAuthorizationSpecException(const QString &arg0, const QString &arg1, jthrowable &arg2);
-		SQLInvalidAuthorizationSpecException(jstring &arg0, jstring &arg1, jint &arg2, jthrowable &arg3);
-		SQLInvalidAuthorizationSpecException(const QString &arg0, const QString &arg1, jint &arg2, jthrowable &arg3);
+		SQLInvalidAuthorizationSpecException(jstring arg0);
+		SQLInvalidAuthorizationSpecException(jthrowable arg0);
+		SQLInvalidAuthorizationSpecException(jstring arg0, jstring arg1);
+		SQLInvalidAuthorizationSpecException(jstring arg0, jthrowable arg1);
+		SQLInvalidAuthorizationSpecException(jstring arg0, jstring arg1, jint arg2);
+		SQLInvalidAuthorizationSpecException(jstring arg0, jstring arg1, jthrowable arg2);
+		SQLInvalidAuthorizationSpecException(jstring arg0, jstring arg1, jint arg2, jthrowable arg3);
 		
 		// Methods
 	};

@@ -24,7 +24,7 @@ namespace java::util::concurrent::locks
 		
 		AbstractQueuedLongSynchronizer_ConditionObject(QAndroidJniObject obj);
 		// Constructors
-		AbstractQueuedLongSynchronizer_ConditionObject(java::util::concurrent::locks::AbstractQueuedLongSynchronizer &arg0);
+		AbstractQueuedLongSynchronizer_ConditionObject(java::util::concurrent::locks::AbstractQueuedLongSynchronizer arg0);
 		AbstractQueuedLongSynchronizer_ConditionObject() = default;
 		
 		// Methods

@@ -15,22 +15,13 @@ namespace java::security
 			"()V"
 		);
 	}
-	AllPermission::AllPermission(jstring &arg0, jstring &arg1)
+	AllPermission::AllPermission(jstring arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.AllPermission",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	AllPermission::AllPermission(const QString &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.AllPermission",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	

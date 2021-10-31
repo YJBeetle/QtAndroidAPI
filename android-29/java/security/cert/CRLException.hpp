@@ -15,11 +15,9 @@ namespace java::security::cert
 		CRLException(QAndroidJniObject obj);
 		// Constructors
 		CRLException();
-		CRLException(jstring &arg0);
-		CRLException(const QString &arg0);
-		CRLException(jthrowable &arg0);
-		CRLException(jstring &arg0, jthrowable &arg1);
-		CRLException(const QString &arg0, jthrowable &arg1);
+		CRLException(jstring arg0);
+		CRLException(jthrowable arg0);
+		CRLException(jstring arg0, jthrowable arg1);
 		
 		// Methods
 	};

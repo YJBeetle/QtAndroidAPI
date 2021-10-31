@@ -13,20 +13,12 @@ namespace javax::crypto
 			"()V"
 		);
 	}
-	IllegalBlockSizeException::IllegalBlockSizeException(jstring &arg0)
+	IllegalBlockSizeException::IllegalBlockSizeException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.crypto.IllegalBlockSizeException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	IllegalBlockSizeException::IllegalBlockSizeException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.crypto.IllegalBlockSizeException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

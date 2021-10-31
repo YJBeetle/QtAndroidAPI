@@ -8,7 +8,7 @@ namespace java::util
 	
 	PropertyResourceBundle::PropertyResourceBundle(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PropertyResourceBundle::PropertyResourceBundle(java::io::InputStream &arg0)
+	PropertyResourceBundle::PropertyResourceBundle(java::io::InputStream arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.PropertyResourceBundle",
@@ -16,7 +16,7 @@ namespace java::util
 			arg0.__jniObject().object()
 		);
 	}
-	PropertyResourceBundle::PropertyResourceBundle(java::io::Reader &arg0)
+	PropertyResourceBundle::PropertyResourceBundle(java::io::Reader arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.PropertyResourceBundle",
@@ -39,14 +39,6 @@ namespace java::util
 			"handleGetObject",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
 			arg0
-		).object<jobject>();
-	}
-	jobject PropertyResourceBundle::handleGetObject(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"handleGetObject",
-			"(Ljava/lang/String;)Ljava/lang/Object;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jobject>();
 	}
 } // namespace java::util

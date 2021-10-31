@@ -7,7 +7,7 @@ namespace android::accessibilityservice
 	
 	GestureDescription_StrokeDescription::GestureDescription_StrokeDescription(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	GestureDescription_StrokeDescription::GestureDescription_StrokeDescription(android::graphics::Path &arg0, jlong &arg1, jlong &arg2)
+	GestureDescription_StrokeDescription::GestureDescription_StrokeDescription(android::graphics::Path arg0, jlong arg1, jlong arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.accessibilityservice.GestureDescription$StrokeDescription",
@@ -17,7 +17,7 @@ namespace android::accessibilityservice
 			arg2
 		);
 	}
-	GestureDescription_StrokeDescription::GestureDescription_StrokeDescription(android::graphics::Path &arg0, jlong &arg1, jlong &arg2, jboolean &arg3)
+	GestureDescription_StrokeDescription::GestureDescription_StrokeDescription(android::graphics::Path arg0, jlong arg1, jlong arg2, jboolean arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.accessibilityservice.GestureDescription$StrokeDescription",

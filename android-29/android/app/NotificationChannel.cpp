@@ -25,23 +25,13 @@ namespace android::app
 	
 	NotificationChannel::NotificationChannel(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	NotificationChannel::NotificationChannel(jstring &arg0, jstring &arg1, jint &arg2)
+	NotificationChannel::NotificationChannel(jstring arg0, jstring arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.NotificationChannel",
 			"(Ljava/lang/String;Ljava/lang/CharSequence;I)V",
 			arg0,
 			arg1,
-			arg2
-		);
-	}
-	NotificationChannel::NotificationChannel(const QString &arg0, const QString &arg1, jint &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.app.NotificationChannel",
-			"(Ljava/lang/String;Ljava/lang/CharSequence;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}
@@ -207,28 +197,12 @@ namespace android::app
 			arg0
 		);
 	}
-	void NotificationChannel::setDescription(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDescription",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void NotificationChannel::setGroup(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setGroup",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void NotificationChannel::setGroup(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setGroup",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void NotificationChannel::setImportance(jint arg0)
@@ -261,14 +235,6 @@ namespace android::app
 			"setName",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
-		);
-	}
-	void NotificationChannel::setName(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setName",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void NotificationChannel::setShowBadge(jboolean arg0)

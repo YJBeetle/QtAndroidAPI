@@ -13,20 +13,12 @@ namespace android::database::sqlite
 			"()V"
 		);
 	}
-	SQLiteDatatypeMismatchException::SQLiteDatatypeMismatchException(jstring &arg0)
+	SQLiteDatatypeMismatchException::SQLiteDatatypeMismatchException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.database.sqlite.SQLiteDatatypeMismatchException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	SQLiteDatatypeMismatchException::SQLiteDatatypeMismatchException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.database.sqlite.SQLiteDatatypeMismatchException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

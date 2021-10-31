@@ -14,7 +14,7 @@ namespace android::view::animation
 			"()V"
 		);
 	}
-	AnticipateInterpolator::AnticipateInterpolator(jfloat &arg0)
+	AnticipateInterpolator::AnticipateInterpolator(jfloat arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.AnticipateInterpolator",
@@ -22,7 +22,7 @@ namespace android::view::animation
 			arg0
 		);
 	}
-	AnticipateInterpolator::AnticipateInterpolator(android::content::Context &arg0, __JniBaseClass &arg1)
+	AnticipateInterpolator::AnticipateInterpolator(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.AnticipateInterpolator",

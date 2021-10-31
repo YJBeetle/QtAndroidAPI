@@ -10,7 +10,7 @@ namespace android::text::style
 	
 	LocaleSpan::LocaleSpan(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	LocaleSpan::LocaleSpan(android::os::LocaleList &arg0)
+	LocaleSpan::LocaleSpan(android::os::LocaleList arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.LocaleSpan",
@@ -18,7 +18,7 @@ namespace android::text::style
 			arg0.__jniObject().object()
 		);
 	}
-	LocaleSpan::LocaleSpan(android::os::Parcel &arg0)
+	LocaleSpan::LocaleSpan(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.LocaleSpan",
@@ -26,7 +26,7 @@ namespace android::text::style
 			arg0.__jniObject().object()
 		);
 	}
-	LocaleSpan::LocaleSpan(java::util::Locale &arg0)
+	LocaleSpan::LocaleSpan(java::util::Locale arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.LocaleSpan",

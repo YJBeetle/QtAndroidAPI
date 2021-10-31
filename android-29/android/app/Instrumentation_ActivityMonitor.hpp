@@ -29,9 +29,8 @@ namespace android::app
 		Instrumentation_ActivityMonitor(QAndroidJniObject obj);
 		// Constructors
 		Instrumentation_ActivityMonitor();
-		Instrumentation_ActivityMonitor(android::content::IntentFilter &arg0, android::app::Instrumentation_ActivityResult &arg1, jboolean &arg2);
-		Instrumentation_ActivityMonitor(jstring &arg0, android::app::Instrumentation_ActivityResult &arg1, jboolean &arg2);
-		Instrumentation_ActivityMonitor(const QString &arg0, android::app::Instrumentation_ActivityResult &arg1, jboolean &arg2);
+		Instrumentation_ActivityMonitor(android::content::IntentFilter arg0, android::app::Instrumentation_ActivityResult arg1, jboolean arg2);
+		Instrumentation_ActivityMonitor(jstring arg0, android::app::Instrumentation_ActivityResult arg1, jboolean arg2);
 		
 		// Methods
 		QAndroidJniObject getFilter();

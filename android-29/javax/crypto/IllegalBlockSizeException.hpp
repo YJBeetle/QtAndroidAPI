@@ -15,8 +15,7 @@ namespace javax::crypto
 		IllegalBlockSizeException(QAndroidJniObject obj);
 		// Constructors
 		IllegalBlockSizeException();
-		IllegalBlockSizeException(jstring &arg0);
-		IllegalBlockSizeException(const QString &arg0);
+		IllegalBlockSizeException(jstring arg0);
 		
 		// Methods
 	};

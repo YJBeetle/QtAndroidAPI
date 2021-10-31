@@ -8,7 +8,7 @@ namespace android::view::animation
 	
 	AlphaAnimation::AlphaAnimation(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AlphaAnimation::AlphaAnimation(android::content::Context &arg0, __JniBaseClass &arg1)
+	AlphaAnimation::AlphaAnimation(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.AlphaAnimation",
@@ -17,7 +17,7 @@ namespace android::view::animation
 			arg1.__jniObject().object()
 		);
 	}
-	AlphaAnimation::AlphaAnimation(jfloat &arg0, jfloat &arg1)
+	AlphaAnimation::AlphaAnimation(jfloat arg0, jfloat arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.AlphaAnimation",

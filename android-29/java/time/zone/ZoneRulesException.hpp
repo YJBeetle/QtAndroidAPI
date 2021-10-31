@@ -15,10 +15,8 @@ namespace java::time::zone
 		
 		ZoneRulesException(QAndroidJniObject obj);
 		// Constructors
-		ZoneRulesException(jstring &arg0);
-		ZoneRulesException(const QString &arg0);
-		ZoneRulesException(jstring &arg0, jthrowable &arg1);
-		ZoneRulesException(const QString &arg0, jthrowable &arg1);
+		ZoneRulesException(jstring arg0);
+		ZoneRulesException(jstring arg0, jthrowable arg1);
 		ZoneRulesException() = default;
 		
 		// Methods

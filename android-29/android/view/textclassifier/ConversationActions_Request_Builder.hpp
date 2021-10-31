@@ -24,7 +24,7 @@ namespace android::view::textclassifier
 		
 		ConversationActions_Request_Builder(QAndroidJniObject obj);
 		// Constructors
-		ConversationActions_Request_Builder(__JniBaseClass &arg0);
+		ConversationActions_Request_Builder(__JniBaseClass arg0);
 		ConversationActions_Request_Builder() = default;
 		
 		// Methods

@@ -10,7 +10,7 @@ namespace android::app
 	
 	AlertDialog_Builder::AlertDialog_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AlertDialog_Builder::AlertDialog_Builder(android::content::Context &arg0)
+	AlertDialog_Builder::AlertDialog_Builder(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.AlertDialog$Builder",
@@ -18,7 +18,7 @@ namespace android::app
 			arg0.__jniObject().object()
 		);
 	}
-	AlertDialog_Builder::AlertDialog_Builder(android::content::Context &arg0, jint &arg1)
+	AlertDialog_Builder::AlertDialog_Builder(android::content::Context arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.AlertDialog$Builder",
@@ -68,16 +68,6 @@ namespace android::app
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2
-		);
-	}
-	QAndroidJniObject AlertDialog_Builder::setCursor(__JniBaseClass arg0, __JniBaseClass arg1, const QString &arg2)
-	{
-		return __thiz.callObjectMethod(
-			"setCursor",
-			"(Landroid/database/Cursor;Landroid/content/DialogInterface$OnClickListener;Ljava/lang/String;)Landroid/app/AlertDialog$Builder;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	QAndroidJniObject AlertDialog_Builder::setCustomTitle(android::view::View arg0)
@@ -154,14 +144,6 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject AlertDialog_Builder::setMessage(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setMessage",
-			"(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject AlertDialog_Builder::setMultiChoiceItems(jarray arg0, jbooleanArray arg1, __JniBaseClass arg2)
 	{
 		return __thiz.callObjectMethod(
@@ -193,17 +175,6 @@ namespace android::app
 			arg3.__jniObject().object()
 		);
 	}
-	QAndroidJniObject AlertDialog_Builder::setMultiChoiceItems(__JniBaseClass arg0, const QString &arg1, const QString &arg2, __JniBaseClass arg3)
-	{
-		return __thiz.callObjectMethod(
-			"setMultiChoiceItems",
-			"(Landroid/database/Cursor;Ljava/lang/String;Ljava/lang/String;Landroid/content/DialogInterface$OnMultiChoiceClickListener;)Landroid/app/AlertDialog$Builder;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			arg3.__jniObject().object()
-		);
-	}
 	QAndroidJniObject AlertDialog_Builder::setNegativeButton(jint arg0, __JniBaseClass arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -222,15 +193,6 @@ namespace android::app
 			arg1.__jniObject().object()
 		);
 	}
-	QAndroidJniObject AlertDialog_Builder::setNegativeButton(const QString &arg0, __JniBaseClass arg1)
-	{
-		return __thiz.callObjectMethod(
-			"setNegativeButton",
-			"(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	QAndroidJniObject AlertDialog_Builder::setNeutralButton(jint arg0, __JniBaseClass arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -246,15 +208,6 @@ namespace android::app
 			"setNeutralButton",
 			"(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject AlertDialog_Builder::setNeutralButton(const QString &arg0, __JniBaseClass arg1)
-	{
-		return __thiz.callObjectMethod(
-			"setNeutralButton",
-			"(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -308,15 +261,6 @@ namespace android::app
 			arg1.__jniObject().object()
 		);
 	}
-	QAndroidJniObject AlertDialog_Builder::setPositiveButton(const QString &arg0, __JniBaseClass arg1)
-	{
-		return __thiz.callObjectMethod(
-			"setPositiveButton",
-			"(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	QAndroidJniObject AlertDialog_Builder::setSingleChoiceItems(jarray arg0, jint arg1, __JniBaseClass arg2)
 	{
 		return __thiz.callObjectMethod(
@@ -358,17 +302,6 @@ namespace android::app
 			arg3.__jniObject().object()
 		);
 	}
-	QAndroidJniObject AlertDialog_Builder::setSingleChoiceItems(__JniBaseClass arg0, jint arg1, const QString &arg2, __JniBaseClass arg3)
-	{
-		return __thiz.callObjectMethod(
-			"setSingleChoiceItems",
-			"(Landroid/database/Cursor;ILjava/lang/String;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;",
-			arg0.__jniObject().object(),
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			arg3.__jniObject().object()
-		);
-	}
 	QAndroidJniObject AlertDialog_Builder::setTitle(jint arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -383,14 +316,6 @@ namespace android::app
 			"setTitle",
 			"(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;",
 			arg0
-		);
-	}
-	QAndroidJniObject AlertDialog_Builder::setTitle(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setTitle",
-			"(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject AlertDialog_Builder::setView(android::view::View arg0)

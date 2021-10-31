@@ -196,17 +196,6 @@ namespace android::renderscript
 			arg2
 		);
 	}
-	QAndroidJniObject Allocation::createFromString(android::renderscript::RenderScript arg0, const QString &arg1, jint arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.renderscript.Allocation",
-			"createFromString",
-			"(Landroid/renderscript/RenderScript;Ljava/lang/String;I)Landroid/renderscript/Allocation;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2
-		);
-	}
 	QAndroidJniObject Allocation::createSized(android::renderscript::RenderScript arg0, android::renderscript::Element arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

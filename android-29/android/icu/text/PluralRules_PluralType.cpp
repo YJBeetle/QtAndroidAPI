@@ -33,15 +33,6 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject PluralRules_PluralType::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.PluralRules$PluralType",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/icu/text/PluralRules$PluralType;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray PluralRules_PluralType::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

@@ -14,11 +14,9 @@ namespace java::lang
 		RuntimeException(QAndroidJniObject obj);
 		// Constructors
 		RuntimeException();
-		RuntimeException(jstring &arg0);
-		RuntimeException(const QString &arg0);
-		RuntimeException(jthrowable &arg0);
-		RuntimeException(jstring &arg0, jthrowable &arg1);
-		RuntimeException(const QString &arg0, jthrowable &arg1);
+		RuntimeException(jstring arg0);
+		RuntimeException(jthrowable arg0);
+		RuntimeException(jstring arg0, jthrowable arg1);
 		
 		// Methods
 	};

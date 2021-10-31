@@ -36,8 +36,7 @@ namespace java::util::logging
 		
 		LogRecord(QAndroidJniObject obj);
 		// Constructors
-		LogRecord(java::util::logging::Level &arg0, jstring &arg1);
-		LogRecord(java::util::logging::Level &arg0, const QString &arg1);
+		LogRecord(java::util::logging::Level arg0, jstring arg1);
 		LogRecord() = default;
 		
 		// Methods
@@ -58,20 +57,15 @@ namespace java::util::logging
 		void setInstant(java::time::Instant arg0);
 		void setLevel(java::util::logging::Level arg0);
 		void setLoggerName(jstring arg0);
-		void setLoggerName(const QString &arg0);
 		QAndroidJniObject setLongThreadID(jlong arg0);
 		void setMessage(jstring arg0);
-		void setMessage(const QString &arg0);
 		void setMillis(jlong arg0);
 		void setParameters(jobjectArray arg0);
 		void setResourceBundle(java::util::ResourceBundle arg0);
 		void setResourceBundleName(jstring arg0);
-		void setResourceBundleName(const QString &arg0);
 		void setSequenceNumber(jlong arg0);
 		void setSourceClassName(jstring arg0);
-		void setSourceClassName(const QString &arg0);
 		void setSourceMethodName(jstring arg0);
-		void setSourceMethodName(const QString &arg0);
 		void setThreadID(jint arg0);
 		void setThrown(jthrowable arg0);
 	};

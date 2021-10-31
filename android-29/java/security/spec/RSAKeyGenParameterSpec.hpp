@@ -18,8 +18,8 @@ namespace java::security::spec
 		
 		RSAKeyGenParameterSpec(QAndroidJniObject obj);
 		// Constructors
-		RSAKeyGenParameterSpec(jint &arg0, java::math::BigInteger &arg1);
-		RSAKeyGenParameterSpec(jint &arg0, java::math::BigInteger &arg1, __JniBaseClass &arg2);
+		RSAKeyGenParameterSpec(jint arg0, java::math::BigInteger arg1);
+		RSAKeyGenParameterSpec(jint arg0, java::math::BigInteger arg1, __JniBaseClass arg2);
 		RSAKeyGenParameterSpec() = default;
 		
 		// Methods

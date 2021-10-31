@@ -25,8 +25,8 @@ namespace android::view::animation
 		
 		AnimationSet(QAndroidJniObject obj);
 		// Constructors
-		AnimationSet(jboolean &arg0);
-		AnimationSet(android::content::Context &arg0, __JniBaseClass &arg1);
+		AnimationSet(jboolean arg0);
+		AnimationSet(android::content::Context arg0, __JniBaseClass arg1);
 		AnimationSet() = default;
 		
 		// Methods

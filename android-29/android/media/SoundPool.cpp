@@ -9,7 +9,7 @@ namespace android::media
 	
 	SoundPool::SoundPool(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SoundPool::SoundPool(jint &arg0, jint &arg1, jint &arg2)
+	SoundPool::SoundPool(jint arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.SoundPool",
@@ -50,15 +50,6 @@ namespace android::media
 			"load",
 			"(Ljava/lang/String;I)I",
 			arg0,
-			arg1
-		);
-	}
-	jint SoundPool::load(const QString &arg0, jint arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"load",
-			"(Ljava/lang/String;I)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

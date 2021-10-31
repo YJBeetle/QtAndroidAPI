@@ -17,7 +17,6 @@ namespace android::webkit
 		
 		// Methods
 		void confirm(jstring arg0);
-		void confirm(const QString &arg0);
 	};
 } // namespace android::webkit
 

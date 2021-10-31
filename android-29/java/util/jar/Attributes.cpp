@@ -15,7 +15,7 @@ namespace java::util::jar
 			"()V"
 		);
 	}
-	Attributes::Attributes(jint &arg0)
+	Attributes::Attributes(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.jar.Attributes",
@@ -94,14 +94,6 @@ namespace java::util::jar
 			arg0
 		).object<jstring>();
 	}
-	jstring Attributes::getValue(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getValue",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
 	jstring Attributes::getValue(java::util::jar::Attributes_Name arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -155,15 +147,6 @@ namespace java::util::jar
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
 			arg0,
 			arg1
-		).object<jstring>();
-	}
-	jstring Attributes::putValue(const QString &arg0, const QString &arg1)
-	{
-		return __thiz.callObjectMethod(
-			"putValue",
-			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		).object<jstring>();
 	}
 	jobject Attributes::remove(jobject arg0)

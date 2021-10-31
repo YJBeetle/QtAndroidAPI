@@ -28,8 +28,8 @@ namespace java::util::jar
 		
 		JarOutputStream(QAndroidJniObject obj);
 		// Constructors
-		JarOutputStream(java::io::OutputStream &arg0);
-		JarOutputStream(java::io::OutputStream &arg0, java::util::jar::Manifest &arg1);
+		JarOutputStream(java::io::OutputStream arg0);
+		JarOutputStream(java::io::OutputStream arg0, java::util::jar::Manifest arg1);
 		JarOutputStream() = default;
 		
 		// Methods

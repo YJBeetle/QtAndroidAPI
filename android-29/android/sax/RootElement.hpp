@@ -13,10 +13,8 @@ namespace android::sax
 		
 		RootElement(QAndroidJniObject obj);
 		// Constructors
-		RootElement(jstring &arg0);
-		RootElement(const QString &arg0);
-		RootElement(jstring &arg0, jstring &arg1);
-		RootElement(const QString &arg0, const QString &arg1);
+		RootElement(jstring arg0);
+		RootElement(jstring arg0, jstring arg1);
 		RootElement() = default;
 		
 		// Methods

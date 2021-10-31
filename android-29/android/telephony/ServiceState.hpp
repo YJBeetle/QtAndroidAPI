@@ -26,7 +26,7 @@ namespace android::telephony
 		ServiceState(QAndroidJniObject obj);
 		// Constructors
 		ServiceState();
-		ServiceState(android::os::Parcel &arg0);
+		ServiceState(android::os::Parcel arg0);
 		ServiceState(android::telephony::ServiceState &arg0);
 		
 		// Methods
@@ -46,7 +46,6 @@ namespace android::telephony
 		jint hashCode();
 		void setIsManualSelection(jboolean arg0);
 		void setOperatorName(jstring arg0, jstring arg1, jstring arg2);
-		void setOperatorName(const QString &arg0, const QString &arg1, const QString &arg2);
 		void setRoaming(jboolean arg0);
 		void setState(jint arg0);
 		void setStateOff();

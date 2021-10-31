@@ -26,10 +26,10 @@ namespace android::app
 		
 		DatePickerDialog(QAndroidJniObject obj);
 		// Constructors
-		DatePickerDialog(android::content::Context &arg0);
-		DatePickerDialog(android::content::Context &arg0, jint &arg1);
-		DatePickerDialog(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3, jint &arg4);
-		DatePickerDialog(android::content::Context &arg0, jint &arg1, __JniBaseClass &arg2, jint &arg3, jint &arg4, jint &arg5);
+		DatePickerDialog(android::content::Context arg0);
+		DatePickerDialog(android::content::Context arg0, jint arg1);
+		DatePickerDialog(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3, jint arg4);
+		DatePickerDialog(android::content::Context arg0, jint arg1, __JniBaseClass arg2, jint arg3, jint arg4, jint arg5);
 		DatePickerDialog() = default;
 		
 		// Methods

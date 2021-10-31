@@ -18,7 +18,7 @@ namespace android::app
 	
 	RemoteAction::RemoteAction(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	RemoteAction::RemoteAction(android::graphics::drawable::Icon &arg0, jstring &arg1, jstring &arg2, android::app::PendingIntent &arg3)
+	RemoteAction::RemoteAction(android::graphics::drawable::Icon arg0, jstring arg1, jstring arg2, android::app::PendingIntent arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.RemoteAction",
@@ -26,17 +26,6 @@ namespace android::app
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
-		);
-	}
-	RemoteAction::RemoteAction(android::graphics::drawable::Icon &arg0, const QString &arg1, const QString &arg2, android::app::PendingIntent &arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"android.app.RemoteAction",
-			"(Landroid/graphics/drawable/Icon;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/app/PendingIntent;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
 			arg3.__jniObject().object()
 		);
 	}
@@ -62,15 +51,6 @@ namespace android::app
 			"dump",
 			"(Ljava/lang/String;Ljava/io/PrintWriter;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void RemoteAction::dump(const QString &arg0, java::io::PrintWriter arg1)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Ljava/lang/String;Ljava/io/PrintWriter;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

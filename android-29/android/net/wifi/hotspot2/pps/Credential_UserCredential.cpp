@@ -98,14 +98,6 @@ namespace android::net::wifi::hotspot2::pps
 			arg0
 		);
 	}
-	void Credential_UserCredential::setNonEapInnerMethod(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setNonEapInnerMethod",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void Credential_UserCredential::setPassword(jstring arg0)
 	{
 		__thiz.callMethod<void>(
@@ -114,28 +106,12 @@ namespace android::net::wifi::hotspot2::pps
 			arg0
 		);
 	}
-	void Credential_UserCredential::setPassword(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPassword",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void Credential_UserCredential::setUsername(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setUsername",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void Credential_UserCredential::setUsername(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setUsername",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring Credential_UserCredential::toString()

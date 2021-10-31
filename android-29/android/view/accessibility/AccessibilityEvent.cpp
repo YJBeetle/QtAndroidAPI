@@ -517,14 +517,6 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityEvent::setPackageName(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPackageName",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jstring AccessibilityEvent::toString()
 	{
 		return __thiz.callObjectMethod(

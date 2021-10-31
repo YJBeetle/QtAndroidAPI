@@ -12,8 +12,7 @@ namespace android::print
 		
 		PrintAttributes_Resolution(QAndroidJniObject obj);
 		// Constructors
-		PrintAttributes_Resolution(jstring &arg0, jstring &arg1, jint &arg2, jint &arg3);
-		PrintAttributes_Resolution(const QString &arg0, const QString &arg1, jint &arg2, jint &arg3);
+		PrintAttributes_Resolution(jstring arg0, jstring arg1, jint arg2, jint arg3);
 		PrintAttributes_Resolution() = default;
 		
 		// Methods

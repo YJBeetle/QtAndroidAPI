@@ -75,14 +75,6 @@ namespace java::util::logging
 			arg0
 		);
 	}
-	QAndroidJniObject LogManager::getLogger(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getLogger",
-			"(Ljava/lang/String;)Ljava/util/logging/Logger;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject LogManager::getLoggerNames()
 	{
 		return __thiz.callObjectMethod(
@@ -96,14 +88,6 @@ namespace java::util::logging
 			"getProperty",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
-	}
-	jstring LogManager::getProperty(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getProperty",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	void LogManager::readConfiguration()

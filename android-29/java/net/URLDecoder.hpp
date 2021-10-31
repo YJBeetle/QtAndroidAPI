@@ -20,11 +20,8 @@ namespace java::net
 		
 		// Methods
 		static jstring decode(jstring arg0);
-		static jstring decode(const QString &arg0);
 		static jstring decode(jstring arg0, jstring arg1);
-		static jstring decode(const QString &arg0, const QString &arg1);
 		static jstring decode(jstring arg0, java::nio::charset::Charset arg1);
-		static jstring decode(const QString &arg0, java::nio::charset::Charset arg1);
 	};
 } // namespace java::net
 

@@ -29,11 +29,8 @@ namespace android::icu::text
 		static QAndroidJniObject getInstance(android::icu::util::ULocale arg0);
 		static QAndroidJniObject getInstance(java::util::Locale arg0);
 		static QAndroidJniObject getInstance(jint arg0, jboolean arg1, jstring arg2);
-		static QAndroidJniObject getInstance(jint arg0, jboolean arg1, const QString &arg2);
 		static QAndroidJniObject getInstanceByName(jstring arg0);
-		static QAndroidJniObject getInstanceByName(const QString &arg0);
 		static jboolean isValidDigitString(jstring arg0);
-		static jboolean isValidDigitString(const QString &arg0);
 		jstring getDescription();
 		jstring getName();
 		jint getRadix();

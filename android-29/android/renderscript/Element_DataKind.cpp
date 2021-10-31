@@ -81,15 +81,6 @@ namespace android::renderscript
 			arg0
 		);
 	}
-	QAndroidJniObject Element_DataKind::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.renderscript.Element$DataKind",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/renderscript/Element$DataKind;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray Element_DataKind::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

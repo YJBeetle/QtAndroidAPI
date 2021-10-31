@@ -13,7 +13,7 @@ namespace android::print
 		
 		PrintAttributes_Margins(QAndroidJniObject obj);
 		// Constructors
-		PrintAttributes_Margins(jint &arg0, jint &arg1, jint &arg2, jint &arg3);
+		PrintAttributes_Margins(jint arg0, jint arg1, jint arg2, jint arg3);
 		PrintAttributes_Margins() = default;
 		
 		// Methods

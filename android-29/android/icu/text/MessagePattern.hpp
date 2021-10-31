@@ -28,13 +28,11 @@ namespace android::icu::text
 		MessagePattern(QAndroidJniObject obj);
 		// Constructors
 		MessagePattern();
-		MessagePattern(android::icu::text::MessagePattern_ApostropheMode &arg0);
-		MessagePattern(jstring &arg0);
-		MessagePattern(const QString &arg0);
+		MessagePattern(android::icu::text::MessagePattern_ApostropheMode arg0);
+		MessagePattern(jstring arg0);
 		
 		// Methods
 		static jint validateArgumentName(jstring arg0);
-		static jint validateArgumentName(const QString &arg0);
 		jstring autoQuoteApostropheDeep();
 		void clear();
 		void clearPatternAndSetApostropheMode(android::icu::text::MessagePattern_ApostropheMode arg0);
@@ -57,15 +55,10 @@ namespace android::icu::text
 		jint hashCode();
 		jboolean isFrozen();
 		QAndroidJniObject parse(jstring arg0);
-		QAndroidJniObject parse(const QString &arg0);
 		QAndroidJniObject parseChoiceStyle(jstring arg0);
-		QAndroidJniObject parseChoiceStyle(const QString &arg0);
 		QAndroidJniObject parsePluralStyle(jstring arg0);
-		QAndroidJniObject parsePluralStyle(const QString &arg0);
 		QAndroidJniObject parseSelectStyle(jstring arg0);
-		QAndroidJniObject parseSelectStyle(const QString &arg0);
 		jboolean partSubstringMatches(android::icu::text::MessagePattern_Part arg0, jstring arg1);
-		jboolean partSubstringMatches(android::icu::text::MessagePattern_Part arg0, const QString &arg1);
 		jstring toString();
 	};
 } // namespace android::icu::text

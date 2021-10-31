@@ -7,7 +7,7 @@ namespace android::database
 	
 	CursorJoiner::CursorJoiner(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	CursorJoiner::CursorJoiner(__JniBaseClass &arg0, jarray &arg1, __JniBaseClass &arg2, jarray &arg3)
+	CursorJoiner::CursorJoiner(__JniBaseClass arg0, jarray arg1, __JniBaseClass arg2, jarray arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.database.CursorJoiner",

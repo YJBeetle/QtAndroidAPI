@@ -257,17 +257,6 @@ namespace android::provider
 			arg2
 		).object<jstring>();
 	}
-	jstring ContactsContract_CommonDataKinds_Phone::getTypeLabel(android::content::res::Resources arg0, jint arg1, const QString &arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.ContactsContract$CommonDataKinds$Phone",
-			"getTypeLabel",
-			"(Landroid/content/res/Resources;ILjava/lang/CharSequence;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object(),
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		).object<jstring>();
-	}
 	jint ContactsContract_CommonDataKinds_Phone::getTypeLabelResource(jint arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(

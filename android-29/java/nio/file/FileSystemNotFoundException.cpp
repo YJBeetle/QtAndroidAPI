@@ -13,20 +13,12 @@ namespace java::nio::file
 			"()V"
 		);
 	}
-	FileSystemNotFoundException::FileSystemNotFoundException(jstring &arg0)
+	FileSystemNotFoundException::FileSystemNotFoundException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.nio.file.FileSystemNotFoundException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	FileSystemNotFoundException::FileSystemNotFoundException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.nio.file.FileSystemNotFoundException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

@@ -7,7 +7,7 @@ namespace android::graphics
 	
 	ComposePathEffect::ComposePathEffect(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ComposePathEffect::ComposePathEffect(android::graphics::PathEffect &arg0, android::graphics::PathEffect &arg1)
+	ComposePathEffect::ComposePathEffect(android::graphics::PathEffect arg0, android::graphics::PathEffect arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.ComposePathEffect",

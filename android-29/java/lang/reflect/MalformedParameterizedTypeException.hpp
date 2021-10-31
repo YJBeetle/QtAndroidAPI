@@ -15,8 +15,7 @@ namespace java::lang::reflect
 		MalformedParameterizedTypeException(QAndroidJniObject obj);
 		// Constructors
 		MalformedParameterizedTypeException();
-		MalformedParameterizedTypeException(jstring &arg0);
-		MalformedParameterizedTypeException(const QString &arg0);
+		MalformedParameterizedTypeException(jstring arg0);
 		
 		// Methods
 	};

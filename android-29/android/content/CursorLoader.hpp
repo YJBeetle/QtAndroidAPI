@@ -30,9 +30,8 @@ namespace android::content
 		
 		CursorLoader(QAndroidJniObject obj);
 		// Constructors
-		CursorLoader(android::content::Context &arg0);
-		CursorLoader(android::content::Context &arg0, android::net::Uri &arg1, jarray &arg2, jstring &arg3, jarray &arg4, jstring &arg5);
-		CursorLoader(android::content::Context &arg0, android::net::Uri &arg1, jarray &arg2, const QString &arg3, jarray &arg4, const QString &arg5);
+		CursorLoader(android::content::Context arg0);
+		CursorLoader(android::content::Context arg0, android::net::Uri arg1, jarray arg2, jstring arg3, jarray arg4, jstring arg5);
 		CursorLoader() = default;
 		
 		// Methods
@@ -40,7 +39,6 @@ namespace android::content
 		void deliverResult(__JniBaseClass arg0);
 		void deliverResult(jobject arg0);
 		void dump(jstring arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3);
-		void dump(const QString &arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3);
 		jarray getProjection();
 		jstring getSelection();
 		jarray getSelectionArgs();
@@ -51,10 +49,8 @@ namespace android::content
 		void onCanceled(jobject arg0);
 		void setProjection(jarray arg0);
 		void setSelection(jstring arg0);
-		void setSelection(const QString &arg0);
 		void setSelectionArgs(jarray arg0);
 		void setSortOrder(jstring arg0);
-		void setSortOrder(const QString &arg0);
 		void setUri(android::net::Uri arg0);
 	};
 } // namespace android::content

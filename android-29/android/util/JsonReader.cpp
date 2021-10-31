@@ -8,7 +8,7 @@ namespace android::util
 	
 	JsonReader::JsonReader(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	JsonReader::JsonReader(java::io::Reader &arg0)
+	JsonReader::JsonReader(java::io::Reader arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.JsonReader",

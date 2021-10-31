@@ -437,14 +437,6 @@ namespace android::telecom
 			arg0
 		);
 	}
-	QAndroidJniObject TelecomManager::getDefaultOutgoingPhoneAccount(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getDefaultOutgoingPhoneAccount",
-			"(Ljava/lang/String;)Landroid/telecom/PhoneAccountHandle;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jstring TelecomManager::getLine1Number(android::telecom::PhoneAccountHandle arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -505,29 +497,12 @@ namespace android::telecom
 			arg0
 		);
 	}
-	jboolean TelecomManager::handleMmi(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"handleMmi",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jboolean TelecomManager::handleMmi(jstring arg0, android::telecom::PhoneAccountHandle arg1)
 	{
 		return __thiz.callMethod<jboolean>(
 			"handleMmi",
 			"(Ljava/lang/String;Landroid/telecom/PhoneAccountHandle;)Z",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	jboolean TelecomManager::handleMmi(const QString &arg0, android::telecom::PhoneAccountHandle arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"handleMmi",
-			"(Ljava/lang/String;Landroid/telecom/PhoneAccountHandle;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -575,15 +550,6 @@ namespace android::telecom
 			"(Landroid/telecom/PhoneAccountHandle;Ljava/lang/String;)Z",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jboolean TelecomManager::isVoiceMailNumber(android::telecom::PhoneAccountHandle arg0, const QString &arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isVoiceMailNumber",
-			"(Landroid/telecom/PhoneAccountHandle;Ljava/lang/String;)Z",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void TelecomManager::placeCall(android::net::Uri arg0, android::os::Bundle arg1)

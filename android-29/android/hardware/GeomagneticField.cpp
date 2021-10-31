@@ -6,7 +6,7 @@ namespace android::hardware
 	
 	GeomagneticField::GeomagneticField(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	GeomagneticField::GeomagneticField(jfloat &arg0, jfloat &arg1, jfloat &arg2, jlong &arg3)
+	GeomagneticField::GeomagneticField(jfloat arg0, jfloat arg1, jfloat arg2, jlong arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.hardware.GeomagneticField",

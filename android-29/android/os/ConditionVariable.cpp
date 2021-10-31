@@ -13,7 +13,7 @@ namespace android::os
 			"()V"
 		);
 	}
-	ConditionVariable::ConditionVariable(jboolean &arg0)
+	ConditionVariable::ConditionVariable(jboolean arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.ConditionVariable",

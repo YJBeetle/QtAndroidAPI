@@ -28,8 +28,7 @@ namespace android::security::keystore
 		
 		KeyGenParameterSpec_Builder(QAndroidJniObject obj);
 		// Constructors
-		KeyGenParameterSpec_Builder(jstring &arg0, jint &arg1);
-		KeyGenParameterSpec_Builder(const QString &arg0, jint &arg1);
+		KeyGenParameterSpec_Builder(jstring arg0, jint arg1);
 		KeyGenParameterSpec_Builder() = default;
 		
 		// Methods

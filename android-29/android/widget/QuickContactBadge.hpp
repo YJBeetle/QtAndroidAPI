@@ -38,21 +38,17 @@ namespace android::widget
 		
 		QuickContactBadge(QAndroidJniObject obj);
 		// Constructors
-		QuickContactBadge(android::content::Context &arg0);
-		QuickContactBadge(android::content::Context &arg0, __JniBaseClass &arg1);
-		QuickContactBadge(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		QuickContactBadge(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		QuickContactBadge(android::content::Context arg0);
+		QuickContactBadge(android::content::Context arg0, __JniBaseClass arg1);
+		QuickContactBadge(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		QuickContactBadge(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		QuickContactBadge() = default;
 		
 		// Methods
 		void assignContactFromEmail(jstring arg0, jboolean arg1);
-		void assignContactFromEmail(const QString &arg0, jboolean arg1);
 		void assignContactFromEmail(jstring arg0, jboolean arg1, android::os::Bundle arg2);
-		void assignContactFromEmail(const QString &arg0, jboolean arg1, android::os::Bundle arg2);
 		void assignContactFromPhone(jstring arg0, jboolean arg1);
-		void assignContactFromPhone(const QString &arg0, jboolean arg1);
 		void assignContactFromPhone(jstring arg0, jboolean arg1, android::os::Bundle arg2);
-		void assignContactFromPhone(const QString &arg0, jboolean arg1, android::os::Bundle arg2);
 		void assignContactUri(android::net::Uri arg0);
 		void drawableHotspotChanged(jfloat arg0, jfloat arg1);
 		jstring getAccessibilityClassName();
@@ -62,7 +58,6 @@ namespace android::widget
 		void setMode(jint arg0);
 		void setOverlay(android::graphics::drawable::Drawable arg0);
 		void setPrioritizedMimeType(jstring arg0);
-		void setPrioritizedMimeType(const QString &arg0);
 	};
 } // namespace android::widget
 

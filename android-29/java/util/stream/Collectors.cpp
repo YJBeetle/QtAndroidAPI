@@ -163,15 +163,6 @@ namespace java::util::stream
 			arg0
 		);
 	}
-	QAndroidJniObject Collectors::joining(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.util.stream.Collectors",
-			"joining",
-			"(Ljava/lang/CharSequence;)Ljava/util/stream/Collector;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Collectors::joining(jstring arg0, jstring arg1, jstring arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -181,17 +172,6 @@ namespace java::util::stream
 			arg0,
 			arg1,
 			arg2
-		);
-	}
-	QAndroidJniObject Collectors::joining(const QString &arg0, const QString &arg1, const QString &arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.util.stream.Collectors",
-			"joining",
-			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/util/stream/Collector;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	QAndroidJniObject Collectors::mapping(__JniBaseClass arg0, __JniBaseClass arg1)

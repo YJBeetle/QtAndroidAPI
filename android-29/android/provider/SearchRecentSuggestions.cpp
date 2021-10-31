@@ -52,23 +52,13 @@ namespace android::provider
 	
 	SearchRecentSuggestions::SearchRecentSuggestions(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SearchRecentSuggestions::SearchRecentSuggestions(android::content::Context &arg0, jstring &arg1, jint &arg2)
+	SearchRecentSuggestions::SearchRecentSuggestions(android::content::Context arg0, jstring arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.provider.SearchRecentSuggestions",
 			"(Landroid/content/Context;Ljava/lang/String;I)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2
-		);
-	}
-	SearchRecentSuggestions::SearchRecentSuggestions(android::content::Context &arg0, const QString &arg1, jint &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.provider.SearchRecentSuggestions",
-			"(Landroid/content/Context;Ljava/lang/String;I)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}
@@ -88,15 +78,6 @@ namespace android::provider
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	void SearchRecentSuggestions::saveRecentQuery(const QString &arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"saveRecentQuery",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 } // namespace android::provider

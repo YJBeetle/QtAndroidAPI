@@ -7,7 +7,7 @@ namespace android::content::res
 	
 	AssetFileDescriptor_AutoCloseOutputStream::AssetFileDescriptor_AutoCloseOutputStream(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AssetFileDescriptor_AutoCloseOutputStream::AssetFileDescriptor_AutoCloseOutputStream(android::content::res::AssetFileDescriptor &arg0)
+	AssetFileDescriptor_AutoCloseOutputStream::AssetFileDescriptor_AutoCloseOutputStream(android::content::res::AssetFileDescriptor arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.res.AssetFileDescriptor$AutoCloseOutputStream",

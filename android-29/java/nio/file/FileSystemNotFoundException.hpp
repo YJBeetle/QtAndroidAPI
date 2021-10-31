@@ -15,8 +15,7 @@ namespace java::nio::file
 		FileSystemNotFoundException(QAndroidJniObject obj);
 		// Constructors
 		FileSystemNotFoundException();
-		FileSystemNotFoundException(jstring &arg0);
-		FileSystemNotFoundException(const QString &arg0);
+		FileSystemNotFoundException(jstring arg0);
 		
 		// Methods
 	};

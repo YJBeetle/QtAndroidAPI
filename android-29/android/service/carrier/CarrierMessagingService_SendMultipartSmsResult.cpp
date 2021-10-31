@@ -6,7 +6,7 @@ namespace android::service::carrier
 	
 	CarrierMessagingService_SendMultipartSmsResult::CarrierMessagingService_SendMultipartSmsResult(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	CarrierMessagingService_SendMultipartSmsResult::CarrierMessagingService_SendMultipartSmsResult(jint &arg0, jintArray &arg1)
+	CarrierMessagingService_SendMultipartSmsResult::CarrierMessagingService_SendMultipartSmsResult(jint arg0, jintArray arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.service.carrier.CarrierMessagingService$SendMultipartSmsResult",

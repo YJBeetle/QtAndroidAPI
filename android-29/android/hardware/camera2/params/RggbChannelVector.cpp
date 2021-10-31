@@ -41,7 +41,7 @@ namespace android::hardware::camera2::params
 	
 	RggbChannelVector::RggbChannelVector(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	RggbChannelVector::RggbChannelVector(jfloat &arg0, jfloat &arg1, jfloat &arg2, jfloat &arg3)
+	RggbChannelVector::RggbChannelVector(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.hardware.camera2.params.RggbChannelVector",

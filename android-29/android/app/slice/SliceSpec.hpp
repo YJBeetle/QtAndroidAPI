@@ -17,8 +17,7 @@ namespace android::app::slice
 		
 		SliceSpec(QAndroidJniObject obj);
 		// Constructors
-		SliceSpec(jstring &arg0, jint &arg1);
-		SliceSpec(const QString &arg0, jint &arg1);
+		SliceSpec(jstring arg0, jint arg1);
 		SliceSpec() = default;
 		
 		// Methods

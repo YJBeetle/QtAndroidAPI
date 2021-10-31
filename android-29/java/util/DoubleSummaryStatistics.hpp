@@ -13,7 +13,7 @@ namespace java::util
 		DoubleSummaryStatistics(QAndroidJniObject obj);
 		// Constructors
 		DoubleSummaryStatistics();
-		DoubleSummaryStatistics(jlong &arg0, jdouble &arg1, jdouble &arg2, jdouble &arg3);
+		DoubleSummaryStatistics(jlong arg0, jdouble arg1, jdouble arg2, jdouble arg3);
 		
 		// Methods
 		void accept(jdouble arg0);

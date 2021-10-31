@@ -30,12 +30,10 @@ namespace android::media
 		jlong getLong(jint arg0, jlong arg1);
 		jobject getObject(jint arg0, jobject arg1);
 		jstring getString(jint arg0, jstring arg1);
-		jstring getString(jint arg0, const QString &arg1);
 		QAndroidJniObject putBitmap(jint arg0, android::graphics::Bitmap arg1);
 		QAndroidJniObject putLong(jint arg0, jlong arg1);
 		QAndroidJniObject putObject(jint arg0, jobject arg1);
 		QAndroidJniObject putString(jint arg0, jstring arg1);
-		QAndroidJniObject putString(jint arg0, const QString &arg1);
 		void removeEditableKeys();
 	};
 } // namespace android::media

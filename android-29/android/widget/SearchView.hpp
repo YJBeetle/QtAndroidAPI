@@ -35,10 +35,10 @@ namespace android::widget
 		
 		SearchView(QAndroidJniObject obj);
 		// Constructors
-		SearchView(android::content::Context &arg0);
-		SearchView(android::content::Context &arg0, __JniBaseClass &arg1);
-		SearchView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		SearchView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		SearchView(android::content::Context arg0);
+		SearchView(android::content::Context arg0, __JniBaseClass arg1);
+		SearchView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		SearchView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		SearchView() = default;
 		
 		// Methods
@@ -71,9 +71,7 @@ namespace android::widget
 		void setOnSearchClickListener(__JniBaseClass arg0);
 		void setOnSuggestionListener(__JniBaseClass arg0);
 		void setQuery(jstring arg0, jboolean arg1);
-		void setQuery(const QString &arg0, jboolean arg1);
 		void setQueryHint(jstring arg0);
-		void setQueryHint(const QString &arg0);
 		void setQueryRefinementEnabled(jboolean arg0);
 		void setSearchableInfo(android::app::SearchableInfo arg0);
 		void setSubmitButtonEnabled(jboolean arg0);

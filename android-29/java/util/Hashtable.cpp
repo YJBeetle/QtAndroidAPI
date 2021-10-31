@@ -16,7 +16,7 @@ namespace java::util
 			"()V"
 		);
 	}
-	Hashtable::Hashtable(jint &arg0)
+	Hashtable::Hashtable(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Hashtable",
@@ -24,7 +24,7 @@ namespace java::util
 			arg0
 		);
 	}
-	Hashtable::Hashtable(__JniBaseClass &arg0)
+	Hashtable::Hashtable(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Hashtable",
@@ -32,7 +32,7 @@ namespace java::util
 			arg0.__jniObject().object()
 		);
 	}
-	Hashtable::Hashtable(jint &arg0, jfloat &arg1)
+	Hashtable::Hashtable(jint arg0, jfloat arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Hashtable",

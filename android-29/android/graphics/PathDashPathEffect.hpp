@@ -21,7 +21,7 @@ namespace android::graphics
 		
 		PathDashPathEffect(QAndroidJniObject obj);
 		// Constructors
-		PathDashPathEffect(android::graphics::Path &arg0, jfloat &arg1, jfloat &arg2, android::graphics::PathDashPathEffect_Style &arg3);
+		PathDashPathEffect(android::graphics::Path arg0, jfloat arg1, jfloat arg2, android::graphics::PathDashPathEffect_Style arg3);
 		PathDashPathEffect() = default;
 		
 		// Methods

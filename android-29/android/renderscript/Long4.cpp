@@ -37,7 +37,7 @@ namespace android::renderscript
 			"()V"
 		);
 	}
-	Long4::Long4(jlong &arg0, jlong &arg1, jlong &arg2, jlong &arg3)
+	Long4::Long4(jlong arg0, jlong arg1, jlong arg2, jlong arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.renderscript.Long4",

@@ -30,7 +30,6 @@ namespace android::os::storage
 		
 		// Methods
 		QAndroidJniObject createAccessIntent(jstring arg0);
-		QAndroidJniObject createAccessIntent(const QString &arg0);
 		QAndroidJniObject createOpenDocumentTreeIntent();
 		jint describeContents();
 		jboolean equals(jobject arg0);

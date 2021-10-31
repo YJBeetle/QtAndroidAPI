@@ -26,7 +26,6 @@ namespace java::util::logging
 		
 		// Methods
 		void error(jstring arg0, java::lang::Exception arg1, jint arg2);
-		void error(const QString &arg0, java::lang::Exception arg1, jint arg2);
 	};
 } // namespace java::util::logging
 

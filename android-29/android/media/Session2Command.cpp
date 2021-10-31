@@ -23,7 +23,7 @@ namespace android::media
 	
 	Session2Command::Session2Command(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Session2Command::Session2Command(jint &arg0)
+	Session2Command::Session2Command(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.Session2Command",
@@ -31,21 +31,12 @@ namespace android::media
 			arg0
 		);
 	}
-	Session2Command::Session2Command(jstring &arg0, android::os::Bundle &arg1)
+	Session2Command::Session2Command(jstring arg0, android::os::Bundle arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.Session2Command",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	Session2Command::Session2Command(const QString &arg0, android::os::Bundle &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.media.Session2Command",
-			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

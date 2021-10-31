@@ -16,7 +16,7 @@ namespace java::util::concurrent::atomic
 		
 		LongAccumulator(QAndroidJniObject obj);
 		// Constructors
-		LongAccumulator(__JniBaseClass &arg0, jlong &arg1);
+		LongAccumulator(__JniBaseClass arg0, jlong arg1);
 		LongAccumulator() = default;
 		
 		// Methods

@@ -535,18 +535,6 @@ namespace android::os
 			arg3.__jniObject().object()
 		);
 	}
-	QAndroidJniObject UserManager::createUserCreationIntent(const QString &arg0, const QString &arg1, const QString &arg2, android::os::PersistableBundle arg3)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.os.UserManager",
-			"createUserCreationIntent",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/PersistableBundle;)Landroid/content/Intent;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			arg3.__jniObject().object()
-		);
-	}
 	jboolean UserManager::supportsMultipleUsers()
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
@@ -561,14 +549,6 @@ namespace android::os
 			"getApplicationRestrictions",
 			"(Ljava/lang/String;)Landroid/os/Bundle;",
 			arg0
-		);
-	}
-	QAndroidJniObject UserManager::getApplicationRestrictions(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getApplicationRestrictions",
-			"(Ljava/lang/String;)Landroid/os/Bundle;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jlong UserManager::getSerialNumberForUser(android::os::UserHandle arg0)
@@ -637,14 +617,6 @@ namespace android::os
 			"hasUserRestriction",
 			"(Ljava/lang/String;)Z",
 			arg0
-		);
-	}
-	jboolean UserManager::hasUserRestriction(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasUserRestriction",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean UserManager::isDemoUser()
@@ -724,29 +696,12 @@ namespace android::os
 			arg0
 		);
 	}
-	jboolean UserManager::setRestrictionsChallenge(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"setRestrictionsChallenge",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void UserManager::setUserRestriction(jstring arg0, jboolean arg1)
 	{
 		__thiz.callMethod<void>(
 			"setUserRestriction",
 			"(Ljava/lang/String;Z)V",
 			arg0,
-			arg1
-		);
-	}
-	void UserManager::setUserRestriction(const QString &arg0, jboolean arg1)
-	{
-		__thiz.callMethod<void>(
-			"setUserRestriction",
-			"(Ljava/lang/String;Z)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

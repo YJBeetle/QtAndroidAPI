@@ -32,21 +32,15 @@ namespace java::net
 		
 		URI(QAndroidJniObject obj);
 		// Constructors
-		URI(jstring &arg0);
-		URI(const QString &arg0);
-		URI(jstring &arg0, jstring &arg1, jstring &arg2);
-		URI(const QString &arg0, const QString &arg1, const QString &arg2);
-		URI(jstring &arg0, jstring &arg1, jstring &arg2, jstring &arg3);
-		URI(const QString &arg0, const QString &arg1, const QString &arg2, const QString &arg3);
-		URI(jstring &arg0, jstring &arg1, jstring &arg2, jstring &arg3, jstring &arg4);
-		URI(const QString &arg0, const QString &arg1, const QString &arg2, const QString &arg3, const QString &arg4);
-		URI(jstring &arg0, jstring &arg1, jstring &arg2, jint &arg3, jstring &arg4, jstring &arg5, jstring &arg6);
-		URI(const QString &arg0, const QString &arg1, const QString &arg2, jint &arg3, const QString &arg4, const QString &arg5, const QString &arg6);
+		URI(jstring arg0);
+		URI(jstring arg0, jstring arg1, jstring arg2);
+		URI(jstring arg0, jstring arg1, jstring arg2, jstring arg3);
+		URI(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4);
+		URI(jstring arg0, jstring arg1, jstring arg2, jint arg3, jstring arg4, jstring arg5, jstring arg6);
 		URI() = default;
 		
 		// Methods
 		static QAndroidJniObject create(jstring arg0);
-		static QAndroidJniObject create(const QString &arg0);
 		jint compareTo(jobject arg0);
 		jint compareTo(java::net::URI arg0);
 		jboolean equals(jobject arg0);
@@ -72,7 +66,6 @@ namespace java::net
 		QAndroidJniObject parseServerAuthority();
 		QAndroidJniObject relativize(java::net::URI arg0);
 		QAndroidJniObject resolve(jstring arg0);
-		QAndroidJniObject resolve(const QString &arg0);
 		QAndroidJniObject resolve(java::net::URI arg0);
 		jstring toASCIIString();
 		jstring toString();

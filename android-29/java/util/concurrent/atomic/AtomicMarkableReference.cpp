@@ -6,7 +6,7 @@ namespace java::util::concurrent::atomic
 	
 	AtomicMarkableReference::AtomicMarkableReference(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AtomicMarkableReference::AtomicMarkableReference(jobject &arg0, jboolean &arg1)
+	AtomicMarkableReference::AtomicMarkableReference(jobject arg0, jboolean arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.atomic.AtomicMarkableReference",

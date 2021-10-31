@@ -8,7 +8,7 @@ namespace android::media
 	
 	AudioPlaybackCaptureConfiguration_Builder::AudioPlaybackCaptureConfiguration_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AudioPlaybackCaptureConfiguration_Builder::AudioPlaybackCaptureConfiguration_Builder(android::media::projection::MediaProjection &arg0)
+	AudioPlaybackCaptureConfiguration_Builder::AudioPlaybackCaptureConfiguration_Builder(android::media::projection::MediaProjection arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.AudioPlaybackCaptureConfiguration$Builder",

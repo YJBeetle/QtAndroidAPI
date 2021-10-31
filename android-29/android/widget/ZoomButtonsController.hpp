@@ -24,7 +24,7 @@ namespace android::widget
 		
 		ZoomButtonsController(QAndroidJniObject obj);
 		// Constructors
-		ZoomButtonsController(android::view::View &arg0);
+		ZoomButtonsController(android::view::View arg0);
 		ZoomButtonsController() = default;
 		
 		// Methods

@@ -39,8 +39,8 @@ namespace android::widget
 		
 		RadioGroup(QAndroidJniObject obj);
 		// Constructors
-		RadioGroup(android::content::Context &arg0);
-		RadioGroup(android::content::Context &arg0, __JniBaseClass &arg1);
+		RadioGroup(android::content::Context arg0);
+		RadioGroup(android::content::Context arg0, __JniBaseClass arg1);
 		RadioGroup() = default;
 		
 		// Methods

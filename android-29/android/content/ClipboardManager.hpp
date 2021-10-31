@@ -34,7 +34,6 @@ namespace android::content
 		void removePrimaryClipChangedListener(__JniBaseClass arg0);
 		void setPrimaryClip(android::content::ClipData arg0);
 		void setText(jstring arg0);
-		void setText(const QString &arg0);
 	};
 } // namespace android::content
 

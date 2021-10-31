@@ -15,8 +15,7 @@ namespace android::renderscript
 		
 		RSIllegalArgumentException(QAndroidJniObject obj);
 		// Constructors
-		RSIllegalArgumentException(jstring &arg0);
-		RSIllegalArgumentException(const QString &arg0);
+		RSIllegalArgumentException(jstring arg0);
 		RSIllegalArgumentException() = default;
 		
 		// Methods

@@ -12,7 +12,7 @@ namespace java::text
 		
 		ParsePosition(QAndroidJniObject obj);
 		// Constructors
-		ParsePosition(jint &arg0);
+		ParsePosition(jint arg0);
 		ParsePosition() = default;
 		
 		// Methods

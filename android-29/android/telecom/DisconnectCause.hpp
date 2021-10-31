@@ -30,13 +30,10 @@ namespace android::telecom
 		
 		DisconnectCause(QAndroidJniObject obj);
 		// Constructors
-		DisconnectCause(jint &arg0);
-		DisconnectCause(jint &arg0, jstring &arg1);
-		DisconnectCause(jint &arg0, const QString &arg1);
-		DisconnectCause(jint &arg0, jstring &arg1, jstring &arg2, jstring &arg3);
-		DisconnectCause(jint &arg0, const QString &arg1, const QString &arg2, const QString &arg3);
-		DisconnectCause(jint &arg0, jstring &arg1, jstring &arg2, jstring &arg3, jint &arg4);
-		DisconnectCause(jint &arg0, const QString &arg1, const QString &arg2, const QString &arg3, jint &arg4);
+		DisconnectCause(jint arg0);
+		DisconnectCause(jint arg0, jstring arg1);
+		DisconnectCause(jint arg0, jstring arg1, jstring arg2, jstring arg3);
+		DisconnectCause(jint arg0, jstring arg1, jstring arg2, jstring arg3, jint arg4);
 		DisconnectCause() = default;
 		
 		// Methods

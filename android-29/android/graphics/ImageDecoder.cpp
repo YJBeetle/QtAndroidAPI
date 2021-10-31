@@ -108,16 +108,6 @@ namespace android::graphics
 			arg1
 		);
 	}
-	QAndroidJniObject ImageDecoder::createSource(android::content::res::AssetManager arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.ImageDecoder",
-			"createSource",
-			"(Landroid/content/res/AssetManager;Ljava/lang/String;)Landroid/graphics/ImageDecoder$Source;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	QAndroidJniObject ImageDecoder::createSource(android::content::res::Resources arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -173,15 +163,6 @@ namespace android::graphics
 			"isMimeTypeSupported",
 			"(Ljava/lang/String;)Z",
 			arg0
-		);
-	}
-	jboolean ImageDecoder::isMimeTypeSupported(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.graphics.ImageDecoder",
-			"isMimeTypeSupported",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void ImageDecoder::close()

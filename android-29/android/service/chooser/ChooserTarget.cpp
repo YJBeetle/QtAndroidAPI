@@ -18,24 +18,12 @@ namespace android::service::chooser
 	
 	ChooserTarget::ChooserTarget(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ChooserTarget::ChooserTarget(jstring &arg0, android::graphics::drawable::Icon &arg1, jfloat &arg2, android::content::ComponentName &arg3, android::os::Bundle &arg4)
+	ChooserTarget::ChooserTarget(jstring arg0, android::graphics::drawable::Icon arg1, jfloat arg2, android::content::ComponentName arg3, android::os::Bundle arg4)
 	{
 		__thiz = QAndroidJniObject(
 			"android.service.chooser.ChooserTarget",
 			"(Ljava/lang/CharSequence;Landroid/graphics/drawable/Icon;FLandroid/content/ComponentName;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object()
-		);
-	}
-	ChooserTarget::ChooserTarget(const QString &arg0, android::graphics::drawable::Icon &arg1, jfloat &arg2, android::content::ComponentName &arg3, android::os::Bundle &arg4)
-	{
-		__thiz = QAndroidJniObject(
-			"android.service.chooser.ChooserTarget",
-			"(Ljava/lang/CharSequence;Landroid/graphics/drawable/Icon;FLandroid/content/ComponentName;Landroid/os/Bundle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2,
 			arg3.__jniObject().object(),

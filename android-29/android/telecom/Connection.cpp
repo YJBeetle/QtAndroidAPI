@@ -545,15 +545,6 @@ namespace android::telecom
 			arg1.__jniObject().object()
 		);
 	}
-	void Connection::onCallEvent(const QString &arg0, android::os::Bundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"onCallEvent",
-			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	void Connection::onDeflect(android::net::Uri arg0)
 	{
 		__thiz.callMethod<void>(
@@ -627,14 +618,6 @@ namespace android::telecom
 			"onReject",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void Connection::onReject(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"onReject",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void Connection::onSeparate()
@@ -736,15 +719,6 @@ namespace android::telecom
 			arg1.__jniObject().object()
 		);
 	}
-	void Connection::sendConnectionEvent(const QString &arg0, android::os::Bundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"sendConnectionEvent",
-			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	void Connection::sendRemoteRttRequest()
 	{
 		__thiz.callMethod<void>(
@@ -812,15 +786,6 @@ namespace android::telecom
 			"setCallerDisplayName",
 			"(Ljava/lang/String;I)V",
 			arg0,
-			arg1
-		);
-	}
-	void Connection::setCallerDisplayName(const QString &arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"setCallerDisplayName",
-			"(Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -914,14 +879,6 @@ namespace android::telecom
 			"setPostDialWait",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void Connection::setPostDialWait(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPostDialWait",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void Connection::setPulling()

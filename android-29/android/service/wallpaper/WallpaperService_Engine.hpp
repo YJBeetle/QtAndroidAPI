@@ -44,7 +44,7 @@ namespace android::service::wallpaper
 		
 		WallpaperService_Engine(QAndroidJniObject obj);
 		// Constructors
-		WallpaperService_Engine(android::service::wallpaper::WallpaperService &arg0);
+		WallpaperService_Engine(android::service::wallpaper::WallpaperService arg0);
 		WallpaperService_Engine() = default;
 		
 		// Methods
@@ -57,7 +57,6 @@ namespace android::service::wallpaper
 		void notifyColorsChanged();
 		void onApplyWindowInsets(android::view::WindowInsets arg0);
 		QAndroidJniObject onCommand(jstring arg0, jint arg1, jint arg2, jint arg3, android::os::Bundle arg4, jboolean arg5);
-		QAndroidJniObject onCommand(const QString &arg0, jint arg1, jint arg2, jint arg3, android::os::Bundle arg4, jboolean arg5);
 		QAndroidJniObject onComputeColors();
 		void onCreate(__JniBaseClass arg0);
 		void onDesiredSizeChanged(jint arg0, jint arg1);

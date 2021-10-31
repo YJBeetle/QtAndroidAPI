@@ -23,8 +23,8 @@ namespace android::widget
 		
 		ZoomControls(QAndroidJniObject obj);
 		// Constructors
-		ZoomControls(android::content::Context &arg0);
-		ZoomControls(android::content::Context &arg0, __JniBaseClass &arg1);
+		ZoomControls(android::content::Context arg0);
+		ZoomControls(android::content::Context arg0, __JniBaseClass arg1);
 		ZoomControls() = default;
 		
 		// Methods

@@ -22,9 +22,9 @@ namespace android::app
 		
 		FragmentBreadCrumbs(QAndroidJniObject obj);
 		// Constructors
-		FragmentBreadCrumbs(android::content::Context &arg0);
-		FragmentBreadCrumbs(android::content::Context &arg0, __JniBaseClass &arg1);
-		FragmentBreadCrumbs(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
+		FragmentBreadCrumbs(android::content::Context arg0);
+		FragmentBreadCrumbs(android::content::Context arg0, __JniBaseClass arg1);
+		FragmentBreadCrumbs(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		FragmentBreadCrumbs() = default;
 		
 		// Methods
@@ -33,9 +33,7 @@ namespace android::app
 		void setMaxVisible(jint arg0);
 		void setOnBreadCrumbClickListener(__JniBaseClass arg0);
 		void setParentTitle(jstring arg0, jstring arg1, __JniBaseClass arg2);
-		void setParentTitle(const QString &arg0, const QString &arg1, __JniBaseClass arg2);
 		void setTitle(jstring arg0, jstring arg1);
-		void setTitle(const QString &arg0, const QString &arg1);
 	};
 } // namespace android::app
 

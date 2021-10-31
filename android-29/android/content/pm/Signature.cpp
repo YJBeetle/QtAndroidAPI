@@ -15,7 +15,7 @@ namespace android::content::pm
 	
 	Signature::Signature(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Signature::Signature(jbyteArray &arg0)
+	Signature::Signature(jbyteArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.pm.Signature",
@@ -23,20 +23,12 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	Signature::Signature(jstring &arg0)
+	Signature::Signature(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.pm.Signature",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	Signature::Signature(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.pm.Signature",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

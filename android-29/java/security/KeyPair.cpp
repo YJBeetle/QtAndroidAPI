@@ -6,7 +6,7 @@ namespace java::security
 	
 	KeyPair::KeyPair(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	KeyPair::KeyPair(__JniBaseClass &arg0, __JniBaseClass &arg1)
+	KeyPair::KeyPair(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.KeyPair",

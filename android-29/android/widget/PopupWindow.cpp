@@ -39,7 +39,7 @@ namespace android::widget
 			"()V"
 		);
 	}
-	PopupWindow::PopupWindow(android::content::Context &arg0)
+	PopupWindow::PopupWindow(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.PopupWindow",
@@ -47,7 +47,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	PopupWindow::PopupWindow(android::view::View &arg0)
+	PopupWindow::PopupWindow(android::view::View arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.PopupWindow",
@@ -55,7 +55,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	PopupWindow::PopupWindow(android::content::Context &arg0, __JniBaseClass &arg1)
+	PopupWindow::PopupWindow(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.PopupWindow",
@@ -64,7 +64,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	PopupWindow::PopupWindow(jint &arg0, jint &arg1)
+	PopupWindow::PopupWindow(jint arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.PopupWindow",
@@ -73,7 +73,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	PopupWindow::PopupWindow(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	PopupWindow::PopupWindow(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.PopupWindow",
@@ -83,7 +83,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	PopupWindow::PopupWindow(android::view::View &arg0, jint &arg1, jint &arg2)
+	PopupWindow::PopupWindow(android::view::View arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.PopupWindow",
@@ -93,7 +93,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	PopupWindow::PopupWindow(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	PopupWindow::PopupWindow(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.PopupWindow",
@@ -104,7 +104,7 @@ namespace android::widget
 			arg3
 		);
 	}
-	PopupWindow::PopupWindow(android::view::View &arg0, jint &arg1, jint &arg2, jboolean &arg3)
+	PopupWindow::PopupWindow(android::view::View arg0, jint arg1, jint arg2, jboolean arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.PopupWindow",

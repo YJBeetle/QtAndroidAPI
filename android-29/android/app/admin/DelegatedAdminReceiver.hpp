@@ -29,7 +29,6 @@ namespace android::app::admin
 		
 		// Methods
 		jstring onChoosePrivateKeyAlias(android::content::Context arg0, android::content::Intent arg1, jint arg2, android::net::Uri arg3, jstring arg4);
-		jstring onChoosePrivateKeyAlias(android::content::Context arg0, android::content::Intent arg1, jint arg2, android::net::Uri arg3, const QString &arg4);
 		void onNetworkLogsAvailable(android::content::Context arg0, android::content::Intent arg1, jlong arg2, jint arg3);
 		void onReceive(android::content::Context arg0, android::content::Intent arg1);
 	};

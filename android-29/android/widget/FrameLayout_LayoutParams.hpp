@@ -28,12 +28,12 @@ namespace android::widget
 		
 		FrameLayout_LayoutParams(QAndroidJniObject obj);
 		// Constructors
-		FrameLayout_LayoutParams(android::view::ViewGroup_LayoutParams &arg0);
-		FrameLayout_LayoutParams(android::view::ViewGroup_MarginLayoutParams &arg0);
+		FrameLayout_LayoutParams(android::view::ViewGroup_LayoutParams arg0);
+		FrameLayout_LayoutParams(android::view::ViewGroup_MarginLayoutParams arg0);
 		FrameLayout_LayoutParams(android::widget::FrameLayout_LayoutParams &arg0);
-		FrameLayout_LayoutParams(android::content::Context &arg0, __JniBaseClass &arg1);
-		FrameLayout_LayoutParams(jint &arg0, jint &arg1);
-		FrameLayout_LayoutParams(jint &arg0, jint &arg1, jint &arg2);
+		FrameLayout_LayoutParams(android::content::Context arg0, __JniBaseClass arg1);
+		FrameLayout_LayoutParams(jint arg0, jint arg1);
+		FrameLayout_LayoutParams(jint arg0, jint arg1, jint arg2);
 		FrameLayout_LayoutParams() = default;
 		
 		// Methods

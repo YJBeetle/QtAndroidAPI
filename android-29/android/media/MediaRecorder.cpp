@@ -345,14 +345,6 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaRecorder::setOutputFile(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setOutputFile",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void MediaRecorder::setOutputFormat(jint arg0)
 	{
 		__thiz.callMethod<void>(

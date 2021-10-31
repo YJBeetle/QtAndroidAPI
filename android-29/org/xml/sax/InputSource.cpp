@@ -15,7 +15,7 @@ namespace org::xml::sax
 			"()V"
 		);
 	}
-	InputSource::InputSource(java::io::InputStream &arg0)
+	InputSource::InputSource(java::io::InputStream arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"org.xml.sax.InputSource",
@@ -23,7 +23,7 @@ namespace org::xml::sax
 			arg0.__jniObject().object()
 		);
 	}
-	InputSource::InputSource(java::io::Reader &arg0)
+	InputSource::InputSource(java::io::Reader arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"org.xml.sax.InputSource",
@@ -31,20 +31,12 @@ namespace org::xml::sax
 			arg0.__jniObject().object()
 		);
 	}
-	InputSource::InputSource(jstring &arg0)
+	InputSource::InputSource(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"org.xml.sax.InputSource",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	InputSource::InputSource(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"org.xml.sax.InputSource",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	
@@ -115,14 +107,6 @@ namespace org::xml::sax
 			arg0
 		);
 	}
-	void InputSource::setEncoding(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setEncoding",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void InputSource::setPublicId(jstring arg0)
 	{
 		__thiz.callMethod<void>(
@@ -131,28 +115,12 @@ namespace org::xml::sax
 			arg0
 		);
 	}
-	void InputSource::setPublicId(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPublicId",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void InputSource::setSystemId(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSystemId",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void InputSource::setSystemId(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSystemId",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace org::xml::sax

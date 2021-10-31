@@ -23,7 +23,6 @@ namespace android::app::backup
 		jint getTransportFlags();
 		jint writeEntityData(jbyteArray arg0, jint arg1);
 		jint writeEntityHeader(jstring arg0, jint arg1);
-		jint writeEntityHeader(const QString &arg0, jint arg1);
 	};
 } // namespace android::app::backup
 

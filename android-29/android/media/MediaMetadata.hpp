@@ -66,20 +66,14 @@ namespace android::media
 		
 		// Methods
 		jboolean containsKey(jstring arg0);
-		jboolean containsKey(const QString &arg0);
 		jint describeContents();
 		jboolean equals(jobject arg0);
 		QAndroidJniObject getBitmap(jstring arg0);
-		QAndroidJniObject getBitmap(const QString &arg0);
 		QAndroidJniObject getDescription();
 		jlong getLong(jstring arg0);
-		jlong getLong(const QString &arg0);
 		QAndroidJniObject getRating(jstring arg0);
-		QAndroidJniObject getRating(const QString &arg0);
 		jstring getString(jstring arg0);
-		jstring getString(const QString &arg0);
 		jstring getText(jstring arg0);
-		jstring getText(const QString &arg0);
 		jint hashCode();
 		QAndroidJniObject keySet();
 		jint size();

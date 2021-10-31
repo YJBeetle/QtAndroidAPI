@@ -12,7 +12,7 @@ namespace java::io
 	
 	ObjectOutputStream::ObjectOutputStream(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ObjectOutputStream::ObjectOutputStream(java::io::OutputStream &arg0)
+	ObjectOutputStream::ObjectOutputStream(java::io::OutputStream arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.ObjectOutputStream",
@@ -115,14 +115,6 @@ namespace java::io
 			arg0
 		);
 	}
-	void ObjectOutputStream::writeBytes(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"writeBytes",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void ObjectOutputStream::writeChar(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -137,14 +129,6 @@ namespace java::io
 			"writeChars",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void ObjectOutputStream::writeChars(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"writeChars",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void ObjectOutputStream::writeDouble(jdouble arg0)
@@ -208,14 +192,6 @@ namespace java::io
 			"writeUTF",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void ObjectOutputStream::writeUTF(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"writeUTF",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void ObjectOutputStream::writeUnshared(jobject arg0)

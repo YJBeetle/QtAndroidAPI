@@ -20,15 +20,6 @@ namespace javax::crypto
 			arg0
 		);
 	}
-	QAndroidJniObject KeyGenerator::getInstance(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"javax.crypto.KeyGenerator",
-			"getInstance",
-			"(Ljava/lang/String;)Ljavax/crypto/KeyGenerator;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject KeyGenerator::getInstance(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -39,16 +30,6 @@ namespace javax::crypto
 			arg1
 		);
 	}
-	QAndroidJniObject KeyGenerator::getInstance(const QString &arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"javax.crypto.KeyGenerator",
-			"getInstance",
-			"(Ljava/lang/String;Ljava/lang/String;)Ljavax/crypto/KeyGenerator;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	QAndroidJniObject KeyGenerator::getInstance(jstring arg0, java::security::Provider arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -56,16 +37,6 @@ namespace javax::crypto
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljavax/crypto/KeyGenerator;",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject KeyGenerator::getInstance(const QString &arg0, java::security::Provider arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"javax.crypto.KeyGenerator",
-			"getInstance",
-			"(Ljava/lang/String;Ljava/security/Provider;)Ljavax/crypto/KeyGenerator;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

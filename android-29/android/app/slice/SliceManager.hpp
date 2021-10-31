@@ -36,11 +36,9 @@ namespace android::app::slice
 		QAndroidJniObject getPinnedSpecs(android::net::Uri arg0);
 		QAndroidJniObject getSliceDescendants(android::net::Uri arg0);
 		void grantSlicePermission(jstring arg0, android::net::Uri arg1);
-		void grantSlicePermission(const QString &arg0, android::net::Uri arg1);
 		QAndroidJniObject mapIntentToUri(android::content::Intent arg0);
 		void pinSlice(android::net::Uri arg0, __JniBaseClass arg1);
 		void revokeSlicePermission(jstring arg0, android::net::Uri arg1);
-		void revokeSlicePermission(const QString &arg0, android::net::Uri arg1);
 		void unpinSlice(android::net::Uri arg0);
 	};
 } // namespace android::app::slice

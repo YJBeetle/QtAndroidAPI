@@ -38,11 +38,10 @@ namespace android::text::style
 		
 		TextAppearanceSpan(QAndroidJniObject obj);
 		// Constructors
-		TextAppearanceSpan(android::os::Parcel &arg0);
-		TextAppearanceSpan(android::content::Context &arg0, jint &arg1);
-		TextAppearanceSpan(android::content::Context &arg0, jint &arg1, jint &arg2);
-		TextAppearanceSpan(jstring &arg0, jint &arg1, jint &arg2, android::content::res::ColorStateList &arg3, android::content::res::ColorStateList &arg4);
-		TextAppearanceSpan(const QString &arg0, jint &arg1, jint &arg2, android::content::res::ColorStateList &arg3, android::content::res::ColorStateList &arg4);
+		TextAppearanceSpan(android::os::Parcel arg0);
+		TextAppearanceSpan(android::content::Context arg0, jint arg1);
+		TextAppearanceSpan(android::content::Context arg0, jint arg1, jint arg2);
+		TextAppearanceSpan(jstring arg0, jint arg1, jint arg2, android::content::res::ColorStateList arg3, android::content::res::ColorStateList arg4);
 		TextAppearanceSpan() = default;
 		
 		// Methods

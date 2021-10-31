@@ -16,8 +16,7 @@ namespace java::security
 		
 		Permission(QAndroidJniObject obj);
 		// Constructors
-		Permission(jstring &arg0);
-		Permission(const QString &arg0);
+		Permission(jstring arg0);
 		Permission() = default;
 		
 		// Methods

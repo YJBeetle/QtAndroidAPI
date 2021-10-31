@@ -20,8 +20,8 @@ namespace javax::net::ssl
 		
 		SSLEngineResult(QAndroidJniObject obj);
 		// Constructors
-		SSLEngineResult(javax::net::ssl::SSLEngineResult_Status &arg0, javax::net::ssl::SSLEngineResult_HandshakeStatus &arg1, jint &arg2, jint &arg3);
-		SSLEngineResult(javax::net::ssl::SSLEngineResult_Status &arg0, javax::net::ssl::SSLEngineResult_HandshakeStatus &arg1, jint &arg2, jint &arg3, jlong &arg4);
+		SSLEngineResult(javax::net::ssl::SSLEngineResult_Status arg0, javax::net::ssl::SSLEngineResult_HandshakeStatus arg1, jint arg2, jint arg3);
+		SSLEngineResult(javax::net::ssl::SSLEngineResult_Status arg0, javax::net::ssl::SSLEngineResult_HandshakeStatus arg1, jint arg2, jint arg3, jlong arg4);
 		SSLEngineResult() = default;
 		
 		// Methods

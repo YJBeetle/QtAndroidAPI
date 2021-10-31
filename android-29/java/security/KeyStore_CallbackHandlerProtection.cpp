@@ -6,7 +6,7 @@ namespace java::security
 	
 	KeyStore_CallbackHandlerProtection::KeyStore_CallbackHandlerProtection(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	KeyStore_CallbackHandlerProtection::KeyStore_CallbackHandlerProtection(__JniBaseClass &arg0)
+	KeyStore_CallbackHandlerProtection::KeyStore_CallbackHandlerProtection(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.KeyStore$CallbackHandlerProtection",

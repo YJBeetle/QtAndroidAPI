@@ -11,7 +11,7 @@ namespace java::security
 	
 	CodeSource::CodeSource(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	CodeSource::CodeSource(java::net::URL &arg0, jarray &arg1)
+	CodeSource::CodeSource(java::net::URL arg0, jarray arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.CodeSource",

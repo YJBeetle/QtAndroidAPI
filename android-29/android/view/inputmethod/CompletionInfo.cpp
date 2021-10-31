@@ -15,7 +15,7 @@ namespace android::view::inputmethod
 	
 	CompletionInfo::CompletionInfo(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	CompletionInfo::CompletionInfo(jlong &arg0, jint &arg1, jstring &arg2)
+	CompletionInfo::CompletionInfo(jlong arg0, jint arg1, jstring arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.inputmethod.CompletionInfo",
@@ -25,17 +25,7 @@ namespace android::view::inputmethod
 			arg2
 		);
 	}
-	CompletionInfo::CompletionInfo(jlong &arg0, jint &arg1, const QString &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.inputmethod.CompletionInfo",
-			"(JILjava/lang/CharSequence;)V",
-			arg0,
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
-	CompletionInfo::CompletionInfo(jlong &arg0, jint &arg1, jstring &arg2, jstring &arg3)
+	CompletionInfo::CompletionInfo(jlong arg0, jint arg1, jstring arg2, jstring arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.inputmethod.CompletionInfo",
@@ -44,17 +34,6 @@ namespace android::view::inputmethod
 			arg1,
 			arg2,
 			arg3
-		);
-	}
-	CompletionInfo::CompletionInfo(jlong &arg0, jint &arg1, const QString &arg2, const QString &arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.inputmethod.CompletionInfo",
-			"(JILjava/lang/CharSequence;Ljava/lang/CharSequence;)V",
-			arg0,
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			QAndroidJniObject::fromString(arg3).object<jstring>()
 		);
 	}
 	

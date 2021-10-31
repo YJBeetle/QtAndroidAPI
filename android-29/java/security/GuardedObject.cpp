@@ -7,7 +7,7 @@ namespace java::security
 	
 	GuardedObject::GuardedObject(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	GuardedObject::GuardedObject(jobject &arg0, __JniBaseClass &arg1)
+	GuardedObject::GuardedObject(jobject arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.GuardedObject",

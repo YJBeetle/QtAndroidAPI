@@ -24,10 +24,10 @@ namespace android::icu::math
 		
 		MathContext(QAndroidJniObject obj);
 		// Constructors
-		MathContext(jint &arg0);
-		MathContext(jint &arg0, jint &arg1);
-		MathContext(jint &arg0, jint &arg1, jboolean &arg2);
-		MathContext(jint &arg0, jint &arg1, jboolean &arg2, jint &arg3);
+		MathContext(jint arg0);
+		MathContext(jint arg0, jint arg1);
+		MathContext(jint arg0, jint arg1, jboolean arg2);
+		MathContext(jint arg0, jint arg1, jboolean arg2, jint arg3);
 		MathContext() = default;
 		
 		// Methods

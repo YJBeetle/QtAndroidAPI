@@ -8,7 +8,7 @@ namespace java::io
 	
 	ObjectStreamField::ObjectStreamField(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ObjectStreamField::ObjectStreamField(jstring &arg0, jclass &arg1)
+	ObjectStreamField::ObjectStreamField(jstring arg0, jclass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.ObjectStreamField",
@@ -17,31 +17,12 @@ namespace java::io
 			arg1
 		);
 	}
-	ObjectStreamField::ObjectStreamField(const QString &arg0, jclass &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.io.ObjectStreamField",
-			"(Ljava/lang/String;Ljava/lang/Class;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
-	ObjectStreamField::ObjectStreamField(jstring &arg0, jclass &arg1, jboolean &arg2)
+	ObjectStreamField::ObjectStreamField(jstring arg0, jclass arg1, jboolean arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.ObjectStreamField",
 			"(Ljava/lang/String;Ljava/lang/Class;Z)V",
 			arg0,
-			arg1,
-			arg2
-		);
-	}
-	ObjectStreamField::ObjectStreamField(const QString &arg0, jclass &arg1, jboolean &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"java.io.ObjectStreamField",
-			"(Ljava/lang/String;Ljava/lang/Class;Z)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2
 		);

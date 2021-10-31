@@ -81,15 +81,6 @@ namespace android::view
 			arg0
 		);
 	}
-	QAndroidJniObject ViewDebug_HierarchyTraceType::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.view.ViewDebug$HierarchyTraceType",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/view/ViewDebug$HierarchyTraceType;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray ViewDebug_HierarchyTraceType::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

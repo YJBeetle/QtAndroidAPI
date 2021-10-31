@@ -14,18 +14,14 @@ namespace java::util
 		
 		Locale_LanguageRange(QAndroidJniObject obj);
 		// Constructors
-		Locale_LanguageRange(jstring &arg0);
-		Locale_LanguageRange(const QString &arg0);
-		Locale_LanguageRange(jstring &arg0, jdouble &arg1);
-		Locale_LanguageRange(const QString &arg0, jdouble &arg1);
+		Locale_LanguageRange(jstring arg0);
+		Locale_LanguageRange(jstring arg0, jdouble arg1);
 		Locale_LanguageRange() = default;
 		
 		// Methods
 		static QAndroidJniObject mapEquivalents(__JniBaseClass arg0, __JniBaseClass arg1);
 		static QAndroidJniObject parse(jstring arg0);
-		static QAndroidJniObject parse(const QString &arg0);
 		static QAndroidJniObject parse(jstring arg0, __JniBaseClass arg1);
-		static QAndroidJniObject parse(const QString &arg0, __JniBaseClass arg1);
 		jboolean equals(jobject arg0);
 		jstring getRange();
 		jdouble getWeight();

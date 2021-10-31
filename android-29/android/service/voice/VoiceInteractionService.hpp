@@ -58,7 +58,6 @@ namespace android::service::voice
 		// Methods
 		static jboolean isActiveService(android::content::Context arg0, android::content::ComponentName arg1);
 		QAndroidJniObject createAlwaysOnHotwordDetector(jstring arg0, java::util::Locale arg1, android::service::voice::AlwaysOnHotwordDetector_Callback arg2);
-		QAndroidJniObject createAlwaysOnHotwordDetector(const QString &arg0, java::util::Locale arg1, android::service::voice::AlwaysOnHotwordDetector_Callback arg2);
 		jint getDisabledShowContext();
 		QAndroidJniObject onBind(android::content::Intent arg0);
 		QAndroidJniObject onGetSupportedVoiceActions(__JniBaseClass arg0);

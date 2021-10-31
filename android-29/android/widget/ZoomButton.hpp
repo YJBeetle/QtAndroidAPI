@@ -31,10 +31,10 @@ namespace android::widget
 		
 		ZoomButton(QAndroidJniObject obj);
 		// Constructors
-		ZoomButton(android::content::Context &arg0);
-		ZoomButton(android::content::Context &arg0, __JniBaseClass &arg1);
-		ZoomButton(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		ZoomButton(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		ZoomButton(android::content::Context arg0);
+		ZoomButton(android::content::Context arg0, __JniBaseClass arg1);
+		ZoomButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		ZoomButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		ZoomButton() = default;
 		
 		// Methods

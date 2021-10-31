@@ -50,15 +50,6 @@ namespace javax::xml::xpath
 			arg0
 		);
 	}
-	QAndroidJniObject XPathFactory::newInstance(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"javax.xml.xpath.XPathFactory",
-			"newInstance",
-			"(Ljava/lang/String;)Ljavax/xml/xpath/XPathFactory;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject XPathFactory::newInstance(jstring arg0, jstring arg1, java::lang::ClassLoader arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -70,17 +61,6 @@ namespace javax::xml::xpath
 			arg2.__jniObject().object()
 		);
 	}
-	QAndroidJniObject XPathFactory::newInstance(const QString &arg0, const QString &arg1, java::lang::ClassLoader arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"javax.xml.xpath.XPathFactory",
-			"newInstance",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/ClassLoader;)Ljavax/xml/xpath/XPathFactory;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object()
-		);
-	}
 	jboolean XPathFactory::getFeature(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -89,28 +69,12 @@ namespace javax::xml::xpath
 			arg0
 		);
 	}
-	jboolean XPathFactory::getFeature(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"getFeature",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jboolean XPathFactory::isObjectModelSupported(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isObjectModelSupported",
 			"(Ljava/lang/String;)Z",
 			arg0
-		);
-	}
-	jboolean XPathFactory::isObjectModelSupported(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isObjectModelSupported",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject XPathFactory::newXPath()
@@ -126,15 +90,6 @@ namespace javax::xml::xpath
 			"setFeature",
 			"(Ljava/lang/String;Z)V",
 			arg0,
-			arg1
-		);
-	}
-	void XPathFactory::setFeature(const QString &arg0, jboolean arg1)
-	{
-		__thiz.callMethod<void>(
-			"setFeature",
-			"(Ljava/lang/String;Z)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

@@ -81,28 +81,12 @@ namespace android::net
 			arg0
 		).object<jarray>();
 	}
-	jarray Network::getAllByName(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getAllByName",
-			"(Ljava/lang/String;)[Ljava/net/InetAddress;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jarray>();
-	}
 	QAndroidJniObject Network::getByName(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getByName",
 			"(Ljava/lang/String;)Ljava/net/InetAddress;",
 			arg0
-		);
-	}
-	QAndroidJniObject Network::getByName(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getByName",
-			"(Ljava/lang/String;)Ljava/net/InetAddress;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jlong Network::getNetworkHandle()

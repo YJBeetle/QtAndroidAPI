@@ -13,8 +13,7 @@ namespace java::text
 		
 		ParseException(QAndroidJniObject obj);
 		// Constructors
-		ParseException(jstring &arg0, jint &arg1);
-		ParseException(const QString &arg0, jint &arg1);
+		ParseException(jstring arg0, jint arg1);
 		ParseException() = default;
 		
 		// Methods

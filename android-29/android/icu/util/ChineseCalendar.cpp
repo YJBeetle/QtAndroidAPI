@@ -18,7 +18,7 @@ namespace android::icu::util
 			"()V"
 		);
 	}
-	ChineseCalendar::ChineseCalendar(android::icu::util::TimeZone &arg0)
+	ChineseCalendar::ChineseCalendar(android::icu::util::TimeZone arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.ChineseCalendar",
@@ -26,7 +26,7 @@ namespace android::icu::util
 			arg0.__jniObject().object()
 		);
 	}
-	ChineseCalendar::ChineseCalendar(android::icu::util::ULocale &arg0)
+	ChineseCalendar::ChineseCalendar(android::icu::util::ULocale arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.ChineseCalendar",
@@ -34,7 +34,7 @@ namespace android::icu::util
 			arg0.__jniObject().object()
 		);
 	}
-	ChineseCalendar::ChineseCalendar(java::util::Date &arg0)
+	ChineseCalendar::ChineseCalendar(java::util::Date arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.ChineseCalendar",
@@ -42,7 +42,7 @@ namespace android::icu::util
 			arg0.__jniObject().object()
 		);
 	}
-	ChineseCalendar::ChineseCalendar(java::util::Locale &arg0)
+	ChineseCalendar::ChineseCalendar(java::util::Locale arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.ChineseCalendar",
@@ -50,7 +50,7 @@ namespace android::icu::util
 			arg0.__jniObject().object()
 		);
 	}
-	ChineseCalendar::ChineseCalendar(android::icu::util::TimeZone &arg0, android::icu::util::ULocale &arg1)
+	ChineseCalendar::ChineseCalendar(android::icu::util::TimeZone arg0, android::icu::util::ULocale arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.ChineseCalendar",
@@ -59,7 +59,7 @@ namespace android::icu::util
 			arg1.__jniObject().object()
 		);
 	}
-	ChineseCalendar::ChineseCalendar(android::icu::util::TimeZone &arg0, java::util::Locale &arg1)
+	ChineseCalendar::ChineseCalendar(android::icu::util::TimeZone arg0, java::util::Locale arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.ChineseCalendar",
@@ -68,7 +68,7 @@ namespace android::icu::util
 			arg1.__jniObject().object()
 		);
 	}
-	ChineseCalendar::ChineseCalendar(jint &arg0, jint &arg1, jint &arg2, jint &arg3)
+	ChineseCalendar::ChineseCalendar(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.ChineseCalendar",
@@ -79,7 +79,7 @@ namespace android::icu::util
 			arg3
 		);
 	}
-	ChineseCalendar::ChineseCalendar(jint &arg0, jint &arg1, jint &arg2, jint &arg3, jint &arg4)
+	ChineseCalendar::ChineseCalendar(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.ChineseCalendar",
@@ -91,7 +91,7 @@ namespace android::icu::util
 			arg4
 		);
 	}
-	ChineseCalendar::ChineseCalendar(jint &arg0, jint &arg1, jint &arg2, jint &arg3, jint &arg4, jint &arg5, jint &arg6)
+	ChineseCalendar::ChineseCalendar(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.ChineseCalendar",
@@ -105,7 +105,7 @@ namespace android::icu::util
 			arg6
 		);
 	}
-	ChineseCalendar::ChineseCalendar(jint &arg0, jint &arg1, jint &arg2, jint &arg3, jint &arg4, jint &arg5, jint &arg6, jint &arg7)
+	ChineseCalendar::ChineseCalendar(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.ChineseCalendar",

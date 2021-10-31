@@ -62,9 +62,9 @@ namespace android::media::tv
 		
 		TvView(QAndroidJniObject obj);
 		// Constructors
-		TvView(android::content::Context &arg0);
-		TvView(android::content::Context &arg0, __JniBaseClass &arg1);
-		TvView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
+		TvView(android::content::Context arg0);
+		TvView(android::content::Context arg0, __JniBaseClass arg1);
+		TvView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		TvView() = default;
 		
 		// Methods
@@ -81,9 +81,7 @@ namespace android::media::tv
 		jboolean onUnhandledInputEvent(android::view::InputEvent arg0);
 		void reset();
 		void selectTrack(jint arg0, jstring arg1);
-		void selectTrack(jint arg0, const QString &arg1);
 		void sendAppPrivateCommand(jstring arg0, android::os::Bundle arg1);
-		void sendAppPrivateCommand(const QString &arg0, android::os::Bundle arg1);
 		void setCallback(android::media::tv::TvView_TvInputCallback arg0);
 		void setCaptionEnabled(jboolean arg0);
 		void setOnUnhandledInputEventListener(__JniBaseClass arg0);
@@ -93,14 +91,11 @@ namespace android::media::tv
 		void setZOrderOnTop(jboolean arg0);
 		void timeShiftPause();
 		void timeShiftPlay(jstring arg0, android::net::Uri arg1);
-		void timeShiftPlay(const QString &arg0, android::net::Uri arg1);
 		void timeShiftResume();
 		void timeShiftSeekTo(jlong arg0);
 		void timeShiftSetPlaybackParams(android::media::PlaybackParams arg0);
 		void tune(jstring arg0, android::net::Uri arg1);
-		void tune(const QString &arg0, android::net::Uri arg1);
 		void tune(jstring arg0, android::net::Uri arg1, android::os::Bundle arg2);
-		void tune(const QString &arg0, android::net::Uri arg1, android::os::Bundle arg2);
 	};
 } // namespace android::media::tv
 

@@ -16,8 +16,7 @@ namespace android::net::http
 		
 		SslCertificate_DName(QAndroidJniObject obj);
 		// Constructors
-		SslCertificate_DName(android::net::http::SslCertificate &arg0, jstring &arg1);
-		SslCertificate_DName(android::net::http::SslCertificate &arg0, const QString &arg1);
+		SslCertificate_DName(android::net::http::SslCertificate arg0, jstring arg1);
 		SslCertificate_DName() = default;
 		
 		// Methods

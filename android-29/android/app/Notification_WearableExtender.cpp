@@ -81,7 +81,7 @@ namespace android::app
 			"()V"
 		);
 	}
-	Notification_WearableExtender::Notification_WearableExtender(android::app::Notification &arg0)
+	Notification_WearableExtender::Notification_WearableExtender(android::app::Notification arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.Notification$WearableExtender",
@@ -308,14 +308,6 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_WearableExtender::setBridgeTag(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setBridgeTag",
-			"(Ljava/lang/String;)Landroid/app/Notification$WearableExtender;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Notification_WearableExtender::setContentAction(jint arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -370,14 +362,6 @@ namespace android::app
 			"setDismissalId",
 			"(Ljava/lang/String;)Landroid/app/Notification$WearableExtender;",
 			arg0
-		);
-	}
-	QAndroidJniObject Notification_WearableExtender::setDismissalId(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setDismissalId",
-			"(Ljava/lang/String;)Landroid/app/Notification$WearableExtender;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Notification_WearableExtender::setDisplayIntent(android::app::PendingIntent arg0)

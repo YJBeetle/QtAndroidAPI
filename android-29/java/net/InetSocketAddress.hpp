@@ -25,15 +25,13 @@ namespace java::net
 		
 		InetSocketAddress(QAndroidJniObject obj);
 		// Constructors
-		InetSocketAddress(jint &arg0);
-		InetSocketAddress(jstring &arg0, jint &arg1);
-		InetSocketAddress(const QString &arg0, jint &arg1);
-		InetSocketAddress(java::net::InetAddress &arg0, jint &arg1);
+		InetSocketAddress(jint arg0);
+		InetSocketAddress(jstring arg0, jint arg1);
+		InetSocketAddress(java::net::InetAddress arg0, jint arg1);
 		InetSocketAddress() = default;
 		
 		// Methods
 		static QAndroidJniObject createUnresolved(jstring arg0, jint arg1);
-		static QAndroidJniObject createUnresolved(const QString &arg0, jint arg1);
 		jboolean equals(jobject arg0);
 		QAndroidJniObject getAddress();
 		jstring getHostName();

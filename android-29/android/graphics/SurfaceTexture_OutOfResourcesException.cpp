@@ -13,20 +13,12 @@ namespace android::graphics
 			"()V"
 		);
 	}
-	SurfaceTexture_OutOfResourcesException::SurfaceTexture_OutOfResourcesException(jstring &arg0)
+	SurfaceTexture_OutOfResourcesException::SurfaceTexture_OutOfResourcesException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.SurfaceTexture$OutOfResourcesException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	SurfaceTexture_OutOfResourcesException::SurfaceTexture_OutOfResourcesException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.graphics.SurfaceTexture$OutOfResourcesException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

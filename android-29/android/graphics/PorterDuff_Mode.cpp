@@ -161,15 +161,6 @@ namespace android::graphics
 			arg0
 		);
 	}
-	QAndroidJniObject PorterDuff_Mode::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.PorterDuff$Mode",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/graphics/PorterDuff$Mode;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray PorterDuff_Mode::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

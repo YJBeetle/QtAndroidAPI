@@ -53,14 +53,6 @@ namespace java::security
 			arg0
 		);
 	}
-	QAndroidJniObject Provider::configure(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"configure",
-			"(Ljava/lang/String;)Ljava/security/Provider;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Provider::elements()
 	{
 		return __thiz.callObjectMethod(
@@ -122,14 +114,6 @@ namespace java::security
 			arg0
 		).object<jstring>();
 	}
-	jstring Provider::getProperty(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getProperty",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
 	QAndroidJniObject Provider::getService(jstring arg0, jstring arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -137,15 +121,6 @@ namespace java::security
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/security/Provider$Service;",
 			arg0,
 			arg1
-		);
-	}
-	QAndroidJniObject Provider::getService(const QString &arg0, const QString &arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getService",
-			"(Ljava/lang/String;Ljava/lang/String;)Ljava/security/Provider$Service;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	QAndroidJniObject Provider::getServices()

@@ -7,7 +7,7 @@ namespace android::net
 	
 	LocalSocketAddress::LocalSocketAddress(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	LocalSocketAddress::LocalSocketAddress(jstring &arg0)
+	LocalSocketAddress::LocalSocketAddress(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.LocalSocketAddress",
@@ -15,29 +15,12 @@ namespace android::net
 			arg0
 		);
 	}
-	LocalSocketAddress::LocalSocketAddress(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.net.LocalSocketAddress",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	LocalSocketAddress::LocalSocketAddress(jstring &arg0, android::net::LocalSocketAddress_Namespace &arg1)
+	LocalSocketAddress::LocalSocketAddress(jstring arg0, android::net::LocalSocketAddress_Namespace arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.LocalSocketAddress",
 			"(Ljava/lang/String;Landroid/net/LocalSocketAddress$Namespace;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	LocalSocketAddress::LocalSocketAddress(const QString &arg0, android::net::LocalSocketAddress_Namespace &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.net.LocalSocketAddress",
-			"(Ljava/lang/String;Landroid/net/LocalSocketAddress$Namespace;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

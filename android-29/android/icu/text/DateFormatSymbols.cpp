@@ -59,7 +59,7 @@ namespace android::icu::text
 			"()V"
 		);
 	}
-	DateFormatSymbols::DateFormatSymbols(android::icu::util::ULocale &arg0)
+	DateFormatSymbols::DateFormatSymbols(android::icu::util::ULocale arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.DateFormatSymbols",
@@ -67,7 +67,7 @@ namespace android::icu::text
 			arg0.__jniObject().object()
 		);
 	}
-	DateFormatSymbols::DateFormatSymbols(java::util::Locale &arg0)
+	DateFormatSymbols::DateFormatSymbols(java::util::Locale arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.DateFormatSymbols",
@@ -75,7 +75,7 @@ namespace android::icu::text
 			arg0.__jniObject().object()
 		);
 	}
-	DateFormatSymbols::DateFormatSymbols(android::icu::util::Calendar &arg0, android::icu::util::ULocale &arg1)
+	DateFormatSymbols::DateFormatSymbols(android::icu::util::Calendar arg0, android::icu::util::ULocale arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.DateFormatSymbols",
@@ -84,7 +84,7 @@ namespace android::icu::text
 			arg1.__jniObject().object()
 		);
 	}
-	DateFormatSymbols::DateFormatSymbols(android::icu::util::Calendar &arg0, java::util::Locale &arg1)
+	DateFormatSymbols::DateFormatSymbols(android::icu::util::Calendar arg0, java::util::Locale arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.DateFormatSymbols",
@@ -93,7 +93,7 @@ namespace android::icu::text
 			arg1.__jniObject().object()
 		);
 	}
-	DateFormatSymbols::DateFormatSymbols(jclass &arg0, android::icu::util::ULocale &arg1)
+	DateFormatSymbols::DateFormatSymbols(jclass arg0, android::icu::util::ULocale arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.DateFormatSymbols",
@@ -102,7 +102,7 @@ namespace android::icu::text
 			arg1.__jniObject().object()
 		);
 	}
-	DateFormatSymbols::DateFormatSymbols(jclass &arg0, java::util::Locale &arg1)
+	DateFormatSymbols::DateFormatSymbols(jclass arg0, java::util::Locale arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.DateFormatSymbols",
@@ -111,7 +111,7 @@ namespace android::icu::text
 			arg1.__jniObject().object()
 		);
 	}
-	DateFormatSymbols::DateFormatSymbols(java::util::ResourceBundle &arg0, android::icu::util::ULocale &arg1)
+	DateFormatSymbols::DateFormatSymbols(java::util::ResourceBundle arg0, android::icu::util::ULocale arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.DateFormatSymbols",
@@ -120,7 +120,7 @@ namespace android::icu::text
 			arg1.__jniObject().object()
 		);
 	}
-	DateFormatSymbols::DateFormatSymbols(java::util::ResourceBundle &arg0, java::util::Locale &arg1)
+	DateFormatSymbols::DateFormatSymbols(java::util::ResourceBundle arg0, java::util::Locale arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.DateFormatSymbols",
@@ -325,14 +325,6 @@ namespace android::icu::text
 			"setLocalPatternChars",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void DateFormatSymbols::setLocalPatternChars(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setLocalPatternChars",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void DateFormatSymbols::setMonths(jarray arg0)

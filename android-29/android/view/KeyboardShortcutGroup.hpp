@@ -21,10 +21,8 @@ namespace android::view
 		
 		KeyboardShortcutGroup(QAndroidJniObject obj);
 		// Constructors
-		KeyboardShortcutGroup(jstring &arg0);
-		KeyboardShortcutGroup(const QString &arg0);
-		KeyboardShortcutGroup(jstring &arg0, __JniBaseClass &arg1);
-		KeyboardShortcutGroup(const QString &arg0, __JniBaseClass &arg1);
+		KeyboardShortcutGroup(jstring arg0);
+		KeyboardShortcutGroup(jstring arg0, __JniBaseClass arg1);
 		KeyboardShortcutGroup() = default;
 		
 		// Methods

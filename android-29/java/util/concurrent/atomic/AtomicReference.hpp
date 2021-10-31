@@ -13,7 +13,7 @@ namespace java::util::concurrent::atomic
 		AtomicReference(QAndroidJniObject obj);
 		// Constructors
 		AtomicReference();
-		AtomicReference(jobject &arg0);
+		AtomicReference(jobject arg0);
 		
 		// Methods
 		jobject accumulateAndGet(jobject arg0, __JniBaseClass arg1);

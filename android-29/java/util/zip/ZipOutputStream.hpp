@@ -41,8 +41,8 @@ namespace java::util::zip
 		
 		ZipOutputStream(QAndroidJniObject obj);
 		// Constructors
-		ZipOutputStream(java::io::OutputStream &arg0);
-		ZipOutputStream(java::io::OutputStream &arg0, java::nio::charset::Charset &arg1);
+		ZipOutputStream(java::io::OutputStream arg0);
+		ZipOutputStream(java::io::OutputStream arg0, java::nio::charset::Charset arg1);
 		ZipOutputStream() = default;
 		
 		// Methods
@@ -51,7 +51,6 @@ namespace java::util::zip
 		void finish();
 		void putNextEntry(java::util::zip::ZipEntry arg0);
 		void setComment(jstring arg0);
-		void setComment(const QString &arg0);
 		void setLevel(jint arg0);
 		void setMethod(jint arg0);
 		void write(jbyteArray arg0, jint arg1, jint arg2);

@@ -29,7 +29,7 @@ namespace android::graphics::drawable::shapes
 		
 		PathShape(QAndroidJniObject obj);
 		// Constructors
-		PathShape(android::graphics::Path &arg0, jfloat &arg1, jfloat &arg2);
+		PathShape(android::graphics::Path arg0, jfloat arg1, jfloat arg2);
 		PathShape() = default;
 		
 		// Methods

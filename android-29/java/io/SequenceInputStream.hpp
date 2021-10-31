@@ -17,8 +17,8 @@ namespace java::io
 		
 		SequenceInputStream(QAndroidJniObject obj);
 		// Constructors
-		SequenceInputStream(__JniBaseClass &arg0);
-		SequenceInputStream(java::io::InputStream &arg0, java::io::InputStream &arg1);
+		SequenceInputStream(__JniBaseClass arg0);
+		SequenceInputStream(java::io::InputStream arg0, java::io::InputStream arg1);
 		SequenceInputStream() = default;
 		
 		// Methods

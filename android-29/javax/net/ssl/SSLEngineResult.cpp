@@ -8,7 +8,7 @@ namespace javax::net::ssl
 	
 	SSLEngineResult::SSLEngineResult(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SSLEngineResult::SSLEngineResult(javax::net::ssl::SSLEngineResult_Status &arg0, javax::net::ssl::SSLEngineResult_HandshakeStatus &arg1, jint &arg2, jint &arg3)
+	SSLEngineResult::SSLEngineResult(javax::net::ssl::SSLEngineResult_Status arg0, javax::net::ssl::SSLEngineResult_HandshakeStatus arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.net.ssl.SSLEngineResult",
@@ -19,7 +19,7 @@ namespace javax::net::ssl
 			arg3
 		);
 	}
-	SSLEngineResult::SSLEngineResult(javax::net::ssl::SSLEngineResult_Status &arg0, javax::net::ssl::SSLEngineResult_HandshakeStatus &arg1, jint &arg2, jint &arg3, jlong &arg4)
+	SSLEngineResult::SSLEngineResult(javax::net::ssl::SSLEngineResult_Status arg0, javax::net::ssl::SSLEngineResult_HandshakeStatus arg1, jint arg2, jint arg3, jlong arg4)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.net.ssl.SSLEngineResult",

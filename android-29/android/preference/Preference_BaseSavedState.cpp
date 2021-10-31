@@ -15,7 +15,7 @@ namespace android::preference
 	
 	Preference_BaseSavedState::Preference_BaseSavedState(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Preference_BaseSavedState::Preference_BaseSavedState(android::os::Parcel &arg0)
+	Preference_BaseSavedState::Preference_BaseSavedState(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.preference.Preference$BaseSavedState",
@@ -23,7 +23,7 @@ namespace android::preference
 			arg0.__jniObject().object()
 		);
 	}
-	Preference_BaseSavedState::Preference_BaseSavedState(__JniBaseClass &arg0)
+	Preference_BaseSavedState::Preference_BaseSavedState(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.preference.Preference$BaseSavedState",

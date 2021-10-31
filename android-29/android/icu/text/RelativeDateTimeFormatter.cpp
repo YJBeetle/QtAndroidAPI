@@ -87,15 +87,6 @@ namespace android::icu::text
 			arg1
 		).object<jstring>();
 	}
-	jstring RelativeDateTimeFormatter::combineDateAndTime(const QString &arg0, const QString &arg1)
-	{
-		return __thiz.callObjectMethod(
-			"combineDateAndTime",
-			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		).object<jstring>();
-	}
 	jstring RelativeDateTimeFormatter::format(android::icu::text::RelativeDateTimeFormatter_Direction arg0, android::icu::text::RelativeDateTimeFormatter_AbsoluteUnit arg1)
 	{
 		return __thiz.callObjectMethod(

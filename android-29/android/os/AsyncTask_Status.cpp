@@ -41,15 +41,6 @@ namespace android::os
 			arg0
 		);
 	}
-	QAndroidJniObject AsyncTask_Status::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.os.AsyncTask$Status",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/os/AsyncTask$Status;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray AsyncTask_Status::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

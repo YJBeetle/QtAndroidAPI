@@ -9,7 +9,7 @@ namespace android::widget
 	
 	ResourceCursorTreeAdapter::ResourceCursorTreeAdapter(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ResourceCursorTreeAdapter::ResourceCursorTreeAdapter(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	ResourceCursorTreeAdapter::ResourceCursorTreeAdapter(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ResourceCursorTreeAdapter",
@@ -20,7 +20,7 @@ namespace android::widget
 			arg3
 		);
 	}
-	ResourceCursorTreeAdapter::ResourceCursorTreeAdapter(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3, jint &arg4)
+	ResourceCursorTreeAdapter::ResourceCursorTreeAdapter(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3, jint arg4)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ResourceCursorTreeAdapter",
@@ -32,7 +32,7 @@ namespace android::widget
 			arg4
 		);
 	}
-	ResourceCursorTreeAdapter::ResourceCursorTreeAdapter(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3, jint &arg4, jint &arg5)
+	ResourceCursorTreeAdapter::ResourceCursorTreeAdapter(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3, jint arg4, jint arg5)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ResourceCursorTreeAdapter",

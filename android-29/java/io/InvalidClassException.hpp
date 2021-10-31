@@ -16,10 +16,8 @@ namespace java::io
 		
 		InvalidClassException(QAndroidJniObject obj);
 		// Constructors
-		InvalidClassException(jstring &arg0);
-		InvalidClassException(const QString &arg0);
-		InvalidClassException(jstring &arg0, jstring &arg1);
-		InvalidClassException(const QString &arg0, const QString &arg1);
+		InvalidClassException(jstring arg0);
+		InvalidClassException(jstring arg0, jstring arg1);
 		InvalidClassException() = default;
 		
 		// Methods

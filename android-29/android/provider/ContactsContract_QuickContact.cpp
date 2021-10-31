@@ -85,19 +85,6 @@ namespace android::provider
 			arg4
 		);
 	}
-	void ContactsContract_QuickContact::showQuickContact(android::content::Context arg0, android::graphics::Rect arg1, android::net::Uri arg2, jarray arg3, const QString &arg4)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.provider.ContactsContract$QuickContact",
-			"showQuickContact",
-			"(Landroid/content/Context;Landroid/graphics/Rect;Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3,
-			QAndroidJniObject::fromString(arg4).object<jstring>()
-		);
-	}
 	void ContactsContract_QuickContact::showQuickContact(android::content::Context arg0, android::graphics::Rect arg1, android::net::Uri arg2, jint arg3, jarray arg4)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -122,19 +109,6 @@ namespace android::provider
 			arg2.__jniObject().object(),
 			arg3,
 			arg4
-		);
-	}
-	void ContactsContract_QuickContact::showQuickContact(android::content::Context arg0, android::view::View arg1, android::net::Uri arg2, jarray arg3, const QString &arg4)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.provider.ContactsContract$QuickContact",
-			"showQuickContact",
-			"(Landroid/content/Context;Landroid/view/View;Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3,
-			QAndroidJniObject::fromString(arg4).object<jstring>()
 		);
 	}
 	void ContactsContract_QuickContact::showQuickContact(android::content::Context arg0, android::view::View arg1, android::net::Uri arg2, jint arg3, jarray arg4)

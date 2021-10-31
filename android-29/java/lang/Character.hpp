@@ -86,24 +86,20 @@ namespace java::lang
 		
 		Character(QAndroidJniObject obj);
 		// Constructors
-		Character(jchar &arg0);
+		Character(jchar arg0);
 		Character() = default;
 		
 		// Methods
 		static jint charCount(jint arg0);
 		static jint codePointAt(jcharArray arg0, jint arg1);
 		static jint codePointAt(jstring arg0, jint arg1);
-		static jint codePointAt(const QString &arg0, jint arg1);
 		static jint codePointAt(jcharArray arg0, jint arg1, jint arg2);
 		static jint codePointBefore(jcharArray arg0, jint arg1);
 		static jint codePointBefore(jstring arg0, jint arg1);
-		static jint codePointBefore(const QString &arg0, jint arg1);
 		static jint codePointBefore(jcharArray arg0, jint arg1, jint arg2);
 		static jint codePointCount(jcharArray arg0, jint arg1, jint arg2);
 		static jint codePointCount(jstring arg0, jint arg1, jint arg2);
-		static jint codePointCount(const QString &arg0, jint arg1, jint arg2);
 		static jint codePointOf(jstring arg0);
-		static jint codePointOf(const QString &arg0);
 		static jint compare(jchar arg0, jchar arg1);
 		static jint digit(jchar arg0, jint arg1);
 		static jint digit(jint arg0, jint arg1);
@@ -163,7 +159,6 @@ namespace java::lang
 		static jboolean isWhitespace(jint arg0);
 		static jchar lowSurrogate(jint arg0);
 		static jint offsetByCodePoints(jstring arg0, jint arg1, jint arg2);
-		static jint offsetByCodePoints(const QString &arg0, jint arg1, jint arg2);
 		static jint offsetByCodePoints(jcharArray arg0, jint arg1, jint arg2, jint arg3, jint arg4);
 		static jchar reverseBytes(jchar arg0);
 		static jcharArray toChars(jint arg0);

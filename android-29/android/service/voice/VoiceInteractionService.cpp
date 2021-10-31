@@ -60,16 +60,6 @@ namespace android::service::voice
 			arg2.__jniObject().object()
 		);
 	}
-	QAndroidJniObject VoiceInteractionService::createAlwaysOnHotwordDetector(const QString &arg0, java::util::Locale arg1, android::service::voice::AlwaysOnHotwordDetector_Callback arg2)
-	{
-		return __thiz.callObjectMethod(
-			"createAlwaysOnHotwordDetector",
-			"(Ljava/lang/String;Ljava/util/Locale;Landroid/service/voice/AlwaysOnHotwordDetector$Callback;)Landroid/service/voice/AlwaysOnHotwordDetector;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
 	jint VoiceInteractionService::getDisabledShowContext()
 	{
 		return __thiz.callMethod<jint>(

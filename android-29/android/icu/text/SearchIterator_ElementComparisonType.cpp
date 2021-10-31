@@ -41,15 +41,6 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject SearchIterator_ElementComparisonType::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.SearchIterator$ElementComparisonType",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/icu/text/SearchIterator$ElementComparisonType;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray SearchIterator_ElementComparisonType::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

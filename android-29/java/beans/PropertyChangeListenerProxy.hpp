@@ -17,8 +17,7 @@ namespace java::beans
 		
 		PropertyChangeListenerProxy(QAndroidJniObject obj);
 		// Constructors
-		PropertyChangeListenerProxy(jstring &arg0, __JniBaseClass &arg1);
-		PropertyChangeListenerProxy(const QString &arg0, __JniBaseClass &arg1);
+		PropertyChangeListenerProxy(jstring arg0, __JniBaseClass arg1);
 		PropertyChangeListenerProxy() = default;
 		
 		// Methods

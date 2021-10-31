@@ -22,8 +22,8 @@ namespace android::text::style
 		
 		StyleSpan(QAndroidJniObject obj);
 		// Constructors
-		StyleSpan(android::os::Parcel &arg0);
-		StyleSpan(jint &arg0);
+		StyleSpan(android::os::Parcel arg0);
+		StyleSpan(jint arg0);
 		StyleSpan() = default;
 		
 		// Methods

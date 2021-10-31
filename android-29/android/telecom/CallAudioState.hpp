@@ -26,7 +26,7 @@ namespace android::telecom
 		
 		CallAudioState(QAndroidJniObject obj);
 		// Constructors
-		CallAudioState(jboolean &arg0, jint &arg1, jint &arg2);
+		CallAudioState(jboolean arg0, jint arg1, jint arg2);
 		CallAudioState() = default;
 		
 		// Methods

@@ -22,8 +22,7 @@ namespace java::util::zip
 		
 		ZipEntry(QAndroidJniObject obj);
 		// Constructors
-		ZipEntry(jstring &arg0);
-		ZipEntry(const QString &arg0);
+		ZipEntry(jstring arg0);
 		ZipEntry(java::util::zip::ZipEntry &arg0);
 		ZipEntry() = default;
 		
@@ -44,7 +43,6 @@ namespace java::util::zip
 		jint hashCode();
 		jboolean isDirectory();
 		void setComment(jstring arg0);
-		void setComment(const QString &arg0);
 		void setCompressedSize(jlong arg0);
 		void setCrc(jlong arg0);
 		QAndroidJniObject setCreationTime(java::nio::file::attribute::FileTime arg0);

@@ -16,7 +16,7 @@ namespace android::view
 		
 		SearchEvent(QAndroidJniObject obj);
 		// Constructors
-		SearchEvent(android::view::InputDevice &arg0);
+		SearchEvent(android::view::InputDevice arg0);
 		SearchEvent() = default;
 		
 		// Methods

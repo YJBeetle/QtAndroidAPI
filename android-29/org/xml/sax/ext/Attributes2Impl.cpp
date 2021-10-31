@@ -13,7 +13,7 @@ namespace org::xml::sax::ext
 			"()V"
 		);
 	}
-	Attributes2Impl::Attributes2Impl(__JniBaseClass &arg0)
+	Attributes2Impl::Attributes2Impl(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"org.xml.sax.ext.Attributes2Impl",
@@ -35,18 +35,6 @@ namespace org::xml::sax::ext
 			arg4
 		);
 	}
-	void Attributes2Impl::addAttribute(const QString &arg0, const QString &arg1, const QString &arg2, const QString &arg3, const QString &arg4)
-	{
-		__thiz.callMethod<void>(
-			"addAttribute",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			QAndroidJniObject::fromString(arg3).object<jstring>(),
-			QAndroidJniObject::fromString(arg4).object<jstring>()
-		);
-	}
 	jboolean Attributes2Impl::isDeclared(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -63,14 +51,6 @@ namespace org::xml::sax::ext
 			arg0
 		);
 	}
-	jboolean Attributes2Impl::isDeclared(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isDeclared",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jboolean Attributes2Impl::isDeclared(jstring arg0, jstring arg1)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -78,15 +58,6 @@ namespace org::xml::sax::ext
 			"(Ljava/lang/String;Ljava/lang/String;)Z",
 			arg0,
 			arg1
-		);
-	}
-	jboolean Attributes2Impl::isDeclared(const QString &arg0, const QString &arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isDeclared",
-			"(Ljava/lang/String;Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	jboolean Attributes2Impl::isSpecified(jint arg0)
@@ -105,14 +76,6 @@ namespace org::xml::sax::ext
 			arg0
 		);
 	}
-	jboolean Attributes2Impl::isSpecified(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isSpecified",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jboolean Attributes2Impl::isSpecified(jstring arg0, jstring arg1)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -120,15 +83,6 @@ namespace org::xml::sax::ext
 			"(Ljava/lang/String;Ljava/lang/String;)Z",
 			arg0,
 			arg1
-		);
-	}
-	jboolean Attributes2Impl::isSpecified(const QString &arg0, const QString &arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isSpecified",
-			"(Ljava/lang/String;Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void Attributes2Impl::removeAttribute(jint arg0)

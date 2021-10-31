@@ -12,9 +12,9 @@ namespace javax::crypto::spec
 		
 		PBEKeySpec(QAndroidJniObject obj);
 		// Constructors
-		PBEKeySpec(jcharArray &arg0);
-		PBEKeySpec(jcharArray &arg0, jbyteArray &arg1, jint &arg2);
-		PBEKeySpec(jcharArray &arg0, jbyteArray &arg1, jint &arg2, jint &arg3);
+		PBEKeySpec(jcharArray arg0);
+		PBEKeySpec(jcharArray arg0, jbyteArray arg1, jint arg2);
+		PBEKeySpec(jcharArray arg0, jbyteArray arg1, jint arg2, jint arg3);
 		PBEKeySpec() = default;
 		
 		// Methods

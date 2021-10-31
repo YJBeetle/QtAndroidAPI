@@ -18,8 +18,7 @@ namespace java::lang::annotation
 		
 		AnnotationTypeMismatchException(QAndroidJniObject obj);
 		// Constructors
-		AnnotationTypeMismatchException(java::lang::reflect::Method &arg0, jstring &arg1);
-		AnnotationTypeMismatchException(java::lang::reflect::Method &arg0, const QString &arg1);
+		AnnotationTypeMismatchException(java::lang::reflect::Method arg0, jstring arg1);
 		AnnotationTypeMismatchException() = default;
 		
 		// Methods

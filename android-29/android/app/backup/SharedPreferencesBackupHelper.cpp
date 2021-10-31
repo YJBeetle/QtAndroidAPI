@@ -10,7 +10,7 @@ namespace android::app::backup
 	
 	SharedPreferencesBackupHelper::SharedPreferencesBackupHelper(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SharedPreferencesBackupHelper::SharedPreferencesBackupHelper(android::content::Context &arg0, jarray &arg1)
+	SharedPreferencesBackupHelper::SharedPreferencesBackupHelper(android::content::Context arg0, jarray arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.backup.SharedPreferencesBackupHelper",

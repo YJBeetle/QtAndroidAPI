@@ -24,7 +24,7 @@ namespace android::widget
 		
 		Magnifier_Builder(QAndroidJniObject obj);
 		// Constructors
-		Magnifier_Builder(android::view::View &arg0);
+		Magnifier_Builder(android::view::View arg0);
 		Magnifier_Builder() = default;
 		
 		// Methods

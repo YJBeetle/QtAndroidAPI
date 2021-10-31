@@ -115,19 +115,6 @@ namespace android::content
 			arg5
 		);
 	}
-	void IntentSender::sendIntent(android::content::Context arg0, jint arg1, android::content::Intent arg2, __JniBaseClass arg3, android::os::Handler arg4, const QString &arg5)
-	{
-		__thiz.callMethod<void>(
-			"sendIntent",
-			"(Landroid/content/Context;ILandroid/content/Intent;Landroid/content/IntentSender$OnFinished;Landroid/os/Handler;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
-			QAndroidJniObject::fromString(arg5).object<jstring>()
-		);
-	}
 	jstring IntentSender::toString()
 	{
 		return __thiz.callObjectMethod(

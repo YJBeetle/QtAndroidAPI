@@ -36,20 +36,18 @@ namespace android::graphics::fonts
 		
 		Font_Builder(QAndroidJniObject obj);
 		// Constructors
-		Font_Builder(android::os::ParcelFileDescriptor &arg0);
-		Font_Builder(java::io::File &arg0);
-		Font_Builder(java::nio::ByteBuffer &arg0);
-		Font_Builder(android::content::res::AssetManager &arg0, jstring &arg1);
-		Font_Builder(android::content::res::AssetManager &arg0, const QString &arg1);
-		Font_Builder(android::content::res::Resources &arg0, jint &arg1);
-		Font_Builder(android::os::ParcelFileDescriptor &arg0, jlong &arg1, jlong &arg2);
+		Font_Builder(android::os::ParcelFileDescriptor arg0);
+		Font_Builder(java::io::File arg0);
+		Font_Builder(java::nio::ByteBuffer arg0);
+		Font_Builder(android::content::res::AssetManager arg0, jstring arg1);
+		Font_Builder(android::content::res::Resources arg0, jint arg1);
+		Font_Builder(android::os::ParcelFileDescriptor arg0, jlong arg1, jlong arg2);
 		Font_Builder() = default;
 		
 		// Methods
 		QAndroidJniObject build();
 		QAndroidJniObject setFontVariationSettings(jarray arg0);
 		QAndroidJniObject setFontVariationSettings(jstring arg0);
-		QAndroidJniObject setFontVariationSettings(const QString &arg0);
 		QAndroidJniObject setSlant(jint arg0);
 		QAndroidJniObject setTtcIndex(jint arg0);
 		QAndroidJniObject setWeight(jint arg0);

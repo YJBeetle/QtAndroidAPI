@@ -18,7 +18,6 @@ namespace android::text
 		jstring getText();
 		jboolean hasText();
 		void setText(jstring arg0);
-		void setText(const QString &arg0);
 	};
 } // namespace android::text
 

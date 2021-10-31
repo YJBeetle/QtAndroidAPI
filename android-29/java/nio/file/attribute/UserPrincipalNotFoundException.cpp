@@ -6,20 +6,12 @@ namespace java::nio::file::attribute
 	
 	UserPrincipalNotFoundException::UserPrincipalNotFoundException(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	UserPrincipalNotFoundException::UserPrincipalNotFoundException(jstring &arg0)
+	UserPrincipalNotFoundException::UserPrincipalNotFoundException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.nio.file.attribute.UserPrincipalNotFoundException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	UserPrincipalNotFoundException::UserPrincipalNotFoundException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.nio.file.attribute.UserPrincipalNotFoundException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

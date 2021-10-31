@@ -14,7 +14,7 @@ namespace java::io
 			"()V"
 		);
 	}
-	PipedWriter::PipedWriter(java::io::PipedReader &arg0)
+	PipedWriter::PipedWriter(java::io::PipedReader arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.PipedWriter",

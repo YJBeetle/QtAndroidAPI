@@ -44,10 +44,10 @@ namespace android::widget
 		
 		Gallery(QAndroidJniObject obj);
 		// Constructors
-		Gallery(android::content::Context &arg0);
-		Gallery(android::content::Context &arg0, __JniBaseClass &arg1);
-		Gallery(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		Gallery(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		Gallery(android::content::Context arg0);
+		Gallery(android::content::Context arg0, __JniBaseClass arg1);
+		Gallery(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		Gallery(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		Gallery() = default;
 		
 		// Methods

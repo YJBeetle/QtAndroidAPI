@@ -9,7 +9,7 @@ namespace android::service::autofill
 	
 	CustomDescription_Builder::CustomDescription_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	CustomDescription_Builder::CustomDescription_Builder(android::widget::RemoteViews &arg0)
+	CustomDescription_Builder::CustomDescription_Builder(android::widget::RemoteViews arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.service.autofill.CustomDescription$Builder",

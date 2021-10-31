@@ -13,20 +13,12 @@ namespace android::security
 			"()V"
 		);
 	}
-	ConfirmationNotAvailableException::ConfirmationNotAvailableException(jstring &arg0)
+	ConfirmationNotAvailableException::ConfirmationNotAvailableException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.security.ConfirmationNotAvailableException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	ConfirmationNotAvailableException::ConfirmationNotAvailableException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.security.ConfirmationNotAvailableException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

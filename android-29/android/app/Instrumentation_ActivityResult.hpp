@@ -16,7 +16,7 @@ namespace android::app
 		
 		Instrumentation_ActivityResult(QAndroidJniObject obj);
 		// Constructors
-		Instrumentation_ActivityResult(jint &arg0, android::content::Intent &arg1);
+		Instrumentation_ActivityResult(jint arg0, android::content::Intent arg1);
 		Instrumentation_ActivityResult() = default;
 		
 		// Methods

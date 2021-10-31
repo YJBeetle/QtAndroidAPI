@@ -18,8 +18,8 @@ namespace android::view::animation
 		DecelerateInterpolator(QAndroidJniObject obj);
 		// Constructors
 		DecelerateInterpolator();
-		DecelerateInterpolator(jfloat &arg0);
-		DecelerateInterpolator(android::content::Context &arg0, __JniBaseClass &arg1);
+		DecelerateInterpolator(jfloat arg0);
+		DecelerateInterpolator(android::content::Context arg0, __JniBaseClass arg1);
 		
 		// Methods
 		jfloat getInterpolation(jfloat arg0);

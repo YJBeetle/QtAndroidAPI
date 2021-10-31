@@ -137,15 +137,6 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject IDNA_Error::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.IDNA$Error",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/icu/text/IDNA$Error;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray IDNA_Error::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

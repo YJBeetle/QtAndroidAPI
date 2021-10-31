@@ -29,9 +29,8 @@ namespace javax::xml::xpath
 		
 		XPathException(QAndroidJniObject obj);
 		// Constructors
-		XPathException(jstring &arg0);
-		XPathException(const QString &arg0);
-		XPathException(jthrowable &arg0);
+		XPathException(jstring arg0);
+		XPathException(jthrowable arg0);
 		XPathException() = default;
 		
 		// Methods

@@ -7,7 +7,7 @@ namespace android::widget
 	
 	Scroller::Scroller(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Scroller::Scroller(android::content::Context &arg0)
+	Scroller::Scroller(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.Scroller",
@@ -15,7 +15,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	Scroller::Scroller(android::content::Context &arg0, __JniBaseClass &arg1)
+	Scroller::Scroller(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.Scroller",
@@ -24,7 +24,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	Scroller::Scroller(android::content::Context &arg0, __JniBaseClass &arg1, jboolean &arg2)
+	Scroller::Scroller(android::content::Context arg0, __JniBaseClass arg1, jboolean arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.Scroller",

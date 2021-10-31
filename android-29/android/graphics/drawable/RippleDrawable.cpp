@@ -21,7 +21,7 @@ namespace android::graphics::drawable
 	
 	RippleDrawable::RippleDrawable(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	RippleDrawable::RippleDrawable(android::content::res::ColorStateList &arg0, android::graphics::drawable::Drawable &arg1, android::graphics::drawable::Drawable &arg2)
+	RippleDrawable::RippleDrawable(android::content::res::ColorStateList arg0, android::graphics::drawable::Drawable arg1, android::graphics::drawable::Drawable arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.RippleDrawable",

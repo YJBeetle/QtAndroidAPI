@@ -13,20 +13,12 @@ namespace java::security
 			"()V"
 		);
 	}
-	UnrecoverableEntryException::UnrecoverableEntryException(jstring &arg0)
+	UnrecoverableEntryException::UnrecoverableEntryException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.UnrecoverableEntryException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	UnrecoverableEntryException::UnrecoverableEntryException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.UnrecoverableEntryException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

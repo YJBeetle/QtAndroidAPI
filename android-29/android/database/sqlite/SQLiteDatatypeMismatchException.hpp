@@ -17,8 +17,7 @@ namespace android::database::sqlite
 		SQLiteDatatypeMismatchException(QAndroidJniObject obj);
 		// Constructors
 		SQLiteDatatypeMismatchException();
-		SQLiteDatatypeMismatchException(jstring &arg0);
-		SQLiteDatatypeMismatchException(const QString &arg0);
+		SQLiteDatatypeMismatchException(jstring arg0);
 		
 		// Methods
 	};

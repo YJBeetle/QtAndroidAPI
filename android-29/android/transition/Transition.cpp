@@ -50,7 +50,7 @@ namespace android::transition
 			"()V"
 		);
 	}
-	Transition::Transition(android::content::Context &arg0, __JniBaseClass &arg1)
+	Transition::Transition(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.transition.Transition",
@@ -99,14 +99,6 @@ namespace android::transition
 			"addTarget",
 			"(Ljava/lang/String;)Landroid/transition/Transition;",
 			arg0
-		);
-	}
-	QAndroidJniObject Transition::addTarget(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"addTarget",
-			"(Ljava/lang/String;)Landroid/transition/Transition;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean Transition::canRemoveViews()
@@ -209,15 +201,6 @@ namespace android::transition
 			"excludeTarget",
 			"(Ljava/lang/String;Z)Landroid/transition/Transition;",
 			arg0,
-			arg1
-		);
-	}
-	QAndroidJniObject Transition::excludeTarget(const QString &arg0, jboolean arg1)
-	{
-		return __thiz.callObjectMethod(
-			"excludeTarget",
-			"(Ljava/lang/String;Z)Landroid/transition/Transition;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -368,14 +351,6 @@ namespace android::transition
 			"removeTarget",
 			"(Ljava/lang/String;)Landroid/transition/Transition;",
 			arg0
-		);
-	}
-	QAndroidJniObject Transition::removeTarget(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"removeTarget",
-			"(Ljava/lang/String;)Landroid/transition/Transition;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Transition::setDuration(jlong arg0)

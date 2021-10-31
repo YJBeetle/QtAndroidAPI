@@ -41,15 +41,6 @@ namespace android::graphics
 			arg0
 		);
 	}
-	QAndroidJniObject Paint_Cap::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.Paint$Cap",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/graphics/Paint$Cap;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray Paint_Cap::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

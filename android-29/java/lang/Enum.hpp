@@ -24,7 +24,6 @@ namespace java::lang
 		
 		// Methods
 		static QAndroidJniObject valueOf(jclass arg0, jstring arg1);
-		static QAndroidJniObject valueOf(jclass arg0, const QString &arg1);
 		jint compareTo(java::lang::Enum arg0);
 		jint compareTo(jobject arg0);
 		QAndroidJniObject describeConstable();

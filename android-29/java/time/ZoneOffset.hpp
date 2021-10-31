@@ -33,7 +33,6 @@ namespace java::time
 		// Methods
 		static QAndroidJniObject from(__JniBaseClass arg0);
 		static QAndroidJniObject of(jstring arg0);
-		static QAndroidJniObject of(const QString &arg0);
 		static QAndroidJniObject ofHours(jint arg0);
 		static QAndroidJniObject ofHoursMinutes(jint arg0, jint arg1);
 		static QAndroidJniObject ofHoursMinutesSeconds(jint arg0, jint arg1, jint arg2);

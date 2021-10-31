@@ -31,7 +31,7 @@ namespace android::hardware::camera2::params
 		
 		SessionConfiguration(QAndroidJniObject obj);
 		// Constructors
-		SessionConfiguration(jint &arg0, __JniBaseClass &arg1, __JniBaseClass &arg2, android::hardware::camera2::CameraCaptureSession_StateCallback &arg3);
+		SessionConfiguration(jint arg0, __JniBaseClass arg1, __JniBaseClass arg2, android::hardware::camera2::CameraCaptureSession_StateCallback arg3);
 		SessionConfiguration() = default;
 		
 		// Methods

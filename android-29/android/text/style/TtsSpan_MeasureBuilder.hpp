@@ -18,21 +18,15 @@ namespace android::text::style
 		
 		// Methods
 		QAndroidJniObject setDenominator(jstring arg0);
-		QAndroidJniObject setDenominator(const QString &arg0);
 		QAndroidJniObject setDenominator(jlong arg0);
 		QAndroidJniObject setFractionalPart(jstring arg0);
-		QAndroidJniObject setFractionalPart(const QString &arg0);
 		QAndroidJniObject setIntegerPart(jstring arg0);
-		QAndroidJniObject setIntegerPart(const QString &arg0);
 		QAndroidJniObject setIntegerPart(jlong arg0);
 		QAndroidJniObject setNumber(jstring arg0);
-		QAndroidJniObject setNumber(const QString &arg0);
 		QAndroidJniObject setNumber(jlong arg0);
 		QAndroidJniObject setNumerator(jstring arg0);
-		QAndroidJniObject setNumerator(const QString &arg0);
 		QAndroidJniObject setNumerator(jlong arg0);
 		QAndroidJniObject setUnit(jstring arg0);
-		QAndroidJniObject setUnit(const QString &arg0);
 	};
 } // namespace android::text::style
 

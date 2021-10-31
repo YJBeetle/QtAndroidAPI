@@ -16,7 +16,7 @@ namespace java::security::spec
 		
 		RSAOtherPrimeInfo(QAndroidJniObject obj);
 		// Constructors
-		RSAOtherPrimeInfo(java::math::BigInteger &arg0, java::math::BigInteger &arg1, java::math::BigInteger &arg2);
+		RSAOtherPrimeInfo(java::math::BigInteger arg0, java::math::BigInteger arg1, java::math::BigInteger arg2);
 		RSAOtherPrimeInfo() = default;
 		
 		// Methods

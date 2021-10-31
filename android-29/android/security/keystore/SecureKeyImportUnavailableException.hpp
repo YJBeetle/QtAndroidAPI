@@ -16,11 +16,9 @@ namespace android::security::keystore
 		SecureKeyImportUnavailableException(QAndroidJniObject obj);
 		// Constructors
 		SecureKeyImportUnavailableException();
-		SecureKeyImportUnavailableException(jstring &arg0);
-		SecureKeyImportUnavailableException(const QString &arg0);
-		SecureKeyImportUnavailableException(jthrowable &arg0);
-		SecureKeyImportUnavailableException(jstring &arg0, jthrowable &arg1);
-		SecureKeyImportUnavailableException(const QString &arg0, jthrowable &arg1);
+		SecureKeyImportUnavailableException(jstring arg0);
+		SecureKeyImportUnavailableException(jthrowable arg0);
+		SecureKeyImportUnavailableException(jstring arg0, jthrowable arg1);
 		
 		// Methods
 	};

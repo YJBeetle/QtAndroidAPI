@@ -24,8 +24,8 @@ namespace android::media
 		
 		AudioFocusRequest_Builder(QAndroidJniObject obj);
 		// Constructors
-		AudioFocusRequest_Builder(android::media::AudioFocusRequest &arg0);
-		AudioFocusRequest_Builder(jint &arg0);
+		AudioFocusRequest_Builder(android::media::AudioFocusRequest arg0);
+		AudioFocusRequest_Builder(jint arg0);
 		AudioFocusRequest_Builder() = default;
 		
 		// Methods

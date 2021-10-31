@@ -79,9 +79,7 @@ namespace java::time::format
 		static QAndroidJniObject ofLocalizedDateTime(java::time::format::FormatStyle arg0, java::time::format::FormatStyle arg1);
 		static QAndroidJniObject ofLocalizedTime(java::time::format::FormatStyle arg0);
 		static QAndroidJniObject ofPattern(jstring arg0);
-		static QAndroidJniObject ofPattern(const QString &arg0);
 		static QAndroidJniObject ofPattern(jstring arg0, java::util::Locale arg1);
-		static QAndroidJniObject ofPattern(const QString &arg0, java::util::Locale arg1);
 		static QAndroidJniObject parsedExcessDays();
 		static QAndroidJniObject parsedLeapSecond();
 		jstring format(__JniBaseClass arg0);
@@ -94,15 +92,10 @@ namespace java::time::format
 		QAndroidJniObject getZone();
 		QAndroidJniObject localizedBy(java::util::Locale arg0);
 		jobject parse(jstring arg0, __JniBaseClass arg1);
-		jobject parse(const QString &arg0, __JniBaseClass arg1);
 		QAndroidJniObject parse(jstring arg0);
-		QAndroidJniObject parse(const QString &arg0);
 		QAndroidJniObject parse(jstring arg0, java::text::ParsePosition arg1);
-		QAndroidJniObject parse(const QString &arg0, java::text::ParsePosition arg1);
 		QAndroidJniObject parseBest(jstring arg0, jarray arg1);
-		QAndroidJniObject parseBest(const QString &arg0, jarray arg1);
 		QAndroidJniObject parseUnresolved(jstring arg0, java::text::ParsePosition arg1);
-		QAndroidJniObject parseUnresolved(const QString &arg0, java::text::ParsePosition arg1);
 		QAndroidJniObject toFormat();
 		QAndroidJniObject toFormat(__JniBaseClass arg0);
 		jstring toString();

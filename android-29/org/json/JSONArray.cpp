@@ -15,7 +15,7 @@ namespace org::json
 			"()V"
 		);
 	}
-	JSONArray::JSONArray(jobject &arg0)
+	JSONArray::JSONArray(jobject arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"org.json.JSONArray",
@@ -23,7 +23,7 @@ namespace org::json
 			arg0
 		);
 	}
-	JSONArray::JSONArray(jstring &arg0)
+	JSONArray::JSONArray(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"org.json.JSONArray",
@@ -31,15 +31,7 @@ namespace org::json
 			arg0
 		);
 	}
-	JSONArray::JSONArray(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"org.json.JSONArray",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	JSONArray::JSONArray(__JniBaseClass &arg0)
+	JSONArray::JSONArray(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"org.json.JSONArray",
@@ -47,7 +39,7 @@ namespace org::json
 			arg0.__jniObject().object()
 		);
 	}
-	JSONArray::JSONArray(org::json::JSONTokener &arg0)
+	JSONArray::JSONArray(org::json::JSONTokener arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"org.json.JSONArray",
@@ -150,14 +142,6 @@ namespace org::json
 			"join",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
-	}
-	jstring JSONArray::join(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"join",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	jint JSONArray::length()
@@ -274,15 +258,6 @@ namespace org::json
 			"(ILjava/lang/String;)Ljava/lang/String;",
 			arg0,
 			arg1
-		).object<jstring>();
-	}
-	jstring JSONArray::optString(jint arg0, const QString &arg1)
-	{
-		return __thiz.callObjectMethod(
-			"optString",
-			"(ILjava/lang/String;)Ljava/lang/String;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		).object<jstring>();
 	}
 	QAndroidJniObject JSONArray::put(jboolean arg0)

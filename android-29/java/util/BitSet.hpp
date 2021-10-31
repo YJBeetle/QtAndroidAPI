@@ -29,7 +29,7 @@ namespace java::util
 		BitSet(QAndroidJniObject obj);
 		// Constructors
 		BitSet();
-		BitSet(jint &arg0);
+		BitSet(jint arg0);
 		
 		// Methods
 		static QAndroidJniObject valueOf(jbyteArray arg0);

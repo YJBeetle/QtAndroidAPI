@@ -24,14 +24,5 @@ namespace android::provider
 			arg0
 		).object<jstring>();
 	}
-	jstring MediaStore_Audio::keyFor(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.MediaStore$Audio",
-			"keyFor",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
 } // namespace android::provider
 

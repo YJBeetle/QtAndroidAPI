@@ -28,9 +28,8 @@ namespace android::media
 		
 		MediaMuxer(QAndroidJniObject obj);
 		// Constructors
-		MediaMuxer(java::io::FileDescriptor &arg0, jint &arg1);
-		MediaMuxer(jstring &arg0, jint &arg1);
-		MediaMuxer(const QString &arg0, jint &arg1);
+		MediaMuxer(java::io::FileDescriptor arg0, jint arg1);
+		MediaMuxer(jstring arg0, jint arg1);
 		MediaMuxer() = default;
 		
 		// Methods

@@ -7,7 +7,7 @@ namespace android::graphics
 	
 	ColorSpace_Rgb::ColorSpace_Rgb(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ColorSpace_Rgb::ColorSpace_Rgb(jstring &arg0, jfloatArray &arg1, android::graphics::ColorSpace_Rgb_TransferParameters &arg2)
+	ColorSpace_Rgb::ColorSpace_Rgb(jstring arg0, jfloatArray arg1, android::graphics::ColorSpace_Rgb_TransferParameters arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.ColorSpace$Rgb",
@@ -17,17 +17,7 @@ namespace android::graphics
 			arg2.__jniObject().object()
 		);
 	}
-	ColorSpace_Rgb::ColorSpace_Rgb(const QString &arg0, jfloatArray &arg1, android::graphics::ColorSpace_Rgb_TransferParameters &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.graphics.ColorSpace$Rgb",
-			"(Ljava/lang/String;[FLandroid/graphics/ColorSpace$Rgb$TransferParameters;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	ColorSpace_Rgb::ColorSpace_Rgb(jstring &arg0, jfloatArray &arg1, jdouble &arg2)
+	ColorSpace_Rgb::ColorSpace_Rgb(jstring arg0, jfloatArray arg1, jdouble arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.ColorSpace$Rgb",
@@ -37,17 +27,7 @@ namespace android::graphics
 			arg2
 		);
 	}
-	ColorSpace_Rgb::ColorSpace_Rgb(const QString &arg0, jfloatArray &arg1, jdouble &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.graphics.ColorSpace$Rgb",
-			"(Ljava/lang/String;[FD)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2
-		);
-	}
-	ColorSpace_Rgb::ColorSpace_Rgb(jstring &arg0, jfloatArray &arg1, jfloatArray &arg2, android::graphics::ColorSpace_Rgb_TransferParameters &arg3)
+	ColorSpace_Rgb::ColorSpace_Rgb(jstring arg0, jfloatArray arg1, jfloatArray arg2, android::graphics::ColorSpace_Rgb_TransferParameters arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.ColorSpace$Rgb",
@@ -58,18 +38,7 @@ namespace android::graphics
 			arg3.__jniObject().object()
 		);
 	}
-	ColorSpace_Rgb::ColorSpace_Rgb(const QString &arg0, jfloatArray &arg1, jfloatArray &arg2, android::graphics::ColorSpace_Rgb_TransferParameters &arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"android.graphics.ColorSpace$Rgb",
-			"(Ljava/lang/String;[F[FLandroid/graphics/ColorSpace$Rgb$TransferParameters;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2,
-			arg3.__jniObject().object()
-		);
-	}
-	ColorSpace_Rgb::ColorSpace_Rgb(jstring &arg0, jfloatArray &arg1, jfloatArray &arg2, jdouble &arg3)
+	ColorSpace_Rgb::ColorSpace_Rgb(jstring arg0, jfloatArray arg1, jfloatArray arg2, jdouble arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.ColorSpace$Rgb",
@@ -80,18 +49,7 @@ namespace android::graphics
 			arg3
 		);
 	}
-	ColorSpace_Rgb::ColorSpace_Rgb(const QString &arg0, jfloatArray &arg1, jfloatArray &arg2, jdouble &arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"android.graphics.ColorSpace$Rgb",
-			"(Ljava/lang/String;[F[FD)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	ColorSpace_Rgb::ColorSpace_Rgb(jstring &arg0, jfloatArray &arg1, __JniBaseClass &arg2, __JniBaseClass &arg3)
+	ColorSpace_Rgb::ColorSpace_Rgb(jstring arg0, jfloatArray arg1, __JniBaseClass arg2, __JniBaseClass arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.ColorSpace$Rgb",
@@ -102,37 +60,12 @@ namespace android::graphics
 			arg3.__jniObject().object()
 		);
 	}
-	ColorSpace_Rgb::ColorSpace_Rgb(const QString &arg0, jfloatArray &arg1, __JniBaseClass &arg2, __JniBaseClass &arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"android.graphics.ColorSpace$Rgb",
-			"(Ljava/lang/String;[FLjava/util/function/DoubleUnaryOperator;Ljava/util/function/DoubleUnaryOperator;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
-		);
-	}
-	ColorSpace_Rgb::ColorSpace_Rgb(jstring &arg0, jfloatArray &arg1, jfloatArray &arg2, __JniBaseClass &arg3, __JniBaseClass &arg4, jfloat &arg5, jfloat &arg6)
+	ColorSpace_Rgb::ColorSpace_Rgb(jstring arg0, jfloatArray arg1, jfloatArray arg2, __JniBaseClass arg3, __JniBaseClass arg4, jfloat arg5, jfloat arg6)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.ColorSpace$Rgb",
 			"(Ljava/lang/String;[F[FLjava/util/function/DoubleUnaryOperator;Ljava/util/function/DoubleUnaryOperator;FF)V",
 			arg0,
-			arg1,
-			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
-			arg5,
-			arg6
-		);
-	}
-	ColorSpace_Rgb::ColorSpace_Rgb(const QString &arg0, jfloatArray &arg1, jfloatArray &arg2, __JniBaseClass &arg3, __JniBaseClass &arg4, jfloat &arg5, jfloat &arg6)
-	{
-		__thiz = QAndroidJniObject(
-			"android.graphics.ColorSpace$Rgb",
-			"(Ljava/lang/String;[F[FLjava/util/function/DoubleUnaryOperator;Ljava/util/function/DoubleUnaryOperator;FF)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2,
 			arg3.__jniObject().object(),

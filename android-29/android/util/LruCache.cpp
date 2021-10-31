@@ -6,7 +6,7 @@ namespace android::util
 	
 	LruCache::LruCache(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	LruCache::LruCache(jint &arg0)
+	LruCache::LruCache(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.LruCache",

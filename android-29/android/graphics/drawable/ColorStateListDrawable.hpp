@@ -46,7 +46,7 @@ namespace android::graphics::drawable
 		ColorStateListDrawable(QAndroidJniObject obj);
 		// Constructors
 		ColorStateListDrawable();
-		ColorStateListDrawable(android::content::res::ColorStateList &arg0);
+		ColorStateListDrawable(android::content::res::ColorStateList arg0);
 		
 		// Methods
 		void applyTheme(android::content::res::Resources_Theme arg0);

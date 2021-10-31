@@ -29,7 +29,7 @@ namespace android::print::pdf
 		
 		PrintedPdfDocument(QAndroidJniObject obj);
 		// Constructors
-		PrintedPdfDocument(android::content::Context &arg0, android::print::PrintAttributes &arg1);
+		PrintedPdfDocument(android::content::Context arg0, android::print::PrintAttributes arg1);
 		PrintedPdfDocument() = default;
 		
 		// Methods

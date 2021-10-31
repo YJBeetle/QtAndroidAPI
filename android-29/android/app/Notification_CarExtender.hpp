@@ -29,7 +29,7 @@ namespace android::app
 		Notification_CarExtender(QAndroidJniObject obj);
 		// Constructors
 		Notification_CarExtender();
-		Notification_CarExtender(android::app::Notification &arg0);
+		Notification_CarExtender(android::app::Notification arg0);
 		
 		// Methods
 		QAndroidJniObject extend(android::app::Notification_Builder arg0);

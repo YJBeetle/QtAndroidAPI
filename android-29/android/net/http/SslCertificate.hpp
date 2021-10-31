@@ -28,11 +28,9 @@ namespace android::net::http
 		
 		SslCertificate(QAndroidJniObject obj);
 		// Constructors
-		SslCertificate(java::security::cert::X509Certificate &arg0);
-		SslCertificate(jstring &arg0, jstring &arg1, jstring &arg2, jstring &arg3);
-		SslCertificate(const QString &arg0, const QString &arg1, const QString &arg2, const QString &arg3);
-		SslCertificate(jstring &arg0, jstring &arg1, java::util::Date &arg2, java::util::Date &arg3);
-		SslCertificate(const QString &arg0, const QString &arg1, java::util::Date &arg2, java::util::Date &arg3);
+		SslCertificate(java::security::cert::X509Certificate arg0);
+		SslCertificate(jstring arg0, jstring arg1, jstring arg2, jstring arg3);
+		SslCertificate(jstring arg0, jstring arg1, java::util::Date arg2, java::util::Date arg3);
 		SslCertificate() = default;
 		
 		// Methods

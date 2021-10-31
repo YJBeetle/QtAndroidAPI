@@ -14,7 +14,7 @@ namespace android::text
 		LoginFilter_UsernameFilterGMail(QAndroidJniObject obj);
 		// Constructors
 		LoginFilter_UsernameFilterGMail();
-		LoginFilter_UsernameFilterGMail(jboolean &arg0);
+		LoginFilter_UsernameFilterGMail(jboolean arg0);
 		
 		// Methods
 		jboolean isAllowed(jchar arg0);

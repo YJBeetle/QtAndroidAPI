@@ -17,8 +17,8 @@ namespace android::telecom
 		
 		VideoProfile_CameraCapabilities(QAndroidJniObject obj);
 		// Constructors
-		VideoProfile_CameraCapabilities(jint &arg0, jint &arg1);
-		VideoProfile_CameraCapabilities(jint &arg0, jint &arg1, jboolean &arg2, jfloat &arg3);
+		VideoProfile_CameraCapabilities(jint arg0, jint arg1);
+		VideoProfile_CameraCapabilities(jint arg0, jint arg1, jboolean arg2, jfloat arg3);
 		VideoProfile_CameraCapabilities() = default;
 		
 		// Methods

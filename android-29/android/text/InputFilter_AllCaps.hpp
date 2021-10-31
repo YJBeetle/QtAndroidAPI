@@ -17,11 +17,10 @@ namespace android::text
 		InputFilter_AllCaps(QAndroidJniObject obj);
 		// Constructors
 		InputFilter_AllCaps();
-		InputFilter_AllCaps(java::util::Locale &arg0);
+		InputFilter_AllCaps(java::util::Locale arg0);
 		
 		// Methods
 		jstring filter(jstring arg0, jint arg1, jint arg2, __JniBaseClass arg3, jint arg4, jint arg5);
-		jstring filter(const QString &arg0, jint arg1, jint arg2, __JniBaseClass arg3, jint arg4, jint arg5);
 	};
 } // namespace android::text
 

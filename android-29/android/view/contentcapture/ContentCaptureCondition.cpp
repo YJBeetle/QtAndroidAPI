@@ -23,7 +23,7 @@ namespace android::view::contentcapture
 	
 	ContentCaptureCondition::ContentCaptureCondition(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ContentCaptureCondition::ContentCaptureCondition(android::content::LocusId &arg0, jint &arg1)
+	ContentCaptureCondition::ContentCaptureCondition(android::content::LocusId arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.contentcapture.ContentCaptureCondition",

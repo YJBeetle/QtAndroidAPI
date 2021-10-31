@@ -18,14 +18,10 @@ namespace android::webkit
 		static QAndroidJniObject getInstance();
 		void deleteAllData();
 		void deleteOrigin(jstring arg0);
-		void deleteOrigin(const QString &arg0);
 		void getOrigins(__JniBaseClass arg0);
 		void getQuotaForOrigin(jstring arg0, __JniBaseClass arg1);
-		void getQuotaForOrigin(const QString &arg0, __JniBaseClass arg1);
 		void getUsageForOrigin(jstring arg0, __JniBaseClass arg1);
-		void getUsageForOrigin(const QString &arg0, __JniBaseClass arg1);
 		void setQuotaForOrigin(jstring arg0, jlong arg1);
-		void setQuotaForOrigin(const QString &arg0, jlong arg1);
 	};
 } // namespace android::webkit
 

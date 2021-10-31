@@ -32,7 +32,7 @@ namespace java::util
 			"()V"
 		);
 	}
-	GregorianCalendar::GregorianCalendar(java::util::Locale &arg0)
+	GregorianCalendar::GregorianCalendar(java::util::Locale arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.GregorianCalendar",
@@ -40,7 +40,7 @@ namespace java::util
 			arg0.__jniObject().object()
 		);
 	}
-	GregorianCalendar::GregorianCalendar(java::util::TimeZone &arg0)
+	GregorianCalendar::GregorianCalendar(java::util::TimeZone arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.GregorianCalendar",
@@ -48,7 +48,7 @@ namespace java::util
 			arg0.__jniObject().object()
 		);
 	}
-	GregorianCalendar::GregorianCalendar(java::util::TimeZone &arg0, java::util::Locale &arg1)
+	GregorianCalendar::GregorianCalendar(java::util::TimeZone arg0, java::util::Locale arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.GregorianCalendar",
@@ -57,7 +57,7 @@ namespace java::util
 			arg1.__jniObject().object()
 		);
 	}
-	GregorianCalendar::GregorianCalendar(jint &arg0, jint &arg1, jint &arg2)
+	GregorianCalendar::GregorianCalendar(jint arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.GregorianCalendar",
@@ -67,7 +67,7 @@ namespace java::util
 			arg2
 		);
 	}
-	GregorianCalendar::GregorianCalendar(jint &arg0, jint &arg1, jint &arg2, jint &arg3, jint &arg4)
+	GregorianCalendar::GregorianCalendar(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.GregorianCalendar",
@@ -79,7 +79,7 @@ namespace java::util
 			arg4
 		);
 	}
-	GregorianCalendar::GregorianCalendar(jint &arg0, jint &arg1, jint &arg2, jint &arg3, jint &arg4, jint &arg5)
+	GregorianCalendar::GregorianCalendar(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.GregorianCalendar",

@@ -15,7 +15,7 @@ namespace java::util
 			"()V"
 		);
 	}
-	LinkedList::LinkedList(__JniBaseClass &arg0)
+	LinkedList::LinkedList(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.LinkedList",

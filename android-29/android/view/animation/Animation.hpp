@@ -31,7 +31,7 @@ namespace android::view::animation
 		Animation(QAndroidJniObject obj);
 		// Constructors
 		Animation();
-		Animation(android::content::Context &arg0, __JniBaseClass &arg1);
+		Animation(android::content::Context arg0, __JniBaseClass arg1);
 		
 		// Methods
 		void cancel();

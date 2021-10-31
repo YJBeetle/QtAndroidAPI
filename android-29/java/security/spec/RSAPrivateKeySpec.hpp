@@ -16,8 +16,8 @@ namespace java::security::spec
 		
 		RSAPrivateKeySpec(QAndroidJniObject obj);
 		// Constructors
-		RSAPrivateKeySpec(java::math::BigInteger &arg0, java::math::BigInteger &arg1);
-		RSAPrivateKeySpec(java::math::BigInteger &arg0, java::math::BigInteger &arg1, __JniBaseClass &arg2);
+		RSAPrivateKeySpec(java::math::BigInteger arg0, java::math::BigInteger arg1);
+		RSAPrivateKeySpec(java::math::BigInteger arg0, java::math::BigInteger arg1, __JniBaseClass arg2);
 		RSAPrivateKeySpec() = default;
 		
 		// Methods

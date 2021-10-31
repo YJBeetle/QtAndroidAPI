@@ -46,16 +46,6 @@ namespace java::net
 			arg2.__jniObject().object()
 		);
 	}
-	QAndroidJniObject ResponseCache::get(java::net::URI arg0, const QString &arg1, __JniBaseClass arg2)
-	{
-		return __thiz.callObjectMethod(
-			"get",
-			"(Ljava/net/URI;Ljava/lang/String;Ljava/util/Map;)Ljava/net/CacheResponse;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object()
-		);
-	}
 	QAndroidJniObject ResponseCache::put(java::net::URI arg0, java::net::URLConnection arg1)
 	{
 		return __thiz.callObjectMethod(

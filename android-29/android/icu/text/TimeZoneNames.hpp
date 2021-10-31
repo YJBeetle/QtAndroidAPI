@@ -32,19 +32,12 @@ namespace android::icu::text
 		static QAndroidJniObject getTZDBInstance(android::icu::util::ULocale arg0);
 		QAndroidJniObject getAvailableMetaZoneIDs();
 		QAndroidJniObject getAvailableMetaZoneIDs(jstring arg0);
-		QAndroidJniObject getAvailableMetaZoneIDs(const QString &arg0);
 		jstring getDisplayName(jstring arg0, android::icu::text::TimeZoneNames_NameType arg1, jlong arg2);
-		jstring getDisplayName(const QString &arg0, android::icu::text::TimeZoneNames_NameType arg1, jlong arg2);
 		jstring getExemplarLocationName(jstring arg0);
-		jstring getExemplarLocationName(const QString &arg0);
 		jstring getMetaZoneDisplayName(jstring arg0, android::icu::text::TimeZoneNames_NameType arg1);
-		jstring getMetaZoneDisplayName(const QString &arg0, android::icu::text::TimeZoneNames_NameType arg1);
 		jstring getMetaZoneID(jstring arg0, jlong arg1);
-		jstring getMetaZoneID(const QString &arg0, jlong arg1);
 		jstring getReferenceZoneID(jstring arg0, jstring arg1);
-		jstring getReferenceZoneID(const QString &arg0, const QString &arg1);
 		jstring getTimeZoneDisplayName(jstring arg0, android::icu::text::TimeZoneNames_NameType arg1);
-		jstring getTimeZoneDisplayName(const QString &arg0, android::icu::text::TimeZoneNames_NameType arg1);
 	};
 } // namespace android::icu::text
 

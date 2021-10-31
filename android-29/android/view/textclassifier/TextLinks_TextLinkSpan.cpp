@@ -8,7 +8,7 @@ namespace android::view::textclassifier
 	
 	TextLinks_TextLinkSpan::TextLinks_TextLinkSpan(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	TextLinks_TextLinkSpan::TextLinks_TextLinkSpan(android::view::textclassifier::TextLinks_TextLink &arg0)
+	TextLinks_TextLinkSpan::TextLinks_TextLinkSpan(android::view::textclassifier::TextLinks_TextLink arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.textclassifier.TextLinks$TextLinkSpan",

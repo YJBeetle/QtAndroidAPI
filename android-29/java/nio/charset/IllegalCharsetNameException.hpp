@@ -15,8 +15,7 @@ namespace java::nio::charset
 		
 		IllegalCharsetNameException(QAndroidJniObject obj);
 		// Constructors
-		IllegalCharsetNameException(jstring &arg0);
-		IllegalCharsetNameException(const QString &arg0);
+		IllegalCharsetNameException(jstring arg0);
 		IllegalCharsetNameException() = default;
 		
 		// Methods

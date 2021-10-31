@@ -9,7 +9,7 @@ namespace java::security
 	
 	Provider_Service::Provider_Service(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Provider_Service::Provider_Service(java::security::Provider &arg0, jstring &arg1, jstring &arg2, jstring &arg3, __JniBaseClass &arg4, __JniBaseClass &arg5)
+	Provider_Service::Provider_Service(java::security::Provider arg0, jstring arg1, jstring arg2, jstring arg3, __JniBaseClass arg4, __JniBaseClass arg5)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.Provider$Service",
@@ -18,19 +18,6 @@ namespace java::security
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object(),
-			arg5.__jniObject().object()
-		);
-	}
-	Provider_Service::Provider_Service(java::security::Provider &arg0, const QString &arg1, const QString &arg2, const QString &arg3, __JniBaseClass &arg4, __JniBaseClass &arg5)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.Provider$Service",
-			"(Ljava/security/Provider;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/Map;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			QAndroidJniObject::fromString(arg3).object<jstring>(),
 			arg4.__jniObject().object(),
 			arg5.__jniObject().object()
 		);
@@ -50,14 +37,6 @@ namespace java::security
 			"getAttribute",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
-	}
-	jstring Provider_Service::getAttribute(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getAttribute",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	jstring Provider_Service::getClassName()

@@ -26,8 +26,7 @@ namespace android::app
 		
 		NotificationChannel(QAndroidJniObject obj);
 		// Constructors
-		NotificationChannel(jstring &arg0, jstring &arg1, jint &arg2);
-		NotificationChannel(const QString &arg0, const QString &arg1, jint &arg2);
+		NotificationChannel(jstring arg0, jstring arg1, jint arg2);
 		NotificationChannel() = default;
 		
 		// Methods
@@ -53,14 +52,11 @@ namespace android::app
 		void setAllowBubbles(jboolean arg0);
 		void setBypassDnd(jboolean arg0);
 		void setDescription(jstring arg0);
-		void setDescription(const QString &arg0);
 		void setGroup(jstring arg0);
-		void setGroup(const QString &arg0);
 		void setImportance(jint arg0);
 		void setLightColor(jint arg0);
 		void setLockscreenVisibility(jint arg0);
 		void setName(jstring arg0);
-		void setName(const QString &arg0);
 		void setShowBadge(jboolean arg0);
 		void setSound(android::net::Uri arg0, android::media::AudioAttributes arg1);
 		void setVibrationPattern(jlongArray arg0);

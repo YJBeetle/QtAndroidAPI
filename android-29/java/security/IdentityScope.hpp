@@ -17,17 +17,14 @@ namespace java::security
 		
 		IdentityScope(QAndroidJniObject obj);
 		// Constructors
-		IdentityScope(jstring &arg0);
-		IdentityScope(const QString &arg0);
-		IdentityScope(jstring &arg0, java::security::IdentityScope &arg1);
-		IdentityScope(const QString &arg0, java::security::IdentityScope &arg1);
+		IdentityScope(jstring arg0);
+		IdentityScope(jstring arg0, java::security::IdentityScope &arg1);
 		IdentityScope() = default;
 		
 		// Methods
 		static QAndroidJniObject getSystemScope();
 		void addIdentity(java::security::Identity arg0);
 		QAndroidJniObject getIdentity(jstring arg0);
-		QAndroidJniObject getIdentity(const QString &arg0);
 		QAndroidJniObject getIdentity(__JniBaseClass arg0);
 		QAndroidJniObject identities();
 		void removeIdentity(java::security::Identity arg0);

@@ -10,7 +10,7 @@ namespace android::widget
 	
 	CursorTreeAdapter::CursorTreeAdapter(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	CursorTreeAdapter::CursorTreeAdapter(__JniBaseClass &arg0, android::content::Context &arg1)
+	CursorTreeAdapter::CursorTreeAdapter(__JniBaseClass arg0, android::content::Context arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.CursorTreeAdapter",
@@ -19,7 +19,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	CursorTreeAdapter::CursorTreeAdapter(__JniBaseClass &arg0, android::content::Context &arg1, jboolean &arg2)
+	CursorTreeAdapter::CursorTreeAdapter(__JniBaseClass arg0, android::content::Context arg1, jboolean arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.CursorTreeAdapter",
@@ -192,14 +192,6 @@ namespace android::widget
 			"runQueryOnBackgroundThread",
 			"(Ljava/lang/CharSequence;)Landroid/database/Cursor;",
 			arg0
-		);
-	}
-	QAndroidJniObject CursorTreeAdapter::runQueryOnBackgroundThread(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"runQueryOnBackgroundThread",
-			"(Ljava/lang/CharSequence;)Landroid/database/Cursor;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void CursorTreeAdapter::setChildrenCursor(jint arg0, __JniBaseClass arg1)

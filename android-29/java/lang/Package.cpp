@@ -19,15 +19,6 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject Package::getPackage(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.lang.Package",
-			"getPackage",
-			"(Ljava/lang/String;)Ljava/lang/Package;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray Package::getPackages()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -152,14 +143,6 @@ namespace java::lang
 			"isCompatibleWith",
 			"(Ljava/lang/String;)Z",
 			arg0
-		);
-	}
-	jboolean Package::isCompatibleWith(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isCompatibleWith",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean Package::isSealed()

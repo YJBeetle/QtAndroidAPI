@@ -26,9 +26,9 @@ namespace java::util
 		Hashtable(QAndroidJniObject obj);
 		// Constructors
 		Hashtable();
-		Hashtable(jint &arg0);
-		Hashtable(__JniBaseClass &arg0);
-		Hashtable(jint &arg0, jfloat &arg1);
+		Hashtable(jint arg0);
+		Hashtable(__JniBaseClass arg0);
+		Hashtable(jint arg0, jfloat arg1);
 		
 		// Methods
 		void clear();

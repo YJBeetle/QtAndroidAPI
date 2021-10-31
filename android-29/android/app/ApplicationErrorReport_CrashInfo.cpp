@@ -62,7 +62,7 @@ namespace android::app
 			"()V"
 		);
 	}
-	ApplicationErrorReport_CrashInfo::ApplicationErrorReport_CrashInfo(android::os::Parcel &arg0)
+	ApplicationErrorReport_CrashInfo::ApplicationErrorReport_CrashInfo(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.ApplicationErrorReport$CrashInfo",
@@ -70,7 +70,7 @@ namespace android::app
 			arg0.__jniObject().object()
 		);
 	}
-	ApplicationErrorReport_CrashInfo::ApplicationErrorReport_CrashInfo(jthrowable &arg0)
+	ApplicationErrorReport_CrashInfo::ApplicationErrorReport_CrashInfo(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.ApplicationErrorReport$CrashInfo",
@@ -87,15 +87,6 @@ namespace android::app
 			"(Landroid/util/Printer;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	void ApplicationErrorReport_CrashInfo::dump(__JniBaseClass arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Landroid/util/Printer;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void ApplicationErrorReport_CrashInfo::writeToParcel(android::os::Parcel arg0, jint arg1)

@@ -47,15 +47,6 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject ZoneId::of(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.time.ZoneId",
-			"of",
-			"(Ljava/lang/String;)Ljava/time/ZoneId;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject ZoneId::of(jstring arg0, __JniBaseClass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -66,16 +57,6 @@ namespace java::time
 			arg1.__jniObject().object()
 		);
 	}
-	QAndroidJniObject ZoneId::of(const QString &arg0, __JniBaseClass arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.time.ZoneId",
-			"of",
-			"(Ljava/lang/String;Ljava/util/Map;)Ljava/time/ZoneId;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	QAndroidJniObject ZoneId::ofOffset(jstring arg0, java::time::ZoneOffset arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -83,16 +64,6 @@ namespace java::time
 			"ofOffset",
 			"(Ljava/lang/String;Ljava/time/ZoneOffset;)Ljava/time/ZoneId;",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject ZoneId::ofOffset(const QString &arg0, java::time::ZoneOffset arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.time.ZoneId",
-			"ofOffset",
-			"(Ljava/lang/String;Ljava/time/ZoneOffset;)Ljava/time/ZoneId;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

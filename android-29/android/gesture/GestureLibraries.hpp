@@ -29,9 +29,7 @@ namespace android::gesture
 		// Methods
 		static QAndroidJniObject fromFile(java::io::File arg0);
 		static QAndroidJniObject fromFile(jstring arg0);
-		static QAndroidJniObject fromFile(const QString &arg0);
 		static QAndroidJniObject fromPrivateFile(android::content::Context arg0, jstring arg1);
-		static QAndroidJniObject fromPrivateFile(android::content::Context arg0, const QString &arg1);
 		static QAndroidJniObject fromRawResource(android::content::Context arg0, jint arg1);
 	};
 } // namespace android::gesture

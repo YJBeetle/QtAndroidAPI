@@ -15,7 +15,7 @@ namespace java::util
 			"()V"
 		);
 	}
-	TreeSet::TreeSet(__JniBaseClass &arg0)
+	TreeSet::TreeSet(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.TreeSet",

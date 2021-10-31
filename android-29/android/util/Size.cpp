@@ -6,7 +6,7 @@ namespace android::util
 	
 	Size::Size(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Size::Size(jint &arg0, jint &arg1)
+	Size::Size(jint arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.Size",
@@ -24,15 +24,6 @@ namespace android::util
 			"parseSize",
 			"(Ljava/lang/String;)Landroid/util/Size;",
 			arg0
-		);
-	}
-	QAndroidJniObject Size::parseSize(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.util.Size",
-			"parseSize",
-			"(Ljava/lang/String;)Landroid/util/Size;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean Size::equals(jobject arg0)

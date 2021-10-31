@@ -37,23 +37,19 @@ namespace android::icu::text
 		
 		RuleBasedCollator(QAndroidJniObject obj);
 		// Constructors
-		RuleBasedCollator(jstring &arg0);
-		RuleBasedCollator(const QString &arg0);
+		RuleBasedCollator(jstring arg0);
 		RuleBasedCollator() = default;
 		
 		// Methods
 		jobject clone();
 		QAndroidJniObject cloneAsThawed();
 		jint compare(jstring arg0, jstring arg1);
-		jint compare(const QString &arg0, const QString &arg1);
 		jboolean equals(jobject arg0);
 		QAndroidJniObject freeze();
 		QAndroidJniObject getCollationElementIterator(android::icu::text::UCharacterIterator arg0);
 		QAndroidJniObject getCollationElementIterator(jstring arg0);
-		QAndroidJniObject getCollationElementIterator(const QString &arg0);
 		QAndroidJniObject getCollationElementIterator(__JniBaseClass arg0);
 		QAndroidJniObject getCollationKey(jstring arg0);
-		QAndroidJniObject getCollationKey(const QString &arg0);
 		void getContractionsAndExpansions(android::icu::text::UnicodeSet arg0, android::icu::text::UnicodeSet arg1, jboolean arg2);
 		jint getDecomposition();
 		jint getMaxVariable();

@@ -34,9 +34,7 @@ namespace android::icu::text
 		// Methods
 		QAndroidJniObject adjustToCased();
 		QAndroidJniObject apply(java::util::Locale arg0, android::icu::text::BreakIterator arg1, jstring arg2, __JniBaseClass arg3, android::icu::text::Edits arg4);
-		QAndroidJniObject apply(java::util::Locale arg0, android::icu::text::BreakIterator arg1, const QString &arg2, __JniBaseClass arg3, android::icu::text::Edits arg4);
 		jstring apply(java::util::Locale arg0, android::icu::text::BreakIterator arg1, jstring arg2);
-		jstring apply(java::util::Locale arg0, android::icu::text::BreakIterator arg1, const QString &arg2);
 		QAndroidJniObject noBreakAdjustment();
 		QAndroidJniObject noLowercase();
 		QAndroidJniObject omitUnchangedText();

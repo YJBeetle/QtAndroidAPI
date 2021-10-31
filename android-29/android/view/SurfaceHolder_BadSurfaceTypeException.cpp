@@ -13,20 +13,12 @@ namespace android::view
 			"()V"
 		);
 	}
-	SurfaceHolder_BadSurfaceTypeException::SurfaceHolder_BadSurfaceTypeException(jstring &arg0)
+	SurfaceHolder_BadSurfaceTypeException::SurfaceHolder_BadSurfaceTypeException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.SurfaceHolder$BadSurfaceTypeException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	SurfaceHolder_BadSurfaceTypeException::SurfaceHolder_BadSurfaceTypeException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.SurfaceHolder$BadSurfaceTypeException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

@@ -85,15 +85,6 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	QAndroidJniObject TimeUnit::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.util.concurrent.TimeUnit",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/util/concurrent/TimeUnit;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray TimeUnit::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

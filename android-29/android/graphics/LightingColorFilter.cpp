@@ -6,7 +6,7 @@ namespace android::graphics
 	
 	LightingColorFilter::LightingColorFilter(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	LightingColorFilter::LightingColorFilter(jint &arg0, jint &arg1)
+	LightingColorFilter::LightingColorFilter(jint arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.LightingColorFilter",

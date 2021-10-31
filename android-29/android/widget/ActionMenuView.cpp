@@ -12,7 +12,7 @@ namespace android::widget
 	
 	ActionMenuView::ActionMenuView(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ActionMenuView::ActionMenuView(android::content::Context &arg0)
+	ActionMenuView::ActionMenuView(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ActionMenuView",
@@ -20,7 +20,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	ActionMenuView::ActionMenuView(android::content::Context &arg0, __JniBaseClass &arg1)
+	ActionMenuView::ActionMenuView(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ActionMenuView",

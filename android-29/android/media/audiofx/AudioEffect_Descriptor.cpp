@@ -49,7 +49,7 @@ namespace android::media::audiofx
 			"()V"
 		);
 	}
-	AudioEffect_Descriptor::AudioEffect_Descriptor(jstring &arg0, jstring &arg1, jstring &arg2, jstring &arg3, jstring &arg4)
+	AudioEffect_Descriptor::AudioEffect_Descriptor(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.audiofx.AudioEffect$Descriptor",
@@ -59,18 +59,6 @@ namespace android::media::audiofx
 			arg2,
 			arg3,
 			arg4
-		);
-	}
-	AudioEffect_Descriptor::AudioEffect_Descriptor(const QString &arg0, const QString &arg1, const QString &arg2, const QString &arg3, const QString &arg4)
-	{
-		__thiz = QAndroidJniObject(
-			"android.media.audiofx.AudioEffect$Descriptor",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			QAndroidJniObject::fromString(arg3).object<jstring>(),
-			QAndroidJniObject::fromString(arg4).object<jstring>()
 		);
 	}
 	

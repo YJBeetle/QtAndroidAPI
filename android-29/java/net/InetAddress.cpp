@@ -20,15 +20,6 @@ namespace java::net
 			arg0
 		).object<jarray>();
 	}
-	jarray InetAddress::getAllByName(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.net.InetAddress",
-			"getAllByName",
-			"(Ljava/lang/String;)[Ljava/net/InetAddress;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jarray>();
-	}
 	QAndroidJniObject InetAddress::getByAddress(jbyteArray arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -48,16 +39,6 @@ namespace java::net
 			arg1
 		);
 	}
-	QAndroidJniObject InetAddress::getByAddress(const QString &arg0, jbyteArray arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.net.InetAddress",
-			"getByAddress",
-			"(Ljava/lang/String;[B)Ljava/net/InetAddress;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	QAndroidJniObject InetAddress::getByName(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -65,15 +46,6 @@ namespace java::net
 			"getByName",
 			"(Ljava/lang/String;)Ljava/net/InetAddress;",
 			arg0
-		);
-	}
-	QAndroidJniObject InetAddress::getByName(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.net.InetAddress",
-			"getByName",
-			"(Ljava/lang/String;)Ljava/net/InetAddress;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject InetAddress::getLocalHost()

@@ -26,15 +26,12 @@ namespace org::xmlpull::v1
 		// Methods
 		static QAndroidJniObject newInstance();
 		static QAndroidJniObject newInstance(jstring arg0, jclass arg1);
-		static QAndroidJniObject newInstance(const QString &arg0, jclass arg1);
 		jboolean getFeature(jstring arg0);
-		jboolean getFeature(const QString &arg0);
 		jboolean isNamespaceAware();
 		jboolean isValidating();
 		QAndroidJniObject newPullParser();
 		QAndroidJniObject newSerializer();
 		void setFeature(jstring arg0, jboolean arg1);
-		void setFeature(const QString &arg0, jboolean arg1);
 		void setNamespaceAware(jboolean arg0);
 		void setValidating(jboolean arg0);
 	};

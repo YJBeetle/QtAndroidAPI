@@ -43,7 +43,7 @@ namespace android::bluetooth
 	
 	BluetoothHidDeviceAppQosSettings::BluetoothHidDeviceAppQosSettings(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	BluetoothHidDeviceAppQosSettings::BluetoothHidDeviceAppQosSettings(jint &arg0, jint &arg1, jint &arg2, jint &arg3, jint &arg4, jint &arg5)
+	BluetoothHidDeviceAppQosSettings::BluetoothHidDeviceAppQosSettings(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
 	{
 		__thiz = QAndroidJniObject(
 			"android.bluetooth.BluetoothHidDeviceAppQosSettings",

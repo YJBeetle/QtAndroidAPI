@@ -17,7 +17,7 @@ namespace javax::net::ssl
 		
 		HandshakeCompletedEvent(QAndroidJniObject obj);
 		// Constructors
-		HandshakeCompletedEvent(javax::net::ssl::SSLSocket &arg0, __JniBaseClass &arg1);
+		HandshakeCompletedEvent(javax::net::ssl::SSLSocket arg0, __JniBaseClass arg1);
 		HandshakeCompletedEvent() = default;
 		
 		// Methods

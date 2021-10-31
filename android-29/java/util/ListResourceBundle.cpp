@@ -30,13 +30,5 @@ namespace java::util
 			arg0
 		).object<jobject>();
 	}
-	jobject ListResourceBundle::handleGetObject(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"handleGetObject",
-			"(Ljava/lang/String;)Ljava/lang/Object;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jobject>();
-	}
 } // namespace java::util
 

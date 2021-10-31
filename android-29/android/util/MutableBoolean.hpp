@@ -13,7 +13,7 @@ namespace android::util
 		
 		MutableBoolean(QAndroidJniObject obj);
 		// Constructors
-		MutableBoolean(jboolean &arg0);
+		MutableBoolean(jboolean arg0);
 		MutableBoolean() = default;
 		
 		// Methods

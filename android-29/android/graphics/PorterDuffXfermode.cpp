@@ -7,7 +7,7 @@ namespace android::graphics
 	
 	PorterDuffXfermode::PorterDuffXfermode(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PorterDuffXfermode::PorterDuffXfermode(android::graphics::PorterDuff_Mode &arg0)
+	PorterDuffXfermode::PorterDuffXfermode(android::graphics::PorterDuff_Mode arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.PorterDuffXfermode",

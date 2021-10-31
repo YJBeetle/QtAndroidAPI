@@ -16,7 +16,6 @@ namespace android::drm
 		
 		// Methods
 		jstring get(jstring arg0);
-		jstring get(const QString &arg0);
 		QAndroidJniObject iterator();
 		QAndroidJniObject keyIterator();
 	};

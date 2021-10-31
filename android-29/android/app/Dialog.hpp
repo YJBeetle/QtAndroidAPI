@@ -80,8 +80,8 @@ namespace android::app
 		
 		Dialog(QAndroidJniObject obj);
 		// Constructors
-		Dialog(android::content::Context &arg0);
-		Dialog(android::content::Context &arg0, jint &arg1);
+		Dialog(android::content::Context arg0);
+		Dialog(android::content::Context arg0, jint arg1);
 		Dialog() = default;
 		
 		// Methods
@@ -166,7 +166,6 @@ namespace android::app
 		void setOwnerActivity(android::app::Activity arg0);
 		void setTitle(jint arg0);
 		void setTitle(jstring arg0);
-		void setTitle(const QString &arg0);
 		void setVolumeControlStream(jint arg0);
 		void show();
 		void takeKeyEvents(jboolean arg0);

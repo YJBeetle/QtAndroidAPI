@@ -20,30 +20,12 @@ namespace android::icu::text
 			arg2.__jniObject().object()
 		);
 	}
-	QAndroidJniObject CaseMap_Fold::apply(const QString &arg0, __JniBaseClass arg1, android::icu::text::Edits arg2)
-	{
-		return __thiz.callObjectMethod(
-			"apply",
-			"(Ljava/lang/CharSequence;Ljava/lang/Appendable;Landroid/icu/text/Edits;)Ljava/lang/Appendable;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
 	jstring CaseMap_Fold::apply(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"apply",
 			"(Ljava/lang/CharSequence;)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
-	}
-	jstring CaseMap_Fold::apply(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"apply",
-			"(Ljava/lang/CharSequence;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	QAndroidJniObject CaseMap_Fold::omitUnchangedText()

@@ -13,20 +13,12 @@ namespace android::database::sqlite
 			"()V"
 		);
 	}
-	SQLiteAccessPermException::SQLiteAccessPermException(jstring &arg0)
+	SQLiteAccessPermException::SQLiteAccessPermException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.database.sqlite.SQLiteAccessPermException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	SQLiteAccessPermException::SQLiteAccessPermException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.database.sqlite.SQLiteAccessPermException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

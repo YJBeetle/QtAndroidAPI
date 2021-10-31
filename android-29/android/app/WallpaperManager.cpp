@@ -317,19 +317,6 @@ namespace android::app
 			arg5.__jniObject().object()
 		);
 	}
-	void WallpaperManager::sendWallpaperCommand(__JniBaseClass arg0, const QString &arg1, jint arg2, jint arg3, jint arg4, android::os::Bundle arg5)
-	{
-		__thiz.callMethod<void>(
-			"sendWallpaperCommand",
-			"(Landroid/os/IBinder;Ljava/lang/String;IIILandroid/os/Bundle;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2,
-			arg3,
-			arg4,
-			arg5.__jniObject().object()
-		);
-	}
 	jint WallpaperManager::setBitmap(android::graphics::Bitmap arg0, android::graphics::Rect arg1, jboolean arg2)
 	{
 		return __thiz.callMethod<jint>(

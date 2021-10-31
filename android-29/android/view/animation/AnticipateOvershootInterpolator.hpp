@@ -18,9 +18,9 @@ namespace android::view::animation
 		AnticipateOvershootInterpolator(QAndroidJniObject obj);
 		// Constructors
 		AnticipateOvershootInterpolator();
-		AnticipateOvershootInterpolator(jfloat &arg0);
-		AnticipateOvershootInterpolator(android::content::Context &arg0, __JniBaseClass &arg1);
-		AnticipateOvershootInterpolator(jfloat &arg0, jfloat &arg1);
+		AnticipateOvershootInterpolator(jfloat arg0);
+		AnticipateOvershootInterpolator(android::content::Context arg0, __JniBaseClass arg1);
+		AnticipateOvershootInterpolator(jfloat arg0, jfloat arg1);
 		
 		// Methods
 		jfloat getInterpolation(jfloat arg0);

@@ -376,16 +376,6 @@ namespace android::provider
 			arg1
 		);
 	}
-	jfloat Settings_Global::getFloat(android::content::ContentResolver arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
-			"android.provider.Settings$Global",
-			"getFloat",
-			"(Landroid/content/ContentResolver;Ljava/lang/String;)F",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	jfloat Settings_Global::getFloat(android::content::ContentResolver arg0, jstring arg1, jfloat arg2)
 	{
 		return QAndroidJniObject::callStaticMethod<jfloat>(
@@ -394,17 +384,6 @@ namespace android::provider
 			"(Landroid/content/ContentResolver;Ljava/lang/String;F)F",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2
-		);
-	}
-	jfloat Settings_Global::getFloat(android::content::ContentResolver arg0, const QString &arg1, jfloat arg2)
-	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
-			"android.provider.Settings$Global",
-			"getFloat",
-			"(Landroid/content/ContentResolver;Ljava/lang/String;F)F",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}
@@ -418,16 +397,6 @@ namespace android::provider
 			arg1
 		);
 	}
-	jint Settings_Global::getInt(android::content::ContentResolver arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.provider.Settings$Global",
-			"getInt",
-			"(Landroid/content/ContentResolver;Ljava/lang/String;)I",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	jint Settings_Global::getInt(android::content::ContentResolver arg0, jstring arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -436,17 +405,6 @@ namespace android::provider
 			"(Landroid/content/ContentResolver;Ljava/lang/String;I)I",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2
-		);
-	}
-	jint Settings_Global::getInt(android::content::ContentResolver arg0, const QString &arg1, jint arg2)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.provider.Settings$Global",
-			"getInt",
-			"(Landroid/content/ContentResolver;Ljava/lang/String;I)I",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}
@@ -460,16 +418,6 @@ namespace android::provider
 			arg1
 		);
 	}
-	jlong Settings_Global::getLong(android::content::ContentResolver arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
-			"android.provider.Settings$Global",
-			"getLong",
-			"(Landroid/content/ContentResolver;Ljava/lang/String;)J",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	jlong Settings_Global::getLong(android::content::ContentResolver arg0, jstring arg1, jlong arg2)
 	{
 		return QAndroidJniObject::callStaticMethod<jlong>(
@@ -478,17 +426,6 @@ namespace android::provider
 			"(Landroid/content/ContentResolver;Ljava/lang/String;J)J",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2
-		);
-	}
-	jlong Settings_Global::getLong(android::content::ContentResolver arg0, const QString &arg1, jlong arg2)
-	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
-			"android.provider.Settings$Global",
-			"getLong",
-			"(Landroid/content/ContentResolver;Ljava/lang/String;J)J",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}
@@ -502,16 +439,6 @@ namespace android::provider
 			arg1
 		).object<jstring>();
 	}
-	jstring Settings_Global::getString(android::content::ContentResolver arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.Settings$Global",
-			"getString",
-			"(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		).object<jstring>();
-	}
 	QAndroidJniObject Settings_Global::getUriFor(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -519,15 +446,6 @@ namespace android::provider
 			"getUriFor",
 			"(Ljava/lang/String;)Landroid/net/Uri;",
 			arg0
-		);
-	}
-	QAndroidJniObject Settings_Global::getUriFor(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.Settings$Global",
-			"getUriFor",
-			"(Ljava/lang/String;)Landroid/net/Uri;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean Settings_Global::putFloat(android::content::ContentResolver arg0, jstring arg1, jfloat arg2)
@@ -538,17 +456,6 @@ namespace android::provider
 			"(Landroid/content/ContentResolver;Ljava/lang/String;F)Z",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2
-		);
-	}
-	jboolean Settings_Global::putFloat(android::content::ContentResolver arg0, const QString &arg1, jfloat arg2)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.provider.Settings$Global",
-			"putFloat",
-			"(Landroid/content/ContentResolver;Ljava/lang/String;F)Z",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}
@@ -563,17 +470,6 @@ namespace android::provider
 			arg2
 		);
 	}
-	jboolean Settings_Global::putInt(android::content::ContentResolver arg0, const QString &arg1, jint arg2)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.provider.Settings$Global",
-			"putInt",
-			"(Landroid/content/ContentResolver;Ljava/lang/String;I)Z",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2
-		);
-	}
 	jboolean Settings_Global::putLong(android::content::ContentResolver arg0, jstring arg1, jlong arg2)
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
@@ -582,17 +478,6 @@ namespace android::provider
 			"(Landroid/content/ContentResolver;Ljava/lang/String;J)Z",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2
-		);
-	}
-	jboolean Settings_Global::putLong(android::content::ContentResolver arg0, const QString &arg1, jlong arg2)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.provider.Settings$Global",
-			"putLong",
-			"(Landroid/content/ContentResolver;Ljava/lang/String;J)Z",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}
@@ -605,17 +490,6 @@ namespace android::provider
 			arg0.__jniObject().object(),
 			arg1,
 			arg2
-		);
-	}
-	jboolean Settings_Global::putString(android::content::ContentResolver arg0, const QString &arg1, const QString &arg2)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.provider.Settings$Global",
-			"putString",
-			"(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 } // namespace android::provider

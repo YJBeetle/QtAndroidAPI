@@ -6,7 +6,7 @@ namespace android::media::audiofx
 	
 	DynamicsProcessing_BandBase::DynamicsProcessing_BandBase(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DynamicsProcessing_BandBase::DynamicsProcessing_BandBase(jboolean &arg0, jfloat &arg1)
+	DynamicsProcessing_BandBase::DynamicsProcessing_BandBase(jboolean arg0, jfloat arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.audiofx.DynamicsProcessing$BandBase",

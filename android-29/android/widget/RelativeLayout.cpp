@@ -170,7 +170,7 @@ namespace android::widget
 	
 	RelativeLayout::RelativeLayout(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	RelativeLayout::RelativeLayout(android::content::Context &arg0)
+	RelativeLayout::RelativeLayout(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.RelativeLayout",
@@ -178,7 +178,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	RelativeLayout::RelativeLayout(android::content::Context &arg0, __JniBaseClass &arg1)
+	RelativeLayout::RelativeLayout(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.RelativeLayout",
@@ -187,7 +187,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	RelativeLayout::RelativeLayout(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	RelativeLayout::RelativeLayout(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.RelativeLayout",
@@ -197,7 +197,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	RelativeLayout::RelativeLayout(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	RelativeLayout::RelativeLayout(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.RelativeLayout",

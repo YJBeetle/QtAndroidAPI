@@ -33,15 +33,6 @@ namespace android::renderscript
 			arg0
 		);
 	}
-	QAndroidJniObject RenderScript_Priority::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.renderscript.RenderScript$Priority",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/renderscript/RenderScript$Priority;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray RenderScript_Priority::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

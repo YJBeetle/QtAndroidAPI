@@ -18,7 +18,7 @@ namespace android::drm
 		
 		DrmConvertedStatus(QAndroidJniObject obj);
 		// Constructors
-		DrmConvertedStatus(jint &arg0, jbyteArray &arg1, jint &arg2);
+		DrmConvertedStatus(jint arg0, jbyteArray arg1, jint arg2);
 		DrmConvertedStatus() = default;
 		
 		// Methods

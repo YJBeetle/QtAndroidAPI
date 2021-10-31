@@ -37,9 +37,9 @@ namespace java::util::concurrent
 		
 		ThreadPoolExecutor(QAndroidJniObject obj);
 		// Constructors
-		ThreadPoolExecutor(jint &arg0, jint &arg1, jlong &arg2, java::util::concurrent::TimeUnit &arg3, __JniBaseClass &arg4);
-		ThreadPoolExecutor(jint &arg0, jint &arg1, jlong &arg2, java::util::concurrent::TimeUnit &arg3, __JniBaseClass &arg4, __JniBaseClass &arg5);
-		ThreadPoolExecutor(jint &arg0, jint &arg1, jlong &arg2, java::util::concurrent::TimeUnit &arg3, __JniBaseClass &arg4, __JniBaseClass &arg5, __JniBaseClass &arg6);
+		ThreadPoolExecutor(jint arg0, jint arg1, jlong arg2, java::util::concurrent::TimeUnit arg3, __JniBaseClass arg4);
+		ThreadPoolExecutor(jint arg0, jint arg1, jlong arg2, java::util::concurrent::TimeUnit arg3, __JniBaseClass arg4, __JniBaseClass arg5);
+		ThreadPoolExecutor(jint arg0, jint arg1, jlong arg2, java::util::concurrent::TimeUnit arg3, __JniBaseClass arg4, __JniBaseClass arg5, __JniBaseClass arg6);
 		ThreadPoolExecutor() = default;
 		
 		// Methods

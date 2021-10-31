@@ -13,7 +13,7 @@ namespace java::util::concurrent::atomic
 			"()V"
 		);
 	}
-	AtomicInteger::AtomicInteger(jint &arg0)
+	AtomicInteger::AtomicInteger(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.atomic.AtomicInteger",

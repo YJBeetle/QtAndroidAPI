@@ -65,15 +65,6 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject TimeZoneFormat_GMTOffsetPatternType::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.TimeZoneFormat$GMTOffsetPatternType",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/icu/text/TimeZoneFormat$GMTOffsetPatternType;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray TimeZoneFormat_GMTOffsetPatternType::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

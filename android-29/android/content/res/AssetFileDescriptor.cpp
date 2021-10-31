@@ -27,7 +27,7 @@ namespace android::content::res
 	
 	AssetFileDescriptor::AssetFileDescriptor(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AssetFileDescriptor::AssetFileDescriptor(android::os::ParcelFileDescriptor &arg0, jlong &arg1, jlong &arg2)
+	AssetFileDescriptor::AssetFileDescriptor(android::os::ParcelFileDescriptor arg0, jlong arg1, jlong arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.res.AssetFileDescriptor",
@@ -37,7 +37,7 @@ namespace android::content::res
 			arg2
 		);
 	}
-	AssetFileDescriptor::AssetFileDescriptor(android::os::ParcelFileDescriptor &arg0, jlong &arg1, jlong &arg2, android::os::Bundle &arg3)
+	AssetFileDescriptor::AssetFileDescriptor(android::os::ParcelFileDescriptor arg0, jlong arg1, jlong arg2, android::os::Bundle arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.res.AssetFileDescriptor",

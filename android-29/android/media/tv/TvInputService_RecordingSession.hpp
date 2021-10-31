@@ -24,7 +24,7 @@ namespace android::media::tv
 		
 		TvInputService_RecordingSession(QAndroidJniObject obj);
 		// Constructors
-		TvInputService_RecordingSession(android::content::Context &arg0);
+		TvInputService_RecordingSession(android::content::Context arg0);
 		TvInputService_RecordingSession() = default;
 		
 		// Methods
@@ -32,7 +32,6 @@ namespace android::media::tv
 		void notifyRecordingStopped(android::net::Uri arg0);
 		void notifyTuned(android::net::Uri arg0);
 		void onAppPrivateCommand(jstring arg0, android::os::Bundle arg1);
-		void onAppPrivateCommand(const QString &arg0, android::os::Bundle arg1);
 		void onRelease();
 		void onStartRecording(android::net::Uri arg0);
 		void onStopRecording();

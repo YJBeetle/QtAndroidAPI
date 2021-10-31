@@ -29,8 +29,8 @@ namespace android::app
 		
 		WallpaperColors(QAndroidJniObject obj);
 		// Constructors
-		WallpaperColors(android::os::Parcel &arg0);
-		WallpaperColors(android::graphics::Color &arg0, android::graphics::Color &arg1, android::graphics::Color &arg2);
+		WallpaperColors(android::os::Parcel arg0);
+		WallpaperColors(android::graphics::Color arg0, android::graphics::Color arg1, android::graphics::Color arg2);
 		WallpaperColors() = default;
 		
 		// Methods

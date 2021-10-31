@@ -65,15 +65,6 @@ namespace javax::net::ssl
 			arg0
 		);
 	}
-	QAndroidJniObject SSLEngineResult_HandshakeStatus::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"javax.net.ssl.SSLEngineResult$HandshakeStatus",
-			"valueOf",
-			"(Ljava/lang/String;)Ljavax/net/ssl/SSLEngineResult$HandshakeStatus;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray SSLEngineResult_HandshakeStatus::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

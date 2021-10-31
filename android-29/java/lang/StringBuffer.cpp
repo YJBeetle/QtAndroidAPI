@@ -15,7 +15,7 @@ namespace java::lang
 			"()V"
 		);
 	}
-	StringBuffer::StringBuffer(jint &arg0)
+	StringBuffer::StringBuffer(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.StringBuffer",
@@ -23,20 +23,12 @@ namespace java::lang
 			arg0
 		);
 	}
-	StringBuffer::StringBuffer(jstring &arg0)
+	StringBuffer::StringBuffer(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.StringBuffer",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
-		);
-	}
-	StringBuffer::StringBuffer(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.StringBuffer",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	
@@ -97,14 +89,6 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject StringBuffer::append(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"append",
-			"(Ljava/lang/CharSequence;)Ljava/lang/StringBuffer;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject StringBuffer::append(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -145,16 +129,6 @@ namespace java::lang
 			"append",
 			"(Ljava/lang/CharSequence;II)Ljava/lang/StringBuffer;",
 			arg0,
-			arg1,
-			arg2
-		);
-	}
-	QAndroidJniObject StringBuffer::append(const QString &arg0, jint arg1, jint arg2)
-	{
-		return __thiz.callObjectMethod(
-			"append",
-			"(Ljava/lang/CharSequence;II)Ljava/lang/StringBuffer;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2
 		);
@@ -281,29 +255,12 @@ namespace java::lang
 			arg0
 		);
 	}
-	jint StringBuffer::indexOf(const QString &arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"indexOf",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jint StringBuffer::indexOf(jstring arg0, jint arg1)
 	{
 		return __thiz.callMethod<jint>(
 			"indexOf",
 			"(Ljava/lang/String;I)I",
 			arg0,
-			arg1
-		);
-	}
-	jint StringBuffer::indexOf(const QString &arg0, jint arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"indexOf",
-			"(Ljava/lang/String;I)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -370,15 +327,6 @@ namespace java::lang
 			arg1
 		);
 	}
-	QAndroidJniObject StringBuffer::insert(jint arg0, const QString &arg1)
-	{
-		return __thiz.callObjectMethod(
-			"insert",
-			"(ILjava/lang/CharSequence;)Ljava/lang/StringBuffer;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	QAndroidJniObject StringBuffer::insert(jint arg0, jobject arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -419,17 +367,6 @@ namespace java::lang
 			arg3
 		);
 	}
-	QAndroidJniObject StringBuffer::insert(jint arg0, const QString &arg1, jint arg2, jint arg3)
-	{
-		return __thiz.callObjectMethod(
-			"insert",
-			"(ILjava/lang/CharSequence;II)Ljava/lang/StringBuffer;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2,
-			arg3
-		);
-	}
 	jint StringBuffer::lastIndexOf(jstring arg0)
 	{
 		return __thiz.callMethod<jint>(
@@ -438,29 +375,12 @@ namespace java::lang
 			arg0
 		);
 	}
-	jint StringBuffer::lastIndexOf(const QString &arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"lastIndexOf",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jint StringBuffer::lastIndexOf(jstring arg0, jint arg1)
 	{
 		return __thiz.callMethod<jint>(
 			"lastIndexOf",
 			"(Ljava/lang/String;I)I",
 			arg0,
-			arg1
-		);
-	}
-	jint StringBuffer::lastIndexOf(const QString &arg0, jint arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"lastIndexOf",
-			"(Ljava/lang/String;I)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -488,16 +408,6 @@ namespace java::lang
 			arg0,
 			arg1,
 			arg2
-		);
-	}
-	QAndroidJniObject StringBuffer::replace(jint arg0, jint arg1, const QString &arg2)
-	{
-		return __thiz.callObjectMethod(
-			"replace",
-			"(IILjava/lang/String;)Ljava/lang/StringBuffer;",
-			arg0,
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	QAndroidJniObject StringBuffer::reverse()

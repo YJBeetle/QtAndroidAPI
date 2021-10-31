@@ -41,15 +41,6 @@ namespace java::util::stream
 			arg0
 		);
 	}
-	QAndroidJniObject Collector_Characteristics::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.util.stream.Collector$Characteristics",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/util/stream/Collector$Characteristics;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray Collector_Characteristics::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

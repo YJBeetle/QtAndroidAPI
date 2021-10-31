@@ -46,9 +46,7 @@ namespace android::graphics
 		static QAndroidJniObject decodeByteArray(jbyteArray arg0, jint arg1, jint arg2);
 		static QAndroidJniObject decodeByteArray(jbyteArray arg0, jint arg1, jint arg2, android::graphics::BitmapFactory_Options arg3);
 		static QAndroidJniObject decodeFile(jstring arg0);
-		static QAndroidJniObject decodeFile(const QString &arg0);
 		static QAndroidJniObject decodeFile(jstring arg0, android::graphics::BitmapFactory_Options arg1);
-		static QAndroidJniObject decodeFile(const QString &arg0, android::graphics::BitmapFactory_Options arg1);
 		static QAndroidJniObject decodeFileDescriptor(java::io::FileDescriptor arg0);
 		static QAndroidJniObject decodeFileDescriptor(java::io::FileDescriptor arg0, android::graphics::Rect arg1, android::graphics::BitmapFactory_Options arg2);
 		static QAndroidJniObject decodeResource(android::content::res::Resources arg0, jint arg1);

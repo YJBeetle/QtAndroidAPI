@@ -25,7 +25,7 @@ namespace android::net::rtp
 		
 		AudioStream(QAndroidJniObject obj);
 		// Constructors
-		AudioStream(java::net::InetAddress &arg0);
+		AudioStream(java::net::InetAddress arg0);
 		AudioStream() = default;
 		
 		// Methods

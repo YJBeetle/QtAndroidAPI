@@ -19,20 +19,12 @@ namespace java::io
 			"()V"
 		);
 	}
-	InterruptedIOException::InterruptedIOException(jstring &arg0)
+	InterruptedIOException::InterruptedIOException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.InterruptedIOException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	InterruptedIOException::InterruptedIOException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.io.InterruptedIOException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

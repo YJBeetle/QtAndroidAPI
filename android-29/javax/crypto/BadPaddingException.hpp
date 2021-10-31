@@ -15,8 +15,7 @@ namespace javax::crypto
 		BadPaddingException(QAndroidJniObject obj);
 		// Constructors
 		BadPaddingException();
-		BadPaddingException(jstring &arg0);
-		BadPaddingException(const QString &arg0);
+		BadPaddingException(jstring arg0);
 		
 		// Methods
 	};

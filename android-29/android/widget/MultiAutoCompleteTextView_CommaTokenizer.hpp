@@ -16,11 +16,8 @@ namespace android::widget
 		
 		// Methods
 		jint findTokenEnd(jstring arg0, jint arg1);
-		jint findTokenEnd(const QString &arg0, jint arg1);
 		jint findTokenStart(jstring arg0, jint arg1);
-		jint findTokenStart(const QString &arg0, jint arg1);
 		jstring terminateToken(jstring arg0);
-		jstring terminateToken(const QString &arg0);
 	};
 } // namespace android::widget
 

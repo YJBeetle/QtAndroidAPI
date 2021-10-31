@@ -9,7 +9,7 @@ namespace android::preference
 	
 	PreferenceGroup::PreferenceGroup(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PreferenceGroup::PreferenceGroup(android::content::Context &arg0, __JniBaseClass &arg1)
+	PreferenceGroup::PreferenceGroup(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.preference.PreferenceGroup",
@@ -18,7 +18,7 @@ namespace android::preference
 			arg1.__jniObject().object()
 		);
 	}
-	PreferenceGroup::PreferenceGroup(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	PreferenceGroup::PreferenceGroup(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.preference.PreferenceGroup",
@@ -28,7 +28,7 @@ namespace android::preference
 			arg2
 		);
 	}
-	PreferenceGroup::PreferenceGroup(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	PreferenceGroup::PreferenceGroup(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.preference.PreferenceGroup",
@@ -63,14 +63,6 @@ namespace android::preference
 			"findPreference",
 			"(Ljava/lang/CharSequence;)Landroid/preference/Preference;",
 			arg0
-		);
-	}
-	QAndroidJniObject PreferenceGroup::findPreference(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"findPreference",
-			"(Ljava/lang/CharSequence;)Landroid/preference/Preference;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject PreferenceGroup::getPreference(jint arg0)

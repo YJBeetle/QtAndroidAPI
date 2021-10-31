@@ -13,7 +13,7 @@ namespace android::accounts
 			"()V"
 		);
 	}
-	AuthenticatorException::AuthenticatorException(jstring &arg0)
+	AuthenticatorException::AuthenticatorException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.accounts.AuthenticatorException",
@@ -21,15 +21,7 @@ namespace android::accounts
 			arg0
 		);
 	}
-	AuthenticatorException::AuthenticatorException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.accounts.AuthenticatorException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	AuthenticatorException::AuthenticatorException(jthrowable &arg0)
+	AuthenticatorException::AuthenticatorException(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.accounts.AuthenticatorException",
@@ -37,21 +29,12 @@ namespace android::accounts
 			arg0
 		);
 	}
-	AuthenticatorException::AuthenticatorException(jstring &arg0, jthrowable &arg1)
+	AuthenticatorException::AuthenticatorException(jstring arg0, jthrowable arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.accounts.AuthenticatorException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
-			arg1
-		);
-	}
-	AuthenticatorException::AuthenticatorException(const QString &arg0, jthrowable &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.accounts.AuthenticatorException",
-			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

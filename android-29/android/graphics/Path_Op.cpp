@@ -57,15 +57,6 @@ namespace android::graphics
 			arg0
 		);
 	}
-	QAndroidJniObject Path_Op::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.Path$Op",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/graphics/Path$Op;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray Path_Op::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

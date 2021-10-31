@@ -63,7 +63,7 @@ namespace java::util
 		Properties(QAndroidJniObject obj);
 		// Constructors
 		Properties();
-		Properties(jint &arg0);
+		Properties(jint arg0);
 		Properties(java::util::Properties &arg0);
 		
 		// Methods
@@ -82,9 +82,7 @@ namespace java::util
 		jobject get(jobject arg0);
 		jobject getOrDefault(jobject arg0, jobject arg1);
 		jstring getProperty(jstring arg0);
-		jstring getProperty(const QString &arg0);
 		jstring getProperty(jstring arg0, jstring arg1);
-		jstring getProperty(const QString &arg0, const QString &arg1);
 		jint hashCode();
 		jboolean isEmpty();
 		QAndroidJniObject keySet();
@@ -105,20 +103,13 @@ namespace java::util
 		jobject replace(jobject arg0, jobject arg1);
 		void replaceAll(__JniBaseClass arg0);
 		void save(java::io::OutputStream arg0, jstring arg1);
-		void save(java::io::OutputStream arg0, const QString &arg1);
 		jobject setProperty(jstring arg0, jstring arg1);
-		jobject setProperty(const QString &arg0, const QString &arg1);
 		jint size();
 		void store(java::io::OutputStream arg0, jstring arg1);
-		void store(java::io::OutputStream arg0, const QString &arg1);
 		void store(java::io::Writer arg0, jstring arg1);
-		void store(java::io::Writer arg0, const QString &arg1);
 		void storeToXML(java::io::OutputStream arg0, jstring arg1);
-		void storeToXML(java::io::OutputStream arg0, const QString &arg1);
 		void storeToXML(java::io::OutputStream arg0, jstring arg1, jstring arg2);
-		void storeToXML(java::io::OutputStream arg0, const QString &arg1, const QString &arg2);
 		void storeToXML(java::io::OutputStream arg0, jstring arg1, java::nio::charset::Charset arg2);
-		void storeToXML(java::io::OutputStream arg0, const QString &arg1, java::nio::charset::Charset arg2);
 		QAndroidJniObject stringPropertyNames();
 		jstring toString();
 		QAndroidJniObject values();

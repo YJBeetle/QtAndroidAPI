@@ -55,9 +55,7 @@ namespace android::media::tv
 		// Methods
 		QAndroidJniObject getBlockedRatings();
 		jint getInputState(jstring arg0);
-		jint getInputState(const QString &arg0);
 		QAndroidJniObject getTvInputInfo(jstring arg0);
-		QAndroidJniObject getTvInputInfo(const QString &arg0);
 		QAndroidJniObject getTvInputList();
 		jboolean isParentalControlsEnabled();
 		jboolean isRatingBlocked(android::media::tv::TvContentRating arg0);

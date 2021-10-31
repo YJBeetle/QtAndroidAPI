@@ -15,7 +15,7 @@ namespace android::text
 			"()V"
 		);
 	}
-	BidiFormatter_Builder::BidiFormatter_Builder(jboolean &arg0)
+	BidiFormatter_Builder::BidiFormatter_Builder(jboolean arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.BidiFormatter$Builder",
@@ -23,7 +23,7 @@ namespace android::text
 			arg0
 		);
 	}
-	BidiFormatter_Builder::BidiFormatter_Builder(java::util::Locale &arg0)
+	BidiFormatter_Builder::BidiFormatter_Builder(java::util::Locale arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.BidiFormatter$Builder",

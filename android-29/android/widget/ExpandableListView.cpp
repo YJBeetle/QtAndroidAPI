@@ -45,7 +45,7 @@ namespace android::widget
 	
 	ExpandableListView::ExpandableListView(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ExpandableListView::ExpandableListView(android::content::Context &arg0)
+	ExpandableListView::ExpandableListView(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ExpandableListView",
@@ -53,7 +53,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	ExpandableListView::ExpandableListView(android::content::Context &arg0, __JniBaseClass &arg1)
+	ExpandableListView::ExpandableListView(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ExpandableListView",
@@ -62,7 +62,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	ExpandableListView::ExpandableListView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	ExpandableListView::ExpandableListView(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ExpandableListView",
@@ -72,7 +72,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	ExpandableListView::ExpandableListView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	ExpandableListView::ExpandableListView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ExpandableListView",

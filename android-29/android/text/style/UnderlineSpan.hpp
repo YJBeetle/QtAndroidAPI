@@ -22,7 +22,7 @@ namespace android::text::style
 		UnderlineSpan(QAndroidJniObject obj);
 		// Constructors
 		UnderlineSpan();
-		UnderlineSpan(android::os::Parcel &arg0);
+		UnderlineSpan(android::os::Parcel arg0);
 		
 		// Methods
 		jint describeContents();

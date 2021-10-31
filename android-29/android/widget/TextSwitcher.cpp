@@ -9,7 +9,7 @@ namespace android::widget
 	
 	TextSwitcher::TextSwitcher(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	TextSwitcher::TextSwitcher(android::content::Context &arg0)
+	TextSwitcher::TextSwitcher(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.TextSwitcher",
@@ -17,7 +17,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	TextSwitcher::TextSwitcher(android::content::Context &arg0, __JniBaseClass &arg1)
+	TextSwitcher::TextSwitcher(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.TextSwitcher",
@@ -53,28 +53,12 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextSwitcher::setCurrentText(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setCurrentText",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void TextSwitcher::setText(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setText",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
-		);
-	}
-	void TextSwitcher::setText(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setText",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace android::widget

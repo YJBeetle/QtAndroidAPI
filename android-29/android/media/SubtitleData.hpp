@@ -12,7 +12,7 @@ namespace android::media
 		
 		SubtitleData(QAndroidJniObject obj);
 		// Constructors
-		SubtitleData(jint &arg0, jlong &arg1, jlong &arg2, jbyteArray &arg3);
+		SubtitleData(jint arg0, jlong arg1, jlong arg2, jbyteArray arg3);
 		SubtitleData() = default;
 		
 		// Methods

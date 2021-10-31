@@ -16,7 +16,7 @@ namespace android::nfc
 	
 	NdefMessage::NdefMessage(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	NdefMessage::NdefMessage(jbyteArray &arg0)
+	NdefMessage::NdefMessage(jbyteArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.nfc.NdefMessage",
@@ -24,7 +24,7 @@ namespace android::nfc
 			arg0
 		);
 	}
-	NdefMessage::NdefMessage(jarray &arg0)
+	NdefMessage::NdefMessage(jarray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.nfc.NdefMessage",
@@ -32,7 +32,7 @@ namespace android::nfc
 			arg0
 		);
 	}
-	NdefMessage::NdefMessage(android::nfc::NdefRecord &arg0, jarray &arg1)
+	NdefMessage::NdefMessage(android::nfc::NdefRecord arg0, jarray arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.nfc.NdefMessage",

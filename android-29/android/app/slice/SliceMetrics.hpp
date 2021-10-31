@@ -20,7 +20,7 @@ namespace android::app::slice
 		
 		SliceMetrics(QAndroidJniObject obj);
 		// Constructors
-		SliceMetrics(android::content::Context &arg0, android::net::Uri &arg1);
+		SliceMetrics(android::content::Context arg0, android::net::Uri arg1);
 		SliceMetrics() = default;
 		
 		// Methods

@@ -26,11 +26,10 @@ namespace javax::xml::transform::stream
 		StreamResult(QAndroidJniObject obj);
 		// Constructors
 		StreamResult();
-		StreamResult(java::io::File &arg0);
-		StreamResult(java::io::OutputStream &arg0);
-		StreamResult(java::io::Writer &arg0);
-		StreamResult(jstring &arg0);
-		StreamResult(const QString &arg0);
+		StreamResult(java::io::File arg0);
+		StreamResult(java::io::OutputStream arg0);
+		StreamResult(java::io::Writer arg0);
+		StreamResult(jstring arg0);
 		
 		// Methods
 		QAndroidJniObject getOutputStream();
@@ -39,7 +38,6 @@ namespace javax::xml::transform::stream
 		void setOutputStream(java::io::OutputStream arg0);
 		void setSystemId(java::io::File arg0);
 		void setSystemId(jstring arg0);
-		void setSystemId(const QString &arg0);
 		void setWriter(java::io::Writer arg0);
 	};
 } // namespace javax::xml::transform::stream

@@ -61,7 +61,7 @@ namespace android::graphics::drawable
 		
 		AdaptiveIconDrawable(QAndroidJniObject obj);
 		// Constructors
-		AdaptiveIconDrawable(android::graphics::drawable::Drawable &arg0, android::graphics::drawable::Drawable &arg1);
+		AdaptiveIconDrawable(android::graphics::drawable::Drawable arg0, android::graphics::drawable::Drawable arg1);
 		AdaptiveIconDrawable() = default;
 		
 		// Methods

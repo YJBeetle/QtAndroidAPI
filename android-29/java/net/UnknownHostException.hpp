@@ -15,8 +15,7 @@ namespace java::net
 		UnknownHostException(QAndroidJniObject obj);
 		// Constructors
 		UnknownHostException();
-		UnknownHostException(jstring &arg0);
-		UnknownHostException(const QString &arg0);
+		UnknownHostException(jstring arg0);
 		
 		// Methods
 	};

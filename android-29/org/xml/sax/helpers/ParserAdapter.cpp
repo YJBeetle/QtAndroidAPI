@@ -17,7 +17,7 @@ namespace org::xml::sax::helpers
 			"()V"
 		);
 	}
-	ParserAdapter::ParserAdapter(__JniBaseClass &arg0)
+	ParserAdapter::ParserAdapter(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"org.xml.sax.helpers.ParserAdapter",
@@ -50,14 +50,6 @@ namespace org::xml::sax::helpers
 			"endElement",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void ParserAdapter::endElement(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"endElement",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject ParserAdapter::getContentHandler()
@@ -96,28 +88,12 @@ namespace org::xml::sax::helpers
 			arg0
 		);
 	}
-	jboolean ParserAdapter::getFeature(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"getFeature",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jobject ParserAdapter::getProperty(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getProperty",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
 			arg0
-		).object<jobject>();
-	}
-	jobject ParserAdapter::getProperty(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getProperty",
-			"(Ljava/lang/String;)Ljava/lang/Object;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jobject>();
 	}
 	void ParserAdapter::ignorableWhitespace(jcharArray arg0, jint arg1, jint arg2)
@@ -138,14 +114,6 @@ namespace org::xml::sax::helpers
 			arg0
 		);
 	}
-	void ParserAdapter::parse(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"parse",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void ParserAdapter::parse(org::xml::sax::InputSource arg0)
 	{
 		__thiz.callMethod<void>(
@@ -161,15 +129,6 @@ namespace org::xml::sax::helpers
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	void ParserAdapter::processingInstruction(const QString &arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"processingInstruction",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void ParserAdapter::setContentHandler(__JniBaseClass arg0)
@@ -221,30 +180,12 @@ namespace org::xml::sax::helpers
 			arg1
 		);
 	}
-	void ParserAdapter::setFeature(const QString &arg0, jboolean arg1)
-	{
-		__thiz.callMethod<void>(
-			"setFeature",
-			"(Ljava/lang/String;Z)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	void ParserAdapter::setProperty(jstring arg0, jobject arg1)
 	{
 		__thiz.callMethod<void>(
 			"setProperty",
 			"(Ljava/lang/String;Ljava/lang/Object;)V",
 			arg0,
-			arg1
-		);
-	}
-	void ParserAdapter::setProperty(const QString &arg0, jobject arg1)
-	{
-		__thiz.callMethod<void>(
-			"setProperty",
-			"(Ljava/lang/String;Ljava/lang/Object;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -261,15 +202,6 @@ namespace org::xml::sax::helpers
 			"startElement",
 			"(Ljava/lang/String;Lorg/xml/sax/AttributeList;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void ParserAdapter::startElement(const QString &arg0, __JniBaseClass arg1)
-	{
-		__thiz.callMethod<void>(
-			"startElement",
-			"(Ljava/lang/String;Lorg/xml/sax/AttributeList;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

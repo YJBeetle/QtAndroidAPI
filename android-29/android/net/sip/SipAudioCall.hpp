@@ -32,13 +32,12 @@ namespace android::net::sip
 		
 		SipAudioCall(QAndroidJniObject obj);
 		// Constructors
-		SipAudioCall(android::content::Context &arg0, android::net::sip::SipProfile &arg1);
+		SipAudioCall(android::content::Context arg0, android::net::sip::SipProfile arg1);
 		SipAudioCall() = default;
 		
 		// Methods
 		void answerCall(jint arg0);
 		void attachCall(android::net::sip::SipSession arg0, jstring arg1);
-		void attachCall(android::net::sip::SipSession arg0, const QString &arg1);
 		void close();
 		void continueCall(jint arg0);
 		void endCall();

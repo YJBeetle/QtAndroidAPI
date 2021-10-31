@@ -96,9 +96,7 @@ namespace android::icu::util
 		static QAndroidJniObject getInstance(android::icu::util::TimeZone arg0, android::icu::util::ULocale arg1);
 		static QAndroidJniObject getInstance(android::icu::util::TimeZone arg0, java::util::Locale arg1);
 		static jarray getKeywordValuesForLocale(jstring arg0, android::icu::util::ULocale arg1, jboolean arg2);
-		static jarray getKeywordValuesForLocale(const QString &arg0, android::icu::util::ULocale arg1, jboolean arg2);
 		static QAndroidJniObject getWeekDataForRegion(jstring arg0);
-		static QAndroidJniObject getWeekDataForRegion(const QString &arg0);
 		void add(jint arg0, jint arg1);
 		jboolean after(jobject arg0);
 		jboolean before(jobject arg0);

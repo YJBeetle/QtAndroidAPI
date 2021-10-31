@@ -41,15 +41,6 @@ namespace android::icu::util
 			arg0
 		);
 	}
-	QAndroidJniObject TimeZone_SystemTimeZoneType::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.util.TimeZone$SystemTimeZoneType",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/icu/util/TimeZone$SystemTimeZoneType;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray TimeZone_SystemTimeZoneType::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

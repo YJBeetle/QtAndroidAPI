@@ -97,7 +97,7 @@ namespace android::bluetooth
 	
 	BluetoothGattDescriptor::BluetoothGattDescriptor(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	BluetoothGattDescriptor::BluetoothGattDescriptor(java::util::UUID &arg0, jint &arg1)
+	BluetoothGattDescriptor::BluetoothGattDescriptor(java::util::UUID arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.bluetooth.BluetoothGattDescriptor",

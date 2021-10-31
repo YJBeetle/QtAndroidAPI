@@ -49,15 +49,6 @@ namespace android::graphics
 			arg0
 		);
 	}
-	QAndroidJniObject ColorSpace_RenderIntent::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.ColorSpace$RenderIntent",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/graphics/ColorSpace$RenderIntent;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray ColorSpace_RenderIntent::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

@@ -15,8 +15,7 @@ namespace java::io
 		CharConversionException(QAndroidJniObject obj);
 		// Constructors
 		CharConversionException();
-		CharConversionException(jstring &arg0);
-		CharConversionException(const QString &arg0);
+		CharConversionException(jstring arg0);
 		
 		// Methods
 	};

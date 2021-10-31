@@ -332,7 +332,6 @@ namespace android::opengl
 		static void glActiveTexture(jint arg0);
 		static void glAttachShader(jint arg0, jint arg1);
 		static void glBindAttribLocation(jint arg0, jint arg1, jstring arg2);
-		static void glBindAttribLocation(jint arg0, jint arg1, const QString &arg2);
 		static void glBindBuffer(jint arg0, jint arg1);
 		static void glBindFramebuffer(jint arg0, jint arg1);
 		static void glBindRenderbuffer(jint arg0, jint arg1);
@@ -402,7 +401,6 @@ namespace android::opengl
 		static void glGetAttachedShaders(jint arg0, jint arg1, java::nio::IntBuffer arg2, java::nio::IntBuffer arg3);
 		static void glGetAttachedShaders(jint arg0, jint arg1, jintArray arg2, jint arg3, jintArray arg4, jint arg5);
 		static jint glGetAttribLocation(jint arg0, jstring arg1);
-		static jint glGetAttribLocation(jint arg0, const QString &arg1);
 		static void glGetBooleanv(jint arg0, java::nio::IntBuffer arg1);
 		static void glGetBooleanv(jint arg0, jbooleanArray arg1, jint arg2);
 		static void glGetBufferParameteriv(jint arg0, jint arg1, java::nio::IntBuffer arg2);
@@ -432,7 +430,6 @@ namespace android::opengl
 		static void glGetTexParameteriv(jint arg0, jint arg1, java::nio::IntBuffer arg2);
 		static void glGetTexParameteriv(jint arg0, jint arg1, jintArray arg2, jint arg3);
 		static jint glGetUniformLocation(jint arg0, jstring arg1);
-		static jint glGetUniformLocation(jint arg0, const QString &arg1);
 		static void glGetUniformfv(jint arg0, jint arg1, java::nio::FloatBuffer arg2);
 		static void glGetUniformfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3);
 		static void glGetUniformiv(jint arg0, jint arg1, java::nio::IntBuffer arg2);
@@ -461,7 +458,6 @@ namespace android::opengl
 		static void glShaderBinary(jint arg0, java::nio::IntBuffer arg1, jint arg2, java::nio::Buffer arg3, jint arg4);
 		static void glShaderBinary(jint arg0, jintArray arg1, jint arg2, jint arg3, java::nio::Buffer arg4, jint arg5);
 		static void glShaderSource(jint arg0, jstring arg1);
-		static void glShaderSource(jint arg0, const QString &arg1);
 		static void glStencilFunc(jint arg0, jint arg1, jint arg2);
 		static void glStencilFuncSeparate(jint arg0, jint arg1, jint arg2, jint arg3);
 		static void glStencilMask(jint arg0);

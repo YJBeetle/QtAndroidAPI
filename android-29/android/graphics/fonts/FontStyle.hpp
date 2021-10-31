@@ -26,7 +26,7 @@ namespace android::graphics::fonts
 		FontStyle(QAndroidJniObject obj);
 		// Constructors
 		FontStyle();
-		FontStyle(jint &arg0, jint &arg1);
+		FontStyle(jint arg0, jint arg1);
 		
 		// Methods
 		jboolean equals(jobject arg0);

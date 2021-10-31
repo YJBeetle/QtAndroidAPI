@@ -38,7 +38,6 @@ namespace android::icu::text
 		void setOffset(jint arg0);
 		void setText(android::icu::text::UCharacterIterator arg0);
 		void setText(jstring arg0);
-		void setText(const QString &arg0);
 		void setText(__JniBaseClass arg0);
 	};
 } // namespace android::icu::text

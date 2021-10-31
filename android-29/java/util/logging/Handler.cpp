@@ -87,14 +87,6 @@ namespace java::util::logging
 			arg0
 		);
 	}
-	void Handler::setEncoding(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setEncoding",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void Handler::setErrorManager(java::util::logging::ErrorManager arg0)
 	{
 		__thiz.callMethod<void>(

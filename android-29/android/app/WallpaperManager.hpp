@@ -100,7 +100,6 @@ namespace android::app
 		QAndroidJniObject peekFastDrawable();
 		void removeOnColorsChangedListener(__JniBaseClass arg0);
 		void sendWallpaperCommand(__JniBaseClass arg0, jstring arg1, jint arg2, jint arg3, jint arg4, android::os::Bundle arg5);
-		void sendWallpaperCommand(__JniBaseClass arg0, const QString &arg1, jint arg2, jint arg3, jint arg4, android::os::Bundle arg5);
 		jint setBitmap(android::graphics::Bitmap arg0, android::graphics::Rect arg1, jboolean arg2);
 		jint setBitmap(android::graphics::Bitmap arg0, android::graphics::Rect arg1, jboolean arg2, jint arg3);
 		void setBitmap(android::graphics::Bitmap arg0);

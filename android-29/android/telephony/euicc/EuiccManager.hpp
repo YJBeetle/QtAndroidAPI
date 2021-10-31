@@ -56,7 +56,6 @@ namespace android::telephony::euicc
 		void startResolutionActivity(android::app::Activity arg0, jint arg1, android::content::Intent arg2, android::app::PendingIntent arg3);
 		void switchToSubscription(jint arg0, android::app::PendingIntent arg1);
 		void updateSubscriptionNickname(jint arg0, jstring arg1, android::app::PendingIntent arg2);
-		void updateSubscriptionNickname(jint arg0, const QString &arg1, android::app::PendingIntent arg2);
 	};
 } // namespace android::telephony::euicc
 

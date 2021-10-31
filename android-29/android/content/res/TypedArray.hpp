@@ -52,7 +52,6 @@ namespace android::content::res
 		jint getInteger(jint arg0, jint arg1);
 		jint getLayoutDimension(jint arg0, jint arg1);
 		jint getLayoutDimension(jint arg0, jstring arg1);
-		jint getLayoutDimension(jint arg0, const QString &arg1);
 		jstring getNonResourceString(jint arg0);
 		jstring getPositionDescription();
 		jint getResourceId(jint arg0, jint arg1);

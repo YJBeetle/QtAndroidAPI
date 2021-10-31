@@ -13,20 +13,12 @@ namespace javax::security::auth
 			"()V"
 		);
 	}
-	DestroyFailedException::DestroyFailedException(jstring &arg0)
+	DestroyFailedException::DestroyFailedException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.security.auth.DestroyFailedException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	DestroyFailedException::DestroyFailedException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.security.auth.DestroyFailedException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

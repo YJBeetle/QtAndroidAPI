@@ -24,9 +24,7 @@ namespace android::net::sip
 		
 		// Methods
 		void answerCall(jstring arg0, jint arg1);
-		void answerCall(const QString &arg0, jint arg1);
 		void changeCall(jstring arg0, jint arg1);
-		void changeCall(const QString &arg0, jint arg1);
 		void endCall();
 		jstring getCallId();
 		jstring getLocalIp();
@@ -35,7 +33,6 @@ namespace android::net::sip
 		jint getState();
 		jboolean isInCall();
 		void makeCall(android::net::sip::SipProfile arg0, jstring arg1, jint arg2);
-		void makeCall(android::net::sip::SipProfile arg0, const QString &arg1, jint arg2);
 		void _register(jint arg0);
 		void setListener(android::net::sip::SipSession_Listener arg0);
 		void unregister();

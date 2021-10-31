@@ -12,8 +12,8 @@ namespace javax::crypto::spec
 		
 		PBEParameterSpec(QAndroidJniObject obj);
 		// Constructors
-		PBEParameterSpec(jbyteArray &arg0, jint &arg1);
-		PBEParameterSpec(jbyteArray &arg0, jint &arg1, __JniBaseClass &arg2);
+		PBEParameterSpec(jbyteArray arg0, jint arg1);
+		PBEParameterSpec(jbyteArray arg0, jint arg1, __JniBaseClass arg2);
 		PBEParameterSpec() = default;
 		
 		// Methods

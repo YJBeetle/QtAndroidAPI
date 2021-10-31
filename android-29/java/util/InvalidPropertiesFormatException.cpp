@@ -8,7 +8,7 @@ namespace java::util
 	
 	InvalidPropertiesFormatException::InvalidPropertiesFormatException(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	InvalidPropertiesFormatException::InvalidPropertiesFormatException(jstring &arg0)
+	InvalidPropertiesFormatException::InvalidPropertiesFormatException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.InvalidPropertiesFormatException",
@@ -16,15 +16,7 @@ namespace java::util
 			arg0
 		);
 	}
-	InvalidPropertiesFormatException::InvalidPropertiesFormatException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.InvalidPropertiesFormatException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	InvalidPropertiesFormatException::InvalidPropertiesFormatException(jthrowable &arg0)
+	InvalidPropertiesFormatException::InvalidPropertiesFormatException(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.InvalidPropertiesFormatException",

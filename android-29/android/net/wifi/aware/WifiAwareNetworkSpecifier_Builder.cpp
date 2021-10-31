@@ -9,7 +9,7 @@ namespace android::net::wifi::aware
 	
 	WifiAwareNetworkSpecifier_Builder::WifiAwareNetworkSpecifier_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	WifiAwareNetworkSpecifier_Builder::WifiAwareNetworkSpecifier_Builder(android::net::wifi::aware::DiscoverySession &arg0, android::net::wifi::aware::PeerHandle &arg1)
+	WifiAwareNetworkSpecifier_Builder::WifiAwareNetworkSpecifier_Builder(android::net::wifi::aware::DiscoverySession arg0, android::net::wifi::aware::PeerHandle arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.wifi.aware.WifiAwareNetworkSpecifier$Builder",
@@ -41,14 +41,6 @@ namespace android::net::wifi::aware
 			"setPskPassphrase",
 			"(Ljava/lang/String;)Landroid/net/wifi/aware/WifiAwareNetworkSpecifier$Builder;",
 			arg0
-		);
-	}
-	QAndroidJniObject WifiAwareNetworkSpecifier_Builder::setPskPassphrase(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setPskPassphrase",
-			"(Ljava/lang/String;)Landroid/net/wifi/aware/WifiAwareNetworkSpecifier$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject WifiAwareNetworkSpecifier_Builder::setTransportProtocol(jint arg0)

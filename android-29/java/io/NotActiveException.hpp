@@ -16,8 +16,7 @@ namespace java::io
 		NotActiveException(QAndroidJniObject obj);
 		// Constructors
 		NotActiveException();
-		NotActiveException(jstring &arg0);
-		NotActiveException(const QString &arg0);
+		NotActiveException(jstring arg0);
 		
 		// Methods
 	};

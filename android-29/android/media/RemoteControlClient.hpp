@@ -47,8 +47,8 @@ namespace android::media
 		
 		RemoteControlClient(QAndroidJniObject obj);
 		// Constructors
-		RemoteControlClient(android::app::PendingIntent &arg0);
-		RemoteControlClient(android::app::PendingIntent &arg0, android::os::Looper &arg1);
+		RemoteControlClient(android::app::PendingIntent arg0);
+		RemoteControlClient(android::app::PendingIntent arg0, android::os::Looper arg1);
 		RemoteControlClient() = default;
 		
 		// Methods

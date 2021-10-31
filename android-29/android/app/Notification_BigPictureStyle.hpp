@@ -26,16 +26,14 @@ namespace android::app
 		Notification_BigPictureStyle(QAndroidJniObject obj);
 		// Constructors
 		Notification_BigPictureStyle();
-		Notification_BigPictureStyle(android::app::Notification_Builder &arg0);
+		Notification_BigPictureStyle(android::app::Notification_Builder arg0);
 		
 		// Methods
 		QAndroidJniObject bigLargeIcon(android::graphics::Bitmap arg0);
 		QAndroidJniObject bigLargeIcon(android::graphics::drawable::Icon arg0);
 		QAndroidJniObject bigPicture(android::graphics::Bitmap arg0);
 		QAndroidJniObject setBigContentTitle(jstring arg0);
-		QAndroidJniObject setBigContentTitle(const QString &arg0);
 		QAndroidJniObject setSummaryText(jstring arg0);
-		QAndroidJniObject setSummaryText(const QString &arg0);
 	};
 } // namespace android::app
 

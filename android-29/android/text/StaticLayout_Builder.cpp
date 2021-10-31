@@ -25,19 +25,6 @@ namespace android::text
 			arg4
 		);
 	}
-	QAndroidJniObject StaticLayout_Builder::obtain(const QString &arg0, jint arg1, jint arg2, android::text::TextPaint arg3, jint arg4)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.text.StaticLayout$Builder",
-			"obtain",
-			"(Ljava/lang/CharSequence;IILandroid/text/TextPaint;I)Landroid/text/StaticLayout$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2,
-			arg3.__jniObject().object(),
-			arg4
-		);
-	}
 	QAndroidJniObject StaticLayout_Builder::build()
 	{
 		return __thiz.callObjectMethod(
@@ -133,14 +120,6 @@ namespace android::text
 			"setText",
 			"(Ljava/lang/CharSequence;)Landroid/text/StaticLayout$Builder;",
 			arg0
-		);
-	}
-	QAndroidJniObject StaticLayout_Builder::setText(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setText",
-			"(Ljava/lang/CharSequence;)Landroid/text/StaticLayout$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject StaticLayout_Builder::setTextDirection(__JniBaseClass arg0)

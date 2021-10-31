@@ -21,7 +21,7 @@ namespace java::security::spec
 	
 	PSSParameterSpec::PSSParameterSpec(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PSSParameterSpec::PSSParameterSpec(jint &arg0)
+	PSSParameterSpec::PSSParameterSpec(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.spec.PSSParameterSpec",
@@ -29,25 +29,13 @@ namespace java::security::spec
 			arg0
 		);
 	}
-	PSSParameterSpec::PSSParameterSpec(jstring &arg0, jstring &arg1, __JniBaseClass &arg2, jint &arg3, jint &arg4)
+	PSSParameterSpec::PSSParameterSpec(jstring arg0, jstring arg1, __JniBaseClass arg2, jint arg3, jint arg4)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.spec.PSSParameterSpec",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/security/spec/AlgorithmParameterSpec;II)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
-			arg3,
-			arg4
-		);
-	}
-	PSSParameterSpec::PSSParameterSpec(const QString &arg0, const QString &arg1, __JniBaseClass &arg2, jint &arg3, jint &arg4)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.spec.PSSParameterSpec",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/security/spec/AlgorithmParameterSpec;II)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object(),
 			arg3,
 			arg4

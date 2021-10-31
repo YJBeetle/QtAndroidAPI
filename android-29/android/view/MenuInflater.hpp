@@ -16,7 +16,7 @@ namespace android::view
 		
 		MenuInflater(QAndroidJniObject obj);
 		// Constructors
-		MenuInflater(android::content::Context &arg0);
+		MenuInflater(android::content::Context arg0);
 		MenuInflater() = default;
 		
 		// Methods

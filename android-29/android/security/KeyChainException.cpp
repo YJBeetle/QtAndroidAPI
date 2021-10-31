@@ -13,7 +13,7 @@ namespace android::security
 			"()V"
 		);
 	}
-	KeyChainException::KeyChainException(jstring &arg0)
+	KeyChainException::KeyChainException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.security.KeyChainException",
@@ -21,15 +21,7 @@ namespace android::security
 			arg0
 		);
 	}
-	KeyChainException::KeyChainException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.security.KeyChainException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	KeyChainException::KeyChainException(jthrowable &arg0)
+	KeyChainException::KeyChainException(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.security.KeyChainException",
@@ -37,21 +29,12 @@ namespace android::security
 			arg0
 		);
 	}
-	KeyChainException::KeyChainException(jstring &arg0, jthrowable &arg1)
+	KeyChainException::KeyChainException(jstring arg0, jthrowable arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.security.KeyChainException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
-			arg1
-		);
-	}
-	KeyChainException::KeyChainException(const QString &arg0, jthrowable &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.security.KeyChainException",
-			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

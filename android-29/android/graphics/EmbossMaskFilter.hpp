@@ -13,7 +13,7 @@ namespace android::graphics
 		
 		EmbossMaskFilter(QAndroidJniObject obj);
 		// Constructors
-		EmbossMaskFilter(jfloatArray &arg0, jfloat &arg1, jfloat &arg2, jfloat &arg3);
+		EmbossMaskFilter(jfloatArray arg0, jfloat arg1, jfloat arg2, jfloat arg3);
 		EmbossMaskFilter() = default;
 		
 		// Methods

@@ -7,7 +7,7 @@ namespace android::os
 	
 	HandlerThread::HandlerThread(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	HandlerThread::HandlerThread(jstring &arg0)
+	HandlerThread::HandlerThread(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.HandlerThread",
@@ -15,29 +15,12 @@ namespace android::os
 			arg0
 		);
 	}
-	HandlerThread::HandlerThread(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.os.HandlerThread",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	HandlerThread::HandlerThread(jstring &arg0, jint &arg1)
+	HandlerThread::HandlerThread(jstring arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.HandlerThread",
 			"(Ljava/lang/String;I)V",
 			arg0,
-			arg1
-		);
-	}
-	HandlerThread::HandlerThread(const QString &arg0, jint &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.os.HandlerThread",
-			"(Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

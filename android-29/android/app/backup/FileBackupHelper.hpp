@@ -28,7 +28,7 @@ namespace android::app::backup
 		
 		FileBackupHelper(QAndroidJniObject obj);
 		// Constructors
-		FileBackupHelper(android::content::Context &arg0, jarray &arg1);
+		FileBackupHelper(android::content::Context arg0, jarray arg1);
 		FileBackupHelper() = default;
 		
 		// Methods

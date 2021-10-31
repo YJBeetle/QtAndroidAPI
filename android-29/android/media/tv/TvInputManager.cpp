@@ -187,28 +187,12 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	jint TvInputManager::getInputState(const QString &arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getInputState",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject TvInputManager::getTvInputInfo(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getTvInputInfo",
 			"(Ljava/lang/String;)Landroid/media/tv/TvInputInfo;",
 			arg0
-		);
-	}
-	QAndroidJniObject TvInputManager::getTvInputInfo(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getTvInputInfo",
-			"(Ljava/lang/String;)Landroid/media/tv/TvInputInfo;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject TvInputManager::getTvInputList()

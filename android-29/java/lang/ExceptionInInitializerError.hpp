@@ -23,9 +23,8 @@ namespace java::lang
 		ExceptionInInitializerError(QAndroidJniObject obj);
 		// Constructors
 		ExceptionInInitializerError();
-		ExceptionInInitializerError(jstring &arg0);
-		ExceptionInInitializerError(const QString &arg0);
-		ExceptionInInitializerError(jthrowable &arg0);
+		ExceptionInInitializerError(jstring arg0);
+		ExceptionInInitializerError(jthrowable arg0);
 		
 		// Methods
 		jthrowable getException();

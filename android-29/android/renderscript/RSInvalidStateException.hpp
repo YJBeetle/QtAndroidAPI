@@ -15,8 +15,7 @@ namespace android::renderscript
 		
 		RSInvalidStateException(QAndroidJniObject obj);
 		// Constructors
-		RSInvalidStateException(jstring &arg0);
-		RSInvalidStateException(const QString &arg0);
+		RSInvalidStateException(jstring arg0);
 		RSInvalidStateException() = default;
 		
 		// Methods

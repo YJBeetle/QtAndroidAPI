@@ -13,7 +13,7 @@ namespace java::util
 			"()V"
 		);
 	}
-	LongSummaryStatistics::LongSummaryStatistics(jlong &arg0, jlong &arg1, jlong &arg2, jlong &arg3)
+	LongSummaryStatistics::LongSummaryStatistics(jlong arg0, jlong arg1, jlong arg2, jlong arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.LongSummaryStatistics",

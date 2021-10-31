@@ -46,9 +46,7 @@ namespace android::icu::text
 		static QAndroidJniObject getInstance(android::icu::util::ULocale arg0, android::icu::text::CompactDecimalFormat_CompactStyle arg1);
 		static QAndroidJniObject getInstance(java::util::Locale arg0, android::icu::text::CompactDecimalFormat_CompactStyle arg1);
 		QAndroidJniObject parse(jstring arg0, java::text::ParsePosition arg1);
-		QAndroidJniObject parse(const QString &arg0, java::text::ParsePosition arg1);
 		QAndroidJniObject parseCurrency(jstring arg0, java::text::ParsePosition arg1);
-		QAndroidJniObject parseCurrency(const QString &arg0, java::text::ParsePosition arg1);
 	};
 } // namespace android::icu::text
 

@@ -41,7 +41,7 @@ namespace java::io
 		
 		ObjectInputStream(QAndroidJniObject obj);
 		// Constructors
-		ObjectInputStream(java::io::InputStream &arg0);
+		ObjectInputStream(java::io::InputStream arg0);
 		ObjectInputStream() = default;
 		
 		// Methods

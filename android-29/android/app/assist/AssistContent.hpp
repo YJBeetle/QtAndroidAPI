@@ -47,7 +47,6 @@ namespace android::app::assist
 		void setClipData(android::content::ClipData arg0);
 		void setIntent(android::content::Intent arg0);
 		void setStructuredData(jstring arg0);
-		void setStructuredData(const QString &arg0);
 		void setWebUri(android::net::Uri arg0);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

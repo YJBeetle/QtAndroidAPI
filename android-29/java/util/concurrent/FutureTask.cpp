@@ -8,7 +8,7 @@ namespace java::util::concurrent
 	
 	FutureTask::FutureTask(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	FutureTask::FutureTask(__JniBaseClass &arg0)
+	FutureTask::FutureTask(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.FutureTask",
@@ -16,7 +16,7 @@ namespace java::util::concurrent
 			arg0.__jniObject().object()
 		);
 	}
-	FutureTask::FutureTask(__JniBaseClass &arg0, jobject &arg1)
+	FutureTask::FutureTask(__JniBaseClass arg0, jobject arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.FutureTask",

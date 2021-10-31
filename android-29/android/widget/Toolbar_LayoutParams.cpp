@@ -10,7 +10,7 @@ namespace android::widget
 	
 	Toolbar_LayoutParams::Toolbar_LayoutParams(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Toolbar_LayoutParams::Toolbar_LayoutParams(android::app::ActionBar_LayoutParams &arg0)
+	Toolbar_LayoutParams::Toolbar_LayoutParams(android::app::ActionBar_LayoutParams arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.Toolbar$LayoutParams",
@@ -18,7 +18,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	Toolbar_LayoutParams::Toolbar_LayoutParams(android::view::ViewGroup_LayoutParams &arg0)
+	Toolbar_LayoutParams::Toolbar_LayoutParams(android::view::ViewGroup_LayoutParams arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.Toolbar$LayoutParams",
@@ -26,7 +26,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	Toolbar_LayoutParams::Toolbar_LayoutParams(android::view::ViewGroup_MarginLayoutParams &arg0)
+	Toolbar_LayoutParams::Toolbar_LayoutParams(android::view::ViewGroup_MarginLayoutParams arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.Toolbar$LayoutParams",
@@ -42,7 +42,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	Toolbar_LayoutParams::Toolbar_LayoutParams(jint &arg0)
+	Toolbar_LayoutParams::Toolbar_LayoutParams(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.Toolbar$LayoutParams",
@@ -50,7 +50,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	Toolbar_LayoutParams::Toolbar_LayoutParams(android::content::Context &arg0, __JniBaseClass &arg1)
+	Toolbar_LayoutParams::Toolbar_LayoutParams(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.Toolbar$LayoutParams",
@@ -59,7 +59,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	Toolbar_LayoutParams::Toolbar_LayoutParams(jint &arg0, jint &arg1)
+	Toolbar_LayoutParams::Toolbar_LayoutParams(jint arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.Toolbar$LayoutParams",
@@ -68,7 +68,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	Toolbar_LayoutParams::Toolbar_LayoutParams(jint &arg0, jint &arg1, jint &arg2)
+	Toolbar_LayoutParams::Toolbar_LayoutParams(jint arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.Toolbar$LayoutParams",

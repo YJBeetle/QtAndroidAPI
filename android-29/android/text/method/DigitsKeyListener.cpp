@@ -14,7 +14,7 @@ namespace android::text::method
 			"()V"
 		);
 	}
-	DigitsKeyListener::DigitsKeyListener(java::util::Locale &arg0)
+	DigitsKeyListener::DigitsKeyListener(java::util::Locale arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.method.DigitsKeyListener",
@@ -22,7 +22,7 @@ namespace android::text::method
 			arg0.__jniObject().object()
 		);
 	}
-	DigitsKeyListener::DigitsKeyListener(jboolean &arg0, jboolean &arg1)
+	DigitsKeyListener::DigitsKeyListener(jboolean arg0, jboolean arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.method.DigitsKeyListener",
@@ -31,7 +31,7 @@ namespace android::text::method
 			arg1
 		);
 	}
-	DigitsKeyListener::DigitsKeyListener(java::util::Locale &arg0, jboolean &arg1, jboolean &arg2)
+	DigitsKeyListener::DigitsKeyListener(java::util::Locale arg0, jboolean arg1, jboolean arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.method.DigitsKeyListener",
@@ -58,15 +58,6 @@ namespace android::text::method
 			"getInstance",
 			"(Ljava/lang/String;)Landroid/text/method/DigitsKeyListener;",
 			arg0
-		);
-	}
-	QAndroidJniObject DigitsKeyListener::getInstance(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.text.method.DigitsKeyListener",
-			"getInstance",
-			"(Ljava/lang/String;)Landroid/text/method/DigitsKeyListener;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject DigitsKeyListener::getInstance(java::util::Locale arg0)
@@ -105,19 +96,6 @@ namespace android::text::method
 			"filter",
 			"(Ljava/lang/CharSequence;IILandroid/text/Spanned;II)Ljava/lang/CharSequence;",
 			arg0,
-			arg1,
-			arg2,
-			arg3.__jniObject().object(),
-			arg4,
-			arg5
-		).object<jstring>();
-	}
-	jstring DigitsKeyListener::filter(const QString &arg0, jint arg1, jint arg2, __JniBaseClass arg3, jint arg4, jint arg5)
-	{
-		return __thiz.callObjectMethod(
-			"filter",
-			"(Ljava/lang/CharSequence;IILandroid/text/Spanned;II)Ljava/lang/CharSequence;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2,
 			arg3.__jniObject().object(),

@@ -36,7 +36,7 @@ namespace android::telephony
 			"()V"
 		);
 	}
-	NeighboringCellInfo::NeighboringCellInfo(android::os::Parcel &arg0)
+	NeighboringCellInfo::NeighboringCellInfo(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.telephony.NeighboringCellInfo",
@@ -44,7 +44,7 @@ namespace android::telephony
 			arg0.__jniObject().object()
 		);
 	}
-	NeighboringCellInfo::NeighboringCellInfo(jint &arg0, jint &arg1)
+	NeighboringCellInfo::NeighboringCellInfo(jint arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.telephony.NeighboringCellInfo",
@@ -53,23 +53,13 @@ namespace android::telephony
 			arg1
 		);
 	}
-	NeighboringCellInfo::NeighboringCellInfo(jint &arg0, jstring &arg1, jint &arg2)
+	NeighboringCellInfo::NeighboringCellInfo(jint arg0, jstring arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.telephony.NeighboringCellInfo",
 			"(ILjava/lang/String;I)V",
 			arg0,
 			arg1,
-			arg2
-		);
-	}
-	NeighboringCellInfo::NeighboringCellInfo(jint &arg0, const QString &arg1, jint &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.telephony.NeighboringCellInfo",
-			"(ILjava/lang/String;I)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}

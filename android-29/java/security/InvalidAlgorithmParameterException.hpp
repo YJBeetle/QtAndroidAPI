@@ -15,11 +15,9 @@ namespace java::security
 		InvalidAlgorithmParameterException(QAndroidJniObject obj);
 		// Constructors
 		InvalidAlgorithmParameterException();
-		InvalidAlgorithmParameterException(jstring &arg0);
-		InvalidAlgorithmParameterException(const QString &arg0);
-		InvalidAlgorithmParameterException(jthrowable &arg0);
-		InvalidAlgorithmParameterException(jstring &arg0, jthrowable &arg1);
-		InvalidAlgorithmParameterException(const QString &arg0, jthrowable &arg1);
+		InvalidAlgorithmParameterException(jstring arg0);
+		InvalidAlgorithmParameterException(jthrowable arg0);
+		InvalidAlgorithmParameterException(jstring arg0, jthrowable arg1);
 		
 		// Methods
 	};

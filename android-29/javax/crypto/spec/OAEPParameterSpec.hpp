@@ -17,8 +17,7 @@ namespace javax::crypto::spec
 		
 		OAEPParameterSpec(QAndroidJniObject obj);
 		// Constructors
-		OAEPParameterSpec(jstring &arg0, jstring &arg1, __JniBaseClass &arg2, javax::crypto::spec::PSource &arg3);
-		OAEPParameterSpec(const QString &arg0, const QString &arg1, __JniBaseClass &arg2, javax::crypto::spec::PSource &arg3);
+		OAEPParameterSpec(jstring arg0, jstring arg1, __JniBaseClass arg2, javax::crypto::spec::PSource arg3);
 		OAEPParameterSpec() = default;
 		
 		// Methods

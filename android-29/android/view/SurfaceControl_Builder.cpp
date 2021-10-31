@@ -48,14 +48,6 @@ namespace android::view
 			arg0
 		);
 	}
-	QAndroidJniObject SurfaceControl_Builder::setName(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setName",
-			"(Ljava/lang/String;)Landroid/view/SurfaceControl$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject SurfaceControl_Builder::setOpaque(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(

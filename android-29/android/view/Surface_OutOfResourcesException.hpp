@@ -15,8 +15,7 @@ namespace android::view
 		Surface_OutOfResourcesException(QAndroidJniObject obj);
 		// Constructors
 		Surface_OutOfResourcesException();
-		Surface_OutOfResourcesException(jstring &arg0);
-		Surface_OutOfResourcesException(const QString &arg0);
+		Surface_OutOfResourcesException(jstring arg0);
 		
 		// Methods
 	};

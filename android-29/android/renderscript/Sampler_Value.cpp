@@ -73,15 +73,6 @@ namespace android::renderscript
 			arg0
 		);
 	}
-	QAndroidJniObject Sampler_Value::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.renderscript.Sampler$Value",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/renderscript/Sampler$Value;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray Sampler_Value::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

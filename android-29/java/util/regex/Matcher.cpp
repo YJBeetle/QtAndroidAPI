@@ -20,15 +20,6 @@ namespace java::util::regex
 			arg0
 		).object<jstring>();
 	}
-	jstring Matcher::quoteReplacement(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.util.regex.Matcher",
-			"quoteReplacement",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
 	QAndroidJniObject Matcher::appendReplacement(java::lang::StringBuffer arg0, jstring arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -38,15 +29,6 @@ namespace java::util::regex
 			arg1
 		);
 	}
-	QAndroidJniObject Matcher::appendReplacement(java::lang::StringBuffer arg0, const QString &arg1)
-	{
-		return __thiz.callObjectMethod(
-			"appendReplacement",
-			"(Ljava/lang/StringBuffer;Ljava/lang/String;)Ljava/util/regex/Matcher;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	QAndroidJniObject Matcher::appendReplacement(java::lang::StringBuilder arg0, jstring arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -54,15 +36,6 @@ namespace java::util::regex
 			"(Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/util/regex/Matcher;",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	QAndroidJniObject Matcher::appendReplacement(java::lang::StringBuilder arg0, const QString &arg1)
-	{
-		return __thiz.callObjectMethod(
-			"appendReplacement",
-			"(Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/util/regex/Matcher;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	QAndroidJniObject Matcher::appendTail(java::lang::StringBuffer arg0)
@@ -104,14 +77,6 @@ namespace java::util::regex
 			arg0
 		);
 	}
-	jint Matcher::end(const QString &arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"end",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jboolean Matcher::find()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -148,14 +113,6 @@ namespace java::util::regex
 			"group",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
-	}
-	jstring Matcher::group(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"group",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	jint Matcher::groupCount()
@@ -238,14 +195,6 @@ namespace java::util::regex
 			arg0
 		).object<jstring>();
 	}
-	jstring Matcher::replaceAll(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"replaceAll",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
 	jstring Matcher::replaceAll(__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -260,14 +209,6 @@ namespace java::util::regex
 			"replaceFirst",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
-	}
-	jstring Matcher::replaceFirst(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"replaceFirst",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	jstring Matcher::replaceFirst(__JniBaseClass arg0)
@@ -300,14 +241,6 @@ namespace java::util::regex
 			arg0
 		);
 	}
-	QAndroidJniObject Matcher::reset(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"reset",
-			"(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Matcher::results()
 	{
 		return __thiz.callObjectMethod(
@@ -336,14 +269,6 @@ namespace java::util::regex
 			"start",
 			"(Ljava/lang/String;)I",
 			arg0
-		);
-	}
-	jint Matcher::start(const QString &arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"start",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Matcher::toMatchResult()

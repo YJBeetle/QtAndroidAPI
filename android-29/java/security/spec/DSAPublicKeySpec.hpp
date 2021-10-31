@@ -16,7 +16,7 @@ namespace java::security::spec
 		
 		DSAPublicKeySpec(QAndroidJniObject obj);
 		// Constructors
-		DSAPublicKeySpec(java::math::BigInteger &arg0, java::math::BigInteger &arg1, java::math::BigInteger &arg2, java::math::BigInteger &arg3);
+		DSAPublicKeySpec(java::math::BigInteger arg0, java::math::BigInteger arg1, java::math::BigInteger arg2, java::math::BigInteger arg3);
 		DSAPublicKeySpec() = default;
 		
 		// Methods

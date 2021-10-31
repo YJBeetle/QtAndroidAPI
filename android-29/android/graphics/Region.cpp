@@ -25,7 +25,7 @@ namespace android::graphics
 			"()V"
 		);
 	}
-	Region::Region(android::graphics::Rect &arg0)
+	Region::Region(android::graphics::Rect arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.Region",
@@ -41,7 +41,7 @@ namespace android::graphics
 			arg0.__jniObject().object()
 		);
 	}
-	Region::Region(jint &arg0, jint &arg1, jint &arg2, jint &arg3)
+	Region::Region(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.Region",

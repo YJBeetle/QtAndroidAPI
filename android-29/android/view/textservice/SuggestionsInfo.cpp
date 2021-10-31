@@ -36,7 +36,7 @@ namespace android::view::textservice
 	
 	SuggestionsInfo::SuggestionsInfo(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SuggestionsInfo::SuggestionsInfo(android::os::Parcel &arg0)
+	SuggestionsInfo::SuggestionsInfo(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.textservice.SuggestionsInfo",
@@ -44,7 +44,7 @@ namespace android::view::textservice
 			arg0.__jniObject().object()
 		);
 	}
-	SuggestionsInfo::SuggestionsInfo(jint &arg0, jarray &arg1)
+	SuggestionsInfo::SuggestionsInfo(jint arg0, jarray arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.textservice.SuggestionsInfo",
@@ -53,7 +53,7 @@ namespace android::view::textservice
 			arg1
 		);
 	}
-	SuggestionsInfo::SuggestionsInfo(jint &arg0, jarray &arg1, jint &arg2, jint &arg3)
+	SuggestionsInfo::SuggestionsInfo(jint arg0, jarray arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.textservice.SuggestionsInfo",

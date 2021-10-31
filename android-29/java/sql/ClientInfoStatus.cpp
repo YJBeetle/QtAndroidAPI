@@ -49,15 +49,6 @@ namespace java::sql
 			arg0
 		);
 	}
-	QAndroidJniObject ClientInfoStatus::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.sql.ClientInfoStatus",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/sql/ClientInfoStatus;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray ClientInfoStatus::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

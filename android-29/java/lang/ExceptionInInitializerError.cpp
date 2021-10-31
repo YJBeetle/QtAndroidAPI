@@ -15,7 +15,7 @@ namespace java::lang
 			"()V"
 		);
 	}
-	ExceptionInInitializerError::ExceptionInInitializerError(jstring &arg0)
+	ExceptionInInitializerError::ExceptionInInitializerError(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.ExceptionInInitializerError",
@@ -23,15 +23,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	ExceptionInInitializerError::ExceptionInInitializerError(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.ExceptionInInitializerError",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	ExceptionInInitializerError::ExceptionInInitializerError(jthrowable &arg0)
+	ExceptionInInitializerError::ExceptionInInitializerError(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.ExceptionInInitializerError",

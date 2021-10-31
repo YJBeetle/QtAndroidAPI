@@ -15,11 +15,9 @@ namespace java::security::spec
 		InvalidKeySpecException(QAndroidJniObject obj);
 		// Constructors
 		InvalidKeySpecException();
-		InvalidKeySpecException(jstring &arg0);
-		InvalidKeySpecException(const QString &arg0);
-		InvalidKeySpecException(jthrowable &arg0);
-		InvalidKeySpecException(jstring &arg0, jthrowable &arg1);
-		InvalidKeySpecException(const QString &arg0, jthrowable &arg1);
+		InvalidKeySpecException(jstring arg0);
+		InvalidKeySpecException(jthrowable arg0);
+		InvalidKeySpecException(jstring arg0, jthrowable arg1);
 		
 		// Methods
 	};

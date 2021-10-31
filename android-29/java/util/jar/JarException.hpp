@@ -16,8 +16,7 @@ namespace java::util::jar
 		JarException(QAndroidJniObject obj);
 		// Constructors
 		JarException();
-		JarException(jstring &arg0);
-		JarException(const QString &arg0);
+		JarException(jstring arg0);
 		
 		// Methods
 	};

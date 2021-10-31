@@ -6,7 +6,7 @@ namespace java::util
 	
 	IllegalFormatCodePointException::IllegalFormatCodePointException(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	IllegalFormatCodePointException::IllegalFormatCodePointException(jint &arg0)
+	IllegalFormatCodePointException::IllegalFormatCodePointException(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.IllegalFormatCodePointException",

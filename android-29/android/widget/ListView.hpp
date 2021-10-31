@@ -48,10 +48,10 @@ namespace android::widget
 		
 		ListView(QAndroidJniObject obj);
 		// Constructors
-		ListView(android::content::Context &arg0);
-		ListView(android::content::Context &arg0, __JniBaseClass &arg1);
-		ListView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		ListView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		ListView(android::content::Context arg0);
+		ListView(android::content::Context arg0, __JniBaseClass arg1);
+		ListView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		ListView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		ListView() = default;
 		
 		// Methods

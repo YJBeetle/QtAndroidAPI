@@ -21,7 +21,6 @@ namespace javax::net::ssl
 		// Methods
 		jstring chooseEngineClientAlias(jarray arg0, jarray arg1, javax::net::ssl::SSLEngine arg2);
 		jstring chooseEngineServerAlias(jstring arg0, jarray arg1, javax::net::ssl::SSLEngine arg2);
-		jstring chooseEngineServerAlias(const QString &arg0, jarray arg1, javax::net::ssl::SSLEngine arg2);
 	};
 } // namespace javax::net::ssl
 

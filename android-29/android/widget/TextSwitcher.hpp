@@ -29,17 +29,15 @@ namespace android::widget
 		
 		TextSwitcher(QAndroidJniObject obj);
 		// Constructors
-		TextSwitcher(android::content::Context &arg0);
-		TextSwitcher(android::content::Context &arg0, __JniBaseClass &arg1);
+		TextSwitcher(android::content::Context arg0);
+		TextSwitcher(android::content::Context arg0, __JniBaseClass arg1);
 		TextSwitcher() = default;
 		
 		// Methods
 		void addView(android::view::View arg0, jint arg1, android::view::ViewGroup_LayoutParams arg2);
 		jstring getAccessibilityClassName();
 		void setCurrentText(jstring arg0);
-		void setCurrentText(const QString &arg0);
 		void setText(jstring arg0);
-		void setText(const QString &arg0);
 	};
 } // namespace android::widget
 

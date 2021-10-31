@@ -84,14 +84,6 @@ namespace android::net::wifi::hotspot2::pps
 			arg0
 		);
 	}
-	void Credential_SimCredential::setImsi(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setImsi",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jstring Credential_SimCredential::toString()
 	{
 		return __thiz.callObjectMethod(

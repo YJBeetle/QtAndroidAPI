@@ -79,17 +79,6 @@ namespace android::net::rtp
 			arg2
 		);
 	}
-	QAndroidJniObject AudioCodec::getCodec(jint arg0, const QString &arg1, const QString &arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.net.rtp.AudioCodec",
-			"getCodec",
-			"(ILjava/lang/String;Ljava/lang/String;)Landroid/net/rtp/AudioCodec;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	jarray AudioCodec::getCodecs()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

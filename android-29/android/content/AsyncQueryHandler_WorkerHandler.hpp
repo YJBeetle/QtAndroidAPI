@@ -25,7 +25,7 @@ namespace android::content
 		
 		AsyncQueryHandler_WorkerHandler(QAndroidJniObject obj);
 		// Constructors
-		AsyncQueryHandler_WorkerHandler(android::content::AsyncQueryHandler &arg0, android::os::Looper &arg1);
+		AsyncQueryHandler_WorkerHandler(android::content::AsyncQueryHandler arg0, android::os::Looper arg1);
 		AsyncQueryHandler_WorkerHandler() = default;
 		
 		// Methods

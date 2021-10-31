@@ -7,7 +7,7 @@ namespace javax::net::ssl
 	
 	HandshakeCompletedEvent::HandshakeCompletedEvent(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	HandshakeCompletedEvent::HandshakeCompletedEvent(javax::net::ssl::SSLSocket &arg0, __JniBaseClass &arg1)
+	HandshakeCompletedEvent::HandshakeCompletedEvent(javax::net::ssl::SSLSocket arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.net.ssl.HandshakeCompletedEvent",

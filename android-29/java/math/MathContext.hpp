@@ -24,10 +24,9 @@ namespace java::math
 		
 		MathContext(QAndroidJniObject obj);
 		// Constructors
-		MathContext(jint &arg0);
-		MathContext(jstring &arg0);
-		MathContext(const QString &arg0);
-		MathContext(jint &arg0, java::math::RoundingMode &arg1);
+		MathContext(jint arg0);
+		MathContext(jstring arg0);
+		MathContext(jint arg0, java::math::RoundingMode arg1);
 		MathContext() = default;
 		
 		// Methods

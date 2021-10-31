@@ -49,15 +49,6 @@ namespace android::text::method
 			arg0
 		);
 	}
-	QAndroidJniObject TextKeyListener_Capitalize::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.text.method.TextKeyListener$Capitalize",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/text/method/TextKeyListener$Capitalize;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray TextKeyListener_Capitalize::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

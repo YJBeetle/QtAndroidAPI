@@ -22,7 +22,7 @@ namespace java::util
 		TreeMap(QAndroidJniObject obj);
 		// Constructors
 		TreeMap();
-		TreeMap(__JniBaseClass &arg0);
+		TreeMap(__JniBaseClass arg0);
 		
 		// Methods
 		QAndroidJniObject ceilingEntry(jobject arg0);

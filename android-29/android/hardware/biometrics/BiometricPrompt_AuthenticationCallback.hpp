@@ -20,10 +20,8 @@ namespace android::hardware::biometrics
 		
 		// Methods
 		void onAuthenticationError(jint arg0, jstring arg1);
-		void onAuthenticationError(jint arg0, const QString &arg1);
 		void onAuthenticationFailed();
 		void onAuthenticationHelp(jint arg0, jstring arg1);
-		void onAuthenticationHelp(jint arg0, const QString &arg1);
 		void onAuthenticationSucceeded(android::hardware::biometrics::BiometricPrompt_AuthenticationResult arg0);
 	};
 } // namespace android::hardware::biometrics

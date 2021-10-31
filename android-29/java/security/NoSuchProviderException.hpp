@@ -15,8 +15,7 @@ namespace java::security
 		NoSuchProviderException(QAndroidJniObject obj);
 		// Constructors
 		NoSuchProviderException();
-		NoSuchProviderException(jstring &arg0);
-		NoSuchProviderException(const QString &arg0);
+		NoSuchProviderException(jstring arg0);
 		
 		// Methods
 	};

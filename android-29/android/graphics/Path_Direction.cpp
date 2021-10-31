@@ -33,15 +33,6 @@ namespace android::graphics
 			arg0
 		);
 	}
-	QAndroidJniObject Path_Direction::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.Path$Direction",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/graphics/Path$Direction;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray Path_Direction::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

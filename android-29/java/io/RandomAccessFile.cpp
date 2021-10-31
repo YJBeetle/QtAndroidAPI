@@ -9,7 +9,7 @@ namespace java::io
 	
 	RandomAccessFile::RandomAccessFile(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	RandomAccessFile::RandomAccessFile(java::io::File &arg0, jstring &arg1)
+	RandomAccessFile::RandomAccessFile(java::io::File arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.RandomAccessFile",
@@ -18,31 +18,13 @@ namespace java::io
 			arg1
 		);
 	}
-	RandomAccessFile::RandomAccessFile(java::io::File &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.io.RandomAccessFile",
-			"(Ljava/io/File;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	RandomAccessFile::RandomAccessFile(jstring &arg0, jstring &arg1)
+	RandomAccessFile::RandomAccessFile(jstring arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.RandomAccessFile",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	RandomAccessFile::RandomAccessFile(const QString &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.io.RandomAccessFile",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	
@@ -283,14 +265,6 @@ namespace java::io
 			arg0
 		);
 	}
-	void RandomAccessFile::writeBytes(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"writeBytes",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void RandomAccessFile::writeChar(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -305,14 +279,6 @@ namespace java::io
 			"writeChars",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void RandomAccessFile::writeChars(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"writeChars",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void RandomAccessFile::writeDouble(jdouble arg0)
@@ -361,14 +327,6 @@ namespace java::io
 			"writeUTF",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void RandomAccessFile::writeUTF(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"writeUTF",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace java::io

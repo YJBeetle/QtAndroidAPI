@@ -15,7 +15,7 @@ namespace android::widget
 	
 	VideoView::VideoView(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	VideoView::VideoView(android::content::Context &arg0)
+	VideoView::VideoView(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.VideoView",
@@ -23,7 +23,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	VideoView::VideoView(android::content::Context &arg0, __JniBaseClass &arg1)
+	VideoView::VideoView(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.VideoView",
@@ -32,7 +32,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	VideoView::VideoView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	VideoView::VideoView(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.VideoView",
@@ -42,7 +42,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	VideoView::VideoView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	VideoView::VideoView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.VideoView",
@@ -253,14 +253,6 @@ namespace android::widget
 			"setVideoPath",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void VideoView::setVideoPath(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setVideoPath",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void VideoView::setVideoURI(android::net::Uri arg0)

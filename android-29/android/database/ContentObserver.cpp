@@ -8,7 +8,7 @@ namespace android::database
 	
 	ContentObserver::ContentObserver(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ContentObserver::ContentObserver(android::os::Handler &arg0)
+	ContentObserver::ContentObserver(android::os::Handler arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.database.ContentObserver",

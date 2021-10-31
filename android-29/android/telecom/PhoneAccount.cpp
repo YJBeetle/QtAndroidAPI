@@ -180,16 +180,6 @@ namespace android::telecom
 			arg1
 		);
 	}
-	QAndroidJniObject PhoneAccount::builder(android::telecom::PhoneAccountHandle arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.telecom.PhoneAccount",
-			"builder",
-			"(Landroid/telecom/PhoneAccountHandle;Ljava/lang/CharSequence;)Landroid/telecom/PhoneAccount$Builder;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	jint PhoneAccount::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -303,14 +293,6 @@ namespace android::telecom
 			"supportsUriScheme",
 			"(Ljava/lang/String;)Z",
 			arg0
-		);
-	}
-	jboolean PhoneAccount::supportsUriScheme(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"supportsUriScheme",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject PhoneAccount::toBuilder()

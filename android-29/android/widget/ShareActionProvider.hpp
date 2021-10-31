@@ -26,7 +26,7 @@ namespace android::widget
 		
 		ShareActionProvider(QAndroidJniObject obj);
 		// Constructors
-		ShareActionProvider(android::content::Context &arg0);
+		ShareActionProvider(android::content::Context arg0);
 		ShareActionProvider() = default;
 		
 		// Methods
@@ -35,7 +35,6 @@ namespace android::widget
 		void onPrepareSubMenu(__JniBaseClass arg0);
 		void setOnShareTargetSelectedListener(__JniBaseClass arg0);
 		void setShareHistoryFileName(jstring arg0);
-		void setShareHistoryFileName(const QString &arg0);
 		void setShareIntent(android::content::Intent arg0);
 	};
 } // namespace android::widget

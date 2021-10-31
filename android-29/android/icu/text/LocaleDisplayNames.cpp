@@ -110,14 +110,6 @@ namespace android::icu::text
 			arg0
 		).object<jstring>();
 	}
-	jstring LocaleDisplayNames::keyDisplayName(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"keyDisplayName",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
 	jstring LocaleDisplayNames::keyValueDisplayName(jstring arg0, jstring arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -127,29 +119,12 @@ namespace android::icu::text
 			arg1
 		).object<jstring>();
 	}
-	jstring LocaleDisplayNames::keyValueDisplayName(const QString &arg0, const QString &arg1)
-	{
-		return __thiz.callObjectMethod(
-			"keyValueDisplayName",
-			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		).object<jstring>();
-	}
 	jstring LocaleDisplayNames::languageDisplayName(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"languageDisplayName",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
-	}
-	jstring LocaleDisplayNames::languageDisplayName(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"languageDisplayName",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	jstring LocaleDisplayNames::localeDisplayName(android::icu::util::ULocale arg0)
@@ -168,14 +143,6 @@ namespace android::icu::text
 			arg0
 		).object<jstring>();
 	}
-	jstring LocaleDisplayNames::localeDisplayName(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"localeDisplayName",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
 	jstring LocaleDisplayNames::localeDisplayName(java::util::Locale arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -190,14 +157,6 @@ namespace android::icu::text
 			"regionDisplayName",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
-	}
-	jstring LocaleDisplayNames::regionDisplayName(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"regionDisplayName",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	jstring LocaleDisplayNames::scriptDisplayName(jint arg0)
@@ -216,28 +175,12 @@ namespace android::icu::text
 			arg0
 		).object<jstring>();
 	}
-	jstring LocaleDisplayNames::scriptDisplayName(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"scriptDisplayName",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
 	jstring LocaleDisplayNames::variantDisplayName(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"variantDisplayName",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
-	}
-	jstring LocaleDisplayNames::variantDisplayName(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"variantDisplayName",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 } // namespace android::icu::text

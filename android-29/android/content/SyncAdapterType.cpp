@@ -35,7 +35,7 @@ namespace android::content
 	
 	SyncAdapterType::SyncAdapterType(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SyncAdapterType::SyncAdapterType(android::os::Parcel &arg0)
+	SyncAdapterType::SyncAdapterType(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.SyncAdapterType",
@@ -43,24 +43,13 @@ namespace android::content
 			arg0.__jniObject().object()
 		);
 	}
-	SyncAdapterType::SyncAdapterType(jstring &arg0, jstring &arg1, jboolean &arg2, jboolean &arg3)
+	SyncAdapterType::SyncAdapterType(jstring arg0, jstring arg1, jboolean arg2, jboolean arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.SyncAdapterType",
 			"(Ljava/lang/String;Ljava/lang/String;ZZ)V",
 			arg0,
 			arg1,
-			arg2,
-			arg3
-		);
-	}
-	SyncAdapterType::SyncAdapterType(const QString &arg0, const QString &arg1, jboolean &arg2, jboolean &arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.SyncAdapterType",
-			"(Ljava/lang/String;Ljava/lang/String;ZZ)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2,
 			arg3
 		);
@@ -75,16 +64,6 @@ namespace android::content
 			"(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SyncAdapterType;",
 			arg0,
 			arg1
-		);
-	}
-	QAndroidJniObject SyncAdapterType::newKey(const QString &arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.content.SyncAdapterType",
-			"newKey",
-			"(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SyncAdapterType;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	jboolean SyncAdapterType::allowParallelSyncs()

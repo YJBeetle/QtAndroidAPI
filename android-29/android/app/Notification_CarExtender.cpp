@@ -17,7 +17,7 @@ namespace android::app
 			"()V"
 		);
 	}
-	Notification_CarExtender::Notification_CarExtender(android::app::Notification &arg0)
+	Notification_CarExtender::Notification_CarExtender(android::app::Notification arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.Notification$CarExtender",

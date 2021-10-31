@@ -20,7 +20,7 @@ namespace android::database
 		
 		ContentObserver(QAndroidJniObject obj);
 		// Constructors
-		ContentObserver(android::os::Handler &arg0);
+		ContentObserver(android::os::Handler arg0);
 		ContentObserver() = default;
 		
 		// Methods

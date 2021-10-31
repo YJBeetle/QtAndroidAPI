@@ -57,15 +57,6 @@ namespace java::sql
 			arg0
 		);
 	}
-	QAndroidJniObject RowIdLifetime::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.sql.RowIdLifetime",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/sql/RowIdLifetime;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray RowIdLifetime::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

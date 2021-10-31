@@ -11,7 +11,7 @@ namespace android::appwidget
 	
 	AppWidgetHost::AppWidgetHost(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AppWidgetHost::AppWidgetHost(android::content::Context &arg0, jint &arg1)
+	AppWidgetHost::AppWidgetHost(android::content::Context arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.appwidget.AppWidgetHost",

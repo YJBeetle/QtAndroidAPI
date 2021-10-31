@@ -44,7 +44,7 @@ namespace android::view::inputmethod
 		
 		InputConnectionWrapper(QAndroidJniObject obj);
 		// Constructors
-		InputConnectionWrapper(__JniBaseClass &arg0, jboolean &arg1);
+		InputConnectionWrapper(__JniBaseClass arg0, jboolean arg1);
 		InputConnectionWrapper() = default;
 		
 		// Methods
@@ -55,7 +55,6 @@ namespace android::view::inputmethod
 		jboolean commitContent(android::view::inputmethod::InputContentInfo arg0, jint arg1, android::os::Bundle arg2);
 		jboolean commitCorrection(android::view::inputmethod::CorrectionInfo arg0);
 		jboolean commitText(jstring arg0, jint arg1);
-		jboolean commitText(const QString &arg0, jint arg1);
 		jboolean deleteSurroundingText(jint arg0, jint arg1);
 		jboolean deleteSurroundingTextInCodePoints(jint arg0, jint arg1);
 		jboolean endBatchEdit();
@@ -69,13 +68,11 @@ namespace android::view::inputmethod
 		jboolean performContextMenuAction(jint arg0);
 		jboolean performEditorAction(jint arg0);
 		jboolean performPrivateCommand(jstring arg0, android::os::Bundle arg1);
-		jboolean performPrivateCommand(const QString &arg0, android::os::Bundle arg1);
 		jboolean reportFullscreenMode(jboolean arg0);
 		jboolean requestCursorUpdates(jint arg0);
 		jboolean sendKeyEvent(android::view::KeyEvent arg0);
 		jboolean setComposingRegion(jint arg0, jint arg1);
 		jboolean setComposingText(jstring arg0, jint arg1);
-		jboolean setComposingText(const QString &arg0, jint arg1);
 		jboolean setSelection(jint arg0, jint arg1);
 		void setTarget(__JniBaseClass arg0);
 	};

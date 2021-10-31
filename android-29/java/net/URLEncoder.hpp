@@ -24,11 +24,8 @@ namespace java::net
 		
 		// Methods
 		static jstring encode(jstring arg0);
-		static jstring encode(const QString &arg0);
 		static jstring encode(jstring arg0, jstring arg1);
-		static jstring encode(const QString &arg0, const QString &arg1);
 		static jstring encode(jstring arg0, java::nio::charset::Charset arg1);
-		static jstring encode(const QString &arg0, java::nio::charset::Charset arg1);
 	};
 } // namespace java::net
 

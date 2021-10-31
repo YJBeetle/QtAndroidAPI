@@ -21,7 +21,7 @@ namespace java::lang::invoke
 		
 		ConstantCallSite(QAndroidJniObject obj);
 		// Constructors
-		ConstantCallSite(java::lang::invoke::MethodHandle &arg0);
+		ConstantCallSite(java::lang::invoke::MethodHandle arg0);
 		ConstantCallSite() = default;
 		
 		// Methods

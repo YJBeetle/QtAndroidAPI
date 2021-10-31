@@ -8,7 +8,7 @@ namespace android::location
 	
 	Geocoder::Geocoder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Geocoder::Geocoder(android::content::Context &arg0)
+	Geocoder::Geocoder(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.location.Geocoder",
@@ -16,7 +16,7 @@ namespace android::location
 			arg0.__jniObject().object()
 		);
 	}
-	Geocoder::Geocoder(android::content::Context &arg0, java::util::Locale &arg1)
+	Geocoder::Geocoder(android::content::Context arg0, java::util::Locale arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.location.Geocoder",
@@ -54,34 +54,12 @@ namespace android::location
 			arg1
 		);
 	}
-	QAndroidJniObject Geocoder::getFromLocationName(const QString &arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getFromLocationName",
-			"(Ljava/lang/String;I)Ljava/util/List;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	QAndroidJniObject Geocoder::getFromLocationName(jstring arg0, jint arg1, jdouble arg2, jdouble arg3, jdouble arg4, jdouble arg5)
 	{
 		return __thiz.callObjectMethod(
 			"getFromLocationName",
 			"(Ljava/lang/String;IDDDD)Ljava/util/List;",
 			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5
-		);
-	}
-	QAndroidJniObject Geocoder::getFromLocationName(const QString &arg0, jint arg1, jdouble arg2, jdouble arg3, jdouble arg4, jdouble arg5)
-	{
-		return __thiz.callObjectMethod(
-			"getFromLocationName",
-			"(Ljava/lang/String;IDDDD)Ljava/util/List;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2,
 			arg3,

@@ -29,14 +29,13 @@ namespace android::media
 		
 		MediaDescrambler(QAndroidJniObject obj);
 		// Constructors
-		MediaDescrambler(jint &arg0);
+		MediaDescrambler(jint arg0);
 		MediaDescrambler() = default;
 		
 		// Methods
 		void close();
 		jint descramble(java::nio::ByteBuffer arg0, java::nio::ByteBuffer arg1, android::media::MediaCodec_CryptoInfo arg2);
 		jboolean requiresSecureDecoderComponent(jstring arg0);
-		jboolean requiresSecureDecoderComponent(const QString &arg0);
 		void setMediaCasSession(android::media::MediaCas_Session arg0);
 	};
 } // namespace android::media

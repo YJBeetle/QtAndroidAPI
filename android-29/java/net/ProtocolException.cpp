@@ -13,20 +13,12 @@ namespace java::net
 			"()V"
 		);
 	}
-	ProtocolException::ProtocolException(jstring &arg0)
+	ProtocolException::ProtocolException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.ProtocolException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	ProtocolException::ProtocolException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.ProtocolException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

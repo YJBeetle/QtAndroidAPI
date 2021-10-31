@@ -114,7 +114,7 @@ namespace android::service::notification
 	
 	Condition::Condition(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Condition::Condition(android::os::Parcel &arg0)
+	Condition::Condition(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.service.notification.Condition",
@@ -122,7 +122,7 @@ namespace android::service::notification
 			arg0.__jniObject().object()
 		);
 	}
-	Condition::Condition(android::net::Uri &arg0, jstring &arg1, jint &arg2)
+	Condition::Condition(android::net::Uri arg0, jstring arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.service.notification.Condition",
@@ -132,17 +132,7 @@ namespace android::service::notification
 			arg2
 		);
 	}
-	Condition::Condition(android::net::Uri &arg0, const QString &arg1, jint &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.service.notification.Condition",
-			"(Landroid/net/Uri;Ljava/lang/String;I)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2
-		);
-	}
-	Condition::Condition(android::net::Uri &arg0, jstring &arg1, jstring &arg2, jstring &arg3, jint &arg4, jint &arg5, jint &arg6)
+	Condition::Condition(android::net::Uri arg0, jstring arg1, jstring arg2, jstring arg3, jint arg4, jint arg5, jint arg6)
 	{
 		__thiz = QAndroidJniObject(
 			"android.service.notification.Condition",
@@ -151,20 +141,6 @@ namespace android::service::notification
 			arg1,
 			arg2,
 			arg3,
-			arg4,
-			arg5,
-			arg6
-		);
-	}
-	Condition::Condition(android::net::Uri &arg0, const QString &arg1, const QString &arg2, const QString &arg3, jint &arg4, jint &arg5, jint &arg6)
-	{
-		__thiz = QAndroidJniObject(
-			"android.service.notification.Condition",
-			"(Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;III)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			QAndroidJniObject::fromString(arg3).object<jstring>(),
 			arg4,
 			arg5,
 			arg6
@@ -180,16 +156,6 @@ namespace android::service::notification
 			"(Landroid/net/Uri;Ljava/lang/String;)Z",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jboolean Condition::isValidId(android::net::Uri arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.service.notification.Condition",
-			"isValidId",
-			"(Landroid/net/Uri;Ljava/lang/String;)Z",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	QAndroidJniObject Condition::newId(android::content::Context arg0)

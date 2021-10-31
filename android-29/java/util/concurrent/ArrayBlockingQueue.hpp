@@ -26,9 +26,9 @@ namespace java::util::concurrent
 		
 		ArrayBlockingQueue(QAndroidJniObject obj);
 		// Constructors
-		ArrayBlockingQueue(jint &arg0);
-		ArrayBlockingQueue(jint &arg0, jboolean &arg1);
-		ArrayBlockingQueue(jint &arg0, jboolean &arg1, __JniBaseClass &arg2);
+		ArrayBlockingQueue(jint arg0);
+		ArrayBlockingQueue(jint arg0, jboolean arg1);
+		ArrayBlockingQueue(jint arg0, jboolean arg1, __JniBaseClass arg2);
 		ArrayBlockingQueue() = default;
 		
 		// Methods

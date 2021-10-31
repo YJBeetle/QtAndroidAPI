@@ -15,7 +15,7 @@ namespace java::security::spec
 	
 	ECPoint::ECPoint(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ECPoint::ECPoint(java::math::BigInteger &arg0, java::math::BigInteger &arg1)
+	ECPoint::ECPoint(java::math::BigInteger arg0, java::math::BigInteger arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.spec.ECPoint",

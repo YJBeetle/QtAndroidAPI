@@ -16,9 +16,9 @@ namespace android::widget
 		
 		Scroller(QAndroidJniObject obj);
 		// Constructors
-		Scroller(android::content::Context &arg0);
-		Scroller(android::content::Context &arg0, __JniBaseClass &arg1);
-		Scroller(android::content::Context &arg0, __JniBaseClass &arg1, jboolean &arg2);
+		Scroller(android::content::Context arg0);
+		Scroller(android::content::Context arg0, __JniBaseClass arg1);
+		Scroller(android::content::Context arg0, __JniBaseClass arg1, jboolean arg2);
 		Scroller() = default;
 		
 		// Methods

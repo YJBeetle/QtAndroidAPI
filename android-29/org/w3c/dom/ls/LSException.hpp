@@ -17,8 +17,7 @@ namespace org::w3c::dom::ls
 		
 		LSException(QAndroidJniObject obj);
 		// Constructors
-		LSException(jshort &arg0, jstring &arg1);
-		LSException(jshort &arg0, const QString &arg1);
+		LSException(jshort arg0, jstring arg1);
 		LSException() = default;
 		
 		// Methods

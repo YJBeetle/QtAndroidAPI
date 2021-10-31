@@ -7,7 +7,7 @@ namespace android::content
 	
 	Intent_FilterComparison::Intent_FilterComparison(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Intent_FilterComparison::Intent_FilterComparison(android::content::Intent &arg0)
+	Intent_FilterComparison::Intent_FilterComparison(android::content::Intent arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.Intent$FilterComparison",

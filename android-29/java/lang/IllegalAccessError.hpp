@@ -16,8 +16,7 @@ namespace java::lang
 		IllegalAccessError(QAndroidJniObject obj);
 		// Constructors
 		IllegalAccessError();
-		IllegalAccessError(jstring &arg0);
-		IllegalAccessError(const QString &arg0);
+		IllegalAccessError(jstring arg0);
 		
 		// Methods
 	};

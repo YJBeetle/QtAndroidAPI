@@ -13,20 +13,12 @@ namespace java::util::jar
 			"()V"
 		);
 	}
-	JarException::JarException(jstring &arg0)
+	JarException::JarException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.jar.JarException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	JarException::JarException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.jar.JarException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

@@ -41,8 +41,8 @@ namespace android::app
 		
 		NotificationManager_Policy(QAndroidJniObject obj);
 		// Constructors
-		NotificationManager_Policy(jint &arg0, jint &arg1, jint &arg2);
-		NotificationManager_Policy(jint &arg0, jint &arg1, jint &arg2, jint &arg3);
+		NotificationManager_Policy(jint arg0, jint arg1, jint arg2);
+		NotificationManager_Policy(jint arg0, jint arg1, jint arg2, jint arg3);
 		NotificationManager_Policy() = default;
 		
 		// Methods

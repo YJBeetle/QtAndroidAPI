@@ -9,7 +9,7 @@ namespace java::sql
 	
 	Timestamp::Timestamp(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Timestamp::Timestamp(jlong &arg0)
+	Timestamp::Timestamp(jlong arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.sql.Timestamp",
@@ -17,7 +17,7 @@ namespace java::sql
 			arg0
 		);
 	}
-	Timestamp::Timestamp(jint &arg0, jint &arg1, jint &arg2, jint &arg3, jint &arg4, jint &arg5, jint &arg6)
+	Timestamp::Timestamp(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6)
 	{
 		__thiz = QAndroidJniObject(
 			"java.sql.Timestamp",
@@ -49,15 +49,6 @@ namespace java::sql
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/sql/Timestamp;",
 			arg0
-		);
-	}
-	QAndroidJniObject Timestamp::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.sql.Timestamp",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/sql/Timestamp;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Timestamp::valueOf(java::time::LocalDateTime arg0)

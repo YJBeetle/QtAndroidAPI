@@ -18,10 +18,8 @@ namespace dalvik::system
 		
 		PathClassLoader(QAndroidJniObject obj);
 		// Constructors
-		PathClassLoader(jstring &arg0, java::lang::ClassLoader &arg1);
-		PathClassLoader(const QString &arg0, java::lang::ClassLoader &arg1);
-		PathClassLoader(jstring &arg0, jstring &arg1, java::lang::ClassLoader &arg2);
-		PathClassLoader(const QString &arg0, const QString &arg1, java::lang::ClassLoader &arg2);
+		PathClassLoader(jstring arg0, java::lang::ClassLoader arg1);
+		PathClassLoader(jstring arg0, jstring arg1, java::lang::ClassLoader arg2);
 		PathClassLoader() = default;
 		
 		// Methods

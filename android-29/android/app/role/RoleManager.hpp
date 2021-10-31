@@ -28,11 +28,8 @@ namespace android::app::role
 		
 		// Methods
 		QAndroidJniObject createRequestRoleIntent(jstring arg0);
-		QAndroidJniObject createRequestRoleIntent(const QString &arg0);
 		jboolean isRoleAvailable(jstring arg0);
-		jboolean isRoleAvailable(const QString &arg0);
 		jboolean isRoleHeld(jstring arg0);
-		jboolean isRoleHeld(const QString &arg0);
 	};
 } // namespace android::app::role
 

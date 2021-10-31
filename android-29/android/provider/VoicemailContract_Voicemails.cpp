@@ -201,14 +201,5 @@ namespace android::provider
 			arg0
 		);
 	}
-	QAndroidJniObject VoicemailContract_Voicemails::buildSourceUri(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.VoicemailContract$Voicemails",
-			"buildSourceUri",
-			"(Ljava/lang/String;)Landroid/net/Uri;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 } // namespace android::provider
 

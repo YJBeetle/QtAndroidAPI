@@ -10,7 +10,7 @@ namespace android::widget
 	
 	MediaController::MediaController(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MediaController::MediaController(android::content::Context &arg0)
+	MediaController::MediaController(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.MediaController",
@@ -18,7 +18,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	MediaController::MediaController(android::content::Context &arg0, __JniBaseClass &arg1)
+	MediaController::MediaController(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.MediaController",
@@ -27,7 +27,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	MediaController::MediaController(android::content::Context &arg0, jboolean &arg1)
+	MediaController::MediaController(android::content::Context arg0, jboolean arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.MediaController",

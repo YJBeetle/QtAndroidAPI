@@ -8,7 +8,7 @@ namespace android::app::job
 	
 	JobServiceEngine::JobServiceEngine(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	JobServiceEngine::JobServiceEngine(android::app::Service &arg0)
+	JobServiceEngine::JobServiceEngine(android::app::Service arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.job.JobServiceEngine",

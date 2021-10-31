@@ -16,7 +16,7 @@ namespace android::inputmethodservice
 		
 		AbstractInputMethodService_AbstractInputMethodImpl(QAndroidJniObject obj);
 		// Constructors
-		AbstractInputMethodService_AbstractInputMethodImpl(android::inputmethodservice::AbstractInputMethodService &arg0);
+		AbstractInputMethodService_AbstractInputMethodImpl(android::inputmethodservice::AbstractInputMethodService arg0);
 		AbstractInputMethodService_AbstractInputMethodImpl() = default;
 		
 		// Methods

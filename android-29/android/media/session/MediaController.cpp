@@ -18,7 +18,7 @@ namespace android::media::session
 	
 	MediaController::MediaController(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MediaController::MediaController(android::content::Context &arg0, android::media::session::MediaSession_Token &arg1)
+	MediaController::MediaController(android::content::Context arg0, android::media::session::MediaSession_Token arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.session.MediaController",
@@ -160,16 +160,6 @@ namespace android::media::session
 			"sendCommand",
 			"(Ljava/lang/String;Landroid/os/Bundle;Landroid/os/ResultReceiver;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	void MediaController::sendCommand(const QString &arg0, android::os::Bundle arg1, android::os::ResultReceiver arg2)
-	{
-		__thiz.callMethod<void>(
-			"sendCommand",
-			"(Ljava/lang/String;Landroid/os/Bundle;Landroid/os/ResultReceiver;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object()
 		);

@@ -25,15 +25,6 @@ namespace java::nio::file
 			arg0
 		);
 	}
-	QAndroidJniObject LinkOption::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.nio.file.LinkOption",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/nio/file/LinkOption;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray LinkOption::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

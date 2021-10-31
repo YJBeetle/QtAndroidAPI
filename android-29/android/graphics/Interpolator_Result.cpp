@@ -41,15 +41,6 @@ namespace android::graphics
 			arg0
 		);
 	}
-	QAndroidJniObject Interpolator_Result::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.Interpolator$Result",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/graphics/Interpolator$Result;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray Interpolator_Result::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

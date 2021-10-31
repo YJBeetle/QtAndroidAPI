@@ -17,7 +17,7 @@ namespace android::transition
 			"()V"
 		);
 	}
-	ChangeBounds::ChangeBounds(android::content::Context &arg0, __JniBaseClass &arg1)
+	ChangeBounds::ChangeBounds(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.transition.ChangeBounds",

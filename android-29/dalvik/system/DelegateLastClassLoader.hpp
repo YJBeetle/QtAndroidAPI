@@ -23,19 +23,14 @@ namespace dalvik::system
 		
 		DelegateLastClassLoader(QAndroidJniObject obj);
 		// Constructors
-		DelegateLastClassLoader(jstring &arg0, java::lang::ClassLoader &arg1);
-		DelegateLastClassLoader(const QString &arg0, java::lang::ClassLoader &arg1);
-		DelegateLastClassLoader(jstring &arg0, jstring &arg1, java::lang::ClassLoader &arg2);
-		DelegateLastClassLoader(const QString &arg0, const QString &arg1, java::lang::ClassLoader &arg2);
-		DelegateLastClassLoader(jstring &arg0, jstring &arg1, java::lang::ClassLoader &arg2, jboolean &arg3);
-		DelegateLastClassLoader(const QString &arg0, const QString &arg1, java::lang::ClassLoader &arg2, jboolean &arg3);
+		DelegateLastClassLoader(jstring arg0, java::lang::ClassLoader arg1);
+		DelegateLastClassLoader(jstring arg0, jstring arg1, java::lang::ClassLoader arg2);
+		DelegateLastClassLoader(jstring arg0, jstring arg1, java::lang::ClassLoader arg2, jboolean arg3);
 		DelegateLastClassLoader() = default;
 		
 		// Methods
 		QAndroidJniObject getResource(jstring arg0);
-		QAndroidJniObject getResource(const QString &arg0);
 		QAndroidJniObject getResources(jstring arg0);
-		QAndroidJniObject getResources(const QString &arg0);
 	};
 } // namespace dalvik::system
 

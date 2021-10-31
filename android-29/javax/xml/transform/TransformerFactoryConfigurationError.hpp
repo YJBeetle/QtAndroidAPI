@@ -18,11 +18,9 @@ namespace javax::xml::transform
 		TransformerFactoryConfigurationError(QAndroidJniObject obj);
 		// Constructors
 		TransformerFactoryConfigurationError();
-		TransformerFactoryConfigurationError(java::lang::Exception &arg0);
-		TransformerFactoryConfigurationError(jstring &arg0);
-		TransformerFactoryConfigurationError(const QString &arg0);
-		TransformerFactoryConfigurationError(java::lang::Exception &arg0, jstring &arg1);
-		TransformerFactoryConfigurationError(java::lang::Exception &arg0, const QString &arg1);
+		TransformerFactoryConfigurationError(java::lang::Exception arg0);
+		TransformerFactoryConfigurationError(jstring arg0);
+		TransformerFactoryConfigurationError(java::lang::Exception arg0, jstring arg1);
 		
 		// Methods
 		jthrowable getCause();

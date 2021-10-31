@@ -53,15 +53,6 @@ namespace android::view::inputmethod
 			arg1
 		);
 	}
-	QAndroidJniObject CursorAnchorInfo_Builder::setComposingText(jint arg0, const QString &arg1)
-	{
-		return __thiz.callObjectMethod(
-			"setComposingText",
-			"(ILjava/lang/CharSequence;)Landroid/view/inputmethod/CursorAnchorInfo$Builder;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	QAndroidJniObject CursorAnchorInfo_Builder::setInsertionMarkerLocation(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jint arg4)
 	{
 		return __thiz.callObjectMethod(

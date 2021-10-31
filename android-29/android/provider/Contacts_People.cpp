@@ -98,17 +98,6 @@ namespace android::provider
 			arg2
 		);
 	}
-	QAndroidJniObject Contacts_People::addToGroup(android::content::ContentResolver arg0, jlong arg1, const QString &arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.Contacts$People",
-			"addToGroup",
-			"(Landroid/content/ContentResolver;JLjava/lang/String;)Landroid/net/Uri;",
-			arg0.__jniObject().object(),
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	QAndroidJniObject Contacts_People::addToGroup(android::content::ContentResolver arg0, jlong arg1, jlong arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

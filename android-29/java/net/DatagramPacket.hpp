@@ -20,12 +20,12 @@ namespace java::net
 		
 		DatagramPacket(QAndroidJniObject obj);
 		// Constructors
-		DatagramPacket(jbyteArray &arg0, jint &arg1);
-		DatagramPacket(jbyteArray &arg0, jint &arg1, jint &arg2);
-		DatagramPacket(jbyteArray &arg0, jint &arg1, java::net::SocketAddress &arg2);
-		DatagramPacket(jbyteArray &arg0, jint &arg1, jint &arg2, java::net::SocketAddress &arg3);
-		DatagramPacket(jbyteArray &arg0, jint &arg1, java::net::InetAddress &arg2, jint &arg3);
-		DatagramPacket(jbyteArray &arg0, jint &arg1, jint &arg2, java::net::InetAddress &arg3, jint &arg4);
+		DatagramPacket(jbyteArray arg0, jint arg1);
+		DatagramPacket(jbyteArray arg0, jint arg1, jint arg2);
+		DatagramPacket(jbyteArray arg0, jint arg1, java::net::SocketAddress arg2);
+		DatagramPacket(jbyteArray arg0, jint arg1, jint arg2, java::net::SocketAddress arg3);
+		DatagramPacket(jbyteArray arg0, jint arg1, java::net::InetAddress arg2, jint arg3);
+		DatagramPacket(jbyteArray arg0, jint arg1, jint arg2, java::net::InetAddress arg3, jint arg4);
 		DatagramPacket() = default;
 		
 		// Methods

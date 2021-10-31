@@ -22,9 +22,9 @@ namespace java::util::zip
 		
 		InflaterOutputStream(QAndroidJniObject obj);
 		// Constructors
-		InflaterOutputStream(java::io::OutputStream &arg0);
-		InflaterOutputStream(java::io::OutputStream &arg0, java::util::zip::Inflater &arg1);
-		InflaterOutputStream(java::io::OutputStream &arg0, java::util::zip::Inflater &arg1, jint &arg2);
+		InflaterOutputStream(java::io::OutputStream arg0);
+		InflaterOutputStream(java::io::OutputStream arg0, java::util::zip::Inflater arg1);
+		InflaterOutputStream(java::io::OutputStream arg0, java::util::zip::Inflater arg1, jint arg2);
 		InflaterOutputStream() = default;
 		
 		// Methods

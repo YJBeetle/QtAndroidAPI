@@ -25,7 +25,7 @@ namespace android::widget
 	
 	Spinner::Spinner(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Spinner::Spinner(android::content::Context &arg0)
+	Spinner::Spinner(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.Spinner",
@@ -33,7 +33,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	Spinner::Spinner(android::content::Context &arg0, __JniBaseClass &arg1)
+	Spinner::Spinner(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.Spinner",
@@ -42,7 +42,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	Spinner::Spinner(android::content::Context &arg0, jint &arg1)
+	Spinner::Spinner(android::content::Context arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.Spinner",
@@ -51,7 +51,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	Spinner::Spinner(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	Spinner::Spinner(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.Spinner",
@@ -61,7 +61,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	Spinner::Spinner(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	Spinner::Spinner(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.Spinner",
@@ -72,7 +72,7 @@ namespace android::widget
 			arg3
 		);
 	}
-	Spinner::Spinner(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3, jint &arg4)
+	Spinner::Spinner(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3, jint arg4)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.Spinner",
@@ -84,7 +84,7 @@ namespace android::widget
 			arg4
 		);
 	}
-	Spinner::Spinner(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3, jint &arg4, android::content::res::Resources_Theme &arg5)
+	Spinner::Spinner(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3, jint arg4, android::content::res::Resources_Theme arg5)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.Spinner",
@@ -288,14 +288,6 @@ namespace android::widget
 			"setPrompt",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
-		);
-	}
-	void Spinner::setPrompt(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPrompt",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void Spinner::setPromptId(jint arg0)

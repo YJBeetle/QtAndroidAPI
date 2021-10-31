@@ -7,7 +7,7 @@ namespace android::app
 	
 	Instrumentation_ActivityResult::Instrumentation_ActivityResult(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Instrumentation_ActivityResult::Instrumentation_ActivityResult(jint &arg0, android::content::Intent &arg1)
+	Instrumentation_ActivityResult::Instrumentation_ActivityResult(jint arg0, android::content::Intent arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.Instrumentation$ActivityResult",

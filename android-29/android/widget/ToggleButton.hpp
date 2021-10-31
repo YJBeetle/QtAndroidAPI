@@ -24,10 +24,10 @@ namespace android::widget
 		
 		ToggleButton(QAndroidJniObject obj);
 		// Constructors
-		ToggleButton(android::content::Context &arg0);
-		ToggleButton(android::content::Context &arg0, __JniBaseClass &arg1);
-		ToggleButton(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		ToggleButton(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		ToggleButton(android::content::Context arg0);
+		ToggleButton(android::content::Context arg0, __JniBaseClass arg1);
+		ToggleButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		ToggleButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		ToggleButton() = default;
 		
 		// Methods
@@ -38,9 +38,7 @@ namespace android::widget
 		void setBackgroundDrawable(android::graphics::drawable::Drawable arg0);
 		void setChecked(jboolean arg0);
 		void setTextOff(jstring arg0);
-		void setTextOff(const QString &arg0);
 		void setTextOn(jstring arg0);
-		void setTextOn(const QString &arg0);
 	};
 } // namespace android::widget
 

@@ -271,7 +271,7 @@ namespace android::media
 	
 	MediaCodecInfo_VideoCapabilities_PerformancePoint::MediaCodecInfo_VideoCapabilities_PerformancePoint(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MediaCodecInfo_VideoCapabilities_PerformancePoint::MediaCodecInfo_VideoCapabilities_PerformancePoint(jint &arg0, jint &arg1, jint &arg2)
+	MediaCodecInfo_VideoCapabilities_PerformancePoint::MediaCodecInfo_VideoCapabilities_PerformancePoint(jint arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.MediaCodecInfo$VideoCapabilities$PerformancePoint",

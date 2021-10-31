@@ -45,16 +45,13 @@ namespace java::net
 		Socket(QAndroidJniObject obj);
 		// Constructors
 		Socket();
-		Socket(java::net::Proxy &arg0);
-		Socket(jstring &arg0, jint &arg1);
-		Socket(const QString &arg0, jint &arg1);
-		Socket(java::net::InetAddress &arg0, jint &arg1);
-		Socket(jstring &arg0, jint &arg1, jboolean &arg2);
-		Socket(const QString &arg0, jint &arg1, jboolean &arg2);
-		Socket(java::net::InetAddress &arg0, jint &arg1, jboolean &arg2);
-		Socket(jstring &arg0, jint &arg1, java::net::InetAddress &arg2, jint &arg3);
-		Socket(const QString &arg0, jint &arg1, java::net::InetAddress &arg2, jint &arg3);
-		Socket(java::net::InetAddress &arg0, jint &arg1, java::net::InetAddress &arg2, jint &arg3);
+		Socket(java::net::Proxy arg0);
+		Socket(jstring arg0, jint arg1);
+		Socket(java::net::InetAddress arg0, jint arg1);
+		Socket(jstring arg0, jint arg1, jboolean arg2);
+		Socket(java::net::InetAddress arg0, jint arg1, jboolean arg2);
+		Socket(jstring arg0, jint arg1, java::net::InetAddress arg2, jint arg3);
+		Socket(java::net::InetAddress arg0, jint arg1, java::net::InetAddress arg2, jint arg3);
 		
 		// Methods
 		static void setSocketImplFactory(__JniBaseClass arg0);

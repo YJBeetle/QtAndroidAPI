@@ -8,7 +8,7 @@ namespace android::app
 	
 	VoiceInteractor_AbortVoiceRequest::VoiceInteractor_AbortVoiceRequest(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	VoiceInteractor_AbortVoiceRequest::VoiceInteractor_AbortVoiceRequest(android::app::VoiceInteractor_Prompt &arg0, android::os::Bundle &arg1)
+	VoiceInteractor_AbortVoiceRequest::VoiceInteractor_AbortVoiceRequest(android::app::VoiceInteractor_Prompt arg0, android::os::Bundle arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.VoiceInteractor$AbortVoiceRequest",

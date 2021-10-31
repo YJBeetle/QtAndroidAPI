@@ -209,7 +209,7 @@ namespace android::bluetooth
 	
 	BluetoothGattCharacteristic::BluetoothGattCharacteristic(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	BluetoothGattCharacteristic::BluetoothGattCharacteristic(java::util::UUID &arg0, jint &arg1, jint &arg2)
+	BluetoothGattCharacteristic::BluetoothGattCharacteristic(java::util::UUID arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.bluetooth.BluetoothGattCharacteristic",
@@ -340,14 +340,6 @@ namespace android::bluetooth
 			"setValue",
 			"(Ljava/lang/String;)Z",
 			arg0
-		);
-	}
-	jboolean BluetoothGattCharacteristic::setValue(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"setValue",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean BluetoothGattCharacteristic::setValue(jint arg0, jint arg1, jint arg2)

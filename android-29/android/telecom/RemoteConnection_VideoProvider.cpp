@@ -59,14 +59,6 @@ namespace android::telecom
 			arg0
 		);
 	}
-	void RemoteConnection_VideoProvider::setCamera(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setCamera",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void RemoteConnection_VideoProvider::setDeviceOrientation(jint arg0)
 	{
 		__thiz.callMethod<void>(

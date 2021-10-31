@@ -249,15 +249,6 @@ namespace android::graphics
 			arg0
 		);
 	}
-	QAndroidJniObject BlendMode::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.BlendMode",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/graphics/BlendMode;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray BlendMode::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

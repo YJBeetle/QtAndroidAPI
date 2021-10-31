@@ -55,7 +55,6 @@ namespace java::time::temporal
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);
-		static QAndroidJniObject valueOf(const QString &arg0);
 		static jarray values();
 		QAndroidJniObject adjustInto(__JniBaseClass arg0, jlong arg1);
 		jint checkValidIntValue(jlong arg0);

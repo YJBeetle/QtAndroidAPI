@@ -8,7 +8,7 @@ namespace dalvik::system
 	
 	DexFile::DexFile(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DexFile::DexFile(java::io::File &arg0)
+	DexFile::DexFile(java::io::File arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"dalvik.system.DexFile",
@@ -16,20 +16,12 @@ namespace dalvik::system
 			arg0.__jniObject().object()
 		);
 	}
-	DexFile::DexFile(jstring &arg0)
+	DexFile::DexFile(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"dalvik.system.DexFile",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	DexFile::DexFile(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"dalvik.system.DexFile",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	
@@ -43,15 +35,6 @@ namespace dalvik::system
 			arg0
 		);
 	}
-	jboolean DexFile::isDexOptNeeded(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"dalvik.system.DexFile",
-			"isDexOptNeeded",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject DexFile::loadDex(jstring arg0, jstring arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -60,17 +43,6 @@ namespace dalvik::system
 			"(Ljava/lang/String;Ljava/lang/String;I)Ldalvik/system/DexFile;",
 			arg0,
 			arg1,
-			arg2
-		);
-	}
-	QAndroidJniObject DexFile::loadDex(const QString &arg0, const QString &arg1, jint arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"dalvik.system.DexFile",
-			"loadDex",
-			"(Ljava/lang/String;Ljava/lang/String;I)Ldalvik/system/DexFile;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}
@@ -101,15 +73,6 @@ namespace dalvik::system
 			"loadClass",
 			"(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljava/lang/Class;",
 			arg0,
-			arg1.__jniObject().object()
-		).object<jclass>();
-	}
-	jclass DexFile::loadClass(const QString &arg0, java::lang::ClassLoader arg1)
-	{
-		return __thiz.callObjectMethod(
-			"loadClass",
-			"(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljava/lang/Class;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		).object<jclass>();
 	}

@@ -13,20 +13,12 @@ namespace java::net
 			"()V"
 		);
 	}
-	ConnectException::ConnectException(jstring &arg0)
+	ConnectException::ConnectException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.ConnectException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	ConnectException::ConnectException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.ConnectException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

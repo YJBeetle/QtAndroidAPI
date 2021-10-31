@@ -42,7 +42,7 @@ namespace android::graphics
 			arg0.__jniObject().object()
 		);
 	}
-	Point::Point(jint &arg0, jint &arg1)
+	Point::Point(jint arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.Point",

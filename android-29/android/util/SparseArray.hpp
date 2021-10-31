@@ -13,7 +13,7 @@ namespace android::util
 		SparseArray(QAndroidJniObject obj);
 		// Constructors
 		SparseArray();
-		SparseArray(jint &arg0);
+		SparseArray(jint arg0);
 		
 		// Methods
 		void append(jint arg0, jobject arg1);

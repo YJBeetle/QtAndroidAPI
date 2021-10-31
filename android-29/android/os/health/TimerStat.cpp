@@ -22,7 +22,7 @@ namespace android::os::health
 			"()V"
 		);
 	}
-	TimerStat::TimerStat(android::os::Parcel &arg0)
+	TimerStat::TimerStat(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.health.TimerStat",
@@ -30,7 +30,7 @@ namespace android::os::health
 			arg0.__jniObject().object()
 		);
 	}
-	TimerStat::TimerStat(jint &arg0, jlong &arg1)
+	TimerStat::TimerStat(jint arg0, jlong arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.health.TimerStat",

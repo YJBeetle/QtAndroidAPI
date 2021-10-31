@@ -16,14 +16,6 @@ namespace android::drm
 			arg0
 		).object<jstring>();
 	}
-	jstring DrmUtils_ExtendedMetadataParser::get(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"get",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
 	QAndroidJniObject DrmUtils_ExtendedMetadataParser::iterator()
 	{
 		return __thiz.callObjectMethod(

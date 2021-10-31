@@ -57,15 +57,6 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject Locale_FilteringMode::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.util.Locale$FilteringMode",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/util/Locale$FilteringMode;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray Locale_FilteringMode::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

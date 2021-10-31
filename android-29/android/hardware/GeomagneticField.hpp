@@ -12,7 +12,7 @@ namespace android::hardware
 		
 		GeomagneticField(QAndroidJniObject obj);
 		// Constructors
-		GeomagneticField(jfloat &arg0, jfloat &arg1, jfloat &arg2, jlong &arg3);
+		GeomagneticField(jfloat arg0, jfloat arg1, jfloat arg2, jlong arg3);
 		GeomagneticField() = default;
 		
 		// Methods

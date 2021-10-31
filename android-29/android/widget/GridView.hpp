@@ -49,10 +49,10 @@ namespace android::widget
 		
 		GridView(QAndroidJniObject obj);
 		// Constructors
-		GridView(android::content::Context &arg0);
-		GridView(android::content::Context &arg0, __JniBaseClass &arg1);
-		GridView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		GridView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		GridView(android::content::Context arg0);
+		GridView(android::content::Context arg0, __JniBaseClass arg1);
+		GridView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		GridView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		GridView() = default;
 		
 		// Methods

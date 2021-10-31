@@ -29,7 +29,7 @@ namespace android::app
 		ActivityGroup(QAndroidJniObject obj);
 		// Constructors
 		ActivityGroup();
-		ActivityGroup(jboolean &arg0);
+		ActivityGroup(jboolean arg0);
 		
 		// Methods
 		QAndroidJniObject getCurrentActivity();

@@ -10,7 +10,7 @@ namespace android::text::style
 	
 	LeadingMarginSpan_Standard::LeadingMarginSpan_Standard(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	LeadingMarginSpan_Standard::LeadingMarginSpan_Standard(android::os::Parcel &arg0)
+	LeadingMarginSpan_Standard::LeadingMarginSpan_Standard(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.LeadingMarginSpan$Standard",
@@ -18,7 +18,7 @@ namespace android::text::style
 			arg0.__jniObject().object()
 		);
 	}
-	LeadingMarginSpan_Standard::LeadingMarginSpan_Standard(jint &arg0)
+	LeadingMarginSpan_Standard::LeadingMarginSpan_Standard(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.LeadingMarginSpan$Standard",
@@ -26,7 +26,7 @@ namespace android::text::style
 			arg0
 		);
 	}
-	LeadingMarginSpan_Standard::LeadingMarginSpan_Standard(jint &arg0, jint &arg1)
+	LeadingMarginSpan_Standard::LeadingMarginSpan_Standard(jint arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.LeadingMarginSpan$Standard",
@@ -57,25 +57,6 @@ namespace android::text::style
 			arg5,
 			arg6,
 			arg7,
-			arg8,
-			arg9,
-			arg10,
-			arg11.__jniObject().object()
-		);
-	}
-	void LeadingMarginSpan_Standard::drawLeadingMargin(android::graphics::Canvas arg0, android::graphics::Paint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, const QString &arg7, jint arg8, jint arg9, jboolean arg10, android::text::Layout arg11)
-	{
-		__thiz.callMethod<void>(
-			"drawLeadingMargin",
-			"(Landroid/graphics/Canvas;Landroid/graphics/Paint;IIIIILjava/lang/CharSequence;IIZLandroid/text/Layout;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2,
-			arg3,
-			arg4,
-			arg5,
-			arg6,
-			QAndroidJniObject::fromString(arg7).object<jstring>(),
 			arg8,
 			arg9,
 			arg10,

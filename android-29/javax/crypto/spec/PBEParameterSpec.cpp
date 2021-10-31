@@ -6,7 +6,7 @@ namespace javax::crypto::spec
 	
 	PBEParameterSpec::PBEParameterSpec(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PBEParameterSpec::PBEParameterSpec(jbyteArray &arg0, jint &arg1)
+	PBEParameterSpec::PBEParameterSpec(jbyteArray arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.crypto.spec.PBEParameterSpec",
@@ -15,7 +15,7 @@ namespace javax::crypto::spec
 			arg1
 		);
 	}
-	PBEParameterSpec::PBEParameterSpec(jbyteArray &arg0, jint &arg1, __JniBaseClass &arg2)
+	PBEParameterSpec::PBEParameterSpec(jbyteArray arg0, jint arg1, __JniBaseClass arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.crypto.spec.PBEParameterSpec",

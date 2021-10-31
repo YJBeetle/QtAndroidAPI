@@ -9,7 +9,7 @@ namespace android::widget
 	
 	ZoomButtonsController::ZoomButtonsController(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ZoomButtonsController::ZoomButtonsController(android::view::View &arg0)
+	ZoomButtonsController::ZoomButtonsController(android::view::View arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ZoomButtonsController",

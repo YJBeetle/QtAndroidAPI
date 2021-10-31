@@ -36,7 +36,6 @@ namespace android::media
 		QAndroidJniObject putLong(jint arg0, jlong arg1);
 		QAndroidJniObject putObject(jint arg0, jobject arg1);
 		QAndroidJniObject putString(jint arg0, jstring arg1);
-		QAndroidJniObject putString(jint arg0, const QString &arg1);
 	};
 } // namespace android::media
 

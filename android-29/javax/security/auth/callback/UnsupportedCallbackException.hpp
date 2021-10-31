@@ -13,9 +13,8 @@ namespace javax::security::auth::callback
 		
 		UnsupportedCallbackException(QAndroidJniObject obj);
 		// Constructors
-		UnsupportedCallbackException(__JniBaseClass &arg0);
-		UnsupportedCallbackException(__JniBaseClass &arg0, jstring &arg1);
-		UnsupportedCallbackException(__JniBaseClass &arg0, const QString &arg1);
+		UnsupportedCallbackException(__JniBaseClass arg0);
+		UnsupportedCallbackException(__JniBaseClass arg0, jstring arg1);
 		UnsupportedCallbackException() = default;
 		
 		// Methods

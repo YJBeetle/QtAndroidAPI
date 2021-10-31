@@ -10,22 +10,13 @@ namespace java::util
 	
 	PropertyPermission::PropertyPermission(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PropertyPermission::PropertyPermission(jstring &arg0, jstring &arg1)
+	PropertyPermission::PropertyPermission(jstring arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.PropertyPermission",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	PropertyPermission::PropertyPermission(const QString &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.PropertyPermission",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	

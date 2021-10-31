@@ -32,17 +32,6 @@ namespace android::view
 			arg3.__jniObject().object()
 		);
 	}
-	void View_AccessibilityDelegate::addExtraDataToAccessibilityNodeInfo(android::view::View arg0, android::view::accessibility::AccessibilityNodeInfo arg1, const QString &arg2, android::os::Bundle arg3)
-	{
-		__thiz.callMethod<void>(
-			"addExtraDataToAccessibilityNodeInfo",
-			"(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			arg3.__jniObject().object()
-		);
-	}
 	jboolean View_AccessibilityDelegate::dispatchPopulateAccessibilityEvent(android::view::View arg0, android::view::accessibility::AccessibilityEvent arg1)
 	{
 		return __thiz.callMethod<jboolean>(

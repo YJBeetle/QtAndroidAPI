@@ -16,7 +16,7 @@ namespace android::net::wifi::aware
 	
 	ParcelablePeerHandle::ParcelablePeerHandle(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ParcelablePeerHandle::ParcelablePeerHandle(android::net::wifi::aware::PeerHandle &arg0)
+	ParcelablePeerHandle::ParcelablePeerHandle(android::net::wifi::aware::PeerHandle arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.wifi.aware.ParcelablePeerHandle",

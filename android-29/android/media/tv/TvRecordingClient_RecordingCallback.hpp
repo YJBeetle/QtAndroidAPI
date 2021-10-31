@@ -20,9 +20,7 @@ namespace android::media::tv
 		
 		// Methods
 		void onConnectionFailed(jstring arg0);
-		void onConnectionFailed(const QString &arg0);
 		void onDisconnected(jstring arg0);
-		void onDisconnected(const QString &arg0);
 		void onError(jint arg0);
 		void onRecordingStopped(android::net::Uri arg0);
 		void onTuned(android::net::Uri arg0);

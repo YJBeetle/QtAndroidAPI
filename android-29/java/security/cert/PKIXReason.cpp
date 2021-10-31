@@ -81,15 +81,6 @@ namespace java::security::cert
 			arg0
 		);
 	}
-	QAndroidJniObject PKIXReason::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.security.cert.PKIXReason",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/security/cert/PKIXReason;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray PKIXReason::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

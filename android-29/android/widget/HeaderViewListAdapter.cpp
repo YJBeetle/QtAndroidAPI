@@ -11,7 +11,7 @@ namespace android::widget
 	
 	HeaderViewListAdapter::HeaderViewListAdapter(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	HeaderViewListAdapter::HeaderViewListAdapter(java::util::ArrayList &arg0, java::util::ArrayList &arg1, __JniBaseClass &arg2)
+	HeaderViewListAdapter::HeaderViewListAdapter(java::util::ArrayList arg0, java::util::ArrayList arg1, __JniBaseClass arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.HeaderViewListAdapter",

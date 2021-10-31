@@ -6,23 +6,13 @@ namespace android::icu::text
 	
 	DateIntervalInfo_PatternInfo::DateIntervalInfo_PatternInfo(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DateIntervalInfo_PatternInfo::DateIntervalInfo_PatternInfo(jstring &arg0, jstring &arg1, jboolean &arg2)
+	DateIntervalInfo_PatternInfo::DateIntervalInfo_PatternInfo(jstring arg0, jstring arg1, jboolean arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.DateIntervalInfo$PatternInfo",
 			"(Ljava/lang/String;Ljava/lang/String;Z)V",
 			arg0,
 			arg1,
-			arg2
-		);
-	}
-	DateIntervalInfo_PatternInfo::DateIntervalInfo_PatternInfo(const QString &arg0, const QString &arg1, jboolean &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.text.DateIntervalInfo$PatternInfo",
-			"(Ljava/lang/String;Ljava/lang/String;Z)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}

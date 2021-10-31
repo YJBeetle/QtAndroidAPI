@@ -16,8 +16,7 @@ namespace java::net
 		PortUnreachableException(QAndroidJniObject obj);
 		// Constructors
 		PortUnreachableException();
-		PortUnreachableException(jstring &arg0);
-		PortUnreachableException(const QString &arg0);
+		PortUnreachableException(jstring arg0);
 		
 		// Methods
 	};

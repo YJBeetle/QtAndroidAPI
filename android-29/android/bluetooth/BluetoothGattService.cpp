@@ -31,7 +31,7 @@ namespace android::bluetooth
 	
 	BluetoothGattService::BluetoothGattService(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	BluetoothGattService::BluetoothGattService(java::util::UUID &arg0, jint &arg1)
+	BluetoothGattService::BluetoothGattService(java::util::UUID arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.bluetooth.BluetoothGattService",

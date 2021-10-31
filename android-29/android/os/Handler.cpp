@@ -15,7 +15,7 @@ namespace android::os
 			"()V"
 		);
 	}
-	Handler::Handler(__JniBaseClass &arg0)
+	Handler::Handler(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.Handler",
@@ -23,7 +23,7 @@ namespace android::os
 			arg0.__jniObject().object()
 		);
 	}
-	Handler::Handler(android::os::Looper &arg0)
+	Handler::Handler(android::os::Looper arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.Handler",
@@ -31,7 +31,7 @@ namespace android::os
 			arg0.__jniObject().object()
 		);
 	}
-	Handler::Handler(android::os::Looper &arg0, __JniBaseClass &arg1)
+	Handler::Handler(android::os::Looper arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.Handler",
@@ -76,15 +76,6 @@ namespace android::os
 			"(Landroid/util/Printer;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	void Handler::dump(__JniBaseClass arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Landroid/util/Printer;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	QAndroidJniObject Handler::getLooper()

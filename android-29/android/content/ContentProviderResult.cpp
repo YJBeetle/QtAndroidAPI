@@ -31,7 +31,7 @@ namespace android::content
 	
 	ContentProviderResult::ContentProviderResult(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ContentProviderResult::ContentProviderResult(android::net::Uri &arg0)
+	ContentProviderResult::ContentProviderResult(android::net::Uri arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.ContentProviderResult",
@@ -39,7 +39,7 @@ namespace android::content
 			arg0.__jniObject().object()
 		);
 	}
-	ContentProviderResult::ContentProviderResult(android::os::Parcel &arg0)
+	ContentProviderResult::ContentProviderResult(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.ContentProviderResult",
@@ -47,7 +47,7 @@ namespace android::content
 			arg0.__jniObject().object()
 		);
 	}
-	ContentProviderResult::ContentProviderResult(jint &arg0)
+	ContentProviderResult::ContentProviderResult(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.ContentProviderResult",

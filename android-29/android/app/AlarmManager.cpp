@@ -127,18 +127,6 @@ namespace android::app
 			arg4.__jniObject().object()
 		);
 	}
-	void AlarmManager::set(jint arg0, jlong arg1, const QString &arg2, __JniBaseClass arg3, android::os::Handler arg4)
-	{
-		__thiz.callMethod<void>(
-			"set",
-			"(IJLjava/lang/String;Landroid/app/AlarmManager$OnAlarmListener;Landroid/os/Handler;)V",
-			arg0,
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object()
-		);
-	}
 	void AlarmManager::setAlarmClock(android::app::AlarmManager_AlarmClockInfo arg0, android::app::PendingIntent arg1)
 	{
 		__thiz.callMethod<void>(
@@ -176,18 +164,6 @@ namespace android::app
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object()
-		);
-	}
-	void AlarmManager::setExact(jint arg0, jlong arg1, const QString &arg2, __JniBaseClass arg3, android::os::Handler arg4)
-	{
-		__thiz.callMethod<void>(
-			"setExact",
-			"(IJLjava/lang/String;Landroid/app/AlarmManager$OnAlarmListener;Landroid/os/Handler;)V",
-			arg0,
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object()
 		);
@@ -240,14 +216,6 @@ namespace android::app
 			arg0
 		);
 	}
-	void AlarmManager::setTimeZone(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTimeZone",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void AlarmManager::setWindow(jint arg0, jlong arg1, jlong arg2, android::app::PendingIntent arg3)
 	{
 		__thiz.callMethod<void>(
@@ -268,19 +236,6 @@ namespace android::app
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object(),
-			arg5.__jniObject().object()
-		);
-	}
-	void AlarmManager::setWindow(jint arg0, jlong arg1, jlong arg2, const QString &arg3, __JniBaseClass arg4, android::os::Handler arg5)
-	{
-		__thiz.callMethod<void>(
-			"setWindow",
-			"(IJJLjava/lang/String;Landroid/app/AlarmManager$OnAlarmListener;Landroid/os/Handler;)V",
-			arg0,
-			arg1,
-			arg2,
-			QAndroidJniObject::fromString(arg3).object<jstring>(),
 			arg4.__jniObject().object(),
 			arg5.__jniObject().object()
 		);

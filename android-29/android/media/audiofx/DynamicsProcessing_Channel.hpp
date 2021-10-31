@@ -33,7 +33,7 @@ namespace android::media::audiofx
 		DynamicsProcessing_Channel(QAndroidJniObject obj);
 		// Constructors
 		DynamicsProcessing_Channel(android::media::audiofx::DynamicsProcessing_Channel &arg0);
-		DynamicsProcessing_Channel(jfloat &arg0, jboolean &arg1, jint &arg2, jboolean &arg3, jint &arg4, jboolean &arg5, jint &arg6, jboolean &arg7);
+		DynamicsProcessing_Channel(jfloat arg0, jboolean arg1, jint arg2, jboolean arg3, jint arg4, jboolean arg5, jint arg6, jboolean arg7);
 		DynamicsProcessing_Channel() = default;
 		
 		// Methods

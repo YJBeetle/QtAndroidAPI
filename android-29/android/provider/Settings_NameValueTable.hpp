@@ -26,7 +26,6 @@ namespace android::provider
 		
 		// Methods
 		static QAndroidJniObject getUriFor(android::net::Uri arg0, jstring arg1);
-		static QAndroidJniObject getUriFor(android::net::Uri arg0, const QString &arg1);
 	};
 } // namespace android::provider
 

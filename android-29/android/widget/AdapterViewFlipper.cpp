@@ -7,7 +7,7 @@ namespace android::widget
 	
 	AdapterViewFlipper::AdapterViewFlipper(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AdapterViewFlipper::AdapterViewFlipper(android::content::Context &arg0)
+	AdapterViewFlipper::AdapterViewFlipper(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.AdapterViewFlipper",
@@ -15,7 +15,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	AdapterViewFlipper::AdapterViewFlipper(android::content::Context &arg0, __JniBaseClass &arg1)
+	AdapterViewFlipper::AdapterViewFlipper(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.AdapterViewFlipper",
@@ -24,7 +24,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	AdapterViewFlipper::AdapterViewFlipper(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	AdapterViewFlipper::AdapterViewFlipper(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.AdapterViewFlipper",
@@ -34,7 +34,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	AdapterViewFlipper::AdapterViewFlipper(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	AdapterViewFlipper::AdapterViewFlipper(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.AdapterViewFlipper",

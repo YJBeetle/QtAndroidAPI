@@ -15,8 +15,7 @@ namespace android::view
 		
 		KeyCharacterMap_UnavailableException(QAndroidJniObject obj);
 		// Constructors
-		KeyCharacterMap_UnavailableException(jstring &arg0);
-		KeyCharacterMap_UnavailableException(const QString &arg0);
+		KeyCharacterMap_UnavailableException(jstring arg0);
 		KeyCharacterMap_UnavailableException() = default;
 		
 		// Methods

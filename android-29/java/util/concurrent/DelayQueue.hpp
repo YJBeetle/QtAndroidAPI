@@ -31,7 +31,7 @@ namespace java::util::concurrent
 		DelayQueue(QAndroidJniObject obj);
 		// Constructors
 		DelayQueue();
-		DelayQueue(__JniBaseClass &arg0);
+		DelayQueue(__JniBaseClass arg0);
 		
 		// Methods
 		jboolean add(jobject arg0);

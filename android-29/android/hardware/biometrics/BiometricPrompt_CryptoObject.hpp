@@ -24,9 +24,9 @@ namespace android::hardware::biometrics
 		
 		BiometricPrompt_CryptoObject(QAndroidJniObject obj);
 		// Constructors
-		BiometricPrompt_CryptoObject(java::security::Signature &arg0);
-		BiometricPrompt_CryptoObject(javax::crypto::Cipher &arg0);
-		BiometricPrompt_CryptoObject(javax::crypto::Mac &arg0);
+		BiometricPrompt_CryptoObject(java::security::Signature arg0);
+		BiometricPrompt_CryptoObject(javax::crypto::Cipher arg0);
+		BiometricPrompt_CryptoObject(javax::crypto::Mac arg0);
 		BiometricPrompt_CryptoObject() = default;
 		
 		// Methods

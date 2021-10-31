@@ -20,7 +20,7 @@ namespace android::icu::util
 			"()V"
 		);
 	}
-	Output::Output(jobject &arg0)
+	Output::Output(jobject arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.Output",

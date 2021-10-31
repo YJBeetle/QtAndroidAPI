@@ -83,28 +83,12 @@ namespace android::net::wifi::hotspot2::pps
 			arg0
 		);
 	}
-	void HomeSp::setFqdn(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setFqdn",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void HomeSp::setFriendlyName(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setFriendlyName",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void HomeSp::setFriendlyName(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setFriendlyName",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void HomeSp::setRoamingConsortiumOis(jlongArray arg0)

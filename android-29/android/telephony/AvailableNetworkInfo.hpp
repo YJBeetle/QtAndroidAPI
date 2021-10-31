@@ -20,7 +20,7 @@ namespace android::telephony
 		
 		AvailableNetworkInfo(QAndroidJniObject obj);
 		// Constructors
-		AvailableNetworkInfo(jint &arg0, jint &arg1, __JniBaseClass &arg2, __JniBaseClass &arg3);
+		AvailableNetworkInfo(jint arg0, jint arg1, __JniBaseClass arg2, __JniBaseClass arg3);
 		AvailableNetworkInfo() = default;
 		
 		// Methods

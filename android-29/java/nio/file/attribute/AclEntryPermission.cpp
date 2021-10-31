@@ -153,15 +153,6 @@ namespace java::nio::file::attribute
 			arg0
 		);
 	}
-	QAndroidJniObject AclEntryPermission::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.nio.file.attribute.AclEntryPermission",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/nio/file/attribute/AclEntryPermission;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray AclEntryPermission::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

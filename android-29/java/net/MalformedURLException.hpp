@@ -15,8 +15,7 @@ namespace java::net
 		MalformedURLException(QAndroidJniObject obj);
 		// Constructors
 		MalformedURLException();
-		MalformedURLException(jstring &arg0);
-		MalformedURLException(const QString &arg0);
+		MalformedURLException(jstring arg0);
 		
 		// Methods
 	};

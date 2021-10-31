@@ -20,8 +20,7 @@ namespace android::os
 		
 		MemoryFile(QAndroidJniObject obj);
 		// Constructors
-		MemoryFile(jstring &arg0, jint &arg1);
-		MemoryFile(const QString &arg0, jint &arg1);
+		MemoryFile(jstring arg0, jint arg1);
 		MemoryFile() = default;
 		
 		// Methods

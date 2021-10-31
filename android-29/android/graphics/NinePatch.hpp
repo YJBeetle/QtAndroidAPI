@@ -36,9 +36,8 @@ namespace android::graphics
 		
 		NinePatch(QAndroidJniObject obj);
 		// Constructors
-		NinePatch(android::graphics::Bitmap &arg0, jbyteArray &arg1);
-		NinePatch(android::graphics::Bitmap &arg0, jbyteArray &arg1, jstring &arg2);
-		NinePatch(android::graphics::Bitmap &arg0, jbyteArray &arg1, const QString &arg2);
+		NinePatch(android::graphics::Bitmap arg0, jbyteArray arg1);
+		NinePatch(android::graphics::Bitmap arg0, jbyteArray arg1, jstring arg2);
 		NinePatch() = default;
 		
 		// Methods

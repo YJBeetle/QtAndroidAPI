@@ -15,8 +15,7 @@ namespace java::lang
 		ClassCastException(QAndroidJniObject obj);
 		// Constructors
 		ClassCastException();
-		ClassCastException(jstring &arg0);
-		ClassCastException(const QString &arg0);
+		ClassCastException(jstring arg0);
 		
 		// Methods
 	};

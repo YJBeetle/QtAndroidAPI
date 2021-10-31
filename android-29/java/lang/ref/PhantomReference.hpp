@@ -17,7 +17,7 @@ namespace java::lang::ref
 		
 		PhantomReference(QAndroidJniObject obj);
 		// Constructors
-		PhantomReference(jobject &arg0, java::lang::ref::ReferenceQueue &arg1);
+		PhantomReference(jobject arg0, java::lang::ref::ReferenceQueue arg1);
 		PhantomReference() = default;
 		
 		// Methods

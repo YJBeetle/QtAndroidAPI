@@ -16,8 +16,7 @@ namespace android::speech::tts
 		
 		SynthesisRequest(QAndroidJniObject obj);
 		// Constructors
-		SynthesisRequest(jstring &arg0, android::os::Bundle &arg1);
-		SynthesisRequest(const QString &arg0, android::os::Bundle &arg1);
+		SynthesisRequest(jstring arg0, android::os::Bundle arg1);
 		SynthesisRequest() = default;
 		
 		// Methods

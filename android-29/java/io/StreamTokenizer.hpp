@@ -27,8 +27,8 @@ namespace java::io
 		
 		StreamTokenizer(QAndroidJniObject obj);
 		// Constructors
-		StreamTokenizer(java::io::InputStream &arg0);
-		StreamTokenizer(java::io::Reader &arg0);
+		StreamTokenizer(java::io::InputStream arg0);
+		StreamTokenizer(java::io::Reader arg0);
 		StreamTokenizer() = default;
 		
 		// Methods

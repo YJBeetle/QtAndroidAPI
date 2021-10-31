@@ -25,8 +25,8 @@ namespace java::util::concurrent
 		CopyOnWriteArrayList(QAndroidJniObject obj);
 		// Constructors
 		CopyOnWriteArrayList();
-		CopyOnWriteArrayList(jobjectArray &arg0);
-		CopyOnWriteArrayList(__JniBaseClass &arg0);
+		CopyOnWriteArrayList(jobjectArray arg0);
+		CopyOnWriteArrayList(__JniBaseClass arg0);
 		
 		// Methods
 		jboolean add(jobject arg0);

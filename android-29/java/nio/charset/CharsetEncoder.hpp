@@ -42,7 +42,6 @@ namespace java::nio::charset
 		jfloat averageBytesPerChar();
 		jboolean canEncode(jchar arg0);
 		jboolean canEncode(jstring arg0);
-		jboolean canEncode(const QString &arg0);
 		QAndroidJniObject charset();
 		QAndroidJniObject encode(java::nio::CharBuffer arg0);
 		QAndroidJniObject encode(java::nio::CharBuffer arg0, java::nio::ByteBuffer arg1, jboolean arg2);

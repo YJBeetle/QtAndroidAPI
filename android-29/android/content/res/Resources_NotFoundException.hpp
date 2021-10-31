@@ -19,10 +19,8 @@ namespace android::content::res
 		Resources_NotFoundException(QAndroidJniObject obj);
 		// Constructors
 		Resources_NotFoundException();
-		Resources_NotFoundException(jstring &arg0);
-		Resources_NotFoundException(const QString &arg0);
-		Resources_NotFoundException(jstring &arg0, java::lang::Exception &arg1);
-		Resources_NotFoundException(const QString &arg0, java::lang::Exception &arg1);
+		Resources_NotFoundException(jstring arg0);
+		Resources_NotFoundException(jstring arg0, java::lang::Exception arg1);
 		
 		// Methods
 	};

@@ -93,7 +93,6 @@ namespace android::telecom
 		QAndroidJniObject getCallCapablePhoneAccounts();
 		jstring getDefaultDialerPackage();
 		QAndroidJniObject getDefaultOutgoingPhoneAccount(jstring arg0);
-		QAndroidJniObject getDefaultOutgoingPhoneAccount(const QString &arg0);
 		jstring getLine1Number(android::telecom::PhoneAccountHandle arg0);
 		QAndroidJniObject getPhoneAccount(android::telecom::PhoneAccountHandle arg0);
 		QAndroidJniObject getSelfManagedPhoneAccounts();
@@ -102,16 +101,13 @@ namespace android::telecom
 		QAndroidJniObject getUserSelectedOutgoingPhoneAccount();
 		jstring getVoiceMailNumber(android::telecom::PhoneAccountHandle arg0);
 		jboolean handleMmi(jstring arg0);
-		jboolean handleMmi(const QString &arg0);
 		jboolean handleMmi(jstring arg0, android::telecom::PhoneAccountHandle arg1);
-		jboolean handleMmi(const QString &arg0, android::telecom::PhoneAccountHandle arg1);
 		jboolean isInCall();
 		jboolean isInManagedCall();
 		jboolean isIncomingCallPermitted(android::telecom::PhoneAccountHandle arg0);
 		jboolean isOutgoingCallPermitted(android::telecom::PhoneAccountHandle arg0);
 		jboolean isTtySupported();
 		jboolean isVoiceMailNumber(android::telecom::PhoneAccountHandle arg0, jstring arg1);
-		jboolean isVoiceMailNumber(android::telecom::PhoneAccountHandle arg0, const QString &arg1);
 		void placeCall(android::net::Uri arg0, android::os::Bundle arg1);
 		void registerPhoneAccount(android::telecom::PhoneAccount arg0);
 		void showInCallScreen(jboolean arg0);

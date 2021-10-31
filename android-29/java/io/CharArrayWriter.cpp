@@ -14,7 +14,7 @@ namespace java::io
 			"()V"
 		);
 	}
-	CharArrayWriter::CharArrayWriter(jint &arg0)
+	CharArrayWriter::CharArrayWriter(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.CharArrayWriter",
@@ -40,30 +40,12 @@ namespace java::io
 			arg0
 		);
 	}
-	QAndroidJniObject CharArrayWriter::append(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"append",
-			"(Ljava/lang/CharSequence;)Ljava/io/CharArrayWriter;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject CharArrayWriter::append(jstring arg0, jint arg1, jint arg2)
 	{
 		return __thiz.callObjectMethod(
 			"append",
 			"(Ljava/lang/CharSequence;II)Ljava/io/CharArrayWriter;",
 			arg0,
-			arg1,
-			arg2
-		);
-	}
-	QAndroidJniObject CharArrayWriter::append(const QString &arg0, jint arg1, jint arg2)
-	{
-		return __thiz.callObjectMethod(
-			"append",
-			"(Ljava/lang/CharSequence;II)Ljava/io/CharArrayWriter;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2
 		);
@@ -134,16 +116,6 @@ namespace java::io
 			"write",
 			"(Ljava/lang/String;II)V",
 			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void CharArrayWriter::write(const QString &arg0, jint arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"write",
-			"(Ljava/lang/String;II)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2
 		);

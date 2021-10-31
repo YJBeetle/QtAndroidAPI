@@ -16,7 +16,7 @@ namespace android::app::admin
 		
 		FreezePeriod(QAndroidJniObject obj);
 		// Constructors
-		FreezePeriod(java::time::MonthDay &arg0, java::time::MonthDay &arg1);
+		FreezePeriod(java::time::MonthDay arg0, java::time::MonthDay arg1);
 		FreezePeriod() = default;
 		
 		// Methods

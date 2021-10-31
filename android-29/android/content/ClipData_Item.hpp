@@ -24,16 +24,12 @@ namespace android::content
 		
 		ClipData_Item(QAndroidJniObject obj);
 		// Constructors
-		ClipData_Item(android::content::Intent &arg0);
-		ClipData_Item(android::net::Uri &arg0);
-		ClipData_Item(jstring &arg0);
-		ClipData_Item(const QString &arg0);
-		ClipData_Item(jstring &arg0, jstring &arg1);
-		ClipData_Item(const QString &arg0, const QString &arg1);
-		ClipData_Item(jstring &arg0, android::content::Intent &arg1, android::net::Uri &arg2);
-		ClipData_Item(const QString &arg0, android::content::Intent &arg1, android::net::Uri &arg2);
-		ClipData_Item(jstring &arg0, jstring &arg1, android::content::Intent &arg2, android::net::Uri &arg3);
-		ClipData_Item(const QString &arg0, const QString &arg1, android::content::Intent &arg2, android::net::Uri &arg3);
+		ClipData_Item(android::content::Intent arg0);
+		ClipData_Item(android::net::Uri arg0);
+		ClipData_Item(jstring arg0);
+		ClipData_Item(jstring arg0, jstring arg1);
+		ClipData_Item(jstring arg0, android::content::Intent arg1, android::net::Uri arg2);
+		ClipData_Item(jstring arg0, jstring arg1, android::content::Intent arg2, android::net::Uri arg3);
 		ClipData_Item() = default;
 		
 		// Methods

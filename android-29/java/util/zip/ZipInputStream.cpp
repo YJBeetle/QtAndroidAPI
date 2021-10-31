@@ -10,7 +10,7 @@ namespace java::util::zip
 	
 	ZipInputStream::ZipInputStream(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ZipInputStream::ZipInputStream(java::io::InputStream &arg0)
+	ZipInputStream::ZipInputStream(java::io::InputStream arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.zip.ZipInputStream",
@@ -18,7 +18,7 @@ namespace java::util::zip
 			arg0.__jniObject().object()
 		);
 	}
-	ZipInputStream::ZipInputStream(java::io::InputStream &arg0, java::nio::charset::Charset &arg1)
+	ZipInputStream::ZipInputStream(java::io::InputStream arg0, java::nio::charset::Charset arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.zip.ZipInputStream",

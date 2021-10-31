@@ -675,15 +675,6 @@ namespace android::view
 			arg0
 		);
 	}
-	jint MotionEvent::axisFromString(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.view.MotionEvent",
-			"axisFromString",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jstring MotionEvent::axisToString(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

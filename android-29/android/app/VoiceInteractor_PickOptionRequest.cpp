@@ -8,7 +8,7 @@ namespace android::app
 	
 	VoiceInteractor_PickOptionRequest::VoiceInteractor_PickOptionRequest(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	VoiceInteractor_PickOptionRequest::VoiceInteractor_PickOptionRequest(android::app::VoiceInteractor_Prompt &arg0, jarray &arg1, android::os::Bundle &arg2)
+	VoiceInteractor_PickOptionRequest::VoiceInteractor_PickOptionRequest(android::app::VoiceInteractor_Prompt arg0, jarray arg1, android::os::Bundle arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.VoiceInteractor$PickOptionRequest",

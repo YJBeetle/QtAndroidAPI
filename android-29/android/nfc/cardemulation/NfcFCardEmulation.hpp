@@ -33,9 +33,7 @@ namespace android::nfc::cardemulation
 		jstring getNfcid2ForService(android::content::ComponentName arg0);
 		jstring getSystemCodeForService(android::content::ComponentName arg0);
 		jboolean registerSystemCodeForService(android::content::ComponentName arg0, jstring arg1);
-		jboolean registerSystemCodeForService(android::content::ComponentName arg0, const QString &arg1);
 		jboolean setNfcid2ForService(android::content::ComponentName arg0, jstring arg1);
-		jboolean setNfcid2ForService(android::content::ComponentName arg0, const QString &arg1);
 		jboolean unregisterSystemCodeForService(android::content::ComponentName arg0);
 	};
 } // namespace android::nfc::cardemulation

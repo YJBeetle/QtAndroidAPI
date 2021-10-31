@@ -13,20 +13,12 @@ namespace java::lang
 			"()V"
 		);
 	}
-	AbstractMethodError::AbstractMethodError(jstring &arg0)
+	AbstractMethodError::AbstractMethodError(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.AbstractMethodError",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	AbstractMethodError::AbstractMethodError(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.AbstractMethodError",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

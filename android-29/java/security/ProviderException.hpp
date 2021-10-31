@@ -15,11 +15,9 @@ namespace java::security
 		ProviderException(QAndroidJniObject obj);
 		// Constructors
 		ProviderException();
-		ProviderException(jstring &arg0);
-		ProviderException(const QString &arg0);
-		ProviderException(jthrowable &arg0);
-		ProviderException(jstring &arg0, jthrowable &arg1);
-		ProviderException(const QString &arg0, jthrowable &arg1);
+		ProviderException(jstring arg0);
+		ProviderException(jthrowable arg0);
+		ProviderException(jstring arg0, jthrowable arg1);
 		
 		// Methods
 	};

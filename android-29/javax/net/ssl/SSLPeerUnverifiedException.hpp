@@ -15,8 +15,7 @@ namespace javax::net::ssl
 		
 		SSLPeerUnverifiedException(QAndroidJniObject obj);
 		// Constructors
-		SSLPeerUnverifiedException(jstring &arg0);
-		SSLPeerUnverifiedException(const QString &arg0);
+		SSLPeerUnverifiedException(jstring arg0);
 		SSLPeerUnverifiedException() = default;
 		
 		// Methods

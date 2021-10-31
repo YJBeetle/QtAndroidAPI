@@ -33,15 +33,6 @@ namespace android::graphics
 			arg0
 		);
 	}
-	QAndroidJniObject Canvas_EdgeType::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.Canvas$EdgeType",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/graphics/Canvas$EdgeType;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray Canvas_EdgeType::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

@@ -47,17 +47,6 @@ namespace javax::net::ssl
 			arg3
 		);
 	}
-	QAndroidJniObject SSLSocketFactory::createSocket(java::net::Socket arg0, const QString &arg1, jint arg2, jboolean arg3)
-	{
-		return __thiz.callObjectMethod(
-			"createSocket",
-			"(Ljava/net/Socket;Ljava/lang/String;IZ)Ljava/net/Socket;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2,
-			arg3
-		);
-	}
 	jarray SSLSocketFactory::getDefaultCipherSuites()
 	{
 		return __thiz.callObjectMethod(

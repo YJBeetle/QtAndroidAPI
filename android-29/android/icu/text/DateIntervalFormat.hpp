@@ -58,17 +58,11 @@ namespace android::icu::text
 		
 		// Methods
 		static QAndroidJniObject getInstance(jstring arg0);
-		static QAndroidJniObject getInstance(const QString &arg0);
 		static QAndroidJniObject getInstance(jstring arg0, android::icu::text::DateIntervalInfo arg1);
-		static QAndroidJniObject getInstance(const QString &arg0, android::icu::text::DateIntervalInfo arg1);
 		static QAndroidJniObject getInstance(jstring arg0, android::icu::util::ULocale arg1);
-		static QAndroidJniObject getInstance(const QString &arg0, android::icu::util::ULocale arg1);
 		static QAndroidJniObject getInstance(jstring arg0, java::util::Locale arg1);
-		static QAndroidJniObject getInstance(const QString &arg0, java::util::Locale arg1);
 		static QAndroidJniObject getInstance(jstring arg0, android::icu::util::ULocale arg1, android::icu::text::DateIntervalInfo arg2);
-		static QAndroidJniObject getInstance(const QString &arg0, android::icu::util::ULocale arg1, android::icu::text::DateIntervalInfo arg2);
 		static QAndroidJniObject getInstance(jstring arg0, java::util::Locale arg1, android::icu::text::DateIntervalInfo arg2);
-		static QAndroidJniObject getInstance(const QString &arg0, java::util::Locale arg1, android::icu::text::DateIntervalInfo arg2);
 		jobject clone();
 		QAndroidJniObject format(android::icu::util::DateInterval arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
 		QAndroidJniObject format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
@@ -77,7 +71,6 @@ namespace android::icu::text
 		QAndroidJniObject getDateIntervalInfo();
 		QAndroidJniObject getTimeZone();
 		jobject parseObject(jstring arg0, java::text::ParsePosition arg1);
-		jobject parseObject(const QString &arg0, java::text::ParsePosition arg1);
 		void setDateIntervalInfo(android::icu::text::DateIntervalInfo arg0);
 		void setTimeZone(android::icu::util::TimeZone arg0);
 	};

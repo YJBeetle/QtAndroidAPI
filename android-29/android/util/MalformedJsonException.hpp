@@ -14,8 +14,7 @@ namespace android::util
 		
 		MalformedJsonException(QAndroidJniObject obj);
 		// Constructors
-		MalformedJsonException(jstring &arg0);
-		MalformedJsonException(const QString &arg0);
+		MalformedJsonException(jstring arg0);
 		MalformedJsonException() = default;
 		
 		// Methods

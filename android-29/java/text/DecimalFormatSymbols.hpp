@@ -25,7 +25,7 @@ namespace java::text
 		DecimalFormatSymbols(QAndroidJniObject obj);
 		// Constructors
 		DecimalFormatSymbols();
-		DecimalFormatSymbols(java::util::Locale &arg0);
+		DecimalFormatSymbols(java::util::Locale arg0);
 		
 		// Methods
 		static jarray getAvailableLocales();
@@ -52,21 +52,16 @@ namespace java::text
 		jint hashCode();
 		void setCurrency(java::util::Currency arg0);
 		void setCurrencySymbol(jstring arg0);
-		void setCurrencySymbol(const QString &arg0);
 		void setDecimalSeparator(jchar arg0);
 		void setDigit(jchar arg0);
 		void setExponentSeparator(jstring arg0);
-		void setExponentSeparator(const QString &arg0);
 		void setGroupingSeparator(jchar arg0);
 		void setInfinity(jstring arg0);
-		void setInfinity(const QString &arg0);
 		void setInternationalCurrencySymbol(jstring arg0);
-		void setInternationalCurrencySymbol(const QString &arg0);
 		void setMinusSign(jchar arg0);
 		void setMonetaryDecimalSeparator(jchar arg0);
 		void setMonetaryGroupingSeparator(jchar arg0);
 		void setNaN(jstring arg0);
-		void setNaN(const QString &arg0);
 		void setPatternSeparator(jchar arg0);
 		void setPerMill(jchar arg0);
 		void setPercent(jchar arg0);

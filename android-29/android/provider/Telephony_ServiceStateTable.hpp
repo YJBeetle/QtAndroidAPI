@@ -26,7 +26,6 @@ namespace android::provider
 		// Methods
 		static QAndroidJniObject getUriForSubscriptionId(jint arg0);
 		static QAndroidJniObject getUriForSubscriptionIdAndField(jint arg0, jstring arg1);
-		static QAndroidJniObject getUriForSubscriptionIdAndField(jint arg0, const QString &arg1);
 	};
 } // namespace android::provider
 

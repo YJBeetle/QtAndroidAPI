@@ -16,7 +16,7 @@ namespace java::security::spec
 		
 		DSAParameterSpec(QAndroidJniObject obj);
 		// Constructors
-		DSAParameterSpec(java::math::BigInteger &arg0, java::math::BigInteger &arg1, java::math::BigInteger &arg2);
+		DSAParameterSpec(java::math::BigInteger arg0, java::math::BigInteger arg1, java::math::BigInteger arg2);
 		DSAParameterSpec() = default;
 		
 		// Methods

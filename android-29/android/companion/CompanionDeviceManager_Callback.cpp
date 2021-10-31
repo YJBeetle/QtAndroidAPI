@@ -32,13 +32,5 @@ namespace android::companion
 			arg0
 		);
 	}
-	void CompanionDeviceManager_Callback::onFailure(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"onFailure",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 } // namespace android::companion
 

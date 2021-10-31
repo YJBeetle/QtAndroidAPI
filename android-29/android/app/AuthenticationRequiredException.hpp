@@ -24,7 +24,7 @@ namespace android::app
 		
 		AuthenticationRequiredException(QAndroidJniObject obj);
 		// Constructors
-		AuthenticationRequiredException(jthrowable &arg0, android::app::PendingIntent &arg1);
+		AuthenticationRequiredException(jthrowable arg0, android::app::PendingIntent arg1);
 		AuthenticationRequiredException() = default;
 		
 		// Methods

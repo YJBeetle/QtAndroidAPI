@@ -12,7 +12,7 @@ namespace android::preference
 	
 	DialogPreference::DialogPreference(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DialogPreference::DialogPreference(android::content::Context &arg0)
+	DialogPreference::DialogPreference(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.preference.DialogPreference",
@@ -20,7 +20,7 @@ namespace android::preference
 			arg0.__jniObject().object()
 		);
 	}
-	DialogPreference::DialogPreference(android::content::Context &arg0, __JniBaseClass &arg1)
+	DialogPreference::DialogPreference(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.preference.DialogPreference",
@@ -29,7 +29,7 @@ namespace android::preference
 			arg1.__jniObject().object()
 		);
 	}
-	DialogPreference::DialogPreference(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	DialogPreference::DialogPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.preference.DialogPreference",
@@ -39,7 +39,7 @@ namespace android::preference
 			arg2
 		);
 	}
-	DialogPreference::DialogPreference(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	DialogPreference::DialogPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.preference.DialogPreference",
@@ -165,14 +165,6 @@ namespace android::preference
 			arg0
 		);
 	}
-	void DialogPreference::setDialogMessage(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDialogMessage",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void DialogPreference::setDialogTitle(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -187,14 +179,6 @@ namespace android::preference
 			"setDialogTitle",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
-		);
-	}
-	void DialogPreference::setDialogTitle(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDialogTitle",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void DialogPreference::setNegativeButtonText(jint arg0)
@@ -213,14 +197,6 @@ namespace android::preference
 			arg0
 		);
 	}
-	void DialogPreference::setNegativeButtonText(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setNegativeButtonText",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void DialogPreference::setPositiveButtonText(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -235,14 +211,6 @@ namespace android::preference
 			"setPositiveButtonText",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
-		);
-	}
-	void DialogPreference::setPositiveButtonText(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPositiveButtonText",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace android::preference

@@ -16,7 +16,7 @@ namespace java::security
 		
 		DomainLoadStoreParameter(QAndroidJniObject obj);
 		// Constructors
-		DomainLoadStoreParameter(java::net::URI &arg0, __JniBaseClass &arg1);
+		DomainLoadStoreParameter(java::net::URI arg0, __JniBaseClass arg1);
 		DomainLoadStoreParameter() = default;
 		
 		// Methods

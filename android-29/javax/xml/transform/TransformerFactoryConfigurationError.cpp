@@ -14,7 +14,7 @@ namespace javax::xml::transform
 			"()V"
 		);
 	}
-	TransformerFactoryConfigurationError::TransformerFactoryConfigurationError(java::lang::Exception &arg0)
+	TransformerFactoryConfigurationError::TransformerFactoryConfigurationError(java::lang::Exception arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.transform.TransformerFactoryConfigurationError",
@@ -22,7 +22,7 @@ namespace javax::xml::transform
 			arg0.__jniObject().object()
 		);
 	}
-	TransformerFactoryConfigurationError::TransformerFactoryConfigurationError(jstring &arg0)
+	TransformerFactoryConfigurationError::TransformerFactoryConfigurationError(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.transform.TransformerFactoryConfigurationError",
@@ -30,30 +30,13 @@ namespace javax::xml::transform
 			arg0
 		);
 	}
-	TransformerFactoryConfigurationError::TransformerFactoryConfigurationError(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.xml.transform.TransformerFactoryConfigurationError",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	TransformerFactoryConfigurationError::TransformerFactoryConfigurationError(java::lang::Exception &arg0, jstring &arg1)
+	TransformerFactoryConfigurationError::TransformerFactoryConfigurationError(java::lang::Exception arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.transform.TransformerFactoryConfigurationError",
 			"(Ljava/lang/Exception;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	TransformerFactoryConfigurationError::TransformerFactoryConfigurationError(java::lang::Exception &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.xml.transform.TransformerFactoryConfigurationError",
-			"(Ljava/lang/Exception;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	

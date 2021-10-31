@@ -753,18 +753,6 @@ namespace android::content
 			arg4.__jniObject().object()
 		);
 	}
-	jboolean Context::bindIsolatedService(android::content::Intent arg0, jint arg1, const QString &arg2, __JniBaseClass arg3, __JniBaseClass arg4)
-	{
-		return __thiz.callMethod<jboolean>(
-			"bindIsolatedService",
-			"(Landroid/content/Intent;ILjava/lang/String;Ljava/util/concurrent/Executor;Landroid/content/ServiceConnection;)Z",
-			arg0.__jniObject().object(),
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object()
-		);
-	}
 	jboolean Context::bindService(android::content::Intent arg0, __JniBaseClass arg1, jint arg2)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -794,14 +782,6 @@ namespace android::content
 			arg0
 		);
 	}
-	jint Context::checkCallingOrSelfPermission(const QString &arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"checkCallingOrSelfPermission",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jint Context::checkCallingOrSelfUriPermission(android::net::Uri arg0, jint arg1)
 	{
 		return __thiz.callMethod<jint>(
@@ -817,14 +797,6 @@ namespace android::content
 			"checkCallingPermission",
 			"(Ljava/lang/String;)I",
 			arg0
-		);
-	}
-	jint Context::checkCallingPermission(const QString &arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"checkCallingPermission",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jint Context::checkCallingUriPermission(android::net::Uri arg0, jint arg1)
@@ -846,30 +818,12 @@ namespace android::content
 			arg2
 		);
 	}
-	jint Context::checkPermission(const QString &arg0, jint arg1, jint arg2)
-	{
-		return __thiz.callMethod<jint>(
-			"checkPermission",
-			"(Ljava/lang/String;II)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2
-		);
-	}
 	jint Context::checkSelfPermission(jstring arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"checkSelfPermission",
 			"(Ljava/lang/String;)I",
 			arg0
-		);
-	}
-	jint Context::checkSelfPermission(const QString &arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"checkSelfPermission",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jint Context::checkUriPermission(android::net::Uri arg0, jint arg1, jint arg2, jint arg3)
@@ -891,19 +845,6 @@ namespace android::content
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3,
-			arg4,
-			arg5
-		);
-	}
-	jint Context::checkUriPermission(android::net::Uri arg0, const QString &arg1, const QString &arg2, jint arg3, jint arg4, jint arg5)
-	{
-		return __thiz.callMethod<jint>(
-			"checkUriPermission",
-			"(Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;III)I",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
 			arg3,
 			arg4,
 			arg5
@@ -932,14 +873,6 @@ namespace android::content
 			arg0
 		);
 	}
-	QAndroidJniObject Context::createContextForSplit(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"createContextForSplit",
-			"(Ljava/lang/String;)Landroid/content/Context;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Context::createDeviceProtectedStorageContext()
 	{
 		return __thiz.callObjectMethod(
@@ -964,15 +897,6 @@ namespace android::content
 			arg1
 		);
 	}
-	QAndroidJniObject Context::createPackageContext(const QString &arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"createPackageContext",
-			"(Ljava/lang/String;I)Landroid/content/Context;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	jarray Context::databaseList()
 	{
 		return __thiz.callObjectMethod(
@@ -988,28 +912,12 @@ namespace android::content
 			arg0
 		);
 	}
-	jboolean Context::deleteDatabase(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"deleteDatabase",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jboolean Context::deleteFile(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"deleteFile",
 			"(Ljava/lang/String;)Z",
 			arg0
-		);
-	}
-	jboolean Context::deleteFile(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"deleteFile",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean Context::deleteSharedPreferences(jstring arg0)
@@ -1020,14 +928,6 @@ namespace android::content
 			arg0
 		);
 	}
-	jboolean Context::deleteSharedPreferences(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"deleteSharedPreferences",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void Context::enforceCallingOrSelfPermission(jstring arg0, jstring arg1)
 	{
 		__thiz.callMethod<void>(
@@ -1035,15 +935,6 @@ namespace android::content
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	void Context::enforceCallingOrSelfPermission(const QString &arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"enforceCallingOrSelfPermission",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void Context::enforceCallingOrSelfUriPermission(android::net::Uri arg0, jint arg1, jstring arg2)
@@ -1056,16 +947,6 @@ namespace android::content
 			arg2
 		);
 	}
-	void Context::enforceCallingOrSelfUriPermission(android::net::Uri arg0, jint arg1, const QString &arg2)
-	{
-		__thiz.callMethod<void>(
-			"enforceCallingOrSelfUriPermission",
-			"(Landroid/net/Uri;ILjava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	void Context::enforceCallingPermission(jstring arg0, jstring arg1)
 	{
 		__thiz.callMethod<void>(
@@ -1073,15 +954,6 @@ namespace android::content
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	void Context::enforceCallingPermission(const QString &arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"enforceCallingPermission",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void Context::enforceCallingUriPermission(android::net::Uri arg0, jint arg1, jstring arg2)
@@ -1094,16 +966,6 @@ namespace android::content
 			arg2
 		);
 	}
-	void Context::enforceCallingUriPermission(android::net::Uri arg0, jint arg1, const QString &arg2)
-	{
-		__thiz.callMethod<void>(
-			"enforceCallingUriPermission",
-			"(Landroid/net/Uri;ILjava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	void Context::enforcePermission(jstring arg0, jint arg1, jint arg2, jstring arg3)
 	{
 		__thiz.callMethod<void>(
@@ -1113,17 +975,6 @@ namespace android::content
 			arg1,
 			arg2,
 			arg3
-		);
-	}
-	void Context::enforcePermission(const QString &arg0, jint arg1, jint arg2, const QString &arg3)
-	{
-		__thiz.callMethod<void>(
-			"enforcePermission",
-			"(Ljava/lang/String;IILjava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2,
-			QAndroidJniObject::fromString(arg3).object<jstring>()
 		);
 	}
 	void Context::enforceUriPermission(android::net::Uri arg0, jint arg1, jint arg2, jint arg3, jstring arg4)
@@ -1138,18 +989,6 @@ namespace android::content
 			arg4
 		);
 	}
-	void Context::enforceUriPermission(android::net::Uri arg0, jint arg1, jint arg2, jint arg3, const QString &arg4)
-	{
-		__thiz.callMethod<void>(
-			"enforceUriPermission",
-			"(Landroid/net/Uri;IIILjava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2,
-			arg3,
-			QAndroidJniObject::fromString(arg4).object<jstring>()
-		);
-	}
 	void Context::enforceUriPermission(android::net::Uri arg0, jstring arg1, jstring arg2, jint arg3, jint arg4, jint arg5, jstring arg6)
 	{
 		__thiz.callMethod<void>(
@@ -1162,20 +1001,6 @@ namespace android::content
 			arg4,
 			arg5,
 			arg6
-		);
-	}
-	void Context::enforceUriPermission(android::net::Uri arg0, const QString &arg1, const QString &arg2, jint arg3, jint arg4, jint arg5, const QString &arg6)
-	{
-		__thiz.callMethod<void>(
-			"enforceUriPermission",
-			"(Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;IIILjava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			arg3,
-			arg4,
-			arg5,
-			QAndroidJniObject::fromString(arg6).object<jstring>()
 		);
 	}
 	jarray Context::fileList()
@@ -1265,29 +1090,12 @@ namespace android::content
 			arg0
 		);
 	}
-	QAndroidJniObject Context::getDatabasePath(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getDatabasePath",
-			"(Ljava/lang/String;)Ljava/io/File;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Context::getDir(jstring arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
 			"getDir",
 			"(Ljava/lang/String;I)Ljava/io/File;",
 			arg0,
-			arg1
-		);
-	}
-	QAndroidJniObject Context::getDir(const QString &arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getDir",
-			"(Ljava/lang/String;I)Ljava/io/File;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -1321,28 +1129,12 @@ namespace android::content
 			arg0
 		);
 	}
-	QAndroidJniObject Context::getExternalFilesDir(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getExternalFilesDir",
-			"(Ljava/lang/String;)Ljava/io/File;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray Context::getExternalFilesDirs(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getExternalFilesDirs",
 			"(Ljava/lang/String;)[Ljava/io/File;",
 			arg0
-		).object<jarray>();
-	}
-	jarray Context::getExternalFilesDirs(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getExternalFilesDirs",
-			"(Ljava/lang/String;)[Ljava/io/File;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jarray>();
 	}
 	jarray Context::getExternalMediaDirs()
@@ -1358,14 +1150,6 @@ namespace android::content
 			"getFileStreamPath",
 			"(Ljava/lang/String;)Ljava/io/File;",
 			arg0
-		);
-	}
-	QAndroidJniObject Context::getFileStreamPath(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getFileStreamPath",
-			"(Ljava/lang/String;)Ljava/io/File;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Context::getFilesDir()
@@ -1461,15 +1245,6 @@ namespace android::content
 			arg1
 		);
 	}
-	QAndroidJniObject Context::getSharedPreferences(const QString &arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getSharedPreferences",
-			"(Ljava/lang/String;I)Landroid/content/SharedPreferences;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	jstring Context::getString(jint arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -1501,14 +1276,6 @@ namespace android::content
 			"getSystemService",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
 			arg0
-		).object<jobject>();
-	}
-	jobject Context::getSystemService(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getSystemService",
-			"(Ljava/lang/String;)Ljava/lang/Object;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jobject>();
 	}
 	jstring Context::getSystemServiceName(jclass arg0)
@@ -1565,16 +1332,6 @@ namespace android::content
 			arg2
 		);
 	}
-	void Context::grantUriPermission(const QString &arg0, android::net::Uri arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"grantUriPermission",
-			"(Ljava/lang/String;Landroid/net/Uri;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2
-		);
-	}
 	jboolean Context::isDeviceProtectedStorage()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -1598,15 +1355,6 @@ namespace android::content
 			arg1
 		);
 	}
-	jboolean Context::moveDatabaseFrom(android::content::Context arg0, const QString &arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"moveDatabaseFrom",
-			"(Landroid/content/Context;Ljava/lang/String;)Z",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	jboolean Context::moveSharedPreferencesFrom(android::content::Context arg0, jstring arg1)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -1614,15 +1362,6 @@ namespace android::content
 			"(Landroid/content/Context;Ljava/lang/String;)Z",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jboolean Context::moveSharedPreferencesFrom(android::content::Context arg0, const QString &arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"moveSharedPreferencesFrom",
-			"(Landroid/content/Context;Ljava/lang/String;)Z",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	QAndroidJniObject Context::obtainStyledAttributes(jintArray arg0)
@@ -1670,29 +1409,12 @@ namespace android::content
 			arg0
 		);
 	}
-	QAndroidJniObject Context::openFileInput(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"openFileInput",
-			"(Ljava/lang/String;)Ljava/io/FileInputStream;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Context::openFileOutput(jstring arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
 			"openFileOutput",
 			"(Ljava/lang/String;I)Ljava/io/FileOutputStream;",
 			arg0,
-			arg1
-		);
-	}
-	QAndroidJniObject Context::openFileOutput(const QString &arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"openFileOutput",
-			"(Ljava/lang/String;I)Ljava/io/FileOutputStream;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -1706,33 +1428,12 @@ namespace android::content
 			arg2.__jniObject().object()
 		);
 	}
-	QAndroidJniObject Context::openOrCreateDatabase(const QString &arg0, jint arg1, __JniBaseClass arg2)
-	{
-		return __thiz.callObjectMethod(
-			"openOrCreateDatabase",
-			"(Ljava/lang/String;ILandroid/database/sqlite/SQLiteDatabase$CursorFactory;)Landroid/database/sqlite/SQLiteDatabase;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
 	QAndroidJniObject Context::openOrCreateDatabase(jstring arg0, jint arg1, __JniBaseClass arg2, __JniBaseClass arg3)
 	{
 		return __thiz.callObjectMethod(
 			"openOrCreateDatabase",
 			"(Ljava/lang/String;ILandroid/database/sqlite/SQLiteDatabase$CursorFactory;Landroid/database/DatabaseErrorHandler;)Landroid/database/sqlite/SQLiteDatabase;",
 			arg0,
-			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Context::openOrCreateDatabase(const QString &arg0, jint arg1, __JniBaseClass arg2, __JniBaseClass arg3)
-	{
-		return __thiz.callObjectMethod(
-			"openOrCreateDatabase",
-			"(Ljava/lang/String;ILandroid/database/sqlite/SQLiteDatabase$CursorFactory;Landroid/database/DatabaseErrorHandler;)Landroid/database/sqlite/SQLiteDatabase;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object()
@@ -1783,17 +1484,6 @@ namespace android::content
 			arg3.__jniObject().object()
 		);
 	}
-	QAndroidJniObject Context::registerReceiver(android::content::BroadcastReceiver arg0, android::content::IntentFilter arg1, const QString &arg2, android::os::Handler arg3)
-	{
-		return __thiz.callObjectMethod(
-			"registerReceiver",
-			"(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			arg3.__jniObject().object()
-		);
-	}
 	QAndroidJniObject Context::registerReceiver(android::content::BroadcastReceiver arg0, android::content::IntentFilter arg1, jstring arg2, android::os::Handler arg3, jint arg4)
 	{
 		return __thiz.callObjectMethod(
@@ -1802,18 +1492,6 @@ namespace android::content
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3.__jniObject().object(),
-			arg4
-		);
-	}
-	QAndroidJniObject Context::registerReceiver(android::content::BroadcastReceiver arg0, android::content::IntentFilter arg1, const QString &arg2, android::os::Handler arg3, jint arg4)
-	{
-		return __thiz.callObjectMethod(
-			"registerReceiver",
-			"(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;I)Landroid/content/Intent;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
 			arg3.__jniObject().object(),
 			arg4
 		);
@@ -1854,16 +1532,6 @@ namespace android::content
 			arg2
 		);
 	}
-	void Context::revokeUriPermission(const QString &arg0, android::net::Uri arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"revokeUriPermission",
-			"(Ljava/lang/String;Landroid/net/Uri;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2
-		);
-	}
 	void Context::sendBroadcast(android::content::Intent arg0)
 	{
 		__thiz.callMethod<void>(
@@ -1879,15 +1547,6 @@ namespace android::content
 			"(Landroid/content/Intent;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	void Context::sendBroadcast(android::content::Intent arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"sendBroadcast",
-			"(Landroid/content/Intent;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void Context::sendBroadcastAsUser(android::content::Intent arg0, android::os::UserHandle arg1)
@@ -1909,16 +1568,6 @@ namespace android::content
 			arg2
 		);
 	}
-	void Context::sendBroadcastAsUser(android::content::Intent arg0, android::os::UserHandle arg1, const QString &arg2)
-	{
-		__thiz.callMethod<void>(
-			"sendBroadcastAsUser",
-			"(Landroid/content/Intent;Landroid/os/UserHandle;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	void Context::sendOrderedBroadcast(android::content::Intent arg0, jstring arg1)
 	{
 		__thiz.callMethod<void>(
@@ -1926,15 +1575,6 @@ namespace android::content
 			"(Landroid/content/Intent;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	void Context::sendOrderedBroadcast(android::content::Intent arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"sendOrderedBroadcast",
-			"(Landroid/content/Intent;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void Context::sendOrderedBroadcast(android::content::Intent arg0, jstring arg1, android::content::BroadcastReceiver arg2, android::os::Handler arg3, jint arg4, jstring arg5, android::os::Bundle arg6)
@@ -1951,20 +1591,6 @@ namespace android::content
 			arg6.__jniObject().object()
 		);
 	}
-	void Context::sendOrderedBroadcast(android::content::Intent arg0, const QString &arg1, android::content::BroadcastReceiver arg2, android::os::Handler arg3, jint arg4, const QString &arg5, android::os::Bundle arg6)
-	{
-		__thiz.callMethod<void>(
-			"sendOrderedBroadcast",
-			"(Landroid/content/Intent;Ljava/lang/String;Landroid/content/BroadcastReceiver;Landroid/os/Handler;ILjava/lang/String;Landroid/os/Bundle;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
-			arg4,
-			QAndroidJniObject::fromString(arg5).object<jstring>(),
-			arg6.__jniObject().object()
-		);
-	}
 	void Context::sendOrderedBroadcastAsUser(android::content::Intent arg0, android::os::UserHandle arg1, jstring arg2, android::content::BroadcastReceiver arg3, android::os::Handler arg4, jint arg5, jstring arg6, android::os::Bundle arg7)
 	{
 		__thiz.callMethod<void>(
@@ -1977,21 +1603,6 @@ namespace android::content
 			arg4.__jniObject().object(),
 			arg5,
 			arg6,
-			arg7.__jniObject().object()
-		);
-	}
-	void Context::sendOrderedBroadcastAsUser(android::content::Intent arg0, android::os::UserHandle arg1, const QString &arg2, android::content::BroadcastReceiver arg3, android::os::Handler arg4, jint arg5, const QString &arg6, android::os::Bundle arg7)
-	{
-		__thiz.callMethod<void>(
-			"sendOrderedBroadcastAsUser",
-			"(Landroid/content/Intent;Landroid/os/UserHandle;Ljava/lang/String;Landroid/content/BroadcastReceiver;Landroid/os/Handler;ILjava/lang/String;Landroid/os/Bundle;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
-			arg5,
-			QAndroidJniObject::fromString(arg6).object<jstring>(),
 			arg7.__jniObject().object()
 		);
 	}
@@ -2025,19 +1636,6 @@ namespace android::content
 			arg5.__jniObject().object()
 		);
 	}
-	void Context::sendStickyOrderedBroadcast(android::content::Intent arg0, android::content::BroadcastReceiver arg1, android::os::Handler arg2, jint arg3, const QString &arg4, android::os::Bundle arg5)
-	{
-		__thiz.callMethod<void>(
-			"sendStickyOrderedBroadcast",
-			"(Landroid/content/Intent;Landroid/content/BroadcastReceiver;Landroid/os/Handler;ILjava/lang/String;Landroid/os/Bundle;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3,
-			QAndroidJniObject::fromString(arg4).object<jstring>(),
-			arg5.__jniObject().object()
-		);
-	}
 	void Context::sendStickyOrderedBroadcastAsUser(android::content::Intent arg0, android::os::UserHandle arg1, android::content::BroadcastReceiver arg2, android::os::Handler arg3, jint arg4, jstring arg5, android::os::Bundle arg6)
 	{
 		__thiz.callMethod<void>(
@@ -2049,20 +1647,6 @@ namespace android::content
 			arg3.__jniObject().object(),
 			arg4,
 			arg5,
-			arg6.__jniObject().object()
-		);
-	}
-	void Context::sendStickyOrderedBroadcastAsUser(android::content::Intent arg0, android::os::UserHandle arg1, android::content::BroadcastReceiver arg2, android::os::Handler arg3, jint arg4, const QString &arg5, android::os::Bundle arg6)
-	{
-		__thiz.callMethod<void>(
-			"sendStickyOrderedBroadcastAsUser",
-			"(Landroid/content/Intent;Landroid/os/UserHandle;Landroid/content/BroadcastReceiver;Landroid/os/Handler;ILjava/lang/String;Landroid/os/Bundle;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
-			arg4,
-			QAndroidJniObject::fromString(arg5).object<jstring>(),
 			arg6.__jniObject().object()
 		);
 	}
@@ -2139,16 +1723,6 @@ namespace android::content
 			"(Landroid/content/ComponentName;Ljava/lang/String;Landroid/os/Bundle;)Z",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	jboolean Context::startInstrumentation(android::content::ComponentName arg0, const QString &arg1, android::os::Bundle arg2)
-	{
-		return __thiz.callMethod<jboolean>(
-			"startInstrumentation",
-			"(Landroid/content/ComponentName;Ljava/lang/String;Landroid/os/Bundle;)Z",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}

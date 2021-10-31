@@ -28,7 +28,7 @@ namespace android::media
 	
 	Session2Command_Result::Session2Command_Result(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Session2Command_Result::Session2Command_Result(jint &arg0, android::os::Bundle &arg1)
+	Session2Command_Result::Session2Command_Result(jint arg0, android::os::Bundle arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.Session2Command$Result",

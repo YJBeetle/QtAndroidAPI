@@ -33,10 +33,8 @@ namespace android::preference
 		static jstring getDefaultSharedPreferencesName(android::content::Context arg0);
 		static void setDefaultValues(android::content::Context arg0, jint arg1, jboolean arg2);
 		static void setDefaultValues(android::content::Context arg0, jstring arg1, jint arg2, jint arg3, jboolean arg4);
-		static void setDefaultValues(android::content::Context arg0, const QString &arg1, jint arg2, jint arg3, jboolean arg4);
 		QAndroidJniObject createPreferenceScreen(android::content::Context arg0);
 		QAndroidJniObject findPreference(jstring arg0);
-		QAndroidJniObject findPreference(const QString &arg0);
 		QAndroidJniObject getPreferenceDataStore();
 		QAndroidJniObject getSharedPreferences();
 		jint getSharedPreferencesMode();
@@ -46,7 +44,6 @@ namespace android::preference
 		void setPreferenceDataStore(__JniBaseClass arg0);
 		void setSharedPreferencesMode(jint arg0);
 		void setSharedPreferencesName(jstring arg0);
-		void setSharedPreferencesName(const QString &arg0);
 		void setStorageDefault();
 		void setStorageDeviceProtected();
 	};

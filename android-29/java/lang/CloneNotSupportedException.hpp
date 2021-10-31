@@ -14,8 +14,7 @@ namespace java::lang
 		CloneNotSupportedException(QAndroidJniObject obj);
 		// Constructors
 		CloneNotSupportedException();
-		CloneNotSupportedException(jstring &arg0);
-		CloneNotSupportedException(const QString &arg0);
+		CloneNotSupportedException(jstring arg0);
 		
 		// Methods
 	};

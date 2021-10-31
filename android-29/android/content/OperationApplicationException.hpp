@@ -14,14 +14,11 @@ namespace android::content
 		OperationApplicationException(QAndroidJniObject obj);
 		// Constructors
 		OperationApplicationException();
-		OperationApplicationException(jint &arg0);
-		OperationApplicationException(jstring &arg0);
-		OperationApplicationException(const QString &arg0);
-		OperationApplicationException(jthrowable &arg0);
-		OperationApplicationException(jstring &arg0, jint &arg1);
-		OperationApplicationException(const QString &arg0, jint &arg1);
-		OperationApplicationException(jstring &arg0, jthrowable &arg1);
-		OperationApplicationException(const QString &arg0, jthrowable &arg1);
+		OperationApplicationException(jint arg0);
+		OperationApplicationException(jstring arg0);
+		OperationApplicationException(jthrowable arg0);
+		OperationApplicationException(jstring arg0, jint arg1);
+		OperationApplicationException(jstring arg0, jthrowable arg1);
 		
 		// Methods
 		jint getNumSuccessfulYieldPoints();

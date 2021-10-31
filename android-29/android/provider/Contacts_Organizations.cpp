@@ -45,16 +45,5 @@ namespace android::provider
 			arg2
 		).object<jstring>();
 	}
-	jstring Contacts_Organizations::getDisplayLabel(android::content::Context arg0, jint arg1, const QString &arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.Contacts$Organizations",
-			"getDisplayLabel",
-			"(Landroid/content/Context;ILjava/lang/CharSequence;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object(),
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		).object<jstring>();
-	}
 } // namespace android::provider
 

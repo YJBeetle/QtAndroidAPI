@@ -7,7 +7,7 @@ namespace android::view::textclassifier
 	
 	TextClassifierEvent_TextLinkifyEvent_Builder::TextClassifierEvent_TextLinkifyEvent_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	TextClassifierEvent_TextLinkifyEvent_Builder::TextClassifierEvent_TextLinkifyEvent_Builder(jint &arg0)
+	TextClassifierEvent_TextLinkifyEvent_Builder::TextClassifierEvent_TextLinkifyEvent_Builder(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.textclassifier.TextClassifierEvent$TextLinkifyEvent$Builder",

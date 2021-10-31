@@ -13,7 +13,7 @@ namespace java::security
 			"()V"
 		);
 	}
-	InvalidAlgorithmParameterException::InvalidAlgorithmParameterException(jstring &arg0)
+	InvalidAlgorithmParameterException::InvalidAlgorithmParameterException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.InvalidAlgorithmParameterException",
@@ -21,15 +21,7 @@ namespace java::security
 			arg0
 		);
 	}
-	InvalidAlgorithmParameterException::InvalidAlgorithmParameterException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.InvalidAlgorithmParameterException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	InvalidAlgorithmParameterException::InvalidAlgorithmParameterException(jthrowable &arg0)
+	InvalidAlgorithmParameterException::InvalidAlgorithmParameterException(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.InvalidAlgorithmParameterException",
@@ -37,21 +29,12 @@ namespace java::security
 			arg0
 		);
 	}
-	InvalidAlgorithmParameterException::InvalidAlgorithmParameterException(jstring &arg0, jthrowable &arg1)
+	InvalidAlgorithmParameterException::InvalidAlgorithmParameterException(jstring arg0, jthrowable arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.InvalidAlgorithmParameterException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
-			arg1
-		);
-	}
-	InvalidAlgorithmParameterException::InvalidAlgorithmParameterException(const QString &arg0, jthrowable &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.InvalidAlgorithmParameterException",
-			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

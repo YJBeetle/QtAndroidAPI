@@ -6,7 +6,7 @@ namespace javax::crypto::spec
 	
 	GCMParameterSpec::GCMParameterSpec(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	GCMParameterSpec::GCMParameterSpec(jint &arg0, jbyteArray &arg1)
+	GCMParameterSpec::GCMParameterSpec(jint arg0, jbyteArray arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.crypto.spec.GCMParameterSpec",
@@ -15,7 +15,7 @@ namespace javax::crypto::spec
 			arg1
 		);
 	}
-	GCMParameterSpec::GCMParameterSpec(jint &arg0, jbyteArray &arg1, jint &arg2, jint &arg3)
+	GCMParameterSpec::GCMParameterSpec(jint arg0, jbyteArray arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.crypto.spec.GCMParameterSpec",

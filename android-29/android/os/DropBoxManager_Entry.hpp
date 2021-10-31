@@ -29,16 +29,11 @@ namespace android::os
 		
 		DropBoxManager_Entry(QAndroidJniObject obj);
 		// Constructors
-		DropBoxManager_Entry(jstring &arg0, jlong &arg1);
-		DropBoxManager_Entry(const QString &arg0, jlong &arg1);
-		DropBoxManager_Entry(jstring &arg0, jlong &arg1, jstring &arg2);
-		DropBoxManager_Entry(const QString &arg0, jlong &arg1, const QString &arg2);
-		DropBoxManager_Entry(jstring &arg0, jlong &arg1, jbyteArray &arg2, jint &arg3);
-		DropBoxManager_Entry(const QString &arg0, jlong &arg1, jbyteArray &arg2, jint &arg3);
-		DropBoxManager_Entry(jstring &arg0, jlong &arg1, android::os::ParcelFileDescriptor &arg2, jint &arg3);
-		DropBoxManager_Entry(const QString &arg0, jlong &arg1, android::os::ParcelFileDescriptor &arg2, jint &arg3);
-		DropBoxManager_Entry(jstring &arg0, jlong &arg1, java::io::File &arg2, jint &arg3);
-		DropBoxManager_Entry(const QString &arg0, jlong &arg1, java::io::File &arg2, jint &arg3);
+		DropBoxManager_Entry(jstring arg0, jlong arg1);
+		DropBoxManager_Entry(jstring arg0, jlong arg1, jstring arg2);
+		DropBoxManager_Entry(jstring arg0, jlong arg1, jbyteArray arg2, jint arg3);
+		DropBoxManager_Entry(jstring arg0, jlong arg1, android::os::ParcelFileDescriptor arg2, jint arg3);
+		DropBoxManager_Entry(jstring arg0, jlong arg1, java::io::File arg2, jint arg3);
 		DropBoxManager_Entry() = default;
 		
 		// Methods

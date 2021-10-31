@@ -38,28 +38,12 @@ namespace android::webkit
 			arg0
 		);
 	}
-	void WebIconDatabase::open(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"open",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void WebIconDatabase::releaseIconForPageUrl(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"releaseIconForPageUrl",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void WebIconDatabase::releaseIconForPageUrl(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"releaseIconForPageUrl",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void WebIconDatabase::removeAllIcons()
@@ -78,29 +62,12 @@ namespace android::webkit
 			arg1.__jniObject().object()
 		);
 	}
-	void WebIconDatabase::requestIconForPageUrl(const QString &arg0, __JniBaseClass arg1)
-	{
-		__thiz.callMethod<void>(
-			"requestIconForPageUrl",
-			"(Ljava/lang/String;Landroid/webkit/WebIconDatabase$IconListener;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	void WebIconDatabase::retainIconForPageUrl(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"retainIconForPageUrl",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void WebIconDatabase::retainIconForPageUrl(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"retainIconForPageUrl",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace android::webkit

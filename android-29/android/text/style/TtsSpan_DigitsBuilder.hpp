@@ -15,12 +15,10 @@ namespace android::text::style
 		TtsSpan_DigitsBuilder(QAndroidJniObject obj);
 		// Constructors
 		TtsSpan_DigitsBuilder();
-		TtsSpan_DigitsBuilder(jstring &arg0);
-		TtsSpan_DigitsBuilder(const QString &arg0);
+		TtsSpan_DigitsBuilder(jstring arg0);
 		
 		// Methods
 		QAndroidJniObject setDigits(jstring arg0);
-		QAndroidJniObject setDigits(const QString &arg0);
 	};
 } // namespace android::text::style
 

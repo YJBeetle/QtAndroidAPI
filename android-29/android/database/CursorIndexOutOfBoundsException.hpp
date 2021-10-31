@@ -15,9 +15,8 @@ namespace android::database
 		
 		CursorIndexOutOfBoundsException(QAndroidJniObject obj);
 		// Constructors
-		CursorIndexOutOfBoundsException(jstring &arg0);
-		CursorIndexOutOfBoundsException(const QString &arg0);
-		CursorIndexOutOfBoundsException(jint &arg0, jint &arg1);
+		CursorIndexOutOfBoundsException(jstring arg0);
+		CursorIndexOutOfBoundsException(jint arg0, jint arg1);
 		CursorIndexOutOfBoundsException() = default;
 		
 		// Methods

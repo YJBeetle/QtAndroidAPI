@@ -102,7 +102,6 @@ namespace android::graphics
 		void drawPoints(jfloatArray arg0, android::graphics::Paint arg1);
 		void drawPoints(jfloatArray arg0, jint arg1, jint arg2, android::graphics::Paint arg3);
 		void drawPosText(jstring arg0, jfloatArray arg1, android::graphics::Paint arg2);
-		void drawPosText(const QString &arg0, jfloatArray arg1, android::graphics::Paint arg2);
 		void drawPosText(jcharArray arg0, jint arg1, jint arg2, jfloatArray arg3, android::graphics::Paint arg4);
 		void drawRGB(jint arg0, jint arg1, jint arg2);
 		void drawRect(android::graphics::Rect arg0, android::graphics::Paint arg1);
@@ -112,17 +111,13 @@ namespace android::graphics
 		void drawRoundRect(android::graphics::RectF arg0, jfloat arg1, jfloat arg2, android::graphics::Paint arg3);
 		void drawRoundRect(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5, android::graphics::Paint arg6);
 		void drawText(jstring arg0, jfloat arg1, jfloat arg2, android::graphics::Paint arg3);
-		void drawText(const QString &arg0, jfloat arg1, jfloat arg2, android::graphics::Paint arg3);
 		void drawText(jcharArray arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, android::graphics::Paint arg5);
 		void drawText(jstring arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, android::graphics::Paint arg5);
-		void drawText(const QString &arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, android::graphics::Paint arg5);
 		void drawTextOnPath(jstring arg0, android::graphics::Path arg1, jfloat arg2, jfloat arg3, android::graphics::Paint arg4);
-		void drawTextOnPath(const QString &arg0, android::graphics::Path arg1, jfloat arg2, jfloat arg3, android::graphics::Paint arg4);
 		void drawTextOnPath(jcharArray arg0, jint arg1, jint arg2, android::graphics::Path arg3, jfloat arg4, jfloat arg5, android::graphics::Paint arg6);
 		void drawTextRun(jcharArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jfloat arg5, jfloat arg6, jboolean arg7, android::graphics::Paint arg8);
 		void drawTextRun(android::graphics::text::MeasuredText arg0, jint arg1, jint arg2, jint arg3, jint arg4, jfloat arg5, jfloat arg6, jboolean arg7, android::graphics::Paint arg8);
 		void drawTextRun(jstring arg0, jint arg1, jint arg2, jint arg3, jint arg4, jfloat arg5, jfloat arg6, jboolean arg7, android::graphics::Paint arg8);
-		void drawTextRun(const QString &arg0, jint arg1, jint arg2, jint arg3, jint arg4, jfloat arg5, jfloat arg6, jboolean arg7, android::graphics::Paint arg8);
 		void drawVertices(android::graphics::Canvas_VertexMode arg0, jint arg1, jfloatArray arg2, jint arg3, jfloatArray arg4, jint arg5, jintArray arg6, jint arg7, jshortArray arg8, jint arg9, jint arg10, android::graphics::Paint arg11);
 		void enableZ();
 		jint getHeight();

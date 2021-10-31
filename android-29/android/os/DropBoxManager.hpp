@@ -31,15 +31,10 @@ namespace android::os
 		
 		// Methods
 		void addData(jstring arg0, jbyteArray arg1, jint arg2);
-		void addData(const QString &arg0, jbyteArray arg1, jint arg2);
 		void addFile(jstring arg0, java::io::File arg1, jint arg2);
-		void addFile(const QString &arg0, java::io::File arg1, jint arg2);
 		void addText(jstring arg0, jstring arg1);
-		void addText(const QString &arg0, const QString &arg1);
 		QAndroidJniObject getNextEntry(jstring arg0, jlong arg1);
-		QAndroidJniObject getNextEntry(const QString &arg0, jlong arg1);
 		jboolean isTagEnabled(jstring arg0);
-		jboolean isTagEnabled(const QString &arg0);
 	};
 } // namespace android::os
 

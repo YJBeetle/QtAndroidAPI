@@ -76,7 +76,7 @@ namespace android::content
 			"()V"
 		);
 	}
-	SyncStats::SyncStats(android::os::Parcel &arg0)
+	SyncStats::SyncStats(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.SyncStats",

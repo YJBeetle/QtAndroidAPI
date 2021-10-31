@@ -8,7 +8,7 @@ namespace android::graphics::text
 	
 	MeasuredText_Builder::MeasuredText_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MeasuredText_Builder::MeasuredText_Builder(jcharArray &arg0)
+	MeasuredText_Builder::MeasuredText_Builder(jcharArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.text.MeasuredText$Builder",
@@ -16,7 +16,7 @@ namespace android::graphics::text
 			arg0
 		);
 	}
-	MeasuredText_Builder::MeasuredText_Builder(android::graphics::text::MeasuredText &arg0)
+	MeasuredText_Builder::MeasuredText_Builder(android::graphics::text::MeasuredText arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.text.MeasuredText$Builder",

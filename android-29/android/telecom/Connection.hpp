@@ -123,7 +123,6 @@ namespace android::telecom
 		void onAnswer(jint arg0);
 		void onCallAudioStateChanged(android::telecom::CallAudioState arg0);
 		void onCallEvent(jstring arg0, android::os::Bundle arg1);
-		void onCallEvent(const QString &arg0, android::os::Bundle arg1);
 		void onDeflect(android::net::Uri arg0);
 		void onDisconnect();
 		void onExtrasChanged(android::os::Bundle arg0);
@@ -134,7 +133,6 @@ namespace android::telecom
 		void onPullExternalCall();
 		void onReject();
 		void onReject(jstring arg0);
-		void onReject(const QString &arg0);
 		void onSeparate();
 		void onShowIncomingCallUi();
 		void onSilence();
@@ -148,7 +146,6 @@ namespace android::telecom
 		void removeExtras(__JniBaseClass arg0);
 		void requestBluetoothAudio(android::bluetooth::BluetoothDevice arg0);
 		void sendConnectionEvent(jstring arg0, android::os::Bundle arg1);
-		void sendConnectionEvent(const QString &arg0, android::os::Bundle arg1);
 		void sendRemoteRttRequest();
 		void sendRttInitiationFailure(jint arg0);
 		void sendRttInitiationSuccess();
@@ -158,7 +155,6 @@ namespace android::telecom
 		void setAudioModeIsVoip(jboolean arg0);
 		void setAudioRoute(jint arg0);
 		void setCallerDisplayName(jstring arg0, jint arg1);
-		void setCallerDisplayName(const QString &arg0, jint arg1);
 		void setConferenceableConnections(__JniBaseClass arg0);
 		void setConferenceables(__JniBaseClass arg0);
 		void setConnectionCapabilities(jint arg0);
@@ -171,7 +167,6 @@ namespace android::telecom
 		void setNextPostDialChar(jchar arg0);
 		void setOnHold();
 		void setPostDialWait(jstring arg0);
-		void setPostDialWait(const QString &arg0);
 		void setPulling();
 		void setRingbackRequested(jboolean arg0);
 		void setRinging();

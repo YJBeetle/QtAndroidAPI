@@ -223,17 +223,6 @@ namespace android::app
 			arg3
 		);
 	}
-	void Activity::dump(const QString &arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3
-		);
-	}
 	jboolean Activity::enterPictureInPictureMode(android::app::PictureInPictureParams arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -487,14 +476,6 @@ namespace android::app
 			arg0
 		).object<jobject>();
 	}
-	jobject Activity::getSystemService(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getSystemService",
-			"(Ljava/lang/String;)Ljava/lang/Object;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jobject>();
-	}
 	jint Activity::getTaskId()
 	{
 		return __thiz.callMethod<jint>(
@@ -652,18 +633,6 @@ namespace android::app
 			arg2,
 			arg3,
 			arg4
-		);
-	}
-	QAndroidJniObject Activity::managedQuery(android::net::Uri arg0, jarray arg1, const QString &arg2, jarray arg3, const QString &arg4)
-	{
-		return __thiz.callObjectMethod(
-			"managedQuery",
-			"(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;",
-			arg0.__jniObject().object(),
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			arg3,
-			QAndroidJniObject::fromString(arg4).object<jstring>()
 		);
 	}
 	jboolean Activity::moveTaskToBack(jboolean arg0)
@@ -847,16 +816,6 @@ namespace android::app
 			arg2.__jniObject().object()
 		);
 	}
-	QAndroidJniObject Activity::onCreateView(const QString &arg0, android::content::Context arg1, __JniBaseClass arg2)
-	{
-		return __thiz.callObjectMethod(
-			"onCreateView",
-			"(Ljava/lang/String;Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
 	QAndroidJniObject Activity::onCreateView(android::view::View arg0, jstring arg1, android::content::Context arg2, __JniBaseClass arg3)
 	{
 		return __thiz.callObjectMethod(
@@ -864,17 +823,6 @@ namespace android::app
 			"(Landroid/view/View;Ljava/lang/String;Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Activity::onCreateView(android::view::View arg0, const QString &arg1, android::content::Context arg2, __JniBaseClass arg3)
-	{
-		return __thiz.callObjectMethod(
-			"onCreateView",
-			"(Landroid/view/View;Ljava/lang/String;Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object()
 		);
@@ -1058,17 +1006,6 @@ namespace android::app
 			"onPerformDirectAction",
 			"(Ljava/lang/String;Landroid/os/Bundle;Landroid/os/CancellationSignal;Ljava/util/function/Consumer;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
-		);
-	}
-	void Activity::onPerformDirectAction(const QString &arg0, android::os::Bundle arg1, android::os::CancellationSignal arg2, __JniBaseClass arg3)
-	{
-		__thiz.callMethod<void>(
-			"onPerformDirectAction",
-			"(Ljava/lang/String;Landroid/os/Bundle;Landroid/os/CancellationSignal;Ljava/util/function/Consumer;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object()
@@ -1681,14 +1618,6 @@ namespace android::app
 			arg0
 		);
 	}
-	void Activity::setTitle(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTitle",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void Activity::setTitleColor(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -1736,14 +1665,6 @@ namespace android::app
 			"shouldShowRequestPermissionRationale",
 			"(Ljava/lang/String;)Z",
 			arg0
-		);
-	}
-	jboolean Activity::shouldShowRequestPermissionRationale(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"shouldShowRequestPermissionRationale",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean Activity::shouldUpRecreateTask(android::content::Intent arg0)
@@ -2056,17 +1977,6 @@ namespace android::app
 			arg3
 		);
 	}
-	void Activity::startSearch(const QString &arg0, jboolean arg1, android::os::Bundle arg2, jboolean arg3)
-	{
-		__thiz.callMethod<void>(
-			"startSearch",
-			"(Ljava/lang/String;ZLandroid/os/Bundle;Z)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2.__jniObject().object(),
-			arg3
-		);
-	}
 	void Activity::stopLocalVoiceInteraction()
 	{
 		__thiz.callMethod<void>(
@@ -2103,15 +2013,6 @@ namespace android::app
 			"triggerSearch",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void Activity::triggerSearch(const QString &arg0, android::os::Bundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"triggerSearch",
-			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

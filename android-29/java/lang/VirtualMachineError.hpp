@@ -14,11 +14,9 @@ namespace java::lang
 		VirtualMachineError(QAndroidJniObject obj);
 		// Constructors
 		VirtualMachineError();
-		VirtualMachineError(jstring &arg0);
-		VirtualMachineError(const QString &arg0);
-		VirtualMachineError(jthrowable &arg0);
-		VirtualMachineError(jstring &arg0, jthrowable &arg1);
-		VirtualMachineError(const QString &arg0, jthrowable &arg1);
+		VirtualMachineError(jstring arg0);
+		VirtualMachineError(jthrowable arg0);
+		VirtualMachineError(jstring arg0, jthrowable arg1);
 		
 		// Methods
 	};

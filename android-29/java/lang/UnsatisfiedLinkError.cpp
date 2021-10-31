@@ -13,20 +13,12 @@ namespace java::lang
 			"()V"
 		);
 	}
-	UnsatisfiedLinkError::UnsatisfiedLinkError(jstring &arg0)
+	UnsatisfiedLinkError::UnsatisfiedLinkError(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.UnsatisfiedLinkError",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	UnsatisfiedLinkError::UnsatisfiedLinkError(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.UnsatisfiedLinkError",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

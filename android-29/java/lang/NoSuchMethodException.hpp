@@ -15,8 +15,7 @@ namespace java::lang
 		NoSuchMethodException(QAndroidJniObject obj);
 		// Constructors
 		NoSuchMethodException();
-		NoSuchMethodException(jstring &arg0);
-		NoSuchMethodException(const QString &arg0);
+		NoSuchMethodException(jstring arg0);
 		
 		// Methods
 	};

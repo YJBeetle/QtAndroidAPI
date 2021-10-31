@@ -251,16 +251,6 @@ namespace java::nio::file::spi
 			arg2
 		);
 	}
-	QAndroidJniObject FileSystemProvider::readAttributes(__JniBaseClass arg0, const QString &arg1, jarray arg2)
-	{
-		return __thiz.callObjectMethod(
-			"readAttributes",
-			"(Ljava/nio/file/Path;Ljava/lang/String;[Ljava/nio/file/LinkOption;)Ljava/util/Map;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2
-		);
-	}
 	QAndroidJniObject FileSystemProvider::readSymbolicLink(__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -276,17 +266,6 @@ namespace java::nio::file::spi
 			"(Ljava/nio/file/Path;Ljava/lang/String;Ljava/lang/Object;[Ljava/nio/file/LinkOption;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2,
-			arg3
-		);
-	}
-	void FileSystemProvider::setAttribute(__JniBaseClass arg0, const QString &arg1, jobject arg2, jarray arg3)
-	{
-		__thiz.callMethod<void>(
-			"setAttribute",
-			"(Ljava/nio/file/Path;Ljava/lang/String;Ljava/lang/Object;[Ljava/nio/file/LinkOption;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2,
 			arg3
 		);

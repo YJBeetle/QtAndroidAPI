@@ -16,7 +16,7 @@ namespace android::accounts
 	
 	AccountAuthenticatorResponse::AccountAuthenticatorResponse(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AccountAuthenticatorResponse::AccountAuthenticatorResponse(android::os::Parcel &arg0)
+	AccountAuthenticatorResponse::AccountAuthenticatorResponse(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.accounts.AccountAuthenticatorResponse",
@@ -40,15 +40,6 @@ namespace android::accounts
 			"(ILjava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	void AccountAuthenticatorResponse::onError(jint arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"onError",
-			"(ILjava/lang/String;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void AccountAuthenticatorResponse::onRequestContinued()

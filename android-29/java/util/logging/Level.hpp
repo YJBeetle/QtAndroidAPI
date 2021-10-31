@@ -29,7 +29,6 @@ namespace java::util::logging
 		
 		// Methods
 		static QAndroidJniObject parse(jstring arg0);
-		static QAndroidJniObject parse(const QString &arg0);
 		jboolean equals(jobject arg0);
 		jstring getLocalizedName();
 		jstring getName();

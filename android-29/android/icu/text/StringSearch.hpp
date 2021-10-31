@@ -29,16 +29,11 @@ namespace android::icu::text
 		
 		StringSearch(QAndroidJniObject obj);
 		// Constructors
-		StringSearch(jstring &arg0, jstring &arg1);
-		StringSearch(const QString &arg0, const QString &arg1);
-		StringSearch(jstring &arg0, __JniBaseClass &arg1, android::icu::text::RuleBasedCollator &arg2);
-		StringSearch(const QString &arg0, __JniBaseClass &arg1, android::icu::text::RuleBasedCollator &arg2);
-		StringSearch(jstring &arg0, __JniBaseClass &arg1, android::icu::util::ULocale &arg2);
-		StringSearch(const QString &arg0, __JniBaseClass &arg1, android::icu::util::ULocale &arg2);
-		StringSearch(jstring &arg0, __JniBaseClass &arg1, java::util::Locale &arg2);
-		StringSearch(const QString &arg0, __JniBaseClass &arg1, java::util::Locale &arg2);
-		StringSearch(jstring &arg0, __JniBaseClass &arg1, android::icu::text::RuleBasedCollator &arg2, android::icu::text::BreakIterator &arg3);
-		StringSearch(const QString &arg0, __JniBaseClass &arg1, android::icu::text::RuleBasedCollator &arg2, android::icu::text::BreakIterator &arg3);
+		StringSearch(jstring arg0, jstring arg1);
+		StringSearch(jstring arg0, __JniBaseClass arg1, android::icu::text::RuleBasedCollator arg2);
+		StringSearch(jstring arg0, __JniBaseClass arg1, android::icu::util::ULocale arg2);
+		StringSearch(jstring arg0, __JniBaseClass arg1, java::util::Locale arg2);
+		StringSearch(jstring arg0, __JniBaseClass arg1, android::icu::text::RuleBasedCollator arg2, android::icu::text::BreakIterator arg3);
 		StringSearch() = default;
 		
 		// Methods
@@ -51,7 +46,6 @@ namespace android::icu::text
 		void setCollator(android::icu::text::RuleBasedCollator arg0);
 		void setIndex(jint arg0);
 		void setPattern(jstring arg0);
-		void setPattern(const QString &arg0);
 		void setTarget(__JniBaseClass arg0);
 	};
 } // namespace android::icu::text

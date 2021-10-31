@@ -22,7 +22,7 @@ namespace android::content
 		
 		Entity_NamedContentValues(QAndroidJniObject obj);
 		// Constructors
-		Entity_NamedContentValues(android::net::Uri &arg0, android::content::ContentValues &arg1);
+		Entity_NamedContentValues(android::net::Uri arg0, android::content::ContentValues arg1);
 		Entity_NamedContentValues() = default;
 		
 		// Methods

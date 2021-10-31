@@ -15,8 +15,7 @@ namespace java::lang
 		ClassCircularityError(QAndroidJniObject obj);
 		// Constructors
 		ClassCircularityError();
-		ClassCircularityError(jstring &arg0);
-		ClassCircularityError(const QString &arg0);
+		ClassCircularityError(jstring arg0);
 		
 		// Methods
 	};

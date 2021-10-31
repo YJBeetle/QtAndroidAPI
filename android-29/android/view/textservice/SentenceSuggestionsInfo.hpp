@@ -21,8 +21,8 @@ namespace android::view::textservice
 		
 		SentenceSuggestionsInfo(QAndroidJniObject obj);
 		// Constructors
-		SentenceSuggestionsInfo(android::os::Parcel &arg0);
-		SentenceSuggestionsInfo(jarray &arg0, jintArray &arg1, jintArray &arg2);
+		SentenceSuggestionsInfo(android::os::Parcel arg0);
+		SentenceSuggestionsInfo(jarray arg0, jintArray arg1, jintArray arg2);
 		SentenceSuggestionsInfo() = default;
 		
 		// Methods

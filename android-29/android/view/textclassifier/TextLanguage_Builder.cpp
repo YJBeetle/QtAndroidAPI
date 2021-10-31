@@ -50,13 +50,5 @@ namespace android::view::textclassifier
 			arg0
 		);
 	}
-	QAndroidJniObject TextLanguage_Builder::setId(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setId",
-			"(Ljava/lang/String;)Landroid/view/textclassifier/TextLanguage$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 } // namespace android::view::textclassifier
 

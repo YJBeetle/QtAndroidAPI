@@ -15,8 +15,7 @@ namespace javax::security::auth::login
 		LoginException(QAndroidJniObject obj);
 		// Constructors
 		LoginException();
-		LoginException(jstring &arg0);
-		LoginException(const QString &arg0);
+		LoginException(jstring arg0);
 		
 		// Methods
 	};

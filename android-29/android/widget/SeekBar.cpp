@@ -7,7 +7,7 @@ namespace android::widget
 	
 	SeekBar::SeekBar(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SeekBar::SeekBar(android::content::Context &arg0)
+	SeekBar::SeekBar(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.SeekBar",
@@ -15,7 +15,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	SeekBar::SeekBar(android::content::Context &arg0, __JniBaseClass &arg1)
+	SeekBar::SeekBar(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.SeekBar",
@@ -24,7 +24,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	SeekBar::SeekBar(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	SeekBar::SeekBar(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.SeekBar",
@@ -34,7 +34,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	SeekBar::SeekBar(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	SeekBar::SeekBar(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.SeekBar",

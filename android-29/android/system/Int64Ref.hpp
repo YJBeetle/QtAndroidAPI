@@ -13,7 +13,7 @@ namespace android::system
 		
 		Int64Ref(QAndroidJniObject obj);
 		// Constructors
-		Int64Ref(jlong &arg0);
+		Int64Ref(jlong arg0);
 		Int64Ref() = default;
 		
 		// Methods

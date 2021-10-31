@@ -194,15 +194,6 @@ namespace android::os
 			arg0
 		);
 	}
-	jint ParcelFileDescriptor::parseMode(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.os.ParcelFileDescriptor",
-			"parseMode",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jboolean ParcelFileDescriptor::canDetectErrors()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -230,14 +221,6 @@ namespace android::os
 			"closeWithError",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void ParcelFileDescriptor::closeWithError(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"closeWithError",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jint ParcelFileDescriptor::describeContents()

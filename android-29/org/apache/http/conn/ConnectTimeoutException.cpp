@@ -13,20 +13,12 @@ namespace org::apache::http::conn
 			"()V"
 		);
 	}
-	ConnectTimeoutException::ConnectTimeoutException(jstring &arg0)
+	ConnectTimeoutException::ConnectTimeoutException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"org.apache.http.conn.ConnectTimeoutException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	ConnectTimeoutException::ConnectTimeoutException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"org.apache.http.conn.ConnectTimeoutException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

@@ -15,7 +15,7 @@ namespace android::content::pm
 	
 	VersionedPackage::VersionedPackage(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	VersionedPackage::VersionedPackage(jstring &arg0, jint &arg1)
+	VersionedPackage::VersionedPackage(jstring arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.pm.VersionedPackage",
@@ -24,30 +24,12 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	VersionedPackage::VersionedPackage(const QString &arg0, jint &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.pm.VersionedPackage",
-			"(Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
-	VersionedPackage::VersionedPackage(jstring &arg0, jlong &arg1)
+	VersionedPackage::VersionedPackage(jstring arg0, jlong arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.pm.VersionedPackage",
 			"(Ljava/lang/String;J)V",
 			arg0,
-			arg1
-		);
-	}
-	VersionedPackage::VersionedPackage(const QString &arg0, jlong &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.pm.VersionedPackage",
-			"(Ljava/lang/String;J)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

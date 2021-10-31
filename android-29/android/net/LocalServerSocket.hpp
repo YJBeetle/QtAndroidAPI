@@ -24,9 +24,8 @@ namespace android::net
 		
 		LocalServerSocket(QAndroidJniObject obj);
 		// Constructors
-		LocalServerSocket(java::io::FileDescriptor &arg0);
-		LocalServerSocket(jstring &arg0);
-		LocalServerSocket(const QString &arg0);
+		LocalServerSocket(java::io::FileDescriptor arg0);
+		LocalServerSocket(jstring arg0);
 		LocalServerSocket() = default;
 		
 		// Methods

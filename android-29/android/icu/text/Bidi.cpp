@@ -218,7 +218,7 @@ namespace android::icu::text
 			"()V"
 		);
 	}
-	Bidi::Bidi(__JniBaseClass &arg0)
+	Bidi::Bidi(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.Bidi",
@@ -226,7 +226,7 @@ namespace android::icu::text
 			arg0.__jniObject().object()
 		);
 	}
-	Bidi::Bidi(jint &arg0, jint &arg1)
+	Bidi::Bidi(jint arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.Bidi",
@@ -235,7 +235,7 @@ namespace android::icu::text
 			arg1
 		);
 	}
-	Bidi::Bidi(jstring &arg0, jint &arg1)
+	Bidi::Bidi(jstring arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.Bidi",
@@ -244,16 +244,7 @@ namespace android::icu::text
 			arg1
 		);
 	}
-	Bidi::Bidi(const QString &arg0, jint &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.text.Bidi",
-			"(Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
-	Bidi::Bidi(jcharArray &arg0, jint &arg1, jbyteArray &arg2, jint &arg3, jint &arg4, jint &arg5)
+	Bidi::Bidi(jcharArray arg0, jint arg1, jbyteArray arg2, jint arg3, jint arg4, jint arg5)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.Bidi",
@@ -275,15 +266,6 @@ namespace android::icu::text
 			"getBaseDirection",
 			"(Ljava/lang/CharSequence;)B",
 			arg0
-		);
-	}
-	jbyte Bidi::getBaseDirection(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jbyte>(
-			"android.icu.text.Bidi",
-			"getBaseDirection",
-			"(Ljava/lang/CharSequence;)B",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jintArray Bidi::invertMap(jintArray arg0)
@@ -344,16 +326,6 @@ namespace android::icu::text
 			"writeReverse",
 			"(Ljava/lang/String;I)Ljava/lang/String;",
 			arg0,
-			arg1
-		).object<jstring>();
-	}
-	jstring Bidi::writeReverse(const QString &arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.Bidi",
-			"writeReverse",
-			"(Ljava/lang/String;I)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		).object<jstring>();
 	}
@@ -640,15 +612,6 @@ namespace android::icu::text
 			arg1
 		);
 	}
-	void Bidi::setContext(const QString &arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"setContext",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	void Bidi::setCustomClassifier(android::icu::text::BidiClassifier arg0)
 	{
 		__thiz.callMethod<void>(
@@ -698,16 +661,6 @@ namespace android::icu::text
 			"setPara",
 			"(Ljava/lang/String;B[B)V",
 			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void Bidi::setPara(const QString &arg0, jbyte arg1, jbyteArray arg2)
-	{
-		__thiz.callMethod<void>(
-			"setPara",
-			"(Ljava/lang/String;B[B)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2
 		);

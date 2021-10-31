@@ -16,11 +16,9 @@ namespace java::security
 		InvalidKeyException(QAndroidJniObject obj);
 		// Constructors
 		InvalidKeyException();
-		InvalidKeyException(jstring &arg0);
-		InvalidKeyException(const QString &arg0);
-		InvalidKeyException(jthrowable &arg0);
-		InvalidKeyException(jstring &arg0, jthrowable &arg1);
-		InvalidKeyException(const QString &arg0, jthrowable &arg1);
+		InvalidKeyException(jstring arg0);
+		InvalidKeyException(jthrowable arg0);
+		InvalidKeyException(jstring arg0, jthrowable arg1);
 		
 		// Methods
 	};

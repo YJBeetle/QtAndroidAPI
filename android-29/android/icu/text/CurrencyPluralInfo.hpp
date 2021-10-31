@@ -25,8 +25,8 @@ namespace android::icu::text
 		CurrencyPluralInfo(QAndroidJniObject obj);
 		// Constructors
 		CurrencyPluralInfo();
-		CurrencyPluralInfo(android::icu::util::ULocale &arg0);
-		CurrencyPluralInfo(java::util::Locale &arg0);
+		CurrencyPluralInfo(android::icu::util::ULocale arg0);
+		CurrencyPluralInfo(java::util::Locale arg0);
 		
 		// Methods
 		static QAndroidJniObject getInstance();
@@ -35,15 +35,12 @@ namespace android::icu::text
 		jobject clone();
 		jboolean equals(jobject arg0);
 		jstring getCurrencyPluralPattern(jstring arg0);
-		jstring getCurrencyPluralPattern(const QString &arg0);
 		QAndroidJniObject getLocale();
 		QAndroidJniObject getPluralRules();
 		jint hashCode();
 		void setCurrencyPluralPattern(jstring arg0, jstring arg1);
-		void setCurrencyPluralPattern(const QString &arg0, const QString &arg1);
 		void setLocale(android::icu::util::ULocale arg0);
 		void setPluralRules(jstring arg0);
-		void setPluralRules(const QString &arg0);
 	};
 } // namespace android::icu::text
 

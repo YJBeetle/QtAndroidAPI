@@ -28,7 +28,7 @@ namespace android::widget
 	
 	ListView_FixedViewInfo::ListView_FixedViewInfo(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ListView_FixedViewInfo::ListView_FixedViewInfo(android::widget::ListView &arg0)
+	ListView_FixedViewInfo::ListView_FixedViewInfo(android::widget::ListView arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ListView$FixedViewInfo",

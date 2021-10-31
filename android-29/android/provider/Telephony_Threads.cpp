@@ -50,16 +50,6 @@ namespace android::provider
 			arg1
 		);
 	}
-	jlong Telephony_Threads::getOrCreateThreadId(android::content::Context arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
-			"android.provider.Telephony$Threads",
-			"getOrCreateThreadId",
-			"(Landroid/content/Context;Ljava/lang/String;)J",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	jlong Telephony_Threads::getOrCreateThreadId(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		return QAndroidJniObject::callStaticMethod<jlong>(

@@ -13,20 +13,12 @@ namespace java::lang
 			"()V"
 		);
 	}
-	NullPointerException::NullPointerException(jstring &arg0)
+	NullPointerException::NullPointerException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.NullPointerException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	NullPointerException::NullPointerException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.NullPointerException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

@@ -15,7 +15,7 @@ namespace java::lang
 			"()V"
 		);
 	}
-	ClassNotFoundException::ClassNotFoundException(jstring &arg0)
+	ClassNotFoundException::ClassNotFoundException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.ClassNotFoundException",
@@ -23,29 +23,12 @@ namespace java::lang
 			arg0
 		);
 	}
-	ClassNotFoundException::ClassNotFoundException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.ClassNotFoundException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	ClassNotFoundException::ClassNotFoundException(jstring &arg0, jthrowable &arg1)
+	ClassNotFoundException::ClassNotFoundException(jstring arg0, jthrowable arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.ClassNotFoundException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
-			arg1
-		);
-	}
-	ClassNotFoundException::ClassNotFoundException(const QString &arg0, jthrowable &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.ClassNotFoundException",
-			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

@@ -43,15 +43,5 @@ namespace android::provider
 			arg1
 		);
 	}
-	QAndroidJniObject Settings_NameValueTable::getUriFor(android::net::Uri arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.Settings$NameValueTable",
-			"getUriFor",
-			"(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 } // namespace android::provider
 

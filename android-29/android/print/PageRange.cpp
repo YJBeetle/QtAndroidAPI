@@ -23,7 +23,7 @@ namespace android::print
 	
 	PageRange::PageRange(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PageRange::PageRange(jint &arg0, jint &arg1)
+	PageRange::PageRange(jint arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.print.PageRange",

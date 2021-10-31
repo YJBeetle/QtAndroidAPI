@@ -50,14 +50,6 @@ namespace android::text
 			arg0
 		);
 	}
-	jboolean BidiFormatter::isRtl(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isRtl",
-			"(Ljava/lang/CharSequence;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jboolean BidiFormatter::isRtlContext()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -73,29 +65,12 @@ namespace android::text
 			arg0
 		).object<jstring>();
 	}
-	jstring BidiFormatter::unicodeWrap(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"unicodeWrap",
-			"(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
 	jstring BidiFormatter::unicodeWrap(jstring arg0, __JniBaseClass arg1)
 	{
 		return __thiz.callObjectMethod(
 			"unicodeWrap",
 			"(Ljava/lang/CharSequence;Landroid/text/TextDirectionHeuristic;)Ljava/lang/CharSequence;",
 			arg0,
-			arg1.__jniObject().object()
-		).object<jstring>();
-	}
-	jstring BidiFormatter::unicodeWrap(const QString &arg0, __JniBaseClass arg1)
-	{
-		return __thiz.callObjectMethod(
-			"unicodeWrap",
-			"(Ljava/lang/CharSequence;Landroid/text/TextDirectionHeuristic;)Ljava/lang/CharSequence;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		).object<jstring>();
 	}
@@ -108,31 +83,12 @@ namespace android::text
 			arg1
 		).object<jstring>();
 	}
-	jstring BidiFormatter::unicodeWrap(const QString &arg0, jboolean arg1)
-	{
-		return __thiz.callObjectMethod(
-			"unicodeWrap",
-			"(Ljava/lang/CharSequence;Z)Ljava/lang/CharSequence;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		).object<jstring>();
-	}
 	jstring BidiFormatter::unicodeWrap(jstring arg0, __JniBaseClass arg1, jboolean arg2)
 	{
 		return __thiz.callObjectMethod(
 			"unicodeWrap",
 			"(Ljava/lang/CharSequence;Landroid/text/TextDirectionHeuristic;Z)Ljava/lang/CharSequence;",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2
-		).object<jstring>();
-	}
-	jstring BidiFormatter::unicodeWrap(const QString &arg0, __JniBaseClass arg1, jboolean arg2)
-	{
-		return __thiz.callObjectMethod(
-			"unicodeWrap",
-			"(Ljava/lang/CharSequence;Landroid/text/TextDirectionHeuristic;Z)Ljava/lang/CharSequence;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2
 		).object<jstring>();

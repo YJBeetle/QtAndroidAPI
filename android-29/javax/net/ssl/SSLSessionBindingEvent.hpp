@@ -13,8 +13,7 @@ namespace javax::net::ssl
 		
 		SSLSessionBindingEvent(QAndroidJniObject obj);
 		// Constructors
-		SSLSessionBindingEvent(__JniBaseClass &arg0, jstring &arg1);
-		SSLSessionBindingEvent(__JniBaseClass &arg0, const QString &arg1);
+		SSLSessionBindingEvent(__JniBaseClass arg0, jstring arg1);
 		SSLSessionBindingEvent() = default;
 		
 		// Methods

@@ -14,8 +14,7 @@ namespace java::lang
 		
 		EnumConstantNotPresentException(QAndroidJniObject obj);
 		// Constructors
-		EnumConstantNotPresentException(jclass &arg0, jstring &arg1);
-		EnumConstantNotPresentException(jclass &arg0, const QString &arg1);
+		EnumConstantNotPresentException(jclass arg0, jstring arg1);
 		EnumConstantNotPresentException() = default;
 		
 		// Methods

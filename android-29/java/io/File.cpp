@@ -40,7 +40,7 @@ namespace java::io
 	
 	File::File(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	File::File(jstring &arg0)
+	File::File(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.File",
@@ -48,15 +48,7 @@ namespace java::io
 			arg0
 		);
 	}
-	File::File(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.io.File",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	File::File(java::net::URI &arg0)
+	File::File(java::net::URI arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.File",
@@ -64,7 +56,7 @@ namespace java::io
 			arg0.__jniObject().object()
 		);
 	}
-	File::File(java::io::File &arg0, jstring &arg1)
+	File::File(java::io::File &arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.File",
@@ -73,31 +65,13 @@ namespace java::io
 			arg1
 		);
 	}
-	File::File(java::io::File &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.io.File",
-			"(Ljava/io/File;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	File::File(jstring &arg0, jstring &arg1)
+	File::File(jstring arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.File",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	File::File(const QString &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.io.File",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	
@@ -112,16 +86,6 @@ namespace java::io
 			arg1
 		);
 	}
-	QAndroidJniObject File::createTempFile(const QString &arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.io.File",
-			"createTempFile",
-			"(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	QAndroidJniObject File::createTempFile(jstring arg0, jstring arg1, java::io::File arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -130,17 +94,6 @@ namespace java::io
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	QAndroidJniObject File::createTempFile(const QString &arg0, const QString &arg1, java::io::File arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.io.File",
-			"createTempFile",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}

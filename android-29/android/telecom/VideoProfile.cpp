@@ -78,7 +78,7 @@ namespace android::telecom
 	
 	VideoProfile::VideoProfile(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	VideoProfile::VideoProfile(jint &arg0)
+	VideoProfile::VideoProfile(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.telecom.VideoProfile",
@@ -86,7 +86,7 @@ namespace android::telecom
 			arg0
 		);
 	}
-	VideoProfile::VideoProfile(jint &arg0, jint &arg1)
+	VideoProfile::VideoProfile(jint arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.telecom.VideoProfile",

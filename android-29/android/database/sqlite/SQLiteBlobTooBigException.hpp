@@ -17,8 +17,7 @@ namespace android::database::sqlite
 		SQLiteBlobTooBigException(QAndroidJniObject obj);
 		// Constructors
 		SQLiteBlobTooBigException();
-		SQLiteBlobTooBigException(jstring &arg0);
-		SQLiteBlobTooBigException(const QString &arg0);
+		SQLiteBlobTooBigException(jstring arg0);
 		
 		// Methods
 	};

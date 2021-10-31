@@ -26,7 +26,7 @@ namespace android::telecom
 		
 		PhoneAccountSuggestion(QAndroidJniObject obj);
 		// Constructors
-		PhoneAccountSuggestion(android::telecom::PhoneAccountHandle &arg0, jint &arg1, jboolean &arg2);
+		PhoneAccountSuggestion(android::telecom::PhoneAccountHandle arg0, jint arg1, jboolean arg2);
 		PhoneAccountSuggestion() = default;
 		
 		// Methods

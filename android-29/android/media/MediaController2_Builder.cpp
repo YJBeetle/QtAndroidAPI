@@ -11,7 +11,7 @@ namespace android::media
 	
 	MediaController2_Builder::MediaController2_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MediaController2_Builder::MediaController2_Builder(android::content::Context &arg0, android::media::Session2Token &arg1)
+	MediaController2_Builder::MediaController2_Builder(android::content::Context arg0, android::media::Session2Token arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.MediaController2$Builder",

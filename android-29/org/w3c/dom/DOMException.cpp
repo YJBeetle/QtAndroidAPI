@@ -131,22 +131,13 @@ namespace org::w3c::dom
 	
 	DOMException::DOMException(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DOMException::DOMException(jshort &arg0, jstring &arg1)
+	DOMException::DOMException(jshort arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"org.w3c.dom.DOMException",
 			"(SLjava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	DOMException::DOMException(jshort &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"org.w3c.dom.DOMException",
-			"(SLjava/lang/String;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	

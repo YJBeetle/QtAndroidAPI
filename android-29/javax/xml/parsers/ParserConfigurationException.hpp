@@ -14,8 +14,7 @@ namespace javax::xml::parsers
 		ParserConfigurationException(QAndroidJniObject obj);
 		// Constructors
 		ParserConfigurationException();
-		ParserConfigurationException(jstring &arg0);
-		ParserConfigurationException(const QString &arg0);
+		ParserConfigurationException(jstring arg0);
 		
 		// Methods
 	};

@@ -61,7 +61,6 @@ namespace android::app::slice
 		jstring getSubType();
 		jstring getText();
 		jboolean hasHint(jstring arg0);
-		jboolean hasHint(const QString &arg0);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::app::slice

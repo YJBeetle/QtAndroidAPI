@@ -74,7 +74,7 @@ namespace android::graphics::drawable
 			"()V"
 		);
 	}
-	GradientDrawable::GradientDrawable(android::graphics::drawable::GradientDrawable_Orientation &arg0, jintArray &arg1)
+	GradientDrawable::GradientDrawable(android::graphics::drawable::GradientDrawable_Orientation arg0, jintArray arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.GradientDrawable",

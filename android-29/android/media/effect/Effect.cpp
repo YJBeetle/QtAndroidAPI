@@ -49,15 +49,6 @@ namespace android::media::effect
 			arg1
 		);
 	}
-	void Effect::setParameter(const QString &arg0, jobject arg1)
-	{
-		__thiz.callMethod<void>(
-			"setParameter",
-			"(Ljava/lang/String;Ljava/lang/Object;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	void Effect::setUpdateListener(__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(

@@ -16,8 +16,7 @@ namespace java::lang
 		UnsupportedClassVersionError(QAndroidJniObject obj);
 		// Constructors
 		UnsupportedClassVersionError();
-		UnsupportedClassVersionError(jstring &arg0);
-		UnsupportedClassVersionError(const QString &arg0);
+		UnsupportedClassVersionError(jstring arg0);
 		
 		// Methods
 	};

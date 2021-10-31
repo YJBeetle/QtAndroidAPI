@@ -22,7 +22,7 @@ namespace android::view::inputmethod
 	
 	InputMethodInfo::InputMethodInfo(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	InputMethodInfo::InputMethodInfo(android::content::Context &arg0, android::content::pm::ResolveInfo &arg1)
+	InputMethodInfo::InputMethodInfo(android::content::Context arg0, android::content::pm::ResolveInfo arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.inputmethod.InputMethodInfo",
@@ -31,7 +31,7 @@ namespace android::view::inputmethod
 			arg1.__jniObject().object()
 		);
 	}
-	InputMethodInfo::InputMethodInfo(jstring &arg0, jstring &arg1, jstring &arg2, jstring &arg3)
+	InputMethodInfo::InputMethodInfo(jstring arg0, jstring arg1, jstring arg2, jstring arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.inputmethod.InputMethodInfo",
@@ -40,17 +40,6 @@ namespace android::view::inputmethod
 			arg1,
 			arg2,
 			arg3
-		);
-	}
-	InputMethodInfo::InputMethodInfo(const QString &arg0, const QString &arg1, const QString &arg2, const QString &arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.inputmethod.InputMethodInfo",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/CharSequence;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			QAndroidJniObject::fromString(arg3).object<jstring>()
 		);
 	}
 	
@@ -69,15 +58,6 @@ namespace android::view::inputmethod
 			"(Landroid/util/Printer;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	void InputMethodInfo::dump(__JniBaseClass arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Landroid/util/Printer;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	jboolean InputMethodInfo::equals(jobject arg0)

@@ -16,8 +16,7 @@ namespace java::util
 		InputMismatchException(QAndroidJniObject obj);
 		// Constructors
 		InputMismatchException();
-		InputMismatchException(jstring &arg0);
-		InputMismatchException(const QString &arg0);
+		InputMismatchException(jstring arg0);
 		
 		// Methods
 	};

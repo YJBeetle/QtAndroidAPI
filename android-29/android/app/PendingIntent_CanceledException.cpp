@@ -14,7 +14,7 @@ namespace android::app
 			"()V"
 		);
 	}
-	PendingIntent_CanceledException::PendingIntent_CanceledException(java::lang::Exception &arg0)
+	PendingIntent_CanceledException::PendingIntent_CanceledException(java::lang::Exception arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.PendingIntent$CanceledException",
@@ -22,20 +22,12 @@ namespace android::app
 			arg0.__jniObject().object()
 		);
 	}
-	PendingIntent_CanceledException::PendingIntent_CanceledException(jstring &arg0)
+	PendingIntent_CanceledException::PendingIntent_CanceledException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.PendingIntent$CanceledException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	PendingIntent_CanceledException::PendingIntent_CanceledException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.app.PendingIntent$CanceledException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

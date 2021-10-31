@@ -14,7 +14,7 @@ namespace javax::crypto::spec
 	
 	PSource_PSpecified::PSource_PSpecified(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PSource_PSpecified::PSource_PSpecified(jbyteArray &arg0)
+	PSource_PSpecified::PSource_PSpecified(jbyteArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.crypto.spec.PSource$PSpecified",

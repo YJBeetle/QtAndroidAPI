@@ -61,7 +61,6 @@ namespace android::os::storage
 		jlong getCacheQuotaBytes(java::util::UUID arg0);
 		jlong getCacheSizeBytes(java::util::UUID arg0);
 		jstring getMountedObbPath(jstring arg0);
-		jstring getMountedObbPath(const QString &arg0);
 		QAndroidJniObject getPrimaryStorageVolume();
 		QAndroidJniObject getStorageVolume(android::net::Uri arg0);
 		QAndroidJniObject getStorageVolume(java::io::File arg0);
@@ -72,14 +71,11 @@ namespace android::os::storage
 		jboolean isCacheBehaviorTombstone(java::io::File arg0);
 		jboolean isEncrypted(java::io::File arg0);
 		jboolean isObbMounted(jstring arg0);
-		jboolean isObbMounted(const QString &arg0);
 		jboolean mountObb(jstring arg0, jstring arg1, android::os::storage::OnObbStateChangeListener arg2);
-		jboolean mountObb(const QString &arg0, const QString &arg1, android::os::storage::OnObbStateChangeListener arg2);
 		QAndroidJniObject openProxyFileDescriptor(jint arg0, android::os::ProxyFileDescriptorCallback arg1, android::os::Handler arg2);
 		void setCacheBehaviorGroup(java::io::File arg0, jboolean arg1);
 		void setCacheBehaviorTombstone(java::io::File arg0, jboolean arg1);
 		jboolean unmountObb(jstring arg0, jboolean arg1, android::os::storage::OnObbStateChangeListener arg2);
-		jboolean unmountObb(const QString &arg0, jboolean arg1, android::os::storage::OnObbStateChangeListener arg2);
 	};
 } // namespace android::os::storage
 

@@ -25,10 +25,9 @@ namespace java::io
 		
 		FileInputStream(QAndroidJniObject obj);
 		// Constructors
-		FileInputStream(java::io::File &arg0);
-		FileInputStream(java::io::FileDescriptor &arg0);
-		FileInputStream(jstring &arg0);
-		FileInputStream(const QString &arg0);
+		FileInputStream(java::io::File arg0);
+		FileInputStream(java::io::FileDescriptor arg0);
+		FileInputStream(jstring arg0);
 		FileInputStream() = default;
 		
 		// Methods

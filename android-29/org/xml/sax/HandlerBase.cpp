@@ -42,14 +42,6 @@ namespace org::xml::sax
 			arg0
 		);
 	}
-	void HandlerBase::endElement(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"endElement",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void HandlerBase::error(org::xml::sax::SAXParseException arg0)
 	{
 		__thiz.callMethod<void>(
@@ -86,16 +78,6 @@ namespace org::xml::sax
 			arg2
 		);
 	}
-	void HandlerBase::notationDecl(const QString &arg0, const QString &arg1, const QString &arg2)
-	{
-		__thiz.callMethod<void>(
-			"notationDecl",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	void HandlerBase::processingInstruction(jstring arg0, jstring arg1)
 	{
 		__thiz.callMethod<void>(
@@ -105,15 +87,6 @@ namespace org::xml::sax
 			arg1
 		);
 	}
-	void HandlerBase::processingInstruction(const QString &arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"processingInstruction",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	QAndroidJniObject HandlerBase::resolveEntity(jstring arg0, jstring arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -121,15 +94,6 @@ namespace org::xml::sax
 			"(Ljava/lang/String;Ljava/lang/String;)Lorg/xml/sax/InputSource;",
 			arg0,
 			arg1
-		);
-	}
-	QAndroidJniObject HandlerBase::resolveEntity(const QString &arg0, const QString &arg1)
-	{
-		return __thiz.callObjectMethod(
-			"resolveEntity",
-			"(Ljava/lang/String;Ljava/lang/String;)Lorg/xml/sax/InputSource;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void HandlerBase::setDocumentLocator(__JniBaseClass arg0)
@@ -156,15 +120,6 @@ namespace org::xml::sax
 			arg1.__jniObject().object()
 		);
 	}
-	void HandlerBase::startElement(const QString &arg0, __JniBaseClass arg1)
-	{
-		__thiz.callMethod<void>(
-			"startElement",
-			"(Ljava/lang/String;Lorg/xml/sax/AttributeList;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	void HandlerBase::unparsedEntityDecl(jstring arg0, jstring arg1, jstring arg2, jstring arg3)
 	{
 		__thiz.callMethod<void>(
@@ -174,17 +129,6 @@ namespace org::xml::sax
 			arg1,
 			arg2,
 			arg3
-		);
-	}
-	void HandlerBase::unparsedEntityDecl(const QString &arg0, const QString &arg1, const QString &arg2, const QString &arg3)
-	{
-		__thiz.callMethod<void>(
-			"unparsedEntityDecl",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			QAndroidJniObject::fromString(arg3).object<jstring>()
 		);
 	}
 	void HandlerBase::warning(org::xml::sax::SAXParseException arg0)

@@ -15,8 +15,7 @@ namespace java::io
 		FileNotFoundException(QAndroidJniObject obj);
 		// Constructors
 		FileNotFoundException();
-		FileNotFoundException(jstring &arg0);
-		FileNotFoundException(const QString &arg0);
+		FileNotFoundException(jstring arg0);
 		
 		// Methods
 	};

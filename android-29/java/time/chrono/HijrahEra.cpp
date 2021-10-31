@@ -37,15 +37,6 @@ namespace java::time::chrono
 			arg0
 		);
 	}
-	QAndroidJniObject HijrahEra::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.time.chrono.HijrahEra",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/time/chrono/HijrahEra;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray HijrahEra::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

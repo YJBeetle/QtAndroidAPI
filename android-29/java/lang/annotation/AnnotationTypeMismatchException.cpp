@@ -7,22 +7,13 @@ namespace java::lang::annotation
 	
 	AnnotationTypeMismatchException::AnnotationTypeMismatchException(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AnnotationTypeMismatchException::AnnotationTypeMismatchException(java::lang::reflect::Method &arg0, jstring &arg1)
+	AnnotationTypeMismatchException::AnnotationTypeMismatchException(java::lang::reflect::Method arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.annotation.AnnotationTypeMismatchException",
 			"(Ljava/lang/reflect/Method;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	AnnotationTypeMismatchException::AnnotationTypeMismatchException(java::lang::reflect::Method &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.annotation.AnnotationTypeMismatchException",
-			"(Ljava/lang/reflect/Method;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	

@@ -7,20 +7,12 @@ namespace android::util
 	
 	IntProperty::IntProperty(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	IntProperty::IntProperty(jstring &arg0)
+	IntProperty::IntProperty(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.IntProperty",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	IntProperty::IntProperty(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.util.IntProperty",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

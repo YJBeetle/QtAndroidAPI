@@ -32,7 +32,6 @@ namespace android::app
 		
 		// Methods
 		QAndroidJniObject createConfirmDeviceCredentialIntent(jstring arg0, jstring arg1);
-		QAndroidJniObject createConfirmDeviceCredentialIntent(const QString &arg0, const QString &arg1);
 		void exitKeyguardSecurely(__JniBaseClass arg0);
 		jboolean inKeyguardRestrictedInputMode();
 		jboolean isDeviceLocked();
@@ -40,7 +39,6 @@ namespace android::app
 		jboolean isKeyguardLocked();
 		jboolean isKeyguardSecure();
 		QAndroidJniObject newKeyguardLock(jstring arg0);
-		QAndroidJniObject newKeyguardLock(const QString &arg0);
 		void requestDismissKeyguard(android::app::Activity arg0, android::app::KeyguardManager_KeyguardDismissCallback arg1);
 	};
 } // namespace android::app

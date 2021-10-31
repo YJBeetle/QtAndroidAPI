@@ -93,11 +93,8 @@ namespace java::text
 		jint hashCode();
 		jboolean isLenient();
 		QAndroidJniObject parse(jstring arg0);
-		QAndroidJniObject parse(const QString &arg0);
 		QAndroidJniObject parse(jstring arg0, java::text::ParsePosition arg1);
-		QAndroidJniObject parse(const QString &arg0, java::text::ParsePosition arg1);
 		jobject parseObject(jstring arg0, java::text::ParsePosition arg1);
-		jobject parseObject(const QString &arg0, java::text::ParsePosition arg1);
 		void setCalendar(java::util::Calendar arg0);
 		void setLenient(jboolean arg0);
 		void setNumberFormat(java::text::NumberFormat arg0);

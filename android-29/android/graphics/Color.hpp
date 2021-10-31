@@ -67,7 +67,6 @@ namespace android::graphics
 		static jlong pack(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
 		static jlong pack(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, android::graphics::ColorSpace arg4);
 		static jint parseColor(jstring arg0);
-		static jint parseColor(const QString &arg0);
 		static jfloat red(jlong arg0);
 		static jint red(jint arg0);
 		static jint rgb(jfloat arg0, jfloat arg1, jfloat arg2);

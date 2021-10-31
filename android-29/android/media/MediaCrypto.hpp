@@ -16,14 +16,13 @@ namespace android::media
 		
 		MediaCrypto(QAndroidJniObject obj);
 		// Constructors
-		MediaCrypto(java::util::UUID &arg0, jbyteArray &arg1);
+		MediaCrypto(java::util::UUID arg0, jbyteArray arg1);
 		MediaCrypto() = default;
 		
 		// Methods
 		static jboolean isCryptoSchemeSupported(java::util::UUID arg0);
 		void release();
 		jboolean requiresSecureDecoderComponent(jstring arg0);
-		jboolean requiresSecureDecoderComponent(const QString &arg0);
 		void setMediaDrmSession(jbyteArray arg0);
 	};
 } // namespace android::media

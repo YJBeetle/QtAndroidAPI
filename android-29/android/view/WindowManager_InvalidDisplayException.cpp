@@ -13,20 +13,12 @@ namespace android::view
 			"()V"
 		);
 	}
-	WindowManager_InvalidDisplayException::WindowManager_InvalidDisplayException(jstring &arg0)
+	WindowManager_InvalidDisplayException::WindowManager_InvalidDisplayException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.WindowManager$InvalidDisplayException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	WindowManager_InvalidDisplayException::WindowManager_InvalidDisplayException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.WindowManager$InvalidDisplayException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

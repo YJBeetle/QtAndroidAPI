@@ -12,13 +12,11 @@ namespace android::util
 		
 		Property(QAndroidJniObject obj);
 		// Constructors
-		Property(jclass &arg0, jstring &arg1);
-		Property(jclass &arg0, const QString &arg1);
+		Property(jclass arg0, jstring arg1);
 		Property() = default;
 		
 		// Methods
 		static QAndroidJniObject of(jclass arg0, jclass arg1, jstring arg2);
-		static QAndroidJniObject of(jclass arg0, jclass arg1, const QString &arg2);
 		jobject get(jobject arg0);
 		jstring getName();
 		jclass getType();

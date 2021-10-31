@@ -29,8 +29,7 @@ namespace java::net
 		
 		SocketPermission(QAndroidJniObject obj);
 		// Constructors
-		SocketPermission(jstring &arg0, jstring &arg1);
-		SocketPermission(const QString &arg0, const QString &arg1);
+		SocketPermission(jstring arg0, jstring arg1);
 		SocketPermission() = default;
 		
 		// Methods

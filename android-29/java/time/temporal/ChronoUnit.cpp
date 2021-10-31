@@ -146,15 +146,6 @@ namespace java::time::temporal
 			arg0
 		);
 	}
-	QAndroidJniObject ChronoUnit::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.time.temporal.ChronoUnit",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/time/temporal/ChronoUnit;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray ChronoUnit::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

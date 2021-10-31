@@ -356,15 +356,14 @@ namespace android::view
 		KeyEvent(QAndroidJniObject obj);
 		// Constructors
 		KeyEvent(android::view::KeyEvent &arg0);
-		KeyEvent(jint &arg0, jint &arg1);
-		KeyEvent(android::view::KeyEvent &arg0, jlong &arg1, jint &arg2);
-		KeyEvent(jlong &arg0, jstring &arg1, jint &arg2, jint &arg3);
-		KeyEvent(jlong &arg0, const QString &arg1, jint &arg2, jint &arg3);
-		KeyEvent(jlong &arg0, jlong &arg1, jint &arg2, jint &arg3, jint &arg4);
-		KeyEvent(jlong &arg0, jlong &arg1, jint &arg2, jint &arg3, jint &arg4, jint &arg5);
-		KeyEvent(jlong &arg0, jlong &arg1, jint &arg2, jint &arg3, jint &arg4, jint &arg5, jint &arg6, jint &arg7);
-		KeyEvent(jlong &arg0, jlong &arg1, jint &arg2, jint &arg3, jint &arg4, jint &arg5, jint &arg6, jint &arg7, jint &arg8);
-		KeyEvent(jlong &arg0, jlong &arg1, jint &arg2, jint &arg3, jint &arg4, jint &arg5, jint &arg6, jint &arg7, jint &arg8, jint &arg9);
+		KeyEvent(jint arg0, jint arg1);
+		KeyEvent(android::view::KeyEvent &arg0, jlong arg1, jint arg2);
+		KeyEvent(jlong arg0, jstring arg1, jint arg2, jint arg3);
+		KeyEvent(jlong arg0, jlong arg1, jint arg2, jint arg3, jint arg4);
+		KeyEvent(jlong arg0, jlong arg1, jint arg2, jint arg3, jint arg4, jint arg5);
+		KeyEvent(jlong arg0, jlong arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7);
+		KeyEvent(jlong arg0, jlong arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8);
+		KeyEvent(jlong arg0, jlong arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9);
 		KeyEvent() = default;
 		
 		// Methods
@@ -378,7 +377,6 @@ namespace android::view
 		static jboolean isGamepadButton(jint arg0);
 		static jboolean isModifierKey(jint arg0);
 		static jint keyCodeFromString(jstring arg0);
-		static jint keyCodeFromString(const QString &arg0);
 		static jstring keyCodeToString(jint arg0);
 		static jboolean metaStateHasModifiers(jint arg0, jint arg1);
 		static jboolean metaStateHasNoModifiers(jint arg0);

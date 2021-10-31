@@ -57,7 +57,7 @@ namespace android::graphics::drawable
 		
 		DrawableWrapper(QAndroidJniObject obj);
 		// Constructors
-		DrawableWrapper(android::graphics::drawable::Drawable &arg0);
+		DrawableWrapper(android::graphics::drawable::Drawable arg0);
 		DrawableWrapper() = default;
 		
 		// Methods

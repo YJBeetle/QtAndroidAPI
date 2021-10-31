@@ -27,15 +27,6 @@ namespace android::app::backup
 			arg1.__jniObject().object()
 		);
 	}
-	void BackupAgentHelper::addHelper(const QString &arg0, __JniBaseClass arg1)
-	{
-		__thiz.callMethod<void>(
-			"addHelper",
-			"(Ljava/lang/String;Landroid/app/backup/BackupHelper;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	void BackupAgentHelper::onBackup(android::os::ParcelFileDescriptor arg0, android::app::backup::BackupDataOutput arg1, android::os::ParcelFileDescriptor arg2)
 	{
 		__thiz.callMethod<void>(

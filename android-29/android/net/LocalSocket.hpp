@@ -36,7 +36,7 @@ namespace android::net
 		LocalSocket(QAndroidJniObject obj);
 		// Constructors
 		LocalSocket();
-		LocalSocket(jint &arg0);
+		LocalSocket(jint arg0);
 		
 		// Methods
 		void bind(android::net::LocalSocketAddress arg0);

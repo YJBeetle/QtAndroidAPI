@@ -13,20 +13,12 @@ namespace java::lang::reflect
 			"()V"
 		);
 	}
-	MalformedParameterizedTypeException::MalformedParameterizedTypeException(jstring &arg0)
+	MalformedParameterizedTypeException::MalformedParameterizedTypeException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.reflect.MalformedParameterizedTypeException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	MalformedParameterizedTypeException::MalformedParameterizedTypeException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.reflect.MalformedParameterizedTypeException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

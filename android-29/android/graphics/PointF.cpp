@@ -35,7 +35,7 @@ namespace android::graphics
 			"()V"
 		);
 	}
-	PointF::PointF(android::graphics::Point &arg0)
+	PointF::PointF(android::graphics::Point arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.PointF",
@@ -43,7 +43,7 @@ namespace android::graphics
 			arg0.__jniObject().object()
 		);
 	}
-	PointF::PointF(jfloat &arg0, jfloat &arg1)
+	PointF::PointF(jfloat arg0, jfloat arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.PointF",

@@ -15,8 +15,7 @@ namespace android::database
 		StaleDataException(QAndroidJniObject obj);
 		// Constructors
 		StaleDataException();
-		StaleDataException(jstring &arg0);
-		StaleDataException(const QString &arg0);
+		StaleDataException(jstring arg0);
 		
 		// Methods
 	};

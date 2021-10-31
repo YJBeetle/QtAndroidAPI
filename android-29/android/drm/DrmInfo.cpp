@@ -6,7 +6,7 @@ namespace android::drm
 	
 	DrmInfo::DrmInfo(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DrmInfo::DrmInfo(jint &arg0, jbyteArray &arg1, jstring &arg2)
+	DrmInfo::DrmInfo(jint arg0, jbyteArray arg1, jstring arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.drm.DrmInfo",
@@ -16,17 +16,7 @@ namespace android::drm
 			arg2
 		);
 	}
-	DrmInfo::DrmInfo(jint &arg0, jbyteArray &arg1, const QString &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.drm.DrmInfo",
-			"(I[BLjava/lang/String;)V",
-			arg0,
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
-	DrmInfo::DrmInfo(jint &arg0, jstring &arg1, jstring &arg2)
+	DrmInfo::DrmInfo(jint arg0, jstring arg1, jstring arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.drm.DrmInfo",
@@ -34,16 +24,6 @@ namespace android::drm
 			arg0,
 			arg1,
 			arg2
-		);
-	}
-	DrmInfo::DrmInfo(jint &arg0, const QString &arg1, const QString &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.drm.DrmInfo",
-			"(ILjava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	
@@ -54,14 +34,6 @@ namespace android::drm
 			"get",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
 			arg0
-		).object<jobject>();
-	}
-	jobject DrmInfo::get(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"get",
-			"(Ljava/lang/String;)Ljava/lang/Object;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jobject>();
 	}
 	jbyteArray DrmInfo::getData()
@@ -105,15 +77,6 @@ namespace android::drm
 			"put",
 			"(Ljava/lang/String;Ljava/lang/Object;)V",
 			arg0,
-			arg1
-		);
-	}
-	void DrmInfo::put(const QString &arg0, jobject arg1)
-	{
-		__thiz.callMethod<void>(
-			"put",
-			"(Ljava/lang/String;Ljava/lang/Object;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

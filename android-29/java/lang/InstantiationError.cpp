@@ -13,20 +13,12 @@ namespace java::lang
 			"()V"
 		);
 	}
-	InstantiationError::InstantiationError(jstring &arg0)
+	InstantiationError::InstantiationError(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.InstantiationError",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	InstantiationError::InstantiationError(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.InstantiationError",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

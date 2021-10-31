@@ -12,7 +12,7 @@ namespace android::system
 	
 	ErrnoException::ErrnoException(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ErrnoException::ErrnoException(jstring &arg0, jint &arg1)
+	ErrnoException::ErrnoException(jstring arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.system.ErrnoException",
@@ -21,31 +21,12 @@ namespace android::system
 			arg1
 		);
 	}
-	ErrnoException::ErrnoException(const QString &arg0, jint &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.system.ErrnoException",
-			"(Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
-	ErrnoException::ErrnoException(jstring &arg0, jint &arg1, jthrowable &arg2)
+	ErrnoException::ErrnoException(jstring arg0, jint arg1, jthrowable arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.system.ErrnoException",
 			"(Ljava/lang/String;ILjava/lang/Throwable;)V",
 			arg0,
-			arg1,
-			arg2
-		);
-	}
-	ErrnoException::ErrnoException(const QString &arg0, jint &arg1, jthrowable &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.system.ErrnoException",
-			"(Ljava/lang/String;ILjava/lang/Throwable;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2
 		);

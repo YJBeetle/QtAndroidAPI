@@ -43,10 +43,10 @@ namespace android::widget
 		
 		ListPopupWindow(QAndroidJniObject obj);
 		// Constructors
-		ListPopupWindow(android::content::Context &arg0);
-		ListPopupWindow(android::content::Context &arg0, __JniBaseClass &arg1);
-		ListPopupWindow(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		ListPopupWindow(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		ListPopupWindow(android::content::Context arg0);
+		ListPopupWindow(android::content::Context arg0, __JniBaseClass arg1);
+		ListPopupWindow(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		ListPopupWindow(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		ListPopupWindow() = default;
 		
 		// Methods

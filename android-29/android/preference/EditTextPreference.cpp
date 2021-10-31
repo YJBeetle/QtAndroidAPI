@@ -10,7 +10,7 @@ namespace android::preference
 	
 	EditTextPreference::EditTextPreference(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	EditTextPreference::EditTextPreference(android::content::Context &arg0)
+	EditTextPreference::EditTextPreference(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.preference.EditTextPreference",
@@ -18,7 +18,7 @@ namespace android::preference
 			arg0.__jniObject().object()
 		);
 	}
-	EditTextPreference::EditTextPreference(android::content::Context &arg0, __JniBaseClass &arg1)
+	EditTextPreference::EditTextPreference(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.preference.EditTextPreference",
@@ -27,7 +27,7 @@ namespace android::preference
 			arg1.__jniObject().object()
 		);
 	}
-	EditTextPreference::EditTextPreference(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	EditTextPreference::EditTextPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.preference.EditTextPreference",
@@ -37,7 +37,7 @@ namespace android::preference
 			arg2
 		);
 	}
-	EditTextPreference::EditTextPreference(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	EditTextPreference::EditTextPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.preference.EditTextPreference",
@@ -70,14 +70,6 @@ namespace android::preference
 			"setText",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void EditTextPreference::setText(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setText",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean EditTextPreference::shouldDisableDependents()

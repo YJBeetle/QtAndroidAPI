@@ -7,7 +7,7 @@ namespace android::os
 	
 	ParcelFileDescriptor_AutoCloseInputStream::ParcelFileDescriptor_AutoCloseInputStream(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ParcelFileDescriptor_AutoCloseInputStream::ParcelFileDescriptor_AutoCloseInputStream(android::os::ParcelFileDescriptor &arg0)
+	ParcelFileDescriptor_AutoCloseInputStream::ParcelFileDescriptor_AutoCloseInputStream(android::os::ParcelFileDescriptor arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.ParcelFileDescriptor$AutoCloseInputStream",

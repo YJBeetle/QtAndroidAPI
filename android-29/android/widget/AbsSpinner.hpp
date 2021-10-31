@@ -35,10 +35,10 @@ namespace android::widget
 		
 		AbsSpinner(QAndroidJniObject obj);
 		// Constructors
-		AbsSpinner(android::content::Context &arg0);
-		AbsSpinner(android::content::Context &arg0, __JniBaseClass &arg1);
-		AbsSpinner(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		AbsSpinner(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		AbsSpinner(android::content::Context arg0);
+		AbsSpinner(android::content::Context arg0, __JniBaseClass arg1);
+		AbsSpinner(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		AbsSpinner(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		AbsSpinner() = default;
 		
 		// Methods

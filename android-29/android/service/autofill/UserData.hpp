@@ -32,7 +32,6 @@ namespace android::service::autofill
 		jint describeContents();
 		jstring getFieldClassificationAlgorithm();
 		jstring getFieldClassificationAlgorithmForCategory(jstring arg0);
-		jstring getFieldClassificationAlgorithmForCategory(const QString &arg0);
 		jstring getId();
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

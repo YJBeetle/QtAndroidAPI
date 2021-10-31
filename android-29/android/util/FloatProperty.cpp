@@ -7,20 +7,12 @@ namespace android::util
 	
 	FloatProperty::FloatProperty(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	FloatProperty::FloatProperty(jstring &arg0)
+	FloatProperty::FloatProperty(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.FloatProperty",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	FloatProperty::FloatProperty(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.util.FloatProperty",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

@@ -41,15 +41,6 @@ namespace android::graphics
 			arg0
 		);
 	}
-	QAndroidJniObject Bitmap_CompressFormat::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.Bitmap$CompressFormat",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/graphics/Bitmap$CompressFormat;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray Bitmap_CompressFormat::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

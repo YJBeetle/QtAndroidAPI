@@ -13,11 +13,9 @@ namespace java::lang
 		Error(QAndroidJniObject obj);
 		// Constructors
 		Error();
-		Error(jstring &arg0);
-		Error(const QString &arg0);
-		Error(jthrowable &arg0);
-		Error(jstring &arg0, jthrowable &arg1);
-		Error(const QString &arg0, jthrowable &arg1);
+		Error(jstring arg0);
+		Error(jthrowable arg0);
+		Error(jstring arg0, jthrowable arg1);
 		
 		// Methods
 	};

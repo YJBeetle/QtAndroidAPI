@@ -31,9 +31,9 @@ namespace android::widget
 		
 		MediaController(QAndroidJniObject obj);
 		// Constructors
-		MediaController(android::content::Context &arg0);
-		MediaController(android::content::Context &arg0, __JniBaseClass &arg1);
-		MediaController(android::content::Context &arg0, jboolean &arg1);
+		MediaController(android::content::Context arg0);
+		MediaController(android::content::Context arg0, __JniBaseClass arg1);
+		MediaController(android::content::Context arg0, jboolean arg1);
 		MediaController() = default;
 		
 		// Methods

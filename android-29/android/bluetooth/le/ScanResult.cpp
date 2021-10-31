@@ -59,7 +59,7 @@ namespace android::bluetooth::le
 	
 	ScanResult::ScanResult(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ScanResult::ScanResult(android::bluetooth::BluetoothDevice &arg0, android::bluetooth::le::ScanRecord &arg1, jint &arg2, jlong &arg3)
+	ScanResult::ScanResult(android::bluetooth::BluetoothDevice arg0, android::bluetooth::le::ScanRecord arg1, jint arg2, jlong arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.bluetooth.le.ScanResult",
@@ -70,7 +70,7 @@ namespace android::bluetooth::le
 			arg3
 		);
 	}
-	ScanResult::ScanResult(android::bluetooth::BluetoothDevice &arg0, jint &arg1, jint &arg2, jint &arg3, jint &arg4, jint &arg5, jint &arg6, jint &arg7, android::bluetooth::le::ScanRecord &arg8, jlong &arg9)
+	ScanResult::ScanResult(android::bluetooth::BluetoothDevice arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, android::bluetooth::le::ScanRecord arg8, jlong arg9)
 	{
 		__thiz = QAndroidJniObject(
 			"android.bluetooth.le.ScanResult",

@@ -12,7 +12,7 @@ namespace javax::net::ssl
 		
 		CertPathTrustManagerParameters(QAndroidJniObject obj);
 		// Constructors
-		CertPathTrustManagerParameters(__JniBaseClass &arg0);
+		CertPathTrustManagerParameters(__JniBaseClass arg0);
 		CertPathTrustManagerParameters() = default;
 		
 		// Methods

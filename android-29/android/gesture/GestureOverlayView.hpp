@@ -43,10 +43,10 @@ namespace android::gesture
 		
 		GestureOverlayView(QAndroidJniObject obj);
 		// Constructors
-		GestureOverlayView(android::content::Context &arg0);
-		GestureOverlayView(android::content::Context &arg0, __JniBaseClass &arg1);
-		GestureOverlayView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		GestureOverlayView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		GestureOverlayView(android::content::Context arg0);
+		GestureOverlayView(android::content::Context arg0, __JniBaseClass arg1);
+		GestureOverlayView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		GestureOverlayView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		GestureOverlayView() = default;
 		
 		// Methods

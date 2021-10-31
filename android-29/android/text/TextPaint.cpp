@@ -57,7 +57,7 @@ namespace android::text
 			"()V"
 		);
 	}
-	TextPaint::TextPaint(android::graphics::Paint &arg0)
+	TextPaint::TextPaint(android::graphics::Paint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.TextPaint",
@@ -65,7 +65,7 @@ namespace android::text
 			arg0.__jniObject().object()
 		);
 	}
-	TextPaint::TextPaint(jint &arg0)
+	TextPaint::TextPaint(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.TextPaint",

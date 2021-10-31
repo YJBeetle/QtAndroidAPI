@@ -30,14 +30,10 @@ namespace android::content::pm
 		
 		LabeledIntent(QAndroidJniObject obj);
 		// Constructors
-		LabeledIntent(jstring &arg0, jint &arg1, jint &arg2);
-		LabeledIntent(const QString &arg0, jint &arg1, jint &arg2);
-		LabeledIntent(jstring &arg0, jstring &arg1, jint &arg2);
-		LabeledIntent(const QString &arg0, const QString &arg1, jint &arg2);
-		LabeledIntent(android::content::Intent &arg0, jstring &arg1, jint &arg2, jint &arg3);
-		LabeledIntent(android::content::Intent &arg0, const QString &arg1, jint &arg2, jint &arg3);
-		LabeledIntent(android::content::Intent &arg0, jstring &arg1, jstring &arg2, jint &arg3);
-		LabeledIntent(android::content::Intent &arg0, const QString &arg1, const QString &arg2, jint &arg3);
+		LabeledIntent(jstring arg0, jint arg1, jint arg2);
+		LabeledIntent(jstring arg0, jstring arg1, jint arg2);
+		LabeledIntent(android::content::Intent arg0, jstring arg1, jint arg2, jint arg3);
+		LabeledIntent(android::content::Intent arg0, jstring arg1, jstring arg2, jint arg3);
 		LabeledIntent() = default;
 		
 		// Methods

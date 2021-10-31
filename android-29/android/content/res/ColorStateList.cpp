@@ -17,7 +17,7 @@ namespace android::content::res
 	
 	ColorStateList::ColorStateList(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ColorStateList::ColorStateList(jarray &arg0, jintArray &arg1)
+	ColorStateList::ColorStateList(jarray arg0, jintArray arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.res.ColorStateList",

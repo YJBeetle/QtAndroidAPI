@@ -16,7 +16,7 @@ namespace android::app
 			"()V"
 		);
 	}
-	ActivityGroup::ActivityGroup(jboolean &arg0)
+	ActivityGroup::ActivityGroup(jboolean arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.ActivityGroup",

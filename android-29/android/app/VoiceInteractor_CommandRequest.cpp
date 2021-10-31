@@ -7,21 +7,12 @@ namespace android::app
 	
 	VoiceInteractor_CommandRequest::VoiceInteractor_CommandRequest(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	VoiceInteractor_CommandRequest::VoiceInteractor_CommandRequest(jstring &arg0, android::os::Bundle &arg1)
+	VoiceInteractor_CommandRequest::VoiceInteractor_CommandRequest(jstring arg0, android::os::Bundle arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.VoiceInteractor$CommandRequest",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	VoiceInteractor_CommandRequest::VoiceInteractor_CommandRequest(const QString &arg0, android::os::Bundle &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.app.VoiceInteractor$CommandRequest",
-			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

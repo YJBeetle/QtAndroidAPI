@@ -35,7 +35,7 @@ namespace java::security::cert
 		
 		CertificateRevokedException(QAndroidJniObject obj);
 		// Constructors
-		CertificateRevokedException(java::util::Date &arg0, java::security::cert::CRLReason &arg1, javax::security::auth::x500::X500Principal &arg2, __JniBaseClass &arg3);
+		CertificateRevokedException(java::util::Date arg0, java::security::cert::CRLReason arg1, javax::security::auth::x500::X500Principal arg2, __JniBaseClass arg3);
 		CertificateRevokedException() = default;
 		
 		// Methods

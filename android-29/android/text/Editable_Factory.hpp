@@ -17,7 +17,6 @@ namespace android::text
 		// Methods
 		static QAndroidJniObject getInstance();
 		QAndroidJniObject newEditable(jstring arg0);
-		QAndroidJniObject newEditable(const QString &arg0);
 	};
 } // namespace android::text
 

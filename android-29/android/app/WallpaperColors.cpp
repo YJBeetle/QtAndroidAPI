@@ -18,7 +18,7 @@ namespace android::app
 	
 	WallpaperColors::WallpaperColors(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	WallpaperColors::WallpaperColors(android::os::Parcel &arg0)
+	WallpaperColors::WallpaperColors(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.WallpaperColors",
@@ -26,7 +26,7 @@ namespace android::app
 			arg0.__jniObject().object()
 		);
 	}
-	WallpaperColors::WallpaperColors(android::graphics::Color &arg0, android::graphics::Color &arg1, android::graphics::Color &arg2)
+	WallpaperColors::WallpaperColors(android::graphics::Color arg0, android::graphics::Color arg1, android::graphics::Color arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.WallpaperColors",

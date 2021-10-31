@@ -41,7 +41,7 @@ namespace android::hardware::camera2
 	
 	CameraAccessException::CameraAccessException(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	CameraAccessException::CameraAccessException(jint &arg0)
+	CameraAccessException::CameraAccessException(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.hardware.camera2.CameraAccessException",
@@ -49,7 +49,7 @@ namespace android::hardware::camera2
 			arg0
 		);
 	}
-	CameraAccessException::CameraAccessException(jint &arg0, jstring &arg1)
+	CameraAccessException::CameraAccessException(jint arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.hardware.camera2.CameraAccessException",
@@ -58,16 +58,7 @@ namespace android::hardware::camera2
 			arg1
 		);
 	}
-	CameraAccessException::CameraAccessException(jint &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.hardware.camera2.CameraAccessException",
-			"(ILjava/lang/String;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	CameraAccessException::CameraAccessException(jint &arg0, jthrowable &arg1)
+	CameraAccessException::CameraAccessException(jint arg0, jthrowable arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.hardware.camera2.CameraAccessException",
@@ -76,23 +67,13 @@ namespace android::hardware::camera2
 			arg1
 		);
 	}
-	CameraAccessException::CameraAccessException(jint &arg0, jstring &arg1, jthrowable &arg2)
+	CameraAccessException::CameraAccessException(jint arg0, jstring arg1, jthrowable arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.hardware.camera2.CameraAccessException",
 			"(ILjava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
 			arg1,
-			arg2
-		);
-	}
-	CameraAccessException::CameraAccessException(jint &arg0, const QString &arg1, jthrowable &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.hardware.camera2.CameraAccessException",
-			"(ILjava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}

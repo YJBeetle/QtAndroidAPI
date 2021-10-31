@@ -21,7 +21,7 @@ namespace android::app
 		
 		VoiceInteractor_PickOptionRequest(QAndroidJniObject obj);
 		// Constructors
-		VoiceInteractor_PickOptionRequest(android::app::VoiceInteractor_Prompt &arg0, jarray &arg1, android::os::Bundle &arg2);
+		VoiceInteractor_PickOptionRequest(android::app::VoiceInteractor_Prompt arg0, jarray arg1, android::os::Bundle arg2);
 		VoiceInteractor_PickOptionRequest() = default;
 		
 		// Methods

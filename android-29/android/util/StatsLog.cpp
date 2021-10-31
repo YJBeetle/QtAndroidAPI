@@ -21,19 +21,6 @@ namespace android::util
 			arg4
 		);
 	}
-	jboolean StatsLog::logBinaryPushStateChanged(const QString &arg0, jlong arg1, jint arg2, jint arg3, jlongArray arg4)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.util.StatsLog",
-			"logBinaryPushStateChanged",
-			"(Ljava/lang/String;JII[J)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2,
-			arg3,
-			arg4
-		);
-	}
 	jboolean StatsLog::logEvent(jint arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(

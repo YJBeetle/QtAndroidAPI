@@ -7,7 +7,7 @@ namespace java::io
 	
 	PushbackReader::PushbackReader(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PushbackReader::PushbackReader(java::io::Reader &arg0)
+	PushbackReader::PushbackReader(java::io::Reader arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.PushbackReader",
@@ -15,7 +15,7 @@ namespace java::io
 			arg0.__jniObject().object()
 		);
 	}
-	PushbackReader::PushbackReader(java::io::Reader &arg0, jint &arg1)
+	PushbackReader::PushbackReader(java::io::Reader arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.PushbackReader",

@@ -15,7 +15,7 @@ namespace android::service::carrier
 	
 	MessagePdu::MessagePdu(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MessagePdu::MessagePdu(__JniBaseClass &arg0)
+	MessagePdu::MessagePdu(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.service.carrier.MessagePdu",

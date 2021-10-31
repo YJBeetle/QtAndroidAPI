@@ -16,7 +16,7 @@ namespace android::hardware
 		
 		ConsumerIrManager_CarrierFrequencyRange(QAndroidJniObject obj);
 		// Constructors
-		ConsumerIrManager_CarrierFrequencyRange(android::hardware::ConsumerIrManager &arg0, jint &arg1, jint &arg2);
+		ConsumerIrManager_CarrierFrequencyRange(android::hardware::ConsumerIrManager arg0, jint arg1, jint arg2);
 		ConsumerIrManager_CarrierFrequencyRange() = default;
 		
 		// Methods

@@ -6,22 +6,13 @@ namespace java::lang
 	
 	EnumConstantNotPresentException::EnumConstantNotPresentException(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	EnumConstantNotPresentException::EnumConstantNotPresentException(jclass &arg0, jstring &arg1)
+	EnumConstantNotPresentException::EnumConstantNotPresentException(jclass arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.EnumConstantNotPresentException",
 			"(Ljava/lang/Class;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	EnumConstantNotPresentException::EnumConstantNotPresentException(jclass &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.EnumConstantNotPresentException",
-			"(Ljava/lang/Class;Ljava/lang/String;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	

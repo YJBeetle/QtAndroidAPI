@@ -158,16 +158,6 @@ namespace java::util
 			arg1
 		).object<jobject>();
 	}
-	jobject Objects::requireNonNull(jobject arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.util.Objects",
-			"requireNonNull",
-			"(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		).object<jobject>();
-	}
 	jobject Objects::requireNonNull(jobject arg0, __JniBaseClass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -215,16 +205,6 @@ namespace java::util
 			"(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/String;",
 			arg0,
 			arg1
-		).object<jstring>();
-	}
-	jstring Objects::toString(jobject arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.util.Objects",
-			"toString",
-			"(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/String;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		).object<jstring>();
 	}
 } // namespace java::util

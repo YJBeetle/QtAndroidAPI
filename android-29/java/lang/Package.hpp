@@ -24,7 +24,6 @@ namespace java::lang
 		
 		// Methods
 		static QAndroidJniObject getPackage(jstring arg0);
-		static QAndroidJniObject getPackage(const QString &arg0);
 		static jarray getPackages();
 		QAndroidJniObject getAnnotation(jclass arg0);
 		jarray getAnnotations();
@@ -42,7 +41,6 @@ namespace java::lang
 		jint hashCode();
 		jboolean isAnnotationPresent(jclass arg0);
 		jboolean isCompatibleWith(jstring arg0);
-		jboolean isCompatibleWith(const QString &arg0);
 		jboolean isSealed();
 		jboolean isSealed(java::net::URL arg0);
 		jstring toString();

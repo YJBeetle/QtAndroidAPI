@@ -38,7 +38,7 @@ namespace android::view
 	
 	TouchDelegate::TouchDelegate(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	TouchDelegate::TouchDelegate(android::graphics::Rect &arg0, android::view::View &arg1)
+	TouchDelegate::TouchDelegate(android::graphics::Rect arg0, android::view::View arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.TouchDelegate",

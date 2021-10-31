@@ -14,7 +14,7 @@ namespace android::media::audiofx
 		
 		LoudnessEnhancer(QAndroidJniObject obj);
 		// Constructors
-		LoudnessEnhancer(jint &arg0);
+		LoudnessEnhancer(jint arg0);
 		LoudnessEnhancer() = default;
 		
 		// Methods

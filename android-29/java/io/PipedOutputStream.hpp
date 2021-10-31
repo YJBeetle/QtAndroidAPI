@@ -18,7 +18,7 @@ namespace java::io
 		PipedOutputStream(QAndroidJniObject obj);
 		// Constructors
 		PipedOutputStream();
-		PipedOutputStream(java::io::PipedInputStream &arg0);
+		PipedOutputStream(java::io::PipedInputStream arg0);
 		
 		// Methods
 		void close();

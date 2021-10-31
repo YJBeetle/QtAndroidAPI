@@ -30,8 +30,8 @@ namespace android::media
 		
 		RemoteController(QAndroidJniObject obj);
 		// Constructors
-		RemoteController(android::content::Context &arg0, __JniBaseClass &arg1);
-		RemoteController(android::content::Context &arg0, __JniBaseClass &arg1, android::os::Looper &arg2);
+		RemoteController(android::content::Context arg0, __JniBaseClass arg1);
+		RemoteController(android::content::Context arg0, __JniBaseClass arg1, android::os::Looper arg2);
 		RemoteController() = default;
 		
 		// Methods

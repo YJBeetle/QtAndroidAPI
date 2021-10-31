@@ -15,8 +15,7 @@ namespace java::lang
 		StackOverflowError(QAndroidJniObject obj);
 		// Constructors
 		StackOverflowError();
-		StackOverflowError(jstring &arg0);
-		StackOverflowError(const QString &arg0);
+		StackOverflowError(jstring arg0);
 		
 		// Methods
 	};

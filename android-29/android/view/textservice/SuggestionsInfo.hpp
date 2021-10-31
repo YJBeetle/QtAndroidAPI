@@ -20,9 +20,9 @@ namespace android::view::textservice
 		
 		SuggestionsInfo(QAndroidJniObject obj);
 		// Constructors
-		SuggestionsInfo(android::os::Parcel &arg0);
-		SuggestionsInfo(jint &arg0, jarray &arg1);
-		SuggestionsInfo(jint &arg0, jarray &arg1, jint &arg2, jint &arg3);
+		SuggestionsInfo(android::os::Parcel arg0);
+		SuggestionsInfo(jint arg0, jarray arg1);
+		SuggestionsInfo(jint arg0, jarray arg1, jint arg2, jint arg3);
 		SuggestionsInfo() = default;
 		
 		// Methods

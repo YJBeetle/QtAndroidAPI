@@ -29,15 +29,6 @@ namespace android::view::contentcapture
 			arg0
 		);
 	}
-	QAndroidJniObject ContentCaptureContext::forLocusId(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.view.contentcapture.ContentCaptureContext",
-			"forLocusId",
-			"(Ljava/lang/String;)Landroid/view/contentcapture/ContentCaptureContext;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jint ContentCaptureContext::describeContents()
 	{
 		return __thiz.callMethod<jint>(

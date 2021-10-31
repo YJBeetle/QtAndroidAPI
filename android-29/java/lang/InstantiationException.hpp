@@ -15,8 +15,7 @@ namespace java::lang
 		InstantiationException(QAndroidJniObject obj);
 		// Constructors
 		InstantiationException();
-		InstantiationException(jstring &arg0);
-		InstantiationException(const QString &arg0);
+		InstantiationException(jstring arg0);
 		
 		// Methods
 	};

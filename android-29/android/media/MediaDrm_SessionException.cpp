@@ -20,22 +20,13 @@ namespace android::media
 	
 	MediaDrm_SessionException::MediaDrm_SessionException(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MediaDrm_SessionException::MediaDrm_SessionException(jint &arg0, jstring &arg1)
+	MediaDrm_SessionException::MediaDrm_SessionException(jint arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.MediaDrm$SessionException",
 			"(ILjava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	MediaDrm_SessionException::MediaDrm_SessionException(jint &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.media.MediaDrm$SessionException",
-			"(ILjava/lang/String;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	

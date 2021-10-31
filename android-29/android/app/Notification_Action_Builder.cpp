@@ -11,7 +11,7 @@ namespace android::app
 	
 	Notification_Action_Builder::Notification_Action_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Notification_Action_Builder::Notification_Action_Builder(android::app::Notification_Action &arg0)
+	Notification_Action_Builder::Notification_Action_Builder(android::app::Notification_Action arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.Notification$Action$Builder",
@@ -19,7 +19,7 @@ namespace android::app
 			arg0.__jniObject().object()
 		);
 	}
-	Notification_Action_Builder::Notification_Action_Builder(android::graphics::drawable::Icon &arg0, jstring &arg1, android::app::PendingIntent &arg2)
+	Notification_Action_Builder::Notification_Action_Builder(android::graphics::drawable::Icon arg0, jstring arg1, android::app::PendingIntent arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.Notification$Action$Builder",
@@ -29,33 +29,13 @@ namespace android::app
 			arg2.__jniObject().object()
 		);
 	}
-	Notification_Action_Builder::Notification_Action_Builder(android::graphics::drawable::Icon &arg0, const QString &arg1, android::app::PendingIntent &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.app.Notification$Action$Builder",
-			"(Landroid/graphics/drawable/Icon;Ljava/lang/CharSequence;Landroid/app/PendingIntent;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object()
-		);
-	}
-	Notification_Action_Builder::Notification_Action_Builder(jint &arg0, jstring &arg1, android::app::PendingIntent &arg2)
+	Notification_Action_Builder::Notification_Action_Builder(jint arg0, jstring arg1, android::app::PendingIntent arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.Notification$Action$Builder",
 			"(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	Notification_Action_Builder::Notification_Action_Builder(jint &arg0, const QString &arg1, android::app::PendingIntent &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.app.Notification$Action$Builder",
-			"(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}

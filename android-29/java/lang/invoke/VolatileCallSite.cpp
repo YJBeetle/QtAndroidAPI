@@ -8,7 +8,7 @@ namespace java::lang::invoke
 	
 	VolatileCallSite::VolatileCallSite(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	VolatileCallSite::VolatileCallSite(java::lang::invoke::MethodHandle &arg0)
+	VolatileCallSite::VolatileCallSite(java::lang::invoke::MethodHandle arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.invoke.VolatileCallSite",
@@ -16,7 +16,7 @@ namespace java::lang::invoke
 			arg0.__jniObject().object()
 		);
 	}
-	VolatileCallSite::VolatileCallSite(java::lang::invoke::MethodType &arg0)
+	VolatileCallSite::VolatileCallSite(java::lang::invoke::MethodType arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.invoke.VolatileCallSite",

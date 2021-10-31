@@ -6,7 +6,7 @@ namespace android::os
 	
 	CountDownTimer::CountDownTimer(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	CountDownTimer::CountDownTimer(jlong &arg0, jlong &arg1)
+	CountDownTimer::CountDownTimer(jlong arg0, jlong arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.CountDownTimer",

@@ -15,10 +15,8 @@ namespace java::nio::file
 		
 		AccessDeniedException(QAndroidJniObject obj);
 		// Constructors
-		AccessDeniedException(jstring &arg0);
-		AccessDeniedException(const QString &arg0);
-		AccessDeniedException(jstring &arg0, jstring &arg1, jstring &arg2);
-		AccessDeniedException(const QString &arg0, const QString &arg1, const QString &arg2);
+		AccessDeniedException(jstring arg0);
+		AccessDeniedException(jstring arg0, jstring arg1, jstring arg2);
 		AccessDeniedException() = default;
 		
 		// Methods

@@ -23,7 +23,7 @@ namespace android::app
 	
 	Dialog::Dialog(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Dialog::Dialog(android::content::Context &arg0)
+	Dialog::Dialog(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.Dialog",
@@ -31,7 +31,7 @@ namespace android::app
 			arg0.__jniObject().object()
 		);
 	}
-	Dialog::Dialog(android::content::Context &arg0, jint &arg1)
+	Dialog::Dialog(android::content::Context arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.Dialog",
@@ -687,14 +687,6 @@ namespace android::app
 			"setTitle",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
-		);
-	}
-	void Dialog::setTitle(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTitle",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void Dialog::setVolumeControlStream(jint arg0)

@@ -48,33 +48,24 @@ namespace java::lang
 		// Methods
 		static void arraycopy(jobject arg0, jint arg1, jobject arg2, jint arg3, jint arg4);
 		static jstring clearProperty(jstring arg0);
-		static jstring clearProperty(const QString &arg0);
 		static QAndroidJniObject console();
 		static jlong currentTimeMillis();
 		static void exit(jint arg0);
 		static void gc();
 		static QAndroidJniObject getLogger(jstring arg0);
-		static QAndroidJniObject getLogger(const QString &arg0);
 		static QAndroidJniObject getLogger(jstring arg0, java::util::ResourceBundle arg1);
-		static QAndroidJniObject getLogger(const QString &arg0, java::util::ResourceBundle arg1);
 		static QAndroidJniObject getProperties();
 		static jstring getProperty(jstring arg0);
-		static jstring getProperty(const QString &arg0);
 		static jstring getProperty(jstring arg0, jstring arg1);
-		static jstring getProperty(const QString &arg0, const QString &arg1);
 		static QAndroidJniObject getSecurityManager();
 		static jstring getenv(jstring arg0);
-		static jstring getenv(const QString &arg0);
 		static QAndroidJniObject getenv();
 		static jint identityHashCode(jobject arg0);
 		static QAndroidJniObject inheritedChannel();
 		static jstring lineSeparator();
 		static void load(jstring arg0);
-		static void load(const QString &arg0);
 		static void loadLibrary(jstring arg0);
-		static void loadLibrary(const QString &arg0);
 		static jstring mapLibraryName(jstring arg0);
-		static jstring mapLibraryName(const QString &arg0);
 		static jlong nanoTime();
 		static void runFinalization();
 		static void setErr(java::io::PrintStream arg0);
@@ -82,7 +73,6 @@ namespace java::lang
 		static void setOut(java::io::PrintStream arg0);
 		static void setProperties(java::util::Properties arg0);
 		static jstring setProperty(jstring arg0, jstring arg1);
-		static jstring setProperty(const QString &arg0, const QString &arg1);
 		static void setSecurityManager(java::lang::SecurityManager arg0);
 	};
 } // namespace java::lang

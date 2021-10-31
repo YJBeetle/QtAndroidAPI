@@ -94,7 +94,6 @@ namespace android::media
 		
 		// Methods
 		static QAndroidJniObject createFromProfileLevel(jstring arg0, jint arg1, jint arg2);
-		static QAndroidJniObject createFromProfileLevel(const QString &arg0, jint arg1, jint arg2);
 		QAndroidJniObject getAudioCapabilities();
 		QAndroidJniObject getDefaultFormat();
 		QAndroidJniObject getEncoderCapabilities();
@@ -102,9 +101,7 @@ namespace android::media
 		jstring getMimeType();
 		QAndroidJniObject getVideoCapabilities();
 		jboolean isFeatureRequired(jstring arg0);
-		jboolean isFeatureRequired(const QString &arg0);
 		jboolean isFeatureSupported(jstring arg0);
-		jboolean isFeatureSupported(const QString &arg0);
 		jboolean isFormatSupported(android::media::MediaFormat arg0);
 	};
 } // namespace android::media

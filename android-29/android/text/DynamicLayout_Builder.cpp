@@ -23,17 +23,6 @@ namespace android::text
 			arg2
 		);
 	}
-	QAndroidJniObject DynamicLayout_Builder::obtain(const QString &arg0, android::text::TextPaint arg1, jint arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.text.DynamicLayout$Builder",
-			"obtain",
-			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;I)Landroid/text/DynamicLayout$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2
-		);
-	}
 	QAndroidJniObject DynamicLayout_Builder::build()
 	{
 		return __thiz.callObjectMethod(
@@ -63,14 +52,6 @@ namespace android::text
 			"setDisplayText",
 			"(Ljava/lang/CharSequence;)Landroid/text/DynamicLayout$Builder;",
 			arg0
-		);
-	}
-	QAndroidJniObject DynamicLayout_Builder::setDisplayText(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setDisplayText",
-			"(Ljava/lang/CharSequence;)Landroid/text/DynamicLayout$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject DynamicLayout_Builder::setEllipsize(android::text::TextUtils_TruncateAt arg0)

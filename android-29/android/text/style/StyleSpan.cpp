@@ -8,7 +8,7 @@ namespace android::text::style
 	
 	StyleSpan::StyleSpan(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	StyleSpan::StyleSpan(android::os::Parcel &arg0)
+	StyleSpan::StyleSpan(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.StyleSpan",
@@ -16,7 +16,7 @@ namespace android::text::style
 			arg0.__jniObject().object()
 		);
 	}
-	StyleSpan::StyleSpan(jint &arg0)
+	StyleSpan::StyleSpan(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.StyleSpan",

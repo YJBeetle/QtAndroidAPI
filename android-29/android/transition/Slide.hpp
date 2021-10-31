@@ -35,8 +35,8 @@ namespace android::transition
 		Slide(QAndroidJniObject obj);
 		// Constructors
 		Slide();
-		Slide(jint &arg0);
-		Slide(android::content::Context &arg0, __JniBaseClass &arg1);
+		Slide(jint arg0);
+		Slide(android::content::Context arg0, __JniBaseClass arg1);
 		
 		// Methods
 		void captureEndValues(android::transition::TransitionValues arg0);

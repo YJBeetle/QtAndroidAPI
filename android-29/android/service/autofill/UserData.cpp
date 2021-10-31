@@ -80,14 +80,6 @@ namespace android::service::autofill
 			arg0
 		).object<jstring>();
 	}
-	jstring UserData::getFieldClassificationAlgorithmForCategory(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getFieldClassificationAlgorithmForCategory",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
 	jstring UserData::getId()
 	{
 		return __thiz.callObjectMethod(

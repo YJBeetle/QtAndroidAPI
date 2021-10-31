@@ -15,8 +15,7 @@ namespace android::renderscript
 		
 		RSDriverException(QAndroidJniObject obj);
 		// Constructors
-		RSDriverException(jstring &arg0);
-		RSDriverException(const QString &arg0);
+		RSDriverException(jstring arg0);
 		RSDriverException() = default;
 		
 		// Methods

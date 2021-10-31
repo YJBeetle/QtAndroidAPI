@@ -28,8 +28,8 @@ namespace android::app
 		
 		AlertDialog_Builder(QAndroidJniObject obj);
 		// Constructors
-		AlertDialog_Builder(android::content::Context &arg0);
-		AlertDialog_Builder(android::content::Context &arg0, jint &arg1);
+		AlertDialog_Builder(android::content::Context arg0);
+		AlertDialog_Builder(android::content::Context arg0, jint arg1);
 		AlertDialog_Builder() = default;
 		
 		// Methods
@@ -38,7 +38,6 @@ namespace android::app
 		QAndroidJniObject setAdapter(__JniBaseClass arg0, __JniBaseClass arg1);
 		QAndroidJniObject setCancelable(jboolean arg0);
 		QAndroidJniObject setCursor(__JniBaseClass arg0, __JniBaseClass arg1, jstring arg2);
-		QAndroidJniObject setCursor(__JniBaseClass arg0, __JniBaseClass arg1, const QString &arg2);
 		QAndroidJniObject setCustomTitle(android::view::View arg0);
 		QAndroidJniObject setIcon(android::graphics::drawable::Drawable arg0);
 		QAndroidJniObject setIcon(jint arg0);
@@ -48,32 +47,25 @@ namespace android::app
 		QAndroidJniObject setItems(jint arg0, __JniBaseClass arg1);
 		QAndroidJniObject setMessage(jint arg0);
 		QAndroidJniObject setMessage(jstring arg0);
-		QAndroidJniObject setMessage(const QString &arg0);
 		QAndroidJniObject setMultiChoiceItems(jarray arg0, jbooleanArray arg1, __JniBaseClass arg2);
 		QAndroidJniObject setMultiChoiceItems(jint arg0, jbooleanArray arg1, __JniBaseClass arg2);
 		QAndroidJniObject setMultiChoiceItems(__JniBaseClass arg0, jstring arg1, jstring arg2, __JniBaseClass arg3);
-		QAndroidJniObject setMultiChoiceItems(__JniBaseClass arg0, const QString &arg1, const QString &arg2, __JniBaseClass arg3);
 		QAndroidJniObject setNegativeButton(jint arg0, __JniBaseClass arg1);
 		QAndroidJniObject setNegativeButton(jstring arg0, __JniBaseClass arg1);
-		QAndroidJniObject setNegativeButton(const QString &arg0, __JniBaseClass arg1);
 		QAndroidJniObject setNeutralButton(jint arg0, __JniBaseClass arg1);
 		QAndroidJniObject setNeutralButton(jstring arg0, __JniBaseClass arg1);
-		QAndroidJniObject setNeutralButton(const QString &arg0, __JniBaseClass arg1);
 		QAndroidJniObject setOnCancelListener(__JniBaseClass arg0);
 		QAndroidJniObject setOnDismissListener(__JniBaseClass arg0);
 		QAndroidJniObject setOnItemSelectedListener(__JniBaseClass arg0);
 		QAndroidJniObject setOnKeyListener(__JniBaseClass arg0);
 		QAndroidJniObject setPositiveButton(jint arg0, __JniBaseClass arg1);
 		QAndroidJniObject setPositiveButton(jstring arg0, __JniBaseClass arg1);
-		QAndroidJniObject setPositiveButton(const QString &arg0, __JniBaseClass arg1);
 		QAndroidJniObject setSingleChoiceItems(jarray arg0, jint arg1, __JniBaseClass arg2);
 		QAndroidJniObject setSingleChoiceItems(__JniBaseClass arg0, jint arg1, __JniBaseClass arg2);
 		QAndroidJniObject setSingleChoiceItems(jint arg0, jint arg1, __JniBaseClass arg2);
 		QAndroidJniObject setSingleChoiceItems(__JniBaseClass arg0, jint arg1, jstring arg2, __JniBaseClass arg3);
-		QAndroidJniObject setSingleChoiceItems(__JniBaseClass arg0, jint arg1, const QString &arg2, __JniBaseClass arg3);
 		QAndroidJniObject setTitle(jint arg0);
 		QAndroidJniObject setTitle(jstring arg0);
-		QAndroidJniObject setTitle(const QString &arg0);
 		QAndroidJniObject setView(android::view::View arg0);
 		QAndroidJniObject setView(jint arg0);
 		QAndroidJniObject show();

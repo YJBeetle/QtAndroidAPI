@@ -21,7 +21,6 @@ namespace java::nio::file
 		// Methods
 		static QAndroidJniObject get(java::net::URI arg0);
 		static QAndroidJniObject get(jstring arg0, jarray arg1);
-		static QAndroidJniObject get(const QString &arg0, jarray arg1);
 	};
 } // namespace java::nio::file
 

@@ -6,7 +6,7 @@ namespace java::util
 	
 	EventListenerProxy::EventListenerProxy(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	EventListenerProxy::EventListenerProxy(__JniBaseClass &arg0)
+	EventListenerProxy::EventListenerProxy(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.EventListenerProxy",

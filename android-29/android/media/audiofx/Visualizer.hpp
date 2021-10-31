@@ -31,7 +31,7 @@ namespace android::media::audiofx
 		
 		Visualizer(QAndroidJniObject obj);
 		// Constructors
-		Visualizer(jint &arg0);
+		Visualizer(jint arg0);
 		Visualizer() = default;
 		
 		// Methods

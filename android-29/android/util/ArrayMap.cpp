@@ -21,7 +21,7 @@ namespace android::util
 			arg0.__jniObject().object()
 		);
 	}
-	ArrayMap::ArrayMap(jint &arg0)
+	ArrayMap::ArrayMap(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.ArrayMap",

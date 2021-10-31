@@ -93,7 +93,7 @@ namespace android::view
 	
 	ViewGroup::ViewGroup(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ViewGroup::ViewGroup(android::content::Context &arg0)
+	ViewGroup::ViewGroup(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.ViewGroup",
@@ -101,7 +101,7 @@ namespace android::view
 			arg0.__jniObject().object()
 		);
 	}
-	ViewGroup::ViewGroup(android::content::Context &arg0, __JniBaseClass &arg1)
+	ViewGroup::ViewGroup(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.ViewGroup",
@@ -110,7 +110,7 @@ namespace android::view
 			arg1.__jniObject().object()
 		);
 	}
-	ViewGroup::ViewGroup(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	ViewGroup::ViewGroup(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.ViewGroup",
@@ -120,7 +120,7 @@ namespace android::view
 			arg2
 		);
 	}
-	ViewGroup::ViewGroup(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	ViewGroup::ViewGroup(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.ViewGroup",
@@ -486,16 +486,6 @@ namespace android::view
 			"(Ljava/util/ArrayList;Ljava/lang/CharSequence;I)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2
-		);
-	}
-	void ViewGroup::findViewsWithText(java::util::ArrayList arg0, const QString &arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"findViewsWithText",
-			"(Ljava/util/ArrayList;Ljava/lang/CharSequence;I)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}

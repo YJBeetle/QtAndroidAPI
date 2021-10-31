@@ -34,14 +34,12 @@ namespace java::util::zip
 		
 		ZipFile(QAndroidJniObject obj);
 		// Constructors
-		ZipFile(java::io::File &arg0);
-		ZipFile(jstring &arg0);
-		ZipFile(const QString &arg0);
-		ZipFile(java::io::File &arg0, jint &arg1);
-		ZipFile(java::io::File &arg0, java::nio::charset::Charset &arg1);
-		ZipFile(jstring &arg0, java::nio::charset::Charset &arg1);
-		ZipFile(const QString &arg0, java::nio::charset::Charset &arg1);
-		ZipFile(java::io::File &arg0, jint &arg1, java::nio::charset::Charset &arg2);
+		ZipFile(java::io::File arg0);
+		ZipFile(jstring arg0);
+		ZipFile(java::io::File arg0, jint arg1);
+		ZipFile(java::io::File arg0, java::nio::charset::Charset arg1);
+		ZipFile(jstring arg0, java::nio::charset::Charset arg1);
+		ZipFile(java::io::File arg0, jint arg1, java::nio::charset::Charset arg2);
 		ZipFile() = default;
 		
 		// Methods
@@ -49,7 +47,6 @@ namespace java::util::zip
 		QAndroidJniObject entries();
 		jstring getComment();
 		QAndroidJniObject getEntry(jstring arg0);
-		QAndroidJniObject getEntry(const QString &arg0);
 		QAndroidJniObject getInputStream(java::util::zip::ZipEntry arg0);
 		jstring getName();
 		jint size();

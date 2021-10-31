@@ -14,8 +14,7 @@ namespace java::util::zip
 		DataFormatException(QAndroidJniObject obj);
 		// Constructors
 		DataFormatException();
-		DataFormatException(jstring &arg0);
-		DataFormatException(const QString &arg0);
+		DataFormatException(jstring arg0);
 		
 		// Methods
 	};

@@ -15,7 +15,7 @@ namespace android::view::textservice
 	
 	TextInfo::TextInfo(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	TextInfo::TextInfo(android::os::Parcel &arg0)
+	TextInfo::TextInfo(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.textservice.TextInfo",
@@ -23,7 +23,7 @@ namespace android::view::textservice
 			arg0.__jniObject().object()
 		);
 	}
-	TextInfo::TextInfo(jstring &arg0)
+	TextInfo::TextInfo(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.textservice.TextInfo",
@@ -31,15 +31,7 @@ namespace android::view::textservice
 			arg0
 		);
 	}
-	TextInfo::TextInfo(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.textservice.TextInfo",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	TextInfo::TextInfo(jstring &arg0, jint &arg1, jint &arg2)
+	TextInfo::TextInfo(jstring arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.textservice.TextInfo",
@@ -49,34 +41,12 @@ namespace android::view::textservice
 			arg2
 		);
 	}
-	TextInfo::TextInfo(const QString &arg0, jint &arg1, jint &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.textservice.TextInfo",
-			"(Ljava/lang/String;II)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2
-		);
-	}
-	TextInfo::TextInfo(jstring &arg0, jint &arg1, jint &arg2, jint &arg3, jint &arg4)
+	TextInfo::TextInfo(jstring arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.textservice.TextInfo",
 			"(Ljava/lang/CharSequence;IIII)V",
 			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4
-		);
-	}
-	TextInfo::TextInfo(const QString &arg0, jint &arg1, jint &arg2, jint &arg3, jint &arg4)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.textservice.TextInfo",
-			"(Ljava/lang/CharSequence;IIII)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2,
 			arg3,

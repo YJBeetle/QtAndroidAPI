@@ -16,8 +16,7 @@ namespace java::lang
 		IllegalThreadStateException(QAndroidJniObject obj);
 		// Constructors
 		IllegalThreadStateException();
-		IllegalThreadStateException(jstring &arg0);
-		IllegalThreadStateException(const QString &arg0);
+		IllegalThreadStateException(jstring arg0);
 		
 		// Methods
 	};

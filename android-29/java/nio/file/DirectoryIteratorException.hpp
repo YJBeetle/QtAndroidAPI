@@ -23,7 +23,7 @@ namespace java::nio::file
 		
 		DirectoryIteratorException(QAndroidJniObject obj);
 		// Constructors
-		DirectoryIteratorException(java::io::IOException &arg0);
+		DirectoryIteratorException(java::io::IOException arg0);
 		DirectoryIteratorException() = default;
 		
 		// Methods

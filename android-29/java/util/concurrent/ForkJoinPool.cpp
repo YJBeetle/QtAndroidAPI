@@ -27,7 +27,7 @@ namespace java::util::concurrent
 			"()V"
 		);
 	}
-	ForkJoinPool::ForkJoinPool(jint &arg0)
+	ForkJoinPool::ForkJoinPool(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.ForkJoinPool",
@@ -35,7 +35,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	ForkJoinPool::ForkJoinPool(jint &arg0, __JniBaseClass &arg1, __JniBaseClass &arg2, jboolean &arg3)
+	ForkJoinPool::ForkJoinPool(jint arg0, __JniBaseClass arg1, __JniBaseClass arg2, jboolean arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.ForkJoinPool",
@@ -46,7 +46,7 @@ namespace java::util::concurrent
 			arg3
 		);
 	}
-	ForkJoinPool::ForkJoinPool(jint &arg0, __JniBaseClass &arg1, __JniBaseClass &arg2, jboolean &arg3, jint &arg4, jint &arg5, jint &arg6, __JniBaseClass &arg7, jlong &arg8, java::util::concurrent::TimeUnit &arg9)
+	ForkJoinPool::ForkJoinPool(jint arg0, __JniBaseClass arg1, __JniBaseClass arg2, jboolean arg3, jint arg4, jint arg5, jint arg6, __JniBaseClass arg7, jlong arg8, java::util::concurrent::TimeUnit arg9)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.ForkJoinPool",

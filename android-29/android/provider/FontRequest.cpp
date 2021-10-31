@@ -6,7 +6,7 @@ namespace android::provider
 	
 	FontRequest::FontRequest(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	FontRequest::FontRequest(jstring &arg0, jstring &arg1, jstring &arg2)
+	FontRequest::FontRequest(jstring arg0, jstring arg1, jstring arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.provider.FontRequest",
@@ -16,17 +16,7 @@ namespace android::provider
 			arg2
 		);
 	}
-	FontRequest::FontRequest(const QString &arg0, const QString &arg1, const QString &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.provider.FontRequest",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
-	FontRequest::FontRequest(jstring &arg0, jstring &arg1, jstring &arg2, __JniBaseClass &arg3)
+	FontRequest::FontRequest(jstring arg0, jstring arg1, jstring arg2, __JniBaseClass arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.provider.FontRequest",
@@ -34,17 +24,6 @@ namespace android::provider
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
-		);
-	}
-	FontRequest::FontRequest(const QString &arg0, const QString &arg1, const QString &arg2, __JniBaseClass &arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"android.provider.FontRequest",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
 			arg3.__jniObject().object()
 		);
 	}

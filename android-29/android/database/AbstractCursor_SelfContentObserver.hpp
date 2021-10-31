@@ -17,7 +17,7 @@ namespace android::database
 		
 		AbstractCursor_SelfContentObserver(QAndroidJniObject obj);
 		// Constructors
-		AbstractCursor_SelfContentObserver(android::database::AbstractCursor &arg0);
+		AbstractCursor_SelfContentObserver(android::database::AbstractCursor arg0);
 		AbstractCursor_SelfContentObserver() = default;
 		
 		// Methods

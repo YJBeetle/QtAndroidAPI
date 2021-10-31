@@ -25,7 +25,7 @@ namespace android::service::autofill
 		
 		DateTransformation(QAndroidJniObject obj);
 		// Constructors
-		DateTransformation(android::view::autofill::AutofillId &arg0, android::icu::text::DateFormat &arg1);
+		DateTransformation(android::view::autofill::AutofillId arg0, android::icu::text::DateFormat arg1);
 		DateTransformation() = default;
 		
 		// Methods

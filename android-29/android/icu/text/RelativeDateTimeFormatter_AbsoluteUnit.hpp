@@ -29,7 +29,6 @@ namespace android::icu::text
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);
-		static QAndroidJniObject valueOf(const QString &arg0);
 		static jarray values();
 	};
 } // namespace android::icu::text

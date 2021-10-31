@@ -18,7 +18,7 @@ namespace android::telephony::cdma
 		CdmaCellLocation(QAndroidJniObject obj);
 		// Constructors
 		CdmaCellLocation();
-		CdmaCellLocation(android::os::Bundle &arg0);
+		CdmaCellLocation(android::os::Bundle arg0);
 		
 		// Methods
 		static jdouble convertQuartSecToDecDegrees(jint arg0);

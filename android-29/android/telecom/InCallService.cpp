@@ -107,16 +107,6 @@ namespace android::telecom
 			arg2.__jniObject().object()
 		);
 	}
-	void InCallService::onConnectionEvent(android::telecom::Call arg0, const QString &arg1, android::os::Bundle arg2)
-	{
-		__thiz.callMethod<void>(
-			"onConnectionEvent",
-			"(Landroid/telecom/Call;Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object()
-		);
-	}
 	void InCallService::onSilenceRinger()
 	{
 		__thiz.callMethod<void>(

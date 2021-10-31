@@ -14,7 +14,7 @@ namespace java::util::concurrent
 			"()V"
 		);
 	}
-	CopyOnWriteArraySet::CopyOnWriteArraySet(__JniBaseClass &arg0)
+	CopyOnWriteArraySet::CopyOnWriteArraySet(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.CopyOnWriteArraySet",

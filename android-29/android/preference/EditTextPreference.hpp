@@ -30,17 +30,16 @@ namespace android::preference
 		
 		EditTextPreference(QAndroidJniObject obj);
 		// Constructors
-		EditTextPreference(android::content::Context &arg0);
-		EditTextPreference(android::content::Context &arg0, __JniBaseClass &arg1);
-		EditTextPreference(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		EditTextPreference(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		EditTextPreference(android::content::Context arg0);
+		EditTextPreference(android::content::Context arg0, __JniBaseClass arg1);
+		EditTextPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		EditTextPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		EditTextPreference() = default;
 		
 		// Methods
 		QAndroidJniObject getEditText();
 		jstring getText();
 		void setText(jstring arg0);
-		void setText(const QString &arg0);
 		jboolean shouldDisableDependents();
 	};
 } // namespace android::preference

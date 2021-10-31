@@ -37,9 +37,9 @@ namespace java::net
 		ServerSocket(QAndroidJniObject obj);
 		// Constructors
 		ServerSocket();
-		ServerSocket(jint &arg0);
-		ServerSocket(jint &arg0, jint &arg1);
-		ServerSocket(jint &arg0, jint &arg1, java::net::InetAddress &arg2);
+		ServerSocket(jint arg0);
+		ServerSocket(jint arg0, jint arg1);
+		ServerSocket(jint arg0, jint arg1, java::net::InetAddress arg2);
 		
 		// Methods
 		static void setSocketFactory(__JniBaseClass arg0);

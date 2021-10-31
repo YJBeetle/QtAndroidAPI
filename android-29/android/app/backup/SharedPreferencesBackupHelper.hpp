@@ -28,7 +28,7 @@ namespace android::app::backup
 		
 		SharedPreferencesBackupHelper(QAndroidJniObject obj);
 		// Constructors
-		SharedPreferencesBackupHelper(android::content::Context &arg0, jarray &arg1);
+		SharedPreferencesBackupHelper(android::content::Context arg0, jarray arg1);
 		SharedPreferencesBackupHelper() = default;
 		
 		// Methods

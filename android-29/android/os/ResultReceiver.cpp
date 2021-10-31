@@ -17,7 +17,7 @@ namespace android::os
 	
 	ResultReceiver::ResultReceiver(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ResultReceiver::ResultReceiver(android::os::Handler &arg0)
+	ResultReceiver::ResultReceiver(android::os::Handler arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.ResultReceiver",

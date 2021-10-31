@@ -9,7 +9,7 @@ namespace android::util
 	
 	AtomicFile::AtomicFile(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AtomicFile::AtomicFile(java::io::File &arg0)
+	AtomicFile::AtomicFile(java::io::File arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.AtomicFile",

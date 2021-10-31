@@ -17,7 +17,7 @@ namespace android::mtp
 		MtpObjectInfo_Builder(QAndroidJniObject obj);
 		// Constructors
 		MtpObjectInfo_Builder();
-		MtpObjectInfo_Builder(android::mtp::MtpObjectInfo &arg0);
+		MtpObjectInfo_Builder(android::mtp::MtpObjectInfo arg0);
 		
 		// Methods
 		QAndroidJniObject build();
@@ -31,9 +31,7 @@ namespace android::mtp
 		QAndroidJniObject setImagePixHeight(jlong arg0);
 		QAndroidJniObject setImagePixWidth(jlong arg0);
 		QAndroidJniObject setKeywords(jstring arg0);
-		QAndroidJniObject setKeywords(const QString &arg0);
 		QAndroidJniObject setName(jstring arg0);
-		QAndroidJniObject setName(const QString &arg0);
 		QAndroidJniObject setObjectHandle(jint arg0);
 		QAndroidJniObject setParent(jint arg0);
 		QAndroidJniObject setProtectionStatus(jint arg0);

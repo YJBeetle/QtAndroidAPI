@@ -9,20 +9,12 @@ namespace android::icu::text
 	
 	SelectFormat::SelectFormat(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SelectFormat::SelectFormat(jstring &arg0)
+	SelectFormat::SelectFormat(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.SelectFormat",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	SelectFormat::SelectFormat(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.text.SelectFormat",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	
@@ -33,14 +25,6 @@ namespace android::icu::text
 			"applyPattern",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void SelectFormat::applyPattern(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"applyPattern",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean SelectFormat::equals(jobject arg0)
@@ -57,14 +41,6 @@ namespace android::icu::text
 			"format",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
-	}
-	jstring SelectFormat::format(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"format",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	QAndroidJniObject SelectFormat::format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
@@ -90,15 +66,6 @@ namespace android::icu::text
 			"parseObject",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object()
-		).object<jobject>();
-	}
-	jobject SelectFormat::parseObject(const QString &arg0, java::text::ParsePosition arg1)
-	{
-		return __thiz.callObjectMethod(
-			"parseObject",
-			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Object;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		).object<jobject>();
 	}

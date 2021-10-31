@@ -18,7 +18,7 @@ namespace java::util::zip
 		
 		CheckedInputStream(QAndroidJniObject obj);
 		// Constructors
-		CheckedInputStream(java::io::InputStream &arg0, __JniBaseClass &arg1);
+		CheckedInputStream(java::io::InputStream arg0, __JniBaseClass arg1);
 		CheckedInputStream() = default;
 		
 		// Methods

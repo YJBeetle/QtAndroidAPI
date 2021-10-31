@@ -6,7 +6,7 @@ namespace android::graphics
 	
 	PaintFlagsDrawFilter::PaintFlagsDrawFilter(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PaintFlagsDrawFilter::PaintFlagsDrawFilter(jint &arg0, jint &arg1)
+	PaintFlagsDrawFilter::PaintFlagsDrawFilter(jint arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.PaintFlagsDrawFilter",

@@ -22,7 +22,6 @@ namespace javax::security::cert
 		jstring toString();
 		void verify(__JniBaseClass arg0);
 		void verify(__JniBaseClass arg0, jstring arg1);
-		void verify(__JniBaseClass arg0, const QString &arg1);
 	};
 } // namespace javax::security::cert
 

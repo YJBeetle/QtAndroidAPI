@@ -9,7 +9,7 @@ namespace java::util::jar
 	
 	JarOutputStream::JarOutputStream(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	JarOutputStream::JarOutputStream(java::io::OutputStream &arg0)
+	JarOutputStream::JarOutputStream(java::io::OutputStream arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.jar.JarOutputStream",
@@ -17,7 +17,7 @@ namespace java::util::jar
 			arg0.__jniObject().object()
 		);
 	}
-	JarOutputStream::JarOutputStream(java::io::OutputStream &arg0, java::util::jar::Manifest &arg1)
+	JarOutputStream::JarOutputStream(java::io::OutputStream arg0, java::util::jar::Manifest arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.jar.JarOutputStream",

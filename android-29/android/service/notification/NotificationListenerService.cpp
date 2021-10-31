@@ -279,14 +279,6 @@ namespace android::service::notification
 			arg0
 		);
 	}
-	void NotificationListenerService::cancelNotification(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"cancelNotification",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void NotificationListenerService::cancelNotification(jstring arg0, jstring arg1, jint arg2)
 	{
 		__thiz.callMethod<void>(
@@ -294,16 +286,6 @@ namespace android::service::notification
 			"(Ljava/lang/String;Ljava/lang/String;I)V",
 			arg0,
 			arg1,
-			arg2
-		);
-	}
-	void NotificationListenerService::cancelNotification(const QString &arg0, const QString &arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"cancelNotification",
-			"(Ljava/lang/String;Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}
@@ -367,30 +349,12 @@ namespace android::service::notification
 			arg1.__jniObject().object()
 		);
 	}
-	QAndroidJniObject NotificationListenerService::getNotificationChannelGroups(const QString &arg0, android::os::UserHandle arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getNotificationChannelGroups",
-			"(Ljava/lang/String;Landroid/os/UserHandle;)Ljava/util/List;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	QAndroidJniObject NotificationListenerService::getNotificationChannels(jstring arg0, android::os::UserHandle arg1)
 	{
 		return __thiz.callObjectMethod(
 			"getNotificationChannels",
 			"(Ljava/lang/String;Landroid/os/UserHandle;)Ljava/util/List;",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject NotificationListenerService::getNotificationChannels(const QString &arg0, android::os::UserHandle arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getNotificationChannels",
-			"(Ljava/lang/String;Landroid/os/UserHandle;)Ljava/util/List;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -457,34 +421,12 @@ namespace android::service::notification
 			arg3
 		);
 	}
-	void NotificationListenerService::onNotificationChannelGroupModified(const QString &arg0, android::os::UserHandle arg1, android::app::NotificationChannelGroup arg2, jint arg3)
-	{
-		__thiz.callMethod<void>(
-			"onNotificationChannelGroupModified",
-			"(Ljava/lang/String;Landroid/os/UserHandle;Landroid/app/NotificationChannelGroup;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3
-		);
-	}
 	void NotificationListenerService::onNotificationChannelModified(jstring arg0, android::os::UserHandle arg1, android::app::NotificationChannel arg2, jint arg3)
 	{
 		__thiz.callMethod<void>(
 			"onNotificationChannelModified",
 			"(Ljava/lang/String;Landroid/os/UserHandle;Landroid/app/NotificationChannel;I)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3
-		);
-	}
-	void NotificationListenerService::onNotificationChannelModified(const QString &arg0, android::os::UserHandle arg1, android::app::NotificationChannel arg2, jint arg3)
-	{
-		__thiz.callMethod<void>(
-			"onNotificationChannelModified",
-			"(Ljava/lang/String;Landroid/os/UserHandle;Landroid/app/NotificationChannel;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
 			arg3
@@ -590,31 +532,12 @@ namespace android::service::notification
 			arg1
 		);
 	}
-	void NotificationListenerService::snoozeNotification(const QString &arg0, jlong arg1)
-	{
-		__thiz.callMethod<void>(
-			"snoozeNotification",
-			"(Ljava/lang/String;J)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	void NotificationListenerService::updateNotificationChannel(jstring arg0, android::os::UserHandle arg1, android::app::NotificationChannel arg2)
 	{
 		__thiz.callMethod<void>(
 			"updateNotificationChannel",
 			"(Ljava/lang/String;Landroid/os/UserHandle;Landroid/app/NotificationChannel;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	void NotificationListenerService::updateNotificationChannel(const QString &arg0, android::os::UserHandle arg1, android::app::NotificationChannel arg2)
-	{
-		__thiz.callMethod<void>(
-			"updateNotificationChannel",
-			"(Ljava/lang/String;Landroid/os/UserHandle;Landroid/app/NotificationChannel;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object()
 		);

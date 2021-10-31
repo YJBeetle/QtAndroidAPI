@@ -32,15 +32,5 @@ namespace org::apache::http::conn::ssl
 			arg2
 		);
 	}
-	void AllowAllHostnameVerifier::verify(const QString &arg0, jarray arg1, jarray arg2)
-	{
-		__thiz.callMethod<void>(
-			"verify",
-			"(Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2
-		);
-	}
 } // namespace org::apache::http::conn::ssl
 

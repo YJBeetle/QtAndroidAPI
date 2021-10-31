@@ -13,7 +13,7 @@ namespace android::animation
 		
 		BidirectionalTypeConverter(QAndroidJniObject obj);
 		// Constructors
-		BidirectionalTypeConverter(jclass &arg0, jclass &arg1);
+		BidirectionalTypeConverter(jclass arg0, jclass arg1);
 		BidirectionalTypeConverter() = default;
 		
 		// Methods

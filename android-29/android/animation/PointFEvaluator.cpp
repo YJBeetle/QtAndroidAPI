@@ -14,7 +14,7 @@ namespace android::animation
 			"()V"
 		);
 	}
-	PointFEvaluator::PointFEvaluator(android::graphics::PointF &arg0)
+	PointFEvaluator::PointFEvaluator(android::graphics::PointF arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.animation.PointFEvaluator",

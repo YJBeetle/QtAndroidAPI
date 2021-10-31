@@ -24,7 +24,7 @@ namespace android::media
 		
 		SoundPool(QAndroidJniObject obj);
 		// Constructors
-		SoundPool(jint &arg0, jint &arg1, jint &arg2);
+		SoundPool(jint arg0, jint arg1, jint arg2);
 		SoundPool() = default;
 		
 		// Methods
@@ -32,7 +32,6 @@ namespace android::media
 		void autoResume();
 		jint load(android::content::res::AssetFileDescriptor arg0, jint arg1);
 		jint load(jstring arg0, jint arg1);
-		jint load(const QString &arg0, jint arg1);
 		jint load(android::content::Context arg0, jint arg1, jint arg2);
 		jint load(java::io::FileDescriptor arg0, jlong arg1, jlong arg2, jint arg3);
 		void pause(jint arg0);

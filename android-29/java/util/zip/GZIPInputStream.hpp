@@ -24,8 +24,8 @@ namespace java::util::zip
 		
 		GZIPInputStream(QAndroidJniObject obj);
 		// Constructors
-		GZIPInputStream(java::io::InputStream &arg0);
-		GZIPInputStream(java::io::InputStream &arg0, jint &arg1);
+		GZIPInputStream(java::io::InputStream arg0);
+		GZIPInputStream(java::io::InputStream arg0, jint arg1);
 		GZIPInputStream() = default;
 		
 		// Methods

@@ -21,7 +21,7 @@ namespace android::media::tv
 		
 		TvInputService_HardwareSession(QAndroidJniObject obj);
 		// Constructors
-		TvInputService_HardwareSession(android::content::Context &arg0);
+		TvInputService_HardwareSession(android::content::Context arg0);
 		TvInputService_HardwareSession() = default;
 		
 		// Methods

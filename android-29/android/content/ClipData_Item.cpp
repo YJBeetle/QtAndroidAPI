@@ -9,7 +9,7 @@ namespace android::content
 	
 	ClipData_Item::ClipData_Item(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ClipData_Item::ClipData_Item(android::content::Intent &arg0)
+	ClipData_Item::ClipData_Item(android::content::Intent arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.ClipData$Item",
@@ -17,7 +17,7 @@ namespace android::content
 			arg0.__jniObject().object()
 		);
 	}
-	ClipData_Item::ClipData_Item(android::net::Uri &arg0)
+	ClipData_Item::ClipData_Item(android::net::Uri arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.ClipData$Item",
@@ -25,7 +25,7 @@ namespace android::content
 			arg0.__jniObject().object()
 		);
 	}
-	ClipData_Item::ClipData_Item(jstring &arg0)
+	ClipData_Item::ClipData_Item(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.ClipData$Item",
@@ -33,15 +33,7 @@ namespace android::content
 			arg0
 		);
 	}
-	ClipData_Item::ClipData_Item(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.ClipData$Item",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	ClipData_Item::ClipData_Item(jstring &arg0, jstring &arg1)
+	ClipData_Item::ClipData_Item(jstring arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.ClipData$Item",
@@ -50,16 +42,7 @@ namespace android::content
 			arg1
 		);
 	}
-	ClipData_Item::ClipData_Item(const QString &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.ClipData$Item",
-			"(Ljava/lang/CharSequence;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	ClipData_Item::ClipData_Item(jstring &arg0, android::content::Intent &arg1, android::net::Uri &arg2)
+	ClipData_Item::ClipData_Item(jstring arg0, android::content::Intent arg1, android::net::Uri arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.ClipData$Item",
@@ -69,34 +52,13 @@ namespace android::content
 			arg2.__jniObject().object()
 		);
 	}
-	ClipData_Item::ClipData_Item(const QString &arg0, android::content::Intent &arg1, android::net::Uri &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.ClipData$Item",
-			"(Ljava/lang/CharSequence;Landroid/content/Intent;Landroid/net/Uri;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	ClipData_Item::ClipData_Item(jstring &arg0, jstring &arg1, android::content::Intent &arg2, android::net::Uri &arg3)
+	ClipData_Item::ClipData_Item(jstring arg0, jstring arg1, android::content::Intent arg2, android::net::Uri arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.ClipData$Item",
 			"(Ljava/lang/CharSequence;Ljava/lang/String;Landroid/content/Intent;Landroid/net/Uri;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
-		);
-	}
-	ClipData_Item::ClipData_Item(const QString &arg0, const QString &arg1, android::content::Intent &arg2, android::net::Uri &arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.ClipData$Item",
-			"(Ljava/lang/CharSequence;Ljava/lang/String;Landroid/content/Intent;Landroid/net/Uri;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object()
 		);

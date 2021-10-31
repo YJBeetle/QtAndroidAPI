@@ -32,7 +32,7 @@ namespace android::transition
 			"()V"
 		);
 	}
-	Fade::Fade(jint &arg0)
+	Fade::Fade(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.transition.Fade",
@@ -40,7 +40,7 @@ namespace android::transition
 			arg0
 		);
 	}
-	Fade::Fade(android::content::Context &arg0, __JniBaseClass &arg1)
+	Fade::Fade(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.transition.Fade",

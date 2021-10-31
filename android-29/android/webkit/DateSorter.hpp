@@ -17,7 +17,7 @@ namespace android::webkit
 		
 		DateSorter(QAndroidJniObject obj);
 		// Constructors
-		DateSorter(android::content::Context &arg0);
+		DateSorter(android::content::Context arg0);
 		DateSorter() = default;
 		
 		// Methods

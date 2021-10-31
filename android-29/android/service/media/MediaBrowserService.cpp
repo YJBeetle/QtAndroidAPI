@@ -70,29 +70,12 @@ namespace android::service::media
 			arg0
 		);
 	}
-	void MediaBrowserService::notifyChildrenChanged(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"notifyChildrenChanged",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void MediaBrowserService::notifyChildrenChanged(jstring arg0, android::os::Bundle arg1)
 	{
 		__thiz.callMethod<void>(
 			"notifyChildrenChanged",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void MediaBrowserService::notifyChildrenChanged(const QString &arg0, android::os::Bundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"notifyChildrenChanged",
-			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -121,31 +104,12 @@ namespace android::service::media
 			arg2.__jniObject().object()
 		);
 	}
-	QAndroidJniObject MediaBrowserService::onGetRoot(const QString &arg0, jint arg1, android::os::Bundle arg2)
-	{
-		return __thiz.callObjectMethod(
-			"onGetRoot",
-			"(Ljava/lang/String;ILandroid/os/Bundle;)Landroid/service/media/MediaBrowserService$BrowserRoot;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
 	void MediaBrowserService::onLoadChildren(jstring arg0, android::service::media::MediaBrowserService_Result arg1)
 	{
 		__thiz.callMethod<void>(
 			"onLoadChildren",
 			"(Ljava/lang/String;Landroid/service/media/MediaBrowserService$Result;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void MediaBrowserService::onLoadChildren(const QString &arg0, android::service::media::MediaBrowserService_Result arg1)
-	{
-		__thiz.callMethod<void>(
-			"onLoadChildren",
-			"(Ljava/lang/String;Landroid/service/media/MediaBrowserService$Result;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -159,31 +123,12 @@ namespace android::service::media
 			arg2.__jniObject().object()
 		);
 	}
-	void MediaBrowserService::onLoadChildren(const QString &arg0, android::service::media::MediaBrowserService_Result arg1, android::os::Bundle arg2)
-	{
-		__thiz.callMethod<void>(
-			"onLoadChildren",
-			"(Ljava/lang/String;Landroid/service/media/MediaBrowserService$Result;Landroid/os/Bundle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
 	void MediaBrowserService::onLoadItem(jstring arg0, android::service::media::MediaBrowserService_Result arg1)
 	{
 		__thiz.callMethod<void>(
 			"onLoadItem",
 			"(Ljava/lang/String;Landroid/service/media/MediaBrowserService$Result;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void MediaBrowserService::onLoadItem(const QString &arg0, android::service::media::MediaBrowserService_Result arg1)
-	{
-		__thiz.callMethod<void>(
-			"onLoadItem",
-			"(Ljava/lang/String;Landroid/service/media/MediaBrowserService$Result;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

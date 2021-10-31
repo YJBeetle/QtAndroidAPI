@@ -37,9 +37,7 @@ namespace android::widget
 		QAndroidJniObject setContent(jint arg0);
 		QAndroidJniObject setIndicator(android::view::View arg0);
 		QAndroidJniObject setIndicator(jstring arg0);
-		QAndroidJniObject setIndicator(const QString &arg0);
 		QAndroidJniObject setIndicator(jstring arg0, android::graphics::drawable::Drawable arg1);
-		QAndroidJniObject setIndicator(const QString &arg0, android::graphics::drawable::Drawable arg1);
 	};
 } // namespace android::widget
 

@@ -82,9 +82,7 @@ namespace java::time
 		static QAndroidJniObject of(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, java::time::ZoneOffset arg7);
 		static QAndroidJniObject ofInstant(java::time::Instant arg0, java::time::ZoneId arg1);
 		static QAndroidJniObject parse(jstring arg0);
-		static QAndroidJniObject parse(const QString &arg0);
 		static QAndroidJniObject parse(jstring arg0, java::time::format::DateTimeFormatter arg1);
-		static QAndroidJniObject parse(const QString &arg0, java::time::format::DateTimeFormatter arg1);
 		static QAndroidJniObject timeLineOrder();
 		QAndroidJniObject adjustInto(__JniBaseClass arg0);
 		QAndroidJniObject atZoneSameInstant(java::time::ZoneId arg0);

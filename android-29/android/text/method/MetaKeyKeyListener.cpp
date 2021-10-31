@@ -96,15 +96,6 @@ namespace android::text::method
 			arg0
 		);
 	}
-	jint MetaKeyKeyListener::getMetaState(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.text.method.MetaKeyKeyListener",
-			"getMetaState",
-			"(Ljava/lang/CharSequence;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jint MetaKeyKeyListener::getMetaState(jlong arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -124,16 +115,6 @@ namespace android::text::method
 			arg1.__jniObject().object()
 		);
 	}
-	jint MetaKeyKeyListener::getMetaState(const QString &arg0, android::view::KeyEvent arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.text.method.MetaKeyKeyListener",
-			"getMetaState",
-			"(Ljava/lang/CharSequence;Landroid/view/KeyEvent;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	jint MetaKeyKeyListener::getMetaState(jstring arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -141,16 +122,6 @@ namespace android::text::method
 			"getMetaState",
 			"(Ljava/lang/CharSequence;I)I",
 			arg0,
-			arg1
-		);
-	}
-	jint MetaKeyKeyListener::getMetaState(const QString &arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.text.method.MetaKeyKeyListener",
-			"getMetaState",
-			"(Ljava/lang/CharSequence;I)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -171,17 +142,6 @@ namespace android::text::method
 			"getMetaState",
 			"(Ljava/lang/CharSequence;ILandroid/view/KeyEvent;)I",
 			arg0,
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	jint MetaKeyKeyListener::getMetaState(const QString &arg0, jint arg1, android::view::KeyEvent arg2)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.text.method.MetaKeyKeyListener",
-			"getMetaState",
-			"(Ljava/lang/CharSequence;ILandroid/view/KeyEvent;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2.__jniObject().object()
 		);
@@ -218,16 +178,6 @@ namespace android::text::method
 			arg1
 		);
 	}
-	jboolean MetaKeyKeyListener::isMetaTracker(const QString &arg0, jobject arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.text.method.MetaKeyKeyListener",
-			"isMetaTracker",
-			"(Ljava/lang/CharSequence;Ljava/lang/Object;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	jboolean MetaKeyKeyListener::isSelectingMetaTracker(jstring arg0, jobject arg1)
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
@@ -235,16 +185,6 @@ namespace android::text::method
 			"isSelectingMetaTracker",
 			"(Ljava/lang/CharSequence;Ljava/lang/Object;)Z",
 			arg0,
-			arg1
-		);
-	}
-	jboolean MetaKeyKeyListener::isSelectingMetaTracker(const QString &arg0, jobject arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.text.method.MetaKeyKeyListener",
-			"isSelectingMetaTracker",
-			"(Ljava/lang/CharSequence;Ljava/lang/Object;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

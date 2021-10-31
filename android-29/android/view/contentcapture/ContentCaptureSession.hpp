@@ -46,7 +46,6 @@ namespace android::view::contentcapture
 		void notifyViewAppeared(android::view::ViewStructure arg0);
 		void notifyViewDisappeared(android::view::autofill::AutofillId arg0);
 		void notifyViewTextChanged(android::view::autofill::AutofillId arg0, jstring arg1);
-		void notifyViewTextChanged(android::view::autofill::AutofillId arg0, const QString &arg1);
 		void notifyViewsDisappeared(android::view::autofill::AutofillId arg0, jlongArray arg1);
 		void setContentCaptureContext(android::view::contentcapture::ContentCaptureContext arg0);
 		jstring toString();

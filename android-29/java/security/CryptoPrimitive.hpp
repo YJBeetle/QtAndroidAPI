@@ -27,7 +27,6 @@ namespace java::security
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);
-		static QAndroidJniObject valueOf(const QString &arg0);
 		static jarray values();
 	};
 } // namespace java::security

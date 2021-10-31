@@ -14,7 +14,7 @@ namespace java::util::concurrent::atomic
 		AtomicInteger(QAndroidJniObject obj);
 		// Constructors
 		AtomicInteger();
-		AtomicInteger(jint &arg0);
+		AtomicInteger(jint arg0);
 		
 		// Methods
 		jint accumulateAndGet(jint arg0, __JniBaseClass arg1);

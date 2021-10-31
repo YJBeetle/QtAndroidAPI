@@ -43,7 +43,6 @@ namespace android::provider
 		
 		// Methods
 		static QAndroidJniObject buildSourceUri(jstring arg0);
-		static QAndroidJniObject buildSourceUri(const QString &arg0);
 	};
 } // namespace android::provider
 

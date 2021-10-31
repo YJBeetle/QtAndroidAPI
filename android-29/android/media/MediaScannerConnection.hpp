@@ -20,7 +20,7 @@ namespace android::media
 		
 		MediaScannerConnection(QAndroidJniObject obj);
 		// Constructors
-		MediaScannerConnection(android::content::Context &arg0, __JniBaseClass &arg1);
+		MediaScannerConnection(android::content::Context arg0, __JniBaseClass arg1);
 		MediaScannerConnection() = default;
 		
 		// Methods
@@ -31,7 +31,6 @@ namespace android::media
 		void onServiceConnected(android::content::ComponentName arg0, __JniBaseClass arg1);
 		void onServiceDisconnected(android::content::ComponentName arg0);
 		void scanFile(jstring arg0, jstring arg1);
-		void scanFile(const QString &arg0, const QString &arg1);
 	};
 } // namespace android::media
 

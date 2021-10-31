@@ -11,7 +11,7 @@ namespace android::widget
 	
 	SearchView::SearchView(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SearchView::SearchView(android::content::Context &arg0)
+	SearchView::SearchView(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.SearchView",
@@ -19,7 +19,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	SearchView::SearchView(android::content::Context &arg0, __JniBaseClass &arg1)
+	SearchView::SearchView(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.SearchView",
@@ -28,7 +28,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	SearchView::SearchView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	SearchView::SearchView(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.SearchView",
@@ -38,7 +38,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	SearchView::SearchView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	SearchView::SearchView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.SearchView",
@@ -271,29 +271,12 @@ namespace android::widget
 			arg1
 		);
 	}
-	void SearchView::setQuery(const QString &arg0, jboolean arg1)
-	{
-		__thiz.callMethod<void>(
-			"setQuery",
-			"(Ljava/lang/CharSequence;Z)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	void SearchView::setQueryHint(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setQueryHint",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
-		);
-	}
-	void SearchView::setQueryHint(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setQueryHint",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void SearchView::setQueryRefinementEnabled(jboolean arg0)

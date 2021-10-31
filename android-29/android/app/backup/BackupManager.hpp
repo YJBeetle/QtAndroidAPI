@@ -24,12 +24,11 @@ namespace android::app::backup
 		
 		BackupManager(QAndroidJniObject obj);
 		// Constructors
-		BackupManager(android::content::Context &arg0);
+		BackupManager(android::content::Context arg0);
 		BackupManager() = default;
 		
 		// Methods
 		static void dataChanged(jstring arg0);
-		static void dataChanged(const QString &arg0);
 		void dataChanged();
 		QAndroidJniObject getUserForAncestralSerialNumber(jlong arg0);
 		jint requestRestore(android::app::backup::RestoreObserver arg0);

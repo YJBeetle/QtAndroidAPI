@@ -8,7 +8,7 @@ namespace android::preference
 	
 	CheckBoxPreference::CheckBoxPreference(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	CheckBoxPreference::CheckBoxPreference(android::content::Context &arg0)
+	CheckBoxPreference::CheckBoxPreference(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.preference.CheckBoxPreference",
@@ -16,7 +16,7 @@ namespace android::preference
 			arg0.__jniObject().object()
 		);
 	}
-	CheckBoxPreference::CheckBoxPreference(android::content::Context &arg0, __JniBaseClass &arg1)
+	CheckBoxPreference::CheckBoxPreference(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.preference.CheckBoxPreference",
@@ -25,7 +25,7 @@ namespace android::preference
 			arg1.__jniObject().object()
 		);
 	}
-	CheckBoxPreference::CheckBoxPreference(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	CheckBoxPreference::CheckBoxPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.preference.CheckBoxPreference",
@@ -35,7 +35,7 @@ namespace android::preference
 			arg2
 		);
 	}
-	CheckBoxPreference::CheckBoxPreference(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	CheckBoxPreference::CheckBoxPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.preference.CheckBoxPreference",

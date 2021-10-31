@@ -10,7 +10,7 @@ namespace dalvik::system
 	
 	BaseDexClassLoader::BaseDexClassLoader(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	BaseDexClassLoader::BaseDexClassLoader(jstring &arg0, java::io::File &arg1, jstring &arg2, java::lang::ClassLoader &arg3)
+	BaseDexClassLoader::BaseDexClassLoader(jstring arg0, java::io::File arg1, jstring arg2, java::lang::ClassLoader arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"dalvik.system.BaseDexClassLoader",
@@ -18,17 +18,6 @@ namespace dalvik::system
 			arg0,
 			arg1.__jniObject().object(),
 			arg2,
-			arg3.__jniObject().object()
-		);
-	}
-	BaseDexClassLoader::BaseDexClassLoader(const QString &arg0, java::io::File &arg1, const QString &arg2, java::lang::ClassLoader &arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"dalvik.system.BaseDexClassLoader",
-			"(Ljava/lang/String;Ljava/io/File;Ljava/lang/String;Ljava/lang/ClassLoader;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
 			arg3.__jniObject().object()
 		);
 	}
@@ -40,14 +29,6 @@ namespace dalvik::system
 			"findLibrary",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
-	}
-	jstring BaseDexClassLoader::findLibrary(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"findLibrary",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	jstring BaseDexClassLoader::toString()

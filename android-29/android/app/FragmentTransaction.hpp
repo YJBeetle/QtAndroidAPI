@@ -31,14 +31,10 @@ namespace android::app
 		
 		// Methods
 		QAndroidJniObject add(android::app::Fragment arg0, jstring arg1);
-		QAndroidJniObject add(android::app::Fragment arg0, const QString &arg1);
 		QAndroidJniObject add(jint arg0, android::app::Fragment arg1);
 		QAndroidJniObject add(jint arg0, android::app::Fragment arg1, jstring arg2);
-		QAndroidJniObject add(jint arg0, android::app::Fragment arg1, const QString &arg2);
 		QAndroidJniObject addSharedElement(android::view::View arg0, jstring arg1);
-		QAndroidJniObject addSharedElement(android::view::View arg0, const QString &arg1);
 		QAndroidJniObject addToBackStack(jstring arg0);
-		QAndroidJniObject addToBackStack(const QString &arg0);
 		QAndroidJniObject attach(android::app::Fragment arg0);
 		jint commit();
 		jint commitAllowingStateLoss();
@@ -52,14 +48,11 @@ namespace android::app
 		QAndroidJniObject remove(android::app::Fragment arg0);
 		QAndroidJniObject replace(jint arg0, android::app::Fragment arg1);
 		QAndroidJniObject replace(jint arg0, android::app::Fragment arg1, jstring arg2);
-		QAndroidJniObject replace(jint arg0, android::app::Fragment arg1, const QString &arg2);
 		QAndroidJniObject runOnCommit(__JniBaseClass arg0);
 		QAndroidJniObject setBreadCrumbShortTitle(jint arg0);
 		QAndroidJniObject setBreadCrumbShortTitle(jstring arg0);
-		QAndroidJniObject setBreadCrumbShortTitle(const QString &arg0);
 		QAndroidJniObject setBreadCrumbTitle(jint arg0);
 		QAndroidJniObject setBreadCrumbTitle(jstring arg0);
-		QAndroidJniObject setBreadCrumbTitle(const QString &arg0);
 		QAndroidJniObject setCustomAnimations(jint arg0, jint arg1);
 		QAndroidJniObject setCustomAnimations(jint arg0, jint arg1, jint arg2, jint arg3);
 		QAndroidJniObject setPrimaryNavigationFragment(android::app::Fragment arg0);

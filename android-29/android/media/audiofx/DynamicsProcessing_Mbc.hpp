@@ -19,7 +19,7 @@ namespace android::media::audiofx
 		DynamicsProcessing_Mbc(QAndroidJniObject obj);
 		// Constructors
 		DynamicsProcessing_Mbc(android::media::audiofx::DynamicsProcessing_Mbc &arg0);
-		DynamicsProcessing_Mbc(jboolean &arg0, jboolean &arg1, jint &arg2);
+		DynamicsProcessing_Mbc(jboolean arg0, jboolean arg1, jint arg2);
 		DynamicsProcessing_Mbc() = default;
 		
 		// Methods

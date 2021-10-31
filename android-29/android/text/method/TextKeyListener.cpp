@@ -9,7 +9,7 @@ namespace android::text::method
 	
 	TextKeyListener::TextKeyListener(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	TextKeyListener::TextKeyListener(android::text::method::TextKeyListener_Capitalize &arg0, jboolean &arg1)
+	TextKeyListener::TextKeyListener(android::text::method::TextKeyListener_Capitalize arg0, jboolean arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.method.TextKeyListener",
@@ -55,17 +55,6 @@ namespace android::text::method
 			"(Landroid/text/method/TextKeyListener$Capitalize;Ljava/lang/CharSequence;I)Z",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2
-		);
-	}
-	jboolean TextKeyListener::shouldCap(android::text::method::TextKeyListener_Capitalize arg0, const QString &arg1, jint arg2)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.text.method.TextKeyListener",
-			"shouldCap",
-			"(Landroid/text/method/TextKeyListener$Capitalize;Ljava/lang/CharSequence;I)Z",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}

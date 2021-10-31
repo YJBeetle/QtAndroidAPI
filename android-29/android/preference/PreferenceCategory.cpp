@@ -8,7 +8,7 @@ namespace android::preference
 	
 	PreferenceCategory::PreferenceCategory(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PreferenceCategory::PreferenceCategory(android::content::Context &arg0)
+	PreferenceCategory::PreferenceCategory(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.preference.PreferenceCategory",
@@ -16,7 +16,7 @@ namespace android::preference
 			arg0.__jniObject().object()
 		);
 	}
-	PreferenceCategory::PreferenceCategory(android::content::Context &arg0, __JniBaseClass &arg1)
+	PreferenceCategory::PreferenceCategory(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.preference.PreferenceCategory",
@@ -25,7 +25,7 @@ namespace android::preference
 			arg1.__jniObject().object()
 		);
 	}
-	PreferenceCategory::PreferenceCategory(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	PreferenceCategory::PreferenceCategory(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.preference.PreferenceCategory",
@@ -35,7 +35,7 @@ namespace android::preference
 			arg2
 		);
 	}
-	PreferenceCategory::PreferenceCategory(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	PreferenceCategory::PreferenceCategory(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.preference.PreferenceCategory",

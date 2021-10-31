@@ -6,20 +6,12 @@ namespace java::io
 	
 	StringReader::StringReader(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	StringReader::StringReader(jstring &arg0)
+	StringReader::StringReader(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.StringReader",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	StringReader::StringReader(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.io.StringReader",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

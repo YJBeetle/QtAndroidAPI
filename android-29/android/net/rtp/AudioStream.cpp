@@ -9,7 +9,7 @@ namespace android::net::rtp
 	
 	AudioStream::AudioStream(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AudioStream::AudioStream(java::net::InetAddress &arg0)
+	AudioStream::AudioStream(java::net::InetAddress arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.rtp.AudioStream",

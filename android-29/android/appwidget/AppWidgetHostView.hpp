@@ -55,8 +55,8 @@ namespace android::appwidget
 		
 		AppWidgetHostView(QAndroidJniObject obj);
 		// Constructors
-		AppWidgetHostView(android::content::Context &arg0);
-		AppWidgetHostView(android::content::Context &arg0, jint &arg1, jint &arg2);
+		AppWidgetHostView(android::content::Context arg0);
+		AppWidgetHostView(android::content::Context arg0, jint arg1, jint arg2);
 		AppWidgetHostView() = default;
 		
 		// Methods

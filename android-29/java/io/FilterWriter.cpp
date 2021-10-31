@@ -51,15 +51,5 @@ namespace java::io
 			arg2
 		);
 	}
-	void FilterWriter::write(const QString &arg0, jint arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"write",
-			"(Ljava/lang/String;II)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2
-		);
-	}
 } // namespace java::io
 

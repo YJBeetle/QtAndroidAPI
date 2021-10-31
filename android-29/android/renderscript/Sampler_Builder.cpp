@@ -9,7 +9,7 @@ namespace android::renderscript
 	
 	Sampler_Builder::Sampler_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Sampler_Builder::Sampler_Builder(android::renderscript::RenderScript &arg0)
+	Sampler_Builder::Sampler_Builder(android::renderscript::RenderScript arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.renderscript.Sampler$Builder",

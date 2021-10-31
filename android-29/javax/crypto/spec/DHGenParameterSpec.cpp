@@ -6,7 +6,7 @@ namespace javax::crypto::spec
 	
 	DHGenParameterSpec::DHGenParameterSpec(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DHGenParameterSpec::DHGenParameterSpec(jint &arg0, jint &arg1)
+	DHGenParameterSpec::DHGenParameterSpec(jint arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.crypto.spec.DHGenParameterSpec",

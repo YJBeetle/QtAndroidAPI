@@ -34,13 +34,10 @@ namespace android::service::quicksettings
 		jint getState();
 		jstring getSubtitle();
 		void setContentDescription(jstring arg0);
-		void setContentDescription(const QString &arg0);
 		void setIcon(android::graphics::drawable::Icon arg0);
 		void setLabel(jstring arg0);
-		void setLabel(const QString &arg0);
 		void setState(jint arg0);
 		void setSubtitle(jstring arg0);
-		void setSubtitle(const QString &arg0);
 		void updateTile();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

@@ -25,11 +25,8 @@ namespace java::security
 		
 		// Methods
 		static QAndroidJniObject getInstance(jstring arg0);
-		static QAndroidJniObject getInstance(const QString &arg0);
 		static QAndroidJniObject getInstance(jstring arg0, jstring arg1);
-		static QAndroidJniObject getInstance(const QString &arg0, const QString &arg1);
 		static QAndroidJniObject getInstance(jstring arg0, java::security::Provider arg1);
-		static QAndroidJniObject getInstance(const QString &arg0, java::security::Provider arg1);
 		static jboolean isEqual(jbyteArray arg0, jbyteArray arg1);
 		jobject clone();
 		jbyteArray digest();

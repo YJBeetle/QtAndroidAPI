@@ -109,15 +109,6 @@ namespace java::text
 			arg1
 		);
 	}
-	jint Collator::compare(const QString &arg0, const QString &arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"compare",
-			"(Ljava/lang/String;Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	jboolean Collator::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -135,29 +126,12 @@ namespace java::text
 			arg1
 		);
 	}
-	jboolean Collator::equals(const QString &arg0, const QString &arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/String;Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	QAndroidJniObject Collator::getCollationKey(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getCollationKey",
 			"(Ljava/lang/String;)Ljava/text/CollationKey;",
 			arg0
-		);
-	}
-	QAndroidJniObject Collator::getCollationKey(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getCollationKey",
-			"(Ljava/lang/String;)Ljava/text/CollationKey;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jint Collator::getDecomposition()

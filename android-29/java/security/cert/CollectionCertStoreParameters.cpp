@@ -13,7 +13,7 @@ namespace java::security::cert
 			"()V"
 		);
 	}
-	CollectionCertStoreParameters::CollectionCertStoreParameters(__JniBaseClass &arg0)
+	CollectionCertStoreParameters::CollectionCertStoreParameters(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.cert.CollectionCertStoreParameters",

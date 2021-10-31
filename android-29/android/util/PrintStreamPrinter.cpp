@@ -7,7 +7,7 @@ namespace android::util
 	
 	PrintStreamPrinter::PrintStreamPrinter(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PrintStreamPrinter::PrintStreamPrinter(java::io::PrintStream &arg0)
+	PrintStreamPrinter::PrintStreamPrinter(java::io::PrintStream arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.PrintStreamPrinter",
@@ -23,14 +23,6 @@ namespace android::util
 			"println",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void PrintStreamPrinter::println(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"println",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace android::util

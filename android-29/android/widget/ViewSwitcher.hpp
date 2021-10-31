@@ -28,8 +28,8 @@ namespace android::widget
 		
 		ViewSwitcher(QAndroidJniObject obj);
 		// Constructors
-		ViewSwitcher(android::content::Context &arg0);
-		ViewSwitcher(android::content::Context &arg0, __JniBaseClass &arg1);
+		ViewSwitcher(android::content::Context arg0);
+		ViewSwitcher(android::content::Context arg0, __JniBaseClass arg1);
 		ViewSwitcher() = default;
 		
 		// Methods

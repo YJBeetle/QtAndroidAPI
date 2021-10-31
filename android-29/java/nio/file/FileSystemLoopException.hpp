@@ -15,8 +15,7 @@ namespace java::nio::file
 		
 		FileSystemLoopException(QAndroidJniObject obj);
 		// Constructors
-		FileSystemLoopException(jstring &arg0);
-		FileSystemLoopException(const QString &arg0);
+		FileSystemLoopException(jstring arg0);
 		FileSystemLoopException() = default;
 		
 		// Methods

@@ -18,7 +18,7 @@ namespace android::graphics::drawable
 		
 		TransitionDrawable(QAndroidJniObject obj);
 		// Constructors
-		TransitionDrawable(jarray &arg0);
+		TransitionDrawable(jarray arg0);
 		TransitionDrawable() = default;
 		
 		// Methods

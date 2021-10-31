@@ -28,19 +28,15 @@ namespace android::gesture
 		
 		// Methods
 		void addGesture(jstring arg0, android::gesture::Gesture arg1);
-		void addGesture(const QString &arg0, android::gesture::Gesture arg1);
 		QAndroidJniObject getGestureEntries();
 		QAndroidJniObject getGestures(jstring arg0);
-		QAndroidJniObject getGestures(const QString &arg0);
 		jint getOrientationStyle();
 		jint getSequenceType();
 		jboolean isReadOnly();
 		jboolean load();
 		QAndroidJniObject recognize(android::gesture::Gesture arg0);
 		void removeEntry(jstring arg0);
-		void removeEntry(const QString &arg0);
 		void removeGesture(jstring arg0, android::gesture::Gesture arg1);
-		void removeGesture(const QString &arg0, android::gesture::Gesture arg1);
 		jboolean save();
 		void setOrientationStyle(jint arg0);
 		void setSequenceType(jint arg0);

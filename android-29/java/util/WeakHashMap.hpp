@@ -18,9 +18,9 @@ namespace java::util
 		WeakHashMap(QAndroidJniObject obj);
 		// Constructors
 		WeakHashMap();
-		WeakHashMap(jint &arg0);
-		WeakHashMap(__JniBaseClass &arg0);
-		WeakHashMap(jint &arg0, jfloat &arg1);
+		WeakHashMap(jint arg0);
+		WeakHashMap(__JniBaseClass arg0);
+		WeakHashMap(jint arg0, jfloat arg1);
 		
 		// Methods
 		void clear();

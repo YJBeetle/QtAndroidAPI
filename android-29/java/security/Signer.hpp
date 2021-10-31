@@ -21,10 +21,8 @@ namespace java::security
 		
 		Signer(QAndroidJniObject obj);
 		// Constructors
-		Signer(jstring &arg0);
-		Signer(const QString &arg0);
-		Signer(jstring &arg0, java::security::IdentityScope &arg1);
-		Signer(const QString &arg0, java::security::IdentityScope &arg1);
+		Signer(jstring arg0);
+		Signer(jstring arg0, java::security::IdentityScope arg1);
 		Signer() = default;
 		
 		// Methods

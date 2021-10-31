@@ -21,12 +21,11 @@ namespace android::util
 		EventLogTags(QAndroidJniObject obj);
 		// Constructors
 		EventLogTags();
-		EventLogTags(java::io::BufferedReader &arg0);
+		EventLogTags(java::io::BufferedReader arg0);
 		
 		// Methods
 		QAndroidJniObject get(jint arg0);
 		QAndroidJniObject get(jstring arg0);
-		QAndroidJniObject get(const QString &arg0);
 	};
 } // namespace android::util
 

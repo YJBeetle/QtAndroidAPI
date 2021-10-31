@@ -17,8 +17,7 @@ namespace android::app
 		
 		NotificationChannelGroup(QAndroidJniObject obj);
 		// Constructors
-		NotificationChannelGroup(jstring &arg0, jstring &arg1);
-		NotificationChannelGroup(const QString &arg0, const QString &arg1);
+		NotificationChannelGroup(jstring arg0, jstring arg1);
 		NotificationChannelGroup() = default;
 		
 		// Methods
@@ -32,7 +31,6 @@ namespace android::app
 		jint hashCode();
 		jboolean isBlocked();
 		void setDescription(jstring arg0);
-		void setDescription(const QString &arg0);
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

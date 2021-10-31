@@ -15,7 +15,7 @@ namespace java::net
 	
 	URLClassLoader::URLClassLoader(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	URLClassLoader::URLClassLoader(jarray &arg0)
+	URLClassLoader::URLClassLoader(jarray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.URLClassLoader",
@@ -23,7 +23,7 @@ namespace java::net
 			arg0
 		);
 	}
-	URLClassLoader::URLClassLoader(jarray &arg0, java::lang::ClassLoader &arg1)
+	URLClassLoader::URLClassLoader(jarray arg0, java::lang::ClassLoader arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.URLClassLoader",
@@ -32,7 +32,7 @@ namespace java::net
 			arg1.__jniObject().object()
 		);
 	}
-	URLClassLoader::URLClassLoader(jarray &arg0, java::lang::ClassLoader &arg1, __JniBaseClass &arg2)
+	URLClassLoader::URLClassLoader(jarray arg0, java::lang::ClassLoader arg1, __JniBaseClass arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.URLClassLoader",
@@ -42,7 +42,7 @@ namespace java::net
 			arg2.__jniObject().object()
 		);
 	}
-	URLClassLoader::URLClassLoader(jstring &arg0, jarray &arg1, java::lang::ClassLoader &arg2)
+	URLClassLoader::URLClassLoader(jstring arg0, jarray arg1, java::lang::ClassLoader arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.URLClassLoader",
@@ -52,33 +52,12 @@ namespace java::net
 			arg2.__jniObject().object()
 		);
 	}
-	URLClassLoader::URLClassLoader(const QString &arg0, jarray &arg1, java::lang::ClassLoader &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.URLClassLoader",
-			"(Ljava/lang/String;[Ljava/net/URL;Ljava/lang/ClassLoader;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	URLClassLoader::URLClassLoader(jstring &arg0, jarray &arg1, java::lang::ClassLoader &arg2, __JniBaseClass &arg3)
+	URLClassLoader::URLClassLoader(jstring arg0, jarray arg1, java::lang::ClassLoader arg2, __JniBaseClass arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.URLClassLoader",
 			"(Ljava/lang/String;[Ljava/net/URL;Ljava/lang/ClassLoader;Ljava/net/URLStreamHandlerFactory;)V",
 			arg0,
-			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
-		);
-	}
-	URLClassLoader::URLClassLoader(const QString &arg0, jarray &arg1, java::lang::ClassLoader &arg2, __JniBaseClass &arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.URLClassLoader",
-			"(Ljava/lang/String;[Ljava/net/URL;Ljava/lang/ClassLoader;Ljava/net/URLStreamHandlerFactory;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object()
@@ -120,14 +99,6 @@ namespace java::net
 			arg0
 		);
 	}
-	QAndroidJniObject URLClassLoader::findResource(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"findResource",
-			"(Ljava/lang/String;)Ljava/net/URL;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject URLClassLoader::findResources(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -136,28 +107,12 @@ namespace java::net
 			arg0
 		);
 	}
-	QAndroidJniObject URLClassLoader::findResources(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"findResources",
-			"(Ljava/lang/String;)Ljava/util/Enumeration;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject URLClassLoader::getResourceAsStream(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getResourceAsStream",
 			"(Ljava/lang/String;)Ljava/io/InputStream;",
 			arg0
-		);
-	}
-	QAndroidJniObject URLClassLoader::getResourceAsStream(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getResourceAsStream",
-			"(Ljava/lang/String;)Ljava/io/InputStream;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jarray URLClassLoader::getURLs()

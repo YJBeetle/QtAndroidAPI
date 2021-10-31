@@ -95,7 +95,6 @@ namespace android::media::tv
 		
 		// Methods
 		static jstring getVideoResolution(jstring arg0);
-		static jstring getVideoResolution(const QString &arg0);
 	};
 } // namespace android::media::tv
 

@@ -26,10 +26,10 @@ namespace java::util::concurrent
 		ConcurrentHashMap(QAndroidJniObject obj);
 		// Constructors
 		ConcurrentHashMap();
-		ConcurrentHashMap(jint &arg0);
-		ConcurrentHashMap(__JniBaseClass &arg0);
-		ConcurrentHashMap(jint &arg0, jfloat &arg1);
-		ConcurrentHashMap(jint &arg0, jfloat &arg1, jint &arg2);
+		ConcurrentHashMap(jint arg0);
+		ConcurrentHashMap(__JniBaseClass arg0);
+		ConcurrentHashMap(jint arg0, jfloat arg1);
+		ConcurrentHashMap(jint arg0, jfloat arg1, jint arg2);
 		
 		// Methods
 		static QAndroidJniObject newKeySet();

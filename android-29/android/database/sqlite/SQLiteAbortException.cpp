@@ -13,20 +13,12 @@ namespace android::database::sqlite
 			"()V"
 		);
 	}
-	SQLiteAbortException::SQLiteAbortException(jstring &arg0)
+	SQLiteAbortException::SQLiteAbortException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.database.sqlite.SQLiteAbortException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	SQLiteAbortException::SQLiteAbortException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.database.sqlite.SQLiteAbortException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

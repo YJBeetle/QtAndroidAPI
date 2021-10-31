@@ -15,7 +15,7 @@ namespace java::util
 			"()V"
 		);
 	}
-	IdentityHashMap::IdentityHashMap(jint &arg0)
+	IdentityHashMap::IdentityHashMap(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.IdentityHashMap",
@@ -23,7 +23,7 @@ namespace java::util
 			arg0
 		);
 	}
-	IdentityHashMap::IdentityHashMap(__JniBaseClass &arg0)
+	IdentityHashMap::IdentityHashMap(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.IdentityHashMap",

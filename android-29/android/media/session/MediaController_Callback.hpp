@@ -37,10 +37,8 @@ namespace android::media::session
 		void onPlaybackStateChanged(android::media::session::PlaybackState arg0);
 		void onQueueChanged(__JniBaseClass arg0);
 		void onQueueTitleChanged(jstring arg0);
-		void onQueueTitleChanged(const QString &arg0);
 		void onSessionDestroyed();
 		void onSessionEvent(jstring arg0, android::os::Bundle arg1);
-		void onSessionEvent(const QString &arg0, android::os::Bundle arg1);
 	};
 } // namespace android::media::session
 

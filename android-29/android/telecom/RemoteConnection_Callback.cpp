@@ -42,16 +42,6 @@ namespace android::telecom
 			arg2
 		);
 	}
-	void RemoteConnection_Callback::onCallerDisplayNameChanged(android::telecom::RemoteConnection arg0, const QString &arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"onCallerDisplayNameChanged",
-			"(Landroid/telecom/RemoteConnection;Ljava/lang/String;I)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2
-		);
-	}
 	void RemoteConnection_Callback::onConferenceChanged(android::telecom::RemoteConnection arg0, android::telecom::RemoteConference arg1)
 	{
 		__thiz.callMethod<void>(
@@ -86,16 +76,6 @@ namespace android::telecom
 			"(Landroid/telecom/RemoteConnection;Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void RemoteConnection_Callback::onConnectionEvent(android::telecom::RemoteConnection arg0, const QString &arg1, android::os::Bundle arg2)
-	{
-		__thiz.callMethod<void>(
-			"onConnectionEvent",
-			"(Landroid/telecom/RemoteConnection;Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}
@@ -150,15 +130,6 @@ namespace android::telecom
 			"(Landroid/telecom/RemoteConnection;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	void RemoteConnection_Callback::onPostDialWait(android::telecom::RemoteConnection arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"onPostDialWait",
-			"(Landroid/telecom/RemoteConnection;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void RemoteConnection_Callback::onRingbackRequested(android::telecom::RemoteConnection arg0, jboolean arg1)

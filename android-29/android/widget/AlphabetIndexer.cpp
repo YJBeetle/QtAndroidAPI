@@ -6,7 +6,7 @@ namespace android::widget
 	
 	AlphabetIndexer::AlphabetIndexer(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AlphabetIndexer::AlphabetIndexer(__JniBaseClass &arg0, jint &arg1, jstring &arg2)
+	AlphabetIndexer::AlphabetIndexer(__JniBaseClass arg0, jint arg1, jstring arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.AlphabetIndexer",
@@ -14,16 +14,6 @@ namespace android::widget
 			arg0.__jniObject().object(),
 			arg1,
 			arg2
-		);
-	}
-	AlphabetIndexer::AlphabetIndexer(__JniBaseClass &arg0, jint &arg1, const QString &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.widget.AlphabetIndexer",
-			"(Landroid/database/Cursor;ILjava/lang/CharSequence;)V",
-			arg0.__jniObject().object(),
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	

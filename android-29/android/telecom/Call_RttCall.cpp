@@ -66,13 +66,5 @@ namespace android::telecom
 			arg0
 		);
 	}
-	void Call_RttCall::write(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"write",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 } // namespace android::telecom
 

@@ -34,13 +34,10 @@ namespace android::graphics
 		// Methods
 		static QAndroidJniObject create(android::graphics::Typeface arg0, jint arg1);
 		static QAndroidJniObject create(jstring arg0, jint arg1);
-		static QAndroidJniObject create(const QString &arg0, jint arg1);
 		static QAndroidJniObject create(android::graphics::Typeface arg0, jint arg1, jboolean arg2);
 		static QAndroidJniObject createFromAsset(android::content::res::AssetManager arg0, jstring arg1);
-		static QAndroidJniObject createFromAsset(android::content::res::AssetManager arg0, const QString &arg1);
 		static QAndroidJniObject createFromFile(java::io::File arg0);
 		static QAndroidJniObject createFromFile(jstring arg0);
-		static QAndroidJniObject createFromFile(const QString &arg0);
 		static QAndroidJniObject defaultFromStyle(jint arg0);
 		jboolean equals(jobject arg0);
 		jint getStyle();

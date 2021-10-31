@@ -17,7 +17,7 @@ namespace java::security::spec
 		
 		ECPoint(QAndroidJniObject obj);
 		// Constructors
-		ECPoint(java::math::BigInteger &arg0, java::math::BigInteger &arg1);
+		ECPoint(java::math::BigInteger arg0, java::math::BigInteger arg1);
 		ECPoint() = default;
 		
 		// Methods

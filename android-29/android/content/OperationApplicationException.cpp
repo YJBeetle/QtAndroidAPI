@@ -13,7 +13,7 @@ namespace android::content
 			"()V"
 		);
 	}
-	OperationApplicationException::OperationApplicationException(jint &arg0)
+	OperationApplicationException::OperationApplicationException(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.OperationApplicationException",
@@ -21,7 +21,7 @@ namespace android::content
 			arg0
 		);
 	}
-	OperationApplicationException::OperationApplicationException(jstring &arg0)
+	OperationApplicationException::OperationApplicationException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.OperationApplicationException",
@@ -29,15 +29,7 @@ namespace android::content
 			arg0
 		);
 	}
-	OperationApplicationException::OperationApplicationException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.OperationApplicationException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	OperationApplicationException::OperationApplicationException(jthrowable &arg0)
+	OperationApplicationException::OperationApplicationException(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.OperationApplicationException",
@@ -45,7 +37,7 @@ namespace android::content
 			arg0
 		);
 	}
-	OperationApplicationException::OperationApplicationException(jstring &arg0, jint &arg1)
+	OperationApplicationException::OperationApplicationException(jstring arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.OperationApplicationException",
@@ -54,30 +46,12 @@ namespace android::content
 			arg1
 		);
 	}
-	OperationApplicationException::OperationApplicationException(const QString &arg0, jint &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.OperationApplicationException",
-			"(Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
-	OperationApplicationException::OperationApplicationException(jstring &arg0, jthrowable &arg1)
+	OperationApplicationException::OperationApplicationException(jstring arg0, jthrowable arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.OperationApplicationException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
-			arg1
-		);
-	}
-	OperationApplicationException::OperationApplicationException(const QString &arg0, jthrowable &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.OperationApplicationException",
-			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

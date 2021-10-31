@@ -33,8 +33,8 @@ namespace android::telecom
 		
 		ConnectionRequest(QAndroidJniObject obj);
 		// Constructors
-		ConnectionRequest(android::telecom::PhoneAccountHandle &arg0, android::net::Uri &arg1, android::os::Bundle &arg2);
-		ConnectionRequest(android::telecom::PhoneAccountHandle &arg0, android::net::Uri &arg1, android::os::Bundle &arg2, jint &arg3);
+		ConnectionRequest(android::telecom::PhoneAccountHandle arg0, android::net::Uri arg1, android::os::Bundle arg2);
+		ConnectionRequest(android::telecom::PhoneAccountHandle arg0, android::net::Uri arg1, android::os::Bundle arg2, jint arg3);
 		ConnectionRequest() = default;
 		
 		// Methods

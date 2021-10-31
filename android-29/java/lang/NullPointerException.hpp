@@ -15,8 +15,7 @@ namespace java::lang
 		NullPointerException(QAndroidJniObject obj);
 		// Constructors
 		NullPointerException();
-		NullPointerException(jstring &arg0);
-		NullPointerException(const QString &arg0);
+		NullPointerException(jstring arg0);
 		
 		// Methods
 		jthrowable fillInStackTrace();

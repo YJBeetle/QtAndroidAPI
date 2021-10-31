@@ -12,7 +12,7 @@ namespace android::media::audiofx
 		
 		DynamicsProcessing_BandBase(QAndroidJniObject obj);
 		// Constructors
-		DynamicsProcessing_BandBase(jboolean &arg0, jfloat &arg1);
+		DynamicsProcessing_BandBase(jboolean arg0, jfloat arg1);
 		DynamicsProcessing_BandBase() = default;
 		
 		// Methods

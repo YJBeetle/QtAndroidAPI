@@ -26,17 +26,14 @@ namespace android::database::sqlite
 		
 		SQLiteCursor(QAndroidJniObject obj);
 		// Constructors
-		SQLiteCursor(__JniBaseClass &arg0, jstring &arg1, android::database::sqlite::SQLiteQuery &arg2);
-		SQLiteCursor(__JniBaseClass &arg0, const QString &arg1, android::database::sqlite::SQLiteQuery &arg2);
-		SQLiteCursor(android::database::sqlite::SQLiteDatabase &arg0, __JniBaseClass &arg1, jstring &arg2, android::database::sqlite::SQLiteQuery &arg3);
-		SQLiteCursor(android::database::sqlite::SQLiteDatabase &arg0, __JniBaseClass &arg1, const QString &arg2, android::database::sqlite::SQLiteQuery &arg3);
+		SQLiteCursor(__JniBaseClass arg0, jstring arg1, android::database::sqlite::SQLiteQuery arg2);
+		SQLiteCursor(android::database::sqlite::SQLiteDatabase arg0, __JniBaseClass arg1, jstring arg2, android::database::sqlite::SQLiteQuery arg3);
 		SQLiteCursor() = default;
 		
 		// Methods
 		void close();
 		void deactivate();
 		jint getColumnIndex(jstring arg0);
-		jint getColumnIndex(const QString &arg0);
 		jarray getColumnNames();
 		jint getCount();
 		QAndroidJniObject getDatabase();

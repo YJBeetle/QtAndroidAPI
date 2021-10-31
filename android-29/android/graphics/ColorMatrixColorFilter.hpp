@@ -17,8 +17,8 @@ namespace android::graphics
 		
 		ColorMatrixColorFilter(QAndroidJniObject obj);
 		// Constructors
-		ColorMatrixColorFilter(jfloatArray &arg0);
-		ColorMatrixColorFilter(android::graphics::ColorMatrix &arg0);
+		ColorMatrixColorFilter(jfloatArray arg0);
+		ColorMatrixColorFilter(android::graphics::ColorMatrix arg0);
 		ColorMatrixColorFilter() = default;
 		
 		// Methods

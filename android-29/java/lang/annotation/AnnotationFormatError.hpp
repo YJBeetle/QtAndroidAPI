@@ -13,11 +13,9 @@ namespace java::lang::annotation
 		
 		AnnotationFormatError(QAndroidJniObject obj);
 		// Constructors
-		AnnotationFormatError(jstring &arg0);
-		AnnotationFormatError(const QString &arg0);
-		AnnotationFormatError(jthrowable &arg0);
-		AnnotationFormatError(jstring &arg0, jthrowable &arg1);
-		AnnotationFormatError(const QString &arg0, jthrowable &arg1);
+		AnnotationFormatError(jstring arg0);
+		AnnotationFormatError(jthrowable arg0);
+		AnnotationFormatError(jstring arg0, jthrowable arg1);
 		AnnotationFormatError() = default;
 		
 		// Methods

@@ -12,22 +12,18 @@ namespace android::drm
 		
 		DrmInfo(QAndroidJniObject obj);
 		// Constructors
-		DrmInfo(jint &arg0, jbyteArray &arg1, jstring &arg2);
-		DrmInfo(jint &arg0, jbyteArray &arg1, const QString &arg2);
-		DrmInfo(jint &arg0, jstring &arg1, jstring &arg2);
-		DrmInfo(jint &arg0, const QString &arg1, const QString &arg2);
+		DrmInfo(jint arg0, jbyteArray arg1, jstring arg2);
+		DrmInfo(jint arg0, jstring arg1, jstring arg2);
 		DrmInfo() = default;
 		
 		// Methods
 		jobject get(jstring arg0);
-		jobject get(const QString &arg0);
 		jbyteArray getData();
 		jint getInfoType();
 		jstring getMimeType();
 		QAndroidJniObject iterator();
 		QAndroidJniObject keyIterator();
 		void put(jstring arg0, jobject arg1);
-		void put(const QString &arg0, jobject arg1);
 	};
 } // namespace android::drm
 

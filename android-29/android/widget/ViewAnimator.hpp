@@ -31,8 +31,8 @@ namespace android::widget
 		
 		ViewAnimator(QAndroidJniObject obj);
 		// Constructors
-		ViewAnimator(android::content::Context &arg0);
-		ViewAnimator(android::content::Context &arg0, __JniBaseClass &arg1);
+		ViewAnimator(android::content::Context arg0);
+		ViewAnimator(android::content::Context arg0, __JniBaseClass arg1);
 		ViewAnimator() = default;
 		
 		// Methods

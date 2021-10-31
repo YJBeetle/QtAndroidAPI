@@ -79,7 +79,6 @@ namespace android::appwidget
 		QAndroidJniObject getAppWidgetOptions(jint arg0);
 		QAndroidJniObject getInstalledProviders();
 		QAndroidJniObject getInstalledProvidersForPackage(jstring arg0, android::os::UserHandle arg1);
-		QAndroidJniObject getInstalledProvidersForPackage(const QString &arg0, android::os::UserHandle arg1);
 		QAndroidJniObject getInstalledProvidersForProfile(android::os::UserHandle arg0);
 		jboolean isRequestPinAppWidgetSupported();
 		void notifyAppWidgetViewDataChanged(jintArray arg0, jint arg1);
@@ -92,7 +91,6 @@ namespace android::appwidget
 		void updateAppWidget(jint arg0, android::widget::RemoteViews arg1);
 		void updateAppWidgetOptions(jint arg0, android::os::Bundle arg1);
 		void updateAppWidgetProviderInfo(android::content::ComponentName arg0, jstring arg1);
-		void updateAppWidgetProviderInfo(android::content::ComponentName arg0, const QString &arg1);
 	};
 } // namespace android::appwidget
 

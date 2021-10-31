@@ -34,9 +34,9 @@ namespace android::view::animation
 		
 		GridLayoutAnimationController(QAndroidJniObject obj);
 		// Constructors
-		GridLayoutAnimationController(android::view::animation::Animation &arg0);
-		GridLayoutAnimationController(android::content::Context &arg0, __JniBaseClass &arg1);
-		GridLayoutAnimationController(android::view::animation::Animation &arg0, jfloat &arg1, jfloat &arg2);
+		GridLayoutAnimationController(android::view::animation::Animation arg0);
+		GridLayoutAnimationController(android::content::Context arg0, __JniBaseClass arg1);
+		GridLayoutAnimationController(android::view::animation::Animation arg0, jfloat arg1, jfloat arg2);
 		GridLayoutAnimationController() = default;
 		
 		// Methods

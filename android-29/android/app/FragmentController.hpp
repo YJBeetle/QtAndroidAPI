@@ -89,15 +89,12 @@ namespace android::app
 		void doLoaderStart();
 		void doLoaderStop(jboolean arg0);
 		void dumpLoaders(jstring arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3);
-		void dumpLoaders(const QString &arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3);
 		jboolean execPendingActions();
 		QAndroidJniObject findFragmentByWho(jstring arg0);
-		QAndroidJniObject findFragmentByWho(const QString &arg0);
 		QAndroidJniObject getFragmentManager();
 		QAndroidJniObject getLoaderManager();
 		void noteStateNotSaved();
 		QAndroidJniObject onCreateView(android::view::View arg0, jstring arg1, android::content::Context arg2, __JniBaseClass arg3);
-		QAndroidJniObject onCreateView(android::view::View arg0, const QString &arg1, android::content::Context arg2, __JniBaseClass arg3);
 		void reportLoaderStart();
 		void restoreAllState(__JniBaseClass arg0, android::app::FragmentManagerNonConfig arg1);
 		void restoreAllState(__JniBaseClass arg0, __JniBaseClass arg1);

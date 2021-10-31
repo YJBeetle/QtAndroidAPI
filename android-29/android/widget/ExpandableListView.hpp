@@ -38,10 +38,10 @@ namespace android::widget
 		
 		ExpandableListView(QAndroidJniObject obj);
 		// Constructors
-		ExpandableListView(android::content::Context &arg0);
-		ExpandableListView(android::content::Context &arg0, __JniBaseClass &arg1);
-		ExpandableListView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		ExpandableListView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		ExpandableListView(android::content::Context arg0);
+		ExpandableListView(android::content::Context arg0, __JniBaseClass arg1);
+		ExpandableListView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		ExpandableListView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		ExpandableListView() = default;
 		
 		// Methods

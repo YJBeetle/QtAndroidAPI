@@ -40,7 +40,7 @@ namespace android::app::job
 		
 		JobInfo_Builder(QAndroidJniObject obj);
 		// Constructors
-		JobInfo_Builder(jint &arg0, android::content::ComponentName &arg1);
+		JobInfo_Builder(jint arg0, android::content::ComponentName arg1);
 		JobInfo_Builder() = default;
 		
 		// Methods

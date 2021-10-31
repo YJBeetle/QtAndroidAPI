@@ -9,7 +9,7 @@ namespace android::net
 	
 	LocalServerSocket::LocalServerSocket(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	LocalServerSocket::LocalServerSocket(java::io::FileDescriptor &arg0)
+	LocalServerSocket::LocalServerSocket(java::io::FileDescriptor arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.LocalServerSocket",
@@ -17,20 +17,12 @@ namespace android::net
 			arg0.__jniObject().object()
 		);
 	}
-	LocalServerSocket::LocalServerSocket(jstring &arg0)
+	LocalServerSocket::LocalServerSocket(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.LocalServerSocket",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	LocalServerSocket::LocalServerSocket(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.net.LocalServerSocket",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

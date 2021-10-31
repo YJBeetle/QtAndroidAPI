@@ -6,20 +6,12 @@ namespace java::io
 	
 	StringBufferInputStream::StringBufferInputStream(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	StringBufferInputStream::StringBufferInputStream(jstring &arg0)
+	StringBufferInputStream::StringBufferInputStream(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.StringBufferInputStream",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	StringBufferInputStream::StringBufferInputStream(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.io.StringBufferInputStream",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

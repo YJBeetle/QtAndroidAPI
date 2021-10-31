@@ -40,17 +40,13 @@ namespace java::security::cert
 		
 		// Methods
 		static QAndroidJniObject getInstance(jstring arg0);
-		static QAndroidJniObject getInstance(const QString &arg0);
 		static QAndroidJniObject getInstance(jstring arg0, jstring arg1);
-		static QAndroidJniObject getInstance(const QString &arg0, const QString &arg1);
 		static QAndroidJniObject getInstance(jstring arg0, java::security::Provider arg1);
-		static QAndroidJniObject getInstance(const QString &arg0, java::security::Provider arg1);
 		QAndroidJniObject generateCRL(java::io::InputStream arg0);
 		QAndroidJniObject generateCRLs(java::io::InputStream arg0);
 		QAndroidJniObject generateCertPath(java::io::InputStream arg0);
 		QAndroidJniObject generateCertPath(__JniBaseClass arg0);
 		QAndroidJniObject generateCertPath(java::io::InputStream arg0, jstring arg1);
-		QAndroidJniObject generateCertPath(java::io::InputStream arg0, const QString &arg1);
 		QAndroidJniObject generateCertificate(java::io::InputStream arg0);
 		QAndroidJniObject generateCertificates(java::io::InputStream arg0);
 		QAndroidJniObject getCertPathEncodings();

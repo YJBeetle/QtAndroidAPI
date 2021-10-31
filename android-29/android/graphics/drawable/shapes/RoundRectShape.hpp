@@ -38,7 +38,7 @@ namespace android::graphics::drawable::shapes
 		
 		RoundRectShape(QAndroidJniObject obj);
 		// Constructors
-		RoundRectShape(jfloatArray &arg0, android::graphics::RectF &arg1, jfloatArray &arg2);
+		RoundRectShape(jfloatArray arg0, android::graphics::RectF arg1, jfloatArray arg2);
 		RoundRectShape() = default;
 		
 		// Methods

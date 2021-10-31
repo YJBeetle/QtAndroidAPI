@@ -18,7 +18,7 @@ namespace android::os
 		
 		ParcelFileDescriptor_AutoCloseInputStream(QAndroidJniObject obj);
 		// Constructors
-		ParcelFileDescriptor_AutoCloseInputStream(android::os::ParcelFileDescriptor &arg0);
+		ParcelFileDescriptor_AutoCloseInputStream(android::os::ParcelFileDescriptor arg0);
 		ParcelFileDescriptor_AutoCloseInputStream() = default;
 		
 		// Methods

@@ -29,11 +29,11 @@ namespace android::view
 		
 		ViewStub(QAndroidJniObject obj);
 		// Constructors
-		ViewStub(android::content::Context &arg0);
-		ViewStub(android::content::Context &arg0, __JniBaseClass &arg1);
-		ViewStub(android::content::Context &arg0, jint &arg1);
-		ViewStub(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		ViewStub(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		ViewStub(android::content::Context arg0);
+		ViewStub(android::content::Context arg0, __JniBaseClass arg1);
+		ViewStub(android::content::Context arg0, jint arg1);
+		ViewStub(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		ViewStub(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		ViewStub() = default;
 		
 		// Methods

@@ -15,7 +15,7 @@ namespace java::util
 			"()V"
 		);
 	}
-	HashMap::HashMap(jint &arg0)
+	HashMap::HashMap(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.HashMap",
@@ -23,7 +23,7 @@ namespace java::util
 			arg0
 		);
 	}
-	HashMap::HashMap(__JniBaseClass &arg0)
+	HashMap::HashMap(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.HashMap",
@@ -31,7 +31,7 @@ namespace java::util
 			arg0.__jniObject().object()
 		);
 	}
-	HashMap::HashMap(jint &arg0, jfloat &arg1)
+	HashMap::HashMap(jint arg0, jfloat arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.HashMap",

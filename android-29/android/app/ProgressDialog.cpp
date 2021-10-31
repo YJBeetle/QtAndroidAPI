@@ -24,7 +24,7 @@ namespace android::app
 	
 	ProgressDialog::ProgressDialog(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ProgressDialog::ProgressDialog(android::content::Context &arg0)
+	ProgressDialog::ProgressDialog(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.ProgressDialog",
@@ -32,7 +32,7 @@ namespace android::app
 			arg0.__jniObject().object()
 		);
 	}
-	ProgressDialog::ProgressDialog(android::content::Context &arg0, jint &arg1)
+	ProgressDialog::ProgressDialog(android::content::Context arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.ProgressDialog",
@@ -54,17 +54,6 @@ namespace android::app
 			arg2
 		);
 	}
-	QAndroidJniObject ProgressDialog::show(android::content::Context arg0, const QString &arg1, const QString &arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.app.ProgressDialog",
-			"show",
-			"(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Landroid/app/ProgressDialog;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	QAndroidJniObject ProgressDialog::show(android::content::Context arg0, jstring arg1, jstring arg2, jboolean arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -74,18 +63,6 @@ namespace android::app
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3
-		);
-	}
-	QAndroidJniObject ProgressDialog::show(android::content::Context arg0, const QString &arg1, const QString &arg2, jboolean arg3)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.app.ProgressDialog",
-			"show",
-			"(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)Landroid/app/ProgressDialog;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
 			arg3
 		);
 	}
@@ -102,19 +79,6 @@ namespace android::app
 			arg4
 		);
 	}
-	QAndroidJniObject ProgressDialog::show(android::content::Context arg0, const QString &arg1, const QString &arg2, jboolean arg3, jboolean arg4)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.app.ProgressDialog",
-			"show",
-			"(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZZ)Landroid/app/ProgressDialog;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			arg3,
-			arg4
-		);
-	}
 	QAndroidJniObject ProgressDialog::show(android::content::Context arg0, jstring arg1, jstring arg2, jboolean arg3, jboolean arg4, __JniBaseClass arg5)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -124,20 +88,6 @@ namespace android::app
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3,
-			arg4,
-			arg5.__jniObject().object()
-		);
-	}
-	QAndroidJniObject ProgressDialog::show(android::content::Context arg0, const QString &arg1, const QString &arg2, jboolean arg3, jboolean arg4, __JniBaseClass arg5)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.app.ProgressDialog",
-			"show",
-			"(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZZLandroid/content/DialogInterface$OnCancelListener;)Landroid/app/ProgressDialog;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
 			arg3,
 			arg4,
 			arg5.__jniObject().object()
@@ -226,14 +176,6 @@ namespace android::app
 			arg0
 		);
 	}
-	void ProgressDialog::setMessage(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setMessage",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void ProgressDialog::setProgress(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -256,14 +198,6 @@ namespace android::app
 			"setProgressNumberFormat",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void ProgressDialog::setProgressNumberFormat(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setProgressNumberFormat",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void ProgressDialog::setProgressPercentFormat(java::text::NumberFormat arg0)

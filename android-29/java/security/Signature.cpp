@@ -23,15 +23,6 @@ namespace java::security
 			arg0
 		);
 	}
-	QAndroidJniObject Signature::getInstance(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.security.Signature",
-			"getInstance",
-			"(Ljava/lang/String;)Ljava/security/Signature;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Signature::getInstance(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -42,16 +33,6 @@ namespace java::security
 			arg1
 		);
 	}
-	QAndroidJniObject Signature::getInstance(const QString &arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.security.Signature",
-			"getInstance",
-			"(Ljava/lang/String;Ljava/lang/String;)Ljava/security/Signature;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	QAndroidJniObject Signature::getInstance(jstring arg0, java::security::Provider arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -59,16 +40,6 @@ namespace java::security
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/Signature;",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Signature::getInstance(const QString &arg0, java::security::Provider arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.security.Signature",
-			"getInstance",
-			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/Signature;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -92,14 +63,6 @@ namespace java::security
 			"getParameter",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
 			arg0
-		).object<jobject>();
-	}
-	jobject Signature::getParameter(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getParameter",
-			"(Ljava/lang/String;)Ljava/lang/Object;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jobject>();
 	}
 	QAndroidJniObject Signature::getParameters()
@@ -163,15 +126,6 @@ namespace java::security
 			"setParameter",
 			"(Ljava/lang/String;Ljava/lang/Object;)V",
 			arg0,
-			arg1
-		);
-	}
-	void Signature::setParameter(const QString &arg0, jobject arg1)
-	{
-		__thiz.callMethod<void>(
-			"setParameter",
-			"(Ljava/lang/String;Ljava/lang/Object;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

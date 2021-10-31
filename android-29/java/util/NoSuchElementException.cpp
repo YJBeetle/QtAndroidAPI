@@ -13,7 +13,7 @@ namespace java::util
 			"()V"
 		);
 	}
-	NoSuchElementException::NoSuchElementException(jstring &arg0)
+	NoSuchElementException::NoSuchElementException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.NoSuchElementException",
@@ -21,15 +21,7 @@ namespace java::util
 			arg0
 		);
 	}
-	NoSuchElementException::NoSuchElementException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.NoSuchElementException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	NoSuchElementException::NoSuchElementException(jthrowable &arg0)
+	NoSuchElementException::NoSuchElementException(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.NoSuchElementException",
@@ -37,21 +29,12 @@ namespace java::util
 			arg0
 		);
 	}
-	NoSuchElementException::NoSuchElementException(jstring &arg0, jthrowable &arg1)
+	NoSuchElementException::NoSuchElementException(jstring arg0, jthrowable arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.NoSuchElementException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
-			arg1
-		);
-	}
-	NoSuchElementException::NoSuchElementException(const QString &arg0, jthrowable &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.NoSuchElementException",
-			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

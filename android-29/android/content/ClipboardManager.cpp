@@ -84,13 +84,5 @@ namespace android::content
 			arg0
 		);
 	}
-	void ClipboardManager::setText(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setText",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 } // namespace android::content
 

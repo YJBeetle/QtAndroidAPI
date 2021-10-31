@@ -16,9 +16,7 @@ namespace java::nio::file::attribute
 		
 		// Methods
 		QAndroidJniObject lookupPrincipalByGroupName(jstring arg0);
-		QAndroidJniObject lookupPrincipalByGroupName(const QString &arg0);
 		QAndroidJniObject lookupPrincipalByName(jstring arg0);
-		QAndroidJniObject lookupPrincipalByName(const QString &arg0);
 	};
 } // namespace java::nio::file::attribute
 

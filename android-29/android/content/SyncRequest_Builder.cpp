@@ -98,15 +98,6 @@ namespace android::content
 			arg1
 		);
 	}
-	QAndroidJniObject SyncRequest_Builder::setSyncAdapter(android::accounts::Account arg0, const QString &arg1)
-	{
-		return __thiz.callObjectMethod(
-			"setSyncAdapter",
-			"(Landroid/accounts/Account;Ljava/lang/String;)Landroid/content/SyncRequest$Builder;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	QAndroidJniObject SyncRequest_Builder::syncOnce()
 	{
 		return __thiz.callObjectMethod(

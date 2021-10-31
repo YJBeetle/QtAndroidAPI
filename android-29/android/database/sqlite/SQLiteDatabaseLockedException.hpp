@@ -17,8 +17,7 @@ namespace android::database::sqlite
 		SQLiteDatabaseLockedException(QAndroidJniObject obj);
 		// Constructors
 		SQLiteDatabaseLockedException();
-		SQLiteDatabaseLockedException(jstring &arg0);
-		SQLiteDatabaseLockedException(const QString &arg0);
+		SQLiteDatabaseLockedException(jstring arg0);
 		
 		// Methods
 	};

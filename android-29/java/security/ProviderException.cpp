@@ -13,7 +13,7 @@ namespace java::security
 			"()V"
 		);
 	}
-	ProviderException::ProviderException(jstring &arg0)
+	ProviderException::ProviderException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.ProviderException",
@@ -21,15 +21,7 @@ namespace java::security
 			arg0
 		);
 	}
-	ProviderException::ProviderException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.ProviderException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	ProviderException::ProviderException(jthrowable &arg0)
+	ProviderException::ProviderException(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.ProviderException",
@@ -37,21 +29,12 @@ namespace java::security
 			arg0
 		);
 	}
-	ProviderException::ProviderException(jstring &arg0, jthrowable &arg1)
+	ProviderException::ProviderException(jstring arg0, jthrowable arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.ProviderException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
-			arg1
-		);
-	}
-	ProviderException::ProviderException(const QString &arg0, jthrowable &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.ProviderException",
-			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

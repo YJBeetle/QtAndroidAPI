@@ -25,20 +25,17 @@ namespace android::location
 		Location(QAndroidJniObject obj);
 		// Constructors
 		Location(android::location::Location &arg0);
-		Location(jstring &arg0);
-		Location(const QString &arg0);
+		Location(jstring arg0);
 		Location() = default;
 		
 		// Methods
 		static jdouble convert(jstring arg0);
-		static jdouble convert(const QString &arg0);
 		static jstring convert(jdouble arg0, jint arg1);
 		static void distanceBetween(jdouble arg0, jdouble arg1, jdouble arg2, jdouble arg3, jfloatArray arg4);
 		jfloat bearingTo(android::location::Location arg0);
 		jint describeContents();
 		jfloat distanceTo(android::location::Location arg0);
 		void dump(__JniBaseClass arg0, jstring arg1);
-		void dump(__JniBaseClass arg0, const QString &arg1);
 		jfloat getAccuracy();
 		jdouble getAltitude();
 		jfloat getBearing();
@@ -78,7 +75,6 @@ namespace android::location
 		void setLatitude(jdouble arg0);
 		void setLongitude(jdouble arg0);
 		void setProvider(jstring arg0);
-		void setProvider(const QString &arg0);
 		void setSpeed(jfloat arg0);
 		void setSpeedAccuracyMetersPerSecond(jfloat arg0);
 		void setTime(jlong arg0);

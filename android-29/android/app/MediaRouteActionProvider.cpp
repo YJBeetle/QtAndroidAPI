@@ -8,7 +8,7 @@ namespace android::app
 	
 	MediaRouteActionProvider::MediaRouteActionProvider(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MediaRouteActionProvider::MediaRouteActionProvider(android::content::Context &arg0)
+	MediaRouteActionProvider::MediaRouteActionProvider(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.MediaRouteActionProvider",

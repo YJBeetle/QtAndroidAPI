@@ -29,16 +29,6 @@ namespace android::os
 			arg1
 		);
 	}
-	QAndroidJniObject SharedMemory::create(const QString &arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.os.SharedMemory",
-			"create",
-			"(Ljava/lang/String;I)Landroid/os/SharedMemory;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	void SharedMemory::unmap(java::nio::ByteBuffer arg0)
 	{
 		QAndroidJniObject::callStaticMethod<void>(

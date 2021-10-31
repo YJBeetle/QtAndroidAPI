@@ -7,22 +7,13 @@ namespace android::content
 	
 	IntentFilter_AuthorityEntry::IntentFilter_AuthorityEntry(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	IntentFilter_AuthorityEntry::IntentFilter_AuthorityEntry(jstring &arg0, jstring &arg1)
+	IntentFilter_AuthorityEntry::IntentFilter_AuthorityEntry(jstring arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.IntentFilter$AuthorityEntry",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	IntentFilter_AuthorityEntry::IntentFilter_AuthorityEntry(const QString &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.IntentFilter$AuthorityEntry",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	

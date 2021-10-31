@@ -12,8 +12,7 @@ namespace java::security::spec
 		
 		ECGenParameterSpec(QAndroidJniObject obj);
 		// Constructors
-		ECGenParameterSpec(jstring &arg0);
-		ECGenParameterSpec(const QString &arg0);
+		ECGenParameterSpec(jstring arg0);
 		ECGenParameterSpec() = default;
 		
 		// Methods

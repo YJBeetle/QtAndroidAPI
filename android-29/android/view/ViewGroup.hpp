@@ -118,10 +118,10 @@ namespace android::view
 		
 		ViewGroup(QAndroidJniObject obj);
 		// Constructors
-		ViewGroup(android::content::Context &arg0);
-		ViewGroup(android::content::Context &arg0, __JniBaseClass &arg1);
-		ViewGroup(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		ViewGroup(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		ViewGroup(android::content::Context arg0);
+		ViewGroup(android::content::Context arg0, __JniBaseClass arg1);
+		ViewGroup(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		ViewGroup(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		ViewGroup() = default;
 		
 		// Methods
@@ -168,7 +168,6 @@ namespace android::view
 		void endViewTransition(android::view::View arg0);
 		QAndroidJniObject findFocus();
 		void findViewsWithText(java::util::ArrayList arg0, jstring arg1, jint arg2);
-		void findViewsWithText(java::util::ArrayList arg0, const QString &arg1, jint arg2);
 		QAndroidJniObject focusSearch(android::view::View arg0, jint arg1);
 		void focusableViewAvailable(android::view::View arg0);
 		jboolean gatherTransparentRegion(android::graphics::Region arg0);

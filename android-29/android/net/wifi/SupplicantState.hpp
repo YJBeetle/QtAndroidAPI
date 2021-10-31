@@ -35,7 +35,6 @@ namespace android::net::wifi
 		// Methods
 		static jboolean isValidState(android::net::wifi::SupplicantState arg0);
 		static QAndroidJniObject valueOf(jstring arg0);
-		static QAndroidJniObject valueOf(const QString &arg0);
 		static jarray values();
 		jint describeContents();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

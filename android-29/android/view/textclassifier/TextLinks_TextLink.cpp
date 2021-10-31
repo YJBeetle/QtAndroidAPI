@@ -33,14 +33,6 @@ namespace android::view::textclassifier
 			arg0
 		);
 	}
-	jfloat TextLinks_TextLink::getConfidenceScore(const QString &arg0)
-	{
-		return __thiz.callMethod<jfloat>(
-			"getConfidenceScore",
-			"(Ljava/lang/String;)F",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jint TextLinks_TextLink::getEnd()
 	{
 		return __thiz.callMethod<jint>(

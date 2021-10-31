@@ -15,22 +15,13 @@ namespace android::app
 	
 	NotificationChannelGroup::NotificationChannelGroup(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	NotificationChannelGroup::NotificationChannelGroup(jstring &arg0, jstring &arg1)
+	NotificationChannelGroup::NotificationChannelGroup(jstring arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.NotificationChannelGroup",
 			"(Ljava/lang/String;Ljava/lang/CharSequence;)V",
 			arg0,
 			arg1
-		);
-	}
-	NotificationChannelGroup::NotificationChannelGroup(const QString &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.app.NotificationChannelGroup",
-			"(Ljava/lang/String;Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	
@@ -105,14 +96,6 @@ namespace android::app
 			"setDescription",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void NotificationChannelGroup::setDescription(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDescription",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring NotificationChannelGroup::toString()

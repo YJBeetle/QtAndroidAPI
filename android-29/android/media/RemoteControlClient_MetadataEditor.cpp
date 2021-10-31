@@ -75,14 +75,5 @@ namespace android::media
 			arg1
 		);
 	}
-	QAndroidJniObject RemoteControlClient_MetadataEditor::putString(jint arg0, const QString &arg1)
-	{
-		return __thiz.callObjectMethod(
-			"putString",
-			"(ILjava/lang/String;)Landroid/media/RemoteControlClient$MetadataEditor;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 } // namespace android::media
 

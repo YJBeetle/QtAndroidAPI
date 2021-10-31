@@ -30,7 +30,7 @@ namespace android::transition
 		ChangeImageTransform(QAndroidJniObject obj);
 		// Constructors
 		ChangeImageTransform();
-		ChangeImageTransform(android::content::Context &arg0, __JniBaseClass &arg1);
+		ChangeImageTransform(android::content::Context arg0, __JniBaseClass arg1);
 		
 		// Methods
 		void captureEndValues(android::transition::TransitionValues arg0);

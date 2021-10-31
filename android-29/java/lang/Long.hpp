@@ -30,9 +30,8 @@ namespace java::lang
 		
 		Long(QAndroidJniObject obj);
 		// Constructors
-		Long(jstring &arg0);
-		Long(const QString &arg0);
-		Long(jlong &arg0);
+		Long(jstring arg0);
+		Long(jlong arg0);
 		Long() = default;
 		
 		// Methods
@@ -40,14 +39,10 @@ namespace java::lang
 		static jint compare(jlong arg0, jlong arg1);
 		static jint compareUnsigned(jlong arg0, jlong arg1);
 		static QAndroidJniObject decode(jstring arg0);
-		static QAndroidJniObject decode(const QString &arg0);
 		static jlong divideUnsigned(jlong arg0, jlong arg1);
 		static QAndroidJniObject getLong(jstring arg0);
-		static QAndroidJniObject getLong(const QString &arg0);
 		static QAndroidJniObject getLong(jstring arg0, java::lang::Long arg1);
-		static QAndroidJniObject getLong(const QString &arg0, java::lang::Long arg1);
 		static QAndroidJniObject getLong(jstring arg0, jlong arg1);
-		static QAndroidJniObject getLong(const QString &arg0, jlong arg1);
 		static jint hashCode(jlong arg0);
 		static jlong highestOneBit(jlong arg0);
 		static jlong lowestOneBit(jlong arg0);
@@ -56,17 +51,11 @@ namespace java::lang
 		static jint numberOfLeadingZeros(jlong arg0);
 		static jint numberOfTrailingZeros(jlong arg0);
 		static jlong parseLong(jstring arg0);
-		static jlong parseLong(const QString &arg0);
 		static jlong parseLong(jstring arg0, jint arg1);
-		static jlong parseLong(const QString &arg0, jint arg1);
 		static jlong parseLong(jstring arg0, jint arg1, jint arg2, jint arg3);
-		static jlong parseLong(const QString &arg0, jint arg1, jint arg2, jint arg3);
 		static jlong parseUnsignedLong(jstring arg0);
-		static jlong parseUnsignedLong(const QString &arg0);
 		static jlong parseUnsignedLong(jstring arg0, jint arg1);
-		static jlong parseUnsignedLong(const QString &arg0, jint arg1);
 		static jlong parseUnsignedLong(jstring arg0, jint arg1, jint arg2, jint arg3);
-		static jlong parseUnsignedLong(const QString &arg0, jint arg1, jint arg2, jint arg3);
 		static jlong remainderUnsigned(jlong arg0, jlong arg1);
 		static jlong reverse(jlong arg0);
 		static jlong reverseBytes(jlong arg0);
@@ -82,10 +71,8 @@ namespace java::lang
 		static jstring toUnsignedString(jlong arg0);
 		static jstring toUnsignedString(jlong arg0, jint arg1);
 		static QAndroidJniObject valueOf(jstring arg0);
-		static QAndroidJniObject valueOf(const QString &arg0);
 		static QAndroidJniObject valueOf(jlong arg0);
 		static QAndroidJniObject valueOf(jstring arg0, jint arg1);
-		static QAndroidJniObject valueOf(const QString &arg0, jint arg1);
 		jbyte byteValue();
 		jint compareTo(java::lang::Long arg0);
 		jint compareTo(jobject arg0);

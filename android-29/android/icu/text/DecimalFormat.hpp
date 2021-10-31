@@ -76,18 +76,13 @@ namespace android::icu::text
 		DecimalFormat(QAndroidJniObject obj);
 		// Constructors
 		DecimalFormat();
-		DecimalFormat(jstring &arg0);
-		DecimalFormat(const QString &arg0);
-		DecimalFormat(jstring &arg0, android::icu::text::DecimalFormatSymbols &arg1);
-		DecimalFormat(const QString &arg0, android::icu::text::DecimalFormatSymbols &arg1);
-		DecimalFormat(jstring &arg0, android::icu::text::DecimalFormatSymbols &arg1, android::icu::text::CurrencyPluralInfo &arg2, jint &arg3);
-		DecimalFormat(const QString &arg0, android::icu::text::DecimalFormatSymbols &arg1, android::icu::text::CurrencyPluralInfo &arg2, jint &arg3);
+		DecimalFormat(jstring arg0);
+		DecimalFormat(jstring arg0, android::icu::text::DecimalFormatSymbols arg1);
+		DecimalFormat(jstring arg0, android::icu::text::DecimalFormatSymbols arg1, android::icu::text::CurrencyPluralInfo arg2, jint arg3);
 		
 		// Methods
 		void applyLocalizedPattern(jstring arg0);
-		void applyLocalizedPattern(const QString &arg0);
 		void applyPattern(jstring arg0);
-		void applyPattern(const QString &arg0);
 		jboolean areSignificantDigitsUsed();
 		jobject clone();
 		jboolean equals(jobject arg0);
@@ -134,9 +129,7 @@ namespace android::icu::text
 		jboolean isParseStrict();
 		jboolean isScientificNotation();
 		QAndroidJniObject parse(jstring arg0, java::text::ParsePosition arg1);
-		QAndroidJniObject parse(const QString &arg0, java::text::ParsePosition arg1);
 		QAndroidJniObject parseCurrency(jstring arg0, java::text::ParsePosition arg1);
-		QAndroidJniObject parseCurrency(const QString &arg0, java::text::ParsePosition arg1);
 		void setCurrency(android::icu::util::Currency arg0);
 		void setCurrencyPluralInfo(android::icu::text::CurrencyPluralInfo arg0);
 		void setCurrencyUsage(android::icu::util::Currency_CurrencyUsage arg0);
@@ -158,9 +151,7 @@ namespace android::icu::text
 		void setMinimumSignificantDigits(jint arg0);
 		void setMultiplier(jint arg0);
 		void setNegativePrefix(jstring arg0);
-		void setNegativePrefix(const QString &arg0);
 		void setNegativeSuffix(jstring arg0);
-		void setNegativeSuffix(const QString &arg0);
 		void setPadCharacter(jchar arg0);
 		void setPadPosition(jint arg0);
 		void setParseBigDecimal(jboolean arg0);
@@ -168,9 +159,7 @@ namespace android::icu::text
 		void setParseMaxDigits(jint arg0);
 		void setParseStrict(jboolean arg0);
 		void setPositivePrefix(jstring arg0);
-		void setPositivePrefix(const QString &arg0);
 		void setPositiveSuffix(jstring arg0);
-		void setPositiveSuffix(const QString &arg0);
 		void setRoundingIncrement(android::icu::math::BigDecimal arg0);
 		void setRoundingIncrement(jdouble arg0);
 		void setRoundingIncrement(java::math::BigDecimal arg0);

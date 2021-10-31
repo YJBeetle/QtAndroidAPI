@@ -387,15 +387,6 @@ namespace android::graphics
 			arg0
 		);
 	}
-	jint Color::parseColor(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.graphics.Color",
-			"parseColor",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jfloat Color::red(jlong arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jfloat>(

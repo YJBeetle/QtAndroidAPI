@@ -32,14 +32,12 @@ namespace android::telecom
 		
 		PhoneAccount_Builder(QAndroidJniObject obj);
 		// Constructors
-		PhoneAccount_Builder(android::telecom::PhoneAccount &arg0);
-		PhoneAccount_Builder(android::telecom::PhoneAccountHandle &arg0, jstring &arg1);
-		PhoneAccount_Builder(android::telecom::PhoneAccountHandle &arg0, const QString &arg1);
+		PhoneAccount_Builder(android::telecom::PhoneAccount arg0);
+		PhoneAccount_Builder(android::telecom::PhoneAccountHandle arg0, jstring arg1);
 		PhoneAccount_Builder() = default;
 		
 		// Methods
 		QAndroidJniObject addSupportedUriScheme(jstring arg0);
-		QAndroidJniObject addSupportedUriScheme(const QString &arg0);
 		QAndroidJniObject build();
 		QAndroidJniObject setAddress(android::net::Uri arg0);
 		QAndroidJniObject setCapabilities(jint arg0);
@@ -47,7 +45,6 @@ namespace android::telecom
 		QAndroidJniObject setHighlightColor(jint arg0);
 		QAndroidJniObject setIcon(android::graphics::drawable::Icon arg0);
 		QAndroidJniObject setShortDescription(jstring arg0);
-		QAndroidJniObject setShortDescription(const QString &arg0);
 		QAndroidJniObject setSubscriptionAddress(android::net::Uri arg0);
 		QAndroidJniObject setSupportedUriSchemes(__JniBaseClass arg0);
 	};

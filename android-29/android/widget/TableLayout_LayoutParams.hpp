@@ -32,11 +32,11 @@ namespace android::widget
 		TableLayout_LayoutParams(QAndroidJniObject obj);
 		// Constructors
 		TableLayout_LayoutParams();
-		TableLayout_LayoutParams(android::view::ViewGroup_LayoutParams &arg0);
-		TableLayout_LayoutParams(android::view::ViewGroup_MarginLayoutParams &arg0);
-		TableLayout_LayoutParams(android::content::Context &arg0, __JniBaseClass &arg1);
-		TableLayout_LayoutParams(jint &arg0, jint &arg1);
-		TableLayout_LayoutParams(jint &arg0, jint &arg1, jfloat &arg2);
+		TableLayout_LayoutParams(android::view::ViewGroup_LayoutParams arg0);
+		TableLayout_LayoutParams(android::view::ViewGroup_MarginLayoutParams arg0);
+		TableLayout_LayoutParams(android::content::Context arg0, __JniBaseClass arg1);
+		TableLayout_LayoutParams(jint arg0, jint arg1);
+		TableLayout_LayoutParams(jint arg0, jint arg1, jfloat arg2);
 		
 		// Methods
 	};

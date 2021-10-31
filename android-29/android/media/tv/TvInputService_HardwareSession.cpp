@@ -8,7 +8,7 @@ namespace android::media::tv
 	
 	TvInputService_HardwareSession::TvInputService_HardwareSession(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	TvInputService_HardwareSession::TvInputService_HardwareSession(android::content::Context &arg0)
+	TvInputService_HardwareSession::TvInputService_HardwareSession(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.tv.TvInputService$HardwareSession",

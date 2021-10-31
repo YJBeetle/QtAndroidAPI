@@ -13,20 +13,12 @@ namespace java::net
 			"()V"
 		);
 	}
-	SocketTimeoutException::SocketTimeoutException(jstring &arg0)
+	SocketTimeoutException::SocketTimeoutException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.SocketTimeoutException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	SocketTimeoutException::SocketTimeoutException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.SocketTimeoutException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

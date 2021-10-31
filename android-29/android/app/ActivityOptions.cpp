@@ -97,17 +97,6 @@ namespace android::app
 			arg2
 		);
 	}
-	QAndroidJniObject ActivityOptions::makeSceneTransitionAnimation(android::app::Activity arg0, android::view::View arg1, const QString &arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.app.ActivityOptions",
-			"makeSceneTransitionAnimation",
-			"(Landroid/app/Activity;Landroid/view/View;Ljava/lang/String;)Landroid/app/ActivityOptions;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	QAndroidJniObject ActivityOptions::makeTaskLaunchBehind()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

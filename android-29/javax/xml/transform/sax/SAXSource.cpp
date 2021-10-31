@@ -22,7 +22,7 @@ namespace javax::xml::transform::sax
 			"()V"
 		);
 	}
-	SAXSource::SAXSource(org::xml::sax::InputSource &arg0)
+	SAXSource::SAXSource(org::xml::sax::InputSource arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.transform.sax.SAXSource",
@@ -30,7 +30,7 @@ namespace javax::xml::transform::sax
 			arg0.__jniObject().object()
 		);
 	}
-	SAXSource::SAXSource(__JniBaseClass &arg0, org::xml::sax::InputSource &arg1)
+	SAXSource::SAXSource(__JniBaseClass arg0, org::xml::sax::InputSource arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.transform.sax.SAXSource",
@@ -92,14 +92,6 @@ namespace javax::xml::transform::sax
 			"setSystemId",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void SAXSource::setSystemId(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSystemId",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void SAXSource::setXMLReader(__JniBaseClass arg0)

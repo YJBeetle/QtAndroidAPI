@@ -13,20 +13,12 @@ namespace android::database::sqlite
 			"()V"
 		);
 	}
-	SQLiteOutOfMemoryException::SQLiteOutOfMemoryException(jstring &arg0)
+	SQLiteOutOfMemoryException::SQLiteOutOfMemoryException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.database.sqlite.SQLiteOutOfMemoryException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	SQLiteOutOfMemoryException::SQLiteOutOfMemoryException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.database.sqlite.SQLiteOutOfMemoryException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

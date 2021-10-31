@@ -13,7 +13,7 @@ namespace android::media::midi
 			"()V"
 		);
 	}
-	MidiReceiver::MidiReceiver(jint &arg0)
+	MidiReceiver::MidiReceiver(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.midi.MidiReceiver",

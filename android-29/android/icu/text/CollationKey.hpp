@@ -12,8 +12,7 @@ namespace android::icu::text
 		
 		CollationKey(QAndroidJniObject obj);
 		// Constructors
-		CollationKey(jstring &arg0, jbyteArray &arg1);
-		CollationKey(const QString &arg0, jbyteArray &arg1);
+		CollationKey(jstring arg0, jbyteArray arg1);
 		CollationKey() = default;
 		
 		// Methods

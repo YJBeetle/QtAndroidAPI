@@ -14,10 +14,8 @@ namespace java::io
 		
 		SerializablePermission(QAndroidJniObject obj);
 		// Constructors
-		SerializablePermission(jstring &arg0);
-		SerializablePermission(const QString &arg0);
-		SerializablePermission(jstring &arg0, jstring &arg1);
-		SerializablePermission(const QString &arg0, const QString &arg1);
+		SerializablePermission(jstring arg0);
+		SerializablePermission(jstring arg0, jstring arg1);
 		SerializablePermission() = default;
 		
 		// Methods

@@ -21,9 +21,7 @@ namespace android::widget
 		// Methods
 		jstring convertResultToString(jobject arg0);
 		void filter(jstring arg0);
-		void filter(const QString &arg0);
 		void filter(jstring arg0, __JniBaseClass arg1);
-		void filter(const QString &arg0, __JniBaseClass arg1);
 	};
 } // namespace android::widget
 

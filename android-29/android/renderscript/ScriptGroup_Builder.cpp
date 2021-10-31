@@ -11,7 +11,7 @@ namespace android::renderscript
 	
 	ScriptGroup_Builder::ScriptGroup_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ScriptGroup_Builder::ScriptGroup_Builder(android::renderscript::RenderScript &arg0)
+	ScriptGroup_Builder::ScriptGroup_Builder(android::renderscript::RenderScript arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.renderscript.ScriptGroup$Builder",

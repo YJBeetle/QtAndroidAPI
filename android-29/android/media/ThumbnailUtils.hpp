@@ -33,13 +33,10 @@ namespace android::media
 		
 		// Methods
 		static QAndroidJniObject createAudioThumbnail(jstring arg0, jint arg1);
-		static QAndroidJniObject createAudioThumbnail(const QString &arg0, jint arg1);
 		static QAndroidJniObject createAudioThumbnail(java::io::File arg0, android::util::Size arg1, android::os::CancellationSignal arg2);
 		static QAndroidJniObject createImageThumbnail(jstring arg0, jint arg1);
-		static QAndroidJniObject createImageThumbnail(const QString &arg0, jint arg1);
 		static QAndroidJniObject createImageThumbnail(java::io::File arg0, android::util::Size arg1, android::os::CancellationSignal arg2);
 		static QAndroidJniObject createVideoThumbnail(jstring arg0, jint arg1);
-		static QAndroidJniObject createVideoThumbnail(const QString &arg0, jint arg1);
 		static QAndroidJniObject createVideoThumbnail(java::io::File arg0, android::util::Size arg1, android::os::CancellationSignal arg2);
 		static QAndroidJniObject extractThumbnail(android::graphics::Bitmap arg0, jint arg1, jint arg2);
 		static QAndroidJniObject extractThumbnail(android::graphics::Bitmap arg0, jint arg1, jint arg2, jint arg3);

@@ -19,7 +19,7 @@ namespace android::text::style
 		TtsSpan_DateBuilder(QAndroidJniObject obj);
 		// Constructors
 		TtsSpan_DateBuilder();
-		TtsSpan_DateBuilder(java::lang::Integer &arg0, java::lang::Integer &arg1, java::lang::Integer &arg2, java::lang::Integer &arg3);
+		TtsSpan_DateBuilder(java::lang::Integer arg0, java::lang::Integer arg1, java::lang::Integer arg2, java::lang::Integer arg3);
 		
 		// Methods
 		QAndroidJniObject setDay(jint arg0);

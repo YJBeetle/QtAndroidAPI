@@ -7,7 +7,7 @@ namespace java::io
 	
 	DataInputStream::DataInputStream(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DataInputStream::DataInputStream(java::io::InputStream &arg0)
+	DataInputStream::DataInputStream(java::io::InputStream arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.DataInputStream",

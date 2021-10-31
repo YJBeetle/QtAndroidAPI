@@ -13,20 +13,12 @@ namespace java::lang
 			"()V"
 		);
 	}
-	VerifyError::VerifyError(jstring &arg0)
+	VerifyError::VerifyError(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.VerifyError",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	VerifyError::VerifyError(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.VerifyError",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

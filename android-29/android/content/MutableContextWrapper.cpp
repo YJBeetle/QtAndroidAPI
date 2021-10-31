@@ -7,7 +7,7 @@ namespace android::content
 	
 	MutableContextWrapper::MutableContextWrapper(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MutableContextWrapper::MutableContextWrapper(android::content::Context &arg0)
+	MutableContextWrapper::MutableContextWrapper(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.MutableContextWrapper",

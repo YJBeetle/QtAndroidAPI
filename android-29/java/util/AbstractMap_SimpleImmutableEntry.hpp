@@ -12,8 +12,8 @@ namespace java::util
 		
 		AbstractMap_SimpleImmutableEntry(QAndroidJniObject obj);
 		// Constructors
-		AbstractMap_SimpleImmutableEntry(__JniBaseClass &arg0);
-		AbstractMap_SimpleImmutableEntry(jobject &arg0, jobject &arg1);
+		AbstractMap_SimpleImmutableEntry(__JniBaseClass arg0);
+		AbstractMap_SimpleImmutableEntry(jobject arg0, jobject arg1);
 		AbstractMap_SimpleImmutableEntry() = default;
 		
 		// Methods

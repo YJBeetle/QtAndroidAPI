@@ -16,14 +16,6 @@ namespace android::sax
 			arg0
 		);
 	}
-	QAndroidJniObject Element::getChild(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getChild",
-			"(Ljava/lang/String;)Landroid/sax/Element;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Element::getChild(jstring arg0, jstring arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -31,15 +23,6 @@ namespace android::sax
 			"(Ljava/lang/String;Ljava/lang/String;)Landroid/sax/Element;",
 			arg0,
 			arg1
-		);
-	}
-	QAndroidJniObject Element::getChild(const QString &arg0, const QString &arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getChild",
-			"(Ljava/lang/String;Ljava/lang/String;)Landroid/sax/Element;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	QAndroidJniObject Element::requireChild(jstring arg0)
@@ -50,14 +33,6 @@ namespace android::sax
 			arg0
 		);
 	}
-	QAndroidJniObject Element::requireChild(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"requireChild",
-			"(Ljava/lang/String;)Landroid/sax/Element;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Element::requireChild(jstring arg0, jstring arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -65,15 +40,6 @@ namespace android::sax
 			"(Ljava/lang/String;Ljava/lang/String;)Landroid/sax/Element;",
 			arg0,
 			arg1
-		);
-	}
-	QAndroidJniObject Element::requireChild(const QString &arg0, const QString &arg1)
-	{
-		return __thiz.callObjectMethod(
-			"requireChild",
-			"(Ljava/lang/String;Ljava/lang/String;)Landroid/sax/Element;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void Element::setElementListener(__JniBaseClass arg0)

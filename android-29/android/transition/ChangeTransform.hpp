@@ -30,7 +30,7 @@ namespace android::transition
 		ChangeTransform(QAndroidJniObject obj);
 		// Constructors
 		ChangeTransform();
-		ChangeTransform(android::content::Context &arg0, __JniBaseClass &arg1);
+		ChangeTransform(android::content::Context arg0, __JniBaseClass arg1);
 		
 		// Methods
 		void captureEndValues(android::transition::TransitionValues arg0);

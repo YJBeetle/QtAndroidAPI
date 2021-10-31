@@ -33,7 +33,6 @@ namespace android::content::res
 		// Methods
 		void applyStyle(jint arg0, jboolean arg1);
 		void dump(jint arg0, jstring arg1, jstring arg2);
-		void dump(jint arg0, const QString &arg1, const QString &arg2);
 		jintArray getAttributeResolutionStack(jint arg0, jint arg1, jint arg2);
 		jint getChangingConfigurations();
 		QAndroidJniObject getDrawable(jint arg0);

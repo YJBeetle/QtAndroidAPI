@@ -35,7 +35,6 @@ namespace java::security
 		jobject computeIfAbsent(jobject arg0, __JniBaseClass arg1);
 		jobject computeIfPresent(jobject arg0, __JniBaseClass arg1);
 		QAndroidJniObject configure(jstring arg0);
-		QAndroidJniObject configure(const QString &arg0);
 		QAndroidJniObject elements();
 		QAndroidJniObject entrySet();
 		void forEach(__JniBaseClass arg0);
@@ -44,9 +43,7 @@ namespace java::security
 		jstring getName();
 		jobject getOrDefault(jobject arg0, jobject arg1);
 		jstring getProperty(jstring arg0);
-		jstring getProperty(const QString &arg0);
 		QAndroidJniObject getService(jstring arg0, jstring arg1);
-		QAndroidJniObject getService(const QString &arg0, const QString &arg1);
 		QAndroidJniObject getServices();
 		jdouble getVersion();
 		jstring getVersionStr();

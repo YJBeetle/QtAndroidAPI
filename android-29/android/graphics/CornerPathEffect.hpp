@@ -13,7 +13,7 @@ namespace android::graphics
 		
 		CornerPathEffect(QAndroidJniObject obj);
 		// Constructors
-		CornerPathEffect(jfloat &arg0);
+		CornerPathEffect(jfloat arg0);
 		CornerPathEffect() = default;
 		
 		// Methods

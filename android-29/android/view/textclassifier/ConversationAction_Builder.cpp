@@ -9,20 +9,12 @@ namespace android::view::textclassifier
 	
 	ConversationAction_Builder::ConversationAction_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ConversationAction_Builder::ConversationAction_Builder(jstring &arg0)
+	ConversationAction_Builder::ConversationAction_Builder(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.textclassifier.ConversationAction$Builder",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	ConversationAction_Builder::ConversationAction_Builder(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.textclassifier.ConversationAction$Builder",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	
@@ -64,14 +56,6 @@ namespace android::view::textclassifier
 			"setTextReply",
 			"(Ljava/lang/CharSequence;)Landroid/view/textclassifier/ConversationAction$Builder;",
 			arg0
-		);
-	}
-	QAndroidJniObject ConversationAction_Builder::setTextReply(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setTextReply",
-			"(Ljava/lang/CharSequence;)Landroid/view/textclassifier/ConversationAction$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace android::view::textclassifier

@@ -16,7 +16,7 @@ namespace java::util
 		
 		IllegalFormatWidthException(QAndroidJniObject obj);
 		// Constructors
-		IllegalFormatWidthException(jint &arg0);
+		IllegalFormatWidthException(jint arg0);
 		IllegalFormatWidthException() = default;
 		
 		// Methods

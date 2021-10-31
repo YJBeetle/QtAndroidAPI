@@ -36,16 +36,15 @@ namespace android::icu::math
 		
 		BigDecimal(QAndroidJniObject obj);
 		// Constructors
-		BigDecimal(jcharArray &arg0);
-		BigDecimal(jdouble &arg0);
-		BigDecimal(jint &arg0);
-		BigDecimal(jstring &arg0);
-		BigDecimal(const QString &arg0);
-		BigDecimal(java::math::BigDecimal &arg0);
-		BigDecimal(java::math::BigInteger &arg0);
-		BigDecimal(jlong &arg0);
-		BigDecimal(java::math::BigInteger &arg0, jint &arg1);
-		BigDecimal(jcharArray &arg0, jint &arg1, jint &arg2);
+		BigDecimal(jcharArray arg0);
+		BigDecimal(jdouble arg0);
+		BigDecimal(jint arg0);
+		BigDecimal(jstring arg0);
+		BigDecimal(java::math::BigDecimal arg0);
+		BigDecimal(java::math::BigInteger arg0);
+		BigDecimal(jlong arg0);
+		BigDecimal(java::math::BigInteger arg0, jint arg1);
+		BigDecimal(jcharArray arg0, jint arg1, jint arg2);
 		BigDecimal() = default;
 		
 		// Methods

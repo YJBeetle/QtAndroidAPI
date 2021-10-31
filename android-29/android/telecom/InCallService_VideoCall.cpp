@@ -75,14 +75,6 @@ namespace android::telecom
 			arg0
 		);
 	}
-	void InCallService_VideoCall::setCamera(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setCamera",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void InCallService_VideoCall::setDeviceOrientation(jint arg0)
 	{
 		__thiz.callMethod<void>(

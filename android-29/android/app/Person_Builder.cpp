@@ -56,14 +56,6 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Person_Builder::setKey(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setKey",
-			"(Ljava/lang/String;)Landroid/app/Person$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Person_Builder::setName(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -72,28 +64,12 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Person_Builder::setName(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setName",
-			"(Ljava/lang/CharSequence;)Landroid/app/Person$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Person_Builder::setUri(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setUri",
 			"(Ljava/lang/String;)Landroid/app/Person$Builder;",
 			arg0
-		);
-	}
-	QAndroidJniObject Person_Builder::setUri(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setUri",
-			"(Ljava/lang/String;)Landroid/app/Person$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace android::app

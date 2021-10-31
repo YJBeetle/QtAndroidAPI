@@ -14,11 +14,9 @@ namespace java::security
 		GeneralSecurityException(QAndroidJniObject obj);
 		// Constructors
 		GeneralSecurityException();
-		GeneralSecurityException(jstring &arg0);
-		GeneralSecurityException(const QString &arg0);
-		GeneralSecurityException(jthrowable &arg0);
-		GeneralSecurityException(jstring &arg0, jthrowable &arg1);
-		GeneralSecurityException(const QString &arg0, jthrowable &arg1);
+		GeneralSecurityException(jstring arg0);
+		GeneralSecurityException(jthrowable arg0);
+		GeneralSecurityException(jstring arg0, jthrowable arg1);
 		
 		// Methods
 	};

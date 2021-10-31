@@ -31,15 +31,6 @@ namespace android::graphics
 			arg0
 		);
 	}
-	QAndroidJniObject Movie::decodeFile(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.Movie",
-			"decodeFile",
-			"(Ljava/lang/String;)Landroid/graphics/Movie;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Movie::decodeStream(java::io::InputStream arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

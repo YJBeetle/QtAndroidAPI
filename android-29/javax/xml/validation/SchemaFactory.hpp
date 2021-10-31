@@ -33,17 +33,12 @@ namespace javax::xml::validation
 		// Methods
 		static QAndroidJniObject newDefaultInstance();
 		static QAndroidJniObject newInstance(jstring arg0);
-		static QAndroidJniObject newInstance(const QString &arg0);
 		static QAndroidJniObject newInstance(jstring arg0, jstring arg1, java::lang::ClassLoader arg2);
-		static QAndroidJniObject newInstance(const QString &arg0, const QString &arg1, java::lang::ClassLoader arg2);
 		QAndroidJniObject getErrorHandler();
 		jboolean getFeature(jstring arg0);
-		jboolean getFeature(const QString &arg0);
 		jobject getProperty(jstring arg0);
-		jobject getProperty(const QString &arg0);
 		QAndroidJniObject getResourceResolver();
 		jboolean isSchemaLanguageSupported(jstring arg0);
-		jboolean isSchemaLanguageSupported(const QString &arg0);
 		QAndroidJniObject newSchema();
 		QAndroidJniObject newSchema(jarray arg0);
 		QAndroidJniObject newSchema(java::io::File arg0);
@@ -51,9 +46,7 @@ namespace javax::xml::validation
 		QAndroidJniObject newSchema(__JniBaseClass arg0);
 		void setErrorHandler(__JniBaseClass arg0);
 		void setFeature(jstring arg0, jboolean arg1);
-		void setFeature(const QString &arg0, jboolean arg1);
 		void setProperty(jstring arg0, jobject arg1);
-		void setProperty(const QString &arg0, jobject arg1);
 		void setResourceResolver(__JniBaseClass arg0);
 	};
 } // namespace javax::xml::validation

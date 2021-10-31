@@ -15,7 +15,7 @@ namespace android::transition
 			"()V"
 		);
 	}
-	ArcMotion::ArcMotion(android::content::Context &arg0, __JniBaseClass &arg1)
+	ArcMotion::ArcMotion(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.transition.ArcMotion",

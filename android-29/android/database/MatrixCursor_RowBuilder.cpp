@@ -26,14 +26,5 @@ namespace android::database
 			arg1
 		);
 	}
-	QAndroidJniObject MatrixCursor_RowBuilder::add(const QString &arg0, jobject arg1)
-	{
-		return __thiz.callObjectMethod(
-			"add",
-			"(Ljava/lang/String;Ljava/lang/Object;)Landroid/database/MatrixCursor$RowBuilder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 } // namespace android::database
 

@@ -92,30 +92,12 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	QAndroidJniObject PackageInstaller_Session::openRead(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"openRead",
-			"(Ljava/lang/String;)Ljava/io/InputStream;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject PackageInstaller_Session::openWrite(jstring arg0, jlong arg1, jlong arg2)
 	{
 		return __thiz.callObjectMethod(
 			"openWrite",
 			"(Ljava/lang/String;JJ)Ljava/io/OutputStream;",
 			arg0,
-			arg1,
-			arg2
-		);
-	}
-	QAndroidJniObject PackageInstaller_Session::openWrite(const QString &arg0, jlong arg1, jlong arg2)
-	{
-		return __thiz.callObjectMethod(
-			"openWrite",
-			"(Ljava/lang/String;JJ)Ljava/io/OutputStream;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2
 		);
@@ -136,14 +118,6 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	void PackageInstaller_Session::removeSplit(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"removeSplit",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void PackageInstaller_Session::setStagingProgress(jfloat arg0)
 	{
 		__thiz.callMethod<void>(
@@ -158,14 +132,6 @@ namespace android::content::pm
 			"transfer",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void PackageInstaller_Session::transfer(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"transfer",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace android::content::pm

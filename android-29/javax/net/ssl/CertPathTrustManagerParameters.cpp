@@ -6,7 +6,7 @@ namespace javax::net::ssl
 	
 	CertPathTrustManagerParameters::CertPathTrustManagerParameters(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	CertPathTrustManagerParameters::CertPathTrustManagerParameters(__JniBaseClass &arg0)
+	CertPathTrustManagerParameters::CertPathTrustManagerParameters(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.net.ssl.CertPathTrustManagerParameters",

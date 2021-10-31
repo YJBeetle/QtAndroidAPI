@@ -9,7 +9,7 @@ namespace android::view::contentcapture
 	
 	ContentCaptureContext_Builder::ContentCaptureContext_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ContentCaptureContext_Builder::ContentCaptureContext_Builder(android::content::LocusId &arg0)
+	ContentCaptureContext_Builder::ContentCaptureContext_Builder(android::content::LocusId arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.contentcapture.ContentCaptureContext$Builder",

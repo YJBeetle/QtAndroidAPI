@@ -50,10 +50,10 @@ namespace android::widget
 		
 		VideoView(QAndroidJniObject obj);
 		// Constructors
-		VideoView(android::content::Context &arg0);
-		VideoView(android::content::Context &arg0, __JniBaseClass &arg1);
-		VideoView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		VideoView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		VideoView(android::content::Context arg0);
+		VideoView(android::content::Context arg0, __JniBaseClass arg1);
+		VideoView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		VideoView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		VideoView() = default;
 		
 		// Methods
@@ -83,7 +83,6 @@ namespace android::widget
 		void setOnInfoListener(__JniBaseClass arg0);
 		void setOnPreparedListener(__JniBaseClass arg0);
 		void setVideoPath(jstring arg0);
-		void setVideoPath(const QString &arg0);
 		void setVideoURI(android::net::Uri arg0);
 		void setVideoURI(android::net::Uri arg0, __JniBaseClass arg1);
 		void start();

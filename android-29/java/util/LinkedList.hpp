@@ -24,7 +24,7 @@ namespace java::util
 		LinkedList(QAndroidJniObject obj);
 		// Constructors
 		LinkedList();
-		LinkedList(__JniBaseClass &arg0);
+		LinkedList(__JniBaseClass arg0);
 		
 		// Methods
 		jboolean add(jobject arg0);

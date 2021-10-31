@@ -32,12 +32,10 @@ namespace android::text
 		
 		// Methods
 		static QAndroidJniObject obtain(jstring arg0, android::text::TextPaint arg1, jint arg2);
-		static QAndroidJniObject obtain(const QString &arg0, android::text::TextPaint arg1, jint arg2);
 		QAndroidJniObject build();
 		QAndroidJniObject setAlignment(android::text::Layout_Alignment arg0);
 		QAndroidJniObject setBreakStrategy(jint arg0);
 		QAndroidJniObject setDisplayText(jstring arg0);
-		QAndroidJniObject setDisplayText(const QString &arg0);
 		QAndroidJniObject setEllipsize(android::text::TextUtils_TruncateAt arg0);
 		QAndroidJniObject setEllipsizedWidth(jint arg0);
 		QAndroidJniObject setHyphenationFrequency(jint arg0);

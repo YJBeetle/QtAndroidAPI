@@ -153,15 +153,5 @@ namespace android::telephony::euicc
 			arg2.__jniObject().object()
 		);
 	}
-	void EuiccManager::updateSubscriptionNickname(jint arg0, const QString &arg1, android::app::PendingIntent arg2)
-	{
-		__thiz.callMethod<void>(
-			"updateSubscriptionNickname",
-			"(ILjava/lang/String;Landroid/app/PendingIntent;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object()
-		);
-	}
 } // namespace android::telephony::euicc
 

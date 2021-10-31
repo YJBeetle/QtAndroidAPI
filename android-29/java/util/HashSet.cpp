@@ -16,7 +16,7 @@ namespace java::util
 			"()V"
 		);
 	}
-	HashSet::HashSet(jint &arg0)
+	HashSet::HashSet(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.HashSet",
@@ -24,7 +24,7 @@ namespace java::util
 			arg0
 		);
 	}
-	HashSet::HashSet(__JniBaseClass &arg0)
+	HashSet::HashSet(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.HashSet",
@@ -32,7 +32,7 @@ namespace java::util
 			arg0.__jniObject().object()
 		);
 	}
-	HashSet::HashSet(jint &arg0, jfloat &arg1)
+	HashSet::HashSet(jint arg0, jfloat arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.HashSet",

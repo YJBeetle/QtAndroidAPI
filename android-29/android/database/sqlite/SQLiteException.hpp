@@ -16,10 +16,8 @@ namespace android::database::sqlite
 		SQLiteException(QAndroidJniObject obj);
 		// Constructors
 		SQLiteException();
-		SQLiteException(jstring &arg0);
-		SQLiteException(const QString &arg0);
-		SQLiteException(jstring &arg0, jthrowable &arg1);
-		SQLiteException(const QString &arg0, jthrowable &arg1);
+		SQLiteException(jstring arg0);
+		SQLiteException(jstring arg0, jthrowable arg1);
 		
 		// Methods
 	};

@@ -8,7 +8,7 @@ namespace java::lang::invoke
 	
 	ConstantCallSite::ConstantCallSite(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ConstantCallSite::ConstantCallSite(java::lang::invoke::MethodHandle &arg0)
+	ConstantCallSite::ConstantCallSite(java::lang::invoke::MethodHandle arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.invoke.ConstantCallSite",

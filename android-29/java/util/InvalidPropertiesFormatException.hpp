@@ -22,9 +22,8 @@ namespace java::util
 		
 		InvalidPropertiesFormatException(QAndroidJniObject obj);
 		// Constructors
-		InvalidPropertiesFormatException(jstring &arg0);
-		InvalidPropertiesFormatException(const QString &arg0);
-		InvalidPropertiesFormatException(jthrowable &arg0);
+		InvalidPropertiesFormatException(jstring arg0);
+		InvalidPropertiesFormatException(jthrowable arg0);
 		InvalidPropertiesFormatException() = default;
 		
 		// Methods

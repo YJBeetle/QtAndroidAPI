@@ -13,7 +13,7 @@ namespace java::text
 	
 	MessageFormat::MessageFormat(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MessageFormat::MessageFormat(jstring &arg0)
+	MessageFormat::MessageFormat(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.text.MessageFormat",
@@ -21,29 +21,12 @@ namespace java::text
 			arg0
 		);
 	}
-	MessageFormat::MessageFormat(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.text.MessageFormat",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	MessageFormat::MessageFormat(jstring &arg0, java::util::Locale &arg1)
+	MessageFormat::MessageFormat(jstring arg0, java::util::Locale arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.text.MessageFormat",
 			"(Ljava/lang/String;Ljava/util/Locale;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	MessageFormat::MessageFormat(const QString &arg0, java::util::Locale &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.text.MessageFormat",
-			"(Ljava/lang/String;Ljava/util/Locale;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -59,30 +42,12 @@ namespace java::text
 			arg1
 		).object<jstring>();
 	}
-	jstring MessageFormat::format(const QString &arg0, jobjectArray arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.text.MessageFormat",
-			"format",
-			"(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		).object<jstring>();
-	}
 	void MessageFormat::applyPattern(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"applyPattern",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void MessageFormat::applyPattern(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"applyPattern",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jobject MessageFormat::clone()
@@ -164,14 +129,6 @@ namespace java::text
 			arg0
 		).object<jobjectArray>();
 	}
-	jobjectArray MessageFormat::parse(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"parse",
-			"(Ljava/lang/String;)[Ljava/lang/Object;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jobjectArray>();
-	}
 	jobjectArray MessageFormat::parse(jstring arg0, java::text::ParsePosition arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -181,30 +138,12 @@ namespace java::text
 			arg1.__jniObject().object()
 		).object<jobjectArray>();
 	}
-	jobjectArray MessageFormat::parse(const QString &arg0, java::text::ParsePosition arg1)
-	{
-		return __thiz.callObjectMethod(
-			"parse",
-			"(Ljava/lang/String;Ljava/text/ParsePosition;)[Ljava/lang/Object;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		).object<jobjectArray>();
-	}
 	jobject MessageFormat::parseObject(jstring arg0, java::text::ParsePosition arg1)
 	{
 		return __thiz.callObjectMethod(
 			"parseObject",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object()
-		).object<jobject>();
-	}
-	jobject MessageFormat::parseObject(const QString &arg0, java::text::ParsePosition arg1)
-	{
-		return __thiz.callObjectMethod(
-			"parseObject",
-			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Object;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		).object<jobject>();
 	}

@@ -94,20 +94,12 @@ namespace java::security::spec
 	
 	MGF1ParameterSpec::MGF1ParameterSpec(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MGF1ParameterSpec::MGF1ParameterSpec(jstring &arg0)
+	MGF1ParameterSpec::MGF1ParameterSpec(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.spec.MGF1ParameterSpec",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	MGF1ParameterSpec::MGF1ParameterSpec(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.spec.MGF1ParameterSpec",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

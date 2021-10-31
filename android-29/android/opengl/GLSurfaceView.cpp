@@ -35,7 +35,7 @@ namespace android::opengl
 	
 	GLSurfaceView::GLSurfaceView(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	GLSurfaceView::GLSurfaceView(android::content::Context &arg0)
+	GLSurfaceView::GLSurfaceView(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.opengl.GLSurfaceView",
@@ -43,7 +43,7 @@ namespace android::opengl
 			arg0.__jniObject().object()
 		);
 	}
-	GLSurfaceView::GLSurfaceView(android::content::Context &arg0, __JniBaseClass &arg1)
+	GLSurfaceView::GLSurfaceView(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.opengl.GLSurfaceView",

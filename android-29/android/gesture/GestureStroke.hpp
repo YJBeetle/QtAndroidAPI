@@ -31,7 +31,7 @@ namespace android::gesture
 		
 		GestureStroke(QAndroidJniObject obj);
 		// Constructors
-		GestureStroke(java::util::ArrayList &arg0);
+		GestureStroke(java::util::ArrayList arg0);
 		GestureStroke() = default;
 		
 		// Methods

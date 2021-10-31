@@ -46,22 +46,15 @@ namespace android::icu::text
 		QAndroidJniObject getUiList(__JniBaseClass arg0, jboolean arg1, __JniBaseClass arg2);
 		QAndroidJniObject getUiListCompareWholeItems(__JniBaseClass arg0, __JniBaseClass arg1);
 		jstring keyDisplayName(jstring arg0);
-		jstring keyDisplayName(const QString &arg0);
 		jstring keyValueDisplayName(jstring arg0, jstring arg1);
-		jstring keyValueDisplayName(const QString &arg0, const QString &arg1);
 		jstring languageDisplayName(jstring arg0);
-		jstring languageDisplayName(const QString &arg0);
 		jstring localeDisplayName(android::icu::util::ULocale arg0);
 		jstring localeDisplayName(jstring arg0);
-		jstring localeDisplayName(const QString &arg0);
 		jstring localeDisplayName(java::util::Locale arg0);
 		jstring regionDisplayName(jstring arg0);
-		jstring regionDisplayName(const QString &arg0);
 		jstring scriptDisplayName(jint arg0);
 		jstring scriptDisplayName(jstring arg0);
-		jstring scriptDisplayName(const QString &arg0);
 		jstring variantDisplayName(jstring arg0);
-		jstring variantDisplayName(const QString &arg0);
 	};
 } // namespace android::icu::text
 

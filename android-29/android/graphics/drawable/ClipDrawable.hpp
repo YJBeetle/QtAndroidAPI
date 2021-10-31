@@ -32,7 +32,7 @@ namespace android::graphics::drawable
 		
 		ClipDrawable(QAndroidJniObject obj);
 		// Constructors
-		ClipDrawable(android::graphics::drawable::Drawable &arg0, jint &arg1, jint &arg2);
+		ClipDrawable(android::graphics::drawable::Drawable arg0, jint arg1, jint arg2);
 		ClipDrawable() = default;
 		
 		// Methods

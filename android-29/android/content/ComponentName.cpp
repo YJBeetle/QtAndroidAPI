@@ -16,7 +16,7 @@ namespace android::content
 	
 	ComponentName::ComponentName(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ComponentName::ComponentName(android::os::Parcel &arg0)
+	ComponentName::ComponentName(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.ComponentName",
@@ -24,7 +24,7 @@ namespace android::content
 			arg0.__jniObject().object()
 		);
 	}
-	ComponentName::ComponentName(android::content::Context &arg0, jclass &arg1)
+	ComponentName::ComponentName(android::content::Context arg0, jclass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.ComponentName",
@@ -33,7 +33,7 @@ namespace android::content
 			arg1
 		);
 	}
-	ComponentName::ComponentName(android::content::Context &arg0, jstring &arg1)
+	ComponentName::ComponentName(android::content::Context arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.ComponentName",
@@ -42,31 +42,13 @@ namespace android::content
 			arg1
 		);
 	}
-	ComponentName::ComponentName(android::content::Context &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.ComponentName",
-			"(Landroid/content/Context;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	ComponentName::ComponentName(jstring &arg0, jstring &arg1)
+	ComponentName::ComponentName(jstring arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.ComponentName",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	ComponentName::ComponentName(const QString &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.ComponentName",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	
@@ -81,16 +63,6 @@ namespace android::content
 			arg1
 		);
 	}
-	QAndroidJniObject ComponentName::createRelative(android::content::Context arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.content.ComponentName",
-			"createRelative",
-			"(Landroid/content/Context;Ljava/lang/String;)Landroid/content/ComponentName;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	QAndroidJniObject ComponentName::createRelative(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -99,16 +71,6 @@ namespace android::content
 			"(Ljava/lang/String;Ljava/lang/String;)Landroid/content/ComponentName;",
 			arg0,
 			arg1
-		);
-	}
-	QAndroidJniObject ComponentName::createRelative(const QString &arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.content.ComponentName",
-			"createRelative",
-			"(Ljava/lang/String;Ljava/lang/String;)Landroid/content/ComponentName;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	QAndroidJniObject ComponentName::readFromParcel(android::os::Parcel arg0)
@@ -127,15 +89,6 @@ namespace android::content
 			"unflattenFromString",
 			"(Ljava/lang/String;)Landroid/content/ComponentName;",
 			arg0
-		);
-	}
-	QAndroidJniObject ComponentName::unflattenFromString(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.content.ComponentName",
-			"unflattenFromString",
-			"(Ljava/lang/String;)Landroid/content/ComponentName;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void ComponentName::writeToParcel(android::content::ComponentName arg0, android::os::Parcel arg1)

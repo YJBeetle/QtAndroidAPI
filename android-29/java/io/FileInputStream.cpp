@@ -9,7 +9,7 @@ namespace java::io
 	
 	FileInputStream::FileInputStream(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	FileInputStream::FileInputStream(java::io::File &arg0)
+	FileInputStream::FileInputStream(java::io::File arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.FileInputStream",
@@ -17,7 +17,7 @@ namespace java::io
 			arg0.__jniObject().object()
 		);
 	}
-	FileInputStream::FileInputStream(java::io::FileDescriptor &arg0)
+	FileInputStream::FileInputStream(java::io::FileDescriptor arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.FileInputStream",
@@ -25,20 +25,12 @@ namespace java::io
 			arg0.__jniObject().object()
 		);
 	}
-	FileInputStream::FileInputStream(jstring &arg0)
+	FileInputStream::FileInputStream(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.FileInputStream",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	FileInputStream::FileInputStream(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.io.FileInputStream",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

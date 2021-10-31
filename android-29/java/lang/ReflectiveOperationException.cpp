@@ -13,7 +13,7 @@ namespace java::lang
 			"()V"
 		);
 	}
-	ReflectiveOperationException::ReflectiveOperationException(jstring &arg0)
+	ReflectiveOperationException::ReflectiveOperationException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.ReflectiveOperationException",
@@ -21,15 +21,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	ReflectiveOperationException::ReflectiveOperationException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.ReflectiveOperationException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	ReflectiveOperationException::ReflectiveOperationException(jthrowable &arg0)
+	ReflectiveOperationException::ReflectiveOperationException(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.ReflectiveOperationException",
@@ -37,21 +29,12 @@ namespace java::lang
 			arg0
 		);
 	}
-	ReflectiveOperationException::ReflectiveOperationException(jstring &arg0, jthrowable &arg1)
+	ReflectiveOperationException::ReflectiveOperationException(jstring arg0, jthrowable arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.ReflectiveOperationException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
-			arg1
-		);
-	}
-	ReflectiveOperationException::ReflectiveOperationException(const QString &arg0, jthrowable &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.ReflectiveOperationException",
-			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

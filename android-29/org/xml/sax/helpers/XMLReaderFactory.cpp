@@ -26,14 +26,5 @@ namespace org::xml::sax::helpers
 			arg0
 		);
 	}
-	QAndroidJniObject XMLReaderFactory::createXMLReader(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"org.xml.sax.helpers.XMLReaderFactory",
-			"createXMLReader",
-			"(Ljava/lang/String;)Lorg/xml/sax/XMLReader;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 } // namespace org::xml::sax::helpers
 

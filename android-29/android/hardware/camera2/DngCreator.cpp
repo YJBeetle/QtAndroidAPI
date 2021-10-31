@@ -22,7 +22,7 @@ namespace android::hardware::camera2
 	
 	DngCreator::DngCreator(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DngCreator::DngCreator(android::hardware::camera2::CameraCharacteristics &arg0, android::hardware::camera2::CaptureResult &arg1)
+	DngCreator::DngCreator(android::hardware::camera2::CameraCharacteristics arg0, android::hardware::camera2::CaptureResult arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.hardware.camera2.DngCreator",
@@ -46,14 +46,6 @@ namespace android::hardware::camera2
 			"setDescription",
 			"(Ljava/lang/String;)Landroid/hardware/camera2/DngCreator;",
 			arg0
-		);
-	}
-	QAndroidJniObject DngCreator::setDescription(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setDescription",
-			"(Ljava/lang/String;)Landroid/hardware/camera2/DngCreator;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject DngCreator::setLocation(android::location::Location arg0)

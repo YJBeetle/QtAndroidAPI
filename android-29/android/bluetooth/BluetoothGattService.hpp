@@ -27,7 +27,7 @@ namespace android::bluetooth
 		
 		BluetoothGattService(QAndroidJniObject obj);
 		// Constructors
-		BluetoothGattService(java::util::UUID &arg0, jint &arg1);
+		BluetoothGattService(java::util::UUID arg0, jint arg1);
 		BluetoothGattService() = default;
 		
 		// Methods

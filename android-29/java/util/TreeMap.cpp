@@ -15,7 +15,7 @@ namespace java::util
 			"()V"
 		);
 	}
-	TreeMap::TreeMap(__JniBaseClass &arg0)
+	TreeMap::TreeMap(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.TreeMap",

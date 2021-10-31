@@ -25,9 +25,7 @@ namespace android::bluetooth::le
 		// Methods
 		QAndroidJniObject build();
 		QAndroidJniObject setDeviceAddress(jstring arg0);
-		QAndroidJniObject setDeviceAddress(const QString &arg0);
 		QAndroidJniObject setDeviceName(jstring arg0);
-		QAndroidJniObject setDeviceName(const QString &arg0);
 		QAndroidJniObject setManufacturerData(jint arg0, jbyteArray arg1);
 		QAndroidJniObject setManufacturerData(jint arg0, jbyteArray arg1, jbyteArray arg2);
 		QAndroidJniObject setServiceData(android::os::ParcelUuid arg0, jbyteArray arg1);

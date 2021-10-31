@@ -24,7 +24,6 @@ namespace android::renderscript
 		jstring getName();
 		jint hashCode();
 		void setName(jstring arg0);
-		void setName(const QString &arg0);
 	};
 } // namespace android::renderscript
 

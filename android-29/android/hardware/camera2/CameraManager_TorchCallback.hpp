@@ -16,9 +16,7 @@ namespace android::hardware::camera2
 		
 		// Methods
 		void onTorchModeChanged(jstring arg0, jboolean arg1);
-		void onTorchModeChanged(const QString &arg0, jboolean arg1);
 		void onTorchModeUnavailable(jstring arg0);
-		void onTorchModeUnavailable(const QString &arg0);
 	};
 } // namespace android::hardware::camera2
 

@@ -21,15 +21,6 @@ namespace javax::crypto
 			arg0
 		);
 	}
-	QAndroidJniObject KeyAgreement::getInstance(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"javax.crypto.KeyAgreement",
-			"getInstance",
-			"(Ljava/lang/String;)Ljavax/crypto/KeyAgreement;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject KeyAgreement::getInstance(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -40,16 +31,6 @@ namespace javax::crypto
 			arg1
 		);
 	}
-	QAndroidJniObject KeyAgreement::getInstance(const QString &arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"javax.crypto.KeyAgreement",
-			"getInstance",
-			"(Ljava/lang/String;Ljava/lang/String;)Ljavax/crypto/KeyAgreement;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	QAndroidJniObject KeyAgreement::getInstance(jstring arg0, java::security::Provider arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -57,16 +38,6 @@ namespace javax::crypto
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljavax/crypto/KeyAgreement;",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject KeyAgreement::getInstance(const QString &arg0, java::security::Provider arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"javax.crypto.KeyAgreement",
-			"getInstance",
-			"(Ljava/lang/String;Ljava/security/Provider;)Ljavax/crypto/KeyAgreement;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -101,14 +72,6 @@ namespace javax::crypto
 			"generateSecret",
 			"(Ljava/lang/String;)Ljavax/crypto/SecretKey;",
 			arg0
-		);
-	}
-	QAndroidJniObject KeyAgreement::generateSecret(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"generateSecret",
-			"(Ljava/lang/String;)Ljavax/crypto/SecretKey;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring KeyAgreement::getAlgorithm()

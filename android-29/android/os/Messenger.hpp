@@ -25,8 +25,8 @@ namespace android::os
 		
 		Messenger(QAndroidJniObject obj);
 		// Constructors
-		Messenger(android::os::Handler &arg0);
-		Messenger(__JniBaseClass &arg0);
+		Messenger(android::os::Handler arg0);
+		Messenger(__JniBaseClass arg0);
 		Messenger() = default;
 		
 		// Methods

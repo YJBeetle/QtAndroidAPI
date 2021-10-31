@@ -7,7 +7,7 @@ namespace android::media
 	
 	MediaSession2Service_MediaNotification::MediaSession2Service_MediaNotification(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MediaSession2Service_MediaNotification::MediaSession2Service_MediaNotification(jint &arg0, android::app::Notification &arg1)
+	MediaSession2Service_MediaNotification::MediaSession2Service_MediaNotification(jint arg0, android::app::Notification arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.MediaSession2Service$MediaNotification",

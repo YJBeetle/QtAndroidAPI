@@ -12,8 +12,8 @@ namespace java::util
 		
 		AbstractMap_SimpleEntry(QAndroidJniObject obj);
 		// Constructors
-		AbstractMap_SimpleEntry(__JniBaseClass &arg0);
-		AbstractMap_SimpleEntry(jobject &arg0, jobject &arg1);
+		AbstractMap_SimpleEntry(__JniBaseClass arg0);
+		AbstractMap_SimpleEntry(jobject arg0, jobject arg1);
 		AbstractMap_SimpleEntry() = default;
 		
 		// Methods

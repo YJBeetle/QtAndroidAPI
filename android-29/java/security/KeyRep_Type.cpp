@@ -41,15 +41,6 @@ namespace java::security
 			arg0
 		);
 	}
-	QAndroidJniObject KeyRep_Type::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.security.KeyRep$Type",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/security/KeyRep$Type;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray KeyRep_Type::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

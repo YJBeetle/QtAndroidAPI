@@ -211,14 +211,6 @@ namespace android::os
 			arg0
 		);
 	}
-	jboolean PowerManager::isIgnoringBatteryOptimizations(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isIgnoringBatteryOptimizations",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jboolean PowerManager::isInteractive()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -264,29 +256,12 @@ namespace android::os
 			arg1
 		);
 	}
-	QAndroidJniObject PowerManager::newWakeLock(jint arg0, const QString &arg1)
-	{
-		return __thiz.callObjectMethod(
-			"newWakeLock",
-			"(ILjava/lang/String;)Landroid/os/PowerManager$WakeLock;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	void PowerManager::reboot(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"reboot",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void PowerManager::reboot(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"reboot",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void PowerManager::removeThermalStatusListener(__JniBaseClass arg0)

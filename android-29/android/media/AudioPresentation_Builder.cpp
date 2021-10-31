@@ -8,7 +8,7 @@ namespace android::media
 	
 	AudioPresentation_Builder::AudioPresentation_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AudioPresentation_Builder::AudioPresentation_Builder(jint &arg0)
+	AudioPresentation_Builder::AudioPresentation_Builder(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.AudioPresentation$Builder",

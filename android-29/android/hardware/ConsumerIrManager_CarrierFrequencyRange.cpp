@@ -7,7 +7,7 @@ namespace android::hardware
 	
 	ConsumerIrManager_CarrierFrequencyRange::ConsumerIrManager_CarrierFrequencyRange(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ConsumerIrManager_CarrierFrequencyRange::ConsumerIrManager_CarrierFrequencyRange(android::hardware::ConsumerIrManager &arg0, jint &arg1, jint &arg2)
+	ConsumerIrManager_CarrierFrequencyRange::ConsumerIrManager_CarrierFrequencyRange(android::hardware::ConsumerIrManager arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.hardware.ConsumerIrManager$CarrierFrequencyRange",

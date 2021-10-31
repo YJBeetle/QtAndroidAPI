@@ -15,8 +15,7 @@ namespace javax::crypto
 		ExemptionMechanismException(QAndroidJniObject obj);
 		// Constructors
 		ExemptionMechanismException();
-		ExemptionMechanismException(jstring &arg0);
-		ExemptionMechanismException(const QString &arg0);
+		ExemptionMechanismException(jstring arg0);
 		
 		// Methods
 	};

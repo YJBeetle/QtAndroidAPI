@@ -24,7 +24,7 @@ namespace android::content
 		
 		Loader(QAndroidJniObject obj);
 		// Constructors
-		Loader(android::content::Context &arg0);
+		Loader(android::content::Context arg0);
 		Loader() = default;
 		
 		// Methods
@@ -35,7 +35,6 @@ namespace android::content
 		void deliverCancellation();
 		void deliverResult(jobject arg0);
 		void dump(jstring arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3);
-		void dump(const QString &arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3);
 		void forceLoad();
 		QAndroidJniObject getContext();
 		jint getId();

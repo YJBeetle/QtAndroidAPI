@@ -42,7 +42,6 @@ namespace android::net::http
 		void _delete();
 		void flush();
 		QAndroidJniObject get(java::net::URI arg0, jstring arg1, __JniBaseClass arg2);
-		QAndroidJniObject get(java::net::URI arg0, const QString &arg1, __JniBaseClass arg2);
 		jint getHitCount();
 		jint getNetworkCount();
 		jint getRequestCount();

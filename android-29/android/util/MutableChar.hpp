@@ -13,7 +13,7 @@ namespace android::util
 		
 		MutableChar(QAndroidJniObject obj);
 		// Constructors
-		MutableChar(jchar &arg0);
+		MutableChar(jchar arg0);
 		MutableChar() = default;
 		
 		// Methods

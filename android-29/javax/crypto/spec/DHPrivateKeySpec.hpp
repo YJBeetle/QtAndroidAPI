@@ -16,7 +16,7 @@ namespace javax::crypto::spec
 		
 		DHPrivateKeySpec(QAndroidJniObject obj);
 		// Constructors
-		DHPrivateKeySpec(java::math::BigInteger &arg0, java::math::BigInteger &arg1, java::math::BigInteger &arg2);
+		DHPrivateKeySpec(java::math::BigInteger arg0, java::math::BigInteger arg1, java::math::BigInteger arg2);
 		DHPrivateKeySpec() = default;
 		
 		// Methods

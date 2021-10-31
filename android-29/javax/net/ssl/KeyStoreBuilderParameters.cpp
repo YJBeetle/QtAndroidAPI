@@ -7,7 +7,7 @@ namespace javax::net::ssl
 	
 	KeyStoreBuilderParameters::KeyStoreBuilderParameters(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	KeyStoreBuilderParameters::KeyStoreBuilderParameters(java::security::KeyStore_Builder &arg0)
+	KeyStoreBuilderParameters::KeyStoreBuilderParameters(java::security::KeyStore_Builder arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.net.ssl.KeyStoreBuilderParameters",
@@ -15,7 +15,7 @@ namespace javax::net::ssl
 			arg0.__jniObject().object()
 		);
 	}
-	KeyStoreBuilderParameters::KeyStoreBuilderParameters(__JniBaseClass &arg0)
+	KeyStoreBuilderParameters::KeyStoreBuilderParameters(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.net.ssl.KeyStoreBuilderParameters",

@@ -95,15 +95,6 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject Period::parse(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.time.Period",
-			"parse",
-			"(Ljava/lang/CharSequence;)Ljava/time/Period;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Period::addTo(__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(

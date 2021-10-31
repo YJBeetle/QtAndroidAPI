@@ -7,7 +7,7 @@ namespace java::io
 	
 	PushbackInputStream::PushbackInputStream(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PushbackInputStream::PushbackInputStream(java::io::InputStream &arg0)
+	PushbackInputStream::PushbackInputStream(java::io::InputStream arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.PushbackInputStream",
@@ -15,7 +15,7 @@ namespace java::io
 			arg0.__jniObject().object()
 		);
 	}
-	PushbackInputStream::PushbackInputStream(java::io::InputStream &arg0, jint &arg1)
+	PushbackInputStream::PushbackInputStream(java::io::InputStream arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.PushbackInputStream",

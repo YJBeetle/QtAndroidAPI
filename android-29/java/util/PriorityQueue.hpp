@@ -23,10 +23,10 @@ namespace java::util
 		PriorityQueue(QAndroidJniObject obj);
 		// Constructors
 		PriorityQueue();
-		PriorityQueue(jint &arg0);
-		PriorityQueue(__JniBaseClass &arg0);
+		PriorityQueue(jint arg0);
+		PriorityQueue(__JniBaseClass arg0);
 		PriorityQueue(java::util::PriorityQueue &arg0);
-		PriorityQueue(jint &arg0, __JniBaseClass &arg1);
+		PriorityQueue(jint arg0, __JniBaseClass arg1);
 		
 		// Methods
 		jboolean add(jobject arg0);

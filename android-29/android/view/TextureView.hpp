@@ -49,10 +49,10 @@ namespace android::view
 		
 		TextureView(QAndroidJniObject obj);
 		// Constructors
-		TextureView(android::content::Context &arg0);
-		TextureView(android::content::Context &arg0, __JniBaseClass &arg1);
-		TextureView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		TextureView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		TextureView(android::content::Context arg0);
+		TextureView(android::content::Context arg0, __JniBaseClass arg1);
+		TextureView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		TextureView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		TextureView() = default;
 		
 		// Methods

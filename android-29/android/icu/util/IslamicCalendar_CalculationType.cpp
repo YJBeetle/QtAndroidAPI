@@ -49,15 +49,6 @@ namespace android::icu::util
 			arg0
 		);
 	}
-	QAndroidJniObject IslamicCalendar_CalculationType::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.util.IslamicCalendar$CalculationType",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/icu/util/IslamicCalendar$CalculationType;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray IslamicCalendar_CalculationType::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

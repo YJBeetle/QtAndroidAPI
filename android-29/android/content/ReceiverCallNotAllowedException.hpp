@@ -15,8 +15,7 @@ namespace android::content
 		
 		ReceiverCallNotAllowedException(QAndroidJniObject obj);
 		// Constructors
-		ReceiverCallNotAllowedException(jstring &arg0);
-		ReceiverCallNotAllowedException(const QString &arg0);
+		ReceiverCallNotAllowedException(jstring arg0);
 		ReceiverCallNotAllowedException() = default;
 		
 		// Methods

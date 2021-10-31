@@ -93,14 +93,6 @@ namespace android::os
 			arg0
 		).object<jstring>();
 	}
-	jstring Debug_MemoryInfo::getMemoryStat(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getMemoryStat",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
 	QAndroidJniObject Debug_MemoryInfo::getMemoryStats()
 	{
 		return __thiz.callObjectMethod(

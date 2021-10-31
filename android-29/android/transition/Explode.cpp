@@ -18,7 +18,7 @@ namespace android::transition
 			"()V"
 		);
 	}
-	Explode::Explode(android::content::Context &arg0, __JniBaseClass &arg1)
+	Explode::Explode(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.transition.Explode",

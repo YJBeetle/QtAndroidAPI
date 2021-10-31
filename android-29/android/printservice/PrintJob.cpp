@@ -19,14 +19,6 @@ namespace android::printservice
 			arg0
 		);
 	}
-	jboolean PrintJob::block(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"block",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jboolean PrintJob::cancel()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -57,14 +49,6 @@ namespace android::printservice
 			arg0
 		);
 	}
-	jboolean PrintJob::fail(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"fail",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jint PrintJob::getAdvancedIntOption(jstring arg0)
 	{
 		return __thiz.callMethod<jint>(
@@ -73,28 +57,12 @@ namespace android::printservice
 			arg0
 		);
 	}
-	jint PrintJob::getAdvancedIntOption(const QString &arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getAdvancedIntOption",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jstring PrintJob::getAdvancedStringOption(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getAdvancedStringOption",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
-	}
-	jstring PrintJob::getAdvancedStringOption(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getAdvancedStringOption",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	QAndroidJniObject PrintJob::getDocument()
@@ -131,14 +99,6 @@ namespace android::printservice
 			"hasAdvancedOption",
 			"(Ljava/lang/String;)Z",
 			arg0
-		);
-	}
-	jboolean PrintJob::hasAdvancedOption(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasAdvancedOption",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jint PrintJob::hashCode()
@@ -214,28 +174,12 @@ namespace android::printservice
 			arg0
 		);
 	}
-	void PrintJob::setStatus(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setStatus",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jboolean PrintJob::setTag(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"setTag",
 			"(Ljava/lang/String;)Z",
 			arg0
-		);
-	}
-	jboolean PrintJob::setTag(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"setTag",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean PrintJob::start()

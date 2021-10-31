@@ -14,7 +14,7 @@ namespace android::util
 		// Constructors
 		ArrayMap();
 		ArrayMap(android::util::ArrayMap &arg0);
-		ArrayMap(jint &arg0);
+		ArrayMap(jint arg0);
 		
 		// Methods
 		void clear();

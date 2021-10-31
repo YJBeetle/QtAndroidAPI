@@ -13,20 +13,12 @@ namespace android::view
 			"()V"
 		);
 	}
-	WindowManager_BadTokenException::WindowManager_BadTokenException(jstring &arg0)
+	WindowManager_BadTokenException::WindowManager_BadTokenException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.WindowManager$BadTokenException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	WindowManager_BadTokenException::WindowManager_BadTokenException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.WindowManager$BadTokenException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

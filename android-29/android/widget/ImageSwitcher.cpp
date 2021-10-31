@@ -9,7 +9,7 @@ namespace android::widget
 	
 	ImageSwitcher::ImageSwitcher(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ImageSwitcher::ImageSwitcher(android::content::Context &arg0)
+	ImageSwitcher::ImageSwitcher(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ImageSwitcher",
@@ -17,7 +17,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	ImageSwitcher::ImageSwitcher(android::content::Context &arg0, __JniBaseClass &arg1)
+	ImageSwitcher::ImageSwitcher(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ImageSwitcher",

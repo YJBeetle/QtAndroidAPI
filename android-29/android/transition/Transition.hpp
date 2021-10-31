@@ -53,7 +53,7 @@ namespace android::transition
 		Transition(QAndroidJniObject obj);
 		// Constructors
 		Transition();
-		Transition(android::content::Context &arg0, __JniBaseClass &arg1);
+		Transition(android::content::Context arg0, __JniBaseClass arg1);
 		
 		// Methods
 		QAndroidJniObject addListener(__JniBaseClass arg0);
@@ -61,7 +61,6 @@ namespace android::transition
 		QAndroidJniObject addTarget(jint arg0);
 		QAndroidJniObject addTarget(jclass arg0);
 		QAndroidJniObject addTarget(jstring arg0);
-		QAndroidJniObject addTarget(const QString &arg0);
 		jboolean canRemoveViews();
 		void captureEndValues(android::transition::TransitionValues arg0);
 		void captureStartValues(android::transition::TransitionValues arg0);
@@ -74,7 +73,6 @@ namespace android::transition
 		QAndroidJniObject excludeTarget(jint arg0, jboolean arg1);
 		QAndroidJniObject excludeTarget(jclass arg0, jboolean arg1);
 		QAndroidJniObject excludeTarget(jstring arg0, jboolean arg1);
-		QAndroidJniObject excludeTarget(const QString &arg0, jboolean arg1);
 		jlong getDuration();
 		QAndroidJniObject getEpicenter();
 		QAndroidJniObject getEpicenterCallback();
@@ -95,7 +93,6 @@ namespace android::transition
 		QAndroidJniObject removeTarget(jint arg0);
 		QAndroidJniObject removeTarget(jclass arg0);
 		QAndroidJniObject removeTarget(jstring arg0);
-		QAndroidJniObject removeTarget(const QString &arg0);
 		QAndroidJniObject setDuration(jlong arg0);
 		void setEpicenterCallback(android::transition::Transition_EpicenterCallback arg0);
 		QAndroidJniObject setInterpolator(__JniBaseClass arg0);

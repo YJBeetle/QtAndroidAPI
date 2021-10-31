@@ -8,7 +8,7 @@ namespace android::graphics
 	
 	PathDashPathEffect::PathDashPathEffect(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PathDashPathEffect::PathDashPathEffect(android::graphics::Path &arg0, jfloat &arg1, jfloat &arg2, android::graphics::PathDashPathEffect_Style &arg3)
+	PathDashPathEffect::PathDashPathEffect(android::graphics::Path arg0, jfloat arg1, jfloat arg2, android::graphics::PathDashPathEffect_Style arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.PathDashPathEffect",

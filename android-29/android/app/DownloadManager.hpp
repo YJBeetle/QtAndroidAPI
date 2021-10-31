@@ -79,9 +79,7 @@ namespace android::app
 		static QAndroidJniObject getMaxBytesOverMobile(android::content::Context arg0);
 		static QAndroidJniObject getRecommendedMaxBytesOverMobile(android::content::Context arg0);
 		jlong addCompletedDownload(jstring arg0, jstring arg1, jboolean arg2, jstring arg3, jstring arg4, jlong arg5, jboolean arg6);
-		jlong addCompletedDownload(const QString &arg0, const QString &arg1, jboolean arg2, const QString &arg3, const QString &arg4, jlong arg5, jboolean arg6);
 		jlong addCompletedDownload(jstring arg0, jstring arg1, jboolean arg2, jstring arg3, jstring arg4, jlong arg5, jboolean arg6, android::net::Uri arg7, android::net::Uri arg8);
-		jlong addCompletedDownload(const QString &arg0, const QString &arg1, jboolean arg2, const QString &arg3, const QString &arg4, jlong arg5, jboolean arg6, android::net::Uri arg7, android::net::Uri arg8);
 		jlong enqueue(android::app::DownloadManager_Request arg0);
 		jstring getMimeTypeForDownloadedFile(jlong arg0);
 		QAndroidJniObject getUriForDownloadedFile(jlong arg0);

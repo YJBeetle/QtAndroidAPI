@@ -201,7 +201,7 @@ namespace java::util
 	
 	Locale::Locale(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Locale::Locale(jstring &arg0)
+	Locale::Locale(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Locale",
@@ -209,15 +209,7 @@ namespace java::util
 			arg0
 		);
 	}
-	Locale::Locale(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.Locale",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	Locale::Locale(jstring &arg0, jstring &arg1)
+	Locale::Locale(jstring arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Locale",
@@ -226,16 +218,7 @@ namespace java::util
 			arg1
 		);
 	}
-	Locale::Locale(const QString &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.Locale",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	Locale::Locale(jstring &arg0, jstring &arg1, jstring &arg2)
+	Locale::Locale(jstring arg0, jstring arg1, jstring arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Locale",
@@ -243,16 +226,6 @@ namespace java::util
 			arg0,
 			arg1,
 			arg2
-		);
-	}
-	Locale::Locale(const QString &arg0, const QString &arg1, const QString &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.Locale",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	
@@ -306,15 +279,6 @@ namespace java::util
 			"forLanguageTag",
 			"(Ljava/lang/String;)Ljava/util/Locale;",
 			arg0
-		);
-	}
-	QAndroidJniObject Locale::forLanguageTag(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.util.Locale",
-			"forLanguageTag",
-			"(Ljava/lang/String;)Ljava/util/Locale;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jarray Locale::getAvailableLocales()
@@ -566,14 +530,6 @@ namespace java::util
 			"getUnicodeLocaleType",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
-	}
-	jstring Locale::getUnicodeLocaleType(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getUnicodeLocaleType",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	jstring Locale::getVariant()

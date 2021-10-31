@@ -13,7 +13,7 @@ namespace org::xml::sax::helpers
 		LocatorImpl(QAndroidJniObject obj);
 		// Constructors
 		LocatorImpl();
-		LocatorImpl(__JniBaseClass &arg0);
+		LocatorImpl(__JniBaseClass arg0);
 		
 		// Methods
 		jint getColumnNumber();
@@ -23,9 +23,7 @@ namespace org::xml::sax::helpers
 		void setColumnNumber(jint arg0);
 		void setLineNumber(jint arg0);
 		void setPublicId(jstring arg0);
-		void setPublicId(const QString &arg0);
 		void setSystemId(jstring arg0);
-		void setSystemId(const QString &arg0);
 	};
 } // namespace org::xml::sax::helpers
 

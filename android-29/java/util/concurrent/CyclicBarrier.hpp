@@ -20,8 +20,8 @@ namespace java::util::concurrent
 		
 		CyclicBarrier(QAndroidJniObject obj);
 		// Constructors
-		CyclicBarrier(jint &arg0);
-		CyclicBarrier(jint &arg0, __JniBaseClass &arg1);
+		CyclicBarrier(jint arg0);
+		CyclicBarrier(jint arg0, __JniBaseClass arg1);
 		CyclicBarrier() = default;
 		
 		// Methods

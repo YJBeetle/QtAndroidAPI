@@ -50,22 +50,13 @@ namespace android::drm
 	
 	DrmInfoRequest::DrmInfoRequest(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DrmInfoRequest::DrmInfoRequest(jint &arg0, jstring &arg1)
+	DrmInfoRequest::DrmInfoRequest(jint arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.drm.DrmInfoRequest",
 			"(ILjava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	DrmInfoRequest::DrmInfoRequest(jint &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.drm.DrmInfoRequest",
-			"(ILjava/lang/String;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	
@@ -76,14 +67,6 @@ namespace android::drm
 			"get",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
 			arg0
-		).object<jobject>();
-	}
-	jobject DrmInfoRequest::get(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"get",
-			"(Ljava/lang/String;)Ljava/lang/Object;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jobject>();
 	}
 	jint DrmInfoRequest::getInfoType()
@@ -120,15 +103,6 @@ namespace android::drm
 			"put",
 			"(Ljava/lang/String;Ljava/lang/Object;)V",
 			arg0,
-			arg1
-		);
-	}
-	void DrmInfoRequest::put(const QString &arg0, jobject arg1)
-	{
-		__thiz.callMethod<void>(
-			"put",
-			"(Ljava/lang/String;Ljava/lang/Object;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

@@ -81,15 +81,6 @@ namespace android::provider
 			arg0
 		);
 	}
-	QAndroidJniObject MediaStore_Audio_Media::getContentUri(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.MediaStore$Audio$Media",
-			"getContentUri",
-			"(Ljava/lang/String;)Landroid/net/Uri;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject MediaStore_Audio_Media::getContentUriForPath(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -97,15 +88,6 @@ namespace android::provider
 			"getContentUriForPath",
 			"(Ljava/lang/String;)Landroid/net/Uri;",
 			arg0
-		);
-	}
-	QAndroidJniObject MediaStore_Audio_Media::getContentUriForPath(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.MediaStore$Audio$Media",
-			"getContentUriForPath",
-			"(Ljava/lang/String;)Landroid/net/Uri;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace android::provider

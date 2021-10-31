@@ -93,30 +93,12 @@ namespace android::app
 			arg1.__jniObject().object()
 		);
 	}
-	void AlertDialog::setButton(const QString &arg0, __JniBaseClass arg1)
-	{
-		__thiz.callMethod<void>(
-			"setButton",
-			"(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	void AlertDialog::setButton(jstring arg0, android::os::Message arg1)
 	{
 		__thiz.callMethod<void>(
 			"setButton",
 			"(Ljava/lang/CharSequence;Landroid/os/Message;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void AlertDialog::setButton(const QString &arg0, android::os::Message arg1)
-	{
-		__thiz.callMethod<void>(
-			"setButton",
-			"(Ljava/lang/CharSequence;Landroid/os/Message;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -130,16 +112,6 @@ namespace android::app
 			arg2.__jniObject().object()
 		);
 	}
-	void AlertDialog::setButton(jint arg0, const QString &arg1, __JniBaseClass arg2)
-	{
-		__thiz.callMethod<void>(
-			"setButton",
-			"(ILjava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object()
-		);
-	}
 	void AlertDialog::setButton(jint arg0, jstring arg1, android::os::Message arg2)
 	{
 		__thiz.callMethod<void>(
@@ -147,16 +119,6 @@ namespace android::app
 			"(ILjava/lang/CharSequence;Landroid/os/Message;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void AlertDialog::setButton(jint arg0, const QString &arg1, android::os::Message arg2)
-	{
-		__thiz.callMethod<void>(
-			"setButton",
-			"(ILjava/lang/CharSequence;Landroid/os/Message;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}
@@ -169,30 +131,12 @@ namespace android::app
 			arg1.__jniObject().object()
 		);
 	}
-	void AlertDialog::setButton2(const QString &arg0, __JniBaseClass arg1)
-	{
-		__thiz.callMethod<void>(
-			"setButton2",
-			"(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	void AlertDialog::setButton2(jstring arg0, android::os::Message arg1)
 	{
 		__thiz.callMethod<void>(
 			"setButton2",
 			"(Ljava/lang/CharSequence;Landroid/os/Message;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void AlertDialog::setButton2(const QString &arg0, android::os::Message arg1)
-	{
-		__thiz.callMethod<void>(
-			"setButton2",
-			"(Ljava/lang/CharSequence;Landroid/os/Message;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -205,30 +149,12 @@ namespace android::app
 			arg1.__jniObject().object()
 		);
 	}
-	void AlertDialog::setButton3(const QString &arg0, __JniBaseClass arg1)
-	{
-		__thiz.callMethod<void>(
-			"setButton3",
-			"(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	void AlertDialog::setButton3(jstring arg0, android::os::Message arg1)
 	{
 		__thiz.callMethod<void>(
 			"setButton3",
 			"(Ljava/lang/CharSequence;Landroid/os/Message;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void AlertDialog::setButton3(const QString &arg0, android::os::Message arg1)
-	{
-		__thiz.callMethod<void>(
-			"setButton3",
-			"(Ljava/lang/CharSequence;Landroid/os/Message;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -280,28 +206,12 @@ namespace android::app
 			arg0
 		);
 	}
-	void AlertDialog::setMessage(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setMessage",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void AlertDialog::setTitle(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTitle",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
-		);
-	}
-	void AlertDialog::setTitle(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTitle",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void AlertDialog::setView(android::view::View arg0)

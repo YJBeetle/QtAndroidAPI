@@ -24,8 +24,8 @@ namespace android::graphics
 		PointF(QAndroidJniObject obj);
 		// Constructors
 		PointF();
-		PointF(android::graphics::Point &arg0);
-		PointF(jfloat &arg0, jfloat &arg1);
+		PointF(android::graphics::Point arg0);
+		PointF(jfloat arg0, jfloat arg1);
 		
 		// Methods
 		static jfloat length(jfloat arg0, jfloat arg1);

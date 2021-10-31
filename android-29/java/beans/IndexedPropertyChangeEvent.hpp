@@ -18,8 +18,7 @@ namespace java::beans
 		
 		IndexedPropertyChangeEvent(QAndroidJniObject obj);
 		// Constructors
-		IndexedPropertyChangeEvent(jobject &arg0, jstring &arg1, jobject &arg2, jobject &arg3, jint &arg4);
-		IndexedPropertyChangeEvent(jobject &arg0, const QString &arg1, jobject &arg2, jobject &arg3, jint &arg4);
+		IndexedPropertyChangeEvent(jobject arg0, jstring arg1, jobject arg2, jobject arg3, jint arg4);
 		IndexedPropertyChangeEvent() = default;
 		
 		// Methods

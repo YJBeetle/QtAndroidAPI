@@ -26,7 +26,6 @@ namespace android::webkit
 		jboolean acceptThirdPartyCookies(android::webkit::WebView arg0);
 		void flush();
 		jstring getCookie(jstring arg0);
-		jstring getCookie(const QString &arg0);
 		jboolean hasCookies();
 		void removeAllCookie();
 		void removeAllCookies(__JniBaseClass arg0);
@@ -36,9 +35,7 @@ namespace android::webkit
 		void setAcceptCookie(jboolean arg0);
 		void setAcceptThirdPartyCookies(android::webkit::WebView arg0, jboolean arg1);
 		void setCookie(jstring arg0, jstring arg1);
-		void setCookie(const QString &arg0, const QString &arg1);
 		void setCookie(jstring arg0, jstring arg1, __JniBaseClass arg2);
-		void setCookie(const QString &arg0, const QString &arg1, __JniBaseClass arg2);
 	};
 } // namespace android::webkit
 

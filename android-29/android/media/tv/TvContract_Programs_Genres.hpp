@@ -33,10 +33,8 @@ namespace android::media::tv
 		
 		// Methods
 		static jarray decode(jstring arg0);
-		static jarray decode(const QString &arg0);
 		static jstring encode(jarray arg0);
 		static jboolean isCanonical(jstring arg0);
-		static jboolean isCanonical(const QString &arg0);
 	};
 } // namespace android::media::tv
 

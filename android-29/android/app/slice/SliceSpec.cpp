@@ -15,21 +15,12 @@ namespace android::app::slice
 	
 	SliceSpec::SliceSpec(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SliceSpec::SliceSpec(jstring &arg0, jint &arg1)
+	SliceSpec::SliceSpec(jstring arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.slice.SliceSpec",
 			"(Ljava/lang/String;I)V",
 			arg0,
-			arg1
-		);
-	}
-	SliceSpec::SliceSpec(const QString &arg0, jint &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.app.slice.SliceSpec",
-			"(Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

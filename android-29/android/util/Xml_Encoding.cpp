@@ -49,15 +49,6 @@ namespace android::util
 			arg0
 		);
 	}
-	QAndroidJniObject Xml_Encoding::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.util.Xml$Encoding",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/util/Xml$Encoding;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray Xml_Encoding::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

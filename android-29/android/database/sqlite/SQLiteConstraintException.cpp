@@ -13,20 +13,12 @@ namespace android::database::sqlite
 			"()V"
 		);
 	}
-	SQLiteConstraintException::SQLiteConstraintException(jstring &arg0)
+	SQLiteConstraintException::SQLiteConstraintException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.database.sqlite.SQLiteConstraintException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	SQLiteConstraintException::SQLiteConstraintException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.database.sqlite.SQLiteConstraintException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

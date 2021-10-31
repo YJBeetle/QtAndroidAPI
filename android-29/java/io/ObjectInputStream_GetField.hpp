@@ -20,25 +20,15 @@ namespace java::io
 		
 		// Methods
 		jboolean defaulted(jstring arg0);
-		jboolean defaulted(const QString &arg0);
 		jboolean get(jstring arg0, jboolean arg1);
-		jboolean get(const QString &arg0, jboolean arg1);
 		jbyte get(jstring arg0, jbyte arg1);
-		jbyte get(const QString &arg0, jbyte arg1);
 		jchar get(jstring arg0, jchar arg1);
-		jchar get(const QString &arg0, jchar arg1);
 		jdouble get(jstring arg0, jdouble arg1);
-		jdouble get(const QString &arg0, jdouble arg1);
 		jfloat get(jstring arg0, jfloat arg1);
-		jfloat get(const QString &arg0, jfloat arg1);
 		jint get(jstring arg0, jint arg1);
-		jint get(const QString &arg0, jint arg1);
 		jobject get(jstring arg0, jobject arg1);
-		jobject get(const QString &arg0, jobject arg1);
 		jlong get(jstring arg0, jlong arg1);
-		jlong get(const QString &arg0, jlong arg1);
 		jshort get(jstring arg0, jshort arg1);
-		jshort get(const QString &arg0, jshort arg1);
 		QAndroidJniObject getObjectStreamClass();
 	};
 } // namespace java::io

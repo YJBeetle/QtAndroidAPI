@@ -28,16 +28,6 @@ namespace android::net
 			arg1
 		);
 	}
-	QAndroidJniObject ProxyInfo::buildDirectProxy(const QString &arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.net.ProxyInfo",
-			"buildDirectProxy",
-			"(Ljava/lang/String;I)Landroid/net/ProxyInfo;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	QAndroidJniObject ProxyInfo::buildDirectProxy(jstring arg0, jint arg1, __JniBaseClass arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -45,17 +35,6 @@ namespace android::net
 			"buildDirectProxy",
 			"(Ljava/lang/String;ILjava/util/List;)Landroid/net/ProxyInfo;",
 			arg0,
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	QAndroidJniObject ProxyInfo::buildDirectProxy(const QString &arg0, jint arg1, __JniBaseClass arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.net.ProxyInfo",
-			"buildDirectProxy",
-			"(Ljava/lang/String;ILjava/util/List;)Landroid/net/ProxyInfo;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2.__jniObject().object()
 		);

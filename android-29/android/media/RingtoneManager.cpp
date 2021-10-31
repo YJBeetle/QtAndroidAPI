@@ -132,7 +132,7 @@ namespace android::media
 	
 	RingtoneManager::RingtoneManager(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	RingtoneManager::RingtoneManager(android::app::Activity &arg0)
+	RingtoneManager::RingtoneManager(android::app::Activity arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.RingtoneManager",
@@ -140,7 +140,7 @@ namespace android::media
 			arg0.__jniObject().object()
 		);
 	}
-	RingtoneManager::RingtoneManager(android::content::Context &arg0)
+	RingtoneManager::RingtoneManager(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.RingtoneManager",

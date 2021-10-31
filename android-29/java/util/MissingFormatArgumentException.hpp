@@ -16,8 +16,7 @@ namespace java::util
 		
 		MissingFormatArgumentException(QAndroidJniObject obj);
 		// Constructors
-		MissingFormatArgumentException(jstring &arg0);
-		MissingFormatArgumentException(const QString &arg0);
+		MissingFormatArgumentException(jstring arg0);
 		MissingFormatArgumentException() = default;
 		
 		// Methods

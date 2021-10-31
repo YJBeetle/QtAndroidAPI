@@ -7,7 +7,7 @@ namespace android::database
 	
 	CrossProcessCursorWrapper::CrossProcessCursorWrapper(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	CrossProcessCursorWrapper::CrossProcessCursorWrapper(__JniBaseClass &arg0)
+	CrossProcessCursorWrapper::CrossProcessCursorWrapper(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.database.CrossProcessCursorWrapper",

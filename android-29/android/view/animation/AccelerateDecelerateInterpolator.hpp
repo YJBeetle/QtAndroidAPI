@@ -18,7 +18,7 @@ namespace android::view::animation
 		AccelerateDecelerateInterpolator(QAndroidJniObject obj);
 		// Constructors
 		AccelerateDecelerateInterpolator();
-		AccelerateDecelerateInterpolator(android::content::Context &arg0, __JniBaseClass &arg1);
+		AccelerateDecelerateInterpolator(android::content::Context arg0, __JniBaseClass arg1);
 		
 		// Methods
 		jfloat getInterpolation(jfloat arg0);

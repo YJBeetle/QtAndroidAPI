@@ -10,7 +10,7 @@ namespace android::graphics::drawable::shapes
 	
 	PathShape::PathShape(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PathShape::PathShape(android::graphics::Path &arg0, jfloat &arg1, jfloat &arg2)
+	PathShape::PathShape(android::graphics::Path arg0, jfloat arg1, jfloat arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.shapes.PathShape",

@@ -15,8 +15,7 @@ namespace java::util::zip
 		
 		ZipError(QAndroidJniObject obj);
 		// Constructors
-		ZipError(jstring &arg0);
-		ZipError(const QString &arg0);
+		ZipError(jstring arg0);
 		ZipError() = default;
 		
 		// Methods

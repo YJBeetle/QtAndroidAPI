@@ -10,22 +10,13 @@ namespace java::net
 	
 	SocketPermission::SocketPermission(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SocketPermission::SocketPermission(jstring &arg0, jstring &arg1)
+	SocketPermission::SocketPermission(jstring arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.SocketPermission",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	SocketPermission::SocketPermission(const QString &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.SocketPermission",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	

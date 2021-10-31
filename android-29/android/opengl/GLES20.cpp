@@ -2162,17 +2162,6 @@ namespace android::opengl
 			arg2
 		);
 	}
-	void GLES20::glBindAttribLocation(jint arg0, jint arg1, const QString &arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES20",
-			"glBindAttribLocation",
-			"(IILjava/lang/String;)V",
-			arg0,
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	void GLES20::glBindBuffer(jint arg0, jint arg1)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -2930,16 +2919,6 @@ namespace android::opengl
 			arg1
 		);
 	}
-	jint GLES20::glGetAttribLocation(jint arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.opengl.GLES20",
-			"glGetAttribLocation",
-			"(ILjava/lang/String;)I",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	void GLES20::glGetBooleanv(jint arg0, java::nio::IntBuffer arg1)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -3260,16 +3239,6 @@ namespace android::opengl
 			arg1
 		);
 	}
-	jint GLES20::glGetUniformLocation(jint arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.opengl.GLES20",
-			"glGetUniformLocation",
-			"(ILjava/lang/String;)I",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	void GLES20::glGetUniformfv(jint arg0, jint arg1, java::nio::FloatBuffer arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -3565,16 +3534,6 @@ namespace android::opengl
 			"(ILjava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	void GLES20::glShaderSource(jint arg0, const QString &arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES20",
-			"glShaderSource",
-			"(ILjava/lang/String;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void GLES20::glStencilFunc(jint arg0, jint arg1, jint arg2)

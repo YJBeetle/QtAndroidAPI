@@ -23,7 +23,7 @@ namespace android::media::browse
 		
 		MediaBrowser_MediaItem(QAndroidJniObject obj);
 		// Constructors
-		MediaBrowser_MediaItem(android::media::MediaDescription &arg0, jint &arg1);
+		MediaBrowser_MediaItem(android::media::MediaDescription arg0, jint arg1);
 		MediaBrowser_MediaItem() = default;
 		
 		// Methods

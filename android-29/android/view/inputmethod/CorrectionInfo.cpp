@@ -15,7 +15,7 @@ namespace android::view::inputmethod
 	
 	CorrectionInfo::CorrectionInfo(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	CorrectionInfo::CorrectionInfo(jint &arg0, jstring &arg1, jstring &arg2)
+	CorrectionInfo::CorrectionInfo(jint arg0, jstring arg1, jstring arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.inputmethod.CorrectionInfo",
@@ -23,16 +23,6 @@ namespace android::view::inputmethod
 			arg0,
 			arg1,
 			arg2
-		);
-	}
-	CorrectionInfo::CorrectionInfo(jint &arg0, const QString &arg1, const QString &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.inputmethod.CorrectionInfo",
-			"(ILjava/lang/CharSequence;Ljava/lang/CharSequence;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	

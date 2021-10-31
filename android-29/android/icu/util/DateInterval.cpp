@@ -6,7 +6,7 @@ namespace android::icu::util
 	
 	DateInterval::DateInterval(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DateInterval::DateInterval(jlong &arg0, jlong &arg1)
+	DateInterval::DateInterval(jlong arg0, jlong arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.DateInterval",

@@ -68,15 +68,5 @@ namespace android::provider
 			arg1
 		);
 	}
-	QAndroidJniObject Telephony_ServiceStateTable::getUriForSubscriptionIdAndField(jint arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.Telephony$ServiceStateTable",
-			"getUriForSubscriptionIdAndField",
-			"(ILjava/lang/String;)Landroid/net/Uri;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 } // namespace android::provider
 

@@ -235,15 +235,6 @@ namespace android::bluetooth
 			arg0
 		);
 	}
-	jboolean BluetoothAdapter::checkBluetoothAddress(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.bluetooth.BluetoothAdapter",
-			"checkBluetoothAddress",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject BluetoothAdapter::getDefaultAdapter()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -358,14 +349,6 @@ namespace android::bluetooth
 			arg0
 		);
 	}
-	QAndroidJniObject BluetoothAdapter::getRemoteDevice(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getRemoteDevice",
-			"(Ljava/lang/String;)Landroid/bluetooth/BluetoothDevice;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jint BluetoothAdapter::getScanMode()
 	{
 		return __thiz.callMethod<jint>(
@@ -459,15 +442,6 @@ namespace android::bluetooth
 			arg1.__jniObject().object()
 		);
 	}
-	QAndroidJniObject BluetoothAdapter::listenUsingInsecureRfcommWithServiceRecord(const QString &arg0, java::util::UUID arg1)
-	{
-		return __thiz.callObjectMethod(
-			"listenUsingInsecureRfcommWithServiceRecord",
-			"(Ljava/lang/String;Ljava/util/UUID;)Landroid/bluetooth/BluetoothServerSocket;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	QAndroidJniObject BluetoothAdapter::listenUsingL2capChannel()
 	{
 		return __thiz.callObjectMethod(
@@ -484,29 +458,12 @@ namespace android::bluetooth
 			arg1.__jniObject().object()
 		);
 	}
-	QAndroidJniObject BluetoothAdapter::listenUsingRfcommWithServiceRecord(const QString &arg0, java::util::UUID arg1)
-	{
-		return __thiz.callObjectMethod(
-			"listenUsingRfcommWithServiceRecord",
-			"(Ljava/lang/String;Ljava/util/UUID;)Landroid/bluetooth/BluetoothServerSocket;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	jboolean BluetoothAdapter::setName(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"setName",
 			"(Ljava/lang/String;)Z",
 			arg0
-		);
-	}
-	jboolean BluetoothAdapter::setName(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"setName",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean BluetoothAdapter::startDiscovery()

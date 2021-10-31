@@ -45,16 +45,6 @@ namespace javax::xml::parsers
 			arg1.__jniObject().object()
 		);
 	}
-	QAndroidJniObject SAXParserFactory::newInstance(const QString &arg0, java::lang::ClassLoader arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"javax.xml.parsers.SAXParserFactory",
-			"newInstance",
-			"(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljavax/xml/parsers/SAXParserFactory;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	QAndroidJniObject SAXParserFactory::newNSInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -73,30 +63,12 @@ namespace javax::xml::parsers
 			arg1.__jniObject().object()
 		);
 	}
-	QAndroidJniObject SAXParserFactory::newNSInstance(const QString &arg0, java::lang::ClassLoader arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"javax.xml.parsers.SAXParserFactory",
-			"newNSInstance",
-			"(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljavax/xml/parsers/SAXParserFactory;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	jboolean SAXParserFactory::getFeature(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"getFeature",
 			"(Ljava/lang/String;)Z",
 			arg0
-		);
-	}
-	jboolean SAXParserFactory::getFeature(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"getFeature",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject SAXParserFactory::getSchema()
@@ -140,15 +112,6 @@ namespace javax::xml::parsers
 			"setFeature",
 			"(Ljava/lang/String;Z)V",
 			arg0,
-			arg1
-		);
-	}
-	void SAXParserFactory::setFeature(const QString &arg0, jboolean arg1)
-	{
-		__thiz.callMethod<void>(
-			"setFeature",
-			"(Ljava/lang/String;Z)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

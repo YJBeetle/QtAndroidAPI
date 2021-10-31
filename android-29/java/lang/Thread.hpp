@@ -36,20 +36,14 @@ namespace java::lang
 		Thread(QAndroidJniObject obj);
 		// Constructors
 		Thread();
-		Thread(__JniBaseClass &arg0);
-		Thread(jstring &arg0);
-		Thread(const QString &arg0);
-		Thread(__JniBaseClass &arg0, jstring &arg1);
-		Thread(__JniBaseClass &arg0, const QString &arg1);
-		Thread(java::lang::ThreadGroup &arg0, __JniBaseClass &arg1);
-		Thread(java::lang::ThreadGroup &arg0, jstring &arg1);
-		Thread(java::lang::ThreadGroup &arg0, const QString &arg1);
-		Thread(java::lang::ThreadGroup &arg0, __JniBaseClass &arg1, jstring &arg2);
-		Thread(java::lang::ThreadGroup &arg0, __JniBaseClass &arg1, const QString &arg2);
-		Thread(java::lang::ThreadGroup &arg0, __JniBaseClass &arg1, jstring &arg2, jlong &arg3);
-		Thread(java::lang::ThreadGroup &arg0, __JniBaseClass &arg1, const QString &arg2, jlong &arg3);
-		Thread(java::lang::ThreadGroup &arg0, __JniBaseClass &arg1, jstring &arg2, jlong &arg3, jboolean &arg4);
-		Thread(java::lang::ThreadGroup &arg0, __JniBaseClass &arg1, const QString &arg2, jlong &arg3, jboolean &arg4);
+		Thread(__JniBaseClass arg0);
+		Thread(jstring arg0);
+		Thread(__JniBaseClass arg0, jstring arg1);
+		Thread(java::lang::ThreadGroup arg0, __JniBaseClass arg1);
+		Thread(java::lang::ThreadGroup arg0, jstring arg1);
+		Thread(java::lang::ThreadGroup arg0, __JniBaseClass arg1, jstring arg2);
+		Thread(java::lang::ThreadGroup arg0, __JniBaseClass arg1, jstring arg2, jlong arg3);
+		Thread(java::lang::ThreadGroup arg0, __JniBaseClass arg1, jstring arg2, jlong arg3, jboolean arg4);
 		
 		// Methods
 		static jint activeCount();
@@ -87,7 +81,6 @@ namespace java::lang
 		void setContextClassLoader(java::lang::ClassLoader arg0);
 		void setDaemon(jboolean arg0);
 		void setName(jstring arg0);
-		void setName(const QString &arg0);
 		void setPriority(jint arg0);
 		void setUncaughtExceptionHandler(__JniBaseClass arg0);
 		void start();

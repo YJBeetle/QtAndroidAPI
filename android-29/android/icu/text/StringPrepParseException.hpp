@@ -26,12 +26,9 @@ namespace android::icu::text
 		
 		StringPrepParseException(QAndroidJniObject obj);
 		// Constructors
-		StringPrepParseException(jstring &arg0, jint &arg1);
-		StringPrepParseException(const QString &arg0, jint &arg1);
-		StringPrepParseException(jstring &arg0, jint &arg1, jstring &arg2, jint &arg3);
-		StringPrepParseException(const QString &arg0, jint &arg1, const QString &arg2, jint &arg3);
-		StringPrepParseException(jstring &arg0, jint &arg1, jstring &arg2, jint &arg3, jint &arg4);
-		StringPrepParseException(const QString &arg0, jint &arg1, const QString &arg2, jint &arg3, jint &arg4);
+		StringPrepParseException(jstring arg0, jint arg1);
+		StringPrepParseException(jstring arg0, jint arg1, jstring arg2, jint arg3);
+		StringPrepParseException(jstring arg0, jint arg1, jstring arg2, jint arg3, jint arg4);
 		StringPrepParseException() = default;
 		
 		// Methods

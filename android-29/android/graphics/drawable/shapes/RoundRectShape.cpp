@@ -12,7 +12,7 @@ namespace android::graphics::drawable::shapes
 	
 	RoundRectShape::RoundRectShape(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	RoundRectShape::RoundRectShape(jfloatArray &arg0, android::graphics::RectF &arg1, jfloatArray &arg2)
+	RoundRectShape::RoundRectShape(jfloatArray arg0, android::graphics::RectF arg1, jfloatArray arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.shapes.RoundRectShape",

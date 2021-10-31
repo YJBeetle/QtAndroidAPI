@@ -50,7 +50,6 @@ namespace android::bluetooth
 		QAndroidJniObject getDevicesMatchingConnectionStates(jintArray arg0);
 		QAndroidJniObject getMainChannelFd(android::bluetooth::BluetoothDevice arg0, android::bluetooth::BluetoothHealthAppConfiguration arg1);
 		jboolean registerSinkAppConfiguration(jstring arg0, jint arg1, android::bluetooth::BluetoothHealthCallback arg2);
-		jboolean registerSinkAppConfiguration(const QString &arg0, jint arg1, android::bluetooth::BluetoothHealthCallback arg2);
 		jboolean unregisterAppConfiguration(android::bluetooth::BluetoothHealthAppConfiguration arg0);
 	};
 } // namespace android::bluetooth

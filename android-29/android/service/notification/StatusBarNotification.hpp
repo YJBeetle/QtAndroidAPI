@@ -25,9 +25,8 @@ namespace android::service::notification
 		
 		StatusBarNotification(QAndroidJniObject obj);
 		// Constructors
-		StatusBarNotification(android::os::Parcel &arg0);
-		StatusBarNotification(jstring &arg0, jstring &arg1, jint &arg2, jstring &arg3, jint &arg4, jint &arg5, jint &arg6, android::app::Notification &arg7, android::os::UserHandle &arg8, jlong &arg9);
-		StatusBarNotification(const QString &arg0, const QString &arg1, jint &arg2, const QString &arg3, jint &arg4, jint &arg5, jint &arg6, android::app::Notification &arg7, android::os::UserHandle &arg8, jlong &arg9);
+		StatusBarNotification(android::os::Parcel arg0);
+		StatusBarNotification(jstring arg0, jstring arg1, jint arg2, jstring arg3, jint arg4, jint arg5, jint arg6, android::app::Notification arg7, android::os::UserHandle arg8, jlong arg9);
 		StatusBarNotification() = default;
 		
 		// Methods
@@ -49,7 +48,6 @@ namespace android::service::notification
 		jboolean isGroup();
 		jboolean isOngoing();
 		void setOverrideGroupKey(jstring arg0);
-		void setOverrideGroupKey(const QString &arg0);
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

@@ -17,8 +17,7 @@ namespace android::database::sqlite
 		SQLiteAccessPermException(QAndroidJniObject obj);
 		// Constructors
 		SQLiteAccessPermException();
-		SQLiteAccessPermException(jstring &arg0);
-		SQLiteAccessPermException(const QString &arg0);
+		SQLiteAccessPermException(jstring arg0);
 		
 		// Methods
 	};

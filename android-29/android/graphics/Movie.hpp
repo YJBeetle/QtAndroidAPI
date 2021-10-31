@@ -29,7 +29,6 @@ namespace android::graphics
 		// Methods
 		static QAndroidJniObject decodeByteArray(jbyteArray arg0, jint arg1, jint arg2);
 		static QAndroidJniObject decodeFile(jstring arg0);
-		static QAndroidJniObject decodeFile(const QString &arg0);
 		static QAndroidJniObject decodeStream(java::io::InputStream arg0);
 		void draw(android::graphics::Canvas arg0, jfloat arg1, jfloat arg2);
 		void draw(android::graphics::Canvas arg0, jfloat arg1, jfloat arg2, android::graphics::Paint arg3);

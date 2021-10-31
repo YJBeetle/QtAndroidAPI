@@ -312,15 +312,6 @@ namespace java::net
 			arg1
 		);
 	}
-	jlong HttpURLConnection::getHeaderFieldDate(const QString &arg0, jlong arg1)
-	{
-		return __thiz.callMethod<jlong>(
-			"getHeaderFieldDate",
-			"(Ljava/lang/String;J)J",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	jstring HttpURLConnection::getHeaderFieldKey(jint arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -410,14 +401,6 @@ namespace java::net
 			"setRequestMethod",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void HttpURLConnection::setRequestMethod(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setRequestMethod",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean HttpURLConnection::usingProxy()

@@ -28,9 +28,7 @@ namespace android::net::wifi::hotspot2::pps
 		jlongArray getRoamingConsortiumOis();
 		jint hashCode();
 		void setFqdn(jstring arg0);
-		void setFqdn(const QString &arg0);
 		void setFriendlyName(jstring arg0);
-		void setFriendlyName(const QString &arg0);
 		void setRoamingConsortiumOis(jlongArray arg0);
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

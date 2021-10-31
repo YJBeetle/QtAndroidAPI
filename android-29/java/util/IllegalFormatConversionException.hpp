@@ -16,7 +16,7 @@ namespace java::util
 		
 		IllegalFormatConversionException(QAndroidJniObject obj);
 		// Constructors
-		IllegalFormatConversionException(jchar &arg0, jclass &arg1);
+		IllegalFormatConversionException(jchar arg0, jclass arg1);
 		IllegalFormatConversionException() = default;
 		
 		// Methods

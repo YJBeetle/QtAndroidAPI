@@ -16,8 +16,7 @@ namespace android::content
 		
 		IntentFilter_AuthorityEntry(QAndroidJniObject obj);
 		// Constructors
-		IntentFilter_AuthorityEntry(jstring &arg0, jstring &arg1);
-		IntentFilter_AuthorityEntry(const QString &arg0, const QString &arg1);
+		IntentFilter_AuthorityEntry(jstring arg0, jstring arg1);
 		IntentFilter_AuthorityEntry() = default;
 		
 		// Methods

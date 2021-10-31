@@ -8,7 +8,7 @@ namespace android::net
 	
 	SSLSessionCache::SSLSessionCache(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SSLSessionCache::SSLSessionCache(android::content::Context &arg0)
+	SSLSessionCache::SSLSessionCache(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.SSLSessionCache",
@@ -16,7 +16,7 @@ namespace android::net
 			arg0.__jniObject().object()
 		);
 	}
-	SSLSessionCache::SSLSessionCache(java::io::File &arg0)
+	SSLSessionCache::SSLSessionCache(java::io::File arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.SSLSessionCache",

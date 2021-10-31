@@ -18,7 +18,6 @@ namespace java::util
 		// Methods
 		QAndroidJniObject getKeys();
 		jobject handleGetObject(jstring arg0);
-		jobject handleGetObject(const QString &arg0);
 	};
 } // namespace java::util
 

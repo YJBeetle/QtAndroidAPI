@@ -22,9 +22,9 @@ namespace java::io
 		PipedInputStream(QAndroidJniObject obj);
 		// Constructors
 		PipedInputStream();
-		PipedInputStream(jint &arg0);
-		PipedInputStream(java::io::PipedOutputStream &arg0);
-		PipedInputStream(java::io::PipedOutputStream &arg0, jint &arg1);
+		PipedInputStream(jint arg0);
+		PipedInputStream(java::io::PipedOutputStream arg0);
+		PipedInputStream(java::io::PipedOutputStream arg0, jint arg1);
 		
 		// Methods
 		jint available();

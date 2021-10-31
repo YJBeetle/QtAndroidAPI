@@ -23,7 +23,6 @@ namespace android::icu::text
 		static QAndroidJniObject getInstance(jcharArray arg0);
 		static QAndroidJniObject getInstance(__JniBaseClass arg0);
 		static QAndroidJniObject getInstance(jstring arg0);
-		static QAndroidJniObject getInstance(const QString &arg0);
 		static QAndroidJniObject getInstance(java::lang::StringBuffer arg0);
 		static QAndroidJniObject getInstance(jcharArray arg0, jint arg1, jint arg2);
 		jobject clone();

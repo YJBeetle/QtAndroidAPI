@@ -65,7 +65,7 @@ namespace android::content::res
 		
 		Resources(QAndroidJniObject obj);
 		// Constructors
-		Resources(android::content::res::AssetManager &arg0, android::util::DisplayMetrics &arg1, android::content::res::Configuration &arg2);
+		Resources(android::content::res::AssetManager arg0, android::util::DisplayMetrics arg1, android::content::res::Configuration arg2);
 		Resources() = default;
 		
 		// Methods
@@ -93,7 +93,6 @@ namespace android::content::res
 		QAndroidJniObject getFont(jint arg0);
 		jfloat getFraction(jint arg0, jint arg1, jint arg2);
 		jint getIdentifier(jstring arg0, jstring arg1, jstring arg2);
-		jint getIdentifier(const QString &arg0, const QString &arg1, const QString &arg2);
 		jintArray getIntArray(jint arg0);
 		jint getInteger(jint arg0);
 		QAndroidJniObject getLayout(jint arg0);
@@ -110,11 +109,9 @@ namespace android::content::res
 		jarray getStringArray(jint arg0);
 		jstring getText(jint arg0);
 		jstring getText(jint arg0, jstring arg1);
-		jstring getText(jint arg0, const QString &arg1);
 		jarray getTextArray(jint arg0);
 		void getValue(jint arg0, android::util::TypedValue arg1, jboolean arg2);
 		void getValue(jstring arg0, android::util::TypedValue arg1, jboolean arg2);
-		void getValue(const QString &arg0, android::util::TypedValue arg1, jboolean arg2);
 		void getValueForDensity(jint arg0, jint arg1, android::util::TypedValue arg2, jboolean arg3);
 		QAndroidJniObject getXml(jint arg0);
 		QAndroidJniObject newTheme();
@@ -124,7 +121,6 @@ namespace android::content::res
 		QAndroidJniObject openRawResource(jint arg0, android::util::TypedValue arg1);
 		QAndroidJniObject openRawResourceFd(jint arg0);
 		void parseBundleExtra(jstring arg0, __JniBaseClass arg1, android::os::Bundle arg2);
-		void parseBundleExtra(const QString &arg0, __JniBaseClass arg1, android::os::Bundle arg2);
 		void parseBundleExtras(__JniBaseClass arg0, android::os::Bundle arg1);
 		void updateConfiguration(android::content::res::Configuration arg0, android::util::DisplayMetrics arg1);
 	};

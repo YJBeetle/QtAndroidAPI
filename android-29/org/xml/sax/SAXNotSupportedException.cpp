@@ -13,20 +13,12 @@ namespace org::xml::sax
 			"()V"
 		);
 	}
-	SAXNotSupportedException::SAXNotSupportedException(jstring &arg0)
+	SAXNotSupportedException::SAXNotSupportedException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"org.xml.sax.SAXNotSupportedException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	SAXNotSupportedException::SAXNotSupportedException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"org.xml.sax.SAXNotSupportedException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

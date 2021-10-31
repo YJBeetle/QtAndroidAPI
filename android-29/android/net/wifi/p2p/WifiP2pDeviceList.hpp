@@ -27,7 +27,6 @@ namespace android::net::wifi::p2p
 		// Methods
 		jint describeContents();
 		QAndroidJniObject get(jstring arg0);
-		QAndroidJniObject get(const QString &arg0);
 		QAndroidJniObject getDeviceList();
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

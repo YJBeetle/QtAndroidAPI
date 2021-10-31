@@ -17,8 +17,8 @@ namespace javax::sql
 		
 		ConnectionEvent(QAndroidJniObject obj);
 		// Constructors
-		ConnectionEvent(__JniBaseClass &arg0);
-		ConnectionEvent(__JniBaseClass &arg0, java::sql::SQLException &arg1);
+		ConnectionEvent(__JniBaseClass arg0);
+		ConnectionEvent(__JniBaseClass arg0, java::sql::SQLException arg1);
 		ConnectionEvent() = default;
 		
 		// Methods

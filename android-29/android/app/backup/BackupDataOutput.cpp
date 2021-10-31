@@ -41,14 +41,5 @@ namespace android::app::backup
 			arg1
 		);
 	}
-	jint BackupDataOutput::writeEntityHeader(const QString &arg0, jint arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"writeEntityHeader",
-			"(Ljava/lang/String;I)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 } // namespace android::app::backup
 

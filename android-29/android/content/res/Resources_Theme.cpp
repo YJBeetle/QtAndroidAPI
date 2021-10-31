@@ -31,16 +31,6 @@ namespace android::content::res
 			arg2
 		);
 	}
-	void Resources_Theme::dump(jint arg0, const QString &arg1, const QString &arg2)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(ILjava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	jintArray Resources_Theme::getAttributeResolutionStack(jint arg0, jint arg1, jint arg2)
 	{
 		return __thiz.callObjectMethod(

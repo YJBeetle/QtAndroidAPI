@@ -25,9 +25,7 @@ namespace android::net
 		
 		// Methods
 		static QAndroidJniObject buildDirectProxy(jstring arg0, jint arg1);
-		static QAndroidJniObject buildDirectProxy(const QString &arg0, jint arg1);
 		static QAndroidJniObject buildDirectProxy(jstring arg0, jint arg1, __JniBaseClass arg2);
-		static QAndroidJniObject buildDirectProxy(const QString &arg0, jint arg1, __JniBaseClass arg2);
 		static QAndroidJniObject buildPacProxy(android::net::Uri arg0);
 		jint describeContents();
 		jboolean equals(jobject arg0);

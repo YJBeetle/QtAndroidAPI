@@ -19,7 +19,7 @@ namespace java::net
 			"()V"
 		);
 	}
-	ServerSocket::ServerSocket(jint &arg0)
+	ServerSocket::ServerSocket(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.ServerSocket",
@@ -27,7 +27,7 @@ namespace java::net
 			arg0
 		);
 	}
-	ServerSocket::ServerSocket(jint &arg0, jint &arg1)
+	ServerSocket::ServerSocket(jint arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.ServerSocket",
@@ -36,7 +36,7 @@ namespace java::net
 			arg1
 		);
 	}
-	ServerSocket::ServerSocket(jint &arg0, jint &arg1, java::net::InetAddress &arg2)
+	ServerSocket::ServerSocket(jint arg0, jint arg1, java::net::InetAddress arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.ServerSocket",

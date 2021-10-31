@@ -13,7 +13,7 @@ namespace java::util
 			"()V"
 		);
 	}
-	LinkedHashSet::LinkedHashSet(jint &arg0)
+	LinkedHashSet::LinkedHashSet(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.LinkedHashSet",
@@ -21,7 +21,7 @@ namespace java::util
 			arg0
 		);
 	}
-	LinkedHashSet::LinkedHashSet(__JniBaseClass &arg0)
+	LinkedHashSet::LinkedHashSet(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.LinkedHashSet",
@@ -29,7 +29,7 @@ namespace java::util
 			arg0.__jniObject().object()
 		);
 	}
-	LinkedHashSet::LinkedHashSet(jint &arg0, jfloat &arg1)
+	LinkedHashSet::LinkedHashSet(jint arg0, jfloat arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.LinkedHashSet",

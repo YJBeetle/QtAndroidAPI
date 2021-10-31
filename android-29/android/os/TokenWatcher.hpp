@@ -20,13 +20,11 @@ namespace android::os
 		
 		TokenWatcher(QAndroidJniObject obj);
 		// Constructors
-		TokenWatcher(android::os::Handler &arg0, jstring &arg1);
-		TokenWatcher(android::os::Handler &arg0, const QString &arg1);
+		TokenWatcher(android::os::Handler arg0, jstring arg1);
 		TokenWatcher() = default;
 		
 		// Methods
 		void acquire(__JniBaseClass arg0, jstring arg1);
-		void acquire(__JniBaseClass arg0, const QString &arg1);
 		void acquired();
 		void cleanup(__JniBaseClass arg0, jboolean arg1);
 		void dump();

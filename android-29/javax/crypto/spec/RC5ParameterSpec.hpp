@@ -12,9 +12,9 @@ namespace javax::crypto::spec
 		
 		RC5ParameterSpec(QAndroidJniObject obj);
 		// Constructors
-		RC5ParameterSpec(jint &arg0, jint &arg1, jint &arg2);
-		RC5ParameterSpec(jint &arg0, jint &arg1, jint &arg2, jbyteArray &arg3);
-		RC5ParameterSpec(jint &arg0, jint &arg1, jint &arg2, jbyteArray &arg3, jint &arg4);
+		RC5ParameterSpec(jint arg0, jint arg1, jint arg2);
+		RC5ParameterSpec(jint arg0, jint arg1, jint arg2, jbyteArray arg3);
+		RC5ParameterSpec(jint arg0, jint arg1, jint arg2, jbyteArray arg3, jint arg4);
 		RC5ParameterSpec() = default;
 		
 		// Methods

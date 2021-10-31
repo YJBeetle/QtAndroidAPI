@@ -44,15 +44,6 @@ namespace java::time::chrono
 			arg0
 		);
 	}
-	QAndroidJniObject ThaiBuddhistEra::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.time.chrono.ThaiBuddhistEra",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/time/chrono/ThaiBuddhistEra;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray ThaiBuddhistEra::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

@@ -9,7 +9,7 @@ namespace android::app
 	
 	Presentation::Presentation(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Presentation::Presentation(android::content::Context &arg0, android::view::Display &arg1)
+	Presentation::Presentation(android::content::Context arg0, android::view::Display arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.Presentation",
@@ -18,7 +18,7 @@ namespace android::app
 			arg1.__jniObject().object()
 		);
 	}
-	Presentation::Presentation(android::content::Context &arg0, android::view::Display &arg1, jint &arg2)
+	Presentation::Presentation(android::content::Context arg0, android::view::Display arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.Presentation",

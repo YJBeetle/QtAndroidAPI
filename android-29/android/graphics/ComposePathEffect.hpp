@@ -17,7 +17,7 @@ namespace android::graphics
 		
 		ComposePathEffect(QAndroidJniObject obj);
 		// Constructors
-		ComposePathEffect(android::graphics::PathEffect &arg0, android::graphics::PathEffect &arg1);
+		ComposePathEffect(android::graphics::PathEffect arg0, android::graphics::PathEffect arg1);
 		ComposePathEffect() = default;
 		
 		// Methods

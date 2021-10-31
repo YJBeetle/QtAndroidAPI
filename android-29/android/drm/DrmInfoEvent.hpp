@@ -23,10 +23,8 @@ namespace android::drm
 		
 		DrmInfoEvent(QAndroidJniObject obj);
 		// Constructors
-		DrmInfoEvent(jint &arg0, jint &arg1, jstring &arg2);
-		DrmInfoEvent(jint &arg0, jint &arg1, const QString &arg2);
-		DrmInfoEvent(jint &arg0, jint &arg1, jstring &arg2, java::util::HashMap &arg3);
-		DrmInfoEvent(jint &arg0, jint &arg1, const QString &arg2, java::util::HashMap &arg3);
+		DrmInfoEvent(jint arg0, jint arg1, jstring arg2);
+		DrmInfoEvent(jint arg0, jint arg1, jstring arg2, java::util::HashMap arg3);
 		DrmInfoEvent() = default;
 		
 		// Methods

@@ -38,10 +38,10 @@ namespace android::graphics::drawable
 		
 		InsetDrawable(QAndroidJniObject obj);
 		// Constructors
-		InsetDrawable(android::graphics::drawable::Drawable &arg0, jfloat &arg1);
-		InsetDrawable(android::graphics::drawable::Drawable &arg0, jint &arg1);
-		InsetDrawable(android::graphics::drawable::Drawable &arg0, jfloat &arg1, jfloat &arg2, jfloat &arg3, jfloat &arg4);
-		InsetDrawable(android::graphics::drawable::Drawable &arg0, jint &arg1, jint &arg2, jint &arg3, jint &arg4);
+		InsetDrawable(android::graphics::drawable::Drawable arg0, jfloat arg1);
+		InsetDrawable(android::graphics::drawable::Drawable arg0, jint arg1);
+		InsetDrawable(android::graphics::drawable::Drawable arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4);
+		InsetDrawable(android::graphics::drawable::Drawable arg0, jint arg1, jint arg2, jint arg3, jint arg4);
 		InsetDrawable() = default;
 		
 		// Methods

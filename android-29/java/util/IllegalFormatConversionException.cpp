@@ -6,7 +6,7 @@ namespace java::util
 	
 	IllegalFormatConversionException::IllegalFormatConversionException(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	IllegalFormatConversionException::IllegalFormatConversionException(jchar &arg0, jclass &arg1)
+	IllegalFormatConversionException::IllegalFormatConversionException(jchar arg0, jclass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.IllegalFormatConversionException",

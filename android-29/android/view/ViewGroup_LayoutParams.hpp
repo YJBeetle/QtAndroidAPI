@@ -31,8 +31,8 @@ namespace android::view
 		ViewGroup_LayoutParams(QAndroidJniObject obj);
 		// Constructors
 		ViewGroup_LayoutParams(android::view::ViewGroup_LayoutParams &arg0);
-		ViewGroup_LayoutParams(android::content::Context &arg0, __JniBaseClass &arg1);
-		ViewGroup_LayoutParams(jint &arg0, jint &arg1);
+		ViewGroup_LayoutParams(android::content::Context arg0, __JniBaseClass arg1);
+		ViewGroup_LayoutParams(jint arg0, jint arg1);
 		ViewGroup_LayoutParams() = default;
 		
 		// Methods

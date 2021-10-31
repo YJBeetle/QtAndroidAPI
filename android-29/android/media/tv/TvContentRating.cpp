@@ -28,18 +28,6 @@ namespace android::media::tv
 			arg3
 		);
 	}
-	QAndroidJniObject TvContentRating::createRating(const QString &arg0, const QString &arg1, const QString &arg2, jarray arg3)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.media.tv.TvContentRating",
-			"createRating",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)Landroid/media/tv/TvContentRating;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			arg3
-		);
-	}
 	QAndroidJniObject TvContentRating::unflattenFromString(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -47,15 +35,6 @@ namespace android::media::tv
 			"unflattenFromString",
 			"(Ljava/lang/String;)Landroid/media/tv/TvContentRating;",
 			arg0
-		);
-	}
-	QAndroidJniObject TvContentRating::unflattenFromString(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.media.tv.TvContentRating",
-			"unflattenFromString",
-			"(Ljava/lang/String;)Landroid/media/tv/TvContentRating;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean TvContentRating::contains(android::media::tv::TvContentRating arg0)

@@ -24,7 +24,6 @@ namespace android::provider
 		
 		// Methods
 		static QAndroidJniObject getContentUri(jstring arg0);
-		static QAndroidJniObject getContentUri(const QString &arg0);
 	};
 } // namespace android::provider
 

@@ -14,10 +14,8 @@ namespace java::net
 		
 		NetPermission(QAndroidJniObject obj);
 		// Constructors
-		NetPermission(jstring &arg0);
-		NetPermission(const QString &arg0);
-		NetPermission(jstring &arg0, jstring &arg1);
-		NetPermission(const QString &arg0, const QString &arg1);
+		NetPermission(jstring arg0);
+		NetPermission(jstring arg0, jstring arg1);
 		NetPermission() = default;
 		
 		// Methods

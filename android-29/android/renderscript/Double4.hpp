@@ -17,7 +17,7 @@ namespace android::renderscript
 		Double4(QAndroidJniObject obj);
 		// Constructors
 		Double4();
-		Double4(jdouble &arg0, jdouble &arg1, jdouble &arg2, jdouble &arg3);
+		Double4(jdouble arg0, jdouble arg1, jdouble arg2, jdouble arg3);
 		
 		// Methods
 	};

@@ -17,20 +17,12 @@ namespace android::os
 			"()V"
 		);
 	}
-	Binder::Binder(jstring &arg0)
+	Binder::Binder(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.Binder",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	Binder::Binder(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.os.Binder",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	
@@ -143,15 +135,6 @@ namespace android::os
 			arg1
 		);
 	}
-	void Binder::attachInterface(__JniBaseClass arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"attachInterface",
-			"(Landroid/os/IInterface;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	void Binder::dump(java::io::FileDescriptor arg0, jarray arg1)
 	{
 		__thiz.callMethod<void>(
@@ -206,14 +189,6 @@ namespace android::os
 			"queryLocalInterface",
 			"(Ljava/lang/String;)Landroid/os/IInterface;",
 			arg0
-		);
-	}
-	QAndroidJniObject Binder::queryLocalInterface(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"queryLocalInterface",
-			"(Ljava/lang/String;)Landroid/os/IInterface;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean Binder::transact(jint arg0, android::os::Parcel arg1, android::os::Parcel arg2, jint arg3)

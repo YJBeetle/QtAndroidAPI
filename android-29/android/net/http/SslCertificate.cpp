@@ -10,7 +10,7 @@ namespace android::net::http
 	
 	SslCertificate::SslCertificate(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SslCertificate::SslCertificate(java::security::cert::X509Certificate &arg0)
+	SslCertificate::SslCertificate(java::security::cert::X509Certificate arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.http.SslCertificate",
@@ -18,7 +18,7 @@ namespace android::net::http
 			arg0.__jniObject().object()
 		);
 	}
-	SslCertificate::SslCertificate(jstring &arg0, jstring &arg1, jstring &arg2, jstring &arg3)
+	SslCertificate::SslCertificate(jstring arg0, jstring arg1, jstring arg2, jstring arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.http.SslCertificate",
@@ -29,35 +29,13 @@ namespace android::net::http
 			arg3
 		);
 	}
-	SslCertificate::SslCertificate(const QString &arg0, const QString &arg1, const QString &arg2, const QString &arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"android.net.http.SslCertificate",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			QAndroidJniObject::fromString(arg3).object<jstring>()
-		);
-	}
-	SslCertificate::SslCertificate(jstring &arg0, jstring &arg1, java::util::Date &arg2, java::util::Date &arg3)
+	SslCertificate::SslCertificate(jstring arg0, jstring arg1, java::util::Date arg2, java::util::Date arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.http.SslCertificate",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/util/Date;Ljava/util/Date;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
-		);
-	}
-	SslCertificate::SslCertificate(const QString &arg0, const QString &arg1, java::util::Date &arg2, java::util::Date &arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"android.net.http.SslCertificate",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/util/Date;Ljava/util/Date;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object()
 		);

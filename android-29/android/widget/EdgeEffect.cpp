@@ -17,7 +17,7 @@ namespace android::widget
 	
 	EdgeEffect::EdgeEffect(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	EdgeEffect::EdgeEffect(android::content::Context &arg0)
+	EdgeEffect::EdgeEffect(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.EdgeEffect",

@@ -15,11 +15,9 @@ namespace java::security
 		SignatureException(QAndroidJniObject obj);
 		// Constructors
 		SignatureException();
-		SignatureException(jstring &arg0);
-		SignatureException(const QString &arg0);
-		SignatureException(jthrowable &arg0);
-		SignatureException(jstring &arg0, jthrowable &arg1);
-		SignatureException(const QString &arg0, jthrowable &arg1);
+		SignatureException(jstring arg0);
+		SignatureException(jthrowable arg0);
+		SignatureException(jstring arg0, jthrowable arg1);
 		
 		// Methods
 	};

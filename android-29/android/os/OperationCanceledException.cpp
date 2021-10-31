@@ -13,20 +13,12 @@ namespace android::os
 			"()V"
 		);
 	}
-	OperationCanceledException::OperationCanceledException(jstring &arg0)
+	OperationCanceledException::OperationCanceledException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.OperationCanceledException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	OperationCanceledException::OperationCanceledException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.os.OperationCanceledException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

@@ -120,14 +120,13 @@ namespace android::service::voice
 		
 		VoiceInteractionSession(QAndroidJniObject obj);
 		// Constructors
-		VoiceInteractionSession(android::content::Context &arg0);
-		VoiceInteractionSession(android::content::Context &arg0, android::os::Handler &arg1);
+		VoiceInteractionSession(android::content::Context arg0);
+		VoiceInteractionSession(android::content::Context arg0, android::os::Handler arg1);
 		VoiceInteractionSession() = default;
 		
 		// Methods
 		void closeSystemDialogs();
 		void dump(jstring arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3);
-		void dump(const QString &arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3);
 		void finish();
 		QAndroidJniObject getContext();
 		jint getDisabledShowContext();

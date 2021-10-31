@@ -15,10 +15,8 @@ namespace java::nio::file
 		
 		FileAlreadyExistsException(QAndroidJniObject obj);
 		// Constructors
-		FileAlreadyExistsException(jstring &arg0);
-		FileAlreadyExistsException(const QString &arg0);
-		FileAlreadyExistsException(jstring &arg0, jstring &arg1, jstring &arg2);
-		FileAlreadyExistsException(const QString &arg0, const QString &arg1, const QString &arg2);
+		FileAlreadyExistsException(jstring arg0);
+		FileAlreadyExistsException(jstring arg0, jstring arg1, jstring arg2);
 		FileAlreadyExistsException() = default;
 		
 		// Methods

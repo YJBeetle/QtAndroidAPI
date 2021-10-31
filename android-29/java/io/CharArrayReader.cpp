@@ -6,7 +6,7 @@ namespace java::io
 	
 	CharArrayReader::CharArrayReader(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	CharArrayReader::CharArrayReader(jcharArray &arg0)
+	CharArrayReader::CharArrayReader(jcharArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.CharArrayReader",
@@ -14,7 +14,7 @@ namespace java::io
 			arg0
 		);
 	}
-	CharArrayReader::CharArrayReader(jcharArray &arg0, jint &arg1, jint &arg2)
+	CharArrayReader::CharArrayReader(jcharArray arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.CharArrayReader",

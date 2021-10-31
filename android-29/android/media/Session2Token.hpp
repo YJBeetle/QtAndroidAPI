@@ -31,7 +31,7 @@ namespace android::media
 		
 		Session2Token(QAndroidJniObject obj);
 		// Constructors
-		Session2Token(android::content::Context &arg0, android::content::ComponentName &arg1);
+		Session2Token(android::content::Context arg0, android::content::ComponentName arg1);
 		Session2Token() = default;
 		
 		// Methods

@@ -16,7 +16,7 @@ namespace android::app
 	
 	AuthenticationRequiredException::AuthenticationRequiredException(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AuthenticationRequiredException::AuthenticationRequiredException(jthrowable &arg0, android::app::PendingIntent &arg1)
+	AuthenticationRequiredException::AuthenticationRequiredException(jthrowable arg0, android::app::PendingIntent arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.AuthenticationRequiredException",

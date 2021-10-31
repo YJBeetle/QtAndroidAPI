@@ -17,10 +17,8 @@ namespace android::view::inputmethod
 		
 		CompletionInfo(QAndroidJniObject obj);
 		// Constructors
-		CompletionInfo(jlong &arg0, jint &arg1, jstring &arg2);
-		CompletionInfo(jlong &arg0, jint &arg1, const QString &arg2);
-		CompletionInfo(jlong &arg0, jint &arg1, jstring &arg2, jstring &arg3);
-		CompletionInfo(jlong &arg0, jint &arg1, const QString &arg2, const QString &arg3);
+		CompletionInfo(jlong arg0, jint arg1, jstring arg2);
+		CompletionInfo(jlong arg0, jint arg1, jstring arg2, jstring arg3);
 		CompletionInfo() = default;
 		
 		// Methods

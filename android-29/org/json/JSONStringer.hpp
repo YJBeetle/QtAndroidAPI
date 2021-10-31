@@ -19,7 +19,6 @@ namespace org::json
 		QAndroidJniObject endArray();
 		QAndroidJniObject endObject();
 		QAndroidJniObject key(jstring arg0);
-		QAndroidJniObject key(const QString &arg0);
 		QAndroidJniObject object();
 		jstring toString();
 		QAndroidJniObject value(jboolean arg0);

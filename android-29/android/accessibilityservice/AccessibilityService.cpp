@@ -314,14 +314,6 @@ namespace android::accessibilityservice
 			arg0
 		).object<jobject>();
 	}
-	jobject AccessibilityService::getSystemService(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getSystemService",
-			"(Ljava/lang/String;)Ljava/lang/Object;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jobject>();
-	}
 	QAndroidJniObject AccessibilityService::getWindows()
 	{
 		return __thiz.callObjectMethod(

@@ -14,7 +14,7 @@ namespace android::text
 		LoginFilter_UsernameFilterGeneric(QAndroidJniObject obj);
 		// Constructors
 		LoginFilter_UsernameFilterGeneric();
-		LoginFilter_UsernameFilterGeneric(jboolean &arg0);
+		LoginFilter_UsernameFilterGeneric(jboolean arg0);
 		
 		// Methods
 		jboolean isAllowed(jchar arg0);

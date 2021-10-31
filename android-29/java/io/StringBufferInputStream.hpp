@@ -13,8 +13,7 @@ namespace java::io
 		
 		StringBufferInputStream(QAndroidJniObject obj);
 		// Constructors
-		StringBufferInputStream(jstring &arg0);
-		StringBufferInputStream(const QString &arg0);
+		StringBufferInputStream(jstring arg0);
 		StringBufferInputStream() = default;
 		
 		// Methods

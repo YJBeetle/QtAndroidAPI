@@ -16,7 +16,7 @@ namespace android::view
 	
 	KeyboardShortcutGroup::KeyboardShortcutGroup(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	KeyboardShortcutGroup::KeyboardShortcutGroup(jstring &arg0)
+	KeyboardShortcutGroup::KeyboardShortcutGroup(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.KeyboardShortcutGroup",
@@ -24,29 +24,12 @@ namespace android::view
 			arg0
 		);
 	}
-	KeyboardShortcutGroup::KeyboardShortcutGroup(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.KeyboardShortcutGroup",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	KeyboardShortcutGroup::KeyboardShortcutGroup(jstring &arg0, __JniBaseClass &arg1)
+	KeyboardShortcutGroup::KeyboardShortcutGroup(jstring arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.KeyboardShortcutGroup",
 			"(Ljava/lang/CharSequence;Ljava/util/List;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	KeyboardShortcutGroup::KeyboardShortcutGroup(const QString &arg0, __JniBaseClass &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.KeyboardShortcutGroup",
-			"(Ljava/lang/CharSequence;Ljava/util/List;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

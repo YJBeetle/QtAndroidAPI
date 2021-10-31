@@ -49,7 +49,6 @@ namespace java::util::logging
 		jboolean isLoggable(java::util::logging::LogRecord arg0);
 		void publish(java::util::logging::LogRecord arg0);
 		void setEncoding(jstring arg0);
-		void setEncoding(const QString &arg0);
 		void setErrorManager(java::util::logging::ErrorManager arg0);
 		void setFilter(__JniBaseClass arg0);
 		void setFormatter(java::util::logging::Formatter arg0);

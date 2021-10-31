@@ -31,7 +31,6 @@ namespace javax::net::ssl
 		static QAndroidJniObject getDefault();
 		QAndroidJniObject createSocket(java::net::Socket arg0, java::io::InputStream arg1, jboolean arg2);
 		QAndroidJniObject createSocket(java::net::Socket arg0, jstring arg1, jint arg2, jboolean arg3);
-		QAndroidJniObject createSocket(java::net::Socket arg0, const QString &arg1, jint arg2, jboolean arg3);
 		jarray getDefaultCipherSuites();
 		jarray getSupportedCipherSuites();
 	};

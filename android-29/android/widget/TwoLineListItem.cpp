@@ -8,7 +8,7 @@ namespace android::widget
 	
 	TwoLineListItem::TwoLineListItem(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	TwoLineListItem::TwoLineListItem(android::content::Context &arg0)
+	TwoLineListItem::TwoLineListItem(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.TwoLineListItem",
@@ -16,7 +16,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	TwoLineListItem::TwoLineListItem(android::content::Context &arg0, __JniBaseClass &arg1)
+	TwoLineListItem::TwoLineListItem(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.TwoLineListItem",
@@ -25,7 +25,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	TwoLineListItem::TwoLineListItem(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	TwoLineListItem::TwoLineListItem(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.TwoLineListItem",
@@ -35,7 +35,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	TwoLineListItem::TwoLineListItem(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	TwoLineListItem::TwoLineListItem(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.TwoLineListItem",

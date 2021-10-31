@@ -261,14 +261,6 @@ namespace android::media
 			arg0
 		);
 	}
-	jboolean MediaMetadata::containsKey(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"containsKey",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jint MediaMetadata::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -292,14 +284,6 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject MediaMetadata::getBitmap(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getBitmap",
-			"(Ljava/lang/String;)Landroid/graphics/Bitmap;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject MediaMetadata::getDescription()
 	{
 		return __thiz.callObjectMethod(
@@ -315,28 +299,12 @@ namespace android::media
 			arg0
 		);
 	}
-	jlong MediaMetadata::getLong(const QString &arg0)
-	{
-		return __thiz.callMethod<jlong>(
-			"getLong",
-			"(Ljava/lang/String;)J",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject MediaMetadata::getRating(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getRating",
 			"(Ljava/lang/String;)Landroid/media/Rating;",
 			arg0
-		);
-	}
-	QAndroidJniObject MediaMetadata::getRating(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getRating",
-			"(Ljava/lang/String;)Landroid/media/Rating;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring MediaMetadata::getString(jstring arg0)
@@ -347,28 +315,12 @@ namespace android::media
 			arg0
 		).object<jstring>();
 	}
-	jstring MediaMetadata::getString(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getString",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
 	jstring MediaMetadata::getText(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getText",
 			"(Ljava/lang/String;)Ljava/lang/CharSequence;",
 			arg0
-		).object<jstring>();
-	}
-	jstring MediaMetadata::getText(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getText",
-			"(Ljava/lang/String;)Ljava/lang/CharSequence;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	jint MediaMetadata::hashCode()

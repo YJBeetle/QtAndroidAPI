@@ -33,10 +33,10 @@ namespace android::preference
 		
 		RingtonePreference(QAndroidJniObject obj);
 		// Constructors
-		RingtonePreference(android::content::Context &arg0);
-		RingtonePreference(android::content::Context &arg0, __JniBaseClass &arg1);
-		RingtonePreference(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		RingtonePreference(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		RingtonePreference(android::content::Context arg0);
+		RingtonePreference(android::content::Context arg0, __JniBaseClass arg1);
+		RingtonePreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		RingtonePreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		RingtonePreference() = default;
 		
 		// Methods

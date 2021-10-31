@@ -16,8 +16,7 @@ namespace java::io
 		StreamCorruptedException(QAndroidJniObject obj);
 		// Constructors
 		StreamCorruptedException();
-		StreamCorruptedException(jstring &arg0);
-		StreamCorruptedException(const QString &arg0);
+		StreamCorruptedException(jstring arg0);
 		
 		// Methods
 	};

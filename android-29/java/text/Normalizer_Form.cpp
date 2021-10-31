@@ -49,15 +49,6 @@ namespace java::text
 			arg0
 		);
 	}
-	QAndroidJniObject Normalizer_Form::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.text.Normalizer$Form",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/text/Normalizer$Form;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray Normalizer_Form::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

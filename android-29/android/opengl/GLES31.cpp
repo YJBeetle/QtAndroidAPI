@@ -1508,17 +1508,6 @@ namespace android::opengl
 			arg2
 		);
 	}
-	jint GLES31::glGetProgramResourceIndex(jint arg0, jint arg1, const QString &arg2)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.opengl.GLES31",
-			"glGetProgramResourceIndex",
-			"(IILjava/lang/String;)I",
-			arg0,
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	jint GLES31::glGetProgramResourceLocation(jint arg0, jint arg1, jstring arg2)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -1528,17 +1517,6 @@ namespace android::opengl
 			arg0,
 			arg1,
 			arg2
-		);
-	}
-	jint GLES31::glGetProgramResourceLocation(jint arg0, jint arg1, const QString &arg2)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.opengl.GLES31",
-			"glGetProgramResourceLocation",
-			"(IILjava/lang/String;)I",
-			arg0,
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	jstring GLES31::glGetProgramResourceName(jint arg0, jint arg1, jint arg2)

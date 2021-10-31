@@ -22,9 +22,9 @@ namespace java::util
 		HashMap(QAndroidJniObject obj);
 		// Constructors
 		HashMap();
-		HashMap(jint &arg0);
-		HashMap(__JniBaseClass &arg0);
-		HashMap(jint &arg0, jfloat &arg1);
+		HashMap(jint arg0);
+		HashMap(__JniBaseClass arg0);
+		HashMap(jint arg0, jfloat arg1);
 		
 		// Methods
 		void clear();

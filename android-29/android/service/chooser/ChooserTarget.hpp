@@ -29,8 +29,7 @@ namespace android::service::chooser
 		
 		ChooserTarget(QAndroidJniObject obj);
 		// Constructors
-		ChooserTarget(jstring &arg0, android::graphics::drawable::Icon &arg1, jfloat &arg2, android::content::ComponentName &arg3, android::os::Bundle &arg4);
-		ChooserTarget(const QString &arg0, android::graphics::drawable::Icon &arg1, jfloat &arg2, android::content::ComponentName &arg3, android::os::Bundle &arg4);
+		ChooserTarget(jstring arg0, android::graphics::drawable::Icon arg1, jfloat arg2, android::content::ComponentName arg3, android::os::Bundle arg4);
 		ChooserTarget() = default;
 		
 		// Methods

@@ -14,7 +14,7 @@ namespace android::app
 			"()V"
 		);
 	}
-	Notification_BigTextStyle::Notification_BigTextStyle(android::app::Notification_Builder &arg0)
+	Notification_BigTextStyle::Notification_BigTextStyle(android::app::Notification_Builder arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.Notification$BigTextStyle",
@@ -32,14 +32,6 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_BigTextStyle::bigText(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"bigText",
-			"(Ljava/lang/CharSequence;)Landroid/app/Notification$BigTextStyle;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Notification_BigTextStyle::setBigContentTitle(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -48,28 +40,12 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_BigTextStyle::setBigContentTitle(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setBigContentTitle",
-			"(Ljava/lang/CharSequence;)Landroid/app/Notification$BigTextStyle;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Notification_BigTextStyle::setSummaryText(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setSummaryText",
 			"(Ljava/lang/CharSequence;)Landroid/app/Notification$BigTextStyle;",
 			arg0
-		);
-	}
-	QAndroidJniObject Notification_BigTextStyle::setSummaryText(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setSummaryText",
-			"(Ljava/lang/CharSequence;)Landroid/app/Notification$BigTextStyle;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace android::app

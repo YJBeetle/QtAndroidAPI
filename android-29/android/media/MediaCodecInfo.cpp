@@ -24,14 +24,6 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject MediaCodecInfo::getCapabilitiesForType(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getCapabilitiesForType",
-			"(Ljava/lang/String;)Landroid/media/MediaCodecInfo$CodecCapabilities;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jstring MediaCodecInfo::getName()
 	{
 		return __thiz.callObjectMethod(

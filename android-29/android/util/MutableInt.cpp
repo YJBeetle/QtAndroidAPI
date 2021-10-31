@@ -12,7 +12,7 @@ namespace android::util
 	
 	MutableInt::MutableInt(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MutableInt::MutableInt(jint &arg0)
+	MutableInt::MutableInt(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.MutableInt",

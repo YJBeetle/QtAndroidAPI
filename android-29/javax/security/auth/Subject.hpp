@@ -29,7 +29,7 @@ namespace javax::security::auth
 		Subject(QAndroidJniObject obj);
 		// Constructors
 		Subject();
-		Subject(jboolean &arg0, __JniBaseClass &arg1, __JniBaseClass &arg2, __JniBaseClass &arg3);
+		Subject(jboolean arg0, __JniBaseClass arg1, __JniBaseClass arg2, __JniBaseClass arg3);
 		
 		// Methods
 		static jobject doAs(javax::security::auth::Subject arg0, __JniBaseClass arg1);

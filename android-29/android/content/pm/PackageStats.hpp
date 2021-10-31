@@ -27,9 +27,8 @@ namespace android::content::pm
 		PackageStats(QAndroidJniObject obj);
 		// Constructors
 		PackageStats(android::content::pm::PackageStats &arg0);
-		PackageStats(android::os::Parcel &arg0);
-		PackageStats(jstring &arg0);
-		PackageStats(const QString &arg0);
+		PackageStats(android::os::Parcel arg0);
+		PackageStats(jstring arg0);
 		PackageStats() = default;
 		
 		// Methods

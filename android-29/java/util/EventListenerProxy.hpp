@@ -12,7 +12,7 @@ namespace java::util
 		
 		EventListenerProxy(QAndroidJniObject obj);
 		// Constructors
-		EventListenerProxy(__JniBaseClass &arg0);
+		EventListenerProxy(__JniBaseClass arg0);
 		EventListenerProxy() = default;
 		
 		// Methods

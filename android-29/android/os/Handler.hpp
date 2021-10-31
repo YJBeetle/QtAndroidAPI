@@ -21,16 +21,15 @@ namespace android::os
 		Handler(QAndroidJniObject obj);
 		// Constructors
 		Handler();
-		Handler(__JniBaseClass &arg0);
-		Handler(android::os::Looper &arg0);
-		Handler(android::os::Looper &arg0, __JniBaseClass &arg1);
+		Handler(__JniBaseClass arg0);
+		Handler(android::os::Looper arg0);
+		Handler(android::os::Looper arg0, __JniBaseClass arg1);
 		
 		// Methods
 		static QAndroidJniObject createAsync(android::os::Looper arg0);
 		static QAndroidJniObject createAsync(android::os::Looper arg0, __JniBaseClass arg1);
 		void dispatchMessage(android::os::Message arg0);
 		void dump(__JniBaseClass arg0, jstring arg1);
-		void dump(__JniBaseClass arg0, const QString &arg1);
 		QAndroidJniObject getLooper();
 		jstring getMessageName(android::os::Message arg0);
 		void handleMessage(android::os::Message arg0);

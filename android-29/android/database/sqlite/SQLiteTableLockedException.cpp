@@ -13,20 +13,12 @@ namespace android::database::sqlite
 			"()V"
 		);
 	}
-	SQLiteTableLockedException::SQLiteTableLockedException(jstring &arg0)
+	SQLiteTableLockedException::SQLiteTableLockedException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.database.sqlite.SQLiteTableLockedException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	SQLiteTableLockedException::SQLiteTableLockedException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.database.sqlite.SQLiteTableLockedException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

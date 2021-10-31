@@ -8,22 +8,13 @@ namespace android::database
 	
 	DatabaseUtils_InsertHelper::DatabaseUtils_InsertHelper(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DatabaseUtils_InsertHelper::DatabaseUtils_InsertHelper(android::database::sqlite::SQLiteDatabase &arg0, jstring &arg1)
+	DatabaseUtils_InsertHelper::DatabaseUtils_InsertHelper(android::database::sqlite::SQLiteDatabase arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.database.DatabaseUtils$InsertHelper",
 			"(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	DatabaseUtils_InsertHelper::DatabaseUtils_InsertHelper(android::database::sqlite::SQLiteDatabase &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.database.DatabaseUtils$InsertHelper",
-			"(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	
@@ -82,15 +73,6 @@ namespace android::database
 			arg1
 		);
 	}
-	void DatabaseUtils_InsertHelper::bind(jint arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"bind",
-			"(ILjava/lang/String;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	void DatabaseUtils_InsertHelper::bind(jint arg0, jlong arg1)
 	{
 		__thiz.callMethod<void>(
@@ -128,14 +110,6 @@ namespace android::database
 			"getColumnIndex",
 			"(Ljava/lang/String;)I",
 			arg0
-		);
-	}
-	jint DatabaseUtils_InsertHelper::getColumnIndex(const QString &arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getColumnIndex",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jlong DatabaseUtils_InsertHelper::insert(android::content::ContentValues arg0)

@@ -44,16 +44,6 @@ namespace android::app
 			arg1
 		);
 	}
-	QAndroidJniObject Fragment::instantiate(android::content::Context arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.app.Fragment",
-			"instantiate",
-			"(Landroid/content/Context;Ljava/lang/String;)Landroid/app/Fragment;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	QAndroidJniObject Fragment::instantiate(android::content::Context arg0, jstring arg1, android::os::Bundle arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -65,34 +55,12 @@ namespace android::app
 			arg2.__jniObject().object()
 		);
 	}
-	QAndroidJniObject Fragment::instantiate(android::content::Context arg0, const QString &arg1, android::os::Bundle arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.app.Fragment",
-			"instantiate",
-			"(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;)Landroid/app/Fragment;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object()
-		);
-	}
 	void Fragment::dump(jstring arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3)
 	{
 		__thiz.callMethod<void>(
 			"dump",
 			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3
-		);
-	}
-	void Fragment::dump(const QString &arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
 			arg3
@@ -850,14 +818,6 @@ namespace android::app
 			"shouldShowRequestPermissionRationale",
 			"(Ljava/lang/String;)Z",
 			arg0
-		);
-	}
-	jboolean Fragment::shouldShowRequestPermissionRationale(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"shouldShowRequestPermissionRationale",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void Fragment::startActivity(android::content::Intent arg0)

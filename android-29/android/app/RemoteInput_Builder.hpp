@@ -20,8 +20,7 @@ namespace android::app
 		
 		RemoteInput_Builder(QAndroidJniObject obj);
 		// Constructors
-		RemoteInput_Builder(jstring &arg0);
-		RemoteInput_Builder(const QString &arg0);
+		RemoteInput_Builder(jstring arg0);
 		RemoteInput_Builder() = default;
 		
 		// Methods
@@ -29,12 +28,10 @@ namespace android::app
 		QAndroidJniObject build();
 		QAndroidJniObject getExtras();
 		QAndroidJniObject setAllowDataType(jstring arg0, jboolean arg1);
-		QAndroidJniObject setAllowDataType(const QString &arg0, jboolean arg1);
 		QAndroidJniObject setAllowFreeFormInput(jboolean arg0);
 		QAndroidJniObject setChoices(jarray arg0);
 		QAndroidJniObject setEditChoicesBeforeSending(jint arg0);
 		QAndroidJniObject setLabel(jstring arg0);
-		QAndroidJniObject setLabel(const QString &arg0);
 	};
 } // namespace android::app
 

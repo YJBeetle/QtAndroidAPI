@@ -9,7 +9,7 @@ namespace android::graphics::drawable
 	
 	PictureDrawable::PictureDrawable(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PictureDrawable::PictureDrawable(android::graphics::Picture &arg0)
+	PictureDrawable::PictureDrawable(android::graphics::Picture arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.PictureDrawable",

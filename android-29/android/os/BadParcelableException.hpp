@@ -19,9 +19,8 @@ namespace android::os
 		
 		BadParcelableException(QAndroidJniObject obj);
 		// Constructors
-		BadParcelableException(java::lang::Exception &arg0);
-		BadParcelableException(jstring &arg0);
-		BadParcelableException(const QString &arg0);
+		BadParcelableException(java::lang::Exception arg0);
+		BadParcelableException(jstring arg0);
 		BadParcelableException() = default;
 		
 		// Methods

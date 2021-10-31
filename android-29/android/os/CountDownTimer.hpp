@@ -12,7 +12,7 @@ namespace android::os
 		
 		CountDownTimer(QAndroidJniObject obj);
 		// Constructors
-		CountDownTimer(jlong &arg0, jlong &arg1);
+		CountDownTimer(jlong arg0, jlong arg1);
 		CountDownTimer() = default;
 		
 		// Methods

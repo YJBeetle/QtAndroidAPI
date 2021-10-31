@@ -24,7 +24,7 @@ namespace android::content
 		
 		Entity(QAndroidJniObject obj);
 		// Constructors
-		Entity(android::content::ContentValues &arg0);
+		Entity(android::content::ContentValues arg0);
 		Entity() = default;
 		
 		// Methods

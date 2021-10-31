@@ -26,7 +26,7 @@ namespace android::text::method
 		
 		MultiTapKeyListener(QAndroidJniObject obj);
 		// Constructors
-		MultiTapKeyListener(android::text::method::TextKeyListener_Capitalize &arg0, jboolean &arg1);
+		MultiTapKeyListener(android::text::method::TextKeyListener_Capitalize arg0, jboolean arg1);
 		MultiTapKeyListener() = default;
 		
 		// Methods

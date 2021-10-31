@@ -42,17 +42,6 @@ namespace java::security
 			arg2.__jniObject().object()
 		);
 	}
-	QAndroidJniObject KeyStore_Builder::newInstance(const QString &arg0, java::security::Provider arg1, __JniBaseClass arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.security.KeyStore$Builder",
-			"newInstance",
-			"(Ljava/lang/String;Ljava/security/Provider;Ljava/security/KeyStore$ProtectionParameter;)Ljava/security/KeyStore$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
 	QAndroidJniObject KeyStore_Builder::newInstance(jstring arg0, java::security::Provider arg1, java::io::File arg2, __JniBaseClass arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -60,18 +49,6 @@ namespace java::security
 			"newInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;Ljava/io/File;Ljava/security/KeyStore$ProtectionParameter;)Ljava/security/KeyStore$Builder;",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
-		);
-	}
-	QAndroidJniObject KeyStore_Builder::newInstance(const QString &arg0, java::security::Provider arg1, java::io::File arg2, __JniBaseClass arg3)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.security.KeyStore$Builder",
-			"newInstance",
-			"(Ljava/lang/String;Ljava/security/Provider;Ljava/io/File;Ljava/security/KeyStore$ProtectionParameter;)Ljava/security/KeyStore$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object()
@@ -90,14 +67,6 @@ namespace java::security
 			"getProtectionParameter",
 			"(Ljava/lang/String;)Ljava/security/KeyStore$ProtectionParameter;",
 			arg0
-		);
-	}
-	QAndroidJniObject KeyStore_Builder::getProtectionParameter(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getProtectionParameter",
-			"(Ljava/lang/String;)Ljava/security/KeyStore$ProtectionParameter;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace java::security

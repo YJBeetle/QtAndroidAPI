@@ -86,7 +86,7 @@ namespace java::lang
 	
 	Float::Float(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Float::Float(jdouble &arg0)
+	Float::Float(jdouble arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.Float",
@@ -94,7 +94,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	Float::Float(jfloat &arg0)
+	Float::Float(jfloat arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.Float",
@@ -102,20 +102,12 @@ namespace java::lang
 			arg0
 		);
 	}
-	Float::Float(jstring &arg0)
+	Float::Float(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.Float",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	Float::Float(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.Float",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	
@@ -222,15 +214,6 @@ namespace java::lang
 			arg0
 		);
 	}
-	jfloat Float::parseFloat(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
-			"java.lang.Float",
-			"parseFloat",
-			"(Ljava/lang/String;)F",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jfloat Float::sum(jfloat arg0, jfloat arg1)
 	{
 		return QAndroidJniObject::callStaticMethod<jfloat>(
@@ -275,15 +258,6 @@ namespace java::lang
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/lang/Float;",
 			arg0
-		);
-	}
-	QAndroidJniObject Float::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.lang.Float",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/lang/Float;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jbyte Float::byteValue()

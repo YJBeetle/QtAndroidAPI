@@ -65,15 +65,6 @@ namespace java::time::format
 			arg0
 		);
 	}
-	QAndroidJniObject TextStyle::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.time.format.TextStyle",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/time/format/TextStyle;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray TextStyle::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

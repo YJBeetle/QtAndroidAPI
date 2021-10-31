@@ -84,7 +84,7 @@ namespace android::app::admin
 	
 	DeviceAdminInfo::DeviceAdminInfo(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DeviceAdminInfo::DeviceAdminInfo(android::content::Context &arg0, android::content::pm::ResolveInfo &arg1)
+	DeviceAdminInfo::DeviceAdminInfo(android::content::Context arg0, android::content::pm::ResolveInfo arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.admin.DeviceAdminInfo",
@@ -109,15 +109,6 @@ namespace android::app::admin
 			"(Landroid/util/Printer;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	void DeviceAdminInfo::dump(__JniBaseClass arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Landroid/util/Printer;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	QAndroidJniObject DeviceAdminInfo::getActivityInfo()

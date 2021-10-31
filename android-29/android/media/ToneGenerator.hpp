@@ -113,7 +113,7 @@ namespace android::media
 		
 		ToneGenerator(QAndroidJniObject obj);
 		// Constructors
-		ToneGenerator(jint &arg0, jint &arg1);
+		ToneGenerator(jint arg0, jint arg1);
 		ToneGenerator() = default;
 		
 		// Methods

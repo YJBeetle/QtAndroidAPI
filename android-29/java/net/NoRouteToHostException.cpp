@@ -13,20 +13,12 @@ namespace java::net
 			"()V"
 		);
 	}
-	NoRouteToHostException::NoRouteToHostException(jstring &arg0)
+	NoRouteToHostException::NoRouteToHostException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.NoRouteToHostException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	NoRouteToHostException::NoRouteToHostException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.NoRouteToHostException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

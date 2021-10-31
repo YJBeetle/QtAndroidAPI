@@ -24,14 +24,5 @@ namespace android::app::usage
 			arg1
 		);
 	}
-	void NetworkStatsManager_UsageCallback::onThresholdReached(jint arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"onThresholdReached",
-			"(ILjava/lang/String;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 } // namespace android::app::usage
 

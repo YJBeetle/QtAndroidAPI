@@ -18,7 +18,7 @@ namespace android::view::animation
 		BounceInterpolator(QAndroidJniObject obj);
 		// Constructors
 		BounceInterpolator();
-		BounceInterpolator(android::content::Context &arg0, __JniBaseClass &arg1);
+		BounceInterpolator(android::content::Context arg0, __JniBaseClass arg1);
 		
 		// Methods
 		jfloat getInterpolation(jfloat arg0);

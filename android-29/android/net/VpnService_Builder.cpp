@@ -11,7 +11,7 @@ namespace android::net
 	
 	VpnService_Builder::VpnService_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	VpnService_Builder::VpnService_Builder(android::net::VpnService &arg0)
+	VpnService_Builder::VpnService_Builder(android::net::VpnService arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.VpnService$Builder",
@@ -27,15 +27,6 @@ namespace android::net
 			"addAddress",
 			"(Ljava/lang/String;I)Landroid/net/VpnService$Builder;",
 			arg0,
-			arg1
-		);
-	}
-	QAndroidJniObject VpnService_Builder::addAddress(const QString &arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"addAddress",
-			"(Ljava/lang/String;I)Landroid/net/VpnService$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -56,14 +47,6 @@ namespace android::net
 			arg0
 		);
 	}
-	QAndroidJniObject VpnService_Builder::addAllowedApplication(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"addAllowedApplication",
-			"(Ljava/lang/String;)Landroid/net/VpnService$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject VpnService_Builder::addDisallowedApplication(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -72,28 +55,12 @@ namespace android::net
 			arg0
 		);
 	}
-	QAndroidJniObject VpnService_Builder::addDisallowedApplication(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"addDisallowedApplication",
-			"(Ljava/lang/String;)Landroid/net/VpnService$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject VpnService_Builder::addDnsServer(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"addDnsServer",
 			"(Ljava/lang/String;)Landroid/net/VpnService$Builder;",
 			arg0
-		);
-	}
-	QAndroidJniObject VpnService_Builder::addDnsServer(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"addDnsServer",
-			"(Ljava/lang/String;)Landroid/net/VpnService$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject VpnService_Builder::addDnsServer(java::net::InetAddress arg0)
@@ -113,15 +80,6 @@ namespace android::net
 			arg1
 		);
 	}
-	QAndroidJniObject VpnService_Builder::addRoute(const QString &arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"addRoute",
-			"(Ljava/lang/String;I)Landroid/net/VpnService$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	QAndroidJniObject VpnService_Builder::addRoute(java::net::InetAddress arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -137,14 +95,6 @@ namespace android::net
 			"addSearchDomain",
 			"(Ljava/lang/String;)Landroid/net/VpnService$Builder;",
 			arg0
-		);
-	}
-	QAndroidJniObject VpnService_Builder::addSearchDomain(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"addSearchDomain",
-			"(Ljava/lang/String;)Landroid/net/VpnService$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject VpnService_Builder::allowBypass()
@@ -215,14 +165,6 @@ namespace android::net
 			"setSession",
 			"(Ljava/lang/String;)Landroid/net/VpnService$Builder;",
 			arg0
-		);
-	}
-	QAndroidJniObject VpnService_Builder::setSession(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setSession",
-			"(Ljava/lang/String;)Landroid/net/VpnService$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject VpnService_Builder::setUnderlyingNetworks(jarray arg0)

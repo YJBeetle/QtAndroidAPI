@@ -8,20 +8,12 @@ namespace java::util::jar
 	
 	JarEntry::JarEntry(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	JarEntry::JarEntry(jstring &arg0)
+	JarEntry::JarEntry(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.jar.JarEntry",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	JarEntry::JarEntry(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.jar.JarEntry",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	JarEntry::JarEntry(java::util::jar::JarEntry &arg0)
@@ -32,7 +24,7 @@ namespace java::util::jar
 			arg0.__jniObject().object()
 		);
 	}
-	JarEntry::JarEntry(java::util::zip::ZipEntry &arg0)
+	JarEntry::JarEntry(java::util::zip::ZipEntry arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.jar.JarEntry",

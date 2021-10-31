@@ -18,8 +18,7 @@ namespace android::net
 		
 		UrlQuerySanitizer_ParameterValuePair(QAndroidJniObject obj);
 		// Constructors
-		UrlQuerySanitizer_ParameterValuePair(android::net::UrlQuerySanitizer &arg0, jstring &arg1, jstring &arg2);
-		UrlQuerySanitizer_ParameterValuePair(android::net::UrlQuerySanitizer &arg0, const QString &arg1, const QString &arg2);
+		UrlQuerySanitizer_ParameterValuePair(android::net::UrlQuerySanitizer arg0, jstring arg1, jstring arg2);
 		UrlQuerySanitizer_ParameterValuePair() = default;
 		
 		// Methods

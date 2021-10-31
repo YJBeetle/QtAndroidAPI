@@ -26,14 +26,12 @@ namespace android::provider
 		
 		SearchRecentSuggestions(QAndroidJniObject obj);
 		// Constructors
-		SearchRecentSuggestions(android::content::Context &arg0, jstring &arg1, jint &arg2);
-		SearchRecentSuggestions(android::content::Context &arg0, const QString &arg1, jint &arg2);
+		SearchRecentSuggestions(android::content::Context arg0, jstring arg1, jint arg2);
 		SearchRecentSuggestions() = default;
 		
 		// Methods
 		void clearHistory();
 		void saveRecentQuery(jstring arg0, jstring arg1);
-		void saveRecentQuery(const QString &arg0, const QString &arg1);
 	};
 } // namespace android::provider
 

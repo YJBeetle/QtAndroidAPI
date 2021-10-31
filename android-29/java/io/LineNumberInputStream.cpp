@@ -7,7 +7,7 @@ namespace java::io
 	
 	LineNumberInputStream::LineNumberInputStream(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	LineNumberInputStream::LineNumberInputStream(java::io::InputStream &arg0)
+	LineNumberInputStream::LineNumberInputStream(java::io::InputStream arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.LineNumberInputStream",

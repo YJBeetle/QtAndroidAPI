@@ -6,7 +6,7 @@ namespace java::security::spec
 	
 	X509EncodedKeySpec::X509EncodedKeySpec(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	X509EncodedKeySpec::X509EncodedKeySpec(jbyteArray &arg0)
+	X509EncodedKeySpec::X509EncodedKeySpec(jbyteArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.spec.X509EncodedKeySpec",
@@ -14,22 +14,13 @@ namespace java::security::spec
 			arg0
 		);
 	}
-	X509EncodedKeySpec::X509EncodedKeySpec(jbyteArray &arg0, jstring &arg1)
+	X509EncodedKeySpec::X509EncodedKeySpec(jbyteArray arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.spec.X509EncodedKeySpec",
 			"([BLjava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	X509EncodedKeySpec::X509EncodedKeySpec(jbyteArray &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.spec.X509EncodedKeySpec",
-			"([BLjava/lang/String;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	

@@ -58,7 +58,6 @@ namespace java::security::cert
 		jint hashCode();
 		void verify(__JniBaseClass arg0);
 		void verify(__JniBaseClass arg0, jstring arg1);
-		void verify(__JniBaseClass arg0, const QString &arg1);
 		void verify(__JniBaseClass arg0, java::security::Provider arg1);
 	};
 } // namespace java::security::cert

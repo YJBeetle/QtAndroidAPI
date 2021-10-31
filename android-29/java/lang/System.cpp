@@ -61,15 +61,6 @@ namespace java::lang
 			arg0
 		).object<jstring>();
 	}
-	jstring System::clearProperty(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.lang.System",
-			"clearProperty",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
 	QAndroidJniObject System::console()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -112,15 +103,6 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject System::getLogger(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.lang.System",
-			"getLogger",
-			"(Ljava/lang/String;)Ljava/lang/System$Logger;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject System::getLogger(jstring arg0, java::util::ResourceBundle arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -128,16 +110,6 @@ namespace java::lang
 			"getLogger",
 			"(Ljava/lang/String;Ljava/util/ResourceBundle;)Ljava/lang/System$Logger;",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject System::getLogger(const QString &arg0, java::util::ResourceBundle arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.lang.System",
-			"getLogger",
-			"(Ljava/lang/String;Ljava/util/ResourceBundle;)Ljava/lang/System$Logger;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -158,15 +130,6 @@ namespace java::lang
 			arg0
 		).object<jstring>();
 	}
-	jstring System::getProperty(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.lang.System",
-			"getProperty",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
 	jstring System::getProperty(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -175,16 +138,6 @@ namespace java::lang
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
 			arg0,
 			arg1
-		).object<jstring>();
-	}
-	jstring System::getProperty(const QString &arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.lang.System",
-			"getProperty",
-			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		).object<jstring>();
 	}
 	QAndroidJniObject System::getSecurityManager()
@@ -202,15 +155,6 @@ namespace java::lang
 			"getenv",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
-	}
-	jstring System::getenv(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.lang.System",
-			"getenv",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	QAndroidJniObject System::getenv()
@@ -255,15 +199,6 @@ namespace java::lang
 			arg0
 		);
 	}
-	void System::load(const QString &arg0)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"java.lang.System",
-			"load",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void System::loadLibrary(jstring arg0)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -273,15 +208,6 @@ namespace java::lang
 			arg0
 		);
 	}
-	void System::loadLibrary(const QString &arg0)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"java.lang.System",
-			"loadLibrary",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jstring System::mapLibraryName(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -289,15 +215,6 @@ namespace java::lang
 			"mapLibraryName",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
-	}
-	jstring System::mapLibraryName(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.lang.System",
-			"mapLibraryName",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	jlong System::nanoTime()
@@ -360,16 +277,6 @@ namespace java::lang
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
 			arg0,
 			arg1
-		).object<jstring>();
-	}
-	jstring System::setProperty(const QString &arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.lang.System",
-			"setProperty",
-			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		).object<jstring>();
 	}
 	void System::setSecurityManager(java::lang::SecurityManager arg0)

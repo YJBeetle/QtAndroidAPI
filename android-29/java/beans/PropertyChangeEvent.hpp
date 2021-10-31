@@ -17,8 +17,7 @@ namespace java::beans
 		
 		PropertyChangeEvent(QAndroidJniObject obj);
 		// Constructors
-		PropertyChangeEvent(jobject &arg0, jstring &arg1, jobject &arg2, jobject &arg3);
-		PropertyChangeEvent(jobject &arg0, const QString &arg1, jobject &arg2, jobject &arg3);
+		PropertyChangeEvent(jobject arg0, jstring arg1, jobject arg2, jobject arg3);
 		PropertyChangeEvent() = default;
 		
 		// Methods

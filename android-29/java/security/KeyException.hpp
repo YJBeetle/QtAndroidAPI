@@ -15,11 +15,9 @@ namespace java::security
 		KeyException(QAndroidJniObject obj);
 		// Constructors
 		KeyException();
-		KeyException(jstring &arg0);
-		KeyException(const QString &arg0);
-		KeyException(jthrowable &arg0);
-		KeyException(jstring &arg0, jthrowable &arg1);
-		KeyException(const QString &arg0, jthrowable &arg1);
+		KeyException(jstring arg0);
+		KeyException(jthrowable arg0);
+		KeyException(jstring arg0, jthrowable arg1);
 		
 		// Methods
 	};

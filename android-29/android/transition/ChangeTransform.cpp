@@ -17,7 +17,7 @@ namespace android::transition
 			"()V"
 		);
 	}
-	ChangeTransform::ChangeTransform(android::content::Context &arg0, __JniBaseClass &arg1)
+	ChangeTransform::ChangeTransform(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.transition.ChangeTransform",

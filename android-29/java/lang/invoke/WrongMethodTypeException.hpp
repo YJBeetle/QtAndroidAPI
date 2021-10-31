@@ -15,8 +15,7 @@ namespace java::lang::invoke
 		WrongMethodTypeException(QAndroidJniObject obj);
 		// Constructors
 		WrongMethodTypeException();
-		WrongMethodTypeException(jstring &arg0);
-		WrongMethodTypeException(const QString &arg0);
+		WrongMethodTypeException(jstring arg0);
 		
 		// Methods
 	};

@@ -12,22 +12,13 @@ namespace java::util::logging
 	
 	LogRecord::LogRecord(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	LogRecord::LogRecord(java::util::logging::Level &arg0, jstring &arg1)
+	LogRecord::LogRecord(java::util::logging::Level arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.logging.LogRecord",
 			"(Ljava/util/logging/Level;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	LogRecord::LogRecord(java::util::logging::Level &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.logging.LogRecord",
-			"(Ljava/util/logging/Level;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	
@@ -154,14 +145,6 @@ namespace java::util::logging
 			arg0
 		);
 	}
-	void LogRecord::setLoggerName(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setLoggerName",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject LogRecord::setLongThreadID(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -176,14 +159,6 @@ namespace java::util::logging
 			"setMessage",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void LogRecord::setMessage(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setMessage",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void LogRecord::setMillis(jlong arg0)
@@ -218,14 +193,6 @@ namespace java::util::logging
 			arg0
 		);
 	}
-	void LogRecord::setResourceBundleName(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setResourceBundleName",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void LogRecord::setSequenceNumber(jlong arg0)
 	{
 		__thiz.callMethod<void>(
@@ -242,28 +209,12 @@ namespace java::util::logging
 			arg0
 		);
 	}
-	void LogRecord::setSourceClassName(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSourceClassName",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void LogRecord::setSourceMethodName(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSourceMethodName",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void LogRecord::setSourceMethodName(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSourceMethodName",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void LogRecord::setThreadID(jint arg0)

@@ -49,15 +49,6 @@ namespace android::text
 			arg0
 		);
 	}
-	QAndroidJniObject TextUtils_TruncateAt::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.text.TextUtils$TruncateAt",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/text/TextUtils$TruncateAt;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray TextUtils_TruncateAt::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

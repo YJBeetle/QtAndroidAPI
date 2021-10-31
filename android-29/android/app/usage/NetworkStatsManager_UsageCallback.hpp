@@ -16,7 +16,6 @@ namespace android::app::usage
 		
 		// Methods
 		void onThresholdReached(jint arg0, jstring arg1);
-		void onThresholdReached(jint arg0, const QString &arg1);
 	};
 } // namespace android::app::usage
 

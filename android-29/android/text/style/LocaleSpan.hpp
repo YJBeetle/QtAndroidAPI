@@ -30,9 +30,9 @@ namespace android::text::style
 		
 		LocaleSpan(QAndroidJniObject obj);
 		// Constructors
-		LocaleSpan(android::os::LocaleList &arg0);
-		LocaleSpan(android::os::Parcel &arg0);
-		LocaleSpan(java::util::Locale &arg0);
+		LocaleSpan(android::os::LocaleList arg0);
+		LocaleSpan(android::os::Parcel arg0);
+		LocaleSpan(java::util::Locale arg0);
 		LocaleSpan() = default;
 		
 		// Methods

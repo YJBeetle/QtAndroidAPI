@@ -45,22 +45,16 @@ namespace java::net
 		// Methods
 		static jboolean getDefaultAllowUserInteraction();
 		static jstring getDefaultRequestProperty(jstring arg0);
-		static jstring getDefaultRequestProperty(const QString &arg0);
 		static jboolean getDefaultUseCaches(jstring arg0);
-		static jboolean getDefaultUseCaches(const QString &arg0);
 		static QAndroidJniObject getFileNameMap();
 		static jstring guessContentTypeFromName(jstring arg0);
-		static jstring guessContentTypeFromName(const QString &arg0);
 		static jstring guessContentTypeFromStream(java::io::InputStream arg0);
 		static void setContentHandlerFactory(__JniBaseClass arg0);
 		static void setDefaultAllowUserInteraction(jboolean arg0);
 		static void setDefaultRequestProperty(jstring arg0, jstring arg1);
-		static void setDefaultRequestProperty(const QString &arg0, const QString &arg1);
 		static void setDefaultUseCaches(jstring arg0, jboolean arg1);
-		static void setDefaultUseCaches(const QString &arg0, jboolean arg1);
 		static void setFileNameMap(__JniBaseClass arg0);
 		void addRequestProperty(jstring arg0, jstring arg1);
-		void addRequestProperty(const QString &arg0, const QString &arg1);
 		void connect();
 		jboolean getAllowUserInteraction();
 		jint getConnectTimeout();
@@ -77,14 +71,10 @@ namespace java::net
 		jlong getExpiration();
 		jstring getHeaderField(jint arg0);
 		jstring getHeaderField(jstring arg0);
-		jstring getHeaderField(const QString &arg0);
 		jlong getHeaderFieldDate(jstring arg0, jlong arg1);
-		jlong getHeaderFieldDate(const QString &arg0, jlong arg1);
 		jint getHeaderFieldInt(jstring arg0, jint arg1);
-		jint getHeaderFieldInt(const QString &arg0, jint arg1);
 		jstring getHeaderFieldKey(jint arg0);
 		jlong getHeaderFieldLong(jstring arg0, jlong arg1);
-		jlong getHeaderFieldLong(const QString &arg0, jlong arg1);
 		QAndroidJniObject getHeaderFields();
 		jlong getIfModifiedSince();
 		QAndroidJniObject getInputStream();
@@ -94,7 +84,6 @@ namespace java::net
 		jint getReadTimeout();
 		QAndroidJniObject getRequestProperties();
 		jstring getRequestProperty(jstring arg0);
-		jstring getRequestProperty(const QString &arg0);
 		QAndroidJniObject getURL();
 		jboolean getUseCaches();
 		void setAllowUserInteraction(jboolean arg0);
@@ -105,7 +94,6 @@ namespace java::net
 		void setIfModifiedSince(jlong arg0);
 		void setReadTimeout(jint arg0);
 		void setRequestProperty(jstring arg0, jstring arg1);
-		void setRequestProperty(const QString &arg0, const QString &arg1);
 		void setUseCaches(jboolean arg0);
 		jstring toString();
 	};

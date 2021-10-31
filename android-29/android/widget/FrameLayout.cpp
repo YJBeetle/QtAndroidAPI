@@ -9,7 +9,7 @@ namespace android::widget
 	
 	FrameLayout::FrameLayout(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	FrameLayout::FrameLayout(android::content::Context &arg0)
+	FrameLayout::FrameLayout(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.FrameLayout",
@@ -17,7 +17,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	FrameLayout::FrameLayout(android::content::Context &arg0, __JniBaseClass &arg1)
+	FrameLayout::FrameLayout(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.FrameLayout",
@@ -26,7 +26,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	FrameLayout::FrameLayout(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	FrameLayout::FrameLayout(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.FrameLayout",
@@ -36,7 +36,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	FrameLayout::FrameLayout(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	FrameLayout::FrameLayout(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.FrameLayout",

@@ -18,7 +18,7 @@ namespace android::content
 		
 		MutableContextWrapper(QAndroidJniObject obj);
 		// Constructors
-		MutableContextWrapper(android::content::Context &arg0);
+		MutableContextWrapper(android::content::Context arg0);
 		MutableContextWrapper() = default;
 		
 		// Methods

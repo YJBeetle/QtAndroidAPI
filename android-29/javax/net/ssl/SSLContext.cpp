@@ -32,15 +32,6 @@ namespace javax::net::ssl
 			arg0
 		);
 	}
-	QAndroidJniObject SSLContext::getInstance(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"javax.net.ssl.SSLContext",
-			"getInstance",
-			"(Ljava/lang/String;)Ljavax/net/ssl/SSLContext;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject SSLContext::getInstance(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -51,16 +42,6 @@ namespace javax::net::ssl
 			arg1
 		);
 	}
-	QAndroidJniObject SSLContext::getInstance(const QString &arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"javax.net.ssl.SSLContext",
-			"getInstance",
-			"(Ljava/lang/String;Ljava/lang/String;)Ljavax/net/ssl/SSLContext;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	QAndroidJniObject SSLContext::getInstance(jstring arg0, java::security::Provider arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -68,16 +49,6 @@ namespace javax::net::ssl
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljavax/net/ssl/SSLContext;",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject SSLContext::getInstance(const QString &arg0, java::security::Provider arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"javax.net.ssl.SSLContext",
-			"getInstance",
-			"(Ljava/lang/String;Ljava/security/Provider;)Ljavax/net/ssl/SSLContext;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -103,15 +74,6 @@ namespace javax::net::ssl
 			"createSSLEngine",
 			"(Ljava/lang/String;I)Ljavax/net/ssl/SSLEngine;",
 			arg0,
-			arg1
-		);
-	}
-	QAndroidJniObject SSLContext::createSSLEngine(const QString &arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"createSSLEngine",
-			"(Ljava/lang/String;I)Ljavax/net/ssl/SSLEngine;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

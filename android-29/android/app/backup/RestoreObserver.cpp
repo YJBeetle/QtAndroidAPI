@@ -24,15 +24,6 @@ namespace android::app::backup
 			arg1
 		);
 	}
-	void RestoreObserver::onUpdate(jint arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"onUpdate",
-			"(ILjava/lang/String;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	void RestoreObserver::restoreFinished(jint arg0)
 	{
 		__thiz.callMethod<void>(

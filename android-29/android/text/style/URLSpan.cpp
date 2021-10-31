@@ -8,7 +8,7 @@ namespace android::text::style
 	
 	URLSpan::URLSpan(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	URLSpan::URLSpan(android::os::Parcel &arg0)
+	URLSpan::URLSpan(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.URLSpan",
@@ -16,20 +16,12 @@ namespace android::text::style
 			arg0.__jniObject().object()
 		);
 	}
-	URLSpan::URLSpan(jstring &arg0)
+	URLSpan::URLSpan(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.URLSpan",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	URLSpan::URLSpan(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.text.style.URLSpan",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

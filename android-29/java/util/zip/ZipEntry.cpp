@@ -22,20 +22,12 @@ namespace java::util::zip
 	
 	ZipEntry::ZipEntry(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ZipEntry::ZipEntry(jstring &arg0)
+	ZipEntry::ZipEntry(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.zip.ZipEntry",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	ZipEntry::ZipEntry(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.zip.ZipEntry",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	ZipEntry::ZipEntry(java::util::zip::ZipEntry &arg0)
@@ -159,14 +151,6 @@ namespace java::util::zip
 			"setComment",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void ZipEntry::setComment(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setComment",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void ZipEntry::setCompressedSize(jlong arg0)

@@ -57,7 +57,7 @@ namespace android::net::http
 	
 	SslError::SslError(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SslError::SslError(jint &arg0, android::net::http::SslCertificate &arg1)
+	SslError::SslError(jint arg0, android::net::http::SslCertificate arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.http.SslError",
@@ -66,7 +66,7 @@ namespace android::net::http
 			arg1.__jniObject().object()
 		);
 	}
-	SslError::SslError(jint &arg0, java::security::cert::X509Certificate &arg1)
+	SslError::SslError(jint arg0, java::security::cert::X509Certificate arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.http.SslError",
@@ -75,7 +75,7 @@ namespace android::net::http
 			arg1.__jniObject().object()
 		);
 	}
-	SslError::SslError(jint &arg0, android::net::http::SslCertificate &arg1, jstring &arg2)
+	SslError::SslError(jint arg0, android::net::http::SslCertificate arg1, jstring arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.http.SslError",
@@ -85,17 +85,7 @@ namespace android::net::http
 			arg2
 		);
 	}
-	SslError::SslError(jint &arg0, android::net::http::SslCertificate &arg1, const QString &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.net.http.SslError",
-			"(ILandroid/net/http/SslCertificate;Ljava/lang/String;)V",
-			arg0,
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
-	SslError::SslError(jint &arg0, java::security::cert::X509Certificate &arg1, jstring &arg2)
+	SslError::SslError(jint arg0, java::security::cert::X509Certificate arg1, jstring arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.http.SslError",
@@ -103,16 +93,6 @@ namespace android::net::http
 			arg0,
 			arg1.__jniObject().object(),
 			arg2
-		);
-	}
-	SslError::SslError(jint &arg0, java::security::cert::X509Certificate &arg1, const QString &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.net.http.SslError",
-			"(ILjava/security/cert/X509Certificate;Ljava/lang/String;)V",
-			arg0,
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	

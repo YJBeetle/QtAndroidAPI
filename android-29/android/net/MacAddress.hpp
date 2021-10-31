@@ -26,7 +26,6 @@ namespace android::net
 		// Methods
 		static QAndroidJniObject fromBytes(jbyteArray arg0);
 		static QAndroidJniObject fromString(jstring arg0);
-		static QAndroidJniObject fromString(const QString &arg0);
 		jint describeContents();
 		jboolean equals(jobject arg0);
 		jint getAddressType();

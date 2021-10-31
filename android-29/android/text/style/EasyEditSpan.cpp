@@ -37,7 +37,7 @@ namespace android::text::style
 			"()V"
 		);
 	}
-	EasyEditSpan::EasyEditSpan(android::app::PendingIntent &arg0)
+	EasyEditSpan::EasyEditSpan(android::app::PendingIntent arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.EasyEditSpan",
@@ -45,7 +45,7 @@ namespace android::text::style
 			arg0.__jniObject().object()
 		);
 	}
-	EasyEditSpan::EasyEditSpan(android::os::Parcel &arg0)
+	EasyEditSpan::EasyEditSpan(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.EasyEditSpan",

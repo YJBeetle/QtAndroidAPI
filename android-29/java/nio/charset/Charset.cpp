@@ -40,15 +40,6 @@ namespace java::nio::charset
 			arg0
 		);
 	}
-	QAndroidJniObject Charset::forName(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.nio.charset.Charset",
-			"forName",
-			"(Ljava/lang/String;)Ljava/nio/charset/Charset;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jboolean Charset::isSupported(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
@@ -56,15 +47,6 @@ namespace java::nio::charset
 			"isSupported",
 			"(Ljava/lang/String;)Z",
 			arg0
-		);
-	}
-	jboolean Charset::isSupported(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"java.nio.charset.Charset",
-			"isSupported",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Charset::aliases()
@@ -134,14 +116,6 @@ namespace java::nio::charset
 			"encode",
 			"(Ljava/lang/String;)Ljava/nio/ByteBuffer;",
 			arg0
-		);
-	}
-	QAndroidJniObject Charset::encode(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"encode",
-			"(Ljava/lang/String;)Ljava/nio/ByteBuffer;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Charset::encode(java::nio::CharBuffer arg0)

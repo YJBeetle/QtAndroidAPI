@@ -41,15 +41,6 @@ namespace android::widget
 			arg0
 		);
 	}
-	QAndroidJniObject TextView_BufferType::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.widget.TextView$BufferType",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/widget/TextView$BufferType;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray TextView_BufferType::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

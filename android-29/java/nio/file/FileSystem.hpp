@@ -26,9 +26,7 @@ namespace java::nio::file
 		void close();
 		QAndroidJniObject getFileStores();
 		QAndroidJniObject getPath(jstring arg0, jarray arg1);
-		QAndroidJniObject getPath(const QString &arg0, jarray arg1);
 		QAndroidJniObject getPathMatcher(jstring arg0);
-		QAndroidJniObject getPathMatcher(const QString &arg0);
 		QAndroidJniObject getRootDirectories();
 		jstring getSeparator();
 		QAndroidJniObject getUserPrincipalLookupService();

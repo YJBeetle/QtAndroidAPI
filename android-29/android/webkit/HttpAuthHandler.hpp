@@ -18,7 +18,6 @@ namespace android::webkit
 		// Methods
 		void cancel();
 		void proceed(jstring arg0, jstring arg1);
-		void proceed(const QString &arg0, const QString &arg1);
 		jboolean useHttpAuthUsernamePassword();
 	};
 } // namespace android::webkit

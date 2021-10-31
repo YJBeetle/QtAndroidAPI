@@ -26,7 +26,7 @@ namespace android::widget
 	
 	AdapterView_AdapterContextMenuInfo::AdapterView_AdapterContextMenuInfo(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AdapterView_AdapterContextMenuInfo::AdapterView_AdapterContextMenuInfo(android::view::View &arg0, jint &arg1, jlong &arg2)
+	AdapterView_AdapterContextMenuInfo::AdapterView_AdapterContextMenuInfo(android::view::View arg0, jint arg1, jlong arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.AdapterView$AdapterContextMenuInfo",

@@ -13,7 +13,7 @@ namespace java::security::cert
 			"()V"
 		);
 	}
-	CertificateException::CertificateException(jstring &arg0)
+	CertificateException::CertificateException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.cert.CertificateException",
@@ -21,15 +21,7 @@ namespace java::security::cert
 			arg0
 		);
 	}
-	CertificateException::CertificateException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.cert.CertificateException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	CertificateException::CertificateException(jthrowable &arg0)
+	CertificateException::CertificateException(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.cert.CertificateException",
@@ -37,21 +29,12 @@ namespace java::security::cert
 			arg0
 		);
 	}
-	CertificateException::CertificateException(jstring &arg0, jthrowable &arg1)
+	CertificateException::CertificateException(jstring arg0, jthrowable arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.cert.CertificateException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
-			arg1
-		);
-	}
-	CertificateException::CertificateException(const QString &arg0, jthrowable &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.cert.CertificateException",
-			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

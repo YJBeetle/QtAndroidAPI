@@ -24,7 +24,7 @@ namespace java::security
 		
 		Timestamp(QAndroidJniObject obj);
 		// Constructors
-		Timestamp(java::util::Date &arg0, java::security::cert::CertPath &arg1);
+		Timestamp(java::util::Date arg0, java::security::cert::CertPath arg1);
 		Timestamp() = default;
 		
 		// Methods

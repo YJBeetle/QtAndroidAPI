@@ -192,14 +192,6 @@ namespace android::os
 			arg0
 		);
 	}
-	void Parcel::enforceInterface(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"enforceInterface",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jboolean Parcel::hasFileDescriptors()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -328,15 +320,6 @@ namespace android::os
 			"(ILjava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	void Parcel::readException(jint arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"readException",
-			"(ILjava/lang/String;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	QAndroidJniObject Parcel::readFileDescriptor()
@@ -752,14 +735,6 @@ namespace android::os
 			arg0
 		);
 	}
-	void Parcel::writeInterfaceToken(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"writeInterfaceToken",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void Parcel::writeList(__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
@@ -880,14 +855,6 @@ namespace android::os
 			"writeString",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void Parcel::writeString(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"writeString",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void Parcel::writeStringArray(jarray arg0)

@@ -7,7 +7,7 @@ namespace android::graphics
 	
 	BlurMaskFilter::BlurMaskFilter(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	BlurMaskFilter::BlurMaskFilter(jfloat &arg0, android::graphics::BlurMaskFilter_Blur &arg1)
+	BlurMaskFilter::BlurMaskFilter(jfloat arg0, android::graphics::BlurMaskFilter_Blur arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.BlurMaskFilter",

@@ -19,7 +19,7 @@ namespace android::media::audiofx
 		DynamicsProcessing_Eq(QAndroidJniObject obj);
 		// Constructors
 		DynamicsProcessing_Eq(android::media::audiofx::DynamicsProcessing_Eq &arg0);
-		DynamicsProcessing_Eq(jboolean &arg0, jboolean &arg1, jint &arg2);
+		DynamicsProcessing_Eq(jboolean arg0, jboolean arg1, jint arg2);
 		DynamicsProcessing_Eq() = default;
 		
 		// Methods

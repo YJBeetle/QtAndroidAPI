@@ -20,7 +20,7 @@ namespace android::graphics::pdf
 		
 		PdfRenderer(QAndroidJniObject obj);
 		// Constructors
-		PdfRenderer(android::os::ParcelFileDescriptor &arg0);
+		PdfRenderer(android::os::ParcelFileDescriptor arg0);
 		PdfRenderer() = default;
 		
 		// Methods

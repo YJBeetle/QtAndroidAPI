@@ -41,15 +41,6 @@ namespace android::graphics
 			arg0
 		);
 	}
-	QAndroidJniObject Canvas_VertexMode::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.Canvas$VertexMode",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/graphics/Canvas$VertexMode;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray Canvas_VertexMode::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

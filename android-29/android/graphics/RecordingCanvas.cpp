@@ -384,16 +384,6 @@ namespace android::graphics
 			arg2.__jniObject().object()
 		);
 	}
-	void RecordingCanvas::drawPosText(const QString &arg0, jfloatArray arg1, android::graphics::Paint arg2)
-	{
-		__thiz.callMethod<void>(
-			"drawPosText",
-			"(Ljava/lang/String;[FLandroid/graphics/Paint;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
 	void RecordingCanvas::drawPosText(jcharArray arg0, jint arg1, jint arg2, jfloatArray arg3, android::graphics::Paint arg4)
 	{
 		__thiz.callMethod<void>(
@@ -490,17 +480,6 @@ namespace android::graphics
 			arg3.__jniObject().object()
 		);
 	}
-	void RecordingCanvas::drawText(const QString &arg0, jfloat arg1, jfloat arg2, android::graphics::Paint arg3)
-	{
-		__thiz.callMethod<void>(
-			"drawText",
-			"(Ljava/lang/String;FFLandroid/graphics/Paint;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2,
-			arg3.__jniObject().object()
-		);
-	}
 	void RecordingCanvas::drawText(jcharArray arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, android::graphics::Paint arg5)
 	{
 		__thiz.callMethod<void>(
@@ -527,37 +506,12 @@ namespace android::graphics
 			arg5.__jniObject().object()
 		);
 	}
-	void RecordingCanvas::drawText(const QString &arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, android::graphics::Paint arg5)
-	{
-		__thiz.callMethod<void>(
-			"drawText",
-			"(Ljava/lang/CharSequence;IIFFLandroid/graphics/Paint;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5.__jniObject().object()
-		);
-	}
 	void RecordingCanvas::drawTextOnPath(jstring arg0, android::graphics::Path arg1, jfloat arg2, jfloat arg3, android::graphics::Paint arg4)
 	{
 		__thiz.callMethod<void>(
 			"drawTextOnPath",
 			"(Ljava/lang/String;Landroid/graphics/Path;FFLandroid/graphics/Paint;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2,
-			arg3,
-			arg4.__jniObject().object()
-		);
-	}
-	void RecordingCanvas::drawTextOnPath(const QString &arg0, android::graphics::Path arg1, jfloat arg2, jfloat arg3, android::graphics::Paint arg4)
-	{
-		__thiz.callMethod<void>(
-			"drawTextOnPath",
-			"(Ljava/lang/String;Landroid/graphics/Path;FFLandroid/graphics/Paint;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2,
 			arg3,
@@ -616,22 +570,6 @@ namespace android::graphics
 			"drawTextRun",
 			"(Ljava/lang/CharSequence;IIIIFFZLandroid/graphics/Paint;)V",
 			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5,
-			arg6,
-			arg7,
-			arg8.__jniObject().object()
-		);
-	}
-	void RecordingCanvas::drawTextRun(const QString &arg0, jint arg1, jint arg2, jint arg3, jint arg4, jfloat arg5, jfloat arg6, jboolean arg7, android::graphics::Paint arg8)
-	{
-		__thiz.callMethod<void>(
-			"drawTextRun",
-			"(Ljava/lang/CharSequence;IIIIFFZLandroid/graphics/Paint;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2,
 			arg3,

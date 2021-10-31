@@ -40,7 +40,7 @@ namespace android::icu::text
 			"()V"
 		);
 	}
-	UnicodeSetIterator::UnicodeSetIterator(android::icu::text::UnicodeSet &arg0)
+	UnicodeSetIterator::UnicodeSetIterator(android::icu::text::UnicodeSet arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.UnicodeSetIterator",

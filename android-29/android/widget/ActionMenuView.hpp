@@ -39,8 +39,8 @@ namespace android::widget
 		
 		ActionMenuView(QAndroidJniObject obj);
 		// Constructors
-		ActionMenuView(android::content::Context &arg0);
-		ActionMenuView(android::content::Context &arg0, __JniBaseClass &arg1);
+		ActionMenuView(android::content::Context arg0);
+		ActionMenuView(android::content::Context arg0, __JniBaseClass arg1);
 		ActionMenuView() = default;
 		
 		// Methods

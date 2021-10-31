@@ -60,7 +60,6 @@ namespace android::renderscript
 		jlong getVarJ(jint arg0);
 		void getVarV(jint arg0, android::renderscript::FieldPacker arg1);
 		void setTimeZone(jstring arg0);
-		void setTimeZone(const QString &arg0);
 		void setVar(jint arg0, android::renderscript::BaseObj arg1);
 		void setVar(jint arg0, android::renderscript::FieldPacker arg1);
 		void setVar(jint arg0, jboolean arg1);

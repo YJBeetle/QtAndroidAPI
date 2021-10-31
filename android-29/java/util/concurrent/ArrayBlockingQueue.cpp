@@ -9,7 +9,7 @@ namespace java::util::concurrent
 	
 	ArrayBlockingQueue::ArrayBlockingQueue(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ArrayBlockingQueue::ArrayBlockingQueue(jint &arg0)
+	ArrayBlockingQueue::ArrayBlockingQueue(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.ArrayBlockingQueue",
@@ -17,7 +17,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	ArrayBlockingQueue::ArrayBlockingQueue(jint &arg0, jboolean &arg1)
+	ArrayBlockingQueue::ArrayBlockingQueue(jint arg0, jboolean arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.ArrayBlockingQueue",
@@ -26,7 +26,7 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	ArrayBlockingQueue::ArrayBlockingQueue(jint &arg0, jboolean &arg1, __JniBaseClass &arg2)
+	ArrayBlockingQueue::ArrayBlockingQueue(jint arg0, jboolean arg1, __JniBaseClass arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.ArrayBlockingQueue",

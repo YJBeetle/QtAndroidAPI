@@ -23,15 +23,6 @@ namespace java::security::cert
 			arg0
 		);
 	}
-	QAndroidJniObject CertificateFactory::getInstance(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.security.cert.CertificateFactory",
-			"getInstance",
-			"(Ljava/lang/String;)Ljava/security/cert/CertificateFactory;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject CertificateFactory::getInstance(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -42,16 +33,6 @@ namespace java::security::cert
 			arg1
 		);
 	}
-	QAndroidJniObject CertificateFactory::getInstance(const QString &arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.security.cert.CertificateFactory",
-			"getInstance",
-			"(Ljava/lang/String;Ljava/lang/String;)Ljava/security/cert/CertificateFactory;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	QAndroidJniObject CertificateFactory::getInstance(jstring arg0, java::security::Provider arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -59,16 +40,6 @@ namespace java::security::cert
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/cert/CertificateFactory;",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject CertificateFactory::getInstance(const QString &arg0, java::security::Provider arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.security.cert.CertificateFactory",
-			"getInstance",
-			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/cert/CertificateFactory;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -111,15 +82,6 @@ namespace java::security::cert
 			"(Ljava/io/InputStream;Ljava/lang/String;)Ljava/security/cert/CertPath;",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	QAndroidJniObject CertificateFactory::generateCertPath(java::io::InputStream arg0, const QString &arg1)
-	{
-		return __thiz.callObjectMethod(
-			"generateCertPath",
-			"(Ljava/io/InputStream;Ljava/lang/String;)Ljava/security/cert/CertPath;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	QAndroidJniObject CertificateFactory::generateCertificate(java::io::InputStream arg0)

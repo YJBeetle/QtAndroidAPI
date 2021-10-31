@@ -47,14 +47,6 @@ namespace android::drm
 			arg0
 		).object<jobject>();
 	}
-	jobject DrmEvent::getAttribute(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getAttribute",
-			"(Ljava/lang/String;)Ljava/lang/Object;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jobject>();
-	}
 	jstring DrmEvent::getMessage()
 	{
 		return __thiz.callObjectMethod(

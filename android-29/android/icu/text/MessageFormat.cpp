@@ -13,7 +13,7 @@ namespace android::icu::text
 	
 	MessageFormat::MessageFormat(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MessageFormat::MessageFormat(jstring &arg0)
+	MessageFormat::MessageFormat(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.MessageFormat",
@@ -21,15 +21,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	MessageFormat::MessageFormat(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.text.MessageFormat",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	MessageFormat::MessageFormat(jstring &arg0, android::icu::util::ULocale &arg1)
+	MessageFormat::MessageFormat(jstring arg0, android::icu::util::ULocale arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.MessageFormat",
@@ -38,30 +30,12 @@ namespace android::icu::text
 			arg1.__jniObject().object()
 		);
 	}
-	MessageFormat::MessageFormat(const QString &arg0, android::icu::util::ULocale &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.text.MessageFormat",
-			"(Ljava/lang/String;Landroid/icu/util/ULocale;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
-	MessageFormat::MessageFormat(jstring &arg0, java::util::Locale &arg1)
+	MessageFormat::MessageFormat(jstring arg0, java::util::Locale arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.MessageFormat",
 			"(Ljava/lang/String;Ljava/util/Locale;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	MessageFormat::MessageFormat(const QString &arg0, java::util::Locale &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.text.MessageFormat",
-			"(Ljava/lang/String;Ljava/util/Locale;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -76,15 +50,6 @@ namespace android::icu::text
 			arg0
 		).object<jstring>();
 	}
-	jstring MessageFormat::autoQuoteApostrophe(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.MessageFormat",
-			"autoQuoteApostrophe",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
 	jstring MessageFormat::format(jstring arg0, jobjectArray arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -92,16 +57,6 @@ namespace android::icu::text
 			"format",
 			"(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;",
 			arg0,
-			arg1
-		).object<jstring>();
-	}
-	jstring MessageFormat::format(const QString &arg0, jobjectArray arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.MessageFormat",
-			"format",
-			"(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		).object<jstring>();
 	}
@@ -115,16 +70,6 @@ namespace android::icu::text
 			arg1.__jniObject().object()
 		).object<jstring>();
 	}
-	jstring MessageFormat::format(const QString &arg0, __JniBaseClass arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.MessageFormat",
-			"format",
-			"(Ljava/lang/String;Ljava/util/Map;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		).object<jstring>();
-	}
 	void MessageFormat::applyPattern(jstring arg0)
 	{
 		__thiz.callMethod<void>(
@@ -133,29 +78,12 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void MessageFormat::applyPattern(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"applyPattern",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void MessageFormat::applyPattern(jstring arg0, android::icu::text::MessagePattern_ApostropheMode arg1)
 	{
 		__thiz.callMethod<void>(
 			"applyPattern",
 			"(Ljava/lang/String;Landroid/icu/text/MessagePattern$ApostropheMode;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void MessageFormat::applyPattern(const QString &arg0, android::icu::text::MessagePattern_ApostropheMode arg1)
-	{
-		__thiz.callMethod<void>(
-			"applyPattern",
-			"(Ljava/lang/String;Landroid/icu/text/MessagePattern$ApostropheMode;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -234,14 +162,6 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject MessageFormat::getFormatByArgumentName(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getFormatByArgumentName",
-			"(Ljava/lang/String;)Ljava/text/Format;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray MessageFormat::getFormats()
 	{
 		return __thiz.callObjectMethod(
@@ -285,29 +205,12 @@ namespace android::icu::text
 			arg0
 		).object<jobjectArray>();
 	}
-	jobjectArray MessageFormat::parse(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"parse",
-			"(Ljava/lang/String;)[Ljava/lang/Object;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jobjectArray>();
-	}
 	jobjectArray MessageFormat::parse(jstring arg0, java::text::ParsePosition arg1)
 	{
 		return __thiz.callObjectMethod(
 			"parse",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)[Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object()
-		).object<jobjectArray>();
-	}
-	jobjectArray MessageFormat::parse(const QString &arg0, java::text::ParsePosition arg1)
-	{
-		return __thiz.callObjectMethod(
-			"parse",
-			"(Ljava/lang/String;Ljava/text/ParsePosition;)[Ljava/lang/Object;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		).object<jobjectArray>();
 	}
@@ -320,15 +223,6 @@ namespace android::icu::text
 			arg1.__jniObject().object()
 		).object<jobject>();
 	}
-	jobject MessageFormat::parseObject(const QString &arg0, java::text::ParsePosition arg1)
-	{
-		return __thiz.callObjectMethod(
-			"parseObject",
-			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Object;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		).object<jobject>();
-	}
 	QAndroidJniObject MessageFormat::parseToMap(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -337,29 +231,12 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject MessageFormat::parseToMap(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"parseToMap",
-			"(Ljava/lang/String;)Ljava/util/Map;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject MessageFormat::parseToMap(jstring arg0, java::text::ParsePosition arg1)
 	{
 		return __thiz.callObjectMethod(
 			"parseToMap",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/util/Map;",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject MessageFormat::parseToMap(const QString &arg0, java::text::ParsePosition arg1)
-	{
-		return __thiz.callObjectMethod(
-			"parseToMap",
-			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/util/Map;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -387,15 +264,6 @@ namespace android::icu::text
 			"setFormatByArgumentName",
 			"(Ljava/lang/String;Ljava/text/Format;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void MessageFormat::setFormatByArgumentName(const QString &arg0, java::text::Format arg1)
-	{
-		__thiz.callMethod<void>(
-			"setFormatByArgumentName",
-			"(Ljava/lang/String;Ljava/text/Format;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

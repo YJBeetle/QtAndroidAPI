@@ -17,7 +17,7 @@ namespace java::util
 			"()V"
 		);
 	}
-	BitSet::BitSet(jint &arg0)
+	BitSet::BitSet(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.BitSet",

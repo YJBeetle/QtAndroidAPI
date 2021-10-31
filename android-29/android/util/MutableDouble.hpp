@@ -13,7 +13,7 @@ namespace android::util
 		
 		MutableDouble(QAndroidJniObject obj);
 		// Constructors
-		MutableDouble(jdouble &arg0);
+		MutableDouble(jdouble arg0);
 		MutableDouble() = default;
 		
 		// Methods

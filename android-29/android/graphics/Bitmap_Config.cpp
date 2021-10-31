@@ -65,15 +65,6 @@ namespace android::graphics
 			arg0
 		);
 	}
-	QAndroidJniObject Bitmap_Config::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.Bitmap$Config",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/graphics/Bitmap$Config;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray Bitmap_Config::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

@@ -35,14 +35,6 @@ namespace android::os::storage
 			arg0
 		);
 	}
-	QAndroidJniObject StorageVolume::createAccessIntent(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"createAccessIntent",
-			"(Ljava/lang/String;)Landroid/content/Intent;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject StorageVolume::createOpenDocumentTreeIntent()
 	{
 		return __thiz.callObjectMethod(

@@ -9,7 +9,7 @@ namespace android::view
 	
 	ScaleGestureDetector::ScaleGestureDetector(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ScaleGestureDetector::ScaleGestureDetector(android::content::Context &arg0, __JniBaseClass &arg1)
+	ScaleGestureDetector::ScaleGestureDetector(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.ScaleGestureDetector",
@@ -18,7 +18,7 @@ namespace android::view
 			arg1.__jniObject().object()
 		);
 	}
-	ScaleGestureDetector::ScaleGestureDetector(android::content::Context &arg0, __JniBaseClass &arg1, android::os::Handler &arg2)
+	ScaleGestureDetector::ScaleGestureDetector(android::content::Context arg0, __JniBaseClass arg1, android::os::Handler arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.ScaleGestureDetector",

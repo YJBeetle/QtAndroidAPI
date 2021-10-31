@@ -68,15 +68,5 @@ namespace java::util::logging
 			arg2
 		);
 	}
-	void ErrorManager::error(const QString &arg0, java::lang::Exception arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"error",
-			"(Ljava/lang/String;Ljava/lang/Exception;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2
-		);
-	}
 } // namespace java::util::logging
 

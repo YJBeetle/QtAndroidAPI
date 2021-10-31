@@ -52,11 +52,9 @@ namespace java::nio::channels
 		static QAndroidJniObject newInputStream(__JniBaseClass arg0);
 		static QAndroidJniObject newOutputStream(__JniBaseClass arg0);
 		static QAndroidJniObject newReader(__JniBaseClass arg0, jstring arg1);
-		static QAndroidJniObject newReader(__JniBaseClass arg0, const QString &arg1);
 		static QAndroidJniObject newReader(__JniBaseClass arg0, java::nio::charset::Charset arg1);
 		static QAndroidJniObject newReader(__JniBaseClass arg0, java::nio::charset::CharsetDecoder arg1, jint arg2);
 		static QAndroidJniObject newWriter(__JniBaseClass arg0, jstring arg1);
-		static QAndroidJniObject newWriter(__JniBaseClass arg0, const QString &arg1);
 		static QAndroidJniObject newWriter(__JniBaseClass arg0, java::nio::charset::Charset arg1);
 		static QAndroidJniObject newWriter(__JniBaseClass arg0, java::nio::charset::CharsetEncoder arg1, jint arg2);
 	};

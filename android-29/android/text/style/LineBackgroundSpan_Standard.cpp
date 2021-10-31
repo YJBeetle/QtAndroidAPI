@@ -9,7 +9,7 @@ namespace android::text::style
 	
 	LineBackgroundSpan_Standard::LineBackgroundSpan_Standard(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	LineBackgroundSpan_Standard::LineBackgroundSpan_Standard(android::os::Parcel &arg0)
+	LineBackgroundSpan_Standard::LineBackgroundSpan_Standard(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.LineBackgroundSpan$Standard",
@@ -17,7 +17,7 @@ namespace android::text::style
 			arg0.__jniObject().object()
 		);
 	}
-	LineBackgroundSpan_Standard::LineBackgroundSpan_Standard(jint &arg0)
+	LineBackgroundSpan_Standard::LineBackgroundSpan_Standard(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.LineBackgroundSpan$Standard",
@@ -47,24 +47,6 @@ namespace android::text::style
 			arg5,
 			arg6,
 			arg7,
-			arg8,
-			arg9,
-			arg10
-		);
-	}
-	void LineBackgroundSpan_Standard::drawBackground(android::graphics::Canvas arg0, android::graphics::Paint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, const QString &arg7, jint arg8, jint arg9, jint arg10)
-	{
-		__thiz.callMethod<void>(
-			"drawBackground",
-			"(Landroid/graphics/Canvas;Landroid/graphics/Paint;IIIIILjava/lang/CharSequence;III)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2,
-			arg3,
-			arg4,
-			arg5,
-			arg6,
-			QAndroidJniObject::fromString(arg7).object<jstring>(),
 			arg8,
 			arg9,
 			arg10

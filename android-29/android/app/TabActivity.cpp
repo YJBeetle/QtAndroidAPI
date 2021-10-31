@@ -56,13 +56,5 @@ namespace android::app
 			arg0
 		);
 	}
-	void TabActivity::setDefaultTab(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDefaultTab",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 } // namespace android::app
 

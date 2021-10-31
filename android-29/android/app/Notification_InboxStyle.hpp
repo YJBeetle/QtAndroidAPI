@@ -18,15 +18,12 @@ namespace android::app
 		Notification_InboxStyle(QAndroidJniObject obj);
 		// Constructors
 		Notification_InboxStyle();
-		Notification_InboxStyle(android::app::Notification_Builder &arg0);
+		Notification_InboxStyle(android::app::Notification_Builder arg0);
 		
 		// Methods
 		QAndroidJniObject addLine(jstring arg0);
-		QAndroidJniObject addLine(const QString &arg0);
 		QAndroidJniObject setBigContentTitle(jstring arg0);
-		QAndroidJniObject setBigContentTitle(const QString &arg0);
 		QAndroidJniObject setSummaryText(jstring arg0);
-		QAndroidJniObject setSummaryText(const QString &arg0);
 	};
 } // namespace android::app
 

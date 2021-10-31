@@ -51,9 +51,7 @@ namespace android::media::effect
 		
 		// Methods
 		static jboolean isEffectSupported(jstring arg0);
-		static jboolean isEffectSupported(const QString &arg0);
 		QAndroidJniObject createEffect(jstring arg0);
-		QAndroidJniObject createEffect(const QString &arg0);
 	};
 } // namespace android::media::effect
 

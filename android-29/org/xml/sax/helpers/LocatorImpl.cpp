@@ -13,7 +13,7 @@ namespace org::xml::sax::helpers
 			"()V"
 		);
 	}
-	LocatorImpl::LocatorImpl(__JniBaseClass &arg0)
+	LocatorImpl::LocatorImpl(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"org.xml.sax.helpers.LocatorImpl",
@@ -75,28 +75,12 @@ namespace org::xml::sax::helpers
 			arg0
 		);
 	}
-	void LocatorImpl::setPublicId(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPublicId",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void LocatorImpl::setSystemId(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSystemId",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void LocatorImpl::setSystemId(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSystemId",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace org::xml::sax::helpers

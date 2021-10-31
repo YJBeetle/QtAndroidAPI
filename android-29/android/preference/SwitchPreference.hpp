@@ -22,10 +22,10 @@ namespace android::preference
 		
 		SwitchPreference(QAndroidJniObject obj);
 		// Constructors
-		SwitchPreference(android::content::Context &arg0);
-		SwitchPreference(android::content::Context &arg0, __JniBaseClass &arg1);
-		SwitchPreference(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		SwitchPreference(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		SwitchPreference(android::content::Context arg0);
+		SwitchPreference(android::content::Context arg0, __JniBaseClass arg1);
+		SwitchPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		SwitchPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		SwitchPreference() = default;
 		
 		// Methods
@@ -33,10 +33,8 @@ namespace android::preference
 		jstring getSwitchTextOn();
 		void setSwitchTextOff(jint arg0);
 		void setSwitchTextOff(jstring arg0);
-		void setSwitchTextOff(const QString &arg0);
 		void setSwitchTextOn(jint arg0);
 		void setSwitchTextOn(jstring arg0);
-		void setSwitchTextOn(const QString &arg0);
 	};
 } // namespace android::preference
 

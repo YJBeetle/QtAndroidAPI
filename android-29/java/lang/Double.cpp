@@ -86,7 +86,7 @@ namespace java::lang
 	
 	Double::Double(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Double::Double(jdouble &arg0)
+	Double::Double(jdouble arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.Double",
@@ -94,20 +94,12 @@ namespace java::lang
 			arg0
 		);
 	}
-	Double::Double(jstring &arg0)
+	Double::Double(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.Double",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	Double::Double(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.Double",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	
@@ -214,15 +206,6 @@ namespace java::lang
 			arg0
 		);
 	}
-	jdouble Double::parseDouble(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
-			"java.lang.Double",
-			"parseDouble",
-			"(Ljava/lang/String;)D",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jdouble Double::sum(jdouble arg0, jdouble arg1)
 	{
 		return QAndroidJniObject::callStaticMethod<jdouble>(
@@ -267,15 +250,6 @@ namespace java::lang
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/lang/Double;",
 			arg0
-		);
-	}
-	QAndroidJniObject Double::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.lang.Double",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/lang/Double;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jbyte Double::byteValue()

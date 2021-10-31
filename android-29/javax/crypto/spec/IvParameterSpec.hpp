@@ -12,8 +12,8 @@ namespace javax::crypto::spec
 		
 		IvParameterSpec(QAndroidJniObject obj);
 		// Constructors
-		IvParameterSpec(jbyteArray &arg0);
-		IvParameterSpec(jbyteArray &arg0, jint &arg1, jint &arg2);
+		IvParameterSpec(jbyteArray arg0);
+		IvParameterSpec(jbyteArray arg0, jint arg1, jint arg2);
 		IvParameterSpec() = default;
 		
 		// Methods

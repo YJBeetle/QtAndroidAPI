@@ -86,9 +86,7 @@ namespace android::service::notification
 		static void requestRebind(android::content::ComponentName arg0);
 		void cancelAllNotifications();
 		void cancelNotification(jstring arg0);
-		void cancelNotification(const QString &arg0);
 		void cancelNotification(jstring arg0, jstring arg1, jint arg2);
-		void cancelNotification(const QString &arg0, const QString &arg1, jint arg2);
 		void cancelNotifications(jarray arg0);
 		void clearRequestedListenerHints();
 		jarray getActiveNotifications();
@@ -97,9 +95,7 @@ namespace android::service::notification
 		jint getCurrentListenerHints();
 		QAndroidJniObject getCurrentRanking();
 		QAndroidJniObject getNotificationChannelGroups(jstring arg0, android::os::UserHandle arg1);
-		QAndroidJniObject getNotificationChannelGroups(const QString &arg0, android::os::UserHandle arg1);
 		QAndroidJniObject getNotificationChannels(jstring arg0, android::os::UserHandle arg1);
-		QAndroidJniObject getNotificationChannels(const QString &arg0, android::os::UserHandle arg1);
 		jarray getSnoozedNotifications();
 		QAndroidJniObject onBind(android::content::Intent arg0);
 		void onDestroy();
@@ -108,9 +104,7 @@ namespace android::service::notification
 		void onListenerDisconnected();
 		void onListenerHintsChanged(jint arg0);
 		void onNotificationChannelGroupModified(jstring arg0, android::os::UserHandle arg1, android::app::NotificationChannelGroup arg2, jint arg3);
-		void onNotificationChannelGroupModified(const QString &arg0, android::os::UserHandle arg1, android::app::NotificationChannelGroup arg2, jint arg3);
 		void onNotificationChannelModified(jstring arg0, android::os::UserHandle arg1, android::app::NotificationChannel arg2, jint arg3);
-		void onNotificationChannelModified(const QString &arg0, android::os::UserHandle arg1, android::app::NotificationChannel arg2, jint arg3);
 		void onNotificationPosted(android::service::notification::StatusBarNotification arg0);
 		void onNotificationPosted(android::service::notification::StatusBarNotification arg0, android::service::notification::NotificationListenerService_RankingMap arg1);
 		void onNotificationRankingUpdate(android::service::notification::NotificationListenerService_RankingMap arg0);
@@ -123,9 +117,7 @@ namespace android::service::notification
 		void requestUnbind();
 		void setNotificationsShown(jarray arg0);
 		void snoozeNotification(jstring arg0, jlong arg1);
-		void snoozeNotification(const QString &arg0, jlong arg1);
 		void updateNotificationChannel(jstring arg0, android::os::UserHandle arg1, android::app::NotificationChannel arg2);
-		void updateNotificationChannel(const QString &arg0, android::os::UserHandle arg1, android::app::NotificationChannel arg2);
 	};
 } // namespace android::service::notification
 

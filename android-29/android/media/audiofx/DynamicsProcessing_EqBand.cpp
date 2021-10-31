@@ -14,7 +14,7 @@ namespace android::media::audiofx
 			arg0.__jniObject().object()
 		);
 	}
-	DynamicsProcessing_EqBand::DynamicsProcessing_EqBand(jboolean &arg0, jfloat &arg1, jfloat &arg2)
+	DynamicsProcessing_EqBand::DynamicsProcessing_EqBand(jboolean arg0, jfloat arg1, jfloat arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.audiofx.DynamicsProcessing$EqBand",

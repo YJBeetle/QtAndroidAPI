@@ -53,17 +53,6 @@ namespace android::provider
 			arg2
 		).object<jstring>();
 	}
-	jstring Contacts_Settings::getSetting(android::content::ContentResolver arg0, const QString &arg1, const QString &arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.Contacts$Settings",
-			"getSetting",
-			"(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		).object<jstring>();
-	}
 	void Contacts_Settings::setSetting(android::content::ContentResolver arg0, jstring arg1, jstring arg2, jstring arg3)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -74,18 +63,6 @@ namespace android::provider
 			arg1,
 			arg2,
 			arg3
-		);
-	}
-	void Contacts_Settings::setSetting(android::content::ContentResolver arg0, const QString &arg1, const QString &arg2, const QString &arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.provider.Contacts$Settings",
-			"setSetting",
-			"(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			QAndroidJniObject::fromString(arg3).object<jstring>()
 		);
 	}
 } // namespace android::provider

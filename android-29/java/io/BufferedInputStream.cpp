@@ -7,7 +7,7 @@ namespace java::io
 	
 	BufferedInputStream::BufferedInputStream(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	BufferedInputStream::BufferedInputStream(java::io::InputStream &arg0)
+	BufferedInputStream::BufferedInputStream(java::io::InputStream arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.BufferedInputStream",
@@ -15,7 +15,7 @@ namespace java::io
 			arg0.__jniObject().object()
 		);
 	}
-	BufferedInputStream::BufferedInputStream(java::io::InputStream &arg0, jint &arg1)
+	BufferedInputStream::BufferedInputStream(java::io::InputStream arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.BufferedInputStream",

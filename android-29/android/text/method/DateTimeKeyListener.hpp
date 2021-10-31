@@ -21,7 +21,7 @@ namespace android::text::method
 		DateTimeKeyListener(QAndroidJniObject obj);
 		// Constructors
 		DateTimeKeyListener();
-		DateTimeKeyListener(java::util::Locale &arg0);
+		DateTimeKeyListener(java::util::Locale arg0);
 		
 		// Methods
 		static QAndroidJniObject getInstance();

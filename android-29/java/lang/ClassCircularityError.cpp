@@ -13,20 +13,12 @@ namespace java::lang
 			"()V"
 		);
 	}
-	ClassCircularityError::ClassCircularityError(jstring &arg0)
+	ClassCircularityError::ClassCircularityError(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.ClassCircularityError",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	ClassCircularityError::ClassCircularityError(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.ClassCircularityError",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

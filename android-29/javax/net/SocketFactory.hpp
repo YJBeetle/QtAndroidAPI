@@ -26,10 +26,8 @@ namespace javax::net
 		static QAndroidJniObject getDefault();
 		QAndroidJniObject createSocket();
 		QAndroidJniObject createSocket(jstring arg0, jint arg1);
-		QAndroidJniObject createSocket(const QString &arg0, jint arg1);
 		QAndroidJniObject createSocket(java::net::InetAddress arg0, jint arg1);
 		QAndroidJniObject createSocket(jstring arg0, jint arg1, java::net::InetAddress arg2, jint arg3);
-		QAndroidJniObject createSocket(const QString &arg0, jint arg1, java::net::InetAddress arg2, jint arg3);
 		QAndroidJniObject createSocket(java::net::InetAddress arg0, jint arg1, java::net::InetAddress arg2, jint arg3);
 	};
 } // namespace javax::net

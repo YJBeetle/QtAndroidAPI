@@ -14,8 +14,8 @@ namespace android::util
 		// Constructors
 		ArraySet();
 		ArraySet(android::util::ArraySet &arg0);
-		ArraySet(jint &arg0);
-		ArraySet(__JniBaseClass &arg0);
+		ArraySet(jint arg0);
+		ArraySet(__JniBaseClass arg0);
 		
 		// Methods
 		jboolean add(jobject arg0);

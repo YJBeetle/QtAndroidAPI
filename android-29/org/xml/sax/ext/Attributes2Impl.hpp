@@ -14,21 +14,16 @@ namespace org::xml::sax::ext
 		Attributes2Impl(QAndroidJniObject obj);
 		// Constructors
 		Attributes2Impl();
-		Attributes2Impl(__JniBaseClass &arg0);
+		Attributes2Impl(__JniBaseClass arg0);
 		
 		// Methods
 		void addAttribute(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4);
-		void addAttribute(const QString &arg0, const QString &arg1, const QString &arg2, const QString &arg3, const QString &arg4);
 		jboolean isDeclared(jint arg0);
 		jboolean isDeclared(jstring arg0);
-		jboolean isDeclared(const QString &arg0);
 		jboolean isDeclared(jstring arg0, jstring arg1);
-		jboolean isDeclared(const QString &arg0, const QString &arg1);
 		jboolean isSpecified(jint arg0);
 		jboolean isSpecified(jstring arg0);
-		jboolean isSpecified(const QString &arg0);
 		jboolean isSpecified(jstring arg0, jstring arg1);
-		jboolean isSpecified(const QString &arg0, const QString &arg1);
 		void removeAttribute(jint arg0);
 		void setAttributes(__JniBaseClass arg0);
 		void setDeclared(jint arg0, jboolean arg1);

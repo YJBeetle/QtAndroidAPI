@@ -12,8 +12,8 @@ namespace java::util::concurrent::atomic
 		
 		AtomicIntegerArray(QAndroidJniObject obj);
 		// Constructors
-		AtomicIntegerArray(jintArray &arg0);
-		AtomicIntegerArray(jint &arg0);
+		AtomicIntegerArray(jintArray arg0);
+		AtomicIntegerArray(jint arg0);
 		AtomicIntegerArray() = default;
 		
 		// Methods

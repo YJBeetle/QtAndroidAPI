@@ -20,18 +20,6 @@ namespace android::text
 			arg3
 		);
 	}
-	QAndroidJniObject AlteredCharSequence::make(const QString &arg0, jcharArray arg1, jint arg2, jint arg3)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.text.AlteredCharSequence",
-			"make",
-			"(Ljava/lang/CharSequence;[CII)Landroid/text/AlteredCharSequence;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2,
-			arg3
-		);
-	}
 	jchar AlteredCharSequence::charAt(jint arg0)
 	{
 		return __thiz.callMethod<jchar>(

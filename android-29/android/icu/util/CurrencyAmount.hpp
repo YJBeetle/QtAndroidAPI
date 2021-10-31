@@ -25,10 +25,10 @@ namespace android::icu::util
 		
 		CurrencyAmount(QAndroidJniObject obj);
 		// Constructors
-		CurrencyAmount(jdouble &arg0, android::icu::util::Currency &arg1);
-		CurrencyAmount(jdouble &arg0, java::util::Currency &arg1);
-		CurrencyAmount(java::lang::Number &arg0, android::icu::util::Currency &arg1);
-		CurrencyAmount(java::lang::Number &arg0, java::util::Currency &arg1);
+		CurrencyAmount(jdouble arg0, android::icu::util::Currency arg1);
+		CurrencyAmount(jdouble arg0, java::util::Currency arg1);
+		CurrencyAmount(java::lang::Number arg0, android::icu::util::Currency arg1);
+		CurrencyAmount(java::lang::Number arg0, java::util::Currency arg1);
 		CurrencyAmount() = default;
 		
 		// Methods

@@ -21,7 +21,6 @@ namespace android::database
 		// Methods
 		QAndroidJniObject add(jobject arg0);
 		QAndroidJniObject add(jstring arg0, jobject arg1);
-		QAndroidJniObject add(const QString &arg0, jobject arg1);
 	};
 } // namespace android::database
 

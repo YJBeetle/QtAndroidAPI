@@ -7,7 +7,7 @@ namespace android::text
 	
 	Annotation::Annotation(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Annotation::Annotation(android::os::Parcel &arg0)
+	Annotation::Annotation(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.Annotation",
@@ -15,22 +15,13 @@ namespace android::text
 			arg0.__jniObject().object()
 		);
 	}
-	Annotation::Annotation(jstring &arg0, jstring &arg1)
+	Annotation::Annotation(jstring arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.Annotation",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	Annotation::Annotation(const QString &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.text.Annotation",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	

@@ -160,15 +160,6 @@ namespace android::content::res
 			arg1
 		);
 	}
-	jint TypedArray::getLayoutDimension(jint arg0, const QString &arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"getLayoutDimension",
-			"(ILjava/lang/String;)I",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	jstring TypedArray::getNonResourceString(jint arg0)
 	{
 		return __thiz.callObjectMethod(

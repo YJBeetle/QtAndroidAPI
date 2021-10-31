@@ -12,7 +12,7 @@ namespace android::media
 		
 		MediaCodec_CryptoInfo_Pattern(QAndroidJniObject obj);
 		// Constructors
-		MediaCodec_CryptoInfo_Pattern(jint &arg0, jint &arg1);
+		MediaCodec_CryptoInfo_Pattern(jint arg0, jint arg1);
 		MediaCodec_CryptoInfo_Pattern() = default;
 		
 		// Methods

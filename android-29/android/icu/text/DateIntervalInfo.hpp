@@ -24,8 +24,8 @@ namespace android::icu::text
 		
 		DateIntervalInfo(QAndroidJniObject obj);
 		// Constructors
-		DateIntervalInfo(android::icu::util::ULocale &arg0);
-		DateIntervalInfo(java::util::Locale &arg0);
+		DateIntervalInfo(android::icu::util::ULocale arg0);
+		DateIntervalInfo(java::util::Locale arg0);
 		DateIntervalInfo() = default;
 		
 		// Methods
@@ -36,13 +36,10 @@ namespace android::icu::text
 		jboolean getDefaultOrder();
 		jstring getFallbackIntervalPattern();
 		QAndroidJniObject getIntervalPattern(jstring arg0, jint arg1);
-		QAndroidJniObject getIntervalPattern(const QString &arg0, jint arg1);
 		jint hashCode();
 		jboolean isFrozen();
 		void setFallbackIntervalPattern(jstring arg0);
-		void setFallbackIntervalPattern(const QString &arg0);
 		void setIntervalPattern(jstring arg0, jint arg1, jstring arg2);
-		void setIntervalPattern(const QString &arg0, jint arg1, const QString &arg2);
 	};
 } // namespace android::icu::text
 

@@ -18,7 +18,6 @@ namespace org::apache::http::conn::ssl
 		// Methods
 		jstring toString();
 		void verify(jstring arg0, jarray arg1, jarray arg2);
-		void verify(const QString &arg0, jarray arg1, jarray arg2);
 	};
 } // namespace org::apache::http::conn::ssl
 

@@ -30,7 +30,7 @@ namespace java::util::concurrent
 		ConcurrentSkipListMap(QAndroidJniObject obj);
 		// Constructors
 		ConcurrentSkipListMap();
-		ConcurrentSkipListMap(__JniBaseClass &arg0);
+		ConcurrentSkipListMap(__JniBaseClass arg0);
 		
 		// Methods
 		QAndroidJniObject ceilingEntry(jobject arg0);

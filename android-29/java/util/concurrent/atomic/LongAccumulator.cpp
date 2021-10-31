@@ -7,7 +7,7 @@ namespace java::util::concurrent::atomic
 	
 	LongAccumulator::LongAccumulator(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	LongAccumulator::LongAccumulator(__JniBaseClass &arg0, jlong &arg1)
+	LongAccumulator::LongAccumulator(__JniBaseClass arg0, jlong arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.atomic.LongAccumulator",

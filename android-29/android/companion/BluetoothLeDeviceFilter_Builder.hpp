@@ -35,9 +35,7 @@ namespace android::companion
 		QAndroidJniObject setNamePattern(java::util::regex::Pattern arg0);
 		QAndroidJniObject setRawDataFilter(jbyteArray arg0, jbyteArray arg1);
 		QAndroidJniObject setRenameFromBytes(jstring arg0, jstring arg1, jint arg2, jint arg3, java::nio::ByteOrder arg4);
-		QAndroidJniObject setRenameFromBytes(const QString &arg0, const QString &arg1, jint arg2, jint arg3, java::nio::ByteOrder arg4);
 		QAndroidJniObject setRenameFromName(jstring arg0, jstring arg1, jint arg2, jint arg3);
-		QAndroidJniObject setRenameFromName(const QString &arg0, const QString &arg1, jint arg2, jint arg3);
 		QAndroidJniObject setScanFilter(android::bluetooth::le::ScanFilter arg0);
 	};
 } // namespace android::companion

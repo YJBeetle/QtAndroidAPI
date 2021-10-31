@@ -8,7 +8,7 @@ namespace android::text::style
 	
 	BackgroundColorSpan::BackgroundColorSpan(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	BackgroundColorSpan::BackgroundColorSpan(android::os::Parcel &arg0)
+	BackgroundColorSpan::BackgroundColorSpan(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.BackgroundColorSpan",
@@ -16,7 +16,7 @@ namespace android::text::style
 			arg0.__jniObject().object()
 		);
 	}
-	BackgroundColorSpan::BackgroundColorSpan(jint &arg0)
+	BackgroundColorSpan::BackgroundColorSpan(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.BackgroundColorSpan",

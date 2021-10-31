@@ -8,7 +8,7 @@ namespace android::text::style
 	
 	AbsoluteSizeSpan::AbsoluteSizeSpan(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AbsoluteSizeSpan::AbsoluteSizeSpan(android::os::Parcel &arg0)
+	AbsoluteSizeSpan::AbsoluteSizeSpan(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.AbsoluteSizeSpan",
@@ -16,7 +16,7 @@ namespace android::text::style
 			arg0.__jniObject().object()
 		);
 	}
-	AbsoluteSizeSpan::AbsoluteSizeSpan(jint &arg0)
+	AbsoluteSizeSpan::AbsoluteSizeSpan(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.AbsoluteSizeSpan",
@@ -24,7 +24,7 @@ namespace android::text::style
 			arg0
 		);
 	}
-	AbsoluteSizeSpan::AbsoluteSizeSpan(jint &arg0, jboolean &arg1)
+	AbsoluteSizeSpan::AbsoluteSizeSpan(jint arg0, jboolean arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.AbsoluteSizeSpan",

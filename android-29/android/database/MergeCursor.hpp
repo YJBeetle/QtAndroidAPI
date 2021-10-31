@@ -21,7 +21,7 @@ namespace android::database
 		
 		MergeCursor(QAndroidJniObject obj);
 		// Constructors
-		MergeCursor(jarray &arg0);
+		MergeCursor(jarray arg0);
 		MergeCursor() = default;
 		
 		// Methods

@@ -60,7 +60,6 @@ namespace java::io
 		static QAndroidJniObject lookupAny(jclass arg0);
 		jclass forClass();
 		QAndroidJniObject getField(jstring arg0);
-		QAndroidJniObject getField(const QString &arg0);
 		jarray getFields();
 		jstring getName();
 		jlong getSerialVersionUID();

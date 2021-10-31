@@ -8,7 +8,7 @@ namespace java::nio::file
 	
 	DirectoryIteratorException::DirectoryIteratorException(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DirectoryIteratorException::DirectoryIteratorException(java::io::IOException &arg0)
+	DirectoryIteratorException::DirectoryIteratorException(java::io::IOException arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.nio.file.DirectoryIteratorException",

@@ -13,7 +13,7 @@ namespace javax::net::ssl
 			"()V"
 		);
 	}
-	SSLParameters::SSLParameters(jarray &arg0)
+	SSLParameters::SSLParameters(jarray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.net.ssl.SSLParameters",
@@ -21,7 +21,7 @@ namespace javax::net::ssl
 			arg0
 		);
 	}
-	SSLParameters::SSLParameters(jarray &arg0, jarray &arg1)
+	SSLParameters::SSLParameters(jarray arg0, jarray arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.net.ssl.SSLParameters",
@@ -154,14 +154,6 @@ namespace javax::net::ssl
 			"setEndpointIdentificationAlgorithm",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void SSLParameters::setEndpointIdentificationAlgorithm(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setEndpointIdentificationAlgorithm",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void SSLParameters::setMaximumPacketSize(jint arg0)

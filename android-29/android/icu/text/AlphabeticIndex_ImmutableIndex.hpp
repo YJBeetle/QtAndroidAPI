@@ -22,7 +22,6 @@ namespace android::icu::text
 		QAndroidJniObject getBucket(jint arg0);
 		jint getBucketCount();
 		jint getBucketIndex(jstring arg0);
-		jint getBucketIndex(const QString &arg0);
 		QAndroidJniObject iterator();
 	};
 } // namespace android::icu::text

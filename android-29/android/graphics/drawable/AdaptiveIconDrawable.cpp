@@ -18,7 +18,7 @@ namespace android::graphics::drawable
 	
 	AdaptiveIconDrawable::AdaptiveIconDrawable(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AdaptiveIconDrawable::AdaptiveIconDrawable(android::graphics::drawable::Drawable &arg0, android::graphics::drawable::Drawable &arg1)
+	AdaptiveIconDrawable::AdaptiveIconDrawable(android::graphics::drawable::Drawable arg0, android::graphics::drawable::Drawable arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.AdaptiveIconDrawable",

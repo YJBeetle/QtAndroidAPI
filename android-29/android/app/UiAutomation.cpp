@@ -121,14 +121,6 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject UiAutomation::executeShellCommand(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"executeShellCommand",
-			"(Ljava/lang/String;)Landroid/os/ParcelFileDescriptor;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject UiAutomation::findFocus(jint arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -182,15 +174,6 @@ namespace android::app
 			arg1
 		);
 	}
-	void UiAutomation::grantRuntimePermission(const QString &arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"grantRuntimePermission",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	void UiAutomation::grantRuntimePermissionAsUser(jstring arg0, jstring arg1, android::os::UserHandle arg2)
 	{
 		__thiz.callMethod<void>(
@@ -198,16 +181,6 @@ namespace android::app
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/os/UserHandle;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void UiAutomation::grantRuntimePermissionAsUser(const QString &arg0, const QString &arg1, android::os::UserHandle arg2)
-	{
-		__thiz.callMethod<void>(
-			"grantRuntimePermissionAsUser",
-			"(Ljava/lang/String;Ljava/lang/String;Landroid/os/UserHandle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}
@@ -237,15 +210,6 @@ namespace android::app
 			arg1
 		);
 	}
-	void UiAutomation::revokeRuntimePermission(const QString &arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"revokeRuntimePermission",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	void UiAutomation::revokeRuntimePermissionAsUser(jstring arg0, jstring arg1, android::os::UserHandle arg2)
 	{
 		__thiz.callMethod<void>(
@@ -253,16 +217,6 @@ namespace android::app
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/os/UserHandle;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void UiAutomation::revokeRuntimePermissionAsUser(const QString &arg0, const QString &arg1, android::os::UserHandle arg2)
-	{
-		__thiz.callMethod<void>(
-			"revokeRuntimePermissionAsUser",
-			"(Ljava/lang/String;Ljava/lang/String;Landroid/os/UserHandle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}

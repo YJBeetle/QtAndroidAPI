@@ -33,12 +33,12 @@ namespace android::widget
 		
 		ArrayAdapter(QAndroidJniObject obj);
 		// Constructors
-		ArrayAdapter(android::content::Context &arg0, jint &arg1);
-		ArrayAdapter(android::content::Context &arg0, jint &arg1, jobjectArray &arg2);
-		ArrayAdapter(android::content::Context &arg0, jint &arg1, jint &arg2);
-		ArrayAdapter(android::content::Context &arg0, jint &arg1, __JniBaseClass &arg2);
-		ArrayAdapter(android::content::Context &arg0, jint &arg1, jint &arg2, jobjectArray &arg3);
-		ArrayAdapter(android::content::Context &arg0, jint &arg1, jint &arg2, __JniBaseClass &arg3);
+		ArrayAdapter(android::content::Context arg0, jint arg1);
+		ArrayAdapter(android::content::Context arg0, jint arg1, jobjectArray arg2);
+		ArrayAdapter(android::content::Context arg0, jint arg1, jint arg2);
+		ArrayAdapter(android::content::Context arg0, jint arg1, __JniBaseClass arg2);
+		ArrayAdapter(android::content::Context arg0, jint arg1, jint arg2, jobjectArray arg3);
+		ArrayAdapter(android::content::Context arg0, jint arg1, jint arg2, __JniBaseClass arg3);
 		ArrayAdapter() = default;
 		
 		// Methods

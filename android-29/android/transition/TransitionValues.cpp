@@ -28,7 +28,7 @@ namespace android::transition
 			"()V"
 		);
 	}
-	TransitionValues::TransitionValues(android::view::View &arg0)
+	TransitionValues::TransitionValues(android::view::View arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.transition.TransitionValues",

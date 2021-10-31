@@ -157,16 +157,6 @@ namespace android::bluetooth
 			arg2.__jniObject().object()
 		);
 	}
-	jboolean BluetoothHealth::registerSinkAppConfiguration(const QString &arg0, jint arg1, android::bluetooth::BluetoothHealthCallback arg2)
-	{
-		return __thiz.callMethod<jboolean>(
-			"registerSinkAppConfiguration",
-			"(Ljava/lang/String;ILandroid/bluetooth/BluetoothHealthCallback;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
 	jboolean BluetoothHealth::unregisterAppConfiguration(android::bluetooth::BluetoothHealthAppConfiguration arg0)
 	{
 		return __thiz.callMethod<jboolean>(

@@ -14,7 +14,7 @@ namespace java::sql
 			"()V"
 		);
 	}
-	SQLException::SQLException(jstring &arg0)
+	SQLException::SQLException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.sql.SQLException",
@@ -22,15 +22,7 @@ namespace java::sql
 			arg0
 		);
 	}
-	SQLException::SQLException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.sql.SQLException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	SQLException::SQLException(jthrowable &arg0)
+	SQLException::SQLException(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.sql.SQLException",
@@ -38,7 +30,7 @@ namespace java::sql
 			arg0
 		);
 	}
-	SQLException::SQLException(jstring &arg0, jstring &arg1)
+	SQLException::SQLException(jstring arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.sql.SQLException",
@@ -47,16 +39,7 @@ namespace java::sql
 			arg1
 		);
 	}
-	SQLException::SQLException(const QString &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.sql.SQLException",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	SQLException::SQLException(jstring &arg0, jthrowable &arg1)
+	SQLException::SQLException(jstring arg0, jthrowable arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.sql.SQLException",
@@ -65,16 +48,7 @@ namespace java::sql
 			arg1
 		);
 	}
-	SQLException::SQLException(const QString &arg0, jthrowable &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.sql.SQLException",
-			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
-	SQLException::SQLException(jstring &arg0, jstring &arg1, jint &arg2)
+	SQLException::SQLException(jstring arg0, jstring arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.sql.SQLException",
@@ -84,17 +58,7 @@ namespace java::sql
 			arg2
 		);
 	}
-	SQLException::SQLException(const QString &arg0, const QString &arg1, jint &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"java.sql.SQLException",
-			"(Ljava/lang/String;Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2
-		);
-	}
-	SQLException::SQLException(jstring &arg0, jstring &arg1, jthrowable &arg2)
+	SQLException::SQLException(jstring arg0, jstring arg1, jthrowable arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.sql.SQLException",
@@ -104,34 +68,13 @@ namespace java::sql
 			arg2
 		);
 	}
-	SQLException::SQLException(const QString &arg0, const QString &arg1, jthrowable &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"java.sql.SQLException",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2
-		);
-	}
-	SQLException::SQLException(jstring &arg0, jstring &arg1, jint &arg2, jthrowable &arg3)
+	SQLException::SQLException(jstring arg0, jstring arg1, jint arg2, jthrowable arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"java.sql.SQLException",
 			"(Ljava/lang/String;Ljava/lang/String;ILjava/lang/Throwable;)V",
 			arg0,
 			arg1,
-			arg2,
-			arg3
-		);
-	}
-	SQLException::SQLException(const QString &arg0, const QString &arg1, jint &arg2, jthrowable &arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"java.sql.SQLException",
-			"(Ljava/lang/String;Ljava/lang/String;ILjava/lang/Throwable;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2,
 			arg3
 		);

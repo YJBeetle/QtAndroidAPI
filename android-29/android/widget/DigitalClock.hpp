@@ -18,8 +18,8 @@ namespace android::widget
 		
 		DigitalClock(QAndroidJniObject obj);
 		// Constructors
-		DigitalClock(android::content::Context &arg0);
-		DigitalClock(android::content::Context &arg0, __JniBaseClass &arg1);
+		DigitalClock(android::content::Context arg0);
+		DigitalClock(android::content::Context arg0, __JniBaseClass arg1);
 		DigitalClock() = default;
 		
 		// Methods

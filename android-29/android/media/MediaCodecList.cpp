@@ -22,7 +22,7 @@ namespace android::media
 	
 	MediaCodecList::MediaCodecList(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MediaCodecList::MediaCodecList(jint &arg0)
+	MediaCodecList::MediaCodecList(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.MediaCodecList",

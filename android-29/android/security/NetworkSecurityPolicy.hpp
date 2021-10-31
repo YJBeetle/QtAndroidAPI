@@ -18,7 +18,6 @@ namespace android::security
 		static QAndroidJniObject getInstance();
 		jboolean isCleartextTrafficPermitted();
 		jboolean isCleartextTrafficPermitted(jstring arg0);
-		jboolean isCleartextTrafficPermitted(const QString &arg0);
 	};
 } // namespace android::security
 

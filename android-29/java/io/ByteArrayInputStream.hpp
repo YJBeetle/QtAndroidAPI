@@ -17,8 +17,8 @@ namespace java::io
 		
 		ByteArrayInputStream(QAndroidJniObject obj);
 		// Constructors
-		ByteArrayInputStream(jbyteArray &arg0);
-		ByteArrayInputStream(jbyteArray &arg0, jint &arg1, jint &arg2);
+		ByteArrayInputStream(jbyteArray arg0);
+		ByteArrayInputStream(jbyteArray arg0, jint arg1, jint arg2);
 		ByteArrayInputStream() = default;
 		
 		// Methods

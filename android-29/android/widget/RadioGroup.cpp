@@ -12,7 +12,7 @@ namespace android::widget
 	
 	RadioGroup::RadioGroup(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	RadioGroup::RadioGroup(android::content::Context &arg0)
+	RadioGroup::RadioGroup(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.RadioGroup",
@@ -20,7 +20,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	RadioGroup::RadioGroup(android::content::Context &arg0, __JniBaseClass &arg1)
+	RadioGroup::RadioGroup(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.RadioGroup",

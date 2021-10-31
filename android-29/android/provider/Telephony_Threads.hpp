@@ -28,7 +28,6 @@ namespace android::provider
 		
 		// Methods
 		static jlong getOrCreateThreadId(android::content::Context arg0, jstring arg1);
-		static jlong getOrCreateThreadId(android::content::Context arg0, const QString &arg1);
 		static jlong getOrCreateThreadId(android::content::Context arg0, __JniBaseClass arg1);
 	};
 } // namespace android::provider

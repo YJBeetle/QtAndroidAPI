@@ -159,14 +159,6 @@ namespace android::animation
 			arg0
 		).object<jobject>();
 	}
-	jobject ValueAnimator::getAnimatedValue(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getAnimatedValue",
-			"(Ljava/lang/String;)Ljava/lang/Object;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jobject>();
-	}
 	jlong ValueAnimator::getCurrentPlayTime()
 	{
 		return __thiz.callMethod<jlong>(

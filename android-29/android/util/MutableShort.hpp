@@ -13,7 +13,7 @@ namespace android::util
 		
 		MutableShort(QAndroidJniObject obj);
 		// Constructors
-		MutableShort(jshort &arg0);
+		MutableShort(jshort arg0);
 		MutableShort() = default;
 		
 		// Methods

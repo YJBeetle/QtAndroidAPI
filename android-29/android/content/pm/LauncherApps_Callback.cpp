@@ -26,15 +26,6 @@ namespace android::content::pm
 			arg1.__jniObject().object()
 		);
 	}
-	void LauncherApps_Callback::onPackageAdded(const QString &arg0, android::os::UserHandle arg1)
-	{
-		__thiz.callMethod<void>(
-			"onPackageAdded",
-			"(Ljava/lang/String;Landroid/os/UserHandle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	void LauncherApps_Callback::onPackageChanged(jstring arg0, android::os::UserHandle arg1)
 	{
 		__thiz.callMethod<void>(
@@ -44,30 +35,12 @@ namespace android::content::pm
 			arg1.__jniObject().object()
 		);
 	}
-	void LauncherApps_Callback::onPackageChanged(const QString &arg0, android::os::UserHandle arg1)
-	{
-		__thiz.callMethod<void>(
-			"onPackageChanged",
-			"(Ljava/lang/String;Landroid/os/UserHandle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	void LauncherApps_Callback::onPackageRemoved(jstring arg0, android::os::UserHandle arg1)
 	{
 		__thiz.callMethod<void>(
 			"onPackageRemoved",
 			"(Ljava/lang/String;Landroid/os/UserHandle;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void LauncherApps_Callback::onPackageRemoved(const QString &arg0, android::os::UserHandle arg1)
-	{
-		__thiz.callMethod<void>(
-			"onPackageRemoved",
-			"(Ljava/lang/String;Landroid/os/UserHandle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -125,16 +98,6 @@ namespace android::content::pm
 			"onShortcutsChanged",
 			"(Ljava/lang/String;Ljava/util/List;Landroid/os/UserHandle;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	void LauncherApps_Callback::onShortcutsChanged(const QString &arg0, __JniBaseClass arg1, android::os::UserHandle arg2)
-	{
-		__thiz.callMethod<void>(
-			"onShortcutsChanged",
-			"(Ljava/lang/String;Ljava/util/List;Landroid/os/UserHandle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object()
 		);

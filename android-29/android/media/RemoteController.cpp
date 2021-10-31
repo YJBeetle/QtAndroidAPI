@@ -24,7 +24,7 @@ namespace android::media
 	
 	RemoteController::RemoteController(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	RemoteController::RemoteController(android::content::Context &arg0, __JniBaseClass &arg1)
+	RemoteController::RemoteController(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.RemoteController",
@@ -33,7 +33,7 @@ namespace android::media
 			arg1.__jniObject().object()
 		);
 	}
-	RemoteController::RemoteController(android::content::Context &arg0, __JniBaseClass &arg1, android::os::Looper &arg2)
+	RemoteController::RemoteController(android::content::Context arg0, __JniBaseClass arg1, android::os::Looper arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.RemoteController",

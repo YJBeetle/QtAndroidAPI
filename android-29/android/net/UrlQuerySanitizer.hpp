@@ -13,8 +13,7 @@ namespace android::net
 		UrlQuerySanitizer(QAndroidJniObject obj);
 		// Constructors
 		UrlQuerySanitizer();
-		UrlQuerySanitizer(jstring &arg0);
-		UrlQuerySanitizer(const QString &arg0);
+		UrlQuerySanitizer(jstring arg0);
 		
 		// Methods
 		static QAndroidJniObject getAllButNulAndAngleBracketsLegal();
@@ -28,29 +27,21 @@ namespace android::net
 		static QAndroidJniObject getUrlLegal();
 		jboolean getAllowUnregisteredParamaters();
 		QAndroidJniObject getEffectiveValueSanitizer(jstring arg0);
-		QAndroidJniObject getEffectiveValueSanitizer(const QString &arg0);
 		QAndroidJniObject getParameterList();
 		QAndroidJniObject getParameterSet();
 		jboolean getPreferFirstRepeatedParameter();
 		QAndroidJniObject getUnregisteredParameterValueSanitizer();
 		jstring getValue(jstring arg0);
-		jstring getValue(const QString &arg0);
 		QAndroidJniObject getValueSanitizer(jstring arg0);
-		QAndroidJniObject getValueSanitizer(const QString &arg0);
 		jboolean hasParameter(jstring arg0);
-		jboolean hasParameter(const QString &arg0);
 		void parseQuery(jstring arg0);
-		void parseQuery(const QString &arg0);
 		void parseUrl(jstring arg0);
-		void parseUrl(const QString &arg0);
 		void registerParameter(jstring arg0, __JniBaseClass arg1);
-		void registerParameter(const QString &arg0, __JniBaseClass arg1);
 		void registerParameters(jarray arg0, __JniBaseClass arg1);
 		void setAllowUnregisteredParamaters(jboolean arg0);
 		void setPreferFirstRepeatedParameter(jboolean arg0);
 		void setUnregisteredParameterValueSanitizer(__JniBaseClass arg0);
 		jstring unescape(jstring arg0);
-		jstring unescape(const QString &arg0);
 	};
 } // namespace android::net
 

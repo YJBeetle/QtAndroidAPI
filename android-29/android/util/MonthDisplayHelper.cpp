@@ -6,7 +6,7 @@ namespace android::util
 	
 	MonthDisplayHelper::MonthDisplayHelper(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MonthDisplayHelper::MonthDisplayHelper(jint &arg0, jint &arg1)
+	MonthDisplayHelper::MonthDisplayHelper(jint arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.MonthDisplayHelper",
@@ -15,7 +15,7 @@ namespace android::util
 			arg1
 		);
 	}
-	MonthDisplayHelper::MonthDisplayHelper(jint &arg0, jint &arg1, jint &arg2)
+	MonthDisplayHelper::MonthDisplayHelper(jint arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.MonthDisplayHelper",

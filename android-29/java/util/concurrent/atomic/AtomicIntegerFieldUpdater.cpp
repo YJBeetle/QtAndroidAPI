@@ -18,16 +18,6 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	QAndroidJniObject AtomicIntegerFieldUpdater::newUpdater(jclass arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.util.concurrent.atomic.AtomicIntegerFieldUpdater",
-			"newUpdater",
-			"(Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	jint AtomicIntegerFieldUpdater::accumulateAndGet(jobject arg0, jint arg1, __JniBaseClass arg2)
 	{
 		return __thiz.callMethod<jint>(

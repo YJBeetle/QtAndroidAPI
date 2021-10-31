@@ -34,10 +34,10 @@ namespace android::widget
 		
 		Toolbar(QAndroidJniObject obj);
 		// Constructors
-		Toolbar(android::content::Context &arg0);
-		Toolbar(android::content::Context &arg0, __JniBaseClass &arg1);
-		Toolbar(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		Toolbar(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		Toolbar(android::content::Context arg0);
+		Toolbar(android::content::Context arg0, __JniBaseClass arg1);
+		Toolbar(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		Toolbar(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		Toolbar() = default;
 		
 		// Methods
@@ -77,7 +77,6 @@ namespace android::widget
 		jboolean onTouchEvent(android::view::MotionEvent arg0);
 		void setCollapseContentDescription(jint arg0);
 		void setCollapseContentDescription(jstring arg0);
-		void setCollapseContentDescription(const QString &arg0);
 		void setCollapseIcon(android::graphics::drawable::Drawable arg0);
 		void setCollapseIcon(jint arg0);
 		void setContentInsetEndWithActions(jint arg0);
@@ -88,10 +87,8 @@ namespace android::widget
 		void setLogo(jint arg0);
 		void setLogoDescription(jint arg0);
 		void setLogoDescription(jstring arg0);
-		void setLogoDescription(const QString &arg0);
 		void setNavigationContentDescription(jint arg0);
 		void setNavigationContentDescription(jstring arg0);
-		void setNavigationContentDescription(const QString &arg0);
 		void setNavigationIcon(android::graphics::drawable::Drawable arg0);
 		void setNavigationIcon(jint arg0);
 		void setNavigationOnClickListener(__JniBaseClass arg0);
@@ -100,12 +97,10 @@ namespace android::widget
 		void setPopupTheme(jint arg0);
 		void setSubtitle(jint arg0);
 		void setSubtitle(jstring arg0);
-		void setSubtitle(const QString &arg0);
 		void setSubtitleTextAppearance(android::content::Context arg0, jint arg1);
 		void setSubtitleTextColor(jint arg0);
 		void setTitle(jint arg0);
 		void setTitle(jstring arg0);
-		void setTitle(const QString &arg0);
 		void setTitleMargin(jint arg0, jint arg1, jint arg2, jint arg3);
 		void setTitleMarginBottom(jint arg0);
 		void setTitleMarginEnd(jint arg0);

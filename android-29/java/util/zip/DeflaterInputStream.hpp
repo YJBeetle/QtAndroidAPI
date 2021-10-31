@@ -22,9 +22,9 @@ namespace java::util::zip
 		
 		DeflaterInputStream(QAndroidJniObject obj);
 		// Constructors
-		DeflaterInputStream(java::io::InputStream &arg0);
-		DeflaterInputStream(java::io::InputStream &arg0, java::util::zip::Deflater &arg1);
-		DeflaterInputStream(java::io::InputStream &arg0, java::util::zip::Deflater &arg1, jint &arg2);
+		DeflaterInputStream(java::io::InputStream arg0);
+		DeflaterInputStream(java::io::InputStream arg0, java::util::zip::Deflater arg1);
+		DeflaterInputStream(java::io::InputStream arg0, java::util::zip::Deflater arg1, jint arg2);
 		DeflaterInputStream() = default;
 		
 		// Methods

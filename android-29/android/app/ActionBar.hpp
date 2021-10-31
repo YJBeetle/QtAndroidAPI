@@ -87,7 +87,6 @@ namespace android::app
 		void setHideOnContentScrollEnabled(jboolean arg0);
 		void setHomeActionContentDescription(jint arg0);
 		void setHomeActionContentDescription(jstring arg0);
-		void setHomeActionContentDescription(const QString &arg0);
 		void setHomeAsUpIndicator(android::graphics::drawable::Drawable arg0);
 		void setHomeAsUpIndicator(jint arg0);
 		void setHomeButtonEnabled(jboolean arg0);
@@ -102,10 +101,8 @@ namespace android::app
 		void setStackedBackgroundDrawable(android::graphics::drawable::Drawable arg0);
 		void setSubtitle(jint arg0);
 		void setSubtitle(jstring arg0);
-		void setSubtitle(const QString &arg0);
 		void setTitle(jint arg0);
 		void setTitle(jstring arg0);
-		void setTitle(const QString &arg0);
 		void show();
 	};
 } // namespace android::app

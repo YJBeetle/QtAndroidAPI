@@ -9,7 +9,7 @@ namespace java::util::concurrent::locks
 	
 	AbstractQueuedSynchronizer_ConditionObject::AbstractQueuedSynchronizer_ConditionObject(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AbstractQueuedSynchronizer_ConditionObject::AbstractQueuedSynchronizer_ConditionObject(java::util::concurrent::locks::AbstractQueuedSynchronizer &arg0)
+	AbstractQueuedSynchronizer_ConditionObject::AbstractQueuedSynchronizer_ConditionObject(java::util::concurrent::locks::AbstractQueuedSynchronizer arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject",

@@ -89,15 +89,6 @@ namespace java::nio::file::attribute
 			arg0
 		);
 	}
-	QAndroidJniObject PosixFilePermission::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.nio.file.attribute.PosixFilePermission",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/nio/file/attribute/PosixFilePermission;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray PosixFilePermission::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

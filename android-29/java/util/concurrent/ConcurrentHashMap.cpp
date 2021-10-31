@@ -16,7 +16,7 @@ namespace java::util::concurrent
 			"()V"
 		);
 	}
-	ConcurrentHashMap::ConcurrentHashMap(jint &arg0)
+	ConcurrentHashMap::ConcurrentHashMap(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.ConcurrentHashMap",
@@ -24,7 +24,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	ConcurrentHashMap::ConcurrentHashMap(__JniBaseClass &arg0)
+	ConcurrentHashMap::ConcurrentHashMap(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.ConcurrentHashMap",
@@ -32,7 +32,7 @@ namespace java::util::concurrent
 			arg0.__jniObject().object()
 		);
 	}
-	ConcurrentHashMap::ConcurrentHashMap(jint &arg0, jfloat &arg1)
+	ConcurrentHashMap::ConcurrentHashMap(jint arg0, jfloat arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.ConcurrentHashMap",
@@ -41,7 +41,7 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	ConcurrentHashMap::ConcurrentHashMap(jint &arg0, jfloat &arg1, jint &arg2)
+	ConcurrentHashMap::ConcurrentHashMap(jint arg0, jfloat arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.ConcurrentHashMap",

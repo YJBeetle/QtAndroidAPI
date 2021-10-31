@@ -14,8 +14,7 @@ namespace android::media
 		
 		NotProvisionedException(QAndroidJniObject obj);
 		// Constructors
-		NotProvisionedException(jstring &arg0);
-		NotProvisionedException(const QString &arg0);
+		NotProvisionedException(jstring arg0);
 		NotProvisionedException() = default;
 		
 		// Methods

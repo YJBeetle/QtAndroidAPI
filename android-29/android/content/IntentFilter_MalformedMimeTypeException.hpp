@@ -15,8 +15,7 @@ namespace android::content
 		IntentFilter_MalformedMimeTypeException(QAndroidJniObject obj);
 		// Constructors
 		IntentFilter_MalformedMimeTypeException();
-		IntentFilter_MalformedMimeTypeException(jstring &arg0);
-		IntentFilter_MalformedMimeTypeException(const QString &arg0);
+		IntentFilter_MalformedMimeTypeException(jstring arg0);
 		
 		// Methods
 	};

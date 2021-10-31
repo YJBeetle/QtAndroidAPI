@@ -101,17 +101,6 @@ namespace java::lang::invoke
 			arg2
 		).object<jobject>();
 	}
-	jobject MethodHandles::classData(java::lang::invoke::MethodHandles_Lookup arg0, const QString &arg1, jclass arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.lang.invoke.MethodHandles",
-			"classData",
-			"(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2
-		).object<jobject>();
-	}
 	jobject MethodHandles::classDataAt(java::lang::invoke::MethodHandles_Lookup arg0, jstring arg1, jclass arg2, jint arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -120,18 +109,6 @@ namespace java::lang::invoke
 			"(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/Class;I)Ljava/lang/Object;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2,
-			arg3
-		).object<jobject>();
-	}
-	jobject MethodHandles::classDataAt(java::lang::invoke::MethodHandles_Lookup arg0, const QString &arg1, jclass arg2, jint arg3)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.lang.invoke.MethodHandles",
-			"classDataAt",
-			"(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/Class;I)Ljava/lang/Object;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2,
 			arg3
 		).object<jobject>();

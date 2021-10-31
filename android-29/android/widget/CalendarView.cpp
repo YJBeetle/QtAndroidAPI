@@ -9,7 +9,7 @@ namespace android::widget
 	
 	CalendarView::CalendarView(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	CalendarView::CalendarView(android::content::Context &arg0)
+	CalendarView::CalendarView(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.CalendarView",
@@ -17,7 +17,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	CalendarView::CalendarView(android::content::Context &arg0, __JniBaseClass &arg1)
+	CalendarView::CalendarView(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.CalendarView",
@@ -26,7 +26,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	CalendarView::CalendarView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	CalendarView::CalendarView(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.CalendarView",
@@ -36,7 +36,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	CalendarView::CalendarView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	CalendarView::CalendarView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.CalendarView",

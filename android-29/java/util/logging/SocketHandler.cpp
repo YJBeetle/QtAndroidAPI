@@ -15,21 +15,12 @@ namespace java::util::logging
 			"()V"
 		);
 	}
-	SocketHandler::SocketHandler(jstring &arg0, jint &arg1)
+	SocketHandler::SocketHandler(jstring arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.logging.SocketHandler",
 			"(Ljava/lang/String;I)V",
 			arg0,
-			arg1
-		);
-	}
-	SocketHandler::SocketHandler(const QString &arg0, jint &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.logging.SocketHandler",
-			"(Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

@@ -17,7 +17,7 @@ namespace java::io
 		
 		FilterOutputStream(QAndroidJniObject obj);
 		// Constructors
-		FilterOutputStream(java::io::OutputStream &arg0);
+		FilterOutputStream(java::io::OutputStream arg0);
 		FilterOutputStream() = default;
 		
 		// Methods

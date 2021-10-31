@@ -28,7 +28,6 @@ namespace android::net::nsd
 		
 		// Methods
 		void discoverServices(jstring arg0, jint arg1, __JniBaseClass arg2);
-		void discoverServices(const QString &arg0, jint arg1, __JniBaseClass arg2);
 		void registerService(android::net::nsd::NsdServiceInfo arg0, jint arg1, __JniBaseClass arg2);
 		void resolveService(android::net::nsd::NsdServiceInfo arg0, __JniBaseClass arg1);
 		void stopServiceDiscovery(__JniBaseClass arg0);

@@ -15,7 +15,7 @@ namespace android::os
 	
 	UserHandle::UserHandle(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	UserHandle::UserHandle(android::os::Parcel &arg0)
+	UserHandle::UserHandle(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.UserHandle",

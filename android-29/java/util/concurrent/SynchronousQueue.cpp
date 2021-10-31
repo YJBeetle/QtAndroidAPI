@@ -17,7 +17,7 @@ namespace java::util::concurrent
 			"()V"
 		);
 	}
-	SynchronousQueue::SynchronousQueue(jboolean &arg0)
+	SynchronousQueue::SynchronousQueue(jboolean arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.SynchronousQueue",

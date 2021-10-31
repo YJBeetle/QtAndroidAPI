@@ -35,9 +35,9 @@ namespace android::view::animation
 		
 		LayoutAnimationController(QAndroidJniObject obj);
 		// Constructors
-		LayoutAnimationController(android::view::animation::Animation &arg0);
-		LayoutAnimationController(android::content::Context &arg0, __JniBaseClass &arg1);
-		LayoutAnimationController(android::view::animation::Animation &arg0, jfloat &arg1);
+		LayoutAnimationController(android::view::animation::Animation arg0);
+		LayoutAnimationController(android::content::Context arg0, __JniBaseClass arg1);
+		LayoutAnimationController(android::view::animation::Animation arg0, jfloat arg1);
 		LayoutAnimationController() = default;
 		
 		// Methods

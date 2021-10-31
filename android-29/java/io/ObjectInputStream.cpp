@@ -13,7 +13,7 @@ namespace java::io
 	
 	ObjectInputStream::ObjectInputStream(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ObjectInputStream::ObjectInputStream(java::io::InputStream &arg0)
+	ObjectInputStream::ObjectInputStream(java::io::InputStream arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.ObjectInputStream",

@@ -54,7 +54,7 @@ namespace android::widget
 	
 	TextView::TextView(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	TextView::TextView(android::content::Context &arg0)
+	TextView::TextView(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.TextView",
@@ -62,7 +62,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	TextView::TextView(android::content::Context &arg0, __JniBaseClass &arg1)
+	TextView::TextView(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.TextView",
@@ -71,7 +71,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	TextView::TextView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	TextView::TextView(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.TextView",
@@ -81,7 +81,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	TextView::TextView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	TextView::TextView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.TextView",
@@ -104,16 +104,6 @@ namespace android::widget
 			arg2.__jniObject().object()
 		);
 	}
-	void TextView::addExtraDataToAccessibilityNodeInfo(android::view::accessibility::AccessibilityNodeInfo arg0, const QString &arg1, android::os::Bundle arg2)
-	{
-		__thiz.callMethod<void>(
-			"addExtraDataToAccessibilityNodeInfo",
-			"(Landroid/view/accessibility/AccessibilityNodeInfo;Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object()
-		);
-	}
 	void TextView::addTextChangedListener(__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
@@ -130,30 +120,12 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::append(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"append",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void TextView::append(jstring arg0, jint arg1, jint arg2)
 	{
 		__thiz.callMethod<void>(
 			"append",
 			"(Ljava/lang/CharSequence;II)V",
 			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void TextView::append(const QString &arg0, jint arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"append",
-			"(Ljava/lang/CharSequence;II)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2
 		);
@@ -249,16 +221,6 @@ namespace android::widget
 			"(Ljava/util/ArrayList;Ljava/lang/CharSequence;I)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2
-		);
-	}
-	void TextView::findViewsWithText(java::util::ArrayList arg0, const QString &arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"findViewsWithText",
-			"(Ljava/util/ArrayList;Ljava/lang/CharSequence;I)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}
@@ -1240,15 +1202,6 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	jboolean TextView::onPrivateIMECommand(const QString &arg0, android::os::Bundle arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onPrivateIMECommand",
-			"(Ljava/lang/String;Landroid/os/Bundle;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	QAndroidJniObject TextView::onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -1566,29 +1519,12 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setError(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setError",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void TextView::setError(jstring arg0, android::graphics::drawable::Drawable arg1)
 	{
 		__thiz.callMethod<void>(
 			"setError",
 			"(Ljava/lang/CharSequence;Landroid/graphics/drawable/Drawable;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void TextView::setError(const QString &arg0, android::graphics::drawable::Drawable arg1)
-	{
-		__thiz.callMethod<void>(
-			"setError",
-			"(Ljava/lang/CharSequence;Landroid/graphics/drawable/Drawable;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -1632,28 +1568,12 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setFontFeatureSettings(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setFontFeatureSettings",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jboolean TextView::setFontVariationSettings(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"setFontVariationSettings",
 			"(Ljava/lang/String;)Z",
 			arg0
-		);
-	}
-	jboolean TextView::setFontVariationSettings(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"setFontVariationSettings",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void TextView::setFreezesText(jboolean arg0)
@@ -1704,14 +1624,6 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setHint(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setHint",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void TextView::setHintTextColor(android::content::res::ColorStateList arg0)
 	{
 		__thiz.callMethod<void>(
@@ -1750,15 +1662,6 @@ namespace android::widget
 			"setImeActionLabel",
 			"(Ljava/lang/CharSequence;I)V",
 			arg0,
-			arg1
-		);
-	}
-	void TextView::setImeActionLabel(const QString &arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"setImeActionLabel",
-			"(Ljava/lang/CharSequence;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -2009,14 +1912,6 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setPrivateImeOptions(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPrivateImeOptions",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void TextView::setRawInputType(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -2107,14 +2002,6 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setText(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setText",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void TextView::setText(jint arg0, android::widget::TextView_BufferType arg1)
 	{
 		__thiz.callMethod<void>(
@@ -2130,15 +2017,6 @@ namespace android::widget
 			"setText",
 			"(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void TextView::setText(const QString &arg0, android::widget::TextView_BufferType arg1)
-	{
-		__thiz.callMethod<void>(
-			"setText",
-			"(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -2225,29 +2103,12 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextView::setTextKeepState(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTextKeepState",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void TextView::setTextKeepState(jstring arg0, android::widget::TextView_BufferType arg1)
 	{
 		__thiz.callMethod<void>(
 			"setTextKeepState",
 			"(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void TextView::setTextKeepState(const QString &arg0, android::widget::TextView_BufferType arg1)
-	{
-		__thiz.callMethod<void>(
-			"setTextKeepState",
-			"(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

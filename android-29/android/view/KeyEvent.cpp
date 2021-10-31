@@ -2301,7 +2301,7 @@ namespace android::view
 			arg0.__jniObject().object()
 		);
 	}
-	KeyEvent::KeyEvent(jint &arg0, jint &arg1)
+	KeyEvent::KeyEvent(jint arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.KeyEvent",
@@ -2310,7 +2310,7 @@ namespace android::view
 			arg1
 		);
 	}
-	KeyEvent::KeyEvent(android::view::KeyEvent &arg0, jlong &arg1, jint &arg2)
+	KeyEvent::KeyEvent(android::view::KeyEvent &arg0, jlong arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.KeyEvent",
@@ -2320,7 +2320,7 @@ namespace android::view
 			arg2
 		);
 	}
-	KeyEvent::KeyEvent(jlong &arg0, jstring &arg1, jint &arg2, jint &arg3)
+	KeyEvent::KeyEvent(jlong arg0, jstring arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.KeyEvent",
@@ -2331,18 +2331,7 @@ namespace android::view
 			arg3
 		);
 	}
-	KeyEvent::KeyEvent(jlong &arg0, const QString &arg1, jint &arg2, jint &arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.KeyEvent",
-			"(JLjava/lang/String;II)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2,
-			arg3
-		);
-	}
-	KeyEvent::KeyEvent(jlong &arg0, jlong &arg1, jint &arg2, jint &arg3, jint &arg4)
+	KeyEvent::KeyEvent(jlong arg0, jlong arg1, jint arg2, jint arg3, jint arg4)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.KeyEvent",
@@ -2354,7 +2343,7 @@ namespace android::view
 			arg4
 		);
 	}
-	KeyEvent::KeyEvent(jlong &arg0, jlong &arg1, jint &arg2, jint &arg3, jint &arg4, jint &arg5)
+	KeyEvent::KeyEvent(jlong arg0, jlong arg1, jint arg2, jint arg3, jint arg4, jint arg5)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.KeyEvent",
@@ -2367,7 +2356,7 @@ namespace android::view
 			arg5
 		);
 	}
-	KeyEvent::KeyEvent(jlong &arg0, jlong &arg1, jint &arg2, jint &arg3, jint &arg4, jint &arg5, jint &arg6, jint &arg7)
+	KeyEvent::KeyEvent(jlong arg0, jlong arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.KeyEvent",
@@ -2382,7 +2371,7 @@ namespace android::view
 			arg7
 		);
 	}
-	KeyEvent::KeyEvent(jlong &arg0, jlong &arg1, jint &arg2, jint &arg3, jint &arg4, jint &arg5, jint &arg6, jint &arg7, jint &arg8)
+	KeyEvent::KeyEvent(jlong arg0, jlong arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.KeyEvent",
@@ -2398,7 +2387,7 @@ namespace android::view
 			arg8
 		);
 	}
-	KeyEvent::KeyEvent(jlong &arg0, jlong &arg1, jint &arg2, jint &arg3, jint &arg4, jint &arg5, jint &arg6, jint &arg7, jint &arg8, jint &arg9)
+	KeyEvent::KeyEvent(jlong arg0, jlong arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.KeyEvent",
@@ -2511,15 +2500,6 @@ namespace android::view
 			"keyCodeFromString",
 			"(Ljava/lang/String;)I",
 			arg0
-		);
-	}
-	jint KeyEvent::keyCodeFromString(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.view.KeyEvent",
-			"keyCodeFromString",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring KeyEvent::keyCodeToString(jint arg0)

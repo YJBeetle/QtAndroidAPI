@@ -43,15 +43,6 @@ namespace java::time::zone
 			arg0
 		);
 	}
-	QAndroidJniObject ZoneOffsetTransitionRule_TimeDefinition::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.time.zone.ZoneOffsetTransitionRule$TimeDefinition",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/time/zone/ZoneOffsetTransitionRule$TimeDefinition;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray ZoneOffsetTransitionRule_TimeDefinition::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

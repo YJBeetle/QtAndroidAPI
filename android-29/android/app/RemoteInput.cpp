@@ -102,16 +102,6 @@ namespace android::app
 			arg1
 		);
 	}
-	QAndroidJniObject RemoteInput::getDataResultsFromIntent(android::content::Intent arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.app.RemoteInput",
-			"getDataResultsFromIntent",
-			"(Landroid/content/Intent;Ljava/lang/String;)Ljava/util/Map;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	QAndroidJniObject RemoteInput::getResultsFromIntent(android::content::Intent arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

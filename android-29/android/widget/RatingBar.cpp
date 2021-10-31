@@ -7,7 +7,7 @@ namespace android::widget
 	
 	RatingBar::RatingBar(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	RatingBar::RatingBar(android::content::Context &arg0)
+	RatingBar::RatingBar(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.RatingBar",
@@ -15,7 +15,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	RatingBar::RatingBar(android::content::Context &arg0, __JniBaseClass &arg1)
+	RatingBar::RatingBar(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.RatingBar",
@@ -24,7 +24,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	RatingBar::RatingBar(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	RatingBar::RatingBar(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.RatingBar",
@@ -34,7 +34,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	RatingBar::RatingBar(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	RatingBar::RatingBar(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.RatingBar",

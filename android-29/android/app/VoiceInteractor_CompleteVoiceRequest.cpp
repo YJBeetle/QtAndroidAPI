@@ -8,7 +8,7 @@ namespace android::app
 	
 	VoiceInteractor_CompleteVoiceRequest::VoiceInteractor_CompleteVoiceRequest(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	VoiceInteractor_CompleteVoiceRequest::VoiceInteractor_CompleteVoiceRequest(android::app::VoiceInteractor_Prompt &arg0, android::os::Bundle &arg1)
+	VoiceInteractor_CompleteVoiceRequest::VoiceInteractor_CompleteVoiceRequest(android::app::VoiceInteractor_Prompt arg0, android::os::Bundle arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.VoiceInteractor$CompleteVoiceRequest",

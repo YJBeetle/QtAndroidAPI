@@ -22,7 +22,7 @@ namespace javax::crypto
 		
 		CipherOutputStream(QAndroidJniObject obj);
 		// Constructors
-		CipherOutputStream(java::io::OutputStream &arg0, javax::crypto::Cipher &arg1);
+		CipherOutputStream(java::io::OutputStream arg0, javax::crypto::Cipher arg1);
 		CipherOutputStream() = default;
 		
 		// Methods

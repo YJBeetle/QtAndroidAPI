@@ -7,7 +7,7 @@ namespace android::graphics
 	
 	SumPathEffect::SumPathEffect(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SumPathEffect::SumPathEffect(android::graphics::PathEffect &arg0, android::graphics::PathEffect &arg1)
+	SumPathEffect::SumPathEffect(android::graphics::PathEffect arg0, android::graphics::PathEffect arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.SumPathEffect",

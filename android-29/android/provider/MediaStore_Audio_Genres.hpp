@@ -25,9 +25,7 @@ namespace android::provider
 		
 		// Methods
 		static QAndroidJniObject getContentUri(jstring arg0);
-		static QAndroidJniObject getContentUri(const QString &arg0);
 		static QAndroidJniObject getContentUriForAudioId(jstring arg0, jint arg1);
-		static QAndroidJniObject getContentUriForAudioId(const QString &arg0, jint arg1);
 	};
 } // namespace android::provider
 

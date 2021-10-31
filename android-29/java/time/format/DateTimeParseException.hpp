@@ -15,10 +15,8 @@ namespace java::time::format
 		
 		DateTimeParseException(QAndroidJniObject obj);
 		// Constructors
-		DateTimeParseException(jstring &arg0, jstring &arg1, jint &arg2);
-		DateTimeParseException(const QString &arg0, const QString &arg1, jint &arg2);
-		DateTimeParseException(jstring &arg0, jstring &arg1, jint &arg2, jthrowable &arg3);
-		DateTimeParseException(const QString &arg0, const QString &arg1, jint &arg2, jthrowable &arg3);
+		DateTimeParseException(jstring arg0, jstring arg1, jint arg2);
+		DateTimeParseException(jstring arg0, jstring arg1, jint arg2, jthrowable arg3);
 		DateTimeParseException() = default;
 		
 		// Methods

@@ -24,7 +24,6 @@ namespace android::net::wifi::aware
 		QAndroidJniObject setMaxDistanceMm(jint arg0);
 		QAndroidJniObject setMinDistanceMm(jint arg0);
 		QAndroidJniObject setServiceName(jstring arg0);
-		QAndroidJniObject setServiceName(const QString &arg0);
 		QAndroidJniObject setServiceSpecificInfo(jbyteArray arg0);
 		QAndroidJniObject setSubscribeType(jint arg0);
 		QAndroidJniObject setTerminateNotificationEnabled(jboolean arg0);

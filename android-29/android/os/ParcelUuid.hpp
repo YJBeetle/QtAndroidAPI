@@ -21,12 +21,11 @@ namespace android::os
 		
 		ParcelUuid(QAndroidJniObject obj);
 		// Constructors
-		ParcelUuid(java::util::UUID &arg0);
+		ParcelUuid(java::util::UUID arg0);
 		ParcelUuid() = default;
 		
 		// Methods
 		static QAndroidJniObject fromString(jstring arg0);
-		static QAndroidJniObject fromString(const QString &arg0);
 		jint describeContents();
 		jboolean equals(jobject arg0);
 		QAndroidJniObject getUuid();

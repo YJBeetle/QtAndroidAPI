@@ -14,8 +14,7 @@ namespace android::graphics
 		SurfaceTexture_OutOfResourcesException(QAndroidJniObject obj);
 		// Constructors
 		SurfaceTexture_OutOfResourcesException();
-		SurfaceTexture_OutOfResourcesException(jstring &arg0);
-		SurfaceTexture_OutOfResourcesException(const QString &arg0);
+		SurfaceTexture_OutOfResourcesException(jstring arg0);
 		
 		// Methods
 	};

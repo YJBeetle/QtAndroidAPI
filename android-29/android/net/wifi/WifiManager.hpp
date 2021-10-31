@@ -108,11 +108,8 @@ namespace android::net::wifi
 		void addOrUpdatePasspointConfiguration(android::net::wifi::hotspot2::PasspointConfiguration arg0);
 		void cancelWps(android::net::wifi::WifiManager_WpsCallback arg0);
 		QAndroidJniObject createMulticastLock(jstring arg0);
-		QAndroidJniObject createMulticastLock(const QString &arg0);
 		QAndroidJniObject createWifiLock(jstring arg0);
-		QAndroidJniObject createWifiLock(const QString &arg0);
 		QAndroidJniObject createWifiLock(jint arg0, jstring arg1);
-		QAndroidJniObject createWifiLock(jint arg0, const QString &arg1);
 		jboolean disableNetwork(jint arg0);
 		jboolean disconnect();
 		jboolean enableNetwork(jint arg0, jboolean arg1);
@@ -141,11 +138,9 @@ namespace android::net::wifi
 		jboolean removeNetwork(jint arg0);
 		jint removeNetworkSuggestions(__JniBaseClass arg0);
 		void removePasspointConfiguration(jstring arg0);
-		void removePasspointConfiguration(const QString &arg0);
 		jboolean saveConfiguration();
 		void setTdlsEnabled(java::net::InetAddress arg0, jboolean arg1);
 		void setTdlsEnabledWithMacAddress(jstring arg0, jboolean arg1);
-		void setTdlsEnabledWithMacAddress(const QString &arg0, jboolean arg1);
 		jboolean setWifiEnabled(jboolean arg0);
 		void startLocalOnlyHotspot(android::net::wifi::WifiManager_LocalOnlyHotspotCallback arg0, android::os::Handler arg1);
 		jboolean startScan();

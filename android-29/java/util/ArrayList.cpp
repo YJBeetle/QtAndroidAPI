@@ -15,7 +15,7 @@ namespace java::util
 			"()V"
 		);
 	}
-	ArrayList::ArrayList(jint &arg0)
+	ArrayList::ArrayList(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.ArrayList",
@@ -23,7 +23,7 @@ namespace java::util
 			arg0
 		);
 	}
-	ArrayList::ArrayList(__JniBaseClass &arg0)
+	ArrayList::ArrayList(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.ArrayList",

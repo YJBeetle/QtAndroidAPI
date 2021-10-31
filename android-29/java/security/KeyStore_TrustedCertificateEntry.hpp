@@ -16,8 +16,8 @@ namespace java::security
 		
 		KeyStore_TrustedCertificateEntry(QAndroidJniObject obj);
 		// Constructors
-		KeyStore_TrustedCertificateEntry(java::security::cert::Certificate &arg0);
-		KeyStore_TrustedCertificateEntry(java::security::cert::Certificate &arg0, __JniBaseClass &arg1);
+		KeyStore_TrustedCertificateEntry(java::security::cert::Certificate arg0);
+		KeyStore_TrustedCertificateEntry(java::security::cert::Certificate arg0, __JniBaseClass arg1);
 		KeyStore_TrustedCertificateEntry() = default;
 		
 		// Methods

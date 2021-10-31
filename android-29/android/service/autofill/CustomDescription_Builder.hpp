@@ -24,7 +24,7 @@ namespace android::service::autofill
 		
 		CustomDescription_Builder(QAndroidJniObject obj);
 		// Constructors
-		CustomDescription_Builder(android::widget::RemoteViews &arg0);
+		CustomDescription_Builder(android::widget::RemoteViews arg0);
 		CustomDescription_Builder() = default;
 		
 		// Methods

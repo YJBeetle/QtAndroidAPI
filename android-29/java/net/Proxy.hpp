@@ -21,7 +21,7 @@ namespace java::net
 		
 		Proxy(QAndroidJniObject obj);
 		// Constructors
-		Proxy(java::net::Proxy_Type &arg0, java::net::SocketAddress &arg1);
+		Proxy(java::net::Proxy_Type arg0, java::net::SocketAddress arg1);
 		Proxy() = default;
 		
 		// Methods

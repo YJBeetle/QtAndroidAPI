@@ -41,15 +41,6 @@ namespace java::nio::file
 			arg0
 		);
 	}
-	QAndroidJniObject StandardCopyOption::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.nio.file.StandardCopyOption",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/nio/file/StandardCopyOption;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray StandardCopyOption::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

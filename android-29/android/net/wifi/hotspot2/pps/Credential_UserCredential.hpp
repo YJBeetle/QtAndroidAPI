@@ -30,11 +30,8 @@ namespace android::net::wifi::hotspot2::pps
 		jint hashCode();
 		void setEapType(jint arg0);
 		void setNonEapInnerMethod(jstring arg0);
-		void setNonEapInnerMethod(const QString &arg0);
 		void setPassword(jstring arg0);
-		void setPassword(const QString &arg0);
 		void setUsername(jstring arg0);
-		void setUsername(const QString &arg0);
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

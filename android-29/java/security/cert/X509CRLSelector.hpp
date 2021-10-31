@@ -42,7 +42,6 @@ namespace java::security::cert
 		void addIssuer(javax::security::auth::x500::X500Principal arg0);
 		void addIssuerName(jbyteArray arg0);
 		void addIssuerName(jstring arg0);
-		void addIssuerName(const QString &arg0);
 		jobject clone();
 		QAndroidJniObject getCertificateChecking();
 		QAndroidJniObject getDateAndTime();

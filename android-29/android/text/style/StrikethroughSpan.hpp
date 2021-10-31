@@ -22,7 +22,7 @@ namespace android::text::style
 		StrikethroughSpan(QAndroidJniObject obj);
 		// Constructors
 		StrikethroughSpan();
-		StrikethroughSpan(android::os::Parcel &arg0);
+		StrikethroughSpan(android::os::Parcel arg0);
 		
 		// Methods
 		jint describeContents();

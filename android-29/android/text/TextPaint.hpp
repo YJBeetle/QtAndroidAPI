@@ -25,8 +25,8 @@ namespace android::text
 		TextPaint(QAndroidJniObject obj);
 		// Constructors
 		TextPaint();
-		TextPaint(android::graphics::Paint &arg0);
-		TextPaint(jint &arg0);
+		TextPaint(android::graphics::Paint arg0);
+		TextPaint(jint arg0);
 		
 		// Methods
 		jfloat getUnderlineThickness();

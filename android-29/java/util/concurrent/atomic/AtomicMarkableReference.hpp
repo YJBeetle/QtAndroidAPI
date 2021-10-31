@@ -12,7 +12,7 @@ namespace java::util::concurrent::atomic
 		
 		AtomicMarkableReference(QAndroidJniObject obj);
 		// Constructors
-		AtomicMarkableReference(jobject &arg0, jboolean &arg1);
+		AtomicMarkableReference(jobject arg0, jboolean arg1);
 		AtomicMarkableReference() = default;
 		
 		// Methods

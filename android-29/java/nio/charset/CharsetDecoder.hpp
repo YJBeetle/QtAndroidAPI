@@ -48,7 +48,6 @@ namespace java::nio::charset
 		QAndroidJniObject onMalformedInput(java::nio::charset::CodingErrorAction arg0);
 		QAndroidJniObject onUnmappableCharacter(java::nio::charset::CodingErrorAction arg0);
 		QAndroidJniObject replaceWith(jstring arg0);
-		QAndroidJniObject replaceWith(const QString &arg0);
 		jstring replacement();
 		QAndroidJniObject reset();
 		QAndroidJniObject unmappableCharacterAction();

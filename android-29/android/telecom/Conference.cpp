@@ -20,7 +20,7 @@ namespace android::telecom
 	
 	Conference::Conference(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Conference::Conference(android::telecom::PhoneAccountHandle &arg0)
+	Conference::Conference(android::telecom::PhoneAccountHandle arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.telecom.Conference",

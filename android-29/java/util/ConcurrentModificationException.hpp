@@ -15,11 +15,9 @@ namespace java::util
 		ConcurrentModificationException(QAndroidJniObject obj);
 		// Constructors
 		ConcurrentModificationException();
-		ConcurrentModificationException(jstring &arg0);
-		ConcurrentModificationException(const QString &arg0);
-		ConcurrentModificationException(jthrowable &arg0);
-		ConcurrentModificationException(jstring &arg0, jthrowable &arg1);
-		ConcurrentModificationException(const QString &arg0, jthrowable &arg1);
+		ConcurrentModificationException(jstring arg0);
+		ConcurrentModificationException(jthrowable arg0);
+		ConcurrentModificationException(jstring arg0, jthrowable arg1);
 		
 		// Methods
 	};

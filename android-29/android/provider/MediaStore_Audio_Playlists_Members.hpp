@@ -30,7 +30,6 @@ namespace android::provider
 		
 		// Methods
 		static QAndroidJniObject getContentUri(jstring arg0, jlong arg1);
-		static QAndroidJniObject getContentUri(const QString &arg0, jlong arg1);
 		static jboolean moveItem(android::content::ContentResolver arg0, jlong arg1, jint arg2, jint arg3);
 	};
 } // namespace android::provider

@@ -18,14 +18,6 @@ namespace java::nio::charset::spi
 			arg0
 		);
 	}
-	QAndroidJniObject CharsetProvider::charsetForName(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"charsetForName",
-			"(Ljava/lang/String;)Ljava/nio/charset/Charset;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject CharsetProvider::charsets()
 	{
 		return __thiz.callObjectMethod(

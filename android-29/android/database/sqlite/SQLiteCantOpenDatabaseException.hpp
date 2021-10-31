@@ -17,8 +17,7 @@ namespace android::database::sqlite
 		SQLiteCantOpenDatabaseException(QAndroidJniObject obj);
 		// Constructors
 		SQLiteCantOpenDatabaseException();
-		SQLiteCantOpenDatabaseException(jstring &arg0);
-		SQLiteCantOpenDatabaseException(const QString &arg0);
+		SQLiteCantOpenDatabaseException(jstring arg0);
 		
 		// Methods
 	};

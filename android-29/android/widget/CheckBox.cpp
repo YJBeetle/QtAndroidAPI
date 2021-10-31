@@ -7,7 +7,7 @@ namespace android::widget
 	
 	CheckBox::CheckBox(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	CheckBox::CheckBox(android::content::Context &arg0)
+	CheckBox::CheckBox(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.CheckBox",
@@ -15,7 +15,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	CheckBox::CheckBox(android::content::Context &arg0, __JniBaseClass &arg1)
+	CheckBox::CheckBox(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.CheckBox",
@@ -24,7 +24,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	CheckBox::CheckBox(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	CheckBox::CheckBox(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.CheckBox",
@@ -34,7 +34,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	CheckBox::CheckBox(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	CheckBox::CheckBox(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.CheckBox",

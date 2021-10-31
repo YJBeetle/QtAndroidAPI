@@ -14,7 +14,7 @@ namespace android::view::animation
 			"()V"
 		);
 	}
-	BounceInterpolator::BounceInterpolator(android::content::Context &arg0, __JniBaseClass &arg1)
+	BounceInterpolator::BounceInterpolator(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.BounceInterpolator",

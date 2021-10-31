@@ -14,8 +14,7 @@ namespace android::media
 		
 		UnsupportedSchemeException(QAndroidJniObject obj);
 		// Constructors
-		UnsupportedSchemeException(jstring &arg0);
-		UnsupportedSchemeException(const QString &arg0);
+		UnsupportedSchemeException(jstring arg0);
 		UnsupportedSchemeException() = default;
 		
 		// Methods

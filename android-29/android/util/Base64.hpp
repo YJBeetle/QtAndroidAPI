@@ -23,7 +23,6 @@ namespace android::util
 		// Methods
 		static jbyteArray decode(jbyteArray arg0, jint arg1);
 		static jbyteArray decode(jstring arg0, jint arg1);
-		static jbyteArray decode(const QString &arg0, jint arg1);
 		static jbyteArray decode(jbyteArray arg0, jint arg1, jint arg2, jint arg3);
 		static jbyteArray encode(jbyteArray arg0, jint arg1);
 		static jbyteArray encode(jbyteArray arg0, jint arg1, jint arg2, jint arg3);

@@ -6,7 +6,7 @@ namespace java::util
 	
 	IllegalFormatWidthException::IllegalFormatWidthException(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	IllegalFormatWidthException::IllegalFormatWidthException(jint &arg0)
+	IllegalFormatWidthException::IllegalFormatWidthException(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.IllegalFormatWidthException",

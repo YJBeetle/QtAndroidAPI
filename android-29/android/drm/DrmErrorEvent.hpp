@@ -25,10 +25,8 @@ namespace android::drm
 		
 		DrmErrorEvent(QAndroidJniObject obj);
 		// Constructors
-		DrmErrorEvent(jint &arg0, jint &arg1, jstring &arg2);
-		DrmErrorEvent(jint &arg0, jint &arg1, const QString &arg2);
-		DrmErrorEvent(jint &arg0, jint &arg1, jstring &arg2, java::util::HashMap &arg3);
-		DrmErrorEvent(jint &arg0, jint &arg1, const QString &arg2, java::util::HashMap &arg3);
+		DrmErrorEvent(jint arg0, jint arg1, jstring arg2);
+		DrmErrorEvent(jint arg0, jint arg1, jstring arg2, java::util::HashMap arg3);
 		DrmErrorEvent() = default;
 		
 		// Methods

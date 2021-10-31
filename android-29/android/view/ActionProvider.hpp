@@ -20,7 +20,7 @@ namespace android::view
 		
 		ActionProvider(QAndroidJniObject obj);
 		// Constructors
-		ActionProvider(android::content::Context &arg0);
+		ActionProvider(android::content::Context arg0);
 		ActionProvider() = default;
 		
 		// Methods

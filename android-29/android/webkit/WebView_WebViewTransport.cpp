@@ -7,7 +7,7 @@ namespace android::webkit
 	
 	WebView_WebViewTransport::WebView_WebViewTransport(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	WebView_WebViewTransport::WebView_WebViewTransport(android::webkit::WebView &arg0)
+	WebView_WebViewTransport::WebView_WebViewTransport(android::webkit::WebView arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.webkit.WebView$WebViewTransport",

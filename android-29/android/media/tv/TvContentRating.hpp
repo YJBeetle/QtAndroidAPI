@@ -17,9 +17,7 @@ namespace android::media::tv
 		
 		// Methods
 		static QAndroidJniObject createRating(jstring arg0, jstring arg1, jstring arg2, jarray arg3);
-		static QAndroidJniObject createRating(const QString &arg0, const QString &arg1, const QString &arg2, jarray arg3);
 		static QAndroidJniObject unflattenFromString(jstring arg0);
-		static QAndroidJniObject unflattenFromString(const QString &arg0);
 		jboolean contains(android::media::tv::TvContentRating arg0);
 		jboolean equals(jobject arg0);
 		jstring flattenToString();

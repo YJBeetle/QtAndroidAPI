@@ -26,15 +26,6 @@ namespace android::telephony::euicc
 			arg0
 		);
 	}
-	QAndroidJniObject DownloadableSubscription::forActivationCode(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.telephony.euicc.DownloadableSubscription",
-			"forActivationCode",
-			"(Ljava/lang/String;)Landroid/telephony/euicc/DownloadableSubscription;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jint DownloadableSubscription::describeContents()
 	{
 		return __thiz.callMethod<jint>(

@@ -25,7 +25,7 @@ namespace java::security
 		
 		PrivilegedActionException(QAndroidJniObject obj);
 		// Constructors
-		PrivilegedActionException(java::lang::Exception &arg0);
+		PrivilegedActionException(java::lang::Exception arg0);
 		PrivilegedActionException() = default;
 		
 		// Methods

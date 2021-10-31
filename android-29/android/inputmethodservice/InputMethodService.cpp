@@ -198,15 +198,6 @@ namespace android::inputmethodservice
 			arg1.__jniObject().object()
 		);
 	}
-	void InputMethodService::onAppPrivateCommand(const QString &arg0, android::os::Bundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"onAppPrivateCommand",
-			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	void InputMethodService::onBindInput()
 	{
 		__thiz.callMethod<void>(
@@ -681,29 +672,12 @@ namespace android::inputmethodservice
 			arg0
 		);
 	}
-	void InputMethodService::switchInputMethod(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"switchInputMethod",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void InputMethodService::switchInputMethod(jstring arg0, android::view::inputmethod::InputMethodSubtype arg1)
 	{
 		__thiz.callMethod<void>(
 			"switchInputMethod",
 			"(Ljava/lang/String;Landroid/view/inputmethod/InputMethodSubtype;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void InputMethodService::switchInputMethod(const QString &arg0, android::view::inputmethod::InputMethodSubtype arg1)
-	{
-		__thiz.callMethod<void>(
-			"switchInputMethod",
-			"(Ljava/lang/String;Landroid/view/inputmethod/InputMethodSubtype;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

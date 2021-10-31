@@ -17,7 +17,7 @@ namespace java::net
 	
 	URL::URL(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	URL::URL(jstring &arg0)
+	URL::URL(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.URL",
@@ -25,15 +25,7 @@ namespace java::net
 			arg0
 		);
 	}
-	URL::URL(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.URL",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	URL::URL(java::net::URL &arg0, jstring &arg1)
+	URL::URL(java::net::URL &arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.URL",
@@ -42,16 +34,7 @@ namespace java::net
 			arg1
 		);
 	}
-	URL::URL(java::net::URL &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.URL",
-			"(Ljava/net/URL;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	URL::URL(jstring &arg0, jstring &arg1, jstring &arg2)
+	URL::URL(jstring arg0, jstring arg1, jstring arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.URL",
@@ -61,17 +44,7 @@ namespace java::net
 			arg2
 		);
 	}
-	URL::URL(const QString &arg0, const QString &arg1, const QString &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.URL",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
-	URL::URL(java::net::URL &arg0, jstring &arg1, java::net::URLStreamHandler &arg2)
+	URL::URL(java::net::URL &arg0, jstring arg1, java::net::URLStreamHandler arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.URL",
@@ -81,17 +54,7 @@ namespace java::net
 			arg2.__jniObject().object()
 		);
 	}
-	URL::URL(java::net::URL &arg0, const QString &arg1, java::net::URLStreamHandler &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.URL",
-			"(Ljava/net/URL;Ljava/lang/String;Ljava/net/URLStreamHandler;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object()
-		);
-	}
-	URL::URL(jstring &arg0, jstring &arg1, jint &arg2, jstring &arg3)
+	URL::URL(jstring arg0, jstring arg1, jint arg2, jstring arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.URL",
@@ -102,18 +65,7 @@ namespace java::net
 			arg3
 		);
 	}
-	URL::URL(const QString &arg0, const QString &arg1, jint &arg2, const QString &arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.URL",
-			"(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2,
-			QAndroidJniObject::fromString(arg3).object<jstring>()
-		);
-	}
-	URL::URL(jstring &arg0, jstring &arg1, jint &arg2, jstring &arg3, java::net::URLStreamHandler &arg4)
+	URL::URL(jstring arg0, jstring arg1, jint arg2, jstring arg3, java::net::URLStreamHandler arg4)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.URL",
@@ -122,18 +74,6 @@ namespace java::net
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object()
-		);
-	}
-	URL::URL(const QString &arg0, const QString &arg1, jint &arg2, const QString &arg3, java::net::URLStreamHandler &arg4)
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.URL",
-			"(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/net/URLStreamHandler;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2,
-			QAndroidJniObject::fromString(arg3).object<jstring>(),
 			arg4.__jniObject().object()
 		);
 	}

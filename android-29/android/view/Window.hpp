@@ -112,7 +112,7 @@ namespace android::view
 		
 		Window(QAndroidJniObject obj);
 		// Constructors
-		Window(android::content::Context &arg0);
+		Window(android::content::Context arg0);
 		Window() = default;
 		
 		// Methods
@@ -226,7 +226,6 @@ namespace android::view
 		void setSustainedPerformanceMode(jboolean arg0);
 		void setSystemGestureExclusionRects(__JniBaseClass arg0);
 		void setTitle(jstring arg0);
-		void setTitle(const QString &arg0);
 		void setTitleColor(jint arg0);
 		void setTransitionBackgroundFadeDuration(jlong arg0);
 		void setTransitionManager(android::transition::TransitionManager arg0);
@@ -236,9 +235,7 @@ namespace android::view
 		void setVolumeControlStream(jint arg0);
 		void setWindowAnimations(jint arg0);
 		void setWindowManager(__JniBaseClass arg0, __JniBaseClass arg1, jstring arg2);
-		void setWindowManager(__JniBaseClass arg0, __JniBaseClass arg1, const QString &arg2);
 		void setWindowManager(__JniBaseClass arg0, __JniBaseClass arg1, jstring arg2, jboolean arg3);
-		void setWindowManager(__JniBaseClass arg0, __JniBaseClass arg1, const QString &arg2, jboolean arg3);
 		jboolean superDispatchGenericMotionEvent(android::view::MotionEvent arg0);
 		jboolean superDispatchKeyEvent(android::view::KeyEvent arg0);
 		jboolean superDispatchKeyShortcutEvent(android::view::KeyEvent arg0);

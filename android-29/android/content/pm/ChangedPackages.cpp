@@ -15,7 +15,7 @@ namespace android::content::pm
 	
 	ChangedPackages::ChangedPackages(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ChangedPackages::ChangedPackages(jint &arg0, __JniBaseClass &arg1)
+	ChangedPackages::ChangedPackages(jint arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.pm.ChangedPackages",

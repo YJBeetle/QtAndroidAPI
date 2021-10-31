@@ -25,10 +25,8 @@ namespace java::security
 		
 		BasicPermission(QAndroidJniObject obj);
 		// Constructors
-		BasicPermission(jstring &arg0);
-		BasicPermission(const QString &arg0);
-		BasicPermission(jstring &arg0, jstring &arg1);
-		BasicPermission(const QString &arg0, const QString &arg1);
+		BasicPermission(jstring arg0);
+		BasicPermission(jstring arg0, jstring arg1);
 		BasicPermission() = default;
 		
 		// Methods

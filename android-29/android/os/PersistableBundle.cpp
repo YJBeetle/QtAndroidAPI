@@ -38,7 +38,7 @@ namespace android::os
 			arg0.__jniObject().object()
 		);
 	}
-	PersistableBundle::PersistableBundle(jint &arg0)
+	PersistableBundle::PersistableBundle(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.PersistableBundle",
@@ -77,29 +77,12 @@ namespace android::os
 			arg0
 		);
 	}
-	QAndroidJniObject PersistableBundle::getPersistableBundle(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getPersistableBundle",
-			"(Ljava/lang/String;)Landroid/os/PersistableBundle;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void PersistableBundle::putPersistableBundle(jstring arg0, android::os::PersistableBundle arg1)
 	{
 		__thiz.callMethod<void>(
 			"putPersistableBundle",
 			"(Ljava/lang/String;Landroid/os/PersistableBundle;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void PersistableBundle::putPersistableBundle(const QString &arg0, android::os::PersistableBundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"putPersistableBundle",
-			"(Ljava/lang/String;Landroid/os/PersistableBundle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

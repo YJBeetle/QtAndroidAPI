@@ -26,21 +26,15 @@ namespace java::security
 		SecureRandom(QAndroidJniObject obj);
 		// Constructors
 		SecureRandom();
-		SecureRandom(jbyteArray &arg0);
+		SecureRandom(jbyteArray arg0);
 		
 		// Methods
 		static QAndroidJniObject getInstance(jstring arg0);
-		static QAndroidJniObject getInstance(const QString &arg0);
 		static QAndroidJniObject getInstance(jstring arg0, jstring arg1);
-		static QAndroidJniObject getInstance(const QString &arg0, const QString &arg1);
 		static QAndroidJniObject getInstance(jstring arg0, java::security::Provider arg1);
-		static QAndroidJniObject getInstance(const QString &arg0, java::security::Provider arg1);
 		static QAndroidJniObject getInstance(jstring arg0, __JniBaseClass arg1);
-		static QAndroidJniObject getInstance(const QString &arg0, __JniBaseClass arg1);
 		static QAndroidJniObject getInstance(jstring arg0, __JniBaseClass arg1, jstring arg2);
-		static QAndroidJniObject getInstance(const QString &arg0, __JniBaseClass arg1, const QString &arg2);
 		static QAndroidJniObject getInstance(jstring arg0, __JniBaseClass arg1, java::security::Provider arg2);
-		static QAndroidJniObject getInstance(const QString &arg0, __JniBaseClass arg1, java::security::Provider arg2);
 		static QAndroidJniObject getInstanceStrong();
 		static jbyteArray getSeed(jint arg0);
 		jbyteArray generateSeed(jint arg0);

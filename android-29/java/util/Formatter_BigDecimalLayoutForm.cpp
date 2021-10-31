@@ -33,15 +33,6 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject Formatter_BigDecimalLayoutForm::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.util.Formatter$BigDecimalLayoutForm",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/util/Formatter$BigDecimalLayoutForm;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray Formatter_BigDecimalLayoutForm::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

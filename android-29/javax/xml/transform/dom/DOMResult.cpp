@@ -21,7 +21,7 @@ namespace javax::xml::transform::dom
 			"()V"
 		);
 	}
-	DOMResult::DOMResult(__JniBaseClass &arg0)
+	DOMResult::DOMResult(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.transform.dom.DOMResult",
@@ -29,7 +29,7 @@ namespace javax::xml::transform::dom
 			arg0.__jniObject().object()
 		);
 	}
-	DOMResult::DOMResult(__JniBaseClass &arg0, jstring &arg1)
+	DOMResult::DOMResult(__JniBaseClass arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.transform.dom.DOMResult",
@@ -38,16 +38,7 @@ namespace javax::xml::transform::dom
 			arg1
 		);
 	}
-	DOMResult::DOMResult(__JniBaseClass &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.xml.transform.dom.DOMResult",
-			"(Lorg/w3c/dom/Node;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	DOMResult::DOMResult(__JniBaseClass &arg0, __JniBaseClass &arg1)
+	DOMResult::DOMResult(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.transform.dom.DOMResult",
@@ -56,7 +47,7 @@ namespace javax::xml::transform::dom
 			arg1.__jniObject().object()
 		);
 	}
-	DOMResult::DOMResult(__JniBaseClass &arg0, __JniBaseClass &arg1, jstring &arg2)
+	DOMResult::DOMResult(__JniBaseClass arg0, __JniBaseClass arg1, jstring arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.transform.dom.DOMResult",
@@ -64,16 +55,6 @@ namespace javax::xml::transform::dom
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2
-		);
-	}
-	DOMResult::DOMResult(__JniBaseClass &arg0, __JniBaseClass &arg1, const QString &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.xml.transform.dom.DOMResult",
-			"(Lorg/w3c/dom/Node;Lorg/w3c/dom/Node;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	
@@ -121,14 +102,6 @@ namespace javax::xml::transform::dom
 			"setSystemId",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void DOMResult::setSystemId(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSystemId",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace javax::xml::transform::dom

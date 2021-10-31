@@ -8,7 +8,7 @@ namespace android::inputmethodservice
 	
 	ExtractEditText::ExtractEditText(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ExtractEditText::ExtractEditText(android::content::Context &arg0)
+	ExtractEditText::ExtractEditText(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.inputmethodservice.ExtractEditText",
@@ -16,7 +16,7 @@ namespace android::inputmethodservice
 			arg0.__jniObject().object()
 		);
 	}
-	ExtractEditText::ExtractEditText(android::content::Context &arg0, __JniBaseClass &arg1)
+	ExtractEditText::ExtractEditText(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.inputmethodservice.ExtractEditText",
@@ -25,7 +25,7 @@ namespace android::inputmethodservice
 			arg1.__jniObject().object()
 		);
 	}
-	ExtractEditText::ExtractEditText(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	ExtractEditText::ExtractEditText(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.inputmethodservice.ExtractEditText",
@@ -35,7 +35,7 @@ namespace android::inputmethodservice
 			arg2
 		);
 	}
-	ExtractEditText::ExtractEditText(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	ExtractEditText::ExtractEditText(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.inputmethodservice.ExtractEditText",

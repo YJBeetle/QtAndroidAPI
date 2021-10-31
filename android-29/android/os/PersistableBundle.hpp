@@ -21,16 +21,14 @@ namespace android::os
 		// Constructors
 		PersistableBundle();
 		PersistableBundle(android::os::PersistableBundle &arg0);
-		PersistableBundle(jint &arg0);
+		PersistableBundle(jint arg0);
 		
 		// Methods
 		jobject clone();
 		QAndroidJniObject deepCopy();
 		jint describeContents();
 		QAndroidJniObject getPersistableBundle(jstring arg0);
-		QAndroidJniObject getPersistableBundle(const QString &arg0);
 		void putPersistableBundle(jstring arg0, android::os::PersistableBundle arg1);
-		void putPersistableBundle(const QString &arg0, android::os::PersistableBundle arg1);
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

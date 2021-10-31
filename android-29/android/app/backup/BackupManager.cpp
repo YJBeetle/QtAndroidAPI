@@ -9,7 +9,7 @@ namespace android::app::backup
 	
 	BackupManager::BackupManager(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	BackupManager::BackupManager(android::content::Context &arg0)
+	BackupManager::BackupManager(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.backup.BackupManager",
@@ -26,15 +26,6 @@ namespace android::app::backup
 			"dataChanged",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void BackupManager::dataChanged(const QString &arg0)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.app.backup.BackupManager",
-			"dataChanged",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void BackupManager::dataChanged()

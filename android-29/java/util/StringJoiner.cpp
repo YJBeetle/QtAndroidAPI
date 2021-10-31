@@ -6,7 +6,7 @@ namespace java::util
 	
 	StringJoiner::StringJoiner(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	StringJoiner::StringJoiner(jstring &arg0)
+	StringJoiner::StringJoiner(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.StringJoiner",
@@ -14,15 +14,7 @@ namespace java::util
 			arg0
 		);
 	}
-	StringJoiner::StringJoiner(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.StringJoiner",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	StringJoiner::StringJoiner(jstring &arg0, jstring &arg1, jstring &arg2)
+	StringJoiner::StringJoiner(jstring arg0, jstring arg1, jstring arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.StringJoiner",
@@ -30,16 +22,6 @@ namespace java::util
 			arg0,
 			arg1,
 			arg2
-		);
-	}
-	StringJoiner::StringJoiner(const QString &arg0, const QString &arg1, const QString &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.StringJoiner",
-			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	
@@ -50,14 +32,6 @@ namespace java::util
 			"add",
 			"(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;",
 			arg0
-		);
-	}
-	QAndroidJniObject StringJoiner::add(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"add",
-			"(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jint StringJoiner::length()
@@ -81,14 +55,6 @@ namespace java::util
 			"setEmptyValue",
 			"(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;",
 			arg0
-		);
-	}
-	QAndroidJniObject StringJoiner::setEmptyValue(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setEmptyValue",
-			"(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring StringJoiner::toString()

@@ -12,7 +12,7 @@ namespace android::media
 		
 		TimedMetaData(QAndroidJniObject obj);
 		// Constructors
-		TimedMetaData(jlong &arg0, jbyteArray &arg1);
+		TimedMetaData(jlong arg0, jbyteArray arg1);
 		TimedMetaData() = default;
 		
 		// Methods

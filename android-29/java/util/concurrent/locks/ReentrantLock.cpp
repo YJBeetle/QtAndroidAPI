@@ -15,7 +15,7 @@ namespace java::util::concurrent::locks
 			"()V"
 		);
 	}
-	ReentrantLock::ReentrantLock(jboolean &arg0)
+	ReentrantLock::ReentrantLock(jboolean arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.locks.ReentrantLock",

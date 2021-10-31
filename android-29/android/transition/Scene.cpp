@@ -9,7 +9,7 @@ namespace android::transition
 	
 	Scene::Scene(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Scene::Scene(android::view::ViewGroup &arg0)
+	Scene::Scene(android::view::ViewGroup arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.transition.Scene",
@@ -17,7 +17,7 @@ namespace android::transition
 			arg0.__jniObject().object()
 		);
 	}
-	Scene::Scene(android::view::ViewGroup &arg0, android::view::View &arg1)
+	Scene::Scene(android::view::ViewGroup arg0, android::view::View arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.transition.Scene",
@@ -26,7 +26,7 @@ namespace android::transition
 			arg1.__jniObject().object()
 		);
 	}
-	Scene::Scene(android::view::ViewGroup &arg0, android::view::ViewGroup &arg1)
+	Scene::Scene(android::view::ViewGroup arg0, android::view::ViewGroup arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.transition.Scene",

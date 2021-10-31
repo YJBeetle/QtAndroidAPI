@@ -15,11 +15,9 @@ namespace android::view
 		InflateException(QAndroidJniObject obj);
 		// Constructors
 		InflateException();
-		InflateException(jstring &arg0);
-		InflateException(const QString &arg0);
-		InflateException(jthrowable &arg0);
-		InflateException(jstring &arg0, jthrowable &arg1);
-		InflateException(const QString &arg0, jthrowable &arg1);
+		InflateException(jstring arg0);
+		InflateException(jthrowable arg0);
+		InflateException(jstring arg0, jthrowable arg1);
 		
 		// Methods
 	};

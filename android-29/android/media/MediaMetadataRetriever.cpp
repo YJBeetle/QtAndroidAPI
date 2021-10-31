@@ -436,14 +436,6 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaMetadataRetriever::setDataSource(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDataSource",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void MediaMetadataRetriever::setDataSource(android::content::Context arg0, android::net::Uri arg1)
 	{
 		__thiz.callMethod<void>(
@@ -459,15 +451,6 @@ namespace android::media
 			"setDataSource",
 			"(Ljava/lang/String;Ljava/util/Map;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void MediaMetadataRetriever::setDataSource(const QString &arg0, __JniBaseClass arg1)
-	{
-		__thiz.callMethod<void>(
-			"setDataSource",
-			"(Ljava/lang/String;Ljava/util/Map;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

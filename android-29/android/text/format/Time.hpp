@@ -45,8 +45,7 @@ namespace android::text::format
 		// Constructors
 		Time();
 		Time(android::text::format::Time &arg0);
-		Time(jstring &arg0);
-		Time(const QString &arg0);
+		Time(jstring arg0);
 		
 		// Methods
 		static jint compare(android::text::format::Time arg0, android::text::format::Time arg1);
@@ -58,18 +57,14 @@ namespace android::text::format
 		jboolean after(android::text::format::Time arg0);
 		jboolean before(android::text::format::Time arg0);
 		void clear(jstring arg0);
-		void clear(const QString &arg0);
 		jstring format(jstring arg0);
-		jstring format(const QString &arg0);
 		jstring format2445();
 		jstring format3339(jboolean arg0);
 		jint getActualMaximum(jint arg0);
 		jint getWeekNumber();
 		jlong normalize(jboolean arg0);
 		jboolean parse(jstring arg0);
-		jboolean parse(const QString &arg0);
 		jboolean parse3339(jstring arg0);
-		jboolean parse3339(const QString &arg0);
 		void set(android::text::format::Time arg0);
 		void set(jlong arg0);
 		void set(jint arg0, jint arg1, jint arg2);
@@ -77,7 +72,6 @@ namespace android::text::format
 		jlong setJulianDay(jint arg0);
 		void setToNow();
 		void switchTimezone(jstring arg0);
-		void switchTimezone(const QString &arg0);
 		jlong toMillis(jboolean arg0);
 		jstring toString();
 	};

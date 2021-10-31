@@ -126,7 +126,6 @@ namespace android::view
 		// Methods
 		static jstring actionToString(jint arg0);
 		static jint axisFromString(jstring arg0);
-		static jint axisFromString(const QString &arg0);
 		static jstring axisToString(jint arg0);
 		static QAndroidJniObject obtain(android::view::MotionEvent arg0);
 		static QAndroidJniObject obtain(jlong arg0, jlong arg1, jint arg2, jfloat arg3, jfloat arg4, jint arg5);

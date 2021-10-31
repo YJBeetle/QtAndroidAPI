@@ -16,8 +16,8 @@ namespace android::graphics
 		
 		Interpolator(QAndroidJniObject obj);
 		// Constructors
-		Interpolator(jint &arg0);
-		Interpolator(jint &arg0, jint &arg1);
+		Interpolator(jint arg0);
+		Interpolator(jint arg0, jint arg1);
 		Interpolator() = default;
 		
 		// Methods

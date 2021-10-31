@@ -22,9 +22,8 @@ namespace android::text::style
 		
 		URLSpan(QAndroidJniObject obj);
 		// Constructors
-		URLSpan(android::os::Parcel &arg0);
-		URLSpan(jstring &arg0);
-		URLSpan(const QString &arg0);
+		URLSpan(android::os::Parcel arg0);
+		URLSpan(jstring arg0);
 		URLSpan() = default;
 		
 		// Methods

@@ -32,7 +32,7 @@ namespace android::media
 	
 	Session2Token::Session2Token(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Session2Token::Session2Token(android::content::Context &arg0, android::content::ComponentName &arg1)
+	Session2Token::Session2Token(android::content::Context arg0, android::content::ComponentName arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.Session2Token",

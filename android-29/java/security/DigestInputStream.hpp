@@ -22,7 +22,7 @@ namespace java::security
 		
 		DigestInputStream(QAndroidJniObject obj);
 		// Constructors
-		DigestInputStream(java::io::InputStream &arg0, java::security::MessageDigest &arg1);
+		DigestInputStream(java::io::InputStream arg0, java::security::MessageDigest arg1);
 		DigestInputStream() = default;
 		
 		// Methods

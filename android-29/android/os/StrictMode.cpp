@@ -59,15 +59,6 @@ namespace android::os
 			arg0
 		);
 	}
-	void StrictMode::noteSlowCall(const QString &arg0)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.os.StrictMode",
-			"noteSlowCall",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void StrictMode::setThreadPolicy(android::os::StrictMode_ThreadPolicy arg0)
 	{
 		QAndroidJniObject::callStaticMethod<void>(

@@ -43,7 +43,7 @@ namespace java::lang
 	
 	Byte::Byte(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Byte::Byte(jbyte &arg0)
+	Byte::Byte(jbyte arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.Byte",
@@ -51,20 +51,12 @@ namespace java::lang
 			arg0
 		);
 	}
-	Byte::Byte(jstring &arg0)
+	Byte::Byte(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.Byte",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	Byte::Byte(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.Byte",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	
@@ -98,15 +90,6 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject Byte::decode(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.lang.Byte",
-			"decode",
-			"(Ljava/lang/String;)Ljava/lang/Byte;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jint Byte::hashCode(jbyte arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -125,15 +108,6 @@ namespace java::lang
 			arg0
 		);
 	}
-	jbyte Byte::parseByte(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jbyte>(
-			"java.lang.Byte",
-			"parseByte",
-			"(Ljava/lang/String;)B",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jbyte Byte::parseByte(jstring arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticMethod<jbyte>(
@@ -141,16 +115,6 @@ namespace java::lang
 			"parseByte",
 			"(Ljava/lang/String;I)B",
 			arg0,
-			arg1
-		);
-	}
-	jbyte Byte::parseByte(const QString &arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jbyte>(
-			"java.lang.Byte",
-			"parseByte",
-			"(Ljava/lang/String;I)B",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -199,15 +163,6 @@ namespace java::lang
 			arg0
 		);
 	}
-	QAndroidJniObject Byte::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.lang.Byte",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/lang/Byte;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Byte::valueOf(jstring arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -215,16 +170,6 @@ namespace java::lang
 			"valueOf",
 			"(Ljava/lang/String;I)Ljava/lang/Byte;",
 			arg0,
-			arg1
-		);
-	}
-	QAndroidJniObject Byte::valueOf(const QString &arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.lang.Byte",
-			"valueOf",
-			"(Ljava/lang/String;I)Ljava/lang/Byte;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

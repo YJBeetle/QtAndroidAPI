@@ -6,7 +6,7 @@ namespace java::util::concurrent::atomic
 	
 	AtomicStampedReference::AtomicStampedReference(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AtomicStampedReference::AtomicStampedReference(jobject &arg0, jint &arg1)
+	AtomicStampedReference::AtomicStampedReference(jobject arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.atomic.AtomicStampedReference",

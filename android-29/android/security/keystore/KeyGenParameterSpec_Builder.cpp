@@ -10,21 +10,12 @@ namespace android::security::keystore
 	
 	KeyGenParameterSpec_Builder::KeyGenParameterSpec_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	KeyGenParameterSpec_Builder::KeyGenParameterSpec_Builder(jstring &arg0, jint &arg1)
+	KeyGenParameterSpec_Builder::KeyGenParameterSpec_Builder(jstring arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.security.keystore.KeyGenParameterSpec$Builder",
 			"(Ljava/lang/String;I)V",
 			arg0,
-			arg1
-		);
-	}
-	KeyGenParameterSpec_Builder::KeyGenParameterSpec_Builder(const QString &arg0, jint &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.security.keystore.KeyGenParameterSpec$Builder",
-			"(Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

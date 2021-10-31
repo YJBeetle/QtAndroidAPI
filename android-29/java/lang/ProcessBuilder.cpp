@@ -9,7 +9,7 @@ namespace java::lang
 	
 	ProcessBuilder::ProcessBuilder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ProcessBuilder::ProcessBuilder(jarray &arg0)
+	ProcessBuilder::ProcessBuilder(jarray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.ProcessBuilder",
@@ -17,7 +17,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	ProcessBuilder::ProcessBuilder(__JniBaseClass &arg0)
+	ProcessBuilder::ProcessBuilder(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.ProcessBuilder",

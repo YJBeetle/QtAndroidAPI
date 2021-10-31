@@ -25,7 +25,7 @@ namespace java::util::concurrent::locks
 		ReentrantReadWriteLock(QAndroidJniObject obj);
 		// Constructors
 		ReentrantReadWriteLock();
-		ReentrantReadWriteLock(jboolean &arg0);
+		ReentrantReadWriteLock(jboolean arg0);
 		
 		// Methods
 		jint getQueueLength();

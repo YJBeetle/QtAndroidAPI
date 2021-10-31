@@ -28,11 +28,8 @@ namespace android::app
 		QAndroidJniObject setIcon(android::graphics::drawable::Icon arg0);
 		QAndroidJniObject setImportant(jboolean arg0);
 		QAndroidJniObject setKey(jstring arg0);
-		QAndroidJniObject setKey(const QString &arg0);
 		QAndroidJniObject setName(jstring arg0);
-		QAndroidJniObject setName(const QString &arg0);
 		QAndroidJniObject setUri(jstring arg0);
-		QAndroidJniObject setUri(const QString &arg0);
 	};
 } // namespace android::app
 

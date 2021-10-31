@@ -14,22 +14,13 @@ namespace android::content::pm
 	
 	ShortcutInfo_Builder::ShortcutInfo_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ShortcutInfo_Builder::ShortcutInfo_Builder(android::content::Context &arg0, jstring &arg1)
+	ShortcutInfo_Builder::ShortcutInfo_Builder(android::content::Context arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.pm.ShortcutInfo$Builder",
 			"(Landroid/content/Context;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	ShortcutInfo_Builder::ShortcutInfo_Builder(android::content::Context &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.pm.ShortcutInfo$Builder",
-			"(Landroid/content/Context;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	
@@ -63,14 +54,6 @@ namespace android::content::pm
 			"setDisabledMessage",
 			"(Ljava/lang/CharSequence;)Landroid/content/pm/ShortcutInfo$Builder;",
 			arg0
-		);
-	}
-	QAndroidJniObject ShortcutInfo_Builder::setDisabledMessage(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setDisabledMessage",
-			"(Ljava/lang/CharSequence;)Landroid/content/pm/ShortcutInfo$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject ShortcutInfo_Builder::setExtras(android::os::PersistableBundle arg0)
@@ -121,14 +104,6 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	QAndroidJniObject ShortcutInfo_Builder::setLongLabel(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setLongLabel",
-			"(Ljava/lang/CharSequence;)Landroid/content/pm/ShortcutInfo$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject ShortcutInfo_Builder::setLongLived(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -167,14 +142,6 @@ namespace android::content::pm
 			"setShortLabel",
 			"(Ljava/lang/CharSequence;)Landroid/content/pm/ShortcutInfo$Builder;",
 			arg0
-		);
-	}
-	QAndroidJniObject ShortcutInfo_Builder::setShortLabel(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setShortLabel",
-			"(Ljava/lang/CharSequence;)Landroid/content/pm/ShortcutInfo$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace android::content::pm

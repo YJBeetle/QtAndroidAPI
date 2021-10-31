@@ -21,10 +21,10 @@ namespace android::widget
 		
 		AnalogClock(QAndroidJniObject obj);
 		// Constructors
-		AnalogClock(android::content::Context &arg0);
-		AnalogClock(android::content::Context &arg0, __JniBaseClass &arg1);
-		AnalogClock(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		AnalogClock(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		AnalogClock(android::content::Context arg0);
+		AnalogClock(android::content::Context arg0, __JniBaseClass arg1);
+		AnalogClock(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		AnalogClock(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		AnalogClock() = default;
 		
 		// Methods

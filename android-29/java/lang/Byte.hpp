@@ -22,29 +22,23 @@ namespace java::lang
 		
 		Byte(QAndroidJniObject obj);
 		// Constructors
-		Byte(jbyte &arg0);
-		Byte(jstring &arg0);
-		Byte(const QString &arg0);
+		Byte(jbyte arg0);
+		Byte(jstring arg0);
 		Byte() = default;
 		
 		// Methods
 		static jint compare(jbyte arg0, jbyte arg1);
 		static jint compareUnsigned(jbyte arg0, jbyte arg1);
 		static QAndroidJniObject decode(jstring arg0);
-		static QAndroidJniObject decode(const QString &arg0);
 		static jint hashCode(jbyte arg0);
 		static jbyte parseByte(jstring arg0);
-		static jbyte parseByte(const QString &arg0);
 		static jbyte parseByte(jstring arg0, jint arg1);
-		static jbyte parseByte(const QString &arg0, jint arg1);
 		static jstring toString(jbyte arg0);
 		static jint toUnsignedInt(jbyte arg0);
 		static jlong toUnsignedLong(jbyte arg0);
 		static QAndroidJniObject valueOf(jbyte arg0);
 		static QAndroidJniObject valueOf(jstring arg0);
-		static QAndroidJniObject valueOf(const QString &arg0);
 		static QAndroidJniObject valueOf(jstring arg0, jint arg1);
-		static QAndroidJniObject valueOf(const QString &arg0, jint arg1);
 		jbyte byteValue();
 		jint compareTo(java::lang::Byte arg0);
 		jint compareTo(jobject arg0);

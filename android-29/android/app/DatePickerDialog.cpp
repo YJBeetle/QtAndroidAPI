@@ -9,7 +9,7 @@ namespace android::app
 	
 	DatePickerDialog::DatePickerDialog(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DatePickerDialog::DatePickerDialog(android::content::Context &arg0)
+	DatePickerDialog::DatePickerDialog(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.DatePickerDialog",
@@ -17,7 +17,7 @@ namespace android::app
 			arg0.__jniObject().object()
 		);
 	}
-	DatePickerDialog::DatePickerDialog(android::content::Context &arg0, jint &arg1)
+	DatePickerDialog::DatePickerDialog(android::content::Context arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.DatePickerDialog",
@@ -26,7 +26,7 @@ namespace android::app
 			arg1
 		);
 	}
-	DatePickerDialog::DatePickerDialog(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3, jint &arg4)
+	DatePickerDialog::DatePickerDialog(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3, jint arg4)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.DatePickerDialog",
@@ -38,7 +38,7 @@ namespace android::app
 			arg4
 		);
 	}
-	DatePickerDialog::DatePickerDialog(android::content::Context &arg0, jint &arg1, __JniBaseClass &arg2, jint &arg3, jint &arg4, jint &arg5)
+	DatePickerDialog::DatePickerDialog(android::content::Context arg0, jint arg1, __JniBaseClass arg2, jint arg3, jint arg4, jint arg5)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.DatePickerDialog",

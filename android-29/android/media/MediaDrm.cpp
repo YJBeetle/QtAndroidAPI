@@ -228,7 +228,7 @@ namespace android::media
 	
 	MediaDrm::MediaDrm(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MediaDrm::MediaDrm(java::util::UUID &arg0)
+	MediaDrm::MediaDrm(java::util::UUID arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.MediaDrm",
@@ -265,16 +265,6 @@ namespace android::media
 			arg1
 		);
 	}
-	jboolean MediaDrm::isCryptoSchemeSupported(java::util::UUID arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.media.MediaDrm",
-			"isCryptoSchemeSupported",
-			"(Ljava/util/UUID;Ljava/lang/String;)Z",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	jboolean MediaDrm::isCryptoSchemeSupported(java::util::UUID arg0, jstring arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
@@ -283,17 +273,6 @@ namespace android::media
 			"(Ljava/util/UUID;Ljava/lang/String;I)Z",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2
-		);
-	}
-	jboolean MediaDrm::isCryptoSchemeSupported(java::util::UUID arg0, const QString &arg1, jint arg2)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.media.MediaDrm",
-			"isCryptoSchemeSupported",
-			"(Ljava/util/UUID;Ljava/lang/String;I)Z",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}
@@ -357,16 +336,6 @@ namespace android::media
 			arg2
 		);
 	}
-	QAndroidJniObject MediaDrm::getCryptoSession(jbyteArray arg0, const QString &arg1, const QString &arg2)
-	{
-		return __thiz.callObjectMethod(
-			"getCryptoSession",
-			"([BLjava/lang/String;Ljava/lang/String;)Landroid/media/MediaDrm$CryptoSession;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	QAndroidJniObject MediaDrm::getKeyRequest(jbyteArray arg0, jbyteArray arg1, jstring arg2, jint arg3, java::util::HashMap arg4)
 	{
 		return __thiz.callObjectMethod(
@@ -375,18 +344,6 @@ namespace android::media
 			arg0,
 			arg1,
 			arg2,
-			arg3,
-			arg4.__jniObject().object()
-		);
-	}
-	QAndroidJniObject MediaDrm::getKeyRequest(jbyteArray arg0, jbyteArray arg1, const QString &arg2, jint arg3, java::util::HashMap arg4)
-	{
-		return __thiz.callObjectMethod(
-			"getKeyRequest",
-			"([B[BLjava/lang/String;ILjava/util/HashMap;)Landroid/media/MediaDrm$KeyRequest;",
-			arg0,
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
 			arg3,
 			arg4.__jniObject().object()
 		);
@@ -442,28 +399,12 @@ namespace android::media
 			arg0
 		).object<jbyteArray>();
 	}
-	jbyteArray MediaDrm::getPropertyByteArray(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getPropertyByteArray",
-			"(Ljava/lang/String;)[B",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jbyteArray>();
-	}
 	jstring MediaDrm::getPropertyString(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getPropertyString",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
-	}
-	jstring MediaDrm::getPropertyString(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getPropertyString",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	QAndroidJniObject MediaDrm::getProvisionRequest()
@@ -694,15 +635,6 @@ namespace android::media
 			arg1
 		);
 	}
-	void MediaDrm::setPropertyByteArray(const QString &arg0, jbyteArray arg1)
-	{
-		__thiz.callMethod<void>(
-			"setPropertyByteArray",
-			"(Ljava/lang/String;[B)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	void MediaDrm::setPropertyString(jstring arg0, jstring arg1)
 	{
 		__thiz.callMethod<void>(
@@ -710,15 +642,6 @@ namespace android::media
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	void MediaDrm::setPropertyString(const QString &arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"setPropertyString",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 } // namespace android::media

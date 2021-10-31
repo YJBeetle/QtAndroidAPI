@@ -89,14 +89,6 @@ namespace android::service::quicksettings
 			arg0
 		);
 	}
-	void Tile::setContentDescription(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setContentDescription",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void Tile::setIcon(android::graphics::drawable::Icon arg0)
 	{
 		__thiz.callMethod<void>(
@@ -113,14 +105,6 @@ namespace android::service::quicksettings
 			arg0
 		);
 	}
-	void Tile::setLabel(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setLabel",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void Tile::setState(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -135,14 +119,6 @@ namespace android::service::quicksettings
 			"setSubtitle",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
-		);
-	}
-	void Tile::setSubtitle(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSubtitle",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void Tile::updateTile()

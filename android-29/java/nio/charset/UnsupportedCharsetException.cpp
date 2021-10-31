@@ -6,20 +6,12 @@ namespace java::nio::charset
 	
 	UnsupportedCharsetException::UnsupportedCharsetException(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	UnsupportedCharsetException::UnsupportedCharsetException(jstring &arg0)
+	UnsupportedCharsetException::UnsupportedCharsetException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.nio.charset.UnsupportedCharsetException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	UnsupportedCharsetException::UnsupportedCharsetException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.nio.charset.UnsupportedCharsetException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

@@ -7,7 +7,7 @@ namespace android::widget
 	
 	RadioButton::RadioButton(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	RadioButton::RadioButton(android::content::Context &arg0)
+	RadioButton::RadioButton(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.RadioButton",
@@ -15,7 +15,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	RadioButton::RadioButton(android::content::Context &arg0, __JniBaseClass &arg1)
+	RadioButton::RadioButton(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.RadioButton",
@@ -24,7 +24,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	RadioButton::RadioButton(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	RadioButton::RadioButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.RadioButton",
@@ -34,7 +34,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	RadioButton::RadioButton(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	RadioButton::RadioButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.RadioButton",

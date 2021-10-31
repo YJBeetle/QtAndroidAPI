@@ -17,7 +17,7 @@ namespace android::view::textclassifier
 		
 		TextClassifierEvent_TextSelectionEvent_Builder(QAndroidJniObject obj);
 		// Constructors
-		TextClassifierEvent_TextSelectionEvent_Builder(jint &arg0);
+		TextClassifierEvent_TextSelectionEvent_Builder(jint arg0);
 		TextClassifierEvent_TextSelectionEvent_Builder() = default;
 		
 		// Methods

@@ -78,7 +78,7 @@ namespace android::text::style
 	
 	SuggestionSpan::SuggestionSpan(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SuggestionSpan::SuggestionSpan(android::os::Parcel &arg0)
+	SuggestionSpan::SuggestionSpan(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.SuggestionSpan",
@@ -86,7 +86,7 @@ namespace android::text::style
 			arg0.__jniObject().object()
 		);
 	}
-	SuggestionSpan::SuggestionSpan(android::content::Context &arg0, jarray &arg1, jint &arg2)
+	SuggestionSpan::SuggestionSpan(android::content::Context arg0, jarray arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.SuggestionSpan",
@@ -96,7 +96,7 @@ namespace android::text::style
 			arg2
 		);
 	}
-	SuggestionSpan::SuggestionSpan(java::util::Locale &arg0, jarray &arg1, jint &arg2)
+	SuggestionSpan::SuggestionSpan(java::util::Locale arg0, jarray arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.SuggestionSpan",
@@ -106,7 +106,7 @@ namespace android::text::style
 			arg2
 		);
 	}
-	SuggestionSpan::SuggestionSpan(android::content::Context &arg0, java::util::Locale &arg1, jarray &arg2, jint &arg3, jclass &arg4)
+	SuggestionSpan::SuggestionSpan(android::content::Context arg0, java::util::Locale arg1, jarray arg2, jint arg3, jclass arg4)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.SuggestionSpan",

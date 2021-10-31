@@ -11,7 +11,7 @@ namespace android::widget
 	
 	ArrayAdapter::ArrayAdapter(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ArrayAdapter::ArrayAdapter(android::content::Context &arg0, jint &arg1)
+	ArrayAdapter::ArrayAdapter(android::content::Context arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ArrayAdapter",
@@ -20,7 +20,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	ArrayAdapter::ArrayAdapter(android::content::Context &arg0, jint &arg1, jobjectArray &arg2)
+	ArrayAdapter::ArrayAdapter(android::content::Context arg0, jint arg1, jobjectArray arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ArrayAdapter",
@@ -30,7 +30,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	ArrayAdapter::ArrayAdapter(android::content::Context &arg0, jint &arg1, jint &arg2)
+	ArrayAdapter::ArrayAdapter(android::content::Context arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ArrayAdapter",
@@ -40,7 +40,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	ArrayAdapter::ArrayAdapter(android::content::Context &arg0, jint &arg1, __JniBaseClass &arg2)
+	ArrayAdapter::ArrayAdapter(android::content::Context arg0, jint arg1, __JniBaseClass arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ArrayAdapter",
@@ -50,7 +50,7 @@ namespace android::widget
 			arg2.__jniObject().object()
 		);
 	}
-	ArrayAdapter::ArrayAdapter(android::content::Context &arg0, jint &arg1, jint &arg2, jobjectArray &arg3)
+	ArrayAdapter::ArrayAdapter(android::content::Context arg0, jint arg1, jint arg2, jobjectArray arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ArrayAdapter",
@@ -61,7 +61,7 @@ namespace android::widget
 			arg3
 		);
 	}
-	ArrayAdapter::ArrayAdapter(android::content::Context &arg0, jint &arg1, jint &arg2, __JniBaseClass &arg3)
+	ArrayAdapter::ArrayAdapter(android::content::Context arg0, jint arg1, jint arg2, __JniBaseClass arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ArrayAdapter",

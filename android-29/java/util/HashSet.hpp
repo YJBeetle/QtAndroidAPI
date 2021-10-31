@@ -27,9 +27,9 @@ namespace java::util
 		HashSet(QAndroidJniObject obj);
 		// Constructors
 		HashSet();
-		HashSet(jint &arg0);
-		HashSet(__JniBaseClass &arg0);
-		HashSet(jint &arg0, jfloat &arg1);
+		HashSet(jint arg0);
+		HashSet(__JniBaseClass arg0);
+		HashSet(jint arg0, jfloat arg1);
 		
 		// Methods
 		jboolean add(jobject arg0);

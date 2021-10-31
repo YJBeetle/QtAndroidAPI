@@ -23,28 +23,12 @@ namespace android::drm
 			arg0
 		);
 	}
-	void DrmSupportInfo::addFileSuffix(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"addFileSuffix",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void DrmSupportInfo::addMimeType(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"addMimeType",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void DrmSupportInfo::addMimeType(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"addMimeType",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean DrmSupportInfo::equals(jobject arg0)
@@ -96,14 +80,6 @@ namespace android::drm
 			"setDescription",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void DrmSupportInfo::setDescription(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDescription",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace android::drm

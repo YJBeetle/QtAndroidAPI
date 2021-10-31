@@ -18,8 +18,8 @@ namespace java::io
 		
 		PushbackReader(QAndroidJniObject obj);
 		// Constructors
-		PushbackReader(java::io::Reader &arg0);
-		PushbackReader(java::io::Reader &arg0, jint &arg1);
+		PushbackReader(java::io::Reader arg0);
+		PushbackReader(java::io::Reader arg0, jint arg1);
 		PushbackReader() = default;
 		
 		// Methods

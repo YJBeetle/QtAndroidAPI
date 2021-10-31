@@ -18,8 +18,8 @@ namespace java::io
 		
 		LineNumberReader(QAndroidJniObject obj);
 		// Constructors
-		LineNumberReader(java::io::Reader &arg0);
-		LineNumberReader(java::io::Reader &arg0, jint &arg1);
+		LineNumberReader(java::io::Reader arg0);
+		LineNumberReader(java::io::Reader arg0, jint arg1);
 		LineNumberReader() = default;
 		
 		// Methods

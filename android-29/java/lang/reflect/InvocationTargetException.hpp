@@ -14,9 +14,8 @@ namespace java::lang::reflect
 		
 		InvocationTargetException(QAndroidJniObject obj);
 		// Constructors
-		InvocationTargetException(jthrowable &arg0);
-		InvocationTargetException(jthrowable &arg0, jstring &arg1);
-		InvocationTargetException(jthrowable &arg0, const QString &arg1);
+		InvocationTargetException(jthrowable arg0);
+		InvocationTargetException(jthrowable arg0, jstring arg1);
 		InvocationTargetException() = default;
 		
 		// Methods

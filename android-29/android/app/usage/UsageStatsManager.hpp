@@ -30,7 +30,6 @@ namespace android::app::usage
 		// Methods
 		jint getAppStandbyBucket();
 		jboolean isAppInactive(jstring arg0);
-		jboolean isAppInactive(const QString &arg0);
 		QAndroidJniObject queryAndAggregateUsageStats(jlong arg0, jlong arg1);
 		QAndroidJniObject queryConfigurations(jint arg0, jlong arg1, jlong arg2);
 		QAndroidJniObject queryEventStats(jint arg0, jlong arg1, jlong arg2);

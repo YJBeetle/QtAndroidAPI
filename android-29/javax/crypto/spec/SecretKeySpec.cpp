@@ -6,7 +6,7 @@ namespace javax::crypto::spec
 	
 	SecretKeySpec::SecretKeySpec(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SecretKeySpec::SecretKeySpec(jbyteArray &arg0, jstring &arg1)
+	SecretKeySpec::SecretKeySpec(jbyteArray arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.crypto.spec.SecretKeySpec",
@@ -15,16 +15,7 @@ namespace javax::crypto::spec
 			arg1
 		);
 	}
-	SecretKeySpec::SecretKeySpec(jbyteArray &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.crypto.spec.SecretKeySpec",
-			"([BLjava/lang/String;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	SecretKeySpec::SecretKeySpec(jbyteArray &arg0, jint &arg1, jint &arg2, jstring &arg3)
+	SecretKeySpec::SecretKeySpec(jbyteArray arg0, jint arg1, jint arg2, jstring arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.crypto.spec.SecretKeySpec",
@@ -33,17 +24,6 @@ namespace javax::crypto::spec
 			arg1,
 			arg2,
 			arg3
-		);
-	}
-	SecretKeySpec::SecretKeySpec(jbyteArray &arg0, jint &arg1, jint &arg2, const QString &arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.crypto.spec.SecretKeySpec",
-			"([BIILjava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2,
-			QAndroidJniObject::fromString(arg3).object<jstring>()
 		);
 	}
 	

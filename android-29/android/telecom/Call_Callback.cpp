@@ -100,16 +100,6 @@ namespace android::telecom
 			arg2.__jniObject().object()
 		);
 	}
-	void Call_Callback::onConnectionEvent(android::telecom::Call arg0, const QString &arg1, android::os::Bundle arg2)
-	{
-		__thiz.callMethod<void>(
-			"onConnectionEvent",
-			"(Landroid/telecom/Call;Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object()
-		);
-	}
 	void Call_Callback::onDetailsChanged(android::telecom::Call arg0, android::telecom::Call_Details arg1)
 	{
 		__thiz.callMethod<void>(
@@ -152,15 +142,6 @@ namespace android::telecom
 			"(Landroid/telecom/Call;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	void Call_Callback::onPostDialWait(android::telecom::Call arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"onPostDialWait",
-			"(Landroid/telecom/Call;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void Call_Callback::onRttInitiationFailure(android::telecom::Call arg0, jint arg1)

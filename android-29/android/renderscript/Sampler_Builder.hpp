@@ -24,7 +24,7 @@ namespace android::renderscript
 		
 		Sampler_Builder(QAndroidJniObject obj);
 		// Constructors
-		Sampler_Builder(android::renderscript::RenderScript &arg0);
+		Sampler_Builder(android::renderscript::RenderScript arg0);
 		Sampler_Builder() = default;
 		
 		// Methods

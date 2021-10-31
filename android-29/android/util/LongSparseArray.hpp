@@ -13,7 +13,7 @@ namespace android::util
 		LongSparseArray(QAndroidJniObject obj);
 		// Constructors
 		LongSparseArray();
-		LongSparseArray(jint &arg0);
+		LongSparseArray(jint arg0);
 		
 		// Methods
 		void append(jlong arg0, jobject arg1);

@@ -7,7 +7,7 @@ namespace java::lang::ref
 	
 	SoftReference::SoftReference(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SoftReference::SoftReference(jobject &arg0)
+	SoftReference::SoftReference(jobject arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.ref.SoftReference",
@@ -15,7 +15,7 @@ namespace java::lang::ref
 			arg0
 		);
 	}
-	SoftReference::SoftReference(jobject &arg0, java::lang::ref::ReferenceQueue &arg1)
+	SoftReference::SoftReference(jobject arg0, java::lang::ref::ReferenceQueue arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.ref.SoftReference",

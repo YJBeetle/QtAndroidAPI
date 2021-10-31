@@ -36,7 +36,7 @@ namespace android::telephony
 	
 	AvailableNetworkInfo::AvailableNetworkInfo(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AvailableNetworkInfo::AvailableNetworkInfo(jint &arg0, jint &arg1, __JniBaseClass &arg2, __JniBaseClass &arg3)
+	AvailableNetworkInfo::AvailableNetworkInfo(jint arg0, jint arg1, __JniBaseClass arg2, __JniBaseClass arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.telephony.AvailableNetworkInfo",

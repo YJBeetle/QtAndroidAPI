@@ -6,7 +6,7 @@ namespace java::util
 	
 	AbstractMap_SimpleEntry::AbstractMap_SimpleEntry(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AbstractMap_SimpleEntry::AbstractMap_SimpleEntry(__JniBaseClass &arg0)
+	AbstractMap_SimpleEntry::AbstractMap_SimpleEntry(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.AbstractMap$SimpleEntry",
@@ -14,7 +14,7 @@ namespace java::util
 			arg0.__jniObject().object()
 		);
 	}
-	AbstractMap_SimpleEntry::AbstractMap_SimpleEntry(jobject &arg0, jobject &arg1)
+	AbstractMap_SimpleEntry::AbstractMap_SimpleEntry(jobject arg0, jobject arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.AbstractMap$SimpleEntry",

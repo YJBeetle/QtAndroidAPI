@@ -13,7 +13,7 @@ namespace android::accounts
 			"()V"
 		);
 	}
-	OperationCanceledException::OperationCanceledException(jstring &arg0)
+	OperationCanceledException::OperationCanceledException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.accounts.OperationCanceledException",
@@ -21,15 +21,7 @@ namespace android::accounts
 			arg0
 		);
 	}
-	OperationCanceledException::OperationCanceledException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.accounts.OperationCanceledException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	OperationCanceledException::OperationCanceledException(jthrowable &arg0)
+	OperationCanceledException::OperationCanceledException(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.accounts.OperationCanceledException",
@@ -37,21 +29,12 @@ namespace android::accounts
 			arg0
 		);
 	}
-	OperationCanceledException::OperationCanceledException(jstring &arg0, jthrowable &arg1)
+	OperationCanceledException::OperationCanceledException(jstring arg0, jthrowable arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.accounts.OperationCanceledException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
-			arg1
-		);
-	}
-	OperationCanceledException::OperationCanceledException(const QString &arg0, jthrowable &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.accounts.OperationCanceledException",
-			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

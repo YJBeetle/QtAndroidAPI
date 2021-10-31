@@ -121,15 +121,6 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject Duration::parse(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.time.Duration",
-			"parse",
-			"(Ljava/lang/CharSequence;)Ljava/time/Duration;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Duration::abs()
 	{
 		return __thiz.callObjectMethod(

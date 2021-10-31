@@ -30,7 +30,7 @@ namespace android::transition
 		ChangeBounds(QAndroidJniObject obj);
 		// Constructors
 		ChangeBounds();
-		ChangeBounds(android::content::Context &arg0, __JniBaseClass &arg1);
+		ChangeBounds(android::content::Context arg0, __JniBaseClass arg1);
 		
 		// Methods
 		void captureEndValues(android::transition::TransitionValues arg0);

@@ -38,16 +38,6 @@ namespace android::view
 			arg2.__jniObject().object()
 		);
 	}
-	QAndroidJniObject LayoutInflater::createView(const QString &arg0, const QString &arg1, __JniBaseClass arg2)
-	{
-		return __thiz.callObjectMethod(
-			"createView",
-			"(Ljava/lang/String;Ljava/lang/String;Landroid/util/AttributeSet;)Landroid/view/View;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object()
-		);
-	}
 	QAndroidJniObject LayoutInflater::createView(android::content::Context arg0, jstring arg1, jstring arg2, __JniBaseClass arg3)
 	{
 		return __thiz.callObjectMethod(
@@ -56,17 +46,6 @@ namespace android::view
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
-		);
-	}
-	QAndroidJniObject LayoutInflater::createView(android::content::Context arg0, const QString &arg1, const QString &arg2, __JniBaseClass arg3)
-	{
-		return __thiz.callObjectMethod(
-			"createView",
-			"(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Landroid/util/AttributeSet;)Landroid/view/View;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
 			arg3.__jniObject().object()
 		);
 	}
@@ -144,17 +123,6 @@ namespace android::view
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3.__jniObject().object()
-		);
-	}
-	QAndroidJniObject LayoutInflater::onCreateView(android::content::Context arg0, android::view::View arg1, const QString &arg2, __JniBaseClass arg3)
-	{
-		return __thiz.callObjectMethod(
-			"onCreateView",
-			"(Landroid/content/Context;Landroid/view/View;Ljava/lang/String;Landroid/util/AttributeSet;)Landroid/view/View;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
 			arg3.__jniObject().object()
 		);
 	}

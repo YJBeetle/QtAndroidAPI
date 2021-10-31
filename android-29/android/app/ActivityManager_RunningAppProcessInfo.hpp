@@ -48,8 +48,7 @@ namespace android::app
 		ActivityManager_RunningAppProcessInfo(QAndroidJniObject obj);
 		// Constructors
 		ActivityManager_RunningAppProcessInfo();
-		ActivityManager_RunningAppProcessInfo(jstring &arg0, jint &arg1, jarray &arg2);
-		ActivityManager_RunningAppProcessInfo(const QString &arg0, jint &arg1, jarray &arg2);
+		ActivityManager_RunningAppProcessInfo(jstring arg0, jint arg1, jarray arg2);
 		
 		// Methods
 		jint describeContents();

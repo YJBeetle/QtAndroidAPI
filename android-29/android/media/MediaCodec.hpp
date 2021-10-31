@@ -92,11 +92,8 @@ namespace android::media
 		
 		// Methods
 		static QAndroidJniObject createByCodecName(jstring arg0);
-		static QAndroidJniObject createByCodecName(const QString &arg0);
 		static QAndroidJniObject createDecoderByType(jstring arg0);
-		static QAndroidJniObject createDecoderByType(const QString &arg0);
 		static QAndroidJniObject createEncoderByType(jstring arg0);
-		static QAndroidJniObject createEncoderByType(const QString &arg0);
 		static QAndroidJniObject createPersistentInputSurface();
 		void configure(android::media::MediaFormat arg0, android::view::Surface arg1, android::media::MediaCrypto arg2, jint arg3);
 		void configure(android::media::MediaFormat arg0, android::view::Surface arg1, jint arg2, android::media::MediaDescrambler arg3);

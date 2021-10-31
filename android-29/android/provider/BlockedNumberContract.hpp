@@ -27,9 +27,7 @@ namespace android::provider
 		// Methods
 		static jboolean canCurrentUserBlockNumbers(android::content::Context arg0);
 		static jboolean isBlocked(android::content::Context arg0, jstring arg1);
-		static jboolean isBlocked(android::content::Context arg0, const QString &arg1);
 		static jint unblock(android::content::Context arg0, jstring arg1);
-		static jint unblock(android::content::Context arg0, const QString &arg1);
 	};
 } // namespace android::provider
 

@@ -241,7 +241,7 @@ namespace android::speech::tts
 	
 	TextToSpeech_Engine::TextToSpeech_Engine(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	TextToSpeech_Engine::TextToSpeech_Engine(android::speech::tts::TextToSpeech &arg0)
+	TextToSpeech_Engine::TextToSpeech_Engine(android::speech::tts::TextToSpeech arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.speech.tts.TextToSpeech$Engine",

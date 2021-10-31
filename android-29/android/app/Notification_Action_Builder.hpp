@@ -32,11 +32,9 @@ namespace android::app
 		
 		Notification_Action_Builder(QAndroidJniObject obj);
 		// Constructors
-		Notification_Action_Builder(android::app::Notification_Action &arg0);
-		Notification_Action_Builder(android::graphics::drawable::Icon &arg0, jstring &arg1, android::app::PendingIntent &arg2);
-		Notification_Action_Builder(android::graphics::drawable::Icon &arg0, const QString &arg1, android::app::PendingIntent &arg2);
-		Notification_Action_Builder(jint &arg0, jstring &arg1, android::app::PendingIntent &arg2);
-		Notification_Action_Builder(jint &arg0, const QString &arg1, android::app::PendingIntent &arg2);
+		Notification_Action_Builder(android::app::Notification_Action arg0);
+		Notification_Action_Builder(android::graphics::drawable::Icon arg0, jstring arg1, android::app::PendingIntent arg2);
+		Notification_Action_Builder(jint arg0, jstring arg1, android::app::PendingIntent arg2);
 		Notification_Action_Builder() = default;
 		
 		// Methods

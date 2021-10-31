@@ -6,7 +6,7 @@ namespace java::net
 	
 	HttpRetryException::HttpRetryException(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	HttpRetryException::HttpRetryException(jstring &arg0, jint &arg1)
+	HttpRetryException::HttpRetryException(jstring arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.HttpRetryException",
@@ -15,16 +15,7 @@ namespace java::net
 			arg1
 		);
 	}
-	HttpRetryException::HttpRetryException(const QString &arg0, jint &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.HttpRetryException",
-			"(Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
-	HttpRetryException::HttpRetryException(jstring &arg0, jint &arg1, jstring &arg2)
+	HttpRetryException::HttpRetryException(jstring arg0, jint arg1, jstring arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.HttpRetryException",
@@ -32,16 +23,6 @@ namespace java::net
 			arg0,
 			arg1,
 			arg2
-		);
-	}
-	HttpRetryException::HttpRetryException(const QString &arg0, jint &arg1, const QString &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.HttpRetryException",
-			"(Ljava/lang/String;ILjava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	

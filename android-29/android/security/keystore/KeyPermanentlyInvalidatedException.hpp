@@ -17,10 +17,8 @@ namespace android::security::keystore
 		KeyPermanentlyInvalidatedException(QAndroidJniObject obj);
 		// Constructors
 		KeyPermanentlyInvalidatedException();
-		KeyPermanentlyInvalidatedException(jstring &arg0);
-		KeyPermanentlyInvalidatedException(const QString &arg0);
-		KeyPermanentlyInvalidatedException(jstring &arg0, jthrowable &arg1);
-		KeyPermanentlyInvalidatedException(const QString &arg0, jthrowable &arg1);
+		KeyPermanentlyInvalidatedException(jstring arg0);
+		KeyPermanentlyInvalidatedException(jstring arg0, jthrowable arg1);
 		
 		// Methods
 	};

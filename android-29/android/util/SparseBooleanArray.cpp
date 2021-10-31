@@ -13,7 +13,7 @@ namespace android::util
 			"()V"
 		);
 	}
-	SparseBooleanArray::SparseBooleanArray(jint &arg0)
+	SparseBooleanArray::SparseBooleanArray(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.SparseBooleanArray",

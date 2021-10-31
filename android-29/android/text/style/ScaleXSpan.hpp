@@ -22,8 +22,8 @@ namespace android::text::style
 		
 		ScaleXSpan(QAndroidJniObject obj);
 		// Constructors
-		ScaleXSpan(android::os::Parcel &arg0);
-		ScaleXSpan(jfloat &arg0);
+		ScaleXSpan(android::os::Parcel arg0);
+		ScaleXSpan(jfloat arg0);
 		ScaleXSpan() = default;
 		
 		// Methods

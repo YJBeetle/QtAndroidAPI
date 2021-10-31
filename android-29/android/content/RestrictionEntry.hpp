@@ -29,24 +29,17 @@ namespace android::content
 		
 		RestrictionEntry(QAndroidJniObject obj);
 		// Constructors
-		RestrictionEntry(android::os::Parcel &arg0);
-		RestrictionEntry(jint &arg0, jstring &arg1);
-		RestrictionEntry(jint &arg0, const QString &arg1);
-		RestrictionEntry(jstring &arg0, jarray &arg1);
-		RestrictionEntry(const QString &arg0, jarray &arg1);
-		RestrictionEntry(jstring &arg0, jboolean &arg1);
-		RestrictionEntry(const QString &arg0, jboolean &arg1);
-		RestrictionEntry(jstring &arg0, jint &arg1);
-		RestrictionEntry(const QString &arg0, jint &arg1);
-		RestrictionEntry(jstring &arg0, jstring &arg1);
-		RestrictionEntry(const QString &arg0, const QString &arg1);
+		RestrictionEntry(android::os::Parcel arg0);
+		RestrictionEntry(jint arg0, jstring arg1);
+		RestrictionEntry(jstring arg0, jarray arg1);
+		RestrictionEntry(jstring arg0, jboolean arg1);
+		RestrictionEntry(jstring arg0, jint arg1);
+		RestrictionEntry(jstring arg0, jstring arg1);
 		RestrictionEntry() = default;
 		
 		// Methods
 		static QAndroidJniObject createBundleArrayEntry(jstring arg0, jarray arg1);
-		static QAndroidJniObject createBundleArrayEntry(const QString &arg0, jarray arg1);
 		static QAndroidJniObject createBundleEntry(jstring arg0, jarray arg1);
-		static QAndroidJniObject createBundleEntry(const QString &arg0, jarray arg1);
 		jint describeContents();
 		jboolean equals(jobject arg0);
 		jarray getAllSelectedStrings();
@@ -67,14 +60,11 @@ namespace android::content
 		void setChoiceValues(jarray arg0);
 		void setChoiceValues(android::content::Context arg0, jint arg1);
 		void setDescription(jstring arg0);
-		void setDescription(const QString &arg0);
 		void setIntValue(jint arg0);
 		void setRestrictions(jarray arg0);
 		void setSelectedState(jboolean arg0);
 		void setSelectedString(jstring arg0);
-		void setSelectedString(const QString &arg0);
 		void setTitle(jstring arg0);
-		void setTitle(const QString &arg0);
 		void setType(jint arg0);
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

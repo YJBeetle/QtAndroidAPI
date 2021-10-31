@@ -13,20 +13,12 @@ namespace android::text::style
 			"()V"
 		);
 	}
-	TtsSpan_DigitsBuilder::TtsSpan_DigitsBuilder(jstring &arg0)
+	TtsSpan_DigitsBuilder::TtsSpan_DigitsBuilder(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.TtsSpan$DigitsBuilder",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	TtsSpan_DigitsBuilder::TtsSpan_DigitsBuilder(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.text.style.TtsSpan$DigitsBuilder",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	
@@ -37,14 +29,6 @@ namespace android::text::style
 			"setDigits",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$DigitsBuilder;",
 			arg0
-		);
-	}
-	QAndroidJniObject TtsSpan_DigitsBuilder::setDigits(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setDigits",
-			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$DigitsBuilder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace android::text::style

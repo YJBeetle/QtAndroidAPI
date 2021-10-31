@@ -38,10 +38,10 @@ namespace android::text::style
 		
 		SuggestionSpan(QAndroidJniObject obj);
 		// Constructors
-		SuggestionSpan(android::os::Parcel &arg0);
-		SuggestionSpan(android::content::Context &arg0, jarray &arg1, jint &arg2);
-		SuggestionSpan(java::util::Locale &arg0, jarray &arg1, jint &arg2);
-		SuggestionSpan(android::content::Context &arg0, java::util::Locale &arg1, jarray &arg2, jint &arg3, jclass &arg4);
+		SuggestionSpan(android::os::Parcel arg0);
+		SuggestionSpan(android::content::Context arg0, jarray arg1, jint arg2);
+		SuggestionSpan(java::util::Locale arg0, jarray arg1, jint arg2);
+		SuggestionSpan(android::content::Context arg0, java::util::Locale arg1, jarray arg2, jint arg3, jclass arg4);
 		SuggestionSpan() = default;
 		
 		// Methods

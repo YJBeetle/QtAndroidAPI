@@ -219,7 +219,6 @@ namespace android::app
 		jboolean dispatchTouchEvent(android::view::MotionEvent arg0);
 		jboolean dispatchTrackballEvent(android::view::MotionEvent arg0);
 		void dump(jstring arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3);
-		void dump(const QString &arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3);
 		jboolean enterPictureInPictureMode(android::app::PictureInPictureParams arg0);
 		void enterPictureInPictureMode();
 		QAndroidJniObject findViewById(jint arg0);
@@ -255,7 +254,6 @@ namespace android::app
 		jint getRequestedOrientation();
 		QAndroidJniObject getSearchEvent();
 		jobject getSystemService(jstring arg0);
-		jobject getSystemService(const QString &arg0);
 		jint getTaskId();
 		jstring getTitle();
 		jint getTitleColor();
@@ -278,7 +276,6 @@ namespace android::app
 		jboolean isVoiceInteraction();
 		jboolean isVoiceInteractionRoot();
 		QAndroidJniObject managedQuery(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4);
-		QAndroidJniObject managedQuery(android::net::Uri arg0, jarray arg1, const QString &arg2, jarray arg3, const QString &arg4);
 		jboolean moveTaskToBack(jboolean arg0);
 		jboolean navigateUpTo(android::content::Intent arg0);
 		jboolean navigateUpToFromChild(android::app::Activity arg0, android::content::Intent arg1);
@@ -301,9 +298,7 @@ namespace android::app
 		QAndroidJniObject onCreatePanelView(jint arg0);
 		jboolean onCreateThumbnail(android::graphics::Bitmap arg0, android::graphics::Canvas arg1);
 		QAndroidJniObject onCreateView(jstring arg0, android::content::Context arg1, __JniBaseClass arg2);
-		QAndroidJniObject onCreateView(const QString &arg0, android::content::Context arg1, __JniBaseClass arg2);
 		QAndroidJniObject onCreateView(android::view::View arg0, jstring arg1, android::content::Context arg2, __JniBaseClass arg3);
-		QAndroidJniObject onCreateView(android::view::View arg0, const QString &arg1, android::content::Context arg2, __JniBaseClass arg3);
 		void onDetachedFromWindow();
 		void onEnterAnimationComplete();
 		jboolean onGenericMotionEvent(android::view::MotionEvent arg0);
@@ -326,7 +321,6 @@ namespace android::app
 		void onOptionsMenuClosed(__JniBaseClass arg0);
 		void onPanelClosed(jint arg0, __JniBaseClass arg1);
 		void onPerformDirectAction(jstring arg0, android::os::Bundle arg1, android::os::CancellationSignal arg2, __JniBaseClass arg3);
-		void onPerformDirectAction(const QString &arg0, android::os::Bundle arg1, android::os::CancellationSignal arg2, __JniBaseClass arg3);
 		void onPictureInPictureModeChanged(jboolean arg0);
 		void onPictureInPictureModeChanged(jboolean arg0, android::content::res::Configuration arg1);
 		void onPostCreate(android::os::Bundle arg0, android::os::PersistableBundle arg1);
@@ -402,14 +396,12 @@ namespace android::app
 		void setTheme(jint arg0);
 		void setTitle(jint arg0);
 		void setTitle(jstring arg0);
-		void setTitle(const QString &arg0);
 		void setTitleColor(jint arg0);
 		void setTurnScreenOn(jboolean arg0);
 		void setVisible(jboolean arg0);
 		void setVolumeControlStream(jint arg0);
 		void setVrModeEnabled(jboolean arg0, android::content::ComponentName arg1);
 		jboolean shouldShowRequestPermissionRationale(jstring arg0);
-		jboolean shouldShowRequestPermissionRationale(const QString &arg0);
 		jboolean shouldUpRecreateTask(android::content::Intent arg0);
 		jboolean showAssist(android::os::Bundle arg0);
 		jboolean showDialog(jint arg0, android::os::Bundle arg1);
@@ -442,13 +434,11 @@ namespace android::app
 		jboolean startNextMatchingActivity(android::content::Intent arg0, android::os::Bundle arg1);
 		void startPostponedEnterTransition();
 		void startSearch(jstring arg0, jboolean arg1, android::os::Bundle arg2, jboolean arg3);
-		void startSearch(const QString &arg0, jboolean arg1, android::os::Bundle arg2, jboolean arg3);
 		void stopLocalVoiceInteraction();
 		void stopLockTask();
 		void stopManagingCursor(__JniBaseClass arg0);
 		void takeKeyEvents(jboolean arg0);
 		void triggerSearch(jstring arg0, android::os::Bundle arg1);
-		void triggerSearch(const QString &arg0, android::os::Bundle arg1);
 		void unregisterActivityLifecycleCallbacks(__JniBaseClass arg0);
 		void unregisterForContextMenu(android::view::View arg0);
 	};

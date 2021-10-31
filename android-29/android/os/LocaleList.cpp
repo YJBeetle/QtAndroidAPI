@@ -17,7 +17,7 @@ namespace android::os
 	
 	LocaleList::LocaleList(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	LocaleList::LocaleList(jarray &arg0)
+	LocaleList::LocaleList(jarray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.LocaleList",
@@ -34,15 +34,6 @@ namespace android::os
 			"forLanguageTags",
 			"(Ljava/lang/String;)Landroid/os/LocaleList;",
 			arg0
-		);
-	}
-	QAndroidJniObject LocaleList::forLanguageTags(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.os.LocaleList",
-			"forLanguageTags",
-			"(Ljava/lang/String;)Landroid/os/LocaleList;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject LocaleList::getAdjustedDefault()

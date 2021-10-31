@@ -14,7 +14,7 @@ namespace java::util::concurrent::atomic
 		AtomicLong(QAndroidJniObject obj);
 		// Constructors
 		AtomicLong();
-		AtomicLong(jlong &arg0);
+		AtomicLong(jlong arg0);
 		
 		// Methods
 		jlong accumulateAndGet(jlong arg0, __JniBaseClass arg1);

@@ -12,7 +12,7 @@ namespace android::util
 	
 	MutableBoolean::MutableBoolean(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MutableBoolean::MutableBoolean(jboolean &arg0)
+	MutableBoolean::MutableBoolean(jboolean arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.MutableBoolean",

@@ -9,7 +9,7 @@ namespace android::widget
 	
 	ImageButton::ImageButton(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ImageButton::ImageButton(android::content::Context &arg0)
+	ImageButton::ImageButton(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ImageButton",
@@ -17,7 +17,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	ImageButton::ImageButton(android::content::Context &arg0, __JniBaseClass &arg1)
+	ImageButton::ImageButton(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ImageButton",
@@ -26,7 +26,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	ImageButton::ImageButton(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	ImageButton::ImageButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ImageButton",
@@ -36,7 +36,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	ImageButton::ImageButton(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	ImageButton::ImageButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ImageButton",

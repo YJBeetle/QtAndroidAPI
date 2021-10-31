@@ -107,7 +107,6 @@ namespace android::content::pm
 		static jstring getCategoryTitle(android::content::Context arg0, jint arg1);
 		jint describeContents();
 		void dump(__JniBaseClass arg0, jstring arg1);
-		void dump(__JniBaseClass arg0, const QString &arg1);
 		jboolean isProfileableByShell();
 		jboolean isResourceOverlay();
 		jboolean isVirtualPreload();

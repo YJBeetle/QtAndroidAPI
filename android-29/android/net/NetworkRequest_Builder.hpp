@@ -30,7 +30,6 @@ namespace android::net
 		QAndroidJniObject removeTransportType(jint arg0);
 		QAndroidJniObject setNetworkSpecifier(android::net::NetworkSpecifier arg0);
 		QAndroidJniObject setNetworkSpecifier(jstring arg0);
-		QAndroidJniObject setNetworkSpecifier(const QString &arg0);
 	};
 } // namespace android::net
 

@@ -100,9 +100,8 @@ namespace android::text::style
 		
 		TtsSpan(QAndroidJniObject obj);
 		// Constructors
-		TtsSpan(android::os::Parcel &arg0);
-		TtsSpan(jstring &arg0, android::os::PersistableBundle &arg1);
-		TtsSpan(const QString &arg0, android::os::PersistableBundle &arg1);
+		TtsSpan(android::os::Parcel arg0);
+		TtsSpan(jstring arg0, android::os::PersistableBundle arg1);
 		TtsSpan() = default;
 		
 		// Methods

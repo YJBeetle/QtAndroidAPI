@@ -112,7 +112,7 @@ namespace android::media::audiofx
 	
 	Visualizer::Visualizer(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Visualizer::Visualizer(jint &arg0)
+	Visualizer::Visualizer(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.audiofx.Visualizer",

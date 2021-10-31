@@ -100,15 +100,6 @@ namespace android::view::contentcapture
 			arg1
 		);
 	}
-	void ContentCaptureSession::notifyViewTextChanged(android::view::autofill::AutofillId arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"notifyViewTextChanged",
-			"(Landroid/view/autofill/AutofillId;Ljava/lang/CharSequence;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	void ContentCaptureSession::notifyViewsDisappeared(android::view::autofill::AutofillId arg0, jlongArray arg1)
 	{
 		__thiz.callMethod<void>(

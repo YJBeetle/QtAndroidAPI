@@ -19,7 +19,7 @@ namespace android::telecom
 	
 	ConnectionRequest::ConnectionRequest(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ConnectionRequest::ConnectionRequest(android::telecom::PhoneAccountHandle &arg0, android::net::Uri &arg1, android::os::Bundle &arg2)
+	ConnectionRequest::ConnectionRequest(android::telecom::PhoneAccountHandle arg0, android::net::Uri arg1, android::os::Bundle arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.telecom.ConnectionRequest",
@@ -29,7 +29,7 @@ namespace android::telecom
 			arg2.__jniObject().object()
 		);
 	}
-	ConnectionRequest::ConnectionRequest(android::telecom::PhoneAccountHandle &arg0, android::net::Uri &arg1, android::os::Bundle &arg2, jint &arg3)
+	ConnectionRequest::ConnectionRequest(android::telecom::PhoneAccountHandle arg0, android::net::Uri arg1, android::os::Bundle arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.telecom.ConnectionRequest",

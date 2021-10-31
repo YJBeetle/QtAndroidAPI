@@ -14,8 +14,7 @@ namespace android::security
 		ConfirmationNotAvailableException(QAndroidJniObject obj);
 		// Constructors
 		ConfirmationNotAvailableException();
-		ConfirmationNotAvailableException(jstring &arg0);
-		ConfirmationNotAvailableException(const QString &arg0);
+		ConfirmationNotAvailableException(jstring arg0);
 		
 		// Methods
 	};

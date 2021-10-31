@@ -13,7 +13,7 @@ namespace android::app::job
 	
 	JobInfo_Builder::JobInfo_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	JobInfo_Builder::JobInfo_Builder(jint &arg0, android::content::ComponentName &arg1)
+	JobInfo_Builder::JobInfo_Builder(jint arg0, android::content::ComponentName arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.job.JobInfo$Builder",

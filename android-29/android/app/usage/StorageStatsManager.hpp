@@ -35,7 +35,6 @@ namespace android::app::usage
 		jlong getTotalBytes(java::util::UUID arg0);
 		QAndroidJniObject queryExternalStatsForUser(java::util::UUID arg0, android::os::UserHandle arg1);
 		QAndroidJniObject queryStatsForPackage(java::util::UUID arg0, jstring arg1, android::os::UserHandle arg2);
-		QAndroidJniObject queryStatsForPackage(java::util::UUID arg0, const QString &arg1, android::os::UserHandle arg2);
 		QAndroidJniObject queryStatsForUid(java::util::UUID arg0, jint arg1);
 		QAndroidJniObject queryStatsForUser(java::util::UUID arg0, android::os::UserHandle arg1);
 	};

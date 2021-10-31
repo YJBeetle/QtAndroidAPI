@@ -1199,7 +1199,7 @@ namespace android::media
 	
 	ExifInterface::ExifInterface(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ExifInterface::ExifInterface(java::io::File &arg0)
+	ExifInterface::ExifInterface(java::io::File arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.ExifInterface",
@@ -1207,7 +1207,7 @@ namespace android::media
 			arg0.__jniObject().object()
 		);
 	}
-	ExifInterface::ExifInterface(java::io::FileDescriptor &arg0)
+	ExifInterface::ExifInterface(java::io::FileDescriptor arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.ExifInterface",
@@ -1215,7 +1215,7 @@ namespace android::media
 			arg0.__jniObject().object()
 		);
 	}
-	ExifInterface::ExifInterface(java::io::InputStream &arg0)
+	ExifInterface::ExifInterface(java::io::InputStream arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.ExifInterface",
@@ -1223,20 +1223,12 @@ namespace android::media
 			arg0.__jniObject().object()
 		);
 	}
-	ExifInterface::ExifInterface(jstring &arg0)
+	ExifInterface::ExifInterface(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.ExifInterface",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	ExifInterface::ExifInterface(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.media.ExifInterface",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	
@@ -1257,14 +1249,6 @@ namespace android::media
 			arg0
 		).object<jstring>();
 	}
-	jstring ExifInterface::getAttribute(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getAttribute",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
 	jbyteArray ExifInterface::getAttributeBytes(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -1273,29 +1257,12 @@ namespace android::media
 			arg0
 		).object<jbyteArray>();
 	}
-	jbyteArray ExifInterface::getAttributeBytes(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getAttributeBytes",
-			"(Ljava/lang/String;)[B",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jbyteArray>();
-	}
 	jdouble ExifInterface::getAttributeDouble(jstring arg0, jdouble arg1)
 	{
 		return __thiz.callMethod<jdouble>(
 			"getAttributeDouble",
 			"(Ljava/lang/String;D)D",
 			arg0,
-			arg1
-		);
-	}
-	jdouble ExifInterface::getAttributeDouble(const QString &arg0, jdouble arg1)
-	{
-		return __thiz.callMethod<jdouble>(
-			"getAttributeDouble",
-			"(Ljava/lang/String;D)D",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -1308,29 +1275,12 @@ namespace android::media
 			arg1
 		);
 	}
-	jint ExifInterface::getAttributeInt(const QString &arg0, jint arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"getAttributeInt",
-			"(Ljava/lang/String;I)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	jlongArray ExifInterface::getAttributeRange(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getAttributeRange",
 			"(Ljava/lang/String;)[J",
 			arg0
-		).object<jlongArray>();
-	}
-	jlongArray ExifInterface::getAttributeRange(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getAttributeRange",
-			"(Ljava/lang/String;)[J",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jlongArray>();
 	}
 	jboolean ExifInterface::getLatLong(jfloatArray arg0)
@@ -1377,14 +1327,6 @@ namespace android::media
 			arg0
 		);
 	}
-	jboolean ExifInterface::hasAttribute(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasAttribute",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jboolean ExifInterface::hasThumbnail()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -1413,15 +1355,6 @@ namespace android::media
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	void ExifInterface::setAttribute(const QString &arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"setAttribute",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 } // namespace android::media

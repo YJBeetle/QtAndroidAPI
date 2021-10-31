@@ -12,7 +12,7 @@ namespace java::util
 		
 		EventObject(QAndroidJniObject obj);
 		// Constructors
-		EventObject(jobject &arg0);
+		EventObject(jobject arg0);
 		EventObject() = default;
 		
 		// Methods

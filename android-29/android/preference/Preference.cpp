@@ -22,7 +22,7 @@ namespace android::preference
 	
 	Preference::Preference(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Preference::Preference(android::content::Context &arg0)
+	Preference::Preference(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.preference.Preference",
@@ -30,7 +30,7 @@ namespace android::preference
 			arg0.__jniObject().object()
 		);
 	}
-	Preference::Preference(android::content::Context &arg0, __JniBaseClass &arg1)
+	Preference::Preference(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.preference.Preference",
@@ -39,7 +39,7 @@ namespace android::preference
 			arg1.__jniObject().object()
 		);
 	}
-	Preference::Preference(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	Preference::Preference(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.preference.Preference",
@@ -49,7 +49,7 @@ namespace android::preference
 			arg2
 		);
 	}
-	Preference::Preference(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	Preference::Preference(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.preference.Preference",
@@ -364,14 +364,6 @@ namespace android::preference
 			arg0
 		);
 	}
-	void Preference::setDependency(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDependency",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void Preference::setEnabled(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
@@ -386,14 +378,6 @@ namespace android::preference
 			"setFragment",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void Preference::setFragment(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setFragment",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void Preference::setIcon(android::graphics::drawable::Drawable arg0)
@@ -434,14 +418,6 @@ namespace android::preference
 			"setKey",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void Preference::setKey(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setKey",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void Preference::setLayoutResource(jint arg0)
@@ -540,14 +516,6 @@ namespace android::preference
 			arg0
 		);
 	}
-	void Preference::setSummary(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSummary",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void Preference::setTitle(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -562,14 +530,6 @@ namespace android::preference
 			"setTitle",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
-		);
-	}
-	void Preference::setTitle(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTitle",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void Preference::setWidgetLayoutResource(jint arg0)

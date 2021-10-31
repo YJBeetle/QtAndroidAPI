@@ -66,15 +66,12 @@ namespace android::app::admin
 		QAndroidJniObject getWho(android::content::Context arg0);
 		void onBugreportFailed(android::content::Context arg0, android::content::Intent arg1, jint arg2);
 		void onBugreportShared(android::content::Context arg0, android::content::Intent arg1, jstring arg2);
-		void onBugreportShared(android::content::Context arg0, android::content::Intent arg1, const QString &arg2);
 		void onBugreportSharingDeclined(android::content::Context arg0, android::content::Intent arg1);
 		jstring onChoosePrivateKeyAlias(android::content::Context arg0, android::content::Intent arg1, jint arg2, android::net::Uri arg3, jstring arg4);
-		jstring onChoosePrivateKeyAlias(android::content::Context arg0, android::content::Intent arg1, jint arg2, android::net::Uri arg3, const QString &arg4);
 		jstring onDisableRequested(android::content::Context arg0, android::content::Intent arg1);
 		void onDisabled(android::content::Context arg0, android::content::Intent arg1);
 		void onEnabled(android::content::Context arg0, android::content::Intent arg1);
 		void onLockTaskModeEntering(android::content::Context arg0, android::content::Intent arg1, jstring arg2);
-		void onLockTaskModeEntering(android::content::Context arg0, android::content::Intent arg1, const QString &arg2);
 		void onLockTaskModeExiting(android::content::Context arg0, android::content::Intent arg1);
 		void onNetworkLogsAvailable(android::content::Context arg0, android::content::Intent arg1, jlong arg2, jint arg3);
 		void onPasswordChanged(android::content::Context arg0, android::content::Intent arg1);

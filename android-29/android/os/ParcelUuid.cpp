@@ -16,7 +16,7 @@ namespace android::os
 	
 	ParcelUuid::ParcelUuid(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ParcelUuid::ParcelUuid(java::util::UUID &arg0)
+	ParcelUuid::ParcelUuid(java::util::UUID arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.ParcelUuid",
@@ -33,15 +33,6 @@ namespace android::os
 			"fromString",
 			"(Ljava/lang/String;)Landroid/os/ParcelUuid;",
 			arg0
-		);
-	}
-	QAndroidJniObject ParcelUuid::fromString(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.os.ParcelUuid",
-			"fromString",
-			"(Ljava/lang/String;)Landroid/os/ParcelUuid;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jint ParcelUuid::describeContents()

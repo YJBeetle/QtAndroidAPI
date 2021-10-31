@@ -38,7 +38,6 @@ namespace android::graphics
 		static QAndroidJniObject newInstance(java::io::FileDescriptor arg0, jboolean arg1);
 		static QAndroidJniObject newInstance(java::io::InputStream arg0, jboolean arg1);
 		static QAndroidJniObject newInstance(jstring arg0, jboolean arg1);
-		static QAndroidJniObject newInstance(const QString &arg0, jboolean arg1);
 		static QAndroidJniObject newInstance(jbyteArray arg0, jint arg1, jint arg2, jboolean arg3);
 		QAndroidJniObject decodeRegion(android::graphics::Rect arg0, android::graphics::BitmapFactory_Options arg1);
 		jint getHeight();

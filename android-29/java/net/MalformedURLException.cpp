@@ -13,20 +13,12 @@ namespace java::net
 			"()V"
 		);
 	}
-	MalformedURLException::MalformedURLException(jstring &arg0)
+	MalformedURLException::MalformedURLException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.MalformedURLException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	MalformedURLException::MalformedURLException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.MalformedURLException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

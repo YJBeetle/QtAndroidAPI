@@ -16,22 +16,12 @@ namespace android::telecom
 	
 	GatewayInfo::GatewayInfo(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	GatewayInfo::GatewayInfo(jstring &arg0, android::net::Uri &arg1, android::net::Uri &arg2)
+	GatewayInfo::GatewayInfo(jstring arg0, android::net::Uri arg1, android::net::Uri arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.telecom.GatewayInfo",
 			"(Ljava/lang/String;Landroid/net/Uri;Landroid/net/Uri;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	GatewayInfo::GatewayInfo(const QString &arg0, android::net::Uri &arg1, android::net::Uri &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.telecom.GatewayInfo",
-			"(Ljava/lang/String;Landroid/net/Uri;Landroid/net/Uri;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object()
 		);

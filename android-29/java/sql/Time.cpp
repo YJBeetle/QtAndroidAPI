@@ -8,7 +8,7 @@ namespace java::sql
 	
 	Time::Time(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Time::Time(jlong &arg0)
+	Time::Time(jlong arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.sql.Time",
@@ -16,7 +16,7 @@ namespace java::sql
 			arg0
 		);
 	}
-	Time::Time(jint &arg0, jint &arg1, jint &arg2)
+	Time::Time(jint arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.sql.Time",
@@ -35,15 +35,6 @@ namespace java::sql
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/sql/Time;",
 			arg0
-		);
-	}
-	QAndroidJniObject Time::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.sql.Time",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/sql/Time;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Time::valueOf(java::time::LocalTime arg0)

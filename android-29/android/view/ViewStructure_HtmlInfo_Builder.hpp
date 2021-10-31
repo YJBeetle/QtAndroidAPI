@@ -20,7 +20,6 @@ namespace android::view
 		
 		// Methods
 		QAndroidJniObject addAttribute(jstring arg0, jstring arg1);
-		QAndroidJniObject addAttribute(const QString &arg0, const QString &arg1);
 		QAndroidJniObject build();
 	};
 } // namespace android::view

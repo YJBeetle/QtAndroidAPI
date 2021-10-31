@@ -14,10 +14,8 @@ namespace android::nfc
 		FormatException(QAndroidJniObject obj);
 		// Constructors
 		FormatException();
-		FormatException(jstring &arg0);
-		FormatException(const QString &arg0);
-		FormatException(jstring &arg0, jthrowable &arg1);
-		FormatException(const QString &arg0, jthrowable &arg1);
+		FormatException(jstring arg0);
+		FormatException(jstring arg0, jthrowable arg1);
 		
 		// Methods
 	};

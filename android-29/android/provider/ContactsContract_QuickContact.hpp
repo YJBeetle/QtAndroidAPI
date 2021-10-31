@@ -39,10 +39,8 @@ namespace android::provider
 		
 		// Methods
 		static void showQuickContact(android::content::Context arg0, android::graphics::Rect arg1, android::net::Uri arg2, jarray arg3, jstring arg4);
-		static void showQuickContact(android::content::Context arg0, android::graphics::Rect arg1, android::net::Uri arg2, jarray arg3, const QString &arg4);
 		static void showQuickContact(android::content::Context arg0, android::graphics::Rect arg1, android::net::Uri arg2, jint arg3, jarray arg4);
 		static void showQuickContact(android::content::Context arg0, android::view::View arg1, android::net::Uri arg2, jarray arg3, jstring arg4);
-		static void showQuickContact(android::content::Context arg0, android::view::View arg1, android::net::Uri arg2, jarray arg3, const QString &arg4);
 		static void showQuickContact(android::content::Context arg0, android::view::View arg1, android::net::Uri arg2, jint arg3, jarray arg4);
 	};
 } // namespace android::provider

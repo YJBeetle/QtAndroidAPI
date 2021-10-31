@@ -309,15 +309,6 @@ namespace android::appwidget
 			arg1.__jniObject().object()
 		);
 	}
-	QAndroidJniObject AppWidgetManager::getInstalledProvidersForPackage(const QString &arg0, android::os::UserHandle arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getInstalledProvidersForPackage",
-			"(Ljava/lang/String;Landroid/os/UserHandle;)Ljava/util/List;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	QAndroidJniObject AppWidgetManager::getInstalledProvidersForProfile(android::os::UserHandle arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -422,15 +413,6 @@ namespace android::appwidget
 			"(Landroid/content/ComponentName;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	void AppWidgetManager::updateAppWidgetProviderInfo(android::content::ComponentName arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"updateAppWidgetProviderInfo",
-			"(Landroid/content/ComponentName;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 } // namespace android::appwidget

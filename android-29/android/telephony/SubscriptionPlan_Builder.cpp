@@ -64,28 +64,12 @@ namespace android::telephony
 			arg0
 		);
 	}
-	QAndroidJniObject SubscriptionPlan_Builder::setSummary(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setSummary",
-			"(Ljava/lang/CharSequence;)Landroid/telephony/SubscriptionPlan$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject SubscriptionPlan_Builder::setTitle(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setTitle",
 			"(Ljava/lang/CharSequence;)Landroid/telephony/SubscriptionPlan$Builder;",
 			arg0
-		);
-	}
-	QAndroidJniObject SubscriptionPlan_Builder::setTitle(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setTitle",
-			"(Ljava/lang/CharSequence;)Landroid/telephony/SubscriptionPlan$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace android::telephony

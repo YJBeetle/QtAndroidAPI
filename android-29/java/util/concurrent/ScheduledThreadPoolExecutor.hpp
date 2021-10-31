@@ -22,9 +22,9 @@ namespace java::util::concurrent
 		
 		ScheduledThreadPoolExecutor(QAndroidJniObject obj);
 		// Constructors
-		ScheduledThreadPoolExecutor(jint &arg0);
-		ScheduledThreadPoolExecutor(jint &arg0, __JniBaseClass &arg1);
-		ScheduledThreadPoolExecutor(jint &arg0, __JniBaseClass &arg1, __JniBaseClass &arg2);
+		ScheduledThreadPoolExecutor(jint arg0);
+		ScheduledThreadPoolExecutor(jint arg0, __JniBaseClass arg1);
+		ScheduledThreadPoolExecutor(jint arg0, __JniBaseClass arg1, __JniBaseClass arg2);
 		ScheduledThreadPoolExecutor() = default;
 		
 		// Methods

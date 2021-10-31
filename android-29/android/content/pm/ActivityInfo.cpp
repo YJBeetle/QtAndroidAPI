@@ -591,15 +591,6 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	void ActivityInfo::dump(__JniBaseClass arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Landroid/util/Printer;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	jint ActivityInfo::getThemeResource()
 	{
 		return __thiz.callMethod<jint>(

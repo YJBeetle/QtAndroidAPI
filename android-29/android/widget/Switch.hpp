@@ -48,10 +48,10 @@ namespace android::widget
 		
 		Switch(QAndroidJniObject obj);
 		// Constructors
-		Switch(android::content::Context &arg0);
-		Switch(android::content::Context &arg0, __JniBaseClass &arg1);
-		Switch(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		Switch(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		Switch(android::content::Context arg0);
+		Switch(android::content::Context arg0, __JniBaseClass arg1);
+		Switch(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		Switch(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		Switch() = default;
 		
 		// Methods
@@ -87,9 +87,7 @@ namespace android::widget
 		void setSwitchTypeface(android::graphics::Typeface arg0);
 		void setSwitchTypeface(android::graphics::Typeface arg0, jint arg1);
 		void setTextOff(jstring arg0);
-		void setTextOff(const QString &arg0);
 		void setTextOn(jstring arg0);
-		void setTextOn(const QString &arg0);
 		void setThumbDrawable(android::graphics::drawable::Drawable arg0);
 		void setThumbResource(jint arg0);
 		void setThumbTextPadding(jint arg0);

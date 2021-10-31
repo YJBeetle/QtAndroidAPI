@@ -15,8 +15,8 @@ namespace java::sql
 		
 		DataTruncation(QAndroidJniObject obj);
 		// Constructors
-		DataTruncation(jint &arg0, jboolean &arg1, jboolean &arg2, jint &arg3, jint &arg4);
-		DataTruncation(jint &arg0, jboolean &arg1, jboolean &arg2, jint &arg3, jint &arg4, jthrowable &arg5);
+		DataTruncation(jint arg0, jboolean arg1, jboolean arg2, jint arg3, jint arg4);
+		DataTruncation(jint arg0, jboolean arg1, jboolean arg2, jint arg3, jint arg4, jthrowable arg5);
 		DataTruncation() = default;
 		
 		// Methods

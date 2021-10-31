@@ -8,7 +8,7 @@ namespace android::text::style
 	
 	RelativeSizeSpan::RelativeSizeSpan(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	RelativeSizeSpan::RelativeSizeSpan(android::os::Parcel &arg0)
+	RelativeSizeSpan::RelativeSizeSpan(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.RelativeSizeSpan",
@@ -16,7 +16,7 @@ namespace android::text::style
 			arg0.__jniObject().object()
 		);
 	}
-	RelativeSizeSpan::RelativeSizeSpan(jfloat &arg0)
+	RelativeSizeSpan::RelativeSizeSpan(jfloat arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.RelativeSizeSpan",

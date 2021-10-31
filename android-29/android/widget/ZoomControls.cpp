@@ -8,7 +8,7 @@ namespace android::widget
 	
 	ZoomControls::ZoomControls(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ZoomControls::ZoomControls(android::content::Context &arg0)
+	ZoomControls::ZoomControls(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ZoomControls",
@@ -16,7 +16,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	ZoomControls::ZoomControls(android::content::Context &arg0, __JniBaseClass &arg1)
+	ZoomControls::ZoomControls(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ZoomControls",

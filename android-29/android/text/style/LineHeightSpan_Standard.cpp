@@ -8,7 +8,7 @@ namespace android::text::style
 	
 	LineHeightSpan_Standard::LineHeightSpan_Standard(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	LineHeightSpan_Standard::LineHeightSpan_Standard(android::os::Parcel &arg0)
+	LineHeightSpan_Standard::LineHeightSpan_Standard(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.LineHeightSpan$Standard",
@@ -16,7 +16,7 @@ namespace android::text::style
 			arg0.__jniObject().object()
 		);
 	}
-	LineHeightSpan_Standard::LineHeightSpan_Standard(jint &arg0)
+	LineHeightSpan_Standard::LineHeightSpan_Standard(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.LineHeightSpan$Standard",
@@ -32,19 +32,6 @@ namespace android::text::style
 			"chooseHeight",
 			"(Ljava/lang/CharSequence;IIIILandroid/graphics/Paint$FontMetricsInt;)V",
 			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5.__jniObject().object()
-		);
-	}
-	void LineHeightSpan_Standard::chooseHeight(const QString &arg0, jint arg1, jint arg2, jint arg3, jint arg4, android::graphics::Paint_FontMetricsInt arg5)
-	{
-		__thiz.callMethod<void>(
-			"chooseHeight",
-			"(Ljava/lang/CharSequence;IIIILandroid/graphics/Paint$FontMetricsInt;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2,
 			arg3,

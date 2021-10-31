@@ -7,7 +7,7 @@ namespace android::renderscript
 	
 	ScriptGroup_Binding::ScriptGroup_Binding(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ScriptGroup_Binding::ScriptGroup_Binding(android::renderscript::Script_FieldID &arg0, jobject &arg1)
+	ScriptGroup_Binding::ScriptGroup_Binding(android::renderscript::Script_FieldID arg0, jobject arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.renderscript.ScriptGroup$Binding",

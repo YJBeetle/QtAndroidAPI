@@ -17,7 +17,7 @@ namespace java::util::concurrent
 			"()V"
 		);
 	}
-	ConcurrentSkipListMap::ConcurrentSkipListMap(__JniBaseClass &arg0)
+	ConcurrentSkipListMap::ConcurrentSkipListMap(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.ConcurrentSkipListMap",

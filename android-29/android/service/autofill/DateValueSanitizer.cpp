@@ -16,7 +16,7 @@ namespace android::service::autofill
 	
 	DateValueSanitizer::DateValueSanitizer(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DateValueSanitizer::DateValueSanitizer(android::icu::text::DateFormat &arg0)
+	DateValueSanitizer::DateValueSanitizer(android::icu::text::DateFormat arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.service.autofill.DateValueSanitizer",

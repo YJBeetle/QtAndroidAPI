@@ -177,15 +177,6 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject MediaCodec::createByCodecName(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.media.MediaCodec",
-			"createByCodecName",
-			"(Ljava/lang/String;)Landroid/media/MediaCodec;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject MediaCodec::createDecoderByType(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -195,15 +186,6 @@ namespace android::media
 			arg0
 		);
 	}
-	QAndroidJniObject MediaCodec::createDecoderByType(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.media.MediaCodec",
-			"createDecoderByType",
-			"(Ljava/lang/String;)Landroid/media/MediaCodec;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject MediaCodec::createEncoderByType(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -211,15 +193,6 @@ namespace android::media
 			"createEncoderByType",
 			"(Ljava/lang/String;)Landroid/media/MediaCodec;",
 			arg0
-		);
-	}
-	QAndroidJniObject MediaCodec::createEncoderByType(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.media.MediaCodec",
-			"createEncoderByType",
-			"(Ljava/lang/String;)Landroid/media/MediaCodec;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject MediaCodec::createPersistentInputSurface()

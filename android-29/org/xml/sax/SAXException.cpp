@@ -16,7 +16,7 @@ namespace org::xml::sax
 			"()V"
 		);
 	}
-	SAXException::SAXException(java::lang::Exception &arg0)
+	SAXException::SAXException(java::lang::Exception arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"org.xml.sax.SAXException",
@@ -24,7 +24,7 @@ namespace org::xml::sax
 			arg0.__jniObject().object()
 		);
 	}
-	SAXException::SAXException(jstring &arg0)
+	SAXException::SAXException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"org.xml.sax.SAXException",
@@ -32,29 +32,12 @@ namespace org::xml::sax
 			arg0
 		);
 	}
-	SAXException::SAXException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"org.xml.sax.SAXException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	SAXException::SAXException(jstring &arg0, java::lang::Exception &arg1)
+	SAXException::SAXException(jstring arg0, java::lang::Exception arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"org.xml.sax.SAXException",
 			"(Ljava/lang/String;Ljava/lang/Exception;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	SAXException::SAXException(const QString &arg0, java::lang::Exception &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"org.xml.sax.SAXException",
-			"(Ljava/lang/String;Ljava/lang/Exception;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

@@ -32,14 +32,6 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	jint AlphabeticIndex_ImmutableIndex::getBucketIndex(const QString &arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getBucketIndex",
-			"(Ljava/lang/CharSequence;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject AlphabeticIndex_ImmutableIndex::iterator()
 	{
 		return __thiz.callObjectMethod(

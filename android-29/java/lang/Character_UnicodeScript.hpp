@@ -178,10 +178,8 @@ namespace java::lang
 		
 		// Methods
 		static QAndroidJniObject forName(jstring arg0);
-		static QAndroidJniObject forName(const QString &arg0);
 		static QAndroidJniObject of(jint arg0);
 		static QAndroidJniObject valueOf(jstring arg0);
-		static QAndroidJniObject valueOf(const QString &arg0);
 		static jarray values();
 	};
 } // namespace java::lang

@@ -18,7 +18,7 @@ namespace java::util::concurrent
 			"()V"
 		);
 	}
-	PriorityBlockingQueue::PriorityBlockingQueue(jint &arg0)
+	PriorityBlockingQueue::PriorityBlockingQueue(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.PriorityBlockingQueue",
@@ -26,7 +26,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	PriorityBlockingQueue::PriorityBlockingQueue(__JniBaseClass &arg0)
+	PriorityBlockingQueue::PriorityBlockingQueue(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.PriorityBlockingQueue",
@@ -34,7 +34,7 @@ namespace java::util::concurrent
 			arg0.__jniObject().object()
 		);
 	}
-	PriorityBlockingQueue::PriorityBlockingQueue(jint &arg0, __JniBaseClass &arg1)
+	PriorityBlockingQueue::PriorityBlockingQueue(jint arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.PriorityBlockingQueue",

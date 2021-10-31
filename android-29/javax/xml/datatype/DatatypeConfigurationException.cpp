@@ -13,7 +13,7 @@ namespace javax::xml::datatype
 			"()V"
 		);
 	}
-	DatatypeConfigurationException::DatatypeConfigurationException(jstring &arg0)
+	DatatypeConfigurationException::DatatypeConfigurationException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.datatype.DatatypeConfigurationException",
@@ -21,15 +21,7 @@ namespace javax::xml::datatype
 			arg0
 		);
 	}
-	DatatypeConfigurationException::DatatypeConfigurationException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.xml.datatype.DatatypeConfigurationException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	DatatypeConfigurationException::DatatypeConfigurationException(jthrowable &arg0)
+	DatatypeConfigurationException::DatatypeConfigurationException(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.datatype.DatatypeConfigurationException",
@@ -37,21 +29,12 @@ namespace javax::xml::datatype
 			arg0
 		);
 	}
-	DatatypeConfigurationException::DatatypeConfigurationException(jstring &arg0, jthrowable &arg1)
+	DatatypeConfigurationException::DatatypeConfigurationException(jstring arg0, jthrowable arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.datatype.DatatypeConfigurationException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
-			arg1
-		);
-	}
-	DatatypeConfigurationException::DatatypeConfigurationException(const QString &arg0, jthrowable &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.xml.datatype.DatatypeConfigurationException",
-			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

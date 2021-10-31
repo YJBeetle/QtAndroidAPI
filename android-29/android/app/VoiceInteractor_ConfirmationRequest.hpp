@@ -21,7 +21,7 @@ namespace android::app
 		
 		VoiceInteractor_ConfirmationRequest(QAndroidJniObject obj);
 		// Constructors
-		VoiceInteractor_ConfirmationRequest(android::app::VoiceInteractor_Prompt &arg0, android::os::Bundle &arg1);
+		VoiceInteractor_ConfirmationRequest(android::app::VoiceInteractor_Prompt arg0, android::os::Bundle arg1);
 		VoiceInteractor_ConfirmationRequest() = default;
 		
 		// Methods

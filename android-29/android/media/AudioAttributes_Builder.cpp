@@ -14,7 +14,7 @@ namespace android::media
 			"()V"
 		);
 	}
-	AudioAttributes_Builder::AudioAttributes_Builder(android::media::AudioAttributes &arg0)
+	AudioAttributes_Builder::AudioAttributes_Builder(android::media::AudioAttributes arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.AudioAttributes$Builder",

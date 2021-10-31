@@ -1316,14 +1316,6 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	void PackageManager::addPackageToPreferred(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"addPackageToPreferred",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jboolean PackageManager::addPermission(android::content::pm::PermissionInfo arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -1361,16 +1353,6 @@ namespace android::content::pm
 			arg2
 		);
 	}
-	jboolean PackageManager::addWhitelistedRestrictedPermission(const QString &arg0, const QString &arg1, jint arg2)
-	{
-		return __thiz.callMethod<jboolean>(
-			"addWhitelistedRestrictedPermission",
-			"(Ljava/lang/String;Ljava/lang/String;I)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2
-		);
-	}
 	jboolean PackageManager::canRequestPackageInstalls()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -1395,15 +1377,6 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	jint PackageManager::checkPermission(const QString &arg0, const QString &arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"checkPermission",
-			"(Ljava/lang/String;Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	jint PackageManager::checkSignatures(jint arg0, jint arg1)
 	{
 		return __thiz.callMethod<jint>(
@@ -1422,15 +1395,6 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	jint PackageManager::checkSignatures(const QString &arg0, const QString &arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"checkSignatures",
-			"(Ljava/lang/String;Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	void PackageManager::clearInstantAppCookie()
 	{
 		__thiz.callMethod<void>(
@@ -1444,14 +1408,6 @@ namespace android::content::pm
 			"clearPackagePreferredActivities",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void PackageManager::clearPackagePreferredActivities(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"clearPackagePreferredActivities",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jarray PackageManager::currentToCanonicalPackageNames(jarray arg0)
@@ -1553,28 +1509,12 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	QAndroidJniObject PackageManager::getApplicationBanner(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getApplicationBanner",
-			"(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jint PackageManager::getApplicationEnabledSetting(jstring arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getApplicationEnabledSetting",
 			"(Ljava/lang/String;)I",
 			arg0
-		);
-	}
-	jint PackageManager::getApplicationEnabledSetting(const QString &arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getApplicationEnabledSetting",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject PackageManager::getApplicationIcon(android::content::pm::ApplicationInfo arg0)
@@ -1593,29 +1533,12 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	QAndroidJniObject PackageManager::getApplicationIcon(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getApplicationIcon",
-			"(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject PackageManager::getApplicationInfo(jstring arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
 			"getApplicationInfo",
 			"(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;",
 			arg0,
-			arg1
-		);
-	}
-	QAndroidJniObject PackageManager::getApplicationInfo(const QString &arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getApplicationInfo",
-			"(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -1641,14 +1564,6 @@ namespace android::content::pm
 			"getApplicationLogo",
 			"(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;",
 			arg0
-		);
-	}
-	QAndroidJniObject PackageManager::getApplicationLogo(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getApplicationLogo",
-			"(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject PackageManager::getChangedPackages(jint arg0)
@@ -1680,16 +1595,6 @@ namespace android::content::pm
 			"getDrawable",
 			"(Ljava/lang/String;ILandroid/content/pm/ApplicationInfo;)Landroid/graphics/drawable/Drawable;",
 			arg0,
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	QAndroidJniObject PackageManager::getDrawable(const QString &arg0, jint arg1, android::content::pm::ApplicationInfo arg2)
-	{
-		return __thiz.callObjectMethod(
-			"getDrawable",
-			"(Ljava/lang/String;ILandroid/content/pm/ApplicationInfo;)Landroid/graphics/drawable/Drawable;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2.__jniObject().object()
 		);
@@ -1726,14 +1631,6 @@ namespace android::content::pm
 			arg0
 		).object<jstring>();
 	}
-	jstring PackageManager::getInstallerPackageName(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getInstallerPackageName",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
 	jbyteArray PackageManager::getInstantAppCookie()
 	{
 		return __thiz.callObjectMethod(
@@ -1765,14 +1662,6 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	QAndroidJniObject PackageManager::getLaunchIntentForPackage(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getLaunchIntentForPackage",
-			"(Ljava/lang/String;)Landroid/content/Intent;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject PackageManager::getLeanbackLaunchIntentForPackage(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -1781,29 +1670,12 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	QAndroidJniObject PackageManager::getLeanbackLaunchIntentForPackage(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getLeanbackLaunchIntentForPackage",
-			"(Ljava/lang/String;)Landroid/content/Intent;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject PackageManager::getModuleInfo(jstring arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
 			"getModuleInfo",
 			"(Ljava/lang/String;I)Landroid/content/pm/ModuleInfo;",
 			arg0,
-			arg1
-		);
-	}
-	QAndroidJniObject PackageManager::getModuleInfo(const QString &arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getModuleInfo",
-			"(Ljava/lang/String;I)Landroid/content/pm/ModuleInfo;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -1824,15 +1696,6 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	QAndroidJniObject PackageManager::getPackageArchiveInfo(const QString &arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getPackageArchiveInfo",
-			"(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	jintArray PackageManager::getPackageGids(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -1841,29 +1704,12 @@ namespace android::content::pm
 			arg0
 		).object<jintArray>();
 	}
-	jintArray PackageManager::getPackageGids(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getPackageGids",
-			"(Ljava/lang/String;)[I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jintArray>();
-	}
 	jintArray PackageManager::getPackageGids(jstring arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
 			"getPackageGids",
 			"(Ljava/lang/String;I)[I",
 			arg0,
-			arg1
-		).object<jintArray>();
-	}
-	jintArray PackageManager::getPackageGids(const QString &arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getPackageGids",
-			"(Ljava/lang/String;I)[I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		).object<jintArray>();
 	}
@@ -1885,15 +1731,6 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	QAndroidJniObject PackageManager::getPackageInfo(const QString &arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getPackageInfo",
-			"(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	QAndroidJniObject PackageManager::getPackageInstaller()
 	{
 		return __thiz.callObjectMethod(
@@ -1907,15 +1744,6 @@ namespace android::content::pm
 			"getPackageUid",
 			"(Ljava/lang/String;I)I",
 			arg0,
-			arg1
-		);
-	}
-	jint PackageManager::getPackageUid(const QString &arg0, jint arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"getPackageUid",
-			"(Ljava/lang/String;I)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -1945,30 +1773,12 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	QAndroidJniObject PackageManager::getPermissionGroupInfo(const QString &arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getPermissionGroupInfo",
-			"(Ljava/lang/String;I)Landroid/content/pm/PermissionGroupInfo;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	QAndroidJniObject PackageManager::getPermissionInfo(jstring arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
 			"getPermissionInfo",
 			"(Ljava/lang/String;I)Landroid/content/pm/PermissionInfo;",
 			arg0,
-			arg1
-		);
-	}
-	QAndroidJniObject PackageManager::getPermissionInfo(const QString &arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getPermissionInfo",
-			"(Ljava/lang/String;I)Landroid/content/pm/PermissionInfo;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -1980,16 +1790,6 @@ namespace android::content::pm
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2
-		);
-	}
-	jint PackageManager::getPreferredActivities(__JniBaseClass arg0, __JniBaseClass arg1, const QString &arg2)
-	{
-		return __thiz.callMethod<jint>(
-			"getPreferredActivities",
-			"(Ljava/util/List;Ljava/util/List;Ljava/lang/String;)I",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	QAndroidJniObject PackageManager::getPreferredPackages(jint arg0)
@@ -2042,14 +1842,6 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	QAndroidJniObject PackageManager::getResourcesForApplication(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getResourcesForApplication",
-			"(Ljava/lang/String;)Landroid/content/res/Resources;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject PackageManager::getServiceInfo(android::content::ComponentName arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -2082,14 +1874,6 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	jboolean PackageManager::getSyntheticAppDetailsActivityEnabled(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"getSyntheticAppDetailsActivityEnabled",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray PackageManager::getSystemAvailableFeatures()
 	{
 		return __thiz.callObjectMethod(
@@ -2110,16 +1894,6 @@ namespace android::content::pm
 			"getText",
 			"(Ljava/lang/String;ILandroid/content/pm/ApplicationInfo;)Ljava/lang/CharSequence;",
 			arg0,
-			arg1,
-			arg2.__jniObject().object()
-		).object<jstring>();
-	}
-	jstring PackageManager::getText(const QString &arg0, jint arg1, android::content::pm::ApplicationInfo arg2)
-	{
-		return __thiz.callObjectMethod(
-			"getText",
-			"(Ljava/lang/String;ILandroid/content/pm/ApplicationInfo;)Ljava/lang/CharSequence;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2.__jniObject().object()
 		).object<jstring>();
@@ -2153,15 +1927,6 @@ namespace android::content::pm
 			arg1.__jniObject().object()
 		).object<jstring>();
 	}
-	jstring PackageManager::getUserBadgedLabel(const QString &arg0, android::os::UserHandle arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getUserBadgedLabel",
-			"(Ljava/lang/CharSequence;Landroid/os/UserHandle;)Ljava/lang/CharSequence;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		).object<jstring>();
-	}
 	QAndroidJniObject PackageManager::getWhitelistedRestrictedPermissions(jstring arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -2171,31 +1936,12 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	QAndroidJniObject PackageManager::getWhitelistedRestrictedPermissions(const QString &arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getWhitelistedRestrictedPermissions",
-			"(Ljava/lang/String;I)Ljava/util/Set;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	QAndroidJniObject PackageManager::getXml(jstring arg0, jint arg1, android::content::pm::ApplicationInfo arg2)
 	{
 		return __thiz.callObjectMethod(
 			"getXml",
 			"(Ljava/lang/String;ILandroid/content/pm/ApplicationInfo;)Landroid/content/res/XmlResourceParser;",
 			arg0,
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	QAndroidJniObject PackageManager::getXml(const QString &arg0, jint arg1, android::content::pm::ApplicationInfo arg2)
-	{
-		return __thiz.callObjectMethod(
-			"getXml",
-			"(Ljava/lang/String;ILandroid/content/pm/ApplicationInfo;)Landroid/content/res/XmlResourceParser;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2.__jniObject().object()
 		);
@@ -2220,16 +1966,6 @@ namespace android::content::pm
 			arg2
 		);
 	}
-	jboolean PackageManager::hasSigningCertificate(const QString &arg0, jbyteArray arg1, jint arg2)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasSigningCertificate",
-			"(Ljava/lang/String;[BI)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2
-		);
-	}
 	jboolean PackageManager::hasSystemFeature(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -2238,29 +1974,12 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	jboolean PackageManager::hasSystemFeature(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasSystemFeature",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jboolean PackageManager::hasSystemFeature(jstring arg0, jint arg1)
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasSystemFeature",
 			"(Ljava/lang/String;I)Z",
 			arg0,
-			arg1
-		);
-	}
-	jboolean PackageManager::hasSystemFeature(const QString &arg0, jint arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasSystemFeature",
-			"(Ljava/lang/String;I)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -2286,14 +2005,6 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	jboolean PackageManager::isInstantApp(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isInstantApp",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jboolean PackageManager::isPackageSuspended()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -2309,14 +2020,6 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	jboolean PackageManager::isPackageSuspended(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isPackageSuspended",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jboolean PackageManager::isPermissionRevokedByPolicy(jstring arg0, jstring arg1)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -2324,15 +2027,6 @@ namespace android::content::pm
 			"(Ljava/lang/String;Ljava/lang/String;)Z",
 			arg0,
 			arg1
-		);
-	}
-	jboolean PackageManager::isPermissionRevokedByPolicy(const QString &arg0, const QString &arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isPermissionRevokedByPolicy",
-			"(Ljava/lang/String;Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	jboolean PackageManager::isSafeMode()
@@ -2361,31 +2055,12 @@ namespace android::content::pm
 			arg2
 		);
 	}
-	QAndroidJniObject PackageManager::queryContentProviders(const QString &arg0, jint arg1, jint arg2)
-	{
-		return __thiz.callObjectMethod(
-			"queryContentProviders",
-			"(Ljava/lang/String;II)Ljava/util/List;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2
-		);
-	}
 	QAndroidJniObject PackageManager::queryInstrumentation(jstring arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
 			"queryInstrumentation",
 			"(Ljava/lang/String;I)Ljava/util/List;",
 			arg0,
-			arg1
-		);
-	}
-	QAndroidJniObject PackageManager::queryInstrumentation(const QString &arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"queryInstrumentation",
-			"(Ljava/lang/String;I)Ljava/util/List;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -2436,29 +2111,12 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	QAndroidJniObject PackageManager::queryPermissionsByGroup(const QString &arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"queryPermissionsByGroup",
-			"(Ljava/lang/String;I)Ljava/util/List;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	void PackageManager::removePackageFromPreferred(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"removePackageFromPreferred",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void PackageManager::removePackageFromPreferred(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"removePackageFromPreferred",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void PackageManager::removePermission(jstring arg0)
@@ -2469,14 +2127,6 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	void PackageManager::removePermission(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"removePermission",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jboolean PackageManager::removeWhitelistedRestrictedPermission(jstring arg0, jstring arg1, jint arg2)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -2484,16 +2134,6 @@ namespace android::content::pm
 			"(Ljava/lang/String;Ljava/lang/String;I)Z",
 			arg0,
 			arg1,
-			arg2
-		);
-	}
-	jboolean PackageManager::removeWhitelistedRestrictedPermission(const QString &arg0, const QString &arg1, jint arg2)
-	{
-		return __thiz.callMethod<jboolean>(
-			"removeWhitelistedRestrictedPermission",
-			"(Ljava/lang/String;Ljava/lang/String;I)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}
@@ -2515,15 +2155,6 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	QAndroidJniObject PackageManager::resolveContentProvider(const QString &arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"resolveContentProvider",
-			"(Ljava/lang/String;I)Landroid/content/pm/ProviderInfo;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	QAndroidJniObject PackageManager::resolveService(android::content::Intent arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -2542,31 +2173,12 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	void PackageManager::setApplicationCategoryHint(const QString &arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"setApplicationCategoryHint",
-			"(Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	void PackageManager::setApplicationEnabledSetting(jstring arg0, jint arg1, jint arg2)
 	{
 		__thiz.callMethod<void>(
 			"setApplicationEnabledSetting",
 			"(Ljava/lang/String;II)V",
 			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void PackageManager::setApplicationEnabledSetting(const QString &arg0, jint arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"setApplicationEnabledSetting",
-			"(Ljava/lang/String;II)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2
 		);
@@ -2588,15 +2200,6 @@ namespace android::content::pm
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	void PackageManager::setInstallerPackageName(const QString &arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"setInstallerPackageName",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void PackageManager::updateInstantAppCookie(jbyteArray arg0)

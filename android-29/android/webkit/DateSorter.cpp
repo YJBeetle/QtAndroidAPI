@@ -14,7 +14,7 @@ namespace android::webkit
 	
 	DateSorter::DateSorter(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DateSorter::DateSorter(android::content::Context &arg0)
+	DateSorter::DateSorter(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.webkit.DateSorter",

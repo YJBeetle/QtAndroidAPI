@@ -12,12 +12,11 @@ namespace java::util
 		
 		UUID(QAndroidJniObject obj);
 		// Constructors
-		UUID(jlong &arg0, jlong &arg1);
+		UUID(jlong arg0, jlong arg1);
 		UUID() = default;
 		
 		// Methods
 		static QAndroidJniObject fromString(jstring arg0);
-		static QAndroidJniObject fromString(const QString &arg0);
 		static QAndroidJniObject nameUUIDFromBytes(jbyteArray arg0);
 		static QAndroidJniObject randomUUID();
 		jint clockSequence();

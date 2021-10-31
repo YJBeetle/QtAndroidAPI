@@ -22,9 +22,8 @@ namespace java::io
 		
 		UncheckedIOException(QAndroidJniObject obj);
 		// Constructors
-		UncheckedIOException(java::io::IOException &arg0);
-		UncheckedIOException(jstring &arg0, java::io::IOException &arg1);
-		UncheckedIOException(const QString &arg0, java::io::IOException &arg1);
+		UncheckedIOException(java::io::IOException arg0);
+		UncheckedIOException(jstring arg0, java::io::IOException arg1);
 		UncheckedIOException() = default;
 		
 		// Methods

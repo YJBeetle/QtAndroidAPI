@@ -57,14 +57,5 @@ namespace android::provider
 			arg0
 		);
 	}
-	QAndroidJniObject MediaStore_Video_Media::getContentUri(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.MediaStore$Video$Media",
-			"getContentUri",
-			"(Ljava/lang/String;)Landroid/net/Uri;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 } // namespace android::provider
 

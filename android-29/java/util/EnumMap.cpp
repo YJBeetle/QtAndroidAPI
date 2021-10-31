@@ -9,7 +9,7 @@ namespace java::util
 	
 	EnumMap::EnumMap(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	EnumMap::EnumMap(jclass &arg0)
+	EnumMap::EnumMap(jclass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.EnumMap",
@@ -25,7 +25,7 @@ namespace java::util
 			arg0.__jniObject().object()
 		);
 	}
-	EnumMap::EnumMap(__JniBaseClass &arg0)
+	EnumMap::EnumMap(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.EnumMap",

@@ -84,14 +84,6 @@ namespace android::printservice
 			arg0
 		);
 	}
-	QAndroidJniObject PrintService::generatePrinterId(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"generatePrinterId",
-			"(Ljava/lang/String;)Landroid/print/PrinterId;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject PrintService::getActivePrintJobs()
 	{
 		return __thiz.callObjectMethod(

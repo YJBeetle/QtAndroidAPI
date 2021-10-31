@@ -34,9 +34,7 @@ namespace android::media::tv
 		// Methods
 		QAndroidJniObject onBind(android::content::Intent arg0);
 		QAndroidJniObject onCreateRecordingSession(jstring arg0);
-		QAndroidJniObject onCreateRecordingSession(const QString &arg0);
 		QAndroidJniObject onCreateSession(jstring arg0);
-		QAndroidJniObject onCreateSession(const QString &arg0);
 	};
 } // namespace android::media::tv
 

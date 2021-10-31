@@ -18,8 +18,8 @@ namespace android::view::animation
 		AnticipateInterpolator(QAndroidJniObject obj);
 		// Constructors
 		AnticipateInterpolator();
-		AnticipateInterpolator(jfloat &arg0);
-		AnticipateInterpolator(android::content::Context &arg0, __JniBaseClass &arg1);
+		AnticipateInterpolator(jfloat arg0);
+		AnticipateInterpolator(android::content::Context arg0, __JniBaseClass arg1);
 		
 		// Methods
 		jfloat getInterpolation(jfloat arg0);

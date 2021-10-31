@@ -58,7 +58,7 @@ namespace org::apache::http::conn::ssl
 	
 	SSLSocketFactory::SSLSocketFactory(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SSLSocketFactory::SSLSocketFactory(java::security::KeyStore &arg0)
+	SSLSocketFactory::SSLSocketFactory(java::security::KeyStore arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"org.apache.http.conn.ssl.SSLSocketFactory",
@@ -66,7 +66,7 @@ namespace org::apache::http::conn::ssl
 			arg0.__jniObject().object()
 		);
 	}
-	SSLSocketFactory::SSLSocketFactory(java::security::KeyStore &arg0, jstring &arg1)
+	SSLSocketFactory::SSLSocketFactory(java::security::KeyStore arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"org.apache.http.conn.ssl.SSLSocketFactory",
@@ -75,16 +75,7 @@ namespace org::apache::http::conn::ssl
 			arg1
 		);
 	}
-	SSLSocketFactory::SSLSocketFactory(java::security::KeyStore &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"org.apache.http.conn.ssl.SSLSocketFactory",
-			"(Ljava/security/KeyStore;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	SSLSocketFactory::SSLSocketFactory(java::security::KeyStore &arg0, jstring &arg1, java::security::KeyStore &arg2)
+	SSLSocketFactory::SSLSocketFactory(java::security::KeyStore arg0, jstring arg1, java::security::KeyStore arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"org.apache.http.conn.ssl.SSLSocketFactory",
@@ -94,17 +85,7 @@ namespace org::apache::http::conn::ssl
 			arg2.__jniObject().object()
 		);
 	}
-	SSLSocketFactory::SSLSocketFactory(java::security::KeyStore &arg0, const QString &arg1, java::security::KeyStore &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"org.apache.http.conn.ssl.SSLSocketFactory",
-			"(Ljava/security/KeyStore;Ljava/lang/String;Ljava/security/KeyStore;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object()
-		);
-	}
-	SSLSocketFactory::SSLSocketFactory(jstring &arg0, java::security::KeyStore &arg1, jstring &arg2, java::security::KeyStore &arg3, java::security::SecureRandom &arg4, __JniBaseClass &arg5)
+	SSLSocketFactory::SSLSocketFactory(jstring arg0, java::security::KeyStore arg1, jstring arg2, java::security::KeyStore arg3, java::security::SecureRandom arg4, __JniBaseClass arg5)
 	{
 		__thiz = QAndroidJniObject(
 			"org.apache.http.conn.ssl.SSLSocketFactory",
@@ -112,19 +93,6 @@ namespace org::apache::http::conn::ssl
 			arg0,
 			arg1.__jniObject().object(),
 			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
-			arg5.__jniObject().object()
-		);
-	}
-	SSLSocketFactory::SSLSocketFactory(const QString &arg0, java::security::KeyStore &arg1, const QString &arg2, java::security::KeyStore &arg3, java::security::SecureRandom &arg4, __JniBaseClass &arg5)
-	{
-		__thiz = QAndroidJniObject(
-			"org.apache.http.conn.ssl.SSLSocketFactory",
-			"(Ljava/lang/String;Ljava/security/KeyStore;Ljava/lang/String;Ljava/security/KeyStore;Ljava/security/SecureRandom;Lorg/apache/http/conn/scheme/HostNameResolver;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
 			arg5.__jniObject().object()
@@ -153,19 +121,6 @@ namespace org::apache::http::conn::ssl
 			arg5.__jniObject().object()
 		);
 	}
-	QAndroidJniObject SSLSocketFactory::connectSocket(java::net::Socket arg0, const QString &arg1, jint arg2, java::net::InetAddress arg3, jint arg4, __JniBaseClass arg5)
-	{
-		return __thiz.callObjectMethod(
-			"connectSocket",
-			"(Ljava/net/Socket;Ljava/lang/String;ILjava/net/InetAddress;ILorg/apache/http/params/HttpParams;)Ljava/net/Socket;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2,
-			arg3.__jniObject().object(),
-			arg4,
-			arg5.__jniObject().object()
-		);
-	}
 	QAndroidJniObject SSLSocketFactory::createSocket()
 	{
 		return __thiz.callObjectMethod(
@@ -180,17 +135,6 @@ namespace org::apache::http::conn::ssl
 			"(Ljava/net/Socket;Ljava/lang/String;IZ)Ljava/net/Socket;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2,
-			arg3
-		);
-	}
-	QAndroidJniObject SSLSocketFactory::createSocket(java::net::Socket arg0, const QString &arg1, jint arg2, jboolean arg3)
-	{
-		return __thiz.callObjectMethod(
-			"createSocket",
-			"(Ljava/net/Socket;Ljava/lang/String;IZ)Ljava/net/Socket;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2,
 			arg3
 		);

@@ -20,8 +20,8 @@ namespace android::net
 		
 		SSLSessionCache(QAndroidJniObject obj);
 		// Constructors
-		SSLSessionCache(android::content::Context &arg0);
-		SSLSessionCache(java::io::File &arg0);
+		SSLSessionCache(android::content::Context arg0);
+		SSLSessionCache(java::io::File arg0);
 		SSLSessionCache() = default;
 		
 		// Methods

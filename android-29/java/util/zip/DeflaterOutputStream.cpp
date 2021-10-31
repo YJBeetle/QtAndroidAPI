@@ -8,7 +8,7 @@ namespace java::util::zip
 	
 	DeflaterOutputStream::DeflaterOutputStream(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DeflaterOutputStream::DeflaterOutputStream(java::io::OutputStream &arg0)
+	DeflaterOutputStream::DeflaterOutputStream(java::io::OutputStream arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.zip.DeflaterOutputStream",
@@ -16,7 +16,7 @@ namespace java::util::zip
 			arg0.__jniObject().object()
 		);
 	}
-	DeflaterOutputStream::DeflaterOutputStream(java::io::OutputStream &arg0, jboolean &arg1)
+	DeflaterOutputStream::DeflaterOutputStream(java::io::OutputStream arg0, jboolean arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.zip.DeflaterOutputStream",
@@ -25,7 +25,7 @@ namespace java::util::zip
 			arg1
 		);
 	}
-	DeflaterOutputStream::DeflaterOutputStream(java::io::OutputStream &arg0, java::util::zip::Deflater &arg1)
+	DeflaterOutputStream::DeflaterOutputStream(java::io::OutputStream arg0, java::util::zip::Deflater arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.zip.DeflaterOutputStream",
@@ -34,7 +34,7 @@ namespace java::util::zip
 			arg1.__jniObject().object()
 		);
 	}
-	DeflaterOutputStream::DeflaterOutputStream(java::io::OutputStream &arg0, java::util::zip::Deflater &arg1, jboolean &arg2)
+	DeflaterOutputStream::DeflaterOutputStream(java::io::OutputStream arg0, java::util::zip::Deflater arg1, jboolean arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.zip.DeflaterOutputStream",
@@ -44,7 +44,7 @@ namespace java::util::zip
 			arg2
 		);
 	}
-	DeflaterOutputStream::DeflaterOutputStream(java::io::OutputStream &arg0, java::util::zip::Deflater &arg1, jint &arg2)
+	DeflaterOutputStream::DeflaterOutputStream(java::io::OutputStream arg0, java::util::zip::Deflater arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.zip.DeflaterOutputStream",
@@ -54,7 +54,7 @@ namespace java::util::zip
 			arg2
 		);
 	}
-	DeflaterOutputStream::DeflaterOutputStream(java::io::OutputStream &arg0, java::util::zip::Deflater &arg1, jint &arg2, jboolean &arg3)
+	DeflaterOutputStream::DeflaterOutputStream(java::io::OutputStream arg0, java::util::zip::Deflater arg1, jint arg2, jboolean arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.zip.DeflaterOutputStream",

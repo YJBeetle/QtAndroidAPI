@@ -67,28 +67,12 @@ namespace android::view::textclassifier
 			arg0
 		);
 	}
-	QAndroidJniObject TextClassifierEvent_Builder::setModelName(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setModelName",
-			"(Ljava/lang/String;)Landroid/view/textclassifier/TextClassifierEvent$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject TextClassifierEvent_Builder::setResultId(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setResultId",
 			"(Ljava/lang/String;)Landroid/view/textclassifier/TextClassifierEvent$Builder;",
 			arg0
-		);
-	}
-	QAndroidJniObject TextClassifierEvent_Builder::setResultId(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setResultId",
-			"(Ljava/lang/String;)Landroid/view/textclassifier/TextClassifierEvent$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject TextClassifierEvent_Builder::setScores(jfloatArray arg0)

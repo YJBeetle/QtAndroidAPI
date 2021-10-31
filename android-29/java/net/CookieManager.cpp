@@ -15,7 +15,7 @@ namespace java::net
 			"()V"
 		);
 	}
-	CookieManager::CookieManager(__JniBaseClass &arg0, __JniBaseClass &arg1)
+	CookieManager::CookieManager(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.CookieManager",

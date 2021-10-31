@@ -273,15 +273,6 @@ namespace android::view::inputmethod
 			arg1
 		);
 	}
-	void EditorInfo::dump(__JniBaseClass arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Landroid/util/Printer;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	void EditorInfo::makeCompatible(jint arg0)
 	{
 		__thiz.callMethod<void>(

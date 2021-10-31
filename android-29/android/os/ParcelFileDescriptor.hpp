@@ -61,12 +61,10 @@ namespace android::os
 		static QAndroidJniObject open(java::io::File arg0, jint arg1);
 		static QAndroidJniObject open(java::io::File arg0, jint arg1, android::os::Handler arg2, __JniBaseClass arg3);
 		static jint parseMode(jstring arg0);
-		static jint parseMode(const QString &arg0);
 		jboolean canDetectErrors();
 		void checkError();
 		void close();
 		void closeWithError(jstring arg0);
-		void closeWithError(const QString &arg0);
 		jint describeContents();
 		jint detachFd();
 		QAndroidJniObject dup();

@@ -49,15 +49,6 @@ namespace android::graphics
 			arg0
 		);
 	}
-	QAndroidJniObject ColorSpace_Model::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.ColorSpace$Model",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/graphics/ColorSpace$Model;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray ColorSpace_Model::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

@@ -42,14 +42,6 @@ namespace android::companion
 			arg0
 		);
 	}
-	QAndroidJniObject BluetoothDeviceFilter_Builder::setAddress(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setAddress",
-			"(Ljava/lang/String;)Landroid/companion/BluetoothDeviceFilter$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject BluetoothDeviceFilter_Builder::setNamePattern(java::util::regex::Pattern arg0)
 	{
 		return __thiz.callObjectMethod(

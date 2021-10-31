@@ -13,7 +13,7 @@ namespace android::widget
 	
 	TabHost::TabHost(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	TabHost::TabHost(android::content::Context &arg0)
+	TabHost::TabHost(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.TabHost",
@@ -21,7 +21,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	TabHost::TabHost(android::content::Context &arg0, __JniBaseClass &arg1)
+	TabHost::TabHost(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.TabHost",
@@ -30,7 +30,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	TabHost::TabHost(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	TabHost::TabHost(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.TabHost",
@@ -40,7 +40,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	TabHost::TabHost(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	TabHost::TabHost(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.TabHost",
@@ -141,14 +141,6 @@ namespace android::widget
 			arg0
 		);
 	}
-	QAndroidJniObject TabHost::newTabSpec(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"newTabSpec",
-			"(Ljava/lang/String;)Landroid/widget/TabHost$TabSpec;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void TabHost::onTouchModeChanged(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
@@ -171,14 +163,6 @@ namespace android::widget
 			"setCurrentTabByTag",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void TabHost::setCurrentTabByTag(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setCurrentTabByTag",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void TabHost::setOnTabChangedListener(__JniBaseClass arg0)

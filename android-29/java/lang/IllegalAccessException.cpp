@@ -13,20 +13,12 @@ namespace java::lang
 			"()V"
 		);
 	}
-	IllegalAccessException::IllegalAccessException(jstring &arg0)
+	IllegalAccessException::IllegalAccessException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.IllegalAccessException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	IllegalAccessException::IllegalAccessException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.IllegalAccessException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

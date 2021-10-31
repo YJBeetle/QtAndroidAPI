@@ -13,7 +13,7 @@ namespace android::renderscript
 		Matrix2f(QAndroidJniObject obj);
 		// Constructors
 		Matrix2f();
-		Matrix2f(jfloatArray &arg0);
+		Matrix2f(jfloatArray arg0);
 		
 		// Methods
 		jfloat get(jint arg0, jint arg1);

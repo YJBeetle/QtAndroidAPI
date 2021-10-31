@@ -224,9 +224,7 @@ namespace android::opengl
 		static void glGetProgramPipelineiv(jint arg0, jint arg1, java::nio::IntBuffer arg2);
 		static void glGetProgramPipelineiv(jint arg0, jint arg1, jintArray arg2, jint arg3);
 		static jint glGetProgramResourceIndex(jint arg0, jint arg1, jstring arg2);
-		static jint glGetProgramResourceIndex(jint arg0, jint arg1, const QString &arg2);
 		static jint glGetProgramResourceLocation(jint arg0, jint arg1, jstring arg2);
-		static jint glGetProgramResourceLocation(jint arg0, jint arg1, const QString &arg2);
 		static jstring glGetProgramResourceName(jint arg0, jint arg1, jint arg2);
 		static void glGetProgramResourceiv(jint arg0, jint arg1, jint arg2, jint arg3, java::nio::IntBuffer arg4, jint arg5, java::nio::IntBuffer arg6, java::nio::IntBuffer arg7);
 		static void glGetProgramResourceiv(jint arg0, jint arg1, jint arg2, jint arg3, jintArray arg4, jint arg5, jint arg6, jintArray arg7, jint arg8, jintArray arg9, jint arg10);

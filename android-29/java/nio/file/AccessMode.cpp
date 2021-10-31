@@ -41,15 +41,6 @@ namespace java::nio::file
 			arg0
 		);
 	}
-	QAndroidJniObject AccessMode::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.nio.file.AccessMode",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/nio/file/AccessMode;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray AccessMode::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

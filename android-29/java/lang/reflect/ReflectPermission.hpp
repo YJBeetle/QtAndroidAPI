@@ -14,10 +14,8 @@ namespace java::lang::reflect
 		
 		ReflectPermission(QAndroidJniObject obj);
 		// Constructors
-		ReflectPermission(jstring &arg0);
-		ReflectPermission(const QString &arg0);
-		ReflectPermission(jstring &arg0, jstring &arg1);
-		ReflectPermission(const QString &arg0, const QString &arg1);
+		ReflectPermission(jstring arg0);
+		ReflectPermission(jstring arg0, jstring arg1);
 		ReflectPermission() = default;
 		
 		// Methods

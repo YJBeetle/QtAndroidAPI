@@ -19,7 +19,7 @@ namespace android::content
 	
 	AbstractThreadedSyncAdapter::AbstractThreadedSyncAdapter(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AbstractThreadedSyncAdapter::AbstractThreadedSyncAdapter(android::content::Context &arg0, jboolean &arg1)
+	AbstractThreadedSyncAdapter::AbstractThreadedSyncAdapter(android::content::Context arg0, jboolean arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.AbstractThreadedSyncAdapter",
@@ -28,7 +28,7 @@ namespace android::content
 			arg1
 		);
 	}
-	AbstractThreadedSyncAdapter::AbstractThreadedSyncAdapter(android::content::Context &arg0, jboolean &arg1, jboolean &arg2)
+	AbstractThreadedSyncAdapter::AbstractThreadedSyncAdapter(android::content::Context arg0, jboolean arg1, jboolean arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.AbstractThreadedSyncAdapter",
@@ -66,18 +66,6 @@ namespace android::content
 			arg4.__jniObject().object()
 		);
 	}
-	void AbstractThreadedSyncAdapter::onPerformSync(android::accounts::Account arg0, android::os::Bundle arg1, const QString &arg2, android::content::ContentProviderClient arg3, android::content::SyncResult arg4)
-	{
-		__thiz.callMethod<void>(
-			"onPerformSync",
-			"(Landroid/accounts/Account;Landroid/os/Bundle;Ljava/lang/String;Landroid/content/ContentProviderClient;Landroid/content/SyncResult;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object()
-		);
-	}
 	void AbstractThreadedSyncAdapter::onSecurityException(android::accounts::Account arg0, android::os::Bundle arg1, jstring arg2, android::content::SyncResult arg3)
 	{
 		__thiz.callMethod<void>(
@@ -86,17 +74,6 @@ namespace android::content
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3.__jniObject().object()
-		);
-	}
-	void AbstractThreadedSyncAdapter::onSecurityException(android::accounts::Account arg0, android::os::Bundle arg1, const QString &arg2, android::content::SyncResult arg3)
-	{
-		__thiz.callMethod<void>(
-			"onSecurityException",
-			"(Landroid/accounts/Account;Landroid/os/Bundle;Ljava/lang/String;Landroid/content/SyncResult;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
 			arg3.__jniObject().object()
 		);
 	}

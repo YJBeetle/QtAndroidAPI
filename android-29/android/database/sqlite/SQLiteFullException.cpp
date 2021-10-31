@@ -13,20 +13,12 @@ namespace android::database::sqlite
 			"()V"
 		);
 	}
-	SQLiteFullException::SQLiteFullException(jstring &arg0)
+	SQLiteFullException::SQLiteFullException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.database.sqlite.SQLiteFullException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	SQLiteFullException::SQLiteFullException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.database.sqlite.SQLiteFullException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

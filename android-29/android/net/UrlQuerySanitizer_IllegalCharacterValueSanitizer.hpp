@@ -34,12 +34,11 @@ namespace android::net
 		
 		UrlQuerySanitizer_IllegalCharacterValueSanitizer(QAndroidJniObject obj);
 		// Constructors
-		UrlQuerySanitizer_IllegalCharacterValueSanitizer(jint &arg0);
+		UrlQuerySanitizer_IllegalCharacterValueSanitizer(jint arg0);
 		UrlQuerySanitizer_IllegalCharacterValueSanitizer() = default;
 		
 		// Methods
 		jstring sanitize(jstring arg0);
-		jstring sanitize(const QString &arg0);
 	};
 } // namespace android::net
 

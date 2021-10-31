@@ -39,7 +39,7 @@ namespace android::widget
 	
 	AdapterView::AdapterView(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AdapterView::AdapterView(android::content::Context &arg0)
+	AdapterView::AdapterView(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.AdapterView",
@@ -47,7 +47,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	AdapterView::AdapterView(android::content::Context &arg0, __JniBaseClass &arg1)
+	AdapterView::AdapterView(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.AdapterView",
@@ -56,7 +56,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	AdapterView::AdapterView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	AdapterView::AdapterView(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.AdapterView",
@@ -66,7 +66,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	AdapterView::AdapterView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	AdapterView::AdapterView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.AdapterView",

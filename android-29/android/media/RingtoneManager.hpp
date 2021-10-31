@@ -48,8 +48,8 @@ namespace android::media
 		
 		RingtoneManager(QAndroidJniObject obj);
 		// Constructors
-		RingtoneManager(android::app::Activity &arg0);
-		RingtoneManager(android::content::Context &arg0);
+		RingtoneManager(android::app::Activity arg0);
+		RingtoneManager(android::content::Context arg0);
 		RingtoneManager() = default;
 		
 		// Methods

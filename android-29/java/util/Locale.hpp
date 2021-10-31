@@ -56,12 +56,9 @@ namespace java::util
 		
 		Locale(QAndroidJniObject obj);
 		// Constructors
-		Locale(jstring &arg0);
-		Locale(const QString &arg0);
-		Locale(jstring &arg0, jstring &arg1);
-		Locale(const QString &arg0, const QString &arg1);
-		Locale(jstring &arg0, jstring &arg1, jstring &arg2);
-		Locale(const QString &arg0, const QString &arg1, const QString &arg2);
+		Locale(jstring arg0);
+		Locale(jstring arg0, jstring arg1);
+		Locale(jstring arg0, jstring arg1, jstring arg2);
 		Locale() = default;
 		
 		// Methods
@@ -70,7 +67,6 @@ namespace java::util
 		static QAndroidJniObject filterTags(__JniBaseClass arg0, __JniBaseClass arg1);
 		static QAndroidJniObject filterTags(__JniBaseClass arg0, __JniBaseClass arg1, java::util::Locale_FilteringMode arg2);
 		static QAndroidJniObject forLanguageTag(jstring arg0);
-		static QAndroidJniObject forLanguageTag(const QString &arg0);
 		static jarray getAvailableLocales();
 		static QAndroidJniObject getDefault();
 		static QAndroidJniObject getDefault(java::util::Locale_Category arg0);
@@ -103,7 +99,6 @@ namespace java::util
 		QAndroidJniObject getUnicodeLocaleAttributes();
 		QAndroidJniObject getUnicodeLocaleKeys();
 		jstring getUnicodeLocaleType(jstring arg0);
-		jstring getUnicodeLocaleType(const QString &arg0);
 		jstring getVariant();
 		jboolean hasExtensions();
 		jint hashCode();

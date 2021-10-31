@@ -17,7 +17,7 @@ namespace android::animation
 		RectEvaluator(QAndroidJniObject obj);
 		// Constructors
 		RectEvaluator();
-		RectEvaluator(android::graphics::Rect &arg0);
+		RectEvaluator(android::graphics::Rect arg0);
 		
 		// Methods
 		QAndroidJniObject evaluate(jfloat arg0, android::graphics::Rect arg1, android::graphics::Rect arg2);

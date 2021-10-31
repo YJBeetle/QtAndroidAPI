@@ -21,7 +21,7 @@ namespace android::media::audiofx
 	
 	BassBoost::BassBoost(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	BassBoost::BassBoost(jint &arg0, jint &arg1)
+	BassBoost::BassBoost(jint arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.audiofx.BassBoost",

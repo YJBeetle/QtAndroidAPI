@@ -32,9 +32,9 @@ namespace android::widget
 		
 		SlidingDrawer(QAndroidJniObject obj);
 		// Constructors
-		SlidingDrawer(android::content::Context &arg0, __JniBaseClass &arg1);
-		SlidingDrawer(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		SlidingDrawer(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		SlidingDrawer(android::content::Context arg0, __JniBaseClass arg1);
+		SlidingDrawer(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		SlidingDrawer(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		SlidingDrawer() = default;
 		
 		// Methods

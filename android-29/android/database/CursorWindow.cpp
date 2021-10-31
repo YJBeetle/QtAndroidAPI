@@ -16,7 +16,7 @@ namespace android::database
 	
 	CursorWindow::CursorWindow(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	CursorWindow::CursorWindow(jboolean &arg0)
+	CursorWindow::CursorWindow(jboolean arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.database.CursorWindow",
@@ -24,7 +24,7 @@ namespace android::database
 			arg0
 		);
 	}
-	CursorWindow::CursorWindow(jstring &arg0)
+	CursorWindow::CursorWindow(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.database.CursorWindow",
@@ -32,29 +32,12 @@ namespace android::database
 			arg0
 		);
 	}
-	CursorWindow::CursorWindow(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.database.CursorWindow",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	CursorWindow::CursorWindow(jstring &arg0, jlong &arg1)
+	CursorWindow::CursorWindow(jstring arg0, jlong arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.database.CursorWindow",
 			"(Ljava/lang/String;J)V",
 			arg0,
-			arg1
-		);
-	}
-	CursorWindow::CursorWindow(const QString &arg0, jlong &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.database.CursorWindow",
-			"(Ljava/lang/String;J)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -283,16 +266,6 @@ namespace android::database
 			"putString",
 			"(Ljava/lang/String;II)Z",
 			arg0,
-			arg1,
-			arg2
-		);
-	}
-	jboolean CursorWindow::putString(const QString &arg0, jint arg1, jint arg2)
-	{
-		return __thiz.callMethod<jboolean>(
-			"putString",
-			"(Ljava/lang/String;II)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2
 		);

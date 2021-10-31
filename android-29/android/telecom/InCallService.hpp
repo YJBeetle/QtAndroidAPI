@@ -49,7 +49,6 @@ namespace android::telecom
 		void onCallRemoved(android::telecom::Call arg0);
 		void onCanAddCallChanged(jboolean arg0);
 		void onConnectionEvent(android::telecom::Call arg0, jstring arg1, android::os::Bundle arg2);
-		void onConnectionEvent(android::telecom::Call arg0, const QString &arg1, android::os::Bundle arg2);
 		void onSilenceRinger();
 		jboolean onUnbind(android::content::Intent arg0);
 		void requestBluetoothAudio(android::bluetooth::BluetoothDevice arg0);

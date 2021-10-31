@@ -21,13 +21,11 @@ namespace android::app
 		
 		VoiceInteractor_PickOptionRequest_Option(QAndroidJniObject obj);
 		// Constructors
-		VoiceInteractor_PickOptionRequest_Option(jstring &arg0, jint &arg1);
-		VoiceInteractor_PickOptionRequest_Option(const QString &arg0, jint &arg1);
+		VoiceInteractor_PickOptionRequest_Option(jstring arg0, jint arg1);
 		VoiceInteractor_PickOptionRequest_Option() = default;
 		
 		// Methods
 		QAndroidJniObject addSynonym(jstring arg0);
-		QAndroidJniObject addSynonym(const QString &arg0);
 		jint countSynonyms();
 		jint describeContents();
 		QAndroidJniObject getExtras();

@@ -18,7 +18,7 @@ namespace android::system
 	
 	StructTimespec::StructTimespec(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	StructTimespec::StructTimespec(jlong &arg0, jlong &arg1)
+	StructTimespec::StructTimespec(jlong arg0, jlong arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.system.StructTimespec",

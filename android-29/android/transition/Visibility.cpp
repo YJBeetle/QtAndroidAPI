@@ -32,7 +32,7 @@ namespace android::transition
 			"()V"
 		);
 	}
-	Visibility::Visibility(android::content::Context &arg0, __JniBaseClass &arg1)
+	Visibility::Visibility(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.transition.Visibility",

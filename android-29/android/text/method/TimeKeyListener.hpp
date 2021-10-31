@@ -21,7 +21,7 @@ namespace android::text::method
 		TimeKeyListener(QAndroidJniObject obj);
 		// Constructors
 		TimeKeyListener();
-		TimeKeyListener(java::util::Locale &arg0);
+		TimeKeyListener(java::util::Locale arg0);
 		
 		// Methods
 		static QAndroidJniObject getInstance();

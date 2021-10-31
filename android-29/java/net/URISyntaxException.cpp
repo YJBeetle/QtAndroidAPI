@@ -6,7 +6,7 @@ namespace java::net
 	
 	URISyntaxException::URISyntaxException(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	URISyntaxException::URISyntaxException(jstring &arg0, jstring &arg1)
+	URISyntaxException::URISyntaxException(jstring arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.URISyntaxException",
@@ -15,32 +15,13 @@ namespace java::net
 			arg1
 		);
 	}
-	URISyntaxException::URISyntaxException(const QString &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.URISyntaxException",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	URISyntaxException::URISyntaxException(jstring &arg0, jstring &arg1, jint &arg2)
+	URISyntaxException::URISyntaxException(jstring arg0, jstring arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.URISyntaxException",
 			"(Ljava/lang/String;Ljava/lang/String;I)V",
 			arg0,
 			arg1,
-			arg2
-		);
-	}
-	URISyntaxException::URISyntaxException(const QString &arg0, const QString &arg1, jint &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.URISyntaxException",
-			"(Ljava/lang/String;Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}

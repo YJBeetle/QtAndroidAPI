@@ -9,7 +9,7 @@ namespace android::view::textclassifier
 	
 	ConversationActions_Request_Builder::ConversationActions_Request_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ConversationActions_Request_Builder::ConversationActions_Request_Builder(__JniBaseClass &arg0)
+	ConversationActions_Request_Builder::ConversationActions_Request_Builder(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.textclassifier.ConversationActions$Request$Builder",

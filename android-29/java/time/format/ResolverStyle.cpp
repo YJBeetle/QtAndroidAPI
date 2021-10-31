@@ -41,15 +41,6 @@ namespace java::time::format
 			arg0
 		);
 	}
-	QAndroidJniObject ResolverStyle::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.time.format.ResolverStyle",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/time/format/ResolverStyle;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray ResolverStyle::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

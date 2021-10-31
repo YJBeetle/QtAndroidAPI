@@ -7,7 +7,7 @@ namespace android::content
 	
 	Loader_ForceLoadContentObserver::Loader_ForceLoadContentObserver(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Loader_ForceLoadContentObserver::Loader_ForceLoadContentObserver(android::content::Loader &arg0)
+	Loader_ForceLoadContentObserver::Loader_ForceLoadContentObserver(android::content::Loader arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.Loader$ForceLoadContentObserver",

@@ -13,7 +13,7 @@ namespace javax::crypto::spec
 	
 	DESedeKeySpec::DESedeKeySpec(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DESedeKeySpec::DESedeKeySpec(jbyteArray &arg0)
+	DESedeKeySpec::DESedeKeySpec(jbyteArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.crypto.spec.DESedeKeySpec",
@@ -21,7 +21,7 @@ namespace javax::crypto::spec
 			arg0
 		);
 	}
-	DESedeKeySpec::DESedeKeySpec(jbyteArray &arg0, jint &arg1)
+	DESedeKeySpec::DESedeKeySpec(jbyteArray arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.crypto.spec.DESedeKeySpec",

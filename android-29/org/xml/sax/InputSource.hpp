@@ -21,10 +21,9 @@ namespace org::xml::sax
 		InputSource(QAndroidJniObject obj);
 		// Constructors
 		InputSource();
-		InputSource(java::io::InputStream &arg0);
-		InputSource(java::io::Reader &arg0);
-		InputSource(jstring &arg0);
-		InputSource(const QString &arg0);
+		InputSource(java::io::InputStream arg0);
+		InputSource(java::io::Reader arg0);
+		InputSource(jstring arg0);
 		
 		// Methods
 		QAndroidJniObject getByteStream();
@@ -36,11 +35,8 @@ namespace org::xml::sax
 		void setByteStream(java::io::InputStream arg0);
 		void setCharacterStream(java::io::Reader arg0);
 		void setEncoding(jstring arg0);
-		void setEncoding(const QString &arg0);
 		void setPublicId(jstring arg0);
-		void setPublicId(const QString &arg0);
 		void setSystemId(jstring arg0);
-		void setSystemId(const QString &arg0);
 	};
 } // namespace org::xml::sax
 

@@ -16,8 +16,7 @@ namespace java::lang
 		AbstractMethodError(QAndroidJniObject obj);
 		// Constructors
 		AbstractMethodError();
-		AbstractMethodError(jstring &arg0);
-		AbstractMethodError(const QString &arg0);
+		AbstractMethodError(jstring arg0);
 		
 		// Methods
 	};

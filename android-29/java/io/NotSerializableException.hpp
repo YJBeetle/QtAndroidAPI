@@ -16,8 +16,7 @@ namespace java::io
 		NotSerializableException(QAndroidJniObject obj);
 		// Constructors
 		NotSerializableException();
-		NotSerializableException(jstring &arg0);
-		NotSerializableException(const QString &arg0);
+		NotSerializableException(jstring arg0);
 		
 		// Methods
 	};

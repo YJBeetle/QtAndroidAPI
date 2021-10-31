@@ -36,7 +36,7 @@ namespace android::net
 		
 		IpSecTransform_Builder(QAndroidJniObject obj);
 		// Constructors
-		IpSecTransform_Builder(android::content::Context &arg0);
+		IpSecTransform_Builder(android::content::Context arg0);
 		IpSecTransform_Builder() = default;
 		
 		// Methods

@@ -118,7 +118,6 @@ namespace android::inputmethodservice
 		jboolean isInputViewShown();
 		jboolean isShowInputRequested();
 		void onAppPrivateCommand(jstring arg0, android::os::Bundle arg1);
-		void onAppPrivateCommand(const QString &arg0, android::os::Bundle arg1);
 		void onBindInput();
 		void onComputeInsets(android::inputmethodservice::InputMethodService_Insets arg0);
 		void onConfigurationChanged(android::content::res::Configuration arg0);
@@ -178,9 +177,7 @@ namespace android::inputmethodservice
 		void showStatusIcon(jint arg0);
 		void showWindow(jboolean arg0);
 		void switchInputMethod(jstring arg0);
-		void switchInputMethod(const QString &arg0);
 		void switchInputMethod(jstring arg0, android::view::inputmethod::InputMethodSubtype arg1);
-		void switchInputMethod(const QString &arg0, android::view::inputmethod::InputMethodSubtype arg1);
 		jboolean switchToNextInputMethod(jboolean arg0);
 		jboolean switchToPreviousInputMethod();
 		void updateFullscreenMode();

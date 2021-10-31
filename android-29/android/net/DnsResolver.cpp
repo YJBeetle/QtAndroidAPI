@@ -94,19 +94,6 @@ namespace android::net
 			arg5.__jniObject().object()
 		);
 	}
-	void DnsResolver::query(android::net::Network arg0, const QString &arg1, jint arg2, __JniBaseClass arg3, android::os::CancellationSignal arg4, __JniBaseClass arg5)
-	{
-		__thiz.callMethod<void>(
-			"query",
-			"(Landroid/net/Network;Ljava/lang/String;ILjava/util/concurrent/Executor;Landroid/os/CancellationSignal;Landroid/net/DnsResolver$Callback;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
-			arg5.__jniObject().object()
-		);
-	}
 	void DnsResolver::query(android::net::Network arg0, jstring arg1, jint arg2, jint arg3, __JniBaseClass arg4, android::os::CancellationSignal arg5, __JniBaseClass arg6)
 	{
 		__thiz.callMethod<void>(
@@ -114,20 +101,6 @@ namespace android::net
 			"(Landroid/net/Network;Ljava/lang/String;IILjava/util/concurrent/Executor;Landroid/os/CancellationSignal;Landroid/net/DnsResolver$Callback;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2,
-			arg3,
-			arg4.__jniObject().object(),
-			arg5.__jniObject().object(),
-			arg6.__jniObject().object()
-		);
-	}
-	void DnsResolver::query(android::net::Network arg0, const QString &arg1, jint arg2, jint arg3, __JniBaseClass arg4, android::os::CancellationSignal arg5, __JniBaseClass arg6)
-	{
-		__thiz.callMethod<void>(
-			"query",
-			"(Landroid/net/Network;Ljava/lang/String;IILjava/util/concurrent/Executor;Landroid/os/CancellationSignal;Landroid/net/DnsResolver$Callback;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2,
 			arg3,
 			arg4.__jniObject().object(),
@@ -155,21 +128,6 @@ namespace android::net
 			"(Landroid/net/Network;Ljava/lang/String;IIILjava/util/concurrent/Executor;Landroid/os/CancellationSignal;Landroid/net/DnsResolver$Callback;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5.__jniObject().object(),
-			arg6.__jniObject().object(),
-			arg7.__jniObject().object()
-		);
-	}
-	void DnsResolver::rawQuery(android::net::Network arg0, const QString &arg1, jint arg2, jint arg3, jint arg4, __JniBaseClass arg5, android::os::CancellationSignal arg6, __JniBaseClass arg7)
-	{
-		__thiz.callMethod<void>(
-			"rawQuery",
-			"(Landroid/net/Network;Ljava/lang/String;IIILjava/util/concurrent/Executor;Landroid/os/CancellationSignal;Landroid/net/DnsResolver$Callback;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2,
 			arg3,
 			arg4,

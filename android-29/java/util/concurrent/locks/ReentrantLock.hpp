@@ -21,7 +21,7 @@ namespace java::util::concurrent::locks
 		ReentrantLock(QAndroidJniObject obj);
 		// Constructors
 		ReentrantLock();
-		ReentrantLock(jboolean &arg0);
+		ReentrantLock(jboolean arg0);
 		
 		// Methods
 		jint getHoldCount();

@@ -14,7 +14,7 @@ namespace android::media::audiofx
 		DynamicsProcessing_Limiter(QAndroidJniObject obj);
 		// Constructors
 		DynamicsProcessing_Limiter(android::media::audiofx::DynamicsProcessing_Limiter &arg0);
-		DynamicsProcessing_Limiter(jboolean &arg0, jboolean &arg1, jint &arg2, jfloat &arg3, jfloat &arg4, jfloat &arg5, jfloat &arg6, jfloat &arg7);
+		DynamicsProcessing_Limiter(jboolean arg0, jboolean arg1, jint arg2, jfloat arg3, jfloat arg4, jfloat arg5, jfloat arg6, jfloat arg7);
 		DynamicsProcessing_Limiter() = default;
 		
 		// Methods

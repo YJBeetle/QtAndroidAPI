@@ -13,7 +13,7 @@ namespace java::util
 			"()V"
 		);
 	}
-	DoubleSummaryStatistics::DoubleSummaryStatistics(jlong &arg0, jdouble &arg1, jdouble &arg2, jdouble &arg3)
+	DoubleSummaryStatistics::DoubleSummaryStatistics(jlong arg0, jdouble arg1, jdouble arg2, jdouble arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.DoubleSummaryStatistics",

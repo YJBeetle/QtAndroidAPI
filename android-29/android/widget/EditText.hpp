@@ -26,10 +26,10 @@ namespace android::widget
 		
 		EditText(QAndroidJniObject obj);
 		// Constructors
-		EditText(android::content::Context &arg0);
-		EditText(android::content::Context &arg0, __JniBaseClass &arg1);
-		EditText(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		EditText(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		EditText(android::content::Context arg0);
+		EditText(android::content::Context arg0, __JniBaseClass arg1);
+		EditText(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		EditText(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		EditText() = default;
 		
 		// Methods
@@ -42,7 +42,6 @@ namespace android::widget
 		void setSelection(jint arg0);
 		void setSelection(jint arg0, jint arg1);
 		void setText(jstring arg0, android::widget::TextView_BufferType arg1);
-		void setText(const QString &arg0, android::widget::TextView_BufferType arg1);
 	};
 } // namespace android::widget
 

@@ -16,7 +16,6 @@ namespace java::util::concurrent::atomic
 		
 		// Methods
 		static QAndroidJniObject newUpdater(jclass arg0, jclass arg1, jstring arg2);
-		static QAndroidJniObject newUpdater(jclass arg0, jclass arg1, const QString &arg2);
 		jobject accumulateAndGet(jobject arg0, jobject arg1, __JniBaseClass arg2);
 		jboolean compareAndSet(jobject arg0, jobject arg1, jobject arg2);
 		jobject get(jobject arg0);

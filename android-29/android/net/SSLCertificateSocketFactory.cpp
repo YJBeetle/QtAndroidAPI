@@ -11,7 +11,7 @@ namespace android::net
 	
 	SSLCertificateSocketFactory::SSLCertificateSocketFactory(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SSLCertificateSocketFactory::SSLCertificateSocketFactory(jint &arg0)
+	SSLCertificateSocketFactory::SSLCertificateSocketFactory(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.SSLCertificateSocketFactory",
@@ -66,15 +66,6 @@ namespace android::net
 			arg1
 		);
 	}
-	QAndroidJniObject SSLCertificateSocketFactory::createSocket(const QString &arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"createSocket",
-			"(Ljava/lang/String;I)Ljava/net/Socket;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	QAndroidJniObject SSLCertificateSocketFactory::createSocket(java::net::InetAddress arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -90,17 +81,6 @@ namespace android::net
 			"createSocket",
 			"(Ljava/lang/String;ILjava/net/InetAddress;I)Ljava/net/Socket;",
 			arg0,
-			arg1,
-			arg2.__jniObject().object(),
-			arg3
-		);
-	}
-	QAndroidJniObject SSLCertificateSocketFactory::createSocket(const QString &arg0, jint arg1, java::net::InetAddress arg2, jint arg3)
-	{
-		return __thiz.callObjectMethod(
-			"createSocket",
-			"(Ljava/lang/String;ILjava/net/InetAddress;I)Ljava/net/Socket;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2.__jniObject().object(),
 			arg3
@@ -124,17 +104,6 @@ namespace android::net
 			"(Ljava/net/Socket;Ljava/lang/String;IZ)Ljava/net/Socket;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2,
-			arg3
-		);
-	}
-	QAndroidJniObject SSLCertificateSocketFactory::createSocket(java::net::Socket arg0, const QString &arg1, jint arg2, jboolean arg3)
-	{
-		return __thiz.callObjectMethod(
-			"createSocket",
-			"(Ljava/net/Socket;Ljava/lang/String;IZ)Ljava/net/Socket;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2,
 			arg3
 		);
@@ -168,15 +137,6 @@ namespace android::net
 			"(Ljava/net/Socket;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	void SSLCertificateSocketFactory::setHostname(java::net::Socket arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"setHostname",
-			"(Ljava/net/Socket;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void SSLCertificateSocketFactory::setKeyManagers(jarray arg0)

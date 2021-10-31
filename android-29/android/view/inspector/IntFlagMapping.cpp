@@ -25,16 +25,6 @@ namespace android::view::inspector
 			arg2
 		);
 	}
-	void IntFlagMapping::add(jint arg0, jint arg1, const QString &arg2)
-	{
-		__thiz.callMethod<void>(
-			"add",
-			"(IILjava/lang/String;)V",
-			arg0,
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	QAndroidJniObject IntFlagMapping::get(jint arg0)
 	{
 		return __thiz.callObjectMethod(

@@ -17,10 +17,8 @@ namespace android::content::pm
 		
 		VersionedPackage(QAndroidJniObject obj);
 		// Constructors
-		VersionedPackage(jstring &arg0, jint &arg1);
-		VersionedPackage(const QString &arg0, jint &arg1);
-		VersionedPackage(jstring &arg0, jlong &arg1);
-		VersionedPackage(const QString &arg0, jlong &arg1);
+		VersionedPackage(jstring arg0, jint arg1);
+		VersionedPackage(jstring arg0, jlong arg1);
 		VersionedPackage() = default;
 		
 		// Methods

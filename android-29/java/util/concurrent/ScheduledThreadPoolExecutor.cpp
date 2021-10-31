@@ -8,7 +8,7 @@ namespace java::util::concurrent
 	
 	ScheduledThreadPoolExecutor::ScheduledThreadPoolExecutor(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ScheduledThreadPoolExecutor::ScheduledThreadPoolExecutor(jint &arg0)
+	ScheduledThreadPoolExecutor::ScheduledThreadPoolExecutor(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.ScheduledThreadPoolExecutor",
@@ -16,7 +16,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	ScheduledThreadPoolExecutor::ScheduledThreadPoolExecutor(jint &arg0, __JniBaseClass &arg1)
+	ScheduledThreadPoolExecutor::ScheduledThreadPoolExecutor(jint arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.ScheduledThreadPoolExecutor",
@@ -25,7 +25,7 @@ namespace java::util::concurrent
 			arg1.__jniObject().object()
 		);
 	}
-	ScheduledThreadPoolExecutor::ScheduledThreadPoolExecutor(jint &arg0, __JniBaseClass &arg1, __JniBaseClass &arg2)
+	ScheduledThreadPoolExecutor::ScheduledThreadPoolExecutor(jint arg0, __JniBaseClass arg1, __JniBaseClass arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.ScheduledThreadPoolExecutor",

@@ -8,7 +8,7 @@ namespace java::util::concurrent
 	
 	CyclicBarrier::CyclicBarrier(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	CyclicBarrier::CyclicBarrier(jint &arg0)
+	CyclicBarrier::CyclicBarrier(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.CyclicBarrier",
@@ -16,7 +16,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	CyclicBarrier::CyclicBarrier(jint &arg0, __JniBaseClass &arg1)
+	CyclicBarrier::CyclicBarrier(jint arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.CyclicBarrier",

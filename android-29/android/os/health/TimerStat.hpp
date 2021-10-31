@@ -18,8 +18,8 @@ namespace android::os::health
 		TimerStat(QAndroidJniObject obj);
 		// Constructors
 		TimerStat();
-		TimerStat(android::os::Parcel &arg0);
-		TimerStat(jint &arg0, jlong &arg1);
+		TimerStat(android::os::Parcel arg0);
+		TimerStat(jint arg0, jlong arg1);
 		
 		// Methods
 		jint describeContents();

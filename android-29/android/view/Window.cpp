@@ -222,7 +222,7 @@ namespace android::view
 	
 	Window::Window(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Window::Window(android::content::Context &arg0)
+	Window::Window(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.Window",
@@ -1094,14 +1094,6 @@ namespace android::view
 			arg0
 		);
 	}
-	void Window::setTitle(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTitle",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void Window::setTitleColor(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -1177,16 +1169,6 @@ namespace android::view
 			arg2
 		);
 	}
-	void Window::setWindowManager(__JniBaseClass arg0, __JniBaseClass arg1, const QString &arg2)
-	{
-		__thiz.callMethod<void>(
-			"setWindowManager",
-			"(Landroid/view/WindowManager;Landroid/os/IBinder;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	void Window::setWindowManager(__JniBaseClass arg0, __JniBaseClass arg1, jstring arg2, jboolean arg3)
 	{
 		__thiz.callMethod<void>(
@@ -1195,17 +1177,6 @@ namespace android::view
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3
-		);
-	}
-	void Window::setWindowManager(__JniBaseClass arg0, __JniBaseClass arg1, const QString &arg2, jboolean arg3)
-	{
-		__thiz.callMethod<void>(
-			"setWindowManager",
-			"(Landroid/view/WindowManager;Landroid/os/IBinder;Ljava/lang/String;Z)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
 			arg3
 		);
 	}

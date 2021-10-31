@@ -32,13 +32,12 @@ namespace android::widget
 		
 		DialerFilter(QAndroidJniObject obj);
 		// Constructors
-		DialerFilter(android::content::Context &arg0);
-		DialerFilter(android::content::Context &arg0, __JniBaseClass &arg1);
+		DialerFilter(android::content::Context arg0);
+		DialerFilter(android::content::Context arg0, __JniBaseClass arg1);
 		DialerFilter() = default;
 		
 		// Methods
 		void append(jstring arg0);
-		void append(const QString &arg0);
 		void clearText();
 		jstring getDigits();
 		jstring getFilterText();

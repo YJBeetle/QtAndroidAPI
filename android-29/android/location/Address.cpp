@@ -17,7 +17,7 @@ namespace android::location
 	
 	Address::Address(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Address::Address(java::util::Locale &arg0)
+	Address::Address(java::util::Locale arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.location.Address",
@@ -205,29 +205,12 @@ namespace android::location
 			arg1
 		);
 	}
-	void Address::setAddressLine(jint arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"setAddressLine",
-			"(ILjava/lang/String;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	void Address::setAdminArea(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setAdminArea",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void Address::setAdminArea(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setAdminArea",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void Address::setCountryCode(jstring arg0)
@@ -238,28 +221,12 @@ namespace android::location
 			arg0
 		);
 	}
-	void Address::setCountryCode(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setCountryCode",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void Address::setCountryName(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setCountryName",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void Address::setCountryName(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setCountryName",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void Address::setExtras(android::os::Bundle arg0)
@@ -278,14 +245,6 @@ namespace android::location
 			arg0
 		);
 	}
-	void Address::setFeatureName(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setFeatureName",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void Address::setLatitude(jdouble arg0)
 	{
 		__thiz.callMethod<void>(
@@ -300,14 +259,6 @@ namespace android::location
 			"setLocality",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void Address::setLocality(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setLocality",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void Address::setLongitude(jdouble arg0)
@@ -326,28 +277,12 @@ namespace android::location
 			arg0
 		);
 	}
-	void Address::setPhone(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPhone",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void Address::setPostalCode(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setPostalCode",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void Address::setPostalCode(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPostalCode",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void Address::setPremises(jstring arg0)
@@ -358,28 +293,12 @@ namespace android::location
 			arg0
 		);
 	}
-	void Address::setPremises(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPremises",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void Address::setSubAdminArea(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSubAdminArea",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void Address::setSubAdminArea(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSubAdminArea",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void Address::setSubLocality(jstring arg0)
@@ -390,28 +309,12 @@ namespace android::location
 			arg0
 		);
 	}
-	void Address::setSubLocality(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSubLocality",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void Address::setSubThoroughfare(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSubThoroughfare",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void Address::setSubThoroughfare(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSubThoroughfare",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void Address::setThoroughfare(jstring arg0)
@@ -422,28 +325,12 @@ namespace android::location
 			arg0
 		);
 	}
-	void Address::setThoroughfare(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setThoroughfare",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void Address::setUrl(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setUrl",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void Address::setUrl(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setUrl",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring Address::toString()

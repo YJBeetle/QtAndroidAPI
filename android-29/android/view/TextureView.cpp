@@ -15,7 +15,7 @@ namespace android::view
 	
 	TextureView::TextureView(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	TextureView::TextureView(android::content::Context &arg0)
+	TextureView::TextureView(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.TextureView",
@@ -23,7 +23,7 @@ namespace android::view
 			arg0.__jniObject().object()
 		);
 	}
-	TextureView::TextureView(android::content::Context &arg0, __JniBaseClass &arg1)
+	TextureView::TextureView(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.TextureView",
@@ -32,7 +32,7 @@ namespace android::view
 			arg1.__jniObject().object()
 		);
 	}
-	TextureView::TextureView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	TextureView::TextureView(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.TextureView",
@@ -42,7 +42,7 @@ namespace android::view
 			arg2
 		);
 	}
-	TextureView::TextureView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	TextureView::TextureView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.TextureView",

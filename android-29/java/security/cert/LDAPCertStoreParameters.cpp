@@ -13,7 +13,7 @@ namespace java::security::cert
 			"()V"
 		);
 	}
-	LDAPCertStoreParameters::LDAPCertStoreParameters(jstring &arg0)
+	LDAPCertStoreParameters::LDAPCertStoreParameters(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.cert.LDAPCertStoreParameters",
@@ -21,29 +21,12 @@ namespace java::security::cert
 			arg0
 		);
 	}
-	LDAPCertStoreParameters::LDAPCertStoreParameters(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.cert.LDAPCertStoreParameters",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	LDAPCertStoreParameters::LDAPCertStoreParameters(jstring &arg0, jint &arg1)
+	LDAPCertStoreParameters::LDAPCertStoreParameters(jstring arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.cert.LDAPCertStoreParameters",
 			"(Ljava/lang/String;I)V",
 			arg0,
-			arg1
-		);
-	}
-	LDAPCertStoreParameters::LDAPCertStoreParameters(const QString &arg0, jint &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.cert.LDAPCertStoreParameters",
-			"(Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

@@ -13,7 +13,7 @@ namespace android::animation
 			"()V"
 		);
 	}
-	FloatArrayEvaluator::FloatArrayEvaluator(jfloatArray &arg0)
+	FloatArrayEvaluator::FloatArrayEvaluator(jfloatArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.animation.FloatArrayEvaluator",

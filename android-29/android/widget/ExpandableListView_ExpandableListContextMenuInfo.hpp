@@ -19,7 +19,7 @@ namespace android::widget
 		
 		ExpandableListView_ExpandableListContextMenuInfo(QAndroidJniObject obj);
 		// Constructors
-		ExpandableListView_ExpandableListContextMenuInfo(android::view::View &arg0, jlong &arg1, jlong &arg2);
+		ExpandableListView_ExpandableListContextMenuInfo(android::view::View arg0, jlong arg1, jlong arg2);
 		ExpandableListView_ExpandableListContextMenuInfo() = default;
 		
 		// Methods

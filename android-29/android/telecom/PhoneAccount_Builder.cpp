@@ -11,7 +11,7 @@ namespace android::telecom
 	
 	PhoneAccount_Builder::PhoneAccount_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PhoneAccount_Builder::PhoneAccount_Builder(android::telecom::PhoneAccount &arg0)
+	PhoneAccount_Builder::PhoneAccount_Builder(android::telecom::PhoneAccount arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.telecom.PhoneAccount$Builder",
@@ -19,22 +19,13 @@ namespace android::telecom
 			arg0.__jniObject().object()
 		);
 	}
-	PhoneAccount_Builder::PhoneAccount_Builder(android::telecom::PhoneAccountHandle &arg0, jstring &arg1)
+	PhoneAccount_Builder::PhoneAccount_Builder(android::telecom::PhoneAccountHandle arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.telecom.PhoneAccount$Builder",
 			"(Landroid/telecom/PhoneAccountHandle;Ljava/lang/CharSequence;)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	PhoneAccount_Builder::PhoneAccount_Builder(android::telecom::PhoneAccountHandle &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.telecom.PhoneAccount$Builder",
-			"(Landroid/telecom/PhoneAccountHandle;Ljava/lang/CharSequence;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	
@@ -45,14 +36,6 @@ namespace android::telecom
 			"addSupportedUriScheme",
 			"(Ljava/lang/String;)Landroid/telecom/PhoneAccount$Builder;",
 			arg0
-		);
-	}
-	QAndroidJniObject PhoneAccount_Builder::addSupportedUriScheme(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"addSupportedUriScheme",
-			"(Ljava/lang/String;)Landroid/telecom/PhoneAccount$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject PhoneAccount_Builder::build()
@@ -108,14 +91,6 @@ namespace android::telecom
 			"setShortDescription",
 			"(Ljava/lang/CharSequence;)Landroid/telecom/PhoneAccount$Builder;",
 			arg0
-		);
-	}
-	QAndroidJniObject PhoneAccount_Builder::setShortDescription(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setShortDescription",
-			"(Ljava/lang/CharSequence;)Landroid/telecom/PhoneAccount$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject PhoneAccount_Builder::setSubscriptionAddress(android::net::Uri arg0)

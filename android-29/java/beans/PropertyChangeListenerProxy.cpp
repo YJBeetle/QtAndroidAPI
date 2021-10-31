@@ -7,21 +7,12 @@ namespace java::beans
 	
 	PropertyChangeListenerProxy::PropertyChangeListenerProxy(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PropertyChangeListenerProxy::PropertyChangeListenerProxy(jstring &arg0, __JniBaseClass &arg1)
+	PropertyChangeListenerProxy::PropertyChangeListenerProxy(jstring arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.beans.PropertyChangeListenerProxy",
 			"(Ljava/lang/String;Ljava/beans/PropertyChangeListener;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	PropertyChangeListenerProxy::PropertyChangeListenerProxy(const QString &arg0, __JniBaseClass &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.beans.PropertyChangeListenerProxy",
-			"(Ljava/lang/String;Ljava/beans/PropertyChangeListener;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

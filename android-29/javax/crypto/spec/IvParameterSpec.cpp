@@ -6,7 +6,7 @@ namespace javax::crypto::spec
 	
 	IvParameterSpec::IvParameterSpec(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	IvParameterSpec::IvParameterSpec(jbyteArray &arg0)
+	IvParameterSpec::IvParameterSpec(jbyteArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.crypto.spec.IvParameterSpec",
@@ -14,7 +14,7 @@ namespace javax::crypto::spec
 			arg0
 		);
 	}
-	IvParameterSpec::IvParameterSpec(jbyteArray &arg0, jint &arg1, jint &arg2)
+	IvParameterSpec::IvParameterSpec(jbyteArray arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.crypto.spec.IvParameterSpec",

@@ -7,7 +7,7 @@ namespace android::view::textclassifier
 	
 	TextClassifierEvent_TextSelectionEvent_Builder::TextClassifierEvent_TextSelectionEvent_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	TextClassifierEvent_TextSelectionEvent_Builder::TextClassifierEvent_TextSelectionEvent_Builder(jint &arg0)
+	TextClassifierEvent_TextSelectionEvent_Builder::TextClassifierEvent_TextSelectionEvent_Builder(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.textclassifier.TextClassifierEvent$TextSelectionEvent$Builder",

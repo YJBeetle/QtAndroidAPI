@@ -13,7 +13,7 @@ namespace android::media::audiofx
 		
 		DynamicsProcessing_BandStage(QAndroidJniObject obj);
 		// Constructors
-		DynamicsProcessing_BandStage(jboolean &arg0, jboolean &arg1, jint &arg2);
+		DynamicsProcessing_BandStage(jboolean arg0, jboolean arg1, jint arg2);
 		DynamicsProcessing_BandStage() = default;
 		
 		// Methods

@@ -31,14 +31,14 @@ namespace android::widget
 		
 		Toolbar_LayoutParams(QAndroidJniObject obj);
 		// Constructors
-		Toolbar_LayoutParams(android::app::ActionBar_LayoutParams &arg0);
-		Toolbar_LayoutParams(android::view::ViewGroup_LayoutParams &arg0);
-		Toolbar_LayoutParams(android::view::ViewGroup_MarginLayoutParams &arg0);
+		Toolbar_LayoutParams(android::app::ActionBar_LayoutParams arg0);
+		Toolbar_LayoutParams(android::view::ViewGroup_LayoutParams arg0);
+		Toolbar_LayoutParams(android::view::ViewGroup_MarginLayoutParams arg0);
 		Toolbar_LayoutParams(android::widget::Toolbar_LayoutParams &arg0);
-		Toolbar_LayoutParams(jint &arg0);
-		Toolbar_LayoutParams(android::content::Context &arg0, __JniBaseClass &arg1);
-		Toolbar_LayoutParams(jint &arg0, jint &arg1);
-		Toolbar_LayoutParams(jint &arg0, jint &arg1, jint &arg2);
+		Toolbar_LayoutParams(jint arg0);
+		Toolbar_LayoutParams(android::content::Context arg0, __JniBaseClass arg1);
+		Toolbar_LayoutParams(jint arg0, jint arg1);
+		Toolbar_LayoutParams(jint arg0, jint arg1, jint arg2);
 		Toolbar_LayoutParams() = default;
 		
 		// Methods

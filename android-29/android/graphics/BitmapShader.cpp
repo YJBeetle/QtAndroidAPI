@@ -8,7 +8,7 @@ namespace android::graphics
 	
 	BitmapShader::BitmapShader(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	BitmapShader::BitmapShader(android::graphics::Bitmap &arg0, android::graphics::Shader_TileMode &arg1, android::graphics::Shader_TileMode &arg2)
+	BitmapShader::BitmapShader(android::graphics::Bitmap arg0, android::graphics::Shader_TileMode arg1, android::graphics::Shader_TileMode arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.BitmapShader",

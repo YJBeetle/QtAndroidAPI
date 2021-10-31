@@ -22,9 +22,8 @@ namespace java::lang::reflect
 		
 		UndeclaredThrowableException(QAndroidJniObject obj);
 		// Constructors
-		UndeclaredThrowableException(jthrowable &arg0);
-		UndeclaredThrowableException(jthrowable &arg0, jstring &arg1);
-		UndeclaredThrowableException(jthrowable &arg0, const QString &arg1);
+		UndeclaredThrowableException(jthrowable arg0);
+		UndeclaredThrowableException(jthrowable arg0, jstring arg1);
 		UndeclaredThrowableException() = default;
 		
 		// Methods

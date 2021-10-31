@@ -77,7 +77,7 @@ namespace android::media::audiofx
 	
 	EnvironmentalReverb::EnvironmentalReverb(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	EnvironmentalReverb::EnvironmentalReverb(jint &arg0, jint &arg1)
+	EnvironmentalReverb::EnvironmentalReverb(jint arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.audiofx.EnvironmentalReverb",

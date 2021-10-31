@@ -53,13 +53,12 @@ namespace android::app
 		
 		FragmentHostCallback(QAndroidJniObject obj);
 		// Constructors
-		FragmentHostCallback(android::content::Context &arg0, android::os::Handler &arg1, jint &arg2);
+		FragmentHostCallback(android::content::Context arg0, android::os::Handler arg1, jint arg2);
 		FragmentHostCallback() = default;
 		
 		// Methods
 		void onAttachFragment(android::app::Fragment arg0);
 		void onDump(jstring arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3);
-		void onDump(const QString &arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3);
 		QAndroidJniObject onFindViewById(jint arg0);
 		jobject onGetHost();
 		QAndroidJniObject onGetLayoutInflater();

@@ -17,8 +17,8 @@ namespace java::io
 		
 		BufferedReader(QAndroidJniObject obj);
 		// Constructors
-		BufferedReader(java::io::Reader &arg0);
-		BufferedReader(java::io::Reader &arg0, jint &arg1);
+		BufferedReader(java::io::Reader arg0);
+		BufferedReader(java::io::Reader arg0, jint arg1);
 		BufferedReader() = default;
 		
 		// Methods

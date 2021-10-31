@@ -30,8 +30,7 @@ namespace java::util
 		
 		PropertyPermission(QAndroidJniObject obj);
 		// Constructors
-		PropertyPermission(jstring &arg0, jstring &arg1);
-		PropertyPermission(const QString &arg0, const QString &arg1);
+		PropertyPermission(jstring arg0, jstring arg1);
 		PropertyPermission() = default;
 		
 		// Methods

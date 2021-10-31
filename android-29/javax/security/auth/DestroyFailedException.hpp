@@ -14,8 +14,7 @@ namespace javax::security::auth
 		DestroyFailedException(QAndroidJniObject obj);
 		// Constructors
 		DestroyFailedException();
-		DestroyFailedException(jstring &arg0);
-		DestroyFailedException(const QString &arg0);
+		DestroyFailedException(jstring arg0);
 		
 		// Methods
 	};

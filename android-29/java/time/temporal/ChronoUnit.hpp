@@ -37,7 +37,6 @@ namespace java::time::temporal
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);
-		static QAndroidJniObject valueOf(const QString &arg0);
 		static jarray values();
 		QAndroidJniObject addTo(__JniBaseClass arg0, jlong arg1);
 		jlong between(__JniBaseClass arg0, __JniBaseClass arg1);

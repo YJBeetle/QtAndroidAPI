@@ -73,9 +73,7 @@ namespace android::app
 		void send(jint arg0, __JniBaseClass arg1, android::os::Handler arg2);
 		void send(android::content::Context arg0, jint arg1, android::content::Intent arg2, __JniBaseClass arg3, android::os::Handler arg4);
 		void send(android::content::Context arg0, jint arg1, android::content::Intent arg2, __JniBaseClass arg3, android::os::Handler arg4, jstring arg5);
-		void send(android::content::Context arg0, jint arg1, android::content::Intent arg2, __JniBaseClass arg3, android::os::Handler arg4, const QString &arg5);
 		void send(android::content::Context arg0, jint arg1, android::content::Intent arg2, __JniBaseClass arg3, android::os::Handler arg4, jstring arg5, android::os::Bundle arg6);
-		void send(android::content::Context arg0, jint arg1, android::content::Intent arg2, __JniBaseClass arg3, android::os::Handler arg4, const QString &arg5, android::os::Bundle arg6);
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

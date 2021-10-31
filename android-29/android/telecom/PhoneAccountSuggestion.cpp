@@ -51,7 +51,7 @@ namespace android::telecom
 	
 	PhoneAccountSuggestion::PhoneAccountSuggestion(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PhoneAccountSuggestion::PhoneAccountSuggestion(android::telecom::PhoneAccountHandle &arg0, jint &arg1, jboolean &arg2)
+	PhoneAccountSuggestion::PhoneAccountSuggestion(android::telecom::PhoneAccountHandle arg0, jint arg1, jboolean arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.telecom.PhoneAccountSuggestion",

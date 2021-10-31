@@ -13,20 +13,12 @@ namespace java::lang
 			"()V"
 		);
 	}
-	OutOfMemoryError::OutOfMemoryError(jstring &arg0)
+	OutOfMemoryError::OutOfMemoryError(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.OutOfMemoryError",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	OutOfMemoryError::OutOfMemoryError(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.OutOfMemoryError",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

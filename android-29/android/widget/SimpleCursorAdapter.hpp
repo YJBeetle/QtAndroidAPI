@@ -31,8 +31,8 @@ namespace android::widget
 		
 		SimpleCursorAdapter(QAndroidJniObject obj);
 		// Constructors
-		SimpleCursorAdapter(android::content::Context &arg0, jint &arg1, __JniBaseClass &arg2, jarray &arg3, jintArray &arg4);
-		SimpleCursorAdapter(android::content::Context &arg0, jint &arg1, __JniBaseClass &arg2, jarray &arg3, jintArray &arg4, jint &arg5);
+		SimpleCursorAdapter(android::content::Context arg0, jint arg1, __JniBaseClass arg2, jarray arg3, jintArray arg4);
+		SimpleCursorAdapter(android::content::Context arg0, jint arg1, __JniBaseClass arg2, jarray arg3, jintArray arg4, jint arg5);
 		SimpleCursorAdapter() = default;
 		
 		// Methods
@@ -46,9 +46,7 @@ namespace android::widget
 		void setStringConversionColumn(jint arg0);
 		void setViewBinder(__JniBaseClass arg0);
 		void setViewImage(android::widget::ImageView arg0, jstring arg1);
-		void setViewImage(android::widget::ImageView arg0, const QString &arg1);
 		void setViewText(android::widget::TextView arg0, jstring arg1);
-		void setViewText(android::widget::TextView arg0, const QString &arg1);
 		QAndroidJniObject swapCursor(__JniBaseClass arg0);
 	};
 } // namespace android::widget

@@ -38,8 +38,8 @@ namespace android::content::res
 		
 		AssetFileDescriptor(QAndroidJniObject obj);
 		// Constructors
-		AssetFileDescriptor(android::os::ParcelFileDescriptor &arg0, jlong &arg1, jlong &arg2);
-		AssetFileDescriptor(android::os::ParcelFileDescriptor &arg0, jlong &arg1, jlong &arg2, android::os::Bundle &arg3);
+		AssetFileDescriptor(android::os::ParcelFileDescriptor arg0, jlong arg1, jlong arg2);
+		AssetFileDescriptor(android::os::ParcelFileDescriptor arg0, jlong arg1, jlong arg2, android::os::Bundle arg3);
 		AssetFileDescriptor() = default;
 		
 		// Methods

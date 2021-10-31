@@ -32,7 +32,7 @@ namespace android::renderscript
 		
 		ScriptGroup_Builder(QAndroidJniObject obj);
 		// Constructors
-		ScriptGroup_Builder(android::renderscript::RenderScript &arg0);
+		ScriptGroup_Builder(android::renderscript::RenderScript arg0);
 		ScriptGroup_Builder() = default;
 		
 		// Methods

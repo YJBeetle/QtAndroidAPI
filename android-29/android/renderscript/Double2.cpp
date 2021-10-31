@@ -25,7 +25,7 @@ namespace android::renderscript
 			"()V"
 		);
 	}
-	Double2::Double2(jdouble &arg0, jdouble &arg1)
+	Double2::Double2(jdouble arg0, jdouble arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.renderscript.Double2",

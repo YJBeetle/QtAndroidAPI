@@ -23,7 +23,6 @@ namespace android::view
 		QAndroidJniObject setBufferSize(jint arg0, jint arg1);
 		QAndroidJniObject setFormat(jint arg0);
 		QAndroidJniObject setName(jstring arg0);
-		QAndroidJniObject setName(const QString &arg0);
 		QAndroidJniObject setOpaque(jboolean arg0);
 		QAndroidJniObject setParent(android::view::SurfaceControl arg0);
 	};

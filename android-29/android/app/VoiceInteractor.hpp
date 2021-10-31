@@ -20,14 +20,12 @@ namespace android::app
 		
 		// Methods
 		QAndroidJniObject getActiveRequest(jstring arg0);
-		QAndroidJniObject getActiveRequest(const QString &arg0);
 		jarray getActiveRequests();
 		jboolean isDestroyed();
 		void notifyDirectActionsChanged();
 		jboolean registerOnDestroyedCallback(__JniBaseClass arg0, __JniBaseClass arg1);
 		jboolean submitRequest(android::app::VoiceInteractor_Request arg0);
 		jboolean submitRequest(android::app::VoiceInteractor_Request arg0, jstring arg1);
-		jboolean submitRequest(android::app::VoiceInteractor_Request arg0, const QString &arg1);
 		jbooleanArray supportsCommands(jarray arg0);
 		jboolean unregisterOnDestroyedCallback(__JniBaseClass arg0);
 	};

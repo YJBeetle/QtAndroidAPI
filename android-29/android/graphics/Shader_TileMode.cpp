@@ -41,15 +41,6 @@ namespace android::graphics
 			arg0
 		);
 	}
-	QAndroidJniObject Shader_TileMode::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.Shader$TileMode",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/graphics/Shader$TileMode;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray Shader_TileMode::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

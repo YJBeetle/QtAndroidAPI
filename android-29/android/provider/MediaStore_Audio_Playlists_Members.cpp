@@ -75,16 +75,6 @@ namespace android::provider
 			arg1
 		);
 	}
-	QAndroidJniObject MediaStore_Audio_Playlists_Members::getContentUri(const QString &arg0, jlong arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.MediaStore$Audio$Playlists$Members",
-			"getContentUri",
-			"(Ljava/lang/String;J)Landroid/net/Uri;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	jboolean MediaStore_Audio_Playlists_Members::moveItem(android::content::ContentResolver arg0, jlong arg1, jint arg2, jint arg3)
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(

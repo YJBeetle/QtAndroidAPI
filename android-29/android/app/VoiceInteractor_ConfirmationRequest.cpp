@@ -8,7 +8,7 @@ namespace android::app
 	
 	VoiceInteractor_ConfirmationRequest::VoiceInteractor_ConfirmationRequest(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	VoiceInteractor_ConfirmationRequest::VoiceInteractor_ConfirmationRequest(android::app::VoiceInteractor_Prompt &arg0, android::os::Bundle &arg1)
+	VoiceInteractor_ConfirmationRequest::VoiceInteractor_ConfirmationRequest(android::app::VoiceInteractor_Prompt arg0, android::os::Bundle arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.VoiceInteractor$ConfirmationRequest",

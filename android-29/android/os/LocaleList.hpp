@@ -25,12 +25,11 @@ namespace android::os
 		
 		LocaleList(QAndroidJniObject obj);
 		// Constructors
-		LocaleList(jarray &arg0);
+		LocaleList(jarray arg0);
 		LocaleList() = default;
 		
 		// Methods
 		static QAndroidJniObject forLanguageTags(jstring arg0);
-		static QAndroidJniObject forLanguageTags(const QString &arg0);
 		static QAndroidJniObject getAdjustedDefault();
 		static QAndroidJniObject getDefault();
 		static QAndroidJniObject getEmptyLocaleList();

@@ -20,8 +20,7 @@ namespace android::media::tv
 		
 		TvTrackInfo_Builder(QAndroidJniObject obj);
 		// Constructors
-		TvTrackInfo_Builder(jint &arg0, jstring &arg1);
-		TvTrackInfo_Builder(jint &arg0, const QString &arg1);
+		TvTrackInfo_Builder(jint arg0, jstring arg1);
 		TvTrackInfo_Builder() = default;
 		
 		// Methods
@@ -29,10 +28,8 @@ namespace android::media::tv
 		QAndroidJniObject setAudioChannelCount(jint arg0);
 		QAndroidJniObject setAudioSampleRate(jint arg0);
 		QAndroidJniObject setDescription(jstring arg0);
-		QAndroidJniObject setDescription(const QString &arg0);
 		QAndroidJniObject setExtra(android::os::Bundle arg0);
 		QAndroidJniObject setLanguage(jstring arg0);
-		QAndroidJniObject setLanguage(const QString &arg0);
 		QAndroidJniObject setVideoActiveFormatDescription(jbyte arg0);
 		QAndroidJniObject setVideoFrameRate(jfloat arg0);
 		QAndroidJniObject setVideoHeight(jint arg0);

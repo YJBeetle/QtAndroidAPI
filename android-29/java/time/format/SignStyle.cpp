@@ -57,15 +57,6 @@ namespace java::time::format
 			arg0
 		);
 	}
-	QAndroidJniObject SignStyle::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.time.format.SignStyle",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/time/format/SignStyle;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray SignStyle::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

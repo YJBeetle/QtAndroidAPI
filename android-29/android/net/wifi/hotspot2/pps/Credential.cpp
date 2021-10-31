@@ -147,14 +147,6 @@ namespace android::net::wifi::hotspot2::pps
 			arg0
 		);
 	}
-	void Credential::setRealm(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setRealm",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void Credential::setSimCredential(android::net::wifi::hotspot2::pps::Credential_SimCredential arg0)
 	{
 		__thiz.callMethod<void>(

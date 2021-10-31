@@ -16,8 +16,7 @@ namespace java::net
 		BindException(QAndroidJniObject obj);
 		// Constructors
 		BindException();
-		BindException(jstring &arg0);
-		BindException(const QString &arg0);
+		BindException(jstring arg0);
 		
 		// Methods
 	};

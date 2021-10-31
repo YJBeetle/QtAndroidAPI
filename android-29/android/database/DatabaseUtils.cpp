@@ -106,16 +106,6 @@ namespace android::database
 			arg1
 		);
 	}
-	void DatabaseUtils::appendEscapedSQLString(java::lang::StringBuilder arg0, const QString &arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.database.DatabaseUtils",
-			"appendEscapedSQLString",
-			"(Ljava/lang/StringBuilder;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	jarray DatabaseUtils::appendSelectionArgs(jarray arg0, jarray arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -168,17 +158,6 @@ namespace android::database
 			arg2
 		);
 	}
-	QAndroidJniObject DatabaseUtils::blobFileDescriptorForQuery(android::database::sqlite::SQLiteDatabase arg0, const QString &arg1, jarray arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.database.DatabaseUtils",
-			"blobFileDescriptorForQuery",
-			"(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;[Ljava/lang/String;)Landroid/os/ParcelFileDescriptor;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2
-		);
-	}
 	jstring DatabaseUtils::concatenateWhere(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -187,16 +166,6 @@ namespace android::database
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
 			arg0,
 			arg1
-		).object<jstring>();
-	}
-	jstring DatabaseUtils::concatenateWhere(const QString &arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.database.DatabaseUtils",
-			"concatenateWhere",
-			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		).object<jstring>();
 	}
 	void DatabaseUtils::createDbFromSqlStatements(android::content::Context arg0, jstring arg1, jint arg2, jstring arg3)
@@ -211,18 +180,6 @@ namespace android::database
 			arg3
 		);
 	}
-	void DatabaseUtils::createDbFromSqlStatements(android::content::Context arg0, const QString &arg1, jint arg2, const QString &arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.database.DatabaseUtils",
-			"createDbFromSqlStatements",
-			"(Landroid/content/Context;Ljava/lang/String;ILjava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2,
-			QAndroidJniObject::fromString(arg3).object<jstring>()
-		);
-	}
 	void DatabaseUtils::cursorDoubleToContentValues(__JniBaseClass arg0, jstring arg1, android::content::ContentValues arg2, jstring arg3)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -233,18 +190,6 @@ namespace android::database
 			arg1,
 			arg2.__jniObject().object(),
 			arg3
-		);
-	}
-	void DatabaseUtils::cursorDoubleToContentValues(__JniBaseClass arg0, const QString &arg1, android::content::ContentValues arg2, const QString &arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.database.DatabaseUtils",
-			"cursorDoubleToContentValues",
-			"(Landroid/database/Cursor;Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object(),
-			QAndroidJniObject::fromString(arg3).object<jstring>()
 		);
 	}
 	void DatabaseUtils::cursorDoubleToContentValuesIfPresent(__JniBaseClass arg0, android::content::ContentValues arg1, jstring arg2)
@@ -258,17 +203,6 @@ namespace android::database
 			arg2
 		);
 	}
-	void DatabaseUtils::cursorDoubleToContentValuesIfPresent(__JniBaseClass arg0, android::content::ContentValues arg1, const QString &arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.database.DatabaseUtils",
-			"cursorDoubleToContentValuesIfPresent",
-			"(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	void DatabaseUtils::cursorDoubleToCursorValues(__JniBaseClass arg0, jstring arg1, android::content::ContentValues arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -277,17 +211,6 @@ namespace android::database
 			"(Landroid/database/Cursor;Ljava/lang/String;Landroid/content/ContentValues;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void DatabaseUtils::cursorDoubleToCursorValues(__JniBaseClass arg0, const QString &arg1, android::content::ContentValues arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.database.DatabaseUtils",
-			"cursorDoubleToCursorValues",
-			"(Landroid/database/Cursor;Ljava/lang/String;Landroid/content/ContentValues;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}
@@ -302,17 +225,6 @@ namespace android::database
 			arg2
 		);
 	}
-	void DatabaseUtils::cursorFloatToContentValuesIfPresent(__JniBaseClass arg0, android::content::ContentValues arg1, const QString &arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.database.DatabaseUtils",
-			"cursorFloatToContentValuesIfPresent",
-			"(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	void DatabaseUtils::cursorIntToContentValues(__JniBaseClass arg0, jstring arg1, android::content::ContentValues arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -321,17 +233,6 @@ namespace android::database
 			"(Landroid/database/Cursor;Ljava/lang/String;Landroid/content/ContentValues;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void DatabaseUtils::cursorIntToContentValues(__JniBaseClass arg0, const QString &arg1, android::content::ContentValues arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.database.DatabaseUtils",
-			"cursorIntToContentValues",
-			"(Landroid/database/Cursor;Ljava/lang/String;Landroid/content/ContentValues;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}
@@ -347,18 +248,6 @@ namespace android::database
 			arg3
 		);
 	}
-	void DatabaseUtils::cursorIntToContentValues(__JniBaseClass arg0, const QString &arg1, android::content::ContentValues arg2, const QString &arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.database.DatabaseUtils",
-			"cursorIntToContentValues",
-			"(Landroid/database/Cursor;Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object(),
-			QAndroidJniObject::fromString(arg3).object<jstring>()
-		);
-	}
 	void DatabaseUtils::cursorIntToContentValuesIfPresent(__JniBaseClass arg0, android::content::ContentValues arg1, jstring arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -370,17 +259,6 @@ namespace android::database
 			arg2
 		);
 	}
-	void DatabaseUtils::cursorIntToContentValuesIfPresent(__JniBaseClass arg0, android::content::ContentValues arg1, const QString &arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.database.DatabaseUtils",
-			"cursorIntToContentValuesIfPresent",
-			"(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	void DatabaseUtils::cursorLongToContentValues(__JniBaseClass arg0, jstring arg1, android::content::ContentValues arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -389,17 +267,6 @@ namespace android::database
 			"(Landroid/database/Cursor;Ljava/lang/String;Landroid/content/ContentValues;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void DatabaseUtils::cursorLongToContentValues(__JniBaseClass arg0, const QString &arg1, android::content::ContentValues arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.database.DatabaseUtils",
-			"cursorLongToContentValues",
-			"(Landroid/database/Cursor;Ljava/lang/String;Landroid/content/ContentValues;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}
@@ -415,18 +282,6 @@ namespace android::database
 			arg3
 		);
 	}
-	void DatabaseUtils::cursorLongToContentValues(__JniBaseClass arg0, const QString &arg1, android::content::ContentValues arg2, const QString &arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.database.DatabaseUtils",
-			"cursorLongToContentValues",
-			"(Landroid/database/Cursor;Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object(),
-			QAndroidJniObject::fromString(arg3).object<jstring>()
-		);
-	}
 	void DatabaseUtils::cursorLongToContentValuesIfPresent(__JniBaseClass arg0, android::content::ContentValues arg1, jstring arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -436,17 +291,6 @@ namespace android::database
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2
-		);
-	}
-	void DatabaseUtils::cursorLongToContentValuesIfPresent(__JniBaseClass arg0, android::content::ContentValues arg1, const QString &arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.database.DatabaseUtils",
-			"cursorLongToContentValuesIfPresent",
-			"(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	void DatabaseUtils::cursorRowToContentValues(__JniBaseClass arg0, android::content::ContentValues arg1)
@@ -470,17 +314,6 @@ namespace android::database
 			arg2
 		);
 	}
-	void DatabaseUtils::cursorShortToContentValuesIfPresent(__JniBaseClass arg0, android::content::ContentValues arg1, const QString &arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.database.DatabaseUtils",
-			"cursorShortToContentValuesIfPresent",
-			"(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	void DatabaseUtils::cursorStringToContentValues(__JniBaseClass arg0, jstring arg1, android::content::ContentValues arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -489,17 +322,6 @@ namespace android::database
 			"(Landroid/database/Cursor;Ljava/lang/String;Landroid/content/ContentValues;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void DatabaseUtils::cursorStringToContentValues(__JniBaseClass arg0, const QString &arg1, android::content::ContentValues arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.database.DatabaseUtils",
-			"cursorStringToContentValues",
-			"(Landroid/database/Cursor;Ljava/lang/String;Landroid/content/ContentValues;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}
@@ -515,18 +337,6 @@ namespace android::database
 			arg3
 		);
 	}
-	void DatabaseUtils::cursorStringToContentValues(__JniBaseClass arg0, const QString &arg1, android::content::ContentValues arg2, const QString &arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.database.DatabaseUtils",
-			"cursorStringToContentValues",
-			"(Landroid/database/Cursor;Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object(),
-			QAndroidJniObject::fromString(arg3).object<jstring>()
-		);
-	}
 	void DatabaseUtils::cursorStringToContentValuesIfPresent(__JniBaseClass arg0, android::content::ContentValues arg1, jstring arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -538,17 +348,6 @@ namespace android::database
 			arg2
 		);
 	}
-	void DatabaseUtils::cursorStringToContentValuesIfPresent(__JniBaseClass arg0, android::content::ContentValues arg1, const QString &arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.database.DatabaseUtils",
-			"cursorStringToContentValuesIfPresent",
-			"(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	void DatabaseUtils::cursorStringToInsertHelper(__JniBaseClass arg0, jstring arg1, android::database::DatabaseUtils_InsertHelper arg2, jint arg3)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -557,18 +356,6 @@ namespace android::database
 			"(Landroid/database/Cursor;Ljava/lang/String;Landroid/database/DatabaseUtils$InsertHelper;I)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object(),
-			arg3
-		);
-	}
-	void DatabaseUtils::cursorStringToInsertHelper(__JniBaseClass arg0, const QString &arg1, android::database::DatabaseUtils_InsertHelper arg2, jint arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.database.DatabaseUtils",
-			"cursorStringToInsertHelper",
-			"(Landroid/database/Cursor;Ljava/lang/String;Landroid/database/DatabaseUtils$InsertHelper;I)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object(),
 			arg3
 		);
@@ -658,15 +445,6 @@ namespace android::database
 			arg0
 		).object<jstring>();
 	}
-	jstring DatabaseUtils::getCollationKey(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.database.DatabaseUtils",
-			"getCollationKey",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
 	jstring DatabaseUtils::getHexCollationKey(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -676,15 +454,6 @@ namespace android::database
 			arg0
 		).object<jstring>();
 	}
-	jstring DatabaseUtils::getHexCollationKey(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.database.DatabaseUtils",
-			"getHexCollationKey",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
 	jint DatabaseUtils::getSqlStatementType(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -692,15 +461,6 @@ namespace android::database
 			"getSqlStatementType",
 			"(Ljava/lang/String;)I",
 			arg0
-		);
-	}
-	jint DatabaseUtils::getSqlStatementType(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.database.DatabaseUtils",
-			"getSqlStatementType",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jlong DatabaseUtils::longForQuery(android::database::sqlite::SQLiteStatement arg0, jarray arg1)
@@ -724,17 +484,6 @@ namespace android::database
 			arg2
 		);
 	}
-	jlong DatabaseUtils::longForQuery(android::database::sqlite::SQLiteDatabase arg0, const QString &arg1, jarray arg2)
-	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
-			"android.database.DatabaseUtils",
-			"longForQuery",
-			"(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;[Ljava/lang/String;)J",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2
-		);
-	}
 	jlong DatabaseUtils::queryNumEntries(android::database::sqlite::SQLiteDatabase arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticMethod<jlong>(
@@ -743,16 +492,6 @@ namespace android::database
 			"(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)J",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jlong DatabaseUtils::queryNumEntries(android::database::sqlite::SQLiteDatabase arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
-			"android.database.DatabaseUtils",
-			"queryNumEntries",
-			"(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)J",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	jlong DatabaseUtils::queryNumEntries(android::database::sqlite::SQLiteDatabase arg0, jstring arg1, jstring arg2)
@@ -766,17 +505,6 @@ namespace android::database
 			arg2
 		);
 	}
-	jlong DatabaseUtils::queryNumEntries(android::database::sqlite::SQLiteDatabase arg0, const QString &arg1, const QString &arg2)
-	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
-			"android.database.DatabaseUtils",
-			"queryNumEntries",
-			"(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;Ljava/lang/String;)J",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	jlong DatabaseUtils::queryNumEntries(android::database::sqlite::SQLiteDatabase arg0, jstring arg1, jstring arg2, jarray arg3)
 	{
 		return QAndroidJniObject::callStaticMethod<jlong>(
@@ -786,18 +514,6 @@ namespace android::database
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3
-		);
-	}
-	jlong DatabaseUtils::queryNumEntries(android::database::sqlite::SQLiteDatabase arg0, const QString &arg1, const QString &arg2, jarray arg3)
-	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
-			"android.database.DatabaseUtils",
-			"queryNumEntries",
-			"(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)J",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
 			arg3
 		);
 	}
@@ -837,15 +553,6 @@ namespace android::database
 			arg0
 		).object<jstring>();
 	}
-	jstring DatabaseUtils::sqlEscapeString(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.database.DatabaseUtils",
-			"sqlEscapeString",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
 	jstring DatabaseUtils::stringForQuery(android::database::sqlite::SQLiteStatement arg0, jarray arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -864,17 +571,6 @@ namespace android::database
 			"(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/String;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2
-		).object<jstring>();
-	}
-	jstring DatabaseUtils::stringForQuery(android::database::sqlite::SQLiteDatabase arg0, const QString &arg1, jarray arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.database.DatabaseUtils",
-			"stringForQuery",
-			"(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/String;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		).object<jstring>();
 	}

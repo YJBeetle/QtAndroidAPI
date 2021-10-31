@@ -41,15 +41,6 @@ namespace java::net
 			arg0
 		);
 	}
-	QAndroidJniObject StandardProtocolFamily::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.net.StandardProtocolFamily",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/net/StandardProtocolFamily;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray StandardProtocolFamily::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

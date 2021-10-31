@@ -44,15 +44,6 @@ namespace java::time::chrono
 			arg0
 		);
 	}
-	QAndroidJniObject MinguoEra::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.time.chrono.MinguoEra",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/time/chrono/MinguoEra;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray MinguoEra::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

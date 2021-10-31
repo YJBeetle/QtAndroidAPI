@@ -10,7 +10,7 @@ namespace android::telephony::mbms
 	
 	DownloadRequest_Builder::DownloadRequest_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DownloadRequest_Builder::DownloadRequest_Builder(android::net::Uri &arg0, android::net::Uri &arg1)
+	DownloadRequest_Builder::DownloadRequest_Builder(android::net::Uri arg0, android::net::Uri arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.telephony.mbms.DownloadRequest$Builder",

@@ -89,7 +89,6 @@ namespace android::app
 		jboolean clearApplicationUserData();
 		void clearWatchHeapLimit();
 		void dumpPackageState(java::io::FileDescriptor arg0, jstring arg1);
-		void dumpPackageState(java::io::FileDescriptor arg0, const QString &arg1);
 		QAndroidJniObject getAppTaskThumbnailSize();
 		QAndroidJniObject getAppTasks();
 		QAndroidJniObject getDeviceConfigurationInfo();
@@ -111,11 +110,9 @@ namespace android::app
 		jboolean isInLockTaskMode();
 		jboolean isLowRamDevice();
 		void killBackgroundProcesses(jstring arg0);
-		void killBackgroundProcesses(const QString &arg0);
 		void moveTaskToFront(jint arg0, jint arg1);
 		void moveTaskToFront(jint arg0, jint arg1, android::os::Bundle arg2);
 		void restartPackage(jstring arg0);
-		void restartPackage(const QString &arg0);
 		void setWatchHeapLimit(jlong arg0);
 	};
 } // namespace android::app

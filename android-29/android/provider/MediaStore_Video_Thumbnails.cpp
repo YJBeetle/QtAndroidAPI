@@ -134,15 +134,6 @@ namespace android::provider
 			arg0
 		);
 	}
-	QAndroidJniObject MediaStore_Video_Thumbnails::getContentUri(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.MediaStore$Video$Thumbnails",
-			"getContentUri",
-			"(Ljava/lang/String;)Landroid/net/Uri;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject MediaStore_Video_Thumbnails::getThumbnail(android::content::ContentResolver arg0, jlong arg1, jint arg2, android::graphics::BitmapFactory_Options arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

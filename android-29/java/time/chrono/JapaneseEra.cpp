@@ -71,15 +71,6 @@ namespace java::time::chrono
 			arg0
 		);
 	}
-	QAndroidJniObject JapaneseEra::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.time.chrono.JapaneseEra",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/time/chrono/JapaneseEra;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray JapaneseEra::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

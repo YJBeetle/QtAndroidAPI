@@ -102,15 +102,6 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject Instant::parse(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.time.Instant",
-			"parse",
-			"(Ljava/lang/CharSequence;)Ljava/time/Instant;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Instant::adjustInto(__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(

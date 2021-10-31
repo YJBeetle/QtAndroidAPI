@@ -13,20 +13,12 @@ namespace javax::crypto
 			"()V"
 		);
 	}
-	BadPaddingException::BadPaddingException(jstring &arg0)
+	BadPaddingException::BadPaddingException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.crypto.BadPaddingException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	BadPaddingException::BadPaddingException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.crypto.BadPaddingException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

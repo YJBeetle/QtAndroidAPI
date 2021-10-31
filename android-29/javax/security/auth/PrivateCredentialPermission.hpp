@@ -25,8 +25,7 @@ namespace javax::security::auth
 		
 		PrivateCredentialPermission(QAndroidJniObject obj);
 		// Constructors
-		PrivateCredentialPermission(jstring &arg0, jstring &arg1);
-		PrivateCredentialPermission(const QString &arg0, const QString &arg1);
+		PrivateCredentialPermission(jstring arg0, jstring arg1);
 		PrivateCredentialPermission() = default;
 		
 		// Methods

@@ -17,7 +17,7 @@ namespace android::graphics
 		
 		BlendModeColorFilter(QAndroidJniObject obj);
 		// Constructors
-		BlendModeColorFilter(jint &arg0, android::graphics::BlendMode &arg1);
+		BlendModeColorFilter(jint arg0, android::graphics::BlendMode arg1);
 		BlendModeColorFilter() = default;
 		
 		// Methods

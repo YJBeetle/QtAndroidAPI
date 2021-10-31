@@ -25,9 +25,9 @@ namespace java::util
 		
 		EnumMap(QAndroidJniObject obj);
 		// Constructors
-		EnumMap(jclass &arg0);
+		EnumMap(jclass arg0);
 		EnumMap(java::util::EnumMap &arg0);
-		EnumMap(__JniBaseClass &arg0);
+		EnumMap(__JniBaseClass arg0);
 		EnumMap() = default;
 		
 		// Methods

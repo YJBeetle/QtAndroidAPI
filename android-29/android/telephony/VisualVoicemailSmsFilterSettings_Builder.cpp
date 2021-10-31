@@ -31,14 +31,6 @@ namespace android::telephony
 			arg0
 		);
 	}
-	QAndroidJniObject VisualVoicemailSmsFilterSettings_Builder::setClientPrefix(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setClientPrefix",
-			"(Ljava/lang/String;)Landroid/telephony/VisualVoicemailSmsFilterSettings$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject VisualVoicemailSmsFilterSettings_Builder::setDestinationPort(jint arg0)
 	{
 		return __thiz.callObjectMethod(

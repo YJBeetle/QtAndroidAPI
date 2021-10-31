@@ -64,15 +64,6 @@ namespace android::net
 			arg0
 		);
 	}
-	QAndroidJniObject MacAddress::fromString(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.net.MacAddress",
-			"fromString",
-			"(Ljava/lang/String;)Landroid/net/MacAddress;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jint MacAddress::describeContents()
 	{
 		return __thiz.callMethod<jint>(

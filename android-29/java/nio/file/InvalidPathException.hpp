@@ -15,10 +15,8 @@ namespace java::nio::file
 		
 		InvalidPathException(QAndroidJniObject obj);
 		// Constructors
-		InvalidPathException(jstring &arg0, jstring &arg1);
-		InvalidPathException(const QString &arg0, const QString &arg1);
-		InvalidPathException(jstring &arg0, jstring &arg1, jint &arg2);
-		InvalidPathException(const QString &arg0, const QString &arg1, jint &arg2);
+		InvalidPathException(jstring arg0, jstring arg1);
+		InvalidPathException(jstring arg0, jstring arg1, jint arg2);
 		InvalidPathException() = default;
 		
 		// Methods

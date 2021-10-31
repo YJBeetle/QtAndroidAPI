@@ -13,7 +13,7 @@ namespace android::util
 			"()V"
 		);
 	}
-	SparseIntArray::SparseIntArray(jint &arg0)
+	SparseIntArray::SparseIntArray(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.SparseIntArray",

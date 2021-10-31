@@ -16,7 +16,7 @@ namespace android::content
 		
 		Intent_FilterComparison(QAndroidJniObject obj);
 		// Constructors
-		Intent_FilterComparison(android::content::Intent &arg0);
+		Intent_FilterComparison(android::content::Intent arg0);
 		Intent_FilterComparison() = default;
 		
 		// Methods

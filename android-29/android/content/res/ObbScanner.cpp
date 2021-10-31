@@ -18,14 +18,5 @@ namespace android::content::res
 			arg0
 		);
 	}
-	QAndroidJniObject ObbScanner::getObbInfo(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.content.res.ObbScanner",
-			"getObbInfo",
-			"(Ljava/lang/String;)Landroid/content/res/ObbInfo;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 } // namespace android::content::res
 

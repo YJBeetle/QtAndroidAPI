@@ -8,7 +8,7 @@ namespace java::security::spec
 	
 	ECPublicKeySpec::ECPublicKeySpec(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ECPublicKeySpec::ECPublicKeySpec(java::security::spec::ECPoint &arg0, java::security::spec::ECParameterSpec &arg1)
+	ECPublicKeySpec::ECPublicKeySpec(java::security::spec::ECPoint arg0, java::security::spec::ECParameterSpec arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.spec.ECPublicKeySpec",

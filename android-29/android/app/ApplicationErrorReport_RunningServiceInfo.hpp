@@ -19,11 +19,10 @@ namespace android::app
 		ApplicationErrorReport_RunningServiceInfo(QAndroidJniObject obj);
 		// Constructors
 		ApplicationErrorReport_RunningServiceInfo();
-		ApplicationErrorReport_RunningServiceInfo(android::os::Parcel &arg0);
+		ApplicationErrorReport_RunningServiceInfo(android::os::Parcel arg0);
 		
 		// Methods
 		void dump(__JniBaseClass arg0, jstring arg1);
-		void dump(__JniBaseClass arg0, const QString &arg1);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::app

@@ -25,10 +25,10 @@ namespace android::app
 		
 		MediaRouteButton(QAndroidJniObject obj);
 		// Constructors
-		MediaRouteButton(android::content::Context &arg0);
-		MediaRouteButton(android::content::Context &arg0, __JniBaseClass &arg1);
-		MediaRouteButton(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		MediaRouteButton(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		MediaRouteButton(android::content::Context arg0);
+		MediaRouteButton(android::content::Context arg0, __JniBaseClass arg1);
+		MediaRouteButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		MediaRouteButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		MediaRouteButton() = default;
 		
 		// Methods
@@ -38,7 +38,6 @@ namespace android::app
 		void onDetachedFromWindow();
 		jboolean performClick();
 		void setContentDescription(jstring arg0);
-		void setContentDescription(const QString &arg0);
 		void setExtendedSettingsClickListener(__JniBaseClass arg0);
 		void setRouteTypes(jint arg0);
 		void setVisibility(jint arg0);

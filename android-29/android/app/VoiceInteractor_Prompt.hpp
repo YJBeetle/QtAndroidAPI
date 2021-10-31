@@ -17,10 +17,8 @@ namespace android::app
 		
 		VoiceInteractor_Prompt(QAndroidJniObject obj);
 		// Constructors
-		VoiceInteractor_Prompt(jstring &arg0);
-		VoiceInteractor_Prompt(const QString &arg0);
-		VoiceInteractor_Prompt(jarray &arg0, jstring &arg1);
-		VoiceInteractor_Prompt(jarray &arg0, const QString &arg1);
+		VoiceInteractor_Prompt(jstring arg0);
+		VoiceInteractor_Prompt(jarray arg0, jstring arg1);
 		VoiceInteractor_Prompt() = default;
 		
 		// Methods

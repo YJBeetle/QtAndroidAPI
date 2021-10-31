@@ -25,15 +25,6 @@ namespace java::nio::file
 			arg0
 		);
 	}
-	QAndroidJniObject FileVisitOption::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.nio.file.FileVisitOption",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/nio/file/FileVisitOption;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray FileVisitOption::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

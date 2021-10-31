@@ -89,7 +89,6 @@ namespace android::app
 		QAndroidJniObject acquireLooperManager(android::os::Looper arg0);
 		QAndroidJniObject addMonitor(android::content::IntentFilter arg0, android::app::Instrumentation_ActivityResult arg1, jboolean arg2);
 		QAndroidJniObject addMonitor(jstring arg0, android::app::Instrumentation_ActivityResult arg1, jboolean arg2);
-		QAndroidJniObject addMonitor(const QString &arg0, android::app::Instrumentation_ActivityResult arg1, jboolean arg2);
 		void addMonitor(android::app::Instrumentation_ActivityMonitor arg0);
 		void addResults(android::os::Bundle arg0);
 		void callActivityOnCreate(android::app::Activity arg0, android::os::Bundle arg1);
@@ -124,11 +123,8 @@ namespace android::app
 		jboolean invokeMenuActionSync(android::app::Activity arg0, jint arg1, jint arg2);
 		jboolean isProfiling();
 		QAndroidJniObject newActivity(java::lang::ClassLoader arg0, jstring arg1, android::content::Intent arg2);
-		QAndroidJniObject newActivity(java::lang::ClassLoader arg0, const QString &arg1, android::content::Intent arg2);
 		QAndroidJniObject newActivity(jclass arg0, android::content::Context arg1, __JniBaseClass arg2, android::app::Application arg3, android::content::Intent arg4, android::content::pm::ActivityInfo arg5, jstring arg6, android::app::Activity arg7, jstring arg8, jobject arg9);
-		QAndroidJniObject newActivity(jclass arg0, android::content::Context arg1, __JniBaseClass arg2, android::app::Application arg3, android::content::Intent arg4, android::content::pm::ActivityInfo arg5, const QString &arg6, android::app::Activity arg7, const QString &arg8, jobject arg9);
 		QAndroidJniObject newApplication(java::lang::ClassLoader arg0, jstring arg1, android::content::Context arg2);
-		QAndroidJniObject newApplication(java::lang::ClassLoader arg0, const QString &arg1, android::content::Context arg2);
 		void onCreate(android::os::Bundle arg0);
 		void onDestroy();
 		jboolean onException(jobject arg0, jthrowable arg1);
@@ -141,7 +137,6 @@ namespace android::app
 		void sendPointerSync(android::view::MotionEvent arg0);
 		void sendStatus(jint arg0, android::os::Bundle arg1);
 		void sendStringSync(jstring arg0);
-		void sendStringSync(const QString &arg0);
 		void sendTrackballEventSync(android::view::MotionEvent arg0);
 		void setAutomaticPerformanceSnapshots();
 		void setInTouchMode(jboolean arg0);

@@ -16,8 +16,8 @@ namespace javax::crypto::spec
 		
 		DHParameterSpec(QAndroidJniObject obj);
 		// Constructors
-		DHParameterSpec(java::math::BigInteger &arg0, java::math::BigInteger &arg1);
-		DHParameterSpec(java::math::BigInteger &arg0, java::math::BigInteger &arg1, jint &arg2);
+		DHParameterSpec(java::math::BigInteger arg0, java::math::BigInteger arg1);
+		DHParameterSpec(java::math::BigInteger arg0, java::math::BigInteger arg1, jint arg2);
 		DHParameterSpec() = default;
 		
 		// Methods

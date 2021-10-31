@@ -32,7 +32,6 @@ namespace android::text
 		
 		// Methods
 		static QAndroidJniObject obtain(jstring arg0, jint arg1, jint arg2, android::text::TextPaint arg3, jint arg4);
-		static QAndroidJniObject obtain(const QString &arg0, jint arg1, jint arg2, android::text::TextPaint arg3, jint arg4);
 		QAndroidJniObject build();
 		QAndroidJniObject setAlignment(android::text::Layout_Alignment arg0);
 		QAndroidJniObject setBreakStrategy(jint arg0);
@@ -45,7 +44,6 @@ namespace android::text
 		QAndroidJniObject setLineSpacing(jfloat arg0, jfloat arg1);
 		QAndroidJniObject setMaxLines(jint arg0);
 		QAndroidJniObject setText(jstring arg0);
-		QAndroidJniObject setText(const QString &arg0);
 		QAndroidJniObject setTextDirection(__JniBaseClass arg0);
 		QAndroidJniObject setUseLineSpacingFromFallbacks(jboolean arg0);
 	};

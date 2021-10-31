@@ -13,20 +13,12 @@ namespace java::lang
 			"()V"
 		);
 	}
-	ClassFormatError::ClassFormatError(jstring &arg0)
+	ClassFormatError::ClassFormatError(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.ClassFormatError",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	ClassFormatError::ClassFormatError(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.ClassFormatError",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

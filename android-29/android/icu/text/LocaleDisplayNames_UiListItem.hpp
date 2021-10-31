@@ -20,8 +20,7 @@ namespace android::icu::text
 		
 		LocaleDisplayNames_UiListItem(QAndroidJniObject obj);
 		// Constructors
-		LocaleDisplayNames_UiListItem(android::icu::util::ULocale &arg0, android::icu::util::ULocale &arg1, jstring &arg2, jstring &arg3);
-		LocaleDisplayNames_UiListItem(android::icu::util::ULocale &arg0, android::icu::util::ULocale &arg1, const QString &arg2, const QString &arg3);
+		LocaleDisplayNames_UiListItem(android::icu::util::ULocale arg0, android::icu::util::ULocale arg1, jstring arg2, jstring arg3);
 		LocaleDisplayNames_UiListItem() = default;
 		
 		// Methods

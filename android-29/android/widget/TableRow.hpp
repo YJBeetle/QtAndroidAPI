@@ -35,8 +35,8 @@ namespace android::widget
 		
 		TableRow(QAndroidJniObject obj);
 		// Constructors
-		TableRow(android::content::Context &arg0);
-		TableRow(android::content::Context &arg0, __JniBaseClass &arg1);
+		TableRow(android::content::Context arg0);
+		TableRow(android::content::Context arg0, __JniBaseClass arg1);
 		TableRow() = default;
 		
 		// Methods

@@ -37,7 +37,7 @@ namespace android::icu::text
 			"()V"
 		);
 	}
-	MessagePattern::MessagePattern(android::icu::text::MessagePattern_ApostropheMode &arg0)
+	MessagePattern::MessagePattern(android::icu::text::MessagePattern_ApostropheMode arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.MessagePattern",
@@ -45,20 +45,12 @@ namespace android::icu::text
 			arg0.__jniObject().object()
 		);
 	}
-	MessagePattern::MessagePattern(jstring &arg0)
+	MessagePattern::MessagePattern(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.MessagePattern",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	MessagePattern::MessagePattern(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.text.MessagePattern",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	
@@ -70,15 +62,6 @@ namespace android::icu::text
 			"validateArgumentName",
 			"(Ljava/lang/String;)I",
 			arg0
-		);
-	}
-	jint MessagePattern::validateArgumentName(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.icu.text.MessagePattern",
-			"validateArgumentName",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring MessagePattern::autoQuoteApostropheDeep()
@@ -245,28 +228,12 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject MessagePattern::parse(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"parse",
-			"(Ljava/lang/String;)Landroid/icu/text/MessagePattern;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject MessagePattern::parseChoiceStyle(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"parseChoiceStyle",
 			"(Ljava/lang/String;)Landroid/icu/text/MessagePattern;",
 			arg0
-		);
-	}
-	QAndroidJniObject MessagePattern::parseChoiceStyle(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"parseChoiceStyle",
-			"(Ljava/lang/String;)Landroid/icu/text/MessagePattern;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject MessagePattern::parsePluralStyle(jstring arg0)
@@ -277,28 +244,12 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject MessagePattern::parsePluralStyle(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"parsePluralStyle",
-			"(Ljava/lang/String;)Landroid/icu/text/MessagePattern;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject MessagePattern::parseSelectStyle(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"parseSelectStyle",
 			"(Ljava/lang/String;)Landroid/icu/text/MessagePattern;",
 			arg0
-		);
-	}
-	QAndroidJniObject MessagePattern::parseSelectStyle(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"parseSelectStyle",
-			"(Ljava/lang/String;)Landroid/icu/text/MessagePattern;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean MessagePattern::partSubstringMatches(android::icu::text::MessagePattern_Part arg0, jstring arg1)
@@ -308,15 +259,6 @@ namespace android::icu::text
 			"(Landroid/icu/text/MessagePattern$Part;Ljava/lang/String;)Z",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jboolean MessagePattern::partSubstringMatches(android::icu::text::MessagePattern_Part arg0, const QString &arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"partSubstringMatches",
-			"(Landroid/icu/text/MessagePattern$Part;Ljava/lang/String;)Z",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	jstring MessagePattern::toString()

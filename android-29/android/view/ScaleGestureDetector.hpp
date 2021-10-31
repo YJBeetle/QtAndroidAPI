@@ -24,8 +24,8 @@ namespace android::view
 		
 		ScaleGestureDetector(QAndroidJniObject obj);
 		// Constructors
-		ScaleGestureDetector(android::content::Context &arg0, __JniBaseClass &arg1);
-		ScaleGestureDetector(android::content::Context &arg0, __JniBaseClass &arg1, android::os::Handler &arg2);
+		ScaleGestureDetector(android::content::Context arg0, __JniBaseClass arg1);
+		ScaleGestureDetector(android::content::Context arg0, __JniBaseClass arg1, android::os::Handler arg2);
 		ScaleGestureDetector() = default;
 		
 		// Methods

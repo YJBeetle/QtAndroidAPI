@@ -14,7 +14,7 @@ namespace org::xmlpull::v1::sax2
 			"()V"
 		);
 	}
-	Driver::Driver(__JniBaseClass &arg0)
+	Driver::Driver(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"org.xmlpull.v1.sax2.Driver",
@@ -67,28 +67,12 @@ namespace org::xmlpull::v1::sax2
 			arg0
 		);
 	}
-	jboolean Driver::getFeature(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"getFeature",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jint Driver::getIndex(jstring arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getIndex",
 			"(Ljava/lang/String;)I",
 			arg0
-		);
-	}
-	jint Driver::getIndex(const QString &arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getIndex",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jint Driver::getIndex(jstring arg0, jstring arg1)
@@ -98,15 +82,6 @@ namespace org::xmlpull::v1::sax2
 			"(Ljava/lang/String;Ljava/lang/String;)I",
 			arg0,
 			arg1
-		);
-	}
-	jint Driver::getIndex(const QString &arg0, const QString &arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"getIndex",
-			"(Ljava/lang/String;Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	jint Driver::getLength()
@@ -137,14 +112,6 @@ namespace org::xmlpull::v1::sax2
 			"getProperty",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
 			arg0
-		).object<jobject>();
-	}
-	jobject Driver::getProperty(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getProperty",
-			"(Ljava/lang/String;)Ljava/lang/Object;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jobject>();
 	}
 	jstring Driver::getPublicId()
@@ -185,14 +152,6 @@ namespace org::xmlpull::v1::sax2
 			arg0
 		).object<jstring>();
 	}
-	jstring Driver::getType(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getType",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
 	jstring Driver::getType(jstring arg0, jstring arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -200,15 +159,6 @@ namespace org::xmlpull::v1::sax2
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
 			arg0,
 			arg1
-		).object<jstring>();
-	}
-	jstring Driver::getType(const QString &arg0, const QString &arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getType",
-			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		).object<jstring>();
 	}
 	jstring Driver::getURI(jint arg0)
@@ -235,14 +185,6 @@ namespace org::xmlpull::v1::sax2
 			arg0
 		).object<jstring>();
 	}
-	jstring Driver::getValue(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getValue",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
 	jstring Driver::getValue(jstring arg0, jstring arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -252,29 +194,12 @@ namespace org::xmlpull::v1::sax2
 			arg1
 		).object<jstring>();
 	}
-	jstring Driver::getValue(const QString &arg0, const QString &arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getValue",
-			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		).object<jstring>();
-	}
 	void Driver::parse(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"parse",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void Driver::parse(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"parse",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void Driver::parse(org::xml::sax::InputSource arg0)
@@ -334,30 +259,12 @@ namespace org::xmlpull::v1::sax2
 			arg1
 		);
 	}
-	void Driver::setFeature(const QString &arg0, jboolean arg1)
-	{
-		__thiz.callMethod<void>(
-			"setFeature",
-			"(Ljava/lang/String;Z)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	void Driver::setProperty(jstring arg0, jobject arg1)
 	{
 		__thiz.callMethod<void>(
 			"setProperty",
 			"(Ljava/lang/String;Ljava/lang/Object;)V",
 			arg0,
-			arg1
-		);
-	}
-	void Driver::setProperty(const QString &arg0, jobject arg1)
-	{
-		__thiz.callMethod<void>(
-			"setProperty",
-			"(Ljava/lang/String;Ljava/lang/Object;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

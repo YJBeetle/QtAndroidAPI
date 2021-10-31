@@ -17,7 +17,7 @@ namespace android::os
 		StrictMode_VmPolicy_Builder(QAndroidJniObject obj);
 		// Constructors
 		StrictMode_VmPolicy_Builder();
-		StrictMode_VmPolicy_Builder(android::os::StrictMode_VmPolicy &arg0);
+		StrictMode_VmPolicy_Builder(android::os::StrictMode_VmPolicy arg0);
 		
 		// Methods
 		QAndroidJniObject build();

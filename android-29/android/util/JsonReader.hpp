@@ -20,7 +20,7 @@ namespace android::util
 		
 		JsonReader(QAndroidJniObject obj);
 		// Constructors
-		JsonReader(java::io::Reader &arg0);
+		JsonReader(java::io::Reader arg0);
 		JsonReader() = default;
 		
 		// Methods

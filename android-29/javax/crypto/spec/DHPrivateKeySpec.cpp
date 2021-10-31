@@ -7,7 +7,7 @@ namespace javax::crypto::spec
 	
 	DHPrivateKeySpec::DHPrivateKeySpec(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DHPrivateKeySpec::DHPrivateKeySpec(java::math::BigInteger &arg0, java::math::BigInteger &arg1, java::math::BigInteger &arg2)
+	DHPrivateKeySpec::DHPrivateKeySpec(java::math::BigInteger arg0, java::math::BigInteger arg1, java::math::BigInteger arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.crypto.spec.DHPrivateKeySpec",

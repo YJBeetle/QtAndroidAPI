@@ -30,7 +30,6 @@ namespace android::media
 		jboolean closeJetFile();
 		jboolean loadJetFile(android::content::res::AssetFileDescriptor arg0);
 		jboolean loadJetFile(jstring arg0);
-		jboolean loadJetFile(const QString &arg0);
 		jboolean pause();
 		jboolean play();
 		jboolean queueJetSegment(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jbyte arg5);

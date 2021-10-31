@@ -12,8 +12,7 @@ namespace android::hardware::camera2
 		
 		CameraCharacteristics_Key(QAndroidJniObject obj);
 		// Constructors
-		CameraCharacteristics_Key(jstring &arg0, jclass &arg1);
-		CameraCharacteristics_Key(const QString &arg0, jclass &arg1);
+		CameraCharacteristics_Key(jstring arg0, jclass arg1);
 		CameraCharacteristics_Key() = default;
 		
 		// Methods

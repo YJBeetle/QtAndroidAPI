@@ -20,7 +20,7 @@ namespace android::hardware
 	
 	Camera_Area::Camera_Area(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Camera_Area::Camera_Area(android::graphics::Rect &arg0, jint &arg1)
+	Camera_Area::Camera_Area(android::graphics::Rect arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.hardware.Camera$Area",

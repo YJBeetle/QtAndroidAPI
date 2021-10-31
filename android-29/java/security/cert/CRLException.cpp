@@ -13,7 +13,7 @@ namespace java::security::cert
 			"()V"
 		);
 	}
-	CRLException::CRLException(jstring &arg0)
+	CRLException::CRLException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.cert.CRLException",
@@ -21,15 +21,7 @@ namespace java::security::cert
 			arg0
 		);
 	}
-	CRLException::CRLException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.cert.CRLException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	CRLException::CRLException(jthrowable &arg0)
+	CRLException::CRLException(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.cert.CRLException",
@@ -37,21 +29,12 @@ namespace java::security::cert
 			arg0
 		);
 	}
-	CRLException::CRLException(jstring &arg0, jthrowable &arg1)
+	CRLException::CRLException(jstring arg0, jthrowable arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.cert.CRLException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
-			arg1
-		);
-	}
-	CRLException::CRLException(const QString &arg0, jthrowable &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.cert.CRLException",
-			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

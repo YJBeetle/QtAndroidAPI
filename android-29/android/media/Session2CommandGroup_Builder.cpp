@@ -15,7 +15,7 @@ namespace android::media
 			"()V"
 		);
 	}
-	Session2CommandGroup_Builder::Session2CommandGroup_Builder(android::media::Session2CommandGroup &arg0)
+	Session2CommandGroup_Builder::Session2CommandGroup_Builder(android::media::Session2CommandGroup arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.Session2CommandGroup$Builder",

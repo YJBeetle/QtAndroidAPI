@@ -53,15 +53,6 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject ZoneOffset::of(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.time.ZoneOffset",
-			"of",
-			"(Ljava/lang/String;)Ljava/time/ZoneOffset;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject ZoneOffset::ofHours(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

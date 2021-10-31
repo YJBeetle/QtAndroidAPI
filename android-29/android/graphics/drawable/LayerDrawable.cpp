@@ -37,7 +37,7 @@ namespace android::graphics::drawable
 	
 	LayerDrawable::LayerDrawable(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	LayerDrawable::LayerDrawable(jarray &arg0)
+	LayerDrawable::LayerDrawable(jarray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.LayerDrawable",

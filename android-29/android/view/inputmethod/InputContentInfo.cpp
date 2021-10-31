@@ -17,7 +17,7 @@ namespace android::view::inputmethod
 	
 	InputContentInfo::InputContentInfo(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	InputContentInfo::InputContentInfo(android::net::Uri &arg0, android::content::ClipDescription &arg1)
+	InputContentInfo::InputContentInfo(android::net::Uri arg0, android::content::ClipDescription arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.inputmethod.InputContentInfo",
@@ -26,7 +26,7 @@ namespace android::view::inputmethod
 			arg1.__jniObject().object()
 		);
 	}
-	InputContentInfo::InputContentInfo(android::net::Uri &arg0, android::content::ClipDescription &arg1, android::net::Uri &arg2)
+	InputContentInfo::InputContentInfo(android::net::Uri arg0, android::content::ClipDescription arg1, android::net::Uri arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.inputmethod.InputContentInfo",

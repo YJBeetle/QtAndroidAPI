@@ -34,7 +34,7 @@ namespace java::util::logging
 		StreamHandler(QAndroidJniObject obj);
 		// Constructors
 		StreamHandler();
-		StreamHandler(java::io::OutputStream &arg0, java::util::logging::Formatter &arg1);
+		StreamHandler(java::io::OutputStream arg0, java::util::logging::Formatter arg1);
 		
 		// Methods
 		void close();
@@ -42,7 +42,6 @@ namespace java::util::logging
 		jboolean isLoggable(java::util::logging::LogRecord arg0);
 		void publish(java::util::logging::LogRecord arg0);
 		void setEncoding(jstring arg0);
-		void setEncoding(const QString &arg0);
 	};
 } // namespace java::util::logging
 

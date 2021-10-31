@@ -8,7 +8,7 @@ namespace android::text::style
 	
 	MaskFilterSpan::MaskFilterSpan(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MaskFilterSpan::MaskFilterSpan(android::graphics::MaskFilter &arg0)
+	MaskFilterSpan::MaskFilterSpan(android::graphics::MaskFilter arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.MaskFilterSpan",

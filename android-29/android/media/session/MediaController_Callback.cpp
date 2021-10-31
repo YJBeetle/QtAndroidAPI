@@ -67,14 +67,6 @@ namespace android::media::session
 			arg0
 		);
 	}
-	void MediaController_Callback::onQueueTitleChanged(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"onQueueTitleChanged",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void MediaController_Callback::onSessionDestroyed()
 	{
 		__thiz.callMethod<void>(
@@ -88,15 +80,6 @@ namespace android::media::session
 			"onSessionEvent",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void MediaController_Callback::onSessionEvent(const QString &arg0, android::os::Bundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"onSessionEvent",
-			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

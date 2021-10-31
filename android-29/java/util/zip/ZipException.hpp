@@ -15,8 +15,7 @@ namespace java::util::zip
 		ZipException(QAndroidJniObject obj);
 		// Constructors
 		ZipException();
-		ZipException(jstring &arg0);
-		ZipException(const QString &arg0);
+		ZipException(jstring arg0);
 		
 		// Methods
 	};

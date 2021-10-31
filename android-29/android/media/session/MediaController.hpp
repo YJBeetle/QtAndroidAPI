@@ -60,7 +60,7 @@ namespace android::media::session
 		
 		MediaController(QAndroidJniObject obj);
 		// Constructors
-		MediaController(android::content::Context &arg0, android::media::session::MediaSession_Token &arg1);
+		MediaController(android::content::Context arg0, android::media::session::MediaSession_Token arg1);
 		MediaController() = default;
 		
 		// Methods
@@ -82,7 +82,6 @@ namespace android::media::session
 		void registerCallback(android::media::session::MediaController_Callback arg0);
 		void registerCallback(android::media::session::MediaController_Callback arg0, android::os::Handler arg1);
 		void sendCommand(jstring arg0, android::os::Bundle arg1, android::os::ResultReceiver arg2);
-		void sendCommand(const QString &arg0, android::os::Bundle arg1, android::os::ResultReceiver arg2);
 		void setVolumeTo(jint arg0, jint arg1);
 		void unregisterCallback(android::media::session::MediaController_Callback arg0);
 	};

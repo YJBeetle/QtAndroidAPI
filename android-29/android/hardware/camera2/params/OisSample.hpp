@@ -12,7 +12,7 @@ namespace android::hardware::camera2::params
 		
 		OisSample(QAndroidJniObject obj);
 		// Constructors
-		OisSample(jlong &arg0, jfloat &arg1, jfloat &arg2);
+		OisSample(jlong arg0, jfloat arg1, jfloat arg2);
 		OisSample() = default;
 		
 		// Methods

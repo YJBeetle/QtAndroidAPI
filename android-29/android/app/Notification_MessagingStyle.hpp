@@ -22,18 +22,15 @@ namespace android::app
 		
 		Notification_MessagingStyle(QAndroidJniObject obj);
 		// Constructors
-		Notification_MessagingStyle(android::app::Person &arg0);
-		Notification_MessagingStyle(jstring &arg0);
-		Notification_MessagingStyle(const QString &arg0);
+		Notification_MessagingStyle(android::app::Person arg0);
+		Notification_MessagingStyle(jstring arg0);
 		Notification_MessagingStyle() = default;
 		
 		// Methods
 		QAndroidJniObject addHistoricMessage(android::app::Notification_MessagingStyle_Message arg0);
 		QAndroidJniObject addMessage(android::app::Notification_MessagingStyle_Message arg0);
 		QAndroidJniObject addMessage(jstring arg0, jlong arg1, android::app::Person arg2);
-		QAndroidJniObject addMessage(const QString &arg0, jlong arg1, android::app::Person arg2);
 		QAndroidJniObject addMessage(jstring arg0, jlong arg1, jstring arg2);
-		QAndroidJniObject addMessage(const QString &arg0, jlong arg1, const QString &arg2);
 		jstring getConversationTitle();
 		QAndroidJniObject getHistoricMessages();
 		QAndroidJniObject getMessages();
@@ -41,7 +38,6 @@ namespace android::app
 		jstring getUserDisplayName();
 		jboolean isGroupConversation();
 		QAndroidJniObject setConversationTitle(jstring arg0);
-		QAndroidJniObject setConversationTitle(const QString &arg0);
 		QAndroidJniObject setGroupConversation(jboolean arg0);
 	};
 } // namespace android::app

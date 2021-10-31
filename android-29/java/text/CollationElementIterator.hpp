@@ -34,7 +34,6 @@ namespace java::text
 		void reset();
 		void setOffset(jint arg0);
 		void setText(jstring arg0);
-		void setText(const QString &arg0);
 		void setText(__JniBaseClass arg0);
 	};
 } // namespace java::text

@@ -51,18 +51,13 @@ namespace java::text
 		SimpleDateFormat(QAndroidJniObject obj);
 		// Constructors
 		SimpleDateFormat();
-		SimpleDateFormat(jstring &arg0);
-		SimpleDateFormat(const QString &arg0);
-		SimpleDateFormat(jstring &arg0, java::text::DateFormatSymbols &arg1);
-		SimpleDateFormat(const QString &arg0, java::text::DateFormatSymbols &arg1);
-		SimpleDateFormat(jstring &arg0, java::util::Locale &arg1);
-		SimpleDateFormat(const QString &arg0, java::util::Locale &arg1);
+		SimpleDateFormat(jstring arg0);
+		SimpleDateFormat(jstring arg0, java::text::DateFormatSymbols arg1);
+		SimpleDateFormat(jstring arg0, java::util::Locale arg1);
 		
 		// Methods
 		void applyLocalizedPattern(jstring arg0);
-		void applyLocalizedPattern(const QString &arg0);
 		void applyPattern(jstring arg0);
-		void applyPattern(const QString &arg0);
 		jobject clone();
 		jboolean equals(jobject arg0);
 		QAndroidJniObject format(java::util::Date arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
@@ -71,7 +66,6 @@ namespace java::text
 		QAndroidJniObject getDateFormatSymbols();
 		jint hashCode();
 		QAndroidJniObject parse(jstring arg0, java::text::ParsePosition arg1);
-		QAndroidJniObject parse(const QString &arg0, java::text::ParsePosition arg1);
 		void set2DigitYearStart(java::util::Date arg0);
 		void setDateFormatSymbols(java::text::DateFormatSymbols arg0);
 		jstring toLocalizedPattern();

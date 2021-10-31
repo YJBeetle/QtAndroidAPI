@@ -13,7 +13,7 @@ namespace android::os
 		ConditionVariable(QAndroidJniObject obj);
 		// Constructors
 		ConditionVariable();
-		ConditionVariable(jboolean &arg0);
+		ConditionVariable(jboolean arg0);
 		
 		// Methods
 		jboolean block(jlong arg0);

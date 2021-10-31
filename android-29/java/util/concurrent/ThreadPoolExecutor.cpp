@@ -12,7 +12,7 @@ namespace java::util::concurrent
 	
 	ThreadPoolExecutor::ThreadPoolExecutor(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ThreadPoolExecutor::ThreadPoolExecutor(jint &arg0, jint &arg1, jlong &arg2, java::util::concurrent::TimeUnit &arg3, __JniBaseClass &arg4)
+	ThreadPoolExecutor::ThreadPoolExecutor(jint arg0, jint arg1, jlong arg2, java::util::concurrent::TimeUnit arg3, __JniBaseClass arg4)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.ThreadPoolExecutor",
@@ -24,7 +24,7 @@ namespace java::util::concurrent
 			arg4.__jniObject().object()
 		);
 	}
-	ThreadPoolExecutor::ThreadPoolExecutor(jint &arg0, jint &arg1, jlong &arg2, java::util::concurrent::TimeUnit &arg3, __JniBaseClass &arg4, __JniBaseClass &arg5)
+	ThreadPoolExecutor::ThreadPoolExecutor(jint arg0, jint arg1, jlong arg2, java::util::concurrent::TimeUnit arg3, __JniBaseClass arg4, __JniBaseClass arg5)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.ThreadPoolExecutor",
@@ -37,7 +37,7 @@ namespace java::util::concurrent
 			arg5.__jniObject().object()
 		);
 	}
-	ThreadPoolExecutor::ThreadPoolExecutor(jint &arg0, jint &arg1, jlong &arg2, java::util::concurrent::TimeUnit &arg3, __JniBaseClass &arg4, __JniBaseClass &arg5, __JniBaseClass &arg6)
+	ThreadPoolExecutor::ThreadPoolExecutor(jint arg0, jint arg1, jlong arg2, java::util::concurrent::TimeUnit arg3, __JniBaseClass arg4, __JniBaseClass arg5, __JniBaseClass arg6)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.ThreadPoolExecutor",

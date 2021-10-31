@@ -25,7 +25,7 @@ namespace android::os
 		
 		ResultReceiver(QAndroidJniObject obj);
 		// Constructors
-		ResultReceiver(android::os::Handler &arg0);
+		ResultReceiver(android::os::Handler arg0);
 		ResultReceiver() = default;
 		
 		// Methods

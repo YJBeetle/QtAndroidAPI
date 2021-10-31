@@ -36,13 +36,9 @@ namespace android::text::format
 		
 		// Methods
 		static jstring format(jstring arg0, java::util::Calendar arg1);
-		static jstring format(const QString &arg0, java::util::Calendar arg1);
 		static jstring format(jstring arg0, java::util::Date arg1);
-		static jstring format(const QString &arg0, java::util::Date arg1);
 		static jstring format(jstring arg0, jlong arg1);
-		static jstring format(const QString &arg0, jlong arg1);
 		static jstring getBestDateTimePattern(java::util::Locale arg0, jstring arg1);
-		static jstring getBestDateTimePattern(java::util::Locale arg0, const QString &arg1);
 		static QAndroidJniObject getDateFormat(android::content::Context arg0);
 		static jcharArray getDateFormatOrder(android::content::Context arg0);
 		static QAndroidJniObject getLongDateFormat(android::content::Context arg0);

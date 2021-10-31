@@ -17,8 +17,8 @@ namespace android::database
 		
 		MatrixCursor(QAndroidJniObject obj);
 		// Constructors
-		MatrixCursor(jarray &arg0);
-		MatrixCursor(jarray &arg0, jint &arg1);
+		MatrixCursor(jarray arg0);
+		MatrixCursor(jarray arg0, jint arg1);
 		MatrixCursor() = default;
 		
 		// Methods

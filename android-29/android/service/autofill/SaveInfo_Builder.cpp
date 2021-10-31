@@ -10,7 +10,7 @@ namespace android::service::autofill
 	
 	SaveInfo_Builder::SaveInfo_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SaveInfo_Builder::SaveInfo_Builder(jint &arg0)
+	SaveInfo_Builder::SaveInfo_Builder(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.service.autofill.SaveInfo$Builder",
@@ -18,7 +18,7 @@ namespace android::service::autofill
 			arg0
 		);
 	}
-	SaveInfo_Builder::SaveInfo_Builder(jint &arg0, jarray &arg1)
+	SaveInfo_Builder::SaveInfo_Builder(jint arg0, jarray arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.service.autofill.SaveInfo$Builder",
@@ -59,14 +59,6 @@ namespace android::service::autofill
 			"setDescription",
 			"(Ljava/lang/CharSequence;)Landroid/service/autofill/SaveInfo$Builder;",
 			arg0
-		);
-	}
-	QAndroidJniObject SaveInfo_Builder::setDescription(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setDescription",
-			"(Ljava/lang/CharSequence;)Landroid/service/autofill/SaveInfo$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject SaveInfo_Builder::setFlags(jint arg0)

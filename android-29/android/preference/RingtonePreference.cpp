@@ -11,7 +11,7 @@ namespace android::preference
 	
 	RingtonePreference::RingtonePreference(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	RingtonePreference::RingtonePreference(android::content::Context &arg0)
+	RingtonePreference::RingtonePreference(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.preference.RingtonePreference",
@@ -19,7 +19,7 @@ namespace android::preference
 			arg0.__jniObject().object()
 		);
 	}
-	RingtonePreference::RingtonePreference(android::content::Context &arg0, __JniBaseClass &arg1)
+	RingtonePreference::RingtonePreference(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.preference.RingtonePreference",
@@ -28,7 +28,7 @@ namespace android::preference
 			arg1.__jniObject().object()
 		);
 	}
-	RingtonePreference::RingtonePreference(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	RingtonePreference::RingtonePreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.preference.RingtonePreference",
@@ -38,7 +38,7 @@ namespace android::preference
 			arg2
 		);
 	}
-	RingtonePreference::RingtonePreference(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	RingtonePreference::RingtonePreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.preference.RingtonePreference",

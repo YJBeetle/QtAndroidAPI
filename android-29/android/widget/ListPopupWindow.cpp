@@ -61,7 +61,7 @@ namespace android::widget
 	
 	ListPopupWindow::ListPopupWindow(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ListPopupWindow::ListPopupWindow(android::content::Context &arg0)
+	ListPopupWindow::ListPopupWindow(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ListPopupWindow",
@@ -69,7 +69,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	ListPopupWindow::ListPopupWindow(android::content::Context &arg0, __JniBaseClass &arg1)
+	ListPopupWindow::ListPopupWindow(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ListPopupWindow",
@@ -78,7 +78,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	ListPopupWindow::ListPopupWindow(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	ListPopupWindow::ListPopupWindow(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ListPopupWindow",
@@ -88,7 +88,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	ListPopupWindow::ListPopupWindow(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	ListPopupWindow::ListPopupWindow(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ListPopupWindow",

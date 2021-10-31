@@ -57,15 +57,6 @@ namespace android::webkit
 			arg0
 		);
 	}
-	QAndroidJniObject ConsoleMessage_MessageLevel::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.webkit.ConsoleMessage$MessageLevel",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/webkit/ConsoleMessage$MessageLevel;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray ConsoleMessage_MessageLevel::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

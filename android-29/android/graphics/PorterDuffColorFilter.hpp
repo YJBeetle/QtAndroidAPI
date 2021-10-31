@@ -17,7 +17,7 @@ namespace android::graphics
 		
 		PorterDuffColorFilter(QAndroidJniObject obj);
 		// Constructors
-		PorterDuffColorFilter(jint &arg0, android::graphics::PorterDuff_Mode &arg1);
+		PorterDuffColorFilter(jint arg0, android::graphics::PorterDuff_Mode arg1);
 		PorterDuffColorFilter() = default;
 		
 		// Methods

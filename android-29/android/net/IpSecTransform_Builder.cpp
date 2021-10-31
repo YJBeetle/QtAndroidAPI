@@ -12,7 +12,7 @@ namespace android::net
 	
 	IpSecTransform_Builder::IpSecTransform_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	IpSecTransform_Builder::IpSecTransform_Builder(android::content::Context &arg0)
+	IpSecTransform_Builder::IpSecTransform_Builder(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.IpSecTransform$Builder",

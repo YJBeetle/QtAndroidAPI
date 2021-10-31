@@ -9,7 +9,7 @@ namespace android::service::autofill
 	
 	ImageTransformation_Builder::ImageTransformation_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ImageTransformation_Builder::ImageTransformation_Builder(android::view::autofill::AutofillId &arg0, java::util::regex::Pattern &arg1, jint &arg2)
+	ImageTransformation_Builder::ImageTransformation_Builder(android::view::autofill::AutofillId arg0, java::util::regex::Pattern arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.service.autofill.ImageTransformation$Builder",
@@ -19,7 +19,7 @@ namespace android::service::autofill
 			arg2
 		);
 	}
-	ImageTransformation_Builder::ImageTransformation_Builder(android::view::autofill::AutofillId &arg0, java::util::regex::Pattern &arg1, jint &arg2, jstring &arg3)
+	ImageTransformation_Builder::ImageTransformation_Builder(android::view::autofill::AutofillId arg0, java::util::regex::Pattern arg1, jint arg2, jstring arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.service.autofill.ImageTransformation$Builder",
@@ -28,17 +28,6 @@ namespace android::service::autofill
 			arg1.__jniObject().object(),
 			arg2,
 			arg3
-		);
-	}
-	ImageTransformation_Builder::ImageTransformation_Builder(android::view::autofill::AutofillId &arg0, java::util::regex::Pattern &arg1, jint &arg2, const QString &arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"android.service.autofill.ImageTransformation$Builder",
-			"(Landroid/view/autofill/AutofillId;Ljava/util/regex/Pattern;ILjava/lang/CharSequence;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2,
-			QAndroidJniObject::fromString(arg3).object<jstring>()
 		);
 	}
 	
@@ -60,16 +49,6 @@ namespace android::service::autofill
 			arg0.__jniObject().object(),
 			arg1,
 			arg2
-		);
-	}
-	QAndroidJniObject ImageTransformation_Builder::addOption(java::util::regex::Pattern arg0, jint arg1, const QString &arg2)
-	{
-		return __thiz.callObjectMethod(
-			"addOption",
-			"(Ljava/util/regex/Pattern;ILjava/lang/CharSequence;)Landroid/service/autofill/ImageTransformation$Builder;",
-			arg0.__jniObject().object(),
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	QAndroidJniObject ImageTransformation_Builder::build()

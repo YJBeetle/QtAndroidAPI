@@ -13,7 +13,7 @@ namespace android::util
 		
 		MutableInt(QAndroidJniObject obj);
 		// Constructors
-		MutableInt(jint &arg0);
+		MutableInt(jint arg0);
 		MutableInt() = default;
 		
 		// Methods

@@ -8,7 +8,7 @@ namespace android::content::pm
 	
 	ApplicationInfo_DisplayNameComparator::ApplicationInfo_DisplayNameComparator(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ApplicationInfo_DisplayNameComparator::ApplicationInfo_DisplayNameComparator(android::content::pm::PackageManager &arg0)
+	ApplicationInfo_DisplayNameComparator::ApplicationInfo_DisplayNameComparator(android::content::pm::PackageManager arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.pm.ApplicationInfo$DisplayNameComparator",

@@ -15,11 +15,9 @@ namespace java::util::concurrent
 		RejectedExecutionException(QAndroidJniObject obj);
 		// Constructors
 		RejectedExecutionException();
-		RejectedExecutionException(jstring &arg0);
-		RejectedExecutionException(const QString &arg0);
-		RejectedExecutionException(jthrowable &arg0);
-		RejectedExecutionException(jstring &arg0, jthrowable &arg1);
-		RejectedExecutionException(const QString &arg0, jthrowable &arg1);
+		RejectedExecutionException(jstring arg0);
+		RejectedExecutionException(jthrowable arg0);
+		RejectedExecutionException(jstring arg0, jthrowable arg1);
 		
 		// Methods
 	};

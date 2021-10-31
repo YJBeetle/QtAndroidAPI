@@ -49,15 +49,6 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject Normalizer2_Mode::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.Normalizer2$Mode",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/icu/text/Normalizer2$Mode;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray Normalizer2_Mode::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

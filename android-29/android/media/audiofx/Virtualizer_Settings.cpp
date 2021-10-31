@@ -19,20 +19,12 @@ namespace android::media::audiofx
 			"()V"
 		);
 	}
-	Virtualizer_Settings::Virtualizer_Settings(jstring &arg0)
+	Virtualizer_Settings::Virtualizer_Settings(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.audiofx.Virtualizer$Settings",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	Virtualizer_Settings::Virtualizer_Settings(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.media.audiofx.Virtualizer$Settings",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

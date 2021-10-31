@@ -44,10 +44,8 @@ namespace android::net
 		jboolean isPrivateDnsActive();
 		void setDnsServers(__JniBaseClass arg0);
 		void setDomains(jstring arg0);
-		void setDomains(const QString &arg0);
 		void setHttpProxy(android::net::ProxyInfo arg0);
 		void setInterfaceName(jstring arg0);
-		void setInterfaceName(const QString &arg0);
 		void setLinkAddresses(__JniBaseClass arg0);
 		void setMtu(jint arg0);
 		jstring toString();

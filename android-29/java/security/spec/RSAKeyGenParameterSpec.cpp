@@ -23,7 +23,7 @@ namespace java::security::spec
 	
 	RSAKeyGenParameterSpec::RSAKeyGenParameterSpec(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	RSAKeyGenParameterSpec::RSAKeyGenParameterSpec(jint &arg0, java::math::BigInteger &arg1)
+	RSAKeyGenParameterSpec::RSAKeyGenParameterSpec(jint arg0, java::math::BigInteger arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.spec.RSAKeyGenParameterSpec",
@@ -32,7 +32,7 @@ namespace java::security::spec
 			arg1.__jniObject().object()
 		);
 	}
-	RSAKeyGenParameterSpec::RSAKeyGenParameterSpec(jint &arg0, java::math::BigInteger &arg1, __JniBaseClass &arg2)
+	RSAKeyGenParameterSpec::RSAKeyGenParameterSpec(jint arg0, java::math::BigInteger arg1, __JniBaseClass arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.spec.RSAKeyGenParameterSpec",

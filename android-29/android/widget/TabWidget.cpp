@@ -12,7 +12,7 @@ namespace android::widget
 	
 	TabWidget::TabWidget(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	TabWidget::TabWidget(android::content::Context &arg0)
+	TabWidget::TabWidget(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.TabWidget",
@@ -20,7 +20,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	TabWidget::TabWidget(android::content::Context &arg0, __JniBaseClass &arg1)
+	TabWidget::TabWidget(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.TabWidget",
@@ -29,7 +29,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	TabWidget::TabWidget(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	TabWidget::TabWidget(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.TabWidget",
@@ -39,7 +39,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	TabWidget::TabWidget(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	TabWidget::TabWidget(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.TabWidget",

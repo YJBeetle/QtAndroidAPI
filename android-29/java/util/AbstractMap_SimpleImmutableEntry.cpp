@@ -6,7 +6,7 @@ namespace java::util
 	
 	AbstractMap_SimpleImmutableEntry::AbstractMap_SimpleImmutableEntry(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AbstractMap_SimpleImmutableEntry::AbstractMap_SimpleImmutableEntry(__JniBaseClass &arg0)
+	AbstractMap_SimpleImmutableEntry::AbstractMap_SimpleImmutableEntry(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.AbstractMap$SimpleImmutableEntry",
@@ -14,7 +14,7 @@ namespace java::util
 			arg0.__jniObject().object()
 		);
 	}
-	AbstractMap_SimpleImmutableEntry::AbstractMap_SimpleImmutableEntry(jobject &arg0, jobject &arg1)
+	AbstractMap_SimpleImmutableEntry::AbstractMap_SimpleImmutableEntry(jobject arg0, jobject arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.AbstractMap$SimpleImmutableEntry",

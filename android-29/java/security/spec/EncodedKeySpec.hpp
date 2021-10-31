@@ -12,7 +12,7 @@ namespace java::security::spec
 		
 		EncodedKeySpec(QAndroidJniObject obj);
 		// Constructors
-		EncodedKeySpec(jbyteArray &arg0);
+		EncodedKeySpec(jbyteArray arg0);
 		EncodedKeySpec() = default;
 		
 		// Methods

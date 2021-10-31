@@ -22,30 +22,24 @@ namespace java::lang
 		
 		Short(QAndroidJniObject obj);
 		// Constructors
-		Short(jstring &arg0);
-		Short(const QString &arg0);
-		Short(jshort &arg0);
+		Short(jstring arg0);
+		Short(jshort arg0);
 		Short() = default;
 		
 		// Methods
 		static jint compare(jshort arg0, jshort arg1);
 		static jint compareUnsigned(jshort arg0, jshort arg1);
 		static QAndroidJniObject decode(jstring arg0);
-		static QAndroidJniObject decode(const QString &arg0);
 		static jint hashCode(jshort arg0);
 		static jshort parseShort(jstring arg0);
-		static jshort parseShort(const QString &arg0);
 		static jshort parseShort(jstring arg0, jint arg1);
-		static jshort parseShort(const QString &arg0, jint arg1);
 		static jshort reverseBytes(jshort arg0);
 		static jstring toString(jshort arg0);
 		static jint toUnsignedInt(jshort arg0);
 		static jlong toUnsignedLong(jshort arg0);
 		static QAndroidJniObject valueOf(jstring arg0);
-		static QAndroidJniObject valueOf(const QString &arg0);
 		static QAndroidJniObject valueOf(jshort arg0);
 		static QAndroidJniObject valueOf(jstring arg0, jint arg1);
-		static QAndroidJniObject valueOf(const QString &arg0, jint arg1);
 		jbyte byteValue();
 		jint compareTo(jobject arg0);
 		jint compareTo(java::lang::Short arg0);

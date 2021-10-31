@@ -15,15 +15,11 @@ namespace javax::xml::transform
 		TransformerConfigurationException(QAndroidJniObject obj);
 		// Constructors
 		TransformerConfigurationException();
-		TransformerConfigurationException(jstring &arg0);
-		TransformerConfigurationException(const QString &arg0);
-		TransformerConfigurationException(jthrowable &arg0);
-		TransformerConfigurationException(jstring &arg0, jthrowable &arg1);
-		TransformerConfigurationException(const QString &arg0, jthrowable &arg1);
-		TransformerConfigurationException(jstring &arg0, __JniBaseClass &arg1);
-		TransformerConfigurationException(const QString &arg0, __JniBaseClass &arg1);
-		TransformerConfigurationException(jstring &arg0, __JniBaseClass &arg1, jthrowable &arg2);
-		TransformerConfigurationException(const QString &arg0, __JniBaseClass &arg1, jthrowable &arg2);
+		TransformerConfigurationException(jstring arg0);
+		TransformerConfigurationException(jthrowable arg0);
+		TransformerConfigurationException(jstring arg0, jthrowable arg1);
+		TransformerConfigurationException(jstring arg0, __JniBaseClass arg1);
+		TransformerConfigurationException(jstring arg0, __JniBaseClass arg1, jthrowable arg2);
 		
 		// Methods
 	};

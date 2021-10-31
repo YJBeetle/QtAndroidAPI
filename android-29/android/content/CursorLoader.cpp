@@ -10,7 +10,7 @@ namespace android::content
 	
 	CursorLoader::CursorLoader(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	CursorLoader::CursorLoader(android::content::Context &arg0)
+	CursorLoader::CursorLoader(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.CursorLoader",
@@ -18,7 +18,7 @@ namespace android::content
 			arg0.__jniObject().object()
 		);
 	}
-	CursorLoader::CursorLoader(android::content::Context &arg0, android::net::Uri &arg1, jarray &arg2, jstring &arg3, jarray &arg4, jstring &arg5)
+	CursorLoader::CursorLoader(android::content::Context arg0, android::net::Uri arg1, jarray arg2, jstring arg3, jarray arg4, jstring arg5)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.CursorLoader",
@@ -29,19 +29,6 @@ namespace android::content
 			arg3,
 			arg4,
 			arg5
-		);
-	}
-	CursorLoader::CursorLoader(android::content::Context &arg0, android::net::Uri &arg1, jarray &arg2, const QString &arg3, jarray &arg4, const QString &arg5)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.CursorLoader",
-			"(Landroid/content/Context;Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2,
-			QAndroidJniObject::fromString(arg3).object<jstring>(),
-			arg4,
-			QAndroidJniObject::fromString(arg5).object<jstring>()
 		);
 	}
 	
@@ -75,17 +62,6 @@ namespace android::content
 			"dump",
 			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3
-		);
-	}
-	void CursorLoader::dump(const QString &arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
 			arg3
@@ -165,14 +141,6 @@ namespace android::content
 			arg0
 		);
 	}
-	void CursorLoader::setSelection(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSelection",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void CursorLoader::setSelectionArgs(jarray arg0)
 	{
 		__thiz.callMethod<void>(
@@ -187,14 +155,6 @@ namespace android::content
 			"setSortOrder",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void CursorLoader::setSortOrder(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSortOrder",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void CursorLoader::setUri(android::net::Uri arg0)

@@ -32,20 +32,12 @@ namespace android::media::audiofx
 			"()V"
 		);
 	}
-	Equalizer_Settings::Equalizer_Settings(jstring &arg0)
+	Equalizer_Settings::Equalizer_Settings(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.audiofx.Equalizer$Settings",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	Equalizer_Settings::Equalizer_Settings(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.media.audiofx.Equalizer$Settings",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

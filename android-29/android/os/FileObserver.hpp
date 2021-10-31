@@ -29,19 +29,16 @@ namespace android::os
 		
 		FileObserver(QAndroidJniObject obj);
 		// Constructors
-		FileObserver(java::io::File &arg0);
-		FileObserver(jstring &arg0);
-		FileObserver(const QString &arg0);
-		FileObserver(__JniBaseClass &arg0);
-		FileObserver(java::io::File &arg0, jint &arg1);
-		FileObserver(jstring &arg0, jint &arg1);
-		FileObserver(const QString &arg0, jint &arg1);
-		FileObserver(__JniBaseClass &arg0, jint &arg1);
+		FileObserver(java::io::File arg0);
+		FileObserver(jstring arg0);
+		FileObserver(__JniBaseClass arg0);
+		FileObserver(java::io::File arg0, jint arg1);
+		FileObserver(jstring arg0, jint arg1);
+		FileObserver(__JniBaseClass arg0, jint arg1);
 		FileObserver() = default;
 		
 		// Methods
 		void onEvent(jint arg0, jstring arg1);
-		void onEvent(jint arg0, const QString &arg1);
 		void startWatching();
 		void stopWatching();
 	};

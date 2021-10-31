@@ -21,9 +21,9 @@ namespace android::widget
 		
 		Gallery_LayoutParams(QAndroidJniObject obj);
 		// Constructors
-		Gallery_LayoutParams(android::view::ViewGroup_LayoutParams &arg0);
-		Gallery_LayoutParams(android::content::Context &arg0, __JniBaseClass &arg1);
-		Gallery_LayoutParams(jint &arg0, jint &arg1);
+		Gallery_LayoutParams(android::view::ViewGroup_LayoutParams arg0);
+		Gallery_LayoutParams(android::content::Context arg0, __JniBaseClass arg1);
+		Gallery_LayoutParams(jint arg0, jint arg1);
 		Gallery_LayoutParams() = default;
 		
 		// Methods

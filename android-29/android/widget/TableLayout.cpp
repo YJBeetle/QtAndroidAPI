@@ -11,7 +11,7 @@ namespace android::widget
 	
 	TableLayout::TableLayout(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	TableLayout::TableLayout(android::content::Context &arg0)
+	TableLayout::TableLayout(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.TableLayout",
@@ -19,7 +19,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	TableLayout::TableLayout(android::content::Context &arg0, __JniBaseClass &arg1)
+	TableLayout::TableLayout(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.TableLayout",

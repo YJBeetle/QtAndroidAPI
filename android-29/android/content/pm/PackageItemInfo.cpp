@@ -128,15 +128,6 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	QAndroidJniObject PackageItemInfo::loadXmlMetaData(android::content::pm::PackageManager arg0, const QString &arg1)
-	{
-		return __thiz.callObjectMethod(
-			"loadXmlMetaData",
-			"(Landroid/content/pm/PackageManager;Ljava/lang/String;)Landroid/content/res/XmlResourceParser;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	void PackageItemInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(

@@ -15,8 +15,7 @@ namespace android::os
 		OperationCanceledException(QAndroidJniObject obj);
 		// Constructors
 		OperationCanceledException();
-		OperationCanceledException(jstring &arg0);
-		OperationCanceledException(const QString &arg0);
+		OperationCanceledException(jstring arg0);
 		
 		// Methods
 	};

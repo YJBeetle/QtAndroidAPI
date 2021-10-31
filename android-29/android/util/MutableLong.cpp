@@ -12,7 +12,7 @@ namespace android::util
 	
 	MutableLong::MutableLong(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MutableLong::MutableLong(jlong &arg0)
+	MutableLong::MutableLong(jlong arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.MutableLong",

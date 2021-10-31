@@ -14,7 +14,7 @@ namespace android::service::wallpaper
 	
 	WallpaperService_Engine::WallpaperService_Engine(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	WallpaperService_Engine::WallpaperService_Engine(android::service::wallpaper::WallpaperService &arg0)
+	WallpaperService_Engine::WallpaperService_Engine(android::service::wallpaper::WallpaperService arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.service.wallpaper.WallpaperService$Engine",
@@ -87,19 +87,6 @@ namespace android::service::wallpaper
 			"onCommand",
 			"(Ljava/lang/String;IIILandroid/os/Bundle;Z)Landroid/os/Bundle;",
 			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4.__jniObject().object(),
-			arg5
-		);
-	}
-	QAndroidJniObject WallpaperService_Engine::onCommand(const QString &arg0, jint arg1, jint arg2, jint arg3, android::os::Bundle arg4, jboolean arg5)
-	{
-		return __thiz.callObjectMethod(
-			"onCommand",
-			"(Ljava/lang/String;IIILandroid/os/Bundle;Z)Landroid/os/Bundle;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2,
 			arg3,

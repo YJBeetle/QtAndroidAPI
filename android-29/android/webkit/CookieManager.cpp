@@ -71,14 +71,6 @@ namespace android::webkit
 			arg0
 		).object<jstring>();
 	}
-	jstring CookieManager::getCookie(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getCookie",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
 	jboolean CookieManager::hasCookies()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -149,15 +141,6 @@ namespace android::webkit
 			arg1
 		);
 	}
-	void CookieManager::setCookie(const QString &arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"setCookie",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	void CookieManager::setCookie(jstring arg0, jstring arg1, __JniBaseClass arg2)
 	{
 		__thiz.callMethod<void>(
@@ -165,16 +148,6 @@ namespace android::webkit
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/webkit/ValueCallback;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void CookieManager::setCookie(const QString &arg0, const QString &arg1, __JniBaseClass arg2)
-	{
-		__thiz.callMethod<void>(
-			"setCookie",
-			"(Ljava/lang/String;Ljava/lang/String;Landroid/webkit/ValueCallback;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}

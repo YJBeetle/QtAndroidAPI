@@ -43,16 +43,13 @@ namespace android::service::notification
 		
 		Condition(QAndroidJniObject obj);
 		// Constructors
-		Condition(android::os::Parcel &arg0);
-		Condition(android::net::Uri &arg0, jstring &arg1, jint &arg2);
-		Condition(android::net::Uri &arg0, const QString &arg1, jint &arg2);
-		Condition(android::net::Uri &arg0, jstring &arg1, jstring &arg2, jstring &arg3, jint &arg4, jint &arg5, jint &arg6);
-		Condition(android::net::Uri &arg0, const QString &arg1, const QString &arg2, const QString &arg3, jint &arg4, jint &arg5, jint &arg6);
+		Condition(android::os::Parcel arg0);
+		Condition(android::net::Uri arg0, jstring arg1, jint arg2);
+		Condition(android::net::Uri arg0, jstring arg1, jstring arg2, jstring arg3, jint arg4, jint arg5, jint arg6);
 		Condition() = default;
 		
 		// Methods
 		static jboolean isValidId(android::net::Uri arg0, jstring arg1);
-		static jboolean isValidId(android::net::Uri arg0, const QString &arg1);
 		static QAndroidJniObject newId(android::content::Context arg0);
 		static jstring relevanceToString(jint arg0);
 		static jstring stateToString(jint arg0);

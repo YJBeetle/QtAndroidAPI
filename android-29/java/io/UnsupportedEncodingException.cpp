@@ -13,20 +13,12 @@ namespace java::io
 			"()V"
 		);
 	}
-	UnsupportedEncodingException::UnsupportedEncodingException(jstring &arg0)
+	UnsupportedEncodingException::UnsupportedEncodingException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.UnsupportedEncodingException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	UnsupportedEncodingException::UnsupportedEncodingException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.io.UnsupportedEncodingException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

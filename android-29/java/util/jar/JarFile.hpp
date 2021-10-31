@@ -50,14 +50,12 @@ namespace java::util::jar
 		
 		JarFile(QAndroidJniObject obj);
 		// Constructors
-		JarFile(java::io::File &arg0);
-		JarFile(jstring &arg0);
-		JarFile(const QString &arg0);
-		JarFile(java::io::File &arg0, jboolean &arg1);
-		JarFile(jstring &arg0, jboolean &arg1);
-		JarFile(const QString &arg0, jboolean &arg1);
-		JarFile(java::io::File &arg0, jboolean &arg1, jint &arg2);
-		JarFile(java::io::File &arg0, jboolean &arg1, jint &arg2, __JniBaseClass &arg3);
+		JarFile(java::io::File arg0);
+		JarFile(jstring arg0);
+		JarFile(java::io::File arg0, jboolean arg1);
+		JarFile(jstring arg0, jboolean arg1);
+		JarFile(java::io::File arg0, jboolean arg1, jint arg2);
+		JarFile(java::io::File arg0, jboolean arg1, jint arg2, __JniBaseClass arg3);
 		JarFile() = default;
 		
 		// Methods
@@ -65,10 +63,8 @@ namespace java::util::jar
 		static QAndroidJniObject runtimeVersion();
 		QAndroidJniObject entries();
 		QAndroidJniObject getEntry(jstring arg0);
-		QAndroidJniObject getEntry(const QString &arg0);
 		QAndroidJniObject getInputStream(java::util::zip::ZipEntry arg0);
 		QAndroidJniObject getJarEntry(jstring arg0);
-		QAndroidJniObject getJarEntry(const QString &arg0);
 		QAndroidJniObject getManifest();
 		QAndroidJniObject getVersion();
 		jboolean isMultiRelease();

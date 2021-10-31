@@ -2887,16 +2887,6 @@ namespace android::opengl
 			arg1
 		);
 	}
-	jint GLES30::glGetFragDataLocation(jint arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.opengl.GLES30",
-			"glGetFragDataLocation",
-			"(ILjava/lang/String;)I",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	void GLES30::glGetInteger64i_v(jint arg0, jint arg1, java::nio::LongBuffer arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -3232,16 +3222,6 @@ namespace android::opengl
 			"(ILjava/lang/String;)I",
 			arg0,
 			arg1
-		);
-	}
-	jint GLES30::glGetUniformBlockIndex(jint arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.opengl.GLES30",
-			"glGetUniformBlockIndex",
-			"(ILjava/lang/String;)I",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void GLES30::glGetUniformIndices(jint arg0, jarray arg1, java::nio::IntBuffer arg2)

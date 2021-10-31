@@ -15,8 +15,7 @@ namespace java::util::regex
 		
 		PatternSyntaxException(QAndroidJniObject obj);
 		// Constructors
-		PatternSyntaxException(jstring &arg0, jstring &arg1, jint &arg2);
-		PatternSyntaxException(const QString &arg0, const QString &arg1, jint &arg2);
+		PatternSyntaxException(jstring arg0, jstring arg1, jint arg2);
 		PatternSyntaxException() = default;
 		
 		// Methods

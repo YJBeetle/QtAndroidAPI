@@ -9,7 +9,7 @@ namespace java::security
 	
 	CodeSigner::CodeSigner(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	CodeSigner::CodeSigner(java::security::cert::CertPath &arg0, java::security::Timestamp &arg1)
+	CodeSigner::CodeSigner(java::security::cert::CertPath arg0, java::security::Timestamp arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.CodeSigner",

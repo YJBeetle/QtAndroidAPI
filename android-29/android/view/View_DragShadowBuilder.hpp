@@ -25,7 +25,7 @@ namespace android::view
 		View_DragShadowBuilder(QAndroidJniObject obj);
 		// Constructors
 		View_DragShadowBuilder();
-		View_DragShadowBuilder(android::view::View &arg0);
+		View_DragShadowBuilder(android::view::View arg0);
 		
 		// Methods
 		QAndroidJniObject getView();

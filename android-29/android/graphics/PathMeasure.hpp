@@ -23,7 +23,7 @@ namespace android::graphics
 		PathMeasure(QAndroidJniObject obj);
 		// Constructors
 		PathMeasure();
-		PathMeasure(android::graphics::Path &arg0, jboolean &arg1);
+		PathMeasure(android::graphics::Path arg0, jboolean arg1);
 		
 		// Methods
 		jfloat getLength();

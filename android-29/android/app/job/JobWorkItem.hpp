@@ -21,8 +21,8 @@ namespace android::app::job
 		
 		JobWorkItem(QAndroidJniObject obj);
 		// Constructors
-		JobWorkItem(android::content::Intent &arg0);
-		JobWorkItem(android::content::Intent &arg0, jlong &arg1, jlong &arg2);
+		JobWorkItem(android::content::Intent arg0);
+		JobWorkItem(android::content::Intent arg0, jlong arg1, jlong arg2);
 		JobWorkItem() = default;
 		
 		// Methods

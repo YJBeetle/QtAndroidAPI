@@ -97,15 +97,6 @@ namespace java::nio::file
 			arg0
 		);
 	}
-	QAndroidJniObject StandardOpenOption::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.nio.file.StandardOpenOption",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/nio/file/StandardOpenOption;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray StandardOpenOption::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

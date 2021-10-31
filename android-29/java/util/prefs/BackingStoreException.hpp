@@ -13,9 +13,8 @@ namespace java::util::prefs
 		
 		BackingStoreException(QAndroidJniObject obj);
 		// Constructors
-		BackingStoreException(jstring &arg0);
-		BackingStoreException(const QString &arg0);
-		BackingStoreException(jthrowable &arg0);
+		BackingStoreException(jstring arg0);
+		BackingStoreException(jthrowable arg0);
 		BackingStoreException() = default;
 		
 		// Methods

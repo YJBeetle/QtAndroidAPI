@@ -13,20 +13,12 @@ namespace java::lang
 			"()V"
 		);
 	}
-	InterruptedException::InterruptedException(jstring &arg0)
+	InterruptedException::InterruptedException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.InterruptedException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	InterruptedException::InterruptedException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.InterruptedException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

@@ -13,8 +13,7 @@ namespace android::media
 		
 		MediaCryptoException(QAndroidJniObject obj);
 		// Constructors
-		MediaCryptoException(jstring &arg0);
-		MediaCryptoException(const QString &arg0);
+		MediaCryptoException(jstring arg0);
 		MediaCryptoException() = default;
 		
 		// Methods

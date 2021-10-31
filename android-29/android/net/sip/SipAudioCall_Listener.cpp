@@ -75,16 +75,6 @@ namespace android::net::sip
 			arg2
 		);
 	}
-	void SipAudioCall_Listener::onError(android::net::sip::SipAudioCall arg0, jint arg1, const QString &arg2)
-	{
-		__thiz.callMethod<void>(
-			"onError",
-			"(Landroid/net/sip/SipAudioCall;ILjava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	void SipAudioCall_Listener::onReadyToCall(android::net::sip::SipAudioCall arg0)
 	{
 		__thiz.callMethod<void>(

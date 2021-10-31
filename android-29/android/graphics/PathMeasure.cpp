@@ -29,7 +29,7 @@ namespace android::graphics
 			"()V"
 		);
 	}
-	PathMeasure::PathMeasure(android::graphics::Path &arg0, jboolean &arg1)
+	PathMeasure::PathMeasure(android::graphics::Path arg0, jboolean arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.PathMeasure",

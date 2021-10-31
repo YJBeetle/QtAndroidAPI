@@ -25,8 +25,8 @@ namespace android::app
 		
 		Presentation(QAndroidJniObject obj);
 		// Constructors
-		Presentation(android::content::Context &arg0, android::view::Display &arg1);
-		Presentation(android::content::Context &arg0, android::view::Display &arg1, jint &arg2);
+		Presentation(android::content::Context arg0, android::view::Display arg1);
+		Presentation(android::content::Context arg0, android::view::Display arg1, jint arg2);
 		Presentation() = default;
 		
 		// Methods

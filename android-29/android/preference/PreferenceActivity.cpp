@@ -96,14 +96,6 @@ namespace android::preference
 			arg0
 		);
 	}
-	QAndroidJniObject PreferenceActivity::findPreference(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"findPreference",
-			"(Ljava/lang/CharSequence;)Landroid/preference/Preference;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void PreferenceActivity::finishPreferencePanel(android::app::Fragment arg0, jint arg1, android::content::Intent arg2)
 	{
 		__thiz.callMethod<void>(
@@ -179,17 +171,6 @@ namespace android::preference
 			"onBuildStartFragmentIntent",
 			"(Ljava/lang/String;Landroid/os/Bundle;II)Landroid/content/Intent;",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2,
-			arg3
-		);
-	}
-	QAndroidJniObject PreferenceActivity::onBuildStartFragmentIntent(const QString &arg0, android::os::Bundle arg1, jint arg2, jint arg3)
-	{
-		return __thiz.callObjectMethod(
-			"onBuildStartFragmentIntent",
-			"(Ljava/lang/String;Landroid/os/Bundle;II)Landroid/content/Intent;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2,
 			arg3
@@ -283,16 +264,6 @@ namespace android::preference
 			arg2.__jniObject().object()
 		);
 	}
-	void PreferenceActivity::setParentTitle(const QString &arg0, const QString &arg1, __JniBaseClass arg2)
-	{
-		__thiz.callMethod<void>(
-			"setParentTitle",
-			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/view/View$OnClickListener;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object()
-		);
-	}
 	void PreferenceActivity::setPreferenceScreen(android::preference::PreferenceScreen arg0)
 	{
 		__thiz.callMethod<void>(
@@ -308,15 +279,6 @@ namespace android::preference
 			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V",
 			arg0,
 			arg1
-		);
-	}
-	void PreferenceActivity::showBreadCrumbs(const QString &arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"showBreadCrumbs",
-			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void PreferenceActivity::startPreferenceFragment(android::app::Fragment arg0, jboolean arg1)
@@ -341,19 +303,6 @@ namespace android::preference
 			arg5
 		);
 	}
-	void PreferenceActivity::startPreferencePanel(const QString &arg0, android::os::Bundle arg1, jint arg2, const QString &arg3, android::app::Fragment arg4, jint arg5)
-	{
-		__thiz.callMethod<void>(
-			"startPreferencePanel",
-			"(Ljava/lang/String;Landroid/os/Bundle;ILjava/lang/CharSequence;Landroid/app/Fragment;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2,
-			QAndroidJniObject::fromString(arg3).object<jstring>(),
-			arg4.__jniObject().object(),
-			arg5
-		);
-	}
 	void PreferenceActivity::startWithFragment(jstring arg0, android::os::Bundle arg1, android::app::Fragment arg2, jint arg3)
 	{
 		__thiz.callMethod<void>(
@@ -365,36 +314,12 @@ namespace android::preference
 			arg3
 		);
 	}
-	void PreferenceActivity::startWithFragment(const QString &arg0, android::os::Bundle arg1, android::app::Fragment arg2, jint arg3)
-	{
-		__thiz.callMethod<void>(
-			"startWithFragment",
-			"(Ljava/lang/String;Landroid/os/Bundle;Landroid/app/Fragment;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3
-		);
-	}
 	void PreferenceActivity::startWithFragment(jstring arg0, android::os::Bundle arg1, android::app::Fragment arg2, jint arg3, jint arg4, jint arg5)
 	{
 		__thiz.callMethod<void>(
 			"startWithFragment",
 			"(Ljava/lang/String;Landroid/os/Bundle;Landroid/app/Fragment;III)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3,
-			arg4,
-			arg5
-		);
-	}
-	void PreferenceActivity::startWithFragment(const QString &arg0, android::os::Bundle arg1, android::app::Fragment arg2, jint arg3, jint arg4, jint arg5)
-	{
-		__thiz.callMethod<void>(
-			"startWithFragment",
-			"(Ljava/lang/String;Landroid/os/Bundle;Landroid/app/Fragment;III)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
 			arg3,
@@ -416,15 +341,6 @@ namespace android::preference
 			"switchToHeader",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void PreferenceActivity::switchToHeader(const QString &arg0, android::os::Bundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"switchToHeader",
-			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

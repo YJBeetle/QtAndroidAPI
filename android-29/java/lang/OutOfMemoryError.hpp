@@ -15,8 +15,7 @@ namespace java::lang
 		OutOfMemoryError(QAndroidJniObject obj);
 		// Constructors
 		OutOfMemoryError();
-		OutOfMemoryError(jstring &arg0);
-		OutOfMemoryError(const QString &arg0);
+		OutOfMemoryError(jstring arg0);
 		
 		// Methods
 	};

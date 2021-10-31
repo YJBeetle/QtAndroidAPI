@@ -33,15 +33,6 @@ namespace java::net
 			arg0
 		);
 	}
-	QAndroidJniObject Authenticator_RequestorType::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.net.Authenticator$RequestorType",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/net/Authenticator$RequestorType;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray Authenticator_RequestorType::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

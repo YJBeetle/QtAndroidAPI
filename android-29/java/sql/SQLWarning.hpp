@@ -15,19 +15,13 @@ namespace java::sql
 		SQLWarning(QAndroidJniObject obj);
 		// Constructors
 		SQLWarning();
-		SQLWarning(jstring &arg0);
-		SQLWarning(const QString &arg0);
-		SQLWarning(jthrowable &arg0);
-		SQLWarning(jstring &arg0, jstring &arg1);
-		SQLWarning(const QString &arg0, const QString &arg1);
-		SQLWarning(jstring &arg0, jthrowable &arg1);
-		SQLWarning(const QString &arg0, jthrowable &arg1);
-		SQLWarning(jstring &arg0, jstring &arg1, jint &arg2);
-		SQLWarning(const QString &arg0, const QString &arg1, jint &arg2);
-		SQLWarning(jstring &arg0, jstring &arg1, jthrowable &arg2);
-		SQLWarning(const QString &arg0, const QString &arg1, jthrowable &arg2);
-		SQLWarning(jstring &arg0, jstring &arg1, jint &arg2, jthrowable &arg3);
-		SQLWarning(const QString &arg0, const QString &arg1, jint &arg2, jthrowable &arg3);
+		SQLWarning(jstring arg0);
+		SQLWarning(jthrowable arg0);
+		SQLWarning(jstring arg0, jstring arg1);
+		SQLWarning(jstring arg0, jthrowable arg1);
+		SQLWarning(jstring arg0, jstring arg1, jint arg2);
+		SQLWarning(jstring arg0, jstring arg1, jthrowable arg2);
+		SQLWarning(jstring arg0, jstring arg1, jint arg2, jthrowable arg3);
 		
 		// Methods
 		QAndroidJniObject getNextWarning();

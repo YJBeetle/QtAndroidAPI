@@ -40,7 +40,6 @@ namespace android::content::pm
 		// Methods
 		jint describeContents();
 		void dump(__JniBaseClass arg0, jstring arg1);
-		void dump(__JniBaseClass arg0, const QString &arg1);
 		jint getForegroundServiceType();
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

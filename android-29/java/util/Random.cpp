@@ -16,7 +16,7 @@ namespace java::util
 			"()V"
 		);
 	}
-	Random::Random(jlong &arg0)
+	Random::Random(jlong arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Random",

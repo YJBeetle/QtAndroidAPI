@@ -41,15 +41,6 @@ namespace android::graphics
 			arg0
 		);
 	}
-	QAndroidJniObject PathDashPathEffect_Style::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.PathDashPathEffect$Style",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/graphics/PathDashPathEffect$Style;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray PathDashPathEffect_Style::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

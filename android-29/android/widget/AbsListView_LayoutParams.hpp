@@ -21,10 +21,10 @@ namespace android::widget
 		
 		AbsListView_LayoutParams(QAndroidJniObject obj);
 		// Constructors
-		AbsListView_LayoutParams(android::view::ViewGroup_LayoutParams &arg0);
-		AbsListView_LayoutParams(android::content::Context &arg0, __JniBaseClass &arg1);
-		AbsListView_LayoutParams(jint &arg0, jint &arg1);
-		AbsListView_LayoutParams(jint &arg0, jint &arg1, jint &arg2);
+		AbsListView_LayoutParams(android::view::ViewGroup_LayoutParams arg0);
+		AbsListView_LayoutParams(android::content::Context arg0, __JniBaseClass arg1);
+		AbsListView_LayoutParams(jint arg0, jint arg1);
+		AbsListView_LayoutParams(jint arg0, jint arg1, jint arg2);
 		AbsListView_LayoutParams() = default;
 		
 		// Methods

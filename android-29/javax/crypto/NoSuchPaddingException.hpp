@@ -15,8 +15,7 @@ namespace javax::crypto
 		NoSuchPaddingException(QAndroidJniObject obj);
 		// Constructors
 		NoSuchPaddingException();
-		NoSuchPaddingException(jstring &arg0);
-		NoSuchPaddingException(const QString &arg0);
+		NoSuchPaddingException(jstring arg0);
 		
 		// Methods
 	};

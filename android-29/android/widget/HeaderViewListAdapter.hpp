@@ -32,7 +32,7 @@ namespace android::widget
 		
 		HeaderViewListAdapter(QAndroidJniObject obj);
 		// Constructors
-		HeaderViewListAdapter(java::util::ArrayList &arg0, java::util::ArrayList &arg1, __JniBaseClass &arg2);
+		HeaderViewListAdapter(java::util::ArrayList arg0, java::util::ArrayList arg1, __JniBaseClass arg2);
 		HeaderViewListAdapter() = default;
 		
 		// Methods

@@ -14,7 +14,7 @@ namespace android::content
 	
 	UriMatcher::UriMatcher(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	UriMatcher::UriMatcher(jint &arg0)
+	UriMatcher::UriMatcher(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.UriMatcher",
@@ -31,16 +31,6 @@ namespace android::content
 			"(Ljava/lang/String;Ljava/lang/String;I)V",
 			arg0,
 			arg1,
-			arg2
-		);
-	}
-	void UriMatcher::addURI(const QString &arg0, const QString &arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"addURI",
-			"(Ljava/lang/String;Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}

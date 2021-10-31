@@ -32,8 +32,8 @@ namespace java::util::jar
 		
 		JarInputStream(QAndroidJniObject obj);
 		// Constructors
-		JarInputStream(java::io::InputStream &arg0);
-		JarInputStream(java::io::InputStream &arg0, jboolean &arg1);
+		JarInputStream(java::io::InputStream arg0);
+		JarInputStream(java::io::InputStream arg0, jboolean arg1);
 		JarInputStream() = default;
 		
 		// Methods

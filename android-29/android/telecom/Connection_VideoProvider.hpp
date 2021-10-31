@@ -52,7 +52,6 @@ namespace android::telecom
 		void onSendSessionModifyRequest(android::telecom::VideoProfile arg0, android::telecom::VideoProfile arg1);
 		void onSendSessionModifyResponse(android::telecom::VideoProfile arg0);
 		void onSetCamera(jstring arg0);
-		void onSetCamera(const QString &arg0);
 		void onSetDeviceOrientation(jint arg0);
 		void onSetDisplaySurface(android::view::Surface arg0);
 		void onSetPauseImage(android::net::Uri arg0);

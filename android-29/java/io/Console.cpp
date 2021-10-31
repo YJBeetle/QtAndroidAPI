@@ -29,30 +29,12 @@ namespace java::io
 			arg1
 		);
 	}
-	QAndroidJniObject Console::format(const QString &arg0, jobjectArray arg1)
-	{
-		return __thiz.callObjectMethod(
-			"format",
-			"(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/Console;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	QAndroidJniObject Console::printf(jstring arg0, jobjectArray arg1)
 	{
 		return __thiz.callObjectMethod(
 			"printf",
 			"(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/Console;",
 			arg0,
-			arg1
-		);
-	}
-	QAndroidJniObject Console::printf(const QString &arg0, jobjectArray arg1)
-	{
-		return __thiz.callObjectMethod(
-			"printf",
-			"(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/Console;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -72,15 +54,6 @@ namespace java::io
 			arg1
 		).object<jstring>();
 	}
-	jstring Console::readLine(const QString &arg0, jobjectArray arg1)
-	{
-		return __thiz.callObjectMethod(
-			"readLine",
-			"(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		).object<jstring>();
-	}
 	jcharArray Console::readPassword()
 	{
 		return __thiz.callObjectMethod(
@@ -94,15 +67,6 @@ namespace java::io
 			"readPassword",
 			"(Ljava/lang/String;[Ljava/lang/Object;)[C",
 			arg0,
-			arg1
-		).object<jcharArray>();
-	}
-	jcharArray Console::readPassword(const QString &arg0, jobjectArray arg1)
-	{
-		return __thiz.callObjectMethod(
-			"readPassword",
-			"(Ljava/lang/String;[Ljava/lang/Object;)[C",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		).object<jcharArray>();
 	}

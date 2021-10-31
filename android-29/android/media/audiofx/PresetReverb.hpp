@@ -25,7 +25,7 @@ namespace android::media::audiofx
 		
 		PresetReverb(QAndroidJniObject obj);
 		// Constructors
-		PresetReverb(jint &arg0, jint &arg1);
+		PresetReverb(jint arg0, jint arg1);
 		PresetReverb() = default;
 		
 		// Methods

@@ -18,7 +18,7 @@ namespace android::transition
 			"()V"
 		);
 	}
-	Slide::Slide(jint &arg0)
+	Slide::Slide(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.transition.Slide",
@@ -26,7 +26,7 @@ namespace android::transition
 			arg0
 		);
 	}
-	Slide::Slide(android::content::Context &arg0, __JniBaseClass &arg1)
+	Slide::Slide(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.transition.Slide",

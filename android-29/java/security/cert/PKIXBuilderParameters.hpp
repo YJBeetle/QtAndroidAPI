@@ -17,8 +17,8 @@ namespace java::security::cert
 		
 		PKIXBuilderParameters(QAndroidJniObject obj);
 		// Constructors
-		PKIXBuilderParameters(java::security::KeyStore &arg0, __JniBaseClass &arg1);
-		PKIXBuilderParameters(__JniBaseClass &arg0, __JniBaseClass &arg1);
+		PKIXBuilderParameters(java::security::KeyStore arg0, __JniBaseClass arg1);
+		PKIXBuilderParameters(__JniBaseClass arg0, __JniBaseClass arg1);
 		PKIXBuilderParameters() = default;
 		
 		// Methods

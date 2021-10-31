@@ -18,19 +18,13 @@ namespace java::sql
 		SQLException(QAndroidJniObject obj);
 		// Constructors
 		SQLException();
-		SQLException(jstring &arg0);
-		SQLException(const QString &arg0);
-		SQLException(jthrowable &arg0);
-		SQLException(jstring &arg0, jstring &arg1);
-		SQLException(const QString &arg0, const QString &arg1);
-		SQLException(jstring &arg0, jthrowable &arg1);
-		SQLException(const QString &arg0, jthrowable &arg1);
-		SQLException(jstring &arg0, jstring &arg1, jint &arg2);
-		SQLException(const QString &arg0, const QString &arg1, jint &arg2);
-		SQLException(jstring &arg0, jstring &arg1, jthrowable &arg2);
-		SQLException(const QString &arg0, const QString &arg1, jthrowable &arg2);
-		SQLException(jstring &arg0, jstring &arg1, jint &arg2, jthrowable &arg3);
-		SQLException(const QString &arg0, const QString &arg1, jint &arg2, jthrowable &arg3);
+		SQLException(jstring arg0);
+		SQLException(jthrowable arg0);
+		SQLException(jstring arg0, jstring arg1);
+		SQLException(jstring arg0, jthrowable arg1);
+		SQLException(jstring arg0, jstring arg1, jint arg2);
+		SQLException(jstring arg0, jstring arg1, jthrowable arg2);
+		SQLException(jstring arg0, jstring arg1, jint arg2, jthrowable arg3);
 		
 		// Methods
 		jint getErrorCode();

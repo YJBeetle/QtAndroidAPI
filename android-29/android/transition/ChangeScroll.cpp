@@ -17,7 +17,7 @@ namespace android::transition
 			"()V"
 		);
 	}
-	ChangeScroll::ChangeScroll(android::content::Context &arg0, __JniBaseClass &arg1)
+	ChangeScroll::ChangeScroll(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.transition.ChangeScroll",

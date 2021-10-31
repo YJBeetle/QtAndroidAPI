@@ -49,15 +49,6 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject UnicodeSet_SpanCondition::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.UnicodeSet$SpanCondition",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/icu/text/UnicodeSet$SpanCondition;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray UnicodeSet_SpanCondition::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

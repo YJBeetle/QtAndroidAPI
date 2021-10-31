@@ -63,7 +63,7 @@ namespace android::media::audiofx
 	
 	PresetReverb::PresetReverb(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PresetReverb::PresetReverb(jint &arg0, jint &arg1)
+	PresetReverb::PresetReverb(jint arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.audiofx.PresetReverb",

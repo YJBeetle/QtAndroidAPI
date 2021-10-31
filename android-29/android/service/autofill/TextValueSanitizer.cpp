@@ -16,22 +16,13 @@ namespace android::service::autofill
 	
 	TextValueSanitizer::TextValueSanitizer(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	TextValueSanitizer::TextValueSanitizer(java::util::regex::Pattern &arg0, jstring &arg1)
+	TextValueSanitizer::TextValueSanitizer(java::util::regex::Pattern arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.service.autofill.TextValueSanitizer",
 			"(Ljava/util/regex/Pattern;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	TextValueSanitizer::TextValueSanitizer(java::util::regex::Pattern &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.service.autofill.TextValueSanitizer",
-			"(Ljava/util/regex/Pattern;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	

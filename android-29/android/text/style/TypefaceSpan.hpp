@@ -26,10 +26,9 @@ namespace android::text::style
 		
 		TypefaceSpan(QAndroidJniObject obj);
 		// Constructors
-		TypefaceSpan(android::graphics::Typeface &arg0);
-		TypefaceSpan(android::os::Parcel &arg0);
-		TypefaceSpan(jstring &arg0);
-		TypefaceSpan(const QString &arg0);
+		TypefaceSpan(android::graphics::Typeface arg0);
+		TypefaceSpan(android::os::Parcel arg0);
+		TypefaceSpan(jstring arg0);
 		TypefaceSpan() = default;
 		
 		// Methods

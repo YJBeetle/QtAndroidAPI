@@ -22,8 +22,7 @@ namespace android::drm
 		
 		DrmInfoStatus(QAndroidJniObject obj);
 		// Constructors
-		DrmInfoStatus(jint &arg0, jint &arg1, android::drm::ProcessedData &arg2, jstring &arg3);
-		DrmInfoStatus(jint &arg0, jint &arg1, android::drm::ProcessedData &arg2, const QString &arg3);
+		DrmInfoStatus(jint arg0, jint arg1, android::drm::ProcessedData arg2, jstring arg3);
 		DrmInfoStatus() = default;
 		
 		// Methods

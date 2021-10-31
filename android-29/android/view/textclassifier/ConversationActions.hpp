@@ -17,8 +17,7 @@ namespace android::view::textclassifier
 		
 		ConversationActions(QAndroidJniObject obj);
 		// Constructors
-		ConversationActions(__JniBaseClass &arg0, jstring &arg1);
-		ConversationActions(__JniBaseClass &arg0, const QString &arg1);
+		ConversationActions(__JniBaseClass arg0, jstring arg1);
 		ConversationActions() = default;
 		
 		// Methods

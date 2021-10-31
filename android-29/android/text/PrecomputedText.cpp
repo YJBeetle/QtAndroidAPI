@@ -20,16 +20,6 @@ namespace android::text
 			arg1.__jniObject().object()
 		);
 	}
-	QAndroidJniObject PrecomputedText::create(const QString &arg0, android::text::PrecomputedText_Params arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.text.PrecomputedText",
-			"create",
-			"(Ljava/lang/CharSequence;Landroid/text/PrecomputedText$Params;)Landroid/text/PrecomputedText;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	jchar PrecomputedText::charAt(jint arg0)
 	{
 		return __thiz.callMethod<jchar>(

@@ -7,7 +7,7 @@ namespace java::security
 	
 	IdentityScope::IdentityScope(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	IdentityScope::IdentityScope(jstring &arg0)
+	IdentityScope::IdentityScope(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.IdentityScope",
@@ -15,29 +15,12 @@ namespace java::security
 			arg0
 		);
 	}
-	IdentityScope::IdentityScope(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.IdentityScope",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	IdentityScope::IdentityScope(jstring &arg0, java::security::IdentityScope &arg1)
+	IdentityScope::IdentityScope(jstring arg0, java::security::IdentityScope &arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.IdentityScope",
 			"(Ljava/lang/String;Ljava/security/IdentityScope;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	IdentityScope::IdentityScope(const QString &arg0, java::security::IdentityScope &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.IdentityScope",
-			"(Ljava/lang/String;Ljava/security/IdentityScope;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -65,14 +48,6 @@ namespace java::security
 			"getIdentity",
 			"(Ljava/lang/String;)Ljava/security/Identity;",
 			arg0
-		);
-	}
-	QAndroidJniObject IdentityScope::getIdentity(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getIdentity",
-			"(Ljava/lang/String;)Ljava/security/Identity;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject IdentityScope::getIdentity(__JniBaseClass arg0)

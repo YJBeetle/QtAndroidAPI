@@ -218,14 +218,6 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityRecord::setBeforeText(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setBeforeText",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void AccessibilityRecord::setChecked(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
@@ -242,28 +234,12 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityRecord::setClassName(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setClassName",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void AccessibilityRecord::setContentDescription(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setContentDescription",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
-		);
-	}
-	void AccessibilityRecord::setContentDescription(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setContentDescription",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void AccessibilityRecord::setCurrentItemIndex(jint arg0)

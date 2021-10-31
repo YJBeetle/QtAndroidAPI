@@ -7,7 +7,7 @@ namespace java::nio::charset
 	
 	CoderMalfunctionError::CoderMalfunctionError(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	CoderMalfunctionError::CoderMalfunctionError(java::lang::Exception &arg0)
+	CoderMalfunctionError::CoderMalfunctionError(java::lang::Exception arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.nio.charset.CoderMalfunctionError",

@@ -15,8 +15,7 @@ namespace java::io
 		UTFDataFormatException(QAndroidJniObject obj);
 		// Constructors
 		UTFDataFormatException();
-		UTFDataFormatException(jstring &arg0);
-		UTFDataFormatException(const QString &arg0);
+		UTFDataFormatException(jstring arg0);
 		
 		// Methods
 	};

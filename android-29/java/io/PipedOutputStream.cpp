@@ -14,7 +14,7 @@ namespace java::io
 			"()V"
 		);
 	}
-	PipedOutputStream::PipedOutputStream(java::io::PipedInputStream &arg0)
+	PipedOutputStream::PipedOutputStream(java::io::PipedInputStream arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.PipedOutputStream",

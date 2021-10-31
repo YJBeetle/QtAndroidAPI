@@ -14,7 +14,7 @@ namespace android::os
 			"()V"
 		);
 	}
-	StrictMode_ThreadPolicy_Builder::StrictMode_ThreadPolicy_Builder(android::os::StrictMode_ThreadPolicy &arg0)
+	StrictMode_ThreadPolicy_Builder::StrictMode_ThreadPolicy_Builder(android::os::StrictMode_ThreadPolicy arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.StrictMode$ThreadPolicy$Builder",

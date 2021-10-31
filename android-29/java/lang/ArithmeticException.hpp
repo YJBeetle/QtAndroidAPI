@@ -15,8 +15,7 @@ namespace java::lang
 		ArithmeticException(QAndroidJniObject obj);
 		// Constructors
 		ArithmeticException();
-		ArithmeticException(jstring &arg0);
-		ArithmeticException(const QString &arg0);
+		ArithmeticException(jstring arg0);
 		
 		// Methods
 	};

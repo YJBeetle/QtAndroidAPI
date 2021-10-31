@@ -24,7 +24,7 @@ namespace android::hardware::camera2::params
 	
 	OutputConfiguration::OutputConfiguration(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	OutputConfiguration::OutputConfiguration(android::view::Surface &arg0)
+	OutputConfiguration::OutputConfiguration(android::view::Surface arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.hardware.camera2.params.OutputConfiguration",
@@ -32,7 +32,7 @@ namespace android::hardware::camera2::params
 			arg0.__jniObject().object()
 		);
 	}
-	OutputConfiguration::OutputConfiguration(android::util::Size &arg0, jclass &arg1)
+	OutputConfiguration::OutputConfiguration(android::util::Size arg0, jclass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.hardware.camera2.params.OutputConfiguration",
@@ -41,7 +41,7 @@ namespace android::hardware::camera2::params
 			arg1
 		);
 	}
-	OutputConfiguration::OutputConfiguration(jint &arg0, android::view::Surface &arg1)
+	OutputConfiguration::OutputConfiguration(jint arg0, android::view::Surface arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.hardware.camera2.params.OutputConfiguration",
@@ -131,14 +131,6 @@ namespace android::hardware::camera2::params
 			"setPhysicalCameraId",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void OutputConfiguration::setPhysicalCameraId(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPhysicalCameraId",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void OutputConfiguration::writeToParcel(android::os::Parcel arg0, jint arg1)

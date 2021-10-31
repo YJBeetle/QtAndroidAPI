@@ -22,14 +22,6 @@ namespace android::hardware::camera2
 			arg0
 		);
 	}
-	QAndroidJniObject CameraManager::getCameraCharacteristics(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getCameraCharacteristics",
-			"(Ljava/lang/String;)Landroid/hardware/camera2/CameraCharacteristics;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray CameraManager::getCameraIdList()
 	{
 		return __thiz.callObjectMethod(
@@ -47,32 +39,12 @@ namespace android::hardware::camera2
 			arg2.__jniObject().object()
 		);
 	}
-	void CameraManager::openCamera(const QString &arg0, android::hardware::camera2::CameraDevice_StateCallback arg1, android::os::Handler arg2)
-	{
-		__thiz.callMethod<void>(
-			"openCamera",
-			"(Ljava/lang/String;Landroid/hardware/camera2/CameraDevice$StateCallback;Landroid/os/Handler;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
 	void CameraManager::openCamera(jstring arg0, __JniBaseClass arg1, android::hardware::camera2::CameraDevice_StateCallback arg2)
 	{
 		__thiz.callMethod<void>(
 			"openCamera",
 			"(Ljava/lang/String;Ljava/util/concurrent/Executor;Landroid/hardware/camera2/CameraDevice$StateCallback;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	void CameraManager::openCamera(const QString &arg0, __JniBaseClass arg1, android::hardware::camera2::CameraDevice_StateCallback arg2)
-	{
-		__thiz.callMethod<void>(
-			"openCamera",
-			"(Ljava/lang/String;Ljava/util/concurrent/Executor;Landroid/hardware/camera2/CameraDevice$StateCallback;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object()
 		);
@@ -119,15 +91,6 @@ namespace android::hardware::camera2
 			"setTorchMode",
 			"(Ljava/lang/String;Z)V",
 			arg0,
-			arg1
-		);
-	}
-	void CameraManager::setTorchMode(const QString &arg0, jboolean arg1)
-	{
-		__thiz.callMethod<void>(
-			"setTorchMode",
-			"(Ljava/lang/String;Z)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

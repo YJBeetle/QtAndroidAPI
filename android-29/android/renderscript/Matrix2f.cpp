@@ -13,7 +13,7 @@ namespace android::renderscript
 			"()V"
 		);
 	}
-	Matrix2f::Matrix2f(jfloatArray &arg0)
+	Matrix2f::Matrix2f(jfloatArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.renderscript.Matrix2f",

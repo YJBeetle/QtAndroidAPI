@@ -31,14 +31,10 @@ namespace javax::xml::parsers
 		static QAndroidJniObject newDefaultNSInstance();
 		static QAndroidJniObject newInstance();
 		static QAndroidJniObject newInstance(jstring arg0, java::lang::ClassLoader arg1);
-		static QAndroidJniObject newInstance(const QString &arg0, java::lang::ClassLoader arg1);
 		static QAndroidJniObject newNSInstance();
 		static QAndroidJniObject newNSInstance(jstring arg0, java::lang::ClassLoader arg1);
-		static QAndroidJniObject newNSInstance(const QString &arg0, java::lang::ClassLoader arg1);
 		jobject getAttribute(jstring arg0);
-		jobject getAttribute(const QString &arg0);
 		jboolean getFeature(jstring arg0);
-		jboolean getFeature(const QString &arg0);
 		QAndroidJniObject getSchema();
 		jboolean isCoalescing();
 		jboolean isExpandEntityReferences();
@@ -49,11 +45,9 @@ namespace javax::xml::parsers
 		jboolean isXIncludeAware();
 		QAndroidJniObject newDocumentBuilder();
 		void setAttribute(jstring arg0, jobject arg1);
-		void setAttribute(const QString &arg0, jobject arg1);
 		void setCoalescing(jboolean arg0);
 		void setExpandEntityReferences(jboolean arg0);
 		void setFeature(jstring arg0, jboolean arg1);
-		void setFeature(const QString &arg0, jboolean arg1);
 		void setIgnoringComments(jboolean arg0);
 		void setIgnoringElementContentWhitespace(jboolean arg0);
 		void setNamespaceAware(jboolean arg0);

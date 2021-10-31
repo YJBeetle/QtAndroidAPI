@@ -6,7 +6,7 @@ namespace java::nio::charset
 	
 	MalformedInputException::MalformedInputException(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MalformedInputException::MalformedInputException(jint &arg0)
+	MalformedInputException::MalformedInputException(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.nio.charset.MalformedInputException",

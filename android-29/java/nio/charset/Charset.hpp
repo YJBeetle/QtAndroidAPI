@@ -46,9 +46,7 @@ namespace java::nio::charset
 		static QAndroidJniObject availableCharsets();
 		static QAndroidJniObject defaultCharset();
 		static QAndroidJniObject forName(jstring arg0);
-		static QAndroidJniObject forName(const QString &arg0);
 		static jboolean isSupported(jstring arg0);
-		static jboolean isSupported(const QString &arg0);
 		QAndroidJniObject aliases();
 		jboolean canEncode();
 		jint compareTo(jobject arg0);
@@ -58,7 +56,6 @@ namespace java::nio::charset
 		jstring displayName();
 		jstring displayName(java::util::Locale arg0);
 		QAndroidJniObject encode(jstring arg0);
-		QAndroidJniObject encode(const QString &arg0);
 		QAndroidJniObject encode(java::nio::CharBuffer arg0);
 		jboolean equals(jobject arg0);
 		jint hashCode();

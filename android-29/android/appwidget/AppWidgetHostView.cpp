@@ -16,7 +16,7 @@ namespace android::appwidget
 	
 	AppWidgetHostView::AppWidgetHostView(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AppWidgetHostView::AppWidgetHostView(android::content::Context &arg0)
+	AppWidgetHostView::AppWidgetHostView(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.appwidget.AppWidgetHostView",
@@ -24,7 +24,7 @@ namespace android::appwidget
 			arg0.__jniObject().object()
 		);
 	}
-	AppWidgetHostView::AppWidgetHostView(android::content::Context &arg0, jint &arg1, jint &arg2)
+	AppWidgetHostView::AppWidgetHostView(android::content::Context arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.appwidget.AppWidgetHostView",

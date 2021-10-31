@@ -13,20 +13,12 @@ namespace java::lang
 			"()V"
 		);
 	}
-	UnknownError::UnknownError(jstring &arg0)
+	UnknownError::UnknownError(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.UnknownError",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	UnknownError::UnknownError(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.UnknownError",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

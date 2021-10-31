@@ -20,7 +20,7 @@ namespace javax::security::auth
 		
 		SubjectDomainCombiner(QAndroidJniObject obj);
 		// Constructors
-		SubjectDomainCombiner(javax::security::auth::Subject &arg0);
+		SubjectDomainCombiner(javax::security::auth::Subject arg0);
 		SubjectDomainCombiner() = default;
 		
 		// Methods

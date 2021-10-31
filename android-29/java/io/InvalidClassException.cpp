@@ -13,7 +13,7 @@ namespace java::io
 	
 	InvalidClassException::InvalidClassException(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	InvalidClassException::InvalidClassException(jstring &arg0)
+	InvalidClassException::InvalidClassException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.InvalidClassException",
@@ -21,30 +21,13 @@ namespace java::io
 			arg0
 		);
 	}
-	InvalidClassException::InvalidClassException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.io.InvalidClassException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	InvalidClassException::InvalidClassException(jstring &arg0, jstring &arg1)
+	InvalidClassException::InvalidClassException(jstring arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.InvalidClassException",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	InvalidClassException::InvalidClassException(const QString &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.io.InvalidClassException",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	

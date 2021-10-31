@@ -44,7 +44,7 @@ namespace android::media
 	
 	MediaDescrambler::MediaDescrambler(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MediaDescrambler::MediaDescrambler(jint &arg0)
+	MediaDescrambler::MediaDescrambler(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.MediaDescrambler",
@@ -77,14 +77,6 @@ namespace android::media
 			"requiresSecureDecoderComponent",
 			"(Ljava/lang/String;)Z",
 			arg0
-		);
-	}
-	jboolean MediaDescrambler::requiresSecureDecoderComponent(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"requiresSecureDecoderComponent",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void MediaDescrambler::setMediaCasSession(android::media::MediaCas_Session arg0)

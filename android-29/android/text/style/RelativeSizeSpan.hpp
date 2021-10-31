@@ -22,8 +22,8 @@ namespace android::text::style
 		
 		RelativeSizeSpan(QAndroidJniObject obj);
 		// Constructors
-		RelativeSizeSpan(android::os::Parcel &arg0);
-		RelativeSizeSpan(jfloat &arg0);
+		RelativeSizeSpan(android::os::Parcel arg0);
+		RelativeSizeSpan(jfloat arg0);
 		RelativeSizeSpan() = default;
 		
 		// Methods

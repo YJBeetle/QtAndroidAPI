@@ -6,7 +6,7 @@ namespace android::media
 	
 	TimedMetaData::TimedMetaData(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	TimedMetaData::TimedMetaData(jlong &arg0, jbyteArray &arg1)
+	TimedMetaData::TimedMetaData(jlong arg0, jbyteArray arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.TimedMetaData",

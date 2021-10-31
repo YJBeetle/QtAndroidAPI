@@ -6,21 +6,12 @@ namespace java::util
 	
 	FormatFlagsConversionMismatchException::FormatFlagsConversionMismatchException(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	FormatFlagsConversionMismatchException::FormatFlagsConversionMismatchException(jstring &arg0, jchar &arg1)
+	FormatFlagsConversionMismatchException::FormatFlagsConversionMismatchException(jstring arg0, jchar arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.FormatFlagsConversionMismatchException",
 			"(Ljava/lang/String;C)V",
 			arg0,
-			arg1
-		);
-	}
-	FormatFlagsConversionMismatchException::FormatFlagsConversionMismatchException(const QString &arg0, jchar &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.FormatFlagsConversionMismatchException",
-			"(Ljava/lang/String;C)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

@@ -9,7 +9,7 @@ namespace android::content
 	
 	AsyncQueryHandler_WorkerHandler::AsyncQueryHandler_WorkerHandler(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AsyncQueryHandler_WorkerHandler::AsyncQueryHandler_WorkerHandler(android::content::AsyncQueryHandler &arg0, android::os::Looper &arg1)
+	AsyncQueryHandler_WorkerHandler::AsyncQueryHandler_WorkerHandler(android::content::AsyncQueryHandler arg0, android::os::Looper arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.AsyncQueryHandler$WorkerHandler",

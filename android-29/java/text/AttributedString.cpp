@@ -8,7 +8,7 @@ namespace java::text
 	
 	AttributedString::AttributedString(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AttributedString::AttributedString(jstring &arg0)
+	AttributedString::AttributedString(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.text.AttributedString",
@@ -16,15 +16,7 @@ namespace java::text
 			arg0
 		);
 	}
-	AttributedString::AttributedString(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.text.AttributedString",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	AttributedString::AttributedString(__JniBaseClass &arg0)
+	AttributedString::AttributedString(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.text.AttributedString",
@@ -32,7 +24,7 @@ namespace java::text
 			arg0.__jniObject().object()
 		);
 	}
-	AttributedString::AttributedString(jstring &arg0, __JniBaseClass &arg1)
+	AttributedString::AttributedString(jstring arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.text.AttributedString",
@@ -41,16 +33,7 @@ namespace java::text
 			arg1.__jniObject().object()
 		);
 	}
-	AttributedString::AttributedString(const QString &arg0, __JniBaseClass &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.text.AttributedString",
-			"(Ljava/lang/String;Ljava/util/Map;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
-	AttributedString::AttributedString(__JniBaseClass &arg0, jint &arg1, jint &arg2)
+	AttributedString::AttributedString(__JniBaseClass arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.text.AttributedString",
@@ -60,7 +43,7 @@ namespace java::text
 			arg2
 		);
 	}
-	AttributedString::AttributedString(__JniBaseClass &arg0, jint &arg1, jint &arg2, jarray &arg3)
+	AttributedString::AttributedString(__JniBaseClass arg0, jint arg1, jint arg2, jarray arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"java.text.AttributedString",

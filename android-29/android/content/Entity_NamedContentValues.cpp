@@ -22,7 +22,7 @@ namespace android::content
 	
 	Entity_NamedContentValues::Entity_NamedContentValues(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Entity_NamedContentValues::Entity_NamedContentValues(android::net::Uri &arg0, android::content::ContentValues &arg1)
+	Entity_NamedContentValues::Entity_NamedContentValues(android::net::Uri arg0, android::content::ContentValues arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.Entity$NamedContentValues",

@@ -20,7 +20,7 @@ namespace android::util
 	
 	Pair::Pair(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Pair::Pair(jobject &arg0, jobject &arg1)
+	Pair::Pair(jobject arg0, jobject arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.Pair",

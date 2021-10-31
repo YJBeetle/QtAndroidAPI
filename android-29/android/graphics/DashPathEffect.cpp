@@ -6,7 +6,7 @@ namespace android::graphics
 	
 	DashPathEffect::DashPathEffect(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DashPathEffect::DashPathEffect(jfloatArray &arg0, jfloat &arg1)
+	DashPathEffect::DashPathEffect(jfloatArray arg0, jfloat arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.DashPathEffect",

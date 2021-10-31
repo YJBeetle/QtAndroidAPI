@@ -43,11 +43,11 @@ namespace android::widget
 		
 		AutoCompleteTextView(QAndroidJniObject obj);
 		// Constructors
-		AutoCompleteTextView(android::content::Context &arg0);
-		AutoCompleteTextView(android::content::Context &arg0, __JniBaseClass &arg1);
-		AutoCompleteTextView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		AutoCompleteTextView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
-		AutoCompleteTextView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3, android::content::res::Resources_Theme &arg4);
+		AutoCompleteTextView(android::content::Context arg0);
+		AutoCompleteTextView(android::content::Context arg0, __JniBaseClass arg1);
+		AutoCompleteTextView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		AutoCompleteTextView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		AutoCompleteTextView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3, android::content::res::Resources_Theme arg4);
 		AutoCompleteTextView() = default;
 		
 		// Methods
@@ -83,7 +83,6 @@ namespace android::widget
 		void refreshAutoCompleteResults();
 		void setAdapter(__JniBaseClass arg0);
 		void setCompletionHint(jstring arg0);
-		void setCompletionHint(const QString &arg0);
 		void setDropDownAnchor(jint arg0);
 		void setDropDownBackgroundDrawable(android::graphics::drawable::Drawable arg0);
 		void setDropDownBackgroundResource(jint arg0);
@@ -98,7 +97,6 @@ namespace android::widget
 		void setOnItemClickListener(__JniBaseClass arg0);
 		void setOnItemSelectedListener(__JniBaseClass arg0);
 		void setText(jstring arg0, jboolean arg1);
-		void setText(const QString &arg0, jboolean arg1);
 		void setThreshold(jint arg0);
 		void setValidator(__JniBaseClass arg0);
 		void showDropDown();

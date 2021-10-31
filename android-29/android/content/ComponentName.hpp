@@ -21,22 +21,17 @@ namespace android::content
 		
 		ComponentName(QAndroidJniObject obj);
 		// Constructors
-		ComponentName(android::os::Parcel &arg0);
-		ComponentName(android::content::Context &arg0, jclass &arg1);
-		ComponentName(android::content::Context &arg0, jstring &arg1);
-		ComponentName(android::content::Context &arg0, const QString &arg1);
-		ComponentName(jstring &arg0, jstring &arg1);
-		ComponentName(const QString &arg0, const QString &arg1);
+		ComponentName(android::os::Parcel arg0);
+		ComponentName(android::content::Context arg0, jclass arg1);
+		ComponentName(android::content::Context arg0, jstring arg1);
+		ComponentName(jstring arg0, jstring arg1);
 		ComponentName() = default;
 		
 		// Methods
 		static QAndroidJniObject createRelative(android::content::Context arg0, jstring arg1);
-		static QAndroidJniObject createRelative(android::content::Context arg0, const QString &arg1);
 		static QAndroidJniObject createRelative(jstring arg0, jstring arg1);
-		static QAndroidJniObject createRelative(const QString &arg0, const QString &arg1);
 		static QAndroidJniObject readFromParcel(android::os::Parcel arg0);
 		static QAndroidJniObject unflattenFromString(jstring arg0);
-		static QAndroidJniObject unflattenFromString(const QString &arg0);
 		static void writeToParcel(android::content::ComponentName arg0, android::os::Parcel arg1);
 		QAndroidJniObject clone();
 		jint compareTo(android::content::ComponentName arg0);

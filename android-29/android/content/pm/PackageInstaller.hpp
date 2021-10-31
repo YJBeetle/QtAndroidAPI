@@ -74,17 +74,14 @@ namespace android::content::pm
 		QAndroidJniObject getSessionInfo(jint arg0);
 		QAndroidJniObject getStagedSessions();
 		void installExistingPackage(jstring arg0, jint arg1, android::content::IntentSender arg2);
-		void installExistingPackage(const QString &arg0, jint arg1, android::content::IntentSender arg2);
 		QAndroidJniObject openSession(jint arg0);
 		void registerSessionCallback(android::content::pm::PackageInstaller_SessionCallback arg0);
 		void registerSessionCallback(android::content::pm::PackageInstaller_SessionCallback arg0, android::os::Handler arg1);
 		void uninstall(android::content::pm::VersionedPackage arg0, android::content::IntentSender arg1);
 		void uninstall(jstring arg0, android::content::IntentSender arg1);
-		void uninstall(const QString &arg0, android::content::IntentSender arg1);
 		void unregisterSessionCallback(android::content::pm::PackageInstaller_SessionCallback arg0);
 		void updateSessionAppIcon(jint arg0, android::graphics::Bitmap arg1);
 		void updateSessionAppLabel(jint arg0, jstring arg1);
-		void updateSessionAppLabel(jint arg0, const QString &arg1);
 	};
 } // namespace android::content::pm
 

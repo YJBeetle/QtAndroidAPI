@@ -46,7 +46,6 @@ namespace android::media
 		void clearUserRoutes();
 		QAndroidJniObject createRouteCategory(jint arg0, jboolean arg1);
 		QAndroidJniObject createRouteCategory(jstring arg0, jboolean arg1);
-		QAndroidJniObject createRouteCategory(const QString &arg0, jboolean arg1);
 		QAndroidJniObject createUserRoute(android::media::MediaRouter_RouteCategory arg0);
 		QAndroidJniObject getCategoryAt(jint arg0);
 		jint getCategoryCount();

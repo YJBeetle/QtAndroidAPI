@@ -22,7 +22,6 @@ namespace java::net
 		static QAndroidJniObject getByIndex(jint arg0);
 		static QAndroidJniObject getByInetAddress(java::net::InetAddress arg0);
 		static QAndroidJniObject getByName(jstring arg0);
-		static QAndroidJniObject getByName(const QString &arg0);
 		static QAndroidJniObject getNetworkInterfaces();
 		static QAndroidJniObject networkInterfaces();
 		jboolean equals(jobject arg0);

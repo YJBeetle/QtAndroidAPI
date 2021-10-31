@@ -48,16 +48,11 @@ namespace android::app
 		
 		// Methods
 		QAndroidJniObject instantiateActivity(java::lang::ClassLoader arg0, jstring arg1, android::content::Intent arg2);
-		QAndroidJniObject instantiateActivity(java::lang::ClassLoader arg0, const QString &arg1, android::content::Intent arg2);
 		QAndroidJniObject instantiateApplication(java::lang::ClassLoader arg0, jstring arg1);
-		QAndroidJniObject instantiateApplication(java::lang::ClassLoader arg0, const QString &arg1);
 		QAndroidJniObject instantiateClassLoader(java::lang::ClassLoader arg0, android::content::pm::ApplicationInfo arg1);
 		QAndroidJniObject instantiateProvider(java::lang::ClassLoader arg0, jstring arg1);
-		QAndroidJniObject instantiateProvider(java::lang::ClassLoader arg0, const QString &arg1);
 		QAndroidJniObject instantiateReceiver(java::lang::ClassLoader arg0, jstring arg1, android::content::Intent arg2);
-		QAndroidJniObject instantiateReceiver(java::lang::ClassLoader arg0, const QString &arg1, android::content::Intent arg2);
 		QAndroidJniObject instantiateService(java::lang::ClassLoader arg0, jstring arg1, android::content::Intent arg2);
-		QAndroidJniObject instantiateService(java::lang::ClassLoader arg0, const QString &arg1, android::content::Intent arg2);
 	};
 } // namespace android::app
 

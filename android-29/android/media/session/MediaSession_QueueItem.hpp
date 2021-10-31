@@ -22,7 +22,7 @@ namespace android::media::session
 		
 		MediaSession_QueueItem(QAndroidJniObject obj);
 		// Constructors
-		MediaSession_QueueItem(android::media::MediaDescription &arg0, jlong &arg1);
+		MediaSession_QueueItem(android::media::MediaDescription arg0, jlong arg1);
 		MediaSession_QueueItem() = default;
 		
 		// Methods

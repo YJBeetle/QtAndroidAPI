@@ -23,7 +23,7 @@ namespace android::media::session
 	
 	MediaSession_QueueItem::MediaSession_QueueItem(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MediaSession_QueueItem::MediaSession_QueueItem(android::media::MediaDescription &arg0, jlong &arg1)
+	MediaSession_QueueItem::MediaSession_QueueItem(android::media::MediaDescription arg0, jlong arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.session.MediaSession$QueueItem",

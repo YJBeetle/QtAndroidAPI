@@ -22,9 +22,8 @@ namespace android::media
 		
 		Session2Command(QAndroidJniObject obj);
 		// Constructors
-		Session2Command(jint &arg0);
-		Session2Command(jstring &arg0, android::os::Bundle &arg1);
-		Session2Command(const QString &arg0, android::os::Bundle &arg1);
+		Session2Command(jint arg0);
+		Session2Command(jstring arg0, android::os::Bundle arg1);
 		Session2Command() = default;
 		
 		// Methods

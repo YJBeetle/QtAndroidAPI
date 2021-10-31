@@ -13,7 +13,7 @@ namespace android::text::style
 			"()V"
 		);
 	}
-	TtsSpan_FractionBuilder::TtsSpan_FractionBuilder(jlong &arg0, jlong &arg1, jlong &arg2)
+	TtsSpan_FractionBuilder::TtsSpan_FractionBuilder(jlong arg0, jlong arg1, jlong arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.TtsSpan$FractionBuilder",
@@ -33,14 +33,6 @@ namespace android::text::style
 			arg0
 		);
 	}
-	QAndroidJniObject TtsSpan_FractionBuilder::setDenominator(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setDenominator",
-			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$FractionBuilder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject TtsSpan_FractionBuilder::setDenominator(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -57,14 +49,6 @@ namespace android::text::style
 			arg0
 		);
 	}
-	QAndroidJniObject TtsSpan_FractionBuilder::setIntegerPart(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setIntegerPart",
-			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$FractionBuilder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject TtsSpan_FractionBuilder::setIntegerPart(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -79,14 +63,6 @@ namespace android::text::style
 			"setNumerator",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$FractionBuilder;",
 			arg0
-		);
-	}
-	QAndroidJniObject TtsSpan_FractionBuilder::setNumerator(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setNumerator",
-			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$FractionBuilder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject TtsSpan_FractionBuilder::setNumerator(jlong arg0)

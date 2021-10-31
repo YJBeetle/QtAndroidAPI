@@ -15,8 +15,7 @@ namespace java::lang
 		IllegalMonitorStateException(QAndroidJniObject obj);
 		// Constructors
 		IllegalMonitorStateException();
-		IllegalMonitorStateException(jstring &arg0);
-		IllegalMonitorStateException(const QString &arg0);
+		IllegalMonitorStateException(jstring arg0);
 		
 		// Methods
 	};

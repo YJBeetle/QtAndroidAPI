@@ -43,15 +43,6 @@ namespace android::hardware::camera2
 			arg1
 		).object<jobject>();
 	}
-	jobject CaptureRequest_Builder::getPhysicalCameraKey(android::hardware::camera2::CaptureRequest_Key arg0, const QString &arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getPhysicalCameraKey",
-			"(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/String;)Ljava/lang/Object;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		).object<jobject>();
-	}
 	void CaptureRequest_Builder::removeTarget(android::view::Surface arg0)
 	{
 		__thiz.callMethod<void>(
@@ -77,16 +68,6 @@ namespace android::hardware::camera2
 			arg0.__jniObject().object(),
 			arg1,
 			arg2
-		);
-	}
-	QAndroidJniObject CaptureRequest_Builder::setPhysicalCameraKey(android::hardware::camera2::CaptureRequest_Key arg0, jobject arg1, const QString &arg2)
-	{
-		return __thiz.callObjectMethod(
-			"setPhysicalCameraKey",
-			"(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;Ljava/lang/String;)Landroid/hardware/camera2/CaptureRequest$Builder;",
-			arg0.__jniObject().object(),
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	void CaptureRequest_Builder::setTag(jobject arg0)

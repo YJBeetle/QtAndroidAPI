@@ -6,7 +6,7 @@ namespace android::icu::text
 	
 	BidiClassifier::BidiClassifier(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	BidiClassifier::BidiClassifier(jobject &arg0)
+	BidiClassifier::BidiClassifier(jobject arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.BidiClassifier",

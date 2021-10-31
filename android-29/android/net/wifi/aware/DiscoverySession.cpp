@@ -35,15 +35,6 @@ namespace android::net::wifi::aware
 			arg1
 		);
 	}
-	QAndroidJniObject DiscoverySession::createNetworkSpecifierPassphrase(android::net::wifi::aware::PeerHandle arg0, const QString &arg1)
-	{
-		return __thiz.callObjectMethod(
-			"createNetworkSpecifierPassphrase",
-			"(Landroid/net/wifi/aware/PeerHandle;Ljava/lang/String;)Landroid/net/NetworkSpecifier;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	void DiscoverySession::sendMessage(android::net::wifi::aware::PeerHandle arg0, jint arg1, jbyteArray arg2)
 	{
 		__thiz.callMethod<void>(

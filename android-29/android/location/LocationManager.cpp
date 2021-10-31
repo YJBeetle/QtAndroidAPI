@@ -153,37 +153,12 @@ namespace android::location
 			arg9
 		);
 	}
-	void LocationManager::addTestProvider(const QString &arg0, jboolean arg1, jboolean arg2, jboolean arg3, jboolean arg4, jboolean arg5, jboolean arg6, jboolean arg7, jint arg8, jint arg9)
-	{
-		__thiz.callMethod<void>(
-			"addTestProvider",
-			"(Ljava/lang/String;ZZZZZZZII)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5,
-			arg6,
-			arg7,
-			arg8,
-			arg9
-		);
-	}
 	void LocationManager::clearTestProviderEnabled(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"clearTestProviderEnabled",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void LocationManager::clearTestProviderEnabled(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"clearTestProviderEnabled",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void LocationManager::clearTestProviderLocation(jstring arg0)
@@ -194,28 +169,12 @@ namespace android::location
 			arg0
 		);
 	}
-	void LocationManager::clearTestProviderLocation(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"clearTestProviderLocation",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void LocationManager::clearTestProviderStatus(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"clearTestProviderStatus",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void LocationManager::clearTestProviderStatus(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"clearTestProviderStatus",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject LocationManager::getAllProviders()
@@ -264,28 +223,12 @@ namespace android::location
 			arg0
 		);
 	}
-	QAndroidJniObject LocationManager::getLastKnownLocation(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getLastKnownLocation",
-			"(Ljava/lang/String;)Landroid/location/Location;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject LocationManager::getProvider(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getProvider",
 			"(Ljava/lang/String;)Landroid/location/LocationProvider;",
 			arg0
-		);
-	}
-	QAndroidJniObject LocationManager::getProvider(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getProvider",
-			"(Ljava/lang/String;)Landroid/location/LocationProvider;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject LocationManager::getProviders(jboolean arg0)
@@ -318,14 +261,6 @@ namespace android::location
 			"isProviderEnabled",
 			"(Ljava/lang/String;)Z",
 			arg0
-		);
-	}
-	jboolean LocationManager::isProviderEnabled(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isProviderEnabled",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean LocationManager::registerGnssMeasurementsCallback(android::location::GnssMeasurementsEvent_Callback arg0)
@@ -411,14 +346,6 @@ namespace android::location
 			arg0
 		);
 	}
-	void LocationManager::removeTestProvider(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"removeTestProvider",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void LocationManager::removeUpdates(android::app::PendingIntent arg0)
 	{
 		__thiz.callMethod<void>(
@@ -446,34 +373,12 @@ namespace android::location
 			arg3.__jniObject().object()
 		);
 	}
-	void LocationManager::requestLocationUpdates(const QString &arg0, jlong arg1, jfloat arg2, android::app::PendingIntent arg3)
-	{
-		__thiz.callMethod<void>(
-			"requestLocationUpdates",
-			"(Ljava/lang/String;JFLandroid/app/PendingIntent;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2,
-			arg3.__jniObject().object()
-		);
-	}
 	void LocationManager::requestLocationUpdates(jstring arg0, jlong arg1, jfloat arg2, __JniBaseClass arg3)
 	{
 		__thiz.callMethod<void>(
 			"requestLocationUpdates",
 			"(Ljava/lang/String;JFLandroid/location/LocationListener;)V",
 			arg0,
-			arg1,
-			arg2,
-			arg3.__jniObject().object()
-		);
-	}
-	void LocationManager::requestLocationUpdates(const QString &arg0, jlong arg1, jfloat arg2, __JniBaseClass arg3)
-	{
-		__thiz.callMethod<void>(
-			"requestLocationUpdates",
-			"(Ljava/lang/String;JFLandroid/location/LocationListener;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2,
 			arg3.__jniObject().object()
@@ -496,18 +401,6 @@ namespace android::location
 			"requestLocationUpdates",
 			"(Ljava/lang/String;JFLandroid/location/LocationListener;Landroid/os/Looper;)V",
 			arg0,
-			arg1,
-			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object()
-		);
-	}
-	void LocationManager::requestLocationUpdates(const QString &arg0, jlong arg1, jfloat arg2, __JniBaseClass arg3, android::os::Looper arg4)
-	{
-		__thiz.callMethod<void>(
-			"requestLocationUpdates",
-			"(Ljava/lang/String;JFLandroid/location/LocationListener;Landroid/os/Looper;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2,
 			arg3.__jniObject().object(),
@@ -544,15 +437,6 @@ namespace android::location
 			arg1.__jniObject().object()
 		);
 	}
-	void LocationManager::requestSingleUpdate(const QString &arg0, android::app::PendingIntent arg1)
-	{
-		__thiz.callMethod<void>(
-			"requestSingleUpdate",
-			"(Ljava/lang/String;Landroid/app/PendingIntent;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	void LocationManager::requestSingleUpdate(android::location::Criteria arg0, __JniBaseClass arg1, android::os::Looper arg2)
 	{
 		__thiz.callMethod<void>(
@@ -573,16 +457,6 @@ namespace android::location
 			arg2.__jniObject().object()
 		);
 	}
-	void LocationManager::requestSingleUpdate(const QString &arg0, __JniBaseClass arg1, android::os::Looper arg2)
-	{
-		__thiz.callMethod<void>(
-			"requestSingleUpdate",
-			"(Ljava/lang/String;Landroid/location/LocationListener;Landroid/os/Looper;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
 	jboolean LocationManager::sendExtraCommand(jstring arg0, jstring arg1, android::os::Bundle arg2)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -590,16 +464,6 @@ namespace android::location
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)Z",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	jboolean LocationManager::sendExtraCommand(const QString &arg0, const QString &arg1, android::os::Bundle arg2)
-	{
-		return __thiz.callMethod<jboolean>(
-			"sendExtraCommand",
-			"(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}
@@ -612,15 +476,6 @@ namespace android::location
 			arg1
 		);
 	}
-	void LocationManager::setTestProviderEnabled(const QString &arg0, jboolean arg1)
-	{
-		__thiz.callMethod<void>(
-			"setTestProviderEnabled",
-			"(Ljava/lang/String;Z)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	void LocationManager::setTestProviderLocation(jstring arg0, android::location::Location arg1)
 	{
 		__thiz.callMethod<void>(
@@ -630,32 +485,12 @@ namespace android::location
 			arg1.__jniObject().object()
 		);
 	}
-	void LocationManager::setTestProviderLocation(const QString &arg0, android::location::Location arg1)
-	{
-		__thiz.callMethod<void>(
-			"setTestProviderLocation",
-			"(Ljava/lang/String;Landroid/location/Location;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	void LocationManager::setTestProviderStatus(jstring arg0, jint arg1, android::os::Bundle arg2, jlong arg3)
 	{
 		__thiz.callMethod<void>(
 			"setTestProviderStatus",
 			"(Ljava/lang/String;ILandroid/os/Bundle;J)V",
 			arg0,
-			arg1,
-			arg2.__jniObject().object(),
-			arg3
-		);
-	}
-	void LocationManager::setTestProviderStatus(const QString &arg0, jint arg1, android::os::Bundle arg2, jlong arg3)
-	{
-		__thiz.callMethod<void>(
-			"setTestProviderStatus",
-			"(Ljava/lang/String;ILandroid/os/Bundle;J)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2.__jniObject().object(),
 			arg3

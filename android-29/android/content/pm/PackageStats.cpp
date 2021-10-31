@@ -78,7 +78,7 @@ namespace android::content::pm
 			arg0.__jniObject().object()
 		);
 	}
-	PackageStats::PackageStats(android::os::Parcel &arg0)
+	PackageStats::PackageStats(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.pm.PackageStats",
@@ -86,20 +86,12 @@ namespace android::content::pm
 			arg0.__jniObject().object()
 		);
 	}
-	PackageStats::PackageStats(jstring &arg0)
+	PackageStats::PackageStats(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.pm.PackageStats",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	PackageStats::PackageStats(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.pm.PackageStats",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

@@ -9,7 +9,7 @@ namespace android::renderscript
 	
 	Type_Builder::Type_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Type_Builder::Type_Builder(android::renderscript::RenderScript &arg0, android::renderscript::Element &arg1)
+	Type_Builder::Type_Builder(android::renderscript::RenderScript arg0, android::renderscript::Element arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.renderscript.Type$Builder",

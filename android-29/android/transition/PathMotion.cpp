@@ -15,7 +15,7 @@ namespace android::transition
 			"()V"
 		);
 	}
-	PathMotion::PathMotion(android::content::Context &arg0, __JniBaseClass &arg1)
+	PathMotion::PathMotion(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.transition.PathMotion",

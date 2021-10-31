@@ -629,7 +629,7 @@ namespace android::text::style
 	
 	TtsSpan::TtsSpan(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	TtsSpan::TtsSpan(android::os::Parcel &arg0)
+	TtsSpan::TtsSpan(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.TtsSpan",
@@ -637,21 +637,12 @@ namespace android::text::style
 			arg0.__jniObject().object()
 		);
 	}
-	TtsSpan::TtsSpan(jstring &arg0, android::os::PersistableBundle &arg1)
+	TtsSpan::TtsSpan(jstring arg0, android::os::PersistableBundle arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.TtsSpan",
 			"(Ljava/lang/String;Landroid/os/PersistableBundle;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	TtsSpan::TtsSpan(const QString &arg0, android::os::PersistableBundle &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.text.style.TtsSpan",
-			"(Ljava/lang/String;Landroid/os/PersistableBundle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

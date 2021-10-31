@@ -15,7 +15,7 @@ namespace java::util::concurrent
 			"()V"
 		);
 	}
-	Phaser::Phaser(jint &arg0)
+	Phaser::Phaser(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.Phaser",
@@ -31,7 +31,7 @@ namespace java::util::concurrent
 			arg0.__jniObject().object()
 		);
 	}
-	Phaser::Phaser(java::util::concurrent::Phaser &arg0, jint &arg1)
+	Phaser::Phaser(java::util::concurrent::Phaser &arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.Phaser",

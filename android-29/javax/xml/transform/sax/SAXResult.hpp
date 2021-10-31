@@ -14,7 +14,7 @@ namespace javax::xml::transform::sax
 		SAXResult(QAndroidJniObject obj);
 		// Constructors
 		SAXResult();
-		SAXResult(__JniBaseClass &arg0);
+		SAXResult(__JniBaseClass arg0);
 		
 		// Methods
 		QAndroidJniObject getHandler();
@@ -23,7 +23,6 @@ namespace javax::xml::transform::sax
 		void setHandler(__JniBaseClass arg0);
 		void setLexicalHandler(__JniBaseClass arg0);
 		void setSystemId(jstring arg0);
-		void setSystemId(const QString &arg0);
 	};
 } // namespace javax::xml::transform::sax
 

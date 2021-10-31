@@ -37,15 +37,6 @@ namespace android::util
 			arg0
 		);
 	}
-	QAndroidJniObject Xml::findEncodingByName(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.util.Xml",
-			"findEncodingByName",
-			"(Ljava/lang/String;)Landroid/util/Xml$Encoding;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Xml::newPullParser()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -79,16 +70,6 @@ namespace android::util
 			"parse",
 			"(Ljava/lang/String;Lorg/xml/sax/ContentHandler;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void Xml::parse(const QString &arg0, __JniBaseClass arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.util.Xml",
-			"parse",
-			"(Ljava/lang/String;Lorg/xml/sax/ContentHandler;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

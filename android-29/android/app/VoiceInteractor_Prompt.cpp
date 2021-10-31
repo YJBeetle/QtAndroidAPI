@@ -15,7 +15,7 @@ namespace android::app
 	
 	VoiceInteractor_Prompt::VoiceInteractor_Prompt(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	VoiceInteractor_Prompt::VoiceInteractor_Prompt(jstring &arg0)
+	VoiceInteractor_Prompt::VoiceInteractor_Prompt(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.VoiceInteractor$Prompt",
@@ -23,30 +23,13 @@ namespace android::app
 			arg0
 		);
 	}
-	VoiceInteractor_Prompt::VoiceInteractor_Prompt(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.app.VoiceInteractor$Prompt",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	VoiceInteractor_Prompt::VoiceInteractor_Prompt(jarray &arg0, jstring &arg1)
+	VoiceInteractor_Prompt::VoiceInteractor_Prompt(jarray arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.VoiceInteractor$Prompt",
 			"([Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V",
 			arg0,
 			arg1
-		);
-	}
-	VoiceInteractor_Prompt::VoiceInteractor_Prompt(jarray &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.app.VoiceInteractor$Prompt",
-			"([Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	

@@ -13,20 +13,12 @@ namespace android::os
 			"()V"
 		);
 	}
-	RemoteException::RemoteException(jstring &arg0)
+	RemoteException::RemoteException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.RemoteException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	RemoteException::RemoteException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.os.RemoteException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

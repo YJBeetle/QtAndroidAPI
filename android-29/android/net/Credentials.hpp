@@ -12,7 +12,7 @@ namespace android::net
 		
 		Credentials(QAndroidJniObject obj);
 		// Constructors
-		Credentials(jint &arg0, jint &arg1, jint &arg2);
+		Credentials(jint arg0, jint arg1, jint arg2);
 		Credentials() = default;
 		
 		// Methods

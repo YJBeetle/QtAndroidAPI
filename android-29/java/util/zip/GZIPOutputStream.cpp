@@ -8,7 +8,7 @@ namespace java::util::zip
 	
 	GZIPOutputStream::GZIPOutputStream(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	GZIPOutputStream::GZIPOutputStream(java::io::OutputStream &arg0)
+	GZIPOutputStream::GZIPOutputStream(java::io::OutputStream arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.zip.GZIPOutputStream",
@@ -16,7 +16,7 @@ namespace java::util::zip
 			arg0.__jniObject().object()
 		);
 	}
-	GZIPOutputStream::GZIPOutputStream(java::io::OutputStream &arg0, jboolean &arg1)
+	GZIPOutputStream::GZIPOutputStream(java::io::OutputStream arg0, jboolean arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.zip.GZIPOutputStream",
@@ -25,7 +25,7 @@ namespace java::util::zip
 			arg1
 		);
 	}
-	GZIPOutputStream::GZIPOutputStream(java::io::OutputStream &arg0, jint &arg1)
+	GZIPOutputStream::GZIPOutputStream(java::io::OutputStream arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.zip.GZIPOutputStream",
@@ -34,7 +34,7 @@ namespace java::util::zip
 			arg1
 		);
 	}
-	GZIPOutputStream::GZIPOutputStream(java::io::OutputStream &arg0, jint &arg1, jboolean &arg2)
+	GZIPOutputStream::GZIPOutputStream(java::io::OutputStream arg0, jint arg1, jboolean arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.zip.GZIPOutputStream",

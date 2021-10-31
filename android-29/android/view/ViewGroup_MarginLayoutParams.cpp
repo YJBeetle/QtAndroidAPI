@@ -32,7 +32,7 @@ namespace android::view
 	
 	ViewGroup_MarginLayoutParams::ViewGroup_MarginLayoutParams(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ViewGroup_MarginLayoutParams::ViewGroup_MarginLayoutParams(android::view::ViewGroup_LayoutParams &arg0)
+	ViewGroup_MarginLayoutParams::ViewGroup_MarginLayoutParams(android::view::ViewGroup_LayoutParams arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.ViewGroup$MarginLayoutParams",
@@ -48,7 +48,7 @@ namespace android::view
 			arg0.__jniObject().object()
 		);
 	}
-	ViewGroup_MarginLayoutParams::ViewGroup_MarginLayoutParams(android::content::Context &arg0, __JniBaseClass &arg1)
+	ViewGroup_MarginLayoutParams::ViewGroup_MarginLayoutParams(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.ViewGroup$MarginLayoutParams",
@@ -57,7 +57,7 @@ namespace android::view
 			arg1.__jniObject().object()
 		);
 	}
-	ViewGroup_MarginLayoutParams::ViewGroup_MarginLayoutParams(jint &arg0, jint &arg1)
+	ViewGroup_MarginLayoutParams::ViewGroup_MarginLayoutParams(jint arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.ViewGroup$MarginLayoutParams",

@@ -41,15 +41,6 @@ namespace android::webkit
 			arg0
 		);
 	}
-	QAndroidJniObject WebSettings_PluginState::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.webkit.WebSettings$PluginState",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/webkit/WebSettings$PluginState;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray WebSettings_PluginState::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

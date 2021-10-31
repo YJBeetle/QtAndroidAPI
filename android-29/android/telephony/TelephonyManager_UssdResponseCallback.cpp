@@ -26,16 +26,6 @@ namespace android::telephony
 			arg2
 		);
 	}
-	void TelephonyManager_UssdResponseCallback::onReceiveUssdResponse(android::telephony::TelephonyManager arg0, const QString &arg1, const QString &arg2)
-	{
-		__thiz.callMethod<void>(
-			"onReceiveUssdResponse",
-			"(Landroid/telephony/TelephonyManager;Ljava/lang/String;Ljava/lang/CharSequence;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	void TelephonyManager_UssdResponseCallback::onReceiveUssdResponseFailed(android::telephony::TelephonyManager arg0, jstring arg1, jint arg2)
 	{
 		__thiz.callMethod<void>(
@@ -43,16 +33,6 @@ namespace android::telephony
 			"(Landroid/telephony/TelephonyManager;Ljava/lang/String;I)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2
-		);
-	}
-	void TelephonyManager_UssdResponseCallback::onReceiveUssdResponseFailed(android::telephony::TelephonyManager arg0, const QString &arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"onReceiveUssdResponseFailed",
-			"(Landroid/telephony/TelephonyManager;Ljava/lang/String;I)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}

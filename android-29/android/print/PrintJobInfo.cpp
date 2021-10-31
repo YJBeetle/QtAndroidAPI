@@ -84,28 +84,12 @@ namespace android::print
 			arg0
 		);
 	}
-	jint PrintJobInfo::getAdvancedIntOption(const QString &arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getAdvancedIntOption",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jstring PrintJobInfo::getAdvancedStringOption(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getAdvancedStringOption",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
-	}
-	jstring PrintJobInfo::getAdvancedStringOption(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getAdvancedStringOption",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	QAndroidJniObject PrintJobInfo::getAttributes()
@@ -170,14 +154,6 @@ namespace android::print
 			"hasAdvancedOption",
 			"(Ljava/lang/String;)Z",
 			arg0
-		);
-	}
-	jboolean PrintJobInfo::hasAdvancedOption(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasAdvancedOption",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring PrintJobInfo::toString()

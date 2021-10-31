@@ -50,7 +50,7 @@ namespace android::graphics::drawable
 		ColorDrawable(QAndroidJniObject obj);
 		// Constructors
 		ColorDrawable();
-		ColorDrawable(jint &arg0);
+		ColorDrawable(jint arg0);
 		
 		// Methods
 		void applyTheme(android::content::res::Resources_Theme arg0);

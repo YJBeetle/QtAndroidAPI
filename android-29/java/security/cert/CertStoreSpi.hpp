@@ -12,7 +12,7 @@ namespace java::security::cert
 		
 		CertStoreSpi(QAndroidJniObject obj);
 		// Constructors
-		CertStoreSpi(__JniBaseClass &arg0);
+		CertStoreSpi(__JniBaseClass arg0);
 		CertStoreSpi() = default;
 		
 		// Methods

@@ -14,7 +14,7 @@ namespace android::view::inputmethod
 	
 	InputConnectionWrapper::InputConnectionWrapper(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	InputConnectionWrapper::InputConnectionWrapper(__JniBaseClass &arg0, jboolean &arg1)
+	InputConnectionWrapper::InputConnectionWrapper(__JniBaseClass arg0, jboolean arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.inputmethod.InputConnectionWrapper",
@@ -79,15 +79,6 @@ namespace android::view::inputmethod
 			"commitText",
 			"(Ljava/lang/CharSequence;I)Z",
 			arg0,
-			arg1
-		);
-	}
-	jboolean InputConnectionWrapper::commitText(const QString &arg0, jint arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"commitText",
-			"(Ljava/lang/CharSequence;I)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -198,15 +189,6 @@ namespace android::view::inputmethod
 			arg1.__jniObject().object()
 		);
 	}
-	jboolean InputConnectionWrapper::performPrivateCommand(const QString &arg0, android::os::Bundle arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"performPrivateCommand",
-			"(Ljava/lang/String;Landroid/os/Bundle;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	jboolean InputConnectionWrapper::reportFullscreenMode(jboolean arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -246,15 +228,6 @@ namespace android::view::inputmethod
 			"setComposingText",
 			"(Ljava/lang/CharSequence;I)Z",
 			arg0,
-			arg1
-		);
-	}
-	jboolean InputConnectionWrapper::setComposingText(const QString &arg0, jint arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"setComposingText",
-			"(Ljava/lang/CharSequence;I)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

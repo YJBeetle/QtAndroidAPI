@@ -69,7 +69,6 @@ namespace android::icu::text
 		jint preceding(jint arg0);
 		jint previous();
 		void setText(jstring arg0);
-		void setText(const QString &arg0);
 		void setText(__JniBaseClass arg0);
 	};
 } // namespace android::icu::text

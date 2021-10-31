@@ -75,14 +75,6 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	QAndroidJniObject LauncherApps_ShortcutQuery::setPackage(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setPackage",
-			"(Ljava/lang/String;)Landroid/content/pm/LauncherApps$ShortcutQuery;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject LauncherApps_ShortcutQuery::setQueryFlags(jint arg0)
 	{
 		return __thiz.callObjectMethod(

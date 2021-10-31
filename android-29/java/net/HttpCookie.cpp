@@ -7,22 +7,13 @@ namespace java::net
 	
 	HttpCookie::HttpCookie(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	HttpCookie::HttpCookie(jstring &arg0, jstring &arg1)
+	HttpCookie::HttpCookie(jstring arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.HttpCookie",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	HttpCookie::HttpCookie(const QString &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.HttpCookie",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	
@@ -37,16 +28,6 @@ namespace java::net
 			arg1
 		);
 	}
-	jboolean HttpCookie::domainMatches(const QString &arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"java.net.HttpCookie",
-			"domainMatches",
-			"(Ljava/lang/String;Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	QAndroidJniObject HttpCookie::parse(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -54,15 +35,6 @@ namespace java::net
 			"parse",
 			"(Ljava/lang/String;)Ljava/util/List;",
 			arg0
-		);
-	}
-	QAndroidJniObject HttpCookie::parse(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.net.HttpCookie",
-			"parse",
-			"(Ljava/lang/String;)Ljava/util/List;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jobject HttpCookie::clone()
@@ -186,28 +158,12 @@ namespace java::net
 			arg0
 		);
 	}
-	void HttpCookie::setComment(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setComment",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void HttpCookie::setCommentURL(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setCommentURL",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void HttpCookie::setCommentURL(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setCommentURL",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void HttpCookie::setDiscard(jboolean arg0)
@@ -224,14 +180,6 @@ namespace java::net
 			"setDomain",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void HttpCookie::setDomain(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDomain",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void HttpCookie::setHttpOnly(jboolean arg0)
@@ -258,28 +206,12 @@ namespace java::net
 			arg0
 		);
 	}
-	void HttpCookie::setPath(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPath",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void HttpCookie::setPortlist(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setPortlist",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void HttpCookie::setPortlist(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPortlist",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void HttpCookie::setSecure(jboolean arg0)
@@ -296,14 +228,6 @@ namespace java::net
 			"setValue",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void HttpCookie::setValue(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setValue",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void HttpCookie::setVersion(jint arg0)

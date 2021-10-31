@@ -29,8 +29,7 @@ namespace android::content
 		
 		PeriodicSync(QAndroidJniObject obj);
 		// Constructors
-		PeriodicSync(android::accounts::Account &arg0, jstring &arg1, android::os::Bundle &arg2, jlong &arg3);
-		PeriodicSync(android::accounts::Account &arg0, const QString &arg1, android::os::Bundle &arg2, jlong &arg3);
+		PeriodicSync(android::accounts::Account arg0, jstring arg1, android::os::Bundle arg2, jlong arg3);
 		PeriodicSync() = default;
 		
 		// Methods

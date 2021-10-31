@@ -7,7 +7,7 @@ namespace java::io
 	
 	SequenceInputStream::SequenceInputStream(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SequenceInputStream::SequenceInputStream(__JniBaseClass &arg0)
+	SequenceInputStream::SequenceInputStream(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.SequenceInputStream",
@@ -15,7 +15,7 @@ namespace java::io
 			arg0.__jniObject().object()
 		);
 	}
-	SequenceInputStream::SequenceInputStream(java::io::InputStream &arg0, java::io::InputStream &arg1)
+	SequenceInputStream::SequenceInputStream(java::io::InputStream arg0, java::io::InputStream arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.SequenceInputStream",

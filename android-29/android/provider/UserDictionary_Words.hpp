@@ -40,9 +40,7 @@ namespace android::provider
 		
 		// Methods
 		static void addWord(android::content::Context arg0, jstring arg1, jint arg2, jint arg3);
-		static void addWord(android::content::Context arg0, const QString &arg1, jint arg2, jint arg3);
 		static void addWord(android::content::Context arg0, jstring arg1, jint arg2, jstring arg3, java::util::Locale arg4);
-		static void addWord(android::content::Context arg0, const QString &arg1, jint arg2, const QString &arg3, java::util::Locale arg4);
 	};
 } // namespace android::provider
 

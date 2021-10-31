@@ -13,20 +13,12 @@ namespace android::database::sqlite
 			"()V"
 		);
 	}
-	SQLiteMisuseException::SQLiteMisuseException(jstring &arg0)
+	SQLiteMisuseException::SQLiteMisuseException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.database.sqlite.SQLiteMisuseException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	SQLiteMisuseException::SQLiteMisuseException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.database.sqlite.SQLiteMisuseException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

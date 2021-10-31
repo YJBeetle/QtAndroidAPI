@@ -13,20 +13,12 @@ namespace java::io
 			"()V"
 		);
 	}
-	FileNotFoundException::FileNotFoundException(jstring &arg0)
+	FileNotFoundException::FileNotFoundException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.FileNotFoundException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	FileNotFoundException::FileNotFoundException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.io.FileNotFoundException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

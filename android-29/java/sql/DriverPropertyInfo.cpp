@@ -40,22 +40,13 @@ namespace java::sql
 	
 	DriverPropertyInfo::DriverPropertyInfo(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DriverPropertyInfo::DriverPropertyInfo(jstring &arg0, jstring &arg1)
+	DriverPropertyInfo::DriverPropertyInfo(jstring arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.sql.DriverPropertyInfo",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	DriverPropertyInfo::DriverPropertyInfo(const QString &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.sql.DriverPropertyInfo",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	

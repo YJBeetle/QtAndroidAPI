@@ -22,13 +22,9 @@ namespace java::net
 		
 		// Methods
 		static jstring toASCII(jstring arg0);
-		static jstring toASCII(const QString &arg0);
 		static jstring toASCII(jstring arg0, jint arg1);
-		static jstring toASCII(const QString &arg0, jint arg1);
 		static jstring toUnicode(jstring arg0);
-		static jstring toUnicode(const QString &arg0);
 		static jstring toUnicode(jstring arg0, jint arg1);
-		static jstring toUnicode(const QString &arg0, jint arg1);
 	};
 } // namespace java::net
 

@@ -24,8 +24,8 @@ namespace android::text::style
 		EasyEditSpan(QAndroidJniObject obj);
 		// Constructors
 		EasyEditSpan();
-		EasyEditSpan(android::app::PendingIntent &arg0);
-		EasyEditSpan(android::os::Parcel &arg0);
+		EasyEditSpan(android::app::PendingIntent arg0);
+		EasyEditSpan(android::os::Parcel arg0);
 		
 		// Methods
 		jint describeContents();

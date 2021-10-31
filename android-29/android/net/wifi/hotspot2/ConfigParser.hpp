@@ -20,7 +20,6 @@ namespace android::net::wifi::hotspot2
 		
 		// Methods
 		static QAndroidJniObject parsePasspointConfig(jstring arg0, jbyteArray arg1);
-		static QAndroidJniObject parsePasspointConfig(const QString &arg0, jbyteArray arg1);
 	};
 } // namespace android::net::wifi::hotspot2
 

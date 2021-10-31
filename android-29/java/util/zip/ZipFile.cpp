@@ -25,7 +25,7 @@ namespace java::util::zip
 	
 	ZipFile::ZipFile(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ZipFile::ZipFile(java::io::File &arg0)
+	ZipFile::ZipFile(java::io::File arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.zip.ZipFile",
@@ -33,7 +33,7 @@ namespace java::util::zip
 			arg0.__jniObject().object()
 		);
 	}
-	ZipFile::ZipFile(jstring &arg0)
+	ZipFile::ZipFile(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.zip.ZipFile",
@@ -41,15 +41,7 @@ namespace java::util::zip
 			arg0
 		);
 	}
-	ZipFile::ZipFile(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.zip.ZipFile",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	ZipFile::ZipFile(java::io::File &arg0, jint &arg1)
+	ZipFile::ZipFile(java::io::File arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.zip.ZipFile",
@@ -58,7 +50,7 @@ namespace java::util::zip
 			arg1
 		);
 	}
-	ZipFile::ZipFile(java::io::File &arg0, java::nio::charset::Charset &arg1)
+	ZipFile::ZipFile(java::io::File arg0, java::nio::charset::Charset arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.zip.ZipFile",
@@ -67,7 +59,7 @@ namespace java::util::zip
 			arg1.__jniObject().object()
 		);
 	}
-	ZipFile::ZipFile(jstring &arg0, java::nio::charset::Charset &arg1)
+	ZipFile::ZipFile(jstring arg0, java::nio::charset::Charset arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.zip.ZipFile",
@@ -76,16 +68,7 @@ namespace java::util::zip
 			arg1.__jniObject().object()
 		);
 	}
-	ZipFile::ZipFile(const QString &arg0, java::nio::charset::Charset &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.zip.ZipFile",
-			"(Ljava/lang/String;Ljava/nio/charset/Charset;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
-	ZipFile::ZipFile(java::io::File &arg0, jint &arg1, java::nio::charset::Charset &arg2)
+	ZipFile::ZipFile(java::io::File arg0, jint arg1, java::nio::charset::Charset arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.zip.ZipFile",
@@ -124,14 +107,6 @@ namespace java::util::zip
 			"getEntry",
 			"(Ljava/lang/String;)Ljava/util/zip/ZipEntry;",
 			arg0
-		);
-	}
-	QAndroidJniObject ZipFile::getEntry(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getEntry",
-			"(Ljava/lang/String;)Ljava/util/zip/ZipEntry;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject ZipFile::getInputStream(java::util::zip::ZipEntry arg0)

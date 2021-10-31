@@ -15,13 +15,11 @@ namespace android::text::style
 		TtsSpan_CardinalBuilder(QAndroidJniObject obj);
 		// Constructors
 		TtsSpan_CardinalBuilder();
-		TtsSpan_CardinalBuilder(jstring &arg0);
-		TtsSpan_CardinalBuilder(const QString &arg0);
-		TtsSpan_CardinalBuilder(jlong &arg0);
+		TtsSpan_CardinalBuilder(jstring arg0);
+		TtsSpan_CardinalBuilder(jlong arg0);
 		
 		// Methods
 		QAndroidJniObject setNumber(jstring arg0);
-		QAndroidJniObject setNumber(const QString &arg0);
 		QAndroidJniObject setNumber(jlong arg0);
 	};
 } // namespace android::text::style

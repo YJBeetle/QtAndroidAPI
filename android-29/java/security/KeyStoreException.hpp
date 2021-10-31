@@ -15,11 +15,9 @@ namespace java::security
 		KeyStoreException(QAndroidJniObject obj);
 		// Constructors
 		KeyStoreException();
-		KeyStoreException(jstring &arg0);
-		KeyStoreException(const QString &arg0);
-		KeyStoreException(jthrowable &arg0);
-		KeyStoreException(jstring &arg0, jthrowable &arg1);
-		KeyStoreException(const QString &arg0, jthrowable &arg1);
+		KeyStoreException(jstring arg0);
+		KeyStoreException(jthrowable arg0);
+		KeyStoreException(jstring arg0, jthrowable arg1);
 		
 		// Methods
 	};

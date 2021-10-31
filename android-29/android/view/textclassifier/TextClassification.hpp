@@ -35,7 +35,6 @@ namespace android::view::textclassifier
 		jint describeContents();
 		QAndroidJniObject getActions();
 		jfloat getConfidenceScore(jstring arg0);
-		jfloat getConfidenceScore(const QString &arg0);
 		jstring getEntity(jint arg0);
 		jint getEntityCount();
 		QAndroidJniObject getExtras();

@@ -23,8 +23,7 @@ namespace java::security::spec
 		
 		MGF1ParameterSpec(QAndroidJniObject obj);
 		// Constructors
-		MGF1ParameterSpec(jstring &arg0);
-		MGF1ParameterSpec(const QString &arg0);
+		MGF1ParameterSpec(jstring arg0);
 		MGF1ParameterSpec() = default;
 		
 		// Methods

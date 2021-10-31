@@ -30,9 +30,9 @@ namespace android::widget
 		
 		ResourceCursorAdapter(QAndroidJniObject obj);
 		// Constructors
-		ResourceCursorAdapter(android::content::Context &arg0, jint &arg1, __JniBaseClass &arg2);
-		ResourceCursorAdapter(android::content::Context &arg0, jint &arg1, __JniBaseClass &arg2, jboolean &arg3);
-		ResourceCursorAdapter(android::content::Context &arg0, jint &arg1, __JniBaseClass &arg2, jint &arg3);
+		ResourceCursorAdapter(android::content::Context arg0, jint arg1, __JniBaseClass arg2);
+		ResourceCursorAdapter(android::content::Context arg0, jint arg1, __JniBaseClass arg2, jboolean arg3);
+		ResourceCursorAdapter(android::content::Context arg0, jint arg1, __JniBaseClass arg2, jint arg3);
 		ResourceCursorAdapter() = default;
 		
 		// Methods

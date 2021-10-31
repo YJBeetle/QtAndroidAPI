@@ -15,10 +15,8 @@ namespace java::util
 		IllformedLocaleException(QAndroidJniObject obj);
 		// Constructors
 		IllformedLocaleException();
-		IllformedLocaleException(jstring &arg0);
-		IllformedLocaleException(const QString &arg0);
-		IllformedLocaleException(jstring &arg0, jint &arg1);
-		IllformedLocaleException(const QString &arg0, jint &arg1);
+		IllformedLocaleException(jstring arg0);
+		IllformedLocaleException(jstring arg0, jint arg1);
 		
 		// Methods
 		jint getErrorIndex();

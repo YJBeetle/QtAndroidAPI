@@ -35,10 +35,10 @@ namespace android::widget
 		
 		NumberPicker(QAndroidJniObject obj);
 		// Constructors
-		NumberPicker(android::content::Context &arg0);
-		NumberPicker(android::content::Context &arg0, __JniBaseClass &arg1);
-		NumberPicker(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		NumberPicker(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		NumberPicker(android::content::Context arg0);
+		NumberPicker(android::content::Context arg0, __JniBaseClass arg1);
+		NumberPicker(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		NumberPicker(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		NumberPicker() = default;
 		
 		// Methods

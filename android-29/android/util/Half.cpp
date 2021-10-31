@@ -97,7 +97,7 @@ namespace android::util
 	
 	Half::Half(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Half::Half(jdouble &arg0)
+	Half::Half(jdouble arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.Half",
@@ -105,7 +105,7 @@ namespace android::util
 			arg0
 		);
 	}
-	Half::Half(jfloat &arg0)
+	Half::Half(jfloat arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.Half",
@@ -113,7 +113,7 @@ namespace android::util
 			arg0
 		);
 	}
-	Half::Half(jstring &arg0)
+	Half::Half(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.Half",
@@ -121,15 +121,7 @@ namespace android::util
 			arg0
 		);
 	}
-	Half::Half(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.util.Half",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	Half::Half(jshort &arg0)
+	Half::Half(jshort arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.Half",
@@ -364,15 +356,6 @@ namespace android::util
 			arg0
 		);
 	}
-	jshort Half::parseHalf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jshort>(
-			"android.util.Half",
-			"parseHalf",
-			"(Ljava/lang/String;)S",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jshort Half::round(jshort arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jshort>(
@@ -443,15 +426,6 @@ namespace android::util
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/util/Half;",
 			arg0
-		);
-	}
-	QAndroidJniObject Half::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.util.Half",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/util/Half;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Half::valueOf(jshort arg0)

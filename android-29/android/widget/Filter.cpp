@@ -32,29 +32,12 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Filter::filter(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"filter",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void Filter::filter(jstring arg0, __JniBaseClass arg1)
 	{
 		__thiz.callMethod<void>(
 			"filter",
 			"(Ljava/lang/CharSequence;Landroid/widget/Filter$FilterListener;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void Filter::filter(const QString &arg0, __JniBaseClass arg1)
-	{
-		__thiz.callMethod<void>(
-			"filter",
-			"(Ljava/lang/CharSequence;Landroid/widget/Filter$FilterListener;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

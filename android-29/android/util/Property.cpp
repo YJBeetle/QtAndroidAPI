@@ -6,22 +6,13 @@ namespace android::util
 	
 	Property::Property(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Property::Property(jclass &arg0, jstring &arg1)
+	Property::Property(jclass arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.Property",
 			"(Ljava/lang/Class;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	Property::Property(jclass &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.util.Property",
-			"(Ljava/lang/Class;Ljava/lang/String;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	
@@ -35,17 +26,6 @@ namespace android::util
 			arg0,
 			arg1,
 			arg2
-		);
-	}
-	QAndroidJniObject Property::of(jclass arg0, jclass arg1, const QString &arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.util.Property",
-			"of",
-			"(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/String;)Landroid/util/Property;",
-			arg0,
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	jobject Property::get(jobject arg0)

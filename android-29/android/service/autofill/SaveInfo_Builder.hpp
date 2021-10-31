@@ -28,8 +28,8 @@ namespace android::service::autofill
 		
 		SaveInfo_Builder(QAndroidJniObject obj);
 		// Constructors
-		SaveInfo_Builder(jint &arg0);
-		SaveInfo_Builder(jint &arg0, jarray &arg1);
+		SaveInfo_Builder(jint arg0);
+		SaveInfo_Builder(jint arg0, jarray arg1);
 		SaveInfo_Builder() = default;
 		
 		// Methods
@@ -37,7 +37,6 @@ namespace android::service::autofill
 		QAndroidJniObject build();
 		QAndroidJniObject setCustomDescription(android::service::autofill::CustomDescription arg0);
 		QAndroidJniObject setDescription(jstring arg0);
-		QAndroidJniObject setDescription(const QString &arg0);
 		QAndroidJniObject setFlags(jint arg0);
 		QAndroidJniObject setNegativeAction(jint arg0, android::content::IntentSender arg1);
 		QAndroidJniObject setOptionalIds(jarray arg0);

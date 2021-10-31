@@ -6,7 +6,7 @@ namespace java::util::concurrent::atomic
 	
 	AtomicLongArray::AtomicLongArray(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AtomicLongArray::AtomicLongArray(jlongArray &arg0)
+	AtomicLongArray::AtomicLongArray(jlongArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.atomic.AtomicLongArray",
@@ -14,7 +14,7 @@ namespace java::util::concurrent::atomic
 			arg0
 		);
 	}
-	AtomicLongArray::AtomicLongArray(jint &arg0)
+	AtomicLongArray::AtomicLongArray(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.atomic.AtomicLongArray",

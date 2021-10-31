@@ -39,13 +39,12 @@ namespace android::telephony
 		PhoneStateListener(QAndroidJniObject obj);
 		// Constructors
 		PhoneStateListener();
-		PhoneStateListener(__JniBaseClass &arg0);
+		PhoneStateListener(__JniBaseClass arg0);
 		
 		// Methods
 		void onActiveDataSubscriptionIdChanged(jint arg0);
 		void onCallForwardingIndicatorChanged(jboolean arg0);
 		void onCallStateChanged(jint arg0, jstring arg1);
-		void onCallStateChanged(jint arg0, const QString &arg1);
 		void onCellInfoChanged(__JniBaseClass arg0);
 		void onCellLocationChanged(android::telephony::CellLocation arg0);
 		void onDataActivity(jint arg0);

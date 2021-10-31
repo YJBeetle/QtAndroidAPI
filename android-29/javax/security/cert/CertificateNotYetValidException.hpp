@@ -15,8 +15,7 @@ namespace javax::security::cert
 		CertificateNotYetValidException(QAndroidJniObject obj);
 		// Constructors
 		CertificateNotYetValidException();
-		CertificateNotYetValidException(jstring &arg0);
-		CertificateNotYetValidException(const QString &arg0);
+		CertificateNotYetValidException(jstring arg0);
 		
 		// Methods
 	};

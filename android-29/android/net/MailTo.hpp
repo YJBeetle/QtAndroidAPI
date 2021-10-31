@@ -17,9 +17,7 @@ namespace android::net
 		
 		// Methods
 		static jboolean isMailTo(jstring arg0);
-		static jboolean isMailTo(const QString &arg0);
 		static QAndroidJniObject parse(jstring arg0);
-		static QAndroidJniObject parse(const QString &arg0);
 		jstring getBody();
 		jstring getCc();
 		QAndroidJniObject getHeaders();

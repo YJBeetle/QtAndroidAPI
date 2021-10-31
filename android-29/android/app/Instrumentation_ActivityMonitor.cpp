@@ -17,7 +17,7 @@ namespace android::app
 			"()V"
 		);
 	}
-	Instrumentation_ActivityMonitor::Instrumentation_ActivityMonitor(android::content::IntentFilter &arg0, android::app::Instrumentation_ActivityResult &arg1, jboolean &arg2)
+	Instrumentation_ActivityMonitor::Instrumentation_ActivityMonitor(android::content::IntentFilter arg0, android::app::Instrumentation_ActivityResult arg1, jboolean arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.Instrumentation$ActivityMonitor",
@@ -27,22 +27,12 @@ namespace android::app
 			arg2
 		);
 	}
-	Instrumentation_ActivityMonitor::Instrumentation_ActivityMonitor(jstring &arg0, android::app::Instrumentation_ActivityResult &arg1, jboolean &arg2)
+	Instrumentation_ActivityMonitor::Instrumentation_ActivityMonitor(jstring arg0, android::app::Instrumentation_ActivityResult arg1, jboolean arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.Instrumentation$ActivityMonitor",
 			"(Ljava/lang/String;Landroid/app/Instrumentation$ActivityResult;Z)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2
-		);
-	}
-	Instrumentation_ActivityMonitor::Instrumentation_ActivityMonitor(const QString &arg0, android::app::Instrumentation_ActivityResult &arg1, jboolean &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.app.Instrumentation$ActivityMonitor",
-			"(Ljava/lang/String;Landroid/app/Instrumentation$ActivityResult;Z)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2
 		);

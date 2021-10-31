@@ -23,14 +23,6 @@ namespace android::text::style
 			arg0
 		);
 	}
-	QAndroidJniObject TtsSpan_MeasureBuilder::setDenominator(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setDenominator",
-			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$MeasureBuilder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject TtsSpan_MeasureBuilder::setDenominator(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -47,28 +39,12 @@ namespace android::text::style
 			arg0
 		);
 	}
-	QAndroidJniObject TtsSpan_MeasureBuilder::setFractionalPart(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setFractionalPart",
-			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$MeasureBuilder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject TtsSpan_MeasureBuilder::setIntegerPart(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setIntegerPart",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$MeasureBuilder;",
 			arg0
-		);
-	}
-	QAndroidJniObject TtsSpan_MeasureBuilder::setIntegerPart(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setIntegerPart",
-			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$MeasureBuilder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject TtsSpan_MeasureBuilder::setIntegerPart(jlong arg0)
@@ -87,14 +63,6 @@ namespace android::text::style
 			arg0
 		);
 	}
-	QAndroidJniObject TtsSpan_MeasureBuilder::setNumber(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setNumber",
-			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$MeasureBuilder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject TtsSpan_MeasureBuilder::setNumber(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -111,14 +79,6 @@ namespace android::text::style
 			arg0
 		);
 	}
-	QAndroidJniObject TtsSpan_MeasureBuilder::setNumerator(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setNumerator",
-			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$MeasureBuilder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject TtsSpan_MeasureBuilder::setNumerator(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -133,14 +93,6 @@ namespace android::text::style
 			"setUnit",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$MeasureBuilder;",
 			arg0
-		);
-	}
-	QAndroidJniObject TtsSpan_MeasureBuilder::setUnit(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setUnit",
-			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$MeasureBuilder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace android::text::style

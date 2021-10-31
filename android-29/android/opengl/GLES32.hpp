@@ -251,7 +251,6 @@ namespace android::opengl
 		static void glDebugMessageControl(jint arg0, jint arg1, jint arg2, jint arg3, java::nio::IntBuffer arg4, jboolean arg5);
 		static void glDebugMessageControl(jint arg0, jint arg1, jint arg2, jint arg3, jintArray arg4, jint arg5, jboolean arg6);
 		static void glDebugMessageInsert(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jstring arg5);
-		static void glDebugMessageInsert(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, const QString &arg5);
 		static void glDisablei(jint arg0, jint arg1);
 		static void glDrawElementsBaseVertex(jint arg0, jint arg1, jint arg2, java::nio::Buffer arg3, jint arg4);
 		static void glDrawElementsInstancedBaseVertex(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
@@ -284,14 +283,11 @@ namespace android::opengl
 		static jboolean glIsEnabledi(jint arg0, jint arg1);
 		static void glMinSampleShading(jfloat arg0);
 		static void glObjectLabel(jint arg0, jint arg1, jint arg2, jstring arg3);
-		static void glObjectLabel(jint arg0, jint arg1, jint arg2, const QString &arg3);
 		static void glObjectPtrLabel(jlong arg0, jstring arg1);
-		static void glObjectPtrLabel(jlong arg0, const QString &arg1);
 		static void glPatchParameteri(jint arg0, jint arg1);
 		static void glPopDebugGroup();
 		static void glPrimitiveBoundingBox(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5, jfloat arg6, jfloat arg7);
 		static void glPushDebugGroup(jint arg0, jint arg1, jint arg2, jstring arg3);
-		static void glPushDebugGroup(jint arg0, jint arg1, jint arg2, const QString &arg3);
 		static void glReadnPixels(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, java::nio::Buffer arg7);
 		static void glSamplerParameterIiv(jint arg0, jint arg1, java::nio::IntBuffer arg2);
 		static void glSamplerParameterIiv(jint arg0, jint arg1, jintArray arg2, jint arg3);

@@ -42,17 +42,6 @@ namespace android::animation
 			arg2
 		);
 	}
-	QAndroidJniObject ObjectAnimator::ofArgb(jobject arg0, const QString &arg1, jintArray arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.animation.ObjectAnimator",
-			"ofArgb",
-			"(Ljava/lang/Object;Ljava/lang/String;[I)Landroid/animation/ObjectAnimator;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2
-		);
-	}
 	QAndroidJniObject ObjectAnimator::ofFloat(jobject arg0, android::util::Property arg1, jfloatArray arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -72,17 +61,6 @@ namespace android::animation
 			"(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;",
 			arg0,
 			arg1,
-			arg2
-		);
-	}
-	QAndroidJniObject ObjectAnimator::ofFloat(jobject arg0, const QString &arg1, jfloatArray arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.animation.ObjectAnimator",
-			"ofFloat",
-			"(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}
@@ -110,18 +88,6 @@ namespace android::animation
 			arg3.__jniObject().object()
 		);
 	}
-	QAndroidJniObject ObjectAnimator::ofFloat(jobject arg0, const QString &arg1, const QString &arg2, android::graphics::Path arg3)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.animation.ObjectAnimator",
-			"ofFloat",
-			"(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;Landroid/graphics/Path;)Landroid/animation/ObjectAnimator;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			arg3.__jniObject().object()
-		);
-	}
 	QAndroidJniObject ObjectAnimator::ofInt(jobject arg0, android::util::Property arg1, jintArray arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -141,17 +107,6 @@ namespace android::animation
 			"(Ljava/lang/Object;Ljava/lang/String;[I)Landroid/animation/ObjectAnimator;",
 			arg0,
 			arg1,
-			arg2
-		);
-	}
-	QAndroidJniObject ObjectAnimator::ofInt(jobject arg0, const QString &arg1, jintArray arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.animation.ObjectAnimator",
-			"ofInt",
-			"(Ljava/lang/Object;Ljava/lang/String;[I)Landroid/animation/ObjectAnimator;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}
@@ -179,18 +134,6 @@ namespace android::animation
 			arg3.__jniObject().object()
 		);
 	}
-	QAndroidJniObject ObjectAnimator::ofInt(jobject arg0, const QString &arg1, const QString &arg2, android::graphics::Path arg3)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.animation.ObjectAnimator",
-			"ofInt",
-			"(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;Landroid/graphics/Path;)Landroid/animation/ObjectAnimator;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			arg3.__jniObject().object()
-		);
-	}
 	QAndroidJniObject ObjectAnimator::ofMultiFloat(jobject arg0, jstring arg1, jarray arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -202,17 +145,6 @@ namespace android::animation
 			arg2
 		);
 	}
-	QAndroidJniObject ObjectAnimator::ofMultiFloat(jobject arg0, const QString &arg1, jarray arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.animation.ObjectAnimator",
-			"ofMultiFloat",
-			"(Ljava/lang/Object;Ljava/lang/String;[[F)Landroid/animation/ObjectAnimator;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2
-		);
-	}
 	QAndroidJniObject ObjectAnimator::ofMultiFloat(jobject arg0, jstring arg1, android::graphics::Path arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -221,17 +153,6 @@ namespace android::animation
 			"(Ljava/lang/Object;Ljava/lang/String;Landroid/graphics/Path;)Landroid/animation/ObjectAnimator;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	QAndroidJniObject ObjectAnimator::ofMultiFloat(jobject arg0, const QString &arg1, android::graphics::Path arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.animation.ObjectAnimator",
-			"ofMultiFloat",
-			"(Ljava/lang/Object;Ljava/lang/String;Landroid/graphics/Path;)Landroid/animation/ObjectAnimator;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}
@@ -248,19 +169,6 @@ namespace android::animation
 			arg4
 		);
 	}
-	QAndroidJniObject ObjectAnimator::ofMultiFloat(jobject arg0, const QString &arg1, android::animation::TypeConverter arg2, __JniBaseClass arg3, jobjectArray arg4)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.animation.ObjectAnimator",
-			"ofMultiFloat",
-			"(Ljava/lang/Object;Ljava/lang/String;Landroid/animation/TypeConverter;Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/ObjectAnimator;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
-			arg4
-		);
-	}
 	QAndroidJniObject ObjectAnimator::ofMultiInt(jobject arg0, jstring arg1, jarray arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -269,17 +177,6 @@ namespace android::animation
 			"(Ljava/lang/Object;Ljava/lang/String;[[I)Landroid/animation/ObjectAnimator;",
 			arg0,
 			arg1,
-			arg2
-		);
-	}
-	QAndroidJniObject ObjectAnimator::ofMultiInt(jobject arg0, const QString &arg1, jarray arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.animation.ObjectAnimator",
-			"ofMultiInt",
-			"(Ljava/lang/Object;Ljava/lang/String;[[I)Landroid/animation/ObjectAnimator;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}
@@ -294,17 +191,6 @@ namespace android::animation
 			arg2.__jniObject().object()
 		);
 	}
-	QAndroidJniObject ObjectAnimator::ofMultiInt(jobject arg0, const QString &arg1, android::graphics::Path arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.animation.ObjectAnimator",
-			"ofMultiInt",
-			"(Ljava/lang/Object;Ljava/lang/String;Landroid/graphics/Path;)Landroid/animation/ObjectAnimator;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object()
-		);
-	}
 	QAndroidJniObject ObjectAnimator::ofMultiInt(jobject arg0, jstring arg1, android::animation::TypeConverter arg2, __JniBaseClass arg3, jobjectArray arg4)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -313,19 +199,6 @@ namespace android::animation
 			"(Ljava/lang/Object;Ljava/lang/String;Landroid/animation/TypeConverter;Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/ObjectAnimator;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
-			arg4
-		);
-	}
-	QAndroidJniObject ObjectAnimator::ofMultiInt(jobject arg0, const QString &arg1, android::animation::TypeConverter arg2, __JniBaseClass arg3, jobjectArray arg4)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.animation.ObjectAnimator",
-			"ofMultiInt",
-			"(Ljava/lang/Object;Ljava/lang/String;Landroid/animation/TypeConverter;Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/ObjectAnimator;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object(),
 			arg4
@@ -367,18 +240,6 @@ namespace android::animation
 			arg3.__jniObject().object()
 		);
 	}
-	QAndroidJniObject ObjectAnimator::ofObject(jobject arg0, const QString &arg1, android::animation::TypeConverter arg2, android::graphics::Path arg3)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.animation.ObjectAnimator",
-			"ofObject",
-			"(Ljava/lang/Object;Ljava/lang/String;Landroid/animation/TypeConverter;Landroid/graphics/Path;)Landroid/animation/ObjectAnimator;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
-		);
-	}
 	QAndroidJniObject ObjectAnimator::ofObject(jobject arg0, jstring arg1, __JniBaseClass arg2, jobjectArray arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -387,18 +248,6 @@ namespace android::animation
 			"(Ljava/lang/Object;Ljava/lang/String;Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/ObjectAnimator;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
-			arg3
-		);
-	}
-	QAndroidJniObject ObjectAnimator::ofObject(jobject arg0, const QString &arg1, __JniBaseClass arg2, jobjectArray arg3)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.animation.ObjectAnimator",
-			"ofObject",
-			"(Ljava/lang/Object;Ljava/lang/String;Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/ObjectAnimator;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object(),
 			arg3
 		);
@@ -501,14 +350,6 @@ namespace android::animation
 			"setPropertyName",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void ObjectAnimator::setPropertyName(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPropertyName",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void ObjectAnimator::setTarget(jobject arg0)

@@ -15,7 +15,7 @@ namespace java::io
 			"()V"
 		);
 	}
-	ByteArrayOutputStream::ByteArrayOutputStream(jint &arg0)
+	ByteArrayOutputStream::ByteArrayOutputStream(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.ByteArrayOutputStream",
@@ -74,14 +74,6 @@ namespace java::io
 			"toString",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
-	}
-	jstring ByteArrayOutputStream::toString(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	jstring ByteArrayOutputStream::toString(java::nio::charset::Charset arg0)

@@ -29,16 +29,6 @@ namespace java::security::cert
 			arg1.__jniObject().object()
 		);
 	}
-	QAndroidJniObject CertStore::getInstance(const QString &arg0, __JniBaseClass arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.security.cert.CertStore",
-			"getInstance",
-			"(Ljava/lang/String;Ljava/security/cert/CertStoreParameters;)Ljava/security/cert/CertStore;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	QAndroidJniObject CertStore::getInstance(jstring arg0, __JniBaseClass arg1, jstring arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -50,17 +40,6 @@ namespace java::security::cert
 			arg2
 		);
 	}
-	QAndroidJniObject CertStore::getInstance(const QString &arg0, __JniBaseClass arg1, const QString &arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.security.cert.CertStore",
-			"getInstance",
-			"(Ljava/lang/String;Ljava/security/cert/CertStoreParameters;Ljava/lang/String;)Ljava/security/cert/CertStore;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	QAndroidJniObject CertStore::getInstance(jstring arg0, __JniBaseClass arg1, java::security::Provider arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -68,17 +47,6 @@ namespace java::security::cert
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/cert/CertStoreParameters;Ljava/security/Provider;)Ljava/security/cert/CertStore;",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	QAndroidJniObject CertStore::getInstance(const QString &arg0, __JniBaseClass arg1, java::security::Provider arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.security.cert.CertStore",
-			"getInstance",
-			"(Ljava/lang/String;Ljava/security/cert/CertStoreParameters;Ljava/security/Provider;)Ljava/security/cert/CertStore;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object()
 		);

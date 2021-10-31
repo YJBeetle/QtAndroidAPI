@@ -17,7 +17,7 @@ namespace android::media
 		AudioFormat_Builder(QAndroidJniObject obj);
 		// Constructors
 		AudioFormat_Builder();
-		AudioFormat_Builder(android::media::AudioFormat &arg0);
+		AudioFormat_Builder(android::media::AudioFormat arg0);
 		
 		// Methods
 		QAndroidJniObject build();

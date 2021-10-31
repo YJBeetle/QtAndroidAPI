@@ -18,7 +18,7 @@ namespace android::content::pm
 	
 	LabeledIntent::LabeledIntent(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	LabeledIntent::LabeledIntent(jstring &arg0, jint &arg1, jint &arg2)
+	LabeledIntent::LabeledIntent(jstring arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.pm.LabeledIntent",
@@ -28,17 +28,7 @@ namespace android::content::pm
 			arg2
 		);
 	}
-	LabeledIntent::LabeledIntent(const QString &arg0, jint &arg1, jint &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.pm.LabeledIntent",
-			"(Ljava/lang/String;II)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2
-		);
-	}
-	LabeledIntent::LabeledIntent(jstring &arg0, jstring &arg1, jint &arg2)
+	LabeledIntent::LabeledIntent(jstring arg0, jstring arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.pm.LabeledIntent",
@@ -48,17 +38,7 @@ namespace android::content::pm
 			arg2
 		);
 	}
-	LabeledIntent::LabeledIntent(const QString &arg0, const QString &arg1, jint &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.pm.LabeledIntent",
-			"(Ljava/lang/String;Ljava/lang/CharSequence;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2
-		);
-	}
-	LabeledIntent::LabeledIntent(android::content::Intent &arg0, jstring &arg1, jint &arg2, jint &arg3)
+	LabeledIntent::LabeledIntent(android::content::Intent arg0, jstring arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.pm.LabeledIntent",
@@ -69,18 +49,7 @@ namespace android::content::pm
 			arg3
 		);
 	}
-	LabeledIntent::LabeledIntent(android::content::Intent &arg0, const QString &arg1, jint &arg2, jint &arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.pm.LabeledIntent",
-			"(Landroid/content/Intent;Ljava/lang/String;II)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2,
-			arg3
-		);
-	}
-	LabeledIntent::LabeledIntent(android::content::Intent &arg0, jstring &arg1, jstring &arg2, jint &arg3)
+	LabeledIntent::LabeledIntent(android::content::Intent arg0, jstring arg1, jstring arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.pm.LabeledIntent",
@@ -88,17 +57,6 @@ namespace android::content::pm
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3
-		);
-	}
-	LabeledIntent::LabeledIntent(android::content::Intent &arg0, const QString &arg1, const QString &arg2, jint &arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.pm.LabeledIntent",
-			"(Landroid/content/Intent;Ljava/lang/String;Ljava/lang/CharSequence;I)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
 			arg3
 		);
 	}

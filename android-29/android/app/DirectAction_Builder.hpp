@@ -24,8 +24,7 @@ namespace android::app
 		
 		DirectAction_Builder(QAndroidJniObject obj);
 		// Constructors
-		DirectAction_Builder(jstring &arg0);
-		DirectAction_Builder(const QString &arg0);
+		DirectAction_Builder(jstring arg0);
 		DirectAction_Builder() = default;
 		
 		// Methods

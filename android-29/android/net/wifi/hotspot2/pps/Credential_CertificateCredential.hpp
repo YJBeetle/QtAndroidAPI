@@ -28,7 +28,6 @@ namespace android::net::wifi::hotspot2::pps
 		jint hashCode();
 		void setCertSha256Fingerprint(jbyteArray arg0);
 		void setCertType(jstring arg0);
-		void setCertType(const QString &arg0);
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

@@ -16,8 +16,7 @@ namespace android::media::audiofx
 		Equalizer_Settings(QAndroidJniObject obj);
 		// Constructors
 		Equalizer_Settings();
-		Equalizer_Settings(jstring &arg0);
-		Equalizer_Settings(const QString &arg0);
+		Equalizer_Settings(jstring arg0);
 		
 		// Methods
 		jstring toString();

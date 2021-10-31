@@ -87,10 +87,8 @@ namespace android::app
 		void setOnCancelListener(__JniBaseClass arg0);
 		void setOnDismissListener(__JniBaseClass arg0);
 		void startSearch(jstring arg0, jboolean arg1, android::content::ComponentName arg2, android::os::Bundle arg3, jboolean arg4);
-		void startSearch(const QString &arg0, jboolean arg1, android::content::ComponentName arg2, android::os::Bundle arg3, jboolean arg4);
 		void stopSearch();
 		void triggerSearch(jstring arg0, android::content::ComponentName arg1, android::os::Bundle arg2);
-		void triggerSearch(const QString &arg0, android::content::ComponentName arg1, android::os::Bundle arg2);
 	};
 } // namespace android::app
 

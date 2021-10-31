@@ -90,7 +90,6 @@ namespace android::os
 		jint dataPosition();
 		jint dataSize();
 		void enforceInterface(jstring arg0);
-		void enforceInterface(const QString &arg0);
 		jboolean hasFileDescriptors();
 		jbyteArray marshall();
 		jobjectArray readArray(java::lang::ClassLoader arg0);
@@ -108,7 +107,6 @@ namespace android::os
 		void readDoubleArray(jdoubleArray arg0);
 		void readException();
 		void readException(jint arg0, jstring arg1);
-		void readException(jint arg0, const QString &arg1);
 		QAndroidJniObject readFileDescriptor();
 		jfloat readFloat();
 		void readFloatArray(jfloatArray arg0);
@@ -161,7 +159,6 @@ namespace android::os
 		void writeInt(jint arg0);
 		void writeIntArray(jintArray arg0);
 		void writeInterfaceToken(jstring arg0);
-		void writeInterfaceToken(const QString &arg0);
 		void writeList(__JniBaseClass arg0);
 		void writeLong(jlong arg0);
 		void writeLongArray(jlongArray arg0);
@@ -177,7 +174,6 @@ namespace android::os
 		void writeSparseArray(android::util::SparseArray arg0);
 		void writeSparseBooleanArray(android::util::SparseBooleanArray arg0);
 		void writeString(jstring arg0);
-		void writeString(const QString &arg0);
 		void writeStringArray(jarray arg0);
 		void writeStringList(__JniBaseClass arg0);
 		void writeStrongBinder(__JniBaseClass arg0);

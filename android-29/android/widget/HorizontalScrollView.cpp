@@ -13,7 +13,7 @@ namespace android::widget
 	
 	HorizontalScrollView::HorizontalScrollView(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	HorizontalScrollView::HorizontalScrollView(android::content::Context &arg0)
+	HorizontalScrollView::HorizontalScrollView(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.HorizontalScrollView",
@@ -21,7 +21,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	HorizontalScrollView::HorizontalScrollView(android::content::Context &arg0, __JniBaseClass &arg1)
+	HorizontalScrollView::HorizontalScrollView(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.HorizontalScrollView",
@@ -30,7 +30,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	HorizontalScrollView::HorizontalScrollView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	HorizontalScrollView::HorizontalScrollView(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.HorizontalScrollView",
@@ -40,7 +40,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	HorizontalScrollView::HorizontalScrollView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	HorizontalScrollView::HorizontalScrollView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.HorizontalScrollView",

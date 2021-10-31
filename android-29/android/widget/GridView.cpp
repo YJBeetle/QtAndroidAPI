@@ -48,7 +48,7 @@ namespace android::widget
 	
 	GridView::GridView(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	GridView::GridView(android::content::Context &arg0)
+	GridView::GridView(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.GridView",
@@ -56,7 +56,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	GridView::GridView(android::content::Context &arg0, __JniBaseClass &arg1)
+	GridView::GridView(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.GridView",
@@ -65,7 +65,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	GridView::GridView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	GridView::GridView(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.GridView",
@@ -75,7 +75,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	GridView::GridView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	GridView::GridView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.GridView",

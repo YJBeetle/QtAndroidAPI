@@ -17,7 +17,7 @@ namespace java::util::concurrent
 			"()V"
 		);
 	}
-	LinkedBlockingDeque::LinkedBlockingDeque(jint &arg0)
+	LinkedBlockingDeque::LinkedBlockingDeque(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.LinkedBlockingDeque",
@@ -25,7 +25,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	LinkedBlockingDeque::LinkedBlockingDeque(__JniBaseClass &arg0)
+	LinkedBlockingDeque::LinkedBlockingDeque(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.LinkedBlockingDeque",

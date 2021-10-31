@@ -24,12 +24,11 @@ namespace android::app
 		ApplicationErrorReport_CrashInfo(QAndroidJniObject obj);
 		// Constructors
 		ApplicationErrorReport_CrashInfo();
-		ApplicationErrorReport_CrashInfo(android::os::Parcel &arg0);
-		ApplicationErrorReport_CrashInfo(jthrowable &arg0);
+		ApplicationErrorReport_CrashInfo(android::os::Parcel arg0);
+		ApplicationErrorReport_CrashInfo(jthrowable arg0);
 		
 		// Methods
 		void dump(__JniBaseClass arg0, jstring arg1);
-		void dump(__JniBaseClass arg0, const QString &arg1);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::app

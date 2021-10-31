@@ -499,14 +499,6 @@ namespace android::webkit
 			arg0
 		);
 	}
-	void WebSettings::setAppCachePath(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setAppCachePath",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void WebSettings::setBlockNetworkImage(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
@@ -547,14 +539,6 @@ namespace android::webkit
 			arg0
 		);
 	}
-	void WebSettings::setCursiveFontFamily(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setCursiveFontFamily",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void WebSettings::setDatabaseEnabled(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
@@ -569,14 +553,6 @@ namespace android::webkit
 			"setDatabasePath",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void WebSettings::setDatabasePath(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDatabasePath",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void WebSettings::setDefaultFixedFontSize(jint arg0)
@@ -601,14 +577,6 @@ namespace android::webkit
 			"setDefaultTextEncodingName",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void WebSettings::setDefaultTextEncodingName(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDefaultTextEncodingName",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void WebSettings::setDefaultZoom(android::webkit::WebSettings_ZoomDensity arg0)
@@ -659,28 +627,12 @@ namespace android::webkit
 			arg0
 		);
 	}
-	void WebSettings::setFantasyFontFamily(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setFantasyFontFamily",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void WebSettings::setFixedFontFamily(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setFixedFontFamily",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void WebSettings::setFixedFontFamily(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setFixedFontFamily",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void WebSettings::setForceDark(jint arg0)
@@ -697,14 +649,6 @@ namespace android::webkit
 			"setGeolocationDatabasePath",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void WebSettings::setGeolocationDatabasePath(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setGeolocationDatabasePath",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void WebSettings::setGeolocationEnabled(jboolean arg0)
@@ -843,14 +787,6 @@ namespace android::webkit
 			arg0
 		);
 	}
-	void WebSettings::setSansSerifFontFamily(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSansSerifFontFamily",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void WebSettings::setSaveFormData(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
@@ -875,28 +811,12 @@ namespace android::webkit
 			arg0
 		);
 	}
-	void WebSettings::setSerifFontFamily(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSerifFontFamily",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void WebSettings::setStandardFontFamily(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setStandardFontFamily",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void WebSettings::setStandardFontFamily(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setStandardFontFamily",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void WebSettings::setSupportMultipleWindows(jboolean arg0)
@@ -945,14 +865,6 @@ namespace android::webkit
 			"setUserAgentString",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void WebSettings::setUserAgentString(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setUserAgentString",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean WebSettings::supportMultipleWindows()

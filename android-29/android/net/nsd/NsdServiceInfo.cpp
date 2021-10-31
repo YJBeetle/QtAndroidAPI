@@ -75,14 +75,6 @@ namespace android::net::nsd
 			arg0
 		);
 	}
-	void NsdServiceInfo::removeAttribute(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"removeAttribute",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void NsdServiceInfo::setAttribute(jstring arg0, jstring arg1)
 	{
 		__thiz.callMethod<void>(
@@ -90,15 +82,6 @@ namespace android::net::nsd
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	void NsdServiceInfo::setAttribute(const QString &arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"setAttribute",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void NsdServiceInfo::setHost(java::net::InetAddress arg0)
@@ -125,28 +108,12 @@ namespace android::net::nsd
 			arg0
 		);
 	}
-	void NsdServiceInfo::setServiceName(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setServiceName",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void NsdServiceInfo::setServiceType(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setServiceType",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void NsdServiceInfo::setServiceType(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setServiceType",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring NsdServiceInfo::toString()

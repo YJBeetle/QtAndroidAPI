@@ -12,12 +12,11 @@ namespace android::util
 		
 		SizeF(QAndroidJniObject obj);
 		// Constructors
-		SizeF(jfloat &arg0, jfloat &arg1);
+		SizeF(jfloat arg0, jfloat arg1);
 		SizeF() = default;
 		
 		// Methods
 		static QAndroidJniObject parseSizeF(jstring arg0);
-		static QAndroidJniObject parseSizeF(const QString &arg0);
 		jboolean equals(jobject arg0);
 		jfloat getHeight();
 		jfloat getWidth();

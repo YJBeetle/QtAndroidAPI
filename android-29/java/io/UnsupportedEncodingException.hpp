@@ -15,8 +15,7 @@ namespace java::io
 		UnsupportedEncodingException(QAndroidJniObject obj);
 		// Constructors
 		UnsupportedEncodingException();
-		UnsupportedEncodingException(jstring &arg0);
-		UnsupportedEncodingException(const QString &arg0);
+		UnsupportedEncodingException(jstring arg0);
 		
 		// Methods
 	};

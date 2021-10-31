@@ -7,7 +7,7 @@ namespace java::io
 	
 	LineNumberReader::LineNumberReader(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	LineNumberReader::LineNumberReader(java::io::Reader &arg0)
+	LineNumberReader::LineNumberReader(java::io::Reader arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.LineNumberReader",
@@ -15,7 +15,7 @@ namespace java::io
 			arg0.__jniObject().object()
 		);
 	}
-	LineNumberReader::LineNumberReader(java::io::Reader &arg0, jint &arg1)
+	LineNumberReader::LineNumberReader(java::io::Reader arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.LineNumberReader",

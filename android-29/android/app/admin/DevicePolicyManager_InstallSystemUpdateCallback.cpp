@@ -59,14 +59,5 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	void DevicePolicyManager_InstallSystemUpdateCallback::onInstallUpdateError(jint arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"onInstallUpdateError",
-			"(ILjava/lang/String;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 } // namespace android::app::admin
 

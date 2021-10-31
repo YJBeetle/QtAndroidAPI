@@ -45,11 +45,8 @@ namespace java::security
 		
 		// Methods
 		static QAndroidJniObject getInstance(jstring arg0, __JniBaseClass arg1);
-		static QAndroidJniObject getInstance(const QString &arg0, __JniBaseClass arg1);
 		static QAndroidJniObject getInstance(jstring arg0, __JniBaseClass arg1, jstring arg2);
-		static QAndroidJniObject getInstance(const QString &arg0, __JniBaseClass arg1, const QString &arg2);
 		static QAndroidJniObject getInstance(jstring arg0, __JniBaseClass arg1, java::security::Provider arg2);
-		static QAndroidJniObject getInstance(const QString &arg0, __JniBaseClass arg1, java::security::Provider arg2);
 		static QAndroidJniObject getPolicy();
 		static void setPolicy(java::security::Policy arg0);
 		QAndroidJniObject getParameters();

@@ -11,7 +11,7 @@ namespace java::text
 	
 	ChoiceFormat::ChoiceFormat(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ChoiceFormat::ChoiceFormat(jstring &arg0)
+	ChoiceFormat::ChoiceFormat(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.text.ChoiceFormat",
@@ -19,15 +19,7 @@ namespace java::text
 			arg0
 		);
 	}
-	ChoiceFormat::ChoiceFormat(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.text.ChoiceFormat",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	ChoiceFormat::ChoiceFormat(jdoubleArray &arg0, jarray &arg1)
+	ChoiceFormat::ChoiceFormat(jdoubleArray arg0, jarray arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.text.ChoiceFormat",
@@ -72,14 +64,6 @@ namespace java::text
 			"applyPattern",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void ChoiceFormat::applyPattern(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"applyPattern",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jobject ChoiceFormat::clone()
@@ -144,15 +128,6 @@ namespace java::text
 			"parse",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Number;",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject ChoiceFormat::parse(const QString &arg0, java::text::ParsePosition arg1)
-	{
-		return __thiz.callObjectMethod(
-			"parse",
-			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Number;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

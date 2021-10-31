@@ -15,8 +15,7 @@ namespace android::media
 		
 		MediaDrmResetException(QAndroidJniObject obj);
 		// Constructors
-		MediaDrmResetException(jstring &arg0);
-		MediaDrmResetException(const QString &arg0);
+		MediaDrmResetException(jstring arg0);
 		MediaDrmResetException() = default;
 		
 		// Methods

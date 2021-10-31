@@ -24,7 +24,6 @@ namespace android::drm
 		
 		// Methods
 		jobject getAttribute(jstring arg0);
-		jobject getAttribute(const QString &arg0);
 		jstring getMessage();
 		jint getType();
 		jint getUniqueId();

@@ -17,7 +17,7 @@ namespace android::graphics::drawable
 	
 	DrawableWrapper::DrawableWrapper(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DrawableWrapper::DrawableWrapper(android::graphics::drawable::Drawable &arg0)
+	DrawableWrapper::DrawableWrapper(android::graphics::drawable::Drawable arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.DrawableWrapper",

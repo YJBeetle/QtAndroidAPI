@@ -15,7 +15,7 @@ namespace android::transition
 			"()V"
 		);
 	}
-	PatternPathMotion::PatternPathMotion(android::graphics::Path &arg0)
+	PatternPathMotion::PatternPathMotion(android::graphics::Path arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.transition.PatternPathMotion",
@@ -23,7 +23,7 @@ namespace android::transition
 			arg0.__jniObject().object()
 		);
 	}
-	PatternPathMotion::PatternPathMotion(android::content::Context &arg0, __JniBaseClass &arg1)
+	PatternPathMotion::PatternPathMotion(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.transition.PatternPathMotion",

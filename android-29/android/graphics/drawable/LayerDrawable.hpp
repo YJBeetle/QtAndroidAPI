@@ -56,7 +56,7 @@ namespace android::graphics::drawable
 		
 		LayerDrawable(QAndroidJniObject obj);
 		// Constructors
-		LayerDrawable(jarray &arg0);
+		LayerDrawable(jarray arg0);
 		LayerDrawable() = default;
 		
 		// Methods

@@ -10,7 +10,7 @@ namespace android::media::tv
 	
 	TvInputInfo_Builder::TvInputInfo_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	TvInputInfo_Builder::TvInputInfo_Builder(android::content::Context &arg0, android::content::ComponentName &arg1)
+	TvInputInfo_Builder::TvInputInfo_Builder(android::content::Context arg0, android::content::ComponentName arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.tv.TvInputInfo$Builder",

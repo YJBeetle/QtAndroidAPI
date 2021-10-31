@@ -17,7 +17,7 @@ namespace android::widget
 	
 	ShareActionProvider::ShareActionProvider(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ShareActionProvider::ShareActionProvider(android::content::Context &arg0)
+	ShareActionProvider::ShareActionProvider(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ShareActionProvider",
@@ -63,14 +63,6 @@ namespace android::widget
 			"setShareHistoryFileName",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void ShareActionProvider::setShareHistoryFileName(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setShareHistoryFileName",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void ShareActionProvider::setShareIntent(android::content::Intent arg0)

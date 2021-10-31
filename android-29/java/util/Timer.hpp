@@ -25,11 +25,9 @@ namespace java::util
 		Timer(QAndroidJniObject obj);
 		// Constructors
 		Timer();
-		Timer(jboolean &arg0);
-		Timer(jstring &arg0);
-		Timer(const QString &arg0);
-		Timer(jstring &arg0, jboolean &arg1);
-		Timer(const QString &arg0, jboolean &arg1);
+		Timer(jboolean arg0);
+		Timer(jstring arg0);
+		Timer(jstring arg0, jboolean arg1);
 		
 		// Methods
 		void cancel();

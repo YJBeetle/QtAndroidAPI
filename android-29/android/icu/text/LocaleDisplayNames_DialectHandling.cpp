@@ -33,15 +33,6 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject LocaleDisplayNames_DialectHandling::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.LocaleDisplayNames$DialectHandling",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/icu/text/LocaleDisplayNames$DialectHandling;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray LocaleDisplayNames_DialectHandling::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

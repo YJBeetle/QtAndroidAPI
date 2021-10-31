@@ -64,22 +64,15 @@ namespace android::icu::text
 		SimpleDateFormat(QAndroidJniObject obj);
 		// Constructors
 		SimpleDateFormat();
-		SimpleDateFormat(jstring &arg0);
-		SimpleDateFormat(const QString &arg0);
-		SimpleDateFormat(jstring &arg0, android::icu::text::DateFormatSymbols &arg1);
-		SimpleDateFormat(const QString &arg0, android::icu::text::DateFormatSymbols &arg1);
-		SimpleDateFormat(jstring &arg0, android::icu::util::ULocale &arg1);
-		SimpleDateFormat(const QString &arg0, android::icu::util::ULocale &arg1);
-		SimpleDateFormat(jstring &arg0, java::util::Locale &arg1);
-		SimpleDateFormat(const QString &arg0, java::util::Locale &arg1);
-		SimpleDateFormat(jstring &arg0, jstring &arg1, android::icu::util::ULocale &arg2);
-		SimpleDateFormat(const QString &arg0, const QString &arg1, android::icu::util::ULocale &arg2);
+		SimpleDateFormat(jstring arg0);
+		SimpleDateFormat(jstring arg0, android::icu::text::DateFormatSymbols arg1);
+		SimpleDateFormat(jstring arg0, android::icu::util::ULocale arg1);
+		SimpleDateFormat(jstring arg0, java::util::Locale arg1);
+		SimpleDateFormat(jstring arg0, jstring arg1, android::icu::util::ULocale arg2);
 		
 		// Methods
 		void applyLocalizedPattern(jstring arg0);
-		void applyLocalizedPattern(const QString &arg0);
 		void applyPattern(jstring arg0);
-		void applyPattern(const QString &arg0);
 		jobject clone();
 		jboolean equals(jobject arg0);
 		QAndroidJniObject format(android::icu::util::Calendar arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
@@ -90,13 +83,11 @@ namespace android::icu::text
 		QAndroidJniObject getTimeZoneFormat();
 		jint hashCode();
 		void parse(jstring arg0, android::icu::util::Calendar arg1, java::text::ParsePosition arg2);
-		void parse(const QString &arg0, android::icu::util::Calendar arg1, java::text::ParsePosition arg2);
 		void set2DigitYearStart(java::util::Date arg0);
 		void setContext(android::icu::text::DisplayContext arg0);
 		void setDateFormatSymbols(android::icu::text::DateFormatSymbols arg0);
 		void setNumberFormat(android::icu::text::NumberFormat arg0);
 		void setNumberFormat(jstring arg0, android::icu::text::NumberFormat arg1);
-		void setNumberFormat(const QString &arg0, android::icu::text::NumberFormat arg1);
 		void setTimeZoneFormat(android::icu::text::TimeZoneFormat arg0);
 		jstring toLocalizedPattern();
 		jstring toPattern();

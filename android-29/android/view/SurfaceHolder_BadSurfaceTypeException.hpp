@@ -15,8 +15,7 @@ namespace android::view
 		SurfaceHolder_BadSurfaceTypeException(QAndroidJniObject obj);
 		// Constructors
 		SurfaceHolder_BadSurfaceTypeException();
-		SurfaceHolder_BadSurfaceTypeException(jstring &arg0);
-		SurfaceHolder_BadSurfaceTypeException(const QString &arg0);
+		SurfaceHolder_BadSurfaceTypeException(jstring arg0);
 		
 		// Methods
 	};

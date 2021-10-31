@@ -10,7 +10,7 @@ namespace android::text
 	
 	DynamicLayout::DynamicLayout(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DynamicLayout::DynamicLayout(jstring &arg0, android::text::TextPaint &arg1, jint &arg2, android::text::Layout_Alignment &arg3, jfloat &arg4, jfloat &arg5, jboolean &arg6)
+	DynamicLayout::DynamicLayout(jstring arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, jboolean arg6)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.DynamicLayout",
@@ -24,21 +24,7 @@ namespace android::text
 			arg6
 		);
 	}
-	DynamicLayout::DynamicLayout(const QString &arg0, android::text::TextPaint &arg1, jint &arg2, android::text::Layout_Alignment &arg3, jfloat &arg4, jfloat &arg5, jboolean &arg6)
-	{
-		__thiz = QAndroidJniObject(
-			"android.text.DynamicLayout",
-			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFZ)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2,
-			arg3.__jniObject().object(),
-			arg4,
-			arg5,
-			arg6
-		);
-	}
-	DynamicLayout::DynamicLayout(jstring &arg0, jstring &arg1, android::text::TextPaint &arg2, jint &arg3, android::text::Layout_Alignment &arg4, jfloat &arg5, jfloat &arg6, jboolean &arg7)
+	DynamicLayout::DynamicLayout(jstring arg0, jstring arg1, android::text::TextPaint arg2, jint arg3, android::text::Layout_Alignment arg4, jfloat arg5, jfloat arg6, jboolean arg7)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.DynamicLayout",
@@ -53,45 +39,13 @@ namespace android::text
 			arg7
 		);
 	}
-	DynamicLayout::DynamicLayout(const QString &arg0, const QString &arg1, android::text::TextPaint &arg2, jint &arg3, android::text::Layout_Alignment &arg4, jfloat &arg5, jfloat &arg6, jboolean &arg7)
-	{
-		__thiz = QAndroidJniObject(
-			"android.text.DynamicLayout",
-			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFZ)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object(),
-			arg3,
-			arg4.__jniObject().object(),
-			arg5,
-			arg6,
-			arg7
-		);
-	}
-	DynamicLayout::DynamicLayout(jstring &arg0, jstring &arg1, android::text::TextPaint &arg2, jint &arg3, android::text::Layout_Alignment &arg4, jfloat &arg5, jfloat &arg6, jboolean &arg7, android::text::TextUtils_TruncateAt &arg8, jint &arg9)
+	DynamicLayout::DynamicLayout(jstring arg0, jstring arg1, android::text::TextPaint arg2, jint arg3, android::text::Layout_Alignment arg4, jfloat arg5, jfloat arg6, jboolean arg7, android::text::TextUtils_TruncateAt arg8, jint arg9)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.DynamicLayout",
 			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFZLandroid/text/TextUtils$TruncateAt;I)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
-			arg3,
-			arg4.__jniObject().object(),
-			arg5,
-			arg6,
-			arg7,
-			arg8.__jniObject().object(),
-			arg9
-		);
-	}
-	DynamicLayout::DynamicLayout(const QString &arg0, const QString &arg1, android::text::TextPaint &arg2, jint &arg3, android::text::Layout_Alignment &arg4, jfloat &arg5, jfloat &arg6, jboolean &arg7, android::text::TextUtils_TruncateAt &arg8, jint &arg9)
-	{
-		__thiz = QAndroidJniObject(
-			"android.text.DynamicLayout",
-			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFZLandroid/text/TextUtils$TruncateAt;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object(),
 			arg3,
 			arg4.__jniObject().object(),

@@ -18,19 +18,16 @@ namespace android::drm
 		
 		DrmInfoRequest(QAndroidJniObject obj);
 		// Constructors
-		DrmInfoRequest(jint &arg0, jstring &arg1);
-		DrmInfoRequest(jint &arg0, const QString &arg1);
+		DrmInfoRequest(jint arg0, jstring arg1);
 		DrmInfoRequest() = default;
 		
 		// Methods
 		jobject get(jstring arg0);
-		jobject get(const QString &arg0);
 		jint getInfoType();
 		jstring getMimeType();
 		QAndroidJniObject iterator();
 		QAndroidJniObject keyIterator();
 		void put(jstring arg0, jobject arg1);
-		void put(const QString &arg0, jobject arg1);
 	};
 } // namespace android::drm
 

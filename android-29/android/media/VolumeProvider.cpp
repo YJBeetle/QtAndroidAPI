@@ -27,7 +27,7 @@ namespace android::media
 	
 	VolumeProvider::VolumeProvider(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	VolumeProvider::VolumeProvider(jint &arg0, jint &arg1, jint &arg2)
+	VolumeProvider::VolumeProvider(jint arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.VolumeProvider",

@@ -7,7 +7,7 @@ namespace android::database
 	
 	MatrixCursor::MatrixCursor(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MatrixCursor::MatrixCursor(jarray &arg0)
+	MatrixCursor::MatrixCursor(jarray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.database.MatrixCursor",
@@ -15,7 +15,7 @@ namespace android::database
 			arg0
 		);
 	}
-	MatrixCursor::MatrixCursor(jarray &arg0, jint &arg1)
+	MatrixCursor::MatrixCursor(jarray arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.database.MatrixCursor",

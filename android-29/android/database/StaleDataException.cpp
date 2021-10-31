@@ -13,20 +13,12 @@ namespace android::database
 			"()V"
 		);
 	}
-	StaleDataException::StaleDataException(jstring &arg0)
+	StaleDataException::StaleDataException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.database.StaleDataException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	StaleDataException::StaleDataException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.database.StaleDataException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

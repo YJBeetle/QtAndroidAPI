@@ -13,7 +13,7 @@ namespace android::widget
 	
 	SimpleAdapter::SimpleAdapter(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SimpleAdapter::SimpleAdapter(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jarray &arg3, jintArray &arg4)
+	SimpleAdapter::SimpleAdapter(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jarray arg3, jintArray arg4)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.SimpleAdapter",
@@ -133,15 +133,6 @@ namespace android::widget
 			arg1
 		);
 	}
-	void SimpleAdapter::setViewImage(android::widget::ImageView arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"setViewImage",
-			"(Landroid/widget/ImageView;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	void SimpleAdapter::setViewText(android::widget::TextView arg0, jstring arg1)
 	{
 		__thiz.callMethod<void>(
@@ -149,15 +140,6 @@ namespace android::widget
 			"(Landroid/widget/TextView;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	void SimpleAdapter::setViewText(android::widget::TextView arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"setViewText",
-			"(Landroid/widget/TextView;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 } // namespace android::widget

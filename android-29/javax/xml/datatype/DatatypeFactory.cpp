@@ -57,30 +57,12 @@ namespace javax::xml::datatype
 			arg1.__jniObject().object()
 		);
 	}
-	QAndroidJniObject DatatypeFactory::newInstance(const QString &arg0, java::lang::ClassLoader arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"javax.xml.datatype.DatatypeFactory",
-			"newInstance",
-			"(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljavax/xml/datatype/DatatypeFactory;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	QAndroidJniObject DatatypeFactory::newDuration(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"newDuration",
 			"(Ljava/lang/String;)Ljavax/xml/datatype/Duration;",
 			arg0
-		);
-	}
-	QAndroidJniObject DatatypeFactory::newDuration(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"newDuration",
-			"(Ljava/lang/String;)Ljavax/xml/datatype/Duration;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject DatatypeFactory::newDuration(jlong arg0)
@@ -127,14 +109,6 @@ namespace javax::xml::datatype
 			arg0
 		);
 	}
-	QAndroidJniObject DatatypeFactory::newDurationDayTime(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"newDurationDayTime",
-			"(Ljava/lang/String;)Ljavax/xml/datatype/Duration;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject DatatypeFactory::newDurationDayTime(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -173,14 +147,6 @@ namespace javax::xml::datatype
 			"newDurationYearMonth",
 			"(Ljava/lang/String;)Ljavax/xml/datatype/Duration;",
 			arg0
-		);
-	}
-	QAndroidJniObject DatatypeFactory::newDurationYearMonth(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"newDurationYearMonth",
-			"(Ljava/lang/String;)Ljavax/xml/datatype/Duration;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject DatatypeFactory::newDurationYearMonth(jlong arg0)
@@ -224,14 +190,6 @@ namespace javax::xml::datatype
 			"newXMLGregorianCalendar",
 			"(Ljava/lang/String;)Ljavax/xml/datatype/XMLGregorianCalendar;",
 			arg0
-		);
-	}
-	QAndroidJniObject DatatypeFactory::newXMLGregorianCalendar(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"newXMLGregorianCalendar",
-			"(Ljava/lang/String;)Ljavax/xml/datatype/XMLGregorianCalendar;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject DatatypeFactory::newXMLGregorianCalendar(java::util::GregorianCalendar arg0)

@@ -13,7 +13,7 @@ namespace android::util
 		
 		MutableByte(QAndroidJniObject obj);
 		// Constructors
-		MutableByte(jbyte &arg0);
+		MutableByte(jbyte arg0);
 		MutableByte() = default;
 		
 		// Methods

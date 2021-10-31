@@ -27,8 +27,7 @@ namespace android::location
 		
 		SettingInjectorService(QAndroidJniObject obj);
 		// Constructors
-		SettingInjectorService(jstring &arg0);
-		SettingInjectorService(const QString &arg0);
+		SettingInjectorService(jstring arg0);
 		SettingInjectorService() = default;
 		
 		// Methods

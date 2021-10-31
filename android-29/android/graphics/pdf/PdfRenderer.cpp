@@ -8,7 +8,7 @@ namespace android::graphics::pdf
 	
 	PdfRenderer::PdfRenderer(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PdfRenderer::PdfRenderer(android::os::ParcelFileDescriptor &arg0)
+	PdfRenderer::PdfRenderer(android::os::ParcelFileDescriptor arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.pdf.PdfRenderer",

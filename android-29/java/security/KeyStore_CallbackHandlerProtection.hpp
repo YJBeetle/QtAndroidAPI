@@ -12,7 +12,7 @@ namespace java::security
 		
 		KeyStore_CallbackHandlerProtection(QAndroidJniObject obj);
 		// Constructors
-		KeyStore_CallbackHandlerProtection(__JniBaseClass &arg0);
+		KeyStore_CallbackHandlerProtection(__JniBaseClass arg0);
 		KeyStore_CallbackHandlerProtection() = default;
 		
 		// Methods

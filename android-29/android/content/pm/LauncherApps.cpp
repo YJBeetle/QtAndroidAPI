@@ -58,15 +58,6 @@ namespace android::content::pm
 			arg1.__jniObject().object()
 		);
 	}
-	QAndroidJniObject LauncherApps::getActivityList(const QString &arg0, android::os::UserHandle arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getActivityList",
-			"(Ljava/lang/String;Landroid/os/UserHandle;)Ljava/util/List;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	QAndroidJniObject LauncherApps::getAllPackageInstallerSessions()
 	{
 		return __thiz.callObjectMethod(
@@ -80,16 +71,6 @@ namespace android::content::pm
 			"getApplicationInfo",
 			"(Ljava/lang/String;ILandroid/os/UserHandle;)Landroid/content/pm/ApplicationInfo;",
 			arg0,
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	QAndroidJniObject LauncherApps::getApplicationInfo(const QString &arg0, jint arg1, android::os::UserHandle arg2)
-	{
-		return __thiz.callObjectMethod(
-			"getApplicationInfo",
-			"(Ljava/lang/String;ILandroid/os/UserHandle;)Landroid/content/pm/ApplicationInfo;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2.__jniObject().object()
 		);
@@ -135,15 +116,6 @@ namespace android::content::pm
 			arg1.__jniObject().object()
 		);
 	}
-	QAndroidJniObject LauncherApps::getShortcutConfigActivityList(const QString &arg0, android::os::UserHandle arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getShortcutConfigActivityList",
-			"(Ljava/lang/String;Landroid/os/UserHandle;)Ljava/util/List;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	QAndroidJniObject LauncherApps::getShortcutIconDrawable(android::content::pm::ShortcutInfo arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -168,15 +140,6 @@ namespace android::content::pm
 			"getSuspendedPackageLauncherExtras",
 			"(Ljava/lang/String;Landroid/os/UserHandle;)Landroid/os/Bundle;",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject LauncherApps::getSuspendedPackageLauncherExtras(const QString &arg0, android::os::UserHandle arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getSuspendedPackageLauncherExtras",
-			"(Ljava/lang/String;Landroid/os/UserHandle;)Landroid/os/Bundle;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -205,31 +168,12 @@ namespace android::content::pm
 			arg1.__jniObject().object()
 		);
 	}
-	jboolean LauncherApps::isPackageEnabled(const QString &arg0, android::os::UserHandle arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isPackageEnabled",
-			"(Ljava/lang/String;Landroid/os/UserHandle;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	void LauncherApps::pinShortcuts(jstring arg0, __JniBaseClass arg1, android::os::UserHandle arg2)
 	{
 		__thiz.callMethod<void>(
 			"pinShortcuts",
 			"(Ljava/lang/String;Ljava/util/List;Landroid/os/UserHandle;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	void LauncherApps::pinShortcuts(const QString &arg0, __JniBaseClass arg1, android::os::UserHandle arg2)
-	{
-		__thiz.callMethod<void>(
-			"pinShortcuts",
-			"(Ljava/lang/String;Ljava/util/List;Landroid/os/UserHandle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object()
 		);
@@ -275,15 +219,6 @@ namespace android::content::pm
 			"shouldHideFromSuggestions",
 			"(Ljava/lang/String;Landroid/os/UserHandle;)Z",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	jboolean LauncherApps::shouldHideFromSuggestions(const QString &arg0, android::os::UserHandle arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"shouldHideFromSuggestions",
-			"(Ljava/lang/String;Landroid/os/UserHandle;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -336,18 +271,6 @@ namespace android::content::pm
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/graphics/Rect;Landroid/os/Bundle;Landroid/os/UserHandle;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object()
-		);
-	}
-	void LauncherApps::startShortcut(const QString &arg0, const QString &arg1, android::graphics::Rect arg2, android::os::Bundle arg3, android::os::UserHandle arg4)
-	{
-		__thiz.callMethod<void>(
-			"startShortcut",
-			"(Ljava/lang/String;Ljava/lang/String;Landroid/graphics/Rect;Landroid/os/Bundle;Landroid/os/UserHandle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object()

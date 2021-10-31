@@ -25,7 +25,7 @@ namespace android::view::accessibility
 		
 		AccessibilityNodeInfo_TouchDelegateInfo(QAndroidJniObject obj);
 		// Constructors
-		AccessibilityNodeInfo_TouchDelegateInfo(__JniBaseClass &arg0);
+		AccessibilityNodeInfo_TouchDelegateInfo(__JniBaseClass arg0);
 		AccessibilityNodeInfo_TouchDelegateInfo() = default;
 		
 		// Methods

@@ -13,20 +13,12 @@ namespace android::os
 			"()V"
 		);
 	}
-	ParcelFormatException::ParcelFormatException(jstring &arg0)
+	ParcelFormatException::ParcelFormatException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.ParcelFormatException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	ParcelFormatException::ParcelFormatException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.os.ParcelFormatException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

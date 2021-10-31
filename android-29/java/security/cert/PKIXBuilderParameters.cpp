@@ -7,7 +7,7 @@ namespace java::security::cert
 	
 	PKIXBuilderParameters::PKIXBuilderParameters(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PKIXBuilderParameters::PKIXBuilderParameters(java::security::KeyStore &arg0, __JniBaseClass &arg1)
+	PKIXBuilderParameters::PKIXBuilderParameters(java::security::KeyStore arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.cert.PKIXBuilderParameters",
@@ -16,7 +16,7 @@ namespace java::security::cert
 			arg1.__jniObject().object()
 		);
 	}
-	PKIXBuilderParameters::PKIXBuilderParameters(__JniBaseClass &arg0, __JniBaseClass &arg1)
+	PKIXBuilderParameters::PKIXBuilderParameters(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.cert.PKIXBuilderParameters",

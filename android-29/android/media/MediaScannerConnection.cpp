@@ -8,7 +8,7 @@ namespace android::media
 	
 	MediaScannerConnection::MediaScannerConnection(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MediaScannerConnection::MediaScannerConnection(android::content::Context &arg0, __JniBaseClass &arg1)
+	MediaScannerConnection::MediaScannerConnection(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.MediaScannerConnection",
@@ -76,15 +76,6 @@ namespace android::media
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	void MediaScannerConnection::scanFile(const QString &arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"scanFile",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 } // namespace android::media

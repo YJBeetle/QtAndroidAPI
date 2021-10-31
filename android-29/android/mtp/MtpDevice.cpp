@@ -14,7 +14,7 @@ namespace android::mtp
 	
 	MtpDevice::MtpDevice(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MtpDevice::MtpDevice(android::hardware::usb::UsbDevice &arg0)
+	MtpDevice::MtpDevice(android::hardware::usb::UsbDevice arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.mtp.MtpDevice",
@@ -164,15 +164,6 @@ namespace android::mtp
 			"(ILjava/lang/String;)Z",
 			arg0,
 			arg1
-		);
-	}
-	jboolean MtpDevice::importFile(jint arg0, const QString &arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"importFile",
-			"(ILjava/lang/String;)Z",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	jboolean MtpDevice::open(android::hardware::usb::UsbDeviceConnection arg0)

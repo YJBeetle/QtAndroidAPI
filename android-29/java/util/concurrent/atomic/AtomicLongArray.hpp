@@ -12,8 +12,8 @@ namespace java::util::concurrent::atomic
 		
 		AtomicLongArray(QAndroidJniObject obj);
 		// Constructors
-		AtomicLongArray(jlongArray &arg0);
-		AtomicLongArray(jint &arg0);
+		AtomicLongArray(jlongArray arg0);
+		AtomicLongArray(jint arg0);
 		AtomicLongArray() = default;
 		
 		// Methods

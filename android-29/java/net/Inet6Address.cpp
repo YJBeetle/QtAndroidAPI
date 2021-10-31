@@ -22,17 +22,6 @@ namespace java::net
 			arg2
 		);
 	}
-	QAndroidJniObject Inet6Address::getByAddress(const QString &arg0, jbyteArray arg1, jint arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.net.Inet6Address",
-			"getByAddress",
-			"(Ljava/lang/String;[BI)Ljava/net/Inet6Address;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2
-		);
-	}
 	QAndroidJniObject Inet6Address::getByAddress(jstring arg0, jbyteArray arg1, java::net::NetworkInterface arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -40,17 +29,6 @@ namespace java::net
 			"getByAddress",
 			"(Ljava/lang/String;[BLjava/net/NetworkInterface;)Ljava/net/Inet6Address;",
 			arg0,
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Inet6Address::getByAddress(const QString &arg0, jbyteArray arg1, java::net::NetworkInterface arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.net.Inet6Address",
-			"getByAddress",
-			"(Ljava/lang/String;[BLjava/net/NetworkInterface;)Ljava/net/Inet6Address;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2.__jniObject().object()
 		);

@@ -17,10 +17,8 @@ namespace android::security::keystore
 		KeyExpiredException(QAndroidJniObject obj);
 		// Constructors
 		KeyExpiredException();
-		KeyExpiredException(jstring &arg0);
-		KeyExpiredException(const QString &arg0);
-		KeyExpiredException(jstring &arg0, jthrowable &arg1);
-		KeyExpiredException(const QString &arg0, jthrowable &arg1);
+		KeyExpiredException(jstring arg0);
+		KeyExpiredException(jstring arg0, jthrowable arg1);
 		
 		// Methods
 	};

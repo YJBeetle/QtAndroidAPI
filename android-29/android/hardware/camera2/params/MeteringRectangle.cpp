@@ -30,7 +30,7 @@ namespace android::hardware::camera2::params
 	
 	MeteringRectangle::MeteringRectangle(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MeteringRectangle::MeteringRectangle(android::graphics::Rect &arg0, jint &arg1)
+	MeteringRectangle::MeteringRectangle(android::graphics::Rect arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.hardware.camera2.params.MeteringRectangle",
@@ -39,7 +39,7 @@ namespace android::hardware::camera2::params
 			arg1
 		);
 	}
-	MeteringRectangle::MeteringRectangle(android::graphics::Point &arg0, android::util::Size &arg1, jint &arg2)
+	MeteringRectangle::MeteringRectangle(android::graphics::Point arg0, android::util::Size arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.hardware.camera2.params.MeteringRectangle",
@@ -49,7 +49,7 @@ namespace android::hardware::camera2::params
 			arg2
 		);
 	}
-	MeteringRectangle::MeteringRectangle(jint &arg0, jint &arg1, jint &arg2, jint &arg3, jint &arg4)
+	MeteringRectangle::MeteringRectangle(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
 		__thiz = QAndroidJniObject(
 			"android.hardware.camera2.params.MeteringRectangle",

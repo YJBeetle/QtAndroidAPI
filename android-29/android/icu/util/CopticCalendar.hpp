@@ -43,14 +43,14 @@ namespace android::icu::util
 		CopticCalendar(QAndroidJniObject obj);
 		// Constructors
 		CopticCalendar();
-		CopticCalendar(android::icu::util::TimeZone &arg0);
-		CopticCalendar(android::icu::util::ULocale &arg0);
-		CopticCalendar(java::util::Date &arg0);
-		CopticCalendar(java::util::Locale &arg0);
-		CopticCalendar(android::icu::util::TimeZone &arg0, android::icu::util::ULocale &arg1);
-		CopticCalendar(android::icu::util::TimeZone &arg0, java::util::Locale &arg1);
-		CopticCalendar(jint &arg0, jint &arg1, jint &arg2);
-		CopticCalendar(jint &arg0, jint &arg1, jint &arg2, jint &arg3, jint &arg4, jint &arg5);
+		CopticCalendar(android::icu::util::TimeZone arg0);
+		CopticCalendar(android::icu::util::ULocale arg0);
+		CopticCalendar(java::util::Date arg0);
+		CopticCalendar(java::util::Locale arg0);
+		CopticCalendar(android::icu::util::TimeZone arg0, android::icu::util::ULocale arg1);
+		CopticCalendar(android::icu::util::TimeZone arg0, java::util::Locale arg1);
+		CopticCalendar(jint arg0, jint arg1, jint arg2);
+		CopticCalendar(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
 		
 		// Methods
 		jstring getType();

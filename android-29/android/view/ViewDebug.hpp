@@ -30,11 +30,8 @@ namespace android::view
 		
 		// Methods
 		static void dumpCapturedView(jstring arg0, jobject arg1);
-		static void dumpCapturedView(const QString &arg0, jobject arg1);
 		static void startHierarchyTracing(jstring arg0, android::view::View arg1);
-		static void startHierarchyTracing(const QString &arg0, android::view::View arg1);
 		static void startRecyclerTracing(jstring arg0, android::view::View arg1);
-		static void startRecyclerTracing(const QString &arg0, android::view::View arg1);
 		static void stopHierarchyTracing();
 		static void stopRecyclerTracing();
 		static void trace(android::view::View arg0, android::view::ViewDebug_HierarchyTraceType arg1);

@@ -7,7 +7,7 @@ namespace android::util
 	
 	StringBuilderPrinter::StringBuilderPrinter(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	StringBuilderPrinter::StringBuilderPrinter(java::lang::StringBuilder &arg0)
+	StringBuilderPrinter::StringBuilderPrinter(java::lang::StringBuilder arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.StringBuilderPrinter",
@@ -23,14 +23,6 @@ namespace android::util
 			"println",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void StringBuilderPrinter::println(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"println",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace android::util

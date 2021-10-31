@@ -24,8 +24,7 @@ namespace android::media
 		
 		AsyncPlayer(QAndroidJniObject obj);
 		// Constructors
-		AsyncPlayer(jstring &arg0);
-		AsyncPlayer(const QString &arg0);
+		AsyncPlayer(jstring arg0);
 		AsyncPlayer() = default;
 		
 		// Methods

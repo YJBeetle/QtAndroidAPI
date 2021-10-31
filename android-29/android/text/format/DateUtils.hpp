@@ -74,7 +74,6 @@ namespace android::text::format
 		static jstring formatDateRange(android::content::Context arg0, jlong arg1, jlong arg2, jint arg3);
 		static QAndroidJniObject formatDateRange(android::content::Context arg0, java::util::Formatter arg1, jlong arg2, jlong arg3, jint arg4);
 		static QAndroidJniObject formatDateRange(android::content::Context arg0, java::util::Formatter arg1, jlong arg2, jlong arg3, jint arg4, jstring arg5);
-		static QAndroidJniObject formatDateRange(android::content::Context arg0, java::util::Formatter arg1, jlong arg2, jlong arg3, jint arg4, const QString &arg5);
 		static jstring formatDateTime(android::content::Context arg0, jlong arg1, jint arg2);
 		static jstring formatElapsedTime(jlong arg0);
 		static jstring formatElapsedTime(java::lang::StringBuilder arg0, jlong arg1);

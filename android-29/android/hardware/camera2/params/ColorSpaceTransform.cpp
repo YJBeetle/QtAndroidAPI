@@ -7,7 +7,7 @@ namespace android::hardware::camera2::params
 	
 	ColorSpaceTransform::ColorSpaceTransform(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ColorSpaceTransform::ColorSpaceTransform(jintArray &arg0)
+	ColorSpaceTransform::ColorSpaceTransform(jintArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.hardware.camera2.params.ColorSpaceTransform",
@@ -15,7 +15,7 @@ namespace android::hardware::camera2::params
 			arg0
 		);
 	}
-	ColorSpaceTransform::ColorSpaceTransform(jarray &arg0)
+	ColorSpaceTransform::ColorSpaceTransform(jarray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.hardware.camera2.params.ColorSpaceTransform",

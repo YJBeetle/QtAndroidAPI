@@ -25,11 +25,10 @@ namespace java::io
 		
 		InputStreamReader(QAndroidJniObject obj);
 		// Constructors
-		InputStreamReader(java::io::InputStream &arg0);
-		InputStreamReader(java::io::InputStream &arg0, jstring &arg1);
-		InputStreamReader(java::io::InputStream &arg0, const QString &arg1);
-		InputStreamReader(java::io::InputStream &arg0, java::nio::charset::Charset &arg1);
-		InputStreamReader(java::io::InputStream &arg0, java::nio::charset::CharsetDecoder &arg1);
+		InputStreamReader(java::io::InputStream arg0);
+		InputStreamReader(java::io::InputStream arg0, jstring arg1);
+		InputStreamReader(java::io::InputStream arg0, java::nio::charset::Charset arg1);
+		InputStreamReader(java::io::InputStream arg0, java::nio::charset::CharsetDecoder arg1);
 		InputStreamReader() = default;
 		
 		// Methods

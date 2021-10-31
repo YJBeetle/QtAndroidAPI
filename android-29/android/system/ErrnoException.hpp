@@ -14,10 +14,8 @@ namespace android::system
 		
 		ErrnoException(QAndroidJniObject obj);
 		// Constructors
-		ErrnoException(jstring &arg0, jint &arg1);
-		ErrnoException(const QString &arg0, jint &arg1);
-		ErrnoException(jstring &arg0, jint &arg1, jthrowable &arg2);
-		ErrnoException(const QString &arg0, jint &arg1, jthrowable &arg2);
+		ErrnoException(jstring arg0, jint arg1);
+		ErrnoException(jstring arg0, jint arg1, jthrowable arg2);
 		ErrnoException() = default;
 		
 		// Methods

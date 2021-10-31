@@ -12,13 +12,11 @@ namespace android::text
 		
 		SpannedString(QAndroidJniObject obj);
 		// Constructors
-		SpannedString(jstring &arg0);
-		SpannedString(const QString &arg0);
+		SpannedString(jstring arg0);
 		SpannedString() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);
-		static QAndroidJniObject valueOf(const QString &arg0);
 		jchar charAt(jint arg0);
 		jboolean equals(jobject arg0);
 		void getChars(jint arg0, jint arg1, jcharArray arg2, jint arg3);

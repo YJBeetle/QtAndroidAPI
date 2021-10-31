@@ -30,13 +30,11 @@ namespace java::util
 		static jboolean nonNull(jobject arg0);
 		static jobject requireNonNull(jobject arg0);
 		static jobject requireNonNull(jobject arg0, jstring arg1);
-		static jobject requireNonNull(jobject arg0, const QString &arg1);
 		static jobject requireNonNull(jobject arg0, __JniBaseClass arg1);
 		static jobject requireNonNullElse(jobject arg0, jobject arg1);
 		static jobject requireNonNullElseGet(jobject arg0, __JniBaseClass arg1);
 		static jstring toString(jobject arg0);
 		static jstring toString(jobject arg0, jstring arg1);
-		static jstring toString(jobject arg0, const QString &arg1);
 	};
 } // namespace java::util
 

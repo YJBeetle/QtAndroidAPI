@@ -6,7 +6,7 @@ namespace android::graphics
 	
 	DiscretePathEffect::DiscretePathEffect(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DiscretePathEffect::DiscretePathEffect(jfloat &arg0, jfloat &arg1)
+	DiscretePathEffect::DiscretePathEffect(jfloat arg0, jfloat arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.DiscretePathEffect",

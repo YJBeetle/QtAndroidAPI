@@ -44,14 +44,6 @@ namespace org::json
 			arg0
 		);
 	}
-	QAndroidJniObject JSONStringer::key(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"key",
-			"(Ljava/lang/String;)Lorg/json/JSONStringer;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject JSONStringer::object()
 	{
 		return __thiz.callObjectMethod(

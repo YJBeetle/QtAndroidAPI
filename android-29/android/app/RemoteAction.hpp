@@ -29,15 +29,13 @@ namespace android::app
 		
 		RemoteAction(QAndroidJniObject obj);
 		// Constructors
-		RemoteAction(android::graphics::drawable::Icon &arg0, jstring &arg1, jstring &arg2, android::app::PendingIntent &arg3);
-		RemoteAction(android::graphics::drawable::Icon &arg0, const QString &arg1, const QString &arg2, android::app::PendingIntent &arg3);
+		RemoteAction(android::graphics::drawable::Icon arg0, jstring arg1, jstring arg2, android::app::PendingIntent arg3);
 		RemoteAction() = default;
 		
 		// Methods
 		QAndroidJniObject clone();
 		jint describeContents();
 		void dump(jstring arg0, java::io::PrintWriter arg1);
-		void dump(const QString &arg0, java::io::PrintWriter arg1);
 		QAndroidJniObject getActionIntent();
 		jstring getContentDescription();
 		QAndroidJniObject getIcon();

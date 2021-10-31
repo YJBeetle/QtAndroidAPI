@@ -9,7 +9,7 @@ namespace android::app
 	
 	TimePickerDialog::TimePickerDialog(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	TimePickerDialog::TimePickerDialog(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3, jboolean &arg4)
+	TimePickerDialog::TimePickerDialog(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3, jboolean arg4)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.TimePickerDialog",
@@ -21,7 +21,7 @@ namespace android::app
 			arg4
 		);
 	}
-	TimePickerDialog::TimePickerDialog(android::content::Context &arg0, jint &arg1, __JniBaseClass &arg2, jint &arg3, jint &arg4, jboolean &arg5)
+	TimePickerDialog::TimePickerDialog(android::content::Context arg0, jint arg1, __JniBaseClass arg2, jint arg3, jint arg4, jboolean arg5)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.TimePickerDialog",

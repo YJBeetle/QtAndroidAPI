@@ -16,7 +16,7 @@ namespace android::view
 			"()V"
 		);
 	}
-	WindowInsets_Builder::WindowInsets_Builder(android::view::WindowInsets &arg0)
+	WindowInsets_Builder::WindowInsets_Builder(android::view::WindowInsets arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.WindowInsets$Builder",

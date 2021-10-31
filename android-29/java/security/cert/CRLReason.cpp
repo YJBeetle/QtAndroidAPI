@@ -105,15 +105,6 @@ namespace java::security::cert
 			arg0
 		);
 	}
-	QAndroidJniObject CRLReason::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.security.cert.CRLReason",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/security/cert/CRLReason;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray CRLReason::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

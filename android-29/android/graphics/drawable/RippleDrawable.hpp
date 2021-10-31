@@ -47,7 +47,7 @@ namespace android::graphics::drawable
 		
 		RippleDrawable(QAndroidJniObject obj);
 		// Constructors
-		RippleDrawable(android::content::res::ColorStateList &arg0, android::graphics::drawable::Drawable &arg1, android::graphics::drawable::Drawable &arg2);
+		RippleDrawable(android::content::res::ColorStateList arg0, android::graphics::drawable::Drawable arg1, android::graphics::drawable::Drawable arg2);
 		RippleDrawable() = default;
 		
 		// Methods

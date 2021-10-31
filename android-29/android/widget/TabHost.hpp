@@ -43,10 +43,10 @@ namespace android::widget
 		
 		TabHost(QAndroidJniObject obj);
 		// Constructors
-		TabHost(android::content::Context &arg0);
-		TabHost(android::content::Context &arg0, __JniBaseClass &arg1);
-		TabHost(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		TabHost(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		TabHost(android::content::Context arg0);
+		TabHost(android::content::Context arg0, __JniBaseClass arg1);
+		TabHost(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		TabHost(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		TabHost() = default;
 		
 		// Methods
@@ -62,11 +62,9 @@ namespace android::widget
 		QAndroidJniObject getTabContentView();
 		QAndroidJniObject getTabWidget();
 		QAndroidJniObject newTabSpec(jstring arg0);
-		QAndroidJniObject newTabSpec(const QString &arg0);
 		void onTouchModeChanged(jboolean arg0);
 		void setCurrentTab(jint arg0);
 		void setCurrentTabByTag(jstring arg0);
-		void setCurrentTabByTag(const QString &arg0);
 		void setOnTabChangedListener(__JniBaseClass arg0);
 		void setup();
 		void setup(android::app::LocalActivityManager arg0);

@@ -34,13 +34,9 @@ namespace android::telephony::gsm
 		// Methods
 		static QAndroidJniObject getDefault();
 		QAndroidJniObject divideMessage(jstring arg0);
-		QAndroidJniObject divideMessage(const QString &arg0);
 		void sendDataMessage(jstring arg0, jstring arg1, jshort arg2, jbyteArray arg3, android::app::PendingIntent arg4, android::app::PendingIntent arg5);
-		void sendDataMessage(const QString &arg0, const QString &arg1, jshort arg2, jbyteArray arg3, android::app::PendingIntent arg4, android::app::PendingIntent arg5);
 		void sendMultipartTextMessage(jstring arg0, jstring arg1, java::util::ArrayList arg2, java::util::ArrayList arg3, java::util::ArrayList arg4);
-		void sendMultipartTextMessage(const QString &arg0, const QString &arg1, java::util::ArrayList arg2, java::util::ArrayList arg3, java::util::ArrayList arg4);
 		void sendTextMessage(jstring arg0, jstring arg1, jstring arg2, android::app::PendingIntent arg3, android::app::PendingIntent arg4);
-		void sendTextMessage(const QString &arg0, const QString &arg1, const QString &arg2, android::app::PendingIntent arg3, android::app::PendingIntent arg4);
 	};
 } // namespace android::telephony::gsm
 

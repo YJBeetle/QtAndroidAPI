@@ -14,7 +14,7 @@ namespace java::util
 			"()V"
 		);
 	}
-	WeakHashMap::WeakHashMap(jint &arg0)
+	WeakHashMap::WeakHashMap(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.WeakHashMap",
@@ -22,7 +22,7 @@ namespace java::util
 			arg0
 		);
 	}
-	WeakHashMap::WeakHashMap(__JniBaseClass &arg0)
+	WeakHashMap::WeakHashMap(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.WeakHashMap",
@@ -30,7 +30,7 @@ namespace java::util
 			arg0.__jniObject().object()
 		);
 	}
-	WeakHashMap::WeakHashMap(jint &arg0, jfloat &arg1)
+	WeakHashMap::WeakHashMap(jint arg0, jfloat arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.WeakHashMap",

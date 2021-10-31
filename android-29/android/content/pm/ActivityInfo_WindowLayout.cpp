@@ -48,7 +48,7 @@ namespace android::content::pm
 	
 	ActivityInfo_WindowLayout::ActivityInfo_WindowLayout(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ActivityInfo_WindowLayout::ActivityInfo_WindowLayout(jint &arg0, jfloat &arg1, jint &arg2, jfloat &arg3, jint &arg4, jint &arg5, jint &arg6)
+	ActivityInfo_WindowLayout::ActivityInfo_WindowLayout(jint arg0, jfloat arg1, jint arg2, jfloat arg3, jint arg4, jint arg5, jint arg6)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.pm.ActivityInfo$WindowLayout",

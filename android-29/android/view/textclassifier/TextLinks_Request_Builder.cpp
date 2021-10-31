@@ -10,20 +10,12 @@ namespace android::view::textclassifier
 	
 	TextLinks_Request_Builder::TextLinks_Request_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	TextLinks_Request_Builder::TextLinks_Request_Builder(jstring &arg0)
+	TextLinks_Request_Builder::TextLinks_Request_Builder(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.textclassifier.TextLinks$Request$Builder",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
-		);
-	}
-	TextLinks_Request_Builder::TextLinks_Request_Builder(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.textclassifier.TextLinks$Request$Builder",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

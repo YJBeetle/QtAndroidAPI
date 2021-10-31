@@ -45,16 +45,6 @@ namespace android::provider
 			arg1
 		);
 	}
-	jboolean BlockedNumberContract::isBlocked(android::content::Context arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.provider.BlockedNumberContract",
-			"isBlocked",
-			"(Landroid/content/Context;Ljava/lang/String;)Z",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	jint BlockedNumberContract::unblock(android::content::Context arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -63,16 +53,6 @@ namespace android::provider
 			"(Landroid/content/Context;Ljava/lang/String;)I",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jint BlockedNumberContract::unblock(android::content::Context arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.provider.BlockedNumberContract",
-			"unblock",
-			"(Landroid/content/Context;Ljava/lang/String;)I",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 } // namespace android::provider

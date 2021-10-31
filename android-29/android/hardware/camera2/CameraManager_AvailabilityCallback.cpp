@@ -30,28 +30,12 @@ namespace android::hardware::camera2
 			arg0
 		);
 	}
-	void CameraManager_AvailabilityCallback::onCameraAvailable(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"onCameraAvailable",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void CameraManager_AvailabilityCallback::onCameraUnavailable(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"onCameraUnavailable",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void CameraManager_AvailabilityCallback::onCameraUnavailable(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"onCameraUnavailable",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace android::hardware::camera2

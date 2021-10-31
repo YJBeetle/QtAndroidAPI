@@ -49,15 +49,6 @@ namespace android::graphics
 			arg0
 		);
 	}
-	QAndroidJniObject BlurMaskFilter_Blur::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.BlurMaskFilter$Blur",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/graphics/BlurMaskFilter$Blur;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray BlurMaskFilter_Blur::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

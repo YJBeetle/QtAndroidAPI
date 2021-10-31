@@ -24,7 +24,7 @@ namespace android::util
 		
 		AtomicFile(QAndroidJniObject obj);
 		// Constructors
-		AtomicFile(java::io::File &arg0);
+		AtomicFile(java::io::File arg0);
 		AtomicFile() = default;
 		
 		// Methods

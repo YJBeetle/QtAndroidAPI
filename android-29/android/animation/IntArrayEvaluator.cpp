@@ -13,7 +13,7 @@ namespace android::animation
 			"()V"
 		);
 	}
-	IntArrayEvaluator::IntArrayEvaluator(jintArray &arg0)
+	IntArrayEvaluator::IntArrayEvaluator(jintArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.animation.IntArrayEvaluator",

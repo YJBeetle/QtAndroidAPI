@@ -35,7 +35,7 @@ namespace android::transition
 		Explode(QAndroidJniObject obj);
 		// Constructors
 		Explode();
-		Explode(android::content::Context &arg0, __JniBaseClass &arg1);
+		Explode(android::content::Context arg0, __JniBaseClass arg1);
 		
 		// Methods
 		void captureEndValues(android::transition::TransitionValues arg0);

@@ -80,7 +80,7 @@ namespace android::inputmethodservice
 	
 	Keyboard::Keyboard(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Keyboard::Keyboard(android::content::Context &arg0, jint &arg1)
+	Keyboard::Keyboard(android::content::Context arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.inputmethodservice.Keyboard",
@@ -89,7 +89,7 @@ namespace android::inputmethodservice
 			arg1
 		);
 	}
-	Keyboard::Keyboard(android::content::Context &arg0, jint &arg1, jint &arg2)
+	Keyboard::Keyboard(android::content::Context arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.inputmethodservice.Keyboard",
@@ -99,7 +99,7 @@ namespace android::inputmethodservice
 			arg2
 		);
 	}
-	Keyboard::Keyboard(android::content::Context &arg0, jint &arg1, jint &arg2, jint &arg3, jint &arg4)
+	Keyboard::Keyboard(android::content::Context arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
 		__thiz = QAndroidJniObject(
 			"android.inputmethodservice.Keyboard",
@@ -111,7 +111,7 @@ namespace android::inputmethodservice
 			arg4
 		);
 	}
-	Keyboard::Keyboard(android::content::Context &arg0, jint &arg1, jstring &arg2, jint &arg3, jint &arg4)
+	Keyboard::Keyboard(android::content::Context arg0, jint arg1, jstring arg2, jint arg3, jint arg4)
 	{
 		__thiz = QAndroidJniObject(
 			"android.inputmethodservice.Keyboard",
@@ -119,18 +119,6 @@ namespace android::inputmethodservice
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3,
-			arg4
-		);
-	}
-	Keyboard::Keyboard(android::content::Context &arg0, jint &arg1, const QString &arg2, jint &arg3, jint &arg4)
-	{
-		__thiz = QAndroidJniObject(
-			"android.inputmethodservice.Keyboard",
-			"(Landroid/content/Context;ILjava/lang/CharSequence;II)V",
-			arg0.__jniObject().object(),
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
 			arg3,
 			arg4
 		);

@@ -9,7 +9,7 @@ namespace android::app
 	
 	Notification_MessagingStyle_Message::Notification_MessagingStyle_Message(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Notification_MessagingStyle_Message::Notification_MessagingStyle_Message(jstring &arg0, jlong &arg1, android::app::Person &arg2)
+	Notification_MessagingStyle_Message::Notification_MessagingStyle_Message(jstring arg0, jlong arg1, android::app::Person arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.Notification$MessagingStyle$Message",
@@ -19,17 +19,7 @@ namespace android::app
 			arg2.__jniObject().object()
 		);
 	}
-	Notification_MessagingStyle_Message::Notification_MessagingStyle_Message(const QString &arg0, jlong &arg1, android::app::Person &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.app.Notification$MessagingStyle$Message",
-			"(Ljava/lang/CharSequence;JLandroid/app/Person;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	Notification_MessagingStyle_Message::Notification_MessagingStyle_Message(jstring &arg0, jlong &arg1, jstring &arg2)
+	Notification_MessagingStyle_Message::Notification_MessagingStyle_Message(jstring arg0, jlong arg1, jstring arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.Notification$MessagingStyle$Message",
@@ -37,16 +27,6 @@ namespace android::app
 			arg0,
 			arg1,
 			arg2
-		);
-	}
-	Notification_MessagingStyle_Message::Notification_MessagingStyle_Message(const QString &arg0, jlong &arg1, const QString &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.app.Notification$MessagingStyle$Message",
-			"(Ljava/lang/CharSequence;JLjava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	
@@ -106,15 +86,6 @@ namespace android::app
 			"setData",
 			"(Ljava/lang/String;Landroid/net/Uri;)Landroid/app/Notification$MessagingStyle$Message;",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Notification_MessagingStyle_Message::setData(const QString &arg0, android::net::Uri arg1)
-	{
-		return __thiz.callObjectMethod(
-			"setData",
-			"(Ljava/lang/String;Landroid/net/Uri;)Landroid/app/Notification$MessagingStyle$Message;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

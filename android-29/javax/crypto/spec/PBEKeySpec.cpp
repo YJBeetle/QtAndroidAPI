@@ -6,7 +6,7 @@ namespace javax::crypto::spec
 	
 	PBEKeySpec::PBEKeySpec(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PBEKeySpec::PBEKeySpec(jcharArray &arg0)
+	PBEKeySpec::PBEKeySpec(jcharArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.crypto.spec.PBEKeySpec",
@@ -14,7 +14,7 @@ namespace javax::crypto::spec
 			arg0
 		);
 	}
-	PBEKeySpec::PBEKeySpec(jcharArray &arg0, jbyteArray &arg1, jint &arg2)
+	PBEKeySpec::PBEKeySpec(jcharArray arg0, jbyteArray arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.crypto.spec.PBEKeySpec",
@@ -24,7 +24,7 @@ namespace javax::crypto::spec
 			arg2
 		);
 	}
-	PBEKeySpec::PBEKeySpec(jcharArray &arg0, jbyteArray &arg1, jint &arg2, jint &arg3)
+	PBEKeySpec::PBEKeySpec(jcharArray arg0, jbyteArray arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.crypto.spec.PBEKeySpec",

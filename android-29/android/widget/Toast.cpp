@@ -22,7 +22,7 @@ namespace android::widget
 	
 	Toast::Toast(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Toast::Toast(android::content::Context &arg0)
+	Toast::Toast(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.Toast",
@@ -51,17 +51,6 @@ namespace android::widget
 			"(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2
-		);
-	}
-	QAndroidJniObject Toast::makeText(android::content::Context arg0, const QString &arg1, jint arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.widget.Toast",
-			"makeText",
-			"(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}
@@ -162,14 +151,6 @@ namespace android::widget
 			"setText",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
-		);
-	}
-	void Toast::setText(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setText",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void Toast::setView(android::view::View arg0)

@@ -16,9 +16,9 @@ namespace java::security::spec
 		
 		ECFieldF2m(QAndroidJniObject obj);
 		// Constructors
-		ECFieldF2m(jint &arg0);
-		ECFieldF2m(jint &arg0, jintArray &arg1);
-		ECFieldF2m(jint &arg0, java::math::BigInteger &arg1);
+		ECFieldF2m(jint arg0);
+		ECFieldF2m(jint arg0, jintArray arg1);
+		ECFieldF2m(jint arg0, java::math::BigInteger arg1);
 		ECFieldF2m() = default;
 		
 		// Methods

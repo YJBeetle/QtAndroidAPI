@@ -13,7 +13,7 @@ namespace java::security
 			"()V"
 		);
 	}
-	InvalidKeyException::InvalidKeyException(jstring &arg0)
+	InvalidKeyException::InvalidKeyException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.InvalidKeyException",
@@ -21,15 +21,7 @@ namespace java::security
 			arg0
 		);
 	}
-	InvalidKeyException::InvalidKeyException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.InvalidKeyException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	InvalidKeyException::InvalidKeyException(jthrowable &arg0)
+	InvalidKeyException::InvalidKeyException(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.InvalidKeyException",
@@ -37,21 +29,12 @@ namespace java::security
 			arg0
 		);
 	}
-	InvalidKeyException::InvalidKeyException(jstring &arg0, jthrowable &arg1)
+	InvalidKeyException::InvalidKeyException(jstring arg0, jthrowable arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.InvalidKeyException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
-			arg1
-		);
-	}
-	InvalidKeyException::InvalidKeyException(const QString &arg0, jthrowable &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.InvalidKeyException",
-			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

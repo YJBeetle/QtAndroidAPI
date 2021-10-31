@@ -41,15 +41,6 @@ namespace android::graphics
 			arg0
 		);
 	}
-	QAndroidJniObject Paint_Style::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.Paint$Style",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/graphics/Paint$Style;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray Paint_Style::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

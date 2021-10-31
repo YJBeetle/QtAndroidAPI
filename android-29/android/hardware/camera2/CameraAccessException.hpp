@@ -19,12 +19,10 @@ namespace android::hardware::camera2
 		
 		CameraAccessException(QAndroidJniObject obj);
 		// Constructors
-		CameraAccessException(jint &arg0);
-		CameraAccessException(jint &arg0, jstring &arg1);
-		CameraAccessException(jint &arg0, const QString &arg1);
-		CameraAccessException(jint &arg0, jthrowable &arg1);
-		CameraAccessException(jint &arg0, jstring &arg1, jthrowable &arg2);
-		CameraAccessException(jint &arg0, const QString &arg1, jthrowable &arg2);
+		CameraAccessException(jint arg0);
+		CameraAccessException(jint arg0, jstring arg1);
+		CameraAccessException(jint arg0, jthrowable arg1);
+		CameraAccessException(jint arg0, jstring arg1, jthrowable arg2);
 		CameraAccessException() = default;
 		
 		// Methods

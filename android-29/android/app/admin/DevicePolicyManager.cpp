@@ -1117,15 +1117,6 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	jboolean DevicePolicyManager::addCrossProfileWidgetProvider(android::content::ComponentName arg0, const QString &arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"addCrossProfileWidgetProvider",
-			"(Landroid/content/ComponentName;Ljava/lang/String;)Z",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	jint DevicePolicyManager::addOverrideApn(android::content::ComponentName arg0, android::telephony::data::ApnSetting arg1)
 	{
 		return __thiz.callMethod<jint>(
@@ -1154,15 +1145,6 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	void DevicePolicyManager::addUserRestriction(android::content::ComponentName arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"addUserRestriction",
-			"(Landroid/content/ComponentName;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	jboolean DevicePolicyManager::bindDeviceAdminServiceAsUser(android::content::ComponentName arg0, android::content::Intent arg1, __JniBaseClass arg2, jint arg3, android::os::UserHandle arg4)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -1186,17 +1168,6 @@ namespace android::app::admin
 			arg3.__jniObject().object()
 		);
 	}
-	void DevicePolicyManager::clearApplicationUserData(android::content::ComponentName arg0, const QString &arg1, __JniBaseClass arg2, __JniBaseClass arg3)
-	{
-		__thiz.callMethod<void>(
-			"clearApplicationUserData",
-			"(Landroid/content/ComponentName;Ljava/lang/String;Ljava/util/concurrent/Executor;Landroid/app/admin/DevicePolicyManager$OnClearApplicationUserDataListener;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
-		);
-	}
 	void DevicePolicyManager::clearCrossProfileIntentFilters(android::content::ComponentName arg0)
 	{
 		__thiz.callMethod<void>(
@@ -1213,14 +1184,6 @@ namespace android::app::admin
 			arg0
 		);
 	}
-	void DevicePolicyManager::clearDeviceOwnerApp(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"clearDeviceOwnerApp",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void DevicePolicyManager::clearPackagePersistentPreferredActivities(android::content::ComponentName arg0, jstring arg1)
 	{
 		__thiz.callMethod<void>(
@@ -1228,15 +1191,6 @@ namespace android::app::admin
 			"(Landroid/content/ComponentName;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	void DevicePolicyManager::clearPackagePersistentPreferredActivities(android::content::ComponentName arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"clearPackagePersistentPreferredActivities",
-			"(Landroid/content/ComponentName;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void DevicePolicyManager::clearProfileOwner(android::content::ComponentName arg0)
@@ -1264,29 +1218,12 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	void DevicePolicyManager::clearUserRestriction(android::content::ComponentName arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"clearUserRestriction",
-			"(Landroid/content/ComponentName;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	QAndroidJniObject DevicePolicyManager::createAdminSupportIntent(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"createAdminSupportIntent",
 			"(Ljava/lang/String;)Landroid/content/Intent;",
 			arg0
-		);
-	}
-	QAndroidJniObject DevicePolicyManager::createAdminSupportIntent(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"createAdminSupportIntent",
-			"(Ljava/lang/String;)Landroid/content/Intent;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject DevicePolicyManager::createAndManageUser(android::content::ComponentName arg0, jstring arg1, android::content::ComponentName arg2, android::os::PersistableBundle arg3, jint arg4)
@@ -1296,18 +1233,6 @@ namespace android::app::admin
 			"(Landroid/content/ComponentName;Ljava/lang/String;Landroid/content/ComponentName;Landroid/os/PersistableBundle;I)Landroid/os/UserHandle;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
-			arg4
-		);
-	}
-	QAndroidJniObject DevicePolicyManager::createAndManageUser(android::content::ComponentName arg0, const QString &arg1, android::content::ComponentName arg2, android::os::PersistableBundle arg3, jint arg4)
-	{
-		return __thiz.callObjectMethod(
-			"createAndManageUser",
-			"(Landroid/content/ComponentName;Ljava/lang/String;Landroid/content/ComponentName;Landroid/os/PersistableBundle;I)Landroid/os/UserHandle;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object(),
 			arg4
@@ -1331,15 +1256,6 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	void DevicePolicyManager::enableSystemApp(android::content::ComponentName arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"enableSystemApp",
-			"(Landroid/content/ComponentName;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	QAndroidJniObject DevicePolicyManager::generateKeyPair(android::content::ComponentName arg0, jstring arg1, android::security::keystore::KeyGenParameterSpec arg2, jint arg3)
 	{
 		return __thiz.callObjectMethod(
@@ -1347,17 +1263,6 @@ namespace android::app::admin
 			"(Landroid/content/ComponentName;Ljava/lang/String;Landroid/security/keystore/KeyGenParameterSpec;I)Landroid/security/AttestedKeyPair;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object(),
-			arg3
-		);
-	}
-	QAndroidJniObject DevicePolicyManager::generateKeyPair(android::content::ComponentName arg0, const QString &arg1, android::security::keystore::KeyGenParameterSpec arg2, jint arg3)
-	{
-		return __thiz.callObjectMethod(
-			"generateKeyPair",
-			"(Landroid/content/ComponentName;Ljava/lang/String;Landroid/security/keystore/KeyGenParameterSpec;I)Landroid/security/AttestedKeyPair;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object(),
 			arg3
 		);
@@ -1407,15 +1312,6 @@ namespace android::app::admin
 			"(Landroid/content/ComponentName;Ljava/lang/String;)Landroid/os/Bundle;",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	QAndroidJniObject DevicePolicyManager::getApplicationRestrictions(android::content::ComponentName arg0, const QString &arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getApplicationRestrictions",
-			"(Landroid/content/ComponentName;Ljava/lang/String;)Landroid/os/Bundle;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	jstring DevicePolicyManager::getApplicationRestrictionsManagingPackage(android::content::ComponentName arg0)
@@ -1513,15 +1409,6 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	QAndroidJniObject DevicePolicyManager::getDelegatePackages(android::content::ComponentName arg0, const QString &arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getDelegatePackages",
-			"(Landroid/content/ComponentName;Ljava/lang/String;)Ljava/util/List;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	QAndroidJniObject DevicePolicyManager::getDelegatedScopes(android::content::ComponentName arg0, jstring arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -1529,15 +1416,6 @@ namespace android::app::admin
 			"(Landroid/content/ComponentName;Ljava/lang/String;)Ljava/util/List;",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	QAndroidJniObject DevicePolicyManager::getDelegatedScopes(android::content::ComponentName arg0, const QString &arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getDelegatedScopes",
-			"(Landroid/content/ComponentName;Ljava/lang/String;)Ljava/util/List;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	jstring DevicePolicyManager::getDeviceOwnerLockScreenInfo()
@@ -1796,16 +1674,6 @@ namespace android::app::admin
 			arg2
 		);
 	}
-	jint DevicePolicyManager::getPermissionGrantState(android::content::ComponentName arg0, const QString &arg1, const QString &arg2)
-	{
-		return __thiz.callMethod<jint>(
-			"getPermissionGrantState",
-			"(Landroid/content/ComponentName;Ljava/lang/String;Ljava/lang/String;)I",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	jint DevicePolicyManager::getPermissionPolicy(android::content::ComponentName arg0)
 	{
 		return __thiz.callMethod<jint>(
@@ -1968,15 +1836,6 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	jboolean DevicePolicyManager::installExistingPackage(android::content::ComponentName arg0, const QString &arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"installExistingPackage",
-			"(Landroid/content/ComponentName;Ljava/lang/String;)Z",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	jboolean DevicePolicyManager::installKeyPair(android::content::ComponentName arg0, __JniBaseClass arg1, java::security::cert::Certificate arg2, jstring arg3)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -1986,17 +1845,6 @@ namespace android::app::admin
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
 			arg3
-		);
-	}
-	jboolean DevicePolicyManager::installKeyPair(android::content::ComponentName arg0, __JniBaseClass arg1, java::security::cert::Certificate arg2, const QString &arg3)
-	{
-		return __thiz.callMethod<jboolean>(
-			"installKeyPair",
-			"(Landroid/content/ComponentName;Ljava/security/PrivateKey;Ljava/security/cert/Certificate;Ljava/lang/String;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			QAndroidJniObject::fromString(arg3).object<jstring>()
 		);
 	}
 	jboolean DevicePolicyManager::installKeyPair(android::content::ComponentName arg0, __JniBaseClass arg1, jarray arg2, jstring arg3, jboolean arg4)
@@ -2011,18 +1859,6 @@ namespace android::app::admin
 			arg4
 		);
 	}
-	jboolean DevicePolicyManager::installKeyPair(android::content::ComponentName arg0, __JniBaseClass arg1, jarray arg2, const QString &arg3, jboolean arg4)
-	{
-		return __thiz.callMethod<jboolean>(
-			"installKeyPair",
-			"(Landroid/content/ComponentName;Ljava/security/PrivateKey;[Ljava/security/cert/Certificate;Ljava/lang/String;Z)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2,
-			QAndroidJniObject::fromString(arg3).object<jstring>(),
-			arg4
-		);
-	}
 	jboolean DevicePolicyManager::installKeyPair(android::content::ComponentName arg0, __JniBaseClass arg1, jarray arg2, jstring arg3, jint arg4)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -2032,18 +1868,6 @@ namespace android::app::admin
 			arg1.__jniObject().object(),
 			arg2,
 			arg3,
-			arg4
-		);
-	}
-	jboolean DevicePolicyManager::installKeyPair(android::content::ComponentName arg0, __JniBaseClass arg1, jarray arg2, const QString &arg3, jint arg4)
-	{
-		return __thiz.callMethod<jboolean>(
-			"installKeyPair",
-			"(Landroid/content/ComponentName;Ljava/security/PrivateKey;[Ljava/security/cert/Certificate;Ljava/lang/String;I)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2,
-			QAndroidJniObject::fromString(arg3).object<jstring>(),
 			arg4
 		);
 	}
@@ -2097,15 +1921,6 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	jboolean DevicePolicyManager::isApplicationHidden(android::content::ComponentName arg0, const QString &arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isApplicationHidden",
-			"(Landroid/content/ComponentName;Ljava/lang/String;)Z",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	jboolean DevicePolicyManager::isBackupServiceEnabled(android::content::ComponentName arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -2136,14 +1951,6 @@ namespace android::app::admin
 			arg0
 		);
 	}
-	jboolean DevicePolicyManager::isDeviceOwnerApp(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isDeviceOwnerApp",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jboolean DevicePolicyManager::isEphemeralUser(android::content::ComponentName arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -2158,14 +1965,6 @@ namespace android::app::admin
 			"isLockTaskPermitted",
 			"(Ljava/lang/String;)Z",
 			arg0
-		);
-	}
-	jboolean DevicePolicyManager::isLockTaskPermitted(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isLockTaskPermitted",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean DevicePolicyManager::isLogoutEnabled()
@@ -2216,15 +2015,6 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	jboolean DevicePolicyManager::isPackageSuspended(android::content::ComponentName arg0, const QString &arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isPackageSuspended",
-			"(Landroid/content/ComponentName;Ljava/lang/String;)Z",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	jboolean DevicePolicyManager::isProfileOwnerApp(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -2233,28 +2023,12 @@ namespace android::app::admin
 			arg0
 		);
 	}
-	jboolean DevicePolicyManager::isProfileOwnerApp(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isProfileOwnerApp",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jboolean DevicePolicyManager::isProvisioningAllowed(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isProvisioningAllowed",
 			"(Ljava/lang/String;)Z",
 			arg0
-		);
-	}
-	jboolean DevicePolicyManager::isProvisioningAllowed(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isProvisioningAllowed",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean DevicePolicyManager::isResetPasswordTokenActive(android::content::ComponentName arg0)
@@ -2280,15 +2054,6 @@ namespace android::app::admin
 			"(Landroid/content/ComponentName;Ljava/lang/String;)Z",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jboolean DevicePolicyManager::isUninstallBlocked(android::content::ComponentName arg0, const QString &arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isUninstallBlocked",
-			"(Landroid/content/ComponentName;Ljava/lang/String;)Z",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	jboolean DevicePolicyManager::isUsingUnifiedPassword(android::content::ComponentName arg0)
@@ -2347,15 +2112,6 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	jboolean DevicePolicyManager::removeCrossProfileWidgetProvider(android::content::ComponentName arg0, const QString &arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"removeCrossProfileWidgetProvider",
-			"(Landroid/content/ComponentName;Ljava/lang/String;)Z",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	jboolean DevicePolicyManager::removeKeyPair(android::content::ComponentName arg0, jstring arg1)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -2363,15 +2119,6 @@ namespace android::app::admin
 			"(Landroid/content/ComponentName;Ljava/lang/String;)Z",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jboolean DevicePolicyManager::removeKeyPair(android::content::ComponentName arg0, const QString &arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"removeKeyPair",
-			"(Landroid/content/ComponentName;Ljava/lang/String;)Z",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	jboolean DevicePolicyManager::removeOverrideApn(android::content::ComponentName arg0, jint arg1)
@@ -2409,15 +2156,6 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	jboolean DevicePolicyManager::resetPassword(const QString &arg0, jint arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"resetPassword",
-			"(Ljava/lang/String;I)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	jboolean DevicePolicyManager::resetPasswordWithToken(android::content::ComponentName arg0, jstring arg1, jbyteArray arg2, jint arg3)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -2425,17 +2163,6 @@ namespace android::app::admin
 			"(Landroid/content/ComponentName;Ljava/lang/String;[BI)Z",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2,
-			arg3
-		);
-	}
-	jboolean DevicePolicyManager::resetPasswordWithToken(android::content::ComponentName arg0, const QString &arg1, jbyteArray arg2, jint arg3)
-	{
-		return __thiz.callMethod<jboolean>(
-			"resetPasswordWithToken",
-			"(Landroid/content/ComponentName;Ljava/lang/String;[BI)Z",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2,
 			arg3
 		);
@@ -2475,16 +2202,6 @@ namespace android::app::admin
 			arg2
 		);
 	}
-	void DevicePolicyManager::setAccountManagementDisabled(android::content::ComponentName arg0, const QString &arg1, jboolean arg2)
-	{
-		__thiz.callMethod<void>(
-			"setAccountManagementDisabled",
-			"(Landroid/content/ComponentName;Ljava/lang/String;Z)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2
-		);
-	}
 	void DevicePolicyManager::setAffiliationIds(android::content::ComponentName arg0, __JniBaseClass arg1)
 	{
 		__thiz.callMethod<void>(
@@ -2504,16 +2221,6 @@ namespace android::app::admin
 			arg2
 		);
 	}
-	void DevicePolicyManager::setAlwaysOnVpnPackage(android::content::ComponentName arg0, const QString &arg1, jboolean arg2)
-	{
-		__thiz.callMethod<void>(
-			"setAlwaysOnVpnPackage",
-			"(Landroid/content/ComponentName;Ljava/lang/String;Z)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2
-		);
-	}
 	void DevicePolicyManager::setAlwaysOnVpnPackage(android::content::ComponentName arg0, jstring arg1, jboolean arg2, __JniBaseClass arg3)
 	{
 		__thiz.callMethod<void>(
@@ -2521,17 +2228,6 @@ namespace android::app::admin
 			"(Landroid/content/ComponentName;Ljava/lang/String;ZLjava/util/Set;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2,
-			arg3.__jniObject().object()
-		);
-	}
-	void DevicePolicyManager::setAlwaysOnVpnPackage(android::content::ComponentName arg0, const QString &arg1, jboolean arg2, __JniBaseClass arg3)
-	{
-		__thiz.callMethod<void>(
-			"setAlwaysOnVpnPackage",
-			"(Landroid/content/ComponentName;Ljava/lang/String;ZLjava/util/Set;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2,
 			arg3.__jniObject().object()
 		);
@@ -2546,16 +2242,6 @@ namespace android::app::admin
 			arg2
 		);
 	}
-	jboolean DevicePolicyManager::setApplicationHidden(android::content::ComponentName arg0, const QString &arg1, jboolean arg2)
-	{
-		return __thiz.callMethod<jboolean>(
-			"setApplicationHidden",
-			"(Landroid/content/ComponentName;Ljava/lang/String;Z)Z",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2
-		);
-	}
 	void DevicePolicyManager::setApplicationRestrictions(android::content::ComponentName arg0, jstring arg1, android::os::Bundle arg2)
 	{
 		__thiz.callMethod<void>(
@@ -2566,16 +2252,6 @@ namespace android::app::admin
 			arg2.__jniObject().object()
 		);
 	}
-	void DevicePolicyManager::setApplicationRestrictions(android::content::ComponentName arg0, const QString &arg1, android::os::Bundle arg2)
-	{
-		__thiz.callMethod<void>(
-			"setApplicationRestrictions",
-			"(Landroid/content/ComponentName;Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object()
-		);
-	}
 	void DevicePolicyManager::setApplicationRestrictionsManagingPackage(android::content::ComponentName arg0, jstring arg1)
 	{
 		__thiz.callMethod<void>(
@@ -2583,15 +2259,6 @@ namespace android::app::admin
 			"(Landroid/content/ComponentName;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	void DevicePolicyManager::setApplicationRestrictionsManagingPackage(android::content::ComponentName arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"setApplicationRestrictionsManagingPackage",
-			"(Landroid/content/ComponentName;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void DevicePolicyManager::setAutoTimeRequired(android::content::ComponentName arg0, jboolean arg1)
@@ -2639,15 +2306,6 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	void DevicePolicyManager::setCertInstallerPackage(android::content::ComponentName arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"setCertInstallerPackage",
-			"(Landroid/content/ComponentName;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	void DevicePolicyManager::setCrossProfileCalendarPackages(android::content::ComponentName arg0, __JniBaseClass arg1)
 	{
 		__thiz.callMethod<void>(
@@ -2684,15 +2342,6 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	void DevicePolicyManager::setDefaultSmsApplication(android::content::ComponentName arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"setDefaultSmsApplication",
-			"(Landroid/content/ComponentName;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	void DevicePolicyManager::setDelegatedScopes(android::content::ComponentName arg0, jstring arg1, __JniBaseClass arg2)
 	{
 		__thiz.callMethod<void>(
@@ -2700,16 +2349,6 @@ namespace android::app::admin
 			"(Landroid/content/ComponentName;Ljava/lang/String;Ljava/util/List;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void DevicePolicyManager::setDelegatedScopes(android::content::ComponentName arg0, const QString &arg1, __JniBaseClass arg2)
-	{
-		__thiz.callMethod<void>(
-			"setDelegatedScopes",
-			"(Landroid/content/ComponentName;Ljava/lang/String;Ljava/util/List;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}
@@ -2722,15 +2361,6 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	void DevicePolicyManager::setDeviceOwnerLockScreenInfo(android::content::ComponentName arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"setDeviceOwnerLockScreenInfo",
-			"(Landroid/content/ComponentName;Ljava/lang/CharSequence;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	void DevicePolicyManager::setEndUserSessionMessage(android::content::ComponentName arg0, jstring arg1)
 	{
 		__thiz.callMethod<void>(
@@ -2738,15 +2368,6 @@ namespace android::app::admin
 			"(Landroid/content/ComponentName;Ljava/lang/CharSequence;)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	void DevicePolicyManager::setEndUserSessionMessage(android::content::ComponentName arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"setEndUserSessionMessage",
-			"(Landroid/content/ComponentName;Ljava/lang/CharSequence;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	jint DevicePolicyManager::setGlobalPrivateDnsModeOpportunistic(android::content::ComponentName arg0)
@@ -2766,15 +2387,6 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	jint DevicePolicyManager::setGlobalPrivateDnsModeSpecifiedHost(android::content::ComponentName arg0, const QString &arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"setGlobalPrivateDnsModeSpecifiedHost",
-			"(Landroid/content/ComponentName;Ljava/lang/String;)I",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	void DevicePolicyManager::setGlobalSetting(android::content::ComponentName arg0, jstring arg1, jstring arg2)
 	{
 		__thiz.callMethod<void>(
@@ -2783,16 +2395,6 @@ namespace android::app::admin
 			arg0.__jniObject().object(),
 			arg1,
 			arg2
-		);
-	}
-	void DevicePolicyManager::setGlobalSetting(android::content::ComponentName arg0, const QString &arg1, const QString &arg2)
-	{
-		__thiz.callMethod<void>(
-			"setGlobalSetting",
-			"(Landroid/content/ComponentName;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	void DevicePolicyManager::setKeepUninstalledPackages(android::content::ComponentName arg0, __JniBaseClass arg1)
@@ -2811,17 +2413,6 @@ namespace android::app::admin
 			"(Landroid/content/ComponentName;Ljava/lang/String;Ljava/util/List;Z)Z",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object(),
-			arg3
-		);
-	}
-	jboolean DevicePolicyManager::setKeyPairCertificate(android::content::ComponentName arg0, const QString &arg1, __JniBaseClass arg2, jboolean arg3)
-	{
-		return __thiz.callMethod<jboolean>(
-			"setKeyPairCertificate",
-			"(Landroid/content/ComponentName;Ljava/lang/String;Ljava/util/List;Z)Z",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object(),
 			arg3
 		);
@@ -2878,15 +2469,6 @@ namespace android::app::admin
 			"(Landroid/content/ComponentName;Ljava/lang/CharSequence;)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	void DevicePolicyManager::setLongSupportMessage(android::content::ComponentName arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"setLongSupportMessage",
-			"(Landroid/content/ComponentName;Ljava/lang/CharSequence;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void DevicePolicyManager::setMasterVolumeMuted(android::content::ComponentName arg0, jboolean arg1)
@@ -2950,15 +2532,6 @@ namespace android::app::admin
 			"(Landroid/content/ComponentName;Ljava/lang/CharSequence;)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	void DevicePolicyManager::setOrganizationName(android::content::ComponentName arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"setOrganizationName",
-			"(Landroid/content/ComponentName;Ljava/lang/CharSequence;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void DevicePolicyManager::setOverrideApnsEnabled(android::content::ComponentName arg0, jboolean arg1)
@@ -3081,17 +2654,6 @@ namespace android::app::admin
 			arg3
 		);
 	}
-	jboolean DevicePolicyManager::setPermissionGrantState(android::content::ComponentName arg0, const QString &arg1, const QString &arg2, jint arg3)
-	{
-		return __thiz.callMethod<jboolean>(
-			"setPermissionGrantState",
-			"(Landroid/content/ComponentName;Ljava/lang/String;Ljava/lang/String;I)Z",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			arg3
-		);
-	}
 	void DevicePolicyManager::setPermissionPolicy(android::content::ComponentName arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
@@ -3143,15 +2705,6 @@ namespace android::app::admin
 			"(Landroid/content/ComponentName;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	void DevicePolicyManager::setProfileName(android::content::ComponentName arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"setProfileName",
-			"(Landroid/content/ComponentName;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void DevicePolicyManager::setRecommendedGlobalProxy(android::content::ComponentName arg0, android::net::ProxyInfo arg1)
@@ -3209,16 +2762,6 @@ namespace android::app::admin
 			arg2
 		);
 	}
-	void DevicePolicyManager::setSecureSetting(android::content::ComponentName arg0, const QString &arg1, const QString &arg2)
-	{
-		__thiz.callMethod<void>(
-			"setSecureSetting",
-			"(Landroid/content/ComponentName;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	void DevicePolicyManager::setSecurityLoggingEnabled(android::content::ComponentName arg0, jboolean arg1)
 	{
 		__thiz.callMethod<void>(
@@ -3237,15 +2780,6 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	void DevicePolicyManager::setShortSupportMessage(android::content::ComponentName arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"setShortSupportMessage",
-			"(Landroid/content/ComponentName;Ljava/lang/CharSequence;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	void DevicePolicyManager::setStartUserSessionMessage(android::content::ComponentName arg0, jstring arg1)
 	{
 		__thiz.callMethod<void>(
@@ -3253,15 +2787,6 @@ namespace android::app::admin
 			"(Landroid/content/ComponentName;Ljava/lang/CharSequence;)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	void DevicePolicyManager::setStartUserSessionMessage(android::content::ComponentName arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"setStartUserSessionMessage",
-			"(Landroid/content/ComponentName;Ljava/lang/CharSequence;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	jboolean DevicePolicyManager::setStatusBarDisabled(android::content::ComponentName arg0, jboolean arg1)
@@ -3292,16 +2817,6 @@ namespace android::app::admin
 			arg2
 		);
 	}
-	void DevicePolicyManager::setSystemSetting(android::content::ComponentName arg0, const QString &arg1, const QString &arg2)
-	{
-		__thiz.callMethod<void>(
-			"setSystemSetting",
-			"(Landroid/content/ComponentName;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	void DevicePolicyManager::setSystemUpdatePolicy(android::content::ComponentName arg0, android::app::admin::SystemUpdatePolicy arg1)
 	{
 		__thiz.callMethod<void>(
@@ -3329,15 +2844,6 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	jboolean DevicePolicyManager::setTimeZone(android::content::ComponentName arg0, const QString &arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"setTimeZone",
-			"(Landroid/content/ComponentName;Ljava/lang/String;)Z",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	void DevicePolicyManager::setTrustAgentConfiguration(android::content::ComponentName arg0, android::content::ComponentName arg1, android::os::PersistableBundle arg2)
 	{
 		__thiz.callMethod<void>(
@@ -3355,16 +2861,6 @@ namespace android::app::admin
 			"(Landroid/content/ComponentName;Ljava/lang/String;Z)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2
-		);
-	}
-	void DevicePolicyManager::setUninstallBlocked(android::content::ComponentName arg0, const QString &arg1, jboolean arg2)
-	{
-		__thiz.callMethod<void>(
-			"setUninstallBlocked",
-			"(Landroid/content/ComponentName;Ljava/lang/String;Z)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}
@@ -3456,15 +2952,6 @@ namespace android::app::admin
 			"(ILjava/lang/CharSequence;)V",
 			arg0,
 			arg1
-		);
-	}
-	void DevicePolicyManager::wipeData(jint arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"wipeData",
-			"(ILjava/lang/CharSequence;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 } // namespace android::app::admin

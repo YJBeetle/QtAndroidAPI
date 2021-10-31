@@ -6,7 +6,7 @@ namespace java::util::concurrent
 	
 	ExecutionException::ExecutionException(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ExecutionException::ExecutionException(jthrowable &arg0)
+	ExecutionException::ExecutionException(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.ExecutionException",
@@ -14,21 +14,12 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	ExecutionException::ExecutionException(jstring &arg0, jthrowable &arg1)
+	ExecutionException::ExecutionException(jstring arg0, jthrowable arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.ExecutionException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
-			arg1
-		);
-	}
-	ExecutionException::ExecutionException(const QString &arg0, jthrowable &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.concurrent.ExecutionException",
-			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

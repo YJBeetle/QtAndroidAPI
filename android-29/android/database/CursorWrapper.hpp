@@ -36,7 +36,7 @@ namespace android::database
 		
 		CursorWrapper(QAndroidJniObject obj);
 		// Constructors
-		CursorWrapper(__JniBaseClass &arg0);
+		CursorWrapper(__JniBaseClass arg0);
 		CursorWrapper() = default;
 		
 		// Methods
@@ -46,9 +46,7 @@ namespace android::database
 		jbyteArray getBlob(jint arg0);
 		jint getColumnCount();
 		jint getColumnIndex(jstring arg0);
-		jint getColumnIndex(const QString &arg0);
 		jint getColumnIndexOrThrow(jstring arg0);
-		jint getColumnIndexOrThrow(const QString &arg0);
 		jstring getColumnName(jint arg0);
 		jarray getColumnNames();
 		jint getCount();

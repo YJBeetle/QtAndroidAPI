@@ -17,13 +17,5 @@ namespace javax::xml::validation
 			arg0
 		);
 	}
-	QAndroidJniObject SchemaFactoryLoader::newFactory(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"newFactory",
-			"(Ljava/lang/String;)Ljavax/xml/validation/SchemaFactory;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 } // namespace javax::xml::validation
 

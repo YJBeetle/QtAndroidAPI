@@ -21,13 +21,12 @@ namespace android::accounts
 		
 		AccountAuthenticatorResponse(QAndroidJniObject obj);
 		// Constructors
-		AccountAuthenticatorResponse(android::os::Parcel &arg0);
+		AccountAuthenticatorResponse(android::os::Parcel arg0);
 		AccountAuthenticatorResponse() = default;
 		
 		// Methods
 		jint describeContents();
 		void onError(jint arg0, jstring arg1);
-		void onError(jint arg0, const QString &arg1);
 		void onRequestContinued();
 		void onResult(android::os::Bundle arg0);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

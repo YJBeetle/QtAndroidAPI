@@ -27,9 +27,9 @@ namespace android::hardware::camera2::params
 		
 		MeteringRectangle(QAndroidJniObject obj);
 		// Constructors
-		MeteringRectangle(android::graphics::Rect &arg0, jint &arg1);
-		MeteringRectangle(android::graphics::Point &arg0, android::util::Size &arg1, jint &arg2);
-		MeteringRectangle(jint &arg0, jint &arg1, jint &arg2, jint &arg3, jint &arg4);
+		MeteringRectangle(android::graphics::Rect arg0, jint arg1);
+		MeteringRectangle(android::graphics::Point arg0, android::util::Size arg1, jint arg2);
+		MeteringRectangle(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
 		MeteringRectangle() = default;
 		
 		// Methods

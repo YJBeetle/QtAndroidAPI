@@ -143,17 +143,6 @@ namespace android::app
 			arg2
 		);
 	}
-	QAndroidJniObject ApplicationErrorReport::getErrorReportReceiver(android::content::Context arg0, const QString &arg1, jint arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.app.ApplicationErrorReport",
-			"getErrorReportReceiver",
-			"(Landroid/content/Context;Ljava/lang/String;I)Landroid/content/ComponentName;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2
-		);
-	}
 	jint ApplicationErrorReport::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -168,15 +157,6 @@ namespace android::app
 			"(Landroid/util/Printer;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	void ApplicationErrorReport::dump(__JniBaseClass arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Landroid/util/Printer;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void ApplicationErrorReport::readFromParcel(android::os::Parcel arg0)

@@ -49,15 +49,6 @@ namespace android::graphics
 			arg0
 		);
 	}
-	QAndroidJniObject Matrix_ScaleToFit::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.Matrix$ScaleToFit",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/graphics/Matrix$ScaleToFit;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray Matrix_ScaleToFit::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

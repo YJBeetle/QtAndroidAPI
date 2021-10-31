@@ -62,15 +62,6 @@ namespace android::nfc::cardemulation
 			arg1
 		);
 	}
-	jboolean NfcFCardEmulation::registerSystemCodeForService(android::content::ComponentName arg0, const QString &arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"registerSystemCodeForService",
-			"(Landroid/content/ComponentName;Ljava/lang/String;)Z",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	jboolean NfcFCardEmulation::setNfcid2ForService(android::content::ComponentName arg0, jstring arg1)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -78,15 +69,6 @@ namespace android::nfc::cardemulation
 			"(Landroid/content/ComponentName;Ljava/lang/String;)Z",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jboolean NfcFCardEmulation::setNfcid2ForService(android::content::ComponentName arg0, const QString &arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"setNfcid2ForService",
-			"(Landroid/content/ComponentName;Ljava/lang/String;)Z",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	jboolean NfcFCardEmulation::unregisterSystemCodeForService(android::content::ComponentName arg0)

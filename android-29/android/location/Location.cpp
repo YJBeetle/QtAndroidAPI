@@ -45,20 +45,12 @@ namespace android::location
 			arg0.__jniObject().object()
 		);
 	}
-	Location::Location(jstring &arg0)
+	Location::Location(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.location.Location",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	Location::Location(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.location.Location",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	
@@ -70,15 +62,6 @@ namespace android::location
 			"convert",
 			"(Ljava/lang/String;)D",
 			arg0
-		);
-	}
-	jdouble Location::convert(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
-			"android.location.Location",
-			"convert",
-			"(Ljava/lang/String;)D",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring Location::convert(jdouble arg0, jint arg1)
@@ -134,15 +117,6 @@ namespace android::location
 			"(Landroid/util/Printer;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	void Location::dump(__JniBaseClass arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Landroid/util/Printer;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	jfloat Location::getAccuracy()
@@ -427,14 +401,6 @@ namespace android::location
 			"setProvider",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void Location::setProvider(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setProvider",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void Location::setSpeed(jfloat arg0)

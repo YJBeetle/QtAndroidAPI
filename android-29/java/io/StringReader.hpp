@@ -13,8 +13,7 @@ namespace java::io
 		
 		StringReader(QAndroidJniObject obj);
 		// Constructors
-		StringReader(jstring &arg0);
-		StringReader(const QString &arg0);
+		StringReader(jstring arg0);
 		StringReader() = default;
 		
 		// Methods

@@ -7,7 +7,7 @@ namespace javax::net::ssl
 	
 	SNIHostName::SNIHostName(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SNIHostName::SNIHostName(jbyteArray &arg0)
+	SNIHostName::SNIHostName(jbyteArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.net.ssl.SNIHostName",
@@ -15,20 +15,12 @@ namespace javax::net::ssl
 			arg0
 		);
 	}
-	SNIHostName::SNIHostName(jstring &arg0)
+	SNIHostName::SNIHostName(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.net.ssl.SNIHostName",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	SNIHostName::SNIHostName(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.net.ssl.SNIHostName",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	
@@ -40,15 +32,6 @@ namespace javax::net::ssl
 			"createSNIMatcher",
 			"(Ljava/lang/String;)Ljavax/net/ssl/SNIMatcher;",
 			arg0
-		);
-	}
-	QAndroidJniObject SNIHostName::createSNIMatcher(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"javax.net.ssl.SNIHostName",
-			"createSNIMatcher",
-			"(Ljava/lang/String;)Ljavax/net/ssl/SNIMatcher;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean SNIHostName::equals(jobject arg0)

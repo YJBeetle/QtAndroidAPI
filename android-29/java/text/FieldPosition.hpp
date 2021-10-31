@@ -16,9 +16,9 @@ namespace java::text
 		
 		FieldPosition(QAndroidJniObject obj);
 		// Constructors
-		FieldPosition(jint &arg0);
-		FieldPosition(java::text::Format_Field &arg0);
-		FieldPosition(java::text::Format_Field &arg0, jint &arg1);
+		FieldPosition(jint arg0);
+		FieldPosition(java::text::Format_Field arg0);
+		FieldPosition(java::text::Format_Field arg0, jint arg1);
 		FieldPosition() = default;
 		
 		// Methods

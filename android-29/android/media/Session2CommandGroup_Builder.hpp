@@ -21,7 +21,7 @@ namespace android::media
 		Session2CommandGroup_Builder(QAndroidJniObject obj);
 		// Constructors
 		Session2CommandGroup_Builder();
-		Session2CommandGroup_Builder(android::media::Session2CommandGroup &arg0);
+		Session2CommandGroup_Builder(android::media::Session2CommandGroup arg0);
 		
 		// Methods
 		QAndroidJniObject addCommand(android::media::Session2Command arg0);

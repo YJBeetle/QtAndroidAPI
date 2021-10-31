@@ -324,20 +324,6 @@ namespace android::app
 			arg6
 		);
 	}
-	jlong DownloadManager::addCompletedDownload(const QString &arg0, const QString &arg1, jboolean arg2, const QString &arg3, const QString &arg4, jlong arg5, jboolean arg6)
-	{
-		return __thiz.callMethod<jlong>(
-			"addCompletedDownload",
-			"(Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;JZ)J",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2,
-			QAndroidJniObject::fromString(arg3).object<jstring>(),
-			QAndroidJniObject::fromString(arg4).object<jstring>(),
-			arg5,
-			arg6
-		);
-	}
 	jlong DownloadManager::addCompletedDownload(jstring arg0, jstring arg1, jboolean arg2, jstring arg3, jstring arg4, jlong arg5, jboolean arg6, android::net::Uri arg7, android::net::Uri arg8)
 	{
 		return __thiz.callMethod<jlong>(
@@ -348,22 +334,6 @@ namespace android::app
 			arg2,
 			arg3,
 			arg4,
-			arg5,
-			arg6,
-			arg7.__jniObject().object(),
-			arg8.__jniObject().object()
-		);
-	}
-	jlong DownloadManager::addCompletedDownload(const QString &arg0, const QString &arg1, jboolean arg2, const QString &arg3, const QString &arg4, jlong arg5, jboolean arg6, android::net::Uri arg7, android::net::Uri arg8)
-	{
-		return __thiz.callMethod<jlong>(
-			"addCompletedDownload",
-			"(Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;JZLandroid/net/Uri;Landroid/net/Uri;)J",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2,
-			QAndroidJniObject::fromString(arg3).object<jstring>(),
-			QAndroidJniObject::fromString(arg4).object<jstring>(),
 			arg5,
 			arg6,
 			arg7.__jniObject().object(),

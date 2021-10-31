@@ -15,8 +15,7 @@ namespace java::io
 		
 		InvalidObjectException(QAndroidJniObject obj);
 		// Constructors
-		InvalidObjectException(jstring &arg0);
-		InvalidObjectException(const QString &arg0);
+		InvalidObjectException(jstring arg0);
 		InvalidObjectException() = default;
 		
 		// Methods

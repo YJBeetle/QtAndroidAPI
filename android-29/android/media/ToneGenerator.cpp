@@ -713,7 +713,7 @@ namespace android::media
 	
 	ToneGenerator::ToneGenerator(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ToneGenerator::ToneGenerator(jint &arg0, jint &arg1)
+	ToneGenerator::ToneGenerator(jint arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.ToneGenerator",

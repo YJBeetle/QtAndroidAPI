@@ -16,9 +16,9 @@ namespace java::util
 		LinkedHashSet(QAndroidJniObject obj);
 		// Constructors
 		LinkedHashSet();
-		LinkedHashSet(jint &arg0);
-		LinkedHashSet(__JniBaseClass &arg0);
-		LinkedHashSet(jint &arg0, jfloat &arg1);
+		LinkedHashSet(jint arg0);
+		LinkedHashSet(__JniBaseClass arg0);
+		LinkedHashSet(jint arg0, jfloat arg1);
 		
 		// Methods
 		QAndroidJniObject spliterator();

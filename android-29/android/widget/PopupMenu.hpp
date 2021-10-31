@@ -24,9 +24,9 @@ namespace android::widget
 		
 		PopupMenu(QAndroidJniObject obj);
 		// Constructors
-		PopupMenu(android::content::Context &arg0, android::view::View &arg1);
-		PopupMenu(android::content::Context &arg0, android::view::View &arg1, jint &arg2);
-		PopupMenu(android::content::Context &arg0, android::view::View &arg1, jint &arg2, jint &arg3, jint &arg4);
+		PopupMenu(android::content::Context arg0, android::view::View arg1);
+		PopupMenu(android::content::Context arg0, android::view::View arg1, jint arg2);
+		PopupMenu(android::content::Context arg0, android::view::View arg1, jint arg2, jint arg3, jint arg4);
 		PopupMenu() = default;
 		
 		// Methods

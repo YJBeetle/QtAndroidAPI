@@ -115,23 +115,13 @@ namespace android::app
 	
 	Notification_Action::Notification_Action(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Notification_Action::Notification_Action(jint &arg0, jstring &arg1, android::app::PendingIntent &arg2)
+	Notification_Action::Notification_Action(jint arg0, jstring arg1, android::app::PendingIntent arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.Notification$Action",
 			"(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	Notification_Action::Notification_Action(jint &arg0, const QString &arg1, android::app::PendingIntent &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.app.Notification$Action",
-			"(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}

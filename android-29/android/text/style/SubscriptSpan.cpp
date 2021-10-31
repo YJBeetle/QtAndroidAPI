@@ -15,7 +15,7 @@ namespace android::text::style
 			"()V"
 		);
 	}
-	SubscriptSpan::SubscriptSpan(android::os::Parcel &arg0)
+	SubscriptSpan::SubscriptSpan(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.SubscriptSpan",

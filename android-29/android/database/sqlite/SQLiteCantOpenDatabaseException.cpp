@@ -13,20 +13,12 @@ namespace android::database::sqlite
 			"()V"
 		);
 	}
-	SQLiteCantOpenDatabaseException::SQLiteCantOpenDatabaseException(jstring &arg0)
+	SQLiteCantOpenDatabaseException::SQLiteCantOpenDatabaseException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.database.sqlite.SQLiteCantOpenDatabaseException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	SQLiteCantOpenDatabaseException::SQLiteCantOpenDatabaseException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.database.sqlite.SQLiteCantOpenDatabaseException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

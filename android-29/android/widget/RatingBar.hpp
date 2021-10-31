@@ -19,10 +19,10 @@ namespace android::widget
 		
 		RatingBar(QAndroidJniObject obj);
 		// Constructors
-		RatingBar(android::content::Context &arg0);
-		RatingBar(android::content::Context &arg0, __JniBaseClass &arg1);
-		RatingBar(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		RatingBar(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		RatingBar(android::content::Context arg0);
+		RatingBar(android::content::Context arg0, __JniBaseClass arg1);
+		RatingBar(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		RatingBar(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		RatingBar() = default;
 		
 		// Methods

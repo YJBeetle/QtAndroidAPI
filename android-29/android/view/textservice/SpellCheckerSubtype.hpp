@@ -25,20 +25,16 @@ namespace android::view::textservice
 		
 		SpellCheckerSubtype(QAndroidJniObject obj);
 		// Constructors
-		SpellCheckerSubtype(jint &arg0, jstring &arg1, jstring &arg2);
-		SpellCheckerSubtype(jint &arg0, const QString &arg1, const QString &arg2);
+		SpellCheckerSubtype(jint arg0, jstring arg1, jstring arg2);
 		SpellCheckerSubtype() = default;
 		
 		// Methods
 		jboolean containsExtraValueKey(jstring arg0);
-		jboolean containsExtraValueKey(const QString &arg0);
 		jint describeContents();
 		jboolean equals(jobject arg0);
 		jstring getDisplayName(android::content::Context arg0, jstring arg1, android::content::pm::ApplicationInfo arg2);
-		jstring getDisplayName(android::content::Context arg0, const QString &arg1, android::content::pm::ApplicationInfo arg2);
 		jstring getExtraValue();
 		jstring getExtraValueOf(jstring arg0);
-		jstring getExtraValueOf(const QString &arg0);
 		jstring getLanguageTag();
 		jstring getLocale();
 		jint getNameResId();

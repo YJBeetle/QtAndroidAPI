@@ -47,17 +47,6 @@ namespace android::app
 			arg3
 		);
 	}
-	void LoaderManager::dump(const QString &arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3
-		);
-	}
 	QAndroidJniObject LoaderManager::getLoader(jint arg0)
 	{
 		return __thiz.callObjectMethod(

@@ -16,10 +16,9 @@ namespace java::text
 		
 		Bidi(QAndroidJniObject obj);
 		// Constructors
-		Bidi(__JniBaseClass &arg0);
-		Bidi(jstring &arg0, jint &arg1);
-		Bidi(const QString &arg0, jint &arg1);
-		Bidi(jcharArray &arg0, jint &arg1, jbyteArray &arg2, jint &arg3, jint &arg4, jint &arg5);
+		Bidi(__JniBaseClass arg0);
+		Bidi(jstring arg0, jint arg1);
+		Bidi(jcharArray arg0, jint arg1, jbyteArray arg2, jint arg3, jint arg4, jint arg5);
 		Bidi() = default;
 		
 		// Methods

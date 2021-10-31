@@ -69,17 +69,6 @@ namespace android::provider
 			arg2
 		).object<jstring>();
 	}
-	jstring Contacts_Phones::getDisplayLabel(android::content::Context arg0, jint arg1, const QString &arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.Contacts$Phones",
-			"getDisplayLabel",
-			"(Landroid/content/Context;ILjava/lang/CharSequence;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object(),
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		).object<jstring>();
-	}
 	jstring Contacts_Phones::getDisplayLabel(android::content::Context arg0, jint arg1, jstring arg2, jarray arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -89,18 +78,6 @@ namespace android::provider
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3
-		).object<jstring>();
-	}
-	jstring Contacts_Phones::getDisplayLabel(android::content::Context arg0, jint arg1, const QString &arg2, jarray arg3)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.Contacts$Phones",
-			"getDisplayLabel",
-			"(Landroid/content/Context;ILjava/lang/CharSequence;[Ljava/lang/CharSequence;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object(),
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
 			arg3
 		).object<jstring>();
 	}

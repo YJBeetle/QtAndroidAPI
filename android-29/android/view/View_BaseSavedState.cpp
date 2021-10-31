@@ -16,7 +16,7 @@ namespace android::view
 	
 	View_BaseSavedState::View_BaseSavedState(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	View_BaseSavedState::View_BaseSavedState(android::os::Parcel &arg0)
+	View_BaseSavedState::View_BaseSavedState(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.View$BaseSavedState",
@@ -24,7 +24,7 @@ namespace android::view
 			arg0.__jniObject().object()
 		);
 	}
-	View_BaseSavedState::View_BaseSavedState(__JniBaseClass &arg0)
+	View_BaseSavedState::View_BaseSavedState(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.View$BaseSavedState",
@@ -32,7 +32,7 @@ namespace android::view
 			arg0.__jniObject().object()
 		);
 	}
-	View_BaseSavedState::View_BaseSavedState(android::os::Parcel &arg0, java::lang::ClassLoader &arg1)
+	View_BaseSavedState::View_BaseSavedState(android::os::Parcel arg0, java::lang::ClassLoader arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.View$BaseSavedState",

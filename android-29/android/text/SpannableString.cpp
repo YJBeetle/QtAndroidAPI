@@ -6,20 +6,12 @@ namespace android::text
 	
 	SpannableString::SpannableString(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SpannableString::SpannableString(jstring &arg0)
+	SpannableString::SpannableString(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.SpannableString",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
-		);
-	}
-	SpannableString::SpannableString(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.text.SpannableString",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	
@@ -31,15 +23,6 @@ namespace android::text
 			"valueOf",
 			"(Ljava/lang/CharSequence;)Landroid/text/SpannableString;",
 			arg0
-		);
-	}
-	QAndroidJniObject SpannableString::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.text.SpannableString",
-			"valueOf",
-			"(Ljava/lang/CharSequence;)Landroid/text/SpannableString;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jchar SpannableString::charAt(jint arg0)

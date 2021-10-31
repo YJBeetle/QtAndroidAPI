@@ -15,12 +15,10 @@ namespace android::text::style
 		TtsSpan_VerbatimBuilder(QAndroidJniObject obj);
 		// Constructors
 		TtsSpan_VerbatimBuilder();
-		TtsSpan_VerbatimBuilder(jstring &arg0);
-		TtsSpan_VerbatimBuilder(const QString &arg0);
+		TtsSpan_VerbatimBuilder(jstring arg0);
 		
 		// Methods
 		QAndroidJniObject setVerbatim(jstring arg0);
-		QAndroidJniObject setVerbatim(const QString &arg0);
 	};
 } // namespace android::text::style
 

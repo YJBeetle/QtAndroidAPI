@@ -85,25 +85,17 @@ namespace android::webkit
 		
 		// Methods
 		void doUpdateVisitedHistory(android::webkit::WebView arg0, jstring arg1, jboolean arg2);
-		void doUpdateVisitedHistory(android::webkit::WebView arg0, const QString &arg1, jboolean arg2);
 		void onFormResubmission(android::webkit::WebView arg0, android::os::Message arg1, android::os::Message arg2);
 		void onLoadResource(android::webkit::WebView arg0, jstring arg1);
-		void onLoadResource(android::webkit::WebView arg0, const QString &arg1);
 		void onPageCommitVisible(android::webkit::WebView arg0, jstring arg1);
-		void onPageCommitVisible(android::webkit::WebView arg0, const QString &arg1);
 		void onPageFinished(android::webkit::WebView arg0, jstring arg1);
-		void onPageFinished(android::webkit::WebView arg0, const QString &arg1);
 		void onPageStarted(android::webkit::WebView arg0, jstring arg1, android::graphics::Bitmap arg2);
-		void onPageStarted(android::webkit::WebView arg0, const QString &arg1, android::graphics::Bitmap arg2);
 		void onReceivedClientCertRequest(android::webkit::WebView arg0, android::webkit::ClientCertRequest arg1);
 		void onReceivedError(android::webkit::WebView arg0, __JniBaseClass arg1, android::webkit::WebResourceError arg2);
 		void onReceivedError(android::webkit::WebView arg0, jint arg1, jstring arg2, jstring arg3);
-		void onReceivedError(android::webkit::WebView arg0, jint arg1, const QString &arg2, const QString &arg3);
 		void onReceivedHttpAuthRequest(android::webkit::WebView arg0, android::webkit::HttpAuthHandler arg1, jstring arg2, jstring arg3);
-		void onReceivedHttpAuthRequest(android::webkit::WebView arg0, android::webkit::HttpAuthHandler arg1, const QString &arg2, const QString &arg3);
 		void onReceivedHttpError(android::webkit::WebView arg0, __JniBaseClass arg1, android::webkit::WebResourceResponse arg2);
 		void onReceivedLoginRequest(android::webkit::WebView arg0, jstring arg1, jstring arg2, jstring arg3);
-		void onReceivedLoginRequest(android::webkit::WebView arg0, const QString &arg1, const QString &arg2, const QString &arg3);
 		void onReceivedSslError(android::webkit::WebView arg0, android::webkit::SslErrorHandler arg1, android::net::http::SslError arg2);
 		jboolean onRenderProcessGone(android::webkit::WebView arg0, android::webkit::RenderProcessGoneDetail arg1);
 		void onSafeBrowsingHit(android::webkit::WebView arg0, __JniBaseClass arg1, jint arg2, android::webkit::SafeBrowsingResponse arg3);
@@ -112,11 +104,9 @@ namespace android::webkit
 		void onUnhandledKeyEvent(android::webkit::WebView arg0, android::view::KeyEvent arg1);
 		QAndroidJniObject shouldInterceptRequest(android::webkit::WebView arg0, __JniBaseClass arg1);
 		QAndroidJniObject shouldInterceptRequest(android::webkit::WebView arg0, jstring arg1);
-		QAndroidJniObject shouldInterceptRequest(android::webkit::WebView arg0, const QString &arg1);
 		jboolean shouldOverrideKeyEvent(android::webkit::WebView arg0, android::view::KeyEvent arg1);
 		jboolean shouldOverrideUrlLoading(android::webkit::WebView arg0, __JniBaseClass arg1);
 		jboolean shouldOverrideUrlLoading(android::webkit::WebView arg0, jstring arg1);
-		jboolean shouldOverrideUrlLoading(android::webkit::WebView arg0, const QString &arg1);
 	};
 } // namespace android::webkit
 

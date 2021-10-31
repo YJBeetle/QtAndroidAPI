@@ -18,7 +18,7 @@ namespace android::view::animation
 		LinearInterpolator(QAndroidJniObject obj);
 		// Constructors
 		LinearInterpolator();
-		LinearInterpolator(android::content::Context &arg0, __JniBaseClass &arg1);
+		LinearInterpolator(android::content::Context arg0, __JniBaseClass arg1);
 		
 		// Methods
 		jfloat getInterpolation(jfloat arg0);

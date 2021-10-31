@@ -8,7 +8,7 @@ namespace java::util::zip
 	
 	DeflaterInputStream::DeflaterInputStream(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DeflaterInputStream::DeflaterInputStream(java::io::InputStream &arg0)
+	DeflaterInputStream::DeflaterInputStream(java::io::InputStream arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.zip.DeflaterInputStream",
@@ -16,7 +16,7 @@ namespace java::util::zip
 			arg0.__jniObject().object()
 		);
 	}
-	DeflaterInputStream::DeflaterInputStream(java::io::InputStream &arg0, java::util::zip::Deflater &arg1)
+	DeflaterInputStream::DeflaterInputStream(java::io::InputStream arg0, java::util::zip::Deflater arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.zip.DeflaterInputStream",
@@ -25,7 +25,7 @@ namespace java::util::zip
 			arg1.__jniObject().object()
 		);
 	}
-	DeflaterInputStream::DeflaterInputStream(java::io::InputStream &arg0, java::util::zip::Deflater &arg1, jint &arg2)
+	DeflaterInputStream::DeflaterInputStream(java::io::InputStream arg0, java::util::zip::Deflater arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.zip.DeflaterInputStream",

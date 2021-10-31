@@ -30,9 +30,7 @@ namespace android::provider
 		
 		// Methods
 		static jstring getDisplayLabel(android::content::Context arg0, jint arg1, jstring arg2);
-		static jstring getDisplayLabel(android::content::Context arg0, jint arg1, const QString &arg2);
 		static jstring getDisplayLabel(android::content::Context arg0, jint arg1, jstring arg2, jarray arg3);
-		static jstring getDisplayLabel(android::content::Context arg0, jint arg1, const QString &arg2, jarray arg3);
 	};
 } // namespace android::provider
 

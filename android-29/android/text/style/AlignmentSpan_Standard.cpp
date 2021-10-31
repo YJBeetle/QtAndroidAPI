@@ -8,7 +8,7 @@ namespace android::text::style
 	
 	AlignmentSpan_Standard::AlignmentSpan_Standard(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AlignmentSpan_Standard::AlignmentSpan_Standard(android::os::Parcel &arg0)
+	AlignmentSpan_Standard::AlignmentSpan_Standard(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.AlignmentSpan$Standard",
@@ -16,7 +16,7 @@ namespace android::text::style
 			arg0.__jniObject().object()
 		);
 	}
-	AlignmentSpan_Standard::AlignmentSpan_Standard(android::text::Layout_Alignment &arg0)
+	AlignmentSpan_Standard::AlignmentSpan_Standard(android::text::Layout_Alignment arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.AlignmentSpan$Standard",

@@ -40,15 +40,6 @@ namespace org::xml::sax::helpers
 			arg1
 		);
 	}
-	jboolean NamespaceSupport::declarePrefix(const QString &arg0, const QString &arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"declarePrefix",
-			"(Ljava/lang/String;Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	QAndroidJniObject NamespaceSupport::getDeclaredPrefixes()
 	{
 		return __thiz.callObjectMethod(
@@ -62,14 +53,6 @@ namespace org::xml::sax::helpers
 			"getPrefix",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
-	}
-	jstring NamespaceSupport::getPrefix(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getPrefix",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	QAndroidJniObject NamespaceSupport::getPrefixes()
@@ -87,28 +70,12 @@ namespace org::xml::sax::helpers
 			arg0
 		);
 	}
-	QAndroidJniObject NamespaceSupport::getPrefixes(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getPrefixes",
-			"(Ljava/lang/String;)Ljava/util/Enumeration;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jstring NamespaceSupport::getURI(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getURI",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
-	}
-	jstring NamespaceSupport::getURI(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getURI",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	jboolean NamespaceSupport::isNamespaceDeclUris()
@@ -131,16 +98,6 @@ namespace org::xml::sax::helpers
 			"processName",
 			"(Ljava/lang/String;[Ljava/lang/String;Z)[Ljava/lang/String;",
 			arg0,
-			arg1,
-			arg2
-		).object<jarray>();
-	}
-	jarray NamespaceSupport::processName(const QString &arg0, jarray arg1, jboolean arg2)
-	{
-		return __thiz.callObjectMethod(
-			"processName",
-			"(Ljava/lang/String;[Ljava/lang/String;Z)[Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2
 		).object<jarray>();

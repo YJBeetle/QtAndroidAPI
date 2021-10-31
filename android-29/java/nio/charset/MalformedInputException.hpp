@@ -15,7 +15,7 @@ namespace java::nio::charset
 		
 		MalformedInputException(QAndroidJniObject obj);
 		// Constructors
-		MalformedInputException(jint &arg0);
+		MalformedInputException(jint arg0);
 		MalformedInputException() = default;
 		
 		// Methods

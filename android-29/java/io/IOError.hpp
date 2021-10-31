@@ -13,7 +13,7 @@ namespace java::io
 		
 		IOError(QAndroidJniObject obj);
 		// Constructors
-		IOError(jthrowable &arg0);
+		IOError(jthrowable arg0);
 		IOError() = default;
 		
 		// Methods

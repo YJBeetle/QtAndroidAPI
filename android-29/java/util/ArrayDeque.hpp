@@ -22,8 +22,8 @@ namespace java::util
 		ArrayDeque(QAndroidJniObject obj);
 		// Constructors
 		ArrayDeque();
-		ArrayDeque(jint &arg0);
-		ArrayDeque(__JniBaseClass &arg0);
+		ArrayDeque(jint arg0);
+		ArrayDeque(__JniBaseClass arg0);
 		
 		// Methods
 		jboolean add(jobject arg0);

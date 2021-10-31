@@ -31,13 +31,5 @@ namespace android::text
 			arg0
 		);
 	}
-	QAndroidJniObject Editable_Factory::newEditable(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"newEditable",
-			"(Ljava/lang/CharSequence;)Landroid/text/Editable;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 } // namespace android::text
 

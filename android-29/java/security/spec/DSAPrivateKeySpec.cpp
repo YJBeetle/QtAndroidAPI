@@ -7,7 +7,7 @@ namespace java::security::spec
 	
 	DSAPrivateKeySpec::DSAPrivateKeySpec(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DSAPrivateKeySpec::DSAPrivateKeySpec(java::math::BigInteger &arg0, java::math::BigInteger &arg1, java::math::BigInteger &arg2, java::math::BigInteger &arg3)
+	DSAPrivateKeySpec::DSAPrivateKeySpec(java::math::BigInteger arg0, java::math::BigInteger arg1, java::math::BigInteger arg2, java::math::BigInteger arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.spec.DSAPrivateKeySpec",

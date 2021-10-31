@@ -17,22 +17,12 @@ namespace android::telecom
 	
 	StatusHints::StatusHints(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	StatusHints::StatusHints(jstring &arg0, android::graphics::drawable::Icon &arg1, android::os::Bundle &arg2)
+	StatusHints::StatusHints(jstring arg0, android::graphics::drawable::Icon arg1, android::os::Bundle arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.telecom.StatusHints",
 			"(Ljava/lang/CharSequence;Landroid/graphics/drawable/Icon;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	StatusHints::StatusHints(const QString &arg0, android::graphics::drawable::Icon &arg1, android::os::Bundle &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.telecom.StatusHints",
-			"(Ljava/lang/CharSequence;Landroid/graphics/drawable/Icon;Landroid/os/Bundle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object()
 		);

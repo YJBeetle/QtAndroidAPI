@@ -59,9 +59,7 @@ namespace android::net
 		jint describeContents();
 		jboolean equals(jobject arg0);
 		jarray getAllByName(jstring arg0);
-		jarray getAllByName(const QString &arg0);
 		QAndroidJniObject getByName(jstring arg0);
-		QAndroidJniObject getByName(const QString &arg0);
 		jlong getNetworkHandle();
 		QAndroidJniObject getSocketFactory();
 		jint hashCode();

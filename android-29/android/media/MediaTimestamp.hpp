@@ -13,7 +13,7 @@ namespace android::media
 		
 		MediaTimestamp(QAndroidJniObject obj);
 		// Constructors
-		MediaTimestamp(jlong &arg0, jlong &arg1, jfloat &arg2);
+		MediaTimestamp(jlong arg0, jlong arg1, jfloat arg2);
 		MediaTimestamp() = default;
 		
 		// Methods

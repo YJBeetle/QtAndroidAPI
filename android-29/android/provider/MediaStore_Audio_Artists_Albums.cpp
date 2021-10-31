@@ -26,15 +26,5 @@ namespace android::provider
 			arg1
 		);
 	}
-	QAndroidJniObject MediaStore_Audio_Artists_Albums::getContentUri(const QString &arg0, jlong arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.MediaStore$Audio$Artists$Albums",
-			"getContentUri",
-			"(Ljava/lang/String;J)Landroid/net/Uri;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 } // namespace android::provider
 

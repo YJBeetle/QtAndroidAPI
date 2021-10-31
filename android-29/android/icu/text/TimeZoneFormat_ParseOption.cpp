@@ -33,15 +33,6 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject TimeZoneFormat_ParseOption::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.TimeZoneFormat$ParseOption",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/icu/text/TimeZoneFormat$ParseOption;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray TimeZoneFormat_ParseOption::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

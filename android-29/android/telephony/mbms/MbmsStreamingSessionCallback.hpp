@@ -16,7 +16,6 @@ namespace android::telephony::mbms
 		
 		// Methods
 		void onError(jint arg0, jstring arg1);
-		void onError(jint arg0, const QString &arg1);
 		void onMiddlewareReady();
 		void onStreamingServicesUpdated(__JniBaseClass arg0);
 	};

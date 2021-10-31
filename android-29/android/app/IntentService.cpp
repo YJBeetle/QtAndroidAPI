@@ -7,20 +7,12 @@ namespace android::app
 	
 	IntentService::IntentService(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	IntentService::IntentService(jstring &arg0)
+	IntentService::IntentService(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.IntentService",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	IntentService::IntentService(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.app.IntentService",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

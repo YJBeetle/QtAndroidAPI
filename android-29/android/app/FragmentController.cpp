@@ -224,17 +224,6 @@ namespace android::app
 			arg3
 		);
 	}
-	void FragmentController::dumpLoaders(const QString &arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3)
-	{
-		__thiz.callMethod<void>(
-			"dumpLoaders",
-			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3
-		);
-	}
 	jboolean FragmentController::execPendingActions()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -248,14 +237,6 @@ namespace android::app
 			"findFragmentByWho",
 			"(Ljava/lang/String;)Landroid/app/Fragment;",
 			arg0
-		);
-	}
-	QAndroidJniObject FragmentController::findFragmentByWho(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"findFragmentByWho",
-			"(Ljava/lang/String;)Landroid/app/Fragment;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject FragmentController::getFragmentManager()
@@ -286,17 +267,6 @@ namespace android::app
 			"(Landroid/view/View;Ljava/lang/String;Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
-		);
-	}
-	QAndroidJniObject FragmentController::onCreateView(android::view::View arg0, const QString &arg1, android::content::Context arg2, __JniBaseClass arg3)
-	{
-		return __thiz.callObjectMethod(
-			"onCreateView",
-			"(Landroid/view/View;Ljava/lang/String;Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object()
 		);

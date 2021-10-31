@@ -21,7 +21,7 @@ namespace java::security::cert
 		
 		PKIXCertPathBuilderResult(QAndroidJniObject obj);
 		// Constructors
-		PKIXCertPathBuilderResult(java::security::cert::CertPath &arg0, java::security::cert::TrustAnchor &arg1, __JniBaseClass &arg2, __JniBaseClass &arg3);
+		PKIXCertPathBuilderResult(java::security::cert::CertPath arg0, java::security::cert::TrustAnchor arg1, __JniBaseClass arg2, __JniBaseClass arg3);
 		PKIXCertPathBuilderResult() = default;
 		
 		// Methods

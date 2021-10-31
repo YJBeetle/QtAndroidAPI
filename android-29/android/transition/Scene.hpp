@@ -24,9 +24,9 @@ namespace android::transition
 		
 		Scene(QAndroidJniObject obj);
 		// Constructors
-		Scene(android::view::ViewGroup &arg0);
-		Scene(android::view::ViewGroup &arg0, android::view::View &arg1);
-		Scene(android::view::ViewGroup &arg0, android::view::ViewGroup &arg1);
+		Scene(android::view::ViewGroup arg0);
+		Scene(android::view::ViewGroup arg0, android::view::View arg1);
+		Scene(android::view::ViewGroup arg0, android::view::ViewGroup arg1);
 		Scene() = default;
 		
 		// Methods

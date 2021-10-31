@@ -25,9 +25,7 @@ namespace android::icu::text
 		
 		// Methods
 		QAndroidJniObject apply(jstring arg0, __JniBaseClass arg1, android::icu::text::Edits arg2);
-		QAndroidJniObject apply(const QString &arg0, __JniBaseClass arg1, android::icu::text::Edits arg2);
 		jstring apply(jstring arg0);
-		jstring apply(const QString &arg0);
 		QAndroidJniObject omitUnchangedText();
 		QAndroidJniObject turkic();
 	};

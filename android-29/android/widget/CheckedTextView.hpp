@@ -38,10 +38,10 @@ namespace android::widget
 		
 		CheckedTextView(QAndroidJniObject obj);
 		// Constructors
-		CheckedTextView(android::content::Context &arg0);
-		CheckedTextView(android::content::Context &arg0, __JniBaseClass &arg1);
-		CheckedTextView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		CheckedTextView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		CheckedTextView(android::content::Context arg0);
+		CheckedTextView(android::content::Context arg0, __JniBaseClass arg1);
+		CheckedTextView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		CheckedTextView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		CheckedTextView() = default;
 		
 		// Methods

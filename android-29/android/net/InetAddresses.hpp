@@ -20,9 +20,7 @@ namespace android::net
 		
 		// Methods
 		static jboolean isNumericAddress(jstring arg0);
-		static jboolean isNumericAddress(const QString &arg0);
 		static QAndroidJniObject parseNumericAddress(jstring arg0);
-		static QAndroidJniObject parseNumericAddress(const QString &arg0);
 	};
 } // namespace android::net
 

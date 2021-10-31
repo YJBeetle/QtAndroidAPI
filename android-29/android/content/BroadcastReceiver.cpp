@@ -134,16 +134,6 @@ namespace android::content
 			arg2.__jniObject().object()
 		);
 	}
-	void BroadcastReceiver::setResult(jint arg0, const QString &arg1, android::os::Bundle arg2)
-	{
-		__thiz.callMethod<void>(
-			"setResult",
-			"(ILjava/lang/String;Landroid/os/Bundle;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object()
-		);
-	}
 	void BroadcastReceiver::setResultCode(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -158,14 +148,6 @@ namespace android::content
 			"setResultData",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void BroadcastReceiver::setResultData(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setResultData",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void BroadcastReceiver::setResultExtras(android::os::Bundle arg0)

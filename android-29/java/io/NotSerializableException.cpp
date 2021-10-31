@@ -13,20 +13,12 @@ namespace java::io
 			"()V"
 		);
 	}
-	NotSerializableException::NotSerializableException(jstring &arg0)
+	NotSerializableException::NotSerializableException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.NotSerializableException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	NotSerializableException::NotSerializableException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.io.NotSerializableException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

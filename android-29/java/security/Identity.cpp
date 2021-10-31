@@ -8,7 +8,7 @@ namespace java::security
 	
 	Identity::Identity(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Identity::Identity(jstring &arg0)
+	Identity::Identity(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.Identity",
@@ -16,29 +16,12 @@ namespace java::security
 			arg0
 		);
 	}
-	Identity::Identity(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.Identity",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	Identity::Identity(jstring &arg0, java::security::IdentityScope &arg1)
+	Identity::Identity(jstring arg0, java::security::IdentityScope arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.Identity",
 			"(Ljava/lang/String;Ljava/security/IdentityScope;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	Identity::Identity(const QString &arg0, java::security::IdentityScope &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.Identity",
-			"(Ljava/lang/String;Ljava/security/IdentityScope;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -116,14 +99,6 @@ namespace java::security
 			"setInfo",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void Identity::setInfo(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setInfo",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void Identity::setPublicKey(__JniBaseClass arg0)

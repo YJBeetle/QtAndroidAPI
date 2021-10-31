@@ -29,9 +29,7 @@ namespace java::net
 		
 		// Methods
 		static QAndroidJniObject getByAddress(jstring arg0, jbyteArray arg1, jint arg2);
-		static QAndroidJniObject getByAddress(const QString &arg0, jbyteArray arg1, jint arg2);
 		static QAndroidJniObject getByAddress(jstring arg0, jbyteArray arg1, java::net::NetworkInterface arg2);
-		static QAndroidJniObject getByAddress(const QString &arg0, jbyteArray arg1, java::net::NetworkInterface arg2);
 		jboolean equals(jobject arg0);
 		jbyteArray getAddress();
 		jstring getHostAddress();

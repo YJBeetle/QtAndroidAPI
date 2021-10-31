@@ -73,15 +73,6 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject TimeZoneNames_NameType::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.TimeZoneNames$NameType",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/icu/text/TimeZoneNames$NameType;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray TimeZoneNames_NameType::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

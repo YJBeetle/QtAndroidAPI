@@ -8,7 +8,7 @@ namespace android::app
 	
 	LauncherActivity_IconResizer::LauncherActivity_IconResizer(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	LauncherActivity_IconResizer::LauncherActivity_IconResizer(android::app::LauncherActivity &arg0)
+	LauncherActivity_IconResizer::LauncherActivity_IconResizer(android::app::LauncherActivity arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.LauncherActivity$IconResizer",

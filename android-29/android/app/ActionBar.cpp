@@ -416,14 +416,6 @@ namespace android::app
 			arg0
 		);
 	}
-	void ActionBar::setHomeActionContentDescription(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setHomeActionContentDescription",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void ActionBar::setHomeAsUpIndicator(android::graphics::drawable::Drawable arg0)
 	{
 		__thiz.callMethod<void>(
@@ -537,14 +529,6 @@ namespace android::app
 			arg0
 		);
 	}
-	void ActionBar::setSubtitle(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSubtitle",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void ActionBar::setTitle(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -559,14 +543,6 @@ namespace android::app
 			"setTitle",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
-		);
-	}
-	void ActionBar::setTitle(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTitle",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void ActionBar::show()

@@ -28,7 +28,7 @@ namespace android::telephony::mbms
 		
 		DownloadRequest_Builder(QAndroidJniObject obj);
 		// Constructors
-		DownloadRequest_Builder(android::net::Uri &arg0, android::net::Uri &arg1);
+		DownloadRequest_Builder(android::net::Uri arg0, android::net::Uri arg1);
 		DownloadRequest_Builder() = default;
 		
 		// Methods

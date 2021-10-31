@@ -49,33 +49,21 @@ namespace android::icu::util
 		
 		// Methods
 		static jint countEquivalentIDs(jstring arg0);
-		static jint countEquivalentIDs(const QString &arg0);
 		static jarray getAvailableIDs();
 		static jarray getAvailableIDs(jint arg0);
 		static jarray getAvailableIDs(jstring arg0);
-		static jarray getAvailableIDs(const QString &arg0);
 		static QAndroidJniObject getAvailableIDs(android::icu::util::TimeZone_SystemTimeZoneType arg0, jstring arg1, java::lang::Integer arg2);
-		static QAndroidJniObject getAvailableIDs(android::icu::util::TimeZone_SystemTimeZoneType arg0, const QString &arg1, java::lang::Integer arg2);
 		static jstring getCanonicalID(jstring arg0);
-		static jstring getCanonicalID(const QString &arg0);
 		static jstring getCanonicalID(jstring arg0, jbooleanArray arg1);
-		static jstring getCanonicalID(const QString &arg0, jbooleanArray arg1);
 		static QAndroidJniObject getDefault();
 		static jstring getEquivalentID(jstring arg0, jint arg1);
-		static jstring getEquivalentID(const QString &arg0, jint arg1);
 		static QAndroidJniObject getFrozenTimeZone(jstring arg0);
-		static QAndroidJniObject getFrozenTimeZone(const QString &arg0);
 		static jstring getIDForWindowsID(jstring arg0, jstring arg1);
-		static jstring getIDForWindowsID(const QString &arg0, const QString &arg1);
 		static jstring getRegion(jstring arg0);
-		static jstring getRegion(const QString &arg0);
 		static jstring getTZDataVersion();
 		static QAndroidJniObject getTimeZone(jstring arg0);
-		static QAndroidJniObject getTimeZone(const QString &arg0);
 		static QAndroidJniObject getTimeZone(jstring arg0, jint arg1);
-		static QAndroidJniObject getTimeZone(const QString &arg0, jint arg1);
 		static jstring getWindowsID(jstring arg0);
-		static jstring getWindowsID(const QString &arg0);
 		jobject clone();
 		QAndroidJniObject cloneAsThawed();
 		jboolean equals(jobject arg0);
@@ -98,7 +86,6 @@ namespace android::icu::util
 		jboolean isFrozen();
 		jboolean observesDaylightTime();
 		void setID(jstring arg0);
-		void setID(const QString &arg0);
 		void setRawOffset(jint arg0);
 		jboolean useDaylightTime();
 	};

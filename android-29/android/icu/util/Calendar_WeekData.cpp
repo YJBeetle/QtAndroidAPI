@@ -42,7 +42,7 @@ namespace android::icu::util
 	
 	Calendar_WeekData::Calendar_WeekData(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Calendar_WeekData::Calendar_WeekData(jint &arg0, jint &arg1, jint &arg2, jint &arg3, jint &arg4, jint &arg5)
+	Calendar_WeekData::Calendar_WeekData(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.Calendar$WeekData",

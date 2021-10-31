@@ -16,14 +16,12 @@ namespace android::view::textclassifier
 		
 		TextClassificationContext_Builder(QAndroidJniObject obj);
 		// Constructors
-		TextClassificationContext_Builder(jstring &arg0, jstring &arg1);
-		TextClassificationContext_Builder(const QString &arg0, const QString &arg1);
+		TextClassificationContext_Builder(jstring arg0, jstring arg1);
 		TextClassificationContext_Builder() = default;
 		
 		// Methods
 		QAndroidJniObject build();
 		QAndroidJniObject setWidgetVersion(jstring arg0);
-		QAndroidJniObject setWidgetVersion(const QString &arg0);
 	};
 } // namespace android::view::textclassifier
 

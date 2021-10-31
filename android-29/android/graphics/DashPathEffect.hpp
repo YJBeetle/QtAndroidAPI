@@ -13,7 +13,7 @@ namespace android::graphics
 		
 		DashPathEffect(QAndroidJniObject obj);
 		// Constructors
-		DashPathEffect(jfloatArray &arg0, jfloat &arg1);
+		DashPathEffect(jfloatArray arg0, jfloat arg1);
 		DashPathEffect() = default;
 		
 		// Methods

@@ -15,8 +15,7 @@ namespace javax::net::ssl
 		
 		SSLKeyException(QAndroidJniObject obj);
 		// Constructors
-		SSLKeyException(jstring &arg0);
-		SSLKeyException(const QString &arg0);
+		SSLKeyException(jstring arg0);
 		SSLKeyException() = default;
 		
 		// Methods

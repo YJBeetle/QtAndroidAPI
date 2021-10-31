@@ -8,7 +8,7 @@ namespace android::view::animation
 	
 	ScaleAnimation::ScaleAnimation(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ScaleAnimation::ScaleAnimation(android::content::Context &arg0, __JniBaseClass &arg1)
+	ScaleAnimation::ScaleAnimation(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.ScaleAnimation",
@@ -17,7 +17,7 @@ namespace android::view::animation
 			arg1.__jniObject().object()
 		);
 	}
-	ScaleAnimation::ScaleAnimation(jfloat &arg0, jfloat &arg1, jfloat &arg2, jfloat &arg3)
+	ScaleAnimation::ScaleAnimation(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.ScaleAnimation",
@@ -28,7 +28,7 @@ namespace android::view::animation
 			arg3
 		);
 	}
-	ScaleAnimation::ScaleAnimation(jfloat &arg0, jfloat &arg1, jfloat &arg2, jfloat &arg3, jfloat &arg4, jfloat &arg5)
+	ScaleAnimation::ScaleAnimation(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.ScaleAnimation",
@@ -41,7 +41,7 @@ namespace android::view::animation
 			arg5
 		);
 	}
-	ScaleAnimation::ScaleAnimation(jfloat &arg0, jfloat &arg1, jfloat &arg2, jfloat &arg3, jint &arg4, jfloat &arg5, jint &arg6, jfloat &arg7)
+	ScaleAnimation::ScaleAnimation(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jint arg4, jfloat arg5, jint arg6, jfloat arg7)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.ScaleAnimation",

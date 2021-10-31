@@ -13,7 +13,7 @@ namespace java::lang
 			"()V"
 		);
 	}
-	AssertionError::AssertionError(jboolean &arg0)
+	AssertionError::AssertionError(jboolean arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.AssertionError",
@@ -21,7 +21,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	AssertionError::AssertionError(jchar &arg0)
+	AssertionError::AssertionError(jchar arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.AssertionError",
@@ -29,7 +29,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	AssertionError::AssertionError(jdouble &arg0)
+	AssertionError::AssertionError(jdouble arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.AssertionError",
@@ -37,7 +37,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	AssertionError::AssertionError(jfloat &arg0)
+	AssertionError::AssertionError(jfloat arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.AssertionError",
@@ -45,7 +45,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	AssertionError::AssertionError(jint &arg0)
+	AssertionError::AssertionError(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.AssertionError",
@@ -53,7 +53,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	AssertionError::AssertionError(jobject &arg0)
+	AssertionError::AssertionError(jobject arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.AssertionError",
@@ -61,7 +61,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	AssertionError::AssertionError(jlong &arg0)
+	AssertionError::AssertionError(jlong arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.AssertionError",
@@ -69,21 +69,12 @@ namespace java::lang
 			arg0
 		);
 	}
-	AssertionError::AssertionError(jstring &arg0, jthrowable &arg1)
+	AssertionError::AssertionError(jstring arg0, jthrowable arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.AssertionError",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
-			arg1
-		);
-	}
-	AssertionError::AssertionError(const QString &arg0, jthrowable &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.AssertionError",
-			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

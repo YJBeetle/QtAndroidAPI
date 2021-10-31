@@ -28,7 +28,7 @@ namespace android::view::textclassifier
 		
 		ConversationActions_Message_Builder(QAndroidJniObject obj);
 		// Constructors
-		ConversationActions_Message_Builder(android::app::Person &arg0);
+		ConversationActions_Message_Builder(android::app::Person arg0);
 		ConversationActions_Message_Builder() = default;
 		
 		// Methods
@@ -36,7 +36,6 @@ namespace android::view::textclassifier
 		QAndroidJniObject setExtras(android::os::Bundle arg0);
 		QAndroidJniObject setReferenceTime(java::time::ZonedDateTime arg0);
 		QAndroidJniObject setText(jstring arg0);
-		QAndroidJniObject setText(const QString &arg0);
 	};
 } // namespace android::view::textclassifier
 

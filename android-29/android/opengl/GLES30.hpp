@@ -403,7 +403,6 @@ namespace android::opengl
 		static void glGetBufferParameteri64v(jint arg0, jint arg1, jlongArray arg2, jint arg3);
 		static QAndroidJniObject glGetBufferPointerv(jint arg0, jint arg1);
 		static jint glGetFragDataLocation(jint arg0, jstring arg1);
-		static jint glGetFragDataLocation(jint arg0, const QString &arg1);
 		static void glGetInteger64i_v(jint arg0, jint arg1, java::nio::LongBuffer arg2);
 		static void glGetInteger64i_v(jint arg0, jint arg1, jlongArray arg2, jint arg3);
 		static void glGetInteger64v(jint arg0, java::nio::LongBuffer arg1);
@@ -431,7 +430,6 @@ namespace android::opengl
 		static void glGetTransformFeedbackVarying(jint arg0, jint arg1, jint arg2, java::nio::IntBuffer arg3, java::nio::IntBuffer arg4, java::nio::IntBuffer arg5, java::nio::ByteBuffer arg6);
 		static void glGetTransformFeedbackVarying(jint arg0, jint arg1, jint arg2, jintArray arg3, jint arg4, jintArray arg5, jint arg6, jintArray arg7, jint arg8, jbyteArray arg9, jint arg10);
 		static jint glGetUniformBlockIndex(jint arg0, jstring arg1);
-		static jint glGetUniformBlockIndex(jint arg0, const QString &arg1);
 		static void glGetUniformIndices(jint arg0, jarray arg1, java::nio::IntBuffer arg2);
 		static void glGetUniformIndices(jint arg0, jarray arg1, jintArray arg2, jint arg3);
 		static void glGetUniformuiv(jint arg0, jint arg1, java::nio::IntBuffer arg2);

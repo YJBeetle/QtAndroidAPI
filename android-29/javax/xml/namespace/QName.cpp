@@ -6,7 +6,7 @@ namespace javax::xml::_namespace
 	
 	QName::QName(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	QName::QName(jstring &arg0)
+	QName::QName(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.namespace.QName",
@@ -14,15 +14,7 @@ namespace javax::xml::_namespace
 			arg0
 		);
 	}
-	QName::QName(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.xml.namespace.QName",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	QName::QName(jstring &arg0, jstring &arg1)
+	QName::QName(jstring arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.namespace.QName",
@@ -31,16 +23,7 @@ namespace javax::xml::_namespace
 			arg1
 		);
 	}
-	QName::QName(const QString &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.xml.namespace.QName",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	QName::QName(jstring &arg0, jstring &arg1, jstring &arg2)
+	QName::QName(jstring arg0, jstring arg1, jstring arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.namespace.QName",
@@ -48,16 +31,6 @@ namespace javax::xml::_namespace
 			arg0,
 			arg1,
 			arg2
-		);
-	}
-	QName::QName(const QString &arg0, const QString &arg1, const QString &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.xml.namespace.QName",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	
@@ -69,15 +42,6 @@ namespace javax::xml::_namespace
 			"valueOf",
 			"(Ljava/lang/String;)Ljavax/xml/namespace/QName;",
 			arg0
-		);
-	}
-	QAndroidJniObject QName::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"javax.xml.namespace.QName",
-			"valueOf",
-			"(Ljava/lang/String;)Ljavax/xml/namespace/QName;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean QName::equals(jobject arg0)

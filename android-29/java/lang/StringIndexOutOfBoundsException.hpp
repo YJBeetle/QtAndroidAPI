@@ -16,9 +16,8 @@ namespace java::lang
 		StringIndexOutOfBoundsException(QAndroidJniObject obj);
 		// Constructors
 		StringIndexOutOfBoundsException();
-		StringIndexOutOfBoundsException(jint &arg0);
-		StringIndexOutOfBoundsException(jstring &arg0);
-		StringIndexOutOfBoundsException(const QString &arg0);
+		StringIndexOutOfBoundsException(jint arg0);
+		StringIndexOutOfBoundsException(jstring arg0);
 		
 		// Methods
 	};

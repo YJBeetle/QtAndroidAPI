@@ -32,7 +32,7 @@ namespace java::security
 		
 		CodeSource(QAndroidJniObject obj);
 		// Constructors
-		CodeSource(java::net::URL &arg0, jarray &arg1);
+		CodeSource(java::net::URL arg0, jarray arg1);
 		CodeSource() = default;
 		
 		// Methods

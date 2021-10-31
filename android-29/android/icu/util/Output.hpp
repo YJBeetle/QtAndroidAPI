@@ -14,7 +14,7 @@ namespace android::icu::util
 		Output(QAndroidJniObject obj);
 		// Constructors
 		Output();
-		Output(jobject &arg0);
+		Output(jobject arg0);
 		
 		// Methods
 		jstring toString();

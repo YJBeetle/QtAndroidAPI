@@ -18,8 +18,8 @@ namespace java::io
 		
 		BufferedOutputStream(QAndroidJniObject obj);
 		// Constructors
-		BufferedOutputStream(java::io::OutputStream &arg0);
-		BufferedOutputStream(java::io::OutputStream &arg0, jint &arg1);
+		BufferedOutputStream(java::io::OutputStream arg0);
+		BufferedOutputStream(java::io::OutputStream arg0, jint arg1);
 		BufferedOutputStream() = default;
 		
 		// Methods

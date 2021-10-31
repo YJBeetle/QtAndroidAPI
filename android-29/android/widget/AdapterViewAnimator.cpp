@@ -11,7 +11,7 @@ namespace android::widget
 	
 	AdapterViewAnimator::AdapterViewAnimator(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AdapterViewAnimator::AdapterViewAnimator(android::content::Context &arg0)
+	AdapterViewAnimator::AdapterViewAnimator(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.AdapterViewAnimator",
@@ -19,7 +19,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	AdapterViewAnimator::AdapterViewAnimator(android::content::Context &arg0, __JniBaseClass &arg1)
+	AdapterViewAnimator::AdapterViewAnimator(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.AdapterViewAnimator",
@@ -28,7 +28,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	AdapterViewAnimator::AdapterViewAnimator(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	AdapterViewAnimator::AdapterViewAnimator(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.AdapterViewAnimator",
@@ -38,7 +38,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	AdapterViewAnimator::AdapterViewAnimator(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	AdapterViewAnimator::AdapterViewAnimator(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.AdapterViewAnimator",

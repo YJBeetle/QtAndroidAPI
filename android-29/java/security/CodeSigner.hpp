@@ -24,7 +24,7 @@ namespace java::security
 		
 		CodeSigner(QAndroidJniObject obj);
 		// Constructors
-		CodeSigner(java::security::cert::CertPath &arg0, java::security::Timestamp &arg1);
+		CodeSigner(java::security::cert::CertPath arg0, java::security::Timestamp arg1);
 		CodeSigner() = default;
 		
 		// Methods

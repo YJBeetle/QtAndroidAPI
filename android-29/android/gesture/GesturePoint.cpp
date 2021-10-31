@@ -24,7 +24,7 @@ namespace android::gesture
 	
 	GesturePoint::GesturePoint(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	GesturePoint::GesturePoint(jfloat &arg0, jfloat &arg1, jlong &arg2)
+	GesturePoint::GesturePoint(jfloat arg0, jfloat arg1, jlong arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.gesture.GesturePoint",

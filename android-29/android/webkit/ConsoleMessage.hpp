@@ -16,8 +16,7 @@ namespace android::webkit
 		
 		ConsoleMessage(QAndroidJniObject obj);
 		// Constructors
-		ConsoleMessage(jstring &arg0, jstring &arg1, jint &arg2, android::webkit::ConsoleMessage_MessageLevel &arg3);
-		ConsoleMessage(const QString &arg0, const QString &arg1, jint &arg2, android::webkit::ConsoleMessage_MessageLevel &arg3);
+		ConsoleMessage(jstring arg0, jstring arg1, jint arg2, android::webkit::ConsoleMessage_MessageLevel arg3);
 		ConsoleMessage() = default;
 		
 		// Methods

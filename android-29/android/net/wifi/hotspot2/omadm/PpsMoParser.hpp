@@ -20,7 +20,6 @@ namespace android::net::wifi::hotspot2::omadm
 		
 		// Methods
 		static QAndroidJniObject parseMoText(jstring arg0);
-		static QAndroidJniObject parseMoText(const QString &arg0);
 	};
 } // namespace android::net::wifi::hotspot2::omadm
 

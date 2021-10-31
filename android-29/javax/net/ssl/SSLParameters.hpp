@@ -13,8 +13,8 @@ namespace javax::net::ssl
 		SSLParameters(QAndroidJniObject obj);
 		// Constructors
 		SSLParameters();
-		SSLParameters(jarray &arg0);
-		SSLParameters(jarray &arg0, jarray &arg1);
+		SSLParameters(jarray arg0);
+		SSLParameters(jarray arg0, jarray arg1);
 		
 		// Methods
 		QAndroidJniObject getAlgorithmConstraints();
@@ -34,7 +34,6 @@ namespace javax::net::ssl
 		void setCipherSuites(jarray arg0);
 		void setEnableRetransmissions(jboolean arg0);
 		void setEndpointIdentificationAlgorithm(jstring arg0);
-		void setEndpointIdentificationAlgorithm(const QString &arg0);
 		void setMaximumPacketSize(jint arg0);
 		void setNeedClientAuth(jboolean arg0);
 		void setProtocols(jarray arg0);

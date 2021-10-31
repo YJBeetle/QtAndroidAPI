@@ -36,13 +36,10 @@ namespace android::net::wifi
 		QAndroidJniObject setIsUserInteractionRequired(jboolean arg0);
 		QAndroidJniObject setPriority(jint arg0);
 		QAndroidJniObject setSsid(jstring arg0);
-		QAndroidJniObject setSsid(const QString &arg0);
 		QAndroidJniObject setWpa2EnterpriseConfig(android::net::wifi::WifiEnterpriseConfig arg0);
 		QAndroidJniObject setWpa2Passphrase(jstring arg0);
-		QAndroidJniObject setWpa2Passphrase(const QString &arg0);
 		QAndroidJniObject setWpa3EnterpriseConfig(android::net::wifi::WifiEnterpriseConfig arg0);
 		QAndroidJniObject setWpa3Passphrase(jstring arg0);
-		QAndroidJniObject setWpa3Passphrase(const QString &arg0);
 	};
 } // namespace android::net::wifi
 

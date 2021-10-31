@@ -9,7 +9,7 @@ namespace java::util::prefs
 	
 	NodeChangeEvent::NodeChangeEvent(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	NodeChangeEvent::NodeChangeEvent(java::util::prefs::Preferences &arg0, java::util::prefs::Preferences &arg1)
+	NodeChangeEvent::NodeChangeEvent(java::util::prefs::Preferences arg0, java::util::prefs::Preferences arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.prefs.NodeChangeEvent",

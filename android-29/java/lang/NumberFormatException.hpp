@@ -16,8 +16,7 @@ namespace java::lang
 		NumberFormatException(QAndroidJniObject obj);
 		// Constructors
 		NumberFormatException();
-		NumberFormatException(jstring &arg0);
-		NumberFormatException(const QString &arg0);
+		NumberFormatException(jstring arg0);
 		
 		// Methods
 	};

@@ -108,7 +108,7 @@ namespace android::icu::util
 			"()V"
 		);
 	}
-	HebrewCalendar::HebrewCalendar(android::icu::util::TimeZone &arg0)
+	HebrewCalendar::HebrewCalendar(android::icu::util::TimeZone arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.HebrewCalendar",
@@ -116,7 +116,7 @@ namespace android::icu::util
 			arg0.__jniObject().object()
 		);
 	}
-	HebrewCalendar::HebrewCalendar(android::icu::util::ULocale &arg0)
+	HebrewCalendar::HebrewCalendar(android::icu::util::ULocale arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.HebrewCalendar",
@@ -124,7 +124,7 @@ namespace android::icu::util
 			arg0.__jniObject().object()
 		);
 	}
-	HebrewCalendar::HebrewCalendar(java::util::Date &arg0)
+	HebrewCalendar::HebrewCalendar(java::util::Date arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.HebrewCalendar",
@@ -132,7 +132,7 @@ namespace android::icu::util
 			arg0.__jniObject().object()
 		);
 	}
-	HebrewCalendar::HebrewCalendar(java::util::Locale &arg0)
+	HebrewCalendar::HebrewCalendar(java::util::Locale arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.HebrewCalendar",
@@ -140,7 +140,7 @@ namespace android::icu::util
 			arg0.__jniObject().object()
 		);
 	}
-	HebrewCalendar::HebrewCalendar(android::icu::util::TimeZone &arg0, android::icu::util::ULocale &arg1)
+	HebrewCalendar::HebrewCalendar(android::icu::util::TimeZone arg0, android::icu::util::ULocale arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.HebrewCalendar",
@@ -149,7 +149,7 @@ namespace android::icu::util
 			arg1.__jniObject().object()
 		);
 	}
-	HebrewCalendar::HebrewCalendar(android::icu::util::TimeZone &arg0, java::util::Locale &arg1)
+	HebrewCalendar::HebrewCalendar(android::icu::util::TimeZone arg0, java::util::Locale arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.HebrewCalendar",
@@ -158,7 +158,7 @@ namespace android::icu::util
 			arg1.__jniObject().object()
 		);
 	}
-	HebrewCalendar::HebrewCalendar(jint &arg0, jint &arg1, jint &arg2)
+	HebrewCalendar::HebrewCalendar(jint arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.HebrewCalendar",
@@ -168,7 +168,7 @@ namespace android::icu::util
 			arg2
 		);
 	}
-	HebrewCalendar::HebrewCalendar(jint &arg0, jint &arg1, jint &arg2, jint &arg3, jint &arg4, jint &arg5)
+	HebrewCalendar::HebrewCalendar(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.HebrewCalendar",

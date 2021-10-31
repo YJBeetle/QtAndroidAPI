@@ -16,7 +16,7 @@ namespace java::util
 			"()V"
 		);
 	}
-	Timer::Timer(jboolean &arg0)
+	Timer::Timer(jboolean arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Timer",
@@ -24,7 +24,7 @@ namespace java::util
 			arg0
 		);
 	}
-	Timer::Timer(jstring &arg0)
+	Timer::Timer(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Timer",
@@ -32,29 +32,12 @@ namespace java::util
 			arg0
 		);
 	}
-	Timer::Timer(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.Timer",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	Timer::Timer(jstring &arg0, jboolean &arg1)
+	Timer::Timer(jstring arg0, jboolean arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Timer",
 			"(Ljava/lang/String;Z)V",
 			arg0,
-			arg1
-		);
-	}
-	Timer::Timer(const QString &arg0, jboolean &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.Timer",
-			"(Ljava/lang/String;Z)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

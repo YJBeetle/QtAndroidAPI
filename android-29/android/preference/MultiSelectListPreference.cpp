@@ -9,7 +9,7 @@ namespace android::preference
 	
 	MultiSelectListPreference::MultiSelectListPreference(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MultiSelectListPreference::MultiSelectListPreference(android::content::Context &arg0)
+	MultiSelectListPreference::MultiSelectListPreference(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.preference.MultiSelectListPreference",
@@ -17,7 +17,7 @@ namespace android::preference
 			arg0.__jniObject().object()
 		);
 	}
-	MultiSelectListPreference::MultiSelectListPreference(android::content::Context &arg0, __JniBaseClass &arg1)
+	MultiSelectListPreference::MultiSelectListPreference(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.preference.MultiSelectListPreference",
@@ -26,7 +26,7 @@ namespace android::preference
 			arg1.__jniObject().object()
 		);
 	}
-	MultiSelectListPreference::MultiSelectListPreference(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	MultiSelectListPreference::MultiSelectListPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.preference.MultiSelectListPreference",
@@ -36,7 +36,7 @@ namespace android::preference
 			arg2
 		);
 	}
-	MultiSelectListPreference::MultiSelectListPreference(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	MultiSelectListPreference::MultiSelectListPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.preference.MultiSelectListPreference",
@@ -55,14 +55,6 @@ namespace android::preference
 			"findIndexOfValue",
 			"(Ljava/lang/String;)I",
 			arg0
-		);
-	}
-	jint MultiSelectListPreference::findIndexOfValue(const QString &arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"findIndexOfValue",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jarray MultiSelectListPreference::getEntries()

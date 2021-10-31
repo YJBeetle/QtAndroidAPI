@@ -48,14 +48,6 @@ namespace android::net::wifi::p2p
 			arg0
 		);
 	}
-	QAndroidJniObject WifiP2pDeviceList::get(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"get",
-			"(Ljava/lang/String;)Landroid/net/wifi/p2p/WifiP2pDevice;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject WifiP2pDeviceList::getDeviceList()
 	{
 		return __thiz.callObjectMethod(

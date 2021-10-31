@@ -177,15 +177,6 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject TimeZoneFormat_Style::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.TimeZoneFormat$Style",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/icu/text/TimeZoneFormat$Style;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray TimeZoneFormat_Style::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

@@ -23,12 +23,11 @@ namespace android::graphics
 		// Constructors
 		Rect();
 		Rect(android::graphics::Rect &arg0);
-		Rect(jint &arg0, jint &arg1, jint &arg2, jint &arg3);
+		Rect(jint arg0, jint arg1, jint arg2, jint arg3);
 		
 		// Methods
 		static jboolean intersects(android::graphics::Rect arg0, android::graphics::Rect arg1);
 		static QAndroidJniObject unflattenFromString(jstring arg0);
-		static QAndroidJniObject unflattenFromString(const QString &arg0);
 		jint centerX();
 		jint centerY();
 		jboolean contains(android::graphics::Rect arg0);

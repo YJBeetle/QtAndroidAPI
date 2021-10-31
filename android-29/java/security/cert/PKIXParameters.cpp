@@ -10,7 +10,7 @@ namespace java::security::cert
 	
 	PKIXParameters::PKIXParameters(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PKIXParameters::PKIXParameters(java::security::KeyStore &arg0)
+	PKIXParameters::PKIXParameters(java::security::KeyStore arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.cert.PKIXParameters",
@@ -18,7 +18,7 @@ namespace java::security::cert
 			arg0.__jniObject().object()
 		);
 	}
-	PKIXParameters::PKIXParameters(__JniBaseClass &arg0)
+	PKIXParameters::PKIXParameters(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.cert.PKIXParameters",
@@ -213,14 +213,6 @@ namespace java::security::cert
 			"setSigProvider",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void PKIXParameters::setSigProvider(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSigProvider",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void PKIXParameters::setTargetCertConstraints(__JniBaseClass arg0)

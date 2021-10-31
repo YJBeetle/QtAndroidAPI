@@ -18,7 +18,7 @@ namespace android::media::tv
 	
 	TvView::TvView(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	TvView::TvView(android::content::Context &arg0)
+	TvView::TvView(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.tv.TvView",
@@ -26,7 +26,7 @@ namespace android::media::tv
 			arg0.__jniObject().object()
 		);
 	}
-	TvView::TvView(android::content::Context &arg0, __JniBaseClass &arg1)
+	TvView::TvView(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.tv.TvView",
@@ -35,7 +35,7 @@ namespace android::media::tv
 			arg1.__jniObject().object()
 		);
 	}
-	TvView::TvView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	TvView::TvView(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.tv.TvView",
@@ -151,30 +151,12 @@ namespace android::media::tv
 			arg1
 		);
 	}
-	void TvView::selectTrack(jint arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"selectTrack",
-			"(ILjava/lang/String;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	void TvView::sendAppPrivateCommand(jstring arg0, android::os::Bundle arg1)
 	{
 		__thiz.callMethod<void>(
 			"sendAppPrivateCommand",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void TvView::sendAppPrivateCommand(const QString &arg0, android::os::Bundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"sendAppPrivateCommand",
-			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -250,15 +232,6 @@ namespace android::media::tv
 			arg1.__jniObject().object()
 		);
 	}
-	void TvView::timeShiftPlay(const QString &arg0, android::net::Uri arg1)
-	{
-		__thiz.callMethod<void>(
-			"timeShiftPlay",
-			"(Ljava/lang/String;Landroid/net/Uri;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	void TvView::timeShiftResume()
 	{
 		__thiz.callMethod<void>(
@@ -291,31 +264,12 @@ namespace android::media::tv
 			arg1.__jniObject().object()
 		);
 	}
-	void TvView::tune(const QString &arg0, android::net::Uri arg1)
-	{
-		__thiz.callMethod<void>(
-			"tune",
-			"(Ljava/lang/String;Landroid/net/Uri;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	void TvView::tune(jstring arg0, android::net::Uri arg1, android::os::Bundle arg2)
 	{
 		__thiz.callMethod<void>(
 			"tune",
 			"(Ljava/lang/String;Landroid/net/Uri;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	void TvView::tune(const QString &arg0, android::net::Uri arg1, android::os::Bundle arg2)
-	{
-		__thiz.callMethod<void>(
-			"tune",
-			"(Ljava/lang/String;Landroid/net/Uri;Landroid/os/Bundle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object()
 		);

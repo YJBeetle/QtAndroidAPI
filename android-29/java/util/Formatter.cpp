@@ -20,7 +20,7 @@ namespace java::util
 			"()V"
 		);
 	}
-	Formatter::Formatter(java::io::File &arg0)
+	Formatter::Formatter(java::io::File arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Formatter",
@@ -28,7 +28,7 @@ namespace java::util
 			arg0.__jniObject().object()
 		);
 	}
-	Formatter::Formatter(java::io::OutputStream &arg0)
+	Formatter::Formatter(java::io::OutputStream arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Formatter",
@@ -36,7 +36,7 @@ namespace java::util
 			arg0.__jniObject().object()
 		);
 	}
-	Formatter::Formatter(java::io::PrintStream &arg0)
+	Formatter::Formatter(java::io::PrintStream arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Formatter",
@@ -44,7 +44,7 @@ namespace java::util
 			arg0.__jniObject().object()
 		);
 	}
-	Formatter::Formatter(__JniBaseClass &arg0)
+	Formatter::Formatter(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Formatter",
@@ -52,7 +52,7 @@ namespace java::util
 			arg0.__jniObject().object()
 		);
 	}
-	Formatter::Formatter(jstring &arg0)
+	Formatter::Formatter(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Formatter",
@@ -60,15 +60,7 @@ namespace java::util
 			arg0
 		);
 	}
-	Formatter::Formatter(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.Formatter",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	Formatter::Formatter(java::util::Locale &arg0)
+	Formatter::Formatter(java::util::Locale arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Formatter",
@@ -76,7 +68,7 @@ namespace java::util
 			arg0.__jniObject().object()
 		);
 	}
-	Formatter::Formatter(java::io::File &arg0, jstring &arg1)
+	Formatter::Formatter(java::io::File arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Formatter",
@@ -85,16 +77,7 @@ namespace java::util
 			arg1
 		);
 	}
-	Formatter::Formatter(java::io::File &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.Formatter",
-			"(Ljava/io/File;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	Formatter::Formatter(java::io::OutputStream &arg0, jstring &arg1)
+	Formatter::Formatter(java::io::OutputStream arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Formatter",
@@ -103,16 +86,7 @@ namespace java::util
 			arg1
 		);
 	}
-	Formatter::Formatter(java::io::OutputStream &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.Formatter",
-			"(Ljava/io/OutputStream;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	Formatter::Formatter(__JniBaseClass &arg0, java::util::Locale &arg1)
+	Formatter::Formatter(__JniBaseClass arg0, java::util::Locale arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Formatter",
@@ -121,7 +95,7 @@ namespace java::util
 			arg1.__jniObject().object()
 		);
 	}
-	Formatter::Formatter(jstring &arg0, jstring &arg1)
+	Formatter::Formatter(jstring arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Formatter",
@@ -130,16 +104,7 @@ namespace java::util
 			arg1
 		);
 	}
-	Formatter::Formatter(const QString &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.Formatter",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	Formatter::Formatter(java::io::File &arg0, jstring &arg1, java::util::Locale &arg2)
+	Formatter::Formatter(java::io::File arg0, jstring arg1, java::util::Locale arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Formatter",
@@ -149,17 +114,7 @@ namespace java::util
 			arg2.__jniObject().object()
 		);
 	}
-	Formatter::Formatter(java::io::File &arg0, const QString &arg1, java::util::Locale &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.Formatter",
-			"(Ljava/io/File;Ljava/lang/String;Ljava/util/Locale;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object()
-		);
-	}
-	Formatter::Formatter(java::io::File &arg0, java::nio::charset::Charset &arg1, java::util::Locale &arg2)
+	Formatter::Formatter(java::io::File arg0, java::nio::charset::Charset arg1, java::util::Locale arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Formatter",
@@ -169,7 +124,7 @@ namespace java::util
 			arg2.__jniObject().object()
 		);
 	}
-	Formatter::Formatter(java::io::OutputStream &arg0, jstring &arg1, java::util::Locale &arg2)
+	Formatter::Formatter(java::io::OutputStream arg0, jstring arg1, java::util::Locale arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Formatter",
@@ -179,17 +134,7 @@ namespace java::util
 			arg2.__jniObject().object()
 		);
 	}
-	Formatter::Formatter(java::io::OutputStream &arg0, const QString &arg1, java::util::Locale &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.Formatter",
-			"(Ljava/io/OutputStream;Ljava/lang/String;Ljava/util/Locale;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object()
-		);
-	}
-	Formatter::Formatter(java::io::OutputStream &arg0, java::nio::charset::Charset &arg1, java::util::Locale &arg2)
+	Formatter::Formatter(java::io::OutputStream arg0, java::nio::charset::Charset arg1, java::util::Locale arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Formatter",
@@ -199,7 +144,7 @@ namespace java::util
 			arg2.__jniObject().object()
 		);
 	}
-	Formatter::Formatter(jstring &arg0, jstring &arg1, java::util::Locale &arg2)
+	Formatter::Formatter(jstring arg0, jstring arg1, java::util::Locale arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Formatter",
@@ -209,32 +154,12 @@ namespace java::util
 			arg2.__jniObject().object()
 		);
 	}
-	Formatter::Formatter(const QString &arg0, const QString &arg1, java::util::Locale &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.Formatter",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/util/Locale;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object()
-		);
-	}
-	Formatter::Formatter(jstring &arg0, java::nio::charset::Charset &arg1, java::util::Locale &arg2)
+	Formatter::Formatter(jstring arg0, java::nio::charset::Charset arg1, java::util::Locale arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Formatter",
 			"(Ljava/lang/String;Ljava/nio/charset/Charset;Ljava/util/Locale;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	Formatter::Formatter(const QString &arg0, java::nio::charset::Charset &arg1, java::util::Locale &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.Formatter",
-			"(Ljava/lang/String;Ljava/nio/charset/Charset;Ljava/util/Locale;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object()
 		);
@@ -264,15 +189,6 @@ namespace java::util
 			arg1
 		);
 	}
-	QAndroidJniObject Formatter::format(const QString &arg0, jobjectArray arg1)
-	{
-		return __thiz.callObjectMethod(
-			"format",
-			"(Ljava/lang/String;[Ljava/lang/Object;)Ljava/util/Formatter;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	QAndroidJniObject Formatter::format(java::util::Locale arg0, jstring arg1, jobjectArray arg2)
 	{
 		return __thiz.callObjectMethod(
@@ -280,16 +196,6 @@ namespace java::util
 			"(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/util/Formatter;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2
-		);
-	}
-	QAndroidJniObject Formatter::format(java::util::Locale arg0, const QString &arg1, jobjectArray arg2)
-	{
-		return __thiz.callObjectMethod(
-			"format",
-			"(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/util/Formatter;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}

@@ -59,29 +59,12 @@ namespace android::widget
 			arg0
 		);
 	}
-	QAndroidJniObject TabHost_TabSpec::setIndicator(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setIndicator",
-			"(Ljava/lang/CharSequence;)Landroid/widget/TabHost$TabSpec;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject TabHost_TabSpec::setIndicator(jstring arg0, android::graphics::drawable::Drawable arg1)
 	{
 		return __thiz.callObjectMethod(
 			"setIndicator",
 			"(Ljava/lang/CharSequence;Landroid/graphics/drawable/Drawable;)Landroid/widget/TabHost$TabSpec;",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject TabHost_TabSpec::setIndicator(const QString &arg0, android::graphics::drawable::Drawable arg1)
-	{
-		return __thiz.callObjectMethod(
-			"setIndicator",
-			"(Ljava/lang/CharSequence;Landroid/graphics/drawable/Drawable;)Landroid/widget/TabHost$TabSpec;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

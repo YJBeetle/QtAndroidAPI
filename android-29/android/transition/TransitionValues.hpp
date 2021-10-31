@@ -19,7 +19,7 @@ namespace android::transition
 		TransitionValues(QAndroidJniObject obj);
 		// Constructors
 		TransitionValues();
-		TransitionValues(android::view::View &arg0);
+		TransitionValues(android::view::View arg0);
 		
 		// Methods
 		jboolean equals(jobject arg0);

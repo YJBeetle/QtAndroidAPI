@@ -70,7 +70,6 @@ namespace android::icu::text
 		static QAndroidJniObject getInstance(java::util::Locale arg0, android::icu::text::NumberFormat arg1);
 		static QAndroidJniObject getInstance(android::icu::util::ULocale arg0, android::icu::text::NumberFormat arg1, android::icu::text::RelativeDateTimeFormatter_Style arg2, android::icu::text::DisplayContext arg3);
 		jstring combineDateAndTime(jstring arg0, jstring arg1);
-		jstring combineDateAndTime(const QString &arg0, const QString &arg1);
 		jstring format(android::icu::text::RelativeDateTimeFormatter_Direction arg0, android::icu::text::RelativeDateTimeFormatter_AbsoluteUnit arg1);
 		jstring format(jdouble arg0, android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit arg1);
 		jstring format(jdouble arg0, android::icu::text::RelativeDateTimeFormatter_Direction arg1, android::icu::text::RelativeDateTimeFormatter_RelativeUnit arg2);

@@ -16,7 +16,7 @@ namespace android::view::textservice
 	
 	SentenceSuggestionsInfo::SentenceSuggestionsInfo(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SentenceSuggestionsInfo::SentenceSuggestionsInfo(android::os::Parcel &arg0)
+	SentenceSuggestionsInfo::SentenceSuggestionsInfo(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.textservice.SentenceSuggestionsInfo",
@@ -24,7 +24,7 @@ namespace android::view::textservice
 			arg0.__jniObject().object()
 		);
 	}
-	SentenceSuggestionsInfo::SentenceSuggestionsInfo(jarray &arg0, jintArray &arg1, jintArray &arg2)
+	SentenceSuggestionsInfo::SentenceSuggestionsInfo(jarray arg0, jintArray arg1, jintArray arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.textservice.SentenceSuggestionsInfo",

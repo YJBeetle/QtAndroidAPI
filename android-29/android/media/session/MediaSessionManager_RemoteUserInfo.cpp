@@ -6,22 +6,12 @@ namespace android::media::session
 	
 	MediaSessionManager_RemoteUserInfo::MediaSessionManager_RemoteUserInfo(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MediaSessionManager_RemoteUserInfo::MediaSessionManager_RemoteUserInfo(jstring &arg0, jint &arg1, jint &arg2)
+	MediaSessionManager_RemoteUserInfo::MediaSessionManager_RemoteUserInfo(jstring arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.session.MediaSessionManager$RemoteUserInfo",
 			"(Ljava/lang/String;II)V",
 			arg0,
-			arg1,
-			arg2
-		);
-	}
-	MediaSessionManager_RemoteUserInfo::MediaSessionManager_RemoteUserInfo(const QString &arg0, jint &arg1, jint &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.media.session.MediaSessionManager$RemoteUserInfo",
-			"(Ljava/lang/String;II)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2
 		);

@@ -16,8 +16,7 @@ namespace android::os
 		TransactionTooLargeException(QAndroidJniObject obj);
 		// Constructors
 		TransactionTooLargeException();
-		TransactionTooLargeException(jstring &arg0);
-		TransactionTooLargeException(const QString &arg0);
+		TransactionTooLargeException(jstring arg0);
 		
 		// Methods
 	};

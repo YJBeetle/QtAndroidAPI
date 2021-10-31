@@ -29,15 +29,6 @@ namespace javax::xml::validation
 			arg0
 		);
 	}
-	QAndroidJniObject SchemaFactory::newInstance(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"javax.xml.validation.SchemaFactory",
-			"newInstance",
-			"(Ljava/lang/String;)Ljavax/xml/validation/SchemaFactory;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject SchemaFactory::newInstance(jstring arg0, jstring arg1, java::lang::ClassLoader arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -46,17 +37,6 @@ namespace javax::xml::validation
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/ClassLoader;)Ljavax/xml/validation/SchemaFactory;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	QAndroidJniObject SchemaFactory::newInstance(const QString &arg0, const QString &arg1, java::lang::ClassLoader arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"javax.xml.validation.SchemaFactory",
-			"newInstance",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/ClassLoader;)Ljavax/xml/validation/SchemaFactory;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}
@@ -75,28 +55,12 @@ namespace javax::xml::validation
 			arg0
 		);
 	}
-	jboolean SchemaFactory::getFeature(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"getFeature",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jobject SchemaFactory::getProperty(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getProperty",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
 			arg0
-		).object<jobject>();
-	}
-	jobject SchemaFactory::getProperty(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getProperty",
-			"(Ljava/lang/String;)Ljava/lang/Object;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jobject>();
 	}
 	QAndroidJniObject SchemaFactory::getResourceResolver()
@@ -112,14 +76,6 @@ namespace javax::xml::validation
 			"isSchemaLanguageSupported",
 			"(Ljava/lang/String;)Z",
 			arg0
-		);
-	}
-	jboolean SchemaFactory::isSchemaLanguageSupported(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isSchemaLanguageSupported",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject SchemaFactory::newSchema()
@@ -178,30 +134,12 @@ namespace javax::xml::validation
 			arg1
 		);
 	}
-	void SchemaFactory::setFeature(const QString &arg0, jboolean arg1)
-	{
-		__thiz.callMethod<void>(
-			"setFeature",
-			"(Ljava/lang/String;Z)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	void SchemaFactory::setProperty(jstring arg0, jobject arg1)
 	{
 		__thiz.callMethod<void>(
 			"setProperty",
 			"(Ljava/lang/String;Ljava/lang/Object;)V",
 			arg0,
-			arg1
-		);
-	}
-	void SchemaFactory::setProperty(const QString &arg0, jobject arg1)
-	{
-		__thiz.callMethod<void>(
-			"setProperty",
-			"(Ljava/lang/String;Ljava/lang/Object;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

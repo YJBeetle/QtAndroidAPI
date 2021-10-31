@@ -17,10 +17,8 @@ namespace android::security::keystore
 		KeyNotYetValidException(QAndroidJniObject obj);
 		// Constructors
 		KeyNotYetValidException();
-		KeyNotYetValidException(jstring &arg0);
-		KeyNotYetValidException(const QString &arg0);
-		KeyNotYetValidException(jstring &arg0, jthrowable &arg1);
-		KeyNotYetValidException(const QString &arg0, jthrowable &arg1);
+		KeyNotYetValidException(jstring arg0);
+		KeyNotYetValidException(jstring arg0, jthrowable arg1);
 		
 		// Methods
 	};

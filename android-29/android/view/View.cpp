@@ -1010,7 +1010,7 @@ namespace android::view
 	
 	View::View(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	View::View(android::content::Context &arg0)
+	View::View(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.View",
@@ -1018,7 +1018,7 @@ namespace android::view
 			arg0.__jniObject().object()
 		);
 	}
-	View::View(android::content::Context &arg0, __JniBaseClass &arg1)
+	View::View(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.View",
@@ -1027,7 +1027,7 @@ namespace android::view
 			arg1.__jniObject().object()
 		);
 	}
-	View::View(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	View::View(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.View",
@@ -1037,7 +1037,7 @@ namespace android::view
 			arg2
 		);
 	}
-	View::View(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	View::View(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.View",
@@ -1128,16 +1128,6 @@ namespace android::view
 			arg2.__jniObject().object()
 		);
 	}
-	void View::addExtraDataToAccessibilityNodeInfo(android::view::accessibility::AccessibilityNodeInfo arg0, const QString &arg1, android::os::Bundle arg2)
-	{
-		__thiz.callMethod<void>(
-			"addExtraDataToAccessibilityNodeInfo",
-			"(Landroid/view/accessibility/AccessibilityNodeInfo;Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object()
-		);
-	}
 	void View::addFocusables(java::util::ArrayList arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
@@ -1211,14 +1201,6 @@ namespace android::view
 			"announceForAccessibility",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
-		);
-	}
-	void View::announceForAccessibility(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"announceForAccessibility",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void View::autofill(android::util::SparseArray arg0)
@@ -1674,16 +1656,6 @@ namespace android::view
 			"(Ljava/util/ArrayList;Ljava/lang/CharSequence;I)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2
-		);
-	}
-	void View::findViewsWithText(java::util::ArrayList arg0, const QString &arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"findViewsWithText",
-			"(Ljava/util/ArrayList;Ljava/lang/CharSequence;I)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}
@@ -4031,14 +4003,6 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setAccessibilityPaneTitle(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setAccessibilityPaneTitle",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void View::setAccessibilityTraversalAfter(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -4213,14 +4177,6 @@ namespace android::view
 			"setContentDescription",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
-		);
-	}
-	void View::setContentDescription(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setContentDescription",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void View::setContextClickable(jboolean arg0)
@@ -5067,14 +5023,6 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setTooltipText(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTooltipText",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void View::setTop(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -5105,14 +5053,6 @@ namespace android::view
 			"setTransitionName",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void View::setTransitionName(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTransitionName",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void View::setTransitionVisibility(jint arg0)

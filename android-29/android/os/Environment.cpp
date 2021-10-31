@@ -233,15 +233,6 @@ namespace android::os
 			arg0
 		);
 	}
-	QAndroidJniObject Environment::getExternalStoragePublicDirectory(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.os.Environment",
-			"getExternalStoragePublicDirectory",
-			"(Ljava/lang/String;)Ljava/io/File;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jstring Environment::getExternalStorageState()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

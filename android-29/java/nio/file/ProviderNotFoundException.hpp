@@ -15,8 +15,7 @@ namespace java::nio::file
 		ProviderNotFoundException(QAndroidJniObject obj);
 		// Constructors
 		ProviderNotFoundException();
-		ProviderNotFoundException(jstring &arg0);
-		ProviderNotFoundException(const QString &arg0);
+		ProviderNotFoundException(jstring arg0);
 		
 		// Methods
 	};

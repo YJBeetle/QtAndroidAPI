@@ -17,9 +17,8 @@ namespace android::content::pm
 		
 		Signature(QAndroidJniObject obj);
 		// Constructors
-		Signature(jbyteArray &arg0);
-		Signature(jstring &arg0);
-		Signature(const QString &arg0);
+		Signature(jbyteArray arg0);
+		Signature(jstring arg0);
 		Signature() = default;
 		
 		// Methods

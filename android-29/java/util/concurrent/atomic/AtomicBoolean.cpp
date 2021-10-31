@@ -13,7 +13,7 @@ namespace java::util::concurrent::atomic
 			"()V"
 		);
 	}
-	AtomicBoolean::AtomicBoolean(jboolean &arg0)
+	AtomicBoolean::AtomicBoolean(jboolean arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.atomic.AtomicBoolean",

@@ -20,10 +20,10 @@ namespace android::widget
 		
 		AdapterViewFlipper(QAndroidJniObject obj);
 		// Constructors
-		AdapterViewFlipper(android::content::Context &arg0);
-		AdapterViewFlipper(android::content::Context &arg0, __JniBaseClass &arg1);
-		AdapterViewFlipper(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		AdapterViewFlipper(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		AdapterViewFlipper(android::content::Context arg0);
+		AdapterViewFlipper(android::content::Context arg0, __JniBaseClass arg1);
+		AdapterViewFlipper(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		AdapterViewFlipper(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		AdapterViewFlipper() = default;
 		
 		// Methods

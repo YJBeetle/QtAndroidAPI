@@ -13,7 +13,7 @@ namespace android::security::keystore
 			"()V"
 		);
 	}
-	KeyNotYetValidException::KeyNotYetValidException(jstring &arg0)
+	KeyNotYetValidException::KeyNotYetValidException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.security.keystore.KeyNotYetValidException",
@@ -21,29 +21,12 @@ namespace android::security::keystore
 			arg0
 		);
 	}
-	KeyNotYetValidException::KeyNotYetValidException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.security.keystore.KeyNotYetValidException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	KeyNotYetValidException::KeyNotYetValidException(jstring &arg0, jthrowable &arg1)
+	KeyNotYetValidException::KeyNotYetValidException(jstring arg0, jthrowable arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.security.keystore.KeyNotYetValidException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
-			arg1
-		);
-	}
-	KeyNotYetValidException::KeyNotYetValidException(const QString &arg0, jthrowable &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.security.keystore.KeyNotYetValidException",
-			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

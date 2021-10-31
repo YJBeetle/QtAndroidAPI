@@ -56,7 +56,6 @@ namespace android::view
 		jboolean hasExtras();
 		QAndroidJniObject newChild(jint arg0);
 		QAndroidJniObject newHtmlInfoBuilder(jstring arg0);
-		QAndroidJniObject newHtmlInfoBuilder(const QString &arg0);
 		void setAccessibilityFocused(jboolean arg0);
 		void setActivated(jboolean arg0);
 		void setAlpha(jfloat arg0);
@@ -70,10 +69,8 @@ namespace android::view
 		void setChecked(jboolean arg0);
 		void setChildCount(jint arg0);
 		void setClassName(jstring arg0);
-		void setClassName(const QString &arg0);
 		void setClickable(jboolean arg0);
 		void setContentDescription(jstring arg0);
-		void setContentDescription(const QString &arg0);
 		void setContextClickable(jboolean arg0);
 		void setDataIsSensitive(jboolean arg0);
 		void setDimens(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
@@ -82,10 +79,8 @@ namespace android::view
 		void setFocusable(jboolean arg0);
 		void setFocused(jboolean arg0);
 		void setHint(jstring arg0);
-		void setHint(const QString &arg0);
 		void setHtmlInfo(android::view::ViewStructure_HtmlInfo arg0);
 		void setId(jint arg0, jstring arg1, jstring arg2, jstring arg3);
-		void setId(jint arg0, const QString &arg1, const QString &arg2, const QString &arg3);
 		void setImportantForAutofill(jint arg0);
 		void setInputType(jint arg0);
 		void setLocaleList(android::os::LocaleList arg0);
@@ -96,17 +91,13 @@ namespace android::view
 		void setOpaque(jboolean arg0);
 		void setSelected(jboolean arg0);
 		void setText(jstring arg0);
-		void setText(const QString &arg0);
 		void setText(jstring arg0, jint arg1, jint arg2);
-		void setText(const QString &arg0, jint arg1, jint arg2);
 		void setTextIdEntry(jstring arg0);
-		void setTextIdEntry(const QString &arg0);
 		void setTextLines(jintArray arg0, jintArray arg1);
 		void setTextStyle(jfloat arg0, jint arg1, jint arg2, jint arg3);
 		void setTransformation(android::graphics::Matrix arg0);
 		void setVisibility(jint arg0);
 		void setWebDomain(jstring arg0);
-		void setWebDomain(const QString &arg0);
 	};
 } // namespace android::view
 

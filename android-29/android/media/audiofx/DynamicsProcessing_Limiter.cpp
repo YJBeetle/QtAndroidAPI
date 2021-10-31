@@ -14,7 +14,7 @@ namespace android::media::audiofx
 			arg0.__jniObject().object()
 		);
 	}
-	DynamicsProcessing_Limiter::DynamicsProcessing_Limiter(jboolean &arg0, jboolean &arg1, jint &arg2, jfloat &arg3, jfloat &arg4, jfloat &arg5, jfloat &arg6, jfloat &arg7)
+	DynamicsProcessing_Limiter::DynamicsProcessing_Limiter(jboolean arg0, jboolean arg1, jint arg2, jfloat arg3, jfloat arg4, jfloat arg5, jfloat arg6, jfloat arg7)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.audiofx.DynamicsProcessing$Limiter",

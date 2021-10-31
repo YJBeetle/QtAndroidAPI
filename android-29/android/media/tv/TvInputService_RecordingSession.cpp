@@ -9,7 +9,7 @@ namespace android::media::tv
 	
 	TvInputService_RecordingSession::TvInputService_RecordingSession(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	TvInputService_RecordingSession::TvInputService_RecordingSession(android::content::Context &arg0)
+	TvInputService_RecordingSession::TvInputService_RecordingSession(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.tv.TvInputService$RecordingSession",
@@ -49,15 +49,6 @@ namespace android::media::tv
 			"onAppPrivateCommand",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void TvInputService_RecordingSession::onAppPrivateCommand(const QString &arg0, android::os::Bundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"onAppPrivateCommand",
-			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

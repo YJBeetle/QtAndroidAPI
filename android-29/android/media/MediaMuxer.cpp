@@ -10,7 +10,7 @@ namespace android::media
 	
 	MediaMuxer::MediaMuxer(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MediaMuxer::MediaMuxer(java::io::FileDescriptor &arg0, jint &arg1)
+	MediaMuxer::MediaMuxer(java::io::FileDescriptor arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.MediaMuxer",
@@ -19,21 +19,12 @@ namespace android::media
 			arg1
 		);
 	}
-	MediaMuxer::MediaMuxer(jstring &arg0, jint &arg1)
+	MediaMuxer::MediaMuxer(jstring arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.MediaMuxer",
 			"(Ljava/lang/String;I)V",
 			arg0,
-			arg1
-		);
-	}
-	MediaMuxer::MediaMuxer(const QString &arg0, jint &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.media.MediaMuxer",
-			"(Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

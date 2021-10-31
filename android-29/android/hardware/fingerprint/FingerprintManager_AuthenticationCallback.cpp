@@ -25,15 +25,6 @@ namespace android::hardware::fingerprint
 			arg1
 		);
 	}
-	void FingerprintManager_AuthenticationCallback::onAuthenticationError(jint arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"onAuthenticationError",
-			"(ILjava/lang/CharSequence;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	void FingerprintManager_AuthenticationCallback::onAuthenticationFailed()
 	{
 		__thiz.callMethod<void>(
@@ -48,15 +39,6 @@ namespace android::hardware::fingerprint
 			"(ILjava/lang/CharSequence;)V",
 			arg0,
 			arg1
-		);
-	}
-	void FingerprintManager_AuthenticationCallback::onAuthenticationHelp(jint arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"onAuthenticationHelp",
-			"(ILjava/lang/CharSequence;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void FingerprintManager_AuthenticationCallback::onAuthenticationSucceeded(android::hardware::fingerprint::FingerprintManager_AuthenticationResult arg0)

@@ -25,13 +25,11 @@ namespace java::io
 		
 		FileOutputStream(QAndroidJniObject obj);
 		// Constructors
-		FileOutputStream(java::io::File &arg0);
-		FileOutputStream(java::io::FileDescriptor &arg0);
-		FileOutputStream(jstring &arg0);
-		FileOutputStream(const QString &arg0);
-		FileOutputStream(java::io::File &arg0, jboolean &arg1);
-		FileOutputStream(jstring &arg0, jboolean &arg1);
-		FileOutputStream(const QString &arg0, jboolean &arg1);
+		FileOutputStream(java::io::File arg0);
+		FileOutputStream(java::io::FileDescriptor arg0);
+		FileOutputStream(jstring arg0);
+		FileOutputStream(java::io::File arg0, jboolean arg1);
+		FileOutputStream(jstring arg0, jboolean arg1);
 		FileOutputStream() = default;
 		
 		// Methods

@@ -76,17 +76,6 @@ namespace android::app
 			arg3
 		);
 	}
-	void DialogFragment::dump(const QString &arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3
-		);
-	}
 	QAndroidJniObject DialogFragment::getDialog()
 	{
 		return __thiz.callObjectMethod(
@@ -241,15 +230,6 @@ namespace android::app
 			arg1
 		);
 	}
-	jint DialogFragment::show(android::app::FragmentTransaction arg0, const QString &arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"show",
-			"(Landroid/app/FragmentTransaction;Ljava/lang/String;)I",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	void DialogFragment::show(android::app::FragmentManager arg0, jstring arg1)
 	{
 		__thiz.callMethod<void>(
@@ -257,15 +237,6 @@ namespace android::app
 			"(Landroid/app/FragmentManager;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	void DialogFragment::show(android::app::FragmentManager arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"show",
-			"(Landroid/app/FragmentManager;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 } // namespace android::app

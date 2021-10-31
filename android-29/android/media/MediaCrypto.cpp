@@ -7,7 +7,7 @@ namespace android::media
 	
 	MediaCrypto::MediaCrypto(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MediaCrypto::MediaCrypto(java::util::UUID &arg0, jbyteArray &arg1)
+	MediaCrypto::MediaCrypto(java::util::UUID arg0, jbyteArray arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.MediaCrypto",
@@ -40,14 +40,6 @@ namespace android::media
 			"requiresSecureDecoderComponent",
 			"(Ljava/lang/String;)Z",
 			arg0
-		);
-	}
-	jboolean MediaCrypto::requiresSecureDecoderComponent(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"requiresSecureDecoderComponent",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void MediaCrypto::setMediaDrmSession(jbyteArray arg0)

@@ -18,14 +18,10 @@ namespace android::text::style
 		
 		// Methods
 		QAndroidJniObject setCurrency(jstring arg0);
-		QAndroidJniObject setCurrency(const QString &arg0);
 		QAndroidJniObject setFractionalPart(jstring arg0);
-		QAndroidJniObject setFractionalPart(const QString &arg0);
 		QAndroidJniObject setIntegerPart(jstring arg0);
-		QAndroidJniObject setIntegerPart(const QString &arg0);
 		QAndroidJniObject setIntegerPart(jlong arg0);
 		QAndroidJniObject setQuantity(jstring arg0);
-		QAndroidJniObject setQuantity(const QString &arg0);
 	};
 } // namespace android::text::style
 

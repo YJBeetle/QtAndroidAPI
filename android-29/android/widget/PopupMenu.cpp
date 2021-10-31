@@ -9,7 +9,7 @@ namespace android::widget
 	
 	PopupMenu::PopupMenu(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PopupMenu::PopupMenu(android::content::Context &arg0, android::view::View &arg1)
+	PopupMenu::PopupMenu(android::content::Context arg0, android::view::View arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.PopupMenu",
@@ -18,7 +18,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	PopupMenu::PopupMenu(android::content::Context &arg0, android::view::View &arg1, jint &arg2)
+	PopupMenu::PopupMenu(android::content::Context arg0, android::view::View arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.PopupMenu",
@@ -28,7 +28,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	PopupMenu::PopupMenu(android::content::Context &arg0, android::view::View &arg1, jint &arg2, jint &arg3, jint &arg4)
+	PopupMenu::PopupMenu(android::content::Context arg0, android::view::View arg1, jint arg2, jint arg3, jint arg4)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.PopupMenu",

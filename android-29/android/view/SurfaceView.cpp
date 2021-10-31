@@ -10,7 +10,7 @@ namespace android::view
 	
 	SurfaceView::SurfaceView(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SurfaceView::SurfaceView(android::content::Context &arg0)
+	SurfaceView::SurfaceView(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.SurfaceView",
@@ -18,7 +18,7 @@ namespace android::view
 			arg0.__jniObject().object()
 		);
 	}
-	SurfaceView::SurfaceView(android::content::Context &arg0, __JniBaseClass &arg1)
+	SurfaceView::SurfaceView(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.SurfaceView",
@@ -27,7 +27,7 @@ namespace android::view
 			arg1.__jniObject().object()
 		);
 	}
-	SurfaceView::SurfaceView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	SurfaceView::SurfaceView(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.SurfaceView",
@@ -37,7 +37,7 @@ namespace android::view
 			arg2
 		);
 	}
-	SurfaceView::SurfaceView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	SurfaceView::SurfaceView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.SurfaceView",

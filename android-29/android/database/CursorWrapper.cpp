@@ -12,7 +12,7 @@ namespace android::database
 	
 	CursorWrapper::CursorWrapper(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	CursorWrapper::CursorWrapper(__JniBaseClass &arg0)
+	CursorWrapper::CursorWrapper(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.database.CursorWrapper",
@@ -68,28 +68,12 @@ namespace android::database
 			arg0
 		);
 	}
-	jint CursorWrapper::getColumnIndex(const QString &arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getColumnIndex",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jint CursorWrapper::getColumnIndexOrThrow(jstring arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getColumnIndexOrThrow",
 			"(Ljava/lang/String;)I",
 			arg0
-		);
-	}
-	jint CursorWrapper::getColumnIndexOrThrow(const QString &arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getColumnIndexOrThrow",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring CursorWrapper::getColumnName(jint arg0)

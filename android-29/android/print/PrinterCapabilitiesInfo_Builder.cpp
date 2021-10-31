@@ -11,7 +11,7 @@ namespace android::print
 	
 	PrinterCapabilitiesInfo_Builder::PrinterCapabilitiesInfo_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PrinterCapabilitiesInfo_Builder::PrinterCapabilitiesInfo_Builder(android::print::PrinterId &arg0)
+	PrinterCapabilitiesInfo_Builder::PrinterCapabilitiesInfo_Builder(android::print::PrinterId arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.print.PrinterCapabilitiesInfo$Builder",

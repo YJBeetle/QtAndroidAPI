@@ -6,7 +6,7 @@ namespace java::security
 	
 	KeyStore_SecretKeyEntry::KeyStore_SecretKeyEntry(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	KeyStore_SecretKeyEntry::KeyStore_SecretKeyEntry(__JniBaseClass &arg0)
+	KeyStore_SecretKeyEntry::KeyStore_SecretKeyEntry(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.KeyStore$SecretKeyEntry",
@@ -14,7 +14,7 @@ namespace java::security
 			arg0.__jniObject().object()
 		);
 	}
-	KeyStore_SecretKeyEntry::KeyStore_SecretKeyEntry(__JniBaseClass &arg0, __JniBaseClass &arg1)
+	KeyStore_SecretKeyEntry::KeyStore_SecretKeyEntry(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.KeyStore$SecretKeyEntry",

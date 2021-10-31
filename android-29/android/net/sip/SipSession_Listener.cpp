@@ -35,16 +35,6 @@ namespace android::net::sip
 			arg2
 		);
 	}
-	void SipSession_Listener::onCallChangeFailed(android::net::sip::SipSession arg0, jint arg1, const QString &arg2)
-	{
-		__thiz.callMethod<void>(
-			"onCallChangeFailed",
-			"(Landroid/net/sip/SipSession;ILjava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	void SipSession_Listener::onCallEnded(android::net::sip::SipSession arg0)
 	{
 		__thiz.callMethod<void>(
@@ -60,15 +50,6 @@ namespace android::net::sip
 			"(Landroid/net/sip/SipSession;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	void SipSession_Listener::onCallEstablished(android::net::sip::SipSession arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"onCallEstablished",
-			"(Landroid/net/sip/SipSession;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void SipSession_Listener::onCalling(android::net::sip::SipSession arg0)
@@ -87,16 +68,6 @@ namespace android::net::sip
 			arg0.__jniObject().object(),
 			arg1,
 			arg2
-		);
-	}
-	void SipSession_Listener::onError(android::net::sip::SipSession arg0, jint arg1, const QString &arg2)
-	{
-		__thiz.callMethod<void>(
-			"onError",
-			"(Landroid/net/sip/SipSession;ILjava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	void SipSession_Listener::onRegistering(android::net::sip::SipSession arg0)
@@ -126,16 +97,6 @@ namespace android::net::sip
 			arg2
 		);
 	}
-	void SipSession_Listener::onRegistrationFailed(android::net::sip::SipSession arg0, jint arg1, const QString &arg2)
-	{
-		__thiz.callMethod<void>(
-			"onRegistrationFailed",
-			"(Landroid/net/sip/SipSession;ILjava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	void SipSession_Listener::onRegistrationTimeout(android::net::sip::SipSession arg0)
 	{
 		__thiz.callMethod<void>(
@@ -152,16 +113,6 @@ namespace android::net::sip
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2
-		);
-	}
-	void SipSession_Listener::onRinging(android::net::sip::SipSession arg0, android::net::sip::SipProfile arg1, const QString &arg2)
-	{
-		__thiz.callMethod<void>(
-			"onRinging",
-			"(Landroid/net/sip/SipSession;Landroid/net/sip/SipProfile;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	void SipSession_Listener::onRingingBack(android::net::sip::SipSession arg0)

@@ -12,7 +12,7 @@ namespace java::util::concurrent::atomic
 		
 		AtomicStampedReference(QAndroidJniObject obj);
 		// Constructors
-		AtomicStampedReference(jobject &arg0, jint &arg1);
+		AtomicStampedReference(jobject arg0, jint arg1);
 		AtomicStampedReference() = default;
 		
 		// Methods

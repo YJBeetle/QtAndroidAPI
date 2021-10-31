@@ -6,21 +6,12 @@ namespace javax::security::auth::callback
 	
 	PasswordCallback::PasswordCallback(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PasswordCallback::PasswordCallback(jstring &arg0, jboolean &arg1)
+	PasswordCallback::PasswordCallback(jstring arg0, jboolean arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.security.auth.callback.PasswordCallback",
 			"(Ljava/lang/String;Z)V",
 			arg0,
-			arg1
-		);
-	}
-	PasswordCallback::PasswordCallback(const QString &arg0, jboolean &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.security.auth.callback.PasswordCallback",
-			"(Ljava/lang/String;Z)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

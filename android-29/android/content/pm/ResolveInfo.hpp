@@ -61,7 +61,6 @@ namespace android::content::pm
 		// Methods
 		jint describeContents();
 		void dump(__JniBaseClass arg0, jstring arg1);
-		void dump(__JniBaseClass arg0, const QString &arg1);
 		jint getIconResource();
 		QAndroidJniObject loadIcon(android::content::pm::PackageManager arg0);
 		jstring loadLabel(android::content::pm::PackageManager arg0);

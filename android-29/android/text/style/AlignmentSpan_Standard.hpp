@@ -20,8 +20,8 @@ namespace android::text::style
 		
 		AlignmentSpan_Standard(QAndroidJniObject obj);
 		// Constructors
-		AlignmentSpan_Standard(android::os::Parcel &arg0);
-		AlignmentSpan_Standard(android::text::Layout_Alignment &arg0);
+		AlignmentSpan_Standard(android::os::Parcel arg0);
+		AlignmentSpan_Standard(android::text::Layout_Alignment arg0);
 		AlignmentSpan_Standard() = default;
 		
 		// Methods

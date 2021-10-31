@@ -15,7 +15,7 @@ namespace java::sql
 			"()V"
 		);
 	}
-	BatchUpdateException::BatchUpdateException(jintArray &arg0)
+	BatchUpdateException::BatchUpdateException(jintArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.sql.BatchUpdateException",
@@ -23,7 +23,7 @@ namespace java::sql
 			arg0
 		);
 	}
-	BatchUpdateException::BatchUpdateException(jthrowable &arg0)
+	BatchUpdateException::BatchUpdateException(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.sql.BatchUpdateException",
@@ -31,7 +31,7 @@ namespace java::sql
 			arg0
 		);
 	}
-	BatchUpdateException::BatchUpdateException(jintArray &arg0, jthrowable &arg1)
+	BatchUpdateException::BatchUpdateException(jintArray arg0, jthrowable arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.sql.BatchUpdateException",
@@ -40,7 +40,7 @@ namespace java::sql
 			arg1
 		);
 	}
-	BatchUpdateException::BatchUpdateException(jstring &arg0, jintArray &arg1)
+	BatchUpdateException::BatchUpdateException(jstring arg0, jintArray arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.sql.BatchUpdateException",
@@ -49,16 +49,7 @@ namespace java::sql
 			arg1
 		);
 	}
-	BatchUpdateException::BatchUpdateException(const QString &arg0, jintArray &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.sql.BatchUpdateException",
-			"(Ljava/lang/String;[I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
-	BatchUpdateException::BatchUpdateException(jstring &arg0, jintArray &arg1, jthrowable &arg2)
+	BatchUpdateException::BatchUpdateException(jstring arg0, jintArray arg1, jthrowable arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.sql.BatchUpdateException",
@@ -68,17 +59,7 @@ namespace java::sql
 			arg2
 		);
 	}
-	BatchUpdateException::BatchUpdateException(const QString &arg0, jintArray &arg1, jthrowable &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"java.sql.BatchUpdateException",
-			"(Ljava/lang/String;[ILjava/lang/Throwable;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2
-		);
-	}
-	BatchUpdateException::BatchUpdateException(jstring &arg0, jstring &arg1, jintArray &arg2)
+	BatchUpdateException::BatchUpdateException(jstring arg0, jstring arg1, jintArray arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.sql.BatchUpdateException",
@@ -88,17 +69,7 @@ namespace java::sql
 			arg2
 		);
 	}
-	BatchUpdateException::BatchUpdateException(const QString &arg0, const QString &arg1, jintArray &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"java.sql.BatchUpdateException",
-			"(Ljava/lang/String;Ljava/lang/String;[I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2
-		);
-	}
-	BatchUpdateException::BatchUpdateException(jstring &arg0, jstring &arg1, jintArray &arg2, jthrowable &arg3)
+	BatchUpdateException::BatchUpdateException(jstring arg0, jstring arg1, jintArray arg2, jthrowable arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"java.sql.BatchUpdateException",
@@ -109,18 +80,7 @@ namespace java::sql
 			arg3
 		);
 	}
-	BatchUpdateException::BatchUpdateException(const QString &arg0, const QString &arg1, jintArray &arg2, jthrowable &arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"java.sql.BatchUpdateException",
-			"(Ljava/lang/String;Ljava/lang/String;[ILjava/lang/Throwable;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2,
-			arg3
-		);
-	}
-	BatchUpdateException::BatchUpdateException(jstring &arg0, jstring &arg1, jint &arg2, jintArray &arg3)
+	BatchUpdateException::BatchUpdateException(jstring arg0, jstring arg1, jint arg2, jintArray arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"java.sql.BatchUpdateException",
@@ -131,18 +91,7 @@ namespace java::sql
 			arg3
 		);
 	}
-	BatchUpdateException::BatchUpdateException(const QString &arg0, const QString &arg1, jint &arg2, jintArray &arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"java.sql.BatchUpdateException",
-			"(Ljava/lang/String;Ljava/lang/String;I[I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2,
-			arg3
-		);
-	}
-	BatchUpdateException::BatchUpdateException(jstring &arg0, jstring &arg1, jint &arg2, jintArray &arg3, jthrowable &arg4)
+	BatchUpdateException::BatchUpdateException(jstring arg0, jstring arg1, jint arg2, jintArray arg3, jthrowable arg4)
 	{
 		__thiz = QAndroidJniObject(
 			"java.sql.BatchUpdateException",
@@ -154,37 +103,13 @@ namespace java::sql
 			arg4
 		);
 	}
-	BatchUpdateException::BatchUpdateException(const QString &arg0, const QString &arg1, jint &arg2, jintArray &arg3, jthrowable &arg4)
-	{
-		__thiz = QAndroidJniObject(
-			"java.sql.BatchUpdateException",
-			"(Ljava/lang/String;Ljava/lang/String;I[ILjava/lang/Throwable;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2,
-			arg3,
-			arg4
-		);
-	}
-	BatchUpdateException::BatchUpdateException(jstring &arg0, jstring &arg1, jint &arg2, jlongArray &arg3, jthrowable &arg4)
+	BatchUpdateException::BatchUpdateException(jstring arg0, jstring arg1, jint arg2, jlongArray arg3, jthrowable arg4)
 	{
 		__thiz = QAndroidJniObject(
 			"java.sql.BatchUpdateException",
 			"(Ljava/lang/String;Ljava/lang/String;I[JLjava/lang/Throwable;)V",
 			arg0,
 			arg1,
-			arg2,
-			arg3,
-			arg4
-		);
-	}
-	BatchUpdateException::BatchUpdateException(const QString &arg0, const QString &arg1, jint &arg2, jlongArray &arg3, jthrowable &arg4)
-	{
-		__thiz = QAndroidJniObject(
-			"java.sql.BatchUpdateException",
-			"(Ljava/lang/String;Ljava/lang/String;I[JLjava/lang/Throwable;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2,
 			arg3,
 			arg4

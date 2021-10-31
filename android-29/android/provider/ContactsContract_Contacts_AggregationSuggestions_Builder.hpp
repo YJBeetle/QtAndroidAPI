@@ -20,7 +20,6 @@ namespace android::provider
 		
 		// Methods
 		QAndroidJniObject addNameParameter(jstring arg0);
-		QAndroidJniObject addNameParameter(const QString &arg0);
 		QAndroidJniObject build();
 		QAndroidJniObject setContactId(jlong arg0);
 		QAndroidJniObject setLimit(jint arg0);

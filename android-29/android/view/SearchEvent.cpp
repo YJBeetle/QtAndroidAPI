@@ -7,7 +7,7 @@ namespace android::view
 	
 	SearchEvent::SearchEvent(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SearchEvent::SearchEvent(android::view::InputDevice &arg0)
+	SearchEvent::SearchEvent(android::view::InputDevice arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.SearchEvent",

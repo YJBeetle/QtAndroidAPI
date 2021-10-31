@@ -65,15 +65,6 @@ namespace android::icu::lang
 			arg0
 		);
 	}
-	QAndroidJniObject UScript_ScriptUsage::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.lang.UScript$ScriptUsage",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/icu/lang/UScript$ScriptUsage;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray UScript_ScriptUsage::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

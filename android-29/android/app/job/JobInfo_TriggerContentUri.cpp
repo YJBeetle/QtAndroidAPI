@@ -23,7 +23,7 @@ namespace android::app::job
 	
 	JobInfo_TriggerContentUri::JobInfo_TriggerContentUri(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	JobInfo_TriggerContentUri::JobInfo_TriggerContentUri(android::net::Uri &arg0, jint &arg1)
+	JobInfo_TriggerContentUri::JobInfo_TriggerContentUri(android::net::Uri arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.job.JobInfo$TriggerContentUri",

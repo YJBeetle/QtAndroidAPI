@@ -26,9 +26,9 @@ namespace android::hardware::camera2::params
 		
 		OutputConfiguration(QAndroidJniObject obj);
 		// Constructors
-		OutputConfiguration(android::view::Surface &arg0);
-		OutputConfiguration(android::util::Size &arg0, jclass &arg1);
-		OutputConfiguration(jint &arg0, android::view::Surface &arg1);
+		OutputConfiguration(android::view::Surface arg0);
+		OutputConfiguration(android::util::Size arg0, jclass arg1);
+		OutputConfiguration(jint arg0, android::view::Surface arg1);
 		OutputConfiguration() = default;
 		
 		// Methods
@@ -43,7 +43,6 @@ namespace android::hardware::camera2::params
 		jint hashCode();
 		void removeSurface(android::view::Surface arg0);
 		void setPhysicalCameraId(jstring arg0);
-		void setPhysicalCameraId(const QString &arg0);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::hardware::camera2::params

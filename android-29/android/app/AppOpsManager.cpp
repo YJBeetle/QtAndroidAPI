@@ -331,15 +331,6 @@ namespace android::app
 			arg0
 		).object<jstring>();
 	}
-	jstring AppOpsManager::permissionToOp(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.app.AppOpsManager",
-			"permissionToOp",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
 	jint AppOpsManager::checkOp(jstring arg0, jint arg1, jstring arg2)
 	{
 		return __thiz.callMethod<jint>(
@@ -348,16 +339,6 @@ namespace android::app
 			arg0,
 			arg1,
 			arg2
-		);
-	}
-	jint AppOpsManager::checkOp(const QString &arg0, jint arg1, const QString &arg2)
-	{
-		return __thiz.callMethod<jint>(
-			"checkOp",
-			"(Ljava/lang/String;ILjava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	jint AppOpsManager::checkOpNoThrow(jstring arg0, jint arg1, jstring arg2)
@@ -370,16 +351,6 @@ namespace android::app
 			arg2
 		);
 	}
-	jint AppOpsManager::checkOpNoThrow(const QString &arg0, jint arg1, const QString &arg2)
-	{
-		return __thiz.callMethod<jint>(
-			"checkOpNoThrow",
-			"(Ljava/lang/String;ILjava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	void AppOpsManager::checkPackage(jint arg0, jstring arg1)
 	{
 		__thiz.callMethod<void>(
@@ -387,15 +358,6 @@ namespace android::app
 			"(ILjava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	void AppOpsManager::checkPackage(jint arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"checkPackage",
-			"(ILjava/lang/String;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void AppOpsManager::finishOp(jstring arg0, jint arg1, jstring arg2)
@@ -408,16 +370,6 @@ namespace android::app
 			arg2
 		);
 	}
-	void AppOpsManager::finishOp(const QString &arg0, jint arg1, const QString &arg2)
-	{
-		__thiz.callMethod<void>(
-			"finishOp",
-			"(Ljava/lang/String;ILjava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	jint AppOpsManager::noteOp(jstring arg0, jint arg1, jstring arg2)
 	{
 		return __thiz.callMethod<jint>(
@@ -426,16 +378,6 @@ namespace android::app
 			arg0,
 			arg1,
 			arg2
-		);
-	}
-	jint AppOpsManager::noteOp(const QString &arg0, jint arg1, const QString &arg2)
-	{
-		return __thiz.callMethod<jint>(
-			"noteOp",
-			"(Ljava/lang/String;ILjava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	jint AppOpsManager::noteOpNoThrow(jstring arg0, jint arg1, jstring arg2)
@@ -448,16 +390,6 @@ namespace android::app
 			arg2
 		);
 	}
-	jint AppOpsManager::noteOpNoThrow(const QString &arg0, jint arg1, const QString &arg2)
-	{
-		return __thiz.callMethod<jint>(
-			"noteOpNoThrow",
-			"(Ljava/lang/String;ILjava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	jint AppOpsManager::noteProxyOp(jstring arg0, jstring arg1)
 	{
 		return __thiz.callMethod<jint>(
@@ -465,15 +397,6 @@ namespace android::app
 			"(Ljava/lang/String;Ljava/lang/String;)I",
 			arg0,
 			arg1
-		);
-	}
-	jint AppOpsManager::noteProxyOp(const QString &arg0, const QString &arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"noteProxyOp",
-			"(Ljava/lang/String;Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	jint AppOpsManager::noteProxyOpNoThrow(jstring arg0, jstring arg1)
@@ -485,15 +408,6 @@ namespace android::app
 			arg1
 		);
 	}
-	jint AppOpsManager::noteProxyOpNoThrow(const QString &arg0, const QString &arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"noteProxyOpNoThrow",
-			"(Ljava/lang/String;Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	jint AppOpsManager::noteProxyOpNoThrow(jstring arg0, jstring arg1, jint arg2)
 	{
 		return __thiz.callMethod<jint>(
@@ -501,16 +415,6 @@ namespace android::app
 			"(Ljava/lang/String;Ljava/lang/String;I)I",
 			arg0,
 			arg1,
-			arg2
-		);
-	}
-	jint AppOpsManager::noteProxyOpNoThrow(const QString &arg0, const QString &arg1, jint arg2)
-	{
-		return __thiz.callMethod<jint>(
-			"noteProxyOpNoThrow",
-			"(Ljava/lang/String;Ljava/lang/String;I)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}
@@ -524,16 +428,6 @@ namespace android::app
 			arg2
 		);
 	}
-	jint AppOpsManager::startOp(const QString &arg0, jint arg1, const QString &arg2)
-	{
-		return __thiz.callMethod<jint>(
-			"startOp",
-			"(Ljava/lang/String;ILjava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	jint AppOpsManager::startOpNoThrow(jstring arg0, jint arg1, jstring arg2)
 	{
 		return __thiz.callMethod<jint>(
@@ -542,16 +436,6 @@ namespace android::app
 			arg0,
 			arg1,
 			arg2
-		);
-	}
-	jint AppOpsManager::startOpNoThrow(const QString &arg0, jint arg1, const QString &arg2)
-	{
-		return __thiz.callMethod<jint>(
-			"startOpNoThrow",
-			"(Ljava/lang/String;ILjava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	void AppOpsManager::startWatchingMode(jstring arg0, jstring arg1, __JniBaseClass arg2)
@@ -564,16 +448,6 @@ namespace android::app
 			arg2.__jniObject().object()
 		);
 	}
-	void AppOpsManager::startWatchingMode(const QString &arg0, const QString &arg1, __JniBaseClass arg2)
-	{
-		__thiz.callMethod<void>(
-			"startWatchingMode",
-			"(Ljava/lang/String;Ljava/lang/String;Landroid/app/AppOpsManager$OnOpChangedListener;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object()
-		);
-	}
 	void AppOpsManager::startWatchingMode(jstring arg0, jstring arg1, jint arg2, __JniBaseClass arg3)
 	{
 		__thiz.callMethod<void>(
@@ -581,17 +455,6 @@ namespace android::app
 			"(Ljava/lang/String;Ljava/lang/String;ILandroid/app/AppOpsManager$OnOpChangedListener;)V",
 			arg0,
 			arg1,
-			arg2,
-			arg3.__jniObject().object()
-		);
-	}
-	void AppOpsManager::startWatchingMode(const QString &arg0, const QString &arg1, jint arg2, __JniBaseClass arg3)
-	{
-		__thiz.callMethod<void>(
-			"startWatchingMode",
-			"(Ljava/lang/String;Ljava/lang/String;ILandroid/app/AppOpsManager$OnOpChangedListener;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2,
 			arg3.__jniObject().object()
 		);
@@ -614,16 +477,6 @@ namespace android::app
 			arg2
 		);
 	}
-	jint AppOpsManager::unsafeCheckOp(const QString &arg0, jint arg1, const QString &arg2)
-	{
-		return __thiz.callMethod<jint>(
-			"unsafeCheckOp",
-			"(Ljava/lang/String;ILjava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	jint AppOpsManager::unsafeCheckOpNoThrow(jstring arg0, jint arg1, jstring arg2)
 	{
 		return __thiz.callMethod<jint>(
@@ -632,16 +485,6 @@ namespace android::app
 			arg0,
 			arg1,
 			arg2
-		);
-	}
-	jint AppOpsManager::unsafeCheckOpNoThrow(const QString &arg0, jint arg1, const QString &arg2)
-	{
-		return __thiz.callMethod<jint>(
-			"unsafeCheckOpNoThrow",
-			"(Ljava/lang/String;ILjava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	jint AppOpsManager::unsafeCheckOpRaw(jstring arg0, jint arg1, jstring arg2)
@@ -654,16 +497,6 @@ namespace android::app
 			arg2
 		);
 	}
-	jint AppOpsManager::unsafeCheckOpRaw(const QString &arg0, jint arg1, const QString &arg2)
-	{
-		return __thiz.callMethod<jint>(
-			"unsafeCheckOpRaw",
-			"(Ljava/lang/String;ILjava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	jint AppOpsManager::unsafeCheckOpRawNoThrow(jstring arg0, jint arg1, jstring arg2)
 	{
 		return __thiz.callMethod<jint>(
@@ -672,16 +505,6 @@ namespace android::app
 			arg0,
 			arg1,
 			arg2
-		);
-	}
-	jint AppOpsManager::unsafeCheckOpRawNoThrow(const QString &arg0, jint arg1, const QString &arg2)
-	{
-		return __thiz.callMethod<jint>(
-			"unsafeCheckOpRawNoThrow",
-			"(Ljava/lang/String;ILjava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 } // namespace android::app

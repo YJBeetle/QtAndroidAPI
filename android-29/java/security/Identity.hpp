@@ -20,10 +20,8 @@ namespace java::security
 		
 		Identity(QAndroidJniObject obj);
 		// Constructors
-		Identity(jstring &arg0);
-		Identity(const QString &arg0);
-		Identity(jstring &arg0, java::security::IdentityScope &arg1);
-		Identity(const QString &arg0, java::security::IdentityScope &arg1);
+		Identity(jstring arg0);
+		Identity(jstring arg0, java::security::IdentityScope arg1);
 		Identity() = default;
 		
 		// Methods
@@ -37,7 +35,6 @@ namespace java::security
 		jint hashCode();
 		void removeCertificate(__JniBaseClass arg0);
 		void setInfo(jstring arg0);
-		void setInfo(const QString &arg0);
 		void setPublicKey(__JniBaseClass arg0);
 		jstring toString();
 		jstring toString(jboolean arg0);

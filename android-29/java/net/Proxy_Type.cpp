@@ -41,15 +41,6 @@ namespace java::net
 			arg0
 		);
 	}
-	QAndroidJniObject Proxy_Type::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.net.Proxy$Type",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/net/Proxy$Type;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray Proxy_Type::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

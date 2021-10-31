@@ -326,7 +326,6 @@ namespace java::lang
 		
 		// Methods
 		static QAndroidJniObject forName(jstring arg0);
-		static QAndroidJniObject forName(const QString &arg0);
 		static QAndroidJniObject of(jchar arg0);
 		static QAndroidJniObject of(jint arg0);
 	};

@@ -9,7 +9,7 @@ namespace android::widget
 	
 	ViewSwitcher::ViewSwitcher(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ViewSwitcher::ViewSwitcher(android::content::Context &arg0)
+	ViewSwitcher::ViewSwitcher(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ViewSwitcher",
@@ -17,7 +17,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	ViewSwitcher::ViewSwitcher(android::content::Context &arg0, __JniBaseClass &arg1)
+	ViewSwitcher::ViewSwitcher(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ViewSwitcher",

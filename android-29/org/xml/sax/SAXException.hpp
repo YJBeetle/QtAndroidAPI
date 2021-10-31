@@ -26,11 +26,9 @@ namespace org::xml::sax
 		SAXException(QAndroidJniObject obj);
 		// Constructors
 		SAXException();
-		SAXException(java::lang::Exception &arg0);
-		SAXException(jstring &arg0);
-		SAXException(const QString &arg0);
-		SAXException(jstring &arg0, java::lang::Exception &arg1);
-		SAXException(const QString &arg0, java::lang::Exception &arg1);
+		SAXException(java::lang::Exception arg0);
+		SAXException(jstring arg0);
+		SAXException(jstring arg0, java::lang::Exception arg1);
 		
 		// Methods
 		jthrowable getCause();

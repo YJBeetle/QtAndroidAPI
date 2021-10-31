@@ -13,7 +13,7 @@ namespace java::util::concurrent::atomic
 		AtomicBoolean(QAndroidJniObject obj);
 		// Constructors
 		AtomicBoolean();
-		AtomicBoolean(jboolean &arg0);
+		AtomicBoolean(jboolean arg0);
 		
 		// Methods
 		jboolean compareAndExchange(jboolean arg0, jboolean arg1);

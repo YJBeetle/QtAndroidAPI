@@ -22,8 +22,8 @@ namespace java::util
 		IdentityHashMap(QAndroidJniObject obj);
 		// Constructors
 		IdentityHashMap();
-		IdentityHashMap(jint &arg0);
-		IdentityHashMap(__JniBaseClass &arg0);
+		IdentityHashMap(jint arg0);
+		IdentityHashMap(__JniBaseClass arg0);
 		
 		// Methods
 		void clear();

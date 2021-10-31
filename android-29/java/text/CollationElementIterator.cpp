@@ -96,14 +96,6 @@ namespace java::text
 			arg0
 		);
 	}
-	void CollationElementIterator::setText(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setText",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void CollationElementIterator::setText(__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(

@@ -15,8 +15,7 @@ namespace javax::crypto
 		ShortBufferException(QAndroidJniObject obj);
 		// Constructors
 		ShortBufferException();
-		ShortBufferException(jstring &arg0);
-		ShortBufferException(const QString &arg0);
+		ShortBufferException(jstring arg0);
 		
 		// Methods
 	};

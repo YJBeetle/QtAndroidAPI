@@ -13,9 +13,8 @@ namespace java::security::spec
 		
 		X509EncodedKeySpec(QAndroidJniObject obj);
 		// Constructors
-		X509EncodedKeySpec(jbyteArray &arg0);
-		X509EncodedKeySpec(jbyteArray &arg0, jstring &arg1);
-		X509EncodedKeySpec(jbyteArray &arg0, const QString &arg1);
+		X509EncodedKeySpec(jbyteArray arg0);
+		X509EncodedKeySpec(jbyteArray arg0, jstring arg1);
 		X509EncodedKeySpec() = default;
 		
 		// Methods

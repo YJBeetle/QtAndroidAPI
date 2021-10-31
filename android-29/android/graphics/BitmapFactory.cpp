@@ -54,15 +54,6 @@ namespace android::graphics
 			arg0
 		);
 	}
-	QAndroidJniObject BitmapFactory::decodeFile(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.BitmapFactory",
-			"decodeFile",
-			"(Ljava/lang/String;)Landroid/graphics/Bitmap;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject BitmapFactory::decodeFile(jstring arg0, android::graphics::BitmapFactory_Options arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -70,16 +61,6 @@ namespace android::graphics
 			"decodeFile",
 			"(Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject BitmapFactory::decodeFile(const QString &arg0, android::graphics::BitmapFactory_Options arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.BitmapFactory",
-			"decodeFile",
-			"(Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

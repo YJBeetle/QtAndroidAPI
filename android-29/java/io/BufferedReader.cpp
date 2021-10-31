@@ -7,7 +7,7 @@ namespace java::io
 	
 	BufferedReader::BufferedReader(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	BufferedReader::BufferedReader(java::io::Reader &arg0)
+	BufferedReader::BufferedReader(java::io::Reader arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.BufferedReader",
@@ -15,7 +15,7 @@ namespace java::io
 			arg0.__jniObject().object()
 		);
 	}
-	BufferedReader::BufferedReader(java::io::Reader &arg0, jint &arg1)
+	BufferedReader::BufferedReader(java::io::Reader arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.BufferedReader",

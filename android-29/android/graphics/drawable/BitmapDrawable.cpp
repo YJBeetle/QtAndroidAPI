@@ -29,7 +29,7 @@ namespace android::graphics::drawable
 			"()V"
 		);
 	}
-	BitmapDrawable::BitmapDrawable(android::content::res::Resources &arg0)
+	BitmapDrawable::BitmapDrawable(android::content::res::Resources arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.BitmapDrawable",
@@ -37,7 +37,7 @@ namespace android::graphics::drawable
 			arg0.__jniObject().object()
 		);
 	}
-	BitmapDrawable::BitmapDrawable(android::graphics::Bitmap &arg0)
+	BitmapDrawable::BitmapDrawable(android::graphics::Bitmap arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.BitmapDrawable",
@@ -45,7 +45,7 @@ namespace android::graphics::drawable
 			arg0.__jniObject().object()
 		);
 	}
-	BitmapDrawable::BitmapDrawable(java::io::InputStream &arg0)
+	BitmapDrawable::BitmapDrawable(java::io::InputStream arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.BitmapDrawable",
@@ -53,7 +53,7 @@ namespace android::graphics::drawable
 			arg0.__jniObject().object()
 		);
 	}
-	BitmapDrawable::BitmapDrawable(jstring &arg0)
+	BitmapDrawable::BitmapDrawable(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.BitmapDrawable",
@@ -61,15 +61,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	BitmapDrawable::BitmapDrawable(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.graphics.drawable.BitmapDrawable",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	BitmapDrawable::BitmapDrawable(android::content::res::Resources &arg0, android::graphics::Bitmap &arg1)
+	BitmapDrawable::BitmapDrawable(android::content::res::Resources arg0, android::graphics::Bitmap arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.BitmapDrawable",
@@ -78,7 +70,7 @@ namespace android::graphics::drawable
 			arg1.__jniObject().object()
 		);
 	}
-	BitmapDrawable::BitmapDrawable(android::content::res::Resources &arg0, java::io::InputStream &arg1)
+	BitmapDrawable::BitmapDrawable(android::content::res::Resources arg0, java::io::InputStream arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.BitmapDrawable",
@@ -87,22 +79,13 @@ namespace android::graphics::drawable
 			arg1.__jniObject().object()
 		);
 	}
-	BitmapDrawable::BitmapDrawable(android::content::res::Resources &arg0, jstring &arg1)
+	BitmapDrawable::BitmapDrawable(android::content::res::Resources arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.BitmapDrawable",
 			"(Landroid/content/res/Resources;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	BitmapDrawable::BitmapDrawable(android::content::res::Resources &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.graphics.drawable.BitmapDrawable",
-			"(Landroid/content/res/Resources;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	

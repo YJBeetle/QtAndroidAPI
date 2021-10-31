@@ -490,18 +490,6 @@ namespace android::app
 			arg4
 		);
 	}
-	void SearchManager::startSearch(const QString &arg0, jboolean arg1, android::content::ComponentName arg2, android::os::Bundle arg3, jboolean arg4)
-	{
-		__thiz.callMethod<void>(
-			"startSearch",
-			"(Ljava/lang/String;ZLandroid/content/ComponentName;Landroid/os/Bundle;Z)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
-			arg4
-		);
-	}
 	void SearchManager::stopSearch()
 	{
 		__thiz.callMethod<void>(
@@ -515,16 +503,6 @@ namespace android::app
 			"triggerSearch",
 			"(Ljava/lang/String;Landroid/content/ComponentName;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	void SearchManager::triggerSearch(const QString &arg0, android::content::ComponentName arg1, android::os::Bundle arg2)
-	{
-		__thiz.callMethod<void>(
-			"triggerSearch",
-			"(Ljava/lang/String;Landroid/content/ComponentName;Landroid/os/Bundle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object()
 		);

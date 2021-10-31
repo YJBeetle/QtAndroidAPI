@@ -8,7 +8,7 @@ namespace android::widget
 	
 	AbsoluteLayout::AbsoluteLayout(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AbsoluteLayout::AbsoluteLayout(android::content::Context &arg0)
+	AbsoluteLayout::AbsoluteLayout(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.AbsoluteLayout",
@@ -16,7 +16,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	AbsoluteLayout::AbsoluteLayout(android::content::Context &arg0, __JniBaseClass &arg1)
+	AbsoluteLayout::AbsoluteLayout(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.AbsoluteLayout",
@@ -25,7 +25,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	AbsoluteLayout::AbsoluteLayout(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	AbsoluteLayout::AbsoluteLayout(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.AbsoluteLayout",
@@ -35,7 +35,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	AbsoluteLayout::AbsoluteLayout(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	AbsoluteLayout::AbsoluteLayout(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.AbsoluteLayout",

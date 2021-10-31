@@ -16,7 +16,7 @@ namespace android::view::accessibility
 	
 	AccessibilityRequestPreparer::AccessibilityRequestPreparer(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AccessibilityRequestPreparer::AccessibilityRequestPreparer(android::view::View &arg0, jint &arg1)
+	AccessibilityRequestPreparer::AccessibilityRequestPreparer(android::view::View arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.accessibility.AccessibilityRequestPreparer",
@@ -41,17 +41,6 @@ namespace android::view::accessibility
 			"(ILjava/lang/String;Landroid/os/Bundle;Landroid/os/Message;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
-		);
-	}
-	void AccessibilityRequestPreparer::onPrepareExtraData(jint arg0, const QString &arg1, android::os::Bundle arg2, android::os::Message arg3)
-	{
-		__thiz.callMethod<void>(
-			"onPrepareExtraData",
-			"(ILjava/lang/String;Landroid/os/Bundle;Landroid/os/Message;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object()
 		);

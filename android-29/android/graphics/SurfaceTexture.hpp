@@ -16,9 +16,9 @@ namespace android::graphics
 		
 		SurfaceTexture(QAndroidJniObject obj);
 		// Constructors
-		SurfaceTexture(jboolean &arg0);
-		SurfaceTexture(jint &arg0);
-		SurfaceTexture(jint &arg0, jboolean &arg1);
+		SurfaceTexture(jboolean arg0);
+		SurfaceTexture(jint arg0);
+		SurfaceTexture(jint arg0, jboolean arg1);
 		SurfaceTexture() = default;
 		
 		// Methods

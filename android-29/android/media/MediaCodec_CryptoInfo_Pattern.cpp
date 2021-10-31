@@ -6,7 +6,7 @@ namespace android::media
 	
 	MediaCodec_CryptoInfo_Pattern::MediaCodec_CryptoInfo_Pattern(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MediaCodec_CryptoInfo_Pattern::MediaCodec_CryptoInfo_Pattern(jint &arg0, jint &arg1)
+	MediaCodec_CryptoInfo_Pattern::MediaCodec_CryptoInfo_Pattern(jint arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.MediaCodec$CryptoInfo$Pattern",

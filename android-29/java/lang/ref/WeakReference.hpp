@@ -17,8 +17,8 @@ namespace java::lang::ref
 		
 		WeakReference(QAndroidJniObject obj);
 		// Constructors
-		WeakReference(jobject &arg0);
-		WeakReference(jobject &arg0, java::lang::ref::ReferenceQueue &arg1);
+		WeakReference(jobject arg0);
+		WeakReference(jobject arg0, java::lang::ref::ReferenceQueue arg1);
 		WeakReference() = default;
 		
 		// Methods

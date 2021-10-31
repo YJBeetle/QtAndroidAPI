@@ -31,14 +31,6 @@ namespace android::net::wifi
 			arg0
 		);
 	}
-	void WifiManager_WpsCallback::onStarted(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"onStarted",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void WifiManager_WpsCallback::onSucceeded()
 	{
 		__thiz.callMethod<void>(

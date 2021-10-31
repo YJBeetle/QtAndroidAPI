@@ -16,7 +16,6 @@ namespace android::app::backup
 		
 		// Methods
 		void onUpdate(jint arg0, jstring arg1);
-		void onUpdate(jint arg0, const QString &arg1);
 		void restoreFinished(jint arg0);
 		void restoreStarting(jint arg0);
 	};

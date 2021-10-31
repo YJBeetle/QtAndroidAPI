@@ -6,7 +6,7 @@ namespace java::text
 	
 	StringCharacterIterator::StringCharacterIterator(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	StringCharacterIterator::StringCharacterIterator(jstring &arg0)
+	StringCharacterIterator::StringCharacterIterator(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.text.StringCharacterIterator",
@@ -14,15 +14,7 @@ namespace java::text
 			arg0
 		);
 	}
-	StringCharacterIterator::StringCharacterIterator(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.text.StringCharacterIterator",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	StringCharacterIterator::StringCharacterIterator(jstring &arg0, jint &arg1)
+	StringCharacterIterator::StringCharacterIterator(jstring arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.text.StringCharacterIterator",
@@ -31,32 +23,12 @@ namespace java::text
 			arg1
 		);
 	}
-	StringCharacterIterator::StringCharacterIterator(const QString &arg0, jint &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.text.StringCharacterIterator",
-			"(Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
-	StringCharacterIterator::StringCharacterIterator(jstring &arg0, jint &arg1, jint &arg2, jint &arg3)
+	StringCharacterIterator::StringCharacterIterator(jstring arg0, jint arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"java.text.StringCharacterIterator",
 			"(Ljava/lang/String;III)V",
 			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	StringCharacterIterator::StringCharacterIterator(const QString &arg0, jint &arg1, jint &arg2, jint &arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"java.text.StringCharacterIterator",
-			"(Ljava/lang/String;III)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2,
 			arg3
@@ -156,14 +128,6 @@ namespace java::text
 			"setText",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void StringCharacterIterator::setText(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setText",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace java::text

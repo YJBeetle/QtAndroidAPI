@@ -12,7 +12,7 @@ namespace android::util
 	
 	MutableDouble::MutableDouble(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MutableDouble::MutableDouble(jdouble &arg0)
+	MutableDouble::MutableDouble(jdouble arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.MutableDouble",

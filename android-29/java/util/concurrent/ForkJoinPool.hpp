@@ -39,9 +39,9 @@ namespace java::util::concurrent
 		ForkJoinPool(QAndroidJniObject obj);
 		// Constructors
 		ForkJoinPool();
-		ForkJoinPool(jint &arg0);
-		ForkJoinPool(jint &arg0, __JniBaseClass &arg1, __JniBaseClass &arg2, jboolean &arg3);
-		ForkJoinPool(jint &arg0, __JniBaseClass &arg1, __JniBaseClass &arg2, jboolean &arg3, jint &arg4, jint &arg5, jint &arg6, __JniBaseClass &arg7, jlong &arg8, java::util::concurrent::TimeUnit &arg9);
+		ForkJoinPool(jint arg0);
+		ForkJoinPool(jint arg0, __JniBaseClass arg1, __JniBaseClass arg2, jboolean arg3);
+		ForkJoinPool(jint arg0, __JniBaseClass arg1, __JniBaseClass arg2, jboolean arg3, jint arg4, jint arg5, jint arg6, __JniBaseClass arg7, jlong arg8, java::util::concurrent::TimeUnit arg9);
 		
 		// Methods
 		static QAndroidJniObject commonPool();

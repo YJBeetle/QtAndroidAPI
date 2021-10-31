@@ -28,15 +28,6 @@ namespace java::security::cert
 			arg0
 		);
 	}
-	QAndroidJniObject CertPathValidator::getInstance(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.security.cert.CertPathValidator",
-			"getInstance",
-			"(Ljava/lang/String;)Ljava/security/cert/CertPathValidator;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject CertPathValidator::getInstance(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -47,16 +38,6 @@ namespace java::security::cert
 			arg1
 		);
 	}
-	QAndroidJniObject CertPathValidator::getInstance(const QString &arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.security.cert.CertPathValidator",
-			"getInstance",
-			"(Ljava/lang/String;Ljava/lang/String;)Ljava/security/cert/CertPathValidator;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	QAndroidJniObject CertPathValidator::getInstance(jstring arg0, java::security::Provider arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -64,16 +45,6 @@ namespace java::security::cert
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/cert/CertPathValidator;",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject CertPathValidator::getInstance(const QString &arg0, java::security::Provider arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.security.cert.CertPathValidator",
-			"getInstance",
-			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/cert/CertPathValidator;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

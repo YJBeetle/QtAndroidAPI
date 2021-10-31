@@ -23,7 +23,7 @@ namespace android::widget
 	
 	Magnifier::Magnifier(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Magnifier::Magnifier(android::view::View &arg0)
+	Magnifier::Magnifier(android::view::View arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.Magnifier",

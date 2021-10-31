@@ -13,20 +13,12 @@ namespace java::io
 			"()V"
 		);
 	}
-	UTFDataFormatException::UTFDataFormatException(jstring &arg0)
+	UTFDataFormatException::UTFDataFormatException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.UTFDataFormatException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	UTFDataFormatException::UTFDataFormatException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.io.UTFDataFormatException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

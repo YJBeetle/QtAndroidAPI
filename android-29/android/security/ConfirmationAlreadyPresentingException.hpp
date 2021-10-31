@@ -14,8 +14,7 @@ namespace android::security
 		ConfirmationAlreadyPresentingException(QAndroidJniObject obj);
 		// Constructors
 		ConfirmationAlreadyPresentingException();
-		ConfirmationAlreadyPresentingException(jstring &arg0);
-		ConfirmationAlreadyPresentingException(const QString &arg0);
+		ConfirmationAlreadyPresentingException(jstring arg0);
 		
 		// Methods
 	};

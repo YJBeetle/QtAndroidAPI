@@ -18,9 +18,8 @@ namespace android::content::pm
 		
 		PathPermission(QAndroidJniObject obj);
 		// Constructors
-		PathPermission(android::os::Parcel &arg0);
-		PathPermission(jstring &arg0, jint &arg1, jstring &arg2, jstring &arg3);
-		PathPermission(const QString &arg0, jint &arg1, const QString &arg2, const QString &arg3);
+		PathPermission(android::os::Parcel arg0);
+		PathPermission(jstring arg0, jint arg1, jstring arg2, jstring arg3);
 		PathPermission() = default;
 		
 		// Methods

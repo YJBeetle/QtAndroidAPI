@@ -117,14 +117,6 @@ namespace android::view
 			arg0
 		);
 	}
-	QAndroidJniObject ViewStructure::newHtmlInfoBuilder(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"newHtmlInfoBuilder",
-			"(Ljava/lang/String;)Landroid/view/ViewStructure$HtmlInfo$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void ViewStructure::setAccessibilityFocused(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
@@ -230,14 +222,6 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewStructure::setClassName(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setClassName",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void ViewStructure::setClickable(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
@@ -252,14 +236,6 @@ namespace android::view
 			"setContentDescription",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
-		);
-	}
-	void ViewStructure::setContentDescription(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setContentDescription",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void ViewStructure::setContextClickable(jboolean arg0)
@@ -331,14 +307,6 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewStructure::setHint(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setHint",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void ViewStructure::setHtmlInfo(android::view::ViewStructure_HtmlInfo arg0)
 	{
 		__thiz.callMethod<void>(
@@ -356,17 +324,6 @@ namespace android::view
 			arg1,
 			arg2,
 			arg3
-		);
-	}
-	void ViewStructure::setId(jint arg0, const QString &arg1, const QString &arg2, const QString &arg3)
-	{
-		__thiz.callMethod<void>(
-			"setId",
-			"(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			QAndroidJniObject::fromString(arg3).object<jstring>()
 		);
 	}
 	void ViewStructure::setImportantForAutofill(jint arg0)
@@ -449,14 +406,6 @@ namespace android::view
 			arg0
 		);
 	}
-	void ViewStructure::setText(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setText",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void ViewStructure::setText(jstring arg0, jint arg1, jint arg2)
 	{
 		__thiz.callMethod<void>(
@@ -467,30 +416,12 @@ namespace android::view
 			arg2
 		);
 	}
-	void ViewStructure::setText(const QString &arg0, jint arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"setText",
-			"(Ljava/lang/CharSequence;II)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2
-		);
-	}
 	void ViewStructure::setTextIdEntry(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTextIdEntry",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void ViewStructure::setTextIdEntry(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTextIdEntry",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void ViewStructure::setTextLines(jintArray arg0, jintArray arg1)
@@ -535,14 +466,6 @@ namespace android::view
 			"setWebDomain",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void ViewStructure::setWebDomain(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setWebDomain",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace android::view

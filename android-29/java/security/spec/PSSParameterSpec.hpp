@@ -14,9 +14,8 @@ namespace java::security::spec
 		
 		PSSParameterSpec(QAndroidJniObject obj);
 		// Constructors
-		PSSParameterSpec(jint &arg0);
-		PSSParameterSpec(jstring &arg0, jstring &arg1, __JniBaseClass &arg2, jint &arg3, jint &arg4);
-		PSSParameterSpec(const QString &arg0, const QString &arg1, __JniBaseClass &arg2, jint &arg3, jint &arg4);
+		PSSParameterSpec(jint arg0);
+		PSSParameterSpec(jstring arg0, jstring arg1, __JniBaseClass arg2, jint arg3, jint arg4);
 		PSSParameterSpec() = default;
 		
 		// Methods

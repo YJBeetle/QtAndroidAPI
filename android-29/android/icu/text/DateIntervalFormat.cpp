@@ -27,15 +27,6 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject DateIntervalFormat::getInstance(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.DateIntervalFormat",
-			"getInstance",
-			"(Ljava/lang/String;)Landroid/icu/text/DateIntervalFormat;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject DateIntervalFormat::getInstance(jstring arg0, android::icu::text::DateIntervalInfo arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -43,16 +34,6 @@ namespace android::icu::text
 			"getInstance",
 			"(Ljava/lang/String;Landroid/icu/text/DateIntervalInfo;)Landroid/icu/text/DateIntervalFormat;",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject DateIntervalFormat::getInstance(const QString &arg0, android::icu::text::DateIntervalInfo arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.DateIntervalFormat",
-			"getInstance",
-			"(Ljava/lang/String;Landroid/icu/text/DateIntervalInfo;)Landroid/icu/text/DateIntervalFormat;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -66,16 +47,6 @@ namespace android::icu::text
 			arg1.__jniObject().object()
 		);
 	}
-	QAndroidJniObject DateIntervalFormat::getInstance(const QString &arg0, android::icu::util::ULocale arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.DateIntervalFormat",
-			"getInstance",
-			"(Ljava/lang/String;Landroid/icu/util/ULocale;)Landroid/icu/text/DateIntervalFormat;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	QAndroidJniObject DateIntervalFormat::getInstance(jstring arg0, java::util::Locale arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -83,16 +54,6 @@ namespace android::icu::text
 			"getInstance",
 			"(Ljava/lang/String;Ljava/util/Locale;)Landroid/icu/text/DateIntervalFormat;",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject DateIntervalFormat::getInstance(const QString &arg0, java::util::Locale arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.DateIntervalFormat",
-			"getInstance",
-			"(Ljava/lang/String;Ljava/util/Locale;)Landroid/icu/text/DateIntervalFormat;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -107,17 +68,6 @@ namespace android::icu::text
 			arg2.__jniObject().object()
 		);
 	}
-	QAndroidJniObject DateIntervalFormat::getInstance(const QString &arg0, android::icu::util::ULocale arg1, android::icu::text::DateIntervalInfo arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.DateIntervalFormat",
-			"getInstance",
-			"(Ljava/lang/String;Landroid/icu/util/ULocale;Landroid/icu/text/DateIntervalInfo;)Landroid/icu/text/DateIntervalFormat;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
 	QAndroidJniObject DateIntervalFormat::getInstance(jstring arg0, java::util::Locale arg1, android::icu::text::DateIntervalInfo arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -125,17 +75,6 @@ namespace android::icu::text
 			"getInstance",
 			"(Ljava/lang/String;Ljava/util/Locale;Landroid/icu/text/DateIntervalInfo;)Landroid/icu/text/DateIntervalFormat;",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	QAndroidJniObject DateIntervalFormat::getInstance(const QString &arg0, java::util::Locale arg1, android::icu::text::DateIntervalInfo arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.DateIntervalFormat",
-			"getInstance",
-			"(Ljava/lang/String;Ljava/util/Locale;Landroid/icu/text/DateIntervalInfo;)Landroid/icu/text/DateIntervalFormat;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object()
 		);
@@ -205,15 +144,6 @@ namespace android::icu::text
 			"parseObject",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object()
-		).object<jobject>();
-	}
-	jobject DateIntervalFormat::parseObject(const QString &arg0, java::text::ParsePosition arg1)
-	{
-		return __thiz.callObjectMethod(
-			"parseObject",
-			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Object;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		).object<jobject>();
 	}

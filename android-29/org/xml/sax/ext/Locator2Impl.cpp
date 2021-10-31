@@ -13,7 +13,7 @@ namespace org::xml::sax::ext
 			"()V"
 		);
 	}
-	Locator2Impl::Locator2Impl(__JniBaseClass &arg0)
+	Locator2Impl::Locator2Impl(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"org.xml.sax.ext.Locator2Impl",
@@ -45,28 +45,12 @@ namespace org::xml::sax::ext
 			arg0
 		);
 	}
-	void Locator2Impl::setEncoding(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setEncoding",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void Locator2Impl::setXMLVersion(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setXMLVersion",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void Locator2Impl::setXMLVersion(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setXMLVersion",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace org::xml::sax::ext

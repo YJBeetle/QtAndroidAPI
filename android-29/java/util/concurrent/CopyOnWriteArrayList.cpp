@@ -16,7 +16,7 @@ namespace java::util::concurrent
 			"()V"
 		);
 	}
-	CopyOnWriteArrayList::CopyOnWriteArrayList(jobjectArray &arg0)
+	CopyOnWriteArrayList::CopyOnWriteArrayList(jobjectArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.CopyOnWriteArrayList",
@@ -24,7 +24,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	CopyOnWriteArrayList::CopyOnWriteArrayList(__JniBaseClass &arg0)
+	CopyOnWriteArrayList::CopyOnWriteArrayList(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.CopyOnWriteArrayList",

@@ -134,15 +134,6 @@ namespace java::time
 			arg0
 		);
 	}
-	QAndroidJniObject Month::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.time.Month",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/time/Month;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray Month::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

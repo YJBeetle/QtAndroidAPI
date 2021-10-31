@@ -16,7 +16,6 @@ namespace java::nio::file
 		
 		// Methods
 		jobject getAttribute(jstring arg0);
-		jobject getAttribute(const QString &arg0);
 		jlong getBlockSize();
 		QAndroidJniObject getFileStoreAttributeView(jclass arg0);
 		jlong getTotalSpace();
@@ -26,7 +25,6 @@ namespace java::nio::file
 		jstring name();
 		jboolean supportsFileAttributeView(jclass arg0);
 		jboolean supportsFileAttributeView(jstring arg0);
-		jboolean supportsFileAttributeView(const QString &arg0);
 		jstring type();
 	};
 } // namespace java::nio::file

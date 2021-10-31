@@ -10,7 +10,7 @@ namespace android::widget
 	
 	ViewAnimator::ViewAnimator(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ViewAnimator::ViewAnimator(android::content::Context &arg0)
+	ViewAnimator::ViewAnimator(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ViewAnimator",
@@ -18,7 +18,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	ViewAnimator::ViewAnimator(android::content::Context &arg0, __JniBaseClass &arg1)
+	ViewAnimator::ViewAnimator(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ViewAnimator",

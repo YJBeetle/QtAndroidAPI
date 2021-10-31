@@ -45,15 +45,11 @@ namespace javax::net::ssl
 		// Methods
 		static QAndroidJniObject getDefault();
 		static QAndroidJniObject getInstance(jstring arg0);
-		static QAndroidJniObject getInstance(const QString &arg0);
 		static QAndroidJniObject getInstance(jstring arg0, jstring arg1);
-		static QAndroidJniObject getInstance(const QString &arg0, const QString &arg1);
 		static QAndroidJniObject getInstance(jstring arg0, java::security::Provider arg1);
-		static QAndroidJniObject getInstance(const QString &arg0, java::security::Provider arg1);
 		static void setDefault(javax::net::ssl::SSLContext arg0);
 		QAndroidJniObject createSSLEngine();
 		QAndroidJniObject createSSLEngine(jstring arg0, jint arg1);
-		QAndroidJniObject createSSLEngine(const QString &arg0, jint arg1);
 		QAndroidJniObject getClientSessionContext();
 		QAndroidJniObject getDefaultSSLParameters();
 		jstring getProtocol();

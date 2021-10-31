@@ -17,12 +17,9 @@ namespace android::service::carrier
 		
 		CarrierIdentifier(QAndroidJniObject obj);
 		// Constructors
-		CarrierIdentifier(jbyteArray &arg0, jstring &arg1, jstring &arg2);
-		CarrierIdentifier(jbyteArray &arg0, const QString &arg1, const QString &arg2);
-		CarrierIdentifier(jstring &arg0, jstring &arg1, jstring &arg2, jstring &arg3, jstring &arg4, jstring &arg5);
-		CarrierIdentifier(const QString &arg0, const QString &arg1, const QString &arg2, const QString &arg3, const QString &arg4, const QString &arg5);
-		CarrierIdentifier(jstring &arg0, jstring &arg1, jstring &arg2, jstring &arg3, jstring &arg4, jstring &arg5, jint &arg6, jint &arg7);
-		CarrierIdentifier(const QString &arg0, const QString &arg1, const QString &arg2, const QString &arg3, const QString &arg4, const QString &arg5, jint &arg6, jint &arg7);
+		CarrierIdentifier(jbyteArray arg0, jstring arg1, jstring arg2);
+		CarrierIdentifier(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4, jstring arg5);
+		CarrierIdentifier(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4, jstring arg5, jint arg6, jint arg7);
 		CarrierIdentifier() = default;
 		
 		// Methods

@@ -60,15 +60,6 @@ namespace java::security::cert
 			arg1
 		);
 	}
-	QAndroidJniObject CertificateFactorySpi::engineGenerateCertPath(java::io::InputStream arg0, const QString &arg1)
-	{
-		return __thiz.callObjectMethod(
-			"engineGenerateCertPath",
-			"(Ljava/io/InputStream;Ljava/lang/String;)Ljava/security/cert/CertPath;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	QAndroidJniObject CertificateFactorySpi::engineGenerateCertificate(java::io::InputStream arg0)
 	{
 		return __thiz.callObjectMethod(

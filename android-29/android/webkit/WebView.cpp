@@ -85,7 +85,7 @@ namespace android::webkit
 	
 	WebView::WebView(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	WebView::WebView(android::content::Context &arg0)
+	WebView::WebView(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.webkit.WebView",
@@ -93,7 +93,7 @@ namespace android::webkit
 			arg0.__jniObject().object()
 		);
 	}
-	WebView::WebView(android::content::Context &arg0, __JniBaseClass &arg1)
+	WebView::WebView(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.webkit.WebView",
@@ -102,7 +102,7 @@ namespace android::webkit
 			arg1.__jniObject().object()
 		);
 	}
-	WebView::WebView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	WebView::WebView(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.webkit.WebView",
@@ -112,7 +112,7 @@ namespace android::webkit
 			arg2
 		);
 	}
-	WebView::WebView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jboolean &arg3)
+	WebView::WebView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jboolean arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.webkit.WebView",
@@ -123,7 +123,7 @@ namespace android::webkit
 			arg3
 		);
 	}
-	WebView::WebView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	WebView::WebView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.webkit.WebView",
@@ -170,15 +170,6 @@ namespace android::webkit
 			arg0
 		).object<jstring>();
 	}
-	jstring WebView::findAddress(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.webkit.WebView",
-			"findAddress",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
 	QAndroidJniObject WebView::getCurrentWebViewPackage()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -210,15 +201,6 @@ namespace android::webkit
 			"setDataDirectorySuffix",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void WebView::setDataDirectorySuffix(const QString &arg0)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.webkit.WebView",
-			"setDataDirectorySuffix",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void WebView::setSafeBrowsingWhitelist(__JniBaseClass arg0, __JniBaseClass arg1)
@@ -257,15 +239,6 @@ namespace android::webkit
 			"(Ljava/lang/Object;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	void WebView::addJavascriptInterface(jobject arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"addJavascriptInterface",
-			"(Ljava/lang/Object;Ljava/lang/String;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void WebView::autofill(android::util::SparseArray arg0)
@@ -391,14 +364,6 @@ namespace android::webkit
 			arg0
 		);
 	}
-	QAndroidJniObject WebView::createPrintDocumentAdapter(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"createPrintDocumentAdapter",
-			"(Ljava/lang/String;)Landroid/print/PrintDocumentAdapter;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray WebView::createWebMessageChannel()
 	{
 		return __thiz.callObjectMethod(
@@ -438,15 +403,6 @@ namespace android::webkit
 			arg1.__jniObject().object()
 		);
 	}
-	void WebView::evaluateJavascript(const QString &arg0, __JniBaseClass arg1)
-	{
-		__thiz.callMethod<void>(
-			"evaluateJavascript",
-			"(Ljava/lang/String;Landroid/webkit/ValueCallback;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	jint WebView::findAll(jstring arg0)
 	{
 		return __thiz.callMethod<jint>(
@@ -455,28 +411,12 @@ namespace android::webkit
 			arg0
 		);
 	}
-	jint WebView::findAll(const QString &arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"findAll",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void WebView::findAllAsync(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"findAllAsync",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void WebView::findAllAsync(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"findAllAsync",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject WebView::findFocus()
@@ -566,15 +506,6 @@ namespace android::webkit
 			"(Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String;",
 			arg0,
 			arg1
-		).object<jarray>();
-	}
-	jarray WebView::getHttpAuthUsernamePassword(const QString &arg0, const QString &arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getHttpAuthUsernamePassword",
-			"(Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		).object<jarray>();
 	}
 	jstring WebView::getOriginalUrl()
@@ -729,16 +660,6 @@ namespace android::webkit
 			arg2
 		);
 	}
-	void WebView::loadData(const QString &arg0, const QString &arg1, const QString &arg2)
-	{
-		__thiz.callMethod<void>(
-			"loadData",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	void WebView::loadDataWithBaseURL(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4)
 	{
 		__thiz.callMethod<void>(
@@ -751,18 +672,6 @@ namespace android::webkit
 			arg4
 		);
 	}
-	void WebView::loadDataWithBaseURL(const QString &arg0, const QString &arg1, const QString &arg2, const QString &arg3, const QString &arg4)
-	{
-		__thiz.callMethod<void>(
-			"loadDataWithBaseURL",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			QAndroidJniObject::fromString(arg3).object<jstring>(),
-			QAndroidJniObject::fromString(arg4).object<jstring>()
-		);
-	}
 	void WebView::loadUrl(jstring arg0)
 	{
 		__thiz.callMethod<void>(
@@ -771,29 +680,12 @@ namespace android::webkit
 			arg0
 		);
 	}
-	void WebView::loadUrl(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"loadUrl",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void WebView::loadUrl(jstring arg0, __JniBaseClass arg1)
 	{
 		__thiz.callMethod<void>(
 			"loadUrl",
 			"(Ljava/lang/String;Ljava/util/Map;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void WebView::loadUrl(const QString &arg0, __JniBaseClass arg1)
-	{
-		__thiz.callMethod<void>(
-			"loadUrl",
-			"(Ljava/lang/String;Ljava/util/Map;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -1013,15 +905,6 @@ namespace android::webkit
 			arg1
 		);
 	}
-	void WebView::postUrl(const QString &arg0, jbyteArray arg1)
-	{
-		__thiz.callMethod<void>(
-			"postUrl",
-			"(Ljava/lang/String;[B)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	void WebView::postVisualStateCallback(jlong arg0, android::webkit::WebView_VisualStateCallback arg1)
 	{
 		__thiz.callMethod<void>(
@@ -1053,14 +936,6 @@ namespace android::webkit
 			"removeJavascriptInterface",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void WebView::removeJavascriptInterface(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"removeJavascriptInterface",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean WebView::requestChildRectangleOnScreen(android::view::View arg0, android::graphics::Rect arg1, jboolean arg2)
@@ -1123,16 +998,6 @@ namespace android::webkit
 			arg2
 		);
 	}
-	void WebView::savePassword(const QString &arg0, const QString &arg1, const QString &arg2)
-	{
-		__thiz.callMethod<void>(
-			"savePassword",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	QAndroidJniObject WebView::saveState(android::os::Bundle arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -1149,30 +1014,12 @@ namespace android::webkit
 			arg0
 		);
 	}
-	void WebView::saveWebArchive(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"saveWebArchive",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void WebView::saveWebArchive(jstring arg0, jboolean arg1, __JniBaseClass arg2)
 	{
 		__thiz.callMethod<void>(
 			"saveWebArchive",
 			"(Ljava/lang/String;ZLandroid/webkit/ValueCallback;)V",
 			arg0,
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void WebView::saveWebArchive(const QString &arg0, jboolean arg1, __JniBaseClass arg2)
-	{
-		__thiz.callMethod<void>(
-			"saveWebArchive",
-			"(Ljava/lang/String;ZLandroid/webkit/ValueCallback;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2.__jniObject().object()
 		);
@@ -1226,17 +1073,6 @@ namespace android::webkit
 			arg1,
 			arg2,
 			arg3
-		);
-	}
-	void WebView::setHttpAuthUsernamePassword(const QString &arg0, const QString &arg1, const QString &arg2, const QString &arg3)
-	{
-		__thiz.callMethod<void>(
-			"setHttpAuthUsernamePassword",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			QAndroidJniObject::fromString(arg3).object<jstring>()
 		);
 	}
 	void WebView::setInitialScale(jint arg0)
@@ -1375,15 +1211,6 @@ namespace android::webkit
 			"showFindDialog",
 			"(Ljava/lang/String;Z)Z",
 			arg0,
-			arg1
-		);
-	}
-	jboolean WebView::showFindDialog(const QString &arg0, jboolean arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"showFindDialog",
-			"(Ljava/lang/String;Z)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

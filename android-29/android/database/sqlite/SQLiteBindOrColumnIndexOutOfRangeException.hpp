@@ -17,8 +17,7 @@ namespace android::database::sqlite
 		SQLiteBindOrColumnIndexOutOfRangeException(QAndroidJniObject obj);
 		// Constructors
 		SQLiteBindOrColumnIndexOutOfRangeException();
-		SQLiteBindOrColumnIndexOutOfRangeException(jstring &arg0);
-		SQLiteBindOrColumnIndexOutOfRangeException(const QString &arg0);
+		SQLiteBindOrColumnIndexOutOfRangeException(jstring arg0);
 		
 		// Methods
 	};

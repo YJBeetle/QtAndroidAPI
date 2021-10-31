@@ -13,7 +13,7 @@ namespace android::text::style
 			"()V"
 		);
 	}
-	TtsSpan_CardinalBuilder::TtsSpan_CardinalBuilder(jstring &arg0)
+	TtsSpan_CardinalBuilder::TtsSpan_CardinalBuilder(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.TtsSpan$CardinalBuilder",
@@ -21,15 +21,7 @@ namespace android::text::style
 			arg0
 		);
 	}
-	TtsSpan_CardinalBuilder::TtsSpan_CardinalBuilder(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.text.style.TtsSpan$CardinalBuilder",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	TtsSpan_CardinalBuilder::TtsSpan_CardinalBuilder(jlong &arg0)
+	TtsSpan_CardinalBuilder::TtsSpan_CardinalBuilder(jlong arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.TtsSpan$CardinalBuilder",
@@ -45,14 +37,6 @@ namespace android::text::style
 			"setNumber",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$CardinalBuilder;",
 			arg0
-		);
-	}
-	QAndroidJniObject TtsSpan_CardinalBuilder::setNumber(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setNumber",
-			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$CardinalBuilder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject TtsSpan_CardinalBuilder::setNumber(jlong arg0)

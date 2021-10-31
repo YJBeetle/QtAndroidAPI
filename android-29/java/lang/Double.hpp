@@ -32,9 +32,8 @@ namespace java::lang
 		
 		Double(QAndroidJniObject obj);
 		// Constructors
-		Double(jdouble &arg0);
-		Double(jstring &arg0);
-		Double(const QString &arg0);
+		Double(jdouble arg0);
+		Double(jstring arg0);
 		Double() = default;
 		
 		// Methods
@@ -49,13 +48,11 @@ namespace java::lang
 		static jdouble max(jdouble arg0, jdouble arg1);
 		static jdouble min(jdouble arg0, jdouble arg1);
 		static jdouble parseDouble(jstring arg0);
-		static jdouble parseDouble(const QString &arg0);
 		static jdouble sum(jdouble arg0, jdouble arg1);
 		static jstring toHexString(jdouble arg0);
 		static jstring toString(jdouble arg0);
 		static QAndroidJniObject valueOf(jdouble arg0);
 		static QAndroidJniObject valueOf(jstring arg0);
-		static QAndroidJniObject valueOf(const QString &arg0);
 		jbyte byteValue();
 		jint compareTo(java::lang::Double arg0);
 		jint compareTo(jobject arg0);

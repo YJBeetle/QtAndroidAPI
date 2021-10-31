@@ -16,7 +16,7 @@ namespace android::app
 	
 	FragmentHostCallback::FragmentHostCallback(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	FragmentHostCallback::FragmentHostCallback(android::content::Context &arg0, android::os::Handler &arg1, jint &arg2)
+	FragmentHostCallback::FragmentHostCallback(android::content::Context arg0, android::os::Handler arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.FragmentHostCallback",
@@ -42,17 +42,6 @@ namespace android::app
 			"onDump",
 			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3
-		);
-	}
-	void FragmentHostCallback::onDump(const QString &arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3)
-	{
-		__thiz.callMethod<void>(
-			"onDump",
-			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
 			arg3

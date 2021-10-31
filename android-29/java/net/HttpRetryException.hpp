@@ -14,10 +14,8 @@ namespace java::net
 		
 		HttpRetryException(QAndroidJniObject obj);
 		// Constructors
-		HttpRetryException(jstring &arg0, jint &arg1);
-		HttpRetryException(const QString &arg0, jint &arg1);
-		HttpRetryException(jstring &arg0, jint &arg1, jstring &arg2);
-		HttpRetryException(const QString &arg0, jint &arg1, const QString &arg2);
+		HttpRetryException(jstring arg0, jint arg1);
+		HttpRetryException(jstring arg0, jint arg1, jstring arg2);
 		HttpRetryException() = default;
 		
 		// Methods

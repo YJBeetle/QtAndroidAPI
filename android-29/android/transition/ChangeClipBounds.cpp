@@ -17,7 +17,7 @@ namespace android::transition
 			"()V"
 		);
 	}
-	ChangeClipBounds::ChangeClipBounds(android::content::Context &arg0, __JniBaseClass &arg1)
+	ChangeClipBounds::ChangeClipBounds(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.transition.ChangeClipBounds",

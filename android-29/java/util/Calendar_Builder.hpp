@@ -34,7 +34,6 @@ namespace java::util
 		QAndroidJniObject build();
 		QAndroidJniObject set(jint arg0, jint arg1);
 		QAndroidJniObject setCalendarType(jstring arg0);
-		QAndroidJniObject setCalendarType(const QString &arg0);
 		QAndroidJniObject setDate(jint arg0, jint arg1, jint arg2);
 		QAndroidJniObject setFields(jintArray arg0);
 		QAndroidJniObject setInstant(java::util::Date arg0);

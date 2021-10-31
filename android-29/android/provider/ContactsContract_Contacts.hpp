@@ -46,7 +46,6 @@ namespace android::provider
 		// Methods
 		static QAndroidJniObject getLookupUri(android::content::ContentResolver arg0, android::net::Uri arg1);
 		static QAndroidJniObject getLookupUri(jlong arg0, jstring arg1);
-		static QAndroidJniObject getLookupUri(jlong arg0, const QString &arg1);
 		static jboolean isEnterpriseContactId(jlong arg0);
 		static QAndroidJniObject lookupContact(android::content::ContentResolver arg0, android::net::Uri arg1);
 		static void markAsContacted(android::content::ContentResolver arg0, jlong arg1);

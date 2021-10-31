@@ -20,16 +20,14 @@ namespace android::view::textclassifier
 		
 		TextSelection_Builder(QAndroidJniObject obj);
 		// Constructors
-		TextSelection_Builder(jint &arg0, jint &arg1);
+		TextSelection_Builder(jint arg0, jint arg1);
 		TextSelection_Builder() = default;
 		
 		// Methods
 		QAndroidJniObject build();
 		QAndroidJniObject setEntityType(jstring arg0, jfloat arg1);
-		QAndroidJniObject setEntityType(const QString &arg0, jfloat arg1);
 		QAndroidJniObject setExtras(android::os::Bundle arg0);
 		QAndroidJniObject setId(jstring arg0);
-		QAndroidJniObject setId(const QString &arg0);
 	};
 } // namespace android::view::textclassifier
 

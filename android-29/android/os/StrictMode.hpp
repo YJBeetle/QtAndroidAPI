@@ -29,7 +29,6 @@ namespace android::os
 		static QAndroidJniObject getThreadPolicy();
 		static QAndroidJniObject getVmPolicy();
 		static void noteSlowCall(jstring arg0);
-		static void noteSlowCall(const QString &arg0);
 		static void setThreadPolicy(android::os::StrictMode_ThreadPolicy arg0);
 		static void setVmPolicy(android::os::StrictMode_VmPolicy arg0);
 	};

@@ -32,7 +32,7 @@ namespace android::view::animation
 	
 	LayoutAnimationController::LayoutAnimationController(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	LayoutAnimationController::LayoutAnimationController(android::view::animation::Animation &arg0)
+	LayoutAnimationController::LayoutAnimationController(android::view::animation::Animation arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.LayoutAnimationController",
@@ -40,7 +40,7 @@ namespace android::view::animation
 			arg0.__jniObject().object()
 		);
 	}
-	LayoutAnimationController::LayoutAnimationController(android::content::Context &arg0, __JniBaseClass &arg1)
+	LayoutAnimationController::LayoutAnimationController(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.LayoutAnimationController",
@@ -49,7 +49,7 @@ namespace android::view::animation
 			arg1.__jniObject().object()
 		);
 	}
-	LayoutAnimationController::LayoutAnimationController(android::view::animation::Animation &arg0, jfloat &arg1)
+	LayoutAnimationController::LayoutAnimationController(android::view::animation::Animation arg0, jfloat arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.LayoutAnimationController",

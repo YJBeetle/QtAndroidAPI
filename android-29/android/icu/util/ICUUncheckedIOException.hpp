@@ -15,11 +15,9 @@ namespace android::icu::util
 		ICUUncheckedIOException(QAndroidJniObject obj);
 		// Constructors
 		ICUUncheckedIOException();
-		ICUUncheckedIOException(jstring &arg0);
-		ICUUncheckedIOException(const QString &arg0);
-		ICUUncheckedIOException(jthrowable &arg0);
-		ICUUncheckedIOException(jstring &arg0, jthrowable &arg1);
-		ICUUncheckedIOException(const QString &arg0, jthrowable &arg1);
+		ICUUncheckedIOException(jstring arg0);
+		ICUUncheckedIOException(jthrowable arg0);
+		ICUUncheckedIOException(jstring arg0, jthrowable arg1);
 		
 		// Methods
 	};

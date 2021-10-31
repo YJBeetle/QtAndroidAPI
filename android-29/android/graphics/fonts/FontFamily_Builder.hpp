@@ -20,7 +20,7 @@ namespace android::graphics::fonts
 		
 		FontFamily_Builder(QAndroidJniObject obj);
 		// Constructors
-		FontFamily_Builder(android::graphics::fonts::Font &arg0);
+		FontFamily_Builder(android::graphics::fonts::Font arg0);
 		FontFamily_Builder() = default;
 		
 		// Methods

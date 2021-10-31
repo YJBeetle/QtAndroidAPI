@@ -31,8 +31,8 @@ namespace java::util::concurrent
 		LinkedBlockingDeque(QAndroidJniObject obj);
 		// Constructors
 		LinkedBlockingDeque();
-		LinkedBlockingDeque(jint &arg0);
-		LinkedBlockingDeque(__JniBaseClass &arg0);
+		LinkedBlockingDeque(jint arg0);
+		LinkedBlockingDeque(__JniBaseClass arg0);
 		
 		// Methods
 		jboolean add(jobject arg0);

@@ -70,16 +70,6 @@ namespace android::util
 			arg1
 		).object<jbyteArray>();
 	}
-	jbyteArray Base64::decode(const QString &arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.util.Base64",
-			"decode",
-			"(Ljava/lang/String;I)[B",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		).object<jbyteArray>();
-	}
 	jbyteArray Base64::decode(jbyteArray arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

@@ -40,16 +40,6 @@ namespace java::security
 			arg1.__jniObject().object()
 		);
 	}
-	QAndroidJniObject Policy::getInstance(const QString &arg0, __JniBaseClass arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.security.Policy",
-			"getInstance",
-			"(Ljava/lang/String;Ljava/security/Policy$Parameters;)Ljava/security/Policy;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	QAndroidJniObject Policy::getInstance(jstring arg0, __JniBaseClass arg1, jstring arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -61,17 +51,6 @@ namespace java::security
 			arg2
 		);
 	}
-	QAndroidJniObject Policy::getInstance(const QString &arg0, __JniBaseClass arg1, const QString &arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.security.Policy",
-			"getInstance",
-			"(Ljava/lang/String;Ljava/security/Policy$Parameters;Ljava/lang/String;)Ljava/security/Policy;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	QAndroidJniObject Policy::getInstance(jstring arg0, __JniBaseClass arg1, java::security::Provider arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -79,17 +58,6 @@ namespace java::security
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Policy$Parameters;Ljava/security/Provider;)Ljava/security/Policy;",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Policy::getInstance(const QString &arg0, __JniBaseClass arg1, java::security::Provider arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.security.Policy",
-			"getInstance",
-			"(Ljava/lang/String;Ljava/security/Policy$Parameters;Ljava/security/Provider;)Ljava/security/Policy;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object()
 		);

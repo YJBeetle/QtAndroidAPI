@@ -51,7 +51,6 @@ namespace android::app
 		static QAndroidJniObject makeScaleUpAnimation(android::view::View arg0, jint arg1, jint arg2, jint arg3, jint arg4);
 		static QAndroidJniObject makeSceneTransitionAnimation(android::app::Activity arg0, jarray arg1);
 		static QAndroidJniObject makeSceneTransitionAnimation(android::app::Activity arg0, android::view::View arg1, jstring arg2);
-		static QAndroidJniObject makeSceneTransitionAnimation(android::app::Activity arg0, android::view::View arg1, const QString &arg2);
 		static QAndroidJniObject makeTaskLaunchBehind();
 		static QAndroidJniObject makeThumbnailScaleUpAnimation(android::view::View arg0, android::graphics::Bitmap arg1, jint arg2, jint arg3);
 		QAndroidJniObject getLaunchBounds();

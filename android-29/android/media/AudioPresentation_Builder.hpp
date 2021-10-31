@@ -20,7 +20,7 @@ namespace android::media
 		
 		AudioPresentation_Builder(QAndroidJniObject obj);
 		// Constructors
-		AudioPresentation_Builder(jint &arg0);
+		AudioPresentation_Builder(jint arg0);
 		AudioPresentation_Builder() = default;
 		
 		// Methods

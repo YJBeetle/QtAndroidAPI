@@ -21,7 +21,6 @@ namespace android::print
 		// Methods
 		void onLayoutCancelled();
 		void onLayoutFailed(jstring arg0);
-		void onLayoutFailed(const QString &arg0);
 		void onLayoutFinished(android::print::PrintDocumentInfo arg0, jboolean arg1);
 	};
 } // namespace android::print

@@ -31,7 +31,6 @@ namespace android::os
 		// Methods
 		jint describeContents();
 		jstring getMemoryStat(jstring arg0);
-		jstring getMemoryStat(const QString &arg0);
 		QAndroidJniObject getMemoryStats();
 		jint getTotalPrivateClean();
 		jint getTotalPrivateDirty();

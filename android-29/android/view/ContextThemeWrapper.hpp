@@ -35,15 +35,14 @@ namespace android::view
 		ContextThemeWrapper(QAndroidJniObject obj);
 		// Constructors
 		ContextThemeWrapper();
-		ContextThemeWrapper(android::content::Context &arg0, android::content::res::Resources_Theme &arg1);
-		ContextThemeWrapper(android::content::Context &arg0, jint &arg1);
+		ContextThemeWrapper(android::content::Context arg0, android::content::res::Resources_Theme arg1);
+		ContextThemeWrapper(android::content::Context arg0, jint arg1);
 		
 		// Methods
 		void applyOverrideConfiguration(android::content::res::Configuration arg0);
 		QAndroidJniObject getAssets();
 		QAndroidJniObject getResources();
 		jobject getSystemService(jstring arg0);
-		jobject getSystemService(const QString &arg0);
 		QAndroidJniObject getTheme();
 		void setTheme(android::content::res::Resources_Theme arg0);
 		void setTheme(jint arg0);

@@ -30,12 +30,9 @@ namespace java::security
 		static QAndroidJniObject newInstance(java::io::File arg0, __JniBaseClass arg1);
 		static QAndroidJniObject newInstance(java::security::KeyStore arg0, __JniBaseClass arg1);
 		static QAndroidJniObject newInstance(jstring arg0, java::security::Provider arg1, __JniBaseClass arg2);
-		static QAndroidJniObject newInstance(const QString &arg0, java::security::Provider arg1, __JniBaseClass arg2);
 		static QAndroidJniObject newInstance(jstring arg0, java::security::Provider arg1, java::io::File arg2, __JniBaseClass arg3);
-		static QAndroidJniObject newInstance(const QString &arg0, java::security::Provider arg1, java::io::File arg2, __JniBaseClass arg3);
 		QAndroidJniObject getKeyStore();
 		QAndroidJniObject getProtectionParameter(jstring arg0);
-		QAndroidJniObject getProtectionParameter(const QString &arg0);
 	};
 } // namespace java::security
 

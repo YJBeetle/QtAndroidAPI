@@ -16,8 +16,7 @@ namespace java::net
 		NoRouteToHostException(QAndroidJniObject obj);
 		// Constructors
 		NoRouteToHostException();
-		NoRouteToHostException(jstring &arg0);
-		NoRouteToHostException(const QString &arg0);
+		NoRouteToHostException(jstring arg0);
 		
 		// Methods
 	};

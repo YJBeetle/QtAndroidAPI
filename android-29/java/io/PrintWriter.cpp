@@ -13,7 +13,7 @@ namespace java::io
 	
 	PrintWriter::PrintWriter(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PrintWriter::PrintWriter(java::io::File &arg0)
+	PrintWriter::PrintWriter(java::io::File arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.PrintWriter",
@@ -21,7 +21,7 @@ namespace java::io
 			arg0.__jniObject().object()
 		);
 	}
-	PrintWriter::PrintWriter(java::io::OutputStream &arg0)
+	PrintWriter::PrintWriter(java::io::OutputStream arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.PrintWriter",
@@ -29,7 +29,7 @@ namespace java::io
 			arg0.__jniObject().object()
 		);
 	}
-	PrintWriter::PrintWriter(java::io::Writer &arg0)
+	PrintWriter::PrintWriter(java::io::Writer arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.PrintWriter",
@@ -37,7 +37,7 @@ namespace java::io
 			arg0.__jniObject().object()
 		);
 	}
-	PrintWriter::PrintWriter(jstring &arg0)
+	PrintWriter::PrintWriter(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.PrintWriter",
@@ -45,15 +45,7 @@ namespace java::io
 			arg0
 		);
 	}
-	PrintWriter::PrintWriter(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.io.PrintWriter",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	PrintWriter::PrintWriter(java::io::File &arg0, jstring &arg1)
+	PrintWriter::PrintWriter(java::io::File arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.PrintWriter",
@@ -62,16 +54,7 @@ namespace java::io
 			arg1
 		);
 	}
-	PrintWriter::PrintWriter(java::io::File &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.io.PrintWriter",
-			"(Ljava/io/File;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	PrintWriter::PrintWriter(java::io::File &arg0, java::nio::charset::Charset &arg1)
+	PrintWriter::PrintWriter(java::io::File arg0, java::nio::charset::Charset arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.PrintWriter",
@@ -80,7 +63,7 @@ namespace java::io
 			arg1.__jniObject().object()
 		);
 	}
-	PrintWriter::PrintWriter(java::io::OutputStream &arg0, jboolean &arg1)
+	PrintWriter::PrintWriter(java::io::OutputStream arg0, jboolean arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.PrintWriter",
@@ -89,7 +72,7 @@ namespace java::io
 			arg1
 		);
 	}
-	PrintWriter::PrintWriter(java::io::Writer &arg0, jboolean &arg1)
+	PrintWriter::PrintWriter(java::io::Writer arg0, jboolean arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.PrintWriter",
@@ -98,7 +81,7 @@ namespace java::io
 			arg1
 		);
 	}
-	PrintWriter::PrintWriter(jstring &arg0, jstring &arg1)
+	PrintWriter::PrintWriter(jstring arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.PrintWriter",
@@ -107,16 +90,7 @@ namespace java::io
 			arg1
 		);
 	}
-	PrintWriter::PrintWriter(const QString &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.io.PrintWriter",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	PrintWriter::PrintWriter(jstring &arg0, java::nio::charset::Charset &arg1)
+	PrintWriter::PrintWriter(jstring arg0, java::nio::charset::Charset arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.PrintWriter",
@@ -125,16 +99,7 @@ namespace java::io
 			arg1.__jniObject().object()
 		);
 	}
-	PrintWriter::PrintWriter(const QString &arg0, java::nio::charset::Charset &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.io.PrintWriter",
-			"(Ljava/lang/String;Ljava/nio/charset/Charset;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
-	PrintWriter::PrintWriter(java::io::OutputStream &arg0, jboolean &arg1, java::nio::charset::Charset &arg2)
+	PrintWriter::PrintWriter(java::io::OutputStream arg0, jboolean arg1, java::nio::charset::Charset arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.PrintWriter",
@@ -162,30 +127,12 @@ namespace java::io
 			arg0
 		);
 	}
-	QAndroidJniObject PrintWriter::append(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"append",
-			"(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject PrintWriter::append(jstring arg0, jint arg1, jint arg2)
 	{
 		return __thiz.callObjectMethod(
 			"append",
 			"(Ljava/lang/CharSequence;II)Ljava/io/PrintWriter;",
 			arg0,
-			arg1,
-			arg2
-		);
-	}
-	QAndroidJniObject PrintWriter::append(const QString &arg0, jint arg1, jint arg2)
-	{
-		return __thiz.callObjectMethod(
-			"append",
-			"(Ljava/lang/CharSequence;II)Ljava/io/PrintWriter;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2
 		);
@@ -220,15 +167,6 @@ namespace java::io
 			arg1
 		);
 	}
-	QAndroidJniObject PrintWriter::format(const QString &arg0, jobjectArray arg1)
-	{
-		return __thiz.callObjectMethod(
-			"format",
-			"(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintWriter;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	QAndroidJniObject PrintWriter::format(java::util::Locale arg0, jstring arg1, jobjectArray arg2)
 	{
 		return __thiz.callObjectMethod(
@@ -236,16 +174,6 @@ namespace java::io
 			"(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintWriter;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2
-		);
-	}
-	QAndroidJniObject PrintWriter::format(java::util::Locale arg0, const QString &arg1, jobjectArray arg2)
-	{
-		return __thiz.callObjectMethod(
-			"format",
-			"(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintWriter;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}
@@ -313,14 +241,6 @@ namespace java::io
 			arg0
 		);
 	}
-	void PrintWriter::print(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"print",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void PrintWriter::print(jlong arg0)
 	{
 		__thiz.callMethod<void>(
@@ -338,15 +258,6 @@ namespace java::io
 			arg1
 		);
 	}
-	QAndroidJniObject PrintWriter::printf(const QString &arg0, jobjectArray arg1)
-	{
-		return __thiz.callObjectMethod(
-			"printf",
-			"(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintWriter;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	QAndroidJniObject PrintWriter::printf(java::util::Locale arg0, jstring arg1, jobjectArray arg2)
 	{
 		return __thiz.callObjectMethod(
@@ -354,16 +265,6 @@ namespace java::io
 			"(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintWriter;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2
-		);
-	}
-	QAndroidJniObject PrintWriter::printf(java::util::Locale arg0, const QString &arg1, jobjectArray arg2)
-	{
-		return __thiz.callObjectMethod(
-			"printf",
-			"(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintWriter;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}
@@ -438,14 +339,6 @@ namespace java::io
 			arg0
 		);
 	}
-	void PrintWriter::println(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"println",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void PrintWriter::println(jlong arg0)
 	{
 		__thiz.callMethod<void>(
@@ -478,14 +371,6 @@ namespace java::io
 			arg0
 		);
 	}
-	void PrintWriter::write(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"write",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void PrintWriter::write(jcharArray arg0, jint arg1, jint arg2)
 	{
 		__thiz.callMethod<void>(
@@ -502,16 +387,6 @@ namespace java::io
 			"write",
 			"(Ljava/lang/String;II)V",
 			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void PrintWriter::write(const QString &arg0, jint arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"write",
-			"(Ljava/lang/String;II)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2
 		);

@@ -32,7 +32,7 @@ namespace android::print
 		
 		PrinterCapabilitiesInfo_Builder(QAndroidJniObject obj);
 		// Constructors
-		PrinterCapabilitiesInfo_Builder(android::print::PrinterId &arg0);
+		PrinterCapabilitiesInfo_Builder(android::print::PrinterId arg0);
 		PrinterCapabilitiesInfo_Builder() = default;
 		
 		// Methods

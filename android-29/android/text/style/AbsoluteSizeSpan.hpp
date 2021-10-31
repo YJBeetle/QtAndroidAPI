@@ -22,9 +22,9 @@ namespace android::text::style
 		
 		AbsoluteSizeSpan(QAndroidJniObject obj);
 		// Constructors
-		AbsoluteSizeSpan(android::os::Parcel &arg0);
-		AbsoluteSizeSpan(jint &arg0);
-		AbsoluteSizeSpan(jint &arg0, jboolean &arg1);
+		AbsoluteSizeSpan(android::os::Parcel arg0);
+		AbsoluteSizeSpan(jint arg0);
+		AbsoluteSizeSpan(jint arg0, jboolean arg1);
 		AbsoluteSizeSpan() = default;
 		
 		// Methods

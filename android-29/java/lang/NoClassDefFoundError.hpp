@@ -15,8 +15,7 @@ namespace java::lang
 		NoClassDefFoundError(QAndroidJniObject obj);
 		// Constructors
 		NoClassDefFoundError();
-		NoClassDefFoundError(jstring &arg0);
-		NoClassDefFoundError(const QString &arg0);
+		NoClassDefFoundError(jstring arg0);
 		
 		// Methods
 	};

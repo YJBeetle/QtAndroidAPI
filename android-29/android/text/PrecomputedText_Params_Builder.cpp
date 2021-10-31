@@ -8,7 +8,7 @@ namespace android::text
 	
 	PrecomputedText_Params_Builder::PrecomputedText_Params_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PrecomputedText_Params_Builder::PrecomputedText_Params_Builder(android::text::PrecomputedText_Params &arg0)
+	PrecomputedText_Params_Builder::PrecomputedText_Params_Builder(android::text::PrecomputedText_Params arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.PrecomputedText$Params$Builder",
@@ -16,7 +16,7 @@ namespace android::text
 			arg0.__jniObject().object()
 		);
 	}
-	PrecomputedText_Params_Builder::PrecomputedText_Params_Builder(android::text::TextPaint &arg0)
+	PrecomputedText_Params_Builder::PrecomputedText_Params_Builder(android::text::TextPaint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.PrecomputedText$Params$Builder",

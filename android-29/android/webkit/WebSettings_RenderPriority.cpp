@@ -41,15 +41,6 @@ namespace android::webkit
 			arg0
 		);
 	}
-	QAndroidJniObject WebSettings_RenderPriority::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.webkit.WebSettings$RenderPriority",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/webkit/WebSettings$RenderPriority;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray WebSettings_RenderPriority::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

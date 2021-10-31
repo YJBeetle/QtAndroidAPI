@@ -12,8 +12,7 @@ namespace android::os
 		
 		StatFs(QAndroidJniObject obj);
 		// Constructors
-		StatFs(jstring &arg0);
-		StatFs(const QString &arg0);
+		StatFs(jstring arg0);
 		StatFs() = default;
 		
 		// Methods
@@ -29,7 +28,6 @@ namespace android::os
 		jlong getFreeBytes();
 		jlong getTotalBytes();
 		void restat(jstring arg0);
-		void restat(const QString &arg0);
 	};
 } // namespace android::os
 

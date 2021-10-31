@@ -7,7 +7,7 @@ namespace javax::sql
 	
 	StatementEvent::StatementEvent(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	StatementEvent::StatementEvent(__JniBaseClass &arg0, __JniBaseClass &arg1)
+	StatementEvent::StatementEvent(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.sql.StatementEvent",
@@ -16,7 +16,7 @@ namespace javax::sql
 			arg1.__jniObject().object()
 		);
 	}
-	StatementEvent::StatementEvent(__JniBaseClass &arg0, __JniBaseClass &arg1, java::sql::SQLException &arg2)
+	StatementEvent::StatementEvent(__JniBaseClass arg0, __JniBaseClass arg1, java::sql::SQLException arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.sql.StatementEvent",

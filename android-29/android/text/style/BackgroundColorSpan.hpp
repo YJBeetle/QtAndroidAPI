@@ -21,8 +21,8 @@ namespace android::text::style
 		
 		BackgroundColorSpan(QAndroidJniObject obj);
 		// Constructors
-		BackgroundColorSpan(android::os::Parcel &arg0);
-		BackgroundColorSpan(jint &arg0);
+		BackgroundColorSpan(android::os::Parcel arg0);
+		BackgroundColorSpan(jint arg0);
 		BackgroundColorSpan() = default;
 		
 		// Methods

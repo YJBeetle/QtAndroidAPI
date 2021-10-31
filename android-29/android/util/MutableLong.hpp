@@ -13,7 +13,7 @@ namespace android::util
 		
 		MutableLong(QAndroidJniObject obj);
 		// Constructors
-		MutableLong(jlong &arg0);
+		MutableLong(jlong arg0);
 		MutableLong() = default;
 		
 		// Methods

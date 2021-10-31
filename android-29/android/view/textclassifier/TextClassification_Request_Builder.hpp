@@ -28,8 +28,7 @@ namespace android::view::textclassifier
 		
 		TextClassification_Request_Builder(QAndroidJniObject obj);
 		// Constructors
-		TextClassification_Request_Builder(jstring &arg0, jint &arg1, jint &arg2);
-		TextClassification_Request_Builder(const QString &arg0, jint &arg1, jint &arg2);
+		TextClassification_Request_Builder(jstring arg0, jint arg1, jint arg2);
 		TextClassification_Request_Builder() = default;
 		
 		// Methods

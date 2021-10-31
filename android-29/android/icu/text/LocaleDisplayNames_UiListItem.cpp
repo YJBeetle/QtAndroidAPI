@@ -35,7 +35,7 @@ namespace android::icu::text
 	
 	LocaleDisplayNames_UiListItem::LocaleDisplayNames_UiListItem(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	LocaleDisplayNames_UiListItem::LocaleDisplayNames_UiListItem(android::icu::util::ULocale &arg0, android::icu::util::ULocale &arg1, jstring &arg2, jstring &arg3)
+	LocaleDisplayNames_UiListItem::LocaleDisplayNames_UiListItem(android::icu::util::ULocale arg0, android::icu::util::ULocale arg1, jstring arg2, jstring arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.LocaleDisplayNames$UiListItem",
@@ -44,17 +44,6 @@ namespace android::icu::text
 			arg1.__jniObject().object(),
 			arg2,
 			arg3
-		);
-	}
-	LocaleDisplayNames_UiListItem::LocaleDisplayNames_UiListItem(android::icu::util::ULocale &arg0, android::icu::util::ULocale &arg1, const QString &arg2, const QString &arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.text.LocaleDisplayNames$UiListItem",
-			"(Landroid/icu/util/ULocale;Landroid/icu/util/ULocale;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			QAndroidJniObject::fromString(arg3).object<jstring>()
 		);
 	}
 	

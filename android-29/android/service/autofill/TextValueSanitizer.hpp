@@ -21,8 +21,7 @@ namespace android::service::autofill
 		
 		TextValueSanitizer(QAndroidJniObject obj);
 		// Constructors
-		TextValueSanitizer(java::util::regex::Pattern &arg0, jstring &arg1);
-		TextValueSanitizer(java::util::regex::Pattern &arg0, const QString &arg1);
+		TextValueSanitizer(java::util::regex::Pattern arg0, jstring arg1);
 		TextValueSanitizer() = default;
 		
 		// Methods

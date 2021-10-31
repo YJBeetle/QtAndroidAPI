@@ -24,21 +24,16 @@ namespace java::security
 		
 		// Methods
 		static QAndroidJniObject getInstance(jstring arg0);
-		static QAndroidJniObject getInstance(const QString &arg0);
 		static QAndroidJniObject getInstance(jstring arg0, jstring arg1);
-		static QAndroidJniObject getInstance(const QString &arg0, const QString &arg1);
 		static QAndroidJniObject getInstance(jstring arg0, java::security::Provider arg1);
-		static QAndroidJniObject getInstance(const QString &arg0, java::security::Provider arg1);
 		jstring getAlgorithm();
 		jbyteArray getEncoded();
 		jbyteArray getEncoded(jstring arg0);
-		jbyteArray getEncoded(const QString &arg0);
 		QAndroidJniObject getParameterSpec(jclass arg0);
 		QAndroidJniObject getProvider();
 		void init(jbyteArray arg0);
 		void init(__JniBaseClass arg0);
 		void init(jbyteArray arg0, jstring arg1);
-		void init(jbyteArray arg0, const QString &arg1);
 		jstring toString();
 	};
 } // namespace java::security

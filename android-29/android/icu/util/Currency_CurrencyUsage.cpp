@@ -33,15 +33,6 @@ namespace android::icu::util
 			arg0
 		);
 	}
-	QAndroidJniObject Currency_CurrencyUsage::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.util.Currency$CurrencyUsage",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/icu/util/Currency$CurrencyUsage;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray Currency_CurrencyUsage::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

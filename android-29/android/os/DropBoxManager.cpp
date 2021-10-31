@@ -73,32 +73,12 @@ namespace android::os
 			arg2
 		);
 	}
-	void DropBoxManager::addData(const QString &arg0, jbyteArray arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"addData",
-			"(Ljava/lang/String;[BI)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2
-		);
-	}
 	void DropBoxManager::addFile(jstring arg0, java::io::File arg1, jint arg2)
 	{
 		__thiz.callMethod<void>(
 			"addFile",
 			"(Ljava/lang/String;Ljava/io/File;I)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2
-		);
-	}
-	void DropBoxManager::addFile(const QString &arg0, java::io::File arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"addFile",
-			"(Ljava/lang/String;Ljava/io/File;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2
 		);
@@ -112,15 +92,6 @@ namespace android::os
 			arg1
 		);
 	}
-	void DropBoxManager::addText(const QString &arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"addText",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	QAndroidJniObject DropBoxManager::getNextEntry(jstring arg0, jlong arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -130,29 +101,12 @@ namespace android::os
 			arg1
 		);
 	}
-	QAndroidJniObject DropBoxManager::getNextEntry(const QString &arg0, jlong arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getNextEntry",
-			"(Ljava/lang/String;J)Landroid/os/DropBoxManager$Entry;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	jboolean DropBoxManager::isTagEnabled(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isTagEnabled",
 			"(Ljava/lang/String;)Z",
 			arg0
-		);
-	}
-	jboolean DropBoxManager::isTagEnabled(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isTagEnabled",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace android::os

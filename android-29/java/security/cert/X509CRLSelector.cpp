@@ -45,14 +45,6 @@ namespace java::security::cert
 			arg0
 		);
 	}
-	void X509CRLSelector::addIssuerName(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"addIssuerName",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jobject X509CRLSelector::clone()
 	{
 		return __thiz.callObjectMethod(

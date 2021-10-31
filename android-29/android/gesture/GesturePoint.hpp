@@ -15,7 +15,7 @@ namespace android::gesture
 		
 		GesturePoint(QAndroidJniObject obj);
 		// Constructors
-		GesturePoint(jfloat &arg0, jfloat &arg1, jlong &arg2);
+		GesturePoint(jfloat arg0, jfloat arg1, jlong arg2);
 		GesturePoint() = default;
 		
 		// Methods

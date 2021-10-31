@@ -15,8 +15,7 @@ namespace java::lang
 		UnknownError(QAndroidJniObject obj);
 		// Constructors
 		UnknownError();
-		UnknownError(jstring &arg0);
-		UnknownError(const QString &arg0);
+		UnknownError(jstring arg0);
 		
 		// Methods
 	};

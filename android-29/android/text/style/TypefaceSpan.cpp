@@ -9,7 +9,7 @@ namespace android::text::style
 	
 	TypefaceSpan::TypefaceSpan(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	TypefaceSpan::TypefaceSpan(android::graphics::Typeface &arg0)
+	TypefaceSpan::TypefaceSpan(android::graphics::Typeface arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.TypefaceSpan",
@@ -17,7 +17,7 @@ namespace android::text::style
 			arg0.__jniObject().object()
 		);
 	}
-	TypefaceSpan::TypefaceSpan(android::os::Parcel &arg0)
+	TypefaceSpan::TypefaceSpan(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.TypefaceSpan",
@@ -25,20 +25,12 @@ namespace android::text::style
 			arg0.__jniObject().object()
 		);
 	}
-	TypefaceSpan::TypefaceSpan(jstring &arg0)
+	TypefaceSpan::TypefaceSpan(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.TypefaceSpan",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	TypefaceSpan::TypefaceSpan(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.text.style.TypefaceSpan",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

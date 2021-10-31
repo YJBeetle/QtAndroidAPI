@@ -21,7 +21,7 @@ namespace javax::xml::transform::dom
 			"()V"
 		);
 	}
-	DOMSource::DOMSource(__JniBaseClass &arg0)
+	DOMSource::DOMSource(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.transform.dom.DOMSource",
@@ -29,22 +29,13 @@ namespace javax::xml::transform::dom
 			arg0.__jniObject().object()
 		);
 	}
-	DOMSource::DOMSource(__JniBaseClass &arg0, jstring &arg1)
+	DOMSource::DOMSource(__JniBaseClass arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.transform.dom.DOMSource",
 			"(Lorg/w3c/dom/Node;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	DOMSource::DOMSource(__JniBaseClass &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.xml.transform.dom.DOMSource",
-			"(Lorg/w3c/dom/Node;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	
@@ -84,14 +75,6 @@ namespace javax::xml::transform::dom
 			"setSystemId",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void DOMSource::setSystemId(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSystemId",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace javax::xml::transform::dom

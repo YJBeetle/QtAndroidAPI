@@ -8,7 +8,7 @@ namespace android::drm
 	
 	DrmRights::DrmRights(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DrmRights::DrmRights(android::drm::ProcessedData &arg0, jstring &arg1)
+	DrmRights::DrmRights(android::drm::ProcessedData arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.drm.DrmRights",
@@ -17,16 +17,7 @@ namespace android::drm
 			arg1
 		);
 	}
-	DrmRights::DrmRights(android::drm::ProcessedData &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.drm.DrmRights",
-			"(Landroid/drm/ProcessedData;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	DrmRights::DrmRights(java::io::File &arg0, jstring &arg1)
+	DrmRights::DrmRights(java::io::File arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.drm.DrmRights",
@@ -35,16 +26,7 @@ namespace android::drm
 			arg1
 		);
 	}
-	DrmRights::DrmRights(java::io::File &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.drm.DrmRights",
-			"(Ljava/io/File;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	DrmRights::DrmRights(jstring &arg0, jstring &arg1)
+	DrmRights::DrmRights(jstring arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.drm.DrmRights",
@@ -53,16 +35,7 @@ namespace android::drm
 			arg1
 		);
 	}
-	DrmRights::DrmRights(const QString &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.drm.DrmRights",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	DrmRights::DrmRights(jstring &arg0, jstring &arg1, jstring &arg2)
+	DrmRights::DrmRights(jstring arg0, jstring arg1, jstring arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.drm.DrmRights",
@@ -72,17 +45,7 @@ namespace android::drm
 			arg2
 		);
 	}
-	DrmRights::DrmRights(const QString &arg0, const QString &arg1, const QString &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.drm.DrmRights",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
-	DrmRights::DrmRights(jstring &arg0, jstring &arg1, jstring &arg2, jstring &arg3)
+	DrmRights::DrmRights(jstring arg0, jstring arg1, jstring arg2, jstring arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.drm.DrmRights",
@@ -91,17 +54,6 @@ namespace android::drm
 			arg1,
 			arg2,
 			arg3
-		);
-	}
-	DrmRights::DrmRights(const QString &arg0, const QString &arg1, const QString &arg2, const QString &arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"android.drm.DrmRights",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			QAndroidJniObject::fromString(arg3).object<jstring>()
 		);
 	}
 	

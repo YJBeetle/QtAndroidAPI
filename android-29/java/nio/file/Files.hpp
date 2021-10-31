@@ -60,19 +60,14 @@ namespace java::nio::file
 		static QAndroidJniObject createLink(__JniBaseClass arg0, __JniBaseClass arg1);
 		static QAndroidJniObject createSymbolicLink(__JniBaseClass arg0, __JniBaseClass arg1, jarray arg2);
 		static QAndroidJniObject createTempDirectory(jstring arg0, jarray arg1);
-		static QAndroidJniObject createTempDirectory(const QString &arg0, jarray arg1);
 		static QAndroidJniObject createTempDirectory(__JniBaseClass arg0, jstring arg1, jarray arg2);
-		static QAndroidJniObject createTempDirectory(__JniBaseClass arg0, const QString &arg1, jarray arg2);
 		static QAndroidJniObject createTempFile(jstring arg0, jstring arg1, jarray arg2);
-		static QAndroidJniObject createTempFile(const QString &arg0, const QString &arg1, jarray arg2);
 		static QAndroidJniObject createTempFile(__JniBaseClass arg0, jstring arg1, jstring arg2, jarray arg3);
-		static QAndroidJniObject createTempFile(__JniBaseClass arg0, const QString &arg1, const QString &arg2, jarray arg3);
 		static void _delete(__JniBaseClass arg0);
 		static jboolean deleteIfExists(__JniBaseClass arg0);
 		static jboolean exists(__JniBaseClass arg0, jarray arg1);
 		static QAndroidJniObject find(__JniBaseClass arg0, jint arg1, __JniBaseClass arg2, jarray arg3);
 		static jobject getAttribute(__JniBaseClass arg0, jstring arg1, jarray arg2);
-		static jobject getAttribute(__JniBaseClass arg0, const QString &arg1, jarray arg2);
 		static QAndroidJniObject getFileAttributeView(__JniBaseClass arg0, jclass arg1, jarray arg2);
 		static QAndroidJniObject getFileStore(__JniBaseClass arg0);
 		static QAndroidJniObject getLastModifiedTime(__JniBaseClass arg0, jarray arg1);
@@ -99,7 +94,6 @@ namespace java::nio::file
 		static QAndroidJniObject newByteChannel(__JniBaseClass arg0, __JniBaseClass arg1, jarray arg2);
 		static QAndroidJniObject newDirectoryStream(__JniBaseClass arg0);
 		static QAndroidJniObject newDirectoryStream(__JniBaseClass arg0, jstring arg1);
-		static QAndroidJniObject newDirectoryStream(__JniBaseClass arg0, const QString &arg1);
 		static QAndroidJniObject newDirectoryStream(__JniBaseClass arg0, __JniBaseClass arg1);
 		static QAndroidJniObject newInputStream(__JniBaseClass arg0, jarray arg1);
 		static QAndroidJniObject newOutputStream(__JniBaseClass arg0, jarray arg1);
@@ -110,12 +104,10 @@ namespace java::nio::file
 		static QAndroidJniObject readAllLines(__JniBaseClass arg0, java::nio::charset::Charset arg1);
 		static QAndroidJniObject readAttributes(__JniBaseClass arg0, jclass arg1, jarray arg2);
 		static QAndroidJniObject readAttributes(__JniBaseClass arg0, jstring arg1, jarray arg2);
-		static QAndroidJniObject readAttributes(__JniBaseClass arg0, const QString &arg1, jarray arg2);
 		static jstring readString(__JniBaseClass arg0);
 		static jstring readString(__JniBaseClass arg0, java::nio::charset::Charset arg1);
 		static QAndroidJniObject readSymbolicLink(__JniBaseClass arg0);
 		static QAndroidJniObject setAttribute(__JniBaseClass arg0, jstring arg1, jobject arg2, jarray arg3);
-		static QAndroidJniObject setAttribute(__JniBaseClass arg0, const QString &arg1, jobject arg2, jarray arg3);
 		static QAndroidJniObject setLastModifiedTime(__JniBaseClass arg0, java::nio::file::attribute::FileTime arg1);
 		static QAndroidJniObject setOwner(__JniBaseClass arg0, __JniBaseClass arg1);
 		static QAndroidJniObject setPosixFilePermissions(__JniBaseClass arg0, __JniBaseClass arg1);
@@ -128,9 +120,7 @@ namespace java::nio::file
 		static QAndroidJniObject write(__JniBaseClass arg0, __JniBaseClass arg1, jarray arg2);
 		static QAndroidJniObject write(__JniBaseClass arg0, __JniBaseClass arg1, java::nio::charset::Charset arg2, jarray arg3);
 		static QAndroidJniObject writeString(__JniBaseClass arg0, jstring arg1, jarray arg2);
-		static QAndroidJniObject writeString(__JniBaseClass arg0, const QString &arg1, jarray arg2);
 		static QAndroidJniObject writeString(__JniBaseClass arg0, jstring arg1, java::nio::charset::Charset arg2, jarray arg3);
-		static QAndroidJniObject writeString(__JniBaseClass arg0, const QString &arg1, java::nio::charset::Charset arg2, jarray arg3);
 	};
 } // namespace java::nio::file
 

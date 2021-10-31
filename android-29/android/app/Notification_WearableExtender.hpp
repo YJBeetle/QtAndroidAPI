@@ -42,7 +42,7 @@ namespace android::app
 		Notification_WearableExtender(QAndroidJniObject obj);
 		// Constructors
 		Notification_WearableExtender();
-		Notification_WearableExtender(android::app::Notification &arg0);
+		Notification_WearableExtender(android::app::Notification arg0);
 		
 		// Methods
 		QAndroidJniObject addAction(android::app::Notification_Action arg0);
@@ -75,7 +75,6 @@ namespace android::app
 		jboolean getStartScrollBottom();
 		QAndroidJniObject setBackground(android::graphics::Bitmap arg0);
 		QAndroidJniObject setBridgeTag(jstring arg0);
-		QAndroidJniObject setBridgeTag(const QString &arg0);
 		QAndroidJniObject setContentAction(jint arg0);
 		QAndroidJniObject setContentIcon(jint arg0);
 		QAndroidJniObject setContentIconGravity(jint arg0);
@@ -83,7 +82,6 @@ namespace android::app
 		QAndroidJniObject setCustomContentHeight(jint arg0);
 		QAndroidJniObject setCustomSizePreset(jint arg0);
 		QAndroidJniObject setDismissalId(jstring arg0);
-		QAndroidJniObject setDismissalId(const QString &arg0);
 		QAndroidJniObject setDisplayIntent(android::app::PendingIntent arg0);
 		QAndroidJniObject setGravity(jint arg0);
 		QAndroidJniObject setHintAmbientBigPicture(jboolean arg0);

@@ -25,10 +25,8 @@ namespace android::telecom
 		
 		PhoneAccountHandle(QAndroidJniObject obj);
 		// Constructors
-		PhoneAccountHandle(android::content::ComponentName &arg0, jstring &arg1);
-		PhoneAccountHandle(android::content::ComponentName &arg0, const QString &arg1);
-		PhoneAccountHandle(android::content::ComponentName &arg0, jstring &arg1, android::os::UserHandle &arg2);
-		PhoneAccountHandle(android::content::ComponentName &arg0, const QString &arg1, android::os::UserHandle &arg2);
+		PhoneAccountHandle(android::content::ComponentName arg0, jstring arg1);
+		PhoneAccountHandle(android::content::ComponentName arg0, jstring arg1, android::os::UserHandle arg2);
 		PhoneAccountHandle() = default;
 		
 		// Methods

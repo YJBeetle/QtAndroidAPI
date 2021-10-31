@@ -16,7 +16,7 @@ namespace android::renderscript
 		Float3(QAndroidJniObject obj);
 		// Constructors
 		Float3();
-		Float3(jfloat &arg0, jfloat &arg1, jfloat &arg2);
+		Float3(jfloat arg0, jfloat arg1, jfloat arg2);
 		
 		// Methods
 	};

@@ -71,7 +71,7 @@ namespace android::net
 	
 	IpSecAlgorithm::IpSecAlgorithm(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	IpSecAlgorithm::IpSecAlgorithm(jstring &arg0, jbyteArray &arg1)
+	IpSecAlgorithm::IpSecAlgorithm(jstring arg0, jbyteArray arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.IpSecAlgorithm",
@@ -80,31 +80,12 @@ namespace android::net
 			arg1
 		);
 	}
-	IpSecAlgorithm::IpSecAlgorithm(const QString &arg0, jbyteArray &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.net.IpSecAlgorithm",
-			"(Ljava/lang/String;[B)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
-	IpSecAlgorithm::IpSecAlgorithm(jstring &arg0, jbyteArray &arg1, jint &arg2)
+	IpSecAlgorithm::IpSecAlgorithm(jstring arg0, jbyteArray arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.IpSecAlgorithm",
 			"(Ljava/lang/String;[BI)V",
 			arg0,
-			arg1,
-			arg2
-		);
-	}
-	IpSecAlgorithm::IpSecAlgorithm(const QString &arg0, jbyteArray &arg1, jint &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.net.IpSecAlgorithm",
-			"(Ljava/lang/String;[BI)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2
 		);

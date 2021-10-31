@@ -29,7 +29,6 @@ namespace android::os
 		
 		// Methods
 		static QAndroidJniObject create(jstring arg0, jint arg1);
-		static QAndroidJniObject create(const QString &arg0, jint arg1);
 		static void unmap(java::nio::ByteBuffer arg0);
 		void close();
 		jint describeContents();

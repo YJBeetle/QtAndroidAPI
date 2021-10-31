@@ -15,8 +15,7 @@ namespace java::nio::file
 		
 		DirectoryNotEmptyException(QAndroidJniObject obj);
 		// Constructors
-		DirectoryNotEmptyException(jstring &arg0);
-		DirectoryNotEmptyException(const QString &arg0);
+		DirectoryNotEmptyException(jstring arg0);
 		DirectoryNotEmptyException() = default;
 		
 		// Methods

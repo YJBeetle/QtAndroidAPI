@@ -8,7 +8,7 @@ namespace android::view
 	
 	ActionProvider::ActionProvider(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ActionProvider::ActionProvider(android::content::Context &arg0)
+	ActionProvider::ActionProvider(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.ActionProvider",

@@ -13,20 +13,12 @@ namespace java::net
 			"()V"
 		);
 	}
-	BindException::BindException(jstring &arg0)
+	BindException::BindException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.BindException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	BindException::BindException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.BindException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

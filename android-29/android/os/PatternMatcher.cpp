@@ -43,7 +43,7 @@ namespace android::os
 	
 	PatternMatcher::PatternMatcher(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PatternMatcher::PatternMatcher(android::os::Parcel &arg0)
+	PatternMatcher::PatternMatcher(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.PatternMatcher",
@@ -51,21 +51,12 @@ namespace android::os
 			arg0.__jniObject().object()
 		);
 	}
-	PatternMatcher::PatternMatcher(jstring &arg0, jint &arg1)
+	PatternMatcher::PatternMatcher(jstring arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.PatternMatcher",
 			"(Ljava/lang/String;I)V",
 			arg0,
-			arg1
-		);
-	}
-	PatternMatcher::PatternMatcher(const QString &arg0, jint &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.os.PatternMatcher",
-			"(Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -98,14 +89,6 @@ namespace android::os
 			"match",
 			"(Ljava/lang/String;)Z",
 			arg0
-		);
-	}
-	jboolean PatternMatcher::match(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"match",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring PatternMatcher::toString()

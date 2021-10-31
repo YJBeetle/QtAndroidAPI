@@ -15,8 +15,7 @@ namespace java::nio::charset
 		
 		UnsupportedCharsetException(QAndroidJniObject obj);
 		// Constructors
-		UnsupportedCharsetException(jstring &arg0);
-		UnsupportedCharsetException(const QString &arg0);
+		UnsupportedCharsetException(jstring arg0);
 		UnsupportedCharsetException() = default;
 		
 		// Methods

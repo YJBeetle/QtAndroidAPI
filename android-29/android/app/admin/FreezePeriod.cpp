@@ -7,7 +7,7 @@ namespace android::app::admin
 	
 	FreezePeriod::FreezePeriod(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	FreezePeriod::FreezePeriod(java::time::MonthDay &arg0, java::time::MonthDay &arg1)
+	FreezePeriod::FreezePeriod(java::time::MonthDay arg0, java::time::MonthDay arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.admin.FreezePeriod",

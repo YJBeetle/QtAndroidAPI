@@ -25,7 +25,7 @@ namespace java::util
 		Random(QAndroidJniObject obj);
 		// Constructors
 		Random();
-		Random(jlong &arg0);
+		Random(jlong arg0);
 		
 		// Methods
 		QAndroidJniObject doubles();

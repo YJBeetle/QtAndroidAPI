@@ -7,7 +7,7 @@ namespace android::widget
 	
 	OverScroller::OverScroller(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	OverScroller::OverScroller(android::content::Context &arg0)
+	OverScroller::OverScroller(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.OverScroller",
@@ -15,7 +15,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	OverScroller::OverScroller(android::content::Context &arg0, __JniBaseClass &arg1)
+	OverScroller::OverScroller(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.OverScroller",
@@ -24,7 +24,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	OverScroller::OverScroller(android::content::Context &arg0, __JniBaseClass &arg1, jfloat &arg2, jfloat &arg3)
+	OverScroller::OverScroller(android::content::Context arg0, __JniBaseClass arg1, jfloat arg2, jfloat arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.OverScroller",
@@ -35,7 +35,7 @@ namespace android::widget
 			arg3
 		);
 	}
-	OverScroller::OverScroller(android::content::Context &arg0, __JniBaseClass &arg1, jfloat &arg2, jfloat &arg3, jboolean &arg4)
+	OverScroller::OverScroller(android::content::Context arg0, __JniBaseClass arg1, jfloat arg2, jfloat arg3, jboolean arg4)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.OverScroller",

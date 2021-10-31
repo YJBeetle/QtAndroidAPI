@@ -73,15 +73,6 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject RelativeDateTimeFormatter_RelativeUnit::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.RelativeDateTimeFormatter$RelativeUnit",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/icu/text/RelativeDateTimeFormatter$RelativeUnit;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray RelativeDateTimeFormatter_RelativeUnit::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

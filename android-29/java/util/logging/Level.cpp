@@ -90,15 +90,6 @@ namespace java::util::logging
 			arg0
 		);
 	}
-	QAndroidJniObject Level::parse(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.util.logging.Level",
-			"parse",
-			"(Ljava/lang/String;)Ljava/util/logging/Level;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jboolean Level::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(

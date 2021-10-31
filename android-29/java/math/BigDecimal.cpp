@@ -91,7 +91,7 @@ namespace java::math
 	
 	BigDecimal::BigDecimal(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	BigDecimal::BigDecimal(jcharArray &arg0)
+	BigDecimal::BigDecimal(jcharArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.math.BigDecimal",
@@ -99,7 +99,7 @@ namespace java::math
 			arg0
 		);
 	}
-	BigDecimal::BigDecimal(jdouble &arg0)
+	BigDecimal::BigDecimal(jdouble arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.math.BigDecimal",
@@ -107,7 +107,7 @@ namespace java::math
 			arg0
 		);
 	}
-	BigDecimal::BigDecimal(jint &arg0)
+	BigDecimal::BigDecimal(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.math.BigDecimal",
@@ -115,7 +115,7 @@ namespace java::math
 			arg0
 		);
 	}
-	BigDecimal::BigDecimal(jstring &arg0)
+	BigDecimal::BigDecimal(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.math.BigDecimal",
@@ -123,15 +123,7 @@ namespace java::math
 			arg0
 		);
 	}
-	BigDecimal::BigDecimal(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.math.BigDecimal",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	BigDecimal::BigDecimal(java::math::BigInteger &arg0)
+	BigDecimal::BigDecimal(java::math::BigInteger arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.math.BigDecimal",
@@ -139,7 +131,7 @@ namespace java::math
 			arg0.__jniObject().object()
 		);
 	}
-	BigDecimal::BigDecimal(jlong &arg0)
+	BigDecimal::BigDecimal(jlong arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.math.BigDecimal",
@@ -147,7 +139,7 @@ namespace java::math
 			arg0
 		);
 	}
-	BigDecimal::BigDecimal(jcharArray &arg0, java::math::MathContext &arg1)
+	BigDecimal::BigDecimal(jcharArray arg0, java::math::MathContext arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.math.BigDecimal",
@@ -156,7 +148,7 @@ namespace java::math
 			arg1.__jniObject().object()
 		);
 	}
-	BigDecimal::BigDecimal(jdouble &arg0, java::math::MathContext &arg1)
+	BigDecimal::BigDecimal(jdouble arg0, java::math::MathContext arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.math.BigDecimal",
@@ -165,7 +157,7 @@ namespace java::math
 			arg1.__jniObject().object()
 		);
 	}
-	BigDecimal::BigDecimal(jint &arg0, java::math::MathContext &arg1)
+	BigDecimal::BigDecimal(jint arg0, java::math::MathContext arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.math.BigDecimal",
@@ -174,7 +166,7 @@ namespace java::math
 			arg1.__jniObject().object()
 		);
 	}
-	BigDecimal::BigDecimal(jstring &arg0, java::math::MathContext &arg1)
+	BigDecimal::BigDecimal(jstring arg0, java::math::MathContext arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.math.BigDecimal",
@@ -183,16 +175,7 @@ namespace java::math
 			arg1.__jniObject().object()
 		);
 	}
-	BigDecimal::BigDecimal(const QString &arg0, java::math::MathContext &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.math.BigDecimal",
-			"(Ljava/lang/String;Ljava/math/MathContext;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
-	BigDecimal::BigDecimal(java::math::BigInteger &arg0, jint &arg1)
+	BigDecimal::BigDecimal(java::math::BigInteger arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.math.BigDecimal",
@@ -201,7 +184,7 @@ namespace java::math
 			arg1
 		);
 	}
-	BigDecimal::BigDecimal(java::math::BigInteger &arg0, java::math::MathContext &arg1)
+	BigDecimal::BigDecimal(java::math::BigInteger arg0, java::math::MathContext arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.math.BigDecimal",
@@ -210,7 +193,7 @@ namespace java::math
 			arg1.__jniObject().object()
 		);
 	}
-	BigDecimal::BigDecimal(jlong &arg0, java::math::MathContext &arg1)
+	BigDecimal::BigDecimal(jlong arg0, java::math::MathContext arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.math.BigDecimal",
@@ -219,7 +202,7 @@ namespace java::math
 			arg1.__jniObject().object()
 		);
 	}
-	BigDecimal::BigDecimal(jcharArray &arg0, jint &arg1, jint &arg2)
+	BigDecimal::BigDecimal(jcharArray arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.math.BigDecimal",
@@ -229,7 +212,7 @@ namespace java::math
 			arg2
 		);
 	}
-	BigDecimal::BigDecimal(java::math::BigInteger &arg0, jint &arg1, java::math::MathContext &arg2)
+	BigDecimal::BigDecimal(java::math::BigInteger arg0, jint arg1, java::math::MathContext arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.math.BigDecimal",
@@ -239,7 +222,7 @@ namespace java::math
 			arg2.__jniObject().object()
 		);
 	}
-	BigDecimal::BigDecimal(jcharArray &arg0, jint &arg1, jint &arg2, java::math::MathContext &arg3)
+	BigDecimal::BigDecimal(jcharArray arg0, jint arg1, jint arg2, java::math::MathContext arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"java.math.BigDecimal",

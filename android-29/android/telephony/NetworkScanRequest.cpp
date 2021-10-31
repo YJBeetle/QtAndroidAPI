@@ -30,7 +30,7 @@ namespace android::telephony
 	
 	NetworkScanRequest::NetworkScanRequest(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	NetworkScanRequest::NetworkScanRequest(jint &arg0, jarray &arg1, jint &arg2, jint &arg3, jboolean &arg4, jint &arg5, java::util::ArrayList &arg6)
+	NetworkScanRequest::NetworkScanRequest(jint arg0, jarray arg1, jint arg2, jint arg3, jboolean arg4, jint arg5, java::util::ArrayList arg6)
 	{
 		__thiz = QAndroidJniObject(
 			"android.telephony.NetworkScanRequest",

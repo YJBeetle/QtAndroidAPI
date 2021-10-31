@@ -31,7 +31,7 @@ namespace java::lang
 	
 	Boolean::Boolean(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Boolean::Boolean(jboolean &arg0)
+	Boolean::Boolean(jboolean arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.Boolean",
@@ -39,20 +39,12 @@ namespace java::lang
 			arg0
 		);
 	}
-	Boolean::Boolean(jstring &arg0)
+	Boolean::Boolean(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.Boolean",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	Boolean::Boolean(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.Boolean",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	
@@ -74,15 +66,6 @@ namespace java::lang
 			"getBoolean",
 			"(Ljava/lang/String;)Z",
 			arg0
-		);
-	}
-	jboolean Boolean::getBoolean(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"java.lang.Boolean",
-			"getBoolean",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jint Boolean::hashCode(jboolean arg0)
@@ -133,15 +116,6 @@ namespace java::lang
 			arg0
 		);
 	}
-	jboolean Boolean::parseBoolean(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"java.lang.Boolean",
-			"parseBoolean",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jstring Boolean::toString(jboolean arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -167,15 +141,6 @@ namespace java::lang
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/lang/Boolean;",
 			arg0
-		);
-	}
-	QAndroidJniObject Boolean::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.lang.Boolean",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/lang/Boolean;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean Boolean::booleanValue()

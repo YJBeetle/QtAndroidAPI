@@ -16,7 +16,7 @@ namespace android::service::autofill
 		
 		VisibilitySetterAction_Builder(QAndroidJniObject obj);
 		// Constructors
-		VisibilitySetterAction_Builder(jint &arg0, jint &arg1);
+		VisibilitySetterAction_Builder(jint arg0, jint arg1);
 		VisibilitySetterAction_Builder() = default;
 		
 		// Methods

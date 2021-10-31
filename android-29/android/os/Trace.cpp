@@ -18,16 +18,6 @@ namespace android::os
 			arg1
 		);
 	}
-	void Trace::beginAsyncSection(const QString &arg0, jint arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.os.Trace",
-			"beginAsyncSection",
-			"(Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	void Trace::beginSection(jstring arg0)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -37,15 +27,6 @@ namespace android::os
 			arg0
 		);
 	}
-	void Trace::beginSection(const QString &arg0)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.os.Trace",
-			"beginSection",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void Trace::endAsyncSection(jstring arg0, jint arg1)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -53,16 +34,6 @@ namespace android::os
 			"endAsyncSection",
 			"(Ljava/lang/String;I)V",
 			arg0,
-			arg1
-		);
-	}
-	void Trace::endAsyncSection(const QString &arg0, jint arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.os.Trace",
-			"endAsyncSection",
-			"(Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -89,16 +60,6 @@ namespace android::os
 			"setCounter",
 			"(Ljava/lang/String;J)V",
 			arg0,
-			arg1
-		);
-	}
-	void Trace::setCounter(const QString &arg0, jlong arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.os.Trace",
-			"setCounter",
-			"(Ljava/lang/String;J)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

@@ -25,13 +25,12 @@ namespace android::content
 		
 		AsyncTaskLoader(QAndroidJniObject obj);
 		// Constructors
-		AsyncTaskLoader(android::content::Context &arg0);
+		AsyncTaskLoader(android::content::Context arg0);
 		AsyncTaskLoader() = default;
 		
 		// Methods
 		void cancelLoadInBackground();
 		void dump(jstring arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3);
-		void dump(const QString &arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3);
 		jboolean isLoadInBackgroundCanceled();
 		jobject loadInBackground();
 		void onCanceled(jobject arg0);

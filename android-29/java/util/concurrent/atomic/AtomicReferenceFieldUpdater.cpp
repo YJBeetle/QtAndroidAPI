@@ -19,17 +19,6 @@ namespace java::util::concurrent::atomic
 			arg2
 		);
 	}
-	QAndroidJniObject AtomicReferenceFieldUpdater::newUpdater(jclass arg0, jclass arg1, const QString &arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.util.concurrent.atomic.AtomicReferenceFieldUpdater",
-			"newUpdater",
-			"(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;",
-			arg0,
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	jobject AtomicReferenceFieldUpdater::accumulateAndGet(jobject arg0, jobject arg1, __JniBaseClass arg2)
 	{
 		return __thiz.callObjectMethod(

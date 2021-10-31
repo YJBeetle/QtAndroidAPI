@@ -7,7 +7,7 @@ namespace java::security
 	
 	PKCS12Attribute::PKCS12Attribute(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PKCS12Attribute::PKCS12Attribute(jbyteArray &arg0)
+	PKCS12Attribute::PKCS12Attribute(jbyteArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.PKCS12Attribute",
@@ -15,22 +15,13 @@ namespace java::security
 			arg0
 		);
 	}
-	PKCS12Attribute::PKCS12Attribute(jstring &arg0, jstring &arg1)
+	PKCS12Attribute::PKCS12Attribute(jstring arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.PKCS12Attribute",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	PKCS12Attribute::PKCS12Attribute(const QString &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.PKCS12Attribute",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	

@@ -274,14 +274,6 @@ namespace android::content
 			arg0
 		);
 	}
-	QAndroidJniObject RestrictionsManager::getManifestRestrictions(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getManifestRestrictions",
-			"(Ljava/lang/String;)Ljava/util/List;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jboolean RestrictionsManager::hasRestrictionsProvider()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -298,15 +290,6 @@ namespace android::content
 			arg1.__jniObject().object()
 		);
 	}
-	void RestrictionsManager::notifyPermissionResponse(const QString &arg0, android::os::PersistableBundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"notifyPermissionResponse",
-			"(Ljava/lang/String;Landroid/os/PersistableBundle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	void RestrictionsManager::requestPermission(jstring arg0, jstring arg1, android::os::PersistableBundle arg2)
 	{
 		__thiz.callMethod<void>(
@@ -314,16 +297,6 @@ namespace android::content
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/os/PersistableBundle;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void RestrictionsManager::requestPermission(const QString &arg0, const QString &arg1, android::os::PersistableBundle arg2)
-	{
-		__thiz.callMethod<void>(
-			"requestPermission",
-			"(Ljava/lang/String;Ljava/lang/String;Landroid/os/PersistableBundle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}

@@ -43,16 +43,6 @@ namespace android::graphics
 			arg1
 		);
 	}
-	QAndroidJniObject BitmapRegionDecoder::newInstance(const QString &arg0, jboolean arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.BitmapRegionDecoder",
-			"newInstance",
-			"(Ljava/lang/String;Z)Landroid/graphics/BitmapRegionDecoder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	QAndroidJniObject BitmapRegionDecoder::newInstance(jbyteArray arg0, jint arg1, jint arg2, jboolean arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

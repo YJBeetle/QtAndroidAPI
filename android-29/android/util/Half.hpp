@@ -26,11 +26,10 @@ namespace android::util
 		
 		Half(QAndroidJniObject obj);
 		// Constructors
-		Half(jdouble &arg0);
-		Half(jfloat &arg0);
-		Half(jstring &arg0);
-		Half(const QString &arg0);
-		Half(jshort &arg0);
+		Half(jdouble arg0);
+		Half(jfloat arg0);
+		Half(jstring arg0);
+		Half(jshort arg0);
 		Half() = default;
 		
 		// Methods
@@ -58,7 +57,6 @@ namespace android::util
 		static jshort max(jshort arg0, jshort arg1);
 		static jshort min(jshort arg0, jshort arg1);
 		static jshort parseHalf(jstring arg0);
-		static jshort parseHalf(const QString &arg0);
 		static jshort round(jshort arg0);
 		static jfloat toFloat(jshort arg0);
 		static jshort toHalf(jfloat arg0);
@@ -67,7 +65,6 @@ namespace android::util
 		static jshort trunc(jshort arg0);
 		static QAndroidJniObject valueOf(jfloat arg0);
 		static QAndroidJniObject valueOf(jstring arg0);
-		static QAndroidJniObject valueOf(const QString &arg0);
 		static QAndroidJniObject valueOf(jshort arg0);
 		jbyte byteValue();
 		jint compareTo(android::util::Half arg0);

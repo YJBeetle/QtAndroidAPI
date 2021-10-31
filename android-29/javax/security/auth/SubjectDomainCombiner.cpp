@@ -8,7 +8,7 @@ namespace javax::security::auth
 	
 	SubjectDomainCombiner::SubjectDomainCombiner(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SubjectDomainCombiner::SubjectDomainCombiner(javax::security::auth::Subject &arg0)
+	SubjectDomainCombiner::SubjectDomainCombiner(javax::security::auth::Subject arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.security.auth.SubjectDomainCombiner",

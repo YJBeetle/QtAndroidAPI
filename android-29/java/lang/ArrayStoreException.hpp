@@ -15,8 +15,7 @@ namespace java::lang
 		ArrayStoreException(QAndroidJniObject obj);
 		// Constructors
 		ArrayStoreException();
-		ArrayStoreException(jstring &arg0);
-		ArrayStoreException(const QString &arg0);
+		ArrayStoreException(jstring arg0);
 		
 		// Methods
 	};

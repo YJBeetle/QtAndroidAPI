@@ -9,7 +9,7 @@ namespace java::lang
 	
 	ThreadGroup::ThreadGroup(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ThreadGroup::ThreadGroup(jstring &arg0)
+	ThreadGroup::ThreadGroup(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.ThreadGroup",
@@ -17,30 +17,13 @@ namespace java::lang
 			arg0
 		);
 	}
-	ThreadGroup::ThreadGroup(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.ThreadGroup",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	ThreadGroup::ThreadGroup(java::lang::ThreadGroup &arg0, jstring &arg1)
+	ThreadGroup::ThreadGroup(java::lang::ThreadGroup &arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.ThreadGroup",
 			"(Ljava/lang/ThreadGroup;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	ThreadGroup::ThreadGroup(java::lang::ThreadGroup &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.ThreadGroup",
-			"(Ljava/lang/ThreadGroup;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	

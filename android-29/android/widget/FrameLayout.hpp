@@ -26,10 +26,10 @@ namespace android::widget
 		
 		FrameLayout(QAndroidJniObject obj);
 		// Constructors
-		FrameLayout(android::content::Context &arg0);
-		FrameLayout(android::content::Context &arg0, __JniBaseClass &arg1);
-		FrameLayout(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		FrameLayout(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		FrameLayout(android::content::Context arg0);
+		FrameLayout(android::content::Context arg0, __JniBaseClass arg1);
+		FrameLayout(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		FrameLayout(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		FrameLayout() = default;
 		
 		// Methods

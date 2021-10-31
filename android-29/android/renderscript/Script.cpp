@@ -83,14 +83,6 @@ namespace android::renderscript
 			arg0
 		);
 	}
-	void Script::setTimeZone(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTimeZone",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void Script::setVar(jint arg0, android::renderscript::BaseObj arg1)
 	{
 		__thiz.callMethod<void>(

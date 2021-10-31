@@ -13,7 +13,7 @@ namespace android::widget
 	
 	AutoCompleteTextView::AutoCompleteTextView(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AutoCompleteTextView::AutoCompleteTextView(android::content::Context &arg0)
+	AutoCompleteTextView::AutoCompleteTextView(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.AutoCompleteTextView",
@@ -21,7 +21,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	AutoCompleteTextView::AutoCompleteTextView(android::content::Context &arg0, __JniBaseClass &arg1)
+	AutoCompleteTextView::AutoCompleteTextView(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.AutoCompleteTextView",
@@ -30,7 +30,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	AutoCompleteTextView::AutoCompleteTextView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	AutoCompleteTextView::AutoCompleteTextView(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.AutoCompleteTextView",
@@ -40,7 +40,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	AutoCompleteTextView::AutoCompleteTextView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	AutoCompleteTextView::AutoCompleteTextView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.AutoCompleteTextView",
@@ -51,7 +51,7 @@ namespace android::widget
 			arg3
 		);
 	}
-	AutoCompleteTextView::AutoCompleteTextView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3, android::content::res::Resources_Theme &arg4)
+	AutoCompleteTextView::AutoCompleteTextView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3, android::content::res::Resources_Theme arg4)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.AutoCompleteTextView",
@@ -300,14 +300,6 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AutoCompleteTextView::setCompletionHint(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setCompletionHint",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void AutoCompleteTextView::setDropDownAnchor(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -418,15 +410,6 @@ namespace android::widget
 			"setText",
 			"(Ljava/lang/CharSequence;Z)V",
 			arg0,
-			arg1
-		);
-	}
-	void AutoCompleteTextView::setText(const QString &arg0, jboolean arg1)
-	{
-		__thiz.callMethod<void>(
-			"setText",
-			"(Ljava/lang/CharSequence;Z)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

@@ -7,7 +7,7 @@ namespace android::widget
 	
 	ViewFlipper::ViewFlipper(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ViewFlipper::ViewFlipper(android::content::Context &arg0)
+	ViewFlipper::ViewFlipper(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ViewFlipper",
@@ -15,7 +15,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	ViewFlipper::ViewFlipper(android::content::Context &arg0, __JniBaseClass &arg1)
+	ViewFlipper::ViewFlipper(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ViewFlipper",

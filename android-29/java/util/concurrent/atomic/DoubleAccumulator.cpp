@@ -7,7 +7,7 @@ namespace java::util::concurrent::atomic
 	
 	DoubleAccumulator::DoubleAccumulator(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DoubleAccumulator::DoubleAccumulator(__JniBaseClass &arg0, jdouble &arg1)
+	DoubleAccumulator::DoubleAccumulator(__JniBaseClass arg0, jdouble arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.atomic.DoubleAccumulator",

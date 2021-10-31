@@ -14,7 +14,7 @@ namespace android::text
 			"()V"
 		);
 	}
-	SpannableStringBuilder::SpannableStringBuilder(jstring &arg0)
+	SpannableStringBuilder::SpannableStringBuilder(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.SpannableStringBuilder",
@@ -22,30 +22,12 @@ namespace android::text
 			arg0
 		);
 	}
-	SpannableStringBuilder::SpannableStringBuilder(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.text.SpannableStringBuilder",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	SpannableStringBuilder::SpannableStringBuilder(jstring &arg0, jint &arg1, jint &arg2)
+	SpannableStringBuilder::SpannableStringBuilder(jstring arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.SpannableStringBuilder",
 			"(Ljava/lang/CharSequence;II)V",
 			arg0,
-			arg1,
-			arg2
-		);
-	}
-	SpannableStringBuilder::SpannableStringBuilder(const QString &arg0, jint &arg1, jint &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.text.SpannableStringBuilder",
-			"(Ljava/lang/CharSequence;II)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2
 		);
@@ -59,15 +41,6 @@ namespace android::text
 			"valueOf",
 			"(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;",
 			arg0
-		);
-	}
-	QAndroidJniObject SpannableStringBuilder::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.text.SpannableStringBuilder",
-			"valueOf",
-			"(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject SpannableStringBuilder::append(jchar arg0)
@@ -86,14 +59,6 @@ namespace android::text
 			arg0
 		);
 	}
-	QAndroidJniObject SpannableStringBuilder::append(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"append",
-			"(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject SpannableStringBuilder::append(jstring arg0, jint arg1, jint arg2)
 	{
 		return __thiz.callObjectMethod(
@@ -104,32 +69,12 @@ namespace android::text
 			arg2
 		);
 	}
-	QAndroidJniObject SpannableStringBuilder::append(const QString &arg0, jint arg1, jint arg2)
-	{
-		return __thiz.callObjectMethod(
-			"append",
-			"(Ljava/lang/CharSequence;II)Landroid/text/SpannableStringBuilder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2
-		);
-	}
 	QAndroidJniObject SpannableStringBuilder::append(jstring arg0, jobject arg1, jint arg2)
 	{
 		return __thiz.callObjectMethod(
 			"append",
 			"(Ljava/lang/CharSequence;Ljava/lang/Object;I)Landroid/text/SpannableStringBuilder;",
 			arg0,
-			arg1,
-			arg2
-		);
-	}
-	QAndroidJniObject SpannableStringBuilder::append(const QString &arg0, jobject arg1, jint arg2)
-	{
-		return __thiz.callObjectMethod(
-			"append",
-			"(Ljava/lang/CharSequence;Ljava/lang/Object;I)Landroid/text/SpannableStringBuilder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2
 		);
@@ -261,15 +206,6 @@ namespace android::text
 			arg1
 		);
 	}
-	QAndroidJniObject SpannableStringBuilder::insert(jint arg0, const QString &arg1)
-	{
-		return __thiz.callObjectMethod(
-			"insert",
-			"(ILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	QAndroidJniObject SpannableStringBuilder::insert(jint arg0, jstring arg1, jint arg2, jint arg3)
 	{
 		return __thiz.callObjectMethod(
@@ -277,17 +213,6 @@ namespace android::text
 			"(ILjava/lang/CharSequence;II)Landroid/text/SpannableStringBuilder;",
 			arg0,
 			arg1,
-			arg2,
-			arg3
-		);
-	}
-	QAndroidJniObject SpannableStringBuilder::insert(jint arg0, const QString &arg1, jint arg2, jint arg3)
-	{
-		return __thiz.callObjectMethod(
-			"insert",
-			"(ILjava/lang/CharSequence;II)Landroid/text/SpannableStringBuilder;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2,
 			arg3
 		);
@@ -327,16 +252,6 @@ namespace android::text
 			arg2
 		);
 	}
-	QAndroidJniObject SpannableStringBuilder::replace(jint arg0, jint arg1, const QString &arg2)
-	{
-		return __thiz.callObjectMethod(
-			"replace",
-			"(IILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;",
-			arg0,
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	QAndroidJniObject SpannableStringBuilder::replace(jint arg0, jint arg1, jstring arg2, jint arg3, jint arg4)
 	{
 		return __thiz.callObjectMethod(
@@ -345,18 +260,6 @@ namespace android::text
 			arg0,
 			arg1,
 			arg2,
-			arg3,
-			arg4
-		);
-	}
-	QAndroidJniObject SpannableStringBuilder::replace(jint arg0, jint arg1, const QString &arg2, jint arg3, jint arg4)
-	{
-		return __thiz.callObjectMethod(
-			"replace",
-			"(IILjava/lang/CharSequence;II)Landroid/text/SpannableStringBuilder;",
-			arg0,
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
 			arg3,
 			arg4
 		);

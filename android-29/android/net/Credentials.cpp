@@ -6,7 +6,7 @@ namespace android::net
 	
 	Credentials::Credentials(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Credentials::Credentials(jint &arg0, jint &arg1, jint &arg2)
+	Credentials::Credentials(jint arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.Credentials",

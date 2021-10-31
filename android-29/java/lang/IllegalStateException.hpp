@@ -15,11 +15,9 @@ namespace java::lang
 		IllegalStateException(QAndroidJniObject obj);
 		// Constructors
 		IllegalStateException();
-		IllegalStateException(jstring &arg0);
-		IllegalStateException(const QString &arg0);
-		IllegalStateException(jthrowable &arg0);
-		IllegalStateException(jstring &arg0, jthrowable &arg1);
-		IllegalStateException(const QString &arg0, jthrowable &arg1);
+		IllegalStateException(jstring arg0);
+		IllegalStateException(jthrowable arg0);
+		IllegalStateException(jstring arg0, jthrowable arg1);
 		
 		// Methods
 	};

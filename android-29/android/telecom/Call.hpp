@@ -86,12 +86,10 @@ namespace android::telecom
 		void registerCallback(android::telecom::Call_Callback arg0);
 		void registerCallback(android::telecom::Call_Callback arg0, android::os::Handler arg1);
 		void reject(jboolean arg0, jstring arg1);
-		void reject(jboolean arg0, const QString &arg1);
 		void removeExtras(jarray arg0);
 		void removeExtras(__JniBaseClass arg0);
 		void respondToRttRequest(jint arg0, jboolean arg1);
 		void sendCallEvent(jstring arg0, android::os::Bundle arg1);
-		void sendCallEvent(const QString &arg0, android::os::Bundle arg1);
 		void sendRttRequest();
 		void splitFromConference();
 		void stopDtmfTone();

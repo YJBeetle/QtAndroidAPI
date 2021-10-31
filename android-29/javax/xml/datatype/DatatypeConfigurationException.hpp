@@ -14,11 +14,9 @@ namespace javax::xml::datatype
 		DatatypeConfigurationException(QAndroidJniObject obj);
 		// Constructors
 		DatatypeConfigurationException();
-		DatatypeConfigurationException(jstring &arg0);
-		DatatypeConfigurationException(const QString &arg0);
-		DatatypeConfigurationException(jthrowable &arg0);
-		DatatypeConfigurationException(jstring &arg0, jthrowable &arg1);
-		DatatypeConfigurationException(const QString &arg0, jthrowable &arg1);
+		DatatypeConfigurationException(jstring arg0);
+		DatatypeConfigurationException(jthrowable arg0);
+		DatatypeConfigurationException(jstring arg0, jthrowable arg1);
 		
 		// Methods
 	};

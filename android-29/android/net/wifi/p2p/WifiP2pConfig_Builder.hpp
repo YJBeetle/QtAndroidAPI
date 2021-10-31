@@ -29,9 +29,7 @@ namespace android::net::wifi::p2p
 		QAndroidJniObject setGroupOperatingBand(jint arg0);
 		QAndroidJniObject setGroupOperatingFrequency(jint arg0);
 		QAndroidJniObject setNetworkName(jstring arg0);
-		QAndroidJniObject setNetworkName(const QString &arg0);
 		QAndroidJniObject setPassphrase(jstring arg0);
-		QAndroidJniObject setPassphrase(const QString &arg0);
 	};
 } // namespace android::net::wifi::p2p
 

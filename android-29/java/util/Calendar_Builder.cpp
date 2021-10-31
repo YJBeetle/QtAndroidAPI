@@ -43,14 +43,6 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject Calendar_Builder::setCalendarType(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setCalendarType",
-			"(Ljava/lang/String;)Ljava/util/Calendar$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Calendar_Builder::setDate(jint arg0, jint arg1, jint arg2)
 	{
 		return __thiz.callObjectMethod(

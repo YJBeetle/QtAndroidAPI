@@ -38,16 +38,6 @@ namespace android::system
 			arg1
 		);
 	}
-	jboolean Os::access(const QString &arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.system.Os",
-			"access",
-			"(Ljava/lang/String;I)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	void Os::bind(java::io::FileDescriptor arg0, java::net::SocketAddress arg1)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -79,16 +69,6 @@ namespace android::system
 			arg1
 		);
 	}
-	void Os::chmod(const QString &arg0, jint arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.system.Os",
-			"chmod",
-			"(Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	void Os::chown(jstring arg0, jint arg1, jint arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -96,17 +76,6 @@ namespace android::system
 			"chown",
 			"(Ljava/lang/String;II)V",
 			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void Os::chown(const QString &arg0, jint arg1, jint arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.system.Os",
-			"chown",
-			"(Ljava/lang/String;II)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2
 		);
@@ -178,16 +147,6 @@ namespace android::system
 			arg1
 		);
 	}
-	void Os::execv(const QString &arg0, jarray arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.system.Os",
-			"execv",
-			"(Ljava/lang/String;[Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	void Os::execve(jstring arg0, jarray arg1, jarray arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -195,17 +154,6 @@ namespace android::system
 			"execve",
 			"(Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V",
 			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void Os::execve(const QString &arg0, jarray arg1, jarray arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.system.Os",
-			"execve",
-			"(Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2
 		);
@@ -303,15 +251,6 @@ namespace android::system
 			arg0
 		).object<jstring>();
 	}
-	jstring Os::getenv(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.system.Os",
-			"getenv",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
 	jint Os::geteuid()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -399,16 +338,6 @@ namespace android::system
 			arg1
 		).object<jbyteArray>();
 	}
-	jbyteArray Os::getxattr(const QString &arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.system.Os",
-			"getxattr",
-			"(Ljava/lang/String;Ljava/lang/String;)[B",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		).object<jbyteArray>();
-	}
 	jstring Os::if_indextoname(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -427,15 +356,6 @@ namespace android::system
 			arg0
 		);
 	}
-	jint Os::if_nametoindex(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.system.Os",
-			"if_nametoindex",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Os::inet_pton(jint arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -444,16 +364,6 @@ namespace android::system
 			"(ILjava/lang/String;)Ljava/net/InetAddress;",
 			arg0,
 			arg1
-		);
-	}
-	QAndroidJniObject Os::inet_pton(jint arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.system.Os",
-			"inet_pton",
-			"(ILjava/lang/String;)Ljava/net/InetAddress;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	jboolean Os::isatty(java::io::FileDescriptor arg0)
@@ -486,17 +396,6 @@ namespace android::system
 			arg2
 		);
 	}
-	void Os::lchown(const QString &arg0, jint arg1, jint arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.system.Os",
-			"lchown",
-			"(Ljava/lang/String;II)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2
-		);
-	}
 	void Os::link(jstring arg0, jstring arg1)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -505,16 +404,6 @@ namespace android::system
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	void Os::link(const QString &arg0, const QString &arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.system.Os",
-			"link",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void Os::listen(java::io::FileDescriptor arg0, jint arg1)
@@ -536,15 +425,6 @@ namespace android::system
 			arg0
 		).object<jarray>();
 	}
-	jarray Os::listxattr(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.system.Os",
-			"listxattr",
-			"(Ljava/lang/String;)[Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jarray>();
-	}
 	jlong Os::lseek(java::io::FileDescriptor arg0, jlong arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticMethod<jlong>(
@@ -563,15 +443,6 @@ namespace android::system
 			"lstat",
 			"(Ljava/lang/String;)Landroid/system/StructStat;",
 			arg0
-		);
-	}
-	QAndroidJniObject Os::lstat(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.system.Os",
-			"lstat",
-			"(Ljava/lang/String;)Landroid/system/StructStat;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void Os::mincore(jlong arg0, jlong arg1, jbyteArray arg2)
@@ -595,16 +466,6 @@ namespace android::system
 			arg1
 		);
 	}
-	void Os::mkdir(const QString &arg0, jint arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.system.Os",
-			"mkdir",
-			"(Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	void Os::mkfifo(jstring arg0, jint arg1)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -612,16 +473,6 @@ namespace android::system
 			"mkfifo",
 			"(Ljava/lang/String;I)V",
 			arg0,
-			arg1
-		);
-	}
-	void Os::mkfifo(const QString &arg0, jint arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.system.Os",
-			"mkfifo",
-			"(Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -687,17 +538,6 @@ namespace android::system
 			"open",
 			"(Ljava/lang/String;II)Ljava/io/FileDescriptor;",
 			arg0,
-			arg1,
-			arg2
-		);
-	}
-	QAndroidJniObject Os::open(const QString &arg0, jint arg1, jint arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.system.Os",
-			"open",
-			"(Ljava/lang/String;II)Ljava/io/FileDescriptor;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2
 		);
@@ -823,15 +663,6 @@ namespace android::system
 			arg0
 		).object<jstring>();
 	}
-	jstring Os::readlink(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.system.Os",
-			"readlink",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
 	jint Os::readv(java::io::FileDescriptor arg0, jobjectArray arg1, jintArray arg2, jintArray arg3)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -879,15 +710,6 @@ namespace android::system
 			arg0
 		);
 	}
-	void Os::remove(const QString &arg0)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.system.Os",
-			"remove",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void Os::removexattr(jstring arg0, jstring arg1)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -898,16 +720,6 @@ namespace android::system
 			arg1
 		);
 	}
-	void Os::removexattr(const QString &arg0, const QString &arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.system.Os",
-			"removexattr",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	void Os::rename(jstring arg0, jstring arg1)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -916,16 +728,6 @@ namespace android::system
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	void Os::rename(const QString &arg0, const QString &arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.system.Os",
-			"rename",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	jlong Os::sendfile(java::io::FileDescriptor arg0, java::io::FileDescriptor arg1, android::system::Int64Ref arg2, jlong arg3)
@@ -1002,17 +804,6 @@ namespace android::system
 			arg2
 		);
 	}
-	void Os::setenv(const QString &arg0, const QString &arg1, jboolean arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.system.Os",
-			"setenv",
-			"(Ljava/lang/String;Ljava/lang/String;Z)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2
-		);
-	}
 	void Os::seteuid(jint arg0)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -1084,18 +875,6 @@ namespace android::system
 			arg3
 		);
 	}
-	void Os::setxattr(const QString &arg0, const QString &arg1, jbyteArray arg2, jint arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.system.Os",
-			"setxattr",
-			"(Ljava/lang/String;Ljava/lang/String;[BI)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2,
-			arg3
-		);
-	}
 	void Os::shutdown(java::io::FileDescriptor arg0, jint arg1)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -1139,15 +918,6 @@ namespace android::system
 			arg0
 		);
 	}
-	QAndroidJniObject Os::stat(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.system.Os",
-			"stat",
-			"(Ljava/lang/String;)Landroid/system/StructStat;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Os::statvfs(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -1155,15 +925,6 @@ namespace android::system
 			"statvfs",
 			"(Ljava/lang/String;)Landroid/system/StructStatVfs;",
 			arg0
-		);
-	}
-	QAndroidJniObject Os::statvfs(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.system.Os",
-			"statvfs",
-			"(Ljava/lang/String;)Landroid/system/StructStatVfs;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring Os::strerror(jint arg0)
@@ -1192,16 +953,6 @@ namespace android::system
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	void Os::symlink(const QString &arg0, const QString &arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.system.Os",
-			"symlink",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	jlong Os::sysconf(jint arg0)
@@ -1256,15 +1007,6 @@ namespace android::system
 			"unsetenv",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void Os::unsetenv(const QString &arg0)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.system.Os",
-			"unsetenv",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jint Os::write(java::io::FileDescriptor arg0, java::nio::ByteBuffer arg1)

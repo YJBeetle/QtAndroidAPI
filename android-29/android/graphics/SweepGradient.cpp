@@ -6,7 +6,7 @@ namespace android::graphics
 	
 	SweepGradient::SweepGradient(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SweepGradient::SweepGradient(jfloat &arg0, jfloat &arg1, jintArray &arg2, jfloatArray &arg3)
+	SweepGradient::SweepGradient(jfloat arg0, jfloat arg1, jintArray arg2, jfloatArray arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.SweepGradient",
@@ -17,7 +17,7 @@ namespace android::graphics
 			arg3
 		);
 	}
-	SweepGradient::SweepGradient(jfloat &arg0, jfloat &arg1, jlongArray &arg2, jfloatArray &arg3)
+	SweepGradient::SweepGradient(jfloat arg0, jfloat arg1, jlongArray arg2, jfloatArray arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.SweepGradient",
@@ -28,7 +28,7 @@ namespace android::graphics
 			arg3
 		);
 	}
-	SweepGradient::SweepGradient(jfloat &arg0, jfloat &arg1, jint &arg2, jint &arg3)
+	SweepGradient::SweepGradient(jfloat arg0, jfloat arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.SweepGradient",
@@ -39,7 +39,7 @@ namespace android::graphics
 			arg3
 		);
 	}
-	SweepGradient::SweepGradient(jfloat &arg0, jfloat &arg1, jlong &arg2, jlong &arg3)
+	SweepGradient::SweepGradient(jfloat arg0, jfloat arg1, jlong arg2, jlong arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.SweepGradient",

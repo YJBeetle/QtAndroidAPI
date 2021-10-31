@@ -14,7 +14,7 @@ namespace android::media
 			"()V"
 		);
 	}
-	VolumeShaper_Configuration_Builder::VolumeShaper_Configuration_Builder(android::media::VolumeShaper_Configuration &arg0)
+	VolumeShaper_Configuration_Builder::VolumeShaper_Configuration_Builder(android::media::VolumeShaper_Configuration arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.VolumeShaper$Configuration$Builder",

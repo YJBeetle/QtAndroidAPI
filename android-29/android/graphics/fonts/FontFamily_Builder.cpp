@@ -8,7 +8,7 @@ namespace android::graphics::fonts
 	
 	FontFamily_Builder::FontFamily_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	FontFamily_Builder::FontFamily_Builder(android::graphics::fonts::Font &arg0)
+	FontFamily_Builder::FontFamily_Builder(android::graphics::fonts::Font arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.fonts.FontFamily$Builder",

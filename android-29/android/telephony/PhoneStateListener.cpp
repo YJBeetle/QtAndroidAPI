@@ -114,7 +114,7 @@ namespace android::telephony
 			"()V"
 		);
 	}
-	PhoneStateListener::PhoneStateListener(__JniBaseClass &arg0)
+	PhoneStateListener::PhoneStateListener(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.telephony.PhoneStateListener",
@@ -147,15 +147,6 @@ namespace android::telephony
 			"(ILjava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	void PhoneStateListener::onCallStateChanged(jint arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"onCallStateChanged",
-			"(ILjava/lang/String;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void PhoneStateListener::onCellInfoChanged(__JniBaseClass arg0)

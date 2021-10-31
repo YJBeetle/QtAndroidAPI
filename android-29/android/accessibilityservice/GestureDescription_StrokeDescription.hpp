@@ -16,8 +16,8 @@ namespace android::accessibilityservice
 		
 		GestureDescription_StrokeDescription(QAndroidJniObject obj);
 		// Constructors
-		GestureDescription_StrokeDescription(android::graphics::Path &arg0, jlong &arg1, jlong &arg2);
-		GestureDescription_StrokeDescription(android::graphics::Path &arg0, jlong &arg1, jlong &arg2, jboolean &arg3);
+		GestureDescription_StrokeDescription(android::graphics::Path arg0, jlong arg1, jlong arg2);
+		GestureDescription_StrokeDescription(android::graphics::Path arg0, jlong arg1, jlong arg2, jboolean arg3);
 		GestureDescription_StrokeDescription() = default;
 		
 		// Methods

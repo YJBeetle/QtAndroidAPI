@@ -78,15 +78,13 @@ namespace android::graphics::drawable
 		BitmapDrawable(QAndroidJniObject obj);
 		// Constructors
 		BitmapDrawable();
-		BitmapDrawable(android::content::res::Resources &arg0);
-		BitmapDrawable(android::graphics::Bitmap &arg0);
-		BitmapDrawable(java::io::InputStream &arg0);
-		BitmapDrawable(jstring &arg0);
-		BitmapDrawable(const QString &arg0);
-		BitmapDrawable(android::content::res::Resources &arg0, android::graphics::Bitmap &arg1);
-		BitmapDrawable(android::content::res::Resources &arg0, java::io::InputStream &arg1);
-		BitmapDrawable(android::content::res::Resources &arg0, jstring &arg1);
-		BitmapDrawable(android::content::res::Resources &arg0, const QString &arg1);
+		BitmapDrawable(android::content::res::Resources arg0);
+		BitmapDrawable(android::graphics::Bitmap arg0);
+		BitmapDrawable(java::io::InputStream arg0);
+		BitmapDrawable(jstring arg0);
+		BitmapDrawable(android::content::res::Resources arg0, android::graphics::Bitmap arg1);
+		BitmapDrawable(android::content::res::Resources arg0, java::io::InputStream arg1);
+		BitmapDrawable(android::content::res::Resources arg0, jstring arg1);
 		
 		// Methods
 		void applyTheme(android::content::res::Resources_Theme arg0);

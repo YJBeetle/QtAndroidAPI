@@ -61,10 +61,10 @@ namespace android::widget
 		
 		ImageView(QAndroidJniObject obj);
 		// Constructors
-		ImageView(android::content::Context &arg0);
-		ImageView(android::content::Context &arg0, __JniBaseClass &arg1);
-		ImageView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		ImageView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		ImageView(android::content::Context arg0);
+		ImageView(android::content::Context arg0, __JniBaseClass arg1);
+		ImageView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		ImageView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		ImageView() = default;
 		
 		// Methods

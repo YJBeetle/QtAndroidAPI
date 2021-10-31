@@ -16,7 +16,6 @@ namespace android::provider
 		
 		// Methods
 		static jstring keyFor(jstring arg0);
-		static jstring keyFor(const QString &arg0);
 	};
 } // namespace android::provider
 

@@ -8,7 +8,7 @@ namespace java::util::zip
 	
 	InflaterInputStream::InflaterInputStream(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	InflaterInputStream::InflaterInputStream(java::io::InputStream &arg0)
+	InflaterInputStream::InflaterInputStream(java::io::InputStream arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.zip.InflaterInputStream",
@@ -16,7 +16,7 @@ namespace java::util::zip
 			arg0.__jniObject().object()
 		);
 	}
-	InflaterInputStream::InflaterInputStream(java::io::InputStream &arg0, java::util::zip::Inflater &arg1)
+	InflaterInputStream::InflaterInputStream(java::io::InputStream arg0, java::util::zip::Inflater arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.zip.InflaterInputStream",
@@ -25,7 +25,7 @@ namespace java::util::zip
 			arg1.__jniObject().object()
 		);
 	}
-	InflaterInputStream::InflaterInputStream(java::io::InputStream &arg0, java::util::zip::Inflater &arg1, jint &arg2)
+	InflaterInputStream::InflaterInputStream(java::io::InputStream arg0, java::util::zip::Inflater arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.zip.InflaterInputStream",

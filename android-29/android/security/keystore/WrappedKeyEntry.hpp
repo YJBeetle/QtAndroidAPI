@@ -12,8 +12,7 @@ namespace android::security::keystore
 		
 		WrappedKeyEntry(QAndroidJniObject obj);
 		// Constructors
-		WrappedKeyEntry(jbyteArray &arg0, jstring &arg1, jstring &arg2, __JniBaseClass &arg3);
-		WrappedKeyEntry(jbyteArray &arg0, const QString &arg1, const QString &arg2, __JniBaseClass &arg3);
+		WrappedKeyEntry(jbyteArray arg0, jstring arg1, jstring arg2, __JniBaseClass arg3);
 		WrappedKeyEntry() = default;
 		
 		// Methods

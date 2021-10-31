@@ -17,8 +17,7 @@ namespace android::database::sqlite
 		SQLiteMisuseException(QAndroidJniObject obj);
 		// Constructors
 		SQLiteMisuseException();
-		SQLiteMisuseException(jstring &arg0);
-		SQLiteMisuseException(const QString &arg0);
+		SQLiteMisuseException(jstring arg0);
 		
 		// Methods
 	};

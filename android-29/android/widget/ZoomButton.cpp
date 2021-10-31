@@ -10,7 +10,7 @@ namespace android::widget
 	
 	ZoomButton::ZoomButton(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ZoomButton::ZoomButton(android::content::Context &arg0)
+	ZoomButton::ZoomButton(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ZoomButton",
@@ -18,7 +18,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	ZoomButton::ZoomButton(android::content::Context &arg0, __JniBaseClass &arg1)
+	ZoomButton::ZoomButton(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ZoomButton",
@@ -27,7 +27,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	ZoomButton::ZoomButton(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	ZoomButton::ZoomButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ZoomButton",
@@ -37,7 +37,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	ZoomButton::ZoomButton(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	ZoomButton::ZoomButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ZoomButton",

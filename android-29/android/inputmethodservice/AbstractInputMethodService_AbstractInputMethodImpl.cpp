@@ -7,7 +7,7 @@ namespace android::inputmethodservice
 	
 	AbstractInputMethodService_AbstractInputMethodImpl::AbstractInputMethodService_AbstractInputMethodImpl(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AbstractInputMethodService_AbstractInputMethodImpl::AbstractInputMethodService_AbstractInputMethodImpl(android::inputmethodservice::AbstractInputMethodService &arg0)
+	AbstractInputMethodService_AbstractInputMethodImpl::AbstractInputMethodService_AbstractInputMethodImpl(android::inputmethodservice::AbstractInputMethodService arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.inputmethodservice.AbstractInputMethodService$AbstractInputMethodImpl",

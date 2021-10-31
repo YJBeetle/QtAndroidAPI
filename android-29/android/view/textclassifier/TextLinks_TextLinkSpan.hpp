@@ -22,7 +22,7 @@ namespace android::view::textclassifier
 		
 		TextLinks_TextLinkSpan(QAndroidJniObject obj);
 		// Constructors
-		TextLinks_TextLinkSpan(android::view::textclassifier::TextLinks_TextLink &arg0);
+		TextLinks_TextLinkSpan(android::view::textclassifier::TextLinks_TextLink arg0);
 		TextLinks_TextLinkSpan() = default;
 		
 		// Methods

@@ -18,8 +18,8 @@ namespace android::icu::text
 		// Constructors
 		Transliterator_Position();
 		Transliterator_Position(android::icu::text::Transliterator_Position &arg0);
-		Transliterator_Position(jint &arg0, jint &arg1, jint &arg2);
-		Transliterator_Position(jint &arg0, jint &arg1, jint &arg2, jint &arg3);
+		Transliterator_Position(jint arg0, jint arg1, jint arg2);
+		Transliterator_Position(jint arg0, jint arg1, jint arg2, jint arg3);
 		
 		// Methods
 		jboolean equals(jobject arg0);

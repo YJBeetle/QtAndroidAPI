@@ -7,7 +7,7 @@ namespace android::view
 	
 	MenuInflater::MenuInflater(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MenuInflater::MenuInflater(android::content::Context &arg0)
+	MenuInflater::MenuInflater(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.MenuInflater",

@@ -21,7 +21,7 @@ namespace android::graphics
 		// Constructors
 		Point();
 		Point(android::graphics::Point &arg0);
-		Point(jint &arg0, jint &arg1);
+		Point(jint arg0, jint arg1);
 		
 		// Methods
 		jint describeContents();

@@ -40,7 +40,7 @@ namespace android::gesture
 	
 	GestureOverlayView::GestureOverlayView(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	GestureOverlayView::GestureOverlayView(android::content::Context &arg0)
+	GestureOverlayView::GestureOverlayView(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.gesture.GestureOverlayView",
@@ -48,7 +48,7 @@ namespace android::gesture
 			arg0.__jniObject().object()
 		);
 	}
-	GestureOverlayView::GestureOverlayView(android::content::Context &arg0, __JniBaseClass &arg1)
+	GestureOverlayView::GestureOverlayView(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.gesture.GestureOverlayView",
@@ -57,7 +57,7 @@ namespace android::gesture
 			arg1.__jniObject().object()
 		);
 	}
-	GestureOverlayView::GestureOverlayView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	GestureOverlayView::GestureOverlayView(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.gesture.GestureOverlayView",
@@ -67,7 +67,7 @@ namespace android::gesture
 			arg2
 		);
 	}
-	GestureOverlayView::GestureOverlayView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	GestureOverlayView::GestureOverlayView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.gesture.GestureOverlayView",

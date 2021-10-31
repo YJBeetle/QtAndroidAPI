@@ -45,13 +45,12 @@ namespace android::app
 		
 		WallpaperInfo(QAndroidJniObject obj);
 		// Constructors
-		WallpaperInfo(android::content::Context &arg0, android::content::pm::ResolveInfo &arg1);
+		WallpaperInfo(android::content::Context arg0, android::content::pm::ResolveInfo arg1);
 		WallpaperInfo() = default;
 		
 		// Methods
 		jint describeContents();
 		void dump(__JniBaseClass arg0, jstring arg1);
-		void dump(__JniBaseClass arg0, const QString &arg1);
 		QAndroidJniObject getComponent();
 		jstring getPackageName();
 		QAndroidJniObject getServiceInfo();

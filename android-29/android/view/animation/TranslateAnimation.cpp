@@ -8,7 +8,7 @@ namespace android::view::animation
 	
 	TranslateAnimation::TranslateAnimation(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	TranslateAnimation::TranslateAnimation(android::content::Context &arg0, __JniBaseClass &arg1)
+	TranslateAnimation::TranslateAnimation(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.TranslateAnimation",
@@ -17,7 +17,7 @@ namespace android::view::animation
 			arg1.__jniObject().object()
 		);
 	}
-	TranslateAnimation::TranslateAnimation(jfloat &arg0, jfloat &arg1, jfloat &arg2, jfloat &arg3)
+	TranslateAnimation::TranslateAnimation(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.TranslateAnimation",
@@ -28,7 +28,7 @@ namespace android::view::animation
 			arg3
 		);
 	}
-	TranslateAnimation::TranslateAnimation(jint &arg0, jfloat &arg1, jint &arg2, jfloat &arg3, jint &arg4, jfloat &arg5, jint &arg6, jfloat &arg7)
+	TranslateAnimation::TranslateAnimation(jint arg0, jfloat arg1, jint arg2, jfloat arg3, jint arg4, jfloat arg5, jint arg6, jfloat arg7)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.TranslateAnimation",

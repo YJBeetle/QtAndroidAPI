@@ -33,16 +33,14 @@ namespace java::math
 		
 		BigInteger(QAndroidJniObject obj);
 		// Constructors
-		BigInteger(jbyteArray &arg0);
-		BigInteger(jstring &arg0);
-		BigInteger(const QString &arg0);
-		BigInteger(jint &arg0, jbyteArray &arg1);
-		BigInteger(jint &arg0, java::util::Random &arg1);
-		BigInteger(jstring &arg0, jint &arg1);
-		BigInteger(const QString &arg0, jint &arg1);
-		BigInteger(jbyteArray &arg0, jint &arg1, jint &arg2);
-		BigInteger(jint &arg0, jint &arg1, java::util::Random &arg2);
-		BigInteger(jint &arg0, jbyteArray &arg1, jint &arg2, jint &arg3);
+		BigInteger(jbyteArray arg0);
+		BigInteger(jstring arg0);
+		BigInteger(jint arg0, jbyteArray arg1);
+		BigInteger(jint arg0, java::util::Random arg1);
+		BigInteger(jstring arg0, jint arg1);
+		BigInteger(jbyteArray arg0, jint arg1, jint arg2);
+		BigInteger(jint arg0, jint arg1, java::util::Random arg2);
+		BigInteger(jint arg0, jbyteArray arg1, jint arg2, jint arg3);
 		BigInteger() = default;
 		
 		// Methods

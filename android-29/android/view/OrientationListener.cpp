@@ -14,7 +14,7 @@ namespace android::view
 	
 	OrientationListener::OrientationListener(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	OrientationListener::OrientationListener(android::content::Context &arg0)
+	OrientationListener::OrientationListener(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.OrientationListener",
@@ -22,7 +22,7 @@ namespace android::view
 			arg0.__jniObject().object()
 		);
 	}
-	OrientationListener::OrientationListener(android::content::Context &arg0, jint &arg1)
+	OrientationListener::OrientationListener(android::content::Context arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.OrientationListener",

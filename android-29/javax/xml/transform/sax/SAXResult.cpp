@@ -21,7 +21,7 @@ namespace javax::xml::transform::sax
 			"()V"
 		);
 	}
-	SAXResult::SAXResult(__JniBaseClass &arg0)
+	SAXResult::SAXResult(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.transform.sax.SAXResult",
@@ -74,14 +74,6 @@ namespace javax::xml::transform::sax
 			"setSystemId",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void SAXResult::setSystemId(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSystemId",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace javax::xml::transform::sax

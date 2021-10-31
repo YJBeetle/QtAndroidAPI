@@ -24,10 +24,8 @@ namespace java::io
 		
 		RandomAccessFile(QAndroidJniObject obj);
 		// Constructors
-		RandomAccessFile(java::io::File &arg0, jstring &arg1);
-		RandomAccessFile(java::io::File &arg0, const QString &arg1);
-		RandomAccessFile(jstring &arg0, jstring &arg1);
-		RandomAccessFile(const QString &arg0, const QString &arg1);
+		RandomAccessFile(java::io::File arg0, jstring arg1);
+		RandomAccessFile(jstring arg0, jstring arg1);
 		RandomAccessFile() = default;
 		
 		// Methods
@@ -62,17 +60,14 @@ namespace java::io
 		void writeBoolean(jboolean arg0);
 		void writeByte(jint arg0);
 		void writeBytes(jstring arg0);
-		void writeBytes(const QString &arg0);
 		void writeChar(jint arg0);
 		void writeChars(jstring arg0);
-		void writeChars(const QString &arg0);
 		void writeDouble(jdouble arg0);
 		void writeFloat(jfloat arg0);
 		void writeInt(jint arg0);
 		void writeLong(jlong arg0);
 		void writeShort(jint arg0);
 		void writeUTF(jstring arg0);
-		void writeUTF(const QString &arg0);
 	};
 } // namespace java::io
 

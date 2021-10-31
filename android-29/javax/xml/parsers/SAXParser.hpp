@@ -41,7 +41,6 @@ namespace javax::xml::parsers
 		// Methods
 		QAndroidJniObject getParser();
 		jobject getProperty(jstring arg0);
-		jobject getProperty(const QString &arg0);
 		QAndroidJniObject getSchema();
 		QAndroidJniObject getXMLReader();
 		jboolean isNamespaceAware();
@@ -52,18 +51,13 @@ namespace javax::xml::parsers
 		void parse(java::io::InputStream arg0, org::xml::sax::HandlerBase arg1);
 		void parse(java::io::InputStream arg0, org::xml::sax::helpers::DefaultHandler arg1);
 		void parse(jstring arg0, org::xml::sax::HandlerBase arg1);
-		void parse(const QString &arg0, org::xml::sax::HandlerBase arg1);
 		void parse(jstring arg0, org::xml::sax::helpers::DefaultHandler arg1);
-		void parse(const QString &arg0, org::xml::sax::helpers::DefaultHandler arg1);
 		void parse(org::xml::sax::InputSource arg0, org::xml::sax::HandlerBase arg1);
 		void parse(org::xml::sax::InputSource arg0, org::xml::sax::helpers::DefaultHandler arg1);
 		void parse(java::io::InputStream arg0, org::xml::sax::HandlerBase arg1, jstring arg2);
-		void parse(java::io::InputStream arg0, org::xml::sax::HandlerBase arg1, const QString &arg2);
 		void parse(java::io::InputStream arg0, org::xml::sax::helpers::DefaultHandler arg1, jstring arg2);
-		void parse(java::io::InputStream arg0, org::xml::sax::helpers::DefaultHandler arg1, const QString &arg2);
 		void reset();
 		void setProperty(jstring arg0, jobject arg1);
-		void setProperty(const QString &arg0, jobject arg1);
 	};
 } // namespace javax::xml::parsers
 

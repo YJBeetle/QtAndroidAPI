@@ -16,7 +16,7 @@ namespace java::util::concurrent
 			"()V"
 		);
 	}
-	LinkedTransferQueue::LinkedTransferQueue(__JniBaseClass &arg0)
+	LinkedTransferQueue::LinkedTransferQueue(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.LinkedTransferQueue",

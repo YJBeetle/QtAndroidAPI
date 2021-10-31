@@ -41,15 +41,6 @@ namespace android::renderscript
 			arg0
 		);
 	}
-	QAndroidJniObject RenderScript_ContextType::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.renderscript.RenderScript$ContextType",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/renderscript/RenderScript$ContextType;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray RenderScript_ContextType::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

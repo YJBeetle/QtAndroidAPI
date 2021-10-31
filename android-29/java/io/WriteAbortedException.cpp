@@ -14,21 +14,12 @@ namespace java::io
 	
 	WriteAbortedException::WriteAbortedException(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	WriteAbortedException::WriteAbortedException(jstring &arg0, java::lang::Exception &arg1)
+	WriteAbortedException::WriteAbortedException(jstring arg0, java::lang::Exception arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.WriteAbortedException",
 			"(Ljava/lang/String;Ljava/lang/Exception;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	WriteAbortedException::WriteAbortedException(const QString &arg0, java::lang::Exception &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.io.WriteAbortedException",
-			"(Ljava/lang/String;Ljava/lang/Exception;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

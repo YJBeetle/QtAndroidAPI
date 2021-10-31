@@ -104,7 +104,7 @@ namespace android::graphics::fonts
 			"()V"
 		);
 	}
-	FontStyle::FontStyle(jint &arg0, jint &arg1)
+	FontStyle::FontStyle(jint arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.fonts.FontStyle",

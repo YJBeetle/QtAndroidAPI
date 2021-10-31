@@ -99,14 +99,6 @@ namespace android::os::storage
 			arg0
 		).object<jstring>();
 	}
-	jstring StorageManager::getMountedObbPath(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getMountedObbPath",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
 	QAndroidJniObject StorageManager::getPrimaryStorageVolume()
 	{
 		return __thiz.callObjectMethod(
@@ -185,14 +177,6 @@ namespace android::os::storage
 			arg0
 		);
 	}
-	jboolean StorageManager::isObbMounted(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isObbMounted",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jboolean StorageManager::mountObb(jstring arg0, jstring arg1, android::os::storage::OnObbStateChangeListener arg2)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -200,16 +184,6 @@ namespace android::os::storage
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/os/storage/OnObbStateChangeListener;)Z",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	jboolean StorageManager::mountObb(const QString &arg0, const QString &arg1, android::os::storage::OnObbStateChangeListener arg2)
-	{
-		return __thiz.callMethod<jboolean>(
-			"mountObb",
-			"(Ljava/lang/String;Ljava/lang/String;Landroid/os/storage/OnObbStateChangeListener;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}
@@ -247,16 +221,6 @@ namespace android::os::storage
 			"unmountObb",
 			"(Ljava/lang/String;ZLandroid/os/storage/OnObbStateChangeListener;)Z",
 			arg0,
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	jboolean StorageManager::unmountObb(const QString &arg0, jboolean arg1, android::os::storage::OnObbStateChangeListener arg2)
-	{
-		return __thiz.callMethod<jboolean>(
-			"unmountObb",
-			"(Ljava/lang/String;ZLandroid/os/storage/OnObbStateChangeListener;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2.__jniObject().object()
 		);

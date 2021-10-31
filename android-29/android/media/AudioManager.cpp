@@ -836,28 +836,12 @@ namespace android::media
 			arg0
 		).object<jstring>();
 	}
-	jstring AudioManager::getParameters(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getParameters",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
 	jstring AudioManager::getProperty(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getProperty",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
-	}
-	jstring AudioManager::getProperty(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getProperty",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	jint AudioManager::getRingerMode()
@@ -1128,14 +1112,6 @@ namespace android::media
 			"setParameters",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void AudioManager::setParameters(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setParameters",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void AudioManager::setRingerMode(jint arg0)

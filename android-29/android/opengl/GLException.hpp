@@ -14,9 +14,8 @@ namespace android::opengl
 		
 		GLException(QAndroidJniObject obj);
 		// Constructors
-		GLException(jint &arg0);
-		GLException(jint &arg0, jstring &arg1);
-		GLException(jint &arg0, const QString &arg1);
+		GLException(jint arg0);
+		GLException(jint arg0, jstring arg1);
 		GLException() = default;
 		
 		// Methods

@@ -14,8 +14,7 @@ namespace android::media::audiofx
 		PresetReverb_Settings(QAndroidJniObject obj);
 		// Constructors
 		PresetReverb_Settings();
-		PresetReverb_Settings(jstring &arg0);
-		PresetReverb_Settings(const QString &arg0);
+		PresetReverb_Settings(jstring arg0);
 		
 		// Methods
 		jstring toString();

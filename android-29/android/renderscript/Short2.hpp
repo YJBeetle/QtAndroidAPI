@@ -15,7 +15,7 @@ namespace android::renderscript
 		Short2(QAndroidJniObject obj);
 		// Constructors
 		Short2();
-		Short2(jshort &arg0, jshort &arg1);
+		Short2(jshort arg0, jshort arg1);
 		
 		// Methods
 	};

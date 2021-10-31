@@ -46,7 +46,7 @@ namespace android::speech::tts
 		
 		TextToSpeech_Engine(QAndroidJniObject obj);
 		// Constructors
-		TextToSpeech_Engine(android::speech::tts::TextToSpeech &arg0);
+		TextToSpeech_Engine(android::speech::tts::TextToSpeech arg0);
 		TextToSpeech_Engine() = default;
 		
 		// Methods

@@ -22,9 +22,9 @@ namespace java::io
 		PipedReader(QAndroidJniObject obj);
 		// Constructors
 		PipedReader();
-		PipedReader(jint &arg0);
-		PipedReader(java::io::PipedWriter &arg0);
-		PipedReader(java::io::PipedWriter &arg0, jint &arg1);
+		PipedReader(jint arg0);
+		PipedReader(java::io::PipedWriter arg0);
+		PipedReader(java::io::PipedWriter arg0, jint arg1);
 		
 		// Methods
 		void close();

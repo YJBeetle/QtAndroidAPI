@@ -44,15 +44,6 @@ namespace android::view::autofill
 			arg0
 		);
 	}
-	QAndroidJniObject AutofillValue::forText(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.view.autofill.AutofillValue",
-			"forText",
-			"(Ljava/lang/CharSequence;)Landroid/view/autofill/AutofillValue;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject AutofillValue::forToggle(jboolean arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

@@ -59,16 +59,12 @@ namespace java::text
 		DecimalFormat(QAndroidJniObject obj);
 		// Constructors
 		DecimalFormat();
-		DecimalFormat(jstring &arg0);
-		DecimalFormat(const QString &arg0);
-		DecimalFormat(jstring &arg0, java::text::DecimalFormatSymbols &arg1);
-		DecimalFormat(const QString &arg0, java::text::DecimalFormatSymbols &arg1);
+		DecimalFormat(jstring arg0);
+		DecimalFormat(jstring arg0, java::text::DecimalFormatSymbols arg1);
 		
 		// Methods
 		void applyLocalizedPattern(jstring arg0);
-		void applyLocalizedPattern(const QString &arg0);
 		void applyPattern(jstring arg0);
-		void applyPattern(const QString &arg0);
 		jobject clone();
 		jboolean equals(jobject arg0);
 		QAndroidJniObject format(jdouble arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
@@ -92,7 +88,6 @@ namespace java::text
 		jboolean isDecimalSeparatorAlwaysShown();
 		jboolean isParseBigDecimal();
 		QAndroidJniObject parse(jstring arg0, java::text::ParsePosition arg1);
-		QAndroidJniObject parse(const QString &arg0, java::text::ParsePosition arg1);
 		void setCurrency(java::util::Currency arg0);
 		void setDecimalFormatSymbols(java::text::DecimalFormatSymbols arg0);
 		void setDecimalSeparatorAlwaysShown(jboolean arg0);
@@ -104,14 +99,10 @@ namespace java::text
 		void setMinimumIntegerDigits(jint arg0);
 		void setMultiplier(jint arg0);
 		void setNegativePrefix(jstring arg0);
-		void setNegativePrefix(const QString &arg0);
 		void setNegativeSuffix(jstring arg0);
-		void setNegativeSuffix(const QString &arg0);
 		void setParseBigDecimal(jboolean arg0);
 		void setPositivePrefix(jstring arg0);
-		void setPositivePrefix(const QString &arg0);
 		void setPositiveSuffix(jstring arg0);
-		void setPositiveSuffix(const QString &arg0);
 		void setRoundingMode(java::math::RoundingMode arg0);
 		jstring toLocalizedPattern();
 		jstring toPattern();

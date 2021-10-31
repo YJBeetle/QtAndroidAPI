@@ -108,7 +108,7 @@ namespace android::icu::util
 			"()V"
 		);
 	}
-	EthiopicCalendar::EthiopicCalendar(android::icu::util::TimeZone &arg0)
+	EthiopicCalendar::EthiopicCalendar(android::icu::util::TimeZone arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.EthiopicCalendar",
@@ -116,7 +116,7 @@ namespace android::icu::util
 			arg0.__jniObject().object()
 		);
 	}
-	EthiopicCalendar::EthiopicCalendar(android::icu::util::ULocale &arg0)
+	EthiopicCalendar::EthiopicCalendar(android::icu::util::ULocale arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.EthiopicCalendar",
@@ -124,7 +124,7 @@ namespace android::icu::util
 			arg0.__jniObject().object()
 		);
 	}
-	EthiopicCalendar::EthiopicCalendar(java::util::Date &arg0)
+	EthiopicCalendar::EthiopicCalendar(java::util::Date arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.EthiopicCalendar",
@@ -132,7 +132,7 @@ namespace android::icu::util
 			arg0.__jniObject().object()
 		);
 	}
-	EthiopicCalendar::EthiopicCalendar(java::util::Locale &arg0)
+	EthiopicCalendar::EthiopicCalendar(java::util::Locale arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.EthiopicCalendar",
@@ -140,7 +140,7 @@ namespace android::icu::util
 			arg0.__jniObject().object()
 		);
 	}
-	EthiopicCalendar::EthiopicCalendar(android::icu::util::TimeZone &arg0, android::icu::util::ULocale &arg1)
+	EthiopicCalendar::EthiopicCalendar(android::icu::util::TimeZone arg0, android::icu::util::ULocale arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.EthiopicCalendar",
@@ -149,7 +149,7 @@ namespace android::icu::util
 			arg1.__jniObject().object()
 		);
 	}
-	EthiopicCalendar::EthiopicCalendar(android::icu::util::TimeZone &arg0, java::util::Locale &arg1)
+	EthiopicCalendar::EthiopicCalendar(android::icu::util::TimeZone arg0, java::util::Locale arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.EthiopicCalendar",
@@ -158,7 +158,7 @@ namespace android::icu::util
 			arg1.__jniObject().object()
 		);
 	}
-	EthiopicCalendar::EthiopicCalendar(jint &arg0, jint &arg1, jint &arg2)
+	EthiopicCalendar::EthiopicCalendar(jint arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.EthiopicCalendar",
@@ -168,7 +168,7 @@ namespace android::icu::util
 			arg2
 		);
 	}
-	EthiopicCalendar::EthiopicCalendar(jint &arg0, jint &arg1, jint &arg2, jint &arg3, jint &arg4, jint &arg5)
+	EthiopicCalendar::EthiopicCalendar(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.EthiopicCalendar",

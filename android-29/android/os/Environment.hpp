@@ -46,7 +46,6 @@ namespace android::os
 		static QAndroidJniObject getDownloadCacheDirectory();
 		static QAndroidJniObject getExternalStorageDirectory();
 		static QAndroidJniObject getExternalStoragePublicDirectory(jstring arg0);
-		static QAndroidJniObject getExternalStoragePublicDirectory(const QString &arg0);
 		static jstring getExternalStorageState();
 		static jstring getExternalStorageState(java::io::File arg0);
 		static QAndroidJniObject getRootDirectory();

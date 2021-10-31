@@ -24,9 +24,9 @@ namespace android::hardware::fingerprint
 		
 		FingerprintManager_CryptoObject(QAndroidJniObject obj);
 		// Constructors
-		FingerprintManager_CryptoObject(java::security::Signature &arg0);
-		FingerprintManager_CryptoObject(javax::crypto::Cipher &arg0);
-		FingerprintManager_CryptoObject(javax::crypto::Mac &arg0);
+		FingerprintManager_CryptoObject(java::security::Signature arg0);
+		FingerprintManager_CryptoObject(javax::crypto::Cipher arg0);
+		FingerprintManager_CryptoObject(javax::crypto::Mac arg0);
 		FingerprintManager_CryptoObject() = default;
 		
 		// Methods

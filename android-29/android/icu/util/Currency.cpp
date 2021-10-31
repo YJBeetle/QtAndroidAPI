@@ -105,15 +105,6 @@ namespace android::icu::util
 			arg0
 		);
 	}
-	QAndroidJniObject Currency::getInstance(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.util.Currency",
-			"getInstance",
-			"(Ljava/lang/String;)Landroid/icu/util/Currency;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Currency::getInstance(java::util::Locale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -134,17 +125,6 @@ namespace android::icu::util
 			arg2
 		).object<jarray>();
 	}
-	jarray Currency::getKeywordValuesForLocale(const QString &arg0, android::icu::util::ULocale arg1, jboolean arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.util.Currency",
-			"getKeywordValuesForLocale",
-			"(Ljava/lang/String;Landroid/icu/util/ULocale;Z)[Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2
-		).object<jarray>();
-	}
 	jboolean Currency::isAvailable(jstring arg0, java::util::Date arg1, java::util::Date arg2)
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
@@ -152,17 +132,6 @@ namespace android::icu::util
 			"isAvailable",
 			"(Ljava/lang/String;Ljava/util/Date;Ljava/util/Date;)Z",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	jboolean Currency::isAvailable(const QString &arg0, java::util::Date arg1, java::util::Date arg2)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.icu.util.Currency",
-			"isAvailable",
-			"(Ljava/lang/String;Ljava/util/Date;Ljava/util/Date;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object()
 		);
@@ -235,17 +204,6 @@ namespace android::icu::util
 			arg3
 		).object<jstring>();
 	}
-	jstring Currency::getName(android::icu::util::ULocale arg0, jint arg1, const QString &arg2, jbooleanArray arg3)
-	{
-		return __thiz.callObjectMethod(
-			"getName",
-			"(Landroid/icu/util/ULocale;ILjava/lang/String;[Z)Ljava/lang/String;",
-			arg0.__jniObject().object(),
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			arg3
-		).object<jstring>();
-	}
 	jstring Currency::getName(java::util::Locale arg0, jint arg1, jstring arg2, jbooleanArray arg3)
 	{
 		return __thiz.callObjectMethod(
@@ -254,17 +212,6 @@ namespace android::icu::util
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3
-		).object<jstring>();
-	}
-	jstring Currency::getName(java::util::Locale arg0, jint arg1, const QString &arg2, jbooleanArray arg3)
-	{
-		return __thiz.callObjectMethod(
-			"getName",
-			"(Ljava/util/Locale;ILjava/lang/String;[Z)Ljava/lang/String;",
-			arg0.__jniObject().object(),
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
 			arg3
 		).object<jstring>();
 	}

@@ -15,8 +15,7 @@ namespace android::nfc
 		TagLostException(QAndroidJniObject obj);
 		// Constructors
 		TagLostException();
-		TagLostException(jstring &arg0);
-		TagLostException(const QString &arg0);
+		TagLostException(jstring arg0);
 		
 		// Methods
 	};

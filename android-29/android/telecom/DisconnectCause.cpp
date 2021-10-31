@@ -106,7 +106,7 @@ namespace android::telecom
 	
 	DisconnectCause::DisconnectCause(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DisconnectCause::DisconnectCause(jint &arg0)
+	DisconnectCause::DisconnectCause(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.telecom.DisconnectCause",
@@ -114,7 +114,7 @@ namespace android::telecom
 			arg0
 		);
 	}
-	DisconnectCause::DisconnectCause(jint &arg0, jstring &arg1)
+	DisconnectCause::DisconnectCause(jint arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.telecom.DisconnectCause",
@@ -123,16 +123,7 @@ namespace android::telecom
 			arg1
 		);
 	}
-	DisconnectCause::DisconnectCause(jint &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.telecom.DisconnectCause",
-			"(ILjava/lang/String;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	DisconnectCause::DisconnectCause(jint &arg0, jstring &arg1, jstring &arg2, jstring &arg3)
+	DisconnectCause::DisconnectCause(jint arg0, jstring arg1, jstring arg2, jstring arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.telecom.DisconnectCause",
@@ -143,18 +134,7 @@ namespace android::telecom
 			arg3
 		);
 	}
-	DisconnectCause::DisconnectCause(jint &arg0, const QString &arg1, const QString &arg2, const QString &arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"android.telecom.DisconnectCause",
-			"(ILjava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/String;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			QAndroidJniObject::fromString(arg3).object<jstring>()
-		);
-	}
-	DisconnectCause::DisconnectCause(jint &arg0, jstring &arg1, jstring &arg2, jstring &arg3, jint &arg4)
+	DisconnectCause::DisconnectCause(jint arg0, jstring arg1, jstring arg2, jstring arg3, jint arg4)
 	{
 		__thiz = QAndroidJniObject(
 			"android.telecom.DisconnectCause",
@@ -163,18 +143,6 @@ namespace android::telecom
 			arg1,
 			arg2,
 			arg3,
-			arg4
-		);
-	}
-	DisconnectCause::DisconnectCause(jint &arg0, const QString &arg1, const QString &arg2, const QString &arg3, jint &arg4)
-	{
-		__thiz = QAndroidJniObject(
-			"android.telecom.DisconnectCause",
-			"(ILjava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/String;I)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			QAndroidJniObject::fromString(arg3).object<jstring>(),
 			arg4
 		);
 	}

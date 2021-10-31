@@ -16,21 +16,12 @@ namespace android::app
 	
 	VoiceInteractor_PickOptionRequest_Option::VoiceInteractor_PickOptionRequest_Option(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	VoiceInteractor_PickOptionRequest_Option::VoiceInteractor_PickOptionRequest_Option(jstring &arg0, jint &arg1)
+	VoiceInteractor_PickOptionRequest_Option::VoiceInteractor_PickOptionRequest_Option(jstring arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.VoiceInteractor$PickOptionRequest$Option",
 			"(Ljava/lang/CharSequence;I)V",
 			arg0,
-			arg1
-		);
-	}
-	VoiceInteractor_PickOptionRequest_Option::VoiceInteractor_PickOptionRequest_Option(const QString &arg0, jint &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.app.VoiceInteractor$PickOptionRequest$Option",
-			"(Ljava/lang/CharSequence;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -42,14 +33,6 @@ namespace android::app
 			"addSynonym",
 			"(Ljava/lang/CharSequence;)Landroid/app/VoiceInteractor$PickOptionRequest$Option;",
 			arg0
-		);
-	}
-	QAndroidJniObject VoiceInteractor_PickOptionRequest_Option::addSynonym(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"addSynonym",
-			"(Ljava/lang/CharSequence;)Landroid/app/VoiceInteractor$PickOptionRequest$Option;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jint VoiceInteractor_PickOptionRequest_Option::countSynonyms()

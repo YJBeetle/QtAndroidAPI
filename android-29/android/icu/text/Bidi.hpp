@@ -50,22 +50,19 @@ namespace android::icu::text
 		Bidi(QAndroidJniObject obj);
 		// Constructors
 		Bidi();
-		Bidi(__JniBaseClass &arg0);
-		Bidi(jint &arg0, jint &arg1);
-		Bidi(jstring &arg0, jint &arg1);
-		Bidi(const QString &arg0, jint &arg1);
-		Bidi(jcharArray &arg0, jint &arg1, jbyteArray &arg2, jint &arg3, jint &arg4, jint &arg5);
+		Bidi(__JniBaseClass arg0);
+		Bidi(jint arg0, jint arg1);
+		Bidi(jstring arg0, jint arg1);
+		Bidi(jcharArray arg0, jint arg1, jbyteArray arg2, jint arg3, jint arg4, jint arg5);
 		
 		// Methods
 		static jbyte getBaseDirection(jstring arg0);
-		static jbyte getBaseDirection(const QString &arg0);
 		static jintArray invertMap(jintArray arg0);
 		static jintArray reorderLogical(jbyteArray arg0);
 		static jintArray reorderVisual(jbyteArray arg0);
 		static void reorderVisually(jbyteArray arg0, jint arg1, jobjectArray arg2, jint arg3, jint arg4);
 		static jboolean requiresBidi(jcharArray arg0, jint arg1, jint arg2);
 		static jstring writeReverse(jstring arg0, jint arg1);
-		static jstring writeReverse(const QString &arg0, jint arg1);
 		jboolean baseIsLeftToRight();
 		jint countParagraphs();
 		jint countRuns();
@@ -104,14 +101,12 @@ namespace android::icu::text
 		jboolean isRightToLeft();
 		void orderParagraphsLTR(jboolean arg0);
 		void setContext(jstring arg0, jstring arg1);
-		void setContext(const QString &arg0, const QString &arg1);
 		void setCustomClassifier(android::icu::text::BidiClassifier arg0);
 		void setInverse(jboolean arg0);
 		QAndroidJniObject setLine(jint arg0, jint arg1);
 		void setPara(__JniBaseClass arg0);
 		void setPara(jcharArray arg0, jbyte arg1, jbyteArray arg2);
 		void setPara(jstring arg0, jbyte arg1, jbyteArray arg2);
-		void setPara(const QString &arg0, jbyte arg1, jbyteArray arg2);
 		void setReorderingMode(jint arg0);
 		void setReorderingOptions(jint arg0);
 		jstring writeReordered(jint arg0);

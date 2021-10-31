@@ -44,22 +44,14 @@ namespace android::service::carrier
 		QAndroidJniObject onBind(android::content::Intent arg0);
 		void onDownloadMms(android::net::Uri arg0, jint arg1, android::net::Uri arg2, __JniBaseClass arg3);
 		void onFilterSms(android::service::carrier::MessagePdu arg0, jstring arg1, jint arg2, jint arg3, __JniBaseClass arg4);
-		void onFilterSms(android::service::carrier::MessagePdu arg0, const QString &arg1, jint arg2, jint arg3, __JniBaseClass arg4);
 		void onReceiveTextSms(android::service::carrier::MessagePdu arg0, jstring arg1, jint arg2, jint arg3, __JniBaseClass arg4);
-		void onReceiveTextSms(android::service::carrier::MessagePdu arg0, const QString &arg1, jint arg2, jint arg3, __JniBaseClass arg4);
 		void onSendDataSms(jbyteArray arg0, jint arg1, jstring arg2, jint arg3, __JniBaseClass arg4);
-		void onSendDataSms(jbyteArray arg0, jint arg1, const QString &arg2, jint arg3, __JniBaseClass arg4);
 		void onSendDataSms(jbyteArray arg0, jint arg1, jstring arg2, jint arg3, jint arg4, __JniBaseClass arg5);
-		void onSendDataSms(jbyteArray arg0, jint arg1, const QString &arg2, jint arg3, jint arg4, __JniBaseClass arg5);
 		void onSendMms(android::net::Uri arg0, jint arg1, android::net::Uri arg2, __JniBaseClass arg3);
 		void onSendMultipartTextSms(__JniBaseClass arg0, jint arg1, jstring arg2, __JniBaseClass arg3);
-		void onSendMultipartTextSms(__JniBaseClass arg0, jint arg1, const QString &arg2, __JniBaseClass arg3);
 		void onSendMultipartTextSms(__JniBaseClass arg0, jint arg1, jstring arg2, jint arg3, __JniBaseClass arg4);
-		void onSendMultipartTextSms(__JniBaseClass arg0, jint arg1, const QString &arg2, jint arg3, __JniBaseClass arg4);
 		void onSendTextSms(jstring arg0, jint arg1, jstring arg2, __JniBaseClass arg3);
-		void onSendTextSms(const QString &arg0, jint arg1, const QString &arg2, __JniBaseClass arg3);
 		void onSendTextSms(jstring arg0, jint arg1, jstring arg2, jint arg3, __JniBaseClass arg4);
-		void onSendTextSms(const QString &arg0, jint arg1, const QString &arg2, jint arg3, __JniBaseClass arg4);
 	};
 } // namespace android::service::carrier
 

@@ -14,11 +14,9 @@ namespace android::security
 		KeyChainException(QAndroidJniObject obj);
 		// Constructors
 		KeyChainException();
-		KeyChainException(jstring &arg0);
-		KeyChainException(const QString &arg0);
-		KeyChainException(jthrowable &arg0);
-		KeyChainException(jstring &arg0, jthrowable &arg1);
-		KeyChainException(const QString &arg0, jthrowable &arg1);
+		KeyChainException(jstring arg0);
+		KeyChainException(jthrowable arg0);
+		KeyChainException(jstring arg0, jthrowable arg1);
 		
 		// Methods
 	};

@@ -9,7 +9,7 @@ namespace android::database::sqlite
 	
 	SQLiteOpenHelper::SQLiteOpenHelper(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SQLiteOpenHelper::SQLiteOpenHelper(android::content::Context &arg0, jstring &arg1, __JniBaseClass &arg2, jint &arg3)
+	SQLiteOpenHelper::SQLiteOpenHelper(android::content::Context arg0, jstring arg1, __JniBaseClass arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.database.sqlite.SQLiteOpenHelper",
@@ -20,18 +20,7 @@ namespace android::database::sqlite
 			arg3
 		);
 	}
-	SQLiteOpenHelper::SQLiteOpenHelper(android::content::Context &arg0, const QString &arg1, __JniBaseClass &arg2, jint &arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"android.database.sqlite.SQLiteOpenHelper",
-			"(Landroid/content/Context;Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;I)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object(),
-			arg3
-		);
-	}
-	SQLiteOpenHelper::SQLiteOpenHelper(android::content::Context &arg0, jstring &arg1, jint &arg2, android::database::sqlite::SQLiteDatabase_OpenParams &arg3)
+	SQLiteOpenHelper::SQLiteOpenHelper(android::content::Context arg0, jstring arg1, jint arg2, android::database::sqlite::SQLiteDatabase_OpenParams arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.database.sqlite.SQLiteOpenHelper",
@@ -42,36 +31,13 @@ namespace android::database::sqlite
 			arg3.__jniObject().object()
 		);
 	}
-	SQLiteOpenHelper::SQLiteOpenHelper(android::content::Context &arg0, const QString &arg1, jint &arg2, android::database::sqlite::SQLiteDatabase_OpenParams &arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"android.database.sqlite.SQLiteOpenHelper",
-			"(Landroid/content/Context;Ljava/lang/String;ILandroid/database/sqlite/SQLiteDatabase$OpenParams;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2,
-			arg3.__jniObject().object()
-		);
-	}
-	SQLiteOpenHelper::SQLiteOpenHelper(android::content::Context &arg0, jstring &arg1, __JniBaseClass &arg2, jint &arg3, __JniBaseClass &arg4)
+	SQLiteOpenHelper::SQLiteOpenHelper(android::content::Context arg0, jstring arg1, __JniBaseClass arg2, jint arg3, __JniBaseClass arg4)
 	{
 		__thiz = QAndroidJniObject(
 			"android.database.sqlite.SQLiteOpenHelper",
 			"(Landroid/content/Context;Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;ILandroid/database/DatabaseErrorHandler;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object(),
-			arg3,
-			arg4.__jniObject().object()
-		);
-	}
-	SQLiteOpenHelper::SQLiteOpenHelper(android::content::Context &arg0, const QString &arg1, __JniBaseClass &arg2, jint &arg3, __JniBaseClass &arg4)
-	{
-		__thiz = QAndroidJniObject(
-			"android.database.sqlite.SQLiteOpenHelper",
-			"(Landroid/content/Context;Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;ILandroid/database/DatabaseErrorHandler;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object(),
 			arg3,
 			arg4.__jniObject().object()

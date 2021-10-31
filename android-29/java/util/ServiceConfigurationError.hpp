@@ -13,10 +13,8 @@ namespace java::util
 		
 		ServiceConfigurationError(QAndroidJniObject obj);
 		// Constructors
-		ServiceConfigurationError(jstring &arg0);
-		ServiceConfigurationError(const QString &arg0);
-		ServiceConfigurationError(jstring &arg0, jthrowable &arg1);
-		ServiceConfigurationError(const QString &arg0, jthrowable &arg1);
+		ServiceConfigurationError(jstring arg0);
+		ServiceConfigurationError(jstring arg0, jthrowable arg1);
 		ServiceConfigurationError() = default;
 		
 		// Methods

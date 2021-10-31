@@ -16,8 +16,7 @@ namespace java::util
 		
 		FormatFlagsConversionMismatchException(QAndroidJniObject obj);
 		// Constructors
-		FormatFlagsConversionMismatchException(jstring &arg0, jchar &arg1);
-		FormatFlagsConversionMismatchException(const QString &arg0, jchar &arg1);
+		FormatFlagsConversionMismatchException(jstring arg0, jchar arg1);
 		FormatFlagsConversionMismatchException() = default;
 		
 		// Methods

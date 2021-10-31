@@ -22,11 +22,9 @@ namespace android::database
 		
 		CursorWindow(QAndroidJniObject obj);
 		// Constructors
-		CursorWindow(jboolean &arg0);
-		CursorWindow(jstring &arg0);
-		CursorWindow(const QString &arg0);
-		CursorWindow(jstring &arg0, jlong &arg1);
-		CursorWindow(const QString &arg0, jlong &arg1);
+		CursorWindow(jboolean arg0);
+		CursorWindow(jstring arg0);
+		CursorWindow(jstring arg0, jlong arg1);
 		CursorWindow() = default;
 		
 		// Methods
@@ -56,7 +54,6 @@ namespace android::database
 		jboolean putLong(jlong arg0, jint arg1, jint arg2);
 		jboolean putNull(jint arg0, jint arg1);
 		jboolean putString(jstring arg0, jint arg1, jint arg2);
-		jboolean putString(const QString &arg0, jint arg1, jint arg2);
 		jboolean setNumColumns(jint arg0);
 		void setStartPosition(jint arg0);
 		jstring toString();

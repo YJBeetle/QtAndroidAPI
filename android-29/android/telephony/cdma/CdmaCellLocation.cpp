@@ -14,7 +14,7 @@ namespace android::telephony::cdma
 			"()V"
 		);
 	}
-	CdmaCellLocation::CdmaCellLocation(android::os::Bundle &arg0)
+	CdmaCellLocation::CdmaCellLocation(android::os::Bundle arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.telephony.cdma.CdmaCellLocation",

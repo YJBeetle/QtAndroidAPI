@@ -6,7 +6,7 @@ namespace android::animation
 	
 	BidirectionalTypeConverter::BidirectionalTypeConverter(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	BidirectionalTypeConverter::BidirectionalTypeConverter(jclass &arg0, jclass &arg1)
+	BidirectionalTypeConverter::BidirectionalTypeConverter(jclass arg0, jclass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.animation.BidirectionalTypeConverter",

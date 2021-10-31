@@ -18,11 +18,9 @@ namespace javax::xml::parsers
 		FactoryConfigurationError(QAndroidJniObject obj);
 		// Constructors
 		FactoryConfigurationError();
-		FactoryConfigurationError(java::lang::Exception &arg0);
-		FactoryConfigurationError(jstring &arg0);
-		FactoryConfigurationError(const QString &arg0);
-		FactoryConfigurationError(java::lang::Exception &arg0, jstring &arg1);
-		FactoryConfigurationError(java::lang::Exception &arg0, const QString &arg1);
+		FactoryConfigurationError(java::lang::Exception arg0);
+		FactoryConfigurationError(jstring arg0);
+		FactoryConfigurationError(java::lang::Exception arg0, jstring arg1);
 		
 		// Methods
 		jthrowable getCause();

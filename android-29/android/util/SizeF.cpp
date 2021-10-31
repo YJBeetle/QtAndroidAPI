@@ -6,7 +6,7 @@ namespace android::util
 	
 	SizeF::SizeF(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SizeF::SizeF(jfloat &arg0, jfloat &arg1)
+	SizeF::SizeF(jfloat arg0, jfloat arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.SizeF",
@@ -24,15 +24,6 @@ namespace android::util
 			"parseSizeF",
 			"(Ljava/lang/String;)Landroid/util/SizeF;",
 			arg0
-		);
-	}
-	QAndroidJniObject SizeF::parseSizeF(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.util.SizeF",
-			"parseSizeF",
-			"(Ljava/lang/String;)Landroid/util/SizeF;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean SizeF::equals(jobject arg0)

@@ -38,7 +38,7 @@ namespace android::view::inputmethod
 	
 	CursorAnchorInfo::CursorAnchorInfo(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	CursorAnchorInfo::CursorAnchorInfo(android::os::Parcel &arg0)
+	CursorAnchorInfo::CursorAnchorInfo(android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.inputmethod.CursorAnchorInfo",

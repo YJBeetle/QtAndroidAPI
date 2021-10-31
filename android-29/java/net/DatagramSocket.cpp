@@ -20,7 +20,7 @@ namespace java::net
 			"()V"
 		);
 	}
-	DatagramSocket::DatagramSocket(jint &arg0)
+	DatagramSocket::DatagramSocket(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.DatagramSocket",
@@ -28,7 +28,7 @@ namespace java::net
 			arg0
 		);
 	}
-	DatagramSocket::DatagramSocket(java::net::SocketAddress &arg0)
+	DatagramSocket::DatagramSocket(java::net::SocketAddress arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.DatagramSocket",
@@ -36,7 +36,7 @@ namespace java::net
 			arg0.__jniObject().object()
 		);
 	}
-	DatagramSocket::DatagramSocket(jint &arg0, java::net::InetAddress &arg1)
+	DatagramSocket::DatagramSocket(jint arg0, java::net::InetAddress arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.DatagramSocket",

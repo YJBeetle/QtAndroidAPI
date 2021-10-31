@@ -17,8 +17,7 @@ namespace android::app
 		
 		VoiceInteractor_CommandRequest(QAndroidJniObject obj);
 		// Constructors
-		VoiceInteractor_CommandRequest(jstring &arg0, android::os::Bundle &arg1);
-		VoiceInteractor_CommandRequest(const QString &arg0, android::os::Bundle &arg1);
+		VoiceInteractor_CommandRequest(jstring arg0, android::os::Bundle arg1);
 		VoiceInteractor_CommandRequest() = default;
 		
 		// Methods

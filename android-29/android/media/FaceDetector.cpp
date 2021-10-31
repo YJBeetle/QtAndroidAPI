@@ -7,7 +7,7 @@ namespace android::media
 	
 	FaceDetector::FaceDetector(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	FaceDetector::FaceDetector(jint &arg0, jint &arg1, jint &arg2)
+	FaceDetector::FaceDetector(jint arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.FaceDetector",

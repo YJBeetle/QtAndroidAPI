@@ -7,7 +7,7 @@ namespace android::se::omapi
 	
 	SEService::SEService(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SEService::SEService(android::content::Context &arg0, __JniBaseClass &arg1, __JniBaseClass &arg2)
+	SEService::SEService(android::content::Context arg0, __JniBaseClass arg1, __JniBaseClass arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.se.omapi.SEService",

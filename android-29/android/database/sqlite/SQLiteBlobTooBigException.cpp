@@ -13,20 +13,12 @@ namespace android::database::sqlite
 			"()V"
 		);
 	}
-	SQLiteBlobTooBigException::SQLiteBlobTooBigException(jstring &arg0)
+	SQLiteBlobTooBigException::SQLiteBlobTooBigException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.database.sqlite.SQLiteBlobTooBigException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	SQLiteBlobTooBigException::SQLiteBlobTooBigException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.database.sqlite.SQLiteBlobTooBigException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

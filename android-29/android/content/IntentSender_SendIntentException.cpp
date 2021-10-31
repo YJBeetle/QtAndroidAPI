@@ -14,7 +14,7 @@ namespace android::content
 			"()V"
 		);
 	}
-	IntentSender_SendIntentException::IntentSender_SendIntentException(java::lang::Exception &arg0)
+	IntentSender_SendIntentException::IntentSender_SendIntentException(java::lang::Exception arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.IntentSender$SendIntentException",
@@ -22,20 +22,12 @@ namespace android::content
 			arg0.__jniObject().object()
 		);
 	}
-	IntentSender_SendIntentException::IntentSender_SendIntentException(jstring &arg0)
+	IntentSender_SendIntentException::IntentSender_SendIntentException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.IntentSender$SendIntentException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	IntentSender_SendIntentException::IntentSender_SendIntentException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.IntentSender$SendIntentException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

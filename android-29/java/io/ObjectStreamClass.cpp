@@ -59,14 +59,6 @@ namespace java::io
 			arg0
 		);
 	}
-	QAndroidJniObject ObjectStreamClass::getField(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getField",
-			"(Ljava/lang/String;)Ljava/io/ObjectStreamField;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray ObjectStreamClass::getFields()
 	{
 		return __thiz.callObjectMethod(

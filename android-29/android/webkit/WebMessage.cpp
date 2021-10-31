@@ -6,7 +6,7 @@ namespace android::webkit
 	
 	WebMessage::WebMessage(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	WebMessage::WebMessage(jstring &arg0)
+	WebMessage::WebMessage(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.webkit.WebMessage",
@@ -14,29 +14,12 @@ namespace android::webkit
 			arg0
 		);
 	}
-	WebMessage::WebMessage(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.webkit.WebMessage",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	WebMessage::WebMessage(jstring &arg0, jarray &arg1)
+	WebMessage::WebMessage(jstring arg0, jarray arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.webkit.WebMessage",
 			"(Ljava/lang/String;[Landroid/webkit/WebMessagePort;)V",
 			arg0,
-			arg1
-		);
-	}
-	WebMessage::WebMessage(const QString &arg0, jarray &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.webkit.WebMessage",
-			"(Ljava/lang/String;[Landroid/webkit/WebMessagePort;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

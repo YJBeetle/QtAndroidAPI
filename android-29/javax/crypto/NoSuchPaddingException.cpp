@@ -13,20 +13,12 @@ namespace javax::crypto
 			"()V"
 		);
 	}
-	NoSuchPaddingException::NoSuchPaddingException(jstring &arg0)
+	NoSuchPaddingException::NoSuchPaddingException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.crypto.NoSuchPaddingException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	NoSuchPaddingException::NoSuchPaddingException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.crypto.NoSuchPaddingException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

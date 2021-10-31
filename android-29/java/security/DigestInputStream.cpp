@@ -8,7 +8,7 @@ namespace java::security
 	
 	DigestInputStream::DigestInputStream(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DigestInputStream::DigestInputStream(java::io::InputStream &arg0, java::security::MessageDigest &arg1)
+	DigestInputStream::DigestInputStream(java::io::InputStream arg0, java::security::MessageDigest arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.DigestInputStream",

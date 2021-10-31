@@ -17,8 +17,7 @@ namespace android::provider
 		
 		DocumentsContract_Path(QAndroidJniObject obj);
 		// Constructors
-		DocumentsContract_Path(jstring &arg0, __JniBaseClass &arg1);
-		DocumentsContract_Path(const QString &arg0, __JniBaseClass &arg1);
+		DocumentsContract_Path(jstring arg0, __JniBaseClass arg1);
 		DocumentsContract_Path() = default;
 		
 		// Methods

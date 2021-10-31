@@ -14,8 +14,7 @@ namespace android::util
 		
 		Base64DataException(QAndroidJniObject obj);
 		// Constructors
-		Base64DataException(jstring &arg0);
-		Base64DataException(const QString &arg0);
+		Base64DataException(jstring arg0);
 		Base64DataException() = default;
 		
 		// Methods

@@ -12,8 +12,7 @@ namespace android::hardware::camera2
 		
 		CaptureRequest_Key(QAndroidJniObject obj);
 		// Constructors
-		CaptureRequest_Key(jstring &arg0, jclass &arg1);
-		CaptureRequest_Key(const QString &arg0, jclass &arg1);
+		CaptureRequest_Key(jstring arg0, jclass arg1);
 		CaptureRequest_Key() = default;
 		
 		// Methods

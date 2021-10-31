@@ -17,7 +17,7 @@ namespace java::nio::charset
 		
 		CoderMalfunctionError(QAndroidJniObject obj);
 		// Constructors
-		CoderMalfunctionError(java::lang::Exception &arg0);
+		CoderMalfunctionError(java::lang::Exception arg0);
 		CoderMalfunctionError() = default;
 		
 		// Methods

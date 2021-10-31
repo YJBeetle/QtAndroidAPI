@@ -22,7 +22,7 @@ namespace android::app
 		Notification_MediaStyle(QAndroidJniObject obj);
 		// Constructors
 		Notification_MediaStyle();
-		Notification_MediaStyle(android::app::Notification_Builder &arg0);
+		Notification_MediaStyle(android::app::Notification_Builder arg0);
 		
 		// Methods
 		QAndroidJniObject setMediaSession(android::media::session::MediaSession_Token arg0);

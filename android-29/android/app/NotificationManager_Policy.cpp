@@ -179,7 +179,7 @@ namespace android::app
 	
 	NotificationManager_Policy::NotificationManager_Policy(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	NotificationManager_Policy::NotificationManager_Policy(jint &arg0, jint &arg1, jint &arg2)
+	NotificationManager_Policy::NotificationManager_Policy(jint arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.NotificationManager$Policy",
@@ -189,7 +189,7 @@ namespace android::app
 			arg2
 		);
 	}
-	NotificationManager_Policy::NotificationManager_Policy(jint &arg0, jint &arg1, jint &arg2, jint &arg3)
+	NotificationManager_Policy::NotificationManager_Policy(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.NotificationManager$Policy",

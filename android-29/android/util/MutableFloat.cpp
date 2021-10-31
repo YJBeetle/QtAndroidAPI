@@ -12,7 +12,7 @@ namespace android::util
 	
 	MutableFloat::MutableFloat(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MutableFloat::MutableFloat(jfloat &arg0)
+	MutableFloat::MutableFloat(jfloat arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.MutableFloat",

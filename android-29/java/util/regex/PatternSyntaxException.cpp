@@ -6,23 +6,13 @@ namespace java::util::regex
 	
 	PatternSyntaxException::PatternSyntaxException(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PatternSyntaxException::PatternSyntaxException(jstring &arg0, jstring &arg1, jint &arg2)
+	PatternSyntaxException::PatternSyntaxException(jstring arg0, jstring arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.regex.PatternSyntaxException",
 			"(Ljava/lang/String;Ljava/lang/String;I)V",
 			arg0,
 			arg1,
-			arg2
-		);
-	}
-	PatternSyntaxException::PatternSyntaxException(const QString &arg0, const QString &arg1, jint &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.regex.PatternSyntaxException",
-			"(Ljava/lang/String;Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}

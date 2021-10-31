@@ -94,15 +94,6 @@ namespace android::text
 			arg0
 		).object<jstring>();
 	}
-	jstring Html::escapeHtml(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.text.Html",
-			"escapeHtml",
-			"(Ljava/lang/CharSequence;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
 	QAndroidJniObject Html::fromHtml(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -112,15 +103,6 @@ namespace android::text
 			arg0
 		);
 	}
-	QAndroidJniObject Html::fromHtml(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.text.Html",
-			"fromHtml",
-			"(Ljava/lang/String;)Landroid/text/Spanned;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Html::fromHtml(jstring arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -128,16 +110,6 @@ namespace android::text
 			"fromHtml",
 			"(Ljava/lang/String;I)Landroid/text/Spanned;",
 			arg0,
-			arg1
-		);
-	}
-	QAndroidJniObject Html::fromHtml(const QString &arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.text.Html",
-			"fromHtml",
-			"(Ljava/lang/String;I)Landroid/text/Spanned;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -152,17 +124,6 @@ namespace android::text
 			arg2.__jniObject().object()
 		);
 	}
-	QAndroidJniObject Html::fromHtml(const QString &arg0, __JniBaseClass arg1, __JniBaseClass arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.text.Html",
-			"fromHtml",
-			"(Ljava/lang/String;Landroid/text/Html$ImageGetter;Landroid/text/Html$TagHandler;)Landroid/text/Spanned;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
 	QAndroidJniObject Html::fromHtml(jstring arg0, jint arg1, __JniBaseClass arg2, __JniBaseClass arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -170,18 +131,6 @@ namespace android::text
 			"fromHtml",
 			"(Ljava/lang/String;ILandroid/text/Html$ImageGetter;Landroid/text/Html$TagHandler;)Landroid/text/Spanned;",
 			arg0,
-			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Html::fromHtml(const QString &arg0, jint arg1, __JniBaseClass arg2, __JniBaseClass arg3)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.text.Html",
-			"fromHtml",
-			"(Ljava/lang/String;ILandroid/text/Html$ImageGetter;Landroid/text/Html$TagHandler;)Landroid/text/Spanned;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object()

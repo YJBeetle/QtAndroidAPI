@@ -14,10 +14,8 @@ namespace java::nio::file
 		
 		LinkPermission(QAndroidJniObject obj);
 		// Constructors
-		LinkPermission(jstring &arg0);
-		LinkPermission(const QString &arg0);
-		LinkPermission(jstring &arg0, jstring &arg1);
-		LinkPermission(const QString &arg0, const QString &arg1);
+		LinkPermission(jstring arg0);
+		LinkPermission(jstring arg0, jstring arg1);
 		LinkPermission() = default;
 		
 		// Methods

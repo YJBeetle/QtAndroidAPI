@@ -19,7 +19,6 @@ namespace java::security::cert
 		QAndroidJniObject getCertificates();
 		jbyteArray getEncoded();
 		jbyteArray getEncoded(jstring arg0);
-		jbyteArray getEncoded(const QString &arg0);
 		QAndroidJniObject getEncodings();
 		jstring getType();
 		jint hashCode();

@@ -16,8 +16,7 @@ namespace org::apache::http::conn
 		ConnectTimeoutException(QAndroidJniObject obj);
 		// Constructors
 		ConnectTimeoutException();
-		ConnectTimeoutException(jstring &arg0);
-		ConnectTimeoutException(const QString &arg0);
+		ConnectTimeoutException(jstring arg0);
 		
 		// Methods
 	};

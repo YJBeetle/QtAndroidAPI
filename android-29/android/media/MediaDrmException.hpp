@@ -13,8 +13,7 @@ namespace android::media
 		
 		MediaDrmException(QAndroidJniObject obj);
 		// Constructors
-		MediaDrmException(jstring &arg0);
-		MediaDrmException(const QString &arg0);
+		MediaDrmException(jstring arg0);
 		MediaDrmException() = default;
 		
 		// Methods

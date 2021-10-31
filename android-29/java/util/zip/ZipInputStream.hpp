@@ -31,8 +31,8 @@ namespace java::util::zip
 		
 		ZipInputStream(QAndroidJniObject obj);
 		// Constructors
-		ZipInputStream(java::io::InputStream &arg0);
-		ZipInputStream(java::io::InputStream &arg0, java::nio::charset::Charset &arg1);
+		ZipInputStream(java::io::InputStream arg0);
+		ZipInputStream(java::io::InputStream arg0, java::nio::charset::Charset arg1);
 		ZipInputStream() = default;
 		
 		// Methods

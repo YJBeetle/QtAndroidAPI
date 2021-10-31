@@ -22,7 +22,7 @@ namespace android::transition
 		ArcMotion(QAndroidJniObject obj);
 		// Constructors
 		ArcMotion();
-		ArcMotion(android::content::Context &arg0, __JniBaseClass &arg1);
+		ArcMotion(android::content::Context arg0, __JniBaseClass arg1);
 		
 		// Methods
 		jfloat getMaximumAngle();

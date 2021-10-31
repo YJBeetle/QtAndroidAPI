@@ -43,14 +43,6 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaRouter_UserRouteInfo::setDescription(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDescription",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void MediaRouter_UserRouteInfo::setIconDrawable(android::graphics::drawable::Drawable arg0)
 	{
 		__thiz.callMethod<void>(
@@ -83,14 +75,6 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaRouter_UserRouteInfo::setName(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setName",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void MediaRouter_UserRouteInfo::setPlaybackStream(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -121,14 +105,6 @@ namespace android::media
 			"setStatus",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
-		);
-	}
-	void MediaRouter_UserRouteInfo::setStatus(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setStatus",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void MediaRouter_UserRouteInfo::setVolume(jint arg0)

@@ -38,7 +38,7 @@ namespace android::util
 	
 	Rational::Rational(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Rational::Rational(jint &arg0, jint &arg1)
+	Rational::Rational(jint arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.Rational",
@@ -56,15 +56,6 @@ namespace android::util
 			"parseRational",
 			"(Ljava/lang/String;)Landroid/util/Rational;",
 			arg0
-		);
-	}
-	QAndroidJniObject Rational::parseRational(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.util.Rational",
-			"parseRational",
-			"(Ljava/lang/String;)Landroid/util/Rational;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jint Rational::compareTo(android::util::Rational arg0)

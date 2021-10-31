@@ -14,10 +14,8 @@ namespace java::lang
 		LinkageError(QAndroidJniObject obj);
 		// Constructors
 		LinkageError();
-		LinkageError(jstring &arg0);
-		LinkageError(const QString &arg0);
-		LinkageError(jstring &arg0, jthrowable &arg1);
-		LinkageError(const QString &arg0, jthrowable &arg1);
+		LinkageError(jstring arg0);
+		LinkageError(jstring arg0, jthrowable arg1);
 		
 		// Methods
 	};

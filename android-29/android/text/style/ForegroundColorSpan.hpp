@@ -21,8 +21,8 @@ namespace android::text::style
 		
 		ForegroundColorSpan(QAndroidJniObject obj);
 		// Constructors
-		ForegroundColorSpan(android::os::Parcel &arg0);
-		ForegroundColorSpan(jint &arg0);
+		ForegroundColorSpan(android::os::Parcel arg0);
+		ForegroundColorSpan(jint arg0);
 		ForegroundColorSpan() = default;
 		
 		// Methods

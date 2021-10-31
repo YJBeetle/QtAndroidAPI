@@ -8,7 +8,7 @@ namespace android::widget
 	
 	Chronometer::Chronometer(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Chronometer::Chronometer(android::content::Context &arg0)
+	Chronometer::Chronometer(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.Chronometer",
@@ -16,7 +16,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	Chronometer::Chronometer(android::content::Context &arg0, __JniBaseClass &arg1)
+	Chronometer::Chronometer(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.Chronometer",
@@ -25,7 +25,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	Chronometer::Chronometer(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	Chronometer::Chronometer(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.Chronometer",
@@ -35,7 +35,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	Chronometer::Chronometer(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	Chronometer::Chronometer(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.Chronometer",
@@ -119,14 +119,6 @@ namespace android::widget
 			"setFormat",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void Chronometer::setFormat(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setFormat",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void Chronometer::setOnChronometerTickListener(__JniBaseClass arg0)

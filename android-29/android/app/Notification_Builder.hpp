@@ -68,20 +68,17 @@ namespace android::app
 		
 		Notification_Builder(QAndroidJniObject obj);
 		// Constructors
-		Notification_Builder(android::content::Context &arg0);
-		Notification_Builder(android::content::Context &arg0, jstring &arg1);
-		Notification_Builder(android::content::Context &arg0, const QString &arg1);
+		Notification_Builder(android::content::Context arg0);
+		Notification_Builder(android::content::Context arg0, jstring arg1);
 		Notification_Builder() = default;
 		
 		// Methods
 		static QAndroidJniObject recoverBuilder(android::content::Context arg0, android::app::Notification arg1);
 		QAndroidJniObject addAction(android::app::Notification_Action arg0);
 		QAndroidJniObject addAction(jint arg0, jstring arg1, android::app::PendingIntent arg2);
-		QAndroidJniObject addAction(jint arg0, const QString &arg1, android::app::PendingIntent arg2);
 		QAndroidJniObject addExtras(android::os::Bundle arg0);
 		QAndroidJniObject addPerson(android::app::Person arg0);
 		QAndroidJniObject addPerson(jstring arg0);
-		QAndroidJniObject addPerson(const QString &arg0);
 		QAndroidJniObject build();
 		QAndroidJniObject createBigContentView();
 		QAndroidJniObject createContentView();
@@ -96,20 +93,15 @@ namespace android::app
 		QAndroidJniObject setBadgeIconType(jint arg0);
 		QAndroidJniObject setBubbleMetadata(android::app::Notification_BubbleMetadata arg0);
 		QAndroidJniObject setCategory(jstring arg0);
-		QAndroidJniObject setCategory(const QString &arg0);
 		QAndroidJniObject setChannelId(jstring arg0);
-		QAndroidJniObject setChannelId(const QString &arg0);
 		QAndroidJniObject setChronometerCountDown(jboolean arg0);
 		QAndroidJniObject setColor(jint arg0);
 		QAndroidJniObject setColorized(jboolean arg0);
 		QAndroidJniObject setContent(android::widget::RemoteViews arg0);
 		QAndroidJniObject setContentInfo(jstring arg0);
-		QAndroidJniObject setContentInfo(const QString &arg0);
 		QAndroidJniObject setContentIntent(android::app::PendingIntent arg0);
 		QAndroidJniObject setContentText(jstring arg0);
-		QAndroidJniObject setContentText(const QString &arg0);
 		QAndroidJniObject setContentTitle(jstring arg0);
-		QAndroidJniObject setContentTitle(const QString &arg0);
 		QAndroidJniObject setCustomBigContentView(android::widget::RemoteViews arg0);
 		QAndroidJniObject setCustomContentView(android::widget::RemoteViews arg0);
 		QAndroidJniObject setCustomHeadsUpContentView(android::widget::RemoteViews arg0);
@@ -118,7 +110,6 @@ namespace android::app
 		QAndroidJniObject setExtras(android::os::Bundle arg0);
 		QAndroidJniObject setFullScreenIntent(android::app::PendingIntent arg0, jboolean arg1);
 		QAndroidJniObject setGroup(jstring arg0);
-		QAndroidJniObject setGroup(const QString &arg0);
 		QAndroidJniObject setGroupAlertBehavior(jint arg0);
 		QAndroidJniObject setGroupSummary(jboolean arg0);
 		QAndroidJniObject setLargeIcon(android::graphics::Bitmap arg0);
@@ -134,25 +125,19 @@ namespace android::app
 		QAndroidJniObject setPublicVersion(android::app::Notification arg0);
 		QAndroidJniObject setRemoteInputHistory(jarray arg0);
 		QAndroidJniObject setSettingsText(jstring arg0);
-		QAndroidJniObject setSettingsText(const QString &arg0);
 		QAndroidJniObject setShortcutId(jstring arg0);
-		QAndroidJniObject setShortcutId(const QString &arg0);
 		QAndroidJniObject setShowWhen(jboolean arg0);
 		QAndroidJniObject setSmallIcon(android::graphics::drawable::Icon arg0);
 		QAndroidJniObject setSmallIcon(jint arg0);
 		QAndroidJniObject setSmallIcon(jint arg0, jint arg1);
 		QAndroidJniObject setSortKey(jstring arg0);
-		QAndroidJniObject setSortKey(const QString &arg0);
 		QAndroidJniObject setSound(android::net::Uri arg0);
 		QAndroidJniObject setSound(android::net::Uri arg0, android::media::AudioAttributes arg1);
 		QAndroidJniObject setSound(android::net::Uri arg0, jint arg1);
 		QAndroidJniObject setStyle(android::app::Notification_Style arg0);
 		QAndroidJniObject setSubText(jstring arg0);
-		QAndroidJniObject setSubText(const QString &arg0);
 		QAndroidJniObject setTicker(jstring arg0);
-		QAndroidJniObject setTicker(const QString &arg0);
 		QAndroidJniObject setTicker(jstring arg0, android::widget::RemoteViews arg1);
-		QAndroidJniObject setTicker(const QString &arg0, android::widget::RemoteViews arg1);
 		QAndroidJniObject setTimeoutAfter(jlong arg0);
 		QAndroidJniObject setUsesChronometer(jboolean arg0);
 		QAndroidJniObject setVibrate(jlongArray arg0);

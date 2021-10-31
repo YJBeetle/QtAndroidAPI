@@ -150,20 +150,12 @@ namespace java::util::jar
 	
 	Attributes_Name::Attributes_Name(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Attributes_Name::Attributes_Name(jstring &arg0)
+	Attributes_Name::Attributes_Name(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.jar.Attributes$Name",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	Attributes_Name::Attributes_Name(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.jar.Attributes$Name",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

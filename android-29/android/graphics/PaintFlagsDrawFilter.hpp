@@ -13,7 +13,7 @@ namespace android::graphics
 		
 		PaintFlagsDrawFilter(QAndroidJniObject obj);
 		// Constructors
-		PaintFlagsDrawFilter(jint &arg0, jint &arg1);
+		PaintFlagsDrawFilter(jint arg0, jint arg1);
 		PaintFlagsDrawFilter() = default;
 		
 		// Methods

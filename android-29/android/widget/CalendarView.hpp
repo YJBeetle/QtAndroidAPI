@@ -27,10 +27,10 @@ namespace android::widget
 		
 		CalendarView(QAndroidJniObject obj);
 		// Constructors
-		CalendarView(android::content::Context &arg0);
-		CalendarView(android::content::Context &arg0, __JniBaseClass &arg1);
-		CalendarView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		CalendarView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		CalendarView(android::content::Context arg0);
+		CalendarView(android::content::Context arg0, __JniBaseClass arg1);
+		CalendarView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		CalendarView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		CalendarView() = default;
 		
 		// Methods

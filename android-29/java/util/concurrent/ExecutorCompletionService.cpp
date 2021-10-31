@@ -8,7 +8,7 @@ namespace java::util::concurrent
 	
 	ExecutorCompletionService::ExecutorCompletionService(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ExecutorCompletionService::ExecutorCompletionService(__JniBaseClass &arg0)
+	ExecutorCompletionService::ExecutorCompletionService(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.ExecutorCompletionService",
@@ -16,7 +16,7 @@ namespace java::util::concurrent
 			arg0.__jniObject().object()
 		);
 	}
-	ExecutorCompletionService::ExecutorCompletionService(__JniBaseClass &arg0, __JniBaseClass &arg1)
+	ExecutorCompletionService::ExecutorCompletionService(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.ExecutorCompletionService",

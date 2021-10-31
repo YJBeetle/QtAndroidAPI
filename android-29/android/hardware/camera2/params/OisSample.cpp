@@ -6,7 +6,7 @@ namespace android::hardware::camera2::params
 	
 	OisSample::OisSample(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	OisSample::OisSample(jlong &arg0, jfloat &arg1, jfloat &arg2)
+	OisSample::OisSample(jlong arg0, jfloat arg1, jfloat arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.hardware.camera2.params.OisSample",

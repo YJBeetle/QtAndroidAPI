@@ -20,7 +20,7 @@ namespace android::graphics
 		
 		RegionIterator(QAndroidJniObject obj);
 		// Constructors
-		RegionIterator(android::graphics::Region &arg0);
+		RegionIterator(android::graphics::Region arg0);
 		RegionIterator() = default;
 		
 		// Methods

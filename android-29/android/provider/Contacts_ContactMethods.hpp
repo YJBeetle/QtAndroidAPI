@@ -44,12 +44,9 @@ namespace android::provider
 		
 		// Methods
 		static jobject decodeImProtocol(jstring arg0);
-		static jobject decodeImProtocol(const QString &arg0);
 		static jstring encodeCustomImProtocol(jstring arg0);
-		static jstring encodeCustomImProtocol(const QString &arg0);
 		static jstring encodePredefinedImProtocol(jint arg0);
 		static jstring getDisplayLabel(android::content::Context arg0, jint arg1, jint arg2, jstring arg3);
-		static jstring getDisplayLabel(android::content::Context arg0, jint arg1, jint arg2, const QString &arg3);
 		void addPostalLocation(android::content::Context arg0, jlong arg1, jdouble arg2, jdouble arg3);
 	};
 } // namespace android::provider

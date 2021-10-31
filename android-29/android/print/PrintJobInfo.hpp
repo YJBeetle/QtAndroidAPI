@@ -41,9 +41,7 @@ namespace android::print
 		// Methods
 		jint describeContents();
 		jint getAdvancedIntOption(jstring arg0);
-		jint getAdvancedIntOption(const QString &arg0);
 		jstring getAdvancedStringOption(jstring arg0);
-		jstring getAdvancedStringOption(const QString &arg0);
 		QAndroidJniObject getAttributes();
 		jint getCopies();
 		jlong getCreationTime();
@@ -53,7 +51,6 @@ namespace android::print
 		QAndroidJniObject getPrinterId();
 		jint getState();
 		jboolean hasAdvancedOption(jstring arg0);
-		jboolean hasAdvancedOption(const QString &arg0);
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

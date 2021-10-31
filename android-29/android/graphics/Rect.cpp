@@ -54,7 +54,7 @@ namespace android::graphics
 			arg0.__jniObject().object()
 		);
 	}
-	Rect::Rect(jint &arg0, jint &arg1, jint &arg2, jint &arg3)
+	Rect::Rect(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.Rect",
@@ -84,15 +84,6 @@ namespace android::graphics
 			"unflattenFromString",
 			"(Ljava/lang/String;)Landroid/graphics/Rect;",
 			arg0
-		);
-	}
-	QAndroidJniObject Rect::unflattenFromString(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.Rect",
-			"unflattenFromString",
-			"(Ljava/lang/String;)Landroid/graphics/Rect;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jint Rect::centerX()

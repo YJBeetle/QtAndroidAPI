@@ -14,10 +14,8 @@ namespace javax::net::ssl
 		
 		SSLPermission(QAndroidJniObject obj);
 		// Constructors
-		SSLPermission(jstring &arg0);
-		SSLPermission(const QString &arg0);
-		SSLPermission(jstring &arg0, jstring &arg1);
-		SSLPermission(const QString &arg0, const QString &arg1);
+		SSLPermission(jstring arg0);
+		SSLPermission(jstring arg0, jstring arg1);
 		SSLPermission() = default;
 		
 		// Methods

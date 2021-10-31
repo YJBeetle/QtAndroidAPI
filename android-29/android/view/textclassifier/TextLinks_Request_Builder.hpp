@@ -28,8 +28,7 @@ namespace android::view::textclassifier
 		
 		TextLinks_Request_Builder(QAndroidJniObject obj);
 		// Constructors
-		TextLinks_Request_Builder(jstring &arg0);
-		TextLinks_Request_Builder(const QString &arg0);
+		TextLinks_Request_Builder(jstring arg0);
 		TextLinks_Request_Builder() = default;
 		
 		// Methods

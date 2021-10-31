@@ -13,20 +13,12 @@ namespace java::lang
 			"()V"
 		);
 	}
-	NumberFormatException::NumberFormatException(jstring &arg0)
+	NumberFormatException::NumberFormatException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.NumberFormatException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	NumberFormatException::NumberFormatException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.NumberFormatException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

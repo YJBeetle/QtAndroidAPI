@@ -73,15 +73,6 @@ namespace java::security::cert
 			arg0
 		);
 	}
-	QAndroidJniObject CertPathValidatorException_BasicReason::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.security.cert.CertPathValidatorException$BasicReason",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/security/cert/CertPathValidatorException$BasicReason;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray CertPathValidatorException_BasicReason::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

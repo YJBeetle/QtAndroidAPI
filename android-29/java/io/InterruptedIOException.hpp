@@ -16,8 +16,7 @@ namespace java::io
 		InterruptedIOException(QAndroidJniObject obj);
 		// Constructors
 		InterruptedIOException();
-		InterruptedIOException(jstring &arg0);
-		InterruptedIOException(const QString &arg0);
+		InterruptedIOException(jstring arg0);
 		
 		// Methods
 	};

@@ -9,7 +9,7 @@ namespace android::widget
 	
 	EditText::EditText(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	EditText::EditText(android::content::Context &arg0)
+	EditText::EditText(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.EditText",
@@ -17,7 +17,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	EditText::EditText(android::content::Context &arg0, __JniBaseClass &arg1)
+	EditText::EditText(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.EditText",
@@ -26,7 +26,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	EditText::EditText(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	EditText::EditText(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.EditText",
@@ -36,7 +36,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	EditText::EditText(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	EditText::EditText(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.EditText",
@@ -116,15 +116,6 @@ namespace android::widget
 			"setText",
 			"(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void EditText::setText(const QString &arg0, android::widget::TextView_BufferType arg1)
-	{
-		__thiz.callMethod<void>(
-			"setText",
-			"(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

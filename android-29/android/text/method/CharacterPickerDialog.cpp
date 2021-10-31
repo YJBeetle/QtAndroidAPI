@@ -10,7 +10,7 @@ namespace android::text::method
 	
 	CharacterPickerDialog::CharacterPickerDialog(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	CharacterPickerDialog::CharacterPickerDialog(android::content::Context &arg0, android::view::View &arg1, __JniBaseClass &arg2, jstring &arg3, jboolean &arg4)
+	CharacterPickerDialog::CharacterPickerDialog(android::content::Context arg0, android::view::View arg1, __JniBaseClass arg2, jstring arg3, jboolean arg4)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.method.CharacterPickerDialog",
@@ -19,18 +19,6 @@ namespace android::text::method
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
 			arg3,
-			arg4
-		);
-	}
-	CharacterPickerDialog::CharacterPickerDialog(android::content::Context &arg0, android::view::View &arg1, __JniBaseClass &arg2, const QString &arg3, jboolean &arg4)
-	{
-		__thiz = QAndroidJniObject(
-			"android.text.method.CharacterPickerDialog",
-			"(Landroid/content/Context;Landroid/view/View;Landroid/text/Editable;Ljava/lang/String;Z)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			QAndroidJniObject::fromString(arg3).object<jstring>(),
 			arg4
 		);
 	}

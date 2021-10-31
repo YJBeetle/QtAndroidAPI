@@ -13,20 +13,12 @@ namespace java::util::zip
 			"()V"
 		);
 	}
-	ZipException::ZipException(jstring &arg0)
+	ZipException::ZipException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.zip.ZipException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	ZipException::ZipException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.zip.ZipException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

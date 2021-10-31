@@ -30,15 +30,14 @@ namespace android::text::style
 		BulletSpan(QAndroidJniObject obj);
 		// Constructors
 		BulletSpan();
-		BulletSpan(android::os::Parcel &arg0);
-		BulletSpan(jint &arg0);
-		BulletSpan(jint &arg0, jint &arg1);
-		BulletSpan(jint &arg0, jint &arg1, jint &arg2);
+		BulletSpan(android::os::Parcel arg0);
+		BulletSpan(jint arg0);
+		BulletSpan(jint arg0, jint arg1);
+		BulletSpan(jint arg0, jint arg1, jint arg2);
 		
 		// Methods
 		jint describeContents();
 		void drawLeadingMargin(android::graphics::Canvas arg0, android::graphics::Paint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jstring arg7, jint arg8, jint arg9, jboolean arg10, android::text::Layout arg11);
-		void drawLeadingMargin(android::graphics::Canvas arg0, android::graphics::Paint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, const QString &arg7, jint arg8, jint arg9, jboolean arg10, android::text::Layout arg11);
 		jint getBulletRadius();
 		jint getColor();
 		jint getGapWidth();

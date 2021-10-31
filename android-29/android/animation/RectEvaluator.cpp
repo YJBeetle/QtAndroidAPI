@@ -14,7 +14,7 @@ namespace android::animation
 			"()V"
 		);
 	}
-	RectEvaluator::RectEvaluator(android::graphics::Rect &arg0)
+	RectEvaluator::RectEvaluator(android::graphics::Rect arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.animation.RectEvaluator",

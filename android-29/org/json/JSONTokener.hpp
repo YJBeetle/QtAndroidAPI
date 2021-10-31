@@ -16,8 +16,7 @@ namespace org::json
 		
 		JSONTokener(QAndroidJniObject obj);
 		// Constructors
-		JSONTokener(jstring &arg0);
-		JSONTokener(const QString &arg0);
+		JSONTokener(jstring arg0);
 		JSONTokener() = default;
 		
 		// Methods
@@ -31,13 +30,10 @@ namespace org::json
 		jstring nextString(jchar arg0);
 		jstring nextTo(jchar arg0);
 		jstring nextTo(jstring arg0);
-		jstring nextTo(const QString &arg0);
 		jobject nextValue();
 		void skipPast(jstring arg0);
-		void skipPast(const QString &arg0);
 		jchar skipTo(jchar arg0);
 		QAndroidJniObject syntaxError(jstring arg0);
-		QAndroidJniObject syntaxError(const QString &arg0);
 		jstring toString();
 	};
 } // namespace org::json

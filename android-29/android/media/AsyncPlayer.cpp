@@ -9,20 +9,12 @@ namespace android::media
 	
 	AsyncPlayer::AsyncPlayer(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AsyncPlayer::AsyncPlayer(jstring &arg0)
+	AsyncPlayer::AsyncPlayer(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.AsyncPlayer",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	AsyncPlayer::AsyncPlayer(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.media.AsyncPlayer",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

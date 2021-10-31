@@ -13,20 +13,12 @@ namespace java::lang
 			"()V"
 		);
 	}
-	ArithmeticException::ArithmeticException(jstring &arg0)
+	ArithmeticException::ArithmeticException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.ArithmeticException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	ArithmeticException::ArithmeticException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.ArithmeticException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

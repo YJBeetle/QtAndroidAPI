@@ -10,7 +10,7 @@ namespace android::print
 	
 	PrinterInfo_Builder::PrinterInfo_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PrinterInfo_Builder::PrinterInfo_Builder(android::print::PrinterInfo &arg0)
+	PrinterInfo_Builder::PrinterInfo_Builder(android::print::PrinterInfo arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.print.PrinterInfo$Builder",
@@ -18,23 +18,13 @@ namespace android::print
 			arg0.__jniObject().object()
 		);
 	}
-	PrinterInfo_Builder::PrinterInfo_Builder(android::print::PrinterId &arg0, jstring &arg1, jint &arg2)
+	PrinterInfo_Builder::PrinterInfo_Builder(android::print::PrinterId arg0, jstring arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.print.PrinterInfo$Builder",
 			"(Landroid/print/PrinterId;Ljava/lang/String;I)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2
-		);
-	}
-	PrinterInfo_Builder::PrinterInfo_Builder(android::print::PrinterId &arg0, const QString &arg1, jint &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.print.PrinterInfo$Builder",
-			"(Landroid/print/PrinterId;Ljava/lang/String;I)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}
@@ -61,14 +51,6 @@ namespace android::print
 			"setDescription",
 			"(Ljava/lang/String;)Landroid/print/PrinterInfo$Builder;",
 			arg0
-		);
-	}
-	QAndroidJniObject PrinterInfo_Builder::setDescription(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setDescription",
-			"(Ljava/lang/String;)Landroid/print/PrinterInfo$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject PrinterInfo_Builder::setHasCustomPrinterIcon(jboolean arg0)
@@ -101,14 +83,6 @@ namespace android::print
 			"setName",
 			"(Ljava/lang/String;)Landroid/print/PrinterInfo$Builder;",
 			arg0
-		);
-	}
-	QAndroidJniObject PrinterInfo_Builder::setName(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setName",
-			"(Ljava/lang/String;)Landroid/print/PrinterInfo$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject PrinterInfo_Builder::setStatus(jint arg0)

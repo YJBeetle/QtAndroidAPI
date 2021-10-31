@@ -14,10 +14,8 @@ namespace java::sql
 		
 		SQLPermission(QAndroidJniObject obj);
 		// Constructors
-		SQLPermission(jstring &arg0);
-		SQLPermission(const QString &arg0);
-		SQLPermission(jstring &arg0, jstring &arg1);
-		SQLPermission(const QString &arg0, const QString &arg1);
+		SQLPermission(jstring arg0);
+		SQLPermission(jstring arg0, jstring arg1);
 		SQLPermission() = default;
 		
 		// Methods

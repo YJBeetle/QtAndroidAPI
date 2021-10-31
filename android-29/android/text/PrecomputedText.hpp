@@ -24,7 +24,6 @@ namespace android::text
 		
 		// Methods
 		static QAndroidJniObject create(jstring arg0, android::text::PrecomputedText_Params arg1);
-		static QAndroidJniObject create(const QString &arg0, android::text::PrecomputedText_Params arg1);
 		jchar charAt(jint arg0);
 		void getBounds(jint arg0, jint arg1, android::graphics::Rect arg2);
 		jint getParagraphCount();

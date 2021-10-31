@@ -9,7 +9,7 @@ namespace android::view
 	
 	GestureDetector::GestureDetector(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	GestureDetector::GestureDetector(__JniBaseClass &arg0)
+	GestureDetector::GestureDetector(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.GestureDetector",
@@ -17,7 +17,7 @@ namespace android::view
 			arg0.__jniObject().object()
 		);
 	}
-	GestureDetector::GestureDetector(android::content::Context &arg0, __JniBaseClass &arg1)
+	GestureDetector::GestureDetector(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.GestureDetector",
@@ -26,7 +26,7 @@ namespace android::view
 			arg1.__jniObject().object()
 		);
 	}
-	GestureDetector::GestureDetector(__JniBaseClass &arg0, android::os::Handler &arg1)
+	GestureDetector::GestureDetector(__JniBaseClass arg0, android::os::Handler arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.GestureDetector",
@@ -35,7 +35,7 @@ namespace android::view
 			arg1.__jniObject().object()
 		);
 	}
-	GestureDetector::GestureDetector(android::content::Context &arg0, __JniBaseClass &arg1, android::os::Handler &arg2)
+	GestureDetector::GestureDetector(android::content::Context arg0, __JniBaseClass arg1, android::os::Handler arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.GestureDetector",
@@ -45,7 +45,7 @@ namespace android::view
 			arg2.__jniObject().object()
 		);
 	}
-	GestureDetector::GestureDetector(android::content::Context &arg0, __JniBaseClass &arg1, android::os::Handler &arg2, jboolean &arg3)
+	GestureDetector::GestureDetector(android::content::Context arg0, __JniBaseClass arg1, android::os::Handler arg2, jboolean arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.GestureDetector",

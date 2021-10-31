@@ -23,8 +23,7 @@ namespace android::media
 		
 		MediaCodec_CryptoException(QAndroidJniObject obj);
 		// Constructors
-		MediaCodec_CryptoException(jint &arg0, jstring &arg1);
-		MediaCodec_CryptoException(jint &arg0, const QString &arg1);
+		MediaCodec_CryptoException(jint arg0, jstring arg1);
 		MediaCodec_CryptoException() = default;
 		
 		// Methods

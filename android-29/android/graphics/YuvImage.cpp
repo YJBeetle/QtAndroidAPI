@@ -8,7 +8,7 @@ namespace android::graphics
 	
 	YuvImage::YuvImage(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	YuvImage::YuvImage(jbyteArray &arg0, jint &arg1, jint &arg2, jint &arg3, jintArray &arg4)
+	YuvImage::YuvImage(jbyteArray arg0, jint arg1, jint arg2, jint arg3, jintArray arg4)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.YuvImage",

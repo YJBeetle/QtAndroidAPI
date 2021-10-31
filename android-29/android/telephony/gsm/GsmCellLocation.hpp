@@ -18,7 +18,7 @@ namespace android::telephony::gsm
 		GsmCellLocation(QAndroidJniObject obj);
 		// Constructors
 		GsmCellLocation();
-		GsmCellLocation(android::os::Bundle &arg0);
+		GsmCellLocation(android::os::Bundle arg0);
 		
 		// Methods
 		jboolean equals(jobject arg0);

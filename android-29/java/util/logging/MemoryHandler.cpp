@@ -16,7 +16,7 @@ namespace java::util::logging
 			"()V"
 		);
 	}
-	MemoryHandler::MemoryHandler(java::util::logging::Handler &arg0, jint &arg1, java::util::logging::Level &arg2)
+	MemoryHandler::MemoryHandler(java::util::logging::Handler arg0, jint arg1, java::util::logging::Level arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.logging.MemoryHandler",

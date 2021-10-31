@@ -8,7 +8,7 @@ namespace android::view::animation
 	
 	PathInterpolator::PathInterpolator(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PathInterpolator::PathInterpolator(android::graphics::Path &arg0)
+	PathInterpolator::PathInterpolator(android::graphics::Path arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.PathInterpolator",
@@ -16,7 +16,7 @@ namespace android::view::animation
 			arg0.__jniObject().object()
 		);
 	}
-	PathInterpolator::PathInterpolator(android::content::Context &arg0, __JniBaseClass &arg1)
+	PathInterpolator::PathInterpolator(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.PathInterpolator",
@@ -25,7 +25,7 @@ namespace android::view::animation
 			arg1.__jniObject().object()
 		);
 	}
-	PathInterpolator::PathInterpolator(jfloat &arg0, jfloat &arg1)
+	PathInterpolator::PathInterpolator(jfloat arg0, jfloat arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.PathInterpolator",
@@ -34,7 +34,7 @@ namespace android::view::animation
 			arg1
 		);
 	}
-	PathInterpolator::PathInterpolator(jfloat &arg0, jfloat &arg1, jfloat &arg2, jfloat &arg3)
+	PathInterpolator::PathInterpolator(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.PathInterpolator",

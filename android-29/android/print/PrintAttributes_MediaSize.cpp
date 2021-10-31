@@ -671,24 +671,13 @@ namespace android::print
 	
 	PrintAttributes_MediaSize::PrintAttributes_MediaSize(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PrintAttributes_MediaSize::PrintAttributes_MediaSize(jstring &arg0, jstring &arg1, jint &arg2, jint &arg3)
+	PrintAttributes_MediaSize::PrintAttributes_MediaSize(jstring arg0, jstring arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.print.PrintAttributes$MediaSize",
 			"(Ljava/lang/String;Ljava/lang/String;II)V",
 			arg0,
 			arg1,
-			arg2,
-			arg3
-		);
-	}
-	PrintAttributes_MediaSize::PrintAttributes_MediaSize(const QString &arg0, const QString &arg1, jint &arg2, jint &arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"android.print.PrintAttributes$MediaSize",
-			"(Ljava/lang/String;Ljava/lang/String;II)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2,
 			arg3
 		);

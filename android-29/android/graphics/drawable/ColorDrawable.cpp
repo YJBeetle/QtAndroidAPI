@@ -22,7 +22,7 @@ namespace android::graphics::drawable
 			"()V"
 		);
 	}
-	ColorDrawable::ColorDrawable(jint &arg0)
+	ColorDrawable::ColorDrawable(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.ColorDrawable",

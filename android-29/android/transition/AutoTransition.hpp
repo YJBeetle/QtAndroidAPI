@@ -19,7 +19,7 @@ namespace android::transition
 		AutoTransition(QAndroidJniObject obj);
 		// Constructors
 		AutoTransition();
-		AutoTransition(android::content::Context &arg0, __JniBaseClass &arg1);
+		AutoTransition(android::content::Context arg0, __JniBaseClass arg1);
 		
 		// Methods
 	};

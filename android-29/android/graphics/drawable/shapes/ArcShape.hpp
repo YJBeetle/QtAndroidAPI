@@ -34,7 +34,7 @@ namespace android::graphics::drawable::shapes
 		
 		ArcShape(QAndroidJniObject obj);
 		// Constructors
-		ArcShape(jfloat &arg0, jfloat &arg1);
+		ArcShape(jfloat arg0, jfloat arg1);
 		ArcShape() = default;
 		
 		// Methods

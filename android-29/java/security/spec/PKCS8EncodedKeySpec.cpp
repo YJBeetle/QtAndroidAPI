@@ -6,7 +6,7 @@ namespace java::security::spec
 	
 	PKCS8EncodedKeySpec::PKCS8EncodedKeySpec(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PKCS8EncodedKeySpec::PKCS8EncodedKeySpec(jbyteArray &arg0)
+	PKCS8EncodedKeySpec::PKCS8EncodedKeySpec(jbyteArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.spec.PKCS8EncodedKeySpec",
@@ -14,22 +14,13 @@ namespace java::security::spec
 			arg0
 		);
 	}
-	PKCS8EncodedKeySpec::PKCS8EncodedKeySpec(jbyteArray &arg0, jstring &arg1)
+	PKCS8EncodedKeySpec::PKCS8EncodedKeySpec(jbyteArray arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.spec.PKCS8EncodedKeySpec",
 			"([BLjava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	PKCS8EncodedKeySpec::PKCS8EncodedKeySpec(jbyteArray &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.spec.PKCS8EncodedKeySpec",
-			"([BLjava/lang/String;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	

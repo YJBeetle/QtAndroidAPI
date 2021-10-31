@@ -12,7 +12,7 @@ namespace android::widget
 	
 	QuickContactBadge::QuickContactBadge(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	QuickContactBadge::QuickContactBadge(android::content::Context &arg0)
+	QuickContactBadge::QuickContactBadge(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.QuickContactBadge",
@@ -20,7 +20,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	QuickContactBadge::QuickContactBadge(android::content::Context &arg0, __JniBaseClass &arg1)
+	QuickContactBadge::QuickContactBadge(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.QuickContactBadge",
@@ -29,7 +29,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	QuickContactBadge::QuickContactBadge(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	QuickContactBadge::QuickContactBadge(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.QuickContactBadge",
@@ -39,7 +39,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	QuickContactBadge::QuickContactBadge(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	QuickContactBadge::QuickContactBadge(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.QuickContactBadge",
@@ -61,31 +61,12 @@ namespace android::widget
 			arg1
 		);
 	}
-	void QuickContactBadge::assignContactFromEmail(const QString &arg0, jboolean arg1)
-	{
-		__thiz.callMethod<void>(
-			"assignContactFromEmail",
-			"(Ljava/lang/String;Z)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	void QuickContactBadge::assignContactFromEmail(jstring arg0, jboolean arg1, android::os::Bundle arg2)
 	{
 		__thiz.callMethod<void>(
 			"assignContactFromEmail",
 			"(Ljava/lang/String;ZLandroid/os/Bundle;)V",
 			arg0,
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void QuickContactBadge::assignContactFromEmail(const QString &arg0, jboolean arg1, android::os::Bundle arg2)
-	{
-		__thiz.callMethod<void>(
-			"assignContactFromEmail",
-			"(Ljava/lang/String;ZLandroid/os/Bundle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2.__jniObject().object()
 		);
@@ -99,31 +80,12 @@ namespace android::widget
 			arg1
 		);
 	}
-	void QuickContactBadge::assignContactFromPhone(const QString &arg0, jboolean arg1)
-	{
-		__thiz.callMethod<void>(
-			"assignContactFromPhone",
-			"(Ljava/lang/String;Z)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	void QuickContactBadge::assignContactFromPhone(jstring arg0, jboolean arg1, android::os::Bundle arg2)
 	{
 		__thiz.callMethod<void>(
 			"assignContactFromPhone",
 			"(Ljava/lang/String;ZLandroid/os/Bundle;)V",
 			arg0,
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void QuickContactBadge::assignContactFromPhone(const QString &arg0, jboolean arg1, android::os::Bundle arg2)
-	{
-		__thiz.callMethod<void>(
-			"assignContactFromPhone",
-			"(Ljava/lang/String;ZLandroid/os/Bundle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2.__jniObject().object()
 		);
@@ -197,14 +159,6 @@ namespace android::widget
 			"setPrioritizedMimeType",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void QuickContactBadge::setPrioritizedMimeType(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPrioritizedMimeType",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace android::widget

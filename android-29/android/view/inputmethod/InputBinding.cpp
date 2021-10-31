@@ -15,7 +15,7 @@ namespace android::view::inputmethod
 	
 	InputBinding::InputBinding(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	InputBinding::InputBinding(__JniBaseClass &arg0, android::view::inputmethod::InputBinding &arg1)
+	InputBinding::InputBinding(__JniBaseClass arg0, android::view::inputmethod::InputBinding &arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.inputmethod.InputBinding",
@@ -24,7 +24,7 @@ namespace android::view::inputmethod
 			arg1.__jniObject().object()
 		);
 	}
-	InputBinding::InputBinding(__JniBaseClass &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	InputBinding::InputBinding(__JniBaseClass arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.inputmethod.InputBinding",

@@ -44,14 +44,5 @@ namespace android::widget
 			arg1
 		);
 	}
-	QAndroidJniObject RemoteViews_RemoteResponse::addSharedElement(jint arg0, const QString &arg1)
-	{
-		return __thiz.callObjectMethod(
-			"addSharedElement",
-			"(ILjava/lang/String;)Landroid/widget/RemoteViews$RemoteResponse;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 } // namespace android::widget
 

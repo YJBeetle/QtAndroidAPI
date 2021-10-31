@@ -69,22 +69,13 @@ namespace android::media
 	
 	MediaCodec_CryptoException::MediaCodec_CryptoException(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MediaCodec_CryptoException::MediaCodec_CryptoException(jint &arg0, jstring &arg1)
+	MediaCodec_CryptoException::MediaCodec_CryptoException(jint arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.MediaCodec$CryptoException",
 			"(ILjava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	MediaCodec_CryptoException::MediaCodec_CryptoException(jint &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.media.MediaCodec$CryptoException",
-			"(ILjava/lang/String;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	

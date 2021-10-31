@@ -7,7 +7,7 @@ namespace javax::crypto::spec
 	
 	DHParameterSpec::DHParameterSpec(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DHParameterSpec::DHParameterSpec(java::math::BigInteger &arg0, java::math::BigInteger &arg1)
+	DHParameterSpec::DHParameterSpec(java::math::BigInteger arg0, java::math::BigInteger arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.crypto.spec.DHParameterSpec",
@@ -16,7 +16,7 @@ namespace javax::crypto::spec
 			arg1.__jniObject().object()
 		);
 	}
-	DHParameterSpec::DHParameterSpec(java::math::BigInteger &arg0, java::math::BigInteger &arg1, jint &arg2)
+	DHParameterSpec::DHParameterSpec(java::math::BigInteger arg0, java::math::BigInteger arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.crypto.spec.DHParameterSpec",

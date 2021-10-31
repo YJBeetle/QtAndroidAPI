@@ -21,8 +21,8 @@ namespace android::view::animation
 		
 		AlphaAnimation(QAndroidJniObject obj);
 		// Constructors
-		AlphaAnimation(android::content::Context &arg0, __JniBaseClass &arg1);
-		AlphaAnimation(jfloat &arg0, jfloat &arg1);
+		AlphaAnimation(android::content::Context arg0, __JniBaseClass arg1);
+		AlphaAnimation(jfloat arg0, jfloat arg1);
 		AlphaAnimation() = default;
 		
 		// Methods

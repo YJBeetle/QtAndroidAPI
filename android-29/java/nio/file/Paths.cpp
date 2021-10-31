@@ -28,15 +28,5 @@ namespace java::nio::file
 			arg1
 		);
 	}
-	QAndroidJniObject Paths::get(const QString &arg0, jarray arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.nio.file.Paths",
-			"get",
-			"(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 } // namespace java::nio::file
 

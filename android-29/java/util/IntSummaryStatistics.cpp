@@ -13,7 +13,7 @@ namespace java::util
 			"()V"
 		);
 	}
-	IntSummaryStatistics::IntSummaryStatistics(jlong &arg0, jint &arg1, jint &arg2, jlong &arg3)
+	IntSummaryStatistics::IntSummaryStatistics(jlong arg0, jint arg1, jint arg2, jlong arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.IntSummaryStatistics",

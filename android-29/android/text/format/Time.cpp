@@ -228,20 +228,12 @@ namespace android::text::format
 			arg0.__jniObject().object()
 		);
 	}
-	Time::Time(jstring &arg0)
+	Time::Time(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.format.Time",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	Time::Time(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.text.format.Time",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	
@@ -326,28 +318,12 @@ namespace android::text::format
 			arg0
 		);
 	}
-	void Time::clear(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"clear",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jstring Time::format(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"format",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
-	}
-	jstring Time::format(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"format",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	jstring Time::format2445()
@@ -396,28 +372,12 @@ namespace android::text::format
 			arg0
 		);
 	}
-	jboolean Time::parse(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"parse",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jboolean Time::parse3339(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"parse3339",
 			"(Ljava/lang/String;)Z",
 			arg0
-		);
-	}
-	jboolean Time::parse3339(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"parse3339",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void Time::set(android::text::format::Time arg0)
@@ -480,14 +440,6 @@ namespace android::text::format
 			"switchTimezone",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void Time::switchTimezone(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"switchTimezone",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jlong Time::toMillis(jboolean arg0)

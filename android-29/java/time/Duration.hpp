@@ -39,7 +39,6 @@ namespace java::time
 		static QAndroidJniObject ofSeconds(jlong arg0);
 		static QAndroidJniObject ofSeconds(jlong arg0, jlong arg1);
 		static QAndroidJniObject parse(jstring arg0);
-		static QAndroidJniObject parse(const QString &arg0);
 		QAndroidJniObject abs();
 		QAndroidJniObject addTo(__JniBaseClass arg0);
 		jint compareTo(jobject arg0);

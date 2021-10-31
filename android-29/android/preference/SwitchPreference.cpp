@@ -8,7 +8,7 @@ namespace android::preference
 	
 	SwitchPreference::SwitchPreference(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SwitchPreference::SwitchPreference(android::content::Context &arg0)
+	SwitchPreference::SwitchPreference(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.preference.SwitchPreference",
@@ -16,7 +16,7 @@ namespace android::preference
 			arg0.__jniObject().object()
 		);
 	}
-	SwitchPreference::SwitchPreference(android::content::Context &arg0, __JniBaseClass &arg1)
+	SwitchPreference::SwitchPreference(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.preference.SwitchPreference",
@@ -25,7 +25,7 @@ namespace android::preference
 			arg1.__jniObject().object()
 		);
 	}
-	SwitchPreference::SwitchPreference(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	SwitchPreference::SwitchPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.preference.SwitchPreference",
@@ -35,7 +35,7 @@ namespace android::preference
 			arg2
 		);
 	}
-	SwitchPreference::SwitchPreference(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	SwitchPreference::SwitchPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.preference.SwitchPreference",
@@ -78,14 +78,6 @@ namespace android::preference
 			arg0
 		);
 	}
-	void SwitchPreference::setSwitchTextOff(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSwitchTextOff",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void SwitchPreference::setSwitchTextOn(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -100,14 +92,6 @@ namespace android::preference
 			"setSwitchTextOn",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
-		);
-	}
-	void SwitchPreference::setSwitchTextOn(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSwitchTextOn",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace android::preference

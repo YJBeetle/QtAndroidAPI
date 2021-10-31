@@ -9,7 +9,7 @@ namespace java::security
 	
 	Timestamp::Timestamp(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Timestamp::Timestamp(java::util::Date &arg0, java::security::cert::CertPath &arg1)
+	Timestamp::Timestamp(java::util::Date arg0, java::security::cert::CertPath arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.Timestamp",

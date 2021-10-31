@@ -21,7 +21,7 @@ namespace java::text
 		DateFormatSymbols(QAndroidJniObject obj);
 		// Constructors
 		DateFormatSymbols();
-		DateFormatSymbols(java::util::Locale &arg0);
+		DateFormatSymbols(java::util::Locale arg0);
 		
 		// Methods
 		static jarray getAvailableLocales();
@@ -41,7 +41,6 @@ namespace java::text
 		void setAmPmStrings(jarray arg0);
 		void setEras(jarray arg0);
 		void setLocalPatternChars(jstring arg0);
-		void setLocalPatternChars(const QString &arg0);
 		void setMonths(jarray arg0);
 		void setShortMonths(jarray arg0);
 		void setShortWeekdays(jarray arg0);

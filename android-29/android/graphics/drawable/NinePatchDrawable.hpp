@@ -77,12 +77,10 @@ namespace android::graphics::drawable
 		
 		NinePatchDrawable(QAndroidJniObject obj);
 		// Constructors
-		NinePatchDrawable(android::graphics::NinePatch &arg0);
-		NinePatchDrawable(android::content::res::Resources &arg0, android::graphics::NinePatch &arg1);
-		NinePatchDrawable(android::graphics::Bitmap &arg0, jbyteArray &arg1, android::graphics::Rect &arg2, jstring &arg3);
-		NinePatchDrawable(android::graphics::Bitmap &arg0, jbyteArray &arg1, android::graphics::Rect &arg2, const QString &arg3);
-		NinePatchDrawable(android::content::res::Resources &arg0, android::graphics::Bitmap &arg1, jbyteArray &arg2, android::graphics::Rect &arg3, jstring &arg4);
-		NinePatchDrawable(android::content::res::Resources &arg0, android::graphics::Bitmap &arg1, jbyteArray &arg2, android::graphics::Rect &arg3, const QString &arg4);
+		NinePatchDrawable(android::graphics::NinePatch arg0);
+		NinePatchDrawable(android::content::res::Resources arg0, android::graphics::NinePatch arg1);
+		NinePatchDrawable(android::graphics::Bitmap arg0, jbyteArray arg1, android::graphics::Rect arg2, jstring arg3);
+		NinePatchDrawable(android::content::res::Resources arg0, android::graphics::Bitmap arg1, jbyteArray arg2, android::graphics::Rect arg3, jstring arg4);
 		NinePatchDrawable() = default;
 		
 		// Methods

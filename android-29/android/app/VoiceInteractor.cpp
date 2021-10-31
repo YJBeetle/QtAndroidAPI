@@ -17,14 +17,6 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject VoiceInteractor::getActiveRequest(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getActiveRequest",
-			"(Ljava/lang/String;)Landroid/app/VoiceInteractor$Request;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray VoiceInteractor::getActiveRequests()
 	{
 		return __thiz.callObjectMethod(
@@ -70,15 +62,6 @@ namespace android::app
 			"(Landroid/app/VoiceInteractor$Request;Ljava/lang/String;)Z",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jboolean VoiceInteractor::submitRequest(android::app::VoiceInteractor_Request arg0, const QString &arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"submitRequest",
-			"(Landroid/app/VoiceInteractor$Request;Ljava/lang/String;)Z",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	jbooleanArray VoiceInteractor::supportsCommands(jarray arg0)

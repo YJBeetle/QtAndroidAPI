@@ -20,16 +20,6 @@ namespace java::lang
 			arg1
 		);
 	}
-	QAndroidJniObject Enum::valueOf(jclass arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.lang.Enum",
-			"valueOf",
-			"(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	jint Enum::compareTo(java::lang::Enum arg0)
 	{
 		return __thiz.callMethod<jint>(

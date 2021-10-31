@@ -35,8 +35,8 @@ namespace java::util::concurrent
 		LinkedBlockingQueue(QAndroidJniObject obj);
 		// Constructors
 		LinkedBlockingQueue();
-		LinkedBlockingQueue(jint &arg0);
-		LinkedBlockingQueue(__JniBaseClass &arg0);
+		LinkedBlockingQueue(jint arg0);
+		LinkedBlockingQueue(__JniBaseClass arg0);
 		
 		// Methods
 		void clear();

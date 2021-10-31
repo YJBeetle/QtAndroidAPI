@@ -7,7 +7,7 @@ namespace java::io
 	
 	DataOutputStream::DataOutputStream(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DataOutputStream::DataOutputStream(java::io::OutputStream &arg0)
+	DataOutputStream::DataOutputStream(java::io::OutputStream arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.DataOutputStream",
@@ -73,14 +73,6 @@ namespace java::io
 			arg0
 		);
 	}
-	void DataOutputStream::writeBytes(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"writeBytes",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void DataOutputStream::writeChar(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -95,14 +87,6 @@ namespace java::io
 			"writeChars",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void DataOutputStream::writeChars(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"writeChars",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void DataOutputStream::writeDouble(jdouble arg0)
@@ -151,14 +135,6 @@ namespace java::io
 			"writeUTF",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void DataOutputStream::writeUTF(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"writeUTF",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace java::io

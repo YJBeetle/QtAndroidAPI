@@ -21,9 +21,9 @@ namespace android::nfc
 		
 		NdefMessage(QAndroidJniObject obj);
 		// Constructors
-		NdefMessage(jbyteArray &arg0);
-		NdefMessage(jarray &arg0);
-		NdefMessage(android::nfc::NdefRecord &arg0, jarray &arg1);
+		NdefMessage(jbyteArray arg0);
+		NdefMessage(jarray arg0);
+		NdefMessage(android::nfc::NdefRecord arg0, jarray arg1);
 		NdefMessage() = default;
 		
 		// Methods

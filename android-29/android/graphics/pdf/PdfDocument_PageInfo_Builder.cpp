@@ -8,7 +8,7 @@ namespace android::graphics::pdf
 	
 	PdfDocument_PageInfo_Builder::PdfDocument_PageInfo_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PdfDocument_PageInfo_Builder::PdfDocument_PageInfo_Builder(jint &arg0, jint &arg1, jint &arg2)
+	PdfDocument_PageInfo_Builder::PdfDocument_PageInfo_Builder(jint arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.pdf.PdfDocument$PageInfo$Builder",

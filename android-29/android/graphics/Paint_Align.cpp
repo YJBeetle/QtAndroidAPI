@@ -41,15 +41,6 @@ namespace android::graphics
 			arg0
 		);
 	}
-	QAndroidJniObject Paint_Align::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.Paint$Align",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/graphics/Paint$Align;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray Paint_Align::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

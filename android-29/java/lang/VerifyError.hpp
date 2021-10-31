@@ -15,8 +15,7 @@ namespace java::lang
 		VerifyError(QAndroidJniObject obj);
 		// Constructors
 		VerifyError();
-		VerifyError(jstring &arg0);
-		VerifyError(const QString &arg0);
+		VerifyError(jstring arg0);
 		
 		// Methods
 	};

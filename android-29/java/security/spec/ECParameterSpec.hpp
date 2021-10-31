@@ -24,7 +24,7 @@ namespace java::security::spec
 		
 		ECParameterSpec(QAndroidJniObject obj);
 		// Constructors
-		ECParameterSpec(java::security::spec::EllipticCurve &arg0, java::security::spec::ECPoint &arg1, java::math::BigInteger &arg2, jint &arg3);
+		ECParameterSpec(java::security::spec::EllipticCurve arg0, java::security::spec::ECPoint arg1, java::math::BigInteger arg2, jint arg3);
 		ECParameterSpec() = default;
 		
 		// Methods

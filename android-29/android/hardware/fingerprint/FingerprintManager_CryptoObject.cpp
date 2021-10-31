@@ -9,7 +9,7 @@ namespace android::hardware::fingerprint
 	
 	FingerprintManager_CryptoObject::FingerprintManager_CryptoObject(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	FingerprintManager_CryptoObject::FingerprintManager_CryptoObject(java::security::Signature &arg0)
+	FingerprintManager_CryptoObject::FingerprintManager_CryptoObject(java::security::Signature arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.hardware.fingerprint.FingerprintManager$CryptoObject",
@@ -17,7 +17,7 @@ namespace android::hardware::fingerprint
 			arg0.__jniObject().object()
 		);
 	}
-	FingerprintManager_CryptoObject::FingerprintManager_CryptoObject(javax::crypto::Cipher &arg0)
+	FingerprintManager_CryptoObject::FingerprintManager_CryptoObject(javax::crypto::Cipher arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.hardware.fingerprint.FingerprintManager$CryptoObject",
@@ -25,7 +25,7 @@ namespace android::hardware::fingerprint
 			arg0.__jniObject().object()
 		);
 	}
-	FingerprintManager_CryptoObject::FingerprintManager_CryptoObject(javax::crypto::Mac &arg0)
+	FingerprintManager_CryptoObject::FingerprintManager_CryptoObject(javax::crypto::Mac arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.hardware.fingerprint.FingerprintManager$CryptoObject",

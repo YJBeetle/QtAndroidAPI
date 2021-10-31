@@ -15,11 +15,9 @@ namespace java::lang
 		UnsupportedOperationException(QAndroidJniObject obj);
 		// Constructors
 		UnsupportedOperationException();
-		UnsupportedOperationException(jstring &arg0);
-		UnsupportedOperationException(const QString &arg0);
-		UnsupportedOperationException(jthrowable &arg0);
-		UnsupportedOperationException(jstring &arg0, jthrowable &arg1);
-		UnsupportedOperationException(const QString &arg0, jthrowable &arg1);
+		UnsupportedOperationException(jstring arg0);
+		UnsupportedOperationException(jthrowable arg0);
+		UnsupportedOperationException(jstring arg0, jthrowable arg1);
 		
 		// Methods
 	};

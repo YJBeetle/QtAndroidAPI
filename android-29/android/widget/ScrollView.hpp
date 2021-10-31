@@ -43,10 +43,10 @@ namespace android::widget
 		
 		ScrollView(QAndroidJniObject obj);
 		// Constructors
-		ScrollView(android::content::Context &arg0);
-		ScrollView(android::content::Context &arg0, __JniBaseClass &arg1);
-		ScrollView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		ScrollView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		ScrollView(android::content::Context arg0);
+		ScrollView(android::content::Context arg0, __JniBaseClass arg1);
+		ScrollView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		ScrollView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		ScrollView() = default;
 		
 		// Methods

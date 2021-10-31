@@ -56,21 +56,12 @@ namespace android::content
 			arg0.__jniObject().object()
 		);
 	}
-	ClipDescription::ClipDescription(jstring &arg0, jarray &arg1)
+	ClipDescription::ClipDescription(jstring arg0, jarray arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.ClipDescription",
 			"(Ljava/lang/CharSequence;[Ljava/lang/String;)V",
 			arg0,
-			arg1
-		);
-	}
-	ClipDescription::ClipDescription(const QString &arg0, jarray &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.ClipDescription",
-			"(Ljava/lang/CharSequence;[Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -86,16 +77,6 @@ namespace android::content
 			arg1
 		);
 	}
-	jboolean ClipDescription::compareMimeTypes(const QString &arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.content.ClipDescription",
-			"compareMimeTypes",
-			"(Ljava/lang/String;Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	jint ClipDescription::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -109,14 +90,6 @@ namespace android::content
 			"filterMimeTypes",
 			"(Ljava/lang/String;)[Ljava/lang/String;",
 			arg0
-		).object<jarray>();
-	}
-	jarray ClipDescription::filterMimeTypes(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"filterMimeTypes",
-			"(Ljava/lang/String;)[Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jarray>();
 	}
 	QAndroidJniObject ClipDescription::getExtras()
@@ -161,14 +134,6 @@ namespace android::content
 			"hasMimeType",
 			"(Ljava/lang/String;)Z",
 			arg0
-		);
-	}
-	jboolean ClipDescription::hasMimeType(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasMimeType",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void ClipDescription::setExtras(android::os::PersistableBundle arg0)

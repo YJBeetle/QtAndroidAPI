@@ -17,7 +17,7 @@ namespace java::util::jar
 			"()V"
 		);
 	}
-	Manifest::Manifest(java::io::InputStream &arg0)
+	Manifest::Manifest(java::io::InputStream arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.jar.Manifest",
@@ -63,14 +63,6 @@ namespace java::util::jar
 			"getAttributes",
 			"(Ljava/lang/String;)Ljava/util/jar/Attributes;",
 			arg0
-		);
-	}
-	QAndroidJniObject Manifest::getAttributes(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getAttributes",
-			"(Ljava/lang/String;)Ljava/util/jar/Attributes;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Manifest::getEntries()

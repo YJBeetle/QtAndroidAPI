@@ -130,13 +130,9 @@ namespace android::icu::text
 		jboolean isParseIntegerOnly();
 		jboolean isParseStrict();
 		QAndroidJniObject parse(jstring arg0);
-		QAndroidJniObject parse(const QString &arg0);
 		QAndroidJniObject parse(jstring arg0, java::text::ParsePosition arg1);
-		QAndroidJniObject parse(const QString &arg0, java::text::ParsePosition arg1);
 		QAndroidJniObject parseCurrency(jstring arg0, java::text::ParsePosition arg1);
-		QAndroidJniObject parseCurrency(const QString &arg0, java::text::ParsePosition arg1);
 		jobject parseObject(jstring arg0, java::text::ParsePosition arg1);
-		jobject parseObject(const QString &arg0, java::text::ParsePosition arg1);
 		void setContext(android::icu::text::DisplayContext arg0);
 		void setCurrency(android::icu::util::Currency arg0);
 		void setGroupingUsed(jboolean arg0);

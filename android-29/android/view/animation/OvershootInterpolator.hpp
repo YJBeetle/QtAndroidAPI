@@ -18,8 +18,8 @@ namespace android::view::animation
 		OvershootInterpolator(QAndroidJniObject obj);
 		// Constructors
 		OvershootInterpolator();
-		OvershootInterpolator(jfloat &arg0);
-		OvershootInterpolator(android::content::Context &arg0, __JniBaseClass &arg1);
+		OvershootInterpolator(jfloat arg0);
+		OvershootInterpolator(android::content::Context arg0, __JniBaseClass arg1);
 		
 		// Methods
 		jfloat getInterpolation(jfloat arg0);

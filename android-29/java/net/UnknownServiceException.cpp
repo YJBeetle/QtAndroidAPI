@@ -13,20 +13,12 @@ namespace java::net
 			"()V"
 		);
 	}
-	UnknownServiceException::UnknownServiceException(jstring &arg0)
+	UnknownServiceException::UnknownServiceException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.UnknownServiceException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	UnknownServiceException::UnknownServiceException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.UnknownServiceException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

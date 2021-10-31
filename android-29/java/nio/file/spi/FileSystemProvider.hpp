@@ -73,10 +73,8 @@ namespace java::nio::file::spi
 		QAndroidJniObject newOutputStream(__JniBaseClass arg0, jarray arg1);
 		QAndroidJniObject readAttributes(__JniBaseClass arg0, jclass arg1, jarray arg2);
 		QAndroidJniObject readAttributes(__JniBaseClass arg0, jstring arg1, jarray arg2);
-		QAndroidJniObject readAttributes(__JniBaseClass arg0, const QString &arg1, jarray arg2);
 		QAndroidJniObject readSymbolicLink(__JniBaseClass arg0);
 		void setAttribute(__JniBaseClass arg0, jstring arg1, jobject arg2, jarray arg3);
-		void setAttribute(__JniBaseClass arg0, const QString &arg1, jobject arg2, jarray arg3);
 	};
 } // namespace java::nio::file::spi
 

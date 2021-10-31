@@ -22,7 +22,7 @@ namespace android::net::wifi::aware
 		
 		ParcelablePeerHandle(QAndroidJniObject obj);
 		// Constructors
-		ParcelablePeerHandle(android::net::wifi::aware::PeerHandle &arg0);
+		ParcelablePeerHandle(android::net::wifi::aware::PeerHandle arg0);
 		ParcelablePeerHandle() = default;
 		
 		// Methods

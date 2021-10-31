@@ -14,8 +14,7 @@ namespace java::util::concurrent
 		TimeoutException(QAndroidJniObject obj);
 		// Constructors
 		TimeoutException();
-		TimeoutException(jstring &arg0);
-		TimeoutException(const QString &arg0);
+		TimeoutException(jstring arg0);
 		
 		// Methods
 	};

@@ -29,8 +29,7 @@ namespace android::text::method
 		
 		CharacterPickerDialog(QAndroidJniObject obj);
 		// Constructors
-		CharacterPickerDialog(android::content::Context &arg0, android::view::View &arg1, __JniBaseClass &arg2, jstring &arg3, jboolean &arg4);
-		CharacterPickerDialog(android::content::Context &arg0, android::view::View &arg1, __JniBaseClass &arg2, const QString &arg3, jboolean &arg4);
+		CharacterPickerDialog(android::content::Context arg0, android::view::View arg1, __JniBaseClass arg2, jstring arg3, jboolean arg4);
 		CharacterPickerDialog() = default;
 		
 		// Methods

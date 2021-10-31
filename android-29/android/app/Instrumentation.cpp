@@ -86,16 +86,6 @@ namespace android::app
 			arg2
 		);
 	}
-	QAndroidJniObject Instrumentation::addMonitor(const QString &arg0, android::app::Instrumentation_ActivityResult arg1, jboolean arg2)
-	{
-		return __thiz.callObjectMethod(
-			"addMonitor",
-			"(Ljava/lang/String;Landroid/app/Instrumentation$ActivityResult;Z)Landroid/app/Instrumentation$ActivityMonitor;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2
-		);
-	}
 	void Instrumentation::addMonitor(android::app::Instrumentation_ActivityMonitor arg0)
 	{
 		__thiz.callMethod<void>(
@@ -380,16 +370,6 @@ namespace android::app
 			arg2.__jniObject().object()
 		);
 	}
-	QAndroidJniObject Instrumentation::newActivity(java::lang::ClassLoader arg0, const QString &arg1, android::content::Intent arg2)
-	{
-		return __thiz.callObjectMethod(
-			"newActivity",
-			"(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/app/Activity;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object()
-		);
-	}
 	QAndroidJniObject Instrumentation::newActivity(jclass arg0, android::content::Context arg1, __JniBaseClass arg2, android::app::Application arg3, android::content::Intent arg4, android::content::pm::ActivityInfo arg5, jstring arg6, android::app::Activity arg7, jstring arg8, jobject arg9)
 	{
 		return __thiz.callObjectMethod(
@@ -407,23 +387,6 @@ namespace android::app
 			arg9
 		);
 	}
-	QAndroidJniObject Instrumentation::newActivity(jclass arg0, android::content::Context arg1, __JniBaseClass arg2, android::app::Application arg3, android::content::Intent arg4, android::content::pm::ActivityInfo arg5, const QString &arg6, android::app::Activity arg7, const QString &arg8, jobject arg9)
-	{
-		return __thiz.callObjectMethod(
-			"newActivity",
-			"(Ljava/lang/Class;Landroid/content/Context;Landroid/os/IBinder;Landroid/app/Application;Landroid/content/Intent;Landroid/content/pm/ActivityInfo;Ljava/lang/CharSequence;Landroid/app/Activity;Ljava/lang/String;Ljava/lang/Object;)Landroid/app/Activity;",
-			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
-			arg5.__jniObject().object(),
-			QAndroidJniObject::fromString(arg6).object<jstring>(),
-			arg7.__jniObject().object(),
-			QAndroidJniObject::fromString(arg8).object<jstring>(),
-			arg9
-		);
-	}
 	QAndroidJniObject Instrumentation::newApplication(java::lang::ClassLoader arg0, jstring arg1, android::content::Context arg2)
 	{
 		return __thiz.callObjectMethod(
@@ -431,16 +394,6 @@ namespace android::app
 			"(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Context;)Landroid/app/Application;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Instrumentation::newApplication(java::lang::ClassLoader arg0, const QString &arg1, android::content::Context arg2)
-	{
-		return __thiz.callObjectMethod(
-			"newApplication",
-			"(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Context;)Landroid/app/Application;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}
@@ -538,14 +491,6 @@ namespace android::app
 			"sendStringSync",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void Instrumentation::sendStringSync(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"sendStringSync",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void Instrumentation::sendTrackballEventSync(android::view::MotionEvent arg0)

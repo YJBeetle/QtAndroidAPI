@@ -16,7 +16,7 @@ namespace java::util
 		
 		IllegalFormatPrecisionException(QAndroidJniObject obj);
 		// Constructors
-		IllegalFormatPrecisionException(jint &arg0);
+		IllegalFormatPrecisionException(jint arg0);
 		IllegalFormatPrecisionException() = default;
 		
 		// Methods

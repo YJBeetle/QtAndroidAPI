@@ -16,10 +16,8 @@ namespace android::net
 		
 		LocalSocketAddress(QAndroidJniObject obj);
 		// Constructors
-		LocalSocketAddress(jstring &arg0);
-		LocalSocketAddress(const QString &arg0);
-		LocalSocketAddress(jstring &arg0, android::net::LocalSocketAddress_Namespace &arg1);
-		LocalSocketAddress(const QString &arg0, android::net::LocalSocketAddress_Namespace &arg1);
+		LocalSocketAddress(jstring arg0);
+		LocalSocketAddress(jstring arg0, android::net::LocalSocketAddress_Namespace arg1);
 		LocalSocketAddress() = default;
 		
 		// Methods

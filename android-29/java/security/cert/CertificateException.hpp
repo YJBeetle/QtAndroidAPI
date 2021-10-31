@@ -15,11 +15,9 @@ namespace java::security::cert
 		CertificateException(QAndroidJniObject obj);
 		// Constructors
 		CertificateException();
-		CertificateException(jstring &arg0);
-		CertificateException(const QString &arg0);
-		CertificateException(jthrowable &arg0);
-		CertificateException(jstring &arg0, jthrowable &arg1);
-		CertificateException(const QString &arg0, jthrowable &arg1);
+		CertificateException(jstring arg0);
+		CertificateException(jthrowable arg0);
+		CertificateException(jstring arg0, jthrowable arg1);
 		
 		// Methods
 	};

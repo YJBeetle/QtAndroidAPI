@@ -97,15 +97,6 @@ namespace android::util
 			arg0
 		);
 	}
-	QAndroidJniObject JsonToken::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.util.JsonToken",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/util/JsonToken;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray JsonToken::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

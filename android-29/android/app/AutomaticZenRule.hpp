@@ -29,11 +29,9 @@ namespace android::app
 		
 		AutomaticZenRule(QAndroidJniObject obj);
 		// Constructors
-		AutomaticZenRule(android::os::Parcel &arg0);
-		AutomaticZenRule(jstring &arg0, android::content::ComponentName &arg1, android::net::Uri &arg2, jint &arg3, jboolean &arg4);
-		AutomaticZenRule(const QString &arg0, android::content::ComponentName &arg1, android::net::Uri &arg2, jint &arg3, jboolean &arg4);
-		AutomaticZenRule(jstring &arg0, android::content::ComponentName &arg1, android::content::ComponentName &arg2, android::net::Uri &arg3, android::service::notification::ZenPolicy &arg4, jint &arg5, jboolean &arg6);
-		AutomaticZenRule(const QString &arg0, android::content::ComponentName &arg1, android::content::ComponentName &arg2, android::net::Uri &arg3, android::service::notification::ZenPolicy &arg4, jint &arg5, jboolean &arg6);
+		AutomaticZenRule(android::os::Parcel arg0);
+		AutomaticZenRule(jstring arg0, android::content::ComponentName arg1, android::net::Uri arg2, jint arg3, jboolean arg4);
+		AutomaticZenRule(jstring arg0, android::content::ComponentName arg1, android::content::ComponentName arg2, android::net::Uri arg3, android::service::notification::ZenPolicy arg4, jint arg5, jboolean arg6);
 		AutomaticZenRule() = default;
 		
 		// Methods
@@ -53,7 +51,6 @@ namespace android::app
 		void setEnabled(jboolean arg0);
 		void setInterruptionFilter(jint arg0);
 		void setName(jstring arg0);
-		void setName(const QString &arg0);
 		void setZenPolicy(android::service::notification::ZenPolicy arg0);
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

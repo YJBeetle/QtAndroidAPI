@@ -8,7 +8,7 @@ namespace java::security::cert
 	
 	PKIXCertPathBuilderResult::PKIXCertPathBuilderResult(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PKIXCertPathBuilderResult::PKIXCertPathBuilderResult(java::security::cert::CertPath &arg0, java::security::cert::TrustAnchor &arg1, __JniBaseClass &arg2, __JniBaseClass &arg3)
+	PKIXCertPathBuilderResult::PKIXCertPathBuilderResult(java::security::cert::CertPath arg0, java::security::cert::TrustAnchor arg1, __JniBaseClass arg2, __JniBaseClass arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.cert.PKIXCertPathBuilderResult",

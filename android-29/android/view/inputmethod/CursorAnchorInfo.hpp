@@ -28,7 +28,7 @@ namespace android::view::inputmethod
 		
 		CursorAnchorInfo(QAndroidJniObject obj);
 		// Constructors
-		CursorAnchorInfo(android::os::Parcel &arg0);
+		CursorAnchorInfo(android::os::Parcel arg0);
 		CursorAnchorInfo() = default;
 		
 		// Methods

@@ -97,15 +97,6 @@ namespace java::security
 			arg0
 		);
 	}
-	QAndroidJniObject CryptoPrimitive::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.security.CryptoPrimitive",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/security/CryptoPrimitive;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray CryptoPrimitive::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

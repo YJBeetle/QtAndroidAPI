@@ -7,7 +7,7 @@ namespace java::security::spec
 	
 	ECFieldFp::ECFieldFp(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ECFieldFp::ECFieldFp(java::math::BigInteger &arg0)
+	ECFieldFp::ECFieldFp(java::math::BigInteger arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.spec.ECFieldFp",

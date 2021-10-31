@@ -45,7 +45,6 @@ namespace android::provider
 		static void cancelThumbnailRequest(android::content::ContentResolver arg0, jlong arg1);
 		static void cancelThumbnailRequest(android::content::ContentResolver arg0, jlong arg1, jlong arg2);
 		static QAndroidJniObject getContentUri(jstring arg0);
-		static QAndroidJniObject getContentUri(const QString &arg0);
 		static QAndroidJniObject getThumbnail(android::content::ContentResolver arg0, jlong arg1, jint arg2, android::graphics::BitmapFactory_Options arg3);
 		static QAndroidJniObject getThumbnail(android::content::ContentResolver arg0, jlong arg1, jlong arg2, jint arg3, android::graphics::BitmapFactory_Options arg4);
 	};

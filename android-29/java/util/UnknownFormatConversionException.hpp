@@ -16,8 +16,7 @@ namespace java::util
 		
 		UnknownFormatConversionException(QAndroidJniObject obj);
 		// Constructors
-		UnknownFormatConversionException(jstring &arg0);
-		UnknownFormatConversionException(const QString &arg0);
+		UnknownFormatConversionException(jstring arg0);
 		UnknownFormatConversionException() = default;
 		
 		// Methods

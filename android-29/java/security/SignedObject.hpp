@@ -20,7 +20,7 @@ namespace java::security
 		
 		SignedObject(QAndroidJniObject obj);
 		// Constructors
-		SignedObject(__JniBaseClass &arg0, __JniBaseClass &arg1, java::security::Signature &arg2);
+		SignedObject(__JniBaseClass arg0, __JniBaseClass arg1, java::security::Signature arg2);
 		SignedObject() = default;
 		
 		// Methods

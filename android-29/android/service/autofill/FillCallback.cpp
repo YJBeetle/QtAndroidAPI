@@ -17,14 +17,6 @@ namespace android::service::autofill
 			arg0
 		);
 	}
-	void FillCallback::onFailure(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"onFailure",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void FillCallback::onSuccess(android::service::autofill::FillResponse arg0)
 	{
 		__thiz.callMethod<void>(

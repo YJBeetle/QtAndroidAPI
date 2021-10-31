@@ -8,21 +8,12 @@ namespace android::os
 	
 	MemoryFile::MemoryFile(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MemoryFile::MemoryFile(jstring &arg0, jint &arg1)
+	MemoryFile::MemoryFile(jstring arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.MemoryFile",
 			"(Ljava/lang/String;I)V",
 			arg0,
-			arg1
-		);
-	}
-	MemoryFile::MemoryFile(const QString &arg0, jint &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.os.MemoryFile",
-			"(Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

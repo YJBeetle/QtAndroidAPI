@@ -15,11 +15,9 @@ namespace android::accounts
 		AuthenticatorException(QAndroidJniObject obj);
 		// Constructors
 		AuthenticatorException();
-		AuthenticatorException(jstring &arg0);
-		AuthenticatorException(const QString &arg0);
-		AuthenticatorException(jthrowable &arg0);
-		AuthenticatorException(jstring &arg0, jthrowable &arg1);
-		AuthenticatorException(const QString &arg0, jthrowable &arg1);
+		AuthenticatorException(jstring arg0);
+		AuthenticatorException(jthrowable arg0);
+		AuthenticatorException(jstring arg0, jthrowable arg1);
 		
 		// Methods
 	};

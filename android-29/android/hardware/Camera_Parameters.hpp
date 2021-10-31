@@ -80,7 +80,6 @@ namespace android::hardware
 		// Methods
 		jstring flatten();
 		jstring get(jstring arg0);
-		jstring get(const QString &arg0);
 		jstring getAntibanding();
 		jboolean getAutoExposureLock();
 		jboolean getAutoWhiteBalanceLock();
@@ -94,7 +93,6 @@ namespace android::hardware
 		jstring getFocusMode();
 		jfloat getHorizontalViewAngle();
 		jint getInt(jstring arg0);
-		jint getInt(const QString &arg0);
 		jint getJpegQuality();
 		jint getJpegThumbnailQuality();
 		QAndroidJniObject getJpegThumbnailSize();
@@ -139,29 +137,21 @@ namespace android::hardware
 		jboolean isVideoStabilizationSupported();
 		jboolean isZoomSupported();
 		void remove(jstring arg0);
-		void remove(const QString &arg0);
 		void removeGpsData();
 		void set(jstring arg0, jint arg1);
-		void set(const QString &arg0, jint arg1);
 		void set(jstring arg0, jstring arg1);
-		void set(const QString &arg0, const QString &arg1);
 		void setAntibanding(jstring arg0);
-		void setAntibanding(const QString &arg0);
 		void setAutoExposureLock(jboolean arg0);
 		void setAutoWhiteBalanceLock(jboolean arg0);
 		void setColorEffect(jstring arg0);
-		void setColorEffect(const QString &arg0);
 		void setExposureCompensation(jint arg0);
 		void setFlashMode(jstring arg0);
-		void setFlashMode(const QString &arg0);
 		void setFocusAreas(__JniBaseClass arg0);
 		void setFocusMode(jstring arg0);
-		void setFocusMode(const QString &arg0);
 		void setGpsAltitude(jdouble arg0);
 		void setGpsLatitude(jdouble arg0);
 		void setGpsLongitude(jdouble arg0);
 		void setGpsProcessingMethod(jstring arg0);
-		void setGpsProcessingMethod(const QString &arg0);
 		void setGpsTimestamp(jlong arg0);
 		void setJpegQuality(jint arg0);
 		void setJpegThumbnailQuality(jint arg0);
@@ -176,13 +166,10 @@ namespace android::hardware
 		void setRecordingHint(jboolean arg0);
 		void setRotation(jint arg0);
 		void setSceneMode(jstring arg0);
-		void setSceneMode(const QString &arg0);
 		void setVideoStabilization(jboolean arg0);
 		void setWhiteBalance(jstring arg0);
-		void setWhiteBalance(const QString &arg0);
 		void setZoom(jint arg0);
 		void unflatten(jstring arg0);
-		void unflatten(const QString &arg0);
 	};
 } // namespace android::hardware
 

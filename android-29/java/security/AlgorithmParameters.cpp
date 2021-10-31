@@ -19,15 +19,6 @@ namespace java::security
 			arg0
 		);
 	}
-	QAndroidJniObject AlgorithmParameters::getInstance(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.security.AlgorithmParameters",
-			"getInstance",
-			"(Ljava/lang/String;)Ljava/security/AlgorithmParameters;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject AlgorithmParameters::getInstance(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -38,16 +29,6 @@ namespace java::security
 			arg1
 		);
 	}
-	QAndroidJniObject AlgorithmParameters::getInstance(const QString &arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.security.AlgorithmParameters",
-			"getInstance",
-			"(Ljava/lang/String;Ljava/lang/String;)Ljava/security/AlgorithmParameters;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	QAndroidJniObject AlgorithmParameters::getInstance(jstring arg0, java::security::Provider arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -55,16 +36,6 @@ namespace java::security
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/AlgorithmParameters;",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject AlgorithmParameters::getInstance(const QString &arg0, java::security::Provider arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.security.AlgorithmParameters",
-			"getInstance",
-			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/AlgorithmParameters;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -88,14 +59,6 @@ namespace java::security
 			"getEncoded",
 			"(Ljava/lang/String;)[B",
 			arg0
-		).object<jbyteArray>();
-	}
-	jbyteArray AlgorithmParameters::getEncoded(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getEncoded",
-			"(Ljava/lang/String;)[B",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jbyteArray>();
 	}
 	QAndroidJniObject AlgorithmParameters::getParameterSpec(jclass arg0)
@@ -136,15 +99,6 @@ namespace java::security
 			"([BLjava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	void AlgorithmParameters::init(jbyteArray arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"init",
-			"([BLjava/lang/String;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	jstring AlgorithmParameters::toString()

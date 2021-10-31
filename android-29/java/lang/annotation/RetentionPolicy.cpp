@@ -41,15 +41,6 @@ namespace java::lang::annotation
 			arg0
 		);
 	}
-	QAndroidJniObject RetentionPolicy::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.lang.annotation.RetentionPolicy",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/lang/annotation/RetentionPolicy;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray RetentionPolicy::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

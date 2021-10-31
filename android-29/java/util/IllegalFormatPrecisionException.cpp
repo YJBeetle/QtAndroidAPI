@@ -6,7 +6,7 @@ namespace java::util
 	
 	IllegalFormatPrecisionException::IllegalFormatPrecisionException(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	IllegalFormatPrecisionException::IllegalFormatPrecisionException(jint &arg0)
+	IllegalFormatPrecisionException::IllegalFormatPrecisionException(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.IllegalFormatPrecisionException",

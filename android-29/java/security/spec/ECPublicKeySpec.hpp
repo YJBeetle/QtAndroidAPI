@@ -20,7 +20,7 @@ namespace java::security::spec
 		
 		ECPublicKeySpec(QAndroidJniObject obj);
 		// Constructors
-		ECPublicKeySpec(java::security::spec::ECPoint &arg0, java::security::spec::ECParameterSpec &arg1);
+		ECPublicKeySpec(java::security::spec::ECPoint arg0, java::security::spec::ECParameterSpec arg1);
 		ECPublicKeySpec() = default;
 		
 		// Methods

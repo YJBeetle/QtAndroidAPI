@@ -6,7 +6,7 @@ namespace java::nio::charset
 	
 	UnmappableCharacterException::UnmappableCharacterException(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	UnmappableCharacterException::UnmappableCharacterException(jint &arg0)
+	UnmappableCharacterException::UnmappableCharacterException(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.nio.charset.UnmappableCharacterException",

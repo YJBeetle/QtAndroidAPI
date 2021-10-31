@@ -92,11 +92,8 @@ namespace android::app
 		
 		// Methods
 		static QAndroidJniObject instantiate(android::content::Context arg0, jstring arg1);
-		static QAndroidJniObject instantiate(android::content::Context arg0, const QString &arg1);
 		static QAndroidJniObject instantiate(android::content::Context arg0, jstring arg1, android::os::Bundle arg2);
-		static QAndroidJniObject instantiate(android::content::Context arg0, const QString &arg1, android::os::Bundle arg2);
 		void dump(jstring arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3);
-		void dump(const QString &arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3);
 		jboolean equals(jobject arg0);
 		QAndroidJniObject getActivity();
 		jboolean getAllowEnterTransitionOverlap();
@@ -194,7 +191,6 @@ namespace android::app
 		void setTargetFragment(android::app::Fragment arg0, jint arg1);
 		void setUserVisibleHint(jboolean arg0);
 		jboolean shouldShowRequestPermissionRationale(jstring arg0);
-		jboolean shouldShowRequestPermissionRationale(const QString &arg0);
 		void startActivity(android::content::Intent arg0);
 		void startActivity(android::content::Intent arg0, android::os::Bundle arg1);
 		void startActivityForResult(android::content::Intent arg0, jint arg1);

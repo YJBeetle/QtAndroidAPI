@@ -55,14 +55,6 @@ namespace android::net::wifi::aware
 			arg0
 		);
 	}
-	QAndroidJniObject PublishConfig_Builder::setServiceName(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setServiceName",
-			"(Ljava/lang/String;)Landroid/net/wifi/aware/PublishConfig$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject PublishConfig_Builder::setServiceSpecificInfo(jbyteArray arg0)
 	{
 		return __thiz.callObjectMethod(

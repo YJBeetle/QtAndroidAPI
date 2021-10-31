@@ -8,7 +8,7 @@ namespace android::view
 	
 	DisplayCutout::DisplayCutout(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DisplayCutout::DisplayCutout(android::graphics::Rect &arg0, __JniBaseClass &arg1)
+	DisplayCutout::DisplayCutout(android::graphics::Rect arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.DisplayCutout",
@@ -17,7 +17,7 @@ namespace android::view
 			arg1.__jniObject().object()
 		);
 	}
-	DisplayCutout::DisplayCutout(android::graphics::Insets &arg0, android::graphics::Rect &arg1, android::graphics::Rect &arg2, android::graphics::Rect &arg3, android::graphics::Rect &arg4)
+	DisplayCutout::DisplayCutout(android::graphics::Insets arg0, android::graphics::Rect arg1, android::graphics::Rect arg2, android::graphics::Rect arg3, android::graphics::Rect arg4)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.DisplayCutout",

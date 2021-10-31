@@ -13,7 +13,7 @@ namespace android::util
 		SparseBooleanArray(QAndroidJniObject obj);
 		// Constructors
 		SparseBooleanArray();
-		SparseBooleanArray(jint &arg0);
+		SparseBooleanArray(jint arg0);
 		
 		// Methods
 		void append(jint arg0, jboolean arg1);

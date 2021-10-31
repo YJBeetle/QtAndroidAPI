@@ -14,9 +14,8 @@ namespace javax::xml::xpath
 		
 		XPathFactoryConfigurationException(QAndroidJniObject obj);
 		// Constructors
-		XPathFactoryConfigurationException(jstring &arg0);
-		XPathFactoryConfigurationException(const QString &arg0);
-		XPathFactoryConfigurationException(jthrowable &arg0);
+		XPathFactoryConfigurationException(jstring arg0);
+		XPathFactoryConfigurationException(jthrowable arg0);
 		XPathFactoryConfigurationException() = default;
 		
 		// Methods

@@ -24,8 +24,7 @@ namespace android::app
 		
 		RecoverableSecurityException(QAndroidJniObject obj);
 		// Constructors
-		RecoverableSecurityException(jthrowable &arg0, jstring &arg1, android::app::RemoteAction &arg2);
-		RecoverableSecurityException(jthrowable &arg0, const QString &arg1, android::app::RemoteAction &arg2);
+		RecoverableSecurityException(jthrowable arg0, jstring arg1, android::app::RemoteAction arg2);
 		RecoverableSecurityException() = default;
 		
 		// Methods

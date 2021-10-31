@@ -16,7 +16,7 @@ namespace android::app
 			"()V"
 		);
 	}
-	Notification_BigPictureStyle::Notification_BigPictureStyle(android::app::Notification_Builder &arg0)
+	Notification_BigPictureStyle::Notification_BigPictureStyle(android::app::Notification_Builder arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.Notification$BigPictureStyle",
@@ -58,28 +58,12 @@ namespace android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_BigPictureStyle::setBigContentTitle(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setBigContentTitle",
-			"(Ljava/lang/CharSequence;)Landroid/app/Notification$BigPictureStyle;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Notification_BigPictureStyle::setSummaryText(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setSummaryText",
 			"(Ljava/lang/CharSequence;)Landroid/app/Notification$BigPictureStyle;",
 			arg0
-		);
-	}
-	QAndroidJniObject Notification_BigPictureStyle::setSummaryText(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setSummaryText",
-			"(Ljava/lang/CharSequence;)Landroid/app/Notification$BigPictureStyle;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace android::app

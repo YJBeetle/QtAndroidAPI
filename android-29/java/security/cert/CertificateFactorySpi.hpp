@@ -36,7 +36,6 @@ namespace java::security::cert
 		QAndroidJniObject engineGenerateCertPath(java::io::InputStream arg0);
 		QAndroidJniObject engineGenerateCertPath(__JniBaseClass arg0);
 		QAndroidJniObject engineGenerateCertPath(java::io::InputStream arg0, jstring arg1);
-		QAndroidJniObject engineGenerateCertPath(java::io::InputStream arg0, const QString &arg1);
 		QAndroidJniObject engineGenerateCertificate(java::io::InputStream arg0);
 		QAndroidJniObject engineGenerateCertificates(java::io::InputStream arg0);
 		QAndroidJniObject engineGetCertPathEncodings();

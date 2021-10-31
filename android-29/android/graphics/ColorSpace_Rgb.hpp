@@ -17,18 +17,12 @@ namespace android::graphics
 		
 		ColorSpace_Rgb(QAndroidJniObject obj);
 		// Constructors
-		ColorSpace_Rgb(jstring &arg0, jfloatArray &arg1, android::graphics::ColorSpace_Rgb_TransferParameters &arg2);
-		ColorSpace_Rgb(const QString &arg0, jfloatArray &arg1, android::graphics::ColorSpace_Rgb_TransferParameters &arg2);
-		ColorSpace_Rgb(jstring &arg0, jfloatArray &arg1, jdouble &arg2);
-		ColorSpace_Rgb(const QString &arg0, jfloatArray &arg1, jdouble &arg2);
-		ColorSpace_Rgb(jstring &arg0, jfloatArray &arg1, jfloatArray &arg2, android::graphics::ColorSpace_Rgb_TransferParameters &arg3);
-		ColorSpace_Rgb(const QString &arg0, jfloatArray &arg1, jfloatArray &arg2, android::graphics::ColorSpace_Rgb_TransferParameters &arg3);
-		ColorSpace_Rgb(jstring &arg0, jfloatArray &arg1, jfloatArray &arg2, jdouble &arg3);
-		ColorSpace_Rgb(const QString &arg0, jfloatArray &arg1, jfloatArray &arg2, jdouble &arg3);
-		ColorSpace_Rgb(jstring &arg0, jfloatArray &arg1, __JniBaseClass &arg2, __JniBaseClass &arg3);
-		ColorSpace_Rgb(const QString &arg0, jfloatArray &arg1, __JniBaseClass &arg2, __JniBaseClass &arg3);
-		ColorSpace_Rgb(jstring &arg0, jfloatArray &arg1, jfloatArray &arg2, __JniBaseClass &arg3, __JniBaseClass &arg4, jfloat &arg5, jfloat &arg6);
-		ColorSpace_Rgb(const QString &arg0, jfloatArray &arg1, jfloatArray &arg2, __JniBaseClass &arg3, __JniBaseClass &arg4, jfloat &arg5, jfloat &arg6);
+		ColorSpace_Rgb(jstring arg0, jfloatArray arg1, android::graphics::ColorSpace_Rgb_TransferParameters arg2);
+		ColorSpace_Rgb(jstring arg0, jfloatArray arg1, jdouble arg2);
+		ColorSpace_Rgb(jstring arg0, jfloatArray arg1, jfloatArray arg2, android::graphics::ColorSpace_Rgb_TransferParameters arg3);
+		ColorSpace_Rgb(jstring arg0, jfloatArray arg1, jfloatArray arg2, jdouble arg3);
+		ColorSpace_Rgb(jstring arg0, jfloatArray arg1, __JniBaseClass arg2, __JniBaseClass arg3);
+		ColorSpace_Rgb(jstring arg0, jfloatArray arg1, jfloatArray arg2, __JniBaseClass arg3, __JniBaseClass arg4, jfloat arg5, jfloat arg6);
 		ColorSpace_Rgb() = default;
 		
 		// Methods

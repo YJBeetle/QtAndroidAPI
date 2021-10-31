@@ -35,15 +35,6 @@ namespace java::lang
 			arg0
 		);
 	}
-	jboolean Compiler::compileClasses(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"java.lang.Compiler",
-			"compileClasses",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void Compiler::disable()
 	{
 		QAndroidJniObject::callStaticMethod<void>(

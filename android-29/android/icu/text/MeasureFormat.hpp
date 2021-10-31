@@ -75,7 +75,6 @@ namespace android::icu::text
 		QAndroidJniObject getWidth();
 		jint hashCode();
 		QAndroidJniObject parseObject(jstring arg0, java::text::ParsePosition arg1);
-		QAndroidJniObject parseObject(const QString &arg0, java::text::ParsePosition arg1);
 	};
 } // namespace android::icu::text
 

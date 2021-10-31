@@ -8,7 +8,7 @@ namespace javax::crypto
 	
 	SealedObject::SealedObject(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SealedObject::SealedObject(__JniBaseClass &arg0, javax::crypto::Cipher &arg1)
+	SealedObject::SealedObject(__JniBaseClass arg0, javax::crypto::Cipher arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.crypto.SealedObject",
@@ -49,15 +49,6 @@ namespace javax::crypto
 			"(Ljava/security/Key;Ljava/lang/String;)Ljava/lang/Object;",
 			arg0.__jniObject().object(),
 			arg1
-		).object<jobject>();
-	}
-	jobject SealedObject::getObject(__JniBaseClass arg0, const QString &arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getObject",
-			"(Ljava/security/Key;Ljava/lang/String;)Ljava/lang/Object;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		).object<jobject>();
 	}
 } // namespace javax::crypto

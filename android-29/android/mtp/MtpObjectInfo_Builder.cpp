@@ -14,7 +14,7 @@ namespace android::mtp
 			"()V"
 		);
 	}
-	MtpObjectInfo_Builder::MtpObjectInfo_Builder(android::mtp::MtpObjectInfo &arg0)
+	MtpObjectInfo_Builder::MtpObjectInfo_Builder(android::mtp::MtpObjectInfo arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.mtp.MtpObjectInfo$Builder",
@@ -111,28 +111,12 @@ namespace android::mtp
 			arg0
 		);
 	}
-	QAndroidJniObject MtpObjectInfo_Builder::setKeywords(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setKeywords",
-			"(Ljava/lang/String;)Landroid/mtp/MtpObjectInfo$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject MtpObjectInfo_Builder::setName(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setName",
 			"(Ljava/lang/String;)Landroid/mtp/MtpObjectInfo$Builder;",
 			arg0
-		);
-	}
-	QAndroidJniObject MtpObjectInfo_Builder::setName(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setName",
-			"(Ljava/lang/String;)Landroid/mtp/MtpObjectInfo$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject MtpObjectInfo_Builder::setObjectHandle(jint arg0)

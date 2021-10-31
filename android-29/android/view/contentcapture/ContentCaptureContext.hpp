@@ -33,7 +33,6 @@ namespace android::view::contentcapture
 		
 		// Methods
 		static QAndroidJniObject forLocusId(jstring arg0);
-		static QAndroidJniObject forLocusId(const QString &arg0);
 		jint describeContents();
 		QAndroidJniObject getExtras();
 		QAndroidJniObject getLocusId();

@@ -16,8 +16,8 @@ namespace java::util::concurrent
 		
 		Semaphore(QAndroidJniObject obj);
 		// Constructors
-		Semaphore(jint &arg0);
-		Semaphore(jint &arg0, jboolean &arg1);
+		Semaphore(jint arg0);
+		Semaphore(jint arg0, jboolean arg1);
 		Semaphore() = default;
 		
 		// Methods

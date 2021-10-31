@@ -64,7 +64,6 @@ namespace android::view::inputmethod
 		// Methods
 		jint describeContents();
 		void dump(__JniBaseClass arg0, jstring arg1);
-		void dump(__JniBaseClass arg0, const QString &arg1);
 		void makeCompatible(jint arg0);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

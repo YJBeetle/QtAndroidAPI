@@ -9,7 +9,7 @@ namespace android::hardware::biometrics
 	
 	BiometricPrompt_CryptoObject::BiometricPrompt_CryptoObject(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	BiometricPrompt_CryptoObject::BiometricPrompt_CryptoObject(java::security::Signature &arg0)
+	BiometricPrompt_CryptoObject::BiometricPrompt_CryptoObject(java::security::Signature arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.hardware.biometrics.BiometricPrompt$CryptoObject",
@@ -17,7 +17,7 @@ namespace android::hardware::biometrics
 			arg0.__jniObject().object()
 		);
 	}
-	BiometricPrompt_CryptoObject::BiometricPrompt_CryptoObject(javax::crypto::Cipher &arg0)
+	BiometricPrompt_CryptoObject::BiometricPrompt_CryptoObject(javax::crypto::Cipher arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.hardware.biometrics.BiometricPrompt$CryptoObject",
@@ -25,7 +25,7 @@ namespace android::hardware::biometrics
 			arg0.__jniObject().object()
 		);
 	}
-	BiometricPrompt_CryptoObject::BiometricPrompt_CryptoObject(javax::crypto::Mac &arg0)
+	BiometricPrompt_CryptoObject::BiometricPrompt_CryptoObject(javax::crypto::Mac arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.hardware.biometrics.BiometricPrompt$CryptoObject",

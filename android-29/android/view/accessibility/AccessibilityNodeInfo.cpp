@@ -440,28 +440,12 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo::findAccessibilityNodeInfosByText(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"findAccessibilityNodeInfosByText",
-			"(Ljava/lang/String;)Ljava/util/List;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject AccessibilityNodeInfo::findAccessibilityNodeInfosByViewId(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"findAccessibilityNodeInfosByViewId",
 			"(Ljava/lang/String;)Ljava/util/List;",
 			arg0
-		);
-	}
-	QAndroidJniObject AccessibilityNodeInfo::findAccessibilityNodeInfosByViewId(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"findAccessibilityNodeInfosByViewId",
-			"(Ljava/lang/String;)Ljava/util/List;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject AccessibilityNodeInfo::findFocus(jint arg0)
@@ -929,15 +913,6 @@ namespace android::view::accessibility
 			arg1.__jniObject().object()
 		);
 	}
-	jboolean AccessibilityNodeInfo::refreshWithExtraData(const QString &arg0, android::os::Bundle arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"refreshWithExtraData",
-			"(Ljava/lang/String;Landroid/os/Bundle;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	jboolean AccessibilityNodeInfo::removeAction(android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -1035,14 +1010,6 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityNodeInfo::setClassName(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setClassName",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void AccessibilityNodeInfo::setClickable(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
@@ -1073,14 +1040,6 @@ namespace android::view::accessibility
 			"setContentDescription",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
-		);
-	}
-	void AccessibilityNodeInfo::setContentDescription(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setContentDescription",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void AccessibilityNodeInfo::setContentInvalid(jboolean arg0)
@@ -1139,14 +1098,6 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityNodeInfo::setError(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setError",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void AccessibilityNodeInfo::setFocusable(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
@@ -1177,14 +1128,6 @@ namespace android::view::accessibility
 			"setHintText",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
-		);
-	}
-	void AccessibilityNodeInfo::setHintText(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setHintText",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void AccessibilityNodeInfo::setImportantForAccessibility(jboolean arg0)
@@ -1285,28 +1228,12 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityNodeInfo::setPackageName(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPackageName",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void AccessibilityNodeInfo::setPaneTitle(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setPaneTitle",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
-		);
-	}
-	void AccessibilityNodeInfo::setPaneTitle(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPaneTitle",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void AccessibilityNodeInfo::setParent(android::view::View arg0)
@@ -1399,14 +1326,6 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityNodeInfo::setText(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setText",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void AccessibilityNodeInfo::setTextEntryKey(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
@@ -1430,14 +1349,6 @@ namespace android::view::accessibility
 			"setTooltipText",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
-		);
-	}
-	void AccessibilityNodeInfo::setTooltipText(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTooltipText",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void AccessibilityNodeInfo::setTouchDelegateInfo(android::view::accessibility::AccessibilityNodeInfo_TouchDelegateInfo arg0)
@@ -1488,14 +1399,6 @@ namespace android::view::accessibility
 			"setViewIdResourceName",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void AccessibilityNodeInfo::setViewIdResourceName(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setViewIdResourceName",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void AccessibilityNodeInfo::setVisibleToUser(jboolean arg0)

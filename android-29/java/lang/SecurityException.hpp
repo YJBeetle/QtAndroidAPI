@@ -15,11 +15,9 @@ namespace java::lang
 		SecurityException(QAndroidJniObject obj);
 		// Constructors
 		SecurityException();
-		SecurityException(jstring &arg0);
-		SecurityException(const QString &arg0);
-		SecurityException(jthrowable &arg0);
-		SecurityException(jstring &arg0, jthrowable &arg1);
-		SecurityException(const QString &arg0, jthrowable &arg1);
+		SecurityException(jstring arg0);
+		SecurityException(jthrowable arg0);
+		SecurityException(jstring arg0, jthrowable arg1);
 		
 		// Methods
 	};

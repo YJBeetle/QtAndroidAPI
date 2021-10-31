@@ -431,17 +431,6 @@ namespace android::icu::util
 			arg2
 		).object<jarray>();
 	}
-	jarray Calendar::getKeywordValuesForLocale(const QString &arg0, android::icu::util::ULocale arg1, jboolean arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.util.Calendar",
-			"getKeywordValuesForLocale",
-			"(Ljava/lang/String;Landroid/icu/util/ULocale;Z)[Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2
-		).object<jarray>();
-	}
 	QAndroidJniObject Calendar::getWeekDataForRegion(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -449,15 +438,6 @@ namespace android::icu::util
 			"getWeekDataForRegion",
 			"(Ljava/lang/String;)Landroid/icu/util/Calendar$WeekData;",
 			arg0
-		);
-	}
-	QAndroidJniObject Calendar::getWeekDataForRegion(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.util.Calendar",
-			"getWeekDataForRegion",
-			"(Ljava/lang/String;)Landroid/icu/util/Calendar$WeekData;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void Calendar::add(jint arg0, jint arg1)

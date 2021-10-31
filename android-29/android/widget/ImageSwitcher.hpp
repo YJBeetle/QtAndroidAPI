@@ -29,8 +29,8 @@ namespace android::widget
 		
 		ImageSwitcher(QAndroidJniObject obj);
 		// Constructors
-		ImageSwitcher(android::content::Context &arg0);
-		ImageSwitcher(android::content::Context &arg0, __JniBaseClass &arg1);
+		ImageSwitcher(android::content::Context arg0);
+		ImageSwitcher(android::content::Context arg0, __JniBaseClass arg1);
 		ImageSwitcher() = default;
 		
 		// Methods

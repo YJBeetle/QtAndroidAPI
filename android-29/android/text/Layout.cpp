@@ -109,16 +109,6 @@ namespace android::text
 			arg1.__jniObject().object()
 		);
 	}
-	jfloat Layout::getDesiredWidth(const QString &arg0, android::text::TextPaint arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
-			"android.text.Layout",
-			"getDesiredWidth",
-			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;)F",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	jfloat Layout::getDesiredWidth(jstring arg0, jint arg1, jint arg2, android::text::TextPaint arg3)
 	{
 		return QAndroidJniObject::callStaticMethod<jfloat>(
@@ -126,18 +116,6 @@ namespace android::text
 			"getDesiredWidth",
 			"(Ljava/lang/CharSequence;IILandroid/text/TextPaint;)F",
 			arg0,
-			arg1,
-			arg2,
-			arg3.__jniObject().object()
-		);
-	}
-	jfloat Layout::getDesiredWidth(const QString &arg0, jint arg1, jint arg2, android::text::TextPaint arg3)
-	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
-			"android.text.Layout",
-			"getDesiredWidth",
-			"(Ljava/lang/CharSequence;IILandroid/text/TextPaint;)F",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2,
 			arg3.__jniObject().object()
@@ -184,16 +162,6 @@ namespace android::text
 			arg0,
 			arg1.__jniObject().object(),
 			arg2
-		);
-	}
-	void Layout::getCursorPath(jint arg0, android::graphics::Path arg1, const QString &arg2)
-	{
-		__thiz.callMethod<void>(
-			"getCursorPath",
-			"(ILandroid/graphics/Path;Ljava/lang/CharSequence;)V",
-			arg0,
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	jint Layout::getEllipsisCount(jint arg0)

@@ -58,15 +58,5 @@ namespace android::provider
 			arg1
 		);
 	}
-	void Browser::sendString(android::content::Context arg0, const QString &arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.provider.Browser",
-			"sendString",
-			"(Landroid/content/Context;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 } // namespace android::provider
 

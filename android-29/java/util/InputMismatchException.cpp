@@ -13,20 +13,12 @@ namespace java::util
 			"()V"
 		);
 	}
-	InputMismatchException::InputMismatchException(jstring &arg0)
+	InputMismatchException::InputMismatchException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.InputMismatchException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	InputMismatchException::InputMismatchException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.InputMismatchException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

@@ -14,7 +14,7 @@ namespace android::widget
 	
 	AbsSeekBar::AbsSeekBar(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AbsSeekBar::AbsSeekBar(android::content::Context &arg0)
+	AbsSeekBar::AbsSeekBar(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.AbsSeekBar",
@@ -22,7 +22,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	AbsSeekBar::AbsSeekBar(android::content::Context &arg0, __JniBaseClass &arg1)
+	AbsSeekBar::AbsSeekBar(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.AbsSeekBar",
@@ -31,7 +31,7 @@ namespace android::widget
 			arg1.__jniObject().object()
 		);
 	}
-	AbsSeekBar::AbsSeekBar(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
+	AbsSeekBar::AbsSeekBar(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.AbsSeekBar",
@@ -41,7 +41,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	AbsSeekBar::AbsSeekBar(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
+	AbsSeekBar::AbsSeekBar(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.AbsSeekBar",

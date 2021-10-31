@@ -49,15 +49,6 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	QAndroidJniObject MeasureFormat_FormatWidth::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.MeasureFormat$FormatWidth",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/icu/text/MeasureFormat$FormatWidth;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray MeasureFormat_FormatWidth::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

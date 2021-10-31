@@ -13,7 +13,7 @@ namespace java::util::concurrent::atomic
 			"()V"
 		);
 	}
-	AtomicReference::AtomicReference(jobject &arg0)
+	AtomicReference::AtomicReference(jobject arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.atomic.AtomicReference",

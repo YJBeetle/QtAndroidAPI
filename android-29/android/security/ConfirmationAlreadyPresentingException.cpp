@@ -13,20 +13,12 @@ namespace android::security
 			"()V"
 		);
 	}
-	ConfirmationAlreadyPresentingException::ConfirmationAlreadyPresentingException(jstring &arg0)
+	ConfirmationAlreadyPresentingException::ConfirmationAlreadyPresentingException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.security.ConfirmationAlreadyPresentingException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	ConfirmationAlreadyPresentingException::ConfirmationAlreadyPresentingException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.security.ConfirmationAlreadyPresentingException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

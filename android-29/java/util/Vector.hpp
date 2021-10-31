@@ -23,9 +23,9 @@ namespace java::util
 		Vector(QAndroidJniObject obj);
 		// Constructors
 		Vector();
-		Vector(jint &arg0);
-		Vector(__JniBaseClass &arg0);
-		Vector(jint &arg0, jint &arg1);
+		Vector(jint arg0);
+		Vector(__JniBaseClass arg0);
+		Vector(jint arg0, jint arg1);
 		
 		// Methods
 		jboolean add(jobject arg0);

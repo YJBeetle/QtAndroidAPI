@@ -23,7 +23,7 @@ namespace android::telephony
 		
 		NetworkScanRequest(QAndroidJniObject obj);
 		// Constructors
-		NetworkScanRequest(jint &arg0, jarray &arg1, jint &arg2, jint &arg3, jboolean &arg4, jint &arg5, java::util::ArrayList &arg6);
+		NetworkScanRequest(jint arg0, jarray arg1, jint arg2, jint arg3, jboolean arg4, jint arg5, java::util::ArrayList arg6);
 		NetworkScanRequest() = default;
 		
 		// Methods

@@ -32,7 +32,7 @@ namespace android::appwidget
 		
 		AppWidgetHost(QAndroidJniObject obj);
 		// Constructors
-		AppWidgetHost(android::content::Context &arg0, jint &arg1);
+		AppWidgetHost(android::content::Context arg0, jint arg1);
 		AppWidgetHost() = default;
 		
 		// Methods

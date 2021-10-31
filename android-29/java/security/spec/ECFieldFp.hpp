@@ -16,7 +16,7 @@ namespace java::security::spec
 		
 		ECFieldFp(QAndroidJniObject obj);
 		// Constructors
-		ECFieldFp(java::math::BigInteger &arg0);
+		ECFieldFp(java::math::BigInteger arg0);
 		ECFieldFp() = default;
 		
 		// Methods

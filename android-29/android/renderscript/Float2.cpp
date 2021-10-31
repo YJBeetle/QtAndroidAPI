@@ -25,7 +25,7 @@ namespace android::renderscript
 			"()V"
 		);
 	}
-	Float2::Float2(jfloat &arg0, jfloat &arg1)
+	Float2::Float2(jfloat arg0, jfloat arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.renderscript.Float2",

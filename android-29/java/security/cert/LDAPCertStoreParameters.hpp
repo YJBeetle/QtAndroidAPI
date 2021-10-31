@@ -13,10 +13,8 @@ namespace java::security::cert
 		LDAPCertStoreParameters(QAndroidJniObject obj);
 		// Constructors
 		LDAPCertStoreParameters();
-		LDAPCertStoreParameters(jstring &arg0);
-		LDAPCertStoreParameters(const QString &arg0);
-		LDAPCertStoreParameters(jstring &arg0, jint &arg1);
-		LDAPCertStoreParameters(const QString &arg0, jint &arg1);
+		LDAPCertStoreParameters(jstring arg0);
+		LDAPCertStoreParameters(jstring arg0, jint arg1);
 		
 		// Methods
 		jobject clone();

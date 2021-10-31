@@ -29,8 +29,8 @@ namespace android::widget
 		
 		CursorTreeAdapter(QAndroidJniObject obj);
 		// Constructors
-		CursorTreeAdapter(__JniBaseClass &arg0, android::content::Context &arg1);
-		CursorTreeAdapter(__JniBaseClass &arg0, android::content::Context &arg1, jboolean &arg2);
+		CursorTreeAdapter(__JniBaseClass arg0, android::content::Context arg1);
+		CursorTreeAdapter(__JniBaseClass arg0, android::content::Context arg1, jboolean arg2);
 		CursorTreeAdapter() = default;
 		
 		// Methods
@@ -54,7 +54,6 @@ namespace android::widget
 		void notifyDataSetInvalidated();
 		void onGroupCollapsed(jint arg0);
 		QAndroidJniObject runQueryOnBackgroundThread(jstring arg0);
-		QAndroidJniObject runQueryOnBackgroundThread(const QString &arg0);
 		void setChildrenCursor(jint arg0, __JniBaseClass arg1);
 		void setFilterQueryProvider(__JniBaseClass arg0);
 		void setGroupCursor(__JniBaseClass arg0);

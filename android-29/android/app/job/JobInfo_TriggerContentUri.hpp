@@ -22,7 +22,7 @@ namespace android::app::job
 		
 		JobInfo_TriggerContentUri(QAndroidJniObject obj);
 		// Constructors
-		JobInfo_TriggerContentUri(android::net::Uri &arg0, jint &arg1);
+		JobInfo_TriggerContentUri(android::net::Uri arg0, jint arg1);
 		JobInfo_TriggerContentUri() = default;
 		
 		// Methods

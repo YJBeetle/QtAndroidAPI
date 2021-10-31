@@ -14,8 +14,7 @@ namespace android::provider
 		
 		Settings_SettingNotFoundException(QAndroidJniObject obj);
 		// Constructors
-		Settings_SettingNotFoundException(jstring &arg0);
-		Settings_SettingNotFoundException(const QString &arg0);
+		Settings_SettingNotFoundException(jstring arg0);
 		Settings_SettingNotFoundException() = default;
 		
 		// Methods

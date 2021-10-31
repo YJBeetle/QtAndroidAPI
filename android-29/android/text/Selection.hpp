@@ -29,9 +29,7 @@ namespace android::text
 		static jboolean extendToRightEdge(__JniBaseClass arg0, android::text::Layout arg1);
 		static jboolean extendUp(__JniBaseClass arg0, android::text::Layout arg1);
 		static jint getSelectionEnd(jstring arg0);
-		static jint getSelectionEnd(const QString &arg0);
 		static jint getSelectionStart(jstring arg0);
-		static jint getSelectionStart(const QString &arg0);
 		static jboolean moveDown(__JniBaseClass arg0, android::text::Layout arg1);
 		static jboolean moveLeft(__JniBaseClass arg0, android::text::Layout arg1);
 		static jboolean moveRight(__JniBaseClass arg0, android::text::Layout arg1);

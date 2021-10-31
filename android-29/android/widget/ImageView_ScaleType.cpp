@@ -81,15 +81,6 @@ namespace android::widget
 			arg0
 		);
 	}
-	QAndroidJniObject ImageView_ScaleType::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.widget.ImageView$ScaleType",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/widget/ImageView$ScaleType;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray ImageView_ScaleType::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

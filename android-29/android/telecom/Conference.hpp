@@ -42,7 +42,7 @@ namespace android::telecom
 		
 		Conference(QAndroidJniObject obj);
 		// Constructors
-		Conference(android::telecom::PhoneAccountHandle &arg0);
+		Conference(android::telecom::PhoneAccountHandle arg0);
 		Conference() = default;
 		
 		// Methods

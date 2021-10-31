@@ -86,25 +86,12 @@ namespace android::speech::tts
 	
 	Voice::Voice(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	Voice::Voice(jstring &arg0, java::util::Locale &arg1, jint &arg2, jint &arg3, jboolean &arg4, __JniBaseClass &arg5)
+	Voice::Voice(jstring arg0, java::util::Locale arg1, jint arg2, jint arg3, jboolean arg4, __JniBaseClass arg5)
 	{
 		__thiz = QAndroidJniObject(
 			"android.speech.tts.Voice",
 			"(Ljava/lang/String;Ljava/util/Locale;IIZLjava/util/Set;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2,
-			arg3,
-			arg4,
-			arg5.__jniObject().object()
-		);
-	}
-	Voice::Voice(const QString &arg0, java::util::Locale &arg1, jint &arg2, jint &arg3, jboolean &arg4, __JniBaseClass &arg5)
-	{
-		__thiz = QAndroidJniObject(
-			"android.speech.tts.Voice",
-			"(Ljava/lang/String;Ljava/util/Locale;IIZLjava/util/Set;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2,
 			arg3,

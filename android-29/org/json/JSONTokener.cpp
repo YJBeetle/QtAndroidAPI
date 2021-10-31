@@ -7,20 +7,12 @@ namespace org::json
 	
 	JSONTokener::JSONTokener(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	JSONTokener::JSONTokener(jstring &arg0)
+	JSONTokener::JSONTokener(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"org.json.JSONTokener",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	JSONTokener::JSONTokener(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"org.json.JSONTokener",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	
@@ -102,14 +94,6 @@ namespace org::json
 			arg0
 		).object<jstring>();
 	}
-	jstring JSONTokener::nextTo(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"nextTo",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
 	jobject JSONTokener::nextValue()
 	{
 		return __thiz.callObjectMethod(
@@ -123,14 +107,6 @@ namespace org::json
 			"skipPast",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void JSONTokener::skipPast(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"skipPast",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jchar JSONTokener::skipTo(jchar arg0)
@@ -147,14 +123,6 @@ namespace org::json
 			"syntaxError",
 			"(Ljava/lang/String;)Lorg/json/JSONException;",
 			arg0
-		);
-	}
-	QAndroidJniObject JSONTokener::syntaxError(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"syntaxError",
-			"(Ljava/lang/String;)Lorg/json/JSONException;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring JSONTokener::toString()

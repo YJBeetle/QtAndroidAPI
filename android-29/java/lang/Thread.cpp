@@ -39,7 +39,7 @@ namespace java::lang
 			"()V"
 		);
 	}
-	Thread::Thread(__JniBaseClass &arg0)
+	Thread::Thread(__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.Thread",
@@ -47,7 +47,7 @@ namespace java::lang
 			arg0.__jniObject().object()
 		);
 	}
-	Thread::Thread(jstring &arg0)
+	Thread::Thread(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.Thread",
@@ -55,15 +55,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	Thread::Thread(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.Thread",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	Thread::Thread(__JniBaseClass &arg0, jstring &arg1)
+	Thread::Thread(__JniBaseClass arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.Thread",
@@ -72,16 +64,7 @@ namespace java::lang
 			arg1
 		);
 	}
-	Thread::Thread(__JniBaseClass &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.Thread",
-			"(Ljava/lang/Runnable;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	Thread::Thread(java::lang::ThreadGroup &arg0, __JniBaseClass &arg1)
+	Thread::Thread(java::lang::ThreadGroup arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.Thread",
@@ -90,7 +73,7 @@ namespace java::lang
 			arg1.__jniObject().object()
 		);
 	}
-	Thread::Thread(java::lang::ThreadGroup &arg0, jstring &arg1)
+	Thread::Thread(java::lang::ThreadGroup arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.Thread",
@@ -99,16 +82,7 @@ namespace java::lang
 			arg1
 		);
 	}
-	Thread::Thread(java::lang::ThreadGroup &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.Thread",
-			"(Ljava/lang/ThreadGroup;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	Thread::Thread(java::lang::ThreadGroup &arg0, __JniBaseClass &arg1, jstring &arg2)
+	Thread::Thread(java::lang::ThreadGroup arg0, __JniBaseClass arg1, jstring arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.Thread",
@@ -118,17 +92,7 @@ namespace java::lang
 			arg2
 		);
 	}
-	Thread::Thread(java::lang::ThreadGroup &arg0, __JniBaseClass &arg1, const QString &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.Thread",
-			"(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
-	Thread::Thread(java::lang::ThreadGroup &arg0, __JniBaseClass &arg1, jstring &arg2, jlong &arg3)
+	Thread::Thread(java::lang::ThreadGroup arg0, __JniBaseClass arg1, jstring arg2, jlong arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.Thread",
@@ -139,18 +103,7 @@ namespace java::lang
 			arg3
 		);
 	}
-	Thread::Thread(java::lang::ThreadGroup &arg0, __JniBaseClass &arg1, const QString &arg2, jlong &arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.Thread",
-			"(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			arg3
-		);
-	}
-	Thread::Thread(java::lang::ThreadGroup &arg0, __JniBaseClass &arg1, jstring &arg2, jlong &arg3, jboolean &arg4)
+	Thread::Thread(java::lang::ThreadGroup arg0, __JniBaseClass arg1, jstring arg2, jlong arg3, jboolean arg4)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.Thread",
@@ -158,18 +111,6 @@ namespace java::lang
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3,
-			arg4
-		);
-	}
-	Thread::Thread(java::lang::ThreadGroup &arg0, __JniBaseClass &arg1, const QString &arg2, jlong &arg3, jboolean &arg4)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.Thread",
-			"(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;JZ)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
 			arg3,
 			arg4
 		);
@@ -444,14 +385,6 @@ namespace java::lang
 			"setName",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void Thread::setName(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setName",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void Thread::setPriority(jint arg0)

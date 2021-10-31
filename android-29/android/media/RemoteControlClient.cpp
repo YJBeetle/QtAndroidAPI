@@ -143,7 +143,7 @@ namespace android::media
 	
 	RemoteControlClient::RemoteControlClient(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	RemoteControlClient::RemoteControlClient(android::app::PendingIntent &arg0)
+	RemoteControlClient::RemoteControlClient(android::app::PendingIntent arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.RemoteControlClient",
@@ -151,7 +151,7 @@ namespace android::media
 			arg0.__jniObject().object()
 		);
 	}
-	RemoteControlClient::RemoteControlClient(android::app::PendingIntent &arg0, android::os::Looper &arg1)
+	RemoteControlClient::RemoteControlClient(android::app::PendingIntent arg0, android::os::Looper arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.RemoteControlClient",

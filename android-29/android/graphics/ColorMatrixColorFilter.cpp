@@ -7,7 +7,7 @@ namespace android::graphics
 	
 	ColorMatrixColorFilter::ColorMatrixColorFilter(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ColorMatrixColorFilter::ColorMatrixColorFilter(jfloatArray &arg0)
+	ColorMatrixColorFilter::ColorMatrixColorFilter(jfloatArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.ColorMatrixColorFilter",
@@ -15,7 +15,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	ColorMatrixColorFilter::ColorMatrixColorFilter(android::graphics::ColorMatrix &arg0)
+	ColorMatrixColorFilter::ColorMatrixColorFilter(android::graphics::ColorMatrix arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.ColorMatrixColorFilter",

@@ -8,20 +8,12 @@ namespace android::view::textclassifier
 	
 	TextLinks_Builder::TextLinks_Builder(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	TextLinks_Builder::TextLinks_Builder(jstring &arg0)
+	TextLinks_Builder::TextLinks_Builder(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.textclassifier.TextLinks$Builder",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	TextLinks_Builder::TextLinks_Builder(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.textclassifier.TextLinks$Builder",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

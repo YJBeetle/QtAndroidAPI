@@ -43,8 +43,8 @@ namespace android::media::audiofx
 		
 		DynamicsProcessing(QAndroidJniObject obj);
 		// Constructors
-		DynamicsProcessing(jint &arg0);
-		DynamicsProcessing(jint &arg0, jint &arg1, android::media::audiofx::DynamicsProcessing_Config &arg2);
+		DynamicsProcessing(jint arg0);
+		DynamicsProcessing(jint arg0, jint arg1, android::media::audiofx::DynamicsProcessing_Config arg2);
 		DynamicsProcessing() = default;
 		
 		// Methods

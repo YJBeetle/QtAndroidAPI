@@ -17,7 +17,7 @@ namespace android::view::textservice
 	
 	SpellCheckerSubtype::SpellCheckerSubtype(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SpellCheckerSubtype::SpellCheckerSubtype(jint &arg0, jstring &arg1, jstring &arg2)
+	SpellCheckerSubtype::SpellCheckerSubtype(jint arg0, jstring arg1, jstring arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.textservice.SpellCheckerSubtype",
@@ -25,16 +25,6 @@ namespace android::view::textservice
 			arg0,
 			arg1,
 			arg2
-		);
-	}
-	SpellCheckerSubtype::SpellCheckerSubtype(jint &arg0, const QString &arg1, const QString &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.textservice.SpellCheckerSubtype",
-			"(ILjava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	
@@ -45,14 +35,6 @@ namespace android::view::textservice
 			"containsExtraValueKey",
 			"(Ljava/lang/String;)Z",
 			arg0
-		);
-	}
-	jboolean SpellCheckerSubtype::containsExtraValueKey(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"containsExtraValueKey",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jint SpellCheckerSubtype::describeContents()
@@ -80,16 +62,6 @@ namespace android::view::textservice
 			arg2.__jniObject().object()
 		).object<jstring>();
 	}
-	jstring SpellCheckerSubtype::getDisplayName(android::content::Context arg0, const QString &arg1, android::content::pm::ApplicationInfo arg2)
-	{
-		return __thiz.callObjectMethod(
-			"getDisplayName",
-			"(Landroid/content/Context;Ljava/lang/String;Landroid/content/pm/ApplicationInfo;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object()
-		).object<jstring>();
-	}
 	jstring SpellCheckerSubtype::getExtraValue()
 	{
 		return __thiz.callObjectMethod(
@@ -103,14 +75,6 @@ namespace android::view::textservice
 			"getExtraValueOf",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
-	}
-	jstring SpellCheckerSubtype::getExtraValueOf(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getExtraValueOf",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	jstring SpellCheckerSubtype::getLanguageTag()

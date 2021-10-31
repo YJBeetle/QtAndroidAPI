@@ -9,7 +9,7 @@ namespace android::text::method
 	
 	MultiTapKeyListener::MultiTapKeyListener(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	MultiTapKeyListener::MultiTapKeyListener(android::text::method::TextKeyListener_Capitalize &arg0, jboolean &arg1)
+	MultiTapKeyListener::MultiTapKeyListener(android::text::method::TextKeyListener_Capitalize arg0, jboolean arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.method.MultiTapKeyListener",

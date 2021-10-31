@@ -17,10 +17,8 @@ namespace android::os
 		
 		HandlerThread(QAndroidJniObject obj);
 		// Constructors
-		HandlerThread(jstring &arg0);
-		HandlerThread(const QString &arg0);
-		HandlerThread(jstring &arg0, jint &arg1);
-		HandlerThread(const QString &arg0, jint &arg1);
+		HandlerThread(jstring arg0);
+		HandlerThread(jstring arg0, jint arg1);
 		HandlerThread() = default;
 		
 		// Methods

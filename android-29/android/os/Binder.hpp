@@ -29,8 +29,7 @@ namespace android::os
 		Binder(QAndroidJniObject obj);
 		// Constructors
 		Binder();
-		Binder(jstring &arg0);
-		Binder(const QString &arg0);
+		Binder(jstring arg0);
 		
 		// Methods
 		static jlong clearCallingIdentity();
@@ -46,7 +45,6 @@ namespace android::os
 		static void restoreCallingWorkSource(jlong arg0);
 		static jlong setCallingWorkSourceUid(jint arg0);
 		void attachInterface(__JniBaseClass arg0, jstring arg1);
-		void attachInterface(__JniBaseClass arg0, const QString &arg1);
 		void dump(java::io::FileDescriptor arg0, jarray arg1);
 		void dumpAsync(java::io::FileDescriptor arg0, jarray arg1);
 		jstring getInterfaceDescriptor();
@@ -54,7 +52,6 @@ namespace android::os
 		void linkToDeath(__JniBaseClass arg0, jint arg1);
 		jboolean pingBinder();
 		QAndroidJniObject queryLocalInterface(jstring arg0);
-		QAndroidJniObject queryLocalInterface(const QString &arg0);
 		jboolean transact(jint arg0, android::os::Parcel arg1, android::os::Parcel arg2, jint arg3);
 		jboolean unlinkToDeath(__JniBaseClass arg0, jint arg1);
 	};

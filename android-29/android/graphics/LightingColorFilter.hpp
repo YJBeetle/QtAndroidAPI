@@ -13,7 +13,7 @@ namespace android::graphics
 		
 		LightingColorFilter(QAndroidJniObject obj);
 		// Constructors
-		LightingColorFilter(jint &arg0, jint &arg1);
+		LightingColorFilter(jint arg0, jint arg1);
 		LightingColorFilter() = default;
 		
 		// Methods

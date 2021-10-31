@@ -20,8 +20,8 @@ namespace java::util::concurrent
 		
 		FutureTask(QAndroidJniObject obj);
 		// Constructors
-		FutureTask(__JniBaseClass &arg0);
-		FutureTask(__JniBaseClass &arg0, jobject &arg1);
+		FutureTask(__JniBaseClass arg0);
+		FutureTask(__JniBaseClass arg0, jobject arg1);
 		FutureTask() = default;
 		
 		// Methods

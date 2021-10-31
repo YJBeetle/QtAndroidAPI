@@ -16,7 +16,7 @@ namespace android::app
 	
 	AlarmManager_AlarmClockInfo::AlarmManager_AlarmClockInfo(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	AlarmManager_AlarmClockInfo::AlarmManager_AlarmClockInfo(jlong &arg0, android::app::PendingIntent &arg1)
+	AlarmManager_AlarmClockInfo::AlarmManager_AlarmClockInfo(jlong arg0, android::app::PendingIntent arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.AlarmManager$AlarmClockInfo",

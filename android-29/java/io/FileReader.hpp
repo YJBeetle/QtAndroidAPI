@@ -26,13 +26,11 @@ namespace java::io
 		
 		FileReader(QAndroidJniObject obj);
 		// Constructors
-		FileReader(java::io::File &arg0);
-		FileReader(java::io::FileDescriptor &arg0);
-		FileReader(jstring &arg0);
-		FileReader(const QString &arg0);
-		FileReader(java::io::File &arg0, java::nio::charset::Charset &arg1);
-		FileReader(jstring &arg0, java::nio::charset::Charset &arg1);
-		FileReader(const QString &arg0, java::nio::charset::Charset &arg1);
+		FileReader(java::io::File arg0);
+		FileReader(java::io::FileDescriptor arg0);
+		FileReader(jstring arg0);
+		FileReader(java::io::File arg0, java::nio::charset::Charset arg1);
+		FileReader(jstring arg0, java::nio::charset::Charset arg1);
 		FileReader() = default;
 		
 		// Methods

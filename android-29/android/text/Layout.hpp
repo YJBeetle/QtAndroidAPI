@@ -56,15 +56,12 @@ namespace android::text
 		
 		// Methods
 		static jfloat getDesiredWidth(jstring arg0, android::text::TextPaint arg1);
-		static jfloat getDesiredWidth(const QString &arg0, android::text::TextPaint arg1);
 		static jfloat getDesiredWidth(jstring arg0, jint arg1, jint arg2, android::text::TextPaint arg3);
-		static jfloat getDesiredWidth(const QString &arg0, jint arg1, jint arg2, android::text::TextPaint arg3);
 		void draw(android::graphics::Canvas arg0);
 		void draw(android::graphics::Canvas arg0, android::graphics::Path arg1, android::graphics::Paint arg2, jint arg3);
 		QAndroidJniObject getAlignment();
 		jint getBottomPadding();
 		void getCursorPath(jint arg0, android::graphics::Path arg1, jstring arg2);
-		void getCursorPath(jint arg0, android::graphics::Path arg1, const QString &arg2);
 		jint getEllipsisCount(jint arg0);
 		jint getEllipsisStart(jint arg0);
 		jint getEllipsizedWidth();

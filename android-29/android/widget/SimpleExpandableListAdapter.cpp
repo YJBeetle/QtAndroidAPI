@@ -9,7 +9,7 @@ namespace android::widget
 	
 	SimpleExpandableListAdapter::SimpleExpandableListAdapter(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	SimpleExpandableListAdapter::SimpleExpandableListAdapter(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jarray &arg3, jintArray &arg4, __JniBaseClass &arg5, jint &arg6, jarray &arg7, jintArray &arg8)
+	SimpleExpandableListAdapter::SimpleExpandableListAdapter(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jarray arg3, jintArray arg4, __JniBaseClass arg5, jint arg6, jarray arg7, jintArray arg8)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.SimpleExpandableListAdapter",
@@ -25,7 +25,7 @@ namespace android::widget
 			arg8
 		);
 	}
-	SimpleExpandableListAdapter::SimpleExpandableListAdapter(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3, jarray &arg4, jintArray &arg5, __JniBaseClass &arg6, jint &arg7, jarray &arg8, jintArray &arg9)
+	SimpleExpandableListAdapter::SimpleExpandableListAdapter(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3, jarray arg4, jintArray arg5, __JniBaseClass arg6, jint arg7, jarray arg8, jintArray arg9)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.SimpleExpandableListAdapter",
@@ -42,7 +42,7 @@ namespace android::widget
 			arg9
 		);
 	}
-	SimpleExpandableListAdapter::SimpleExpandableListAdapter(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3, jarray &arg4, jintArray &arg5, __JniBaseClass &arg6, jint &arg7, jint &arg8, jarray &arg9, jintArray &arg10)
+	SimpleExpandableListAdapter::SimpleExpandableListAdapter(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3, jarray arg4, jintArray arg5, __JniBaseClass arg6, jint arg7, jint arg8, jarray arg9, jintArray arg10)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.SimpleExpandableListAdapter",

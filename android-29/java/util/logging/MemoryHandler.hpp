@@ -26,7 +26,7 @@ namespace java::util::logging
 		MemoryHandler(QAndroidJniObject obj);
 		// Constructors
 		MemoryHandler();
-		MemoryHandler(java::util::logging::Handler &arg0, jint &arg1, java::util::logging::Level &arg2);
+		MemoryHandler(java::util::logging::Handler arg0, jint arg1, java::util::logging::Level arg2);
 		
 		// Methods
 		void close();

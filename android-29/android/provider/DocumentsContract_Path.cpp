@@ -15,21 +15,12 @@ namespace android::provider
 	
 	DocumentsContract_Path::DocumentsContract_Path(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DocumentsContract_Path::DocumentsContract_Path(jstring &arg0, __JniBaseClass &arg1)
+	DocumentsContract_Path::DocumentsContract_Path(jstring arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.provider.DocumentsContract$Path",
 			"(Ljava/lang/String;Ljava/util/List;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	DocumentsContract_Path::DocumentsContract_Path(const QString &arg0, __JniBaseClass &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.provider.DocumentsContract$Path",
-			"(Ljava/lang/String;Ljava/util/List;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

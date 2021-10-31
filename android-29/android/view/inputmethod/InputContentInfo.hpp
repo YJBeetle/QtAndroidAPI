@@ -25,8 +25,8 @@ namespace android::view::inputmethod
 		
 		InputContentInfo(QAndroidJniObject obj);
 		// Constructors
-		InputContentInfo(android::net::Uri &arg0, android::content::ClipDescription &arg1);
-		InputContentInfo(android::net::Uri &arg0, android::content::ClipDescription &arg1, android::net::Uri &arg2);
+		InputContentInfo(android::net::Uri arg0, android::content::ClipDescription arg1);
+		InputContentInfo(android::net::Uri arg0, android::content::ClipDescription arg1, android::net::Uri arg2);
 		InputContentInfo() = default;
 		
 		// Methods

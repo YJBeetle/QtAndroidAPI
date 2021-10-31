@@ -33,15 +33,6 @@ namespace java::util
 			arg0
 		);
 	}
-	QAndroidJniObject Locale_Category::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.util.Locale$Category",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/util/Locale$Category;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray Locale_Category::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

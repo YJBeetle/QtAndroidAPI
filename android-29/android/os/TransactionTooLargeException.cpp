@@ -13,20 +13,12 @@ namespace android::os
 			"()V"
 		);
 	}
-	TransactionTooLargeException::TransactionTooLargeException(jstring &arg0)
+	TransactionTooLargeException::TransactionTooLargeException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.TransactionTooLargeException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	TransactionTooLargeException::TransactionTooLargeException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.os.TransactionTooLargeException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

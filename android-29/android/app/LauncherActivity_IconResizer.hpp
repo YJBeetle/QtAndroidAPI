@@ -20,7 +20,7 @@ namespace android::app
 		
 		LauncherActivity_IconResizer(QAndroidJniObject obj);
 		// Constructors
-		LauncherActivity_IconResizer(android::app::LauncherActivity &arg0);
+		LauncherActivity_IconResizer(android::app::LauncherActivity arg0);
 		LauncherActivity_IconResizer() = default;
 		
 		// Methods

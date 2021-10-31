@@ -41,7 +41,6 @@ namespace android::graphics
 		void setLightSourceAlpha(jfloat arg0, jfloat arg1);
 		void setLightSourceGeometry(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
 		void setName(jstring arg0);
-		void setName(const QString &arg0);
 		void setOpaque(jboolean arg0);
 		void setSurface(android::view::Surface arg0);
 		void start();

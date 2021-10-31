@@ -13,20 +13,12 @@ namespace java::util::concurrent
 			"()V"
 		);
 	}
-	BrokenBarrierException::BrokenBarrierException(jstring &arg0)
+	BrokenBarrierException::BrokenBarrierException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.BrokenBarrierException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	BrokenBarrierException::BrokenBarrierException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.concurrent.BrokenBarrierException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

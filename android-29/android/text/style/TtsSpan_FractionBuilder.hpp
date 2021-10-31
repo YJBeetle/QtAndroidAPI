@@ -15,17 +15,14 @@ namespace android::text::style
 		TtsSpan_FractionBuilder(QAndroidJniObject obj);
 		// Constructors
 		TtsSpan_FractionBuilder();
-		TtsSpan_FractionBuilder(jlong &arg0, jlong &arg1, jlong &arg2);
+		TtsSpan_FractionBuilder(jlong arg0, jlong arg1, jlong arg2);
 		
 		// Methods
 		QAndroidJniObject setDenominator(jstring arg0);
-		QAndroidJniObject setDenominator(const QString &arg0);
 		QAndroidJniObject setDenominator(jlong arg0);
 		QAndroidJniObject setIntegerPart(jstring arg0);
-		QAndroidJniObject setIntegerPart(const QString &arg0);
 		QAndroidJniObject setIntegerPart(jlong arg0);
 		QAndroidJniObject setNumerator(jstring arg0);
-		QAndroidJniObject setNumerator(const QString &arg0);
 		QAndroidJniObject setNumerator(jlong arg0);
 	};
 } // namespace android::text::style

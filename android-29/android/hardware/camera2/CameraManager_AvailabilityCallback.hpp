@@ -17,9 +17,7 @@ namespace android::hardware::camera2
 		// Methods
 		void onCameraAccessPrioritiesChanged();
 		void onCameraAvailable(jstring arg0);
-		void onCameraAvailable(const QString &arg0);
 		void onCameraUnavailable(jstring arg0);
-		void onCameraUnavailable(const QString &arg0);
 	};
 } // namespace android::hardware::camera2
 

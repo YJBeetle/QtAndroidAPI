@@ -13,20 +13,12 @@ namespace java::lang
 			"()V"
 		);
 	}
-	NoSuchMethodException::NoSuchMethodException(jstring &arg0)
+	NoSuchMethodException::NoSuchMethodException(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.NoSuchMethodException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	NoSuchMethodException::NoSuchMethodException(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.NoSuchMethodException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

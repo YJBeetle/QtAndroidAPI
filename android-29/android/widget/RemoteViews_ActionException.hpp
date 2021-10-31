@@ -18,9 +18,8 @@ namespace android::widget
 		
 		RemoteViews_ActionException(QAndroidJniObject obj);
 		// Constructors
-		RemoteViews_ActionException(java::lang::Exception &arg0);
-		RemoteViews_ActionException(jstring &arg0);
-		RemoteViews_ActionException(const QString &arg0);
+		RemoteViews_ActionException(java::lang::Exception arg0);
+		RemoteViews_ActionException(jstring arg0);
 		RemoteViews_ActionException() = default;
 		
 		// Methods

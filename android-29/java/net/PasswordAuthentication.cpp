@@ -6,21 +6,12 @@ namespace java::net
 	
 	PasswordAuthentication::PasswordAuthentication(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	PasswordAuthentication::PasswordAuthentication(jstring &arg0, jcharArray &arg1)
+	PasswordAuthentication::PasswordAuthentication(jstring arg0, jcharArray arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.PasswordAuthentication",
 			"(Ljava/lang/String;[C)V",
 			arg0,
-			arg1
-		);
-	}
-	PasswordAuthentication::PasswordAuthentication(const QString &arg0, jcharArray &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.PasswordAuthentication",
-			"(Ljava/lang/String;[C)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

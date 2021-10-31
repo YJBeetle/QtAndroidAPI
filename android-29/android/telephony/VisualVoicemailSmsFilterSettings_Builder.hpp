@@ -21,7 +21,6 @@ namespace android::telephony
 		// Methods
 		QAndroidJniObject build();
 		QAndroidJniObject setClientPrefix(jstring arg0);
-		QAndroidJniObject setClientPrefix(const QString &arg0);
 		QAndroidJniObject setDestinationPort(jint arg0);
 		QAndroidJniObject setOriginatingNumbers(__JniBaseClass arg0);
 	};

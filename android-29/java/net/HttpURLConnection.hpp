@@ -74,7 +74,6 @@ namespace java::net
 		QAndroidJniObject getErrorStream();
 		jstring getHeaderField(jint arg0);
 		jlong getHeaderFieldDate(jstring arg0, jlong arg1);
-		jlong getHeaderFieldDate(const QString &arg0, jlong arg1);
 		jstring getHeaderFieldKey(jint arg0);
 		jboolean getInstanceFollowRedirects();
 		QAndroidJniObject getPermission();
@@ -87,7 +86,6 @@ namespace java::net
 		void setFixedLengthStreamingMode(jlong arg0);
 		void setInstanceFollowRedirects(jboolean arg0);
 		void setRequestMethod(jstring arg0);
-		void setRequestMethod(const QString &arg0);
 		jboolean usingProxy();
 	};
 } // namespace java::net

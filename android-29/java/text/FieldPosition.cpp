@@ -7,7 +7,7 @@ namespace java::text
 	
 	FieldPosition::FieldPosition(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	FieldPosition::FieldPosition(jint &arg0)
+	FieldPosition::FieldPosition(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.text.FieldPosition",
@@ -15,7 +15,7 @@ namespace java::text
 			arg0
 		);
 	}
-	FieldPosition::FieldPosition(java::text::Format_Field &arg0)
+	FieldPosition::FieldPosition(java::text::Format_Field arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.text.FieldPosition",
@@ -23,7 +23,7 @@ namespace java::text
 			arg0.__jniObject().object()
 		);
 	}
-	FieldPosition::FieldPosition(java::text::Format_Field &arg0, jint &arg1)
+	FieldPosition::FieldPosition(java::text::Format_Field arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.text.FieldPosition",

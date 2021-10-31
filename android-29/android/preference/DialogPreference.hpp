@@ -37,10 +37,10 @@ namespace android::preference
 		
 		DialogPreference(QAndroidJniObject obj);
 		// Constructors
-		DialogPreference(android::content::Context &arg0);
-		DialogPreference(android::content::Context &arg0, __JniBaseClass &arg1);
-		DialogPreference(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		DialogPreference(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		DialogPreference(android::content::Context arg0);
+		DialogPreference(android::content::Context arg0, __JniBaseClass arg1);
+		DialogPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		DialogPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		DialogPreference() = default;
 		
 		// Methods
@@ -59,16 +59,12 @@ namespace android::preference
 		void setDialogLayoutResource(jint arg0);
 		void setDialogMessage(jint arg0);
 		void setDialogMessage(jstring arg0);
-		void setDialogMessage(const QString &arg0);
 		void setDialogTitle(jint arg0);
 		void setDialogTitle(jstring arg0);
-		void setDialogTitle(const QString &arg0);
 		void setNegativeButtonText(jint arg0);
 		void setNegativeButtonText(jstring arg0);
-		void setNegativeButtonText(const QString &arg0);
 		void setPositiveButtonText(jint arg0);
 		void setPositiveButtonText(jstring arg0);
-		void setPositiveButtonText(const QString &arg0);
 	};
 } // namespace android::preference
 

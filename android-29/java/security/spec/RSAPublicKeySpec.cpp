@@ -7,7 +7,7 @@ namespace java::security::spec
 	
 	RSAPublicKeySpec::RSAPublicKeySpec(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	RSAPublicKeySpec::RSAPublicKeySpec(java::math::BigInteger &arg0, java::math::BigInteger &arg1)
+	RSAPublicKeySpec::RSAPublicKeySpec(java::math::BigInteger arg0, java::math::BigInteger arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.spec.RSAPublicKeySpec",
@@ -16,7 +16,7 @@ namespace java::security::spec
 			arg1.__jniObject().object()
 		);
 	}
-	RSAPublicKeySpec::RSAPublicKeySpec(java::math::BigInteger &arg0, java::math::BigInteger &arg1, __JniBaseClass &arg2)
+	RSAPublicKeySpec::RSAPublicKeySpec(java::math::BigInteger arg0, java::math::BigInteger arg1, __JniBaseClass arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.spec.RSAPublicKeySpec",

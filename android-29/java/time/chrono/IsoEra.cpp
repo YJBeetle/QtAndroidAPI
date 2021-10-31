@@ -42,15 +42,6 @@ namespace java::time::chrono
 			arg0
 		);
 	}
-	QAndroidJniObject IsoEra::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.time.chrono.IsoEra",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/time/chrono/IsoEra;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jarray IsoEra::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(

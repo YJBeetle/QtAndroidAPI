@@ -30,8 +30,7 @@ namespace java::util::jar
 		
 		Attributes_Name(QAndroidJniObject obj);
 		// Constructors
-		Attributes_Name(jstring &arg0);
-		Attributes_Name(const QString &arg0);
+		Attributes_Name(jstring arg0);
 		Attributes_Name() = default;
 		
 		// Methods

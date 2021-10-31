@@ -13,20 +13,12 @@ namespace java::lang::reflect
 			"()V"
 		);
 	}
-	GenericSignatureFormatError::GenericSignatureFormatError(jstring &arg0)
+	GenericSignatureFormatError::GenericSignatureFormatError(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.reflect.GenericSignatureFormatError",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	GenericSignatureFormatError::GenericSignatureFormatError(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.reflect.GenericSignatureFormatError",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	

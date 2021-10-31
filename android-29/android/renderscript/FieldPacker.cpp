@@ -28,7 +28,7 @@ namespace android::renderscript
 	
 	FieldPacker::FieldPacker(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	FieldPacker::FieldPacker(jbyteArray &arg0)
+	FieldPacker::FieldPacker(jbyteArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.renderscript.FieldPacker",
@@ -36,7 +36,7 @@ namespace android::renderscript
 			arg0
 		);
 	}
-	FieldPacker::FieldPacker(jint &arg0)
+	FieldPacker::FieldPacker(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.renderscript.FieldPacker",

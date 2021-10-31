@@ -20,14 +20,12 @@ namespace android::renderscript
 		
 		Element_Builder(QAndroidJniObject obj);
 		// Constructors
-		Element_Builder(android::renderscript::RenderScript &arg0);
+		Element_Builder(android::renderscript::RenderScript arg0);
 		Element_Builder() = default;
 		
 		// Methods
 		QAndroidJniObject add(android::renderscript::Element arg0, jstring arg1);
-		QAndroidJniObject add(android::renderscript::Element arg0, const QString &arg1);
 		QAndroidJniObject add(android::renderscript::Element arg0, jstring arg1, jint arg2);
-		QAndroidJniObject add(android::renderscript::Element arg0, const QString &arg1, jint arg2);
 		QAndroidJniObject create();
 	};
 } // namespace android::renderscript

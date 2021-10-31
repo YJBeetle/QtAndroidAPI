@@ -50,15 +50,6 @@ namespace java::util::logging
 			arg0
 		);
 	}
-	QAndroidJniObject Logger::getAnonymousLogger(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.util.logging.Logger",
-			"getAnonymousLogger",
-			"(Ljava/lang/String;)Ljava/util/logging/Logger;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Logger::getGlobal()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -76,15 +67,6 @@ namespace java::util::logging
 			arg0
 		);
 	}
-	QAndroidJniObject Logger::getLogger(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.util.logging.Logger",
-			"getLogger",
-			"(Ljava/lang/String;)Ljava/util/logging/Logger;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject Logger::getLogger(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -93,16 +75,6 @@ namespace java::util::logging
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/util/logging/Logger;",
 			arg0,
 			arg1
-		);
-	}
-	QAndroidJniObject Logger::getLogger(const QString &arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.util.logging.Logger",
-			"getLogger",
-			"(Ljava/lang/String;Ljava/lang/String;)Ljava/util/logging/Logger;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void Logger::addHandler(java::util::logging::Handler arg0)
@@ -119,14 +91,6 @@ namespace java::util::logging
 			"config",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void Logger::config(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"config",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void Logger::config(__JniBaseClass arg0)
@@ -146,15 +110,6 @@ namespace java::util::logging
 			arg1
 		);
 	}
-	void Logger::entering(const QString &arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"entering",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	void Logger::entering(jstring arg0, jstring arg1, jobjectArray arg2)
 	{
 		__thiz.callMethod<void>(
@@ -162,16 +117,6 @@ namespace java::util::logging
 			"(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V",
 			arg0,
 			arg1,
-			arg2
-		);
-	}
-	void Logger::entering(const QString &arg0, const QString &arg1, jobjectArray arg2)
-	{
-		__thiz.callMethod<void>(
-			"entering",
-			"(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}
@@ -185,16 +130,6 @@ namespace java::util::logging
 			arg2
 		);
 	}
-	void Logger::entering(const QString &arg0, const QString &arg1, jobject arg2)
-	{
-		__thiz.callMethod<void>(
-			"entering",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2
-		);
-	}
 	void Logger::exiting(jstring arg0, jstring arg1)
 	{
 		__thiz.callMethod<void>(
@@ -202,15 +137,6 @@ namespace java::util::logging
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	void Logger::exiting(const QString &arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"exiting",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void Logger::exiting(jstring arg0, jstring arg1, jobject arg2)
@@ -223,30 +149,12 @@ namespace java::util::logging
 			arg2
 		);
 	}
-	void Logger::exiting(const QString &arg0, const QString &arg1, jobject arg2)
-	{
-		__thiz.callMethod<void>(
-			"exiting",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2
-		);
-	}
 	void Logger::fine(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"fine",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void Logger::fine(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"fine",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void Logger::fine(__JniBaseClass arg0)
@@ -265,14 +173,6 @@ namespace java::util::logging
 			arg0
 		);
 	}
-	void Logger::finer(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"finer",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void Logger::finer(__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
@@ -287,14 +187,6 @@ namespace java::util::logging
 			"finest",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void Logger::finest(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"finest",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void Logger::finest(__JniBaseClass arg0)
@@ -369,14 +261,6 @@ namespace java::util::logging
 			arg0
 		);
 	}
-	void Logger::info(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"info",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void Logger::info(__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
@@ -410,15 +294,6 @@ namespace java::util::logging
 			arg1
 		);
 	}
-	void Logger::log(java::util::logging::Level arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"log",
-			"(Ljava/util/logging/Level;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	void Logger::log(java::util::logging::Level arg0, __JniBaseClass arg1)
 	{
 		__thiz.callMethod<void>(
@@ -438,16 +313,6 @@ namespace java::util::logging
 			arg2
 		);
 	}
-	void Logger::log(java::util::logging::Level arg0, const QString &arg1, jobjectArray arg2)
-	{
-		__thiz.callMethod<void>(
-			"log",
-			"(Ljava/util/logging/Level;Ljava/lang/String;[Ljava/lang/Object;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2
-		);
-	}
 	void Logger::log(java::util::logging::Level arg0, jstring arg1, jobject arg2)
 	{
 		__thiz.callMethod<void>(
@@ -458,16 +323,6 @@ namespace java::util::logging
 			arg2
 		);
 	}
-	void Logger::log(java::util::logging::Level arg0, const QString &arg1, jobject arg2)
-	{
-		__thiz.callMethod<void>(
-			"log",
-			"(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Object;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2
-		);
-	}
 	void Logger::log(java::util::logging::Level arg0, jstring arg1, jthrowable arg2)
 	{
 		__thiz.callMethod<void>(
@@ -475,16 +330,6 @@ namespace java::util::logging
 			"(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2
-		);
-	}
-	void Logger::log(java::util::logging::Level arg0, const QString &arg1, jthrowable arg2)
-	{
-		__thiz.callMethod<void>(
-			"log",
-			"(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}
@@ -509,17 +354,6 @@ namespace java::util::logging
 			arg3
 		);
 	}
-	void Logger::logp(java::util::logging::Level arg0, const QString &arg1, const QString &arg2, const QString &arg3)
-	{
-		__thiz.callMethod<void>(
-			"logp",
-			"(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			QAndroidJniObject::fromString(arg3).object<jstring>()
-		);
-	}
 	void Logger::logp(java::util::logging::Level arg0, jstring arg1, jstring arg2, __JniBaseClass arg3)
 	{
 		__thiz.callMethod<void>(
@@ -528,17 +362,6 @@ namespace java::util::logging
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
-		);
-	}
-	void Logger::logp(java::util::logging::Level arg0, const QString &arg1, const QString &arg2, __JniBaseClass arg3)
-	{
-		__thiz.callMethod<void>(
-			"logp",
-			"(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/util/function/Supplier;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
 			arg3.__jniObject().object()
 		);
 	}
@@ -554,18 +377,6 @@ namespace java::util::logging
 			arg4
 		);
 	}
-	void Logger::logp(java::util::logging::Level arg0, const QString &arg1, const QString &arg2, const QString &arg3, jobjectArray arg4)
-	{
-		__thiz.callMethod<void>(
-			"logp",
-			"(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			QAndroidJniObject::fromString(arg3).object<jstring>(),
-			arg4
-		);
-	}
 	void Logger::logp(java::util::logging::Level arg0, jstring arg1, jstring arg2, jstring arg3, jobject arg4)
 	{
 		__thiz.callMethod<void>(
@@ -575,18 +386,6 @@ namespace java::util::logging
 			arg1,
 			arg2,
 			arg3,
-			arg4
-		);
-	}
-	void Logger::logp(java::util::logging::Level arg0, const QString &arg1, const QString &arg2, const QString &arg3, jobject arg4)
-	{
-		__thiz.callMethod<void>(
-			"logp",
-			"(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			QAndroidJniObject::fromString(arg3).object<jstring>(),
 			arg4
 		);
 	}
@@ -602,18 +401,6 @@ namespace java::util::logging
 			arg4
 		);
 	}
-	void Logger::logp(java::util::logging::Level arg0, const QString &arg1, const QString &arg2, const QString &arg3, jthrowable arg4)
-	{
-		__thiz.callMethod<void>(
-			"logp",
-			"(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			QAndroidJniObject::fromString(arg3).object<jstring>(),
-			arg4
-		);
-	}
 	void Logger::logp(java::util::logging::Level arg0, jstring arg1, jstring arg2, jthrowable arg3, __JniBaseClass arg4)
 	{
 		__thiz.callMethod<void>(
@@ -622,18 +409,6 @@ namespace java::util::logging
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3,
-			arg4.__jniObject().object()
-		);
-	}
-	void Logger::logp(java::util::logging::Level arg0, const QString &arg1, const QString &arg2, jthrowable arg3, __JniBaseClass arg4)
-	{
-		__thiz.callMethod<void>(
-			"logp",
-			"(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;Ljava/util/function/Supplier;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
 			arg3,
 			arg4.__jniObject().object()
 		);
@@ -649,17 +424,6 @@ namespace java::util::logging
 			arg3
 		);
 	}
-	void Logger::logrb(java::util::logging::Level arg0, java::util::ResourceBundle arg1, const QString &arg2, jobjectArray arg3)
-	{
-		__thiz.callMethod<void>(
-			"logrb",
-			"(Ljava/util/logging/Level;Ljava/util/ResourceBundle;Ljava/lang/String;[Ljava/lang/Object;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			arg3
-		);
-	}
 	void Logger::logrb(java::util::logging::Level arg0, java::util::ResourceBundle arg1, jstring arg2, jthrowable arg3)
 	{
 		__thiz.callMethod<void>(
@@ -668,17 +432,6 @@ namespace java::util::logging
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3
-		);
-	}
-	void Logger::logrb(java::util::logging::Level arg0, java::util::ResourceBundle arg1, const QString &arg2, jthrowable arg3)
-	{
-		__thiz.callMethod<void>(
-			"logrb",
-			"(Ljava/util/logging/Level;Ljava/util/ResourceBundle;Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
 			arg3
 		);
 	}
@@ -694,18 +447,6 @@ namespace java::util::logging
 			arg4
 		);
 	}
-	void Logger::logrb(java::util::logging::Level arg0, const QString &arg1, const QString &arg2, const QString &arg3, const QString &arg4)
-	{
-		__thiz.callMethod<void>(
-			"logrb",
-			"(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			QAndroidJniObject::fromString(arg3).object<jstring>(),
-			QAndroidJniObject::fromString(arg4).object<jstring>()
-		);
-	}
 	void Logger::logrb(java::util::logging::Level arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4, jobjectArray arg5)
 	{
 		__thiz.callMethod<void>(
@@ -716,19 +457,6 @@ namespace java::util::logging
 			arg2,
 			arg3,
 			arg4,
-			arg5
-		);
-	}
-	void Logger::logrb(java::util::logging::Level arg0, const QString &arg1, const QString &arg2, const QString &arg3, const QString &arg4, jobjectArray arg5)
-	{
-		__thiz.callMethod<void>(
-			"logrb",
-			"(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			QAndroidJniObject::fromString(arg3).object<jstring>(),
-			QAndroidJniObject::fromString(arg4).object<jstring>(),
 			arg5
 		);
 	}
@@ -745,19 +473,6 @@ namespace java::util::logging
 			arg5
 		);
 	}
-	void Logger::logrb(java::util::logging::Level arg0, const QString &arg1, const QString &arg2, const QString &arg3, const QString &arg4, jobject arg5)
-	{
-		__thiz.callMethod<void>(
-			"logrb",
-			"(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			QAndroidJniObject::fromString(arg3).object<jstring>(),
-			QAndroidJniObject::fromString(arg4).object<jstring>(),
-			arg5
-		);
-	}
 	void Logger::logrb(java::util::logging::Level arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4, jthrowable arg5)
 	{
 		__thiz.callMethod<void>(
@@ -768,19 +483,6 @@ namespace java::util::logging
 			arg2,
 			arg3,
 			arg4,
-			arg5
-		);
-	}
-	void Logger::logrb(java::util::logging::Level arg0, const QString &arg1, const QString &arg2, const QString &arg3, const QString &arg4, jthrowable arg5)
-	{
-		__thiz.callMethod<void>(
-			"logrb",
-			"(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			QAndroidJniObject::fromString(arg3).object<jstring>(),
-			QAndroidJniObject::fromString(arg4).object<jstring>(),
 			arg5
 		);
 	}
@@ -797,19 +499,6 @@ namespace java::util::logging
 			arg5
 		);
 	}
-	void Logger::logrb(java::util::logging::Level arg0, const QString &arg1, const QString &arg2, java::util::ResourceBundle arg3, const QString &arg4, jobjectArray arg5)
-	{
-		__thiz.callMethod<void>(
-			"logrb",
-			"(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/util/ResourceBundle;Ljava/lang/String;[Ljava/lang/Object;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			arg3.__jniObject().object(),
-			QAndroidJniObject::fromString(arg4).object<jstring>(),
-			arg5
-		);
-	}
 	void Logger::logrb(java::util::logging::Level arg0, jstring arg1, jstring arg2, java::util::ResourceBundle arg3, jstring arg4, jthrowable arg5)
 	{
 		__thiz.callMethod<void>(
@@ -820,19 +509,6 @@ namespace java::util::logging
 			arg2,
 			arg3.__jniObject().object(),
 			arg4,
-			arg5
-		);
-	}
-	void Logger::logrb(java::util::logging::Level arg0, const QString &arg1, const QString &arg2, java::util::ResourceBundle arg3, const QString &arg4, jthrowable arg5)
-	{
-		__thiz.callMethod<void>(
-			"logrb",
-			"(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/util/ResourceBundle;Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			arg3.__jniObject().object(),
-			QAndroidJniObject::fromString(arg4).object<jstring>(),
 			arg5
 		);
 	}
@@ -892,14 +568,6 @@ namespace java::util::logging
 			arg0
 		);
 	}
-	void Logger::severe(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"severe",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	void Logger::severe(__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
@@ -918,30 +586,12 @@ namespace java::util::logging
 			arg2
 		);
 	}
-	void Logger::throwing(const QString &arg0, const QString &arg1, jthrowable arg2)
-	{
-		__thiz.callMethod<void>(
-			"throwing",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2
-		);
-	}
 	void Logger::warning(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"warning",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void Logger::warning(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"warning",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void Logger::warning(__JniBaseClass arg0)

@@ -50,13 +50,12 @@ namespace android::app::admin
 		
 		DeviceAdminInfo(QAndroidJniObject obj);
 		// Constructors
-		DeviceAdminInfo(android::content::Context &arg0, android::content::pm::ResolveInfo &arg1);
+		DeviceAdminInfo(android::content::Context arg0, android::content::pm::ResolveInfo arg1);
 		DeviceAdminInfo() = default;
 		
 		// Methods
 		jint describeContents();
 		void dump(__JniBaseClass arg0, jstring arg1);
-		void dump(__JniBaseClass arg0, const QString &arg1);
 		QAndroidJniObject getActivityInfo();
 		QAndroidJniObject getComponent();
 		jstring getPackageName();

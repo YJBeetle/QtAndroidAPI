@@ -36,15 +36,15 @@ namespace android::icu::util
 		JapaneseCalendar(QAndroidJniObject obj);
 		// Constructors
 		JapaneseCalendar();
-		JapaneseCalendar(android::icu::util::TimeZone &arg0);
-		JapaneseCalendar(android::icu::util::ULocale &arg0);
-		JapaneseCalendar(java::util::Date &arg0);
-		JapaneseCalendar(java::util::Locale &arg0);
-		JapaneseCalendar(android::icu::util::TimeZone &arg0, android::icu::util::ULocale &arg1);
-		JapaneseCalendar(android::icu::util::TimeZone &arg0, java::util::Locale &arg1);
-		JapaneseCalendar(jint &arg0, jint &arg1, jint &arg2);
-		JapaneseCalendar(jint &arg0, jint &arg1, jint &arg2, jint &arg3);
-		JapaneseCalendar(jint &arg0, jint &arg1, jint &arg2, jint &arg3, jint &arg4, jint &arg5);
+		JapaneseCalendar(android::icu::util::TimeZone arg0);
+		JapaneseCalendar(android::icu::util::ULocale arg0);
+		JapaneseCalendar(java::util::Date arg0);
+		JapaneseCalendar(java::util::Locale arg0);
+		JapaneseCalendar(android::icu::util::TimeZone arg0, android::icu::util::ULocale arg1);
+		JapaneseCalendar(android::icu::util::TimeZone arg0, java::util::Locale arg1);
+		JapaneseCalendar(jint arg0, jint arg1, jint arg2);
+		JapaneseCalendar(jint arg0, jint arg1, jint arg2, jint arg3);
+		JapaneseCalendar(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
 		
 		// Methods
 		jint getActualMaximum(jint arg0);

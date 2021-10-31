@@ -22,10 +22,9 @@ namespace dalvik::system
 		
 		InMemoryDexClassLoader(QAndroidJniObject obj);
 		// Constructors
-		InMemoryDexClassLoader(jarray &arg0, java::lang::ClassLoader &arg1);
-		InMemoryDexClassLoader(java::nio::ByteBuffer &arg0, java::lang::ClassLoader &arg1);
-		InMemoryDexClassLoader(jarray &arg0, jstring &arg1, java::lang::ClassLoader &arg2);
-		InMemoryDexClassLoader(jarray &arg0, const QString &arg1, java::lang::ClassLoader &arg2);
+		InMemoryDexClassLoader(jarray arg0, java::lang::ClassLoader arg1);
+		InMemoryDexClassLoader(java::nio::ByteBuffer arg0, java::lang::ClassLoader arg1);
+		InMemoryDexClassLoader(jarray arg0, jstring arg1, java::lang::ClassLoader arg2);
 		InMemoryDexClassLoader() = default;
 		
 		// Methods

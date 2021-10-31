@@ -52,7 +52,7 @@ namespace android::icu::util
 			"()V"
 		);
 	}
-	JapaneseCalendar::JapaneseCalendar(android::icu::util::TimeZone &arg0)
+	JapaneseCalendar::JapaneseCalendar(android::icu::util::TimeZone arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.JapaneseCalendar",
@@ -60,7 +60,7 @@ namespace android::icu::util
 			arg0.__jniObject().object()
 		);
 	}
-	JapaneseCalendar::JapaneseCalendar(android::icu::util::ULocale &arg0)
+	JapaneseCalendar::JapaneseCalendar(android::icu::util::ULocale arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.JapaneseCalendar",
@@ -68,7 +68,7 @@ namespace android::icu::util
 			arg0.__jniObject().object()
 		);
 	}
-	JapaneseCalendar::JapaneseCalendar(java::util::Date &arg0)
+	JapaneseCalendar::JapaneseCalendar(java::util::Date arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.JapaneseCalendar",
@@ -76,7 +76,7 @@ namespace android::icu::util
 			arg0.__jniObject().object()
 		);
 	}
-	JapaneseCalendar::JapaneseCalendar(java::util::Locale &arg0)
+	JapaneseCalendar::JapaneseCalendar(java::util::Locale arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.JapaneseCalendar",
@@ -84,7 +84,7 @@ namespace android::icu::util
 			arg0.__jniObject().object()
 		);
 	}
-	JapaneseCalendar::JapaneseCalendar(android::icu::util::TimeZone &arg0, android::icu::util::ULocale &arg1)
+	JapaneseCalendar::JapaneseCalendar(android::icu::util::TimeZone arg0, android::icu::util::ULocale arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.JapaneseCalendar",
@@ -93,7 +93,7 @@ namespace android::icu::util
 			arg1.__jniObject().object()
 		);
 	}
-	JapaneseCalendar::JapaneseCalendar(android::icu::util::TimeZone &arg0, java::util::Locale &arg1)
+	JapaneseCalendar::JapaneseCalendar(android::icu::util::TimeZone arg0, java::util::Locale arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.JapaneseCalendar",
@@ -102,7 +102,7 @@ namespace android::icu::util
 			arg1.__jniObject().object()
 		);
 	}
-	JapaneseCalendar::JapaneseCalendar(jint &arg0, jint &arg1, jint &arg2)
+	JapaneseCalendar::JapaneseCalendar(jint arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.JapaneseCalendar",
@@ -112,7 +112,7 @@ namespace android::icu::util
 			arg2
 		);
 	}
-	JapaneseCalendar::JapaneseCalendar(jint &arg0, jint &arg1, jint &arg2, jint &arg3)
+	JapaneseCalendar::JapaneseCalendar(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.JapaneseCalendar",
@@ -123,7 +123,7 @@ namespace android::icu::util
 			arg3
 		);
 	}
-	JapaneseCalendar::JapaneseCalendar(jint &arg0, jint &arg1, jint &arg2, jint &arg3, jint &arg4, jint &arg5)
+	JapaneseCalendar::JapaneseCalendar(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.JapaneseCalendar",

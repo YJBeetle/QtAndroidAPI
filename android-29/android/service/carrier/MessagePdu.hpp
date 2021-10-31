@@ -17,7 +17,7 @@ namespace android::service::carrier
 		
 		MessagePdu(QAndroidJniObject obj);
 		// Constructors
-		MessagePdu(__JniBaseClass &arg0);
+		MessagePdu(__JniBaseClass arg0);
 		MessagePdu() = default;
 		
 		// Methods

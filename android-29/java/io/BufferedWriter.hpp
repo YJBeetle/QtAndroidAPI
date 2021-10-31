@@ -17,8 +17,8 @@ namespace java::io
 		
 		BufferedWriter(QAndroidJniObject obj);
 		// Constructors
-		BufferedWriter(java::io::Writer &arg0);
-		BufferedWriter(java::io::Writer &arg0, jint &arg1);
+		BufferedWriter(java::io::Writer arg0);
+		BufferedWriter(java::io::Writer arg0, jint arg1);
 		BufferedWriter() = default;
 		
 		// Methods
@@ -28,7 +28,6 @@ namespace java::io
 		void write(jint arg0);
 		void write(jcharArray arg0, jint arg1, jint arg2);
 		void write(jstring arg0, jint arg1, jint arg2);
-		void write(const QString &arg0, jint arg1, jint arg2);
 	};
 } // namespace java::io
 

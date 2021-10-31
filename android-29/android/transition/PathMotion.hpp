@@ -21,7 +21,7 @@ namespace android::transition
 		PathMotion(QAndroidJniObject obj);
 		// Constructors
 		PathMotion();
-		PathMotion(android::content::Context &arg0, __JniBaseClass &arg1);
+		PathMotion(android::content::Context arg0, __JniBaseClass arg1);
 		
 		// Methods
 		QAndroidJniObject getPath(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);

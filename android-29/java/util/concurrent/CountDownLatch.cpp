@@ -7,7 +7,7 @@ namespace java::util::concurrent
 	
 	CountDownLatch::CountDownLatch(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	CountDownLatch::CountDownLatch(jint &arg0)
+	CountDownLatch::CountDownLatch(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.CountDownLatch",

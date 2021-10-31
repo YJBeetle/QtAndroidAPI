@@ -1595,20 +1595,6 @@ namespace android::opengl
 			arg5
 		);
 	}
-	void GLES32::glDebugMessageInsert(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, const QString &arg5)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES32",
-			"glDebugMessageInsert",
-			"(IIIIILjava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			QAndroidJniObject::fromString(arg5).object<jstring>()
-		);
-	}
 	void GLES32::glDisablei(jint arg0, jint arg1)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -1998,18 +1984,6 @@ namespace android::opengl
 			arg3
 		);
 	}
-	void GLES32::glObjectLabel(jint arg0, jint arg1, jint arg2, const QString &arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES32",
-			"glObjectLabel",
-			"(IIILjava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2,
-			QAndroidJniObject::fromString(arg3).object<jstring>()
-		);
-	}
 	void GLES32::glObjectPtrLabel(jlong arg0, jstring arg1)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -2018,16 +1992,6 @@ namespace android::opengl
 			"(JLjava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
-	void GLES32::glObjectPtrLabel(jlong arg0, const QString &arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES32",
-			"glObjectPtrLabel",
-			"(JLjava/lang/String;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void GLES32::glPatchParameteri(jint arg0, jint arg1)
@@ -2074,18 +2038,6 @@ namespace android::opengl
 			arg1,
 			arg2,
 			arg3
-		);
-	}
-	void GLES32::glPushDebugGroup(jint arg0, jint arg1, jint arg2, const QString &arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES32",
-			"glPushDebugGroup",
-			"(IIILjava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2,
-			QAndroidJniObject::fromString(arg3).object<jstring>()
 		);
 	}
 	void GLES32::glReadnPixels(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, java::nio::Buffer arg7)

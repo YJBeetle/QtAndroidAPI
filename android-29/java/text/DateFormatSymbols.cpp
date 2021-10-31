@@ -15,7 +15,7 @@ namespace java::text
 			"()V"
 		);
 	}
-	DateFormatSymbols::DateFormatSymbols(java::util::Locale &arg0)
+	DateFormatSymbols::DateFormatSymbols(java::util::Locale arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.text.DateFormatSymbols",
@@ -150,14 +150,6 @@ namespace java::text
 			"setLocalPatternChars",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void DateFormatSymbols::setLocalPatternChars(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setLocalPatternChars",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void DateFormatSymbols::setMonths(jarray arg0)

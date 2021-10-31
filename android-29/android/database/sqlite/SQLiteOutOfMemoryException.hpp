@@ -17,8 +17,7 @@ namespace android::database::sqlite
 		SQLiteOutOfMemoryException(QAndroidJniObject obj);
 		// Constructors
 		SQLiteOutOfMemoryException();
-		SQLiteOutOfMemoryException(jstring &arg0);
-		SQLiteOutOfMemoryException(const QString &arg0);
+		SQLiteOutOfMemoryException(jstring arg0);
 		
 		// Methods
 	};

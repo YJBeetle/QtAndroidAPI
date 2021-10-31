@@ -17,8 +17,8 @@ namespace android::view
 		
 		OrientationListener(QAndroidJniObject obj);
 		// Constructors
-		OrientationListener(android::content::Context &arg0);
-		OrientationListener(android::content::Context &arg0, jint &arg1);
+		OrientationListener(android::content::Context arg0);
+		OrientationListener(android::content::Context arg0, jint arg1);
 		OrientationListener() = default;
 		
 		// Methods

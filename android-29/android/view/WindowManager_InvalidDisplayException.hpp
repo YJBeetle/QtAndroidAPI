@@ -15,8 +15,7 @@ namespace android::view
 		WindowManager_InvalidDisplayException(QAndroidJniObject obj);
 		// Constructors
 		WindowManager_InvalidDisplayException();
-		WindowManager_InvalidDisplayException(jstring &arg0);
-		WindowManager_InvalidDisplayException(const QString &arg0);
+		WindowManager_InvalidDisplayException(jstring arg0);
 		
 		// Methods
 	};

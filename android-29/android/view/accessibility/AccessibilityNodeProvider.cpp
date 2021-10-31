@@ -35,17 +35,6 @@ namespace android::view::accessibility
 			arg3.__jniObject().object()
 		);
 	}
-	void AccessibilityNodeProvider::addExtraDataToAccessibilityNodeInfo(jint arg0, android::view::accessibility::AccessibilityNodeInfo arg1, const QString &arg2, android::os::Bundle arg3)
-	{
-		__thiz.callMethod<void>(
-			"addExtraDataToAccessibilityNodeInfo",
-			"(ILandroid/view/accessibility/AccessibilityNodeInfo;Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0,
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			arg3.__jniObject().object()
-		);
-	}
 	QAndroidJniObject AccessibilityNodeProvider::createAccessibilityNodeInfo(jint arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -60,15 +49,6 @@ namespace android::view::accessibility
 			"findAccessibilityNodeInfosByText",
 			"(Ljava/lang/String;I)Ljava/util/List;",
 			arg0,
-			arg1
-		);
-	}
-	QAndroidJniObject AccessibilityNodeProvider::findAccessibilityNodeInfosByText(const QString &arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"findAccessibilityNodeInfosByText",
-			"(Ljava/lang/String;I)Ljava/util/List;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

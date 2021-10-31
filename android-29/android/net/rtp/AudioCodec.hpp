@@ -24,7 +24,6 @@ namespace android::net::rtp
 		
 		// Methods
 		static QAndroidJniObject getCodec(jint arg0, jstring arg1, jstring arg2);
-		static QAndroidJniObject getCodec(jint arg0, const QString &arg1, const QString &arg2);
 		static jarray getCodecs();
 	};
 } // namespace android::net::rtp

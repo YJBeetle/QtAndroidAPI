@@ -72,13 +72,5 @@ namespace android::net
 			arg0
 		);
 	}
-	QAndroidJniObject NetworkRequest_Builder::setNetworkSpecifier(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setNetworkSpecifier",
-			"(Ljava/lang/String;)Landroid/net/NetworkRequest$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 } // namespace android::net
 

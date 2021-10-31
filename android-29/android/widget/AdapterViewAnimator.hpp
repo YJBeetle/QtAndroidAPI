@@ -35,10 +35,10 @@ namespace android::widget
 		
 		AdapterViewAnimator(QAndroidJniObject obj);
 		// Constructors
-		AdapterViewAnimator(android::content::Context &arg0);
-		AdapterViewAnimator(android::content::Context &arg0, __JniBaseClass &arg1);
-		AdapterViewAnimator(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		AdapterViewAnimator(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
+		AdapterViewAnimator(android::content::Context arg0);
+		AdapterViewAnimator(android::content::Context arg0, __JniBaseClass arg1);
+		AdapterViewAnimator(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		AdapterViewAnimator(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		AdapterViewAnimator() = default;
 		
 		// Methods

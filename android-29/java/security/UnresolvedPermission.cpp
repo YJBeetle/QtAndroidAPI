@@ -10,7 +10,7 @@ namespace java::security
 	
 	UnresolvedPermission::UnresolvedPermission(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	UnresolvedPermission::UnresolvedPermission(jstring &arg0, jstring &arg1, jstring &arg2, jarray &arg3)
+	UnresolvedPermission::UnresolvedPermission(jstring arg0, jstring arg1, jstring arg2, jarray arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.UnresolvedPermission",
@@ -18,17 +18,6 @@ namespace java::security
 			arg0,
 			arg1,
 			arg2,
-			arg3
-		);
-	}
-	UnresolvedPermission::UnresolvedPermission(const QString &arg0, const QString &arg1, const QString &arg2, jarray &arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.UnresolvedPermission",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/security/cert/Certificate;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
 			arg3
 		);
 	}

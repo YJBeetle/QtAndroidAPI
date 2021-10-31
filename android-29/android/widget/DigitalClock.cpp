@@ -7,7 +7,7 @@ namespace android::widget
 	
 	DigitalClock::DigitalClock(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	DigitalClock::DigitalClock(android::content::Context &arg0)
+	DigitalClock::DigitalClock(android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.DigitalClock",
@@ -15,7 +15,7 @@ namespace android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	DigitalClock::DigitalClock(android::content::Context &arg0, __JniBaseClass &arg1)
+	DigitalClock::DigitalClock(android::content::Context arg0, __JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.DigitalClock",

@@ -43,30 +43,12 @@ namespace android::media::session
 			arg1.__jniObject().object()
 		);
 	}
-	void MediaController_TransportControls::playFromMediaId(const QString &arg0, android::os::Bundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"playFromMediaId",
-			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	void MediaController_TransportControls::playFromSearch(jstring arg0, android::os::Bundle arg1)
 	{
 		__thiz.callMethod<void>(
 			"playFromSearch",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void MediaController_TransportControls::playFromSearch(const QString &arg0, android::os::Bundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"playFromSearch",
-			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -95,30 +77,12 @@ namespace android::media::session
 			arg1.__jniObject().object()
 		);
 	}
-	void MediaController_TransportControls::prepareFromMediaId(const QString &arg0, android::os::Bundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"prepareFromMediaId",
-			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	void MediaController_TransportControls::prepareFromSearch(jstring arg0, android::os::Bundle arg1)
 	{
 		__thiz.callMethod<void>(
 			"prepareFromSearch",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void MediaController_TransportControls::prepareFromSearch(const QString &arg0, android::os::Bundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"prepareFromSearch",
-			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -161,15 +125,6 @@ namespace android::media::session
 			"sendCustomAction",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void MediaController_TransportControls::sendCustomAction(const QString &arg0, android::os::Bundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"sendCustomAction",
-			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

@@ -184,16 +184,6 @@ namespace android::webkit
 			arg2
 		);
 	}
-	void WebViewClient::doUpdateVisitedHistory(android::webkit::WebView arg0, const QString &arg1, jboolean arg2)
-	{
-		__thiz.callMethod<void>(
-			"doUpdateVisitedHistory",
-			"(Landroid/webkit/WebView;Ljava/lang/String;Z)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2
-		);
-	}
 	void WebViewClient::onFormResubmission(android::webkit::WebView arg0, android::os::Message arg1, android::os::Message arg2)
 	{
 		__thiz.callMethod<void>(
@@ -213,15 +203,6 @@ namespace android::webkit
 			arg1
 		);
 	}
-	void WebViewClient::onLoadResource(android::webkit::WebView arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"onLoadResource",
-			"(Landroid/webkit/WebView;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	void WebViewClient::onPageCommitVisible(android::webkit::WebView arg0, jstring arg1)
 	{
 		__thiz.callMethod<void>(
@@ -229,15 +210,6 @@ namespace android::webkit
 			"(Landroid/webkit/WebView;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	void WebViewClient::onPageCommitVisible(android::webkit::WebView arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"onPageCommitVisible",
-			"(Landroid/webkit/WebView;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void WebViewClient::onPageFinished(android::webkit::WebView arg0, jstring arg1)
@@ -249,15 +221,6 @@ namespace android::webkit
 			arg1
 		);
 	}
-	void WebViewClient::onPageFinished(android::webkit::WebView arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"onPageFinished",
-			"(Landroid/webkit/WebView;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	void WebViewClient::onPageStarted(android::webkit::WebView arg0, jstring arg1, android::graphics::Bitmap arg2)
 	{
 		__thiz.callMethod<void>(
@@ -265,16 +228,6 @@ namespace android::webkit
 			"(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void WebViewClient::onPageStarted(android::webkit::WebView arg0, const QString &arg1, android::graphics::Bitmap arg2)
-	{
-		__thiz.callMethod<void>(
-			"onPageStarted",
-			"(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}
@@ -308,17 +261,6 @@ namespace android::webkit
 			arg3
 		);
 	}
-	void WebViewClient::onReceivedError(android::webkit::WebView arg0, jint arg1, const QString &arg2, const QString &arg3)
-	{
-		__thiz.callMethod<void>(
-			"onReceivedError",
-			"(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			QAndroidJniObject::fromString(arg3).object<jstring>()
-		);
-	}
 	void WebViewClient::onReceivedHttpAuthRequest(android::webkit::WebView arg0, android::webkit::HttpAuthHandler arg1, jstring arg2, jstring arg3)
 	{
 		__thiz.callMethod<void>(
@@ -328,17 +270,6 @@ namespace android::webkit
 			arg1.__jniObject().object(),
 			arg2,
 			arg3
-		);
-	}
-	void WebViewClient::onReceivedHttpAuthRequest(android::webkit::WebView arg0, android::webkit::HttpAuthHandler arg1, const QString &arg2, const QString &arg3)
-	{
-		__thiz.callMethod<void>(
-			"onReceivedHttpAuthRequest",
-			"(Landroid/webkit/WebView;Landroid/webkit/HttpAuthHandler;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			QAndroidJniObject::fromString(arg3).object<jstring>()
 		);
 	}
 	void WebViewClient::onReceivedHttpError(android::webkit::WebView arg0, __JniBaseClass arg1, android::webkit::WebResourceResponse arg2)
@@ -360,17 +291,6 @@ namespace android::webkit
 			arg1,
 			arg2,
 			arg3
-		);
-	}
-	void WebViewClient::onReceivedLoginRequest(android::webkit::WebView arg0, const QString &arg1, const QString &arg2, const QString &arg3)
-	{
-		__thiz.callMethod<void>(
-			"onReceivedLoginRequest",
-			"(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			QAndroidJniObject::fromString(arg3).object<jstring>()
 		);
 	}
 	void WebViewClient::onReceivedSslError(android::webkit::WebView arg0, android::webkit::SslErrorHandler arg1, android::net::http::SslError arg2)
@@ -450,15 +370,6 @@ namespace android::webkit
 			arg1
 		);
 	}
-	QAndroidJniObject WebViewClient::shouldInterceptRequest(android::webkit::WebView arg0, const QString &arg1)
-	{
-		return __thiz.callObjectMethod(
-			"shouldInterceptRequest",
-			"(Landroid/webkit/WebView;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	jboolean WebViewClient::shouldOverrideKeyEvent(android::webkit::WebView arg0, android::view::KeyEvent arg1)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -484,15 +395,6 @@ namespace android::webkit
 			"(Landroid/webkit/WebView;Ljava/lang/String;)Z",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jboolean WebViewClient::shouldOverrideUrlLoading(android::webkit::WebView arg0, const QString &arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"shouldOverrideUrlLoading",
-			"(Landroid/webkit/WebView;Ljava/lang/String;)Z",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 } // namespace android::webkit

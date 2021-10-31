@@ -7,7 +7,7 @@ namespace java::security::spec
 	
 	EllipticCurve::EllipticCurve(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	EllipticCurve::EllipticCurve(__JniBaseClass &arg0, java::math::BigInteger &arg1, java::math::BigInteger &arg2)
+	EllipticCurve::EllipticCurve(__JniBaseClass arg0, java::math::BigInteger arg1, java::math::BigInteger arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.spec.EllipticCurve",
@@ -17,7 +17,7 @@ namespace java::security::spec
 			arg2.__jniObject().object()
 		);
 	}
-	EllipticCurve::EllipticCurve(__JniBaseClass &arg0, java::math::BigInteger &arg1, java::math::BigInteger &arg2, jbyteArray &arg3)
+	EllipticCurve::EllipticCurve(__JniBaseClass arg0, java::math::BigInteger arg1, java::math::BigInteger arg2, jbyteArray arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.spec.EllipticCurve",

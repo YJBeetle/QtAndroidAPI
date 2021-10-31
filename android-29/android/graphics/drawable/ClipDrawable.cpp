@@ -24,7 +24,7 @@ namespace android::graphics::drawable
 	
 	ClipDrawable::ClipDrawable(QAndroidJniObject obj) { __thiz = obj; }
 	// Constructors
-	ClipDrawable::ClipDrawable(android::graphics::drawable::Drawable &arg0, jint &arg1, jint &arg2)
+	ClipDrawable::ClipDrawable(android::graphics::drawable::Drawable arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.ClipDrawable",
