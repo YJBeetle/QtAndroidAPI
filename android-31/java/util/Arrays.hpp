@@ -1,0 +1,240 @@
+#pragma once
+
+#include "../../__JniBaseClass.hpp"
+
+namespace java::lang
+{
+	class StringBuilder;
+}
+
+namespace java::util
+{
+	class Arrays : public __JniBaseClass
+	{
+	public:
+		// Fields
+		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Arrays(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		Arrays(QAndroidJniObject obj);
+		
+		// Constructors
+		
+		// Methods
+		static __JniBaseClass asList(jobjectArray arg0);
+		static jint binarySearch(jbyteArray arg0, jbyte arg1);
+		static jint binarySearch(jcharArray arg0, jchar arg1);
+		static jint binarySearch(jdoubleArray arg0, jdouble arg1);
+		static jint binarySearch(jfloatArray arg0, jfloat arg1);
+		static jint binarySearch(jintArray arg0, jint arg1);
+		static jint binarySearch(jlongArray arg0, jlong arg1);
+		static jint binarySearch(jobjectArray arg0, jobject arg1);
+		static jint binarySearch(jshortArray arg0, jshort arg1);
+		static jint binarySearch(jobjectArray arg0, jobject arg1, __JniBaseClass arg2);
+		static jint binarySearch(jbyteArray arg0, jint arg1, jint arg2, jbyte arg3);
+		static jint binarySearch(jcharArray arg0, jint arg1, jint arg2, jchar arg3);
+		static jint binarySearch(jdoubleArray arg0, jint arg1, jint arg2, jdouble arg3);
+		static jint binarySearch(jfloatArray arg0, jint arg1, jint arg2, jfloat arg3);
+		static jint binarySearch(jintArray arg0, jint arg1, jint arg2, jint arg3);
+		static jint binarySearch(jlongArray arg0, jint arg1, jint arg2, jlong arg3);
+		static jint binarySearch(jobjectArray arg0, jint arg1, jint arg2, jobject arg3);
+		static jint binarySearch(jshortArray arg0, jint arg1, jint arg2, jshort arg3);
+		static jint binarySearch(jobjectArray arg0, jint arg1, jint arg2, jobject arg3, __JniBaseClass arg4);
+		static jint compare(jbyteArray arg0, jbyteArray arg1);
+		static jint compare(jcharArray arg0, jcharArray arg1);
+		static jint compare(jdoubleArray arg0, jdoubleArray arg1);
+		static jint compare(jfloatArray arg0, jfloatArray arg1);
+		static jint compare(jintArray arg0, jintArray arg1);
+		static jint compare(jlongArray arg0, jlongArray arg1);
+		static jint compare(jarray arg0, jarray arg1);
+		static jint compare(jshortArray arg0, jshortArray arg1);
+		static jint compare(jbooleanArray arg0, jbooleanArray arg1);
+		static jint compare(jobjectArray arg0, jobjectArray arg1, __JniBaseClass arg2);
+		static jint compare(jbyteArray arg0, jint arg1, jint arg2, jbyteArray arg3, jint arg4, jint arg5);
+		static jint compare(jcharArray arg0, jint arg1, jint arg2, jcharArray arg3, jint arg4, jint arg5);
+		static jint compare(jdoubleArray arg0, jint arg1, jint arg2, jdoubleArray arg3, jint arg4, jint arg5);
+		static jint compare(jfloatArray arg0, jint arg1, jint arg2, jfloatArray arg3, jint arg4, jint arg5);
+		static jint compare(jintArray arg0, jint arg1, jint arg2, jintArray arg3, jint arg4, jint arg5);
+		static jint compare(jlongArray arg0, jint arg1, jint arg2, jlongArray arg3, jint arg4, jint arg5);
+		static jint compare(jarray arg0, jint arg1, jint arg2, jarray arg3, jint arg4, jint arg5);
+		static jint compare(jshortArray arg0, jint arg1, jint arg2, jshortArray arg3, jint arg4, jint arg5);
+		static jint compare(jbooleanArray arg0, jint arg1, jint arg2, jbooleanArray arg3, jint arg4, jint arg5);
+		static jint compare(jobjectArray arg0, jint arg1, jint arg2, jobjectArray arg3, jint arg4, jint arg5, __JniBaseClass arg6);
+		static jint compareUnsigned(jbyteArray arg0, jbyteArray arg1);
+		static jint compareUnsigned(jintArray arg0, jintArray arg1);
+		static jint compareUnsigned(jlongArray arg0, jlongArray arg1);
+		static jint compareUnsigned(jshortArray arg0, jshortArray arg1);
+		static jint compareUnsigned(jbyteArray arg0, jint arg1, jint arg2, jbyteArray arg3, jint arg4, jint arg5);
+		static jint compareUnsigned(jintArray arg0, jint arg1, jint arg2, jintArray arg3, jint arg4, jint arg5);
+		static jint compareUnsigned(jlongArray arg0, jint arg1, jint arg2, jlongArray arg3, jint arg4, jint arg5);
+		static jint compareUnsigned(jshortArray arg0, jint arg1, jint arg2, jshortArray arg3, jint arg4, jint arg5);
+		static jbyteArray copyOf(jbyteArray arg0, jint arg1);
+		static jcharArray copyOf(jcharArray arg0, jint arg1);
+		static jdoubleArray copyOf(jdoubleArray arg0, jint arg1);
+		static jfloatArray copyOf(jfloatArray arg0, jint arg1);
+		static jintArray copyOf(jintArray arg0, jint arg1);
+		static jlongArray copyOf(jlongArray arg0, jint arg1);
+		static jobjectArray copyOf(jobjectArray arg0, jint arg1);
+		static jobjectArray copyOf(jobjectArray arg0, jint arg1, jclass arg2);
+		static jshortArray copyOf(jshortArray arg0, jint arg1);
+		static jbooleanArray copyOf(jbooleanArray arg0, jint arg1);
+		static jbyteArray copyOfRange(jbyteArray arg0, jint arg1, jint arg2);
+		static jcharArray copyOfRange(jcharArray arg0, jint arg1, jint arg2);
+		static jdoubleArray copyOfRange(jdoubleArray arg0, jint arg1, jint arg2);
+		static jfloatArray copyOfRange(jfloatArray arg0, jint arg1, jint arg2);
+		static jintArray copyOfRange(jintArray arg0, jint arg1, jint arg2);
+		static jlongArray copyOfRange(jlongArray arg0, jint arg1, jint arg2);
+		static jobjectArray copyOfRange(jobjectArray arg0, jint arg1, jint arg2);
+		static jobjectArray copyOfRange(jobjectArray arg0, jint arg1, jint arg2, jclass arg3);
+		static jshortArray copyOfRange(jshortArray arg0, jint arg1, jint arg2);
+		static jbooleanArray copyOfRange(jbooleanArray arg0, jint arg1, jint arg2);
+		static jboolean deepEquals(jobjectArray arg0, jobjectArray arg1);
+		static jint deepHashCode(jobjectArray arg0);
+		static jstring deepToString(jobjectArray arg0);
+		static jboolean equals(jbyteArray arg0, jbyteArray arg1);
+		static jboolean equals(jcharArray arg0, jcharArray arg1);
+		static jboolean equals(jdoubleArray arg0, jdoubleArray arg1);
+		static jboolean equals(jfloatArray arg0, jfloatArray arg1);
+		static jboolean equals(jintArray arg0, jintArray arg1);
+		static jboolean equals(jlongArray arg0, jlongArray arg1);
+		static jboolean equals(jobjectArray arg0, jobjectArray arg1);
+		static jboolean equals(jshortArray arg0, jshortArray arg1);
+		static jboolean equals(jbooleanArray arg0, jbooleanArray arg1);
+		static jboolean equals(jobjectArray arg0, jobjectArray arg1, __JniBaseClass arg2);
+		static jboolean equals(jbyteArray arg0, jint arg1, jint arg2, jbyteArray arg3, jint arg4, jint arg5);
+		static jboolean equals(jcharArray arg0, jint arg1, jint arg2, jcharArray arg3, jint arg4, jint arg5);
+		static jboolean equals(jdoubleArray arg0, jint arg1, jint arg2, jdoubleArray arg3, jint arg4, jint arg5);
+		static jboolean equals(jfloatArray arg0, jint arg1, jint arg2, jfloatArray arg3, jint arg4, jint arg5);
+		static jboolean equals(jintArray arg0, jint arg1, jint arg2, jintArray arg3, jint arg4, jint arg5);
+		static jboolean equals(jlongArray arg0, jint arg1, jint arg2, jlongArray arg3, jint arg4, jint arg5);
+		static jboolean equals(jobjectArray arg0, jint arg1, jint arg2, jobjectArray arg3, jint arg4, jint arg5);
+		static jboolean equals(jshortArray arg0, jint arg1, jint arg2, jshortArray arg3, jint arg4, jint arg5);
+		static jboolean equals(jbooleanArray arg0, jint arg1, jint arg2, jbooleanArray arg3, jint arg4, jint arg5);
+		static jboolean equals(jobjectArray arg0, jint arg1, jint arg2, jobjectArray arg3, jint arg4, jint arg5, __JniBaseClass arg6);
+		static void fill(jbyteArray arg0, jbyte arg1);
+		static void fill(jcharArray arg0, jchar arg1);
+		static void fill(jdoubleArray arg0, jdouble arg1);
+		static void fill(jfloatArray arg0, jfloat arg1);
+		static void fill(jintArray arg0, jint arg1);
+		static void fill(jlongArray arg0, jlong arg1);
+		static void fill(jobjectArray arg0, jobject arg1);
+		static void fill(jshortArray arg0, jshort arg1);
+		static void fill(jbooleanArray arg0, jboolean arg1);
+		static void fill(jbyteArray arg0, jint arg1, jint arg2, jbyte arg3);
+		static void fill(jcharArray arg0, jint arg1, jint arg2, jchar arg3);
+		static void fill(jdoubleArray arg0, jint arg1, jint arg2, jdouble arg3);
+		static void fill(jfloatArray arg0, jint arg1, jint arg2, jfloat arg3);
+		static void fill(jintArray arg0, jint arg1, jint arg2, jint arg3);
+		static void fill(jlongArray arg0, jint arg1, jint arg2, jlong arg3);
+		static void fill(jobjectArray arg0, jint arg1, jint arg2, jobject arg3);
+		static void fill(jshortArray arg0, jint arg1, jint arg2, jshort arg3);
+		static void fill(jbooleanArray arg0, jint arg1, jint arg2, jboolean arg3);
+		static jint hashCode(jbyteArray arg0);
+		static jint hashCode(jcharArray arg0);
+		static jint hashCode(jdoubleArray arg0);
+		static jint hashCode(jfloatArray arg0);
+		static jint hashCode(jintArray arg0);
+		static jint hashCode(jlongArray arg0);
+		static jint hashCode(jobjectArray arg0);
+		static jint hashCode(jshortArray arg0);
+		static jint hashCode(jbooleanArray arg0);
+		static jint mismatch(jbyteArray arg0, jbyteArray arg1);
+		static jint mismatch(jcharArray arg0, jcharArray arg1);
+		static jint mismatch(jdoubleArray arg0, jdoubleArray arg1);
+		static jint mismatch(jfloatArray arg0, jfloatArray arg1);
+		static jint mismatch(jintArray arg0, jintArray arg1);
+		static jint mismatch(jlongArray arg0, jlongArray arg1);
+		static jint mismatch(jobjectArray arg0, jobjectArray arg1);
+		static jint mismatch(jshortArray arg0, jshortArray arg1);
+		static jint mismatch(jbooleanArray arg0, jbooleanArray arg1);
+		static jint mismatch(jobjectArray arg0, jobjectArray arg1, __JniBaseClass arg2);
+		static jint mismatch(jbyteArray arg0, jint arg1, jint arg2, jbyteArray arg3, jint arg4, jint arg5);
+		static jint mismatch(jcharArray arg0, jint arg1, jint arg2, jcharArray arg3, jint arg4, jint arg5);
+		static jint mismatch(jdoubleArray arg0, jint arg1, jint arg2, jdoubleArray arg3, jint arg4, jint arg5);
+		static jint mismatch(jfloatArray arg0, jint arg1, jint arg2, jfloatArray arg3, jint arg4, jint arg5);
+		static jint mismatch(jintArray arg0, jint arg1, jint arg2, jintArray arg3, jint arg4, jint arg5);
+		static jint mismatch(jlongArray arg0, jint arg1, jint arg2, jlongArray arg3, jint arg4, jint arg5);
+		static jint mismatch(jobjectArray arg0, jint arg1, jint arg2, jobjectArray arg3, jint arg4, jint arg5);
+		static jint mismatch(jshortArray arg0, jint arg1, jint arg2, jshortArray arg3, jint arg4, jint arg5);
+		static jint mismatch(jbooleanArray arg0, jint arg1, jint arg2, jbooleanArray arg3, jint arg4, jint arg5);
+		static jint mismatch(jobjectArray arg0, jint arg1, jint arg2, jobjectArray arg3, jint arg4, jint arg5, __JniBaseClass arg6);
+		static void parallelPrefix(jdoubleArray arg0, __JniBaseClass arg1);
+		static void parallelPrefix(jintArray arg0, __JniBaseClass arg1);
+		static void parallelPrefix(jlongArray arg0, __JniBaseClass arg1);
+		static void parallelPrefix(jobjectArray arg0, __JniBaseClass arg1);
+		static void parallelPrefix(jdoubleArray arg0, jint arg1, jint arg2, __JniBaseClass arg3);
+		static void parallelPrefix(jintArray arg0, jint arg1, jint arg2, __JniBaseClass arg3);
+		static void parallelPrefix(jlongArray arg0, jint arg1, jint arg2, __JniBaseClass arg3);
+		static void parallelPrefix(jobjectArray arg0, jint arg1, jint arg2, __JniBaseClass arg3);
+		static void parallelSetAll(jdoubleArray arg0, __JniBaseClass arg1);
+		static void parallelSetAll(jintArray arg0, __JniBaseClass arg1);
+		static void parallelSetAll(jlongArray arg0, __JniBaseClass arg1);
+		static void parallelSetAll(jobjectArray arg0, __JniBaseClass arg1);
+		static void parallelSort(jbyteArray arg0);
+		static void parallelSort(jcharArray arg0);
+		static void parallelSort(jdoubleArray arg0);
+		static void parallelSort(jfloatArray arg0);
+		static void parallelSort(jintArray arg0);
+		static void parallelSort(jlongArray arg0);
+		static void parallelSort(jarray arg0);
+		static void parallelSort(jshortArray arg0);
+		static void parallelSort(jobjectArray arg0, __JniBaseClass arg1);
+		static void parallelSort(jbyteArray arg0, jint arg1, jint arg2);
+		static void parallelSort(jcharArray arg0, jint arg1, jint arg2);
+		static void parallelSort(jdoubleArray arg0, jint arg1, jint arg2);
+		static void parallelSort(jfloatArray arg0, jint arg1, jint arg2);
+		static void parallelSort(jintArray arg0, jint arg1, jint arg2);
+		static void parallelSort(jlongArray arg0, jint arg1, jint arg2);
+		static void parallelSort(jarray arg0, jint arg1, jint arg2);
+		static void parallelSort(jshortArray arg0, jint arg1, jint arg2);
+		static void parallelSort(jobjectArray arg0, jint arg1, jint arg2, __JniBaseClass arg3);
+		static void setAll(jdoubleArray arg0, __JniBaseClass arg1);
+		static void setAll(jintArray arg0, __JniBaseClass arg1);
+		static void setAll(jlongArray arg0, __JniBaseClass arg1);
+		static void setAll(jobjectArray arg0, __JniBaseClass arg1);
+		static void sort(jbyteArray arg0);
+		static void sort(jcharArray arg0);
+		static void sort(jdoubleArray arg0);
+		static void sort(jfloatArray arg0);
+		static void sort(jintArray arg0);
+		static void sort(jlongArray arg0);
+		static void sort(jobjectArray arg0);
+		static void sort(jshortArray arg0);
+		static void sort(jobjectArray arg0, __JniBaseClass arg1);
+		static void sort(jbyteArray arg0, jint arg1, jint arg2);
+		static void sort(jcharArray arg0, jint arg1, jint arg2);
+		static void sort(jdoubleArray arg0, jint arg1, jint arg2);
+		static void sort(jfloatArray arg0, jint arg1, jint arg2);
+		static void sort(jintArray arg0, jint arg1, jint arg2);
+		static void sort(jlongArray arg0, jint arg1, jint arg2);
+		static void sort(jobjectArray arg0, jint arg1, jint arg2);
+		static void sort(jshortArray arg0, jint arg1, jint arg2);
+		static void sort(jobjectArray arg0, jint arg1, jint arg2, __JniBaseClass arg3);
+		static __JniBaseClass spliterator(jobjectArray arg0);
+		static __JniBaseClass spliterator(jobjectArray arg0, jint arg1, jint arg2);
+		static __JniBaseClass spliterator(jdoubleArray arg0);
+		static __JniBaseClass spliterator(jdoubleArray arg0, jint arg1, jint arg2);
+		static __JniBaseClass spliterator(jintArray arg0);
+		static __JniBaseClass spliterator(jintArray arg0, jint arg1, jint arg2);
+		static __JniBaseClass spliterator(jlongArray arg0);
+		static __JniBaseClass spliterator(jlongArray arg0, jint arg1, jint arg2);
+		static __JniBaseClass stream(jdoubleArray arg0);
+		static __JniBaseClass stream(jdoubleArray arg0, jint arg1, jint arg2);
+		static __JniBaseClass stream(jintArray arg0);
+		static __JniBaseClass stream(jintArray arg0, jint arg1, jint arg2);
+		static __JniBaseClass stream(jlongArray arg0);
+		static __JniBaseClass stream(jlongArray arg0, jint arg1, jint arg2);
+		static __JniBaseClass stream(jobjectArray arg0);
+		static __JniBaseClass stream(jobjectArray arg0, jint arg1, jint arg2);
+		static jstring toString(jbyteArray arg0);
+		static jstring toString(jcharArray arg0);
+		static jstring toString(jdoubleArray arg0);
+		static jstring toString(jfloatArray arg0);
+		static jstring toString(jintArray arg0);
+		static jstring toString(jlongArray arg0);
+		static jstring toString(jobjectArray arg0);
+		static jstring toString(jshortArray arg0);
+		static jstring toString(jbooleanArray arg0);
+	};
+} // namespace java::util
+

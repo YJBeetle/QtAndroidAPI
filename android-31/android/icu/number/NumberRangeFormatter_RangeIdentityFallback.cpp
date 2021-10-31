@@ -1,0 +1,63 @@
+#include "./NumberRangeFormatter_RangeIdentityFallback.hpp"
+
+namespace android::icu::number
+{
+	// Fields
+	android::icu::number::NumberRangeFormatter_RangeIdentityFallback NumberRangeFormatter_RangeIdentityFallback::APPROXIMATELY()
+	{
+		return getStaticObjectField(
+			"android.icu.number.NumberRangeFormatter$RangeIdentityFallback",
+			"APPROXIMATELY",
+			"Landroid/icu/number/NumberRangeFormatter$RangeIdentityFallback;"
+		);
+	}
+	android::icu::number::NumberRangeFormatter_RangeIdentityFallback NumberRangeFormatter_RangeIdentityFallback::APPROXIMATELY_OR_SINGLE_VALUE()
+	{
+		return getStaticObjectField(
+			"android.icu.number.NumberRangeFormatter$RangeIdentityFallback",
+			"APPROXIMATELY_OR_SINGLE_VALUE",
+			"Landroid/icu/number/NumberRangeFormatter$RangeIdentityFallback;"
+		);
+	}
+	android::icu::number::NumberRangeFormatter_RangeIdentityFallback NumberRangeFormatter_RangeIdentityFallback::RANGE()
+	{
+		return getStaticObjectField(
+			"android.icu.number.NumberRangeFormatter$RangeIdentityFallback",
+			"RANGE",
+			"Landroid/icu/number/NumberRangeFormatter$RangeIdentityFallback;"
+		);
+	}
+	android::icu::number::NumberRangeFormatter_RangeIdentityFallback NumberRangeFormatter_RangeIdentityFallback::SINGLE_VALUE()
+	{
+		return getStaticObjectField(
+			"android.icu.number.NumberRangeFormatter$RangeIdentityFallback",
+			"SINGLE_VALUE",
+			"Landroid/icu/number/NumberRangeFormatter$RangeIdentityFallback;"
+		);
+	}
+	
+	// QAndroidJniObject forward
+	NumberRangeFormatter_RangeIdentityFallback::NumberRangeFormatter_RangeIdentityFallback(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
+	// Constructors
+	
+	// Methods
+	android::icu::number::NumberRangeFormatter_RangeIdentityFallback NumberRangeFormatter_RangeIdentityFallback::valueOf(jstring arg0)
+	{
+		return callStaticObjectMethod(
+			"android.icu.number.NumberRangeFormatter$RangeIdentityFallback",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/icu/number/NumberRangeFormatter$RangeIdentityFallback;",
+			arg0
+		);
+	}
+	jarray NumberRangeFormatter_RangeIdentityFallback::values()
+	{
+		return callStaticObjectMethod(
+			"android.icu.number.NumberRangeFormatter$RangeIdentityFallback",
+			"values",
+			"()[Landroid/icu/number/NumberRangeFormatter$RangeIdentityFallback;"
+		).object<jarray>();
+	}
+} // namespace android::icu::number
+

@@ -1,0 +1,31 @@
+#pragma once
+
+#include "../../../../__JniBaseClass.hpp"
+
+
+namespace android::hardware::camera2::params
+{
+	class InputConfiguration : public __JniBaseClass
+	{
+	public:
+		// Fields
+		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit InputConfiguration(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		InputConfiguration(QAndroidJniObject obj);
+		
+		// Constructors
+		InputConfiguration(__JniBaseClass arg0, jint arg1);
+		InputConfiguration(jint arg0, jint arg1, jint arg2);
+		
+		// Methods
+		jboolean equals(jobject arg0);
+		jint getFormat();
+		jint getHeight();
+		jint getWidth();
+		jint hashCode();
+		jboolean isMultiResolution();
+		jstring toString();
+	};
+} // namespace android::hardware::camera2::params
+
