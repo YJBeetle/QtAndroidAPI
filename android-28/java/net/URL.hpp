@@ -54,9 +54,9 @@ namespace java::net
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit URL(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		URL(QAndroidJniObject obj);
+		URL(QJniObject obj);
 		
 		// Constructors
 		URL(jstring arg0);

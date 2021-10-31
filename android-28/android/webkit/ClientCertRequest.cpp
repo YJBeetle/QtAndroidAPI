@@ -4,8 +4,8 @@ namespace android::webkit
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ClientCertRequest::ClientCertRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ClientCertRequest::ClientCertRequest(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ClientCertRequest::ClientCertRequest()

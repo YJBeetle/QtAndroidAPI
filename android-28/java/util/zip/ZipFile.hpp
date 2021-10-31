@@ -32,9 +32,9 @@ namespace java::util::zip
 		static jint OPEN_DELETE();
 		static jint OPEN_READ();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ZipFile(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ZipFile(QAndroidJniObject obj);
+		ZipFile(QJniObject obj);
 		
 		// Constructors
 		ZipFile(java::io::File arg0);

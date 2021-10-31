@@ -7,8 +7,8 @@ namespace android::graphics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ComposeShader::ComposeShader(QAndroidJniObject obj) : android::graphics::Shader(obj) {}
+	// QJniObject forward
+	ComposeShader::ComposeShader(QJniObject obj) : android::graphics::Shader(obj) {}
 	
 	// Constructors
 	ComposeShader::ComposeShader(android::graphics::Shader arg0, android::graphics::Shader arg1, android::graphics::PorterDuff_Mode arg2)

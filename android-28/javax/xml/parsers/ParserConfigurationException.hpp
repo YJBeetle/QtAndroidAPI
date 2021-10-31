@@ -11,9 +11,9 @@ namespace javax::xml::parsers
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ParserConfigurationException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		ParserConfigurationException(QAndroidJniObject obj);
+		ParserConfigurationException(QJniObject obj);
 		
 		// Constructors
 		ParserConfigurationException();

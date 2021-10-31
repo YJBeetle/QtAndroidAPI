@@ -28,8 +28,8 @@ namespace android::renderscript
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Byte4::Byte4(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Byte4::Byte4(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Byte4::Byte4()

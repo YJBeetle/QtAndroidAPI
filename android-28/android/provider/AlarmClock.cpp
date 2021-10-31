@@ -188,8 +188,8 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	AlarmClock::AlarmClock(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AlarmClock::AlarmClock(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	AlarmClock::AlarmClock()

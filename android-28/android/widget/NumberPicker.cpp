@@ -9,8 +9,8 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	NumberPicker::NumberPicker(QAndroidJniObject obj) : android::widget::LinearLayout(obj) {}
+	// QJniObject forward
+	NumberPicker::NumberPicker(QJniObject obj) : android::widget::LinearLayout(obj) {}
 	
 	// Constructors
 	NumberPicker::NumberPicker(android::content::Context arg0)

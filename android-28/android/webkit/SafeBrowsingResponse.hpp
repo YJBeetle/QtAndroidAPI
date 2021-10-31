@@ -10,9 +10,9 @@ namespace android::webkit
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SafeBrowsingResponse(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SafeBrowsingResponse(QAndroidJniObject obj);
+		SafeBrowsingResponse(QJniObject obj);
 		
 		// Constructors
 		SafeBrowsingResponse();

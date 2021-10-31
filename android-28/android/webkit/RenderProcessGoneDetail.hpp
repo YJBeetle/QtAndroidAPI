@@ -10,9 +10,9 @@ namespace android::webkit
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit RenderProcessGoneDetail(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		RenderProcessGoneDetail(QAndroidJniObject obj);
+		RenderProcessGoneDetail(QJniObject obj);
 		
 		// Constructors
 		RenderProcessGoneDetail();

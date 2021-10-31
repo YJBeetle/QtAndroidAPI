@@ -23,9 +23,9 @@ namespace android::media
 		static android::media::VolumeShaper_Configuration SCURVE_RAMP();
 		static android::media::VolumeShaper_Configuration SINE_RAMP();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit VolumeShaper_Configuration(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		VolumeShaper_Configuration(QAndroidJniObject obj);
+		VolumeShaper_Configuration(QJniObject obj);
 		
 		// Constructors
 		

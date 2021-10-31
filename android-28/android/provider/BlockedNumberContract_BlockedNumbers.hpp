@@ -20,9 +20,9 @@ namespace android::provider
 		static jstring CONTENT_TYPE();
 		static android::net::Uri CONTENT_URI();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit BlockedNumberContract_BlockedNumbers(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		BlockedNumberContract_BlockedNumbers(QAndroidJniObject obj);
+		BlockedNumberContract_BlockedNumbers(QJniObject obj);
 		
 		// Constructors
 		

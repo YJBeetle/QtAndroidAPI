@@ -26,9 +26,9 @@ namespace android::media::session
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaSessionManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaSessionManager(QAndroidJniObject obj);
+		MediaSessionManager(QJniObject obj);
 		
 		// Constructors
 		

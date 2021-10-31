@@ -116,9 +116,9 @@ namespace android::view
 		static jint PERSISTENT_NO_CACHE();
 		static jint PERSISTENT_SCROLLING_CACHE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ViewGroup(const char *className, const char *sig, Ts...agv) : android::view::View(className, sig, std::forward<Ts>(agv)...) {}
-		ViewGroup(QAndroidJniObject obj);
+		ViewGroup(QJniObject obj);
 		
 		// Constructors
 		ViewGroup(android::content::Context arg0);

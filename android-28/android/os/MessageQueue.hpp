@@ -14,9 +14,9 @@ namespace android::os
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MessageQueue(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MessageQueue(QAndroidJniObject obj);
+		MessageQueue(QJniObject obj);
 		
 		// Constructors
 		

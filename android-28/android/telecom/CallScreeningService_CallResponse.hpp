@@ -10,9 +10,9 @@ namespace android::telecom
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CallScreeningService_CallResponse(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CallScreeningService_CallResponse(QAndroidJniObject obj);
+		CallScreeningService_CallResponse(QJniObject obj);
 		
 		// Constructors
 		

@@ -45,9 +45,9 @@ namespace android::media::effect
 		static jstring EFFECT_TINT();
 		static jstring EFFECT_VIGNETTE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit EffectFactory(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		EffectFactory(QAndroidJniObject obj);
+		EffectFactory(QJniObject obj);
 		
 		// Constructors
 		

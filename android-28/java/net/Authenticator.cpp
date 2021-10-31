@@ -8,8 +8,8 @@ namespace java::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Authenticator::Authenticator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Authenticator::Authenticator(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Authenticator::Authenticator()

@@ -2121,8 +2121,8 @@ namespace android::opengl
 		);
 	}
 	
-	// QAndroidJniObject forward
-	GLES20::GLES20(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	GLES20::GLES20(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	GLES20::GLES20()

@@ -13,8 +13,8 @@ namespace java::time::format
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DecimalStyle::DecimalStyle(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DecimalStyle::DecimalStyle(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -5,8 +5,8 @@ namespace java::security::spec
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ECFieldFp::ECFieldFp(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ECFieldFp::ECFieldFp(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ECFieldFp::ECFieldFp(java::math::BigInteger arg0)

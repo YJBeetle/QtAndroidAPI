@@ -18,9 +18,9 @@ namespace android::util
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit EventLogTags(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		EventLogTags(QAndroidJniObject obj);
+		EventLogTags(QJniObject obj);
 		
 		// Constructors
 		EventLogTags();

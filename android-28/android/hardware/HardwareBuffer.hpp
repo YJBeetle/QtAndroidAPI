@@ -40,9 +40,9 @@ namespace android::hardware
 		static jlong USAGE_SENSOR_DIRECT_DATA();
 		static jlong USAGE_VIDEO_ENCODE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit HardwareBuffer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		HardwareBuffer(QAndroidJniObject obj);
+		HardwareBuffer(QJniObject obj);
 		
 		// Constructors
 		

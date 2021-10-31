@@ -21,8 +21,8 @@ namespace android::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CallLog::CallLog(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CallLog::CallLog(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	CallLog::CallLog()

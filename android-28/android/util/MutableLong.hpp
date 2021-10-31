@@ -11,9 +11,9 @@ namespace android::util
 		// Fields
 		jlong value();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MutableLong(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MutableLong(QAndroidJniObject obj);
+		MutableLong(QJniObject obj);
 		
 		// Constructors
 		MutableLong(jlong arg0);

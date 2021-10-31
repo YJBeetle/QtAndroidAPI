@@ -14,9 +14,9 @@ namespace android::database
 		static android::database::CursorJoiner_Result LEFT();
 		static android::database::CursorJoiner_Result RIGHT();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CursorJoiner_Result(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		CursorJoiner_Result(QAndroidJniObject obj);
+		CursorJoiner_Result(QJniObject obj);
 		
 		// Constructors
 		

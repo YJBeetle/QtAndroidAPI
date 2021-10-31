@@ -13,8 +13,8 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	VideoView::VideoView(QAndroidJniObject obj) : android::view::SurfaceView(obj) {}
+	// QJniObject forward
+	VideoView::VideoView(QJniObject obj) : android::view::SurfaceView(obj) {}
 	
 	// Constructors
 	VideoView::VideoView(android::content::Context arg0)

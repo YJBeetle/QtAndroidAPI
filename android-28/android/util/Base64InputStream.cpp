@@ -5,8 +5,8 @@ namespace android::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Base64InputStream::Base64InputStream(QAndroidJniObject obj) : java::io::FilterInputStream(obj) {}
+	// QJniObject forward
+	Base64InputStream::Base64InputStream(QJniObject obj) : java::io::FilterInputStream(obj) {}
 	
 	// Constructors
 	Base64InputStream::Base64InputStream(java::io::InputStream arg0, jint arg1)

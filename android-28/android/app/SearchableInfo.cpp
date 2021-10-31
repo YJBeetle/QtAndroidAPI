@@ -14,8 +14,8 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SearchableInfo::SearchableInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SearchableInfo::SearchableInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -11,8 +11,8 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AppComponentFactory::AppComponentFactory(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AppComponentFactory::AppComponentFactory(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	AppComponentFactory::AppComponentFactory()

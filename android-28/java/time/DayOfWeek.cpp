@@ -63,8 +63,8 @@ namespace java::time
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DayOfWeek::DayOfWeek(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	DayOfWeek::DayOfWeek(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

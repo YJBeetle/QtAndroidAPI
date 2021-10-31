@@ -13,9 +13,9 @@ namespace java::net
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SocketTimeoutException(const char *className, const char *sig, Ts...agv) : java::io::InterruptedIOException(className, sig, std::forward<Ts>(agv)...) {}
-		SocketTimeoutException(QAndroidJniObject obj);
+		SocketTimeoutException(QJniObject obj);
 		
 		// Constructors
 		SocketTimeoutException();

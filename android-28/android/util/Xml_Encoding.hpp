@@ -15,9 +15,9 @@ namespace android::util
 		static android::util::Xml_Encoding UTF_16();
 		static android::util::Xml_Encoding UTF_8();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Xml_Encoding(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Xml_Encoding(QAndroidJniObject obj);
+		Xml_Encoding(QJniObject obj);
 		
 		// Constructors
 		

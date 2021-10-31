@@ -18,9 +18,9 @@ namespace android::content::pm
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ApplicationInfo_DisplayNameComparator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ApplicationInfo_DisplayNameComparator(QAndroidJniObject obj);
+		ApplicationInfo_DisplayNameComparator(QJniObject obj);
 		
 		// Constructors
 		ApplicationInfo_DisplayNameComparator(android::content::pm::PackageManager arg0);

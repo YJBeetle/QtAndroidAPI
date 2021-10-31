@@ -41,9 +41,9 @@ namespace android::media::audiofx
 		static jint VARIANT_FAVOR_FREQUENCY_RESOLUTION();
 		static jint VARIANT_FAVOR_TIME_RESOLUTION();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DynamicsProcessing(const char *className, const char *sig, Ts...agv) : android::media::audiofx::AudioEffect(className, sig, std::forward<Ts>(agv)...) {}
-		DynamicsProcessing(QAndroidJniObject obj);
+		DynamicsProcessing(QJniObject obj);
 		
 		// Constructors
 		DynamicsProcessing(jint arg0);

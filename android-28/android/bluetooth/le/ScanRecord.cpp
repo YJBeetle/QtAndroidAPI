@@ -6,8 +6,8 @@ namespace android::bluetooth::le
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ScanRecord::ScanRecord(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ScanRecord::ScanRecord(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

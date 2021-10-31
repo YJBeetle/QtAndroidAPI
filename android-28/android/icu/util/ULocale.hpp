@@ -42,9 +42,9 @@ namespace android::icu::util
 		static jchar UNICODE_LOCALE_EXTENSION();
 		static android::icu::util::ULocale US();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ULocale(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ULocale(QAndroidJniObject obj);
+		ULocale(QJniObject obj);
 		
 		// Constructors
 		ULocale(jstring arg0);

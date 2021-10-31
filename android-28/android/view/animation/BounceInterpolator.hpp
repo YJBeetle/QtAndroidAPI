@@ -15,9 +15,9 @@ namespace android::view::animation
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit BounceInterpolator(const char *className, const char *sig, Ts...agv) : android::view::animation::BaseInterpolator(className, sig, std::forward<Ts>(agv)...) {}
-		BounceInterpolator(QAndroidJniObject obj);
+		BounceInterpolator(QJniObject obj);
 		
 		// Constructors
 		BounceInterpolator();

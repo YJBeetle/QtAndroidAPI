@@ -16,8 +16,8 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FragmentController::FragmentController(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	FragmentController::FragmentController(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

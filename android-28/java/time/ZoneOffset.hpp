@@ -26,9 +26,9 @@ namespace java::time
 		static java::time::ZoneOffset MIN();
 		static java::time::ZoneOffset UTC();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ZoneOffset(const char *className, const char *sig, Ts...agv) : java::time::ZoneId(className, sig, std::forward<Ts>(agv)...) {}
-		ZoneOffset(QAndroidJniObject obj);
+		ZoneOffset(QJniObject obj);
 		
 		// Constructors
 		

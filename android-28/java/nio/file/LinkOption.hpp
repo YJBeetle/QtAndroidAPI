@@ -12,9 +12,9 @@ namespace java::nio::file
 		// Fields
 		static java::nio::file::LinkOption NOFOLLOW_LINKS();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit LinkOption(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		LinkOption(QAndroidJniObject obj);
+		LinkOption(QJniObject obj);
 		
 		// Constructors
 		

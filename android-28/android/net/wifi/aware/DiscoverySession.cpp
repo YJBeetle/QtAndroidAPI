@@ -7,8 +7,8 @@ namespace android::net::wifi::aware
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DiscoverySession::DiscoverySession(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DiscoverySession::DiscoverySession(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

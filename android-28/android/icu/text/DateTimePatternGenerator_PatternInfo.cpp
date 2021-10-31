@@ -38,8 +38,8 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DateTimePatternGenerator_PatternInfo::DateTimePatternGenerator_PatternInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DateTimePatternGenerator_PatternInfo::DateTimePatternGenerator_PatternInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	DateTimePatternGenerator_PatternInfo::DateTimePatternGenerator_PatternInfo()

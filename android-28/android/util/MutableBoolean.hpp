@@ -11,9 +11,9 @@ namespace android::util
 		// Fields
 		jboolean value();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MutableBoolean(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MutableBoolean(QAndroidJniObject obj);
+		MutableBoolean(QJniObject obj);
 		
 		// Constructors
 		MutableBoolean(jboolean arg0);

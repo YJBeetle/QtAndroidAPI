@@ -4,8 +4,8 @@ namespace android::view
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	WindowManager_InvalidDisplayException::WindowManager_InvalidDisplayException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	// QJniObject forward
+	WindowManager_InvalidDisplayException::WindowManager_InvalidDisplayException(QJniObject obj) : java::lang::RuntimeException(obj) {}
 	
 	// Constructors
 	WindowManager_InvalidDisplayException::WindowManager_InvalidDisplayException()

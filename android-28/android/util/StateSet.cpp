@@ -20,8 +20,8 @@ namespace android::util
 		).object<jintArray>();
 	}
 	
-	// QAndroidJniObject forward
-	StateSet::StateSet(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	StateSet::StateSet(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

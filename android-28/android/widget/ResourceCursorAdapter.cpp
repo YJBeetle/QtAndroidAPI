@@ -8,8 +8,8 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ResourceCursorAdapter::ResourceCursorAdapter(QAndroidJniObject obj) : android::widget::CursorAdapter(obj) {}
+	// QJniObject forward
+	ResourceCursorAdapter::ResourceCursorAdapter(QJniObject obj) : android::widget::CursorAdapter(obj) {}
 	
 	// Constructors
 	ResourceCursorAdapter::ResourceCursorAdapter(android::content::Context arg0, jint arg1, __JniBaseClass arg2)

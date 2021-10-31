@@ -30,9 +30,9 @@ namespace android::text::style
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit IconMarginSpan(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		IconMarginSpan(QAndroidJniObject obj);
+		IconMarginSpan(QJniObject obj);
 		
 		// Constructors
 		IconMarginSpan(android::graphics::Bitmap arg0);

@@ -15,9 +15,9 @@ namespace android::media
 		static jint REQUEST_TYPE_RENEWAL();
 		static jint REQUEST_TYPE_UPDATE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaDrm_KeyRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaDrm_KeyRequest(QAndroidJniObject obj);
+		MediaDrm_KeyRequest(QJniObject obj);
 		
 		// Constructors
 		

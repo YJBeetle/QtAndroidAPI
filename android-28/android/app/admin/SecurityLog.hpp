@@ -46,9 +46,9 @@ namespace android::app::admin
 		static jint TAG_USER_RESTRICTION_REMOVED();
 		static jint TAG_WIPE_FAILURE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SecurityLog(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SecurityLog(QAndroidJniObject obj);
+		SecurityLog(QJniObject obj);
 		
 		// Constructors
 		SecurityLog();

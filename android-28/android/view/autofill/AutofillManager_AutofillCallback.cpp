@@ -26,8 +26,8 @@ namespace android::view::autofill
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AutofillManager_AutofillCallback::AutofillManager_AutofillCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AutofillManager_AutofillCallback::AutofillManager_AutofillCallback(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	AutofillManager_AutofillCallback::AutofillManager_AutofillCallback()

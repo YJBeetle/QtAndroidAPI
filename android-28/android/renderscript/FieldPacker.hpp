@@ -98,9 +98,9 @@ namespace android::renderscript
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit FieldPacker(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		FieldPacker(QAndroidJniObject obj);
+		FieldPacker(QJniObject obj);
 		
 		// Constructors
 		FieldPacker(jbyteArray arg0);

@@ -4,8 +4,8 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IllegalMonitorStateException::IllegalMonitorStateException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	// QJniObject forward
+	IllegalMonitorStateException::IllegalMonitorStateException(QJniObject obj) : java::lang::RuntimeException(obj) {}
 	
 	// Constructors
 	IllegalMonitorStateException::IllegalMonitorStateException()

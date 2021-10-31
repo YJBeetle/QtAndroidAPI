@@ -16,8 +16,8 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	RemoteAction::RemoteAction(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	RemoteAction::RemoteAction(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	RemoteAction::RemoteAction(android::graphics::drawable::Icon arg0, jstring arg1, jstring arg2, android::app::PendingIntent arg3)

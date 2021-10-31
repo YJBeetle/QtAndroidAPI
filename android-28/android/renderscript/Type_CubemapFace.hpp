@@ -20,9 +20,9 @@ namespace android::renderscript
 		static android::renderscript::Type_CubemapFace POSITVE_Y();
 		static android::renderscript::Type_CubemapFace POSITVE_Z();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Type_CubemapFace(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Type_CubemapFace(QAndroidJniObject obj);
+		Type_CubemapFace(QJniObject obj);
 		
 		// Constructors
 		

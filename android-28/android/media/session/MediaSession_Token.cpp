@@ -13,8 +13,8 @@ namespace android::media::session
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaSession_Token::MediaSession_Token(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MediaSession_Token::MediaSession_Token(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

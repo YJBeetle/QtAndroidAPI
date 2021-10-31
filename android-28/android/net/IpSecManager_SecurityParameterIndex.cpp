@@ -4,8 +4,8 @@ namespace android::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IpSecManager_SecurityParameterIndex::IpSecManager_SecurityParameterIndex(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	IpSecManager_SecurityParameterIndex::IpSecManager_SecurityParameterIndex(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -6,8 +6,8 @@ namespace android::transition
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PatternPathMotion::PatternPathMotion(QAndroidJniObject obj) : android::transition::PathMotion(obj) {}
+	// QJniObject forward
+	PatternPathMotion::PatternPathMotion(QJniObject obj) : android::transition::PathMotion(obj) {}
 	
 	// Constructors
 	PatternPathMotion::PatternPathMotion()

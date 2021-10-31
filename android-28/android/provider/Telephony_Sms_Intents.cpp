@@ -160,8 +160,8 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	Telephony_Sms_Intents::Telephony_Sms_Intents(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Telephony_Sms_Intents::Telephony_Sms_Intents(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

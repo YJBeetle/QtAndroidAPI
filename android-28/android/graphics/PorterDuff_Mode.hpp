@@ -29,9 +29,9 @@ namespace android::graphics
 		static android::graphics::PorterDuff_Mode SRC_OVER();
 		static android::graphics::PorterDuff_Mode XOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PorterDuff_Mode(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		PorterDuff_Mode(QAndroidJniObject obj);
+		PorterDuff_Mode(QJniObject obj);
 		
 		// Constructors
 		

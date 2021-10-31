@@ -104,8 +104,8 @@ namespace android::graphics
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Paint::Paint(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Paint::Paint(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Paint::Paint()

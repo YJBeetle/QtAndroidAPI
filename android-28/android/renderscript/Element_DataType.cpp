@@ -244,8 +244,8 @@ namespace android::renderscript
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Element_DataType::Element_DataType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	Element_DataType::Element_DataType(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

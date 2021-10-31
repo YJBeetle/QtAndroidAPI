@@ -19,9 +19,9 @@ namespace android::graphics::drawable
 		static android::graphics::drawable::GradientDrawable_Orientation TOP_BOTTOM();
 		static android::graphics::drawable::GradientDrawable_Orientation TR_BL();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit GradientDrawable_Orientation(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		GradientDrawable_Orientation(QAndroidJniObject obj);
+		GradientDrawable_Orientation(QJniObject obj);
 		
 		// Constructors
 		

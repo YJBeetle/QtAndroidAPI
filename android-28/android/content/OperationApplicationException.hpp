@@ -11,9 +11,9 @@ namespace android::content
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit OperationApplicationException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		OperationApplicationException(QAndroidJniObject obj);
+		OperationApplicationException(QJniObject obj);
 		
 		// Constructors
 		OperationApplicationException();

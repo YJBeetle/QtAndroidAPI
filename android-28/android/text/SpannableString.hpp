@@ -10,9 +10,9 @@ namespace android::text
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SpannableString(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SpannableString(QAndroidJniObject obj);
+		SpannableString(QJniObject obj);
 		
 		// Constructors
 		SpannableString(jstring arg0);

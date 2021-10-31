@@ -10,9 +10,9 @@ namespace java::util
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit StringTokenizer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		StringTokenizer(QAndroidJniObject obj);
+		StringTokenizer(QJniObject obj);
 		
 		// Constructors
 		StringTokenizer(jstring arg0);

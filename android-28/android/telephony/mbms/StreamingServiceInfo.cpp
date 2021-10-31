@@ -13,8 +13,8 @@ namespace android::telephony::mbms
 		);
 	}
 	
-	// QAndroidJniObject forward
-	StreamingServiceInfo::StreamingServiceInfo(QAndroidJniObject obj) : android::telephony::mbms::ServiceInfo(obj) {}
+	// QJniObject forward
+	StreamingServiceInfo::StreamingServiceInfo(QJniObject obj) : android::telephony::mbms::ServiceInfo(obj) {}
 	
 	// Constructors
 	

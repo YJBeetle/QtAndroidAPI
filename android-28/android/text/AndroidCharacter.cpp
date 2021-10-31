@@ -46,8 +46,8 @@ namespace android::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AndroidCharacter::AndroidCharacter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AndroidCharacter::AndroidCharacter(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	AndroidCharacter::AndroidCharacter()

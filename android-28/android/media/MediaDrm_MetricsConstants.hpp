@@ -45,9 +45,9 @@ namespace android::media
 		static jstring SESSION_END_TIMES_MS();
 		static jstring SESSION_START_TIMES_MS();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaDrm_MetricsConstants(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaDrm_MetricsConstants(QAndroidJniObject obj);
+		MediaDrm_MetricsConstants(QJniObject obj);
 		
 		// Constructors
 		

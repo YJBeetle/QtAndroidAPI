@@ -33,8 +33,8 @@ namespace android::net::wifi::p2p
 		);
 	}
 	
-	// QAndroidJniObject forward
-	WifiP2pInfo::WifiP2pInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	WifiP2pInfo::WifiP2pInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	WifiP2pInfo::WifiP2pInfo()

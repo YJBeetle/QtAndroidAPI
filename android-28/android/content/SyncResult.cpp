@@ -77,8 +77,8 @@ namespace android::content
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SyncResult::SyncResult(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SyncResult::SyncResult(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	SyncResult::SyncResult()

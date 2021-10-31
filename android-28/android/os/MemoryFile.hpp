@@ -18,9 +18,9 @@ namespace android::os
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MemoryFile(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MemoryFile(QAndroidJniObject obj);
+		MemoryFile(QJniObject obj);
 		
 		// Constructors
 		MemoryFile(jstring arg0, jint arg1);

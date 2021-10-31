@@ -10,8 +10,8 @@ namespace java::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ServerSocket::ServerSocket(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ServerSocket::ServerSocket(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ServerSocket::ServerSocket()

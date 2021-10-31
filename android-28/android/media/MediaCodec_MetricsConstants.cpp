@@ -84,8 +84,8 @@ namespace android::media
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	MediaCodec_MetricsConstants::MediaCodec_MetricsConstants(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MediaCodec_MetricsConstants::MediaCodec_MetricsConstants(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

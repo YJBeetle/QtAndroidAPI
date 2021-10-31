@@ -51,9 +51,9 @@ namespace android::app
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit FragmentHostCallback(const char *className, const char *sig, Ts...agv) : android::app::FragmentContainer(className, sig, std::forward<Ts>(agv)...) {}
-		FragmentHostCallback(QAndroidJniObject obj);
+		FragmentHostCallback(QJniObject obj);
 		
 		// Constructors
 		FragmentHostCallback(android::content::Context arg0, android::os::Handler arg1, jint arg2);

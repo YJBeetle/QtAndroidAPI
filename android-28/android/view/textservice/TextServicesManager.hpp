@@ -22,9 +22,9 @@ namespace android::view::textservice
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TextServicesManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		TextServicesManager(QAndroidJniObject obj);
+		TextServicesManager(QJniObject obj);
 		
 		// Constructors
 		

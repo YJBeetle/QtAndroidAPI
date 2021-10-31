@@ -4,8 +4,8 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	VirtualMachineError::VirtualMachineError(QAndroidJniObject obj) : java::lang::Error(obj) {}
+	// QJniObject forward
+	VirtualMachineError::VirtualMachineError(QJniObject obj) : java::lang::Error(obj) {}
 	
 	// Constructors
 	VirtualMachineError::VirtualMachineError()

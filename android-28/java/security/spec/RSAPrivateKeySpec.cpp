@@ -5,8 +5,8 @@ namespace java::security::spec
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RSAPrivateKeySpec::RSAPrivateKeySpec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	RSAPrivateKeySpec::RSAPrivateKeySpec(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	RSAPrivateKeySpec::RSAPrivateKeySpec(java::math::BigInteger arg0, java::math::BigInteger arg1)

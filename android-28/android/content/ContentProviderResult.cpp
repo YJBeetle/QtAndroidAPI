@@ -29,8 +29,8 @@ namespace android::content
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ContentProviderResult::ContentProviderResult(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ContentProviderResult::ContentProviderResult(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ContentProviderResult::ContentProviderResult(android::net::Uri arg0)

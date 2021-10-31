@@ -7,8 +7,8 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	EnumMap::EnumMap(QAndroidJniObject obj) : java::util::AbstractMap(obj) {}
+	// QJniObject forward
+	EnumMap::EnumMap(QJniObject obj) : java::util::AbstractMap(obj) {}
 	
 	// Constructors
 	EnumMap::EnumMap(jclass arg0)

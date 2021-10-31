@@ -6,8 +6,8 @@ namespace android::telecom
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	InCallService_VideoCall_Callback::InCallService_VideoCall_Callback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	InCallService_VideoCall_Callback::InCallService_VideoCall_Callback(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	InCallService_VideoCall_Callback::InCallService_VideoCall_Callback()

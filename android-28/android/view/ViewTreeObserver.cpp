@@ -5,8 +5,8 @@ namespace android::view
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ViewTreeObserver::ViewTreeObserver(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ViewTreeObserver::ViewTreeObserver(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

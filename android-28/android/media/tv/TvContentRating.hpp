@@ -11,9 +11,9 @@ namespace android::media::tv
 		// Fields
 		static android::media::tv::TvContentRating UNRATED();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TvContentRating(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		TvContentRating(QAndroidJniObject obj);
+		TvContentRating(QJniObject obj);
 		
 		// Constructors
 		

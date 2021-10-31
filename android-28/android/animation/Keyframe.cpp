@@ -4,8 +4,8 @@ namespace android::animation
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Keyframe::Keyframe(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Keyframe::Keyframe(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Keyframe::Keyframe()

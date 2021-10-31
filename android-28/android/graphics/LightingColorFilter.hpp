@@ -11,9 +11,9 @@ namespace android::graphics
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit LightingColorFilter(const char *className, const char *sig, Ts...agv) : android::graphics::ColorFilter(className, sig, std::forward<Ts>(agv)...) {}
-		LightingColorFilter(QAndroidJniObject obj);
+		LightingColorFilter(QJniObject obj);
 		
 		// Constructors
 		LightingColorFilter(jint arg0, jint arg1);

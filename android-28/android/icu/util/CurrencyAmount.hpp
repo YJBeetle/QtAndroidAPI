@@ -19,9 +19,9 @@ namespace android::icu::util
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CurrencyAmount(const char *className, const char *sig, Ts...agv) : android::icu::util::Measure(className, sig, std::forward<Ts>(agv)...) {}
-		CurrencyAmount(QAndroidJniObject obj);
+		CurrencyAmount(QJniObject obj);
 		
 		// Constructors
 		CurrencyAmount(jdouble arg0, android::icu::util::Currency arg1);

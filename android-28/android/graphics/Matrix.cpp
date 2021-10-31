@@ -69,8 +69,8 @@ namespace android::graphics
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Matrix::Matrix(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Matrix::Matrix(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Matrix::Matrix()

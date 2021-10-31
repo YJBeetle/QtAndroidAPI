@@ -31,8 +31,8 @@ namespace android::bluetooth::le
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	BluetoothLeScanner::BluetoothLeScanner(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	BluetoothLeScanner::BluetoothLeScanner(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

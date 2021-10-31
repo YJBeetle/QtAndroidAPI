@@ -44,9 +44,9 @@ namespace android::speech::tts
 		static jstring KEY_PARAM_VOLUME();
 		static jstring SERVICE_META_DATA();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TextToSpeech_Engine(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		TextToSpeech_Engine(QAndroidJniObject obj);
+		TextToSpeech_Engine(QJniObject obj);
 		
 		// Constructors
 		TextToSpeech_Engine(android::speech::tts::TextToSpeech arg0);

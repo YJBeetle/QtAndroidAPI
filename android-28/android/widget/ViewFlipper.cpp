@@ -5,8 +5,8 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ViewFlipper::ViewFlipper(QAndroidJniObject obj) : android::widget::ViewAnimator(obj) {}
+	// QJniObject forward
+	ViewFlipper::ViewFlipper(QJniObject obj) : android::widget::ViewAnimator(obj) {}
 	
 	// Constructors
 	ViewFlipper::ViewFlipper(android::content::Context arg0)

@@ -19,9 +19,9 @@ namespace android::telecom
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit GatewayInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		GatewayInfo(QAndroidJniObject obj);
+		GatewayInfo(QJniObject obj);
 		
 		// Constructors
 		GatewayInfo(jstring arg0, android::net::Uri arg1, android::net::Uri arg2);

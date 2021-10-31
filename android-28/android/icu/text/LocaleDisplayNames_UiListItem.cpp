@@ -33,8 +33,8 @@ namespace android::icu::text
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	LocaleDisplayNames_UiListItem::LocaleDisplayNames_UiListItem(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	LocaleDisplayNames_UiListItem::LocaleDisplayNames_UiListItem(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	LocaleDisplayNames_UiListItem::LocaleDisplayNames_UiListItem(android::icu::util::ULocale arg0, android::icu::util::ULocale arg1, jstring arg2, jstring arg3)

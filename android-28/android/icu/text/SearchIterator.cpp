@@ -13,8 +13,8 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SearchIterator::SearchIterator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SearchIterator::SearchIterator(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

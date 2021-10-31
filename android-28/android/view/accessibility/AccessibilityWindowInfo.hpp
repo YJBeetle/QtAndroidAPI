@@ -28,9 +28,9 @@ namespace android::view::accessibility
 		static jint TYPE_SPLIT_SCREEN_DIVIDER();
 		static jint TYPE_SYSTEM();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AccessibilityWindowInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AccessibilityWindowInfo(QAndroidJniObject obj);
+		AccessibilityWindowInfo(QJniObject obj);
 		
 		// Constructors
 		

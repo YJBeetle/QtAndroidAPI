@@ -20,8 +20,8 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	WallpaperInfo::WallpaperInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	WallpaperInfo::WallpaperInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	WallpaperInfo::WallpaperInfo(android::content::Context arg0, android::content::pm::ResolveInfo arg1)

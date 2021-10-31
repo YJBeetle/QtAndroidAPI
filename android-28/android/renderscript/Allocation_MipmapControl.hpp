@@ -14,9 +14,9 @@ namespace android::renderscript
 		static android::renderscript::Allocation_MipmapControl MIPMAP_NONE();
 		static android::renderscript::Allocation_MipmapControl MIPMAP_ON_SYNC_TO_TEXTURE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Allocation_MipmapControl(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Allocation_MipmapControl(QAndroidJniObject obj);
+		Allocation_MipmapControl(QJniObject obj);
 		
 		// Constructors
 		

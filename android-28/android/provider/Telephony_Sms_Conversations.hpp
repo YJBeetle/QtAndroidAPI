@@ -18,9 +18,9 @@ namespace android::provider
 		static jstring MESSAGE_COUNT();
 		static jstring SNIPPET();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Telephony_Sms_Conversations(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Telephony_Sms_Conversations(QAndroidJniObject obj);
+		Telephony_Sms_Conversations(QJniObject obj);
 		
 		// Constructors
 		

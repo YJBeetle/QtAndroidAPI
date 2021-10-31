@@ -10,9 +10,9 @@ namespace android::media
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaCas_PluginDescriptor(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCas_PluginDescriptor(QAndroidJniObject obj);
+		MediaCas_PluginDescriptor(QJniObject obj);
 		
 		// Constructors
 		

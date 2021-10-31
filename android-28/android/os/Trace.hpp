@@ -10,9 +10,9 @@ namespace android::os
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Trace(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Trace(QAndroidJniObject obj);
+		Trace(QJniObject obj);
 		
 		// Constructors
 		

@@ -30,9 +30,9 @@ namespace android::hardware::usb
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit UsbDeviceConnection(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		UsbDeviceConnection(QAndroidJniObject obj);
+		UsbDeviceConnection(QJniObject obj);
 		
 		// Constructors
 		

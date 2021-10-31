@@ -4,8 +4,8 @@ namespace java::nio
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	BufferUnderflowException::BufferUnderflowException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	// QJniObject forward
+	BufferUnderflowException::BufferUnderflowException(QJniObject obj) : java::lang::RuntimeException(obj) {}
 	
 	// Constructors
 	BufferUnderflowException::BufferUnderflowException()

@@ -7,8 +7,8 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ImageReader::ImageReader(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ImageReader::ImageReader(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

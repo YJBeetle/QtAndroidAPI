@@ -4,8 +4,8 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	KeyFactorySpi::KeyFactorySpi(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	KeyFactorySpi::KeyFactorySpi(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	KeyFactorySpi::KeyFactorySpi()

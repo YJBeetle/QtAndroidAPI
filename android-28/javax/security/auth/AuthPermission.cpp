@@ -4,8 +4,8 @@ namespace javax::security::auth
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AuthPermission::AuthPermission(QAndroidJniObject obj) : java::security::BasicPermission(obj) {}
+	// QJniObject forward
+	AuthPermission::AuthPermission(QJniObject obj) : java::security::BasicPermission(obj) {}
 	
 	// Constructors
 	AuthPermission::AuthPermission(jstring arg0)

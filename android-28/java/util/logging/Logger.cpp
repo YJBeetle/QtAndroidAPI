@@ -29,8 +29,8 @@ namespace java::util::logging
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Logger::Logger(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Logger::Logger(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

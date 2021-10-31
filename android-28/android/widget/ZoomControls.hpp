@@ -21,9 +21,9 @@ namespace android::widget
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ZoomControls(const char *className, const char *sig, Ts...agv) : android::widget::LinearLayout(className, sig, std::forward<Ts>(agv)...) {}
-		ZoomControls(QAndroidJniObject obj);
+		ZoomControls(QJniObject obj);
 		
 		// Constructors
 		ZoomControls(android::content::Context arg0);

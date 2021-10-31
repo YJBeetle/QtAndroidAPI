@@ -12,9 +12,9 @@ namespace android::icu::util
 		jint integer();
 		jobject value();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ValueIterator_Element(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ValueIterator_Element(QAndroidJniObject obj);
+		ValueIterator_Element(QJniObject obj);
 		
 		// Constructors
 		ValueIterator_Element();

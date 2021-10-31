@@ -26,9 +26,9 @@ namespace android::media
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaMuxer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaMuxer(QAndroidJniObject obj);
+		MediaMuxer(QJniObject obj);
 		
 		// Constructors
 		MediaMuxer(java::io::FileDescriptor arg0, jint arg1);

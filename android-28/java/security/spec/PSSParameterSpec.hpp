@@ -12,9 +12,9 @@ namespace java::security::spec
 		static java::security::spec::PSSParameterSpec DEFAULT();
 		static jint TRAILER_FIELD_BC();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PSSParameterSpec(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PSSParameterSpec(QAndroidJniObject obj);
+		PSSParameterSpec(QJniObject obj);
 		
 		// Constructors
 		PSSParameterSpec(jint arg0);

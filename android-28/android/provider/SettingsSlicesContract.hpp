@@ -23,9 +23,9 @@ namespace android::provider
 		static jstring PATH_SETTING_ACTION();
 		static jstring PATH_SETTING_INTENT();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SettingsSlicesContract(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SettingsSlicesContract(QAndroidJniObject obj);
+		SettingsSlicesContract(QJniObject obj);
 		
 		// Constructors
 		

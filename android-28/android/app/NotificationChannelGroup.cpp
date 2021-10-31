@@ -13,8 +13,8 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	NotificationChannelGroup::NotificationChannelGroup(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	NotificationChannelGroup::NotificationChannelGroup(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	NotificationChannelGroup::NotificationChannelGroup(jstring arg0, jstring arg1)

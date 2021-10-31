@@ -4,8 +4,8 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	NegativeArraySizeException::NegativeArraySizeException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	// QJniObject forward
+	NegativeArraySizeException::NegativeArraySizeException(QJniObject obj) : java::lang::RuntimeException(obj) {}
 	
 	// Constructors
 	NegativeArraySizeException::NegativeArraySizeException()

@@ -27,8 +27,8 @@ namespace android::net::wifi::aware
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SubscribeConfig::SubscribeConfig(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SubscribeConfig::SubscribeConfig(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

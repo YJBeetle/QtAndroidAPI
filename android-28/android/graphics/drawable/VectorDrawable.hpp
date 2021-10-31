@@ -43,9 +43,9 @@ namespace android::graphics::drawable
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit VectorDrawable(const char *className, const char *sig, Ts...agv) : android::graphics::drawable::Drawable(className, sig, std::forward<Ts>(agv)...) {}
-		VectorDrawable(QAndroidJniObject obj);
+		VectorDrawable(QJniObject obj);
 		
 		// Constructors
 		VectorDrawable();

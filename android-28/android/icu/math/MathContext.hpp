@@ -22,9 +22,9 @@ namespace android::icu::math
 		static jint ROUND_UP();
 		static jint SCIENTIFIC();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MathContext(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MathContext(QAndroidJniObject obj);
+		MathContext(QJniObject obj);
 		
 		// Constructors
 		MathContext(jint arg0);

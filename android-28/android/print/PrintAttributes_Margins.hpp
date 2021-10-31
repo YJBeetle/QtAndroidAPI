@@ -11,9 +11,9 @@ namespace android::print
 		// Fields
 		static android::print::PrintAttributes_Margins NO_MARGINS();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PrintAttributes_Margins(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PrintAttributes_Margins(QAndroidJniObject obj);
+		PrintAttributes_Margins(QJniObject obj);
 		
 		// Constructors
 		PrintAttributes_Margins(jint arg0, jint arg1, jint arg2, jint arg3);

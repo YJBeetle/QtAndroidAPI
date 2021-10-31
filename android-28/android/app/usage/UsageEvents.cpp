@@ -14,8 +14,8 @@ namespace android::app::usage
 		);
 	}
 	
-	// QAndroidJniObject forward
-	UsageEvents::UsageEvents(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	UsageEvents::UsageEvents(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

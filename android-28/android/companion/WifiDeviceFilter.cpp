@@ -14,8 +14,8 @@ namespace android::companion
 		);
 	}
 	
-	// QAndroidJniObject forward
-	WifiDeviceFilter::WifiDeviceFilter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	WifiDeviceFilter::WifiDeviceFilter(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

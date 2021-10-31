@@ -8,8 +8,8 @@ namespace javax::security::auth
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Subject::Subject(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Subject::Subject(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Subject::Subject()

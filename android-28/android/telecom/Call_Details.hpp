@@ -63,9 +63,9 @@ namespace android::telecom
 		static jint PROPERTY_SELF_MANAGED();
 		static jint PROPERTY_WIFI();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Call_Details(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Call_Details(QAndroidJniObject obj);
+		Call_Details(QJniObject obj);
 		
 		// Constructors
 		

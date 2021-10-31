@@ -12,9 +12,9 @@ namespace android::accounts
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AuthenticatorException(const char *className, const char *sig, Ts...agv) : android::accounts::AccountsException(className, sig, std::forward<Ts>(agv)...) {}
-		AuthenticatorException(QAndroidJniObject obj);
+		AuthenticatorException(QJniObject obj);
 		
 		// Constructors
 		AuthenticatorException();

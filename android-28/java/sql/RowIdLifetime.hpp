@@ -16,9 +16,9 @@ namespace java::sql
 		static java::sql::RowIdLifetime ROWID_VALID_SESSION();
 		static java::sql::RowIdLifetime ROWID_VALID_TRANSACTION();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit RowIdLifetime(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		RowIdLifetime(QAndroidJniObject obj);
+		RowIdLifetime(QJniObject obj);
 		
 		// Constructors
 		

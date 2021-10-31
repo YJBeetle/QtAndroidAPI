@@ -15,9 +15,9 @@ namespace java::nio::file::attribute
 		static java::nio::file::attribute::AclEntryFlag INHERIT_ONLY();
 		static java::nio::file::attribute::AclEntryFlag NO_PROPAGATE_INHERIT();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AclEntryFlag(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		AclEntryFlag(QAndroidJniObject obj);
+		AclEntryFlag(QJniObject obj);
 		
 		// Constructors
 		

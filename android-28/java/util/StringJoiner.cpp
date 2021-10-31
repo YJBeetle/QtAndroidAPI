@@ -4,8 +4,8 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	StringJoiner::StringJoiner(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	StringJoiner::StringJoiner(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	StringJoiner::StringJoiner(jstring arg0)

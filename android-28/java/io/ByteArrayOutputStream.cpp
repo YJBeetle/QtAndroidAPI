@@ -6,8 +6,8 @@ namespace java::io
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ByteArrayOutputStream::ByteArrayOutputStream(QAndroidJniObject obj) : java::io::OutputStream(obj) {}
+	// QJniObject forward
+	ByteArrayOutputStream::ByteArrayOutputStream(QJniObject obj) : java::io::OutputStream(obj) {}
 	
 	// Constructors
 	ByteArrayOutputStream::ByteArrayOutputStream()

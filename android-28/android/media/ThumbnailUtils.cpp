@@ -12,8 +12,8 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ThumbnailUtils::ThumbnailUtils(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ThumbnailUtils::ThumbnailUtils(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ThumbnailUtils::ThumbnailUtils()

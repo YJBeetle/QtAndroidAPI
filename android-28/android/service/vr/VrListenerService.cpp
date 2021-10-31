@@ -15,8 +15,8 @@ namespace android::service::vr
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	VrListenerService::VrListenerService(QAndroidJniObject obj) : android::app::Service(obj) {}
+	// QJniObject forward
+	VrListenerService::VrListenerService(QJniObject obj) : android::app::Service(obj) {}
 	
 	// Constructors
 	VrListenerService::VrListenerService()

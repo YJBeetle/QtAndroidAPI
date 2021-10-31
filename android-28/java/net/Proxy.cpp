@@ -14,8 +14,8 @@ namespace java::net
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Proxy::Proxy(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Proxy::Proxy(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Proxy::Proxy(java::net::Proxy_Type arg0, java::net::SocketAddress arg1)

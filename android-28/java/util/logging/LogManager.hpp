@@ -59,9 +59,9 @@ namespace java::util::logging
 		// Fields
 		static jstring LOGGING_MXBEAN_NAME();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit LogManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		LogManager(QAndroidJniObject obj);
+		LogManager(QJniObject obj);
 		
 		// Constructors
 		

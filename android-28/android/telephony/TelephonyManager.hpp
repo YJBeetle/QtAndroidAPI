@@ -152,9 +152,9 @@ namespace android::telephony
 		static jstring VVM_TYPE_CVVM();
 		static jstring VVM_TYPE_OMTP();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TelephonyManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		TelephonyManager(QAndroidJniObject obj);
+		TelephonyManager(QJniObject obj);
 		
 		// Constructors
 		

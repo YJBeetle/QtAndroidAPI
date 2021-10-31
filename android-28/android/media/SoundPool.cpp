@@ -7,8 +7,8 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SoundPool::SoundPool(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SoundPool::SoundPool(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	SoundPool::SoundPool(jint arg0, jint arg1, jint arg2)

@@ -12,8 +12,8 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaTimestamp::MediaTimestamp(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MediaTimestamp::MediaTimestamp(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

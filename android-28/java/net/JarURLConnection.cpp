@@ -10,8 +10,8 @@ namespace java::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	JarURLConnection::JarURLConnection(QAndroidJniObject obj) : java::net::URLConnection(obj) {}
+	// QJniObject forward
+	JarURLConnection::JarURLConnection(QJniObject obj) : java::net::URLConnection(obj) {}
 	
 	// Constructors
 	

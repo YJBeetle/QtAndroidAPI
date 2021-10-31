@@ -27,9 +27,9 @@ namespace java::nio::channels
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit FileChannel(const char *className, const char *sig, Ts...agv) : java::nio::channels::spi::AbstractInterruptibleChannel(className, sig, std::forward<Ts>(agv)...) {}
-		FileChannel(QAndroidJniObject obj);
+		FileChannel(QJniObject obj);
 		
 		// Constructors
 		

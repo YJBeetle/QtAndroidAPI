@@ -4,8 +4,8 @@ namespace android::webkit
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	GeolocationPermissions::GeolocationPermissions(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	GeolocationPermissions::GeolocationPermissions(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -13,8 +13,8 @@ namespace android::text::method
 		).object<jcharArray>();
 	}
 	
-	// QAndroidJniObject forward
-	DateKeyListener::DateKeyListener(QAndroidJniObject obj) : android::text::method::NumberKeyListener(obj) {}
+	// QJniObject forward
+	DateKeyListener::DateKeyListener(QJniObject obj) : android::text::method::NumberKeyListener(obj) {}
 	
 	// Constructors
 	DateKeyListener::DateKeyListener()

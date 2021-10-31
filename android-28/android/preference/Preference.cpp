@@ -20,8 +20,8 @@ namespace android::preference
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Preference::Preference(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Preference::Preference(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Preference::Preference(android::content::Context arg0)

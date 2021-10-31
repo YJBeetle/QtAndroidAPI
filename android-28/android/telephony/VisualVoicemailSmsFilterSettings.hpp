@@ -24,9 +24,9 @@ namespace android::telephony
 		jint destinationPort();
 		__JniBaseClass originatingNumbers();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit VisualVoicemailSmsFilterSettings(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		VisualVoicemailSmsFilterSettings(QAndroidJniObject obj);
+		VisualVoicemailSmsFilterSettings(QJniObject obj);
 		
 		// Constructors
 		

@@ -15,9 +15,9 @@ namespace android::webkit
 		static android::webkit::WebSettings_LayoutAlgorithm SINGLE_COLUMN();
 		static android::webkit::WebSettings_LayoutAlgorithm TEXT_AUTOSIZING();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WebSettings_LayoutAlgorithm(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		WebSettings_LayoutAlgorithm(QAndroidJniObject obj);
+		WebSettings_LayoutAlgorithm(QJniObject obj);
 		
 		// Constructors
 		

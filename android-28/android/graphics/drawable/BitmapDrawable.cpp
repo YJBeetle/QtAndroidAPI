@@ -19,8 +19,8 @@ namespace android::graphics::drawable
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	BitmapDrawable::BitmapDrawable(QAndroidJniObject obj) : android::graphics::drawable::Drawable(obj) {}
+	// QJniObject forward
+	BitmapDrawable::BitmapDrawable(QJniObject obj) : android::graphics::drawable::Drawable(obj) {}
 	
 	// Constructors
 	BitmapDrawable::BitmapDrawable()

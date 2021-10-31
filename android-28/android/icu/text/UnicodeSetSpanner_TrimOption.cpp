@@ -28,8 +28,8 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	UnicodeSetSpanner_TrimOption::UnicodeSetSpanner_TrimOption(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	UnicodeSetSpanner_TrimOption::UnicodeSetSpanner_TrimOption(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

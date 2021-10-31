@@ -4,8 +4,8 @@ namespace java::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PasswordAuthentication::PasswordAuthentication(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PasswordAuthentication::PasswordAuthentication(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	PasswordAuthentication::PasswordAuthentication(jstring arg0, jcharArray arg1)

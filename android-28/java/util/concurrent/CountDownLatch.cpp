@@ -5,8 +5,8 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CountDownLatch::CountDownLatch(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CountDownLatch::CountDownLatch(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	CountDownLatch::CountDownLatch(jint arg0)

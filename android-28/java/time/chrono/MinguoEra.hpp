@@ -21,9 +21,9 @@ namespace java::time::chrono
 		static java::time::chrono::MinguoEra BEFORE_ROC();
 		static java::time::chrono::MinguoEra ROC();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MinguoEra(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		MinguoEra(QAndroidJniObject obj);
+		MinguoEra(QJniObject obj);
 		
 		// Constructors
 		

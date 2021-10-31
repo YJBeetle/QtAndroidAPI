@@ -11,8 +11,8 @@ namespace android::icu::util
 		).object<jobject>();
 	}
 	
-	// QAndroidJniObject forward
-	Output::Output(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Output::Output(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Output::Output()

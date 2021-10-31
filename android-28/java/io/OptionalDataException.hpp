@@ -15,9 +15,9 @@ namespace java::io
 		jboolean eof();
 		jint length();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit OptionalDataException(const char *className, const char *sig, Ts...agv) : java::io::ObjectStreamException(className, sig, std::forward<Ts>(agv)...) {}
-		OptionalDataException(QAndroidJniObject obj);
+		OptionalDataException(QJniObject obj);
 		
 		// Constructors
 		

@@ -38,8 +38,8 @@ namespace java::sql
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	DriverPropertyInfo::DriverPropertyInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DriverPropertyInfo::DriverPropertyInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	DriverPropertyInfo::DriverPropertyInfo(jstring arg0, jstring arg1)

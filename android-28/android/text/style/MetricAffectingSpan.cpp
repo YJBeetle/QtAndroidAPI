@@ -6,8 +6,8 @@ namespace android::text::style
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MetricAffectingSpan::MetricAffectingSpan(QAndroidJniObject obj) : android::text::style::CharacterStyle(obj) {}
+	// QJniObject forward
+	MetricAffectingSpan::MetricAffectingSpan(QJniObject obj) : android::text::style::CharacterStyle(obj) {}
 	
 	// Constructors
 	MetricAffectingSpan::MetricAffectingSpan()

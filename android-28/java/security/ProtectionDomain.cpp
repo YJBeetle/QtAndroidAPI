@@ -8,8 +8,8 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ProtectionDomain::ProtectionDomain(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ProtectionDomain::ProtectionDomain(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ProtectionDomain::ProtectionDomain(java::security::CodeSource arg0, java::security::PermissionCollection arg1)

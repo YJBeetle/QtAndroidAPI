@@ -61,8 +61,8 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	MediaStore_Audio_Media::MediaStore_Audio_Media(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MediaStore_Audio_Media::MediaStore_Audio_Media(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	MediaStore_Audio_Media::MediaStore_Audio_Media()

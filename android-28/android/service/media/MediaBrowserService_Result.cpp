@@ -5,8 +5,8 @@ namespace android::service::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MediaBrowserService_Result::MediaBrowserService_Result(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MediaBrowserService_Result::MediaBrowserService_Result(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -5,8 +5,8 @@ namespace javax::net::ssl
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SNIHostName::SNIHostName(QAndroidJniObject obj) : javax::net::ssl::SNIServerName(obj) {}
+	// QJniObject forward
+	SNIHostName::SNIHostName(QJniObject obj) : javax::net::ssl::SNIServerName(obj) {}
 	
 	// Constructors
 	SNIHostName::SNIHostName(jbyteArray arg0)

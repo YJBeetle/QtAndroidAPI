@@ -4,8 +4,8 @@ namespace android::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	NetworkSpecifier::NetworkSpecifier(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	NetworkSpecifier::NetworkSpecifier(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

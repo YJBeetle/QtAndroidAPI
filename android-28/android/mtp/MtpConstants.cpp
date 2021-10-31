@@ -697,8 +697,8 @@ namespace android::mtp
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MtpConstants::MtpConstants(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MtpConstants::MtpConstants(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	MtpConstants::MtpConstants()

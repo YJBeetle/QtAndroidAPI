@@ -68,8 +68,8 @@ namespace java::security::cert
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PKIXReason::PKIXReason(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	PKIXReason::PKIXReason(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

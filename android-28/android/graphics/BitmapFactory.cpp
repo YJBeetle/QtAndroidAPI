@@ -11,8 +11,8 @@ namespace android::graphics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	BitmapFactory::BitmapFactory(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	BitmapFactory::BitmapFactory(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	BitmapFactory::BitmapFactory()

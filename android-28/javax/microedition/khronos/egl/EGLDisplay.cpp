@@ -4,8 +4,8 @@ namespace javax::microedition::khronos::egl
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	EGLDisplay::EGLDisplay(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	EGLDisplay::EGLDisplay(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	EGLDisplay::EGLDisplay()

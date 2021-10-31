@@ -8,8 +8,8 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ServerSocketChannel::ServerSocketChannel(QAndroidJniObject obj) : java::nio::channels::spi::AbstractSelectableChannel(obj) {}
+	// QJniObject forward
+	ServerSocketChannel::ServerSocketChannel(QJniObject obj) : java::nio::channels::spi::AbstractSelectableChannel(obj) {}
 	
 	// Constructors
 	

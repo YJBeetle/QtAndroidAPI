@@ -4,8 +4,8 @@ namespace android::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IpSecManager_SpiUnavailableException::IpSecManager_SpiUnavailableException(QAndroidJniObject obj) : android::util::AndroidException(obj) {}
+	// QJniObject forward
+	IpSecManager_SpiUnavailableException::IpSecManager_SpiUnavailableException(QJniObject obj) : android::util::AndroidException(obj) {}
 	
 	// Constructors
 	

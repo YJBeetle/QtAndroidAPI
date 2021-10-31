@@ -6,8 +6,8 @@ namespace android::media::tv
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TvInputService_HardwareSession::TvInputService_HardwareSession(QAndroidJniObject obj) : android::media::tv::TvInputService_Session(obj) {}
+	// QJniObject forward
+	TvInputService_HardwareSession::TvInputService_HardwareSession(QJniObject obj) : android::media::tv::TvInputService_Session(obj) {}
 	
 	// Constructors
 	TvInputService_HardwareSession::TvInputService_HardwareSession(android::content::Context arg0)

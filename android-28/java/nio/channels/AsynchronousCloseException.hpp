@@ -13,9 +13,9 @@ namespace java::nio::channels
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AsynchronousCloseException(const char *className, const char *sig, Ts...agv) : java::nio::channels::ClosedChannelException(className, sig, std::forward<Ts>(agv)...) {}
-		AsynchronousCloseException(QAndroidJniObject obj);
+		AsynchronousCloseException(QJniObject obj);
 		
 		// Constructors
 		AsynchronousCloseException();

@@ -7,8 +7,8 @@ namespace javax::net::ssl
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	KeyManagerFactory::KeyManagerFactory(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	KeyManagerFactory::KeyManagerFactory(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

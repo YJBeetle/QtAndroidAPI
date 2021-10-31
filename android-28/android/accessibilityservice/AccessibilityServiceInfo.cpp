@@ -214,8 +214,8 @@ namespace android::accessibilityservice
 		).object<jarray>();
 	}
 	
-	// QAndroidJniObject forward
-	AccessibilityServiceInfo::AccessibilityServiceInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AccessibilityServiceInfo::AccessibilityServiceInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	AccessibilityServiceInfo::AccessibilityServiceInfo()

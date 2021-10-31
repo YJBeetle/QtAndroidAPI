@@ -9,8 +9,8 @@ namespace java::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ChoiceFormat::ChoiceFormat(QAndroidJniObject obj) : java::text::NumberFormat(obj) {}
+	// QJniObject forward
+	ChoiceFormat::ChoiceFormat(QJniObject obj) : java::text::NumberFormat(obj) {}
 	
 	// Constructors
 	ChoiceFormat::ChoiceFormat(jstring arg0)

@@ -7,8 +7,8 @@ namespace android::view
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ActionMode_Callback2::ActionMode_Callback2(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ActionMode_Callback2::ActionMode_Callback2(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ActionMode_Callback2::ActionMode_Callback2()

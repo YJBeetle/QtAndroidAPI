@@ -5,8 +5,8 @@ namespace android::animation
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RectEvaluator::RectEvaluator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	RectEvaluator::RectEvaluator(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	RectEvaluator::RectEvaluator()

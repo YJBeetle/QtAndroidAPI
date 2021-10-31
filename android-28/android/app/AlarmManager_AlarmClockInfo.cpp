@@ -14,8 +14,8 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AlarmManager_AlarmClockInfo::AlarmManager_AlarmClockInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AlarmManager_AlarmClockInfo::AlarmManager_AlarmClockInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	AlarmManager_AlarmClockInfo::AlarmManager_AlarmClockInfo(jlong arg0, android::app::PendingIntent arg1)

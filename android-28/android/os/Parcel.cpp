@@ -24,8 +24,8 @@ namespace android::os
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Parcel::Parcel(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Parcel::Parcel(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

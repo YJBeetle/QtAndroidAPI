@@ -5,8 +5,8 @@ namespace android::database
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AbstractCursor_SelfContentObserver::AbstractCursor_SelfContentObserver(QAndroidJniObject obj) : android::database::ContentObserver(obj) {}
+	// QJniObject forward
+	AbstractCursor_SelfContentObserver::AbstractCursor_SelfContentObserver(QJniObject obj) : android::database::ContentObserver(obj) {}
 	
 	// Constructors
 	AbstractCursor_SelfContentObserver::AbstractCursor_SelfContentObserver(android::database::AbstractCursor arg0)

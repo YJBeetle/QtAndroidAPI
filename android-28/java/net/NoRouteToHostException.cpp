@@ -4,8 +4,8 @@ namespace java::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	NoRouteToHostException::NoRouteToHostException(QAndroidJniObject obj) : java::net::SocketException(obj) {}
+	// QJniObject forward
+	NoRouteToHostException::NoRouteToHostException(QJniObject obj) : java::net::SocketException(obj) {}
 	
 	// Constructors
 	NoRouteToHostException::NoRouteToHostException()

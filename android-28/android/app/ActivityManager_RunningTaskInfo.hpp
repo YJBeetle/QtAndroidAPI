@@ -30,9 +30,9 @@ namespace android::app
 		android::graphics::Bitmap thumbnail();
 		android::content::ComponentName topActivity();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ActivityManager_RunningTaskInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ActivityManager_RunningTaskInfo(QAndroidJniObject obj);
+		ActivityManager_RunningTaskInfo(QJniObject obj);
 		
 		// Constructors
 		ActivityManager_RunningTaskInfo();

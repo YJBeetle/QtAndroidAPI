@@ -14,8 +14,8 @@ namespace android::app::job
 		);
 	}
 	
-	// QAndroidJniObject forward
-	JobWorkItem::JobWorkItem(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	JobWorkItem::JobWorkItem(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	JobWorkItem::JobWorkItem(android::content::Intent arg0)

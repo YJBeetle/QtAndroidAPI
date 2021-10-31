@@ -12,8 +12,8 @@ namespace java::io
 		);
 	}
 	
-	// QAndroidJniObject forward
-	WriteAbortedException::WriteAbortedException(QAndroidJniObject obj) : java::io::ObjectStreamException(obj) {}
+	// QJniObject forward
+	WriteAbortedException::WriteAbortedException(QJniObject obj) : java::io::ObjectStreamException(obj) {}
 	
 	// Constructors
 	WriteAbortedException::WriteAbortedException(jstring arg0, java::lang::Exception arg1)

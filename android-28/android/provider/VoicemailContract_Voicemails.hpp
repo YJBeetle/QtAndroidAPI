@@ -37,9 +37,9 @@ namespace android::provider
 		static jstring SOURCE_PACKAGE();
 		static jstring TRANSCRIPTION();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit VoicemailContract_Voicemails(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		VoicemailContract_Voicemails(QAndroidJniObject obj);
+		VoicemailContract_Voicemails(QJniObject obj);
 		
 		// Constructors
 		

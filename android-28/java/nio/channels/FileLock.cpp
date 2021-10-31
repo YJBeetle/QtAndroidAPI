@@ -6,8 +6,8 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FileLock::FileLock(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	FileLock::FileLock(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

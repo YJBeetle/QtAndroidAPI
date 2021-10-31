@@ -16,9 +16,9 @@ namespace java::time::temporal
 		static __JniBaseClass WEEK_BASED_YEARS();
 		static __JniBaseClass WEEK_OF_WEEK_BASED_YEAR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit IsoFields(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		IsoFields(QAndroidJniObject obj);
+		IsoFields(QJniObject obj);
 		
 		// Constructors
 		

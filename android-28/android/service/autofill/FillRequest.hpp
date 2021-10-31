@@ -20,9 +20,9 @@ namespace android::service::autofill
 		static __JniBaseClass CREATOR();
 		static jint FLAG_MANUAL_REQUEST();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit FillRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		FillRequest(QAndroidJniObject obj);
+		FillRequest(QJniObject obj);
 		
 		// Constructors
 		

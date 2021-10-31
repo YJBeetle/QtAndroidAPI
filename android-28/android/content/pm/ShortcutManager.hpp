@@ -26,9 +26,9 @@ namespace android::content::pm
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ShortcutManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ShortcutManager(QAndroidJniObject obj);
+		ShortcutManager(QJniObject obj);
 		
 		// Constructors
 		

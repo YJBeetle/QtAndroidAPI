@@ -20,9 +20,9 @@ namespace java::util::logging
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SocketHandler(const char *className, const char *sig, Ts...agv) : java::util::logging::StreamHandler(className, sig, std::forward<Ts>(agv)...) {}
-		SocketHandler(QAndroidJniObject obj);
+		SocketHandler(QJniObject obj);
 		
 		// Constructors
 		SocketHandler();

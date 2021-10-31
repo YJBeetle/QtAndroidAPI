@@ -48,8 +48,8 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DownloadManager_Request::DownloadManager_Request(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DownloadManager_Request::DownloadManager_Request(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	DownloadManager_Request::DownloadManager_Request(android::net::Uri arg0)

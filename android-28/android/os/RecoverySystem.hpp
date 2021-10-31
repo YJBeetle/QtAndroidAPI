@@ -18,9 +18,9 @@ namespace android::os
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit RecoverySystem(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		RecoverySystem(QAndroidJniObject obj);
+		RecoverySystem(QJniObject obj);
 		
 		// Constructors
 		

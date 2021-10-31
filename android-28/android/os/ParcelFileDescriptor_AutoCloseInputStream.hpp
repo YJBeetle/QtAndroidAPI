@@ -16,9 +16,9 @@ namespace android::os
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ParcelFileDescriptor_AutoCloseInputStream(const char *className, const char *sig, Ts...agv) : java::io::FileInputStream(className, sig, std::forward<Ts>(agv)...) {}
-		ParcelFileDescriptor_AutoCloseInputStream(QAndroidJniObject obj);
+		ParcelFileDescriptor_AutoCloseInputStream(QJniObject obj);
 		
 		// Constructors
 		ParcelFileDescriptor_AutoCloseInputStream(android::os::ParcelFileDescriptor arg0);

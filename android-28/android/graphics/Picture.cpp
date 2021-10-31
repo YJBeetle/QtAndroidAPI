@@ -7,8 +7,8 @@ namespace android::graphics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Picture::Picture(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Picture::Picture(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Picture::Picture()

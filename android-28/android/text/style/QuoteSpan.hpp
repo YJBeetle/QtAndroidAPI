@@ -29,9 +29,9 @@ namespace android::text::style
 		static jint STANDARD_GAP_WIDTH_PX();
 		static jint STANDARD_STRIPE_WIDTH_PX();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit QuoteSpan(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		QuoteSpan(QAndroidJniObject obj);
+		QuoteSpan(QJniObject obj);
 		
 		// Constructors
 		QuoteSpan();

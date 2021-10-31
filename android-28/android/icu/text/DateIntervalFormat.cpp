@@ -14,8 +14,8 @@ namespace android::icu::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DateIntervalFormat::DateIntervalFormat(QAndroidJniObject obj) : android::icu::text::UFormat(obj) {}
+	// QJniObject forward
+	DateIntervalFormat::DateIntervalFormat(QJniObject obj) : android::icu::text::UFormat(obj) {}
 	
 	// Constructors
 	

@@ -14,8 +14,8 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AudioPlaybackConfiguration::AudioPlaybackConfiguration(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AudioPlaybackConfiguration::AudioPlaybackConfiguration(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

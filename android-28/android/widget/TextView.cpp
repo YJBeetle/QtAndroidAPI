@@ -52,8 +52,8 @@ namespace android::widget
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TextView::TextView(QAndroidJniObject obj) : android::view::View(obj) {}
+	// QJniObject forward
+	TextView::TextView(QJniObject obj) : android::view::View(obj) {}
 	
 	// Constructors
 	TextView::TextView(android::content::Context arg0)

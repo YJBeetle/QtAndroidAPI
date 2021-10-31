@@ -18,9 +18,9 @@ namespace android::content
 		jstring authority();
 		jboolean isKey();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SyncAdapterType(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SyncAdapterType(QAndroidJniObject obj);
+		SyncAdapterType(QJniObject obj);
 		
 		// Constructors
 		SyncAdapterType(android::os::Parcel arg0);

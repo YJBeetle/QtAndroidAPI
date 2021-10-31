@@ -5,8 +5,8 @@ namespace java::io
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LineNumberReader::LineNumberReader(QAndroidJniObject obj) : java::io::BufferedReader(obj) {}
+	// QJniObject forward
+	LineNumberReader::LineNumberReader(QJniObject obj) : java::io::BufferedReader(obj) {}
 	
 	// Constructors
 	LineNumberReader::LineNumberReader(java::io::Reader arg0)

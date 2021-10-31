@@ -90,9 +90,9 @@ namespace android::view::accessibility
 		static jint MOVEMENT_GRANULARITY_PARAGRAPH();
 		static jint MOVEMENT_GRANULARITY_WORD();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AccessibilityNodeInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AccessibilityNodeInfo(QAndroidJniObject obj);
+		AccessibilityNodeInfo(QJniObject obj);
 		
 		// Constructors
 		

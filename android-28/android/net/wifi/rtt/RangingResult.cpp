@@ -36,8 +36,8 @@ namespace android::net::wifi::rtt
 		);
 	}
 	
-	// QAndroidJniObject forward
-	RangingResult::RangingResult(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	RangingResult::RangingResult(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

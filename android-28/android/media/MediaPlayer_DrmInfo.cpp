@@ -5,8 +5,8 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MediaPlayer_DrmInfo::MediaPlayer_DrmInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MediaPlayer_DrmInfo::MediaPlayer_DrmInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

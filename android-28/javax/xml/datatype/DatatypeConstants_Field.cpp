@@ -4,8 +4,8 @@ namespace javax::xml::datatype
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DatatypeConstants_Field::DatatypeConstants_Field(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DatatypeConstants_Field::DatatypeConstants_Field(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

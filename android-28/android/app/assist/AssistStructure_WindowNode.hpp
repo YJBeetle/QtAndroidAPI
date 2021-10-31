@@ -14,9 +14,9 @@ namespace android::app::assist
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AssistStructure_WindowNode(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AssistStructure_WindowNode(QAndroidJniObject obj);
+		AssistStructure_WindowNode(QJniObject obj);
 		
 		// Constructors
 		

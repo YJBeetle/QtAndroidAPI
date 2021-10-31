@@ -18,9 +18,9 @@ namespace android::app
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Notification_Action_WearableExtender(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Notification_Action_WearableExtender(QAndroidJniObject obj);
+		Notification_Action_WearableExtender(QJniObject obj);
 		
 		// Constructors
 		Notification_Action_WearableExtender();

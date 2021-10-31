@@ -30,9 +30,9 @@ namespace android::icu::text
 		static jstring KEYWORD_ZERO();
 		static jdouble NO_UNIQUE_VALUE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PluralRules(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PluralRules(QAndroidJniObject obj);
+		PluralRules(QJniObject obj);
 		
 		// Constructors
 		

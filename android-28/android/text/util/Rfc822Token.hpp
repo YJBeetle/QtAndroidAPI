@@ -10,9 +10,9 @@ namespace android::text::util
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Rfc822Token(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Rfc822Token(QAndroidJniObject obj);
+		Rfc822Token(QJniObject obj);
 		
 		// Constructors
 		Rfc822Token(jstring arg0, jstring arg1, jstring arg2);

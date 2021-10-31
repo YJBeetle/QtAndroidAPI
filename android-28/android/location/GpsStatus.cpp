@@ -32,8 +32,8 @@ namespace android::location
 		);
 	}
 	
-	// QAndroidJniObject forward
-	GpsStatus::GpsStatus(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	GpsStatus::GpsStatus(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -20,8 +20,8 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PluralRules_PluralType::PluralRules_PluralType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	PluralRules_PluralType::PluralRules_PluralType(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

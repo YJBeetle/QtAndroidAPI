@@ -20,9 +20,9 @@ namespace java::util::zip
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DeflaterInputStream(const char *className, const char *sig, Ts...agv) : java::io::FilterInputStream(className, sig, std::forward<Ts>(agv)...) {}
-		DeflaterInputStream(QAndroidJniObject obj);
+		DeflaterInputStream(QJniObject obj);
 		
 		// Constructors
 		DeflaterInputStream(java::io::InputStream arg0);

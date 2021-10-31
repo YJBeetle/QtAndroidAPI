@@ -4,8 +4,8 @@ namespace android::content
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IntentFilter_MalformedMimeTypeException::IntentFilter_MalformedMimeTypeException(QAndroidJniObject obj) : android::util::AndroidException(obj) {}
+	// QJniObject forward
+	IntentFilter_MalformedMimeTypeException::IntentFilter_MalformedMimeTypeException(QJniObject obj) : android::util::AndroidException(obj) {}
 	
 	// Constructors
 	IntentFilter_MalformedMimeTypeException::IntentFilter_MalformedMimeTypeException()

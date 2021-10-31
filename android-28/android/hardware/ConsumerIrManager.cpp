@@ -4,8 +4,8 @@ namespace android::hardware
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ConsumerIrManager::ConsumerIrManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ConsumerIrManager::ConsumerIrManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

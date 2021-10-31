@@ -10,8 +10,8 @@ namespace android::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MutableFloat::MutableFloat(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MutableFloat::MutableFloat(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	MutableFloat::MutableFloat(jfloat arg0)

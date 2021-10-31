@@ -14,9 +14,9 @@ namespace android::companion
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CompanionDeviceManager_Callback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CompanionDeviceManager_Callback(QAndroidJniObject obj);
+		CompanionDeviceManager_Callback(QJniObject obj);
 		
 		// Constructors
 		CompanionDeviceManager_Callback();

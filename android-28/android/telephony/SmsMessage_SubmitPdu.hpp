@@ -12,9 +12,9 @@ namespace android::telephony
 		jbyteArray encodedMessage();
 		jbyteArray encodedScAddress();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SmsMessage_SubmitPdu(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SmsMessage_SubmitPdu(QAndroidJniObject obj);
+		SmsMessage_SubmitPdu(QJniObject obj);
 		
 		// Constructors
 		

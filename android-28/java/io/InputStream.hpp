@@ -14,9 +14,9 @@ namespace java::io
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit InputStream(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		InputStream(QAndroidJniObject obj);
+		InputStream(QJniObject obj);
 		
 		// Constructors
 		InputStream();

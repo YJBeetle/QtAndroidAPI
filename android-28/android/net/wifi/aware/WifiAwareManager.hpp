@@ -29,9 +29,9 @@ namespace android::net::wifi::aware
 		static jint WIFI_AWARE_DATA_PATH_ROLE_INITIATOR();
 		static jint WIFI_AWARE_DATA_PATH_ROLE_RESPONDER();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WifiAwareManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		WifiAwareManager(QAndroidJniObject obj);
+		WifiAwareManager(QJniObject obj);
 		
 		// Constructors
 		

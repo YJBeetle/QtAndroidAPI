@@ -8,8 +8,8 @@ namespace android::graphics::drawable
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	StateListDrawable::StateListDrawable(QAndroidJniObject obj) : android::graphics::drawable::DrawableContainer(obj) {}
+	// QJniObject forward
+	StateListDrawable::StateListDrawable(QJniObject obj) : android::graphics::drawable::DrawableContainer(obj) {}
 	
 	// Constructors
 	StateListDrawable::StateListDrawable()

@@ -18,8 +18,8 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaSyncEvent::MediaSyncEvent(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MediaSyncEvent::MediaSyncEvent(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

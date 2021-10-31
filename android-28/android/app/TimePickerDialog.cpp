@@ -7,8 +7,8 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TimePickerDialog::TimePickerDialog(QAndroidJniObject obj) : android::app::AlertDialog(obj) {}
+	// QJniObject forward
+	TimePickerDialog::TimePickerDialog(QJniObject obj) : android::app::AlertDialog(obj) {}
 	
 	// Constructors
 	TimePickerDialog::TimePickerDialog(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3, jboolean arg4)

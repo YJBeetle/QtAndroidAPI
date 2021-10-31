@@ -24,9 +24,9 @@ namespace android::widget
 		// Fields
 		static jstring DEFAULT_SHARE_HISTORY_FILE_NAME();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ShareActionProvider(const char *className, const char *sig, Ts...agv) : android::view::ActionProvider(className, sig, std::forward<Ts>(agv)...) {}
-		ShareActionProvider(QAndroidJniObject obj);
+		ShareActionProvider(QJniObject obj);
 		
 		// Constructors
 		ShareActionProvider(android::content::Context arg0);

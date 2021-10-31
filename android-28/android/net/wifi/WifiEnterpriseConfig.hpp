@@ -19,9 +19,9 @@ namespace android::net::wifi
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WifiEnterpriseConfig(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		WifiEnterpriseConfig(QAndroidJniObject obj);
+		WifiEnterpriseConfig(QJniObject obj);
 		
 		// Constructors
 		WifiEnterpriseConfig();

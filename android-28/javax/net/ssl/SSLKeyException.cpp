@@ -4,8 +4,8 @@ namespace javax::net::ssl
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SSLKeyException::SSLKeyException(QAndroidJniObject obj) : javax::net::ssl::SSLException(obj) {}
+	// QJniObject forward
+	SSLKeyException::SSLKeyException(QJniObject obj) : javax::net::ssl::SSLException(obj) {}
 	
 	// Constructors
 	SSLKeyException::SSLKeyException(jstring arg0)

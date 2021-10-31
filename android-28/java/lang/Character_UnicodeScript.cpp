@@ -1261,8 +1261,8 @@ namespace java::lang
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Character_UnicodeScript::Character_UnicodeScript(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	Character_UnicodeScript::Character_UnicodeScript(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

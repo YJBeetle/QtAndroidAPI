@@ -4,8 +4,8 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	KeyguardManager_KeyguardDismissCallback::KeyguardManager_KeyguardDismissCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	KeyguardManager_KeyguardDismissCallback::KeyguardManager_KeyguardDismissCallback(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	KeyguardManager_KeyguardDismissCallback::KeyguardManager_KeyguardDismissCallback()

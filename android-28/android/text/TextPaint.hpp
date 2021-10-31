@@ -20,9 +20,9 @@ namespace android::text
 		jintArray drawableState();
 		jint linkColor();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TextPaint(const char *className, const char *sig, Ts...agv) : android::graphics::Paint(className, sig, std::forward<Ts>(agv)...) {}
-		TextPaint(QAndroidJniObject obj);
+		TextPaint(QJniObject obj);
 		
 		// Constructors
 		TextPaint();

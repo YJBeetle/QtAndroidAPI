@@ -22,8 +22,8 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	Telephony_Sms::Telephony_Sms(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Telephony_Sms::Telephony_Sms(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

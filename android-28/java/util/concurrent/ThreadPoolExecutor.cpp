@@ -10,8 +10,8 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ThreadPoolExecutor::ThreadPoolExecutor(QAndroidJniObject obj) : java::util::concurrent::AbstractExecutorService(obj) {}
+	// QJniObject forward
+	ThreadPoolExecutor::ThreadPoolExecutor(QJniObject obj) : java::util::concurrent::AbstractExecutorService(obj) {}
 	
 	// Constructors
 	ThreadPoolExecutor::ThreadPoolExecutor(jint arg0, jint arg1, jlong arg2, java::util::concurrent::TimeUnit arg3, __JniBaseClass arg4)

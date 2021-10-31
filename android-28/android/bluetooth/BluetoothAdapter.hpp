@@ -62,9 +62,9 @@ namespace android::bluetooth
 		static jint STATE_TURNING_OFF();
 		static jint STATE_TURNING_ON();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit BluetoothAdapter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		BluetoothAdapter(QAndroidJniObject obj);
+		BluetoothAdapter(QJniObject obj);
 		
 		// Constructors
 		

@@ -30,8 +30,8 @@ namespace android::net::wifi::aware
 		);
 	}
 	
-	// QAndroidJniObject forward
-	WifiAwareManager::WifiAwareManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	WifiAwareManager::WifiAwareManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

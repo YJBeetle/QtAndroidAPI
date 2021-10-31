@@ -4,8 +4,8 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LinkedHashSet::LinkedHashSet(QAndroidJniObject obj) : java::util::HashSet(obj) {}
+	// QJniObject forward
+	LinkedHashSet::LinkedHashSet(QJniObject obj) : java::util::HashSet(obj) {}
 	
 	// Constructors
 	LinkedHashSet::LinkedHashSet()

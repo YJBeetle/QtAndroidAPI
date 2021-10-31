@@ -37,9 +37,9 @@ namespace android::widget
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DatePicker(const char *className, const char *sig, Ts...agv) : android::widget::FrameLayout(className, sig, std::forward<Ts>(agv)...) {}
-		DatePicker(QAndroidJniObject obj);
+		DatePicker(QJniObject obj);
 		
 		// Constructors
 		DatePicker(android::content::Context arg0);

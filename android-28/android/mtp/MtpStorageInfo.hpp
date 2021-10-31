@@ -10,9 +10,9 @@ namespace android::mtp
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MtpStorageInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MtpStorageInfo(QAndroidJniObject obj);
+		MtpStorageInfo(QJniObject obj);
 		
 		// Constructors
 		

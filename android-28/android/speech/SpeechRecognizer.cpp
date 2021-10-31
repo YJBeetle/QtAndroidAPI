@@ -86,8 +86,8 @@ namespace android::speech
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	SpeechRecognizer::SpeechRecognizer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SpeechRecognizer::SpeechRecognizer(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

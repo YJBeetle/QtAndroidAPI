@@ -39,8 +39,8 @@ namespace android::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Config::Config(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Config::Config(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

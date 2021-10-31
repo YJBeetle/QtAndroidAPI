@@ -10,9 +10,9 @@ namespace java::security::spec
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ECGenParameterSpec(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ECGenParameterSpec(QAndroidJniObject obj);
+		ECGenParameterSpec(QJniObject obj);
 		
 		// Constructors
 		ECGenParameterSpec(jstring arg0);

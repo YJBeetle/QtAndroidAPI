@@ -15,9 +15,9 @@ namespace android::app
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit NotificationChannelGroup(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		NotificationChannelGroup(QAndroidJniObject obj);
+		NotificationChannelGroup(QJniObject obj);
 		
 		// Constructors
 		NotificationChannelGroup(jstring arg0, jstring arg1);

@@ -15,9 +15,9 @@ namespace android::media
 		static jint STATUS_PENDING();
 		static jint STATUS_USABLE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaDrm_KeyStatus(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaDrm_KeyStatus(QAndroidJniObject obj);
+		MediaDrm_KeyStatus(QJniObject obj);
 		
 		// Constructors
 		

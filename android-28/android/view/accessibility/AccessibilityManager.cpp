@@ -7,8 +7,8 @@ namespace android::view::accessibility
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AccessibilityManager::AccessibilityManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AccessibilityManager::AccessibilityManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

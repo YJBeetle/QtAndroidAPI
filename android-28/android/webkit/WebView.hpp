@@ -147,9 +147,9 @@ namespace android::webkit
 		static jstring SCHEME_MAILTO();
 		static jstring SCHEME_TEL();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WebView(const char *className, const char *sig, Ts...agv) : android::widget::AbsoluteLayout(className, sig, std::forward<Ts>(agv)...) {}
-		WebView(QAndroidJniObject obj);
+		WebView(QJniObject obj);
 		
 		// Constructors
 		WebView(android::content::Context arg0);

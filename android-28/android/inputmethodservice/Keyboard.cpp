@@ -78,8 +78,8 @@ namespace android::inputmethodservice
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Keyboard::Keyboard(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Keyboard::Keyboard(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Keyboard::Keyboard(android::content::Context arg0, jint arg1)

@@ -10,9 +10,9 @@ namespace android::media::tv
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TvView_TimeShiftPositionCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		TvView_TimeShiftPositionCallback(QAndroidJniObject obj);
+		TvView_TimeShiftPositionCallback(QJniObject obj);
 		
 		// Constructors
 		TvView_TimeShiftPositionCallback();

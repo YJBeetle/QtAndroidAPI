@@ -15,9 +15,9 @@ namespace android::media
 		static jint ERROR_INSUFFICIENT_RESOURCE();
 		static jint ERROR_RECLAIMED();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaCodec_CodecException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalStateException(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCodec_CodecException(QAndroidJniObject obj);
+		MediaCodec_CodecException(QJniObject obj);
 		
 		// Constructors
 		

@@ -5,8 +5,8 @@ namespace java::lang::ref
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PhantomReference::PhantomReference(QAndroidJniObject obj) : java::lang::ref::Reference(obj) {}
+	// QJniObject forward
+	PhantomReference::PhantomReference(QJniObject obj) : java::lang::ref::Reference(obj) {}
 	
 	// Constructors
 	PhantomReference::PhantomReference(jobject arg0, java::lang::ref::ReferenceQueue arg1)

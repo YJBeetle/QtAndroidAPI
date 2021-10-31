@@ -11,9 +11,9 @@ namespace android::text::method
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SingleLineTransformationMethod(const char *className, const char *sig, Ts...agv) : android::text::method::ReplacementTransformationMethod(className, sig, std::forward<Ts>(agv)...) {}
-		SingleLineTransformationMethod(QAndroidJniObject obj);
+		SingleLineTransformationMethod(QJniObject obj);
 		
 		// Constructors
 		SingleLineTransformationMethod();

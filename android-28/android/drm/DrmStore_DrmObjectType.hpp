@@ -14,9 +14,9 @@ namespace android::drm
 		static jint TRIGGER_OBJECT();
 		static jint UNKNOWN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DrmStore_DrmObjectType(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DrmStore_DrmObjectType(QAndroidJniObject obj);
+		DrmStore_DrmObjectType(QJniObject obj);
 		
 		// Constructors
 		DrmStore_DrmObjectType();

@@ -36,8 +36,8 @@ namespace java::time::format
 		);
 	}
 	
-	// QAndroidJniObject forward
-	FormatStyle::FormatStyle(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	FormatStyle::FormatStyle(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

@@ -10,9 +10,9 @@ namespace android::graphics::fonts
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit FontVariationAxis(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		FontVariationAxis(QAndroidJniObject obj);
+		FontVariationAxis(QJniObject obj);
 		
 		// Constructors
 		FontVariationAxis(jstring arg0, jfloat arg1);

@@ -6,8 +6,8 @@ namespace android::os
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PowerManager_WakeLock::PowerManager_WakeLock(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PowerManager_WakeLock::PowerManager_WakeLock(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -811,8 +811,8 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	Settings_System::Settings_System(QAndroidJniObject obj) : android::provider::Settings_NameValueTable(obj) {}
+	// QJniObject forward
+	Settings_System::Settings_System(QJniObject obj) : android::provider::Settings_NameValueTable(obj) {}
 	
 	// Constructors
 	Settings_System::Settings_System()

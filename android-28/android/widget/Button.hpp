@@ -24,9 +24,9 @@ namespace android::widget
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Button(const char *className, const char *sig, Ts...agv) : android::widget::TextView(className, sig, std::forward<Ts>(agv)...) {}
-		Button(QAndroidJniObject obj);
+		Button(QJniObject obj);
 		
 		// Constructors
 		Button(android::content::Context arg0);

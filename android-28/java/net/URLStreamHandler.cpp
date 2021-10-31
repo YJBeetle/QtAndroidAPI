@@ -8,8 +8,8 @@ namespace java::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	URLStreamHandler::URLStreamHandler(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	URLStreamHandler::URLStreamHandler(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	URLStreamHandler::URLStreamHandler()

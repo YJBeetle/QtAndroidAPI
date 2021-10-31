@@ -73,9 +73,9 @@ namespace android::os::health
 		static jint TIMER_VIDEO();
 		static jint TIMER_WIFI_SCAN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit UidHealthStats(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		UidHealthStats(QAndroidJniObject obj);
+		UidHealthStats(QJniObject obj);
 		
 		// Constructors
 		

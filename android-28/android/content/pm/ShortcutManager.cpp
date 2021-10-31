@@ -8,8 +8,8 @@ namespace android::content::pm
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ShortcutManager::ShortcutManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ShortcutManager::ShortcutManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

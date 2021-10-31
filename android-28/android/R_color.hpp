@@ -38,9 +38,9 @@ namespace android
 		static jint white();
 		static jint widget_edittext_dark();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit R_color(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		R_color(QAndroidJniObject obj);
+		R_color(QJniObject obj);
 		
 		// Constructors
 		R_color();

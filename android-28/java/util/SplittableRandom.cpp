@@ -5,8 +5,8 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SplittableRandom::SplittableRandom(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SplittableRandom::SplittableRandom(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	SplittableRandom::SplittableRandom()

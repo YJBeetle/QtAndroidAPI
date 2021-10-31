@@ -15,8 +15,8 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Scanner::Scanner(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Scanner::Scanner(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Scanner::Scanner(java::io::File arg0)

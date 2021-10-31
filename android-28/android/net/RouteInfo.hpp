@@ -23,9 +23,9 @@ namespace android::net
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit RouteInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		RouteInfo(QAndroidJniObject obj);
+		RouteInfo(QJniObject obj);
 		
 		// Constructors
 		

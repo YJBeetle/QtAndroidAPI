@@ -9,8 +9,8 @@ namespace android::graphics::drawable
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ScaleDrawable::ScaleDrawable(QAndroidJniObject obj) : android::graphics::drawable::DrawableWrapper(obj) {}
+	// QJniObject forward
+	ScaleDrawable::ScaleDrawable(QJniObject obj) : android::graphics::drawable::DrawableWrapper(obj) {}
 	
 	// Constructors
 	ScaleDrawable::ScaleDrawable(android::graphics::drawable::Drawable arg0, jint arg1, jfloat arg2, jfloat arg3)

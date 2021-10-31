@@ -5,8 +5,8 @@ namespace android::webkit
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	WebView_WebViewTransport::WebView_WebViewTransport(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	WebView_WebViewTransport::WebView_WebViewTransport(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	WebView_WebViewTransport::WebView_WebViewTransport(android::webkit::WebView arg0)

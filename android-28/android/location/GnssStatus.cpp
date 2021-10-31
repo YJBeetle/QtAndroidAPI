@@ -53,8 +53,8 @@ namespace android::location
 		);
 	}
 	
-	// QAndroidJniObject forward
-	GnssStatus::GnssStatus(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	GnssStatus::GnssStatus(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

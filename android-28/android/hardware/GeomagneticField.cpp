@@ -4,8 +4,8 @@ namespace android::hardware
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	GeomagneticField::GeomagneticField(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	GeomagneticField::GeomagneticField(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	GeomagneticField::GeomagneticField(jfloat arg0, jfloat arg1, jfloat arg2, jlong arg3)

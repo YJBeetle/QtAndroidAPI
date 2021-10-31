@@ -10,8 +10,8 @@ namespace android::content
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AsyncQueryHandler::AsyncQueryHandler(QAndroidJniObject obj) : android::os::Handler(obj) {}
+	// QJniObject forward
+	AsyncQueryHandler::AsyncQueryHandler(QJniObject obj) : android::os::Handler(obj) {}
 	
 	// Constructors
 	AsyncQueryHandler::AsyncQueryHandler(android::content::ContentResolver arg0)

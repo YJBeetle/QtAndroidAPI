@@ -27,9 +27,9 @@ namespace android::text::style
 		// Fields
 		static jint STANDARD_GAP_WIDTH();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit BulletSpan(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		BulletSpan(QAndroidJniObject obj);
+		BulletSpan(QJniObject obj);
 		
 		// Constructors
 		BulletSpan();

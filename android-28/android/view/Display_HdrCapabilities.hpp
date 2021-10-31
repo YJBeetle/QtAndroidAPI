@@ -19,9 +19,9 @@ namespace android::view
 		static jint HDR_TYPE_HLG();
 		static jfloat INVALID_LUMINANCE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Display_HdrCapabilities(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Display_HdrCapabilities(QAndroidJniObject obj);
+		Display_HdrCapabilities(QJniObject obj);
 		
 		// Constructors
 		

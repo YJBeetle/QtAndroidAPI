@@ -7,8 +7,8 @@ namespace android::database::sqlite
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SQLiteQueryBuilder::SQLiteQueryBuilder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SQLiteQueryBuilder::SQLiteQueryBuilder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	SQLiteQueryBuilder::SQLiteQueryBuilder()

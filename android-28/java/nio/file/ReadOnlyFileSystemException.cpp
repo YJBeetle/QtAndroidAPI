@@ -4,8 +4,8 @@ namespace java::nio::file
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ReadOnlyFileSystemException::ReadOnlyFileSystemException(QAndroidJniObject obj) : java::lang::UnsupportedOperationException(obj) {}
+	// QJniObject forward
+	ReadOnlyFileSystemException::ReadOnlyFileSystemException(QJniObject obj) : java::lang::UnsupportedOperationException(obj) {}
 	
 	// Constructors
 	ReadOnlyFileSystemException::ReadOnlyFileSystemException()

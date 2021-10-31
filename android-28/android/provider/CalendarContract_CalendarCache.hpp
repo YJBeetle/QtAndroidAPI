@@ -20,9 +20,9 @@ namespace android::provider
 		static jstring TIMEZONE_TYPE_HOME();
 		static android::net::Uri URI();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CalendarContract_CalendarCache(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CalendarContract_CalendarCache(QAndroidJniObject obj);
+		CalendarContract_CalendarCache(QJniObject obj);
 		
 		// Constructors
 		

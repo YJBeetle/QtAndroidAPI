@@ -4,8 +4,8 @@ namespace java::nio::charset
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CharacterCodingException::CharacterCodingException(QAndroidJniObject obj) : java::io::IOException(obj) {}
+	// QJniObject forward
+	CharacterCodingException::CharacterCodingException(QJniObject obj) : java::io::IOException(obj) {}
 	
 	// Constructors
 	CharacterCodingException::CharacterCodingException()

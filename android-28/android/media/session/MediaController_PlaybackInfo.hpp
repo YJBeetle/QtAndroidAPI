@@ -16,9 +16,9 @@ namespace android::media::session
 		static jint PLAYBACK_TYPE_LOCAL();
 		static jint PLAYBACK_TYPE_REMOTE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaController_PlaybackInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaController_PlaybackInfo(QAndroidJniObject obj);
+		MediaController_PlaybackInfo(QJniObject obj);
 		
 		// Constructors
 		

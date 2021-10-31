@@ -13,8 +13,8 @@ namespace android::service::carrier
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CarrierIdentifier::CarrierIdentifier(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CarrierIdentifier::CarrierIdentifier(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	CarrierIdentifier::CarrierIdentifier(jbyteArray arg0, jstring arg1, jstring arg2)

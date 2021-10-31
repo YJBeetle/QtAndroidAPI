@@ -4,8 +4,8 @@ namespace java::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Annotation::Annotation(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Annotation::Annotation(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Annotation::Annotation(jobject arg0)

@@ -41,8 +41,8 @@ namespace android::opengl
 		);
 	}
 	
-	// QAndroidJniObject forward
-	EGLExt::EGLExt(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	EGLExt::EGLExt(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	EGLExt::EGLExt()

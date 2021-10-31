@@ -82,8 +82,8 @@ namespace java::util::zip
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Deflater::Deflater(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Deflater::Deflater(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Deflater::Deflater()

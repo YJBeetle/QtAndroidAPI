@@ -31,9 +31,9 @@ namespace android::widget
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ProgressBar(const char *className, const char *sig, Ts...agv) : android::view::View(className, sig, std::forward<Ts>(agv)...) {}
-		ProgressBar(QAndroidJniObject obj);
+		ProgressBar(QJniObject obj);
 		
 		// Constructors
 		ProgressBar(android::content::Context arg0);

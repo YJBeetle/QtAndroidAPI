@@ -35,9 +35,9 @@ namespace android::content
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AsyncQueryHandler(const char *className, const char *sig, Ts...agv) : android::os::Handler(className, sig, std::forward<Ts>(agv)...) {}
-		AsyncQueryHandler(QAndroidJniObject obj);
+		AsyncQueryHandler(QJniObject obj);
 		
 		// Constructors
 		AsyncQueryHandler(android::content::ContentResolver arg0);

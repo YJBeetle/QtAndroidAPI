@@ -8,8 +8,8 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	UnresolvedPermission::UnresolvedPermission(QAndroidJniObject obj) : java::security::Permission(obj) {}
+	// QJniObject forward
+	UnresolvedPermission::UnresolvedPermission(QJniObject obj) : java::security::Permission(obj) {}
 	
 	// Constructors
 	UnresolvedPermission::UnresolvedPermission(jstring arg0, jstring arg1, jstring arg2, jarray arg3)

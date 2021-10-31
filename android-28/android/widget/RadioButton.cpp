@@ -5,8 +5,8 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RadioButton::RadioButton(QAndroidJniObject obj) : android::widget::CompoundButton(obj) {}
+	// QJniObject forward
+	RadioButton::RadioButton(QJniObject obj) : android::widget::CompoundButton(obj) {}
 	
 	// Constructors
 	RadioButton::RadioButton(android::content::Context arg0)

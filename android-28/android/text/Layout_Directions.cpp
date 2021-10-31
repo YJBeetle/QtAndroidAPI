@@ -4,8 +4,8 @@ namespace android::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Layout_Directions::Layout_Directions(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Layout_Directions::Layout_Directions(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

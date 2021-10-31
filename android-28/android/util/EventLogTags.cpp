@@ -6,8 +6,8 @@ namespace android::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	EventLogTags::EventLogTags(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	EventLogTags::EventLogTags(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	EventLogTags::EventLogTags()

@@ -30,8 +30,8 @@ namespace android::view::animation
 		);
 	}
 	
-	// QAndroidJniObject forward
-	LayoutAnimationController::LayoutAnimationController(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	LayoutAnimationController::LayoutAnimationController(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	LayoutAnimationController::LayoutAnimationController(android::view::animation::Animation arg0)

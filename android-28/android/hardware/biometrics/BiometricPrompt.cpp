@@ -126,8 +126,8 @@ namespace android::hardware::biometrics
 		);
 	}
 	
-	// QAndroidJniObject forward
-	BiometricPrompt::BiometricPrompt(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	BiometricPrompt::BiometricPrompt(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

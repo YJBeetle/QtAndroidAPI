@@ -162,9 +162,9 @@ namespace android::telephony
 		static jstring KEY_VVM_TYPE_STRING();
 		static jstring KEY_WORLD_PHONE_BOOL();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CarrierConfigManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CarrierConfigManager(QAndroidJniObject obj);
+		CarrierConfigManager(QJniObject obj);
 		
 		// Constructors
 		

@@ -4,8 +4,8 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	EventObject::EventObject(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	EventObject::EventObject(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	EventObject::EventObject(jobject arg0)

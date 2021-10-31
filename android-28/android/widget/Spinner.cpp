@@ -23,8 +23,8 @@ namespace android::widget
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Spinner::Spinner(QAndroidJniObject obj) : android::widget::AbsSpinner(obj) {}
+	// QJniObject forward
+	Spinner::Spinner(QJniObject obj) : android::widget::AbsSpinner(obj) {}
 	
 	// Constructors
 	Spinner::Spinner(android::content::Context arg0)

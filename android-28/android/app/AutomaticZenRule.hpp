@@ -23,9 +23,9 @@ namespace android::app
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AutomaticZenRule(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AutomaticZenRule(QAndroidJniObject obj);
+		AutomaticZenRule(QJniObject obj);
 		
 		// Constructors
 		AutomaticZenRule(android::os::Parcel arg0);

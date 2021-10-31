@@ -9,8 +9,8 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AsynchronousSocketChannel::AsynchronousSocketChannel(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AsynchronousSocketChannel::AsynchronousSocketChannel(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

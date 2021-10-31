@@ -4,8 +4,8 @@ namespace android::graphics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PorterDuff::PorterDuff(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PorterDuff::PorterDuff(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	PorterDuff::PorterDuff()

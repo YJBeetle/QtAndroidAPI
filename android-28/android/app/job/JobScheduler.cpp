@@ -20,8 +20,8 @@ namespace android::app::job
 		);
 	}
 	
-	// QAndroidJniObject forward
-	JobScheduler::JobScheduler(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	JobScheduler::JobScheduler(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	JobScheduler::JobScheduler()

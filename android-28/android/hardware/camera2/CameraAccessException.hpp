@@ -17,9 +17,9 @@ namespace android::hardware::camera2
 		static jint CAMERA_IN_USE();
 		static jint MAX_CAMERAS_IN_USE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CameraAccessException(const char *className, const char *sig, Ts...agv) : android::util::AndroidException(className, sig, std::forward<Ts>(agv)...) {}
-		CameraAccessException(QAndroidJniObject obj);
+		CameraAccessException(QJniObject obj);
 		
 		// Constructors
 		CameraAccessException(jint arg0);

@@ -4,8 +4,8 @@ namespace java::io
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FileNotFoundException::FileNotFoundException(QAndroidJniObject obj) : java::io::IOException(obj) {}
+	// QJniObject forward
+	FileNotFoundException::FileNotFoundException(QJniObject obj) : java::io::IOException(obj) {}
 	
 	// Constructors
 	FileNotFoundException::FileNotFoundException()

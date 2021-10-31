@@ -7,8 +7,8 @@ namespace android::service::autofill
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CharSequenceTransformation_Builder::CharSequenceTransformation_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CharSequenceTransformation_Builder::CharSequenceTransformation_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	CharSequenceTransformation_Builder::CharSequenceTransformation_Builder(android::view::autofill::AutofillId arg0, java::util::regex::Pattern arg1, jstring arg2)

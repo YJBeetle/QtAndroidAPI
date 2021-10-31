@@ -30,9 +30,9 @@ namespace android::telephony::mbms
 		static jint STATE_STOPPED();
 		static jint UNICAST_METHOD();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit StreamingService(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		StreamingService(QAndroidJniObject obj);
+		StreamingService(QJniObject obj);
 		
 		// Constructors
 		

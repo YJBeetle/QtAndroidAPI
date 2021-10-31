@@ -37,9 +37,9 @@ namespace android::app
 		android::app::ActivityManager_TaskDescription taskDescription();
 		android::content::ComponentName topActivity();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ActivityManager_RecentTaskInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ActivityManager_RecentTaskInfo(QAndroidJniObject obj);
+		ActivityManager_RecentTaskInfo(QJniObject obj);
 		
 		// Constructors
 		ActivityManager_RecentTaskInfo();

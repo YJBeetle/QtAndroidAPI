@@ -50,8 +50,8 @@ namespace android::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SearchRecentSuggestions::SearchRecentSuggestions(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SearchRecentSuggestions::SearchRecentSuggestions(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	SearchRecentSuggestions::SearchRecentSuggestions(android::content::Context arg0, jstring arg1, jint arg2)

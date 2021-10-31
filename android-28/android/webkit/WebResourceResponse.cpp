@@ -5,8 +5,8 @@ namespace android::webkit
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	WebResourceResponse::WebResourceResponse(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	WebResourceResponse::WebResourceResponse(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	WebResourceResponse::WebResourceResponse(jstring arg0, jstring arg1, java::io::InputStream arg2)

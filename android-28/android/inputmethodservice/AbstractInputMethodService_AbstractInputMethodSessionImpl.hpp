@@ -22,9 +22,9 @@ namespace android::inputmethodservice
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AbstractInputMethodService_AbstractInputMethodSessionImpl(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AbstractInputMethodService_AbstractInputMethodSessionImpl(QAndroidJniObject obj);
+		AbstractInputMethodService_AbstractInputMethodSessionImpl(QJniObject obj);
 		
 		// Constructors
 		AbstractInputMethodService_AbstractInputMethodSessionImpl(android::inputmethodservice::AbstractInputMethodService arg0);

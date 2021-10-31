@@ -13,9 +13,9 @@ namespace java::net
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PortUnreachableException(const char *className, const char *sig, Ts...agv) : java::net::SocketException(className, sig, std::forward<Ts>(agv)...) {}
-		PortUnreachableException(QAndroidJniObject obj);
+		PortUnreachableException(QJniObject obj);
 		
 		// Constructors
 		PortUnreachableException();

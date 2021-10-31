@@ -10,9 +10,9 @@ namespace android::provider
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ContactsContract_CommonDataKinds(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_CommonDataKinds(QAndroidJniObject obj);
+		ContactsContract_CommonDataKinds(QJniObject obj);
 		
 		// Constructors
 		

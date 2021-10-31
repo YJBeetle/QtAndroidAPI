@@ -19,9 +19,9 @@ namespace java::util
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PropertyResourceBundle(const char *className, const char *sig, Ts...agv) : java::util::ResourceBundle(className, sig, std::forward<Ts>(agv)...) {}
-		PropertyResourceBundle(QAndroidJniObject obj);
+		PropertyResourceBundle(QJniObject obj);
 		
 		// Constructors
 		PropertyResourceBundle(java::io::InputStream arg0);

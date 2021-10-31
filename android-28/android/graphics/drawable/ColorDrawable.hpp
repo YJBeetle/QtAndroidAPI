@@ -47,9 +47,9 @@ namespace android::graphics::drawable
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ColorDrawable(const char *className, const char *sig, Ts...agv) : android::graphics::drawable::Drawable(className, sig, std::forward<Ts>(agv)...) {}
-		ColorDrawable(QAndroidJniObject obj);
+		ColorDrawable(QJniObject obj);
 		
 		// Constructors
 		ColorDrawable();

@@ -4,8 +4,8 @@ namespace java::security::cert
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CertStoreSpi::CertStoreSpi(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CertStoreSpi::CertStoreSpi(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	CertStoreSpi::CertStoreSpi(__JniBaseClass arg0)

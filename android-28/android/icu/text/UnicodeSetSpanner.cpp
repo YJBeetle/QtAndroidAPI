@@ -8,8 +8,8 @@ namespace android::icu::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	UnicodeSetSpanner::UnicodeSetSpanner(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	UnicodeSetSpanner::UnicodeSetSpanner(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	UnicodeSetSpanner::UnicodeSetSpanner(android::icu::text::UnicodeSet arg0)

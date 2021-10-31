@@ -4,8 +4,8 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TimeoutException::TimeoutException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
+	// QJniObject forward
+	TimeoutException::TimeoutException(QJniObject obj) : java::lang::Exception(obj) {}
 	
 	// Constructors
 	TimeoutException::TimeoutException()

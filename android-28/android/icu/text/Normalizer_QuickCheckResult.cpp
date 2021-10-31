@@ -4,8 +4,8 @@ namespace android::icu::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Normalizer_QuickCheckResult::Normalizer_QuickCheckResult(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Normalizer_QuickCheckResult::Normalizer_QuickCheckResult(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

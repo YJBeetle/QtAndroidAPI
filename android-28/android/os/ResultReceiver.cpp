@@ -15,8 +15,8 @@ namespace android::os
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ResultReceiver::ResultReceiver(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ResultReceiver::ResultReceiver(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ResultReceiver::ResultReceiver(android::os::Handler arg0)

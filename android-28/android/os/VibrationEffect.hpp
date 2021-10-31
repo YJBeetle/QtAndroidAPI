@@ -12,9 +12,9 @@ namespace android::os
 		static __JniBaseClass CREATOR();
 		static jint DEFAULT_AMPLITUDE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit VibrationEffect(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		VibrationEffect(QAndroidJniObject obj);
+		VibrationEffect(QJniObject obj);
 		
 		// Constructors
 		

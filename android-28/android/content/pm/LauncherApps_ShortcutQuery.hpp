@@ -19,9 +19,9 @@ namespace android::content::pm
 		static jint FLAG_MATCH_PINNED();
 		static jint FLAG_MATCH_PINNED_BY_ANY_LAUNCHER();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit LauncherApps_ShortcutQuery(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		LauncherApps_ShortcutQuery(QAndroidJniObject obj);
+		LauncherApps_ShortcutQuery(QJniObject obj);
 		
 		// Constructors
 		LauncherApps_ShortcutQuery();

@@ -89,8 +89,8 @@ namespace android::icu::math
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MathContext::MathContext(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MathContext::MathContext(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	MathContext::MathContext(jint arg0)

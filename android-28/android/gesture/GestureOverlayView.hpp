@@ -41,9 +41,9 @@ namespace android::gesture
 		static jint ORIENTATION_HORIZONTAL();
 		static jint ORIENTATION_VERTICAL();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit GestureOverlayView(const char *className, const char *sig, Ts...agv) : android::widget::FrameLayout(className, sig, std::forward<Ts>(agv)...) {}
-		GestureOverlayView(QAndroidJniObject obj);
+		GestureOverlayView(QJniObject obj);
 		
 		// Constructors
 		GestureOverlayView(android::content::Context arg0);

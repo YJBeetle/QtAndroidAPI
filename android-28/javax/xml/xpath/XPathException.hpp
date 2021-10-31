@@ -27,9 +27,9 @@ namespace javax::xml::xpath
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit XPathException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		XPathException(QAndroidJniObject obj);
+		XPathException(QJniObject obj);
 		
 		// Constructors
 		XPathException(jstring arg0);

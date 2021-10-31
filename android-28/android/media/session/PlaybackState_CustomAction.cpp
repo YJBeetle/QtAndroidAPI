@@ -14,8 +14,8 @@ namespace android::media::session
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PlaybackState_CustomAction::PlaybackState_CustomAction(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PlaybackState_CustomAction::PlaybackState_CustomAction(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -55,9 +55,9 @@ namespace android::provider
 		static jstring EXTRA_PROMPT();
 		static jstring PROVIDER_INTERFACE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DocumentsContract(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DocumentsContract(QAndroidJniObject obj);
+		DocumentsContract(QJniObject obj);
 		
 		// Constructors
 		

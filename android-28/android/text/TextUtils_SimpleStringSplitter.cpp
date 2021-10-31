@@ -4,8 +4,8 @@ namespace android::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TextUtils_SimpleStringSplitter::TextUtils_SimpleStringSplitter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TextUtils_SimpleStringSplitter::TextUtils_SimpleStringSplitter(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	TextUtils_SimpleStringSplitter::TextUtils_SimpleStringSplitter(jchar arg0)

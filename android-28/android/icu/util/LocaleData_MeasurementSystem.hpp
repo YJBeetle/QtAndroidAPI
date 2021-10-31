@@ -13,9 +13,9 @@ namespace android::icu::util
 		static android::icu::util::LocaleData_MeasurementSystem UK();
 		static android::icu::util::LocaleData_MeasurementSystem US();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit LocaleData_MeasurementSystem(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		LocaleData_MeasurementSystem(QAndroidJniObject obj);
+		LocaleData_MeasurementSystem(QJniObject obj);
 		
 		// Constructors
 		

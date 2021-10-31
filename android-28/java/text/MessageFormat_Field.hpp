@@ -13,9 +13,9 @@ namespace java::text
 		// Fields
 		static java::text::MessageFormat_Field ARGUMENT();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MessageFormat_Field(const char *className, const char *sig, Ts...agv) : java::text::Format_Field(className, sig, std::forward<Ts>(agv)...) {}
-		MessageFormat_Field(QAndroidJniObject obj);
+		MessageFormat_Field(QJniObject obj);
 		
 		// Constructors
 		

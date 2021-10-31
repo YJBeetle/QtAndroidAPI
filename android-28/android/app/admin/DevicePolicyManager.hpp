@@ -179,9 +179,9 @@ namespace android::app::admin
 		static jint WIPE_EXTERNAL_STORAGE();
 		static jint WIPE_RESET_PROTECTION_DATA();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DevicePolicyManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DevicePolicyManager(QAndroidJniObject obj);
+		DevicePolicyManager(QJniObject obj);
 		
 		// Constructors
 		

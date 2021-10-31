@@ -4,8 +4,8 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	WritePendingException::WritePendingException(QAndroidJniObject obj) : java::lang::IllegalStateException(obj) {}
+	// QJniObject forward
+	WritePendingException::WritePendingException(QJniObject obj) : java::lang::IllegalStateException(obj) {}
 	
 	// Constructors
 	WritePendingException::WritePendingException()

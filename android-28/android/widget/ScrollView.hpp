@@ -41,9 +41,9 @@ namespace android::widget
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ScrollView(const char *className, const char *sig, Ts...agv) : android::widget::FrameLayout(className, sig, std::forward<Ts>(agv)...) {}
-		ScrollView(QAndroidJniObject obj);
+		ScrollView(QJniObject obj);
 		
 		// Constructors
 		ScrollView(android::content::Context arg0);

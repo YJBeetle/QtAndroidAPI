@@ -6,8 +6,8 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MediaRouteActionProvider::MediaRouteActionProvider(QAndroidJniObject obj) : android::view::ActionProvider(obj) {}
+	// QJniObject forward
+	MediaRouteActionProvider::MediaRouteActionProvider(QJniObject obj) : android::view::ActionProvider(obj) {}
 	
 	// Constructors
 	MediaRouteActionProvider::MediaRouteActionProvider(android::content::Context arg0)

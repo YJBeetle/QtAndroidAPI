@@ -97,9 +97,9 @@ namespace android::print
 		static android::print::PrintAttributes_MediaSize UNKNOWN_LANDSCAPE();
 		static android::print::PrintAttributes_MediaSize UNKNOWN_PORTRAIT();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PrintAttributes_MediaSize(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PrintAttributes_MediaSize(QAndroidJniObject obj);
+		PrintAttributes_MediaSize(QJniObject obj);
 		
 		// Constructors
 		PrintAttributes_MediaSize(jstring arg0, jstring arg1, jint arg2, jint arg3);

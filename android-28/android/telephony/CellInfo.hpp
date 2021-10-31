@@ -19,9 +19,9 @@ namespace android::telephony
 		static jint CONNECTION_UNKNOWN();
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CellInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CellInfo(QAndroidJniObject obj);
+		CellInfo(QJniObject obj);
 		
 		// Constructors
 		

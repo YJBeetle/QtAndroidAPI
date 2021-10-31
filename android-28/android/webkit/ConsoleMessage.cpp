@@ -5,8 +5,8 @@ namespace android::webkit
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ConsoleMessage::ConsoleMessage(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ConsoleMessage::ConsoleMessage(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ConsoleMessage::ConsoleMessage(jstring arg0, jstring arg1, jint arg2, android::webkit::ConsoleMessage_MessageLevel arg3)

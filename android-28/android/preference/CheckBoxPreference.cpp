@@ -6,8 +6,8 @@ namespace android::preference
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CheckBoxPreference::CheckBoxPreference(QAndroidJniObject obj) : android::preference::TwoStatePreference(obj) {}
+	// QJniObject forward
+	CheckBoxPreference::CheckBoxPreference(QJniObject obj) : android::preference::TwoStatePreference(obj) {}
 	
 	// Constructors
 	CheckBoxPreference::CheckBoxPreference(android::content::Context arg0)

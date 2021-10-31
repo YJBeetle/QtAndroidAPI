@@ -13,9 +13,9 @@ namespace java::util
 		static java::util::Locale_Category DISPLAY();
 		static java::util::Locale_Category FORMAT();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Locale_Category(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Locale_Category(QAndroidJniObject obj);
+		Locale_Category(QJniObject obj);
 		
 		// Constructors
 		

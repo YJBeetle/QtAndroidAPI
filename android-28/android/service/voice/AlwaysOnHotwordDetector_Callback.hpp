@@ -14,9 +14,9 @@ namespace android::service::voice
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AlwaysOnHotwordDetector_Callback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AlwaysOnHotwordDetector_Callback(QAndroidJniObject obj);
+		AlwaysOnHotwordDetector_Callback(QJniObject obj);
 		
 		// Constructors
 		AlwaysOnHotwordDetector_Callback();

@@ -18,9 +18,9 @@ namespace android::webkit
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ServiceWorkerController(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ServiceWorkerController(QAndroidJniObject obj);
+		ServiceWorkerController(QJniObject obj);
 		
 		// Constructors
 		ServiceWorkerController();

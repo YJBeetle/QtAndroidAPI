@@ -11,8 +11,8 @@ namespace android::app::job
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	JobInfo_Builder::JobInfo_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	JobInfo_Builder::JobInfo_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	JobInfo_Builder::JobInfo_Builder(jint arg0, android::content::ComponentName arg1)

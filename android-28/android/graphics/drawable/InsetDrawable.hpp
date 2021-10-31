@@ -32,9 +32,9 @@ namespace android::graphics::drawable
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit InsetDrawable(const char *className, const char *sig, Ts...agv) : android::graphics::drawable::DrawableWrapper(className, sig, std::forward<Ts>(agv)...) {}
-		InsetDrawable(QAndroidJniObject obj);
+		InsetDrawable(QJniObject obj);
 		
 		// Constructors
 		InsetDrawable(android::graphics::drawable::Drawable arg0, jfloat arg1);

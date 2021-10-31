@@ -52,9 +52,9 @@ namespace android::icu::text
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DateIntervalFormat(const char *className, const char *sig, Ts...agv) : android::icu::text::UFormat(className, sig, std::forward<Ts>(agv)...) {}
-		DateIntervalFormat(QAndroidJniObject obj);
+		DateIntervalFormat(QJniObject obj);
 		
 		// Constructors
 		

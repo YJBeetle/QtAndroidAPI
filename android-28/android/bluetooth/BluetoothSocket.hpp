@@ -25,9 +25,9 @@ namespace android::bluetooth
 		static jint TYPE_RFCOMM();
 		static jint TYPE_SCO();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit BluetoothSocket(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		BluetoothSocket(QAndroidJniObject obj);
+		BluetoothSocket(QJniObject obj);
 		
 		// Constructors
 		

@@ -36,8 +36,8 @@ namespace android::webkit
 		);
 	}
 	
-	// QAndroidJniObject forward
-	WebSettings_LayoutAlgorithm::WebSettings_LayoutAlgorithm(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	WebSettings_LayoutAlgorithm::WebSettings_LayoutAlgorithm(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

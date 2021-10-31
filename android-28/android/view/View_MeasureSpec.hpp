@@ -13,9 +13,9 @@ namespace android::view
 		static jint EXACTLY();
 		static jint UNSPECIFIED();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit View_MeasureSpec(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		View_MeasureSpec(QAndroidJniObject obj);
+		View_MeasureSpec(QJniObject obj);
 		
 		// Constructors
 		View_MeasureSpec();

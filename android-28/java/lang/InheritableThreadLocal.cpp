@@ -5,8 +5,8 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	InheritableThreadLocal::InheritableThreadLocal(QAndroidJniObject obj) : java::lang::ThreadLocal(obj) {}
+	// QJniObject forward
+	InheritableThreadLocal::InheritableThreadLocal(QJniObject obj) : java::lang::ThreadLocal(obj) {}
 	
 	// Constructors
 	InheritableThreadLocal::InheritableThreadLocal()

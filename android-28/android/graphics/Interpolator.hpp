@@ -14,9 +14,9 @@ namespace android::graphics
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Interpolator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Interpolator(QAndroidJniObject obj);
+		Interpolator(QJniObject obj);
 		
 		// Constructors
 		Interpolator(jint arg0);

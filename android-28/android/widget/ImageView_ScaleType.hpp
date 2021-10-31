@@ -19,9 +19,9 @@ namespace android::widget
 		static android::widget::ImageView_ScaleType FIT_XY();
 		static android::widget::ImageView_ScaleType MATRIX();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ImageView_ScaleType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		ImageView_ScaleType(QAndroidJniObject obj);
+		ImageView_ScaleType(QJniObject obj);
 		
 		// Constructors
 		

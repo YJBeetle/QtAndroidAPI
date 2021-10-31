@@ -188,8 +188,8 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	VoicemailContract_Voicemails::VoicemailContract_Voicemails(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	VoicemailContract_Voicemails::VoicemailContract_Voicemails(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

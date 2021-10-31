@@ -26,8 +26,8 @@ namespace android::app
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	ApplicationErrorReport_AnrInfo::ApplicationErrorReport_AnrInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ApplicationErrorReport_AnrInfo::ApplicationErrorReport_AnrInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ApplicationErrorReport_AnrInfo::ApplicationErrorReport_AnrInfo()

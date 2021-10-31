@@ -218,9 +218,9 @@ namespace android::opengl
 		static jint GL_UNSIGNED_INT_SAMPLER_CUBE_MAP_ARRAY_EXT();
 		static jint GL_VERTEX_ARRAY_KHR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit GLES31Ext(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		GLES31Ext(QAndroidJniObject obj);
+		GLES31Ext(QJniObject obj);
 		
 		// Constructors
 		

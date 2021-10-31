@@ -64,8 +64,8 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Normalizer::Normalizer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Normalizer::Normalizer(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

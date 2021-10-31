@@ -61,9 +61,9 @@ namespace android::util
 		jstring string();
 		jint type();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TypedValue(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		TypedValue(QAndroidJniObject obj);
+		TypedValue(QJniObject obj);
 		
 		// Constructors
 		TypedValue();

@@ -18,9 +18,9 @@ namespace android::nfc::tech
 		static jint TYPE_ULTRALIGHT_C();
 		static jint TYPE_UNKNOWN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MifareUltralight(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MifareUltralight(QAndroidJniObject obj);
+		MifareUltralight(QJniObject obj);
 		
 		// Constructors
 		

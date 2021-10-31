@@ -9,8 +9,8 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ArrayAdapter::ArrayAdapter(QAndroidJniObject obj) : android::widget::BaseAdapter(obj) {}
+	// QJniObject forward
+	ArrayAdapter::ArrayAdapter(QJniObject obj) : android::widget::BaseAdapter(obj) {}
 	
 	// Constructors
 	ArrayAdapter::ArrayAdapter(android::content::Context arg0, jint arg1)

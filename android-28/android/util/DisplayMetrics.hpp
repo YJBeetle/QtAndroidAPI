@@ -35,9 +35,9 @@ namespace android::util
 		jfloat xdpi();
 		jfloat ydpi();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DisplayMetrics(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DisplayMetrics(QAndroidJniObject obj);
+		DisplayMetrics(QJniObject obj);
 		
 		// Constructors
 		DisplayMetrics();

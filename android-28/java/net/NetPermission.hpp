@@ -12,9 +12,9 @@ namespace java::net
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit NetPermission(const char *className, const char *sig, Ts...agv) : java::security::BasicPermission(className, sig, std::forward<Ts>(agv)...) {}
-		NetPermission(QAndroidJniObject obj);
+		NetPermission(QJniObject obj);
 		
 		// Constructors
 		NetPermission(jstring arg0);

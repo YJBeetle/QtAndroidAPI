@@ -13,8 +13,8 @@ namespace android::bluetooth
 		);
 	}
 	
-	// QAndroidJniObject forward
-	BluetoothHealthAppConfiguration::BluetoothHealthAppConfiguration(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	BluetoothHealthAppConfiguration::BluetoothHealthAppConfiguration(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

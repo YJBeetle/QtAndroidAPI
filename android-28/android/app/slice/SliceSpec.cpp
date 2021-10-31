@@ -13,8 +13,8 @@ namespace android::app::slice
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SliceSpec::SliceSpec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SliceSpec::SliceSpec(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	SliceSpec::SliceSpec(jstring arg0, jint arg1)

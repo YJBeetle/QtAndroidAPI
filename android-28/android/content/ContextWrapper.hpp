@@ -119,9 +119,9 @@ namespace android::content
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ContextWrapper(const char *className, const char *sig, Ts...agv) : android::content::Context(className, sig, std::forward<Ts>(agv)...) {}
-		ContextWrapper(QAndroidJniObject obj);
+		ContextWrapper(QJniObject obj);
 		
 		// Constructors
 		ContextWrapper(android::content::Context arg0);

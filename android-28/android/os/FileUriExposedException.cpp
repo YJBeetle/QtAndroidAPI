@@ -4,8 +4,8 @@ namespace android::os
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FileUriExposedException::FileUriExposedException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	// QJniObject forward
+	FileUriExposedException::FileUriExposedException(QJniObject obj) : java::lang::RuntimeException(obj) {}
 	
 	// Constructors
 	FileUriExposedException::FileUriExposedException(jstring arg0)

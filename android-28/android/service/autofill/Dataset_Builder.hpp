@@ -34,9 +34,9 @@ namespace android::service::autofill
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Dataset_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Dataset_Builder(QAndroidJniObject obj);
+		Dataset_Builder(QJniObject obj);
 		
 		// Constructors
 		Dataset_Builder();

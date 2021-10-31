@@ -25,9 +25,9 @@ namespace android::widget
 		// Fields
 		jboolean alignWithParent();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit RelativeLayout_LayoutParams(const char *className, const char *sig, Ts...agv) : android::view::ViewGroup_MarginLayoutParams(className, sig, std::forward<Ts>(agv)...) {}
-		RelativeLayout_LayoutParams(QAndroidJniObject obj);
+		RelativeLayout_LayoutParams(QJniObject obj);
 		
 		// Constructors
 		RelativeLayout_LayoutParams(android::view::ViewGroup_LayoutParams arg0);

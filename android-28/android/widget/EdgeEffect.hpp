@@ -18,9 +18,9 @@ namespace android::widget
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit EdgeEffect(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		EdgeEffect(QAndroidJniObject obj);
+		EdgeEffect(QJniObject obj);
 		
 		// Constructors
 		EdgeEffect(android::content::Context arg0);

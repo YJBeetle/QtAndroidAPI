@@ -7,8 +7,8 @@ namespace android::service::restrictions
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RestrictionsReceiver::RestrictionsReceiver(QAndroidJniObject obj) : android::content::BroadcastReceiver(obj) {}
+	// QJniObject forward
+	RestrictionsReceiver::RestrictionsReceiver(QJniObject obj) : android::content::BroadcastReceiver(obj) {}
 	
 	// Constructors
 	RestrictionsReceiver::RestrictionsReceiver()

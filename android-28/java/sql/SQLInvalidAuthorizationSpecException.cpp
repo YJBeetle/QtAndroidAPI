@@ -4,8 +4,8 @@ namespace java::sql
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SQLInvalidAuthorizationSpecException::SQLInvalidAuthorizationSpecException(QAndroidJniObject obj) : java::sql::SQLNonTransientException(obj) {}
+	// QJniObject forward
+	SQLInvalidAuthorizationSpecException::SQLInvalidAuthorizationSpecException(QJniObject obj) : java::sql::SQLNonTransientException(obj) {}
 	
 	// Constructors
 	SQLInvalidAuthorizationSpecException::SQLInvalidAuthorizationSpecException()

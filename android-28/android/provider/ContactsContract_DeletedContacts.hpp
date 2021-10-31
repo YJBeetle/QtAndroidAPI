@@ -16,9 +16,9 @@ namespace android::provider
 		static android::net::Uri CONTENT_URI();
 		static jlong DAYS_KEPT_MILLISECONDS();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ContactsContract_DeletedContacts(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_DeletedContacts(QAndroidJniObject obj);
+		ContactsContract_DeletedContacts(QJniObject obj);
 		
 		// Constructors
 		

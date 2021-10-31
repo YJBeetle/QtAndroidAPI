@@ -4,8 +4,8 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DeniedByServerException::DeniedByServerException(QAndroidJniObject obj) : android::media::MediaDrmException(obj) {}
+	// QJniObject forward
+	DeniedByServerException::DeniedByServerException(QJniObject obj) : android::media::MediaDrmException(obj) {}
 	
 	// Constructors
 	DeniedByServerException::DeniedByServerException(jstring arg0)

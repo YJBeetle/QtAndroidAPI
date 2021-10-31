@@ -4,8 +4,8 @@ namespace java::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MalformedURLException::MalformedURLException(QAndroidJniObject obj) : java::io::IOException(obj) {}
+	// QJniObject forward
+	MalformedURLException::MalformedURLException(QJniObject obj) : java::io::IOException(obj) {}
 	
 	// Constructors
 	MalformedURLException::MalformedURLException()

@@ -13,9 +13,9 @@ namespace java::util::concurrent
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CancellationException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalStateException(className, sig, std::forward<Ts>(agv)...) {}
-		CancellationException(QAndroidJniObject obj);
+		CancellationException(QJniObject obj);
 		
 		// Constructors
 		CancellationException();

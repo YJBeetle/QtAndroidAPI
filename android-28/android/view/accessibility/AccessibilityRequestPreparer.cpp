@@ -14,8 +14,8 @@ namespace android::view::accessibility
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AccessibilityRequestPreparer::AccessibilityRequestPreparer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AccessibilityRequestPreparer::AccessibilityRequestPreparer(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	AccessibilityRequestPreparer::AccessibilityRequestPreparer(android::view::View arg0, jint arg1)

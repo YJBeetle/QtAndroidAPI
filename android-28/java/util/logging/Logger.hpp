@@ -48,9 +48,9 @@ namespace java::util::logging
 		static jstring GLOBAL_LOGGER_NAME();
 		static java::util::logging::Logger global();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Logger(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Logger(QAndroidJniObject obj);
+		Logger(QJniObject obj);
 		
 		// Constructors
 		

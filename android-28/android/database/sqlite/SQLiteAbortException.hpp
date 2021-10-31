@@ -14,9 +14,9 @@ namespace android::database::sqlite
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SQLiteAbortException(const char *className, const char *sig, Ts...agv) : android::database::sqlite::SQLiteException(className, sig, std::forward<Ts>(agv)...) {}
-		SQLiteAbortException(QAndroidJniObject obj);
+		SQLiteAbortException(QJniObject obj);
 		
 		// Constructors
 		SQLiteAbortException();

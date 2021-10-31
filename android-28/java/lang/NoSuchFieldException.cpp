@@ -4,8 +4,8 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	NoSuchFieldException::NoSuchFieldException(QAndroidJniObject obj) : java::lang::ReflectiveOperationException(obj) {}
+	// QJniObject forward
+	NoSuchFieldException::NoSuchFieldException(QJniObject obj) : java::lang::ReflectiveOperationException(obj) {}
 	
 	// Constructors
 	NoSuchFieldException::NoSuchFieldException()

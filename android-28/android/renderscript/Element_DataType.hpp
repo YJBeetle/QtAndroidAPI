@@ -41,9 +41,9 @@ namespace android::renderscript
 		static android::renderscript::Element_DataType UNSIGNED_64();
 		static android::renderscript::Element_DataType UNSIGNED_8();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Element_DataType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Element_DataType(QAndroidJniObject obj);
+		Element_DataType(QJniObject obj);
 		
 		// Constructors
 		

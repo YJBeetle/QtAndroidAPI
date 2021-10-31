@@ -26,9 +26,9 @@ namespace android::net::http
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SslCertificate(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SslCertificate(QAndroidJniObject obj);
+		SslCertificate(QJniObject obj);
 		
 		// Constructors
 		SslCertificate(java::security::cert::X509Certificate arg0);

@@ -12,9 +12,9 @@ namespace java::lang
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TypeNotPresentException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		TypeNotPresentException(QAndroidJniObject obj);
+		TypeNotPresentException(QJniObject obj);
 		
 		// Constructors
 		TypeNotPresentException(jstring arg0, jthrowable arg1);

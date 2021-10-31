@@ -4,8 +4,8 @@ namespace android::sax
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RootElement::RootElement(QAndroidJniObject obj) : android::sax::Element(obj) {}
+	// QJniObject forward
+	RootElement::RootElement(QJniObject obj) : android::sax::Element(obj) {}
 	
 	// Constructors
 	RootElement::RootElement(jstring arg0)

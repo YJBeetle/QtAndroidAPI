@@ -34,8 +34,8 @@ namespace java::nio::channels
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SelectionKey::SelectionKey(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SelectionKey::SelectionKey(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

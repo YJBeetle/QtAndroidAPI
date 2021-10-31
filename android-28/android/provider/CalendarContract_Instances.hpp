@@ -29,9 +29,9 @@ namespace android::provider
 		static jstring START_DAY();
 		static jstring START_MINUTE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CalendarContract_Instances(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CalendarContract_Instances(QAndroidJniObject obj);
+		CalendarContract_Instances(QJniObject obj);
 		
 		// Constructors
 		

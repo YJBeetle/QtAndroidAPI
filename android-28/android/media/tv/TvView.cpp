@@ -16,8 +16,8 @@ namespace android::media::tv
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TvView::TvView(QAndroidJniObject obj) : android::view::ViewGroup(obj) {}
+	// QJniObject forward
+	TvView::TvView(QJniObject obj) : android::view::ViewGroup(obj) {}
 	
 	// Constructors
 	TvView::TvView(android::content::Context arg0)

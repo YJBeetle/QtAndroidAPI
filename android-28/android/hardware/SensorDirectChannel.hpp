@@ -24,9 +24,9 @@ namespace android::hardware
 		static jint TYPE_HARDWARE_BUFFER();
 		static jint TYPE_MEMORY_FILE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SensorDirectChannel(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SensorDirectChannel(QAndroidJniObject obj);
+		SensorDirectChannel(QJniObject obj);
 		
 		// Constructors
 		

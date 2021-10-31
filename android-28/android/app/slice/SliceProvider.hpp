@@ -48,9 +48,9 @@ namespace android::app::slice
 		// Fields
 		static jstring SLICE_TYPE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SliceProvider(const char *className, const char *sig, Ts...agv) : android::content::ContentProvider(className, sig, std::forward<Ts>(agv)...) {}
-		SliceProvider(QAndroidJniObject obj);
+		SliceProvider(QJniObject obj);
 		
 		// Constructors
 		SliceProvider();

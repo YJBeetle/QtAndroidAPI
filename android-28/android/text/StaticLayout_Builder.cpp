@@ -8,8 +8,8 @@ namespace android::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	StaticLayout_Builder::StaticLayout_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	StaticLayout_Builder::StaticLayout_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

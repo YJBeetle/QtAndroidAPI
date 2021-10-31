@@ -7,8 +7,8 @@ namespace android::graphics::drawable::shapes
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Shape::Shape(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Shape::Shape(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Shape::Shape()

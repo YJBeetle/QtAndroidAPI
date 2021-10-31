@@ -28,8 +28,8 @@ namespace android::media::browse
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaBrowser_MediaItem::MediaBrowser_MediaItem(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MediaBrowser_MediaItem::MediaBrowser_MediaItem(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	MediaBrowser_MediaItem::MediaBrowser_MediaItem(android::media::MediaDescription arg0, jint arg1)

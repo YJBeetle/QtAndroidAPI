@@ -38,9 +38,9 @@ namespace android::icu::text
 		static android::icu::text::DateFormat_Field YEAR();
 		static android::icu::text::DateFormat_Field YEAR_WOY();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DateFormat_Field(const char *className, const char *sig, Ts...agv) : java::text::Format_Field(className, sig, std::forward<Ts>(agv)...) {}
-		DateFormat_Field(QAndroidJniObject obj);
+		DateFormat_Field(QJniObject obj);
 		
 		// Constructors
 		

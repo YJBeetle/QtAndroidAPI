@@ -6,8 +6,8 @@ namespace android::view::animation
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TranslateAnimation::TranslateAnimation(QAndroidJniObject obj) : android::view::animation::Animation(obj) {}
+	// QJniObject forward
+	TranslateAnimation::TranslateAnimation(QJniObject obj) : android::view::animation::Animation(obj) {}
 	
 	// Constructors
 	TranslateAnimation::TranslateAnimation(android::content::Context arg0, __JniBaseClass arg1)

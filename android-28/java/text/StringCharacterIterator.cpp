@@ -4,8 +4,8 @@ namespace java::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	StringCharacterIterator::StringCharacterIterator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	StringCharacterIterator::StringCharacterIterator(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	StringCharacterIterator::StringCharacterIterator(jstring arg0)

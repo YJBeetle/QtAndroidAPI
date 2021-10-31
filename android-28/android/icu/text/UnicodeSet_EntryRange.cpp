@@ -16,8 +16,8 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	UnicodeSet_EntryRange::UnicodeSet_EntryRange(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	UnicodeSet_EntryRange::UnicodeSet_EntryRange(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

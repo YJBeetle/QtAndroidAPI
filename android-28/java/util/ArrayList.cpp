@@ -6,8 +6,8 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ArrayList::ArrayList(QAndroidJniObject obj) : java::util::AbstractList(obj) {}
+	// QJniObject forward
+	ArrayList::ArrayList(QJniObject obj) : java::util::AbstractList(obj) {}
 	
 	// Constructors
 	ArrayList::ArrayList()

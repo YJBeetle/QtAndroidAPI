@@ -4,8 +4,8 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ListResourceBundle::ListResourceBundle(QAndroidJniObject obj) : java::util::ResourceBundle(obj) {}
+	// QJniObject forward
+	ListResourceBundle::ListResourceBundle(QJniObject obj) : java::util::ResourceBundle(obj) {}
 	
 	// Constructors
 	ListResourceBundle::ListResourceBundle()

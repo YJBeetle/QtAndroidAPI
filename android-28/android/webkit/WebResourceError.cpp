@@ -4,8 +4,8 @@ namespace android::webkit
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	WebResourceError::WebResourceError(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	WebResourceError::WebResourceError(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

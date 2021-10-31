@@ -60,9 +60,9 @@ namespace android::media
 		static jstring METADATA_KEY_WRITER();
 		static jstring METADATA_KEY_YEAR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaMetadata(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaMetadata(QAndroidJniObject obj);
+		MediaMetadata(QJniObject obj);
 		
 		// Constructors
 		

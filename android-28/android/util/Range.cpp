@@ -4,8 +4,8 @@ namespace android::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Range::Range(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Range::Range(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Range::Range(__JniBaseClass arg0, __JniBaseClass arg1)

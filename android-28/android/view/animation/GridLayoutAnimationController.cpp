@@ -70,8 +70,8 @@ namespace android::view::animation
 		);
 	}
 	
-	// QAndroidJniObject forward
-	GridLayoutAnimationController::GridLayoutAnimationController(QAndroidJniObject obj) : android::view::animation::LayoutAnimationController(obj) {}
+	// QJniObject forward
+	GridLayoutAnimationController::GridLayoutAnimationController(QJniObject obj) : android::view::animation::LayoutAnimationController(obj) {}
 	
 	// Constructors
 	GridLayoutAnimationController::GridLayoutAnimationController(android::view::animation::Animation arg0)

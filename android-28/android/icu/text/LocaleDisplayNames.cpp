@@ -9,8 +9,8 @@ namespace android::icu::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LocaleDisplayNames::LocaleDisplayNames(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	LocaleDisplayNames::LocaleDisplayNames(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

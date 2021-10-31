@@ -8,8 +8,8 @@ namespace android::telecom
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RemoteConference_Callback::RemoteConference_Callback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	RemoteConference_Callback::RemoteConference_Callback(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	RemoteConference_Callback::RemoteConference_Callback()

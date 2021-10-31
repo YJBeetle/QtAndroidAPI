@@ -23,8 +23,8 @@ namespace android::app
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	NativeActivity::NativeActivity(QAndroidJniObject obj) : android::app::Activity(obj) {}
+	// QJniObject forward
+	NativeActivity::NativeActivity(QJniObject obj) : android::app::Activity(obj) {}
 	
 	// Constructors
 	NativeActivity::NativeActivity()

@@ -6,8 +6,8 @@ namespace android::app::backup
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	BackupManager::BackupManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	BackupManager::BackupManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	BackupManager::BackupManager(android::content::Context arg0)

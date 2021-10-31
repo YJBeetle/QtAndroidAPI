@@ -5,8 +5,8 @@ namespace android::net::sip
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SipProfile_Builder::SipProfile_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SipProfile_Builder::SipProfile_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	SipProfile_Builder::SipProfile_Builder(android::net::sip::SipProfile arg0)

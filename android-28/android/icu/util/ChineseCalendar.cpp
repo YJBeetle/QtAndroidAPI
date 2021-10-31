@@ -9,8 +9,8 @@ namespace android::icu::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ChineseCalendar::ChineseCalendar(QAndroidJniObject obj) : android::icu::util::Calendar(obj) {}
+	// QJniObject forward
+	ChineseCalendar::ChineseCalendar(QJniObject obj) : android::icu::util::Calendar(obj) {}
 	
 	// Constructors
 	ChineseCalendar::ChineseCalendar()

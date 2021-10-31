@@ -7,8 +7,8 @@ namespace android::graphics::pdf
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PdfDocument::PdfDocument(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PdfDocument::PdfDocument(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	PdfDocument::PdfDocument()

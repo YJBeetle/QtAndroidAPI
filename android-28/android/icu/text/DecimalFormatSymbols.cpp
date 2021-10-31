@@ -28,8 +28,8 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DecimalFormatSymbols::DecimalFormatSymbols(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DecimalFormatSymbols::DecimalFormatSymbols(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	DecimalFormatSymbols::DecimalFormatSymbols()

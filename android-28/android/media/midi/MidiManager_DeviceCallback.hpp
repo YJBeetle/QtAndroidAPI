@@ -18,9 +18,9 @@ namespace android::media::midi
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MidiManager_DeviceCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MidiManager_DeviceCallback(QAndroidJniObject obj);
+		MidiManager_DeviceCallback(QJniObject obj);
 		
 		// Constructors
 		MidiManager_DeviceCallback();

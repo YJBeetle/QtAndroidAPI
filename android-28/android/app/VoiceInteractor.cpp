@@ -5,8 +5,8 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	VoiceInteractor::VoiceInteractor(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	VoiceInteractor::VoiceInteractor(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

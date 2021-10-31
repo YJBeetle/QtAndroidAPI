@@ -15,9 +15,9 @@ namespace android::view
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit KeyboardShortcutInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		KeyboardShortcutInfo(QAndroidJniObject obj);
+		KeyboardShortcutInfo(QJniObject obj);
 		
 		// Constructors
 		KeyboardShortcutInfo(jstring arg0, jchar arg1, jint arg2);

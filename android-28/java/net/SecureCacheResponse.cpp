@@ -5,8 +5,8 @@ namespace java::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SecureCacheResponse::SecureCacheResponse(QAndroidJniObject obj) : java::net::CacheResponse(obj) {}
+	// QJniObject forward
+	SecureCacheResponse::SecureCacheResponse(QJniObject obj) : java::net::CacheResponse(obj) {}
 	
 	// Constructors
 	SecureCacheResponse::SecureCacheResponse()

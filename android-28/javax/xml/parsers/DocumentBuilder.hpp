@@ -26,9 +26,9 @@ namespace javax::xml::parsers
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DocumentBuilder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DocumentBuilder(QAndroidJniObject obj);
+		DocumentBuilder(QJniObject obj);
 		
 		// Constructors
 		

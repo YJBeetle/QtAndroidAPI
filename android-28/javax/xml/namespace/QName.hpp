@@ -10,9 +10,9 @@ namespace javax::xml::_namespace
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit QName(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		QName(QAndroidJniObject obj);
+		QName(QJniObject obj);
 		
 		// Constructors
 		QName(jstring arg0);

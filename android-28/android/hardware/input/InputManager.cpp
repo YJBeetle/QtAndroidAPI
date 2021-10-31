@@ -22,8 +22,8 @@ namespace android::hardware::input
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	InputManager::InputManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	InputManager::InputManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

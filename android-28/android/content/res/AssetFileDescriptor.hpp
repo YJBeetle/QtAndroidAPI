@@ -36,9 +36,9 @@ namespace android::content::res
 		static __JniBaseClass CREATOR();
 		static jlong UNKNOWN_LENGTH();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AssetFileDescriptor(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AssetFileDescriptor(QAndroidJniObject obj);
+		AssetFileDescriptor(QJniObject obj);
 		
 		// Constructors
 		AssetFileDescriptor(android::os::ParcelFileDescriptor arg0, jlong arg1, jlong arg2);

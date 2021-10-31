@@ -14,9 +14,9 @@ namespace javax::crypto::spec
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DHParameterSpec(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DHParameterSpec(QAndroidJniObject obj);
+		DHParameterSpec(QJniObject obj);
 		
 		// Constructors
 		DHParameterSpec(java::math::BigInteger arg0, java::math::BigInteger arg1);

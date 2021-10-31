@@ -8,8 +8,8 @@ namespace android::content::res
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Resources_Theme::Resources_Theme(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Resources_Theme::Resources_Theme(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

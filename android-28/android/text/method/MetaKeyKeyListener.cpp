@@ -48,8 +48,8 @@ namespace android::text::method
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MetaKeyKeyListener::MetaKeyKeyListener(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MetaKeyKeyListener::MetaKeyKeyListener(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	MetaKeyKeyListener::MetaKeyKeyListener()

@@ -23,9 +23,9 @@ namespace android::provider
 		static jstring TEXT();
 		static jstring _DATA();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Telephony_Mms_Part(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Telephony_Mms_Part(QAndroidJniObject obj);
+		Telephony_Mms_Part(QJniObject obj);
 		
 		// Constructors
 		

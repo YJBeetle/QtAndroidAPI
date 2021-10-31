@@ -10,8 +10,8 @@ namespace java::nio::charset
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CharsetEncoder::CharsetEncoder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CharsetEncoder::CharsetEncoder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

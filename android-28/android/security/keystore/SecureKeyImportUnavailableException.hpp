@@ -13,9 +13,9 @@ namespace android::security::keystore
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SecureKeyImportUnavailableException(const char *className, const char *sig, Ts...agv) : java::security::ProviderException(className, sig, std::forward<Ts>(agv)...) {}
-		SecureKeyImportUnavailableException(QAndroidJniObject obj);
+		SecureKeyImportUnavailableException(QJniObject obj);
 		
 		// Constructors
 		SecureKeyImportUnavailableException();

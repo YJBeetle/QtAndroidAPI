@@ -18,9 +18,9 @@ namespace android::view::accessibility
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CaptioningManager_CaptioningChangeListener(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CaptioningManager_CaptioningChangeListener(QAndroidJniObject obj);
+		CaptioningManager_CaptioningChangeListener(QJniObject obj);
 		
 		// Constructors
 		CaptioningManager_CaptioningChangeListener();

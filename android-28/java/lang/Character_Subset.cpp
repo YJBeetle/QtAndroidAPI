@@ -4,8 +4,8 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Character_Subset::Character_Subset(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Character_Subset::Character_Subset(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

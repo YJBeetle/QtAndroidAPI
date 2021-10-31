@@ -9,8 +9,8 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Notification_Action_Builder::Notification_Action_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Notification_Action_Builder::Notification_Action_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Notification_Action_Builder::Notification_Action_Builder(android::app::Notification_Action arg0)

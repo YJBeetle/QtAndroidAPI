@@ -5,8 +5,8 @@ namespace java::lang::ref
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Reference::Reference(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Reference::Reference(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -45,8 +45,8 @@ namespace android::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaStore_Audio_Playlists::MediaStore_Audio_Playlists(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MediaStore_Audio_Playlists::MediaStore_Audio_Playlists(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	MediaStore_Audio_Playlists::MediaStore_Audio_Playlists()

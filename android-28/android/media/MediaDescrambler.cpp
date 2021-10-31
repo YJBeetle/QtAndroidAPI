@@ -42,8 +42,8 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaDescrambler::MediaDescrambler(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MediaDescrambler::MediaDescrambler(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	MediaDescrambler::MediaDescrambler(jint arg0)

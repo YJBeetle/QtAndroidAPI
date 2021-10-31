@@ -7,8 +7,8 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AsyncPlayer::AsyncPlayer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AsyncPlayer::AsyncPlayer(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	AsyncPlayer::AsyncPlayer(jstring arg0)

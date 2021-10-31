@@ -210,9 +210,9 @@ namespace android::icu::lang
 		static jint YI();
 		static jint ZANABAZAR_SQUARE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit UScript(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		UScript(QAndroidJniObject obj);
+		UScript(QJniObject obj);
 		
 		// Constructors
 		

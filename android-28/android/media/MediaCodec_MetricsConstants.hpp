@@ -20,9 +20,9 @@ namespace android::media
 		static jstring SECURE();
 		static jstring WIDTH();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaCodec_MetricsConstants(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCodec_MetricsConstants(QAndroidJniObject obj);
+		MediaCodec_MetricsConstants(QJniObject obj);
 		
 		// Constructors
 		

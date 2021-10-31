@@ -90,9 +90,9 @@ namespace android::accessibilityservice
 		static jint SHOW_MODE_AUTO();
 		static jint SHOW_MODE_HIDDEN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AccessibilityService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		AccessibilityService(QAndroidJniObject obj);
+		AccessibilityService(QJniObject obj);
 		
 		// Constructors
 		AccessibilityService();

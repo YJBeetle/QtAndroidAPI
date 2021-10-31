@@ -32,8 +32,8 @@ namespace android::net::rtp
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AudioGroup::AudioGroup(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AudioGroup::AudioGroup(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	AudioGroup::AudioGroup()

@@ -15,9 +15,9 @@ namespace android::graphics
 		static android::graphics::ColorSpace_Model RGB();
 		static android::graphics::ColorSpace_Model XYZ();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ColorSpace_Model(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		ColorSpace_Model(QAndroidJniObject obj);
+		ColorSpace_Model(QJniObject obj);
 		
 		// Constructors
 		

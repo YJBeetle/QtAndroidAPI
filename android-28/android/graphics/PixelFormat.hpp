@@ -32,9 +32,9 @@ namespace android::graphics
 		jint bitsPerPixel();
 		jint bytesPerPixel();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PixelFormat(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PixelFormat(QAndroidJniObject obj);
+		PixelFormat(QJniObject obj);
 		
 		// Constructors
 		PixelFormat();

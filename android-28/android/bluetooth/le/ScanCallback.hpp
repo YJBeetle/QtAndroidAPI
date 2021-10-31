@@ -18,9 +18,9 @@ namespace android::bluetooth::le
 		static jint SCAN_FAILED_FEATURE_UNSUPPORTED();
 		static jint SCAN_FAILED_INTERNAL_ERROR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ScanCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ScanCallback(QAndroidJniObject obj);
+		ScanCallback(QJniObject obj);
 		
 		// Constructors
 		ScanCallback();

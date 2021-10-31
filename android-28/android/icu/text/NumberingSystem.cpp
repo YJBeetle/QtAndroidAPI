@@ -6,8 +6,8 @@ namespace android::icu::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	NumberingSystem::NumberingSystem(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	NumberingSystem::NumberingSystem(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	NumberingSystem::NumberingSystem()

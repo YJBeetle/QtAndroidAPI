@@ -6,8 +6,8 @@ namespace android::os
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	StrictMode::StrictMode(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	StrictMode::StrictMode(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

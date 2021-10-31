@@ -14,9 +14,9 @@ namespace android::net::wifi::p2p::nsd
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WifiP2pServiceRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		WifiP2pServiceRequest(QAndroidJniObject obj);
+		WifiP2pServiceRequest(QJniObject obj);
 		
 		// Constructors
 		

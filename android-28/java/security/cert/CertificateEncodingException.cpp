@@ -4,8 +4,8 @@ namespace java::security::cert
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CertificateEncodingException::CertificateEncodingException(QAndroidJniObject obj) : java::security::cert::CertificateException(obj) {}
+	// QJniObject forward
+	CertificateEncodingException::CertificateEncodingException(QJniObject obj) : java::security::cert::CertificateException(obj) {}
 	
 	// Constructors
 	CertificateEncodingException::CertificateEncodingException()

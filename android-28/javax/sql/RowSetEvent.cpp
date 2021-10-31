@@ -4,8 +4,8 @@ namespace javax::sql
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RowSetEvent::RowSetEvent(QAndroidJniObject obj) : java::util::EventObject(obj) {}
+	// QJniObject forward
+	RowSetEvent::RowSetEvent(QJniObject obj) : java::util::EventObject(obj) {}
 	
 	// Constructors
 	RowSetEvent::RowSetEvent(__JniBaseClass arg0)

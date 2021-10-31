@@ -7,8 +7,8 @@ namespace android::text::method
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MultiTapKeyListener::MultiTapKeyListener(QAndroidJniObject obj) : android::text::method::BaseKeyListener(obj) {}
+	// QJniObject forward
+	MultiTapKeyListener::MultiTapKeyListener(QJniObject obj) : android::text::method::BaseKeyListener(obj) {}
 	
 	// Constructors
 	MultiTapKeyListener::MultiTapKeyListener(android::text::method::TextKeyListener_Capitalize arg0, jboolean arg1)

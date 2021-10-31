@@ -12,9 +12,9 @@ namespace android::media
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit NotProvisionedException(const char *className, const char *sig, Ts...agv) : android::media::MediaDrmException(className, sig, std::forward<Ts>(agv)...) {}
-		NotProvisionedException(QAndroidJniObject obj);
+		NotProvisionedException(QJniObject obj);
 		
 		// Constructors
 		NotProvisionedException(jstring arg0);

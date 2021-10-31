@@ -6,8 +6,8 @@ namespace org::xml::sax
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	HandlerBase::HandlerBase(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	HandlerBase::HandlerBase(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	HandlerBase::HandlerBase()

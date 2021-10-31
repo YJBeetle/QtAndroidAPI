@@ -8,8 +8,8 @@ namespace java::util::zip
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ZipInputStream::ZipInputStream(QAndroidJniObject obj) : java::util::zip::InflaterInputStream(obj) {}
+	// QJniObject forward
+	ZipInputStream::ZipInputStream(QJniObject obj) : java::util::zip::InflaterInputStream(obj) {}
 	
 	// Constructors
 	ZipInputStream::ZipInputStream(java::io::InputStream arg0)

@@ -15,9 +15,9 @@ namespace android::database
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CrossProcessCursorWrapper(const char *className, const char *sig, Ts...agv) : android::database::CursorWrapper(className, sig, std::forward<Ts>(agv)...) {}
-		CrossProcessCursorWrapper(QAndroidJniObject obj);
+		CrossProcessCursorWrapper(QJniObject obj);
 		
 		// Constructors
 		CrossProcessCursorWrapper(__JniBaseClass arg0);

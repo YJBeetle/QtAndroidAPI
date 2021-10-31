@@ -63,8 +63,8 @@ namespace java::util::concurrent
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TimeUnit::TimeUnit(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	TimeUnit::TimeUnit(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

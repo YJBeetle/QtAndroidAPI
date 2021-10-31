@@ -4,8 +4,8 @@ namespace java::sql
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DataTruncation::DataTruncation(QAndroidJniObject obj) : java::sql::SQLWarning(obj) {}
+	// QJniObject forward
+	DataTruncation::DataTruncation(QJniObject obj) : java::sql::SQLWarning(obj) {}
 	
 	// Constructors
 	DataTruncation::DataTruncation(jint arg0, jboolean arg1, jboolean arg2, jint arg3, jint arg4)

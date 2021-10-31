@@ -36,9 +36,9 @@ namespace android::widget
 		static jint MODE_DIALOG();
 		static jint MODE_DROPDOWN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Spinner(const char *className, const char *sig, Ts...agv) : android::widget::AbsSpinner(className, sig, std::forward<Ts>(agv)...) {}
-		Spinner(QAndroidJniObject obj);
+		Spinner(QJniObject obj);
 		
 		// Constructors
 		Spinner(android::content::Context arg0);

@@ -9,8 +9,8 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ProgressBar::ProgressBar(QAndroidJniObject obj) : android::view::View(obj) {}
+	// QJniObject forward
+	ProgressBar::ProgressBar(QJniObject obj) : android::view::View(obj) {}
 	
 	// Constructors
 	ProgressBar::ProgressBar(android::content::Context arg0)

@@ -10,9 +10,9 @@ namespace javax::security::auth::callback
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PasswordCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PasswordCallback(QAndroidJniObject obj);
+		PasswordCallback(QJniObject obj);
 		
 		// Constructors
 		PasswordCallback(jstring arg0, jboolean arg1);

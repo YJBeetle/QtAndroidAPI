@@ -29,9 +29,9 @@ namespace android::gesture
 		jfloat length();
 		jfloatArray points();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit GestureStroke(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		GestureStroke(QAndroidJniObject obj);
+		GestureStroke(QJniObject obj);
 		
 		// Constructors
 		GestureStroke(java::util::ArrayList arg0);

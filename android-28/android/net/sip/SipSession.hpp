@@ -18,9 +18,9 @@ namespace android::net::sip
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SipSession(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SipSession(QAndroidJniObject obj);
+		SipSession(QJniObject obj);
 		
 		// Constructors
 		

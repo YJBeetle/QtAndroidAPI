@@ -30,8 +30,8 @@ namespace java::time::zone
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ZoneOffsetTransitionRule_TimeDefinition::ZoneOffsetTransitionRule_TimeDefinition(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	ZoneOffsetTransitionRule_TimeDefinition::ZoneOffsetTransitionRule_TimeDefinition(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

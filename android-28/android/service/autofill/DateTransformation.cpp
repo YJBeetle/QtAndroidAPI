@@ -15,8 +15,8 @@ namespace android::service::autofill
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DateTransformation::DateTransformation(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DateTransformation::DateTransformation(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	DateTransformation::DateTransformation(android::view::autofill::AutofillId arg0, android::icu::text::DateFormat arg1)

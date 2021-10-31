@@ -4,8 +4,8 @@ namespace android::provider
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SyncStateContract::SyncStateContract(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SyncStateContract::SyncStateContract(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	SyncStateContract::SyncStateContract()

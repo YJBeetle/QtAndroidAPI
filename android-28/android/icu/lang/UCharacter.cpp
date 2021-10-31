@@ -148,8 +148,8 @@ namespace android::icu::lang
 		);
 	}
 	
-	// QAndroidJniObject forward
-	UCharacter::UCharacter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	UCharacter::UCharacter(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

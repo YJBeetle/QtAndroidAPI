@@ -653,8 +653,8 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	Settings::Settings(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Settings::Settings(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Settings::Settings()

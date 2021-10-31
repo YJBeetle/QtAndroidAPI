@@ -6,8 +6,8 @@ namespace android::database
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AbstractWindowedCursor::AbstractWindowedCursor(QAndroidJniObject obj) : android::database::AbstractCursor(obj) {}
+	// QJniObject forward
+	AbstractWindowedCursor::AbstractWindowedCursor(QJniObject obj) : android::database::AbstractCursor(obj) {}
 	
 	// Constructors
 	AbstractWindowedCursor::AbstractWindowedCursor()

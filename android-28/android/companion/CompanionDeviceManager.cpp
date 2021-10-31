@@ -16,8 +16,8 @@ namespace android::companion
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	CompanionDeviceManager::CompanionDeviceManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CompanionDeviceManager::CompanionDeviceManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

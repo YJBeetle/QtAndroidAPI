@@ -13,8 +13,8 @@ namespace android::telephony
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CellSignalStrengthCdma::CellSignalStrengthCdma(QAndroidJniObject obj) : android::telephony::CellSignalStrength(obj) {}
+	// QJniObject forward
+	CellSignalStrengthCdma::CellSignalStrengthCdma(QJniObject obj) : android::telephony::CellSignalStrength(obj) {}
 	
 	// Constructors
 	

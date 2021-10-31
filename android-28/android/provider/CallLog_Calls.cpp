@@ -406,8 +406,8 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	CallLog_Calls::CallLog_Calls(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CallLog_Calls::CallLog_Calls(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	CallLog_Calls::CallLog_Calls()

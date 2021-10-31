@@ -18,9 +18,9 @@ namespace android::app::slice
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SliceMetrics(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SliceMetrics(QAndroidJniObject obj);
+		SliceMetrics(QJniObject obj);
 		
 		// Constructors
 		SliceMetrics(android::content::Context arg0, android::net::Uri arg1);

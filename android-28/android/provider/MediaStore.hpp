@@ -49,9 +49,9 @@ namespace android::provider
 		static jstring META_DATA_STILL_IMAGE_CAMERA_PREWARM_SERVICE();
 		static jstring UNKNOWN_STRING();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaStore(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaStore(QAndroidJniObject obj);
+		MediaStore(QJniObject obj);
 		
 		// Constructors
 		MediaStore();

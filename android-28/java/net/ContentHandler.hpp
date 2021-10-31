@@ -14,9 +14,9 @@ namespace java::net
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ContentHandler(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ContentHandler(QAndroidJniObject obj);
+		ContentHandler(QJniObject obj);
 		
 		// Constructors
 		ContentHandler();

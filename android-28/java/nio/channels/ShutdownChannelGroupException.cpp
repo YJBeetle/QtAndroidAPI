@@ -4,8 +4,8 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ShutdownChannelGroupException::ShutdownChannelGroupException(QAndroidJniObject obj) : java::lang::IllegalStateException(obj) {}
+	// QJniObject forward
+	ShutdownChannelGroupException::ShutdownChannelGroupException(QJniObject obj) : java::lang::IllegalStateException(obj) {}
 	
 	// Constructors
 	ShutdownChannelGroupException::ShutdownChannelGroupException()

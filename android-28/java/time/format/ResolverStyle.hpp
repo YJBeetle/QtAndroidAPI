@@ -14,9 +14,9 @@ namespace java::time::format
 		static java::time::format::ResolverStyle SMART();
 		static java::time::format::ResolverStyle STRICT();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ResolverStyle(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		ResolverStyle(QAndroidJniObject obj);
+		ResolverStyle(QJniObject obj);
 		
 		// Constructors
 		

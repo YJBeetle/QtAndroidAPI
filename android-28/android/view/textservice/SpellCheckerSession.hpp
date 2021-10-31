@@ -19,9 +19,9 @@ namespace android::view::textservice
 		// Fields
 		static jstring SERVICE_META_DATA();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SpellCheckerSession(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SpellCheckerSession(QAndroidJniObject obj);
+		SpellCheckerSession(QJniObject obj);
 		
 		// Constructors
 		

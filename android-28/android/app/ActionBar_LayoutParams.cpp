@@ -12,8 +12,8 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ActionBar_LayoutParams::ActionBar_LayoutParams(QAndroidJniObject obj) : android::view::ViewGroup_MarginLayoutParams(obj) {}
+	// QJniObject forward
+	ActionBar_LayoutParams::ActionBar_LayoutParams(QJniObject obj) : android::view::ViewGroup_MarginLayoutParams(obj) {}
 	
 	// Constructors
 	ActionBar_LayoutParams::ActionBar_LayoutParams(android::app::ActionBar_LayoutParams &arg0)

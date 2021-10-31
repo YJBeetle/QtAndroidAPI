@@ -4,8 +4,8 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FileLockInterruptionException::FileLockInterruptionException(QAndroidJniObject obj) : java::io::IOException(obj) {}
+	// QJniObject forward
+	FileLockInterruptionException::FileLockInterruptionException(QJniObject obj) : java::io::IOException(obj) {}
 	
 	// Constructors
 	FileLockInterruptionException::FileLockInterruptionException()

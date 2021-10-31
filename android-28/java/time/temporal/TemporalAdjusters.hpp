@@ -14,9 +14,9 @@ namespace java::time::temporal
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TemporalAdjusters(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		TemporalAdjusters(QAndroidJniObject obj);
+		TemporalAdjusters(QJniObject obj);
 		
 		// Constructors
 		

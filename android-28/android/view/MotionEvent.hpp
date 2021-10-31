@@ -115,9 +115,9 @@ namespace android::view
 		static jint TOOL_TYPE_STYLUS();
 		static jint TOOL_TYPE_UNKNOWN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MotionEvent(const char *className, const char *sig, Ts...agv) : android::view::InputEvent(className, sig, std::forward<Ts>(agv)...) {}
-		MotionEvent(QAndroidJniObject obj);
+		MotionEvent(QJniObject obj);
 		
 		// Constructors
 		

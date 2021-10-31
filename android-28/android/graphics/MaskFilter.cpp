@@ -4,8 +4,8 @@ namespace android::graphics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MaskFilter::MaskFilter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MaskFilter::MaskFilter(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	MaskFilter::MaskFilter()

@@ -14,9 +14,9 @@ namespace java::text
 		static jint DIRECTION_LEFT_TO_RIGHT();
 		static jint DIRECTION_RIGHT_TO_LEFT();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Bidi(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Bidi(QAndroidJniObject obj);
+		Bidi(QJniObject obj);
 		
 		// Constructors
 		Bidi(__JniBaseClass arg0);

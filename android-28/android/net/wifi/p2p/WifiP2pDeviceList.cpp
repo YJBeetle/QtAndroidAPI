@@ -14,8 +14,8 @@ namespace android::net::wifi::p2p
 		);
 	}
 	
-	// QAndroidJniObject forward
-	WifiP2pDeviceList::WifiP2pDeviceList(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	WifiP2pDeviceList::WifiP2pDeviceList(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	WifiP2pDeviceList::WifiP2pDeviceList()

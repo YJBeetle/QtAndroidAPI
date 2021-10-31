@@ -9,8 +9,8 @@ namespace java::io
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FilePermission::FilePermission(QAndroidJniObject obj) : java::security::Permission(obj) {}
+	// QJniObject forward
+	FilePermission::FilePermission(QJniObject obj) : java::security::Permission(obj) {}
 	
 	// Constructors
 	FilePermission::FilePermission(jstring arg0, jstring arg1)

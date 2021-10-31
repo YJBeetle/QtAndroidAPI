@@ -5,8 +5,8 @@ namespace java::lang::reflect
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Executable::Executable(QAndroidJniObject obj) : java::lang::reflect::AccessibleObject(obj) {}
+	// QJniObject forward
+	Executable::Executable(QJniObject obj) : java::lang::reflect::AccessibleObject(obj) {}
 	
 	// Constructors
 	

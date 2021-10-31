@@ -14,9 +14,9 @@ namespace android::util
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit StringBuilderPrinter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		StringBuilderPrinter(QAndroidJniObject obj);
+		StringBuilderPrinter(QJniObject obj);
 		
 		// Constructors
 		StringBuilderPrinter(java::lang::StringBuilder arg0);

@@ -21,8 +21,8 @@ namespace javax::xml::xpath
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	XPathFactory::XPathFactory(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	XPathFactory::XPathFactory(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

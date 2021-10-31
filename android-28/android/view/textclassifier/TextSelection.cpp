@@ -13,8 +13,8 @@ namespace android::view::textclassifier
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TextSelection::TextSelection(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TextSelection::TextSelection(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

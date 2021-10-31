@@ -300,8 +300,8 @@ namespace java::awt::font
 		);
 	}
 	
-	// QAndroidJniObject forward
-	NumericShaper_Range::NumericShaper_Range(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	NumericShaper_Range::NumericShaper_Range(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

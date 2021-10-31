@@ -11,8 +11,8 @@ namespace android::service::wallpaper
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	WallpaperService_Engine::WallpaperService_Engine(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	WallpaperService_Engine::WallpaperService_Engine(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	WallpaperService_Engine::WallpaperService_Engine(android::service::wallpaper::WallpaperService arg0)

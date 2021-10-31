@@ -14,9 +14,9 @@ namespace android::icu::util
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ULocale_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ULocale_Builder(QAndroidJniObject obj);
+		ULocale_Builder(QJniObject obj);
 		
 		// Constructors
 		ULocale_Builder();

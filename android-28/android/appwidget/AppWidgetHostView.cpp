@@ -14,8 +14,8 @@ namespace android::appwidget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AppWidgetHostView::AppWidgetHostView(QAndroidJniObject obj) : android::widget::FrameLayout(obj) {}
+	// QJniObject forward
+	AppWidgetHostView::AppWidgetHostView(QJniObject obj) : android::widget::FrameLayout(obj) {}
 	
 	// Constructors
 	AppWidgetHostView::AppWidgetHostView(android::content::Context arg0)

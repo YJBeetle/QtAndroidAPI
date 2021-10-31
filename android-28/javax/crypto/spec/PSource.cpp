@@ -4,8 +4,8 @@ namespace javax::crypto::spec
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PSource::PSource(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PSource::PSource(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

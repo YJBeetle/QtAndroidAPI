@@ -24,9 +24,9 @@ namespace android::provider
 		static jstring EXTRA_EVENT_BEGIN_TIME();
 		static jstring EXTRA_EVENT_END_TIME();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CalendarContract(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CalendarContract(QAndroidJniObject obj);
+		CalendarContract(QJniObject obj);
 		
 		// Constructors
 		

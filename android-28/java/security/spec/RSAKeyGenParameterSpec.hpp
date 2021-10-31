@@ -16,9 +16,9 @@ namespace java::security::spec
 		static java::math::BigInteger F0();
 		static java::math::BigInteger F4();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit RSAKeyGenParameterSpec(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		RSAKeyGenParameterSpec(QAndroidJniObject obj);
+		RSAKeyGenParameterSpec(QJniObject obj);
 		
 		// Constructors
 		RSAKeyGenParameterSpec(jint arg0, java::math::BigInteger arg1);

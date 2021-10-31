@@ -9,8 +9,8 @@ namespace android::media::tv
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TvRecordingClient::TvRecordingClient(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TvRecordingClient::TvRecordingClient(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	TvRecordingClient::TvRecordingClient(android::content::Context arg0, jstring arg1, android::media::tv::TvRecordingClient_RecordingCallback arg2, android::os::Handler arg3)

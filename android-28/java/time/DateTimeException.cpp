@@ -4,8 +4,8 @@ namespace java::time
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DateTimeException::DateTimeException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	// QJniObject forward
+	DateTimeException::DateTimeException(QJniObject obj) : java::lang::RuntimeException(obj) {}
 	
 	// Constructors
 	DateTimeException::DateTimeException(jstring arg0)

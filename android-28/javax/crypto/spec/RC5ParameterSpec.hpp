@@ -10,9 +10,9 @@ namespace javax::crypto::spec
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit RC5ParameterSpec(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		RC5ParameterSpec(QAndroidJniObject obj);
+		RC5ParameterSpec(QJniObject obj);
 		
 		// Constructors
 		RC5ParameterSpec(jint arg0, jint arg1, jint arg2);

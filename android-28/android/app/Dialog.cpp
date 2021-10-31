@@ -21,8 +21,8 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Dialog::Dialog(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Dialog::Dialog(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Dialog::Dialog(android::content::Context arg0)

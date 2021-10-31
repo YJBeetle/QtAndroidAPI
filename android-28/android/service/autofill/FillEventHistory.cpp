@@ -14,8 +14,8 @@ namespace android::service::autofill
 		);
 	}
 	
-	// QAndroidJniObject forward
-	FillEventHistory::FillEventHistory(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	FillEventHistory::FillEventHistory(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

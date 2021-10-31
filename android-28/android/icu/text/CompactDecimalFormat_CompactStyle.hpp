@@ -13,9 +13,9 @@ namespace android::icu::text
 		static android::icu::text::CompactDecimalFormat_CompactStyle LONG();
 		static android::icu::text::CompactDecimalFormat_CompactStyle SHORT();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CompactDecimalFormat_CompactStyle(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		CompactDecimalFormat_CompactStyle(QAndroidJniObject obj);
+		CompactDecimalFormat_CompactStyle(QJniObject obj);
 		
 		// Constructors
 		

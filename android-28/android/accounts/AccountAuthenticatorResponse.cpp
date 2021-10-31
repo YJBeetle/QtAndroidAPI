@@ -14,8 +14,8 @@ namespace android::accounts
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AccountAuthenticatorResponse::AccountAuthenticatorResponse(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AccountAuthenticatorResponse::AccountAuthenticatorResponse(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	AccountAuthenticatorResponse::AccountAuthenticatorResponse(android::os::Parcel arg0)

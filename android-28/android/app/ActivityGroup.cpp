@@ -7,8 +7,8 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ActivityGroup::ActivityGroup(QAndroidJniObject obj) : android::app::Activity(obj) {}
+	// QJniObject forward
+	ActivityGroup::ActivityGroup(QJniObject obj) : android::app::Activity(obj) {}
 	
 	// Constructors
 	ActivityGroup::ActivityGroup()

@@ -5,8 +5,8 @@ namespace android::database
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MatrixCursor_RowBuilder::MatrixCursor_RowBuilder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MatrixCursor_RowBuilder::MatrixCursor_RowBuilder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

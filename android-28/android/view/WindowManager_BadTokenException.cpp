@@ -4,8 +4,8 @@ namespace android::view
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	WindowManager_BadTokenException::WindowManager_BadTokenException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	// QJniObject forward
+	WindowManager_BadTokenException::WindowManager_BadTokenException(QJniObject obj) : java::lang::RuntimeException(obj) {}
 	
 	// Constructors
 	WindowManager_BadTokenException::WindowManager_BadTokenException()

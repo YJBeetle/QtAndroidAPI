@@ -4,8 +4,8 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	StringIndexOutOfBoundsException::StringIndexOutOfBoundsException(QAndroidJniObject obj) : java::lang::IndexOutOfBoundsException(obj) {}
+	// QJniObject forward
+	StringIndexOutOfBoundsException::StringIndexOutOfBoundsException(QJniObject obj) : java::lang::IndexOutOfBoundsException(obj) {}
 	
 	// Constructors
 	StringIndexOutOfBoundsException::StringIndexOutOfBoundsException()

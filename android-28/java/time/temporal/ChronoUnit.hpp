@@ -31,9 +31,9 @@ namespace java::time::temporal
 		static java::time::temporal::ChronoUnit WEEKS();
 		static java::time::temporal::ChronoUnit YEARS();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ChronoUnit(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		ChronoUnit(QAndroidJniObject obj);
+		ChronoUnit(QJniObject obj);
 		
 		// Constructors
 		

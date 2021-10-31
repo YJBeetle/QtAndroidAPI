@@ -6,8 +6,8 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	JetPlayer::JetPlayer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	JetPlayer::JetPlayer(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -15,9 +15,9 @@ namespace android::hardware::camera2::params
 		static jint GREEN_ODD();
 		static jint RED();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit RggbChannelVector(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		RggbChannelVector(QAndroidJniObject obj);
+		RggbChannelVector(QJniObject obj);
 		
 		// Constructors
 		RggbChannelVector(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);

@@ -14,9 +14,9 @@ namespace android::renderscript
 		jdouble y();
 		jdouble z();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Double4(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Double4(QAndroidJniObject obj);
+		Double4(QJniObject obj);
 		
 		// Constructors
 		Double4();

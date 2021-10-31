@@ -19,9 +19,9 @@ namespace android::os
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit LocaleList(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		LocaleList(QAndroidJniObject obj);
+		LocaleList(QJniObject obj);
 		
 		// Constructors
 		LocaleList(jarray arg0);

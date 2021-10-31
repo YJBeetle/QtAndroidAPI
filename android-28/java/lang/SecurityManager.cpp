@@ -9,8 +9,8 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SecurityManager::SecurityManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SecurityManager::SecurityManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	SecurityManager::SecurityManager()

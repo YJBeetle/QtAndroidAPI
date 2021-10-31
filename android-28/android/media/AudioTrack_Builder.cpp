@@ -7,8 +7,8 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AudioTrack_Builder::AudioTrack_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AudioTrack_Builder::AudioTrack_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	AudioTrack_Builder::AudioTrack_Builder()

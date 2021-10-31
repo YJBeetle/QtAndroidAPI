@@ -33,8 +33,8 @@ namespace android::content
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SyncAdapterType::SyncAdapterType(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SyncAdapterType::SyncAdapterType(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	SyncAdapterType::SyncAdapterType(android::os::Parcel arg0)

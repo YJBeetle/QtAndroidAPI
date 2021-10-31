@@ -79,9 +79,9 @@ namespace android::net
 		static jint TYPE_WIFI();
 		static jint TYPE_WIMAX();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ConnectivityManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ConnectivityManager(QAndroidJniObject obj);
+		ConnectivityManager(QJniObject obj);
 		
 		// Constructors
 		

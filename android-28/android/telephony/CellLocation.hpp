@@ -10,9 +10,9 @@ namespace android::telephony
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CellLocation(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CellLocation(QAndroidJniObject obj);
+		CellLocation(QJniObject obj);
 		
 		// Constructors
 		CellLocation();

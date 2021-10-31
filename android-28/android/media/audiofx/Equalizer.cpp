@@ -75,8 +75,8 @@ namespace android::media::audiofx
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Equalizer::Equalizer(QAndroidJniObject obj) : android::media::audiofx::AudioEffect(obj) {}
+	// QJniObject forward
+	Equalizer::Equalizer(QJniObject obj) : android::media::audiofx::AudioEffect(obj) {}
 	
 	// Constructors
 	Equalizer::Equalizer(jint arg0, jint arg1)

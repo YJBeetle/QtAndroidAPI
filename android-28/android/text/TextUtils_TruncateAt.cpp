@@ -44,8 +44,8 @@ namespace android::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TextUtils_TruncateAt::TextUtils_TruncateAt(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	TextUtils_TruncateAt::TextUtils_TruncateAt(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

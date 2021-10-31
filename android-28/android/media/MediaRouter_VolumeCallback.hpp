@@ -14,9 +14,9 @@ namespace android::media
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaRouter_VolumeCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaRouter_VolumeCallback(QAndroidJniObject obj);
+		MediaRouter_VolumeCallback(QJniObject obj);
 		
 		// Constructors
 		MediaRouter_VolumeCallback();

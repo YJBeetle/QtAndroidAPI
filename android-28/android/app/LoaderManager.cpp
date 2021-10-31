@@ -8,8 +8,8 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LoaderManager::LoaderManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	LoaderManager::LoaderManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	LoaderManager::LoaderManager()

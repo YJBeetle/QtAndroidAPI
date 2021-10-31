@@ -26,8 +26,8 @@ namespace android::webkit
 		);
 	}
 	
-	// QAndroidJniObject forward
-	WebChromeClient_FileChooserParams::WebChromeClient_FileChooserParams(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	WebChromeClient_FileChooserParams::WebChromeClient_FileChooserParams(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	WebChromeClient_FileChooserParams::WebChromeClient_FileChooserParams()

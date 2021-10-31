@@ -6,8 +6,8 @@ namespace javax::crypto
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SecretKeyFactory::SecretKeyFactory(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SecretKeyFactory::SecretKeyFactory(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

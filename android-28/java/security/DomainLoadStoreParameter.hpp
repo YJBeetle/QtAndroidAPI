@@ -14,9 +14,9 @@ namespace java::security
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DomainLoadStoreParameter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		DomainLoadStoreParameter(QAndroidJniObject obj);
+		DomainLoadStoreParameter(QJniObject obj);
 		
 		// Constructors
 		DomainLoadStoreParameter(java::net::URI arg0, __JniBaseClass arg1);

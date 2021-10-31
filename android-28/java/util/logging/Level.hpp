@@ -23,9 +23,9 @@ namespace java::util::logging
 		static java::util::logging::Level SEVERE();
 		static java::util::logging::Level WARNING();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Level(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Level(QAndroidJniObject obj);
+		Level(QJniObject obj);
 		
 		// Constructors
 		

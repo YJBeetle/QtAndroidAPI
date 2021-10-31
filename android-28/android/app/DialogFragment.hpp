@@ -47,9 +47,9 @@ namespace android::app
 		static jint STYLE_NO_INPUT();
 		static jint STYLE_NO_TITLE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DialogFragment(const char *className, const char *sig, Ts...agv) : android::app::Fragment(className, sig, std::forward<Ts>(agv)...) {}
-		DialogFragment(QAndroidJniObject obj);
+		DialogFragment(QJniObject obj);
 		
 		// Constructors
 		DialogFragment();

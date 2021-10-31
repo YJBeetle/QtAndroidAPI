@@ -42,9 +42,9 @@ namespace android::bluetooth
 		static jint STATE_CHANNEL_DISCONNECTED();
 		static jint STATE_CHANNEL_DISCONNECTING();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit BluetoothHealth(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		BluetoothHealth(QAndroidJniObject obj);
+		BluetoothHealth(QJniObject obj);
 		
 		// Constructors
 		

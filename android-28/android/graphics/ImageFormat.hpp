@@ -29,9 +29,9 @@ namespace android::graphics
 		static jint YUY2();
 		static jint YV12();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ImageFormat(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ImageFormat(QAndroidJniObject obj);
+		ImageFormat(QJniObject obj);
 		
 		// Constructors
 		ImageFormat();

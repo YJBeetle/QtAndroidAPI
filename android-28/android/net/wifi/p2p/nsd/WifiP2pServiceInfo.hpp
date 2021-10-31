@@ -18,9 +18,9 @@ namespace android::net::wifi::p2p::nsd
 		static jint SERVICE_TYPE_UPNP();
 		static jint SERVICE_TYPE_VENDOR_SPECIFIC();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WifiP2pServiceInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		WifiP2pServiceInfo(QAndroidJniObject obj);
+		WifiP2pServiceInfo(QJniObject obj);
 		
 		// Constructors
 		

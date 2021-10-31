@@ -11,9 +11,9 @@ namespace android::system
 		// Fields
 		jlong value();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Int64Ref(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Int64Ref(QAndroidJniObject obj);
+		Int64Ref(QJniObject obj);
 		
 		// Constructors
 		Int64Ref(jlong arg0);

@@ -5,8 +5,8 @@ namespace java::security::spec
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	EllipticCurve::EllipticCurve(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	EllipticCurve::EllipticCurve(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	EllipticCurve::EllipticCurve(__JniBaseClass arg0, java::math::BigInteger arg1, java::math::BigInteger arg2)

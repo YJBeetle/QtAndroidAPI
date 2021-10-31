@@ -23,8 +23,8 @@ namespace android::app::slice
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	SliceManager::SliceManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SliceManager::SliceManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

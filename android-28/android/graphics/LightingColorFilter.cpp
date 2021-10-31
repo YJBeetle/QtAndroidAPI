@@ -4,8 +4,8 @@ namespace android::graphics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LightingColorFilter::LightingColorFilter(QAndroidJniObject obj) : android::graphics::ColorFilter(obj) {}
+	// QJniObject forward
+	LightingColorFilter::LightingColorFilter(QJniObject obj) : android::graphics::ColorFilter(obj) {}
 	
 	// Constructors
 	LightingColorFilter::LightingColorFilter(jint arg0, jint arg1)

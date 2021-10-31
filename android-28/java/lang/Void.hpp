@@ -11,9 +11,9 @@ namespace java::lang
 		// Fields
 		static jclass TYPE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Void(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Void(QAndroidJniObject obj);
+		Void(QJniObject obj);
 		
 		// Constructors
 		

@@ -37,8 +37,8 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	Browser::Browser(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Browser::Browser(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Browser::Browser()

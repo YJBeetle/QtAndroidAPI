@@ -14,9 +14,9 @@ namespace android::view
 		jcharArray meta();
 		jchar number();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit KeyCharacterMap_KeyData(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		KeyCharacterMap_KeyData(QAndroidJniObject obj);
+		KeyCharacterMap_KeyData(QJniObject obj);
 		
 		// Constructors
 		KeyCharacterMap_KeyData();

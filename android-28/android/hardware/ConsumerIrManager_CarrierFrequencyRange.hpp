@@ -14,9 +14,9 @@ namespace android::hardware
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ConsumerIrManager_CarrierFrequencyRange(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ConsumerIrManager_CarrierFrequencyRange(QAndroidJniObject obj);
+		ConsumerIrManager_CarrierFrequencyRange(QJniObject obj);
 		
 		// Constructors
 		ConsumerIrManager_CarrierFrequencyRange(android::hardware::ConsumerIrManager arg0, jint arg1, jint arg2);

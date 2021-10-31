@@ -27,9 +27,9 @@ namespace android::media
 		static jbyte SCRAMBLE_CONTROL_UNSCRAMBLED();
 		static jbyte SCRAMBLE_FLAG_PES_HEADER();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaDescrambler(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaDescrambler(QAndroidJniObject obj);
+		MediaDescrambler(QJniObject obj);
 		
 		// Constructors
 		MediaDescrambler(jint arg0);

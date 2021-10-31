@@ -14,8 +14,8 @@ namespace android::net
 		);
 	}
 	
-	// QAndroidJniObject forward
-	IpPrefix::IpPrefix(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	IpPrefix::IpPrefix(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

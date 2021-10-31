@@ -16,9 +16,9 @@ namespace android::icu::text
 		static android::icu::text::DateFormat_BooleanAttribute PARSE_PARTIAL_LITERAL_MATCH();
 		static android::icu::text::DateFormat_BooleanAttribute PARSE_PARTIAL_MATCH();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DateFormat_BooleanAttribute(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		DateFormat_BooleanAttribute(QAndroidJniObject obj);
+		DateFormat_BooleanAttribute(QJniObject obj);
 		
 		// Constructors
 		

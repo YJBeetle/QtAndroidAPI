@@ -21,9 +21,9 @@ namespace android::widget
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ActionMenuView_LayoutParams(const char *className, const char *sig, Ts...agv) : android::widget::LinearLayout_LayoutParams(className, sig, std::forward<Ts>(agv)...) {}
-		ActionMenuView_LayoutParams(QAndroidJniObject obj);
+		ActionMenuView_LayoutParams(QJniObject obj);
 		
 		// Constructors
 		ActionMenuView_LayoutParams(android::view::ViewGroup_LayoutParams arg0);

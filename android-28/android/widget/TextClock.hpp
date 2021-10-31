@@ -18,9 +18,9 @@ namespace android::widget
 		static jstring DEFAULT_FORMAT_12_HOUR();
 		static jstring DEFAULT_FORMAT_24_HOUR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TextClock(const char *className, const char *sig, Ts...agv) : android::widget::TextView(className, sig, std::forward<Ts>(agv)...) {}
-		TextClock(QAndroidJniObject obj);
+		TextClock(QJniObject obj);
 		
 		// Constructors
 		TextClock(android::content::Context arg0);

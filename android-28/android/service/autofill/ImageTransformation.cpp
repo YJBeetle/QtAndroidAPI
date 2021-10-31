@@ -14,8 +14,8 @@ namespace android::service::autofill
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ImageTransformation::ImageTransformation(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ImageTransformation::ImageTransformation(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

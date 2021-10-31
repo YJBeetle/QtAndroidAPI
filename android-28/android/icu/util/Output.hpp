@@ -11,9 +11,9 @@ namespace android::icu::util
 		// Fields
 		jobject value();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Output(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Output(QAndroidJniObject obj);
+		Output(QJniObject obj);
 		
 		// Constructors
 		Output();

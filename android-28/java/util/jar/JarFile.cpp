@@ -21,8 +21,8 @@ namespace java::util::jar
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	JarFile::JarFile(QAndroidJniObject obj) : java::util::zip::ZipFile(obj) {}
+	// QJniObject forward
+	JarFile::JarFile(QJniObject obj) : java::util::zip::ZipFile(obj) {}
 	
 	// Constructors
 	JarFile::JarFile(java::io::File arg0)

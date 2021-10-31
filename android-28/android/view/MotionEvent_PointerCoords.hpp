@@ -19,9 +19,9 @@ namespace android::view
 		jfloat x();
 		jfloat y();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MotionEvent_PointerCoords(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MotionEvent_PointerCoords(QAndroidJniObject obj);
+		MotionEvent_PointerCoords(QJniObject obj);
 		
 		// Constructors
 		MotionEvent_PointerCoords();

@@ -11,9 +11,9 @@ namespace android::os::strictmode
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit UnbufferedIoViolation(const char *className, const char *sig, Ts...agv) : android::os::strictmode::Violation(className, sig, std::forward<Ts>(agv)...) {}
-		UnbufferedIoViolation(QAndroidJniObject obj);
+		UnbufferedIoViolation(QJniObject obj);
 		
 		// Constructors
 		

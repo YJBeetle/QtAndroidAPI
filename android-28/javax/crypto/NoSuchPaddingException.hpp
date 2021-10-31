@@ -12,9 +12,9 @@ namespace javax::crypto
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit NoSuchPaddingException(const char *className, const char *sig, Ts...agv) : java::security::GeneralSecurityException(className, sig, std::forward<Ts>(agv)...) {}
-		NoSuchPaddingException(QAndroidJniObject obj);
+		NoSuchPaddingException(QJniObject obj);
 		
 		// Constructors
 		NoSuchPaddingException();

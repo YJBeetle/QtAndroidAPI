@@ -13,9 +13,9 @@ namespace java::sql
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SQLIntegrityConstraintViolationException(const char *className, const char *sig, Ts...agv) : java::sql::SQLNonTransientException(className, sig, std::forward<Ts>(agv)...) {}
-		SQLIntegrityConstraintViolationException(QAndroidJniObject obj);
+		SQLIntegrityConstraintViolationException(QJniObject obj);
 		
 		// Constructors
 		SQLIntegrityConstraintViolationException();

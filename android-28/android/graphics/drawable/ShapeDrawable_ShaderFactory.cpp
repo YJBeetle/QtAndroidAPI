@@ -5,8 +5,8 @@ namespace android::graphics::drawable
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ShapeDrawable_ShaderFactory::ShapeDrawable_ShaderFactory(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ShapeDrawable_ShaderFactory::ShapeDrawable_ShaderFactory(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ShapeDrawable_ShaderFactory::ShapeDrawable_ShaderFactory()

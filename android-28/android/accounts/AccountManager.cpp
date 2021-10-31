@@ -326,8 +326,8 @@ namespace android::accounts
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AccountManager::AccountManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AccountManager::AccountManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

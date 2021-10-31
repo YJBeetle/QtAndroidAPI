@@ -19,9 +19,9 @@ namespace android::view::inputmethod
 		jint hintMaxLines();
 		jint token();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ExtractedTextRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ExtractedTextRequest(QAndroidJniObject obj);
+		ExtractedTextRequest(QJniObject obj);
 		
 		// Constructors
 		ExtractedTextRequest();

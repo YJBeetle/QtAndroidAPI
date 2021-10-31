@@ -41,9 +41,9 @@ namespace android::transition
 		static jint ORDERING_SEQUENTIAL();
 		static jint ORDERING_TOGETHER();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TransitionSet(const char *className, const char *sig, Ts...agv) : android::transition::Transition(className, sig, std::forward<Ts>(agv)...) {}
-		TransitionSet(QAndroidJniObject obj);
+		TransitionSet(QJniObject obj);
 		
 		// Constructors
 		TransitionSet();

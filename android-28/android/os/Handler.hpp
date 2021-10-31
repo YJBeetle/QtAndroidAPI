@@ -18,9 +18,9 @@ namespace android::os
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Handler(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Handler(QAndroidJniObject obj);
+		Handler(QJniObject obj);
 		
 		// Constructors
 		Handler();

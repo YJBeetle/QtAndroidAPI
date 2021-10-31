@@ -15,8 +15,8 @@ namespace android::telephony
 		);
 	}
 	
-	// QAndroidJniObject forward
-	VisualVoicemailSms::VisualVoicemailSms(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	VisualVoicemailSms::VisualVoicemailSms(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

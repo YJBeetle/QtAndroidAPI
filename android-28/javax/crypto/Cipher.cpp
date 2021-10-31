@@ -61,8 +61,8 @@ namespace javax::crypto
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Cipher::Cipher(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Cipher::Cipher(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

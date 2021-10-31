@@ -4,8 +4,8 @@ namespace android::database
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CursorIndexOutOfBoundsException::CursorIndexOutOfBoundsException(QAndroidJniObject obj) : java::lang::IndexOutOfBoundsException(obj) {}
+	// QJniObject forward
+	CursorIndexOutOfBoundsException::CursorIndexOutOfBoundsException(QJniObject obj) : java::lang::IndexOutOfBoundsException(obj) {}
 	
 	// Constructors
 	CursorIndexOutOfBoundsException::CursorIndexOutOfBoundsException(jstring arg0)

@@ -25,9 +25,9 @@ namespace android::content::pm
 		static jint MODE_FULL_INSTALL();
 		static jint MODE_INHERIT_EXISTING();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PackageInstaller_SessionParams(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PackageInstaller_SessionParams(QAndroidJniObject obj);
+		PackageInstaller_SessionParams(QJniObject obj);
 		
 		// Constructors
 		PackageInstaller_SessionParams(jint arg0);

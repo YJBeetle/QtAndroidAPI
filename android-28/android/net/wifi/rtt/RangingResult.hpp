@@ -26,9 +26,9 @@ namespace android::net::wifi::rtt
 		static jint STATUS_RESPONDER_DOES_NOT_SUPPORT_IEEE80211MC();
 		static jint STATUS_SUCCESS();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit RangingResult(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		RangingResult(QAndroidJniObject obj);
+		RangingResult(QJniObject obj);
 		
 		// Constructors
 		

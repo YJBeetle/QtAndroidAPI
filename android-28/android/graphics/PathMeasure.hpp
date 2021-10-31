@@ -20,9 +20,9 @@ namespace android::graphics
 		static jint POSITION_MATRIX_FLAG();
 		static jint TANGENT_MATRIX_FLAG();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PathMeasure(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PathMeasure(QAndroidJniObject obj);
+		PathMeasure(QJniObject obj);
 		
 		// Constructors
 		PathMeasure();

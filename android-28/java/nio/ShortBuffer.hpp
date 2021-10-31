@@ -19,9 +19,9 @@ namespace java::nio
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ShortBuffer(const char *className, const char *sig, Ts...agv) : java::nio::Buffer(className, sig, std::forward<Ts>(agv)...) {}
-		ShortBuffer(QAndroidJniObject obj);
+		ShortBuffer(QJniObject obj);
 		
 		// Constructors
 		

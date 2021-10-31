@@ -7,8 +7,8 @@ namespace android::content::pm
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CrossProfileApps::CrossProfileApps(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CrossProfileApps::CrossProfileApps(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -17,9 +17,9 @@ namespace android::os
 		static __JniBaseClass CREATOR();
 		static android::os::PersistableBundle EMPTY();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PersistableBundle(const char *className, const char *sig, Ts...agv) : android::os::BaseBundle(className, sig, std::forward<Ts>(agv)...) {}
-		PersistableBundle(QAndroidJniObject obj);
+		PersistableBundle(QJniObject obj);
 		
 		// Constructors
 		PersistableBundle();

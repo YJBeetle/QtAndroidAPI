@@ -265,8 +265,8 @@ namespace android::net::wifi
 		);
 	}
 	
-	// QAndroidJniObject forward
-	WifiManager::WifiManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	WifiManager::WifiManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -20,9 +20,9 @@ namespace android::view
 		static __JniBaseClass CREATOR();
 		static android::view::AbsSavedState EMPTY_STATE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AbsSavedState(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AbsSavedState(QAndroidJniObject obj);
+		AbsSavedState(QJniObject obj);
 		
 		// Constructors
 		

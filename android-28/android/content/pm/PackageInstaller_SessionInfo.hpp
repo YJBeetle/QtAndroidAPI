@@ -27,9 +27,9 @@ namespace android::content::pm
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PackageInstaller_SessionInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PackageInstaller_SessionInfo(QAndroidJniObject obj);
+		PackageInstaller_SessionInfo(QJniObject obj);
 		
 		// Constructors
 		

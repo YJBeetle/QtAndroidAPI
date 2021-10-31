@@ -24,9 +24,9 @@ namespace android::telecom
 		static jint ROUTE_WIRED_HEADSET();
 		static jint ROUTE_WIRED_OR_EARPIECE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CallAudioState(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CallAudioState(QAndroidJniObject obj);
+		CallAudioState(QJniObject obj);
 		
 		// Constructors
 		CallAudioState(jboolean arg0, jint arg1, jint arg2);

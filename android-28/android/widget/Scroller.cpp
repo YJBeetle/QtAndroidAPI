@@ -5,8 +5,8 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Scroller::Scroller(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Scroller::Scroller(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Scroller::Scroller(android::content::Context arg0)

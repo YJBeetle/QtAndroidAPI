@@ -30,9 +30,9 @@ namespace android::telephony
 		static jstring EXTRA_SUBSCRIPTION_INDEX();
 		static jint INVALID_SUBSCRIPTION_ID();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SubscriptionManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SubscriptionManager(QAndroidJniObject obj);
+		SubscriptionManager(QJniObject obj);
 		
 		// Constructors
 		

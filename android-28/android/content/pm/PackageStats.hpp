@@ -24,9 +24,9 @@ namespace android::content::pm
 		jlong externalObbSize();
 		jstring packageName();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PackageStats(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PackageStats(QAndroidJniObject obj);
+		PackageStats(QJniObject obj);
 		
 		// Constructors
 		PackageStats(android::content::pm::PackageStats &arg0);

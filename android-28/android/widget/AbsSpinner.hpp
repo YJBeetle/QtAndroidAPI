@@ -33,9 +33,9 @@ namespace android::widget
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AbsSpinner(const char *className, const char *sig, Ts...agv) : android::widget::AdapterView(className, sig, std::forward<Ts>(agv)...) {}
-		AbsSpinner(QAndroidJniObject obj);
+		AbsSpinner(QJniObject obj);
 		
 		// Constructors
 		AbsSpinner(android::content::Context arg0);

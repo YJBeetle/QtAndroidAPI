@@ -14,9 +14,9 @@ namespace android::media
 		static jint START_VIDEO_RECORDING();
 		static jint STOP_VIDEO_RECORDING();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaActionSound(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaActionSound(QAndroidJniObject obj);
+		MediaActionSound(QJniObject obj);
 		
 		// Constructors
 		MediaActionSound();

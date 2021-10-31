@@ -47,8 +47,8 @@ namespace android::hardware::camera2::params
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TonemapCurve::TonemapCurve(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TonemapCurve::TonemapCurve(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	TonemapCurve::TonemapCurve(jfloatArray arg0, jfloatArray arg1, jfloatArray arg2)

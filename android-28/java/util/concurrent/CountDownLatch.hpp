@@ -14,9 +14,9 @@ namespace java::util::concurrent
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CountDownLatch(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CountDownLatch(QAndroidJniObject obj);
+		CountDownLatch(QJniObject obj);
 		
 		// Constructors
 		CountDownLatch(jint arg0);

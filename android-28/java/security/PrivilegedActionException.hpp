@@ -23,9 +23,9 @@ namespace java::security
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PrivilegedActionException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		PrivilegedActionException(QAndroidJniObject obj);
+		PrivilegedActionException(QJniObject obj);
 		
 		// Constructors
 		PrivilegedActionException(java::lang::Exception arg0);

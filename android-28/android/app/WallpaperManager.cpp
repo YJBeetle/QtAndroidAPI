@@ -94,8 +94,8 @@ namespace android::app
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	WallpaperManager::WallpaperManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	WallpaperManager::WallpaperManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

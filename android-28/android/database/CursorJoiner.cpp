@@ -5,8 +5,8 @@ namespace android::database
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CursorJoiner::CursorJoiner(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CursorJoiner::CursorJoiner(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	CursorJoiner::CursorJoiner(__JniBaseClass arg0, jarray arg1, __JniBaseClass arg2, jarray arg3)

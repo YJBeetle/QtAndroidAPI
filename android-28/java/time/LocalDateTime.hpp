@@ -64,9 +64,9 @@ namespace java::time
 		static java::time::LocalDateTime MAX();
 		static java::time::LocalDateTime MIN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit LocalDateTime(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		LocalDateTime(QAndroidJniObject obj);
+		LocalDateTime(QJniObject obj);
 		
 		// Constructors
 		

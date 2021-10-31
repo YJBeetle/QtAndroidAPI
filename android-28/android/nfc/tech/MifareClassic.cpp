@@ -92,8 +92,8 @@ namespace android::nfc::tech
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MifareClassic::MifareClassic(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MifareClassic::MifareClassic(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -26,8 +26,8 @@ namespace android::location
 		);
 	}
 	
-	// QAndroidJniObject forward
-	GnssNavigationMessage_Callback::GnssNavigationMessage_Callback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	GnssNavigationMessage_Callback::GnssNavigationMessage_Callback(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	GnssNavigationMessage_Callback::GnssNavigationMessage_Callback()

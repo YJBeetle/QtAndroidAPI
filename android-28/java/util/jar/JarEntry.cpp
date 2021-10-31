@@ -6,8 +6,8 @@ namespace java::util::jar
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	JarEntry::JarEntry(QAndroidJniObject obj) : java::util::zip::ZipEntry(obj) {}
+	// QJniObject forward
+	JarEntry::JarEntry(QJniObject obj) : java::util::zip::ZipEntry(obj) {}
 	
 	// Constructors
 	JarEntry::JarEntry(jstring arg0)

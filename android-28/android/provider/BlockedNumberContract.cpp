@@ -22,8 +22,8 @@ namespace android::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	BlockedNumberContract::BlockedNumberContract(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	BlockedNumberContract::BlockedNumberContract(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

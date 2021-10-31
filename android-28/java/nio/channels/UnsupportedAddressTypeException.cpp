@@ -4,8 +4,8 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	UnsupportedAddressTypeException::UnsupportedAddressTypeException(QAndroidJniObject obj) : java::lang::IllegalArgumentException(obj) {}
+	// QJniObject forward
+	UnsupportedAddressTypeException::UnsupportedAddressTypeException(QJniObject obj) : java::lang::IllegalArgumentException(obj) {}
 	
 	// Constructors
 	UnsupportedAddressTypeException::UnsupportedAddressTypeException()

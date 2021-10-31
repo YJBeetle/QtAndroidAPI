@@ -13,9 +13,9 @@ namespace android::icu::text
 		static android::icu::text::TimeZoneFormat_ParseOption ALL_STYLES();
 		static android::icu::text::TimeZoneFormat_ParseOption TZ_DATABASE_ABBREVIATIONS();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TimeZoneFormat_ParseOption(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		TimeZoneFormat_ParseOption(QAndroidJniObject obj);
+		TimeZoneFormat_ParseOption(QJniObject obj);
 		
 		// Constructors
 		

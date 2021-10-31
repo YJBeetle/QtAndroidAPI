@@ -45,9 +45,9 @@ namespace android::app
 		jstring processName();
 		jint uid();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ActivityManager_RunningAppProcessInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ActivityManager_RunningAppProcessInfo(QAndroidJniObject obj);
+		ActivityManager_RunningAppProcessInfo(QJniObject obj);
 		
 		// Constructors
 		ActivityManager_RunningAppProcessInfo();

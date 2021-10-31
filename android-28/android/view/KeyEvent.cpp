@@ -2270,8 +2270,8 @@ namespace android::view
 		);
 	}
 	
-	// QAndroidJniObject forward
-	KeyEvent::KeyEvent(QAndroidJniObject obj) : android::view::InputEvent(obj) {}
+	// QJniObject forward
+	KeyEvent::KeyEvent(QJniObject obj) : android::view::InputEvent(obj) {}
 	
 	// Constructors
 	KeyEvent::KeyEvent(android::view::KeyEvent &arg0)

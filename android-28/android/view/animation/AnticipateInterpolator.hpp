@@ -15,9 +15,9 @@ namespace android::view::animation
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AnticipateInterpolator(const char *className, const char *sig, Ts...agv) : android::view::animation::BaseInterpolator(className, sig, std::forward<Ts>(agv)...) {}
-		AnticipateInterpolator(QAndroidJniObject obj);
+		AnticipateInterpolator(QJniObject obj);
 		
 		// Constructors
 		AnticipateInterpolator();

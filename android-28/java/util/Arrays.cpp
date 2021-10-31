@@ -5,8 +5,8 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Arrays::Arrays(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Arrays::Arrays(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

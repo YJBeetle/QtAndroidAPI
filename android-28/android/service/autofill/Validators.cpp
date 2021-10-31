@@ -4,8 +4,8 @@ namespace android::service::autofill
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Validators::Validators(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Validators::Validators(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

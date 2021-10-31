@@ -10,8 +10,8 @@ namespace android::system
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Int64Ref::Int64Ref(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Int64Ref::Int64Ref(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Int64Ref::Int64Ref(jlong arg0)

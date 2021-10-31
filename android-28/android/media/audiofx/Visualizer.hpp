@@ -29,9 +29,9 @@ namespace android::media::audiofx
 		static jint STATE_UNINITIALIZED();
 		static jint SUCCESS();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Visualizer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Visualizer(QAndroidJniObject obj);
+		Visualizer(QJniObject obj);
 		
 		// Constructors
 		Visualizer(jint arg0);

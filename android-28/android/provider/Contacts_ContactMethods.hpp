@@ -38,9 +38,9 @@ namespace android::provider
 		static jint PROTOCOL_SKYPE();
 		static jint PROTOCOL_YAHOO();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Contacts_ContactMethods(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Contacts_ContactMethods(QAndroidJniObject obj);
+		Contacts_ContactMethods(QJniObject obj);
 		
 		// Constructors
 		

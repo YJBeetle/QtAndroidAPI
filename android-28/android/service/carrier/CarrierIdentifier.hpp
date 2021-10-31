@@ -15,9 +15,9 @@ namespace android::service::carrier
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CarrierIdentifier(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CarrierIdentifier(QAndroidJniObject obj);
+		CarrierIdentifier(QJniObject obj);
 		
 		// Constructors
 		CarrierIdentifier(jbyteArray arg0, jstring arg1, jstring arg2);

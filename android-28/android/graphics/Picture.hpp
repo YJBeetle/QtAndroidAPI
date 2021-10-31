@@ -22,9 +22,9 @@ namespace android::graphics
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Picture(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Picture(QAndroidJniObject obj);
+		Picture(QJniObject obj);
 		
 		// Constructors
 		Picture();

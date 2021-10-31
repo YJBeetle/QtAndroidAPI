@@ -16,8 +16,8 @@ namespace android::renderscript
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Double2::Double2(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Double2::Double2(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Double2::Double2()

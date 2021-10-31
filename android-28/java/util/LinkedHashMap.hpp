@@ -16,9 +16,9 @@ namespace java::util
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit LinkedHashMap(const char *className, const char *sig, Ts...agv) : java::util::HashMap(className, sig, std::forward<Ts>(agv)...) {}
-		LinkedHashMap(QAndroidJniObject obj);
+		LinkedHashMap(QJniObject obj);
 		
 		// Constructors
 		LinkedHashMap();

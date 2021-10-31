@@ -18,8 +18,8 @@ namespace android::content
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ClipData::ClipData(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ClipData::ClipData(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ClipData::ClipData(android::content::ClipData &arg0)

@@ -20,8 +20,8 @@ namespace android::hardware::camera2
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DngCreator::DngCreator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	DngCreator::DngCreator(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	DngCreator::DngCreator(android::hardware::camera2::CameraCharacteristics arg0, android::hardware::camera2::CaptureResult arg1)

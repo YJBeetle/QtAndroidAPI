@@ -14,9 +14,9 @@ namespace android::nfc::tech
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit NfcV(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		NfcV(QAndroidJniObject obj);
+		NfcV(QJniObject obj);
 		
 		// Constructors
 		

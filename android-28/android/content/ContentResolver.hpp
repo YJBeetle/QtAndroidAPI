@@ -107,9 +107,9 @@ namespace android::content
 		static jint SYNC_OBSERVER_TYPE_PENDING();
 		static jint SYNC_OBSERVER_TYPE_SETTINGS();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ContentResolver(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ContentResolver(QAndroidJniObject obj);
+		ContentResolver(QJniObject obj);
 		
 		// Constructors
 		ContentResolver(android::content::Context arg0);

@@ -37,9 +37,9 @@ namespace android::service::voice
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit VoiceInteractionSessionService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		VoiceInteractionSessionService(QAndroidJniObject obj);
+		VoiceInteractionSessionService(QJniObject obj);
 		
 		// Constructors
 		VoiceInteractionSessionService();

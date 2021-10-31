@@ -25,8 +25,8 @@ namespace android::media::audiofx
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DynamicsProcessing::DynamicsProcessing(QAndroidJniObject obj) : android::media::audiofx::AudioEffect(obj) {}
+	// QJniObject forward
+	DynamicsProcessing::DynamicsProcessing(QJniObject obj) : android::media::audiofx::AudioEffect(obj) {}
 	
 	// Constructors
 	DynamicsProcessing::DynamicsProcessing(jint arg0)

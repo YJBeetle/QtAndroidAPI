@@ -4,8 +4,8 @@ namespace java::time::zone
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ZoneRulesException::ZoneRulesException(QAndroidJniObject obj) : java::time::DateTimeException(obj) {}
+	// QJniObject forward
+	ZoneRulesException::ZoneRulesException(QJniObject obj) : java::time::DateTimeException(obj) {}
 	
 	// Constructors
 	ZoneRulesException::ZoneRulesException(jstring arg0)

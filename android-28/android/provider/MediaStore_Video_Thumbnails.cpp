@@ -93,8 +93,8 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	MediaStore_Video_Thumbnails::MediaStore_Video_Thumbnails(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MediaStore_Video_Thumbnails::MediaStore_Video_Thumbnails(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	MediaStore_Video_Thumbnails::MediaStore_Video_Thumbnails()

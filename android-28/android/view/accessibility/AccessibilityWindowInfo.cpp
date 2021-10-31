@@ -50,8 +50,8 @@ namespace android::view::accessibility
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AccessibilityWindowInfo::AccessibilityWindowInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AccessibilityWindowInfo::AccessibilityWindowInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

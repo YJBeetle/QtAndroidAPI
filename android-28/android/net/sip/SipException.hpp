@@ -11,9 +11,9 @@ namespace android::net::sip
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SipException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		SipException(QAndroidJniObject obj);
+		SipException(QJniObject obj);
 		
 		// Constructors
 		SipException();

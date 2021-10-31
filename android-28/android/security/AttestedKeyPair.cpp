@@ -5,8 +5,8 @@ namespace android::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AttestedKeyPair::AttestedKeyPair(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AttestedKeyPair::AttestedKeyPair(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

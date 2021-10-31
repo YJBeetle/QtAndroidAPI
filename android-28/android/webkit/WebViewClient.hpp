@@ -78,9 +78,9 @@ namespace android::webkit
 		static jint SAFE_BROWSING_THREAT_UNKNOWN();
 		static jint SAFE_BROWSING_THREAT_UNWANTED_SOFTWARE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit WebViewClient(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		WebViewClient(QAndroidJniObject obj);
+		WebViewClient(QJniObject obj);
 		
 		// Constructors
 		WebViewClient();

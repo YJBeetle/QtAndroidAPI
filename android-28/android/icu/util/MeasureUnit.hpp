@@ -148,9 +148,9 @@ namespace android::icu::util
 		static android::icu::util::MeasureUnit YARD();
 		static android::icu::util::TimeUnit YEAR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MeasureUnit(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MeasureUnit(QAndroidJniObject obj);
+		MeasureUnit(QJniObject obj);
 		
 		// Constructors
 		

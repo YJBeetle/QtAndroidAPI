@@ -15,8 +15,8 @@ namespace org::json
 		).object<jobject>();
 	}
 	
-	// QAndroidJniObject forward
-	JSONObject::JSONObject(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	JSONObject::JSONObject(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	JSONObject::JSONObject()

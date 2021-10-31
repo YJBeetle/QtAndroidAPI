@@ -111,9 +111,9 @@ namespace android::media
 		static jstring MIMETYPE_VIDEO_VP8();
 		static jstring MIMETYPE_VIDEO_VP9();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaFormat(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaFormat(QAndroidJniObject obj);
+		MediaFormat(QJniObject obj);
 		
 		// Constructors
 		MediaFormat();

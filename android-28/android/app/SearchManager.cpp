@@ -420,8 +420,8 @@ namespace android::app
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	SearchManager::SearchManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SearchManager::SearchManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

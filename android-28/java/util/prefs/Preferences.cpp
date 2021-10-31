@@ -28,8 +28,8 @@ namespace java::util::prefs
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Preferences::Preferences(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Preferences::Preferences(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

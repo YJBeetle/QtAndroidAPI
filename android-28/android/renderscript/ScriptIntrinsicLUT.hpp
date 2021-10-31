@@ -33,9 +33,9 @@ namespace android::renderscript
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ScriptIntrinsicLUT(const char *className, const char *sig, Ts...agv) : android::renderscript::ScriptIntrinsic(className, sig, std::forward<Ts>(agv)...) {}
-		ScriptIntrinsicLUT(QAndroidJniObject obj);
+		ScriptIntrinsicLUT(QJniObject obj);
 		
 		// Constructors
 		

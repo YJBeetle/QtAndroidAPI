@@ -4,8 +4,8 @@ namespace org::xml::sax::ext
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Attributes2Impl::Attributes2Impl(QAndroidJniObject obj) : org::xml::sax::helpers::AttributesImpl(obj) {}
+	// QJniObject forward
+	Attributes2Impl::Attributes2Impl(QJniObject obj) : org::xml::sax::helpers::AttributesImpl(obj) {}
 	
 	// Constructors
 	Attributes2Impl::Attributes2Impl()

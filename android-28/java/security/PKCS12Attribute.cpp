@@ -5,8 +5,8 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PKCS12Attribute::PKCS12Attribute(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	PKCS12Attribute::PKCS12Attribute(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	PKCS12Attribute::PKCS12Attribute(jbyteArray arg0)

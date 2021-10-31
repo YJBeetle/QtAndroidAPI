@@ -62,9 +62,9 @@ namespace android::view
 		static jint SOURCE_TRACKBALL();
 		static jint SOURCE_UNKNOWN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit InputDevice(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		InputDevice(QAndroidJniObject obj);
+		InputDevice(QJniObject obj);
 		
 		// Constructors
 		

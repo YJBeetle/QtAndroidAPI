@@ -9,8 +9,8 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ResourceBundle::ResourceBundle(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ResourceBundle::ResourceBundle(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ResourceBundle::ResourceBundle()

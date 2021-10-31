@@ -8,8 +8,8 @@ namespace android::os
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Binder::Binder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Binder::Binder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Binder::Binder()

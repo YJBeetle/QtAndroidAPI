@@ -18,8 +18,8 @@ namespace android::app
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	ApplicationErrorReport_RunningServiceInfo::ApplicationErrorReport_RunningServiceInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ApplicationErrorReport_RunningServiceInfo::ApplicationErrorReport_RunningServiceInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ApplicationErrorReport_RunningServiceInfo::ApplicationErrorReport_RunningServiceInfo()

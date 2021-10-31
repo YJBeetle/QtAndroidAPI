@@ -15,9 +15,9 @@ namespace android::media::session
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaSession_Token(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaSession_Token(QAndroidJniObject obj);
+		MediaSession_Token(QJniObject obj);
 		
 		// Constructors
 		

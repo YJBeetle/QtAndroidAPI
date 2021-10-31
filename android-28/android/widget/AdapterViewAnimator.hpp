@@ -33,9 +33,9 @@ namespace android::widget
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AdapterViewAnimator(const char *className, const char *sig, Ts...agv) : android::widget::AdapterView(className, sig, std::forward<Ts>(agv)...) {}
-		AdapterViewAnimator(QAndroidJniObject obj);
+		AdapterViewAnimator(QJniObject obj);
 		
 		// Constructors
 		AdapterViewAnimator(android::content::Context arg0);

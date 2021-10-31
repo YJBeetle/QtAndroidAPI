@@ -4,8 +4,8 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	StackTraceElement::StackTraceElement(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	StackTraceElement::StackTraceElement(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	StackTraceElement::StackTraceElement(jstring arg0, jstring arg1, jstring arg2, jint arg3)

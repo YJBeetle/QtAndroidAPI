@@ -11,9 +11,9 @@ namespace java::io
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit IOException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		IOException(QAndroidJniObject obj);
+		IOException(QJniObject obj);
 		
 		// Constructors
 		IOException();

@@ -21,9 +21,9 @@ namespace android::media::browse
 		static jint FLAG_BROWSABLE();
 		static jint FLAG_PLAYABLE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaBrowser_MediaItem(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaBrowser_MediaItem(QAndroidJniObject obj);
+		MediaBrowser_MediaItem(QJniObject obj);
 		
 		// Constructors
 		MediaBrowser_MediaItem(android::media::MediaDescription arg0, jint arg1);

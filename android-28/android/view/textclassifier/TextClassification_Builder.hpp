@@ -26,9 +26,9 @@ namespace android::view::textclassifier
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TextClassification_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		TextClassification_Builder(QAndroidJniObject obj);
+		TextClassification_Builder(QJniObject obj);
 		
 		// Constructors
 		TextClassification_Builder();

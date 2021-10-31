@@ -20,9 +20,9 @@ namespace android::view
 		// Fields
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit View_BaseSavedState(const char *className, const char *sig, Ts...agv) : android::view::AbsSavedState(className, sig, std::forward<Ts>(agv)...) {}
-		View_BaseSavedState(QAndroidJniObject obj);
+		View_BaseSavedState(QJniObject obj);
 		
 		// Constructors
 		View_BaseSavedState(android::os::Parcel arg0);

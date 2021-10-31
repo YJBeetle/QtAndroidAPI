@@ -22,9 +22,9 @@ namespace android::print
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PrintJob(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PrintJob(QAndroidJniObject obj);
+		PrintJob(QJniObject obj);
 		
 		// Constructors
 		

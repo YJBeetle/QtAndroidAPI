@@ -5,8 +5,8 @@ namespace android::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Uri_Builder::Uri_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Uri_Builder::Uri_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Uri_Builder::Uri_Builder()

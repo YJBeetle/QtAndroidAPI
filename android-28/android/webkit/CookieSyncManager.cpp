@@ -5,8 +5,8 @@ namespace android::webkit
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CookieSyncManager::CookieSyncManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	CookieSyncManager::CookieSyncManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

@@ -18,8 +18,8 @@ namespace android::telephony
 		).object<jbyteArray>();
 	}
 	
-	// QAndroidJniObject forward
-	SmsMessage_SubmitPdu::SmsMessage_SubmitPdu(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	SmsMessage_SubmitPdu::SmsMessage_SubmitPdu(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

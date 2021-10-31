@@ -15,9 +15,9 @@ namespace android::icu::text
 		static android::icu::text::AlphabeticIndex_Bucket_LabelType OVERFLOW();
 		static android::icu::text::AlphabeticIndex_Bucket_LabelType UNDERFLOW();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AlphabeticIndex_Bucket_LabelType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		AlphabeticIndex_Bucket_LabelType(QAndroidJniObject obj);
+		AlphabeticIndex_Bucket_LabelType(QJniObject obj);
 		
 		// Constructors
 		

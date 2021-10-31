@@ -8,8 +8,8 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AlertDialog_Builder::AlertDialog_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AlertDialog_Builder::AlertDialog_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	AlertDialog_Builder::AlertDialog_Builder(android::content::Context arg0)

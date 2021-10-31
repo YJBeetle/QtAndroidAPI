@@ -28,8 +28,8 @@ namespace android::net
 		);
 	}
 	
-	// QAndroidJniObject forward
-	LocalSocketAddress_Namespace::LocalSocketAddress_Namespace(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	LocalSocketAddress_Namespace::LocalSocketAddress_Namespace(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

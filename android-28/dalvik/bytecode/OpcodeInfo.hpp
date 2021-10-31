@@ -12,9 +12,9 @@ namespace dalvik::bytecode
 		static jint MAXIMUM_PACKED_VALUE();
 		static jint MAXIMUM_VALUE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit OpcodeInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		OpcodeInfo(QAndroidJniObject obj);
+		OpcodeInfo(QJniObject obj);
 		
 		// Constructors
 		

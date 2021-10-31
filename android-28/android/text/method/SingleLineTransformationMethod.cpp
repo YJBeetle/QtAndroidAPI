@@ -4,8 +4,8 @@ namespace android::text::method
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SingleLineTransformationMethod::SingleLineTransformationMethod(QAndroidJniObject obj) : android::text::method::ReplacementTransformationMethod(obj) {}
+	// QJniObject forward
+	SingleLineTransformationMethod::SingleLineTransformationMethod(QJniObject obj) : android::text::method::ReplacementTransformationMethod(obj) {}
 	
 	// Constructors
 	SingleLineTransformationMethod::SingleLineTransformationMethod()

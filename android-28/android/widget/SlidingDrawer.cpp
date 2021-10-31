@@ -22,8 +22,8 @@ namespace android::widget
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SlidingDrawer::SlidingDrawer(QAndroidJniObject obj) : android::view::ViewGroup(obj) {}
+	// QJniObject forward
+	SlidingDrawer::SlidingDrawer(QJniObject obj) : android::view::ViewGroup(obj) {}
 	
 	// Constructors
 	SlidingDrawer::SlidingDrawer(android::content::Context arg0, __JniBaseClass arg1)

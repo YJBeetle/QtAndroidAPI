@@ -18,9 +18,9 @@ namespace android::media
 		static jint AUDIO_FALLBACK_MODE_MUTE();
 		static __JniBaseClass CREATOR();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PlaybackParams(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PlaybackParams(QAndroidJniObject obj);
+		PlaybackParams(QJniObject obj);
 		
 		// Constructors
 		PlaybackParams();

@@ -5,8 +5,8 @@ namespace android::graphics::drawable
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Animatable2_AnimationCallback::Animatable2_AnimationCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Animatable2_AnimationCallback::Animatable2_AnimationCallback(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Animatable2_AnimationCallback::Animatable2_AnimationCallback()

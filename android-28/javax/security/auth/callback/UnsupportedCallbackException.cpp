@@ -4,8 +4,8 @@ namespace javax::security::auth::callback
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	UnsupportedCallbackException::UnsupportedCallbackException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
+	// QJniObject forward
+	UnsupportedCallbackException::UnsupportedCallbackException(QJniObject obj) : java::lang::Exception(obj) {}
 	
 	// Constructors
 	UnsupportedCallbackException::UnsupportedCallbackException(__JniBaseClass arg0)

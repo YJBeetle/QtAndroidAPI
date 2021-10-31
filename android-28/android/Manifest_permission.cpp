@@ -1212,8 +1212,8 @@ namespace android
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	Manifest_permission::Manifest_permission(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Manifest_permission::Manifest_permission(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Manifest_permission::Manifest_permission()

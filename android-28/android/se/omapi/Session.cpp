@@ -6,8 +6,8 @@ namespace android::se::omapi
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Session::Session(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Session::Session(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

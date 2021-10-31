@@ -4,8 +4,8 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AbstractSet::AbstractSet(QAndroidJniObject obj) : java::util::AbstractCollection(obj) {}
+	// QJniObject forward
+	AbstractSet::AbstractSet(QJniObject obj) : java::util::AbstractCollection(obj) {}
 	
 	// Constructors
 	

@@ -11,9 +11,9 @@ namespace java::util::concurrent::atomic
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AtomicLong(const char *className, const char *sig, Ts...agv) : java::lang::Number(className, sig, std::forward<Ts>(agv)...) {}
-		AtomicLong(QAndroidJniObject obj);
+		AtomicLong(QJniObject obj);
 		
 		// Constructors
 		AtomicLong();

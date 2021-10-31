@@ -5,8 +5,8 @@ namespace android::os
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	StrictMode_VmPolicy_Builder::StrictMode_VmPolicy_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	StrictMode_VmPolicy_Builder::StrictMode_VmPolicy_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	StrictMode_VmPolicy_Builder::StrictMode_VmPolicy_Builder()

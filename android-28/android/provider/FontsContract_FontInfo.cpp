@@ -5,8 +5,8 @@ namespace android::provider
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FontsContract_FontInfo::FontsContract_FontInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	FontsContract_FontInfo::FontsContract_FontInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

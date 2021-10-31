@@ -13,9 +13,9 @@ namespace java::nio::file
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ReadOnlyFileSystemException(const char *className, const char *sig, Ts...agv) : java::lang::UnsupportedOperationException(className, sig, std::forward<Ts>(agv)...) {}
-		ReadOnlyFileSystemException(QAndroidJniObject obj);
+		ReadOnlyFileSystemException(QJniObject obj);
 		
 		// Constructors
 		ReadOnlyFileSystemException();

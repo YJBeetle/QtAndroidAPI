@@ -4,8 +4,8 @@ namespace javax::crypto
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AEADBadTagException::AEADBadTagException(QAndroidJniObject obj) : javax::crypto::BadPaddingException(obj) {}
+	// QJniObject forward
+	AEADBadTagException::AEADBadTagException(QJniObject obj) : javax::crypto::BadPaddingException(obj) {}
 	
 	// Constructors
 	AEADBadTagException::AEADBadTagException()

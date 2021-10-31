@@ -4,8 +4,8 @@ namespace android::media::audiofx
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DynamicsProcessing_Limiter::DynamicsProcessing_Limiter(QAndroidJniObject obj) : android::media::audiofx::DynamicsProcessing_Stage(obj) {}
+	// QJniObject forward
+	DynamicsProcessing_Limiter::DynamicsProcessing_Limiter(QJniObject obj) : android::media::audiofx::DynamicsProcessing_Stage(obj) {}
 	
 	// Constructors
 	DynamicsProcessing_Limiter::DynamicsProcessing_Limiter(android::media::audiofx::DynamicsProcessing_Limiter &arg0)

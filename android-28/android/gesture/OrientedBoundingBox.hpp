@@ -16,9 +16,9 @@ namespace android::gesture
 		jfloat squareness();
 		jfloat width();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit OrientedBoundingBox(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		OrientedBoundingBox(QAndroidJniObject obj);
+		OrientedBoundingBox(QJniObject obj);
 		
 		// Constructors
 		

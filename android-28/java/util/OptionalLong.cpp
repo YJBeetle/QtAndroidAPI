@@ -4,8 +4,8 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	OptionalLong::OptionalLong(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	OptionalLong::OptionalLong(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

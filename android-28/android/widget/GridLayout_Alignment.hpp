@@ -10,9 +10,9 @@ namespace android::widget
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit GridLayout_Alignment(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		GridLayout_Alignment(QAndroidJniObject obj);
+		GridLayout_Alignment(QJniObject obj);
 		
 		// Constructors
 		

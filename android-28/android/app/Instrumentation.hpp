@@ -80,9 +80,9 @@ namespace android::app
 		static jstring REPORT_KEY_IDENTIFIER();
 		static jstring REPORT_KEY_STREAMRESULT();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Instrumentation(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Instrumentation(QAndroidJniObject obj);
+		Instrumentation(QJniObject obj);
 		
 		// Constructors
 		Instrumentation();

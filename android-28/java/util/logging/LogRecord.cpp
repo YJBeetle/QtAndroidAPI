@@ -10,8 +10,8 @@ namespace java::util::logging
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LogRecord::LogRecord(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	LogRecord::LogRecord(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	LogRecord::LogRecord(java::util::logging::Level arg0, jstring arg1)

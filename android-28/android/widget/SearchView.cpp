@@ -9,8 +9,8 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SearchView::SearchView(QAndroidJniObject obj) : android::widget::LinearLayout(obj) {}
+	// QJniObject forward
+	SearchView::SearchView(QJniObject obj) : android::widget::LinearLayout(obj) {}
 	
 	// Constructors
 	SearchView::SearchView(android::content::Context arg0)

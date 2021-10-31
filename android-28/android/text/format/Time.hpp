@@ -41,9 +41,9 @@ namespace android::text::format
 		jint year();
 		jint yearDay();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Time(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Time(QAndroidJniObject obj);
+		Time(QJniObject obj);
 		
 		// Constructors
 		Time();

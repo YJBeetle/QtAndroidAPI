@@ -4,8 +4,8 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MediaCodec_CryptoInfo_Pattern::MediaCodec_CryptoInfo_Pattern(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MediaCodec_CryptoInfo_Pattern::MediaCodec_CryptoInfo_Pattern(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	MediaCodec_CryptoInfo_Pattern::MediaCodec_CryptoInfo_Pattern(jint arg0, jint arg1)

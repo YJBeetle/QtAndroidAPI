@@ -8,8 +8,8 @@ namespace java::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Format::Format(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Format::Format(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

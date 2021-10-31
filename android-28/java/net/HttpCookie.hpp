@@ -14,9 +14,9 @@ namespace java::net
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit HttpCookie(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		HttpCookie(QAndroidJniObject obj);
+		HttpCookie(QJniObject obj);
 		
 		// Constructors
 		HttpCookie(jstring arg0, jstring arg1);

@@ -8,8 +8,8 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DatagramChannel::DatagramChannel(QAndroidJniObject obj) : java::nio::channels::spi::AbstractSelectableChannel(obj) {}
+	// QJniObject forward
+	DatagramChannel::DatagramChannel(QJniObject obj) : java::nio::channels::spi::AbstractSelectableChannel(obj) {}
 	
 	// Constructors
 	

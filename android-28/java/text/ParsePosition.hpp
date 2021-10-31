@@ -10,9 +10,9 @@ namespace java::text
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ParsePosition(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ParsePosition(QAndroidJniObject obj);
+		ParsePosition(QJniObject obj);
 		
 		// Constructors
 		ParsePosition(jint arg0);

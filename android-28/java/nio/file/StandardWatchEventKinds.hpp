@@ -14,9 +14,9 @@ namespace java::nio::file
 		static __JniBaseClass ENTRY_MODIFY();
 		static __JniBaseClass OVERFLOW();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit StandardWatchEventKinds(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		StandardWatchEventKinds(QAndroidJniObject obj);
+		StandardWatchEventKinds(QJniObject obj);
 		
 		// Constructors
 		

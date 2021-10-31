@@ -5,8 +5,8 @@ namespace android::view
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	KeyEvent_DispatcherState::KeyEvent_DispatcherState(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	KeyEvent_DispatcherState::KeyEvent_DispatcherState(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	KeyEvent_DispatcherState::KeyEvent_DispatcherState()

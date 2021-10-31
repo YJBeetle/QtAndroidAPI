@@ -11,8 +11,8 @@ namespace java::io
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PrintWriter::PrintWriter(QAndroidJniObject obj) : java::io::Writer(obj) {}
+	// QJniObject forward
+	PrintWriter::PrintWriter(QJniObject obj) : java::io::Writer(obj) {}
 	
 	// Constructors
 	PrintWriter::PrintWriter(java::io::File arg0)

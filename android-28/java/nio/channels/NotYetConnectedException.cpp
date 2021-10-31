@@ -4,8 +4,8 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	NotYetConnectedException::NotYetConnectedException(QAndroidJniObject obj) : java::lang::IllegalStateException(obj) {}
+	// QJniObject forward
+	NotYetConnectedException::NotYetConnectedException(QJniObject obj) : java::lang::IllegalStateException(obj) {}
 	
 	// Constructors
 	NotYetConnectedException::NotYetConnectedException()

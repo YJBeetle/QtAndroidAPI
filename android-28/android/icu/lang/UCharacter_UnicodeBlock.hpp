@@ -578,9 +578,9 @@ namespace android::icu::lang
 		static android::icu::lang::UCharacter_UnicodeBlock ZANABAZAR_SQUARE();
 		static jint ZANABAZAR_SQUARE_ID();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit UCharacter_UnicodeBlock(const char *className, const char *sig, Ts...agv) : java::lang::Character_Subset(className, sig, std::forward<Ts>(agv)...) {}
-		UCharacter_UnicodeBlock(QAndroidJniObject obj);
+		UCharacter_UnicodeBlock(QJniObject obj);
 		
 		// Constructors
 		

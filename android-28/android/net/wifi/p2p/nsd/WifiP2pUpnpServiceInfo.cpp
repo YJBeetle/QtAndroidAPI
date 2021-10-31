@@ -4,8 +4,8 @@ namespace android::net::wifi::p2p::nsd
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	WifiP2pUpnpServiceInfo::WifiP2pUpnpServiceInfo(QAndroidJniObject obj) : android::net::wifi::p2p::nsd::WifiP2pServiceInfo(obj) {}
+	// QJniObject forward
+	WifiP2pUpnpServiceInfo::WifiP2pUpnpServiceInfo(QJniObject obj) : android::net::wifi::p2p::nsd::WifiP2pServiceInfo(obj) {}
 	
 	// Constructors
 	

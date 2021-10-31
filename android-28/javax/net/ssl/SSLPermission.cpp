@@ -4,8 +4,8 @@ namespace javax::net::ssl
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SSLPermission::SSLPermission(QAndroidJniObject obj) : java::security::BasicPermission(obj) {}
+	// QJniObject forward
+	SSLPermission::SSLPermission(QJniObject obj) : java::security::BasicPermission(obj) {}
 	
 	// Constructors
 	SSLPermission::SSLPermission(jstring arg0)

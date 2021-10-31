@@ -10,9 +10,9 @@ namespace android::content::pm
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PackageInstaller_SessionCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PackageInstaller_SessionCallback(QAndroidJniObject obj);
+		PackageInstaller_SessionCallback(QJniObject obj);
 		
 		// Constructors
 		PackageInstaller_SessionCallback();

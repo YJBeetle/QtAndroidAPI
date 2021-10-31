@@ -4,8 +4,8 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	KeyStore_PasswordProtection::KeyStore_PasswordProtection(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	KeyStore_PasswordProtection::KeyStore_PasswordProtection(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	KeyStore_PasswordProtection::KeyStore_PasswordProtection(jcharArray arg0)

@@ -6,8 +6,8 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Space::Space(QAndroidJniObject obj) : android::view::View(obj) {}
+	// QJniObject forward
+	Space::Space(QJniObject obj) : android::view::View(obj) {}
 	
 	// Constructors
 	Space::Space(android::content::Context arg0)

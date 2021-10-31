@@ -4,8 +4,8 @@ namespace android::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ArrayMap::ArrayMap(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ArrayMap::ArrayMap(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ArrayMap::ArrayMap()

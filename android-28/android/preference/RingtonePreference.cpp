@@ -9,8 +9,8 @@ namespace android::preference
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RingtonePreference::RingtonePreference(QAndroidJniObject obj) : android::preference::Preference(obj) {}
+	// QJniObject forward
+	RingtonePreference::RingtonePreference(QJniObject obj) : android::preference::Preference(obj) {}
 	
 	// Constructors
 	RingtonePreference::RingtonePreference(android::content::Context arg0)

@@ -28,9 +28,9 @@ namespace android::os
 		static jint SCREEN_BRIGHT_WAKE_LOCK();
 		static jint SCREEN_DIM_WAKE_LOCK();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PowerManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PowerManager(QAndroidJniObject obj);
+		PowerManager(QJniObject obj);
 		
 		// Constructors
 		

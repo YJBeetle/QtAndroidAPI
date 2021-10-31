@@ -33,9 +33,9 @@ namespace android::provider
 		static jstring EXTRA_VIBRATE();
 		static jstring VALUE_RINGTONE_SILENT();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AlarmClock(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AlarmClock(QAndroidJniObject obj);
+		AlarmClock(QJniObject obj);
 		
 		// Constructors
 		AlarmClock();

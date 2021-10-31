@@ -33,8 +33,8 @@ namespace android::bluetooth::le
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ScanCallback::ScanCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ScanCallback::ScanCallback(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ScanCallback::ScanCallback()

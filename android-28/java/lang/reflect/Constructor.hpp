@@ -20,9 +20,9 @@ namespace java::lang::reflect
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Constructor(const char *className, const char *sig, Ts...agv) : java::lang::reflect::Executable(className, sig, std::forward<Ts>(agv)...) {}
-		Constructor(QAndroidJniObject obj);
+		Constructor(QJniObject obj);
 		
 		// Constructors
 		

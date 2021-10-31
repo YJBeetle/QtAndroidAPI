@@ -7,8 +7,8 @@ namespace android::gesture
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	GestureLibraries::GestureLibraries(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	GestureLibraries::GestureLibraries(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

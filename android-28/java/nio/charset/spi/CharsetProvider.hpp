@@ -18,9 +18,9 @@ namespace java::nio::charset::spi
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit CharsetProvider(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		CharsetProvider(QAndroidJniObject obj);
+		CharsetProvider(QJniObject obj);
 		
 		// Constructors
 		

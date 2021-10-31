@@ -8,8 +8,8 @@ namespace android::media::session
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MediaSessionManager::MediaSessionManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	MediaSessionManager::MediaSessionManager(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

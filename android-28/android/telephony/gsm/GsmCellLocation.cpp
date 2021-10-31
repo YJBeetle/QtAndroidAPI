@@ -5,8 +5,8 @@ namespace android::telephony::gsm
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	GsmCellLocation::GsmCellLocation(QAndroidJniObject obj) : android::telephony::CellLocation(obj) {}
+	// QJniObject forward
+	GsmCellLocation::GsmCellLocation(QJniObject obj) : android::telephony::CellLocation(obj) {}
 	
 	// Constructors
 	GsmCellLocation::GsmCellLocation()

@@ -37,9 +37,9 @@ namespace android::renderscript
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ScriptIntrinsicBlur(const char *className, const char *sig, Ts...agv) : android::renderscript::ScriptIntrinsic(className, sig, std::forward<Ts>(agv)...) {}
-		ScriptIntrinsicBlur(QAndroidJniObject obj);
+		ScriptIntrinsicBlur(QJniObject obj);
 		
 		// Constructors
 		

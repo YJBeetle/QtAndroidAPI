@@ -30,9 +30,9 @@ namespace android::icu::util
 		static jint QUOTATION_END();
 		static jint QUOTATION_START();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit LocaleData(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		LocaleData(QAndroidJniObject obj);
+		LocaleData(QJniObject obj);
 		
 		// Constructors
 		

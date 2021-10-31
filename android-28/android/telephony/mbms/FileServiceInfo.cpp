@@ -13,8 +13,8 @@ namespace android::telephony::mbms
 		);
 	}
 	
-	// QAndroidJniObject forward
-	FileServiceInfo::FileServiceInfo(QAndroidJniObject obj) : android::telephony::mbms::ServiceInfo(obj) {}
+	// QJniObject forward
+	FileServiceInfo::FileServiceInfo(QJniObject obj) : android::telephony::mbms::ServiceInfo(obj) {}
 	
 	// Constructors
 	

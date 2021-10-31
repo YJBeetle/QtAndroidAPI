@@ -12,9 +12,9 @@ namespace android::text::style
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TtsSpan_VerbatimBuilder(const char *className, const char *sig, Ts...agv) : android::text::style::TtsSpan_SemioticClassBuilder(className, sig, std::forward<Ts>(agv)...) {}
-		TtsSpan_VerbatimBuilder(QAndroidJniObject obj);
+		TtsSpan_VerbatimBuilder(QJniObject obj);
 		
 		// Constructors
 		TtsSpan_VerbatimBuilder();

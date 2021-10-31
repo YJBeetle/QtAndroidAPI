@@ -173,8 +173,8 @@ namespace android::os
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	Environment::Environment(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Environment::Environment(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Environment::Environment()

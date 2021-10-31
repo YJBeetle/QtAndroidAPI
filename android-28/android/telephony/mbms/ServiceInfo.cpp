@@ -7,8 +7,8 @@ namespace android::telephony::mbms
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ServiceInfo::ServiceInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ServiceInfo::ServiceInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

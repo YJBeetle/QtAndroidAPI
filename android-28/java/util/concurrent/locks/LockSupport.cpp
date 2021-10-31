@@ -5,8 +5,8 @@ namespace java::util::concurrent::locks
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LockSupport::LockSupport(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	LockSupport::LockSupport(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

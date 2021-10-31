@@ -22,9 +22,9 @@ namespace android::widget
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit PopupMenu(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		PopupMenu(QAndroidJniObject obj);
+		PopupMenu(QJniObject obj);
 		
 		// Constructors
 		PopupMenu(android::content::Context arg0, android::view::View arg1);

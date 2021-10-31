@@ -12,9 +12,9 @@ namespace java::nio::file
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit LinkPermission(const char *className, const char *sig, Ts...agv) : java::security::BasicPermission(className, sig, std::forward<Ts>(agv)...) {}
-		LinkPermission(QAndroidJniObject obj);
+		LinkPermission(QJniObject obj);
 		
 		// Constructors
 		LinkPermission(jstring arg0);

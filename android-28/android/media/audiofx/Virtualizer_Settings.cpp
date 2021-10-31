@@ -10,8 +10,8 @@ namespace android::media::audiofx
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Virtualizer_Settings::Virtualizer_Settings(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Virtualizer_Settings::Virtualizer_Settings(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Virtualizer_Settings::Virtualizer_Settings()

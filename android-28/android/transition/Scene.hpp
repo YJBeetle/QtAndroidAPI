@@ -22,9 +22,9 @@ namespace android::transition
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Scene(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		Scene(QAndroidJniObject obj);
+		Scene(QJniObject obj);
 		
 		// Constructors
 		Scene(android::view::ViewGroup arg0);

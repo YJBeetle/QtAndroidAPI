@@ -27,9 +27,9 @@ namespace java::util::prefs
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AbstractPreferences(const char *className, const char *sig, Ts...agv) : java::util::prefs::Preferences(className, sig, std::forward<Ts>(agv)...) {}
-		AbstractPreferences(QAndroidJniObject obj);
+		AbstractPreferences(QJniObject obj);
 		
 		// Constructors
 		

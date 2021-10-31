@@ -13,8 +13,8 @@ namespace android::os::health
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TimerStat::TimerStat(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	TimerStat::TimerStat(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	TimerStat::TimerStat()

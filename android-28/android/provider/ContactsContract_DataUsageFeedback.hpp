@@ -20,9 +20,9 @@ namespace android::provider
 		static jstring USAGE_TYPE_LONG_TEXT();
 		static jstring USAGE_TYPE_SHORT_TEXT();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ContactsContract_DataUsageFeedback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_DataUsageFeedback(QAndroidJniObject obj);
+		ContactsContract_DataUsageFeedback(QJniObject obj);
 		
 		// Constructors
 		ContactsContract_DataUsageFeedback();

@@ -9,8 +9,8 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PriorityBlockingQueue::PriorityBlockingQueue(QAndroidJniObject obj) : java::util::AbstractQueue(obj) {}
+	// QJniObject forward
+	PriorityBlockingQueue::PriorityBlockingQueue(QJniObject obj) : java::util::AbstractQueue(obj) {}
 	
 	// Constructors
 	PriorityBlockingQueue::PriorityBlockingQueue()

@@ -18,9 +18,9 @@ namespace android::net
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SSLSessionCache(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SSLSessionCache(QAndroidJniObject obj);
+		SSLSessionCache(QJniObject obj);
 		
 		// Constructors
 		SSLSessionCache(android::content::Context arg0);

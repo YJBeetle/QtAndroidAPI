@@ -5,8 +5,8 @@ namespace android::content::res
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AssetFileDescriptor_AutoCloseOutputStream::AssetFileDescriptor_AutoCloseOutputStream(QAndroidJniObject obj) : android::os::ParcelFileDescriptor_AutoCloseOutputStream(obj) {}
+	// QJniObject forward
+	AssetFileDescriptor_AutoCloseOutputStream::AssetFileDescriptor_AutoCloseOutputStream(QJniObject obj) : android::os::ParcelFileDescriptor_AutoCloseOutputStream(obj) {}
 	
 	// Constructors
 	AssetFileDescriptor_AutoCloseOutputStream::AssetFileDescriptor_AutoCloseOutputStream(android::content::res::AssetFileDescriptor arg0)

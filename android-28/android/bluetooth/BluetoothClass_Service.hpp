@@ -19,9 +19,9 @@ namespace android::bluetooth
 		static jint RENDER();
 		static jint TELEPHONY();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit BluetoothClass_Service(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		BluetoothClass_Service(QAndroidJniObject obj);
+		BluetoothClass_Service(QJniObject obj);
 		
 		// Constructors
 		BluetoothClass_Service();

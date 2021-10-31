@@ -13,9 +13,9 @@ namespace java::sql
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SQLTransactionRollbackException(const char *className, const char *sig, Ts...agv) : java::sql::SQLTransientException(className, sig, std::forward<Ts>(agv)...) {}
-		SQLTransactionRollbackException(QAndroidJniObject obj);
+		SQLTransactionRollbackException(QJniObject obj);
 		
 		// Constructors
 		SQLTransactionRollbackException();

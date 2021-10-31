@@ -4,8 +4,8 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ThreadDeath::ThreadDeath(QAndroidJniObject obj) : java::lang::Error(obj) {}
+	// QJniObject forward
+	ThreadDeath::ThreadDeath(QJniObject obj) : java::lang::Error(obj) {}
 	
 	// Constructors
 	ThreadDeath::ThreadDeath()

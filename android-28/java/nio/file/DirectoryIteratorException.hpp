@@ -21,9 +21,9 @@ namespace java::nio::file
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit DirectoryIteratorException(const char *className, const char *sig, Ts...agv) : java::util::ConcurrentModificationException(className, sig, std::forward<Ts>(agv)...) {}
-		DirectoryIteratorException(QAndroidJniObject obj);
+		DirectoryIteratorException(QJniObject obj);
 		
 		// Constructors
 		DirectoryIteratorException(java::io::IOException arg0);

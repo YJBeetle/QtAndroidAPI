@@ -6,8 +6,8 @@ namespace android::text::style
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ForegroundColorSpan::ForegroundColorSpan(QAndroidJniObject obj) : android::text::style::CharacterStyle(obj) {}
+	// QJniObject forward
+	ForegroundColorSpan::ForegroundColorSpan(QJniObject obj) : android::text::style::CharacterStyle(obj) {}
 	
 	// Constructors
 	ForegroundColorSpan::ForegroundColorSpan(android::os::Parcel arg0)

@@ -76,8 +76,8 @@ namespace android::text::style
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	SuggestionSpan::SuggestionSpan(QAndroidJniObject obj) : android::text::style::CharacterStyle(obj) {}
+	// QJniObject forward
+	SuggestionSpan::SuggestionSpan(QJniObject obj) : android::text::style::CharacterStyle(obj) {}
 	
 	// Constructors
 	SuggestionSpan::SuggestionSpan(android::os::Parcel arg0)

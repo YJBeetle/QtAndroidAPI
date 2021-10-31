@@ -6,8 +6,8 @@ namespace android::text::style
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SuperscriptSpan::SuperscriptSpan(QAndroidJniObject obj) : android::text::style::MetricAffectingSpan(obj) {}
+	// QJniObject forward
+	SuperscriptSpan::SuperscriptSpan(QJniObject obj) : android::text::style::MetricAffectingSpan(obj) {}
 	
 	// Constructors
 	SuperscriptSpan::SuperscriptSpan()

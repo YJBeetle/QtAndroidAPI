@@ -63,9 +63,9 @@ namespace android::app
 		static jint INTERRUPTION_FILTER_PRIORITY();
 		static jint INTERRUPTION_FILTER_UNKNOWN();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit NotificationManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		NotificationManager(QAndroidJniObject obj);
+		NotificationManager(QJniObject obj);
 		
 		// Constructors
 		

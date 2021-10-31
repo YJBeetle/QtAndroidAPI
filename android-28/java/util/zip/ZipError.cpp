@@ -4,8 +4,8 @@ namespace java::util::zip
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ZipError::ZipError(QAndroidJniObject obj) : java::lang::InternalError(obj) {}
+	// QJniObject forward
+	ZipError::ZipError(QJniObject obj) : java::lang::InternalError(obj) {}
 	
 	// Constructors
 	ZipError::ZipError(jstring arg0)

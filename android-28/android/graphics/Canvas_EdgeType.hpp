@@ -13,9 +13,9 @@ namespace android::graphics
 		static android::graphics::Canvas_EdgeType AA();
 		static android::graphics::Canvas_EdgeType BW();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Canvas_EdgeType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Canvas_EdgeType(QAndroidJniObject obj);
+		Canvas_EdgeType(QJniObject obj);
 		
 		// Constructors
 		

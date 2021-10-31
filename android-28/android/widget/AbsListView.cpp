@@ -69,8 +69,8 @@ namespace android::widget
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AbsListView::AbsListView(QAndroidJniObject obj) : android::widget::AdapterView(obj) {}
+	// QJniObject forward
+	AbsListView::AbsListView(QJniObject obj) : android::widget::AdapterView(obj) {}
 	
 	// Constructors
 	AbsListView::AbsListView(android::content::Context arg0)

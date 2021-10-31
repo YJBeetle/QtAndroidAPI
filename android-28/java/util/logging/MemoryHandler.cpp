@@ -7,8 +7,8 @@ namespace java::util::logging
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MemoryHandler::MemoryHandler(QAndroidJniObject obj) : java::util::logging::Handler(obj) {}
+	// QJniObject forward
+	MemoryHandler::MemoryHandler(QJniObject obj) : java::util::logging::Handler(obj) {}
 	
 	// Constructors
 	MemoryHandler::MemoryHandler()

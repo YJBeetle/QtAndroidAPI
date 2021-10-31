@@ -23,9 +23,9 @@ namespace android::telephony
 		static jint STATE_POWER_OFF();
 		static jint UNKNOWN_ID();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ServiceState(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ServiceState(QAndroidJniObject obj);
+		ServiceState(QJniObject obj);
 		
 		// Constructors
 		ServiceState();

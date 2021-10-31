@@ -24,9 +24,9 @@ namespace android::content
 		jlong numSkippedEntries();
 		jlong numUpdates();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit SyncStats(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		SyncStats(QAndroidJniObject obj);
+		SyncStats(QJniObject obj);
 		
 		// Constructors
 		SyncStats();

@@ -4,8 +4,8 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ConcurrentModificationException::ConcurrentModificationException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	// QJniObject forward
+	ConcurrentModificationException::ConcurrentModificationException(QJniObject obj) : java::lang::RuntimeException(obj) {}
 	
 	// Constructors
 	ConcurrentModificationException::ConcurrentModificationException()

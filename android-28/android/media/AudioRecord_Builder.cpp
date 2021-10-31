@@ -6,8 +6,8 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AudioRecord_Builder::AudioRecord_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AudioRecord_Builder::AudioRecord_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	AudioRecord_Builder::AudioRecord_Builder()

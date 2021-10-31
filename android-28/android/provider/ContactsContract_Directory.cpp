@@ -216,8 +216,8 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	ContactsContract_Directory::ContactsContract_Directory(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ContactsContract_Directory::ContactsContract_Directory(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

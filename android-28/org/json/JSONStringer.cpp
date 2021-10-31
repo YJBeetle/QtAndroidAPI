@@ -4,8 +4,8 @@ namespace org::json
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	JSONStringer::JSONStringer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	JSONStringer::JSONStringer(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	JSONStringer::JSONStringer()

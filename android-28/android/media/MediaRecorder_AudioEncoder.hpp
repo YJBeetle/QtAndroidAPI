@@ -21,9 +21,9 @@ namespace android::media
 		static jint HE_AAC();
 		static jint VORBIS();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaRecorder_AudioEncoder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaRecorder_AudioEncoder(QAndroidJniObject obj);
+		MediaRecorder_AudioEncoder(QJniObject obj);
 		
 		// Constructors
 		

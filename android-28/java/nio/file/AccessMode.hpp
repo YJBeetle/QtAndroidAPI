@@ -14,9 +14,9 @@ namespace java::nio::file
 		static java::nio::file::AccessMode READ();
 		static java::nio::file::AccessMode WRITE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AccessMode(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		AccessMode(QAndroidJniObject obj);
+		AccessMode(QJniObject obj);
 		
 		// Constructors
 		

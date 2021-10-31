@@ -16,9 +16,9 @@ namespace android::os::health
 		static jint MEASUREMENT_SYSTEM_TIME_MS();
 		static jint MEASUREMENT_USER_TIME_MS();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ProcessHealthStats(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		ProcessHealthStats(QAndroidJniObject obj);
+		ProcessHealthStats(QJniObject obj);
 		
 		// Constructors
 		

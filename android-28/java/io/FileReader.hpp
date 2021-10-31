@@ -24,9 +24,9 @@ namespace java::io
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit FileReader(const char *className, const char *sig, Ts...agv) : java::io::InputStreamReader(className, sig, std::forward<Ts>(agv)...) {}
-		FileReader(QAndroidJniObject obj);
+		FileReader(QJniObject obj);
 		
 		// Constructors
 		FileReader(java::io::File arg0);

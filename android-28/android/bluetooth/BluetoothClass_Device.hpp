@@ -60,9 +60,9 @@ namespace android::bluetooth
 		static jint WEARABLE_UNCATEGORIZED();
 		static jint WEARABLE_WRIST_WATCH();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit BluetoothClass_Device(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		BluetoothClass_Device(QAndroidJniObject obj);
+		BluetoothClass_Device(QJniObject obj);
 		
 		// Constructors
 		BluetoothClass_Device();

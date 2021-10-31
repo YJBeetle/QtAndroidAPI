@@ -15,8 +15,8 @@ namespace android::content::res
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ColorStateList::ColorStateList(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ColorStateList::ColorStateList(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ColorStateList::ColorStateList(jarray arg0, jintArray arg1)

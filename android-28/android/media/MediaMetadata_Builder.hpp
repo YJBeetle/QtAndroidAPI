@@ -22,9 +22,9 @@ namespace android::media
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaMetadata_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaMetadata_Builder(QAndroidJniObject obj);
+		MediaMetadata_Builder(QJniObject obj);
 		
 		// Constructors
 		MediaMetadata_Builder();

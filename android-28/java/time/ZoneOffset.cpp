@@ -31,8 +31,8 @@ namespace java::time
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ZoneOffset::ZoneOffset(QAndroidJniObject obj) : java::time::ZoneId(obj) {}
+	// QJniObject forward
+	ZoneOffset::ZoneOffset(QJniObject obj) : java::time::ZoneId(obj) {}
 	
 	// Constructors
 	

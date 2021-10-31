@@ -33,9 +33,9 @@ namespace android::widget
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TableLayout(const char *className, const char *sig, Ts...agv) : android::widget::LinearLayout(className, sig, std::forward<Ts>(agv)...) {}
-		TableLayout(QAndroidJniObject obj);
+		TableLayout(QJniObject obj);
 		
 		// Constructors
 		TableLayout(android::content::Context arg0);

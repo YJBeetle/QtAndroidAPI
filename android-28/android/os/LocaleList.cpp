@@ -14,8 +14,8 @@ namespace android::os
 		);
 	}
 	
-	// QAndroidJniObject forward
-	LocaleList::LocaleList(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	LocaleList::LocaleList(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	LocaleList::LocaleList(jarray arg0)

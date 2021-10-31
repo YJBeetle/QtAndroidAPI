@@ -55,9 +55,9 @@ namespace android::widget
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit ImageView(const char *className, const char *sig, Ts...agv) : android::view::View(className, sig, std::forward<Ts>(agv)...) {}
-		ImageView(QAndroidJniObject obj);
+		ImageView(QJniObject obj);
 		
 		// Constructors
 		ImageView(android::content::Context arg0);

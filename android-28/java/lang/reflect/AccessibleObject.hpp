@@ -10,9 +10,9 @@ namespace java::lang::reflect
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AccessibleObject(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AccessibleObject(QAndroidJniObject obj);
+		AccessibleObject(QJniObject obj);
 		
 		// Constructors
 		

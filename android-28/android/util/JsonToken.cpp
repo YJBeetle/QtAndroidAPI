@@ -84,8 +84,8 @@ namespace android::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	JsonToken::JsonToken(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	// QJniObject forward
+	JsonToken::JsonToken(QJniObject obj) : java::lang::Enum(obj) {}
 	
 	// Constructors
 	

@@ -6,8 +6,8 @@ namespace android::database::sqlite
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SQLiteStatement::SQLiteStatement(QAndroidJniObject obj) : android::database::sqlite::SQLiteProgram(obj) {}
+	// QJniObject forward
+	SQLiteStatement::SQLiteStatement(QJniObject obj) : android::database::sqlite::SQLiteProgram(obj) {}
 	
 	// Constructors
 	

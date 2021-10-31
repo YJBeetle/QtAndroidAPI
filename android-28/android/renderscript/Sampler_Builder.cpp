@@ -7,8 +7,8 @@ namespace android::renderscript
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Sampler_Builder::Sampler_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Sampler_Builder::Sampler_Builder(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Sampler_Builder::Sampler_Builder(android::renderscript::RenderScript arg0)

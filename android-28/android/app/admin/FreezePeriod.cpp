@@ -5,8 +5,8 @@ namespace android::app::admin
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FreezePeriod::FreezePeriod(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	FreezePeriod::FreezePeriod(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	FreezePeriod::FreezePeriod(java::time::MonthDay arg0, java::time::MonthDay arg1)

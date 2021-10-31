@@ -4,8 +4,8 @@ namespace javax::net::ssl
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SSLPeerUnverifiedException::SSLPeerUnverifiedException(QAndroidJniObject obj) : javax::net::ssl::SSLException(obj) {}
+	// QJniObject forward
+	SSLPeerUnverifiedException::SSLPeerUnverifiedException(QJniObject obj) : javax::net::ssl::SSLException(obj) {}
 	
 	// Constructors
 	SSLPeerUnverifiedException::SSLPeerUnverifiedException(jstring arg0)

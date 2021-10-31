@@ -15,9 +15,9 @@ namespace android::content
 	public:
 		// Fields
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit Loader_ForceLoadContentObserver(const char *className, const char *sig, Ts...agv) : android::database::ContentObserver(className, sig, std::forward<Ts>(agv)...) {}
-		Loader_ForceLoadContentObserver(QAndroidJniObject obj);
+		Loader_ForceLoadContentObserver(QJniObject obj);
 		
 		// Constructors
 		Loader_ForceLoadContentObserver(android::content::Loader arg0);

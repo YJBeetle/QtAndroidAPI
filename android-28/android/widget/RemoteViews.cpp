@@ -22,8 +22,8 @@ namespace android::widget
 		);
 	}
 	
-	// QAndroidJniObject forward
-	RemoteViews::RemoteViews(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	RemoteViews::RemoteViews(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	RemoteViews::RemoteViews(android::os::Parcel arg0)

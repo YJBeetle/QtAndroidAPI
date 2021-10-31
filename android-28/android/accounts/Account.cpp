@@ -27,8 +27,8 @@ namespace android::accounts
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	Account::Account(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Account::Account(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Account::Account(android::os::Parcel arg0)

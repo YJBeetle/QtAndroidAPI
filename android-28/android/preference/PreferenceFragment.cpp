@@ -12,8 +12,8 @@ namespace android::preference
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PreferenceFragment::PreferenceFragment(QAndroidJniObject obj) : android::app::Fragment(obj) {}
+	// QJniObject forward
+	PreferenceFragment::PreferenceFragment(QJniObject obj) : android::app::Fragment(obj) {}
 	
 	// Constructors
 	PreferenceFragment::PreferenceFragment()

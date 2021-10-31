@@ -16,9 +16,9 @@ namespace android::text
 		static jint EAST_ASIAN_WIDTH_NEUTRAL();
 		static jint EAST_ASIAN_WIDTH_WIDE();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AndroidCharacter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AndroidCharacter(QAndroidJniObject obj);
+		AndroidCharacter(QJniObject obj);
 		
 		// Constructors
 		AndroidCharacter();

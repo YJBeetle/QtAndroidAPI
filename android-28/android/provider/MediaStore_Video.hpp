@@ -19,9 +19,9 @@ namespace android::provider
 		// Fields
 		static jstring DEFAULT_SORT_ORDER();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit MediaStore_Video(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		MediaStore_Video(QAndroidJniObject obj);
+		MediaStore_Video(QJniObject obj);
 		
 		// Constructors
 		MediaStore_Video();

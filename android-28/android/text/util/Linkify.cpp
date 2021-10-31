@@ -65,8 +65,8 @@ namespace android::text::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Linkify::Linkify(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Linkify::Linkify(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Linkify::Linkify()

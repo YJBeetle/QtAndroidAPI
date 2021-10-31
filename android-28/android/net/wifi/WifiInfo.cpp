@@ -23,8 +23,8 @@ namespace android::net::wifi
 		).object<jstring>();
 	}
 	
-	// QAndroidJniObject forward
-	WifiInfo::WifiInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	WifiInfo::WifiInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

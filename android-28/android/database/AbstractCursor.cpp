@@ -11,8 +11,8 @@ namespace android::database
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AbstractCursor::AbstractCursor(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	AbstractCursor::AbstractCursor(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	AbstractCursor::AbstractCursor()

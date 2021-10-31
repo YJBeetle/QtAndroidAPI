@@ -8,8 +8,8 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Instrumentation_ActivityMonitor::Instrumentation_ActivityMonitor(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Instrumentation_ActivityMonitor::Instrumentation_ActivityMonitor(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	Instrumentation_ActivityMonitor::Instrumentation_ActivityMonitor()

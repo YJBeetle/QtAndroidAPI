@@ -4,8 +4,8 @@ namespace android::animation
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ArgbEvaluator::ArgbEvaluator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ArgbEvaluator::ArgbEvaluator(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ArgbEvaluator::ArgbEvaluator()

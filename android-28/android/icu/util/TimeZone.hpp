@@ -43,9 +43,9 @@ namespace android::icu::util
 		static android::icu::util::TimeZone UNKNOWN_ZONE();
 		static jstring UNKNOWN_ZONE_ID();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit TimeZone(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		TimeZone(QAndroidJniObject obj);
+		TimeZone(QJniObject obj);
 		
 		// Constructors
 		TimeZone();

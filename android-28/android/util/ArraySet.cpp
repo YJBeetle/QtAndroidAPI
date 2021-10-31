@@ -4,8 +4,8 @@ namespace android::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ArraySet::ArraySet(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	ArraySet::ArraySet(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	ArraySet::ArraySet()

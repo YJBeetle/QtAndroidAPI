@@ -12,8 +12,8 @@ namespace java::nio::file::spi
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FileSystemProvider::FileSystemProvider(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	FileSystemProvider::FileSystemProvider(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

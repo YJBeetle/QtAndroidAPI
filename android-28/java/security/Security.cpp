@@ -8,8 +8,8 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Security::Security(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	Security::Security(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

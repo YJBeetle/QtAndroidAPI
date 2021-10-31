@@ -18,8 +18,8 @@ namespace dalvik::bytecode
 		);
 	}
 	
-	// QAndroidJniObject forward
-	OpcodeInfo::OpcodeInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	// QJniObject forward
+	OpcodeInfo::OpcodeInfo(QJniObject obj) : __JniBaseClass(obj) {}
 	
 	// Constructors
 	

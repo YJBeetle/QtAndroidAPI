@@ -6,8 +6,8 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PropertyResourceBundle::PropertyResourceBundle(QAndroidJniObject obj) : java::util::ResourceBundle(obj) {}
+	// QJniObject forward
+	PropertyResourceBundle::PropertyResourceBundle(QJniObject obj) : java::util::ResourceBundle(obj) {}
 	
 	// Constructors
 	PropertyResourceBundle::PropertyResourceBundle(java::io::InputStream arg0)

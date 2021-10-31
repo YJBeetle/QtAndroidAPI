@@ -48,9 +48,9 @@ namespace android::app
 		static jstring OPSTR_WRITE_EXTERNAL_STORAGE();
 		static jstring OPSTR_WRITE_SETTINGS();
 		
-		// QAndroidJniObject forward
+		// QJniObject forward
 		template<typename ...Ts> explicit AppOpsManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
-		AppOpsManager(QAndroidJniObject obj);
+		AppOpsManager(QJniObject obj);
 		
 		// Constructors
 		
