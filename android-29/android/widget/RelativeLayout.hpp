@@ -47,13 +47,15 @@ namespace android::widget
 		static jint START_OF();
 		static jint TRUE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit RelativeLayout(const char *className, const char *sig, Ts...agv) : android::view::ViewGroup(className, sig, std::forward<Ts>(agv)...) {}
 		RelativeLayout(QAndroidJniObject obj);
+		
 		// Constructors
 		RelativeLayout(android::content::Context arg0);
 		RelativeLayout(android::content::Context arg0, __JniBaseClass arg1);
 		RelativeLayout(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		RelativeLayout(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
-		RelativeLayout() = default;
 		
 		// Methods
 		QAndroidJniObject generateLayoutParams(__JniBaseClass arg0);

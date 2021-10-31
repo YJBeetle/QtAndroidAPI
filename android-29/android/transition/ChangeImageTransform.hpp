@@ -27,7 +27,10 @@ namespace android::transition
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ChangeImageTransform(const char *className, const char *sig, Ts...agv) : android::transition::Transition(className, sig, std::forward<Ts>(agv)...) {}
 		ChangeImageTransform(QAndroidJniObject obj);
+		
 		// Constructors
 		ChangeImageTransform();
 		ChangeImageTransform(android::content::Context arg0, __JniBaseClass arg1);

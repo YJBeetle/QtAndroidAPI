@@ -14,7 +14,10 @@ namespace android::media
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaMetadataRetriever_BitmapParams(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaMetadataRetriever_BitmapParams(QAndroidJniObject obj);
+		
 		// Constructors
 		MediaMetadataRetriever_BitmapParams();
 		

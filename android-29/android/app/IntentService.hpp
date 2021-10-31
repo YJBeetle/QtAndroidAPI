@@ -17,10 +17,12 @@ namespace android::app
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit IntentService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
 		IntentService(QAndroidJniObject obj);
+		
 		// Constructors
 		IntentService(jstring arg0);
-		IntentService() = default;
 		
 		// Methods
 		QAndroidJniObject onBind(android::content::Intent arg0);

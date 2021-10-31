@@ -6,24 +6,22 @@ namespace dalvik::system
 {
 	// Fields
 	
-	DexFile::DexFile(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DexFile::DexFile(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	DexFile::DexFile(java::io::File arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"dalvik.system.DexFile",
 			"(Ljava/io/File;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	DexFile::DexFile(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"dalvik.system.DexFile",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean DexFile::isDexOptNeeded(jstring arg0)
@@ -48,37 +46,37 @@ namespace dalvik::system
 	}
 	void DexFile::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	QAndroidJniObject DexFile::entries()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"entries",
 			"()Ljava/util/Enumeration;"
 		);
 	}
 	jstring DexFile::getName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jclass DexFile::loadClass(jstring arg0, java::lang::ClassLoader arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"loadClass",
 			"(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljava/lang/Class;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		).object<jclass>();
 	}
 	jstring DexFile::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

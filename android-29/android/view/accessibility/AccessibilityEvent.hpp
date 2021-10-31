@@ -66,9 +66,11 @@ namespace android::view::accessibility
 		static jint WINDOWS_CHANGE_REMOVED();
 		static jint WINDOWS_CHANGE_TITLE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AccessibilityEvent(const char *className, const char *sig, Ts...agv) : android::view::accessibility::AccessibilityRecord(className, sig, std::forward<Ts>(agv)...) {}
 		AccessibilityEvent(QAndroidJniObject obj);
+		
 		// Constructors
-		AccessibilityEvent() = default;
 		
 		// Methods
 		static jstring eventTypeToString(jint arg0);

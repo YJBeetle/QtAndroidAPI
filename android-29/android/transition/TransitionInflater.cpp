@@ -8,7 +8,9 @@ namespace android::transition
 {
 	// Fields
 	
-	TransitionInflater::TransitionInflater(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TransitionInflater::TransitionInflater(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -18,12 +20,12 @@ namespace android::transition
 			"android.transition.TransitionInflater",
 			"from",
 			"(Landroid/content/Context;)Landroid/transition/TransitionInflater;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject TransitionInflater::inflateTransition(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"inflateTransition",
 			"(I)Landroid/transition/Transition;",
 			arg0
@@ -31,11 +33,11 @@ namespace android::transition
 	}
 	QAndroidJniObject TransitionInflater::inflateTransitionManager(jint arg0, android::view::ViewGroup arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"inflateTransitionManager",
 			"(ILandroid/view/ViewGroup;)Landroid/transition/TransitionManager;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 } // namespace android::transition

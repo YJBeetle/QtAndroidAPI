@@ -4,7 +4,9 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	Executors::Executors(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Executors::Executors(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -14,7 +16,7 @@ namespace java::util::concurrent
 			"java.util.concurrent.Executors",
 			"callable",
 			"(Ljava/lang/Runnable;)Ljava/util/concurrent/Callable;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Executors::callable(__JniBaseClass arg0, jobject arg1)
@@ -23,7 +25,7 @@ namespace java::util::concurrent
 			"java.util.concurrent.Executors",
 			"callable",
 			"(Ljava/lang/Runnable;Ljava/lang/Object;)Ljava/util/concurrent/Callable;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -49,7 +51,7 @@ namespace java::util::concurrent
 			"java.util.concurrent.Executors",
 			"newCachedThreadPool",
 			"(Ljava/util/concurrent/ThreadFactory;)Ljava/util/concurrent/ExecutorService;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Executors::newFixedThreadPool(jint arg0)
@@ -68,7 +70,7 @@ namespace java::util::concurrent
 			"newFixedThreadPool",
 			"(ILjava/util/concurrent/ThreadFactory;)Ljava/util/concurrent/ExecutorService;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject Executors::newScheduledThreadPool(jint arg0)
@@ -87,7 +89,7 @@ namespace java::util::concurrent
 			"newScheduledThreadPool",
 			"(ILjava/util/concurrent/ThreadFactory;)Ljava/util/concurrent/ScheduledExecutorService;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject Executors::newSingleThreadExecutor()
@@ -104,7 +106,7 @@ namespace java::util::concurrent
 			"java.util.concurrent.Executors",
 			"newSingleThreadExecutor",
 			"(Ljava/util/concurrent/ThreadFactory;)Ljava/util/concurrent/ExecutorService;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Executors::newSingleThreadScheduledExecutor()
@@ -121,7 +123,7 @@ namespace java::util::concurrent
 			"java.util.concurrent.Executors",
 			"newSingleThreadScheduledExecutor",
 			"(Ljava/util/concurrent/ThreadFactory;)Ljava/util/concurrent/ScheduledExecutorService;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Executors::newWorkStealingPool()
@@ -147,7 +149,7 @@ namespace java::util::concurrent
 			"java.util.concurrent.Executors",
 			"privilegedCallable",
 			"(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Callable;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Executors::privilegedCallableUsingCurrentClassLoader(__JniBaseClass arg0)
@@ -156,7 +158,7 @@ namespace java::util::concurrent
 			"java.util.concurrent.Executors",
 			"privilegedCallableUsingCurrentClassLoader",
 			"(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Callable;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Executors::privilegedThreadFactory()
@@ -173,7 +175,7 @@ namespace java::util::concurrent
 			"java.util.concurrent.Executors",
 			"unconfigurableExecutorService",
 			"(Ljava/util/concurrent/ExecutorService;)Ljava/util/concurrent/ExecutorService;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Executors::unconfigurableScheduledExecutorService(__JniBaseClass arg0)
@@ -182,7 +184,7 @@ namespace java::util::concurrent
 			"java.util.concurrent.Executors",
 			"unconfigurableScheduledExecutorService",
 			"(Ljava/util/concurrent/ScheduledExecutorService;)Ljava/util/concurrent/ScheduledExecutorService;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace java::util::concurrent

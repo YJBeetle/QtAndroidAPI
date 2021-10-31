@@ -26,12 +26,14 @@ namespace android::text::style
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit LeadingMarginSpan_Standard(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		LeadingMarginSpan_Standard(QAndroidJniObject obj);
+		
 		// Constructors
 		LeadingMarginSpan_Standard(android::os::Parcel arg0);
 		LeadingMarginSpan_Standard(jint arg0);
 		LeadingMarginSpan_Standard(jint arg0, jint arg1);
-		LeadingMarginSpan_Standard() = default;
 		
 		// Methods
 		jint describeContents();

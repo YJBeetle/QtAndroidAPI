@@ -21,55 +21,57 @@ namespace android::content::res
 	}
 	jstring ObbInfo::filename()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"filename",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint ObbInfo::flags()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"flags"
 		);
 	}
 	jstring ObbInfo::packageName()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"packageName",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint ObbInfo::version()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"version"
 		);
 	}
 	
-	ObbInfo::ObbInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ObbInfo::ObbInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint ObbInfo::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jstring ObbInfo::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void ObbInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

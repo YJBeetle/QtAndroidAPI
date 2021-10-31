@@ -35,12 +35,14 @@ namespace android::content
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ClipData(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ClipData(QAndroidJniObject obj);
+		
 		// Constructors
 		ClipData(android::content::ClipData &arg0);
 		ClipData(android::content::ClipDescription arg0, android::content::ClipData_Item arg1);
 		ClipData(jstring arg0, jarray arg1, android::content::ClipData_Item arg2);
-		ClipData() = default;
 		
 		// Methods
 		static QAndroidJniObject newHtmlText(jstring arg0, jstring arg1, jstring arg2);

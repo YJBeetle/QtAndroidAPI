@@ -18,7 +18,10 @@ namespace android
 		static jint slide_right();
 		static jint slide_top();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit R_transition(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		R_transition(QAndroidJniObject obj);
+		
 		// Constructors
 		R_transition();
 		

@@ -14,9 +14,11 @@ namespace android::os::health
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SystemHealthManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SystemHealthManager(QAndroidJniObject obj);
+		
 		// Constructors
-		SystemHealthManager() = default;
 		
 		// Methods
 		QAndroidJniObject takeMyUidSnapshot();

@@ -18,9 +18,11 @@ namespace android::icu::text
 		static QAndroidJniObject SHORT_GENERIC();
 		static QAndroidJniObject SHORT_STANDARD();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TimeZoneNames_NameType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		TimeZoneNames_NameType(QAndroidJniObject obj);
+		
 		// Constructors
-		TimeZoneNames_NameType() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

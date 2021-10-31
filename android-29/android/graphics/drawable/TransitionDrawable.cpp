@@ -5,43 +5,43 @@ namespace android::graphics::drawable
 {
 	// Fields
 	
-	TransitionDrawable::TransitionDrawable(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TransitionDrawable::TransitionDrawable(QAndroidJniObject obj) : android::graphics::drawable::LayerDrawable(obj) {}
+	
 	// Constructors
 	TransitionDrawable::TransitionDrawable(jarray arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::graphics::drawable::LayerDrawable(
 			"android.graphics.drawable.TransitionDrawable",
 			"([Landroid/graphics/drawable/Drawable;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	void TransitionDrawable::draw(android::graphics::Canvas arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"draw",
 			"(Landroid/graphics/Canvas;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean TransitionDrawable::isCrossFadeEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isCrossFadeEnabled",
 			"()Z"
 		);
 	}
 	void TransitionDrawable::resetTransition()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"resetTransition",
 			"()V"
 		);
 	}
 	void TransitionDrawable::reverseTransition(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"reverseTransition",
 			"(I)V",
 			arg0
@@ -49,7 +49,7 @@ namespace android::graphics::drawable
 	}
 	void TransitionDrawable::setCrossFadeEnabled(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCrossFadeEnabled",
 			"(Z)V",
 			arg0
@@ -57,7 +57,7 @@ namespace android::graphics::drawable
 	}
 	void TransitionDrawable::startTransition(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"startTransition",
 			"(I)V",
 			arg0

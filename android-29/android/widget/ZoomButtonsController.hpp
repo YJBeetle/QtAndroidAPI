@@ -22,10 +22,12 @@ namespace android::widget
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ZoomButtonsController(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ZoomButtonsController(QAndroidJniObject obj);
+		
 		// Constructors
 		ZoomButtonsController(android::view::View arg0);
-		ZoomButtonsController() = default;
 		
 		// Methods
 		QAndroidJniObject getContainer();

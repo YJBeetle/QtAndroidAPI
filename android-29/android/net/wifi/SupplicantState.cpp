@@ -109,7 +109,9 @@ namespace android::net::wifi
 		);
 	}
 	
-	SupplicantState::SupplicantState(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SupplicantState::SupplicantState(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -119,7 +121,7 @@ namespace android::net::wifi
 			"android.net.wifi.SupplicantState",
 			"isValidState",
 			"(Landroid/net/wifi/SupplicantState;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject SupplicantState::valueOf(jstring arg0)
@@ -141,17 +143,17 @@ namespace android::net::wifi
 	}
 	jint SupplicantState::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	void SupplicantState::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

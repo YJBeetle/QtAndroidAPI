@@ -191,45 +191,45 @@ namespace android::accessibilityservice
 	}
 	jint AccessibilityServiceInfo::eventTypes()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"eventTypes"
 		);
 	}
 	jint AccessibilityServiceInfo::feedbackType()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"feedbackType"
 		);
 	}
 	jint AccessibilityServiceInfo::flags()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"flags"
 		);
 	}
 	jlong AccessibilityServiceInfo::notificationTimeout()
 	{
-		return __thiz.getField<jlong>(
+		return getField<jlong>(
 			"notificationTimeout"
 		);
 	}
 	jarray AccessibilityServiceInfo::packageNames()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"packageNames",
 			"[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	
-	AccessibilityServiceInfo::AccessibilityServiceInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AccessibilityServiceInfo::AccessibilityServiceInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	AccessibilityServiceInfo::AccessibilityServiceInfo()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.accessibilityservice.AccessibilityServiceInfo",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring AccessibilityServiceInfo::capabilityToString(jint arg0)
@@ -261,14 +261,14 @@ namespace android::accessibilityservice
 	}
 	jint AccessibilityServiceInfo::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean AccessibilityServiceInfo::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -276,86 +276,86 @@ namespace android::accessibilityservice
 	}
 	jboolean AccessibilityServiceInfo::getCanRetrieveWindowContent()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getCanRetrieveWindowContent",
 			"()Z"
 		);
 	}
 	jint AccessibilityServiceInfo::getCapabilities()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCapabilities",
 			"()I"
 		);
 	}
 	jstring AccessibilityServiceInfo::getDescription()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring AccessibilityServiceInfo::getId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint AccessibilityServiceInfo::getInteractiveUiTimeoutMillis()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getInteractiveUiTimeoutMillis",
 			"()I"
 		);
 	}
 	jint AccessibilityServiceInfo::getNonInteractiveUiTimeoutMillis()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getNonInteractiveUiTimeoutMillis",
 			"()I"
 		);
 	}
 	QAndroidJniObject AccessibilityServiceInfo::getResolveInfo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getResolveInfo",
 			"()Landroid/content/pm/ResolveInfo;"
 		);
 	}
 	jstring AccessibilityServiceInfo::getSettingsActivityName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSettingsActivityName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint AccessibilityServiceInfo::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring AccessibilityServiceInfo::loadDescription(android::content::pm::PackageManager arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"loadDescription",
 			"(Landroid/content/pm/PackageManager;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jstring AccessibilityServiceInfo::loadSummary(android::content::pm::PackageManager arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"loadSummary",
 			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	void AccessibilityServiceInfo::setInteractiveUiTimeoutMillis(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setInteractiveUiTimeoutMillis",
 			"(I)V",
 			arg0
@@ -363,7 +363,7 @@ namespace android::accessibilityservice
 	}
 	void AccessibilityServiceInfo::setNonInteractiveUiTimeoutMillis(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setNonInteractiveUiTimeoutMillis",
 			"(I)V",
 			arg0
@@ -371,17 +371,17 @@ namespace android::accessibilityservice
 	}
 	jstring AccessibilityServiceInfo::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void AccessibilityServiceInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

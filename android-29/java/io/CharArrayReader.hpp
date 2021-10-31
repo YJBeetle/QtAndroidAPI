@@ -11,11 +11,13 @@ namespace java::io
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CharArrayReader(const char *className, const char *sig, Ts...agv) : java::io::Reader(className, sig, std::forward<Ts>(agv)...) {}
 		CharArrayReader(QAndroidJniObject obj);
+		
 		// Constructors
 		CharArrayReader(jcharArray arg0);
 		CharArrayReader(jcharArray arg0, jint arg1, jint arg2);
-		CharArrayReader() = default;
 		
 		// Methods
 		void close();

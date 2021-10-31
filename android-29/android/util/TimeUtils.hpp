@@ -14,9 +14,11 @@ namespace android::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TimeUtils(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		TimeUtils(QAndroidJniObject obj);
+		
 		// Constructors
-		TimeUtils() = default;
 		
 		// Methods
 		static QAndroidJniObject getTimeZone(jint arg0, jboolean arg1, jlong arg2, jstring arg3);

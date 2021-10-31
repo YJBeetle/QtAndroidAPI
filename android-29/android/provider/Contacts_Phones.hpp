@@ -24,9 +24,11 @@ namespace android::provider
 		static jstring DEFAULT_SORT_ORDER();
 		static jstring PERSON_ID();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Contacts_Phones(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Contacts_Phones(QAndroidJniObject obj);
+		
 		// Constructors
-		Contacts_Phones() = default;
 		
 		// Methods
 		static jstring getDisplayLabel(android::content::Context arg0, jint arg1, jstring arg2);

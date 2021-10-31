@@ -4,25 +4,23 @@ namespace java::net
 {
 	// Fields
 	
-	NetPermission::NetPermission(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NetPermission::NetPermission(QAndroidJniObject obj) : java::security::BasicPermission(obj) {}
+	
 	// Constructors
 	NetPermission::NetPermission(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::security::BasicPermission(
 			"java.net.NetPermission",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	NetPermission::NetPermission(jstring arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::security::BasicPermission(
 			"java.net.NetPermission",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::net

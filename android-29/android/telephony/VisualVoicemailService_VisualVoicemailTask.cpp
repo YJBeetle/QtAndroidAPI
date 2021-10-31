@@ -5,13 +5,15 @@ namespace android::telephony
 {
 	// Fields
 	
-	VisualVoicemailService_VisualVoicemailTask::VisualVoicemailService_VisualVoicemailTask(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	VisualVoicemailService_VisualVoicemailTask::VisualVoicemailService_VisualVoicemailTask(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jboolean VisualVoicemailService_VisualVoicemailTask::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -19,14 +21,14 @@ namespace android::telephony
 	}
 	void VisualVoicemailService_VisualVoicemailTask::finish()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"finish",
 			"()V"
 		);
 	}
 	jint VisualVoicemailService_VisualVoicemailTask::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);

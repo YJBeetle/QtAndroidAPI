@@ -4,15 +4,15 @@ namespace android
 {
 	// Fields
 	
-	R_xml::R_xml(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	R_xml::R_xml(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	R_xml::R_xml()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.R$xml",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android

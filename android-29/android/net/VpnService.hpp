@@ -31,7 +31,10 @@ namespace android::net
 		static jstring SERVICE_INTERFACE();
 		static jstring SERVICE_META_DATA_SUPPORTS_ALWAYS_ON();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit VpnService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
 		VpnService(QAndroidJniObject obj);
+		
 		// Constructors
 		VpnService();
 		

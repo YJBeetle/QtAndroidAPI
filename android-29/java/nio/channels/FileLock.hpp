@@ -18,9 +18,11 @@ namespace java::nio::channels
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit FileLock(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		FileLock(QAndroidJniObject obj);
+		
 		// Constructors
-		FileLock() = default;
 		
 		// Methods
 		QAndroidJniObject acquiredBy();

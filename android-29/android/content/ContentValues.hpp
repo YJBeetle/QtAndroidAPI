@@ -44,7 +44,10 @@ namespace android::content
 		static QAndroidJniObject CREATOR();
 		static jstring TAG();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ContentValues(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ContentValues(QAndroidJniObject obj);
+		
 		// Constructors
 		ContentValues();
 		ContentValues(android::content::ContentValues &arg0);

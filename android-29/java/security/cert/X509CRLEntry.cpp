@@ -8,20 +8,20 @@ namespace java::security::cert
 {
 	// Fields
 	
-	X509CRLEntry::X509CRLEntry(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	X509CRLEntry::X509CRLEntry(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	X509CRLEntry::X509CRLEntry()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.security.cert.X509CRLEntry",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean X509CRLEntry::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -29,56 +29,56 @@ namespace java::security::cert
 	}
 	QAndroidJniObject X509CRLEntry::getCertificateIssuer()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCertificateIssuer",
 			"()Ljavax/security/auth/x500/X500Principal;"
 		);
 	}
 	jbyteArray X509CRLEntry::getEncoded()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEncoded",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	QAndroidJniObject X509CRLEntry::getRevocationDate()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRevocationDate",
 			"()Ljava/util/Date;"
 		);
 	}
 	QAndroidJniObject X509CRLEntry::getRevocationReason()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRevocationReason",
 			"()Ljava/security/cert/CRLReason;"
 		);
 	}
 	QAndroidJniObject X509CRLEntry::getSerialNumber()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSerialNumber",
 			"()Ljava/math/BigInteger;"
 		);
 	}
 	jboolean X509CRLEntry::hasExtensions()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasExtensions",
 			"()Z"
 		);
 	}
 	jint X509CRLEntry::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring X509CRLEntry::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

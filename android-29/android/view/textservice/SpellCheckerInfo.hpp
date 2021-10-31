@@ -35,9 +35,11 @@ namespace android::view::textservice
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SpellCheckerInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SpellCheckerInfo(QAndroidJniObject obj);
+		
 		// Constructors
-		SpellCheckerInfo() = default;
 		
 		// Methods
 		jint describeContents();

@@ -13,36 +13,36 @@ namespace android::app
 		);
 	}
 	
-	NotificationChannelGroup::NotificationChannelGroup(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NotificationChannelGroup::NotificationChannelGroup(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	NotificationChannelGroup::NotificationChannelGroup(jstring arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.app.NotificationChannelGroup",
 			"(Ljava/lang/String;Ljava/lang/CharSequence;)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject NotificationChannelGroup::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Landroid/app/NotificationChannelGroup;"
 		);
 	}
 	jint NotificationChannelGroup::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean NotificationChannelGroup::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -50,49 +50,49 @@ namespace android::app
 	}
 	QAndroidJniObject NotificationChannelGroup::getChannels()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getChannels",
 			"()Ljava/util/List;"
 		);
 	}
 	jstring NotificationChannelGroup::getDescription()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring NotificationChannelGroup::getId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring NotificationChannelGroup::getName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jint NotificationChannelGroup::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean NotificationChannelGroup::isBlocked()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isBlocked",
 			"()Z"
 		);
 	}
 	void NotificationChannelGroup::setDescription(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDescription",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -100,17 +100,17 @@ namespace android::app
 	}
 	jstring NotificationChannelGroup::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void NotificationChannelGroup::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

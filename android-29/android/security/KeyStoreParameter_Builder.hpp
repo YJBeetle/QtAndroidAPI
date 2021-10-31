@@ -18,10 +18,12 @@ namespace android::security
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit KeyStoreParameter_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		KeyStoreParameter_Builder(QAndroidJniObject obj);
+		
 		// Constructors
 		KeyStoreParameter_Builder(android::content::Context arg0);
-		KeyStoreParameter_Builder() = default;
 		
 		// Methods
 		QAndroidJniObject build();

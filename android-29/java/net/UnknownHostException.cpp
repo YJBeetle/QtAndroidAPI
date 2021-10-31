@@ -4,23 +4,21 @@ namespace java::net
 {
 	// Fields
 	
-	UnknownHostException::UnknownHostException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UnknownHostException::UnknownHostException(QAndroidJniObject obj) : java::io::IOException(obj) {}
+	
 	// Constructors
 	UnknownHostException::UnknownHostException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::IOException(
 			"java.net.UnknownHostException",
 			"()V"
-		);
-	}
+		) {}
 	UnknownHostException::UnknownHostException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::IOException(
 			"java.net.UnknownHostException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::net

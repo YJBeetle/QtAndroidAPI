@@ -60,7 +60,9 @@ namespace java::security::cert
 		);
 	}
 	
-	CertPathValidatorException_BasicReason::CertPathValidatorException_BasicReason(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CertPathValidatorException_BasicReason::CertPathValidatorException_BasicReason(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

@@ -18,10 +18,12 @@ namespace android::graphics
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit YuvImage(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		YuvImage(QAndroidJniObject obj);
+		
 		// Constructors
 		YuvImage(jbyteArray arg0, jint arg1, jint arg2, jint arg3, jintArray arg4);
-		YuvImage() = default;
 		
 		// Methods
 		jboolean compressToJpeg(android::graphics::Rect arg0, jint arg1, java::io::OutputStream arg2);

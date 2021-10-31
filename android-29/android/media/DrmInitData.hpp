@@ -18,9 +18,11 @@ namespace android::media
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DrmInitData(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DrmInitData(QAndroidJniObject obj);
+		
 		// Constructors
-		DrmInitData() = default;
 		
 		// Methods
 		QAndroidJniObject get(java::util::UUID arg0);

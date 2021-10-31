@@ -4,28 +4,28 @@ namespace java::text
 {
 	// Fields
 	
-	Annotation::Annotation(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Annotation::Annotation(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Annotation::Annotation(jobject arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.text.Annotation",
 			"(Ljava/lang/Object;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jobject Annotation::getValue()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getValue",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jstring Annotation::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

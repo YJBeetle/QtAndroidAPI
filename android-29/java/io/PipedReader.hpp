@@ -19,7 +19,10 @@ namespace java::io
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PipedReader(const char *className, const char *sig, Ts...agv) : java::io::Reader(className, sig, std::forward<Ts>(agv)...) {}
 		PipedReader(QAndroidJniObject obj);
+		
 		// Constructors
 		PipedReader();
 		PipedReader(jint arg0);

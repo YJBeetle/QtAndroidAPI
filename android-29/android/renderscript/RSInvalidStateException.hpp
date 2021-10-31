@@ -13,10 +13,12 @@ namespace android::renderscript
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit RSInvalidStateException(const char *className, const char *sig, Ts...agv) : android::renderscript::RSRuntimeException(className, sig, std::forward<Ts>(agv)...) {}
 		RSInvalidStateException(QAndroidJniObject obj);
+		
 		// Constructors
 		RSInvalidStateException(jstring arg0);
-		RSInvalidStateException() = default;
 		
 		// Methods
 	};

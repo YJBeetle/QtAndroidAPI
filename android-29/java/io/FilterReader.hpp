@@ -15,9 +15,11 @@ namespace java::io
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit FilterReader(const char *className, const char *sig, Ts...agv) : java::io::Reader(className, sig, std::forward<Ts>(agv)...) {}
 		FilterReader(QAndroidJniObject obj);
+		
 		// Constructors
-		FilterReader() = default;
 		
 		// Methods
 		void close();

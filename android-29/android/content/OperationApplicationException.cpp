@@ -4,62 +4,52 @@ namespace android::content
 {
 	// Fields
 	
-	OperationApplicationException::OperationApplicationException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	OperationApplicationException::OperationApplicationException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
+	
 	// Constructors
 	OperationApplicationException::OperationApplicationException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Exception(
 			"android.content.OperationApplicationException",
 			"()V"
-		);
-	}
+		) {}
 	OperationApplicationException::OperationApplicationException(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Exception(
 			"android.content.OperationApplicationException",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	OperationApplicationException::OperationApplicationException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Exception(
 			"android.content.OperationApplicationException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	OperationApplicationException::OperationApplicationException(jthrowable arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Exception(
 			"android.content.OperationApplicationException",
 			"(Ljava/lang/Throwable;)V",
 			arg0
-		);
-	}
+		) {}
 	OperationApplicationException::OperationApplicationException(jstring arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Exception(
 			"android.content.OperationApplicationException",
 			"(Ljava/lang/String;I)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	OperationApplicationException::OperationApplicationException(jstring arg0, jthrowable arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Exception(
 			"android.content.OperationApplicationException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jint OperationApplicationException::getNumSuccessfulYieldPoints()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getNumSuccessfulYieldPoints",
 			"()I"
 		);

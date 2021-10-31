@@ -15,51 +15,53 @@ namespace android::service::autofill
 		);
 	}
 	
-	FillContext::FillContext(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FillContext::FillContext(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint FillContext::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	QAndroidJniObject FillContext::getFocusedId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFocusedId",
 			"()Landroid/view/autofill/AutofillId;"
 		);
 	}
 	jint FillContext::getRequestId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRequestId",
 			"()I"
 		);
 	}
 	QAndroidJniObject FillContext::getStructure()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getStructure",
 			"()Landroid/app/assist/AssistStructure;"
 		);
 	}
 	jstring FillContext::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void FillContext::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

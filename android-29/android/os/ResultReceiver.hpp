@@ -23,10 +23,12 @@ namespace android::os
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ResultReceiver(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ResultReceiver(QAndroidJniObject obj);
+		
 		// Constructors
 		ResultReceiver(android::os::Handler arg0);
-		ResultReceiver() = default;
 		
 		// Methods
 		jint describeContents();

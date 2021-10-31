@@ -27,7 +27,10 @@ namespace android::graphics
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Region(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Region(QAndroidJniObject obj);
+		
 		// Constructors
 		Region();
 		Region(android::graphics::Rect arg0);

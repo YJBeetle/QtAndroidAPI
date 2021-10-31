@@ -7,48 +7,46 @@ namespace android::database::sqlite
 {
 	// Fields
 	
-	SQLiteCursor::SQLiteCursor(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SQLiteCursor::SQLiteCursor(QAndroidJniObject obj) : android::database::AbstractWindowedCursor(obj) {}
+	
 	// Constructors
 	SQLiteCursor::SQLiteCursor(__JniBaseClass arg0, jstring arg1, android::database::sqlite::SQLiteQuery arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: android::database::AbstractWindowedCursor(
 			"android.database.sqlite.SQLiteCursor",
 			"(Landroid/database/sqlite/SQLiteCursorDriver;Ljava/lang/String;Landroid/database/sqlite/SQLiteQuery;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object()
-		);
-	}
+			arg2.object()
+		) {}
 	SQLiteCursor::SQLiteCursor(android::database::sqlite::SQLiteDatabase arg0, __JniBaseClass arg1, jstring arg2, android::database::sqlite::SQLiteQuery arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: android::database::AbstractWindowedCursor(
 			"android.database.sqlite.SQLiteCursor",
 			"(Landroid/database/sqlite/SQLiteDatabase;Landroid/database/sqlite/SQLiteCursorDriver;Ljava/lang/String;Landroid/database/sqlite/SQLiteQuery;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
-			arg3.__jniObject().object()
-		);
-	}
+			arg3.object()
+		) {}
 	
 	// Methods
 	void SQLiteCursor::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	void SQLiteCursor::deactivate()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"deactivate",
 			"()V"
 		);
 	}
 	jint SQLiteCursor::getColumnIndex(jstring arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getColumnIndex",
 			"(Ljava/lang/String;)I",
 			arg0
@@ -56,28 +54,28 @@ namespace android::database::sqlite
 	}
 	jarray SQLiteCursor::getColumnNames()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getColumnNames",
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	jint SQLiteCursor::getCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCount",
 			"()I"
 		);
 	}
 	QAndroidJniObject SQLiteCursor::getDatabase()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDatabase",
 			"()Landroid/database/sqlite/SQLiteDatabase;"
 		);
 	}
 	jboolean SQLiteCursor::onMove(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onMove",
 			"(II)Z",
 			arg0,
@@ -86,14 +84,14 @@ namespace android::database::sqlite
 	}
 	jboolean SQLiteCursor::requery()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"requery",
 			"()Z"
 		);
 	}
 	void SQLiteCursor::setFillWindowForwardOnly(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFillWindowForwardOnly",
 			"(Z)V",
 			arg0
@@ -101,7 +99,7 @@ namespace android::database::sqlite
 	}
 	void SQLiteCursor::setSelectionArguments(jarray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSelectionArguments",
 			"([Ljava/lang/String;)V",
 			arg0
@@ -109,10 +107,10 @@ namespace android::database::sqlite
 	}
 	void SQLiteCursor::setWindow(android::database::CursorWindow arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setWindow",
 			"(Landroid/database/CursorWindow;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::database::sqlite

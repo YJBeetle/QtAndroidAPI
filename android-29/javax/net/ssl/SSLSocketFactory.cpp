@@ -7,15 +7,15 @@ namespace javax::net::ssl
 {
 	// Fields
 	
-	SSLSocketFactory::SSLSocketFactory(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SSLSocketFactory::SSLSocketFactory(QAndroidJniObject obj) : javax::net::SocketFactory(obj) {}
+	
 	// Constructors
 	SSLSocketFactory::SSLSocketFactory()
-	{
-		__thiz = QAndroidJniObject(
+		: javax::net::SocketFactory(
 			"javax.net.ssl.SSLSocketFactory",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject SSLSocketFactory::getDefault()
@@ -28,20 +28,20 @@ namespace javax::net::ssl
 	}
 	QAndroidJniObject SSLSocketFactory::createSocket(java::net::Socket arg0, java::io::InputStream arg1, jboolean arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"createSocket",
 			"(Ljava/net/Socket;Ljava/io/InputStream;Z)Ljava/net/Socket;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
 	QAndroidJniObject SSLSocketFactory::createSocket(java::net::Socket arg0, jstring arg1, jint arg2, jboolean arg3)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"createSocket",
 			"(Ljava/net/Socket;Ljava/lang/String;IZ)Ljava/net/Socket;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3
@@ -49,14 +49,14 @@ namespace javax::net::ssl
 	}
 	jarray SSLSocketFactory::getDefaultCipherSuites()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDefaultCipherSuites",
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	jarray SSLSocketFactory::getSupportedCipherSuites()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSupportedCipherSuites",
 			"()[Ljava/lang/String;"
 		).object<jarray>();

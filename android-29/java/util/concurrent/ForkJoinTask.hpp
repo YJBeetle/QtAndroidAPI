@@ -34,7 +34,10 @@ namespace java::util::concurrent
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ForkJoinTask(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ForkJoinTask(QAndroidJniObject obj);
+		
 		// Constructors
 		ForkJoinTask();
 		

@@ -4,15 +4,15 @@ namespace java::nio::file
 {
 	// Fields
 	
-	ReadOnlyFileSystemException::ReadOnlyFileSystemException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ReadOnlyFileSystemException::ReadOnlyFileSystemException(QAndroidJniObject obj) : java::lang::UnsupportedOperationException(obj) {}
+	
 	// Constructors
 	ReadOnlyFileSystemException::ReadOnlyFileSystemException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::UnsupportedOperationException(
 			"java.nio.file.ReadOnlyFileSystemException",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::nio::file

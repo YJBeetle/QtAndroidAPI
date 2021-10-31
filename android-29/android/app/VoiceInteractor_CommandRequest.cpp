@@ -5,26 +5,26 @@ namespace android::app
 {
 	// Fields
 	
-	VoiceInteractor_CommandRequest::VoiceInteractor_CommandRequest(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	VoiceInteractor_CommandRequest::VoiceInteractor_CommandRequest(QAndroidJniObject obj) : android::app::VoiceInteractor_Request(obj) {}
+	
 	// Constructors
 	VoiceInteractor_CommandRequest::VoiceInteractor_CommandRequest(jstring arg0, android::os::Bundle arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::app::VoiceInteractor_Request(
 			"android.app.VoiceInteractor$CommandRequest",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
+			arg1.object()
+		) {}
 	
 	// Methods
 	void VoiceInteractor_CommandRequest::onCommandResult(jboolean arg0, android::os::Bundle arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onCommandResult",
 			"(ZLandroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 } // namespace android::app

@@ -13,7 +13,10 @@ namespace java::nio::channels
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit IllegalChannelGroupException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalArgumentException(className, sig, std::forward<Ts>(agv)...) {}
 		IllegalChannelGroupException(QAndroidJniObject obj);
+		
 		// Constructors
 		IllegalChannelGroupException();
 		

@@ -4,15 +4,15 @@ namespace android::webkit
 {
 	// Fields
 	
-	URLUtil::URLUtil(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	URLUtil::URLUtil(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	URLUtil::URLUtil()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.webkit.URLUtil",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring URLUtil::composeSearchUrl(jstring arg0, jstring arg1, jstring arg2)

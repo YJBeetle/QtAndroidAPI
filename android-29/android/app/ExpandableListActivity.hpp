@@ -26,7 +26,10 @@ namespace android::app
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ExpandableListActivity(const char *className, const char *sig, Ts...agv) : android::app::Activity(className, sig, std::forward<Ts>(agv)...) {}
 		ExpandableListActivity(QAndroidJniObject obj);
+		
 		// Constructors
 		ExpandableListActivity();
 		

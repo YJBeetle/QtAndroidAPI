@@ -23,13 +23,15 @@ namespace android::app
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaRouteButton(const char *className, const char *sig, Ts...agv) : android::view::View(className, sig, std::forward<Ts>(agv)...) {}
 		MediaRouteButton(QAndroidJniObject obj);
+		
 		// Constructors
 		MediaRouteButton(android::content::Context arg0);
 		MediaRouteButton(android::content::Context arg0, __JniBaseClass arg1);
 		MediaRouteButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		MediaRouteButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
-		MediaRouteButton() = default;
 		
 		// Methods
 		jint getRouteTypes();

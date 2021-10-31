@@ -18,9 +18,11 @@ namespace android::app::admin
 		static jint SECURITY_PATCH_STATE_TRUE();
 		static jint SECURITY_PATCH_STATE_UNKNOWN();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SystemUpdateInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SystemUpdateInfo(QAndroidJniObject obj);
+		
 		// Constructors
-		SystemUpdateInfo() = default;
 		
 		// Methods
 		jint describeContents();

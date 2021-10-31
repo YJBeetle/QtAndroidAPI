@@ -255,20 +255,22 @@ namespace android::os
 		).object<jstring>();
 	}
 	
-	BatteryManager::BatteryManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BatteryManager::BatteryManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jlong BatteryManager::computeChargeTimeRemaining()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"computeChargeTimeRemaining",
 			"()J"
 		);
 	}
 	jint BatteryManager::getIntProperty(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getIntProperty",
 			"(I)I",
 			arg0
@@ -276,7 +278,7 @@ namespace android::os
 	}
 	jlong BatteryManager::getLongProperty(jint arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getLongProperty",
 			"(I)J",
 			arg0
@@ -284,7 +286,7 @@ namespace android::os
 	}
 	jboolean BatteryManager::isCharging()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isCharging",
 			"()Z"
 		);

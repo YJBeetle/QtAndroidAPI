@@ -84,10 +84,12 @@ namespace java::lang
 		static jbyte UNASSIGNED();
 		static jbyte UPPERCASE_LETTER();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Character(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Character(QAndroidJniObject obj);
+		
 		// Constructors
 		Character(jchar arg0);
-		Character() = default;
 		
 		// Methods
 		static jint charCount(jint arg0);

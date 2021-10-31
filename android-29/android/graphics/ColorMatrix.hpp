@@ -10,7 +10,10 @@ namespace android::graphics
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ColorMatrix(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ColorMatrix(QAndroidJniObject obj);
+		
 		// Constructors
 		ColorMatrix();
 		ColorMatrix(jfloatArray arg0);

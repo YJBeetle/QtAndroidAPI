@@ -28,7 +28,9 @@ namespace android::webkit
 		);
 	}
 	
-	WebSettings_ZoomDensity::WebSettings_ZoomDensity(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WebSettings_ZoomDensity::WebSettings_ZoomDensity(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

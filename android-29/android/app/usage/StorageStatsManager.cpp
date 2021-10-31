@@ -8,61 +8,63 @@ namespace android::app::usage
 {
 	// Fields
 	
-	StorageStatsManager::StorageStatsManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	StorageStatsManager::StorageStatsManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jlong StorageStatsManager::getFreeBytes(java::util::UUID arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getFreeBytes",
 			"(Ljava/util/UUID;)J",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jlong StorageStatsManager::getTotalBytes(java::util::UUID arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getTotalBytes",
 			"(Ljava/util/UUID;)J",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject StorageStatsManager::queryExternalStatsForUser(java::util::UUID arg0, android::os::UserHandle arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"queryExternalStatsForUser",
 			"(Ljava/util/UUID;Landroid/os/UserHandle;)Landroid/app/usage/ExternalStorageStats;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject StorageStatsManager::queryStatsForPackage(java::util::UUID arg0, jstring arg1, android::os::UserHandle arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"queryStatsForPackage",
 			"(Ljava/util/UUID;Ljava/lang/String;Landroid/os/UserHandle;)Landroid/app/usage/StorageStats;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	QAndroidJniObject StorageStatsManager::queryStatsForUid(java::util::UUID arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"queryStatsForUid",
 			"(Ljava/util/UUID;I)Landroid/app/usage/StorageStats;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	QAndroidJniObject StorageStatsManager::queryStatsForUser(java::util::UUID arg0, android::os::UserHandle arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"queryStatsForUser",
 			"(Ljava/util/UUID;Landroid/os/UserHandle;)Landroid/app/usage/StorageStats;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 } // namespace android::app::usage

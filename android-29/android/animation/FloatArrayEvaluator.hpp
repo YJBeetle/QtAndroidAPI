@@ -10,7 +10,10 @@ namespace android::animation
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit FloatArrayEvaluator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		FloatArrayEvaluator(QAndroidJniObject obj);
+		
 		// Constructors
 		FloatArrayEvaluator();
 		FloatArrayEvaluator(jfloatArray arg0);

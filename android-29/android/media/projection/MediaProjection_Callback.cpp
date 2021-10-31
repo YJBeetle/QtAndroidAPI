@@ -4,20 +4,20 @@ namespace android::media::projection
 {
 	// Fields
 	
-	MediaProjection_Callback::MediaProjection_Callback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaProjection_Callback::MediaProjection_Callback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MediaProjection_Callback::MediaProjection_Callback()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.projection.MediaProjection$Callback",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void MediaProjection_Callback::onStop()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onStop",
 			"()V"
 		);

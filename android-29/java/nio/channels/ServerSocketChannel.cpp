@@ -8,7 +8,9 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	ServerSocketChannel::ServerSocketChannel(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ServerSocketChannel::ServerSocketChannel(QAndroidJniObject obj) : java::nio::channels::spi::AbstractSelectableChannel(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -26,59 +28,59 @@ namespace java::nio::channels
 			"java.nio.channels.ServerSocketChannel",
 			"open",
 			"(Ljava/net/ProtocolFamily;)Ljava/nio/channels/ServerSocketChannel;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ServerSocketChannel::accept()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"accept",
 			"()Ljava/nio/channels/SocketChannel;"
 		);
 	}
 	QAndroidJniObject ServerSocketChannel::bind(java::net::SocketAddress arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"bind",
 			"(Ljava/net/SocketAddress;)Ljava/nio/channels/ServerSocketChannel;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ServerSocketChannel::bind(java::net::SocketAddress arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"bind",
 			"(Ljava/net/SocketAddress;I)Ljava/nio/channels/ServerSocketChannel;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	QAndroidJniObject ServerSocketChannel::getLocalAddress()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLocalAddress",
 			"()Ljava/net/SocketAddress;"
 		);
 	}
 	QAndroidJniObject ServerSocketChannel::setOption(__JniBaseClass arg0, jobject arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setOption",
 			"(Ljava/net/SocketOption;Ljava/lang/Object;)Ljava/nio/channels/ServerSocketChannel;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	QAndroidJniObject ServerSocketChannel::socket()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"socket",
 			"()Ljava/net/ServerSocket;"
 		);
 	}
 	jint ServerSocketChannel::validOps()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"validOps",
 			"()I"
 		);

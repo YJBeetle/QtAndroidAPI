@@ -7,63 +7,63 @@ namespace android::app
 {
 	// Fields
 	
-	ListActivity::ListActivity(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ListActivity::ListActivity(QAndroidJniObject obj) : android::app::Activity(obj) {}
+	
 	// Constructors
 	ListActivity::ListActivity()
-	{
-		__thiz = QAndroidJniObject(
+		: android::app::Activity(
 			"android.app.ListActivity",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject ListActivity::getListAdapter()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getListAdapter",
 			"()Landroid/widget/ListAdapter;"
 		);
 	}
 	QAndroidJniObject ListActivity::getListView()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getListView",
 			"()Landroid/widget/ListView;"
 		);
 	}
 	jlong ListActivity::getSelectedItemId()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getSelectedItemId",
 			"()J"
 		);
 	}
 	jint ListActivity::getSelectedItemPosition()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSelectedItemPosition",
 			"()I"
 		);
 	}
 	void ListActivity::onContentChanged()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onContentChanged",
 			"()V"
 		);
 	}
 	void ListActivity::setListAdapter(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setListAdapter",
 			"(Landroid/widget/ListAdapter;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ListActivity::setSelection(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSelection",
 			"(I)V",
 			arg0

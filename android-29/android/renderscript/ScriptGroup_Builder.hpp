@@ -30,10 +30,12 @@ namespace android::renderscript
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ScriptGroup_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ScriptGroup_Builder(QAndroidJniObject obj);
+		
 		// Constructors
 		ScriptGroup_Builder(android::renderscript::RenderScript arg0);
-		ScriptGroup_Builder() = default;
 		
 		// Methods
 		QAndroidJniObject addConnection(android::renderscript::Type arg0, android::renderscript::Script_KernelID arg1, android::renderscript::Script_FieldID arg2);

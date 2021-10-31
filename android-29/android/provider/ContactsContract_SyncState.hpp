@@ -32,9 +32,11 @@ namespace android::provider
 		static jstring CONTENT_DIRECTORY();
 		static QAndroidJniObject CONTENT_URI();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ContactsContract_SyncState(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ContactsContract_SyncState(QAndroidJniObject obj);
+		
 		// Constructors
-		ContactsContract_SyncState() = default;
 		
 		// Methods
 		static jbyteArray get(android::content::ContentProviderClient arg0, android::accounts::Account arg1);

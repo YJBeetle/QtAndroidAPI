@@ -8,38 +8,34 @@ namespace android::net::http
 {
 	// Fields
 	
-	SslCertificate::SslCertificate(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SslCertificate::SslCertificate(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	SslCertificate::SslCertificate(java::security::cert::X509Certificate arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.net.http.SslCertificate",
 			"(Ljava/security/cert/X509Certificate;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	SslCertificate::SslCertificate(jstring arg0, jstring arg1, jstring arg2, jstring arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.net.http.SslCertificate",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	SslCertificate::SslCertificate(jstring arg0, jstring arg1, java::util::Date arg2, java::util::Date arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.net.http.SslCertificate",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/util/Date;Ljava/util/Date;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
-		);
-	}
+			arg2.object(),
+			arg3.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject SslCertificate::restoreState(android::os::Bundle arg0)
@@ -48,7 +44,7 @@ namespace android::net::http
 			"android.net.http.SslCertificate",
 			"restoreState",
 			"(Landroid/os/Bundle;)Landroid/net/http/SslCertificate;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject SslCertificate::saveState(android::net::http::SslCertificate arg0)
@@ -57,61 +53,61 @@ namespace android::net::http
 			"android.net.http.SslCertificate",
 			"saveState",
 			"(Landroid/net/http/SslCertificate;)Landroid/os/Bundle;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject SslCertificate::getIssuedBy()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getIssuedBy",
 			"()Landroid/net/http/SslCertificate$DName;"
 		);
 	}
 	QAndroidJniObject SslCertificate::getIssuedTo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getIssuedTo",
 			"()Landroid/net/http/SslCertificate$DName;"
 		);
 	}
 	jstring SslCertificate::getValidNotAfter()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getValidNotAfter",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject SslCertificate::getValidNotAfterDate()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getValidNotAfterDate",
 			"()Ljava/util/Date;"
 		);
 	}
 	jstring SslCertificate::getValidNotBefore()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getValidNotBefore",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject SslCertificate::getValidNotBeforeDate()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getValidNotBeforeDate",
 			"()Ljava/util/Date;"
 		);
 	}
 	QAndroidJniObject SslCertificate::getX509Certificate()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getX509Certificate",
 			"()Ljava/security/cert/X509Certificate;"
 		);
 	}
 	jstring SslCertificate::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

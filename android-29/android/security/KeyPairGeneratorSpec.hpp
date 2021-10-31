@@ -26,9 +26,11 @@ namespace android::security
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit KeyPairGeneratorSpec(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		KeyPairGeneratorSpec(QAndroidJniObject obj);
+		
 		// Constructors
-		KeyPairGeneratorSpec() = default;
 		
 		// Methods
 		QAndroidJniObject getAlgorithmParameterSpec();

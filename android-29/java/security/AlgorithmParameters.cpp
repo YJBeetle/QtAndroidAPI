@@ -6,7 +6,9 @@ namespace java::security
 {
 	// Fields
 	
-	AlgorithmParameters::AlgorithmParameters(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AlgorithmParameters::AlgorithmParameters(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -36,26 +38,26 @@ namespace java::security
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/AlgorithmParameters;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jstring AlgorithmParameters::getAlgorithm()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jbyteArray AlgorithmParameters::getEncoded()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEncoded",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jbyteArray AlgorithmParameters::getEncoded(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEncoded",
 			"(Ljava/lang/String;)[B",
 			arg0
@@ -63,7 +65,7 @@ namespace java::security
 	}
 	QAndroidJniObject AlgorithmParameters::getParameterSpec(jclass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getParameterSpec",
 			"(Ljava/lang/Class;)Ljava/security/spec/AlgorithmParameterSpec;",
 			arg0
@@ -71,14 +73,14 @@ namespace java::security
 	}
 	QAndroidJniObject AlgorithmParameters::getProvider()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getProvider",
 			"()Ljava/security/Provider;"
 		);
 	}
 	void AlgorithmParameters::init(jbyteArray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"init",
 			"([B)V",
 			arg0
@@ -86,15 +88,15 @@ namespace java::security
 	}
 	void AlgorithmParameters::init(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"init",
 			"(Ljava/security/spec/AlgorithmParameterSpec;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AlgorithmParameters::init(jbyteArray arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"init",
 			"([BLjava/lang/String;)V",
 			arg0,
@@ -103,7 +105,7 @@ namespace java::security
 	}
 	jstring AlgorithmParameters::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

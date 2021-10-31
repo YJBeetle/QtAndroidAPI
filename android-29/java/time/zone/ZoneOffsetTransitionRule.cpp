@@ -11,7 +11,9 @@ namespace java::time::zone
 {
 	// Fields
 	
-	ZoneOffsetTransitionRule::ZoneOffsetTransitionRule(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ZoneOffsetTransitionRule::ZoneOffsetTransitionRule(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -21,20 +23,20 @@ namespace java::time::zone
 			"java.time.zone.ZoneOffsetTransitionRule",
 			"of",
 			"(Ljava/time/Month;ILjava/time/DayOfWeek;Ljava/time/LocalTime;ZLjava/time/zone/ZoneOffsetTransitionRule$TimeDefinition;Ljava/time/ZoneOffset;Ljava/time/ZoneOffset;Ljava/time/ZoneOffset;)Ljava/time/zone/ZoneOffsetTransitionRule;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
+			arg2.object(),
+			arg3.object(),
 			arg4,
-			arg5.__jniObject().object(),
-			arg6.__jniObject().object(),
-			arg7.__jniObject().object(),
-			arg8.__jniObject().object()
+			arg5.object(),
+			arg6.object(),
+			arg7.object(),
+			arg8.object()
 		);
 	}
 	QAndroidJniObject ZoneOffsetTransitionRule::createTransition(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"createTransition",
 			"(I)Ljava/time/zone/ZoneOffsetTransition;",
 			arg0
@@ -42,7 +44,7 @@ namespace java::time::zone
 	}
 	jboolean ZoneOffsetTransitionRule::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -50,77 +52,77 @@ namespace java::time::zone
 	}
 	jint ZoneOffsetTransitionRule::getDayOfMonthIndicator()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDayOfMonthIndicator",
 			"()I"
 		);
 	}
 	QAndroidJniObject ZoneOffsetTransitionRule::getDayOfWeek()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDayOfWeek",
 			"()Ljava/time/DayOfWeek;"
 		);
 	}
 	QAndroidJniObject ZoneOffsetTransitionRule::getLocalTime()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLocalTime",
 			"()Ljava/time/LocalTime;"
 		);
 	}
 	QAndroidJniObject ZoneOffsetTransitionRule::getMonth()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMonth",
 			"()Ljava/time/Month;"
 		);
 	}
 	QAndroidJniObject ZoneOffsetTransitionRule::getOffsetAfter()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getOffsetAfter",
 			"()Ljava/time/ZoneOffset;"
 		);
 	}
 	QAndroidJniObject ZoneOffsetTransitionRule::getOffsetBefore()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getOffsetBefore",
 			"()Ljava/time/ZoneOffset;"
 		);
 	}
 	QAndroidJniObject ZoneOffsetTransitionRule::getStandardOffset()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getStandardOffset",
 			"()Ljava/time/ZoneOffset;"
 		);
 	}
 	QAndroidJniObject ZoneOffsetTransitionRule::getTimeDefinition()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTimeDefinition",
 			"()Ljava/time/zone/ZoneOffsetTransitionRule$TimeDefinition;"
 		);
 	}
 	jint ZoneOffsetTransitionRule::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean ZoneOffsetTransitionRule::isMidnightEndOfDay()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isMidnightEndOfDay",
 			"()Z"
 		);
 	}
 	jstring ZoneOffsetTransitionRule::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

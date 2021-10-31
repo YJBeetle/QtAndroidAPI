@@ -12,7 +12,10 @@ namespace java::sql
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SQLWarning(const char *className, const char *sig, Ts...agv) : java::sql::SQLException(className, sig, std::forward<Ts>(agv)...) {}
 		SQLWarning(QAndroidJniObject obj);
+		
 		// Constructors
 		SQLWarning();
 		SQLWarning(jstring arg0);

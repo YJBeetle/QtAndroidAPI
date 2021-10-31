@@ -18,7 +18,10 @@ namespace java::net
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DatagramPacket(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DatagramPacket(QAndroidJniObject obj);
+		
 		// Constructors
 		DatagramPacket(jbyteArray arg0, jint arg1);
 		DatagramPacket(jbyteArray arg0, jint arg1, jint arg2);
@@ -26,7 +29,6 @@ namespace java::net
 		DatagramPacket(jbyteArray arg0, jint arg1, jint arg2, java::net::SocketAddress arg3);
 		DatagramPacket(jbyteArray arg0, jint arg1, java::net::InetAddress arg2, jint arg3);
 		DatagramPacket(jbyteArray arg0, jint arg1, jint arg2, java::net::InetAddress arg3, jint arg4);
-		DatagramPacket() = default;
 		
 		// Methods
 		QAndroidJniObject getAddress();

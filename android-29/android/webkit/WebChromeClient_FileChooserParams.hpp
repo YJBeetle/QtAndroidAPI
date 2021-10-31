@@ -17,7 +17,10 @@ namespace android::webkit
 		static jint MODE_OPEN_MULTIPLE();
 		static jint MODE_SAVE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit WebChromeClient_FileChooserParams(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		WebChromeClient_FileChooserParams(QAndroidJniObject obj);
+		
 		// Constructors
 		WebChromeClient_FileChooserParams();
 		

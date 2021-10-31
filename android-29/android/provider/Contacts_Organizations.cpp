@@ -30,7 +30,9 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	Contacts_Organizations::Contacts_Organizations(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Contacts_Organizations::Contacts_Organizations(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -40,7 +42,7 @@ namespace android::provider
 			"android.provider.Contacts$Organizations",
 			"getDisplayLabel",
 			"(Landroid/content/Context;ILjava/lang/CharSequence;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		).object<jstring>();

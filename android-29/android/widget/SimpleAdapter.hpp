@@ -39,10 +39,12 @@ namespace android::widget
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SimpleAdapter(const char *className, const char *sig, Ts...agv) : android::widget::BaseAdapter(className, sig, std::forward<Ts>(agv)...) {}
 		SimpleAdapter(QAndroidJniObject obj);
+		
 		// Constructors
 		SimpleAdapter(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jarray arg3, jintArray arg4);
-		SimpleAdapter() = default;
 		
 		// Methods
 		jint getCount();

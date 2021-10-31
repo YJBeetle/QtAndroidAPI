@@ -7,34 +7,36 @@ namespace java::nio
 {
 	// Fields
 	
-	MappedByteBuffer::MappedByteBuffer(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MappedByteBuffer::MappedByteBuffer(QAndroidJniObject obj) : java::nio::ByteBuffer(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject MappedByteBuffer::clear()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clear",
 			"()Ljava/nio/MappedByteBuffer;"
 		);
 	}
 	QAndroidJniObject MappedByteBuffer::flip()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"flip",
 			"()Ljava/nio/MappedByteBuffer;"
 		);
 	}
 	QAndroidJniObject MappedByteBuffer::force()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"force",
 			"()Ljava/nio/MappedByteBuffer;"
 		);
 	}
 	QAndroidJniObject MappedByteBuffer::force(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"force",
 			"(II)Ljava/nio/MappedByteBuffer;",
 			arg0,
@@ -43,14 +45,14 @@ namespace java::nio
 	}
 	jboolean MappedByteBuffer::isLoaded()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isLoaded",
 			"()Z"
 		);
 	}
 	QAndroidJniObject MappedByteBuffer::limit(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"limit",
 			"(I)Ljava/nio/MappedByteBuffer;",
 			arg0
@@ -58,21 +60,21 @@ namespace java::nio
 	}
 	QAndroidJniObject MappedByteBuffer::load()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"load",
 			"()Ljava/nio/MappedByteBuffer;"
 		);
 	}
 	QAndroidJniObject MappedByteBuffer::mark()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"mark",
 			"()Ljava/nio/MappedByteBuffer;"
 		);
 	}
 	QAndroidJniObject MappedByteBuffer::position(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"position",
 			"(I)Ljava/nio/MappedByteBuffer;",
 			arg0
@@ -80,14 +82,14 @@ namespace java::nio
 	}
 	QAndroidJniObject MappedByteBuffer::reset()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"reset",
 			"()Ljava/nio/MappedByteBuffer;"
 		);
 	}
 	QAndroidJniObject MappedByteBuffer::rewind()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"rewind",
 			"()Ljava/nio/MappedByteBuffer;"
 		);

@@ -10,9 +10,11 @@ namespace android::hardware::camera2::params
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MandatoryStreamCombination(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MandatoryStreamCombination(QAndroidJniObject obj);
+		
 		// Constructors
-		MandatoryStreamCombination() = default;
 		
 		// Methods
 		jboolean equals(jobject arg0);

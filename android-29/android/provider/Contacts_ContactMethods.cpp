@@ -158,7 +158,9 @@ namespace android::provider
 		);
 	}
 	
-	Contacts_ContactMethods::Contacts_ContactMethods(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Contacts_ContactMethods::Contacts_ContactMethods(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -195,7 +197,7 @@ namespace android::provider
 			"android.provider.Contacts$ContactMethods",
 			"getDisplayLabel",
 			"(Landroid/content/Context;IILjava/lang/CharSequence;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3
@@ -203,10 +205,10 @@ namespace android::provider
 	}
 	void Contacts_ContactMethods::addPostalLocation(android::content::Context arg0, jlong arg1, jdouble arg2, jdouble arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addPostalLocation",
 			"(Landroid/content/Context;JDD)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3

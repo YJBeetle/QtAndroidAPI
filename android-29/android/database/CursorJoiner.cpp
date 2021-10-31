@@ -5,45 +5,45 @@ namespace android::database
 {
 	// Fields
 	
-	CursorJoiner::CursorJoiner(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CursorJoiner::CursorJoiner(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	CursorJoiner::CursorJoiner(__JniBaseClass arg0, jarray arg1, __JniBaseClass arg2, jarray arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.database.CursorJoiner",
 			"(Landroid/database/Cursor;[Ljava/lang/String;Landroid/database/Cursor;[Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object(),
+			arg2.object(),
 			arg3
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean CursorJoiner::hasNext()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasNext",
 			"()Z"
 		);
 	}
 	QAndroidJniObject CursorJoiner::iterator()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
 	QAndroidJniObject CursorJoiner::next()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"next",
 			"()Landroid/database/CursorJoiner$Result;"
 		);
 	}
 	void CursorJoiner::remove()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"remove",
 			"()V"
 		);

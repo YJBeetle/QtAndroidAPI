@@ -34,9 +34,11 @@ namespace android::icu::util
 		static jint PLURAL_LONG_NAME();
 		static jint SYMBOL_NAME();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Currency(const char *className, const char *sig, Ts...agv) : android::icu::util::MeasureUnit(className, sig, std::forward<Ts>(agv)...) {}
 		Currency(QAndroidJniObject obj);
+		
 		// Constructors
-		Currency() = default;
 		
 		// Methods
 		static QAndroidJniObject fromJavaCurrency(java::util::Currency arg0);

@@ -84,24 +84,22 @@ namespace java::lang
 		).object<jclass>();
 	}
 	
-	Double::Double(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Double::Double(QAndroidJniObject obj) : java::lang::Number(obj) {}
+	
 	// Constructors
 	Double::Double(jdouble arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Number(
 			"java.lang.Double",
 			"(D)V",
 			arg0
-		);
-	}
+		) {}
 	Double::Double(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Number(
 			"java.lang.Double",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jint Double::compare(jdouble arg0, jdouble arg1)
@@ -254,22 +252,22 @@ namespace java::lang
 	}
 	jbyte Double::byteValue()
 	{
-		return __thiz.callMethod<jbyte>(
+		return callMethod<jbyte>(
 			"byteValue",
 			"()B"
 		);
 	}
 	jint Double::compareTo(java::lang::Double arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Double;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint Double::compareTo(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -277,21 +275,21 @@ namespace java::lang
 	}
 	QAndroidJniObject Double::describeConstable()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"describeConstable",
 			"()Ljava/util/Optional;"
 		);
 	}
 	jdouble Double::doubleValue()
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"doubleValue",
 			"()D"
 		);
 	}
 	jboolean Double::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -299,64 +297,64 @@ namespace java::lang
 	}
 	jfloat Double::floatValue()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"floatValue",
 			"()F"
 		);
 	}
 	jint Double::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jint Double::intValue()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"intValue",
 			"()I"
 		);
 	}
 	jboolean Double::isInfinite()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isInfinite",
 			"()Z"
 		);
 	}
 	jboolean Double::isNaN()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isNaN",
 			"()Z"
 		);
 	}
 	jlong Double::longValue()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"longValue",
 			"()J"
 		);
 	}
 	QAndroidJniObject Double::resolveConstantDesc(java::lang::invoke::MethodHandles_Lookup arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"resolveConstantDesc",
 			"(Ljava/lang/invoke/MethodHandles$Lookup;)Ljava/lang/Double;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jshort Double::shortValue()
 	{
-		return __thiz.callMethod<jshort>(
+		return callMethod<jshort>(
 			"shortValue",
 			"()S"
 		);
 	}
 	jstring Double::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

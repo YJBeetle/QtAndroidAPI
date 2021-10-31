@@ -50,9 +50,11 @@ namespace android::provider
 		static jint TYPE_WORK_MOBILE();
 		static jint TYPE_WORK_PAGER();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ContactsContract_CommonDataKinds_Phone(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ContactsContract_CommonDataKinds_Phone(QAndroidJniObject obj);
+		
 		// Constructors
-		ContactsContract_CommonDataKinds_Phone() = default;
 		
 		// Methods
 		static jstring getTypeLabel(android::content::res::Resources arg0, jint arg1, jstring arg2);

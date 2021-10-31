@@ -5,15 +5,15 @@ namespace java::lang
 {
 	// Fields
 	
-	InheritableThreadLocal::InheritableThreadLocal(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	InheritableThreadLocal::InheritableThreadLocal(QAndroidJniObject obj) : java::lang::ThreadLocal(obj) {}
+	
 	// Constructors
 	InheritableThreadLocal::InheritableThreadLocal()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::ThreadLocal(
 			"java.lang.InheritableThreadLocal",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::lang

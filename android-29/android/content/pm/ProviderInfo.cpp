@@ -21,124 +21,122 @@ namespace android::content::pm
 	}
 	jstring ProviderInfo::authority()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"authority",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint ProviderInfo::flags()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"flags"
 		);
 	}
 	jboolean ProviderInfo::forceUriPermissions()
 	{
-		return __thiz.getField<jboolean>(
+		return getField<jboolean>(
 			"forceUriPermissions"
 		);
 	}
 	jboolean ProviderInfo::grantUriPermissions()
 	{
-		return __thiz.getField<jboolean>(
+		return getField<jboolean>(
 			"grantUriPermissions"
 		);
 	}
 	jint ProviderInfo::initOrder()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"initOrder"
 		);
 	}
 	jboolean ProviderInfo::isSyncable()
 	{
-		return __thiz.getField<jboolean>(
+		return getField<jboolean>(
 			"isSyncable"
 		);
 	}
 	jboolean ProviderInfo::multiprocess()
 	{
-		return __thiz.getField<jboolean>(
+		return getField<jboolean>(
 			"multiprocess"
 		);
 	}
 	jarray ProviderInfo::pathPermissions()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"pathPermissions",
 			"[Landroid/content/pm/PathPermission;"
 		).object<jarray>();
 	}
 	jstring ProviderInfo::readPermission()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"readPermission",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jarray ProviderInfo::uriPermissionPatterns()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"uriPermissionPatterns",
 			"[Landroid/os/PatternMatcher;"
 		).object<jarray>();
 	}
 	jstring ProviderInfo::writePermission()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"writePermission",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	
-	ProviderInfo::ProviderInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ProviderInfo::ProviderInfo(QAndroidJniObject obj) : android::content::pm::ComponentInfo(obj) {}
+	
 	// Constructors
 	ProviderInfo::ProviderInfo()
-	{
-		__thiz = QAndroidJniObject(
+		: android::content::pm::ComponentInfo(
 			"android.content.pm.ProviderInfo",
 			"()V"
-		);
-	}
+		) {}
 	ProviderInfo::ProviderInfo(android::content::pm::ProviderInfo &arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::content::pm::ComponentInfo(
 			"android.content.pm.ProviderInfo",
 			"(Landroid/content/pm/ProviderInfo;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jint ProviderInfo::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	void ProviderInfo::dump(__JniBaseClass arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"dump",
 			"(Landroid/util/Printer;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	jstring ProviderInfo::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void ProviderInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

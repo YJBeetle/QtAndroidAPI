@@ -40,7 +40,10 @@ namespace android::icu::util
 		static jint TER();
 		static jint YEKATIT();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit EthiopicCalendar(const char *className, const char *sig, Ts...agv) : android::icu::util::Calendar(className, sig, std::forward<Ts>(agv)...) {}
 		EthiopicCalendar(QAndroidJniObject obj);
+		
 		// Constructors
 		EthiopicCalendar();
 		EthiopicCalendar(android::icu::util::TimeZone arg0);

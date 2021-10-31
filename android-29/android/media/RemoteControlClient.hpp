@@ -45,11 +45,13 @@ namespace android::media
 		static jint PLAYSTATE_SKIPPING_FORWARDS();
 		static jint PLAYSTATE_STOPPED();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit RemoteControlClient(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		RemoteControlClient(QAndroidJniObject obj);
+		
 		// Constructors
 		RemoteControlClient(android::app::PendingIntent arg0);
 		RemoteControlClient(android::app::PendingIntent arg0, android::os::Looper arg1);
-		RemoteControlClient() = default;
 		
 		// Methods
 		QAndroidJniObject editMetadata(jboolean arg0);

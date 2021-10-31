@@ -36,13 +36,15 @@ namespace android::inputmethodservice
 		static jint KEYCODE_MODE_CHANGE();
 		static jint KEYCODE_SHIFT();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Keyboard(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Keyboard(QAndroidJniObject obj);
+		
 		// Constructors
 		Keyboard(android::content::Context arg0, jint arg1);
 		Keyboard(android::content::Context arg0, jint arg1, jint arg2);
 		Keyboard(android::content::Context arg0, jint arg1, jint arg2, jint arg3, jint arg4);
 		Keyboard(android::content::Context arg0, jint arg1, jstring arg2, jint arg3, jint arg4);
-		Keyboard() = default;
 		
 		// Methods
 		jint getHeight();

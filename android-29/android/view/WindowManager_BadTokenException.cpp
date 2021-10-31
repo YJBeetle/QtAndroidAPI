@@ -4,23 +4,21 @@ namespace android::view
 {
 	// Fields
 	
-	WindowManager_BadTokenException::WindowManager_BadTokenException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WindowManager_BadTokenException::WindowManager_BadTokenException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	
 	// Constructors
 	WindowManager_BadTokenException::WindowManager_BadTokenException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::RuntimeException(
 			"android.view.WindowManager$BadTokenException",
 			"()V"
-		);
-	}
+		) {}
 	WindowManager_BadTokenException::WindowManager_BadTokenException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::RuntimeException(
 			"android.view.WindowManager$BadTokenException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::view

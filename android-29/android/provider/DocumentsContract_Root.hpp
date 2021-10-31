@@ -28,9 +28,11 @@ namespace android::provider
 		static jint FLAG_SUPPORTS_SEARCH();
 		static jstring MIME_TYPE_ITEM();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DocumentsContract_Root(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DocumentsContract_Root(QAndroidJniObject obj);
+		
 		// Constructors
-		DocumentsContract_Root() = default;
 		
 		// Methods
 	};

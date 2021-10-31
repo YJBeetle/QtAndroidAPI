@@ -18,9 +18,11 @@ namespace java::lang
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Enum(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Enum(QAndroidJniObject obj);
+		
 		// Constructors
-		Enum() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jclass arg0, jstring arg1);

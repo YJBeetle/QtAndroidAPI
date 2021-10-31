@@ -12,11 +12,13 @@ namespace android::system
 		// Fields
 		jint errno();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ErrnoException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
 		ErrnoException(QAndroidJniObject obj);
+		
 		// Constructors
 		ErrnoException(jstring arg0, jint arg1);
 		ErrnoException(jstring arg0, jint arg1, jthrowable arg2);
-		ErrnoException() = default;
 		
 		// Methods
 		jstring getMessage();

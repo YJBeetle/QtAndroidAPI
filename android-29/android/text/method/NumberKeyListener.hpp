@@ -20,7 +20,10 @@ namespace android::text::method
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit NumberKeyListener(const char *className, const char *sig, Ts...agv) : android::text::method::BaseKeyListener(className, sig, std::forward<Ts>(agv)...) {}
 		NumberKeyListener(QAndroidJniObject obj);
+		
 		// Constructors
 		NumberKeyListener();
 		

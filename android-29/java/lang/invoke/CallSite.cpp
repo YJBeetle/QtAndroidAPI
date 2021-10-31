@@ -7,35 +7,37 @@ namespace java::lang::invoke
 {
 	// Fields
 	
-	CallSite::CallSite(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CallSite::CallSite(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject CallSite::dynamicInvoker()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"dynamicInvoker",
 			"()Ljava/lang/invoke/MethodHandle;"
 		);
 	}
 	QAndroidJniObject CallSite::getTarget()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTarget",
 			"()Ljava/lang/invoke/MethodHandle;"
 		);
 	}
 	void CallSite::setTarget(java::lang::invoke::MethodHandle arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTarget",
 			"(Ljava/lang/invoke/MethodHandle;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject CallSite::type()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"type",
 			"()Ljava/lang/invoke/MethodType;"
 		);

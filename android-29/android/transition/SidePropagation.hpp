@@ -24,7 +24,10 @@ namespace android::transition
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SidePropagation(const char *className, const char *sig, Ts...agv) : android::transition::VisibilityPropagation(className, sig, std::forward<Ts>(agv)...) {}
 		SidePropagation(QAndroidJniObject obj);
+		
 		// Constructors
 		SidePropagation();
 		

@@ -6,29 +6,29 @@ namespace java::security::spec
 {
 	// Fields
 	
-	ECPrivateKeySpec::ECPrivateKeySpec(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ECPrivateKeySpec::ECPrivateKeySpec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ECPrivateKeySpec::ECPrivateKeySpec(java::math::BigInteger arg0, java::security::spec::ECParameterSpec arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.security.spec.ECPrivateKeySpec",
 			"(Ljava/math/BigInteger;Ljava/security/spec/ECParameterSpec;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject ECPrivateKeySpec::getParams()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getParams",
 			"()Ljava/security/spec/ECParameterSpec;"
 		);
 	}
 	QAndroidJniObject ECPrivateKeySpec::getS()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getS",
 			"()Ljava/math/BigInteger;"
 		);

@@ -235,15 +235,15 @@ namespace android::hardware::usb
 		);
 	}
 	
-	UsbConstants::UsbConstants(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UsbConstants::UsbConstants(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	UsbConstants::UsbConstants()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.hardware.usb.UsbConstants",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::hardware::usb

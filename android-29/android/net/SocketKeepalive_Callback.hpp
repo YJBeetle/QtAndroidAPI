@@ -10,7 +10,10 @@ namespace android::net
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SocketKeepalive_Callback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SocketKeepalive_Callback(QAndroidJniObject obj);
+		
 		// Constructors
 		SocketKeepalive_Callback();
 		

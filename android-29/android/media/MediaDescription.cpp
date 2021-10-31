@@ -73,20 +73,22 @@ namespace android::media
 		).object<jstring>();
 	}
 	
-	MediaDescription::MediaDescription(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaDescription::MediaDescription(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint MediaDescription::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean MediaDescription::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -94,73 +96,73 @@ namespace android::media
 	}
 	jstring MediaDescription::getDescription()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	QAndroidJniObject MediaDescription::getExtras()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
 	QAndroidJniObject MediaDescription::getIconBitmap()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getIconBitmap",
 			"()Landroid/graphics/Bitmap;"
 		);
 	}
 	QAndroidJniObject MediaDescription::getIconUri()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getIconUri",
 			"()Landroid/net/Uri;"
 		);
 	}
 	jstring MediaDescription::getMediaId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMediaId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject MediaDescription::getMediaUri()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMediaUri",
 			"()Landroid/net/Uri;"
 		);
 	}
 	jstring MediaDescription::getSubtitle()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSubtitle",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jstring MediaDescription::getTitle()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTitle",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jstring MediaDescription::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void MediaDescription::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

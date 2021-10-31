@@ -4,27 +4,29 @@ namespace java::util
 {
 	// Fields
 	
-	TimerTask::TimerTask(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TimerTask::TimerTask(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jboolean TimerTask::cancel()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"cancel",
 			"()Z"
 		);
 	}
 	void TimerTask::run()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"run",
 			"()V"
 		);
 	}
 	jlong TimerTask::scheduledExecutionTime()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"scheduledExecutionTime",
 			"()J"
 		);

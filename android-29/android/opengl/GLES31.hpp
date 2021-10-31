@@ -193,9 +193,11 @@ namespace android::opengl
 		static jint GL_VERTEX_SHADER_BIT();
 		static jint GL_WRITE_ONLY();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit GLES31(const char *className, const char *sig, Ts...agv) : android::opengl::GLES30(className, sig, std::forward<Ts>(agv)...) {}
 		GLES31(QAndroidJniObject obj);
+		
 		// Constructors
-		GLES31() = default;
 		
 		// Methods
 		static void glActiveShaderProgram(jint arg0, jint arg1);

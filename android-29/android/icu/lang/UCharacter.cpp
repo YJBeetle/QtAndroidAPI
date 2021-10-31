@@ -148,7 +148,9 @@ namespace android::icu::lang
 		);
 	}
 	
-	UCharacter::UCharacter(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UCharacter::UCharacter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -955,7 +957,7 @@ namespace android::icu::lang
 			"android.icu.lang.UCharacter",
 			"toLowerCase",
 			"(Landroid/icu/util/ULocale;Ljava/lang/String;)Ljava/lang/String;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		).object<jstring>();
 	}
@@ -965,7 +967,7 @@ namespace android::icu::lang
 			"android.icu.lang.UCharacter",
 			"toLowerCase",
 			"(Ljava/util/Locale;Ljava/lang/String;)Ljava/lang/String;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		).object<jstring>();
 	}
@@ -994,7 +996,7 @@ namespace android::icu::lang
 			"toTitleCase",
 			"(Ljava/lang/String;Landroid/icu/text/BreakIterator;)Ljava/lang/String;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		).object<jstring>();
 	}
 	jstring UCharacter::toTitleCase(android::icu::util::ULocale arg0, jstring arg1, android::icu::text::BreakIterator arg2)
@@ -1003,9 +1005,9 @@ namespace android::icu::lang
 			"android.icu.lang.UCharacter",
 			"toTitleCase",
 			"(Landroid/icu/util/ULocale;Ljava/lang/String;Landroid/icu/text/BreakIterator;)Ljava/lang/String;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		).object<jstring>();
 	}
 	jstring UCharacter::toTitleCase(java::util::Locale arg0, jstring arg1, android::icu::text::BreakIterator arg2)
@@ -1014,9 +1016,9 @@ namespace android::icu::lang
 			"android.icu.lang.UCharacter",
 			"toTitleCase",
 			"(Ljava/util/Locale;Ljava/lang/String;Landroid/icu/text/BreakIterator;)Ljava/lang/String;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		).object<jstring>();
 	}
 	jstring UCharacter::toTitleCase(android::icu::util::ULocale arg0, jstring arg1, android::icu::text::BreakIterator arg2, jint arg3)
@@ -1025,9 +1027,9 @@ namespace android::icu::lang
 			"android.icu.lang.UCharacter",
 			"toTitleCase",
 			"(Landroid/icu/util/ULocale;Ljava/lang/String;Landroid/icu/text/BreakIterator;I)Ljava/lang/String;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object(),
+			arg2.object(),
 			arg3
 		).object<jstring>();
 	}
@@ -1037,9 +1039,9 @@ namespace android::icu::lang
 			"android.icu.lang.UCharacter",
 			"toTitleCase",
 			"(Ljava/util/Locale;Ljava/lang/String;Landroid/icu/text/BreakIterator;I)Ljava/lang/String;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object(),
+			arg2.object(),
 			arg3
 		).object<jstring>();
 	}
@@ -1067,7 +1069,7 @@ namespace android::icu::lang
 			"android.icu.lang.UCharacter",
 			"toUpperCase",
 			"(Landroid/icu/util/ULocale;Ljava/lang/String;)Ljava/lang/String;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		).object<jstring>();
 	}
@@ -1077,7 +1079,7 @@ namespace android::icu::lang
 			"android.icu.lang.UCharacter",
 			"toUpperCase",
 			"(Ljava/util/Locale;Ljava/lang/String;)Ljava/lang/String;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		).object<jstring>();
 	}

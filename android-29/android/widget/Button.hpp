@@ -24,13 +24,15 @@ namespace android::widget
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Button(const char *className, const char *sig, Ts...agv) : android::widget::TextView(className, sig, std::forward<Ts>(agv)...) {}
 		Button(QAndroidJniObject obj);
+		
 		// Constructors
 		Button(android::content::Context arg0);
 		Button(android::content::Context arg0, __JniBaseClass arg1);
 		Button(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		Button(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
-		Button() = default;
 		
 		// Methods
 		jstring getAccessibilityClassName();

@@ -22,10 +22,12 @@ namespace android::renderscript
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Sampler_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Sampler_Builder(QAndroidJniObject obj);
+		
 		// Constructors
 		Sampler_Builder(android::renderscript::RenderScript arg0);
-		Sampler_Builder() = default;
 		
 		// Methods
 		QAndroidJniObject create();

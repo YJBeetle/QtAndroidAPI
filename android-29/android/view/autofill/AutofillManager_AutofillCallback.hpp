@@ -17,7 +17,10 @@ namespace android::view::autofill
 		static jint EVENT_INPUT_SHOWN();
 		static jint EVENT_INPUT_UNAVAILABLE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AutofillManager_AutofillCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AutofillManager_AutofillCallback(QAndroidJniObject obj);
+		
 		// Constructors
 		AutofillManager_AutofillCallback();
 		

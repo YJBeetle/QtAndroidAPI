@@ -4,13 +4,15 @@ namespace java::util
 {
 	// Fields
 	
-	AbstractSequentialList::AbstractSequentialList(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AbstractSequentialList::AbstractSequentialList(QAndroidJniObject obj) : java::util::AbstractList(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void AbstractSequentialList::add(jint arg0, jobject arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"add",
 			"(ILjava/lang/Object;)V",
 			arg0,
@@ -19,16 +21,16 @@ namespace java::util
 	}
 	jboolean AbstractSequentialList::addAll(jint arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"addAll",
 			"(ILjava/util/Collection;)Z",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jobject AbstractSequentialList::get(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"(I)Ljava/lang/Object;",
 			arg0
@@ -36,14 +38,14 @@ namespace java::util
 	}
 	QAndroidJniObject AbstractSequentialList::iterator()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
 	QAndroidJniObject AbstractSequentialList::listIterator(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"listIterator",
 			"(I)Ljava/util/ListIterator;",
 			arg0
@@ -51,7 +53,7 @@ namespace java::util
 	}
 	jobject AbstractSequentialList::remove(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"remove",
 			"(I)Ljava/lang/Object;",
 			arg0
@@ -59,7 +61,7 @@ namespace java::util
 	}
 	jobject AbstractSequentialList::set(jint arg0, jobject arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"set",
 			"(ILjava/lang/Object;)Ljava/lang/Object;",
 			arg0,

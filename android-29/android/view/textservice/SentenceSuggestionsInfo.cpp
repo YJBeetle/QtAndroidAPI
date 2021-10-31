@@ -14,38 +14,36 @@ namespace android::view::textservice
 		);
 	}
 	
-	SentenceSuggestionsInfo::SentenceSuggestionsInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SentenceSuggestionsInfo::SentenceSuggestionsInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	SentenceSuggestionsInfo::SentenceSuggestionsInfo(android::os::Parcel arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.textservice.SentenceSuggestionsInfo",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	SentenceSuggestionsInfo::SentenceSuggestionsInfo(jarray arg0, jintArray arg1, jintArray arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.textservice.SentenceSuggestionsInfo",
 			"([Landroid/view/textservice/SuggestionsInfo;[I[I)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	jint SentenceSuggestionsInfo::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jint SentenceSuggestionsInfo::getLengthAt(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLengthAt",
 			"(I)I",
 			arg0
@@ -53,7 +51,7 @@ namespace android::view::textservice
 	}
 	jint SentenceSuggestionsInfo::getOffsetAt(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getOffsetAt",
 			"(I)I",
 			arg0
@@ -61,14 +59,14 @@ namespace android::view::textservice
 	}
 	jint SentenceSuggestionsInfo::getSuggestionsCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSuggestionsCount",
 			"()I"
 		);
 	}
 	QAndroidJniObject SentenceSuggestionsInfo::getSuggestionsInfoAt(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSuggestionsInfoAt",
 			"(I)Landroid/view/textservice/SuggestionsInfo;",
 			arg0
@@ -76,10 +74,10 @@ namespace android::view::textservice
 	}
 	void SentenceSuggestionsInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

@@ -44,9 +44,11 @@ namespace android::app
 		static jint FLAG_ONE_SHOT();
 		static jint FLAG_UPDATE_CURRENT();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PendingIntent(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PendingIntent(QAndroidJniObject obj);
+		
 		// Constructors
-		PendingIntent() = default;
 		
 		// Methods
 		static QAndroidJniObject getActivities(android::content::Context arg0, jint arg1, jarray arg2, jint arg3);

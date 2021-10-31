@@ -44,7 +44,9 @@ namespace java::time::format
 		);
 	}
 	
-	SignStyle::SignStyle(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SignStyle::SignStyle(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

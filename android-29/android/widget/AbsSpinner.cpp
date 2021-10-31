@@ -9,116 +9,110 @@ namespace android::widget
 {
 	// Fields
 	
-	AbsSpinner::AbsSpinner(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AbsSpinner::AbsSpinner(QAndroidJniObject obj) : android::widget::AdapterView(obj) {}
+	
 	// Constructors
 	AbsSpinner::AbsSpinner(android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::AdapterView(
 			"android.widget.AbsSpinner",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	AbsSpinner::AbsSpinner(android::content::Context arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::AdapterView(
 			"android.widget.AbsSpinner",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	AbsSpinner::AbsSpinner(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::AdapterView(
 			"android.widget.AbsSpinner",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
-		);
-	}
+		) {}
 	AbsSpinner::AbsSpinner(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::AdapterView(
 			"android.widget.AbsSpinner",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	
 	// Methods
 	void AbsSpinner::autofill(android::view::autofill::AutofillValue arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"autofill",
 			"(Landroid/view/autofill/AutofillValue;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring AbsSpinner::getAccessibilityClassName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	QAndroidJniObject AbsSpinner::getAdapter()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAdapter",
 			"()Landroid/widget/SpinnerAdapter;"
 		);
 	}
 	jint AbsSpinner::getAutofillType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAutofillType",
 			"()I"
 		);
 	}
 	QAndroidJniObject AbsSpinner::getAutofillValue()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAutofillValue",
 			"()Landroid/view/autofill/AutofillValue;"
 		);
 	}
 	jint AbsSpinner::getCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCount",
 			"()I"
 		);
 	}
 	QAndroidJniObject AbsSpinner::getSelectedView()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSelectedView",
 			"()Landroid/view/View;"
 		);
 	}
 	void AbsSpinner::onRestoreInstanceState(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onRestoreInstanceState",
 			"(Landroid/os/Parcelable;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject AbsSpinner::onSaveInstanceState()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onSaveInstanceState",
 			"()Landroid/os/Parcelable;"
 		);
 	}
 	jint AbsSpinner::pointToPosition(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"pointToPosition",
 			"(II)I",
 			arg0,
@@ -127,22 +121,22 @@ namespace android::widget
 	}
 	void AbsSpinner::requestLayout()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"requestLayout",
 			"()V"
 		);
 	}
 	void AbsSpinner::setAdapter(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAdapter",
 			"(Landroid/widget/Adapter;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AbsSpinner::setSelection(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSelection",
 			"(I)V",
 			arg0
@@ -150,7 +144,7 @@ namespace android::widget
 	}
 	void AbsSpinner::setSelection(jint arg0, jboolean arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSelection",
 			"(IZ)V",
 			arg0,

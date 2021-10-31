@@ -5,17 +5,17 @@ namespace android::graphics
 {
 	// Fields
 	
-	BlurMaskFilter::BlurMaskFilter(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BlurMaskFilter::BlurMaskFilter(QAndroidJniObject obj) : android::graphics::MaskFilter(obj) {}
+	
 	// Constructors
 	BlurMaskFilter::BlurMaskFilter(jfloat arg0, android::graphics::BlurMaskFilter_Blur arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::graphics::MaskFilter(
 			"android.graphics.BlurMaskFilter",
 			"(FLandroid/graphics/BlurMaskFilter$Blur;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
+			arg1.object()
+		) {}
 	
 	// Methods
 } // namespace android::graphics

@@ -5,21 +5,21 @@ namespace android::util
 	// Fields
 	jdouble MutableDouble::value()
 	{
-		return __thiz.getField<jdouble>(
+		return getField<jdouble>(
 			"value"
 		);
 	}
 	
-	MutableDouble::MutableDouble(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MutableDouble::MutableDouble(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MutableDouble::MutableDouble(jdouble arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.util.MutableDouble",
 			"(D)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::util

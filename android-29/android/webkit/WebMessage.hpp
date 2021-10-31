@@ -10,11 +10,13 @@ namespace android::webkit
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit WebMessage(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		WebMessage(QAndroidJniObject obj);
+		
 		// Constructors
 		WebMessage(jstring arg0);
 		WebMessage(jstring arg0, jarray arg1);
-		WebMessage() = default;
 		
 		// Methods
 		jstring getData();

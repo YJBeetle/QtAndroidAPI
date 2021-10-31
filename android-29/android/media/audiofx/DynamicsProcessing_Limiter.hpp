@@ -11,11 +11,13 @@ namespace android::media::audiofx
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DynamicsProcessing_Limiter(const char *className, const char *sig, Ts...agv) : android::media::audiofx::DynamicsProcessing_Stage(className, sig, std::forward<Ts>(agv)...) {}
 		DynamicsProcessing_Limiter(QAndroidJniObject obj);
+		
 		// Constructors
 		DynamicsProcessing_Limiter(android::media::audiofx::DynamicsProcessing_Limiter &arg0);
 		DynamicsProcessing_Limiter(jboolean arg0, jboolean arg1, jint arg2, jfloat arg3, jfloat arg4, jfloat arg5, jfloat arg6, jfloat arg7);
-		DynamicsProcessing_Limiter() = default;
 		
 		// Methods
 		jfloat getAttackTime();

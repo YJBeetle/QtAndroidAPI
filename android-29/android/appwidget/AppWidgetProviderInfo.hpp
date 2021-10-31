@@ -60,7 +60,10 @@ namespace android::appwidget
 		jint widgetCategory();
 		jint widgetFeatures();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AppWidgetProviderInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AppWidgetProviderInfo(QAndroidJniObject obj);
+		
 		// Constructors
 		AppWidgetProviderInfo();
 		AppWidgetProviderInfo(android::os::Parcel arg0);

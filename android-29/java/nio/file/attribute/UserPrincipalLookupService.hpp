@@ -10,9 +10,11 @@ namespace java::nio::file::attribute
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit UserPrincipalLookupService(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		UserPrincipalLookupService(QAndroidJniObject obj);
+		
 		// Constructors
-		UserPrincipalLookupService() = default;
 		
 		// Methods
 		QAndroidJniObject lookupPrincipalByGroupName(jstring arg0);

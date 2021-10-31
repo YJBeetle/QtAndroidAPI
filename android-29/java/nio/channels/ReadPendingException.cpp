@@ -4,15 +4,15 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	ReadPendingException::ReadPendingException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ReadPendingException::ReadPendingException(QAndroidJniObject obj) : java::lang::IllegalStateException(obj) {}
+	
 	// Constructors
 	ReadPendingException::ReadPendingException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::IllegalStateException(
 			"java.nio.channels.ReadPendingException",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::nio::channels

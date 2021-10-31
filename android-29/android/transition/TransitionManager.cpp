@@ -7,15 +7,15 @@ namespace android::transition
 {
 	// Fields
 	
-	TransitionManager::TransitionManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TransitionManager::TransitionManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	TransitionManager::TransitionManager()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.transition.TransitionManager",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void TransitionManager::beginDelayedTransition(android::view::ViewGroup arg0)
@@ -24,7 +24,7 @@ namespace android::transition
 			"android.transition.TransitionManager",
 			"beginDelayedTransition",
 			"(Landroid/view/ViewGroup;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TransitionManager::beginDelayedTransition(android::view::ViewGroup arg0, android::transition::Transition arg1)
@@ -33,8 +33,8 @@ namespace android::transition
 			"android.transition.TransitionManager",
 			"beginDelayedTransition",
 			"(Landroid/view/ViewGroup;Landroid/transition/Transition;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void TransitionManager::endTransitions(android::view::ViewGroup arg0)
@@ -43,7 +43,7 @@ namespace android::transition
 			"android.transition.TransitionManager",
 			"endTransitions",
 			"(Landroid/view/ViewGroup;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TransitionManager::go(android::transition::Scene arg0)
@@ -52,7 +52,7 @@ namespace android::transition
 			"android.transition.TransitionManager",
 			"go",
 			"(Landroid/transition/Scene;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TransitionManager::go(android::transition::Scene arg0, android::transition::Transition arg1)
@@ -61,35 +61,35 @@ namespace android::transition
 			"android.transition.TransitionManager",
 			"go",
 			"(Landroid/transition/Scene;Landroid/transition/Transition;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void TransitionManager::setTransition(android::transition::Scene arg0, android::transition::Transition arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTransition",
 			"(Landroid/transition/Scene;Landroid/transition/Transition;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void TransitionManager::setTransition(android::transition::Scene arg0, android::transition::Scene arg1, android::transition::Transition arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTransition",
 			"(Landroid/transition/Scene;Landroid/transition/Scene;Landroid/transition/Transition;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	void TransitionManager::transitionTo(android::transition::Scene arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"transitionTo",
 			"(Landroid/transition/Scene;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::transition

@@ -31,10 +31,12 @@ namespace android::inputmethodservice
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit InputMethodService_InputMethodSessionImpl(const char *className, const char *sig, Ts...agv) : android::inputmethodservice::AbstractInputMethodService_AbstractInputMethodSessionImpl(className, sig, std::forward<Ts>(agv)...) {}
 		InputMethodService_InputMethodSessionImpl(QAndroidJniObject obj);
+		
 		// Constructors
 		InputMethodService_InputMethodSessionImpl(android::inputmethodservice::InputMethodService arg0);
-		InputMethodService_InputMethodSessionImpl() = default;
 		
 		// Methods
 		void appPrivateCommand(jstring arg0, android::os::Bundle arg1);

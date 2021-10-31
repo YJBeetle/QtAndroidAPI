@@ -7,22 +7,22 @@ namespace java::security
 {
 	// Fields
 	
-	CodeSigner::CodeSigner(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CodeSigner::CodeSigner(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	CodeSigner::CodeSigner(java::security::cert::CertPath arg0, java::security::Timestamp arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.security.CodeSigner",
 			"(Ljava/security/cert/CertPath;Ljava/security/Timestamp;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	
 	// Methods
 	jboolean CodeSigner::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -30,28 +30,28 @@ namespace java::security
 	}
 	QAndroidJniObject CodeSigner::getSignerCertPath()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSignerCertPath",
 			"()Ljava/security/cert/CertPath;"
 		);
 	}
 	QAndroidJniObject CodeSigner::getTimestamp()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTimestamp",
 			"()Ljava/security/Timestamp;"
 		);
 	}
 	jint CodeSigner::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring CodeSigner::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

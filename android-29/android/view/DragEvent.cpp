@@ -57,79 +57,81 @@ namespace android::view
 		);
 	}
 	
-	DragEvent::DragEvent(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DragEvent::DragEvent(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint DragEvent::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jint DragEvent::getAction()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAction",
 			"()I"
 		);
 	}
 	QAndroidJniObject DragEvent::getClipData()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getClipData",
 			"()Landroid/content/ClipData;"
 		);
 	}
 	QAndroidJniObject DragEvent::getClipDescription()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getClipDescription",
 			"()Landroid/content/ClipDescription;"
 		);
 	}
 	jobject DragEvent::getLocalState()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLocalState",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jboolean DragEvent::getResult()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getResult",
 			"()Z"
 		);
 	}
 	jfloat DragEvent::getX()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getX",
 			"()F"
 		);
 	}
 	jfloat DragEvent::getY()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getY",
 			"()F"
 		);
 	}
 	jstring DragEvent::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void DragEvent::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

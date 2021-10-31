@@ -52,7 +52,9 @@ namespace android::icu::text
 		);
 	}
 	
-	MessagePattern_ArgType::MessagePattern_ArgType(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MessagePattern_ArgType::MessagePattern_ArgType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -75,7 +77,7 @@ namespace android::icu::text
 	}
 	jboolean MessagePattern_ArgType::hasPluralStyle()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasPluralStyle",
 			"()Z"
 		);

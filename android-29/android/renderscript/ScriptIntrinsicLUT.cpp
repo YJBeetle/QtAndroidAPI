@@ -9,7 +9,9 @@ namespace android::renderscript
 {
 	// Fields
 	
-	ScriptIntrinsicLUT::ScriptIntrinsicLUT(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ScriptIntrinsicLUT::ScriptIntrinsicLUT(QAndroidJniObject obj) : android::renderscript::ScriptIntrinsic(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -19,46 +21,46 @@ namespace android::renderscript
 			"android.renderscript.ScriptIntrinsicLUT",
 			"create",
 			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Element;)Landroid/renderscript/ScriptIntrinsicLUT;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void ScriptIntrinsicLUT::destroy()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"destroy",
 			"()V"
 		);
 	}
 	void ScriptIntrinsicLUT::forEach(android::renderscript::Allocation arg0, android::renderscript::Allocation arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"forEach",
 			"(Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void ScriptIntrinsicLUT::forEach(android::renderscript::Allocation arg0, android::renderscript::Allocation arg1, android::renderscript::Script_LaunchOptions arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"forEach",
 			"(Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;Landroid/renderscript/Script$LaunchOptions;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject ScriptIntrinsicLUT::getKernelID()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getKernelID",
 			"()Landroid/renderscript/Script$KernelID;"
 		);
 	}
 	void ScriptIntrinsicLUT::setAlpha(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAlpha",
 			"(II)V",
 			arg0,
@@ -67,7 +69,7 @@ namespace android::renderscript
 	}
 	void ScriptIntrinsicLUT::setBlue(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setBlue",
 			"(II)V",
 			arg0,
@@ -76,7 +78,7 @@ namespace android::renderscript
 	}
 	void ScriptIntrinsicLUT::setGreen(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setGreen",
 			"(II)V",
 			arg0,
@@ -85,7 +87,7 @@ namespace android::renderscript
 	}
 	void ScriptIntrinsicLUT::setRed(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setRed",
 			"(II)V",
 			arg0,

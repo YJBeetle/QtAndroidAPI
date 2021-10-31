@@ -10,9 +10,11 @@ namespace java::lang
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Compiler(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Compiler(QAndroidJniObject obj);
+		
 		// Constructors
-		Compiler() = default;
 		
 		// Methods
 		static jobject command(jobject arg0);

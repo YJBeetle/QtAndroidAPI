@@ -4,28 +4,26 @@ namespace android::util
 {
 	// Fields
 	
-	SparseLongArray::SparseLongArray(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SparseLongArray::SparseLongArray(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	SparseLongArray::SparseLongArray()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.util.SparseLongArray",
 			"()V"
-		);
-	}
+		) {}
 	SparseLongArray::SparseLongArray(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.util.SparseLongArray",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	void SparseLongArray::append(jint arg0, jlong arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"append",
 			"(IJ)V",
 			arg0,
@@ -34,21 +32,21 @@ namespace android::util
 	}
 	void SparseLongArray::clear()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
 	QAndroidJniObject SparseLongArray::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Landroid/util/SparseLongArray;"
 		);
 	}
 	void SparseLongArray::_delete(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"delete",
 			"(I)V",
 			arg0
@@ -56,7 +54,7 @@ namespace android::util
 	}
 	jlong SparseLongArray::get(jint arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"get",
 			"(I)J",
 			arg0
@@ -64,7 +62,7 @@ namespace android::util
 	}
 	jlong SparseLongArray::get(jint arg0, jlong arg1)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"get",
 			"(IJ)J",
 			arg0,
@@ -73,7 +71,7 @@ namespace android::util
 	}
 	jint SparseLongArray::indexOfKey(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"indexOfKey",
 			"(I)I",
 			arg0
@@ -81,7 +79,7 @@ namespace android::util
 	}
 	jint SparseLongArray::indexOfValue(jlong arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"indexOfValue",
 			"(J)I",
 			arg0
@@ -89,7 +87,7 @@ namespace android::util
 	}
 	jint SparseLongArray::keyAt(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"keyAt",
 			"(I)I",
 			arg0
@@ -97,7 +95,7 @@ namespace android::util
 	}
 	void SparseLongArray::put(jint arg0, jlong arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"put",
 			"(IJ)V",
 			arg0,
@@ -106,7 +104,7 @@ namespace android::util
 	}
 	void SparseLongArray::removeAt(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeAt",
 			"(I)V",
 			arg0
@@ -114,21 +112,21 @@ namespace android::util
 	}
 	jint SparseLongArray::size()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
 	jstring SparseLongArray::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jlong SparseLongArray::valueAt(jint arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"valueAt",
 			"(I)J",
 			arg0

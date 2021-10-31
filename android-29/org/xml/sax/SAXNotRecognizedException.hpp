@@ -12,7 +12,10 @@ namespace org::xml::sax
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SAXNotRecognizedException(const char *className, const char *sig, Ts...agv) : org::xml::sax::SAXException(className, sig, std::forward<Ts>(agv)...) {}
 		SAXNotRecognizedException(QAndroidJniObject obj);
+		
 		// Constructors
 		SAXNotRecognizedException();
 		SAXNotRecognizedException(jstring arg0);

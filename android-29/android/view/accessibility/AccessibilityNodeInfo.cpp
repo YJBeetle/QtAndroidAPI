@@ -337,7 +337,9 @@ namespace android::view::accessibility
 		);
 	}
 	
-	AccessibilityNodeInfo::AccessibilityNodeInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AccessibilityNodeInfo::AccessibilityNodeInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -355,7 +357,7 @@ namespace android::view::accessibility
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"obtain",
 			"(Landroid/view/View;)Landroid/view/accessibility/AccessibilityNodeInfo;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject AccessibilityNodeInfo::obtain(android::view::accessibility::AccessibilityNodeInfo arg0)
@@ -364,7 +366,7 @@ namespace android::view::accessibility
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"obtain",
 			"(Landroid/view/accessibility/AccessibilityNodeInfo;)Landroid/view/accessibility/AccessibilityNodeInfo;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject AccessibilityNodeInfo::obtain(android::view::View arg0, jint arg1)
@@ -373,21 +375,21 @@ namespace android::view::accessibility
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"obtain",
 			"(Landroid/view/View;I)Landroid/view/accessibility/AccessibilityNodeInfo;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void AccessibilityNodeInfo::addAction(android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addAction",
 			"(Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AccessibilityNodeInfo::addAction(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addAction",
 			"(I)V",
 			arg0
@@ -395,38 +397,38 @@ namespace android::view::accessibility
 	}
 	void AccessibilityNodeInfo::addChild(android::view::View arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addChild",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AccessibilityNodeInfo::addChild(android::view::View arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addChild",
 			"(Landroid/view/View;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	jboolean AccessibilityNodeInfo::canOpenPopup()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"canOpenPopup",
 			"()Z"
 		);
 	}
 	jint AccessibilityNodeInfo::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean AccessibilityNodeInfo::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -434,7 +436,7 @@ namespace android::view::accessibility
 	}
 	QAndroidJniObject AccessibilityNodeInfo::findAccessibilityNodeInfosByText(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"findAccessibilityNodeInfosByText",
 			"(Ljava/lang/String;)Ljava/util/List;",
 			arg0
@@ -442,7 +444,7 @@ namespace android::view::accessibility
 	}
 	QAndroidJniObject AccessibilityNodeInfo::findAccessibilityNodeInfosByViewId(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"findAccessibilityNodeInfosByViewId",
 			"(Ljava/lang/String;)Ljava/util/List;",
 			arg0
@@ -450,7 +452,7 @@ namespace android::view::accessibility
 	}
 	QAndroidJniObject AccessibilityNodeInfo::findFocus(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"findFocus",
 			"(I)Landroid/view/accessibility/AccessibilityNodeInfo;",
 			arg0
@@ -458,7 +460,7 @@ namespace android::view::accessibility
 	}
 	QAndroidJniObject AccessibilityNodeInfo::focusSearch(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"focusSearch",
 			"(I)Landroid/view/accessibility/AccessibilityNodeInfo;",
 			arg0
@@ -466,44 +468,44 @@ namespace android::view::accessibility
 	}
 	QAndroidJniObject AccessibilityNodeInfo::getActionList()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getActionList",
 			"()Ljava/util/List;"
 		);
 	}
 	jint AccessibilityNodeInfo::getActions()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getActions",
 			"()I"
 		);
 	}
 	QAndroidJniObject AccessibilityNodeInfo::getAvailableExtraData()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAvailableExtraData",
 			"()Ljava/util/List;"
 		);
 	}
 	void AccessibilityNodeInfo::getBoundsInParent(android::graphics::Rect arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"getBoundsInParent",
 			"(Landroid/graphics/Rect;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AccessibilityNodeInfo::getBoundsInScreen(android::graphics::Rect arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"getBoundsInScreen",
 			"(Landroid/graphics/Rect;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject AccessibilityNodeInfo::getChild(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getChild",
 			"(I)Landroid/view/accessibility/AccessibilityNodeInfo;",
 			arg0
@@ -511,371 +513,371 @@ namespace android::view::accessibility
 	}
 	jint AccessibilityNodeInfo::getChildCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getChildCount",
 			"()I"
 		);
 	}
 	jstring AccessibilityNodeInfo::getClassName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getClassName",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	QAndroidJniObject AccessibilityNodeInfo::getCollectionInfo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCollectionInfo",
 			"()Landroid/view/accessibility/AccessibilityNodeInfo$CollectionInfo;"
 		);
 	}
 	QAndroidJniObject AccessibilityNodeInfo::getCollectionItemInfo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCollectionItemInfo",
 			"()Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;"
 		);
 	}
 	jstring AccessibilityNodeInfo::getContentDescription()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getContentDescription",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jint AccessibilityNodeInfo::getDrawingOrder()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDrawingOrder",
 			"()I"
 		);
 	}
 	jstring AccessibilityNodeInfo::getError()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getError",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	QAndroidJniObject AccessibilityNodeInfo::getExtras()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
 	jstring AccessibilityNodeInfo::getHintText()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getHintText",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jint AccessibilityNodeInfo::getInputType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getInputType",
 			"()I"
 		);
 	}
 	QAndroidJniObject AccessibilityNodeInfo::getLabelFor()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLabelFor",
 			"()Landroid/view/accessibility/AccessibilityNodeInfo;"
 		);
 	}
 	QAndroidJniObject AccessibilityNodeInfo::getLabeledBy()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLabeledBy",
 			"()Landroid/view/accessibility/AccessibilityNodeInfo;"
 		);
 	}
 	jint AccessibilityNodeInfo::getLiveRegion()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLiveRegion",
 			"()I"
 		);
 	}
 	jint AccessibilityNodeInfo::getMaxTextLength()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMaxTextLength",
 			"()I"
 		);
 	}
 	jint AccessibilityNodeInfo::getMovementGranularities()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMovementGranularities",
 			"()I"
 		);
 	}
 	jstring AccessibilityNodeInfo::getPackageName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jstring AccessibilityNodeInfo::getPaneTitle()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPaneTitle",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	QAndroidJniObject AccessibilityNodeInfo::getParent()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getParent",
 			"()Landroid/view/accessibility/AccessibilityNodeInfo;"
 		);
 	}
 	QAndroidJniObject AccessibilityNodeInfo::getRangeInfo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRangeInfo",
 			"()Landroid/view/accessibility/AccessibilityNodeInfo$RangeInfo;"
 		);
 	}
 	jstring AccessibilityNodeInfo::getText()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jint AccessibilityNodeInfo::getTextSelectionEnd()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTextSelectionEnd",
 			"()I"
 		);
 	}
 	jint AccessibilityNodeInfo::getTextSelectionStart()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTextSelectionStart",
 			"()I"
 		);
 	}
 	jstring AccessibilityNodeInfo::getTooltipText()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTooltipText",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	QAndroidJniObject AccessibilityNodeInfo::getTouchDelegateInfo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTouchDelegateInfo",
 			"()Landroid/view/accessibility/AccessibilityNodeInfo$TouchDelegateInfo;"
 		);
 	}
 	QAndroidJniObject AccessibilityNodeInfo::getTraversalAfter()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTraversalAfter",
 			"()Landroid/view/accessibility/AccessibilityNodeInfo;"
 		);
 	}
 	QAndroidJniObject AccessibilityNodeInfo::getTraversalBefore()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTraversalBefore",
 			"()Landroid/view/accessibility/AccessibilityNodeInfo;"
 		);
 	}
 	jstring AccessibilityNodeInfo::getViewIdResourceName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getViewIdResourceName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject AccessibilityNodeInfo::getWindow()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getWindow",
 			"()Landroid/view/accessibility/AccessibilityWindowInfo;"
 		);
 	}
 	jint AccessibilityNodeInfo::getWindowId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getWindowId",
 			"()I"
 		);
 	}
 	jint AccessibilityNodeInfo::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean AccessibilityNodeInfo::isAccessibilityFocused()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isAccessibilityFocused",
 			"()Z"
 		);
 	}
 	jboolean AccessibilityNodeInfo::isCheckable()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isCheckable",
 			"()Z"
 		);
 	}
 	jboolean AccessibilityNodeInfo::isChecked()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isChecked",
 			"()Z"
 		);
 	}
 	jboolean AccessibilityNodeInfo::isClickable()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isClickable",
 			"()Z"
 		);
 	}
 	jboolean AccessibilityNodeInfo::isContentInvalid()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isContentInvalid",
 			"()Z"
 		);
 	}
 	jboolean AccessibilityNodeInfo::isContextClickable()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isContextClickable",
 			"()Z"
 		);
 	}
 	jboolean AccessibilityNodeInfo::isDismissable()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isDismissable",
 			"()Z"
 		);
 	}
 	jboolean AccessibilityNodeInfo::isEditable()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEditable",
 			"()Z"
 		);
 	}
 	jboolean AccessibilityNodeInfo::isEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEnabled",
 			"()Z"
 		);
 	}
 	jboolean AccessibilityNodeInfo::isFocusable()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isFocusable",
 			"()Z"
 		);
 	}
 	jboolean AccessibilityNodeInfo::isFocused()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isFocused",
 			"()Z"
 		);
 	}
 	jboolean AccessibilityNodeInfo::isHeading()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isHeading",
 			"()Z"
 		);
 	}
 	jboolean AccessibilityNodeInfo::isImportantForAccessibility()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isImportantForAccessibility",
 			"()Z"
 		);
 	}
 	jboolean AccessibilityNodeInfo::isLongClickable()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isLongClickable",
 			"()Z"
 		);
 	}
 	jboolean AccessibilityNodeInfo::isMultiLine()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isMultiLine",
 			"()Z"
 		);
 	}
 	jboolean AccessibilityNodeInfo::isPassword()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isPassword",
 			"()Z"
 		);
 	}
 	jboolean AccessibilityNodeInfo::isScreenReaderFocusable()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isScreenReaderFocusable",
 			"()Z"
 		);
 	}
 	jboolean AccessibilityNodeInfo::isScrollable()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isScrollable",
 			"()Z"
 		);
 	}
 	jboolean AccessibilityNodeInfo::isSelected()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isSelected",
 			"()Z"
 		);
 	}
 	jboolean AccessibilityNodeInfo::isShowingHintText()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isShowingHintText",
 			"()Z"
 		);
 	}
 	jboolean AccessibilityNodeInfo::isTextEntryKey()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isTextEntryKey",
 			"()Z"
 		);
 	}
 	jboolean AccessibilityNodeInfo::isVisibleToUser()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isVisibleToUser",
 			"()Z"
 		);
 	}
 	jboolean AccessibilityNodeInfo::performAction(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"performAction",
 			"(I)Z",
 			arg0
@@ -883,47 +885,47 @@ namespace android::view::accessibility
 	}
 	jboolean AccessibilityNodeInfo::performAction(jint arg0, android::os::Bundle arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"performAction",
 			"(ILandroid/os/Bundle;)Z",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void AccessibilityNodeInfo::recycle()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"recycle",
 			"()V"
 		);
 	}
 	jboolean AccessibilityNodeInfo::refresh()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"refresh",
 			"()Z"
 		);
 	}
 	jboolean AccessibilityNodeInfo::refreshWithExtraData(jstring arg0, android::os::Bundle arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"refreshWithExtraData",
 			"(Ljava/lang/String;Landroid/os/Bundle;)Z",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jboolean AccessibilityNodeInfo::removeAction(android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"removeAction",
 			"(Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AccessibilityNodeInfo::removeAction(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeAction",
 			"(I)V",
 			arg0
@@ -931,24 +933,24 @@ namespace android::view::accessibility
 	}
 	jboolean AccessibilityNodeInfo::removeChild(android::view::View arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"removeChild",
 			"(Landroid/view/View;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean AccessibilityNodeInfo::removeChild(android::view::View arg0, jint arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"removeChild",
 			"(Landroid/view/View;I)Z",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void AccessibilityNodeInfo::setAccessibilityFocused(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAccessibilityFocused",
 			"(Z)V",
 			arg0
@@ -956,31 +958,31 @@ namespace android::view::accessibility
 	}
 	void AccessibilityNodeInfo::setAvailableExtraData(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAvailableExtraData",
 			"(Ljava/util/List;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AccessibilityNodeInfo::setBoundsInParent(android::graphics::Rect arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setBoundsInParent",
 			"(Landroid/graphics/Rect;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AccessibilityNodeInfo::setBoundsInScreen(android::graphics::Rect arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setBoundsInScreen",
 			"(Landroid/graphics/Rect;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AccessibilityNodeInfo::setCanOpenPopup(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCanOpenPopup",
 			"(Z)V",
 			arg0
@@ -988,7 +990,7 @@ namespace android::view::accessibility
 	}
 	void AccessibilityNodeInfo::setCheckable(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCheckable",
 			"(Z)V",
 			arg0
@@ -996,7 +998,7 @@ namespace android::view::accessibility
 	}
 	void AccessibilityNodeInfo::setChecked(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setChecked",
 			"(Z)V",
 			arg0
@@ -1004,7 +1006,7 @@ namespace android::view::accessibility
 	}
 	void AccessibilityNodeInfo::setClassName(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setClassName",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
@@ -1012,7 +1014,7 @@ namespace android::view::accessibility
 	}
 	void AccessibilityNodeInfo::setClickable(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setClickable",
 			"(Z)V",
 			arg0
@@ -1020,23 +1022,23 @@ namespace android::view::accessibility
 	}
 	void AccessibilityNodeInfo::setCollectionInfo(android::view::accessibility::AccessibilityNodeInfo_CollectionInfo arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCollectionInfo",
 			"(Landroid/view/accessibility/AccessibilityNodeInfo$CollectionInfo;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AccessibilityNodeInfo::setCollectionItemInfo(android::view::accessibility::AccessibilityNodeInfo_CollectionItemInfo arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCollectionItemInfo",
 			"(Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AccessibilityNodeInfo::setContentDescription(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setContentDescription",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
@@ -1044,7 +1046,7 @@ namespace android::view::accessibility
 	}
 	void AccessibilityNodeInfo::setContentInvalid(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setContentInvalid",
 			"(Z)V",
 			arg0
@@ -1052,7 +1054,7 @@ namespace android::view::accessibility
 	}
 	void AccessibilityNodeInfo::setContextClickable(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setContextClickable",
 			"(Z)V",
 			arg0
@@ -1060,7 +1062,7 @@ namespace android::view::accessibility
 	}
 	void AccessibilityNodeInfo::setDismissable(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDismissable",
 			"(Z)V",
 			arg0
@@ -1068,7 +1070,7 @@ namespace android::view::accessibility
 	}
 	void AccessibilityNodeInfo::setDrawingOrder(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDrawingOrder",
 			"(I)V",
 			arg0
@@ -1076,7 +1078,7 @@ namespace android::view::accessibility
 	}
 	void AccessibilityNodeInfo::setEditable(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setEditable",
 			"(Z)V",
 			arg0
@@ -1084,7 +1086,7 @@ namespace android::view::accessibility
 	}
 	void AccessibilityNodeInfo::setEnabled(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setEnabled",
 			"(Z)V",
 			arg0
@@ -1092,7 +1094,7 @@ namespace android::view::accessibility
 	}
 	void AccessibilityNodeInfo::setError(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setError",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
@@ -1100,7 +1102,7 @@ namespace android::view::accessibility
 	}
 	void AccessibilityNodeInfo::setFocusable(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFocusable",
 			"(Z)V",
 			arg0
@@ -1108,7 +1110,7 @@ namespace android::view::accessibility
 	}
 	void AccessibilityNodeInfo::setFocused(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFocused",
 			"(Z)V",
 			arg0
@@ -1116,7 +1118,7 @@ namespace android::view::accessibility
 	}
 	void AccessibilityNodeInfo::setHeading(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setHeading",
 			"(Z)V",
 			arg0
@@ -1124,7 +1126,7 @@ namespace android::view::accessibility
 	}
 	void AccessibilityNodeInfo::setHintText(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setHintText",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
@@ -1132,7 +1134,7 @@ namespace android::view::accessibility
 	}
 	void AccessibilityNodeInfo::setImportantForAccessibility(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setImportantForAccessibility",
 			"(Z)V",
 			arg0
@@ -1140,7 +1142,7 @@ namespace android::view::accessibility
 	}
 	void AccessibilityNodeInfo::setInputType(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setInputType",
 			"(I)V",
 			arg0
@@ -1148,41 +1150,41 @@ namespace android::view::accessibility
 	}
 	void AccessibilityNodeInfo::setLabelFor(android::view::View arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLabelFor",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AccessibilityNodeInfo::setLabelFor(android::view::View arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLabelFor",
 			"(Landroid/view/View;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void AccessibilityNodeInfo::setLabeledBy(android::view::View arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLabeledBy",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AccessibilityNodeInfo::setLabeledBy(android::view::View arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLabeledBy",
 			"(Landroid/view/View;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void AccessibilityNodeInfo::setLiveRegion(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLiveRegion",
 			"(I)V",
 			arg0
@@ -1190,7 +1192,7 @@ namespace android::view::accessibility
 	}
 	void AccessibilityNodeInfo::setLongClickable(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLongClickable",
 			"(Z)V",
 			arg0
@@ -1198,7 +1200,7 @@ namespace android::view::accessibility
 	}
 	void AccessibilityNodeInfo::setMaxTextLength(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMaxTextLength",
 			"(I)V",
 			arg0
@@ -1206,7 +1208,7 @@ namespace android::view::accessibility
 	}
 	void AccessibilityNodeInfo::setMovementGranularities(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMovementGranularities",
 			"(I)V",
 			arg0
@@ -1214,7 +1216,7 @@ namespace android::view::accessibility
 	}
 	void AccessibilityNodeInfo::setMultiLine(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMultiLine",
 			"(Z)V",
 			arg0
@@ -1222,7 +1224,7 @@ namespace android::view::accessibility
 	}
 	void AccessibilityNodeInfo::setPackageName(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPackageName",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
@@ -1230,7 +1232,7 @@ namespace android::view::accessibility
 	}
 	void AccessibilityNodeInfo::setPaneTitle(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPaneTitle",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
@@ -1238,24 +1240,24 @@ namespace android::view::accessibility
 	}
 	void AccessibilityNodeInfo::setParent(android::view::View arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setParent",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AccessibilityNodeInfo::setParent(android::view::View arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setParent",
 			"(Landroid/view/View;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void AccessibilityNodeInfo::setPassword(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPassword",
 			"(Z)V",
 			arg0
@@ -1263,15 +1265,15 @@ namespace android::view::accessibility
 	}
 	void AccessibilityNodeInfo::setRangeInfo(android::view::accessibility::AccessibilityNodeInfo_RangeInfo arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setRangeInfo",
 			"(Landroid/view/accessibility/AccessibilityNodeInfo$RangeInfo;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AccessibilityNodeInfo::setScreenReaderFocusable(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setScreenReaderFocusable",
 			"(Z)V",
 			arg0
@@ -1279,7 +1281,7 @@ namespace android::view::accessibility
 	}
 	void AccessibilityNodeInfo::setScrollable(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setScrollable",
 			"(Z)V",
 			arg0
@@ -1287,7 +1289,7 @@ namespace android::view::accessibility
 	}
 	void AccessibilityNodeInfo::setSelected(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSelected",
 			"(Z)V",
 			arg0
@@ -1295,7 +1297,7 @@ namespace android::view::accessibility
 	}
 	void AccessibilityNodeInfo::setShowingHintText(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setShowingHintText",
 			"(Z)V",
 			arg0
@@ -1303,24 +1305,24 @@ namespace android::view::accessibility
 	}
 	void AccessibilityNodeInfo::setSource(android::view::View arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSource",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AccessibilityNodeInfo::setSource(android::view::View arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSource",
 			"(Landroid/view/View;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void AccessibilityNodeInfo::setText(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setText",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
@@ -1328,7 +1330,7 @@ namespace android::view::accessibility
 	}
 	void AccessibilityNodeInfo::setTextEntryKey(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTextEntryKey",
 			"(Z)V",
 			arg0
@@ -1336,7 +1338,7 @@ namespace android::view::accessibility
 	}
 	void AccessibilityNodeInfo::setTextSelection(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTextSelection",
 			"(II)V",
 			arg0,
@@ -1345,7 +1347,7 @@ namespace android::view::accessibility
 	}
 	void AccessibilityNodeInfo::setTooltipText(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTooltipText",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
@@ -1353,49 +1355,49 @@ namespace android::view::accessibility
 	}
 	void AccessibilityNodeInfo::setTouchDelegateInfo(android::view::accessibility::AccessibilityNodeInfo_TouchDelegateInfo arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTouchDelegateInfo",
 			"(Landroid/view/accessibility/AccessibilityNodeInfo$TouchDelegateInfo;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AccessibilityNodeInfo::setTraversalAfter(android::view::View arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTraversalAfter",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AccessibilityNodeInfo::setTraversalAfter(android::view::View arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTraversalAfter",
 			"(Landroid/view/View;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void AccessibilityNodeInfo::setTraversalBefore(android::view::View arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTraversalBefore",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AccessibilityNodeInfo::setTraversalBefore(android::view::View arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTraversalBefore",
 			"(Landroid/view/View;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void AccessibilityNodeInfo::setViewIdResourceName(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setViewIdResourceName",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -1403,7 +1405,7 @@ namespace android::view::accessibility
 	}
 	void AccessibilityNodeInfo::setVisibleToUser(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setVisibleToUser",
 			"(Z)V",
 			arg0
@@ -1411,17 +1413,17 @@ namespace android::view::accessibility
 	}
 	jstring AccessibilityNodeInfo::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void AccessibilityNodeInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

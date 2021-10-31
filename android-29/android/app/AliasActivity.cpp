@@ -5,15 +5,15 @@ namespace android::app
 {
 	// Fields
 	
-	AliasActivity::AliasActivity(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AliasActivity::AliasActivity(QAndroidJniObject obj) : android::app::Activity(obj) {}
+	
 	// Constructors
 	AliasActivity::AliasActivity()
-	{
-		__thiz = QAndroidJniObject(
+		: android::app::Activity(
 			"android.app.AliasActivity",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::app

@@ -23,9 +23,11 @@ namespace android::media
 		static QAndroidJniObject SCURVE_RAMP();
 		static QAndroidJniObject SINE_RAMP();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit VolumeShaper_Configuration(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		VolumeShaper_Configuration(QAndroidJniObject obj);
+		
 		// Constructors
-		VolumeShaper_Configuration() = default;
 		
 		// Methods
 		static jint getMaximumCurvePoints();

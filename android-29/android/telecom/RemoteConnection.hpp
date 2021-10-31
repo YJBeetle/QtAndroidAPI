@@ -46,9 +46,11 @@ namespace android::telecom
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit RemoteConnection(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		RemoteConnection(QAndroidJniObject obj);
+		
 		// Constructors
-		RemoteConnection() = default;
 		
 		// Methods
 		void abort();

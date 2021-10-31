@@ -22,7 +22,10 @@ namespace android::net
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ConnectivityManager_NetworkCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ConnectivityManager_NetworkCallback(QAndroidJniObject obj);
+		
 		// Constructors
 		ConnectivityManager_NetworkCallback();
 		

@@ -51,136 +51,130 @@ namespace android::widget
 		);
 	}
 	
-	LinearLayout::LinearLayout(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	LinearLayout::LinearLayout(QAndroidJniObject obj) : android::view::ViewGroup(obj) {}
+	
 	// Constructors
 	LinearLayout::LinearLayout(android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::view::ViewGroup(
 			"android.widget.LinearLayout",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	LinearLayout::LinearLayout(android::content::Context arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::view::ViewGroup(
 			"android.widget.LinearLayout",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	LinearLayout::LinearLayout(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: android::view::ViewGroup(
 			"android.widget.LinearLayout",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
-		);
-	}
+		) {}
 	LinearLayout::LinearLayout(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: android::view::ViewGroup(
 			"android.widget.LinearLayout",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject LinearLayout::generateLayoutParams(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"generateLayoutParams",
 			"(Landroid/util/AttributeSet;)Landroid/widget/LinearLayout$LayoutParams;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring LinearLayout::getAccessibilityClassName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jint LinearLayout::getBaseline()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getBaseline",
 			"()I"
 		);
 	}
 	jint LinearLayout::getBaselineAlignedChildIndex()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getBaselineAlignedChildIndex",
 			"()I"
 		);
 	}
 	QAndroidJniObject LinearLayout::getDividerDrawable()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDividerDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
 	jint LinearLayout::getDividerPadding()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDividerPadding",
 			"()I"
 		);
 	}
 	jint LinearLayout::getGravity()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getGravity",
 			"()I"
 		);
 	}
 	jint LinearLayout::getOrientation()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getOrientation",
 			"()I"
 		);
 	}
 	jint LinearLayout::getShowDividers()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getShowDividers",
 			"()I"
 		);
 	}
 	jfloat LinearLayout::getWeightSum()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getWeightSum",
 			"()F"
 		);
 	}
 	jboolean LinearLayout::isBaselineAligned()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isBaselineAligned",
 			"()Z"
 		);
 	}
 	jboolean LinearLayout::isMeasureWithLargestChildEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isMeasureWithLargestChildEnabled",
 			"()Z"
 		);
 	}
 	void LinearLayout::onRtlPropertiesChanged(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onRtlPropertiesChanged",
 			"(I)V",
 			arg0
@@ -188,7 +182,7 @@ namespace android::widget
 	}
 	void LinearLayout::setBaselineAligned(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setBaselineAligned",
 			"(Z)V",
 			arg0
@@ -196,7 +190,7 @@ namespace android::widget
 	}
 	void LinearLayout::setBaselineAlignedChildIndex(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setBaselineAlignedChildIndex",
 			"(I)V",
 			arg0
@@ -204,15 +198,15 @@ namespace android::widget
 	}
 	void LinearLayout::setDividerDrawable(android::graphics::drawable::Drawable arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDividerDrawable",
 			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void LinearLayout::setDividerPadding(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDividerPadding",
 			"(I)V",
 			arg0
@@ -220,7 +214,7 @@ namespace android::widget
 	}
 	void LinearLayout::setGravity(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setGravity",
 			"(I)V",
 			arg0
@@ -228,7 +222,7 @@ namespace android::widget
 	}
 	void LinearLayout::setHorizontalGravity(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setHorizontalGravity",
 			"(I)V",
 			arg0
@@ -236,7 +230,7 @@ namespace android::widget
 	}
 	void LinearLayout::setMeasureWithLargestChildEnabled(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMeasureWithLargestChildEnabled",
 			"(Z)V",
 			arg0
@@ -244,7 +238,7 @@ namespace android::widget
 	}
 	void LinearLayout::setOrientation(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOrientation",
 			"(I)V",
 			arg0
@@ -252,7 +246,7 @@ namespace android::widget
 	}
 	void LinearLayout::setShowDividers(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setShowDividers",
 			"(I)V",
 			arg0
@@ -260,7 +254,7 @@ namespace android::widget
 	}
 	void LinearLayout::setVerticalGravity(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setVerticalGravity",
 			"(I)V",
 			arg0
@@ -268,7 +262,7 @@ namespace android::widget
 	}
 	void LinearLayout::setWeightSum(jfloat arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setWeightSum",
 			"(F)V",
 			arg0
@@ -276,7 +270,7 @@ namespace android::widget
 	}
 	jboolean LinearLayout::shouldDelayChildPressedState()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"shouldDelayChildPressedState",
 			"()Z"
 		);

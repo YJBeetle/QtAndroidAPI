@@ -6,28 +6,26 @@ namespace android::util
 {
 	// Fields
 	
-	EventLogTags::EventLogTags(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	EventLogTags::EventLogTags(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	EventLogTags::EventLogTags()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.util.EventLogTags",
 			"()V"
-		);
-	}
+		) {}
 	EventLogTags::EventLogTags(java::io::BufferedReader arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.util.EventLogTags",
 			"(Ljava/io/BufferedReader;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject EventLogTags::get(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"(I)Landroid/util/EventLogTags$Description;",
 			arg0
@@ -35,7 +33,7 @@ namespace android::util
 	}
 	QAndroidJniObject EventLogTags::get(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"(Ljava/lang/String;)Landroid/util/EventLogTags$Description;",
 			arg0

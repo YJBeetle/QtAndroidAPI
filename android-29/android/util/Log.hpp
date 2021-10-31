@@ -16,9 +16,11 @@ namespace android::util
 		static jint VERBOSE();
 		static jint WARN();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Log(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Log(QAndroidJniObject obj);
+		
 		// Constructors
-		Log() = default;
 		
 		// Methods
 		static jint d(jstring arg0, jstring arg1);

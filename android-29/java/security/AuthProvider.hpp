@@ -18,9 +18,11 @@ namespace java::security
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AuthProvider(const char *className, const char *sig, Ts...agv) : java::security::Provider(className, sig, std::forward<Ts>(agv)...) {}
 		AuthProvider(QAndroidJniObject obj);
+		
 		// Constructors
-		AuthProvider() = default;
 		
 		// Methods
 		void login(javax::security::auth::Subject arg0, __JniBaseClass arg1);

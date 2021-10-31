@@ -8,81 +8,81 @@ namespace android::graphics::drawable
 {
 	// Fields
 	
-	AnimatedStateListDrawable::AnimatedStateListDrawable(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AnimatedStateListDrawable::AnimatedStateListDrawable(QAndroidJniObject obj) : android::graphics::drawable::StateListDrawable(obj) {}
+	
 	// Constructors
 	AnimatedStateListDrawable::AnimatedStateListDrawable()
-	{
-		__thiz = QAndroidJniObject(
+		: android::graphics::drawable::StateListDrawable(
 			"android.graphics.drawable.AnimatedStateListDrawable",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void AnimatedStateListDrawable::addState(jintArray arg0, android::graphics::drawable::Drawable arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addState",
 			"([ILandroid/graphics/drawable/Drawable;I)V",
 			arg0,
-			arg1.__jniObject().object(),
+			arg1.object(),
 			arg2
 		);
 	}
 	void AnimatedStateListDrawable::addTransition(jint arg0, jint arg1, android::graphics::drawable::Drawable arg2, jboolean arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addTransition",
 			"(IILandroid/graphics/drawable/Drawable;Z)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
+			arg2.object(),
 			arg3
 		);
 	}
 	void AnimatedStateListDrawable::applyTheme(android::content::res::Resources_Theme arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"applyTheme",
 			"(Landroid/content/res/Resources$Theme;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AnimatedStateListDrawable::inflate(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2, android::content::res::Resources_Theme arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"inflate",
 			"(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
 		);
 	}
 	jboolean AnimatedStateListDrawable::isStateful()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isStateful",
 			"()Z"
 		);
 	}
 	void AnimatedStateListDrawable::jumpToCurrentState()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"jumpToCurrentState",
 			"()V"
 		);
 	}
 	QAndroidJniObject AnimatedStateListDrawable::mutate()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"mutate",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
 	jboolean AnimatedStateListDrawable::setVisible(jboolean arg0, jboolean arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"setVisible",
 			"(ZZ)Z",
 			arg0,

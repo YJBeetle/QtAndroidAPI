@@ -437,28 +437,28 @@ namespace android::media
 	}
 	jintArray MediaCodecInfo_CodecCapabilities::colorFormats()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"colorFormats",
 			"[I"
 		).object<jintArray>();
 	}
 	jarray MediaCodecInfo_CodecCapabilities::profileLevels()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"profileLevels",
 			"[Landroid/media/MediaCodecInfo$CodecProfileLevel;"
 		).object<jarray>();
 	}
 	
-	MediaCodecInfo_CodecCapabilities::MediaCodecInfo_CodecCapabilities(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaCodecInfo_CodecCapabilities::MediaCodecInfo_CodecCapabilities(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MediaCodecInfo_CodecCapabilities::MediaCodecInfo_CodecCapabilities()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.MediaCodecInfo$CodecCapabilities",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject MediaCodecInfo_CodecCapabilities::createFromProfileLevel(jstring arg0, jint arg1, jint arg2)
@@ -474,49 +474,49 @@ namespace android::media
 	}
 	QAndroidJniObject MediaCodecInfo_CodecCapabilities::getAudioCapabilities()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAudioCapabilities",
 			"()Landroid/media/MediaCodecInfo$AudioCapabilities;"
 		);
 	}
 	QAndroidJniObject MediaCodecInfo_CodecCapabilities::getDefaultFormat()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDefaultFormat",
 			"()Landroid/media/MediaFormat;"
 		);
 	}
 	QAndroidJniObject MediaCodecInfo_CodecCapabilities::getEncoderCapabilities()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEncoderCapabilities",
 			"()Landroid/media/MediaCodecInfo$EncoderCapabilities;"
 		);
 	}
 	jint MediaCodecInfo_CodecCapabilities::getMaxSupportedInstances()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMaxSupportedInstances",
 			"()I"
 		);
 	}
 	jstring MediaCodecInfo_CodecCapabilities::getMimeType()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMimeType",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject MediaCodecInfo_CodecCapabilities::getVideoCapabilities()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getVideoCapabilities",
 			"()Landroid/media/MediaCodecInfo$VideoCapabilities;"
 		);
 	}
 	jboolean MediaCodecInfo_CodecCapabilities::isFeatureRequired(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isFeatureRequired",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -524,7 +524,7 @@ namespace android::media
 	}
 	jboolean MediaCodecInfo_CodecCapabilities::isFeatureSupported(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isFeatureSupported",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -532,10 +532,10 @@ namespace android::media
 	}
 	jboolean MediaCodecInfo_CodecCapabilities::isFormatSupported(android::media::MediaFormat arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isFormatSupported",
 			"(Landroid/media/MediaFormat;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::media

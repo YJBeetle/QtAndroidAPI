@@ -15,9 +15,11 @@ namespace java::text
 		// Fields
 		static jint DONE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BreakIterator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		BreakIterator(QAndroidJniObject obj);
+		
 		// Constructors
-		BreakIterator() = default;
 		
 		// Methods
 		static jarray getAvailableLocales();

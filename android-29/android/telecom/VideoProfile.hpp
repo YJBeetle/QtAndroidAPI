@@ -24,11 +24,13 @@ namespace android::telecom
 		static jint STATE_RX_ENABLED();
 		static jint STATE_TX_ENABLED();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit VideoProfile(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		VideoProfile(QAndroidJniObject obj);
+		
 		// Constructors
 		VideoProfile(jint arg0);
 		VideoProfile(jint arg0, jint arg1);
-		VideoProfile() = default;
 		
 		// Methods
 		static jboolean isAudioOnly(jint arg0);

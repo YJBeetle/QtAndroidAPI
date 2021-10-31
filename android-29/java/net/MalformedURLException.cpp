@@ -4,23 +4,21 @@ namespace java::net
 {
 	// Fields
 	
-	MalformedURLException::MalformedURLException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MalformedURLException::MalformedURLException(QAndroidJniObject obj) : java::io::IOException(obj) {}
+	
 	// Constructors
 	MalformedURLException::MalformedURLException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::IOException(
 			"java.net.MalformedURLException",
 			"()V"
-		);
-	}
+		) {}
 	MalformedURLException::MalformedURLException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::IOException(
 			"java.net.MalformedURLException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::net

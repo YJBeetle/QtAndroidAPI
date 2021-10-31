@@ -4,23 +4,21 @@ namespace javax::security::cert
 {
 	// Fields
 	
-	CertificateExpiredException::CertificateExpiredException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CertificateExpiredException::CertificateExpiredException(QAndroidJniObject obj) : javax::security::cert::CertificateException(obj) {}
+	
 	// Constructors
 	CertificateExpiredException::CertificateExpiredException()
-	{
-		__thiz = QAndroidJniObject(
+		: javax::security::cert::CertificateException(
 			"javax.security.cert.CertificateExpiredException",
 			"()V"
-		);
-	}
+		) {}
 	CertificateExpiredException::CertificateExpiredException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: javax::security::cert::CertificateException(
 			"javax.security.cert.CertificateExpiredException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace javax::security::cert

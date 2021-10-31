@@ -10,9 +10,11 @@ namespace java::util::concurrent
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Executors(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Executors(QAndroidJniObject obj);
+		
 		// Constructors
-		Executors() = default;
 		
 		// Methods
 		static QAndroidJniObject callable(__JniBaseClass arg0);

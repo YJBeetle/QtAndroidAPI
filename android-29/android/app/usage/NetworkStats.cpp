@@ -5,28 +5,30 @@ namespace android::app::usage
 {
 	// Fields
 	
-	NetworkStats::NetworkStats(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NetworkStats::NetworkStats(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void NetworkStats::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	jboolean NetworkStats::getNextBucket(android::app::usage::NetworkStats_Bucket arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getNextBucket",
 			"(Landroid/app/usage/NetworkStats$Bucket;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean NetworkStats::hasNextBucket()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasNextBucket",
 			"()Z"
 		);

@@ -534,131 +534,129 @@ namespace android::content::res
 	}
 	jint Configuration::colorMode()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"colorMode"
 		);
 	}
 	jint Configuration::densityDpi()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"densityDpi"
 		);
 	}
 	jfloat Configuration::fontScale()
 	{
-		return __thiz.getField<jfloat>(
+		return getField<jfloat>(
 			"fontScale"
 		);
 	}
 	jint Configuration::hardKeyboardHidden()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"hardKeyboardHidden"
 		);
 	}
 	jint Configuration::keyboard()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"keyboard"
 		);
 	}
 	jint Configuration::keyboardHidden()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"keyboardHidden"
 		);
 	}
 	QAndroidJniObject Configuration::locale()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"locale",
 			"Ljava/util/Locale;"
 		);
 	}
 	jint Configuration::mcc()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"mcc"
 		);
 	}
 	jint Configuration::mnc()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"mnc"
 		);
 	}
 	jint Configuration::navigation()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"navigation"
 		);
 	}
 	jint Configuration::navigationHidden()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"navigationHidden"
 		);
 	}
 	jint Configuration::orientation()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"orientation"
 		);
 	}
 	jint Configuration::screenHeightDp()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"screenHeightDp"
 		);
 	}
 	jint Configuration::screenLayout()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"screenLayout"
 		);
 	}
 	jint Configuration::screenWidthDp()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"screenWidthDp"
 		);
 	}
 	jint Configuration::smallestScreenWidthDp()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"smallestScreenWidthDp"
 		);
 	}
 	jint Configuration::touchscreen()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"touchscreen"
 		);
 	}
 	jint Configuration::uiMode()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"uiMode"
 		);
 	}
 	
-	Configuration::Configuration(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Configuration::Configuration(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Configuration::Configuration()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.content.res.Configuration",
 			"()V"
-		);
-	}
+		) {}
 	Configuration::Configuration(android::content::res::Configuration &arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.content.res.Configuration",
 			"(Landroid/content/res/Configuration;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jboolean Configuration::needNewResources(jint arg0, jint arg1)
@@ -673,15 +671,15 @@ namespace android::content::res
 	}
 	jint Configuration::compareTo(android::content::res::Configuration arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Landroid/content/res/Configuration;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint Configuration::compareTo(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -689,30 +687,30 @@ namespace android::content::res
 	}
 	jint Configuration::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jint Configuration::diff(android::content::res::Configuration arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"diff",
 			"(Landroid/content/res/Configuration;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean Configuration::equals(android::content::res::Configuration arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Landroid/content/res/Configuration;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean Configuration::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -720,28 +718,28 @@ namespace android::content::res
 	}
 	jint Configuration::getLayoutDirection()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLayoutDirection",
 			"()I"
 		);
 	}
 	QAndroidJniObject Configuration::getLocales()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLocales",
 			"()Landroid/os/LocaleList;"
 		);
 	}
 	jint Configuration::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean Configuration::isLayoutSizeAtLeast(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isLayoutSizeAtLeast",
 			"(I)Z",
 			arg0
@@ -749,93 +747,93 @@ namespace android::content::res
 	}
 	jboolean Configuration::isScreenHdr()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isScreenHdr",
 			"()Z"
 		);
 	}
 	jboolean Configuration::isScreenRound()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isScreenRound",
 			"()Z"
 		);
 	}
 	jboolean Configuration::isScreenWideColorGamut()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isScreenWideColorGamut",
 			"()Z"
 		);
 	}
 	void Configuration::readFromParcel(android::os::Parcel arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"readFromParcel",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Configuration::setLayoutDirection(java::util::Locale arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLayoutDirection",
 			"(Ljava/util/Locale;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Configuration::setLocale(java::util::Locale arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLocale",
 			"(Ljava/util/Locale;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Configuration::setLocales(android::os::LocaleList arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLocales",
 			"(Landroid/os/LocaleList;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Configuration::setTo(android::content::res::Configuration arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTo",
 			"(Landroid/content/res/Configuration;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Configuration::setToDefaults()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setToDefaults",
 			"()V"
 		);
 	}
 	jstring Configuration::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint Configuration::updateFrom(android::content::res::Configuration arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"updateFrom",
 			"(Landroid/content/res/Configuration;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Configuration::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

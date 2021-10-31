@@ -19,10 +19,12 @@ namespace android::app
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit VoiceInteractor_PickOptionRequest(const char *className, const char *sig, Ts...agv) : android::app::VoiceInteractor_Request(className, sig, std::forward<Ts>(agv)...) {}
 		VoiceInteractor_PickOptionRequest(QAndroidJniObject obj);
+		
 		// Constructors
 		VoiceInteractor_PickOptionRequest(android::app::VoiceInteractor_Prompt arg0, jarray arg1, android::os::Bundle arg2);
-		VoiceInteractor_PickOptionRequest() = default;
 		
 		// Methods
 		void onPickOptionResult(jboolean arg0, jarray arg1, android::os::Bundle arg2);

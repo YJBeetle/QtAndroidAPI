@@ -22,9 +22,11 @@ namespace java::time
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Clock(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Clock(QAndroidJniObject obj);
+		
 		// Constructors
-		Clock() = default;
 		
 		// Methods
 		static QAndroidJniObject fixed(java::time::Instant arg0, java::time::ZoneId arg1);

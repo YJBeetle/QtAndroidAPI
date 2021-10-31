@@ -14,7 +14,10 @@ namespace android::animation
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit RectEvaluator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		RectEvaluator(QAndroidJniObject obj);
+		
 		// Constructors
 		RectEvaluator();
 		RectEvaluator(android::graphics::Rect arg0);

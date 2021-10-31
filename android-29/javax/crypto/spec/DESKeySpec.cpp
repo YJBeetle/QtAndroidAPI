@@ -11,25 +11,23 @@ namespace javax::crypto::spec
 		);
 	}
 	
-	DESKeySpec::DESKeySpec(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DESKeySpec::DESKeySpec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	DESKeySpec::DESKeySpec(jbyteArray arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"javax.crypto.spec.DESKeySpec",
 			"([B)V",
 			arg0
-		);
-	}
+		) {}
 	DESKeySpec::DESKeySpec(jbyteArray arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"javax.crypto.spec.DESKeySpec",
 			"([BI)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean DESKeySpec::isParityAdjusted(jbyteArray arg0, jint arg1)
@@ -54,7 +52,7 @@ namespace javax::crypto::spec
 	}
 	jbyteArray DESKeySpec::getKey()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getKey",
 			"()[B"
 		).object<jbyteArray>();

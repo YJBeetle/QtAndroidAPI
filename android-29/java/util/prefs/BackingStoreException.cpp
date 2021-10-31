@@ -4,24 +4,22 @@ namespace java::util::prefs
 {
 	// Fields
 	
-	BackingStoreException::BackingStoreException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BackingStoreException::BackingStoreException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
+	
 	// Constructors
 	BackingStoreException::BackingStoreException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Exception(
 			"java.util.prefs.BackingStoreException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	BackingStoreException::BackingStoreException(jthrowable arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Exception(
 			"java.util.prefs.BackingStoreException",
 			"(Ljava/lang/Throwable;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::util::prefs

@@ -5,38 +5,36 @@ namespace android::animation
 {
 	// Fields
 	
-	RectEvaluator::RectEvaluator(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	RectEvaluator::RectEvaluator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	RectEvaluator::RectEvaluator()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.animation.RectEvaluator",
 			"()V"
-		);
-	}
+		) {}
 	RectEvaluator::RectEvaluator(android::graphics::Rect arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.animation.RectEvaluator",
 			"(Landroid/graphics/Rect;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject RectEvaluator::evaluate(jfloat arg0, android::graphics::Rect arg1, android::graphics::Rect arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"evaluate",
 			"(FLandroid/graphics/Rect;Landroid/graphics/Rect;)Landroid/graphics/Rect;",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	jobject RectEvaluator::evaluate(jfloat arg0, jobject arg1, jobject arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"evaluate",
 			"(FLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,

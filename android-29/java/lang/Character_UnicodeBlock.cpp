@@ -2476,7 +2476,9 @@ namespace java::lang
 		);
 	}
 	
-	Character_UnicodeBlock::Character_UnicodeBlock(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Character_UnicodeBlock::Character_UnicodeBlock(QAndroidJniObject obj) : java::lang::Character_Subset(obj) {}
+	
 	// Constructors
 	
 	// Methods

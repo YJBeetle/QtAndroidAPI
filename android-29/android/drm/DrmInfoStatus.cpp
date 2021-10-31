@@ -20,44 +20,44 @@ namespace android::drm
 	}
 	QAndroidJniObject DrmInfoStatus::data()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"data",
 			"Landroid/drm/ProcessedData;"
 		);
 	}
 	jint DrmInfoStatus::infoType()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"infoType"
 		);
 	}
 	jstring DrmInfoStatus::mimeType()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"mimeType",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint DrmInfoStatus::statusCode()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"statusCode"
 		);
 	}
 	
-	DrmInfoStatus::DrmInfoStatus(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DrmInfoStatus::DrmInfoStatus(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	DrmInfoStatus::DrmInfoStatus(jint arg0, jint arg1, android::drm::ProcessedData arg2, jstring arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.drm.DrmInfoStatus",
 			"(IILandroid/drm/ProcessedData;Ljava/lang/String;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
+			arg2.object(),
 			arg3
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::drm

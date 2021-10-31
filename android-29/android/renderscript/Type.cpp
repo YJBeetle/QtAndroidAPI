@@ -6,7 +6,9 @@ namespace android::renderscript
 {
 	// Fields
 	
-	Type::Type(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Type::Type(QAndroidJniObject obj) : android::renderscript::BaseObj(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -16,8 +18,8 @@ namespace android::renderscript
 			"android.renderscript.Type",
 			"createX",
 			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Element;I)Landroid/renderscript/Type;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
@@ -27,8 +29,8 @@ namespace android::renderscript
 			"android.renderscript.Type",
 			"createXY",
 			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Element;II)Landroid/renderscript/Type;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3
 		);
@@ -39,8 +41,8 @@ namespace android::renderscript
 			"android.renderscript.Type",
 			"createXYZ",
 			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Element;III)Landroid/renderscript/Type;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3,
 			arg4
@@ -48,56 +50,56 @@ namespace android::renderscript
 	}
 	jint Type::getCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCount",
 			"()I"
 		);
 	}
 	QAndroidJniObject Type::getElement()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getElement",
 			"()Landroid/renderscript/Element;"
 		);
 	}
 	jint Type::getX()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getX",
 			"()I"
 		);
 	}
 	jint Type::getY()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getY",
 			"()I"
 		);
 	}
 	jint Type::getYuv()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getYuv",
 			"()I"
 		);
 	}
 	jint Type::getZ()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getZ",
 			"()I"
 		);
 	}
 	jboolean Type::hasFaces()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasFaces",
 			"()Z"
 		);
 	}
 	jboolean Type::hasMipmaps()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasMipmaps",
 			"()Z"
 		);

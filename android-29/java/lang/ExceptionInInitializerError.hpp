@@ -20,7 +20,10 @@ namespace java::lang
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ExceptionInInitializerError(const char *className, const char *sig, Ts...agv) : java::lang::LinkageError(className, sig, std::forward<Ts>(agv)...) {}
 		ExceptionInInitializerError(QAndroidJniObject obj);
+		
 		// Constructors
 		ExceptionInInitializerError();
 		ExceptionInInitializerError(jstring arg0);

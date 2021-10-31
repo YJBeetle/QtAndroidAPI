@@ -37,9 +37,11 @@ namespace android::renderscript
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ScriptIntrinsicHistogram(const char *className, const char *sig, Ts...agv) : android::renderscript::ScriptIntrinsic(className, sig, std::forward<Ts>(agv)...) {}
 		ScriptIntrinsicHistogram(QAndroidJniObject obj);
+		
 		// Constructors
-		ScriptIntrinsicHistogram() = default;
 		
 		// Methods
 		static QAndroidJniObject create(android::renderscript::RenderScript arg0, android::renderscript::Element arg1);

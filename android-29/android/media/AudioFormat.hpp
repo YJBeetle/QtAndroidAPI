@@ -77,9 +77,11 @@ namespace android::media
 		static jint ENCODING_PCM_FLOAT();
 		static jint SAMPLE_RATE_UNSPECIFIED();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AudioFormat(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AudioFormat(QAndroidJniObject obj);
+		
 		// Constructors
-		AudioFormat() = default;
 		
 		// Methods
 		jint describeContents();

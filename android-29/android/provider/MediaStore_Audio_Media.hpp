@@ -21,7 +21,10 @@ namespace android::provider
 		static QAndroidJniObject INTERNAL_CONTENT_URI();
 		static jstring RECORD_SOUND_ACTION();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaStore_Audio_Media(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaStore_Audio_Media(QAndroidJniObject obj);
+		
 		// Constructors
 		MediaStore_Audio_Media();
 		

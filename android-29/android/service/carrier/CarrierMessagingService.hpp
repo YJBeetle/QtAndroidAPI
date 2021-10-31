@@ -36,7 +36,10 @@ namespace android::service::carrier
 		static jint SEND_STATUS_RETRY_ON_CARRIER_NETWORK();
 		static jstring SERVICE_INTERFACE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CarrierMessagingService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
 		CarrierMessagingService(QAndroidJniObject obj);
+		
 		// Constructors
 		CarrierMessagingService();
 		

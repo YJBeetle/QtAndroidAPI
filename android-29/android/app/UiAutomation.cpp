@@ -62,20 +62,22 @@ namespace android::app
 		);
 	}
 	
-	UiAutomation::UiAutomation(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UiAutomation::UiAutomation(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void UiAutomation::adoptShellPermissionIdentity()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"adoptShellPermissionIdentity",
 			"()V"
 		);
 	}
 	void UiAutomation::adoptShellPermissionIdentity(jarray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"adoptShellPermissionIdentity",
 			"([Ljava/lang/String;)V",
 			arg0
@@ -83,14 +85,14 @@ namespace android::app
 	}
 	void UiAutomation::clearWindowAnimationFrameStats()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clearWindowAnimationFrameStats",
 			"()V"
 		);
 	}
 	jboolean UiAutomation::clearWindowContentFrameStats(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"clearWindowContentFrameStats",
 			"(I)Z",
 			arg0
@@ -98,24 +100,24 @@ namespace android::app
 	}
 	void UiAutomation::dropShellPermissionIdentity()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"dropShellPermissionIdentity",
 			"()V"
 		);
 	}
 	QAndroidJniObject UiAutomation::executeAndWaitForEvent(__JniBaseClass arg0, __JniBaseClass arg1, jlong arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"executeAndWaitForEvent",
 			"(Ljava/lang/Runnable;Landroid/app/UiAutomation$AccessibilityEventFilter;J)Landroid/view/accessibility/AccessibilityEvent;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
 	QAndroidJniObject UiAutomation::executeShellCommand(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"executeShellCommand",
 			"(Ljava/lang/String;)Landroid/os/ParcelFileDescriptor;",
 			arg0
@@ -123,7 +125,7 @@ namespace android::app
 	}
 	QAndroidJniObject UiAutomation::findFocus(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"findFocus",
 			"(I)Landroid/view/accessibility/AccessibilityNodeInfo;",
 			arg0
@@ -131,28 +133,28 @@ namespace android::app
 	}
 	QAndroidJniObject UiAutomation::getRootInActiveWindow()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRootInActiveWindow",
 			"()Landroid/view/accessibility/AccessibilityNodeInfo;"
 		);
 	}
 	QAndroidJniObject UiAutomation::getServiceInfo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getServiceInfo",
 			"()Landroid/accessibilityservice/AccessibilityServiceInfo;"
 		);
 	}
 	QAndroidJniObject UiAutomation::getWindowAnimationFrameStats()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getWindowAnimationFrameStats",
 			"()Landroid/view/WindowAnimationFrameStats;"
 		);
 	}
 	QAndroidJniObject UiAutomation::getWindowContentFrameStats(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getWindowContentFrameStats",
 			"(I)Landroid/view/WindowContentFrameStats;",
 			arg0
@@ -160,14 +162,14 @@ namespace android::app
 	}
 	QAndroidJniObject UiAutomation::getWindows()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getWindows",
 			"()Ljava/util/List;"
 		);
 	}
 	void UiAutomation::grantRuntimePermission(jstring arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"grantRuntimePermission",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
@@ -176,26 +178,26 @@ namespace android::app
 	}
 	void UiAutomation::grantRuntimePermissionAsUser(jstring arg0, jstring arg1, android::os::UserHandle arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"grantRuntimePermissionAsUser",
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/os/UserHandle;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	jboolean UiAutomation::injectInputEvent(android::view::InputEvent arg0, jboolean arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"injectInputEvent",
 			"(Landroid/view/InputEvent;Z)Z",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	jboolean UiAutomation::performGlobalAction(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"performGlobalAction",
 			"(I)Z",
 			arg0
@@ -203,7 +205,7 @@ namespace android::app
 	}
 	void UiAutomation::revokeRuntimePermission(jstring arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"revokeRuntimePermission",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
@@ -212,25 +214,25 @@ namespace android::app
 	}
 	void UiAutomation::revokeRuntimePermissionAsUser(jstring arg0, jstring arg1, android::os::UserHandle arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"revokeRuntimePermissionAsUser",
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/os/UserHandle;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void UiAutomation::setOnAccessibilityEventListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnAccessibilityEventListener",
 			"(Landroid/app/UiAutomation$OnAccessibilityEventListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean UiAutomation::setRotation(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"setRotation",
 			"(I)Z",
 			arg0
@@ -238,7 +240,7 @@ namespace android::app
 	}
 	void UiAutomation::setRunAsMonkey(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setRunAsMonkey",
 			"(Z)V",
 			arg0
@@ -246,22 +248,22 @@ namespace android::app
 	}
 	void UiAutomation::setServiceInfo(android::accessibilityservice::AccessibilityServiceInfo arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setServiceInfo",
 			"(Landroid/accessibilityservice/AccessibilityServiceInfo;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject UiAutomation::takeScreenshot()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"takeScreenshot",
 			"()Landroid/graphics/Bitmap;"
 		);
 	}
 	void UiAutomation::waitForIdle(jlong arg0, jlong arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"waitForIdle",
 			"(JJ)V",
 			arg0,

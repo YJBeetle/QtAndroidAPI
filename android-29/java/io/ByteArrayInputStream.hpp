@@ -15,11 +15,13 @@ namespace java::io
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ByteArrayInputStream(const char *className, const char *sig, Ts...agv) : java::io::InputStream(className, sig, std::forward<Ts>(agv)...) {}
 		ByteArrayInputStream(QAndroidJniObject obj);
+		
 		// Constructors
 		ByteArrayInputStream(jbyteArray arg0);
 		ByteArrayInputStream(jbyteArray arg0, jint arg1, jint arg2);
-		ByteArrayInputStream() = default;
 		
 		// Methods
 		jint available();

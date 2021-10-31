@@ -14,9 +14,11 @@ namespace android::graphics
 		static QAndroidJniObject ROTATE();
 		static QAndroidJniObject TRANSLATE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PathDashPathEffect_Style(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		PathDashPathEffect_Style(QAndroidJniObject obj);
+		
 		// Constructors
-		PathDashPathEffect_Style() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

@@ -26,36 +26,36 @@ namespace android::drm
 	}
 	jbyteArray DrmConvertedStatus::convertedData()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"convertedData",
 			"[B"
 		).object<jbyteArray>();
 	}
 	jint DrmConvertedStatus::offset()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"offset"
 		);
 	}
 	jint DrmConvertedStatus::statusCode()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"statusCode"
 		);
 	}
 	
-	DrmConvertedStatus::DrmConvertedStatus(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DrmConvertedStatus::DrmConvertedStatus(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	DrmConvertedStatus::DrmConvertedStatus(jint arg0, jbyteArray arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.drm.DrmConvertedStatus",
 			"(I[BI)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::drm

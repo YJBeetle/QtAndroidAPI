@@ -10,56 +10,56 @@ namespace java::io
 {
 	// Fields
 	
-	ObjectOutputStream::ObjectOutputStream(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ObjectOutputStream::ObjectOutputStream(QAndroidJniObject obj) : java::io::OutputStream(obj) {}
+	
 	// Constructors
 	ObjectOutputStream::ObjectOutputStream(java::io::OutputStream arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::OutputStream(
 			"java.io.ObjectOutputStream",
 			"(Ljava/io/OutputStream;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	void ObjectOutputStream::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	void ObjectOutputStream::defaultWriteObject()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"defaultWriteObject",
 			"()V"
 		);
 	}
 	void ObjectOutputStream::flush()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"flush",
 			"()V"
 		);
 	}
 	QAndroidJniObject ObjectOutputStream::putFields()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"putFields",
 			"()Ljava/io/ObjectOutputStream$PutField;"
 		);
 	}
 	void ObjectOutputStream::reset()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
 	void ObjectOutputStream::useProtocolVersion(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"useProtocolVersion",
 			"(I)V",
 			arg0
@@ -67,7 +67,7 @@ namespace java::io
 	}
 	void ObjectOutputStream::write(jbyteArray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"write",
 			"([B)V",
 			arg0
@@ -75,7 +75,7 @@ namespace java::io
 	}
 	void ObjectOutputStream::write(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"write",
 			"(I)V",
 			arg0
@@ -83,7 +83,7 @@ namespace java::io
 	}
 	void ObjectOutputStream::write(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"write",
 			"([BII)V",
 			arg0,
@@ -93,7 +93,7 @@ namespace java::io
 	}
 	void ObjectOutputStream::writeBoolean(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeBoolean",
 			"(Z)V",
 			arg0
@@ -101,7 +101,7 @@ namespace java::io
 	}
 	void ObjectOutputStream::writeByte(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeByte",
 			"(I)V",
 			arg0
@@ -109,7 +109,7 @@ namespace java::io
 	}
 	void ObjectOutputStream::writeBytes(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeBytes",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -117,7 +117,7 @@ namespace java::io
 	}
 	void ObjectOutputStream::writeChar(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeChar",
 			"(I)V",
 			arg0
@@ -125,7 +125,7 @@ namespace java::io
 	}
 	void ObjectOutputStream::writeChars(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeChars",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -133,7 +133,7 @@ namespace java::io
 	}
 	void ObjectOutputStream::writeDouble(jdouble arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeDouble",
 			"(D)V",
 			arg0
@@ -141,14 +141,14 @@ namespace java::io
 	}
 	void ObjectOutputStream::writeFields()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeFields",
 			"()V"
 		);
 	}
 	void ObjectOutputStream::writeFloat(jfloat arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeFloat",
 			"(F)V",
 			arg0
@@ -156,7 +156,7 @@ namespace java::io
 	}
 	void ObjectOutputStream::writeInt(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeInt",
 			"(I)V",
 			arg0
@@ -164,7 +164,7 @@ namespace java::io
 	}
 	void ObjectOutputStream::writeLong(jlong arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeLong",
 			"(J)V",
 			arg0
@@ -172,7 +172,7 @@ namespace java::io
 	}
 	void ObjectOutputStream::writeObject(jobject arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeObject",
 			"(Ljava/lang/Object;)V",
 			arg0
@@ -180,7 +180,7 @@ namespace java::io
 	}
 	void ObjectOutputStream::writeShort(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeShort",
 			"(I)V",
 			arg0
@@ -188,7 +188,7 @@ namespace java::io
 	}
 	void ObjectOutputStream::writeUTF(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeUTF",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -196,7 +196,7 @@ namespace java::io
 	}
 	void ObjectOutputStream::writeUnshared(jobject arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeUnshared",
 			"(Ljava/lang/Object;)V",
 			arg0

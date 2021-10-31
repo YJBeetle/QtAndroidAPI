@@ -13,81 +13,81 @@ namespace android::app::usage
 		);
 	}
 	
-	EventStats::EventStats(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	EventStats::EventStats(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	EventStats::EventStats(android::app::usage::EventStats &arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.app.usage.EventStats",
 			"(Landroid/app/usage/EventStats;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	void EventStats::add(android::app::usage::EventStats arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"add",
 			"(Landroid/app/usage/EventStats;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint EventStats::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jint EventStats::getCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCount",
 			"()I"
 		);
 	}
 	jint EventStats::getEventType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getEventType",
 			"()I"
 		);
 	}
 	jlong EventStats::getFirstTimeStamp()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getFirstTimeStamp",
 			"()J"
 		);
 	}
 	jlong EventStats::getLastEventTime()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getLastEventTime",
 			"()J"
 		);
 	}
 	jlong EventStats::getLastTimeStamp()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getLastTimeStamp",
 			"()J"
 		);
 	}
 	jlong EventStats::getTotalTime()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getTotalTime",
 			"()J"
 		);
 	}
 	void EventStats::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

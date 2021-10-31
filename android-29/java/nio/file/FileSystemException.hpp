@@ -12,11 +12,13 @@ namespace java::nio::file
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit FileSystemException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
 		FileSystemException(QAndroidJniObject obj);
+		
 		// Constructors
 		FileSystemException(jstring arg0);
 		FileSystemException(jstring arg0, jstring arg1, jstring arg2);
-		FileSystemException() = default;
 		
 		// Methods
 		jstring getFile();

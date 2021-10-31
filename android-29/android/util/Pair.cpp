@@ -5,30 +5,30 @@ namespace android::util
 	// Fields
 	jobject Pair::first()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"first",
 			"Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobject Pair::second()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"second",
 			"Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	
-	Pair::Pair(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Pair::Pair(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Pair::Pair(jobject arg0, jobject arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.util.Pair",
 			"(Ljava/lang/Object;Ljava/lang/Object;)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject Pair::create(jobject arg0, jobject arg1)
@@ -43,7 +43,7 @@ namespace android::util
 	}
 	jboolean Pair::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -51,14 +51,14 @@ namespace android::util
 	}
 	jint Pair::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring Pair::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

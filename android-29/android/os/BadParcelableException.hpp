@@ -17,11 +17,13 @@ namespace android::os
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BadParcelableException(const char *className, const char *sig, Ts...agv) : android::util::AndroidRuntimeException(className, sig, std::forward<Ts>(agv)...) {}
 		BadParcelableException(QAndroidJniObject obj);
+		
 		// Constructors
 		BadParcelableException(java::lang::Exception arg0);
 		BadParcelableException(jstring arg0);
-		BadParcelableException() = default;
 		
 		// Methods
 	};

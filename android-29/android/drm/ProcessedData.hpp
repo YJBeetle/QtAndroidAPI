@@ -10,9 +10,11 @@ namespace android::drm
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ProcessedData(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ProcessedData(QAndroidJniObject obj);
+		
 		// Constructors
-		ProcessedData() = default;
 		
 		// Methods
 		jstring getAccountId();

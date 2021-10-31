@@ -60,7 +60,9 @@ namespace android::renderscript
 		);
 	}
 	
-	Sampler_Value::Sampler_Value(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Sampler_Value::Sampler_Value(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

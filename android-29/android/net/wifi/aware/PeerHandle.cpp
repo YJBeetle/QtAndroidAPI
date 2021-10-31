@@ -4,13 +4,15 @@ namespace android::net::wifi::aware
 {
 	// Fields
 	
-	PeerHandle::PeerHandle(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PeerHandle::PeerHandle(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jboolean PeerHandle::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -18,7 +20,7 @@ namespace android::net::wifi::aware
 	}
 	jint PeerHandle::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);

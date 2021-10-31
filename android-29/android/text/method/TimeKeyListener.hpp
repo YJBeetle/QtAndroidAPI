@@ -18,7 +18,10 @@ namespace android::text::method
 		// Fields
 		static jcharArray CHARACTERS();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TimeKeyListener(const char *className, const char *sig, Ts...agv) : android::text::method::NumberKeyListener(className, sig, std::forward<Ts>(agv)...) {}
 		TimeKeyListener(QAndroidJniObject obj);
+		
 		// Constructors
 		TimeKeyListener();
 		TimeKeyListener(java::util::Locale arg0);

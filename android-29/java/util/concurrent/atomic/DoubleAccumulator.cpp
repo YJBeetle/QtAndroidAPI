@@ -5,22 +5,22 @@ namespace java::util::concurrent::atomic
 {
 	// Fields
 	
-	DoubleAccumulator::DoubleAccumulator(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DoubleAccumulator::DoubleAccumulator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	DoubleAccumulator::DoubleAccumulator(__JniBaseClass arg0, jdouble arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.concurrent.atomic.DoubleAccumulator",
 			"(Ljava/util/function/DoubleBinaryOperator;D)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	void DoubleAccumulator::accumulate(jdouble arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"accumulate",
 			"(D)V",
 			arg0
@@ -28,56 +28,56 @@ namespace java::util::concurrent::atomic
 	}
 	jdouble DoubleAccumulator::doubleValue()
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"doubleValue",
 			"()D"
 		);
 	}
 	jfloat DoubleAccumulator::floatValue()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"floatValue",
 			"()F"
 		);
 	}
 	jdouble DoubleAccumulator::get()
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"get",
 			"()D"
 		);
 	}
 	jdouble DoubleAccumulator::getThenReset()
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"getThenReset",
 			"()D"
 		);
 	}
 	jint DoubleAccumulator::intValue()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"intValue",
 			"()I"
 		);
 	}
 	jlong DoubleAccumulator::longValue()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"longValue",
 			"()J"
 		);
 	}
 	void DoubleAccumulator::reset()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
 	jstring DoubleAccumulator::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

@@ -23,9 +23,11 @@ namespace android::app::usage
 		static jint STANDBY_BUCKET_RARE();
 		static jint STANDBY_BUCKET_WORKING_SET();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit UsageStatsManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		UsageStatsManager(QAndroidJniObject obj);
+		
 		// Constructors
-		UsageStatsManager() = default;
 		
 		// Methods
 		jint getAppStandbyBucket();

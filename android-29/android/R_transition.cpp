@@ -60,15 +60,15 @@ namespace android
 		);
 	}
 	
-	R_transition::R_transition(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	R_transition::R_transition(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	R_transition::R_transition()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.R$transition",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android

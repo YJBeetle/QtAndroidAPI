@@ -16,77 +16,77 @@ namespace android::service::chooser
 		);
 	}
 	
-	ChooserTarget::ChooserTarget(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ChooserTarget::ChooserTarget(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ChooserTarget::ChooserTarget(jstring arg0, android::graphics::drawable::Icon arg1, jfloat arg2, android::content::ComponentName arg3, android::os::Bundle arg4)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.service.chooser.ChooserTarget",
 			"(Ljava/lang/CharSequence;Landroid/graphics/drawable/Icon;FLandroid/content/ComponentName;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object(),
+			arg1.object(),
 			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object()
-		);
-	}
+			arg3.object(),
+			arg4.object()
+		) {}
 	
 	// Methods
 	jint ChooserTarget::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	QAndroidJniObject ChooserTarget::getComponentName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getComponentName",
 			"()Landroid/content/ComponentName;"
 		);
 	}
 	QAndroidJniObject ChooserTarget::getIcon()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getIcon",
 			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
 	QAndroidJniObject ChooserTarget::getIntentExtras()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getIntentExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
 	jfloat ChooserTarget::getScore()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getScore",
 			"()F"
 		);
 	}
 	jstring ChooserTarget::getTitle()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTitle",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jstring ChooserTarget::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void ChooserTarget::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

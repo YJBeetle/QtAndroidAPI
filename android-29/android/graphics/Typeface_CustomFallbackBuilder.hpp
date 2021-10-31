@@ -22,10 +22,12 @@ namespace android::graphics
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Typeface_CustomFallbackBuilder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Typeface_CustomFallbackBuilder(QAndroidJniObject obj);
+		
 		// Constructors
 		Typeface_CustomFallbackBuilder(android::graphics::fonts::FontFamily arg0);
-		Typeface_CustomFallbackBuilder() = default;
 		
 		// Methods
 		static jint getMaxCustomFallbackCount();

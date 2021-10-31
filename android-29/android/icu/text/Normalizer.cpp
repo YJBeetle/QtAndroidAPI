@@ -64,7 +64,9 @@ namespace android::icu::text
 		);
 	}
 	
-	Normalizer::Normalizer(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Normalizer::Normalizer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -129,7 +131,7 @@ namespace android::icu::text
 	}
 	jobject Normalizer::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		).object<jobject>();

@@ -31,74 +31,76 @@ namespace android::content::pm
 		);
 	}
 	
-	LauncherApps_PinItemRequest::LauncherApps_PinItemRequest(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	LauncherApps_PinItemRequest::LauncherApps_PinItemRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jboolean LauncherApps_PinItemRequest::accept()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"accept",
 			"()Z"
 		);
 	}
 	jboolean LauncherApps_PinItemRequest::accept(android::os::Bundle arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"accept",
 			"(Landroid/os/Bundle;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint LauncherApps_PinItemRequest::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	QAndroidJniObject LauncherApps_PinItemRequest::getAppWidgetProviderInfo(android::content::Context arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAppWidgetProviderInfo",
 			"(Landroid/content/Context;)Landroid/appwidget/AppWidgetProviderInfo;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject LauncherApps_PinItemRequest::getExtras()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
 	jint LauncherApps_PinItemRequest::getRequestType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRequestType",
 			"()I"
 		);
 	}
 	QAndroidJniObject LauncherApps_PinItemRequest::getShortcutInfo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getShortcutInfo",
 			"()Landroid/content/pm/ShortcutInfo;"
 		);
 	}
 	jboolean LauncherApps_PinItemRequest::isValid()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isValid",
 			"()Z"
 		);
 	}
 	void LauncherApps_PinItemRequest::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

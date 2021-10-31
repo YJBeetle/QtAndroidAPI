@@ -48,51 +48,53 @@ namespace android::telephony
 		);
 	}
 	
-	IccOpenLogicalChannelResponse::IccOpenLogicalChannelResponse(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	IccOpenLogicalChannelResponse::IccOpenLogicalChannelResponse(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint IccOpenLogicalChannelResponse::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jint IccOpenLogicalChannelResponse::getChannel()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getChannel",
 			"()I"
 		);
 	}
 	jbyteArray IccOpenLogicalChannelResponse::getSelectResponse()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSelectResponse",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jint IccOpenLogicalChannelResponse::getStatus()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getStatus",
 			"()I"
 		);
 	}
 	jstring IccOpenLogicalChannelResponse::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void IccOpenLogicalChannelResponse::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

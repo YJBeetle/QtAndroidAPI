@@ -19,9 +19,11 @@ namespace android::provider
 		static jstring SPECIFIC_CARRIER_ID();
 		static jstring SPECIFIC_CARRIER_ID_NAME();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Telephony_CarrierId(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Telephony_CarrierId(QAndroidJniObject obj);
+		
 		// Constructors
-		Telephony_CarrierId() = default;
 		
 		// Methods
 		static QAndroidJniObject getSpecificCarrierIdUriForSubscriptionId(jint arg0);

@@ -28,7 +28,10 @@ namespace android::service::chooser
 		static jstring META_DATA_NAME();
 		static jstring SERVICE_INTERFACE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ChooserTargetService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
 		ChooserTargetService(QAndroidJniObject obj);
+		
 		// Constructors
 		ChooserTargetService();
 		

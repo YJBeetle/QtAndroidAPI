@@ -40,9 +40,11 @@ namespace android::net
 		static jint DIRECTION_IN();
 		static jint DIRECTION_OUT();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit IpSecManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		IpSecManager(QAndroidJniObject obj);
+		
 		// Constructors
-		IpSecManager() = default;
 		
 		// Methods
 		QAndroidJniObject allocateSecurityParameterIndex(java::net::InetAddress arg0);

@@ -10,10 +10,12 @@ namespace android::hardware::camera2::params
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit OisSample(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		OisSample(QAndroidJniObject obj);
+		
 		// Constructors
 		OisSample(jlong arg0, jfloat arg1, jfloat arg2);
-		OisSample() = default;
 		
 		// Methods
 		jboolean equals(jobject arg0);

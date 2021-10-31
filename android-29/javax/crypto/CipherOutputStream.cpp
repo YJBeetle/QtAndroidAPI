@@ -6,36 +6,36 @@ namespace javax::crypto
 {
 	// Fields
 	
-	CipherOutputStream::CipherOutputStream(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CipherOutputStream::CipherOutputStream(QAndroidJniObject obj) : java::io::FilterOutputStream(obj) {}
+	
 	// Constructors
 	CipherOutputStream::CipherOutputStream(java::io::OutputStream arg0, javax::crypto::Cipher arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::FilterOutputStream(
 			"javax.crypto.CipherOutputStream",
 			"(Ljava/io/OutputStream;Ljavax/crypto/Cipher;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	
 	// Methods
 	void CipherOutputStream::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	void CipherOutputStream::flush()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"flush",
 			"()V"
 		);
 	}
 	void CipherOutputStream::write(jbyteArray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"write",
 			"([B)V",
 			arg0
@@ -43,7 +43,7 @@ namespace javax::crypto
 	}
 	void CipherOutputStream::write(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"write",
 			"(I)V",
 			arg0
@@ -51,7 +51,7 @@ namespace javax::crypto
 	}
 	void CipherOutputStream::write(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"write",
 			"([BII)V",
 			arg0,

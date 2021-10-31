@@ -34,10 +34,12 @@ namespace android::net
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit IpSecTransform_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		IpSecTransform_Builder(QAndroidJniObject obj);
+		
 		// Constructors
 		IpSecTransform_Builder(android::content::Context arg0);
-		IpSecTransform_Builder() = default;
 		
 		// Methods
 		QAndroidJniObject buildTransportModeTransform(java::net::InetAddress arg0, android::net::IpSecManager_SecurityParameterIndex arg1);

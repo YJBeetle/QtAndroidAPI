@@ -6,34 +6,36 @@ namespace android::bluetooth::le
 {
 	// Fields
 	
-	ScanRecord::ScanRecord(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ScanRecord::ScanRecord(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint ScanRecord::getAdvertiseFlags()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAdvertiseFlags",
 			"()I"
 		);
 	}
 	jbyteArray ScanRecord::getBytes()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBytes",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jstring ScanRecord::getDeviceName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDeviceName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jbyteArray ScanRecord::getManufacturerSpecificData(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getManufacturerSpecificData",
 			"(I)[B",
 			arg0
@@ -41,50 +43,50 @@ namespace android::bluetooth::le
 	}
 	QAndroidJniObject ScanRecord::getManufacturerSpecificData()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getManufacturerSpecificData",
 			"()Landroid/util/SparseArray;"
 		);
 	}
 	jbyteArray ScanRecord::getServiceData(android::os::ParcelUuid arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getServiceData",
 			"(Landroid/os/ParcelUuid;)[B",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jbyteArray>();
 	}
 	QAndroidJniObject ScanRecord::getServiceData()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getServiceData",
 			"()Ljava/util/Map;"
 		);
 	}
 	QAndroidJniObject ScanRecord::getServiceSolicitationUuids()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getServiceSolicitationUuids",
 			"()Ljava/util/List;"
 		);
 	}
 	QAndroidJniObject ScanRecord::getServiceUuids()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getServiceUuids",
 			"()Ljava/util/List;"
 		);
 	}
 	jint ScanRecord::getTxPowerLevel()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTxPowerLevel",
 			"()I"
 		);
 	}
 	jstring ScanRecord::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

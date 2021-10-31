@@ -4,15 +4,15 @@ namespace android
 {
 	// Fields
 	
-	R_bool::R_bool(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	R_bool::R_bool(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	R_bool::R_bool()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.R$bool",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android

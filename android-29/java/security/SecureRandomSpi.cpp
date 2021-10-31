@@ -4,20 +4,20 @@ namespace java::security
 {
 	// Fields
 	
-	SecureRandomSpi::SecureRandomSpi(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SecureRandomSpi::SecureRandomSpi(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	SecureRandomSpi::SecureRandomSpi()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.security.SecureRandomSpi",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring SecureRandomSpi::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

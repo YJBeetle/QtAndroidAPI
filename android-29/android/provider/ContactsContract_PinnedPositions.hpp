@@ -16,7 +16,10 @@ namespace android::provider
 		static jint DEMOTED();
 		static jint UNPINNED();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ContactsContract_PinnedPositions(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ContactsContract_PinnedPositions(QAndroidJniObject obj);
+		
 		// Constructors
 		ContactsContract_PinnedPositions();
 		

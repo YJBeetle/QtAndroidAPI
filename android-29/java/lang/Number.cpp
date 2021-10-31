@@ -4,55 +4,55 @@ namespace java::lang
 {
 	// Fields
 	
-	Number::Number(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Number::Number(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Number::Number()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.lang.Number",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jbyte Number::byteValue()
 	{
-		return __thiz.callMethod<jbyte>(
+		return callMethod<jbyte>(
 			"byteValue",
 			"()B"
 		);
 	}
 	jdouble Number::doubleValue()
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"doubleValue",
 			"()D"
 		);
 	}
 	jfloat Number::floatValue()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"floatValue",
 			"()F"
 		);
 	}
 	jint Number::intValue()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"intValue",
 			"()I"
 		);
 	}
 	jlong Number::longValue()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"longValue",
 			"()J"
 		);
 	}
 	jshort Number::shortValue()
 	{
-		return __thiz.callMethod<jshort>(
+		return callMethod<jshort>(
 			"shortValue",
 			"()S"
 		);

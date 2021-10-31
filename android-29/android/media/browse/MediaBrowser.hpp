@@ -40,10 +40,12 @@ namespace android::media::browse
 		static jstring EXTRA_PAGE();
 		static jstring EXTRA_PAGE_SIZE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaBrowser(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaBrowser(QAndroidJniObject obj);
+		
 		// Constructors
 		MediaBrowser(android::content::Context arg0, android::content::ComponentName arg1, android::media::browse::MediaBrowser_ConnectionCallback arg2, android::os::Bundle arg3);
-		MediaBrowser() = default;
 		
 		// Methods
 		void connect();

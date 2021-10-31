@@ -81,7 +81,10 @@ namespace android::provider
 		static jint VOICEMAIL_TYPE();
 		static jstring VOICEMAIL_URI();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CallLog_Calls(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		CallLog_Calls(QAndroidJniObject obj);
+		
 		// Constructors
 		CallLog_Calls();
 		

@@ -18,7 +18,9 @@ namespace android::content
 		);
 	}
 	
-	ContentProviderOperation::ContentProviderOperation(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ContentProviderOperation::ContentProviderOperation(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -28,7 +30,7 @@ namespace android::content
 			"android.content.ContentProviderOperation",
 			"newAssertQuery",
 			"(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ContentProviderOperation::newDelete(android::net::Uri arg0)
@@ -37,7 +39,7 @@ namespace android::content
 			"android.content.ContentProviderOperation",
 			"newDelete",
 			"(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ContentProviderOperation::newInsert(android::net::Uri arg0)
@@ -46,7 +48,7 @@ namespace android::content
 			"android.content.ContentProviderOperation",
 			"newInsert",
 			"(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ContentProviderOperation::newUpdate(android::net::Uri arg0)
@@ -55,85 +57,85 @@ namespace android::content
 			"android.content.ContentProviderOperation",
 			"newUpdate",
 			"(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ContentProviderOperation::apply(android::content::ContentProvider arg0, jarray arg1, jint arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"apply",
 			"(Landroid/content/ContentProvider;[Landroid/content/ContentProviderResult;I)Landroid/content/ContentProviderResult;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
 	}
 	jint ContentProviderOperation::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	QAndroidJniObject ContentProviderOperation::getUri()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getUri",
 			"()Landroid/net/Uri;"
 		);
 	}
 	jboolean ContentProviderOperation::isAssertQuery()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isAssertQuery",
 			"()Z"
 		);
 	}
 	jboolean ContentProviderOperation::isDelete()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isDelete",
 			"()Z"
 		);
 	}
 	jboolean ContentProviderOperation::isInsert()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isInsert",
 			"()Z"
 		);
 	}
 	jboolean ContentProviderOperation::isReadOperation()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isReadOperation",
 			"()Z"
 		);
 	}
 	jboolean ContentProviderOperation::isUpdate()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isUpdate",
 			"()Z"
 		);
 	}
 	jboolean ContentProviderOperation::isWriteOperation()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isWriteOperation",
 			"()Z"
 		);
 	}
 	jboolean ContentProviderOperation::isYieldAllowed()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isYieldAllowed",
 			"()Z"
 		);
 	}
 	jarray ContentProviderOperation::resolveSelectionArgsBackReferences(jarray arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"resolveSelectionArgsBackReferences",
 			"([Landroid/content/ContentProviderResult;I)[Ljava/lang/String;",
 			arg0,
@@ -142,7 +144,7 @@ namespace android::content
 	}
 	QAndroidJniObject ContentProviderOperation::resolveValueBackReferences(jarray arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"resolveValueBackReferences",
 			"([Landroid/content/ContentProviderResult;I)Landroid/content/ContentValues;",
 			arg0,
@@ -151,17 +153,17 @@ namespace android::content
 	}
 	jstring ContentProviderOperation::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void ContentProviderOperation::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

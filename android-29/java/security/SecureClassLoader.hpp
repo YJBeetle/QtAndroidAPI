@@ -31,9 +31,11 @@ namespace java::security
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SecureClassLoader(const char *className, const char *sig, Ts...agv) : java::lang::ClassLoader(className, sig, std::forward<Ts>(agv)...) {}
 		SecureClassLoader(QAndroidJniObject obj);
+		
 		// Constructors
-		SecureClassLoader() = default;
 		
 		// Methods
 	};

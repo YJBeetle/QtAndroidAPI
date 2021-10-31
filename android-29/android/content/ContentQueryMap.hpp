@@ -19,10 +19,12 @@ namespace android::content
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ContentQueryMap(const char *className, const char *sig, Ts...agv) : java::util::Observable(className, sig, std::forward<Ts>(agv)...) {}
 		ContentQueryMap(QAndroidJniObject obj);
+		
 		// Constructors
 		ContentQueryMap(__JniBaseClass arg0, jstring arg1, jboolean arg2, android::os::Handler arg3);
-		ContentQueryMap() = default;
 		
 		// Methods
 		void close();

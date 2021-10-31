@@ -22,9 +22,11 @@ namespace android::icu::text
 		static QAndroidJniObject NO();
 		static QAndroidJniObject YES();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Normalizer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Normalizer(QAndroidJniObject obj);
+		
 		// Constructors
-		Normalizer() = default;
 		
 		// Methods
 		static jint compare(jcharArray arg0, jcharArray arg1, jint arg2);

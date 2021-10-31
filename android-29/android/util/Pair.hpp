@@ -12,10 +12,12 @@ namespace android::util
 		jobject first();
 		jobject second();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Pair(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Pair(QAndroidJniObject obj);
+		
 		// Constructors
 		Pair(jobject arg0, jobject arg1);
-		Pair() = default;
 		
 		// Methods
 		static QAndroidJniObject create(jobject arg0, jobject arg1);

@@ -4,15 +4,15 @@ namespace android::view::inspector
 {
 	// Fields
 	
-	InspectionCompanion_UninitializedPropertyMapException::InspectionCompanion_UninitializedPropertyMapException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	InspectionCompanion_UninitializedPropertyMapException::InspectionCompanion_UninitializedPropertyMapException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	
 	// Constructors
 	InspectionCompanion_UninitializedPropertyMapException::InspectionCompanion_UninitializedPropertyMapException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::RuntimeException(
 			"android.view.inspector.InspectionCompanion$UninitializedPropertyMapException",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::view::inspector

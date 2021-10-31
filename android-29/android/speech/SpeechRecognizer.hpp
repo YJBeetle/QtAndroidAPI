@@ -33,9 +33,11 @@ namespace android::speech
 		static jint ERROR_SPEECH_TIMEOUT();
 		static jstring RESULTS_RECOGNITION();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SpeechRecognizer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SpeechRecognizer(QAndroidJniObject obj);
+		
 		// Constructors
-		SpeechRecognizer() = default;
 		
 		// Methods
 		static QAndroidJniObject createSpeechRecognizer(android::content::Context arg0);

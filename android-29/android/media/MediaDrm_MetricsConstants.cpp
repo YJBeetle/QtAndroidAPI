@@ -284,7 +284,9 @@ namespace android::media
 		).object<jstring>();
 	}
 	
-	MediaDrm_MetricsConstants::MediaDrm_MetricsConstants(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaDrm_MetricsConstants::MediaDrm_MetricsConstants(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

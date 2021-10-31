@@ -19,10 +19,12 @@ namespace android::app
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit VoiceInteractor_CompleteVoiceRequest(const char *className, const char *sig, Ts...agv) : android::app::VoiceInteractor_Request(className, sig, std::forward<Ts>(agv)...) {}
 		VoiceInteractor_CompleteVoiceRequest(QAndroidJniObject obj);
+		
 		// Constructors
 		VoiceInteractor_CompleteVoiceRequest(android::app::VoiceInteractor_Prompt arg0, android::os::Bundle arg1);
-		VoiceInteractor_CompleteVoiceRequest() = default;
 		
 		// Methods
 		void onCompleteResult(android::os::Bundle arg0);

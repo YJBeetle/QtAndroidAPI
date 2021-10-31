@@ -18,10 +18,12 @@ namespace android::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit JsonWriter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		JsonWriter(QAndroidJniObject obj);
+		
 		// Constructors
 		JsonWriter(java::io::Writer arg0);
-		JsonWriter() = default;
 		
 		// Methods
 		QAndroidJniObject beginArray();

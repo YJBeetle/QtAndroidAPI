@@ -6,36 +6,32 @@ namespace java::util
 {
 	// Fields
 	
-	ArrayDeque::ArrayDeque(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ArrayDeque::ArrayDeque(QAndroidJniObject obj) : java::util::AbstractCollection(obj) {}
+	
 	// Constructors
 	ArrayDeque::ArrayDeque()
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::AbstractCollection(
 			"java.util.ArrayDeque",
 			"()V"
-		);
-	}
+		) {}
 	ArrayDeque::ArrayDeque(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::AbstractCollection(
 			"java.util.ArrayDeque",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	ArrayDeque::ArrayDeque(__JniBaseClass arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::AbstractCollection(
 			"java.util.ArrayDeque",
 			"(Ljava/util/Collection;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jboolean ArrayDeque::add(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"add",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -43,15 +39,15 @@ namespace java::util
 	}
 	jboolean ArrayDeque::addAll(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"addAll",
 			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ArrayDeque::addFirst(jobject arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addFirst",
 			"(Ljava/lang/Object;)V",
 			arg0
@@ -59,7 +55,7 @@ namespace java::util
 	}
 	void ArrayDeque::addLast(jobject arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addLast",
 			"(Ljava/lang/Object;)V",
 			arg0
@@ -67,21 +63,21 @@ namespace java::util
 	}
 	void ArrayDeque::clear()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
 	QAndroidJniObject ArrayDeque::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Ljava/util/ArrayDeque;"
 		);
 	}
 	jboolean ArrayDeque::contains(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"contains",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -89,57 +85,57 @@ namespace java::util
 	}
 	QAndroidJniObject ArrayDeque::descendingIterator()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"descendingIterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
 	jobject ArrayDeque::element()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"element",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	void ArrayDeque::forEach(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"forEach",
 			"(Ljava/util/function/Consumer;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jobject ArrayDeque::getFirst()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFirst",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobject ArrayDeque::getLast()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLast",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jboolean ArrayDeque::isEmpty()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
 	QAndroidJniObject ArrayDeque::iterator()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
 	jboolean ArrayDeque::offer(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"offer",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -147,7 +143,7 @@ namespace java::util
 	}
 	jboolean ArrayDeque::offerFirst(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"offerFirst",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -155,7 +151,7 @@ namespace java::util
 	}
 	jboolean ArrayDeque::offerLast(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"offerLast",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -163,56 +159,56 @@ namespace java::util
 	}
 	jobject ArrayDeque::peek()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"peek",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobject ArrayDeque::peekFirst()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"peekFirst",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobject ArrayDeque::peekLast()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"peekLast",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobject ArrayDeque::poll()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"poll",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobject ArrayDeque::pollFirst()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"pollFirst",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobject ArrayDeque::pollLast()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"pollLast",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobject ArrayDeque::pop()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"pop",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	void ArrayDeque::push(jobject arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"push",
 			"(Ljava/lang/Object;)V",
 			arg0
@@ -220,7 +216,7 @@ namespace java::util
 	}
 	jboolean ArrayDeque::remove(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"remove",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -228,29 +224,29 @@ namespace java::util
 	}
 	jobject ArrayDeque::remove()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"remove",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jboolean ArrayDeque::removeAll(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"removeAll",
 			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jobject ArrayDeque::removeFirst()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"removeFirst",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jboolean ArrayDeque::removeFirstOccurrence(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"removeFirstOccurrence",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -258,22 +254,22 @@ namespace java::util
 	}
 	jboolean ArrayDeque::removeIf(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"removeIf",
 			"(Ljava/util/function/Predicate;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jobject ArrayDeque::removeLast()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"removeLast",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jboolean ArrayDeque::removeLastOccurrence(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"removeLastOccurrence",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -281,36 +277,36 @@ namespace java::util
 	}
 	jboolean ArrayDeque::retainAll(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"retainAll",
 			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint ArrayDeque::size()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
 	QAndroidJniObject ArrayDeque::spliterator()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"spliterator",
 			"()Ljava/util/Spliterator;"
 		);
 	}
 	jobjectArray ArrayDeque::toArray()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toArray",
 			"()[Ljava/lang/Object;"
 		).object<jobjectArray>();
 	}
 	jobjectArray ArrayDeque::toArray(jobjectArray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toArray",
 			"([Ljava/lang/Object;)[Ljava/lang/Object;",
 			arg0

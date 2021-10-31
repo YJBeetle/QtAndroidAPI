@@ -22,7 +22,10 @@ namespace android::app
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PictureInPictureParams_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PictureInPictureParams_Builder(QAndroidJniObject obj);
+		
 		// Constructors
 		PictureInPictureParams_Builder();
 		

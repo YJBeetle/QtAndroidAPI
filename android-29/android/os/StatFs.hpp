@@ -10,10 +10,12 @@ namespace android::os
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit StatFs(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		StatFs(QAndroidJniObject obj);
+		
 		// Constructors
 		StatFs(jstring arg0);
-		StatFs() = default;
 		
 		// Methods
 		jint getAvailableBlocks();

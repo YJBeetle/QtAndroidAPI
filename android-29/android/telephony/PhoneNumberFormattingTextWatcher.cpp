@@ -4,36 +4,34 @@ namespace android::telephony
 {
 	// Fields
 	
-	PhoneNumberFormattingTextWatcher::PhoneNumberFormattingTextWatcher(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PhoneNumberFormattingTextWatcher::PhoneNumberFormattingTextWatcher(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	PhoneNumberFormattingTextWatcher::PhoneNumberFormattingTextWatcher()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.telephony.PhoneNumberFormattingTextWatcher",
 			"()V"
-		);
-	}
+		) {}
 	PhoneNumberFormattingTextWatcher::PhoneNumberFormattingTextWatcher(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.telephony.PhoneNumberFormattingTextWatcher",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	void PhoneNumberFormattingTextWatcher::afterTextChanged(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"afterTextChanged",
 			"(Landroid/text/Editable;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void PhoneNumberFormattingTextWatcher::beforeTextChanged(jstring arg0, jint arg1, jint arg2, jint arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"beforeTextChanged",
 			"(Ljava/lang/CharSequence;III)V",
 			arg0,
@@ -44,7 +42,7 @@ namespace android::telephony
 	}
 	void PhoneNumberFormattingTextWatcher::onTextChanged(jstring arg0, jint arg1, jint arg2, jint arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onTextChanged",
 			"(Ljava/lang/CharSequence;III)V",
 			arg0,

@@ -36,7 +36,9 @@ namespace android::graphics
 		);
 	}
 	
-	BlurMaskFilter_Blur::BlurMaskFilter_Blur(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BlurMaskFilter_Blur::BlurMaskFilter_Blur(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

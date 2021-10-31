@@ -18,7 +18,10 @@ namespace java::util::jar
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Attributes(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Attributes(QAndroidJniObject obj);
+		
 		// Constructors
 		Attributes();
 		Attributes(jint arg0);

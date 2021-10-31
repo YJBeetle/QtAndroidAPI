@@ -29,10 +29,12 @@ namespace android::speech::tts
 		static jint QUALITY_VERY_HIGH();
 		static jint QUALITY_VERY_LOW();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Voice(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Voice(QAndroidJniObject obj);
+		
 		// Constructors
 		Voice(jstring arg0, java::util::Locale arg1, jint arg2, jint arg3, jboolean arg4, __JniBaseClass arg5);
-		Voice() = default;
 		
 		// Methods
 		jint describeContents();

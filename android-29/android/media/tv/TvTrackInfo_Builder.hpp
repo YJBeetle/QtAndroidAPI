@@ -18,10 +18,12 @@ namespace android::media::tv
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TvTrackInfo_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		TvTrackInfo_Builder(QAndroidJniObject obj);
+		
 		// Constructors
 		TvTrackInfo_Builder(jint arg0, jstring arg1);
-		TvTrackInfo_Builder() = default;
 		
 		// Methods
 		QAndroidJniObject build();

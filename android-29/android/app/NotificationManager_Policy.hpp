@@ -39,11 +39,13 @@ namespace android::app
 		jint priorityMessageSenders();
 		jint suppressedVisualEffects();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit NotificationManager_Policy(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		NotificationManager_Policy(QAndroidJniObject obj);
+		
 		// Constructors
 		NotificationManager_Policy(jint arg0, jint arg1, jint arg2);
 		NotificationManager_Policy(jint arg0, jint arg1, jint arg2, jint arg3);
-		NotificationManager_Policy() = default;
 		
 		// Methods
 		static jstring priorityCategoriesToString(jint arg0);

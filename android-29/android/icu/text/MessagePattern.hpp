@@ -25,7 +25,10 @@ namespace android::icu::text
 		static jint ARG_NAME_NOT_VALID();
 		static jdouble NO_NUMERIC_VALUE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MessagePattern(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MessagePattern(QAndroidJniObject obj);
+		
 		// Constructors
 		MessagePattern();
 		MessagePattern(android::icu::text::MessagePattern_ApostropheMode arg0);

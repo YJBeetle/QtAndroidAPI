@@ -27,11 +27,13 @@ namespace android::app
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit WallpaperColors(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		WallpaperColors(QAndroidJniObject obj);
+		
 		// Constructors
 		WallpaperColors(android::os::Parcel arg0);
 		WallpaperColors(android::graphics::Color arg0, android::graphics::Color arg1, android::graphics::Color arg2);
-		WallpaperColors() = default;
 		
 		// Methods
 		static QAndroidJniObject fromBitmap(android::graphics::Bitmap arg0);

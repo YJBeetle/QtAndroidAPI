@@ -353,7 +353,10 @@ namespace android::view
 		static jint META_SHIFT_RIGHT_ON();
 		static jint META_SYM_ON();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit KeyEvent(const char *className, const char *sig, Ts...agv) : android::view::InputEvent(className, sig, std::forward<Ts>(agv)...) {}
 		KeyEvent(QAndroidJniObject obj);
+		
 		// Constructors
 		KeyEvent(android::view::KeyEvent &arg0);
 		KeyEvent(jint arg0, jint arg1);
@@ -364,7 +367,6 @@ namespace android::view
 		KeyEvent(jlong arg0, jlong arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7);
 		KeyEvent(jlong arg0, jlong arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8);
 		KeyEvent(jlong arg0, jlong arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9);
-		KeyEvent() = default;
 		
 		// Methods
 		static QAndroidJniObject changeAction(android::view::KeyEvent arg0, jint arg1);

@@ -42,37 +42,37 @@ namespace android::animation
 		);
 	}
 	
-	LayoutTransition::LayoutTransition(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	LayoutTransition::LayoutTransition(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	LayoutTransition::LayoutTransition()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.animation.LayoutTransition",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void LayoutTransition::addChild(android::view::ViewGroup arg0, android::view::View arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addChild",
 			"(Landroid/view/ViewGroup;Landroid/view/View;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void LayoutTransition::addTransitionListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addTransitionListener",
 			"(Landroid/animation/LayoutTransition$TransitionListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void LayoutTransition::disableTransitionType(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"disableTransitionType",
 			"(I)V",
 			arg0
@@ -80,7 +80,7 @@ namespace android::animation
 	}
 	void LayoutTransition::enableTransitionType(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"enableTransitionType",
 			"(I)V",
 			arg0
@@ -88,7 +88,7 @@ namespace android::animation
 	}
 	QAndroidJniObject LayoutTransition::getAnimator(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAnimator",
 			"(I)Landroid/animation/Animator;",
 			arg0
@@ -96,7 +96,7 @@ namespace android::animation
 	}
 	jlong LayoutTransition::getDuration(jint arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getDuration",
 			"(I)J",
 			arg0
@@ -104,7 +104,7 @@ namespace android::animation
 	}
 	QAndroidJniObject LayoutTransition::getInterpolator(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getInterpolator",
 			"(I)Landroid/animation/TimeInterpolator;",
 			arg0
@@ -112,7 +112,7 @@ namespace android::animation
 	}
 	jlong LayoutTransition::getStagger(jint arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getStagger",
 			"(I)J",
 			arg0
@@ -120,7 +120,7 @@ namespace android::animation
 	}
 	jlong LayoutTransition::getStartDelay(jint arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getStartDelay",
 			"(I)J",
 			arg0
@@ -128,47 +128,47 @@ namespace android::animation
 	}
 	QAndroidJniObject LayoutTransition::getTransitionListeners()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTransitionListeners",
 			"()Ljava/util/List;"
 		);
 	}
 	void LayoutTransition::hideChild(android::view::ViewGroup arg0, android::view::View arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"hideChild",
 			"(Landroid/view/ViewGroup;Landroid/view/View;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void LayoutTransition::hideChild(android::view::ViewGroup arg0, android::view::View arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"hideChild",
 			"(Landroid/view/ViewGroup;Landroid/view/View;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
 	jboolean LayoutTransition::isChangingLayout()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isChangingLayout",
 			"()Z"
 		);
 	}
 	jboolean LayoutTransition::isRunning()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isRunning",
 			"()Z"
 		);
 	}
 	jboolean LayoutTransition::isTransitionTypeEnabled(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isTransitionTypeEnabled",
 			"(I)Z",
 			arg0
@@ -176,24 +176,24 @@ namespace android::animation
 	}
 	void LayoutTransition::removeChild(android::view::ViewGroup arg0, android::view::View arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeChild",
 			"(Landroid/view/ViewGroup;Landroid/view/View;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void LayoutTransition::removeTransitionListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeTransitionListener",
 			"(Landroid/animation/LayoutTransition$TransitionListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void LayoutTransition::setAnimateParentHierarchy(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAnimateParentHierarchy",
 			"(Z)V",
 			arg0
@@ -201,16 +201,16 @@ namespace android::animation
 	}
 	void LayoutTransition::setAnimator(jint arg0, android::animation::Animator arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAnimator",
 			"(ILandroid/animation/Animator;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void LayoutTransition::setDuration(jlong arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDuration",
 			"(J)V",
 			arg0
@@ -218,7 +218,7 @@ namespace android::animation
 	}
 	void LayoutTransition::setDuration(jint arg0, jlong arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDuration",
 			"(IJ)V",
 			arg0,
@@ -227,16 +227,16 @@ namespace android::animation
 	}
 	void LayoutTransition::setInterpolator(jint arg0, __JniBaseClass arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setInterpolator",
 			"(ILandroid/animation/TimeInterpolator;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void LayoutTransition::setStagger(jint arg0, jlong arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setStagger",
 			"(IJ)V",
 			arg0,
@@ -245,7 +245,7 @@ namespace android::animation
 	}
 	void LayoutTransition::setStartDelay(jint arg0, jlong arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setStartDelay",
 			"(IJ)V",
 			arg0,
@@ -254,20 +254,20 @@ namespace android::animation
 	}
 	void LayoutTransition::showChild(android::view::ViewGroup arg0, android::view::View arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"showChild",
 			"(Landroid/view/ViewGroup;Landroid/view/View;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void LayoutTransition::showChild(android::view::ViewGroup arg0, android::view::View arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"showChild",
 			"(Landroid/view/ViewGroup;Landroid/view/View;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}

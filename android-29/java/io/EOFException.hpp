@@ -12,7 +12,10 @@ namespace java::io
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit EOFException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
 		EOFException(QAndroidJniObject obj);
+		
 		// Constructors
 		EOFException();
 		EOFException(jstring arg0);

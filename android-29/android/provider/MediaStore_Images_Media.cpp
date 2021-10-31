@@ -39,15 +39,15 @@ namespace android::provider
 		);
 	}
 	
-	MediaStore_Images_Media::MediaStore_Images_Media(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaStore_Images_Media::MediaStore_Images_Media(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MediaStore_Images_Media::MediaStore_Images_Media()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.provider.MediaStore$Images$Media",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject MediaStore_Images_Media::getBitmap(android::content::ContentResolver arg0, android::net::Uri arg1)
@@ -56,8 +56,8 @@ namespace android::provider
 			"android.provider.MediaStore$Images$Media",
 			"getBitmap",
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;)Landroid/graphics/Bitmap;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject MediaStore_Images_Media::getContentUri(jstring arg0)
@@ -75,8 +75,8 @@ namespace android::provider
 			"android.provider.MediaStore$Images$Media",
 			"insertImage",
 			"(Landroid/content/ContentResolver;Landroid/graphics/Bitmap;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3
 		).object<jstring>();
@@ -87,7 +87,7 @@ namespace android::provider
 			"android.provider.MediaStore$Images$Media",
 			"insertImage",
 			"(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3
@@ -99,8 +99,8 @@ namespace android::provider
 			"android.provider.MediaStore$Images$Media",
 			"query",
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;[Ljava/lang/String;)Landroid/database/Cursor;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
@@ -110,8 +110,8 @@ namespace android::provider
 			"android.provider.MediaStore$Images$Media",
 			"query",
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3,
 			arg4
@@ -123,8 +123,8 @@ namespace android::provider
 			"android.provider.MediaStore$Images$Media",
 			"query",
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3,
 			arg4,

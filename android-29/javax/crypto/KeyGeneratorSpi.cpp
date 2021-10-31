@@ -5,15 +5,15 @@ namespace javax::crypto
 {
 	// Fields
 	
-	KeyGeneratorSpi::KeyGeneratorSpi(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	KeyGeneratorSpi::KeyGeneratorSpi(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	KeyGeneratorSpi::KeyGeneratorSpi()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"javax.crypto.KeyGeneratorSpi",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace javax::crypto

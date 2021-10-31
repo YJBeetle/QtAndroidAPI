@@ -15,17 +15,17 @@ namespace android::content::res
 		);
 	}
 	
-	ColorStateList::ColorStateList(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ColorStateList::ColorStateList(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ColorStateList::ColorStateList(jarray arg0, jintArray arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.content.res.ColorStateList",
 			"([[I[I)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject ColorStateList::createFromXml(android::content::res::Resources arg0, __JniBaseClass arg1)
@@ -34,8 +34,8 @@ namespace android::content::res
 			"android.content.res.ColorStateList",
 			"createFromXml",
 			"(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;)Landroid/content/res/ColorStateList;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject ColorStateList::createFromXml(android::content::res::Resources arg0, __JniBaseClass arg1, android::content::res::Resources_Theme arg2)
@@ -44,9 +44,9 @@ namespace android::content::res
 			"android.content.res.ColorStateList",
 			"createFromXml",
 			"(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/content/res/Resources$Theme;)Landroid/content/res/ColorStateList;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject ColorStateList::valueOf(jint arg0)
@@ -60,21 +60,21 @@ namespace android::content::res
 	}
 	jint ColorStateList::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jint ColorStateList::getChangingConfigurations()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getChangingConfigurations",
 			"()I"
 		);
 	}
 	jint ColorStateList::getColorForState(jintArray arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getColorForState",
 			"([II)I",
 			arg0,
@@ -83,35 +83,35 @@ namespace android::content::res
 	}
 	jint ColorStateList::getDefaultColor()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDefaultColor",
 			"()I"
 		);
 	}
 	jboolean ColorStateList::isOpaque()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isOpaque",
 			"()Z"
 		);
 	}
 	jboolean ColorStateList::isStateful()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isStateful",
 			"()Z"
 		);
 	}
 	jstring ColorStateList::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject ColorStateList::withAlpha(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withAlpha",
 			"(I)Landroid/content/res/ColorStateList;",
 			arg0
@@ -119,10 +119,10 @@ namespace android::content::res
 	}
 	void ColorStateList::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

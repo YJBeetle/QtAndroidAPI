@@ -35,7 +35,9 @@ namespace java::lang
 		);
 	}
 	
-	System::System(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	System::System(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -110,7 +112,7 @@ namespace java::lang
 			"getLogger",
 			"(Ljava/lang/String;Ljava/util/ResourceBundle;)Ljava/lang/System$Logger;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject System::getProperties()
@@ -239,7 +241,7 @@ namespace java::lang
 			"java.lang.System",
 			"setErr",
 			"(Ljava/io/PrintStream;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void System::setIn(java::io::InputStream arg0)
@@ -248,7 +250,7 @@ namespace java::lang
 			"java.lang.System",
 			"setIn",
 			"(Ljava/io/InputStream;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void System::setOut(java::io::PrintStream arg0)
@@ -257,7 +259,7 @@ namespace java::lang
 			"java.lang.System",
 			"setOut",
 			"(Ljava/io/PrintStream;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void System::setProperties(java::util::Properties arg0)
@@ -266,7 +268,7 @@ namespace java::lang
 			"java.lang.System",
 			"setProperties",
 			"(Ljava/util/Properties;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring System::setProperty(jstring arg0, jstring arg1)
@@ -285,7 +287,7 @@ namespace java::lang
 			"java.lang.System",
 			"setSecurityManager",
 			"(Ljava/lang/SecurityManager;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace java::lang

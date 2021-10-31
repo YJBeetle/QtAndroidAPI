@@ -8,37 +8,37 @@ namespace android::text::method
 {
 	// Fields
 	
-	CharacterPickerDialog::CharacterPickerDialog(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CharacterPickerDialog::CharacterPickerDialog(QAndroidJniObject obj) : android::app::Dialog(obj) {}
+	
 	// Constructors
 	CharacterPickerDialog::CharacterPickerDialog(android::content::Context arg0, android::view::View arg1, __JniBaseClass arg2, jstring arg3, jboolean arg4)
-	{
-		__thiz = QAndroidJniObject(
+		: android::app::Dialog(
 			"android.text.method.CharacterPickerDialog",
 			"(Landroid/content/Context;Landroid/view/View;Landroid/text/Editable;Ljava/lang/String;Z)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
 			arg3,
 			arg4
-		);
-	}
+		) {}
 	
 	// Methods
 	void CharacterPickerDialog::onClick(android::view::View arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onClick",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void CharacterPickerDialog::onItemClick(android::widget::AdapterView arg0, android::view::View arg1, jint arg2, jlong arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onItemClick",
 			"(Landroid/widget/AdapterView;Landroid/view/View;IJ)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3
 		);

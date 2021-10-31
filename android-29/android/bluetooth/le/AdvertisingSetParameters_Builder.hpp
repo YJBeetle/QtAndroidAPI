@@ -14,7 +14,10 @@ namespace android::bluetooth::le
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AdvertisingSetParameters_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AdvertisingSetParameters_Builder(QAndroidJniObject obj);
+		
 		// Constructors
 		AdvertisingSetParameters_Builder();
 		

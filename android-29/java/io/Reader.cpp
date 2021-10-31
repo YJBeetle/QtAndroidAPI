@@ -6,7 +6,9 @@ namespace java::io
 {
 	// Fields
 	
-	Reader::Reader(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Reader::Reader(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -20,14 +22,14 @@ namespace java::io
 	}
 	void Reader::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	void Reader::mark(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"mark",
 			"(I)V",
 			arg0
@@ -35,21 +37,21 @@ namespace java::io
 	}
 	jboolean Reader::markSupported()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"markSupported",
 			"()Z"
 		);
 	}
 	jint Reader::read()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"read",
 			"()I"
 		);
 	}
 	jint Reader::read(jcharArray arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"read",
 			"([C)I",
 			arg0
@@ -57,15 +59,15 @@ namespace java::io
 	}
 	jint Reader::read(java::nio::CharBuffer arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"read",
 			"(Ljava/nio/CharBuffer;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint Reader::read(jcharArray arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"read",
 			"([CII)I",
 			arg0,
@@ -75,21 +77,21 @@ namespace java::io
 	}
 	jboolean Reader::ready()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"ready",
 			"()Z"
 		);
 	}
 	void Reader::reset()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
 	jlong Reader::skip(jlong arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"skip",
 			"(J)J",
 			arg0
@@ -97,10 +99,10 @@ namespace java::io
 	}
 	jlong Reader::transferTo(java::io::Writer arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"transferTo",
 			"(Ljava/io/Writer;)J",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace java::io

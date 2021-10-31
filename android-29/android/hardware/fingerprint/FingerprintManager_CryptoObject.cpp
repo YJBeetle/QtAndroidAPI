@@ -7,51 +7,47 @@ namespace android::hardware::fingerprint
 {
 	// Fields
 	
-	FingerprintManager_CryptoObject::FingerprintManager_CryptoObject(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FingerprintManager_CryptoObject::FingerprintManager_CryptoObject(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	FingerprintManager_CryptoObject::FingerprintManager_CryptoObject(java::security::Signature arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.hardware.fingerprint.FingerprintManager$CryptoObject",
 			"(Ljava/security/Signature;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	FingerprintManager_CryptoObject::FingerprintManager_CryptoObject(javax::crypto::Cipher arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.hardware.fingerprint.FingerprintManager$CryptoObject",
 			"(Ljavax/crypto/Cipher;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	FingerprintManager_CryptoObject::FingerprintManager_CryptoObject(javax::crypto::Mac arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.hardware.fingerprint.FingerprintManager$CryptoObject",
 			"(Ljavax/crypto/Mac;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject FingerprintManager_CryptoObject::getCipher()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCipher",
 			"()Ljavax/crypto/Cipher;"
 		);
 	}
 	QAndroidJniObject FingerprintManager_CryptoObject::getMac()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMac",
 			"()Ljavax/crypto/Mac;"
 		);
 	}
 	QAndroidJniObject FingerprintManager_CryptoObject::getSignature()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSignature",
 			"()Ljava/security/Signature;"
 		);

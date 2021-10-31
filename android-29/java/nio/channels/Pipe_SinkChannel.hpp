@@ -17,9 +17,11 @@ namespace java::nio::channels
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Pipe_SinkChannel(const char *className, const char *sig, Ts...agv) : java::nio::channels::spi::AbstractSelectableChannel(className, sig, std::forward<Ts>(agv)...) {}
 		Pipe_SinkChannel(QAndroidJniObject obj);
+		
 		// Constructors
-		Pipe_SinkChannel() = default;
 		
 		// Methods
 		jint validOps();

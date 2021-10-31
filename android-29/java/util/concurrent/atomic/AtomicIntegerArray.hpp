@@ -10,11 +10,13 @@ namespace java::util::concurrent::atomic
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AtomicIntegerArray(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AtomicIntegerArray(QAndroidJniObject obj);
+		
 		// Constructors
 		AtomicIntegerArray(jintArray arg0);
 		AtomicIntegerArray(jint arg0);
-		AtomicIntegerArray() = default;
 		
 		// Methods
 		jint accumulateAndGet(jint arg0, jint arg1, __JniBaseClass arg2);

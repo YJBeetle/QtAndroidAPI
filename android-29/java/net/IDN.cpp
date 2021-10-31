@@ -19,7 +19,9 @@ namespace java::net
 		);
 	}
 	
-	IDN::IDN(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	IDN::IDN(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

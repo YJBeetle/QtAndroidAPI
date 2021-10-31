@@ -5,20 +5,20 @@ namespace android::media::browse
 {
 	// Fields
 	
-	MediaBrowser_ItemCallback::MediaBrowser_ItemCallback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaBrowser_ItemCallback::MediaBrowser_ItemCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MediaBrowser_ItemCallback::MediaBrowser_ItemCallback()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.browse.MediaBrowser$ItemCallback",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void MediaBrowser_ItemCallback::onError(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onError",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -26,10 +26,10 @@ namespace android::media::browse
 	}
 	void MediaBrowser_ItemCallback::onItemLoaded(android::media::browse::MediaBrowser_MediaItem arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onItemLoaded",
 			"(Landroid/media/browse/MediaBrowser$MediaItem;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::media::browse

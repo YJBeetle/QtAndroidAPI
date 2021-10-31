@@ -6,60 +6,58 @@ namespace android::app
 	// Fields
 	jstring ApplicationErrorReport_AnrInfo::activity()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"activity",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring ApplicationErrorReport_AnrInfo::cause()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"cause",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring ApplicationErrorReport_AnrInfo::info()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"info",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	
-	ApplicationErrorReport_AnrInfo::ApplicationErrorReport_AnrInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ApplicationErrorReport_AnrInfo::ApplicationErrorReport_AnrInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ApplicationErrorReport_AnrInfo::ApplicationErrorReport_AnrInfo()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.app.ApplicationErrorReport$AnrInfo",
 			"()V"
-		);
-	}
+		) {}
 	ApplicationErrorReport_AnrInfo::ApplicationErrorReport_AnrInfo(android::os::Parcel arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.app.ApplicationErrorReport$AnrInfo",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	void ApplicationErrorReport_AnrInfo::dump(__JniBaseClass arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"dump",
 			"(Landroid/util/Printer;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void ApplicationErrorReport_AnrInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

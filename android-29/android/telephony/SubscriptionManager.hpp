@@ -46,9 +46,11 @@ namespace android::telephony
 		static jint SUBSCRIPTION_TYPE_LOCAL_SIM();
 		static jint SUBSCRIPTION_TYPE_REMOTE_SIM();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SubscriptionManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SubscriptionManager(QAndroidJniObject obj);
+		
 		// Constructors
-		SubscriptionManager() = default;
 		
 		// Methods
 		static QAndroidJniObject from(android::content::Context arg0);

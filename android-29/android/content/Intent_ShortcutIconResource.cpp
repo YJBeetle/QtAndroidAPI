@@ -15,28 +15,28 @@ namespace android::content
 	}
 	jstring Intent_ShortcutIconResource::packageName()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"packageName",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Intent_ShortcutIconResource::resourceName()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"resourceName",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	
-	Intent_ShortcutIconResource::Intent_ShortcutIconResource(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Intent_ShortcutIconResource::Intent_ShortcutIconResource(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Intent_ShortcutIconResource::Intent_ShortcutIconResource()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.content.Intent$ShortcutIconResource",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject Intent_ShortcutIconResource::fromContext(android::content::Context arg0, jint arg1)
@@ -45,30 +45,30 @@ namespace android::content
 			"android.content.Intent$ShortcutIconResource",
 			"fromContext",
 			"(Landroid/content/Context;I)Landroid/content/Intent$ShortcutIconResource;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	jint Intent_ShortcutIconResource::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jstring Intent_ShortcutIconResource::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void Intent_ShortcutIconResource::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

@@ -5,21 +5,21 @@ namespace android::util
 	// Fields
 	jbyte MutableByte::value()
 	{
-		return __thiz.getField<jbyte>(
+		return getField<jbyte>(
 			"value"
 		);
 	}
 	
-	MutableByte::MutableByte(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MutableByte::MutableByte(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MutableByte::MutableByte(jbyte arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.util.MutableByte",
 			"(B)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::util

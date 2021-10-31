@@ -4,15 +4,15 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	FileLockInterruptionException::FileLockInterruptionException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FileLockInterruptionException::FileLockInterruptionException(QAndroidJniObject obj) : java::io::IOException(obj) {}
+	
 	// Constructors
 	FileLockInterruptionException::FileLockInterruptionException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::IOException(
 			"java.nio.channels.FileLockInterruptionException",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::nio::channels

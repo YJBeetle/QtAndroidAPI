@@ -21,29 +21,29 @@ namespace android::view::contentcapture
 		);
 	}
 	
-	ContentCaptureCondition::ContentCaptureCondition(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ContentCaptureCondition::ContentCaptureCondition(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ContentCaptureCondition::ContentCaptureCondition(android::content::LocusId arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.contentcapture.ContentCaptureCondition",
 			"(Landroid/content/LocusId;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jint ContentCaptureCondition::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean ContentCaptureCondition::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -51,38 +51,38 @@ namespace android::view::contentcapture
 	}
 	jint ContentCaptureCondition::getFlags()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getFlags",
 			"()I"
 		);
 	}
 	QAndroidJniObject ContentCaptureCondition::getLocusId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLocusId",
 			"()Landroid/content/LocusId;"
 		);
 	}
 	jint ContentCaptureCondition::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring ContentCaptureCondition::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void ContentCaptureCondition::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

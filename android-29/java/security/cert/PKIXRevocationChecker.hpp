@@ -19,9 +19,11 @@ namespace java::security::cert
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PKIXRevocationChecker(const char *className, const char *sig, Ts...agv) : java::security::cert::PKIXCertPathChecker(className, sig, std::forward<Ts>(agv)...) {}
 		PKIXRevocationChecker(QAndroidJniObject obj);
+		
 		// Constructors
-		PKIXRevocationChecker() = default;
 		
 		// Methods
 		QAndroidJniObject clone();

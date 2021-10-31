@@ -17,9 +17,11 @@ namespace android::location
 		static jint OUT_OF_SERVICE();
 		static jint TEMPORARILY_UNAVAILABLE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit LocationProvider(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		LocationProvider(QAndroidJniObject obj);
+		
 		// Constructors
-		LocationProvider() = default;
 		
 		// Methods
 		jint getAccuracy();

@@ -28,7 +28,9 @@ namespace android::icu::text
 		);
 	}
 	
-	SearchIterator_ElementComparisonType::SearchIterator_ElementComparisonType(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SearchIterator_ElementComparisonType::SearchIterator_ElementComparisonType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

@@ -22,46 +22,48 @@ namespace android::graphics::pdf
 		);
 	}
 	
-	PdfRenderer_Page::PdfRenderer_Page(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PdfRenderer_Page::PdfRenderer_Page(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void PdfRenderer_Page::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	jint PdfRenderer_Page::getHeight()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getHeight",
 			"()I"
 		);
 	}
 	jint PdfRenderer_Page::getIndex()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getIndex",
 			"()I"
 		);
 	}
 	jint PdfRenderer_Page::getWidth()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getWidth",
 			"()I"
 		);
 	}
 	void PdfRenderer_Page::render(android::graphics::Bitmap arg0, android::graphics::Rect arg1, android::graphics::Matrix arg2, jint arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"render",
 			"(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Matrix;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
 			arg3
 		);
 	}

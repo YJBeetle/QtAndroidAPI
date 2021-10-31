@@ -12,9 +12,11 @@ namespace android::hardware::camera2
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TotalCaptureResult(const char *className, const char *sig, Ts...agv) : android::hardware::camera2::CaptureResult(className, sig, std::forward<Ts>(agv)...) {}
 		TotalCaptureResult(QAndroidJniObject obj);
+		
 		// Constructors
-		TotalCaptureResult() = default;
 		
 		// Methods
 		QAndroidJniObject getPartialResults();

@@ -11,28 +11,28 @@ namespace android::media::audiofx
 		);
 	}
 	
-	LoudnessEnhancer::LoudnessEnhancer(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	LoudnessEnhancer::LoudnessEnhancer(QAndroidJniObject obj) : android::media::audiofx::AudioEffect(obj) {}
+	
 	// Constructors
 	LoudnessEnhancer::LoudnessEnhancer(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::media::audiofx::AudioEffect(
 			"android.media.audiofx.LoudnessEnhancer",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jfloat LoudnessEnhancer::getTargetGain()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getTargetGain",
 			"()F"
 		);
 	}
 	void LoudnessEnhancer::setTargetGain(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTargetGain",
 			"(I)V",
 			arg0

@@ -69,7 +69,9 @@ namespace android::net::wifi
 		).object<jstring>();
 	}
 	
-	WifiConfiguration_KeyMgmt::WifiConfiguration_KeyMgmt(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WifiConfiguration_KeyMgmt::WifiConfiguration_KeyMgmt(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

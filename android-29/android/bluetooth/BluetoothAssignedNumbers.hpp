@@ -237,9 +237,11 @@ namespace android::bluetooth
 		static jint ZOMM();
 		static jint ZSCAN_SOFTWARE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BluetoothAssignedNumbers(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		BluetoothAssignedNumbers(QAndroidJniObject obj);
+		
 		// Constructors
-		BluetoothAssignedNumbers() = default;
 		
 		// Methods
 	};

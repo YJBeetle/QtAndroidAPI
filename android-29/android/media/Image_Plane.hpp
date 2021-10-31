@@ -14,9 +14,11 @@ namespace android::media
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Image_Plane(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Image_Plane(QAndroidJniObject obj);
+		
 		// Constructors
-		Image_Plane() = default;
 		
 		// Methods
 		QAndroidJniObject getBuffer();

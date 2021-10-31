@@ -4,21 +4,21 @@ namespace java::text
 {
 	// Fields
 	
-	ParsePosition::ParsePosition(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ParsePosition::ParsePosition(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ParsePosition::ParsePosition(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.text.ParsePosition",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean ParsePosition::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -26,28 +26,28 @@ namespace java::text
 	}
 	jint ParsePosition::getErrorIndex()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getErrorIndex",
 			"()I"
 		);
 	}
 	jint ParsePosition::getIndex()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getIndex",
 			"()I"
 		);
 	}
 	jint ParsePosition::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	void ParsePosition::setErrorIndex(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setErrorIndex",
 			"(I)V",
 			arg0
@@ -55,7 +55,7 @@ namespace java::text
 	}
 	void ParsePosition::setIndex(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setIndex",
 			"(I)V",
 			arg0
@@ -63,7 +63,7 @@ namespace java::text
 	}
 	jstring ParsePosition::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

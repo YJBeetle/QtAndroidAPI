@@ -42,63 +42,63 @@ namespace android::graphics
 		);
 	}
 	
-	HardwareRenderer::HardwareRenderer(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	HardwareRenderer::HardwareRenderer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	HardwareRenderer::HardwareRenderer()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.graphics.HardwareRenderer",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void HardwareRenderer::clearContent()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clearContent",
 			"()V"
 		);
 	}
 	QAndroidJniObject HardwareRenderer::createRenderRequest()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"createRenderRequest",
 			"()Landroid/graphics/HardwareRenderer$FrameRenderRequest;"
 		);
 	}
 	void HardwareRenderer::destroy()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"destroy",
 			"()V"
 		);
 	}
 	jboolean HardwareRenderer::isOpaque()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isOpaque",
 			"()Z"
 		);
 	}
 	void HardwareRenderer::notifyFramePending()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"notifyFramePending",
 			"()V"
 		);
 	}
 	void HardwareRenderer::setContentRoot(android::graphics::RenderNode arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setContentRoot",
 			"(Landroid/graphics/RenderNode;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void HardwareRenderer::setLightSourceAlpha(jfloat arg0, jfloat arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLightSourceAlpha",
 			"(FF)V",
 			arg0,
@@ -107,7 +107,7 @@ namespace android::graphics
 	}
 	void HardwareRenderer::setLightSourceGeometry(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLightSourceGeometry",
 			"(FFFF)V",
 			arg0,
@@ -118,7 +118,7 @@ namespace android::graphics
 	}
 	void HardwareRenderer::setName(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setName",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -126,7 +126,7 @@ namespace android::graphics
 	}
 	void HardwareRenderer::setOpaque(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOpaque",
 			"(Z)V",
 			arg0
@@ -134,22 +134,22 @@ namespace android::graphics
 	}
 	void HardwareRenderer::setSurface(android::view::Surface arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSurface",
 			"(Landroid/view/Surface;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void HardwareRenderer::start()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"start",
 			"()V"
 		);
 	}
 	void HardwareRenderer::stop()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"stop",
 			"()V"
 		);

@@ -8,7 +8,9 @@ namespace java::security
 {
 	// Fields
 	
-	Security::Security(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Security::Security(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -18,7 +20,7 @@ namespace java::security
 			"java.security.Security",
 			"addProvider",
 			"(Ljava/security/Provider;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring Security::getAlgorithmProperty(jstring arg0, jstring arg1)
@@ -81,7 +83,7 @@ namespace java::security
 			"java.security.Security",
 			"getProviders",
 			"(Ljava/util/Map;)[Ljava/security/Provider;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jarray>();
 	}
 	jint Security::insertProviderAt(java::security::Provider arg0, jint arg1)
@@ -90,7 +92,7 @@ namespace java::security
 			"java.security.Security",
 			"insertProviderAt",
 			"(Ljava/security/Provider;I)I",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

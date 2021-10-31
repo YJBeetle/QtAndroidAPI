@@ -15,9 +15,11 @@ namespace android::app::backup
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BackupDataInputStream(const char *className, const char *sig, Ts...agv) : java::io::InputStream(className, sig, std::forward<Ts>(agv)...) {}
 		BackupDataInputStream(QAndroidJniObject obj);
+		
 		// Constructors
-		BackupDataInputStream() = default;
 		
 		// Methods
 		jstring getKey();

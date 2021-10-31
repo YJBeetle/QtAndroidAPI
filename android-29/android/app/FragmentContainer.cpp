@@ -5,20 +5,20 @@ namespace android::app
 {
 	// Fields
 	
-	FragmentContainer::FragmentContainer(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FragmentContainer::FragmentContainer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	FragmentContainer::FragmentContainer()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.app.FragmentContainer",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject FragmentContainer::onFindViewById(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onFindViewById",
 			"(I)Landroid/view/View;",
 			arg0
@@ -26,7 +26,7 @@ namespace android::app
 	}
 	jboolean FragmentContainer::onHasView()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onHasView",
 			"()Z"
 		);

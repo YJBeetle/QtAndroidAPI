@@ -4,20 +4,20 @@ namespace android::animation
 {
 	// Fields
 	
-	ArgbEvaluator::ArgbEvaluator(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ArgbEvaluator::ArgbEvaluator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ArgbEvaluator::ArgbEvaluator()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.animation.ArgbEvaluator",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jobject ArgbEvaluator::evaluate(jfloat arg0, jobject arg1, jobject arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"evaluate",
 			"(FLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,

@@ -7,138 +7,136 @@ namespace android::view
 {
 	// Fields
 	
-	ScaleGestureDetector::ScaleGestureDetector(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ScaleGestureDetector::ScaleGestureDetector(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ScaleGestureDetector::ScaleGestureDetector(android::content::Context arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.ScaleGestureDetector",
 			"(Landroid/content/Context;Landroid/view/ScaleGestureDetector$OnScaleGestureListener;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	ScaleGestureDetector::ScaleGestureDetector(android::content::Context arg0, __JniBaseClass arg1, android::os::Handler arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.ScaleGestureDetector",
 			"(Landroid/content/Context;Landroid/view/ScaleGestureDetector$OnScaleGestureListener;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		) {}
 	
 	// Methods
 	jfloat ScaleGestureDetector::getCurrentSpan()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getCurrentSpan",
 			"()F"
 		);
 	}
 	jfloat ScaleGestureDetector::getCurrentSpanX()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getCurrentSpanX",
 			"()F"
 		);
 	}
 	jfloat ScaleGestureDetector::getCurrentSpanY()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getCurrentSpanY",
 			"()F"
 		);
 	}
 	jlong ScaleGestureDetector::getEventTime()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getEventTime",
 			"()J"
 		);
 	}
 	jfloat ScaleGestureDetector::getFocusX()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getFocusX",
 			"()F"
 		);
 	}
 	jfloat ScaleGestureDetector::getFocusY()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getFocusY",
 			"()F"
 		);
 	}
 	jfloat ScaleGestureDetector::getPreviousSpan()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getPreviousSpan",
 			"()F"
 		);
 	}
 	jfloat ScaleGestureDetector::getPreviousSpanX()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getPreviousSpanX",
 			"()F"
 		);
 	}
 	jfloat ScaleGestureDetector::getPreviousSpanY()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getPreviousSpanY",
 			"()F"
 		);
 	}
 	jfloat ScaleGestureDetector::getScaleFactor()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getScaleFactor",
 			"()F"
 		);
 	}
 	jlong ScaleGestureDetector::getTimeDelta()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getTimeDelta",
 			"()J"
 		);
 	}
 	jboolean ScaleGestureDetector::isInProgress()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isInProgress",
 			"()Z"
 		);
 	}
 	jboolean ScaleGestureDetector::isQuickScaleEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isQuickScaleEnabled",
 			"()Z"
 		);
 	}
 	jboolean ScaleGestureDetector::isStylusScaleEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isStylusScaleEnabled",
 			"()Z"
 		);
 	}
 	jboolean ScaleGestureDetector::onTouchEvent(android::view::MotionEvent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onTouchEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ScaleGestureDetector::setQuickScaleEnabled(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setQuickScaleEnabled",
 			"(Z)V",
 			arg0
@@ -146,7 +144,7 @@ namespace android::view
 	}
 	void ScaleGestureDetector::setStylusScaleEnabled(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setStylusScaleEnabled",
 			"(Z)V",
 			arg0

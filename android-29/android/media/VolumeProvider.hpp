@@ -13,10 +13,12 @@ namespace android::media
 		static jint VOLUME_CONTROL_FIXED();
 		static jint VOLUME_CONTROL_RELATIVE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit VolumeProvider(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		VolumeProvider(QAndroidJniObject obj);
+		
 		// Constructors
 		VolumeProvider(jint arg0, jint arg1, jint arg2);
-		VolumeProvider() = default;
 		
 		// Methods
 		jint getCurrentVolume();

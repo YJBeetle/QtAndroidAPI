@@ -5,20 +5,22 @@ namespace android::service::autofill
 {
 	// Fields
 	
-	FieldClassification::FieldClassification(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FieldClassification::FieldClassification(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject FieldClassification::getMatches()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMatches",
 			"()Ljava/util/List;"
 		);
 	}
 	jstring FieldClassification::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

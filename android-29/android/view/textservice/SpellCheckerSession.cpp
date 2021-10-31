@@ -15,27 +15,29 @@ namespace android::view::textservice
 		).object<jstring>();
 	}
 	
-	SpellCheckerSession::SpellCheckerSession(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SpellCheckerSession::SpellCheckerSession(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void SpellCheckerSession::cancel()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"cancel",
 			"()V"
 		);
 	}
 	void SpellCheckerSession::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	void SpellCheckerSession::getSentenceSuggestions(jarray arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"getSentenceSuggestions",
 			"([Landroid/view/textservice/TextInfo;I)V",
 			arg0,
@@ -44,23 +46,23 @@ namespace android::view::textservice
 	}
 	QAndroidJniObject SpellCheckerSession::getSpellChecker()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSpellChecker",
 			"()Landroid/view/textservice/SpellCheckerInfo;"
 		);
 	}
 	void SpellCheckerSession::getSuggestions(android::view::textservice::TextInfo arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"getSuggestions",
 			"(Landroid/view/textservice/TextInfo;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void SpellCheckerSession::getSuggestions(jarray arg0, jint arg1, jboolean arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"getSuggestions",
 			"([Landroid/view/textservice/TextInfo;IZ)V",
 			arg0,
@@ -70,7 +72,7 @@ namespace android::view::textservice
 	}
 	jboolean SpellCheckerSession::isSessionDisconnected()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isSessionDisconnected",
 			"()Z"
 		);

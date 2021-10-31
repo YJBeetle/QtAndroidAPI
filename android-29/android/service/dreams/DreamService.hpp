@@ -63,7 +63,10 @@ namespace android::service::dreams
 		static jstring DREAM_META_DATA();
 		static jstring SERVICE_INTERFACE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DreamService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
 		DreamService(QAndroidJniObject obj);
+		
 		// Constructors
 		DreamService();
 		

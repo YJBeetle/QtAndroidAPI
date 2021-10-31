@@ -24,9 +24,11 @@ namespace android::net
 		static QAndroidJniObject CREATOR();
 		static QAndroidJniObject EMPTY();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Uri(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Uri(QAndroidJniObject obj);
+		
 		// Constructors
-		Uri() = default;
 		
 		// Methods
 		static jstring decode(jstring arg0);

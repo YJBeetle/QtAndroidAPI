@@ -15,7 +15,10 @@ namespace java::lang
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit InheritableThreadLocal(const char *className, const char *sig, Ts...agv) : java::lang::ThreadLocal(className, sig, std::forward<Ts>(agv)...) {}
 		InheritableThreadLocal(QAndroidJniObject obj);
+		
 		// Constructors
 		InheritableThreadLocal();
 		

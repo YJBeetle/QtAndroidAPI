@@ -4,13 +4,15 @@ namespace android::service::voice
 {
 	// Fields
 	
-	VoiceInteractionSession_ActivityId::VoiceInteractionSession_ActivityId(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	VoiceInteractionSession_ActivityId::VoiceInteractionSession_ActivityId(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jboolean VoiceInteractionSession_ActivityId::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -18,7 +20,7 @@ namespace android::service::voice
 	}
 	jint VoiceInteractionSession_ActivityId::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);

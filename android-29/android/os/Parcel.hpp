@@ -63,9 +63,11 @@ namespace android::os
 		// Fields
 		static QAndroidJniObject STRING_CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Parcel(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Parcel(QAndroidJniObject obj);
+		
 		// Constructors
-		Parcel() = default;
 		
 		// Methods
 		static QAndroidJniObject obtain();

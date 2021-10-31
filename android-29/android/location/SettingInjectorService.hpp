@@ -25,10 +25,12 @@ namespace android::location
 		static jstring ATTRIBUTES_NAME();
 		static jstring META_DATA_NAME();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SettingInjectorService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
 		SettingInjectorService(QAndroidJniObject obj);
+		
 		// Constructors
 		SettingInjectorService(jstring arg0);
-		SettingInjectorService() = default;
 		
 		// Methods
 		static void refreshSettings(android::content::Context arg0);

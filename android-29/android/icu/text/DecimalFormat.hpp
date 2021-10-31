@@ -73,7 +73,10 @@ namespace android::icu::text
 		static jint PAD_BEFORE_PREFIX();
 		static jint PAD_BEFORE_SUFFIX();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DecimalFormat(const char *className, const char *sig, Ts...agv) : android::icu::text::NumberFormat(className, sig, std::forward<Ts>(agv)...) {}
 		DecimalFormat(QAndroidJniObject obj);
+		
 		// Constructors
 		DecimalFormat();
 		DecimalFormat(jstring arg0);

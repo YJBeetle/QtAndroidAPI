@@ -21,10 +21,12 @@ namespace android::telephony
 		static jint SCAN_TYPE_ONE_SHOT();
 		static jint SCAN_TYPE_PERIODIC();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit NetworkScanRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		NetworkScanRequest(QAndroidJniObject obj);
+		
 		// Constructors
 		NetworkScanRequest(jint arg0, jarray arg1, jint arg2, jint arg3, jboolean arg4, jint arg5, java::util::ArrayList arg6);
-		NetworkScanRequest() = default;
 		
 		// Methods
 		jint describeContents();

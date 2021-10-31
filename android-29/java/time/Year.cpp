@@ -27,7 +27,9 @@ namespace java::time
 		);
 	}
 	
-	Year::Year(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Year::Year(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -37,7 +39,7 @@ namespace java::time
 			"java.time.Year",
 			"from",
 			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/Year;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean Year::isLeap(jlong arg0)
@@ -63,7 +65,7 @@ namespace java::time
 			"java.time.Year",
 			"now",
 			"(Ljava/time/Clock;)Ljava/time/Year;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Year::now(java::time::ZoneId arg0)
@@ -72,7 +74,7 @@ namespace java::time
 			"java.time.Year",
 			"now",
 			"(Ljava/time/ZoneId;)Ljava/time/Year;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Year::of(jint arg0)
@@ -100,20 +102,20 @@ namespace java::time
 			"parse",
 			"(Ljava/lang/CharSequence;Ljava/time/format/DateTimeFormatter;)Ljava/time/Year;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject Year::adjustInto(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"adjustInto",
 			"(Ljava/time/temporal/Temporal;)Ljava/time/temporal/Temporal;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Year::atDay(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"atDay",
 			"(I)Ljava/time/LocalDate;",
 			arg0
@@ -121,7 +123,7 @@ namespace java::time
 	}
 	QAndroidJniObject Year::atMonth(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"atMonth",
 			"(I)Ljava/time/YearMonth;",
 			arg0
@@ -129,23 +131,23 @@ namespace java::time
 	}
 	QAndroidJniObject Year::atMonth(java::time::Month arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"atMonth",
 			"(Ljava/time/Month;)Ljava/time/YearMonth;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Year::atMonthDay(java::time::MonthDay arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"atMonthDay",
 			"(Ljava/time/MonthDay;)Ljava/time/LocalDate;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint Year::compareTo(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -153,15 +155,15 @@ namespace java::time
 	}
 	jint Year::compareTo(java::time::Year arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/time/Year;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean Year::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -169,108 +171,108 @@ namespace java::time
 	}
 	jstring Year::format(java::time::format::DateTimeFormatter arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"format",
 			"(Ljava/time/format/DateTimeFormatter;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jint Year::get(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"get",
 			"(Ljava/time/temporal/TemporalField;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jlong Year::getLong(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getLong",
 			"(Ljava/time/temporal/TemporalField;)J",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint Year::getValue()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getValue",
 			"()I"
 		);
 	}
 	jint Year::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean Year::isAfter(java::time::Year arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isAfter",
 			"(Ljava/time/Year;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean Year::isBefore(java::time::Year arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isBefore",
 			"(Ljava/time/Year;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean Year::isLeap()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isLeap",
 			"()Z"
 		);
 	}
 	jboolean Year::isSupported(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isSupported",
 			"(Ljava/time/temporal/TemporalField;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean Year::isValidMonthDay(java::time::MonthDay arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isValidMonthDay",
 			"(Ljava/time/MonthDay;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint Year::length()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"length",
 			"()I"
 		);
 	}
 	QAndroidJniObject Year::minus(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"minus",
 			"(Ljava/time/temporal/TemporalAmount;)Ljava/time/Year;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Year::minus(jlong arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"minus",
 			"(JLjava/time/temporal/TemporalUnit;)Ljava/time/Year;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject Year::minusYears(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"minusYears",
 			"(J)Ljava/time/Year;",
 			arg0
@@ -278,24 +280,24 @@ namespace java::time
 	}
 	QAndroidJniObject Year::plus(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"plus",
 			"(Ljava/time/temporal/TemporalAmount;)Ljava/time/Year;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Year::plus(jlong arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"plus",
 			"(JLjava/time/temporal/TemporalUnit;)Ljava/time/Year;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject Year::plusYears(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"plusYears",
 			"(J)Ljava/time/Year;",
 			arg0
@@ -303,50 +305,50 @@ namespace java::time
 	}
 	jobject Year::query(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"query",
 			"(Ljava/time/temporal/TemporalQuery;)Ljava/lang/Object;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jobject>();
 	}
 	QAndroidJniObject Year::range(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"range",
 			"(Ljava/time/temporal/TemporalField;)Ljava/time/temporal/ValueRange;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring Year::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jlong Year::until(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"until",
 			"(Ljava/time/temporal/Temporal;Ljava/time/temporal/TemporalUnit;)J",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject Year::with(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"with",
 			"(Ljava/time/temporal/TemporalAdjuster;)Ljava/time/Year;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Year::with(__JniBaseClass arg0, jlong arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"with",
 			"(Ljava/time/temporal/TemporalField;J)Ljava/time/Year;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

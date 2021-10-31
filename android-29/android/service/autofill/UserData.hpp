@@ -19,9 +19,11 @@ namespace android::service::autofill
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit UserData(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		UserData(QAndroidJniObject obj);
+		
 		// Constructors
-		UserData() = default;
 		
 		// Methods
 		static jint getMaxCategoryCount();

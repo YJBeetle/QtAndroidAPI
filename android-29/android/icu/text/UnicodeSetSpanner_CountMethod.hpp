@@ -13,9 +13,11 @@ namespace android::icu::text
 		static QAndroidJniObject MIN_ELEMENTS();
 		static QAndroidJniObject WHOLE_SPAN();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit UnicodeSetSpanner_CountMethod(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		UnicodeSetSpanner_CountMethod(QAndroidJniObject obj);
+		
 		// Constructors
-		UnicodeSetSpanner_CountMethod() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

@@ -15,9 +15,11 @@ namespace android::bluetooth
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BluetoothClass(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		BluetoothClass(QAndroidJniObject obj);
+		
 		// Constructors
-		BluetoothClass() = default;
 		
 		// Methods
 		jint describeContents();

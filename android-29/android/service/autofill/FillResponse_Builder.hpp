@@ -38,7 +38,10 @@ namespace android::service::autofill
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit FillResponse_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		FillResponse_Builder(QAndroidJniObject obj);
+		
 		// Constructors
 		FillResponse_Builder();
 		

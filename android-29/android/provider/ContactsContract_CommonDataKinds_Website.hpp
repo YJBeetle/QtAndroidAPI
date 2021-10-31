@@ -22,9 +22,11 @@ namespace android::provider
 		static jint TYPE_WORK();
 		static jstring URL();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ContactsContract_CommonDataKinds_Website(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ContactsContract_CommonDataKinds_Website(QAndroidJniObject obj);
+		
 		// Constructors
-		ContactsContract_CommonDataKinds_Website() = default;
 		
 		// Methods
 	};

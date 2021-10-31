@@ -13,23 +13,21 @@ namespace android::text::method
 		).object<jcharArray>();
 	}
 	
-	TimeKeyListener::TimeKeyListener(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TimeKeyListener::TimeKeyListener(QAndroidJniObject obj) : android::text::method::NumberKeyListener(obj) {}
+	
 	// Constructors
 	TimeKeyListener::TimeKeyListener()
-	{
-		__thiz = QAndroidJniObject(
+		: android::text::method::NumberKeyListener(
 			"android.text.method.TimeKeyListener",
 			"()V"
-		);
-	}
+		) {}
 	TimeKeyListener::TimeKeyListener(java::util::Locale arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::text::method::NumberKeyListener(
 			"android.text.method.TimeKeyListener",
 			"(Ljava/util/Locale;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject TimeKeyListener::getInstance()
@@ -46,12 +44,12 @@ namespace android::text::method
 			"android.text.method.TimeKeyListener",
 			"getInstance",
 			"(Ljava/util/Locale;)Landroid/text/method/TimeKeyListener;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint TimeKeyListener::getInputType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getInputType",
 			"()I"
 		);

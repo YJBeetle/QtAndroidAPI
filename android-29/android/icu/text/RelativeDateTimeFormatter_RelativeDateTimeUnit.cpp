@@ -124,7 +124,9 @@ namespace android::icu::text
 		);
 	}
 	
-	RelativeDateTimeFormatter_RelativeDateTimeUnit::RelativeDateTimeFormatter_RelativeDateTimeUnit(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	RelativeDateTimeFormatter_RelativeDateTimeUnit::RelativeDateTimeFormatter_RelativeDateTimeUnit(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

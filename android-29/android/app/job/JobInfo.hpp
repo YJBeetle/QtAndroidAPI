@@ -46,9 +46,11 @@ namespace android::app::job
 		static jint NETWORK_TYPE_NOT_ROAMING();
 		static jint NETWORK_TYPE_UNMETERED();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit JobInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		JobInfo(QAndroidJniObject obj);
+		
 		// Constructors
-		JobInfo() = default;
 		
 		// Methods
 		static jlong getMinFlexMillis();

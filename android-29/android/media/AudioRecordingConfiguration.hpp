@@ -23,9 +23,11 @@ namespace android::media
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AudioRecordingConfiguration(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AudioRecordingConfiguration(QAndroidJniObject obj);
+		
 		// Constructors
-		AudioRecordingConfiguration() = default;
 		
 		// Methods
 		jint describeContents();

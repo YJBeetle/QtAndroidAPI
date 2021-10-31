@@ -14,7 +14,10 @@ namespace java::security
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MessageDigestSpi(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MessageDigestSpi(QAndroidJniObject obj);
+		
 		// Constructors
 		MessageDigestSpi();
 		

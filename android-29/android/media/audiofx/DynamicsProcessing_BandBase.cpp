@@ -4,36 +4,36 @@ namespace android::media::audiofx
 {
 	// Fields
 	
-	DynamicsProcessing_BandBase::DynamicsProcessing_BandBase(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DynamicsProcessing_BandBase::DynamicsProcessing_BandBase(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	DynamicsProcessing_BandBase::DynamicsProcessing_BandBase(jboolean arg0, jfloat arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.audiofx.DynamicsProcessing$BandBase",
 			"(ZF)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jfloat DynamicsProcessing_BandBase::getCutoffFrequency()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getCutoffFrequency",
 			"()F"
 		);
 	}
 	jboolean DynamicsProcessing_BandBase::isEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEnabled",
 			"()Z"
 		);
 	}
 	void DynamicsProcessing_BandBase::setCutoffFrequency(jfloat arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCutoffFrequency",
 			"(F)V",
 			arg0
@@ -41,7 +41,7 @@ namespace android::media::audiofx
 	}
 	void DynamicsProcessing_BandBase::setEnabled(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setEnabled",
 			"(Z)V",
 			arg0
@@ -49,7 +49,7 @@ namespace android::media::audiofx
 	}
 	jstring DynamicsProcessing_BandBase::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

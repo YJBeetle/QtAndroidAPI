@@ -4,22 +4,22 @@ namespace java::util::concurrent::atomic
 {
 	// Fields
 	
-	AtomicStampedReference::AtomicStampedReference(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AtomicStampedReference::AtomicStampedReference(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	AtomicStampedReference::AtomicStampedReference(jobject arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.concurrent.atomic.AtomicStampedReference",
 			"(Ljava/lang/Object;I)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean AtomicStampedReference::attemptStamp(jobject arg0, jint arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"attemptStamp",
 			"(Ljava/lang/Object;I)Z",
 			arg0,
@@ -28,7 +28,7 @@ namespace java::util::concurrent::atomic
 	}
 	jboolean AtomicStampedReference::compareAndSet(jobject arg0, jobject arg1, jint arg2, jint arg3)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"compareAndSet",
 			"(Ljava/lang/Object;Ljava/lang/Object;II)Z",
 			arg0,
@@ -39,7 +39,7 @@ namespace java::util::concurrent::atomic
 	}
 	jobject AtomicStampedReference::get(jintArray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"([I)Ljava/lang/Object;",
 			arg0
@@ -47,21 +47,21 @@ namespace java::util::concurrent::atomic
 	}
 	jobject AtomicStampedReference::getReference()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getReference",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jint AtomicStampedReference::getStamp()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getStamp",
 			"()I"
 		);
 	}
 	void AtomicStampedReference::set(jobject arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"set",
 			"(Ljava/lang/Object;I)V",
 			arg0,
@@ -70,7 +70,7 @@ namespace java::util::concurrent::atomic
 	}
 	jboolean AtomicStampedReference::weakCompareAndSet(jobject arg0, jobject arg1, jint arg2, jint arg3)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"weakCompareAndSet",
 			"(Ljava/lang/Object;Ljava/lang/Object;II)Z",
 			arg0,

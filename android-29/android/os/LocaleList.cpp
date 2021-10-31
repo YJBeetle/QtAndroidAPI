@@ -15,16 +15,16 @@ namespace android::os
 		);
 	}
 	
-	LocaleList::LocaleList(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	LocaleList::LocaleList(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	LocaleList::LocaleList(jarray arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.os.LocaleList",
 			"([Ljava/util/Locale;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject LocaleList::forLanguageTags(jstring arg0)
@@ -66,7 +66,7 @@ namespace android::os
 			"android.os.LocaleList",
 			"isPseudoLocale",
 			"(Landroid/icu/util/ULocale;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void LocaleList::setDefault(android::os::LocaleList arg0)
@@ -75,19 +75,19 @@ namespace android::os
 			"android.os.LocaleList",
 			"setDefault",
 			"(Landroid/os/LocaleList;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint LocaleList::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean LocaleList::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -95,7 +95,7 @@ namespace android::os
 	}
 	QAndroidJniObject LocaleList::get(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"(I)Ljava/util/Locale;",
 			arg0
@@ -103,7 +103,7 @@ namespace android::os
 	}
 	QAndroidJniObject LocaleList::getFirstMatch(jarray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFirstMatch",
 			"([Ljava/lang/String;)Ljava/util/Locale;",
 			arg0
@@ -111,53 +111,53 @@ namespace android::os
 	}
 	jint LocaleList::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jint LocaleList::indexOf(java::util::Locale arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"indexOf",
 			"(Ljava/util/Locale;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean LocaleList::isEmpty()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
 	jint LocaleList::size()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
 	jstring LocaleList::toLanguageTags()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toLanguageTags",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring LocaleList::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void LocaleList::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

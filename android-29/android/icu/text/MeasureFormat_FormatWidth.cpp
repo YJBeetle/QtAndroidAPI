@@ -36,7 +36,9 @@ namespace android::icu::text
 		);
 	}
 	
-	MeasureFormat_FormatWidth::MeasureFormat_FormatWidth(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MeasureFormat_FormatWidth::MeasureFormat_FormatWidth(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

@@ -25,9 +25,11 @@ namespace java::text
 		static QAndroidJniObject SIGN();
 		static QAndroidJniObject SUFFIX();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit NumberFormat_Field(const char *className, const char *sig, Ts...agv) : java::text::Format_Field(className, sig, std::forward<Ts>(agv)...) {}
 		NumberFormat_Field(QAndroidJniObject obj);
+		
 		// Constructors
-		NumberFormat_Field() = default;
 		
 		// Methods
 	};

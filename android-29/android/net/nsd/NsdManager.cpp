@@ -63,53 +63,55 @@ namespace android::net::nsd
 		);
 	}
 	
-	NsdManager::NsdManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NsdManager::NsdManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void NsdManager::discoverServices(jstring arg0, jint arg1, __JniBaseClass arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"discoverServices",
 			"(Ljava/lang/String;ILandroid/net/nsd/NsdManager$DiscoveryListener;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void NsdManager::registerService(android::net::nsd::NsdServiceInfo arg0, jint arg1, __JniBaseClass arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"registerService",
 			"(Landroid/net/nsd/NsdServiceInfo;ILandroid/net/nsd/NsdManager$RegistrationListener;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void NsdManager::resolveService(android::net::nsd::NsdServiceInfo arg0, __JniBaseClass arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"resolveService",
 			"(Landroid/net/nsd/NsdServiceInfo;Landroid/net/nsd/NsdManager$ResolveListener;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void NsdManager::stopServiceDiscovery(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"stopServiceDiscovery",
 			"(Landroid/net/nsd/NsdManager$DiscoveryListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void NsdManager::unregisterService(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"unregisterService",
 			"(Landroid/net/nsd/NsdManager$RegistrationListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::net::nsd

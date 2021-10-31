@@ -15,20 +15,22 @@ namespace android::telephony
 		);
 	}
 	
-	CellInfoLte::CellInfoLte(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CellInfoLte::CellInfoLte(QAndroidJniObject obj) : android::telephony::CellInfo(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint CellInfoLte::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean CellInfoLte::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -36,38 +38,38 @@ namespace android::telephony
 	}
 	QAndroidJniObject CellInfoLte::getCellIdentity()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCellIdentity",
 			"()Landroid/telephony/CellIdentityLte;"
 		);
 	}
 	QAndroidJniObject CellInfoLte::getCellSignalStrength()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCellSignalStrength",
 			"()Landroid/telephony/CellSignalStrengthLte;"
 		);
 	}
 	jint CellInfoLte::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring CellInfoLte::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void CellInfoLte::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

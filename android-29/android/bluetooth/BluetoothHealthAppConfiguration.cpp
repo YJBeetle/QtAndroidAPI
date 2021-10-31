@@ -13,44 +13,46 @@ namespace android::bluetooth
 		);
 	}
 	
-	BluetoothHealthAppConfiguration::BluetoothHealthAppConfiguration(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BluetoothHealthAppConfiguration::BluetoothHealthAppConfiguration(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint BluetoothHealthAppConfiguration::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jint BluetoothHealthAppConfiguration::getDataType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDataType",
 			"()I"
 		);
 	}
 	jstring BluetoothHealthAppConfiguration::getName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint BluetoothHealthAppConfiguration::getRole()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRole",
 			"()I"
 		);
 	}
 	void BluetoothHealthAppConfiguration::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

@@ -28,7 +28,9 @@ namespace android::icu::text
 		);
 	}
 	
-	UnicodeSet_ComparisonStyle::UnicodeSet_ComparisonStyle(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UnicodeSet_ComparisonStyle::UnicodeSet_ComparisonStyle(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

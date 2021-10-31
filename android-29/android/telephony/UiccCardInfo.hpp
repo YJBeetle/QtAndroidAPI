@@ -15,9 +15,11 @@ namespace android::telephony
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit UiccCardInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		UiccCardInfo(QAndroidJniObject obj);
+		
 		// Constructors
-		UiccCardInfo() = default;
 		
 		// Methods
 		jint describeContents();

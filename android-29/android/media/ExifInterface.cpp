@@ -1197,45 +1197,39 @@ namespace android::media
 		);
 	}
 	
-	ExifInterface::ExifInterface(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ExifInterface::ExifInterface(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ExifInterface::ExifInterface(java::io::File arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.ExifInterface",
 			"(Ljava/io/File;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	ExifInterface::ExifInterface(java::io::FileDescriptor arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.ExifInterface",
 			"(Ljava/io/FileDescriptor;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	ExifInterface::ExifInterface(java::io::InputStream arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.ExifInterface",
 			"(Ljava/io/InputStream;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	ExifInterface::ExifInterface(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.ExifInterface",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jdouble ExifInterface::getAltitude(jdouble arg0)
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"getAltitude",
 			"(D)D",
 			arg0
@@ -1243,7 +1237,7 @@ namespace android::media
 	}
 	jstring ExifInterface::getAttribute(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAttribute",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
@@ -1251,7 +1245,7 @@ namespace android::media
 	}
 	jbyteArray ExifInterface::getAttributeBytes(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAttributeBytes",
 			"(Ljava/lang/String;)[B",
 			arg0
@@ -1259,7 +1253,7 @@ namespace android::media
 	}
 	jdouble ExifInterface::getAttributeDouble(jstring arg0, jdouble arg1)
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"getAttributeDouble",
 			"(Ljava/lang/String;D)D",
 			arg0,
@@ -1268,7 +1262,7 @@ namespace android::media
 	}
 	jint ExifInterface::getAttributeInt(jstring arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAttributeInt",
 			"(Ljava/lang/String;I)I",
 			arg0,
@@ -1277,7 +1271,7 @@ namespace android::media
 	}
 	jlongArray ExifInterface::getAttributeRange(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAttributeRange",
 			"(Ljava/lang/String;)[J",
 			arg0
@@ -1285,7 +1279,7 @@ namespace android::media
 	}
 	jboolean ExifInterface::getLatLong(jfloatArray arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getLatLong",
 			"([F)Z",
 			arg0
@@ -1293,35 +1287,35 @@ namespace android::media
 	}
 	jbyteArray ExifInterface::getThumbnail()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getThumbnail",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	QAndroidJniObject ExifInterface::getThumbnailBitmap()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getThumbnailBitmap",
 			"()Landroid/graphics/Bitmap;"
 		);
 	}
 	jbyteArray ExifInterface::getThumbnailBytes()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getThumbnailBytes",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jlongArray ExifInterface::getThumbnailRange()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getThumbnailRange",
 			"()[J"
 		).object<jlongArray>();
 	}
 	jboolean ExifInterface::hasAttribute(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasAttribute",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -1329,28 +1323,28 @@ namespace android::media
 	}
 	jboolean ExifInterface::hasThumbnail()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasThumbnail",
 			"()Z"
 		);
 	}
 	jboolean ExifInterface::isThumbnailCompressed()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isThumbnailCompressed",
 			"()Z"
 		);
 	}
 	void ExifInterface::saveAttributes()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"saveAttributes",
 			"()V"
 		);
 	}
 	void ExifInterface::setAttribute(jstring arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAttribute",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,

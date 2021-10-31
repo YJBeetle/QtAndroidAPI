@@ -4,23 +4,21 @@ namespace java::io
 {
 	// Fields
 	
-	UnsupportedEncodingException::UnsupportedEncodingException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UnsupportedEncodingException::UnsupportedEncodingException(QAndroidJniObject obj) : java::io::IOException(obj) {}
+	
 	// Constructors
 	UnsupportedEncodingException::UnsupportedEncodingException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::IOException(
 			"java.io.UnsupportedEncodingException",
 			"()V"
-		);
-	}
+		) {}
 	UnsupportedEncodingException::UnsupportedEncodingException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::IOException(
 			"java.io.UnsupportedEncodingException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::io

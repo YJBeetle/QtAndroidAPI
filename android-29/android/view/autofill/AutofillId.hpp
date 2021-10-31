@@ -15,9 +15,11 @@ namespace android::view::autofill
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AutofillId(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AutofillId(QAndroidJniObject obj);
+		
 		// Constructors
-		AutofillId() = default;
 		
 		// Methods
 		jint describeContents();

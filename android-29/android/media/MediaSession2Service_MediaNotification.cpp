@@ -5,29 +5,29 @@ namespace android::media
 {
 	// Fields
 	
-	MediaSession2Service_MediaNotification::MediaSession2Service_MediaNotification(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaSession2Service_MediaNotification::MediaSession2Service_MediaNotification(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MediaSession2Service_MediaNotification::MediaSession2Service_MediaNotification(jint arg0, android::app::Notification arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.MediaSession2Service$MediaNotification",
 			"(ILandroid/app/Notification;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
+			arg1.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject MediaSession2Service_MediaNotification::getNotification()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getNotification",
 			"()Landroid/app/Notification;"
 		);
 	}
 	jint MediaSession2Service_MediaNotification::getNotificationId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getNotificationId",
 			"()I"
 		);

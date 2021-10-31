@@ -14,9 +14,11 @@ namespace android::database
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MatrixCursor_RowBuilder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MatrixCursor_RowBuilder(QAndroidJniObject obj);
+		
 		// Constructors
-		MatrixCursor_RowBuilder() = default;
 		
 		// Methods
 		QAndroidJniObject add(jobject arg0);

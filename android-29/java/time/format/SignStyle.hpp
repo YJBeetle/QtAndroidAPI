@@ -16,9 +16,11 @@ namespace java::time::format
 		static QAndroidJniObject NORMAL();
 		static QAndroidJniObject NOT_NEGATIVE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SignStyle(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		SignStyle(QAndroidJniObject obj);
+		
 		// Constructors
-		SignStyle() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

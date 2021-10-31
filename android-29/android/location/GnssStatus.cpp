@@ -60,13 +60,15 @@ namespace android::location
 		);
 	}
 	
-	GnssStatus::GnssStatus(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	GnssStatus::GnssStatus(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jfloat GnssStatus::getAzimuthDegrees(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getAzimuthDegrees",
 			"(I)F",
 			arg0
@@ -74,7 +76,7 @@ namespace android::location
 	}
 	jfloat GnssStatus::getCarrierFrequencyHz(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getCarrierFrequencyHz",
 			"(I)F",
 			arg0
@@ -82,7 +84,7 @@ namespace android::location
 	}
 	jfloat GnssStatus::getCn0DbHz(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getCn0DbHz",
 			"(I)F",
 			arg0
@@ -90,7 +92,7 @@ namespace android::location
 	}
 	jint GnssStatus::getConstellationType(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getConstellationType",
 			"(I)I",
 			arg0
@@ -98,7 +100,7 @@ namespace android::location
 	}
 	jfloat GnssStatus::getElevationDegrees(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getElevationDegrees",
 			"(I)F",
 			arg0
@@ -106,14 +108,14 @@ namespace android::location
 	}
 	jint GnssStatus::getSatelliteCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSatelliteCount",
 			"()I"
 		);
 	}
 	jint GnssStatus::getSvid(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSvid",
 			"(I)I",
 			arg0
@@ -121,7 +123,7 @@ namespace android::location
 	}
 	jboolean GnssStatus::hasAlmanacData(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasAlmanacData",
 			"(I)Z",
 			arg0
@@ -129,7 +131,7 @@ namespace android::location
 	}
 	jboolean GnssStatus::hasCarrierFrequencyHz(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasCarrierFrequencyHz",
 			"(I)Z",
 			arg0
@@ -137,7 +139,7 @@ namespace android::location
 	}
 	jboolean GnssStatus::hasEphemerisData(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasEphemerisData",
 			"(I)Z",
 			arg0
@@ -145,7 +147,7 @@ namespace android::location
 	}
 	jboolean GnssStatus::usedInFix(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"usedInFix",
 			"(I)Z",
 			arg0

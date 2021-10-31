@@ -256,15 +256,15 @@ namespace android::app::admin
 		);
 	}
 	
-	SecurityLog::SecurityLog(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SecurityLog::SecurityLog(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	SecurityLog::SecurityLog()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.app.admin.SecurityLog",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::app::admin

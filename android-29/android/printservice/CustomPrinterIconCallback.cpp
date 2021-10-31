@@ -5,16 +5,18 @@ namespace android::printservice
 {
 	// Fields
 	
-	CustomPrinterIconCallback::CustomPrinterIconCallback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CustomPrinterIconCallback::CustomPrinterIconCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jboolean CustomPrinterIconCallback::onCustomPrinterIconLoaded(android::graphics::drawable::Icon arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onCustomPrinterIconLoaded",
 			"(Landroid/graphics/drawable/Icon;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::printservice

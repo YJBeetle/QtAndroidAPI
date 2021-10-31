@@ -166,7 +166,9 @@ namespace android::telecom
 		).object<jstring>();
 	}
 	
-	PhoneAccount::PhoneAccount(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PhoneAccount::PhoneAccount(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -176,20 +178,20 @@ namespace android::telecom
 			"android.telecom.PhoneAccount",
 			"builder",
 			"(Landroid/telecom/PhoneAccountHandle;Ljava/lang/CharSequence;)Landroid/telecom/PhoneAccount$Builder;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	jint PhoneAccount::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean PhoneAccount::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -197,77 +199,77 @@ namespace android::telecom
 	}
 	QAndroidJniObject PhoneAccount::getAccountHandle()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAccountHandle",
 			"()Landroid/telecom/PhoneAccountHandle;"
 		);
 	}
 	QAndroidJniObject PhoneAccount::getAddress()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAddress",
 			"()Landroid/net/Uri;"
 		);
 	}
 	jint PhoneAccount::getCapabilities()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCapabilities",
 			"()I"
 		);
 	}
 	QAndroidJniObject PhoneAccount::getExtras()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
 	jint PhoneAccount::getHighlightColor()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getHighlightColor",
 			"()I"
 		);
 	}
 	QAndroidJniObject PhoneAccount::getIcon()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getIcon",
 			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
 	jstring PhoneAccount::getLabel()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jstring PhoneAccount::getShortDescription()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getShortDescription",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	QAndroidJniObject PhoneAccount::getSubscriptionAddress()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSubscriptionAddress",
 			"()Landroid/net/Uri;"
 		);
 	}
 	QAndroidJniObject PhoneAccount::getSupportedUriSchemes()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSupportedUriSchemes",
 			"()Ljava/util/List;"
 		);
 	}
 	jboolean PhoneAccount::hasCapabilities(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasCapabilities",
 			"(I)Z",
 			arg0
@@ -275,21 +277,21 @@ namespace android::telecom
 	}
 	jint PhoneAccount::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean PhoneAccount::isEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEnabled",
 			"()Z"
 		);
 	}
 	jboolean PhoneAccount::supportsUriScheme(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"supportsUriScheme",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -297,24 +299,24 @@ namespace android::telecom
 	}
 	QAndroidJniObject PhoneAccount::toBuilder()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toBuilder",
 			"()Landroid/telecom/PhoneAccount$Builder;"
 		);
 	}
 	jstring PhoneAccount::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void PhoneAccount::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

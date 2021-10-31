@@ -22,7 +22,10 @@ namespace android::view
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ActionMode_Callback2(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ActionMode_Callback2(QAndroidJniObject obj);
+		
 		// Constructors
 		ActionMode_Callback2();
 		

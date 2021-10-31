@@ -22,7 +22,9 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	Telephony_Sms::Telephony_Sms(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Telephony_Sms::Telephony_Sms(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -32,7 +34,7 @@ namespace android::provider
 			"android.provider.Telephony$Sms",
 			"getDefaultSmsPackage",
 			"(Landroid/content/Context;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 } // namespace android::provider

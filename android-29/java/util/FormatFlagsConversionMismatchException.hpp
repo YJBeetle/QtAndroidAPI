@@ -14,10 +14,12 @@ namespace java::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit FormatFlagsConversionMismatchException(const char *className, const char *sig, Ts...agv) : java::util::IllegalFormatException(className, sig, std::forward<Ts>(agv)...) {}
 		FormatFlagsConversionMismatchException(QAndroidJniObject obj);
+		
 		// Constructors
 		FormatFlagsConversionMismatchException(jstring arg0, jchar arg1);
-		FormatFlagsConversionMismatchException() = default;
 		
 		// Methods
 		jchar getConversion();

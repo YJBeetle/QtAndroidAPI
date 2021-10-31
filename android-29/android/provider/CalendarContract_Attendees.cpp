@@ -14,7 +14,9 @@ namespace android::provider
 		);
 	}
 	
-	CalendarContract_Attendees::CalendarContract_Attendees(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CalendarContract_Attendees::CalendarContract_Attendees(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -24,7 +26,7 @@ namespace android::provider
 			"android.provider.CalendarContract$Attendees",
 			"query",
 			"(Landroid/content/ContentResolver;J[Ljava/lang/String;)Landroid/database/Cursor;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);

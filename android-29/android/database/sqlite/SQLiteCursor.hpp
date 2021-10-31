@@ -24,11 +24,13 @@ namespace android::database::sqlite
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SQLiteCursor(const char *className, const char *sig, Ts...agv) : android::database::AbstractWindowedCursor(className, sig, std::forward<Ts>(agv)...) {}
 		SQLiteCursor(QAndroidJniObject obj);
+		
 		// Constructors
 		SQLiteCursor(__JniBaseClass arg0, jstring arg1, android::database::sqlite::SQLiteQuery arg2);
 		SQLiteCursor(android::database::sqlite::SQLiteDatabase arg0, __JniBaseClass arg1, jstring arg2, android::database::sqlite::SQLiteQuery arg3);
-		SQLiteCursor() = default;
 		
 		// Methods
 		void close();

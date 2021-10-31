@@ -22,12 +22,14 @@ namespace java::math
 		static QAndroidJniObject DECIMAL64();
 		static QAndroidJniObject UNLIMITED();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MathContext(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MathContext(QAndroidJniObject obj);
+		
 		// Constructors
 		MathContext(jint arg0);
 		MathContext(jstring arg0);
 		MathContext(jint arg0, java::math::RoundingMode arg1);
-		MathContext() = default;
 		
 		// Methods
 		jboolean equals(jobject arg0);

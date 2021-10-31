@@ -6,28 +6,26 @@ namespace org::xml::sax::helpers
 {
 	// Fields
 	
-	XMLReaderAdapter::XMLReaderAdapter(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	XMLReaderAdapter::XMLReaderAdapter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	XMLReaderAdapter::XMLReaderAdapter()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"org.xml.sax.helpers.XMLReaderAdapter",
 			"()V"
-		);
-	}
+		) {}
 	XMLReaderAdapter::XMLReaderAdapter(__JniBaseClass arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"org.xml.sax.helpers.XMLReaderAdapter",
 			"(Lorg/xml/sax/XMLReader;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	void XMLReaderAdapter::characters(jcharArray arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"characters",
 			"([CII)V",
 			arg0,
@@ -37,14 +35,14 @@ namespace org::xml::sax::helpers
 	}
 	void XMLReaderAdapter::endDocument()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"endDocument",
 			"()V"
 		);
 	}
 	void XMLReaderAdapter::endElement(jstring arg0, jstring arg1, jstring arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"endElement",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
@@ -54,7 +52,7 @@ namespace org::xml::sax::helpers
 	}
 	void XMLReaderAdapter::endPrefixMapping(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"endPrefixMapping",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -62,7 +60,7 @@ namespace org::xml::sax::helpers
 	}
 	void XMLReaderAdapter::ignorableWhitespace(jcharArray arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"ignorableWhitespace",
 			"([CII)V",
 			arg0,
@@ -72,7 +70,7 @@ namespace org::xml::sax::helpers
 	}
 	void XMLReaderAdapter::parse(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"parse",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -80,15 +78,15 @@ namespace org::xml::sax::helpers
 	}
 	void XMLReaderAdapter::parse(org::xml::sax::InputSource arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"parse",
 			"(Lorg/xml/sax/InputSource;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void XMLReaderAdapter::processingInstruction(jstring arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"processingInstruction",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
@@ -97,55 +95,55 @@ namespace org::xml::sax::helpers
 	}
 	void XMLReaderAdapter::setDTDHandler(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDTDHandler",
 			"(Lorg/xml/sax/DTDHandler;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void XMLReaderAdapter::setDocumentHandler(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDocumentHandler",
 			"(Lorg/xml/sax/DocumentHandler;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void XMLReaderAdapter::setDocumentLocator(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDocumentLocator",
 			"(Lorg/xml/sax/Locator;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void XMLReaderAdapter::setEntityResolver(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setEntityResolver",
 			"(Lorg/xml/sax/EntityResolver;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void XMLReaderAdapter::setErrorHandler(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setErrorHandler",
 			"(Lorg/xml/sax/ErrorHandler;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void XMLReaderAdapter::setLocale(java::util::Locale arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLocale",
 			"(Ljava/util/Locale;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void XMLReaderAdapter::skippedEntity(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"skippedEntity",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -153,25 +151,25 @@ namespace org::xml::sax::helpers
 	}
 	void XMLReaderAdapter::startDocument()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"startDocument",
 			"()V"
 		);
 	}
 	void XMLReaderAdapter::startElement(jstring arg0, jstring arg1, jstring arg2, __JniBaseClass arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"startElement",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/xml/sax/Attributes;)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	void XMLReaderAdapter::startPrefixMapping(jstring arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"startPrefixMapping",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,

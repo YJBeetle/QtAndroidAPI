@@ -41,9 +41,11 @@ namespace android::text
 		static jint SAFE_STRING_FLAG_SINGLE_LINE();
 		static jint SAFE_STRING_FLAG_TRIM();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TextUtils(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		TextUtils(QAndroidJniObject obj);
+		
 		// Constructors
-		TextUtils() = default;
 		
 		// Methods
 		static jstring commaEllipsize(jstring arg0, android::text::TextPaint arg1, jfloat arg2, jstring arg3, jstring arg4);

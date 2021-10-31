@@ -11,10 +11,12 @@ namespace android::media
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaDrmException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
 		MediaDrmException(QAndroidJniObject obj);
+		
 		// Constructors
 		MediaDrmException(jstring arg0);
-		MediaDrmException() = default;
 		
 		// Methods
 	};

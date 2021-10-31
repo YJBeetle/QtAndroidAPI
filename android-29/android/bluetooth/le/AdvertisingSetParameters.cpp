@@ -90,93 +90,95 @@ namespace android::bluetooth::le
 		);
 	}
 	
-	AdvertisingSetParameters::AdvertisingSetParameters(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AdvertisingSetParameters::AdvertisingSetParameters(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint AdvertisingSetParameters::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jint AdvertisingSetParameters::getInterval()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getInterval",
 			"()I"
 		);
 	}
 	jint AdvertisingSetParameters::getPrimaryPhy()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPrimaryPhy",
 			"()I"
 		);
 	}
 	jint AdvertisingSetParameters::getSecondaryPhy()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSecondaryPhy",
 			"()I"
 		);
 	}
 	jint AdvertisingSetParameters::getTxPowerLevel()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTxPowerLevel",
 			"()I"
 		);
 	}
 	jboolean AdvertisingSetParameters::includeTxPower()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"includeTxPower",
 			"()Z"
 		);
 	}
 	jboolean AdvertisingSetParameters::isAnonymous()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isAnonymous",
 			"()Z"
 		);
 	}
 	jboolean AdvertisingSetParameters::isConnectable()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isConnectable",
 			"()Z"
 		);
 	}
 	jboolean AdvertisingSetParameters::isLegacy()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isLegacy",
 			"()Z"
 		);
 	}
 	jboolean AdvertisingSetParameters::isScannable()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isScannable",
 			"()Z"
 		);
 	}
 	jstring AdvertisingSetParameters::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void AdvertisingSetParameters::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

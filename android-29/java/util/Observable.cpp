@@ -5,64 +5,64 @@ namespace java::util
 {
 	// Fields
 	
-	Observable::Observable(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Observable::Observable(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Observable::Observable()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.Observable",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void Observable::addObserver(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addObserver",
 			"(Ljava/util/Observer;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint Observable::countObservers()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"countObservers",
 			"()I"
 		);
 	}
 	void Observable::deleteObserver(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"deleteObserver",
 			"(Ljava/util/Observer;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Observable::deleteObservers()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"deleteObservers",
 			"()V"
 		);
 	}
 	jboolean Observable::hasChanged()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasChanged",
 			"()Z"
 		);
 	}
 	void Observable::notifyObservers()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"notifyObservers",
 			"()V"
 		);
 	}
 	void Observable::notifyObservers(jobject arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"notifyObservers",
 			"(Ljava/lang/Object;)V",
 			arg0

@@ -37,7 +37,10 @@ namespace android::os
 		static jstring MEDIA_UNMOUNTABLE();
 		static jstring MEDIA_UNMOUNTED();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Environment(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Environment(QAndroidJniObject obj);
+		
 		// Constructors
 		Environment();
 		

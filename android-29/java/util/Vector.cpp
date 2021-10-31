@@ -6,45 +6,39 @@ namespace java::util
 {
 	// Fields
 	
-	Vector::Vector(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Vector::Vector(QAndroidJniObject obj) : java::util::AbstractList(obj) {}
+	
 	// Constructors
 	Vector::Vector()
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::AbstractList(
 			"java.util.Vector",
 			"()V"
-		);
-	}
+		) {}
 	Vector::Vector(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::AbstractList(
 			"java.util.Vector",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	Vector::Vector(__JniBaseClass arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::AbstractList(
 			"java.util.Vector",
 			"(Ljava/util/Collection;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	Vector::Vector(jint arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::AbstractList(
 			"java.util.Vector",
 			"(II)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean Vector::add(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"add",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -52,7 +46,7 @@ namespace java::util
 	}
 	void Vector::add(jint arg0, jobject arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"add",
 			"(ILjava/lang/Object;)V",
 			arg0,
@@ -61,24 +55,24 @@ namespace java::util
 	}
 	jboolean Vector::addAll(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"addAll",
 			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean Vector::addAll(jint arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"addAll",
 			"(ILjava/util/Collection;)Z",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void Vector::addElement(jobject arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addElement",
 			"(Ljava/lang/Object;)V",
 			arg0
@@ -86,28 +80,28 @@ namespace java::util
 	}
 	jint Vector::capacity()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"capacity",
 			"()I"
 		);
 	}
 	void Vector::clear()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
 	jobject Vector::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jboolean Vector::contains(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"contains",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -115,15 +109,15 @@ namespace java::util
 	}
 	jboolean Vector::containsAll(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"containsAll",
 			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Vector::copyInto(jobjectArray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"copyInto",
 			"([Ljava/lang/Object;)V",
 			arg0
@@ -131,7 +125,7 @@ namespace java::util
 	}
 	jobject Vector::elementAt(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"elementAt",
 			"(I)Ljava/lang/Object;",
 			arg0
@@ -139,14 +133,14 @@ namespace java::util
 	}
 	QAndroidJniObject Vector::elements()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"elements",
 			"()Ljava/util/Enumeration;"
 		);
 	}
 	void Vector::ensureCapacity(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"ensureCapacity",
 			"(I)V",
 			arg0
@@ -154,7 +148,7 @@ namespace java::util
 	}
 	jboolean Vector::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -162,22 +156,22 @@ namespace java::util
 	}
 	jobject Vector::firstElement()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"firstElement",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	void Vector::forEach(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"forEach",
 			"(Ljava/util/function/Consumer;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jobject Vector::get(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"(I)Ljava/lang/Object;",
 			arg0
@@ -185,14 +179,14 @@ namespace java::util
 	}
 	jint Vector::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jint Vector::indexOf(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"indexOf",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -200,7 +194,7 @@ namespace java::util
 	}
 	jint Vector::indexOf(jobject arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"indexOf",
 			"(Ljava/lang/Object;I)I",
 			arg0,
@@ -209,7 +203,7 @@ namespace java::util
 	}
 	void Vector::insertElementAt(jobject arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"insertElementAt",
 			"(Ljava/lang/Object;I)V",
 			arg0,
@@ -218,28 +212,28 @@ namespace java::util
 	}
 	jboolean Vector::isEmpty()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
 	QAndroidJniObject Vector::iterator()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
 	jobject Vector::lastElement()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"lastElement",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jint Vector::lastIndexOf(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"lastIndexOf",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -247,7 +241,7 @@ namespace java::util
 	}
 	jint Vector::lastIndexOf(jobject arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"lastIndexOf",
 			"(Ljava/lang/Object;I)I",
 			arg0,
@@ -256,14 +250,14 @@ namespace java::util
 	}
 	QAndroidJniObject Vector::listIterator()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"listIterator",
 			"()Ljava/util/ListIterator;"
 		);
 	}
 	QAndroidJniObject Vector::listIterator(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"listIterator",
 			"(I)Ljava/util/ListIterator;",
 			arg0
@@ -271,7 +265,7 @@ namespace java::util
 	}
 	jboolean Vector::remove(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"remove",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -279,7 +273,7 @@ namespace java::util
 	}
 	jobject Vector::remove(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"remove",
 			"(I)Ljava/lang/Object;",
 			arg0
@@ -287,22 +281,22 @@ namespace java::util
 	}
 	jboolean Vector::removeAll(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"removeAll",
 			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Vector::removeAllElements()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeAllElements",
 			"()V"
 		);
 	}
 	jboolean Vector::removeElement(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"removeElement",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -310,7 +304,7 @@ namespace java::util
 	}
 	void Vector::removeElementAt(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeElementAt",
 			"(I)V",
 			arg0
@@ -318,31 +312,31 @@ namespace java::util
 	}
 	jboolean Vector::removeIf(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"removeIf",
 			"(Ljava/util/function/Predicate;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Vector::replaceAll(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"replaceAll",
 			"(Ljava/util/function/UnaryOperator;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean Vector::retainAll(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"retainAll",
 			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jobject Vector::set(jint arg0, jobject arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"set",
 			"(ILjava/lang/Object;)Ljava/lang/Object;",
 			arg0,
@@ -351,7 +345,7 @@ namespace java::util
 	}
 	void Vector::setElementAt(jobject arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setElementAt",
 			"(Ljava/lang/Object;I)V",
 			arg0,
@@ -360,7 +354,7 @@ namespace java::util
 	}
 	void Vector::setSize(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSize",
 			"(I)V",
 			arg0
@@ -368,29 +362,29 @@ namespace java::util
 	}
 	jint Vector::size()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
 	void Vector::sort(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"sort",
 			"(Ljava/util/Comparator;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Vector::spliterator()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"spliterator",
 			"()Ljava/util/Spliterator;"
 		);
 	}
 	QAndroidJniObject Vector::subList(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"subList",
 			"(II)Ljava/util/List;",
 			arg0,
@@ -399,14 +393,14 @@ namespace java::util
 	}
 	jobjectArray Vector::toArray()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toArray",
 			"()[Ljava/lang/Object;"
 		).object<jobjectArray>();
 	}
 	jobjectArray Vector::toArray(jobjectArray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toArray",
 			"([Ljava/lang/Object;)[Ljava/lang/Object;",
 			arg0
@@ -414,14 +408,14 @@ namespace java::util
 	}
 	jstring Vector::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void Vector::trimToSize()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"trimToSize",
 			"()V"
 		);

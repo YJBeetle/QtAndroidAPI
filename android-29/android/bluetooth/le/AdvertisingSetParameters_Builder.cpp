@@ -5,27 +5,27 @@ namespace android::bluetooth::le
 {
 	// Fields
 	
-	AdvertisingSetParameters_Builder::AdvertisingSetParameters_Builder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AdvertisingSetParameters_Builder::AdvertisingSetParameters_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	AdvertisingSetParameters_Builder::AdvertisingSetParameters_Builder()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.bluetooth.le.AdvertisingSetParameters$Builder",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject AdvertisingSetParameters_Builder::build()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"build",
 			"()Landroid/bluetooth/le/AdvertisingSetParameters;"
 		);
 	}
 	QAndroidJniObject AdvertisingSetParameters_Builder::setAnonymous(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setAnonymous",
 			"(Z)Landroid/bluetooth/le/AdvertisingSetParameters$Builder;",
 			arg0
@@ -33,7 +33,7 @@ namespace android::bluetooth::le
 	}
 	QAndroidJniObject AdvertisingSetParameters_Builder::setConnectable(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setConnectable",
 			"(Z)Landroid/bluetooth/le/AdvertisingSetParameters$Builder;",
 			arg0
@@ -41,7 +41,7 @@ namespace android::bluetooth::le
 	}
 	QAndroidJniObject AdvertisingSetParameters_Builder::setIncludeTxPower(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setIncludeTxPower",
 			"(Z)Landroid/bluetooth/le/AdvertisingSetParameters$Builder;",
 			arg0
@@ -49,7 +49,7 @@ namespace android::bluetooth::le
 	}
 	QAndroidJniObject AdvertisingSetParameters_Builder::setInterval(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setInterval",
 			"(I)Landroid/bluetooth/le/AdvertisingSetParameters$Builder;",
 			arg0
@@ -57,7 +57,7 @@ namespace android::bluetooth::le
 	}
 	QAndroidJniObject AdvertisingSetParameters_Builder::setLegacyMode(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setLegacyMode",
 			"(Z)Landroid/bluetooth/le/AdvertisingSetParameters$Builder;",
 			arg0
@@ -65,7 +65,7 @@ namespace android::bluetooth::le
 	}
 	QAndroidJniObject AdvertisingSetParameters_Builder::setPrimaryPhy(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setPrimaryPhy",
 			"(I)Landroid/bluetooth/le/AdvertisingSetParameters$Builder;",
 			arg0
@@ -73,7 +73,7 @@ namespace android::bluetooth::le
 	}
 	QAndroidJniObject AdvertisingSetParameters_Builder::setScannable(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setScannable",
 			"(Z)Landroid/bluetooth/le/AdvertisingSetParameters$Builder;",
 			arg0
@@ -81,7 +81,7 @@ namespace android::bluetooth::le
 	}
 	QAndroidJniObject AdvertisingSetParameters_Builder::setSecondaryPhy(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setSecondaryPhy",
 			"(I)Landroid/bluetooth/le/AdvertisingSetParameters$Builder;",
 			arg0
@@ -89,7 +89,7 @@ namespace android::bluetooth::le
 	}
 	QAndroidJniObject AdvertisingSetParameters_Builder::setTxPowerLevel(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setTxPowerLevel",
 			"(I)Landroid/bluetooth/le/AdvertisingSetParameters$Builder;",
 			arg0

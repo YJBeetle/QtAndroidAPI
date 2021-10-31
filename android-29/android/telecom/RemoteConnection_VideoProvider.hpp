@@ -26,9 +26,11 @@ namespace android::telecom
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit RemoteConnection_VideoProvider(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		RemoteConnection_VideoProvider(QAndroidJniObject obj);
+		
 		// Constructors
-		RemoteConnection_VideoProvider() = default;
 		
 		// Methods
 		void registerCallback(android::telecom::RemoteConnection_VideoProvider_Callback arg0);

@@ -29,7 +29,9 @@ namespace android::provider
 		);
 	}
 	
-	ContactsContract_Settings::ContactsContract_Settings(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ContactsContract_Settings::ContactsContract_Settings(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

@@ -6,78 +6,78 @@ namespace android::net
 	// Fields
 	jint DhcpInfo::dns1()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"dns1"
 		);
 	}
 	jint DhcpInfo::dns2()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"dns2"
 		);
 	}
 	jint DhcpInfo::gateway()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"gateway"
 		);
 	}
 	jint DhcpInfo::ipAddress()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"ipAddress"
 		);
 	}
 	jint DhcpInfo::leaseDuration()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"leaseDuration"
 		);
 	}
 	jint DhcpInfo::netmask()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"netmask"
 		);
 	}
 	jint DhcpInfo::serverAddress()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"serverAddress"
 		);
 	}
 	
-	DhcpInfo::DhcpInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DhcpInfo::DhcpInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	DhcpInfo::DhcpInfo()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.net.DhcpInfo",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jint DhcpInfo::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jstring DhcpInfo::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void DhcpInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

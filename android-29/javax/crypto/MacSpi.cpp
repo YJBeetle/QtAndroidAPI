@@ -5,20 +5,20 @@ namespace javax::crypto
 {
 	// Fields
 	
-	MacSpi::MacSpi(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MacSpi::MacSpi(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MacSpi::MacSpi()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"javax.crypto.MacSpi",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jobject MacSpi::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		).object<jobject>();

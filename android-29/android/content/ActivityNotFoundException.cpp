@@ -4,23 +4,21 @@ namespace android::content
 {
 	// Fields
 	
-	ActivityNotFoundException::ActivityNotFoundException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ActivityNotFoundException::ActivityNotFoundException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	
 	// Constructors
 	ActivityNotFoundException::ActivityNotFoundException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::RuntimeException(
 			"android.content.ActivityNotFoundException",
 			"()V"
-		);
-	}
+		) {}
 	ActivityNotFoundException::ActivityNotFoundException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::RuntimeException(
 			"android.content.ActivityNotFoundException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::content

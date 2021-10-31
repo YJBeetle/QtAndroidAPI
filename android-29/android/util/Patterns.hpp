@@ -27,9 +27,11 @@ namespace android::util
 		static jstring TOP_LEVEL_DOMAIN_STR_FOR_WEB_URL();
 		static QAndroidJniObject WEB_URL();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Patterns(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Patterns(QAndroidJniObject obj);
+		
 		// Constructors
-		Patterns() = default;
 		
 		// Methods
 		static jstring concatGroups(java::util::regex::Matcher arg0);

@@ -33,7 +33,10 @@ namespace android::widget
 		static jint INPUT_METHOD_NEEDED();
 		static jint INPUT_METHOD_NOT_NEEDED();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PopupWindow(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PopupWindow(QAndroidJniObject obj);
+		
 		// Constructors
 		PopupWindow();
 		PopupWindow(android::content::Context arg0);

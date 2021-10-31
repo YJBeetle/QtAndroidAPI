@@ -26,9 +26,11 @@ namespace android::content::res
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Resources_Theme(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Resources_Theme(QAndroidJniObject obj);
+		
 		// Constructors
-		Resources_Theme() = default;
 		
 		// Methods
 		void applyStyle(jint arg0, jboolean arg1);

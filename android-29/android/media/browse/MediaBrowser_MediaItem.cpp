@@ -28,74 +28,74 @@ namespace android::media::browse
 		);
 	}
 	
-	MediaBrowser_MediaItem::MediaBrowser_MediaItem(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaBrowser_MediaItem::MediaBrowser_MediaItem(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MediaBrowser_MediaItem::MediaBrowser_MediaItem(android::media::MediaDescription arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.browse.MediaBrowser$MediaItem",
 			"(Landroid/media/MediaDescription;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jint MediaBrowser_MediaItem::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	QAndroidJniObject MediaBrowser_MediaItem::getDescription()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDescription",
 			"()Landroid/media/MediaDescription;"
 		);
 	}
 	jint MediaBrowser_MediaItem::getFlags()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getFlags",
 			"()I"
 		);
 	}
 	jstring MediaBrowser_MediaItem::getMediaId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMediaId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jboolean MediaBrowser_MediaItem::isBrowsable()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isBrowsable",
 			"()Z"
 		);
 	}
 	jboolean MediaBrowser_MediaItem::isPlayable()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isPlayable",
 			"()Z"
 		);
 	}
 	jstring MediaBrowser_MediaItem::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void MediaBrowser_MediaItem::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

@@ -14,7 +14,10 @@ namespace android::os
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit StrictMode_ThreadPolicy_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		StrictMode_ThreadPolicy_Builder(QAndroidJniObject obj);
+		
 		// Constructors
 		StrictMode_ThreadPolicy_Builder();
 		StrictMode_ThreadPolicy_Builder(android::os::StrictMode_ThreadPolicy arg0);

@@ -23,7 +23,10 @@ namespace android::net
 		// Fields
 		static jint UNSUPPORTED();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TrafficStats(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		TrafficStats(QAndroidJniObject obj);
+		
 		// Constructors
 		TrafficStats();
 		

@@ -45,10 +45,12 @@ namespace android::graphics::drawable
 		// Fields
 		static jint RADIUS_AUTO();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit RippleDrawable(const char *className, const char *sig, Ts...agv) : android::graphics::drawable::LayerDrawable(className, sig, std::forward<Ts>(agv)...) {}
 		RippleDrawable(QAndroidJniObject obj);
+		
 		// Constructors
 		RippleDrawable(android::content::res::ColorStateList arg0, android::graphics::drawable::Drawable arg1, android::graphics::drawable::Drawable arg2);
-		RippleDrawable() = default;
 		
 		// Methods
 		void applyTheme(android::content::res::Resources_Theme arg0);

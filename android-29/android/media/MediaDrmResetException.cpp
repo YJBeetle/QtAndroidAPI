@@ -4,16 +4,16 @@ namespace android::media
 {
 	// Fields
 	
-	MediaDrmResetException::MediaDrmResetException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaDrmResetException::MediaDrmResetException(QAndroidJniObject obj) : java::lang::IllegalStateException(obj) {}
+	
 	// Constructors
 	MediaDrmResetException::MediaDrmResetException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::IllegalStateException(
 			"android.media.MediaDrmResetException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::media

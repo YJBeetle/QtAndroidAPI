@@ -4,15 +4,15 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	NonReadableChannelException::NonReadableChannelException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NonReadableChannelException::NonReadableChannelException(QAndroidJniObject obj) : java::lang::IllegalStateException(obj) {}
+	
 	// Constructors
 	NonReadableChannelException::NonReadableChannelException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::IllegalStateException(
 			"java.nio.channels.NonReadableChannelException",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::nio::channels

@@ -57,25 +57,24 @@ namespace android::bluetooth::le
 		);
 	}
 	
-	ScanResult::ScanResult(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ScanResult::ScanResult(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ScanResult::ScanResult(android::bluetooth::BluetoothDevice arg0, android::bluetooth::le::ScanRecord arg1, jint arg2, jlong arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.bluetooth.le.ScanResult",
 			"(Landroid/bluetooth/BluetoothDevice;Landroid/bluetooth/le/ScanRecord;IJ)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	ScanResult::ScanResult(android::bluetooth::BluetoothDevice arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, android::bluetooth::le::ScanRecord arg8, jlong arg9)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.bluetooth.le.ScanResult",
 			"(Landroid/bluetooth/BluetoothDevice;IIIIIIILandroid/bluetooth/le/ScanRecord;J)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
@@ -83,22 +82,21 @@ namespace android::bluetooth::le
 			arg5,
 			arg6,
 			arg7,
-			arg8.__jniObject().object(),
+			arg8.object(),
 			arg9
-		);
-	}
+		) {}
 	
 	// Methods
 	jint ScanResult::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean ScanResult::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -106,108 +104,108 @@ namespace android::bluetooth::le
 	}
 	jint ScanResult::getAdvertisingSid()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAdvertisingSid",
 			"()I"
 		);
 	}
 	jint ScanResult::getDataStatus()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDataStatus",
 			"()I"
 		);
 	}
 	QAndroidJniObject ScanResult::getDevice()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDevice",
 			"()Landroid/bluetooth/BluetoothDevice;"
 		);
 	}
 	jint ScanResult::getPeriodicAdvertisingInterval()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPeriodicAdvertisingInterval",
 			"()I"
 		);
 	}
 	jint ScanResult::getPrimaryPhy()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPrimaryPhy",
 			"()I"
 		);
 	}
 	jint ScanResult::getRssi()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRssi",
 			"()I"
 		);
 	}
 	QAndroidJniObject ScanResult::getScanRecord()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getScanRecord",
 			"()Landroid/bluetooth/le/ScanRecord;"
 		);
 	}
 	jint ScanResult::getSecondaryPhy()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSecondaryPhy",
 			"()I"
 		);
 	}
 	jlong ScanResult::getTimestampNanos()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getTimestampNanos",
 			"()J"
 		);
 	}
 	jint ScanResult::getTxPower()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTxPower",
 			"()I"
 		);
 	}
 	jint ScanResult::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean ScanResult::isConnectable()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isConnectable",
 			"()Z"
 		);
 	}
 	jboolean ScanResult::isLegacy()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isLegacy",
 			"()Z"
 		);
 	}
 	jstring ScanResult::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void ScanResult::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

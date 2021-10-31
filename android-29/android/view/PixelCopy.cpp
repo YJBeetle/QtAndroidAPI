@@ -52,7 +52,9 @@ namespace android::view
 		);
 	}
 	
-	PixelCopy::PixelCopy(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PixelCopy::PixelCopy(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -62,10 +64,10 @@ namespace android::view
 			"android.view.PixelCopy",
 			"request",
 			"(Landroid/view/Surface;Landroid/graphics/Bitmap;Landroid/view/PixelCopy$OnPixelCopyFinishedListener;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
 		);
 	}
 	void PixelCopy::request(android::view::SurfaceView arg0, android::graphics::Bitmap arg1, __JniBaseClass arg2, android::os::Handler arg3)
@@ -74,10 +76,10 @@ namespace android::view
 			"android.view.PixelCopy",
 			"request",
 			"(Landroid/view/SurfaceView;Landroid/graphics/Bitmap;Landroid/view/PixelCopy$OnPixelCopyFinishedListener;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
 		);
 	}
 	void PixelCopy::request(android::view::Window arg0, android::graphics::Bitmap arg1, __JniBaseClass arg2, android::os::Handler arg3)
@@ -86,10 +88,10 @@ namespace android::view
 			"android.view.PixelCopy",
 			"request",
 			"(Landroid/view/Window;Landroid/graphics/Bitmap;Landroid/view/PixelCopy$OnPixelCopyFinishedListener;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
 		);
 	}
 	void PixelCopy::request(android::view::Surface arg0, android::graphics::Rect arg1, android::graphics::Bitmap arg2, __JniBaseClass arg3, android::os::Handler arg4)
@@ -98,11 +100,11 @@ namespace android::view
 			"android.view.PixelCopy",
 			"request",
 			"(Landroid/view/Surface;Landroid/graphics/Rect;Landroid/graphics/Bitmap;Landroid/view/PixelCopy$OnPixelCopyFinishedListener;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object(),
+			arg4.object()
 		);
 	}
 	void PixelCopy::request(android::view::SurfaceView arg0, android::graphics::Rect arg1, android::graphics::Bitmap arg2, __JniBaseClass arg3, android::os::Handler arg4)
@@ -111,11 +113,11 @@ namespace android::view
 			"android.view.PixelCopy",
 			"request",
 			"(Landroid/view/SurfaceView;Landroid/graphics/Rect;Landroid/graphics/Bitmap;Landroid/view/PixelCopy$OnPixelCopyFinishedListener;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object(),
+			arg4.object()
 		);
 	}
 	void PixelCopy::request(android::view::Window arg0, android::graphics::Rect arg1, android::graphics::Bitmap arg2, __JniBaseClass arg3, android::os::Handler arg4)
@@ -124,11 +126,11 @@ namespace android::view
 			"android.view.PixelCopy",
 			"request",
 			"(Landroid/view/Window;Landroid/graphics/Rect;Landroid/graphics/Bitmap;Landroid/view/PixelCopy$OnPixelCopyFinishedListener;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object(),
+			arg4.object()
 		);
 	}
 } // namespace android::view

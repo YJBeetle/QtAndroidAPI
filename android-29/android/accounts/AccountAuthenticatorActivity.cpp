@@ -5,30 +5,30 @@ namespace android::accounts
 {
 	// Fields
 	
-	AccountAuthenticatorActivity::AccountAuthenticatorActivity(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AccountAuthenticatorActivity::AccountAuthenticatorActivity(QAndroidJniObject obj) : android::app::Activity(obj) {}
+	
 	// Constructors
 	AccountAuthenticatorActivity::AccountAuthenticatorActivity()
-	{
-		__thiz = QAndroidJniObject(
+		: android::app::Activity(
 			"android.accounts.AccountAuthenticatorActivity",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void AccountAuthenticatorActivity::finish()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"finish",
 			"()V"
 		);
 	}
 	void AccountAuthenticatorActivity::setAccountAuthenticatorResult(android::os::Bundle arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAccountAuthenticatorResult",
 			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::accounts

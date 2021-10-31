@@ -51,20 +51,22 @@ namespace android::print
 		);
 	}
 	
-	PrintAttributes::PrintAttributes(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PrintAttributes::PrintAttributes(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint PrintAttributes::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean PrintAttributes::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -72,59 +74,59 @@ namespace android::print
 	}
 	jint PrintAttributes::getColorMode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getColorMode",
 			"()I"
 		);
 	}
 	jint PrintAttributes::getDuplexMode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDuplexMode",
 			"()I"
 		);
 	}
 	QAndroidJniObject PrintAttributes::getMediaSize()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMediaSize",
 			"()Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
 	QAndroidJniObject PrintAttributes::getMinMargins()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMinMargins",
 			"()Landroid/print/PrintAttributes$Margins;"
 		);
 	}
 	QAndroidJniObject PrintAttributes::getResolution()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getResolution",
 			"()Landroid/print/PrintAttributes$Resolution;"
 		);
 	}
 	jint PrintAttributes::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring PrintAttributes::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void PrintAttributes::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

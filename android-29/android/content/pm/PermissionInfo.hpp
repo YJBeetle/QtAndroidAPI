@@ -47,7 +47,10 @@ namespace android::content::pm
 		jstring nonLocalizedDescription();
 		jint protectionLevel();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PermissionInfo(const char *className, const char *sig, Ts...agv) : android::content::pm::PackageItemInfo(className, sig, std::forward<Ts>(agv)...) {}
 		PermissionInfo(QAndroidJniObject obj);
+		
 		// Constructors
 		PermissionInfo();
 		PermissionInfo(android::content::pm::PermissionInfo &arg0);

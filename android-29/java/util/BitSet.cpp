@@ -8,23 +8,21 @@ namespace java::util
 {
 	// Fields
 	
-	BitSet::BitSet(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BitSet::BitSet(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	BitSet::BitSet()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.BitSet",
 			"()V"
-		);
-	}
+		) {}
 	BitSet::BitSet(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.BitSet",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject BitSet::valueOf(jbyteArray arg0)
@@ -51,7 +49,7 @@ namespace java::util
 			"java.util.BitSet",
 			"valueOf",
 			"(Ljava/nio/ByteBuffer;)Ljava/util/BitSet;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject BitSet::valueOf(java::nio::LongBuffer arg0)
@@ -60,42 +58,42 @@ namespace java::util
 			"java.util.BitSet",
 			"valueOf",
 			"(Ljava/nio/LongBuffer;)Ljava/util/BitSet;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void BitSet::_and(java::util::BitSet arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"and",
 			"(Ljava/util/BitSet;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void BitSet::andNot(java::util::BitSet arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"andNot",
 			"(Ljava/util/BitSet;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint BitSet::cardinality()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"cardinality",
 			"()I"
 		);
 	}
 	void BitSet::clear()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
 	void BitSet::clear(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clear",
 			"(I)V",
 			arg0
@@ -103,7 +101,7 @@ namespace java::util
 	}
 	void BitSet::clear(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clear",
 			"(II)V",
 			arg0,
@@ -112,14 +110,14 @@ namespace java::util
 	}
 	jobject BitSet::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jboolean BitSet::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -127,7 +125,7 @@ namespace java::util
 	}
 	void BitSet::flip(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"flip",
 			"(I)V",
 			arg0
@@ -135,7 +133,7 @@ namespace java::util
 	}
 	void BitSet::flip(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"flip",
 			"(II)V",
 			arg0,
@@ -144,7 +142,7 @@ namespace java::util
 	}
 	jboolean BitSet::get(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"get",
 			"(I)Z",
 			arg0
@@ -152,7 +150,7 @@ namespace java::util
 	}
 	QAndroidJniObject BitSet::get(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"(II)Ljava/util/BitSet;",
 			arg0,
@@ -161,36 +159,36 @@ namespace java::util
 	}
 	jint BitSet::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean BitSet::intersects(java::util::BitSet arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"intersects",
 			"(Ljava/util/BitSet;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean BitSet::isEmpty()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
 	jint BitSet::length()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"length",
 			"()I"
 		);
 	}
 	jint BitSet::nextClearBit(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"nextClearBit",
 			"(I)I",
 			arg0
@@ -198,7 +196,7 @@ namespace java::util
 	}
 	jint BitSet::nextSetBit(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"nextSetBit",
 			"(I)I",
 			arg0
@@ -206,15 +204,15 @@ namespace java::util
 	}
 	void BitSet::_or(java::util::BitSet arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"or",
 			"(Ljava/util/BitSet;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint BitSet::previousClearBit(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"previousClearBit",
 			"(I)I",
 			arg0
@@ -222,7 +220,7 @@ namespace java::util
 	}
 	jint BitSet::previousSetBit(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"previousSetBit",
 			"(I)I",
 			arg0
@@ -230,7 +228,7 @@ namespace java::util
 	}
 	void BitSet::set(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"set",
 			"(I)V",
 			arg0
@@ -238,7 +236,7 @@ namespace java::util
 	}
 	void BitSet::set(jint arg0, jboolean arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"set",
 			"(IZ)V",
 			arg0,
@@ -247,7 +245,7 @@ namespace java::util
 	}
 	void BitSet::set(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"set",
 			"(II)V",
 			arg0,
@@ -256,7 +254,7 @@ namespace java::util
 	}
 	void BitSet::set(jint arg0, jint arg1, jboolean arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"set",
 			"(IIZ)V",
 			arg0,
@@ -266,45 +264,45 @@ namespace java::util
 	}
 	jint BitSet::size()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
 	QAndroidJniObject BitSet::stream()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"stream",
 			"()Ljava/util/stream/IntStream;"
 		);
 	}
 	jbyteArray BitSet::toByteArray()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toByteArray",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jlongArray BitSet::toLongArray()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toLongArray",
 			"()[J"
 		).object<jlongArray>();
 	}
 	jstring BitSet::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void BitSet::_xor(java::util::BitSet arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"xor",
 			"(Ljava/util/BitSet;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace java::util

@@ -25,9 +25,11 @@ namespace java::util::prefs
 		static jint MAX_NAME_LENGTH();
 		static jint MAX_VALUE_LENGTH();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Preferences(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Preferences(QAndroidJniObject obj);
+		
 		// Constructors
-		Preferences() = default;
 		
 		// Methods
 		static void importPreferences(java::io::InputStream arg0);

@@ -18,15 +18,15 @@ namespace android::app
 		);
 	}
 	
-	FragmentManager::FragmentManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FragmentManager::FragmentManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	FragmentManager::FragmentManager()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.app.FragmentManager",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void FragmentManager::enableDebugLogging(jboolean arg0)
@@ -40,40 +40,40 @@ namespace android::app
 	}
 	void FragmentManager::addOnBackStackChangedListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addOnBackStackChangedListener",
 			"(Landroid/app/FragmentManager$OnBackStackChangedListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject FragmentManager::beginTransaction()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"beginTransaction",
 			"()Landroid/app/FragmentTransaction;"
 		);
 	}
 	void FragmentManager::dump(jstring arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"dump",
 			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
+			arg1.object(),
+			arg2.object(),
 			arg3
 		);
 	}
 	jboolean FragmentManager::executePendingTransactions()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"executePendingTransactions",
 			"()Z"
 		);
 	}
 	QAndroidJniObject FragmentManager::findFragmentById(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"findFragmentById",
 			"(I)Landroid/app/Fragment;",
 			arg0
@@ -81,7 +81,7 @@ namespace android::app
 	}
 	QAndroidJniObject FragmentManager::findFragmentByTag(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"findFragmentByTag",
 			"(Ljava/lang/String;)Landroid/app/Fragment;",
 			arg0
@@ -89,7 +89,7 @@ namespace android::app
 	}
 	QAndroidJniObject FragmentManager::getBackStackEntryAt(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBackStackEntryAt",
 			"(I)Landroid/app/FragmentManager$BackStackEntry;",
 			arg0
@@ -97,65 +97,65 @@ namespace android::app
 	}
 	jint FragmentManager::getBackStackEntryCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getBackStackEntryCount",
 			"()I"
 		);
 	}
 	QAndroidJniObject FragmentManager::getFragment(android::os::Bundle arg0, jstring arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFragment",
 			"(Landroid/os/Bundle;Ljava/lang/String;)Landroid/app/Fragment;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	QAndroidJniObject FragmentManager::getFragments()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFragments",
 			"()Ljava/util/List;"
 		);
 	}
 	QAndroidJniObject FragmentManager::getPrimaryNavigationFragment()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPrimaryNavigationFragment",
 			"()Landroid/app/Fragment;"
 		);
 	}
 	void FragmentManager::invalidateOptionsMenu()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"invalidateOptionsMenu",
 			"()V"
 		);
 	}
 	jboolean FragmentManager::isDestroyed()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isDestroyed",
 			"()Z"
 		);
 	}
 	jboolean FragmentManager::isStateSaved()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isStateSaved",
 			"()Z"
 		);
 	}
 	void FragmentManager::popBackStack()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"popBackStack",
 			"()V"
 		);
 	}
 	void FragmentManager::popBackStack(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"popBackStack",
 			"(II)V",
 			arg0,
@@ -164,7 +164,7 @@ namespace android::app
 	}
 	void FragmentManager::popBackStack(jstring arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"popBackStack",
 			"(Ljava/lang/String;I)V",
 			arg0,
@@ -173,14 +173,14 @@ namespace android::app
 	}
 	jboolean FragmentManager::popBackStackImmediate()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"popBackStackImmediate",
 			"()Z"
 		);
 	}
 	jboolean FragmentManager::popBackStackImmediate(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"popBackStackImmediate",
 			"(II)Z",
 			arg0,
@@ -189,7 +189,7 @@ namespace android::app
 	}
 	jboolean FragmentManager::popBackStackImmediate(jstring arg0, jint arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"popBackStackImmediate",
 			"(Ljava/lang/String;I)Z",
 			arg0,
@@ -198,45 +198,45 @@ namespace android::app
 	}
 	void FragmentManager::putFragment(android::os::Bundle arg0, jstring arg1, android::app::Fragment arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putFragment",
 			"(Landroid/os/Bundle;Ljava/lang/String;Landroid/app/Fragment;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void FragmentManager::registerFragmentLifecycleCallbacks(android::app::FragmentManager_FragmentLifecycleCallbacks arg0, jboolean arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"registerFragmentLifecycleCallbacks",
 			"(Landroid/app/FragmentManager$FragmentLifecycleCallbacks;Z)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void FragmentManager::removeOnBackStackChangedListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeOnBackStackChangedListener",
 			"(Landroid/app/FragmentManager$OnBackStackChangedListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject FragmentManager::saveFragmentInstanceState(android::app::Fragment arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"saveFragmentInstanceState",
 			"(Landroid/app/Fragment;)Landroid/app/Fragment$SavedState;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void FragmentManager::unregisterFragmentLifecycleCallbacks(android::app::FragmentManager_FragmentLifecycleCallbacks arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"unregisterFragmentLifecycleCallbacks",
 			"(Landroid/app/FragmentManager$FragmentLifecycleCallbacks;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::app

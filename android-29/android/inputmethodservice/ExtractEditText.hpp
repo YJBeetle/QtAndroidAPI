@@ -21,13 +21,15 @@ namespace android::inputmethodservice
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ExtractEditText(const char *className, const char *sig, Ts...agv) : android::widget::EditText(className, sig, std::forward<Ts>(agv)...) {}
 		ExtractEditText(QAndroidJniObject obj);
+		
 		// Constructors
 		ExtractEditText(android::content::Context arg0);
 		ExtractEditText(android::content::Context arg0, __JniBaseClass arg1);
 		ExtractEditText(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		ExtractEditText(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
-		ExtractEditText() = default;
 		
 		// Methods
 		void finishInternalChanges();

@@ -6,52 +6,50 @@ namespace android::app
 	// Fields
 	jlong ApplicationErrorReport_RunningServiceInfo::durationMillis()
 	{
-		return __thiz.getField<jlong>(
+		return getField<jlong>(
 			"durationMillis"
 		);
 	}
 	jstring ApplicationErrorReport_RunningServiceInfo::serviceDetails()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"serviceDetails",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	
-	ApplicationErrorReport_RunningServiceInfo::ApplicationErrorReport_RunningServiceInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ApplicationErrorReport_RunningServiceInfo::ApplicationErrorReport_RunningServiceInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ApplicationErrorReport_RunningServiceInfo::ApplicationErrorReport_RunningServiceInfo()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.app.ApplicationErrorReport$RunningServiceInfo",
 			"()V"
-		);
-	}
+		) {}
 	ApplicationErrorReport_RunningServiceInfo::ApplicationErrorReport_RunningServiceInfo(android::os::Parcel arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.app.ApplicationErrorReport$RunningServiceInfo",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	void ApplicationErrorReport_RunningServiceInfo::dump(__JniBaseClass arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"dump",
 			"(Landroid/util/Printer;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void ApplicationErrorReport_RunningServiceInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

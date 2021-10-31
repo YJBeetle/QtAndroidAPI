@@ -12,9 +12,11 @@ namespace android::net
 		// Fields
 		jint code();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DnsResolver_DnsException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
 		DnsResolver_DnsException(QAndroidJniObject obj);
+		
 		// Constructors
-		DnsResolver_DnsException() = default;
 		
 		// Methods
 	};

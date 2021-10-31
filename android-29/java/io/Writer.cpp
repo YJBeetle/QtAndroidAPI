@@ -4,7 +4,9 @@ namespace java::io
 {
 	// Fields
 	
-	Writer::Writer(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Writer::Writer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -18,7 +20,7 @@ namespace java::io
 	}
 	QAndroidJniObject Writer::append(jchar arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"append",
 			"(C)Ljava/io/Writer;",
 			arg0
@@ -26,7 +28,7 @@ namespace java::io
 	}
 	QAndroidJniObject Writer::append(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"append",
 			"(Ljava/lang/CharSequence;)Ljava/io/Writer;",
 			arg0
@@ -34,7 +36,7 @@ namespace java::io
 	}
 	QAndroidJniObject Writer::append(jstring arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"append",
 			"(Ljava/lang/CharSequence;II)Ljava/io/Writer;",
 			arg0,
@@ -44,21 +46,21 @@ namespace java::io
 	}
 	void Writer::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	void Writer::flush()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"flush",
 			"()V"
 		);
 	}
 	void Writer::write(jcharArray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"write",
 			"([C)V",
 			arg0
@@ -66,7 +68,7 @@ namespace java::io
 	}
 	void Writer::write(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"write",
 			"(I)V",
 			arg0
@@ -74,7 +76,7 @@ namespace java::io
 	}
 	void Writer::write(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"write",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -82,7 +84,7 @@ namespace java::io
 	}
 	void Writer::write(jcharArray arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"write",
 			"([CII)V",
 			arg0,
@@ -92,7 +94,7 @@ namespace java::io
 	}
 	void Writer::write(jstring arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"write",
 			"(Ljava/lang/String;II)V",
 			arg0,

@@ -63,7 +63,9 @@ namespace java::util::concurrent
 		);
 	}
 	
-	TimeUnit::TimeUnit(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TimeUnit::TimeUnit(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -73,7 +75,7 @@ namespace java::util::concurrent
 			"java.util.concurrent.TimeUnit",
 			"of",
 			"(Ljava/time/temporal/ChronoUnit;)Ljava/util/concurrent/TimeUnit;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject TimeUnit::valueOf(jstring arg0)
@@ -95,24 +97,24 @@ namespace java::util::concurrent
 	}
 	jlong TimeUnit::convert(java::time::Duration arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"convert",
 			"(Ljava/time/Duration;)J",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jlong TimeUnit::convert(jlong arg0, java::util::concurrent::TimeUnit arg1)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"convert",
 			"(JLjava/util/concurrent/TimeUnit;)J",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void TimeUnit::sleep(jlong arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"sleep",
 			"(J)V",
 			arg0
@@ -120,16 +122,16 @@ namespace java::util::concurrent
 	}
 	void TimeUnit::timedJoin(java::lang::Thread arg0, jlong arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"timedJoin",
 			"(Ljava/lang/Thread;J)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void TimeUnit::timedWait(jobject arg0, jlong arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"timedWait",
 			"(Ljava/lang/Object;J)V",
 			arg0,
@@ -138,14 +140,14 @@ namespace java::util::concurrent
 	}
 	QAndroidJniObject TimeUnit::toChronoUnit()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toChronoUnit",
 			"()Ljava/time/temporal/ChronoUnit;"
 		);
 	}
 	jlong TimeUnit::toDays(jlong arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"toDays",
 			"(J)J",
 			arg0
@@ -153,7 +155,7 @@ namespace java::util::concurrent
 	}
 	jlong TimeUnit::toHours(jlong arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"toHours",
 			"(J)J",
 			arg0
@@ -161,7 +163,7 @@ namespace java::util::concurrent
 	}
 	jlong TimeUnit::toMicros(jlong arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"toMicros",
 			"(J)J",
 			arg0
@@ -169,7 +171,7 @@ namespace java::util::concurrent
 	}
 	jlong TimeUnit::toMillis(jlong arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"toMillis",
 			"(J)J",
 			arg0
@@ -177,7 +179,7 @@ namespace java::util::concurrent
 	}
 	jlong TimeUnit::toMinutes(jlong arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"toMinutes",
 			"(J)J",
 			arg0
@@ -185,7 +187,7 @@ namespace java::util::concurrent
 	}
 	jlong TimeUnit::toNanos(jlong arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"toNanos",
 			"(J)J",
 			arg0
@@ -193,7 +195,7 @@ namespace java::util::concurrent
 	}
 	jlong TimeUnit::toSeconds(jlong arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"toSeconds",
 			"(J)J",
 			arg0

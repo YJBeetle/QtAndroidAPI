@@ -10,9 +10,11 @@ namespace android::view::inspector
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit WindowInspector(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		WindowInspector(QAndroidJniObject obj);
+		
 		// Constructors
-		WindowInspector() = default;
 		
 		// Methods
 		static QAndroidJniObject getGlobalWindowViews();

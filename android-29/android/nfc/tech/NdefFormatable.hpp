@@ -18,9 +18,11 @@ namespace android::nfc::tech
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit NdefFormatable(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		NdefFormatable(QAndroidJniObject obj);
+		
 		// Constructors
-		NdefFormatable() = default;
 		
 		// Methods
 		static QAndroidJniObject get(android::nfc::Tag arg0);

@@ -13,28 +13,28 @@ namespace android::content
 		);
 	}
 	
-	LocusId::LocusId(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	LocusId::LocusId(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	LocusId::LocusId(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.content.LocusId",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jint LocusId::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean LocusId::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -42,31 +42,31 @@ namespace android::content
 	}
 	jstring LocusId::getId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint LocusId::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring LocusId::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void LocusId::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

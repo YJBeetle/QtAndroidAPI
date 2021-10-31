@@ -13,9 +13,11 @@ namespace android::media
 		jfloat y();
 		jfloat z();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MicrophoneInfo_Coordinate3F(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MicrophoneInfo_Coordinate3F(QAndroidJniObject obj);
+		
 		// Constructors
-		MicrophoneInfo_Coordinate3F() = default;
 		
 		// Methods
 		jboolean equals(jobject arg0);

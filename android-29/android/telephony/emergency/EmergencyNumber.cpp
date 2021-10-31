@@ -125,21 +125,23 @@ namespace android::telephony::emergency
 		);
 	}
 	
-	EmergencyNumber::EmergencyNumber(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	EmergencyNumber::EmergencyNumber(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint EmergencyNumber::compareTo(android::telephony::emergency::EmergencyNumber arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Landroid/telephony/emergency/EmergencyNumber;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint EmergencyNumber::compareTo(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -147,14 +149,14 @@ namespace android::telephony::emergency
 	}
 	jint EmergencyNumber::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean EmergencyNumber::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -162,63 +164,63 @@ namespace android::telephony::emergency
 	}
 	jstring EmergencyNumber::getCountryIso()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCountryIso",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint EmergencyNumber::getEmergencyCallRouting()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getEmergencyCallRouting",
 			"()I"
 		);
 	}
 	QAndroidJniObject EmergencyNumber::getEmergencyNumberSources()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEmergencyNumberSources",
 			"()Ljava/util/List;"
 		);
 	}
 	QAndroidJniObject EmergencyNumber::getEmergencyServiceCategories()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEmergencyServiceCategories",
 			"()Ljava/util/List;"
 		);
 	}
 	QAndroidJniObject EmergencyNumber::getEmergencyUrns()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEmergencyUrns",
 			"()Ljava/util/List;"
 		);
 	}
 	jstring EmergencyNumber::getMnc()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMnc",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring EmergencyNumber::getNumber()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getNumber",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint EmergencyNumber::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean EmergencyNumber::isFromSources(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isFromSources",
 			"(I)Z",
 			arg0
@@ -226,7 +228,7 @@ namespace android::telephony::emergency
 	}
 	jboolean EmergencyNumber::isInEmergencyServiceCategories(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isInEmergencyServiceCategories",
 			"(I)Z",
 			arg0
@@ -234,17 +236,17 @@ namespace android::telephony::emergency
 	}
 	jstring EmergencyNumber::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void EmergencyNumber::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

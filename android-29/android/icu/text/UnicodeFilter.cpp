@@ -4,13 +4,15 @@ namespace android::icu::text
 {
 	// Fields
 	
-	UnicodeFilter::UnicodeFilter(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UnicodeFilter::UnicodeFilter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jboolean UnicodeFilter::contains(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"contains",
 			"(I)Z",
 			arg0
@@ -18,10 +20,10 @@ namespace android::icu::text
 	}
 	jint UnicodeFilter::matches(__JniBaseClass arg0, jintArray arg1, jint arg2, jboolean arg3)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"matches",
 			"(Landroid/icu/text/Replaceable;[IIZ)I",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3

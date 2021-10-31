@@ -78,7 +78,10 @@ namespace android::service::notification
 		static jint SUPPRESSED_EFFECT_SCREEN_OFF();
 		static jint SUPPRESSED_EFFECT_SCREEN_ON();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit NotificationListenerService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
 		NotificationListenerService(QAndroidJniObject obj);
+		
 		// Constructors
 		NotificationListenerService();
 		

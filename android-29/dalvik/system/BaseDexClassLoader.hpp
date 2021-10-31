@@ -27,10 +27,12 @@ namespace dalvik::system
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BaseDexClassLoader(const char *className, const char *sig, Ts...agv) : java::lang::ClassLoader(className, sig, std::forward<Ts>(agv)...) {}
 		BaseDexClassLoader(QAndroidJniObject obj);
+		
 		// Constructors
 		BaseDexClassLoader(jstring arg0, java::io::File arg1, jstring arg2, java::lang::ClassLoader arg3);
-		BaseDexClassLoader() = default;
 		
 		// Methods
 		jstring findLibrary(jstring arg0);

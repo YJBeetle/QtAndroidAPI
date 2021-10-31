@@ -4,7 +4,9 @@ namespace android::os::strictmode
 {
 	// Fields
 	
-	ImplicitDirectBootViolation::ImplicitDirectBootViolation(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ImplicitDirectBootViolation::ImplicitDirectBootViolation(QAndroidJniObject obj) : android::os::strictmode::Violation(obj) {}
+	
 	// Constructors
 	
 	// Methods

@@ -26,11 +26,13 @@ namespace android::service::autofill
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SaveInfo_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SaveInfo_Builder(QAndroidJniObject obj);
+		
 		// Constructors
 		SaveInfo_Builder(jint arg0);
 		SaveInfo_Builder(jint arg0, jarray arg1);
-		SaveInfo_Builder() = default;
 		
 		// Methods
 		QAndroidJniObject addSanitizer(__JniBaseClass arg0, jarray arg1);

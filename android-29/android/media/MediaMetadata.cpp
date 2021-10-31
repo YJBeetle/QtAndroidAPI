@@ -249,13 +249,15 @@ namespace android::media
 		).object<jstring>();
 	}
 	
-	MediaMetadata::MediaMetadata(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaMetadata::MediaMetadata(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jboolean MediaMetadata::containsKey(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"containsKey",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -263,14 +265,14 @@ namespace android::media
 	}
 	jint MediaMetadata::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean MediaMetadata::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -278,7 +280,7 @@ namespace android::media
 	}
 	QAndroidJniObject MediaMetadata::getBitmap(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBitmap",
 			"(Ljava/lang/String;)Landroid/graphics/Bitmap;",
 			arg0
@@ -286,14 +288,14 @@ namespace android::media
 	}
 	QAndroidJniObject MediaMetadata::getDescription()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDescription",
 			"()Landroid/media/MediaDescription;"
 		);
 	}
 	jlong MediaMetadata::getLong(jstring arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getLong",
 			"(Ljava/lang/String;)J",
 			arg0
@@ -301,7 +303,7 @@ namespace android::media
 	}
 	QAndroidJniObject MediaMetadata::getRating(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRating",
 			"(Ljava/lang/String;)Landroid/media/Rating;",
 			arg0
@@ -309,7 +311,7 @@ namespace android::media
 	}
 	jstring MediaMetadata::getString(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getString",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
@@ -317,7 +319,7 @@ namespace android::media
 	}
 	jstring MediaMetadata::getText(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getText",
 			"(Ljava/lang/String;)Ljava/lang/CharSequence;",
 			arg0
@@ -325,31 +327,31 @@ namespace android::media
 	}
 	jint MediaMetadata::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	QAndroidJniObject MediaMetadata::keySet()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"keySet",
 			"()Ljava/util/Set;"
 		);
 	}
 	jint MediaMetadata::size()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
 	void MediaMetadata::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

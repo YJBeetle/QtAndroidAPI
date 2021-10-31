@@ -23,7 +23,10 @@ namespace java::util::logging
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MemoryHandler(const char *className, const char *sig, Ts...agv) : java::util::logging::Handler(className, sig, std::forward<Ts>(agv)...) {}
 		MemoryHandler(QAndroidJniObject obj);
+		
 		// Constructors
 		MemoryHandler();
 		MemoryHandler(java::util::logging::Handler arg0, jint arg1, java::util::logging::Level arg2);

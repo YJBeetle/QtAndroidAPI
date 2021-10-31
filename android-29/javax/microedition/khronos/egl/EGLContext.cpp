@@ -4,15 +4,15 @@ namespace javax::microedition::khronos::egl
 {
 	// Fields
 	
-	EGLContext::EGLContext(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	EGLContext::EGLContext(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	EGLContext::EGLContext()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"javax.microedition.khronos.egl.EGLContext",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject EGLContext::getEGL()
@@ -25,7 +25,7 @@ namespace javax::microedition::khronos::egl
 	}
 	QAndroidJniObject EGLContext::getGL()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getGL",
 			"()Ljavax/microedition/khronos/opengles/GL;"
 		);

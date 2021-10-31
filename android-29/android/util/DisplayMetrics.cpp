@@ -173,69 +173,69 @@ namespace android::util
 	}
 	jfloat DisplayMetrics::density()
 	{
-		return __thiz.getField<jfloat>(
+		return getField<jfloat>(
 			"density"
 		);
 	}
 	jint DisplayMetrics::densityDpi()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"densityDpi"
 		);
 	}
 	jint DisplayMetrics::heightPixels()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"heightPixels"
 		);
 	}
 	jfloat DisplayMetrics::scaledDensity()
 	{
-		return __thiz.getField<jfloat>(
+		return getField<jfloat>(
 			"scaledDensity"
 		);
 	}
 	jint DisplayMetrics::widthPixels()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"widthPixels"
 		);
 	}
 	jfloat DisplayMetrics::xdpi()
 	{
-		return __thiz.getField<jfloat>(
+		return getField<jfloat>(
 			"xdpi"
 		);
 	}
 	jfloat DisplayMetrics::ydpi()
 	{
-		return __thiz.getField<jfloat>(
+		return getField<jfloat>(
 			"ydpi"
 		);
 	}
 	
-	DisplayMetrics::DisplayMetrics(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DisplayMetrics::DisplayMetrics(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	DisplayMetrics::DisplayMetrics()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.util.DisplayMetrics",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean DisplayMetrics::equals(android::util::DisplayMetrics arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Landroid/util/DisplayMetrics;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean DisplayMetrics::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -243,29 +243,29 @@ namespace android::util
 	}
 	jint DisplayMetrics::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	void DisplayMetrics::setTo(android::util::DisplayMetrics arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTo",
 			"(Landroid/util/DisplayMetrics;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void DisplayMetrics::setToDefaults()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setToDefaults",
 			"()V"
 		);
 	}
 	jstring DisplayMetrics::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

@@ -105,7 +105,9 @@ namespace android::view
 		);
 	}
 	
-	KeyCharacterMap::KeyCharacterMap(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	KeyCharacterMap::KeyCharacterMap(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -148,14 +150,14 @@ namespace android::view
 	}
 	jint KeyCharacterMap::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jint KeyCharacterMap::get(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"get",
 			"(II)I",
 			arg0,
@@ -164,7 +166,7 @@ namespace android::view
 	}
 	jchar KeyCharacterMap::getDisplayLabel(jint arg0)
 	{
-		return __thiz.callMethod<jchar>(
+		return callMethod<jchar>(
 			"getDisplayLabel",
 			"(I)C",
 			arg0
@@ -172,7 +174,7 @@ namespace android::view
 	}
 	jarray KeyCharacterMap::getEvents(jcharArray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEvents",
 			"([C)[Landroid/view/KeyEvent;",
 			arg0
@@ -180,23 +182,23 @@ namespace android::view
 	}
 	jboolean KeyCharacterMap::getKeyData(jint arg0, android::view::KeyCharacterMap_KeyData arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getKeyData",
 			"(ILandroid/view/KeyCharacterMap$KeyData;)Z",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jint KeyCharacterMap::getKeyboardType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getKeyboardType",
 			"()I"
 		);
 	}
 	jchar KeyCharacterMap::getMatch(jint arg0, jcharArray arg1)
 	{
-		return __thiz.callMethod<jchar>(
+		return callMethod<jchar>(
 			"getMatch",
 			"(I[C)C",
 			arg0,
@@ -205,7 +207,7 @@ namespace android::view
 	}
 	jchar KeyCharacterMap::getMatch(jint arg0, jcharArray arg1, jint arg2)
 	{
-		return __thiz.callMethod<jchar>(
+		return callMethod<jchar>(
 			"getMatch",
 			"(I[CI)C",
 			arg0,
@@ -215,14 +217,14 @@ namespace android::view
 	}
 	jint KeyCharacterMap::getModifierBehavior()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getModifierBehavior",
 			"()I"
 		);
 	}
 	jchar KeyCharacterMap::getNumber(jint arg0)
 	{
-		return __thiz.callMethod<jchar>(
+		return callMethod<jchar>(
 			"getNumber",
 			"(I)C",
 			arg0
@@ -230,7 +232,7 @@ namespace android::view
 	}
 	jboolean KeyCharacterMap::isPrintingKey(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isPrintingKey",
 			"(I)Z",
 			arg0
@@ -238,10 +240,10 @@ namespace android::view
 	}
 	void KeyCharacterMap::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

@@ -4,15 +4,15 @@ namespace java::io
 {
 	// Fields
 	
-	OutputStream::OutputStream(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	OutputStream::OutputStream(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	OutputStream::OutputStream()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.io.OutputStream",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject OutputStream::nullOutputStream()
@@ -25,21 +25,21 @@ namespace java::io
 	}
 	void OutputStream::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	void OutputStream::flush()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"flush",
 			"()V"
 		);
 	}
 	void OutputStream::write(jbyteArray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"write",
 			"([B)V",
 			arg0
@@ -47,7 +47,7 @@ namespace java::io
 	}
 	void OutputStream::write(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"write",
 			"(I)V",
 			arg0
@@ -55,7 +55,7 @@ namespace java::io
 	}
 	void OutputStream::write(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"write",
 			"([BII)V",
 			arg0,

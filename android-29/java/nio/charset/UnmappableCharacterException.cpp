@@ -4,28 +4,28 @@ namespace java::nio::charset
 {
 	// Fields
 	
-	UnmappableCharacterException::UnmappableCharacterException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UnmappableCharacterException::UnmappableCharacterException(QAndroidJniObject obj) : java::nio::charset::CharacterCodingException(obj) {}
+	
 	// Constructors
 	UnmappableCharacterException::UnmappableCharacterException(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::nio::charset::CharacterCodingException(
 			"java.nio.charset.UnmappableCharacterException",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jint UnmappableCharacterException::getInputLength()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getInputLength",
 			"()I"
 		);
 	}
 	jstring UnmappableCharacterException::getMessage()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
 		).object<jstring>();

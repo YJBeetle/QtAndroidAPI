@@ -30,9 +30,11 @@ namespace android::app
 		static jint SOURCE_CHOICE();
 		static jint SOURCE_FREE_FORM_INPUT();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit RemoteInput(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		RemoteInput(QAndroidJniObject obj);
+		
 		// Constructors
-		RemoteInput() = default;
 		
 		// Methods
 		static void addDataResultToIntent(android::app::RemoteInput arg0, android::content::Intent arg1, __JniBaseClass arg2);

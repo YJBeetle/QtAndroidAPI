@@ -18,10 +18,12 @@ namespace android::print
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PrintJobInfo_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PrintJobInfo_Builder(QAndroidJniObject obj);
+		
 		// Constructors
 		PrintJobInfo_Builder(android::print::PrintJobInfo arg0);
-		PrintJobInfo_Builder() = default;
 		
 		// Methods
 		QAndroidJniObject build();

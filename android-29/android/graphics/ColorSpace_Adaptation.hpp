@@ -14,9 +14,11 @@ namespace android::graphics
 		static QAndroidJniObject CIECAT02();
 		static QAndroidJniObject VON_KRIES();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ColorSpace_Adaptation(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		ColorSpace_Adaptation(QAndroidJniObject obj);
+		
 		// Constructors
-		ColorSpace_Adaptation() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

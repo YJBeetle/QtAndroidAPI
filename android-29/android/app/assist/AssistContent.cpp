@@ -17,92 +17,92 @@ namespace android::app::assist
 		);
 	}
 	
-	AssistContent::AssistContent(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AssistContent::AssistContent(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	AssistContent::AssistContent()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.app.assist.AssistContent",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jint AssistContent::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	QAndroidJniObject AssistContent::getClipData()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getClipData",
 			"()Landroid/content/ClipData;"
 		);
 	}
 	QAndroidJniObject AssistContent::getExtras()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
 	QAndroidJniObject AssistContent::getIntent()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getIntent",
 			"()Landroid/content/Intent;"
 		);
 	}
 	jstring AssistContent::getStructuredData()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getStructuredData",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject AssistContent::getWebUri()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getWebUri",
 			"()Landroid/net/Uri;"
 		);
 	}
 	jboolean AssistContent::isAppProvidedIntent()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isAppProvidedIntent",
 			"()Z"
 		);
 	}
 	jboolean AssistContent::isAppProvidedWebUri()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isAppProvidedWebUri",
 			"()Z"
 		);
 	}
 	void AssistContent::setClipData(android::content::ClipData arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setClipData",
 			"(Landroid/content/ClipData;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AssistContent::setIntent(android::content::Intent arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setIntent",
 			"(Landroid/content/Intent;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AssistContent::setStructuredData(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setStructuredData",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -110,18 +110,18 @@ namespace android::app::assist
 	}
 	void AssistContent::setWebUri(android::net::Uri arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setWebUri",
 			"(Landroid/net/Uri;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AssistContent::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

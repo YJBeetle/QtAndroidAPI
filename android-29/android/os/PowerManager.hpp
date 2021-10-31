@@ -36,9 +36,11 @@ namespace android::os
 		static jint THERMAL_STATUS_SEVERE();
 		static jint THERMAL_STATUS_SHUTDOWN();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PowerManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PowerManager(QAndroidJniObject obj);
+		
 		// Constructors
-		PowerManager() = default;
 		
 		// Methods
 		void addThermalStatusListener(__JniBaseClass arg0);

@@ -13,7 +13,10 @@ namespace java::nio::channels
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ClosedSelectorException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalStateException(className, sig, std::forward<Ts>(agv)...) {}
 		ClosedSelectorException(QAndroidJniObject obj);
+		
 		// Constructors
 		ClosedSelectorException();
 		

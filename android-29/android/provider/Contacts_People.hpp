@@ -47,9 +47,11 @@ namespace android::provider
 		static jstring PRIMARY_ORGANIZATION_ID();
 		static jstring PRIMARY_PHONE_ID();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Contacts_People(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Contacts_People(QAndroidJniObject obj);
+		
 		// Constructors
-		Contacts_People() = default;
 		
 		// Methods
 		static QAndroidJniObject addToGroup(android::content::ContentResolver arg0, jlong arg1, jstring arg2);

@@ -18,9 +18,11 @@ namespace android::media
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AudioFocusRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AudioFocusRequest(QAndroidJniObject obj);
+		
 		// Constructors
-		AudioFocusRequest() = default;
 		
 		// Methods
 		jboolean acceptsDelayedFocusGain();

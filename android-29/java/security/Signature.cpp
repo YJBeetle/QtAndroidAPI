@@ -10,7 +10,9 @@ namespace java::security
 {
 	// Fields
 	
-	Signature::Signature(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Signature::Signature(QAndroidJniObject obj) : java::security::SignatureSpi(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -40,26 +42,26 @@ namespace java::security
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/Signature;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jobject Signature::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jstring Signature::getAlgorithm()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jobject Signature::getParameter(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getParameter",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
 			arg0
@@ -67,62 +69,62 @@ namespace java::security
 	}
 	QAndroidJniObject Signature::getParameters()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getParameters",
 			"()Ljava/security/AlgorithmParameters;"
 		);
 	}
 	QAndroidJniObject Signature::getProvider()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getProvider",
 			"()Ljava/security/Provider;"
 		);
 	}
 	void Signature::initSign(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"initSign",
 			"(Ljava/security/PrivateKey;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Signature::initSign(__JniBaseClass arg0, java::security::SecureRandom arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"initSign",
 			"(Ljava/security/PrivateKey;Ljava/security/SecureRandom;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void Signature::initVerify(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"initVerify",
 			"(Ljava/security/PublicKey;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Signature::initVerify(java::security::cert::Certificate arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"initVerify",
 			"(Ljava/security/cert/Certificate;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Signature::setParameter(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setParameter",
 			"(Ljava/security/spec/AlgorithmParameterSpec;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Signature::setParameter(jstring arg0, jobject arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setParameter",
 			"(Ljava/lang/String;Ljava/lang/Object;)V",
 			arg0,
@@ -131,14 +133,14 @@ namespace java::security
 	}
 	jbyteArray Signature::sign()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"sign",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jint Signature::sign(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"sign",
 			"([BII)I",
 			arg0,
@@ -148,14 +150,14 @@ namespace java::security
 	}
 	jstring Signature::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void Signature::update(jbyteArray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"update",
 			"([B)V",
 			arg0
@@ -163,7 +165,7 @@ namespace java::security
 	}
 	void Signature::update(jbyte arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"update",
 			"(B)V",
 			arg0
@@ -171,15 +173,15 @@ namespace java::security
 	}
 	void Signature::update(java::nio::ByteBuffer arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"update",
 			"(Ljava/nio/ByteBuffer;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Signature::update(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"update",
 			"([BII)V",
 			arg0,
@@ -189,7 +191,7 @@ namespace java::security
 	}
 	jboolean Signature::verify(jbyteArray arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"verify",
 			"([B)Z",
 			arg0
@@ -197,7 +199,7 @@ namespace java::security
 	}
 	jboolean Signature::verify(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"verify",
 			"([BII)Z",
 			arg0,

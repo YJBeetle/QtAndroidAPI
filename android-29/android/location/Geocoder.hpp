@@ -18,11 +18,13 @@ namespace android::location
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Geocoder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Geocoder(QAndroidJniObject obj);
+		
 		// Constructors
 		Geocoder(android::content::Context arg0);
 		Geocoder(android::content::Context arg0, java::util::Locale arg1);
-		Geocoder() = default;
 		
 		// Methods
 		static jboolean isPresent();

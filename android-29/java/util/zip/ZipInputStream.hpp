@@ -29,11 +29,13 @@ namespace java::util::zip
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ZipInputStream(const char *className, const char *sig, Ts...agv) : java::util::zip::InflaterInputStream(className, sig, std::forward<Ts>(agv)...) {}
 		ZipInputStream(QAndroidJniObject obj);
+		
 		// Constructors
 		ZipInputStream(java::io::InputStream arg0);
 		ZipInputStream(java::io::InputStream arg0, java::nio::charset::Charset arg1);
-		ZipInputStream() = default;
 		
 		// Methods
 		jint available();

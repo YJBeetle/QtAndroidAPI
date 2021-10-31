@@ -4,27 +4,27 @@ namespace org::apache::http::conn::ssl
 {
 	// Fields
 	
-	BrowserCompatHostnameVerifier::BrowserCompatHostnameVerifier(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BrowserCompatHostnameVerifier::BrowserCompatHostnameVerifier(QAndroidJniObject obj) : org::apache::http::conn::ssl::AbstractVerifier(obj) {}
+	
 	// Constructors
 	BrowserCompatHostnameVerifier::BrowserCompatHostnameVerifier()
-	{
-		__thiz = QAndroidJniObject(
+		: org::apache::http::conn::ssl::AbstractVerifier(
 			"org.apache.http.conn.ssl.BrowserCompatHostnameVerifier",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring BrowserCompatHostnameVerifier::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void BrowserCompatHostnameVerifier::verify(jstring arg0, jarray arg1, jarray arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"verify",
 			"(Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V",
 			arg0,

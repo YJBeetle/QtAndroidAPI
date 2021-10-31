@@ -10,9 +10,11 @@ namespace android::graphics::text
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit LineBreaker_Result(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		LineBreaker_Result(QAndroidJniObject obj);
+		
 		// Constructors
-		LineBreaker_Result() = default;
 		
 		// Methods
 		jint getEndLineHyphenEdit(jint arg0);

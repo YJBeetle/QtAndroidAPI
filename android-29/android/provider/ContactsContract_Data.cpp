@@ -54,7 +54,9 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	ContactsContract_Data::ContactsContract_Data(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ContactsContract_Data::ContactsContract_Data(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -64,8 +66,8 @@ namespace android::provider
 			"android.provider.ContactsContract$Data",
 			"getContactLookupUri",
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;)Landroid/net/Uri;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 } // namespace android::provider

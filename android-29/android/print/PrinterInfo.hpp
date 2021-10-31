@@ -26,9 +26,11 @@ namespace android::print
 		static jint STATUS_IDLE();
 		static jint STATUS_UNAVAILABLE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PrinterInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PrinterInfo(QAndroidJniObject obj);
+		
 		// Constructors
-		PrinterInfo() = default;
 		
 		// Methods
 		jint describeContents();

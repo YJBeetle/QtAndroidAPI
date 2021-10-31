@@ -50,9 +50,11 @@ namespace android::view::inputmethod
 		static jint SHOW_FORCED();
 		static jint SHOW_IMPLICIT();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit InputMethodManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		InputMethodManager(QAndroidJniObject obj);
+		
 		// Constructors
-		InputMethodManager() = default;
 		
 		// Methods
 		void dispatchKeyEventFromInputMethod(android::view::View arg0, android::view::KeyEvent arg1);

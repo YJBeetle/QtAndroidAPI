@@ -10,27 +10,25 @@ namespace android::graphics
 {
 	// Fields
 	
-	NinePatch::NinePatch(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NinePatch::NinePatch(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	NinePatch::NinePatch(android::graphics::Bitmap arg0, jbyteArray arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.graphics.NinePatch",
 			"(Landroid/graphics/Bitmap;[B)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
-		);
-	}
+		) {}
 	NinePatch::NinePatch(android::graphics::Bitmap arg0, jbyteArray arg1, jstring arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.graphics.NinePatch",
 			"(Landroid/graphics/Bitmap;[BLjava/lang/String;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean NinePatch::isNinePatchChunk(jbyteArray arg0)
@@ -44,95 +42,95 @@ namespace android::graphics
 	}
 	void NinePatch::draw(android::graphics::Canvas arg0, android::graphics::Rect arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"draw",
 			"(Landroid/graphics/Canvas;Landroid/graphics/Rect;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void NinePatch::draw(android::graphics::Canvas arg0, android::graphics::RectF arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"draw",
 			"(Landroid/graphics/Canvas;Landroid/graphics/RectF;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void NinePatch::draw(android::graphics::Canvas arg0, android::graphics::Rect arg1, android::graphics::Paint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"draw",
 			"(Landroid/graphics/Canvas;Landroid/graphics/Rect;Landroid/graphics/Paint;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject NinePatch::getBitmap()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBitmap",
 			"()Landroid/graphics/Bitmap;"
 		);
 	}
 	jint NinePatch::getDensity()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDensity",
 			"()I"
 		);
 	}
 	jint NinePatch::getHeight()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getHeight",
 			"()I"
 		);
 	}
 	jstring NinePatch::getName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject NinePatch::getPaint()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPaint",
 			"()Landroid/graphics/Paint;"
 		);
 	}
 	QAndroidJniObject NinePatch::getTransparentRegion(android::graphics::Rect arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTransparentRegion",
 			"(Landroid/graphics/Rect;)Landroid/graphics/Region;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint NinePatch::getWidth()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getWidth",
 			"()I"
 		);
 	}
 	jboolean NinePatch::hasAlpha()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasAlpha",
 			"()Z"
 		);
 	}
 	void NinePatch::setPaint(android::graphics::Paint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPaint",
 			"(Landroid/graphics/Paint;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::graphics

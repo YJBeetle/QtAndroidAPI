@@ -48,77 +48,79 @@ namespace android::view::accessibility
 	}
 	jint CaptioningManager_CaptionStyle::backgroundColor()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"backgroundColor"
 		);
 	}
 	jint CaptioningManager_CaptionStyle::edgeColor()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"edgeColor"
 		);
 	}
 	jint CaptioningManager_CaptionStyle::edgeType()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"edgeType"
 		);
 	}
 	jint CaptioningManager_CaptionStyle::foregroundColor()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"foregroundColor"
 		);
 	}
 	jint CaptioningManager_CaptionStyle::windowColor()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"windowColor"
 		);
 	}
 	
-	CaptioningManager_CaptionStyle::CaptioningManager_CaptionStyle(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CaptioningManager_CaptionStyle::CaptioningManager_CaptionStyle(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject CaptioningManager_CaptionStyle::getTypeface()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTypeface",
 			"()Landroid/graphics/Typeface;"
 		);
 	}
 	jboolean CaptioningManager_CaptionStyle::hasBackgroundColor()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasBackgroundColor",
 			"()Z"
 		);
 	}
 	jboolean CaptioningManager_CaptionStyle::hasEdgeColor()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasEdgeColor",
 			"()Z"
 		);
 	}
 	jboolean CaptioningManager_CaptionStyle::hasEdgeType()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasEdgeType",
 			"()Z"
 		);
 	}
 	jboolean CaptioningManager_CaptionStyle::hasForegroundColor()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasForegroundColor",
 			"()Z"
 		);
 	}
 	jboolean CaptioningManager_CaptionStyle::hasWindowColor()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasWindowColor",
 			"()Z"
 		);

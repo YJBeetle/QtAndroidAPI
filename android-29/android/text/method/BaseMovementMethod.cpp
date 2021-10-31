@@ -7,103 +7,103 @@ namespace android::text::method
 {
 	// Fields
 	
-	BaseMovementMethod::BaseMovementMethod(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BaseMovementMethod::BaseMovementMethod(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	BaseMovementMethod::BaseMovementMethod()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.text.method.BaseMovementMethod",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean BaseMovementMethod::canSelectArbitrarily()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"canSelectArbitrarily",
 			"()Z"
 		);
 	}
 	void BaseMovementMethod::initialize(android::widget::TextView arg0, __JniBaseClass arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"initialize",
 			"(Landroid/widget/TextView;Landroid/text/Spannable;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jboolean BaseMovementMethod::onGenericMotionEvent(android::widget::TextView arg0, __JniBaseClass arg1, android::view::MotionEvent arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onGenericMotionEvent",
 			"(Landroid/widget/TextView;Landroid/text/Spannable;Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	jboolean BaseMovementMethod::onKeyDown(android::widget::TextView arg0, __JniBaseClass arg1, jint arg2, android::view::KeyEvent arg3)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onKeyDown",
 			"(Landroid/widget/TextView;Landroid/text/Spannable;ILandroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	jboolean BaseMovementMethod::onKeyOther(android::widget::TextView arg0, __JniBaseClass arg1, android::view::KeyEvent arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onKeyOther",
 			"(Landroid/widget/TextView;Landroid/text/Spannable;Landroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	jboolean BaseMovementMethod::onKeyUp(android::widget::TextView arg0, __JniBaseClass arg1, jint arg2, android::view::KeyEvent arg3)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onKeyUp",
 			"(Landroid/widget/TextView;Landroid/text/Spannable;ILandroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	void BaseMovementMethod::onTakeFocus(android::widget::TextView arg0, __JniBaseClass arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onTakeFocus",
 			"(Landroid/widget/TextView;Landroid/text/Spannable;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
 	jboolean BaseMovementMethod::onTouchEvent(android::widget::TextView arg0, __JniBaseClass arg1, android::view::MotionEvent arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onTouchEvent",
 			"(Landroid/widget/TextView;Landroid/text/Spannable;Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	jboolean BaseMovementMethod::onTrackballEvent(android::widget::TextView arg0, __JniBaseClass arg1, android::view::MotionEvent arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onTrackballEvent",
 			"(Landroid/widget/TextView;Landroid/text/Spannable;Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 } // namespace android::text::method

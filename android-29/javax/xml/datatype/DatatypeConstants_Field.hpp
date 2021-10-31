@@ -10,9 +10,11 @@ namespace javax::xml::datatype
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DatatypeConstants_Field(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DatatypeConstants_Field(QAndroidJniObject obj);
+		
 		// Constructors
-		DatatypeConstants_Field() = default;
 		
 		// Methods
 		jint getId();

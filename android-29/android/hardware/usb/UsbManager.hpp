@@ -41,9 +41,11 @@ namespace android::hardware::usb
 		static jstring EXTRA_DEVICE();
 		static jstring EXTRA_PERMISSION_GRANTED();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit UsbManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		UsbManager(QAndroidJniObject obj);
+		
 		// Constructors
-		UsbManager() = default;
 		
 		// Methods
 		jarray getAccessoryList();

@@ -4,21 +4,21 @@ namespace java::security
 {
 	// Fields
 	
-	KeyStore_CallbackHandlerProtection::KeyStore_CallbackHandlerProtection(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	KeyStore_CallbackHandlerProtection::KeyStore_CallbackHandlerProtection(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	KeyStore_CallbackHandlerProtection::KeyStore_CallbackHandlerProtection(__JniBaseClass arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.security.KeyStore$CallbackHandlerProtection",
 			"(Ljavax/security/auth/callback/CallbackHandler;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject KeyStore_CallbackHandlerProtection::getCallbackHandler()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCallbackHandler",
 			"()Ljavax/security/auth/callback/CallbackHandler;"
 		);

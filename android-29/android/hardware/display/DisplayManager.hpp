@@ -40,9 +40,11 @@ namespace android::hardware::display
 		static jint VIRTUAL_DISPLAY_FLAG_PUBLIC();
 		static jint VIRTUAL_DISPLAY_FLAG_SECURE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DisplayManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DisplayManager(QAndroidJniObject obj);
+		
 		// Constructors
-		DisplayManager() = default;
 		
 		// Methods
 		QAndroidJniObject createVirtualDisplay(jstring arg0, jint arg1, jint arg2, jint arg3, android::view::Surface arg4, jint arg5);

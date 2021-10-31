@@ -662,42 +662,44 @@ namespace android::hardware::camera2
 		);
 	}
 	
-	CaptureResult::CaptureResult(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CaptureResult::CaptureResult(QAndroidJniObject obj) : android::hardware::camera2::CameraMetadata(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jobject CaptureResult::get(android::hardware::camera2::CaptureResult_Key arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jobject>();
 	}
 	jlong CaptureResult::getFrameNumber()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getFrameNumber",
 			"()J"
 		);
 	}
 	QAndroidJniObject CaptureResult::getKeys()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getKeys",
 			"()Ljava/util/List;"
 		);
 	}
 	QAndroidJniObject CaptureResult::getRequest()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRequest",
 			"()Landroid/hardware/camera2/CaptureRequest;"
 		);
 	}
 	jint CaptureResult::getSequenceId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSequenceId",
 			"()I"
 		);

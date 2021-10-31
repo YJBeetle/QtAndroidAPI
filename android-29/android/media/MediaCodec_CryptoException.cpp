@@ -67,22 +67,22 @@ namespace android::media
 		);
 	}
 	
-	MediaCodec_CryptoException::MediaCodec_CryptoException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaCodec_CryptoException::MediaCodec_CryptoException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	
 	// Constructors
 	MediaCodec_CryptoException::MediaCodec_CryptoException(jint arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::RuntimeException(
 			"android.media.MediaCodec$CryptoException",
 			"(ILjava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jint MediaCodec_CryptoException::getErrorCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getErrorCode",
 			"()I"
 		);

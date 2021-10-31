@@ -6,7 +6,9 @@ namespace android::os
 {
 	// Fields
 	
-	RecoverySystem::RecoverySystem(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	RecoverySystem::RecoverySystem(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -16,8 +18,8 @@ namespace android::os
 			"android.os.RecoverySystem",
 			"installPackage",
 			"(Landroid/content/Context;Ljava/io/File;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void RecoverySystem::rebootWipeCache(android::content::Context arg0)
@@ -26,7 +28,7 @@ namespace android::os
 			"android.os.RecoverySystem",
 			"rebootWipeCache",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void RecoverySystem::rebootWipeUserData(android::content::Context arg0)
@@ -35,7 +37,7 @@ namespace android::os
 			"android.os.RecoverySystem",
 			"rebootWipeUserData",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void RecoverySystem::verifyPackage(java::io::File arg0, __JniBaseClass arg1, java::io::File arg2)
@@ -44,9 +46,9 @@ namespace android::os
 			"android.os.RecoverySystem",
 			"verifyPackage",
 			"(Ljava/io/File;Landroid/os/RecoverySystem$ProgressListener;Ljava/io/File;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 } // namespace android::os

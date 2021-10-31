@@ -8,23 +8,21 @@ namespace android::os
 {
 	// Fields
 	
-	Binder::Binder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Binder::Binder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Binder::Binder()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.os.Binder",
 			"()V"
-		);
-	}
+		) {}
 	Binder::Binder(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.os.Binder",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jlong Binder::clearCallingIdentity()
@@ -128,64 +126,64 @@ namespace android::os
 	}
 	void Binder::attachInterface(__JniBaseClass arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"attachInterface",
 			"(Landroid/os/IInterface;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void Binder::dump(java::io::FileDescriptor arg0, jarray arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"dump",
 			"(Ljava/io/FileDescriptor;[Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void Binder::dumpAsync(java::io::FileDescriptor arg0, jarray arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"dumpAsync",
 			"(Ljava/io/FileDescriptor;[Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	jstring Binder::getInterfaceDescriptor()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getInterfaceDescriptor",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jboolean Binder::isBinderAlive()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isBinderAlive",
 			"()Z"
 		);
 	}
 	void Binder::linkToDeath(__JniBaseClass arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"linkToDeath",
 			"(Landroid/os/IBinder$DeathRecipient;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	jboolean Binder::pingBinder()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"pingBinder",
 			"()Z"
 		);
 	}
 	QAndroidJniObject Binder::queryLocalInterface(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"queryLocalInterface",
 			"(Ljava/lang/String;)Landroid/os/IInterface;",
 			arg0
@@ -193,21 +191,21 @@ namespace android::os
 	}
 	jboolean Binder::transact(jint arg0, android::os::Parcel arg1, android::os::Parcel arg2, jint arg3)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"transact",
 			"(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
+			arg1.object(),
+			arg2.object(),
 			arg3
 		);
 	}
 	jboolean Binder::unlinkToDeath(__JniBaseClass arg0, jint arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"unlinkToDeath",
 			"(Landroid/os/IBinder$DeathRecipient;I)Z",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

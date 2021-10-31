@@ -117,7 +117,9 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	Telephony_Mms_Part::Telephony_Mms_Part(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Telephony_Mms_Part::Telephony_Mms_Part(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

@@ -56,13 +56,15 @@ namespace android::widget
 		static QAndroidJniObject CREATOR();
 		static jstring EXTRA_SHARED_ELEMENT_BOUNDS();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit RemoteViews(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		RemoteViews(QAndroidJniObject obj);
+		
 		// Constructors
 		RemoteViews(android::os::Parcel arg0);
 		RemoteViews(android::widget::RemoteViews &arg0);
 		RemoteViews(android::widget::RemoteViews &arg0, android::widget::RemoteViews &arg1);
 		RemoteViews(jstring arg0, jint arg1);
-		RemoteViews() = default;
 		
 		// Methods
 		void addView(jint arg0, android::widget::RemoteViews arg1);

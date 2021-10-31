@@ -1412,7 +1412,10 @@ namespace android
 		static jint zAdjustment();
 		static jint zygotePreloadName();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit R_attr(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		R_attr(QAndroidJniObject obj);
+		
 		// Constructors
 		R_attr();
 		

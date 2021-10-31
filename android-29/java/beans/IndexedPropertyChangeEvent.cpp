@@ -5,11 +5,12 @@ namespace java::beans
 {
 	// Fields
 	
-	IndexedPropertyChangeEvent::IndexedPropertyChangeEvent(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	IndexedPropertyChangeEvent::IndexedPropertyChangeEvent(QAndroidJniObject obj) : java::beans::PropertyChangeEvent(obj) {}
+	
 	// Constructors
 	IndexedPropertyChangeEvent::IndexedPropertyChangeEvent(jobject arg0, jstring arg1, jobject arg2, jobject arg3, jint arg4)
-	{
-		__thiz = QAndroidJniObject(
+		: java::beans::PropertyChangeEvent(
 			"java.beans.IndexedPropertyChangeEvent",
 			"(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;I)V",
 			arg0,
@@ -17,13 +18,12 @@ namespace java::beans
 			arg2,
 			arg3,
 			arg4
-		);
-	}
+		) {}
 	
 	// Methods
 	jint IndexedPropertyChangeEvent::getIndex()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getIndex",
 			"()I"
 		);

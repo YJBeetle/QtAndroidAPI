@@ -36,7 +36,10 @@ namespace android::service::quicksettings
 		static jstring ACTION_QS_TILE_PREFERENCES();
 		static jstring META_DATA_ACTIVE_TILE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TileService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
 		TileService(QAndroidJniObject obj);
+		
 		// Constructors
 		TileService();
 		

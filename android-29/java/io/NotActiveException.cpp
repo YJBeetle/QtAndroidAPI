@@ -4,23 +4,21 @@ namespace java::io
 {
 	// Fields
 	
-	NotActiveException::NotActiveException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NotActiveException::NotActiveException(QAndroidJniObject obj) : java::io::ObjectStreamException(obj) {}
+	
 	// Constructors
 	NotActiveException::NotActiveException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::ObjectStreamException(
 			"java.io.NotActiveException",
 			"()V"
-		);
-	}
+		) {}
 	NotActiveException::NotActiveException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::ObjectStreamException(
 			"java.io.NotActiveException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::io

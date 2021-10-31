@@ -4,7 +4,9 @@ namespace android::telecom
 {
 	// Fields
 	
-	Conferenceable::Conferenceable(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Conferenceable::Conferenceable(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

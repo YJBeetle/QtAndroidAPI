@@ -5,20 +5,22 @@ namespace android::bluetooth
 {
 	// Fields
 	
-	BluetoothServerSocket::BluetoothServerSocket(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BluetoothServerSocket::BluetoothServerSocket(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject BluetoothServerSocket::accept()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"accept",
 			"()Landroid/bluetooth/BluetoothSocket;"
 		);
 	}
 	QAndroidJniObject BluetoothServerSocket::accept(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"accept",
 			"(I)Landroid/bluetooth/BluetoothSocket;",
 			arg0
@@ -26,21 +28,21 @@ namespace android::bluetooth
 	}
 	void BluetoothServerSocket::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	jint BluetoothServerSocket::getPsm()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPsm",
 			"()I"
 		);
 	}
 	jstring BluetoothServerSocket::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

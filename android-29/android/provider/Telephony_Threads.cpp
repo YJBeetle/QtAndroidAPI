@@ -36,7 +36,9 @@ namespace android::provider
 		);
 	}
 	
-	Telephony_Threads::Telephony_Threads(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Telephony_Threads::Telephony_Threads(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -46,7 +48,7 @@ namespace android::provider
 			"android.provider.Telephony$Threads",
 			"getOrCreateThreadId",
 			"(Landroid/content/Context;Ljava/lang/String;)J",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -56,8 +58,8 @@ namespace android::provider
 			"android.provider.Telephony$Threads",
 			"getOrCreateThreadId",
 			"(Landroid/content/Context;Ljava/util/Set;)J",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 } // namespace android::provider

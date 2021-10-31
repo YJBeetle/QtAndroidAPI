@@ -26,9 +26,11 @@ namespace android::app::usage
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit NetworkStatsManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		NetworkStatsManager(QAndroidJniObject obj);
+		
 		// Constructors
-		NetworkStatsManager() = default;
 		
 		// Methods
 		QAndroidJniObject queryDetails(jint arg0, jstring arg1, jlong arg2, jlong arg3);

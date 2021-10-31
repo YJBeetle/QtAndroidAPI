@@ -28,7 +28,10 @@ namespace android::app
 		jstring packageName();
 		QAndroidJniObject resolveInfo();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit LauncherActivity_ListItem(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		LauncherActivity_ListItem(QAndroidJniObject obj);
+		
 		// Constructors
 		LauncherActivity_ListItem();
 		

@@ -34,27 +34,29 @@ namespace android::content::res
 		);
 	}
 	
-	AssetManager::AssetManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AssetManager::AssetManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void AssetManager::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	jarray AssetManager::getLocales()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLocales",
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	jarray AssetManager::list(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"list",
 			"(Ljava/lang/String;)[Ljava/lang/String;",
 			arg0
@@ -62,7 +64,7 @@ namespace android::content::res
 	}
 	QAndroidJniObject AssetManager::open(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"open",
 			"(Ljava/lang/String;)Ljava/io/InputStream;",
 			arg0
@@ -70,7 +72,7 @@ namespace android::content::res
 	}
 	QAndroidJniObject AssetManager::open(jstring arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"open",
 			"(Ljava/lang/String;I)Ljava/io/InputStream;",
 			arg0,
@@ -79,7 +81,7 @@ namespace android::content::res
 	}
 	QAndroidJniObject AssetManager::openFd(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"openFd",
 			"(Ljava/lang/String;)Landroid/content/res/AssetFileDescriptor;",
 			arg0
@@ -87,7 +89,7 @@ namespace android::content::res
 	}
 	QAndroidJniObject AssetManager::openNonAssetFd(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"openNonAssetFd",
 			"(Ljava/lang/String;)Landroid/content/res/AssetFileDescriptor;",
 			arg0
@@ -95,7 +97,7 @@ namespace android::content::res
 	}
 	QAndroidJniObject AssetManager::openNonAssetFd(jint arg0, jstring arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"openNonAssetFd",
 			"(ILjava/lang/String;)Landroid/content/res/AssetFileDescriptor;",
 			arg0,
@@ -104,7 +106,7 @@ namespace android::content::res
 	}
 	QAndroidJniObject AssetManager::openXmlResourceParser(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"openXmlResourceParser",
 			"(Ljava/lang/String;)Landroid/content/res/XmlResourceParser;",
 			arg0
@@ -112,7 +114,7 @@ namespace android::content::res
 	}
 	QAndroidJniObject AssetManager::openXmlResourceParser(jint arg0, jstring arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"openXmlResourceParser",
 			"(ILjava/lang/String;)Landroid/content/res/XmlResourceParser;",
 			arg0,

@@ -17,9 +17,11 @@ namespace android::media
 		static jint DEFAULT();
 		static jint SURFACE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaRecorder_VideoSource(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaRecorder_VideoSource(QAndroidJniObject obj);
+		
 		// Constructors
-		MediaRecorder_VideoSource() = default;
 		
 		// Methods
 	};

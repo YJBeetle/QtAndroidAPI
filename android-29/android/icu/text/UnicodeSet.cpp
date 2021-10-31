@@ -66,87 +66,71 @@ namespace android::icu::text
 		);
 	}
 	
-	UnicodeSet::UnicodeSet(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UnicodeSet::UnicodeSet(QAndroidJniObject obj) : android::icu::text::UnicodeFilter(obj) {}
+	
 	// Constructors
 	UnicodeSet::UnicodeSet()
-	{
-		__thiz = QAndroidJniObject(
+		: android::icu::text::UnicodeFilter(
 			"android.icu.text.UnicodeSet",
 			"()V"
-		);
-	}
+		) {}
 	UnicodeSet::UnicodeSet(jintArray arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::icu::text::UnicodeFilter(
 			"android.icu.text.UnicodeSet",
 			"([I)V",
 			arg0
-		);
-	}
+		) {}
 	UnicodeSet::UnicodeSet(android::icu::text::UnicodeSet &arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::icu::text::UnicodeFilter(
 			"android.icu.text.UnicodeSet",
 			"(Landroid/icu/text/UnicodeSet;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	UnicodeSet::UnicodeSet(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::icu::text::UnicodeFilter(
 			"android.icu.text.UnicodeSet",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	UnicodeSet::UnicodeSet(jint arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::icu::text::UnicodeFilter(
 			"android.icu.text.UnicodeSet",
 			"(II)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	UnicodeSet::UnicodeSet(jstring arg0, jboolean arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::icu::text::UnicodeFilter(
 			"android.icu.text.UnicodeSet",
 			"(Ljava/lang/String;Z)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	UnicodeSet::UnicodeSet(jstring arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::icu::text::UnicodeFilter(
 			"android.icu.text.UnicodeSet",
 			"(Ljava/lang/String;I)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	UnicodeSet::UnicodeSet(jstring arg0, java::text::ParsePosition arg1, __JniBaseClass arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: android::icu::text::UnicodeFilter(
 			"android.icu.text.UnicodeSet",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;Landroid/icu/text/SymbolTable;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
+			arg1.object(),
+			arg2.object()
+		) {}
 	UnicodeSet::UnicodeSet(jstring arg0, java::text::ParsePosition arg1, __JniBaseClass arg2, jint arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: android::icu::text::UnicodeFilter(
 			"android.icu.text.UnicodeSet",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;Landroid/icu/text/SymbolTable;I)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
+			arg1.object(),
+			arg2.object(),
 			arg3
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject UnicodeSet::from(jstring arg0)
@@ -169,26 +153,26 @@ namespace android::icu::text
 	}
 	QAndroidJniObject UnicodeSet::_generatePattern(java::lang::StringBuffer arg0, jboolean arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"_generatePattern",
 			"(Ljava/lang/StringBuffer;Z)Ljava/lang/StringBuffer;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	QAndroidJniObject UnicodeSet::_generatePattern(java::lang::StringBuffer arg0, jboolean arg1, jboolean arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"_generatePattern",
 			"(Ljava/lang/StringBuffer;ZZ)Ljava/lang/StringBuffer;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
 	}
 	QAndroidJniObject UnicodeSet::add(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"add",
 			"(I)Landroid/icu/text/UnicodeSet;",
 			arg0
@@ -196,7 +180,7 @@ namespace android::icu::text
 	}
 	QAndroidJniObject UnicodeSet::add(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"add",
 			"(Ljava/lang/CharSequence;)Landroid/icu/text/UnicodeSet;",
 			arg0
@@ -204,15 +188,15 @@ namespace android::icu::text
 	}
 	QAndroidJniObject UnicodeSet::add(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"add",
 			"(Ljava/lang/Iterable;)Landroid/icu/text/UnicodeSet;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject UnicodeSet::add(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"add",
 			"(II)Landroid/icu/text/UnicodeSet;",
 			arg0,
@@ -221,7 +205,7 @@ namespace android::icu::text
 	}
 	QAndroidJniObject UnicodeSet::addAll(jarray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"addAll",
 			"([Ljava/lang/CharSequence;)Landroid/icu/text/UnicodeSet;",
 			arg0
@@ -229,15 +213,15 @@ namespace android::icu::text
 	}
 	QAndroidJniObject UnicodeSet::addAll(android::icu::text::UnicodeSet arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"addAll",
 			"(Landroid/icu/text/UnicodeSet;)Landroid/icu/text/UnicodeSet;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject UnicodeSet::addAll(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"addAll",
 			"(Ljava/lang/CharSequence;)Landroid/icu/text/UnicodeSet;",
 			arg0
@@ -245,15 +229,15 @@ namespace android::icu::text
 	}
 	QAndroidJniObject UnicodeSet::addAll(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"addAll",
 			"(Ljava/lang/Iterable;)Landroid/icu/text/UnicodeSet;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject UnicodeSet::addAll(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"addAll",
 			"(II)Landroid/icu/text/UnicodeSet;",
 			arg0,
@@ -262,23 +246,23 @@ namespace android::icu::text
 	}
 	QAndroidJniObject UnicodeSet::addAllTo(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"addAllTo",
 			"(Ljava/util/Collection;)Ljava/util/Collection;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void UnicodeSet::addMatchSetTo(android::icu::text::UnicodeSet arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addMatchSetTo",
 			"(Landroid/icu/text/UnicodeSet;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject UnicodeSet::applyIntPropertyValue(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"applyIntPropertyValue",
 			"(II)Landroid/icu/text/UnicodeSet;",
 			arg0,
@@ -287,7 +271,7 @@ namespace android::icu::text
 	}
 	QAndroidJniObject UnicodeSet::applyPattern(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"applyPattern",
 			"(Ljava/lang/String;)Landroid/icu/text/UnicodeSet;",
 			arg0
@@ -295,7 +279,7 @@ namespace android::icu::text
 	}
 	QAndroidJniObject UnicodeSet::applyPattern(jstring arg0, jboolean arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"applyPattern",
 			"(Ljava/lang/String;Z)Landroid/icu/text/UnicodeSet;",
 			arg0,
@@ -304,7 +288,7 @@ namespace android::icu::text
 	}
 	QAndroidJniObject UnicodeSet::applyPattern(jstring arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"applyPattern",
 			"(Ljava/lang/String;I)Landroid/icu/text/UnicodeSet;",
 			arg0,
@@ -313,7 +297,7 @@ namespace android::icu::text
 	}
 	QAndroidJniObject UnicodeSet::applyPropertyAlias(jstring arg0, jstring arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"applyPropertyAlias",
 			"(Ljava/lang/String;Ljava/lang/String;)Landroid/icu/text/UnicodeSet;",
 			arg0,
@@ -322,17 +306,17 @@ namespace android::icu::text
 	}
 	QAndroidJniObject UnicodeSet::applyPropertyAlias(jstring arg0, jstring arg1, __JniBaseClass arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"applyPropertyAlias",
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/icu/text/SymbolTable;)Landroid/icu/text/UnicodeSet;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	jint UnicodeSet::charAt(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"charAt",
 			"(I)I",
 			arg0
@@ -340,28 +324,28 @@ namespace android::icu::text
 	}
 	QAndroidJniObject UnicodeSet::clear()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clear",
 			"()Landroid/icu/text/UnicodeSet;"
 		);
 	}
 	jobject UnicodeSet::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	QAndroidJniObject UnicodeSet::cloneAsThawed()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"cloneAsThawed",
 			"()Landroid/icu/text/UnicodeSet;"
 		);
 	}
 	QAndroidJniObject UnicodeSet::closeOver(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"closeOver",
 			"(I)Landroid/icu/text/UnicodeSet;",
 			arg0
@@ -369,30 +353,30 @@ namespace android::icu::text
 	}
 	QAndroidJniObject UnicodeSet::compact()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"compact",
 			"()Landroid/icu/text/UnicodeSet;"
 		);
 	}
 	jint UnicodeSet::compareTo(android::icu::text::UnicodeSet arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Landroid/icu/text/UnicodeSet;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint UnicodeSet::compareTo(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Iterable;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint UnicodeSet::compareTo(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -400,23 +384,23 @@ namespace android::icu::text
 	}
 	jint UnicodeSet::compareTo(android::icu::text::UnicodeSet arg0, android::icu::text::UnicodeSet_ComparisonStyle arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Landroid/icu/text/UnicodeSet;Landroid/icu/text/UnicodeSet$ComparisonStyle;)I",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject UnicodeSet::complement()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"complement",
 			"()Landroid/icu/text/UnicodeSet;"
 		);
 	}
 	QAndroidJniObject UnicodeSet::complement(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"complement",
 			"(I)Landroid/icu/text/UnicodeSet;",
 			arg0
@@ -424,7 +408,7 @@ namespace android::icu::text
 	}
 	QAndroidJniObject UnicodeSet::complement(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"complement",
 			"(Ljava/lang/CharSequence;)Landroid/icu/text/UnicodeSet;",
 			arg0
@@ -432,7 +416,7 @@ namespace android::icu::text
 	}
 	QAndroidJniObject UnicodeSet::complement(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"complement",
 			"(II)Landroid/icu/text/UnicodeSet;",
 			arg0,
@@ -441,15 +425,15 @@ namespace android::icu::text
 	}
 	QAndroidJniObject UnicodeSet::complementAll(android::icu::text::UnicodeSet arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"complementAll",
 			"(Landroid/icu/text/UnicodeSet;)Landroid/icu/text/UnicodeSet;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject UnicodeSet::complementAll(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"complementAll",
 			"(Ljava/lang/CharSequence;)Landroid/icu/text/UnicodeSet;",
 			arg0
@@ -457,7 +441,7 @@ namespace android::icu::text
 	}
 	jboolean UnicodeSet::contains(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"contains",
 			"(I)Z",
 			arg0
@@ -465,7 +449,7 @@ namespace android::icu::text
 	}
 	jboolean UnicodeSet::contains(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"contains",
 			"(Ljava/lang/CharSequence;)Z",
 			arg0
@@ -473,7 +457,7 @@ namespace android::icu::text
 	}
 	jboolean UnicodeSet::contains(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"contains",
 			"(II)Z",
 			arg0,
@@ -482,23 +466,23 @@ namespace android::icu::text
 	}
 	jboolean UnicodeSet::containsAll(android::icu::text::UnicodeSet arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"containsAll",
 			"(Landroid/icu/text/UnicodeSet;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean UnicodeSet::containsAll(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"containsAll",
 			"(Ljava/lang/Iterable;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean UnicodeSet::containsAll(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"containsAll",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -506,15 +490,15 @@ namespace android::icu::text
 	}
 	jboolean UnicodeSet::containsNone(android::icu::text::UnicodeSet arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"containsNone",
 			"(Landroid/icu/text/UnicodeSet;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean UnicodeSet::containsNone(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"containsNone",
 			"(Ljava/lang/CharSequence;)Z",
 			arg0
@@ -522,15 +506,15 @@ namespace android::icu::text
 	}
 	jboolean UnicodeSet::containsNone(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"containsNone",
 			"(Ljava/lang/Iterable;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean UnicodeSet::containsNone(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"containsNone",
 			"(II)Z",
 			arg0,
@@ -539,15 +523,15 @@ namespace android::icu::text
 	}
 	jboolean UnicodeSet::containsSome(android::icu::text::UnicodeSet arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"containsSome",
 			"(Landroid/icu/text/UnicodeSet;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean UnicodeSet::containsSome(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"containsSome",
 			"(Ljava/lang/CharSequence;)Z",
 			arg0
@@ -555,15 +539,15 @@ namespace android::icu::text
 	}
 	jboolean UnicodeSet::containsSome(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"containsSome",
 			"(Ljava/lang/Iterable;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean UnicodeSet::containsSome(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"containsSome",
 			"(II)Z",
 			arg0,
@@ -572,7 +556,7 @@ namespace android::icu::text
 	}
 	jboolean UnicodeSet::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -580,21 +564,21 @@ namespace android::icu::text
 	}
 	QAndroidJniObject UnicodeSet::freeze()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"freeze",
 			"()Landroid/icu/text/UnicodeSet;"
 		);
 	}
 	jint UnicodeSet::getRangeCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRangeCount",
 			"()I"
 		);
 	}
 	jint UnicodeSet::getRangeEnd(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRangeEnd",
 			"(I)I",
 			arg0
@@ -602,7 +586,7 @@ namespace android::icu::text
 	}
 	jint UnicodeSet::getRangeStart(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRangeStart",
 			"(I)I",
 			arg0
@@ -610,14 +594,14 @@ namespace android::icu::text
 	}
 	jint UnicodeSet::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jint UnicodeSet::indexOf(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"indexOf",
 			"(I)I",
 			arg0
@@ -625,31 +609,31 @@ namespace android::icu::text
 	}
 	jboolean UnicodeSet::isEmpty()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
 	jboolean UnicodeSet::isFrozen()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isFrozen",
 			"()Z"
 		);
 	}
 	QAndroidJniObject UnicodeSet::iterator()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
 	jint UnicodeSet::matches(__JniBaseClass arg0, jintArray arg1, jint arg2, jboolean arg3)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"matches",
 			"(Landroid/icu/text/Replaceable;[IIZ)I",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3
@@ -657,7 +641,7 @@ namespace android::icu::text
 	}
 	jboolean UnicodeSet::matchesIndexValue(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"matchesIndexValue",
 			"(I)Z",
 			arg0
@@ -665,14 +649,14 @@ namespace android::icu::text
 	}
 	QAndroidJniObject UnicodeSet::ranges()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"ranges",
 			"()Ljava/lang/Iterable;"
 		);
 	}
 	QAndroidJniObject UnicodeSet::remove(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"remove",
 			"(I)Landroid/icu/text/UnicodeSet;",
 			arg0
@@ -680,7 +664,7 @@ namespace android::icu::text
 	}
 	QAndroidJniObject UnicodeSet::remove(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"remove",
 			"(Ljava/lang/CharSequence;)Landroid/icu/text/UnicodeSet;",
 			arg0
@@ -688,7 +672,7 @@ namespace android::icu::text
 	}
 	QAndroidJniObject UnicodeSet::remove(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"remove",
 			"(II)Landroid/icu/text/UnicodeSet;",
 			arg0,
@@ -697,15 +681,15 @@ namespace android::icu::text
 	}
 	QAndroidJniObject UnicodeSet::removeAll(android::icu::text::UnicodeSet arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"removeAll",
 			"(Landroid/icu/text/UnicodeSet;)Landroid/icu/text/UnicodeSet;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject UnicodeSet::removeAll(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"removeAll",
 			"(Ljava/lang/CharSequence;)Landroid/icu/text/UnicodeSet;",
 			arg0
@@ -713,22 +697,22 @@ namespace android::icu::text
 	}
 	QAndroidJniObject UnicodeSet::removeAll(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"removeAll",
 			"(Ljava/lang/Iterable;)Landroid/icu/text/UnicodeSet;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject UnicodeSet::removeAllStrings()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"removeAllStrings",
 			"()Landroid/icu/text/UnicodeSet;"
 		);
 	}
 	QAndroidJniObject UnicodeSet::retain(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"retain",
 			"(I)Landroid/icu/text/UnicodeSet;",
 			arg0
@@ -736,7 +720,7 @@ namespace android::icu::text
 	}
 	QAndroidJniObject UnicodeSet::retain(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"retain",
 			"(Ljava/lang/CharSequence;)Landroid/icu/text/UnicodeSet;",
 			arg0
@@ -744,7 +728,7 @@ namespace android::icu::text
 	}
 	QAndroidJniObject UnicodeSet::retain(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"retain",
 			"(II)Landroid/icu/text/UnicodeSet;",
 			arg0,
@@ -753,15 +737,15 @@ namespace android::icu::text
 	}
 	QAndroidJniObject UnicodeSet::retainAll(android::icu::text::UnicodeSet arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"retainAll",
 			"(Landroid/icu/text/UnicodeSet;)Landroid/icu/text/UnicodeSet;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject UnicodeSet::retainAll(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"retainAll",
 			"(Ljava/lang/CharSequence;)Landroid/icu/text/UnicodeSet;",
 			arg0
@@ -769,23 +753,23 @@ namespace android::icu::text
 	}
 	QAndroidJniObject UnicodeSet::retainAll(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"retainAll",
 			"(Ljava/lang/Iterable;)Landroid/icu/text/UnicodeSet;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject UnicodeSet::set(android::icu::text::UnicodeSet arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"set",
 			"(Landroid/icu/text/UnicodeSet;)Landroid/icu/text/UnicodeSet;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject UnicodeSet::set(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"set",
 			"(II)Landroid/icu/text/UnicodeSet;",
 			arg0,
@@ -794,59 +778,59 @@ namespace android::icu::text
 	}
 	jint UnicodeSet::size()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
 	jint UnicodeSet::span(jstring arg0, android::icu::text::UnicodeSet_SpanCondition arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"span",
 			"(Ljava/lang/CharSequence;Landroid/icu/text/UnicodeSet$SpanCondition;)I",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jint UnicodeSet::span(jstring arg0, jint arg1, android::icu::text::UnicodeSet_SpanCondition arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"span",
 			"(Ljava/lang/CharSequence;ILandroid/icu/text/UnicodeSet$SpanCondition;)I",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	jint UnicodeSet::spanBack(jstring arg0, android::icu::text::UnicodeSet_SpanCondition arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"spanBack",
 			"(Ljava/lang/CharSequence;Landroid/icu/text/UnicodeSet$SpanCondition;)I",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jint UnicodeSet::spanBack(jstring arg0, jint arg1, android::icu::text::UnicodeSet_SpanCondition arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"spanBack",
 			"(Ljava/lang/CharSequence;ILandroid/icu/text/UnicodeSet$SpanCondition;)I",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	QAndroidJniObject UnicodeSet::strings()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"strings",
 			"()Ljava/util/Collection;"
 		);
 	}
 	jstring UnicodeSet::toPattern(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toPattern",
 			"(Z)Ljava/lang/String;",
 			arg0
@@ -854,7 +838,7 @@ namespace android::icu::text
 	}
 	jstring UnicodeSet::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

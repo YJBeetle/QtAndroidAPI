@@ -4,21 +4,21 @@ namespace java::util
 {
 	// Fields
 	
-	EventListenerProxy::EventListenerProxy(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	EventListenerProxy::EventListenerProxy(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	EventListenerProxy::EventListenerProxy(__JniBaseClass arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.EventListenerProxy",
 			"(Ljava/util/EventListener;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject EventListenerProxy::getListener()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getListener",
 			"()Ljava/util/EventListener;"
 		);

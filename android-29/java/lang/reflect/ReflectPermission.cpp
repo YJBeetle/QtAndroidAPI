@@ -4,25 +4,23 @@ namespace java::lang::reflect
 {
 	// Fields
 	
-	ReflectPermission::ReflectPermission(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ReflectPermission::ReflectPermission(QAndroidJniObject obj) : java::security::BasicPermission(obj) {}
+	
 	// Constructors
 	ReflectPermission::ReflectPermission(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::security::BasicPermission(
 			"java.lang.reflect.ReflectPermission",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	ReflectPermission::ReflectPermission(jstring arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::security::BasicPermission(
 			"java.lang.reflect.ReflectPermission",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::lang::reflect

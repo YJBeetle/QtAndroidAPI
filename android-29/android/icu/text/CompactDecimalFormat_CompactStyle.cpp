@@ -20,7 +20,9 @@ namespace android::icu::text
 		);
 	}
 	
-	CompactDecimalFormat_CompactStyle::CompactDecimalFormat_CompactStyle(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CompactDecimalFormat_CompactStyle::CompactDecimalFormat_CompactStyle(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

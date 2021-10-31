@@ -21,9 +21,11 @@ namespace android::service::autofill
 		static jint FLAG_DISABLE_ACTIVITY_ONLY();
 		static jint FLAG_TRACK_CONTEXT_COMMITED();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit FillResponse(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		FillResponse(QAndroidJniObject obj);
+		
 		// Constructors
-		FillResponse() = default;
 		
 		// Methods
 		jint describeContents();

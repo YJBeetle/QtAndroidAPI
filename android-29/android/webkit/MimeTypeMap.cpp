@@ -4,7 +4,9 @@ namespace android::webkit
 {
 	// Fields
 	
-	MimeTypeMap::MimeTypeMap(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MimeTypeMap::MimeTypeMap(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -27,7 +29,7 @@ namespace android::webkit
 	}
 	jstring MimeTypeMap::getExtensionFromMimeType(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExtensionFromMimeType",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
@@ -35,7 +37,7 @@ namespace android::webkit
 	}
 	jstring MimeTypeMap::getMimeTypeFromExtension(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMimeTypeFromExtension",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
@@ -43,7 +45,7 @@ namespace android::webkit
 	}
 	jboolean MimeTypeMap::hasExtension(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasExtension",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -51,7 +53,7 @@ namespace android::webkit
 	}
 	jboolean MimeTypeMap::hasMimeType(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasMimeType",
 			"(Ljava/lang/String;)Z",
 			arg0

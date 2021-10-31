@@ -172,13 +172,15 @@ namespace android::media
 		);
 	}
 	
-	AudioDeviceInfo::AudioDeviceInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AudioDeviceInfo::AudioDeviceInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jboolean AudioDeviceInfo::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -186,84 +188,84 @@ namespace android::media
 	}
 	jstring AudioDeviceInfo::getAddress()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAddress",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jintArray AudioDeviceInfo::getChannelCounts()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getChannelCounts",
 			"()[I"
 		).object<jintArray>();
 	}
 	jintArray AudioDeviceInfo::getChannelIndexMasks()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getChannelIndexMasks",
 			"()[I"
 		).object<jintArray>();
 	}
 	jintArray AudioDeviceInfo::getChannelMasks()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getChannelMasks",
 			"()[I"
 		).object<jintArray>();
 	}
 	jintArray AudioDeviceInfo::getEncodings()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEncodings",
 			"()[I"
 		).object<jintArray>();
 	}
 	jint AudioDeviceInfo::getId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getId",
 			"()I"
 		);
 	}
 	jstring AudioDeviceInfo::getProductName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getProductName",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jintArray AudioDeviceInfo::getSampleRates()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSampleRates",
 			"()[I"
 		).object<jintArray>();
 	}
 	jint AudioDeviceInfo::getType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getType",
 			"()I"
 		);
 	}
 	jint AudioDeviceInfo::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean AudioDeviceInfo::isSink()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isSink",
 			"()Z"
 		);
 	}
 	jboolean AudioDeviceInfo::isSource()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isSource",
 			"()Z"
 		);

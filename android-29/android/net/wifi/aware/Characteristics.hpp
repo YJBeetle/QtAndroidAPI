@@ -19,9 +19,11 @@ namespace android::net::wifi::aware
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Characteristics(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Characteristics(QAndroidJniObject obj);
+		
 		// Constructors
-		Characteristics() = default;
 		
 		// Methods
 		jint describeContents();

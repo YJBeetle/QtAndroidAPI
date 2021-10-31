@@ -13,20 +13,22 @@ namespace android::telephony
 		);
 	}
 	
-	UiccCardInfo::UiccCardInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UiccCardInfo::UiccCardInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint UiccCardInfo::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean UiccCardInfo::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -34,66 +36,66 @@ namespace android::telephony
 	}
 	jint UiccCardInfo::getCardId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCardId",
 			"()I"
 		);
 	}
 	jstring UiccCardInfo::getEid()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEid",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring UiccCardInfo::getIccId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getIccId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint UiccCardInfo::getSlotIndex()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSlotIndex",
 			"()I"
 		);
 	}
 	jint UiccCardInfo::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean UiccCardInfo::isEuicc()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEuicc",
 			"()Z"
 		);
 	}
 	jboolean UiccCardInfo::isRemovable()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isRemovable",
 			"()Z"
 		);
 	}
 	jstring UiccCardInfo::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void UiccCardInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

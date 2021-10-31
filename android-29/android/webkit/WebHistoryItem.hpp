@@ -14,7 +14,10 @@ namespace android::webkit
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit WebHistoryItem(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		WebHistoryItem(QAndroidJniObject obj);
+		
 		// Constructors
 		WebHistoryItem();
 		

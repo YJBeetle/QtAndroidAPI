@@ -28,7 +28,9 @@ namespace android::view::accessibility
 		);
 	}
 	
-	AccessibilityManager::AccessibilityManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AccessibilityManager::AccessibilityManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -42,56 +44,56 @@ namespace android::view::accessibility
 	}
 	void AccessibilityManager::addAccessibilityRequestPreparer(android::view::accessibility::AccessibilityRequestPreparer arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addAccessibilityRequestPreparer",
 			"(Landroid/view/accessibility/AccessibilityRequestPreparer;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean AccessibilityManager::addAccessibilityStateChangeListener(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"addAccessibilityStateChangeListener",
 			"(Landroid/view/accessibility/AccessibilityManager$AccessibilityStateChangeListener;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AccessibilityManager::addAccessibilityStateChangeListener(__JniBaseClass arg0, android::os::Handler arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addAccessibilityStateChangeListener",
 			"(Landroid/view/accessibility/AccessibilityManager$AccessibilityStateChangeListener;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jboolean AccessibilityManager::addTouchExplorationStateChangeListener(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"addTouchExplorationStateChangeListener",
 			"(Landroid/view/accessibility/AccessibilityManager$TouchExplorationStateChangeListener;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AccessibilityManager::addTouchExplorationStateChangeListener(__JniBaseClass arg0, android::os::Handler arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addTouchExplorationStateChangeListener",
 			"(Landroid/view/accessibility/AccessibilityManager$TouchExplorationStateChangeListener;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject AccessibilityManager::getAccessibilityServiceList()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAccessibilityServiceList",
 			"()Ljava/util/List;"
 		);
 	}
 	QAndroidJniObject AccessibilityManager::getEnabledAccessibilityServiceList(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEnabledAccessibilityServiceList",
 			"(I)Ljava/util/List;",
 			arg0
@@ -99,14 +101,14 @@ namespace android::view::accessibility
 	}
 	QAndroidJniObject AccessibilityManager::getInstalledAccessibilityServiceList()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getInstalledAccessibilityServiceList",
 			"()Ljava/util/List;"
 		);
 	}
 	jint AccessibilityManager::getRecommendedTimeoutMillis(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRecommendedTimeoutMillis",
 			"(II)I",
 			arg0,
@@ -115,55 +117,55 @@ namespace android::view::accessibility
 	}
 	void AccessibilityManager::interrupt()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"interrupt",
 			"()V"
 		);
 	}
 	jboolean AccessibilityManager::isEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEnabled",
 			"()Z"
 		);
 	}
 	jboolean AccessibilityManager::isTouchExplorationEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isTouchExplorationEnabled",
 			"()Z"
 		);
 	}
 	void AccessibilityManager::removeAccessibilityRequestPreparer(android::view::accessibility::AccessibilityRequestPreparer arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeAccessibilityRequestPreparer",
 			"(Landroid/view/accessibility/AccessibilityRequestPreparer;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean AccessibilityManager::removeAccessibilityStateChangeListener(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"removeAccessibilityStateChangeListener",
 			"(Landroid/view/accessibility/AccessibilityManager$AccessibilityStateChangeListener;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean AccessibilityManager::removeTouchExplorationStateChangeListener(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"removeTouchExplorationStateChangeListener",
 			"(Landroid/view/accessibility/AccessibilityManager$TouchExplorationStateChangeListener;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AccessibilityManager::sendAccessibilityEvent(android::view::accessibility::AccessibilityEvent arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"sendAccessibilityEvent",
 			"(Landroid/view/accessibility/AccessibilityEvent;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::view::accessibility

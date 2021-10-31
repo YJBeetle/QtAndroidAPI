@@ -13,126 +13,124 @@ namespace android::graphics::drawable
 {
 	// Fields
 	
-	ColorDrawable::ColorDrawable(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ColorDrawable::ColorDrawable(QAndroidJniObject obj) : android::graphics::drawable::Drawable(obj) {}
+	
 	// Constructors
 	ColorDrawable::ColorDrawable()
-	{
-		__thiz = QAndroidJniObject(
+		: android::graphics::drawable::Drawable(
 			"android.graphics.drawable.ColorDrawable",
 			"()V"
-		);
-	}
+		) {}
 	ColorDrawable::ColorDrawable(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::graphics::drawable::Drawable(
 			"android.graphics.drawable.ColorDrawable",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	void ColorDrawable::applyTheme(android::content::res::Resources_Theme arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"applyTheme",
 			"(Landroid/content/res/Resources$Theme;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean ColorDrawable::canApplyTheme()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"canApplyTheme",
 			"()Z"
 		);
 	}
 	void ColorDrawable::draw(android::graphics::Canvas arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"draw",
 			"(Landroid/graphics/Canvas;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint ColorDrawable::getAlpha()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAlpha",
 			"()I"
 		);
 	}
 	jint ColorDrawable::getChangingConfigurations()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getChangingConfigurations",
 			"()I"
 		);
 	}
 	jint ColorDrawable::getColor()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getColor",
 			"()I"
 		);
 	}
 	QAndroidJniObject ColorDrawable::getColorFilter()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getColorFilter",
 			"()Landroid/graphics/ColorFilter;"
 		);
 	}
 	QAndroidJniObject ColorDrawable::getConstantState()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getConstantState",
 			"()Landroid/graphics/drawable/Drawable$ConstantState;"
 		);
 	}
 	jint ColorDrawable::getOpacity()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getOpacity",
 			"()I"
 		);
 	}
 	void ColorDrawable::getOutline(android::graphics::Outline arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"getOutline",
 			"(Landroid/graphics/Outline;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ColorDrawable::inflate(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2, android::content::res::Resources_Theme arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"inflate",
 			"(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
 		);
 	}
 	jboolean ColorDrawable::isStateful()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isStateful",
 			"()Z"
 		);
 	}
 	QAndroidJniObject ColorDrawable::mutate()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"mutate",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
 	void ColorDrawable::setAlpha(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAlpha",
 			"(I)V",
 			arg0
@@ -140,7 +138,7 @@ namespace android::graphics::drawable
 	}
 	void ColorDrawable::setColor(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setColor",
 			"(I)V",
 			arg0
@@ -148,26 +146,26 @@ namespace android::graphics::drawable
 	}
 	void ColorDrawable::setColorFilter(android::graphics::ColorFilter arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setColorFilter",
 			"(Landroid/graphics/ColorFilter;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ColorDrawable::setTintBlendMode(android::graphics::BlendMode arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTintBlendMode",
 			"(Landroid/graphics/BlendMode;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ColorDrawable::setTintList(android::content::res::ColorStateList arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTintList",
 			"(Landroid/content/res/ColorStateList;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::graphics::drawable

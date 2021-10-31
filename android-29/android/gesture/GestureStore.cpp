@@ -36,36 +36,36 @@ namespace android::gesture
 		);
 	}
 	
-	GestureStore::GestureStore(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	GestureStore::GestureStore(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	GestureStore::GestureStore()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.gesture.GestureStore",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void GestureStore::addGesture(jstring arg0, android::gesture::Gesture arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addGesture",
 			"(Ljava/lang/String;Landroid/gesture/Gesture;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject GestureStore::getGestureEntries()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getGestureEntries",
 			"()Ljava/util/Set;"
 		);
 	}
 	QAndroidJniObject GestureStore::getGestures(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getGestures",
 			"(Ljava/lang/String;)Ljava/util/ArrayList;",
 			arg0
@@ -73,53 +73,53 @@ namespace android::gesture
 	}
 	jint GestureStore::getOrientationStyle()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getOrientationStyle",
 			"()I"
 		);
 	}
 	jint GestureStore::getSequenceType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSequenceType",
 			"()I"
 		);
 	}
 	jboolean GestureStore::hasChanged()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasChanged",
 			"()Z"
 		);
 	}
 	void GestureStore::load(java::io::InputStream arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"load",
 			"(Ljava/io/InputStream;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void GestureStore::load(java::io::InputStream arg0, jboolean arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"load",
 			"(Ljava/io/InputStream;Z)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	QAndroidJniObject GestureStore::recognize(android::gesture::Gesture arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"recognize",
 			"(Landroid/gesture/Gesture;)Ljava/util/ArrayList;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void GestureStore::removeEntry(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeEntry",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -127,33 +127,33 @@ namespace android::gesture
 	}
 	void GestureStore::removeGesture(jstring arg0, android::gesture::Gesture arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeGesture",
 			"(Ljava/lang/String;Landroid/gesture/Gesture;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void GestureStore::save(java::io::OutputStream arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"save",
 			"(Ljava/io/OutputStream;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void GestureStore::save(java::io::OutputStream arg0, jboolean arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"save",
 			"(Ljava/io/OutputStream;Z)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void GestureStore::setOrientationStyle(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOrientationStyle",
 			"(I)V",
 			arg0
@@ -161,7 +161,7 @@ namespace android::gesture
 	}
 	void GestureStore::setSequenceType(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSequenceType",
 			"(I)V",
 			arg0

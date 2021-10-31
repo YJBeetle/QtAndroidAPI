@@ -18,9 +18,11 @@ namespace android::net::wifi
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit WifiManager_WifiLock(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		WifiManager_WifiLock(QAndroidJniObject obj);
+		
 		// Constructors
-		WifiManager_WifiLock() = default;
 		
 		// Methods
 		void acquire();

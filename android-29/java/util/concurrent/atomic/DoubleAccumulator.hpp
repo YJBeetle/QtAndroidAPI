@@ -14,10 +14,12 @@ namespace java::util::concurrent::atomic
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DoubleAccumulator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DoubleAccumulator(QAndroidJniObject obj);
+		
 		// Constructors
 		DoubleAccumulator(__JniBaseClass arg0, jdouble arg1);
-		DoubleAccumulator() = default;
 		
 		// Methods
 		void accumulate(jdouble arg0);

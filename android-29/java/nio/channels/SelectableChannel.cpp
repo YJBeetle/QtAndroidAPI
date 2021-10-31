@@ -7,20 +7,22 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	SelectableChannel::SelectableChannel(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SelectableChannel::SelectableChannel(QAndroidJniObject obj) : java::nio::channels::spi::AbstractInterruptibleChannel(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jobject SelectableChannel::blockingLock()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"blockingLock",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	QAndroidJniObject SelectableChannel::configureBlocking(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"configureBlocking",
 			"(Z)Ljava/nio/channels/SelectableChannel;",
 			arg0
@@ -28,55 +30,55 @@ namespace java::nio::channels
 	}
 	jboolean SelectableChannel::isBlocking()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isBlocking",
 			"()Z"
 		);
 	}
 	jboolean SelectableChannel::isRegistered()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isRegistered",
 			"()Z"
 		);
 	}
 	QAndroidJniObject SelectableChannel::keyFor(java::nio::channels::Selector arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"keyFor",
 			"(Ljava/nio/channels/Selector;)Ljava/nio/channels/SelectionKey;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject SelectableChannel::provider()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"provider",
 			"()Ljava/nio/channels/spi/SelectorProvider;"
 		);
 	}
 	QAndroidJniObject SelectableChannel::_register(java::nio::channels::Selector arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"register",
 			"(Ljava/nio/channels/Selector;I)Ljava/nio/channels/SelectionKey;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	QAndroidJniObject SelectableChannel::_register(java::nio::channels::Selector arg0, jint arg1, jobject arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"register",
 			"(Ljava/nio/channels/Selector;ILjava/lang/Object;)Ljava/nio/channels/SelectionKey;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
 	}
 	jint SelectableChannel::validOps()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"validOps",
 			"()I"
 		);

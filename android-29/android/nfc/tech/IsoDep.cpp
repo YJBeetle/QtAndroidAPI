@@ -5,7 +5,9 @@ namespace android::nfc::tech
 {
 	// Fields
 	
-	IsoDep::IsoDep(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	IsoDep::IsoDep(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -15,75 +17,75 @@ namespace android::nfc::tech
 			"android.nfc.tech.IsoDep",
 			"get",
 			"(Landroid/nfc/Tag;)Landroid/nfc/tech/IsoDep;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void IsoDep::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	void IsoDep::connect()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"connect",
 			"()V"
 		);
 	}
 	jbyteArray IsoDep::getHiLayerResponse()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getHiLayerResponse",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jbyteArray IsoDep::getHistoricalBytes()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getHistoricalBytes",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jint IsoDep::getMaxTransceiveLength()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMaxTransceiveLength",
 			"()I"
 		);
 	}
 	QAndroidJniObject IsoDep::getTag()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTag",
 			"()Landroid/nfc/Tag;"
 		);
 	}
 	jint IsoDep::getTimeout()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTimeout",
 			"()I"
 		);
 	}
 	jboolean IsoDep::isConnected()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isConnected",
 			"()Z"
 		);
 	}
 	jboolean IsoDep::isExtendedLengthApduSupported()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isExtendedLengthApduSupported",
 			"()Z"
 		);
 	}
 	void IsoDep::setTimeout(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTimeout",
 			"(I)V",
 			arg0
@@ -91,7 +93,7 @@ namespace android::nfc::tech
 	}
 	jbyteArray IsoDep::transceive(jbyteArray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"transceive",
 			"([B)[B",
 			arg0

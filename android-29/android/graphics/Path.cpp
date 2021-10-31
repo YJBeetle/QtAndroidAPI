@@ -9,38 +9,36 @@ namespace android::graphics
 {
 	// Fields
 	
-	Path::Path(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Path::Path(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Path::Path()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.graphics.Path",
 			"()V"
-		);
-	}
+		) {}
 	Path::Path(android::graphics::Path &arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.graphics.Path",
 			"(Landroid/graphics/Path;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	void Path::addArc(android::graphics::RectF arg0, jfloat arg1, jfloat arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addArc",
 			"(Landroid/graphics/RectF;FF)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
 	}
 	void Path::addArc(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addArc",
 			"(FFFFFF)V",
 			arg0,
@@ -53,108 +51,108 @@ namespace android::graphics
 	}
 	void Path::addCircle(jfloat arg0, jfloat arg1, jfloat arg2, android::graphics::Path_Direction arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addCircle",
 			"(FFFLandroid/graphics/Path$Direction;)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	void Path::addOval(android::graphics::RectF arg0, android::graphics::Path_Direction arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addOval",
 			"(Landroid/graphics/RectF;Landroid/graphics/Path$Direction;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void Path::addOval(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, android::graphics::Path_Direction arg4)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addOval",
 			"(FFFFLandroid/graphics/Path$Direction;)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object()
+			arg4.object()
 		);
 	}
 	void Path::addPath(android::graphics::Path arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addPath",
 			"(Landroid/graphics/Path;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Path::addPath(android::graphics::Path arg0, android::graphics::Matrix arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addPath",
 			"(Landroid/graphics/Path;Landroid/graphics/Matrix;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void Path::addPath(android::graphics::Path arg0, jfloat arg1, jfloat arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addPath",
 			"(Landroid/graphics/Path;FF)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
 	}
 	void Path::addRect(android::graphics::RectF arg0, android::graphics::Path_Direction arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addRect",
 			"(Landroid/graphics/RectF;Landroid/graphics/Path$Direction;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void Path::addRect(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, android::graphics::Path_Direction arg4)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addRect",
 			"(FFFFLandroid/graphics/Path$Direction;)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object()
+			arg4.object()
 		);
 	}
 	void Path::addRoundRect(android::graphics::RectF arg0, jfloatArray arg1, android::graphics::Path_Direction arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addRoundRect",
 			"(Landroid/graphics/RectF;[FLandroid/graphics/Path$Direction;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void Path::addRoundRect(android::graphics::RectF arg0, jfloat arg1, jfloat arg2, android::graphics::Path_Direction arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addRoundRect",
 			"(Landroid/graphics/RectF;FFLandroid/graphics/Path$Direction;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	void Path::addRoundRect(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloatArray arg4, android::graphics::Path_Direction arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addRoundRect",
 			"(FFFF[FLandroid/graphics/Path$Direction;)V",
 			arg0,
@@ -162,12 +160,12 @@ namespace android::graphics
 			arg2,
 			arg3,
 			arg4,
-			arg5.__jniObject().object()
+			arg5.object()
 		);
 	}
 	void Path::addRoundRect(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5, android::graphics::Path_Direction arg6)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addRoundRect",
 			"(FFFFFFLandroid/graphics/Path$Direction;)V",
 			arg0,
@@ -176,12 +174,12 @@ namespace android::graphics
 			arg3,
 			arg4,
 			arg5,
-			arg6.__jniObject().object()
+			arg6.object()
 		);
 	}
 	jfloatArray Path::approximate(jfloat arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"approximate",
 			"(F)[F",
 			arg0
@@ -189,20 +187,20 @@ namespace android::graphics
 	}
 	void Path::arcTo(android::graphics::RectF arg0, jfloat arg1, jfloat arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"arcTo",
 			"(Landroid/graphics/RectF;FF)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
 	}
 	void Path::arcTo(android::graphics::RectF arg0, jfloat arg1, jfloat arg2, jboolean arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"arcTo",
 			"(Landroid/graphics/RectF;FFZ)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3
@@ -210,7 +208,7 @@ namespace android::graphics
 	}
 	void Path::arcTo(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5, jboolean arg6)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"arcTo",
 			"(FFFFFFZ)V",
 			arg0,
@@ -224,23 +222,23 @@ namespace android::graphics
 	}
 	void Path::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	void Path::computeBounds(android::graphics::RectF arg0, jboolean arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"computeBounds",
 			"(Landroid/graphics/RectF;Z)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void Path::cubicTo(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"cubicTo",
 			"(FFFFFF)V",
 			arg0,
@@ -253,14 +251,14 @@ namespace android::graphics
 	}
 	QAndroidJniObject Path::getFillType()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFillType",
 			"()Landroid/graphics/Path$FillType;"
 		);
 	}
 	void Path::incReserve(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"incReserve",
 			"(I)V",
 			arg0
@@ -268,36 +266,36 @@ namespace android::graphics
 	}
 	jboolean Path::isConvex()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isConvex",
 			"()Z"
 		);
 	}
 	jboolean Path::isEmpty()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
 	jboolean Path::isInverseFillType()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isInverseFillType",
 			"()Z"
 		);
 	}
 	jboolean Path::isRect(android::graphics::RectF arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isRect",
 			"(Landroid/graphics/RectF;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Path::lineTo(jfloat arg0, jfloat arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"lineTo",
 			"(FF)V",
 			arg0,
@@ -306,7 +304,7 @@ namespace android::graphics
 	}
 	void Path::moveTo(jfloat arg0, jfloat arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"moveTo",
 			"(FF)V",
 			arg0,
@@ -315,7 +313,7 @@ namespace android::graphics
 	}
 	void Path::offset(jfloat arg0, jfloat arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"offset",
 			"(FF)V",
 			arg0,
@@ -324,36 +322,36 @@ namespace android::graphics
 	}
 	void Path::offset(jfloat arg0, jfloat arg1, android::graphics::Path arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"offset",
 			"(FFLandroid/graphics/Path;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	jboolean Path::op(android::graphics::Path arg0, android::graphics::Path_Op arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"op",
 			"(Landroid/graphics/Path;Landroid/graphics/Path$Op;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jboolean Path::op(android::graphics::Path arg0, android::graphics::Path arg1, android::graphics::Path_Op arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"op",
 			"(Landroid/graphics/Path;Landroid/graphics/Path;Landroid/graphics/Path$Op;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	void Path::quadTo(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"quadTo",
 			"(FFFF)V",
 			arg0,
@@ -364,7 +362,7 @@ namespace android::graphics
 	}
 	void Path::rCubicTo(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"rCubicTo",
 			"(FFFFFF)V",
 			arg0,
@@ -377,7 +375,7 @@ namespace android::graphics
 	}
 	void Path::rLineTo(jfloat arg0, jfloat arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"rLineTo",
 			"(FF)V",
 			arg0,
@@ -386,7 +384,7 @@ namespace android::graphics
 	}
 	void Path::rMoveTo(jfloat arg0, jfloat arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"rMoveTo",
 			"(FF)V",
 			arg0,
@@ -395,7 +393,7 @@ namespace android::graphics
 	}
 	void Path::rQuadTo(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"rQuadTo",
 			"(FFFF)V",
 			arg0,
@@ -406,37 +404,37 @@ namespace android::graphics
 	}
 	void Path::reset()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
 	void Path::rewind()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"rewind",
 			"()V"
 		);
 	}
 	void Path::set(android::graphics::Path arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"set",
 			"(Landroid/graphics/Path;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Path::setFillType(android::graphics::Path_FillType arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFillType",
 			"(Landroid/graphics/Path$FillType;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Path::setLastPoint(jfloat arg0, jfloat arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLastPoint",
 			"(FF)V",
 			arg0,
@@ -445,26 +443,26 @@ namespace android::graphics
 	}
 	void Path::toggleInverseFillType()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"toggleInverseFillType",
 			"()V"
 		);
 	}
 	void Path::transform(android::graphics::Matrix arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"transform",
 			"(Landroid/graphics/Matrix;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Path::transform(android::graphics::Matrix arg0, android::graphics::Path arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"transform",
 			"(Landroid/graphics/Matrix;Landroid/graphics/Path;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 } // namespace android::graphics

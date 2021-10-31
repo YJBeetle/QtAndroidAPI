@@ -36,7 +36,9 @@ namespace android::webkit
 		);
 	}
 	
-	WebSettings_LayoutAlgorithm::WebSettings_LayoutAlgorithm(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WebSettings_LayoutAlgorithm::WebSettings_LayoutAlgorithm(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

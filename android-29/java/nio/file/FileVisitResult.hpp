@@ -15,9 +15,11 @@ namespace java::nio::file
 		static QAndroidJniObject SKIP_SUBTREE();
 		static QAndroidJniObject TERMINATE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit FileVisitResult(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		FileVisitResult(QAndroidJniObject obj);
+		
 		// Constructors
-		FileVisitResult() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

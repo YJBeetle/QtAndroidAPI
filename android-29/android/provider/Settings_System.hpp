@@ -128,7 +128,10 @@ namespace android::provider
 		static jstring WIFI_WATCHDOG_PING_TIMEOUT_MS();
 		static jstring WINDOW_ANIMATION_SCALE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Settings_System(const char *className, const char *sig, Ts...agv) : android::provider::Settings_NameValueTable(className, sig, std::forward<Ts>(agv)...) {}
 		Settings_System(QAndroidJniObject obj);
+		
 		// Constructors
 		Settings_System();
 		

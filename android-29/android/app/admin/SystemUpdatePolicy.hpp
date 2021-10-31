@@ -18,9 +18,11 @@ namespace android::app::admin
 		static jint TYPE_INSTALL_WINDOWED();
 		static jint TYPE_POSTPONE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SystemUpdatePolicy(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SystemUpdatePolicy(QAndroidJniObject obj);
+		
 		// Constructors
-		SystemUpdatePolicy() = default;
 		
 		// Methods
 		static QAndroidJniObject createAutomaticInstallPolicy();

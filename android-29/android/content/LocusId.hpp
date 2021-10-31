@@ -15,10 +15,12 @@ namespace android::content
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit LocusId(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		LocusId(QAndroidJniObject obj);
+		
 		// Constructors
 		LocusId(jstring arg0);
-		LocusId() = default;
 		
 		// Methods
 		jint describeContents();

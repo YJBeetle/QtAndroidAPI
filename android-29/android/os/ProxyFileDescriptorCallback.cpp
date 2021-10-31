@@ -4,34 +4,34 @@ namespace android::os
 {
 	// Fields
 	
-	ProxyFileDescriptorCallback::ProxyFileDescriptorCallback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ProxyFileDescriptorCallback::ProxyFileDescriptorCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ProxyFileDescriptorCallback::ProxyFileDescriptorCallback()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.os.ProxyFileDescriptorCallback",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void ProxyFileDescriptorCallback::onFsync()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onFsync",
 			"()V"
 		);
 	}
 	jlong ProxyFileDescriptorCallback::onGetSize()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"onGetSize",
 			"()J"
 		);
 	}
 	jint ProxyFileDescriptorCallback::onRead(jlong arg0, jint arg1, jbyteArray arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"onRead",
 			"(JI[B)I",
 			arg0,
@@ -41,14 +41,14 @@ namespace android::os
 	}
 	void ProxyFileDescriptorCallback::onRelease()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onRelease",
 			"()V"
 		);
 	}
 	jint ProxyFileDescriptorCallback::onWrite(jlong arg0, jint arg1, jbyteArray arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"onWrite",
 			"(JI[B)I",
 			arg0,

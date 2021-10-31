@@ -5,27 +5,29 @@ namespace java::io
 {
 	// Fields
 	
-	FilterInputStream::FilterInputStream(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FilterInputStream::FilterInputStream(QAndroidJniObject obj) : java::io::InputStream(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint FilterInputStream::available()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"available",
 			"()I"
 		);
 	}
 	void FilterInputStream::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	void FilterInputStream::mark(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"mark",
 			"(I)V",
 			arg0
@@ -33,21 +35,21 @@ namespace java::io
 	}
 	jboolean FilterInputStream::markSupported()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"markSupported",
 			"()Z"
 		);
 	}
 	jint FilterInputStream::read()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"read",
 			"()I"
 		);
 	}
 	jint FilterInputStream::read(jbyteArray arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"read",
 			"([B)I",
 			arg0
@@ -55,7 +57,7 @@ namespace java::io
 	}
 	jint FilterInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"read",
 			"([BII)I",
 			arg0,
@@ -65,14 +67,14 @@ namespace java::io
 	}
 	void FilterInputStream::reset()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
 	jlong FilterInputStream::skip(jlong arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"skip",
 			"(J)J",
 			arg0

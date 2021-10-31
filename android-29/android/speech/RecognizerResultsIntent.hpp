@@ -17,9 +17,11 @@ namespace android::speech
 		static jstring EXTRA_VOICE_SEARCH_RESULT_URLS();
 		static jstring URI_SCHEME_INLINE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit RecognizerResultsIntent(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		RecognizerResultsIntent(QAndroidJniObject obj);
+		
 		// Constructors
-		RecognizerResultsIntent() = default;
 		
 		// Methods
 	};

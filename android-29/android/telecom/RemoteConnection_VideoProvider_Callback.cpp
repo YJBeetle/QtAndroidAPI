@@ -7,80 +7,80 @@ namespace android::telecom
 {
 	// Fields
 	
-	RemoteConnection_VideoProvider_Callback::RemoteConnection_VideoProvider_Callback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	RemoteConnection_VideoProvider_Callback::RemoteConnection_VideoProvider_Callback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	RemoteConnection_VideoProvider_Callback::RemoteConnection_VideoProvider_Callback()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.telecom.RemoteConnection$VideoProvider$Callback",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void RemoteConnection_VideoProvider_Callback::onCallDataUsageChanged(android::telecom::RemoteConnection_VideoProvider arg0, jlong arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onCallDataUsageChanged",
 			"(Landroid/telecom/RemoteConnection$VideoProvider;J)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void RemoteConnection_VideoProvider_Callback::onCallSessionEvent(android::telecom::RemoteConnection_VideoProvider arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onCallSessionEvent",
 			"(Landroid/telecom/RemoteConnection$VideoProvider;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void RemoteConnection_VideoProvider_Callback::onCameraCapabilitiesChanged(android::telecom::RemoteConnection_VideoProvider arg0, android::telecom::VideoProfile_CameraCapabilities arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onCameraCapabilitiesChanged",
 			"(Landroid/telecom/RemoteConnection$VideoProvider;Landroid/telecom/VideoProfile$CameraCapabilities;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void RemoteConnection_VideoProvider_Callback::onPeerDimensionsChanged(android::telecom::RemoteConnection_VideoProvider arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onPeerDimensionsChanged",
 			"(Landroid/telecom/RemoteConnection$VideoProvider;II)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
 	}
 	void RemoteConnection_VideoProvider_Callback::onSessionModifyRequestReceived(android::telecom::RemoteConnection_VideoProvider arg0, android::telecom::VideoProfile arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onSessionModifyRequestReceived",
 			"(Landroid/telecom/RemoteConnection$VideoProvider;Landroid/telecom/VideoProfile;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void RemoteConnection_VideoProvider_Callback::onSessionModifyResponseReceived(android::telecom::RemoteConnection_VideoProvider arg0, jint arg1, android::telecom::VideoProfile arg2, android::telecom::VideoProfile arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onSessionModifyResponseReceived",
 			"(Landroid/telecom/RemoteConnection$VideoProvider;ILandroid/telecom/VideoProfile;Landroid/telecom/VideoProfile;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
+			arg2.object(),
+			arg3.object()
 		);
 	}
 	void RemoteConnection_VideoProvider_Callback::onVideoQualityChanged(android::telecom::RemoteConnection_VideoProvider arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onVideoQualityChanged",
 			"(Landroid/telecom/RemoteConnection$VideoProvider;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

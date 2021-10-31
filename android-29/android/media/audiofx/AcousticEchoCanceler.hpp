@@ -11,9 +11,11 @@ namespace android::media::audiofx
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AcousticEchoCanceler(const char *className, const char *sig, Ts...agv) : android::media::audiofx::AudioEffect(className, sig, std::forward<Ts>(agv)...) {}
 		AcousticEchoCanceler(QAndroidJniObject obj);
+		
 		// Constructors
-		AcousticEchoCanceler() = default;
 		
 		// Methods
 		static QAndroidJniObject create(jint arg0);

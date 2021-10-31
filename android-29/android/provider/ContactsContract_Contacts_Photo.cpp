@@ -36,7 +36,9 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	ContactsContract_Contacts_Photo::ContactsContract_Contacts_Photo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ContactsContract_Contacts_Photo::ContactsContract_Contacts_Photo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

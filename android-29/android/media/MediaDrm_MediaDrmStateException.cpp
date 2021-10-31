@@ -4,13 +4,15 @@ namespace android::media
 {
 	// Fields
 	
-	MediaDrm_MediaDrmStateException::MediaDrm_MediaDrmStateException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaDrm_MediaDrmStateException::MediaDrm_MediaDrmStateException(QAndroidJniObject obj) : java::lang::IllegalStateException(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jstring MediaDrm_MediaDrmStateException::getDiagnosticInfo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDiagnosticInfo",
 			"()Ljava/lang/String;"
 		).object<jstring>();

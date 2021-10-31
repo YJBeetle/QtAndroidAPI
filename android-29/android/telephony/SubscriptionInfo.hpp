@@ -27,9 +27,11 @@ namespace android::telephony
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SubscriptionInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SubscriptionInfo(QAndroidJniObject obj);
+		
 		// Constructors
-		SubscriptionInfo() = default;
 		
 		// Methods
 		QAndroidJniObject createIconBitmap(android::content::Context arg0);

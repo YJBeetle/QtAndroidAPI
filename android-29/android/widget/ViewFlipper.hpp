@@ -18,11 +18,13 @@ namespace android::widget
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ViewFlipper(const char *className, const char *sig, Ts...agv) : android::widget::ViewAnimator(className, sig, std::forward<Ts>(agv)...) {}
 		ViewFlipper(QAndroidJniObject obj);
+		
 		// Constructors
 		ViewFlipper(android::content::Context arg0);
 		ViewFlipper(android::content::Context arg0, __JniBaseClass arg1);
-		ViewFlipper() = default;
 		
 		// Methods
 		jstring getAccessibilityClassName();

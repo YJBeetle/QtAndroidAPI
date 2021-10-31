@@ -11,7 +11,10 @@ namespace android::media::audiofx
 		// Fields
 		jshort preset();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PresetReverb_Settings(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PresetReverb_Settings(QAndroidJniObject obj);
+		
 		// Constructors
 		PresetReverb_Settings();
 		PresetReverb_Settings(jstring arg0);

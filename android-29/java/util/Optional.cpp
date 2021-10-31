@@ -4,7 +4,9 @@ namespace java::util
 {
 	// Fields
 	
-	Optional::Optional(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Optional::Optional(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -36,7 +38,7 @@ namespace java::util
 	}
 	jboolean Optional::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -44,84 +46,84 @@ namespace java::util
 	}
 	QAndroidJniObject Optional::filter(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"filter",
 			"(Ljava/util/function/Predicate;)Ljava/util/Optional;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Optional::flatMap(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"flatMap",
 			"(Ljava/util/function/Function;)Ljava/util/Optional;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jobject Optional::get()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jint Optional::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	void Optional::ifPresent(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"ifPresent",
 			"(Ljava/util/function/Consumer;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Optional::ifPresentOrElse(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"ifPresentOrElse",
 			"(Ljava/util/function/Consumer;Ljava/lang/Runnable;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jboolean Optional::isEmpty()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
 	jboolean Optional::isPresent()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isPresent",
 			"()Z"
 		);
 	}
 	QAndroidJniObject Optional::map(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"map",
 			"(Ljava/util/function/Function;)Ljava/util/Optional;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Optional::_or(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"or",
 			"(Ljava/util/function/Supplier;)Ljava/util/Optional;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jobject Optional::orElse(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"orElse",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0
@@ -129,37 +131,37 @@ namespace java::util
 	}
 	jobject Optional::orElseGet(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"orElseGet",
 			"(Ljava/util/function/Supplier;)Ljava/lang/Object;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jobject>();
 	}
 	jobject Optional::orElseThrow()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"orElseThrow",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobject Optional::orElseThrow(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"orElseThrow",
 			"(Ljava/util/function/Supplier;)Ljava/lang/Object;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jobject>();
 	}
 	QAndroidJniObject Optional::stream()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"stream",
 			"()Ljava/util/stream/Stream;"
 		);
 	}
 	jstring Optional::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

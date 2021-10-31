@@ -42,13 +42,15 @@ namespace android::widget
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Gallery(const char *className, const char *sig, Ts...agv) : android::widget::AbsSpinner(className, sig, std::forward<Ts>(agv)...) {}
 		Gallery(QAndroidJniObject obj);
+		
 		// Constructors
 		Gallery(android::content::Context arg0);
 		Gallery(android::content::Context arg0, __JniBaseClass arg1);
 		Gallery(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		Gallery(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
-		Gallery() = default;
 		
 		// Methods
 		jboolean dispatchKeyEvent(android::view::KeyEvent arg0);

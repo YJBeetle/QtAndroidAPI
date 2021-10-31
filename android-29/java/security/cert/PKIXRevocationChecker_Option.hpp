@@ -15,9 +15,11 @@ namespace java::security::cert
 		static QAndroidJniObject PREFER_CRLS();
 		static QAndroidJniObject SOFT_FAIL();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PKIXRevocationChecker_Option(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		PKIXRevocationChecker_Option(QAndroidJniObject obj);
+		
 		// Constructors
-		PKIXRevocationChecker_Option() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

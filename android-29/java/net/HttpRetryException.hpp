@@ -12,11 +12,13 @@ namespace java::net
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit HttpRetryException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
 		HttpRetryException(QAndroidJniObject obj);
+		
 		// Constructors
 		HttpRetryException(jstring arg0, jint arg1);
 		HttpRetryException(jstring arg0, jint arg1, jstring arg2);
-		HttpRetryException() = default;
 		
 		// Methods
 		jstring getLocation();

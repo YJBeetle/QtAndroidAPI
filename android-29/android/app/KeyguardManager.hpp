@@ -26,9 +26,11 @@ namespace android::app
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit KeyguardManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		KeyguardManager(QAndroidJniObject obj);
+		
 		// Constructors
-		KeyguardManager() = default;
 		
 		// Methods
 		QAndroidJniObject createConfirmDeviceCredentialIntent(jstring arg0, jstring arg1);

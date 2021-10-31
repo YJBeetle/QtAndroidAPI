@@ -16,10 +16,12 @@ namespace android::net
 		jstring mParameter();
 		jstring mValue();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit UrlQuerySanitizer_ParameterValuePair(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		UrlQuerySanitizer_ParameterValuePair(QAndroidJniObject obj);
+		
 		// Constructors
 		UrlQuerySanitizer_ParameterValuePair(android::net::UrlQuerySanitizer arg0, jstring arg1, jstring arg2);
-		UrlQuerySanitizer_ParameterValuePair() = default;
 		
 		// Methods
 	};

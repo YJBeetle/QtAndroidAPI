@@ -14,11 +14,13 @@ namespace java::util::concurrent
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Semaphore(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Semaphore(QAndroidJniObject obj);
+		
 		// Constructors
 		Semaphore(jint arg0);
 		Semaphore(jint arg0, jboolean arg1);
-		Semaphore() = default;
 		
 		// Methods
 		void acquire();

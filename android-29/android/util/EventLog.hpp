@@ -10,9 +10,11 @@ namespace android::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit EventLog(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		EventLog(QAndroidJniObject obj);
+		
 		// Constructors
-		EventLog() = default;
 		
 		// Methods
 		static jint getTagCode(jstring arg0);

@@ -161,51 +161,53 @@ namespace android::os
 		);
 	}
 	
-	PowerManager::PowerManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PowerManager::PowerManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void PowerManager::addThermalStatusListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addThermalStatusListener",
 			"(Landroid/os/PowerManager$OnThermalStatusChangedListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void PowerManager::addThermalStatusListener(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addThermalStatusListener",
 			"(Ljava/util/concurrent/Executor;Landroid/os/PowerManager$OnThermalStatusChangedListener;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jint PowerManager::getCurrentThermalStatus()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCurrentThermalStatus",
 			"()I"
 		);
 	}
 	jint PowerManager::getLocationPowerSaveMode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLocationPowerSaveMode",
 			"()I"
 		);
 	}
 	jboolean PowerManager::isDeviceIdleMode()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isDeviceIdleMode",
 			"()Z"
 		);
 	}
 	jboolean PowerManager::isIgnoringBatteryOptimizations(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isIgnoringBatteryOptimizations",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -213,35 +215,35 @@ namespace android::os
 	}
 	jboolean PowerManager::isInteractive()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isInteractive",
 			"()Z"
 		);
 	}
 	jboolean PowerManager::isPowerSaveMode()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isPowerSaveMode",
 			"()Z"
 		);
 	}
 	jboolean PowerManager::isScreenOn()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isScreenOn",
 			"()Z"
 		);
 	}
 	jboolean PowerManager::isSustainedPerformanceModeSupported()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isSustainedPerformanceModeSupported",
 			"()Z"
 		);
 	}
 	jboolean PowerManager::isWakeLockLevelSupported(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isWakeLockLevelSupported",
 			"(I)Z",
 			arg0
@@ -249,7 +251,7 @@ namespace android::os
 	}
 	QAndroidJniObject PowerManager::newWakeLock(jint arg0, jstring arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newWakeLock",
 			"(ILjava/lang/String;)Landroid/os/PowerManager$WakeLock;",
 			arg0,
@@ -258,7 +260,7 @@ namespace android::os
 	}
 	void PowerManager::reboot(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"reboot",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -266,10 +268,10 @@ namespace android::os
 	}
 	void PowerManager::removeThermalStatusListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeThermalStatusListener",
 			"(Landroid/os/PowerManager$OnThermalStatusChangedListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::os

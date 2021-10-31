@@ -8,13 +8,15 @@ namespace android::net::wifi::p2p
 {
 	// Fields
 	
-	WifiP2pManager_Channel::WifiP2pManager_Channel(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WifiP2pManager_Channel::WifiP2pManager_Channel(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void WifiP2pManager_Channel::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);

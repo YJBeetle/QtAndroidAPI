@@ -74,20 +74,22 @@ namespace android::net
 		);
 	}
 	
-	SocketKeepalive::SocketKeepalive(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SocketKeepalive::SocketKeepalive(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void SocketKeepalive::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	void SocketKeepalive::start(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"start",
 			"(I)V",
 			arg0
@@ -95,7 +97,7 @@ namespace android::net
 	}
 	void SocketKeepalive::stop()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"stop",
 			"()V"
 		);

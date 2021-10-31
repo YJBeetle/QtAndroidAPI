@@ -10,7 +10,10 @@ namespace android::app
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit KeyguardManager_KeyguardDismissCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		KeyguardManager_KeyguardDismissCallback(QAndroidJniObject obj);
+		
 		// Constructors
 		KeyguardManager_KeyguardDismissCallback();
 		

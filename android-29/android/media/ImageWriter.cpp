@@ -7,7 +7,9 @@ namespace android::media
 {
 	// Fields
 	
-	ImageWriter::ImageWriter(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ImageWriter::ImageWriter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -17,7 +19,7 @@ namespace android::media
 			"android.media.ImageWriter",
 			"newInstance",
 			"(Landroid/view/Surface;I)Landroid/media/ImageWriter;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -27,54 +29,54 @@ namespace android::media
 			"android.media.ImageWriter",
 			"newInstance",
 			"(Landroid/view/Surface;II)Landroid/media/ImageWriter;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
 	}
 	void ImageWriter::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	QAndroidJniObject ImageWriter::dequeueInputImage()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"dequeueInputImage",
 			"()Landroid/media/Image;"
 		);
 	}
 	jint ImageWriter::getFormat()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getFormat",
 			"()I"
 		);
 	}
 	jint ImageWriter::getMaxImages()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMaxImages",
 			"()I"
 		);
 	}
 	void ImageWriter::queueInputImage(android::media::Image arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"queueInputImage",
 			"(Landroid/media/Image;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ImageWriter::setOnImageReleasedListener(__JniBaseClass arg0, android::os::Handler arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnImageReleasedListener",
 			"(Landroid/media/ImageWriter$OnImageReleasedListener;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 } // namespace android::media

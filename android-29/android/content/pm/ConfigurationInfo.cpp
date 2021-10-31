@@ -35,81 +35,79 @@ namespace android::content::pm
 	}
 	jint ConfigurationInfo::reqGlEsVersion()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"reqGlEsVersion"
 		);
 	}
 	jint ConfigurationInfo::reqInputFeatures()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"reqInputFeatures"
 		);
 	}
 	jint ConfigurationInfo::reqKeyboardType()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"reqKeyboardType"
 		);
 	}
 	jint ConfigurationInfo::reqNavigation()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"reqNavigation"
 		);
 	}
 	jint ConfigurationInfo::reqTouchScreen()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"reqTouchScreen"
 		);
 	}
 	
-	ConfigurationInfo::ConfigurationInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ConfigurationInfo::ConfigurationInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ConfigurationInfo::ConfigurationInfo()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.content.pm.ConfigurationInfo",
 			"()V"
-		);
-	}
+		) {}
 	ConfigurationInfo::ConfigurationInfo(android::content::pm::ConfigurationInfo &arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.content.pm.ConfigurationInfo",
 			"(Landroid/content/pm/ConfigurationInfo;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jint ConfigurationInfo::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jstring ConfigurationInfo::getGlEsVersion()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getGlEsVersion",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring ConfigurationInfo::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void ConfigurationInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

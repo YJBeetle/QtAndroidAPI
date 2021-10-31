@@ -27,83 +27,83 @@ namespace android::view
 		);
 	}
 	
-	ActionMode::ActionMode(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ActionMode::ActionMode(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ActionMode::ActionMode()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.ActionMode",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void ActionMode::finish()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"finish",
 			"()V"
 		);
 	}
 	QAndroidJniObject ActionMode::getCustomView()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCustomView",
 			"()Landroid/view/View;"
 		);
 	}
 	QAndroidJniObject ActionMode::getMenu()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMenu",
 			"()Landroid/view/Menu;"
 		);
 	}
 	QAndroidJniObject ActionMode::getMenuInflater()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMenuInflater",
 			"()Landroid/view/MenuInflater;"
 		);
 	}
 	jstring ActionMode::getSubtitle()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSubtitle",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jobject ActionMode::getTag()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTag",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jstring ActionMode::getTitle()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTitle",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jboolean ActionMode::getTitleOptionalHint()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getTitleOptionalHint",
 			"()Z"
 		);
 	}
 	jint ActionMode::getType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getType",
 			"()I"
 		);
 	}
 	void ActionMode::hide(jlong arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"hide",
 			"(J)V",
 			arg0
@@ -111,28 +111,28 @@ namespace android::view
 	}
 	void ActionMode::invalidate()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"invalidate",
 			"()V"
 		);
 	}
 	void ActionMode::invalidateContentRect()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"invalidateContentRect",
 			"()V"
 		);
 	}
 	jboolean ActionMode::isTitleOptional()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isTitleOptional",
 			"()Z"
 		);
 	}
 	void ActionMode::onWindowFocusChanged(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onWindowFocusChanged",
 			"(Z)V",
 			arg0
@@ -140,15 +140,15 @@ namespace android::view
 	}
 	void ActionMode::setCustomView(android::view::View arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCustomView",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ActionMode::setSubtitle(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSubtitle",
 			"(I)V",
 			arg0
@@ -156,7 +156,7 @@ namespace android::view
 	}
 	void ActionMode::setSubtitle(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSubtitle",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
@@ -164,7 +164,7 @@ namespace android::view
 	}
 	void ActionMode::setTag(jobject arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTag",
 			"(Ljava/lang/Object;)V",
 			arg0
@@ -172,7 +172,7 @@ namespace android::view
 	}
 	void ActionMode::setTitle(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTitle",
 			"(I)V",
 			arg0
@@ -180,7 +180,7 @@ namespace android::view
 	}
 	void ActionMode::setTitle(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTitle",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
@@ -188,7 +188,7 @@ namespace android::view
 	}
 	void ActionMode::setTitleOptionalHint(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTitleOptionalHint",
 			"(Z)V",
 			arg0
@@ -196,7 +196,7 @@ namespace android::view
 	}
 	void ActionMode::setType(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setType",
 			"(I)V",
 			arg0

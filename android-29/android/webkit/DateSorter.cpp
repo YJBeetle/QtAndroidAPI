@@ -12,21 +12,21 @@ namespace android::webkit
 		);
 	}
 	
-	DateSorter::DateSorter(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DateSorter::DateSorter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	DateSorter::DateSorter(android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.webkit.DateSorter",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jlong DateSorter::getBoundary(jint arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getBoundary",
 			"(I)J",
 			arg0
@@ -34,7 +34,7 @@ namespace android::webkit
 	}
 	jint DateSorter::getIndex(jlong arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getIndex",
 			"(J)I",
 			arg0
@@ -42,7 +42,7 @@ namespace android::webkit
 	}
 	jstring DateSorter::getLabel(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLabel",
 			"(I)Ljava/lang/String;",
 			arg0

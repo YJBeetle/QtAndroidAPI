@@ -15,10 +15,12 @@ namespace android::provider
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DocumentsContract_Path(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DocumentsContract_Path(QAndroidJniObject obj);
+		
 		// Constructors
 		DocumentsContract_Path(jstring arg0, __JniBaseClass arg1);
-		DocumentsContract_Path() = default;
 		
 		// Methods
 		jint describeContents();

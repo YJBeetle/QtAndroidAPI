@@ -12,7 +12,10 @@ namespace android::text::style
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TtsSpan_OrdinalBuilder(const char *className, const char *sig, Ts...agv) : android::text::style::TtsSpan_SemioticClassBuilder(className, sig, std::forward<Ts>(agv)...) {}
 		TtsSpan_OrdinalBuilder(QAndroidJniObject obj);
+		
 		// Constructors
 		TtsSpan_OrdinalBuilder();
 		TtsSpan_OrdinalBuilder(jstring arg0);

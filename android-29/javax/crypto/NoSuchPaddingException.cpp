@@ -4,23 +4,21 @@ namespace javax::crypto
 {
 	// Fields
 	
-	NoSuchPaddingException::NoSuchPaddingException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NoSuchPaddingException::NoSuchPaddingException(QAndroidJniObject obj) : java::security::GeneralSecurityException(obj) {}
+	
 	// Constructors
 	NoSuchPaddingException::NoSuchPaddingException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::security::GeneralSecurityException(
 			"javax.crypto.NoSuchPaddingException",
 			"()V"
-		);
-	}
+		) {}
 	NoSuchPaddingException::NoSuchPaddingException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::security::GeneralSecurityException(
 			"javax.crypto.NoSuchPaddingException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace javax::crypto

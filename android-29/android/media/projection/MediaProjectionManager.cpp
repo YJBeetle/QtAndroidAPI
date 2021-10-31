@@ -7,24 +7,26 @@ namespace android::media::projection
 {
 	// Fields
 	
-	MediaProjectionManager::MediaProjectionManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaProjectionManager::MediaProjectionManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject MediaProjectionManager::createScreenCaptureIntent()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"createScreenCaptureIntent",
 			"()Landroid/content/Intent;"
 		);
 	}
 	QAndroidJniObject MediaProjectionManager::getMediaProjection(jint arg0, android::content::Intent arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMediaProjection",
 			"(ILandroid/content/Intent;)Landroid/media/projection/MediaProjection;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 } // namespace android::media::projection

@@ -110,10 +110,12 @@ namespace android::view
 		static jint PROGRESS_VISIBILITY_ON();
 		static jstring STATUS_BAR_BACKGROUND_TRANSITION_NAME();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Window(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Window(QAndroidJniObject obj);
+		
 		// Constructors
 		Window(android::content::Context arg0);
-		Window() = default;
 		
 		// Methods
 		static jint getDefaultFeatures(android::content::Context arg0);

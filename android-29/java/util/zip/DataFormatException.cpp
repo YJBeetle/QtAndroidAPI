@@ -4,23 +4,21 @@ namespace java::util::zip
 {
 	// Fields
 	
-	DataFormatException::DataFormatException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DataFormatException::DataFormatException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
+	
 	// Constructors
 	DataFormatException::DataFormatException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Exception(
 			"java.util.zip.DataFormatException",
 			"()V"
-		);
-	}
+		) {}
 	DataFormatException::DataFormatException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Exception(
 			"java.util.zip.DataFormatException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::util::zip

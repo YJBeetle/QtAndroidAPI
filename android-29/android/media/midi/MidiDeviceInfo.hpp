@@ -29,9 +29,11 @@ namespace android::media::midi
 		static jint TYPE_USB();
 		static jint TYPE_VIRTUAL();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MidiDeviceInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MidiDeviceInfo(QAndroidJniObject obj);
+		
 		// Constructors
-		MidiDeviceInfo() = default;
 		
 		// Methods
 		jint describeContents();

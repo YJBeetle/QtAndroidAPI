@@ -207,53 +207,53 @@ namespace android::bluetooth
 		);
 	}
 	
-	BluetoothGattCharacteristic::BluetoothGattCharacteristic(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BluetoothGattCharacteristic::BluetoothGattCharacteristic(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	BluetoothGattCharacteristic::BluetoothGattCharacteristic(java::util::UUID arg0, jint arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.bluetooth.BluetoothGattCharacteristic",
 			"(Ljava/util/UUID;II)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean BluetoothGattCharacteristic::addDescriptor(android::bluetooth::BluetoothGattDescriptor arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"addDescriptor",
 			"(Landroid/bluetooth/BluetoothGattDescriptor;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint BluetoothGattCharacteristic::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	QAndroidJniObject BluetoothGattCharacteristic::getDescriptor(java::util::UUID arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDescriptor",
 			"(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattDescriptor;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject BluetoothGattCharacteristic::getDescriptors()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDescriptors",
 			"()Ljava/util/List;"
 		);
 	}
 	QAndroidJniObject BluetoothGattCharacteristic::getFloatValue(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFloatValue",
 			"(II)Ljava/lang/Float;",
 			arg0,
@@ -262,14 +262,14 @@ namespace android::bluetooth
 	}
 	jint BluetoothGattCharacteristic::getInstanceId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getInstanceId",
 			"()I"
 		);
 	}
 	QAndroidJniObject BluetoothGattCharacteristic::getIntValue(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getIntValue",
 			"(II)Ljava/lang/Integer;",
 			arg0,
@@ -278,28 +278,28 @@ namespace android::bluetooth
 	}
 	jint BluetoothGattCharacteristic::getPermissions()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPermissions",
 			"()I"
 		);
 	}
 	jint BluetoothGattCharacteristic::getProperties()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getProperties",
 			"()I"
 		);
 	}
 	QAndroidJniObject BluetoothGattCharacteristic::getService()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getService",
 			"()Landroid/bluetooth/BluetoothGattService;"
 		);
 	}
 	jstring BluetoothGattCharacteristic::getStringValue(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getStringValue",
 			"(I)Ljava/lang/String;",
 			arg0
@@ -307,28 +307,28 @@ namespace android::bluetooth
 	}
 	QAndroidJniObject BluetoothGattCharacteristic::getUuid()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getUuid",
 			"()Ljava/util/UUID;"
 		);
 	}
 	jbyteArray BluetoothGattCharacteristic::getValue()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getValue",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jint BluetoothGattCharacteristic::getWriteType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getWriteType",
 			"()I"
 		);
 	}
 	jboolean BluetoothGattCharacteristic::setValue(jbyteArray arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"setValue",
 			"([B)Z",
 			arg0
@@ -336,7 +336,7 @@ namespace android::bluetooth
 	}
 	jboolean BluetoothGattCharacteristic::setValue(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"setValue",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -344,7 +344,7 @@ namespace android::bluetooth
 	}
 	jboolean BluetoothGattCharacteristic::setValue(jint arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"setValue",
 			"(III)Z",
 			arg0,
@@ -354,7 +354,7 @@ namespace android::bluetooth
 	}
 	jboolean BluetoothGattCharacteristic::setValue(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"setValue",
 			"(IIII)Z",
 			arg0,
@@ -365,7 +365,7 @@ namespace android::bluetooth
 	}
 	void BluetoothGattCharacteristic::setWriteType(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setWriteType",
 			"(I)V",
 			arg0
@@ -373,10 +373,10 @@ namespace android::bluetooth
 	}
 	void BluetoothGattCharacteristic::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

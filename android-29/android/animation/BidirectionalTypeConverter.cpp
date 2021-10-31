@@ -4,22 +4,22 @@ namespace android::animation
 {
 	// Fields
 	
-	BidirectionalTypeConverter::BidirectionalTypeConverter(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BidirectionalTypeConverter::BidirectionalTypeConverter(QAndroidJniObject obj) : android::animation::TypeConverter(obj) {}
+	
 	// Constructors
 	BidirectionalTypeConverter::BidirectionalTypeConverter(jclass arg0, jclass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::animation::TypeConverter(
 			"android.animation.BidirectionalTypeConverter",
 			"(Ljava/lang/Class;Ljava/lang/Class;)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jobject BidirectionalTypeConverter::convertBack(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"convertBack",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0
@@ -27,7 +27,7 @@ namespace android::animation
 	}
 	QAndroidJniObject BidirectionalTypeConverter::invert()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"invert",
 			"()Landroid/animation/BidirectionalTypeConverter;"
 		);

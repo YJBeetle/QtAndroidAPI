@@ -32,28 +32,25 @@ namespace java::text
 		);
 	}
 	
-	Bidi::Bidi(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Bidi::Bidi(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Bidi::Bidi(__JniBaseClass arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.text.Bidi",
 			"(Ljava/text/AttributedCharacterIterator;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	Bidi::Bidi(jstring arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.text.Bidi",
 			"(Ljava/lang/String;I)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	Bidi::Bidi(jcharArray arg0, jint arg1, jbyteArray arg2, jint arg3, jint arg4, jint arg5)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.text.Bidi",
 			"([CI[BIII)V",
 			arg0,
@@ -62,8 +59,7 @@ namespace java::text
 			arg3,
 			arg4,
 			arg5
-		);
-	}
+		) {}
 	
 	// Methods
 	void Bidi::reorderVisually(jbyteArray arg0, jint arg1, jobjectArray arg2, jint arg3, jint arg4)
@@ -92,14 +88,14 @@ namespace java::text
 	}
 	jboolean Bidi::baseIsLeftToRight()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"baseIsLeftToRight",
 			"()Z"
 		);
 	}
 	QAndroidJniObject Bidi::createLineBidi(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"createLineBidi",
 			"(II)Ljava/text/Bidi;",
 			arg0,
@@ -108,21 +104,21 @@ namespace java::text
 	}
 	jint Bidi::getBaseLevel()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getBaseLevel",
 			"()I"
 		);
 	}
 	jint Bidi::getLength()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLength",
 			"()I"
 		);
 	}
 	jint Bidi::getLevelAt(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLevelAt",
 			"(I)I",
 			arg0
@@ -130,14 +126,14 @@ namespace java::text
 	}
 	jint Bidi::getRunCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRunCount",
 			"()I"
 		);
 	}
 	jint Bidi::getRunLevel(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRunLevel",
 			"(I)I",
 			arg0
@@ -145,7 +141,7 @@ namespace java::text
 	}
 	jint Bidi::getRunLimit(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRunLimit",
 			"(I)I",
 			arg0
@@ -153,7 +149,7 @@ namespace java::text
 	}
 	jint Bidi::getRunStart(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRunStart",
 			"(I)I",
 			arg0
@@ -161,28 +157,28 @@ namespace java::text
 	}
 	jboolean Bidi::isLeftToRight()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isLeftToRight",
 			"()Z"
 		);
 	}
 	jboolean Bidi::isMixed()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isMixed",
 			"()Z"
 		);
 	}
 	jboolean Bidi::isRightToLeft()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isRightToLeft",
 			"()Z"
 		);
 	}
 	jstring Bidi::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

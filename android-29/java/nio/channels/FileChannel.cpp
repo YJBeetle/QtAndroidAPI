@@ -8,7 +8,9 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	FileChannel::FileChannel(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FileChannel::FileChannel(QAndroidJniObject obj) : java::nio::channels::spi::AbstractInterruptibleChannel(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -18,7 +20,7 @@ namespace java::nio::channels
 			"java.nio.channels.FileChannel",
 			"open",
 			"(Ljava/nio/file/Path;[Ljava/nio/file/OpenOption;)Ljava/nio/channels/FileChannel;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -28,14 +30,14 @@ namespace java::nio::channels
 			"java.nio.channels.FileChannel",
 			"open",
 			"(Ljava/nio/file/Path;Ljava/util/Set;[Ljava/nio/file/attribute/FileAttribute;)Ljava/nio/channels/FileChannel;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
 	void FileChannel::force(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"force",
 			"(Z)V",
 			arg0
@@ -43,14 +45,14 @@ namespace java::nio::channels
 	}
 	QAndroidJniObject FileChannel::lock()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"lock",
 			"()Ljava/nio/channels/FileLock;"
 		);
 	}
 	QAndroidJniObject FileChannel::lock(jlong arg0, jlong arg1, jboolean arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"lock",
 			"(JJZ)Ljava/nio/channels/FileLock;",
 			arg0,
@@ -60,17 +62,17 @@ namespace java::nio::channels
 	}
 	QAndroidJniObject FileChannel::map(java::nio::channels::FileChannel_MapMode arg0, jlong arg1, jlong arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"map",
 			"(Ljava/nio/channels/FileChannel$MapMode;JJ)Ljava/nio/MappedByteBuffer;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
 	}
 	QAndroidJniObject FileChannel::position(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"position",
 			"(J)Ljava/nio/channels/FileChannel;",
 			arg0
@@ -78,31 +80,31 @@ namespace java::nio::channels
 	}
 	jlong FileChannel::position()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"position",
 			"()J"
 		);
 	}
 	jint FileChannel::read(java::nio::ByteBuffer arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"read",
 			"(Ljava/nio/ByteBuffer;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint FileChannel::read(java::nio::ByteBuffer arg0, jlong arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"read",
 			"(Ljava/nio/ByteBuffer;J)I",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	jlong FileChannel::read(jarray arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"read",
 			"([Ljava/nio/ByteBuffer;)J",
 			arg0
@@ -110,7 +112,7 @@ namespace java::nio::channels
 	}
 	jlong FileChannel::read(jarray arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"read",
 			"([Ljava/nio/ByteBuffer;II)J",
 			arg0,
@@ -120,34 +122,34 @@ namespace java::nio::channels
 	}
 	jlong FileChannel::size()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"size",
 			"()J"
 		);
 	}
 	jlong FileChannel::transferFrom(__JniBaseClass arg0, jlong arg1, jlong arg2)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"transferFrom",
 			"(Ljava/nio/channels/ReadableByteChannel;JJ)J",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
 	}
 	jlong FileChannel::transferTo(jlong arg0, jlong arg1, __JniBaseClass arg2)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"transferTo",
 			"(JJLjava/nio/channels/WritableByteChannel;)J",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	QAndroidJniObject FileChannel::truncate(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"truncate",
 			"(J)Ljava/nio/channels/FileChannel;",
 			arg0
@@ -155,14 +157,14 @@ namespace java::nio::channels
 	}
 	QAndroidJniObject FileChannel::tryLock()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"tryLock",
 			"()Ljava/nio/channels/FileLock;"
 		);
 	}
 	QAndroidJniObject FileChannel::tryLock(jlong arg0, jlong arg1, jboolean arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"tryLock",
 			"(JJZ)Ljava/nio/channels/FileLock;",
 			arg0,
@@ -172,24 +174,24 @@ namespace java::nio::channels
 	}
 	jint FileChannel::write(java::nio::ByteBuffer arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"write",
 			"(Ljava/nio/ByteBuffer;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint FileChannel::write(java::nio::ByteBuffer arg0, jlong arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"write",
 			"(Ljava/nio/ByteBuffer;J)I",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	jlong FileChannel::write(jarray arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"write",
 			"([Ljava/nio/ByteBuffer;)J",
 			arg0
@@ -197,7 +199,7 @@ namespace java::nio::channels
 	}
 	jlong FileChannel::write(jarray arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"write",
 			"([Ljava/nio/ByteBuffer;II)J",
 			arg0,

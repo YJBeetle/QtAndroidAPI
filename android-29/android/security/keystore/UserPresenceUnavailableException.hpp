@@ -14,7 +14,10 @@ namespace android::security::keystore
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit UserPresenceUnavailableException(const char *className, const char *sig, Ts...agv) : java::security::InvalidKeyException(className, sig, std::forward<Ts>(agv)...) {}
 		UserPresenceUnavailableException(QAndroidJniObject obj);
+		
 		// Constructors
 		UserPresenceUnavailableException();
 		UserPresenceUnavailableException(jstring arg0);

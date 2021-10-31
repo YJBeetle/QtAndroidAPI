@@ -4,52 +4,50 @@ namespace org::xmlpull::v1
 {
 	// Fields
 	
-	XmlPullParserException::XmlPullParserException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	XmlPullParserException::XmlPullParserException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
+	
 	// Constructors
 	XmlPullParserException::XmlPullParserException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Exception(
 			"org.xmlpull.v1.XmlPullParserException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	XmlPullParserException::XmlPullParserException(jstring arg0, __JniBaseClass arg1, jthrowable arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Exception(
 			"org.xmlpull.v1.XmlPullParserException",
 			"(Ljava/lang/String;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/Throwable;)V",
 			arg0,
-			arg1.__jniObject().object(),
+			arg1.object(),
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	jint XmlPullParserException::getColumnNumber()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getColumnNumber",
 			"()I"
 		);
 	}
 	jthrowable XmlPullParserException::getDetail()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDetail",
 			"()Ljava/lang/Throwable;"
 		).object<jthrowable>();
 	}
 	jint XmlPullParserException::getLineNumber()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLineNumber",
 			"()I"
 		);
 	}
 	void XmlPullParserException::printStackTrace()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"printStackTrace",
 			"()V"
 		);

@@ -93,15 +93,15 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	ContactsContract::ContactsContract(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ContactsContract::ContactsContract(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ContactsContract::ContactsContract()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.provider.ContactsContract",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean ContactsContract::isProfileId(jlong arg0)

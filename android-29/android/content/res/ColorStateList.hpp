@@ -23,10 +23,12 @@ namespace android::content::res
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ColorStateList(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ColorStateList(QAndroidJniObject obj);
+		
 		// Constructors
 		ColorStateList(jarray arg0, jintArray arg1);
-		ColorStateList() = default;
 		
 		// Methods
 		static QAndroidJniObject createFromXml(android::content::res::Resources arg0, __JniBaseClass arg1);

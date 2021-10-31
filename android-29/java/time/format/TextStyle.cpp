@@ -52,7 +52,9 @@ namespace java::time::format
 		);
 	}
 	
-	TextStyle::TextStyle(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TextStyle::TextStyle(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -75,21 +77,21 @@ namespace java::time::format
 	}
 	QAndroidJniObject TextStyle::asNormal()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"asNormal",
 			"()Ljava/time/format/TextStyle;"
 		);
 	}
 	QAndroidJniObject TextStyle::asStandalone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"asStandalone",
 			"()Ljava/time/format/TextStyle;"
 		);
 	}
 	jboolean TextStyle::isStandalone()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isStandalone",
 			"()Z"
 		);

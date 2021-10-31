@@ -25,67 +25,69 @@ namespace android::net
 		);
 	}
 	
-	IpSecManager::IpSecManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	IpSecManager::IpSecManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject IpSecManager::allocateSecurityParameterIndex(java::net::InetAddress arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"allocateSecurityParameterIndex",
 			"(Ljava/net/InetAddress;)Landroid/net/IpSecManager$SecurityParameterIndex;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject IpSecManager::allocateSecurityParameterIndex(java::net::InetAddress arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"allocateSecurityParameterIndex",
 			"(Ljava/net/InetAddress;I)Landroid/net/IpSecManager$SecurityParameterIndex;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void IpSecManager::applyTransportModeTransform(java::io::FileDescriptor arg0, jint arg1, android::net::IpSecTransform arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"applyTransportModeTransform",
 			"(Ljava/io/FileDescriptor;ILandroid/net/IpSecTransform;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void IpSecManager::applyTransportModeTransform(java::net::DatagramSocket arg0, jint arg1, android::net::IpSecTransform arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"applyTransportModeTransform",
 			"(Ljava/net/DatagramSocket;ILandroid/net/IpSecTransform;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void IpSecManager::applyTransportModeTransform(java::net::Socket arg0, jint arg1, android::net::IpSecTransform arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"applyTransportModeTransform",
 			"(Ljava/net/Socket;ILandroid/net/IpSecTransform;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	QAndroidJniObject IpSecManager::openUdpEncapsulationSocket()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"openUdpEncapsulationSocket",
 			"()Landroid/net/IpSecManager$UdpEncapsulationSocket;"
 		);
 	}
 	QAndroidJniObject IpSecManager::openUdpEncapsulationSocket(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"openUdpEncapsulationSocket",
 			"(I)Landroid/net/IpSecManager$UdpEncapsulationSocket;",
 			arg0
@@ -93,26 +95,26 @@ namespace android::net
 	}
 	void IpSecManager::removeTransportModeTransforms(java::io::FileDescriptor arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeTransportModeTransforms",
 			"(Ljava/io/FileDescriptor;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void IpSecManager::removeTransportModeTransforms(java::net::DatagramSocket arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeTransportModeTransforms",
 			"(Ljava/net/DatagramSocket;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void IpSecManager::removeTransportModeTransforms(java::net::Socket arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeTransportModeTransforms",
 			"(Ljava/net/Socket;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::net

@@ -27,9 +27,11 @@ namespace android::media
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaRouter_UserRouteInfo(const char *className, const char *sig, Ts...agv) : android::media::MediaRouter_RouteInfo(className, sig, std::forward<Ts>(agv)...) {}
 		MediaRouter_UserRouteInfo(QAndroidJniObject obj);
+		
 		// Constructors
-		MediaRouter_UserRouteInfo() = default;
 		
 		// Methods
 		QAndroidJniObject getRemoteControlClient();

@@ -5,33 +5,33 @@ namespace android::telephony::gsm
 	// Fields
 	jbyteArray SmsMessage_SubmitPdu::encodedMessage()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"encodedMessage",
 			"[B"
 		).object<jbyteArray>();
 	}
 	jbyteArray SmsMessage_SubmitPdu::encodedScAddress()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"encodedScAddress",
 			"[B"
 		).object<jbyteArray>();
 	}
 	
-	SmsMessage_SubmitPdu::SmsMessage_SubmitPdu(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SmsMessage_SubmitPdu::SmsMessage_SubmitPdu(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	SmsMessage_SubmitPdu::SmsMessage_SubmitPdu()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.telephony.gsm.SmsMessage$SubmitPdu",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring SmsMessage_SubmitPdu::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

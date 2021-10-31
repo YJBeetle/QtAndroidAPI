@@ -6,13 +6,15 @@ namespace android::database::sqlite
 {
 	// Fields
 	
-	SQLiteQuery::SQLiteQuery(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SQLiteQuery::SQLiteQuery(QAndroidJniObject obj) : android::database::sqlite::SQLiteProgram(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jstring SQLiteQuery::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

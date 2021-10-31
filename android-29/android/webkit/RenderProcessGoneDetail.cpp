@@ -4,27 +4,27 @@ namespace android::webkit
 {
 	// Fields
 	
-	RenderProcessGoneDetail::RenderProcessGoneDetail(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	RenderProcessGoneDetail::RenderProcessGoneDetail(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	RenderProcessGoneDetail::RenderProcessGoneDetail()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.webkit.RenderProcessGoneDetail",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean RenderProcessGoneDetail::didCrash()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"didCrash",
 			"()Z"
 		);
 	}
 	jint RenderProcessGoneDetail::rendererPriorityAtExit()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"rendererPriorityAtExit",
 			"()I"
 		);

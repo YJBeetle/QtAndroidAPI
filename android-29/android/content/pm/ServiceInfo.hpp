@@ -32,7 +32,10 @@ namespace android::content::pm
 		jint flags();
 		jstring permission();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ServiceInfo(const char *className, const char *sig, Ts...agv) : android::content::pm::ComponentInfo(className, sig, std::forward<Ts>(agv)...) {}
 		ServiceInfo(QAndroidJniObject obj);
+		
 		// Constructors
 		ServiceInfo();
 		ServiceInfo(android::content::pm::ServiceInfo &arg0);

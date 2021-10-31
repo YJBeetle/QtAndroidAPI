@@ -38,9 +38,11 @@ namespace java::time::chrono
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit HijrahDate(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		HijrahDate(QAndroidJniObject obj);
+		
 		// Constructors
-		HijrahDate() = default;
 		
 		// Methods
 		static QAndroidJniObject from(__JniBaseClass arg0);

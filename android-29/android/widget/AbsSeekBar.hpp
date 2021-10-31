@@ -44,13 +44,15 @@ namespace android::widget
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AbsSeekBar(const char *className, const char *sig, Ts...agv) : android::widget::ProgressBar(className, sig, std::forward<Ts>(agv)...) {}
 		AbsSeekBar(QAndroidJniObject obj);
+		
 		// Constructors
 		AbsSeekBar(android::content::Context arg0);
 		AbsSeekBar(android::content::Context arg0, __JniBaseClass arg1);
 		AbsSeekBar(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		AbsSeekBar(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
-		AbsSeekBar() = default;
 		
 		// Methods
 		void drawableHotspotChanged(jfloat arg0, jfloat arg1);

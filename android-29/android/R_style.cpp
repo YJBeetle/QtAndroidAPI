@@ -5156,15 +5156,15 @@ namespace android
 		);
 	}
 	
-	R_style::R_style(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	R_style::R_style(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	R_style::R_style()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.R$style",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android

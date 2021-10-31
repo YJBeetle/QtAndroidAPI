@@ -46,10 +46,12 @@ namespace android::net
 		static jint TRANSPORT_WIFI();
 		static jint TRANSPORT_WIFI_AWARE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit NetworkCapabilities(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		NetworkCapabilities(QAndroidJniObject obj);
+		
 		// Constructors
 		NetworkCapabilities(android::net::NetworkCapabilities &arg0);
-		NetworkCapabilities() = default;
 		
 		// Methods
 		jint describeContents();

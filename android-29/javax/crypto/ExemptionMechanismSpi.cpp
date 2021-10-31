@@ -5,15 +5,15 @@ namespace javax::crypto
 {
 	// Fields
 	
-	ExemptionMechanismSpi::ExemptionMechanismSpi(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ExemptionMechanismSpi::ExemptionMechanismSpi(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ExemptionMechanismSpi::ExemptionMechanismSpi()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"javax.crypto.ExemptionMechanismSpi",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace javax::crypto

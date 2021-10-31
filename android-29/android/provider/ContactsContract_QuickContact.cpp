@@ -61,15 +61,15 @@ namespace android::provider
 		);
 	}
 	
-	ContactsContract_QuickContact::ContactsContract_QuickContact(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ContactsContract_QuickContact::ContactsContract_QuickContact(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ContactsContract_QuickContact::ContactsContract_QuickContact()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.provider.ContactsContract$QuickContact",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void ContactsContract_QuickContact::showQuickContact(android::content::Context arg0, android::graphics::Rect arg1, android::net::Uri arg2, jarray arg3, jstring arg4)
@@ -78,9 +78,9 @@ namespace android::provider
 			"android.provider.ContactsContract$QuickContact",
 			"showQuickContact",
 			"(Landroid/content/Context;Landroid/graphics/Rect;Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
 			arg3,
 			arg4
 		);
@@ -91,9 +91,9 @@ namespace android::provider
 			"android.provider.ContactsContract$QuickContact",
 			"showQuickContact",
 			"(Landroid/content/Context;Landroid/graphics/Rect;Landroid/net/Uri;I[Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
 			arg3,
 			arg4
 		);
@@ -104,9 +104,9 @@ namespace android::provider
 			"android.provider.ContactsContract$QuickContact",
 			"showQuickContact",
 			"(Landroid/content/Context;Landroid/view/View;Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
 			arg3,
 			arg4
 		);
@@ -117,9 +117,9 @@ namespace android::provider
 			"android.provider.ContactsContract$QuickContact",
 			"showQuickContact",
 			"(Landroid/content/Context;Landroid/view/View;Landroid/net/Uri;I[Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
 			arg3,
 			arg4
 		);

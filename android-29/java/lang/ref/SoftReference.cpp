@@ -5,30 +5,28 @@ namespace java::lang::ref
 {
 	// Fields
 	
-	SoftReference::SoftReference(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SoftReference::SoftReference(QAndroidJniObject obj) : java::lang::ref::Reference(obj) {}
+	
 	// Constructors
 	SoftReference::SoftReference(jobject arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::ref::Reference(
 			"java.lang.ref.SoftReference",
 			"(Ljava/lang/Object;)V",
 			arg0
-		);
-	}
+		) {}
 	SoftReference::SoftReference(jobject arg0, java::lang::ref::ReferenceQueue arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::ref::Reference(
 			"java.lang.ref.SoftReference",
 			"(Ljava/lang/Object;Ljava/lang/ref/ReferenceQueue;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
+			arg1.object()
+		) {}
 	
 	// Methods
 	jobject SoftReference::get()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"()Ljava/lang/Object;"
 		).object<jobject>();

@@ -15,20 +15,22 @@ namespace android::media
 		);
 	}
 	
-	AudioRecordingConfiguration::AudioRecordingConfiguration(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AudioRecordingConfiguration::AudioRecordingConfiguration(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint AudioRecordingConfiguration::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean AudioRecordingConfiguration::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -36,80 +38,80 @@ namespace android::media
 	}
 	QAndroidJniObject AudioRecordingConfiguration::getAudioDevice()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAudioDevice",
 			"()Landroid/media/AudioDeviceInfo;"
 		);
 	}
 	jint AudioRecordingConfiguration::getAudioSource()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAudioSource",
 			"()I"
 		);
 	}
 	jint AudioRecordingConfiguration::getClientAudioSessionId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getClientAudioSessionId",
 			"()I"
 		);
 	}
 	jint AudioRecordingConfiguration::getClientAudioSource()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getClientAudioSource",
 			"()I"
 		);
 	}
 	QAndroidJniObject AudioRecordingConfiguration::getClientEffects()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getClientEffects",
 			"()Ljava/util/List;"
 		);
 	}
 	QAndroidJniObject AudioRecordingConfiguration::getClientFormat()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getClientFormat",
 			"()Landroid/media/AudioFormat;"
 		);
 	}
 	QAndroidJniObject AudioRecordingConfiguration::getEffects()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEffects",
 			"()Ljava/util/List;"
 		);
 	}
 	QAndroidJniObject AudioRecordingConfiguration::getFormat()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFormat",
 			"()Landroid/media/AudioFormat;"
 		);
 	}
 	jint AudioRecordingConfiguration::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean AudioRecordingConfiguration::isClientSilenced()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isClientSilenced",
 			"()Z"
 		);
 	}
 	void AudioRecordingConfiguration::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

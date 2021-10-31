@@ -5,17 +5,17 @@ namespace android::app
 {
 	// Fields
 	
-	Fragment_InstantiationException::Fragment_InstantiationException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Fragment_InstantiationException::Fragment_InstantiationException(QAndroidJniObject obj) : android::util::AndroidRuntimeException(obj) {}
+	
 	// Constructors
 	Fragment_InstantiationException::Fragment_InstantiationException(jstring arg0, java::lang::Exception arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::util::AndroidRuntimeException(
 			"android.app.Fragment$InstantiationException",
 			"(Ljava/lang/String;Ljava/lang/Exception;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
+			arg1.object()
+		) {}
 	
 	// Methods
 } // namespace android::app

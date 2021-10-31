@@ -5,28 +5,26 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	CopyOnWriteArraySet::CopyOnWriteArraySet(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CopyOnWriteArraySet::CopyOnWriteArraySet(QAndroidJniObject obj) : java::util::AbstractSet(obj) {}
+	
 	// Constructors
 	CopyOnWriteArraySet::CopyOnWriteArraySet()
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::AbstractSet(
 			"java.util.concurrent.CopyOnWriteArraySet",
 			"()V"
-		);
-	}
+		) {}
 	CopyOnWriteArraySet::CopyOnWriteArraySet(__JniBaseClass arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::AbstractSet(
 			"java.util.concurrent.CopyOnWriteArraySet",
 			"(Ljava/util/Collection;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jboolean CopyOnWriteArraySet::add(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"add",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -34,22 +32,22 @@ namespace java::util::concurrent
 	}
 	jboolean CopyOnWriteArraySet::addAll(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"addAll",
 			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void CopyOnWriteArraySet::clear()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
 	jboolean CopyOnWriteArraySet::contains(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"contains",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -57,15 +55,15 @@ namespace java::util::concurrent
 	}
 	jboolean CopyOnWriteArraySet::containsAll(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"containsAll",
 			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean CopyOnWriteArraySet::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -73,29 +71,29 @@ namespace java::util::concurrent
 	}
 	void CopyOnWriteArraySet::forEach(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"forEach",
 			"(Ljava/util/function/Consumer;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean CopyOnWriteArraySet::isEmpty()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
 	QAndroidJniObject CopyOnWriteArraySet::iterator()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
 	jboolean CopyOnWriteArraySet::remove(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"remove",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -103,52 +101,52 @@ namespace java::util::concurrent
 	}
 	jboolean CopyOnWriteArraySet::removeAll(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"removeAll",
 			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean CopyOnWriteArraySet::removeIf(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"removeIf",
 			"(Ljava/util/function/Predicate;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean CopyOnWriteArraySet::retainAll(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"retainAll",
 			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint CopyOnWriteArraySet::size()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
 	QAndroidJniObject CopyOnWriteArraySet::spliterator()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"spliterator",
 			"()Ljava/util/Spliterator;"
 		);
 	}
 	jobjectArray CopyOnWriteArraySet::toArray()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toArray",
 			"()[Ljava/lang/Object;"
 		).object<jobjectArray>();
 	}
 	jobjectArray CopyOnWriteArraySet::toArray(jobjectArray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toArray",
 			"([Ljava/lang/Object;)[Ljava/lang/Object;",
 			arg0

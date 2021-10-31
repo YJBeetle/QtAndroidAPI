@@ -8,52 +8,52 @@ namespace android::net::wifi::rtt
 {
 	// Fields
 	
-	RangingRequest_Builder::RangingRequest_Builder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	RangingRequest_Builder::RangingRequest_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	RangingRequest_Builder::RangingRequest_Builder()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.net.wifi.rtt.RangingRequest$Builder",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject RangingRequest_Builder::addAccessPoint(android::net::wifi::ScanResult arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"addAccessPoint",
 			"(Landroid/net/wifi/ScanResult;)Landroid/net/wifi/rtt/RangingRequest$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject RangingRequest_Builder::addAccessPoints(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"addAccessPoints",
 			"(Ljava/util/List;)Landroid/net/wifi/rtt/RangingRequest$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject RangingRequest_Builder::addWifiAwarePeer(android::net::MacAddress arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"addWifiAwarePeer",
 			"(Landroid/net/MacAddress;)Landroid/net/wifi/rtt/RangingRequest$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject RangingRequest_Builder::addWifiAwarePeer(android::net::wifi::aware::PeerHandle arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"addWifiAwarePeer",
 			"(Landroid/net/wifi/aware/PeerHandle;)Landroid/net/wifi/rtt/RangingRequest$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject RangingRequest_Builder::build()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"build",
 			"()Landroid/net/wifi/rtt/RangingRequest;"
 		);

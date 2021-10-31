@@ -44,7 +44,9 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	ContactsContract_CommonDataKinds_Note::ContactsContract_CommonDataKinds_Note(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ContactsContract_CommonDataKinds_Note::ContactsContract_CommonDataKinds_Note(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

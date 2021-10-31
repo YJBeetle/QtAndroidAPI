@@ -4,28 +4,26 @@ namespace android::util
 {
 	// Fields
 	
-	SparseBooleanArray::SparseBooleanArray(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SparseBooleanArray::SparseBooleanArray(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	SparseBooleanArray::SparseBooleanArray()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.util.SparseBooleanArray",
 			"()V"
-		);
-	}
+		) {}
 	SparseBooleanArray::SparseBooleanArray(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.util.SparseBooleanArray",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	void SparseBooleanArray::append(jint arg0, jboolean arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"append",
 			"(IZ)V",
 			arg0,
@@ -34,21 +32,21 @@ namespace android::util
 	}
 	void SparseBooleanArray::clear()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
 	QAndroidJniObject SparseBooleanArray::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Landroid/util/SparseBooleanArray;"
 		);
 	}
 	void SparseBooleanArray::_delete(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"delete",
 			"(I)V",
 			arg0
@@ -56,7 +54,7 @@ namespace android::util
 	}
 	jboolean SparseBooleanArray::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -64,7 +62,7 @@ namespace android::util
 	}
 	jboolean SparseBooleanArray::get(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"get",
 			"(I)Z",
 			arg0
@@ -72,7 +70,7 @@ namespace android::util
 	}
 	jboolean SparseBooleanArray::get(jint arg0, jboolean arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"get",
 			"(IZ)Z",
 			arg0,
@@ -81,14 +79,14 @@ namespace android::util
 	}
 	jint SparseBooleanArray::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jint SparseBooleanArray::indexOfKey(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"indexOfKey",
 			"(I)I",
 			arg0
@@ -96,7 +94,7 @@ namespace android::util
 	}
 	jint SparseBooleanArray::indexOfValue(jboolean arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"indexOfValue",
 			"(Z)I",
 			arg0
@@ -104,7 +102,7 @@ namespace android::util
 	}
 	jint SparseBooleanArray::keyAt(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"keyAt",
 			"(I)I",
 			arg0
@@ -112,7 +110,7 @@ namespace android::util
 	}
 	void SparseBooleanArray::put(jint arg0, jboolean arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"put",
 			"(IZ)V",
 			arg0,
@@ -121,7 +119,7 @@ namespace android::util
 	}
 	void SparseBooleanArray::removeAt(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeAt",
 			"(I)V",
 			arg0
@@ -129,7 +127,7 @@ namespace android::util
 	}
 	void SparseBooleanArray::setValueAt(jint arg0, jboolean arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setValueAt",
 			"(IZ)V",
 			arg0,
@@ -138,21 +136,21 @@ namespace android::util
 	}
 	jint SparseBooleanArray::size()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
 	jstring SparseBooleanArray::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jboolean SparseBooleanArray::valueAt(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"valueAt",
 			"(I)Z",
 			arg0

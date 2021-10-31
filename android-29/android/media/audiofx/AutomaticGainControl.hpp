@@ -11,9 +11,11 @@ namespace android::media::audiofx
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AutomaticGainControl(const char *className, const char *sig, Ts...agv) : android::media::audiofx::AudioEffect(className, sig, std::forward<Ts>(agv)...) {}
 		AutomaticGainControl(QAndroidJniObject obj);
+		
 		// Constructors
-		AutomaticGainControl() = default;
 		
 		// Methods
 		static QAndroidJniObject create(jint arg0);

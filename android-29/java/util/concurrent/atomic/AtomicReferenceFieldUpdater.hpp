@@ -10,9 +10,11 @@ namespace java::util::concurrent::atomic
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AtomicReferenceFieldUpdater(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AtomicReferenceFieldUpdater(QAndroidJniObject obj);
+		
 		// Constructors
-		AtomicReferenceFieldUpdater() = default;
 		
 		// Methods
 		static QAndroidJniObject newUpdater(jclass arg0, jclass arg1, jstring arg2);

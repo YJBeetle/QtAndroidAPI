@@ -10,10 +10,12 @@ namespace android::text
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TextUtils_SimpleStringSplitter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		TextUtils_SimpleStringSplitter(QAndroidJniObject obj);
+		
 		// Constructors
 		TextUtils_SimpleStringSplitter(jchar arg0);
-		TextUtils_SimpleStringSplitter() = default;
 		
 		// Methods
 		jboolean hasNext();

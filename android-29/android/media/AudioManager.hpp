@@ -153,9 +153,11 @@ namespace android::media
 		static jint VIBRATE_TYPE_NOTIFICATION();
 		static jint VIBRATE_TYPE_RINGER();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AudioManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AudioManager(QAndroidJniObject obj);
+		
 		// Constructors
-		AudioManager() = default;
 		
 		// Methods
 		static jboolean isHapticPlaybackSupported();

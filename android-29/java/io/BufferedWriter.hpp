@@ -15,11 +15,13 @@ namespace java::io
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BufferedWriter(const char *className, const char *sig, Ts...agv) : java::io::Writer(className, sig, std::forward<Ts>(agv)...) {}
 		BufferedWriter(QAndroidJniObject obj);
+		
 		// Constructors
 		BufferedWriter(java::io::Writer arg0);
 		BufferedWriter(java::io::Writer arg0, jint arg1);
-		BufferedWriter() = default;
 		
 		// Methods
 		void close();

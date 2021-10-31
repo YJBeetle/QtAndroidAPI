@@ -5,27 +5,27 @@ namespace android::icu::util
 	// Fields
 	jint ValueIterator_Element::integer()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"integer"
 		);
 	}
 	jobject ValueIterator_Element::value()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"value",
 			"Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	
-	ValueIterator_Element::ValueIterator_Element(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ValueIterator_Element::ValueIterator_Element(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ValueIterator_Element::ValueIterator_Element()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.icu.util.ValueIterator$Element",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::icu::util

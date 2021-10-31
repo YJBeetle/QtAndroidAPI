@@ -18,9 +18,11 @@ namespace android::media
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaSession2_ControllerInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaSession2_ControllerInfo(QAndroidJniObject obj);
+		
 		// Constructors
-		MediaSession2_ControllerInfo() = default;
 		
 		// Methods
 		jboolean equals(jobject arg0);

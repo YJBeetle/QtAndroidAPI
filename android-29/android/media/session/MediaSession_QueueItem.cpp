@@ -21,29 +21,29 @@ namespace android::media::session
 		);
 	}
 	
-	MediaSession_QueueItem::MediaSession_QueueItem(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaSession_QueueItem::MediaSession_QueueItem(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MediaSession_QueueItem::MediaSession_QueueItem(android::media::MediaDescription arg0, jlong arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.session.MediaSession$QueueItem",
 			"(Landroid/media/MediaDescription;J)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jint MediaSession_QueueItem::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean MediaSession_QueueItem::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -51,31 +51,31 @@ namespace android::media::session
 	}
 	QAndroidJniObject MediaSession_QueueItem::getDescription()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDescription",
 			"()Landroid/media/MediaDescription;"
 		);
 	}
 	jlong MediaSession_QueueItem::getQueueId()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getQueueId",
 			"()J"
 		);
 	}
 	jstring MediaSession_QueueItem::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void MediaSession_QueueItem::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

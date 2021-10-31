@@ -9,15 +9,15 @@ namespace java::util
 {
 	// Fields
 	
-	ResourceBundle::ResourceBundle(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ResourceBundle::ResourceBundle(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ResourceBundle::ResourceBundle()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.ResourceBundle",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void ResourceBundle::clearCache()
@@ -34,7 +34,7 @@ namespace java::util
 			"java.util.ResourceBundle",
 			"clearCache",
 			"(Ljava/lang/ClassLoader;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ResourceBundle::getBundle(jstring arg0)
@@ -53,7 +53,7 @@ namespace java::util
 			"getBundle",
 			"(Ljava/lang/String;Ljava/lang/Module;)Ljava/util/ResourceBundle;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject ResourceBundle::getBundle(jstring arg0, java::util::Locale arg1)
@@ -63,7 +63,7 @@ namespace java::util
 			"getBundle",
 			"(Ljava/lang/String;Ljava/util/Locale;)Ljava/util/ResourceBundle;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject ResourceBundle::getBundle(jstring arg0, java::util::ResourceBundle_Control arg1)
@@ -73,7 +73,7 @@ namespace java::util
 			"getBundle",
 			"(Ljava/lang/String;Ljava/util/ResourceBundle$Control;)Ljava/util/ResourceBundle;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject ResourceBundle::getBundle(jstring arg0, java::util::Locale arg1, java::lang::ClassLoader arg2)
@@ -83,8 +83,8 @@ namespace java::util
 			"getBundle",
 			"(Ljava/lang/String;Ljava/util/Locale;Ljava/lang/ClassLoader;)Ljava/util/ResourceBundle;",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject ResourceBundle::getBundle(jstring arg0, java::util::Locale arg1, __JniBaseClass arg2)
@@ -94,8 +94,8 @@ namespace java::util
 			"getBundle",
 			"(Ljava/lang/String;Ljava/util/Locale;Ljava/lang/Module;)Ljava/util/ResourceBundle;",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject ResourceBundle::getBundle(jstring arg0, java::util::Locale arg1, java::util::ResourceBundle_Control arg2)
@@ -105,8 +105,8 @@ namespace java::util
 			"getBundle",
 			"(Ljava/lang/String;Ljava/util/Locale;Ljava/util/ResourceBundle$Control;)Ljava/util/ResourceBundle;",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject ResourceBundle::getBundle(jstring arg0, java::util::Locale arg1, java::lang::ClassLoader arg2, java::util::ResourceBundle_Control arg3)
@@ -116,14 +116,14 @@ namespace java::util
 			"getBundle",
 			"(Ljava/lang/String;Ljava/util/Locale;Ljava/lang/ClassLoader;Ljava/util/ResourceBundle$Control;)Ljava/util/ResourceBundle;",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
 		);
 	}
 	jboolean ResourceBundle::containsKey(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"containsKey",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -131,28 +131,28 @@ namespace java::util
 	}
 	jstring ResourceBundle::getBaseBundleName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBaseBundleName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject ResourceBundle::getKeys()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getKeys",
 			"()Ljava/util/Enumeration;"
 		);
 	}
 	QAndroidJniObject ResourceBundle::getLocale()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLocale",
 			"()Ljava/util/Locale;"
 		);
 	}
 	jobject ResourceBundle::getObject(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getObject",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
 			arg0
@@ -160,7 +160,7 @@ namespace java::util
 	}
 	jstring ResourceBundle::getString(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getString",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
@@ -168,7 +168,7 @@ namespace java::util
 	}
 	jarray ResourceBundle::getStringArray(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getStringArray",
 			"(Ljava/lang/String;)[Ljava/lang/String;",
 			arg0
@@ -176,7 +176,7 @@ namespace java::util
 	}
 	QAndroidJniObject ResourceBundle::keySet()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"keySet",
 			"()Ljava/util/Set;"
 		);

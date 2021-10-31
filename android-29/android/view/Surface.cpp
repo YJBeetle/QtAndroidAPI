@@ -45,99 +45,97 @@ namespace android::view
 		);
 	}
 	
-	Surface::Surface(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Surface::Surface(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Surface::Surface(android::graphics::SurfaceTexture arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.Surface",
 			"(Landroid/graphics/SurfaceTexture;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	Surface::Surface(android::view::SurfaceControl arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.Surface",
 			"(Landroid/view/SurfaceControl;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jint Surface::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean Surface::isValid()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isValid",
 			"()Z"
 		);
 	}
 	QAndroidJniObject Surface::lockCanvas(android::graphics::Rect arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"lockCanvas",
 			"(Landroid/graphics/Rect;)Landroid/graphics/Canvas;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Surface::lockHardwareCanvas()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"lockHardwareCanvas",
 			"()Landroid/graphics/Canvas;"
 		);
 	}
 	void Surface::readFromParcel(android::os::Parcel arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"readFromParcel",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Surface::release()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
 	jstring Surface::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void Surface::unlockCanvas(android::graphics::Canvas arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"unlockCanvas",
 			"(Landroid/graphics/Canvas;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Surface::unlockCanvasAndPost(android::graphics::Canvas arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"unlockCanvasAndPost",
 			"(Landroid/graphics/Canvas;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Surface::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

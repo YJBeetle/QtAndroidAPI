@@ -15,7 +15,9 @@ namespace android::util
 		).object<jstring>();
 	}
 	
-	Xml::Xml(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Xml::Xml(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -25,7 +27,7 @@ namespace android::util
 			"android.util.Xml",
 			"asAttributeSet",
 			"(Lorg/xmlpull/v1/XmlPullParser;)Landroid/util/AttributeSet;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Xml::findEncodingByName(jstring arg0)
@@ -59,8 +61,8 @@ namespace android::util
 			"android.util.Xml",
 			"parse",
 			"(Ljava/io/Reader;Lorg/xml/sax/ContentHandler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void Xml::parse(jstring arg0, __JniBaseClass arg1)
@@ -70,7 +72,7 @@ namespace android::util
 			"parse",
 			"(Ljava/lang/String;Lorg/xml/sax/ContentHandler;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void Xml::parse(java::io::InputStream arg0, android::util::Xml_Encoding arg1, __JniBaseClass arg2)
@@ -79,9 +81,9 @@ namespace android::util
 			"android.util.Xml",
 			"parse",
 			"(Ljava/io/InputStream;Landroid/util/Xml$Encoding;Lorg/xml/sax/ContentHandler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 } // namespace android::util

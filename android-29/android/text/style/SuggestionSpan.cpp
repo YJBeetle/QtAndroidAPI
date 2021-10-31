@@ -76,60 +76,54 @@ namespace android::text::style
 		).object<jstring>();
 	}
 	
-	SuggestionSpan::SuggestionSpan(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SuggestionSpan::SuggestionSpan(QAndroidJniObject obj) : android::text::style::CharacterStyle(obj) {}
+	
 	// Constructors
 	SuggestionSpan::SuggestionSpan(android::os::Parcel arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::text::style::CharacterStyle(
 			"android.text.style.SuggestionSpan",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	SuggestionSpan::SuggestionSpan(android::content::Context arg0, jarray arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: android::text::style::CharacterStyle(
 			"android.text.style.SuggestionSpan",
 			"(Landroid/content/Context;[Ljava/lang/String;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	SuggestionSpan::SuggestionSpan(java::util::Locale arg0, jarray arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: android::text::style::CharacterStyle(
 			"android.text.style.SuggestionSpan",
 			"(Ljava/util/Locale;[Ljava/lang/String;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	SuggestionSpan::SuggestionSpan(android::content::Context arg0, java::util::Locale arg1, jarray arg2, jint arg3, jclass arg4)
-	{
-		__thiz = QAndroidJniObject(
+		: android::text::style::CharacterStyle(
 			"android.text.style.SuggestionSpan",
 			"(Landroid/content/Context;Ljava/util/Locale;[Ljava/lang/String;ILjava/lang/Class;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3,
 			arg4
-		);
-	}
+		) {}
 	
 	// Methods
 	jint SuggestionSpan::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean SuggestionSpan::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -137,56 +131,56 @@ namespace android::text::style
 	}
 	jint SuggestionSpan::getFlags()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getFlags",
 			"()I"
 		);
 	}
 	jstring SuggestionSpan::getLocale()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLocale",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject SuggestionSpan::getLocaleObject()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLocaleObject",
 			"()Ljava/util/Locale;"
 		);
 	}
 	jint SuggestionSpan::getSpanTypeId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSpanTypeId",
 			"()I"
 		);
 	}
 	jarray SuggestionSpan::getSuggestions()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSuggestions",
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	jint SuggestionSpan::getUnderlineColor()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getUnderlineColor",
 			"()I"
 		);
 	}
 	jint SuggestionSpan::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	void SuggestionSpan::setFlags(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFlags",
 			"(I)V",
 			arg0
@@ -194,18 +188,18 @@ namespace android::text::style
 	}
 	void SuggestionSpan::updateDrawState(android::text::TextPaint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"updateDrawState",
 			"(Landroid/text/TextPaint;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void SuggestionSpan::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

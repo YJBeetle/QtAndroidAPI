@@ -15,9 +15,11 @@ namespace android::content::pm
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ModuleInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ModuleInfo(QAndroidJniObject obj);
+		
 		// Constructors
-		ModuleInfo() = default;
 		
 		// Methods
 		jint describeContents();

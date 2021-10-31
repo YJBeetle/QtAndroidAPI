@@ -4,29 +4,29 @@ namespace android::graphics
 {
 	// Fields
 	
-	LightingColorFilter::LightingColorFilter(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	LightingColorFilter::LightingColorFilter(QAndroidJniObject obj) : android::graphics::ColorFilter(obj) {}
+	
 	// Constructors
 	LightingColorFilter::LightingColorFilter(jint arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::graphics::ColorFilter(
 			"android.graphics.LightingColorFilter",
 			"(II)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jint LightingColorFilter::getColorAdd()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getColorAdd",
 			"()I"
 		);
 	}
 	jint LightingColorFilter::getColorMultiply()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getColorMultiply",
 			"()I"
 		);

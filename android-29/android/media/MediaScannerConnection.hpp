@@ -18,10 +18,12 @@ namespace android::media
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaScannerConnection(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaScannerConnection(QAndroidJniObject obj);
+		
 		// Constructors
 		MediaScannerConnection(android::content::Context arg0, __JniBaseClass arg1);
-		MediaScannerConnection() = default;
 		
 		// Methods
 		static void scanFile(android::content::Context arg0, jarray arg1, jarray arg2, __JniBaseClass arg3);

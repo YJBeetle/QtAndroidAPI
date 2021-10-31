@@ -13,9 +13,11 @@ namespace java::time::temporal
 		static QAndroidJniObject MODIFIED_JULIAN_DAY();
 		static QAndroidJniObject RATA_DIE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit JulianFields(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		JulianFields(QAndroidJniObject obj);
+		
 		// Constructors
-		JulianFields() = default;
 		
 		// Methods
 	};

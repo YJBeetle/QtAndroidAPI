@@ -17,9 +17,11 @@ namespace android::net::wifi::aware
 		static jint SUBSCRIBE_TYPE_ACTIVE();
 		static jint SUBSCRIBE_TYPE_PASSIVE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SubscribeConfig(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SubscribeConfig(QAndroidJniObject obj);
+		
 		// Constructors
-		SubscribeConfig() = default;
 		
 		// Methods
 		jint describeContents();

@@ -7,15 +7,15 @@ namespace android::view::animation
 {
 	// Fields
 	
-	AnimationUtils::AnimationUtils(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AnimationUtils::AnimationUtils(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	AnimationUtils::AnimationUtils()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.animation.AnimationUtils",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jlong AnimationUtils::currentAnimationTimeMillis()
@@ -32,7 +32,7 @@ namespace android::view::animation
 			"android.view.animation.AnimationUtils",
 			"loadAnimation",
 			"(Landroid/content/Context;I)Landroid/view/animation/Animation;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -42,7 +42,7 @@ namespace android::view::animation
 			"android.view.animation.AnimationUtils",
 			"loadInterpolator",
 			"(Landroid/content/Context;I)Landroid/view/animation/Interpolator;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -52,7 +52,7 @@ namespace android::view::animation
 			"android.view.animation.AnimationUtils",
 			"loadLayoutAnimation",
 			"(Landroid/content/Context;I)Landroid/view/animation/LayoutAnimationController;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -62,7 +62,7 @@ namespace android::view::animation
 			"android.view.animation.AnimationUtils",
 			"makeInAnimation",
 			"(Landroid/content/Context;Z)Landroid/view/animation/Animation;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -72,7 +72,7 @@ namespace android::view::animation
 			"android.view.animation.AnimationUtils",
 			"makeInChildBottomAnimation",
 			"(Landroid/content/Context;)Landroid/view/animation/Animation;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject AnimationUtils::makeOutAnimation(android::content::Context arg0, jboolean arg1)
@@ -81,7 +81,7 @@ namespace android::view::animation
 			"android.view.animation.AnimationUtils",
 			"makeOutAnimation",
 			"(Landroid/content/Context;Z)Landroid/view/animation/Animation;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

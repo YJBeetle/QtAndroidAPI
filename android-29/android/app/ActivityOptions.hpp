@@ -40,9 +40,11 @@ namespace android::app
 		static jstring EXTRA_USAGE_TIME_REPORT();
 		static jstring EXTRA_USAGE_TIME_REPORT_PACKAGES();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ActivityOptions(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ActivityOptions(QAndroidJniObject obj);
+		
 		// Constructors
-		ActivityOptions() = default;
 		
 		// Methods
 		static QAndroidJniObject makeBasic();

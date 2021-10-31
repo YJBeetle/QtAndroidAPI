@@ -9,81 +9,79 @@ namespace android::widget
 {
 	// Fields
 	
-	TableLayout::TableLayout(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TableLayout::TableLayout(QAndroidJniObject obj) : android::widget::LinearLayout(obj) {}
+	
 	// Constructors
 	TableLayout::TableLayout(android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::LinearLayout(
 			"android.widget.TableLayout",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	TableLayout::TableLayout(android::content::Context arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::LinearLayout(
 			"android.widget.TableLayout",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	
 	// Methods
 	void TableLayout::addView(android::view::View arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addView",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TableLayout::addView(android::view::View arg0, android::view::ViewGroup_LayoutParams arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addView",
 			"(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void TableLayout::addView(android::view::View arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addView",
 			"(Landroid/view/View;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void TableLayout::addView(android::view::View arg0, jint arg1, android::view::ViewGroup_LayoutParams arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addView",
 			"(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	QAndroidJniObject TableLayout::generateLayoutParams(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"generateLayoutParams",
 			"(Landroid/util/AttributeSet;)Landroid/widget/TableLayout$LayoutParams;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring TableLayout::getAccessibilityClassName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jboolean TableLayout::isColumnCollapsed(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isColumnCollapsed",
 			"(I)Z",
 			arg0
@@ -91,7 +89,7 @@ namespace android::widget
 	}
 	jboolean TableLayout::isColumnShrinkable(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isColumnShrinkable",
 			"(I)Z",
 			arg0
@@ -99,7 +97,7 @@ namespace android::widget
 	}
 	jboolean TableLayout::isColumnStretchable(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isColumnStretchable",
 			"(I)Z",
 			arg0
@@ -107,28 +105,28 @@ namespace android::widget
 	}
 	jboolean TableLayout::isShrinkAllColumns()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isShrinkAllColumns",
 			"()Z"
 		);
 	}
 	jboolean TableLayout::isStretchAllColumns()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isStretchAllColumns",
 			"()Z"
 		);
 	}
 	void TableLayout::requestLayout()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"requestLayout",
 			"()V"
 		);
 	}
 	void TableLayout::setColumnCollapsed(jint arg0, jboolean arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setColumnCollapsed",
 			"(IZ)V",
 			arg0,
@@ -137,7 +135,7 @@ namespace android::widget
 	}
 	void TableLayout::setColumnShrinkable(jint arg0, jboolean arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setColumnShrinkable",
 			"(IZ)V",
 			arg0,
@@ -146,7 +144,7 @@ namespace android::widget
 	}
 	void TableLayout::setColumnStretchable(jint arg0, jboolean arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setColumnStretchable",
 			"(IZ)V",
 			arg0,
@@ -155,15 +153,15 @@ namespace android::widget
 	}
 	void TableLayout::setOnHierarchyChangeListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnHierarchyChangeListener",
 			"(Landroid/view/ViewGroup$OnHierarchyChangeListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TableLayout::setShrinkAllColumns(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setShrinkAllColumns",
 			"(Z)V",
 			arg0
@@ -171,7 +169,7 @@ namespace android::widget
 	}
 	void TableLayout::setStretchAllColumns(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setStretchAllColumns",
 			"(Z)V",
 			arg0

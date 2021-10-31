@@ -244,15 +244,15 @@ namespace android::service::notification
 		);
 	}
 	
-	NotificationListenerService::NotificationListenerService(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NotificationListenerService::NotificationListenerService(QAndroidJniObject obj) : android::app::Service(obj) {}
+	
 	// Constructors
 	NotificationListenerService::NotificationListenerService()
-	{
-		__thiz = QAndroidJniObject(
+		: android::app::Service(
 			"android.service.notification.NotificationListenerService",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void NotificationListenerService::requestRebind(android::content::ComponentName arg0)
@@ -261,19 +261,19 @@ namespace android::service::notification
 			"android.service.notification.NotificationListenerService",
 			"requestRebind",
 			"(Landroid/content/ComponentName;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void NotificationListenerService::cancelAllNotifications()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"cancelAllNotifications",
 			"()V"
 		);
 	}
 	void NotificationListenerService::cancelNotification(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"cancelNotification",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -281,7 +281,7 @@ namespace android::service::notification
 	}
 	void NotificationListenerService::cancelNotification(jstring arg0, jstring arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"cancelNotification",
 			"(Ljava/lang/String;Ljava/lang/String;I)V",
 			arg0,
@@ -291,7 +291,7 @@ namespace android::service::notification
 	}
 	void NotificationListenerService::cancelNotifications(jarray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"cancelNotifications",
 			"([Ljava/lang/String;)V",
 			arg0
@@ -299,21 +299,21 @@ namespace android::service::notification
 	}
 	void NotificationListenerService::clearRequestedListenerHints()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clearRequestedListenerHints",
 			"()V"
 		);
 	}
 	jarray NotificationListenerService::getActiveNotifications()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getActiveNotifications",
 			"()[Landroid/service/notification/StatusBarNotification;"
 		).object<jarray>();
 	}
 	jarray NotificationListenerService::getActiveNotifications(jarray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getActiveNotifications",
 			"([Ljava/lang/String;)[Landroid/service/notification/StatusBarNotification;",
 			arg0
@@ -321,68 +321,68 @@ namespace android::service::notification
 	}
 	jint NotificationListenerService::getCurrentInterruptionFilter()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCurrentInterruptionFilter",
 			"()I"
 		);
 	}
 	jint NotificationListenerService::getCurrentListenerHints()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCurrentListenerHints",
 			"()I"
 		);
 	}
 	QAndroidJniObject NotificationListenerService::getCurrentRanking()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCurrentRanking",
 			"()Landroid/service/notification/NotificationListenerService$RankingMap;"
 		);
 	}
 	QAndroidJniObject NotificationListenerService::getNotificationChannelGroups(jstring arg0, android::os::UserHandle arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getNotificationChannelGroups",
 			"(Ljava/lang/String;Landroid/os/UserHandle;)Ljava/util/List;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject NotificationListenerService::getNotificationChannels(jstring arg0, android::os::UserHandle arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getNotificationChannels",
 			"(Ljava/lang/String;Landroid/os/UserHandle;)Ljava/util/List;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jarray NotificationListenerService::getSnoozedNotifications()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSnoozedNotifications",
 			"()[Landroid/service/notification/StatusBarNotification;"
 		).object<jarray>();
 	}
 	QAndroidJniObject NotificationListenerService::onBind(android::content::Intent arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onBind",
 			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void NotificationListenerService::onDestroy()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onDestroy",
 			"()V"
 		);
 	}
 	void NotificationListenerService::onInterruptionFilterChanged(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onInterruptionFilterChanged",
 			"(I)V",
 			arg0
@@ -390,21 +390,21 @@ namespace android::service::notification
 	}
 	void NotificationListenerService::onListenerConnected()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onListenerConnected",
 			"()V"
 		);
 	}
 	void NotificationListenerService::onListenerDisconnected()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onListenerDisconnected",
 			"()V"
 		);
 	}
 	void NotificationListenerService::onListenerHintsChanged(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onListenerHintsChanged",
 			"(I)V",
 			arg0
@@ -412,81 +412,81 @@ namespace android::service::notification
 	}
 	void NotificationListenerService::onNotificationChannelGroupModified(jstring arg0, android::os::UserHandle arg1, android::app::NotificationChannelGroup arg2, jint arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onNotificationChannelGroupModified",
 			"(Ljava/lang/String;Landroid/os/UserHandle;Landroid/app/NotificationChannelGroup;I)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
+			arg1.object(),
+			arg2.object(),
 			arg3
 		);
 	}
 	void NotificationListenerService::onNotificationChannelModified(jstring arg0, android::os::UserHandle arg1, android::app::NotificationChannel arg2, jint arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onNotificationChannelModified",
 			"(Ljava/lang/String;Landroid/os/UserHandle;Landroid/app/NotificationChannel;I)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
+			arg1.object(),
+			arg2.object(),
 			arg3
 		);
 	}
 	void NotificationListenerService::onNotificationPosted(android::service::notification::StatusBarNotification arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onNotificationPosted",
 			"(Landroid/service/notification/StatusBarNotification;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void NotificationListenerService::onNotificationPosted(android::service::notification::StatusBarNotification arg0, android::service::notification::NotificationListenerService_RankingMap arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onNotificationPosted",
 			"(Landroid/service/notification/StatusBarNotification;Landroid/service/notification/NotificationListenerService$RankingMap;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void NotificationListenerService::onNotificationRankingUpdate(android::service::notification::NotificationListenerService_RankingMap arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onNotificationRankingUpdate",
 			"(Landroid/service/notification/NotificationListenerService$RankingMap;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void NotificationListenerService::onNotificationRemoved(android::service::notification::StatusBarNotification arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onNotificationRemoved",
 			"(Landroid/service/notification/StatusBarNotification;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void NotificationListenerService::onNotificationRemoved(android::service::notification::StatusBarNotification arg0, android::service::notification::NotificationListenerService_RankingMap arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onNotificationRemoved",
 			"(Landroid/service/notification/StatusBarNotification;Landroid/service/notification/NotificationListenerService$RankingMap;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void NotificationListenerService::onNotificationRemoved(android::service::notification::StatusBarNotification arg0, android::service::notification::NotificationListenerService_RankingMap arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onNotificationRemoved",
 			"(Landroid/service/notification/StatusBarNotification;Landroid/service/notification/NotificationListenerService$RankingMap;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
 	void NotificationListenerService::onSilentStatusBarIconsVisibilityChanged(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onSilentStatusBarIconsVisibilityChanged",
 			"(Z)V",
 			arg0
@@ -494,7 +494,7 @@ namespace android::service::notification
 	}
 	void NotificationListenerService::requestInterruptionFilter(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"requestInterruptionFilter",
 			"(I)V",
 			arg0
@@ -502,7 +502,7 @@ namespace android::service::notification
 	}
 	void NotificationListenerService::requestListenerHints(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"requestListenerHints",
 			"(I)V",
 			arg0
@@ -510,14 +510,14 @@ namespace android::service::notification
 	}
 	void NotificationListenerService::requestUnbind()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"requestUnbind",
 			"()V"
 		);
 	}
 	void NotificationListenerService::setNotificationsShown(jarray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setNotificationsShown",
 			"([Ljava/lang/String;)V",
 			arg0
@@ -525,7 +525,7 @@ namespace android::service::notification
 	}
 	void NotificationListenerService::snoozeNotification(jstring arg0, jlong arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"snoozeNotification",
 			"(Ljava/lang/String;J)V",
 			arg0,
@@ -534,12 +534,12 @@ namespace android::service::notification
 	}
 	void NotificationListenerService::updateNotificationChannel(jstring arg0, android::os::UserHandle arg1, android::app::NotificationChannel arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"updateNotificationChannel",
 			"(Ljava/lang/String;Landroid/os/UserHandle;Landroid/app/NotificationChannel;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg1.object(),
+			arg2.object()
 		);
 	}
 } // namespace android::service::notification

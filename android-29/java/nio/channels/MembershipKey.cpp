@@ -6,66 +6,68 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	MembershipKey::MembershipKey(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MembershipKey::MembershipKey(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject MembershipKey::block(java::net::InetAddress arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"block",
 			"(Ljava/net/InetAddress;)Ljava/nio/channels/MembershipKey;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject MembershipKey::channel()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"channel",
 			"()Ljava/nio/channels/MulticastChannel;"
 		);
 	}
 	void MembershipKey::drop()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"drop",
 			"()V"
 		);
 	}
 	QAndroidJniObject MembershipKey::group()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"group",
 			"()Ljava/net/InetAddress;"
 		);
 	}
 	jboolean MembershipKey::isValid()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isValid",
 			"()Z"
 		);
 	}
 	QAndroidJniObject MembershipKey::networkInterface()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"networkInterface",
 			"()Ljava/net/NetworkInterface;"
 		);
 	}
 	QAndroidJniObject MembershipKey::sourceAddress()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"sourceAddress",
 			"()Ljava/net/InetAddress;"
 		);
 	}
 	QAndroidJniObject MembershipKey::unblock(java::net::InetAddress arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"unblock",
 			"(Ljava/net/InetAddress;)Ljava/nio/channels/MembershipKey;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace java::nio::channels

@@ -10,9 +10,11 @@ namespace android::icu::text
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Edits_Iterator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Edits_Iterator(QAndroidJniObject obj);
+		
 		// Constructors
-		Edits_Iterator() = default;
 		
 		// Methods
 		jint destinationIndex();

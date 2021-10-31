@@ -4,62 +4,64 @@ namespace android::database::sqlite
 {
 	// Fields
 	
-	SQLiteDatabase_OpenParams::SQLiteDatabase_OpenParams(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SQLiteDatabase_OpenParams::SQLiteDatabase_OpenParams(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject SQLiteDatabase_OpenParams::getCursorFactory()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCursorFactory",
 			"()Landroid/database/sqlite/SQLiteDatabase$CursorFactory;"
 		);
 	}
 	QAndroidJniObject SQLiteDatabase_OpenParams::getErrorHandler()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getErrorHandler",
 			"()Landroid/database/DatabaseErrorHandler;"
 		);
 	}
 	jlong SQLiteDatabase_OpenParams::getIdleConnectionTimeout()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getIdleConnectionTimeout",
 			"()J"
 		);
 	}
 	jstring SQLiteDatabase_OpenParams::getJournalMode()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getJournalMode",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint SQLiteDatabase_OpenParams::getLookasideSlotCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLookasideSlotCount",
 			"()I"
 		);
 	}
 	jint SQLiteDatabase_OpenParams::getLookasideSlotSize()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLookasideSlotSize",
 			"()I"
 		);
 	}
 	jint SQLiteDatabase_OpenParams::getOpenFlags()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getOpenFlags",
 			"()I"
 		);
 	}
 	jstring SQLiteDatabase_OpenParams::getSynchronousMode()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSynchronousMode",
 			"()Ljava/lang/String;"
 		).object<jstring>();

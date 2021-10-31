@@ -22,10 +22,12 @@ namespace android::media::tv
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TvInputService_RecordingSession(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		TvInputService_RecordingSession(QAndroidJniObject obj);
+		
 		// Constructors
 		TvInputService_RecordingSession(android::content::Context arg0);
-		TvInputService_RecordingSession() = default;
 		
 		// Methods
 		void notifyError(jint arg0);

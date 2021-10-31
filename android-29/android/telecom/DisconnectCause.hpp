@@ -28,13 +28,15 @@ namespace android::telecom
 		static jint RESTRICTED();
 		static jint UNKNOWN();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DisconnectCause(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DisconnectCause(QAndroidJniObject obj);
+		
 		// Constructors
 		DisconnectCause(jint arg0);
 		DisconnectCause(jint arg0, jstring arg1);
 		DisconnectCause(jint arg0, jstring arg1, jstring arg2, jstring arg3);
 		DisconnectCause(jint arg0, jstring arg1, jstring arg2, jstring arg3, jint arg4);
-		DisconnectCause() = default;
 		
 		// Methods
 		jint describeContents();

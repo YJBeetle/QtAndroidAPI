@@ -5,27 +5,29 @@ namespace javax::xml::validation
 {
 	// Fields
 	
-	ValidatorHandler::ValidatorHandler(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ValidatorHandler::ValidatorHandler(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject ValidatorHandler::getContentHandler()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getContentHandler",
 			"()Lorg/xml/sax/ContentHandler;"
 		);
 	}
 	QAndroidJniObject ValidatorHandler::getErrorHandler()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getErrorHandler",
 			"()Lorg/xml/sax/ErrorHandler;"
 		);
 	}
 	jboolean ValidatorHandler::getFeature(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getFeature",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -33,7 +35,7 @@ namespace javax::xml::validation
 	}
 	jobject ValidatorHandler::getProperty(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getProperty",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
 			arg0
@@ -41,37 +43,37 @@ namespace javax::xml::validation
 	}
 	QAndroidJniObject ValidatorHandler::getResourceResolver()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getResourceResolver",
 			"()Lorg/w3c/dom/ls/LSResourceResolver;"
 		);
 	}
 	QAndroidJniObject ValidatorHandler::getTypeInfoProvider()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTypeInfoProvider",
 			"()Ljavax/xml/validation/TypeInfoProvider;"
 		);
 	}
 	void ValidatorHandler::setContentHandler(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setContentHandler",
 			"(Lorg/xml/sax/ContentHandler;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ValidatorHandler::setErrorHandler(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setErrorHandler",
 			"(Lorg/xml/sax/ErrorHandler;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ValidatorHandler::setFeature(jstring arg0, jboolean arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFeature",
 			"(Ljava/lang/String;Z)V",
 			arg0,
@@ -80,7 +82,7 @@ namespace javax::xml::validation
 	}
 	void ValidatorHandler::setProperty(jstring arg0, jobject arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setProperty",
 			"(Ljava/lang/String;Ljava/lang/Object;)V",
 			arg0,
@@ -89,10 +91,10 @@ namespace javax::xml::validation
 	}
 	void ValidatorHandler::setResourceResolver(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setResourceResolver",
 			"(Lorg/w3c/dom/ls/LSResourceResolver;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace javax::xml::validation

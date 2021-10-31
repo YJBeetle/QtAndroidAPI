@@ -76,12 +76,14 @@ namespace android::media
 		static jint WRITE_BLOCKING();
 		static jint WRITE_NON_BLOCKING();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AudioTrack(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AudioTrack(QAndroidJniObject obj);
+		
 		// Constructors
 		AudioTrack(android::media::AudioAttributes arg0, android::media::AudioFormat arg1, jint arg2, jint arg3, jint arg4);
 		AudioTrack(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
 		AudioTrack(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6);
-		AudioTrack() = default;
 		
 		// Methods
 		static jfloat getMaxVolume();

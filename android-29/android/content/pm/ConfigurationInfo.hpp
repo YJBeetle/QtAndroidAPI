@@ -23,7 +23,10 @@ namespace android::content::pm
 		jint reqNavigation();
 		jint reqTouchScreen();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ConfigurationInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ConfigurationInfo(QAndroidJniObject obj);
+		
 		// Constructors
 		ConfigurationInfo();
 		ConfigurationInfo(android::content::pm::ConfigurationInfo &arg0);

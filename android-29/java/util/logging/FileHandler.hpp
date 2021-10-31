@@ -24,7 +24,10 @@ namespace java::util::logging
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit FileHandler(const char *className, const char *sig, Ts...agv) : java::util::logging::StreamHandler(className, sig, std::forward<Ts>(agv)...) {}
 		FileHandler(QAndroidJniObject obj);
+		
 		// Constructors
 		FileHandler();
 		FileHandler(jstring arg0);

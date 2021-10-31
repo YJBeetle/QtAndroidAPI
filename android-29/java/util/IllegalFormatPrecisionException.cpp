@@ -4,28 +4,28 @@ namespace java::util
 {
 	// Fields
 	
-	IllegalFormatPrecisionException::IllegalFormatPrecisionException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	IllegalFormatPrecisionException::IllegalFormatPrecisionException(QAndroidJniObject obj) : java::util::IllegalFormatException(obj) {}
+	
 	// Constructors
 	IllegalFormatPrecisionException::IllegalFormatPrecisionException(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::IllegalFormatException(
 			"java.util.IllegalFormatPrecisionException",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring IllegalFormatPrecisionException::getMessage()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint IllegalFormatPrecisionException::getPrecision()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPrecision",
 			"()I"
 		);

@@ -15,10 +15,12 @@ namespace android::view::textclassifier
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ConversationActions(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ConversationActions(QAndroidJniObject obj);
+		
 		// Constructors
 		ConversationActions(__JniBaseClass arg0, jstring arg1);
-		ConversationActions() = default;
 		
 		// Methods
 		jint describeContents();

@@ -23,7 +23,10 @@ namespace android
 		static jint slide_in_left();
 		static jint slide_out_right();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit R_anim(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		R_anim(QAndroidJniObject obj);
+		
 		// Constructors
 		R_anim();
 		

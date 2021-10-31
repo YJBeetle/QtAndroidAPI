@@ -6,40 +6,40 @@ namespace java::security
 {
 	// Fields
 	
-	KeyPairGeneratorSpi::KeyPairGeneratorSpi(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	KeyPairGeneratorSpi::KeyPairGeneratorSpi(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	KeyPairGeneratorSpi::KeyPairGeneratorSpi()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.security.KeyPairGeneratorSpi",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject KeyPairGeneratorSpi::generateKeyPair()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"generateKeyPair",
 			"()Ljava/security/KeyPair;"
 		);
 	}
 	void KeyPairGeneratorSpi::initialize(jint arg0, java::security::SecureRandom arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"initialize",
 			"(ILjava/security/SecureRandom;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void KeyPairGeneratorSpi::initialize(__JniBaseClass arg0, java::security::SecureRandom arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"initialize",
 			"(Ljava/security/spec/AlgorithmParameterSpec;Ljava/security/SecureRandom;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 } // namespace java::security

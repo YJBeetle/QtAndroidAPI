@@ -15,10 +15,12 @@ namespace android::os
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit UserHandle(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		UserHandle(QAndroidJniObject obj);
+		
 		// Constructors
 		UserHandle(android::os::Parcel arg0);
-		UserHandle() = default;
 		
 		// Methods
 		static QAndroidJniObject getUserHandleForUid(jint arg0);

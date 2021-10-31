@@ -4,28 +4,26 @@ namespace org::xml::sax::helpers
 {
 	// Fields
 	
-	AttributeListImpl::AttributeListImpl(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AttributeListImpl::AttributeListImpl(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	AttributeListImpl::AttributeListImpl()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"org.xml.sax.helpers.AttributeListImpl",
 			"()V"
-		);
-	}
+		) {}
 	AttributeListImpl::AttributeListImpl(__JniBaseClass arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"org.xml.sax.helpers.AttributeListImpl",
 			"(Lorg/xml/sax/AttributeList;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	void AttributeListImpl::addAttribute(jstring arg0, jstring arg1, jstring arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addAttribute",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
@@ -35,21 +33,21 @@ namespace org::xml::sax::helpers
 	}
 	void AttributeListImpl::clear()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
 	jint AttributeListImpl::getLength()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLength",
 			"()I"
 		);
 	}
 	jstring AttributeListImpl::getName(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getName",
 			"(I)Ljava/lang/String;",
 			arg0
@@ -57,7 +55,7 @@ namespace org::xml::sax::helpers
 	}
 	jstring AttributeListImpl::getType(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getType",
 			"(I)Ljava/lang/String;",
 			arg0
@@ -65,7 +63,7 @@ namespace org::xml::sax::helpers
 	}
 	jstring AttributeListImpl::getType(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getType",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
@@ -73,7 +71,7 @@ namespace org::xml::sax::helpers
 	}
 	jstring AttributeListImpl::getValue(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getValue",
 			"(I)Ljava/lang/String;",
 			arg0
@@ -81,7 +79,7 @@ namespace org::xml::sax::helpers
 	}
 	jstring AttributeListImpl::getValue(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getValue",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
@@ -89,7 +87,7 @@ namespace org::xml::sax::helpers
 	}
 	void AttributeListImpl::removeAttribute(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeAttribute",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -97,10 +95,10 @@ namespace org::xml::sax::helpers
 	}
 	void AttributeListImpl::setAttributeList(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAttributeList",
 			"(Lorg/xml/sax/AttributeList;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace org::xml::sax::helpers

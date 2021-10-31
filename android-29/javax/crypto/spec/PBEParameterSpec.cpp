@@ -4,46 +4,44 @@ namespace javax::crypto::spec
 {
 	// Fields
 	
-	PBEParameterSpec::PBEParameterSpec(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PBEParameterSpec::PBEParameterSpec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	PBEParameterSpec::PBEParameterSpec(jbyteArray arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"javax.crypto.spec.PBEParameterSpec",
 			"([BI)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	PBEParameterSpec::PBEParameterSpec(jbyteArray arg0, jint arg1, __JniBaseClass arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"javax.crypto.spec.PBEParameterSpec",
 			"([BILjava/security/spec/AlgorithmParameterSpec;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
-		);
-	}
+			arg2.object()
+		) {}
 	
 	// Methods
 	jint PBEParameterSpec::getIterationCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getIterationCount",
 			"()I"
 		);
 	}
 	QAndroidJniObject PBEParameterSpec::getParameterSpec()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getParameterSpec",
 			"()Ljava/security/spec/AlgorithmParameterSpec;"
 		);
 	}
 	jbyteArray PBEParameterSpec::getSalt()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSalt",
 			"()[B"
 		).object<jbyteArray>();

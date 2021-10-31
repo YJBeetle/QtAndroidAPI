@@ -17,7 +17,10 @@ namespace android::app
 		jstring cause();
 		jstring info();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ApplicationErrorReport_AnrInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ApplicationErrorReport_AnrInfo(QAndroidJniObject obj);
+		
 		// Constructors
 		ApplicationErrorReport_AnrInfo();
 		ApplicationErrorReport_AnrInfo(android::os::Parcel arg0);

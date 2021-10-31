@@ -4,23 +4,21 @@ namespace android::os
 {
 	// Fields
 	
-	RemoteException::RemoteException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	RemoteException::RemoteException(QAndroidJniObject obj) : android::util::AndroidException(obj) {}
+	
 	// Constructors
 	RemoteException::RemoteException()
-	{
-		__thiz = QAndroidJniObject(
+		: android::util::AndroidException(
 			"android.os.RemoteException",
 			"()V"
-		);
-	}
+		) {}
 	RemoteException::RemoteException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::util::AndroidException(
 			"android.os.RemoteException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::os

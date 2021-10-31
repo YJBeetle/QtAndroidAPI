@@ -17,9 +17,11 @@ namespace android::media
 		static jint BITRATE_MODE_CQ();
 		static jint BITRATE_MODE_VBR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaCodecInfo_EncoderCapabilities(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaCodecInfo_EncoderCapabilities(QAndroidJniObject obj);
+		
 		// Constructors
-		MediaCodecInfo_EncoderCapabilities() = default;
 		
 		// Methods
 		QAndroidJniObject getComplexityRange();

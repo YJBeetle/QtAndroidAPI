@@ -14,7 +14,10 @@ namespace android::accessibilityservice
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AccessibilityButtonController_AccessibilityButtonCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AccessibilityButtonController_AccessibilityButtonCallback(QAndroidJniObject obj);
+		
 		// Constructors
 		AccessibilityButtonController_AccessibilityButtonCallback();
 		

@@ -5,27 +5,27 @@ namespace android::bluetooth::le
 {
 	// Fields
 	
-	PeriodicAdvertisingParameters_Builder::PeriodicAdvertisingParameters_Builder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PeriodicAdvertisingParameters_Builder::PeriodicAdvertisingParameters_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	PeriodicAdvertisingParameters_Builder::PeriodicAdvertisingParameters_Builder()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.bluetooth.le.PeriodicAdvertisingParameters$Builder",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject PeriodicAdvertisingParameters_Builder::build()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"build",
 			"()Landroid/bluetooth/le/PeriodicAdvertisingParameters;"
 		);
 	}
 	QAndroidJniObject PeriodicAdvertisingParameters_Builder::setIncludeTxPower(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setIncludeTxPower",
 			"(Z)Landroid/bluetooth/le/PeriodicAdvertisingParameters$Builder;",
 			arg0
@@ -33,7 +33,7 @@ namespace android::bluetooth::le
 	}
 	QAndroidJniObject PeriodicAdvertisingParameters_Builder::setInterval(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setInterval",
 			"(I)Landroid/bluetooth/le/PeriodicAdvertisingParameters$Builder;",
 			arg0

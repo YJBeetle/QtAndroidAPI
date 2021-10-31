@@ -30,29 +30,29 @@ namespace android::media
 		);
 	}
 	
-	Session2Token::Session2Token(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Session2Token::Session2Token(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Session2Token::Session2Token(android::content::Context arg0, android::content::ComponentName arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.Session2Token",
 			"(Landroid/content/Context;Landroid/content/ComponentName;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	
 	// Methods
 	jint Session2Token::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean Session2Token::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -60,59 +60,59 @@ namespace android::media
 	}
 	QAndroidJniObject Session2Token::getExtras()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
 	jstring Session2Token::getPackageName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Session2Token::getServiceName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getServiceName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint Session2Token::getType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getType",
 			"()I"
 		);
 	}
 	jint Session2Token::getUid()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getUid",
 			"()I"
 		);
 	}
 	jint Session2Token::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring Session2Token::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void Session2Token::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

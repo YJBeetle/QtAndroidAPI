@@ -10,7 +10,10 @@ namespace android::accessibilityservice
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit FingerprintGestureController_FingerprintGestureCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		FingerprintGestureController_FingerprintGestureCallback(QAndroidJniObject obj);
+		
 		// Constructors
 		FingerprintGestureController_FingerprintGestureCallback();
 		

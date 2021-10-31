@@ -34,9 +34,11 @@ namespace javax::xml::parsers
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SAXParser(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SAXParser(QAndroidJniObject obj);
+		
 		// Constructors
-		SAXParser() = default;
 		
 		// Methods
 		QAndroidJniObject getParser();

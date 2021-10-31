@@ -18,9 +18,11 @@ namespace android::view::contentcapture
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DataRemovalRequest_LocusIdRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DataRemovalRequest_LocusIdRequest(QAndroidJniObject obj);
+		
 		// Constructors
-		DataRemovalRequest_LocusIdRequest() = default;
 		
 		// Methods
 		jint getFlags();

@@ -18,10 +18,12 @@ namespace android::telephony
 		static jint PRIORITY_LOW();
 		static jint PRIORITY_MED();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AvailableNetworkInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AvailableNetworkInfo(QAndroidJniObject obj);
+		
 		// Constructors
 		AvailableNetworkInfo(jint arg0, jint arg1, __JniBaseClass arg2, __JniBaseClass arg3);
-		AvailableNetworkInfo() = default;
 		
 		// Methods
 		jint describeContents();

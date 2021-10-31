@@ -4,16 +4,16 @@ namespace android::media
 {
 	// Fields
 	
-	MediaPlayer_NoDrmSchemeException::MediaPlayer_NoDrmSchemeException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaPlayer_NoDrmSchemeException::MediaPlayer_NoDrmSchemeException(QAndroidJniObject obj) : android::media::MediaDrmException(obj) {}
+	
 	// Constructors
 	MediaPlayer_NoDrmSchemeException::MediaPlayer_NoDrmSchemeException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::media::MediaDrmException(
 			"android.media.MediaPlayer$NoDrmSchemeException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::media

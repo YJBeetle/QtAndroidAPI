@@ -6,29 +6,29 @@ namespace android::view::textclassifier
 {
 	// Fields
 	
-	TextSelection_Builder::TextSelection_Builder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TextSelection_Builder::TextSelection_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	TextSelection_Builder::TextSelection_Builder(jint arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.textclassifier.TextSelection$Builder",
 			"(II)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject TextSelection_Builder::build()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"build",
 			"()Landroid/view/textclassifier/TextSelection;"
 		);
 	}
 	QAndroidJniObject TextSelection_Builder::setEntityType(jstring arg0, jfloat arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setEntityType",
 			"(Ljava/lang/String;F)Landroid/view/textclassifier/TextSelection$Builder;",
 			arg0,
@@ -37,15 +37,15 @@ namespace android::view::textclassifier
 	}
 	QAndroidJniObject TextSelection_Builder::setExtras(android::os::Bundle arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setExtras",
 			"(Landroid/os/Bundle;)Landroid/view/textclassifier/TextSelection$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject TextSelection_Builder::setId(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setId",
 			"(Ljava/lang/String;)Landroid/view/textclassifier/TextSelection$Builder;",
 			arg0

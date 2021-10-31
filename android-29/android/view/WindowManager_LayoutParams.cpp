@@ -728,204 +728,195 @@ namespace android::view
 	}
 	jfloat WindowManager_LayoutParams::alpha()
 	{
-		return __thiz.getField<jfloat>(
+		return getField<jfloat>(
 			"alpha"
 		);
 	}
 	jfloat WindowManager_LayoutParams::buttonBrightness()
 	{
-		return __thiz.getField<jfloat>(
+		return getField<jfloat>(
 			"buttonBrightness"
 		);
 	}
 	jfloat WindowManager_LayoutParams::dimAmount()
 	{
-		return __thiz.getField<jfloat>(
+		return getField<jfloat>(
 			"dimAmount"
 		);
 	}
 	jint WindowManager_LayoutParams::flags()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"flags"
 		);
 	}
 	jint WindowManager_LayoutParams::format()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"format"
 		);
 	}
 	jint WindowManager_LayoutParams::gravity()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"gravity"
 		);
 	}
 	jfloat WindowManager_LayoutParams::horizontalMargin()
 	{
-		return __thiz.getField<jfloat>(
+		return getField<jfloat>(
 			"horizontalMargin"
 		);
 	}
 	jfloat WindowManager_LayoutParams::horizontalWeight()
 	{
-		return __thiz.getField<jfloat>(
+		return getField<jfloat>(
 			"horizontalWeight"
 		);
 	}
 	jint WindowManager_LayoutParams::layoutInDisplayCutoutMode()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"layoutInDisplayCutoutMode"
 		);
 	}
 	jint WindowManager_LayoutParams::memoryType()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"memoryType"
 		);
 	}
 	jstring WindowManager_LayoutParams::packageName()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"packageName",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint WindowManager_LayoutParams::preferredDisplayModeId()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"preferredDisplayModeId"
 		);
 	}
 	jfloat WindowManager_LayoutParams::preferredRefreshRate()
 	{
-		return __thiz.getField<jfloat>(
+		return getField<jfloat>(
 			"preferredRefreshRate"
 		);
 	}
 	jint WindowManager_LayoutParams::rotationAnimation()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"rotationAnimation"
 		);
 	}
 	jfloat WindowManager_LayoutParams::screenBrightness()
 	{
-		return __thiz.getField<jfloat>(
+		return getField<jfloat>(
 			"screenBrightness"
 		);
 	}
 	jint WindowManager_LayoutParams::screenOrientation()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"screenOrientation"
 		);
 	}
 	jint WindowManager_LayoutParams::softInputMode()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"softInputMode"
 		);
 	}
 	jint WindowManager_LayoutParams::systemUiVisibility()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"systemUiVisibility"
 		);
 	}
 	QAndroidJniObject WindowManager_LayoutParams::token()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"token",
 			"Landroid/os/IBinder;"
 		);
 	}
 	jint WindowManager_LayoutParams::type()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"type"
 		);
 	}
 	jfloat WindowManager_LayoutParams::verticalMargin()
 	{
-		return __thiz.getField<jfloat>(
+		return getField<jfloat>(
 			"verticalMargin"
 		);
 	}
 	jfloat WindowManager_LayoutParams::verticalWeight()
 	{
-		return __thiz.getField<jfloat>(
+		return getField<jfloat>(
 			"verticalWeight"
 		);
 	}
 	jint WindowManager_LayoutParams::windowAnimations()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"windowAnimations"
 		);
 	}
 	jint WindowManager_LayoutParams::x()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"x"
 		);
 	}
 	jint WindowManager_LayoutParams::y()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"y"
 		);
 	}
 	
-	WindowManager_LayoutParams::WindowManager_LayoutParams(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WindowManager_LayoutParams::WindowManager_LayoutParams(QAndroidJniObject obj) : android::view::ViewGroup_LayoutParams(obj) {}
+	
 	// Constructors
 	WindowManager_LayoutParams::WindowManager_LayoutParams()
-	{
-		__thiz = QAndroidJniObject(
+		: android::view::ViewGroup_LayoutParams(
 			"android.view.WindowManager$LayoutParams",
 			"()V"
-		);
-	}
+		) {}
 	WindowManager_LayoutParams::WindowManager_LayoutParams(android::os::Parcel arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::view::ViewGroup_LayoutParams(
 			"android.view.WindowManager$LayoutParams",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	WindowManager_LayoutParams::WindowManager_LayoutParams(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::view::ViewGroup_LayoutParams(
 			"android.view.WindowManager$LayoutParams",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	WindowManager_LayoutParams::WindowManager_LayoutParams(jint arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::view::ViewGroup_LayoutParams(
 			"android.view.WindowManager$LayoutParams",
 			"(II)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	WindowManager_LayoutParams::WindowManager_LayoutParams(jint arg0, jint arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: android::view::ViewGroup_LayoutParams(
 			"android.view.WindowManager$LayoutParams",
 			"(III)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	WindowManager_LayoutParams::WindowManager_LayoutParams(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
-	{
-		__thiz = QAndroidJniObject(
+		: android::view::ViewGroup_LayoutParams(
 			"android.view.WindowManager$LayoutParams",
 			"(IIIII)V",
 			arg0,
@@ -933,11 +924,9 @@ namespace android::view
 			arg2,
 			arg3,
 			arg4
-		);
-	}
+		) {}
 	WindowManager_LayoutParams::WindowManager_LayoutParams(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6)
-	{
-		__thiz = QAndroidJniObject(
+		: android::view::ViewGroup_LayoutParams(
 			"android.view.WindowManager$LayoutParams",
 			"(IIIIIII)V",
 			arg0,
@@ -947,8 +936,7 @@ namespace android::view
 			arg4,
 			arg5,
 			arg6
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean WindowManager_LayoutParams::mayUseInputMethod(jint arg0)
@@ -962,15 +950,15 @@ namespace android::view
 	}
 	jint WindowManager_LayoutParams::copyFrom(android::view::WindowManager_LayoutParams arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"copyFrom",
 			"(Landroid/view/WindowManager$LayoutParams;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring WindowManager_LayoutParams::debug(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"debug",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
@@ -978,28 +966,28 @@ namespace android::view
 	}
 	jint WindowManager_LayoutParams::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jint WindowManager_LayoutParams::getColorMode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getColorMode",
 			"()I"
 		);
 	}
 	jstring WindowManager_LayoutParams::getTitle()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTitle",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	void WindowManager_LayoutParams::setColorMode(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setColorMode",
 			"(I)V",
 			arg0
@@ -1007,7 +995,7 @@ namespace android::view
 	}
 	void WindowManager_LayoutParams::setTitle(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTitle",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
@@ -1015,17 +1003,17 @@ namespace android::view
 	}
 	jstring WindowManager_LayoutParams::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void WindowManager_LayoutParams::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

@@ -200,15 +200,15 @@ namespace android
 		);
 	}
 	
-	R_color::R_color(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	R_color::R_color(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	R_color::R_color()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.R$color",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android

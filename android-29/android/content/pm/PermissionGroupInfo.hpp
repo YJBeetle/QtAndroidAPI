@@ -25,7 +25,10 @@ namespace android::content::pm
 		jstring nonLocalizedDescription();
 		jint priority();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PermissionGroupInfo(const char *className, const char *sig, Ts...agv) : android::content::pm::PackageItemInfo(className, sig, std::forward<Ts>(agv)...) {}
 		PermissionGroupInfo(QAndroidJniObject obj);
+		
 		// Constructors
 		PermissionGroupInfo();
 		PermissionGroupInfo(android::content::pm::PermissionGroupInfo &arg0);

@@ -18,10 +18,12 @@ namespace android::renderscript
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Element_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Element_Builder(QAndroidJniObject obj);
+		
 		// Constructors
 		Element_Builder(android::renderscript::RenderScript arg0);
-		Element_Builder() = default;
 		
 		// Methods
 		QAndroidJniObject add(android::renderscript::Element arg0, jstring arg1);

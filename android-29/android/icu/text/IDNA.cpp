@@ -55,7 +55,9 @@ namespace android::icu::text
 		);
 	}
 	
-	IDNA::IDNA(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	IDNA::IDNA(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -70,42 +72,42 @@ namespace android::icu::text
 	}
 	QAndroidJniObject IDNA::labelToASCII(jstring arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"labelToASCII",
 			"(Ljava/lang/CharSequence;Ljava/lang/StringBuilder;Landroid/icu/text/IDNA$Info;)Ljava/lang/StringBuilder;",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject IDNA::labelToUnicode(jstring arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"labelToUnicode",
 			"(Ljava/lang/CharSequence;Ljava/lang/StringBuilder;Landroid/icu/text/IDNA$Info;)Ljava/lang/StringBuilder;",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject IDNA::nameToASCII(jstring arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"nameToASCII",
 			"(Ljava/lang/CharSequence;Ljava/lang/StringBuilder;Landroid/icu/text/IDNA$Info;)Ljava/lang/StringBuilder;",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject IDNA::nameToUnicode(jstring arg0, java::lang::StringBuilder arg1, android::icu::text::IDNA_Info arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"nameToUnicode",
 			"(Ljava/lang/CharSequence;Ljava/lang/StringBuilder;Landroid/icu/text/IDNA$Info;)Ljava/lang/StringBuilder;",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg1.object(),
+			arg2.object()
 		);
 	}
 } // namespace android::icu::text

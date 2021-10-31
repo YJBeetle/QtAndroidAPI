@@ -5,31 +5,31 @@ namespace android::accessibilityservice
 {
 	// Fields
 	
-	AccessibilityService_GestureResultCallback::AccessibilityService_GestureResultCallback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AccessibilityService_GestureResultCallback::AccessibilityService_GestureResultCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	AccessibilityService_GestureResultCallback::AccessibilityService_GestureResultCallback()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.accessibilityservice.AccessibilityService$GestureResultCallback",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void AccessibilityService_GestureResultCallback::onCancelled(android::accessibilityservice::GestureDescription arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onCancelled",
 			"(Landroid/accessibilityservice/GestureDescription;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AccessibilityService_GestureResultCallback::onCompleted(android::accessibilityservice::GestureDescription arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onCompleted",
 			"(Landroid/accessibilityservice/GestureDescription;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::accessibilityservice

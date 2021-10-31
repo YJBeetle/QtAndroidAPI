@@ -88,7 +88,9 @@ namespace java::lang::reflect
 		);
 	}
 	
-	Modifier::Modifier(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Modifier::Modifier(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

@@ -32,7 +32,10 @@ namespace android::view
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ContextThemeWrapper(const char *className, const char *sig, Ts...agv) : android::content::ContextWrapper(className, sig, std::forward<Ts>(agv)...) {}
 		ContextThemeWrapper(QAndroidJniObject obj);
+		
 		// Constructors
 		ContextThemeWrapper();
 		ContextThemeWrapper(android::content::Context arg0, android::content::res::Resources_Theme arg1);

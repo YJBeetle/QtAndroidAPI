@@ -67,20 +67,22 @@ namespace android::os
 		);
 	}
 	
-	HardwarePropertiesManager::HardwarePropertiesManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	HardwarePropertiesManager::HardwarePropertiesManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jarray HardwarePropertiesManager::getCpuUsages()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCpuUsages",
 			"()[Landroid/os/CpuUsageInfo;"
 		).object<jarray>();
 	}
 	jfloatArray HardwarePropertiesManager::getDeviceTemperatures(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDeviceTemperatures",
 			"(II)[F",
 			arg0,
@@ -89,7 +91,7 @@ namespace android::os
 	}
 	jfloatArray HardwarePropertiesManager::getFanSpeeds()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFanSpeeds",
 			"()[F"
 		).object<jfloatArray>();

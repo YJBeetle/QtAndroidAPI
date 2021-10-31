@@ -6,7 +6,9 @@ namespace android::view
 {
 	// Fields
 	
-	ViewAnimationUtils::ViewAnimationUtils(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ViewAnimationUtils::ViewAnimationUtils(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -16,7 +18,7 @@ namespace android::view
 			"android.view.ViewAnimationUtils",
 			"createCircularReveal",
 			"(Landroid/view/View;IIFF)Landroid/animation/Animator;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,

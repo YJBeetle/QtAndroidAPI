@@ -12,7 +12,9 @@ namespace android::net
 		).object<jstring>();
 	}
 	
-	MailTo::MailTo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MailTo::MailTo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -36,42 +38,42 @@ namespace android::net
 	}
 	jstring MailTo::getBody()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBody",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring MailTo::getCc()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCc",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject MailTo::getHeaders()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getHeaders",
 			"()Ljava/util/Map;"
 		);
 	}
 	jstring MailTo::getSubject()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSubject",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring MailTo::getTo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTo",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring MailTo::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

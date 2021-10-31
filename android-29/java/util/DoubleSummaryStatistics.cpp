@@ -4,31 +4,29 @@ namespace java::util
 {
 	// Fields
 	
-	DoubleSummaryStatistics::DoubleSummaryStatistics(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DoubleSummaryStatistics::DoubleSummaryStatistics(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	DoubleSummaryStatistics::DoubleSummaryStatistics()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.DoubleSummaryStatistics",
 			"()V"
-		);
-	}
+		) {}
 	DoubleSummaryStatistics::DoubleSummaryStatistics(jlong arg0, jdouble arg1, jdouble arg2, jdouble arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.DoubleSummaryStatistics",
 			"(JDDD)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	
 	// Methods
 	void DoubleSummaryStatistics::accept(jdouble arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"accept",
 			"(D)V",
 			arg0
@@ -36,50 +34,50 @@ namespace java::util
 	}
 	void DoubleSummaryStatistics::combine(java::util::DoubleSummaryStatistics arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"combine",
 			"(Ljava/util/DoubleSummaryStatistics;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jdouble DoubleSummaryStatistics::getAverage()
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"getAverage",
 			"()D"
 		);
 	}
 	jlong DoubleSummaryStatistics::getCount()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getCount",
 			"()J"
 		);
 	}
 	jdouble DoubleSummaryStatistics::getMax()
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"getMax",
 			"()D"
 		);
 	}
 	jdouble DoubleSummaryStatistics::getMin()
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"getMin",
 			"()D"
 		);
 	}
 	jdouble DoubleSummaryStatistics::getSum()
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"getSum",
 			"()D"
 		);
 	}
 	jstring DoubleSummaryStatistics::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

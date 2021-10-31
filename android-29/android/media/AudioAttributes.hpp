@@ -42,9 +42,11 @@ namespace android::media
 		static jint USAGE_VOICE_COMMUNICATION();
 		static jint USAGE_VOICE_COMMUNICATION_SIGNALLING();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AudioAttributes(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AudioAttributes(QAndroidJniObject obj);
+		
 		// Constructors
-		AudioAttributes() = default;
 		
 		// Methods
 		jboolean areHapticChannelsMuted();

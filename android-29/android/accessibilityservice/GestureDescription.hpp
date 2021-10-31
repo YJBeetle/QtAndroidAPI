@@ -14,9 +14,11 @@ namespace android::accessibilityservice
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit GestureDescription(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		GestureDescription(QAndroidJniObject obj);
+		
 		// Constructors
-		GestureDescription() = default;
 		
 		// Methods
 		static jlong getMaxGestureDuration();

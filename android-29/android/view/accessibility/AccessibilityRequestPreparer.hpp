@@ -23,10 +23,12 @@ namespace android::view::accessibility
 		// Fields
 		static jint REQUEST_TYPE_EXTRA_DATA();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AccessibilityRequestPreparer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AccessibilityRequestPreparer(QAndroidJniObject obj);
+		
 		// Constructors
 		AccessibilityRequestPreparer(android::view::View arg0, jint arg1);
-		AccessibilityRequestPreparer() = default;
 		
 		// Methods
 		QAndroidJniObject getView();

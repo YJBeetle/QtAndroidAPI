@@ -4,23 +4,21 @@ namespace java::io
 {
 	// Fields
 	
-	UTFDataFormatException::UTFDataFormatException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UTFDataFormatException::UTFDataFormatException(QAndroidJniObject obj) : java::io::IOException(obj) {}
+	
 	// Constructors
 	UTFDataFormatException::UTFDataFormatException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::IOException(
 			"java.io.UTFDataFormatException",
 			"()V"
-		);
-	}
+		) {}
 	UTFDataFormatException::UTFDataFormatException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::IOException(
 			"java.io.UTFDataFormatException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::io

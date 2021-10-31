@@ -14,20 +14,22 @@ namespace android::service::notification
 		);
 	}
 	
-	NotificationListenerService_RankingMap::NotificationListenerService_RankingMap(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NotificationListenerService_RankingMap::NotificationListenerService_RankingMap(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint NotificationListenerService_RankingMap::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean NotificationListenerService_RankingMap::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -35,26 +37,26 @@ namespace android::service::notification
 	}
 	jarray NotificationListenerService_RankingMap::getOrderedKeys()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getOrderedKeys",
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	jboolean NotificationListenerService_RankingMap::getRanking(jstring arg0, android::service::notification::NotificationListenerService_Ranking arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getRanking",
 			"(Ljava/lang/String;Landroid/service/notification/NotificationListenerService$Ranking;)Z",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void NotificationListenerService_RankingMap::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

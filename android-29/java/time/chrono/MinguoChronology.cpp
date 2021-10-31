@@ -21,21 +21,23 @@ namespace java::time::chrono
 		);
 	}
 	
-	MinguoChronology::MinguoChronology(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MinguoChronology::MinguoChronology(QAndroidJniObject obj) : java::time::chrono::AbstractChronology(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject MinguoChronology::date(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"date",
 			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/chrono/MinguoDate;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject MinguoChronology::date(jint arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"date",
 			"(III)Ljava/time/chrono/MinguoDate;",
 			arg0,
@@ -45,10 +47,10 @@ namespace java::time::chrono
 	}
 	QAndroidJniObject MinguoChronology::date(__JniBaseClass arg0, jint arg1, jint arg2, jint arg3)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"date",
 			"(Ljava/time/chrono/Era;III)Ljava/time/chrono/MinguoDate;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3
@@ -56,7 +58,7 @@ namespace java::time::chrono
 	}
 	QAndroidJniObject MinguoChronology::dateEpochDay(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"dateEpochDay",
 			"(J)Ljava/time/chrono/MinguoDate;",
 			arg0
@@ -64,30 +66,30 @@ namespace java::time::chrono
 	}
 	QAndroidJniObject MinguoChronology::dateNow()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"dateNow",
 			"()Ljava/time/chrono/MinguoDate;"
 		);
 	}
 	QAndroidJniObject MinguoChronology::dateNow(java::time::Clock arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"dateNow",
 			"(Ljava/time/Clock;)Ljava/time/chrono/MinguoDate;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject MinguoChronology::dateNow(java::time::ZoneId arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"dateNow",
 			"(Ljava/time/ZoneId;)Ljava/time/chrono/MinguoDate;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject MinguoChronology::dateYearDay(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"dateYearDay",
 			"(II)Ljava/time/chrono/MinguoDate;",
 			arg0,
@@ -96,17 +98,17 @@ namespace java::time::chrono
 	}
 	QAndroidJniObject MinguoChronology::dateYearDay(__JniBaseClass arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"dateYearDay",
 			"(Ljava/time/chrono/Era;II)Ljava/time/chrono/MinguoDate;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
 	}
 	QAndroidJniObject MinguoChronology::eraOf(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"eraOf",
 			"(I)Ljava/time/chrono/MinguoEra;",
 			arg0
@@ -114,28 +116,28 @@ namespace java::time::chrono
 	}
 	QAndroidJniObject MinguoChronology::eras()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"eras",
 			"()Ljava/util/List;"
 		);
 	}
 	jstring MinguoChronology::getCalendarType()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCalendarType",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring MinguoChronology::getId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jboolean MinguoChronology::isLeapYear(jlong arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isLeapYear",
 			"(J)Z",
 			arg0
@@ -143,53 +145,53 @@ namespace java::time::chrono
 	}
 	QAndroidJniObject MinguoChronology::localDateTime(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"localDateTime",
 			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/chrono/ChronoLocalDateTime;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint MinguoChronology::prolepticYear(__JniBaseClass arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"prolepticYear",
 			"(Ljava/time/chrono/Era;I)I",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	QAndroidJniObject MinguoChronology::range(java::time::temporal::ChronoField arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"range",
 			"(Ljava/time/temporal/ChronoField;)Ljava/time/temporal/ValueRange;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject MinguoChronology::resolveDate(__JniBaseClass arg0, java::time::format::ResolverStyle arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"resolveDate",
 			"(Ljava/util/Map;Ljava/time/format/ResolverStyle;)Ljava/time/chrono/MinguoDate;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject MinguoChronology::zonedDateTime(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"zonedDateTime",
 			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/chrono/ChronoZonedDateTime;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject MinguoChronology::zonedDateTime(java::time::Instant arg0, java::time::ZoneId arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"zonedDateTime",
 			"(Ljava/time/Instant;Ljava/time/ZoneId;)Ljava/time/chrono/ChronoZonedDateTime;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 } // namespace java::time::chrono

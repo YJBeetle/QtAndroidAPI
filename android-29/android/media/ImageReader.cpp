@@ -7,7 +7,9 @@ namespace android::media
 {
 	// Fields
 	
-	ImageReader::ImageReader(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ImageReader::ImageReader(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -38,74 +40,74 @@ namespace android::media
 	}
 	QAndroidJniObject ImageReader::acquireLatestImage()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"acquireLatestImage",
 			"()Landroid/media/Image;"
 		);
 	}
 	QAndroidJniObject ImageReader::acquireNextImage()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"acquireNextImage",
 			"()Landroid/media/Image;"
 		);
 	}
 	void ImageReader::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	void ImageReader::discardFreeBuffers()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"discardFreeBuffers",
 			"()V"
 		);
 	}
 	jint ImageReader::getHeight()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getHeight",
 			"()I"
 		);
 	}
 	jint ImageReader::getImageFormat()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getImageFormat",
 			"()I"
 		);
 	}
 	jint ImageReader::getMaxImages()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMaxImages",
 			"()I"
 		);
 	}
 	QAndroidJniObject ImageReader::getSurface()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSurface",
 			"()Landroid/view/Surface;"
 		);
 	}
 	jint ImageReader::getWidth()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getWidth",
 			"()I"
 		);
 	}
 	void ImageReader::setOnImageAvailableListener(__JniBaseClass arg0, android::os::Handler arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnImageAvailableListener",
 			"(Landroid/media/ImageReader$OnImageAvailableListener;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 } // namespace android::media

@@ -16,11 +16,13 @@ namespace android::content::pm
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PathPermission(const char *className, const char *sig, Ts...agv) : android::os::PatternMatcher(className, sig, std::forward<Ts>(agv)...) {}
 		PathPermission(QAndroidJniObject obj);
+		
 		// Constructors
 		PathPermission(android::os::Parcel arg0);
 		PathPermission(jstring arg0, jint arg1, jstring arg2, jstring arg3);
-		PathPermission() = default;
 		
 		// Methods
 		jstring getReadPermission();

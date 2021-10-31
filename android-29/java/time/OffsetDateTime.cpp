@@ -34,7 +34,9 @@ namespace java::time
 		);
 	}
 	
-	OffsetDateTime::OffsetDateTime(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	OffsetDateTime::OffsetDateTime(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -44,7 +46,7 @@ namespace java::time
 			"java.time.OffsetDateTime",
 			"from",
 			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/OffsetDateTime;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject OffsetDateTime::now()
@@ -61,7 +63,7 @@ namespace java::time
 			"java.time.OffsetDateTime",
 			"now",
 			"(Ljava/time/Clock;)Ljava/time/OffsetDateTime;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject OffsetDateTime::now(java::time::ZoneId arg0)
@@ -70,7 +72,7 @@ namespace java::time
 			"java.time.OffsetDateTime",
 			"now",
 			"(Ljava/time/ZoneId;)Ljava/time/OffsetDateTime;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject OffsetDateTime::of(java::time::LocalDateTime arg0, java::time::ZoneOffset arg1)
@@ -79,8 +81,8 @@ namespace java::time
 			"java.time.OffsetDateTime",
 			"of",
 			"(Ljava/time/LocalDateTime;Ljava/time/ZoneOffset;)Ljava/time/OffsetDateTime;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject OffsetDateTime::of(java::time::LocalDate arg0, java::time::LocalTime arg1, java::time::ZoneOffset arg2)
@@ -89,9 +91,9 @@ namespace java::time
 			"java.time.OffsetDateTime",
 			"of",
 			"(Ljava/time/LocalDate;Ljava/time/LocalTime;Ljava/time/ZoneOffset;)Ljava/time/OffsetDateTime;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject OffsetDateTime::of(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, java::time::ZoneOffset arg7)
@@ -107,7 +109,7 @@ namespace java::time
 			arg4,
 			arg5,
 			arg6,
-			arg7.__jniObject().object()
+			arg7.object()
 		);
 	}
 	QAndroidJniObject OffsetDateTime::ofInstant(java::time::Instant arg0, java::time::ZoneId arg1)
@@ -116,8 +118,8 @@ namespace java::time
 			"java.time.OffsetDateTime",
 			"ofInstant",
 			"(Ljava/time/Instant;Ljava/time/ZoneId;)Ljava/time/OffsetDateTime;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject OffsetDateTime::parse(jstring arg0)
@@ -136,7 +138,7 @@ namespace java::time
 			"parse",
 			"(Ljava/lang/CharSequence;Ljava/time/format/DateTimeFormatter;)Ljava/time/OffsetDateTime;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject OffsetDateTime::timeLineOrder()
@@ -149,31 +151,31 @@ namespace java::time
 	}
 	QAndroidJniObject OffsetDateTime::adjustInto(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"adjustInto",
 			"(Ljava/time/temporal/Temporal;)Ljava/time/temporal/Temporal;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject OffsetDateTime::atZoneSameInstant(java::time::ZoneId arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"atZoneSameInstant",
 			"(Ljava/time/ZoneId;)Ljava/time/ZonedDateTime;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject OffsetDateTime::atZoneSimilarLocal(java::time::ZoneId arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"atZoneSimilarLocal",
 			"(Ljava/time/ZoneId;)Ljava/time/ZonedDateTime;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint OffsetDateTime::compareTo(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -181,15 +183,15 @@ namespace java::time
 	}
 	jint OffsetDateTime::compareTo(java::time::OffsetDateTime arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/time/OffsetDateTime;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean OffsetDateTime::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -197,164 +199,164 @@ namespace java::time
 	}
 	jstring OffsetDateTime::format(java::time::format::DateTimeFormatter arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"format",
 			"(Ljava/time/format/DateTimeFormatter;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jint OffsetDateTime::get(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"get",
 			"(Ljava/time/temporal/TemporalField;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint OffsetDateTime::getDayOfMonth()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDayOfMonth",
 			"()I"
 		);
 	}
 	QAndroidJniObject OffsetDateTime::getDayOfWeek()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDayOfWeek",
 			"()Ljava/time/DayOfWeek;"
 		);
 	}
 	jint OffsetDateTime::getDayOfYear()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDayOfYear",
 			"()I"
 		);
 	}
 	jint OffsetDateTime::getHour()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getHour",
 			"()I"
 		);
 	}
 	jlong OffsetDateTime::getLong(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getLong",
 			"(Ljava/time/temporal/TemporalField;)J",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint OffsetDateTime::getMinute()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMinute",
 			"()I"
 		);
 	}
 	QAndroidJniObject OffsetDateTime::getMonth()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMonth",
 			"()Ljava/time/Month;"
 		);
 	}
 	jint OffsetDateTime::getMonthValue()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMonthValue",
 			"()I"
 		);
 	}
 	jint OffsetDateTime::getNano()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getNano",
 			"()I"
 		);
 	}
 	QAndroidJniObject OffsetDateTime::getOffset()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getOffset",
 			"()Ljava/time/ZoneOffset;"
 		);
 	}
 	jint OffsetDateTime::getSecond()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSecond",
 			"()I"
 		);
 	}
 	jint OffsetDateTime::getYear()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getYear",
 			"()I"
 		);
 	}
 	jint OffsetDateTime::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean OffsetDateTime::isAfter(java::time::OffsetDateTime arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isAfter",
 			"(Ljava/time/OffsetDateTime;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean OffsetDateTime::isBefore(java::time::OffsetDateTime arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isBefore",
 			"(Ljava/time/OffsetDateTime;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean OffsetDateTime::isEqual(java::time::OffsetDateTime arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEqual",
 			"(Ljava/time/OffsetDateTime;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean OffsetDateTime::isSupported(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isSupported",
 			"(Ljava/time/temporal/TemporalField;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject OffsetDateTime::minus(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"minus",
 			"(Ljava/time/temporal/TemporalAmount;)Ljava/time/OffsetDateTime;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject OffsetDateTime::minus(jlong arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"minus",
 			"(JLjava/time/temporal/TemporalUnit;)Ljava/time/OffsetDateTime;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject OffsetDateTime::minusDays(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"minusDays",
 			"(J)Ljava/time/OffsetDateTime;",
 			arg0
@@ -362,7 +364,7 @@ namespace java::time
 	}
 	QAndroidJniObject OffsetDateTime::minusHours(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"minusHours",
 			"(J)Ljava/time/OffsetDateTime;",
 			arg0
@@ -370,7 +372,7 @@ namespace java::time
 	}
 	QAndroidJniObject OffsetDateTime::minusMinutes(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"minusMinutes",
 			"(J)Ljava/time/OffsetDateTime;",
 			arg0
@@ -378,7 +380,7 @@ namespace java::time
 	}
 	QAndroidJniObject OffsetDateTime::minusMonths(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"minusMonths",
 			"(J)Ljava/time/OffsetDateTime;",
 			arg0
@@ -386,7 +388,7 @@ namespace java::time
 	}
 	QAndroidJniObject OffsetDateTime::minusNanos(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"minusNanos",
 			"(J)Ljava/time/OffsetDateTime;",
 			arg0
@@ -394,7 +396,7 @@ namespace java::time
 	}
 	QAndroidJniObject OffsetDateTime::minusSeconds(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"minusSeconds",
 			"(J)Ljava/time/OffsetDateTime;",
 			arg0
@@ -402,7 +404,7 @@ namespace java::time
 	}
 	QAndroidJniObject OffsetDateTime::minusWeeks(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"minusWeeks",
 			"(J)Ljava/time/OffsetDateTime;",
 			arg0
@@ -410,7 +412,7 @@ namespace java::time
 	}
 	QAndroidJniObject OffsetDateTime::minusYears(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"minusYears",
 			"(J)Ljava/time/OffsetDateTime;",
 			arg0
@@ -418,24 +420,24 @@ namespace java::time
 	}
 	QAndroidJniObject OffsetDateTime::plus(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"plus",
 			"(Ljava/time/temporal/TemporalAmount;)Ljava/time/OffsetDateTime;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject OffsetDateTime::plus(jlong arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"plus",
 			"(JLjava/time/temporal/TemporalUnit;)Ljava/time/OffsetDateTime;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject OffsetDateTime::plusDays(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"plusDays",
 			"(J)Ljava/time/OffsetDateTime;",
 			arg0
@@ -443,7 +445,7 @@ namespace java::time
 	}
 	QAndroidJniObject OffsetDateTime::plusHours(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"plusHours",
 			"(J)Ljava/time/OffsetDateTime;",
 			arg0
@@ -451,7 +453,7 @@ namespace java::time
 	}
 	QAndroidJniObject OffsetDateTime::plusMinutes(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"plusMinutes",
 			"(J)Ljava/time/OffsetDateTime;",
 			arg0
@@ -459,7 +461,7 @@ namespace java::time
 	}
 	QAndroidJniObject OffsetDateTime::plusMonths(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"plusMonths",
 			"(J)Ljava/time/OffsetDateTime;",
 			arg0
@@ -467,7 +469,7 @@ namespace java::time
 	}
 	QAndroidJniObject OffsetDateTime::plusNanos(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"plusNanos",
 			"(J)Ljava/time/OffsetDateTime;",
 			arg0
@@ -475,7 +477,7 @@ namespace java::time
 	}
 	QAndroidJniObject OffsetDateTime::plusSeconds(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"plusSeconds",
 			"(J)Ljava/time/OffsetDateTime;",
 			arg0
@@ -483,7 +485,7 @@ namespace java::time
 	}
 	QAndroidJniObject OffsetDateTime::plusWeeks(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"plusWeeks",
 			"(J)Ljava/time/OffsetDateTime;",
 			arg0
@@ -491,7 +493,7 @@ namespace java::time
 	}
 	QAndroidJniObject OffsetDateTime::plusYears(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"plusYears",
 			"(J)Ljava/time/OffsetDateTime;",
 			arg0
@@ -499,113 +501,113 @@ namespace java::time
 	}
 	jobject OffsetDateTime::query(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"query",
 			"(Ljava/time/temporal/TemporalQuery;)Ljava/lang/Object;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jobject>();
 	}
 	QAndroidJniObject OffsetDateTime::range(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"range",
 			"(Ljava/time/temporal/TemporalField;)Ljava/time/temporal/ValueRange;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jlong OffsetDateTime::toEpochSecond()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"toEpochSecond",
 			"()J"
 		);
 	}
 	QAndroidJniObject OffsetDateTime::toInstant()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toInstant",
 			"()Ljava/time/Instant;"
 		);
 	}
 	QAndroidJniObject OffsetDateTime::toLocalDate()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toLocalDate",
 			"()Ljava/time/LocalDate;"
 		);
 	}
 	QAndroidJniObject OffsetDateTime::toLocalDateTime()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toLocalDateTime",
 			"()Ljava/time/LocalDateTime;"
 		);
 	}
 	QAndroidJniObject OffsetDateTime::toLocalTime()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toLocalTime",
 			"()Ljava/time/LocalTime;"
 		);
 	}
 	QAndroidJniObject OffsetDateTime::toOffsetTime()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toOffsetTime",
 			"()Ljava/time/OffsetTime;"
 		);
 	}
 	jstring OffsetDateTime::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject OffsetDateTime::toZonedDateTime()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toZonedDateTime",
 			"()Ljava/time/ZonedDateTime;"
 		);
 	}
 	QAndroidJniObject OffsetDateTime::truncatedTo(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"truncatedTo",
 			"(Ljava/time/temporal/TemporalUnit;)Ljava/time/OffsetDateTime;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jlong OffsetDateTime::until(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"until",
 			"(Ljava/time/temporal/Temporal;Ljava/time/temporal/TemporalUnit;)J",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject OffsetDateTime::with(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"with",
 			"(Ljava/time/temporal/TemporalAdjuster;)Ljava/time/OffsetDateTime;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject OffsetDateTime::with(__JniBaseClass arg0, jlong arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"with",
 			"(Ljava/time/temporal/TemporalField;J)Ljava/time/OffsetDateTime;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	QAndroidJniObject OffsetDateTime::withDayOfMonth(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withDayOfMonth",
 			"(I)Ljava/time/OffsetDateTime;",
 			arg0
@@ -613,7 +615,7 @@ namespace java::time
 	}
 	QAndroidJniObject OffsetDateTime::withDayOfYear(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withDayOfYear",
 			"(I)Ljava/time/OffsetDateTime;",
 			arg0
@@ -621,7 +623,7 @@ namespace java::time
 	}
 	QAndroidJniObject OffsetDateTime::withHour(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withHour",
 			"(I)Ljava/time/OffsetDateTime;",
 			arg0
@@ -629,7 +631,7 @@ namespace java::time
 	}
 	QAndroidJniObject OffsetDateTime::withMinute(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withMinute",
 			"(I)Ljava/time/OffsetDateTime;",
 			arg0
@@ -637,7 +639,7 @@ namespace java::time
 	}
 	QAndroidJniObject OffsetDateTime::withMonth(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withMonth",
 			"(I)Ljava/time/OffsetDateTime;",
 			arg0
@@ -645,7 +647,7 @@ namespace java::time
 	}
 	QAndroidJniObject OffsetDateTime::withNano(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withNano",
 			"(I)Ljava/time/OffsetDateTime;",
 			arg0
@@ -653,23 +655,23 @@ namespace java::time
 	}
 	QAndroidJniObject OffsetDateTime::withOffsetSameInstant(java::time::ZoneOffset arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withOffsetSameInstant",
 			"(Ljava/time/ZoneOffset;)Ljava/time/OffsetDateTime;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject OffsetDateTime::withOffsetSameLocal(java::time::ZoneOffset arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withOffsetSameLocal",
 			"(Ljava/time/ZoneOffset;)Ljava/time/OffsetDateTime;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject OffsetDateTime::withSecond(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withSecond",
 			"(I)Ljava/time/OffsetDateTime;",
 			arg0
@@ -677,7 +679,7 @@ namespace java::time
 	}
 	QAndroidJniObject OffsetDateTime::withYear(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withYear",
 			"(I)Ljava/time/OffsetDateTime;",
 			arg0

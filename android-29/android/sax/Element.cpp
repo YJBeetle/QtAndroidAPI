@@ -4,13 +4,15 @@ namespace android::sax
 {
 	// Fields
 	
-	Element::Element(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Element::Element(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject Element::getChild(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getChild",
 			"(Ljava/lang/String;)Landroid/sax/Element;",
 			arg0
@@ -18,7 +20,7 @@ namespace android::sax
 	}
 	QAndroidJniObject Element::getChild(jstring arg0, jstring arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getChild",
 			"(Ljava/lang/String;Ljava/lang/String;)Landroid/sax/Element;",
 			arg0,
@@ -27,7 +29,7 @@ namespace android::sax
 	}
 	QAndroidJniObject Element::requireChild(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"requireChild",
 			"(Ljava/lang/String;)Landroid/sax/Element;",
 			arg0
@@ -35,7 +37,7 @@ namespace android::sax
 	}
 	QAndroidJniObject Element::requireChild(jstring arg0, jstring arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"requireChild",
 			"(Ljava/lang/String;Ljava/lang/String;)Landroid/sax/Element;",
 			arg0,
@@ -44,47 +46,47 @@ namespace android::sax
 	}
 	void Element::setElementListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setElementListener",
 			"(Landroid/sax/ElementListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Element::setEndElementListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setEndElementListener",
 			"(Landroid/sax/EndElementListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Element::setEndTextElementListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setEndTextElementListener",
 			"(Landroid/sax/EndTextElementListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Element::setStartElementListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setStartElementListener",
 			"(Landroid/sax/StartElementListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Element::setTextElementListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTextElementListener",
 			"(Landroid/sax/TextElementListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring Element::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

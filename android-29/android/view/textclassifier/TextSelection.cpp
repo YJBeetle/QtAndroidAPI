@@ -14,20 +14,22 @@ namespace android::view::textclassifier
 		);
 	}
 	
-	TextSelection::TextSelection(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TextSelection::TextSelection(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint TextSelection::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jfloat TextSelection::getConfidenceScore(jstring arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getConfidenceScore",
 			"(Ljava/lang/String;)F",
 			arg0
@@ -35,7 +37,7 @@ namespace android::view::textclassifier
 	}
 	jstring TextSelection::getEntity(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEntity",
 			"(I)Ljava/lang/String;",
 			arg0
@@ -43,52 +45,52 @@ namespace android::view::textclassifier
 	}
 	jint TextSelection::getEntityCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getEntityCount",
 			"()I"
 		);
 	}
 	QAndroidJniObject TextSelection::getExtras()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
 	jstring TextSelection::getId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint TextSelection::getSelectionEndIndex()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSelectionEndIndex",
 			"()I"
 		);
 	}
 	jint TextSelection::getSelectionStartIndex()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSelectionStartIndex",
 			"()I"
 		);
 	}
 	jstring TextSelection::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void TextSelection::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

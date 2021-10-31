@@ -14,7 +14,10 @@ namespace android::database::sqlite
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SQLiteDiskIOException(const char *className, const char *sig, Ts...agv) : android::database::sqlite::SQLiteException(className, sig, std::forward<Ts>(agv)...) {}
 		SQLiteDiskIOException(QAndroidJniObject obj);
+		
 		// Constructors
 		SQLiteDiskIOException();
 		SQLiteDiskIOException(jstring arg0);

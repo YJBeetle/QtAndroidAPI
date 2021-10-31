@@ -12,21 +12,21 @@ namespace android::content
 		);
 	}
 	
-	UriMatcher::UriMatcher(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UriMatcher::UriMatcher(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	UriMatcher::UriMatcher(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.content.UriMatcher",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	void UriMatcher::addURI(jstring arg0, jstring arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addURI",
 			"(Ljava/lang/String;Ljava/lang/String;I)V",
 			arg0,
@@ -36,10 +36,10 @@ namespace android::content
 	}
 	jint UriMatcher::match(android::net::Uri arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"match",
 			"(Landroid/net/Uri;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::content

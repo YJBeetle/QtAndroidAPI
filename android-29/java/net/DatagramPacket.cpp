@@ -6,126 +6,116 @@ namespace java::net
 {
 	// Fields
 	
-	DatagramPacket::DatagramPacket(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DatagramPacket::DatagramPacket(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	DatagramPacket::DatagramPacket(jbyteArray arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.net.DatagramPacket",
 			"([BI)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	DatagramPacket::DatagramPacket(jbyteArray arg0, jint arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.net.DatagramPacket",
 			"([BII)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	DatagramPacket::DatagramPacket(jbyteArray arg0, jint arg1, java::net::SocketAddress arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.net.DatagramPacket",
 			"([BILjava/net/SocketAddress;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
-		);
-	}
+			arg2.object()
+		) {}
 	DatagramPacket::DatagramPacket(jbyteArray arg0, jint arg1, jint arg2, java::net::SocketAddress arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.net.DatagramPacket",
 			"([BIILjava/net/SocketAddress;)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
-		);
-	}
+			arg3.object()
+		) {}
 	DatagramPacket::DatagramPacket(jbyteArray arg0, jint arg1, java::net::InetAddress arg2, jint arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.net.DatagramPacket",
 			"([BILjava/net/InetAddress;I)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
+			arg2.object(),
 			arg3
-		);
-	}
+		) {}
 	DatagramPacket::DatagramPacket(jbyteArray arg0, jint arg1, jint arg2, java::net::InetAddress arg3, jint arg4)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.net.DatagramPacket",
 			"([BIILjava/net/InetAddress;I)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
+			arg3.object(),
 			arg4
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject DatagramPacket::getAddress()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAddress",
 			"()Ljava/net/InetAddress;"
 		);
 	}
 	jbyteArray DatagramPacket::getData()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getData",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jint DatagramPacket::getLength()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLength",
 			"()I"
 		);
 	}
 	jint DatagramPacket::getOffset()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getOffset",
 			"()I"
 		);
 	}
 	jint DatagramPacket::getPort()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPort",
 			"()I"
 		);
 	}
 	QAndroidJniObject DatagramPacket::getSocketAddress()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSocketAddress",
 			"()Ljava/net/SocketAddress;"
 		);
 	}
 	void DatagramPacket::setAddress(java::net::InetAddress arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAddress",
 			"(Ljava/net/InetAddress;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void DatagramPacket::setData(jbyteArray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setData",
 			"([B)V",
 			arg0
@@ -133,7 +123,7 @@ namespace java::net
 	}
 	void DatagramPacket::setData(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setData",
 			"([BII)V",
 			arg0,
@@ -143,7 +133,7 @@ namespace java::net
 	}
 	void DatagramPacket::setLength(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLength",
 			"(I)V",
 			arg0
@@ -151,7 +141,7 @@ namespace java::net
 	}
 	void DatagramPacket::setPort(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPort",
 			"(I)V",
 			arg0
@@ -159,10 +149,10 @@ namespace java::net
 	}
 	void DatagramPacket::setSocketAddress(java::net::SocketAddress arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSocketAddress",
 			"(Ljava/net/SocketAddress;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace java::net

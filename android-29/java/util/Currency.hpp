@@ -34,9 +34,11 @@ namespace java::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Currency(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Currency(QAndroidJniObject obj);
+		
 		// Constructors
-		Currency() = default;
 		
 		// Methods
 		static QAndroidJniObject getAvailableCurrencies();

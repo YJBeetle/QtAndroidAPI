@@ -14,10 +14,12 @@ namespace android::media
 		static jint ERROR_RESOURCE_CONTENTION();
 		static jint ERROR_UNKNOWN();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaDrm_SessionException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
 		MediaDrm_SessionException(QAndroidJniObject obj);
+		
 		// Constructors
 		MediaDrm_SessionException(jint arg0, jstring arg1);
-		MediaDrm_SessionException() = default;
 		
 		// Methods
 		jint getErrorCode();

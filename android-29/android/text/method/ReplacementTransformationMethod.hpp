@@ -18,7 +18,10 @@ namespace android::text::method
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ReplacementTransformationMethod(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ReplacementTransformationMethod(QAndroidJniObject obj);
+		
 		// Constructors
 		ReplacementTransformationMethod();
 		

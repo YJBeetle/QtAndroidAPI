@@ -5,16 +5,16 @@ namespace android::graphics
 {
 	// Fields
 	
-	PorterDuffXfermode::PorterDuffXfermode(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PorterDuffXfermode::PorterDuffXfermode(QAndroidJniObject obj) : android::graphics::Xfermode(obj) {}
+	
 	// Constructors
 	PorterDuffXfermode::PorterDuffXfermode(android::graphics::PorterDuff_Mode arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::graphics::Xfermode(
 			"android.graphics.PorterDuffXfermode",
 			"(Landroid/graphics/PorterDuff$Mode;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 } // namespace android::graphics

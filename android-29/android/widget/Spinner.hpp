@@ -36,7 +36,10 @@ namespace android::widget
 		static jint MODE_DIALOG();
 		static jint MODE_DROPDOWN();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Spinner(const char *className, const char *sig, Ts...agv) : android::widget::AbsSpinner(className, sig, std::forward<Ts>(agv)...) {}
 		Spinner(QAndroidJniObject obj);
+		
 		// Constructors
 		Spinner(android::content::Context arg0);
 		Spinner(android::content::Context arg0, __JniBaseClass arg1);
@@ -45,7 +48,6 @@ namespace android::widget
 		Spinner(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		Spinner(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3, jint arg4);
 		Spinner(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3, jint arg4, android::content::res::Resources_Theme arg5);
-		Spinner() = default;
 		
 		// Methods
 		jstring getAccessibilityClassName();

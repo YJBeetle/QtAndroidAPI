@@ -6,26 +6,28 @@ namespace android::hardware
 	// Fields
 	QAndroidJniObject TriggerEvent::sensor()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"sensor",
 			"Landroid/hardware/Sensor;"
 		);
 	}
 	jlong TriggerEvent::timestamp()
 	{
-		return __thiz.getField<jlong>(
+		return getField<jlong>(
 			"timestamp"
 		);
 	}
 	jfloatArray TriggerEvent::values()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"values",
 			"[F"
 		).object<jfloatArray>();
 	}
 	
-	TriggerEvent::TriggerEvent(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TriggerEvent::TriggerEvent(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

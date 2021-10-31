@@ -33,7 +33,9 @@ namespace android::net::wifi
 		).object<jarray>();
 	}
 	
-	WifiConfiguration_Status::WifiConfiguration_Status(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WifiConfiguration_Status::WifiConfiguration_Status(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

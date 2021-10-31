@@ -5,12 +5,14 @@ namespace android::net
 	// Fields
 	jint DnsResolver_DnsException::code()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"code"
 		);
 	}
 	
-	DnsResolver_DnsException::DnsResolver_DnsException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DnsResolver_DnsException::DnsResolver_DnsException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
+	
 	// Constructors
 	
 	// Methods

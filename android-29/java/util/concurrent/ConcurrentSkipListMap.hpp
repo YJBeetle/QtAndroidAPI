@@ -27,7 +27,10 @@ namespace java::util::concurrent
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ConcurrentSkipListMap(const char *className, const char *sig, Ts...agv) : java::util::AbstractMap(className, sig, std::forward<Ts>(agv)...) {}
 		ConcurrentSkipListMap(QAndroidJniObject obj);
+		
 		// Constructors
 		ConcurrentSkipListMap();
 		ConcurrentSkipListMap(__JniBaseClass arg0);

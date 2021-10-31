@@ -18,7 +18,10 @@ namespace android::content
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ContentUris(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ContentUris(QAndroidJniObject obj);
+		
 		// Constructors
 		ContentUris();
 		

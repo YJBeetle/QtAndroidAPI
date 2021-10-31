@@ -18,10 +18,12 @@ namespace android::os
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MemoryFile(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MemoryFile(QAndroidJniObject obj);
+		
 		// Constructors
 		MemoryFile(jstring arg0, jint arg1);
-		MemoryFile() = default;
 		
 		// Methods
 		jboolean allowPurging(jboolean arg0);

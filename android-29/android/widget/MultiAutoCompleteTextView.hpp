@@ -18,13 +18,15 @@ namespace android::widget
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MultiAutoCompleteTextView(const char *className, const char *sig, Ts...agv) : android::widget::AutoCompleteTextView(className, sig, std::forward<Ts>(agv)...) {}
 		MultiAutoCompleteTextView(QAndroidJniObject obj);
+		
 		// Constructors
 		MultiAutoCompleteTextView(android::content::Context arg0);
 		MultiAutoCompleteTextView(android::content::Context arg0, __JniBaseClass arg1);
 		MultiAutoCompleteTextView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		MultiAutoCompleteTextView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
-		MultiAutoCompleteTextView() = default;
 		
 		// Methods
 		jboolean enoughToFilter();

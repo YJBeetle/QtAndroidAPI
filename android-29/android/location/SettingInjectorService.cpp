@@ -38,16 +38,16 @@ namespace android::location
 		).object<jstring>();
 	}
 	
-	SettingInjectorService::SettingInjectorService(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SettingInjectorService::SettingInjectorService(QAndroidJniObject obj) : android::app::Service(obj) {}
+	
 	// Constructors
 	SettingInjectorService::SettingInjectorService(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::app::Service(
 			"android.location.SettingInjectorService",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	void SettingInjectorService::refreshSettings(android::content::Context arg0)
@@ -56,32 +56,32 @@ namespace android::location
 			"android.location.SettingInjectorService",
 			"refreshSettings",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject SettingInjectorService::onBind(android::content::Intent arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onBind",
 			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void SettingInjectorService::onStart(android::content::Intent arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onStart",
 			"(Landroid/content/Intent;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	jint SettingInjectorService::onStartCommand(android::content::Intent arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"onStartCommand",
 			"(Landroid/content/Intent;II)I",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);

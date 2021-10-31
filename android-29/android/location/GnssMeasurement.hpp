@@ -42,9 +42,11 @@ namespace android::location
 		static jint STATE_TOW_KNOWN();
 		static jint STATE_UNKNOWN();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit GnssMeasurement(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		GnssMeasurement(QAndroidJniObject obj);
+		
 		// Constructors
-		GnssMeasurement() = default;
 		
 		// Methods
 		jint describeContents();

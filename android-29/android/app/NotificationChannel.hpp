@@ -24,10 +24,12 @@ namespace android::app
 		static QAndroidJniObject CREATOR();
 		static jstring DEFAULT_CHANNEL_ID();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit NotificationChannel(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		NotificationChannel(QAndroidJniObject obj);
+		
 		// Constructors
 		NotificationChannel(jstring arg0, jstring arg1, jint arg2);
-		NotificationChannel() = default;
 		
 		// Methods
 		jboolean canBubble();

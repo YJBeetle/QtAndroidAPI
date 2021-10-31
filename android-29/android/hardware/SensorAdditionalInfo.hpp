@@ -26,9 +26,11 @@ namespace android::hardware
 		jint serial();
 		jint type();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SensorAdditionalInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SensorAdditionalInfo(QAndroidJniObject obj);
+		
 		// Constructors
-		SensorAdditionalInfo() = default;
 		
 		// Methods
 	};

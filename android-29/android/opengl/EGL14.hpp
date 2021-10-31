@@ -140,7 +140,10 @@ namespace android::opengl
 		static jint EGL_WIDTH();
 		static jint EGL_WINDOW_BIT();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit EGL14(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		EGL14(QAndroidJniObject obj);
+		
 		// Constructors
 		EGL14();
 		

@@ -5,51 +5,51 @@ namespace android::view
 {
 	// Fields
 	
-	KeyEvent_DispatcherState::KeyEvent_DispatcherState(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	KeyEvent_DispatcherState::KeyEvent_DispatcherState(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	KeyEvent_DispatcherState::KeyEvent_DispatcherState()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.KeyEvent$DispatcherState",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void KeyEvent_DispatcherState::handleUpEvent(android::view::KeyEvent arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"handleUpEvent",
 			"(Landroid/view/KeyEvent;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean KeyEvent_DispatcherState::isTracking(android::view::KeyEvent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isTracking",
 			"(Landroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void KeyEvent_DispatcherState::performedLongPress(android::view::KeyEvent arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"performedLongPress",
 			"(Landroid/view/KeyEvent;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void KeyEvent_DispatcherState::reset()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
 	void KeyEvent_DispatcherState::reset(jobject arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"reset",
 			"(Ljava/lang/Object;)V",
 			arg0
@@ -57,10 +57,10 @@ namespace android::view
 	}
 	void KeyEvent_DispatcherState::startTracking(android::view::KeyEvent arg0, jobject arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"startTracking",
 			"(Landroid/view/KeyEvent;Ljava/lang/Object;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

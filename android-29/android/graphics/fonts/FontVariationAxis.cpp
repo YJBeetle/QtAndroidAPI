@@ -4,17 +4,17 @@ namespace android::graphics::fonts
 {
 	// Fields
 	
-	FontVariationAxis::FontVariationAxis(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FontVariationAxis::FontVariationAxis(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	FontVariationAxis::FontVariationAxis(jstring arg0, jfloat arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.graphics.fonts.FontVariationAxis",
 			"(Ljava/lang/String;F)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jarray FontVariationAxis::fromFontVariationSettings(jstring arg0)
@@ -37,7 +37,7 @@ namespace android::graphics::fonts
 	}
 	jboolean FontVariationAxis::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -45,28 +45,28 @@ namespace android::graphics::fonts
 	}
 	jfloat FontVariationAxis::getStyleValue()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getStyleValue",
 			"()F"
 		);
 	}
 	jstring FontVariationAxis::getTag()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTag",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint FontVariationAxis::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring FontVariationAxis::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

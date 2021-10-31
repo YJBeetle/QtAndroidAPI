@@ -6,30 +6,28 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	FutureTask::FutureTask(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FutureTask::FutureTask(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	FutureTask::FutureTask(__JniBaseClass arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.concurrent.FutureTask",
 			"(Ljava/util/concurrent/Callable;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	FutureTask::FutureTask(__JniBaseClass arg0, jobject arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.concurrent.FutureTask",
 			"(Ljava/lang/Runnable;Ljava/lang/Object;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean FutureTask::cancel(jboolean arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"cancel",
 			"(Z)Z",
 			arg0
@@ -37,44 +35,44 @@ namespace java::util::concurrent
 	}
 	jobject FutureTask::get()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobject FutureTask::get(jlong arg0, java::util::concurrent::TimeUnit arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		).object<jobject>();
 	}
 	jboolean FutureTask::isCancelled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isCancelled",
 			"()Z"
 		);
 	}
 	jboolean FutureTask::isDone()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isDone",
 			"()Z"
 		);
 	}
 	void FutureTask::run()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"run",
 			"()V"
 		);
 	}
 	jstring FutureTask::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

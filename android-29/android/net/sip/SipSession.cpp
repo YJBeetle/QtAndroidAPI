@@ -6,13 +6,15 @@ namespace android::net::sip
 {
 	// Fields
 	
-	SipSession::SipSession(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SipSession::SipSession(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void SipSession::answerCall(jstring arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"answerCall",
 			"(Ljava/lang/String;I)V",
 			arg0,
@@ -21,7 +23,7 @@ namespace android::net::sip
 	}
 	void SipSession::changeCall(jstring arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"changeCall",
 			"(Ljava/lang/String;I)V",
 			arg0,
@@ -30,66 +32,66 @@ namespace android::net::sip
 	}
 	void SipSession::endCall()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"endCall",
 			"()V"
 		);
 	}
 	jstring SipSession::getCallId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCallId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring SipSession::getLocalIp()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLocalIp",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject SipSession::getLocalProfile()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLocalProfile",
 			"()Landroid/net/sip/SipProfile;"
 		);
 	}
 	QAndroidJniObject SipSession::getPeerProfile()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPeerProfile",
 			"()Landroid/net/sip/SipProfile;"
 		);
 	}
 	jint SipSession::getState()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getState",
 			"()I"
 		);
 	}
 	jboolean SipSession::isInCall()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isInCall",
 			"()Z"
 		);
 	}
 	void SipSession::makeCall(android::net::sip::SipProfile arg0, jstring arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"makeCall",
 			"(Landroid/net/sip/SipProfile;Ljava/lang/String;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
 	}
 	void SipSession::_register(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"register",
 			"(I)V",
 			arg0
@@ -97,15 +99,15 @@ namespace android::net::sip
 	}
 	void SipSession::setListener(android::net::sip::SipSession_Listener arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setListener",
 			"(Landroid/net/sip/SipSession$Listener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void SipSession::unregister()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"unregister",
 			"()V"
 		);

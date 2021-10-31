@@ -4,15 +4,15 @@ namespace java::nio::file
 {
 	// Fields
 	
-	ClosedWatchServiceException::ClosedWatchServiceException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ClosedWatchServiceException::ClosedWatchServiceException(QAndroidJniObject obj) : java::lang::IllegalStateException(obj) {}
+	
 	// Constructors
 	ClosedWatchServiceException::ClosedWatchServiceException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::IllegalStateException(
 			"java.nio.file.ClosedWatchServiceException",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::nio::file

@@ -7,43 +7,41 @@ namespace android::icu::text
 {
 	// Fields
 	
-	DateIntervalInfo::DateIntervalInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DateIntervalInfo::DateIntervalInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	DateIntervalInfo::DateIntervalInfo(android::icu::util::ULocale arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.icu.text.DateIntervalInfo",
 			"(Landroid/icu/util/ULocale;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	DateIntervalInfo::DateIntervalInfo(java::util::Locale arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.icu.text.DateIntervalInfo",
 			"(Ljava/util/Locale;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jobject DateIntervalInfo::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	QAndroidJniObject DateIntervalInfo::cloneAsThawed()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"cloneAsThawed",
 			"()Landroid/icu/text/DateIntervalInfo;"
 		);
 	}
 	jboolean DateIntervalInfo::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -51,28 +49,28 @@ namespace android::icu::text
 	}
 	QAndroidJniObject DateIntervalInfo::freeze()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"freeze",
 			"()Landroid/icu/text/DateIntervalInfo;"
 		);
 	}
 	jboolean DateIntervalInfo::getDefaultOrder()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getDefaultOrder",
 			"()Z"
 		);
 	}
 	jstring DateIntervalInfo::getFallbackIntervalPattern()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFallbackIntervalPattern",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject DateIntervalInfo::getIntervalPattern(jstring arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getIntervalPattern",
 			"(Ljava/lang/String;I)Landroid/icu/text/DateIntervalInfo$PatternInfo;",
 			arg0,
@@ -81,21 +79,21 @@ namespace android::icu::text
 	}
 	jint DateIntervalInfo::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean DateIntervalInfo::isFrozen()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isFrozen",
 			"()Z"
 		);
 	}
 	void DateIntervalInfo::setFallbackIntervalPattern(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFallbackIntervalPattern",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -103,7 +101,7 @@ namespace android::icu::text
 	}
 	void DateIntervalInfo::setIntervalPattern(jstring arg0, jint arg1, jstring arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setIntervalPattern",
 			"(Ljava/lang/String;ILjava/lang/String;)V",
 			arg0,

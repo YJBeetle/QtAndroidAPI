@@ -23,10 +23,12 @@ namespace android::service::autofill
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DateTransformation(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DateTransformation(QAndroidJniObject obj);
+		
 		// Constructors
 		DateTransformation(android::view::autofill::AutofillId arg0, android::icu::text::DateFormat arg1);
-		DateTransformation() = default;
 		
 		// Methods
 		jint describeContents();

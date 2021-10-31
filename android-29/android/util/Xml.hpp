@@ -23,9 +23,11 @@ namespace android::util
 		// Fields
 		static jstring FEATURE_RELAXED();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Xml(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Xml(QAndroidJniObject obj);
+		
 		// Constructors
-		Xml() = default;
 		
 		// Methods
 		static QAndroidJniObject asAttributeSet(__JniBaseClass arg0);

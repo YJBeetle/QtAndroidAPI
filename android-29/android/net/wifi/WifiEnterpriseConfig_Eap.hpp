@@ -19,9 +19,11 @@ namespace android::net::wifi
 		static jint TTLS();
 		static jint UNAUTH_TLS();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit WifiEnterpriseConfig_Eap(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		WifiEnterpriseConfig_Eap(QAndroidJniObject obj);
+		
 		// Constructors
-		WifiEnterpriseConfig_Eap() = default;
 		
 		// Methods
 	};

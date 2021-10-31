@@ -46,9 +46,11 @@ namespace android::provider
 		static jint SHORTCUT_SUPPORT_NONE();
 		static jstring TYPE_RESOURCE_ID();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ContactsContract_Directory(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ContactsContract_Directory(QAndroidJniObject obj);
+		
 		// Constructors
-		ContactsContract_Directory() = default;
 		
 		// Methods
 		static jboolean isEnterpriseDirectoryId(jlong arg0);

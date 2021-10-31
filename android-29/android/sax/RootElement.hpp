@@ -11,11 +11,13 @@ namespace android::sax
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit RootElement(const char *className, const char *sig, Ts...agv) : android::sax::Element(className, sig, std::forward<Ts>(agv)...) {}
 		RootElement(QAndroidJniObject obj);
+		
 		// Constructors
 		RootElement(jstring arg0);
 		RootElement(jstring arg0, jstring arg1);
-		RootElement() = default;
 		
 		// Methods
 		QAndroidJniObject getContentHandler();

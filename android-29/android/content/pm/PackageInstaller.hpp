@@ -61,9 +61,11 @@ namespace android::content::pm
 		static jint STATUS_PENDING_USER_ACTION();
 		static jint STATUS_SUCCESS();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PackageInstaller(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PackageInstaller(QAndroidJniObject obj);
+		
 		// Constructors
-		PackageInstaller() = default;
 		
 		// Methods
 		void abandonSession(jint arg0);

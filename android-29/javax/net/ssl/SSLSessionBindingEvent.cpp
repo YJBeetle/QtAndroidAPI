@@ -4,29 +4,29 @@ namespace javax::net::ssl
 {
 	// Fields
 	
-	SSLSessionBindingEvent::SSLSessionBindingEvent(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SSLSessionBindingEvent::SSLSessionBindingEvent(QAndroidJniObject obj) : java::util::EventObject(obj) {}
+	
 	// Constructors
 	SSLSessionBindingEvent::SSLSessionBindingEvent(__JniBaseClass arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::EventObject(
 			"javax.net.ssl.SSLSessionBindingEvent",
 			"(Ljavax/net/ssl/SSLSession;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring SSLSessionBindingEvent::getName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject SSLSessionBindingEvent::getSession()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSession",
 			"()Ljavax/net/ssl/SSLSession;"
 		);

@@ -4,20 +4,22 @@ namespace android::media
 {
 	// Fields
 	
-	MediaDrm_ProvisionRequest::MediaDrm_ProvisionRequest(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaDrm_ProvisionRequest::MediaDrm_ProvisionRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jbyteArray MediaDrm_ProvisionRequest::getData()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getData",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jstring MediaDrm_ProvisionRequest::getDefaultUrl()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDefaultUrl",
 			"()Ljava/lang/String;"
 		).object<jstring>();

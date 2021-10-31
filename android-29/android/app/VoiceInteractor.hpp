@@ -14,9 +14,11 @@ namespace android::app
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit VoiceInteractor(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		VoiceInteractor(QAndroidJniObject obj);
+		
 		// Constructors
-		VoiceInteractor() = default;
 		
 		// Methods
 		QAndroidJniObject getActiveRequest(jstring arg0);

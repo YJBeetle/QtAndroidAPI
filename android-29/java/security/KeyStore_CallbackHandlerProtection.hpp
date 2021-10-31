@@ -10,10 +10,12 @@ namespace java::security
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit KeyStore_CallbackHandlerProtection(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		KeyStore_CallbackHandlerProtection(QAndroidJniObject obj);
+		
 		// Constructors
 		KeyStore_CallbackHandlerProtection(__JniBaseClass arg0);
-		KeyStore_CallbackHandlerProtection() = default;
 		
 		// Methods
 		QAndroidJniObject getCallbackHandler();

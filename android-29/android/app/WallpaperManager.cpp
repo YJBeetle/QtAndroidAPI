@@ -94,7 +94,9 @@ namespace android::app
 		).object<jstring>();
 	}
 	
-	WallpaperManager::WallpaperManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WallpaperManager::WallpaperManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -104,28 +106,28 @@ namespace android::app
 			"android.app.WallpaperManager",
 			"getInstance",
 			"(Landroid/content/Context;)Landroid/app/WallpaperManager;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void WallpaperManager::addOnColorsChangedListener(__JniBaseClass arg0, android::os::Handler arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addOnColorsChangedListener",
 			"(Landroid/app/WallpaperManager$OnColorsChangedListener;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void WallpaperManager::clear()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
 	void WallpaperManager::clear(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clear",
 			"(I)V",
 			arg0
@@ -133,36 +135,36 @@ namespace android::app
 	}
 	void WallpaperManager::clearWallpaper()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clearWallpaper",
 			"()V"
 		);
 	}
 	void WallpaperManager::clearWallpaperOffsets(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clearWallpaperOffsets",
 			"(Landroid/os/IBinder;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void WallpaperManager::forgetLoadedWallpaper()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"forgetLoadedWallpaper",
 			"()V"
 		);
 	}
 	QAndroidJniObject WallpaperManager::getBuiltInDrawable()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBuiltInDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
 	QAndroidJniObject WallpaperManager::getBuiltInDrawable(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBuiltInDrawable",
 			"(I)Landroid/graphics/drawable/Drawable;",
 			arg0
@@ -170,7 +172,7 @@ namespace android::app
 	}
 	QAndroidJniObject WallpaperManager::getBuiltInDrawable(jint arg0, jint arg1, jboolean arg2, jfloat arg3, jfloat arg4)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBuiltInDrawable",
 			"(IIZFF)Landroid/graphics/drawable/Drawable;",
 			arg0,
@@ -182,7 +184,7 @@ namespace android::app
 	}
 	QAndroidJniObject WallpaperManager::getBuiltInDrawable(jint arg0, jint arg1, jboolean arg2, jfloat arg3, jfloat arg4, jint arg5)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBuiltInDrawable",
 			"(IIZFFI)Landroid/graphics/drawable/Drawable;",
 			arg0,
@@ -195,43 +197,43 @@ namespace android::app
 	}
 	QAndroidJniObject WallpaperManager::getCropAndSetWallpaperIntent(android::net::Uri arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCropAndSetWallpaperIntent",
 			"(Landroid/net/Uri;)Landroid/content/Intent;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint WallpaperManager::getDesiredMinimumHeight()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDesiredMinimumHeight",
 			"()I"
 		);
 	}
 	jint WallpaperManager::getDesiredMinimumWidth()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDesiredMinimumWidth",
 			"()I"
 		);
 	}
 	QAndroidJniObject WallpaperManager::getDrawable()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
 	QAndroidJniObject WallpaperManager::getFastDrawable()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFastDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
 	QAndroidJniObject WallpaperManager::getWallpaperColors(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getWallpaperColors",
 			"(I)Landroid/app/WallpaperColors;",
 			arg0
@@ -239,7 +241,7 @@ namespace android::app
 	}
 	QAndroidJniObject WallpaperManager::getWallpaperFile(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getWallpaperFile",
 			"(I)Landroid/os/ParcelFileDescriptor;",
 			arg0
@@ -247,7 +249,7 @@ namespace android::app
 	}
 	jint WallpaperManager::getWallpaperId(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getWallpaperId",
 			"(I)I",
 			arg0
@@ -255,14 +257,14 @@ namespace android::app
 	}
 	QAndroidJniObject WallpaperManager::getWallpaperInfo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getWallpaperInfo",
 			"()Landroid/app/WallpaperInfo;"
 		);
 	}
 	jboolean WallpaperManager::hasResourceWallpaper(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasResourceWallpaper",
 			"(I)Z",
 			arg0
@@ -270,93 +272,93 @@ namespace android::app
 	}
 	jboolean WallpaperManager::isSetWallpaperAllowed()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isSetWallpaperAllowed",
 			"()Z"
 		);
 	}
 	jboolean WallpaperManager::isWallpaperSupported()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isWallpaperSupported",
 			"()Z"
 		);
 	}
 	QAndroidJniObject WallpaperManager::peekDrawable()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"peekDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
 	QAndroidJniObject WallpaperManager::peekFastDrawable()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"peekFastDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
 	void WallpaperManager::removeOnColorsChangedListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeOnColorsChangedListener",
 			"(Landroid/app/WallpaperManager$OnColorsChangedListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void WallpaperManager::sendWallpaperCommand(__JniBaseClass arg0, jstring arg1, jint arg2, jint arg3, jint arg4, android::os::Bundle arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"sendWallpaperCommand",
 			"(Landroid/os/IBinder;Ljava/lang/String;IIILandroid/os/Bundle;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
 			arg4,
-			arg5.__jniObject().object()
+			arg5.object()
 		);
 	}
 	jint WallpaperManager::setBitmap(android::graphics::Bitmap arg0, android::graphics::Rect arg1, jboolean arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"setBitmap",
 			"(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Z)I",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
 	jint WallpaperManager::setBitmap(android::graphics::Bitmap arg0, android::graphics::Rect arg1, jboolean arg2, jint arg3)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"setBitmap",
 			"(Landroid/graphics/Bitmap;Landroid/graphics/Rect;ZI)I",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3
 		);
 	}
 	void WallpaperManager::setBitmap(android::graphics::Bitmap arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setBitmap",
 			"(Landroid/graphics/Bitmap;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void WallpaperManager::setDisplayPadding(android::graphics::Rect arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDisplayPadding",
 			"(Landroid/graphics/Rect;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint WallpaperManager::setResource(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"setResource",
 			"(II)I",
 			arg0,
@@ -365,7 +367,7 @@ namespace android::app
 	}
 	void WallpaperManager::setResource(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setResource",
 			"(I)V",
 			arg0
@@ -373,36 +375,36 @@ namespace android::app
 	}
 	jint WallpaperManager::setStream(java::io::InputStream arg0, android::graphics::Rect arg1, jboolean arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"setStream",
 			"(Ljava/io/InputStream;Landroid/graphics/Rect;Z)I",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
 	jint WallpaperManager::setStream(java::io::InputStream arg0, android::graphics::Rect arg1, jboolean arg2, jint arg3)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"setStream",
 			"(Ljava/io/InputStream;Landroid/graphics/Rect;ZI)I",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3
 		);
 	}
 	void WallpaperManager::setStream(java::io::InputStream arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setStream",
 			"(Ljava/io/InputStream;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void WallpaperManager::setWallpaperOffsetSteps(jfloat arg0, jfloat arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setWallpaperOffsetSteps",
 			"(FF)V",
 			arg0,
@@ -411,17 +413,17 @@ namespace android::app
 	}
 	void WallpaperManager::setWallpaperOffsets(__JniBaseClass arg0, jfloat arg1, jfloat arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setWallpaperOffsets",
 			"(Landroid/os/IBinder;FF)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
 	}
 	void WallpaperManager::suggestDesiredDimensions(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"suggestDesiredDimensions",
 			"(II)V",
 			arg0,

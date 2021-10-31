@@ -148,21 +148,21 @@ namespace java::util::jar
 		);
 	}
 	
-	Attributes_Name::Attributes_Name(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Attributes_Name::Attributes_Name(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Attributes_Name::Attributes_Name(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.jar.Attributes$Name",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean Attributes_Name::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -170,14 +170,14 @@ namespace java::util::jar
 	}
 	jint Attributes_Name::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring Attributes_Name::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

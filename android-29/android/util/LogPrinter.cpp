@@ -4,22 +4,22 @@ namespace android::util
 {
 	// Fields
 	
-	LogPrinter::LogPrinter(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	LogPrinter::LogPrinter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	LogPrinter::LogPrinter(jint arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.util.LogPrinter",
 			"(ILjava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	void LogPrinter::println(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"println",
 			"(Ljava/lang/String;)V",
 			arg0

@@ -5,35 +5,35 @@ namespace android::net::wifi::aware
 {
 	// Fields
 	
-	SubscribeConfig_Builder::SubscribeConfig_Builder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SubscribeConfig_Builder::SubscribeConfig_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	SubscribeConfig_Builder::SubscribeConfig_Builder()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.net.wifi.aware.SubscribeConfig$Builder",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject SubscribeConfig_Builder::build()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"build",
 			"()Landroid/net/wifi/aware/SubscribeConfig;"
 		);
 	}
 	QAndroidJniObject SubscribeConfig_Builder::setMatchFilter(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setMatchFilter",
 			"(Ljava/util/List;)Landroid/net/wifi/aware/SubscribeConfig$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject SubscribeConfig_Builder::setMaxDistanceMm(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setMaxDistanceMm",
 			"(I)Landroid/net/wifi/aware/SubscribeConfig$Builder;",
 			arg0
@@ -41,7 +41,7 @@ namespace android::net::wifi::aware
 	}
 	QAndroidJniObject SubscribeConfig_Builder::setMinDistanceMm(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setMinDistanceMm",
 			"(I)Landroid/net/wifi/aware/SubscribeConfig$Builder;",
 			arg0
@@ -49,7 +49,7 @@ namespace android::net::wifi::aware
 	}
 	QAndroidJniObject SubscribeConfig_Builder::setServiceName(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setServiceName",
 			"(Ljava/lang/String;)Landroid/net/wifi/aware/SubscribeConfig$Builder;",
 			arg0
@@ -57,7 +57,7 @@ namespace android::net::wifi::aware
 	}
 	QAndroidJniObject SubscribeConfig_Builder::setServiceSpecificInfo(jbyteArray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setServiceSpecificInfo",
 			"([B)Landroid/net/wifi/aware/SubscribeConfig$Builder;",
 			arg0
@@ -65,7 +65,7 @@ namespace android::net::wifi::aware
 	}
 	QAndroidJniObject SubscribeConfig_Builder::setSubscribeType(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setSubscribeType",
 			"(I)Landroid/net/wifi/aware/SubscribeConfig$Builder;",
 			arg0
@@ -73,7 +73,7 @@ namespace android::net::wifi::aware
 	}
 	QAndroidJniObject SubscribeConfig_Builder::setTerminateNotificationEnabled(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setTerminateNotificationEnabled",
 			"(Z)Landroid/net/wifi/aware/SubscribeConfig$Builder;",
 			arg0
@@ -81,7 +81,7 @@ namespace android::net::wifi::aware
 	}
 	QAndroidJniObject SubscribeConfig_Builder::setTtlSec(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setTtlSec",
 			"(I)Landroid/net/wifi/aware/SubscribeConfig$Builder;",
 			arg0

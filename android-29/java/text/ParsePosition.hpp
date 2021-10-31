@@ -10,10 +10,12 @@ namespace java::text
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ParsePosition(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ParsePosition(QAndroidJniObject obj);
+		
 		// Constructors
 		ParsePosition(jint arg0);
-		ParsePosition() = default;
 		
 		// Methods
 		jboolean equals(jobject arg0);

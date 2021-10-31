@@ -4,7 +4,9 @@ namespace java::util
 {
 	// Fields
 	
-	OptionalLong::OptionalLong(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	OptionalLong::OptionalLong(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -27,7 +29,7 @@ namespace java::util
 	}
 	jboolean OptionalLong::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -35,52 +37,52 @@ namespace java::util
 	}
 	jlong OptionalLong::getAsLong()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getAsLong",
 			"()J"
 		);
 	}
 	jint OptionalLong::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	void OptionalLong::ifPresent(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"ifPresent",
 			"(Ljava/util/function/LongConsumer;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void OptionalLong::ifPresentOrElse(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"ifPresentOrElse",
 			"(Ljava/util/function/LongConsumer;Ljava/lang/Runnable;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jboolean OptionalLong::isEmpty()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
 	jboolean OptionalLong::isPresent()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isPresent",
 			"()Z"
 		);
 	}
 	jlong OptionalLong::orElse(jlong arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"orElse",
 			"(J)J",
 			arg0
@@ -88,37 +90,37 @@ namespace java::util
 	}
 	jlong OptionalLong::orElseGet(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"orElseGet",
 			"(Ljava/util/function/LongSupplier;)J",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jlong OptionalLong::orElseThrow()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"orElseThrow",
 			"()J"
 		);
 	}
 	jlong OptionalLong::orElseThrow(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"orElseThrow",
 			"(Ljava/util/function/Supplier;)J",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject OptionalLong::stream()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"stream",
 			"()Ljava/util/stream/LongStream;"
 		);
 	}
 	jstring OptionalLong::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

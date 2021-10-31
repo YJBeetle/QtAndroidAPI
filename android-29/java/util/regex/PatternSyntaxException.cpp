@@ -4,44 +4,44 @@ namespace java::util::regex
 {
 	// Fields
 	
-	PatternSyntaxException::PatternSyntaxException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PatternSyntaxException::PatternSyntaxException(QAndroidJniObject obj) : java::lang::IllegalArgumentException(obj) {}
+	
 	// Constructors
 	PatternSyntaxException::PatternSyntaxException(jstring arg0, jstring arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::IllegalArgumentException(
 			"java.util.regex.PatternSyntaxException",
 			"(Ljava/lang/String;Ljava/lang/String;I)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring PatternSyntaxException::getDescription()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint PatternSyntaxException::getIndex()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getIndex",
 			"()I"
 		);
 	}
 	jstring PatternSyntaxException::getMessage()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring PatternSyntaxException::getPattern()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPattern",
 			"()Ljava/lang/String;"
 		).object<jstring>();

@@ -27,14 +27,16 @@ namespace android::os
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DropBoxManager_Entry(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DropBoxManager_Entry(QAndroidJniObject obj);
+		
 		// Constructors
 		DropBoxManager_Entry(jstring arg0, jlong arg1);
 		DropBoxManager_Entry(jstring arg0, jlong arg1, jstring arg2);
 		DropBoxManager_Entry(jstring arg0, jlong arg1, jbyteArray arg2, jint arg3);
 		DropBoxManager_Entry(jstring arg0, jlong arg1, android::os::ParcelFileDescriptor arg2, jint arg3);
 		DropBoxManager_Entry(jstring arg0, jlong arg1, java::io::File arg2, jint arg3);
-		DropBoxManager_Entry() = default;
 		
 		// Methods
 		void close();

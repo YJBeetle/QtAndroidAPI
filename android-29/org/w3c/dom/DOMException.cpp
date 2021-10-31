@@ -124,22 +124,22 @@ namespace org::w3c::dom
 	}
 	jshort DOMException::code()
 	{
-		return __thiz.getField<jshort>(
+		return getField<jshort>(
 			"code"
 		);
 	}
 	
-	DOMException::DOMException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DOMException::DOMException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	
 	// Constructors
 	DOMException::DOMException(jshort arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::RuntimeException(
 			"org.w3c.dom.DOMException",
 			"(SLjava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace org::w3c::dom

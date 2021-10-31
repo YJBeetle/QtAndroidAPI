@@ -34,7 +34,9 @@ namespace android::app::admin
 		);
 	}
 	
-	SystemUpdatePolicy::SystemUpdatePolicy(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SystemUpdatePolicy::SystemUpdatePolicy(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -66,60 +68,60 @@ namespace android::app::admin
 	}
 	jint SystemUpdatePolicy::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	QAndroidJniObject SystemUpdatePolicy::getFreezePeriods()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFreezePeriods",
 			"()Ljava/util/List;"
 		);
 	}
 	jint SystemUpdatePolicy::getInstallWindowEnd()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getInstallWindowEnd",
 			"()I"
 		);
 	}
 	jint SystemUpdatePolicy::getInstallWindowStart()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getInstallWindowStart",
 			"()I"
 		);
 	}
 	jint SystemUpdatePolicy::getPolicyType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPolicyType",
 			"()I"
 		);
 	}
 	QAndroidJniObject SystemUpdatePolicy::setFreezePeriods(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setFreezePeriods",
 			"(Ljava/util/List;)Landroid/app/admin/SystemUpdatePolicy;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring SystemUpdatePolicy::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void SystemUpdatePolicy::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

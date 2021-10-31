@@ -15,7 +15,9 @@ namespace java::time
 		);
 	}
 	
-	Duration::Duration(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Duration::Duration(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -25,8 +27,8 @@ namespace java::time
 			"java.time.Duration",
 			"between",
 			"(Ljava/time/temporal/Temporal;Ljava/time/temporal/Temporal;)Ljava/time/Duration;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject Duration::from(__JniBaseClass arg0)
@@ -35,7 +37,7 @@ namespace java::time
 			"java.time.Duration",
 			"from",
 			"(Ljava/time/temporal/TemporalAmount;)Ljava/time/Duration;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Duration::of(jlong arg0, __JniBaseClass arg1)
@@ -45,7 +47,7 @@ namespace java::time
 			"of",
 			"(JLjava/time/temporal/TemporalUnit;)Ljava/time/Duration;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject Duration::ofDays(jlong arg0)
@@ -123,22 +125,22 @@ namespace java::time
 	}
 	QAndroidJniObject Duration::abs()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"abs",
 			"()Ljava/time/Duration;"
 		);
 	}
 	QAndroidJniObject Duration::addTo(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"addTo",
 			"(Ljava/time/temporal/Temporal;)Ljava/time/temporal/Temporal;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint Duration::compareTo(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -146,15 +148,15 @@ namespace java::time
 	}
 	jint Duration::compareTo(java::time::Duration arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/time/Duration;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Duration::dividedBy(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"dividedBy",
 			"(J)Ljava/time/Duration;",
 			arg0
@@ -162,15 +164,15 @@ namespace java::time
 	}
 	jlong Duration::dividedBy(java::time::Duration arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"dividedBy",
 			"(Ljava/time/Duration;)J",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean Duration::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -178,74 +180,74 @@ namespace java::time
 	}
 	jlong Duration::get(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"get",
 			"(Ljava/time/temporal/TemporalUnit;)J",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint Duration::getNano()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getNano",
 			"()I"
 		);
 	}
 	jlong Duration::getSeconds()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getSeconds",
 			"()J"
 		);
 	}
 	QAndroidJniObject Duration::getUnits()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getUnits",
 			"()Ljava/util/List;"
 		);
 	}
 	jint Duration::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean Duration::isNegative()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isNegative",
 			"()Z"
 		);
 	}
 	jboolean Duration::isZero()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isZero",
 			"()Z"
 		);
 	}
 	QAndroidJniObject Duration::minus(java::time::Duration arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"minus",
 			"(Ljava/time/Duration;)Ljava/time/Duration;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Duration::minus(jlong arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"minus",
 			"(JLjava/time/temporal/TemporalUnit;)Ljava/time/Duration;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject Duration::minusDays(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"minusDays",
 			"(J)Ljava/time/Duration;",
 			arg0
@@ -253,7 +255,7 @@ namespace java::time
 	}
 	QAndroidJniObject Duration::minusHours(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"minusHours",
 			"(J)Ljava/time/Duration;",
 			arg0
@@ -261,7 +263,7 @@ namespace java::time
 	}
 	QAndroidJniObject Duration::minusMillis(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"minusMillis",
 			"(J)Ljava/time/Duration;",
 			arg0
@@ -269,7 +271,7 @@ namespace java::time
 	}
 	QAndroidJniObject Duration::minusMinutes(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"minusMinutes",
 			"(J)Ljava/time/Duration;",
 			arg0
@@ -277,7 +279,7 @@ namespace java::time
 	}
 	QAndroidJniObject Duration::minusNanos(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"minusNanos",
 			"(J)Ljava/time/Duration;",
 			arg0
@@ -285,7 +287,7 @@ namespace java::time
 	}
 	QAndroidJniObject Duration::minusSeconds(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"minusSeconds",
 			"(J)Ljava/time/Duration;",
 			arg0
@@ -293,7 +295,7 @@ namespace java::time
 	}
 	QAndroidJniObject Duration::multipliedBy(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"multipliedBy",
 			"(J)Ljava/time/Duration;",
 			arg0
@@ -301,31 +303,31 @@ namespace java::time
 	}
 	QAndroidJniObject Duration::negated()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"negated",
 			"()Ljava/time/Duration;"
 		);
 	}
 	QAndroidJniObject Duration::plus(java::time::Duration arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"plus",
 			"(Ljava/time/Duration;)Ljava/time/Duration;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Duration::plus(jlong arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"plus",
 			"(JLjava/time/temporal/TemporalUnit;)Ljava/time/Duration;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject Duration::plusDays(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"plusDays",
 			"(J)Ljava/time/Duration;",
 			arg0
@@ -333,7 +335,7 @@ namespace java::time
 	}
 	QAndroidJniObject Duration::plusHours(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"plusHours",
 			"(J)Ljava/time/Duration;",
 			arg0
@@ -341,7 +343,7 @@ namespace java::time
 	}
 	QAndroidJniObject Duration::plusMillis(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"plusMillis",
 			"(J)Ljava/time/Duration;",
 			arg0
@@ -349,7 +351,7 @@ namespace java::time
 	}
 	QAndroidJniObject Duration::plusMinutes(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"plusMinutes",
 			"(J)Ljava/time/Duration;",
 			arg0
@@ -357,7 +359,7 @@ namespace java::time
 	}
 	QAndroidJniObject Duration::plusNanos(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"plusNanos",
 			"(J)Ljava/time/Duration;",
 			arg0
@@ -365,7 +367,7 @@ namespace java::time
 	}
 	QAndroidJniObject Duration::plusSeconds(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"plusSeconds",
 			"(J)Ljava/time/Duration;",
 			arg0
@@ -373,114 +375,114 @@ namespace java::time
 	}
 	QAndroidJniObject Duration::subtractFrom(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"subtractFrom",
 			"(Ljava/time/temporal/Temporal;)Ljava/time/temporal/Temporal;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jlong Duration::toDays()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"toDays",
 			"()J"
 		);
 	}
 	jlong Duration::toDaysPart()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"toDaysPart",
 			"()J"
 		);
 	}
 	jlong Duration::toHours()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"toHours",
 			"()J"
 		);
 	}
 	jint Duration::toHoursPart()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"toHoursPart",
 			"()I"
 		);
 	}
 	jlong Duration::toMillis()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"toMillis",
 			"()J"
 		);
 	}
 	jint Duration::toMillisPart()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"toMillisPart",
 			"()I"
 		);
 	}
 	jlong Duration::toMinutes()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"toMinutes",
 			"()J"
 		);
 	}
 	jint Duration::toMinutesPart()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"toMinutesPart",
 			"()I"
 		);
 	}
 	jlong Duration::toNanos()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"toNanos",
 			"()J"
 		);
 	}
 	jint Duration::toNanosPart()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"toNanosPart",
 			"()I"
 		);
 	}
 	jlong Duration::toSeconds()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"toSeconds",
 			"()J"
 		);
 	}
 	jint Duration::toSecondsPart()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"toSecondsPart",
 			"()I"
 		);
 	}
 	jstring Duration::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject Duration::truncatedTo(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"truncatedTo",
 			"(Ljava/time/temporal/TemporalUnit;)Ljava/time/Duration;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Duration::withNanos(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withNanos",
 			"(I)Ljava/time/Duration;",
 			arg0
@@ -488,7 +490,7 @@ namespace java::time
 	}
 	QAndroidJniObject Duration::withSeconds(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withSeconds",
 			"(J)Ljava/time/Duration;",
 			arg0

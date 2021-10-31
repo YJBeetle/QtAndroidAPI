@@ -13,7 +13,10 @@ namespace java::lang
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit UnsupportedClassVersionError(const char *className, const char *sig, Ts...agv) : java::lang::ClassFormatError(className, sig, std::forward<Ts>(agv)...) {}
 		UnsupportedClassVersionError(QAndroidJniObject obj);
+		
 		// Constructors
 		UnsupportedClassVersionError();
 		UnsupportedClassVersionError(jstring arg0);

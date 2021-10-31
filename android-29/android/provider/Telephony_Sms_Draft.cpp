@@ -21,7 +21,9 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	Telephony_Sms_Draft::Telephony_Sms_Draft(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Telephony_Sms_Draft::Telephony_Sms_Draft(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

@@ -18,7 +18,10 @@ namespace java::lang
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ThreadLocal(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ThreadLocal(QAndroidJniObject obj);
+		
 		// Constructors
 		ThreadLocal();
 		

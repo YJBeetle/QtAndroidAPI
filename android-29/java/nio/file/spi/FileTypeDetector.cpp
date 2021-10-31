@@ -5,16 +5,18 @@ namespace java::nio::file::spi
 {
 	// Fields
 	
-	FileTypeDetector::FileTypeDetector(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FileTypeDetector::FileTypeDetector(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jstring FileTypeDetector::probeContentType(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"probeContentType",
 			"(Ljava/nio/file/Path;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 } // namespace java::nio::file::spi

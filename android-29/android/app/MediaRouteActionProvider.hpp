@@ -19,10 +19,12 @@ namespace android::app
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaRouteActionProvider(const char *className, const char *sig, Ts...agv) : android::view::ActionProvider(className, sig, std::forward<Ts>(agv)...) {}
 		MediaRouteActionProvider(QAndroidJniObject obj);
+		
 		// Constructors
 		MediaRouteActionProvider(android::content::Context arg0);
-		MediaRouteActionProvider() = default;
 		
 		// Methods
 		jboolean isVisible();

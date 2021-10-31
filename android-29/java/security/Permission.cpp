@@ -5,21 +5,21 @@ namespace java::security
 {
 	// Fields
 	
-	Permission::Permission(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Permission::Permission(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Permission::Permission(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.security.Permission",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	void Permission::checkGuard(jobject arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"checkGuard",
 			"(Ljava/lang/Object;)V",
 			arg0
@@ -27,7 +27,7 @@ namespace java::security
 	}
 	jboolean Permission::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -35,43 +35,43 @@ namespace java::security
 	}
 	jstring Permission::getActions()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getActions",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Permission::getName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint Permission::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean Permission::implies(java::security::Permission arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"implies",
 			"(Ljava/security/Permission;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Permission::newPermissionCollection()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newPermissionCollection",
 			"()Ljava/security/PermissionCollection;"
 		);
 	}
 	jstring Permission::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

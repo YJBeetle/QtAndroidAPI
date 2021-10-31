@@ -9,68 +9,68 @@ namespace android::gesture
 	// Fields
 	QAndroidJniObject GestureStroke::boundingBox()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"boundingBox",
 			"Landroid/graphics/RectF;"
 		);
 	}
 	jfloat GestureStroke::length()
 	{
-		return __thiz.getField<jfloat>(
+		return getField<jfloat>(
 			"length"
 		);
 	}
 	jfloatArray GestureStroke::points()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"points",
 			"[F"
 		).object<jfloatArray>();
 	}
 	
-	GestureStroke::GestureStroke(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	GestureStroke::GestureStroke(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	GestureStroke::GestureStroke(java::util::ArrayList arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.gesture.GestureStroke",
 			"(Ljava/util/ArrayList;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	void GestureStroke::clearPath()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clearPath",
 			"()V"
 		);
 	}
 	jobject GestureStroke::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	QAndroidJniObject GestureStroke::computeOrientedBoundingBox()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"computeOrientedBoundingBox",
 			"()Landroid/gesture/OrientedBoundingBox;"
 		);
 	}
 	QAndroidJniObject GestureStroke::getPath()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPath",
 			"()Landroid/graphics/Path;"
 		);
 	}
 	QAndroidJniObject GestureStroke::toPath(jfloat arg0, jfloat arg1, jint arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toPath",
 			"(FFI)Landroid/graphics/Path;",
 			arg0,

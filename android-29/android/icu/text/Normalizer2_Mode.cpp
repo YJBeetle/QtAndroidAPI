@@ -36,7 +36,9 @@ namespace android::icu::text
 		);
 	}
 	
-	Normalizer2_Mode::Normalizer2_Mode(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Normalizer2_Mode::Normalizer2_Mode(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

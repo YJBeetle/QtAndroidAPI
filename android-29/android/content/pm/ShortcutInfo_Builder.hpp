@@ -42,10 +42,12 @@ namespace android::content::pm
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ShortcutInfo_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ShortcutInfo_Builder(QAndroidJniObject obj);
+		
 		// Constructors
 		ShortcutInfo_Builder(android::content::Context arg0, jstring arg1);
-		ShortcutInfo_Builder() = default;
 		
 		// Methods
 		QAndroidJniObject build();

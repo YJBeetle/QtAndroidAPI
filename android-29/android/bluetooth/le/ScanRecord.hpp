@@ -18,9 +18,11 @@ namespace android::bluetooth::le
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ScanRecord(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ScanRecord(QAndroidJniObject obj);
+		
 		// Constructors
-		ScanRecord() = default;
 		
 		// Methods
 		jint getAdvertiseFlags();

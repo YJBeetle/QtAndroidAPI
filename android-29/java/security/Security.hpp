@@ -26,9 +26,11 @@ namespace java::security
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Security(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Security(QAndroidJniObject obj);
+		
 		// Constructors
-		Security() = default;
 		
 		// Methods
 		static jint addProvider(java::security::Provider arg0);

@@ -78,15 +78,15 @@ namespace android::telephony
 		);
 	}
 	
-	PhoneNumberUtils::PhoneNumberUtils(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PhoneNumberUtils::PhoneNumberUtils(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	PhoneNumberUtils::PhoneNumberUtils()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.telephony.PhoneNumberUtils",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void PhoneNumberUtils::addTtsSpan(__JniBaseClass arg0, jint arg1, jint arg2)
@@ -95,7 +95,7 @@ namespace android::telephony
 			"android.telephony.PhoneNumberUtils",
 			"addTtsSpan",
 			"(Landroid/text/Spannable;II)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
@@ -162,7 +162,7 @@ namespace android::telephony
 			"android.telephony.PhoneNumberUtils",
 			"compare",
 			"(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Z",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
@@ -218,7 +218,7 @@ namespace android::telephony
 			"android.telephony.PhoneNumberUtils",
 			"formatJapaneseNumber",
 			"(Landroid/text/Editable;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void PhoneNumberUtils::formatNanpNumber(__JniBaseClass arg0)
@@ -227,7 +227,7 @@ namespace android::telephony
 			"android.telephony.PhoneNumberUtils",
 			"formatNanpNumber",
 			"(Landroid/text/Editable;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring PhoneNumberUtils::formatNumber(jstring arg0)
@@ -266,7 +266,7 @@ namespace android::telephony
 			"android.telephony.PhoneNumberUtils",
 			"formatNumber",
 			"(Landroid/text/Editable;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -296,7 +296,7 @@ namespace android::telephony
 			"android.telephony.PhoneNumberUtils",
 			"getFormatTypeForLocale",
 			"(Ljava/util/Locale;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring PhoneNumberUtils::getNumberFromIntent(android::content::Intent arg0, android::content::Context arg1)
@@ -305,8 +305,8 @@ namespace android::telephony
 			"android.telephony.PhoneNumberUtils",
 			"getNumberFromIntent",
 			"(Landroid/content/Intent;Landroid/content/Context;)Ljava/lang/String;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		).object<jstring>();
 	}
 	jstring PhoneNumberUtils::getStrippedReversed(jstring arg0)
@@ -369,7 +369,7 @@ namespace android::telephony
 			"android.telephony.PhoneNumberUtils",
 			"isLocalEmergencyNumber",
 			"(Landroid/content/Context;Ljava/lang/String;)Z",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

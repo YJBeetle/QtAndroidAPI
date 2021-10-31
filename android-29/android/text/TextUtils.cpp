@@ -60,7 +60,9 @@ namespace android::text
 		);
 	}
 	
-	TextUtils::TextUtils(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TextUtils::TextUtils(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -71,7 +73,7 @@ namespace android::text
 			"commaEllipsize",
 			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;FLjava/lang/String;Ljava/lang/String;)Ljava/lang/CharSequence;",
 			arg0,
-			arg1.__jniObject().object(),
+			arg1.object(),
 			arg2,
 			arg3,
 			arg4
@@ -92,11 +94,11 @@ namespace android::text
 			"android.text.TextUtils",
 			"copySpansFrom",
 			"(Landroid/text/Spanned;IILjava/lang/Class;Landroid/text/Spannable;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object(),
+			arg4.object(),
 			arg5
 		);
 	}
@@ -107,7 +109,7 @@ namespace android::text
 			"dumpSpans",
 			"(Ljava/lang/CharSequence;Landroid/util/Printer;Ljava/lang/String;)V",
 			arg0,
-			arg1.__jniObject().object(),
+			arg1.object(),
 			arg2
 		);
 	}
@@ -118,9 +120,9 @@ namespace android::text
 			"ellipsize",
 			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;FLandroid/text/TextUtils$TruncateAt;)Ljava/lang/CharSequence;",
 			arg0,
-			arg1.__jniObject().object(),
+			arg1.object(),
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		).object<jstring>();
 	}
 	jstring TextUtils::ellipsize(jstring arg0, android::text::TextPaint arg1, jfloat arg2, android::text::TextUtils_TruncateAt arg3, jboolean arg4, __JniBaseClass arg5)
@@ -130,11 +132,11 @@ namespace android::text
 			"ellipsize",
 			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;FLandroid/text/TextUtils$TruncateAt;ZLandroid/text/TextUtils$EllipsizeCallback;)Ljava/lang/CharSequence;",
 			arg0,
-			arg1.__jniObject().object(),
+			arg1.object(),
 			arg2,
-			arg3.__jniObject().object(),
+			arg3.object(),
 			arg4,
-			arg5.__jniObject().object()
+			arg5.object()
 		).object<jstring>();
 	}
 	jboolean TextUtils::equals(jstring arg0, jstring arg1)
@@ -187,7 +189,7 @@ namespace android::text
 			"android.text.TextUtils",
 			"getLayoutDirectionFromLocale",
 			"(Ljava/util/Locale;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint TextUtils::getOffsetAfter(jstring arg0, jint arg1)
@@ -358,7 +360,7 @@ namespace android::text
 			"join",
 			"(Ljava/lang/CharSequence;Ljava/lang/Iterable;)Ljava/lang/String;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		).object<jstring>();
 	}
 	jint TextUtils::lastIndexOf(jstring arg0, jchar arg1)
@@ -400,10 +402,10 @@ namespace android::text
 			"android.text.TextUtils",
 			"listEllipsize",
 			"(Landroid/content/Context;Ljava/util/List;Ljava/lang/String;Landroid/text/TextPaint;FI)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
-			arg3.__jniObject().object(),
+			arg3.object(),
 			arg4,
 			arg5
 		).object<jstring>();
@@ -461,7 +463,7 @@ namespace android::text
 			"split",
 			"(Ljava/lang/String;Ljava/util/regex/Pattern;)[Ljava/lang/String;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		).object<jarray>();
 	}
 	jstring TextUtils::stringOrSpannedString(jstring arg0)
@@ -491,7 +493,7 @@ namespace android::text
 			"writeToParcel",
 			"(Ljava/lang/CharSequence;Landroid/os/Parcel;I)V",
 			arg0,
-			arg1.__jniObject().object(),
+			arg1.object(),
 			arg2
 		);
 	}

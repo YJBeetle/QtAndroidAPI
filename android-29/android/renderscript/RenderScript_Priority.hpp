@@ -13,9 +13,11 @@ namespace android::renderscript
 		static QAndroidJniObject LOW();
 		static QAndroidJniObject NORMAL();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit RenderScript_Priority(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		RenderScript_Priority(QAndroidJniObject obj);
+		
 		// Constructors
-		RenderScript_Priority() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

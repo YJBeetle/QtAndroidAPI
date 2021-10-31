@@ -40,7 +40,10 @@ namespace android::icu::util
 		static jint SRAVANA();
 		static jint VAISAKHA();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit IndianCalendar(const char *className, const char *sig, Ts...agv) : android::icu::util::Calendar(className, sig, std::forward<Ts>(agv)...) {}
 		IndianCalendar(QAndroidJniObject obj);
+		
 		// Constructors
 		IndianCalendar();
 		IndianCalendar(android::icu::util::TimeZone arg0);

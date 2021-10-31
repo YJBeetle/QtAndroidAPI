@@ -4,42 +4,40 @@ namespace java::security::cert
 {
 	// Fields
 	
-	CollectionCertStoreParameters::CollectionCertStoreParameters(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CollectionCertStoreParameters::CollectionCertStoreParameters(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	CollectionCertStoreParameters::CollectionCertStoreParameters()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.security.cert.CollectionCertStoreParameters",
 			"()V"
-		);
-	}
+		) {}
 	CollectionCertStoreParameters::CollectionCertStoreParameters(__JniBaseClass arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.security.cert.CollectionCertStoreParameters",
 			"(Ljava/util/Collection;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jobject CollectionCertStoreParameters::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	QAndroidJniObject CollectionCertStoreParameters::getCollection()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCollection",
 			"()Ljava/util/Collection;"
 		);
 	}
 	jstring CollectionCertStoreParameters::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

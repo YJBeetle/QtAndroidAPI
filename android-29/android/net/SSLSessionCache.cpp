@@ -6,24 +6,22 @@ namespace android::net
 {
 	// Fields
 	
-	SSLSessionCache::SSLSessionCache(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SSLSessionCache::SSLSessionCache(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	SSLSessionCache::SSLSessionCache(android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.net.SSLSessionCache",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	SSLSessionCache::SSLSessionCache(java::io::File arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.net.SSLSessionCache",
 			"(Ljava/io/File;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 } // namespace android::net

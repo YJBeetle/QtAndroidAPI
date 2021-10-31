@@ -5,20 +5,20 @@ namespace android::database
 {
 	// Fields
 	
-	Observable::Observable(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Observable::Observable(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Observable::Observable()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.database.Observable",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void Observable::registerObserver(jobject arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"registerObserver",
 			"(Ljava/lang/Object;)V",
 			arg0
@@ -26,14 +26,14 @@ namespace android::database
 	}
 	void Observable::unregisterAll()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"unregisterAll",
 			"()V"
 		);
 	}
 	void Observable::unregisterObserver(jobject arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"unregisterObserver",
 			"(Ljava/lang/Object;)V",
 			arg0

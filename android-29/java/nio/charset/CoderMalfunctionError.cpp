@@ -5,16 +5,16 @@ namespace java::nio::charset
 {
 	// Fields
 	
-	CoderMalfunctionError::CoderMalfunctionError(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CoderMalfunctionError::CoderMalfunctionError(QAndroidJniObject obj) : java::lang::Error(obj) {}
+	
 	// Constructors
 	CoderMalfunctionError::CoderMalfunctionError(java::lang::Exception arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Error(
 			"java.nio.charset.CoderMalfunctionError",
 			"(Ljava/lang/Exception;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 } // namespace java::nio::charset

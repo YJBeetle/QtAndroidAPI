@@ -14,39 +14,39 @@ namespace android::app
 		);
 	}
 	
-	AuthenticationRequiredException::AuthenticationRequiredException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AuthenticationRequiredException::AuthenticationRequiredException(QAndroidJniObject obj) : java::lang::SecurityException(obj) {}
+	
 	// Constructors
 	AuthenticationRequiredException::AuthenticationRequiredException(jthrowable arg0, android::app::PendingIntent arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::SecurityException(
 			"android.app.AuthenticationRequiredException",
 			"(Ljava/lang/Throwable;Landroid/app/PendingIntent;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
+			arg1.object()
+		) {}
 	
 	// Methods
 	jint AuthenticationRequiredException::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	QAndroidJniObject AuthenticationRequiredException::getUserAction()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getUserAction",
 			"()Landroid/app/PendingIntent;"
 		);
 	}
 	void AuthenticationRequiredException::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

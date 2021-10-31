@@ -22,9 +22,11 @@ namespace android::gesture
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit GestureLibrary(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		GestureLibrary(QAndroidJniObject obj);
+		
 		// Constructors
-		GestureLibrary() = default;
 		
 		// Methods
 		void addGesture(jstring arg0, android::gesture::Gesture arg1);

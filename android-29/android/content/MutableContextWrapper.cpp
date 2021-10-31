@@ -5,24 +5,24 @@ namespace android::content
 {
 	// Fields
 	
-	MutableContextWrapper::MutableContextWrapper(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MutableContextWrapper::MutableContextWrapper(QAndroidJniObject obj) : android::content::ContextWrapper(obj) {}
+	
 	// Constructors
 	MutableContextWrapper::MutableContextWrapper(android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::content::ContextWrapper(
 			"android.content.MutableContextWrapper",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	void MutableContextWrapper::setBaseContext(android::content::Context arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setBaseContext",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::content

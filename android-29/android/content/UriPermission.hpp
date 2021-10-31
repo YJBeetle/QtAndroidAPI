@@ -20,9 +20,11 @@ namespace android::content
 		static QAndroidJniObject CREATOR();
 		static jlong INVALID_TIME();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit UriPermission(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		UriPermission(QAndroidJniObject obj);
+		
 		// Constructors
-		UriPermission() = default;
 		
 		// Methods
 		jint describeContents();

@@ -44,7 +44,9 @@ namespace android::webkit
 		);
 	}
 	
-	WebSettings_TextSize::WebSettings_TextSize(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WebSettings_TextSize::WebSettings_TextSize(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

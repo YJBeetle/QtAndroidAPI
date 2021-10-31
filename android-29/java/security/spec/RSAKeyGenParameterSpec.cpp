@@ -21,46 +21,44 @@ namespace java::security::spec
 		);
 	}
 	
-	RSAKeyGenParameterSpec::RSAKeyGenParameterSpec(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	RSAKeyGenParameterSpec::RSAKeyGenParameterSpec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	RSAKeyGenParameterSpec::RSAKeyGenParameterSpec(jint arg0, java::math::BigInteger arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.security.spec.RSAKeyGenParameterSpec",
 			"(ILjava/math/BigInteger;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
+			arg1.object()
+		) {}
 	RSAKeyGenParameterSpec::RSAKeyGenParameterSpec(jint arg0, java::math::BigInteger arg1, __JniBaseClass arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.security.spec.RSAKeyGenParameterSpec",
 			"(ILjava/math/BigInteger;Ljava/security/spec/AlgorithmParameterSpec;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
+			arg1.object(),
+			arg2.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject RSAKeyGenParameterSpec::getKeyParams()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getKeyParams",
 			"()Ljava/security/spec/AlgorithmParameterSpec;"
 		);
 	}
 	jint RSAKeyGenParameterSpec::getKeysize()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getKeysize",
 			"()I"
 		);
 	}
 	QAndroidJniObject RSAKeyGenParameterSpec::getPublicExponent()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPublicExponent",
 			"()Ljava/math/BigInteger;"
 		);

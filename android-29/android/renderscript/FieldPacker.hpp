@@ -98,11 +98,13 @@ namespace android::renderscript
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit FieldPacker(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		FieldPacker(QAndroidJniObject obj);
+		
 		// Constructors
 		FieldPacker(jbyteArray arg0);
 		FieldPacker(jint arg0);
-		FieldPacker() = default;
 		
 		// Methods
 		void addBoolean(jboolean arg0);

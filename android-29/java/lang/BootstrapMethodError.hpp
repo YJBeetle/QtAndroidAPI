@@ -12,7 +12,10 @@ namespace java::lang
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BootstrapMethodError(const char *className, const char *sig, Ts...agv) : java::lang::LinkageError(className, sig, std::forward<Ts>(agv)...) {}
 		BootstrapMethodError(QAndroidJniObject obj);
+		
 		// Constructors
 		BootstrapMethodError();
 		BootstrapMethodError(jstring arg0);

@@ -7,57 +7,57 @@ namespace android::graphics::drawable
 {
 	// Fields
 	
-	PictureDrawable::PictureDrawable(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PictureDrawable::PictureDrawable(QAndroidJniObject obj) : android::graphics::drawable::Drawable(obj) {}
+	
 	// Constructors
 	PictureDrawable::PictureDrawable(android::graphics::Picture arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::graphics::drawable::Drawable(
 			"android.graphics.drawable.PictureDrawable",
 			"(Landroid/graphics/Picture;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	void PictureDrawable::draw(android::graphics::Canvas arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"draw",
 			"(Landroid/graphics/Canvas;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint PictureDrawable::getIntrinsicHeight()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getIntrinsicHeight",
 			"()I"
 		);
 	}
 	jint PictureDrawable::getIntrinsicWidth()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getIntrinsicWidth",
 			"()I"
 		);
 	}
 	jint PictureDrawable::getOpacity()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getOpacity",
 			"()I"
 		);
 	}
 	QAndroidJniObject PictureDrawable::getPicture()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPicture",
 			"()Landroid/graphics/Picture;"
 		);
 	}
 	void PictureDrawable::setAlpha(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAlpha",
 			"(I)V",
 			arg0
@@ -65,18 +65,18 @@ namespace android::graphics::drawable
 	}
 	void PictureDrawable::setColorFilter(android::graphics::ColorFilter arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setColorFilter",
 			"(Landroid/graphics/ColorFilter;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void PictureDrawable::setPicture(android::graphics::Picture arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPicture",
 			"(Landroid/graphics/Picture;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::graphics::drawable

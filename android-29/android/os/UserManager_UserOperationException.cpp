@@ -4,13 +4,15 @@ namespace android::os
 {
 	// Fields
 	
-	UserManager_UserOperationException::UserManager_UserOperationException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UserManager_UserOperationException::UserManager_UserOperationException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint UserManager_UserOperationException::getUserOperationResult()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getUserOperationResult",
 			"()I"
 		);

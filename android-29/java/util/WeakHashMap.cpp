@@ -5,52 +5,46 @@ namespace java::util
 {
 	// Fields
 	
-	WeakHashMap::WeakHashMap(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WeakHashMap::WeakHashMap(QAndroidJniObject obj) : java::util::AbstractMap(obj) {}
+	
 	// Constructors
 	WeakHashMap::WeakHashMap()
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::AbstractMap(
 			"java.util.WeakHashMap",
 			"()V"
-		);
-	}
+		) {}
 	WeakHashMap::WeakHashMap(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::AbstractMap(
 			"java.util.WeakHashMap",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	WeakHashMap::WeakHashMap(__JniBaseClass arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::AbstractMap(
 			"java.util.WeakHashMap",
 			"(Ljava/util/Map;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	WeakHashMap::WeakHashMap(jint arg0, jfloat arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::AbstractMap(
 			"java.util.WeakHashMap",
 			"(IF)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	void WeakHashMap::clear()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
 	jboolean WeakHashMap::containsKey(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"containsKey",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -58,7 +52,7 @@ namespace java::util
 	}
 	jboolean WeakHashMap::containsValue(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"containsValue",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -66,22 +60,22 @@ namespace java::util
 	}
 	QAndroidJniObject WeakHashMap::entrySet()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"entrySet",
 			"()Ljava/util/Set;"
 		);
 	}
 	void WeakHashMap::forEach(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"forEach",
 			"(Ljava/util/function/BiConsumer;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jobject WeakHashMap::get(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0
@@ -89,21 +83,21 @@ namespace java::util
 	}
 	jboolean WeakHashMap::isEmpty()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
 	QAndroidJniObject WeakHashMap::keySet()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"keySet",
 			"()Ljava/util/Set;"
 		);
 	}
 	jobject WeakHashMap::put(jobject arg0, jobject arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"put",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
@@ -112,15 +106,15 @@ namespace java::util
 	}
 	void WeakHashMap::putAll(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putAll",
 			"(Ljava/util/Map;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jobject WeakHashMap::remove(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"remove",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0
@@ -128,22 +122,22 @@ namespace java::util
 	}
 	void WeakHashMap::replaceAll(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"replaceAll",
 			"(Ljava/util/function/BiFunction;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint WeakHashMap::size()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
 	QAndroidJniObject WeakHashMap::values()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"values",
 			"()Ljava/util/Collection;"
 		);

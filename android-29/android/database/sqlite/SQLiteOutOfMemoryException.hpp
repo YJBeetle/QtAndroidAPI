@@ -14,7 +14,10 @@ namespace android::database::sqlite
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SQLiteOutOfMemoryException(const char *className, const char *sig, Ts...agv) : android::database::sqlite::SQLiteException(className, sig, std::forward<Ts>(agv)...) {}
 		SQLiteOutOfMemoryException(QAndroidJniObject obj);
+		
 		// Constructors
 		SQLiteOutOfMemoryException();
 		SQLiteOutOfMemoryException(jstring arg0);

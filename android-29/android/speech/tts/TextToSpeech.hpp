@@ -60,11 +60,13 @@ namespace android::speech::tts
 		static jint STOPPED();
 		static jint SUCCESS();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TextToSpeech(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		TextToSpeech(QAndroidJniObject obj);
+		
 		// Constructors
 		TextToSpeech(android::content::Context arg0, __JniBaseClass arg1);
 		TextToSpeech(android::content::Context arg0, __JniBaseClass arg1, jstring arg2);
-		TextToSpeech() = default;
 		
 		// Methods
 		static jint getMaxSpeechInputLength();

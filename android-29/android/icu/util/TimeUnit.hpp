@@ -11,9 +11,11 @@ namespace android::icu::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TimeUnit(const char *className, const char *sig, Ts...agv) : android::icu::util::MeasureUnit(className, sig, std::forward<Ts>(agv)...) {}
 		TimeUnit(QAndroidJniObject obj);
+		
 		// Constructors
-		TimeUnit() = default;
 		
 		// Methods
 		static jarray values();

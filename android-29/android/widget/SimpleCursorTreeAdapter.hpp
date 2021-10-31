@@ -29,12 +29,14 @@ namespace android::widget
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SimpleCursorTreeAdapter(const char *className, const char *sig, Ts...agv) : android::widget::ResourceCursorTreeAdapter(className, sig, std::forward<Ts>(agv)...) {}
 		SimpleCursorTreeAdapter(QAndroidJniObject obj);
+		
 		// Constructors
 		SimpleCursorTreeAdapter(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jarray arg3, jintArray arg4, jint arg5, jarray arg6, jintArray arg7);
 		SimpleCursorTreeAdapter(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3, jarray arg4, jintArray arg5, jint arg6, jarray arg7, jintArray arg8);
 		SimpleCursorTreeAdapter(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3, jarray arg4, jintArray arg5, jint arg6, jint arg7, jarray arg8, jintArray arg9);
-		SimpleCursorTreeAdapter() = default;
 		
 		// Methods
 		QAndroidJniObject getViewBinder();

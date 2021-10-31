@@ -5,42 +5,40 @@ namespace android::renderscript
 	// Fields
 	jdouble Double3::x()
 	{
-		return __thiz.getField<jdouble>(
+		return getField<jdouble>(
 			"x"
 		);
 	}
 	jdouble Double3::y()
 	{
-		return __thiz.getField<jdouble>(
+		return getField<jdouble>(
 			"y"
 		);
 	}
 	jdouble Double3::z()
 	{
-		return __thiz.getField<jdouble>(
+		return getField<jdouble>(
 			"z"
 		);
 	}
 	
-	Double3::Double3(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Double3::Double3(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Double3::Double3()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.renderscript.Double3",
 			"()V"
-		);
-	}
+		) {}
 	Double3::Double3(jdouble arg0, jdouble arg1, jdouble arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.renderscript.Double3",
 			"(DDD)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::renderscript

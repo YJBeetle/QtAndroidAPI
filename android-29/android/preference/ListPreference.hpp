@@ -24,13 +24,15 @@ namespace android::preference
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ListPreference(const char *className, const char *sig, Ts...agv) : android::preference::DialogPreference(className, sig, std::forward<Ts>(agv)...) {}
 		ListPreference(QAndroidJniObject obj);
+		
 		// Constructors
 		ListPreference(android::content::Context arg0);
 		ListPreference(android::content::Context arg0, __JniBaseClass arg1);
 		ListPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		ListPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
-		ListPreference() = default;
 		
 		// Methods
 		jint findIndexOfValue(jstring arg0);

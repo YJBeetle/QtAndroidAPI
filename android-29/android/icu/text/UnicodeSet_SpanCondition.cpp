@@ -36,7 +36,9 @@ namespace android::icu::text
 		);
 	}
 	
-	UnicodeSet_SpanCondition::UnicodeSet_SpanCondition(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UnicodeSet_SpanCondition::UnicodeSet_SpanCondition(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

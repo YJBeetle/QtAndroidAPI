@@ -66,15 +66,15 @@ namespace android::os
 		).object<jstring>();
 	}
 	
-	Build_VERSION::Build_VERSION(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Build_VERSION::Build_VERSION(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Build_VERSION::Build_VERSION()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.os.Build$VERSION",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::os

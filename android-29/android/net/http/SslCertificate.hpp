@@ -26,12 +26,14 @@ namespace android::net::http
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SslCertificate(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SslCertificate(QAndroidJniObject obj);
+		
 		// Constructors
 		SslCertificate(java::security::cert::X509Certificate arg0);
 		SslCertificate(jstring arg0, jstring arg1, jstring arg2, jstring arg3);
 		SslCertificate(jstring arg0, jstring arg1, java::util::Date arg2, java::util::Date arg3);
-		SslCertificate() = default;
 		
 		// Methods
 		static QAndroidJniObject restoreState(android::os::Bundle arg0);

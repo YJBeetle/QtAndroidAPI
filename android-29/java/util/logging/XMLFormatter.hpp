@@ -27,7 +27,10 @@ namespace java::util::logging
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit XMLFormatter(const char *className, const char *sig, Ts...agv) : java::util::logging::Formatter(className, sig, std::forward<Ts>(agv)...) {}
 		XMLFormatter(QAndroidJniObject obj);
+		
 		// Constructors
 		XMLFormatter();
 		

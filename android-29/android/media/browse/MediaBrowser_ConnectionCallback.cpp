@@ -4,34 +4,34 @@ namespace android::media::browse
 {
 	// Fields
 	
-	MediaBrowser_ConnectionCallback::MediaBrowser_ConnectionCallback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaBrowser_ConnectionCallback::MediaBrowser_ConnectionCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MediaBrowser_ConnectionCallback::MediaBrowser_ConnectionCallback()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.browse.MediaBrowser$ConnectionCallback",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void MediaBrowser_ConnectionCallback::onConnected()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onConnected",
 			"()V"
 		);
 	}
 	void MediaBrowser_ConnectionCallback::onConnectionFailed()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onConnectionFailed",
 			"()V"
 		);
 	}
 	void MediaBrowser_ConnectionCallback::onConnectionSuspended()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onConnectionSuspended",
 			"()V"
 		);

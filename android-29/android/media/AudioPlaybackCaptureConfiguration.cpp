@@ -5,41 +5,43 @@ namespace android::media
 {
 	// Fields
 	
-	AudioPlaybackCaptureConfiguration::AudioPlaybackCaptureConfiguration(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AudioPlaybackCaptureConfiguration::AudioPlaybackCaptureConfiguration(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jintArray AudioPlaybackCaptureConfiguration::getExcludeUids()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExcludeUids",
 			"()[I"
 		).object<jintArray>();
 	}
 	jintArray AudioPlaybackCaptureConfiguration::getExcludeUsages()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExcludeUsages",
 			"()[I"
 		).object<jintArray>();
 	}
 	jintArray AudioPlaybackCaptureConfiguration::getMatchingUids()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMatchingUids",
 			"()[I"
 		).object<jintArray>();
 	}
 	jintArray AudioPlaybackCaptureConfiguration::getMatchingUsages()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMatchingUsages",
 			"()[I"
 		).object<jintArray>();
 	}
 	QAndroidJniObject AudioPlaybackCaptureConfiguration::getMediaProjection()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMediaProjection",
 			"()Landroid/media/projection/MediaProjection;"
 		);

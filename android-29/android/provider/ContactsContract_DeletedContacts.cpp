@@ -20,7 +20,9 @@ namespace android::provider
 		);
 	}
 	
-	ContactsContract_DeletedContacts::ContactsContract_DeletedContacts(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ContactsContract_DeletedContacts::ContactsContract_DeletedContacts(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

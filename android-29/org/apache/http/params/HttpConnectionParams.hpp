@@ -10,9 +10,11 @@ namespace org::apache::http::params
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit HttpConnectionParams(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		HttpConnectionParams(QAndroidJniObject obj);
+		
 		// Constructors
-		HttpConnectionParams() = default;
 		
 		// Methods
 		static jint getConnectionTimeout(__JniBaseClass arg0);

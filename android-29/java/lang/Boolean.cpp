@@ -29,24 +29,22 @@ namespace java::lang
 		).object<jclass>();
 	}
 	
-	Boolean::Boolean(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Boolean::Boolean(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Boolean::Boolean(jboolean arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.lang.Boolean",
 			"(Z)V",
 			arg0
-		);
-	}
+		) {}
 	Boolean::Boolean(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.lang.Boolean",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jint Boolean::compare(jboolean arg0, jboolean arg1)
@@ -145,22 +143,22 @@ namespace java::lang
 	}
 	jboolean Boolean::booleanValue()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"booleanValue",
 			"()Z"
 		);
 	}
 	jint Boolean::compareTo(java::lang::Boolean arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Boolean;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint Boolean::compareTo(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -168,14 +166,14 @@ namespace java::lang
 	}
 	QAndroidJniObject Boolean::describeConstable()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"describeConstable",
 			"()Ljava/util/Optional;"
 		);
 	}
 	jboolean Boolean::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -183,14 +181,14 @@ namespace java::lang
 	}
 	jint Boolean::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring Boolean::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

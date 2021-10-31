@@ -4,20 +4,20 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	RecursiveTask::RecursiveTask(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	RecursiveTask::RecursiveTask(QAndroidJniObject obj) : java::util::concurrent::ForkJoinTask(obj) {}
+	
 	// Constructors
 	RecursiveTask::RecursiveTask()
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::concurrent::ForkJoinTask(
 			"java.util.concurrent.RecursiveTask",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jobject RecursiveTask::getRawResult()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRawResult",
 			"()Ljava/lang/Object;"
 		).object<jobject>();

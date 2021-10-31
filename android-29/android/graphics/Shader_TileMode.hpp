@@ -14,9 +14,11 @@ namespace android::graphics
 		static QAndroidJniObject MIRROR();
 		static QAndroidJniObject REPEAT();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Shader_TileMode(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		Shader_TileMode(QAndroidJniObject obj);
+		
 		// Constructors
-		Shader_TileMode() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

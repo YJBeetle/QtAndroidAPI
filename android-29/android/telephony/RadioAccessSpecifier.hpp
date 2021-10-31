@@ -15,10 +15,12 @@ namespace android::telephony
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit RadioAccessSpecifier(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		RadioAccessSpecifier(QAndroidJniObject obj);
+		
 		// Constructors
 		RadioAccessSpecifier(jint arg0, jintArray arg1, jintArray arg2);
-		RadioAccessSpecifier() = default;
 		
 		// Methods
 		jint describeContents();

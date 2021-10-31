@@ -65,20 +65,22 @@ namespace android::print
 		);
 	}
 	
-	PrintJobInfo::PrintJobInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PrintJobInfo::PrintJobInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint PrintJobInfo::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jint PrintJobInfo::getAdvancedIntOption(jstring arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAdvancedIntOption",
 			"(Ljava/lang/String;)I",
 			arg0
@@ -86,7 +88,7 @@ namespace android::print
 	}
 	jstring PrintJobInfo::getAdvancedStringOption(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAdvancedStringOption",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
@@ -94,63 +96,63 @@ namespace android::print
 	}
 	QAndroidJniObject PrintJobInfo::getAttributes()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAttributes",
 			"()Landroid/print/PrintAttributes;"
 		);
 	}
 	jint PrintJobInfo::getCopies()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCopies",
 			"()I"
 		);
 	}
 	jlong PrintJobInfo::getCreationTime()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getCreationTime",
 			"()J"
 		);
 	}
 	QAndroidJniObject PrintJobInfo::getId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getId",
 			"()Landroid/print/PrintJobId;"
 		);
 	}
 	jstring PrintJobInfo::getLabel()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jarray PrintJobInfo::getPages()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPages",
 			"()[Landroid/print/PageRange;"
 		).object<jarray>();
 	}
 	QAndroidJniObject PrintJobInfo::getPrinterId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPrinterId",
 			"()Landroid/print/PrinterId;"
 		);
 	}
 	jint PrintJobInfo::getState()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getState",
 			"()I"
 		);
 	}
 	jboolean PrintJobInfo::hasAdvancedOption(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasAdvancedOption",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -158,17 +160,17 @@ namespace android::print
 	}
 	jstring PrintJobInfo::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void PrintJobInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

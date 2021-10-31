@@ -5,29 +5,29 @@ namespace android::app
 {
 	// Fields
 	
-	Instrumentation_ActivityResult::Instrumentation_ActivityResult(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Instrumentation_ActivityResult::Instrumentation_ActivityResult(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Instrumentation_ActivityResult::Instrumentation_ActivityResult(jint arg0, android::content::Intent arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.app.Instrumentation$ActivityResult",
 			"(ILandroid/content/Intent;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
+			arg1.object()
+		) {}
 	
 	// Methods
 	jint Instrumentation_ActivityResult::getResultCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getResultCode",
 			"()I"
 		);
 	}
 	QAndroidJniObject Instrumentation_ActivityResult::getResultData()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getResultData",
 			"()Landroid/content/Intent;"
 		);

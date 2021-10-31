@@ -7,39 +7,39 @@ namespace android::app
 {
 	// Fields
 	
-	DirectAction_Builder::DirectAction_Builder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DirectAction_Builder::DirectAction_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	DirectAction_Builder::DirectAction_Builder(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.app.DirectAction$Builder",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject DirectAction_Builder::build()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"build",
 			"()Landroid/app/DirectAction;"
 		);
 	}
 	QAndroidJniObject DirectAction_Builder::setExtras(android::os::Bundle arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setExtras",
 			"(Landroid/os/Bundle;)Landroid/app/DirectAction$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject DirectAction_Builder::setLocusId(android::content::LocusId arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setLocusId",
 			"(Landroid/content/LocusId;)Landroid/app/DirectAction$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::app

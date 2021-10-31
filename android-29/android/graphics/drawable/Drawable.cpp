@@ -19,15 +19,15 @@ namespace android::graphics::drawable
 {
 	// Fields
 	
-	Drawable::Drawable(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Drawable::Drawable(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Drawable::Drawable()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.graphics.drawable.Drawable",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject Drawable::createFromPath(jstring arg0)
@@ -45,9 +45,9 @@ namespace android::graphics::drawable
 			"android.graphics.drawable.Drawable",
 			"createFromResourceStream",
 			"(Landroid/content/res/Resources;Landroid/util/TypedValue;Ljava/io/InputStream;Ljava/lang/String;)Landroid/graphics/drawable/Drawable;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
 			arg3
 		);
 	}
@@ -57,11 +57,11 @@ namespace android::graphics::drawable
 			"android.graphics.drawable.Drawable",
 			"createFromResourceStream",
 			"(Landroid/content/res/Resources;Landroid/util/TypedValue;Ljava/io/InputStream;Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/drawable/Drawable;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
 			arg3,
-			arg4.__jniObject().object()
+			arg4.object()
 		);
 	}
 	QAndroidJniObject Drawable::createFromStream(java::io::InputStream arg0, jstring arg1)
@@ -70,7 +70,7 @@ namespace android::graphics::drawable
 			"android.graphics.drawable.Drawable",
 			"createFromStream",
 			"(Ljava/io/InputStream;Ljava/lang/String;)Landroid/graphics/drawable/Drawable;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -80,8 +80,8 @@ namespace android::graphics::drawable
 			"android.graphics.drawable.Drawable",
 			"createFromXml",
 			"(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;)Landroid/graphics/drawable/Drawable;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject Drawable::createFromXml(android::content::res::Resources arg0, __JniBaseClass arg1, android::content::res::Resources_Theme arg2)
@@ -90,9 +90,9 @@ namespace android::graphics::drawable
 			"android.graphics.drawable.Drawable",
 			"createFromXml",
 			"(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject Drawable::createFromXmlInner(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2)
@@ -101,9 +101,9 @@ namespace android::graphics::drawable
 			"android.graphics.drawable.Drawable",
 			"createFromXmlInner",
 			"(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;)Landroid/graphics/drawable/Drawable;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject Drawable::createFromXmlInner(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2, android::content::res::Resources_Theme arg3)
@@ -112,10 +112,10 @@ namespace android::graphics::drawable
 			"android.graphics.drawable.Drawable",
 			"createFromXmlInner",
 			"(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
 		);
 	}
 	jint Drawable::resolveOpacity(jint arg0, jint arg1)
@@ -130,279 +130,279 @@ namespace android::graphics::drawable
 	}
 	void Drawable::applyTheme(android::content::res::Resources_Theme arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"applyTheme",
 			"(Landroid/content/res/Resources$Theme;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean Drawable::canApplyTheme()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"canApplyTheme",
 			"()Z"
 		);
 	}
 	void Drawable::clearColorFilter()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clearColorFilter",
 			"()V"
 		);
 	}
 	QAndroidJniObject Drawable::copyBounds()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"copyBounds",
 			"()Landroid/graphics/Rect;"
 		);
 	}
 	void Drawable::copyBounds(android::graphics::Rect arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"copyBounds",
 			"(Landroid/graphics/Rect;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Drawable::draw(android::graphics::Canvas arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"draw",
 			"(Landroid/graphics/Canvas;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint Drawable::getAlpha()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAlpha",
 			"()I"
 		);
 	}
 	QAndroidJniObject Drawable::getBounds()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBounds",
 			"()Landroid/graphics/Rect;"
 		);
 	}
 	QAndroidJniObject Drawable::getCallback()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCallback",
 			"()Landroid/graphics/drawable/Drawable$Callback;"
 		);
 	}
 	jint Drawable::getChangingConfigurations()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getChangingConfigurations",
 			"()I"
 		);
 	}
 	QAndroidJniObject Drawable::getColorFilter()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getColorFilter",
 			"()Landroid/graphics/ColorFilter;"
 		);
 	}
 	QAndroidJniObject Drawable::getConstantState()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getConstantState",
 			"()Landroid/graphics/drawable/Drawable$ConstantState;"
 		);
 	}
 	QAndroidJniObject Drawable::getCurrent()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCurrent",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
 	QAndroidJniObject Drawable::getDirtyBounds()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDirtyBounds",
 			"()Landroid/graphics/Rect;"
 		);
 	}
 	void Drawable::getHotspotBounds(android::graphics::Rect arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"getHotspotBounds",
 			"(Landroid/graphics/Rect;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint Drawable::getIntrinsicHeight()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getIntrinsicHeight",
 			"()I"
 		);
 	}
 	jint Drawable::getIntrinsicWidth()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getIntrinsicWidth",
 			"()I"
 		);
 	}
 	jint Drawable::getLayoutDirection()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLayoutDirection",
 			"()I"
 		);
 	}
 	jint Drawable::getLevel()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLevel",
 			"()I"
 		);
 	}
 	jint Drawable::getMinimumHeight()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMinimumHeight",
 			"()I"
 		);
 	}
 	jint Drawable::getMinimumWidth()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMinimumWidth",
 			"()I"
 		);
 	}
 	jint Drawable::getOpacity()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getOpacity",
 			"()I"
 		);
 	}
 	QAndroidJniObject Drawable::getOpticalInsets()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getOpticalInsets",
 			"()Landroid/graphics/Insets;"
 		);
 	}
 	void Drawable::getOutline(android::graphics::Outline arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"getOutline",
 			"(Landroid/graphics/Outline;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean Drawable::getPadding(android::graphics::Rect arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getPadding",
 			"(Landroid/graphics/Rect;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jintArray Drawable::getState()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getState",
 			"()[I"
 		).object<jintArray>();
 	}
 	QAndroidJniObject Drawable::getTransparentRegion()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTransparentRegion",
 			"()Landroid/graphics/Region;"
 		);
 	}
 	void Drawable::inflate(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"inflate",
 			"(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	void Drawable::inflate(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2, android::content::res::Resources_Theme arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"inflate",
 			"(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
 		);
 	}
 	void Drawable::invalidateSelf()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"invalidateSelf",
 			"()V"
 		);
 	}
 	jboolean Drawable::isAutoMirrored()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isAutoMirrored",
 			"()Z"
 		);
 	}
 	jboolean Drawable::isFilterBitmap()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isFilterBitmap",
 			"()Z"
 		);
 	}
 	jboolean Drawable::isProjected()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isProjected",
 			"()Z"
 		);
 	}
 	jboolean Drawable::isStateful()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isStateful",
 			"()Z"
 		);
 	}
 	jboolean Drawable::isVisible()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isVisible",
 			"()Z"
 		);
 	}
 	void Drawable::jumpToCurrentState()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"jumpToCurrentState",
 			"()V"
 		);
 	}
 	QAndroidJniObject Drawable::mutate()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"mutate",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
 	jboolean Drawable::onLayoutDirectionChanged(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onLayoutDirectionChanged",
 			"(I)Z",
 			arg0
@@ -410,16 +410,16 @@ namespace android::graphics::drawable
 	}
 	void Drawable::scheduleSelf(__JniBaseClass arg0, jlong arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"scheduleSelf",
 			"(Ljava/lang/Runnable;J)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void Drawable::setAlpha(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAlpha",
 			"(I)V",
 			arg0
@@ -427,7 +427,7 @@ namespace android::graphics::drawable
 	}
 	void Drawable::setAutoMirrored(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAutoMirrored",
 			"(Z)V",
 			arg0
@@ -435,15 +435,15 @@ namespace android::graphics::drawable
 	}
 	void Drawable::setBounds(android::graphics::Rect arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setBounds",
 			"(Landroid/graphics/Rect;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Drawable::setBounds(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setBounds",
 			"(IIII)V",
 			arg0,
@@ -454,15 +454,15 @@ namespace android::graphics::drawable
 	}
 	void Drawable::setCallback(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCallback",
 			"(Landroid/graphics/drawable/Drawable$Callback;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Drawable::setChangingConfigurations(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setChangingConfigurations",
 			"(I)V",
 			arg0
@@ -470,24 +470,24 @@ namespace android::graphics::drawable
 	}
 	void Drawable::setColorFilter(android::graphics::ColorFilter arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setColorFilter",
 			"(Landroid/graphics/ColorFilter;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Drawable::setColorFilter(jint arg0, android::graphics::PorterDuff_Mode arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setColorFilter",
 			"(ILandroid/graphics/PorterDuff$Mode;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void Drawable::setDither(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDither",
 			"(Z)V",
 			arg0
@@ -495,7 +495,7 @@ namespace android::graphics::drawable
 	}
 	void Drawable::setFilterBitmap(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFilterBitmap",
 			"(Z)V",
 			arg0
@@ -503,7 +503,7 @@ namespace android::graphics::drawable
 	}
 	void Drawable::setHotspot(jfloat arg0, jfloat arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setHotspot",
 			"(FF)V",
 			arg0,
@@ -512,7 +512,7 @@ namespace android::graphics::drawable
 	}
 	void Drawable::setHotspotBounds(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setHotspotBounds",
 			"(IIII)V",
 			arg0,
@@ -523,7 +523,7 @@ namespace android::graphics::drawable
 	}
 	jboolean Drawable::setLayoutDirection(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"setLayoutDirection",
 			"(I)Z",
 			arg0
@@ -531,7 +531,7 @@ namespace android::graphics::drawable
 	}
 	jboolean Drawable::setLevel(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"setLevel",
 			"(I)Z",
 			arg0
@@ -539,7 +539,7 @@ namespace android::graphics::drawable
 	}
 	jboolean Drawable::setState(jintArray arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"setState",
 			"([I)Z",
 			arg0
@@ -547,7 +547,7 @@ namespace android::graphics::drawable
 	}
 	void Drawable::setTint(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTint",
 			"(I)V",
 			arg0
@@ -555,31 +555,31 @@ namespace android::graphics::drawable
 	}
 	void Drawable::setTintBlendMode(android::graphics::BlendMode arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTintBlendMode",
 			"(Landroid/graphics/BlendMode;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Drawable::setTintList(android::content::res::ColorStateList arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTintList",
 			"(Landroid/content/res/ColorStateList;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Drawable::setTintMode(android::graphics::PorterDuff_Mode arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTintMode",
 			"(Landroid/graphics/PorterDuff$Mode;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean Drawable::setVisible(jboolean arg0, jboolean arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"setVisible",
 			"(ZZ)Z",
 			arg0,
@@ -588,10 +588,10 @@ namespace android::graphics::drawable
 	}
 	void Drawable::unscheduleSelf(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"unscheduleSelf",
 			"(Ljava/lang/Runnable;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::graphics::drawable

@@ -22,11 +22,13 @@ namespace java::lang
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ProcessBuilder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ProcessBuilder(QAndroidJniObject obj);
+		
 		// Constructors
 		ProcessBuilder(jarray arg0);
 		ProcessBuilder(__JniBaseClass arg0);
-		ProcessBuilder() = default;
 		
 		// Methods
 		static QAndroidJniObject startPipeline(__JniBaseClass arg0);

@@ -36,7 +36,9 @@ namespace java::nio::file
 		);
 	}
 	
-	StandardWatchEventKinds::StandardWatchEventKinds(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	StandardWatchEventKinds::StandardWatchEventKinds(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

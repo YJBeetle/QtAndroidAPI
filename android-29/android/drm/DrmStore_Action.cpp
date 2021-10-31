@@ -60,15 +60,15 @@ namespace android::drm
 		);
 	}
 	
-	DrmStore_Action::DrmStore_Action(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DrmStore_Action::DrmStore_Action(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	DrmStore_Action::DrmStore_Action()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.drm.DrmStore$Action",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::drm

@@ -653,7 +653,9 @@ namespace android::view
 		);
 	}
 	
-	MotionEvent::MotionEvent(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MotionEvent::MotionEvent(QAndroidJniObject obj) : android::view::InputEvent(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -690,7 +692,7 @@ namespace android::view
 			"android.view.MotionEvent",
 			"obtain",
 			"(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject MotionEvent::obtain(jlong arg0, jlong arg1, jint arg2, jfloat arg3, jfloat arg4, jint arg5)
@@ -797,12 +799,12 @@ namespace android::view
 			"android.view.MotionEvent",
 			"obtainNoHistory",
 			"(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MotionEvent::addBatch(jlong arg0, jarray arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addBatch",
 			"(J[Landroid/view/MotionEvent$PointerCoords;I)V",
 			arg0,
@@ -812,7 +814,7 @@ namespace android::view
 	}
 	void MotionEvent::addBatch(jlong arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jint arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addBatch",
 			"(JFFFFI)V",
 			arg0,
@@ -825,7 +827,7 @@ namespace android::view
 	}
 	jint MotionEvent::findPointerIndex(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"findPointerIndex",
 			"(I)I",
 			arg0
@@ -833,35 +835,35 @@ namespace android::view
 	}
 	jint MotionEvent::getAction()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAction",
 			"()I"
 		);
 	}
 	jint MotionEvent::getActionButton()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getActionButton",
 			"()I"
 		);
 	}
 	jint MotionEvent::getActionIndex()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getActionIndex",
 			"()I"
 		);
 	}
 	jint MotionEvent::getActionMasked()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getActionMasked",
 			"()I"
 		);
 	}
 	jfloat MotionEvent::getAxisValue(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getAxisValue",
 			"(I)F",
 			arg0
@@ -869,7 +871,7 @@ namespace android::view
 	}
 	jfloat MotionEvent::getAxisValue(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getAxisValue",
 			"(II)F",
 			arg0,
@@ -878,56 +880,56 @@ namespace android::view
 	}
 	jint MotionEvent::getButtonState()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getButtonState",
 			"()I"
 		);
 	}
 	jint MotionEvent::getClassification()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getClassification",
 			"()I"
 		);
 	}
 	jint MotionEvent::getDeviceId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDeviceId",
 			"()I"
 		);
 	}
 	jlong MotionEvent::getDownTime()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getDownTime",
 			"()J"
 		);
 	}
 	jint MotionEvent::getEdgeFlags()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getEdgeFlags",
 			"()I"
 		);
 	}
 	jlong MotionEvent::getEventTime()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getEventTime",
 			"()J"
 		);
 	}
 	jint MotionEvent::getFlags()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getFlags",
 			"()I"
 		);
 	}
 	jfloat MotionEvent::getHistoricalAxisValue(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getHistoricalAxisValue",
 			"(II)F",
 			arg0,
@@ -936,7 +938,7 @@ namespace android::view
 	}
 	jfloat MotionEvent::getHistoricalAxisValue(jint arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getHistoricalAxisValue",
 			"(III)F",
 			arg0,
@@ -946,7 +948,7 @@ namespace android::view
 	}
 	jlong MotionEvent::getHistoricalEventTime(jint arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getHistoricalEventTime",
 			"(I)J",
 			arg0
@@ -954,7 +956,7 @@ namespace android::view
 	}
 	jfloat MotionEvent::getHistoricalOrientation(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getHistoricalOrientation",
 			"(I)F",
 			arg0
@@ -962,7 +964,7 @@ namespace android::view
 	}
 	jfloat MotionEvent::getHistoricalOrientation(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getHistoricalOrientation",
 			"(II)F",
 			arg0,
@@ -971,17 +973,17 @@ namespace android::view
 	}
 	void MotionEvent::getHistoricalPointerCoords(jint arg0, jint arg1, android::view::MotionEvent_PointerCoords arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"getHistoricalPointerCoords",
 			"(IILandroid/view/MotionEvent$PointerCoords;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	jfloat MotionEvent::getHistoricalPressure(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getHistoricalPressure",
 			"(I)F",
 			arg0
@@ -989,7 +991,7 @@ namespace android::view
 	}
 	jfloat MotionEvent::getHistoricalPressure(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getHistoricalPressure",
 			"(II)F",
 			arg0,
@@ -998,7 +1000,7 @@ namespace android::view
 	}
 	jfloat MotionEvent::getHistoricalSize(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getHistoricalSize",
 			"(I)F",
 			arg0
@@ -1006,7 +1008,7 @@ namespace android::view
 	}
 	jfloat MotionEvent::getHistoricalSize(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getHistoricalSize",
 			"(II)F",
 			arg0,
@@ -1015,7 +1017,7 @@ namespace android::view
 	}
 	jfloat MotionEvent::getHistoricalToolMajor(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getHistoricalToolMajor",
 			"(I)F",
 			arg0
@@ -1023,7 +1025,7 @@ namespace android::view
 	}
 	jfloat MotionEvent::getHistoricalToolMajor(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getHistoricalToolMajor",
 			"(II)F",
 			arg0,
@@ -1032,7 +1034,7 @@ namespace android::view
 	}
 	jfloat MotionEvent::getHistoricalToolMinor(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getHistoricalToolMinor",
 			"(I)F",
 			arg0
@@ -1040,7 +1042,7 @@ namespace android::view
 	}
 	jfloat MotionEvent::getHistoricalToolMinor(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getHistoricalToolMinor",
 			"(II)F",
 			arg0,
@@ -1049,7 +1051,7 @@ namespace android::view
 	}
 	jfloat MotionEvent::getHistoricalTouchMajor(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getHistoricalTouchMajor",
 			"(I)F",
 			arg0
@@ -1057,7 +1059,7 @@ namespace android::view
 	}
 	jfloat MotionEvent::getHistoricalTouchMajor(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getHistoricalTouchMajor",
 			"(II)F",
 			arg0,
@@ -1066,7 +1068,7 @@ namespace android::view
 	}
 	jfloat MotionEvent::getHistoricalTouchMinor(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getHistoricalTouchMinor",
 			"(I)F",
 			arg0
@@ -1074,7 +1076,7 @@ namespace android::view
 	}
 	jfloat MotionEvent::getHistoricalTouchMinor(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getHistoricalTouchMinor",
 			"(II)F",
 			arg0,
@@ -1083,7 +1085,7 @@ namespace android::view
 	}
 	jfloat MotionEvent::getHistoricalX(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getHistoricalX",
 			"(I)F",
 			arg0
@@ -1091,7 +1093,7 @@ namespace android::view
 	}
 	jfloat MotionEvent::getHistoricalX(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getHistoricalX",
 			"(II)F",
 			arg0,
@@ -1100,7 +1102,7 @@ namespace android::view
 	}
 	jfloat MotionEvent::getHistoricalY(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getHistoricalY",
 			"(I)F",
 			arg0
@@ -1108,7 +1110,7 @@ namespace android::view
 	}
 	jfloat MotionEvent::getHistoricalY(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getHistoricalY",
 			"(II)F",
 			arg0,
@@ -1117,28 +1119,28 @@ namespace android::view
 	}
 	jint MotionEvent::getHistorySize()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getHistorySize",
 			"()I"
 		);
 	}
 	jint MotionEvent::getMetaState()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMetaState",
 			"()I"
 		);
 	}
 	jfloat MotionEvent::getOrientation()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getOrientation",
 			"()F"
 		);
 	}
 	jfloat MotionEvent::getOrientation(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getOrientation",
 			"(I)F",
 			arg0
@@ -1146,23 +1148,23 @@ namespace android::view
 	}
 	void MotionEvent::getPointerCoords(jint arg0, android::view::MotionEvent_PointerCoords arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"getPointerCoords",
 			"(ILandroid/view/MotionEvent$PointerCoords;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jint MotionEvent::getPointerCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPointerCount",
 			"()I"
 		);
 	}
 	jint MotionEvent::getPointerId(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPointerId",
 			"(I)I",
 			arg0
@@ -1170,23 +1172,23 @@ namespace android::view
 	}
 	void MotionEvent::getPointerProperties(jint arg0, android::view::MotionEvent_PointerProperties arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"getPointerProperties",
 			"(ILandroid/view/MotionEvent$PointerProperties;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jfloat MotionEvent::getPressure()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getPressure",
 			"()F"
 		);
 	}
 	jfloat MotionEvent::getPressure(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getPressure",
 			"(I)F",
 			arg0
@@ -1194,14 +1196,14 @@ namespace android::view
 	}
 	jfloat MotionEvent::getRawX()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getRawX",
 			"()F"
 		);
 	}
 	jfloat MotionEvent::getRawX(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getRawX",
 			"(I)F",
 			arg0
@@ -1209,14 +1211,14 @@ namespace android::view
 	}
 	jfloat MotionEvent::getRawY()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getRawY",
 			"()F"
 		);
 	}
 	jfloat MotionEvent::getRawY(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getRawY",
 			"(I)F",
 			arg0
@@ -1224,14 +1226,14 @@ namespace android::view
 	}
 	jfloat MotionEvent::getSize()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getSize",
 			"()F"
 		);
 	}
 	jfloat MotionEvent::getSize(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getSize",
 			"(I)F",
 			arg0
@@ -1239,21 +1241,21 @@ namespace android::view
 	}
 	jint MotionEvent::getSource()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSource",
 			"()I"
 		);
 	}
 	jfloat MotionEvent::getToolMajor()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getToolMajor",
 			"()F"
 		);
 	}
 	jfloat MotionEvent::getToolMajor(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getToolMajor",
 			"(I)F",
 			arg0
@@ -1261,14 +1263,14 @@ namespace android::view
 	}
 	jfloat MotionEvent::getToolMinor()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getToolMinor",
 			"()F"
 		);
 	}
 	jfloat MotionEvent::getToolMinor(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getToolMinor",
 			"(I)F",
 			arg0
@@ -1276,7 +1278,7 @@ namespace android::view
 	}
 	jint MotionEvent::getToolType(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getToolType",
 			"(I)I",
 			arg0
@@ -1284,14 +1286,14 @@ namespace android::view
 	}
 	jfloat MotionEvent::getTouchMajor()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getTouchMajor",
 			"()F"
 		);
 	}
 	jfloat MotionEvent::getTouchMajor(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getTouchMajor",
 			"(I)F",
 			arg0
@@ -1299,14 +1301,14 @@ namespace android::view
 	}
 	jfloat MotionEvent::getTouchMinor()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getTouchMinor",
 			"()F"
 		);
 	}
 	jfloat MotionEvent::getTouchMinor(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getTouchMinor",
 			"(I)F",
 			arg0
@@ -1314,14 +1316,14 @@ namespace android::view
 	}
 	jfloat MotionEvent::getX()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getX",
 			"()F"
 		);
 	}
 	jfloat MotionEvent::getX(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getX",
 			"(I)F",
 			arg0
@@ -1329,21 +1331,21 @@ namespace android::view
 	}
 	jfloat MotionEvent::getXPrecision()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getXPrecision",
 			"()F"
 		);
 	}
 	jfloat MotionEvent::getY()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getY",
 			"()F"
 		);
 	}
 	jfloat MotionEvent::getY(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getY",
 			"(I)F",
 			arg0
@@ -1351,14 +1353,14 @@ namespace android::view
 	}
 	jfloat MotionEvent::getYPrecision()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getYPrecision",
 			"()F"
 		);
 	}
 	jboolean MotionEvent::isButtonPressed(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isButtonPressed",
 			"(I)Z",
 			arg0
@@ -1366,7 +1368,7 @@ namespace android::view
 	}
 	void MotionEvent::offsetLocation(jfloat arg0, jfloat arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"offsetLocation",
 			"(FF)V",
 			arg0,
@@ -1375,14 +1377,14 @@ namespace android::view
 	}
 	void MotionEvent::recycle()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"recycle",
 			"()V"
 		);
 	}
 	void MotionEvent::setAction(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAction",
 			"(I)V",
 			arg0
@@ -1390,7 +1392,7 @@ namespace android::view
 	}
 	void MotionEvent::setEdgeFlags(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setEdgeFlags",
 			"(I)V",
 			arg0
@@ -1398,7 +1400,7 @@ namespace android::view
 	}
 	void MotionEvent::setLocation(jfloat arg0, jfloat arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLocation",
 			"(FF)V",
 			arg0,
@@ -1407,7 +1409,7 @@ namespace android::view
 	}
 	void MotionEvent::setSource(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSource",
 			"(I)V",
 			arg0
@@ -1415,25 +1417,25 @@ namespace android::view
 	}
 	jstring MotionEvent::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void MotionEvent::transform(android::graphics::Matrix arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"transform",
 			"(Landroid/graphics/Matrix;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MotionEvent::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

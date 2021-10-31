@@ -7,51 +7,47 @@ namespace android::hardware::biometrics
 {
 	// Fields
 	
-	BiometricPrompt_CryptoObject::BiometricPrompt_CryptoObject(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BiometricPrompt_CryptoObject::BiometricPrompt_CryptoObject(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	BiometricPrompt_CryptoObject::BiometricPrompt_CryptoObject(java::security::Signature arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.hardware.biometrics.BiometricPrompt$CryptoObject",
 			"(Ljava/security/Signature;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	BiometricPrompt_CryptoObject::BiometricPrompt_CryptoObject(javax::crypto::Cipher arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.hardware.biometrics.BiometricPrompt$CryptoObject",
 			"(Ljavax/crypto/Cipher;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	BiometricPrompt_CryptoObject::BiometricPrompt_CryptoObject(javax::crypto::Mac arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.hardware.biometrics.BiometricPrompt$CryptoObject",
 			"(Ljavax/crypto/Mac;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject BiometricPrompt_CryptoObject::getCipher()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCipher",
 			"()Ljavax/crypto/Cipher;"
 		);
 	}
 	QAndroidJniObject BiometricPrompt_CryptoObject::getMac()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMac",
 			"()Ljavax/crypto/Mac;"
 		);
 	}
 	QAndroidJniObject BiometricPrompt_CryptoObject::getSignature()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSignature",
 			"()Ljava/security/Signature;"
 		);

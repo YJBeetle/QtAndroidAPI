@@ -24,9 +24,11 @@ namespace android::app::slice
 		static jstring CATEGORY_SLICE();
 		static jstring SLICE_METADATA_KEY();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SliceManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SliceManager(QAndroidJniObject obj);
+		
 		// Constructors
-		SliceManager() = default;
 		
 		// Methods
 		QAndroidJniObject bindSlice(android::content::Intent arg0, __JniBaseClass arg1);

@@ -15,15 +15,15 @@ namespace android::service::vr
 		).object<jstring>();
 	}
 	
-	VrListenerService::VrListenerService(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	VrListenerService::VrListenerService(QAndroidJniObject obj) : android::app::Service(obj) {}
+	
 	// Constructors
 	VrListenerService::VrListenerService()
-	{
-		__thiz = QAndroidJniObject(
+		: android::app::Service(
 			"android.service.vr.VrListenerService",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean VrListenerService::isVrModePackageEnabled(android::content::Context arg0, android::content::ComponentName arg1)
@@ -32,24 +32,24 @@ namespace android::service::vr
 			"android.service.vr.VrListenerService",
 			"isVrModePackageEnabled",
 			"(Landroid/content/Context;Landroid/content/ComponentName;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject VrListenerService::onBind(android::content::Intent arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onBind",
 			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void VrListenerService::onCurrentVrActivityChanged(android::content::ComponentName arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onCurrentVrActivityChanged",
 			"(Landroid/content/ComponentName;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::service::vr

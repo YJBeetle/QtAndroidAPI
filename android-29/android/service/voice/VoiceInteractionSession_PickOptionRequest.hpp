@@ -19,9 +19,11 @@ namespace android::service::voice
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit VoiceInteractionSession_PickOptionRequest(const char *className, const char *sig, Ts...agv) : android::service::voice::VoiceInteractionSession_Request(className, sig, std::forward<Ts>(agv)...) {}
 		VoiceInteractionSession_PickOptionRequest(QAndroidJniObject obj);
+		
 		// Constructors
-		VoiceInteractionSession_PickOptionRequest() = default;
 		
 		// Methods
 		jarray getOptions();

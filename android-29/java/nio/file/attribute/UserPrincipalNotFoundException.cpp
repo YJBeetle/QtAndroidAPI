@@ -4,21 +4,21 @@ namespace java::nio::file::attribute
 {
 	// Fields
 	
-	UserPrincipalNotFoundException::UserPrincipalNotFoundException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UserPrincipalNotFoundException::UserPrincipalNotFoundException(QAndroidJniObject obj) : java::io::IOException(obj) {}
+	
 	// Constructors
 	UserPrincipalNotFoundException::UserPrincipalNotFoundException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::IOException(
 			"java.nio.file.attribute.UserPrincipalNotFoundException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring UserPrincipalNotFoundException::getName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		).object<jstring>();

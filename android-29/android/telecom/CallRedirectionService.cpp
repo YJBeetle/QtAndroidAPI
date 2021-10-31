@@ -15,64 +15,64 @@ namespace android::telecom
 		).object<jstring>();
 	}
 	
-	CallRedirectionService::CallRedirectionService(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CallRedirectionService::CallRedirectionService(QAndroidJniObject obj) : android::app::Service(obj) {}
+	
 	// Constructors
 	CallRedirectionService::CallRedirectionService()
-	{
-		__thiz = QAndroidJniObject(
+		: android::app::Service(
 			"android.telecom.CallRedirectionService",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void CallRedirectionService::cancelCall()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"cancelCall",
 			"()V"
 		);
 	}
 	QAndroidJniObject CallRedirectionService::onBind(android::content::Intent arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onBind",
 			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void CallRedirectionService::onPlaceCall(android::net::Uri arg0, android::telecom::PhoneAccountHandle arg1, jboolean arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onPlaceCall",
 			"(Landroid/net/Uri;Landroid/telecom/PhoneAccountHandle;Z)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
 	jboolean CallRedirectionService::onUnbind(android::content::Intent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onUnbind",
 			"(Landroid/content/Intent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void CallRedirectionService::placeCallUnmodified()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"placeCallUnmodified",
 			"()V"
 		);
 	}
 	void CallRedirectionService::redirectCall(android::net::Uri arg0, android::telecom::PhoneAccountHandle arg1, jboolean arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"redirectCall",
 			"(Landroid/net/Uri;Landroid/telecom/PhoneAccountHandle;Z)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}

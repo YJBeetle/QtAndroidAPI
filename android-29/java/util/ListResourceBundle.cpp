@@ -4,27 +4,27 @@ namespace java::util
 {
 	// Fields
 	
-	ListResourceBundle::ListResourceBundle(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ListResourceBundle::ListResourceBundle(QAndroidJniObject obj) : java::util::ResourceBundle(obj) {}
+	
 	// Constructors
 	ListResourceBundle::ListResourceBundle()
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::ResourceBundle(
 			"java.util.ListResourceBundle",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject ListResourceBundle::getKeys()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getKeys",
 			"()Ljava/util/Enumeration;"
 		);
 	}
 	jobject ListResourceBundle::handleGetObject(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"handleGetObject",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
 			arg0

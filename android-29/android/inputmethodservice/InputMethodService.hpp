@@ -94,7 +94,10 @@ namespace android::inputmethodservice
 		static jint BACK_DISPOSITION_WILL_DISMISS();
 		static jint BACK_DISPOSITION_WILL_NOT_DISMISS();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit InputMethodService(const char *className, const char *sig, Ts...agv) : android::inputmethodservice::AbstractInputMethodService(className, sig, std::forward<Ts>(agv)...) {}
 		InputMethodService(QAndroidJniObject obj);
+		
 		// Constructors
 		InputMethodService();
 		

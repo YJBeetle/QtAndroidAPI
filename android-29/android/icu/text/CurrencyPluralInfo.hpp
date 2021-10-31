@@ -22,7 +22,10 @@ namespace android::icu::text
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CurrencyPluralInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		CurrencyPluralInfo(QAndroidJniObject obj);
+		
 		// Constructors
 		CurrencyPluralInfo();
 		CurrencyPluralInfo(android::icu::util::ULocale arg0);

@@ -18,7 +18,10 @@ namespace android::net::wifi
 		static jint ERROR_NO_CHANNEL();
 		static jint ERROR_TETHERING_DISALLOWED();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit WifiManager_LocalOnlyHotspotCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		WifiManager_LocalOnlyHotspotCallback(QAndroidJniObject obj);
+		
 		// Constructors
 		WifiManager_LocalOnlyHotspotCallback();
 		

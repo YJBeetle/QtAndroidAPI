@@ -15,11 +15,13 @@ namespace java::io
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SequenceInputStream(const char *className, const char *sig, Ts...agv) : java::io::InputStream(className, sig, std::forward<Ts>(agv)...) {}
 		SequenceInputStream(QAndroidJniObject obj);
+		
 		// Constructors
 		SequenceInputStream(__JniBaseClass arg0);
 		SequenceInputStream(java::io::InputStream arg0, java::io::InputStream arg1);
-		SequenceInputStream() = default;
 		
 		// Methods
 		jint available();

@@ -19,7 +19,10 @@ namespace java::security
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AllPermission(const char *className, const char *sig, Ts...agv) : java::security::Permission(className, sig, std::forward<Ts>(agv)...) {}
 		AllPermission(QAndroidJniObject obj);
+		
 		// Constructors
 		AllPermission();
 		AllPermission(jstring arg0, jstring arg1);

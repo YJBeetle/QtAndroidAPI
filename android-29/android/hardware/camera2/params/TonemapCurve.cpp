@@ -47,23 +47,23 @@ namespace android::hardware::camera2::params
 		);
 	}
 	
-	TonemapCurve::TonemapCurve(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TonemapCurve::TonemapCurve(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	TonemapCurve::TonemapCurve(jfloatArray arg0, jfloatArray arg1, jfloatArray arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.hardware.camera2.params.TonemapCurve",
 			"([F[F[F)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	void TonemapCurve::copyColorCurve(jint arg0, jfloatArray arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"copyColorCurve",
 			"(I[FI)V",
 			arg0,
@@ -73,7 +73,7 @@ namespace android::hardware::camera2::params
 	}
 	jboolean TonemapCurve::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -81,7 +81,7 @@ namespace android::hardware::camera2::params
 	}
 	QAndroidJniObject TonemapCurve::getPoint(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPoint",
 			"(II)Landroid/graphics/PointF;",
 			arg0,
@@ -90,7 +90,7 @@ namespace android::hardware::camera2::params
 	}
 	jint TonemapCurve::getPointCount(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPointCount",
 			"(I)I",
 			arg0
@@ -98,14 +98,14 @@ namespace android::hardware::camera2::params
 	}
 	jint TonemapCurve::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring TonemapCurve::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

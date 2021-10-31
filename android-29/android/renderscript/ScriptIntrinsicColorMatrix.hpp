@@ -45,9 +45,11 @@ namespace android::renderscript
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ScriptIntrinsicColorMatrix(const char *className, const char *sig, Ts...agv) : android::renderscript::ScriptIntrinsic(className, sig, std::forward<Ts>(agv)...) {}
 		ScriptIntrinsicColorMatrix(QAndroidJniObject obj);
+		
 		// Constructors
-		ScriptIntrinsicColorMatrix() = default;
 		
 		// Methods
 		static QAndroidJniObject create(android::renderscript::RenderScript arg0);

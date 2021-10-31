@@ -31,7 +31,9 @@ namespace java::time
 		);
 	}
 	
-	ZoneOffset::ZoneOffset(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ZoneOffset::ZoneOffset(QAndroidJniObject obj) : java::time::ZoneId(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -41,7 +43,7 @@ namespace java::time
 			"java.time.ZoneOffset",
 			"from",
 			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/ZoneOffset;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ZoneOffset::of(jstring arg0)
@@ -94,15 +96,15 @@ namespace java::time
 	}
 	QAndroidJniObject ZoneOffset::adjustInto(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"adjustInto",
 			"(Ljava/time/temporal/Temporal;)Ljava/time/temporal/Temporal;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint ZoneOffset::compareTo(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -110,15 +112,15 @@ namespace java::time
 	}
 	jint ZoneOffset::compareTo(java::time::ZoneOffset arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/time/ZoneOffset;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean ZoneOffset::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -126,75 +128,75 @@ namespace java::time
 	}
 	jint ZoneOffset::get(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"get",
 			"(Ljava/time/temporal/TemporalField;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring ZoneOffset::getId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jlong ZoneOffset::getLong(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getLong",
 			"(Ljava/time/temporal/TemporalField;)J",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ZoneOffset::getRules()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRules",
 			"()Ljava/time/zone/ZoneRules;"
 		);
 	}
 	jint ZoneOffset::getTotalSeconds()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTotalSeconds",
 			"()I"
 		);
 	}
 	jint ZoneOffset::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean ZoneOffset::isSupported(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isSupported",
 			"(Ljava/time/temporal/TemporalField;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jobject ZoneOffset::query(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"query",
 			"(Ljava/time/temporal/TemporalQuery;)Ljava/lang/Object;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jobject>();
 	}
 	QAndroidJniObject ZoneOffset::range(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"range",
 			"(Ljava/time/temporal/TemporalField;)Ljava/time/temporal/ValueRange;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring ZoneOffset::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

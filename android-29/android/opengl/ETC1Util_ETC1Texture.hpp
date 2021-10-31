@@ -14,10 +14,12 @@ namespace android::opengl
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ETC1Util_ETC1Texture(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ETC1Util_ETC1Texture(QAndroidJniObject obj);
+		
 		// Constructors
 		ETC1Util_ETC1Texture(jint arg0, jint arg1, java::nio::ByteBuffer arg2);
-		ETC1Util_ETC1Texture() = default;
 		
 		// Methods
 		QAndroidJniObject getData();

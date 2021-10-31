@@ -5,20 +5,20 @@ namespace java::security
 {
 	// Fields
 	
-	MessageDigestSpi::MessageDigestSpi(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MessageDigestSpi::MessageDigestSpi(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MessageDigestSpi::MessageDigestSpi()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.security.MessageDigestSpi",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jobject MessageDigestSpi::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		).object<jobject>();

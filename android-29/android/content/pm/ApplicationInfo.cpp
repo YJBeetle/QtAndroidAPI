@@ -304,213 +304,211 @@ namespace android::content::pm
 	}
 	jstring ApplicationInfo::appComponentFactory()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"appComponentFactory",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring ApplicationInfo::backupAgentName()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"backupAgentName",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint ApplicationInfo::category()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"category"
 		);
 	}
 	jstring ApplicationInfo::className()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"className",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint ApplicationInfo::compatibleWidthLimitDp()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"compatibleWidthLimitDp"
 		);
 	}
 	jstring ApplicationInfo::dataDir()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"dataDir",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint ApplicationInfo::descriptionRes()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"descriptionRes"
 		);
 	}
 	jstring ApplicationInfo::deviceProtectedDataDir()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"deviceProtectedDataDir",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jboolean ApplicationInfo::enabled()
 	{
-		return __thiz.getField<jboolean>(
+		return getField<jboolean>(
 			"enabled"
 		);
 	}
 	jint ApplicationInfo::flags()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"flags"
 		);
 	}
 	jint ApplicationInfo::largestWidthLimitDp()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"largestWidthLimitDp"
 		);
 	}
 	jstring ApplicationInfo::manageSpaceActivityName()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"manageSpaceActivityName",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint ApplicationInfo::minSdkVersion()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"minSdkVersion"
 		);
 	}
 	jstring ApplicationInfo::nativeLibraryDir()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"nativeLibraryDir",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring ApplicationInfo::permission()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"permission",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring ApplicationInfo::processName()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"processName",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring ApplicationInfo::publicSourceDir()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"publicSourceDir",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint ApplicationInfo::requiresSmallestWidthDp()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"requiresSmallestWidthDp"
 		);
 	}
 	jarray ApplicationInfo::sharedLibraryFiles()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"sharedLibraryFiles",
 			"[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	jstring ApplicationInfo::sourceDir()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"sourceDir",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jarray ApplicationInfo::splitNames()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"splitNames",
 			"[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	jarray ApplicationInfo::splitPublicSourceDirs()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"splitPublicSourceDirs",
 			"[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	jarray ApplicationInfo::splitSourceDirs()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"splitSourceDirs",
 			"[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	QAndroidJniObject ApplicationInfo::storageUuid()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"storageUuid",
 			"Ljava/util/UUID;"
 		);
 	}
 	jint ApplicationInfo::targetSdkVersion()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"targetSdkVersion"
 		);
 	}
 	jstring ApplicationInfo::taskAffinity()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"taskAffinity",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint ApplicationInfo::theme()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"theme"
 		);
 	}
 	jint ApplicationInfo::uiOptions()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"uiOptions"
 		);
 	}
 	jint ApplicationInfo::uid()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"uid"
 		);
 	}
 	
-	ApplicationInfo::ApplicationInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ApplicationInfo::ApplicationInfo(QAndroidJniObject obj) : android::content::pm::PackageItemInfo(obj) {}
+	
 	// Constructors
 	ApplicationInfo::ApplicationInfo()
-	{
-		__thiz = QAndroidJniObject(
+		: android::content::pm::PackageItemInfo(
 			"android.content.pm.ApplicationInfo",
 			"()V"
-		);
-	}
+		) {}
 	ApplicationInfo::ApplicationInfo(android::content::pm::ApplicationInfo &arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::content::pm::PackageItemInfo(
 			"android.content.pm.ApplicationInfo",
 			"(Landroid/content/pm/ApplicationInfo;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jstring ApplicationInfo::getCategoryTitle(android::content::Context arg0, jint arg1)
@@ -519,68 +517,68 @@ namespace android::content::pm
 			"android.content.pm.ApplicationInfo",
 			"getCategoryTitle",
 			"(Landroid/content/Context;I)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		).object<jstring>();
 	}
 	jint ApplicationInfo::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	void ApplicationInfo::dump(__JniBaseClass arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"dump",
 			"(Landroid/util/Printer;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	jboolean ApplicationInfo::isProfileableByShell()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isProfileableByShell",
 			"()Z"
 		);
 	}
 	jboolean ApplicationInfo::isResourceOverlay()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isResourceOverlay",
 			"()Z"
 		);
 	}
 	jboolean ApplicationInfo::isVirtualPreload()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isVirtualPreload",
 			"()Z"
 		);
 	}
 	jstring ApplicationInfo::loadDescription(android::content::pm::PackageManager arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"loadDescription",
 			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jstring ApplicationInfo::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void ApplicationInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

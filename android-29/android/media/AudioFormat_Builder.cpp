@@ -5,35 +5,33 @@ namespace android::media
 {
 	// Fields
 	
-	AudioFormat_Builder::AudioFormat_Builder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AudioFormat_Builder::AudioFormat_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	AudioFormat_Builder::AudioFormat_Builder()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.AudioFormat$Builder",
 			"()V"
-		);
-	}
+		) {}
 	AudioFormat_Builder::AudioFormat_Builder(android::media::AudioFormat arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.AudioFormat$Builder",
 			"(Landroid/media/AudioFormat;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject AudioFormat_Builder::build()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"build",
 			"()Landroid/media/AudioFormat;"
 		);
 	}
 	QAndroidJniObject AudioFormat_Builder::setChannelIndexMask(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setChannelIndexMask",
 			"(I)Landroid/media/AudioFormat$Builder;",
 			arg0
@@ -41,7 +39,7 @@ namespace android::media
 	}
 	QAndroidJniObject AudioFormat_Builder::setChannelMask(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setChannelMask",
 			"(I)Landroid/media/AudioFormat$Builder;",
 			arg0
@@ -49,7 +47,7 @@ namespace android::media
 	}
 	QAndroidJniObject AudioFormat_Builder::setEncoding(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setEncoding",
 			"(I)Landroid/media/AudioFormat$Builder;",
 			arg0
@@ -57,7 +55,7 @@ namespace android::media
 	}
 	QAndroidJniObject AudioFormat_Builder::setSampleRate(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setSampleRate",
 			"(I)Landroid/media/AudioFormat$Builder;",
 			arg0

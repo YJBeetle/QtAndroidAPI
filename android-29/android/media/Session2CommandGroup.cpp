@@ -14,35 +14,37 @@ namespace android::media
 		);
 	}
 	
-	Session2CommandGroup::Session2CommandGroup(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Session2CommandGroup::Session2CommandGroup(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint Session2CommandGroup::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	QAndroidJniObject Session2CommandGroup::getCommands()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCommands",
 			"()Ljava/util/Set;"
 		);
 	}
 	jboolean Session2CommandGroup::hasCommand(android::media::Session2Command arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasCommand",
 			"(Landroid/media/Session2Command;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean Session2CommandGroup::hasCommand(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasCommand",
 			"(I)Z",
 			arg0
@@ -50,10 +52,10 @@ namespace android::media
 	}
 	void Session2CommandGroup::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

@@ -8,13 +8,15 @@ namespace android::graphics::fonts
 {
 	// Fields
 	
-	Font::Font(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Font::Font(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jboolean Font::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -22,56 +24,56 @@ namespace android::graphics::fonts
 	}
 	jarray Font::getAxes()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAxes",
 			"()[Landroid/graphics/fonts/FontVariationAxis;"
 		).object<jarray>();
 	}
 	QAndroidJniObject Font::getBuffer()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBuffer",
 			"()Ljava/nio/ByteBuffer;"
 		);
 	}
 	QAndroidJniObject Font::getFile()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFile",
 			"()Ljava/io/File;"
 		);
 	}
 	QAndroidJniObject Font::getLocaleList()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLocaleList",
 			"()Landroid/os/LocaleList;"
 		);
 	}
 	QAndroidJniObject Font::getStyle()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getStyle",
 			"()Landroid/graphics/fonts/FontStyle;"
 		);
 	}
 	jint Font::getTtcIndex()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTtcIndex",
 			"()I"
 		);
 	}
 	jint Font::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring Font::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

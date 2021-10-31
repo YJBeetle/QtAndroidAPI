@@ -10,9 +10,11 @@ namespace android::sax
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Element(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Element(QAndroidJniObject obj);
+		
 		// Constructors
-		Element() = default;
 		
 		// Methods
 		QAndroidJniObject getChild(jstring arg0);

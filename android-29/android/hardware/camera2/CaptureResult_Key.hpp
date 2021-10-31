@@ -10,10 +10,12 @@ namespace android::hardware::camera2
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CaptureResult_Key(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		CaptureResult_Key(QAndroidJniObject obj);
+		
 		// Constructors
 		CaptureResult_Key(jstring arg0, jclass arg1);
-		CaptureResult_Key() = default;
 		
 		// Methods
 		jboolean equals(jobject arg0);

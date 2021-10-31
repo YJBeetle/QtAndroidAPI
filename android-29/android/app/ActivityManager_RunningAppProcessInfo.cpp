@@ -127,110 +127,108 @@ namespace android::app
 	}
 	jint ActivityManager_RunningAppProcessInfo::importance()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"importance"
 		);
 	}
 	jint ActivityManager_RunningAppProcessInfo::importanceReasonCode()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"importanceReasonCode"
 		);
 	}
 	QAndroidJniObject ActivityManager_RunningAppProcessInfo::importanceReasonComponent()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"importanceReasonComponent",
 			"Landroid/content/ComponentName;"
 		);
 	}
 	jint ActivityManager_RunningAppProcessInfo::importanceReasonPid()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"importanceReasonPid"
 		);
 	}
 	jint ActivityManager_RunningAppProcessInfo::lastTrimLevel()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"lastTrimLevel"
 		);
 	}
 	jint ActivityManager_RunningAppProcessInfo::lru()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"lru"
 		);
 	}
 	jint ActivityManager_RunningAppProcessInfo::pid()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"pid"
 		);
 	}
 	jarray ActivityManager_RunningAppProcessInfo::pkgList()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"pkgList",
 			"[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	jstring ActivityManager_RunningAppProcessInfo::processName()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"processName",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint ActivityManager_RunningAppProcessInfo::uid()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"uid"
 		);
 	}
 	
-	ActivityManager_RunningAppProcessInfo::ActivityManager_RunningAppProcessInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ActivityManager_RunningAppProcessInfo::ActivityManager_RunningAppProcessInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ActivityManager_RunningAppProcessInfo::ActivityManager_RunningAppProcessInfo()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.app.ActivityManager$RunningAppProcessInfo",
 			"()V"
-		);
-	}
+		) {}
 	ActivityManager_RunningAppProcessInfo::ActivityManager_RunningAppProcessInfo(jstring arg0, jint arg1, jarray arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.app.ActivityManager$RunningAppProcessInfo",
 			"(Ljava/lang/String;I[Ljava/lang/String;)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	jint ActivityManager_RunningAppProcessInfo::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	void ActivityManager_RunningAppProcessInfo::readFromParcel(android::os::Parcel arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"readFromParcel",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ActivityManager_RunningAppProcessInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

@@ -14,9 +14,11 @@ namespace android::text
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PrecomputedText_Params(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PrecomputedText_Params(QAndroidJniObject obj);
+		
 		// Constructors
-		PrecomputedText_Params() = default;
 		
 		// Methods
 		jboolean equals(jobject arg0);

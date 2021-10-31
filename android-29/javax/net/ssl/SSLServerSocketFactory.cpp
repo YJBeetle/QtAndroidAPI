@@ -5,7 +5,9 @@ namespace javax::net::ssl
 {
 	// Fields
 	
-	SSLServerSocketFactory::SSLServerSocketFactory(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SSLServerSocketFactory::SSLServerSocketFactory(QAndroidJniObject obj) : javax::net::ServerSocketFactory(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -19,14 +21,14 @@ namespace javax::net::ssl
 	}
 	jarray SSLServerSocketFactory::getDefaultCipherSuites()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDefaultCipherSuites",
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	jarray SSLServerSocketFactory::getSupportedCipherSuites()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSupportedCipherSuites",
 			"()[Ljava/lang/String;"
 		).object<jarray>();

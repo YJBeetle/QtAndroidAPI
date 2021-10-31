@@ -5,16 +5,16 @@ namespace org::json
 {
 	// Fields
 	
-	JSONTokener::JSONTokener(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	JSONTokener::JSONTokener(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	JSONTokener::JSONTokener(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"org.json.JSONTokener",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jint JSONTokener::dehexchar(jchar arg0)
@@ -28,28 +28,28 @@ namespace org::json
 	}
 	void JSONTokener::back()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"back",
 			"()V"
 		);
 	}
 	jboolean JSONTokener::more()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"more",
 			"()Z"
 		);
 	}
 	jchar JSONTokener::next()
 	{
-		return __thiz.callMethod<jchar>(
+		return callMethod<jchar>(
 			"next",
 			"()C"
 		);
 	}
 	jchar JSONTokener::next(jchar arg0)
 	{
-		return __thiz.callMethod<jchar>(
+		return callMethod<jchar>(
 			"next",
 			"(C)C",
 			arg0
@@ -57,7 +57,7 @@ namespace org::json
 	}
 	jstring JSONTokener::next(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"next",
 			"(I)Ljava/lang/String;",
 			arg0
@@ -65,14 +65,14 @@ namespace org::json
 	}
 	jchar JSONTokener::nextClean()
 	{
-		return __thiz.callMethod<jchar>(
+		return callMethod<jchar>(
 			"nextClean",
 			"()C"
 		);
 	}
 	jstring JSONTokener::nextString(jchar arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"nextString",
 			"(C)Ljava/lang/String;",
 			arg0
@@ -80,7 +80,7 @@ namespace org::json
 	}
 	jstring JSONTokener::nextTo(jchar arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"nextTo",
 			"(C)Ljava/lang/String;",
 			arg0
@@ -88,7 +88,7 @@ namespace org::json
 	}
 	jstring JSONTokener::nextTo(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"nextTo",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
@@ -96,14 +96,14 @@ namespace org::json
 	}
 	jobject JSONTokener::nextValue()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"nextValue",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	void JSONTokener::skipPast(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"skipPast",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -111,7 +111,7 @@ namespace org::json
 	}
 	jchar JSONTokener::skipTo(jchar arg0)
 	{
-		return __thiz.callMethod<jchar>(
+		return callMethod<jchar>(
 			"skipTo",
 			"(C)C",
 			arg0
@@ -119,7 +119,7 @@ namespace org::json
 	}
 	QAndroidJniObject JSONTokener::syntaxError(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"syntaxError",
 			"(Ljava/lang/String;)Lorg/json/JSONException;",
 			arg0
@@ -127,7 +127,7 @@ namespace org::json
 	}
 	jstring JSONTokener::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

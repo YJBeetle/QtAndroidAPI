@@ -10,7 +10,10 @@ namespace android::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ArraySet(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ArraySet(QAndroidJniObject obj);
+		
 		// Constructors
 		ArraySet();
 		ArraySet(android::util::ArraySet &arg0);

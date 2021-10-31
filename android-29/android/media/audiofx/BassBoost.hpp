@@ -17,10 +17,12 @@ namespace android::media::audiofx
 		static jint PARAM_STRENGTH();
 		static jint PARAM_STRENGTH_SUPPORTED();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BassBoost(const char *className, const char *sig, Ts...agv) : android::media::audiofx::AudioEffect(className, sig, std::forward<Ts>(agv)...) {}
 		BassBoost(QAndroidJniObject obj);
+		
 		// Constructors
 		BassBoost(jint arg0, jint arg1);
-		BassBoost() = default;
 		
 		// Methods
 		QAndroidJniObject getProperties();

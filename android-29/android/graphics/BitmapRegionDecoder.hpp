@@ -30,9 +30,11 @@ namespace android::graphics
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BitmapRegionDecoder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		BitmapRegionDecoder(QAndroidJniObject obj);
+		
 		// Constructors
-		BitmapRegionDecoder() = default;
 		
 		// Methods
 		static QAndroidJniObject newInstance(java::io::FileDescriptor arg0, jboolean arg1);

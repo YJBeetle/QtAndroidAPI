@@ -4,56 +4,54 @@ namespace org::xml::sax::helpers
 {
 	// Fields
 	
-	LocatorImpl::LocatorImpl(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	LocatorImpl::LocatorImpl(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	LocatorImpl::LocatorImpl()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"org.xml.sax.helpers.LocatorImpl",
 			"()V"
-		);
-	}
+		) {}
 	LocatorImpl::LocatorImpl(__JniBaseClass arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"org.xml.sax.helpers.LocatorImpl",
 			"(Lorg/xml/sax/Locator;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jint LocatorImpl::getColumnNumber()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getColumnNumber",
 			"()I"
 		);
 	}
 	jint LocatorImpl::getLineNumber()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLineNumber",
 			"()I"
 		);
 	}
 	jstring LocatorImpl::getPublicId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPublicId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring LocatorImpl::getSystemId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSystemId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void LocatorImpl::setColumnNumber(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setColumnNumber",
 			"(I)V",
 			arg0
@@ -61,7 +59,7 @@ namespace org::xml::sax::helpers
 	}
 	void LocatorImpl::setLineNumber(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLineNumber",
 			"(I)V",
 			arg0
@@ -69,7 +67,7 @@ namespace org::xml::sax::helpers
 	}
 	void LocatorImpl::setPublicId(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPublicId",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -77,7 +75,7 @@ namespace org::xml::sax::helpers
 	}
 	void LocatorImpl::setSystemId(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSystemId",
 			"(Ljava/lang/String;)V",
 			arg0

@@ -5,25 +5,27 @@ namespace android::gesture
 	// Fields
 	jstring Prediction::name()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"name",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jdouble Prediction::score()
 	{
-		return __thiz.getField<jdouble>(
+		return getField<jdouble>(
 			"score"
 		);
 	}
 	
-	Prediction::Prediction(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Prediction::Prediction(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jstring Prediction::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

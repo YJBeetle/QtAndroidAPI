@@ -6,20 +6,20 @@ namespace android::view::inputmethod
 {
 	// Fields
 	
-	CursorAnchorInfo_Builder::CursorAnchorInfo_Builder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CursorAnchorInfo_Builder::CursorAnchorInfo_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	CursorAnchorInfo_Builder::CursorAnchorInfo_Builder()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.inputmethod.CursorAnchorInfo$Builder",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject CursorAnchorInfo_Builder::addCharacterBounds(jint arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jint arg5)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"addCharacterBounds",
 			"(IFFFFI)Landroid/view/inputmethod/CursorAnchorInfo$Builder;",
 			arg0,
@@ -32,21 +32,21 @@ namespace android::view::inputmethod
 	}
 	QAndroidJniObject CursorAnchorInfo_Builder::build()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"build",
 			"()Landroid/view/inputmethod/CursorAnchorInfo;"
 		);
 	}
 	void CursorAnchorInfo_Builder::reset()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
 	QAndroidJniObject CursorAnchorInfo_Builder::setComposingText(jint arg0, jstring arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setComposingText",
 			"(ILjava/lang/CharSequence;)Landroid/view/inputmethod/CursorAnchorInfo$Builder;",
 			arg0,
@@ -55,7 +55,7 @@ namespace android::view::inputmethod
 	}
 	QAndroidJniObject CursorAnchorInfo_Builder::setInsertionMarkerLocation(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jint arg4)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setInsertionMarkerLocation",
 			"(FFFFI)Landroid/view/inputmethod/CursorAnchorInfo$Builder;",
 			arg0,
@@ -67,15 +67,15 @@ namespace android::view::inputmethod
 	}
 	QAndroidJniObject CursorAnchorInfo_Builder::setMatrix(android::graphics::Matrix arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setMatrix",
 			"(Landroid/graphics/Matrix;)Landroid/view/inputmethod/CursorAnchorInfo$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject CursorAnchorInfo_Builder::setSelectionRange(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setSelectionRange",
 			"(II)Landroid/view/inputmethod/CursorAnchorInfo$Builder;",
 			arg0,

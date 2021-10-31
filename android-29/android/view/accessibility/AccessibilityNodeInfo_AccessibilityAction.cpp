@@ -300,22 +300,22 @@ namespace android::view::accessibility
 		);
 	}
 	
-	AccessibilityNodeInfo_AccessibilityAction::AccessibilityNodeInfo_AccessibilityAction(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AccessibilityNodeInfo_AccessibilityAction::AccessibilityNodeInfo_AccessibilityAction(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	AccessibilityNodeInfo_AccessibilityAction::AccessibilityNodeInfo_AccessibilityAction(jint arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction",
 			"(ILjava/lang/CharSequence;)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean AccessibilityNodeInfo_AccessibilityAction::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -323,28 +323,28 @@ namespace android::view::accessibility
 	}
 	jint AccessibilityNodeInfo_AccessibilityAction::getId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getId",
 			"()I"
 		);
 	}
 	jstring AccessibilityNodeInfo_AccessibilityAction::getLabel()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jint AccessibilityNodeInfo_AccessibilityAction::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring AccessibilityNodeInfo_AccessibilityAction::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

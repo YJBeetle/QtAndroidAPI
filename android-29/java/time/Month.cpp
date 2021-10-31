@@ -103,7 +103,9 @@ namespace java::time
 		);
 	}
 	
-	Month::Month(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Month::Month(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -113,7 +115,7 @@ namespace java::time
 			"java.time.Month",
 			"from",
 			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/Month;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Month::of(jint arg0)
@@ -144,15 +146,15 @@ namespace java::time
 	}
 	QAndroidJniObject Month::adjustInto(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"adjustInto",
 			"(Ljava/time/temporal/Temporal;)Ljava/time/temporal/Temporal;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint Month::firstDayOfYear(jboolean arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"firstDayOfYear",
 			"(Z)I",
 			arg0
@@ -160,54 +162,54 @@ namespace java::time
 	}
 	QAndroidJniObject Month::firstMonthOfQuarter()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"firstMonthOfQuarter",
 			"()Ljava/time/Month;"
 		);
 	}
 	jint Month::get(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"get",
 			"(Ljava/time/temporal/TemporalField;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring Month::getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDisplayName",
 			"(Ljava/time/format/TextStyle;Ljava/util/Locale;)Ljava/lang/String;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		).object<jstring>();
 	}
 	jlong Month::getLong(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getLong",
 			"(Ljava/time/temporal/TemporalField;)J",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint Month::getValue()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getValue",
 			"()I"
 		);
 	}
 	jboolean Month::isSupported(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isSupported",
 			"(Ljava/time/temporal/TemporalField;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint Month::length(jboolean arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"length",
 			"(Z)I",
 			arg0
@@ -215,21 +217,21 @@ namespace java::time
 	}
 	jint Month::maxLength()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"maxLength",
 			"()I"
 		);
 	}
 	jint Month::minLength()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"minLength",
 			"()I"
 		);
 	}
 	QAndroidJniObject Month::minus(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"minus",
 			"(J)Ljava/time/Month;",
 			arg0
@@ -237,7 +239,7 @@ namespace java::time
 	}
 	QAndroidJniObject Month::plus(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"plus",
 			"(J)Ljava/time/Month;",
 			arg0
@@ -245,18 +247,18 @@ namespace java::time
 	}
 	jobject Month::query(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"query",
 			"(Ljava/time/temporal/TemporalQuery;)Ljava/lang/Object;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jobject>();
 	}
 	QAndroidJniObject Month::range(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"range",
 			"(Ljava/time/temporal/TemporalField;)Ljava/time/temporal/ValueRange;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace java::time

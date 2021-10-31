@@ -4,7 +4,9 @@ namespace java::util
 {
 	// Fields
 	
-	Objects::Objects(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Objects::Objects(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -80,7 +82,7 @@ namespace java::util
 			"(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/Comparator;)I",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	jboolean Objects::deepEquals(jobject arg0, jobject arg1)
@@ -165,7 +167,7 @@ namespace java::util
 			"requireNonNull",
 			"(Ljava/lang/Object;Ljava/util/function/Supplier;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		).object<jobject>();
 	}
 	jobject Objects::requireNonNullElse(jobject arg0, jobject arg1)
@@ -185,7 +187,7 @@ namespace java::util
 			"requireNonNullElseGet",
 			"(Ljava/lang/Object;Ljava/util/function/Supplier;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		).object<jobject>();
 	}
 	jstring Objects::toString(jobject arg0)

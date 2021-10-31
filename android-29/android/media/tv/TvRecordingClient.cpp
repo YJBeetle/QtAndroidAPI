@@ -9,69 +9,69 @@ namespace android::media::tv
 {
 	// Fields
 	
-	TvRecordingClient::TvRecordingClient(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TvRecordingClient::TvRecordingClient(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	TvRecordingClient::TvRecordingClient(android::content::Context arg0, jstring arg1, android::media::tv::TvRecordingClient_RecordingCallback arg2, android::os::Handler arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.tv.TvRecordingClient",
 			"(Landroid/content/Context;Ljava/lang/String;Landroid/media/tv/TvRecordingClient$RecordingCallback;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
-		);
-	}
+			arg2.object(),
+			arg3.object()
+		) {}
 	
 	// Methods
 	void TvRecordingClient::release()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
 	void TvRecordingClient::sendAppPrivateCommand(jstring arg0, android::os::Bundle arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"sendAppPrivateCommand",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void TvRecordingClient::startRecording(android::net::Uri arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"startRecording",
 			"(Landroid/net/Uri;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TvRecordingClient::stopRecording()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"stopRecording",
 			"()V"
 		);
 	}
 	void TvRecordingClient::tune(jstring arg0, android::net::Uri arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"tune",
 			"(Ljava/lang/String;Landroid/net/Uri;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void TvRecordingClient::tune(jstring arg0, android::net::Uri arg1, android::os::Bundle arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"tune",
 			"(Ljava/lang/String;Landroid/net/Uri;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg1.object(),
+			arg2.object()
 		);
 	}
 } // namespace android::media::tv

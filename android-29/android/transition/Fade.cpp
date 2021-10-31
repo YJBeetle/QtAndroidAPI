@@ -23,62 +23,58 @@ namespace android::transition
 		);
 	}
 	
-	Fade::Fade(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Fade::Fade(QAndroidJniObject obj) : android::transition::Visibility(obj) {}
+	
 	// Constructors
 	Fade::Fade()
-	{
-		__thiz = QAndroidJniObject(
+		: android::transition::Visibility(
 			"android.transition.Fade",
 			"()V"
-		);
-	}
+		) {}
 	Fade::Fade(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::transition::Visibility(
 			"android.transition.Fade",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	Fade::Fade(android::content::Context arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::transition::Visibility(
 			"android.transition.Fade",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	
 	// Methods
 	void Fade::captureStartValues(android::transition::TransitionValues arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"captureStartValues",
 			"(Landroid/transition/TransitionValues;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Fade::onAppear(android::view::ViewGroup arg0, android::view::View arg1, android::transition::TransitionValues arg2, android::transition::TransitionValues arg3)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onAppear",
 			"(Landroid/view/ViewGroup;Landroid/view/View;Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)Landroid/animation/Animator;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
 		);
 	}
 	QAndroidJniObject Fade::onDisappear(android::view::ViewGroup arg0, android::view::View arg1, android::transition::TransitionValues arg2, android::transition::TransitionValues arg3)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onDisappear",
 			"(Landroid/view/ViewGroup;Landroid/view/View;Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)Landroid/animation/Animator;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
 		);
 	}
 } // namespace android::transition

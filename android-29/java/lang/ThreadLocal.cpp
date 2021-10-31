@@ -6,15 +6,15 @@ namespace java::lang
 {
 	// Fields
 	
-	ThreadLocal::ThreadLocal(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ThreadLocal::ThreadLocal(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ThreadLocal::ThreadLocal()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.lang.ThreadLocal",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject ThreadLocal::withInitial(__JniBaseClass arg0)
@@ -23,26 +23,26 @@ namespace java::lang
 			"java.lang.ThreadLocal",
 			"withInitial",
 			"(Ljava/util/function/Supplier;)Ljava/lang/ThreadLocal;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jobject ThreadLocal::get()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	void ThreadLocal::remove()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"remove",
 			"()V"
 		);
 	}
 	void ThreadLocal::set(jobject arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"set",
 			"(Ljava/lang/Object;)V",
 			arg0

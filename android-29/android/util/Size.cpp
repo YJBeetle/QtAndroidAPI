@@ -4,17 +4,17 @@ namespace android::util
 {
 	// Fields
 	
-	Size::Size(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Size::Size(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Size::Size(jint arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.util.Size",
 			"(II)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject Size::parseSize(jstring arg0)
@@ -28,7 +28,7 @@ namespace android::util
 	}
 	jboolean Size::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -36,28 +36,28 @@ namespace android::util
 	}
 	jint Size::getHeight()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getHeight",
 			"()I"
 		);
 	}
 	jint Size::getWidth()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getWidth",
 			"()I"
 		);
 	}
 	jint Size::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring Size::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

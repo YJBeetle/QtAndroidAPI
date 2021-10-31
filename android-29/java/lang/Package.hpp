@@ -18,9 +18,11 @@ namespace java::lang
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Package(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Package(QAndroidJniObject obj);
+		
 		// Constructors
-		Package() = default;
 		
 		// Methods
 		static QAndroidJniObject getPackage(jstring arg0);

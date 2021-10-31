@@ -6,28 +6,28 @@ namespace android::security
 {
 	// Fields
 	
-	KeyStoreParameter_Builder::KeyStoreParameter_Builder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	KeyStoreParameter_Builder::KeyStoreParameter_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	KeyStoreParameter_Builder::KeyStoreParameter_Builder(android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.security.KeyStoreParameter$Builder",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject KeyStoreParameter_Builder::build()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"build",
 			"()Landroid/security/KeyStoreParameter;"
 		);
 	}
 	QAndroidJniObject KeyStoreParameter_Builder::setEncryptionRequired(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setEncryptionRequired",
 			"(Z)Landroid/security/KeyStoreParameter$Builder;",
 			arg0

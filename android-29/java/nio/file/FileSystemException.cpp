@@ -4,52 +4,50 @@ namespace java::nio::file
 {
 	// Fields
 	
-	FileSystemException::FileSystemException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FileSystemException::FileSystemException(QAndroidJniObject obj) : java::io::IOException(obj) {}
+	
 	// Constructors
 	FileSystemException::FileSystemException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::IOException(
 			"java.nio.file.FileSystemException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	FileSystemException::FileSystemException(jstring arg0, jstring arg1, jstring arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::IOException(
 			"java.nio.file.FileSystemException",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring FileSystemException::getFile()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFile",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring FileSystemException::getMessage()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring FileSystemException::getOtherFile()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getOtherFile",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring FileSystemException::getReason()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getReason",
 			"()Ljava/lang/String;"
 		).object<jstring>();

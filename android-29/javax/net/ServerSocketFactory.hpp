@@ -18,9 +18,11 @@ namespace javax::net
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ServerSocketFactory(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ServerSocketFactory(QAndroidJniObject obj);
+		
 		// Constructors
-		ServerSocketFactory() = default;
 		
 		// Methods
 		static QAndroidJniObject getDefault();

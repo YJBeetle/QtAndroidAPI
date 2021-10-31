@@ -7,74 +7,68 @@ namespace android::app
 {
 	// Fields
 	
-	DatePickerDialog::DatePickerDialog(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DatePickerDialog::DatePickerDialog(QAndroidJniObject obj) : android::app::AlertDialog(obj) {}
+	
 	// Constructors
 	DatePickerDialog::DatePickerDialog(android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::app::AlertDialog(
 			"android.app.DatePickerDialog",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	DatePickerDialog::DatePickerDialog(android::content::Context arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::app::AlertDialog(
 			"android.app.DatePickerDialog",
 			"(Landroid/content/Context;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
-		);
-	}
+		) {}
 	DatePickerDialog::DatePickerDialog(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3, jint arg4)
-	{
-		__thiz = QAndroidJniObject(
+		: android::app::AlertDialog(
 			"android.app.DatePickerDialog",
 			"(Landroid/content/Context;Landroid/app/DatePickerDialog$OnDateSetListener;III)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3,
 			arg4
-		);
-	}
+		) {}
 	DatePickerDialog::DatePickerDialog(android::content::Context arg0, jint arg1, __JniBaseClass arg2, jint arg3, jint arg4, jint arg5)
-	{
-		__thiz = QAndroidJniObject(
+		: android::app::AlertDialog(
 			"android.app.DatePickerDialog",
 			"(Landroid/content/Context;ILandroid/app/DatePickerDialog$OnDateSetListener;III)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object(),
+			arg2.object(),
 			arg3,
 			arg4,
 			arg5
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject DatePickerDialog::getDatePicker()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDatePicker",
 			"()Landroid/widget/DatePicker;"
 		);
 	}
 	void DatePickerDialog::onClick(__JniBaseClass arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onClick",
 			"(Landroid/content/DialogInterface;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void DatePickerDialog::onDateChanged(android::widget::DatePicker arg0, jint arg1, jint arg2, jint arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onDateChanged",
 			"(Landroid/widget/DatePicker;III)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3
@@ -82,30 +76,30 @@ namespace android::app
 	}
 	void DatePickerDialog::onRestoreInstanceState(android::os::Bundle arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onRestoreInstanceState",
 			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject DatePickerDialog::onSaveInstanceState()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onSaveInstanceState",
 			"()Landroid/os/Bundle;"
 		);
 	}
 	void DatePickerDialog::setOnDateSetListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnDateSetListener",
 			"(Landroid/app/DatePickerDialog$OnDateSetListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void DatePickerDialog::updateDate(jint arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"updateDate",
 			"(III)V",
 			arg0,

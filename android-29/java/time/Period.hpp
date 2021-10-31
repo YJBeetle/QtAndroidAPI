@@ -27,9 +27,11 @@ namespace java::time
 		// Fields
 		static QAndroidJniObject ZERO();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Period(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Period(QAndroidJniObject obj);
+		
 		// Constructors
-		Period() = default;
 		
 		// Methods
 		static QAndroidJniObject between(java::time::LocalDate arg0, java::time::LocalDate arg1);

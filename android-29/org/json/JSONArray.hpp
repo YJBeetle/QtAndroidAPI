@@ -18,7 +18,10 @@ namespace org::json
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit JSONArray(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		JSONArray(QAndroidJniObject obj);
+		
 		// Constructors
 		JSONArray();
 		JSONArray(jobject arg0);

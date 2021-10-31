@@ -15,20 +15,20 @@ namespace android::service::carrier
 		).object<jstring>();
 	}
 	
-	CarrierService::CarrierService(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CarrierService::CarrierService(QAndroidJniObject obj) : android::app::Service(obj) {}
+	
 	// Constructors
 	CarrierService::CarrierService()
-	{
-		__thiz = QAndroidJniObject(
+		: android::app::Service(
 			"android.service.carrier.CarrierService",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void CarrierService::notifyCarrierNetworkChange(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"notifyCarrierNetworkChange",
 			"(Z)V",
 			arg0
@@ -36,18 +36,18 @@ namespace android::service::carrier
 	}
 	QAndroidJniObject CarrierService::onBind(android::content::Intent arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onBind",
 			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject CarrierService::onLoadConfig(android::service::carrier::CarrierIdentifier arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onLoadConfig",
 			"(Landroid/service/carrier/CarrierIdentifier;)Landroid/os/PersistableBundle;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::service::carrier

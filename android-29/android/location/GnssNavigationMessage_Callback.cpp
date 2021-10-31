@@ -26,28 +26,28 @@ namespace android::location
 		);
 	}
 	
-	GnssNavigationMessage_Callback::GnssNavigationMessage_Callback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	GnssNavigationMessage_Callback::GnssNavigationMessage_Callback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	GnssNavigationMessage_Callback::GnssNavigationMessage_Callback()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.location.GnssNavigationMessage$Callback",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void GnssNavigationMessage_Callback::onGnssNavigationMessageReceived(android::location::GnssNavigationMessage arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onGnssNavigationMessageReceived",
 			"(Landroid/location/GnssNavigationMessage;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void GnssNavigationMessage_Callback::onStatusChanged(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onStatusChanged",
 			"(I)V",
 			arg0

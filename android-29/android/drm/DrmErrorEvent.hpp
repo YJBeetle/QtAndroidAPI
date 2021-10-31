@@ -23,11 +23,13 @@ namespace android::drm
 		static jint TYPE_RIGHTS_NOT_INSTALLED();
 		static jint TYPE_RIGHTS_RENEWAL_NOT_ALLOWED();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DrmErrorEvent(const char *className, const char *sig, Ts...agv) : android::drm::DrmEvent(className, sig, std::forward<Ts>(agv)...) {}
 		DrmErrorEvent(QAndroidJniObject obj);
+		
 		// Constructors
 		DrmErrorEvent(jint arg0, jint arg1, jstring arg2);
 		DrmErrorEvent(jint arg0, jint arg1, jstring arg2, java::util::HashMap arg3);
-		DrmErrorEvent() = default;
 		
 		// Methods
 	};

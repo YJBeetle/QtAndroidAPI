@@ -4,23 +4,21 @@ namespace java::io
 {
 	// Fields
 	
-	FileNotFoundException::FileNotFoundException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FileNotFoundException::FileNotFoundException(QAndroidJniObject obj) : java::io::IOException(obj) {}
+	
 	// Constructors
 	FileNotFoundException::FileNotFoundException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::IOException(
 			"java.io.FileNotFoundException",
 			"()V"
-		);
-	}
+		) {}
 	FileNotFoundException::FileNotFoundException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::IOException(
 			"java.io.FileNotFoundException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::io

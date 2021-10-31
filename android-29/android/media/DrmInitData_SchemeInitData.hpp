@@ -12,9 +12,11 @@ namespace android::media
 		jbyteArray data();
 		jstring mimeType();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DrmInitData_SchemeInitData(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DrmInitData_SchemeInitData(QAndroidJniObject obj);
+		
 		// Constructors
-		DrmInitData_SchemeInitData() = default;
 		
 		// Methods
 		jboolean equals(jobject arg0);

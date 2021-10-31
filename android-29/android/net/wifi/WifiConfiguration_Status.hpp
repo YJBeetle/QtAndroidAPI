@@ -14,9 +14,11 @@ namespace android::net::wifi
 		static jint ENABLED();
 		static jarray strings();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit WifiConfiguration_Status(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		WifiConfiguration_Status(QAndroidJniObject obj);
+		
 		// Constructors
-		WifiConfiguration_Status() = default;
 		
 		// Methods
 	};

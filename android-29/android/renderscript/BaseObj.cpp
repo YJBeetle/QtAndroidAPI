@@ -5,20 +5,22 @@ namespace android::renderscript
 {
 	// Fields
 	
-	BaseObj::BaseObj(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BaseObj::BaseObj(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void BaseObj::destroy()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"destroy",
 			"()V"
 		);
 	}
 	jboolean BaseObj::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -26,21 +28,21 @@ namespace android::renderscript
 	}
 	jstring BaseObj::getName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint BaseObj::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	void BaseObj::setName(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setName",
 			"(Ljava/lang/String;)V",
 			arg0

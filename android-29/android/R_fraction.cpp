@@ -4,15 +4,15 @@ namespace android
 {
 	// Fields
 	
-	R_fraction::R_fraction(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	R_fraction::R_fraction(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	R_fraction::R_fraction()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.R$fraction",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android

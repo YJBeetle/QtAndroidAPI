@@ -16,9 +16,11 @@ namespace java::nio::charset
 		static QAndroidJniObject OVERFLOW();
 		static QAndroidJniObject UNDERFLOW();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CoderResult(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		CoderResult(QAndroidJniObject obj);
+		
 		// Constructors
-		CoderResult() = default;
 		
 		// Methods
 		static QAndroidJniObject malformedForLength(jint arg0);

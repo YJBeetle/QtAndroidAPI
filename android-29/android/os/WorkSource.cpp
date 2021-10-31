@@ -13,58 +13,56 @@ namespace android::os
 		);
 	}
 	
-	WorkSource::WorkSource(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WorkSource::WorkSource(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	WorkSource::WorkSource()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.os.WorkSource",
 			"()V"
-		);
-	}
+		) {}
 	WorkSource::WorkSource(android::os::WorkSource &arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.os.WorkSource",
 			"(Landroid/os/WorkSource;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jboolean WorkSource::add(android::os::WorkSource arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"add",
 			"(Landroid/os/WorkSource;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void WorkSource::clear()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
 	jint WorkSource::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean WorkSource::diff(android::os::WorkSource arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"diff",
 			"(Landroid/os/WorkSource;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean WorkSource::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -72,40 +70,40 @@ namespace android::os
 	}
 	jint WorkSource::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean WorkSource::remove(android::os::WorkSource arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"remove",
 			"(Landroid/os/WorkSource;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void WorkSource::set(android::os::WorkSource arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"set",
 			"(Landroid/os/WorkSource;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring WorkSource::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void WorkSource::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

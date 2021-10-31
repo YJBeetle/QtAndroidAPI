@@ -18,10 +18,12 @@ namespace android::app
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit RemoteInput_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		RemoteInput_Builder(QAndroidJniObject obj);
+		
 		// Constructors
 		RemoteInput_Builder(jstring arg0);
-		RemoteInput_Builder() = default;
 		
 		// Methods
 		QAndroidJniObject addExtras(android::os::Bundle arg0);

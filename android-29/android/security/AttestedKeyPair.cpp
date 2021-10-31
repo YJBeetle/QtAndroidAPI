@@ -5,20 +5,22 @@ namespace android::security
 {
 	// Fields
 	
-	AttestedKeyPair::AttestedKeyPair(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AttestedKeyPair::AttestedKeyPair(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject AttestedKeyPair::getAttestationRecord()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAttestationRecord",
 			"()Ljava/util/List;"
 		);
 	}
 	QAndroidJniObject AttestedKeyPair::getKeyPair()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getKeyPair",
 			"()Ljava/security/KeyPair;"
 		);

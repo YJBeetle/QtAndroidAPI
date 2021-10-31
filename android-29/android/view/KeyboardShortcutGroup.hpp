@@ -19,11 +19,13 @@ namespace android::view
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit KeyboardShortcutGroup(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		KeyboardShortcutGroup(QAndroidJniObject obj);
+		
 		// Constructors
 		KeyboardShortcutGroup(jstring arg0);
 		KeyboardShortcutGroup(jstring arg0, __JniBaseClass arg1);
-		KeyboardShortcutGroup() = default;
 		
 		// Methods
 		void addItem(android::view::KeyboardShortcutInfo arg0);

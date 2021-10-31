@@ -5,35 +5,35 @@ namespace java::io
 {
 	// Fields
 	
-	DataOutputStream::DataOutputStream(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DataOutputStream::DataOutputStream(QAndroidJniObject obj) : java::io::FilterOutputStream(obj) {}
+	
 	// Constructors
 	DataOutputStream::DataOutputStream(java::io::OutputStream arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::FilterOutputStream(
 			"java.io.DataOutputStream",
 			"(Ljava/io/OutputStream;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	void DataOutputStream::flush()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"flush",
 			"()V"
 		);
 	}
 	jint DataOutputStream::size()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
 	void DataOutputStream::write(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"write",
 			"(I)V",
 			arg0
@@ -41,7 +41,7 @@ namespace java::io
 	}
 	void DataOutputStream::write(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"write",
 			"([BII)V",
 			arg0,
@@ -51,7 +51,7 @@ namespace java::io
 	}
 	void DataOutputStream::writeBoolean(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeBoolean",
 			"(Z)V",
 			arg0
@@ -59,7 +59,7 @@ namespace java::io
 	}
 	void DataOutputStream::writeByte(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeByte",
 			"(I)V",
 			arg0
@@ -67,7 +67,7 @@ namespace java::io
 	}
 	void DataOutputStream::writeBytes(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeBytes",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -75,7 +75,7 @@ namespace java::io
 	}
 	void DataOutputStream::writeChar(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeChar",
 			"(I)V",
 			arg0
@@ -83,7 +83,7 @@ namespace java::io
 	}
 	void DataOutputStream::writeChars(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeChars",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -91,7 +91,7 @@ namespace java::io
 	}
 	void DataOutputStream::writeDouble(jdouble arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeDouble",
 			"(D)V",
 			arg0
@@ -99,7 +99,7 @@ namespace java::io
 	}
 	void DataOutputStream::writeFloat(jfloat arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeFloat",
 			"(F)V",
 			arg0
@@ -107,7 +107,7 @@ namespace java::io
 	}
 	void DataOutputStream::writeInt(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeInt",
 			"(I)V",
 			arg0
@@ -115,7 +115,7 @@ namespace java::io
 	}
 	void DataOutputStream::writeLong(jlong arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeLong",
 			"(J)V",
 			arg0
@@ -123,7 +123,7 @@ namespace java::io
 	}
 	void DataOutputStream::writeShort(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeShort",
 			"(I)V",
 			arg0
@@ -131,7 +131,7 @@ namespace java::io
 	}
 	void DataOutputStream::writeUTF(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeUTF",
 			"(Ljava/lang/String;)V",
 			arg0

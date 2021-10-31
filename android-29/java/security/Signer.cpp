@@ -6,45 +6,43 @@ namespace java::security
 {
 	// Fields
 	
-	Signer::Signer(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Signer::Signer(QAndroidJniObject obj) : java::security::Identity(obj) {}
+	
 	// Constructors
 	Signer::Signer(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::security::Identity(
 			"java.security.Signer",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	Signer::Signer(jstring arg0, java::security::IdentityScope arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::security::Identity(
 			"java.security.Signer",
 			"(Ljava/lang/String;Ljava/security/IdentityScope;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
+			arg1.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject Signer::getPrivateKey()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPrivateKey",
 			"()Ljava/security/PrivateKey;"
 		);
 	}
 	void Signer::setKeyPair(java::security::KeyPair arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setKeyPair",
 			"(Ljava/security/KeyPair;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring Signer::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

@@ -22,9 +22,11 @@ namespace java::nio::channels
 		static jint OP_READ();
 		static jint OP_WRITE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SelectionKey(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SelectionKey(QAndroidJniObject obj);
+		
 		// Constructors
-		SelectionKey() = default;
 		
 		// Methods
 		jobject attach(jobject arg0);

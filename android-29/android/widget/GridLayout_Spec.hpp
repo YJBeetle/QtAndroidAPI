@@ -14,9 +14,11 @@ namespace android::widget
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit GridLayout_Spec(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		GridLayout_Spec(QAndroidJniObject obj);
+		
 		// Constructors
-		GridLayout_Spec() = default;
 		
 		// Methods
 		jboolean equals(jobject arg0);

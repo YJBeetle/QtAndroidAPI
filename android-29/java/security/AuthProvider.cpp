@@ -5,32 +5,34 @@ namespace java::security
 {
 	// Fields
 	
-	AuthProvider::AuthProvider(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AuthProvider::AuthProvider(QAndroidJniObject obj) : java::security::Provider(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void AuthProvider::login(javax::security::auth::Subject arg0, __JniBaseClass arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"login",
 			"(Ljavax/security/auth/Subject;Ljavax/security/auth/callback/CallbackHandler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void AuthProvider::logout()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"logout",
 			"()V"
 		);
 	}
 	void AuthProvider::setCallbackHandler(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCallbackHandler",
 			"(Ljavax/security/auth/callback/CallbackHandler;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace java::security

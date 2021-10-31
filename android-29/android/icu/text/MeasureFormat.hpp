@@ -52,9 +52,11 @@ namespace android::icu::text
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MeasureFormat(const char *className, const char *sig, Ts...agv) : android::icu::text::UFormat(className, sig, std::forward<Ts>(agv)...) {}
 		MeasureFormat(QAndroidJniObject obj);
+		
 		// Constructors
-		MeasureFormat() = default;
 		
 		// Methods
 		static QAndroidJniObject getCurrencyFormat();

@@ -33,15 +33,15 @@ namespace android::opengl
 		);
 	}
 	
-	GLDebugHelper::GLDebugHelper(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	GLDebugHelper::GLDebugHelper(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	GLDebugHelper::GLDebugHelper()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.opengl.GLDebugHelper",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject GLDebugHelper::wrap(__JniBaseClass arg0, jint arg1, java::io::Writer arg2)
@@ -50,9 +50,9 @@ namespace android::opengl
 			"android.opengl.GLDebugHelper",
 			"wrap",
 			"(Ljavax/microedition/khronos/egl/EGL;ILjava/io/Writer;)Ljavax/microedition/khronos/egl/EGL;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 } // namespace android::opengl

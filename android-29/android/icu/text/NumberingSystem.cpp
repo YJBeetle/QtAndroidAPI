@@ -14,15 +14,15 @@ namespace android::icu::text
 		);
 	}
 	
-	NumberingSystem::NumberingSystem(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NumberingSystem::NumberingSystem(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	NumberingSystem::NumberingSystem()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.icu.text.NumberingSystem",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jarray NumberingSystem::getAvailableNames()
@@ -47,7 +47,7 @@ namespace android::icu::text
 			"android.icu.text.NumberingSystem",
 			"getInstance",
 			"(Landroid/icu/util/ULocale;)Landroid/icu/text/NumberingSystem;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject NumberingSystem::getInstance(java::util::Locale arg0)
@@ -56,7 +56,7 @@ namespace android::icu::text
 			"android.icu.text.NumberingSystem",
 			"getInstance",
 			"(Ljava/util/Locale;)Landroid/icu/text/NumberingSystem;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject NumberingSystem::getInstance(jint arg0, jboolean arg1, jstring arg2)
@@ -90,28 +90,28 @@ namespace android::icu::text
 	}
 	jstring NumberingSystem::getDescription()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring NumberingSystem::getName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint NumberingSystem::getRadix()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRadix",
 			"()I"
 		);
 	}
 	jboolean NumberingSystem::isAlgorithmic()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isAlgorithmic",
 			"()Z"
 		);

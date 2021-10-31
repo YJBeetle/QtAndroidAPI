@@ -5,34 +5,34 @@ namespace java::util::zip
 {
 	// Fields
 	
-	CRC32::CRC32(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CRC32::CRC32(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	CRC32::CRC32()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.zip.CRC32",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jlong CRC32::getValue()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getValue",
 			"()J"
 		);
 	}
 	void CRC32::reset()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
 	void CRC32::update(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"update",
 			"(I)V",
 			arg0
@@ -40,15 +40,15 @@ namespace java::util::zip
 	}
 	void CRC32::update(java::nio::ByteBuffer arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"update",
 			"(Ljava/nio/ByteBuffer;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void CRC32::update(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"update",
 			"([BII)V",
 			arg0,

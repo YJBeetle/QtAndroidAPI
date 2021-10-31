@@ -4,27 +4,29 @@ namespace android::hardware
 {
 	// Fields
 	
-	ConsumerIrManager::ConsumerIrManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ConsumerIrManager::ConsumerIrManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jarray ConsumerIrManager::getCarrierFrequencies()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCarrierFrequencies",
 			"()[Landroid/hardware/ConsumerIrManager$CarrierFrequencyRange;"
 		).object<jarray>();
 	}
 	jboolean ConsumerIrManager::hasIrEmitter()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasIrEmitter",
 			"()Z"
 		);
 	}
 	void ConsumerIrManager::transmit(jint arg0, jintArray arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"transmit",
 			"(I[I)V",
 			arg0,

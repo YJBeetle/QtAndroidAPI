@@ -7,42 +7,42 @@ namespace android::content
 {
 	// Fields
 	
-	Loader::Loader(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Loader::Loader(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Loader::Loader(android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.content.Loader",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	void Loader::abandon()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"abandon",
 			"()V"
 		);
 	}
 	jboolean Loader::cancelLoad()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"cancelLoad",
 			"()Z"
 		);
 	}
 	void Loader::commitContentChanged()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"commitContentChanged",
 			"()V"
 		);
 	}
 	jstring Loader::dataToString(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"dataToString",
 			"(Ljava/lang/Object;)Ljava/lang/String;",
 			arg0
@@ -50,14 +50,14 @@ namespace android::content
 	}
 	void Loader::deliverCancellation()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"deliverCancellation",
 			"()V"
 		);
 	}
 	void Loader::deliverResult(jobject arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"deliverResult",
 			"(Ljava/lang/Object;)V",
 			arg0
@@ -65,137 +65,137 @@ namespace android::content
 	}
 	void Loader::dump(jstring arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"dump",
 			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
+			arg1.object(),
+			arg2.object(),
 			arg3
 		);
 	}
 	void Loader::forceLoad()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"forceLoad",
 			"()V"
 		);
 	}
 	QAndroidJniObject Loader::getContext()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getContext",
 			"()Landroid/content/Context;"
 		);
 	}
 	jint Loader::getId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getId",
 			"()I"
 		);
 	}
 	jboolean Loader::isAbandoned()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isAbandoned",
 			"()Z"
 		);
 	}
 	jboolean Loader::isReset()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isReset",
 			"()Z"
 		);
 	}
 	jboolean Loader::isStarted()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isStarted",
 			"()Z"
 		);
 	}
 	void Loader::onContentChanged()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onContentChanged",
 			"()V"
 		);
 	}
 	void Loader::registerListener(jint arg0, __JniBaseClass arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"registerListener",
 			"(ILandroid/content/Loader$OnLoadCompleteListener;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void Loader::registerOnLoadCanceledListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"registerOnLoadCanceledListener",
 			"(Landroid/content/Loader$OnLoadCanceledListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Loader::reset()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
 	void Loader::rollbackContentChanged()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"rollbackContentChanged",
 			"()V"
 		);
 	}
 	void Loader::startLoading()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"startLoading",
 			"()V"
 		);
 	}
 	void Loader::stopLoading()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"stopLoading",
 			"()V"
 		);
 	}
 	jboolean Loader::takeContentChanged()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"takeContentChanged",
 			"()Z"
 		);
 	}
 	jstring Loader::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void Loader::unregisterListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"unregisterListener",
 			"(Landroid/content/Loader$OnLoadCompleteListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Loader::unregisterOnLoadCanceledListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"unregisterOnLoadCanceledListener",
 			"(Landroid/content/Loader$OnLoadCanceledListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::content

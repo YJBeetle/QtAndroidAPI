@@ -4,13 +4,15 @@ namespace android::hardware::camera2::params
 {
 	// Fields
 	
-	MandatoryStreamCombination::MandatoryStreamCombination(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MandatoryStreamCombination::MandatoryStreamCombination(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jboolean MandatoryStreamCombination::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -18,28 +20,28 @@ namespace android::hardware::camera2::params
 	}
 	jstring MandatoryStreamCombination::getDescription()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	QAndroidJniObject MandatoryStreamCombination::getStreamsInformation()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getStreamsInformation",
 			"()Ljava/util/List;"
 		);
 	}
 	jint MandatoryStreamCombination::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean MandatoryStreamCombination::isReprocessable()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isReprocessable",
 			"()Z"
 		);

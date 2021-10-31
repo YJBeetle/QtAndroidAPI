@@ -6,13 +6,15 @@ namespace java::util
 {
 	// Fields
 	
-	Base64_Decoder::Base64_Decoder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Base64_Decoder::Base64_Decoder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jbyteArray Base64_Decoder::decode(jbyteArray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"decode",
 			"([B)[B",
 			arg0
@@ -20,7 +22,7 @@ namespace java::util
 	}
 	jbyteArray Base64_Decoder::decode(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"decode",
 			"(Ljava/lang/String;)[B",
 			arg0
@@ -28,7 +30,7 @@ namespace java::util
 	}
 	jint Base64_Decoder::decode(jbyteArray arg0, jbyteArray arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"decode",
 			"([B[B)I",
 			arg0,
@@ -37,18 +39,18 @@ namespace java::util
 	}
 	QAndroidJniObject Base64_Decoder::decode(java::nio::ByteBuffer arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"decode",
 			"(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Base64_Decoder::wrap(java::io::InputStream arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"wrap",
 			"(Ljava/io/InputStream;)Ljava/io/InputStream;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace java::util

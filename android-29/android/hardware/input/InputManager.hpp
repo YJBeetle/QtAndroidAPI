@@ -20,9 +20,11 @@ namespace android::hardware::input
 		static jstring ACTION_QUERY_KEYBOARD_LAYOUTS();
 		static jstring META_DATA_KEYBOARD_LAYOUTS();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit InputManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		InputManager(QAndroidJniObject obj);
+		
 		// Constructors
-		InputManager() = default;
 		
 		// Methods
 		QAndroidJniObject getInputDevice(jint arg0);

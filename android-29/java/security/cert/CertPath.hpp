@@ -10,9 +10,11 @@ namespace java::security::cert
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CertPath(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		CertPath(QAndroidJniObject obj);
+		
 		// Constructors
-		CertPath() = default;
 		
 		// Methods
 		jboolean equals(jobject arg0);

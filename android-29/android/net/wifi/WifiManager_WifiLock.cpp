@@ -6,34 +6,36 @@ namespace android::net::wifi
 {
 	// Fields
 	
-	WifiManager_WifiLock::WifiManager_WifiLock(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WifiManager_WifiLock::WifiManager_WifiLock(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void WifiManager_WifiLock::acquire()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"acquire",
 			"()V"
 		);
 	}
 	jboolean WifiManager_WifiLock::isHeld()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isHeld",
 			"()Z"
 		);
 	}
 	void WifiManager_WifiLock::release()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
 	void WifiManager_WifiLock::setReferenceCounted(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setReferenceCounted",
 			"(Z)V",
 			arg0
@@ -41,15 +43,15 @@ namespace android::net::wifi
 	}
 	void WifiManager_WifiLock::setWorkSource(android::os::WorkSource arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setWorkSource",
 			"(Landroid/os/WorkSource;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring WifiManager_WifiLock::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

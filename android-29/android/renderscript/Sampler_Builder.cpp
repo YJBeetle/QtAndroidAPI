@@ -7,28 +7,28 @@ namespace android::renderscript
 {
 	// Fields
 	
-	Sampler_Builder::Sampler_Builder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Sampler_Builder::Sampler_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Sampler_Builder::Sampler_Builder(android::renderscript::RenderScript arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.renderscript.Sampler$Builder",
 			"(Landroid/renderscript/RenderScript;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject Sampler_Builder::create()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"create",
 			"()Landroid/renderscript/Sampler;"
 		);
 	}
 	void Sampler_Builder::setAnisotropy(jfloat arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAnisotropy",
 			"(F)V",
 			arg0
@@ -36,34 +36,34 @@ namespace android::renderscript
 	}
 	void Sampler_Builder::setMagnification(android::renderscript::Sampler_Value arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMagnification",
 			"(Landroid/renderscript/Sampler$Value;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Sampler_Builder::setMinification(android::renderscript::Sampler_Value arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMinification",
 			"(Landroid/renderscript/Sampler$Value;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Sampler_Builder::setWrapS(android::renderscript::Sampler_Value arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setWrapS",
 			"(Landroid/renderscript/Sampler$Value;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Sampler_Builder::setWrapT(android::renderscript::Sampler_Value arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setWrapT",
 			"(Landroid/renderscript/Sampler$Value;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::renderscript

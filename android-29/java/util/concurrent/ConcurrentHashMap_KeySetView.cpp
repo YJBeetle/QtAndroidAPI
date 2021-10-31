@@ -5,13 +5,15 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	ConcurrentHashMap_KeySetView::ConcurrentHashMap_KeySetView(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ConcurrentHashMap_KeySetView::ConcurrentHashMap_KeySetView(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jboolean ConcurrentHashMap_KeySetView::add(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"add",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -19,15 +21,15 @@ namespace java::util::concurrent
 	}
 	jboolean ConcurrentHashMap_KeySetView::addAll(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"addAll",
 			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean ConcurrentHashMap_KeySetView::contains(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"contains",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -35,7 +37,7 @@ namespace java::util::concurrent
 	}
 	jboolean ConcurrentHashMap_KeySetView::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -43,43 +45,43 @@ namespace java::util::concurrent
 	}
 	void ConcurrentHashMap_KeySetView::forEach(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"forEach",
 			"(Ljava/util/function/Consumer;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ConcurrentHashMap_KeySetView::getMap()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMap",
 			"()Ljava/util/concurrent/ConcurrentHashMap;"
 		);
 	}
 	jobject ConcurrentHashMap_KeySetView::getMappedValue()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMappedValue",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jint ConcurrentHashMap_KeySetView::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	QAndroidJniObject ConcurrentHashMap_KeySetView::iterator()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
 	jboolean ConcurrentHashMap_KeySetView::remove(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"remove",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -87,15 +89,15 @@ namespace java::util::concurrent
 	}
 	jboolean ConcurrentHashMap_KeySetView::removeAll(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"removeAll",
 			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ConcurrentHashMap_KeySetView::spliterator()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"spliterator",
 			"()Ljava/util/Spliterator;"
 		);

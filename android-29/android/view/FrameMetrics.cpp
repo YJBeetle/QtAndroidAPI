@@ -88,21 +88,21 @@ namespace android::view
 		);
 	}
 	
-	FrameMetrics::FrameMetrics(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FrameMetrics::FrameMetrics(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	FrameMetrics::FrameMetrics(android::view::FrameMetrics &arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.FrameMetrics",
 			"(Landroid/view/FrameMetrics;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jlong FrameMetrics::getMetric(jint arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getMetric",
 			"(I)J",
 			arg0

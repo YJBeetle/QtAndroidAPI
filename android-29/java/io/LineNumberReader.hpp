@@ -16,11 +16,13 @@ namespace java::io
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit LineNumberReader(const char *className, const char *sig, Ts...agv) : java::io::BufferedReader(className, sig, std::forward<Ts>(agv)...) {}
 		LineNumberReader(QAndroidJniObject obj);
+		
 		// Constructors
 		LineNumberReader(java::io::Reader arg0);
 		LineNumberReader(java::io::Reader arg0, jint arg1);
-		LineNumberReader() = default;
 		
 		// Methods
 		jint getLineNumber();

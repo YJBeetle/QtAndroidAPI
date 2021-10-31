@@ -14,10 +14,12 @@ namespace java::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit IllegalFormatConversionException(const char *className, const char *sig, Ts...agv) : java::util::IllegalFormatException(className, sig, std::forward<Ts>(agv)...) {}
 		IllegalFormatConversionException(QAndroidJniObject obj);
+		
 		// Constructors
 		IllegalFormatConversionException(jchar arg0, jclass arg1);
-		IllegalFormatConversionException() = default;
 		
 		// Methods
 		jclass getArgumentClass();

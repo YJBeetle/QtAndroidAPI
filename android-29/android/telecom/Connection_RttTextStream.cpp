@@ -5,27 +5,29 @@ namespace android::telecom
 {
 	// Fields
 	
-	Connection_RttTextStream::Connection_RttTextStream(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Connection_RttTextStream::Connection_RttTextStream(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jstring Connection_RttTextStream::read()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"read",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Connection_RttTextStream::readImmediately()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"readImmediately",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void Connection_RttTextStream::write(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"write",
 			"(Ljava/lang/String;)V",
 			arg0

@@ -22,11 +22,13 @@ namespace java::lang
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ThreadGroup(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ThreadGroup(QAndroidJniObject obj);
+		
 		// Constructors
 		ThreadGroup(jstring arg0);
 		ThreadGroup(java::lang::ThreadGroup &arg0, jstring arg1);
-		ThreadGroup() = default;
 		
 		// Methods
 		jint activeCount();

@@ -10,9 +10,11 @@ namespace android::print
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PrintDocumentAdapter_WriteResultCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PrintDocumentAdapter_WriteResultCallback(QAndroidJniObject obj);
+		
 		// Constructors
-		PrintDocumentAdapter_WriteResultCallback() = default;
 		
 		// Methods
 		void onWriteCancelled();

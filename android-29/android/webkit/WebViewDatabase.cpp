@@ -5,15 +5,15 @@ namespace android::webkit
 {
 	// Fields
 	
-	WebViewDatabase::WebViewDatabase(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WebViewDatabase::WebViewDatabase(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	WebViewDatabase::WebViewDatabase()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.webkit.WebViewDatabase",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject WebViewDatabase::getInstance(android::content::Context arg0)
@@ -22,33 +22,33 @@ namespace android::webkit
 			"android.webkit.WebViewDatabase",
 			"getInstance",
 			"(Landroid/content/Context;)Landroid/webkit/WebViewDatabase;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void WebViewDatabase::clearFormData()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clearFormData",
 			"()V"
 		);
 	}
 	void WebViewDatabase::clearHttpAuthUsernamePassword()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clearHttpAuthUsernamePassword",
 			"()V"
 		);
 	}
 	void WebViewDatabase::clearUsernamePassword()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clearUsernamePassword",
 			"()V"
 		);
 	}
 	jarray WebViewDatabase::getHttpAuthUsernamePassword(jstring arg0, jstring arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getHttpAuthUsernamePassword",
 			"(Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String;",
 			arg0,
@@ -57,28 +57,28 @@ namespace android::webkit
 	}
 	jboolean WebViewDatabase::hasFormData()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasFormData",
 			"()Z"
 		);
 	}
 	jboolean WebViewDatabase::hasHttpAuthUsernamePassword()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasHttpAuthUsernamePassword",
 			"()Z"
 		);
 	}
 	jboolean WebViewDatabase::hasUsernamePassword()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasUsernamePassword",
 			"()Z"
 		);
 	}
 	void WebViewDatabase::setHttpAuthUsernamePassword(jstring arg0, jstring arg1, jstring arg2, jstring arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setHttpAuthUsernamePassword",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,

@@ -4,7 +4,9 @@ namespace android::widget
 {
 	// Fields
 	
-	GridLayout_Alignment::GridLayout_Alignment(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	GridLayout_Alignment::GridLayout_Alignment(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

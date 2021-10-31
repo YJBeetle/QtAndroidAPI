@@ -5,20 +5,22 @@ namespace android::os::health
 {
 	// Fields
 	
-	SystemHealthManager::SystemHealthManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SystemHealthManager::SystemHealthManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject SystemHealthManager::takeMyUidSnapshot()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"takeMyUidSnapshot",
 			"()Landroid/os/health/HealthStats;"
 		);
 	}
 	QAndroidJniObject SystemHealthManager::takeUidSnapshot(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"takeUidSnapshot",
 			"(I)Landroid/os/health/HealthStats;",
 			arg0
@@ -26,7 +28,7 @@ namespace android::os::health
 	}
 	jarray SystemHealthManager::takeUidSnapshots(jintArray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"takeUidSnapshots",
 			"([I)[Landroid/os/health/HealthStats;",
 			arg0

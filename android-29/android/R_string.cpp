@@ -193,15 +193,15 @@ namespace android
 		);
 	}
 	
-	R_string::R_string(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	R_string::R_string(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	R_string::R_string()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.R$string",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android

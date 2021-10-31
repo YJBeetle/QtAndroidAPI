@@ -28,13 +28,15 @@ namespace android::content::pm
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit LabeledIntent(const char *className, const char *sig, Ts...agv) : android::content::Intent(className, sig, std::forward<Ts>(agv)...) {}
 		LabeledIntent(QAndroidJniObject obj);
+		
 		// Constructors
 		LabeledIntent(jstring arg0, jint arg1, jint arg2);
 		LabeledIntent(jstring arg0, jstring arg1, jint arg2);
 		LabeledIntent(android::content::Intent arg0, jstring arg1, jint arg2, jint arg3);
 		LabeledIntent(android::content::Intent arg0, jstring arg1, jstring arg2, jint arg3);
-		LabeledIntent() = default;
 		
 		// Methods
 		jint getIconResource();

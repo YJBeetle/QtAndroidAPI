@@ -12,9 +12,11 @@ namespace android::os::health
 		static jint MEASUREMENT_LAUNCH_COUNT();
 		static jint MEASUREMENT_START_SERVICE_COUNT();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ServiceHealthStats(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ServiceHealthStats(QAndroidJniObject obj);
+		
 		// Constructors
-		ServiceHealthStats() = default;
 		
 		// Methods
 	};

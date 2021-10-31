@@ -10,9 +10,11 @@ namespace android::icu::text
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit UnicodeFilter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		UnicodeFilter(QAndroidJniObject obj);
+		
 		// Constructors
-		UnicodeFilter() = default;
 		
 		// Methods
 		jboolean contains(jint arg0);

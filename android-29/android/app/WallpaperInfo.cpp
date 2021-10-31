@@ -20,160 +20,160 @@ namespace android::app
 		);
 	}
 	
-	WallpaperInfo::WallpaperInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WallpaperInfo::WallpaperInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	WallpaperInfo::WallpaperInfo(android::content::Context arg0, android::content::pm::ResolveInfo arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.app.WallpaperInfo",
 			"(Landroid/content/Context;Landroid/content/pm/ResolveInfo;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	
 	// Methods
 	jint WallpaperInfo::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	void WallpaperInfo::dump(__JniBaseClass arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"dump",
 			"(Landroid/util/Printer;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	QAndroidJniObject WallpaperInfo::getComponent()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getComponent",
 			"()Landroid/content/ComponentName;"
 		);
 	}
 	jstring WallpaperInfo::getPackageName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject WallpaperInfo::getServiceInfo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getServiceInfo",
 			"()Landroid/content/pm/ServiceInfo;"
 		);
 	}
 	jstring WallpaperInfo::getServiceName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getServiceName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring WallpaperInfo::getSettingsActivity()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSettingsActivity",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject WallpaperInfo::getSettingsSliceUri()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSettingsSliceUri",
 			"()Landroid/net/Uri;"
 		);
 	}
 	jboolean WallpaperInfo::getShowMetadataInPreview()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getShowMetadataInPreview",
 			"()Z"
 		);
 	}
 	jstring WallpaperInfo::loadAuthor(android::content::pm::PackageManager arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"loadAuthor",
 			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jstring WallpaperInfo::loadContextDescription(android::content::pm::PackageManager arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"loadContextDescription",
 			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	QAndroidJniObject WallpaperInfo::loadContextUri(android::content::pm::PackageManager arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"loadContextUri",
 			"(Landroid/content/pm/PackageManager;)Landroid/net/Uri;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring WallpaperInfo::loadDescription(android::content::pm::PackageManager arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"loadDescription",
 			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	QAndroidJniObject WallpaperInfo::loadIcon(android::content::pm::PackageManager arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"loadIcon",
 			"(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring WallpaperInfo::loadLabel(android::content::pm::PackageManager arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"loadLabel",
 			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	QAndroidJniObject WallpaperInfo::loadThumbnail(android::content::pm::PackageManager arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"loadThumbnail",
 			"(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean WallpaperInfo::supportsMultipleDisplays()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"supportsMultipleDisplays",
 			"()Z"
 		);
 	}
 	jstring WallpaperInfo::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void WallpaperInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

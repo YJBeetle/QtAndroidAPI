@@ -10,20 +10,22 @@ namespace java::nio::charset
 {
 	// Fields
 	
-	CharsetEncoder::CharsetEncoder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CharsetEncoder::CharsetEncoder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jfloat CharsetEncoder::averageBytesPerChar()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"averageBytesPerChar",
 			"()F"
 		);
 	}
 	jboolean CharsetEncoder::canEncode(jchar arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"canEncode",
 			"(C)Z",
 			arg0
@@ -31,7 +33,7 @@ namespace java::nio::charset
 	}
 	jboolean CharsetEncoder::canEncode(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"canEncode",
 			"(Ljava/lang/CharSequence;)Z",
 			arg0
@@ -39,40 +41,40 @@ namespace java::nio::charset
 	}
 	QAndroidJniObject CharsetEncoder::charset()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"charset",
 			"()Ljava/nio/charset/Charset;"
 		);
 	}
 	QAndroidJniObject CharsetEncoder::encode(java::nio::CharBuffer arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"encode",
 			"(Ljava/nio/CharBuffer;)Ljava/nio/ByteBuffer;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject CharsetEncoder::encode(java::nio::CharBuffer arg0, java::nio::ByteBuffer arg1, jboolean arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"encode",
 			"(Ljava/nio/CharBuffer;Ljava/nio/ByteBuffer;Z)Ljava/nio/charset/CoderResult;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
 	QAndroidJniObject CharsetEncoder::flush(java::nio::ByteBuffer arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"flush",
 			"(Ljava/nio/ByteBuffer;)Ljava/nio/charset/CoderResult;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean CharsetEncoder::isLegalReplacement(jbyteArray arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isLegalReplacement",
 			"([B)Z",
 			arg0
@@ -80,37 +82,37 @@ namespace java::nio::charset
 	}
 	QAndroidJniObject CharsetEncoder::malformedInputAction()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"malformedInputAction",
 			"()Ljava/nio/charset/CodingErrorAction;"
 		);
 	}
 	jfloat CharsetEncoder::maxBytesPerChar()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"maxBytesPerChar",
 			"()F"
 		);
 	}
 	QAndroidJniObject CharsetEncoder::onMalformedInput(java::nio::charset::CodingErrorAction arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onMalformedInput",
 			"(Ljava/nio/charset/CodingErrorAction;)Ljava/nio/charset/CharsetEncoder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject CharsetEncoder::onUnmappableCharacter(java::nio::charset::CodingErrorAction arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onUnmappableCharacter",
 			"(Ljava/nio/charset/CodingErrorAction;)Ljava/nio/charset/CharsetEncoder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject CharsetEncoder::replaceWith(jbyteArray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"replaceWith",
 			"([B)Ljava/nio/charset/CharsetEncoder;",
 			arg0
@@ -118,21 +120,21 @@ namespace java::nio::charset
 	}
 	jbyteArray CharsetEncoder::replacement()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"replacement",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	QAndroidJniObject CharsetEncoder::reset()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"reset",
 			"()Ljava/nio/charset/CharsetEncoder;"
 		);
 	}
 	QAndroidJniObject CharsetEncoder::unmappableCharacterAction()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"unmappableCharacterAction",
 			"()Ljava/nio/charset/CodingErrorAction;"
 		);

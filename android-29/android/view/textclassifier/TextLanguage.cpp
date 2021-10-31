@@ -15,42 +15,44 @@ namespace android::view::textclassifier
 		);
 	}
 	
-	TextLanguage::TextLanguage(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TextLanguage::TextLanguage(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint TextLanguage::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jfloat TextLanguage::getConfidenceScore(android::icu::util::ULocale arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getConfidenceScore",
 			"(Landroid/icu/util/ULocale;)F",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject TextLanguage::getExtras()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
 	jstring TextLanguage::getId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject TextLanguage::getLocale(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLocale",
 			"(I)Landroid/icu/util/ULocale;",
 			arg0
@@ -58,24 +60,24 @@ namespace android::view::textclassifier
 	}
 	jint TextLanguage::getLocaleHypothesisCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLocaleHypothesisCount",
 			"()I"
 		);
 	}
 	jstring TextLanguage::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void TextLanguage::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

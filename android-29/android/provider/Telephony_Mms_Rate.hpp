@@ -16,9 +16,11 @@ namespace android::provider
 		static QAndroidJniObject CONTENT_URI();
 		static jstring SENT_TIME();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Telephony_Mms_Rate(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Telephony_Mms_Rate(QAndroidJniObject obj);
+		
 		// Constructors
-		Telephony_Mms_Rate() = default;
 		
 		// Methods
 	};

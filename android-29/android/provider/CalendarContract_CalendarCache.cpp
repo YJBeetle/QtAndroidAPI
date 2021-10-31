@@ -53,7 +53,9 @@ namespace android::provider
 		);
 	}
 	
-	CalendarContract_CalendarCache::CalendarContract_CalendarCache(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CalendarContract_CalendarCache::CalendarContract_CalendarCache(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

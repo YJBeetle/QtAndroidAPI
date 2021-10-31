@@ -5,20 +5,20 @@ namespace android::hardware::fingerprint
 {
 	// Fields
 	
-	FingerprintManager_AuthenticationCallback::FingerprintManager_AuthenticationCallback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FingerprintManager_AuthenticationCallback::FingerprintManager_AuthenticationCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	FingerprintManager_AuthenticationCallback::FingerprintManager_AuthenticationCallback()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.hardware.fingerprint.FingerprintManager$AuthenticationCallback",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void FingerprintManager_AuthenticationCallback::onAuthenticationError(jint arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onAuthenticationError",
 			"(ILjava/lang/CharSequence;)V",
 			arg0,
@@ -27,14 +27,14 @@ namespace android::hardware::fingerprint
 	}
 	void FingerprintManager_AuthenticationCallback::onAuthenticationFailed()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onAuthenticationFailed",
 			"()V"
 		);
 	}
 	void FingerprintManager_AuthenticationCallback::onAuthenticationHelp(jint arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onAuthenticationHelp",
 			"(ILjava/lang/CharSequence;)V",
 			arg0,
@@ -43,10 +43,10 @@ namespace android::hardware::fingerprint
 	}
 	void FingerprintManager_AuthenticationCallback::onAuthenticationSucceeded(android::hardware::fingerprint::FingerprintManager_AuthenticationResult arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onAuthenticationSucceeded",
 			"(Landroid/hardware/fingerprint/FingerprintManager$AuthenticationResult;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::hardware::fingerprint

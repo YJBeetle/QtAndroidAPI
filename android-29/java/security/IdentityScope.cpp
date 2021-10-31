@@ -5,25 +5,23 @@ namespace java::security
 {
 	// Fields
 	
-	IdentityScope::IdentityScope(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	IdentityScope::IdentityScope(QAndroidJniObject obj) : java::security::Identity(obj) {}
+	
 	// Constructors
 	IdentityScope::IdentityScope(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::security::Identity(
 			"java.security.IdentityScope",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	IdentityScope::IdentityScope(jstring arg0, java::security::IdentityScope &arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::security::Identity(
 			"java.security.IdentityScope",
 			"(Ljava/lang/String;Ljava/security/IdentityScope;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
+			arg1.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject IdentityScope::getSystemScope()
@@ -36,15 +34,15 @@ namespace java::security
 	}
 	void IdentityScope::addIdentity(java::security::Identity arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addIdentity",
 			"(Ljava/security/Identity;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject IdentityScope::getIdentity(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getIdentity",
 			"(Ljava/lang/String;)Ljava/security/Identity;",
 			arg0
@@ -52,37 +50,37 @@ namespace java::security
 	}
 	QAndroidJniObject IdentityScope::getIdentity(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getIdentity",
 			"(Ljava/security/Principal;)Ljava/security/Identity;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject IdentityScope::identities()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"identities",
 			"()Ljava/util/Enumeration;"
 		);
 	}
 	void IdentityScope::removeIdentity(java::security::Identity arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeIdentity",
 			"(Ljava/security/Identity;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint IdentityScope::size()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
 	jstring IdentityScope::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

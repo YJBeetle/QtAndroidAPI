@@ -142,7 +142,9 @@ namespace android::telephony
 		);
 	}
 	
-	MbmsDownloadSession::MbmsDownloadSession(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MbmsDownloadSession::MbmsDownloadSession(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -152,9 +154,9 @@ namespace android::telephony
 			"android.telephony.MbmsDownloadSession",
 			"create",
 			"(Landroid/content/Context;Ljava/util/concurrent/Executor;Landroid/telephony/mbms/MbmsDownloadSessionCallback;)Landroid/telephony/MbmsDownloadSession;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject MbmsDownloadSession::create(android::content::Context arg0, __JniBaseClass arg1, jint arg2, android::telephony::mbms::MbmsDownloadSessionCallback arg3)
@@ -163,118 +165,118 @@ namespace android::telephony
 			"android.telephony.MbmsDownloadSession",
 			"create",
 			"(Landroid/content/Context;Ljava/util/concurrent/Executor;ILandroid/telephony/mbms/MbmsDownloadSessionCallback;)Landroid/telephony/MbmsDownloadSession;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	void MbmsDownloadSession::addProgressListener(android::telephony::mbms::DownloadRequest arg0, __JniBaseClass arg1, android::telephony::mbms::DownloadProgressListener arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addProgressListener",
 			"(Landroid/telephony/mbms/DownloadRequest;Ljava/util/concurrent/Executor;Landroid/telephony/mbms/DownloadProgressListener;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	void MbmsDownloadSession::addStatusListener(android::telephony::mbms::DownloadRequest arg0, __JniBaseClass arg1, android::telephony::mbms::DownloadStatusListener arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addStatusListener",
 			"(Landroid/telephony/mbms/DownloadRequest;Ljava/util/concurrent/Executor;Landroid/telephony/mbms/DownloadStatusListener;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	void MbmsDownloadSession::cancelDownload(android::telephony::mbms::DownloadRequest arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"cancelDownload",
 			"(Landroid/telephony/mbms/DownloadRequest;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MbmsDownloadSession::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	void MbmsDownloadSession::download(android::telephony::mbms::DownloadRequest arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"download",
 			"(Landroid/telephony/mbms/DownloadRequest;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject MbmsDownloadSession::getTempFileRootDirectory()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTempFileRootDirectory",
 			"()Ljava/io/File;"
 		);
 	}
 	QAndroidJniObject MbmsDownloadSession::listPendingDownloads()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"listPendingDownloads",
 			"()Ljava/util/List;"
 		);
 	}
 	void MbmsDownloadSession::removeProgressListener(android::telephony::mbms::DownloadRequest arg0, android::telephony::mbms::DownloadProgressListener arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeProgressListener",
 			"(Landroid/telephony/mbms/DownloadRequest;Landroid/telephony/mbms/DownloadProgressListener;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void MbmsDownloadSession::removeStatusListener(android::telephony::mbms::DownloadRequest arg0, android::telephony::mbms::DownloadStatusListener arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeStatusListener",
 			"(Landroid/telephony/mbms/DownloadRequest;Landroid/telephony/mbms/DownloadStatusListener;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void MbmsDownloadSession::requestDownloadState(android::telephony::mbms::DownloadRequest arg0, android::telephony::mbms::FileInfo arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"requestDownloadState",
 			"(Landroid/telephony/mbms/DownloadRequest;Landroid/telephony/mbms/FileInfo;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void MbmsDownloadSession::requestUpdateFileServices(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"requestUpdateFileServices",
 			"(Ljava/util/List;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MbmsDownloadSession::resetDownloadKnowledge(android::telephony::mbms::DownloadRequest arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"resetDownloadKnowledge",
 			"(Landroid/telephony/mbms/DownloadRequest;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MbmsDownloadSession::setTempFileRootDirectory(java::io::File arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTempFileRootDirectory",
 			"(Ljava/io/File;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::telephony

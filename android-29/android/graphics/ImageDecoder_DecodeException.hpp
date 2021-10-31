@@ -19,9 +19,11 @@ namespace android::graphics
 		static jint SOURCE_INCOMPLETE();
 		static jint SOURCE_MALFORMED_DATA();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ImageDecoder_DecodeException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
 		ImageDecoder_DecodeException(QAndroidJniObject obj);
+		
 		// Constructors
-		ImageDecoder_DecodeException() = default;
 		
 		// Methods
 		jint getError();

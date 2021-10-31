@@ -53,7 +53,9 @@ namespace javax::xml::xpath
 		);
 	}
 	
-	XPathConstants::XPathConstants(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	XPathConstants::XPathConstants(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

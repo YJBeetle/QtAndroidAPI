@@ -4,29 +4,29 @@ namespace java::lang::annotation
 {
 	// Fields
 	
-	IncompleteAnnotationException::IncompleteAnnotationException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	IncompleteAnnotationException::IncompleteAnnotationException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	
 	// Constructors
 	IncompleteAnnotationException::IncompleteAnnotationException(jclass arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::RuntimeException(
 			"java.lang.annotation.IncompleteAnnotationException",
 			"(Ljava/lang/Class;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jclass IncompleteAnnotationException::annotationType()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"annotationType",
 			"()Ljava/lang/Class;"
 		).object<jclass>();
 	}
 	jstring IncompleteAnnotationException::elementName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"elementName",
 			"()Ljava/lang/String;"
 		).object<jstring>();

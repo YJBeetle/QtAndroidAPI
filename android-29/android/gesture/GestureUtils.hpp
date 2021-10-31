@@ -26,9 +26,11 @@ namespace android::gesture
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit GestureUtils(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		GestureUtils(QAndroidJniObject obj);
+		
 		// Constructors
-		GestureUtils() = default;
 		
 		// Methods
 		static QAndroidJniObject computeOrientedBoundingBox(jfloatArray arg0);

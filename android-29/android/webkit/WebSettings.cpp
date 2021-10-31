@@ -115,15 +115,15 @@ namespace android::webkit
 		);
 	}
 	
-	WebSettings::WebSettings(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WebSettings::WebSettings(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	WebSettings::WebSettings()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.webkit.WebSettings",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring WebSettings::getDefaultUserAgent(android::content::Context arg0)
@@ -132,320 +132,320 @@ namespace android::webkit
 			"android.webkit.WebSettings",
 			"getDefaultUserAgent",
 			"(Landroid/content/Context;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jboolean WebSettings::enableSmoothTransition()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"enableSmoothTransition",
 			"()Z"
 		);
 	}
 	jboolean WebSettings::getAllowContentAccess()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getAllowContentAccess",
 			"()Z"
 		);
 	}
 	jboolean WebSettings::getAllowFileAccess()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getAllowFileAccess",
 			"()Z"
 		);
 	}
 	jboolean WebSettings::getAllowFileAccessFromFileURLs()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getAllowFileAccessFromFileURLs",
 			"()Z"
 		);
 	}
 	jboolean WebSettings::getAllowUniversalAccessFromFileURLs()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getAllowUniversalAccessFromFileURLs",
 			"()Z"
 		);
 	}
 	jboolean WebSettings::getBlockNetworkImage()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getBlockNetworkImage",
 			"()Z"
 		);
 	}
 	jboolean WebSettings::getBlockNetworkLoads()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getBlockNetworkLoads",
 			"()Z"
 		);
 	}
 	jboolean WebSettings::getBuiltInZoomControls()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getBuiltInZoomControls",
 			"()Z"
 		);
 	}
 	jint WebSettings::getCacheMode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCacheMode",
 			"()I"
 		);
 	}
 	jstring WebSettings::getCursiveFontFamily()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCursiveFontFamily",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jboolean WebSettings::getDatabaseEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getDatabaseEnabled",
 			"()Z"
 		);
 	}
 	jstring WebSettings::getDatabasePath()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDatabasePath",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint WebSettings::getDefaultFixedFontSize()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDefaultFixedFontSize",
 			"()I"
 		);
 	}
 	jint WebSettings::getDefaultFontSize()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDefaultFontSize",
 			"()I"
 		);
 	}
 	jstring WebSettings::getDefaultTextEncodingName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDefaultTextEncodingName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject WebSettings::getDefaultZoom()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDefaultZoom",
 			"()Landroid/webkit/WebSettings$ZoomDensity;"
 		);
 	}
 	jint WebSettings::getDisabledActionModeMenuItems()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDisabledActionModeMenuItems",
 			"()I"
 		);
 	}
 	jboolean WebSettings::getDisplayZoomControls()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getDisplayZoomControls",
 			"()Z"
 		);
 	}
 	jboolean WebSettings::getDomStorageEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getDomStorageEnabled",
 			"()Z"
 		);
 	}
 	jstring WebSettings::getFantasyFontFamily()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFantasyFontFamily",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring WebSettings::getFixedFontFamily()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFixedFontFamily",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint WebSettings::getForceDark()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getForceDark",
 			"()I"
 		);
 	}
 	jboolean WebSettings::getJavaScriptCanOpenWindowsAutomatically()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getJavaScriptCanOpenWindowsAutomatically",
 			"()Z"
 		);
 	}
 	jboolean WebSettings::getJavaScriptEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getJavaScriptEnabled",
 			"()Z"
 		);
 	}
 	QAndroidJniObject WebSettings::getLayoutAlgorithm()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLayoutAlgorithm",
 			"()Landroid/webkit/WebSettings$LayoutAlgorithm;"
 		);
 	}
 	jboolean WebSettings::getLightTouchEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getLightTouchEnabled",
 			"()Z"
 		);
 	}
 	jboolean WebSettings::getLoadWithOverviewMode()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getLoadWithOverviewMode",
 			"()Z"
 		);
 	}
 	jboolean WebSettings::getLoadsImagesAutomatically()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getLoadsImagesAutomatically",
 			"()Z"
 		);
 	}
 	jboolean WebSettings::getMediaPlaybackRequiresUserGesture()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getMediaPlaybackRequiresUserGesture",
 			"()Z"
 		);
 	}
 	jint WebSettings::getMinimumFontSize()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMinimumFontSize",
 			"()I"
 		);
 	}
 	jint WebSettings::getMinimumLogicalFontSize()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMinimumLogicalFontSize",
 			"()I"
 		);
 	}
 	jint WebSettings::getMixedContentMode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMixedContentMode",
 			"()I"
 		);
 	}
 	jboolean WebSettings::getOffscreenPreRaster()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getOffscreenPreRaster",
 			"()Z"
 		);
 	}
 	QAndroidJniObject WebSettings::getPluginState()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPluginState",
 			"()Landroid/webkit/WebSettings$PluginState;"
 		);
 	}
 	jboolean WebSettings::getSafeBrowsingEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getSafeBrowsingEnabled",
 			"()Z"
 		);
 	}
 	jstring WebSettings::getSansSerifFontFamily()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSansSerifFontFamily",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jboolean WebSettings::getSaveFormData()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getSaveFormData",
 			"()Z"
 		);
 	}
 	jboolean WebSettings::getSavePassword()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getSavePassword",
 			"()Z"
 		);
 	}
 	jstring WebSettings::getSerifFontFamily()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSerifFontFamily",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring WebSettings::getStandardFontFamily()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getStandardFontFamily",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject WebSettings::getTextSize()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTextSize",
 			"()Landroid/webkit/WebSettings$TextSize;"
 		);
 	}
 	jint WebSettings::getTextZoom()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTextZoom",
 			"()I"
 		);
 	}
 	jboolean WebSettings::getUseWideViewPort()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getUseWideViewPort",
 			"()Z"
 		);
 	}
 	jstring WebSettings::getUserAgentString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getUserAgentString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void WebSettings::setAllowContentAccess(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAllowContentAccess",
 			"(Z)V",
 			arg0
@@ -453,7 +453,7 @@ namespace android::webkit
 	}
 	void WebSettings::setAllowFileAccess(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAllowFileAccess",
 			"(Z)V",
 			arg0
@@ -461,7 +461,7 @@ namespace android::webkit
 	}
 	void WebSettings::setAllowFileAccessFromFileURLs(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAllowFileAccessFromFileURLs",
 			"(Z)V",
 			arg0
@@ -469,7 +469,7 @@ namespace android::webkit
 	}
 	void WebSettings::setAllowUniversalAccessFromFileURLs(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAllowUniversalAccessFromFileURLs",
 			"(Z)V",
 			arg0
@@ -477,7 +477,7 @@ namespace android::webkit
 	}
 	void WebSettings::setAppCacheEnabled(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAppCacheEnabled",
 			"(Z)V",
 			arg0
@@ -485,7 +485,7 @@ namespace android::webkit
 	}
 	void WebSettings::setAppCacheMaxSize(jlong arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAppCacheMaxSize",
 			"(J)V",
 			arg0
@@ -493,7 +493,7 @@ namespace android::webkit
 	}
 	void WebSettings::setAppCachePath(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAppCachePath",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -501,7 +501,7 @@ namespace android::webkit
 	}
 	void WebSettings::setBlockNetworkImage(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setBlockNetworkImage",
 			"(Z)V",
 			arg0
@@ -509,7 +509,7 @@ namespace android::webkit
 	}
 	void WebSettings::setBlockNetworkLoads(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setBlockNetworkLoads",
 			"(Z)V",
 			arg0
@@ -517,7 +517,7 @@ namespace android::webkit
 	}
 	void WebSettings::setBuiltInZoomControls(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setBuiltInZoomControls",
 			"(Z)V",
 			arg0
@@ -525,7 +525,7 @@ namespace android::webkit
 	}
 	void WebSettings::setCacheMode(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCacheMode",
 			"(I)V",
 			arg0
@@ -533,7 +533,7 @@ namespace android::webkit
 	}
 	void WebSettings::setCursiveFontFamily(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCursiveFontFamily",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -541,7 +541,7 @@ namespace android::webkit
 	}
 	void WebSettings::setDatabaseEnabled(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDatabaseEnabled",
 			"(Z)V",
 			arg0
@@ -549,7 +549,7 @@ namespace android::webkit
 	}
 	void WebSettings::setDatabasePath(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDatabasePath",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -557,7 +557,7 @@ namespace android::webkit
 	}
 	void WebSettings::setDefaultFixedFontSize(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDefaultFixedFontSize",
 			"(I)V",
 			arg0
@@ -565,7 +565,7 @@ namespace android::webkit
 	}
 	void WebSettings::setDefaultFontSize(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDefaultFontSize",
 			"(I)V",
 			arg0
@@ -573,7 +573,7 @@ namespace android::webkit
 	}
 	void WebSettings::setDefaultTextEncodingName(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDefaultTextEncodingName",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -581,15 +581,15 @@ namespace android::webkit
 	}
 	void WebSettings::setDefaultZoom(android::webkit::WebSettings_ZoomDensity arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDefaultZoom",
 			"(Landroid/webkit/WebSettings$ZoomDensity;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void WebSettings::setDisabledActionModeMenuItems(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDisabledActionModeMenuItems",
 			"(I)V",
 			arg0
@@ -597,7 +597,7 @@ namespace android::webkit
 	}
 	void WebSettings::setDisplayZoomControls(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDisplayZoomControls",
 			"(Z)V",
 			arg0
@@ -605,7 +605,7 @@ namespace android::webkit
 	}
 	void WebSettings::setDomStorageEnabled(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDomStorageEnabled",
 			"(Z)V",
 			arg0
@@ -613,7 +613,7 @@ namespace android::webkit
 	}
 	void WebSettings::setEnableSmoothTransition(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setEnableSmoothTransition",
 			"(Z)V",
 			arg0
@@ -621,7 +621,7 @@ namespace android::webkit
 	}
 	void WebSettings::setFantasyFontFamily(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFantasyFontFamily",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -629,7 +629,7 @@ namespace android::webkit
 	}
 	void WebSettings::setFixedFontFamily(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFixedFontFamily",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -637,7 +637,7 @@ namespace android::webkit
 	}
 	void WebSettings::setForceDark(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setForceDark",
 			"(I)V",
 			arg0
@@ -645,7 +645,7 @@ namespace android::webkit
 	}
 	void WebSettings::setGeolocationDatabasePath(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setGeolocationDatabasePath",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -653,7 +653,7 @@ namespace android::webkit
 	}
 	void WebSettings::setGeolocationEnabled(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setGeolocationEnabled",
 			"(Z)V",
 			arg0
@@ -661,7 +661,7 @@ namespace android::webkit
 	}
 	void WebSettings::setJavaScriptCanOpenWindowsAutomatically(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setJavaScriptCanOpenWindowsAutomatically",
 			"(Z)V",
 			arg0
@@ -669,7 +669,7 @@ namespace android::webkit
 	}
 	void WebSettings::setJavaScriptEnabled(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setJavaScriptEnabled",
 			"(Z)V",
 			arg0
@@ -677,15 +677,15 @@ namespace android::webkit
 	}
 	void WebSettings::setLayoutAlgorithm(android::webkit::WebSettings_LayoutAlgorithm arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLayoutAlgorithm",
 			"(Landroid/webkit/WebSettings$LayoutAlgorithm;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void WebSettings::setLightTouchEnabled(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLightTouchEnabled",
 			"(Z)V",
 			arg0
@@ -693,7 +693,7 @@ namespace android::webkit
 	}
 	void WebSettings::setLoadWithOverviewMode(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLoadWithOverviewMode",
 			"(Z)V",
 			arg0
@@ -701,7 +701,7 @@ namespace android::webkit
 	}
 	void WebSettings::setLoadsImagesAutomatically(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLoadsImagesAutomatically",
 			"(Z)V",
 			arg0
@@ -709,7 +709,7 @@ namespace android::webkit
 	}
 	void WebSettings::setMediaPlaybackRequiresUserGesture(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMediaPlaybackRequiresUserGesture",
 			"(Z)V",
 			arg0
@@ -717,7 +717,7 @@ namespace android::webkit
 	}
 	void WebSettings::setMinimumFontSize(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMinimumFontSize",
 			"(I)V",
 			arg0
@@ -725,7 +725,7 @@ namespace android::webkit
 	}
 	void WebSettings::setMinimumLogicalFontSize(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMinimumLogicalFontSize",
 			"(I)V",
 			arg0
@@ -733,7 +733,7 @@ namespace android::webkit
 	}
 	void WebSettings::setMixedContentMode(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMixedContentMode",
 			"(I)V",
 			arg0
@@ -741,7 +741,7 @@ namespace android::webkit
 	}
 	void WebSettings::setNeedInitialFocus(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setNeedInitialFocus",
 			"(Z)V",
 			arg0
@@ -749,7 +749,7 @@ namespace android::webkit
 	}
 	void WebSettings::setOffscreenPreRaster(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOffscreenPreRaster",
 			"(Z)V",
 			arg0
@@ -757,23 +757,23 @@ namespace android::webkit
 	}
 	void WebSettings::setPluginState(android::webkit::WebSettings_PluginState arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPluginState",
 			"(Landroid/webkit/WebSettings$PluginState;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void WebSettings::setRenderPriority(android::webkit::WebSettings_RenderPriority arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setRenderPriority",
 			"(Landroid/webkit/WebSettings$RenderPriority;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void WebSettings::setSafeBrowsingEnabled(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSafeBrowsingEnabled",
 			"(Z)V",
 			arg0
@@ -781,7 +781,7 @@ namespace android::webkit
 	}
 	void WebSettings::setSansSerifFontFamily(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSansSerifFontFamily",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -789,7 +789,7 @@ namespace android::webkit
 	}
 	void WebSettings::setSaveFormData(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSaveFormData",
 			"(Z)V",
 			arg0
@@ -797,7 +797,7 @@ namespace android::webkit
 	}
 	void WebSettings::setSavePassword(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSavePassword",
 			"(Z)V",
 			arg0
@@ -805,7 +805,7 @@ namespace android::webkit
 	}
 	void WebSettings::setSerifFontFamily(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSerifFontFamily",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -813,7 +813,7 @@ namespace android::webkit
 	}
 	void WebSettings::setStandardFontFamily(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setStandardFontFamily",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -821,7 +821,7 @@ namespace android::webkit
 	}
 	void WebSettings::setSupportMultipleWindows(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSupportMultipleWindows",
 			"(Z)V",
 			arg0
@@ -829,7 +829,7 @@ namespace android::webkit
 	}
 	void WebSettings::setSupportZoom(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSupportZoom",
 			"(Z)V",
 			arg0
@@ -837,15 +837,15 @@ namespace android::webkit
 	}
 	void WebSettings::setTextSize(android::webkit::WebSettings_TextSize arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTextSize",
 			"(Landroid/webkit/WebSettings$TextSize;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void WebSettings::setTextZoom(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTextZoom",
 			"(I)V",
 			arg0
@@ -853,7 +853,7 @@ namespace android::webkit
 	}
 	void WebSettings::setUseWideViewPort(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setUseWideViewPort",
 			"(Z)V",
 			arg0
@@ -861,7 +861,7 @@ namespace android::webkit
 	}
 	void WebSettings::setUserAgentString(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setUserAgentString",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -869,14 +869,14 @@ namespace android::webkit
 	}
 	jboolean WebSettings::supportMultipleWindows()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"supportMultipleWindows",
 			"()Z"
 		);
 	}
 	jboolean WebSettings::supportZoom()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"supportZoom",
 			"()Z"
 		);

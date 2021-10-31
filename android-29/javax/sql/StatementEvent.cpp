@@ -5,39 +5,37 @@ namespace javax::sql
 {
 	// Fields
 	
-	StatementEvent::StatementEvent(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	StatementEvent::StatementEvent(QAndroidJniObject obj) : java::util::EventObject(obj) {}
+	
 	// Constructors
 	StatementEvent::StatementEvent(__JniBaseClass arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::EventObject(
 			"javax.sql.StatementEvent",
 			"(Ljavax/sql/PooledConnection;Ljava/sql/PreparedStatement;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	StatementEvent::StatementEvent(__JniBaseClass arg0, __JniBaseClass arg1, java::sql::SQLException arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::EventObject(
 			"javax.sql.StatementEvent",
 			"(Ljavax/sql/PooledConnection;Ljava/sql/PreparedStatement;Ljava/sql/SQLException;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject StatementEvent::getSQLException()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSQLException",
 			"()Ljava/sql/SQLException;"
 		);
 	}
 	QAndroidJniObject StatementEvent::getStatement()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getStatement",
 			"()Ljava/sql/PreparedStatement;"
 		);

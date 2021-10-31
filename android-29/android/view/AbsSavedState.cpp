@@ -22,30 +22,32 @@ namespace android::view
 		);
 	}
 	
-	AbsSavedState::AbsSavedState(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AbsSavedState::AbsSavedState(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint AbsSavedState::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	QAndroidJniObject AbsSavedState::getSuperState()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSuperState",
 			"()Landroid/os/Parcelable;"
 		);
 	}
 	void AbsSavedState::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

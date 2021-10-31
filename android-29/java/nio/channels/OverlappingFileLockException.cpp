@@ -4,15 +4,15 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	OverlappingFileLockException::OverlappingFileLockException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	OverlappingFileLockException::OverlappingFileLockException(QAndroidJniObject obj) : java::lang::IllegalStateException(obj) {}
+	
 	// Constructors
 	OverlappingFileLockException::OverlappingFileLockException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::IllegalStateException(
 			"java.nio.channels.OverlappingFileLockException",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::nio::channels

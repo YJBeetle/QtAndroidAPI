@@ -142,140 +142,140 @@ namespace android::view::inputmethod
 	}
 	jint EditorInfo::actionId()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"actionId"
 		);
 	}
 	jstring EditorInfo::actionLabel()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"actionLabel",
 			"Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jarray EditorInfo::contentMimeTypes()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"contentMimeTypes",
 			"[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	QAndroidJniObject EditorInfo::extras()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"extras",
 			"Landroid/os/Bundle;"
 		);
 	}
 	jint EditorInfo::fieldId()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"fieldId"
 		);
 	}
 	jstring EditorInfo::fieldName()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"fieldName",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject EditorInfo::hintLocales()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"hintLocales",
 			"Landroid/os/LocaleList;"
 		);
 	}
 	jstring EditorInfo::hintText()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"hintText",
 			"Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jint EditorInfo::imeOptions()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"imeOptions"
 		);
 	}
 	jint EditorInfo::initialCapsMode()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"initialCapsMode"
 		);
 	}
 	jint EditorInfo::initialSelEnd()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"initialSelEnd"
 		);
 	}
 	jint EditorInfo::initialSelStart()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"initialSelStart"
 		);
 	}
 	jint EditorInfo::inputType()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"inputType"
 		);
 	}
 	jstring EditorInfo::label()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"label",
 			"Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jstring EditorInfo::packageName()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"packageName",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring EditorInfo::privateImeOptions()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"privateImeOptions",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	
-	EditorInfo::EditorInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	EditorInfo::EditorInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	EditorInfo::EditorInfo()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.inputmethod.EditorInfo",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jint EditorInfo::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	void EditorInfo::dump(__JniBaseClass arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"dump",
 			"(Landroid/util/Printer;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void EditorInfo::makeCompatible(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"makeCompatible",
 			"(I)V",
 			arg0
@@ -283,10 +283,10 @@ namespace android::view::inputmethod
 	}
 	void EditorInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

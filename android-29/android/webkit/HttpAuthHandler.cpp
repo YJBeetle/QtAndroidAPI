@@ -4,20 +4,22 @@ namespace android::webkit
 {
 	// Fields
 	
-	HttpAuthHandler::HttpAuthHandler(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	HttpAuthHandler::HttpAuthHandler(QAndroidJniObject obj) : android::os::Handler(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void HttpAuthHandler::cancel()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"cancel",
 			"()V"
 		);
 	}
 	void HttpAuthHandler::proceed(jstring arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"proceed",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
@@ -26,7 +28,7 @@ namespace android::webkit
 	}
 	jboolean HttpAuthHandler::useHttpAuthUsernamePassword()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"useHttpAuthUsernamePassword",
 			"()Z"
 		);

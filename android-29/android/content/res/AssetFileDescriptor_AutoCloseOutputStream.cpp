@@ -5,21 +5,21 @@ namespace android::content::res
 {
 	// Fields
 	
-	AssetFileDescriptor_AutoCloseOutputStream::AssetFileDescriptor_AutoCloseOutputStream(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AssetFileDescriptor_AutoCloseOutputStream::AssetFileDescriptor_AutoCloseOutputStream(QAndroidJniObject obj) : android::os::ParcelFileDescriptor_AutoCloseOutputStream(obj) {}
+	
 	// Constructors
 	AssetFileDescriptor_AutoCloseOutputStream::AssetFileDescriptor_AutoCloseOutputStream(android::content::res::AssetFileDescriptor arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::os::ParcelFileDescriptor_AutoCloseOutputStream(
 			"android.content.res.AssetFileDescriptor$AutoCloseOutputStream",
 			"(Landroid/content/res/AssetFileDescriptor;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	void AssetFileDescriptor_AutoCloseOutputStream::write(jbyteArray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"write",
 			"([B)V",
 			arg0
@@ -27,7 +27,7 @@ namespace android::content::res
 	}
 	void AssetFileDescriptor_AutoCloseOutputStream::write(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"write",
 			"(I)V",
 			arg0
@@ -35,7 +35,7 @@ namespace android::content::res
 	}
 	void AssetFileDescriptor_AutoCloseOutputStream::write(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"write",
 			"([BII)V",
 			arg0,

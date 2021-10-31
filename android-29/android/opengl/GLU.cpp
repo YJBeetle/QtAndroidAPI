@@ -4,15 +4,15 @@ namespace android::opengl
 {
 	// Fields
 	
-	GLU::GLU(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	GLU::GLU(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	GLU::GLU()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.opengl.GLU",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring GLU::gluErrorString(jint arg0)
@@ -30,7 +30,7 @@ namespace android::opengl
 			"android.opengl.GLU",
 			"gluLookAt",
 			"(Ljavax/microedition/khronos/opengles/GL10;FFFFFFFFF)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
@@ -48,7 +48,7 @@ namespace android::opengl
 			"android.opengl.GLU",
 			"gluOrtho2D",
 			"(Ljavax/microedition/khronos/opengles/GL10;FFFF)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
@@ -61,7 +61,7 @@ namespace android::opengl
 			"android.opengl.GLU",
 			"gluPerspective",
 			"(Ljavax/microedition/khronos/opengles/GL10;FFFF)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,

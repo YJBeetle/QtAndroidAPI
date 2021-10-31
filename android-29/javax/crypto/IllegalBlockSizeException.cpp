@@ -4,23 +4,21 @@ namespace javax::crypto
 {
 	// Fields
 	
-	IllegalBlockSizeException::IllegalBlockSizeException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	IllegalBlockSizeException::IllegalBlockSizeException(QAndroidJniObject obj) : java::security::GeneralSecurityException(obj) {}
+	
 	// Constructors
 	IllegalBlockSizeException::IllegalBlockSizeException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::security::GeneralSecurityException(
 			"javax.crypto.IllegalBlockSizeException",
 			"()V"
-		);
-	}
+		) {}
 	IllegalBlockSizeException::IllegalBlockSizeException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::security::GeneralSecurityException(
 			"javax.crypto.IllegalBlockSizeException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace javax::crypto

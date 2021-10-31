@@ -26,9 +26,11 @@ namespace android::media::midi
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MidiManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MidiManager(QAndroidJniObject obj);
+		
 		// Constructors
-		MidiManager() = default;
 		
 		// Methods
 		jarray getDevices();

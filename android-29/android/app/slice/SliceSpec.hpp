@@ -15,10 +15,12 @@ namespace android::app::slice
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SliceSpec(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SliceSpec(QAndroidJniObject obj);
+		
 		// Constructors
 		SliceSpec(jstring arg0, jint arg1);
-		SliceSpec() = default;
 		
 		// Methods
 		jboolean canRender(android::app::slice::SliceSpec arg0);

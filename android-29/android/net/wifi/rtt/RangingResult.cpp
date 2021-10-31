@@ -37,20 +37,22 @@ namespace android::net::wifi::rtt
 		);
 	}
 	
-	RangingResult::RangingResult(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	RangingResult::RangingResult(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint RangingResult::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean RangingResult::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -58,94 +60,94 @@ namespace android::net::wifi::rtt
 	}
 	jint RangingResult::getDistanceMm()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDistanceMm",
 			"()I"
 		);
 	}
 	jint RangingResult::getDistanceStdDevMm()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDistanceStdDevMm",
 			"()I"
 		);
 	}
 	QAndroidJniObject RangingResult::getMacAddress()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMacAddress",
 			"()Landroid/net/MacAddress;"
 		);
 	}
 	jint RangingResult::getNumAttemptedMeasurements()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getNumAttemptedMeasurements",
 			"()I"
 		);
 	}
 	jint RangingResult::getNumSuccessfulMeasurements()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getNumSuccessfulMeasurements",
 			"()I"
 		);
 	}
 	QAndroidJniObject RangingResult::getPeerHandle()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPeerHandle",
 			"()Landroid/net/wifi/aware/PeerHandle;"
 		);
 	}
 	jlong RangingResult::getRangingTimestampMillis()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getRangingTimestampMillis",
 			"()J"
 		);
 	}
 	jint RangingResult::getRssi()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRssi",
 			"()I"
 		);
 	}
 	jint RangingResult::getStatus()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getStatus",
 			"()I"
 		);
 	}
 	QAndroidJniObject RangingResult::getUnverifiedResponderLocation()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getUnverifiedResponderLocation",
 			"()Landroid/net/wifi/rtt/ResponderLocation;"
 		);
 	}
 	jint RangingResult::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring RangingResult::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void RangingResult::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

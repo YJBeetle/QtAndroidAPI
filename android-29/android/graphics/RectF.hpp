@@ -23,7 +23,10 @@ namespace android::graphics
 		jfloat right();
 		jfloat top();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit RectF(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		RectF(QAndroidJniObject obj);
+		
 		// Constructors
 		RectF();
 		RectF(android::graphics::Rect arg0);

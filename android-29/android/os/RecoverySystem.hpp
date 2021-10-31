@@ -18,9 +18,11 @@ namespace android::os
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit RecoverySystem(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		RecoverySystem(QAndroidJniObject obj);
+		
 		// Constructors
-		RecoverySystem() = default;
 		
 		// Methods
 		static void installPackage(android::content::Context arg0, java::io::File arg1);

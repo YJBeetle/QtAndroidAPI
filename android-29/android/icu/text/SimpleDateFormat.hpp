@@ -61,7 +61,10 @@ namespace android::icu::text
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SimpleDateFormat(const char *className, const char *sig, Ts...agv) : android::icu::text::DateFormat(className, sig, std::forward<Ts>(agv)...) {}
 		SimpleDateFormat(QAndroidJniObject obj);
+		
 		// Constructors
 		SimpleDateFormat();
 		SimpleDateFormat(jstring arg0);

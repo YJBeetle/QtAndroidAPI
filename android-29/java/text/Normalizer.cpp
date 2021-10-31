@@ -5,7 +5,9 @@ namespace java::text
 {
 	// Fields
 	
-	Normalizer::Normalizer(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Normalizer::Normalizer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -16,7 +18,7 @@ namespace java::text
 			"isNormalized",
 			"(Ljava/lang/CharSequence;Ljava/text/Normalizer$Form;)Z",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jstring Normalizer::normalize(jstring arg0, java::text::Normalizer_Form arg1)
@@ -26,7 +28,7 @@ namespace java::text
 			"normalize",
 			"(Ljava/lang/CharSequence;Ljava/text/Normalizer$Form;)Ljava/lang/String;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		).object<jstring>();
 	}
 } // namespace java::text

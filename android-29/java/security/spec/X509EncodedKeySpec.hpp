@@ -11,11 +11,13 @@ namespace java::security::spec
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit X509EncodedKeySpec(const char *className, const char *sig, Ts...agv) : java::security::spec::EncodedKeySpec(className, sig, std::forward<Ts>(agv)...) {}
 		X509EncodedKeySpec(QAndroidJniObject obj);
+		
 		// Constructors
 		X509EncodedKeySpec(jbyteArray arg0);
 		X509EncodedKeySpec(jbyteArray arg0, jstring arg1);
-		X509EncodedKeySpec() = default;
 		
 		// Methods
 		jbyteArray getEncoded();

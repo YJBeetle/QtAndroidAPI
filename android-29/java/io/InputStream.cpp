@@ -5,15 +5,15 @@ namespace java::io
 {
 	// Fields
 	
-	InputStream::InputStream(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	InputStream::InputStream(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	InputStream::InputStream()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.io.InputStream",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject InputStream::nullInputStream()
@@ -26,21 +26,21 @@ namespace java::io
 	}
 	jint InputStream::available()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"available",
 			"()I"
 		);
 	}
 	void InputStream::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	void InputStream::mark(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"mark",
 			"(I)V",
 			arg0
@@ -48,21 +48,21 @@ namespace java::io
 	}
 	jboolean InputStream::markSupported()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"markSupported",
 			"()Z"
 		);
 	}
 	jint InputStream::read()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"read",
 			"()I"
 		);
 	}
 	jint InputStream::read(jbyteArray arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"read",
 			"([B)I",
 			arg0
@@ -70,7 +70,7 @@ namespace java::io
 	}
 	jint InputStream::read(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"read",
 			"([BII)I",
 			arg0,
@@ -80,14 +80,14 @@ namespace java::io
 	}
 	jbyteArray InputStream::readAllBytes()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"readAllBytes",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jbyteArray InputStream::readNBytes(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"readNBytes",
 			"(I)[B",
 			arg0
@@ -95,7 +95,7 @@ namespace java::io
 	}
 	jint InputStream::readNBytes(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"readNBytes",
 			"([BII)I",
 			arg0,
@@ -105,14 +105,14 @@ namespace java::io
 	}
 	void InputStream::reset()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
 	jlong InputStream::skip(jlong arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"skip",
 			"(J)J",
 			arg0
@@ -120,7 +120,7 @@ namespace java::io
 	}
 	void InputStream::skipNBytes(jlong arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"skipNBytes",
 			"(J)V",
 			arg0
@@ -128,10 +128,10 @@ namespace java::io
 	}
 	jlong InputStream::transferTo(java::io::OutputStream arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"transferTo",
 			"(Ljava/io/OutputStream;)J",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace java::io

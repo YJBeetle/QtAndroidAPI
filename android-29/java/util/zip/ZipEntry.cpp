@@ -20,134 +20,132 @@ namespace java::util::zip
 		);
 	}
 	
-	ZipEntry::ZipEntry(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ZipEntry::ZipEntry(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ZipEntry::ZipEntry(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.zip.ZipEntry",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	ZipEntry::ZipEntry(java::util::zip::ZipEntry &arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.zip.ZipEntry",
 			"(Ljava/util/zip/ZipEntry;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jobject ZipEntry::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jstring ZipEntry::getComment()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getComment",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jlong ZipEntry::getCompressedSize()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getCompressedSize",
 			"()J"
 		);
 	}
 	jlong ZipEntry::getCrc()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getCrc",
 			"()J"
 		);
 	}
 	QAndroidJniObject ZipEntry::getCreationTime()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCreationTime",
 			"()Ljava/nio/file/attribute/FileTime;"
 		);
 	}
 	jbyteArray ZipEntry::getExtra()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExtra",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	QAndroidJniObject ZipEntry::getLastAccessTime()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLastAccessTime",
 			"()Ljava/nio/file/attribute/FileTime;"
 		);
 	}
 	QAndroidJniObject ZipEntry::getLastModifiedTime()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLastModifiedTime",
 			"()Ljava/nio/file/attribute/FileTime;"
 		);
 	}
 	jint ZipEntry::getMethod()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMethod",
 			"()I"
 		);
 	}
 	jstring ZipEntry::getName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jlong ZipEntry::getSize()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getSize",
 			"()J"
 		);
 	}
 	jlong ZipEntry::getTime()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getTime",
 			"()J"
 		);
 	}
 	QAndroidJniObject ZipEntry::getTimeLocal()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTimeLocal",
 			"()Ljava/time/LocalDateTime;"
 		);
 	}
 	jint ZipEntry::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean ZipEntry::isDirectory()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isDirectory",
 			"()Z"
 		);
 	}
 	void ZipEntry::setComment(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setComment",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -155,7 +153,7 @@ namespace java::util::zip
 	}
 	void ZipEntry::setCompressedSize(jlong arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCompressedSize",
 			"(J)V",
 			arg0
@@ -163,7 +161,7 @@ namespace java::util::zip
 	}
 	void ZipEntry::setCrc(jlong arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCrc",
 			"(J)V",
 			arg0
@@ -171,15 +169,15 @@ namespace java::util::zip
 	}
 	QAndroidJniObject ZipEntry::setCreationTime(java::nio::file::attribute::FileTime arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setCreationTime",
 			"(Ljava/nio/file/attribute/FileTime;)Ljava/util/zip/ZipEntry;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ZipEntry::setExtra(jbyteArray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setExtra",
 			"([B)V",
 			arg0
@@ -187,23 +185,23 @@ namespace java::util::zip
 	}
 	QAndroidJniObject ZipEntry::setLastAccessTime(java::nio::file::attribute::FileTime arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setLastAccessTime",
 			"(Ljava/nio/file/attribute/FileTime;)Ljava/util/zip/ZipEntry;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ZipEntry::setLastModifiedTime(java::nio::file::attribute::FileTime arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setLastModifiedTime",
 			"(Ljava/nio/file/attribute/FileTime;)Ljava/util/zip/ZipEntry;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ZipEntry::setMethod(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMethod",
 			"(I)V",
 			arg0
@@ -211,7 +209,7 @@ namespace java::util::zip
 	}
 	void ZipEntry::setSize(jlong arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSize",
 			"(J)V",
 			arg0
@@ -219,7 +217,7 @@ namespace java::util::zip
 	}
 	void ZipEntry::setTime(jlong arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTime",
 			"(J)V",
 			arg0
@@ -227,15 +225,15 @@ namespace java::util::zip
 	}
 	void ZipEntry::setTimeLocal(java::time::LocalDateTime arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTimeLocal",
 			"(Ljava/time/LocalDateTime;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring ZipEntry::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

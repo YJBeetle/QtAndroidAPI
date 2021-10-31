@@ -6,45 +6,45 @@ namespace android::system
 	// Fields
 	jshort StructPollfd::events()
 	{
-		return __thiz.getField<jshort>(
+		return getField<jshort>(
 			"events"
 		);
 	}
 	QAndroidJniObject StructPollfd::fd()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"fd",
 			"Ljava/io/FileDescriptor;"
 		);
 	}
 	jshort StructPollfd::revents()
 	{
-		return __thiz.getField<jshort>(
+		return getField<jshort>(
 			"revents"
 		);
 	}
 	jobject StructPollfd::userData()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"userData",
 			"Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	
-	StructPollfd::StructPollfd(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	StructPollfd::StructPollfd(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	StructPollfd::StructPollfd()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.system.StructPollfd",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring StructPollfd::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

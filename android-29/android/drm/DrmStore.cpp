@@ -4,15 +4,15 @@ namespace android::drm
 {
 	// Fields
 	
-	DrmStore::DrmStore(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DrmStore::DrmStore(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	DrmStore::DrmStore()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.drm.DrmStore",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::drm

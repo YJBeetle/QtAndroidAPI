@@ -19,59 +19,59 @@ namespace android::media::audiofx
 		);
 	}
 	
-	BassBoost::BassBoost(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BassBoost::BassBoost(QAndroidJniObject obj) : android::media::audiofx::AudioEffect(obj) {}
+	
 	// Constructors
 	BassBoost::BassBoost(jint arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::media::audiofx::AudioEffect(
 			"android.media.audiofx.BassBoost",
 			"(II)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject BassBoost::getProperties()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getProperties",
 			"()Landroid/media/audiofx/BassBoost$Settings;"
 		);
 	}
 	jshort BassBoost::getRoundedStrength()
 	{
-		return __thiz.callMethod<jshort>(
+		return callMethod<jshort>(
 			"getRoundedStrength",
 			"()S"
 		);
 	}
 	jboolean BassBoost::getStrengthSupported()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getStrengthSupported",
 			"()Z"
 		);
 	}
 	void BassBoost::setParameterListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setParameterListener",
 			"(Landroid/media/audiofx/BassBoost$OnParameterChangeListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void BassBoost::setProperties(android::media::audiofx::BassBoost_Settings arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setProperties",
 			"(Landroid/media/audiofx/BassBoost$Settings;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void BassBoost::setStrength(jshort arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setStrength",
 			"(S)V",
 			arg0

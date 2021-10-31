@@ -92,15 +92,15 @@ namespace android
 		).object<jstring>();
 	}
 	
-	Manifest_permission_group::Manifest_permission_group(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Manifest_permission_group::Manifest_permission_group(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Manifest_permission_group::Manifest_permission_group()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.Manifest$permission_group",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android

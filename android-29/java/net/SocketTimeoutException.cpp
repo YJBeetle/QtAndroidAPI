@@ -4,23 +4,21 @@ namespace java::net
 {
 	// Fields
 	
-	SocketTimeoutException::SocketTimeoutException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SocketTimeoutException::SocketTimeoutException(QAndroidJniObject obj) : java::io::InterruptedIOException(obj) {}
+	
 	// Constructors
 	SocketTimeoutException::SocketTimeoutException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::InterruptedIOException(
 			"java.net.SocketTimeoutException",
 			"()V"
-		);
-	}
+		) {}
 	SocketTimeoutException::SocketTimeoutException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::InterruptedIOException(
 			"java.net.SocketTimeoutException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::net

@@ -14,9 +14,11 @@ namespace android::net
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit InetAddresses(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		InetAddresses(QAndroidJniObject obj);
+		
 		// Constructors
-		InetAddresses() = default;
 		
 		// Methods
 		static jboolean isNumericAddress(jstring arg0);

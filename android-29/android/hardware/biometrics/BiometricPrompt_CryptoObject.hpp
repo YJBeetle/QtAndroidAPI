@@ -22,12 +22,14 @@ namespace android::hardware::biometrics
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BiometricPrompt_CryptoObject(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		BiometricPrompt_CryptoObject(QAndroidJniObject obj);
+		
 		// Constructors
 		BiometricPrompt_CryptoObject(java::security::Signature arg0);
 		BiometricPrompt_CryptoObject(javax::crypto::Cipher arg0);
 		BiometricPrompt_CryptoObject(javax::crypto::Mac arg0);
-		BiometricPrompt_CryptoObject() = default;
 		
 		// Methods
 		QAndroidJniObject getCipher();

@@ -18,9 +18,11 @@ namespace android::view
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ViewAnimationUtils(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ViewAnimationUtils(QAndroidJniObject obj);
+		
 		// Constructors
-		ViewAnimationUtils() = default;
 		
 		// Methods
 		static QAndroidJniObject createCircularReveal(android::view::View arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4);

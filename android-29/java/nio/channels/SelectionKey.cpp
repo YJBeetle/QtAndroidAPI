@@ -34,13 +34,15 @@ namespace java::nio::channels
 		);
 	}
 	
-	SelectionKey::SelectionKey(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SelectionKey::SelectionKey(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jobject SelectionKey::attach(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"attach",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0
@@ -48,35 +50,35 @@ namespace java::nio::channels
 	}
 	jobject SelectionKey::attachment()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"attachment",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	void SelectionKey::cancel()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"cancel",
 			"()V"
 		);
 	}
 	QAndroidJniObject SelectionKey::channel()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"channel",
 			"()Ljava/nio/channels/SelectableChannel;"
 		);
 	}
 	jint SelectionKey::interestOps()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"interestOps",
 			"()I"
 		);
 	}
 	QAndroidJniObject SelectionKey::interestOps(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"interestOps",
 			"(I)Ljava/nio/channels/SelectionKey;",
 			arg0
@@ -84,7 +86,7 @@ namespace java::nio::channels
 	}
 	jint SelectionKey::interestOpsAnd(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"interestOpsAnd",
 			"(I)I",
 			arg0
@@ -92,7 +94,7 @@ namespace java::nio::channels
 	}
 	jint SelectionKey::interestOpsOr(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"interestOpsOr",
 			"(I)I",
 			arg0
@@ -100,49 +102,49 @@ namespace java::nio::channels
 	}
 	jboolean SelectionKey::isAcceptable()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isAcceptable",
 			"()Z"
 		);
 	}
 	jboolean SelectionKey::isConnectable()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isConnectable",
 			"()Z"
 		);
 	}
 	jboolean SelectionKey::isReadable()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isReadable",
 			"()Z"
 		);
 	}
 	jboolean SelectionKey::isValid()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isValid",
 			"()Z"
 		);
 	}
 	jboolean SelectionKey::isWritable()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isWritable",
 			"()Z"
 		);
 	}
 	jint SelectionKey::readyOps()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"readyOps",
 			"()I"
 		);
 	}
 	QAndroidJniObject SelectionKey::selector()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"selector",
 			"()Ljava/nio/channels/Selector;"
 		);

@@ -116,13 +116,15 @@ namespace android::view
 		static jint PERSISTENT_NO_CACHE();
 		static jint PERSISTENT_SCROLLING_CACHE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ViewGroup(const char *className, const char *sig, Ts...agv) : android::view::View(className, sig, std::forward<Ts>(agv)...) {}
 		ViewGroup(QAndroidJniObject obj);
+		
 		// Constructors
 		ViewGroup(android::content::Context arg0);
 		ViewGroup(android::content::Context arg0, __JniBaseClass arg1);
 		ViewGroup(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		ViewGroup(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
-		ViewGroup() = default;
 		
 		// Methods
 		static jint getChildMeasureSpec(jint arg0, jint arg1, jint arg2);

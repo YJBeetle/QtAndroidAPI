@@ -5,28 +5,28 @@ namespace android::database
 {
 	// Fields
 	
-	AbstractCursor_SelfContentObserver::AbstractCursor_SelfContentObserver(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AbstractCursor_SelfContentObserver::AbstractCursor_SelfContentObserver(QAndroidJniObject obj) : android::database::ContentObserver(obj) {}
+	
 	// Constructors
 	AbstractCursor_SelfContentObserver::AbstractCursor_SelfContentObserver(android::database::AbstractCursor arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::database::ContentObserver(
 			"android.database.AbstractCursor$SelfContentObserver",
 			"(Landroid/database/AbstractCursor;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jboolean AbstractCursor_SelfContentObserver::deliverSelfNotifications()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"deliverSelfNotifications",
 			"()Z"
 		);
 	}
 	void AbstractCursor_SelfContentObserver::onChange(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onChange",
 			"(Z)V",
 			arg0

@@ -17,9 +17,11 @@ namespace android::provider
 		static QAndroidJniObject ENTERPRISE_CONTENT_FILTER_URI();
 		static jstring QUERY_PARAMETER_SIP_ADDRESS();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ContactsContract_PhoneLookup(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ContactsContract_PhoneLookup(QAndroidJniObject obj);
+		
 		// Constructors
-		ContactsContract_PhoneLookup() = default;
 		
 		// Methods
 	};

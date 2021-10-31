@@ -47,29 +47,27 @@ namespace android::drm
 		);
 	}
 	
-	DrmInfoEvent::DrmInfoEvent(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DrmInfoEvent::DrmInfoEvent(QAndroidJniObject obj) : android::drm::DrmEvent(obj) {}
+	
 	// Constructors
 	DrmInfoEvent::DrmInfoEvent(jint arg0, jint arg1, jstring arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: android::drm::DrmEvent(
 			"android.drm.DrmInfoEvent",
 			"(IILjava/lang/String;)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	DrmInfoEvent::DrmInfoEvent(jint arg0, jint arg1, jstring arg2, java::util::HashMap arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: android::drm::DrmEvent(
 			"android.drm.DrmInfoEvent",
 			"(IILjava/lang/String;Ljava/util/HashMap;)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
-		);
-	}
+			arg3.object()
+		) {}
 	
 	// Methods
 } // namespace android::drm

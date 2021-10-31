@@ -31,7 +31,10 @@ namespace java::net
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MulticastSocket(const char *className, const char *sig, Ts...agv) : java::net::DatagramSocket(className, sig, std::forward<Ts>(agv)...) {}
 		MulticastSocket(QAndroidJniObject obj);
+		
 		// Constructors
 		MulticastSocket();
 		MulticastSocket(jint arg0);

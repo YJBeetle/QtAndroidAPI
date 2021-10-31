@@ -36,7 +36,9 @@ namespace android::graphics
 		);
 	}
 	
-	ColorSpace_RenderIntent::ColorSpace_RenderIntent(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ColorSpace_RenderIntent::ColorSpace_RenderIntent(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

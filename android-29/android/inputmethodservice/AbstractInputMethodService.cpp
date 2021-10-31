@@ -11,60 +11,60 @@ namespace android::inputmethodservice
 {
 	// Fields
 	
-	AbstractInputMethodService::AbstractInputMethodService(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AbstractInputMethodService::AbstractInputMethodService(QAndroidJniObject obj) : android::app::Service(obj) {}
+	
 	// Constructors
 	AbstractInputMethodService::AbstractInputMethodService()
-	{
-		__thiz = QAndroidJniObject(
+		: android::app::Service(
 			"android.inputmethodservice.AbstractInputMethodService",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject AbstractInputMethodService::getKeyDispatcherState()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getKeyDispatcherState",
 			"()Landroid/view/KeyEvent$DispatcherState;"
 		);
 	}
 	QAndroidJniObject AbstractInputMethodService::onBind(android::content::Intent arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onBind",
 			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject AbstractInputMethodService::onCreateInputMethodInterface()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onCreateInputMethodInterface",
 			"()Landroid/inputmethodservice/AbstractInputMethodService$AbstractInputMethodImpl;"
 		);
 	}
 	QAndroidJniObject AbstractInputMethodService::onCreateInputMethodSessionInterface()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onCreateInputMethodSessionInterface",
 			"()Landroid/inputmethodservice/AbstractInputMethodService$AbstractInputMethodSessionImpl;"
 		);
 	}
 	jboolean AbstractInputMethodService::onGenericMotionEvent(android::view::MotionEvent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onGenericMotionEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean AbstractInputMethodService::onTrackballEvent(android::view::MotionEvent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onTrackballEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::inputmethodservice

@@ -13,9 +13,11 @@ namespace android::view::accessibility
 		static jint SELECTION_MODE_NONE();
 		static jint SELECTION_MODE_SINGLE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AccessibilityNodeInfo_CollectionInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AccessibilityNodeInfo_CollectionInfo(QAndroidJniObject obj);
+		
 		// Constructors
-		AccessibilityNodeInfo_CollectionInfo() = default;
 		
 		// Methods
 		static QAndroidJniObject obtain(jint arg0, jint arg1, jboolean arg2);

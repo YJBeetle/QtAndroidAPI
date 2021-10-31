@@ -5,27 +5,27 @@ namespace android::telecom
 {
 	// Fields
 	
-	CallScreeningService_CallResponse_Builder::CallScreeningService_CallResponse_Builder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CallScreeningService_CallResponse_Builder::CallScreeningService_CallResponse_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	CallScreeningService_CallResponse_Builder::CallScreeningService_CallResponse_Builder()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.telecom.CallScreeningService$CallResponse$Builder",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject CallScreeningService_CallResponse_Builder::build()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"build",
 			"()Landroid/telecom/CallScreeningService$CallResponse;"
 		);
 	}
 	QAndroidJniObject CallScreeningService_CallResponse_Builder::setDisallowCall(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setDisallowCall",
 			"(Z)Landroid/telecom/CallScreeningService$CallResponse$Builder;",
 			arg0
@@ -33,7 +33,7 @@ namespace android::telecom
 	}
 	QAndroidJniObject CallScreeningService_CallResponse_Builder::setRejectCall(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setRejectCall",
 			"(Z)Landroid/telecom/CallScreeningService$CallResponse$Builder;",
 			arg0
@@ -41,7 +41,7 @@ namespace android::telecom
 	}
 	QAndroidJniObject CallScreeningService_CallResponse_Builder::setSilenceCall(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setSilenceCall",
 			"(Z)Landroid/telecom/CallScreeningService$CallResponse$Builder;",
 			arg0
@@ -49,7 +49,7 @@ namespace android::telecom
 	}
 	QAndroidJniObject CallScreeningService_CallResponse_Builder::setSkipCallLog(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setSkipCallLog",
 			"(Z)Landroid/telecom/CallScreeningService$CallResponse$Builder;",
 			arg0
@@ -57,7 +57,7 @@ namespace android::telecom
 	}
 	QAndroidJniObject CallScreeningService_CallResponse_Builder::setSkipNotification(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setSkipNotification",
 			"(Z)Landroid/telecom/CallScreeningService$CallResponse$Builder;",
 			arg0

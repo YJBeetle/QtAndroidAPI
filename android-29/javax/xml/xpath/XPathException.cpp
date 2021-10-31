@@ -8,54 +8,52 @@ namespace javax::xml::xpath
 {
 	// Fields
 	
-	XPathException::XPathException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	XPathException::XPathException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
+	
 	// Constructors
 	XPathException::XPathException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Exception(
 			"javax.xml.xpath.XPathException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	XPathException::XPathException(jthrowable arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Exception(
 			"javax.xml.xpath.XPathException",
 			"(Ljava/lang/Throwable;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jthrowable XPathException::getCause()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCause",
 			"()Ljava/lang/Throwable;"
 		).object<jthrowable>();
 	}
 	void XPathException::printStackTrace()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"printStackTrace",
 			"()V"
 		);
 	}
 	void XPathException::printStackTrace(java::io::PrintStream arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"printStackTrace",
 			"(Ljava/io/PrintStream;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void XPathException::printStackTrace(java::io::PrintWriter arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"printStackTrace",
 			"(Ljava/io/PrintWriter;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace javax::xml::xpath

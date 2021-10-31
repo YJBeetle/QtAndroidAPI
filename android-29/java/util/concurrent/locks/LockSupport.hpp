@@ -14,9 +14,11 @@ namespace java::util::concurrent::locks
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit LockSupport(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		LockSupport(QAndroidJniObject obj);
+		
 		// Constructors
-		LockSupport() = default;
 		
 		// Methods
 		static jobject getBlocker(java::lang::Thread arg0);

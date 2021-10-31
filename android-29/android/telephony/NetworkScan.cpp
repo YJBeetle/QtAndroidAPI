@@ -60,13 +60,15 @@ namespace android::telephony
 		);
 	}
 	
-	NetworkScan::NetworkScan(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NetworkScan::NetworkScan(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void NetworkScan::stopScan()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"stopScan",
 			"()V"
 		);

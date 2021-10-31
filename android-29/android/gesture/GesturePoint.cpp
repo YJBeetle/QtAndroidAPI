@@ -5,40 +5,40 @@ namespace android::gesture
 	// Fields
 	jlong GesturePoint::timestamp()
 	{
-		return __thiz.getField<jlong>(
+		return getField<jlong>(
 			"timestamp"
 		);
 	}
 	jfloat GesturePoint::x()
 	{
-		return __thiz.getField<jfloat>(
+		return getField<jfloat>(
 			"x"
 		);
 	}
 	jfloat GesturePoint::y()
 	{
-		return __thiz.getField<jfloat>(
+		return getField<jfloat>(
 			"y"
 		);
 	}
 	
-	GesturePoint::GesturePoint(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	GesturePoint::GesturePoint(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	GesturePoint::GesturePoint(jfloat arg0, jfloat arg1, jlong arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.gesture.GesturePoint",
 			"(FFJ)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	jobject GesturePoint::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		).object<jobject>();

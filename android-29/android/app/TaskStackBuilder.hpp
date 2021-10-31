@@ -34,9 +34,11 @@ namespace android::app
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TaskStackBuilder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		TaskStackBuilder(QAndroidJniObject obj);
+		
 		// Constructors
-		TaskStackBuilder() = default;
 		
 		// Methods
 		static QAndroidJniObject create(android::content::Context arg0);

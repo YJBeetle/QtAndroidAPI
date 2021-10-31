@@ -6,31 +6,31 @@ namespace android::text::style
 {
 	// Fields
 	
-	ClickableSpan::ClickableSpan(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ClickableSpan::ClickableSpan(QAndroidJniObject obj) : android::text::style::CharacterStyle(obj) {}
+	
 	// Constructors
 	ClickableSpan::ClickableSpan()
-	{
-		__thiz = QAndroidJniObject(
+		: android::text::style::CharacterStyle(
 			"android.text.style.ClickableSpan",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void ClickableSpan::onClick(android::view::View arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onClick",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ClickableSpan::updateDrawState(android::text::TextPaint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"updateDrawState",
 			"(Landroid/text/TextPaint;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::text::style

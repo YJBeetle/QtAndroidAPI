@@ -5,7 +5,9 @@ namespace java::lang::ref
 {
 	// Fields
 	
-	Reference::Reference(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Reference::Reference(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -20,35 +22,35 @@ namespace java::lang::ref
 	}
 	void Reference::clear()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
 	jboolean Reference::enqueue()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"enqueue",
 			"()Z"
 		);
 	}
 	jobject Reference::get()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jboolean Reference::isEnqueued()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEnqueued",
 			"()Z"
 		);
 	}
 	jboolean Reference::refersTo(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"refersTo",
 			"(Ljava/lang/Object;)Z",
 			arg0

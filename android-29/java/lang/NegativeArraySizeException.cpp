@@ -4,23 +4,21 @@ namespace java::lang
 {
 	// Fields
 	
-	NegativeArraySizeException::NegativeArraySizeException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NegativeArraySizeException::NegativeArraySizeException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	
 	// Constructors
 	NegativeArraySizeException::NegativeArraySizeException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::RuntimeException(
 			"java.lang.NegativeArraySizeException",
 			"()V"
-		);
-	}
+		) {}
 	NegativeArraySizeException::NegativeArraySizeException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::RuntimeException(
 			"java.lang.NegativeArraySizeException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::lang

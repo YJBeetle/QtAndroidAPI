@@ -5,22 +5,22 @@ namespace android::graphics
 {
 	// Fields
 	
-	PorterDuffColorFilter::PorterDuffColorFilter(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PorterDuffColorFilter::PorterDuffColorFilter(QAndroidJniObject obj) : android::graphics::ColorFilter(obj) {}
+	
 	// Constructors
 	PorterDuffColorFilter::PorterDuffColorFilter(jint arg0, android::graphics::PorterDuff_Mode arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::graphics::ColorFilter(
 			"android.graphics.PorterDuffColorFilter",
 			"(ILandroid/graphics/PorterDuff$Mode;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
+			arg1.object()
+		) {}
 	
 	// Methods
 	jboolean PorterDuffColorFilter::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -28,7 +28,7 @@ namespace android::graphics
 	}
 	jint PorterDuffColorFilter::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);

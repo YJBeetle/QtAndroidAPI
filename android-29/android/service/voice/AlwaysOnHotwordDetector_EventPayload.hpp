@@ -14,9 +14,11 @@ namespace android::service::voice
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AlwaysOnHotwordDetector_EventPayload(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AlwaysOnHotwordDetector_EventPayload(QAndroidJniObject obj);
+		
 		// Constructors
-		AlwaysOnHotwordDetector_EventPayload() = default;
 		
 		// Methods
 		QAndroidJniObject getCaptureAudioFormat();

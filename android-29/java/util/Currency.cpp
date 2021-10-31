@@ -10,7 +10,9 @@ namespace java::util
 {
 	// Fields
 	
-	Currency::Currency(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Currency::Currency(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -37,70 +39,70 @@ namespace java::util
 			"java.util.Currency",
 			"getInstance",
 			"(Ljava/util/Locale;)Ljava/util/Currency;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring Currency::getCurrencyCode()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCurrencyCode",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint Currency::getDefaultFractionDigits()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDefaultFractionDigits",
 			"()I"
 		);
 	}
 	jstring Currency::getDisplayName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDisplayName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Currency::getDisplayName(java::util::Locale arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDisplayName",
 			"(Ljava/util/Locale;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jint Currency::getNumericCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getNumericCode",
 			"()I"
 		);
 	}
 	jstring Currency::getNumericCodeAsString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getNumericCodeAsString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Currency::getSymbol()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSymbol",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Currency::getSymbol(java::util::Locale arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSymbol",
 			"(Ljava/util/Locale;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jstring Currency::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

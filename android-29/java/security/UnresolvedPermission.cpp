@@ -8,24 +8,24 @@ namespace java::security
 {
 	// Fields
 	
-	UnresolvedPermission::UnresolvedPermission(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UnresolvedPermission::UnresolvedPermission(QAndroidJniObject obj) : java::security::Permission(obj) {}
+	
 	// Constructors
 	UnresolvedPermission::UnresolvedPermission(jstring arg0, jstring arg1, jstring arg2, jarray arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: java::security::Permission(
 			"java.security.UnresolvedPermission",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/security/cert/Certificate;)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean UnresolvedPermission::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -33,64 +33,64 @@ namespace java::security
 	}
 	jstring UnresolvedPermission::getActions()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getActions",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring UnresolvedPermission::getUnresolvedActions()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getUnresolvedActions",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jarray UnresolvedPermission::getUnresolvedCerts()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getUnresolvedCerts",
 			"()[Ljava/security/cert/Certificate;"
 		).object<jarray>();
 	}
 	jstring UnresolvedPermission::getUnresolvedName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getUnresolvedName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring UnresolvedPermission::getUnresolvedType()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getUnresolvedType",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint UnresolvedPermission::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean UnresolvedPermission::implies(java::security::Permission arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"implies",
 			"(Ljava/security/Permission;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject UnresolvedPermission::newPermissionCollection()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newPermissionCollection",
 			"()Ljava/security/PermissionCollection;"
 		);
 	}
 	jstring UnresolvedPermission::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

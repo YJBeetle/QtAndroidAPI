@@ -16,72 +16,74 @@ namespace android::view::textclassifier
 		);
 	}
 	
-	TextClassification_Request::TextClassification_Request(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TextClassification_Request::TextClassification_Request(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint TextClassification_Request::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jstring TextClassification_Request::getCallingPackageName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCallingPackageName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject TextClassification_Request::getDefaultLocales()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDefaultLocales",
 			"()Landroid/os/LocaleList;"
 		);
 	}
 	jint TextClassification_Request::getEndIndex()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getEndIndex",
 			"()I"
 		);
 	}
 	QAndroidJniObject TextClassification_Request::getExtras()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
 	QAndroidJniObject TextClassification_Request::getReferenceTime()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getReferenceTime",
 			"()Ljava/time/ZonedDateTime;"
 		);
 	}
 	jint TextClassification_Request::getStartIndex()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getStartIndex",
 			"()I"
 		);
 	}
 	jstring TextClassification_Request::getText()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	void TextClassification_Request::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

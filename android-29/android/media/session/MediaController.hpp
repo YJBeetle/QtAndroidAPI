@@ -58,10 +58,12 @@ namespace android::media::session
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaController(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaController(QAndroidJniObject obj);
+		
 		// Constructors
 		MediaController(android::content::Context arg0, android::media::session::MediaSession_Token arg1);
-		MediaController() = default;
 		
 		// Methods
 		void adjustVolume(jint arg0, jint arg1);

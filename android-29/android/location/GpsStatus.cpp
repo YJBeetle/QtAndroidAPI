@@ -32,27 +32,29 @@ namespace android::location
 		);
 	}
 	
-	GpsStatus::GpsStatus(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	GpsStatus::GpsStatus(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint GpsStatus::getMaxSatellites()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMaxSatellites",
 			"()I"
 		);
 	}
 	QAndroidJniObject GpsStatus::getSatellites()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSatellites",
 			"()Ljava/lang/Iterable;"
 		);
 	}
 	jint GpsStatus::getTimeToFirstFix()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTimeToFirstFix",
 			"()I"
 		);

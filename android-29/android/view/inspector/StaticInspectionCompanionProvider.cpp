@@ -4,20 +4,20 @@ namespace android::view::inspector
 {
 	// Fields
 	
-	StaticInspectionCompanionProvider::StaticInspectionCompanionProvider(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	StaticInspectionCompanionProvider::StaticInspectionCompanionProvider(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	StaticInspectionCompanionProvider::StaticInspectionCompanionProvider()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.inspector.StaticInspectionCompanionProvider",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject StaticInspectionCompanionProvider::provide(jclass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"provide",
 			"(Ljava/lang/Class;)Landroid/view/inspector/InspectionCompanion;",
 			arg0

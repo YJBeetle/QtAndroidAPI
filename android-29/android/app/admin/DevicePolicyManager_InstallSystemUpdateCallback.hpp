@@ -15,7 +15,10 @@ namespace android::app::admin
 		static jint UPDATE_ERROR_UNKNOWN();
 		static jint UPDATE_ERROR_UPDATE_FILE_INVALID();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DevicePolicyManager_InstallSystemUpdateCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DevicePolicyManager_InstallSystemUpdateCallback(QAndroidJniObject obj);
+		
 		// Constructors
 		DevicePolicyManager_InstallSystemUpdateCallback();
 		

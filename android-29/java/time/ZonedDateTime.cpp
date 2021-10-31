@@ -17,7 +17,9 @@ namespace java::time
 {
 	// Fields
 	
-	ZonedDateTime::ZonedDateTime(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ZonedDateTime::ZonedDateTime(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -27,7 +29,7 @@ namespace java::time
 			"java.time.ZonedDateTime",
 			"from",
 			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/ZonedDateTime;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ZonedDateTime::now()
@@ -44,7 +46,7 @@ namespace java::time
 			"java.time.ZonedDateTime",
 			"now",
 			"(Ljava/time/Clock;)Ljava/time/ZonedDateTime;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ZonedDateTime::now(java::time::ZoneId arg0)
@@ -53,7 +55,7 @@ namespace java::time
 			"java.time.ZonedDateTime",
 			"now",
 			"(Ljava/time/ZoneId;)Ljava/time/ZonedDateTime;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ZonedDateTime::of(java::time::LocalDateTime arg0, java::time::ZoneId arg1)
@@ -62,8 +64,8 @@ namespace java::time
 			"java.time.ZonedDateTime",
 			"of",
 			"(Ljava/time/LocalDateTime;Ljava/time/ZoneId;)Ljava/time/ZonedDateTime;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject ZonedDateTime::of(java::time::LocalDate arg0, java::time::LocalTime arg1, java::time::ZoneId arg2)
@@ -72,9 +74,9 @@ namespace java::time
 			"java.time.ZonedDateTime",
 			"of",
 			"(Ljava/time/LocalDate;Ljava/time/LocalTime;Ljava/time/ZoneId;)Ljava/time/ZonedDateTime;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject ZonedDateTime::of(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, java::time::ZoneId arg7)
@@ -90,7 +92,7 @@ namespace java::time
 			arg4,
 			arg5,
 			arg6,
-			arg7.__jniObject().object()
+			arg7.object()
 		);
 	}
 	QAndroidJniObject ZonedDateTime::ofInstant(java::time::Instant arg0, java::time::ZoneId arg1)
@@ -99,8 +101,8 @@ namespace java::time
 			"java.time.ZonedDateTime",
 			"ofInstant",
 			"(Ljava/time/Instant;Ljava/time/ZoneId;)Ljava/time/ZonedDateTime;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject ZonedDateTime::ofInstant(java::time::LocalDateTime arg0, java::time::ZoneOffset arg1, java::time::ZoneId arg2)
@@ -109,9 +111,9 @@ namespace java::time
 			"java.time.ZonedDateTime",
 			"ofInstant",
 			"(Ljava/time/LocalDateTime;Ljava/time/ZoneOffset;Ljava/time/ZoneId;)Ljava/time/ZonedDateTime;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject ZonedDateTime::ofLocal(java::time::LocalDateTime arg0, java::time::ZoneId arg1, java::time::ZoneOffset arg2)
@@ -120,9 +122,9 @@ namespace java::time
 			"java.time.ZonedDateTime",
 			"ofLocal",
 			"(Ljava/time/LocalDateTime;Ljava/time/ZoneId;Ljava/time/ZoneOffset;)Ljava/time/ZonedDateTime;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject ZonedDateTime::ofStrict(java::time::LocalDateTime arg0, java::time::ZoneOffset arg1, java::time::ZoneId arg2)
@@ -131,9 +133,9 @@ namespace java::time
 			"java.time.ZonedDateTime",
 			"ofStrict",
 			"(Ljava/time/LocalDateTime;Ljava/time/ZoneOffset;Ljava/time/ZoneId;)Ljava/time/ZonedDateTime;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject ZonedDateTime::parse(jstring arg0)
@@ -152,12 +154,12 @@ namespace java::time
 			"parse",
 			"(Ljava/lang/CharSequence;Ljava/time/format/DateTimeFormatter;)Ljava/time/ZonedDateTime;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jboolean ZonedDateTime::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -165,147 +167,147 @@ namespace java::time
 	}
 	jstring ZonedDateTime::format(java::time::format::DateTimeFormatter arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"format",
 			"(Ljava/time/format/DateTimeFormatter;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jint ZonedDateTime::get(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"get",
 			"(Ljava/time/temporal/TemporalField;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint ZonedDateTime::getDayOfMonth()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDayOfMonth",
 			"()I"
 		);
 	}
 	QAndroidJniObject ZonedDateTime::getDayOfWeek()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDayOfWeek",
 			"()Ljava/time/DayOfWeek;"
 		);
 	}
 	jint ZonedDateTime::getDayOfYear()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDayOfYear",
 			"()I"
 		);
 	}
 	jint ZonedDateTime::getHour()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getHour",
 			"()I"
 		);
 	}
 	jlong ZonedDateTime::getLong(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getLong",
 			"(Ljava/time/temporal/TemporalField;)J",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint ZonedDateTime::getMinute()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMinute",
 			"()I"
 		);
 	}
 	QAndroidJniObject ZonedDateTime::getMonth()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMonth",
 			"()Ljava/time/Month;"
 		);
 	}
 	jint ZonedDateTime::getMonthValue()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMonthValue",
 			"()I"
 		);
 	}
 	jint ZonedDateTime::getNano()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getNano",
 			"()I"
 		);
 	}
 	QAndroidJniObject ZonedDateTime::getOffset()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getOffset",
 			"()Ljava/time/ZoneOffset;"
 		);
 	}
 	jint ZonedDateTime::getSecond()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSecond",
 			"()I"
 		);
 	}
 	jint ZonedDateTime::getYear()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getYear",
 			"()I"
 		);
 	}
 	QAndroidJniObject ZonedDateTime::getZone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getZone",
 			"()Ljava/time/ZoneId;"
 		);
 	}
 	jint ZonedDateTime::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean ZonedDateTime::isSupported(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isSupported",
 			"(Ljava/time/temporal/TemporalField;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ZonedDateTime::minus(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"minus",
 			"(Ljava/time/temporal/TemporalAmount;)Ljava/time/ZonedDateTime;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ZonedDateTime::minus(jlong arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"minus",
 			"(JLjava/time/temporal/TemporalUnit;)Ljava/time/ZonedDateTime;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject ZonedDateTime::minusDays(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"minusDays",
 			"(J)Ljava/time/ZonedDateTime;",
 			arg0
@@ -313,7 +315,7 @@ namespace java::time
 	}
 	QAndroidJniObject ZonedDateTime::minusHours(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"minusHours",
 			"(J)Ljava/time/ZonedDateTime;",
 			arg0
@@ -321,7 +323,7 @@ namespace java::time
 	}
 	QAndroidJniObject ZonedDateTime::minusMinutes(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"minusMinutes",
 			"(J)Ljava/time/ZonedDateTime;",
 			arg0
@@ -329,7 +331,7 @@ namespace java::time
 	}
 	QAndroidJniObject ZonedDateTime::minusMonths(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"minusMonths",
 			"(J)Ljava/time/ZonedDateTime;",
 			arg0
@@ -337,7 +339,7 @@ namespace java::time
 	}
 	QAndroidJniObject ZonedDateTime::minusNanos(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"minusNanos",
 			"(J)Ljava/time/ZonedDateTime;",
 			arg0
@@ -345,7 +347,7 @@ namespace java::time
 	}
 	QAndroidJniObject ZonedDateTime::minusSeconds(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"minusSeconds",
 			"(J)Ljava/time/ZonedDateTime;",
 			arg0
@@ -353,7 +355,7 @@ namespace java::time
 	}
 	QAndroidJniObject ZonedDateTime::minusWeeks(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"minusWeeks",
 			"(J)Ljava/time/ZonedDateTime;",
 			arg0
@@ -361,7 +363,7 @@ namespace java::time
 	}
 	QAndroidJniObject ZonedDateTime::minusYears(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"minusYears",
 			"(J)Ljava/time/ZonedDateTime;",
 			arg0
@@ -369,24 +371,24 @@ namespace java::time
 	}
 	QAndroidJniObject ZonedDateTime::plus(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"plus",
 			"(Ljava/time/temporal/TemporalAmount;)Ljava/time/ZonedDateTime;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ZonedDateTime::plus(jlong arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"plus",
 			"(JLjava/time/temporal/TemporalUnit;)Ljava/time/ZonedDateTime;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject ZonedDateTime::plusDays(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"plusDays",
 			"(J)Ljava/time/ZonedDateTime;",
 			arg0
@@ -394,7 +396,7 @@ namespace java::time
 	}
 	QAndroidJniObject ZonedDateTime::plusHours(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"plusHours",
 			"(J)Ljava/time/ZonedDateTime;",
 			arg0
@@ -402,7 +404,7 @@ namespace java::time
 	}
 	QAndroidJniObject ZonedDateTime::plusMinutes(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"plusMinutes",
 			"(J)Ljava/time/ZonedDateTime;",
 			arg0
@@ -410,7 +412,7 @@ namespace java::time
 	}
 	QAndroidJniObject ZonedDateTime::plusMonths(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"plusMonths",
 			"(J)Ljava/time/ZonedDateTime;",
 			arg0
@@ -418,7 +420,7 @@ namespace java::time
 	}
 	QAndroidJniObject ZonedDateTime::plusNanos(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"plusNanos",
 			"(J)Ljava/time/ZonedDateTime;",
 			arg0
@@ -426,7 +428,7 @@ namespace java::time
 	}
 	QAndroidJniObject ZonedDateTime::plusSeconds(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"plusSeconds",
 			"(J)Ljava/time/ZonedDateTime;",
 			arg0
@@ -434,7 +436,7 @@ namespace java::time
 	}
 	QAndroidJniObject ZonedDateTime::plusWeeks(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"plusWeeks",
 			"(J)Ljava/time/ZonedDateTime;",
 			arg0
@@ -442,7 +444,7 @@ namespace java::time
 	}
 	QAndroidJniObject ZonedDateTime::plusYears(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"plusYears",
 			"(J)Ljava/time/ZonedDateTime;",
 			arg0
@@ -450,92 +452,92 @@ namespace java::time
 	}
 	jobject ZonedDateTime::query(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"query",
 			"(Ljava/time/temporal/TemporalQuery;)Ljava/lang/Object;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jobject>();
 	}
 	QAndroidJniObject ZonedDateTime::range(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"range",
 			"(Ljava/time/temporal/TemporalField;)Ljava/time/temporal/ValueRange;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ZonedDateTime::toLocalDate()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toLocalDate",
 			"()Ljava/time/LocalDate;"
 		);
 	}
 	QAndroidJniObject ZonedDateTime::toLocalDateTime()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toLocalDateTime",
 			"()Ljava/time/LocalDateTime;"
 		);
 	}
 	QAndroidJniObject ZonedDateTime::toLocalTime()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toLocalTime",
 			"()Ljava/time/LocalTime;"
 		);
 	}
 	QAndroidJniObject ZonedDateTime::toOffsetDateTime()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toOffsetDateTime",
 			"()Ljava/time/OffsetDateTime;"
 		);
 	}
 	jstring ZonedDateTime::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject ZonedDateTime::truncatedTo(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"truncatedTo",
 			"(Ljava/time/temporal/TemporalUnit;)Ljava/time/ZonedDateTime;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jlong ZonedDateTime::until(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"until",
 			"(Ljava/time/temporal/Temporal;Ljava/time/temporal/TemporalUnit;)J",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject ZonedDateTime::with(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"with",
 			"(Ljava/time/temporal/TemporalAdjuster;)Ljava/time/ZonedDateTime;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ZonedDateTime::with(__JniBaseClass arg0, jlong arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"with",
 			"(Ljava/time/temporal/TemporalField;J)Ljava/time/ZonedDateTime;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	QAndroidJniObject ZonedDateTime::withDayOfMonth(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withDayOfMonth",
 			"(I)Ljava/time/ZonedDateTime;",
 			arg0
@@ -543,7 +545,7 @@ namespace java::time
 	}
 	QAndroidJniObject ZonedDateTime::withDayOfYear(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withDayOfYear",
 			"(I)Ljava/time/ZonedDateTime;",
 			arg0
@@ -551,21 +553,21 @@ namespace java::time
 	}
 	QAndroidJniObject ZonedDateTime::withEarlierOffsetAtOverlap()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withEarlierOffsetAtOverlap",
 			"()Ljava/time/ZonedDateTime;"
 		);
 	}
 	QAndroidJniObject ZonedDateTime::withFixedOffsetZone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withFixedOffsetZone",
 			"()Ljava/time/ZonedDateTime;"
 		);
 	}
 	QAndroidJniObject ZonedDateTime::withHour(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withHour",
 			"(I)Ljava/time/ZonedDateTime;",
 			arg0
@@ -573,14 +575,14 @@ namespace java::time
 	}
 	QAndroidJniObject ZonedDateTime::withLaterOffsetAtOverlap()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withLaterOffsetAtOverlap",
 			"()Ljava/time/ZonedDateTime;"
 		);
 	}
 	QAndroidJniObject ZonedDateTime::withMinute(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withMinute",
 			"(I)Ljava/time/ZonedDateTime;",
 			arg0
@@ -588,7 +590,7 @@ namespace java::time
 	}
 	QAndroidJniObject ZonedDateTime::withMonth(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withMonth",
 			"(I)Ljava/time/ZonedDateTime;",
 			arg0
@@ -596,7 +598,7 @@ namespace java::time
 	}
 	QAndroidJniObject ZonedDateTime::withNano(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withNano",
 			"(I)Ljava/time/ZonedDateTime;",
 			arg0
@@ -604,7 +606,7 @@ namespace java::time
 	}
 	QAndroidJniObject ZonedDateTime::withSecond(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withSecond",
 			"(I)Ljava/time/ZonedDateTime;",
 			arg0
@@ -612,7 +614,7 @@ namespace java::time
 	}
 	QAndroidJniObject ZonedDateTime::withYear(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withYear",
 			"(I)Ljava/time/ZonedDateTime;",
 			arg0
@@ -620,18 +622,18 @@ namespace java::time
 	}
 	QAndroidJniObject ZonedDateTime::withZoneSameInstant(java::time::ZoneId arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withZoneSameInstant",
 			"(Ljava/time/ZoneId;)Ljava/time/ZonedDateTime;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ZonedDateTime::withZoneSameLocal(java::time::ZoneId arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withZoneSameLocal",
 			"(Ljava/time/ZoneId;)Ljava/time/ZonedDateTime;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace java::time

@@ -9,189 +9,183 @@ namespace android::widget
 {
 	// Fields
 	
-	NumberPicker::NumberPicker(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NumberPicker::NumberPicker(QAndroidJniObject obj) : android::widget::LinearLayout(obj) {}
+	
 	// Constructors
 	NumberPicker::NumberPicker(android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::LinearLayout(
 			"android.widget.NumberPicker",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	NumberPicker::NumberPicker(android::content::Context arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::LinearLayout(
 			"android.widget.NumberPicker",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	NumberPicker::NumberPicker(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::LinearLayout(
 			"android.widget.NumberPicker",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
-		);
-	}
+		) {}
 	NumberPicker::NumberPicker(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::LinearLayout(
 			"android.widget.NumberPicker",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	
 	// Methods
 	void NumberPicker::computeScroll()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"computeScroll",
 			"()V"
 		);
 	}
 	jboolean NumberPicker::dispatchKeyEvent(android::view::KeyEvent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"dispatchKeyEvent",
 			"(Landroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean NumberPicker::dispatchTouchEvent(android::view::MotionEvent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"dispatchTouchEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean NumberPicker::dispatchTrackballEvent(android::view::MotionEvent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"dispatchTrackballEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject NumberPicker::getAccessibilityNodeProvider()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAccessibilityNodeProvider",
 			"()Landroid/view/accessibility/AccessibilityNodeProvider;"
 		);
 	}
 	jarray NumberPicker::getDisplayedValues()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDisplayedValues",
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	jint NumberPicker::getMaxValue()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMaxValue",
 			"()I"
 		);
 	}
 	jint NumberPicker::getMinValue()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMinValue",
 			"()I"
 		);
 	}
 	jint NumberPicker::getSelectionDividerHeight()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSelectionDividerHeight",
 			"()I"
 		);
 	}
 	jint NumberPicker::getSolidColor()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSolidColor",
 			"()I"
 		);
 	}
 	jint NumberPicker::getTextColor()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTextColor",
 			"()I"
 		);
 	}
 	jfloat NumberPicker::getTextSize()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getTextSize",
 			"()F"
 		);
 	}
 	jint NumberPicker::getValue()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getValue",
 			"()I"
 		);
 	}
 	jboolean NumberPicker::getWrapSelectorWheel()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getWrapSelectorWheel",
 			"()Z"
 		);
 	}
 	void NumberPicker::jumpDrawablesToCurrentState()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"jumpDrawablesToCurrentState",
 			"()V"
 		);
 	}
 	jboolean NumberPicker::onInterceptTouchEvent(android::view::MotionEvent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onInterceptTouchEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean NumberPicker::onTouchEvent(android::view::MotionEvent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onTouchEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean NumberPicker::performClick()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"performClick",
 			"()Z"
 		);
 	}
 	jboolean NumberPicker::performLongClick()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"performLongClick",
 			"()Z"
 		);
 	}
 	void NumberPicker::scrollBy(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"scrollBy",
 			"(II)V",
 			arg0,
@@ -200,7 +194,7 @@ namespace android::widget
 	}
 	void NumberPicker::setDisplayedValues(jarray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDisplayedValues",
 			"([Ljava/lang/String;)V",
 			arg0
@@ -208,7 +202,7 @@ namespace android::widget
 	}
 	void NumberPicker::setEnabled(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setEnabled",
 			"(Z)V",
 			arg0
@@ -216,15 +210,15 @@ namespace android::widget
 	}
 	void NumberPicker::setFormatter(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFormatter",
 			"(Landroid/widget/NumberPicker$Formatter;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void NumberPicker::setMaxValue(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMaxValue",
 			"(I)V",
 			arg0
@@ -232,7 +226,7 @@ namespace android::widget
 	}
 	void NumberPicker::setMinValue(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMinValue",
 			"(I)V",
 			arg0
@@ -240,7 +234,7 @@ namespace android::widget
 	}
 	void NumberPicker::setOnLongPressUpdateInterval(jlong arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnLongPressUpdateInterval",
 			"(J)V",
 			arg0
@@ -248,23 +242,23 @@ namespace android::widget
 	}
 	void NumberPicker::setOnScrollListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnScrollListener",
 			"(Landroid/widget/NumberPicker$OnScrollListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void NumberPicker::setOnValueChangedListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnValueChangedListener",
 			"(Landroid/widget/NumberPicker$OnValueChangeListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void NumberPicker::setSelectionDividerHeight(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSelectionDividerHeight",
 			"(I)V",
 			arg0
@@ -272,7 +266,7 @@ namespace android::widget
 	}
 	void NumberPicker::setTextColor(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTextColor",
 			"(I)V",
 			arg0
@@ -280,7 +274,7 @@ namespace android::widget
 	}
 	void NumberPicker::setTextSize(jfloat arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTextSize",
 			"(F)V",
 			arg0
@@ -288,7 +282,7 @@ namespace android::widget
 	}
 	void NumberPicker::setValue(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setValue",
 			"(I)V",
 			arg0
@@ -296,7 +290,7 @@ namespace android::widget
 	}
 	void NumberPicker::setWrapSelectorWheel(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setWrapSelectorWheel",
 			"(Z)V",
 			arg0

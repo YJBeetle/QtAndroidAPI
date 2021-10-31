@@ -7,7 +7,9 @@ namespace java::nio::file::attribute
 {
 	// Fields
 	
-	FileTime::FileTime(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FileTime::FileTime(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -17,7 +19,7 @@ namespace java::nio::file::attribute
 			"java.nio.file.attribute.FileTime",
 			"from",
 			"(Ljava/time/Instant;)Ljava/nio/file/attribute/FileTime;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject FileTime::from(jlong arg0, java::util::concurrent::TimeUnit arg1)
@@ -27,7 +29,7 @@ namespace java::nio::file::attribute
 			"from",
 			"(JLjava/util/concurrent/TimeUnit;)Ljava/nio/file/attribute/FileTime;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject FileTime::fromMillis(jlong arg0)
@@ -41,7 +43,7 @@ namespace java::nio::file::attribute
 	}
 	jint FileTime::compareTo(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -49,15 +51,15 @@ namespace java::nio::file::attribute
 	}
 	jint FileTime::compareTo(java::nio::file::attribute::FileTime arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/nio/file/attribute/FileTime;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean FileTime::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -65,36 +67,36 @@ namespace java::nio::file::attribute
 	}
 	jint FileTime::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jlong FileTime::to(java::util::concurrent::TimeUnit arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"to",
 			"(Ljava/util/concurrent/TimeUnit;)J",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject FileTime::toInstant()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toInstant",
 			"()Ljava/time/Instant;"
 		);
 	}
 	jlong FileTime::toMillis()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"toMillis",
 			"()J"
 		);
 	}
 	jstring FileTime::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

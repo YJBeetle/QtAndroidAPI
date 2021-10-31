@@ -18,10 +18,12 @@ namespace android::icu::text
 		jstring nameInDisplayLocale();
 		jstring nameInSelf();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit LocaleDisplayNames_UiListItem(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		LocaleDisplayNames_UiListItem(QAndroidJniObject obj);
+		
 		// Constructors
 		LocaleDisplayNames_UiListItem(android::icu::util::ULocale arg0, android::icu::util::ULocale arg1, jstring arg2, jstring arg3);
-		LocaleDisplayNames_UiListItem() = default;
 		
 		// Methods
 		static QAndroidJniObject getComparator(__JniBaseClass arg0, jboolean arg1);

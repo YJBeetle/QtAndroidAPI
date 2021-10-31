@@ -4,15 +4,15 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	IllegalBlockingModeException::IllegalBlockingModeException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	IllegalBlockingModeException::IllegalBlockingModeException(QAndroidJniObject obj) : java::lang::IllegalStateException(obj) {}
+	
 	// Constructors
 	IllegalBlockingModeException::IllegalBlockingModeException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::IllegalStateException(
 			"java.nio.channels.IllegalBlockingModeException",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::nio::channels

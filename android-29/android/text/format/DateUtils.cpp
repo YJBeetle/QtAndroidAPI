@@ -326,15 +326,15 @@ namespace android::text::format
 		).object<jintArray>();
 	}
 	
-	DateUtils::DateUtils(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DateUtils::DateUtils(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	DateUtils::DateUtils()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.text.format.DateUtils",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring DateUtils::formatDateRange(android::content::Context arg0, jlong arg1, jlong arg2, jint arg3)
@@ -343,7 +343,7 @@ namespace android::text::format
 			"android.text.format.DateUtils",
 			"formatDateRange",
 			"(Landroid/content/Context;JJI)Ljava/lang/String;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3
@@ -355,8 +355,8 @@ namespace android::text::format
 			"android.text.format.DateUtils",
 			"formatDateRange",
 			"(Landroid/content/Context;Ljava/util/Formatter;JJI)Ljava/util/Formatter;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3,
 			arg4
@@ -368,8 +368,8 @@ namespace android::text::format
 			"android.text.format.DateUtils",
 			"formatDateRange",
 			"(Landroid/content/Context;Ljava/util/Formatter;JJILjava/lang/String;)Ljava/util/Formatter;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3,
 			arg4,
@@ -382,7 +382,7 @@ namespace android::text::format
 			"android.text.format.DateUtils",
 			"formatDateTime",
 			"(Landroid/content/Context;JI)Ljava/lang/String;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		).object<jstring>();
@@ -402,7 +402,7 @@ namespace android::text::format
 			"android.text.format.DateUtils",
 			"formatElapsedTime",
 			"(Ljava/lang/StringBuilder;J)Ljava/lang/String;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		).object<jstring>();
 	}
@@ -453,7 +453,7 @@ namespace android::text::format
 			"android.text.format.DateUtils",
 			"getRelativeDateTimeString",
 			"(Landroid/content/Context;JJJI)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
@@ -475,7 +475,7 @@ namespace android::text::format
 			"android.text.format.DateUtils",
 			"getRelativeTimeSpanString",
 			"(Landroid/content/Context;J)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		).object<jstring>();
 	}
@@ -485,7 +485,7 @@ namespace android::text::format
 			"android.text.format.DateUtils",
 			"getRelativeTimeSpanString",
 			"(Landroid/content/Context;JZ)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		).object<jstring>();

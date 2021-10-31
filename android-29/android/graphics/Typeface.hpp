@@ -27,9 +27,11 @@ namespace android::graphics
 		static QAndroidJniObject SANS_SERIF();
 		static QAndroidJniObject SERIF();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Typeface(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Typeface(QAndroidJniObject obj);
+		
 		// Constructors
-		Typeface() = default;
 		
 		// Methods
 		static QAndroidJniObject create(android::graphics::Typeface arg0, jint arg1);

@@ -25,9 +25,11 @@ namespace android::media
 		static jint VOICE_RECOGNITION();
 		static jint VOICE_UPLINK();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaRecorder_AudioSource(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaRecorder_AudioSource(QAndroidJniObject obj);
+		
 		// Constructors
-		MediaRecorder_AudioSource() = default;
 		
 		// Methods
 	};

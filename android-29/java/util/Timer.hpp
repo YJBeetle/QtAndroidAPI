@@ -22,7 +22,10 @@ namespace java::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Timer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Timer(QAndroidJniObject obj);
+		
 		// Constructors
 		Timer();
 		Timer(jboolean arg0);

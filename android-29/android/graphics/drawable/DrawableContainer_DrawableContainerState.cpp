@@ -8,42 +8,44 @@ namespace android::graphics::drawable
 {
 	// Fields
 	
-	DrawableContainer_DrawableContainerState::DrawableContainer_DrawableContainerState(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DrawableContainer_DrawableContainerState::DrawableContainer_DrawableContainerState(QAndroidJniObject obj) : android::graphics::drawable::Drawable_ConstantState(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint DrawableContainer_DrawableContainerState::addChild(android::graphics::drawable::Drawable arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"addChild",
 			"(Landroid/graphics/drawable/Drawable;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean DrawableContainer_DrawableContainerState::canApplyTheme()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"canApplyTheme",
 			"()Z"
 		);
 	}
 	jboolean DrawableContainer_DrawableContainerState::canConstantState()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"canConstantState",
 			"()Z"
 		);
 	}
 	jint DrawableContainer_DrawableContainerState::getChangingConfigurations()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getChangingConfigurations",
 			"()I"
 		);
 	}
 	QAndroidJniObject DrawableContainer_DrawableContainerState::getChild(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getChild",
 			"(I)Landroid/graphics/drawable/Drawable;",
 			arg0
@@ -51,77 +53,77 @@ namespace android::graphics::drawable
 	}
 	jint DrawableContainer_DrawableContainerState::getChildCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getChildCount",
 			"()I"
 		);
 	}
 	jarray DrawableContainer_DrawableContainerState::getChildren()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getChildren",
 			"()[Landroid/graphics/drawable/Drawable;"
 		).object<jarray>();
 	}
 	jint DrawableContainer_DrawableContainerState::getConstantHeight()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getConstantHeight",
 			"()I"
 		);
 	}
 	jint DrawableContainer_DrawableContainerState::getConstantMinimumHeight()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getConstantMinimumHeight",
 			"()I"
 		);
 	}
 	jint DrawableContainer_DrawableContainerState::getConstantMinimumWidth()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getConstantMinimumWidth",
 			"()I"
 		);
 	}
 	QAndroidJniObject DrawableContainer_DrawableContainerState::getConstantPadding()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getConstantPadding",
 			"()Landroid/graphics/Rect;"
 		);
 	}
 	jint DrawableContainer_DrawableContainerState::getConstantWidth()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getConstantWidth",
 			"()I"
 		);
 	}
 	jint DrawableContainer_DrawableContainerState::getEnterFadeDuration()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getEnterFadeDuration",
 			"()I"
 		);
 	}
 	jint DrawableContainer_DrawableContainerState::getExitFadeDuration()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getExitFadeDuration",
 			"()I"
 		);
 	}
 	jint DrawableContainer_DrawableContainerState::getOpacity()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getOpacity",
 			"()I"
 		);
 	}
 	void DrawableContainer_DrawableContainerState::growArray(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"growArray",
 			"(II)V",
 			arg0,
@@ -130,21 +132,21 @@ namespace android::graphics::drawable
 	}
 	jboolean DrawableContainer_DrawableContainerState::isConstantSize()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isConstantSize",
 			"()Z"
 		);
 	}
 	jboolean DrawableContainer_DrawableContainerState::isStateful()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isStateful",
 			"()Z"
 		);
 	}
 	void DrawableContainer_DrawableContainerState::setConstantSize(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setConstantSize",
 			"(Z)V",
 			arg0
@@ -152,7 +154,7 @@ namespace android::graphics::drawable
 	}
 	void DrawableContainer_DrawableContainerState::setEnterFadeDuration(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setEnterFadeDuration",
 			"(I)V",
 			arg0
@@ -160,7 +162,7 @@ namespace android::graphics::drawable
 	}
 	void DrawableContainer_DrawableContainerState::setExitFadeDuration(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setExitFadeDuration",
 			"(I)V",
 			arg0
@@ -168,7 +170,7 @@ namespace android::graphics::drawable
 	}
 	void DrawableContainer_DrawableContainerState::setVariablePadding(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setVariablePadding",
 			"(Z)V",
 			arg0

@@ -5,28 +5,26 @@ namespace android::graphics
 {
 	// Fields
 	
-	Picture::Picture(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Picture::Picture(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Picture::Picture()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.graphics.Picture",
 			"()V"
-		);
-	}
+		) {}
 	Picture::Picture(android::graphics::Picture &arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.graphics.Picture",
 			"(Landroid/graphics/Picture;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject Picture::beginRecording(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"beginRecording",
 			"(II)Landroid/graphics/Canvas;",
 			arg0,
@@ -35,36 +33,36 @@ namespace android::graphics
 	}
 	void Picture::draw(android::graphics::Canvas arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"draw",
 			"(Landroid/graphics/Canvas;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Picture::endRecording()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"endRecording",
 			"()V"
 		);
 	}
 	jint Picture::getHeight()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getHeight",
 			"()I"
 		);
 	}
 	jint Picture::getWidth()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getWidth",
 			"()I"
 		);
 	}
 	jboolean Picture::requiresHardwareAcceleration()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"requiresHardwareAcceleration",
 			"()Z"
 		);

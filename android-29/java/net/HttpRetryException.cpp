@@ -4,46 +4,44 @@ namespace java::net
 {
 	// Fields
 	
-	HttpRetryException::HttpRetryException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	HttpRetryException::HttpRetryException(QAndroidJniObject obj) : java::io::IOException(obj) {}
+	
 	// Constructors
 	HttpRetryException::HttpRetryException(jstring arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::IOException(
 			"java.net.HttpRetryException",
 			"(Ljava/lang/String;I)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	HttpRetryException::HttpRetryException(jstring arg0, jint arg1, jstring arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::IOException(
 			"java.net.HttpRetryException",
 			"(Ljava/lang/String;ILjava/lang/String;)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring HttpRetryException::getLocation()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLocation",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring HttpRetryException::getReason()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getReason",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint HttpRetryException::responseCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"responseCode",
 			"()I"
 		);

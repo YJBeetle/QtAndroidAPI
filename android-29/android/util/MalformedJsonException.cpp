@@ -4,16 +4,16 @@ namespace android::util
 {
 	// Fields
 	
-	MalformedJsonException::MalformedJsonException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MalformedJsonException::MalformedJsonException(QAndroidJniObject obj) : java::io::IOException(obj) {}
+	
 	// Constructors
 	MalformedJsonException::MalformedJsonException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::IOException(
 			"android.util.MalformedJsonException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::util

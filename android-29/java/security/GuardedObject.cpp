@@ -5,22 +5,22 @@ namespace java::security
 {
 	// Fields
 	
-	GuardedObject::GuardedObject(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	GuardedObject::GuardedObject(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	GuardedObject::GuardedObject(jobject arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.security.GuardedObject",
 			"(Ljava/lang/Object;Ljava/security/Guard;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
+			arg1.object()
+		) {}
 	
 	// Methods
 	jobject GuardedObject::getObject()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getObject",
 			"()Ljava/lang/Object;"
 		).object<jobject>();

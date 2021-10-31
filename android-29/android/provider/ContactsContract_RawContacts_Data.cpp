@@ -12,7 +12,9 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	ContactsContract_RawContacts_Data::ContactsContract_RawContacts_Data(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ContactsContract_RawContacts_Data::ContactsContract_RawContacts_Data(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

@@ -77,9 +77,11 @@ namespace android::telecom
 		static jint PRESENTATION_RESTRICTED();
 		static jint PRESENTATION_UNKNOWN();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TelecomManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		TelecomManager(QAndroidJniObject obj);
+		
 		// Constructors
-		TelecomManager() = default;
 		
 		// Methods
 		void acceptHandover(android::net::Uri arg0, jint arg1, android::telecom::PhoneAccountHandle arg2);

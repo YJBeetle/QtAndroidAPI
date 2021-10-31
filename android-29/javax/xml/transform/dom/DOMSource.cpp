@@ -12,66 +12,62 @@ namespace javax::xml::transform::dom
 		).object<jstring>();
 	}
 	
-	DOMSource::DOMSource(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DOMSource::DOMSource(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	DOMSource::DOMSource()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"javax.xml.transform.dom.DOMSource",
 			"()V"
-		);
-	}
+		) {}
 	DOMSource::DOMSource(__JniBaseClass arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"javax.xml.transform.dom.DOMSource",
 			"(Lorg/w3c/dom/Node;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	DOMSource::DOMSource(__JniBaseClass arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"javax.xml.transform.dom.DOMSource",
 			"(Lorg/w3c/dom/Node;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject DOMSource::getNode()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getNode",
 			"()Lorg/w3c/dom/Node;"
 		);
 	}
 	jstring DOMSource::getSystemId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSystemId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jboolean DOMSource::isEmpty()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
 	void DOMSource::setNode(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setNode",
 			"(Lorg/w3c/dom/Node;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void DOMSource::setSystemId(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSystemId",
 			"(Ljava/lang/String;)V",
 			arg0

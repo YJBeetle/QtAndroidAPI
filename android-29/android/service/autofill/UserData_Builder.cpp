@@ -6,23 +6,23 @@ namespace android::service::autofill
 {
 	// Fields
 	
-	UserData_Builder::UserData_Builder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UserData_Builder::UserData_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	UserData_Builder::UserData_Builder(jstring arg0, jstring arg1, jstring arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.service.autofill.UserData$Builder",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject UserData_Builder::add(jstring arg0, jstring arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"add",
 			"(Ljava/lang/String;Ljava/lang/String;)Landroid/service/autofill/UserData$Builder;",
 			arg0,
@@ -31,28 +31,28 @@ namespace android::service::autofill
 	}
 	QAndroidJniObject UserData_Builder::build()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"build",
 			"()Landroid/service/autofill/UserData;"
 		);
 	}
 	QAndroidJniObject UserData_Builder::setFieldClassificationAlgorithm(jstring arg0, android::os::Bundle arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setFieldClassificationAlgorithm",
 			"(Ljava/lang/String;Landroid/os/Bundle;)Landroid/service/autofill/UserData$Builder;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject UserData_Builder::setFieldClassificationAlgorithmForCategory(jstring arg0, jstring arg1, android::os::Bundle arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setFieldClassificationAlgorithmForCategory",
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)Landroid/service/autofill/UserData$Builder;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 } // namespace android::service::autofill

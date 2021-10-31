@@ -8,48 +8,42 @@ namespace java::io
 {
 	// Fields
 	
-	OutputStreamWriter::OutputStreamWriter(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	OutputStreamWriter::OutputStreamWriter(QAndroidJniObject obj) : java::io::Writer(obj) {}
+	
 	// Constructors
 	OutputStreamWriter::OutputStreamWriter(java::io::OutputStream arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::Writer(
 			"java.io.OutputStreamWriter",
 			"(Ljava/io/OutputStream;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	OutputStreamWriter::OutputStreamWriter(java::io::OutputStream arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::Writer(
 			"java.io.OutputStreamWriter",
 			"(Ljava/io/OutputStream;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
-		);
-	}
+		) {}
 	OutputStreamWriter::OutputStreamWriter(java::io::OutputStream arg0, java::nio::charset::Charset arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::Writer(
 			"java.io.OutputStreamWriter",
 			"(Ljava/io/OutputStream;Ljava/nio/charset/Charset;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	OutputStreamWriter::OutputStreamWriter(java::io::OutputStream arg0, java::nio::charset::CharsetEncoder arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::Writer(
 			"java.io.OutputStreamWriter",
 			"(Ljava/io/OutputStream;Ljava/nio/charset/CharsetEncoder;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject OutputStreamWriter::append(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"append",
 			"(Ljava/lang/CharSequence;)Ljava/io/Writer;",
 			arg0
@@ -57,7 +51,7 @@ namespace java::io
 	}
 	QAndroidJniObject OutputStreamWriter::append(jstring arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"append",
 			"(Ljava/lang/CharSequence;II)Ljava/io/Writer;",
 			arg0,
@@ -67,28 +61,28 @@ namespace java::io
 	}
 	void OutputStreamWriter::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	void OutputStreamWriter::flush()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"flush",
 			"()V"
 		);
 	}
 	jstring OutputStreamWriter::getEncoding()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEncoding",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void OutputStreamWriter::write(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"write",
 			"(I)V",
 			arg0
@@ -96,7 +90,7 @@ namespace java::io
 	}
 	void OutputStreamWriter::write(jcharArray arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"write",
 			"([CII)V",
 			arg0,
@@ -106,7 +100,7 @@ namespace java::io
 	}
 	void OutputStreamWriter::write(jstring arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"write",
 			"(Ljava/lang/String;II)V",
 			arg0,

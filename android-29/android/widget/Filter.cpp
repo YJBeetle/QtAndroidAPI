@@ -5,20 +5,20 @@ namespace android::widget
 {
 	// Fields
 	
-	Filter::Filter(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Filter::Filter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Filter::Filter()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.widget.Filter",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring Filter::convertResultToString(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"convertResultToString",
 			"(Ljava/lang/Object;)Ljava/lang/CharSequence;",
 			arg0
@@ -26,7 +26,7 @@ namespace android::widget
 	}
 	void Filter::filter(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"filter",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
@@ -34,11 +34,11 @@ namespace android::widget
 	}
 	void Filter::filter(jstring arg0, __JniBaseClass arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"filter",
 			"(Ljava/lang/CharSequence;Landroid/widget/Filter$FilterListener;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 } // namespace android::widget

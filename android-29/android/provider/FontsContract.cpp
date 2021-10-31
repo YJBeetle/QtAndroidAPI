@@ -11,7 +11,9 @@ namespace android::provider
 {
 	// Fields
 	
-	FontsContract::FontsContract(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FontsContract::FontsContract(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -21,8 +23,8 @@ namespace android::provider
 			"android.provider.FontsContract",
 			"buildTypeface",
 			"(Landroid/content/Context;Landroid/os/CancellationSignal;[Landroid/provider/FontsContract$FontInfo;)Landroid/graphics/Typeface;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
@@ -32,9 +34,9 @@ namespace android::provider
 			"android.provider.FontsContract",
 			"fetchFonts",
 			"(Landroid/content/Context;Landroid/os/CancellationSignal;Landroid/provider/FontRequest;)Landroid/provider/FontsContract$FontFamilyResult;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	void FontsContract::requestFonts(android::content::Context arg0, android::provider::FontRequest arg1, android::os::Handler arg2, android::os::CancellationSignal arg3, android::provider::FontsContract_FontRequestCallback arg4)
@@ -43,11 +45,11 @@ namespace android::provider
 			"android.provider.FontsContract",
 			"requestFonts",
 			"(Landroid/content/Context;Landroid/provider/FontRequest;Landroid/os/Handler;Landroid/os/CancellationSignal;Landroid/provider/FontsContract$FontRequestCallback;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object(),
+			arg4.object()
 		);
 	}
 } // namespace android::provider

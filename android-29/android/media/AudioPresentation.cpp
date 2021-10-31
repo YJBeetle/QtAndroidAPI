@@ -41,13 +41,15 @@ namespace android::media
 		);
 	}
 	
-	AudioPresentation::AudioPresentation(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AudioPresentation::AudioPresentation(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jboolean AudioPresentation::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -55,70 +57,70 @@ namespace android::media
 	}
 	QAndroidJniObject AudioPresentation::getLabels()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLabels",
 			"()Ljava/util/Map;"
 		);
 	}
 	QAndroidJniObject AudioPresentation::getLocale()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLocale",
 			"()Ljava/util/Locale;"
 		);
 	}
 	jint AudioPresentation::getMasteringIndication()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMasteringIndication",
 			"()I"
 		);
 	}
 	jint AudioPresentation::getPresentationId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPresentationId",
 			"()I"
 		);
 	}
 	jint AudioPresentation::getProgramId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getProgramId",
 			"()I"
 		);
 	}
 	jboolean AudioPresentation::hasAudioDescription()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasAudioDescription",
 			"()Z"
 		);
 	}
 	jboolean AudioPresentation::hasDialogueEnhancement()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasDialogueEnhancement",
 			"()Z"
 		);
 	}
 	jboolean AudioPresentation::hasSpokenSubtitles()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasSpokenSubtitles",
 			"()Z"
 		);
 	}
 	jint AudioPresentation::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring AudioPresentation::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

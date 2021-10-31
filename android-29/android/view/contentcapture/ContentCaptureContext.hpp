@@ -27,9 +27,11 @@ namespace android::view::contentcapture
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ContentCaptureContext(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ContentCaptureContext(QAndroidJniObject obj);
+		
 		// Constructors
-		ContentCaptureContext() = default;
 		
 		// Methods
 		static QAndroidJniObject forLocusId(jstring arg0);

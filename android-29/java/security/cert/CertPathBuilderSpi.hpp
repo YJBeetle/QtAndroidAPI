@@ -10,7 +10,10 @@ namespace java::security::cert
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CertPathBuilderSpi(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		CertPathBuilderSpi(QAndroidJniObject obj);
+		
 		// Constructors
 		CertPathBuilderSpi();
 		

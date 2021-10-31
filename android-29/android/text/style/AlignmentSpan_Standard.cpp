@@ -6,53 +6,51 @@ namespace android::text::style
 {
 	// Fields
 	
-	AlignmentSpan_Standard::AlignmentSpan_Standard(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AlignmentSpan_Standard::AlignmentSpan_Standard(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	AlignmentSpan_Standard::AlignmentSpan_Standard(android::os::Parcel arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.text.style.AlignmentSpan$Standard",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	AlignmentSpan_Standard::AlignmentSpan_Standard(android::text::Layout_Alignment arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.text.style.AlignmentSpan$Standard",
 			"(Landroid/text/Layout$Alignment;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jint AlignmentSpan_Standard::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	QAndroidJniObject AlignmentSpan_Standard::getAlignment()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAlignment",
 			"()Landroid/text/Layout$Alignment;"
 		);
 	}
 	jint AlignmentSpan_Standard::getSpanTypeId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSpanTypeId",
 			"()I"
 		);
 	}
 	void AlignmentSpan_Standard::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

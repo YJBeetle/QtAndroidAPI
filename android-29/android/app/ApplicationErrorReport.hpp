@@ -54,7 +54,10 @@ namespace android::app
 		jlong time();
 		jint type();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ApplicationErrorReport(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ApplicationErrorReport(QAndroidJniObject obj);
+		
 		// Constructors
 		ApplicationErrorReport();
 		

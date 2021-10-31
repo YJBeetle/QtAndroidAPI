@@ -67,7 +67,9 @@ namespace android::provider
 		);
 	}
 	
-	ContactsContract_CommonDataKinds_Event::ContactsContract_CommonDataKinds_Event(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ContactsContract_CommonDataKinds_Event::ContactsContract_CommonDataKinds_Event(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -77,7 +79,7 @@ namespace android::provider
 			"android.provider.ContactsContract$CommonDataKinds$Event",
 			"getTypeLabel",
 			"(Landroid/content/res/Resources;ILjava/lang/CharSequence;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		).object<jstring>();
@@ -88,7 +90,7 @@ namespace android::provider
 			"android.provider.ContactsContract$CommonDataKinds$Event",
 			"getTypeResource",
 			"(Ljava/lang/Integer;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::provider

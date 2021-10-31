@@ -5,23 +5,25 @@ namespace android::content
 {
 	// Fields
 	
-	SyncContext::SyncContext(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SyncContext::SyncContext(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject SyncContext::getSyncContextBinder()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSyncContextBinder",
 			"()Landroid/os/IBinder;"
 		);
 	}
 	void SyncContext::onFinished(android::content::SyncResult arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onFinished",
 			"(Landroid/content/SyncResult;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::content

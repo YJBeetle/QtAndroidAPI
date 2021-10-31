@@ -14,7 +14,10 @@ namespace android::media
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AudioTrack_StreamEventCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AudioTrack_StreamEventCallback(QAndroidJniObject obj);
+		
 		// Constructors
 		AudioTrack_StreamEventCallback();
 		

@@ -697,15 +697,15 @@ namespace android::mtp
 		);
 	}
 	
-	MtpConstants::MtpConstants(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MtpConstants::MtpConstants(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MtpConstants::MtpConstants()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.mtp.MtpConstants",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean MtpConstants::isAbstractObject(jint arg0)

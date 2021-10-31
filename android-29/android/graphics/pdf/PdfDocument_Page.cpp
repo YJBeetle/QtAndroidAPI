@@ -6,20 +6,22 @@ namespace android::graphics::pdf
 {
 	// Fields
 	
-	PdfDocument_Page::PdfDocument_Page(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PdfDocument_Page::PdfDocument_Page(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject PdfDocument_Page::getCanvas()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCanvas",
 			"()Landroid/graphics/Canvas;"
 		);
 	}
 	QAndroidJniObject PdfDocument_Page::getInfo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getInfo",
 			"()Landroid/graphics/pdf/PdfDocument$PageInfo;"
 		);

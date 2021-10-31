@@ -27,10 +27,12 @@ namespace android::service::chooser
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ChooserTarget(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ChooserTarget(QAndroidJniObject obj);
+		
 		// Constructors
 		ChooserTarget(jstring arg0, android::graphics::drawable::Icon arg1, jfloat arg2, android::content::ComponentName arg3, android::os::Bundle arg4);
-		ChooserTarget() = default;
 		
 		// Methods
 		jint describeContents();

@@ -25,13 +25,15 @@ namespace javax::security::auth::x500
 		static jstring RFC1779();
 		static jstring RFC2253();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit X500Principal(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		X500Principal(QAndroidJniObject obj);
+		
 		// Constructors
 		X500Principal(jbyteArray arg0);
 		X500Principal(java::io::InputStream arg0);
 		X500Principal(jstring arg0);
 		X500Principal(jstring arg0, __JniBaseClass arg1);
-		X500Principal() = default;
 		
 		// Methods
 		jboolean equals(jobject arg0);

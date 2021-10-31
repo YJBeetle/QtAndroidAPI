@@ -4,13 +4,15 @@ namespace android::media
 {
 	// Fields
 	
-	MediaCasStateException::MediaCasStateException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaCasStateException::MediaCasStateException(QAndroidJniObject obj) : java::lang::IllegalStateException(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jstring MediaCasStateException::getDiagnosticInfo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDiagnosticInfo",
 			"()Ljava/lang/String;"
 		).object<jstring>();

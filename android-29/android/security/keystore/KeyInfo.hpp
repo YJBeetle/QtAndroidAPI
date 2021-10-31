@@ -14,9 +14,11 @@ namespace android::security::keystore
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit KeyInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		KeyInfo(QAndroidJniObject obj);
+		
 		// Constructors
-		KeyInfo() = default;
 		
 		// Methods
 		jarray getBlockModes();

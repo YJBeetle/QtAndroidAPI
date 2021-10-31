@@ -14,9 +14,11 @@ namespace java::lang::reflect
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Parameter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Parameter(QAndroidJniObject obj);
+		
 		// Constructors
-		Parameter() = default;
 		
 		// Methods
 		jboolean equals(jobject arg0);

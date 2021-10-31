@@ -26,20 +26,22 @@ namespace android::graphics
 		);
 	}
 	
-	ImageDecoder_DecodeException::ImageDecoder_DecodeException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ImageDecoder_DecodeException::ImageDecoder_DecodeException(QAndroidJniObject obj) : java::io::IOException(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint ImageDecoder_DecodeException::getError()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getError",
 			"()I"
 		);
 	}
 	QAndroidJniObject ImageDecoder_DecodeException::getSource()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSource",
 			"()Landroid/graphics/ImageDecoder$Source;"
 		);

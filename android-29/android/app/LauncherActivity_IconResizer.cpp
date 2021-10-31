@@ -6,24 +6,24 @@ namespace android::app
 {
 	// Fields
 	
-	LauncherActivity_IconResizer::LauncherActivity_IconResizer(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	LauncherActivity_IconResizer::LauncherActivity_IconResizer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	LauncherActivity_IconResizer::LauncherActivity_IconResizer(android::app::LauncherActivity arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.app.LauncherActivity$IconResizer",
 			"(Landroid/app/LauncherActivity;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject LauncherActivity_IconResizer::createIconThumbnail(android::graphics::drawable::Drawable arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"createIconThumbnail",
 			"(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::app

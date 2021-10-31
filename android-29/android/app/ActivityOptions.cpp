@@ -27,7 +27,9 @@ namespace android::app
 		).object<jstring>();
 	}
 	
-	ActivityOptions::ActivityOptions(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ActivityOptions::ActivityOptions(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -45,7 +47,7 @@ namespace android::app
 			"android.app.ActivityOptions",
 			"makeClipRevealAnimation",
 			"(Landroid/view/View;IIII)Landroid/app/ActivityOptions;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
@@ -58,7 +60,7 @@ namespace android::app
 			"android.app.ActivityOptions",
 			"makeCustomAnimation",
 			"(Landroid/content/Context;II)Landroid/app/ActivityOptions;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
@@ -69,7 +71,7 @@ namespace android::app
 			"android.app.ActivityOptions",
 			"makeScaleUpAnimation",
 			"(Landroid/view/View;IIII)Landroid/app/ActivityOptions;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
@@ -82,7 +84,7 @@ namespace android::app
 			"android.app.ActivityOptions",
 			"makeSceneTransitionAnimation",
 			"(Landroid/app/Activity;[Landroid/util/Pair;)Landroid/app/ActivityOptions;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -92,8 +94,8 @@ namespace android::app
 			"android.app.ActivityOptions",
 			"makeSceneTransitionAnimation",
 			"(Landroid/app/Activity;Landroid/view/View;Ljava/lang/String;)Landroid/app/ActivityOptions;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
@@ -111,60 +113,60 @@ namespace android::app
 			"android.app.ActivityOptions",
 			"makeThumbnailScaleUpAnimation",
 			"(Landroid/view/View;Landroid/graphics/Bitmap;II)Landroid/app/ActivityOptions;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3
 		);
 	}
 	QAndroidJniObject ActivityOptions::getLaunchBounds()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLaunchBounds",
 			"()Landroid/graphics/Rect;"
 		);
 	}
 	jint ActivityOptions::getLaunchDisplayId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLaunchDisplayId",
 			"()I"
 		);
 	}
 	jboolean ActivityOptions::getLockTaskMode()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getLockTaskMode",
 			"()Z"
 		);
 	}
 	void ActivityOptions::requestUsageTimeReport(android::app::PendingIntent arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"requestUsageTimeReport",
 			"(Landroid/app/PendingIntent;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ActivityOptions::setAppVerificationBundle(android::os::Bundle arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setAppVerificationBundle",
 			"(Landroid/os/Bundle;)Landroid/app/ActivityOptions;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ActivityOptions::setLaunchBounds(android::graphics::Rect arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setLaunchBounds",
 			"(Landroid/graphics/Rect;)Landroid/app/ActivityOptions;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ActivityOptions::setLaunchDisplayId(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setLaunchDisplayId",
 			"(I)Landroid/app/ActivityOptions;",
 			arg0
@@ -172,7 +174,7 @@ namespace android::app
 	}
 	QAndroidJniObject ActivityOptions::setLockTaskEnabled(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setLockTaskEnabled",
 			"(Z)Landroid/app/ActivityOptions;",
 			arg0
@@ -180,24 +182,24 @@ namespace android::app
 	}
 	QAndroidJniObject ActivityOptions::toBundle()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toBundle",
 			"()Landroid/os/Bundle;"
 		);
 	}
 	jstring ActivityOptions::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void ActivityOptions::update(android::app::ActivityOptions arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"update",
 			"(Landroid/app/ActivityOptions;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::app

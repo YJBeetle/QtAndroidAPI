@@ -5,13 +5,15 @@ namespace java::lang::reflect
 {
 	// Fields
 	
-	Field::Field(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Field::Field(QAndroidJniObject obj) : java::lang::reflect::AccessibleObject(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jboolean Field::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -19,7 +21,7 @@ namespace java::lang::reflect
 	}
 	jobject Field::get(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0
@@ -27,14 +29,14 @@ namespace java::lang::reflect
 	}
 	QAndroidJniObject Field::getAnnotatedType()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAnnotatedType",
 			"()Ljava/lang/reflect/AnnotatedType;"
 		);
 	}
 	QAndroidJniObject Field::getAnnotation(jclass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAnnotation",
 			"(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;",
 			arg0
@@ -42,7 +44,7 @@ namespace java::lang::reflect
 	}
 	jarray Field::getAnnotationsByType(jclass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAnnotationsByType",
 			"(Ljava/lang/Class;)[Ljava/lang/annotation/Annotation;",
 			arg0
@@ -50,7 +52,7 @@ namespace java::lang::reflect
 	}
 	jboolean Field::getBoolean(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getBoolean",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -58,7 +60,7 @@ namespace java::lang::reflect
 	}
 	jbyte Field::getByte(jobject arg0)
 	{
-		return __thiz.callMethod<jbyte>(
+		return callMethod<jbyte>(
 			"getByte",
 			"(Ljava/lang/Object;)B",
 			arg0
@@ -66,7 +68,7 @@ namespace java::lang::reflect
 	}
 	jchar Field::getChar(jobject arg0)
 	{
-		return __thiz.callMethod<jchar>(
+		return callMethod<jchar>(
 			"getChar",
 			"(Ljava/lang/Object;)C",
 			arg0
@@ -74,21 +76,21 @@ namespace java::lang::reflect
 	}
 	jarray Field::getDeclaredAnnotations()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDeclaredAnnotations",
 			"()[Ljava/lang/annotation/Annotation;"
 		).object<jarray>();
 	}
 	jclass Field::getDeclaringClass()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDeclaringClass",
 			"()Ljava/lang/Class;"
 		).object<jclass>();
 	}
 	jdouble Field::getDouble(jobject arg0)
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"getDouble",
 			"(Ljava/lang/Object;)D",
 			arg0
@@ -96,7 +98,7 @@ namespace java::lang::reflect
 	}
 	jfloat Field::getFloat(jobject arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getFloat",
 			"(Ljava/lang/Object;)F",
 			arg0
@@ -104,14 +106,14 @@ namespace java::lang::reflect
 	}
 	QAndroidJniObject Field::getGenericType()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getGenericType",
 			"()Ljava/lang/reflect/Type;"
 		);
 	}
 	jint Field::getInt(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getInt",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -119,7 +121,7 @@ namespace java::lang::reflect
 	}
 	jlong Field::getLong(jobject arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getLong",
 			"(Ljava/lang/Object;)J",
 			arg0
@@ -127,21 +129,21 @@ namespace java::lang::reflect
 	}
 	jint Field::getModifiers()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getModifiers",
 			"()I"
 		);
 	}
 	jstring Field::getName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jshort Field::getShort(jobject arg0)
 	{
-		return __thiz.callMethod<jshort>(
+		return callMethod<jshort>(
 			"getShort",
 			"(Ljava/lang/Object;)S",
 			arg0
@@ -149,35 +151,35 @@ namespace java::lang::reflect
 	}
 	jclass Field::getType()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/Class;"
 		).object<jclass>();
 	}
 	jint Field::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean Field::isEnumConstant()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEnumConstant",
 			"()Z"
 		);
 	}
 	jboolean Field::isSynthetic()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isSynthetic",
 			"()Z"
 		);
 	}
 	void Field::set(jobject arg0, jobject arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"set",
 			"(Ljava/lang/Object;Ljava/lang/Object;)V",
 			arg0,
@@ -186,7 +188,7 @@ namespace java::lang::reflect
 	}
 	void Field::setAccessible(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAccessible",
 			"(Z)V",
 			arg0
@@ -194,7 +196,7 @@ namespace java::lang::reflect
 	}
 	void Field::setBoolean(jobject arg0, jboolean arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setBoolean",
 			"(Ljava/lang/Object;Z)V",
 			arg0,
@@ -203,7 +205,7 @@ namespace java::lang::reflect
 	}
 	void Field::setByte(jobject arg0, jbyte arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setByte",
 			"(Ljava/lang/Object;B)V",
 			arg0,
@@ -212,7 +214,7 @@ namespace java::lang::reflect
 	}
 	void Field::setChar(jobject arg0, jchar arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setChar",
 			"(Ljava/lang/Object;C)V",
 			arg0,
@@ -221,7 +223,7 @@ namespace java::lang::reflect
 	}
 	void Field::setDouble(jobject arg0, jdouble arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDouble",
 			"(Ljava/lang/Object;D)V",
 			arg0,
@@ -230,7 +232,7 @@ namespace java::lang::reflect
 	}
 	void Field::setFloat(jobject arg0, jfloat arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFloat",
 			"(Ljava/lang/Object;F)V",
 			arg0,
@@ -239,7 +241,7 @@ namespace java::lang::reflect
 	}
 	void Field::setInt(jobject arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setInt",
 			"(Ljava/lang/Object;I)V",
 			arg0,
@@ -248,7 +250,7 @@ namespace java::lang::reflect
 	}
 	void Field::setLong(jobject arg0, jlong arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLong",
 			"(Ljava/lang/Object;J)V",
 			arg0,
@@ -257,7 +259,7 @@ namespace java::lang::reflect
 	}
 	void Field::setShort(jobject arg0, jshort arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setShort",
 			"(Ljava/lang/Object;S)V",
 			arg0,
@@ -266,14 +268,14 @@ namespace java::lang::reflect
 	}
 	jstring Field::toGenericString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toGenericString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Field::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

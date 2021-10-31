@@ -123,15 +123,15 @@ namespace android
 		);
 	}
 	
-	R_interpolator::R_interpolator(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	R_interpolator::R_interpolator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	R_interpolator::R_interpolator()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.R$interpolator",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android

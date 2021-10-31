@@ -10,10 +10,12 @@ namespace java::util::concurrent::atomic
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AtomicMarkableReference(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AtomicMarkableReference(QAndroidJniObject obj);
+		
 		// Constructors
 		AtomicMarkableReference(jobject arg0, jboolean arg1);
-		AtomicMarkableReference() = default;
 		
 		// Methods
 		jboolean attemptMark(jobject arg0, jboolean arg1);

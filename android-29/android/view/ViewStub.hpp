@@ -27,14 +27,16 @@ namespace android::view
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ViewStub(const char *className, const char *sig, Ts...agv) : android::view::View(className, sig, std::forward<Ts>(agv)...) {}
 		ViewStub(QAndroidJniObject obj);
+		
 		// Constructors
 		ViewStub(android::content::Context arg0);
 		ViewStub(android::content::Context arg0, __JniBaseClass arg1);
 		ViewStub(android::content::Context arg0, jint arg1);
 		ViewStub(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		ViewStub(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
-		ViewStub() = default;
 		
 		// Methods
 		void draw(android::graphics::Canvas arg0);

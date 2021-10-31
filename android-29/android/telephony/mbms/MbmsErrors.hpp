@@ -15,9 +15,11 @@ namespace android::telephony::mbms
 		static jint SUCCESS();
 		static jint UNKNOWN();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MbmsErrors(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MbmsErrors(QAndroidJniObject obj);
+		
 		// Constructors
-		MbmsErrors() = default;
 		
 		// Methods
 	};

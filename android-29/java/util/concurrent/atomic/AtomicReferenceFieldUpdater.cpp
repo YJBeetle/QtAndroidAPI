@@ -4,7 +4,9 @@ namespace java::util::concurrent::atomic
 {
 	// Fields
 	
-	AtomicReferenceFieldUpdater::AtomicReferenceFieldUpdater(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AtomicReferenceFieldUpdater::AtomicReferenceFieldUpdater(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -21,17 +23,17 @@ namespace java::util::concurrent::atomic
 	}
 	jobject AtomicReferenceFieldUpdater::accumulateAndGet(jobject arg0, jobject arg1, __JniBaseClass arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"accumulateAndGet",
 			"(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/function/BinaryOperator;)Ljava/lang/Object;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		).object<jobject>();
 	}
 	jboolean AtomicReferenceFieldUpdater::compareAndSet(jobject arg0, jobject arg1, jobject arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"compareAndSet",
 			"(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z",
 			arg0,
@@ -41,7 +43,7 @@ namespace java::util::concurrent::atomic
 	}
 	jobject AtomicReferenceFieldUpdater::get(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0
@@ -49,17 +51,17 @@ namespace java::util::concurrent::atomic
 	}
 	jobject AtomicReferenceFieldUpdater::getAndAccumulate(jobject arg0, jobject arg1, __JniBaseClass arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAndAccumulate",
 			"(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/function/BinaryOperator;)Ljava/lang/Object;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		).object<jobject>();
 	}
 	jobject AtomicReferenceFieldUpdater::getAndSet(jobject arg0, jobject arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAndSet",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
@@ -68,16 +70,16 @@ namespace java::util::concurrent::atomic
 	}
 	jobject AtomicReferenceFieldUpdater::getAndUpdate(jobject arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAndUpdate",
 			"(Ljava/lang/Object;Ljava/util/function/UnaryOperator;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		).object<jobject>();
 	}
 	void AtomicReferenceFieldUpdater::lazySet(jobject arg0, jobject arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"lazySet",
 			"(Ljava/lang/Object;Ljava/lang/Object;)V",
 			arg0,
@@ -86,7 +88,7 @@ namespace java::util::concurrent::atomic
 	}
 	void AtomicReferenceFieldUpdater::set(jobject arg0, jobject arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"set",
 			"(Ljava/lang/Object;Ljava/lang/Object;)V",
 			arg0,
@@ -95,16 +97,16 @@ namespace java::util::concurrent::atomic
 	}
 	jobject AtomicReferenceFieldUpdater::updateAndGet(jobject arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"updateAndGet",
 			"(Ljava/lang/Object;Ljava/util/function/UnaryOperator;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		).object<jobject>();
 	}
 	jboolean AtomicReferenceFieldUpdater::weakCompareAndSet(jobject arg0, jobject arg1, jobject arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"weakCompareAndSet",
 			"(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z",
 			arg0,

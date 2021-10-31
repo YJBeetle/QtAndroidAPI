@@ -20,10 +20,12 @@ namespace android::view::contentcapture
 		static QAndroidJniObject CREATOR();
 		static jint FLAG_IS_REGEX();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ContentCaptureCondition(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ContentCaptureCondition(QAndroidJniObject obj);
+		
 		// Constructors
 		ContentCaptureCondition(android::content::LocusId arg0, jint arg1);
-		ContentCaptureCondition() = default;
 		
 		// Methods
 		jint describeContents();

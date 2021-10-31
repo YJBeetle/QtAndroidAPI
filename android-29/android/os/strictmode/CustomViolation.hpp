@@ -11,9 +11,11 @@ namespace android::os::strictmode
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CustomViolation(const char *className, const char *sig, Ts...agv) : android::os::strictmode::Violation(className, sig, std::forward<Ts>(agv)...) {}
 		CustomViolation(QAndroidJniObject obj);
+		
 		// Constructors
-		CustomViolation() = default;
 		
 		// Methods
 	};

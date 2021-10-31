@@ -12,10 +12,12 @@ namespace android::system
 		jlong tv_nsec();
 		jlong tv_sec();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit StructTimespec(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		StructTimespec(QAndroidJniObject obj);
+		
 		// Constructors
 		StructTimespec(jlong arg0, jlong arg1);
-		StructTimespec() = default;
 		
 		// Methods
 		jint compareTo(android::system::StructTimespec arg0);

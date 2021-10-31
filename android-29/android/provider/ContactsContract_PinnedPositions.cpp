@@ -19,15 +19,15 @@ namespace android::provider
 		);
 	}
 	
-	ContactsContract_PinnedPositions::ContactsContract_PinnedPositions(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ContactsContract_PinnedPositions::ContactsContract_PinnedPositions(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ContactsContract_PinnedPositions::ContactsContract_PinnedPositions()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.provider.ContactsContract$PinnedPositions",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void ContactsContract_PinnedPositions::pin(android::content::ContentResolver arg0, jlong arg1, jint arg2)
@@ -36,7 +36,7 @@ namespace android::provider
 			"android.provider.ContactsContract$PinnedPositions",
 			"pin",
 			"(Landroid/content/ContentResolver;JI)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
@@ -47,7 +47,7 @@ namespace android::provider
 			"android.provider.ContactsContract$PinnedPositions",
 			"undemote",
 			"(Landroid/content/ContentResolver;J)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

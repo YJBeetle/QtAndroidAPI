@@ -63,17 +63,19 @@ namespace android::graphics::text
 		);
 	}
 	
-	LineBreaker::LineBreaker(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	LineBreaker::LineBreaker(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject LineBreaker::computeLineBreaks(android::graphics::text::MeasuredText arg0, android::graphics::text::LineBreaker_ParagraphConstraints arg1, jint arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"computeLineBreaks",
 			"(Landroid/graphics/text/MeasuredText;Landroid/graphics/text/LineBreaker$ParagraphConstraints;I)Landroid/graphics/text/LineBreaker$Result;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}

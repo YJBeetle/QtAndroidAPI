@@ -23,12 +23,14 @@ namespace android::widget
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SimpleExpandableListAdapter(const char *className, const char *sig, Ts...agv) : android::widget::BaseExpandableListAdapter(className, sig, std::forward<Ts>(agv)...) {}
 		SimpleExpandableListAdapter(QAndroidJniObject obj);
+		
 		// Constructors
 		SimpleExpandableListAdapter(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jarray arg3, jintArray arg4, __JniBaseClass arg5, jint arg6, jarray arg7, jintArray arg8);
 		SimpleExpandableListAdapter(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3, jarray arg4, jintArray arg5, __JniBaseClass arg6, jint arg7, jarray arg8, jintArray arg9);
 		SimpleExpandableListAdapter(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3, jarray arg4, jintArray arg5, __JniBaseClass arg6, jint arg7, jint arg8, jarray arg9, jintArray arg10);
-		SimpleExpandableListAdapter() = default;
 		
 		// Methods
 		jobject getChild(jint arg0, jint arg1);

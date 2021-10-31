@@ -14,9 +14,11 @@ namespace android::os
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SystemClock(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SystemClock(QAndroidJniObject obj);
+		
 		// Constructors
-		SystemClock() = default;
 		
 		// Methods
 		static QAndroidJniObject currentGnssTimeClock();

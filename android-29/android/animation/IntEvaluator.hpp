@@ -14,7 +14,10 @@ namespace android::animation
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit IntEvaluator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		IntEvaluator(QAndroidJniObject obj);
+		
 		// Constructors
 		IntEvaluator();
 		

@@ -4,7 +4,9 @@ namespace android::text
 {
 	// Fields
 	
-	Layout_Directions::Layout_Directions(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Layout_Directions::Layout_Directions(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

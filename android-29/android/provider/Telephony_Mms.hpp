@@ -18,9 +18,11 @@ namespace android::provider
 		static QAndroidJniObject REPORT_REQUEST_URI();
 		static QAndroidJniObject REPORT_STATUS_URI();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Telephony_Mms(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Telephony_Mms(QAndroidJniObject obj);
+		
 		// Constructors
-		Telephony_Mms() = default;
 		
 		// Methods
 	};

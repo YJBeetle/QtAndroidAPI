@@ -12,9 +12,11 @@ namespace java::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AbstractSequentialList(const char *className, const char *sig, Ts...agv) : java::util::AbstractList(className, sig, std::forward<Ts>(agv)...) {}
 		AbstractSequentialList(QAndroidJniObject obj);
+		
 		// Constructors
-		AbstractSequentialList() = default;
 		
 		// Methods
 		void add(jint arg0, jobject arg1);

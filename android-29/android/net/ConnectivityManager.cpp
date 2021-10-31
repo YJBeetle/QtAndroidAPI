@@ -264,7 +264,9 @@ namespace android::net
 		);
 	}
 	
-	ConnectivityManager::ConnectivityManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ConnectivityManager::ConnectivityManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -291,132 +293,132 @@ namespace android::net
 			"android.net.ConnectivityManager",
 			"setProcessDefaultNetwork",
 			"(Landroid/net/Network;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ConnectivityManager::addDefaultNetworkActiveListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addDefaultNetworkActiveListener",
 			"(Landroid/net/ConnectivityManager$OnNetworkActiveListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean ConnectivityManager::bindProcessToNetwork(android::net::Network arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"bindProcessToNetwork",
 			"(Landroid/net/Network;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ConnectivityManager::createSocketKeepalive(android::net::Network arg0, android::net::IpSecManager_UdpEncapsulationSocket arg1, java::net::InetAddress arg2, java::net::InetAddress arg3, __JniBaseClass arg4, android::net::SocketKeepalive_Callback arg5)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"createSocketKeepalive",
 			"(Landroid/net/Network;Landroid/net/IpSecManager$UdpEncapsulationSocket;Ljava/net/InetAddress;Ljava/net/InetAddress;Ljava/util/concurrent/Executor;Landroid/net/SocketKeepalive$Callback;)Landroid/net/SocketKeepalive;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
-			arg5.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object(),
+			arg4.object(),
+			arg5.object()
 		);
 	}
 	QAndroidJniObject ConnectivityManager::getActiveNetwork()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getActiveNetwork",
 			"()Landroid/net/Network;"
 		);
 	}
 	QAndroidJniObject ConnectivityManager::getActiveNetworkInfo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getActiveNetworkInfo",
 			"()Landroid/net/NetworkInfo;"
 		);
 	}
 	jarray ConnectivityManager::getAllNetworkInfo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAllNetworkInfo",
 			"()[Landroid/net/NetworkInfo;"
 		).object<jarray>();
 	}
 	jarray ConnectivityManager::getAllNetworks()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAllNetworks",
 			"()[Landroid/net/Network;"
 		).object<jarray>();
 	}
 	jboolean ConnectivityManager::getBackgroundDataSetting()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getBackgroundDataSetting",
 			"()Z"
 		);
 	}
 	QAndroidJniObject ConnectivityManager::getBoundNetworkForProcess()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBoundNetworkForProcess",
 			"()Landroid/net/Network;"
 		);
 	}
 	jint ConnectivityManager::getConnectionOwnerUid(jint arg0, java::net::InetSocketAddress arg1, java::net::InetSocketAddress arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getConnectionOwnerUid",
 			"(ILjava/net/InetSocketAddress;Ljava/net/InetSocketAddress;)I",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject ConnectivityManager::getDefaultProxy()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDefaultProxy",
 			"()Landroid/net/ProxyInfo;"
 		);
 	}
 	QAndroidJniObject ConnectivityManager::getLinkProperties(android::net::Network arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLinkProperties",
 			"(Landroid/net/Network;)Landroid/net/LinkProperties;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint ConnectivityManager::getMultipathPreference(android::net::Network arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMultipathPreference",
 			"(Landroid/net/Network;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ConnectivityManager::getNetworkCapabilities(android::net::Network arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getNetworkCapabilities",
 			"(Landroid/net/Network;)Landroid/net/NetworkCapabilities;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ConnectivityManager::getNetworkInfo(android::net::Network arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getNetworkInfo",
 			"(Landroid/net/Network;)Landroid/net/NetworkInfo;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ConnectivityManager::getNetworkInfo(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getNetworkInfo",
 			"(I)Landroid/net/NetworkInfo;",
 			arg0
@@ -424,177 +426,177 @@ namespace android::net
 	}
 	jint ConnectivityManager::getNetworkPreference()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getNetworkPreference",
 			"()I"
 		);
 	}
 	jbyteArray ConnectivityManager::getNetworkWatchlistConfigHash()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getNetworkWatchlistConfigHash",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jint ConnectivityManager::getRestrictBackgroundStatus()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRestrictBackgroundStatus",
 			"()I"
 		);
 	}
 	jboolean ConnectivityManager::isActiveNetworkMetered()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isActiveNetworkMetered",
 			"()Z"
 		);
 	}
 	jboolean ConnectivityManager::isDefaultNetworkActive()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isDefaultNetworkActive",
 			"()Z"
 		);
 	}
 	void ConnectivityManager::registerDefaultNetworkCallback(android::net::ConnectivityManager_NetworkCallback arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"registerDefaultNetworkCallback",
 			"(Landroid/net/ConnectivityManager$NetworkCallback;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ConnectivityManager::registerDefaultNetworkCallback(android::net::ConnectivityManager_NetworkCallback arg0, android::os::Handler arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"registerDefaultNetworkCallback",
 			"(Landroid/net/ConnectivityManager$NetworkCallback;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void ConnectivityManager::registerNetworkCallback(android::net::NetworkRequest arg0, android::app::PendingIntent arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"registerNetworkCallback",
 			"(Landroid/net/NetworkRequest;Landroid/app/PendingIntent;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void ConnectivityManager::registerNetworkCallback(android::net::NetworkRequest arg0, android::net::ConnectivityManager_NetworkCallback arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"registerNetworkCallback",
 			"(Landroid/net/NetworkRequest;Landroid/net/ConnectivityManager$NetworkCallback;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void ConnectivityManager::registerNetworkCallback(android::net::NetworkRequest arg0, android::net::ConnectivityManager_NetworkCallback arg1, android::os::Handler arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"registerNetworkCallback",
 			"(Landroid/net/NetworkRequest;Landroid/net/ConnectivityManager$NetworkCallback;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	void ConnectivityManager::releaseNetworkRequest(android::app::PendingIntent arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"releaseNetworkRequest",
 			"(Landroid/app/PendingIntent;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ConnectivityManager::removeDefaultNetworkActiveListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeDefaultNetworkActiveListener",
 			"(Landroid/net/ConnectivityManager$OnNetworkActiveListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ConnectivityManager::reportBadNetwork(android::net::Network arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"reportBadNetwork",
 			"(Landroid/net/Network;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ConnectivityManager::reportNetworkConnectivity(android::net::Network arg0, jboolean arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"reportNetworkConnectivity",
 			"(Landroid/net/Network;Z)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	jboolean ConnectivityManager::requestBandwidthUpdate(android::net::Network arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"requestBandwidthUpdate",
 			"(Landroid/net/Network;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ConnectivityManager::requestNetwork(android::net::NetworkRequest arg0, android::app::PendingIntent arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"requestNetwork",
 			"(Landroid/net/NetworkRequest;Landroid/app/PendingIntent;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void ConnectivityManager::requestNetwork(android::net::NetworkRequest arg0, android::net::ConnectivityManager_NetworkCallback arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"requestNetwork",
 			"(Landroid/net/NetworkRequest;Landroid/net/ConnectivityManager$NetworkCallback;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void ConnectivityManager::requestNetwork(android::net::NetworkRequest arg0, android::net::ConnectivityManager_NetworkCallback arg1, android::os::Handler arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"requestNetwork",
 			"(Landroid/net/NetworkRequest;Landroid/net/ConnectivityManager$NetworkCallback;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	void ConnectivityManager::requestNetwork(android::net::NetworkRequest arg0, android::net::ConnectivityManager_NetworkCallback arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"requestNetwork",
 			"(Landroid/net/NetworkRequest;Landroid/net/ConnectivityManager$NetworkCallback;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
 	void ConnectivityManager::requestNetwork(android::net::NetworkRequest arg0, android::net::ConnectivityManager_NetworkCallback arg1, android::os::Handler arg2, jint arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"requestNetwork",
 			"(Landroid/net/NetworkRequest;Landroid/net/ConnectivityManager$NetworkCallback;Landroid/os/Handler;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
 			arg3
 		);
 	}
 	void ConnectivityManager::setNetworkPreference(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setNetworkPreference",
 			"(I)V",
 			arg0
@@ -602,18 +604,18 @@ namespace android::net
 	}
 	void ConnectivityManager::unregisterNetworkCallback(android::app::PendingIntent arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"unregisterNetworkCallback",
 			"(Landroid/app/PendingIntent;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ConnectivityManager::unregisterNetworkCallback(android::net::ConnectivityManager_NetworkCallback arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"unregisterNetworkCallback",
 			"(Landroid/net/ConnectivityManager$NetworkCallback;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::net

@@ -10,10 +10,12 @@ namespace android::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit LogPrinter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		LogPrinter(QAndroidJniObject obj);
+		
 		// Constructors
 		LogPrinter(jint arg0, jstring arg1);
-		LogPrinter() = default;
 		
 		// Methods
 		void println(jstring arg0);

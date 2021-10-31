@@ -4,15 +4,15 @@ namespace android::view::animation
 {
 	// Fields
 	
-	BaseInterpolator::BaseInterpolator(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BaseInterpolator::BaseInterpolator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	BaseInterpolator::BaseInterpolator()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.animation.BaseInterpolator",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::view::animation

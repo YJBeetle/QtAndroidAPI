@@ -176,13 +176,15 @@ namespace android::media
 		static jint WHITEBALANCE_AUTO();
 		static jint WHITEBALANCE_MANUAL();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ExifInterface(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ExifInterface(QAndroidJniObject obj);
+		
 		// Constructors
 		ExifInterface(java::io::File arg0);
 		ExifInterface(java::io::FileDescriptor arg0);
 		ExifInterface(java::io::InputStream arg0);
 		ExifInterface(jstring arg0);
-		ExifInterface() = default;
 		
 		// Methods
 		jdouble getAltitude(jdouble arg0);

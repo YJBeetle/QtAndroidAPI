@@ -13,7 +13,10 @@ namespace java::nio::file
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ClosedDirectoryStreamException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalStateException(className, sig, std::forward<Ts>(agv)...) {}
 		ClosedDirectoryStreamException(QAndroidJniObject obj);
+		
 		// Constructors
 		ClosedDirectoryStreamException();
 		

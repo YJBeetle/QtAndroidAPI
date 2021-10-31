@@ -269,39 +269,39 @@ namespace android::media
 		);
 	}
 	
-	MediaCodecInfo_VideoCapabilities_PerformancePoint::MediaCodecInfo_VideoCapabilities_PerformancePoint(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaCodecInfo_VideoCapabilities_PerformancePoint::MediaCodecInfo_VideoCapabilities_PerformancePoint(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MediaCodecInfo_VideoCapabilities_PerformancePoint::MediaCodecInfo_VideoCapabilities_PerformancePoint(jint arg0, jint arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.MediaCodecInfo$VideoCapabilities$PerformancePoint",
 			"(III)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean MediaCodecInfo_VideoCapabilities_PerformancePoint::covers(android::media::MediaCodecInfo_VideoCapabilities_PerformancePoint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"covers",
 			"(Landroid/media/MediaCodecInfo$VideoCapabilities$PerformancePoint;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean MediaCodecInfo_VideoCapabilities_PerformancePoint::covers(android::media::MediaFormat arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"covers",
 			"(Landroid/media/MediaFormat;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean MediaCodecInfo_VideoCapabilities_PerformancePoint::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -309,14 +309,14 @@ namespace android::media
 	}
 	jint MediaCodecInfo_VideoCapabilities_PerformancePoint::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring MediaCodecInfo_VideoCapabilities_PerformancePoint::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

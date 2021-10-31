@@ -9,7 +9,9 @@ namespace java::time::zone
 {
 	// Fields
 	
-	ZoneOffsetTransition::ZoneOffsetTransition(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ZoneOffsetTransition::ZoneOffsetTransition(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -19,14 +21,14 @@ namespace java::time::zone
 			"java.time.zone.ZoneOffsetTransition",
 			"of",
 			"(Ljava/time/LocalDateTime;Ljava/time/ZoneOffset;Ljava/time/ZoneOffset;)Ljava/time/zone/ZoneOffsetTransition;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	jint ZoneOffsetTransition::compareTo(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -34,15 +36,15 @@ namespace java::time::zone
 	}
 	jint ZoneOffsetTransition::compareTo(java::time::zone::ZoneOffsetTransition arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/time/zone/ZoneOffsetTransition;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean ZoneOffsetTransition::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -50,85 +52,85 @@ namespace java::time::zone
 	}
 	QAndroidJniObject ZoneOffsetTransition::getDateTimeAfter()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDateTimeAfter",
 			"()Ljava/time/LocalDateTime;"
 		);
 	}
 	QAndroidJniObject ZoneOffsetTransition::getDateTimeBefore()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDateTimeBefore",
 			"()Ljava/time/LocalDateTime;"
 		);
 	}
 	QAndroidJniObject ZoneOffsetTransition::getDuration()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDuration",
 			"()Ljava/time/Duration;"
 		);
 	}
 	QAndroidJniObject ZoneOffsetTransition::getInstant()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getInstant",
 			"()Ljava/time/Instant;"
 		);
 	}
 	QAndroidJniObject ZoneOffsetTransition::getOffsetAfter()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getOffsetAfter",
 			"()Ljava/time/ZoneOffset;"
 		);
 	}
 	QAndroidJniObject ZoneOffsetTransition::getOffsetBefore()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getOffsetBefore",
 			"()Ljava/time/ZoneOffset;"
 		);
 	}
 	jint ZoneOffsetTransition::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean ZoneOffsetTransition::isGap()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isGap",
 			"()Z"
 		);
 	}
 	jboolean ZoneOffsetTransition::isOverlap()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isOverlap",
 			"()Z"
 		);
 	}
 	jboolean ZoneOffsetTransition::isValidOffset(java::time::ZoneOffset arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isValidOffset",
 			"(Ljava/time/ZoneOffset;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jlong ZoneOffsetTransition::toEpochSecond()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"toEpochSecond",
 			"()J"
 		);
 	}
 	jstring ZoneOffsetTransition::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

@@ -6,7 +6,9 @@ namespace android::text
 {
 	// Fields
 	
-	AutoText::AutoText(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AutoText::AutoText(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -19,7 +21,7 @@ namespace android::text
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		).object<jstring>();
 	}
 	jint AutoText::getSize(android::view::View arg0)
@@ -28,7 +30,7 @@ namespace android::text
 			"android.text.AutoText",
 			"getSize",
 			"(Landroid/view/View;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::text

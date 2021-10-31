@@ -38,7 +38,10 @@ namespace java::time::format
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DateTimeFormatterBuilder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DateTimeFormatterBuilder(QAndroidJniObject obj);
+		
 		// Constructors
 		DateTimeFormatterBuilder();
 		

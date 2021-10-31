@@ -14,12 +14,14 @@ namespace android::graphics
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SurfaceTexture(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SurfaceTexture(QAndroidJniObject obj);
+		
 		// Constructors
 		SurfaceTexture(jboolean arg0);
 		SurfaceTexture(jint arg0);
 		SurfaceTexture(jint arg0, jboolean arg1);
-		SurfaceTexture() = default;
 		
 		// Methods
 		void attachToGLContext(jint arg0);

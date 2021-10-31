@@ -22,9 +22,11 @@ namespace java::lang
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Runtime(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Runtime(QAndroidJniObject obj);
+		
 		// Constructors
-		Runtime() = default;
 		
 		// Methods
 		static QAndroidJniObject getRuntime();

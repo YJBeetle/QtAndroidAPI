@@ -9,58 +9,58 @@ namespace android::webkit
 {
 	// Fields
 	
-	WebViewFragment::WebViewFragment(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WebViewFragment::WebViewFragment(QAndroidJniObject obj) : android::app::Fragment(obj) {}
+	
 	// Constructors
 	WebViewFragment::WebViewFragment()
-	{
-		__thiz = QAndroidJniObject(
+		: android::app::Fragment(
 			"android.webkit.WebViewFragment",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject WebViewFragment::getWebView()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getWebView",
 			"()Landroid/webkit/WebView;"
 		);
 	}
 	QAndroidJniObject WebViewFragment::onCreateView(android::view::LayoutInflater arg0, android::view::ViewGroup arg1, android::os::Bundle arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onCreateView",
 			"(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	void WebViewFragment::onDestroy()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onDestroy",
 			"()V"
 		);
 	}
 	void WebViewFragment::onDestroyView()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onDestroyView",
 			"()V"
 		);
 	}
 	void WebViewFragment::onPause()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onPause",
 			"()V"
 		);
 	}
 	void WebViewFragment::onResume()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onResume",
 			"()V"
 		);

@@ -19,10 +19,12 @@ namespace android::accounts
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AccountAuthenticatorResponse(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AccountAuthenticatorResponse(QAndroidJniObject obj);
+		
 		// Constructors
 		AccountAuthenticatorResponse(android::os::Parcel arg0);
-		AccountAuthenticatorResponse() = default;
 		
 		// Methods
 		jint describeContents();

@@ -9,7 +9,9 @@ namespace java::security
 {
 	// Fields
 	
-	SecureClassLoader::SecureClassLoader(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SecureClassLoader::SecureClassLoader(QAndroidJniObject obj) : java::lang::ClassLoader(obj) {}
+	
 	// Constructors
 	
 	// Methods

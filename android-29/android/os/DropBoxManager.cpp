@@ -59,13 +59,15 @@ namespace android::os
 		);
 	}
 	
-	DropBoxManager::DropBoxManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DropBoxManager::DropBoxManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void DropBoxManager::addData(jstring arg0, jbyteArray arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addData",
 			"(Ljava/lang/String;[BI)V",
 			arg0,
@@ -75,17 +77,17 @@ namespace android::os
 	}
 	void DropBoxManager::addFile(jstring arg0, java::io::File arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addFile",
 			"(Ljava/lang/String;Ljava/io/File;I)V",
 			arg0,
-			arg1.__jniObject().object(),
+			arg1.object(),
 			arg2
 		);
 	}
 	void DropBoxManager::addText(jstring arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addText",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
@@ -94,7 +96,7 @@ namespace android::os
 	}
 	QAndroidJniObject DropBoxManager::getNextEntry(jstring arg0, jlong arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getNextEntry",
 			"(Ljava/lang/String;J)Landroid/os/DropBoxManager$Entry;",
 			arg0,
@@ -103,7 +105,7 @@ namespace android::os
 	}
 	jboolean DropBoxManager::isTagEnabled(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isTagEnabled",
 			"(Ljava/lang/String;)Z",
 			arg0

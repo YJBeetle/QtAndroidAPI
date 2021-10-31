@@ -5,44 +5,42 @@ namespace java::io
 {
 	// Fields
 	
-	BufferedReader::BufferedReader(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BufferedReader::BufferedReader(QAndroidJniObject obj) : java::io::Reader(obj) {}
+	
 	// Constructors
 	BufferedReader::BufferedReader(java::io::Reader arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::Reader(
 			"java.io.BufferedReader",
 			"(Ljava/io/Reader;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	BufferedReader::BufferedReader(java::io::Reader arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::Reader(
 			"java.io.BufferedReader",
 			"(Ljava/io/Reader;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	void BufferedReader::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	QAndroidJniObject BufferedReader::lines()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"lines",
 			"()Ljava/util/stream/Stream;"
 		);
 	}
 	void BufferedReader::mark(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"mark",
 			"(I)V",
 			arg0
@@ -50,21 +48,21 @@ namespace java::io
 	}
 	jboolean BufferedReader::markSupported()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"markSupported",
 			"()Z"
 		);
 	}
 	jint BufferedReader::read()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"read",
 			"()I"
 		);
 	}
 	jint BufferedReader::read(jcharArray arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"read",
 			"([CII)I",
 			arg0,
@@ -74,28 +72,28 @@ namespace java::io
 	}
 	jstring BufferedReader::readLine()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"readLine",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jboolean BufferedReader::ready()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"ready",
 			"()Z"
 		);
 	}
 	void BufferedReader::reset()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
 	jlong BufferedReader::skip(jlong arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"skip",
 			"(J)J",
 			arg0

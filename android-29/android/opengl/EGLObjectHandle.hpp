@@ -10,9 +10,11 @@ namespace android::opengl
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit EGLObjectHandle(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		EGLObjectHandle(QAndroidJniObject obj);
+		
 		// Constructors
-		EGLObjectHandle() = default;
 		
 		// Methods
 		jint getHandle();

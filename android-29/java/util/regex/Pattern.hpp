@@ -35,9 +35,11 @@ namespace java::util::regex
 		static jint UNICODE_CHARACTER_CLASS();
 		static jint UNIX_LINES();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Pattern(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Pattern(QAndroidJniObject obj);
+		
 		// Constructors
-		Pattern() = default;
 		
 		// Methods
 		static QAndroidJniObject compile(jstring arg0);

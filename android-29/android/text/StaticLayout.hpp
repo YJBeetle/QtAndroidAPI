@@ -27,12 +27,14 @@ namespace android::text
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit StaticLayout(const char *className, const char *sig, Ts...agv) : android::text::Layout(className, sig, std::forward<Ts>(agv)...) {}
 		StaticLayout(QAndroidJniObject obj);
+		
 		// Constructors
 		StaticLayout(jstring arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, jboolean arg6);
 		StaticLayout(jstring arg0, jint arg1, jint arg2, android::text::TextPaint arg3, jint arg4, android::text::Layout_Alignment arg5, jfloat arg6, jfloat arg7, jboolean arg8);
 		StaticLayout(jstring arg0, jint arg1, jint arg2, android::text::TextPaint arg3, jint arg4, android::text::Layout_Alignment arg5, jfloat arg6, jfloat arg7, jboolean arg8, android::text::TextUtils_TruncateAt arg9, jint arg10);
-		StaticLayout() = default;
 		
 		// Methods
 		jint getBottomPadding();

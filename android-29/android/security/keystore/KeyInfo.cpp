@@ -5,139 +5,141 @@ namespace android::security::keystore
 {
 	// Fields
 	
-	KeyInfo::KeyInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	KeyInfo::KeyInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jarray KeyInfo::getBlockModes()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBlockModes",
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	jarray KeyInfo::getDigests()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDigests",
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	jarray KeyInfo::getEncryptionPaddings()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEncryptionPaddings",
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	jint KeyInfo::getKeySize()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getKeySize",
 			"()I"
 		);
 	}
 	QAndroidJniObject KeyInfo::getKeyValidityForConsumptionEnd()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getKeyValidityForConsumptionEnd",
 			"()Ljava/util/Date;"
 		);
 	}
 	QAndroidJniObject KeyInfo::getKeyValidityForOriginationEnd()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getKeyValidityForOriginationEnd",
 			"()Ljava/util/Date;"
 		);
 	}
 	QAndroidJniObject KeyInfo::getKeyValidityStart()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getKeyValidityStart",
 			"()Ljava/util/Date;"
 		);
 	}
 	jstring KeyInfo::getKeystoreAlias()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getKeystoreAlias",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint KeyInfo::getOrigin()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getOrigin",
 			"()I"
 		);
 	}
 	jint KeyInfo::getPurposes()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPurposes",
 			"()I"
 		);
 	}
 	jarray KeyInfo::getSignaturePaddings()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSignaturePaddings",
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	jint KeyInfo::getUserAuthenticationValidityDurationSeconds()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getUserAuthenticationValidityDurationSeconds",
 			"()I"
 		);
 	}
 	jboolean KeyInfo::isInsideSecureHardware()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isInsideSecureHardware",
 			"()Z"
 		);
 	}
 	jboolean KeyInfo::isInvalidatedByBiometricEnrollment()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isInvalidatedByBiometricEnrollment",
 			"()Z"
 		);
 	}
 	jboolean KeyInfo::isTrustedUserPresenceRequired()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isTrustedUserPresenceRequired",
 			"()Z"
 		);
 	}
 	jboolean KeyInfo::isUserAuthenticationRequired()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isUserAuthenticationRequired",
 			"()Z"
 		);
 	}
 	jboolean KeyInfo::isUserAuthenticationRequirementEnforcedBySecureHardware()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isUserAuthenticationRequirementEnforcedBySecureHardware",
 			"()Z"
 		);
 	}
 	jboolean KeyInfo::isUserAuthenticationValidWhileOnBody()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isUserAuthenticationValidWhileOnBody",
 			"()Z"
 		);
 	}
 	jboolean KeyInfo::isUserConfirmationRequired()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isUserConfirmationRequired",
 			"()Z"
 		);

@@ -82,66 +82,66 @@ namespace android::app::admin
 		);
 	}
 	
-	DeviceAdminInfo::DeviceAdminInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DeviceAdminInfo::DeviceAdminInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	DeviceAdminInfo::DeviceAdminInfo(android::content::Context arg0, android::content::pm::ResolveInfo arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.app.admin.DeviceAdminInfo",
 			"(Landroid/content/Context;Landroid/content/pm/ResolveInfo;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	
 	// Methods
 	jint DeviceAdminInfo::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	void DeviceAdminInfo::dump(__JniBaseClass arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"dump",
 			"(Landroid/util/Printer;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	QAndroidJniObject DeviceAdminInfo::getActivityInfo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getActivityInfo",
 			"()Landroid/content/pm/ActivityInfo;"
 		);
 	}
 	QAndroidJniObject DeviceAdminInfo::getComponent()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getComponent",
 			"()Landroid/content/ComponentName;"
 		);
 	}
 	jstring DeviceAdminInfo::getPackageName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring DeviceAdminInfo::getReceiverName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getReceiverName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring DeviceAdminInfo::getTagForPolicy(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTagForPolicy",
 			"(I)Ljava/lang/String;",
 			arg0
@@ -149,52 +149,52 @@ namespace android::app::admin
 	}
 	jboolean DeviceAdminInfo::isVisible()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isVisible",
 			"()Z"
 		);
 	}
 	jstring DeviceAdminInfo::loadDescription(android::content::pm::PackageManager arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"loadDescription",
 			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	QAndroidJniObject DeviceAdminInfo::loadIcon(android::content::pm::PackageManager arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"loadIcon",
 			"(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring DeviceAdminInfo::loadLabel(android::content::pm::PackageManager arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"loadLabel",
 			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jboolean DeviceAdminInfo::supportsTransferOwnership()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"supportsTransferOwnership",
 			"()Z"
 		);
 	}
 	jstring DeviceAdminInfo::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jboolean DeviceAdminInfo::usesPolicy(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"usesPolicy",
 			"(I)Z",
 			arg0
@@ -202,10 +202,10 @@ namespace android::app::admin
 	}
 	void DeviceAdminInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

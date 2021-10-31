@@ -4,13 +4,15 @@ namespace java::util
 {
 	// Fields
 	
-	AbstractList::AbstractList(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AbstractList::AbstractList(QAndroidJniObject obj) : java::util::AbstractCollection(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jboolean AbstractList::add(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"add",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -18,7 +20,7 @@ namespace java::util
 	}
 	void AbstractList::add(jint arg0, jobject arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"add",
 			"(ILjava/lang/Object;)V",
 			arg0,
@@ -27,23 +29,23 @@ namespace java::util
 	}
 	jboolean AbstractList::addAll(jint arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"addAll",
 			"(ILjava/util/Collection;)Z",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void AbstractList::clear()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
 	jboolean AbstractList::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -51,7 +53,7 @@ namespace java::util
 	}
 	jobject AbstractList::get(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"(I)Ljava/lang/Object;",
 			arg0
@@ -59,14 +61,14 @@ namespace java::util
 	}
 	jint AbstractList::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jint AbstractList::indexOf(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"indexOf",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -74,14 +76,14 @@ namespace java::util
 	}
 	QAndroidJniObject AbstractList::iterator()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
 	jint AbstractList::lastIndexOf(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"lastIndexOf",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -89,14 +91,14 @@ namespace java::util
 	}
 	QAndroidJniObject AbstractList::listIterator()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"listIterator",
 			"()Ljava/util/ListIterator;"
 		);
 	}
 	QAndroidJniObject AbstractList::listIterator(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"listIterator",
 			"(I)Ljava/util/ListIterator;",
 			arg0
@@ -104,7 +106,7 @@ namespace java::util
 	}
 	jobject AbstractList::remove(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"remove",
 			"(I)Ljava/lang/Object;",
 			arg0
@@ -112,7 +114,7 @@ namespace java::util
 	}
 	jobject AbstractList::set(jint arg0, jobject arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"set",
 			"(ILjava/lang/Object;)Ljava/lang/Object;",
 			arg0,
@@ -121,7 +123,7 @@ namespace java::util
 	}
 	QAndroidJniObject AbstractList::subList(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"subList",
 			"(II)Ljava/util/List;",
 			arg0,

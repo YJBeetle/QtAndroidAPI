@@ -13,7 +13,10 @@ namespace java::io
 		// Fields
 		jint bytesTransferred();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit InterruptedIOException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
 		InterruptedIOException(QAndroidJniObject obj);
+		
 		// Constructors
 		InterruptedIOException();
 		InterruptedIOException(jstring arg0);

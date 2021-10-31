@@ -26,7 +26,10 @@ namespace java::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Date(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Date(QAndroidJniObject obj);
+		
 		// Constructors
 		Date();
 		Date(jstring arg0);

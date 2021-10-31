@@ -58,7 +58,9 @@ namespace android::provider
 		);
 	}
 	
-	ContactsContract_RawContacts::ContactsContract_RawContacts(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ContactsContract_RawContacts::ContactsContract_RawContacts(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -68,8 +70,8 @@ namespace android::provider
 			"android.provider.ContactsContract$RawContacts",
 			"getContactLookupUri",
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;)Landroid/net/Uri;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject ContactsContract_RawContacts::newEntityIterator(__JniBaseClass arg0)
@@ -78,7 +80,7 @@ namespace android::provider
 			"android.provider.ContactsContract$RawContacts",
 			"newEntityIterator",
 			"(Landroid/database/Cursor;)Landroid/content/EntityIterator;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::provider

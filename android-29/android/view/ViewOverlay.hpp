@@ -22,9 +22,11 @@ namespace android::view
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ViewOverlay(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ViewOverlay(QAndroidJniObject obj);
+		
 		// Constructors
-		ViewOverlay() = default;
 		
 		// Methods
 		void add(android::graphics::drawable::Drawable arg0);

@@ -48,9 +48,11 @@ namespace java::time
 		static jint MAX_VALUE();
 		static jint MIN_VALUE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Year(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Year(QAndroidJniObject obj);
+		
 		// Constructors
-		Year() = default;
 		
 		// Methods
 		static QAndroidJniObject from(__JniBaseClass arg0);

@@ -23,9 +23,11 @@ namespace java::lang::annotation
 		static QAndroidJniObject TYPE_PARAMETER();
 		static QAndroidJniObject TYPE_USE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ElementType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		ElementType(QAndroidJniObject obj);
+		
 		// Constructors
-		ElementType() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

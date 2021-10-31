@@ -18,9 +18,11 @@ namespace android::security
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ConfirmationPrompt(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ConfirmationPrompt(QAndroidJniObject obj);
+		
 		// Constructors
-		ConfirmationPrompt() = default;
 		
 		// Methods
 		static jboolean isSupported(android::content::Context arg0);

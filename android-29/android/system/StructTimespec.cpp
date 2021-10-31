@@ -5,41 +5,41 @@ namespace android::system
 	// Fields
 	jlong StructTimespec::tv_nsec()
 	{
-		return __thiz.getField<jlong>(
+		return getField<jlong>(
 			"tv_nsec"
 		);
 	}
 	jlong StructTimespec::tv_sec()
 	{
-		return __thiz.getField<jlong>(
+		return getField<jlong>(
 			"tv_sec"
 		);
 	}
 	
-	StructTimespec::StructTimespec(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	StructTimespec::StructTimespec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	StructTimespec::StructTimespec(jlong arg0, jlong arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.system.StructTimespec",
 			"(JJ)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jint StructTimespec::compareTo(android::system::StructTimespec arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Landroid/system/StructTimespec;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint StructTimespec::compareTo(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -47,7 +47,7 @@ namespace android::system
 	}
 	jboolean StructTimespec::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -55,14 +55,14 @@ namespace android::system
 	}
 	jint StructTimespec::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring StructTimespec::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

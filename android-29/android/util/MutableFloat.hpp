@@ -11,10 +11,12 @@ namespace android::util
 		// Fields
 		jfloat value();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MutableFloat(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MutableFloat(QAndroidJniObject obj);
+		
 		// Constructors
 		MutableFloat(jfloat arg0);
-		MutableFloat() = default;
 		
 		// Methods
 	};

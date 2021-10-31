@@ -7,66 +7,68 @@ namespace android::accessibilityservice
 {
 	// Fields
 	
-	AccessibilityService_MagnificationController::AccessibilityService_MagnificationController(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AccessibilityService_MagnificationController::AccessibilityService_MagnificationController(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void AccessibilityService_MagnificationController::addListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addListener",
 			"(Landroid/accessibilityservice/AccessibilityService$MagnificationController$OnMagnificationChangedListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AccessibilityService_MagnificationController::addListener(__JniBaseClass arg0, android::os::Handler arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addListener",
 			"(Landroid/accessibilityservice/AccessibilityService$MagnificationController$OnMagnificationChangedListener;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jfloat AccessibilityService_MagnificationController::getCenterX()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getCenterX",
 			"()F"
 		);
 	}
 	jfloat AccessibilityService_MagnificationController::getCenterY()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getCenterY",
 			"()F"
 		);
 	}
 	QAndroidJniObject AccessibilityService_MagnificationController::getMagnificationRegion()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMagnificationRegion",
 			"()Landroid/graphics/Region;"
 		);
 	}
 	jfloat AccessibilityService_MagnificationController::getScale()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getScale",
 			"()F"
 		);
 	}
 	jboolean AccessibilityService_MagnificationController::removeListener(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"removeListener",
 			"(Landroid/accessibilityservice/AccessibilityService$MagnificationController$OnMagnificationChangedListener;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean AccessibilityService_MagnificationController::reset(jboolean arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"reset",
 			"(Z)Z",
 			arg0
@@ -74,7 +76,7 @@ namespace android::accessibilityservice
 	}
 	jboolean AccessibilityService_MagnificationController::setCenter(jfloat arg0, jfloat arg1, jboolean arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"setCenter",
 			"(FFZ)Z",
 			arg0,
@@ -84,7 +86,7 @@ namespace android::accessibilityservice
 	}
 	jboolean AccessibilityService_MagnificationController::setScale(jfloat arg0, jboolean arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"setScale",
 			"(FZ)Z",
 			arg0,

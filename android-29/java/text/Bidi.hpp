@@ -14,12 +14,14 @@ namespace java::text
 		static jint DIRECTION_LEFT_TO_RIGHT();
 		static jint DIRECTION_RIGHT_TO_LEFT();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Bidi(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Bidi(QAndroidJniObject obj);
+		
 		// Constructors
 		Bidi(__JniBaseClass arg0);
 		Bidi(jstring arg0, jint arg1);
 		Bidi(jcharArray arg0, jint arg1, jbyteArray arg2, jint arg3, jint arg4, jint arg5);
-		Bidi() = default;
 		
 		// Methods
 		static void reorderVisually(jbyteArray arg0, jint arg1, jobjectArray arg2, jint arg3, jint arg4);

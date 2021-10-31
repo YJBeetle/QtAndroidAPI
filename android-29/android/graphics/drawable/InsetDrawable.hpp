@@ -36,13 +36,15 @@ namespace android::graphics::drawable
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit InsetDrawable(const char *className, const char *sig, Ts...agv) : android::graphics::drawable::DrawableWrapper(className, sig, std::forward<Ts>(agv)...) {}
 		InsetDrawable(QAndroidJniObject obj);
+		
 		// Constructors
 		InsetDrawable(android::graphics::drawable::Drawable arg0, jfloat arg1);
 		InsetDrawable(android::graphics::drawable::Drawable arg0, jint arg1);
 		InsetDrawable(android::graphics::drawable::Drawable arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4);
 		InsetDrawable(android::graphics::drawable::Drawable arg0, jint arg1, jint arg2, jint arg3, jint arg4);
-		InsetDrawable() = default;
 		
 		// Methods
 		void applyTheme(android::content::res::Resources_Theme arg0);

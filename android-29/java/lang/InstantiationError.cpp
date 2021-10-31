@@ -4,23 +4,21 @@ namespace java::lang
 {
 	// Fields
 	
-	InstantiationError::InstantiationError(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	InstantiationError::InstantiationError(QAndroidJniObject obj) : java::lang::IncompatibleClassChangeError(obj) {}
+	
 	// Constructors
 	InstantiationError::InstantiationError()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::IncompatibleClassChangeError(
 			"java.lang.InstantiationError",
 			"()V"
-		);
-	}
+		) {}
 	InstantiationError::InstantiationError(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::IncompatibleClassChangeError(
 			"java.lang.InstantiationError",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::lang

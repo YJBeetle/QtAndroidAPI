@@ -10,7 +10,10 @@ namespace android::webkit
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit WebViewRenderProcess(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		WebViewRenderProcess(QAndroidJniObject obj);
+		
 		// Constructors
 		WebViewRenderProcess();
 		

@@ -16,9 +16,11 @@ namespace android::text
 		static jobject SELECTION_END();
 		static jobject SELECTION_START();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Selection(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Selection(QAndroidJniObject obj);
+		
 		// Constructors
-		Selection() = default;
 		
 		// Methods
 		static jboolean extendDown(__JniBaseClass arg0, android::text::Layout arg1);

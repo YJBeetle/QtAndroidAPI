@@ -36,7 +36,9 @@ namespace android::graphics
 		);
 	}
 	
-	ColorSpace_Model::ColorSpace_Model(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ColorSpace_Model::ColorSpace_Model(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -59,7 +61,7 @@ namespace android::graphics
 	}
 	jint ColorSpace_Model::getComponentCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getComponentCount",
 			"()I"
 		);

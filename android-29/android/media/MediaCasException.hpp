@@ -11,9 +11,11 @@ namespace android::media
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaCasException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
 		MediaCasException(QAndroidJniObject obj);
+		
 		// Constructors
-		MediaCasException() = default;
 		
 		// Methods
 	};

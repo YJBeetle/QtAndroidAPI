@@ -81,7 +81,9 @@ namespace android::text
 		);
 	}
 	
-	Html::Html(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Html::Html(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -120,8 +122,8 @@ namespace android::text
 			"fromHtml",
 			"(Ljava/lang/String;Landroid/text/Html$ImageGetter;Landroid/text/Html$TagHandler;)Landroid/text/Spanned;",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject Html::fromHtml(jstring arg0, jint arg1, __JniBaseClass arg2, __JniBaseClass arg3)
@@ -132,8 +134,8 @@ namespace android::text
 			"(Ljava/lang/String;ILandroid/text/Html$ImageGetter;Landroid/text/Html$TagHandler;)Landroid/text/Spanned;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
+			arg2.object(),
+			arg3.object()
 		);
 	}
 	jstring Html::toHtml(__JniBaseClass arg0)
@@ -142,7 +144,7 @@ namespace android::text
 			"android.text.Html",
 			"toHtml",
 			"(Landroid/text/Spanned;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jstring Html::toHtml(__JniBaseClass arg0, jint arg1)
@@ -151,7 +153,7 @@ namespace android::text
 			"android.text.Html",
 			"toHtml",
 			"(Landroid/text/Spanned;I)Ljava/lang/String;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		).object<jstring>();
 	}

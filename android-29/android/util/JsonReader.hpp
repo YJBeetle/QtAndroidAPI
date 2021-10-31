@@ -18,10 +18,12 @@ namespace android::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit JsonReader(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		JsonReader(QAndroidJniObject obj);
+		
 		// Constructors
 		JsonReader(java::io::Reader arg0);
-		JsonReader() = default;
 		
 		// Methods
 		void beginArray();

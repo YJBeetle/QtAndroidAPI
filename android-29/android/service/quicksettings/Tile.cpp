@@ -35,55 +35,57 @@ namespace android::service::quicksettings
 		);
 	}
 	
-	Tile::Tile(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Tile::Tile(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint Tile::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jstring Tile::getContentDescription()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getContentDescription",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	QAndroidJniObject Tile::getIcon()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getIcon",
 			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
 	jstring Tile::getLabel()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jint Tile::getState()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getState",
 			"()I"
 		);
 	}
 	jstring Tile::getSubtitle()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSubtitle",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	void Tile::setContentDescription(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setContentDescription",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
@@ -91,15 +93,15 @@ namespace android::service::quicksettings
 	}
 	void Tile::setIcon(android::graphics::drawable::Icon arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setIcon",
 			"(Landroid/graphics/drawable/Icon;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Tile::setLabel(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLabel",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
@@ -107,7 +109,7 @@ namespace android::service::quicksettings
 	}
 	void Tile::setState(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setState",
 			"(I)V",
 			arg0
@@ -115,7 +117,7 @@ namespace android::service::quicksettings
 	}
 	void Tile::setSubtitle(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSubtitle",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
@@ -123,17 +125,17 @@ namespace android::service::quicksettings
 	}
 	void Tile::updateTile()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"updateTile",
 			"()V"
 		);
 	}
 	void Tile::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

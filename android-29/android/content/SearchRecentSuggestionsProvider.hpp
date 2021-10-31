@@ -21,7 +21,10 @@ namespace android::content
 		static jint DATABASE_MODE_2LINES();
 		static jint DATABASE_MODE_QUERIES();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SearchRecentSuggestionsProvider(const char *className, const char *sig, Ts...agv) : android::content::ContentProvider(className, sig, std::forward<Ts>(agv)...) {}
 		SearchRecentSuggestionsProvider(QAndroidJniObject obj);
+		
 		// Constructors
 		SearchRecentSuggestionsProvider();
 		

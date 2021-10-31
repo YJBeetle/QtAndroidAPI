@@ -18,10 +18,12 @@ namespace android::media
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaCas(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaCas(QAndroidJniObject obj);
+		
 		// Constructors
 		MediaCas(jint arg0);
-		MediaCas() = default;
 		
 		// Methods
 		static jarray enumeratePlugins();

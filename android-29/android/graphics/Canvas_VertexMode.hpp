@@ -14,9 +14,11 @@ namespace android::graphics
 		static QAndroidJniObject TRIANGLE_FAN();
 		static QAndroidJniObject TRIANGLE_STRIP();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Canvas_VertexMode(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		Canvas_VertexMode(QAndroidJniObject obj);
+		
 		// Constructors
-		Canvas_VertexMode() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

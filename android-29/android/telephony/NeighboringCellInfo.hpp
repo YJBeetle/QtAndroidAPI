@@ -17,7 +17,10 @@ namespace android::telephony
 		static jint UNKNOWN_CID();
 		static jint UNKNOWN_RSSI();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit NeighboringCellInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		NeighboringCellInfo(QAndroidJniObject obj);
+		
 		// Constructors
 		NeighboringCellInfo();
 		NeighboringCellInfo(android::os::Parcel arg0);

@@ -31,7 +31,10 @@ namespace android::app
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TabActivity(const char *className, const char *sig, Ts...agv) : android::app::ActivityGroup(className, sig, std::forward<Ts>(agv)...) {}
 		TabActivity(QAndroidJniObject obj);
+		
 		// Constructors
 		TabActivity();
 		

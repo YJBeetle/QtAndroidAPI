@@ -40,7 +40,10 @@ namespace android::os
 		static jint P();
 		static jint Q();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Build_VERSION_CODES(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Build_VERSION_CODES(QAndroidJniObject obj);
+		
 		// Constructors
 		Build_VERSION_CODES();
 		

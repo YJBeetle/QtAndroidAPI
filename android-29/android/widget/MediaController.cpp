@@ -8,99 +8,95 @@ namespace android::widget
 {
 	// Fields
 	
-	MediaController::MediaController(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaController::MediaController(QAndroidJniObject obj) : android::widget::FrameLayout(obj) {}
+	
 	// Constructors
 	MediaController::MediaController(android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::FrameLayout(
 			"android.widget.MediaController",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	MediaController::MediaController(android::content::Context arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::FrameLayout(
 			"android.widget.MediaController",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	MediaController::MediaController(android::content::Context arg0, jboolean arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::FrameLayout(
 			"android.widget.MediaController",
 			"(Landroid/content/Context;Z)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean MediaController::dispatchKeyEvent(android::view::KeyEvent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"dispatchKeyEvent",
 			"(Landroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring MediaController::getAccessibilityClassName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	void MediaController::hide()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"hide",
 			"()V"
 		);
 	}
 	jboolean MediaController::isShowing()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isShowing",
 			"()Z"
 		);
 	}
 	void MediaController::onFinishInflate()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onFinishInflate",
 			"()V"
 		);
 	}
 	jboolean MediaController::onTouchEvent(android::view::MotionEvent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onTouchEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean MediaController::onTrackballEvent(android::view::MotionEvent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onTrackballEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaController::setAnchorView(android::view::View arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAnchorView",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaController::setEnabled(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setEnabled",
 			"(Z)V",
 			arg0
@@ -108,31 +104,31 @@ namespace android::widget
 	}
 	void MediaController::setMediaPlayer(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMediaPlayer",
 			"(Landroid/widget/MediaController$MediaPlayerControl;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaController::setPrevNextListeners(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPrevNextListeners",
 			"(Landroid/view/View$OnClickListener;Landroid/view/View$OnClickListener;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void MediaController::show()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"show",
 			"()V"
 		);
 	}
 	void MediaController::show(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"show",
 			"(I)V",
 			arg0

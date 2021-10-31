@@ -13,58 +13,54 @@ namespace android::os::health
 		);
 	}
 	
-	TimerStat::TimerStat(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TimerStat::TimerStat(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	TimerStat::TimerStat()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.os.health.TimerStat",
 			"()V"
-		);
-	}
+		) {}
 	TimerStat::TimerStat(android::os::Parcel arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.os.health.TimerStat",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	TimerStat::TimerStat(jint arg0, jlong arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.os.health.TimerStat",
 			"(IJ)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jint TimerStat::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jint TimerStat::getCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCount",
 			"()I"
 		);
 	}
 	jlong TimerStat::getTime()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getTime",
 			"()J"
 		);
 	}
 	void TimerStat::setCount(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCount",
 			"(I)V",
 			arg0
@@ -72,7 +68,7 @@ namespace android::os::health
 	}
 	void TimerStat::setTime(jlong arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTime",
 			"(J)V",
 			arg0
@@ -80,10 +76,10 @@ namespace android::os::health
 	}
 	void TimerStat::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

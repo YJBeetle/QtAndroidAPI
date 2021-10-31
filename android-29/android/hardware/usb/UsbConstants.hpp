@@ -43,7 +43,10 @@ namespace android::hardware::usb
 		static jint USB_TYPE_STANDARD();
 		static jint USB_TYPE_VENDOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit UsbConstants(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		UsbConstants(QAndroidJniObject obj);
+		
 		// Constructors
 		UsbConstants();
 		

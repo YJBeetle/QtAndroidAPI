@@ -39,9 +39,11 @@ namespace android::app::assist
 		static jint TEXT_STYLE_STRIKE_THRU();
 		static jint TEXT_STYLE_UNDERLINE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AssistStructure_ViewNode(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AssistStructure_ViewNode(QAndroidJniObject obj);
+		
 		// Constructors
-		AssistStructure_ViewNode() = default;
 		
 		// Methods
 		jfloat getAlpha();

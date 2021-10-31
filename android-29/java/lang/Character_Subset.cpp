@@ -4,13 +4,15 @@ namespace java::lang
 {
 	// Fields
 	
-	Character_Subset::Character_Subset(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Character_Subset::Character_Subset(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jboolean Character_Subset::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -18,14 +20,14 @@ namespace java::lang
 	}
 	jint Character_Subset::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring Character_Subset::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

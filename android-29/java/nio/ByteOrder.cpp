@@ -20,7 +20,9 @@ namespace java::nio
 		);
 	}
 	
-	ByteOrder::ByteOrder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ByteOrder::ByteOrder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -34,7 +36,7 @@ namespace java::nio
 	}
 	jstring ByteOrder::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

@@ -19,22 +19,22 @@ namespace org::w3c::dom::ls
 	}
 	jshort LSException::code()
 	{
-		return __thiz.getField<jshort>(
+		return getField<jshort>(
 			"code"
 		);
 	}
 	
-	LSException::LSException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	LSException::LSException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	
 	// Constructors
 	LSException::LSException(jshort arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::RuntimeException(
 			"org.w3c.dom.ls.LSException",
 			"(SLjava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace org::w3c::dom::ls

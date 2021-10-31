@@ -40,7 +40,10 @@ namespace android::icu::util
 		static jint TEVET();
 		static jint TISHRI();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit HebrewCalendar(const char *className, const char *sig, Ts...agv) : android::icu::util::Calendar(className, sig, std::forward<Ts>(agv)...) {}
 		HebrewCalendar(QAndroidJniObject obj);
+		
 		// Constructors
 		HebrewCalendar();
 		HebrewCalendar(android::icu::util::TimeZone arg0);

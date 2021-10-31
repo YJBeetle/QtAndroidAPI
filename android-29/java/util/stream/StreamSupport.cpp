@@ -4,7 +4,9 @@ namespace java::util::stream
 {
 	// Fields
 	
-	StreamSupport::StreamSupport(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	StreamSupport::StreamSupport(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -14,7 +16,7 @@ namespace java::util::stream
 			"java.util.stream.StreamSupport",
 			"doubleStream",
 			"(Ljava/util/Spliterator$OfDouble;Z)Ljava/util/stream/DoubleStream;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -24,7 +26,7 @@ namespace java::util::stream
 			"java.util.stream.StreamSupport",
 			"doubleStream",
 			"(Ljava/util/function/Supplier;IZ)Ljava/util/stream/DoubleStream;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
@@ -35,7 +37,7 @@ namespace java::util::stream
 			"java.util.stream.StreamSupport",
 			"intStream",
 			"(Ljava/util/Spliterator$OfInt;Z)Ljava/util/stream/IntStream;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -45,7 +47,7 @@ namespace java::util::stream
 			"java.util.stream.StreamSupport",
 			"intStream",
 			"(Ljava/util/function/Supplier;IZ)Ljava/util/stream/IntStream;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
@@ -56,7 +58,7 @@ namespace java::util::stream
 			"java.util.stream.StreamSupport",
 			"longStream",
 			"(Ljava/util/Spliterator$OfLong;Z)Ljava/util/stream/LongStream;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -66,7 +68,7 @@ namespace java::util::stream
 			"java.util.stream.StreamSupport",
 			"longStream",
 			"(Ljava/util/function/Supplier;IZ)Ljava/util/stream/LongStream;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
@@ -77,7 +79,7 @@ namespace java::util::stream
 			"java.util.stream.StreamSupport",
 			"stream",
 			"(Ljava/util/Spliterator;Z)Ljava/util/stream/Stream;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -87,7 +89,7 @@ namespace java::util::stream
 			"java.util.stream.StreamSupport",
 			"stream",
 			"(Ljava/util/function/Supplier;IZ)Ljava/util/stream/Stream;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);

@@ -6,38 +6,40 @@ namespace android::media::midi
 {
 	// Fields
 	
-	MidiOutputPort::MidiOutputPort(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MidiOutputPort::MidiOutputPort(QAndroidJniObject obj) : android::media::midi::MidiSender(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void MidiOutputPort::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	jint MidiOutputPort::getPortNumber()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPortNumber",
 			"()I"
 		);
 	}
 	void MidiOutputPort::onConnect(android::media::midi::MidiReceiver arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onConnect",
 			"(Landroid/media/midi/MidiReceiver;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MidiOutputPort::onDisconnect(android::media::midi::MidiReceiver arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onDisconnect",
 			"(Landroid/media/midi/MidiReceiver;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::media::midi

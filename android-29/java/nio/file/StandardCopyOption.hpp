@@ -14,9 +14,11 @@ namespace java::nio::file
 		static QAndroidJniObject COPY_ATTRIBUTES();
 		static QAndroidJniObject REPLACE_EXISTING();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit StandardCopyOption(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		StandardCopyOption(QAndroidJniObject obj);
+		
 		// Constructors
-		StandardCopyOption() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

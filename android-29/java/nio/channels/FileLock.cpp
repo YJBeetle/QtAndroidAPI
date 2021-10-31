@@ -6,48 +6,50 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	FileLock::FileLock(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FileLock::FileLock(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject FileLock::acquiredBy()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"acquiredBy",
 			"()Ljava/nio/channels/Channel;"
 		);
 	}
 	QAndroidJniObject FileLock::channel()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"channel",
 			"()Ljava/nio/channels/FileChannel;"
 		);
 	}
 	void FileLock::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	jboolean FileLock::isShared()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isShared",
 			"()Z"
 		);
 	}
 	jboolean FileLock::isValid()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isValid",
 			"()Z"
 		);
 	}
 	jboolean FileLock::overlaps(jlong arg0, jlong arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"overlaps",
 			"(JJ)Z",
 			arg0,
@@ -56,28 +58,28 @@ namespace java::nio::channels
 	}
 	jlong FileLock::position()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"position",
 			"()J"
 		);
 	}
 	void FileLock::release()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
 	jlong FileLock::size()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"size",
 			"()J"
 		);
 	}
 	jstring FileLock::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

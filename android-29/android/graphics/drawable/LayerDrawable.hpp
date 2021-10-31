@@ -54,10 +54,12 @@ namespace android::graphics::drawable
 		static jint PADDING_MODE_NEST();
 		static jint PADDING_MODE_STACK();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit LayerDrawable(const char *className, const char *sig, Ts...agv) : android::graphics::drawable::Drawable(className, sig, std::forward<Ts>(agv)...) {}
 		LayerDrawable(QAndroidJniObject obj);
+		
 		// Constructors
 		LayerDrawable(jarray arg0);
-		LayerDrawable() = default;
 		
 		// Methods
 		jint addLayer(android::graphics::drawable::Drawable arg0);

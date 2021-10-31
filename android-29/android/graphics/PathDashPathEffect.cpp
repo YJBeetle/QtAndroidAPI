@@ -6,19 +6,19 @@ namespace android::graphics
 {
 	// Fields
 	
-	PathDashPathEffect::PathDashPathEffect(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PathDashPathEffect::PathDashPathEffect(QAndroidJniObject obj) : android::graphics::PathEffect(obj) {}
+	
 	// Constructors
 	PathDashPathEffect::PathDashPathEffect(android::graphics::Path arg0, jfloat arg1, jfloat arg2, android::graphics::PathDashPathEffect_Style arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: android::graphics::PathEffect(
 			"android.graphics.PathDashPathEffect",
 			"(Landroid/graphics/Path;FFLandroid/graphics/PathDashPathEffect$Style;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
-		);
-	}
+			arg3.object()
+		) {}
 	
 	// Methods
 } // namespace android::graphics

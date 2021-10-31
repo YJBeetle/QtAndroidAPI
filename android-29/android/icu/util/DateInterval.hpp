@@ -10,10 +10,12 @@ namespace android::icu::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DateInterval(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DateInterval(QAndroidJniObject obj);
+		
 		// Constructors
 		DateInterval(jlong arg0, jlong arg1);
-		DateInterval() = default;
 		
 		// Methods
 		jboolean equals(jobject arg0);

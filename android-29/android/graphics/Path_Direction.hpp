@@ -13,9 +13,11 @@ namespace android::graphics
 		static QAndroidJniObject CCW();
 		static QAndroidJniObject CW();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Path_Direction(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		Path_Direction(QAndroidJniObject obj);
+		
 		// Constructors
-		Path_Direction() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

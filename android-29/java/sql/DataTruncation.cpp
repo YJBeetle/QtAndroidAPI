@@ -4,11 +4,12 @@ namespace java::sql
 {
 	// Fields
 	
-	DataTruncation::DataTruncation(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DataTruncation::DataTruncation(QAndroidJniObject obj) : java::sql::SQLWarning(obj) {}
+	
 	// Constructors
 	DataTruncation::DataTruncation(jint arg0, jboolean arg1, jboolean arg2, jint arg3, jint arg4)
-	{
-		__thiz = QAndroidJniObject(
+		: java::sql::SQLWarning(
 			"java.sql.DataTruncation",
 			"(IZZII)V",
 			arg0,
@@ -16,11 +17,9 @@ namespace java::sql
 			arg2,
 			arg3,
 			arg4
-		);
-	}
+		) {}
 	DataTruncation::DataTruncation(jint arg0, jboolean arg1, jboolean arg2, jint arg3, jint arg4, jthrowable arg5)
-	{
-		__thiz = QAndroidJniObject(
+		: java::sql::SQLWarning(
 			"java.sql.DataTruncation",
 			"(IZZIILjava/lang/Throwable;)V",
 			arg0,
@@ -29,41 +28,40 @@ namespace java::sql
 			arg3,
 			arg4,
 			arg5
-		);
-	}
+		) {}
 	
 	// Methods
 	jint DataTruncation::getDataSize()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDataSize",
 			"()I"
 		);
 	}
 	jint DataTruncation::getIndex()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getIndex",
 			"()I"
 		);
 	}
 	jboolean DataTruncation::getParameter()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getParameter",
 			"()Z"
 		);
 	}
 	jboolean DataTruncation::getRead()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getRead",
 			"()Z"
 		);
 	}
 	jint DataTruncation::getTransferSize()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTransferSize",
 			"()I"
 		);

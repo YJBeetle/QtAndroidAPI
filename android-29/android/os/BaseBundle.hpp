@@ -14,9 +14,11 @@ namespace android::os
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BaseBundle(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		BaseBundle(QAndroidJniObject obj);
+		
 		// Constructors
-		BaseBundle() = default;
 		
 		// Methods
 		void clear();

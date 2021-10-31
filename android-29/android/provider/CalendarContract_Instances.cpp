@@ -126,7 +126,9 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	CalendarContract_Instances::CalendarContract_Instances(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CalendarContract_Instances::CalendarContract_Instances(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -136,7 +138,7 @@ namespace android::provider
 			"android.provider.CalendarContract$Instances",
 			"query",
 			"(Landroid/content/ContentResolver;[Ljava/lang/String;JJ)Landroid/database/Cursor;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3
@@ -148,7 +150,7 @@ namespace android::provider
 			"android.provider.CalendarContract$Instances",
 			"query",
 			"(Landroid/content/ContentResolver;[Ljava/lang/String;JJLjava/lang/String;)Landroid/database/Cursor;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,

@@ -10,10 +10,12 @@ namespace android::icu::text
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DateIntervalInfo_PatternInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DateIntervalInfo_PatternInfo(QAndroidJniObject obj);
+		
 		// Constructors
 		DateIntervalInfo_PatternInfo(jstring arg0, jstring arg1, jboolean arg2);
-		DateIntervalInfo_PatternInfo() = default;
 		
 		// Methods
 		jboolean equals(jobject arg0);

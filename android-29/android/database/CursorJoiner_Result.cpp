@@ -28,7 +28,9 @@ namespace android::database
 		);
 	}
 	
-	CursorJoiner_Result::CursorJoiner_Result(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CursorJoiner_Result::CursorJoiner_Result(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

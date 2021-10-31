@@ -44,9 +44,11 @@ namespace android::os
 		static jstring EXTRA_TEMPERATURE();
 		static jstring EXTRA_VOLTAGE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BatteryManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		BatteryManager(QAndroidJniObject obj);
+		
 		// Constructors
-		BatteryManager() = default;
 		
 		// Methods
 		jlong computeChargeTimeRemaining();

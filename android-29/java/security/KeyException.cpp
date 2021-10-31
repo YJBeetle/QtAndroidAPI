@@ -4,40 +4,34 @@ namespace java::security
 {
 	// Fields
 	
-	KeyException::KeyException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	KeyException::KeyException(QAndroidJniObject obj) : java::security::GeneralSecurityException(obj) {}
+	
 	// Constructors
 	KeyException::KeyException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::security::GeneralSecurityException(
 			"java.security.KeyException",
 			"()V"
-		);
-	}
+		) {}
 	KeyException::KeyException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::security::GeneralSecurityException(
 			"java.security.KeyException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	KeyException::KeyException(jthrowable arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::security::GeneralSecurityException(
 			"java.security.KeyException",
 			"(Ljava/lang/Throwable;)V",
 			arg0
-		);
-	}
+		) {}
 	KeyException::KeyException(jstring arg0, jthrowable arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::security::GeneralSecurityException(
 			"java.security.KeyException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::security

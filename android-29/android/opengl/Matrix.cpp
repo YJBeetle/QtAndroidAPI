@@ -4,15 +4,15 @@ namespace android::opengl
 {
 	// Fields
 	
-	Matrix::Matrix(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Matrix::Matrix(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Matrix::Matrix()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.opengl.Matrix",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void Matrix::frustumM(jfloatArray arg0, jint arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5, jfloat arg6, jfloat arg7)

@@ -37,9 +37,11 @@ namespace android::renderscript
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ScriptIntrinsicConvolve5x5(const char *className, const char *sig, Ts...agv) : android::renderscript::ScriptIntrinsic(className, sig, std::forward<Ts>(agv)...) {}
 		ScriptIntrinsicConvolve5x5(QAndroidJniObject obj);
+		
 		// Constructors
-		ScriptIntrinsicConvolve5x5() = default;
 		
 		// Methods
 		static QAndroidJniObject create(android::renderscript::RenderScript arg0, android::renderscript::Element arg1);

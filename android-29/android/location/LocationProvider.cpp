@@ -26,84 +26,86 @@ namespace android::location
 		);
 	}
 	
-	LocationProvider::LocationProvider(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	LocationProvider::LocationProvider(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint LocationProvider::getAccuracy()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAccuracy",
 			"()I"
 		);
 	}
 	jstring LocationProvider::getName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint LocationProvider::getPowerRequirement()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPowerRequirement",
 			"()I"
 		);
 	}
 	jboolean LocationProvider::hasMonetaryCost()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasMonetaryCost",
 			"()Z"
 		);
 	}
 	jboolean LocationProvider::meetsCriteria(android::location::Criteria arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"meetsCriteria",
 			"(Landroid/location/Criteria;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean LocationProvider::requiresCell()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"requiresCell",
 			"()Z"
 		);
 	}
 	jboolean LocationProvider::requiresNetwork()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"requiresNetwork",
 			"()Z"
 		);
 	}
 	jboolean LocationProvider::requiresSatellite()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"requiresSatellite",
 			"()Z"
 		);
 	}
 	jboolean LocationProvider::supportsAltitude()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"supportsAltitude",
 			"()Z"
 		);
 	}
 	jboolean LocationProvider::supportsBearing()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"supportsBearing",
 			"()Z"
 		);
 	}
 	jboolean LocationProvider::supportsSpeed()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"supportsSpeed",
 			"()Z"
 		);

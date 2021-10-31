@@ -26,7 +26,10 @@ namespace java::net
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Authenticator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Authenticator(QAndroidJniObject obj);
+		
 		// Constructors
 		Authenticator();
 		

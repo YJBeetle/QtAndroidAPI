@@ -14,12 +14,14 @@ namespace java::security::spec
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ECFieldF2m(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ECFieldF2m(QAndroidJniObject obj);
+		
 		// Constructors
 		ECFieldF2m(jint arg0);
 		ECFieldF2m(jint arg0, jintArray arg1);
 		ECFieldF2m(jint arg0, java::math::BigInteger arg1);
-		ECFieldF2m() = default;
 		
 		// Methods
 		jboolean equals(jobject arg0);

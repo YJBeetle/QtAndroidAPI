@@ -26,9 +26,11 @@ namespace android::view::textclassifier
 		static jint STATUS_NO_LINKS_FOUND();
 		static jint STATUS_UNSUPPORTED_CHARACTER();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TextLinks(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		TextLinks(QAndroidJniObject obj);
+		
 		// Constructors
-		TextLinks() = default;
 		
 		// Methods
 		jint apply(__JniBaseClass arg0, jint arg1, __JniBaseClass arg2);

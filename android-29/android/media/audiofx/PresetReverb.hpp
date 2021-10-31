@@ -23,10 +23,12 @@ namespace android::media::audiofx
 		static jshort PRESET_PLATE();
 		static jshort PRESET_SMALLROOM();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PresetReverb(const char *className, const char *sig, Ts...agv) : android::media::audiofx::AudioEffect(className, sig, std::forward<Ts>(agv)...) {}
 		PresetReverb(QAndroidJniObject obj);
+		
 		// Constructors
 		PresetReverb(jint arg0, jint arg1);
-		PresetReverb() = default;
 		
 		// Methods
 		jshort getPreset();

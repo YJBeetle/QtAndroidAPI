@@ -12,7 +12,10 @@ namespace java::lang
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit StackOverflowError(const char *className, const char *sig, Ts...agv) : java::lang::VirtualMachineError(className, sig, std::forward<Ts>(agv)...) {}
 		StackOverflowError(QAndroidJniObject obj);
+		
 		// Constructors
 		StackOverflowError();
 		StackOverflowError(jstring arg0);

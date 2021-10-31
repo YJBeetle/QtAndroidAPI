@@ -25,7 +25,9 @@ namespace java::util
 		);
 	}
 	
-	FormattableFlags::FormattableFlags(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FormattableFlags::FormattableFlags(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

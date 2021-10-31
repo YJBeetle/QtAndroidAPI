@@ -6,50 +6,46 @@ namespace java::util::jar
 {
 	// Fields
 	
-	Attributes::Attributes(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Attributes::Attributes(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Attributes::Attributes()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.jar.Attributes",
 			"()V"
-		);
-	}
+		) {}
 	Attributes::Attributes(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.jar.Attributes",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	Attributes::Attributes(java::util::jar::Attributes &arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.jar.Attributes",
 			"(Ljava/util/jar/Attributes;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	void Attributes::clear()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
 	jobject Attributes::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jboolean Attributes::containsKey(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"containsKey",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -57,7 +53,7 @@ namespace java::util::jar
 	}
 	jboolean Attributes::containsValue(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"containsValue",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -65,14 +61,14 @@ namespace java::util::jar
 	}
 	QAndroidJniObject Attributes::entrySet()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"entrySet",
 			"()Ljava/util/Set;"
 		);
 	}
 	jboolean Attributes::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -80,7 +76,7 @@ namespace java::util::jar
 	}
 	jobject Attributes::get(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0
@@ -88,7 +84,7 @@ namespace java::util::jar
 	}
 	jstring Attributes::getValue(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getValue",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
@@ -96,36 +92,36 @@ namespace java::util::jar
 	}
 	jstring Attributes::getValue(java::util::jar::Attributes_Name arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getValue",
 			"(Ljava/util/jar/Attributes$Name;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jint Attributes::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean Attributes::isEmpty()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
 	QAndroidJniObject Attributes::keySet()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"keySet",
 			"()Ljava/util/Set;"
 		);
 	}
 	jobject Attributes::put(jobject arg0, jobject arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"put",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
@@ -134,15 +130,15 @@ namespace java::util::jar
 	}
 	void Attributes::putAll(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putAll",
 			"(Ljava/util/Map;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring Attributes::putValue(jstring arg0, jstring arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"putValue",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
 			arg0,
@@ -151,7 +147,7 @@ namespace java::util::jar
 	}
 	jobject Attributes::remove(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"remove",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0
@@ -159,14 +155,14 @@ namespace java::util::jar
 	}
 	jint Attributes::size()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
 	QAndroidJniObject Attributes::values()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"values",
 			"()Ljava/util/Collection;"
 		);

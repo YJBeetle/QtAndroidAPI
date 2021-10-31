@@ -15,7 +15,10 @@ namespace android
 		static jint phoneTypes();
 		static jint postalAddressTypes();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit R_array(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		R_array(QAndroidJniObject obj);
+		
 		// Constructors
 		R_array();
 		

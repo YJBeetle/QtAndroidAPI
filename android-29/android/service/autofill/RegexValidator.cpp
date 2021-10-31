@@ -15,39 +15,39 @@ namespace android::service::autofill
 		);
 	}
 	
-	RegexValidator::RegexValidator(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	RegexValidator::RegexValidator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	RegexValidator::RegexValidator(android::view::autofill::AutofillId arg0, java::util::regex::Pattern arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.service.autofill.RegexValidator",
 			"(Landroid/view/autofill/AutofillId;Ljava/util/regex/Pattern;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	
 	// Methods
 	jint RegexValidator::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jstring RegexValidator::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void RegexValidator::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

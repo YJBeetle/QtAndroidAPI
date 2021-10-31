@@ -20,7 +20,10 @@ namespace java::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PriorityQueue(const char *className, const char *sig, Ts...agv) : java::util::AbstractQueue(className, sig, std::forward<Ts>(agv)...) {}
 		PriorityQueue(QAndroidJniObject obj);
+		
 		// Constructors
 		PriorityQueue();
 		PriorityQueue(jint arg0);

@@ -15,9 +15,11 @@ namespace android::content
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SyncRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SyncRequest(QAndroidJniObject obj);
+		
 		// Constructors
-		SyncRequest() = default;
 		
 		// Methods
 		jint describeContents();

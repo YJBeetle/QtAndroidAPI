@@ -11,11 +11,13 @@ namespace org::xmlpull::v1
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit XmlPullParserException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
 		XmlPullParserException(QAndroidJniObject obj);
+		
 		// Constructors
 		XmlPullParserException(jstring arg0);
 		XmlPullParserException(jstring arg0, __JniBaseClass arg1, jthrowable arg2);
-		XmlPullParserException() = default;
 		
 		// Methods
 		jint getColumnNumber();

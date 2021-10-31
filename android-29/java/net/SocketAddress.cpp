@@ -4,15 +4,15 @@ namespace java::net
 {
 	// Fields
 	
-	SocketAddress::SocketAddress(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SocketAddress::SocketAddress(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	SocketAddress::SocketAddress()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.net.SocketAddress",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::net

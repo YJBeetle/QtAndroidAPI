@@ -14,105 +14,103 @@ namespace android::content
 	}
 	jlong SyncStats::numAuthExceptions()
 	{
-		return __thiz.getField<jlong>(
+		return getField<jlong>(
 			"numAuthExceptions"
 		);
 	}
 	jlong SyncStats::numConflictDetectedExceptions()
 	{
-		return __thiz.getField<jlong>(
+		return getField<jlong>(
 			"numConflictDetectedExceptions"
 		);
 	}
 	jlong SyncStats::numDeletes()
 	{
-		return __thiz.getField<jlong>(
+		return getField<jlong>(
 			"numDeletes"
 		);
 	}
 	jlong SyncStats::numEntries()
 	{
-		return __thiz.getField<jlong>(
+		return getField<jlong>(
 			"numEntries"
 		);
 	}
 	jlong SyncStats::numInserts()
 	{
-		return __thiz.getField<jlong>(
+		return getField<jlong>(
 			"numInserts"
 		);
 	}
 	jlong SyncStats::numIoExceptions()
 	{
-		return __thiz.getField<jlong>(
+		return getField<jlong>(
 			"numIoExceptions"
 		);
 	}
 	jlong SyncStats::numParseExceptions()
 	{
-		return __thiz.getField<jlong>(
+		return getField<jlong>(
 			"numParseExceptions"
 		);
 	}
 	jlong SyncStats::numSkippedEntries()
 	{
-		return __thiz.getField<jlong>(
+		return getField<jlong>(
 			"numSkippedEntries"
 		);
 	}
 	jlong SyncStats::numUpdates()
 	{
-		return __thiz.getField<jlong>(
+		return getField<jlong>(
 			"numUpdates"
 		);
 	}
 	
-	SyncStats::SyncStats(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SyncStats::SyncStats(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	SyncStats::SyncStats()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.content.SyncStats",
 			"()V"
-		);
-	}
+		) {}
 	SyncStats::SyncStats(android::os::Parcel arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.content.SyncStats",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	void SyncStats::clear()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
 	jint SyncStats::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jstring SyncStats::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void SyncStats::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

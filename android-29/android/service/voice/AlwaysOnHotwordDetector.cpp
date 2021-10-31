@@ -61,41 +61,43 @@ namespace android::service::voice
 		);
 	}
 	
-	AlwaysOnHotwordDetector::AlwaysOnHotwordDetector(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AlwaysOnHotwordDetector::AlwaysOnHotwordDetector(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject AlwaysOnHotwordDetector::createEnrollIntent()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"createEnrollIntent",
 			"()Landroid/content/Intent;"
 		);
 	}
 	QAndroidJniObject AlwaysOnHotwordDetector::createReEnrollIntent()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"createReEnrollIntent",
 			"()Landroid/content/Intent;"
 		);
 	}
 	QAndroidJniObject AlwaysOnHotwordDetector::createUnEnrollIntent()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"createUnEnrollIntent",
 			"()Landroid/content/Intent;"
 		);
 	}
 	jint AlwaysOnHotwordDetector::getSupportedRecognitionModes()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSupportedRecognitionModes",
 			"()I"
 		);
 	}
 	jboolean AlwaysOnHotwordDetector::startRecognition(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"startRecognition",
 			"(I)Z",
 			arg0
@@ -103,7 +105,7 @@ namespace android::service::voice
 	}
 	jboolean AlwaysOnHotwordDetector::stopRecognition()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"stopRecognition",
 			"()Z"
 		);

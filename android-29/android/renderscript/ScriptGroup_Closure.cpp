@@ -7,28 +7,30 @@ namespace android::renderscript
 {
 	// Fields
 	
-	ScriptGroup_Closure::ScriptGroup_Closure(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ScriptGroup_Closure::ScriptGroup_Closure(QAndroidJniObject obj) : android::renderscript::BaseObj(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void ScriptGroup_Closure::destroy()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"destroy",
 			"()V"
 		);
 	}
 	QAndroidJniObject ScriptGroup_Closure::getGlobal(android::renderscript::Script_FieldID arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getGlobal",
 			"(Landroid/renderscript/Script$FieldID;)Landroid/renderscript/ScriptGroup$Future;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ScriptGroup_Closure::getReturn()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getReturn",
 			"()Landroid/renderscript/ScriptGroup$Future;"
 		);

@@ -29,49 +29,51 @@ namespace android::telephony
 	}
 	jstring VisualVoicemailSmsFilterSettings::clientPrefix()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"clientPrefix",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint VisualVoicemailSmsFilterSettings::destinationPort()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"destinationPort"
 		);
 	}
 	QAndroidJniObject VisualVoicemailSmsFilterSettings::originatingNumbers()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"originatingNumbers",
 			"Ljava/util/List;"
 		);
 	}
 	
-	VisualVoicemailSmsFilterSettings::VisualVoicemailSmsFilterSettings(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	VisualVoicemailSmsFilterSettings::VisualVoicemailSmsFilterSettings(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint VisualVoicemailSmsFilterSettings::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jstring VisualVoicemailSmsFilterSettings::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void VisualVoicemailSmsFilterSettings::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

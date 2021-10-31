@@ -23,7 +23,10 @@ namespace java::util::concurrent
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ConcurrentHashMap(const char *className, const char *sig, Ts...agv) : java::util::AbstractMap(className, sig, std::forward<Ts>(agv)...) {}
 		ConcurrentHashMap(QAndroidJniObject obj);
+		
 		// Constructors
 		ConcurrentHashMap();
 		ConcurrentHashMap(jint arg0);

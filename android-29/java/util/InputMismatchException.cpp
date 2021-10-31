@@ -4,23 +4,21 @@ namespace java::util
 {
 	// Fields
 	
-	InputMismatchException::InputMismatchException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	InputMismatchException::InputMismatchException(QAndroidJniObject obj) : java::util::NoSuchElementException(obj) {}
+	
 	// Constructors
 	InputMismatchException::InputMismatchException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::NoSuchElementException(
 			"java.util.InputMismatchException",
 			"()V"
-		);
-	}
+		) {}
 	InputMismatchException::InputMismatchException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::NoSuchElementException(
 			"java.util.InputMismatchException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::util

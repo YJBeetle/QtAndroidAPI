@@ -41,9 +41,11 @@ namespace java::lang
 		static QAndroidJniObject in();
 		static QAndroidJniObject out();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit System(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		System(QAndroidJniObject obj);
+		
 		// Constructors
-		System() = default;
 		
 		// Methods
 		static void arraycopy(jobject arg0, jint arg1, jobject arg2, jint arg3, jint arg4);

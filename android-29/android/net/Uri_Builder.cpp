@@ -5,20 +5,20 @@ namespace android::net
 {
 	// Fields
 	
-	Uri_Builder::Uri_Builder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Uri_Builder::Uri_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Uri_Builder::Uri_Builder()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.net.Uri$Builder",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject Uri_Builder::appendEncodedPath(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"appendEncodedPath",
 			"(Ljava/lang/String;)Landroid/net/Uri$Builder;",
 			arg0
@@ -26,7 +26,7 @@ namespace android::net
 	}
 	QAndroidJniObject Uri_Builder::appendPath(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"appendPath",
 			"(Ljava/lang/String;)Landroid/net/Uri$Builder;",
 			arg0
@@ -34,7 +34,7 @@ namespace android::net
 	}
 	QAndroidJniObject Uri_Builder::appendQueryParameter(jstring arg0, jstring arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"appendQueryParameter",
 			"(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;",
 			arg0,
@@ -43,7 +43,7 @@ namespace android::net
 	}
 	QAndroidJniObject Uri_Builder::authority(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"authority",
 			"(Ljava/lang/String;)Landroid/net/Uri$Builder;",
 			arg0
@@ -51,21 +51,21 @@ namespace android::net
 	}
 	QAndroidJniObject Uri_Builder::build()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"build",
 			"()Landroid/net/Uri;"
 		);
 	}
 	QAndroidJniObject Uri_Builder::clearQuery()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clearQuery",
 			"()Landroid/net/Uri$Builder;"
 		);
 	}
 	QAndroidJniObject Uri_Builder::encodedAuthority(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"encodedAuthority",
 			"(Ljava/lang/String;)Landroid/net/Uri$Builder;",
 			arg0
@@ -73,7 +73,7 @@ namespace android::net
 	}
 	QAndroidJniObject Uri_Builder::encodedFragment(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"encodedFragment",
 			"(Ljava/lang/String;)Landroid/net/Uri$Builder;",
 			arg0
@@ -81,7 +81,7 @@ namespace android::net
 	}
 	QAndroidJniObject Uri_Builder::encodedOpaquePart(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"encodedOpaquePart",
 			"(Ljava/lang/String;)Landroid/net/Uri$Builder;",
 			arg0
@@ -89,7 +89,7 @@ namespace android::net
 	}
 	QAndroidJniObject Uri_Builder::encodedPath(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"encodedPath",
 			"(Ljava/lang/String;)Landroid/net/Uri$Builder;",
 			arg0
@@ -97,7 +97,7 @@ namespace android::net
 	}
 	QAndroidJniObject Uri_Builder::encodedQuery(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"encodedQuery",
 			"(Ljava/lang/String;)Landroid/net/Uri$Builder;",
 			arg0
@@ -105,7 +105,7 @@ namespace android::net
 	}
 	QAndroidJniObject Uri_Builder::fragment(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"fragment",
 			"(Ljava/lang/String;)Landroid/net/Uri$Builder;",
 			arg0
@@ -113,7 +113,7 @@ namespace android::net
 	}
 	QAndroidJniObject Uri_Builder::opaquePart(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"opaquePart",
 			"(Ljava/lang/String;)Landroid/net/Uri$Builder;",
 			arg0
@@ -121,7 +121,7 @@ namespace android::net
 	}
 	QAndroidJniObject Uri_Builder::path(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"path",
 			"(Ljava/lang/String;)Landroid/net/Uri$Builder;",
 			arg0
@@ -129,7 +129,7 @@ namespace android::net
 	}
 	QAndroidJniObject Uri_Builder::query(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"query",
 			"(Ljava/lang/String;)Landroid/net/Uri$Builder;",
 			arg0
@@ -137,7 +137,7 @@ namespace android::net
 	}
 	QAndroidJniObject Uri_Builder::scheme(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"scheme",
 			"(Ljava/lang/String;)Landroid/net/Uri$Builder;",
 			arg0
@@ -145,7 +145,7 @@ namespace android::net
 	}
 	jstring Uri_Builder::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

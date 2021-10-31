@@ -50,85 +50,69 @@ namespace android::icu::text
 		);
 	}
 	
-	DateFormatSymbols::DateFormatSymbols(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DateFormatSymbols::DateFormatSymbols(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	DateFormatSymbols::DateFormatSymbols()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.icu.text.DateFormatSymbols",
 			"()V"
-		);
-	}
+		) {}
 	DateFormatSymbols::DateFormatSymbols(android::icu::util::ULocale arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.icu.text.DateFormatSymbols",
 			"(Landroid/icu/util/ULocale;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	DateFormatSymbols::DateFormatSymbols(java::util::Locale arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.icu.text.DateFormatSymbols",
 			"(Ljava/util/Locale;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	DateFormatSymbols::DateFormatSymbols(android::icu::util::Calendar arg0, android::icu::util::ULocale arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.icu.text.DateFormatSymbols",
 			"(Landroid/icu/util/Calendar;Landroid/icu/util/ULocale;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	DateFormatSymbols::DateFormatSymbols(android::icu::util::Calendar arg0, java::util::Locale arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.icu.text.DateFormatSymbols",
 			"(Landroid/icu/util/Calendar;Ljava/util/Locale;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	DateFormatSymbols::DateFormatSymbols(jclass arg0, android::icu::util::ULocale arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.icu.text.DateFormatSymbols",
 			"(Ljava/lang/Class;Landroid/icu/util/ULocale;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
+			arg1.object()
+		) {}
 	DateFormatSymbols::DateFormatSymbols(jclass arg0, java::util::Locale arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.icu.text.DateFormatSymbols",
 			"(Ljava/lang/Class;Ljava/util/Locale;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
+			arg1.object()
+		) {}
 	DateFormatSymbols::DateFormatSymbols(java::util::ResourceBundle arg0, android::icu::util::ULocale arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.icu.text.DateFormatSymbols",
 			"(Ljava/util/ResourceBundle;Landroid/icu/util/ULocale;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	DateFormatSymbols::DateFormatSymbols(java::util::ResourceBundle arg0, java::util::Locale arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.icu.text.DateFormatSymbols",
 			"(Ljava/util/ResourceBundle;Ljava/util/Locale;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	
 	// Methods
 	jarray DateFormatSymbols::getAvailableLocales()
@@ -153,7 +137,7 @@ namespace android::icu::text
 			"android.icu.text.DateFormatSymbols",
 			"getInstance",
 			"(Landroid/icu/util/ULocale;)Landroid/icu/text/DateFormatSymbols;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject DateFormatSymbols::getInstance(java::util::Locale arg0)
@@ -162,19 +146,19 @@ namespace android::icu::text
 			"android.icu.text.DateFormatSymbols",
 			"getInstance",
 			"(Ljava/util/Locale;)Landroid/icu/text/DateFormatSymbols;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jobject DateFormatSymbols::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jboolean DateFormatSymbols::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -182,42 +166,42 @@ namespace android::icu::text
 	}
 	jarray DateFormatSymbols::getAmPmStrings()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAmPmStrings",
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	jarray DateFormatSymbols::getEraNames()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEraNames",
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	jarray DateFormatSymbols::getEras()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEras",
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	jstring DateFormatSymbols::getLocalPatternChars()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLocalPatternChars",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jarray DateFormatSymbols::getMonths()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMonths",
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	jarray DateFormatSymbols::getMonths(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMonths",
 			"(II)[Ljava/lang/String;",
 			arg0,
@@ -226,7 +210,7 @@ namespace android::icu::text
 	}
 	jarray DateFormatSymbols::getQuarters(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getQuarters",
 			"(II)[Ljava/lang/String;",
 			arg0,
@@ -235,28 +219,28 @@ namespace android::icu::text
 	}
 	jarray DateFormatSymbols::getShortMonths()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getShortMonths",
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	jarray DateFormatSymbols::getShortWeekdays()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getShortWeekdays",
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	jarray DateFormatSymbols::getWeekdays()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getWeekdays",
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	jarray DateFormatSymbols::getWeekdays(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getWeekdays",
 			"(II)[Ljava/lang/String;",
 			arg0,
@@ -265,7 +249,7 @@ namespace android::icu::text
 	}
 	jarray DateFormatSymbols::getYearNames(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getYearNames",
 			"(II)[Ljava/lang/String;",
 			arg0,
@@ -274,7 +258,7 @@ namespace android::icu::text
 	}
 	jarray DateFormatSymbols::getZodiacNames(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getZodiacNames",
 			"(II)[Ljava/lang/String;",
 			arg0,
@@ -283,21 +267,21 @@ namespace android::icu::text
 	}
 	jarray DateFormatSymbols::getZoneStrings()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getZoneStrings",
 			"()[[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	jint DateFormatSymbols::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	void DateFormatSymbols::setAmPmStrings(jarray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAmPmStrings",
 			"([Ljava/lang/String;)V",
 			arg0
@@ -305,7 +289,7 @@ namespace android::icu::text
 	}
 	void DateFormatSymbols::setEraNames(jarray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setEraNames",
 			"([Ljava/lang/String;)V",
 			arg0
@@ -313,7 +297,7 @@ namespace android::icu::text
 	}
 	void DateFormatSymbols::setEras(jarray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setEras",
 			"([Ljava/lang/String;)V",
 			arg0
@@ -321,7 +305,7 @@ namespace android::icu::text
 	}
 	void DateFormatSymbols::setLocalPatternChars(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLocalPatternChars",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -329,7 +313,7 @@ namespace android::icu::text
 	}
 	void DateFormatSymbols::setMonths(jarray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMonths",
 			"([Ljava/lang/String;)V",
 			arg0
@@ -337,7 +321,7 @@ namespace android::icu::text
 	}
 	void DateFormatSymbols::setMonths(jarray arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMonths",
 			"([Ljava/lang/String;II)V",
 			arg0,
@@ -347,7 +331,7 @@ namespace android::icu::text
 	}
 	void DateFormatSymbols::setQuarters(jarray arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setQuarters",
 			"([Ljava/lang/String;II)V",
 			arg0,
@@ -357,7 +341,7 @@ namespace android::icu::text
 	}
 	void DateFormatSymbols::setShortMonths(jarray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setShortMonths",
 			"([Ljava/lang/String;)V",
 			arg0
@@ -365,7 +349,7 @@ namespace android::icu::text
 	}
 	void DateFormatSymbols::setShortWeekdays(jarray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setShortWeekdays",
 			"([Ljava/lang/String;)V",
 			arg0
@@ -373,7 +357,7 @@ namespace android::icu::text
 	}
 	void DateFormatSymbols::setWeekdays(jarray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setWeekdays",
 			"([Ljava/lang/String;)V",
 			arg0
@@ -381,7 +365,7 @@ namespace android::icu::text
 	}
 	void DateFormatSymbols::setWeekdays(jarray arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setWeekdays",
 			"([Ljava/lang/String;II)V",
 			arg0,
@@ -391,7 +375,7 @@ namespace android::icu::text
 	}
 	void DateFormatSymbols::setYearNames(jarray arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setYearNames",
 			"([Ljava/lang/String;II)V",
 			arg0,
@@ -401,7 +385,7 @@ namespace android::icu::text
 	}
 	void DateFormatSymbols::setZodiacNames(jarray arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setZodiacNames",
 			"([Ljava/lang/String;II)V",
 			arg0,
@@ -411,7 +395,7 @@ namespace android::icu::text
 	}
 	void DateFormatSymbols::setZoneStrings(jarray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setZoneStrings",
 			"([[Ljava/lang/String;)V",
 			arg0

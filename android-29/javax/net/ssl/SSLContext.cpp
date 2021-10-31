@@ -11,7 +11,9 @@ namespace javax::net::ssl
 {
 	// Fields
 	
-	SSLContext::SSLContext(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SSLContext::SSLContext(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -49,7 +51,7 @@ namespace javax::net::ssl
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljavax/net/ssl/SSLContext;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void SSLContext::setDefault(javax::net::ssl::SSLContext arg0)
@@ -58,19 +60,19 @@ namespace javax::net::ssl
 			"javax.net.ssl.SSLContext",
 			"setDefault",
 			"(Ljavax/net/ssl/SSLContext;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject SSLContext::createSSLEngine()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"createSSLEngine",
 			"()Ljavax/net/ssl/SSLEngine;"
 		);
 	}
 	QAndroidJniObject SSLContext::createSSLEngine(jstring arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"createSSLEngine",
 			"(Ljava/lang/String;I)Ljavax/net/ssl/SSLEngine;",
 			arg0,
@@ -79,68 +81,68 @@ namespace javax::net::ssl
 	}
 	QAndroidJniObject SSLContext::getClientSessionContext()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getClientSessionContext",
 			"()Ljavax/net/ssl/SSLSessionContext;"
 		);
 	}
 	QAndroidJniObject SSLContext::getDefaultSSLParameters()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDefaultSSLParameters",
 			"()Ljavax/net/ssl/SSLParameters;"
 		);
 	}
 	jstring SSLContext::getProtocol()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getProtocol",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject SSLContext::getProvider()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getProvider",
 			"()Ljava/security/Provider;"
 		);
 	}
 	QAndroidJniObject SSLContext::getServerSessionContext()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getServerSessionContext",
 			"()Ljavax/net/ssl/SSLSessionContext;"
 		);
 	}
 	QAndroidJniObject SSLContext::getServerSocketFactory()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getServerSocketFactory",
 			"()Ljavax/net/ssl/SSLServerSocketFactory;"
 		);
 	}
 	QAndroidJniObject SSLContext::getSocketFactory()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSocketFactory",
 			"()Ljavax/net/ssl/SSLSocketFactory;"
 		);
 	}
 	QAndroidJniObject SSLContext::getSupportedSSLParameters()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSupportedSSLParameters",
 			"()Ljavax/net/ssl/SSLParameters;"
 		);
 	}
 	void SSLContext::init(jarray arg0, jarray arg1, java::security::SecureRandom arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"init",
 			"([Ljavax/net/ssl/KeyManager;[Ljavax/net/ssl/TrustManager;Ljava/security/SecureRandom;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 } // namespace javax::net::ssl

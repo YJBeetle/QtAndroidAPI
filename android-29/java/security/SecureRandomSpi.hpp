@@ -10,7 +10,10 @@ namespace java::security
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SecureRandomSpi(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SecureRandomSpi(QAndroidJniObject obj);
+		
 		// Constructors
 		SecureRandomSpi();
 		

@@ -5,39 +5,39 @@ namespace android::speech::tts
 	// Fields
 	jint TextToSpeech_EngineInfo::icon()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"icon"
 		);
 	}
 	jstring TextToSpeech_EngineInfo::label()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"label",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring TextToSpeech_EngineInfo::name()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"name",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	
-	TextToSpeech_EngineInfo::TextToSpeech_EngineInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TextToSpeech_EngineInfo::TextToSpeech_EngineInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	TextToSpeech_EngineInfo::TextToSpeech_EngineInfo()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.speech.tts.TextToSpeech$EngineInfo",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring TextToSpeech_EngineInfo::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

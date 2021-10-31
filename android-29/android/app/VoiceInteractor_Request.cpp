@@ -6,63 +6,65 @@ namespace android::app
 {
 	// Fields
 	
-	VoiceInteractor_Request::VoiceInteractor_Request(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	VoiceInteractor_Request::VoiceInteractor_Request(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void VoiceInteractor_Request::cancel()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"cancel",
 			"()V"
 		);
 	}
 	QAndroidJniObject VoiceInteractor_Request::getActivity()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getActivity",
 			"()Landroid/app/Activity;"
 		);
 	}
 	QAndroidJniObject VoiceInteractor_Request::getContext()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getContext",
 			"()Landroid/content/Context;"
 		);
 	}
 	jstring VoiceInteractor_Request::getName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void VoiceInteractor_Request::onAttached(android::app::Activity arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onAttached",
 			"(Landroid/app/Activity;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void VoiceInteractor_Request::onCancel()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onCancel",
 			"()V"
 		);
 	}
 	void VoiceInteractor_Request::onDetached()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onDetached",
 			"()V"
 		);
 	}
 	jstring VoiceInteractor_Request::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

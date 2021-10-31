@@ -84,32 +84,28 @@ namespace java::lang
 		).object<jclass>();
 	}
 	
-	Float::Float(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Float::Float(QAndroidJniObject obj) : java::lang::Number(obj) {}
+	
 	// Constructors
 	Float::Float(jdouble arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Number(
 			"java.lang.Float",
 			"(D)V",
 			arg0
-		);
-	}
+		) {}
 	Float::Float(jfloat arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Number(
 			"java.lang.Float",
 			"(F)V",
 			arg0
-		);
-	}
+		) {}
 	Float::Float(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Number(
 			"java.lang.Float",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jint Float::compare(jfloat arg0, jfloat arg1)
@@ -262,22 +258,22 @@ namespace java::lang
 	}
 	jbyte Float::byteValue()
 	{
-		return __thiz.callMethod<jbyte>(
+		return callMethod<jbyte>(
 			"byteValue",
 			"()B"
 		);
 	}
 	jint Float::compareTo(java::lang::Float arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Float;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint Float::compareTo(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -285,21 +281,21 @@ namespace java::lang
 	}
 	QAndroidJniObject Float::describeConstable()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"describeConstable",
 			"()Ljava/util/Optional;"
 		);
 	}
 	jdouble Float::doubleValue()
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"doubleValue",
 			"()D"
 		);
 	}
 	jboolean Float::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -307,64 +303,64 @@ namespace java::lang
 	}
 	jfloat Float::floatValue()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"floatValue",
 			"()F"
 		);
 	}
 	jint Float::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jint Float::intValue()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"intValue",
 			"()I"
 		);
 	}
 	jboolean Float::isInfinite()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isInfinite",
 			"()Z"
 		);
 	}
 	jboolean Float::isNaN()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isNaN",
 			"()Z"
 		);
 	}
 	jlong Float::longValue()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"longValue",
 			"()J"
 		);
 	}
 	QAndroidJniObject Float::resolveConstantDesc(java::lang::invoke::MethodHandles_Lookup arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"resolveConstantDesc",
 			"(Ljava/lang/invoke/MethodHandles$Lookup;)Ljava/lang/Float;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jshort Float::shortValue()
 	{
-		return __thiz.callMethod<jshort>(
+		return callMethod<jshort>(
 			"shortValue",
 			"()S"
 		);
 	}
 	jstring Float::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

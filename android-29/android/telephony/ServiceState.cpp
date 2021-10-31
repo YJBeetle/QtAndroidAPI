@@ -69,43 +69,39 @@ namespace android::telephony
 		);
 	}
 	
-	ServiceState::ServiceState(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ServiceState::ServiceState(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ServiceState::ServiceState()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.telephony.ServiceState",
 			"()V"
-		);
-	}
+		) {}
 	ServiceState::ServiceState(android::os::Parcel arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.telephony.ServiceState",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	ServiceState::ServiceState(android::telephony::ServiceState &arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.telephony.ServiceState",
 			"(Landroid/telephony/ServiceState;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jint ServiceState::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean ServiceState::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -113,91 +109,91 @@ namespace android::telephony
 	}
 	jint ServiceState::getCdmaNetworkId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCdmaNetworkId",
 			"()I"
 		);
 	}
 	jint ServiceState::getCdmaSystemId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCdmaSystemId",
 			"()I"
 		);
 	}
 	jintArray ServiceState::getCellBandwidths()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCellBandwidths",
 			"()[I"
 		).object<jintArray>();
 	}
 	jint ServiceState::getChannelNumber()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getChannelNumber",
 			"()I"
 		);
 	}
 	jint ServiceState::getDuplexMode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDuplexMode",
 			"()I"
 		);
 	}
 	jboolean ServiceState::getIsManualSelection()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getIsManualSelection",
 			"()Z"
 		);
 	}
 	jstring ServiceState::getOperatorAlphaLong()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getOperatorAlphaLong",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring ServiceState::getOperatorAlphaShort()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getOperatorAlphaShort",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring ServiceState::getOperatorNumeric()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getOperatorNumeric",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jboolean ServiceState::getRoaming()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getRoaming",
 			"()Z"
 		);
 	}
 	jint ServiceState::getState()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getState",
 			"()I"
 		);
 	}
 	jint ServiceState::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	void ServiceState::setIsManualSelection(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setIsManualSelection",
 			"(Z)V",
 			arg0
@@ -205,7 +201,7 @@ namespace android::telephony
 	}
 	void ServiceState::setOperatorName(jstring arg0, jstring arg1, jstring arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOperatorName",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
@@ -215,7 +211,7 @@ namespace android::telephony
 	}
 	void ServiceState::setRoaming(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setRoaming",
 			"(Z)V",
 			arg0
@@ -223,7 +219,7 @@ namespace android::telephony
 	}
 	void ServiceState::setState(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setState",
 			"(I)V",
 			arg0
@@ -231,31 +227,31 @@ namespace android::telephony
 	}
 	void ServiceState::setStateOff()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setStateOff",
 			"()V"
 		);
 	}
 	void ServiceState::setStateOutOfService()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setStateOutOfService",
 			"()V"
 		);
 	}
 	jstring ServiceState::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void ServiceState::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

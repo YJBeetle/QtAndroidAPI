@@ -7,7 +7,9 @@ namespace android::telephony
 {
 	// Fields
 	
-	SubscriptionPlan_Builder::SubscriptionPlan_Builder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SubscriptionPlan_Builder::SubscriptionPlan_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -17,8 +19,8 @@ namespace android::telephony
 			"android.telephony.SubscriptionPlan$Builder",
 			"createNonrecurring",
 			"(Ljava/time/ZonedDateTime;Ljava/time/ZonedDateTime;)Landroid/telephony/SubscriptionPlan$Builder;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject SubscriptionPlan_Builder::createRecurring(java::time::ZonedDateTime arg0, java::time::Period arg1)
@@ -27,20 +29,20 @@ namespace android::telephony
 			"android.telephony.SubscriptionPlan$Builder",
 			"createRecurring",
 			"(Ljava/time/ZonedDateTime;Ljava/time/Period;)Landroid/telephony/SubscriptionPlan$Builder;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject SubscriptionPlan_Builder::build()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"build",
 			"()Landroid/telephony/SubscriptionPlan;"
 		);
 	}
 	QAndroidJniObject SubscriptionPlan_Builder::setDataLimit(jlong arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setDataLimit",
 			"(JI)Landroid/telephony/SubscriptionPlan$Builder;",
 			arg0,
@@ -49,7 +51,7 @@ namespace android::telephony
 	}
 	QAndroidJniObject SubscriptionPlan_Builder::setDataUsage(jlong arg0, jlong arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setDataUsage",
 			"(JJ)Landroid/telephony/SubscriptionPlan$Builder;",
 			arg0,
@@ -58,7 +60,7 @@ namespace android::telephony
 	}
 	QAndroidJniObject SubscriptionPlan_Builder::setSummary(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setSummary",
 			"(Ljava/lang/CharSequence;)Landroid/telephony/SubscriptionPlan$Builder;",
 			arg0
@@ -66,7 +68,7 @@ namespace android::telephony
 	}
 	QAndroidJniObject SubscriptionPlan_Builder::setTitle(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setTitle",
 			"(Ljava/lang/CharSequence;)Landroid/telephony/SubscriptionPlan$Builder;",
 			arg0

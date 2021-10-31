@@ -34,7 +34,10 @@ namespace android::graphics
 		static jint WHITE();
 		static jint YELLOW();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Color(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Color(QAndroidJniObject obj);
+		
 		// Constructors
 		Color();
 		

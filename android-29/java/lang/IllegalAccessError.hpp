@@ -13,7 +13,10 @@ namespace java::lang
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit IllegalAccessError(const char *className, const char *sig, Ts...agv) : java::lang::IncompatibleClassChangeError(className, sig, std::forward<Ts>(agv)...) {}
 		IllegalAccessError(QAndroidJniObject obj);
+		
 		// Constructors
 		IllegalAccessError();
 		IllegalAccessError(jstring arg0);

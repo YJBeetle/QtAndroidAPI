@@ -4,16 +4,16 @@ namespace java::io
 {
 	// Fields
 	
-	IOError::IOError(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	IOError::IOError(QAndroidJniObject obj) : java::lang::Error(obj) {}
+	
 	// Constructors
 	IOError::IOError(jthrowable arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Error(
 			"java.io.IOError",
 			"(Ljava/lang/Throwable;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::io

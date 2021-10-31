@@ -20,29 +20,29 @@ namespace android::hardware::camera2
 		);
 	}
 	
-	DngCreator::DngCreator(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DngCreator::DngCreator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	DngCreator::DngCreator(android::hardware::camera2::CameraCharacteristics arg0, android::hardware::camera2::CaptureResult arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.hardware.camera2.DngCreator",
 			"(Landroid/hardware/camera2/CameraCharacteristics;Landroid/hardware/camera2/CaptureResult;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	
 	// Methods
 	void DngCreator::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	QAndroidJniObject DngCreator::setDescription(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setDescription",
 			"(Ljava/lang/String;)Landroid/hardware/camera2/DngCreator;",
 			arg0
@@ -50,15 +50,15 @@ namespace android::hardware::camera2
 	}
 	QAndroidJniObject DngCreator::setLocation(android::location::Location arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setLocation",
 			"(Landroid/location/Location;)Landroid/hardware/camera2/DngCreator;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject DngCreator::setOrientation(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setOrientation",
 			"(I)Landroid/hardware/camera2/DngCreator;",
 			arg0
@@ -66,48 +66,48 @@ namespace android::hardware::camera2
 	}
 	QAndroidJniObject DngCreator::setThumbnail(android::graphics::Bitmap arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setThumbnail",
 			"(Landroid/graphics/Bitmap;)Landroid/hardware/camera2/DngCreator;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject DngCreator::setThumbnail(android::media::Image arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setThumbnail",
 			"(Landroid/media/Image;)Landroid/hardware/camera2/DngCreator;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void DngCreator::writeByteBuffer(java::io::OutputStream arg0, android::util::Size arg1, java::nio::ByteBuffer arg2, jlong arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeByteBuffer",
 			"(Ljava/io/OutputStream;Landroid/util/Size;Ljava/nio/ByteBuffer;J)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
 			arg3
 		);
 	}
 	void DngCreator::writeImage(java::io::OutputStream arg0, android::media::Image arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeImage",
 			"(Ljava/io/OutputStream;Landroid/media/Image;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void DngCreator::writeInputStream(java::io::OutputStream arg0, android::util::Size arg1, java::io::InputStream arg2, jlong arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeInputStream",
 			"(Ljava/io/OutputStream;Landroid/util/Size;Ljava/io/InputStream;J)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
 			arg3
 		);
 	}

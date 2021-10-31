@@ -5,46 +5,44 @@ namespace java::security::spec
 {
 	// Fields
 	
-	RSAPrivateKeySpec::RSAPrivateKeySpec(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	RSAPrivateKeySpec::RSAPrivateKeySpec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	RSAPrivateKeySpec::RSAPrivateKeySpec(java::math::BigInteger arg0, java::math::BigInteger arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.security.spec.RSAPrivateKeySpec",
 			"(Ljava/math/BigInteger;Ljava/math/BigInteger;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	RSAPrivateKeySpec::RSAPrivateKeySpec(java::math::BigInteger arg0, java::math::BigInteger arg1, __JniBaseClass arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.security.spec.RSAPrivateKeySpec",
 			"(Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/security/spec/AlgorithmParameterSpec;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject RSAPrivateKeySpec::getModulus()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getModulus",
 			"()Ljava/math/BigInteger;"
 		);
 	}
 	QAndroidJniObject RSAPrivateKeySpec::getParams()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getParams",
 			"()Ljava/security/spec/AlgorithmParameterSpec;"
 		);
 	}
 	QAndroidJniObject RSAPrivateKeySpec::getPrivateExponent()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPrivateExponent",
 			"()Ljava/math/BigInteger;"
 		);

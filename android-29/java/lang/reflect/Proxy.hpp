@@ -38,9 +38,11 @@ namespace java::lang::reflect
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Proxy(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Proxy(QAndroidJniObject obj);
+		
 		// Constructors
-		Proxy() = default;
 		
 		// Methods
 		static QAndroidJniObject getInvocationHandler(jobject arg0);

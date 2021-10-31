@@ -100,7 +100,9 @@ namespace java::net
 		);
 	}
 	
-	StandardSocketOptions::StandardSocketOptions(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	StandardSocketOptions::StandardSocketOptions(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

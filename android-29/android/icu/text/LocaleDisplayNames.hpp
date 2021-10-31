@@ -30,9 +30,11 @@ namespace android::icu::text
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit LocaleDisplayNames(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		LocaleDisplayNames(QAndroidJniObject obj);
+		
 		// Constructors
-		LocaleDisplayNames() = default;
 		
 		// Methods
 		static QAndroidJniObject getInstance(android::icu::util::ULocale arg0);

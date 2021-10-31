@@ -10,11 +10,13 @@ namespace java::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit StringJoiner(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		StringJoiner(QAndroidJniObject obj);
+		
 		// Constructors
 		StringJoiner(jstring arg0);
 		StringJoiner(jstring arg0, jstring arg1, jstring arg2);
-		StringJoiner() = default;
 		
 		// Methods
 		QAndroidJniObject add(jstring arg0);

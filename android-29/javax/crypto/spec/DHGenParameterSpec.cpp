@@ -4,29 +4,29 @@ namespace javax::crypto::spec
 {
 	// Fields
 	
-	DHGenParameterSpec::DHGenParameterSpec(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DHGenParameterSpec::DHGenParameterSpec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	DHGenParameterSpec::DHGenParameterSpec(jint arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"javax.crypto.spec.DHGenParameterSpec",
 			"(II)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jint DHGenParameterSpec::getExponentSize()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getExponentSize",
 			"()I"
 		);
 	}
 	jint DHGenParameterSpec::getPrimeSize()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPrimeSize",
 			"()I"
 		);

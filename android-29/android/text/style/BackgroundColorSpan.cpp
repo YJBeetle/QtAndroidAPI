@@ -6,61 +6,59 @@ namespace android::text::style
 {
 	// Fields
 	
-	BackgroundColorSpan::BackgroundColorSpan(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BackgroundColorSpan::BackgroundColorSpan(QAndroidJniObject obj) : android::text::style::CharacterStyle(obj) {}
+	
 	// Constructors
 	BackgroundColorSpan::BackgroundColorSpan(android::os::Parcel arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::text::style::CharacterStyle(
 			"android.text.style.BackgroundColorSpan",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	BackgroundColorSpan::BackgroundColorSpan(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::text::style::CharacterStyle(
 			"android.text.style.BackgroundColorSpan",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jint BackgroundColorSpan::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jint BackgroundColorSpan::getBackgroundColor()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getBackgroundColor",
 			"()I"
 		);
 	}
 	jint BackgroundColorSpan::getSpanTypeId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSpanTypeId",
 			"()I"
 		);
 	}
 	void BackgroundColorSpan::updateDrawState(android::text::TextPaint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"updateDrawState",
 			"(Landroid/text/TextPaint;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void BackgroundColorSpan::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

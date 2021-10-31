@@ -71,7 +71,9 @@ namespace android::renderscript
 		);
 	}
 	
-	ScriptIntrinsicBLAS::ScriptIntrinsicBLAS(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ScriptIntrinsicBLAS::ScriptIntrinsicBLAS(QAndroidJniObject obj) : android::renderscript::ScriptIntrinsic(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -81,638 +83,638 @@ namespace android::renderscript
 			"android.renderscript.ScriptIntrinsicBLAS",
 			"create",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/ScriptIntrinsicBLAS;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::BNNM(android::renderscript::Allocation arg0, jint arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4, jint arg5, jint arg6)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"BNNM",
 			"(Landroid/renderscript/Allocation;ILandroid/renderscript/Allocation;ILandroid/renderscript/Allocation;II)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object(),
+			arg2.object(),
 			arg3,
-			arg4.__jniObject().object(),
+			arg4.object(),
 			arg5,
 			arg6
 		);
 	}
 	void ScriptIntrinsicBLAS::CGBMV(jint arg0, jint arg1, jint arg2, android::renderscript::Float2 arg3, android::renderscript::Allocation arg4, android::renderscript::Allocation arg5, jint arg6, android::renderscript::Float2 arg7, android::renderscript::Allocation arg8, jint arg9)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"CGBMV",
 			"(IIILandroid/renderscript/Float2;Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;ILandroid/renderscript/Float2;Landroid/renderscript/Allocation;I)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
-			arg5.__jniObject().object(),
+			arg3.object(),
+			arg4.object(),
+			arg5.object(),
 			arg6,
-			arg7.__jniObject().object(),
-			arg8.__jniObject().object(),
+			arg7.object(),
+			arg8.object(),
 			arg9
 		);
 	}
 	void ScriptIntrinsicBLAS::CGEMM(jint arg0, jint arg1, android::renderscript::Float2 arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, android::renderscript::Float2 arg5, android::renderscript::Allocation arg6)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"CGEMM",
 			"(IILandroid/renderscript/Float2;Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;Landroid/renderscript/Float2;Landroid/renderscript/Allocation;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
-			arg5.__jniObject().object(),
-			arg6.__jniObject().object()
+			arg2.object(),
+			arg3.object(),
+			arg4.object(),
+			arg5.object(),
+			arg6.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::CGEMV(jint arg0, android::renderscript::Float2 arg1, android::renderscript::Allocation arg2, android::renderscript::Allocation arg3, jint arg4, android::renderscript::Float2 arg5, android::renderscript::Allocation arg6, jint arg7)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"CGEMV",
 			"(ILandroid/renderscript/Float2;Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;ILandroid/renderscript/Float2;Landroid/renderscript/Allocation;I)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object(),
 			arg4,
-			arg5.__jniObject().object(),
-			arg6.__jniObject().object(),
+			arg5.object(),
+			arg6.object(),
 			arg7
 		);
 	}
 	void ScriptIntrinsicBLAS::CGERC(android::renderscript::Float2 arg0, android::renderscript::Allocation arg1, jint arg2, android::renderscript::Allocation arg3, jint arg4, android::renderscript::Allocation arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"CGERC",
 			"(Landroid/renderscript/Float2;Landroid/renderscript/Allocation;ILandroid/renderscript/Allocation;ILandroid/renderscript/Allocation;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
-			arg3.__jniObject().object(),
+			arg3.object(),
 			arg4,
-			arg5.__jniObject().object()
+			arg5.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::CGERU(android::renderscript::Float2 arg0, android::renderscript::Allocation arg1, jint arg2, android::renderscript::Allocation arg3, jint arg4, android::renderscript::Allocation arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"CGERU",
 			"(Landroid/renderscript/Float2;Landroid/renderscript/Allocation;ILandroid/renderscript/Allocation;ILandroid/renderscript/Allocation;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
-			arg3.__jniObject().object(),
+			arg3.object(),
 			arg4,
-			arg5.__jniObject().object()
+			arg5.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::CHBMV(jint arg0, jint arg1, android::renderscript::Float2 arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5, android::renderscript::Float2 arg6, android::renderscript::Allocation arg7, jint arg8)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"CHBMV",
 			"(IILandroid/renderscript/Float2;Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;ILandroid/renderscript/Float2;Landroid/renderscript/Allocation;I)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
+			arg2.object(),
+			arg3.object(),
+			arg4.object(),
 			arg5,
-			arg6.__jniObject().object(),
-			arg7.__jniObject().object(),
+			arg6.object(),
+			arg7.object(),
 			arg8
 		);
 	}
 	void ScriptIntrinsicBLAS::CHEMM(jint arg0, jint arg1, android::renderscript::Float2 arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, android::renderscript::Float2 arg5, android::renderscript::Allocation arg6)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"CHEMM",
 			"(IILandroid/renderscript/Float2;Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;Landroid/renderscript/Float2;Landroid/renderscript/Allocation;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
-			arg5.__jniObject().object(),
-			arg6.__jniObject().object()
+			arg2.object(),
+			arg3.object(),
+			arg4.object(),
+			arg5.object(),
+			arg6.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::CHEMV(jint arg0, android::renderscript::Float2 arg1, android::renderscript::Allocation arg2, android::renderscript::Allocation arg3, jint arg4, android::renderscript::Float2 arg5, android::renderscript::Allocation arg6, jint arg7)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"CHEMV",
 			"(ILandroid/renderscript/Float2;Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;ILandroid/renderscript/Float2;Landroid/renderscript/Allocation;I)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object(),
 			arg4,
-			arg5.__jniObject().object(),
-			arg6.__jniObject().object(),
+			arg5.object(),
+			arg6.object(),
 			arg7
 		);
 	}
 	void ScriptIntrinsicBLAS::CHER(jint arg0, jfloat arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"CHER",
 			"(IFLandroid/renderscript/Allocation;ILandroid/renderscript/Allocation;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
+			arg2.object(),
 			arg3,
-			arg4.__jniObject().object()
+			arg4.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::CHER2(jint arg0, android::renderscript::Float2 arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4, jint arg5, android::renderscript::Allocation arg6)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"CHER2",
 			"(ILandroid/renderscript/Float2;Landroid/renderscript/Allocation;ILandroid/renderscript/Allocation;ILandroid/renderscript/Allocation;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
+			arg1.object(),
+			arg2.object(),
 			arg3,
-			arg4.__jniObject().object(),
+			arg4.object(),
 			arg5,
-			arg6.__jniObject().object()
+			arg6.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::CHER2K(jint arg0, jint arg1, android::renderscript::Float2 arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jfloat arg5, android::renderscript::Allocation arg6)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"CHER2K",
 			"(IILandroid/renderscript/Float2;Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;FLandroid/renderscript/Allocation;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
+			arg2.object(),
+			arg3.object(),
+			arg4.object(),
 			arg5,
-			arg6.__jniObject().object()
+			arg6.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::CHERK(jint arg0, jint arg1, jfloat arg2, android::renderscript::Allocation arg3, jfloat arg4, android::renderscript::Allocation arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"CHERK",
 			"(IIFLandroid/renderscript/Allocation;FLandroid/renderscript/Allocation;)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
+			arg3.object(),
 			arg4,
-			arg5.__jniObject().object()
+			arg5.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::CHPMV(jint arg0, android::renderscript::Float2 arg1, android::renderscript::Allocation arg2, android::renderscript::Allocation arg3, jint arg4, android::renderscript::Float2 arg5, android::renderscript::Allocation arg6, jint arg7)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"CHPMV",
 			"(ILandroid/renderscript/Float2;Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;ILandroid/renderscript/Float2;Landroid/renderscript/Allocation;I)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object(),
 			arg4,
-			arg5.__jniObject().object(),
-			arg6.__jniObject().object(),
+			arg5.object(),
+			arg6.object(),
 			arg7
 		);
 	}
 	void ScriptIntrinsicBLAS::CHPR(jint arg0, jfloat arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"CHPR",
 			"(IFLandroid/renderscript/Allocation;ILandroid/renderscript/Allocation;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
+			arg2.object(),
 			arg3,
-			arg4.__jniObject().object()
+			arg4.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::CHPR2(jint arg0, android::renderscript::Float2 arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4, jint arg5, android::renderscript::Allocation arg6)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"CHPR2",
 			"(ILandroid/renderscript/Float2;Landroid/renderscript/Allocation;ILandroid/renderscript/Allocation;ILandroid/renderscript/Allocation;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
+			arg1.object(),
+			arg2.object(),
 			arg3,
-			arg4.__jniObject().object(),
+			arg4.object(),
 			arg5,
-			arg6.__jniObject().object()
+			arg6.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::CSYMM(jint arg0, jint arg1, android::renderscript::Float2 arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, android::renderscript::Float2 arg5, android::renderscript::Allocation arg6)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"CSYMM",
 			"(IILandroid/renderscript/Float2;Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;Landroid/renderscript/Float2;Landroid/renderscript/Allocation;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
-			arg5.__jniObject().object(),
-			arg6.__jniObject().object()
+			arg2.object(),
+			arg3.object(),
+			arg4.object(),
+			arg5.object(),
+			arg6.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::CSYR2K(jint arg0, jint arg1, android::renderscript::Float2 arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, android::renderscript::Float2 arg5, android::renderscript::Allocation arg6)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"CSYR2K",
 			"(IILandroid/renderscript/Float2;Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;Landroid/renderscript/Float2;Landroid/renderscript/Allocation;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
-			arg5.__jniObject().object(),
-			arg6.__jniObject().object()
+			arg2.object(),
+			arg3.object(),
+			arg4.object(),
+			arg5.object(),
+			arg6.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::CSYRK(jint arg0, jint arg1, android::renderscript::Float2 arg2, android::renderscript::Allocation arg3, android::renderscript::Float2 arg4, android::renderscript::Allocation arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"CSYRK",
 			"(IILandroid/renderscript/Float2;Landroid/renderscript/Allocation;Landroid/renderscript/Float2;Landroid/renderscript/Allocation;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
-			arg5.__jniObject().object()
+			arg2.object(),
+			arg3.object(),
+			arg4.object(),
+			arg5.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::CTBMV(jint arg0, jint arg1, jint arg2, jint arg3, android::renderscript::Allocation arg4, android::renderscript::Allocation arg5, jint arg6)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"CTBMV",
 			"(IIIILandroid/renderscript/Allocation;Landroid/renderscript/Allocation;I)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object(),
-			arg5.__jniObject().object(),
+			arg4.object(),
+			arg5.object(),
 			arg6
 		);
 	}
 	void ScriptIntrinsicBLAS::CTBSV(jint arg0, jint arg1, jint arg2, jint arg3, android::renderscript::Allocation arg4, android::renderscript::Allocation arg5, jint arg6)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"CTBSV",
 			"(IIIILandroid/renderscript/Allocation;Landroid/renderscript/Allocation;I)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object(),
-			arg5.__jniObject().object(),
+			arg4.object(),
+			arg5.object(),
 			arg6
 		);
 	}
 	void ScriptIntrinsicBLAS::CTPMV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"CTPMV",
 			"(IIILandroid/renderscript/Allocation;Landroid/renderscript/Allocation;I)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
+			arg3.object(),
+			arg4.object(),
 			arg5
 		);
 	}
 	void ScriptIntrinsicBLAS::CTPSV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"CTPSV",
 			"(IIILandroid/renderscript/Allocation;Landroid/renderscript/Allocation;I)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
+			arg3.object(),
+			arg4.object(),
 			arg5
 		);
 	}
 	void ScriptIntrinsicBLAS::CTRMM(jint arg0, jint arg1, jint arg2, jint arg3, android::renderscript::Float2 arg4, android::renderscript::Allocation arg5, android::renderscript::Allocation arg6)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"CTRMM",
 			"(IIIILandroid/renderscript/Float2;Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object(),
-			arg5.__jniObject().object(),
-			arg6.__jniObject().object()
+			arg4.object(),
+			arg5.object(),
+			arg6.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::CTRMV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"CTRMV",
 			"(IIILandroid/renderscript/Allocation;Landroid/renderscript/Allocation;I)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
+			arg3.object(),
+			arg4.object(),
 			arg5
 		);
 	}
 	void ScriptIntrinsicBLAS::CTRSM(jint arg0, jint arg1, jint arg2, jint arg3, android::renderscript::Float2 arg4, android::renderscript::Allocation arg5, android::renderscript::Allocation arg6)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"CTRSM",
 			"(IIIILandroid/renderscript/Float2;Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object(),
-			arg5.__jniObject().object(),
-			arg6.__jniObject().object()
+			arg4.object(),
+			arg5.object(),
+			arg6.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::CTRSV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"CTRSV",
 			"(IIILandroid/renderscript/Allocation;Landroid/renderscript/Allocation;I)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
+			arg3.object(),
+			arg4.object(),
 			arg5
 		);
 	}
 	void ScriptIntrinsicBLAS::DGBMV(jint arg0, jint arg1, jint arg2, jdouble arg3, android::renderscript::Allocation arg4, android::renderscript::Allocation arg5, jint arg6, jdouble arg7, android::renderscript::Allocation arg8, jint arg9)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"DGBMV",
 			"(IIIDLandroid/renderscript/Allocation;Landroid/renderscript/Allocation;IDLandroid/renderscript/Allocation;I)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object(),
-			arg5.__jniObject().object(),
+			arg4.object(),
+			arg5.object(),
 			arg6,
 			arg7,
-			arg8.__jniObject().object(),
+			arg8.object(),
 			arg9
 		);
 	}
 	void ScriptIntrinsicBLAS::DGEMM(jint arg0, jint arg1, jdouble arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jdouble arg5, android::renderscript::Allocation arg6)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"DGEMM",
 			"(IIDLandroid/renderscript/Allocation;Landroid/renderscript/Allocation;DLandroid/renderscript/Allocation;)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
+			arg3.object(),
+			arg4.object(),
 			arg5,
-			arg6.__jniObject().object()
+			arg6.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::DGEMV(jint arg0, jdouble arg1, android::renderscript::Allocation arg2, android::renderscript::Allocation arg3, jint arg4, jdouble arg5, android::renderscript::Allocation arg6, jint arg7)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"DGEMV",
 			"(IDLandroid/renderscript/Allocation;Landroid/renderscript/Allocation;IDLandroid/renderscript/Allocation;I)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
+			arg2.object(),
+			arg3.object(),
 			arg4,
 			arg5,
-			arg6.__jniObject().object(),
+			arg6.object(),
 			arg7
 		);
 	}
 	void ScriptIntrinsicBLAS::DGER(jdouble arg0, android::renderscript::Allocation arg1, jint arg2, android::renderscript::Allocation arg3, jint arg4, android::renderscript::Allocation arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"DGER",
 			"(DLandroid/renderscript/Allocation;ILandroid/renderscript/Allocation;ILandroid/renderscript/Allocation;)V",
 			arg0,
-			arg1.__jniObject().object(),
+			arg1.object(),
 			arg2,
-			arg3.__jniObject().object(),
+			arg3.object(),
 			arg4,
-			arg5.__jniObject().object()
+			arg5.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::DSBMV(jint arg0, jint arg1, jdouble arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5, jdouble arg6, android::renderscript::Allocation arg7, jint arg8)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"DSBMV",
 			"(IIDLandroid/renderscript/Allocation;Landroid/renderscript/Allocation;IDLandroid/renderscript/Allocation;I)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
+			arg3.object(),
+			arg4.object(),
 			arg5,
 			arg6,
-			arg7.__jniObject().object(),
+			arg7.object(),
 			arg8
 		);
 	}
 	void ScriptIntrinsicBLAS::DSPMV(jint arg0, jdouble arg1, android::renderscript::Allocation arg2, android::renderscript::Allocation arg3, jint arg4, jdouble arg5, android::renderscript::Allocation arg6, jint arg7)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"DSPMV",
 			"(IDLandroid/renderscript/Allocation;Landroid/renderscript/Allocation;IDLandroid/renderscript/Allocation;I)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
+			arg2.object(),
+			arg3.object(),
 			arg4,
 			arg5,
-			arg6.__jniObject().object(),
+			arg6.object(),
 			arg7
 		);
 	}
 	void ScriptIntrinsicBLAS::DSPR(jint arg0, jdouble arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"DSPR",
 			"(IDLandroid/renderscript/Allocation;ILandroid/renderscript/Allocation;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
+			arg2.object(),
 			arg3,
-			arg4.__jniObject().object()
+			arg4.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::DSPR2(jint arg0, jdouble arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4, jint arg5, android::renderscript::Allocation arg6)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"DSPR2",
 			"(IDLandroid/renderscript/Allocation;ILandroid/renderscript/Allocation;ILandroid/renderscript/Allocation;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
+			arg2.object(),
 			arg3,
-			arg4.__jniObject().object(),
+			arg4.object(),
 			arg5,
-			arg6.__jniObject().object()
+			arg6.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::DSYMM(jint arg0, jint arg1, jdouble arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jdouble arg5, android::renderscript::Allocation arg6)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"DSYMM",
 			"(IIDLandroid/renderscript/Allocation;Landroid/renderscript/Allocation;DLandroid/renderscript/Allocation;)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
+			arg3.object(),
+			arg4.object(),
 			arg5,
-			arg6.__jniObject().object()
+			arg6.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::DSYMV(jint arg0, jdouble arg1, android::renderscript::Allocation arg2, android::renderscript::Allocation arg3, jint arg4, jdouble arg5, android::renderscript::Allocation arg6, jint arg7)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"DSYMV",
 			"(IDLandroid/renderscript/Allocation;Landroid/renderscript/Allocation;IDLandroid/renderscript/Allocation;I)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
+			arg2.object(),
+			arg3.object(),
 			arg4,
 			arg5,
-			arg6.__jniObject().object(),
+			arg6.object(),
 			arg7
 		);
 	}
 	void ScriptIntrinsicBLAS::DSYR(jint arg0, jdouble arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"DSYR",
 			"(IDLandroid/renderscript/Allocation;ILandroid/renderscript/Allocation;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
+			arg2.object(),
 			arg3,
-			arg4.__jniObject().object()
+			arg4.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::DSYR2(jint arg0, jdouble arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4, jint arg5, android::renderscript::Allocation arg6)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"DSYR2",
 			"(IDLandroid/renderscript/Allocation;ILandroid/renderscript/Allocation;ILandroid/renderscript/Allocation;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
+			arg2.object(),
 			arg3,
-			arg4.__jniObject().object(),
+			arg4.object(),
 			arg5,
-			arg6.__jniObject().object()
+			arg6.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::DSYR2K(jint arg0, jint arg1, jdouble arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jdouble arg5, android::renderscript::Allocation arg6)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"DSYR2K",
 			"(IIDLandroid/renderscript/Allocation;Landroid/renderscript/Allocation;DLandroid/renderscript/Allocation;)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
+			arg3.object(),
+			arg4.object(),
 			arg5,
-			arg6.__jniObject().object()
+			arg6.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::DSYRK(jint arg0, jint arg1, jdouble arg2, android::renderscript::Allocation arg3, jdouble arg4, android::renderscript::Allocation arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"DSYRK",
 			"(IIDLandroid/renderscript/Allocation;DLandroid/renderscript/Allocation;)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
+			arg3.object(),
 			arg4,
-			arg5.__jniObject().object()
+			arg5.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::DTBMV(jint arg0, jint arg1, jint arg2, jint arg3, android::renderscript::Allocation arg4, android::renderscript::Allocation arg5, jint arg6)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"DTBMV",
 			"(IIIILandroid/renderscript/Allocation;Landroid/renderscript/Allocation;I)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object(),
-			arg5.__jniObject().object(),
+			arg4.object(),
+			arg5.object(),
 			arg6
 		);
 	}
 	void ScriptIntrinsicBLAS::DTBSV(jint arg0, jint arg1, jint arg2, jint arg3, android::renderscript::Allocation arg4, android::renderscript::Allocation arg5, jint arg6)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"DTBSV",
 			"(IIIILandroid/renderscript/Allocation;Landroid/renderscript/Allocation;I)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object(),
-			arg5.__jniObject().object(),
+			arg4.object(),
+			arg5.object(),
 			arg6
 		);
 	}
 	void ScriptIntrinsicBLAS::DTPMV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"DTPMV",
 			"(IIILandroid/renderscript/Allocation;Landroid/renderscript/Allocation;I)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
+			arg3.object(),
+			arg4.object(),
 			arg5
 		);
 	}
 	void ScriptIntrinsicBLAS::DTPSV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"DTPSV",
 			"(IIILandroid/renderscript/Allocation;Landroid/renderscript/Allocation;I)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
+			arg3.object(),
+			arg4.object(),
 			arg5
 		);
 	}
 	void ScriptIntrinsicBLAS::DTRMM(jint arg0, jint arg1, jint arg2, jint arg3, jdouble arg4, android::renderscript::Allocation arg5, android::renderscript::Allocation arg6)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"DTRMM",
 			"(IIIIDLandroid/renderscript/Allocation;Landroid/renderscript/Allocation;)V",
 			arg0,
@@ -720,26 +722,26 @@ namespace android::renderscript
 			arg2,
 			arg3,
 			arg4,
-			arg5.__jniObject().object(),
-			arg6.__jniObject().object()
+			arg5.object(),
+			arg6.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::DTRMV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"DTRMV",
 			"(IIILandroid/renderscript/Allocation;Landroid/renderscript/Allocation;I)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
+			arg3.object(),
+			arg4.object(),
 			arg5
 		);
 	}
 	void ScriptIntrinsicBLAS::DTRSM(jint arg0, jint arg1, jint arg2, jint arg3, jdouble arg4, android::renderscript::Allocation arg5, android::renderscript::Allocation arg6)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"DTRSM",
 			"(IIIIDLandroid/renderscript/Allocation;Landroid/renderscript/Allocation;)V",
 			arg0,
@@ -747,278 +749,278 @@ namespace android::renderscript
 			arg2,
 			arg3,
 			arg4,
-			arg5.__jniObject().object(),
-			arg6.__jniObject().object()
+			arg5.object(),
+			arg6.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::DTRSV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"DTRSV",
 			"(IIILandroid/renderscript/Allocation;Landroid/renderscript/Allocation;I)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
+			arg3.object(),
+			arg4.object(),
 			arg5
 		);
 	}
 	void ScriptIntrinsicBLAS::SGBMV(jint arg0, jint arg1, jint arg2, jfloat arg3, android::renderscript::Allocation arg4, android::renderscript::Allocation arg5, jint arg6, jfloat arg7, android::renderscript::Allocation arg8, jint arg9)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"SGBMV",
 			"(IIIFLandroid/renderscript/Allocation;Landroid/renderscript/Allocation;IFLandroid/renderscript/Allocation;I)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object(),
-			arg5.__jniObject().object(),
+			arg4.object(),
+			arg5.object(),
 			arg6,
 			arg7,
-			arg8.__jniObject().object(),
+			arg8.object(),
 			arg9
 		);
 	}
 	void ScriptIntrinsicBLAS::SGEMM(jint arg0, jint arg1, jfloat arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jfloat arg5, android::renderscript::Allocation arg6)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"SGEMM",
 			"(IIFLandroid/renderscript/Allocation;Landroid/renderscript/Allocation;FLandroid/renderscript/Allocation;)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
+			arg3.object(),
+			arg4.object(),
 			arg5,
-			arg6.__jniObject().object()
+			arg6.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::SGEMV(jint arg0, jfloat arg1, android::renderscript::Allocation arg2, android::renderscript::Allocation arg3, jint arg4, jfloat arg5, android::renderscript::Allocation arg6, jint arg7)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"SGEMV",
 			"(IFLandroid/renderscript/Allocation;Landroid/renderscript/Allocation;IFLandroid/renderscript/Allocation;I)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
+			arg2.object(),
+			arg3.object(),
 			arg4,
 			arg5,
-			arg6.__jniObject().object(),
+			arg6.object(),
 			arg7
 		);
 	}
 	void ScriptIntrinsicBLAS::SGER(jfloat arg0, android::renderscript::Allocation arg1, jint arg2, android::renderscript::Allocation arg3, jint arg4, android::renderscript::Allocation arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"SGER",
 			"(FLandroid/renderscript/Allocation;ILandroid/renderscript/Allocation;ILandroid/renderscript/Allocation;)V",
 			arg0,
-			arg1.__jniObject().object(),
+			arg1.object(),
 			arg2,
-			arg3.__jniObject().object(),
+			arg3.object(),
 			arg4,
-			arg5.__jniObject().object()
+			arg5.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::SSBMV(jint arg0, jint arg1, jfloat arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5, jfloat arg6, android::renderscript::Allocation arg7, jint arg8)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"SSBMV",
 			"(IIFLandroid/renderscript/Allocation;Landroid/renderscript/Allocation;IFLandroid/renderscript/Allocation;I)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
+			arg3.object(),
+			arg4.object(),
 			arg5,
 			arg6,
-			arg7.__jniObject().object(),
+			arg7.object(),
 			arg8
 		);
 	}
 	void ScriptIntrinsicBLAS::SSPMV(jint arg0, jfloat arg1, android::renderscript::Allocation arg2, android::renderscript::Allocation arg3, jint arg4, jfloat arg5, android::renderscript::Allocation arg6, jint arg7)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"SSPMV",
 			"(IFLandroid/renderscript/Allocation;Landroid/renderscript/Allocation;IFLandroid/renderscript/Allocation;I)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
+			arg2.object(),
+			arg3.object(),
 			arg4,
 			arg5,
-			arg6.__jniObject().object(),
+			arg6.object(),
 			arg7
 		);
 	}
 	void ScriptIntrinsicBLAS::SSPR(jint arg0, jfloat arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"SSPR",
 			"(IFLandroid/renderscript/Allocation;ILandroid/renderscript/Allocation;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
+			arg2.object(),
 			arg3,
-			arg4.__jniObject().object()
+			arg4.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::SSPR2(jint arg0, jfloat arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4, jint arg5, android::renderscript::Allocation arg6)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"SSPR2",
 			"(IFLandroid/renderscript/Allocation;ILandroid/renderscript/Allocation;ILandroid/renderscript/Allocation;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
+			arg2.object(),
 			arg3,
-			arg4.__jniObject().object(),
+			arg4.object(),
 			arg5,
-			arg6.__jniObject().object()
+			arg6.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::SSYMM(jint arg0, jint arg1, jfloat arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jfloat arg5, android::renderscript::Allocation arg6)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"SSYMM",
 			"(IIFLandroid/renderscript/Allocation;Landroid/renderscript/Allocation;FLandroid/renderscript/Allocation;)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
+			arg3.object(),
+			arg4.object(),
 			arg5,
-			arg6.__jniObject().object()
+			arg6.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::SSYMV(jint arg0, jfloat arg1, android::renderscript::Allocation arg2, android::renderscript::Allocation arg3, jint arg4, jfloat arg5, android::renderscript::Allocation arg6, jint arg7)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"SSYMV",
 			"(IFLandroid/renderscript/Allocation;Landroid/renderscript/Allocation;IFLandroid/renderscript/Allocation;I)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
+			arg2.object(),
+			arg3.object(),
 			arg4,
 			arg5,
-			arg6.__jniObject().object(),
+			arg6.object(),
 			arg7
 		);
 	}
 	void ScriptIntrinsicBLAS::SSYR(jint arg0, jfloat arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"SSYR",
 			"(IFLandroid/renderscript/Allocation;ILandroid/renderscript/Allocation;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
+			arg2.object(),
 			arg3,
-			arg4.__jniObject().object()
+			arg4.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::SSYR2(jint arg0, jfloat arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4, jint arg5, android::renderscript::Allocation arg6)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"SSYR2",
 			"(IFLandroid/renderscript/Allocation;ILandroid/renderscript/Allocation;ILandroid/renderscript/Allocation;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
+			arg2.object(),
 			arg3,
-			arg4.__jniObject().object(),
+			arg4.object(),
 			arg5,
-			arg6.__jniObject().object()
+			arg6.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::SSYR2K(jint arg0, jint arg1, jfloat arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jfloat arg5, android::renderscript::Allocation arg6)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"SSYR2K",
 			"(IIFLandroid/renderscript/Allocation;Landroid/renderscript/Allocation;FLandroid/renderscript/Allocation;)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
+			arg3.object(),
+			arg4.object(),
 			arg5,
-			arg6.__jniObject().object()
+			arg6.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::SSYRK(jint arg0, jint arg1, jfloat arg2, android::renderscript::Allocation arg3, jfloat arg4, android::renderscript::Allocation arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"SSYRK",
 			"(IIFLandroid/renderscript/Allocation;FLandroid/renderscript/Allocation;)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
+			arg3.object(),
 			arg4,
-			arg5.__jniObject().object()
+			arg5.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::STBMV(jint arg0, jint arg1, jint arg2, jint arg3, android::renderscript::Allocation arg4, android::renderscript::Allocation arg5, jint arg6)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"STBMV",
 			"(IIIILandroid/renderscript/Allocation;Landroid/renderscript/Allocation;I)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object(),
-			arg5.__jniObject().object(),
+			arg4.object(),
+			arg5.object(),
 			arg6
 		);
 	}
 	void ScriptIntrinsicBLAS::STBSV(jint arg0, jint arg1, jint arg2, jint arg3, android::renderscript::Allocation arg4, android::renderscript::Allocation arg5, jint arg6)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"STBSV",
 			"(IIIILandroid/renderscript/Allocation;Landroid/renderscript/Allocation;I)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object(),
-			arg5.__jniObject().object(),
+			arg4.object(),
+			arg5.object(),
 			arg6
 		);
 	}
 	void ScriptIntrinsicBLAS::STPMV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"STPMV",
 			"(IIILandroid/renderscript/Allocation;Landroid/renderscript/Allocation;I)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
+			arg3.object(),
+			arg4.object(),
 			arg5
 		);
 	}
 	void ScriptIntrinsicBLAS::STPSV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"STPSV",
 			"(IIILandroid/renderscript/Allocation;Landroid/renderscript/Allocation;I)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
+			arg3.object(),
+			arg4.object(),
 			arg5
 		);
 	}
 	void ScriptIntrinsicBLAS::STRMM(jint arg0, jint arg1, jint arg2, jint arg3, jfloat arg4, android::renderscript::Allocation arg5, android::renderscript::Allocation arg6)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"STRMM",
 			"(IIIIFLandroid/renderscript/Allocation;Landroid/renderscript/Allocation;)V",
 			arg0,
@@ -1026,26 +1028,26 @@ namespace android::renderscript
 			arg2,
 			arg3,
 			arg4,
-			arg5.__jniObject().object(),
-			arg6.__jniObject().object()
+			arg5.object(),
+			arg6.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::STRMV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"STRMV",
 			"(IIILandroid/renderscript/Allocation;Landroid/renderscript/Allocation;I)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
+			arg3.object(),
+			arg4.object(),
 			arg5
 		);
 	}
 	void ScriptIntrinsicBLAS::STRSM(jint arg0, jint arg1, jint arg2, jint arg3, jfloat arg4, android::renderscript::Allocation arg5, android::renderscript::Allocation arg6)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"STRSM",
 			"(IIIIFLandroid/renderscript/Allocation;Landroid/renderscript/Allocation;)V",
 			arg0,
@@ -1053,380 +1055,380 @@ namespace android::renderscript
 			arg2,
 			arg3,
 			arg4,
-			arg5.__jniObject().object(),
-			arg6.__jniObject().object()
+			arg5.object(),
+			arg6.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::STRSV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"STRSV",
 			"(IIILandroid/renderscript/Allocation;Landroid/renderscript/Allocation;I)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
+			arg3.object(),
+			arg4.object(),
 			arg5
 		);
 	}
 	void ScriptIntrinsicBLAS::ZGBMV(jint arg0, jint arg1, jint arg2, android::renderscript::Double2 arg3, android::renderscript::Allocation arg4, android::renderscript::Allocation arg5, jint arg6, android::renderscript::Double2 arg7, android::renderscript::Allocation arg8, jint arg9)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"ZGBMV",
 			"(IIILandroid/renderscript/Double2;Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;ILandroid/renderscript/Double2;Landroid/renderscript/Allocation;I)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
-			arg5.__jniObject().object(),
+			arg3.object(),
+			arg4.object(),
+			arg5.object(),
 			arg6,
-			arg7.__jniObject().object(),
-			arg8.__jniObject().object(),
+			arg7.object(),
+			arg8.object(),
 			arg9
 		);
 	}
 	void ScriptIntrinsicBLAS::ZGEMM(jint arg0, jint arg1, android::renderscript::Double2 arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, android::renderscript::Double2 arg5, android::renderscript::Allocation arg6)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"ZGEMM",
 			"(IILandroid/renderscript/Double2;Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;Landroid/renderscript/Double2;Landroid/renderscript/Allocation;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
-			arg5.__jniObject().object(),
-			arg6.__jniObject().object()
+			arg2.object(),
+			arg3.object(),
+			arg4.object(),
+			arg5.object(),
+			arg6.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::ZGEMV(jint arg0, android::renderscript::Double2 arg1, android::renderscript::Allocation arg2, android::renderscript::Allocation arg3, jint arg4, android::renderscript::Double2 arg5, android::renderscript::Allocation arg6, jint arg7)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"ZGEMV",
 			"(ILandroid/renderscript/Double2;Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;ILandroid/renderscript/Double2;Landroid/renderscript/Allocation;I)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object(),
 			arg4,
-			arg5.__jniObject().object(),
-			arg6.__jniObject().object(),
+			arg5.object(),
+			arg6.object(),
 			arg7
 		);
 	}
 	void ScriptIntrinsicBLAS::ZGERC(android::renderscript::Double2 arg0, android::renderscript::Allocation arg1, jint arg2, android::renderscript::Allocation arg3, jint arg4, android::renderscript::Allocation arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"ZGERC",
 			"(Landroid/renderscript/Double2;Landroid/renderscript/Allocation;ILandroid/renderscript/Allocation;ILandroid/renderscript/Allocation;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
-			arg3.__jniObject().object(),
+			arg3.object(),
 			arg4,
-			arg5.__jniObject().object()
+			arg5.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::ZGERU(android::renderscript::Double2 arg0, android::renderscript::Allocation arg1, jint arg2, android::renderscript::Allocation arg3, jint arg4, android::renderscript::Allocation arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"ZGERU",
 			"(Landroid/renderscript/Double2;Landroid/renderscript/Allocation;ILandroid/renderscript/Allocation;ILandroid/renderscript/Allocation;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
-			arg3.__jniObject().object(),
+			arg3.object(),
 			arg4,
-			arg5.__jniObject().object()
+			arg5.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::ZHBMV(jint arg0, jint arg1, android::renderscript::Double2 arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5, android::renderscript::Double2 arg6, android::renderscript::Allocation arg7, jint arg8)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"ZHBMV",
 			"(IILandroid/renderscript/Double2;Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;ILandroid/renderscript/Double2;Landroid/renderscript/Allocation;I)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
+			arg2.object(),
+			arg3.object(),
+			arg4.object(),
 			arg5,
-			arg6.__jniObject().object(),
-			arg7.__jniObject().object(),
+			arg6.object(),
+			arg7.object(),
 			arg8
 		);
 	}
 	void ScriptIntrinsicBLAS::ZHEMM(jint arg0, jint arg1, android::renderscript::Double2 arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, android::renderscript::Double2 arg5, android::renderscript::Allocation arg6)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"ZHEMM",
 			"(IILandroid/renderscript/Double2;Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;Landroid/renderscript/Double2;Landroid/renderscript/Allocation;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
-			arg5.__jniObject().object(),
-			arg6.__jniObject().object()
+			arg2.object(),
+			arg3.object(),
+			arg4.object(),
+			arg5.object(),
+			arg6.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::ZHEMV(jint arg0, android::renderscript::Double2 arg1, android::renderscript::Allocation arg2, android::renderscript::Allocation arg3, jint arg4, android::renderscript::Double2 arg5, android::renderscript::Allocation arg6, jint arg7)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"ZHEMV",
 			"(ILandroid/renderscript/Double2;Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;ILandroid/renderscript/Double2;Landroid/renderscript/Allocation;I)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object(),
 			arg4,
-			arg5.__jniObject().object(),
-			arg6.__jniObject().object(),
+			arg5.object(),
+			arg6.object(),
 			arg7
 		);
 	}
 	void ScriptIntrinsicBLAS::ZHER(jint arg0, jdouble arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"ZHER",
 			"(IDLandroid/renderscript/Allocation;ILandroid/renderscript/Allocation;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
+			arg2.object(),
 			arg3,
-			arg4.__jniObject().object()
+			arg4.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::ZHER2(jint arg0, android::renderscript::Double2 arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4, jint arg5, android::renderscript::Allocation arg6)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"ZHER2",
 			"(ILandroid/renderscript/Double2;Landroid/renderscript/Allocation;ILandroid/renderscript/Allocation;ILandroid/renderscript/Allocation;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
+			arg1.object(),
+			arg2.object(),
 			arg3,
-			arg4.__jniObject().object(),
+			arg4.object(),
 			arg5,
-			arg6.__jniObject().object()
+			arg6.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::ZHER2K(jint arg0, jint arg1, android::renderscript::Double2 arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jdouble arg5, android::renderscript::Allocation arg6)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"ZHER2K",
 			"(IILandroid/renderscript/Double2;Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;DLandroid/renderscript/Allocation;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
+			arg2.object(),
+			arg3.object(),
+			arg4.object(),
 			arg5,
-			arg6.__jniObject().object()
+			arg6.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::ZHERK(jint arg0, jint arg1, jdouble arg2, android::renderscript::Allocation arg3, jdouble arg4, android::renderscript::Allocation arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"ZHERK",
 			"(IIDLandroid/renderscript/Allocation;DLandroid/renderscript/Allocation;)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
+			arg3.object(),
 			arg4,
-			arg5.__jniObject().object()
+			arg5.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::ZHPMV(jint arg0, android::renderscript::Double2 arg1, android::renderscript::Allocation arg2, android::renderscript::Allocation arg3, jint arg4, android::renderscript::Double2 arg5, android::renderscript::Allocation arg6, jint arg7)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"ZHPMV",
 			"(ILandroid/renderscript/Double2;Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;ILandroid/renderscript/Double2;Landroid/renderscript/Allocation;I)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object(),
 			arg4,
-			arg5.__jniObject().object(),
-			arg6.__jniObject().object(),
+			arg5.object(),
+			arg6.object(),
 			arg7
 		);
 	}
 	void ScriptIntrinsicBLAS::ZHPR(jint arg0, jdouble arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"ZHPR",
 			"(IDLandroid/renderscript/Allocation;ILandroid/renderscript/Allocation;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
+			arg2.object(),
 			arg3,
-			arg4.__jniObject().object()
+			arg4.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::ZHPR2(jint arg0, android::renderscript::Double2 arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4, jint arg5, android::renderscript::Allocation arg6)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"ZHPR2",
 			"(ILandroid/renderscript/Double2;Landroid/renderscript/Allocation;ILandroid/renderscript/Allocation;ILandroid/renderscript/Allocation;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
+			arg1.object(),
+			arg2.object(),
 			arg3,
-			arg4.__jniObject().object(),
+			arg4.object(),
 			arg5,
-			arg6.__jniObject().object()
+			arg6.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::ZSYMM(jint arg0, jint arg1, android::renderscript::Double2 arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, android::renderscript::Double2 arg5, android::renderscript::Allocation arg6)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"ZSYMM",
 			"(IILandroid/renderscript/Double2;Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;Landroid/renderscript/Double2;Landroid/renderscript/Allocation;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
-			arg5.__jniObject().object(),
-			arg6.__jniObject().object()
+			arg2.object(),
+			arg3.object(),
+			arg4.object(),
+			arg5.object(),
+			arg6.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::ZSYR2K(jint arg0, jint arg1, android::renderscript::Double2 arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, android::renderscript::Double2 arg5, android::renderscript::Allocation arg6)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"ZSYR2K",
 			"(IILandroid/renderscript/Double2;Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;Landroid/renderscript/Double2;Landroid/renderscript/Allocation;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
-			arg5.__jniObject().object(),
-			arg6.__jniObject().object()
+			arg2.object(),
+			arg3.object(),
+			arg4.object(),
+			arg5.object(),
+			arg6.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::ZSYRK(jint arg0, jint arg1, android::renderscript::Double2 arg2, android::renderscript::Allocation arg3, android::renderscript::Double2 arg4, android::renderscript::Allocation arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"ZSYRK",
 			"(IILandroid/renderscript/Double2;Landroid/renderscript/Allocation;Landroid/renderscript/Double2;Landroid/renderscript/Allocation;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
-			arg5.__jniObject().object()
+			arg2.object(),
+			arg3.object(),
+			arg4.object(),
+			arg5.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::ZTBMV(jint arg0, jint arg1, jint arg2, jint arg3, android::renderscript::Allocation arg4, android::renderscript::Allocation arg5, jint arg6)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"ZTBMV",
 			"(IIIILandroid/renderscript/Allocation;Landroid/renderscript/Allocation;I)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object(),
-			arg5.__jniObject().object(),
+			arg4.object(),
+			arg5.object(),
 			arg6
 		);
 	}
 	void ScriptIntrinsicBLAS::ZTBSV(jint arg0, jint arg1, jint arg2, jint arg3, android::renderscript::Allocation arg4, android::renderscript::Allocation arg5, jint arg6)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"ZTBSV",
 			"(IIIILandroid/renderscript/Allocation;Landroid/renderscript/Allocation;I)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object(),
-			arg5.__jniObject().object(),
+			arg4.object(),
+			arg5.object(),
 			arg6
 		);
 	}
 	void ScriptIntrinsicBLAS::ZTPMV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"ZTPMV",
 			"(IIILandroid/renderscript/Allocation;Landroid/renderscript/Allocation;I)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
+			arg3.object(),
+			arg4.object(),
 			arg5
 		);
 	}
 	void ScriptIntrinsicBLAS::ZTPSV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"ZTPSV",
 			"(IIILandroid/renderscript/Allocation;Landroid/renderscript/Allocation;I)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
+			arg3.object(),
+			arg4.object(),
 			arg5
 		);
 	}
 	void ScriptIntrinsicBLAS::ZTRMM(jint arg0, jint arg1, jint arg2, jint arg3, android::renderscript::Double2 arg4, android::renderscript::Allocation arg5, android::renderscript::Allocation arg6)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"ZTRMM",
 			"(IIIILandroid/renderscript/Double2;Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object(),
-			arg5.__jniObject().object(),
-			arg6.__jniObject().object()
+			arg4.object(),
+			arg5.object(),
+			arg6.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::ZTRMV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"ZTRMV",
 			"(IIILandroid/renderscript/Allocation;Landroid/renderscript/Allocation;I)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
+			arg3.object(),
+			arg4.object(),
 			arg5
 		);
 	}
 	void ScriptIntrinsicBLAS::ZTRSM(jint arg0, jint arg1, jint arg2, jint arg3, android::renderscript::Double2 arg4, android::renderscript::Allocation arg5, android::renderscript::Allocation arg6)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"ZTRSM",
 			"(IIIILandroid/renderscript/Double2;Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object(),
-			arg5.__jniObject().object(),
-			arg6.__jniObject().object()
+			arg4.object(),
+			arg5.object(),
+			arg6.object()
 		);
 	}
 	void ScriptIntrinsicBLAS::ZTRSV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"ZTRSV",
 			"(IIILandroid/renderscript/Allocation;Landroid/renderscript/Allocation;I)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
+			arg3.object(),
+			arg4.object(),
 			arg5
 		);
 	}

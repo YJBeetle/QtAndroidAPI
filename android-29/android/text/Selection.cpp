@@ -21,7 +21,9 @@ namespace android::text
 		).object<jobject>();
 	}
 	
-	Selection::Selection(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Selection::Selection(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -31,8 +33,8 @@ namespace android::text
 			"android.text.Selection",
 			"extendDown",
 			"(Landroid/text/Spannable;Landroid/text/Layout;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jboolean Selection::extendLeft(__JniBaseClass arg0, android::text::Layout arg1)
@@ -41,8 +43,8 @@ namespace android::text
 			"android.text.Selection",
 			"extendLeft",
 			"(Landroid/text/Spannable;Landroid/text/Layout;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jboolean Selection::extendRight(__JniBaseClass arg0, android::text::Layout arg1)
@@ -51,8 +53,8 @@ namespace android::text
 			"android.text.Selection",
 			"extendRight",
 			"(Landroid/text/Spannable;Landroid/text/Layout;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void Selection::extendSelection(__JniBaseClass arg0, jint arg1)
@@ -61,7 +63,7 @@ namespace android::text
 			"android.text.Selection",
 			"extendSelection",
 			"(Landroid/text/Spannable;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -71,8 +73,8 @@ namespace android::text
 			"android.text.Selection",
 			"extendToLeftEdge",
 			"(Landroid/text/Spannable;Landroid/text/Layout;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jboolean Selection::extendToRightEdge(__JniBaseClass arg0, android::text::Layout arg1)
@@ -81,8 +83,8 @@ namespace android::text
 			"android.text.Selection",
 			"extendToRightEdge",
 			"(Landroid/text/Spannable;Landroid/text/Layout;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jboolean Selection::extendUp(__JniBaseClass arg0, android::text::Layout arg1)
@@ -91,8 +93,8 @@ namespace android::text
 			"android.text.Selection",
 			"extendUp",
 			"(Landroid/text/Spannable;Landroid/text/Layout;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jint Selection::getSelectionEnd(jstring arg0)
@@ -119,8 +121,8 @@ namespace android::text
 			"android.text.Selection",
 			"moveDown",
 			"(Landroid/text/Spannable;Landroid/text/Layout;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jboolean Selection::moveLeft(__JniBaseClass arg0, android::text::Layout arg1)
@@ -129,8 +131,8 @@ namespace android::text
 			"android.text.Selection",
 			"moveLeft",
 			"(Landroid/text/Spannable;Landroid/text/Layout;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jboolean Selection::moveRight(__JniBaseClass arg0, android::text::Layout arg1)
@@ -139,8 +141,8 @@ namespace android::text
 			"android.text.Selection",
 			"moveRight",
 			"(Landroid/text/Spannable;Landroid/text/Layout;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jboolean Selection::moveToLeftEdge(__JniBaseClass arg0, android::text::Layout arg1)
@@ -149,8 +151,8 @@ namespace android::text
 			"android.text.Selection",
 			"moveToLeftEdge",
 			"(Landroid/text/Spannable;Landroid/text/Layout;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jboolean Selection::moveToRightEdge(__JniBaseClass arg0, android::text::Layout arg1)
@@ -159,8 +161,8 @@ namespace android::text
 			"android.text.Selection",
 			"moveToRightEdge",
 			"(Landroid/text/Spannable;Landroid/text/Layout;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jboolean Selection::moveUp(__JniBaseClass arg0, android::text::Layout arg1)
@@ -169,8 +171,8 @@ namespace android::text
 			"android.text.Selection",
 			"moveUp",
 			"(Landroid/text/Spannable;Landroid/text/Layout;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void Selection::removeSelection(__JniBaseClass arg0)
@@ -179,7 +181,7 @@ namespace android::text
 			"android.text.Selection",
 			"removeSelection",
 			"(Landroid/text/Spannable;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Selection::selectAll(__JniBaseClass arg0)
@@ -188,7 +190,7 @@ namespace android::text
 			"android.text.Selection",
 			"selectAll",
 			"(Landroid/text/Spannable;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Selection::setSelection(__JniBaseClass arg0, jint arg1)
@@ -197,7 +199,7 @@ namespace android::text
 			"android.text.Selection",
 			"setSelection",
 			"(Landroid/text/Spannable;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -207,7 +209,7 @@ namespace android::text
 			"android.text.Selection",
 			"setSelection",
 			"(Landroid/text/Spannable;II)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);

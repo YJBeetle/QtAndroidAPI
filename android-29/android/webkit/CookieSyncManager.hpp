@@ -14,9 +14,11 @@ namespace android::webkit
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CookieSyncManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		CookieSyncManager(QAndroidJniObject obj);
+		
 		// Constructors
-		CookieSyncManager() = default;
 		
 		// Methods
 		static QAndroidJniObject createInstance(android::content::Context arg0);

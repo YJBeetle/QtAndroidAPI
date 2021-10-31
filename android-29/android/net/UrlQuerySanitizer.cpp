@@ -4,23 +4,21 @@ namespace android::net
 {
 	// Fields
 	
-	UrlQuerySanitizer::UrlQuerySanitizer(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UrlQuerySanitizer::UrlQuerySanitizer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	UrlQuerySanitizer::UrlQuerySanitizer()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.net.UrlQuerySanitizer",
 			"()V"
-		);
-	}
+		) {}
 	UrlQuerySanitizer::UrlQuerySanitizer(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.net.UrlQuerySanitizer",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject UrlQuerySanitizer::getAllButNulAndAngleBracketsLegal()
@@ -97,14 +95,14 @@ namespace android::net
 	}
 	jboolean UrlQuerySanitizer::getAllowUnregisteredParamaters()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getAllowUnregisteredParamaters",
 			"()Z"
 		);
 	}
 	QAndroidJniObject UrlQuerySanitizer::getEffectiveValueSanitizer(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEffectiveValueSanitizer",
 			"(Ljava/lang/String;)Landroid/net/UrlQuerySanitizer$ValueSanitizer;",
 			arg0
@@ -112,35 +110,35 @@ namespace android::net
 	}
 	QAndroidJniObject UrlQuerySanitizer::getParameterList()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getParameterList",
 			"()Ljava/util/List;"
 		);
 	}
 	QAndroidJniObject UrlQuerySanitizer::getParameterSet()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getParameterSet",
 			"()Ljava/util/Set;"
 		);
 	}
 	jboolean UrlQuerySanitizer::getPreferFirstRepeatedParameter()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getPreferFirstRepeatedParameter",
 			"()Z"
 		);
 	}
 	QAndroidJniObject UrlQuerySanitizer::getUnregisteredParameterValueSanitizer()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getUnregisteredParameterValueSanitizer",
 			"()Landroid/net/UrlQuerySanitizer$ValueSanitizer;"
 		);
 	}
 	jstring UrlQuerySanitizer::getValue(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getValue",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
@@ -148,7 +146,7 @@ namespace android::net
 	}
 	QAndroidJniObject UrlQuerySanitizer::getValueSanitizer(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getValueSanitizer",
 			"(Ljava/lang/String;)Landroid/net/UrlQuerySanitizer$ValueSanitizer;",
 			arg0
@@ -156,7 +154,7 @@ namespace android::net
 	}
 	jboolean UrlQuerySanitizer::hasParameter(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasParameter",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -164,7 +162,7 @@ namespace android::net
 	}
 	void UrlQuerySanitizer::parseQuery(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"parseQuery",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -172,7 +170,7 @@ namespace android::net
 	}
 	void UrlQuerySanitizer::parseUrl(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"parseUrl",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -180,25 +178,25 @@ namespace android::net
 	}
 	void UrlQuerySanitizer::registerParameter(jstring arg0, __JniBaseClass arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"registerParameter",
 			"(Ljava/lang/String;Landroid/net/UrlQuerySanitizer$ValueSanitizer;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void UrlQuerySanitizer::registerParameters(jarray arg0, __JniBaseClass arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"registerParameters",
 			"([Ljava/lang/String;Landroid/net/UrlQuerySanitizer$ValueSanitizer;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void UrlQuerySanitizer::setAllowUnregisteredParamaters(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAllowUnregisteredParamaters",
 			"(Z)V",
 			arg0
@@ -206,7 +204,7 @@ namespace android::net
 	}
 	void UrlQuerySanitizer::setPreferFirstRepeatedParameter(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPreferFirstRepeatedParameter",
 			"(Z)V",
 			arg0
@@ -214,15 +212,15 @@ namespace android::net
 	}
 	void UrlQuerySanitizer::setUnregisteredParameterValueSanitizer(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setUnregisteredParameterValueSanitizer",
 			"(Landroid/net/UrlQuerySanitizer$ValueSanitizer;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring UrlQuerySanitizer::unescape(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"unescape",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0

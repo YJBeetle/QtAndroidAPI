@@ -8,7 +8,9 @@ namespace javax::crypto
 {
 	// Fields
 	
-	Mac::Mac(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Mac::Mac(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -38,26 +40,26 @@ namespace javax::crypto
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljavax/crypto/Mac;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jobject Mac::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jbyteArray Mac::doFinal()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"doFinal",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jbyteArray Mac::doFinal(jbyteArray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"doFinal",
 			"([B)[B",
 			arg0
@@ -65,7 +67,7 @@ namespace javax::crypto
 	}
 	void Mac::doFinal(jbyteArray arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"doFinal",
 			"([BI)V",
 			arg0,
@@ -74,52 +76,52 @@ namespace javax::crypto
 	}
 	jstring Mac::getAlgorithm()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint Mac::getMacLength()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMacLength",
 			"()I"
 		);
 	}
 	QAndroidJniObject Mac::getProvider()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getProvider",
 			"()Ljava/security/Provider;"
 		);
 	}
 	void Mac::init(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"init",
 			"(Ljava/security/Key;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Mac::init(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"init",
 			"(Ljava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void Mac::reset()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
 	void Mac::update(jbyteArray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"update",
 			"([B)V",
 			arg0
@@ -127,7 +129,7 @@ namespace javax::crypto
 	}
 	void Mac::update(jbyte arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"update",
 			"(B)V",
 			arg0
@@ -135,15 +137,15 @@ namespace javax::crypto
 	}
 	void Mac::update(java::nio::ByteBuffer arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"update",
 			"(Ljava/nio/ByteBuffer;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Mac::update(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"update",
 			"([BII)V",
 			arg0,

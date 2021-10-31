@@ -5,27 +5,29 @@ namespace android::media
 {
 	// Fields
 	
-	Image_Plane::Image_Plane(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Image_Plane::Image_Plane(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject Image_Plane::getBuffer()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBuffer",
 			"()Ljava/nio/ByteBuffer;"
 		);
 	}
 	jint Image_Plane::getPixelStride()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPixelStride",
 			"()I"
 		);
 	}
 	jint Image_Plane::getRowStride()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRowStride",
 			"()I"
 		);

@@ -4,15 +4,15 @@ namespace android::text
 {
 	// Fields
 	
-	Spannable_Factory::Spannable_Factory(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Spannable_Factory::Spannable_Factory(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Spannable_Factory::Spannable_Factory()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.text.Spannable$Factory",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject Spannable_Factory::getInstance()
@@ -25,7 +25,7 @@ namespace android::text
 	}
 	QAndroidJniObject Spannable_Factory::newSpannable(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newSpannable",
 			"(Ljava/lang/CharSequence;)Landroid/text/Spannable;",
 			arg0

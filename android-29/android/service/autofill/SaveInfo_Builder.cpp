@@ -8,54 +8,52 @@ namespace android::service::autofill
 {
 	// Fields
 	
-	SaveInfo_Builder::SaveInfo_Builder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SaveInfo_Builder::SaveInfo_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	SaveInfo_Builder::SaveInfo_Builder(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.service.autofill.SaveInfo$Builder",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	SaveInfo_Builder::SaveInfo_Builder(jint arg0, jarray arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.service.autofill.SaveInfo$Builder",
 			"(I[Landroid/view/autofill/AutofillId;)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject SaveInfo_Builder::addSanitizer(__JniBaseClass arg0, jarray arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"addSanitizer",
 			"(Landroid/service/autofill/Sanitizer;[Landroid/view/autofill/AutofillId;)Landroid/service/autofill/SaveInfo$Builder;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	QAndroidJniObject SaveInfo_Builder::build()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"build",
 			"()Landroid/service/autofill/SaveInfo;"
 		);
 	}
 	QAndroidJniObject SaveInfo_Builder::setCustomDescription(android::service::autofill::CustomDescription arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setCustomDescription",
 			"(Landroid/service/autofill/CustomDescription;)Landroid/service/autofill/SaveInfo$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject SaveInfo_Builder::setDescription(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setDescription",
 			"(Ljava/lang/CharSequence;)Landroid/service/autofill/SaveInfo$Builder;",
 			arg0
@@ -63,7 +61,7 @@ namespace android::service::autofill
 	}
 	QAndroidJniObject SaveInfo_Builder::setFlags(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setFlags",
 			"(I)Landroid/service/autofill/SaveInfo$Builder;",
 			arg0
@@ -71,16 +69,16 @@ namespace android::service::autofill
 	}
 	QAndroidJniObject SaveInfo_Builder::setNegativeAction(jint arg0, android::content::IntentSender arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setNegativeAction",
 			"(ILandroid/content/IntentSender;)Landroid/service/autofill/SaveInfo$Builder;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject SaveInfo_Builder::setOptionalIds(jarray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setOptionalIds",
 			"([Landroid/view/autofill/AutofillId;)Landroid/service/autofill/SaveInfo$Builder;",
 			arg0
@@ -88,18 +86,18 @@ namespace android::service::autofill
 	}
 	QAndroidJniObject SaveInfo_Builder::setTriggerId(android::view::autofill::AutofillId arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setTriggerId",
 			"(Landroid/view/autofill/AutofillId;)Landroid/service/autofill/SaveInfo$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject SaveInfo_Builder::setValidator(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setValidator",
 			"(Landroid/service/autofill/Validator;)Landroid/service/autofill/SaveInfo$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::service::autofill

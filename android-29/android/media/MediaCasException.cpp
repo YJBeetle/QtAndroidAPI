@@ -4,7 +4,9 @@ namespace android::media
 {
 	// Fields
 	
-	MediaCasException::MediaCasException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaCasException::MediaCasException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
+	
 	// Constructors
 	
 	// Methods

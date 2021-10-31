@@ -42,30 +42,28 @@ namespace android::widget
 		);
 	}
 	
-	DialerFilter::DialerFilter(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DialerFilter::DialerFilter(QAndroidJniObject obj) : android::widget::RelativeLayout(obj) {}
+	
 	// Constructors
 	DialerFilter::DialerFilter(android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::RelativeLayout(
 			"android.widget.DialerFilter",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	DialerFilter::DialerFilter(android::content::Context arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::RelativeLayout(
 			"android.widget.DialerFilter",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	
 	// Methods
 	void DialerFilter::append(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"append",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -73,99 +71,99 @@ namespace android::widget
 	}
 	void DialerFilter::clearText()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clearText",
 			"()V"
 		);
 	}
 	jstring DialerFilter::getDigits()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDigits",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jstring DialerFilter::getFilterText()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFilterText",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jstring DialerFilter::getLetters()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLetters",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jint DialerFilter::getMode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMode",
 			"()I"
 		);
 	}
 	jboolean DialerFilter::isQwertyKeyboard()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isQwertyKeyboard",
 			"()Z"
 		);
 	}
 	jboolean DialerFilter::onKeyDown(jint arg0, android::view::KeyEvent arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onKeyDown",
 			"(ILandroid/view/KeyEvent;)Z",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jboolean DialerFilter::onKeyUp(jint arg0, android::view::KeyEvent arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onKeyUp",
 			"(ILandroid/view/KeyEvent;)Z",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void DialerFilter::removeFilterWatcher(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeFilterWatcher",
 			"(Landroid/text/TextWatcher;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void DialerFilter::setDigitsWatcher(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDigitsWatcher",
 			"(Landroid/text/TextWatcher;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void DialerFilter::setFilterWatcher(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFilterWatcher",
 			"(Landroid/text/TextWatcher;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void DialerFilter::setLettersWatcher(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLettersWatcher",
 			"(Landroid/text/TextWatcher;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void DialerFilter::setMode(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMode",
 			"(I)V",
 			arg0

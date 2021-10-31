@@ -38,9 +38,11 @@ namespace java::nio::charset
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Charset(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Charset(QAndroidJniObject obj);
+		
 		// Constructors
-		Charset() = default;
 		
 		// Methods
 		static QAndroidJniObject availableCharsets();

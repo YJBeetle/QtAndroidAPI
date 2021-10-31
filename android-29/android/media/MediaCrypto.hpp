@@ -14,10 +14,12 @@ namespace android::media
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaCrypto(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaCrypto(QAndroidJniObject obj);
+		
 		// Constructors
 		MediaCrypto(java::util::UUID arg0, jbyteArray arg1);
-		MediaCrypto() = default;
 		
 		// Methods
 		static jboolean isCryptoSchemeSupported(java::util::UUID arg0);

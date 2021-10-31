@@ -98,11 +98,13 @@ namespace android::text::style
 		static jint WEEKDAY_TUESDAY();
 		static jint WEEKDAY_WEDNESDAY();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TtsSpan(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		TtsSpan(QAndroidJniObject obj);
+		
 		// Constructors
 		TtsSpan(android::os::Parcel arg0);
 		TtsSpan(jstring arg0, android::os::PersistableBundle arg1);
-		TtsSpan() = default;
 		
 		// Methods
 		jint describeContents();

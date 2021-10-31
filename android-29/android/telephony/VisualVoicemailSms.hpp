@@ -23,9 +23,11 @@ namespace android::telephony
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit VisualVoicemailSms(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		VisualVoicemailSms(QAndroidJniObject obj);
+		
 		// Constructors
-		VisualVoicemailSms() = default;
 		
 		// Methods
 		jint describeContents();

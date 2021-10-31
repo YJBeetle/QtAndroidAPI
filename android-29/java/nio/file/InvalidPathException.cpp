@@ -4,53 +4,51 @@ namespace java::nio::file
 {
 	// Fields
 	
-	InvalidPathException::InvalidPathException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	InvalidPathException::InvalidPathException(QAndroidJniObject obj) : java::lang::IllegalArgumentException(obj) {}
+	
 	// Constructors
 	InvalidPathException::InvalidPathException(jstring arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::IllegalArgumentException(
 			"java.nio.file.InvalidPathException",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	InvalidPathException::InvalidPathException(jstring arg0, jstring arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::IllegalArgumentException(
 			"java.nio.file.InvalidPathException",
 			"(Ljava/lang/String;Ljava/lang/String;I)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	jint InvalidPathException::getIndex()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getIndex",
 			"()I"
 		);
 	}
 	jstring InvalidPathException::getInput()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getInput",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring InvalidPathException::getMessage()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring InvalidPathException::getReason()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getReason",
 			"()Ljava/lang/String;"
 		).object<jstring>();

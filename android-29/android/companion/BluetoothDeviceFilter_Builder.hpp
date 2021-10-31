@@ -22,7 +22,10 @@ namespace android::companion
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BluetoothDeviceFilter_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		BluetoothDeviceFilter_Builder(QAndroidJniObject obj);
+		
 		// Constructors
 		BluetoothDeviceFilter_Builder();
 		

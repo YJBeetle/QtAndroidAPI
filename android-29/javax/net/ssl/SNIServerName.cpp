@@ -4,13 +4,15 @@ namespace javax::net::ssl
 {
 	// Fields
 	
-	SNIServerName::SNIServerName(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SNIServerName::SNIServerName(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jboolean SNIServerName::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -18,28 +20,28 @@ namespace javax::net::ssl
 	}
 	jbyteArray SNIServerName::getEncoded()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEncoded",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jint SNIServerName::getType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getType",
 			"()I"
 		);
 	}
 	jint SNIServerName::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring SNIServerName::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

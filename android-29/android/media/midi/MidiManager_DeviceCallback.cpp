@@ -6,39 +6,39 @@ namespace android::media::midi
 {
 	// Fields
 	
-	MidiManager_DeviceCallback::MidiManager_DeviceCallback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MidiManager_DeviceCallback::MidiManager_DeviceCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MidiManager_DeviceCallback::MidiManager_DeviceCallback()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.midi.MidiManager$DeviceCallback",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void MidiManager_DeviceCallback::onDeviceAdded(android::media::midi::MidiDeviceInfo arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onDeviceAdded",
 			"(Landroid/media/midi/MidiDeviceInfo;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MidiManager_DeviceCallback::onDeviceRemoved(android::media::midi::MidiDeviceInfo arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onDeviceRemoved",
 			"(Landroid/media/midi/MidiDeviceInfo;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MidiManager_DeviceCallback::onDeviceStatusChanged(android::media::midi::MidiDeviceStatus arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onDeviceStatusChanged",
 			"(Landroid/media/midi/MidiDeviceStatus;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::media::midi

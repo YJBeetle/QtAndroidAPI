@@ -6,7 +6,9 @@ namespace android::renderscript
 {
 	// Fields
 	
-	ScriptGroup_Future::ScriptGroup_Future(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ScriptGroup_Future::ScriptGroup_Future(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

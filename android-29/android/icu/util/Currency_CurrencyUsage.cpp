@@ -20,7 +20,9 @@ namespace android::icu::util
 		);
 	}
 	
-	Currency_CurrencyUsage::Currency_CurrencyUsage(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Currency_CurrencyUsage::Currency_CurrencyUsage(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

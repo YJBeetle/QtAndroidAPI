@@ -14,10 +14,12 @@ namespace android::net::http
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SslCertificate_DName(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SslCertificate_DName(QAndroidJniObject obj);
+		
 		// Constructors
 		SslCertificate_DName(android::net::http::SslCertificate arg0, jstring arg1);
-		SslCertificate_DName() = default;
 		
 		// Methods
 		jstring getCName();

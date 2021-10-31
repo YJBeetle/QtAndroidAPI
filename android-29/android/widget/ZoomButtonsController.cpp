@@ -7,58 +7,58 @@ namespace android::widget
 {
 	// Fields
 	
-	ZoomButtonsController::ZoomButtonsController(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ZoomButtonsController::ZoomButtonsController(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ZoomButtonsController::ZoomButtonsController(android::view::View arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.widget.ZoomButtonsController",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject ZoomButtonsController::getContainer()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getContainer",
 			"()Landroid/view/ViewGroup;"
 		);
 	}
 	QAndroidJniObject ZoomButtonsController::getZoomControls()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getZoomControls",
 			"()Landroid/view/View;"
 		);
 	}
 	jboolean ZoomButtonsController::isAutoDismissed()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isAutoDismissed",
 			"()Z"
 		);
 	}
 	jboolean ZoomButtonsController::isVisible()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isVisible",
 			"()Z"
 		);
 	}
 	jboolean ZoomButtonsController::onTouch(android::view::View arg0, android::view::MotionEvent arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onTouch",
 			"(Landroid/view/View;Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void ZoomButtonsController::setAutoDismissed(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAutoDismissed",
 			"(Z)V",
 			arg0
@@ -66,7 +66,7 @@ namespace android::widget
 	}
 	void ZoomButtonsController::setFocusable(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFocusable",
 			"(Z)V",
 			arg0
@@ -74,15 +74,15 @@ namespace android::widget
 	}
 	void ZoomButtonsController::setOnZoomListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnZoomListener",
 			"(Landroid/widget/ZoomButtonsController$OnZoomListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ZoomButtonsController::setVisible(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setVisible",
 			"(Z)V",
 			arg0
@@ -90,7 +90,7 @@ namespace android::widget
 	}
 	void ZoomButtonsController::setZoomInEnabled(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setZoomInEnabled",
 			"(Z)V",
 			arg0
@@ -98,7 +98,7 @@ namespace android::widget
 	}
 	void ZoomButtonsController::setZoomOutEnabled(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setZoomOutEnabled",
 			"(Z)V",
 			arg0
@@ -106,7 +106,7 @@ namespace android::widget
 	}
 	void ZoomButtonsController::setZoomSpeed(jlong arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setZoomSpeed",
 			"(J)V",
 			arg0

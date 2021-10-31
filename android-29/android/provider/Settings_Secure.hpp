@@ -85,7 +85,10 @@ namespace android::provider
 		static jstring WIFI_WATCHDOG_PING_TIMEOUT_MS();
 		static jstring WIFI_WATCHDOG_WATCH_LIST();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Settings_Secure(const char *className, const char *sig, Ts...agv) : android::provider::Settings_NameValueTable(className, sig, std::forward<Ts>(agv)...) {}
 		Settings_Secure(QAndroidJniObject obj);
+		
 		// Constructors
 		Settings_Secure();
 		

@@ -28,13 +28,15 @@ namespace java::text
 		);
 	}
 	
-	AttributedCharacterIterator_Attribute::AttributedCharacterIterator_Attribute(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AttributedCharacterIterator_Attribute::AttributedCharacterIterator_Attribute(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jboolean AttributedCharacterIterator_Attribute::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -42,14 +44,14 @@ namespace java::text
 	}
 	jint AttributedCharacterIterator_Attribute::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring AttributedCharacterIterator_Attribute::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

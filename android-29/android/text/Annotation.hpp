@@ -14,11 +14,13 @@ namespace android::text
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Annotation(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Annotation(QAndroidJniObject obj);
+		
 		// Constructors
 		Annotation(android::os::Parcel arg0);
 		Annotation(jstring arg0, jstring arg1);
-		Annotation() = default;
 		
 		// Methods
 		jint describeContents();

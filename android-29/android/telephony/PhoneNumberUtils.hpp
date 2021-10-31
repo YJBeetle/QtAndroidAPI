@@ -36,7 +36,10 @@ namespace android::telephony
 		static jchar WAIT();
 		static jchar WILD();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PhoneNumberUtils(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PhoneNumberUtils(QAndroidJniObject obj);
+		
 		// Constructors
 		PhoneNumberUtils();
 		

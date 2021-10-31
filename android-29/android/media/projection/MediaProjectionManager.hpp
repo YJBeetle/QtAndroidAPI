@@ -22,9 +22,11 @@ namespace android::media::projection
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaProjectionManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaProjectionManager(QAndroidJniObject obj);
+		
 		// Constructors
-		MediaProjectionManager() = default;
 		
 		// Methods
 		QAndroidJniObject createScreenCaptureIntent();

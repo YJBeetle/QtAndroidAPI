@@ -239,16 +239,16 @@ namespace android::speech::tts
 		).object<jstring>();
 	}
 	
-	TextToSpeech_Engine::TextToSpeech_Engine(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TextToSpeech_Engine::TextToSpeech_Engine(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	TextToSpeech_Engine::TextToSpeech_Engine(android::speech::tts::TextToSpeech arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.speech.tts.TextToSpeech$Engine",
 			"(Landroid/speech/tts/TextToSpeech;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 } // namespace android::speech::tts

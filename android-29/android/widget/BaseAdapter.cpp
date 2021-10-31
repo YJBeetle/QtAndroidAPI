@@ -7,44 +7,44 @@ namespace android::widget
 {
 	// Fields
 	
-	BaseAdapter::BaseAdapter(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BaseAdapter::BaseAdapter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	BaseAdapter::BaseAdapter()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.widget.BaseAdapter",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean BaseAdapter::areAllItemsEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"areAllItemsEnabled",
 			"()Z"
 		);
 	}
 	jarray BaseAdapter::getAutofillOptions()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAutofillOptions",
 			"()[Ljava/lang/CharSequence;"
 		).object<jarray>();
 	}
 	QAndroidJniObject BaseAdapter::getDropDownView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDropDownView",
 			"(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	jint BaseAdapter::getItemViewType(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getItemViewType",
 			"(I)I",
 			arg0
@@ -52,28 +52,28 @@ namespace android::widget
 	}
 	jint BaseAdapter::getViewTypeCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getViewTypeCount",
 			"()I"
 		);
 	}
 	jboolean BaseAdapter::hasStableIds()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasStableIds",
 			"()Z"
 		);
 	}
 	jboolean BaseAdapter::isEmpty()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
 	jboolean BaseAdapter::isEnabled(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEnabled",
 			"(I)Z",
 			arg0
@@ -81,29 +81,29 @@ namespace android::widget
 	}
 	void BaseAdapter::notifyDataSetChanged()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"notifyDataSetChanged",
 			"()V"
 		);
 	}
 	void BaseAdapter::notifyDataSetInvalidated()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"notifyDataSetInvalidated",
 			"()V"
 		);
 	}
 	void BaseAdapter::registerDataSetObserver(android::database::DataSetObserver arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"registerDataSetObserver",
 			"(Landroid/database/DataSetObserver;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void BaseAdapter::setAutofillOptions(jarray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAutofillOptions",
 			"([Ljava/lang/CharSequence;)V",
 			arg0
@@ -111,10 +111,10 @@ namespace android::widget
 	}
 	void BaseAdapter::unregisterDataSetObserver(android::database::DataSetObserver arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"unregisterDataSetObserver",
 			"(Landroid/database/DataSetObserver;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::widget

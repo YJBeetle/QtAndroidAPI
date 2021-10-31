@@ -13,10 +13,12 @@ namespace java::nio::charset
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit UnsupportedCharsetException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalArgumentException(className, sig, std::forward<Ts>(agv)...) {}
 		UnsupportedCharsetException(QAndroidJniObject obj);
+		
 		// Constructors
 		UnsupportedCharsetException(jstring arg0);
-		UnsupportedCharsetException() = default;
 		
 		// Methods
 		jstring getCharsetName();

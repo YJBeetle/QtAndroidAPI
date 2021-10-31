@@ -33,11 +33,13 @@ namespace android::widget
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TableRow(const char *className, const char *sig, Ts...agv) : android::widget::LinearLayout(className, sig, std::forward<Ts>(agv)...) {}
 		TableRow(QAndroidJniObject obj);
+		
 		// Constructors
 		TableRow(android::content::Context arg0);
 		TableRow(android::content::Context arg0, __JniBaseClass arg1);
-		TableRow() = default;
 		
 		// Methods
 		QAndroidJniObject generateLayoutParams(__JniBaseClass arg0);

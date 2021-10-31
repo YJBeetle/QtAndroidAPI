@@ -26,9 +26,11 @@ namespace android::os
 		static jint SHOW_INITIALIZED();
 		static jint TRACE_COUNT_ALLOCS();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Debug(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Debug(QAndroidJniObject obj);
+		
 		// Constructors
-		Debug() = default;
 		
 		// Methods
 		static void attachJvmtiAgent(jstring arg0, jstring arg1, java::lang::ClassLoader arg2);

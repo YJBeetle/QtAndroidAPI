@@ -4,15 +4,15 @@ namespace java::nio::file
 {
 	// Fields
 	
-	ClosedFileSystemException::ClosedFileSystemException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ClosedFileSystemException::ClosedFileSystemException(QAndroidJniObject obj) : java::lang::IllegalStateException(obj) {}
+	
 	// Constructors
 	ClosedFileSystemException::ClosedFileSystemException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::IllegalStateException(
 			"java.nio.file.ClosedFileSystemException",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::nio::file

@@ -20,11 +20,13 @@ namespace java::lang
 		static jint SIZE();
 		static jclass TYPE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Short(const char *className, const char *sig, Ts...agv) : java::lang::Number(className, sig, std::forward<Ts>(agv)...) {}
 		Short(QAndroidJniObject obj);
+		
 		// Constructors
 		Short(jstring arg0);
 		Short(jshort arg0);
-		Short() = default;
 		
 		// Methods
 		static jint compare(jshort arg0, jshort arg1);

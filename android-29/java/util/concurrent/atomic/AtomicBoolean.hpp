@@ -10,7 +10,10 @@ namespace java::util::concurrent::atomic
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AtomicBoolean(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AtomicBoolean(QAndroidJniObject obj);
+		
 		// Constructors
 		AtomicBoolean();
 		AtomicBoolean(jboolean arg0);

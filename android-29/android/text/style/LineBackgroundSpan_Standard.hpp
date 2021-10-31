@@ -22,11 +22,13 @@ namespace android::text::style
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit LineBackgroundSpan_Standard(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		LineBackgroundSpan_Standard(QAndroidJniObject obj);
+		
 		// Constructors
 		LineBackgroundSpan_Standard(android::os::Parcel arg0);
 		LineBackgroundSpan_Standard(jint arg0);
-		LineBackgroundSpan_Standard() = default;
 		
 		// Methods
 		jint describeContents();

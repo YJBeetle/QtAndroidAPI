@@ -22,9 +22,11 @@ namespace android::view::textclassifier
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TextClassifierEvent_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		TextClassifierEvent_Builder(QAndroidJniObject obj);
+		
 		// Constructors
-		TextClassifierEvent_Builder() = default;
 		
 		// Methods
 		QAndroidJniObject setActionIndices(jintArray arg0);

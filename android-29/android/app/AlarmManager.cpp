@@ -78,131 +78,133 @@ namespace android::app
 		);
 	}
 	
-	AlarmManager::AlarmManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AlarmManager::AlarmManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void AlarmManager::cancel(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"cancel",
 			"(Landroid/app/AlarmManager$OnAlarmListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AlarmManager::cancel(android::app::PendingIntent arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"cancel",
 			"(Landroid/app/PendingIntent;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject AlarmManager::getNextAlarmClock()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getNextAlarmClock",
 			"()Landroid/app/AlarmManager$AlarmClockInfo;"
 		);
 	}
 	void AlarmManager::set(jint arg0, jlong arg1, android::app::PendingIntent arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"set",
 			"(IJLandroid/app/PendingIntent;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void AlarmManager::set(jint arg0, jlong arg1, jstring arg2, __JniBaseClass arg3, android::os::Handler arg4)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"set",
 			"(IJLjava/lang/String;Landroid/app/AlarmManager$OnAlarmListener;Landroid/os/Handler;)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object()
+			arg3.object(),
+			arg4.object()
 		);
 	}
 	void AlarmManager::setAlarmClock(android::app::AlarmManager_AlarmClockInfo arg0, android::app::PendingIntent arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAlarmClock",
 			"(Landroid/app/AlarmManager$AlarmClockInfo;Landroid/app/PendingIntent;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void AlarmManager::setAndAllowWhileIdle(jint arg0, jlong arg1, android::app::PendingIntent arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAndAllowWhileIdle",
 			"(IJLandroid/app/PendingIntent;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void AlarmManager::setExact(jint arg0, jlong arg1, android::app::PendingIntent arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setExact",
 			"(IJLandroid/app/PendingIntent;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void AlarmManager::setExact(jint arg0, jlong arg1, jstring arg2, __JniBaseClass arg3, android::os::Handler arg4)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setExact",
 			"(IJLjava/lang/String;Landroid/app/AlarmManager$OnAlarmListener;Landroid/os/Handler;)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object()
+			arg3.object(),
+			arg4.object()
 		);
 	}
 	void AlarmManager::setExactAndAllowWhileIdle(jint arg0, jlong arg1, android::app::PendingIntent arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setExactAndAllowWhileIdle",
 			"(IJLandroid/app/PendingIntent;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void AlarmManager::setInexactRepeating(jint arg0, jlong arg1, jlong arg2, android::app::PendingIntent arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setInexactRepeating",
 			"(IJJLandroid/app/PendingIntent;)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	void AlarmManager::setRepeating(jint arg0, jlong arg1, jlong arg2, android::app::PendingIntent arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setRepeating",
 			"(IJJLandroid/app/PendingIntent;)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	void AlarmManager::setTime(jlong arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTime",
 			"(J)V",
 			arg0
@@ -210,7 +212,7 @@ namespace android::app
 	}
 	void AlarmManager::setTimeZone(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTimeZone",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -218,26 +220,26 @@ namespace android::app
 	}
 	void AlarmManager::setWindow(jint arg0, jlong arg1, jlong arg2, android::app::PendingIntent arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setWindow",
 			"(IJJLandroid/app/PendingIntent;)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	void AlarmManager::setWindow(jint arg0, jlong arg1, jlong arg2, jstring arg3, __JniBaseClass arg4, android::os::Handler arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setWindow",
 			"(IJJLjava/lang/String;Landroid/app/AlarmManager$OnAlarmListener;Landroid/os/Handler;)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object(),
-			arg5.__jniObject().object()
+			arg4.object(),
+			arg5.object()
 		);
 	}
 } // namespace android::app

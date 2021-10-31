@@ -59,13 +59,15 @@ namespace android::widget
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ImageView(const char *className, const char *sig, Ts...agv) : android::view::View(className, sig, std::forward<Ts>(agv)...) {}
 		ImageView(QAndroidJniObject obj);
+		
 		// Constructors
 		ImageView(android::content::Context arg0);
 		ImageView(android::content::Context arg0, __JniBaseClass arg1);
 		ImageView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		ImageView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
-		ImageView() = default;
 		
 		// Methods
 		void animateTransform(android::graphics::Matrix arg0);

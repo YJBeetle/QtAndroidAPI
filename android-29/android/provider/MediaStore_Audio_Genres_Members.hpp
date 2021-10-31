@@ -18,7 +18,10 @@ namespace android::provider
 		static jstring DEFAULT_SORT_ORDER();
 		static jstring GENRE_ID();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaStore_Audio_Genres_Members(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaStore_Audio_Genres_Members(QAndroidJniObject obj);
+		
 		// Constructors
 		MediaStore_Audio_Genres_Members();
 		

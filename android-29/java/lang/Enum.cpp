@@ -6,7 +6,9 @@ namespace java::lang
 {
 	// Fields
 	
-	Enum::Enum(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Enum::Enum(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -22,15 +24,15 @@ namespace java::lang
 	}
 	jint Enum::compareTo(java::lang::Enum arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Enum;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint Enum::compareTo(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -38,14 +40,14 @@ namespace java::lang
 	}
 	QAndroidJniObject Enum::describeConstable()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"describeConstable",
 			"()Ljava/util/Optional;"
 		);
 	}
 	jboolean Enum::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -53,35 +55,35 @@ namespace java::lang
 	}
 	jclass Enum::getDeclaringClass()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDeclaringClass",
 			"()Ljava/lang/Class;"
 		).object<jclass>();
 	}
 	jint Enum::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring Enum::name()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"name",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint Enum::ordinal()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"ordinal",
 			"()I"
 		);
 	}
 	jstring Enum::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

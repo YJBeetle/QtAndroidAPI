@@ -13,7 +13,9 @@ namespace android::provider
 		);
 	}
 	
-	CalendarContract_CalendarEntity::CalendarContract_CalendarEntity(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CalendarContract_CalendarEntity::CalendarContract_CalendarEntity(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -23,7 +25,7 @@ namespace android::provider
 			"android.provider.CalendarContract$CalendarEntity",
 			"newEntityIterator",
 			"(Landroid/database/Cursor;)Landroid/content/EntityIterator;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::provider

@@ -12,7 +12,9 @@ namespace java::time::chrono
 {
 	// Fields
 	
-	JapaneseDate::JapaneseDate(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	JapaneseDate::JapaneseDate(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -22,7 +24,7 @@ namespace java::time::chrono
 			"java.time.chrono.JapaneseDate",
 			"from",
 			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/chrono/JapaneseDate;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject JapaneseDate::now()
@@ -39,7 +41,7 @@ namespace java::time::chrono
 			"java.time.chrono.JapaneseDate",
 			"now",
 			"(Ljava/time/Clock;)Ljava/time/chrono/JapaneseDate;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject JapaneseDate::now(java::time::ZoneId arg0)
@@ -48,7 +50,7 @@ namespace java::time::chrono
 			"java.time.chrono.JapaneseDate",
 			"now",
 			"(Ljava/time/ZoneId;)Ljava/time/chrono/JapaneseDate;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject JapaneseDate::of(jint arg0, jint arg1, jint arg2)
@@ -68,7 +70,7 @@ namespace java::time::chrono
 			"java.time.chrono.JapaneseDate",
 			"of",
 			"(Ljava/time/chrono/JapaneseEra;III)Ljava/time/chrono/JapaneseDate;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3
@@ -76,15 +78,15 @@ namespace java::time::chrono
 	}
 	QAndroidJniObject JapaneseDate::atTime(java::time::LocalTime arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"atTime",
 			"(Ljava/time/LocalTime;)Ljava/time/chrono/ChronoLocalDateTime;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean JapaneseDate::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -92,142 +94,142 @@ namespace java::time::chrono
 	}
 	QAndroidJniObject JapaneseDate::getChronology()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getChronology",
 			"()Ljava/time/chrono/JapaneseChronology;"
 		);
 	}
 	QAndroidJniObject JapaneseDate::getEra()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEra",
 			"()Ljava/time/chrono/JapaneseEra;"
 		);
 	}
 	jlong JapaneseDate::getLong(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getLong",
 			"(Ljava/time/temporal/TemporalField;)J",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint JapaneseDate::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean JapaneseDate::isSupported(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isSupported",
 			"(Ljava/time/temporal/TemporalField;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint JapaneseDate::lengthOfMonth()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"lengthOfMonth",
 			"()I"
 		);
 	}
 	jint JapaneseDate::lengthOfYear()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"lengthOfYear",
 			"()I"
 		);
 	}
 	QAndroidJniObject JapaneseDate::minus(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"minus",
 			"(Ljava/time/temporal/TemporalAmount;)Ljava/time/chrono/JapaneseDate;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject JapaneseDate::minus(jlong arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"minus",
 			"(JLjava/time/temporal/TemporalUnit;)Ljava/time/chrono/JapaneseDate;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject JapaneseDate::plus(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"plus",
 			"(Ljava/time/temporal/TemporalAmount;)Ljava/time/chrono/JapaneseDate;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject JapaneseDate::plus(jlong arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"plus",
 			"(JLjava/time/temporal/TemporalUnit;)Ljava/time/chrono/JapaneseDate;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject JapaneseDate::range(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"range",
 			"(Ljava/time/temporal/TemporalField;)Ljava/time/temporal/ValueRange;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jlong JapaneseDate::toEpochDay()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"toEpochDay",
 			"()J"
 		);
 	}
 	jstring JapaneseDate::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject JapaneseDate::until(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"until",
 			"(Ljava/time/chrono/ChronoLocalDate;)Ljava/time/chrono/ChronoPeriod;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jlong JapaneseDate::until(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"until",
 			"(Ljava/time/temporal/Temporal;Ljava/time/temporal/TemporalUnit;)J",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject JapaneseDate::with(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"with",
 			"(Ljava/time/temporal/TemporalAdjuster;)Ljava/time/chrono/JapaneseDate;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject JapaneseDate::with(__JniBaseClass arg0, jlong arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"with",
 			"(Ljava/time/temporal/TemporalField;J)Ljava/time/chrono/JapaneseDate;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

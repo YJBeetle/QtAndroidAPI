@@ -4,23 +4,21 @@ namespace java::security
 {
 	// Fields
 	
-	NoSuchProviderException::NoSuchProviderException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NoSuchProviderException::NoSuchProviderException(QAndroidJniObject obj) : java::security::GeneralSecurityException(obj) {}
+	
 	// Constructors
 	NoSuchProviderException::NoSuchProviderException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::security::GeneralSecurityException(
 			"java.security.NoSuchProviderException",
 			"()V"
-		);
-	}
+		) {}
 	NoSuchProviderException::NoSuchProviderException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::security::GeneralSecurityException(
 			"java.security.NoSuchProviderException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::security

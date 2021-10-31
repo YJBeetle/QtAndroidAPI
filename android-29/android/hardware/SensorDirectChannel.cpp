@@ -48,29 +48,31 @@ namespace android::hardware
 		);
 	}
 	
-	SensorDirectChannel::SensorDirectChannel(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SensorDirectChannel::SensorDirectChannel(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void SensorDirectChannel::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	jint SensorDirectChannel::configure(android::hardware::Sensor arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"configure",
 			"(Landroid/hardware/Sensor;I)I",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	jboolean SensorDirectChannel::isOpen()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isOpen",
 			"()Z"
 		);

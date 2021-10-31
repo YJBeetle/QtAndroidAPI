@@ -12,7 +12,10 @@ namespace android::provider
 		static jstring DEFERRED_SNIPPETING_KEY();
 		static jstring SNIPPET();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ContactsContract_SearchSnippets(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ContactsContract_SearchSnippets(QAndroidJniObject obj);
+		
 		// Constructors
 		ContactsContract_SearchSnippets();
 		

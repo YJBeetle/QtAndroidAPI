@@ -38,9 +38,11 @@ namespace java::time::zone
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ZoneOffsetTransitionRule(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ZoneOffsetTransitionRule(QAndroidJniObject obj);
+		
 		// Constructors
-		ZoneOffsetTransitionRule() = default;
 		
 		// Methods
 		static QAndroidJniObject of(java::time::Month arg0, jint arg1, java::time::DayOfWeek arg2, java::time::LocalTime arg3, jboolean arg4, java::time::zone::ZoneOffsetTransitionRule_TimeDefinition arg5, java::time::ZoneOffset arg6, java::time::ZoneOffset arg7, java::time::ZoneOffset arg8);

@@ -12,24 +12,24 @@ namespace android::print
 		);
 	}
 	
-	PrintAttributes_Margins::PrintAttributes_Margins(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PrintAttributes_Margins::PrintAttributes_Margins(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	PrintAttributes_Margins::PrintAttributes_Margins(jint arg0, jint arg1, jint arg2, jint arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.print.PrintAttributes$Margins",
 			"(IIII)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean PrintAttributes_Margins::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -37,42 +37,42 @@ namespace android::print
 	}
 	jint PrintAttributes_Margins::getBottomMils()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getBottomMils",
 			"()I"
 		);
 	}
 	jint PrintAttributes_Margins::getLeftMils()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLeftMils",
 			"()I"
 		);
 	}
 	jint PrintAttributes_Margins::getRightMils()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRightMils",
 			"()I"
 		);
 	}
 	jint PrintAttributes_Margins::getTopMils()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTopMils",
 			"()I"
 		);
 	}
 	jint PrintAttributes_Margins::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring PrintAttributes_Margins::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

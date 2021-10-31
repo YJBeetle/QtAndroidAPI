@@ -4,27 +4,29 @@ namespace android::drm
 {
 	// Fields
 	
-	ProcessedData::ProcessedData(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ProcessedData::ProcessedData(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jstring ProcessedData::getAccountId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAccountId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jbyteArray ProcessedData::getData()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getData",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jstring ProcessedData::getSubscriptionId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSubscriptionId",
 			"()Ljava/lang/String;"
 		).object<jstring>();

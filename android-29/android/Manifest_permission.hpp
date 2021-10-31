@@ -168,7 +168,10 @@ namespace android
 		static jstring WRITE_SYNC_SETTINGS();
 		static jstring WRITE_VOICEMAIL();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Manifest_permission(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Manifest_permission(QAndroidJniObject obj);
+		
 		// Constructors
 		Manifest_permission();
 		

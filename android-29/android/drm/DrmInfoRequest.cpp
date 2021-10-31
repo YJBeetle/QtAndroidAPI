@@ -48,22 +48,22 @@ namespace android::drm
 		);
 	}
 	
-	DrmInfoRequest::DrmInfoRequest(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DrmInfoRequest::DrmInfoRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	DrmInfoRequest::DrmInfoRequest(jint arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.drm.DrmInfoRequest",
 			"(ILjava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jobject DrmInfoRequest::get(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
 			arg0
@@ -71,35 +71,35 @@ namespace android::drm
 	}
 	jint DrmInfoRequest::getInfoType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getInfoType",
 			"()I"
 		);
 	}
 	jstring DrmInfoRequest::getMimeType()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMimeType",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject DrmInfoRequest::iterator()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
 	QAndroidJniObject DrmInfoRequest::keyIterator()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"keyIterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
 	void DrmInfoRequest::put(jstring arg0, jobject arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"put",
 			"(Ljava/lang/String;Ljava/lang/Object;)V",
 			arg0,

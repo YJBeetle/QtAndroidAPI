@@ -7,33 +7,31 @@ namespace java::util::jar
 {
 	// Fields
 	
-	JarOutputStream::JarOutputStream(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	JarOutputStream::JarOutputStream(QAndroidJniObject obj) : java::util::zip::ZipOutputStream(obj) {}
+	
 	// Constructors
 	JarOutputStream::JarOutputStream(java::io::OutputStream arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::zip::ZipOutputStream(
 			"java.util.jar.JarOutputStream",
 			"(Ljava/io/OutputStream;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	JarOutputStream::JarOutputStream(java::io::OutputStream arg0, java::util::jar::Manifest arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::zip::ZipOutputStream(
 			"java.util.jar.JarOutputStream",
 			"(Ljava/io/OutputStream;Ljava/util/jar/Manifest;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	
 	// Methods
 	void JarOutputStream::putNextEntry(java::util::zip::ZipEntry arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putNextEntry",
 			"(Ljava/util/zip/ZipEntry;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace java::util::jar

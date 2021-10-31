@@ -47,24 +47,24 @@ namespace java::util::logging
 		);
 	}
 	
-	ErrorManager::ErrorManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ErrorManager::ErrorManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ErrorManager::ErrorManager()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.logging.ErrorManager",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void ErrorManager::error(jstring arg0, java::lang::Exception arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"error",
 			"(Ljava/lang/String;Ljava/lang/Exception;I)V",
 			arg0,
-			arg1.__jniObject().object(),
+			arg1.object(),
 			arg2
 		);
 	}

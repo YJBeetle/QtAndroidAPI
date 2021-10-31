@@ -6,35 +6,35 @@ namespace java::io
 	// Fields
 	QAndroidJniObject WriteAbortedException::detail()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"detail",
 			"Ljava/lang/Exception;"
 		);
 	}
 	
-	WriteAbortedException::WriteAbortedException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WriteAbortedException::WriteAbortedException(QAndroidJniObject obj) : java::io::ObjectStreamException(obj) {}
+	
 	// Constructors
 	WriteAbortedException::WriteAbortedException(jstring arg0, java::lang::Exception arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::ObjectStreamException(
 			"java.io.WriteAbortedException",
 			"(Ljava/lang/String;Ljava/lang/Exception;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
+			arg1.object()
+		) {}
 	
 	// Methods
 	jthrowable WriteAbortedException::getCause()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCause",
 			"()Ljava/lang/Throwable;"
 		).object<jthrowable>();
 	}
 	jstring WriteAbortedException::getMessage()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
 		).object<jstring>();

@@ -10,7 +10,10 @@ namespace android::text::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Rfc822Tokenizer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Rfc822Tokenizer(QAndroidJniObject obj);
+		
 		// Constructors
 		Rfc822Tokenizer();
 		

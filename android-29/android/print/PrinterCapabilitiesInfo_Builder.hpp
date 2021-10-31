@@ -30,10 +30,12 @@ namespace android::print
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PrinterCapabilitiesInfo_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PrinterCapabilitiesInfo_Builder(QAndroidJniObject obj);
+		
 		// Constructors
 		PrinterCapabilitiesInfo_Builder(android::print::PrinterId arg0);
-		PrinterCapabilitiesInfo_Builder() = default;
 		
 		// Methods
 		QAndroidJniObject addMediaSize(android::print::PrintAttributes_MediaSize arg0, jboolean arg1);

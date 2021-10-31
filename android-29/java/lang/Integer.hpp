@@ -24,11 +24,13 @@ namespace java::lang
 		static jint SIZE();
 		static jclass TYPE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Integer(const char *className, const char *sig, Ts...agv) : java::lang::Number(className, sig, std::forward<Ts>(agv)...) {}
 		Integer(QAndroidJniObject obj);
+		
 		// Constructors
 		Integer(jint arg0);
 		Integer(jstring arg0);
-		Integer() = default;
 		
 		// Methods
 		static jint bitCount(jint arg0);

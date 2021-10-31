@@ -5,28 +5,28 @@ namespace android::content
 {
 	// Fields
 	
-	Loader_ForceLoadContentObserver::Loader_ForceLoadContentObserver(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Loader_ForceLoadContentObserver::Loader_ForceLoadContentObserver(QAndroidJniObject obj) : android::database::ContentObserver(obj) {}
+	
 	// Constructors
 	Loader_ForceLoadContentObserver::Loader_ForceLoadContentObserver(android::content::Loader arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::database::ContentObserver(
 			"android.content.Loader$ForceLoadContentObserver",
 			"(Landroid/content/Loader;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jboolean Loader_ForceLoadContentObserver::deliverSelfNotifications()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"deliverSelfNotifications",
 			"()Z"
 		);
 	}
 	void Loader_ForceLoadContentObserver::onChange(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onChange",
 			"(Z)V",
 			arg0

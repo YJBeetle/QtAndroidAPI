@@ -143,7 +143,9 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	ContactsContract_Contacts::ContactsContract_Contacts(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ContactsContract_Contacts::ContactsContract_Contacts(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -153,8 +155,8 @@ namespace android::provider
 			"android.provider.ContactsContract$Contacts",
 			"getLookupUri",
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;)Landroid/net/Uri;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject ContactsContract_Contacts::getLookupUri(jlong arg0, jstring arg1)
@@ -182,8 +184,8 @@ namespace android::provider
 			"android.provider.ContactsContract$Contacts",
 			"lookupContact",
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;)Landroid/net/Uri;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void ContactsContract_Contacts::markAsContacted(android::content::ContentResolver arg0, jlong arg1)
@@ -192,7 +194,7 @@ namespace android::provider
 			"android.provider.ContactsContract$Contacts",
 			"markAsContacted",
 			"(Landroid/content/ContentResolver;J)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -202,8 +204,8 @@ namespace android::provider
 			"android.provider.ContactsContract$Contacts",
 			"openContactPhotoInputStream",
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;)Ljava/io/InputStream;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject ContactsContract_Contacts::openContactPhotoInputStream(android::content::ContentResolver arg0, android::net::Uri arg1, jboolean arg2)
@@ -212,8 +214,8 @@ namespace android::provider
 			"android.provider.ContactsContract$Contacts",
 			"openContactPhotoInputStream",
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;Z)Ljava/io/InputStream;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}

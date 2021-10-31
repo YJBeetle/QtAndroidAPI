@@ -18,9 +18,11 @@ namespace android::media
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit VolumeShaper(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		VolumeShaper(QAndroidJniObject obj);
+		
 		// Constructors
-		VolumeShaper() = default;
 		
 		// Methods
 		void apply(android::media::VolumeShaper_Operation arg0);

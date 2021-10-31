@@ -14,10 +14,12 @@ namespace android::app
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Instrumentation_ActivityResult(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Instrumentation_ActivityResult(QAndroidJniObject obj);
+		
 		// Constructors
 		Instrumentation_ActivityResult(jint arg0, android::content::Intent arg1);
-		Instrumentation_ActivityResult() = default;
 		
 		// Methods
 		jint getResultCode();

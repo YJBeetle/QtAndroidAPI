@@ -42,69 +42,71 @@ namespace android::service::autofill
 		);
 	}
 	
-	FillEventHistory_Event::FillEventHistory_Event(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FillEventHistory_Event::FillEventHistory_Event(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject FillEventHistory_Event::getChangedFields()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getChangedFields",
 			"()Ljava/util/Map;"
 		);
 	}
 	QAndroidJniObject FillEventHistory_Event::getClientState()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getClientState",
 			"()Landroid/os/Bundle;"
 		);
 	}
 	jstring FillEventHistory_Event::getDatasetId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDatasetId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject FillEventHistory_Event::getFieldsClassification()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFieldsClassification",
 			"()Ljava/util/Map;"
 		);
 	}
 	QAndroidJniObject FillEventHistory_Event::getIgnoredDatasetIds()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getIgnoredDatasetIds",
 			"()Ljava/util/Set;"
 		);
 	}
 	QAndroidJniObject FillEventHistory_Event::getManuallyEnteredField()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getManuallyEnteredField",
 			"()Ljava/util/Map;"
 		);
 	}
 	QAndroidJniObject FillEventHistory_Event::getSelectedDatasetIds()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSelectedDatasetIds",
 			"()Ljava/util/Set;"
 		);
 	}
 	jint FillEventHistory_Event::getType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getType",
 			"()I"
 		);
 	}
 	jstring FillEventHistory_Event::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

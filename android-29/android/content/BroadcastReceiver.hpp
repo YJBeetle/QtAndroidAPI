@@ -26,7 +26,10 @@ namespace android::content
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BroadcastReceiver(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		BroadcastReceiver(QAndroidJniObject obj);
+		
 		// Constructors
 		BroadcastReceiver();
 		

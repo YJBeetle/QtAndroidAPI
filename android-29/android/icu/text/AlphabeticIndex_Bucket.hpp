@@ -14,9 +14,11 @@ namespace android::icu::text
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AlphabeticIndex_Bucket(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AlphabeticIndex_Bucket(QAndroidJniObject obj);
+		
 		// Constructors
-		AlphabeticIndex_Bucket() = default;
 		
 		// Methods
 		jstring getLabel();

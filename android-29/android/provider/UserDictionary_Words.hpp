@@ -34,7 +34,10 @@ namespace android::provider
 		static jstring WORD();
 		static jstring _ID();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit UserDictionary_Words(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		UserDictionary_Words(QAndroidJniObject obj);
+		
 		// Constructors
 		UserDictionary_Words();
 		

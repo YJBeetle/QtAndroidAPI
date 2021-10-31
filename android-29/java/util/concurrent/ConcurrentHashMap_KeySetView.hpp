@@ -14,9 +14,11 @@ namespace java::util::concurrent
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ConcurrentHashMap_KeySetView(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ConcurrentHashMap_KeySetView(QAndroidJniObject obj);
+		
 		// Constructors
-		ConcurrentHashMap_KeySetView() = default;
 		
 		// Methods
 		jboolean add(jobject arg0);

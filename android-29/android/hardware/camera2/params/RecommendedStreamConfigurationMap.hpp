@@ -33,9 +33,11 @@ namespace android::hardware::camera2::params
 		static jint USECASE_VIDEO_SNAPSHOT();
 		static jint USECASE_ZSL();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit RecommendedStreamConfigurationMap(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		RecommendedStreamConfigurationMap(QAndroidJniObject obj);
+		
 		// Constructors
-		RecommendedStreamConfigurationMap() = default;
 		
 		// Methods
 		QAndroidJniObject getHighResolutionOutputSizes(jint arg0);

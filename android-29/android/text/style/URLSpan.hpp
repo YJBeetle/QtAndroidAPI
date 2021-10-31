@@ -20,11 +20,13 @@ namespace android::text::style
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit URLSpan(const char *className, const char *sig, Ts...agv) : android::text::style::ClickableSpan(className, sig, std::forward<Ts>(agv)...) {}
 		URLSpan(QAndroidJniObject obj);
+		
 		// Constructors
 		URLSpan(android::os::Parcel arg0);
 		URLSpan(jstring arg0);
-		URLSpan() = default;
 		
 		// Methods
 		jint describeContents();

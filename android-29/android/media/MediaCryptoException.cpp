@@ -4,16 +4,16 @@ namespace android::media
 {
 	// Fields
 	
-	MediaCryptoException::MediaCryptoException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaCryptoException::MediaCryptoException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
+	
 	// Constructors
 	MediaCryptoException::MediaCryptoException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Exception(
 			"android.media.MediaCryptoException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::media

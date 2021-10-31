@@ -5,13 +5,15 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	Pipe_SourceChannel::Pipe_SourceChannel(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Pipe_SourceChannel::Pipe_SourceChannel(QAndroidJniObject obj) : java::nio::channels::spi::AbstractSelectableChannel(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint Pipe_SourceChannel::validOps()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"validOps",
 			"()I"
 		);

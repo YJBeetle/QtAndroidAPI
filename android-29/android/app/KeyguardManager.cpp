@@ -8,13 +8,15 @@ namespace android::app
 {
 	// Fields
 	
-	KeyguardManager::KeyguardManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	KeyguardManager::KeyguardManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject KeyguardManager::createConfirmDeviceCredentialIntent(jstring arg0, jstring arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"createConfirmDeviceCredentialIntent",
 			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Landroid/content/Intent;",
 			arg0,
@@ -23,50 +25,50 @@ namespace android::app
 	}
 	void KeyguardManager::exitKeyguardSecurely(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"exitKeyguardSecurely",
 			"(Landroid/app/KeyguardManager$OnKeyguardExitResult;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean KeyguardManager::inKeyguardRestrictedInputMode()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"inKeyguardRestrictedInputMode",
 			"()Z"
 		);
 	}
 	jboolean KeyguardManager::isDeviceLocked()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isDeviceLocked",
 			"()Z"
 		);
 	}
 	jboolean KeyguardManager::isDeviceSecure()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isDeviceSecure",
 			"()Z"
 		);
 	}
 	jboolean KeyguardManager::isKeyguardLocked()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isKeyguardLocked",
 			"()Z"
 		);
 	}
 	jboolean KeyguardManager::isKeyguardSecure()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isKeyguardSecure",
 			"()Z"
 		);
 	}
 	QAndroidJniObject KeyguardManager::newKeyguardLock(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newKeyguardLock",
 			"(Ljava/lang/String;)Landroid/app/KeyguardManager$KeyguardLock;",
 			arg0
@@ -74,11 +76,11 @@ namespace android::app
 	}
 	void KeyguardManager::requestDismissKeyguard(android::app::Activity arg0, android::app::KeyguardManager_KeyguardDismissCallback arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"requestDismissKeyguard",
 			"(Landroid/app/Activity;Landroid/app/KeyguardManager$KeyguardDismissCallback;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 } // namespace android::app

@@ -46,10 +46,12 @@ namespace android::media::tv
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TvInputService_Session(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		TvInputService_Session(QAndroidJniObject obj);
+		
 		// Constructors
 		TvInputService_Session(android::content::Context arg0);
-		TvInputService_Session() = default;
 		
 		// Methods
 		void layoutSurface(jint arg0, jint arg1, jint arg2, jint arg3);

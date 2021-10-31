@@ -37,41 +37,41 @@ namespace android::webkit
 		).object<jstring>();
 	}
 	
-	PermissionRequest::PermissionRequest(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PermissionRequest::PermissionRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	PermissionRequest::PermissionRequest()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.webkit.PermissionRequest",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void PermissionRequest::deny()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"deny",
 			"()V"
 		);
 	}
 	QAndroidJniObject PermissionRequest::getOrigin()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getOrigin",
 			"()Landroid/net/Uri;"
 		);
 	}
 	jarray PermissionRequest::getResources()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getResources",
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	void PermissionRequest::grant(jarray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"grant",
 			"([Ljava/lang/String;)V",
 			arg0

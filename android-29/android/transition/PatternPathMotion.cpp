@@ -6,37 +6,33 @@ namespace android::transition
 {
 	// Fields
 	
-	PatternPathMotion::PatternPathMotion(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PatternPathMotion::PatternPathMotion(QAndroidJniObject obj) : android::transition::PathMotion(obj) {}
+	
 	// Constructors
 	PatternPathMotion::PatternPathMotion()
-	{
-		__thiz = QAndroidJniObject(
+		: android::transition::PathMotion(
 			"android.transition.PatternPathMotion",
 			"()V"
-		);
-	}
+		) {}
 	PatternPathMotion::PatternPathMotion(android::graphics::Path arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::transition::PathMotion(
 			"android.transition.PatternPathMotion",
 			"(Landroid/graphics/Path;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	PatternPathMotion::PatternPathMotion(android::content::Context arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::transition::PathMotion(
 			"android.transition.PatternPathMotion",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject PatternPathMotion::getPath(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPath",
 			"(FFFF)Landroid/graphics/Path;",
 			arg0,
@@ -47,17 +43,17 @@ namespace android::transition
 	}
 	QAndroidJniObject PatternPathMotion::getPatternPath()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPatternPath",
 			"()Landroid/graphics/Path;"
 		);
 	}
 	void PatternPathMotion::setPatternPath(android::graphics::Path arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPatternPath",
 			"(Landroid/graphics/Path;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::transition

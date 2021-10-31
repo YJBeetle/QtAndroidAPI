@@ -18,9 +18,11 @@ namespace java::security
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit KeyFactory(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		KeyFactory(QAndroidJniObject obj);
+		
 		// Constructors
-		KeyFactory() = default;
 		
 		// Methods
 		static QAndroidJniObject getInstance(jstring arg0);

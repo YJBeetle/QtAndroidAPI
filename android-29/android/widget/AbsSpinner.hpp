@@ -33,13 +33,15 @@ namespace android::widget
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AbsSpinner(const char *className, const char *sig, Ts...agv) : android::widget::AdapterView(className, sig, std::forward<Ts>(agv)...) {}
 		AbsSpinner(QAndroidJniObject obj);
+		
 		// Constructors
 		AbsSpinner(android::content::Context arg0);
 		AbsSpinner(android::content::Context arg0, __JniBaseClass arg1);
 		AbsSpinner(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		AbsSpinner(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
-		AbsSpinner() = default;
 		
 		// Methods
 		void autofill(android::view::autofill::AutofillValue arg0);

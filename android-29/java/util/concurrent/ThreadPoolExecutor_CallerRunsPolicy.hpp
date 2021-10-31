@@ -14,7 +14,10 @@ namespace java::util::concurrent
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ThreadPoolExecutor_CallerRunsPolicy(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ThreadPoolExecutor_CallerRunsPolicy(QAndroidJniObject obj);
+		
 		// Constructors
 		ThreadPoolExecutor_CallerRunsPolicy();
 		

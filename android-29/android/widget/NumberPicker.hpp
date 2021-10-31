@@ -33,13 +33,15 @@ namespace android::widget
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit NumberPicker(const char *className, const char *sig, Ts...agv) : android::widget::LinearLayout(className, sig, std::forward<Ts>(agv)...) {}
 		NumberPicker(QAndroidJniObject obj);
+		
 		// Constructors
 		NumberPicker(android::content::Context arg0);
 		NumberPicker(android::content::Context arg0, __JniBaseClass arg1);
 		NumberPicker(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		NumberPicker(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
-		NumberPicker() = default;
 		
 		// Methods
 		void computeScroll();

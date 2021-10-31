@@ -41,14 +41,16 @@ namespace android::widget
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AutoCompleteTextView(const char *className, const char *sig, Ts...agv) : android::widget::EditText(className, sig, std::forward<Ts>(agv)...) {}
 		AutoCompleteTextView(QAndroidJniObject obj);
+		
 		// Constructors
 		AutoCompleteTextView(android::content::Context arg0);
 		AutoCompleteTextView(android::content::Context arg0, __JniBaseClass arg1);
 		AutoCompleteTextView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		AutoCompleteTextView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		AutoCompleteTextView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3, android::content::res::Resources_Theme arg4);
-		AutoCompleteTextView() = default;
 		
 		// Methods
 		void clearListSelection();

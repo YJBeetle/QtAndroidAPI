@@ -4,28 +4,28 @@ namespace java::util
 {
 	// Fields
 	
-	IllegalFormatCodePointException::IllegalFormatCodePointException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	IllegalFormatCodePointException::IllegalFormatCodePointException(QAndroidJniObject obj) : java::util::IllegalFormatException(obj) {}
+	
 	// Constructors
 	IllegalFormatCodePointException::IllegalFormatCodePointException(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::IllegalFormatException(
 			"java.util.IllegalFormatCodePointException",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jint IllegalFormatCodePointException::getCodePoint()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCodePoint",
 			"()I"
 		);
 	}
 	jstring IllegalFormatCodePointException::getMessage()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
 		).object<jstring>();

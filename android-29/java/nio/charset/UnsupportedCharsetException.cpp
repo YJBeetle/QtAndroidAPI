@@ -4,21 +4,21 @@ namespace java::nio::charset
 {
 	// Fields
 	
-	UnsupportedCharsetException::UnsupportedCharsetException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UnsupportedCharsetException::UnsupportedCharsetException(QAndroidJniObject obj) : java::lang::IllegalArgumentException(obj) {}
+	
 	// Constructors
 	UnsupportedCharsetException::UnsupportedCharsetException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::IllegalArgumentException(
 			"java.nio.charset.UnsupportedCharsetException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring UnsupportedCharsetException::getCharsetName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCharsetName",
 			"()Ljava/lang/String;"
 		).object<jstring>();

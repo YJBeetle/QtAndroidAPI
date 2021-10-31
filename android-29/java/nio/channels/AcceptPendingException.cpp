@@ -4,15 +4,15 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	AcceptPendingException::AcceptPendingException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AcceptPendingException::AcceptPendingException(QAndroidJniObject obj) : java::lang::IllegalStateException(obj) {}
+	
 	// Constructors
 	AcceptPendingException::AcceptPendingException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::IllegalStateException(
 			"java.nio.channels.AcceptPendingException",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::nio::channels

@@ -18,9 +18,11 @@ namespace java::net
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit URLEncoder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		URLEncoder(QAndroidJniObject obj);
+		
 		// Constructors
-		URLEncoder() = default;
 		
 		// Methods
 		static jstring encode(jstring arg0);

@@ -8,22 +8,22 @@ namespace java::util
 {
 	// Fields
 	
-	PropertyPermission::PropertyPermission(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PropertyPermission::PropertyPermission(QAndroidJniObject obj) : java::security::BasicPermission(obj) {}
+	
 	// Constructors
 	PropertyPermission::PropertyPermission(jstring arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::security::BasicPermission(
 			"java.util.PropertyPermission",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean PropertyPermission::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -31,29 +31,29 @@ namespace java::util
 	}
 	jstring PropertyPermission::getActions()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getActions",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint PropertyPermission::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean PropertyPermission::implies(java::security::Permission arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"implies",
 			"(Ljava/security/Permission;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject PropertyPermission::newPermissionCollection()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newPermissionCollection",
 			"()Ljava/security/PermissionCollection;"
 		);

@@ -6,30 +6,30 @@ namespace android::companion
 {
 	// Fields
 	
-	WifiDeviceFilter_Builder::WifiDeviceFilter_Builder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WifiDeviceFilter_Builder::WifiDeviceFilter_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	WifiDeviceFilter_Builder::WifiDeviceFilter_Builder()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.companion.WifiDeviceFilter$Builder",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject WifiDeviceFilter_Builder::build()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"build",
 			"()Landroid/companion/WifiDeviceFilter;"
 		);
 	}
 	QAndroidJniObject WifiDeviceFilter_Builder::setNamePattern(java::util::regex::Pattern arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setNamePattern",
 			"(Ljava/util/regex/Pattern;)Landroid/companion/WifiDeviceFilter$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::companion

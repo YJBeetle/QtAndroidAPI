@@ -14,35 +14,35 @@ namespace android::view::accessibility
 		);
 	}
 	
-	AccessibilityRequestPreparer::AccessibilityRequestPreparer(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AccessibilityRequestPreparer::AccessibilityRequestPreparer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	AccessibilityRequestPreparer::AccessibilityRequestPreparer(android::view::View arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.accessibility.AccessibilityRequestPreparer",
 			"(Landroid/view/View;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject AccessibilityRequestPreparer::getView()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getView",
 			"()Landroid/view/View;"
 		);
 	}
 	void AccessibilityRequestPreparer::onPrepareExtraData(jint arg0, jstring arg1, android::os::Bundle arg2, android::os::Message arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onPrepareExtraData",
 			"(ILjava/lang/String;Landroid/os/Bundle;Landroid/os/Message;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
+			arg2.object(),
+			arg3.object()
 		);
 	}
 } // namespace android::view::accessibility

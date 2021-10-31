@@ -6,33 +6,33 @@ namespace android::media::session
 {
 	// Fields
 	
-	PlaybackState_CustomAction_Builder::PlaybackState_CustomAction_Builder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PlaybackState_CustomAction_Builder::PlaybackState_CustomAction_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	PlaybackState_CustomAction_Builder::PlaybackState_CustomAction_Builder(jstring arg0, jstring arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.session.PlaybackState$CustomAction$Builder",
 			"(Ljava/lang/String;Ljava/lang/CharSequence;I)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject PlaybackState_CustomAction_Builder::build()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"build",
 			"()Landroid/media/session/PlaybackState$CustomAction;"
 		);
 	}
 	QAndroidJniObject PlaybackState_CustomAction_Builder::setExtras(android::os::Bundle arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setExtras",
 			"(Landroid/os/Bundle;)Landroid/media/session/PlaybackState$CustomAction$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::media::session

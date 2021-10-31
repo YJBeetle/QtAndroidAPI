@@ -50,30 +50,30 @@ namespace android::provider
 		);
 	}
 	
-	SearchRecentSuggestions::SearchRecentSuggestions(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SearchRecentSuggestions::SearchRecentSuggestions(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	SearchRecentSuggestions::SearchRecentSuggestions(android::content::Context arg0, jstring arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.provider.SearchRecentSuggestions",
 			"(Landroid/content/Context;Ljava/lang/String;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	void SearchRecentSuggestions::clearHistory()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clearHistory",
 			"()V"
 		);
 	}
 	void SearchRecentSuggestions::saveRecentQuery(jstring arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"saveRecentQuery",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,

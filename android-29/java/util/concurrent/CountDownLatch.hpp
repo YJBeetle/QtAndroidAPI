@@ -14,10 +14,12 @@ namespace java::util::concurrent
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CountDownLatch(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		CountDownLatch(QAndroidJniObject obj);
+		
 		// Constructors
 		CountDownLatch(jint arg0);
-		CountDownLatch() = default;
 		
 		// Methods
 		jboolean await(jlong arg0, java::util::concurrent::TimeUnit arg1);

@@ -14,7 +14,10 @@ namespace android::database::sqlite
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SQLiteTableLockedException(const char *className, const char *sig, Ts...agv) : android::database::sqlite::SQLiteException(className, sig, std::forward<Ts>(agv)...) {}
 		SQLiteTableLockedException(QAndroidJniObject obj);
+		
 		// Constructors
 		SQLiteTableLockedException();
 		SQLiteTableLockedException(jstring arg0);

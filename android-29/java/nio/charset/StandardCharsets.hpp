@@ -20,9 +20,11 @@ namespace java::nio::charset
 		static QAndroidJniObject UTF_16LE();
 		static QAndroidJniObject UTF_8();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit StandardCharsets(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		StandardCharsets(QAndroidJniObject obj);
+		
 		// Constructors
-		StandardCharsets() = default;
 		
 		// Methods
 	};

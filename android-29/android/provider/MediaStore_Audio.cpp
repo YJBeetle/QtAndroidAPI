@@ -4,15 +4,15 @@ namespace android::provider
 {
 	// Fields
 	
-	MediaStore_Audio::MediaStore_Audio(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaStore_Audio::MediaStore_Audio(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MediaStore_Audio::MediaStore_Audio()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.provider.MediaStore$Audio",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring MediaStore_Audio::keyFor(jstring arg0)

@@ -14,16 +14,16 @@ namespace android::os
 		);
 	}
 	
-	ParcelUuid::ParcelUuid(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ParcelUuid::ParcelUuid(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ParcelUuid::ParcelUuid(java::util::UUID arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.os.ParcelUuid",
 			"(Ljava/util/UUID;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject ParcelUuid::fromString(jstring arg0)
@@ -37,14 +37,14 @@ namespace android::os
 	}
 	jint ParcelUuid::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean ParcelUuid::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -52,31 +52,31 @@ namespace android::os
 	}
 	QAndroidJniObject ParcelUuid::getUuid()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getUuid",
 			"()Ljava/util/UUID;"
 		);
 	}
 	jint ParcelUuid::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring ParcelUuid::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void ParcelUuid::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

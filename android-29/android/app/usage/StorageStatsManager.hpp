@@ -26,9 +26,11 @@ namespace android::app::usage
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit StorageStatsManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		StorageStatsManager(QAndroidJniObject obj);
+		
 		// Constructors
-		StorageStatsManager() = default;
 		
 		// Methods
 		jlong getFreeBytes(java::util::UUID arg0);

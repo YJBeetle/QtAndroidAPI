@@ -6,7 +6,9 @@ namespace android::os
 {
 	// Fields
 	
-	StrictMode::StrictMode(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	StrictMode::StrictMode(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -65,7 +67,7 @@ namespace android::os
 			"android.os.StrictMode",
 			"setThreadPolicy",
 			"(Landroid/os/StrictMode$ThreadPolicy;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void StrictMode::setVmPolicy(android::os::StrictMode_VmPolicy arg0)
@@ -74,7 +76,7 @@ namespace android::os
 			"android.os.StrictMode",
 			"setVmPolicy",
 			"(Landroid/os/StrictMode$VmPolicy;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::os

@@ -33,7 +33,10 @@ namespace android::os
 		jint sendingUid();
 		jint what();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Message(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Message(QAndroidJniObject obj);
+		
 		// Constructors
 		Message();
 		

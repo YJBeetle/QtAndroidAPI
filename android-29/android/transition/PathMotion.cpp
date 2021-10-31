@@ -6,29 +6,27 @@ namespace android::transition
 {
 	// Fields
 	
-	PathMotion::PathMotion(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PathMotion::PathMotion(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	PathMotion::PathMotion()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.transition.PathMotion",
 			"()V"
-		);
-	}
+		) {}
 	PathMotion::PathMotion(android::content::Context arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.transition.PathMotion",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject PathMotion::getPath(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPath",
 			"(FFFF)Landroid/graphics/Path;",
 			arg0,

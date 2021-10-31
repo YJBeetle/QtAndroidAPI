@@ -40,12 +40,14 @@ namespace android::icu::text
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MessageFormat(const char *className, const char *sig, Ts...agv) : android::icu::text::UFormat(className, sig, std::forward<Ts>(agv)...) {}
 		MessageFormat(QAndroidJniObject obj);
+		
 		// Constructors
 		MessageFormat(jstring arg0);
 		MessageFormat(jstring arg0, android::icu::util::ULocale arg1);
 		MessageFormat(jstring arg0, java::util::Locale arg1);
-		MessageFormat() = default;
 		
 		// Methods
 		static jstring autoQuoteApostrophe(jstring arg0);

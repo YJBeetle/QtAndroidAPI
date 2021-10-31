@@ -77,7 +77,9 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	SettingsSlicesContract::SettingsSlicesContract(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SettingsSlicesContract::SettingsSlicesContract(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

@@ -23,9 +23,11 @@ namespace android::app
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DirectAction(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DirectAction(QAndroidJniObject obj);
+		
 		// Constructors
-		DirectAction() = default;
 		
 		// Methods
 		jint describeContents();

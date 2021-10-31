@@ -13,38 +13,38 @@ namespace android::telephony::euicc
 		);
 	}
 	
-	EuiccInfo::EuiccInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	EuiccInfo::EuiccInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	EuiccInfo::EuiccInfo(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.telephony.euicc.EuiccInfo",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jint EuiccInfo::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jstring EuiccInfo::getOsVersion()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getOsVersion",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void EuiccInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

@@ -99,78 +99,63 @@ namespace android::icu::util
 		);
 	}
 	
-	EthiopicCalendar::EthiopicCalendar(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	EthiopicCalendar::EthiopicCalendar(QAndroidJniObject obj) : android::icu::util::Calendar(obj) {}
+	
 	// Constructors
 	EthiopicCalendar::EthiopicCalendar()
-	{
-		__thiz = QAndroidJniObject(
+		: android::icu::util::Calendar(
 			"android.icu.util.EthiopicCalendar",
 			"()V"
-		);
-	}
+		) {}
 	EthiopicCalendar::EthiopicCalendar(android::icu::util::TimeZone arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::icu::util::Calendar(
 			"android.icu.util.EthiopicCalendar",
 			"(Landroid/icu/util/TimeZone;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	EthiopicCalendar::EthiopicCalendar(android::icu::util::ULocale arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::icu::util::Calendar(
 			"android.icu.util.EthiopicCalendar",
 			"(Landroid/icu/util/ULocale;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	EthiopicCalendar::EthiopicCalendar(java::util::Date arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::icu::util::Calendar(
 			"android.icu.util.EthiopicCalendar",
 			"(Ljava/util/Date;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	EthiopicCalendar::EthiopicCalendar(java::util::Locale arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::icu::util::Calendar(
 			"android.icu.util.EthiopicCalendar",
 			"(Ljava/util/Locale;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	EthiopicCalendar::EthiopicCalendar(android::icu::util::TimeZone arg0, android::icu::util::ULocale arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::icu::util::Calendar(
 			"android.icu.util.EthiopicCalendar",
 			"(Landroid/icu/util/TimeZone;Landroid/icu/util/ULocale;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	EthiopicCalendar::EthiopicCalendar(android::icu::util::TimeZone arg0, java::util::Locale arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::icu::util::Calendar(
 			"android.icu.util.EthiopicCalendar",
 			"(Landroid/icu/util/TimeZone;Ljava/util/Locale;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	EthiopicCalendar::EthiopicCalendar(jint arg0, jint arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: android::icu::util::Calendar(
 			"android.icu.util.EthiopicCalendar",
 			"(III)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	EthiopicCalendar::EthiopicCalendar(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
-	{
-		__thiz = QAndroidJniObject(
+		: android::icu::util::Calendar(
 			"android.icu.util.EthiopicCalendar",
 			"(IIIIII)V",
 			arg0,
@@ -179,27 +164,26 @@ namespace android::icu::util
 			arg3,
 			arg4,
 			arg5
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring EthiopicCalendar::getType()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jboolean EthiopicCalendar::isAmeteAlemEra()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isAmeteAlemEra",
 			"()Z"
 		);
 	}
 	void EthiopicCalendar::setAmeteAlemEra(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAmeteAlemEra",
 			"(Z)V",
 			arg0

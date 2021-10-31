@@ -4,23 +4,21 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	TimeoutException::TimeoutException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TimeoutException::TimeoutException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
+	
 	// Constructors
 	TimeoutException::TimeoutException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Exception(
 			"java.util.concurrent.TimeoutException",
 			"()V"
-		);
-	}
+		) {}
 	TimeoutException::TimeoutException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Exception(
 			"java.util.concurrent.TimeoutException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::util::concurrent

@@ -18,11 +18,13 @@ namespace java::security
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AccessControlContext(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AccessControlContext(QAndroidJniObject obj);
+		
 		// Constructors
 		AccessControlContext(jarray arg0);
 		AccessControlContext(java::security::AccessControlContext &arg0, __JniBaseClass arg1);
-		AccessControlContext() = default;
 		
 		// Methods
 		void checkPermission(java::security::Permission arg0);

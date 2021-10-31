@@ -47,7 +47,9 @@ namespace android::os
 		);
 	}
 	
-	VibrationEffect::VibrationEffect(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	VibrationEffect::VibrationEffect(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -93,7 +95,7 @@ namespace android::os
 	}
 	jint VibrationEffect::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);

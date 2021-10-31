@@ -6,39 +6,39 @@ namespace android::service::autofill
 {
 	// Fields
 	
-	BatchUpdates_Builder::BatchUpdates_Builder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BatchUpdates_Builder::BatchUpdates_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	BatchUpdates_Builder::BatchUpdates_Builder()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.service.autofill.BatchUpdates$Builder",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject BatchUpdates_Builder::build()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"build",
 			"()Landroid/service/autofill/BatchUpdates;"
 		);
 	}
 	QAndroidJniObject BatchUpdates_Builder::transformChild(jint arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"transformChild",
 			"(ILandroid/service/autofill/Transformation;)Landroid/service/autofill/BatchUpdates$Builder;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject BatchUpdates_Builder::updateTemplate(android::widget::RemoteViews arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"updateTemplate",
 			"(Landroid/widget/RemoteViews;)Landroid/service/autofill/BatchUpdates$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::service::autofill

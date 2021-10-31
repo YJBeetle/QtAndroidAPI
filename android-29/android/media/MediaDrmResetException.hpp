@@ -13,10 +13,12 @@ namespace android::media
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaDrmResetException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalStateException(className, sig, std::forward<Ts>(agv)...) {}
 		MediaDrmResetException(QAndroidJniObject obj);
+		
 		// Constructors
 		MediaDrmResetException(jstring arg0);
-		MediaDrmResetException() = default;
 		
 		// Methods
 	};

@@ -5,26 +5,28 @@ namespace android::media
 	// Fields
 	jbyteArray DrmInitData_SchemeInitData::data()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"data",
 			"[B"
 		).object<jbyteArray>();
 	}
 	jstring DrmInitData_SchemeInitData::mimeType()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"mimeType",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	
-	DrmInitData_SchemeInitData::DrmInitData_SchemeInitData(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DrmInitData_SchemeInitData::DrmInitData_SchemeInitData(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jboolean DrmInitData_SchemeInitData::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -32,7 +34,7 @@ namespace android::media
 	}
 	jint DrmInitData_SchemeInitData::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);

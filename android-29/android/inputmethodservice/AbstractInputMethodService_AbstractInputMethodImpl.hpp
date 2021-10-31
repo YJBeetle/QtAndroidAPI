@@ -14,10 +14,12 @@ namespace android::inputmethodservice
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AbstractInputMethodService_AbstractInputMethodImpl(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AbstractInputMethodService_AbstractInputMethodImpl(QAndroidJniObject obj);
+		
 		// Constructors
 		AbstractInputMethodService_AbstractInputMethodImpl(android::inputmethodservice::AbstractInputMethodService arg0);
-		AbstractInputMethodService_AbstractInputMethodImpl() = default;
 		
 		// Methods
 		void createSession(__JniBaseClass arg0);

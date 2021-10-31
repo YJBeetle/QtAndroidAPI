@@ -14,9 +14,11 @@ namespace android::graphics
 		static QAndroidJniObject ROUND();
 		static QAndroidJniObject SQUARE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Paint_Cap(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		Paint_Cap(QAndroidJniObject obj);
+		
 		// Constructors
-		Paint_Cap() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

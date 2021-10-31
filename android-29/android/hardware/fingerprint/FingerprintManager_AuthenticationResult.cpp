@@ -5,13 +5,15 @@ namespace android::hardware::fingerprint
 {
 	// Fields
 	
-	FingerprintManager_AuthenticationResult::FingerprintManager_AuthenticationResult(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FingerprintManager_AuthenticationResult::FingerprintManager_AuthenticationResult(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject FingerprintManager_AuthenticationResult::getCryptoObject()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCryptoObject",
 			"()Landroid/hardware/fingerprint/FingerprintManager$CryptoObject;"
 		);

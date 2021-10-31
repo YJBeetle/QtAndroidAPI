@@ -14,25 +14,27 @@ namespace android::net::wifi::rtt
 		).object<jstring>();
 	}
 	
-	WifiRttManager::WifiRttManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WifiRttManager::WifiRttManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jboolean WifiRttManager::isAvailable()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isAvailable",
 			"()Z"
 		);
 	}
 	void WifiRttManager::startRanging(android::net::wifi::rtt::RangingRequest arg0, __JniBaseClass arg1, android::net::wifi::rtt::RangingResultCallback arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"startRanging",
 			"(Landroid/net/wifi/rtt/RangingRequest;Ljava/util/concurrent/Executor;Landroid/net/wifi/rtt/RangingResultCallback;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 } // namespace android::net::wifi::rtt

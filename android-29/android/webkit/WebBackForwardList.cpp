@@ -5,34 +5,34 @@ namespace android::webkit
 {
 	// Fields
 	
-	WebBackForwardList::WebBackForwardList(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WebBackForwardList::WebBackForwardList(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	WebBackForwardList::WebBackForwardList()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.webkit.WebBackForwardList",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jint WebBackForwardList::getCurrentIndex()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCurrentIndex",
 			"()I"
 		);
 	}
 	QAndroidJniObject WebBackForwardList::getCurrentItem()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCurrentItem",
 			"()Landroid/webkit/WebHistoryItem;"
 		);
 	}
 	QAndroidJniObject WebBackForwardList::getItemAtIndex(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getItemAtIndex",
 			"(I)Landroid/webkit/WebHistoryItem;",
 			arg0
@@ -40,7 +40,7 @@ namespace android::webkit
 	}
 	jint WebBackForwardList::getSize()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSize",
 			"()I"
 		);

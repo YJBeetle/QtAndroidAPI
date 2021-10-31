@@ -18,34 +18,36 @@ namespace android::media
 		);
 	}
 	
-	MediaCodec_CodecException::MediaCodec_CodecException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaCodec_CodecException::MediaCodec_CodecException(QAndroidJniObject obj) : java::lang::IllegalStateException(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jstring MediaCodec_CodecException::getDiagnosticInfo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDiagnosticInfo",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint MediaCodec_CodecException::getErrorCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getErrorCode",
 			"()I"
 		);
 	}
 	jboolean MediaCodec_CodecException::isRecoverable()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isRecoverable",
 			"()Z"
 		);
 	}
 	jboolean MediaCodec_CodecException::isTransient()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isTransient",
 			"()Z"
 		);

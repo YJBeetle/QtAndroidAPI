@@ -145,26 +145,26 @@ namespace android::graphics
 	}
 	jint PixelFormat::bitsPerPixel()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"bitsPerPixel"
 		);
 	}
 	jint PixelFormat::bytesPerPixel()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"bytesPerPixel"
 		);
 	}
 	
-	PixelFormat::PixelFormat(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PixelFormat::PixelFormat(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	PixelFormat::PixelFormat()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.graphics.PixelFormat",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean PixelFormat::formatHasAlpha(jint arg0)
@@ -183,7 +183,7 @@ namespace android::graphics
 			"getPixelFormatInfo",
 			"(ILandroid/graphics/PixelFormat;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 } // namespace android::graphics

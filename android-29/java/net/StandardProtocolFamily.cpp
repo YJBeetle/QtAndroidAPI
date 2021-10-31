@@ -28,7 +28,9 @@ namespace java::net
 		);
 	}
 	
-	StandardProtocolFamily::StandardProtocolFamily(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	StandardProtocolFamily::StandardProtocolFamily(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

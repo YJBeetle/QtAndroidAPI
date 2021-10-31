@@ -4,28 +4,26 @@ namespace android::os
 {
 	// Fields
 	
-	ConditionVariable::ConditionVariable(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ConditionVariable::ConditionVariable(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ConditionVariable::ConditionVariable()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.os.ConditionVariable",
 			"()V"
-		);
-	}
+		) {}
 	ConditionVariable::ConditionVariable(jboolean arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.os.ConditionVariable",
 			"(Z)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean ConditionVariable::block(jlong arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"block",
 			"(J)Z",
 			arg0
@@ -33,21 +31,21 @@ namespace android::os
 	}
 	void ConditionVariable::block()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"block",
 			"()V"
 		);
 	}
 	void ConditionVariable::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	void ConditionVariable::open()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"open",
 			"()V"
 		);

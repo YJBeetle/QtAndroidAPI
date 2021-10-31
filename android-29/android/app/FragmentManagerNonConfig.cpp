@@ -4,7 +4,9 @@ namespace android::app
 {
 	// Fields
 	
-	FragmentManagerNonConfig::FragmentManagerNonConfig(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FragmentManagerNonConfig::FragmentManagerNonConfig(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

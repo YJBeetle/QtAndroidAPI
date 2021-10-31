@@ -7,21 +7,21 @@ namespace android::app
 {
 	// Fields
 	
-	Notification_CarExtender_Builder::Notification_CarExtender_Builder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Notification_CarExtender_Builder::Notification_CarExtender_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Notification_CarExtender_Builder::Notification_CarExtender_Builder(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.app.Notification$CarExtender$Builder",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject Notification_CarExtender_Builder::addMessage(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"addMessage",
 			"(Ljava/lang/String;)Landroid/app/Notification$CarExtender$Builder;",
 			arg0
@@ -29,14 +29,14 @@ namespace android::app
 	}
 	QAndroidJniObject Notification_CarExtender_Builder::build()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"build",
 			"()Landroid/app/Notification$CarExtender$UnreadConversation;"
 		);
 	}
 	QAndroidJniObject Notification_CarExtender_Builder::setLatestTimestamp(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setLatestTimestamp",
 			"(J)Landroid/app/Notification$CarExtender$Builder;",
 			arg0
@@ -44,19 +44,19 @@ namespace android::app
 	}
 	QAndroidJniObject Notification_CarExtender_Builder::setReadPendingIntent(android::app::PendingIntent arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setReadPendingIntent",
 			"(Landroid/app/PendingIntent;)Landroid/app/Notification$CarExtender$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Notification_CarExtender_Builder::setReplyAction(android::app::PendingIntent arg0, android::app::RemoteInput arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setReplyAction",
 			"(Landroid/app/PendingIntent;Landroid/app/RemoteInput;)Landroid/app/Notification$CarExtender$Builder;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 } // namespace android::app

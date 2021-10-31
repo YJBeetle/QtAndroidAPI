@@ -12,7 +12,10 @@ namespace javax::crypto
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit IllegalBlockSizeException(const char *className, const char *sig, Ts...agv) : java::security::GeneralSecurityException(className, sig, std::forward<Ts>(agv)...) {}
 		IllegalBlockSizeException(QAndroidJniObject obj);
+		
 		// Constructors
 		IllegalBlockSizeException();
 		IllegalBlockSizeException(jstring arg0);

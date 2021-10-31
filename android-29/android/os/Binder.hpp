@@ -26,7 +26,10 @@ namespace android::os
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Binder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Binder(QAndroidJniObject obj);
+		
 		// Constructors
 		Binder();
 		Binder(jstring arg0);

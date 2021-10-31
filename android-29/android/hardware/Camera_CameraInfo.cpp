@@ -19,32 +19,32 @@ namespace android::hardware
 	}
 	jboolean Camera_CameraInfo::canDisableShutterSound()
 	{
-		return __thiz.getField<jboolean>(
+		return getField<jboolean>(
 			"canDisableShutterSound"
 		);
 	}
 	jint Camera_CameraInfo::facing()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"facing"
 		);
 	}
 	jint Camera_CameraInfo::orientation()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"orientation"
 		);
 	}
 	
-	Camera_CameraInfo::Camera_CameraInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Camera_CameraInfo::Camera_CameraInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Camera_CameraInfo::Camera_CameraInfo()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.hardware.Camera$CameraInfo",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::hardware

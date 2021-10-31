@@ -31,9 +31,11 @@ namespace android::net::http
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit HttpResponseCache(const char *className, const char *sig, Ts...agv) : java::net::ResponseCache(className, sig, std::forward<Ts>(agv)...) {}
 		HttpResponseCache(QAndroidJniObject obj);
+		
 		// Constructors
-		HttpResponseCache() = default;
 		
 		// Methods
 		static QAndroidJniObject getInstalled();

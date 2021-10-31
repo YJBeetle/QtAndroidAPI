@@ -11,10 +11,12 @@ namespace android::animation
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BidirectionalTypeConverter(const char *className, const char *sig, Ts...agv) : android::animation::TypeConverter(className, sig, std::forward<Ts>(agv)...) {}
 		BidirectionalTypeConverter(QAndroidJniObject obj);
+		
 		// Constructors
 		BidirectionalTypeConverter(jclass arg0, jclass arg1);
-		BidirectionalTypeConverter() = default;
 		
 		// Methods
 		jobject convertBack(jobject arg0);

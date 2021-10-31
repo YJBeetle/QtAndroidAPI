@@ -318,66 +318,68 @@ namespace android::bluetooth
 		);
 	}
 	
-	BluetoothDevice::BluetoothDevice(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BluetoothDevice::BluetoothDevice(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject BluetoothDevice::connectGatt(android::content::Context arg0, jboolean arg1, android::bluetooth::BluetoothGattCallback arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"connectGatt",
 			"(Landroid/content/Context;ZLandroid/bluetooth/BluetoothGattCallback;)Landroid/bluetooth/BluetoothGatt;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	QAndroidJniObject BluetoothDevice::connectGatt(android::content::Context arg0, jboolean arg1, android::bluetooth::BluetoothGattCallback arg2, jint arg3)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"connectGatt",
 			"(Landroid/content/Context;ZLandroid/bluetooth/BluetoothGattCallback;I)Landroid/bluetooth/BluetoothGatt;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object(),
+			arg2.object(),
 			arg3
 		);
 	}
 	QAndroidJniObject BluetoothDevice::connectGatt(android::content::Context arg0, jboolean arg1, android::bluetooth::BluetoothGattCallback arg2, jint arg3, jint arg4)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"connectGatt",
 			"(Landroid/content/Context;ZLandroid/bluetooth/BluetoothGattCallback;II)Landroid/bluetooth/BluetoothGatt;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object(),
+			arg2.object(),
 			arg3,
 			arg4
 		);
 	}
 	QAndroidJniObject BluetoothDevice::connectGatt(android::content::Context arg0, jboolean arg1, android::bluetooth::BluetoothGattCallback arg2, jint arg3, jint arg4, android::os::Handler arg5)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"connectGatt",
 			"(Landroid/content/Context;ZLandroid/bluetooth/BluetoothGattCallback;IILandroid/os/Handler;)Landroid/bluetooth/BluetoothGatt;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object(),
+			arg2.object(),
 			arg3,
 			arg4,
-			arg5.__jniObject().object()
+			arg5.object()
 		);
 	}
 	jboolean BluetoothDevice::createBond()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"createBond",
 			"()Z"
 		);
 	}
 	QAndroidJniObject BluetoothDevice::createInsecureL2capChannel(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"createInsecureL2capChannel",
 			"(I)Landroid/bluetooth/BluetoothSocket;",
 			arg0
@@ -385,15 +387,15 @@ namespace android::bluetooth
 	}
 	QAndroidJniObject BluetoothDevice::createInsecureRfcommSocketToServiceRecord(java::util::UUID arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"createInsecureRfcommSocketToServiceRecord",
 			"(Ljava/util/UUID;)Landroid/bluetooth/BluetoothSocket;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject BluetoothDevice::createL2capChannel(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"createL2capChannel",
 			"(I)Landroid/bluetooth/BluetoothSocket;",
 			arg0
@@ -401,22 +403,22 @@ namespace android::bluetooth
 	}
 	QAndroidJniObject BluetoothDevice::createRfcommSocketToServiceRecord(java::util::UUID arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"createRfcommSocketToServiceRecord",
 			"(Ljava/util/UUID;)Landroid/bluetooth/BluetoothSocket;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint BluetoothDevice::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean BluetoothDevice::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -424,63 +426,63 @@ namespace android::bluetooth
 	}
 	jboolean BluetoothDevice::fetchUuidsWithSdp()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"fetchUuidsWithSdp",
 			"()Z"
 		);
 	}
 	jstring BluetoothDevice::getAddress()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAddress",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject BluetoothDevice::getBluetoothClass()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBluetoothClass",
 			"()Landroid/bluetooth/BluetoothClass;"
 		);
 	}
 	jint BluetoothDevice::getBondState()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getBondState",
 			"()I"
 		);
 	}
 	jstring BluetoothDevice::getName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint BluetoothDevice::getType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getType",
 			"()I"
 		);
 	}
 	jarray BluetoothDevice::getUuids()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getUuids",
 			"()[Landroid/os/ParcelUuid;"
 		).object<jarray>();
 	}
 	jint BluetoothDevice::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean BluetoothDevice::setPairingConfirmation(jboolean arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"setPairingConfirmation",
 			"(Z)Z",
 			arg0
@@ -488,7 +490,7 @@ namespace android::bluetooth
 	}
 	jboolean BluetoothDevice::setPin(jbyteArray arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"setPin",
 			"([B)Z",
 			arg0
@@ -496,17 +498,17 @@ namespace android::bluetooth
 	}
 	jstring BluetoothDevice::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void BluetoothDevice::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

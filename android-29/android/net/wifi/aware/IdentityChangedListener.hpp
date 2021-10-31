@@ -10,7 +10,10 @@ namespace android::net::wifi::aware
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit IdentityChangedListener(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		IdentityChangedListener(QAndroidJniObject obj);
+		
 		// Constructors
 		IdentityChangedListener();
 		

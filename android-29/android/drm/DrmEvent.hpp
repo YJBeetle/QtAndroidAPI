@@ -18,9 +18,11 @@ namespace android::drm
 		static jint TYPE_ALL_RIGHTS_REMOVED();
 		static jint TYPE_DRM_INFO_PROCESSED();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DrmEvent(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DrmEvent(QAndroidJniObject obj);
+		
 		// Constructors
-		DrmEvent() = default;
 		
 		// Methods
 		jobject getAttribute(jstring arg0);

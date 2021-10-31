@@ -14,7 +14,10 @@ namespace java::net
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CacheRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		CacheRequest(QAndroidJniObject obj);
+		
 		// Constructors
 		CacheRequest();
 		

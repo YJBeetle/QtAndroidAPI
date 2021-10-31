@@ -16,10 +16,12 @@ namespace java::beans
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit IndexedPropertyChangeEvent(const char *className, const char *sig, Ts...agv) : java::beans::PropertyChangeEvent(className, sig, std::forward<Ts>(agv)...) {}
 		IndexedPropertyChangeEvent(QAndroidJniObject obj);
+		
 		// Constructors
 		IndexedPropertyChangeEvent(jobject arg0, jstring arg1, jobject arg2, jobject arg3, jint arg4);
-		IndexedPropertyChangeEvent() = default;
 		
 		// Methods
 		jint getIndex();

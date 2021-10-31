@@ -13,20 +13,22 @@ namespace android::telephony
 		);
 	}
 	
-	CellIdentity::CellIdentity(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CellIdentity::CellIdentity(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint CellIdentity::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean CellIdentity::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -34,31 +36,31 @@ namespace android::telephony
 	}
 	jstring CellIdentity::getOperatorAlphaLong()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getOperatorAlphaLong",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jstring CellIdentity::getOperatorAlphaShort()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getOperatorAlphaShort",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jint CellIdentity::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	void CellIdentity::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

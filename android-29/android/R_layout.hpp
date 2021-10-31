@@ -34,7 +34,10 @@ namespace android
 		static jint test_list_item();
 		static jint two_line_list_item();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit R_layout(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		R_layout(QAndroidJniObject obj);
+		
 		// Constructors
 		R_layout();
 		

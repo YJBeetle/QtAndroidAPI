@@ -47,20 +47,20 @@ namespace android::provider
 		);
 	}
 	
-	FontsContract_FontRequestCallback::FontsContract_FontRequestCallback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FontsContract_FontRequestCallback::FontsContract_FontRequestCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	FontsContract_FontRequestCallback::FontsContract_FontRequestCallback()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.provider.FontsContract$FontRequestCallback",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void FontsContract_FontRequestCallback::onTypefaceRequestFailed(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onTypefaceRequestFailed",
 			"(I)V",
 			arg0
@@ -68,10 +68,10 @@ namespace android::provider
 	}
 	void FontsContract_FontRequestCallback::onTypefaceRetrieved(android::graphics::Typeface arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onTypefaceRetrieved",
 			"(Landroid/graphics/Typeface;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::provider

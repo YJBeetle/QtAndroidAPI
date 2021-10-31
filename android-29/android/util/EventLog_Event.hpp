@@ -10,9 +10,11 @@ namespace android::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit EventLog_Event(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		EventLog_Event(QAndroidJniObject obj);
+		
 		// Constructors
-		EventLog_Event() = default;
 		
 		// Methods
 		jboolean equals(jobject arg0);

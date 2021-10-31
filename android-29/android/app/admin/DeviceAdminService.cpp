@@ -5,23 +5,23 @@ namespace android::app::admin
 {
 	// Fields
 	
-	DeviceAdminService::DeviceAdminService(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DeviceAdminService::DeviceAdminService(QAndroidJniObject obj) : android::app::Service(obj) {}
+	
 	// Constructors
 	DeviceAdminService::DeviceAdminService()
-	{
-		__thiz = QAndroidJniObject(
+		: android::app::Service(
 			"android.app.admin.DeviceAdminService",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject DeviceAdminService::onBind(android::content::Intent arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onBind",
 			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::app::admin

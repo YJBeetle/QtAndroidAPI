@@ -10,10 +10,12 @@ namespace android::os
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CountDownTimer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		CountDownTimer(QAndroidJniObject obj);
+		
 		// Constructors
 		CountDownTimer(jlong arg0, jlong arg1);
-		CountDownTimer() = default;
 		
 		// Methods
 		void cancel();

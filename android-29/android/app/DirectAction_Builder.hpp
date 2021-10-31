@@ -22,10 +22,12 @@ namespace android::app
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DirectAction_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DirectAction_Builder(QAndroidJniObject obj);
+		
 		// Constructors
 		DirectAction_Builder(jstring arg0);
-		DirectAction_Builder() = default;
 		
 		// Methods
 		QAndroidJniObject build();

@@ -33,7 +33,10 @@ namespace java::util
 		static jint AD();
 		static jint BC();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit GregorianCalendar(const char *className, const char *sig, Ts...agv) : java::util::Calendar(className, sig, std::forward<Ts>(agv)...) {}
 		GregorianCalendar(QAndroidJniObject obj);
+		
 		// Constructors
 		GregorianCalendar();
 		GregorianCalendar(java::util::Locale arg0);

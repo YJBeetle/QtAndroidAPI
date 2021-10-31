@@ -5,23 +5,23 @@ namespace android::webkit
 {
 	// Fields
 	
-	ServiceWorkerClient::ServiceWorkerClient(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ServiceWorkerClient::ServiceWorkerClient(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ServiceWorkerClient::ServiceWorkerClient()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.webkit.ServiceWorkerClient",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject ServiceWorkerClient::shouldInterceptRequest(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"shouldInterceptRequest",
 			"(Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::webkit

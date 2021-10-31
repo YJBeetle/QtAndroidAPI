@@ -157,7 +157,9 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	DocumentsContract::DocumentsContract(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DocumentsContract::DocumentsContract(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -177,7 +179,7 @@ namespace android::provider
 			"android.provider.DocumentsContract",
 			"buildChildDocumentsUriUsingTree",
 			"(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -197,7 +199,7 @@ namespace android::provider
 			"android.provider.DocumentsContract",
 			"buildDocumentUriUsingTree",
 			"(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -257,9 +259,9 @@ namespace android::provider
 			"android.provider.DocumentsContract",
 			"copyDocument",
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;Landroid/net/Uri;)Landroid/net/Uri;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject DocumentsContract::createDocument(android::content::ContentResolver arg0, android::net::Uri arg1, jstring arg2, jstring arg3)
@@ -268,8 +270,8 @@ namespace android::provider
 			"android.provider.DocumentsContract",
 			"createDocument",
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3
 		);
@@ -280,9 +282,9 @@ namespace android::provider
 			"android.provider.DocumentsContract",
 			"createWebLinkIntent",
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;Landroid/os/Bundle;)Landroid/content/IntentSender;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	jboolean DocumentsContract::deleteDocument(android::content::ContentResolver arg0, android::net::Uri arg1)
@@ -291,8 +293,8 @@ namespace android::provider
 			"android.provider.DocumentsContract",
 			"deleteDocument",
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void DocumentsContract::ejectRoot(android::content::ContentResolver arg0, android::net::Uri arg1)
@@ -301,8 +303,8 @@ namespace android::provider
 			"android.provider.DocumentsContract",
 			"ejectRoot",
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject DocumentsContract::findDocumentPath(android::content::ContentResolver arg0, android::net::Uri arg1)
@@ -311,8 +313,8 @@ namespace android::provider
 			"android.provider.DocumentsContract",
 			"findDocumentPath",
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;)Landroid/provider/DocumentsContract$Path;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jstring DocumentsContract::getDocumentId(android::net::Uri arg0)
@@ -321,7 +323,7 @@ namespace android::provider
 			"android.provider.DocumentsContract",
 			"getDocumentId",
 			"(Landroid/net/Uri;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	QAndroidJniObject DocumentsContract::getDocumentMetadata(android::content::ContentResolver arg0, android::net::Uri arg1)
@@ -330,8 +332,8 @@ namespace android::provider
 			"android.provider.DocumentsContract",
 			"getDocumentMetadata",
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;)Landroid/os/Bundle;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject DocumentsContract::getDocumentThumbnail(android::content::ContentResolver arg0, android::net::Uri arg1, android::graphics::Point arg2, android::os::CancellationSignal arg3)
@@ -340,10 +342,10 @@ namespace android::provider
 			"android.provider.DocumentsContract",
 			"getDocumentThumbnail",
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;Landroid/graphics/Point;Landroid/os/CancellationSignal;)Landroid/graphics/Bitmap;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
 		);
 	}
 	jstring DocumentsContract::getRootId(android::net::Uri arg0)
@@ -352,7 +354,7 @@ namespace android::provider
 			"android.provider.DocumentsContract",
 			"getRootId",
 			"(Landroid/net/Uri;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jstring DocumentsContract::getSearchDocumentsQuery(android::net::Uri arg0)
@@ -361,7 +363,7 @@ namespace android::provider
 			"android.provider.DocumentsContract",
 			"getSearchDocumentsQuery",
 			"(Landroid/net/Uri;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jstring DocumentsContract::getTreeDocumentId(android::net::Uri arg0)
@@ -370,7 +372,7 @@ namespace android::provider
 			"android.provider.DocumentsContract",
 			"getTreeDocumentId",
 			"(Landroid/net/Uri;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jboolean DocumentsContract::isChildDocument(android::content::ContentResolver arg0, android::net::Uri arg1, android::net::Uri arg2)
@@ -379,9 +381,9 @@ namespace android::provider
 			"android.provider.DocumentsContract",
 			"isChildDocument",
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;Landroid/net/Uri;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	jboolean DocumentsContract::isDocumentUri(android::content::Context arg0, android::net::Uri arg1)
@@ -390,8 +392,8 @@ namespace android::provider
 			"android.provider.DocumentsContract",
 			"isDocumentUri",
 			"(Landroid/content/Context;Landroid/net/Uri;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jboolean DocumentsContract::isRootUri(android::content::Context arg0, android::net::Uri arg1)
@@ -400,8 +402,8 @@ namespace android::provider
 			"android.provider.DocumentsContract",
 			"isRootUri",
 			"(Landroid/content/Context;Landroid/net/Uri;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jboolean DocumentsContract::isRootsUri(android::content::Context arg0, android::net::Uri arg1)
@@ -410,8 +412,8 @@ namespace android::provider
 			"android.provider.DocumentsContract",
 			"isRootsUri",
 			"(Landroid/content/Context;Landroid/net/Uri;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jboolean DocumentsContract::isTreeUri(android::net::Uri arg0)
@@ -420,7 +422,7 @@ namespace android::provider
 			"android.provider.DocumentsContract",
 			"isTreeUri",
 			"(Landroid/net/Uri;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject DocumentsContract::moveDocument(android::content::ContentResolver arg0, android::net::Uri arg1, android::net::Uri arg2, android::net::Uri arg3)
@@ -429,10 +431,10 @@ namespace android::provider
 			"android.provider.DocumentsContract",
 			"moveDocument",
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;Landroid/net/Uri;Landroid/net/Uri;)Landroid/net/Uri;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
 		);
 	}
 	jboolean DocumentsContract::removeDocument(android::content::ContentResolver arg0, android::net::Uri arg1, android::net::Uri arg2)
@@ -441,9 +443,9 @@ namespace android::provider
 			"android.provider.DocumentsContract",
 			"removeDocument",
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;Landroid/net/Uri;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject DocumentsContract::renameDocument(android::content::ContentResolver arg0, android::net::Uri arg1, jstring arg2)
@@ -452,8 +454,8 @@ namespace android::provider
 			"android.provider.DocumentsContract",
 			"renameDocument",
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}

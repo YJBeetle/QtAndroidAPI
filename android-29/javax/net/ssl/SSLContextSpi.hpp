@@ -34,7 +34,10 @@ namespace javax::net::ssl
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SSLContextSpi(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SSLContextSpi(QAndroidJniObject obj);
+		
 		// Constructors
 		SSLContextSpi();
 		

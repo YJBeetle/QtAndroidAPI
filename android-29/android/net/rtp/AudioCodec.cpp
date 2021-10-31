@@ -45,26 +45,28 @@ namespace android::net::rtp
 	}
 	jstring AudioCodec::fmtp()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"fmtp",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring AudioCodec::rtpmap()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"rtpmap",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint AudioCodec::type()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"type"
 		);
 	}
 	
-	AudioCodec::AudioCodec(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AudioCodec::AudioCodec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

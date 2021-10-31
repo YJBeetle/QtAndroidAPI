@@ -34,10 +34,12 @@ namespace android::bluetooth
 		static jint PERMISSION_WRITE_SIGNED();
 		static jint PERMISSION_WRITE_SIGNED_MITM();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BluetoothGattDescriptor(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		BluetoothGattDescriptor(QAndroidJniObject obj);
+		
 		// Constructors
 		BluetoothGattDescriptor(java::util::UUID arg0, jint arg1);
-		BluetoothGattDescriptor() = default;
 		
 		// Methods
 		jint describeContents();

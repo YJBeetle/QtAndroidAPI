@@ -7,7 +7,9 @@ namespace android::renderscript
 {
 	// Fields
 	
-	Element::Element(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Element::Element(QAndroidJniObject obj) : android::renderscript::BaseObj(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -17,7 +19,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"ALLOCATION",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::A_8(android::renderscript::RenderScript arg0)
@@ -26,7 +28,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"A_8",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::BOOLEAN(android::renderscript::RenderScript arg0)
@@ -35,7 +37,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"BOOLEAN",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::ELEMENT(android::renderscript::RenderScript arg0)
@@ -44,7 +46,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"ELEMENT",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::F16(android::renderscript::RenderScript arg0)
@@ -53,7 +55,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"F16",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::F16_2(android::renderscript::RenderScript arg0)
@@ -62,7 +64,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"F16_2",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::F16_3(android::renderscript::RenderScript arg0)
@@ -71,7 +73,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"F16_3",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::F16_4(android::renderscript::RenderScript arg0)
@@ -80,7 +82,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"F16_4",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::F32(android::renderscript::RenderScript arg0)
@@ -89,7 +91,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"F32",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::F32_2(android::renderscript::RenderScript arg0)
@@ -98,7 +100,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"F32_2",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::F32_3(android::renderscript::RenderScript arg0)
@@ -107,7 +109,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"F32_3",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::F32_4(android::renderscript::RenderScript arg0)
@@ -116,7 +118,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"F32_4",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::F64(android::renderscript::RenderScript arg0)
@@ -125,7 +127,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"F64",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::F64_2(android::renderscript::RenderScript arg0)
@@ -134,7 +136,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"F64_2",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::F64_3(android::renderscript::RenderScript arg0)
@@ -143,7 +145,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"F64_3",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::F64_4(android::renderscript::RenderScript arg0)
@@ -152,7 +154,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"F64_4",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::FONT(android::renderscript::RenderScript arg0)
@@ -161,7 +163,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"FONT",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::I16(android::renderscript::RenderScript arg0)
@@ -170,7 +172,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"I16",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::I16_2(android::renderscript::RenderScript arg0)
@@ -179,7 +181,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"I16_2",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::I16_3(android::renderscript::RenderScript arg0)
@@ -188,7 +190,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"I16_3",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::I16_4(android::renderscript::RenderScript arg0)
@@ -197,7 +199,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"I16_4",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::I32(android::renderscript::RenderScript arg0)
@@ -206,7 +208,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"I32",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::I32_2(android::renderscript::RenderScript arg0)
@@ -215,7 +217,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"I32_2",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::I32_3(android::renderscript::RenderScript arg0)
@@ -224,7 +226,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"I32_3",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::I32_4(android::renderscript::RenderScript arg0)
@@ -233,7 +235,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"I32_4",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::I64(android::renderscript::RenderScript arg0)
@@ -242,7 +244,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"I64",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::I64_2(android::renderscript::RenderScript arg0)
@@ -251,7 +253,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"I64_2",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::I64_3(android::renderscript::RenderScript arg0)
@@ -260,7 +262,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"I64_3",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::I64_4(android::renderscript::RenderScript arg0)
@@ -269,7 +271,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"I64_4",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::I8(android::renderscript::RenderScript arg0)
@@ -278,7 +280,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"I8",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::I8_2(android::renderscript::RenderScript arg0)
@@ -287,7 +289,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"I8_2",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::I8_3(android::renderscript::RenderScript arg0)
@@ -296,7 +298,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"I8_3",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::I8_4(android::renderscript::RenderScript arg0)
@@ -305,7 +307,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"I8_4",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::MATRIX4X4(android::renderscript::RenderScript arg0)
@@ -314,7 +316,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"MATRIX4X4",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::MATRIX_2X2(android::renderscript::RenderScript arg0)
@@ -323,7 +325,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"MATRIX_2X2",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::MATRIX_3X3(android::renderscript::RenderScript arg0)
@@ -332,7 +334,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"MATRIX_3X3",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::MATRIX_4X4(android::renderscript::RenderScript arg0)
@@ -341,7 +343,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"MATRIX_4X4",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::MESH(android::renderscript::RenderScript arg0)
@@ -350,7 +352,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"MESH",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::PROGRAM_FRAGMENT(android::renderscript::RenderScript arg0)
@@ -359,7 +361,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"PROGRAM_FRAGMENT",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::PROGRAM_RASTER(android::renderscript::RenderScript arg0)
@@ -368,7 +370,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"PROGRAM_RASTER",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::PROGRAM_STORE(android::renderscript::RenderScript arg0)
@@ -377,7 +379,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"PROGRAM_STORE",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::PROGRAM_VERTEX(android::renderscript::RenderScript arg0)
@@ -386,7 +388,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"PROGRAM_VERTEX",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::RGBA_4444(android::renderscript::RenderScript arg0)
@@ -395,7 +397,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"RGBA_4444",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::RGBA_5551(android::renderscript::RenderScript arg0)
@@ -404,7 +406,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"RGBA_5551",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::RGBA_8888(android::renderscript::RenderScript arg0)
@@ -413,7 +415,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"RGBA_8888",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::RGB_565(android::renderscript::RenderScript arg0)
@@ -422,7 +424,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"RGB_565",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::RGB_888(android::renderscript::RenderScript arg0)
@@ -431,7 +433,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"RGB_888",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::SAMPLER(android::renderscript::RenderScript arg0)
@@ -440,7 +442,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"SAMPLER",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::SCRIPT(android::renderscript::RenderScript arg0)
@@ -449,7 +451,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"SCRIPT",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::TYPE(android::renderscript::RenderScript arg0)
@@ -458,7 +460,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"TYPE",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::U16(android::renderscript::RenderScript arg0)
@@ -467,7 +469,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"U16",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::U16_2(android::renderscript::RenderScript arg0)
@@ -476,7 +478,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"U16_2",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::U16_3(android::renderscript::RenderScript arg0)
@@ -485,7 +487,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"U16_3",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::U16_4(android::renderscript::RenderScript arg0)
@@ -494,7 +496,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"U16_4",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::U32(android::renderscript::RenderScript arg0)
@@ -503,7 +505,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"U32",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::U32_2(android::renderscript::RenderScript arg0)
@@ -512,7 +514,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"U32_2",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::U32_3(android::renderscript::RenderScript arg0)
@@ -521,7 +523,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"U32_3",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::U32_4(android::renderscript::RenderScript arg0)
@@ -530,7 +532,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"U32_4",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::U64(android::renderscript::RenderScript arg0)
@@ -539,7 +541,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"U64",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::U64_2(android::renderscript::RenderScript arg0)
@@ -548,7 +550,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"U64_2",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::U64_3(android::renderscript::RenderScript arg0)
@@ -557,7 +559,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"U64_3",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::U64_4(android::renderscript::RenderScript arg0)
@@ -566,7 +568,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"U64_4",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::U8(android::renderscript::RenderScript arg0)
@@ -575,7 +577,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"U8",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::U8_2(android::renderscript::RenderScript arg0)
@@ -584,7 +586,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"U8_2",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::U8_3(android::renderscript::RenderScript arg0)
@@ -593,7 +595,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"U8_3",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::U8_4(android::renderscript::RenderScript arg0)
@@ -602,7 +604,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"U8_4",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::YUV(android::renderscript::RenderScript arg0)
@@ -611,7 +613,7 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"YUV",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Element::createPixel(android::renderscript::RenderScript arg0, android::renderscript::Element_DataType arg1, android::renderscript::Element_DataKind arg2)
@@ -620,9 +622,9 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"createPixel",
 			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Element$DataType;Landroid/renderscript/Element$DataKind;)Landroid/renderscript/Element;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject Element::createVector(android::renderscript::RenderScript arg0, android::renderscript::Element_DataType arg1, jint arg2)
@@ -631,35 +633,35 @@ namespace android::renderscript
 			"android.renderscript.Element",
 			"createVector",
 			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Element$DataType;I)Landroid/renderscript/Element;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
 	jint Element::getBytesSize()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getBytesSize",
 			"()I"
 		);
 	}
 	QAndroidJniObject Element::getDataKind()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDataKind",
 			"()Landroid/renderscript/Element$DataKind;"
 		);
 	}
 	QAndroidJniObject Element::getDataType()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDataType",
 			"()Landroid/renderscript/Element$DataType;"
 		);
 	}
 	QAndroidJniObject Element::getSubElement(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSubElement",
 			"(I)Landroid/renderscript/Element;",
 			arg0
@@ -667,7 +669,7 @@ namespace android::renderscript
 	}
 	jint Element::getSubElementArraySize(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSubElementArraySize",
 			"(I)I",
 			arg0
@@ -675,14 +677,14 @@ namespace android::renderscript
 	}
 	jint Element::getSubElementCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSubElementCount",
 			"()I"
 		);
 	}
 	jstring Element::getSubElementName(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSubElementName",
 			"(I)Ljava/lang/String;",
 			arg0
@@ -690,7 +692,7 @@ namespace android::renderscript
 	}
 	jint Element::getSubElementOffsetBytes(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSubElementOffsetBytes",
 			"(I)I",
 			arg0
@@ -698,22 +700,22 @@ namespace android::renderscript
 	}
 	jint Element::getVectorSize()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getVectorSize",
 			"()I"
 		);
 	}
 	jboolean Element::isCompatible(android::renderscript::Element arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isCompatible",
 			"(Landroid/renderscript/Element;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean Element::isComplex()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isComplex",
 			"()Z"
 		);

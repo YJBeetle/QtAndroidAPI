@@ -4,55 +4,57 @@ namespace android::mtp
 {
 	// Fields
 	
-	MtpDeviceInfo::MtpDeviceInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MtpDeviceInfo::MtpDeviceInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jintArray MtpDeviceInfo::getEventsSupported()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEventsSupported",
 			"()[I"
 		).object<jintArray>();
 	}
 	jstring MtpDeviceInfo::getManufacturer()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getManufacturer",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring MtpDeviceInfo::getModel()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getModel",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jintArray MtpDeviceInfo::getOperationsSupported()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getOperationsSupported",
 			"()[I"
 		).object<jintArray>();
 	}
 	jstring MtpDeviceInfo::getSerialNumber()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSerialNumber",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring MtpDeviceInfo::getVersion()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getVersion",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jboolean MtpDeviceInfo::isEventSupported(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEventSupported",
 			"(I)Z",
 			arg0
@@ -60,7 +62,7 @@ namespace android::mtp
 	}
 	jboolean MtpDeviceInfo::isOperationSupported(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isOperationSupported",
 			"(I)Z",
 			arg0

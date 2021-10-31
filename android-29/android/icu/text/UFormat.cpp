@@ -4,15 +4,15 @@ namespace android::icu::text
 {
 	// Fields
 	
-	UFormat::UFormat(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UFormat::UFormat(QAndroidJniObject obj) : java::text::Format(obj) {}
+	
 	// Constructors
 	UFormat::UFormat()
-	{
-		__thiz = QAndroidJniObject(
+		: java::text::Format(
 			"android.icu.text.UFormat",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::icu::text

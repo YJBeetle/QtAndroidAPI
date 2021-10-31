@@ -38,9 +38,11 @@ namespace android::renderscript
 		static jint UNIT();
 		static jint UPPER();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ScriptIntrinsicBLAS(const char *className, const char *sig, Ts...agv) : android::renderscript::ScriptIntrinsic(className, sig, std::forward<Ts>(agv)...) {}
 		ScriptIntrinsicBLAS(QAndroidJniObject obj);
+		
 		// Constructors
-		ScriptIntrinsicBLAS() = default;
 		
 		// Methods
 		static QAndroidJniObject create(android::renderscript::RenderScript arg0);

@@ -4,31 +4,27 @@ namespace java::lang
 {
 	// Fields
 	
-	ArrayIndexOutOfBoundsException::ArrayIndexOutOfBoundsException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ArrayIndexOutOfBoundsException::ArrayIndexOutOfBoundsException(QAndroidJniObject obj) : java::lang::IndexOutOfBoundsException(obj) {}
+	
 	// Constructors
 	ArrayIndexOutOfBoundsException::ArrayIndexOutOfBoundsException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::IndexOutOfBoundsException(
 			"java.lang.ArrayIndexOutOfBoundsException",
 			"()V"
-		);
-	}
+		) {}
 	ArrayIndexOutOfBoundsException::ArrayIndexOutOfBoundsException(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::IndexOutOfBoundsException(
 			"java.lang.ArrayIndexOutOfBoundsException",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	ArrayIndexOutOfBoundsException::ArrayIndexOutOfBoundsException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::IndexOutOfBoundsException(
 			"java.lang.ArrayIndexOutOfBoundsException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::lang

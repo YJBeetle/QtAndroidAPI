@@ -7,13 +7,15 @@ namespace android::printservice
 {
 	// Fields
 	
-	PrintJob::PrintJob(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PrintJob::PrintJob(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jboolean PrintJob::block(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"block",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -21,21 +23,21 @@ namespace android::printservice
 	}
 	jboolean PrintJob::cancel()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"cancel",
 			"()Z"
 		);
 	}
 	jboolean PrintJob::complete()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"complete",
 			"()Z"
 		);
 	}
 	jboolean PrintJob::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -43,7 +45,7 @@ namespace android::printservice
 	}
 	jboolean PrintJob::fail(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"fail",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -51,7 +53,7 @@ namespace android::printservice
 	}
 	jint PrintJob::getAdvancedIntOption(jstring arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAdvancedIntOption",
 			"(Ljava/lang/String;)I",
 			arg0
@@ -59,7 +61,7 @@ namespace android::printservice
 	}
 	jstring PrintJob::getAdvancedStringOption(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAdvancedStringOption",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
@@ -67,35 +69,35 @@ namespace android::printservice
 	}
 	QAndroidJniObject PrintJob::getDocument()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDocument",
 			"()Landroid/printservice/PrintDocument;"
 		);
 	}
 	QAndroidJniObject PrintJob::getId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getId",
 			"()Landroid/print/PrintJobId;"
 		);
 	}
 	QAndroidJniObject PrintJob::getInfo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getInfo",
 			"()Landroid/print/PrintJobInfo;"
 		);
 	}
 	jstring PrintJob::getTag()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTag",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jboolean PrintJob::hasAdvancedOption(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasAdvancedOption",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -103,56 +105,56 @@ namespace android::printservice
 	}
 	jint PrintJob::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean PrintJob::isBlocked()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isBlocked",
 			"()Z"
 		);
 	}
 	jboolean PrintJob::isCancelled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isCancelled",
 			"()Z"
 		);
 	}
 	jboolean PrintJob::isCompleted()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isCompleted",
 			"()Z"
 		);
 	}
 	jboolean PrintJob::isFailed()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isFailed",
 			"()Z"
 		);
 	}
 	jboolean PrintJob::isQueued()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isQueued",
 			"()Z"
 		);
 	}
 	jboolean PrintJob::isStarted()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isStarted",
 			"()Z"
 		);
 	}
 	void PrintJob::setProgress(jfloat arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setProgress",
 			"(F)V",
 			arg0
@@ -160,7 +162,7 @@ namespace android::printservice
 	}
 	void PrintJob::setStatus(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setStatus",
 			"(I)V",
 			arg0
@@ -168,7 +170,7 @@ namespace android::printservice
 	}
 	void PrintJob::setStatus(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setStatus",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
@@ -176,7 +178,7 @@ namespace android::printservice
 	}
 	jboolean PrintJob::setTag(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"setTag",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -184,7 +186,7 @@ namespace android::printservice
 	}
 	jboolean PrintJob::start()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"start",
 			"()Z"
 		);

@@ -28,7 +28,9 @@ namespace android::webkit
 		);
 	}
 	
-	WebSettings_RenderPriority::WebSettings_RenderPriority(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WebSettings_RenderPriority::WebSettings_RenderPriority(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

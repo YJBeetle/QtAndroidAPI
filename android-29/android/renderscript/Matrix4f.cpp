@@ -4,28 +4,26 @@ namespace android::renderscript
 {
 	// Fields
 	
-	Matrix4f::Matrix4f(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Matrix4f::Matrix4f(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Matrix4f::Matrix4f()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.renderscript.Matrix4f",
 			"()V"
-		);
-	}
+		) {}
 	Matrix4f::Matrix4f(jfloatArray arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.renderscript.Matrix4f",
 			"([F)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jfloat Matrix4f::get(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"get",
 			"(II)F",
 			arg0,
@@ -34,36 +32,36 @@ namespace android::renderscript
 	}
 	jfloatArray Matrix4f::getArray()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getArray",
 			"()[F"
 		).object<jfloatArray>();
 	}
 	jboolean Matrix4f::inverse()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"inverse",
 			"()Z"
 		);
 	}
 	jboolean Matrix4f::inverseTranspose()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"inverseTranspose",
 			"()Z"
 		);
 	}
 	void Matrix4f::load(android::renderscript::Matrix4f arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"load",
 			"(Landroid/renderscript/Matrix4f;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Matrix4f::loadFrustum(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"loadFrustum",
 			"(FFFFFF)V",
 			arg0,
@@ -76,23 +74,23 @@ namespace android::renderscript
 	}
 	void Matrix4f::loadIdentity()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"loadIdentity",
 			"()V"
 		);
 	}
 	void Matrix4f::loadMultiply(android::renderscript::Matrix4f arg0, android::renderscript::Matrix4f arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"loadMultiply",
 			"(Landroid/renderscript/Matrix4f;Landroid/renderscript/Matrix4f;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void Matrix4f::loadOrtho(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"loadOrtho",
 			"(FFFFFF)V",
 			arg0,
@@ -105,7 +103,7 @@ namespace android::renderscript
 	}
 	void Matrix4f::loadOrthoWindow(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"loadOrthoWindow",
 			"(II)V",
 			arg0,
@@ -114,7 +112,7 @@ namespace android::renderscript
 	}
 	void Matrix4f::loadPerspective(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"loadPerspective",
 			"(FFFF)V",
 			arg0,
@@ -125,7 +123,7 @@ namespace android::renderscript
 	}
 	void Matrix4f::loadProjectionNormalized(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"loadProjectionNormalized",
 			"(II)V",
 			arg0,
@@ -134,7 +132,7 @@ namespace android::renderscript
 	}
 	void Matrix4f::loadRotate(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"loadRotate",
 			"(FFFF)V",
 			arg0,
@@ -145,7 +143,7 @@ namespace android::renderscript
 	}
 	void Matrix4f::loadScale(jfloat arg0, jfloat arg1, jfloat arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"loadScale",
 			"(FFF)V",
 			arg0,
@@ -155,7 +153,7 @@ namespace android::renderscript
 	}
 	void Matrix4f::loadTranslate(jfloat arg0, jfloat arg1, jfloat arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"loadTranslate",
 			"(FFF)V",
 			arg0,
@@ -165,15 +163,15 @@ namespace android::renderscript
 	}
 	void Matrix4f::multiply(android::renderscript::Matrix4f arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"multiply",
 			"(Landroid/renderscript/Matrix4f;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Matrix4f::rotate(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"rotate",
 			"(FFFF)V",
 			arg0,
@@ -184,7 +182,7 @@ namespace android::renderscript
 	}
 	void Matrix4f::scale(jfloat arg0, jfloat arg1, jfloat arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"scale",
 			"(FFF)V",
 			arg0,
@@ -194,7 +192,7 @@ namespace android::renderscript
 	}
 	void Matrix4f::set(jint arg0, jint arg1, jfloat arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"set",
 			"(IIF)V",
 			arg0,
@@ -204,7 +202,7 @@ namespace android::renderscript
 	}
 	void Matrix4f::translate(jfloat arg0, jfloat arg1, jfloat arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"translate",
 			"(FFF)V",
 			arg0,
@@ -214,7 +212,7 @@ namespace android::renderscript
 	}
 	void Matrix4f::transpose()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"transpose",
 			"()V"
 		);

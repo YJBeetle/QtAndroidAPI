@@ -26,32 +26,32 @@ namespace android::view::autofill
 		);
 	}
 	
-	AutofillManager_AutofillCallback::AutofillManager_AutofillCallback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AutofillManager_AutofillCallback::AutofillManager_AutofillCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	AutofillManager_AutofillCallback::AutofillManager_AutofillCallback()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.autofill.AutofillManager$AutofillCallback",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void AutofillManager_AutofillCallback::onAutofillEvent(android::view::View arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onAutofillEvent",
 			"(Landroid/view/View;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void AutofillManager_AutofillCallback::onAutofillEvent(android::view::View arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onAutofillEvent",
 			"(Landroid/view/View;II)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);

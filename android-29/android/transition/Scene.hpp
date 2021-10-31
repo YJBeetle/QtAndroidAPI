@@ -22,12 +22,14 @@ namespace android::transition
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Scene(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Scene(QAndroidJniObject obj);
+		
 		// Constructors
 		Scene(android::view::ViewGroup arg0);
 		Scene(android::view::ViewGroup arg0, android::view::View arg1);
 		Scene(android::view::ViewGroup arg0, android::view::ViewGroup arg1);
-		Scene() = default;
 		
 		// Methods
 		static QAndroidJniObject getCurrentScene(android::view::ViewGroup arg0);

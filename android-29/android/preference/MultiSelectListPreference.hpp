@@ -24,13 +24,15 @@ namespace android::preference
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MultiSelectListPreference(const char *className, const char *sig, Ts...agv) : android::preference::DialogPreference(className, sig, std::forward<Ts>(agv)...) {}
 		MultiSelectListPreference(QAndroidJniObject obj);
+		
 		// Constructors
 		MultiSelectListPreference(android::content::Context arg0);
 		MultiSelectListPreference(android::content::Context arg0, __JniBaseClass arg1);
 		MultiSelectListPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		MultiSelectListPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
-		MultiSelectListPreference() = default;
 		
 		// Methods
 		jint findIndexOfValue(jstring arg0);

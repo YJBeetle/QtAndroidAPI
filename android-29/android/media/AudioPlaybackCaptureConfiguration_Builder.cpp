@@ -6,21 +6,21 @@ namespace android::media
 {
 	// Fields
 	
-	AudioPlaybackCaptureConfiguration_Builder::AudioPlaybackCaptureConfiguration_Builder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AudioPlaybackCaptureConfiguration_Builder::AudioPlaybackCaptureConfiguration_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	AudioPlaybackCaptureConfiguration_Builder::AudioPlaybackCaptureConfiguration_Builder(android::media::projection::MediaProjection arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.AudioPlaybackCaptureConfiguration$Builder",
 			"(Landroid/media/projection/MediaProjection;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject AudioPlaybackCaptureConfiguration_Builder::addMatchingUid(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"addMatchingUid",
 			"(I)Landroid/media/AudioPlaybackCaptureConfiguration$Builder;",
 			arg0
@@ -28,7 +28,7 @@ namespace android::media
 	}
 	QAndroidJniObject AudioPlaybackCaptureConfiguration_Builder::addMatchingUsage(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"addMatchingUsage",
 			"(I)Landroid/media/AudioPlaybackCaptureConfiguration$Builder;",
 			arg0
@@ -36,14 +36,14 @@ namespace android::media
 	}
 	QAndroidJniObject AudioPlaybackCaptureConfiguration_Builder::build()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"build",
 			"()Landroid/media/AudioPlaybackCaptureConfiguration;"
 		);
 	}
 	QAndroidJniObject AudioPlaybackCaptureConfiguration_Builder::excludeUid(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"excludeUid",
 			"(I)Landroid/media/AudioPlaybackCaptureConfiguration$Builder;",
 			arg0
@@ -51,7 +51,7 @@ namespace android::media
 	}
 	QAndroidJniObject AudioPlaybackCaptureConfiguration_Builder::excludeUsage(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"excludeUsage",
 			"(I)Landroid/media/AudioPlaybackCaptureConfiguration$Builder;",
 			arg0

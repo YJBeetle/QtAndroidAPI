@@ -19,9 +19,11 @@ namespace android::net::wifi::aware
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SubscribeDiscoverySession(const char *className, const char *sig, Ts...agv) : android::net::wifi::aware::DiscoverySession(className, sig, std::forward<Ts>(agv)...) {}
 		SubscribeDiscoverySession(QAndroidJniObject obj);
+		
 		// Constructors
-		SubscribeDiscoverySession() = default;
 		
 		// Methods
 		void updateSubscribe(android::net::wifi::aware::SubscribeConfig arg0);

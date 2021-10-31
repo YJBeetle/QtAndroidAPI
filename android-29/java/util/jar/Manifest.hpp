@@ -26,7 +26,10 @@ namespace java::util::jar
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Manifest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Manifest(QAndroidJniObject obj);
+		
 		// Constructors
 		Manifest();
 		Manifest(java::io::InputStream arg0);

@@ -22,9 +22,11 @@ namespace android::net::wifi::aware
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DiscoverySession(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DiscoverySession(QAndroidJniObject obj);
+		
 		// Constructors
-		DiscoverySession() = default;
 		
 		// Methods
 		void close();

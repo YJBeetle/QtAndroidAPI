@@ -25,7 +25,9 @@ namespace android::icu::text
 		);
 	}
 	
-	CollationKey_BoundMode::CollationKey_BoundMode(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CollationKey_BoundMode::CollationKey_BoundMode(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

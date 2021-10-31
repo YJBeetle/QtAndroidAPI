@@ -76,9 +76,11 @@ namespace android::hardware::camera2
 		static QAndroidJniObject TONEMAP_MODE();
 		static QAndroidJniObject TONEMAP_PRESET_CURVE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CaptureRequest(const char *className, const char *sig, Ts...agv) : android::hardware::camera2::CameraMetadata(className, sig, std::forward<Ts>(agv)...) {}
 		CaptureRequest(QAndroidJniObject obj);
+		
 		// Constructors
-		CaptureRequest() = default;
 		
 		// Methods
 		jint describeContents();

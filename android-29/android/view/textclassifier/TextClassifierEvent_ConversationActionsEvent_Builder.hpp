@@ -15,10 +15,12 @@ namespace android::view::textclassifier
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TextClassifierEvent_ConversationActionsEvent_Builder(const char *className, const char *sig, Ts...agv) : android::view::textclassifier::TextClassifierEvent_Builder(className, sig, std::forward<Ts>(agv)...) {}
 		TextClassifierEvent_ConversationActionsEvent_Builder(QAndroidJniObject obj);
+		
 		// Constructors
 		TextClassifierEvent_ConversationActionsEvent_Builder(jint arg0);
-		TextClassifierEvent_ConversationActionsEvent_Builder() = default;
 		
 		// Methods
 		QAndroidJniObject build();

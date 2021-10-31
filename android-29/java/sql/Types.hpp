@@ -49,9 +49,11 @@ namespace java::sql
 		static jint VARBINARY();
 		static jint VARCHAR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Types(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Types(QAndroidJniObject obj);
+		
 		// Constructors
-		Types() = default;
 		
 		// Methods
 	};

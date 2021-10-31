@@ -14,62 +14,60 @@ namespace android::view
 		);
 	}
 	
-	KeyboardShortcutGroup::KeyboardShortcutGroup(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	KeyboardShortcutGroup::KeyboardShortcutGroup(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	KeyboardShortcutGroup::KeyboardShortcutGroup(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.KeyboardShortcutGroup",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
-		);
-	}
+		) {}
 	KeyboardShortcutGroup::KeyboardShortcutGroup(jstring arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.KeyboardShortcutGroup",
 			"(Ljava/lang/CharSequence;Ljava/util/List;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
+			arg1.object()
+		) {}
 	
 	// Methods
 	void KeyboardShortcutGroup::addItem(android::view::KeyboardShortcutInfo arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addItem",
 			"(Landroid/view/KeyboardShortcutInfo;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint KeyboardShortcutGroup::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	QAndroidJniObject KeyboardShortcutGroup::getItems()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getItems",
 			"()Ljava/util/List;"
 		);
 	}
 	jstring KeyboardShortcutGroup::getLabel()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	void KeyboardShortcutGroup::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

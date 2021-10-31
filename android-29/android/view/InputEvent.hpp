@@ -15,9 +15,11 @@ namespace android::view
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit InputEvent(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		InputEvent(QAndroidJniObject obj);
+		
 		// Constructors
-		InputEvent() = default;
 		
 		// Methods
 		jint describeContents();

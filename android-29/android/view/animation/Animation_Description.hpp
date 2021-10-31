@@ -12,9 +12,11 @@ namespace android::view::animation
 		jint type();
 		jfloat value();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Animation_Description(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Animation_Description(QAndroidJniObject obj);
+		
 		// Constructors
-		Animation_Description() = default;
 		
 		// Methods
 	};

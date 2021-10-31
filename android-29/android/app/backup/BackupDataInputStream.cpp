@@ -5,27 +5,29 @@ namespace android::app::backup
 {
 	// Fields
 	
-	BackupDataInputStream::BackupDataInputStream(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BackupDataInputStream::BackupDataInputStream(QAndroidJniObject obj) : java::io::InputStream(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jstring BackupDataInputStream::getKey()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getKey",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint BackupDataInputStream::read()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"read",
 			"()I"
 		);
 	}
 	jint BackupDataInputStream::read(jbyteArray arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"read",
 			"([B)I",
 			arg0
@@ -33,7 +35,7 @@ namespace android::app::backup
 	}
 	jint BackupDataInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"read",
 			"([BII)I",
 			arg0,
@@ -43,7 +45,7 @@ namespace android::app::backup
 	}
 	jint BackupDataInputStream::size()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"size",
 			"()I"
 		);

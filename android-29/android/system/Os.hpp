@@ -50,9 +50,11 @@ namespace android::system
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Os(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Os(QAndroidJniObject obj);
+		
 		// Constructors
-		Os() = default;
 		
 		// Methods
 		static QAndroidJniObject accept(java::io::FileDescriptor arg0, java::net::InetSocketAddress arg1);

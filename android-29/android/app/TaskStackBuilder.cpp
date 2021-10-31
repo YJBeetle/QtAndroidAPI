@@ -10,7 +10,9 @@ namespace android::app
 {
 	// Fields
 	
-	TaskStackBuilder::TaskStackBuilder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TaskStackBuilder::TaskStackBuilder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -20,44 +22,44 @@ namespace android::app
 			"android.app.TaskStackBuilder",
 			"create",
 			"(Landroid/content/Context;)Landroid/app/TaskStackBuilder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject TaskStackBuilder::addNextIntent(android::content::Intent arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"addNextIntent",
 			"(Landroid/content/Intent;)Landroid/app/TaskStackBuilder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject TaskStackBuilder::addNextIntentWithParentStack(android::content::Intent arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"addNextIntentWithParentStack",
 			"(Landroid/content/Intent;)Landroid/app/TaskStackBuilder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject TaskStackBuilder::addParentStack(android::app::Activity arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"addParentStack",
 			"(Landroid/app/Activity;)Landroid/app/TaskStackBuilder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject TaskStackBuilder::addParentStack(android::content::ComponentName arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"addParentStack",
 			"(Landroid/content/ComponentName;)Landroid/app/TaskStackBuilder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject TaskStackBuilder::addParentStack(jclass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"addParentStack",
 			"(Ljava/lang/Class;)Landroid/app/TaskStackBuilder;",
 			arg0
@@ -65,7 +67,7 @@ namespace android::app
 	}
 	QAndroidJniObject TaskStackBuilder::editIntentAt(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"editIntentAt",
 			"(I)Landroid/content/Intent;",
 			arg0
@@ -73,21 +75,21 @@ namespace android::app
 	}
 	jint TaskStackBuilder::getIntentCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getIntentCount",
 			"()I"
 		);
 	}
 	jarray TaskStackBuilder::getIntents()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getIntents",
 			"()[Landroid/content/Intent;"
 		).object<jarray>();
 	}
 	QAndroidJniObject TaskStackBuilder::getPendingIntent(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPendingIntent",
 			"(II)Landroid/app/PendingIntent;",
 			arg0,
@@ -96,27 +98,27 @@ namespace android::app
 	}
 	QAndroidJniObject TaskStackBuilder::getPendingIntent(jint arg0, jint arg1, android::os::Bundle arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPendingIntent",
 			"(IILandroid/os/Bundle;)Landroid/app/PendingIntent;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void TaskStackBuilder::startActivities()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"startActivities",
 			"()V"
 		);
 	}
 	void TaskStackBuilder::startActivities(android::os::Bundle arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"startActivities",
 			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::app

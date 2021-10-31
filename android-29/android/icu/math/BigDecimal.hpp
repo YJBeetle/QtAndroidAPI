@@ -34,7 +34,10 @@ namespace android::icu::math
 		static QAndroidJniObject TEN();
 		static QAndroidJniObject ZERO();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BigDecimal(const char *className, const char *sig, Ts...agv) : java::lang::Number(className, sig, std::forward<Ts>(agv)...) {}
 		BigDecimal(QAndroidJniObject obj);
+		
 		// Constructors
 		BigDecimal(jcharArray arg0);
 		BigDecimal(jdouble arg0);
@@ -45,7 +48,6 @@ namespace android::icu::math
 		BigDecimal(jlong arg0);
 		BigDecimal(java::math::BigInteger arg0, jint arg1);
 		BigDecimal(jcharArray arg0, jint arg1, jint arg2);
-		BigDecimal() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jdouble arg0);

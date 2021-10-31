@@ -18,7 +18,10 @@ namespace android::net::sip
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SipAudioCall_Listener(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SipAudioCall_Listener(QAndroidJniObject obj);
+		
 		// Constructors
 		SipAudioCall_Listener();
 		

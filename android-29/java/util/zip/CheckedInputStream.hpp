@@ -16,10 +16,12 @@ namespace java::util::zip
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CheckedInputStream(const char *className, const char *sig, Ts...agv) : java::io::FilterInputStream(className, sig, std::forward<Ts>(agv)...) {}
 		CheckedInputStream(QAndroidJniObject obj);
+		
 		// Constructors
 		CheckedInputStream(java::io::InputStream arg0, __JniBaseClass arg1);
-		CheckedInputStream() = default;
 		
 		// Methods
 		QAndroidJniObject getChecksum();

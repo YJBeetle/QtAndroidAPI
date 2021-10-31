@@ -5,7 +5,9 @@ namespace android::opengl
 {
 	// Fields
 	
-	GLUtils::GLUtils(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	GLUtils::GLUtils(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -24,7 +26,7 @@ namespace android::opengl
 			"android.opengl.GLUtils",
 			"getInternalFormat",
 			"(Landroid/graphics/Bitmap;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint GLUtils::getType(android::graphics::Bitmap arg0)
@@ -33,7 +35,7 @@ namespace android::opengl
 			"android.opengl.GLUtils",
 			"getType",
 			"(Landroid/graphics/Bitmap;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void GLUtils::texImage2D(jint arg0, jint arg1, android::graphics::Bitmap arg2, jint arg3)
@@ -44,7 +46,7 @@ namespace android::opengl
 			"(IILandroid/graphics/Bitmap;I)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
+			arg2.object(),
 			arg3
 		);
 	}
@@ -57,7 +59,7 @@ namespace android::opengl
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
+			arg3.object(),
 			arg4
 		);
 	}
@@ -70,7 +72,7 @@ namespace android::opengl
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
+			arg3.object(),
 			arg4,
 			arg5
 		);
@@ -85,7 +87,7 @@ namespace android::opengl
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object()
+			arg4.object()
 		);
 	}
 	void GLUtils::texSubImage2D(jint arg0, jint arg1, jint arg2, jint arg3, android::graphics::Bitmap arg4, jint arg5, jint arg6)
@@ -98,7 +100,7 @@ namespace android::opengl
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object(),
+			arg4.object(),
 			arg5,
 			arg6
 		);

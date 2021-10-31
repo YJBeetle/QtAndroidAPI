@@ -5,25 +5,25 @@ namespace android::view
 {
 	// Fields
 	
-	MenuInflater::MenuInflater(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MenuInflater::MenuInflater(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MenuInflater::MenuInflater(android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.MenuInflater",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	void MenuInflater::inflate(jint arg0, __JniBaseClass arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"inflate",
 			"(ILandroid/view/Menu;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 } // namespace android::view

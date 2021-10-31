@@ -6,51 +6,47 @@ namespace android::text
 {
 	// Fields
 	
-	BidiFormatter_Builder::BidiFormatter_Builder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BidiFormatter_Builder::BidiFormatter_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	BidiFormatter_Builder::BidiFormatter_Builder()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.text.BidiFormatter$Builder",
 			"()V"
-		);
-	}
+		) {}
 	BidiFormatter_Builder::BidiFormatter_Builder(jboolean arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.text.BidiFormatter$Builder",
 			"(Z)V",
 			arg0
-		);
-	}
+		) {}
 	BidiFormatter_Builder::BidiFormatter_Builder(java::util::Locale arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.text.BidiFormatter$Builder",
 			"(Ljava/util/Locale;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject BidiFormatter_Builder::build()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"build",
 			"()Landroid/text/BidiFormatter;"
 		);
 	}
 	QAndroidJniObject BidiFormatter_Builder::setTextDirectionHeuristic(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setTextDirectionHeuristic",
 			"(Landroid/text/TextDirectionHeuristic;)Landroid/text/BidiFormatter$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject BidiFormatter_Builder::stereoReset(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"stereoReset",
 			"(Z)Landroid/text/BidiFormatter$Builder;",
 			arg0

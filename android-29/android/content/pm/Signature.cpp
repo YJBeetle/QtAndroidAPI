@@ -13,36 +13,34 @@ namespace android::content::pm
 		);
 	}
 	
-	Signature::Signature(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Signature::Signature(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Signature::Signature(jbyteArray arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.content.pm.Signature",
 			"([B)V",
 			arg0
-		);
-	}
+		) {}
 	Signature::Signature(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.content.pm.Signature",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jint Signature::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean Signature::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -50,28 +48,28 @@ namespace android::content::pm
 	}
 	jint Signature::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jbyteArray Signature::toByteArray()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toByteArray",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jcharArray Signature::toChars()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toChars",
 			"()[C"
 		).object<jcharArray>();
 	}
 	jcharArray Signature::toChars(jcharArray arg0, jintArray arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toChars",
 			"([C[I)[C",
 			arg0,
@@ -80,17 +78,17 @@ namespace android::content::pm
 	}
 	jstring Signature::toCharsString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toCharsString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void Signature::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

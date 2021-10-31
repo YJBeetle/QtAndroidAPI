@@ -4,22 +4,22 @@ namespace android::util
 {
 	// Fields
 	
-	TimingLogger::TimingLogger(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TimingLogger::TimingLogger(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	TimingLogger::TimingLogger(jstring arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.util.TimingLogger",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	void TimingLogger::addSplit(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addSplit",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -27,21 +27,21 @@ namespace android::util
 	}
 	void TimingLogger::dumpToLog()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"dumpToLog",
 			"()V"
 		);
 	}
 	void TimingLogger::reset()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
 	void TimingLogger::reset(jstring arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"reset",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,

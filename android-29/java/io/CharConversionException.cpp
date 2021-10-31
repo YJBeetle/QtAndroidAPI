@@ -4,23 +4,21 @@ namespace java::io
 {
 	// Fields
 	
-	CharConversionException::CharConversionException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CharConversionException::CharConversionException(QAndroidJniObject obj) : java::io::IOException(obj) {}
+	
 	// Constructors
 	CharConversionException::CharConversionException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::IOException(
 			"java.io.CharConversionException",
 			"()V"
-		);
-	}
+		) {}
 	CharConversionException::CharConversionException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::IOException(
 			"java.io.CharConversionException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::io

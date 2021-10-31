@@ -33,20 +33,20 @@ namespace android::net::wifi
 		);
 	}
 	
-	WifiManager_LocalOnlyHotspotCallback::WifiManager_LocalOnlyHotspotCallback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WifiManager_LocalOnlyHotspotCallback::WifiManager_LocalOnlyHotspotCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	WifiManager_LocalOnlyHotspotCallback::WifiManager_LocalOnlyHotspotCallback()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.net.wifi.WifiManager$LocalOnlyHotspotCallback",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void WifiManager_LocalOnlyHotspotCallback::onFailed(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onFailed",
 			"(I)V",
 			arg0
@@ -54,15 +54,15 @@ namespace android::net::wifi
 	}
 	void WifiManager_LocalOnlyHotspotCallback::onStarted(android::net::wifi::WifiManager_LocalOnlyHotspotReservation arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onStarted",
 			"(Landroid/net/wifi/WifiManager$LocalOnlyHotspotReservation;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void WifiManager_LocalOnlyHotspotCallback::onStopped()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onStopped",
 			"()V"
 		);

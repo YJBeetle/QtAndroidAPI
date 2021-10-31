@@ -33,13 +33,15 @@ namespace android::widget
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SearchView(const char *className, const char *sig, Ts...agv) : android::widget::LinearLayout(className, sig, std::forward<Ts>(agv)...) {}
 		SearchView(QAndroidJniObject obj);
+		
 		// Constructors
 		SearchView(android::content::Context arg0);
 		SearchView(android::content::Context arg0, __JniBaseClass arg1);
 		SearchView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		SearchView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
-		SearchView() = default;
 		
 		// Methods
 		void clearFocus();

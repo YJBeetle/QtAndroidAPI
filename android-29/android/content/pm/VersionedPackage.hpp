@@ -15,11 +15,13 @@ namespace android::content::pm
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit VersionedPackage(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		VersionedPackage(QAndroidJniObject obj);
+		
 		// Constructors
 		VersionedPackage(jstring arg0, jint arg1);
 		VersionedPackage(jstring arg0, jlong arg1);
-		VersionedPackage() = default;
 		
 		// Methods
 		jint describeContents();

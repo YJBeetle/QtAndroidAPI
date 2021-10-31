@@ -36,7 +36,9 @@ namespace java::text
 		);
 	}
 	
-	Normalizer_Form::Normalizer_Form(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Normalizer_Form::Normalizer_Form(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

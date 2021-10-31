@@ -17,161 +17,161 @@ namespace android::preference
 	}
 	jstring PreferenceActivity_Header::breadCrumbShortTitle()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"breadCrumbShortTitle",
 			"Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jint PreferenceActivity_Header::breadCrumbShortTitleRes()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"breadCrumbShortTitleRes"
 		);
 	}
 	jstring PreferenceActivity_Header::breadCrumbTitle()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"breadCrumbTitle",
 			"Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jint PreferenceActivity_Header::breadCrumbTitleRes()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"breadCrumbTitleRes"
 		);
 	}
 	QAndroidJniObject PreferenceActivity_Header::extras()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"extras",
 			"Landroid/os/Bundle;"
 		);
 	}
 	jstring PreferenceActivity_Header::fragment()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"fragment",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject PreferenceActivity_Header::fragmentArguments()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"fragmentArguments",
 			"Landroid/os/Bundle;"
 		);
 	}
 	jint PreferenceActivity_Header::iconRes()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"iconRes"
 		);
 	}
 	jlong PreferenceActivity_Header::id()
 	{
-		return __thiz.getField<jlong>(
+		return getField<jlong>(
 			"id"
 		);
 	}
 	QAndroidJniObject PreferenceActivity_Header::intent()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"intent",
 			"Landroid/content/Intent;"
 		);
 	}
 	jstring PreferenceActivity_Header::summary()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"summary",
 			"Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jint PreferenceActivity_Header::summaryRes()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"summaryRes"
 		);
 	}
 	jstring PreferenceActivity_Header::title()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"title",
 			"Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jint PreferenceActivity_Header::titleRes()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"titleRes"
 		);
 	}
 	
-	PreferenceActivity_Header::PreferenceActivity_Header(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PreferenceActivity_Header::PreferenceActivity_Header(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	PreferenceActivity_Header::PreferenceActivity_Header()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.preference.PreferenceActivity$Header",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jint PreferenceActivity_Header::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jstring PreferenceActivity_Header::getBreadCrumbShortTitle(android::content::res::Resources arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBreadCrumbShortTitle",
 			"(Landroid/content/res/Resources;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jstring PreferenceActivity_Header::getBreadCrumbTitle(android::content::res::Resources arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBreadCrumbTitle",
 			"(Landroid/content/res/Resources;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jstring PreferenceActivity_Header::getSummary(android::content::res::Resources arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSummary",
 			"(Landroid/content/res/Resources;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jstring PreferenceActivity_Header::getTitle(android::content::res::Resources arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTitle",
 			"(Landroid/content/res/Resources;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	void PreferenceActivity_Header::readFromParcel(android::os::Parcel arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"readFromParcel",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void PreferenceActivity_Header::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

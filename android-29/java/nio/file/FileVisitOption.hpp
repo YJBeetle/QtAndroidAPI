@@ -12,9 +12,11 @@ namespace java::nio::file
 		// Fields
 		static QAndroidJniObject FOLLOW_LINKS();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit FileVisitOption(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		FileVisitOption(QAndroidJniObject obj);
+		
 		// Constructors
-		FileVisitOption() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

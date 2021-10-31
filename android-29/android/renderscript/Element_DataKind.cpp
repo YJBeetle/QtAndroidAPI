@@ -68,7 +68,9 @@ namespace android::renderscript
 		);
 	}
 	
-	Element_DataKind::Element_DataKind(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Element_DataKind::Element_DataKind(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

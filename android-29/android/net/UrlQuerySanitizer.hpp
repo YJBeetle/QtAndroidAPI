@@ -10,7 +10,10 @@ namespace android::net
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit UrlQuerySanitizer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		UrlQuerySanitizer(QAndroidJniObject obj);
+		
 		// Constructors
 		UrlQuerySanitizer();
 		UrlQuerySanitizer(jstring arg0);

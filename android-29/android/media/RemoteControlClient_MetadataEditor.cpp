@@ -14,43 +14,45 @@ namespace android::media
 		);
 	}
 	
-	RemoteControlClient_MetadataEditor::RemoteControlClient_MetadataEditor(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	RemoteControlClient_MetadataEditor::RemoteControlClient_MetadataEditor(QAndroidJniObject obj) : android::media::MediaMetadataEditor(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void RemoteControlClient_MetadataEditor::apply()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"apply",
 			"()V"
 		);
 	}
 	void RemoteControlClient_MetadataEditor::clear()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
 	jobject RemoteControlClient_MetadataEditor::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	QAndroidJniObject RemoteControlClient_MetadataEditor::putBitmap(jint arg0, android::graphics::Bitmap arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"putBitmap",
 			"(ILandroid/graphics/Bitmap;)Landroid/media/RemoteControlClient$MetadataEditor;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject RemoteControlClient_MetadataEditor::putLong(jint arg0, jlong arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"putLong",
 			"(IJ)Landroid/media/RemoteControlClient$MetadataEditor;",
 			arg0,
@@ -59,7 +61,7 @@ namespace android::media
 	}
 	QAndroidJniObject RemoteControlClient_MetadataEditor::putObject(jint arg0, jobject arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"putObject",
 			"(ILjava/lang/Object;)Landroid/media/RemoteControlClient$MetadataEditor;",
 			arg0,
@@ -68,7 +70,7 @@ namespace android::media
 	}
 	QAndroidJniObject RemoteControlClient_MetadataEditor::putString(jint arg0, jstring arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"putString",
 			"(ILjava/lang/String;)Landroid/media/RemoteControlClient$MetadataEditor;",
 			arg0,

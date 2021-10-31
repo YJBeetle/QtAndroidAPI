@@ -23,58 +23,58 @@ namespace android::app
 		).object<jstring>();
 	}
 	
-	NativeActivity::NativeActivity(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NativeActivity::NativeActivity(QAndroidJniObject obj) : android::app::Activity(obj) {}
+	
 	// Constructors
 	NativeActivity::NativeActivity()
-	{
-		__thiz = QAndroidJniObject(
+		: android::app::Activity(
 			"android.app.NativeActivity",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void NativeActivity::onConfigurationChanged(android::content::res::Configuration arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onConfigurationChanged",
 			"(Landroid/content/res/Configuration;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void NativeActivity::onGlobalLayout()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onGlobalLayout",
 			"()V"
 		);
 	}
 	void NativeActivity::onInputQueueCreated(android::view::InputQueue arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onInputQueueCreated",
 			"(Landroid/view/InputQueue;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void NativeActivity::onInputQueueDestroyed(android::view::InputQueue arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onInputQueueDestroyed",
 			"(Landroid/view/InputQueue;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void NativeActivity::onLowMemory()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onLowMemory",
 			"()V"
 		);
 	}
 	void NativeActivity::onWindowFocusChanged(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onWindowFocusChanged",
 			"(Z)V",
 			arg0
@@ -82,10 +82,10 @@ namespace android::app
 	}
 	void NativeActivity::surfaceChanged(__JniBaseClass arg0, jint arg1, jint arg2, jint arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"surfaceChanged",
 			"(Landroid/view/SurfaceHolder;III)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3
@@ -93,26 +93,26 @@ namespace android::app
 	}
 	void NativeActivity::surfaceCreated(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"surfaceCreated",
 			"(Landroid/view/SurfaceHolder;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void NativeActivity::surfaceDestroyed(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"surfaceDestroyed",
 			"(Landroid/view/SurfaceHolder;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void NativeActivity::surfaceRedrawNeeded(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"surfaceRedrawNeeded",
 			"(Landroid/view/SurfaceHolder;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::app

@@ -5,33 +5,29 @@ namespace android::text
 {
 	// Fields
 	
-	SpannableStringBuilder::SpannableStringBuilder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SpannableStringBuilder::SpannableStringBuilder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	SpannableStringBuilder::SpannableStringBuilder()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.text.SpannableStringBuilder",
 			"()V"
-		);
-	}
+		) {}
 	SpannableStringBuilder::SpannableStringBuilder(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.text.SpannableStringBuilder",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
-		);
-	}
+		) {}
 	SpannableStringBuilder::SpannableStringBuilder(jstring arg0, jint arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.text.SpannableStringBuilder",
 			"(Ljava/lang/CharSequence;II)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject SpannableStringBuilder::valueOf(jstring arg0)
@@ -45,7 +41,7 @@ namespace android::text
 	}
 	QAndroidJniObject SpannableStringBuilder::append(jchar arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"append",
 			"(C)Landroid/text/SpannableStringBuilder;",
 			arg0
@@ -53,7 +49,7 @@ namespace android::text
 	}
 	QAndroidJniObject SpannableStringBuilder::append(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"append",
 			"(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;",
 			arg0
@@ -61,7 +57,7 @@ namespace android::text
 	}
 	QAndroidJniObject SpannableStringBuilder::append(jstring arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"append",
 			"(Ljava/lang/CharSequence;II)Landroid/text/SpannableStringBuilder;",
 			arg0,
@@ -71,7 +67,7 @@ namespace android::text
 	}
 	QAndroidJniObject SpannableStringBuilder::append(jstring arg0, jobject arg1, jint arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"append",
 			"(Ljava/lang/CharSequence;Ljava/lang/Object;I)Landroid/text/SpannableStringBuilder;",
 			arg0,
@@ -81,7 +77,7 @@ namespace android::text
 	}
 	jchar SpannableStringBuilder::charAt(jint arg0)
 	{
-		return __thiz.callMethod<jchar>(
+		return callMethod<jchar>(
 			"charAt",
 			"(I)C",
 			arg0
@@ -89,21 +85,21 @@ namespace android::text
 	}
 	void SpannableStringBuilder::clear()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
 	void SpannableStringBuilder::clearSpans()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clearSpans",
 			"()V"
 		);
 	}
 	QAndroidJniObject SpannableStringBuilder::_delete(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"delete",
 			"(II)Landroid/text/SpannableStringBuilder;",
 			arg0,
@@ -112,7 +108,7 @@ namespace android::text
 	}
 	jboolean SpannableStringBuilder::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -120,7 +116,7 @@ namespace android::text
 	}
 	void SpannableStringBuilder::getChars(jint arg0, jint arg1, jcharArray arg2, jint arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"getChars",
 			"(II[CI)V",
 			arg0,
@@ -131,14 +127,14 @@ namespace android::text
 	}
 	jarray SpannableStringBuilder::getFilters()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFilters",
 			"()[Landroid/text/InputFilter;"
 		).object<jarray>();
 	}
 	jint SpannableStringBuilder::getSpanEnd(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSpanEnd",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -146,7 +142,7 @@ namespace android::text
 	}
 	jint SpannableStringBuilder::getSpanFlags(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSpanFlags",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -154,7 +150,7 @@ namespace android::text
 	}
 	jint SpannableStringBuilder::getSpanStart(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSpanStart",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -162,7 +158,7 @@ namespace android::text
 	}
 	jobjectArray SpannableStringBuilder::getSpans(jint arg0, jint arg1, jclass arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSpans",
 			"(IILjava/lang/Class;)[Ljava/lang/Object;",
 			arg0,
@@ -172,7 +168,7 @@ namespace android::text
 	}
 	jint SpannableStringBuilder::getTextRunCursor(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, android::graphics::Paint arg5)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTextRunCursor",
 			"(IIIIILandroid/graphics/Paint;)I",
 			arg0,
@@ -180,26 +176,26 @@ namespace android::text
 			arg2,
 			arg3,
 			arg4,
-			arg5.__jniObject().object()
+			arg5.object()
 		);
 	}
 	jint SpannableStringBuilder::getTextWatcherDepth()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTextWatcherDepth",
 			"()I"
 		);
 	}
 	jint SpannableStringBuilder::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	QAndroidJniObject SpannableStringBuilder::insert(jint arg0, jstring arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"insert",
 			"(ILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;",
 			arg0,
@@ -208,7 +204,7 @@ namespace android::text
 	}
 	QAndroidJniObject SpannableStringBuilder::insert(jint arg0, jstring arg1, jint arg2, jint arg3)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"insert",
 			"(ILjava/lang/CharSequence;II)Landroid/text/SpannableStringBuilder;",
 			arg0,
@@ -219,14 +215,14 @@ namespace android::text
 	}
 	jint SpannableStringBuilder::length()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"length",
 			"()I"
 		);
 	}
 	jint SpannableStringBuilder::nextSpanTransition(jint arg0, jint arg1, jclass arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"nextSpanTransition",
 			"(IILjava/lang/Class;)I",
 			arg0,
@@ -236,7 +232,7 @@ namespace android::text
 	}
 	void SpannableStringBuilder::removeSpan(jobject arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeSpan",
 			"(Ljava/lang/Object;)V",
 			arg0
@@ -244,7 +240,7 @@ namespace android::text
 	}
 	QAndroidJniObject SpannableStringBuilder::replace(jint arg0, jint arg1, jstring arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"replace",
 			"(IILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;",
 			arg0,
@@ -254,7 +250,7 @@ namespace android::text
 	}
 	QAndroidJniObject SpannableStringBuilder::replace(jint arg0, jint arg1, jstring arg2, jint arg3, jint arg4)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"replace",
 			"(IILjava/lang/CharSequence;II)Landroid/text/SpannableStringBuilder;",
 			arg0,
@@ -266,7 +262,7 @@ namespace android::text
 	}
 	void SpannableStringBuilder::setFilters(jarray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFilters",
 			"([Landroid/text/InputFilter;)V",
 			arg0
@@ -274,7 +270,7 @@ namespace android::text
 	}
 	void SpannableStringBuilder::setSpan(jobject arg0, jint arg1, jint arg2, jint arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSpan",
 			"(Ljava/lang/Object;III)V",
 			arg0,
@@ -285,7 +281,7 @@ namespace android::text
 	}
 	jstring SpannableStringBuilder::subSequence(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"subSequence",
 			"(II)Ljava/lang/CharSequence;",
 			arg0,
@@ -294,7 +290,7 @@ namespace android::text
 	}
 	jstring SpannableStringBuilder::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

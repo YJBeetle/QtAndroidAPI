@@ -25,7 +25,10 @@ namespace android::net::wifi::p2p
 		jint groupOwnerIntent();
 		QAndroidJniObject wps();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit WifiP2pConfig(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		WifiP2pConfig(QAndroidJniObject obj);
+		
 		// Constructors
 		WifiP2pConfig();
 		WifiP2pConfig(android::net::wifi::p2p::WifiP2pConfig &arg0);

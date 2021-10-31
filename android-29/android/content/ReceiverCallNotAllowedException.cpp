@@ -4,16 +4,16 @@ namespace android::content
 {
 	// Fields
 	
-	ReceiverCallNotAllowedException::ReceiverCallNotAllowedException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ReceiverCallNotAllowedException::ReceiverCallNotAllowedException(QAndroidJniObject obj) : android::util::AndroidRuntimeException(obj) {}
+	
 	// Constructors
 	ReceiverCallNotAllowedException::ReceiverCallNotAllowedException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::util::AndroidRuntimeException(
 			"android.content.ReceiverCallNotAllowedException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::content

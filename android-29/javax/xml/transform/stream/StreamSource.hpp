@@ -23,7 +23,10 @@ namespace javax::xml::transform::stream
 		// Fields
 		static jstring FEATURE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit StreamSource(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		StreamSource(QAndroidJniObject obj);
+		
 		// Constructors
 		StreamSource();
 		StreamSource(java::io::File arg0);

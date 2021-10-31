@@ -25,9 +25,11 @@ namespace android::provider
 		static jstring CONTENT_TYPE();
 		static QAndroidJniObject CONTENT_URI();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ContactsContract_RawContacts(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ContactsContract_RawContacts(QAndroidJniObject obj);
+		
 		// Constructors
-		ContactsContract_RawContacts() = default;
 		
 		// Methods
 		static QAndroidJniObject getContactLookupUri(android::content::ContentResolver arg0, android::net::Uri arg1);

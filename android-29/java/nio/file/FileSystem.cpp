@@ -6,27 +6,29 @@ namespace java::nio::file
 {
 	// Fields
 	
-	FileSystem::FileSystem(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FileSystem::FileSystem(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void FileSystem::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	QAndroidJniObject FileSystem::getFileStores()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFileStores",
 			"()Ljava/lang/Iterable;"
 		);
 	}
 	QAndroidJniObject FileSystem::getPath(jstring arg0, jarray arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPath",
 			"(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;",
 			arg0,
@@ -35,7 +37,7 @@ namespace java::nio::file
 	}
 	QAndroidJniObject FileSystem::getPathMatcher(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPathMatcher",
 			"(Ljava/lang/String;)Ljava/nio/file/PathMatcher;",
 			arg0
@@ -43,56 +45,56 @@ namespace java::nio::file
 	}
 	QAndroidJniObject FileSystem::getRootDirectories()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRootDirectories",
 			"()Ljava/lang/Iterable;"
 		);
 	}
 	jstring FileSystem::getSeparator()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSeparator",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject FileSystem::getUserPrincipalLookupService()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getUserPrincipalLookupService",
 			"()Ljava/nio/file/attribute/UserPrincipalLookupService;"
 		);
 	}
 	jboolean FileSystem::isOpen()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isOpen",
 			"()Z"
 		);
 	}
 	jboolean FileSystem::isReadOnly()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isReadOnly",
 			"()Z"
 		);
 	}
 	QAndroidJniObject FileSystem::newWatchService()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newWatchService",
 			"()Ljava/nio/file/WatchService;"
 		);
 	}
 	QAndroidJniObject FileSystem::provider()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"provider",
 			"()Ljava/nio/file/spi/FileSystemProvider;"
 		);
 	}
 	QAndroidJniObject FileSystem::supportedFileAttributeViews()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"supportedFileAttributeViews",
 			"()Ljava/util/Set;"
 		);

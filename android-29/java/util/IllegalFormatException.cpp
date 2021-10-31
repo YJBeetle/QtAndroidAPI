@@ -4,7 +4,9 @@ namespace java::util
 {
 	// Fields
 	
-	IllegalFormatException::IllegalFormatException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	IllegalFormatException::IllegalFormatException(QAndroidJniObject obj) : java::lang::IllegalArgumentException(obj) {}
+	
 	// Constructors
 	
 	// Methods

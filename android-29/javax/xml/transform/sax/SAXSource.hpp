@@ -15,7 +15,10 @@ namespace javax::xml::transform::sax
 		// Fields
 		static jstring FEATURE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SAXSource(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SAXSource(QAndroidJniObject obj);
+		
 		// Constructors
 		SAXSource();
 		SAXSource(org::xml::sax::InputSource arg0);

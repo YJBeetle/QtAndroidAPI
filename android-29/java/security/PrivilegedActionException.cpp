@@ -7,28 +7,28 @@ namespace java::security
 {
 	// Fields
 	
-	PrivilegedActionException::PrivilegedActionException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PrivilegedActionException::PrivilegedActionException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
+	
 	// Constructors
 	PrivilegedActionException::PrivilegedActionException(java::lang::Exception arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Exception(
 			"java.security.PrivilegedActionException",
 			"(Ljava/lang/Exception;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject PrivilegedActionException::getException()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getException",
 			"()Ljava/lang/Exception;"
 		);
 	}
 	jstring PrivilegedActionException::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

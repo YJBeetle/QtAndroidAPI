@@ -23,10 +23,12 @@ namespace android::os
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit LocaleList(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		LocaleList(QAndroidJniObject obj);
+		
 		// Constructors
 		LocaleList(jarray arg0);
-		LocaleList() = default;
 		
 		// Methods
 		static QAndroidJniObject forLanguageTags(jstring arg0);

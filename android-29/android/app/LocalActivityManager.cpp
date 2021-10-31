@@ -8,22 +8,22 @@ namespace android::app
 {
 	// Fields
 	
-	LocalActivityManager::LocalActivityManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	LocalActivityManager::LocalActivityManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	LocalActivityManager::LocalActivityManager(android::app::Activity arg0, jboolean arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.app.LocalActivityManager",
 			"(Landroid/app/Activity;Z)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject LocalActivityManager::destroyActivity(jstring arg0, jboolean arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"destroyActivity",
 			"(Ljava/lang/String;Z)Landroid/view/Window;",
 			arg0,
@@ -32,15 +32,15 @@ namespace android::app
 	}
 	void LocalActivityManager::dispatchCreate(android::os::Bundle arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"dispatchCreate",
 			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void LocalActivityManager::dispatchDestroy(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"dispatchDestroy",
 			"(Z)V",
 			arg0
@@ -48,7 +48,7 @@ namespace android::app
 	}
 	void LocalActivityManager::dispatchPause(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"dispatchPause",
 			"(Z)V",
 			arg0
@@ -56,21 +56,21 @@ namespace android::app
 	}
 	void LocalActivityManager::dispatchResume()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"dispatchResume",
 			"()V"
 		);
 	}
 	void LocalActivityManager::dispatchStop()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"dispatchStop",
 			"()V"
 		);
 	}
 	QAndroidJniObject LocalActivityManager::getActivity(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getActivity",
 			"(Ljava/lang/String;)Landroid/app/Activity;",
 			arg0
@@ -78,39 +78,39 @@ namespace android::app
 	}
 	QAndroidJniObject LocalActivityManager::getCurrentActivity()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCurrentActivity",
 			"()Landroid/app/Activity;"
 		);
 	}
 	jstring LocalActivityManager::getCurrentId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCurrentId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void LocalActivityManager::removeAllActivities()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeAllActivities",
 			"()V"
 		);
 	}
 	QAndroidJniObject LocalActivityManager::saveInstanceState()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"saveInstanceState",
 			"()Landroid/os/Bundle;"
 		);
 	}
 	QAndroidJniObject LocalActivityManager::startActivity(jstring arg0, android::content::Intent arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"startActivity",
 			"(Ljava/lang/String;Landroid/content/Intent;)Landroid/view/Window;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 } // namespace android::app

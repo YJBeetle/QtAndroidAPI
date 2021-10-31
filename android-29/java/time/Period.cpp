@@ -16,7 +16,9 @@ namespace java::time
 		);
 	}
 	
-	Period::Period(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Period::Period(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -26,8 +28,8 @@ namespace java::time
 			"java.time.Period",
 			"between",
 			"(Ljava/time/LocalDate;Ljava/time/LocalDate;)Ljava/time/Period;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject Period::from(__JniBaseClass arg0)
@@ -36,7 +38,7 @@ namespace java::time
 			"java.time.Period",
 			"from",
 			"(Ljava/time/temporal/TemporalAmount;)Ljava/time/Period;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Period::of(jint arg0, jint arg1, jint arg2)
@@ -97,15 +99,15 @@ namespace java::time
 	}
 	QAndroidJniObject Period::addTo(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"addTo",
 			"(Ljava/time/temporal/Temporal;)Ljava/time/temporal/Temporal;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean Period::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -113,79 +115,79 @@ namespace java::time
 	}
 	jlong Period::get(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"get",
 			"(Ljava/time/temporal/TemporalUnit;)J",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Period::getChronology()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getChronology",
 			"()Ljava/time/chrono/IsoChronology;"
 		);
 	}
 	jint Period::getDays()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDays",
 			"()I"
 		);
 	}
 	jint Period::getMonths()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMonths",
 			"()I"
 		);
 	}
 	QAndroidJniObject Period::getUnits()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getUnits",
 			"()Ljava/util/List;"
 		);
 	}
 	jint Period::getYears()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getYears",
 			"()I"
 		);
 	}
 	jint Period::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean Period::isNegative()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isNegative",
 			"()Z"
 		);
 	}
 	jboolean Period::isZero()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isZero",
 			"()Z"
 		);
 	}
 	QAndroidJniObject Period::minus(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"minus",
 			"(Ljava/time/temporal/TemporalAmount;)Ljava/time/Period;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Period::minusDays(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"minusDays",
 			"(J)Ljava/time/Period;",
 			arg0
@@ -193,7 +195,7 @@ namespace java::time
 	}
 	QAndroidJniObject Period::minusMonths(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"minusMonths",
 			"(J)Ljava/time/Period;",
 			arg0
@@ -201,7 +203,7 @@ namespace java::time
 	}
 	QAndroidJniObject Period::minusYears(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"minusYears",
 			"(J)Ljava/time/Period;",
 			arg0
@@ -209,7 +211,7 @@ namespace java::time
 	}
 	QAndroidJniObject Period::multipliedBy(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"multipliedBy",
 			"(I)Ljava/time/Period;",
 			arg0
@@ -217,29 +219,29 @@ namespace java::time
 	}
 	QAndroidJniObject Period::negated()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"negated",
 			"()Ljava/time/Period;"
 		);
 	}
 	QAndroidJniObject Period::normalized()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"normalized",
 			"()Ljava/time/Period;"
 		);
 	}
 	QAndroidJniObject Period::plus(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"plus",
 			"(Ljava/time/temporal/TemporalAmount;)Ljava/time/Period;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Period::plusDays(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"plusDays",
 			"(J)Ljava/time/Period;",
 			arg0
@@ -247,7 +249,7 @@ namespace java::time
 	}
 	QAndroidJniObject Period::plusMonths(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"plusMonths",
 			"(J)Ljava/time/Period;",
 			arg0
@@ -255,7 +257,7 @@ namespace java::time
 	}
 	QAndroidJniObject Period::plusYears(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"plusYears",
 			"(J)Ljava/time/Period;",
 			arg0
@@ -263,29 +265,29 @@ namespace java::time
 	}
 	QAndroidJniObject Period::subtractFrom(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"subtractFrom",
 			"(Ljava/time/temporal/Temporal;)Ljava/time/temporal/Temporal;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring Period::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jlong Period::toTotalMonths()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"toTotalMonths",
 			"()J"
 		);
 	}
 	QAndroidJniObject Period::withDays(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withDays",
 			"(I)Ljava/time/Period;",
 			arg0
@@ -293,7 +295,7 @@ namespace java::time
 	}
 	QAndroidJniObject Period::withMonths(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withMonths",
 			"(I)Ljava/time/Period;",
 			arg0
@@ -301,7 +303,7 @@ namespace java::time
 	}
 	QAndroidJniObject Period::withYears(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withYears",
 			"(I)Ljava/time/Period;",
 			arg0

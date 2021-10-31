@@ -15,10 +15,12 @@ namespace android::system
 		jstring sysname();
 		jstring version();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit StructUtsname(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		StructUtsname(QAndroidJniObject obj);
+		
 		// Constructors
 		StructUtsname(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4);
-		StructUtsname() = default;
 		
 		// Methods
 		jstring toString();

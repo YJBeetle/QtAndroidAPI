@@ -6,29 +6,29 @@ namespace android::graphics::fonts
 {
 	// Fields
 	
-	FontFamily_Builder::FontFamily_Builder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FontFamily_Builder::FontFamily_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	FontFamily_Builder::FontFamily_Builder(android::graphics::fonts::Font arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.graphics.fonts.FontFamily$Builder",
 			"(Landroid/graphics/fonts/Font;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject FontFamily_Builder::addFont(android::graphics::fonts::Font arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"addFont",
 			"(Landroid/graphics/fonts/Font;)Landroid/graphics/fonts/FontFamily$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject FontFamily_Builder::build()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"build",
 			"()Landroid/graphics/fonts/FontFamily;"
 		);

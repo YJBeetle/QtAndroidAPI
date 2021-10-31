@@ -9,40 +9,35 @@ namespace java::net
 {
 	// Fields
 	
-	URI::URI(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	URI::URI(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	URI::URI(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.net.URI",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	URI::URI(jstring arg0, jstring arg1, jstring arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.net.URI",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	URI::URI(jstring arg0, jstring arg1, jstring arg2, jstring arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.net.URI",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	URI::URI(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.net.URI",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
@@ -50,11 +45,9 @@ namespace java::net
 			arg2,
 			arg3,
 			arg4
-		);
-	}
+		) {}
 	URI::URI(jstring arg0, jstring arg1, jstring arg2, jint arg3, jstring arg4, jstring arg5, jstring arg6)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.net.URI",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
@@ -64,8 +57,7 @@ namespace java::net
 			arg4,
 			arg5,
 			arg6
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject URI::create(jstring arg0)
@@ -79,7 +71,7 @@ namespace java::net
 	}
 	jint URI::compareTo(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -87,15 +79,15 @@ namespace java::net
 	}
 	jint URI::compareTo(java::net::URI arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/net/URI;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean URI::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -103,155 +95,155 @@ namespace java::net
 	}
 	jstring URI::getAuthority()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAuthority",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring URI::getFragment()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFragment",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring URI::getHost()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getHost",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring URI::getPath()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPath",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint URI::getPort()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPort",
 			"()I"
 		);
 	}
 	jstring URI::getQuery()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getQuery",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring URI::getRawAuthority()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRawAuthority",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring URI::getRawFragment()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRawFragment",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring URI::getRawPath()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRawPath",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring URI::getRawQuery()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRawQuery",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring URI::getRawSchemeSpecificPart()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRawSchemeSpecificPart",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring URI::getRawUserInfo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRawUserInfo",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring URI::getScheme()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getScheme",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring URI::getSchemeSpecificPart()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSchemeSpecificPart",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring URI::getUserInfo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getUserInfo",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint URI::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean URI::isAbsolute()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isAbsolute",
 			"()Z"
 		);
 	}
 	jboolean URI::isOpaque()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isOpaque",
 			"()Z"
 		);
 	}
 	QAndroidJniObject URI::normalize()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"normalize",
 			"()Ljava/net/URI;"
 		);
 	}
 	QAndroidJniObject URI::parseServerAuthority()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"parseServerAuthority",
 			"()Ljava/net/URI;"
 		);
 	}
 	QAndroidJniObject URI::relativize(java::net::URI arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"relativize",
 			"(Ljava/net/URI;)Ljava/net/URI;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject URI::resolve(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"resolve",
 			"(Ljava/lang/String;)Ljava/net/URI;",
 			arg0
@@ -259,29 +251,29 @@ namespace java::net
 	}
 	QAndroidJniObject URI::resolve(java::net::URI arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"resolve",
 			"(Ljava/net/URI;)Ljava/net/URI;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring URI::toASCIIString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toASCIIString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring URI::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject URI::toURL()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toURL",
 			"()Ljava/net/URL;"
 		);

@@ -28,12 +28,14 @@ namespace android::view
 		QAndroidJniObject layoutAnimationParameters();
 		jint width();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ViewGroup_LayoutParams(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ViewGroup_LayoutParams(QAndroidJniObject obj);
+		
 		// Constructors
 		ViewGroup_LayoutParams(android::view::ViewGroup_LayoutParams &arg0);
 		ViewGroup_LayoutParams(android::content::Context arg0, __JniBaseClass arg1);
 		ViewGroup_LayoutParams(jint arg0, jint arg1);
-		ViewGroup_LayoutParams() = default;
 		
 		// Methods
 		void resolveLayoutDirection(jint arg0);

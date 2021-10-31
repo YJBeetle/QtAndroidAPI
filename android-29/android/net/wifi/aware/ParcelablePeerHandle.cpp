@@ -14,31 +14,31 @@ namespace android::net::wifi::aware
 		);
 	}
 	
-	ParcelablePeerHandle::ParcelablePeerHandle(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ParcelablePeerHandle::ParcelablePeerHandle(QAndroidJniObject obj) : android::net::wifi::aware::PeerHandle(obj) {}
+	
 	// Constructors
 	ParcelablePeerHandle::ParcelablePeerHandle(android::net::wifi::aware::PeerHandle arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::net::wifi::aware::PeerHandle(
 			"android.net.wifi.aware.ParcelablePeerHandle",
 			"(Landroid/net/wifi/aware/PeerHandle;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jint ParcelablePeerHandle::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	void ParcelablePeerHandle::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

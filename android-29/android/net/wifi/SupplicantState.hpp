@@ -28,9 +28,11 @@ namespace android::net::wifi
 		static QAndroidJniObject SCANNING();
 		static QAndroidJniObject UNINITIALIZED();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SupplicantState(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		SupplicantState(QAndroidJniObject obj);
+		
 		// Constructors
-		SupplicantState() = default;
 		
 		// Methods
 		static jboolean isValidState(android::net::wifi::SupplicantState arg0);

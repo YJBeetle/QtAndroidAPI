@@ -43,124 +43,124 @@ namespace android::app
 	}
 	jlong ActivityManager_RunningServiceInfo::activeSince()
 	{
-		return __thiz.getField<jlong>(
+		return getField<jlong>(
 			"activeSince"
 		);
 	}
 	jint ActivityManager_RunningServiceInfo::clientCount()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"clientCount"
 		);
 	}
 	jint ActivityManager_RunningServiceInfo::clientLabel()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"clientLabel"
 		);
 	}
 	jstring ActivityManager_RunningServiceInfo::clientPackage()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"clientPackage",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint ActivityManager_RunningServiceInfo::crashCount()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"crashCount"
 		);
 	}
 	jint ActivityManager_RunningServiceInfo::flags()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"flags"
 		);
 	}
 	jboolean ActivityManager_RunningServiceInfo::foreground()
 	{
-		return __thiz.getField<jboolean>(
+		return getField<jboolean>(
 			"foreground"
 		);
 	}
 	jlong ActivityManager_RunningServiceInfo::lastActivityTime()
 	{
-		return __thiz.getField<jlong>(
+		return getField<jlong>(
 			"lastActivityTime"
 		);
 	}
 	jint ActivityManager_RunningServiceInfo::pid()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"pid"
 		);
 	}
 	jstring ActivityManager_RunningServiceInfo::process()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"process",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jlong ActivityManager_RunningServiceInfo::restarting()
 	{
-		return __thiz.getField<jlong>(
+		return getField<jlong>(
 			"restarting"
 		);
 	}
 	QAndroidJniObject ActivityManager_RunningServiceInfo::service()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"service",
 			"Landroid/content/ComponentName;"
 		);
 	}
 	jboolean ActivityManager_RunningServiceInfo::started()
 	{
-		return __thiz.getField<jboolean>(
+		return getField<jboolean>(
 			"started"
 		);
 	}
 	jint ActivityManager_RunningServiceInfo::uid()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"uid"
 		);
 	}
 	
-	ActivityManager_RunningServiceInfo::ActivityManager_RunningServiceInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ActivityManager_RunningServiceInfo::ActivityManager_RunningServiceInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ActivityManager_RunningServiceInfo::ActivityManager_RunningServiceInfo()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.app.ActivityManager$RunningServiceInfo",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jint ActivityManager_RunningServiceInfo::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	void ActivityManager_RunningServiceInfo::readFromParcel(android::os::Parcel arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"readFromParcel",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ActivityManager_RunningServiceInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

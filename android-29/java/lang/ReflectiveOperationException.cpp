@@ -4,40 +4,34 @@ namespace java::lang
 {
 	// Fields
 	
-	ReflectiveOperationException::ReflectiveOperationException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ReflectiveOperationException::ReflectiveOperationException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
+	
 	// Constructors
 	ReflectiveOperationException::ReflectiveOperationException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Exception(
 			"java.lang.ReflectiveOperationException",
 			"()V"
-		);
-	}
+		) {}
 	ReflectiveOperationException::ReflectiveOperationException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Exception(
 			"java.lang.ReflectiveOperationException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	ReflectiveOperationException::ReflectiveOperationException(jthrowable arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Exception(
 			"java.lang.ReflectiveOperationException",
 			"(Ljava/lang/Throwable;)V",
 			arg0
-		);
-	}
+		) {}
 	ReflectiveOperationException::ReflectiveOperationException(jstring arg0, jthrowable arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Exception(
 			"java.lang.ReflectiveOperationException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::lang

@@ -14,7 +14,10 @@ namespace java::io
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ObjectInputStream_GetField(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ObjectInputStream_GetField(QAndroidJniObject obj);
+		
 		// Constructors
 		ObjectInputStream_GetField();
 		

@@ -63,15 +63,15 @@ namespace android::media
 		);
 	}
 	
-	MediaRecorder::MediaRecorder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaRecorder::MediaRecorder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MediaRecorder::MediaRecorder()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.MediaRecorder",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jint MediaRecorder::getAudioSourceMax()
@@ -84,117 +84,117 @@ namespace android::media
 	}
 	void MediaRecorder::addOnRoutingChangedListener(__JniBaseClass arg0, android::os::Handler arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addOnRoutingChangedListener",
 			"(Landroid/media/AudioRouting$OnRoutingChangedListener;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject MediaRecorder::getActiveMicrophones()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getActiveMicrophones",
 			"()Ljava/util/List;"
 		);
 	}
 	QAndroidJniObject MediaRecorder::getActiveRecordingConfiguration()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getActiveRecordingConfiguration",
 			"()Landroid/media/AudioRecordingConfiguration;"
 		);
 	}
 	jint MediaRecorder::getMaxAmplitude()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMaxAmplitude",
 			"()I"
 		);
 	}
 	QAndroidJniObject MediaRecorder::getMetrics()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMetrics",
 			"()Landroid/os/PersistableBundle;"
 		);
 	}
 	QAndroidJniObject MediaRecorder::getPreferredDevice()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPreferredDevice",
 			"()Landroid/media/AudioDeviceInfo;"
 		);
 	}
 	QAndroidJniObject MediaRecorder::getRoutedDevice()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRoutedDevice",
 			"()Landroid/media/AudioDeviceInfo;"
 		);
 	}
 	QAndroidJniObject MediaRecorder::getSurface()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSurface",
 			"()Landroid/view/Surface;"
 		);
 	}
 	void MediaRecorder::pause()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"pause",
 			"()V"
 		);
 	}
 	void MediaRecorder::prepare()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"prepare",
 			"()V"
 		);
 	}
 	void MediaRecorder::registerAudioRecordingCallback(__JniBaseClass arg0, android::media::AudioManager_AudioRecordingCallback arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"registerAudioRecordingCallback",
 			"(Ljava/util/concurrent/Executor;Landroid/media/AudioManager$AudioRecordingCallback;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void MediaRecorder::release()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
 	void MediaRecorder::removeOnRoutingChangedListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeOnRoutingChangedListener",
 			"(Landroid/media/AudioRouting$OnRoutingChangedListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaRecorder::reset()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
 	void MediaRecorder::resume()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"resume",
 			"()V"
 		);
 	}
 	void MediaRecorder::setAudioChannels(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAudioChannels",
 			"(I)V",
 			arg0
@@ -202,7 +202,7 @@ namespace android::media
 	}
 	void MediaRecorder::setAudioEncoder(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAudioEncoder",
 			"(I)V",
 			arg0
@@ -210,7 +210,7 @@ namespace android::media
 	}
 	void MediaRecorder::setAudioEncodingBitRate(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAudioEncodingBitRate",
 			"(I)V",
 			arg0
@@ -218,7 +218,7 @@ namespace android::media
 	}
 	void MediaRecorder::setAudioSamplingRate(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAudioSamplingRate",
 			"(I)V",
 			arg0
@@ -226,7 +226,7 @@ namespace android::media
 	}
 	void MediaRecorder::setAudioSource(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAudioSource",
 			"(I)V",
 			arg0
@@ -234,15 +234,15 @@ namespace android::media
 	}
 	void MediaRecorder::setCamera(android::hardware::Camera arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCamera",
 			"(Landroid/hardware/Camera;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaRecorder::setCaptureRate(jdouble arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCaptureRate",
 			"(D)V",
 			arg0
@@ -250,15 +250,15 @@ namespace android::media
 	}
 	void MediaRecorder::setInputSurface(android::view::Surface arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setInputSurface",
 			"(Landroid/view/Surface;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaRecorder::setLocation(jfloat arg0, jfloat arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLocation",
 			"(FF)V",
 			arg0,
@@ -267,7 +267,7 @@ namespace android::media
 	}
 	void MediaRecorder::setMaxDuration(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMaxDuration",
 			"(I)V",
 			arg0
@@ -275,7 +275,7 @@ namespace android::media
 	}
 	void MediaRecorder::setMaxFileSize(jlong arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMaxFileSize",
 			"(J)V",
 			arg0
@@ -283,39 +283,39 @@ namespace android::media
 	}
 	void MediaRecorder::setNextOutputFile(java::io::File arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setNextOutputFile",
 			"(Ljava/io/File;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaRecorder::setNextOutputFile(java::io::FileDescriptor arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setNextOutputFile",
 			"(Ljava/io/FileDescriptor;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaRecorder::setOnErrorListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnErrorListener",
 			"(Landroid/media/MediaRecorder$OnErrorListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaRecorder::setOnInfoListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnInfoListener",
 			"(Landroid/media/MediaRecorder$OnInfoListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaRecorder::setOrientationHint(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOrientationHint",
 			"(I)V",
 			arg0
@@ -323,23 +323,23 @@ namespace android::media
 	}
 	void MediaRecorder::setOutputFile(java::io::File arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOutputFile",
 			"(Ljava/io/File;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaRecorder::setOutputFile(java::io::FileDescriptor arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOutputFile",
 			"(Ljava/io/FileDescriptor;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaRecorder::setOutputFile(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOutputFile",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -347,7 +347,7 @@ namespace android::media
 	}
 	void MediaRecorder::setOutputFormat(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOutputFormat",
 			"(I)V",
 			arg0
@@ -355,15 +355,15 @@ namespace android::media
 	}
 	jboolean MediaRecorder::setPreferredDevice(android::media::AudioDeviceInfo arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"setPreferredDevice",
 			"(Landroid/media/AudioDeviceInfo;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean MediaRecorder::setPreferredMicrophoneDirection(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"setPreferredMicrophoneDirection",
 			"(I)Z",
 			arg0
@@ -371,7 +371,7 @@ namespace android::media
 	}
 	jboolean MediaRecorder::setPreferredMicrophoneFieldDimension(jfloat arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"setPreferredMicrophoneFieldDimension",
 			"(F)Z",
 			arg0
@@ -379,23 +379,23 @@ namespace android::media
 	}
 	void MediaRecorder::setPreviewDisplay(android::view::Surface arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPreviewDisplay",
 			"(Landroid/view/Surface;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaRecorder::setProfile(android::media::CamcorderProfile arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setProfile",
 			"(Landroid/media/CamcorderProfile;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaRecorder::setVideoEncoder(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setVideoEncoder",
 			"(I)V",
 			arg0
@@ -403,7 +403,7 @@ namespace android::media
 	}
 	void MediaRecorder::setVideoEncodingBitRate(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setVideoEncodingBitRate",
 			"(I)V",
 			arg0
@@ -411,7 +411,7 @@ namespace android::media
 	}
 	void MediaRecorder::setVideoEncodingProfileLevel(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setVideoEncodingProfileLevel",
 			"(II)V",
 			arg0,
@@ -420,7 +420,7 @@ namespace android::media
 	}
 	void MediaRecorder::setVideoFrameRate(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setVideoFrameRate",
 			"(I)V",
 			arg0
@@ -428,7 +428,7 @@ namespace android::media
 	}
 	void MediaRecorder::setVideoSize(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setVideoSize",
 			"(II)V",
 			arg0,
@@ -437,7 +437,7 @@ namespace android::media
 	}
 	void MediaRecorder::setVideoSource(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setVideoSource",
 			"(I)V",
 			arg0
@@ -445,24 +445,24 @@ namespace android::media
 	}
 	void MediaRecorder::start()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"start",
 			"()V"
 		);
 	}
 	void MediaRecorder::stop()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"stop",
 			"()V"
 		);
 	}
 	void MediaRecorder::unregisterAudioRecordingCallback(android::media::AudioManager_AudioRecordingCallback arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"unregisterAudioRecordingCallback",
 			"(Landroid/media/AudioManager$AudioRecordingCallback;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::media

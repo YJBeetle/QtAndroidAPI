@@ -8,55 +8,53 @@ namespace android::transition
 {
 	// Fields
 	
-	ChangeImageTransform::ChangeImageTransform(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ChangeImageTransform::ChangeImageTransform(QAndroidJniObject obj) : android::transition::Transition(obj) {}
+	
 	// Constructors
 	ChangeImageTransform::ChangeImageTransform()
-	{
-		__thiz = QAndroidJniObject(
+		: android::transition::Transition(
 			"android.transition.ChangeImageTransform",
 			"()V"
-		);
-	}
+		) {}
 	ChangeImageTransform::ChangeImageTransform(android::content::Context arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::transition::Transition(
 			"android.transition.ChangeImageTransform",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	
 	// Methods
 	void ChangeImageTransform::captureEndValues(android::transition::TransitionValues arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"captureEndValues",
 			"(Landroid/transition/TransitionValues;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ChangeImageTransform::captureStartValues(android::transition::TransitionValues arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"captureStartValues",
 			"(Landroid/transition/TransitionValues;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ChangeImageTransform::createAnimator(android::view::ViewGroup arg0, android::transition::TransitionValues arg1, android::transition::TransitionValues arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"createAnimator",
 			"(Landroid/view/ViewGroup;Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)Landroid/animation/Animator;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	jarray ChangeImageTransform::getTransitionProperties()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTransitionProperties",
 			"()[Ljava/lang/String;"
 		).object<jarray>();

@@ -40,28 +40,28 @@ namespace android::content::pm
 		);
 	}
 	
-	LauncherApps_ShortcutQuery::LauncherApps_ShortcutQuery(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	LauncherApps_ShortcutQuery::LauncherApps_ShortcutQuery(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	LauncherApps_ShortcutQuery::LauncherApps_ShortcutQuery()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.content.pm.LauncherApps$ShortcutQuery",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject LauncherApps_ShortcutQuery::setActivity(android::content::ComponentName arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setActivity",
 			"(Landroid/content/ComponentName;)Landroid/content/pm/LauncherApps$ShortcutQuery;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject LauncherApps_ShortcutQuery::setChangedSince(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setChangedSince",
 			"(J)Landroid/content/pm/LauncherApps$ShortcutQuery;",
 			arg0
@@ -69,7 +69,7 @@ namespace android::content::pm
 	}
 	QAndroidJniObject LauncherApps_ShortcutQuery::setPackage(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setPackage",
 			"(Ljava/lang/String;)Landroid/content/pm/LauncherApps$ShortcutQuery;",
 			arg0
@@ -77,7 +77,7 @@ namespace android::content::pm
 	}
 	QAndroidJniObject LauncherApps_ShortcutQuery::setQueryFlags(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setQueryFlags",
 			"(I)Landroid/content/pm/LauncherApps$ShortcutQuery;",
 			arg0
@@ -85,10 +85,10 @@ namespace android::content::pm
 	}
 	QAndroidJniObject LauncherApps_ShortcutQuery::setShortcutIds(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setShortcutIds",
 			"(Ljava/util/List;)Landroid/content/pm/LauncherApps$ShortcutQuery;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::content::pm

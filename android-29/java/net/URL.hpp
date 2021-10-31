@@ -54,7 +54,10 @@ namespace java::net
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit URL(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		URL(QAndroidJniObject obj);
+		
 		// Constructors
 		URL(jstring arg0);
 		URL(java::net::URL &arg0, jstring arg1);
@@ -62,7 +65,6 @@ namespace java::net
 		URL(java::net::URL &arg0, jstring arg1, java::net::URLStreamHandler arg2);
 		URL(jstring arg0, jstring arg1, jint arg2, jstring arg3);
 		URL(jstring arg0, jstring arg1, jint arg2, jstring arg3, java::net::URLStreamHandler arg4);
-		URL() = default;
 		
 		// Methods
 		static void setURLStreamHandlerFactory(__JniBaseClass arg0);

@@ -4,23 +4,21 @@ namespace java::net
 {
 	// Fields
 	
-	ConnectException::ConnectException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ConnectException::ConnectException(QAndroidJniObject obj) : java::net::SocketException(obj) {}
+	
 	// Constructors
 	ConnectException::ConnectException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::net::SocketException(
 			"java.net.ConnectException",
 			"()V"
-		);
-	}
+		) {}
 	ConnectException::ConnectException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::net::SocketException(
 			"java.net.ConnectException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::net

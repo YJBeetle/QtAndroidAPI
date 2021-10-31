@@ -4,23 +4,21 @@ namespace android::view
 {
 	// Fields
 	
-	Surface_OutOfResourcesException::Surface_OutOfResourcesException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Surface_OutOfResourcesException::Surface_OutOfResourcesException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	
 	// Constructors
 	Surface_OutOfResourcesException::Surface_OutOfResourcesException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::RuntimeException(
 			"android.view.Surface$OutOfResourcesException",
 			"()V"
-		);
-	}
+		) {}
 	Surface_OutOfResourcesException::Surface_OutOfResourcesException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::RuntimeException(
 			"android.view.Surface$OutOfResourcesException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::view

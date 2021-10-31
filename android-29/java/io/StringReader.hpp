@@ -11,10 +11,12 @@ namespace java::io
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit StringReader(const char *className, const char *sig, Ts...agv) : java::io::Reader(className, sig, std::forward<Ts>(agv)...) {}
 		StringReader(QAndroidJniObject obj);
+		
 		// Constructors
 		StringReader(jstring arg0);
-		StringReader() = default;
 		
 		// Methods
 		void close();

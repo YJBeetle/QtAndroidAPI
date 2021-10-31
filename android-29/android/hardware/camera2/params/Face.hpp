@@ -21,9 +21,11 @@ namespace android::hardware::camera2::params
 		static jint SCORE_MAX();
 		static jint SCORE_MIN();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Face(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Face(QAndroidJniObject obj);
+		
 		// Constructors
-		Face() = default;
 		
 		// Methods
 		QAndroidJniObject getBounds();

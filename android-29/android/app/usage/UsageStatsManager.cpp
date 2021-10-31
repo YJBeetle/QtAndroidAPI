@@ -68,20 +68,22 @@ namespace android::app::usage
 		);
 	}
 	
-	UsageStatsManager::UsageStatsManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UsageStatsManager::UsageStatsManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint UsageStatsManager::getAppStandbyBucket()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAppStandbyBucket",
 			"()I"
 		);
 	}
 	jboolean UsageStatsManager::isAppInactive(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isAppInactive",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -89,7 +91,7 @@ namespace android::app::usage
 	}
 	QAndroidJniObject UsageStatsManager::queryAndAggregateUsageStats(jlong arg0, jlong arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"queryAndAggregateUsageStats",
 			"(JJ)Ljava/util/Map;",
 			arg0,
@@ -98,7 +100,7 @@ namespace android::app::usage
 	}
 	QAndroidJniObject UsageStatsManager::queryConfigurations(jint arg0, jlong arg1, jlong arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"queryConfigurations",
 			"(IJJ)Ljava/util/List;",
 			arg0,
@@ -108,7 +110,7 @@ namespace android::app::usage
 	}
 	QAndroidJniObject UsageStatsManager::queryEventStats(jint arg0, jlong arg1, jlong arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"queryEventStats",
 			"(IJJ)Ljava/util/List;",
 			arg0,
@@ -118,7 +120,7 @@ namespace android::app::usage
 	}
 	QAndroidJniObject UsageStatsManager::queryEvents(jlong arg0, jlong arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"queryEvents",
 			"(JJ)Landroid/app/usage/UsageEvents;",
 			arg0,
@@ -127,7 +129,7 @@ namespace android::app::usage
 	}
 	QAndroidJniObject UsageStatsManager::queryEventsForSelf(jlong arg0, jlong arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"queryEventsForSelf",
 			"(JJ)Landroid/app/usage/UsageEvents;",
 			arg0,
@@ -136,7 +138,7 @@ namespace android::app::usage
 	}
 	QAndroidJniObject UsageStatsManager::queryUsageStats(jint arg0, jlong arg1, jlong arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"queryUsageStats",
 			"(IJJ)Ljava/util/List;",
 			arg0,

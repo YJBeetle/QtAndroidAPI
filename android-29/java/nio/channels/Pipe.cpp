@@ -6,7 +6,9 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	Pipe::Pipe(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Pipe::Pipe(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -20,14 +22,14 @@ namespace java::nio::channels
 	}
 	QAndroidJniObject Pipe::sink()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"sink",
 			"()Ljava/nio/channels/Pipe$SinkChannel;"
 		);
 	}
 	QAndroidJniObject Pipe::source()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"source",
 			"()Ljava/nio/channels/Pipe$SourceChannel;"
 		);

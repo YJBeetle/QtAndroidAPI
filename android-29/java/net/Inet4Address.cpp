@@ -4,13 +4,15 @@ namespace java::net
 {
 	// Fields
 	
-	Inet4Address::Inet4Address(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Inet4Address::Inet4Address(QAndroidJniObject obj) : java::net::InetAddress(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jboolean Inet4Address::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -18,91 +20,91 @@ namespace java::net
 	}
 	jbyteArray Inet4Address::getAddress()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAddress",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jstring Inet4Address::getHostAddress()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getHostAddress",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint Inet4Address::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean Inet4Address::isAnyLocalAddress()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isAnyLocalAddress",
 			"()Z"
 		);
 	}
 	jboolean Inet4Address::isLinkLocalAddress()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isLinkLocalAddress",
 			"()Z"
 		);
 	}
 	jboolean Inet4Address::isLoopbackAddress()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isLoopbackAddress",
 			"()Z"
 		);
 	}
 	jboolean Inet4Address::isMCGlobal()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isMCGlobal",
 			"()Z"
 		);
 	}
 	jboolean Inet4Address::isMCLinkLocal()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isMCLinkLocal",
 			"()Z"
 		);
 	}
 	jboolean Inet4Address::isMCNodeLocal()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isMCNodeLocal",
 			"()Z"
 		);
 	}
 	jboolean Inet4Address::isMCOrgLocal()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isMCOrgLocal",
 			"()Z"
 		);
 	}
 	jboolean Inet4Address::isMCSiteLocal()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isMCSiteLocal",
 			"()Z"
 		);
 	}
 	jboolean Inet4Address::isMulticastAddress()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isMulticastAddress",
 			"()Z"
 		);
 	}
 	jboolean Inet4Address::isSiteLocalAddress()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isSiteLocalAddress",
 			"()Z"
 		);

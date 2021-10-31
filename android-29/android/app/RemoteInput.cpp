@@ -66,7 +66,9 @@ namespace android::app
 		);
 	}
 	
-	RemoteInput::RemoteInput(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	RemoteInput::RemoteInput(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -76,9 +78,9 @@ namespace android::app
 			"android.app.RemoteInput",
 			"addDataResultToIntent",
 			"(Landroid/app/RemoteInput;Landroid/content/Intent;Ljava/util/Map;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	void RemoteInput::addResultsToIntent(jarray arg0, android::content::Intent arg1, android::os::Bundle arg2)
@@ -88,8 +90,8 @@ namespace android::app
 			"addResultsToIntent",
 			"([Landroid/app/RemoteInput;Landroid/content/Intent;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject RemoteInput::getDataResultsFromIntent(android::content::Intent arg0, jstring arg1)
@@ -98,7 +100,7 @@ namespace android::app
 			"android.app.RemoteInput",
 			"getDataResultsFromIntent",
 			"(Landroid/content/Intent;Ljava/lang/String;)Ljava/util/Map;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -108,7 +110,7 @@ namespace android::app
 			"android.app.RemoteInput",
 			"getResultsFromIntent",
 			"(Landroid/content/Intent;)Landroid/os/Bundle;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint RemoteInput::getResultsSource(android::content::Intent arg0)
@@ -117,7 +119,7 @@ namespace android::app
 			"android.app.RemoteInput",
 			"getResultsSource",
 			"(Landroid/content/Intent;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void RemoteInput::setResultsSource(android::content::Intent arg0, jint arg1)
@@ -126,79 +128,79 @@ namespace android::app
 			"android.app.RemoteInput",
 			"setResultsSource",
 			"(Landroid/content/Intent;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	jint RemoteInput::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean RemoteInput::getAllowFreeFormInput()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getAllowFreeFormInput",
 			"()Z"
 		);
 	}
 	QAndroidJniObject RemoteInput::getAllowedDataTypes()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAllowedDataTypes",
 			"()Ljava/util/Set;"
 		);
 	}
 	jarray RemoteInput::getChoices()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getChoices",
 			"()[Ljava/lang/CharSequence;"
 		).object<jarray>();
 	}
 	jint RemoteInput::getEditChoicesBeforeSending()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getEditChoicesBeforeSending",
 			"()I"
 		);
 	}
 	QAndroidJniObject RemoteInput::getExtras()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
 	jstring RemoteInput::getLabel()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jstring RemoteInput::getResultKey()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getResultKey",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jboolean RemoteInput::isDataOnly()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isDataOnly",
 			"()Z"
 		);
 	}
 	void RemoteInput::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

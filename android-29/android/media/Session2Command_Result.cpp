@@ -26,29 +26,29 @@ namespace android::media
 		);
 	}
 	
-	Session2Command_Result::Session2Command_Result(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Session2Command_Result::Session2Command_Result(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Session2Command_Result::Session2Command_Result(jint arg0, android::os::Bundle arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.Session2Command$Result",
 			"(ILandroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
+			arg1.object()
+		) {}
 	
 	// Methods
 	jint Session2Command_Result::getResultCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getResultCode",
 			"()I"
 		);
 	}
 	QAndroidJniObject Session2Command_Result::getResultData()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getResultData",
 			"()Landroid/os/Bundle;"
 		);

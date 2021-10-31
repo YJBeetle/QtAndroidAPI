@@ -4,23 +4,23 @@ namespace android::widget
 {
 	// Fields
 	
-	AlphabetIndexer::AlphabetIndexer(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AlphabetIndexer::AlphabetIndexer(QAndroidJniObject obj) : android::database::DataSetObserver(obj) {}
+	
 	// Constructors
 	AlphabetIndexer::AlphabetIndexer(__JniBaseClass arg0, jint arg1, jstring arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: android::database::DataSetObserver(
 			"android.widget.AlphabetIndexer",
 			"(Landroid/database/Cursor;ILjava/lang/CharSequence;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	jint AlphabetIndexer::getPositionForSection(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPositionForSection",
 			"(I)I",
 			arg0
@@ -28,7 +28,7 @@ namespace android::widget
 	}
 	jint AlphabetIndexer::getSectionForPosition(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSectionForPosition",
 			"(I)I",
 			arg0
@@ -36,31 +36,31 @@ namespace android::widget
 	}
 	jobjectArray AlphabetIndexer::getSections()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSections",
 			"()[Ljava/lang/Object;"
 		).object<jobjectArray>();
 	}
 	void AlphabetIndexer::onChanged()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onChanged",
 			"()V"
 		);
 	}
 	void AlphabetIndexer::onInvalidated()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onInvalidated",
 			"()V"
 		);
 	}
 	void AlphabetIndexer::setCursor(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCursor",
 			"(Landroid/database/Cursor;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::widget

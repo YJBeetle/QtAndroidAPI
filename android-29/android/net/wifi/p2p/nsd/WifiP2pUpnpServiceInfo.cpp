@@ -4,7 +4,9 @@ namespace android::net::wifi::p2p::nsd
 {
 	// Fields
 	
-	WifiP2pUpnpServiceInfo::WifiP2pUpnpServiceInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WifiP2pUpnpServiceInfo::WifiP2pUpnpServiceInfo(QAndroidJniObject obj) : android::net::wifi::p2p::nsd::WifiP2pServiceInfo(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -16,7 +18,7 @@ namespace android::net::wifi::p2p::nsd
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Landroid/net/wifi/p2p/nsd/WifiP2pUpnpServiceInfo;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 } // namespace android::net::wifi::p2p::nsd

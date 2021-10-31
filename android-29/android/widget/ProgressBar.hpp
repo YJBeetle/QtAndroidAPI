@@ -35,13 +35,15 @@ namespace android::widget
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ProgressBar(const char *className, const char *sig, Ts...agv) : android::view::View(className, sig, std::forward<Ts>(agv)...) {}
 		ProgressBar(QAndroidJniObject obj);
+		
 		// Constructors
 		ProgressBar(android::content::Context arg0);
 		ProgressBar(android::content::Context arg0, __JniBaseClass arg1);
 		ProgressBar(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		ProgressBar(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
-		ProgressBar() = default;
 		
 		// Methods
 		void drawableHotspotChanged(jfloat arg0, jfloat arg1);

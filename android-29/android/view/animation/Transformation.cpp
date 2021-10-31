@@ -33,64 +33,64 @@ namespace android::view::animation
 		);
 	}
 	
-	Transformation::Transformation(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Transformation::Transformation(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Transformation::Transformation()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.animation.Transformation",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void Transformation::clear()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
 	void Transformation::compose(android::view::animation::Transformation arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"compose",
 			"(Landroid/view/animation/Transformation;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jfloat Transformation::getAlpha()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getAlpha",
 			"()F"
 		);
 	}
 	QAndroidJniObject Transformation::getMatrix()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMatrix",
 			"()Landroid/graphics/Matrix;"
 		);
 	}
 	jint Transformation::getTransformationType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTransformationType",
 			"()I"
 		);
 	}
 	void Transformation::set(android::view::animation::Transformation arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"set",
 			"(Landroid/view/animation/Transformation;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Transformation::setAlpha(jfloat arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAlpha",
 			"(F)V",
 			arg0
@@ -98,7 +98,7 @@ namespace android::view::animation
 	}
 	void Transformation::setTransformationType(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTransformationType",
 			"(I)V",
 			arg0
@@ -106,14 +106,14 @@ namespace android::view::animation
 	}
 	jstring Transformation::toShortString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toShortString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Transformation::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

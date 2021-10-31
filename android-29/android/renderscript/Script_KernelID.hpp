@@ -19,9 +19,11 @@ namespace android::renderscript
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Script_KernelID(const char *className, const char *sig, Ts...agv) : android::renderscript::BaseObj(className, sig, std::forward<Ts>(agv)...) {}
 		Script_KernelID(QAndroidJniObject obj);
+		
 		// Constructors
-		Script_KernelID() = default;
 		
 		// Methods
 	};

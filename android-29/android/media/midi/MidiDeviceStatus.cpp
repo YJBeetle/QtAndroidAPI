@@ -14,27 +14,29 @@ namespace android::media::midi
 		);
 	}
 	
-	MidiDeviceStatus::MidiDeviceStatus(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MidiDeviceStatus::MidiDeviceStatus(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint MidiDeviceStatus::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	QAndroidJniObject MidiDeviceStatus::getDeviceInfo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDeviceInfo",
 			"()Landroid/media/midi/MidiDeviceInfo;"
 		);
 	}
 	jint MidiDeviceStatus::getOutputPortOpenCount(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getOutputPortOpenCount",
 			"(I)I",
 			arg0
@@ -42,7 +44,7 @@ namespace android::media::midi
 	}
 	jboolean MidiDeviceStatus::isInputPortOpen(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isInputPortOpen",
 			"(I)Z",
 			arg0
@@ -50,17 +52,17 @@ namespace android::media::midi
 	}
 	jstring MidiDeviceStatus::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void MidiDeviceStatus::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

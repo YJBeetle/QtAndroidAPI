@@ -5,20 +5,20 @@ namespace android::view
 {
 	// Fields
 	
-	ViewStructure_HtmlInfo_Builder::ViewStructure_HtmlInfo_Builder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ViewStructure_HtmlInfo_Builder::ViewStructure_HtmlInfo_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ViewStructure_HtmlInfo_Builder::ViewStructure_HtmlInfo_Builder()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.ViewStructure$HtmlInfo$Builder",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject ViewStructure_HtmlInfo_Builder::addAttribute(jstring arg0, jstring arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"addAttribute",
 			"(Ljava/lang/String;Ljava/lang/String;)Landroid/view/ViewStructure$HtmlInfo$Builder;",
 			arg0,
@@ -27,7 +27,7 @@ namespace android::view
 	}
 	QAndroidJniObject ViewStructure_HtmlInfo_Builder::build()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"build",
 			"()Landroid/view/ViewStructure$HtmlInfo;"
 		);

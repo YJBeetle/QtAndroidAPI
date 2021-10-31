@@ -18,7 +18,10 @@ namespace android::provider
 		static jstring EXTRA_HEADERS();
 		static jstring INITIAL_ZOOM_LEVEL();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Browser(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Browser(QAndroidJniObject obj);
+		
 		// Constructors
 		Browser();
 		

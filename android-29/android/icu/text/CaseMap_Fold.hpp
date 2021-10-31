@@ -19,9 +19,11 @@ namespace android::icu::text
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CaseMap_Fold(const char *className, const char *sig, Ts...agv) : android::icu::text::CaseMap(className, sig, std::forward<Ts>(agv)...) {}
 		CaseMap_Fold(QAndroidJniObject obj);
+		
 		// Constructors
-		CaseMap_Fold() = default;
 		
 		// Methods
 		QAndroidJniObject apply(jstring arg0, __JniBaseClass arg1, android::icu::text::Edits arg2);

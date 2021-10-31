@@ -15,11 +15,13 @@ namespace android::content::pm
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Signature(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Signature(QAndroidJniObject obj);
+		
 		// Constructors
 		Signature(jbyteArray arg0);
 		Signature(jstring arg0);
-		Signature() = default;
 		
 		// Methods
 		jint describeContents();

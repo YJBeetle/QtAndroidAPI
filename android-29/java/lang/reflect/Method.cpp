@@ -6,13 +6,15 @@ namespace java::lang::reflect
 {
 	// Fields
 	
-	Method::Method(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Method::Method(QAndroidJniObject obj) : java::lang::reflect::Executable(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jboolean Method::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -20,14 +22,14 @@ namespace java::lang::reflect
 	}
 	QAndroidJniObject Method::getAnnotatedReturnType()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAnnotatedReturnType",
 			"()Ljava/lang/reflect/AnnotatedType;"
 		);
 	}
 	QAndroidJniObject Method::getAnnotation(jclass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAnnotation",
 			"(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;",
 			arg0
@@ -35,112 +37,112 @@ namespace java::lang::reflect
 	}
 	jarray Method::getDeclaredAnnotations()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDeclaredAnnotations",
 			"()[Ljava/lang/annotation/Annotation;"
 		).object<jarray>();
 	}
 	jclass Method::getDeclaringClass()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDeclaringClass",
 			"()Ljava/lang/Class;"
 		).object<jclass>();
 	}
 	jobject Method::getDefaultValue()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDefaultValue",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jarray Method::getExceptionTypes()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExceptionTypes",
 			"()[Ljava/lang/Class;"
 		).object<jarray>();
 	}
 	jarray Method::getGenericExceptionTypes()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getGenericExceptionTypes",
 			"()[Ljava/lang/reflect/Type;"
 		).object<jarray>();
 	}
 	jarray Method::getGenericParameterTypes()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getGenericParameterTypes",
 			"()[Ljava/lang/reflect/Type;"
 		).object<jarray>();
 	}
 	QAndroidJniObject Method::getGenericReturnType()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getGenericReturnType",
 			"()Ljava/lang/reflect/Type;"
 		);
 	}
 	jint Method::getModifiers()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getModifiers",
 			"()I"
 		);
 	}
 	jstring Method::getName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jarray Method::getParameterAnnotations()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getParameterAnnotations",
 			"()[[Ljava/lang/annotation/Annotation;"
 		).object<jarray>();
 	}
 	jint Method::getParameterCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getParameterCount",
 			"()I"
 		);
 	}
 	jarray Method::getParameterTypes()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getParameterTypes",
 			"()[Ljava/lang/Class;"
 		).object<jarray>();
 	}
 	jclass Method::getReturnType()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getReturnType",
 			"()Ljava/lang/Class;"
 		).object<jclass>();
 	}
 	jarray Method::getTypeParameters()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTypeParameters",
 			"()[Ljava/lang/reflect/TypeVariable;"
 		).object<jarray>();
 	}
 	jint Method::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jobject Method::invoke(jobject arg0, jobjectArray arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"invoke",
 			"(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
@@ -149,35 +151,35 @@ namespace java::lang::reflect
 	}
 	jboolean Method::isBridge()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isBridge",
 			"()Z"
 		);
 	}
 	jboolean Method::isDefault()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isDefault",
 			"()Z"
 		);
 	}
 	jboolean Method::isSynthetic()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isSynthetic",
 			"()Z"
 		);
 	}
 	jboolean Method::isVarArgs()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isVarArgs",
 			"()Z"
 		);
 	}
 	void Method::setAccessible(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAccessible",
 			"(Z)V",
 			arg0
@@ -185,14 +187,14 @@ namespace java::lang::reflect
 	}
 	jstring Method::toGenericString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toGenericString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Method::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

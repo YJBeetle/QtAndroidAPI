@@ -13,23 +13,25 @@ namespace android::widget
 		);
 	}
 	
-	TextView_SavedState::TextView_SavedState(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TextView_SavedState::TextView_SavedState(QAndroidJniObject obj) : android::view::View_BaseSavedState(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jstring TextView_SavedState::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void TextView_SavedState::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

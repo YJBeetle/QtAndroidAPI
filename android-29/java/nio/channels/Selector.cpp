@@ -6,7 +6,9 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	Selector::Selector(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Selector::Selector(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -20,50 +22,50 @@ namespace java::nio::channels
 	}
 	void Selector::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	jboolean Selector::isOpen()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isOpen",
 			"()Z"
 		);
 	}
 	QAndroidJniObject Selector::keys()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"keys",
 			"()Ljava/util/Set;"
 		);
 	}
 	QAndroidJniObject Selector::provider()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"provider",
 			"()Ljava/nio/channels/spi/SelectorProvider;"
 		);
 	}
 	jint Selector::select()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"select",
 			"()I"
 		);
 	}
 	jint Selector::select(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"select",
 			"(Ljava/util/function/Consumer;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint Selector::select(jlong arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"select",
 			"(J)I",
 			arg0
@@ -71,38 +73,38 @@ namespace java::nio::channels
 	}
 	jint Selector::select(__JniBaseClass arg0, jlong arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"select",
 			"(Ljava/util/function/Consumer;J)I",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	jint Selector::selectNow()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"selectNow",
 			"()I"
 		);
 	}
 	jint Selector::selectNow(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"selectNow",
 			"(Ljava/util/function/Consumer;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Selector::selectedKeys()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"selectedKeys",
 			"()Ljava/util/Set;"
 		);
 	}
 	QAndroidJniObject Selector::wakeup()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"wakeup",
 			"()Ljava/nio/channels/Selector;"
 		);

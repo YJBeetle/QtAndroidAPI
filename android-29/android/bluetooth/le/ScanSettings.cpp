@@ -104,65 +104,67 @@ namespace android::bluetooth::le
 		);
 	}
 	
-	ScanSettings::ScanSettings(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ScanSettings::ScanSettings(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint ScanSettings::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jint ScanSettings::getCallbackType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCallbackType",
 			"()I"
 		);
 	}
 	jboolean ScanSettings::getLegacy()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getLegacy",
 			"()Z"
 		);
 	}
 	jint ScanSettings::getPhy()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPhy",
 			"()I"
 		);
 	}
 	jlong ScanSettings::getReportDelayMillis()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getReportDelayMillis",
 			"()J"
 		);
 	}
 	jint ScanSettings::getScanMode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getScanMode",
 			"()I"
 		);
 	}
 	jint ScanSettings::getScanResultType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getScanResultType",
 			"()I"
 		);
 	}
 	void ScanSettings::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

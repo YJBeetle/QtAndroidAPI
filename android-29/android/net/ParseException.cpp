@@ -5,13 +5,15 @@ namespace android::net
 	// Fields
 	jstring ParseException::response()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"response",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	
-	ParseException::ParseException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ParseException::ParseException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	
 	// Constructors
 	
 	// Methods

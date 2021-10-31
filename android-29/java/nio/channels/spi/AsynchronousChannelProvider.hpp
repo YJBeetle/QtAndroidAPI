@@ -26,9 +26,11 @@ namespace java::nio::channels::spi
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AsynchronousChannelProvider(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AsynchronousChannelProvider(QAndroidJniObject obj);
+		
 		// Constructors
-		AsynchronousChannelProvider() = default;
 		
 		// Methods
 		static QAndroidJniObject provider();

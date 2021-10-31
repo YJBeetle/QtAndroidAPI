@@ -34,7 +34,10 @@ namespace android::widget
 		QAndroidJniObject columnSpec();
 		QAndroidJniObject rowSpec();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit GridLayout_LayoutParams(const char *className, const char *sig, Ts...agv) : android::view::ViewGroup_MarginLayoutParams(className, sig, std::forward<Ts>(agv)...) {}
 		GridLayout_LayoutParams(QAndroidJniObject obj);
+		
 		// Constructors
 		GridLayout_LayoutParams();
 		GridLayout_LayoutParams(android::view::ViewGroup_LayoutParams arg0);

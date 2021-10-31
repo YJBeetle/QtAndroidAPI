@@ -15,9 +15,11 @@ namespace java::sql
 		static QAndroidJniObject REASON_VALUE_INVALID();
 		static QAndroidJniObject REASON_VALUE_TRUNCATED();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ClientInfoStatus(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		ClientInfoStatus(QAndroidJniObject obj);
+		
 		// Constructors
-		ClientInfoStatus() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

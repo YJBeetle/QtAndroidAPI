@@ -9,69 +9,59 @@ namespace android::widget
 {
 	// Fields
 	
-	ArrayAdapter::ArrayAdapter(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ArrayAdapter::ArrayAdapter(QAndroidJniObject obj) : android::widget::BaseAdapter(obj) {}
+	
 	// Constructors
 	ArrayAdapter::ArrayAdapter(android::content::Context arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::BaseAdapter(
 			"android.widget.ArrayAdapter",
 			"(Landroid/content/Context;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
-		);
-	}
+		) {}
 	ArrayAdapter::ArrayAdapter(android::content::Context arg0, jint arg1, jobjectArray arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::BaseAdapter(
 			"android.widget.ArrayAdapter",
 			"(Landroid/content/Context;I[Ljava/lang/Object;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	ArrayAdapter::ArrayAdapter(android::content::Context arg0, jint arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::BaseAdapter(
 			"android.widget.ArrayAdapter",
 			"(Landroid/content/Context;II)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	ArrayAdapter::ArrayAdapter(android::content::Context arg0, jint arg1, __JniBaseClass arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::BaseAdapter(
 			"android.widget.ArrayAdapter",
 			"(Landroid/content/Context;ILjava/util/List;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object()
-		);
-	}
+			arg2.object()
+		) {}
 	ArrayAdapter::ArrayAdapter(android::content::Context arg0, jint arg1, jint arg2, jobjectArray arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::BaseAdapter(
 			"android.widget.ArrayAdapter",
 			"(Landroid/content/Context;II[Ljava/lang/Object;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	ArrayAdapter::ArrayAdapter(android::content::Context arg0, jint arg1, jint arg2, __JniBaseClass arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::BaseAdapter(
 			"android.widget.ArrayAdapter",
 			"(Landroid/content/Context;IILjava/util/List;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
-		);
-	}
+			arg3.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject ArrayAdapter::createFromResource(android::content::Context arg0, jint arg1, jint arg2)
@@ -80,14 +70,14 @@ namespace android::widget
 			"android.widget.ArrayAdapter",
 			"createFromResource",
 			"(Landroid/content/Context;II)Landroid/widget/ArrayAdapter;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
 	}
 	void ArrayAdapter::add(jobject arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"add",
 			"(Ljava/lang/Object;)V",
 			arg0
@@ -95,7 +85,7 @@ namespace android::widget
 	}
 	void ArrayAdapter::addAll(jobjectArray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addAll",
 			"([Ljava/lang/Object;)V",
 			arg0
@@ -103,67 +93,67 @@ namespace android::widget
 	}
 	void ArrayAdapter::addAll(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addAll",
 			"(Ljava/util/Collection;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ArrayAdapter::clear()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
 	jarray ArrayAdapter::getAutofillOptions()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAutofillOptions",
 			"()[Ljava/lang/CharSequence;"
 		).object<jarray>();
 	}
 	QAndroidJniObject ArrayAdapter::getContext()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getContext",
 			"()Landroid/content/Context;"
 		);
 	}
 	jint ArrayAdapter::getCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCount",
 			"()I"
 		);
 	}
 	QAndroidJniObject ArrayAdapter::getDropDownView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDropDownView",
 			"(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject ArrayAdapter::getDropDownViewTheme()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDropDownViewTheme",
 			"()Landroid/content/res/Resources$Theme;"
 		);
 	}
 	QAndroidJniObject ArrayAdapter::getFilter()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFilter",
 			"()Landroid/widget/Filter;"
 		);
 	}
 	jobject ArrayAdapter::getItem(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getItem",
 			"(I)Ljava/lang/Object;",
 			arg0
@@ -171,7 +161,7 @@ namespace android::widget
 	}
 	jlong ArrayAdapter::getItemId(jint arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getItemId",
 			"(I)J",
 			arg0
@@ -179,7 +169,7 @@ namespace android::widget
 	}
 	jint ArrayAdapter::getPosition(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPosition",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -187,17 +177,17 @@ namespace android::widget
 	}
 	QAndroidJniObject ArrayAdapter::getView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getView",
 			"(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	void ArrayAdapter::insert(jobject arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"insert",
 			"(Ljava/lang/Object;I)V",
 			arg0,
@@ -206,14 +196,14 @@ namespace android::widget
 	}
 	void ArrayAdapter::notifyDataSetChanged()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"notifyDataSetChanged",
 			"()V"
 		);
 	}
 	void ArrayAdapter::remove(jobject arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"remove",
 			"(Ljava/lang/Object;)V",
 			arg0
@@ -221,7 +211,7 @@ namespace android::widget
 	}
 	void ArrayAdapter::setDropDownViewResource(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDropDownViewResource",
 			"(I)V",
 			arg0
@@ -229,15 +219,15 @@ namespace android::widget
 	}
 	void ArrayAdapter::setDropDownViewTheme(android::content::res::Resources_Theme arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDropDownViewTheme",
 			"(Landroid/content/res/Resources$Theme;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ArrayAdapter::setNotifyOnChange(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setNotifyOnChange",
 			"(Z)V",
 			arg0
@@ -245,10 +235,10 @@ namespace android::widget
 	}
 	void ArrayAdapter::sort(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"sort",
 			"(Ljava/util/Comparator;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::widget

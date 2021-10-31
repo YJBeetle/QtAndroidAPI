@@ -34,55 +34,55 @@ namespace android::media
 		);
 	}
 	
-	PlaybackParams::PlaybackParams(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PlaybackParams::PlaybackParams(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	PlaybackParams::PlaybackParams()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.PlaybackParams",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject PlaybackParams::allowDefaults()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"allowDefaults",
 			"()Landroid/media/PlaybackParams;"
 		);
 	}
 	jint PlaybackParams::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jint PlaybackParams::getAudioFallbackMode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAudioFallbackMode",
 			"()I"
 		);
 	}
 	jfloat PlaybackParams::getPitch()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getPitch",
 			"()F"
 		);
 	}
 	jfloat PlaybackParams::getSpeed()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getSpeed",
 			"()F"
 		);
 	}
 	QAndroidJniObject PlaybackParams::setAudioFallbackMode(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setAudioFallbackMode",
 			"(I)Landroid/media/PlaybackParams;",
 			arg0
@@ -90,7 +90,7 @@ namespace android::media
 	}
 	QAndroidJniObject PlaybackParams::setPitch(jfloat arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setPitch",
 			"(F)Landroid/media/PlaybackParams;",
 			arg0
@@ -98,7 +98,7 @@ namespace android::media
 	}
 	QAndroidJniObject PlaybackParams::setSpeed(jfloat arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setSpeed",
 			"(F)Landroid/media/PlaybackParams;",
 			arg0
@@ -106,10 +106,10 @@ namespace android::media
 	}
 	void PlaybackParams::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

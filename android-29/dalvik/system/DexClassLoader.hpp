@@ -16,10 +16,12 @@ namespace dalvik::system
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DexClassLoader(const char *className, const char *sig, Ts...agv) : dalvik::system::BaseDexClassLoader(className, sig, std::forward<Ts>(agv)...) {}
 		DexClassLoader(QAndroidJniObject obj);
+		
 		// Constructors
 		DexClassLoader(jstring arg0, jstring arg1, jstring arg2, java::lang::ClassLoader arg3);
-		DexClassLoader() = default;
 		
 		// Methods
 	};

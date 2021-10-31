@@ -9,7 +9,9 @@ namespace android::telephony
 {
 	// Fields
 	
-	MbmsStreamingSession::MbmsStreamingSession(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MbmsStreamingSession::MbmsStreamingSession(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -19,9 +21,9 @@ namespace android::telephony
 			"android.telephony.MbmsStreamingSession",
 			"create",
 			"(Landroid/content/Context;Ljava/util/concurrent/Executor;Landroid/telephony/mbms/MbmsStreamingSessionCallback;)Landroid/telephony/MbmsStreamingSession;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject MbmsStreamingSession::create(android::content::Context arg0, __JniBaseClass arg1, jint arg2, android::telephony::mbms::MbmsStreamingSessionCallback arg3)
@@ -30,35 +32,35 @@ namespace android::telephony
 			"android.telephony.MbmsStreamingSession",
 			"create",
 			"(Landroid/content/Context;Ljava/util/concurrent/Executor;ILandroid/telephony/mbms/MbmsStreamingSessionCallback;)Landroid/telephony/MbmsStreamingSession;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	void MbmsStreamingSession::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	void MbmsStreamingSession::requestUpdateStreamingServices(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"requestUpdateStreamingServices",
 			"(Ljava/util/List;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject MbmsStreamingSession::startStreaming(android::telephony::mbms::StreamingServiceInfo arg0, __JniBaseClass arg1, android::telephony::mbms::StreamingServiceCallback arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"startStreaming",
 			"(Landroid/telephony/mbms/StreamingServiceInfo;Ljava/util/concurrent/Executor;Landroid/telephony/mbms/StreamingServiceCallback;)Landroid/telephony/mbms/StreamingService;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 } // namespace android::telephony

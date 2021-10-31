@@ -15,7 +15,9 @@ namespace java::time::chrono
 		);
 	}
 	
-	HijrahEra::HijrahEra(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	HijrahEra::HijrahEra(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -47,26 +49,26 @@ namespace java::time::chrono
 	}
 	jstring HijrahEra::getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDisplayName",
 			"(Ljava/time/format/TextStyle;Ljava/util/Locale;)Ljava/lang/String;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		).object<jstring>();
 	}
 	jint HijrahEra::getValue()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getValue",
 			"()I"
 		);
 	}
 	QAndroidJniObject HijrahEra::range(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"range",
 			"(Ljava/time/temporal/TemporalField;)Ljava/time/temporal/ValueRange;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace java::time::chrono

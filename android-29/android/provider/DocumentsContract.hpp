@@ -64,9 +64,11 @@ namespace android::provider
 		static jstring QUERY_ARG_LAST_MODIFIED_AFTER();
 		static jstring QUERY_ARG_MIME_TYPES();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DocumentsContract(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DocumentsContract(QAndroidJniObject obj);
+		
 		// Constructors
-		DocumentsContract() = default;
 		
 		// Methods
 		static QAndroidJniObject buildChildDocumentsUri(jstring arg0, jstring arg1);

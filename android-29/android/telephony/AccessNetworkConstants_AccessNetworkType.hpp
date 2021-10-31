@@ -16,9 +16,11 @@ namespace android::telephony
 		static jint UNKNOWN();
 		static jint UTRAN();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AccessNetworkConstants_AccessNetworkType(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AccessNetworkConstants_AccessNetworkType(QAndroidJniObject obj);
+		
 		// Constructors
-		AccessNetworkConstants_AccessNetworkType() = default;
 		
 		// Methods
 	};

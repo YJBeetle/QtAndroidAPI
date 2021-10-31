@@ -21,7 +21,9 @@ namespace java::nio::charset
 		);
 	}
 	
-	CoderResult::CoderResult(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CoderResult::CoderResult(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -45,56 +47,56 @@ namespace java::nio::charset
 	}
 	jboolean CoderResult::isError()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isError",
 			"()Z"
 		);
 	}
 	jboolean CoderResult::isMalformed()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isMalformed",
 			"()Z"
 		);
 	}
 	jboolean CoderResult::isOverflow()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isOverflow",
 			"()Z"
 		);
 	}
 	jboolean CoderResult::isUnderflow()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isUnderflow",
 			"()Z"
 		);
 	}
 	jboolean CoderResult::isUnmappable()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isUnmappable",
 			"()Z"
 		);
 	}
 	jint CoderResult::length()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"length",
 			"()I"
 		);
 	}
 	void CoderResult::throwException()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"throwException",
 			"()V"
 		);
 	}
 	jstring CoderResult::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

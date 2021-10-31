@@ -4,20 +4,20 @@ namespace android::net::wifi::aware
 {
 	// Fields
 	
-	IdentityChangedListener::IdentityChangedListener(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	IdentityChangedListener::IdentityChangedListener(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	IdentityChangedListener::IdentityChangedListener()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.net.wifi.aware.IdentityChangedListener",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void IdentityChangedListener::onIdentityChanged(jbyteArray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onIdentityChanged",
 			"([B)V",
 			arg0

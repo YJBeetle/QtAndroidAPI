@@ -4,15 +4,15 @@ namespace android::graphics
 {
 	// Fields
 	
-	PathEffect::PathEffect(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PathEffect::PathEffect(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	PathEffect::PathEffect()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.graphics.PathEffect",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::graphics

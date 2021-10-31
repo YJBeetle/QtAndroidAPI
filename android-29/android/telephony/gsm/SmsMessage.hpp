@@ -25,7 +25,10 @@ namespace android::telephony::gsm
 		static jint MAX_USER_DATA_SEPTETS();
 		static jint MAX_USER_DATA_SEPTETS_WITH_HEADER();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SmsMessage(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SmsMessage(QAndroidJniObject obj);
+		
 		// Constructors
 		SmsMessage();
 		

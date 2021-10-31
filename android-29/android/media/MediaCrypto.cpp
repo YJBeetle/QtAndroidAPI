@@ -5,17 +5,17 @@ namespace android::media
 {
 	// Fields
 	
-	MediaCrypto::MediaCrypto(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaCrypto::MediaCrypto(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MediaCrypto::MediaCrypto(java::util::UUID arg0, jbyteArray arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.MediaCrypto",
 			"(Ljava/util/UUID;[B)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean MediaCrypto::isCryptoSchemeSupported(java::util::UUID arg0)
@@ -24,19 +24,19 @@ namespace android::media
 			"android.media.MediaCrypto",
 			"isCryptoSchemeSupported",
 			"(Ljava/util/UUID;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaCrypto::release()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
 	jboolean MediaCrypto::requiresSecureDecoderComponent(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"requiresSecureDecoderComponent",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -44,7 +44,7 @@ namespace android::media
 	}
 	void MediaCrypto::setMediaDrmSession(jbyteArray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMediaDrmSession",
 			"([B)V",
 			arg0

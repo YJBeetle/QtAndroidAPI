@@ -12,51 +12,49 @@ namespace android::view
 		);
 	}
 	
-	OrientationEventListener::OrientationEventListener(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	OrientationEventListener::OrientationEventListener(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	OrientationEventListener::OrientationEventListener(android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.OrientationEventListener",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	OrientationEventListener::OrientationEventListener(android::content::Context arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.OrientationEventListener",
 			"(Landroid/content/Context;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean OrientationEventListener::canDetectOrientation()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"canDetectOrientation",
 			"()Z"
 		);
 	}
 	void OrientationEventListener::disable()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"disable",
 			"()V"
 		);
 	}
 	void OrientationEventListener::enable()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"enable",
 			"()V"
 		);
 	}
 	void OrientationEventListener::onOrientationChanged(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onOrientationChanged",
 			"(I)V",
 			arg0

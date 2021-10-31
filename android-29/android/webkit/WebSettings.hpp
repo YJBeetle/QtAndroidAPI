@@ -49,7 +49,10 @@ namespace android::webkit
 		static jint MIXED_CONTENT_COMPATIBILITY_MODE();
 		static jint MIXED_CONTENT_NEVER_ALLOW();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit WebSettings(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		WebSettings(QAndroidJniObject obj);
+		
 		// Constructors
 		WebSettings();
 		

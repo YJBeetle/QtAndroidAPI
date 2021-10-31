@@ -13,30 +13,30 @@ namespace android::telephony
 		);
 	}
 	
-	RadioAccessSpecifier::RadioAccessSpecifier(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	RadioAccessSpecifier::RadioAccessSpecifier(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	RadioAccessSpecifier::RadioAccessSpecifier(jint arg0, jintArray arg1, jintArray arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.telephony.RadioAccessSpecifier",
 			"(I[I[I)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	jint RadioAccessSpecifier::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean RadioAccessSpecifier::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -44,38 +44,38 @@ namespace android::telephony
 	}
 	jintArray RadioAccessSpecifier::getBands()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBands",
 			"()[I"
 		).object<jintArray>();
 	}
 	jintArray RadioAccessSpecifier::getChannels()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getChannels",
 			"()[I"
 		).object<jintArray>();
 	}
 	jint RadioAccessSpecifier::getRadioAccessNetwork()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRadioAccessNetwork",
 			"()I"
 		);
 	}
 	jint RadioAccessSpecifier::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	void RadioAccessSpecifier::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

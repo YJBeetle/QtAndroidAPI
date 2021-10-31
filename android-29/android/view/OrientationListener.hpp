@@ -15,11 +15,13 @@ namespace android::view
 		// Fields
 		static jint ORIENTATION_UNKNOWN();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit OrientationListener(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		OrientationListener(QAndroidJniObject obj);
+		
 		// Constructors
 		OrientationListener(android::content::Context arg0);
 		OrientationListener(android::content::Context arg0, jint arg1);
-		OrientationListener() = default;
 		
 		// Methods
 		void disable();

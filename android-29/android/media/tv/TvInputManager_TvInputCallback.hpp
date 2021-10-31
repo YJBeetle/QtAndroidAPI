@@ -14,7 +14,10 @@ namespace android::media::tv
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TvInputManager_TvInputCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		TvInputManager_TvInputCallback(QAndroidJniObject obj);
+		
 		// Constructors
 		TvInputManager_TvInputCallback();
 		

@@ -7,7 +7,9 @@ namespace java::net
 {
 	// Fields
 	
-	Inet6Address::Inet6Address(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Inet6Address::Inet6Address(QAndroidJniObject obj) : java::net::InetAddress(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -30,12 +32,12 @@ namespace java::net
 			"(Ljava/lang/String;[BLjava/net/NetworkInterface;)Ljava/net/Inet6Address;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	jboolean Inet6Address::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -43,112 +45,112 @@ namespace java::net
 	}
 	jbyteArray Inet6Address::getAddress()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAddress",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jstring Inet6Address::getHostAddress()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getHostAddress",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint Inet6Address::getScopeId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getScopeId",
 			"()I"
 		);
 	}
 	QAndroidJniObject Inet6Address::getScopedInterface()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getScopedInterface",
 			"()Ljava/net/NetworkInterface;"
 		);
 	}
 	jint Inet6Address::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean Inet6Address::isAnyLocalAddress()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isAnyLocalAddress",
 			"()Z"
 		);
 	}
 	jboolean Inet6Address::isIPv4CompatibleAddress()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isIPv4CompatibleAddress",
 			"()Z"
 		);
 	}
 	jboolean Inet6Address::isLinkLocalAddress()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isLinkLocalAddress",
 			"()Z"
 		);
 	}
 	jboolean Inet6Address::isLoopbackAddress()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isLoopbackAddress",
 			"()Z"
 		);
 	}
 	jboolean Inet6Address::isMCGlobal()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isMCGlobal",
 			"()Z"
 		);
 	}
 	jboolean Inet6Address::isMCLinkLocal()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isMCLinkLocal",
 			"()Z"
 		);
 	}
 	jboolean Inet6Address::isMCNodeLocal()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isMCNodeLocal",
 			"()Z"
 		);
 	}
 	jboolean Inet6Address::isMCOrgLocal()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isMCOrgLocal",
 			"()Z"
 		);
 	}
 	jboolean Inet6Address::isMCSiteLocal()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isMCSiteLocal",
 			"()Z"
 		);
 	}
 	jboolean Inet6Address::isMulticastAddress()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isMulticastAddress",
 			"()Z"
 		);
 	}
 	jboolean Inet6Address::isSiteLocalAddress()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isSiteLocalAddress",
 			"()Z"
 		);

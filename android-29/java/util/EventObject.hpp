@@ -10,10 +10,12 @@ namespace java::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit EventObject(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		EventObject(QAndroidJniObject obj);
+		
 		// Constructors
 		EventObject(jobject arg0);
-		EventObject() = default;
 		
 		// Methods
 		jobject getSource();

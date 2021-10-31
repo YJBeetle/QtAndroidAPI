@@ -37,15 +37,15 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	MediaStore_Audio_Genres_Members::MediaStore_Audio_Genres_Members(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaStore_Audio_Genres_Members::MediaStore_Audio_Genres_Members(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MediaStore_Audio_Genres_Members::MediaStore_Audio_Genres_Members()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.provider.MediaStore$Audio$Genres$Members",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject MediaStore_Audio_Genres_Members::getContentUri(jstring arg0, jlong arg1)

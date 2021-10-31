@@ -19,9 +19,11 @@ namespace android::service::autofill
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ImageTransformation(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ImageTransformation(QAndroidJniObject obj);
+		
 		// Constructors
-		ImageTransformation() = default;
 		
 		// Methods
 		jint describeContents();

@@ -46,9 +46,11 @@ namespace android::media::tv
 		static jint TYPE_TUNER();
 		static jint TYPE_VGA();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TvInputInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		TvInputInfo(QAndroidJniObject obj);
+		
 		// Constructors
-		TvInputInfo() = default;
 		
 		// Methods
 		jboolean canRecord();

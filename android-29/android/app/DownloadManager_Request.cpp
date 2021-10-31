@@ -48,21 +48,21 @@ namespace android::app
 		);
 	}
 	
-	DownloadManager_Request::DownloadManager_Request(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DownloadManager_Request::DownloadManager_Request(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	DownloadManager_Request::DownloadManager_Request(android::net::Uri arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.app.DownloadManager$Request",
 			"(Landroid/net/Uri;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject DownloadManager_Request::addRequestHeader(jstring arg0, jstring arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"addRequestHeader",
 			"(Ljava/lang/String;Ljava/lang/String;)Landroid/app/DownloadManager$Request;",
 			arg0,
@@ -71,14 +71,14 @@ namespace android::app
 	}
 	void DownloadManager_Request::allowScanningByMediaScanner()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"allowScanningByMediaScanner",
 			"()V"
 		);
 	}
 	QAndroidJniObject DownloadManager_Request::setAllowedNetworkTypes(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setAllowedNetworkTypes",
 			"(I)Landroid/app/DownloadManager$Request;",
 			arg0
@@ -86,7 +86,7 @@ namespace android::app
 	}
 	QAndroidJniObject DownloadManager_Request::setAllowedOverMetered(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setAllowedOverMetered",
 			"(Z)Landroid/app/DownloadManager$Request;",
 			arg0
@@ -94,7 +94,7 @@ namespace android::app
 	}
 	QAndroidJniObject DownloadManager_Request::setAllowedOverRoaming(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setAllowedOverRoaming",
 			"(Z)Landroid/app/DownloadManager$Request;",
 			arg0
@@ -102,7 +102,7 @@ namespace android::app
 	}
 	QAndroidJniObject DownloadManager_Request::setDescription(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setDescription",
 			"(Ljava/lang/CharSequence;)Landroid/app/DownloadManager$Request;",
 			arg0
@@ -110,17 +110,17 @@ namespace android::app
 	}
 	QAndroidJniObject DownloadManager_Request::setDestinationInExternalFilesDir(android::content::Context arg0, jstring arg1, jstring arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setDestinationInExternalFilesDir",
 			"(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Landroid/app/DownloadManager$Request;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
 	}
 	QAndroidJniObject DownloadManager_Request::setDestinationInExternalPublicDir(jstring arg0, jstring arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setDestinationInExternalPublicDir",
 			"(Ljava/lang/String;Ljava/lang/String;)Landroid/app/DownloadManager$Request;",
 			arg0,
@@ -129,15 +129,15 @@ namespace android::app
 	}
 	QAndroidJniObject DownloadManager_Request::setDestinationUri(android::net::Uri arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setDestinationUri",
 			"(Landroid/net/Uri;)Landroid/app/DownloadManager$Request;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject DownloadManager_Request::setMimeType(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setMimeType",
 			"(Ljava/lang/String;)Landroid/app/DownloadManager$Request;",
 			arg0
@@ -145,7 +145,7 @@ namespace android::app
 	}
 	QAndroidJniObject DownloadManager_Request::setNotificationVisibility(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setNotificationVisibility",
 			"(I)Landroid/app/DownloadManager$Request;",
 			arg0
@@ -153,7 +153,7 @@ namespace android::app
 	}
 	QAndroidJniObject DownloadManager_Request::setRequiresCharging(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setRequiresCharging",
 			"(Z)Landroid/app/DownloadManager$Request;",
 			arg0
@@ -161,7 +161,7 @@ namespace android::app
 	}
 	QAndroidJniObject DownloadManager_Request::setRequiresDeviceIdle(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setRequiresDeviceIdle",
 			"(Z)Landroid/app/DownloadManager$Request;",
 			arg0
@@ -169,7 +169,7 @@ namespace android::app
 	}
 	QAndroidJniObject DownloadManager_Request::setShowRunningNotification(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setShowRunningNotification",
 			"(Z)Landroid/app/DownloadManager$Request;",
 			arg0
@@ -177,7 +177,7 @@ namespace android::app
 	}
 	QAndroidJniObject DownloadManager_Request::setTitle(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setTitle",
 			"(Ljava/lang/CharSequence;)Landroid/app/DownloadManager$Request;",
 			arg0
@@ -185,7 +185,7 @@ namespace android::app
 	}
 	QAndroidJniObject DownloadManager_Request::setVisibleInDownloadsUi(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setVisibleInDownloadsUi",
 			"(Z)Landroid/app/DownloadManager$Request;",
 			arg0

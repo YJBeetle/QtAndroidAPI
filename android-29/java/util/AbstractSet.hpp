@@ -11,9 +11,11 @@ namespace java::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AbstractSet(const char *className, const char *sig, Ts...agv) : java::util::AbstractCollection(className, sig, std::forward<Ts>(agv)...) {}
 		AbstractSet(QAndroidJniObject obj);
+		
 		// Constructors
-		AbstractSet() = default;
 		
 		// Methods
 		jboolean equals(jobject arg0);

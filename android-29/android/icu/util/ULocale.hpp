@@ -42,12 +42,14 @@ namespace android::icu::util
 		static jchar UNICODE_LOCALE_EXTENSION();
 		static QAndroidJniObject US();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ULocale(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ULocale(QAndroidJniObject obj);
+		
 		// Constructors
 		ULocale(jstring arg0);
 		ULocale(jstring arg0, jstring arg1);
 		ULocale(jstring arg0, jstring arg1, jstring arg2);
-		ULocale() = default;
 		
 		// Methods
 		static QAndroidJniObject acceptLanguage(jarray arg0, jbooleanArray arg1);

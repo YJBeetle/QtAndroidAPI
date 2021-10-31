@@ -53,41 +53,43 @@ namespace android::hardware::display
 		);
 	}
 	
-	DisplayManager::DisplayManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DisplayManager::DisplayManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject DisplayManager::createVirtualDisplay(jstring arg0, jint arg1, jint arg2, jint arg3, android::view::Surface arg4, jint arg5)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"createVirtualDisplay",
 			"(Ljava/lang/String;IIILandroid/view/Surface;I)Landroid/hardware/display/VirtualDisplay;",
 			arg0,
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object(),
+			arg4.object(),
 			arg5
 		);
 	}
 	QAndroidJniObject DisplayManager::createVirtualDisplay(jstring arg0, jint arg1, jint arg2, jint arg3, android::view::Surface arg4, jint arg5, android::hardware::display::VirtualDisplay_Callback arg6, android::os::Handler arg7)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"createVirtualDisplay",
 			"(Ljava/lang/String;IIILandroid/view/Surface;ILandroid/hardware/display/VirtualDisplay$Callback;Landroid/os/Handler;)Landroid/hardware/display/VirtualDisplay;",
 			arg0,
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object(),
+			arg4.object(),
 			arg5,
-			arg6.__jniObject().object(),
-			arg7.__jniObject().object()
+			arg6.object(),
+			arg7.object()
 		);
 	}
 	QAndroidJniObject DisplayManager::getDisplay(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDisplay",
 			"(I)Landroid/view/Display;",
 			arg0
@@ -95,14 +97,14 @@ namespace android::hardware::display
 	}
 	jarray DisplayManager::getDisplays()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDisplays",
 			"()[Landroid/view/Display;"
 		).object<jarray>();
 	}
 	jarray DisplayManager::getDisplays(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDisplays",
 			"(Ljava/lang/String;)[Landroid/view/Display;",
 			arg0
@@ -110,19 +112,19 @@ namespace android::hardware::display
 	}
 	void DisplayManager::registerDisplayListener(__JniBaseClass arg0, android::os::Handler arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"registerDisplayListener",
 			"(Landroid/hardware/display/DisplayManager$DisplayListener;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void DisplayManager::unregisterDisplayListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"unregisterDisplayListener",
 			"(Landroid/hardware/display/DisplayManager$DisplayListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::hardware::display

@@ -22,9 +22,11 @@ namespace javax::crypto
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ExemptionMechanism(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ExemptionMechanism(QAndroidJniObject obj);
+		
 		// Constructors
-		ExemptionMechanism() = default;
 		
 		// Methods
 		static QAndroidJniObject getInstance(jstring arg0);

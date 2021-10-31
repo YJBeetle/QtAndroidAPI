@@ -4,23 +4,21 @@ namespace java::lang
 {
 	// Fields
 	
-	InstantiationException::InstantiationException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	InstantiationException::InstantiationException(QAndroidJniObject obj) : java::lang::ReflectiveOperationException(obj) {}
+	
 	// Constructors
 	InstantiationException::InstantiationException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::ReflectiveOperationException(
 			"java.lang.InstantiationException",
 			"()V"
-		);
-	}
+		) {}
 	InstantiationException::InstantiationException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::ReflectiveOperationException(
 			"java.lang.InstantiationException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::lang

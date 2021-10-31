@@ -22,7 +22,10 @@ namespace android::printservice
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PrinterDiscoverySession(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PrinterDiscoverySession(QAndroidJniObject obj);
+		
 		// Constructors
 		PrinterDiscoverySession();
 		

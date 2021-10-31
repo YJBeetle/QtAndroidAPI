@@ -6,34 +6,36 @@ namespace android::media
 {
 	// Fields
 	
-	AudioFocusRequest::AudioFocusRequest(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AudioFocusRequest::AudioFocusRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jboolean AudioFocusRequest::acceptsDelayedFocusGain()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"acceptsDelayedFocusGain",
 			"()Z"
 		);
 	}
 	QAndroidJniObject AudioFocusRequest::getAudioAttributes()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAudioAttributes",
 			"()Landroid/media/AudioAttributes;"
 		);
 	}
 	jint AudioFocusRequest::getFocusGain()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getFocusGain",
 			"()I"
 		);
 	}
 	jboolean AudioFocusRequest::willPauseWhenDucked()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"willPauseWhenDucked",
 			"()Z"
 		);

@@ -14,7 +14,10 @@ namespace android::hardware
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SensorManager_DynamicSensorCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SensorManager_DynamicSensorCallback(QAndroidJniObject obj);
+		
 		// Constructors
 		SensorManager_DynamicSensorCallback();
 		

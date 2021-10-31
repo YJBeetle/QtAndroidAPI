@@ -13,71 +13,69 @@ namespace android::view
 		);
 	}
 	
-	KeyboardShortcutInfo::KeyboardShortcutInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	KeyboardShortcutInfo::KeyboardShortcutInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	KeyboardShortcutInfo::KeyboardShortcutInfo(jstring arg0, jchar arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.KeyboardShortcutInfo",
 			"(Ljava/lang/CharSequence;CI)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	KeyboardShortcutInfo::KeyboardShortcutInfo(jstring arg0, jint arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.KeyboardShortcutInfo",
 			"(Ljava/lang/CharSequence;II)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	jint KeyboardShortcutInfo::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jchar KeyboardShortcutInfo::getBaseCharacter()
 	{
-		return __thiz.callMethod<jchar>(
+		return callMethod<jchar>(
 			"getBaseCharacter",
 			"()C"
 		);
 	}
 	jint KeyboardShortcutInfo::getKeycode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getKeycode",
 			"()I"
 		);
 	}
 	jstring KeyboardShortcutInfo::getLabel()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jint KeyboardShortcutInfo::getModifiers()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getModifiers",
 			"()I"
 		);
 	}
 	void KeyboardShortcutInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

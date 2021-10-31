@@ -20,11 +20,13 @@ namespace android::opengl
 		static jint RENDERMODE_CONTINUOUSLY();
 		static jint RENDERMODE_WHEN_DIRTY();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit GLSurfaceView(const char *className, const char *sig, Ts...agv) : android::view::SurfaceView(className, sig, std::forward<Ts>(agv)...) {}
 		GLSurfaceView(QAndroidJniObject obj);
+		
 		// Constructors
 		GLSurfaceView(android::content::Context arg0);
 		GLSurfaceView(android::content::Context arg0, __JniBaseClass arg1);
-		GLSurfaceView() = default;
 		
 		// Methods
 		jint getDebugFlags();

@@ -4,31 +4,29 @@ namespace java::util
 {
 	// Fields
 	
-	StringJoiner::StringJoiner(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	StringJoiner::StringJoiner(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	StringJoiner::StringJoiner(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.StringJoiner",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
-		);
-	}
+		) {}
 	StringJoiner::StringJoiner(jstring arg0, jstring arg1, jstring arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.StringJoiner",
 			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject StringJoiner::add(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"add",
 			"(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;",
 			arg0
@@ -36,22 +34,22 @@ namespace java::util
 	}
 	jint StringJoiner::length()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"length",
 			"()I"
 		);
 	}
 	QAndroidJniObject StringJoiner::merge(java::util::StringJoiner arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"merge",
 			"(Ljava/util/StringJoiner;)Ljava/util/StringJoiner;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject StringJoiner::setEmptyValue(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setEmptyValue",
 			"(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;",
 			arg0
@@ -59,7 +57,7 @@ namespace java::util
 	}
 	jstring StringJoiner::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

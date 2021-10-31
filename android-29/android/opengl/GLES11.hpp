@@ -145,7 +145,10 @@ namespace android::opengl
 		static jint GL_VIEWPORT();
 		static jint GL_WRITE_ONLY();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit GLES11(const char *className, const char *sig, Ts...agv) : android::opengl::GLES10(className, sig, std::forward<Ts>(agv)...) {}
 		GLES11(QAndroidJniObject obj);
+		
 		// Constructors
 		GLES11();
 		

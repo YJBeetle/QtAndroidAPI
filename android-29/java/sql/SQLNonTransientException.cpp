@@ -4,80 +4,66 @@ namespace java::sql
 {
 	// Fields
 	
-	SQLNonTransientException::SQLNonTransientException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SQLNonTransientException::SQLNonTransientException(QAndroidJniObject obj) : java::sql::SQLException(obj) {}
+	
 	// Constructors
 	SQLNonTransientException::SQLNonTransientException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::sql::SQLException(
 			"java.sql.SQLNonTransientException",
 			"()V"
-		);
-	}
+		) {}
 	SQLNonTransientException::SQLNonTransientException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::sql::SQLException(
 			"java.sql.SQLNonTransientException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	SQLNonTransientException::SQLNonTransientException(jthrowable arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::sql::SQLException(
 			"java.sql.SQLNonTransientException",
 			"(Ljava/lang/Throwable;)V",
 			arg0
-		);
-	}
+		) {}
 	SQLNonTransientException::SQLNonTransientException(jstring arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::sql::SQLException(
 			"java.sql.SQLNonTransientException",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	SQLNonTransientException::SQLNonTransientException(jstring arg0, jthrowable arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::sql::SQLException(
 			"java.sql.SQLNonTransientException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	SQLNonTransientException::SQLNonTransientException(jstring arg0, jstring arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: java::sql::SQLException(
 			"java.sql.SQLNonTransientException",
 			"(Ljava/lang/String;Ljava/lang/String;I)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	SQLNonTransientException::SQLNonTransientException(jstring arg0, jstring arg1, jthrowable arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: java::sql::SQLException(
 			"java.sql.SQLNonTransientException",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	SQLNonTransientException::SQLNonTransientException(jstring arg0, jstring arg1, jint arg2, jthrowable arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: java::sql::SQLException(
 			"java.sql.SQLNonTransientException",
 			"(Ljava/lang/String;Ljava/lang/String;ILjava/lang/Throwable;)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::sql

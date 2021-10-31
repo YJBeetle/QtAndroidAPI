@@ -64,9 +64,11 @@ namespace java::time
 		static QAndroidJniObject MAX();
 		static QAndroidJniObject MIN();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit LocalDateTime(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		LocalDateTime(QAndroidJniObject obj);
+		
 		// Constructors
-		LocalDateTime() = default;
 		
 		// Methods
 		static QAndroidJniObject from(__JniBaseClass arg0);

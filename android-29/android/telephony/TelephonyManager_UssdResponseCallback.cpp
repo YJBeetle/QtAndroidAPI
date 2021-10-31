@@ -5,33 +5,33 @@ namespace android::telephony
 {
 	// Fields
 	
-	TelephonyManager_UssdResponseCallback::TelephonyManager_UssdResponseCallback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TelephonyManager_UssdResponseCallback::TelephonyManager_UssdResponseCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	TelephonyManager_UssdResponseCallback::TelephonyManager_UssdResponseCallback()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.telephony.TelephonyManager$UssdResponseCallback",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void TelephonyManager_UssdResponseCallback::onReceiveUssdResponse(android::telephony::TelephonyManager arg0, jstring arg1, jstring arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onReceiveUssdResponse",
 			"(Landroid/telephony/TelephonyManager;Ljava/lang/String;Ljava/lang/CharSequence;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
 	}
 	void TelephonyManager_UssdResponseCallback::onReceiveUssdResponseFailed(android::telephony::TelephonyManager arg0, jstring arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onReceiveUssdResponseFailed",
 			"(Landroid/telephony/TelephonyManager;Ljava/lang/String;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);

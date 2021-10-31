@@ -53,7 +53,9 @@ namespace java::nio::charset
 		);
 	}
 	
-	StandardCharsets::StandardCharsets(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	StandardCharsets::StandardCharsets(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

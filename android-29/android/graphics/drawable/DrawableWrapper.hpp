@@ -55,10 +55,12 @@ namespace android::graphics::drawable
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DrawableWrapper(const char *className, const char *sig, Ts...agv) : android::graphics::drawable::Drawable(className, sig, std::forward<Ts>(agv)...) {}
 		DrawableWrapper(QAndroidJniObject obj);
+		
 		// Constructors
 		DrawableWrapper(android::graphics::drawable::Drawable arg0);
-		DrawableWrapper() = default;
 		
 		// Methods
 		void applyTheme(android::content::res::Resources_Theme arg0);

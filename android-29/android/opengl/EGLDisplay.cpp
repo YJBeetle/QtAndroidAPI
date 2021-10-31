@@ -4,13 +4,15 @@ namespace android::opengl
 {
 	// Fields
 	
-	EGLDisplay::EGLDisplay(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	EGLDisplay::EGLDisplay(QAndroidJniObject obj) : android::opengl::EGLObjectHandle(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jboolean EGLDisplay::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0

@@ -51,7 +51,10 @@ namespace android::net::wifi
 		jarray wepKeys();
 		jint wepTxKeyIndex();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit WifiConfiguration(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		WifiConfiguration(QAndroidJniObject obj);
+		
 		// Constructors
 		WifiConfiguration();
 		

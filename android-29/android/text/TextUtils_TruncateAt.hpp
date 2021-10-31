@@ -15,9 +15,11 @@ namespace android::text
 		static QAndroidJniObject MIDDLE();
 		static QAndroidJniObject START();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TextUtils_TruncateAt(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		TextUtils_TruncateAt(QAndroidJniObject obj);
+		
 		// Constructors
-		TextUtils_TruncateAt() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

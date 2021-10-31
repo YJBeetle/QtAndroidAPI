@@ -12,7 +12,10 @@ namespace android::net::wifi::rtt
 		static jint STATUS_CODE_FAIL();
 		static jint STATUS_CODE_FAIL_RTT_NOT_AVAILABLE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit RangingResultCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		RangingResultCallback(QAndroidJniObject obj);
+		
 		// Constructors
 		RangingResultCallback();
 		

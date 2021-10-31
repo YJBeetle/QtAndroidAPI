@@ -5,21 +5,21 @@ namespace android::util
 	// Fields
 	jshort MutableShort::value()
 	{
-		return __thiz.getField<jshort>(
+		return getField<jshort>(
 			"value"
 		);
 	}
 	
-	MutableShort::MutableShort(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MutableShort::MutableShort(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MutableShort::MutableShort(jshort arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.util.MutableShort",
 			"(S)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::util

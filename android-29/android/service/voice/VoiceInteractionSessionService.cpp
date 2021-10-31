@@ -10,58 +10,58 @@ namespace android::service::voice
 {
 	// Fields
 	
-	VoiceInteractionSessionService::VoiceInteractionSessionService(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	VoiceInteractionSessionService::VoiceInteractionSessionService(QAndroidJniObject obj) : android::app::Service(obj) {}
+	
 	// Constructors
 	VoiceInteractionSessionService::VoiceInteractionSessionService()
-	{
-		__thiz = QAndroidJniObject(
+		: android::app::Service(
 			"android.service.voice.VoiceInteractionSessionService",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject VoiceInteractionSessionService::onBind(android::content::Intent arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onBind",
 			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void VoiceInteractionSessionService::onConfigurationChanged(android::content::res::Configuration arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onConfigurationChanged",
 			"(Landroid/content/res/Configuration;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void VoiceInteractionSessionService::onCreate()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onCreate",
 			"()V"
 		);
 	}
 	void VoiceInteractionSessionService::onLowMemory()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onLowMemory",
 			"()V"
 		);
 	}
 	QAndroidJniObject VoiceInteractionSessionService::onNewSession(android::os::Bundle arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onNewSession",
 			"(Landroid/os/Bundle;)Landroid/service/voice/VoiceInteractionSession;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void VoiceInteractionSessionService::onTrimMemory(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onTrimMemory",
 			"(I)V",
 			arg0

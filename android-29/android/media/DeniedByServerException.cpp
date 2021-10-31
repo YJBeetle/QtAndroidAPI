@@ -4,16 +4,16 @@ namespace android::media
 {
 	// Fields
 	
-	DeniedByServerException::DeniedByServerException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DeniedByServerException::DeniedByServerException(QAndroidJniObject obj) : android::media::MediaDrmException(obj) {}
+	
 	// Constructors
 	DeniedByServerException::DeniedByServerException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::media::MediaDrmException(
 			"android.media.DeniedByServerException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::media

@@ -4,27 +4,29 @@ namespace java::util
 {
 	// Fields
 	
-	Spliterators_AbstractLongSpliterator::Spliterators_AbstractLongSpliterator(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Spliterators_AbstractLongSpliterator::Spliterators_AbstractLongSpliterator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint Spliterators_AbstractLongSpliterator::characteristics()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"characteristics",
 			"()I"
 		);
 	}
 	jlong Spliterators_AbstractLongSpliterator::estimateSize()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"estimateSize",
 			"()J"
 		);
 	}
 	QAndroidJniObject Spliterators_AbstractLongSpliterator::trySplit()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"trySplit",
 			"()Ljava/util/Spliterator$OfLong;"
 		);

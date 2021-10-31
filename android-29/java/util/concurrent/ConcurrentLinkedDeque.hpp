@@ -19,7 +19,10 @@ namespace java::util::concurrent
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ConcurrentLinkedDeque(const char *className, const char *sig, Ts...agv) : java::util::AbstractCollection(className, sig, std::forward<Ts>(agv)...) {}
 		ConcurrentLinkedDeque(QAndroidJniObject obj);
+		
 		// Constructors
 		ConcurrentLinkedDeque();
 		ConcurrentLinkedDeque(__JniBaseClass arg0);

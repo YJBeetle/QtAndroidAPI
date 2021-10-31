@@ -4,23 +4,21 @@ namespace java::net
 {
 	// Fields
 	
-	PortUnreachableException::PortUnreachableException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PortUnreachableException::PortUnreachableException(QAndroidJniObject obj) : java::net::SocketException(obj) {}
+	
 	// Constructors
 	PortUnreachableException::PortUnreachableException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::net::SocketException(
 			"java.net.PortUnreachableException",
 			"()V"
-		);
-	}
+		) {}
 	PortUnreachableException::PortUnreachableException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::net::SocketException(
 			"java.net.PortUnreachableException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::net

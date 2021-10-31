@@ -30,11 +30,13 @@ namespace java::lang
 		static jint SIZE();
 		static jclass TYPE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Double(const char *className, const char *sig, Ts...agv) : java::lang::Number(className, sig, std::forward<Ts>(agv)...) {}
 		Double(QAndroidJniObject obj);
+		
 		// Constructors
 		Double(jdouble arg0);
 		Double(jstring arg0);
-		Double() = default;
 		
 		// Methods
 		static jint compare(jdouble arg0, jdouble arg1);

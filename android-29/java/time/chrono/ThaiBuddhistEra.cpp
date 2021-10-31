@@ -22,7 +22,9 @@ namespace java::time::chrono
 		);
 	}
 	
-	ThaiBuddhistEra::ThaiBuddhistEra(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ThaiBuddhistEra::ThaiBuddhistEra(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -54,16 +56,16 @@ namespace java::time::chrono
 	}
 	jstring ThaiBuddhistEra::getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDisplayName",
 			"(Ljava/time/format/TextStyle;Ljava/util/Locale;)Ljava/lang/String;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		).object<jstring>();
 	}
 	jint ThaiBuddhistEra::getValue()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getValue",
 			"()I"
 		);

@@ -52,7 +52,9 @@ namespace android::content
 		).object<jstring>();
 	}
 	
-	QuickViewConstants::QuickViewConstants(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	QuickViewConstants::QuickViewConstants(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

@@ -5,35 +5,33 @@ namespace android::renderscript
 	// Fields
 	jshort Short2::x()
 	{
-		return __thiz.getField<jshort>(
+		return getField<jshort>(
 			"x"
 		);
 	}
 	jshort Short2::y()
 	{
-		return __thiz.getField<jshort>(
+		return getField<jshort>(
 			"y"
 		);
 	}
 	
-	Short2::Short2(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Short2::Short2(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Short2::Short2()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.renderscript.Short2",
 			"()V"
-		);
-	}
+		) {}
 	Short2::Short2(jshort arg0, jshort arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.renderscript.Short2",
 			"(SS)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::renderscript

@@ -25,15 +25,15 @@ namespace android::view
 		);
 	}
 	
-	View_MeasureSpec::View_MeasureSpec(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	View_MeasureSpec::View_MeasureSpec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	View_MeasureSpec::View_MeasureSpec()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.View$MeasureSpec",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jint View_MeasureSpec::getMode(jint arg0)

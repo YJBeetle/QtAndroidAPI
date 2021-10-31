@@ -1345,7 +1345,9 @@ namespace android::icu::lang
 		);
 	}
 	
-	UScript::UScript(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UScript::UScript(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -1364,7 +1366,7 @@ namespace android::icu::lang
 			"android.icu.lang.UScript",
 			"getCode",
 			"(Landroid/icu/util/ULocale;)[I",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jintArray>();
 	}
 	jintArray UScript::getCode(jstring arg0)
@@ -1382,7 +1384,7 @@ namespace android::icu::lang
 			"android.icu.lang.UScript",
 			"getCode",
 			"(Ljava/util/Locale;)[I",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jintArray>();
 	}
 	jint UScript::getCodeFromName(jstring arg0)
@@ -1428,7 +1430,7 @@ namespace android::icu::lang
 			"getScriptExtensions",
 			"(ILjava/util/BitSet;)I",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jstring UScript::getShortName(jint arg0)

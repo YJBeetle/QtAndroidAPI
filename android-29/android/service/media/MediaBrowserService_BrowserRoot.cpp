@@ -29,29 +29,29 @@ namespace android::service::media
 		).object<jstring>();
 	}
 	
-	MediaBrowserService_BrowserRoot::MediaBrowserService_BrowserRoot(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaBrowserService_BrowserRoot::MediaBrowserService_BrowserRoot(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MediaBrowserService_BrowserRoot::MediaBrowserService_BrowserRoot(jstring arg0, android::os::Bundle arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.service.media.MediaBrowserService$BrowserRoot",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
+			arg1.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject MediaBrowserService_BrowserRoot::getExtras()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
 	jstring MediaBrowserService_BrowserRoot::getRootId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRootId",
 			"()Ljava/lang/String;"
 		).object<jstring>();

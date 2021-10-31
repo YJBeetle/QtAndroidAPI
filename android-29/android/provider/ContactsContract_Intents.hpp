@@ -25,7 +25,10 @@ namespace android::provider
 		static jstring SEARCH_SUGGESTION_DIAL_NUMBER_CLICKED();
 		static jstring SHOW_OR_CREATE_CONTACT();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ContactsContract_Intents(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ContactsContract_Intents(QAndroidJniObject obj);
+		
 		// Constructors
 		ContactsContract_Intents();
 		

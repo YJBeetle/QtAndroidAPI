@@ -4,7 +4,9 @@ namespace java::lang::reflect
 {
 	// Fields
 	
-	Array::Array(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Array::Array(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

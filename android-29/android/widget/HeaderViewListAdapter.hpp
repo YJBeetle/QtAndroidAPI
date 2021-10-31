@@ -30,10 +30,12 @@ namespace android::widget
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit HeaderViewListAdapter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		HeaderViewListAdapter(QAndroidJniObject obj);
+		
 		// Constructors
 		HeaderViewListAdapter(java::util::ArrayList arg0, java::util::ArrayList arg1, __JniBaseClass arg2);
-		HeaderViewListAdapter() = default;
 		
 		// Methods
 		jboolean areAllItemsEnabled();

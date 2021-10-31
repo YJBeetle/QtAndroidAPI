@@ -13,7 +13,10 @@ namespace java::net
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BindException(const char *className, const char *sig, Ts...agv) : java::net::SocketException(className, sig, std::forward<Ts>(agv)...) {}
 		BindException(QAndroidJniObject obj);
+		
 		// Constructors
 		BindException();
 		BindException(jstring arg0);

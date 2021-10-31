@@ -15,42 +15,42 @@ namespace android::net
 		);
 	}
 	
-	LinkProperties::LinkProperties(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	LinkProperties::LinkProperties(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	LinkProperties::LinkProperties()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.net.LinkProperties",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean LinkProperties::addRoute(android::net::RouteInfo arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"addRoute",
 			"(Landroid/net/RouteInfo;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void LinkProperties::clear()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
 	jint LinkProperties::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean LinkProperties::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -58,85 +58,85 @@ namespace android::net
 	}
 	QAndroidJniObject LinkProperties::getDnsServers()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDnsServers",
 			"()Ljava/util/List;"
 		);
 	}
 	jstring LinkProperties::getDomains()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDomains",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject LinkProperties::getHttpProxy()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getHttpProxy",
 			"()Landroid/net/ProxyInfo;"
 		);
 	}
 	jstring LinkProperties::getInterfaceName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getInterfaceName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject LinkProperties::getLinkAddresses()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLinkAddresses",
 			"()Ljava/util/List;"
 		);
 	}
 	jint LinkProperties::getMtu()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMtu",
 			"()I"
 		);
 	}
 	jstring LinkProperties::getPrivateDnsServerName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPrivateDnsServerName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject LinkProperties::getRoutes()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRoutes",
 			"()Ljava/util/List;"
 		);
 	}
 	jint LinkProperties::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean LinkProperties::isPrivateDnsActive()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isPrivateDnsActive",
 			"()Z"
 		);
 	}
 	void LinkProperties::setDnsServers(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDnsServers",
 			"(Ljava/util/Collection;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void LinkProperties::setDomains(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDomains",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -144,15 +144,15 @@ namespace android::net
 	}
 	void LinkProperties::setHttpProxy(android::net::ProxyInfo arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setHttpProxy",
 			"(Landroid/net/ProxyInfo;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void LinkProperties::setInterfaceName(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setInterfaceName",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -160,15 +160,15 @@ namespace android::net
 	}
 	void LinkProperties::setLinkAddresses(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLinkAddresses",
 			"(Ljava/util/Collection;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void LinkProperties::setMtu(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMtu",
 			"(I)V",
 			arg0
@@ -176,17 +176,17 @@ namespace android::net
 	}
 	jstring LinkProperties::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void LinkProperties::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

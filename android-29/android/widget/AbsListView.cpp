@@ -69,67 +69,61 @@ namespace android::widget
 		);
 	}
 	
-	AbsListView::AbsListView(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AbsListView::AbsListView(QAndroidJniObject obj) : android::widget::AdapterView(obj) {}
+	
 	// Constructors
 	AbsListView::AbsListView(android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::AdapterView(
 			"android.widget.AbsListView",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	AbsListView::AbsListView(android::content::Context arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::AdapterView(
 			"android.widget.AbsListView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	AbsListView::AbsListView(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::AdapterView(
 			"android.widget.AbsListView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
-		);
-	}
+		) {}
 	AbsListView::AbsListView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::AdapterView(
 			"android.widget.AbsListView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	
 	// Methods
 	void AbsListView::addTouchables(java::util::ArrayList arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addTouchables",
 			"(Ljava/util/ArrayList;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AbsListView::afterTextChanged(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"afterTextChanged",
 			"(Landroid/text/Editable;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AbsListView::beforeTextChanged(jstring arg0, jint arg1, jint arg2, jint arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"beforeTextChanged",
 			"(Ljava/lang/CharSequence;III)V",
 			arg0,
@@ -140,7 +134,7 @@ namespace android::widget
 	}
 	jboolean AbsListView::canScrollList(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"canScrollList",
 			"(I)Z",
 			arg0
@@ -148,36 +142,36 @@ namespace android::widget
 	}
 	jboolean AbsListView::checkInputConnectionProxy(android::view::View arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"checkInputConnectionProxy",
 			"(Landroid/view/View;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AbsListView::clearChoices()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clearChoices",
 			"()V"
 		);
 	}
 	void AbsListView::clearTextFilter()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clearTextFilter",
 			"()V"
 		);
 	}
 	void AbsListView::deferNotifyDataSetChanged()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"deferNotifyDataSetChanged",
 			"()V"
 		);
 	}
 	void AbsListView::dispatchDrawableHotspotChanged(jfloat arg0, jfloat arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"dispatchDrawableHotspotChanged",
 			"(FF)V",
 			arg0,
@@ -186,15 +180,15 @@ namespace android::widget
 	}
 	void AbsListView::draw(android::graphics::Canvas arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"draw",
 			"(Landroid/graphics/Canvas;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AbsListView::fling(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"fling",
 			"(I)V",
 			arg0
@@ -202,191 +196,191 @@ namespace android::widget
 	}
 	QAndroidJniObject AbsListView::generateLayoutParams(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"generateLayoutParams",
 			"(Landroid/util/AttributeSet;)Landroid/widget/AbsListView$LayoutParams;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring AbsListView::getAccessibilityClassName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jint AbsListView::getBottomEdgeEffectColor()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getBottomEdgeEffectColor",
 			"()I"
 		);
 	}
 	jint AbsListView::getCacheColorHint()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCacheColorHint",
 			"()I"
 		);
 	}
 	jint AbsListView::getCheckedItemCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCheckedItemCount",
 			"()I"
 		);
 	}
 	jlongArray AbsListView::getCheckedItemIds()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCheckedItemIds",
 			"()[J"
 		).object<jlongArray>();
 	}
 	jint AbsListView::getCheckedItemPosition()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCheckedItemPosition",
 			"()I"
 		);
 	}
 	QAndroidJniObject AbsListView::getCheckedItemPositions()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCheckedItemPositions",
 			"()Landroid/util/SparseBooleanArray;"
 		);
 	}
 	jint AbsListView::getChoiceMode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getChoiceMode",
 			"()I"
 		);
 	}
 	void AbsListView::getFocusedRect(android::graphics::Rect arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"getFocusedRect",
 			"(Landroid/graphics/Rect;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint AbsListView::getListPaddingBottom()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getListPaddingBottom",
 			"()I"
 		);
 	}
 	jint AbsListView::getListPaddingLeft()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getListPaddingLeft",
 			"()I"
 		);
 	}
 	jint AbsListView::getListPaddingRight()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getListPaddingRight",
 			"()I"
 		);
 	}
 	jint AbsListView::getListPaddingTop()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getListPaddingTop",
 			"()I"
 		);
 	}
 	QAndroidJniObject AbsListView::getSelectedView()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSelectedView",
 			"()Landroid/view/View;"
 		);
 	}
 	QAndroidJniObject AbsListView::getSelector()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSelector",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
 	jint AbsListView::getSolidColor()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSolidColor",
 			"()I"
 		);
 	}
 	jstring AbsListView::getTextFilter()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTextFilter",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jint AbsListView::getTopEdgeEffectColor()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTopEdgeEffectColor",
 			"()I"
 		);
 	}
 	jint AbsListView::getTranscriptMode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTranscriptMode",
 			"()I"
 		);
 	}
 	jint AbsListView::getVerticalScrollbarWidth()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getVerticalScrollbarWidth",
 			"()I"
 		);
 	}
 	jboolean AbsListView::hasTextFilter()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasTextFilter",
 			"()Z"
 		);
 	}
 	void AbsListView::invalidateViews()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"invalidateViews",
 			"()V"
 		);
 	}
 	jboolean AbsListView::isDrawSelectorOnTop()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isDrawSelectorOnTop",
 			"()Z"
 		);
 	}
 	jboolean AbsListView::isFastScrollAlwaysVisible()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isFastScrollAlwaysVisible",
 			"()Z"
 		);
 	}
 	jboolean AbsListView::isFastScrollEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isFastScrollEnabled",
 			"()Z"
 		);
 	}
 	jboolean AbsListView::isItemChecked(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isItemChecked",
 			"(I)Z",
 			arg0
@@ -394,57 +388,57 @@ namespace android::widget
 	}
 	jboolean AbsListView::isScrollingCacheEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isScrollingCacheEnabled",
 			"()Z"
 		);
 	}
 	jboolean AbsListView::isSmoothScrollbarEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isSmoothScrollbarEnabled",
 			"()Z"
 		);
 	}
 	jboolean AbsListView::isStackFromBottom()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isStackFromBottom",
 			"()Z"
 		);
 	}
 	jboolean AbsListView::isTextFilterEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isTextFilterEnabled",
 			"()Z"
 		);
 	}
 	void AbsListView::jumpDrawablesToCurrentState()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"jumpDrawablesToCurrentState",
 			"()V"
 		);
 	}
 	void AbsListView::onCancelPendingInputEvents()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onCancelPendingInputEvents",
 			"()V"
 		);
 	}
 	QAndroidJniObject AbsListView::onCreateInputConnection(android::view::inputmethod::EditorInfo arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onCreateInputConnection",
 			"(Landroid/view/inputmethod/EditorInfo;)Landroid/view/inputmethod/InputConnection;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AbsListView::onFilterComplete(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onFilterComplete",
 			"(I)V",
 			arg0
@@ -452,69 +446,69 @@ namespace android::widget
 	}
 	jboolean AbsListView::onGenericMotionEvent(android::view::MotionEvent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onGenericMotionEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AbsListView::onGlobalLayout()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onGlobalLayout",
 			"()V"
 		);
 	}
 	void AbsListView::onInitializeAccessibilityNodeInfoForItem(android::view::View arg0, jint arg1, android::view::accessibility::AccessibilityNodeInfo arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onInitializeAccessibilityNodeInfoForItem",
 			"(Landroid/view/View;ILandroid/view/accessibility/AccessibilityNodeInfo;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	jboolean AbsListView::onInterceptHoverEvent(android::view::MotionEvent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onInterceptHoverEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean AbsListView::onInterceptTouchEvent(android::view::MotionEvent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onInterceptTouchEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean AbsListView::onKeyDown(jint arg0, android::view::KeyEvent arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onKeyDown",
 			"(ILandroid/view/KeyEvent;)Z",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jboolean AbsListView::onKeyUp(jint arg0, android::view::KeyEvent arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onKeyUp",
 			"(ILandroid/view/KeyEvent;)Z",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jboolean AbsListView::onNestedFling(android::view::View arg0, jfloat arg1, jfloat arg2, jboolean arg3)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onNestedFling",
 			"(Landroid/view/View;FFZ)Z",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3
@@ -522,10 +516,10 @@ namespace android::widget
 	}
 	void AbsListView::onNestedScroll(android::view::View arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onNestedScroll",
 			"(Landroid/view/View;IIII)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
@@ -534,48 +528,48 @@ namespace android::widget
 	}
 	void AbsListView::onNestedScrollAccepted(android::view::View arg0, android::view::View arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onNestedScrollAccepted",
 			"(Landroid/view/View;Landroid/view/View;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
 	jboolean AbsListView::onRemoteAdapterConnected()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onRemoteAdapterConnected",
 			"()Z"
 		);
 	}
 	void AbsListView::onRemoteAdapterDisconnected()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onRemoteAdapterDisconnected",
 			"()V"
 		);
 	}
 	QAndroidJniObject AbsListView::onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onResolvePointerIcon",
 			"(Landroid/view/MotionEvent;I)Landroid/view/PointerIcon;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void AbsListView::onRestoreInstanceState(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onRestoreInstanceState",
 			"(Landroid/os/Parcelable;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AbsListView::onRtlPropertiesChanged(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onRtlPropertiesChanged",
 			"(I)V",
 			arg0
@@ -583,24 +577,24 @@ namespace android::widget
 	}
 	QAndroidJniObject AbsListView::onSaveInstanceState()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onSaveInstanceState",
 			"()Landroid/os/Parcelable;"
 		);
 	}
 	jboolean AbsListView::onStartNestedScroll(android::view::View arg0, android::view::View arg1, jint arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onStartNestedScroll",
 			"(Landroid/view/View;Landroid/view/View;I)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
 	void AbsListView::onTextChanged(jstring arg0, jint arg1, jint arg2, jint arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onTextChanged",
 			"(Ljava/lang/CharSequence;III)V",
 			arg0,
@@ -611,15 +605,15 @@ namespace android::widget
 	}
 	jboolean AbsListView::onTouchEvent(android::view::MotionEvent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onTouchEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AbsListView::onTouchModeChanged(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onTouchModeChanged",
 			"(Z)V",
 			arg0
@@ -627,7 +621,7 @@ namespace android::widget
 	}
 	void AbsListView::onWindowFocusChanged(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onWindowFocusChanged",
 			"(Z)V",
 			arg0
@@ -635,17 +629,17 @@ namespace android::widget
 	}
 	jboolean AbsListView::performItemClick(android::view::View arg0, jint arg1, jlong arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"performItemClick",
 			"(Landroid/view/View;IJ)Z",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
 	}
 	jint AbsListView::pointToPosition(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"pointToPosition",
 			"(II)I",
 			arg0,
@@ -654,7 +648,7 @@ namespace android::widget
 	}
 	jlong AbsListView::pointToRowId(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"pointToRowId",
 			"(II)J",
 			arg0,
@@ -663,15 +657,15 @@ namespace android::widget
 	}
 	void AbsListView::reclaimViews(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"reclaimViews",
 			"(Ljava/util/List;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AbsListView::requestDisallowInterceptTouchEvent(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"requestDisallowInterceptTouchEvent",
 			"(Z)V",
 			arg0
@@ -679,14 +673,14 @@ namespace android::widget
 	}
 	void AbsListView::requestLayout()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"requestLayout",
 			"()V"
 		);
 	}
 	void AbsListView::scrollListBy(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"scrollListBy",
 			"(I)V",
 			arg0
@@ -694,23 +688,23 @@ namespace android::widget
 	}
 	void AbsListView::sendAccessibilityEventUnchecked(android::view::accessibility::AccessibilityEvent arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"sendAccessibilityEventUnchecked",
 			"(Landroid/view/accessibility/AccessibilityEvent;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AbsListView::setAdapter(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAdapter",
 			"(Landroid/widget/Adapter;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AbsListView::setBottomEdgeEffectColor(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setBottomEdgeEffectColor",
 			"(I)V",
 			arg0
@@ -718,7 +712,7 @@ namespace android::widget
 	}
 	void AbsListView::setCacheColorHint(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCacheColorHint",
 			"(I)V",
 			arg0
@@ -726,7 +720,7 @@ namespace android::widget
 	}
 	void AbsListView::setChoiceMode(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setChoiceMode",
 			"(I)V",
 			arg0
@@ -734,7 +728,7 @@ namespace android::widget
 	}
 	void AbsListView::setDrawSelectorOnTop(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDrawSelectorOnTop",
 			"(Z)V",
 			arg0
@@ -742,7 +736,7 @@ namespace android::widget
 	}
 	void AbsListView::setEdgeEffectColor(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setEdgeEffectColor",
 			"(I)V",
 			arg0
@@ -750,7 +744,7 @@ namespace android::widget
 	}
 	void AbsListView::setFastScrollAlwaysVisible(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFastScrollAlwaysVisible",
 			"(Z)V",
 			arg0
@@ -758,7 +752,7 @@ namespace android::widget
 	}
 	void AbsListView::setFastScrollEnabled(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFastScrollEnabled",
 			"(Z)V",
 			arg0
@@ -766,7 +760,7 @@ namespace android::widget
 	}
 	void AbsListView::setFastScrollStyle(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFastScrollStyle",
 			"(I)V",
 			arg0
@@ -774,7 +768,7 @@ namespace android::widget
 	}
 	void AbsListView::setFilterText(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFilterText",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -782,7 +776,7 @@ namespace android::widget
 	}
 	void AbsListView::setFriction(jfloat arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFriction",
 			"(F)V",
 			arg0
@@ -790,7 +784,7 @@ namespace android::widget
 	}
 	void AbsListView::setItemChecked(jint arg0, jboolean arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setItemChecked",
 			"(IZ)V",
 			arg0,
@@ -799,39 +793,39 @@ namespace android::widget
 	}
 	void AbsListView::setMultiChoiceModeListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMultiChoiceModeListener",
 			"(Landroid/widget/AbsListView$MultiChoiceModeListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AbsListView::setOnScrollListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnScrollListener",
 			"(Landroid/widget/AbsListView$OnScrollListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AbsListView::setRecyclerListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setRecyclerListener",
 			"(Landroid/widget/AbsListView$RecyclerListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AbsListView::setRemoteViewsAdapter(android::content::Intent arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setRemoteViewsAdapter",
 			"(Landroid/content/Intent;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AbsListView::setScrollBarStyle(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setScrollBarStyle",
 			"(I)V",
 			arg0
@@ -839,16 +833,16 @@ namespace android::widget
 	}
 	void AbsListView::setScrollIndicators(android::view::View arg0, android::view::View arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setScrollIndicators",
 			"(Landroid/view/View;Landroid/view/View;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void AbsListView::setScrollingCacheEnabled(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setScrollingCacheEnabled",
 			"(Z)V",
 			arg0
@@ -856,7 +850,7 @@ namespace android::widget
 	}
 	void AbsListView::setSelectionFromTop(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSelectionFromTop",
 			"(II)V",
 			arg0,
@@ -865,15 +859,15 @@ namespace android::widget
 	}
 	void AbsListView::setSelector(android::graphics::drawable::Drawable arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSelector",
 			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AbsListView::setSelector(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSelector",
 			"(I)V",
 			arg0
@@ -881,7 +875,7 @@ namespace android::widget
 	}
 	void AbsListView::setSmoothScrollbarEnabled(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSmoothScrollbarEnabled",
 			"(Z)V",
 			arg0
@@ -889,7 +883,7 @@ namespace android::widget
 	}
 	void AbsListView::setStackFromBottom(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setStackFromBottom",
 			"(Z)V",
 			arg0
@@ -897,7 +891,7 @@ namespace android::widget
 	}
 	void AbsListView::setTextFilterEnabled(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTextFilterEnabled",
 			"(Z)V",
 			arg0
@@ -905,7 +899,7 @@ namespace android::widget
 	}
 	void AbsListView::setTopEdgeEffectColor(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTopEdgeEffectColor",
 			"(I)V",
 			arg0
@@ -913,7 +907,7 @@ namespace android::widget
 	}
 	void AbsListView::setTranscriptMode(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTranscriptMode",
 			"(I)V",
 			arg0
@@ -921,7 +915,7 @@ namespace android::widget
 	}
 	void AbsListView::setVelocityScale(jfloat arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setVelocityScale",
 			"(F)V",
 			arg0
@@ -929,7 +923,7 @@ namespace android::widget
 	}
 	void AbsListView::setVerticalScrollbarPosition(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setVerticalScrollbarPosition",
 			"(I)V",
 			arg0
@@ -937,14 +931,14 @@ namespace android::widget
 	}
 	jboolean AbsListView::showContextMenu()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"showContextMenu",
 			"()Z"
 		);
 	}
 	jboolean AbsListView::showContextMenu(jfloat arg0, jfloat arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"showContextMenu",
 			"(FF)Z",
 			arg0,
@@ -953,25 +947,25 @@ namespace android::widget
 	}
 	jboolean AbsListView::showContextMenuForChild(android::view::View arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"showContextMenuForChild",
 			"(Landroid/view/View;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean AbsListView::showContextMenuForChild(android::view::View arg0, jfloat arg1, jfloat arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"showContextMenuForChild",
 			"(Landroid/view/View;FF)Z",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
 	}
 	void AbsListView::smoothScrollBy(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"smoothScrollBy",
 			"(II)V",
 			arg0,
@@ -980,7 +974,7 @@ namespace android::widget
 	}
 	void AbsListView::smoothScrollToPosition(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"smoothScrollToPosition",
 			"(I)V",
 			arg0
@@ -988,7 +982,7 @@ namespace android::widget
 	}
 	void AbsListView::smoothScrollToPosition(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"smoothScrollToPosition",
 			"(II)V",
 			arg0,
@@ -997,7 +991,7 @@ namespace android::widget
 	}
 	void AbsListView::smoothScrollToPositionFromTop(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"smoothScrollToPositionFromTop",
 			"(II)V",
 			arg0,
@@ -1006,7 +1000,7 @@ namespace android::widget
 	}
 	void AbsListView::smoothScrollToPositionFromTop(jint arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"smoothScrollToPositionFromTop",
 			"(III)V",
 			arg0,
@@ -1016,10 +1010,10 @@ namespace android::widget
 	}
 	jboolean AbsListView::verifyDrawable(android::graphics::drawable::Drawable arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"verifyDrawable",
 			"(Landroid/graphics/drawable/Drawable;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::widget

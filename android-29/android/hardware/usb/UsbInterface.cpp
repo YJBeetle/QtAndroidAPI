@@ -14,27 +14,29 @@ namespace android::hardware::usb
 		);
 	}
 	
-	UsbInterface::UsbInterface(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UsbInterface::UsbInterface(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint UsbInterface::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jint UsbInterface::getAlternateSetting()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAlternateSetting",
 			"()I"
 		);
 	}
 	QAndroidJniObject UsbInterface::getEndpoint(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEndpoint",
 			"(I)Landroid/hardware/usb/UsbEndpoint;",
 			arg0
@@ -42,59 +44,59 @@ namespace android::hardware::usb
 	}
 	jint UsbInterface::getEndpointCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getEndpointCount",
 			"()I"
 		);
 	}
 	jint UsbInterface::getId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getId",
 			"()I"
 		);
 	}
 	jint UsbInterface::getInterfaceClass()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getInterfaceClass",
 			"()I"
 		);
 	}
 	jint UsbInterface::getInterfaceProtocol()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getInterfaceProtocol",
 			"()I"
 		);
 	}
 	jint UsbInterface::getInterfaceSubclass()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getInterfaceSubclass",
 			"()I"
 		);
 	}
 	jstring UsbInterface::getName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring UsbInterface::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void UsbInterface::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

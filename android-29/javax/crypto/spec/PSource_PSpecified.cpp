@@ -12,21 +12,21 @@ namespace javax::crypto::spec
 		);
 	}
 	
-	PSource_PSpecified::PSource_PSpecified(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PSource_PSpecified::PSource_PSpecified(QAndroidJniObject obj) : javax::crypto::spec::PSource(obj) {}
+	
 	// Constructors
 	PSource_PSpecified::PSource_PSpecified(jbyteArray arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: javax::crypto::spec::PSource(
 			"javax.crypto.spec.PSource$PSpecified",
 			"([B)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jbyteArray PSource_PSpecified::getValue()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getValue",
 			"()[B"
 		).object<jbyteArray>();

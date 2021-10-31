@@ -4,29 +4,29 @@ namespace java::net
 {
 	// Fields
 	
-	PasswordAuthentication::PasswordAuthentication(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PasswordAuthentication::PasswordAuthentication(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	PasswordAuthentication::PasswordAuthentication(jstring arg0, jcharArray arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.net.PasswordAuthentication",
 			"(Ljava/lang/String;[C)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jcharArray PasswordAuthentication::getPassword()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPassword",
 			"()[C"
 		).object<jcharArray>();
 	}
 	jstring PasswordAuthentication::getUserName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getUserName",
 			"()Ljava/lang/String;"
 		).object<jstring>();

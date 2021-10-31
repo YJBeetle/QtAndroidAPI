@@ -106,7 +106,9 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	LiveFolders::LiveFolders(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	LiveFolders::LiveFolders(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

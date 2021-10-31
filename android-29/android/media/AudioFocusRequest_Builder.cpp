@@ -7,36 +7,34 @@ namespace android::media
 {
 	// Fields
 	
-	AudioFocusRequest_Builder::AudioFocusRequest_Builder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AudioFocusRequest_Builder::AudioFocusRequest_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	AudioFocusRequest_Builder::AudioFocusRequest_Builder(android::media::AudioFocusRequest arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.AudioFocusRequest$Builder",
 			"(Landroid/media/AudioFocusRequest;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	AudioFocusRequest_Builder::AudioFocusRequest_Builder(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.AudioFocusRequest$Builder",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject AudioFocusRequest_Builder::build()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"build",
 			"()Landroid/media/AudioFocusRequest;"
 		);
 	}
 	QAndroidJniObject AudioFocusRequest_Builder::setAcceptsDelayedFocusGain(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setAcceptsDelayedFocusGain",
 			"(Z)Landroid/media/AudioFocusRequest$Builder;",
 			arg0
@@ -44,15 +42,15 @@ namespace android::media
 	}
 	QAndroidJniObject AudioFocusRequest_Builder::setAudioAttributes(android::media::AudioAttributes arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setAudioAttributes",
 			"(Landroid/media/AudioAttributes;)Landroid/media/AudioFocusRequest$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject AudioFocusRequest_Builder::setFocusGain(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setFocusGain",
 			"(I)Landroid/media/AudioFocusRequest$Builder;",
 			arg0
@@ -60,7 +58,7 @@ namespace android::media
 	}
 	QAndroidJniObject AudioFocusRequest_Builder::setForceDucking(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setForceDucking",
 			"(Z)Landroid/media/AudioFocusRequest$Builder;",
 			arg0
@@ -68,24 +66,24 @@ namespace android::media
 	}
 	QAndroidJniObject AudioFocusRequest_Builder::setOnAudioFocusChangeListener(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setOnAudioFocusChangeListener",
 			"(Landroid/media/AudioManager$OnAudioFocusChangeListener;)Landroid/media/AudioFocusRequest$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject AudioFocusRequest_Builder::setOnAudioFocusChangeListener(__JniBaseClass arg0, android::os::Handler arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setOnAudioFocusChangeListener",
 			"(Landroid/media/AudioManager$OnAudioFocusChangeListener;Landroid/os/Handler;)Landroid/media/AudioFocusRequest$Builder;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject AudioFocusRequest_Builder::setWillPauseWhenDucked(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setWillPauseWhenDucked",
 			"(Z)Landroid/media/AudioFocusRequest$Builder;",
 			arg0

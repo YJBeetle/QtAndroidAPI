@@ -26,27 +26,29 @@ namespace android::media
 		);
 	}
 	
-	MediaCodecInfo_EncoderCapabilities::MediaCodecInfo_EncoderCapabilities(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaCodecInfo_EncoderCapabilities::MediaCodecInfo_EncoderCapabilities(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject MediaCodecInfo_EncoderCapabilities::getComplexityRange()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getComplexityRange",
 			"()Landroid/util/Range;"
 		);
 	}
 	QAndroidJniObject MediaCodecInfo_EncoderCapabilities::getQualityRange()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getQualityRange",
 			"()Landroid/util/Range;"
 		);
 	}
 	jboolean MediaCodecInfo_EncoderCapabilities::isBitrateModeSupported(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isBitrateModeSupported",
 			"(I)Z",
 			arg0

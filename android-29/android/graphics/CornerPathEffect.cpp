@@ -4,16 +4,16 @@ namespace android::graphics
 {
 	// Fields
 	
-	CornerPathEffect::CornerPathEffect(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CornerPathEffect::CornerPathEffect(QAndroidJniObject obj) : android::graphics::PathEffect(obj) {}
+	
 	// Constructors
 	CornerPathEffect::CornerPathEffect(jfloat arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::graphics::PathEffect(
 			"android.graphics.CornerPathEffect",
 			"(F)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::graphics

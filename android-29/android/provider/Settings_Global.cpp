@@ -355,15 +355,15 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	Settings_Global::Settings_Global(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Settings_Global::Settings_Global(QAndroidJniObject obj) : android::provider::Settings_NameValueTable(obj) {}
+	
 	// Constructors
 	Settings_Global::Settings_Global()
-	{
-		__thiz = QAndroidJniObject(
+		: android::provider::Settings_NameValueTable(
 			"android.provider.Settings$Global",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jfloat Settings_Global::getFloat(android::content::ContentResolver arg0, jstring arg1)
@@ -372,7 +372,7 @@ namespace android::provider
 			"android.provider.Settings$Global",
 			"getFloat",
 			"(Landroid/content/ContentResolver;Ljava/lang/String;)F",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -382,7 +382,7 @@ namespace android::provider
 			"android.provider.Settings$Global",
 			"getFloat",
 			"(Landroid/content/ContentResolver;Ljava/lang/String;F)F",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
@@ -393,7 +393,7 @@ namespace android::provider
 			"android.provider.Settings$Global",
 			"getInt",
 			"(Landroid/content/ContentResolver;Ljava/lang/String;)I",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -403,7 +403,7 @@ namespace android::provider
 			"android.provider.Settings$Global",
 			"getInt",
 			"(Landroid/content/ContentResolver;Ljava/lang/String;I)I",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
@@ -414,7 +414,7 @@ namespace android::provider
 			"android.provider.Settings$Global",
 			"getLong",
 			"(Landroid/content/ContentResolver;Ljava/lang/String;)J",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -424,7 +424,7 @@ namespace android::provider
 			"android.provider.Settings$Global",
 			"getLong",
 			"(Landroid/content/ContentResolver;Ljava/lang/String;J)J",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
@@ -435,7 +435,7 @@ namespace android::provider
 			"android.provider.Settings$Global",
 			"getString",
 			"(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		).object<jstring>();
 	}
@@ -454,7 +454,7 @@ namespace android::provider
 			"android.provider.Settings$Global",
 			"putFloat",
 			"(Landroid/content/ContentResolver;Ljava/lang/String;F)Z",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
@@ -465,7 +465,7 @@ namespace android::provider
 			"android.provider.Settings$Global",
 			"putInt",
 			"(Landroid/content/ContentResolver;Ljava/lang/String;I)Z",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
@@ -476,7 +476,7 @@ namespace android::provider
 			"android.provider.Settings$Global",
 			"putLong",
 			"(Landroid/content/ContentResolver;Ljava/lang/String;J)Z",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
@@ -487,7 +487,7 @@ namespace android::provider
 			"android.provider.Settings$Global",
 			"putString",
 			"(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);

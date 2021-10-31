@@ -12,10 +12,12 @@ namespace android::media
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaPlayer_NoDrmSchemeException(const char *className, const char *sig, Ts...agv) : android::media::MediaDrmException(className, sig, std::forward<Ts>(agv)...) {}
 		MediaPlayer_NoDrmSchemeException(QAndroidJniObject obj);
+		
 		// Constructors
 		MediaPlayer_NoDrmSchemeException(jstring arg0);
-		MediaPlayer_NoDrmSchemeException() = default;
 		
 		// Methods
 	};

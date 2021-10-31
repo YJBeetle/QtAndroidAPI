@@ -12,7 +12,10 @@ namespace java::lang
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ClassCastException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
 		ClassCastException(QAndroidJniObject obj);
+		
 		// Constructors
 		ClassCastException();
 		ClassCastException(jstring arg0);

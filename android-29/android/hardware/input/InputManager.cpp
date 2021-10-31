@@ -22,13 +22,15 @@ namespace android::hardware::input
 		).object<jstring>();
 	}
 	
-	InputManager::InputManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	InputManager::InputManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject InputManager::getInputDevice(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getInputDevice",
 			"(I)Landroid/view/InputDevice;",
 			arg0
@@ -36,26 +38,26 @@ namespace android::hardware::input
 	}
 	jintArray InputManager::getInputDeviceIds()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getInputDeviceIds",
 			"()[I"
 		).object<jintArray>();
 	}
 	void InputManager::registerInputDeviceListener(__JniBaseClass arg0, android::os::Handler arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"registerInputDeviceListener",
 			"(Landroid/hardware/input/InputManager$InputDeviceListener;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void InputManager::unregisterInputDeviceListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"unregisterInputDeviceListener",
 			"(Landroid/hardware/input/InputManager$InputDeviceListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::hardware::input

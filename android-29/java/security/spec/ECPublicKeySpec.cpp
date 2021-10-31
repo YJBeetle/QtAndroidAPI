@@ -6,29 +6,29 @@ namespace java::security::spec
 {
 	// Fields
 	
-	ECPublicKeySpec::ECPublicKeySpec(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ECPublicKeySpec::ECPublicKeySpec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ECPublicKeySpec::ECPublicKeySpec(java::security::spec::ECPoint arg0, java::security::spec::ECParameterSpec arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.security.spec.ECPublicKeySpec",
 			"(Ljava/security/spec/ECPoint;Ljava/security/spec/ECParameterSpec;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject ECPublicKeySpec::getParams()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getParams",
 			"()Ljava/security/spec/ECParameterSpec;"
 		);
 	}
 	QAndroidJniObject ECPublicKeySpec::getW()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getW",
 			"()Ljava/security/spec/ECPoint;"
 		);

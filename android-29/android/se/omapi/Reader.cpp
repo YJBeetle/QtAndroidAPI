@@ -6,41 +6,43 @@ namespace android::se::omapi
 {
 	// Fields
 	
-	Reader::Reader(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Reader::Reader(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void Reader::closeSessions()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"closeSessions",
 			"()V"
 		);
 	}
 	jstring Reader::getName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject Reader::getSEService()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSEService",
 			"()Landroid/se/omapi/SEService;"
 		);
 	}
 	jboolean Reader::isSecureElementPresent()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isSecureElementPresent",
 			"()Z"
 		);
 	}
 	QAndroidJniObject Reader::openSession()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"openSession",
 			"()Landroid/se/omapi/Session;"
 		);

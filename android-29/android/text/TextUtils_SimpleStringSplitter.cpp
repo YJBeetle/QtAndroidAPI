@@ -4,49 +4,49 @@ namespace android::text
 {
 	// Fields
 	
-	TextUtils_SimpleStringSplitter::TextUtils_SimpleStringSplitter(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TextUtils_SimpleStringSplitter::TextUtils_SimpleStringSplitter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	TextUtils_SimpleStringSplitter::TextUtils_SimpleStringSplitter(jchar arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.text.TextUtils$SimpleStringSplitter",
 			"(C)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean TextUtils_SimpleStringSplitter::hasNext()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasNext",
 			"()Z"
 		);
 	}
 	QAndroidJniObject TextUtils_SimpleStringSplitter::iterator()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
 	jstring TextUtils_SimpleStringSplitter::next()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"next",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void TextUtils_SimpleStringSplitter::remove()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"remove",
 			"()V"
 		);
 	}
 	void TextUtils_SimpleStringSplitter::setString(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setString",
 			"(Ljava/lang/String;)V",
 			arg0

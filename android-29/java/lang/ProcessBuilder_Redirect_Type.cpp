@@ -44,7 +44,9 @@ namespace java::lang
 		);
 	}
 	
-	ProcessBuilder_Redirect_Type::ProcessBuilder_Redirect_Type(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ProcessBuilder_Redirect_Type::ProcessBuilder_Redirect_Type(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

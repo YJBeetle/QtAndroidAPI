@@ -10,43 +10,41 @@ namespace android::service::autofill
 {
 	// Fields
 	
-	Dataset_Builder::Dataset_Builder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Dataset_Builder::Dataset_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Dataset_Builder::Dataset_Builder()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.service.autofill.Dataset$Builder",
 			"()V"
-		);
-	}
+		) {}
 	Dataset_Builder::Dataset_Builder(android::widget::RemoteViews arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.service.autofill.Dataset$Builder",
 			"(Landroid/widget/RemoteViews;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject Dataset_Builder::build()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"build",
 			"()Landroid/service/autofill/Dataset;"
 		);
 	}
 	QAndroidJniObject Dataset_Builder::setAuthentication(android::content::IntentSender arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setAuthentication",
 			"(Landroid/content/IntentSender;)Landroid/service/autofill/Dataset$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Dataset_Builder::setId(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setId",
 			"(Ljava/lang/String;)Landroid/service/autofill/Dataset$Builder;",
 			arg0
@@ -54,42 +52,42 @@ namespace android::service::autofill
 	}
 	QAndroidJniObject Dataset_Builder::setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setValue",
 			"(Landroid/view/autofill/AutofillId;Landroid/view/autofill/AutofillValue;)Landroid/service/autofill/Dataset$Builder;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject Dataset_Builder::setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1, android::widget::RemoteViews arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setValue",
 			"(Landroid/view/autofill/AutofillId;Landroid/view/autofill/AutofillValue;Landroid/widget/RemoteViews;)Landroid/service/autofill/Dataset$Builder;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject Dataset_Builder::setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1, java::util::regex::Pattern arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setValue",
 			"(Landroid/view/autofill/AutofillId;Landroid/view/autofill/AutofillValue;Ljava/util/regex/Pattern;)Landroid/service/autofill/Dataset$Builder;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject Dataset_Builder::setValue(android::view::autofill::AutofillId arg0, android::view::autofill::AutofillValue arg1, java::util::regex::Pattern arg2, android::widget::RemoteViews arg3)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setValue",
 			"(Landroid/view/autofill/AutofillId;Landroid/view/autofill/AutofillValue;Ljava/util/regex/Pattern;Landroid/widget/RemoteViews;)Landroid/service/autofill/Dataset$Builder;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
 		);
 	}
 } // namespace android::service::autofill

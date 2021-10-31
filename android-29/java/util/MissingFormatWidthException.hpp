@@ -14,10 +14,12 @@ namespace java::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MissingFormatWidthException(const char *className, const char *sig, Ts...agv) : java::util::IllegalFormatException(className, sig, std::forward<Ts>(agv)...) {}
 		MissingFormatWidthException(QAndroidJniObject obj);
+		
 		// Constructors
 		MissingFormatWidthException(jstring arg0);
-		MissingFormatWidthException() = default;
 		
 		// Methods
 		jstring getFormatSpecifier();

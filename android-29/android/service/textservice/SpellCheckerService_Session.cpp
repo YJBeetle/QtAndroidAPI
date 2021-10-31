@@ -7,55 +7,55 @@ namespace android::service::textservice
 {
 	// Fields
 	
-	SpellCheckerService_Session::SpellCheckerService_Session(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SpellCheckerService_Session::SpellCheckerService_Session(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	SpellCheckerService_Session::SpellCheckerService_Session()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.service.textservice.SpellCheckerService$Session",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject SpellCheckerService_Session::getBundle()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBundle",
 			"()Landroid/os/Bundle;"
 		);
 	}
 	jstring SpellCheckerService_Session::getLocale()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLocale",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void SpellCheckerService_Session::onCancel()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onCancel",
 			"()V"
 		);
 	}
 	void SpellCheckerService_Session::onClose()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onClose",
 			"()V"
 		);
 	}
 	void SpellCheckerService_Session::onCreate()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onCreate",
 			"()V"
 		);
 	}
 	jarray SpellCheckerService_Session::onGetSentenceSuggestionsMultiple(jarray arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onGetSentenceSuggestionsMultiple",
 			"([Landroid/view/textservice/TextInfo;I)[Landroid/view/textservice/SentenceSuggestionsInfo;",
 			arg0,
@@ -64,16 +64,16 @@ namespace android::service::textservice
 	}
 	QAndroidJniObject SpellCheckerService_Session::onGetSuggestions(android::view::textservice::TextInfo arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onGetSuggestions",
 			"(Landroid/view/textservice/TextInfo;I)Landroid/view/textservice/SuggestionsInfo;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	jarray SpellCheckerService_Session::onGetSuggestionsMultiple(jarray arg0, jint arg1, jboolean arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onGetSuggestionsMultiple",
 			"([Landroid/view/textservice/TextInfo;IZ)[Landroid/view/textservice/SuggestionsInfo;",
 			arg0,

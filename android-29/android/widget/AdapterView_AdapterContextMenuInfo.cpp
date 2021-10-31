@@ -6,36 +6,36 @@ namespace android::widget
 	// Fields
 	jlong AdapterView_AdapterContextMenuInfo::id()
 	{
-		return __thiz.getField<jlong>(
+		return getField<jlong>(
 			"id"
 		);
 	}
 	jint AdapterView_AdapterContextMenuInfo::position()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"position"
 		);
 	}
 	QAndroidJniObject AdapterView_AdapterContextMenuInfo::targetView()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"targetView",
 			"Landroid/view/View;"
 		);
 	}
 	
-	AdapterView_AdapterContextMenuInfo::AdapterView_AdapterContextMenuInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AdapterView_AdapterContextMenuInfo::AdapterView_AdapterContextMenuInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	AdapterView_AdapterContextMenuInfo::AdapterView_AdapterContextMenuInfo(android::view::View arg0, jint arg1, jlong arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.widget.AdapterView$AdapterContextMenuInfo",
 			"(Landroid/view/View;IJ)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::widget

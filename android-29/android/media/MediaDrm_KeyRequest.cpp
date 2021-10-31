@@ -39,27 +39,29 @@ namespace android::media
 		);
 	}
 	
-	MediaDrm_KeyRequest::MediaDrm_KeyRequest(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaDrm_KeyRequest::MediaDrm_KeyRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jbyteArray MediaDrm_KeyRequest::getData()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getData",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jstring MediaDrm_KeyRequest::getDefaultUrl()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDefaultUrl",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint MediaDrm_KeyRequest::getRequestType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRequestType",
 			"()I"
 		);

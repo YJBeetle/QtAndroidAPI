@@ -236,7 +236,9 @@ namespace android::graphics
 		);
 	}
 	
-	BlendMode::BlendMode(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BlendMode::BlendMode(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

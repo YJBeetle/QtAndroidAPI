@@ -14,7 +14,10 @@ namespace android::hardware
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TriggerEventListener(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		TriggerEventListener(QAndroidJniObject obj);
+		
 		// Constructors
 		TriggerEventListener();
 		

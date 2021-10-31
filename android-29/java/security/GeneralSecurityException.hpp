@@ -11,7 +11,10 @@ namespace java::security
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit GeneralSecurityException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
 		GeneralSecurityException(QAndroidJniObject obj);
+		
 		// Constructors
 		GeneralSecurityException();
 		GeneralSecurityException(jstring arg0);

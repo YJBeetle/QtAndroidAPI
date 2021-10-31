@@ -19,10 +19,12 @@ namespace android::os
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ParcelUuid(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ParcelUuid(QAndroidJniObject obj);
+		
 		// Constructors
 		ParcelUuid(java::util::UUID arg0);
-		ParcelUuid() = default;
 		
 		// Methods
 		static QAndroidJniObject fromString(jstring arg0);

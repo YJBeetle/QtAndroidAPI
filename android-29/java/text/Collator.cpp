@@ -55,7 +55,9 @@ namespace java::text
 		);
 	}
 	
-	Collator::Collator(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Collator::Collator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -81,19 +83,19 @@ namespace java::text
 			"java.text.Collator",
 			"getInstance",
 			"(Ljava/util/Locale;)Ljava/text/Collator;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jobject Collator::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jint Collator::compare(jobject arg0, jobject arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compare",
 			"(Ljava/lang/Object;Ljava/lang/Object;)I",
 			arg0,
@@ -102,7 +104,7 @@ namespace java::text
 	}
 	jint Collator::compare(jstring arg0, jstring arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compare",
 			"(Ljava/lang/String;Ljava/lang/String;)I",
 			arg0,
@@ -111,7 +113,7 @@ namespace java::text
 	}
 	jboolean Collator::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -119,7 +121,7 @@ namespace java::text
 	}
 	jboolean Collator::equals(jstring arg0, jstring arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/String;Ljava/lang/String;)Z",
 			arg0,
@@ -128,7 +130,7 @@ namespace java::text
 	}
 	QAndroidJniObject Collator::getCollationKey(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCollationKey",
 			"(Ljava/lang/String;)Ljava/text/CollationKey;",
 			arg0
@@ -136,28 +138,28 @@ namespace java::text
 	}
 	jint Collator::getDecomposition()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDecomposition",
 			"()I"
 		);
 	}
 	jint Collator::getStrength()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getStrength",
 			"()I"
 		);
 	}
 	jint Collator::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	void Collator::setDecomposition(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDecomposition",
 			"(I)V",
 			arg0
@@ -165,7 +167,7 @@ namespace java::text
 	}
 	void Collator::setStrength(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setStrength",
 			"(I)V",
 			arg0

@@ -14,7 +14,10 @@ namespace android::webkit
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit WebBackForwardList(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		WebBackForwardList(QAndroidJniObject obj);
+		
 		// Constructors
 		WebBackForwardList();
 		

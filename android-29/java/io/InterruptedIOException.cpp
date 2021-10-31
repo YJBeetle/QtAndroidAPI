@@ -5,28 +5,26 @@ namespace java::io
 	// Fields
 	jint InterruptedIOException::bytesTransferred()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"bytesTransferred"
 		);
 	}
 	
-	InterruptedIOException::InterruptedIOException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	InterruptedIOException::InterruptedIOException(QAndroidJniObject obj) : java::io::IOException(obj) {}
+	
 	// Constructors
 	InterruptedIOException::InterruptedIOException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::IOException(
 			"java.io.InterruptedIOException",
 			"()V"
-		);
-	}
+		) {}
 	InterruptedIOException::InterruptedIOException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::IOException(
 			"java.io.InterruptedIOException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::io

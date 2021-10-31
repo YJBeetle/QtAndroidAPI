@@ -5,7 +5,9 @@ namespace android::view
 {
 	// Fields
 	
-	VelocityTracker::VelocityTracker(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	VelocityTracker::VelocityTracker(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -19,22 +21,22 @@ namespace android::view
 	}
 	void VelocityTracker::addMovement(android::view::MotionEvent arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addMovement",
 			"(Landroid/view/MotionEvent;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void VelocityTracker::clear()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
 	void VelocityTracker::computeCurrentVelocity(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"computeCurrentVelocity",
 			"(I)V",
 			arg0
@@ -42,7 +44,7 @@ namespace android::view
 	}
 	void VelocityTracker::computeCurrentVelocity(jint arg0, jfloat arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"computeCurrentVelocity",
 			"(IF)V",
 			arg0,
@@ -51,14 +53,14 @@ namespace android::view
 	}
 	jfloat VelocityTracker::getXVelocity()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getXVelocity",
 			"()F"
 		);
 	}
 	jfloat VelocityTracker::getXVelocity(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getXVelocity",
 			"(I)F",
 			arg0
@@ -66,14 +68,14 @@ namespace android::view
 	}
 	jfloat VelocityTracker::getYVelocity()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getYVelocity",
 			"()F"
 		);
 	}
 	jfloat VelocityTracker::getYVelocity(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getYVelocity",
 			"(I)F",
 			arg0
@@ -81,7 +83,7 @@ namespace android::view
 	}
 	void VelocityTracker::recycle()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"recycle",
 			"()V"
 		);

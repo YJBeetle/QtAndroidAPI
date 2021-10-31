@@ -4,7 +4,9 @@ namespace android::util
 {
 	// Fields
 	
-	FloatMath::FloatMath(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FloatMath::FloatMath(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

@@ -11,11 +11,13 @@ namespace java::util::concurrent
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ExecutionException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
 		ExecutionException(QAndroidJniObject obj);
+		
 		// Constructors
 		ExecutionException(jthrowable arg0);
 		ExecutionException(jstring arg0, jthrowable arg1);
-		ExecutionException() = default;
 		
 		// Methods
 	};

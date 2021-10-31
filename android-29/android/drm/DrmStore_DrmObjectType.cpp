@@ -32,15 +32,15 @@ namespace android::drm
 		);
 	}
 	
-	DrmStore_DrmObjectType::DrmStore_DrmObjectType(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DrmStore_DrmObjectType::DrmStore_DrmObjectType(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	DrmStore_DrmObjectType::DrmStore_DrmObjectType()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.drm.DrmStore$DrmObjectType",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::drm

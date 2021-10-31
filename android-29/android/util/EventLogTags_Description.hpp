@@ -12,9 +12,11 @@ namespace android::util
 		jstring mName();
 		jint mTag();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit EventLogTags_Description(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		EventLogTags_Description(QAndroidJniObject obj);
+		
 		// Constructors
-		EventLogTags_Description() = default;
 		
 		// Methods
 	};

@@ -36,7 +36,9 @@ namespace android::icu::text
 		);
 	}
 	
-	DisplayContext_Type::DisplayContext_Type(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DisplayContext_Type::DisplayContext_Type(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

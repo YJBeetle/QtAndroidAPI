@@ -10,7 +10,10 @@ namespace android::hardware::display
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit VirtualDisplay_Callback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		VirtualDisplay_Callback(QAndroidJniObject obj);
+		
 		// Constructors
 		VirtualDisplay_Callback();
 		

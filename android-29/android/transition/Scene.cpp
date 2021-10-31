@@ -7,34 +7,30 @@ namespace android::transition
 {
 	// Fields
 	
-	Scene::Scene(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Scene::Scene(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Scene::Scene(android::view::ViewGroup arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.transition.Scene",
 			"(Landroid/view/ViewGroup;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	Scene::Scene(android::view::ViewGroup arg0, android::view::View arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.transition.Scene",
 			"(Landroid/view/ViewGroup;Landroid/view/View;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	Scene::Scene(android::view::ViewGroup arg0, android::view::ViewGroup arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.transition.Scene",
 			"(Landroid/view/ViewGroup;Landroid/view/ViewGroup;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject Scene::getCurrentScene(android::view::ViewGroup arg0)
@@ -43,7 +39,7 @@ namespace android::transition
 			"android.transition.Scene",
 			"getCurrentScene",
 			"(Landroid/view/ViewGroup;)Landroid/transition/Scene;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Scene::getSceneForLayout(android::view::ViewGroup arg0, jint arg1, android::content::Context arg2)
@@ -52,46 +48,46 @@ namespace android::transition
 			"android.transition.Scene",
 			"getSceneForLayout",
 			"(Landroid/view/ViewGroup;ILandroid/content/Context;)Landroid/transition/Scene;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void Scene::enter()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"enter",
 			"()V"
 		);
 	}
 	void Scene::exit()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"exit",
 			"()V"
 		);
 	}
 	QAndroidJniObject Scene::getSceneRoot()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSceneRoot",
 			"()Landroid/view/ViewGroup;"
 		);
 	}
 	void Scene::setEnterAction(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setEnterAction",
 			"(Ljava/lang/Runnable;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Scene::setExitAction(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setExitAction",
 			"(Ljava/lang/Runnable;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::transition

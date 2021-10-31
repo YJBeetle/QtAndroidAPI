@@ -53,7 +53,10 @@ namespace android::content::pm
 		QAndroidJniObject serviceInfo();
 		jint specificIndex();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ResolveInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ResolveInfo(QAndroidJniObject obj);
+		
 		// Constructors
 		ResolveInfo();
 		ResolveInfo(android::content::pm::ResolveInfo &arg0);

@@ -32,7 +32,10 @@ namespace android::transition
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Slide(const char *className, const char *sig, Ts...agv) : android::transition::Visibility(className, sig, std::forward<Ts>(agv)...) {}
 		Slide(QAndroidJniObject obj);
+		
 		// Constructors
 		Slide();
 		Slide(jint arg0);

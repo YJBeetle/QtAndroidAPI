@@ -7,13 +7,15 @@ namespace android::telephony::mbms
 {
 	// Fields
 	
-	ServiceInfo::ServiceInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ServiceInfo::ServiceInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jboolean ServiceInfo::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -21,57 +23,57 @@ namespace android::telephony::mbms
 	}
 	QAndroidJniObject ServiceInfo::getLocales()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLocales",
 			"()Ljava/util/List;"
 		);
 	}
 	jstring ServiceInfo::getNameForLocale(java::util::Locale arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getNameForLocale",
 			"(Ljava/util/Locale;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	QAndroidJniObject ServiceInfo::getNamedContentLocales()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getNamedContentLocales",
 			"()Ljava/util/Set;"
 		);
 	}
 	jstring ServiceInfo::getServiceClassName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getServiceClassName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring ServiceInfo::getServiceId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getServiceId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject ServiceInfo::getSessionEndTime()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSessionEndTime",
 			"()Ljava/util/Date;"
 		);
 	}
 	QAndroidJniObject ServiceInfo::getSessionStartTime()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSessionStartTime",
 			"()Ljava/util/Date;"
 		);
 	}
 	jint ServiceInfo::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);

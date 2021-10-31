@@ -6,37 +6,33 @@ namespace java::lang
 {
 	// Fields
 	
-	ClassNotFoundException::ClassNotFoundException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ClassNotFoundException::ClassNotFoundException(QAndroidJniObject obj) : java::lang::ReflectiveOperationException(obj) {}
+	
 	// Constructors
 	ClassNotFoundException::ClassNotFoundException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::ReflectiveOperationException(
 			"java.lang.ClassNotFoundException",
 			"()V"
-		);
-	}
+		) {}
 	ClassNotFoundException::ClassNotFoundException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::ReflectiveOperationException(
 			"java.lang.ClassNotFoundException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	ClassNotFoundException::ClassNotFoundException(jstring arg0, jthrowable arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::ReflectiveOperationException(
 			"java.lang.ClassNotFoundException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jthrowable ClassNotFoundException::getException()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getException",
 			"()Ljava/lang/Throwable;"
 		).object<jthrowable>();

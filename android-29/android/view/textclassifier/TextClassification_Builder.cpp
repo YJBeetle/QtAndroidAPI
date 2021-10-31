@@ -9,35 +9,35 @@ namespace android::view::textclassifier
 {
 	// Fields
 	
-	TextClassification_Builder::TextClassification_Builder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TextClassification_Builder::TextClassification_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	TextClassification_Builder::TextClassification_Builder()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.textclassifier.TextClassification$Builder",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject TextClassification_Builder::addAction(android::app::RemoteAction arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"addAction",
 			"(Landroid/app/RemoteAction;)Landroid/view/textclassifier/TextClassification$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject TextClassification_Builder::build()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"build",
 			"()Landroid/view/textclassifier/TextClassification;"
 		);
 	}
 	QAndroidJniObject TextClassification_Builder::setEntityType(jstring arg0, jfloat arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setEntityType",
 			"(Ljava/lang/String;F)Landroid/view/textclassifier/TextClassification$Builder;",
 			arg0,
@@ -46,23 +46,23 @@ namespace android::view::textclassifier
 	}
 	QAndroidJniObject TextClassification_Builder::setExtras(android::os::Bundle arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setExtras",
 			"(Landroid/os/Bundle;)Landroid/view/textclassifier/TextClassification$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject TextClassification_Builder::setIcon(android::graphics::drawable::Drawable arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setIcon",
 			"(Landroid/graphics/drawable/Drawable;)Landroid/view/textclassifier/TextClassification$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject TextClassification_Builder::setId(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setId",
 			"(Ljava/lang/String;)Landroid/view/textclassifier/TextClassification$Builder;",
 			arg0
@@ -70,15 +70,15 @@ namespace android::view::textclassifier
 	}
 	QAndroidJniObject TextClassification_Builder::setIntent(android::content::Intent arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setIntent",
 			"(Landroid/content/Intent;)Landroid/view/textclassifier/TextClassification$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject TextClassification_Builder::setLabel(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setLabel",
 			"(Ljava/lang/String;)Landroid/view/textclassifier/TextClassification$Builder;",
 			arg0
@@ -86,15 +86,15 @@ namespace android::view::textclassifier
 	}
 	QAndroidJniObject TextClassification_Builder::setOnClickListener(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setOnClickListener",
 			"(Landroid/view/View$OnClickListener;)Landroid/view/textclassifier/TextClassification$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject TextClassification_Builder::setText(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setText",
 			"(Ljava/lang/String;)Landroid/view/textclassifier/TextClassification$Builder;",
 			arg0

@@ -4,7 +4,9 @@ namespace android::os::strictmode
 {
 	// Fields
 	
-	CustomViolation::CustomViolation(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CustomViolation::CustomViolation(QAndroidJniObject obj) : android::os::strictmode::Violation(obj) {}
+	
 	// Constructors
 	
 	// Methods

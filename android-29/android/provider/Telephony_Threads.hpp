@@ -22,9 +22,11 @@ namespace android::provider
 		static QAndroidJniObject CONTENT_URI();
 		static QAndroidJniObject OBSOLETE_THREADS_URI();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Telephony_Threads(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Telephony_Threads(QAndroidJniObject obj);
+		
 		// Constructors
-		Telephony_Threads() = default;
 		
 		// Methods
 		static jlong getOrCreateThreadId(android::content::Context arg0, jstring arg1);

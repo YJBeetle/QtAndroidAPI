@@ -10,9 +10,11 @@ namespace android::view
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit InputDevice_MotionRange(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		InputDevice_MotionRange(QAndroidJniObject obj);
+		
 		// Constructors
-		InputDevice_MotionRange() = default;
 		
 		// Methods
 		jint getAxis();

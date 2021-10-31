@@ -15,7 +15,10 @@ namespace java::io
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CharArrayWriter(const char *className, const char *sig, Ts...agv) : java::io::Writer(className, sig, std::forward<Ts>(agv)...) {}
 		CharArrayWriter(QAndroidJniObject obj);
+		
 		// Constructors
 		CharArrayWriter();
 		CharArrayWriter(jint arg0);

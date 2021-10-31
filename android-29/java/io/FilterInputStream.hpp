@@ -15,9 +15,11 @@ namespace java::io
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit FilterInputStream(const char *className, const char *sig, Ts...agv) : java::io::InputStream(className, sig, std::forward<Ts>(agv)...) {}
 		FilterInputStream(QAndroidJniObject obj);
+		
 		// Constructors
-		FilterInputStream() = default;
 		
 		// Methods
 		jint available();

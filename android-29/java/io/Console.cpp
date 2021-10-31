@@ -9,20 +9,22 @@ namespace java::io
 {
 	// Fields
 	
-	Console::Console(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Console::Console(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void Console::flush()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"flush",
 			"()V"
 		);
 	}
 	QAndroidJniObject Console::format(jstring arg0, jobjectArray arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"format",
 			"(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/Console;",
 			arg0,
@@ -31,7 +33,7 @@ namespace java::io
 	}
 	QAndroidJniObject Console::printf(jstring arg0, jobjectArray arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"printf",
 			"(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/Console;",
 			arg0,
@@ -40,14 +42,14 @@ namespace java::io
 	}
 	jstring Console::readLine()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"readLine",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Console::readLine(jstring arg0, jobjectArray arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"readLine",
 			"(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;",
 			arg0,
@@ -56,14 +58,14 @@ namespace java::io
 	}
 	jcharArray Console::readPassword()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"readPassword",
 			"()[C"
 		).object<jcharArray>();
 	}
 	jcharArray Console::readPassword(jstring arg0, jobjectArray arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"readPassword",
 			"(Ljava/lang/String;[Ljava/lang/Object;)[C",
 			arg0,
@@ -72,14 +74,14 @@ namespace java::io
 	}
 	QAndroidJniObject Console::reader()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"reader",
 			"()Ljava/io/Reader;"
 		);
 	}
 	QAndroidJniObject Console::writer()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"writer",
 			"()Ljava/io/PrintWriter;"
 		);

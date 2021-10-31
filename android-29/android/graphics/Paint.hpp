@@ -105,7 +105,10 @@ namespace android::graphics
 		static jint SUBPIXEL_TEXT_FLAG();
 		static jint UNDERLINE_TEXT_FLAG();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Paint(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Paint(QAndroidJniObject obj);
+		
 		// Constructors
 		Paint();
 		Paint(android::graphics::Paint &arg0);

@@ -26,9 +26,11 @@ namespace android::text
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DynamicLayout_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DynamicLayout_Builder(QAndroidJniObject obj);
+		
 		// Constructors
-		DynamicLayout_Builder() = default;
 		
 		// Methods
 		static QAndroidJniObject obtain(jstring arg0, android::text::TextPaint arg1, jint arg2);

@@ -40,20 +40,20 @@ namespace android::bluetooth::le
 		);
 	}
 	
-	AdvertiseCallback::AdvertiseCallback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AdvertiseCallback::AdvertiseCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	AdvertiseCallback::AdvertiseCallback()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.bluetooth.le.AdvertiseCallback",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void AdvertiseCallback::onStartFailure(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onStartFailure",
 			"(I)V",
 			arg0
@@ -61,10 +61,10 @@ namespace android::bluetooth::le
 	}
 	void AdvertiseCallback::onStartSuccess(android::bluetooth::le::AdvertiseSettings arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onStartSuccess",
 			"(Landroid/bluetooth/le/AdvertiseSettings;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::bluetooth::le

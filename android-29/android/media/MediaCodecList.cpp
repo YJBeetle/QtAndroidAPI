@@ -20,16 +20,16 @@ namespace android::media
 		);
 	}
 	
-	MediaCodecList::MediaCodecList(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaCodecList::MediaCodecList(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MediaCodecList::MediaCodecList(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.MediaCodecList",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jint MediaCodecList::getCodecCount()
@@ -51,23 +51,23 @@ namespace android::media
 	}
 	jstring MediaCodecList::findDecoderForFormat(android::media::MediaFormat arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"findDecoderForFormat",
 			"(Landroid/media/MediaFormat;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jstring MediaCodecList::findEncoderForFormat(android::media::MediaFormat arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"findEncoderForFormat",
 			"(Landroid/media/MediaFormat;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jarray MediaCodecList::getCodecInfos()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCodecInfos",
 			"()[Landroid/media/MediaCodecInfo;"
 		).object<jarray>();

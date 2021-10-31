@@ -7,51 +7,45 @@ namespace android::widget
 {
 	// Fields
 	
-	EditText::EditText(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	EditText::EditText(QAndroidJniObject obj) : android::widget::TextView(obj) {}
+	
 	// Constructors
 	EditText::EditText(android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::TextView(
 			"android.widget.EditText",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	EditText::EditText(android::content::Context arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::TextView(
 			"android.widget.EditText",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	EditText::EditText(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::TextView(
 			"android.widget.EditText",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
-		);
-	}
+		) {}
 	EditText::EditText(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::TextView(
 			"android.widget.EditText",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	
 	// Methods
 	void EditText::extendSelection(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"extendSelection",
 			"(I)V",
 			arg0
@@ -59,43 +53,43 @@ namespace android::widget
 	}
 	jstring EditText::getAccessibilityClassName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jboolean EditText::getFreezesText()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getFreezesText",
 			"()Z"
 		);
 	}
 	QAndroidJniObject EditText::getText()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getText",
 			"()Landroid/text/Editable;"
 		);
 	}
 	void EditText::selectAll()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"selectAll",
 			"()V"
 		);
 	}
 	void EditText::setEllipsize(android::text::TextUtils_TruncateAt arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setEllipsize",
 			"(Landroid/text/TextUtils$TruncateAt;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void EditText::setSelection(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSelection",
 			"(I)V",
 			arg0
@@ -103,7 +97,7 @@ namespace android::widget
 	}
 	void EditText::setSelection(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSelection",
 			"(II)V",
 			arg0,
@@ -112,11 +106,11 @@ namespace android::widget
 	}
 	void EditText::setText(jstring arg0, android::widget::TextView_BufferType arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setText",
 			"(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 } // namespace android::widget

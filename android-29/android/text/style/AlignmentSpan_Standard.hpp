@@ -18,11 +18,13 @@ namespace android::text::style
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AlignmentSpan_Standard(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AlignmentSpan_Standard(QAndroidJniObject obj);
+		
 		// Constructors
 		AlignmentSpan_Standard(android::os::Parcel arg0);
 		AlignmentSpan_Standard(android::text::Layout_Alignment arg0);
-		AlignmentSpan_Standard() = default;
 		
 		// Methods
 		jint describeContents();

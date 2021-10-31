@@ -5,34 +5,36 @@ namespace android::net::wifi
 {
 	// Fields
 	
-	WifiManager_MulticastLock::WifiManager_MulticastLock(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WifiManager_MulticastLock::WifiManager_MulticastLock(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void WifiManager_MulticastLock::acquire()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"acquire",
 			"()V"
 		);
 	}
 	jboolean WifiManager_MulticastLock::isHeld()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isHeld",
 			"()Z"
 		);
 	}
 	void WifiManager_MulticastLock::release()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
 	void WifiManager_MulticastLock::setReferenceCounted(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setReferenceCounted",
 			"(Z)V",
 			arg0
@@ -40,7 +42,7 @@ namespace android::net::wifi
 	}
 	jstring WifiManager_MulticastLock::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

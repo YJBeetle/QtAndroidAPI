@@ -28,7 +28,9 @@ namespace android::os
 		);
 	}
 	
-	AsyncTask_Status::AsyncTask_Status(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AsyncTask_Status::AsyncTask_Status(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

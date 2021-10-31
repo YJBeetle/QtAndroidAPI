@@ -4,23 +4,21 @@ namespace android::security
 {
 	// Fields
 	
-	ConfirmationNotAvailableException::ConfirmationNotAvailableException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ConfirmationNotAvailableException::ConfirmationNotAvailableException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
+	
 	// Constructors
 	ConfirmationNotAvailableException::ConfirmationNotAvailableException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Exception(
 			"android.security.ConfirmationNotAvailableException",
 			"()V"
-		);
-	}
+		) {}
 	ConfirmationNotAvailableException::ConfirmationNotAvailableException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Exception(
 			"android.security.ConfirmationNotAvailableException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::security

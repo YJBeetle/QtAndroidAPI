@@ -4,23 +4,21 @@ namespace java::lang
 {
 	// Fields
 	
-	ArithmeticException::ArithmeticException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ArithmeticException::ArithmeticException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	
 	// Constructors
 	ArithmeticException::ArithmeticException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::RuntimeException(
 			"java.lang.ArithmeticException",
 			"()V"
-		);
-	}
+		) {}
 	ArithmeticException::ArithmeticException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::RuntimeException(
 			"java.lang.ArithmeticException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::lang

@@ -47,13 +47,15 @@ namespace android::preference
 		// Fields
 		static jint DEFAULT_ORDER();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Preference(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Preference(QAndroidJniObject obj);
+		
 		// Constructors
 		Preference(android::content::Context arg0);
 		Preference(android::content::Context arg0, __JniBaseClass arg1);
 		Preference(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		Preference(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
-		Preference() = default;
 		
 		// Methods
 		jint compareTo(android::preference::Preference arg0);

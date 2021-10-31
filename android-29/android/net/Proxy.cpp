@@ -21,15 +21,15 @@ namespace android::net
 		).object<jstring>();
 	}
 	
-	Proxy::Proxy(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Proxy::Proxy(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Proxy::Proxy()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.net.Proxy",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring Proxy::getDefaultHost()
@@ -54,7 +54,7 @@ namespace android::net
 			"android.net.Proxy",
 			"getHost",
 			"(Landroid/content/Context;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jint Proxy::getPort(android::content::Context arg0)
@@ -63,7 +63,7 @@ namespace android::net
 			"android.net.Proxy",
 			"getPort",
 			"(Landroid/content/Context;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::net

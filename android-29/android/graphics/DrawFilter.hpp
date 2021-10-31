@@ -10,7 +10,10 @@ namespace android::graphics
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DrawFilter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DrawFilter(QAndroidJniObject obj);
+		
 		// Constructors
 		DrawFilter();
 		

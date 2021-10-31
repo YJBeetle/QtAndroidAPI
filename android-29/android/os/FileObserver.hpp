@@ -27,7 +27,10 @@ namespace android::os
 		static jint MOVE_SELF();
 		static jint OPEN();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit FileObserver(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		FileObserver(QAndroidJniObject obj);
+		
 		// Constructors
 		FileObserver(java::io::File arg0);
 		FileObserver(jstring arg0);
@@ -35,7 +38,6 @@ namespace android::os
 		FileObserver(java::io::File arg0, jint arg1);
 		FileObserver(jstring arg0, jint arg1);
 		FileObserver(__JniBaseClass arg0, jint arg1);
-		FileObserver() = default;
 		
 		// Methods
 		void onEvent(jint arg0, jstring arg1);

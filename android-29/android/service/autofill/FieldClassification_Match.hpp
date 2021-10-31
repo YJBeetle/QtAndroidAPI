@@ -10,9 +10,11 @@ namespace android::service::autofill
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit FieldClassification_Match(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		FieldClassification_Match(QAndroidJniObject obj);
+		
 		// Constructors
-		FieldClassification_Match() = default;
 		
 		// Methods
 		jstring getCategoryId();

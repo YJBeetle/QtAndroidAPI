@@ -4,23 +4,23 @@ namespace android::icu::text
 {
 	// Fields
 	
-	DateIntervalInfo_PatternInfo::DateIntervalInfo_PatternInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DateIntervalInfo_PatternInfo::DateIntervalInfo_PatternInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	DateIntervalInfo_PatternInfo::DateIntervalInfo_PatternInfo(jstring arg0, jstring arg1, jboolean arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.icu.text.DateIntervalInfo$PatternInfo",
 			"(Ljava/lang/String;Ljava/lang/String;Z)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean DateIntervalInfo_PatternInfo::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -28,35 +28,35 @@ namespace android::icu::text
 	}
 	jboolean DateIntervalInfo_PatternInfo::firstDateInPtnIsLaterDate()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"firstDateInPtnIsLaterDate",
 			"()Z"
 		);
 	}
 	jstring DateIntervalInfo_PatternInfo::getFirstPart()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFirstPart",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring DateIntervalInfo_PatternInfo::getSecondPart()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSecondPart",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint DateIntervalInfo_PatternInfo::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring DateIntervalInfo_PatternInfo::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

@@ -21,15 +21,15 @@ namespace java::util
 		);
 	}
 	
-	TimeZone::TimeZone(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TimeZone::TimeZone(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	TimeZone::TimeZone()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.TimeZone",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jarray TimeZone::getAvailableIDs()
@@ -72,7 +72,7 @@ namespace java::util
 			"java.util.TimeZone",
 			"getTimeZone",
 			"(Ljava/time/ZoneId;)Ljava/util/TimeZone;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TimeZone::setDefault(java::util::TimeZone arg0)
@@ -81,41 +81,41 @@ namespace java::util
 			"java.util.TimeZone",
 			"setDefault",
 			"(Ljava/util/TimeZone;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jobject TimeZone::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jint TimeZone::getDSTSavings()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDSTSavings",
 			"()I"
 		);
 	}
 	jstring TimeZone::getDisplayName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDisplayName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring TimeZone::getDisplayName(java::util::Locale arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDisplayName",
 			"(Ljava/util/Locale;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jstring TimeZone::getDisplayName(jboolean arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDisplayName",
 			"(ZI)Ljava/lang/String;",
 			arg0,
@@ -124,24 +124,24 @@ namespace java::util
 	}
 	jstring TimeZone::getDisplayName(jboolean arg0, jint arg1, java::util::Locale arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDisplayName",
 			"(ZILjava/util/Locale;)Ljava/lang/String;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		).object<jstring>();
 	}
 	jstring TimeZone::getID()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getID",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint TimeZone::getOffset(jlong arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getOffset",
 			"(J)I",
 			arg0
@@ -149,7 +149,7 @@ namespace java::util
 	}
 	jint TimeZone::getOffset(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getOffset",
 			"(IIIIII)I",
 			arg0,
@@ -162,37 +162,37 @@ namespace java::util
 	}
 	jint TimeZone::getRawOffset()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRawOffset",
 			"()I"
 		);
 	}
 	jboolean TimeZone::hasSameRules(java::util::TimeZone arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasSameRules",
 			"(Ljava/util/TimeZone;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean TimeZone::inDaylightTime(java::util::Date arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"inDaylightTime",
 			"(Ljava/util/Date;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean TimeZone::observesDaylightTime()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"observesDaylightTime",
 			"()Z"
 		);
 	}
 	void TimeZone::setID(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setID",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -200,7 +200,7 @@ namespace java::util
 	}
 	void TimeZone::setRawOffset(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setRawOffset",
 			"(I)V",
 			arg0
@@ -208,14 +208,14 @@ namespace java::util
 	}
 	QAndroidJniObject TimeZone::toZoneId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toZoneId",
 			"()Ljava/time/ZoneId;"
 		);
 	}
 	jboolean TimeZone::useDaylightTime()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"useDaylightTime",
 			"()Z"
 		);

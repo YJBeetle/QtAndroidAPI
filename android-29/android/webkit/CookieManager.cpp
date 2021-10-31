@@ -5,15 +5,15 @@ namespace android::webkit
 {
 	// Fields
 	
-	CookieManager::CookieManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CookieManager::CookieManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	CookieManager::CookieManager()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.webkit.CookieManager",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean CookieManager::allowFileSchemeCookies()
@@ -43,29 +43,29 @@ namespace android::webkit
 	}
 	jboolean CookieManager::acceptCookie()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"acceptCookie",
 			"()Z"
 		);
 	}
 	jboolean CookieManager::acceptThirdPartyCookies(android::webkit::WebView arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"acceptThirdPartyCookies",
 			"(Landroid/webkit/WebView;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void CookieManager::flush()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"flush",
 			"()V"
 		);
 	}
 	jstring CookieManager::getCookie(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCookie",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
@@ -73,51 +73,51 @@ namespace android::webkit
 	}
 	jboolean CookieManager::hasCookies()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasCookies",
 			"()Z"
 		);
 	}
 	void CookieManager::removeAllCookie()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeAllCookie",
 			"()V"
 		);
 	}
 	void CookieManager::removeAllCookies(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeAllCookies",
 			"(Landroid/webkit/ValueCallback;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void CookieManager::removeExpiredCookie()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeExpiredCookie",
 			"()V"
 		);
 	}
 	void CookieManager::removeSessionCookie()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeSessionCookie",
 			"()V"
 		);
 	}
 	void CookieManager::removeSessionCookies(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeSessionCookies",
 			"(Landroid/webkit/ValueCallback;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void CookieManager::setAcceptCookie(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAcceptCookie",
 			"(Z)V",
 			arg0
@@ -125,16 +125,16 @@ namespace android::webkit
 	}
 	void CookieManager::setAcceptThirdPartyCookies(android::webkit::WebView arg0, jboolean arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAcceptThirdPartyCookies",
 			"(Landroid/webkit/WebView;Z)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void CookieManager::setCookie(jstring arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCookie",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
@@ -143,12 +143,12 @@ namespace android::webkit
 	}
 	void CookieManager::setCookie(jstring arg0, jstring arg1, __JniBaseClass arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCookie",
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/webkit/ValueCallback;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 } // namespace android::webkit

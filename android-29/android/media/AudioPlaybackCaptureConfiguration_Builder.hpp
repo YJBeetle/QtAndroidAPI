@@ -18,10 +18,12 @@ namespace android::media
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AudioPlaybackCaptureConfiguration_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AudioPlaybackCaptureConfiguration_Builder(QAndroidJniObject obj);
+		
 		// Constructors
 		AudioPlaybackCaptureConfiguration_Builder(android::media::projection::MediaProjection arg0);
-		AudioPlaybackCaptureConfiguration_Builder() = default;
 		
 		// Methods
 		QAndroidJniObject addMatchingUid(jint arg0);

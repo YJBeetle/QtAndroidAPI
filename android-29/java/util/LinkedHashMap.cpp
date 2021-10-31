@@ -5,62 +5,54 @@ namespace java::util
 {
 	// Fields
 	
-	LinkedHashMap::LinkedHashMap(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	LinkedHashMap::LinkedHashMap(QAndroidJniObject obj) : java::util::HashMap(obj) {}
+	
 	// Constructors
 	LinkedHashMap::LinkedHashMap()
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::HashMap(
 			"java.util.LinkedHashMap",
 			"()V"
-		);
-	}
+		) {}
 	LinkedHashMap::LinkedHashMap(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::HashMap(
 			"java.util.LinkedHashMap",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	LinkedHashMap::LinkedHashMap(__JniBaseClass arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::HashMap(
 			"java.util.LinkedHashMap",
 			"(Ljava/util/Map;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	LinkedHashMap::LinkedHashMap(jint arg0, jfloat arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::HashMap(
 			"java.util.LinkedHashMap",
 			"(IF)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	LinkedHashMap::LinkedHashMap(jint arg0, jfloat arg1, jboolean arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::HashMap(
 			"java.util.LinkedHashMap",
 			"(IFZ)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	void LinkedHashMap::clear()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
 	jboolean LinkedHashMap::containsValue(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"containsValue",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -68,22 +60,22 @@ namespace java::util
 	}
 	QAndroidJniObject LinkedHashMap::entrySet()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"entrySet",
 			"()Ljava/util/Set;"
 		);
 	}
 	void LinkedHashMap::forEach(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"forEach",
 			"(Ljava/util/function/BiConsumer;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jobject LinkedHashMap::get(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0
@@ -91,7 +83,7 @@ namespace java::util
 	}
 	jobject LinkedHashMap::getOrDefault(jobject arg0, jobject arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getOrDefault",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
@@ -100,22 +92,22 @@ namespace java::util
 	}
 	QAndroidJniObject LinkedHashMap::keySet()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"keySet",
 			"()Ljava/util/Set;"
 		);
 	}
 	void LinkedHashMap::replaceAll(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"replaceAll",
 			"(Ljava/util/function/BiFunction;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject LinkedHashMap::values()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"values",
 			"()Ljava/util/Collection;"
 		);

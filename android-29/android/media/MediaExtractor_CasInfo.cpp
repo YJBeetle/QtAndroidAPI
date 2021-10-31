@@ -5,27 +5,29 @@ namespace android::media
 {
 	// Fields
 	
-	MediaExtractor_CasInfo::MediaExtractor_CasInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaExtractor_CasInfo::MediaExtractor_CasInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jbyteArray MediaExtractor_CasInfo::getPrivateData()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPrivateData",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	QAndroidJniObject MediaExtractor_CasInfo::getSession()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSession",
 			"()Landroid/media/MediaCas$Session;"
 		);
 	}
 	jint MediaExtractor_CasInfo::getSystemId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSystemId",
 			"()I"
 		);

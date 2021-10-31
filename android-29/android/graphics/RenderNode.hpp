@@ -30,10 +30,12 @@ namespace android::graphics
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit RenderNode(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		RenderNode(QAndroidJniObject obj);
+		
 		// Constructors
 		RenderNode(jstring arg0);
-		RenderNode() = default;
 		
 		// Methods
 		QAndroidJniObject beginRecording();

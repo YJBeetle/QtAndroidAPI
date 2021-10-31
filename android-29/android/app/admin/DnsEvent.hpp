@@ -16,9 +16,11 @@ namespace android::app::admin
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DnsEvent(const char *className, const char *sig, Ts...agv) : android::app::admin::NetworkEvent(className, sig, std::forward<Ts>(agv)...) {}
 		DnsEvent(QAndroidJniObject obj);
+		
 		// Constructors
-		DnsEvent() = default;
 		
 		// Methods
 		jint describeContents();

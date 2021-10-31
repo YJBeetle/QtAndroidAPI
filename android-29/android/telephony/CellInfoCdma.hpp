@@ -24,9 +24,11 @@ namespace android::telephony
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CellInfoCdma(const char *className, const char *sig, Ts...agv) : android::telephony::CellInfo(className, sig, std::forward<Ts>(agv)...) {}
 		CellInfoCdma(QAndroidJniObject obj);
+		
 		// Constructors
-		CellInfoCdma() = default;
 		
 		// Methods
 		jint describeContents();

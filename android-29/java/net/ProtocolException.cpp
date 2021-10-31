@@ -4,23 +4,21 @@ namespace java::net
 {
 	// Fields
 	
-	ProtocolException::ProtocolException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ProtocolException::ProtocolException(QAndroidJniObject obj) : java::io::IOException(obj) {}
+	
 	// Constructors
 	ProtocolException::ProtocolException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::IOException(
 			"java.net.ProtocolException",
 			"()V"
-		);
-	}
+		) {}
 	ProtocolException::ProtocolException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::IOException(
 			"java.net.ProtocolException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::net

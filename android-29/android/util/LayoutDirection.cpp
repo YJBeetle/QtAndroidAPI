@@ -32,7 +32,9 @@ namespace android::util
 		);
 	}
 	
-	LayoutDirection::LayoutDirection(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	LayoutDirection::LayoutDirection(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

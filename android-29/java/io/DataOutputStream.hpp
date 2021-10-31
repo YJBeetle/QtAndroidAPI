@@ -16,10 +16,12 @@ namespace java::io
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DataOutputStream(const char *className, const char *sig, Ts...agv) : java::io::FilterOutputStream(className, sig, std::forward<Ts>(agv)...) {}
 		DataOutputStream(QAndroidJniObject obj);
+		
 		// Constructors
 		DataOutputStream(java::io::OutputStream arg0);
-		DataOutputStream() = default;
 		
 		// Methods
 		void flush();

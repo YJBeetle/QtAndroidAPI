@@ -21,9 +21,11 @@ namespace android::net::sip
 		static jint READY_TO_CALL();
 		static jint REGISTERING();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SipSession_State(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SipSession_State(QAndroidJniObject obj);
+		
 		// Constructors
-		SipSession_State() = default;
 		
 		// Methods
 		static jstring toString(jint arg0);

@@ -7,15 +7,15 @@ namespace android::animation
 {
 	// Fields
 	
-	AnimatorInflater::AnimatorInflater(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AnimatorInflater::AnimatorInflater(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	AnimatorInflater::AnimatorInflater()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.animation.AnimatorInflater",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject AnimatorInflater::loadAnimator(android::content::Context arg0, jint arg1)
@@ -24,7 +24,7 @@ namespace android::animation
 			"android.animation.AnimatorInflater",
 			"loadAnimator",
 			"(Landroid/content/Context;I)Landroid/animation/Animator;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -34,7 +34,7 @@ namespace android::animation
 			"android.animation.AnimatorInflater",
 			"loadStateListAnimator",
 			"(Landroid/content/Context;I)Landroid/animation/StateListAnimator;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

@@ -3434,7 +3434,9 @@ namespace android::system
 		);
 	}
 	
-	OsConstants::OsConstants(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	OsConstants::OsConstants(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

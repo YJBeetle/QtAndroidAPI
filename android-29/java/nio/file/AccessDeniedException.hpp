@@ -13,11 +13,13 @@ namespace java::nio::file
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AccessDeniedException(const char *className, const char *sig, Ts...agv) : java::nio::file::FileSystemException(className, sig, std::forward<Ts>(agv)...) {}
 		AccessDeniedException(QAndroidJniObject obj);
+		
 		// Constructors
 		AccessDeniedException(jstring arg0);
 		AccessDeniedException(jstring arg0, jstring arg1, jstring arg2);
-		AccessDeniedException() = default;
 		
 		// Methods
 	};

@@ -33,12 +33,14 @@ namespace android::view::animation
 		static jint ORDER_RANDOM();
 		static jint ORDER_REVERSE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit LayoutAnimationController(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		LayoutAnimationController(QAndroidJniObject obj);
+		
 		// Constructors
 		LayoutAnimationController(android::view::animation::Animation arg0);
 		LayoutAnimationController(android::content::Context arg0, __JniBaseClass arg1);
 		LayoutAnimationController(android::view::animation::Animation arg0, jfloat arg1);
-		LayoutAnimationController() = default;
 		
 		// Methods
 		QAndroidJniObject getAnimation();

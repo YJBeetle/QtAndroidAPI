@@ -14,9 +14,11 @@ namespace android::opengl
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit GLUtils(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		GLUtils(QAndroidJniObject obj);
+		
 		// Constructors
-		GLUtils() = default;
 		
 		// Methods
 		static jstring getEGLErrorString(jint arg0);

@@ -13,10 +13,12 @@ namespace java::nio::charset
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit UnmappableCharacterException(const char *className, const char *sig, Ts...agv) : java::nio::charset::CharacterCodingException(className, sig, std::forward<Ts>(agv)...) {}
 		UnmappableCharacterException(QAndroidJniObject obj);
+		
 		// Constructors
 		UnmappableCharacterException(jint arg0);
-		UnmappableCharacterException() = default;
 		
 		// Methods
 		jint getInputLength();

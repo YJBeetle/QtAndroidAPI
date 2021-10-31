@@ -188,7 +188,9 @@ namespace android::hardware
 		);
 	}
 	
-	HardwareBuffer::HardwareBuffer(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	HardwareBuffer::HardwareBuffer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -220,66 +222,66 @@ namespace android::hardware
 	}
 	void HardwareBuffer::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	jint HardwareBuffer::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jint HardwareBuffer::getFormat()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getFormat",
 			"()I"
 		);
 	}
 	jint HardwareBuffer::getHeight()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getHeight",
 			"()I"
 		);
 	}
 	jint HardwareBuffer::getLayers()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLayers",
 			"()I"
 		);
 	}
 	jlong HardwareBuffer::getUsage()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getUsage",
 			"()J"
 		);
 	}
 	jint HardwareBuffer::getWidth()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getWidth",
 			"()I"
 		);
 	}
 	jboolean HardwareBuffer::isClosed()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isClosed",
 			"()Z"
 		);
 	}
 	void HardwareBuffer::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

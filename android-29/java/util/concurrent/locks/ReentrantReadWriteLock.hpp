@@ -22,7 +22,10 @@ namespace java::util::concurrent::locks
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ReentrantReadWriteLock(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ReentrantReadWriteLock(QAndroidJniObject obj);
+		
 		// Constructors
 		ReentrantReadWriteLock();
 		ReentrantReadWriteLock(jboolean arg0);

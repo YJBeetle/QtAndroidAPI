@@ -4,28 +4,26 @@ namespace android::renderscript
 {
 	// Fields
 	
-	Matrix3f::Matrix3f(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Matrix3f::Matrix3f(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Matrix3f::Matrix3f()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.renderscript.Matrix3f",
 			"()V"
-		);
-	}
+		) {}
 	Matrix3f::Matrix3f(jfloatArray arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.renderscript.Matrix3f",
 			"([F)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jfloat Matrix3f::get(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"get",
 			"(II)F",
 			arg0,
@@ -34,38 +32,38 @@ namespace android::renderscript
 	}
 	jfloatArray Matrix3f::getArray()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getArray",
 			"()[F"
 		).object<jfloatArray>();
 	}
 	void Matrix3f::load(android::renderscript::Matrix3f arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"load",
 			"(Landroid/renderscript/Matrix3f;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Matrix3f::loadIdentity()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"loadIdentity",
 			"()V"
 		);
 	}
 	void Matrix3f::loadMultiply(android::renderscript::Matrix3f arg0, android::renderscript::Matrix3f arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"loadMultiply",
 			"(Landroid/renderscript/Matrix3f;Landroid/renderscript/Matrix3f;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void Matrix3f::loadRotate(jfloat arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"loadRotate",
 			"(F)V",
 			arg0
@@ -73,7 +71,7 @@ namespace android::renderscript
 	}
 	void Matrix3f::loadRotate(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"loadRotate",
 			"(FFFF)V",
 			arg0,
@@ -84,7 +82,7 @@ namespace android::renderscript
 	}
 	void Matrix3f::loadScale(jfloat arg0, jfloat arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"loadScale",
 			"(FF)V",
 			arg0,
@@ -93,7 +91,7 @@ namespace android::renderscript
 	}
 	void Matrix3f::loadScale(jfloat arg0, jfloat arg1, jfloat arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"loadScale",
 			"(FFF)V",
 			arg0,
@@ -103,7 +101,7 @@ namespace android::renderscript
 	}
 	void Matrix3f::loadTranslate(jfloat arg0, jfloat arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"loadTranslate",
 			"(FF)V",
 			arg0,
@@ -112,15 +110,15 @@ namespace android::renderscript
 	}
 	void Matrix3f::multiply(android::renderscript::Matrix3f arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"multiply",
 			"(Landroid/renderscript/Matrix3f;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Matrix3f::rotate(jfloat arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"rotate",
 			"(F)V",
 			arg0
@@ -128,7 +126,7 @@ namespace android::renderscript
 	}
 	void Matrix3f::rotate(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"rotate",
 			"(FFFF)V",
 			arg0,
@@ -139,7 +137,7 @@ namespace android::renderscript
 	}
 	void Matrix3f::scale(jfloat arg0, jfloat arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"scale",
 			"(FF)V",
 			arg0,
@@ -148,7 +146,7 @@ namespace android::renderscript
 	}
 	void Matrix3f::scale(jfloat arg0, jfloat arg1, jfloat arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"scale",
 			"(FFF)V",
 			arg0,
@@ -158,7 +156,7 @@ namespace android::renderscript
 	}
 	void Matrix3f::set(jint arg0, jint arg1, jfloat arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"set",
 			"(IIF)V",
 			arg0,
@@ -168,7 +166,7 @@ namespace android::renderscript
 	}
 	void Matrix3f::translate(jfloat arg0, jfloat arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"translate",
 			"(FF)V",
 			arg0,
@@ -177,7 +175,7 @@ namespace android::renderscript
 	}
 	void Matrix3f::transpose()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"transpose",
 			"()V"
 		);

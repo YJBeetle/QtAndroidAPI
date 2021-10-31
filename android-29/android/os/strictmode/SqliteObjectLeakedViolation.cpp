@@ -4,7 +4,9 @@ namespace android::os::strictmode
 {
 	// Fields
 	
-	SqliteObjectLeakedViolation::SqliteObjectLeakedViolation(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SqliteObjectLeakedViolation::SqliteObjectLeakedViolation(QAndroidJniObject obj) : android::os::strictmode::Violation(obj) {}
+	
 	// Constructors
 	
 	// Methods

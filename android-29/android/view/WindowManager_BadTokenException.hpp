@@ -12,7 +12,10 @@ namespace android::view
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit WindowManager_BadTokenException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
 		WindowManager_BadTokenException(QAndroidJniObject obj);
+		
 		// Constructors
 		WindowManager_BadTokenException();
 		WindowManager_BadTokenException(jstring arg0);

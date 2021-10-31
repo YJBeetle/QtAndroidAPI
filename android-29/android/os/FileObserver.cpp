@@ -96,64 +96,54 @@ namespace android::os
 		);
 	}
 	
-	FileObserver::FileObserver(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FileObserver::FileObserver(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	FileObserver::FileObserver(java::io::File arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.os.FileObserver",
 			"(Ljava/io/File;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	FileObserver::FileObserver(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.os.FileObserver",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	FileObserver::FileObserver(__JniBaseClass arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.os.FileObserver",
 			"(Ljava/util/List;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	FileObserver::FileObserver(java::io::File arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.os.FileObserver",
 			"(Ljava/io/File;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
-		);
-	}
+		) {}
 	FileObserver::FileObserver(jstring arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.os.FileObserver",
 			"(Ljava/lang/String;I)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	FileObserver::FileObserver(__JniBaseClass arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.os.FileObserver",
 			"(Ljava/util/List;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	void FileObserver::onEvent(jint arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onEvent",
 			"(ILjava/lang/String;)V",
 			arg0,
@@ -162,14 +152,14 @@ namespace android::os
 	}
 	void FileObserver::startWatching()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"startWatching",
 			"()V"
 		);
 	}
 	void FileObserver::stopWatching()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"stopWatching",
 			"()V"
 		);

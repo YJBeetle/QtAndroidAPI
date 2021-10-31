@@ -18,7 +18,9 @@ namespace android::media
 		);
 	}
 	
-	MediaSyncEvent::MediaSyncEvent(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaSyncEvent::MediaSyncEvent(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -33,21 +35,21 @@ namespace android::media
 	}
 	jint MediaSyncEvent::getAudioSessionId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAudioSessionId",
 			"()I"
 		);
 	}
 	jint MediaSyncEvent::getType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getType",
 			"()I"
 		);
 	}
 	QAndroidJniObject MediaSyncEvent::setAudioSessionId(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setAudioSessionId",
 			"(I)Landroid/media/MediaSyncEvent;",
 			arg0

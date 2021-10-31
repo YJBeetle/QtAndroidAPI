@@ -60,11 +60,13 @@ namespace android::media::session
 		static jint FLAG_HANDLES_MEDIA_BUTTONS();
 		static jint FLAG_HANDLES_TRANSPORT_CONTROLS();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaSession(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaSession(QAndroidJniObject obj);
+		
 		// Constructors
 		MediaSession(android::content::Context arg0, jstring arg1);
 		MediaSession(android::content::Context arg0, jstring arg1, android::os::Bundle arg2);
-		MediaSession() = default;
 		
 		// Methods
 		QAndroidJniObject getController();

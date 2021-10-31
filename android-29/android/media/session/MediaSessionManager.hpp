@@ -30,9 +30,11 @@ namespace android::media::session
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaSessionManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaSessionManager(QAndroidJniObject obj);
+		
 		// Constructors
-		MediaSessionManager() = default;
 		
 		// Methods
 		void addOnActiveSessionsChangedListener(__JniBaseClass arg0, android::content::ComponentName arg1);

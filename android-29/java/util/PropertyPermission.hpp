@@ -28,10 +28,12 @@ namespace java::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PropertyPermission(const char *className, const char *sig, Ts...agv) : java::security::BasicPermission(className, sig, std::forward<Ts>(agv)...) {}
 		PropertyPermission(QAndroidJniObject obj);
+		
 		// Constructors
 		PropertyPermission(jstring arg0, jstring arg1);
-		PropertyPermission() = default;
 		
 		// Methods
 		jboolean equals(jobject arg0);

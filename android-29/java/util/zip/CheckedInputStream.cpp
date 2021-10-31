@@ -5,36 +5,36 @@ namespace java::util::zip
 {
 	// Fields
 	
-	CheckedInputStream::CheckedInputStream(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CheckedInputStream::CheckedInputStream(QAndroidJniObject obj) : java::io::FilterInputStream(obj) {}
+	
 	// Constructors
 	CheckedInputStream::CheckedInputStream(java::io::InputStream arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::FilterInputStream(
 			"java.util.zip.CheckedInputStream",
 			"(Ljava/io/InputStream;Ljava/util/zip/Checksum;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject CheckedInputStream::getChecksum()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getChecksum",
 			"()Ljava/util/zip/Checksum;"
 		);
 	}
 	jint CheckedInputStream::read()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"read",
 			"()I"
 		);
 	}
 	jint CheckedInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"read",
 			"([BII)I",
 			arg0,
@@ -44,7 +44,7 @@ namespace java::util::zip
 	}
 	jlong CheckedInputStream::skip(jlong arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"skip",
 			"(J)J",
 			arg0

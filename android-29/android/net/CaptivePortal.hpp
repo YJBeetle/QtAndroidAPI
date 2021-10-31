@@ -15,9 +15,11 @@ namespace android::net
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CaptivePortal(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		CaptivePortal(QAndroidJniObject obj);
+		
 		// Constructors
-		CaptivePortal() = default;
 		
 		// Methods
 		jint describeContents();

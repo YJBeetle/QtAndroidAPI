@@ -27,101 +27,101 @@ namespace android::media::browse
 		).object<jstring>();
 	}
 	
-	MediaBrowser::MediaBrowser(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaBrowser::MediaBrowser(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MediaBrowser::MediaBrowser(android::content::Context arg0, android::content::ComponentName arg1, android::media::browse::MediaBrowser_ConnectionCallback arg2, android::os::Bundle arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.browse.MediaBrowser",
 			"(Landroid/content/Context;Landroid/content/ComponentName;Landroid/media/browse/MediaBrowser$ConnectionCallback;Landroid/os/Bundle;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
+		) {}
 	
 	// Methods
 	void MediaBrowser::connect()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"connect",
 			"()V"
 		);
 	}
 	void MediaBrowser::disconnect()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"disconnect",
 			"()V"
 		);
 	}
 	QAndroidJniObject MediaBrowser::getExtras()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
 	void MediaBrowser::getItem(jstring arg0, android::media::browse::MediaBrowser_ItemCallback arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"getItem",
 			"(Ljava/lang/String;Landroid/media/browse/MediaBrowser$ItemCallback;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jstring MediaBrowser::getRoot()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRoot",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject MediaBrowser::getServiceComponent()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getServiceComponent",
 			"()Landroid/content/ComponentName;"
 		);
 	}
 	QAndroidJniObject MediaBrowser::getSessionToken()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSessionToken",
 			"()Landroid/media/session/MediaSession$Token;"
 		);
 	}
 	jboolean MediaBrowser::isConnected()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isConnected",
 			"()Z"
 		);
 	}
 	void MediaBrowser::subscribe(jstring arg0, android::media::browse::MediaBrowser_SubscriptionCallback arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"subscribe",
 			"(Ljava/lang/String;Landroid/media/browse/MediaBrowser$SubscriptionCallback;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void MediaBrowser::subscribe(jstring arg0, android::os::Bundle arg1, android::media::browse::MediaBrowser_SubscriptionCallback arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"subscribe",
 			"(Ljava/lang/String;Landroid/os/Bundle;Landroid/media/browse/MediaBrowser$SubscriptionCallback;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	void MediaBrowser::unsubscribe(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"unsubscribe",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -129,11 +129,11 @@ namespace android::media::browse
 	}
 	void MediaBrowser::unsubscribe(jstring arg0, android::media::browse::MediaBrowser_SubscriptionCallback arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"unsubscribe",
 			"(Ljava/lang/String;Landroid/media/browse/MediaBrowser$SubscriptionCallback;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 } // namespace android::media::browse

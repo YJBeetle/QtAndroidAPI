@@ -67,31 +67,33 @@ namespace android::telephony::mbms
 		);
 	}
 	
-	GroupCall::GroupCall(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	GroupCall::GroupCall(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void GroupCall::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	jlong GroupCall::getTmgi()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getTmgi",
 			"()J"
 		);
 	}
 	void GroupCall::updateGroupCall(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"updateGroupCall",
 			"(Ljava/util/List;Ljava/util/List;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 } // namespace android::telephony::mbms

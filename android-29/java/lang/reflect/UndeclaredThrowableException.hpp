@@ -20,11 +20,13 @@ namespace java::lang::reflect
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit UndeclaredThrowableException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
 		UndeclaredThrowableException(QAndroidJniObject obj);
+		
 		// Constructors
 		UndeclaredThrowableException(jthrowable arg0);
 		UndeclaredThrowableException(jthrowable arg0, jstring arg1);
-		UndeclaredThrowableException() = default;
 		
 		// Methods
 		jthrowable getUndeclaredThrowable();

@@ -7,20 +7,20 @@ namespace java::security
 {
 	// Fields
 	
-	SignatureSpi::SignatureSpi(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SignatureSpi::SignatureSpi(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	SignatureSpi::SignatureSpi()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.security.SignatureSpi",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jobject SignatureSpi::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		).object<jobject>();

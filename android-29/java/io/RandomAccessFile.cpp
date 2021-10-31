@@ -7,73 +7,71 @@ namespace java::io
 {
 	// Fields
 	
-	RandomAccessFile::RandomAccessFile(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	RandomAccessFile::RandomAccessFile(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	RandomAccessFile::RandomAccessFile(java::io::File arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.io.RandomAccessFile",
 			"(Ljava/io/File;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
-		);
-	}
+		) {}
 	RandomAccessFile::RandomAccessFile(jstring arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.io.RandomAccessFile",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	void RandomAccessFile::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	QAndroidJniObject RandomAccessFile::getChannel()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getChannel",
 			"()Ljava/nio/channels/FileChannel;"
 		);
 	}
 	QAndroidJniObject RandomAccessFile::getFD()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFD",
 			"()Ljava/io/FileDescriptor;"
 		);
 	}
 	jlong RandomAccessFile::getFilePointer()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getFilePointer",
 			"()J"
 		);
 	}
 	jlong RandomAccessFile::length()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"length",
 			"()J"
 		);
 	}
 	jint RandomAccessFile::read()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"read",
 			"()I"
 		);
 	}
 	jint RandomAccessFile::read(jbyteArray arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"read",
 			"([B)I",
 			arg0
@@ -81,7 +79,7 @@ namespace java::io
 	}
 	jint RandomAccessFile::read(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"read",
 			"([BII)I",
 			arg0,
@@ -91,42 +89,42 @@ namespace java::io
 	}
 	jboolean RandomAccessFile::readBoolean()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"readBoolean",
 			"()Z"
 		);
 	}
 	jbyte RandomAccessFile::readByte()
 	{
-		return __thiz.callMethod<jbyte>(
+		return callMethod<jbyte>(
 			"readByte",
 			"()B"
 		);
 	}
 	jchar RandomAccessFile::readChar()
 	{
-		return __thiz.callMethod<jchar>(
+		return callMethod<jchar>(
 			"readChar",
 			"()C"
 		);
 	}
 	jdouble RandomAccessFile::readDouble()
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"readDouble",
 			"()D"
 		);
 	}
 	jfloat RandomAccessFile::readFloat()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"readFloat",
 			"()F"
 		);
 	}
 	void RandomAccessFile::readFully(jbyteArray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"readFully",
 			"([B)V",
 			arg0
@@ -134,7 +132,7 @@ namespace java::io
 	}
 	void RandomAccessFile::readFully(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"readFully",
 			"([BII)V",
 			arg0,
@@ -144,56 +142,56 @@ namespace java::io
 	}
 	jint RandomAccessFile::readInt()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"readInt",
 			"()I"
 		);
 	}
 	jstring RandomAccessFile::readLine()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"readLine",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jlong RandomAccessFile::readLong()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"readLong",
 			"()J"
 		);
 	}
 	jshort RandomAccessFile::readShort()
 	{
-		return __thiz.callMethod<jshort>(
+		return callMethod<jshort>(
 			"readShort",
 			"()S"
 		);
 	}
 	jstring RandomAccessFile::readUTF()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"readUTF",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint RandomAccessFile::readUnsignedByte()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"readUnsignedByte",
 			"()I"
 		);
 	}
 	jint RandomAccessFile::readUnsignedShort()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"readUnsignedShort",
 			"()I"
 		);
 	}
 	void RandomAccessFile::seek(jlong arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"seek",
 			"(J)V",
 			arg0
@@ -201,7 +199,7 @@ namespace java::io
 	}
 	void RandomAccessFile::setLength(jlong arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLength",
 			"(J)V",
 			arg0
@@ -209,7 +207,7 @@ namespace java::io
 	}
 	jint RandomAccessFile::skipBytes(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"skipBytes",
 			"(I)I",
 			arg0
@@ -217,7 +215,7 @@ namespace java::io
 	}
 	void RandomAccessFile::write(jbyteArray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"write",
 			"([B)V",
 			arg0
@@ -225,7 +223,7 @@ namespace java::io
 	}
 	void RandomAccessFile::write(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"write",
 			"(I)V",
 			arg0
@@ -233,7 +231,7 @@ namespace java::io
 	}
 	void RandomAccessFile::write(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"write",
 			"([BII)V",
 			arg0,
@@ -243,7 +241,7 @@ namespace java::io
 	}
 	void RandomAccessFile::writeBoolean(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeBoolean",
 			"(Z)V",
 			arg0
@@ -251,7 +249,7 @@ namespace java::io
 	}
 	void RandomAccessFile::writeByte(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeByte",
 			"(I)V",
 			arg0
@@ -259,7 +257,7 @@ namespace java::io
 	}
 	void RandomAccessFile::writeBytes(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeBytes",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -267,7 +265,7 @@ namespace java::io
 	}
 	void RandomAccessFile::writeChar(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeChar",
 			"(I)V",
 			arg0
@@ -275,7 +273,7 @@ namespace java::io
 	}
 	void RandomAccessFile::writeChars(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeChars",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -283,7 +281,7 @@ namespace java::io
 	}
 	void RandomAccessFile::writeDouble(jdouble arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeDouble",
 			"(D)V",
 			arg0
@@ -291,7 +289,7 @@ namespace java::io
 	}
 	void RandomAccessFile::writeFloat(jfloat arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeFloat",
 			"(F)V",
 			arg0
@@ -299,7 +297,7 @@ namespace java::io
 	}
 	void RandomAccessFile::writeInt(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeInt",
 			"(I)V",
 			arg0
@@ -307,7 +305,7 @@ namespace java::io
 	}
 	void RandomAccessFile::writeLong(jlong arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeLong",
 			"(J)V",
 			arg0
@@ -315,7 +313,7 @@ namespace java::io
 	}
 	void RandomAccessFile::writeShort(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeShort",
 			"(I)V",
 			arg0
@@ -323,7 +321,7 @@ namespace java::io
 	}
 	void RandomAccessFile::writeUTF(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeUTF",
 			"(Ljava/lang/String;)V",
 			arg0

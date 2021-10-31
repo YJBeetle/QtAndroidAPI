@@ -4,15 +4,15 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	InterruptedByTimeoutException::InterruptedByTimeoutException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	InterruptedByTimeoutException::InterruptedByTimeoutException(QAndroidJniObject obj) : java::io::IOException(obj) {}
+	
 	// Constructors
 	InterruptedByTimeoutException::InterruptedByTimeoutException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::IOException(
 			"java.nio.channels.InterruptedByTimeoutException",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::nio::channels

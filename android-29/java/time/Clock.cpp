@@ -7,7 +7,9 @@ namespace java::time
 {
 	// Fields
 	
-	Clock::Clock(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Clock::Clock(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -17,8 +19,8 @@ namespace java::time
 			"java.time.Clock",
 			"fixed",
 			"(Ljava/time/Instant;Ljava/time/ZoneId;)Ljava/time/Clock;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject Clock::offset(java::time::Clock arg0, java::time::Duration arg1)
@@ -27,8 +29,8 @@ namespace java::time
 			"java.time.Clock",
 			"offset",
 			"(Ljava/time/Clock;Ljava/time/Duration;)Ljava/time/Clock;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject Clock::system(java::time::ZoneId arg0)
@@ -37,7 +39,7 @@ namespace java::time
 			"java.time.Clock",
 			"system",
 			"(Ljava/time/ZoneId;)Ljava/time/Clock;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Clock::systemDefaultZone()
@@ -62,8 +64,8 @@ namespace java::time
 			"java.time.Clock",
 			"tick",
 			"(Ljava/time/Clock;Ljava/time/Duration;)Ljava/time/Clock;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject Clock::tickMillis(java::time::ZoneId arg0)
@@ -72,7 +74,7 @@ namespace java::time
 			"java.time.Clock",
 			"tickMillis",
 			"(Ljava/time/ZoneId;)Ljava/time/Clock;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Clock::tickMinutes(java::time::ZoneId arg0)
@@ -81,7 +83,7 @@ namespace java::time
 			"java.time.Clock",
 			"tickMinutes",
 			"(Ljava/time/ZoneId;)Ljava/time/Clock;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Clock::tickSeconds(java::time::ZoneId arg0)
@@ -90,12 +92,12 @@ namespace java::time
 			"java.time.Clock",
 			"tickSeconds",
 			"(Ljava/time/ZoneId;)Ljava/time/Clock;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean Clock::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -103,38 +105,38 @@ namespace java::time
 	}
 	QAndroidJniObject Clock::getZone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getZone",
 			"()Ljava/time/ZoneId;"
 		);
 	}
 	jint Clock::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	QAndroidJniObject Clock::instant()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"instant",
 			"()Ljava/time/Instant;"
 		);
 	}
 	jlong Clock::millis()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"millis",
 			"()J"
 		);
 	}
 	QAndroidJniObject Clock::withZone(java::time::ZoneId arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withZone",
 			"(Ljava/time/ZoneId;)Ljava/time/Clock;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace java::time

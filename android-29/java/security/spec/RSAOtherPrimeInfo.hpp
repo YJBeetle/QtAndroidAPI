@@ -14,10 +14,12 @@ namespace java::security::spec
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit RSAOtherPrimeInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		RSAOtherPrimeInfo(QAndroidJniObject obj);
+		
 		// Constructors
 		RSAOtherPrimeInfo(java::math::BigInteger arg0, java::math::BigInteger arg1, java::math::BigInteger arg2);
-		RSAOtherPrimeInfo() = default;
 		
 		// Methods
 		QAndroidJniObject getCrtCoefficient();

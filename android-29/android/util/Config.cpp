@@ -39,7 +39,9 @@ namespace android::util
 		);
 	}
 	
-	Config::Config(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Config::Config(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

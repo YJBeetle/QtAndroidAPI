@@ -11,10 +11,12 @@ namespace javax::sql
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit RowSetEvent(const char *className, const char *sig, Ts...agv) : java::util::EventObject(className, sig, std::forward<Ts>(agv)...) {}
 		RowSetEvent(QAndroidJniObject obj);
+		
 		// Constructors
 		RowSetEvent(__JniBaseClass arg0);
-		RowSetEvent() = default;
 		
 		// Methods
 	};

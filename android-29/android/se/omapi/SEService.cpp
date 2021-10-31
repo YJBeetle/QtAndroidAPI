@@ -5,44 +5,44 @@ namespace android::se::omapi
 {
 	// Fields
 	
-	SEService::SEService(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SEService::SEService(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	SEService::SEService(android::content::Context arg0, __JniBaseClass arg1, __JniBaseClass arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.se.omapi.SEService",
 			"(Landroid/content/Context;Ljava/util/concurrent/Executor;Landroid/se/omapi/SEService$OnConnectedListener;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		) {}
 	
 	// Methods
 	jarray SEService::getReaders()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getReaders",
 			"()[Landroid/se/omapi/Reader;"
 		).object<jarray>();
 	}
 	jstring SEService::getVersion()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getVersion",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jboolean SEService::isConnected()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isConnected",
 			"()Z"
 		);
 	}
 	void SEService::shutdown()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"shutdown",
 			"()V"
 		);

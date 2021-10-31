@@ -110,16 +110,16 @@ namespace android::media::audiofx
 		);
 	}
 	
-	Visualizer::Visualizer(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Visualizer::Visualizer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Visualizer::Visualizer(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.audiofx.Visualizer",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jintArray Visualizer::getCaptureSizeRange()
@@ -140,21 +140,21 @@ namespace android::media::audiofx
 	}
 	jint Visualizer::getCaptureSize()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCaptureSize",
 			"()I"
 		);
 	}
 	jboolean Visualizer::getEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getEnabled",
 			"()Z"
 		);
 	}
 	jint Visualizer::getFft(jbyteArray arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getFft",
 			"([B)I",
 			arg0
@@ -162,36 +162,36 @@ namespace android::media::audiofx
 	}
 	jint Visualizer::getMeasurementMode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMeasurementMode",
 			"()I"
 		);
 	}
 	jint Visualizer::getMeasurementPeakRms(android::media::audiofx::Visualizer_MeasurementPeakRms arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMeasurementPeakRms",
 			"(Landroid/media/audiofx/Visualizer$MeasurementPeakRms;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint Visualizer::getSamplingRate()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSamplingRate",
 			"()I"
 		);
 	}
 	jint Visualizer::getScalingMode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getScalingMode",
 			"()I"
 		);
 	}
 	jint Visualizer::getWaveForm(jbyteArray arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getWaveForm",
 			"([B)I",
 			arg0
@@ -199,14 +199,14 @@ namespace android::media::audiofx
 	}
 	void Visualizer::release()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
 	jint Visualizer::setCaptureSize(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"setCaptureSize",
 			"(I)I",
 			arg0
@@ -214,10 +214,10 @@ namespace android::media::audiofx
 	}
 	jint Visualizer::setDataCaptureListener(__JniBaseClass arg0, jint arg1, jboolean arg2, jboolean arg3)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"setDataCaptureListener",
 			"(Landroid/media/audiofx/Visualizer$OnDataCaptureListener;IZZ)I",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3
@@ -225,7 +225,7 @@ namespace android::media::audiofx
 	}
 	jint Visualizer::setEnabled(jboolean arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"setEnabled",
 			"(Z)I",
 			arg0
@@ -233,7 +233,7 @@ namespace android::media::audiofx
 	}
 	jint Visualizer::setMeasurementMode(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"setMeasurementMode",
 			"(I)I",
 			arg0
@@ -241,7 +241,7 @@ namespace android::media::audiofx
 	}
 	jint Visualizer::setScalingMode(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"setScalingMode",
 			"(I)I",
 			arg0

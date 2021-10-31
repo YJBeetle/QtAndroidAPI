@@ -30,9 +30,11 @@ namespace java::nio::channels
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AsynchronousSocketChannel(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AsynchronousSocketChannel(QAndroidJniObject obj);
+		
 		// Constructors
-		AsynchronousSocketChannel() = default;
 		
 		// Methods
 		static QAndroidJniObject open();

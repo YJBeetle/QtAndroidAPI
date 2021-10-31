@@ -4,15 +4,15 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	AlreadyBoundException::AlreadyBoundException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AlreadyBoundException::AlreadyBoundException(QAndroidJniObject obj) : java::lang::IllegalStateException(obj) {}
+	
 	// Constructors
 	AlreadyBoundException::AlreadyBoundException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::IllegalStateException(
 			"java.nio.channels.AlreadyBoundException",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::nio::channels

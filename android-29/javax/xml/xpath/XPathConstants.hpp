@@ -20,9 +20,11 @@ namespace javax::xml::xpath
 		static QAndroidJniObject NUMBER();
 		static QAndroidJniObject STRING();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit XPathConstants(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		XPathConstants(QAndroidJniObject obj);
+		
 		// Constructors
-		XPathConstants() = default;
 		
 		// Methods
 	};

@@ -13,7 +13,10 @@ namespace java::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Stack(const char *className, const char *sig, Ts...agv) : java::util::Vector(className, sig, std::forward<Ts>(agv)...) {}
 		Stack(QAndroidJniObject obj);
+		
 		// Constructors
 		Stack();
 		

@@ -18,9 +18,11 @@ namespace android::media::midi
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MidiDevice_MidiConnection(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MidiDevice_MidiConnection(QAndroidJniObject obj);
+		
 		// Constructors
-		MidiDevice_MidiConnection() = default;
 		
 		// Methods
 		void close();

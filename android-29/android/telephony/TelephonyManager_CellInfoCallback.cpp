@@ -18,28 +18,28 @@ namespace android::telephony
 		);
 	}
 	
-	TelephonyManager_CellInfoCallback::TelephonyManager_CellInfoCallback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TelephonyManager_CellInfoCallback::TelephonyManager_CellInfoCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	TelephonyManager_CellInfoCallback::TelephonyManager_CellInfoCallback()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.telephony.TelephonyManager$CellInfoCallback",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void TelephonyManager_CellInfoCallback::onCellInfo(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onCellInfo",
 			"(Ljava/util/List;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TelephonyManager_CellInfoCallback::onError(jint arg0, jthrowable arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onError",
 			"(ILjava/lang/Throwable;)V",
 			arg0,

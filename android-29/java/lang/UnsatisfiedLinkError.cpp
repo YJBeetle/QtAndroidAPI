@@ -4,23 +4,21 @@ namespace java::lang
 {
 	// Fields
 	
-	UnsatisfiedLinkError::UnsatisfiedLinkError(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UnsatisfiedLinkError::UnsatisfiedLinkError(QAndroidJniObject obj) : java::lang::LinkageError(obj) {}
+	
 	// Constructors
 	UnsatisfiedLinkError::UnsatisfiedLinkError()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::LinkageError(
 			"java.lang.UnsatisfiedLinkError",
 			"()V"
-		);
-	}
+		) {}
 	UnsatisfiedLinkError::UnsatisfiedLinkError(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::LinkageError(
 			"java.lang.UnsatisfiedLinkError",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::lang

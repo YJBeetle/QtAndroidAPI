@@ -5,15 +5,15 @@ namespace android::view
 {
 	// Fields
 	
-	ViewConfiguration::ViewConfiguration(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ViewConfiguration::ViewConfiguration(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ViewConfiguration::ViewConfiguration()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.ViewConfiguration",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject ViewConfiguration::get(android::content::Context arg0)
@@ -22,7 +22,7 @@ namespace android::view
 			"android.view.ViewConfiguration",
 			"get",
 			"(Landroid/content/Context;)Landroid/view/ViewConfiguration;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jfloat ViewConfiguration::getAmbiguousGestureMultiplier()
@@ -203,126 +203,126 @@ namespace android::view
 	}
 	jint ViewConfiguration::getScaledDoubleTapSlop()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getScaledDoubleTapSlop",
 			"()I"
 		);
 	}
 	jint ViewConfiguration::getScaledEdgeSlop()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getScaledEdgeSlop",
 			"()I"
 		);
 	}
 	jint ViewConfiguration::getScaledFadingEdgeLength()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getScaledFadingEdgeLength",
 			"()I"
 		);
 	}
 	jfloat ViewConfiguration::getScaledHorizontalScrollFactor()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getScaledHorizontalScrollFactor",
 			"()F"
 		);
 	}
 	jint ViewConfiguration::getScaledHoverSlop()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getScaledHoverSlop",
 			"()I"
 		);
 	}
 	jint ViewConfiguration::getScaledMaximumDrawingCacheSize()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getScaledMaximumDrawingCacheSize",
 			"()I"
 		);
 	}
 	jint ViewConfiguration::getScaledMaximumFlingVelocity()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getScaledMaximumFlingVelocity",
 			"()I"
 		);
 	}
 	jint ViewConfiguration::getScaledMinimumFlingVelocity()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getScaledMinimumFlingVelocity",
 			"()I"
 		);
 	}
 	jint ViewConfiguration::getScaledMinimumScalingSpan()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getScaledMinimumScalingSpan",
 			"()I"
 		);
 	}
 	jint ViewConfiguration::getScaledOverflingDistance()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getScaledOverflingDistance",
 			"()I"
 		);
 	}
 	jint ViewConfiguration::getScaledOverscrollDistance()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getScaledOverscrollDistance",
 			"()I"
 		);
 	}
 	jint ViewConfiguration::getScaledPagingTouchSlop()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getScaledPagingTouchSlop",
 			"()I"
 		);
 	}
 	jint ViewConfiguration::getScaledScrollBarSize()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getScaledScrollBarSize",
 			"()I"
 		);
 	}
 	jint ViewConfiguration::getScaledTouchSlop()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getScaledTouchSlop",
 			"()I"
 		);
 	}
 	jfloat ViewConfiguration::getScaledVerticalScrollFactor()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getScaledVerticalScrollFactor",
 			"()F"
 		);
 	}
 	jint ViewConfiguration::getScaledWindowTouchSlop()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getScaledWindowTouchSlop",
 			"()I"
 		);
 	}
 	jboolean ViewConfiguration::hasPermanentMenuKey()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasPermanentMenuKey",
 			"()Z"
 		);
 	}
 	jboolean ViewConfiguration::shouldShowMenuShortcutsWhenKeyboardPresent()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"shouldShowMenuShortcutsWhenKeyboardPresent",
 			"()Z"
 		);

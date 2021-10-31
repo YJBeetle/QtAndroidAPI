@@ -4,13 +4,15 @@ namespace java::security::cert
 {
 	// Fields
 	
-	CertPath::CertPath(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CertPath::CertPath(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jboolean CertPath::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -18,21 +20,21 @@ namespace java::security::cert
 	}
 	QAndroidJniObject CertPath::getCertificates()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCertificates",
 			"()Ljava/util/List;"
 		);
 	}
 	jbyteArray CertPath::getEncoded()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEncoded",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jbyteArray CertPath::getEncoded(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEncoded",
 			"(Ljava/lang/String;)[B",
 			arg0
@@ -40,28 +42,28 @@ namespace java::security::cert
 	}
 	QAndroidJniObject CertPath::getEncodings()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEncodings",
 			"()Ljava/util/Iterator;"
 		);
 	}
 	jstring CertPath::getType()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint CertPath::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring CertPath::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

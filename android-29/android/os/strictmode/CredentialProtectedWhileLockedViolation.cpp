@@ -4,7 +4,9 @@ namespace android::os::strictmode
 {
 	// Fields
 	
-	CredentialProtectedWhileLockedViolation::CredentialProtectedWhileLockedViolation(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CredentialProtectedWhileLockedViolation::CredentialProtectedWhileLockedViolation(QAndroidJniObject obj) : android::os::strictmode::Violation(obj) {}
+	
 	// Constructors
 	
 	// Methods

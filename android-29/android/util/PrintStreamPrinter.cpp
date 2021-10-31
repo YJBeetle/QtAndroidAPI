@@ -5,21 +5,21 @@ namespace android::util
 {
 	// Fields
 	
-	PrintStreamPrinter::PrintStreamPrinter(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PrintStreamPrinter::PrintStreamPrinter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	PrintStreamPrinter::PrintStreamPrinter(java::io::PrintStream arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.util.PrintStreamPrinter",
 			"(Ljava/io/PrintStream;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	void PrintStreamPrinter::println(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"println",
 			"(Ljava/lang/String;)V",
 			arg0

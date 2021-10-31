@@ -7,37 +7,37 @@ namespace java::util::prefs
 {
 	// Fields
 	
-	PreferenceChangeEvent::PreferenceChangeEvent(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PreferenceChangeEvent::PreferenceChangeEvent(QAndroidJniObject obj) : java::util::EventObject(obj) {}
+	
 	// Constructors
 	PreferenceChangeEvent::PreferenceChangeEvent(java::util::prefs::Preferences arg0, jstring arg1, jstring arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::EventObject(
 			"java.util.prefs.PreferenceChangeEvent",
 			"(Ljava/util/prefs/Preferences;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring PreferenceChangeEvent::getKey()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getKey",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring PreferenceChangeEvent::getNewValue()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getNewValue",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject PreferenceChangeEvent::getNode()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getNode",
 			"()Ljava/util/prefs/Preferences;"
 		);

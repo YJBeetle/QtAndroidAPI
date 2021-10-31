@@ -5,31 +5,33 @@ namespace android::service::voice
 {
 	// Fields
 	
-	VoiceInteractionSession_CommandRequest::VoiceInteractionSession_CommandRequest(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	VoiceInteractionSession_CommandRequest::VoiceInteractionSession_CommandRequest(QAndroidJniObject obj) : android::service::voice::VoiceInteractionSession_Request(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jstring VoiceInteractionSession_CommandRequest::getCommand()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCommand",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void VoiceInteractionSession_CommandRequest::sendIntermediateResult(android::os::Bundle arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"sendIntermediateResult",
 			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void VoiceInteractionSession_CommandRequest::sendResult(android::os::Bundle arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"sendResult",
 			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::service::voice

@@ -5,19 +5,19 @@ namespace java::security
 {
 	// Fields
 	
-	KeyRep::KeyRep(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	KeyRep::KeyRep(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	KeyRep::KeyRep(java::security::KeyRep_Type arg0, jstring arg1, jstring arg2, jbyteArray arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.security.KeyRep",
 			"(Ljava/security/KeyRep$Type;Ljava/lang/String;Ljava/lang/String;[B)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::security

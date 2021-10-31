@@ -47,9 +47,11 @@ namespace android::renderscript
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Script(const char *className, const char *sig, Ts...agv) : android::renderscript::BaseObj(className, sig, std::forward<Ts>(agv)...) {}
 		Script(QAndroidJniObject obj);
+		
 		// Constructors
-		Script() = default;
 		
 		// Methods
 		void bindAllocation(android::renderscript::Allocation arg0, jint arg1);

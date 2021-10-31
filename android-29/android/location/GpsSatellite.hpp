@@ -10,9 +10,11 @@ namespace android::location
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit GpsSatellite(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		GpsSatellite(QAndroidJniObject obj);
+		
 		// Constructors
-		GpsSatellite() = default;
 		
 		// Methods
 		jfloat getAzimuth();

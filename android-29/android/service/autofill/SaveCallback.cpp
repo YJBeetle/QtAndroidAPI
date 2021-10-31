@@ -5,13 +5,15 @@ namespace android::service::autofill
 {
 	// Fields
 	
-	SaveCallback::SaveCallback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SaveCallback::SaveCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void SaveCallback::onFailure(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onFailure",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
@@ -19,17 +21,17 @@ namespace android::service::autofill
 	}
 	void SaveCallback::onSuccess()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onSuccess",
 			"()V"
 		);
 	}
 	void SaveCallback::onSuccess(android::content::IntentSender arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onSuccess",
 			"(Landroid/content/IntentSender;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::service::autofill

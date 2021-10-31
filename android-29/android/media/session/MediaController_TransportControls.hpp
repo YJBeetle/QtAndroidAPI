@@ -30,9 +30,11 @@ namespace android::media::session
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaController_TransportControls(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaController_TransportControls(QAndroidJniObject obj);
+		
 		// Constructors
-		MediaController_TransportControls() = default;
 		
 		// Methods
 		void fastForward();

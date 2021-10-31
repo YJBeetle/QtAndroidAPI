@@ -24,10 +24,12 @@ namespace android::app
 		static jint VISIBILITY_VISIBLE_NOTIFY_COMPLETED();
 		static jint VISIBILITY_VISIBLE_NOTIFY_ONLY_COMPLETION();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DownloadManager_Request(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DownloadManager_Request(QAndroidJniObject obj);
+		
 		// Constructors
 		DownloadManager_Request(android::net::Uri arg0);
-		DownloadManager_Request() = default;
 		
 		// Methods
 		QAndroidJniObject addRequestHeader(jstring arg0, jstring arg1);

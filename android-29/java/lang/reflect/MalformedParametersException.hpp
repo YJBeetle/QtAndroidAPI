@@ -12,7 +12,10 @@ namespace java::lang::reflect
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MalformedParametersException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
 		MalformedParametersException(QAndroidJniObject obj);
+		
 		// Constructors
 		MalformedParametersException();
 		MalformedParametersException(jstring arg0);

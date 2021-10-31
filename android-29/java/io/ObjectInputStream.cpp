@@ -11,56 +11,56 @@ namespace java::io
 {
 	// Fields
 	
-	ObjectInputStream::ObjectInputStream(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ObjectInputStream::ObjectInputStream(QAndroidJniObject obj) : java::io::InputStream(obj) {}
+	
 	// Constructors
 	ObjectInputStream::ObjectInputStream(java::io::InputStream arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::InputStream(
 			"java.io.ObjectInputStream",
 			"(Ljava/io/InputStream;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jint ObjectInputStream::available()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"available",
 			"()I"
 		);
 	}
 	void ObjectInputStream::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	void ObjectInputStream::defaultReadObject()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"defaultReadObject",
 			"()V"
 		);
 	}
 	QAndroidJniObject ObjectInputStream::getObjectInputFilter()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getObjectInputFilter",
 			"()Ljava/io/ObjectInputFilter;"
 		);
 	}
 	jint ObjectInputStream::read()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"read",
 			"()I"
 		);
 	}
 	jint ObjectInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"read",
 			"([BII)I",
 			arg0,
@@ -70,49 +70,49 @@ namespace java::io
 	}
 	jboolean ObjectInputStream::readBoolean()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"readBoolean",
 			"()Z"
 		);
 	}
 	jbyte ObjectInputStream::readByte()
 	{
-		return __thiz.callMethod<jbyte>(
+		return callMethod<jbyte>(
 			"readByte",
 			"()B"
 		);
 	}
 	jchar ObjectInputStream::readChar()
 	{
-		return __thiz.callMethod<jchar>(
+		return callMethod<jchar>(
 			"readChar",
 			"()C"
 		);
 	}
 	jdouble ObjectInputStream::readDouble()
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"readDouble",
 			"()D"
 		);
 	}
 	QAndroidJniObject ObjectInputStream::readFields()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"readFields",
 			"()Ljava/io/ObjectInputStream$GetField;"
 		);
 	}
 	jfloat ObjectInputStream::readFloat()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"readFloat",
 			"()F"
 		);
 	}
 	void ObjectInputStream::readFully(jbyteArray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"readFully",
 			"([B)V",
 			arg0
@@ -120,7 +120,7 @@ namespace java::io
 	}
 	void ObjectInputStream::readFully(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"readFully",
 			"([BII)V",
 			arg0,
@@ -130,87 +130,87 @@ namespace java::io
 	}
 	jint ObjectInputStream::readInt()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"readInt",
 			"()I"
 		);
 	}
 	jstring ObjectInputStream::readLine()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"readLine",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jlong ObjectInputStream::readLong()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"readLong",
 			"()J"
 		);
 	}
 	jobject ObjectInputStream::readObject()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"readObject",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jshort ObjectInputStream::readShort()
 	{
-		return __thiz.callMethod<jshort>(
+		return callMethod<jshort>(
 			"readShort",
 			"()S"
 		);
 	}
 	jstring ObjectInputStream::readUTF()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"readUTF",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jobject ObjectInputStream::readUnshared()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"readUnshared",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jint ObjectInputStream::readUnsignedByte()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"readUnsignedByte",
 			"()I"
 		);
 	}
 	jint ObjectInputStream::readUnsignedShort()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"readUnsignedShort",
 			"()I"
 		);
 	}
 	void ObjectInputStream::registerValidation(__JniBaseClass arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"registerValidation",
 			"(Ljava/io/ObjectInputValidation;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void ObjectInputStream::setObjectInputFilter(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setObjectInputFilter",
 			"(Ljava/io/ObjectInputFilter;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint ObjectInputStream::skipBytes(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"skipBytes",
 			"(I)I",
 			arg0

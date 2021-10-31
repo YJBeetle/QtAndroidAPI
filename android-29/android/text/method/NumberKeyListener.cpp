@@ -6,39 +6,39 @@ namespace android::text::method
 {
 	// Fields
 	
-	NumberKeyListener::NumberKeyListener(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NumberKeyListener::NumberKeyListener(QAndroidJniObject obj) : android::text::method::BaseKeyListener(obj) {}
+	
 	// Constructors
 	NumberKeyListener::NumberKeyListener()
-	{
-		__thiz = QAndroidJniObject(
+		: android::text::method::BaseKeyListener(
 			"android.text.method.NumberKeyListener",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring NumberKeyListener::filter(jstring arg0, jint arg1, jint arg2, __JniBaseClass arg3, jint arg4, jint arg5)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"filter",
 			"(Ljava/lang/CharSequence;IILandroid/text/Spanned;II)Ljava/lang/CharSequence;",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
+			arg3.object(),
 			arg4,
 			arg5
 		).object<jstring>();
 	}
 	jboolean NumberKeyListener::onKeyDown(android::view::View arg0, __JniBaseClass arg1, jint arg2, android::view::KeyEvent arg3)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onKeyDown",
 			"(Landroid/view/View;Landroid/text/Editable;ILandroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 } // namespace android::text::method

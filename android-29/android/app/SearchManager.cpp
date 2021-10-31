@@ -420,91 +420,93 @@ namespace android::app
 		).object<jstring>();
 	}
 	
-	SearchManager::SearchManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SearchManager::SearchManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject SearchManager::getGlobalSearchActivity()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getGlobalSearchActivity",
 			"()Landroid/content/ComponentName;"
 		);
 	}
 	QAndroidJniObject SearchManager::getSearchableInfo(android::content::ComponentName arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSearchableInfo",
 			"(Landroid/content/ComponentName;)Landroid/app/SearchableInfo;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject SearchManager::getSearchablesInGlobalSearch()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSearchablesInGlobalSearch",
 			"()Ljava/util/List;"
 		);
 	}
 	void SearchManager::onCancel(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onCancel",
 			"(Landroid/content/DialogInterface;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void SearchManager::onDismiss(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onDismiss",
 			"(Landroid/content/DialogInterface;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void SearchManager::setOnCancelListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnCancelListener",
 			"(Landroid/app/SearchManager$OnCancelListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void SearchManager::setOnDismissListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnDismissListener",
 			"(Landroid/app/SearchManager$OnDismissListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void SearchManager::startSearch(jstring arg0, jboolean arg1, android::content::ComponentName arg2, android::os::Bundle arg3, jboolean arg4)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"startSearch",
 			"(Ljava/lang/String;ZLandroid/content/ComponentName;Landroid/os/Bundle;Z)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
+			arg2.object(),
+			arg3.object(),
 			arg4
 		);
 	}
 	void SearchManager::stopSearch()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"stopSearch",
 			"()V"
 		);
 	}
 	void SearchManager::triggerSearch(jstring arg0, android::content::ComponentName arg1, android::os::Bundle arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"triggerSearch",
 			"(Ljava/lang/String;Landroid/content/ComponentName;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg1.object(),
+			arg2.object()
 		);
 	}
 } // namespace android::app

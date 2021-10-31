@@ -6,35 +6,35 @@ namespace android::media
 {
 	// Fields
 	
-	SoundPool_Builder::SoundPool_Builder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SoundPool_Builder::SoundPool_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	SoundPool_Builder::SoundPool_Builder()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.SoundPool$Builder",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject SoundPool_Builder::build()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"build",
 			"()Landroid/media/SoundPool;"
 		);
 	}
 	QAndroidJniObject SoundPool_Builder::setAudioAttributes(android::media::AudioAttributes arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setAudioAttributes",
 			"(Landroid/media/AudioAttributes;)Landroid/media/SoundPool$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject SoundPool_Builder::setMaxStreams(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setMaxStreams",
 			"(I)Landroid/media/SoundPool$Builder;",
 			arg0

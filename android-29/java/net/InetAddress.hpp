@@ -22,9 +22,11 @@ namespace java::net
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit InetAddress(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		InetAddress(QAndroidJniObject obj);
+		
 		// Constructors
-		InetAddress() = default;
 		
 		// Methods
 		static jarray getAllByName(jstring arg0);

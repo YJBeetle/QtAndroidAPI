@@ -54,15 +54,15 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	MediaStore_Audio_Playlists_Members::MediaStore_Audio_Playlists_Members(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaStore_Audio_Playlists_Members::MediaStore_Audio_Playlists_Members(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MediaStore_Audio_Playlists_Members::MediaStore_Audio_Playlists_Members()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.provider.MediaStore$Audio$Playlists$Members",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject MediaStore_Audio_Playlists_Members::getContentUri(jstring arg0, jlong arg1)
@@ -81,7 +81,7 @@ namespace android::provider
 			"android.provider.MediaStore$Audio$Playlists$Members",
 			"moveItem",
 			"(Landroid/content/ContentResolver;JII)Z",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3

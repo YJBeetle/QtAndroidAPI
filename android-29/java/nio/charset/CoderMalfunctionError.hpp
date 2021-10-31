@@ -15,10 +15,12 @@ namespace java::nio::charset
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CoderMalfunctionError(const char *className, const char *sig, Ts...agv) : java::lang::Error(className, sig, std::forward<Ts>(agv)...) {}
 		CoderMalfunctionError(QAndroidJniObject obj);
+		
 		// Constructors
 		CoderMalfunctionError(java::lang::Exception arg0);
-		CoderMalfunctionError() = default;
 		
 		// Methods
 	};

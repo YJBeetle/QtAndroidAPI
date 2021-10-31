@@ -11,11 +11,13 @@ namespace java::net
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit URISyntaxException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
 		URISyntaxException(QAndroidJniObject obj);
+		
 		// Constructors
 		URISyntaxException(jstring arg0, jstring arg1);
 		URISyntaxException(jstring arg0, jstring arg1, jint arg2);
-		URISyntaxException() = default;
 		
 		// Methods
 		jint getIndex();

@@ -22,7 +22,10 @@ namespace android::graphics::pdf
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PdfDocument(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PdfDocument(QAndroidJniObject obj);
+		
 		// Constructors
 		PdfDocument();
 		

@@ -4,20 +4,20 @@ namespace android::webkit
 {
 	// Fields
 	
-	WebView_VisualStateCallback::WebView_VisualStateCallback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WebView_VisualStateCallback::WebView_VisualStateCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	WebView_VisualStateCallback::WebView_VisualStateCallback()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.webkit.WebView$VisualStateCallback",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void WebView_VisualStateCallback::onComplete(jlong arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onComplete",
 			"(J)V",
 			arg0

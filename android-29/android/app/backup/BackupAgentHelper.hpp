@@ -25,7 +25,10 @@ namespace android::app::backup
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BackupAgentHelper(const char *className, const char *sig, Ts...agv) : android::app::backup::BackupAgent(className, sig, std::forward<Ts>(agv)...) {}
 		BackupAgentHelper(QAndroidJniObject obj);
+		
 		// Constructors
 		BackupAgentHelper();
 		

@@ -21,7 +21,10 @@ namespace android::net
 		jint netmask();
 		jint serverAddress();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DhcpInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DhcpInfo(QAndroidJniObject obj);
+		
 		// Constructors
 		DhcpInfo();
 		

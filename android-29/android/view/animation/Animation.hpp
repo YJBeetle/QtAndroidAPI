@@ -28,7 +28,10 @@ namespace android::view::animation
 		static jint ZORDER_NORMAL();
 		static jint ZORDER_TOP();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Animation(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Animation(QAndroidJniObject obj);
+		
 		// Constructors
 		Animation();
 		Animation(android::content::Context arg0, __JniBaseClass arg1);

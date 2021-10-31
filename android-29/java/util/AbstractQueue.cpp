@@ -4,13 +4,15 @@ namespace java::util
 {
 	// Fields
 	
-	AbstractQueue::AbstractQueue(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AbstractQueue::AbstractQueue(QAndroidJniObject obj) : java::util::AbstractCollection(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jboolean AbstractQueue::add(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"add",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -18,29 +20,29 @@ namespace java::util
 	}
 	jboolean AbstractQueue::addAll(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"addAll",
 			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AbstractQueue::clear()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
 	jobject AbstractQueue::element()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"element",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobject AbstractQueue::remove()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"remove",
 			"()Ljava/lang/Object;"
 		).object<jobject>();

@@ -24,9 +24,11 @@ namespace android::graphics
 		jint right();
 		jint top();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Insets(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Insets(QAndroidJniObject obj);
+		
 		// Constructors
-		Insets() = default;
 		
 		// Methods
 		static QAndroidJniObject add(android::graphics::Insets arg0, android::graphics::Insets arg1);

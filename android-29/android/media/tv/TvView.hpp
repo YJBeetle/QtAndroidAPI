@@ -60,12 +60,14 @@ namespace android::media::tv
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TvView(const char *className, const char *sig, Ts...agv) : android::view::ViewGroup(className, sig, std::forward<Ts>(agv)...) {}
 		TvView(QAndroidJniObject obj);
+		
 		// Constructors
 		TvView(android::content::Context arg0);
 		TvView(android::content::Context arg0, __JniBaseClass arg1);
 		TvView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		TvView() = default;
 		
 		// Methods
 		jboolean dispatchGenericMotionEvent(android::view::MotionEvent arg0);

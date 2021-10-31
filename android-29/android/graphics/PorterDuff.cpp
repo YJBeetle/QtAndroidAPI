@@ -4,15 +4,15 @@ namespace android::graphics
 {
 	// Fields
 	
-	PorterDuff::PorterDuff(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PorterDuff::PorterDuff(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	PorterDuff::PorterDuff()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.graphics.PorterDuff",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::graphics

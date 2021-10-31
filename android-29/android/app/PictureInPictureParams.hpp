@@ -15,9 +15,11 @@ namespace android::app
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PictureInPictureParams(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PictureInPictureParams(QAndroidJniObject obj);
+		
 		// Constructors
-		PictureInPictureParams() = default;
 		
 		// Methods
 		jint describeContents();

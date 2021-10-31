@@ -13,7 +13,10 @@ namespace java::lang
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AbstractMethodError(const char *className, const char *sig, Ts...agv) : java::lang::IncompatibleClassChangeError(className, sig, std::forward<Ts>(agv)...) {}
 		AbstractMethodError(QAndroidJniObject obj);
+		
 		// Constructors
 		AbstractMethodError();
 		AbstractMethodError(jstring arg0);

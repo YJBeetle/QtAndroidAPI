@@ -5,51 +5,51 @@ namespace java::security::cert
 {
 	// Fields
 	
-	PKIXCertPathValidatorResult::PKIXCertPathValidatorResult(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PKIXCertPathValidatorResult::PKIXCertPathValidatorResult(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	PKIXCertPathValidatorResult::PKIXCertPathValidatorResult(java::security::cert::TrustAnchor arg0, __JniBaseClass arg1, __JniBaseClass arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.security.cert.PKIXCertPathValidatorResult",
 			"(Ljava/security/cert/TrustAnchor;Ljava/security/cert/PolicyNode;Ljava/security/PublicKey;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		) {}
 	
 	// Methods
 	jobject PKIXCertPathValidatorResult::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	QAndroidJniObject PKIXCertPathValidatorResult::getPolicyTree()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPolicyTree",
 			"()Ljava/security/cert/PolicyNode;"
 		);
 	}
 	QAndroidJniObject PKIXCertPathValidatorResult::getPublicKey()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPublicKey",
 			"()Ljava/security/PublicKey;"
 		);
 	}
 	QAndroidJniObject PKIXCertPathValidatorResult::getTrustAnchor()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTrustAnchor",
 			"()Ljava/security/cert/TrustAnchor;"
 		);
 	}
 	jstring PKIXCertPathValidatorResult::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

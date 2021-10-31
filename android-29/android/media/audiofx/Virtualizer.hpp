@@ -21,10 +21,12 @@ namespace android::media::audiofx
 		static jint VIRTUALIZATION_MODE_OFF();
 		static jint VIRTUALIZATION_MODE_TRANSAURAL();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Virtualizer(const char *className, const char *sig, Ts...agv) : android::media::audiofx::AudioEffect(className, sig, std::forward<Ts>(agv)...) {}
 		Virtualizer(QAndroidJniObject obj);
+		
 		// Constructors
 		Virtualizer(jint arg0, jint arg1);
-		Virtualizer() = default;
 		
 		// Methods
 		jboolean canVirtualize(jint arg0, jint arg1);

@@ -95,7 +95,9 @@ namespace android::app::job
 		);
 	}
 	
-	JobInfo::JobInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	JobInfo::JobInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -117,14 +119,14 @@ namespace android::app::job
 	}
 	jint JobInfo::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean JobInfo::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -132,213 +134,213 @@ namespace android::app::job
 	}
 	jint JobInfo::getBackoffPolicy()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getBackoffPolicy",
 			"()I"
 		);
 	}
 	QAndroidJniObject JobInfo::getClipData()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getClipData",
 			"()Landroid/content/ClipData;"
 		);
 	}
 	jint JobInfo::getClipGrantFlags()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getClipGrantFlags",
 			"()I"
 		);
 	}
 	jlong JobInfo::getEstimatedNetworkDownloadBytes()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getEstimatedNetworkDownloadBytes",
 			"()J"
 		);
 	}
 	jlong JobInfo::getEstimatedNetworkUploadBytes()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getEstimatedNetworkUploadBytes",
 			"()J"
 		);
 	}
 	QAndroidJniObject JobInfo::getExtras()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/PersistableBundle;"
 		);
 	}
 	jlong JobInfo::getFlexMillis()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getFlexMillis",
 			"()J"
 		);
 	}
 	jint JobInfo::getId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getId",
 			"()I"
 		);
 	}
 	jlong JobInfo::getInitialBackoffMillis()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getInitialBackoffMillis",
 			"()J"
 		);
 	}
 	jlong JobInfo::getIntervalMillis()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getIntervalMillis",
 			"()J"
 		);
 	}
 	jlong JobInfo::getMaxExecutionDelayMillis()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getMaxExecutionDelayMillis",
 			"()J"
 		);
 	}
 	jlong JobInfo::getMinLatencyMillis()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getMinLatencyMillis",
 			"()J"
 		);
 	}
 	jint JobInfo::getNetworkType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getNetworkType",
 			"()I"
 		);
 	}
 	QAndroidJniObject JobInfo::getRequiredNetwork()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRequiredNetwork",
 			"()Landroid/net/NetworkRequest;"
 		);
 	}
 	QAndroidJniObject JobInfo::getService()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getService",
 			"()Landroid/content/ComponentName;"
 		);
 	}
 	QAndroidJniObject JobInfo::getTransientExtras()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTransientExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
 	jlong JobInfo::getTriggerContentMaxDelay()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getTriggerContentMaxDelay",
 			"()J"
 		);
 	}
 	jlong JobInfo::getTriggerContentUpdateDelay()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getTriggerContentUpdateDelay",
 			"()J"
 		);
 	}
 	jarray JobInfo::getTriggerContentUris()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTriggerContentUris",
 			"()[Landroid/app/job/JobInfo$TriggerContentUri;"
 		).object<jarray>();
 	}
 	jint JobInfo::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean JobInfo::isImportantWhileForeground()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isImportantWhileForeground",
 			"()Z"
 		);
 	}
 	jboolean JobInfo::isPeriodic()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isPeriodic",
 			"()Z"
 		);
 	}
 	jboolean JobInfo::isPersisted()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isPersisted",
 			"()Z"
 		);
 	}
 	jboolean JobInfo::isPrefetch()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isPrefetch",
 			"()Z"
 		);
 	}
 	jboolean JobInfo::isRequireBatteryNotLow()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isRequireBatteryNotLow",
 			"()Z"
 		);
 	}
 	jboolean JobInfo::isRequireCharging()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isRequireCharging",
 			"()Z"
 		);
 	}
 	jboolean JobInfo::isRequireDeviceIdle()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isRequireDeviceIdle",
 			"()Z"
 		);
 	}
 	jboolean JobInfo::isRequireStorageNotLow()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isRequireStorageNotLow",
 			"()Z"
 		);
 	}
 	jstring JobInfo::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void JobInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

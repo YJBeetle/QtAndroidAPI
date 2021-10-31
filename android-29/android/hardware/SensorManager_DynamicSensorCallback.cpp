@@ -5,31 +5,31 @@ namespace android::hardware
 {
 	// Fields
 	
-	SensorManager_DynamicSensorCallback::SensorManager_DynamicSensorCallback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SensorManager_DynamicSensorCallback::SensorManager_DynamicSensorCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	SensorManager_DynamicSensorCallback::SensorManager_DynamicSensorCallback()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.hardware.SensorManager$DynamicSensorCallback",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void SensorManager_DynamicSensorCallback::onDynamicSensorConnected(android::hardware::Sensor arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onDynamicSensorConnected",
 			"(Landroid/hardware/Sensor;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void SensorManager_DynamicSensorCallback::onDynamicSensorDisconnected(android::hardware::Sensor arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onDynamicSensorDisconnected",
 			"(Landroid/hardware/Sensor;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::hardware

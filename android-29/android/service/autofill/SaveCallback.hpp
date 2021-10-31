@@ -14,9 +14,11 @@ namespace android::service::autofill
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SaveCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SaveCallback(QAndroidJniObject obj);
+		
 		// Constructors
-		SaveCallback() = default;
 		
 		// Methods
 		void onFailure(jstring arg0);

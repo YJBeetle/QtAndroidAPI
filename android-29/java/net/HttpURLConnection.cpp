@@ -260,7 +260,9 @@ namespace java::net
 		);
 	}
 	
-	HttpURLConnection::HttpURLConnection(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	HttpURLConnection::HttpURLConnection(QAndroidJniObject obj) : java::net::URLConnection(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -283,21 +285,21 @@ namespace java::net
 	}
 	void HttpURLConnection::disconnect()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"disconnect",
 			"()V"
 		);
 	}
 	QAndroidJniObject HttpURLConnection::getErrorStream()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getErrorStream",
 			"()Ljava/io/InputStream;"
 		);
 	}
 	jstring HttpURLConnection::getHeaderField(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getHeaderField",
 			"(I)Ljava/lang/String;",
 			arg0
@@ -305,7 +307,7 @@ namespace java::net
 	}
 	jlong HttpURLConnection::getHeaderFieldDate(jstring arg0, jlong arg1)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getHeaderFieldDate",
 			"(Ljava/lang/String;J)J",
 			arg0,
@@ -314,7 +316,7 @@ namespace java::net
 	}
 	jstring HttpURLConnection::getHeaderFieldKey(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getHeaderFieldKey",
 			"(I)Ljava/lang/String;",
 			arg0
@@ -322,50 +324,50 @@ namespace java::net
 	}
 	jboolean HttpURLConnection::getInstanceFollowRedirects()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getInstanceFollowRedirects",
 			"()Z"
 		);
 	}
 	QAndroidJniObject HttpURLConnection::getPermission()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPermission",
 			"()Ljava/security/Permission;"
 		);
 	}
 	jstring HttpURLConnection::getRequestMethod()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRequestMethod",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint HttpURLConnection::getResponseCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getResponseCode",
 			"()I"
 		);
 	}
 	jstring HttpURLConnection::getResponseMessage()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getResponseMessage",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void HttpURLConnection::setAuthenticator(java::net::Authenticator arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAuthenticator",
 			"(Ljava/net/Authenticator;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void HttpURLConnection::setChunkedStreamingMode(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setChunkedStreamingMode",
 			"(I)V",
 			arg0
@@ -373,7 +375,7 @@ namespace java::net
 	}
 	void HttpURLConnection::setFixedLengthStreamingMode(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFixedLengthStreamingMode",
 			"(I)V",
 			arg0
@@ -381,7 +383,7 @@ namespace java::net
 	}
 	void HttpURLConnection::setFixedLengthStreamingMode(jlong arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFixedLengthStreamingMode",
 			"(J)V",
 			arg0
@@ -389,7 +391,7 @@ namespace java::net
 	}
 	void HttpURLConnection::setInstanceFollowRedirects(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setInstanceFollowRedirects",
 			"(Z)V",
 			arg0
@@ -397,7 +399,7 @@ namespace java::net
 	}
 	void HttpURLConnection::setRequestMethod(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setRequestMethod",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -405,7 +407,7 @@ namespace java::net
 	}
 	jboolean HttpURLConnection::usingProxy()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"usingProxy",
 			"()Z"
 		);

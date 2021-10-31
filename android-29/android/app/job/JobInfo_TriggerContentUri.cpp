@@ -21,29 +21,29 @@ namespace android::app::job
 		);
 	}
 	
-	JobInfo_TriggerContentUri::JobInfo_TriggerContentUri(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	JobInfo_TriggerContentUri::JobInfo_TriggerContentUri(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	JobInfo_TriggerContentUri::JobInfo_TriggerContentUri(android::net::Uri arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.app.job.JobInfo$TriggerContentUri",
 			"(Landroid/net/Uri;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jint JobInfo_TriggerContentUri::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean JobInfo_TriggerContentUri::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -51,31 +51,31 @@ namespace android::app::job
 	}
 	jint JobInfo_TriggerContentUri::getFlags()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getFlags",
 			"()I"
 		);
 	}
 	QAndroidJniObject JobInfo_TriggerContentUri::getUri()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getUri",
 			"()Landroid/net/Uri;"
 		);
 	}
 	jint JobInfo_TriggerContentUri::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	void JobInfo_TriggerContentUri::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

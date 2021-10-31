@@ -26,10 +26,12 @@ namespace android::content::pm
 		static jint MODE_INHERIT_EXISTING();
 		static QAndroidJniObject RESTRICTED_PERMISSIONS_ALL();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PackageInstaller_SessionParams(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PackageInstaller_SessionParams(QAndroidJniObject obj);
+		
 		// Constructors
 		PackageInstaller_SessionParams(jint arg0);
-		PackageInstaller_SessionParams() = default;
 		
 		// Methods
 		jint describeContents();

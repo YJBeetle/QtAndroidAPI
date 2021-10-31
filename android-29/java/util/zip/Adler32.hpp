@@ -14,7 +14,10 @@ namespace java::util::zip
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Adler32(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Adler32(QAndroidJniObject obj);
+		
 		// Constructors
 		Adler32();
 		

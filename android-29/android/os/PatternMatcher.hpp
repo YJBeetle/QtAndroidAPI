@@ -19,11 +19,13 @@ namespace android::os
 		static jint PATTERN_PREFIX();
 		static jint PATTERN_SIMPLE_GLOB();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PatternMatcher(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PatternMatcher(QAndroidJniObject obj);
+		
 		// Constructors
 		PatternMatcher(android::os::Parcel arg0);
 		PatternMatcher(jstring arg0, jint arg1);
-		PatternMatcher() = default;
 		
 		// Methods
 		jint describeContents();

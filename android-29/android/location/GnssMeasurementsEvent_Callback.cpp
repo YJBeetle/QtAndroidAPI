@@ -33,28 +33,28 @@ namespace android::location
 		);
 	}
 	
-	GnssMeasurementsEvent_Callback::GnssMeasurementsEvent_Callback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	GnssMeasurementsEvent_Callback::GnssMeasurementsEvent_Callback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	GnssMeasurementsEvent_Callback::GnssMeasurementsEvent_Callback()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.location.GnssMeasurementsEvent$Callback",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void GnssMeasurementsEvent_Callback::onGnssMeasurementsReceived(android::location::GnssMeasurementsEvent arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onGnssMeasurementsReceived",
 			"(Landroid/location/GnssMeasurementsEvent;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void GnssMeasurementsEvent_Callback::onStatusChanged(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onStatusChanged",
 			"(I)V",
 			arg0

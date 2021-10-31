@@ -6,50 +6,46 @@ namespace java::util
 {
 	// Fields
 	
-	IdentityHashMap::IdentityHashMap(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	IdentityHashMap::IdentityHashMap(QAndroidJniObject obj) : java::util::AbstractMap(obj) {}
+	
 	// Constructors
 	IdentityHashMap::IdentityHashMap()
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::AbstractMap(
 			"java.util.IdentityHashMap",
 			"()V"
-		);
-	}
+		) {}
 	IdentityHashMap::IdentityHashMap(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::AbstractMap(
 			"java.util.IdentityHashMap",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	IdentityHashMap::IdentityHashMap(__JniBaseClass arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::AbstractMap(
 			"java.util.IdentityHashMap",
 			"(Ljava/util/Map;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	void IdentityHashMap::clear()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
 	jobject IdentityHashMap::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jboolean IdentityHashMap::containsKey(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"containsKey",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -57,7 +53,7 @@ namespace java::util
 	}
 	jboolean IdentityHashMap::containsValue(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"containsValue",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -65,14 +61,14 @@ namespace java::util
 	}
 	QAndroidJniObject IdentityHashMap::entrySet()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"entrySet",
 			"()Ljava/util/Set;"
 		);
 	}
 	jboolean IdentityHashMap::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -80,15 +76,15 @@ namespace java::util
 	}
 	void IdentityHashMap::forEach(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"forEach",
 			"(Ljava/util/function/BiConsumer;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jobject IdentityHashMap::get(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0
@@ -96,28 +92,28 @@ namespace java::util
 	}
 	jint IdentityHashMap::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean IdentityHashMap::isEmpty()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
 	QAndroidJniObject IdentityHashMap::keySet()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"keySet",
 			"()Ljava/util/Set;"
 		);
 	}
 	jobject IdentityHashMap::put(jobject arg0, jobject arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"put",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
@@ -126,15 +122,15 @@ namespace java::util
 	}
 	void IdentityHashMap::putAll(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putAll",
 			"(Ljava/util/Map;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jobject IdentityHashMap::remove(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"remove",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0
@@ -142,22 +138,22 @@ namespace java::util
 	}
 	void IdentityHashMap::replaceAll(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"replaceAll",
 			"(Ljava/util/function/BiFunction;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint IdentityHashMap::size()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
 	QAndroidJniObject IdentityHashMap::values()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"values",
 			"()Ljava/util/Collection;"
 		);

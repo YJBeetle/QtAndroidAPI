@@ -28,7 +28,9 @@ namespace java::nio::file
 		);
 	}
 	
-	StandardCopyOption::StandardCopyOption(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	StandardCopyOption::StandardCopyOption(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

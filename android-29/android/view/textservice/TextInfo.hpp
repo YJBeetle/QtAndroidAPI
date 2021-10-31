@@ -15,13 +15,15 @@ namespace android::view::textservice
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TextInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		TextInfo(QAndroidJniObject obj);
+		
 		// Constructors
 		TextInfo(android::os::Parcel arg0);
 		TextInfo(jstring arg0);
 		TextInfo(jstring arg0, jint arg1, jint arg2);
 		TextInfo(jstring arg0, jint arg1, jint arg2, jint arg3, jint arg4);
-		TextInfo() = default;
 		
 		// Methods
 		jint describeContents();

@@ -78,7 +78,9 @@ namespace android::util
 		);
 	}
 	
-	Patterns::Patterns(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Patterns::Patterns(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -88,7 +90,7 @@ namespace android::util
 			"android.util.Patterns",
 			"concatGroups",
 			"(Ljava/util/regex/Matcher;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jstring Patterns::digitsAndPlusOnly(java::util::regex::Matcher arg0)
@@ -97,7 +99,7 @@ namespace android::util
 			"android.util.Patterns",
 			"digitsAndPlusOnly",
 			"(Ljava/util/regex/Matcher;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 } // namespace android::util

@@ -46,7 +46,9 @@ namespace android::util
 		);
 	}
 	
-	Base64::Base64(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Base64::Base64(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

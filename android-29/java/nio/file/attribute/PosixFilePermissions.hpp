@@ -14,9 +14,11 @@ namespace java::nio::file::attribute
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PosixFilePermissions(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PosixFilePermissions(QAndroidJniObject obj);
+		
 		// Constructors
-		PosixFilePermissions() = default;
 		
 		// Methods
 		static QAndroidJniObject asFileAttribute(__JniBaseClass arg0);

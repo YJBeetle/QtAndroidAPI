@@ -4,41 +4,41 @@ namespace javax::net::ssl
 {
 	// Fields
 	
-	ExtendedSSLSession::ExtendedSSLSession(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ExtendedSSLSession::ExtendedSSLSession(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ExtendedSSLSession::ExtendedSSLSession()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"javax.net.ssl.ExtendedSSLSession",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jarray ExtendedSSLSession::getLocalSupportedSignatureAlgorithms()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLocalSupportedSignatureAlgorithms",
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	jarray ExtendedSSLSession::getPeerSupportedSignatureAlgorithms()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPeerSupportedSignatureAlgorithms",
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	QAndroidJniObject ExtendedSSLSession::getRequestedServerNames()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRequestedServerNames",
 			"()Ljava/util/List;"
 		);
 	}
 	QAndroidJniObject ExtendedSSLSession::getStatusResponses()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getStatusResponses",
 			"()Ljava/util/List;"
 		);

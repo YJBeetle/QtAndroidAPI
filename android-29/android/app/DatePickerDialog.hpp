@@ -24,13 +24,15 @@ namespace android::app
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DatePickerDialog(const char *className, const char *sig, Ts...agv) : android::app::AlertDialog(className, sig, std::forward<Ts>(agv)...) {}
 		DatePickerDialog(QAndroidJniObject obj);
+		
 		// Constructors
 		DatePickerDialog(android::content::Context arg0);
 		DatePickerDialog(android::content::Context arg0, jint arg1);
 		DatePickerDialog(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3, jint arg4);
 		DatePickerDialog(android::content::Context arg0, jint arg1, __JniBaseClass arg2, jint arg3, jint arg4, jint arg5);
-		DatePickerDialog() = default;
 		
 		// Methods
 		QAndroidJniObject getDatePicker();

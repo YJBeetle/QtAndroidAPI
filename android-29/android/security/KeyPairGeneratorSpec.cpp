@@ -8,76 +8,78 @@ namespace android::security
 {
 	// Fields
 	
-	KeyPairGeneratorSpec::KeyPairGeneratorSpec(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	KeyPairGeneratorSpec::KeyPairGeneratorSpec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject KeyPairGeneratorSpec::getAlgorithmParameterSpec()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAlgorithmParameterSpec",
 			"()Ljava/security/spec/AlgorithmParameterSpec;"
 		);
 	}
 	QAndroidJniObject KeyPairGeneratorSpec::getContext()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getContext",
 			"()Landroid/content/Context;"
 		);
 	}
 	QAndroidJniObject KeyPairGeneratorSpec::getEndDate()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEndDate",
 			"()Ljava/util/Date;"
 		);
 	}
 	jint KeyPairGeneratorSpec::getKeySize()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getKeySize",
 			"()I"
 		);
 	}
 	jstring KeyPairGeneratorSpec::getKeyType()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getKeyType",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring KeyPairGeneratorSpec::getKeystoreAlias()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getKeystoreAlias",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject KeyPairGeneratorSpec::getSerialNumber()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSerialNumber",
 			"()Ljava/math/BigInteger;"
 		);
 	}
 	QAndroidJniObject KeyPairGeneratorSpec::getStartDate()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getStartDate",
 			"()Ljava/util/Date;"
 		);
 	}
 	QAndroidJniObject KeyPairGeneratorSpec::getSubjectDN()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSubjectDN",
 			"()Ljavax/security/auth/x500/X500Principal;"
 		);
 	}
 	jboolean KeyPairGeneratorSpec::isEncryptionRequired()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEncryptionRequired",
 			"()Z"
 		);

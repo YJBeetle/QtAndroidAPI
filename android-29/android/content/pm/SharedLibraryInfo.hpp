@@ -23,9 +23,11 @@ namespace android::content::pm
 		static jint TYPE_STATIC();
 		static jint VERSION_UNDEFINED();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SharedLibraryInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SharedLibraryInfo(QAndroidJniObject obj);
+		
 		// Constructors
-		SharedLibraryInfo() = default;
 		
 		// Methods
 		jint describeContents();

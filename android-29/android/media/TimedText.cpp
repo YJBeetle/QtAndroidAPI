@@ -6,20 +6,22 @@ namespace android::media
 {
 	// Fields
 	
-	TimedText::TimedText(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TimedText::TimedText(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject TimedText::getBounds()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBounds",
 			"()Landroid/graphics/Rect;"
 		);
 	}
 	jstring TimedText::getText()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/String;"
 		).object<jstring>();

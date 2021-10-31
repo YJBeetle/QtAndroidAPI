@@ -4,16 +4,16 @@ namespace android::renderscript
 {
 	// Fields
 	
-	RSRuntimeException::RSRuntimeException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	RSRuntimeException::RSRuntimeException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	
 	// Constructors
 	RSRuntimeException::RSRuntimeException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::RuntimeException(
 			"android.renderscript.RSRuntimeException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::renderscript

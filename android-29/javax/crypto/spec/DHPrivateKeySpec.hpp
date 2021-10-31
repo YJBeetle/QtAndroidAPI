@@ -14,10 +14,12 @@ namespace javax::crypto::spec
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DHPrivateKeySpec(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DHPrivateKeySpec(QAndroidJniObject obj);
+		
 		// Constructors
 		DHPrivateKeySpec(java::math::BigInteger arg0, java::math::BigInteger arg1, java::math::BigInteger arg2);
-		DHPrivateKeySpec() = default;
 		
 		// Methods
 		QAndroidJniObject getG();

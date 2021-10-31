@@ -5,7 +5,9 @@ namespace android::net::wifi::hotspot2
 {
 	// Fields
 	
-	ConfigParser::ConfigParser(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ConfigParser::ConfigParser(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

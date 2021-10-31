@@ -22,10 +22,12 @@ namespace java::util::concurrent::locks
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AbstractQueuedLongSynchronizer_ConditionObject(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AbstractQueuedLongSynchronizer_ConditionObject(QAndroidJniObject obj);
+		
 		// Constructors
 		AbstractQueuedLongSynchronizer_ConditionObject(java::util::concurrent::locks::AbstractQueuedLongSynchronizer arg0);
-		AbstractQueuedLongSynchronizer_ConditionObject() = default;
 		
 		// Methods
 		jboolean await(jlong arg0, java::util::concurrent::TimeUnit arg1);

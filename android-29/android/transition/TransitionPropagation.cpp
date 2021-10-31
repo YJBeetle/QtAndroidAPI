@@ -7,41 +7,41 @@ namespace android::transition
 {
 	// Fields
 	
-	TransitionPropagation::TransitionPropagation(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TransitionPropagation::TransitionPropagation(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	TransitionPropagation::TransitionPropagation()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.transition.TransitionPropagation",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void TransitionPropagation::captureValues(android::transition::TransitionValues arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"captureValues",
 			"(Landroid/transition/TransitionValues;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jarray TransitionPropagation::getPropagationProperties()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPropagationProperties",
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	jlong TransitionPropagation::getStartDelay(android::view::ViewGroup arg0, android::transition::Transition arg1, android::transition::TransitionValues arg2, android::transition::TransitionValues arg3)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getStartDelay",
 			"(Landroid/view/ViewGroup;Landroid/transition/Transition;Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)J",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
 		);
 	}
 } // namespace android::transition

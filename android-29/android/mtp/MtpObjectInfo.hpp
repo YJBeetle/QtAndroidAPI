@@ -10,9 +10,11 @@ namespace android::mtp
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MtpObjectInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MtpObjectInfo(QAndroidJniObject obj);
+		
 		// Constructors
-		MtpObjectInfo() = default;
 		
 		// Methods
 		jint getAssociationDesc();

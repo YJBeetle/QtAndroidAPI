@@ -20,10 +20,12 @@ namespace android::hardware::camera2::params
 		static jfloat LEVEL_WHITE();
 		static jint POINT_SIZE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TonemapCurve(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		TonemapCurve(QAndroidJniObject obj);
+		
 		// Constructors
 		TonemapCurve(jfloatArray arg0, jfloatArray arg1, jfloatArray arg2);
-		TonemapCurve() = default;
 		
 		// Methods
 		void copyColorCurve(jint arg0, jfloatArray arg1, jint arg2);

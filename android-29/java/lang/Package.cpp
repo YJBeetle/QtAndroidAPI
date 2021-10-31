@@ -6,7 +6,9 @@ namespace java::lang
 {
 	// Fields
 	
-	Package::Package(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Package::Package(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -29,7 +31,7 @@ namespace java::lang
 	}
 	QAndroidJniObject Package::getAnnotation(jclass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAnnotation",
 			"(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;",
 			arg0
@@ -37,14 +39,14 @@ namespace java::lang
 	}
 	jarray Package::getAnnotations()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAnnotations",
 			"()[Ljava/lang/annotation/Annotation;"
 		).object<jarray>();
 	}
 	jarray Package::getAnnotationsByType(jclass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAnnotationsByType",
 			"(Ljava/lang/Class;)[Ljava/lang/annotation/Annotation;",
 			arg0
@@ -52,7 +54,7 @@ namespace java::lang
 	}
 	QAndroidJniObject Package::getDeclaredAnnotation(jclass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDeclaredAnnotation",
 			"(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;",
 			arg0
@@ -60,14 +62,14 @@ namespace java::lang
 	}
 	jarray Package::getDeclaredAnnotations()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDeclaredAnnotations",
 			"()[Ljava/lang/annotation/Annotation;"
 		).object<jarray>();
 	}
 	jarray Package::getDeclaredAnnotationsByType(jclass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDeclaredAnnotationsByType",
 			"(Ljava/lang/Class;)[Ljava/lang/annotation/Annotation;",
 			arg0
@@ -75,63 +77,63 @@ namespace java::lang
 	}
 	jstring Package::getImplementationTitle()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getImplementationTitle",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Package::getImplementationVendor()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getImplementationVendor",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Package::getImplementationVersion()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getImplementationVersion",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Package::getName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Package::getSpecificationTitle()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSpecificationTitle",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Package::getSpecificationVendor()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSpecificationVendor",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Package::getSpecificationVersion()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSpecificationVersion",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint Package::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean Package::isAnnotationPresent(jclass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isAnnotationPresent",
 			"(Ljava/lang/Class;)Z",
 			arg0
@@ -139,7 +141,7 @@ namespace java::lang
 	}
 	jboolean Package::isCompatibleWith(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isCompatibleWith",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -147,22 +149,22 @@ namespace java::lang
 	}
 	jboolean Package::isSealed()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isSealed",
 			"()Z"
 		);
 	}
 	jboolean Package::isSealed(java::net::URL arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isSealed",
 			"(Ljava/net/URL;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring Package::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

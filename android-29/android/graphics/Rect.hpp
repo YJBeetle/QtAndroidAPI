@@ -19,7 +19,10 @@ namespace android::graphics
 		jint right();
 		jint top();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Rect(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Rect(QAndroidJniObject obj);
+		
 		// Constructors
 		Rect();
 		Rect(android::graphics::Rect &arg0);

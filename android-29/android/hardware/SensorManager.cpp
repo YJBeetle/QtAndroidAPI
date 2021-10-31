@@ -417,7 +417,9 @@ namespace android::hardware
 		);
 	}
 	
-	SensorManager::SensorManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SensorManager::SensorManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -507,40 +509,40 @@ namespace android::hardware
 	}
 	jboolean SensorManager::cancelTriggerSensor(android::hardware::TriggerEventListener arg0, android::hardware::Sensor arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"cancelTriggerSensor",
 			"(Landroid/hardware/TriggerEventListener;Landroid/hardware/Sensor;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject SensorManager::createDirectChannel(android::hardware::HardwareBuffer arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"createDirectChannel",
 			"(Landroid/hardware/HardwareBuffer;)Landroid/hardware/SensorDirectChannel;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject SensorManager::createDirectChannel(android::os::MemoryFile arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"createDirectChannel",
 			"(Landroid/os/MemoryFile;)Landroid/hardware/SensorDirectChannel;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean SensorManager::flush(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"flush",
 			"(Landroid/hardware/SensorEventListener;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject SensorManager::getDefaultSensor(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDefaultSensor",
 			"(I)Landroid/hardware/Sensor;",
 			arg0
@@ -548,7 +550,7 @@ namespace android::hardware
 	}
 	QAndroidJniObject SensorManager::getDefaultSensor(jint arg0, jboolean arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDefaultSensor",
 			"(IZ)Landroid/hardware/Sensor;",
 			arg0,
@@ -557,7 +559,7 @@ namespace android::hardware
 	}
 	QAndroidJniObject SensorManager::getDynamicSensorList(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDynamicSensorList",
 			"(I)Ljava/util/List;",
 			arg0
@@ -565,7 +567,7 @@ namespace android::hardware
 	}
 	QAndroidJniObject SensorManager::getSensorList(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSensorList",
 			"(I)Ljava/util/List;",
 			arg0
@@ -573,138 +575,138 @@ namespace android::hardware
 	}
 	jint SensorManager::getSensors()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSensors",
 			"()I"
 		);
 	}
 	jboolean SensorManager::isDynamicSensorDiscoverySupported()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isDynamicSensorDiscoverySupported",
 			"()Z"
 		);
 	}
 	void SensorManager::registerDynamicSensorCallback(android::hardware::SensorManager_DynamicSensorCallback arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"registerDynamicSensorCallback",
 			"(Landroid/hardware/SensorManager$DynamicSensorCallback;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void SensorManager::registerDynamicSensorCallback(android::hardware::SensorManager_DynamicSensorCallback arg0, android::os::Handler arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"registerDynamicSensorCallback",
 			"(Landroid/hardware/SensorManager$DynamicSensorCallback;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jboolean SensorManager::registerListener(__JniBaseClass arg0, jint arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"registerListener",
 			"(Landroid/hardware/SensorListener;I)Z",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	jboolean SensorManager::registerListener(__JniBaseClass arg0, android::hardware::Sensor arg1, jint arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"registerListener",
 			"(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;I)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
 	jboolean SensorManager::registerListener(__JniBaseClass arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"registerListener",
 			"(Landroid/hardware/SensorListener;II)Z",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
 	}
 	jboolean SensorManager::registerListener(__JniBaseClass arg0, android::hardware::Sensor arg1, jint arg2, android::os::Handler arg3)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"registerListener",
 			"(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;ILandroid/os/Handler;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	jboolean SensorManager::registerListener(__JniBaseClass arg0, android::hardware::Sensor arg1, jint arg2, jint arg3)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"registerListener",
 			"(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;II)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3
 		);
 	}
 	jboolean SensorManager::registerListener(__JniBaseClass arg0, android::hardware::Sensor arg1, jint arg2, jint arg3, android::os::Handler arg4)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"registerListener",
 			"(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;IILandroid/os/Handler;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3,
-			arg4.__jniObject().object()
+			arg4.object()
 		);
 	}
 	jboolean SensorManager::requestTriggerSensor(android::hardware::TriggerEventListener arg0, android::hardware::Sensor arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"requestTriggerSensor",
 			"(Landroid/hardware/TriggerEventListener;Landroid/hardware/Sensor;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void SensorManager::unregisterDynamicSensorCallback(android::hardware::SensorManager_DynamicSensorCallback arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"unregisterDynamicSensorCallback",
 			"(Landroid/hardware/SensorManager$DynamicSensorCallback;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void SensorManager::unregisterListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"unregisterListener",
 			"(Landroid/hardware/SensorEventListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void SensorManager::unregisterListener(__JniBaseClass arg0, android::hardware::Sensor arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"unregisterListener",
 			"(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void SensorManager::unregisterListener(__JniBaseClass arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"unregisterListener",
 			"(Landroid/hardware/SensorListener;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

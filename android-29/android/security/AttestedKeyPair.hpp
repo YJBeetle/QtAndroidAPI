@@ -14,9 +14,11 @@ namespace android::security
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AttestedKeyPair(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AttestedKeyPair(QAndroidJniObject obj);
+		
 		// Constructors
-		AttestedKeyPair() = default;
 		
 		// Methods
 		QAndroidJniObject getAttestationRecord();

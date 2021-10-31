@@ -53,55 +53,55 @@ namespace android::media
 		);
 	}
 	
-	SyncParams::SyncParams(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SyncParams::SyncParams(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	SyncParams::SyncParams()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.SyncParams",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject SyncParams::allowDefaults()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"allowDefaults",
 			"()Landroid/media/SyncParams;"
 		);
 	}
 	jint SyncParams::getAudioAdjustMode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAudioAdjustMode",
 			"()I"
 		);
 	}
 	jfloat SyncParams::getFrameRate()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getFrameRate",
 			"()F"
 		);
 	}
 	jint SyncParams::getSyncSource()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSyncSource",
 			"()I"
 		);
 	}
 	jfloat SyncParams::getTolerance()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getTolerance",
 			"()F"
 		);
 	}
 	QAndroidJniObject SyncParams::setAudioAdjustMode(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setAudioAdjustMode",
 			"(I)Landroid/media/SyncParams;",
 			arg0
@@ -109,7 +109,7 @@ namespace android::media
 	}
 	QAndroidJniObject SyncParams::setFrameRate(jfloat arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setFrameRate",
 			"(F)Landroid/media/SyncParams;",
 			arg0
@@ -117,7 +117,7 @@ namespace android::media
 	}
 	QAndroidJniObject SyncParams::setSyncSource(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setSyncSource",
 			"(I)Landroid/media/SyncParams;",
 			arg0
@@ -125,7 +125,7 @@ namespace android::media
 	}
 	QAndroidJniObject SyncParams::setTolerance(jfloat arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setTolerance",
 			"(F)Landroid/media/SyncParams;",
 			arg0

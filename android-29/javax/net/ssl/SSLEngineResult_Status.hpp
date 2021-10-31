@@ -15,9 +15,11 @@ namespace javax::net::ssl
 		static QAndroidJniObject CLOSED();
 		static QAndroidJniObject OK();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SSLEngineResult_Status(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		SSLEngineResult_Status(QAndroidJniObject obj);
+		
 		// Constructors
-		SSLEngineResult_Status() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

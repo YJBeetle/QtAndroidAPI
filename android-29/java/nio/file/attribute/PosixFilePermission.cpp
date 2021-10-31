@@ -76,7 +76,9 @@ namespace java::nio::file::attribute
 		);
 	}
 	
-	PosixFilePermission::PosixFilePermission(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PosixFilePermission::PosixFilePermission(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

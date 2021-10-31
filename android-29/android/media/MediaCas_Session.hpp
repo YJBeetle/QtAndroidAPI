@@ -18,9 +18,11 @@ namespace android::media
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaCas_Session(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaCas_Session(QAndroidJniObject obj);
+		
 		// Constructors
-		MediaCas_Session() = default;
 		
 		// Methods
 		void close();

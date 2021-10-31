@@ -14,10 +14,12 @@ namespace android::content
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Intent_FilterComparison(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Intent_FilterComparison(QAndroidJniObject obj);
+		
 		// Constructors
 		Intent_FilterComparison(android::content::Intent arg0);
-		Intent_FilterComparison() = default;
 		
 		// Methods
 		jboolean equals(jobject arg0);

@@ -6,50 +6,50 @@ namespace javax::crypto
 {
 	// Fields
 	
-	CipherInputStream::CipherInputStream(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CipherInputStream::CipherInputStream(QAndroidJniObject obj) : java::io::FilterInputStream(obj) {}
+	
 	// Constructors
 	CipherInputStream::CipherInputStream(java::io::InputStream arg0, javax::crypto::Cipher arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::FilterInputStream(
 			"javax.crypto.CipherInputStream",
 			"(Ljava/io/InputStream;Ljavax/crypto/Cipher;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	
 	// Methods
 	jint CipherInputStream::available()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"available",
 			"()I"
 		);
 	}
 	void CipherInputStream::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	jboolean CipherInputStream::markSupported()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"markSupported",
 			"()Z"
 		);
 	}
 	jint CipherInputStream::read()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"read",
 			"()I"
 		);
 	}
 	jint CipherInputStream::read(jbyteArray arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"read",
 			"([B)I",
 			arg0
@@ -57,7 +57,7 @@ namespace javax::crypto
 	}
 	jint CipherInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"read",
 			"([BII)I",
 			arg0,
@@ -67,7 +67,7 @@ namespace javax::crypto
 	}
 	jlong CipherInputStream::skip(jlong arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"skip",
 			"(J)J",
 			arg0

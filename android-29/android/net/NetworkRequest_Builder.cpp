@@ -6,20 +6,20 @@ namespace android::net
 {
 	// Fields
 	
-	NetworkRequest_Builder::NetworkRequest_Builder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NetworkRequest_Builder::NetworkRequest_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	NetworkRequest_Builder::NetworkRequest_Builder()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.net.NetworkRequest$Builder",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject NetworkRequest_Builder::addCapability(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"addCapability",
 			"(I)Landroid/net/NetworkRequest$Builder;",
 			arg0
@@ -27,7 +27,7 @@ namespace android::net
 	}
 	QAndroidJniObject NetworkRequest_Builder::addTransportType(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"addTransportType",
 			"(I)Landroid/net/NetworkRequest$Builder;",
 			arg0
@@ -35,14 +35,14 @@ namespace android::net
 	}
 	QAndroidJniObject NetworkRequest_Builder::build()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"build",
 			"()Landroid/net/NetworkRequest;"
 		);
 	}
 	QAndroidJniObject NetworkRequest_Builder::removeCapability(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"removeCapability",
 			"(I)Landroid/net/NetworkRequest$Builder;",
 			arg0
@@ -50,7 +50,7 @@ namespace android::net
 	}
 	QAndroidJniObject NetworkRequest_Builder::removeTransportType(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"removeTransportType",
 			"(I)Landroid/net/NetworkRequest$Builder;",
 			arg0
@@ -58,15 +58,15 @@ namespace android::net
 	}
 	QAndroidJniObject NetworkRequest_Builder::setNetworkSpecifier(android::net::NetworkSpecifier arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setNetworkSpecifier",
 			"(Landroid/net/NetworkSpecifier;)Landroid/net/NetworkRequest$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject NetworkRequest_Builder::setNetworkSpecifier(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setNetworkSpecifier",
 			"(Ljava/lang/String;)Landroid/net/NetworkRequest$Builder;",
 			arg0

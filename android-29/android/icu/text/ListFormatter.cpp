@@ -6,7 +6,9 @@ namespace android::icu::text
 {
 	// Fields
 	
-	ListFormatter::ListFormatter(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ListFormatter::ListFormatter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -24,7 +26,7 @@ namespace android::icu::text
 			"android.icu.text.ListFormatter",
 			"getInstance",
 			"(Landroid/icu/util/ULocale;)Landroid/icu/text/ListFormatter;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ListFormatter::getInstance(java::util::Locale arg0)
@@ -33,12 +35,12 @@ namespace android::icu::text
 			"android.icu.text.ListFormatter",
 			"getInstance",
 			"(Ljava/util/Locale;)Landroid/icu/text/ListFormatter;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring ListFormatter::format(jobjectArray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"format",
 			"([Ljava/lang/Object;)Ljava/lang/String;",
 			arg0
@@ -46,15 +48,15 @@ namespace android::icu::text
 	}
 	jstring ListFormatter::format(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"format",
 			"(Ljava/util/Collection;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jstring ListFormatter::getPatternForNumItems(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPatternForNumItems",
 			"(I)Ljava/lang/String;",
 			arg0

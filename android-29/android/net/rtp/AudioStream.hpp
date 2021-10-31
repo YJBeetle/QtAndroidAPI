@@ -23,10 +23,12 @@ namespace android::net::rtp
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AudioStream(const char *className, const char *sig, Ts...agv) : android::net::rtp::RtpStream(className, sig, std::forward<Ts>(agv)...) {}
 		AudioStream(QAndroidJniObject obj);
+		
 		// Constructors
 		AudioStream(java::net::InetAddress arg0);
-		AudioStream() = default;
 		
 		// Methods
 		QAndroidJniObject getCodec();

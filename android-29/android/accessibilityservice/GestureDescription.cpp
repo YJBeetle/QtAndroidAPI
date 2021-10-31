@@ -5,7 +5,9 @@ namespace android::accessibilityservice
 {
 	// Fields
 	
-	GestureDescription::GestureDescription(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	GestureDescription::GestureDescription(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -27,7 +29,7 @@ namespace android::accessibilityservice
 	}
 	QAndroidJniObject GestureDescription::getStroke(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getStroke",
 			"(I)Landroid/accessibilityservice/GestureDescription$StrokeDescription;",
 			arg0
@@ -35,7 +37,7 @@ namespace android::accessibilityservice
 	}
 	jint GestureDescription::getStrokeCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getStrokeCount",
 			"()I"
 		);

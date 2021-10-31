@@ -25,9 +25,11 @@ namespace android::view::accessibility
 		static jint FLAG_CONTENT_ICONS();
 		static jint FLAG_CONTENT_TEXT();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AccessibilityManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AccessibilityManager(QAndroidJniObject obj);
+		
 		// Constructors
-		AccessibilityManager() = default;
 		
 		// Methods
 		static jboolean isAccessibilityButtonSupported();

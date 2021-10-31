@@ -12,9 +12,11 @@ namespace android::media
 		static jint SYNC_EVENT_NONE();
 		static jint SYNC_EVENT_PRESENTATION_COMPLETE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaSyncEvent(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaSyncEvent(QAndroidJniObject obj);
+		
 		// Constructors
-		MediaSyncEvent() = default;
 		
 		// Methods
 		static QAndroidJniObject createEvent(jint arg0);

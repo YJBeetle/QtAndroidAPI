@@ -10,136 +10,136 @@ namespace java::util::logging
 {
 	// Fields
 	
-	LogRecord::LogRecord(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	LogRecord::LogRecord(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	LogRecord::LogRecord(java::util::logging::Level arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.logging.LogRecord",
 			"(Ljava/util/logging/Level;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject LogRecord::getInstant()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getInstant",
 			"()Ljava/time/Instant;"
 		);
 	}
 	QAndroidJniObject LogRecord::getLevel()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLevel",
 			"()Ljava/util/logging/Level;"
 		);
 	}
 	jstring LogRecord::getLoggerName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLoggerName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jlong LogRecord::getLongThreadID()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getLongThreadID",
 			"()J"
 		);
 	}
 	jstring LogRecord::getMessage()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jlong LogRecord::getMillis()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getMillis",
 			"()J"
 		);
 	}
 	jobjectArray LogRecord::getParameters()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getParameters",
 			"()[Ljava/lang/Object;"
 		).object<jobjectArray>();
 	}
 	QAndroidJniObject LogRecord::getResourceBundle()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getResourceBundle",
 			"()Ljava/util/ResourceBundle;"
 		);
 	}
 	jstring LogRecord::getResourceBundleName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getResourceBundleName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jlong LogRecord::getSequenceNumber()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getSequenceNumber",
 			"()J"
 		);
 	}
 	jstring LogRecord::getSourceClassName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSourceClassName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring LogRecord::getSourceMethodName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSourceMethodName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint LogRecord::getThreadID()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getThreadID",
 			"()I"
 		);
 	}
 	jthrowable LogRecord::getThrown()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getThrown",
 			"()Ljava/lang/Throwable;"
 		).object<jthrowable>();
 	}
 	void LogRecord::setInstant(java::time::Instant arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setInstant",
 			"(Ljava/time/Instant;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void LogRecord::setLevel(java::util::logging::Level arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLevel",
 			"(Ljava/util/logging/Level;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void LogRecord::setLoggerName(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLoggerName",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -147,7 +147,7 @@ namespace java::util::logging
 	}
 	QAndroidJniObject LogRecord::setLongThreadID(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setLongThreadID",
 			"(J)Ljava/util/logging/LogRecord;",
 			arg0
@@ -155,7 +155,7 @@ namespace java::util::logging
 	}
 	void LogRecord::setMessage(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMessage",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -163,7 +163,7 @@ namespace java::util::logging
 	}
 	void LogRecord::setMillis(jlong arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMillis",
 			"(J)V",
 			arg0
@@ -171,7 +171,7 @@ namespace java::util::logging
 	}
 	void LogRecord::setParameters(jobjectArray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setParameters",
 			"([Ljava/lang/Object;)V",
 			arg0
@@ -179,15 +179,15 @@ namespace java::util::logging
 	}
 	void LogRecord::setResourceBundle(java::util::ResourceBundle arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setResourceBundle",
 			"(Ljava/util/ResourceBundle;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void LogRecord::setResourceBundleName(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setResourceBundleName",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -195,7 +195,7 @@ namespace java::util::logging
 	}
 	void LogRecord::setSequenceNumber(jlong arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSequenceNumber",
 			"(J)V",
 			arg0
@@ -203,7 +203,7 @@ namespace java::util::logging
 	}
 	void LogRecord::setSourceClassName(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSourceClassName",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -211,7 +211,7 @@ namespace java::util::logging
 	}
 	void LogRecord::setSourceMethodName(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSourceMethodName",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -219,7 +219,7 @@ namespace java::util::logging
 	}
 	void LogRecord::setThreadID(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setThreadID",
 			"(I)V",
 			arg0
@@ -227,7 +227,7 @@ namespace java::util::logging
 	}
 	void LogRecord::setThrown(jthrowable arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setThrown",
 			"(Ljava/lang/Throwable;)V",
 			arg0

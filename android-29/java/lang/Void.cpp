@@ -12,7 +12,9 @@ namespace java::lang
 		).object<jclass>();
 	}
 	
-	Void::Void(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Void::Void(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

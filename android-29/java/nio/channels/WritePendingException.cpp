@@ -4,15 +4,15 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	WritePendingException::WritePendingException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WritePendingException::WritePendingException(QAndroidJniObject obj) : java::lang::IllegalStateException(obj) {}
+	
 	// Constructors
 	WritePendingException::WritePendingException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::IllegalStateException(
 			"java.nio.channels.WritePendingException",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::nio::channels

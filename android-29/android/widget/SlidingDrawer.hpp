@@ -30,12 +30,14 @@ namespace android::widget
 		static jint ORIENTATION_HORIZONTAL();
 		static jint ORIENTATION_VERTICAL();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SlidingDrawer(const char *className, const char *sig, Ts...agv) : android::view::ViewGroup(className, sig, std::forward<Ts>(agv)...) {}
 		SlidingDrawer(QAndroidJniObject obj);
+		
 		// Constructors
 		SlidingDrawer(android::content::Context arg0, __JniBaseClass arg1);
 		SlidingDrawer(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		SlidingDrawer(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
-		SlidingDrawer() = default;
 		
 		// Methods
 		void animateClose();

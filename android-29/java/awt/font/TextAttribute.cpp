@@ -479,7 +479,9 @@ namespace java::awt::font
 		);
 	}
 	
-	TextAttribute::TextAttribute(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TextAttribute::TextAttribute(QAndroidJniObject obj) : java::text::AttributedCharacterIterator_Attribute(obj) {}
+	
 	// Constructors
 	
 	// Methods

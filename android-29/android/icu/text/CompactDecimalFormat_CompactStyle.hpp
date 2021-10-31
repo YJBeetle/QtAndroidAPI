@@ -13,9 +13,11 @@ namespace android::icu::text
 		static QAndroidJniObject LONG();
 		static QAndroidJniObject SHORT();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CompactDecimalFormat_CompactStyle(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		CompactDecimalFormat_CompactStyle(QAndroidJniObject obj);
+		
 		// Constructors
-		CompactDecimalFormat_CompactStyle() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

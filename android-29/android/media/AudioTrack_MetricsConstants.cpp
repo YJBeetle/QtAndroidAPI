@@ -44,7 +44,9 @@ namespace android::media
 		).object<jstring>();
 	}
 	
-	AudioTrack_MetricsConstants::AudioTrack_MetricsConstants(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AudioTrack_MetricsConstants::AudioTrack_MetricsConstants(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

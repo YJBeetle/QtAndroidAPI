@@ -5,7 +5,9 @@ namespace android::media::effect
 {
 	// Fields
 	
-	EffectContext::EffectContext(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	EffectContext::EffectContext(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -19,14 +21,14 @@ namespace android::media::effect
 	}
 	QAndroidJniObject EffectContext::getFactory()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFactory",
 			"()Landroid/media/effect/EffectFactory;"
 		);
 	}
 	void EffectContext::release()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"release",
 			"()V"
 		);

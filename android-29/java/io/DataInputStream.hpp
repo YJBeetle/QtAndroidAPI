@@ -16,10 +16,12 @@ namespace java::io
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DataInputStream(const char *className, const char *sig, Ts...agv) : java::io::FilterInputStream(className, sig, std::forward<Ts>(agv)...) {}
 		DataInputStream(QAndroidJniObject obj);
+		
 		// Constructors
 		DataInputStream(java::io::InputStream arg0);
-		DataInputStream() = default;
 		
 		// Methods
 		static jstring readUTF(__JniBaseClass arg0);

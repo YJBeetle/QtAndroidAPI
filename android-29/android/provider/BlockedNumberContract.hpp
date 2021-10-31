@@ -20,9 +20,11 @@ namespace android::provider
 		static jstring AUTHORITY();
 		static QAndroidJniObject AUTHORITY_URI();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BlockedNumberContract(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		BlockedNumberContract(QAndroidJniObject obj);
+		
 		// Constructors
-		BlockedNumberContract() = default;
 		
 		// Methods
 		static jboolean canCurrentUserBlockNumbers(android::content::Context arg0);

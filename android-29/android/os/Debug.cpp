@@ -35,7 +35,9 @@ namespace android::os
 		);
 	}
 	
-	Debug::Debug(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Debug::Debug(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -47,7 +49,7 @@ namespace android::os
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/ClassLoader;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void Debug::changeDebugPort(jint arg0)
@@ -75,7 +77,7 @@ namespace android::os
 			"dumpService",
 			"(Ljava/lang/String;Ljava/io/FileDescriptor;[Ljava/lang/String;)Z",
 			arg0,
-			arg1.__jniObject().object(),
+			arg1.object(),
 			arg2
 		);
 	}
@@ -229,7 +231,7 @@ namespace android::os
 			"android.os.Debug",
 			"getMemoryInfo",
 			"(Landroid/os/Debug$MemoryInfo;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jlong Debug::getNativeHeapAllocatedSize()

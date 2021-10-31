@@ -20,10 +20,12 @@ namespace java::security
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DigestOutputStream(const char *className, const char *sig, Ts...agv) : java::io::FilterOutputStream(className, sig, std::forward<Ts>(agv)...) {}
 		DigestOutputStream(QAndroidJniObject obj);
+		
 		// Constructors
 		DigestOutputStream(java::io::OutputStream arg0, java::security::MessageDigest arg1);
-		DigestOutputStream() = default;
 		
 		// Methods
 		QAndroidJniObject getMessageDigest();

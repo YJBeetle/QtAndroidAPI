@@ -90,7 +90,10 @@ namespace android::telecom
 		static jint STATE_PULLING_CALL();
 		static jint STATE_RINGING();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Connection(const char *className, const char *sig, Ts...agv) : android::telecom::Conferenceable(className, sig, std::forward<Ts>(agv)...) {}
 		Connection(QAndroidJniObject obj);
+		
 		// Constructors
 		Connection();
 		

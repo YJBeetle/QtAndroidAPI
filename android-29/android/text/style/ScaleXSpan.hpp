@@ -20,11 +20,13 @@ namespace android::text::style
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ScaleXSpan(const char *className, const char *sig, Ts...agv) : android::text::style::MetricAffectingSpan(className, sig, std::forward<Ts>(agv)...) {}
 		ScaleXSpan(QAndroidJniObject obj);
+		
 		// Constructors
 		ScaleXSpan(android::os::Parcel arg0);
 		ScaleXSpan(jfloat arg0);
-		ScaleXSpan() = default;
 		
 		// Methods
 		jint describeContents();

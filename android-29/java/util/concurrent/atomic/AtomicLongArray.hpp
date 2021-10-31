@@ -10,11 +10,13 @@ namespace java::util::concurrent::atomic
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AtomicLongArray(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AtomicLongArray(QAndroidJniObject obj);
+		
 		// Constructors
 		AtomicLongArray(jlongArray arg0);
 		AtomicLongArray(jint arg0);
-		AtomicLongArray() = default;
 		
 		// Methods
 		jlong accumulateAndGet(jint arg0, jlong arg1, __JniBaseClass arg2);

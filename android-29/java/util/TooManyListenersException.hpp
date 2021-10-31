@@ -11,7 +11,10 @@ namespace java::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TooManyListenersException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
 		TooManyListenersException(QAndroidJniObject obj);
+		
 		// Constructors
 		TooManyListenersException();
 		TooManyListenersException(jstring arg0);

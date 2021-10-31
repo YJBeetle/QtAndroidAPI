@@ -14,7 +14,10 @@ namespace android::renderscript
 		jint y();
 		jint z();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Int4(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Int4(QAndroidJniObject obj);
+		
 		// Constructors
 		Int4();
 		Int4(jint arg0, jint arg1, jint arg2, jint arg3);

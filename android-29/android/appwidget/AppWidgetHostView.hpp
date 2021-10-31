@@ -53,11 +53,13 @@ namespace android::appwidget
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AppWidgetHostView(const char *className, const char *sig, Ts...agv) : android::widget::FrameLayout(className, sig, std::forward<Ts>(agv)...) {}
 		AppWidgetHostView(QAndroidJniObject obj);
+		
 		// Constructors
 		AppWidgetHostView(android::content::Context arg0);
 		AppWidgetHostView(android::content::Context arg0, jint arg1, jint arg2);
-		AppWidgetHostView() = default;
 		
 		// Methods
 		static QAndroidJniObject getDefaultPaddingForWidget(android::content::Context arg0, android::content::ComponentName arg1, android::graphics::Rect arg2);

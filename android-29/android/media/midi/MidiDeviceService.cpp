@@ -15,64 +15,64 @@ namespace android::media::midi
 		).object<jstring>();
 	}
 	
-	MidiDeviceService::MidiDeviceService(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MidiDeviceService::MidiDeviceService(QAndroidJniObject obj) : android::app::Service(obj) {}
+	
 	// Constructors
 	MidiDeviceService::MidiDeviceService()
-	{
-		__thiz = QAndroidJniObject(
+		: android::app::Service(
 			"android.media.midi.MidiDeviceService",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject MidiDeviceService::getDeviceInfo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDeviceInfo",
 			"()Landroid/media/midi/MidiDeviceInfo;"
 		);
 	}
 	jarray MidiDeviceService::getOutputPortReceivers()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getOutputPortReceivers",
 			"()[Landroid/media/midi/MidiReceiver;"
 		).object<jarray>();
 	}
 	QAndroidJniObject MidiDeviceService::onBind(android::content::Intent arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onBind",
 			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MidiDeviceService::onClose()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onClose",
 			"()V"
 		);
 	}
 	void MidiDeviceService::onCreate()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onCreate",
 			"()V"
 		);
 	}
 	void MidiDeviceService::onDeviceStatusChanged(android::media::midi::MidiDeviceStatus arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onDeviceStatusChanged",
 			"(Landroid/media/midi/MidiDeviceStatus;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jarray MidiDeviceService::onGetInputPortReceivers()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onGetInputPortReceivers",
 			"()[Landroid/media/midi/MidiReceiver;"
 		).object<jarray>();

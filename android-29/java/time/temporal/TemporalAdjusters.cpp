@@ -5,7 +5,9 @@ namespace java::time::temporal
 {
 	// Fields
 	
-	TemporalAdjusters::TemporalAdjusters(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TemporalAdjusters::TemporalAdjusters(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -16,7 +18,7 @@ namespace java::time::temporal
 			"dayOfWeekInMonth",
 			"(ILjava/time/DayOfWeek;)Ljava/time/temporal/TemporalAdjuster;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject TemporalAdjusters::firstDayOfMonth()
@@ -57,7 +59,7 @@ namespace java::time::temporal
 			"java.time.temporal.TemporalAdjusters",
 			"firstInMonth",
 			"(Ljava/time/DayOfWeek;)Ljava/time/temporal/TemporalAdjuster;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject TemporalAdjusters::lastDayOfMonth()
@@ -82,7 +84,7 @@ namespace java::time::temporal
 			"java.time.temporal.TemporalAdjusters",
 			"lastInMonth",
 			"(Ljava/time/DayOfWeek;)Ljava/time/temporal/TemporalAdjuster;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject TemporalAdjusters::next(java::time::DayOfWeek arg0)
@@ -91,7 +93,7 @@ namespace java::time::temporal
 			"java.time.temporal.TemporalAdjusters",
 			"next",
 			"(Ljava/time/DayOfWeek;)Ljava/time/temporal/TemporalAdjuster;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject TemporalAdjusters::nextOrSame(java::time::DayOfWeek arg0)
@@ -100,7 +102,7 @@ namespace java::time::temporal
 			"java.time.temporal.TemporalAdjusters",
 			"nextOrSame",
 			"(Ljava/time/DayOfWeek;)Ljava/time/temporal/TemporalAdjuster;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject TemporalAdjusters::ofDateAdjuster(__JniBaseClass arg0)
@@ -109,7 +111,7 @@ namespace java::time::temporal
 			"java.time.temporal.TemporalAdjusters",
 			"ofDateAdjuster",
 			"(Ljava/util/function/UnaryOperator;)Ljava/time/temporal/TemporalAdjuster;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject TemporalAdjusters::previous(java::time::DayOfWeek arg0)
@@ -118,7 +120,7 @@ namespace java::time::temporal
 			"java.time.temporal.TemporalAdjusters",
 			"previous",
 			"(Ljava/time/DayOfWeek;)Ljava/time/temporal/TemporalAdjuster;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject TemporalAdjusters::previousOrSame(java::time::DayOfWeek arg0)
@@ -127,7 +129,7 @@ namespace java::time::temporal
 			"java.time.temporal.TemporalAdjusters",
 			"previousOrSame",
 			"(Ljava/time/DayOfWeek;)Ljava/time/temporal/TemporalAdjuster;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace java::time::temporal

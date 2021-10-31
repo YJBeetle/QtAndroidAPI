@@ -30,7 +30,9 @@ namespace android::renderscript
 		);
 	}
 	
-	RenderScript::RenderScript(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	RenderScript::RenderScript(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -40,7 +42,7 @@ namespace android::renderscript
 			"android.renderscript.RenderScript",
 			"create",
 			"(Landroid/content/Context;)Landroid/renderscript/RenderScript;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject RenderScript::create(android::content::Context arg0, android::renderscript::RenderScript_ContextType arg1)
@@ -49,8 +51,8 @@ namespace android::renderscript
 			"android.renderscript.RenderScript",
 			"create",
 			"(Landroid/content/Context;Landroid/renderscript/RenderScript$ContextType;)Landroid/renderscript/RenderScript;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject RenderScript::create(android::content::Context arg0, android::renderscript::RenderScript_ContextType arg1, jint arg2)
@@ -59,8 +61,8 @@ namespace android::renderscript
 			"android.renderscript.RenderScript",
 			"create",
 			"(Landroid/content/Context;Landroid/renderscript/RenderScript$ContextType;I)Landroid/renderscript/RenderScript;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
@@ -70,8 +72,8 @@ namespace android::renderscript
 			"android.renderscript.RenderScript",
 			"createMultiContext",
 			"(Landroid/content/Context;Landroid/renderscript/RenderScript$ContextType;II)Landroid/renderscript/RenderScript;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3
 		);
@@ -94,49 +96,49 @@ namespace android::renderscript
 	}
 	void RenderScript::contextDump()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"contextDump",
 			"()V"
 		);
 	}
 	void RenderScript::destroy()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"destroy",
 			"()V"
 		);
 	}
 	void RenderScript::finish()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"finish",
 			"()V"
 		);
 	}
 	QAndroidJniObject RenderScript::getApplicationContext()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getApplicationContext",
 			"()Landroid/content/Context;"
 		);
 	}
 	QAndroidJniObject RenderScript::getErrorHandler()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getErrorHandler",
 			"()Landroid/renderscript/RenderScript$RSErrorHandler;"
 		);
 	}
 	QAndroidJniObject RenderScript::getMessageHandler()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMessageHandler",
 			"()Landroid/renderscript/RenderScript$RSMessageHandler;"
 		);
 	}
 	void RenderScript::sendMessage(jint arg0, jintArray arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"sendMessage",
 			"(I[I)V",
 			arg0,
@@ -145,26 +147,26 @@ namespace android::renderscript
 	}
 	void RenderScript::setErrorHandler(android::renderscript::RenderScript_RSErrorHandler arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setErrorHandler",
 			"(Landroid/renderscript/RenderScript$RSErrorHandler;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void RenderScript::setMessageHandler(android::renderscript::RenderScript_RSMessageHandler arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMessageHandler",
 			"(Landroid/renderscript/RenderScript$RSMessageHandler;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void RenderScript::setPriority(android::renderscript::RenderScript_Priority arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPriority",
 			"(Landroid/renderscript/RenderScript$Priority;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::renderscript

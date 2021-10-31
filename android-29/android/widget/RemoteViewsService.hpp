@@ -17,7 +17,10 @@ namespace android::widget
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit RemoteViewsService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
 		RemoteViewsService(QAndroidJniObject obj);
+		
 		// Constructors
 		RemoteViewsService();
 		

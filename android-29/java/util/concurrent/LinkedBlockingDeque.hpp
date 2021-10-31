@@ -28,7 +28,10 @@ namespace java::util::concurrent
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit LinkedBlockingDeque(const char *className, const char *sig, Ts...agv) : java::util::AbstractQueue(className, sig, std::forward<Ts>(agv)...) {}
 		LinkedBlockingDeque(QAndroidJniObject obj);
+		
 		// Constructors
 		LinkedBlockingDeque();
 		LinkedBlockingDeque(jint arg0);

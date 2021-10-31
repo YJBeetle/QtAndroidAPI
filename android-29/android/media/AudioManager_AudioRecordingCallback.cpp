@@ -4,23 +4,23 @@ namespace android::media
 {
 	// Fields
 	
-	AudioManager_AudioRecordingCallback::AudioManager_AudioRecordingCallback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AudioManager_AudioRecordingCallback::AudioManager_AudioRecordingCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	AudioManager_AudioRecordingCallback::AudioManager_AudioRecordingCallback()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.AudioManager$AudioRecordingCallback",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void AudioManager_AudioRecordingCallback::onRecordingConfigChanged(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onRecordingConfigChanged",
 			"(Ljava/util/List;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::media

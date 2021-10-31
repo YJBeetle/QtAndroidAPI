@@ -8,7 +8,9 @@ namespace android::renderscript
 {
 	// Fields
 	
-	AllocationAdapter::AllocationAdapter(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AllocationAdapter::AllocationAdapter(QAndroidJniObject obj) : android::renderscript::Allocation(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -18,8 +20,8 @@ namespace android::renderscript
 			"android.renderscript.AllocationAdapter",
 			"create1D",
 			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Allocation;)Landroid/renderscript/AllocationAdapter;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject AllocationAdapter::create2D(android::renderscript::RenderScript arg0, android::renderscript::Allocation arg1)
@@ -28,8 +30,8 @@ namespace android::renderscript
 			"android.renderscript.AllocationAdapter",
 			"create2D",
 			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Allocation;)Landroid/renderscript/AllocationAdapter;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject AllocationAdapter::createTyped(android::renderscript::RenderScript arg0, android::renderscript::Allocation arg1, android::renderscript::Type arg2)
@@ -38,14 +40,14 @@ namespace android::renderscript
 			"android.renderscript.AllocationAdapter",
 			"createTyped",
 			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Allocation;Landroid/renderscript/Type;)Landroid/renderscript/AllocationAdapter;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	void AllocationAdapter::resize(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"resize",
 			"(I)V",
 			arg0
@@ -53,15 +55,15 @@ namespace android::renderscript
 	}
 	void AllocationAdapter::setFace(android::renderscript::Type_CubemapFace arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFace",
 			"(Landroid/renderscript/Type$CubemapFace;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AllocationAdapter::setLOD(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLOD",
 			"(I)V",
 			arg0
@@ -69,7 +71,7 @@ namespace android::renderscript
 	}
 	void AllocationAdapter::setX(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setX",
 			"(I)V",
 			arg0
@@ -77,7 +79,7 @@ namespace android::renderscript
 	}
 	void AllocationAdapter::setY(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setY",
 			"(I)V",
 			arg0
@@ -85,7 +87,7 @@ namespace android::renderscript
 	}
 	void AllocationAdapter::setZ(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setZ",
 			"(I)V",
 			arg0

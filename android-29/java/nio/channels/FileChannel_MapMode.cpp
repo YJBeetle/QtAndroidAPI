@@ -28,13 +28,15 @@ namespace java::nio::channels
 		);
 	}
 	
-	FileChannel_MapMode::FileChannel_MapMode(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FileChannel_MapMode::FileChannel_MapMode(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jstring FileChannel_MapMode::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

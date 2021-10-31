@@ -15,20 +15,22 @@ namespace android::net
 		);
 	}
 	
-	LinkAddress::LinkAddress(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	LinkAddress::LinkAddress(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint LinkAddress::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean LinkAddress::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -36,52 +38,52 @@ namespace android::net
 	}
 	QAndroidJniObject LinkAddress::getAddress()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAddress",
 			"()Ljava/net/InetAddress;"
 		);
 	}
 	jint LinkAddress::getFlags()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getFlags",
 			"()I"
 		);
 	}
 	jint LinkAddress::getPrefixLength()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPrefixLength",
 			"()I"
 		);
 	}
 	jint LinkAddress::getScope()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getScope",
 			"()I"
 		);
 	}
 	jint LinkAddress::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring LinkAddress::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void LinkAddress::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

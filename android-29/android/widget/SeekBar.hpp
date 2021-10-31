@@ -17,13 +17,15 @@ namespace android::widget
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SeekBar(const char *className, const char *sig, Ts...agv) : android::widget::AbsSeekBar(className, sig, std::forward<Ts>(agv)...) {}
 		SeekBar(QAndroidJniObject obj);
+		
 		// Constructors
 		SeekBar(android::content::Context arg0);
 		SeekBar(android::content::Context arg0, __JniBaseClass arg1);
 		SeekBar(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		SeekBar(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
-		SeekBar() = default;
 		
 		// Methods
 		jstring getAccessibilityClassName();

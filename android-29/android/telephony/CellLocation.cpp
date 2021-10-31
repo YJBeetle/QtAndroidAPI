@@ -4,15 +4,15 @@ namespace android::telephony
 {
 	// Fields
 	
-	CellLocation::CellLocation(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CellLocation::CellLocation(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	CellLocation::CellLocation()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.telephony.CellLocation",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject CellLocation::getEmpty()

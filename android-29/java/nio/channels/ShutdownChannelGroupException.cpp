@@ -4,15 +4,15 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	ShutdownChannelGroupException::ShutdownChannelGroupException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ShutdownChannelGroupException::ShutdownChannelGroupException(QAndroidJniObject obj) : java::lang::IllegalStateException(obj) {}
+	
 	// Constructors
 	ShutdownChannelGroupException::ShutdownChannelGroupException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::IllegalStateException(
 			"java.nio.channels.ShutdownChannelGroupException",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::nio::channels

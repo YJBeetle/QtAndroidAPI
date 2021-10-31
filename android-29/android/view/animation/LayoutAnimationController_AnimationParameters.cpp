@@ -5,26 +5,26 @@ namespace android::view::animation
 	// Fields
 	jint LayoutAnimationController_AnimationParameters::count()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"count"
 		);
 	}
 	jint LayoutAnimationController_AnimationParameters::index()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"index"
 		);
 	}
 	
-	LayoutAnimationController_AnimationParameters::LayoutAnimationController_AnimationParameters(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	LayoutAnimationController_AnimationParameters::LayoutAnimationController_AnimationParameters(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	LayoutAnimationController_AnimationParameters::LayoutAnimationController_AnimationParameters()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.animation.LayoutAnimationController$AnimationParameters",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::view::animation

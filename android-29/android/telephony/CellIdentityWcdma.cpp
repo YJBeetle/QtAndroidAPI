@@ -13,13 +13,15 @@ namespace android::telephony
 		);
 	}
 	
-	CellIdentityWcdma::CellIdentityWcdma(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CellIdentityWcdma::CellIdentityWcdma(QAndroidJniObject obj) : android::telephony::CellIdentity(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jboolean CellIdentityWcdma::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -27,87 +29,87 @@ namespace android::telephony
 	}
 	jint CellIdentityWcdma::getCid()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCid",
 			"()I"
 		);
 	}
 	jint CellIdentityWcdma::getLac()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLac",
 			"()I"
 		);
 	}
 	jint CellIdentityWcdma::getMcc()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMcc",
 			"()I"
 		);
 	}
 	jstring CellIdentityWcdma::getMccString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMccString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint CellIdentityWcdma::getMnc()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMnc",
 			"()I"
 		);
 	}
 	jstring CellIdentityWcdma::getMncString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMncString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring CellIdentityWcdma::getMobileNetworkOperator()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMobileNetworkOperator",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint CellIdentityWcdma::getPsc()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPsc",
 			"()I"
 		);
 	}
 	jint CellIdentityWcdma::getUarfcn()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getUarfcn",
 			"()I"
 		);
 	}
 	jint CellIdentityWcdma::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring CellIdentityWcdma::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void CellIdentityWcdma::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

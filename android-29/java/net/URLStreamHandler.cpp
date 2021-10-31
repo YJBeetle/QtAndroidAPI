@@ -8,15 +8,15 @@ namespace java::net
 {
 	// Fields
 	
-	URLStreamHandler::URLStreamHandler(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	URLStreamHandler::URLStreamHandler(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	URLStreamHandler::URLStreamHandler()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.net.URLStreamHandler",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::net

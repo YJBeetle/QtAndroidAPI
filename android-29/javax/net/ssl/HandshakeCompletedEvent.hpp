@@ -15,10 +15,12 @@ namespace javax::net::ssl
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit HandshakeCompletedEvent(const char *className, const char *sig, Ts...agv) : java::util::EventObject(className, sig, std::forward<Ts>(agv)...) {}
 		HandshakeCompletedEvent(QAndroidJniObject obj);
+		
 		// Constructors
 		HandshakeCompletedEvent(javax::net::ssl::SSLSocket arg0, __JniBaseClass arg1);
-		HandshakeCompletedEvent() = default;
 		
 		// Methods
 		jstring getCipherSuite();

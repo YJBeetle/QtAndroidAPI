@@ -12,7 +12,9 @@ namespace java::text
 		);
 	}
 	
-	BreakIterator::BreakIterator(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BreakIterator::BreakIterator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -38,7 +40,7 @@ namespace java::text
 			"java.text.BreakIterator",
 			"getCharacterInstance",
 			"(Ljava/util/Locale;)Ljava/text/BreakIterator;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject BreakIterator::getLineInstance()
@@ -55,7 +57,7 @@ namespace java::text
 			"java.text.BreakIterator",
 			"getLineInstance",
 			"(Ljava/util/Locale;)Ljava/text/BreakIterator;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject BreakIterator::getSentenceInstance()
@@ -72,7 +74,7 @@ namespace java::text
 			"java.text.BreakIterator",
 			"getSentenceInstance",
 			"(Ljava/util/Locale;)Ljava/text/BreakIterator;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject BreakIterator::getWordInstance()
@@ -89,33 +91,33 @@ namespace java::text
 			"java.text.BreakIterator",
 			"getWordInstance",
 			"(Ljava/util/Locale;)Ljava/text/BreakIterator;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jobject BreakIterator::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jint BreakIterator::current()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"current",
 			"()I"
 		);
 	}
 	jint BreakIterator::first()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"first",
 			"()I"
 		);
 	}
 	jint BreakIterator::following(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"following",
 			"(I)I",
 			arg0
@@ -123,14 +125,14 @@ namespace java::text
 	}
 	QAndroidJniObject BreakIterator::getText()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getText",
 			"()Ljava/text/CharacterIterator;"
 		);
 	}
 	jboolean BreakIterator::isBoundary(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isBoundary",
 			"(I)Z",
 			arg0
@@ -138,21 +140,21 @@ namespace java::text
 	}
 	jint BreakIterator::last()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"last",
 			"()I"
 		);
 	}
 	jint BreakIterator::next()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"next",
 			"()I"
 		);
 	}
 	jint BreakIterator::next(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"next",
 			"(I)I",
 			arg0
@@ -160,7 +162,7 @@ namespace java::text
 	}
 	jint BreakIterator::preceding(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"preceding",
 			"(I)I",
 			arg0
@@ -168,14 +170,14 @@ namespace java::text
 	}
 	jint BreakIterator::previous()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"previous",
 			"()I"
 		);
 	}
 	void BreakIterator::setText(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setText",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -183,10 +185,10 @@ namespace java::text
 	}
 	void BreakIterator::setText(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setText",
 			"(Ljava/text/CharacterIterator;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace java::text

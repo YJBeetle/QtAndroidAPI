@@ -29,9 +29,11 @@ namespace java::nio::channels
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ServerSocketChannel(const char *className, const char *sig, Ts...agv) : java::nio::channels::spi::AbstractSelectableChannel(className, sig, std::forward<Ts>(agv)...) {}
 		ServerSocketChannel(QAndroidJniObject obj);
+		
 		// Constructors
-		ServerSocketChannel() = default;
 		
 		// Methods
 		static QAndroidJniObject open();

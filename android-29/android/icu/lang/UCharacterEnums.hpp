@@ -10,9 +10,11 @@ namespace android::icu::lang
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit UCharacterEnums(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		UCharacterEnums(QAndroidJniObject obj);
+		
 		// Constructors
-		UCharacterEnums() = default;
 		
 		// Methods
 	};

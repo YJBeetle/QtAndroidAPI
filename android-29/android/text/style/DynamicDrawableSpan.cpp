@@ -29,23 +29,23 @@ namespace android::text::style
 		);
 	}
 	
-	DynamicDrawableSpan::DynamicDrawableSpan(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DynamicDrawableSpan::DynamicDrawableSpan(QAndroidJniObject obj) : android::text::style::ReplacementSpan(obj) {}
+	
 	// Constructors
 	DynamicDrawableSpan::DynamicDrawableSpan()
-	{
-		__thiz = QAndroidJniObject(
+		: android::text::style::ReplacementSpan(
 			"android.text.style.DynamicDrawableSpan",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void DynamicDrawableSpan::draw(android::graphics::Canvas arg0, jstring arg1, jint arg2, jint arg3, jfloat arg4, jint arg5, jint arg6, jint arg7, android::graphics::Paint arg8)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"draw",
 			"(Landroid/graphics/Canvas;Ljava/lang/CharSequence;IIFIIILandroid/graphics/Paint;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
@@ -53,31 +53,31 @@ namespace android::text::style
 			arg5,
 			arg6,
 			arg7,
-			arg8.__jniObject().object()
+			arg8.object()
 		);
 	}
 	QAndroidJniObject DynamicDrawableSpan::getDrawable()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
 	jint DynamicDrawableSpan::getSize(android::graphics::Paint arg0, jstring arg1, jint arg2, jint arg3, android::graphics::Paint_FontMetricsInt arg4)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSize",
 			"(Landroid/graphics/Paint;Ljava/lang/CharSequence;IILandroid/graphics/Paint$FontMetricsInt;)I",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object()
+			arg4.object()
 		);
 	}
 	jint DynamicDrawableSpan::getVerticalAlignment()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getVerticalAlignment",
 			"()I"
 		);

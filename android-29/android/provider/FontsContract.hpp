@@ -38,9 +38,11 @@ namespace android::provider
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit FontsContract(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		FontsContract(QAndroidJniObject obj);
+		
 		// Constructors
-		FontsContract() = default;
 		
 		// Methods
 		static QAndroidJniObject buildTypeface(android::content::Context arg0, android::os::CancellationSignal arg1, jarray arg2);

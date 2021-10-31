@@ -4422,7 +4422,9 @@ namespace android::icu::lang
 		);
 	}
 	
-	UCharacter_UnicodeBlock::UCharacter_UnicodeBlock(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UCharacter_UnicodeBlock::UCharacter_UnicodeBlock(QAndroidJniObject obj) : java::lang::Character_Subset(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -4455,7 +4457,7 @@ namespace android::icu::lang
 	}
 	jint UCharacter_UnicodeBlock::getID()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getID",
 			"()I"
 		);

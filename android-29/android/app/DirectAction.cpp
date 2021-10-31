@@ -15,20 +15,22 @@ namespace android::app
 		);
 	}
 	
-	DirectAction::DirectAction(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DirectAction::DirectAction(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint DirectAction::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean DirectAction::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -36,38 +38,38 @@ namespace android::app
 	}
 	QAndroidJniObject DirectAction::getExtras()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
 	jstring DirectAction::getId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject DirectAction::getLocusId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLocusId",
 			"()Landroid/content/LocusId;"
 		);
 	}
 	jint DirectAction::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	void DirectAction::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

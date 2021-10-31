@@ -5,43 +5,43 @@ namespace android::net::http
 {
 	// Fields
 	
-	SslCertificate_DName::SslCertificate_DName(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SslCertificate_DName::SslCertificate_DName(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	SslCertificate_DName::SslCertificate_DName(android::net::http::SslCertificate arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.net.http.SslCertificate$DName",
 			"(Landroid/net/http/SslCertificate;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring SslCertificate_DName::getCName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring SslCertificate_DName::getDName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring SslCertificate_DName::getOName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getOName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring SslCertificate_DName::getUName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getUName",
 			"()Ljava/lang/String;"
 		).object<jstring>();

@@ -354,15 +354,15 @@ namespace android::bluetooth
 		);
 	}
 	
-	BluetoothClass_Device::BluetoothClass_Device(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BluetoothClass_Device::BluetoothClass_Device(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	BluetoothClass_Device::BluetoothClass_Device()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.bluetooth.BluetoothClass$Device",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::bluetooth

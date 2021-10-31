@@ -36,9 +36,11 @@ namespace android::content::pm
 		static jint STAGED_SESSION_UNKNOWN();
 		static jint STAGED_SESSION_VERIFICATION_FAILED();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PackageInstaller_SessionInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PackageInstaller_SessionInfo(QAndroidJniObject obj);
+		
 		// Constructors
-		PackageInstaller_SessionInfo() = default;
 		
 		// Methods
 		QAndroidJniObject createDetailsIntent();

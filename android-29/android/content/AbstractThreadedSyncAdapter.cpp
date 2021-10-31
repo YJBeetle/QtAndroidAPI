@@ -17,84 +17,82 @@ namespace android::content
 		);
 	}
 	
-	AbstractThreadedSyncAdapter::AbstractThreadedSyncAdapter(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AbstractThreadedSyncAdapter::AbstractThreadedSyncAdapter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	AbstractThreadedSyncAdapter::AbstractThreadedSyncAdapter(android::content::Context arg0, jboolean arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.content.AbstractThreadedSyncAdapter",
 			"(Landroid/content/Context;Z)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
-		);
-	}
+		) {}
 	AbstractThreadedSyncAdapter::AbstractThreadedSyncAdapter(android::content::Context arg0, jboolean arg1, jboolean arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.content.AbstractThreadedSyncAdapter",
 			"(Landroid/content/Context;ZZ)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject AbstractThreadedSyncAdapter::getContext()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getContext",
 			"()Landroid/content/Context;"
 		);
 	}
 	QAndroidJniObject AbstractThreadedSyncAdapter::getSyncAdapterBinder()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSyncAdapterBinder",
 			"()Landroid/os/IBinder;"
 		);
 	}
 	void AbstractThreadedSyncAdapter::onPerformSync(android::accounts::Account arg0, android::os::Bundle arg1, jstring arg2, android::content::ContentProviderClient arg3, android::content::SyncResult arg4)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onPerformSync",
 			"(Landroid/accounts/Account;Landroid/os/Bundle;Ljava/lang/String;Landroid/content/ContentProviderClient;Landroid/content/SyncResult;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object()
+			arg3.object(),
+			arg4.object()
 		);
 	}
 	void AbstractThreadedSyncAdapter::onSecurityException(android::accounts::Account arg0, android::os::Bundle arg1, jstring arg2, android::content::SyncResult arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onSecurityException",
 			"(Landroid/accounts/Account;Landroid/os/Bundle;Ljava/lang/String;Landroid/content/SyncResult;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	void AbstractThreadedSyncAdapter::onSyncCanceled()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onSyncCanceled",
 			"()V"
 		);
 	}
 	void AbstractThreadedSyncAdapter::onSyncCanceled(java::lang::Thread arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onSyncCanceled",
 			"(Ljava/lang/Thread;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean AbstractThreadedSyncAdapter::onUnsyncableAccount()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onUnsyncableAccount",
 			"()Z"
 		);

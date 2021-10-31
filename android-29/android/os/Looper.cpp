@@ -6,7 +6,9 @@ namespace android::os
 {
 	// Fields
 	
-	Looper::Looper(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Looper::Looper(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -60,59 +62,59 @@ namespace android::os
 	}
 	void Looper::dump(__JniBaseClass arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"dump",
 			"(Landroid/util/Printer;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	QAndroidJniObject Looper::getQueue()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getQueue",
 			"()Landroid/os/MessageQueue;"
 		);
 	}
 	QAndroidJniObject Looper::getThread()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getThread",
 			"()Ljava/lang/Thread;"
 		);
 	}
 	jboolean Looper::isCurrentThread()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isCurrentThread",
 			"()Z"
 		);
 	}
 	void Looper::quit()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"quit",
 			"()V"
 		);
 	}
 	void Looper::quitSafely()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"quitSafely",
 			"()V"
 		);
 	}
 	void Looper::setMessageLogging(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMessageLogging",
 			"(Landroid/util/Printer;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring Looper::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

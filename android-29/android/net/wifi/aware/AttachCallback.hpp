@@ -14,7 +14,10 @@ namespace android::net::wifi::aware
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AttachCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AttachCallback(QAndroidJniObject obj);
+		
 		// Constructors
 		AttachCallback();
 		

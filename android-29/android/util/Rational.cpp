@@ -36,17 +36,17 @@ namespace android::util
 		);
 	}
 	
-	Rational::Rational(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Rational::Rational(QAndroidJniObject obj) : java::lang::Number(obj) {}
+	
 	// Constructors
 	Rational::Rational(jint arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Number(
 			"android.util.Rational",
 			"(II)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject Rational::parseRational(jstring arg0)
@@ -60,15 +60,15 @@ namespace android::util
 	}
 	jint Rational::compareTo(android::util::Rational arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Landroid/util/Rational;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint Rational::compareTo(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -76,14 +76,14 @@ namespace android::util
 	}
 	jdouble Rational::doubleValue()
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"doubleValue",
 			"()D"
 		);
 	}
 	jboolean Rational::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -91,84 +91,84 @@ namespace android::util
 	}
 	jfloat Rational::floatValue()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"floatValue",
 			"()F"
 		);
 	}
 	jint Rational::getDenominator()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDenominator",
 			"()I"
 		);
 	}
 	jint Rational::getNumerator()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getNumerator",
 			"()I"
 		);
 	}
 	jint Rational::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jint Rational::intValue()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"intValue",
 			"()I"
 		);
 	}
 	jboolean Rational::isFinite()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isFinite",
 			"()Z"
 		);
 	}
 	jboolean Rational::isInfinite()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isInfinite",
 			"()Z"
 		);
 	}
 	jboolean Rational::isNaN()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isNaN",
 			"()Z"
 		);
 	}
 	jboolean Rational::isZero()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isZero",
 			"()Z"
 		);
 	}
 	jlong Rational::longValue()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"longValue",
 			"()J"
 		);
 	}
 	jshort Rational::shortValue()
 	{
-		return __thiz.callMethod<jshort>(
+		return callMethod<jshort>(
 			"shortValue",
 			"()S"
 		);
 	}
 	jstring Rational::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

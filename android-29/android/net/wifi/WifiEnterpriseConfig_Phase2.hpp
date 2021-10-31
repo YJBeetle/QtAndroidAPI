@@ -18,9 +18,11 @@ namespace android::net::wifi
 		static jint PAP();
 		static jint SIM();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit WifiEnterpriseConfig_Phase2(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		WifiEnterpriseConfig_Phase2(QAndroidJniObject obj);
+		
 		// Constructors
-		WifiEnterpriseConfig_Phase2() = default;
 		
 		// Methods
 	};

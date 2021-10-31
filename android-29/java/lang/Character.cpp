@@ -496,16 +496,16 @@ namespace java::lang
 		);
 	}
 	
-	Character::Character(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Character::Character(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Character::Character(jchar arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.lang.Character",
 			"(C)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jint Character::charCount(jint arg0)
@@ -1283,22 +1283,22 @@ namespace java::lang
 	}
 	jchar Character::charValue()
 	{
-		return __thiz.callMethod<jchar>(
+		return callMethod<jchar>(
 			"charValue",
 			"()C"
 		);
 	}
 	jint Character::compareTo(java::lang::Character arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Character;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint Character::compareTo(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -1306,14 +1306,14 @@ namespace java::lang
 	}
 	QAndroidJniObject Character::describeConstable()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"describeConstable",
 			"()Ljava/util/Optional;"
 		);
 	}
 	jboolean Character::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -1321,14 +1321,14 @@ namespace java::lang
 	}
 	jint Character::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring Character::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

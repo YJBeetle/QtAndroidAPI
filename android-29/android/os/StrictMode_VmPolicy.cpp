@@ -13,13 +13,15 @@ namespace android::os
 		);
 	}
 	
-	StrictMode_VmPolicy::StrictMode_VmPolicy(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	StrictMode_VmPolicy::StrictMode_VmPolicy(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jstring StrictMode_VmPolicy::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

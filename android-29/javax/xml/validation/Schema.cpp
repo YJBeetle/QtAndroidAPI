@@ -6,20 +6,22 @@ namespace javax::xml::validation
 {
 	// Fields
 	
-	Schema::Schema(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Schema::Schema(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject Schema::newValidator()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newValidator",
 			"()Ljavax/xml/validation/Validator;"
 		);
 	}
 	QAndroidJniObject Schema::newValidatorHandler()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newValidatorHandler",
 			"()Ljavax/xml/validation/ValidatorHandler;"
 		);

@@ -8,34 +8,36 @@ namespace android::renderscript
 {
 	// Fields
 	
-	Script_FieldBase::Script_FieldBase(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Script_FieldBase::Script_FieldBase(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject Script_FieldBase::getAllocation()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAllocation",
 			"()Landroid/renderscript/Allocation;"
 		);
 	}
 	QAndroidJniObject Script_FieldBase::getElement()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getElement",
 			"()Landroid/renderscript/Element;"
 		);
 	}
 	QAndroidJniObject Script_FieldBase::getType()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getType",
 			"()Landroid/renderscript/Type;"
 		);
 	}
 	void Script_FieldBase::updateAllocation()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"updateAllocation",
 			"()V"
 		);

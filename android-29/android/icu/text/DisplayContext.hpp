@@ -26,9 +26,11 @@ namespace android::icu::text
 		static QAndroidJniObject STANDARD_NAMES();
 		static QAndroidJniObject SUBSTITUTE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DisplayContext(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		DisplayContext(QAndroidJniObject obj);
+		
 		// Constructors
-		DisplayContext() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

@@ -30,9 +30,11 @@ namespace java::time::chrono
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AbstractChronology(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AbstractChronology(QAndroidJniObject obj);
+		
 		// Constructors
-		AbstractChronology() = default;
 		
 		// Methods
 		jint compareTo(jobject arg0);

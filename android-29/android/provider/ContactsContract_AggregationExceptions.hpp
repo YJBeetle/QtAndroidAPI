@@ -23,9 +23,11 @@ namespace android::provider
 		static jint TYPE_KEEP_SEPARATE();
 		static jint TYPE_KEEP_TOGETHER();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ContactsContract_AggregationExceptions(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ContactsContract_AggregationExceptions(QAndroidJniObject obj);
+		
 		// Constructors
-		ContactsContract_AggregationExceptions() = default;
 		
 		// Methods
 	};

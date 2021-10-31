@@ -32,15 +32,15 @@ namespace android
 		);
 	}
 	
-	R_integer::R_integer(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	R_integer::R_integer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	R_integer::R_integer()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.R$integer",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android

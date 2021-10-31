@@ -56,7 +56,10 @@ namespace java::text
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DecimalFormat(const char *className, const char *sig, Ts...agv) : java::text::NumberFormat(className, sig, std::forward<Ts>(agv)...) {}
 		DecimalFormat(QAndroidJniObject obj);
+		
 		// Constructors
 		DecimalFormat();
 		DecimalFormat(jstring arg0);

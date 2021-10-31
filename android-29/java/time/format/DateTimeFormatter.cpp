@@ -135,7 +135,9 @@ namespace java::time::format
 		);
 	}
 	
-	DateTimeFormatter::DateTimeFormatter(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DateTimeFormatter::DateTimeFormatter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -145,7 +147,7 @@ namespace java::time::format
 			"java.time.format.DateTimeFormatter",
 			"ofLocalizedDate",
 			"(Ljava/time/format/FormatStyle;)Ljava/time/format/DateTimeFormatter;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject DateTimeFormatter::ofLocalizedDateTime(java::time::format::FormatStyle arg0)
@@ -154,7 +156,7 @@ namespace java::time::format
 			"java.time.format.DateTimeFormatter",
 			"ofLocalizedDateTime",
 			"(Ljava/time/format/FormatStyle;)Ljava/time/format/DateTimeFormatter;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject DateTimeFormatter::ofLocalizedDateTime(java::time::format::FormatStyle arg0, java::time::format::FormatStyle arg1)
@@ -163,8 +165,8 @@ namespace java::time::format
 			"java.time.format.DateTimeFormatter",
 			"ofLocalizedDateTime",
 			"(Ljava/time/format/FormatStyle;Ljava/time/format/FormatStyle;)Ljava/time/format/DateTimeFormatter;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject DateTimeFormatter::ofLocalizedTime(java::time::format::FormatStyle arg0)
@@ -173,7 +175,7 @@ namespace java::time::format
 			"java.time.format.DateTimeFormatter",
 			"ofLocalizedTime",
 			"(Ljava/time/format/FormatStyle;)Ljava/time/format/DateTimeFormatter;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject DateTimeFormatter::ofPattern(jstring arg0)
@@ -192,7 +194,7 @@ namespace java::time::format
 			"ofPattern",
 			"(Ljava/lang/String;Ljava/util/Locale;)Ljava/time/format/DateTimeFormatter;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject DateTimeFormatter::parsedExcessDays()
@@ -213,83 +215,83 @@ namespace java::time::format
 	}
 	jstring DateTimeFormatter::format(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"format",
 			"(Ljava/time/temporal/TemporalAccessor;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	void DateTimeFormatter::formatTo(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"formatTo",
 			"(Ljava/time/temporal/TemporalAccessor;Ljava/lang/Appendable;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject DateTimeFormatter::getChronology()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getChronology",
 			"()Ljava/time/chrono/Chronology;"
 		);
 	}
 	QAndroidJniObject DateTimeFormatter::getDecimalStyle()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDecimalStyle",
 			"()Ljava/time/format/DecimalStyle;"
 		);
 	}
 	QAndroidJniObject DateTimeFormatter::getLocale()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLocale",
 			"()Ljava/util/Locale;"
 		);
 	}
 	QAndroidJniObject DateTimeFormatter::getResolverFields()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getResolverFields",
 			"()Ljava/util/Set;"
 		);
 	}
 	QAndroidJniObject DateTimeFormatter::getResolverStyle()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getResolverStyle",
 			"()Ljava/time/format/ResolverStyle;"
 		);
 	}
 	QAndroidJniObject DateTimeFormatter::getZone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getZone",
 			"()Ljava/time/ZoneId;"
 		);
 	}
 	QAndroidJniObject DateTimeFormatter::localizedBy(java::util::Locale arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"localizedBy",
 			"(Ljava/util/Locale;)Ljava/time/format/DateTimeFormatter;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jobject DateTimeFormatter::parse(jstring arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"parse",
 			"(Ljava/lang/CharSequence;Ljava/time/temporal/TemporalQuery;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		).object<jobject>();
 	}
 	QAndroidJniObject DateTimeFormatter::parse(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"parse",
 			"(Ljava/lang/CharSequence;)Ljava/time/temporal/TemporalAccessor;",
 			arg0
@@ -297,16 +299,16 @@ namespace java::time::format
 	}
 	QAndroidJniObject DateTimeFormatter::parse(jstring arg0, java::text::ParsePosition arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"parse",
 			"(Ljava/lang/CharSequence;Ljava/text/ParsePosition;)Ljava/time/temporal/TemporalAccessor;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject DateTimeFormatter::parseBest(jstring arg0, jarray arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"parseBest",
 			"(Ljava/lang/CharSequence;[Ljava/time/temporal/TemporalQuery;)Ljava/time/temporal/TemporalAccessor;",
 			arg0,
@@ -315,62 +317,62 @@ namespace java::time::format
 	}
 	QAndroidJniObject DateTimeFormatter::parseUnresolved(jstring arg0, java::text::ParsePosition arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"parseUnresolved",
 			"(Ljava/lang/CharSequence;Ljava/text/ParsePosition;)Ljava/time/temporal/TemporalAccessor;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject DateTimeFormatter::toFormat()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toFormat",
 			"()Ljava/text/Format;"
 		);
 	}
 	QAndroidJniObject DateTimeFormatter::toFormat(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toFormat",
 			"(Ljava/time/temporal/TemporalQuery;)Ljava/text/Format;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring DateTimeFormatter::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject DateTimeFormatter::withChronology(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withChronology",
 			"(Ljava/time/chrono/Chronology;)Ljava/time/format/DateTimeFormatter;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject DateTimeFormatter::withDecimalStyle(java::time::format::DecimalStyle arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withDecimalStyle",
 			"(Ljava/time/format/DecimalStyle;)Ljava/time/format/DateTimeFormatter;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject DateTimeFormatter::withLocale(java::util::Locale arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withLocale",
 			"(Ljava/util/Locale;)Ljava/time/format/DateTimeFormatter;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject DateTimeFormatter::withResolverFields(jarray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withResolverFields",
 			"([Ljava/time/temporal/TemporalField;)Ljava/time/format/DateTimeFormatter;",
 			arg0
@@ -378,26 +380,26 @@ namespace java::time::format
 	}
 	QAndroidJniObject DateTimeFormatter::withResolverFields(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withResolverFields",
 			"(Ljava/util/Set;)Ljava/time/format/DateTimeFormatter;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject DateTimeFormatter::withResolverStyle(java::time::format::ResolverStyle arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withResolverStyle",
 			"(Ljava/time/format/ResolverStyle;)Ljava/time/format/DateTimeFormatter;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject DateTimeFormatter::withZone(java::time::ZoneId arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withZone",
 			"(Ljava/time/ZoneId;)Ljava/time/format/DateTimeFormatter;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace java::time::format

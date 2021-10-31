@@ -4,7 +4,9 @@ namespace android::util
 {
 	// Fields
 	
-	DebugUtils::DebugUtils(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DebugUtils::DebugUtils(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

@@ -4,17 +4,17 @@ namespace android::util
 {
 	// Fields
 	
-	Property::Property(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Property::Property(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Property::Property(jclass arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.util.Property",
 			"(Ljava/lang/Class;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject Property::of(jclass arg0, jclass arg1, jstring arg2)
@@ -30,7 +30,7 @@ namespace android::util
 	}
 	jobject Property::get(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0
@@ -38,28 +38,28 @@ namespace android::util
 	}
 	jstring Property::getName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jclass Property::getType()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/Class;"
 		).object<jclass>();
 	}
 	jboolean Property::isReadOnly()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isReadOnly",
 			"()Z"
 		);
 	}
 	void Property::set(jobject arg0, jobject arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"set",
 			"(Ljava/lang/Object;Ljava/lang/Object;)V",
 			arg0,

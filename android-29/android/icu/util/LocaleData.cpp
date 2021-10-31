@@ -36,7 +36,9 @@ namespace android::icu::util
 		);
 	}
 	
-	LocaleData::LocaleData(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	LocaleData::LocaleData(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -62,7 +64,7 @@ namespace android::icu::util
 			"android.icu.util.LocaleData",
 			"getInstance",
 			"(Landroid/icu/util/ULocale;)Landroid/icu/util/LocaleData;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject LocaleData::getMeasurementSystem(android::icu::util::ULocale arg0)
@@ -71,7 +73,7 @@ namespace android::icu::util
 			"android.icu.util.LocaleData",
 			"getMeasurementSystem",
 			"(Landroid/icu/util/ULocale;)Landroid/icu/util/LocaleData$MeasurementSystem;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject LocaleData::getPaperSize(android::icu::util::ULocale arg0)
@@ -80,12 +82,12 @@ namespace android::icu::util
 			"android.icu.util.LocaleData",
 			"getPaperSize",
 			"(Landroid/icu/util/ULocale;)Landroid/icu/util/LocaleData$PaperSize;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring LocaleData::getDelimiter(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDelimiter",
 			"(I)Ljava/lang/String;",
 			arg0
@@ -93,14 +95,14 @@ namespace android::icu::util
 	}
 	jboolean LocaleData::getNoSubstitute()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getNoSubstitute",
 			"()Z"
 		);
 	}
 	void LocaleData::setNoSubstitute(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setNoSubstitute",
 			"(Z)V",
 			arg0

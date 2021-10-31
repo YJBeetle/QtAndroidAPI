@@ -28,7 +28,9 @@ namespace java::net
 		);
 	}
 	
-	Proxy_Type::Proxy_Type(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Proxy_Type::Proxy_Type(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

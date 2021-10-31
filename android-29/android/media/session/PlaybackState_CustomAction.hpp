@@ -19,9 +19,11 @@ namespace android::media::session
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PlaybackState_CustomAction(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PlaybackState_CustomAction(QAndroidJniObject obj);
+		
 		// Constructors
-		PlaybackState_CustomAction() = default;
 		
 		// Methods
 		jint describeContents();

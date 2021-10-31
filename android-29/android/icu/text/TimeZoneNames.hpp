@@ -22,9 +22,11 @@ namespace android::icu::text
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TimeZoneNames(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		TimeZoneNames(QAndroidJniObject obj);
+		
 		// Constructors
-		TimeZoneNames() = default;
 		
 		// Methods
 		static QAndroidJniObject getInstance(android::icu::util::ULocale arg0);

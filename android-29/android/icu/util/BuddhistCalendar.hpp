@@ -29,7 +29,10 @@ namespace android::icu::util
 		// Fields
 		static jint BE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BuddhistCalendar(const char *className, const char *sig, Ts...agv) : android::icu::util::GregorianCalendar(className, sig, std::forward<Ts>(agv)...) {}
 		BuddhistCalendar(QAndroidJniObject obj);
+		
 		// Constructors
 		BuddhistCalendar();
 		BuddhistCalendar(android::icu::util::TimeZone arg0);

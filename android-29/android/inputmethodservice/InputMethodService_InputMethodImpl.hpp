@@ -31,10 +31,12 @@ namespace android::inputmethodservice
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit InputMethodService_InputMethodImpl(const char *className, const char *sig, Ts...agv) : android::inputmethodservice::AbstractInputMethodService_AbstractInputMethodImpl(className, sig, std::forward<Ts>(agv)...) {}
 		InputMethodService_InputMethodImpl(QAndroidJniObject obj);
+		
 		// Constructors
 		InputMethodService_InputMethodImpl(android::inputmethodservice::InputMethodService arg0);
-		InputMethodService_InputMethodImpl() = default;
 		
 		// Methods
 		void attachToken(__JniBaseClass arg0);

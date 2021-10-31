@@ -158,15 +158,15 @@ namespace android::graphics
 		);
 	}
 	
-	ImageFormat::ImageFormat(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ImageFormat::ImageFormat(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ImageFormat::ImageFormat()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.graphics.ImageFormat",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jint ImageFormat::getBitsPerPixel(jint arg0)

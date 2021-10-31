@@ -4,41 +4,41 @@ namespace org::json
 {
 	// Fields
 	
-	JSONStringer::JSONStringer(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	JSONStringer::JSONStringer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	JSONStringer::JSONStringer()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"org.json.JSONStringer",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject JSONStringer::array()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"array",
 			"()Lorg/json/JSONStringer;"
 		);
 	}
 	QAndroidJniObject JSONStringer::endArray()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"endArray",
 			"()Lorg/json/JSONStringer;"
 		);
 	}
 	QAndroidJniObject JSONStringer::endObject()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"endObject",
 			"()Lorg/json/JSONStringer;"
 		);
 	}
 	QAndroidJniObject JSONStringer::key(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"key",
 			"(Ljava/lang/String;)Lorg/json/JSONStringer;",
 			arg0
@@ -46,21 +46,21 @@ namespace org::json
 	}
 	QAndroidJniObject JSONStringer::object()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"object",
 			"()Lorg/json/JSONStringer;"
 		);
 	}
 	jstring JSONStringer::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject JSONStringer::value(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"value",
 			"(Z)Lorg/json/JSONStringer;",
 			arg0
@@ -68,7 +68,7 @@ namespace org::json
 	}
 	QAndroidJniObject JSONStringer::value(jdouble arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"value",
 			"(D)Lorg/json/JSONStringer;",
 			arg0
@@ -76,7 +76,7 @@ namespace org::json
 	}
 	QAndroidJniObject JSONStringer::value(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"value",
 			"(Ljava/lang/Object;)Lorg/json/JSONStringer;",
 			arg0
@@ -84,7 +84,7 @@ namespace org::json
 	}
 	QAndroidJniObject JSONStringer::value(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"value",
 			"(J)Lorg/json/JSONStringer;",
 			arg0

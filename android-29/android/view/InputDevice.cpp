@@ -261,7 +261,9 @@ namespace android::view
 		);
 	}
 	
-	InputDevice::InputDevice(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	InputDevice::InputDevice(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -284,49 +286,49 @@ namespace android::view
 	}
 	jint InputDevice::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jint InputDevice::getControllerNumber()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getControllerNumber",
 			"()I"
 		);
 	}
 	jstring InputDevice::getDescriptor()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDescriptor",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint InputDevice::getId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getId",
 			"()I"
 		);
 	}
 	QAndroidJniObject InputDevice::getKeyCharacterMap()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getKeyCharacterMap",
 			"()Landroid/view/KeyCharacterMap;"
 		);
 	}
 	jint InputDevice::getKeyboardType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getKeyboardType",
 			"()I"
 		);
 	}
 	QAndroidJniObject InputDevice::getMotionRange(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMotionRange",
 			"(I)Landroid/view/InputDevice$MotionRange;",
 			arg0
@@ -334,7 +336,7 @@ namespace android::view
 	}
 	QAndroidJniObject InputDevice::getMotionRange(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMotionRange",
 			"(II)Landroid/view/InputDevice$MotionRange;",
 			arg0,
@@ -343,49 +345,49 @@ namespace android::view
 	}
 	QAndroidJniObject InputDevice::getMotionRanges()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMotionRanges",
 			"()Ljava/util/List;"
 		);
 	}
 	jstring InputDevice::getName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint InputDevice::getProductId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getProductId",
 			"()I"
 		);
 	}
 	jint InputDevice::getSources()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSources",
 			"()I"
 		);
 	}
 	jint InputDevice::getVendorId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getVendorId",
 			"()I"
 		);
 	}
 	QAndroidJniObject InputDevice::getVibrator()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getVibrator",
 			"()Landroid/os/Vibrator;"
 		);
 	}
 	jbooleanArray InputDevice::hasKeys(jintArray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"hasKeys",
 			"([I)[Z",
 			arg0
@@ -393,35 +395,35 @@ namespace android::view
 	}
 	jboolean InputDevice::hasMicrophone()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasMicrophone",
 			"()Z"
 		);
 	}
 	jboolean InputDevice::isEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEnabled",
 			"()Z"
 		);
 	}
 	jboolean InputDevice::isExternal()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isExternal",
 			"()Z"
 		);
 	}
 	jboolean InputDevice::isVirtual()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isVirtual",
 			"()Z"
 		);
 	}
 	jboolean InputDevice::supportsSource(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"supportsSource",
 			"(I)Z",
 			arg0
@@ -429,17 +431,17 @@ namespace android::view
 	}
 	jstring InputDevice::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void InputDevice::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

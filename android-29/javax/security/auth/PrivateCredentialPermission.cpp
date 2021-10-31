@@ -7,22 +7,22 @@ namespace javax::security::auth
 {
 	// Fields
 	
-	PrivateCredentialPermission::PrivateCredentialPermission(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PrivateCredentialPermission::PrivateCredentialPermission(QAndroidJniObject obj) : java::security::Permission(obj) {}
+	
 	// Constructors
 	PrivateCredentialPermission::PrivateCredentialPermission(jstring arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::security::Permission(
 			"javax.security.auth.PrivateCredentialPermission",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean PrivateCredentialPermission::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -30,43 +30,43 @@ namespace javax::security::auth
 	}
 	jstring PrivateCredentialPermission::getActions()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getActions",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring PrivateCredentialPermission::getCredentialClass()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCredentialClass",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jarray PrivateCredentialPermission::getPrincipals()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPrincipals",
 			"()[[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	jint PrivateCredentialPermission::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean PrivateCredentialPermission::implies(java::security::Permission arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"implies",
 			"(Ljava/security/Permission;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject PrivateCredentialPermission::newPermissionCollection()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newPermissionCollection",
 			"()Ljava/security/PermissionCollection;"
 		);

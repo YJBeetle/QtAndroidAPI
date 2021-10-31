@@ -11,10 +11,12 @@ namespace java::io
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit StringBufferInputStream(const char *className, const char *sig, Ts...agv) : java::io::InputStream(className, sig, std::forward<Ts>(agv)...) {}
 		StringBufferInputStream(QAndroidJniObject obj);
+		
 		// Constructors
 		StringBufferInputStream(jstring arg0);
-		StringBufferInputStream() = default;
 		
 		// Methods
 		jint available();

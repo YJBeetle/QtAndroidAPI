@@ -18,27 +18,29 @@ namespace android::media::midi
 		);
 	}
 	
-	MidiDeviceInfo_PortInfo::MidiDeviceInfo_PortInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MidiDeviceInfo_PortInfo::MidiDeviceInfo_PortInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jstring MidiDeviceInfo_PortInfo::getName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint MidiDeviceInfo_PortInfo::getPortNumber()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPortNumber",
 			"()I"
 		);
 	}
 	jint MidiDeviceInfo_PortInfo::getType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getType",
 			"()I"
 		);

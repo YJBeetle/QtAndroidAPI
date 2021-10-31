@@ -4,20 +4,20 @@ namespace android::drm
 {
 	// Fields
 	
-	DrmSupportInfo::DrmSupportInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DrmSupportInfo::DrmSupportInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	DrmSupportInfo::DrmSupportInfo()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.drm.DrmSupportInfo",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void DrmSupportInfo::addFileSuffix(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addFileSuffix",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -25,7 +25,7 @@ namespace android::drm
 	}
 	void DrmSupportInfo::addMimeType(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addMimeType",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -33,7 +33,7 @@ namespace android::drm
 	}
 	jboolean DrmSupportInfo::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -41,42 +41,42 @@ namespace android::drm
 	}
 	jstring DrmSupportInfo::getDescriprition()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDescriprition",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring DrmSupportInfo::getDescription()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject DrmSupportInfo::getFileSuffixIterator()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFileSuffixIterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
 	QAndroidJniObject DrmSupportInfo::getMimeTypeIterator()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMimeTypeIterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
 	jint DrmSupportInfo::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	void DrmSupportInfo::setDescription(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDescription",
 			"(Ljava/lang/String;)V",
 			arg0

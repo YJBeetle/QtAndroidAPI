@@ -52,7 +52,9 @@ namespace android::view
 		);
 	}
 	
-	ViewDebug_RecyclerTraceType::ViewDebug_RecyclerTraceType(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ViewDebug_RecyclerTraceType::ViewDebug_RecyclerTraceType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

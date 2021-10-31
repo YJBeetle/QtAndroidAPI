@@ -6,70 +6,70 @@ namespace android::util
 {
 	// Fields
 	
-	JsonWriter::JsonWriter(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	JsonWriter::JsonWriter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	JsonWriter::JsonWriter(java::io::Writer arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.util.JsonWriter",
 			"(Ljava/io/Writer;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject JsonWriter::beginArray()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"beginArray",
 			"()Landroid/util/JsonWriter;"
 		);
 	}
 	QAndroidJniObject JsonWriter::beginObject()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"beginObject",
 			"()Landroid/util/JsonWriter;"
 		);
 	}
 	void JsonWriter::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	QAndroidJniObject JsonWriter::endArray()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"endArray",
 			"()Landroid/util/JsonWriter;"
 		);
 	}
 	QAndroidJniObject JsonWriter::endObject()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"endObject",
 			"()Landroid/util/JsonWriter;"
 		);
 	}
 	void JsonWriter::flush()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"flush",
 			"()V"
 		);
 	}
 	jboolean JsonWriter::isLenient()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isLenient",
 			"()Z"
 		);
 	}
 	QAndroidJniObject JsonWriter::name(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"name",
 			"(Ljava/lang/String;)Landroid/util/JsonWriter;",
 			arg0
@@ -77,14 +77,14 @@ namespace android::util
 	}
 	QAndroidJniObject JsonWriter::nullValue()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"nullValue",
 			"()Landroid/util/JsonWriter;"
 		);
 	}
 	void JsonWriter::setIndent(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setIndent",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -92,7 +92,7 @@ namespace android::util
 	}
 	void JsonWriter::setLenient(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLenient",
 			"(Z)V",
 			arg0
@@ -100,7 +100,7 @@ namespace android::util
 	}
 	QAndroidJniObject JsonWriter::value(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"value",
 			"(Z)Landroid/util/JsonWriter;",
 			arg0
@@ -108,7 +108,7 @@ namespace android::util
 	}
 	QAndroidJniObject JsonWriter::value(jdouble arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"value",
 			"(D)Landroid/util/JsonWriter;",
 			arg0
@@ -116,15 +116,15 @@ namespace android::util
 	}
 	QAndroidJniObject JsonWriter::value(java::lang::Number arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"value",
 			"(Ljava/lang/Number;)Landroid/util/JsonWriter;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject JsonWriter::value(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"value",
 			"(Ljava/lang/String;)Landroid/util/JsonWriter;",
 			arg0
@@ -132,7 +132,7 @@ namespace android::util
 	}
 	QAndroidJniObject JsonWriter::value(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"value",
 			"(J)Landroid/util/JsonWriter;",
 			arg0

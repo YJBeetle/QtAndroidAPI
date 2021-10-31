@@ -74,20 +74,22 @@ namespace android::webkit
 		);
 	}
 	
-	WebView_HitTestResult::WebView_HitTestResult(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WebView_HitTestResult::WebView_HitTestResult(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jstring WebView_HitTestResult::getExtra()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExtra",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint WebView_HitTestResult::getType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getType",
 			"()I"
 		);

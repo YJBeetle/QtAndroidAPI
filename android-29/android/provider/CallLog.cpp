@@ -21,15 +21,15 @@ namespace android::provider
 		);
 	}
 	
-	CallLog::CallLog(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CallLog::CallLog(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	CallLog::CallLog()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.provider.CallLog",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::provider

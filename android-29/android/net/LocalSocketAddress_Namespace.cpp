@@ -28,7 +28,9 @@ namespace android::net
 		);
 	}
 	
-	LocalSocketAddress_Namespace::LocalSocketAddress_Namespace(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	LocalSocketAddress_Namespace::LocalSocketAddress_Namespace(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

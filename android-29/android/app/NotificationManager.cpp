@@ -201,42 +201,44 @@ namespace android::app
 		).object<jstring>();
 	}
 	
-	NotificationManager::NotificationManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NotificationManager::NotificationManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jstring NotificationManager::addAutomaticZenRule(android::app::AutomaticZenRule arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"addAutomaticZenRule",
 			"(Landroid/app/AutomaticZenRule;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jboolean NotificationManager::areBubblesAllowed()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"areBubblesAllowed",
 			"()Z"
 		);
 	}
 	jboolean NotificationManager::areNotificationsEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"areNotificationsEnabled",
 			"()Z"
 		);
 	}
 	jboolean NotificationManager::areNotificationsPaused()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"areNotificationsPaused",
 			"()Z"
 		);
 	}
 	jboolean NotificationManager::canNotifyAsPackage(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"canNotifyAsPackage",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -244,7 +246,7 @@ namespace android::app
 	}
 	void NotificationManager::cancel(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"cancel",
 			"(I)V",
 			arg0
@@ -252,7 +254,7 @@ namespace android::app
 	}
 	void NotificationManager::cancel(jstring arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"cancel",
 			"(Ljava/lang/String;I)V",
 			arg0,
@@ -261,46 +263,46 @@ namespace android::app
 	}
 	void NotificationManager::cancelAll()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"cancelAll",
 			"()V"
 		);
 	}
 	void NotificationManager::createNotificationChannel(android::app::NotificationChannel arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"createNotificationChannel",
 			"(Landroid/app/NotificationChannel;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void NotificationManager::createNotificationChannelGroup(android::app::NotificationChannelGroup arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"createNotificationChannelGroup",
 			"(Landroid/app/NotificationChannelGroup;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void NotificationManager::createNotificationChannelGroups(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"createNotificationChannelGroups",
 			"(Ljava/util/List;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void NotificationManager::createNotificationChannels(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"createNotificationChannels",
 			"(Ljava/util/List;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void NotificationManager::deleteNotificationChannel(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"deleteNotificationChannel",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -308,7 +310,7 @@ namespace android::app
 	}
 	void NotificationManager::deleteNotificationChannelGroup(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"deleteNotificationChannelGroup",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -316,14 +318,14 @@ namespace android::app
 	}
 	jarray NotificationManager::getActiveNotifications()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getActiveNotifications",
 			"()[Landroid/service/notification/StatusBarNotification;"
 		).object<jarray>();
 	}
 	QAndroidJniObject NotificationManager::getAutomaticZenRule(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAutomaticZenRule",
 			"(Ljava/lang/String;)Landroid/app/AutomaticZenRule;",
 			arg0
@@ -331,28 +333,28 @@ namespace android::app
 	}
 	QAndroidJniObject NotificationManager::getAutomaticZenRules()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAutomaticZenRules",
 			"()Ljava/util/Map;"
 		);
 	}
 	jint NotificationManager::getCurrentInterruptionFilter()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCurrentInterruptionFilter",
 			"()I"
 		);
 	}
 	jint NotificationManager::getImportance()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getImportance",
 			"()I"
 		);
 	}
 	QAndroidJniObject NotificationManager::getNotificationChannel(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getNotificationChannel",
 			"(Ljava/lang/String;)Landroid/app/NotificationChannel;",
 			arg0
@@ -360,7 +362,7 @@ namespace android::app
 	}
 	QAndroidJniObject NotificationManager::getNotificationChannelGroup(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getNotificationChannelGroup",
 			"(Ljava/lang/String;)Landroid/app/NotificationChannelGroup;",
 			arg0
@@ -368,80 +370,80 @@ namespace android::app
 	}
 	QAndroidJniObject NotificationManager::getNotificationChannelGroups()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getNotificationChannelGroups",
 			"()Ljava/util/List;"
 		);
 	}
 	QAndroidJniObject NotificationManager::getNotificationChannels()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getNotificationChannels",
 			"()Ljava/util/List;"
 		);
 	}
 	jstring NotificationManager::getNotificationDelegate()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getNotificationDelegate",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject NotificationManager::getNotificationPolicy()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getNotificationPolicy",
 			"()Landroid/app/NotificationManager$Policy;"
 		);
 	}
 	jboolean NotificationManager::isNotificationListenerAccessGranted(android::content::ComponentName arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isNotificationListenerAccessGranted",
 			"(Landroid/content/ComponentName;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean NotificationManager::isNotificationPolicyAccessGranted()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isNotificationPolicyAccessGranted",
 			"()Z"
 		);
 	}
 	void NotificationManager::notify(jint arg0, android::app::Notification arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"notify",
 			"(ILandroid/app/Notification;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void NotificationManager::notify(jstring arg0, jint arg1, android::app::Notification arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"notify",
 			"(Ljava/lang/String;ILandroid/app/Notification;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void NotificationManager::notifyAsPackage(jstring arg0, jstring arg1, jint arg2, android::app::Notification arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"notifyAsPackage",
 			"(Ljava/lang/String;Ljava/lang/String;ILandroid/app/Notification;)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	jboolean NotificationManager::removeAutomaticZenRule(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"removeAutomaticZenRule",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -449,16 +451,16 @@ namespace android::app
 	}
 	void NotificationManager::setAutomaticZenRuleState(jstring arg0, android::service::notification::Condition arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAutomaticZenRuleState",
 			"(Ljava/lang/String;Landroid/service/notification/Condition;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void NotificationManager::setInterruptionFilter(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setInterruptionFilter",
 			"(I)V",
 			arg0
@@ -466,7 +468,7 @@ namespace android::app
 	}
 	void NotificationManager::setNotificationDelegate(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setNotificationDelegate",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -474,26 +476,26 @@ namespace android::app
 	}
 	void NotificationManager::setNotificationPolicy(android::app::NotificationManager_Policy arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setNotificationPolicy",
 			"(Landroid/app/NotificationManager$Policy;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean NotificationManager::shouldHideSilentStatusBarIcons()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"shouldHideSilentStatusBarIcons",
 			"()Z"
 		);
 	}
 	jboolean NotificationManager::updateAutomaticZenRule(jstring arg0, android::app::AutomaticZenRule arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"updateAutomaticZenRule",
 			"(Ljava/lang/String;Landroid/app/AutomaticZenRule;)Z",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 } // namespace android::app

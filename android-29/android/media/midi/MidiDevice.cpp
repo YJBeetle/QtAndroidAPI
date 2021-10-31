@@ -8,36 +8,38 @@ namespace android::media::midi
 {
 	// Fields
 	
-	MidiDevice::MidiDevice(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MidiDevice::MidiDevice(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void MidiDevice::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	QAndroidJniObject MidiDevice::connectPorts(android::media::midi::MidiInputPort arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"connectPorts",
 			"(Landroid/media/midi/MidiInputPort;I)Landroid/media/midi/MidiDevice$MidiConnection;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	QAndroidJniObject MidiDevice::getInfo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getInfo",
 			"()Landroid/media/midi/MidiDeviceInfo;"
 		);
 	}
 	QAndroidJniObject MidiDevice::openInputPort(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"openInputPort",
 			"(I)Landroid/media/midi/MidiInputPort;",
 			arg0
@@ -45,7 +47,7 @@ namespace android::media::midi
 	}
 	QAndroidJniObject MidiDevice::openOutputPort(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"openOutputPort",
 			"(I)Landroid/media/midi/MidiOutputPort;",
 			arg0
@@ -53,7 +55,7 @@ namespace android::media::midi
 	}
 	jstring MidiDevice::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

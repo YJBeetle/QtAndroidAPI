@@ -46,15 +46,15 @@ namespace android::text
 		);
 	}
 	
-	AndroidCharacter::AndroidCharacter(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AndroidCharacter::AndroidCharacter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	AndroidCharacter::AndroidCharacter()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.text.AndroidCharacter",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void AndroidCharacter::getDirectionalities(jcharArray arg0, jbyteArray arg1, jint arg2)

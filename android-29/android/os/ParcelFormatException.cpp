@@ -4,23 +4,21 @@ namespace android::os
 {
 	// Fields
 	
-	ParcelFormatException::ParcelFormatException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ParcelFormatException::ParcelFormatException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	
 	// Constructors
 	ParcelFormatException::ParcelFormatException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::RuntimeException(
 			"android.os.ParcelFormatException",
 			"()V"
-		);
-	}
+		) {}
 	ParcelFormatException::ParcelFormatException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::RuntimeException(
 			"android.os.ParcelFormatException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::os

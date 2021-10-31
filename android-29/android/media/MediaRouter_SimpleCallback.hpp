@@ -23,7 +23,10 @@ namespace android::media
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaRouter_SimpleCallback(const char *className, const char *sig, Ts...agv) : android::media::MediaRouter_Callback(className, sig, std::forward<Ts>(agv)...) {}
 		MediaRouter_SimpleCallback(QAndroidJniObject obj);
+		
 		// Constructors
 		MediaRouter_SimpleCallback();
 		

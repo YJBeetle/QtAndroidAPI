@@ -28,12 +28,14 @@ namespace android::widget
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ResourceCursorAdapter(const char *className, const char *sig, Ts...agv) : android::widget::CursorAdapter(className, sig, std::forward<Ts>(agv)...) {}
 		ResourceCursorAdapter(QAndroidJniObject obj);
+		
 		// Constructors
 		ResourceCursorAdapter(android::content::Context arg0, jint arg1, __JniBaseClass arg2);
 		ResourceCursorAdapter(android::content::Context arg0, jint arg1, __JniBaseClass arg2, jboolean arg3);
 		ResourceCursorAdapter(android::content::Context arg0, jint arg1, __JniBaseClass arg2, jint arg3);
-		ResourceCursorAdapter() = default;
 		
 		// Methods
 		QAndroidJniObject newDropDownView(android::content::Context arg0, __JniBaseClass arg1, android::view::ViewGroup arg2);

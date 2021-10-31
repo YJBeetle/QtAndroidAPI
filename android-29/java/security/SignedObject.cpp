@@ -6,48 +6,48 @@ namespace java::security
 {
 	// Fields
 	
-	SignedObject::SignedObject(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SignedObject::SignedObject(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	SignedObject::SignedObject(__JniBaseClass arg0, __JniBaseClass arg1, java::security::Signature arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.security.SignedObject",
 			"(Ljava/io/Serializable;Ljava/security/PrivateKey;Ljava/security/Signature;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		) {}
 	
 	// Methods
 	jstring SignedObject::getAlgorithm()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jobject SignedObject::getObject()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getObject",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jbyteArray SignedObject::getSignature()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSignature",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jboolean SignedObject::verify(__JniBaseClass arg0, java::security::Signature arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"verify",
 			"(Ljava/security/PublicKey;Ljava/security/Signature;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 } // namespace java::security

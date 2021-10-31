@@ -6,67 +6,61 @@ namespace java::io
 {
 	// Fields
 	
-	PipedReader::PipedReader(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PipedReader::PipedReader(QAndroidJniObject obj) : java::io::Reader(obj) {}
+	
 	// Constructors
 	PipedReader::PipedReader()
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::Reader(
 			"java.io.PipedReader",
 			"()V"
-		);
-	}
+		) {}
 	PipedReader::PipedReader(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::Reader(
 			"java.io.PipedReader",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	PipedReader::PipedReader(java::io::PipedWriter arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::Reader(
 			"java.io.PipedReader",
 			"(Ljava/io/PipedWriter;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	PipedReader::PipedReader(java::io::PipedWriter arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::Reader(
 			"java.io.PipedReader",
 			"(Ljava/io/PipedWriter;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	void PipedReader::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	void PipedReader::connect(java::io::PipedWriter arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"connect",
 			"(Ljava/io/PipedWriter;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint PipedReader::read()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"read",
 			"()I"
 		);
 	}
 	jint PipedReader::read(jcharArray arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"read",
 			"([CII)I",
 			arg0,
@@ -76,7 +70,7 @@ namespace java::io
 	}
 	jboolean PipedReader::ready()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"ready",
 			"()Z"
 		);

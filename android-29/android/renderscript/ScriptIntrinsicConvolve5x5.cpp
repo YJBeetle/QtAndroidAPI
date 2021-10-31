@@ -10,7 +10,9 @@ namespace android::renderscript
 {
 	// Fields
 	
-	ScriptIntrinsicConvolve5x5::ScriptIntrinsicConvolve5x5(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ScriptIntrinsicConvolve5x5::ScriptIntrinsicConvolve5x5(QAndroidJniObject obj) : android::renderscript::ScriptIntrinsic(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -20,44 +22,44 @@ namespace android::renderscript
 			"android.renderscript.ScriptIntrinsicConvolve5x5",
 			"create",
 			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Element;)Landroid/renderscript/ScriptIntrinsicConvolve5x5;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void ScriptIntrinsicConvolve5x5::forEach(android::renderscript::Allocation arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"forEach",
 			"(Landroid/renderscript/Allocation;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ScriptIntrinsicConvolve5x5::forEach(android::renderscript::Allocation arg0, android::renderscript::Script_LaunchOptions arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"forEach",
 			"(Landroid/renderscript/Allocation;Landroid/renderscript/Script$LaunchOptions;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject ScriptIntrinsicConvolve5x5::getFieldID_Input()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFieldID_Input",
 			"()Landroid/renderscript/Script$FieldID;"
 		);
 	}
 	QAndroidJniObject ScriptIntrinsicConvolve5x5::getKernelID()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getKernelID",
 			"()Landroid/renderscript/Script$KernelID;"
 		);
 	}
 	void ScriptIntrinsicConvolve5x5::setCoefficients(jfloatArray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCoefficients",
 			"([F)V",
 			arg0
@@ -65,10 +67,10 @@ namespace android::renderscript
 	}
 	void ScriptIntrinsicConvolve5x5::setInput(android::renderscript::Allocation arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setInput",
 			"(Landroid/renderscript/Allocation;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::renderscript

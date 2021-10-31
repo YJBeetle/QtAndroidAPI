@@ -22,9 +22,11 @@ namespace android::media::tv
 		static jint TYPE_SUBTITLE();
 		static jint TYPE_VIDEO();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TvTrackInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		TvTrackInfo(QAndroidJniObject obj);
+		
 		// Constructors
-		TvTrackInfo() = default;
 		
 		// Methods
 		jint describeContents();

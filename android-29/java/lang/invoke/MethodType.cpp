@@ -9,7 +9,9 @@ namespace java::lang::invoke
 {
 	// Fields
 	
-	MethodType::MethodType(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MethodType::MethodType(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -20,7 +22,7 @@ namespace java::lang::invoke
 			"fromMethodDescriptorString",
 			"(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljava/lang/invoke/MethodType;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject MethodType::genericMethodType(jint arg0)
@@ -78,7 +80,7 @@ namespace java::lang::invoke
 			"methodType",
 			"(Ljava/lang/Class;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/MethodType;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject MethodType::methodType(jclass arg0, __JniBaseClass arg1)
@@ -88,7 +90,7 @@ namespace java::lang::invoke
 			"methodType",
 			"(Ljava/lang/Class;Ljava/util/List;)Ljava/lang/invoke/MethodType;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject MethodType::methodType(jclass arg0, jclass arg1, jarray arg2)
@@ -104,7 +106,7 @@ namespace java::lang::invoke
 	}
 	QAndroidJniObject MethodType::appendParameterTypes(jarray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"appendParameterTypes",
 			"([Ljava/lang/Class;)Ljava/lang/invoke/MethodType;",
 			arg0
@@ -112,15 +114,15 @@ namespace java::lang::invoke
 	}
 	QAndroidJniObject MethodType::appendParameterTypes(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"appendParameterTypes",
 			"(Ljava/util/List;)Ljava/lang/invoke/MethodType;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject MethodType::changeParameterType(jint arg0, jclass arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"changeParameterType",
 			"(ILjava/lang/Class;)Ljava/lang/invoke/MethodType;",
 			arg0,
@@ -129,16 +131,16 @@ namespace java::lang::invoke
 	}
 	QAndroidJniObject MethodType::changeParameterType(jint arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"changeParameterType",
 			"(ILjava/lang/invoke/TypeDescriptor$OfField;)Ljava/lang/invoke/TypeDescriptor$OfMethod;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject MethodType::changeReturnType(jclass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"changeReturnType",
 			"(Ljava/lang/Class;)Ljava/lang/invoke/MethodType;",
 			arg0
@@ -146,29 +148,29 @@ namespace java::lang::invoke
 	}
 	QAndroidJniObject MethodType::changeReturnType(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"changeReturnType",
 			"(Ljava/lang/invoke/TypeDescriptor$OfField;)Ljava/lang/invoke/TypeDescriptor$OfMethod;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject MethodType::describeConstable()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"describeConstable",
 			"()Ljava/util/Optional;"
 		);
 	}
 	jstring MethodType::descriptorString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"descriptorString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject MethodType::dropParameterTypes(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"dropParameterTypes",
 			"(II)Ljava/lang/invoke/MethodType;",
 			arg0,
@@ -177,7 +179,7 @@ namespace java::lang::invoke
 	}
 	jboolean MethodType::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -185,42 +187,42 @@ namespace java::lang::invoke
 	}
 	QAndroidJniObject MethodType::erase()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"erase",
 			"()Ljava/lang/invoke/MethodType;"
 		);
 	}
 	QAndroidJniObject MethodType::generic()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"generic",
 			"()Ljava/lang/invoke/MethodType;"
 		);
 	}
 	jboolean MethodType::hasPrimitives()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasPrimitives",
 			"()Z"
 		);
 	}
 	jboolean MethodType::hasWrappers()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasWrappers",
 			"()Z"
 		);
 	}
 	jint MethodType::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	QAndroidJniObject MethodType::insertParameterTypes(jint arg0, jarray arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"insertParameterTypes",
 			"(I[Ljava/lang/Class;)Ljava/lang/invoke/MethodType;",
 			arg0,
@@ -229,44 +231,44 @@ namespace java::lang::invoke
 	}
 	QAndroidJniObject MethodType::insertParameterTypes(jint arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"insertParameterTypes",
 			"(ILjava/util/List;)Ljava/lang/invoke/MethodType;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jclass MethodType::lastParameterType()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"lastParameterType",
 			"()Ljava/lang/Class;"
 		).object<jclass>();
 	}
 	jarray MethodType::parameterArray()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"parameterArray",
 			"()[Ljava/lang/Class;"
 		).object<jarray>();
 	}
 	jint MethodType::parameterCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"parameterCount",
 			"()I"
 		);
 	}
 	QAndroidJniObject MethodType::parameterList()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"parameterList",
 			"()Ljava/util/List;"
 		);
 	}
 	jclass MethodType::parameterType(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"parameterType",
 			"(I)Ljava/lang/Class;",
 			arg0
@@ -274,35 +276,35 @@ namespace java::lang::invoke
 	}
 	jclass MethodType::returnType()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"returnType",
 			"()Ljava/lang/Class;"
 		).object<jclass>();
 	}
 	jstring MethodType::toMethodDescriptorString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toMethodDescriptorString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring MethodType::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject MethodType::unwrap()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"unwrap",
 			"()Ljava/lang/invoke/MethodType;"
 		);
 	}
 	QAndroidJniObject MethodType::wrap()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"wrap",
 			"()Ljava/lang/invoke/MethodType;"
 		);

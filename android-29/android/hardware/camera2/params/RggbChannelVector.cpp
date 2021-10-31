@@ -39,24 +39,24 @@ namespace android::hardware::camera2::params
 		);
 	}
 	
-	RggbChannelVector::RggbChannelVector(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	RggbChannelVector::RggbChannelVector(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	RggbChannelVector::RggbChannelVector(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.hardware.camera2.params.RggbChannelVector",
 			"(FFFF)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	
 	// Methods
 	void RggbChannelVector::copyTo(jfloatArray arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"copyTo",
 			"([FI)V",
 			arg0,
@@ -65,7 +65,7 @@ namespace android::hardware::camera2::params
 	}
 	jboolean RggbChannelVector::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -73,14 +73,14 @@ namespace android::hardware::camera2::params
 	}
 	jfloat RggbChannelVector::getBlue()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getBlue",
 			"()F"
 		);
 	}
 	jfloat RggbChannelVector::getComponent(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getComponent",
 			"(I)F",
 			arg0
@@ -88,35 +88,35 @@ namespace android::hardware::camera2::params
 	}
 	jfloat RggbChannelVector::getGreenEven()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getGreenEven",
 			"()F"
 		);
 	}
 	jfloat RggbChannelVector::getGreenOdd()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getGreenOdd",
 			"()F"
 		);
 	}
 	jfloat RggbChannelVector::getRed()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getRed",
 			"()F"
 		);
 	}
 	jint RggbChannelVector::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring RggbChannelVector::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

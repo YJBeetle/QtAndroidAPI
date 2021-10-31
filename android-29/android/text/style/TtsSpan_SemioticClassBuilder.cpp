@@ -4,21 +4,21 @@ namespace android::text::style
 {
 	// Fields
 	
-	TtsSpan_SemioticClassBuilder::TtsSpan_SemioticClassBuilder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TtsSpan_SemioticClassBuilder::TtsSpan_SemioticClassBuilder(QAndroidJniObject obj) : android::text::style::TtsSpan_Builder(obj) {}
+	
 	// Constructors
 	TtsSpan_SemioticClassBuilder::TtsSpan_SemioticClassBuilder(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::text::style::TtsSpan_Builder(
 			"android.text.style.TtsSpan$SemioticClassBuilder",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject TtsSpan_SemioticClassBuilder::setAnimacy(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setAnimacy",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$SemioticClassBuilder;",
 			arg0
@@ -26,7 +26,7 @@ namespace android::text::style
 	}
 	QAndroidJniObject TtsSpan_SemioticClassBuilder::setCase(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setCase",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$SemioticClassBuilder;",
 			arg0
@@ -34,7 +34,7 @@ namespace android::text::style
 	}
 	QAndroidJniObject TtsSpan_SemioticClassBuilder::setGender(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setGender",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$SemioticClassBuilder;",
 			arg0
@@ -42,7 +42,7 @@ namespace android::text::style
 	}
 	QAndroidJniObject TtsSpan_SemioticClassBuilder::setMultiplicity(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setMultiplicity",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$SemioticClassBuilder;",
 			arg0

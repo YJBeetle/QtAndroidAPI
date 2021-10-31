@@ -28,7 +28,9 @@ namespace android::icu::text
 		);
 	}
 	
-	UnicodeSetSpanner_TrimOption::UnicodeSetSpanner_TrimOption(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UnicodeSetSpanner_TrimOption::UnicodeSetSpanner_TrimOption(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

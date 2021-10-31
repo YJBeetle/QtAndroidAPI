@@ -8,27 +8,27 @@ namespace java::util
 {
 	// Fields
 	
-	Calendar_Builder::Calendar_Builder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Calendar_Builder::Calendar_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Calendar_Builder::Calendar_Builder()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.Calendar$Builder",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject Calendar_Builder::build()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"build",
 			"()Ljava/util/Calendar;"
 		);
 	}
 	QAndroidJniObject Calendar_Builder::set(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"set",
 			"(II)Ljava/util/Calendar$Builder;",
 			arg0,
@@ -37,7 +37,7 @@ namespace java::util
 	}
 	QAndroidJniObject Calendar_Builder::setCalendarType(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setCalendarType",
 			"(Ljava/lang/String;)Ljava/util/Calendar$Builder;",
 			arg0
@@ -45,7 +45,7 @@ namespace java::util
 	}
 	QAndroidJniObject Calendar_Builder::setDate(jint arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setDate",
 			"(III)Ljava/util/Calendar$Builder;",
 			arg0,
@@ -55,7 +55,7 @@ namespace java::util
 	}
 	QAndroidJniObject Calendar_Builder::setFields(jintArray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setFields",
 			"([I)Ljava/util/Calendar$Builder;",
 			arg0
@@ -63,15 +63,15 @@ namespace java::util
 	}
 	QAndroidJniObject Calendar_Builder::setInstant(java::util::Date arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setInstant",
 			"(Ljava/util/Date;)Ljava/util/Calendar$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Calendar_Builder::setInstant(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setInstant",
 			"(J)Ljava/util/Calendar$Builder;",
 			arg0
@@ -79,7 +79,7 @@ namespace java::util
 	}
 	QAndroidJniObject Calendar_Builder::setLenient(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setLenient",
 			"(Z)Ljava/util/Calendar$Builder;",
 			arg0
@@ -87,15 +87,15 @@ namespace java::util
 	}
 	QAndroidJniObject Calendar_Builder::setLocale(java::util::Locale arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setLocale",
 			"(Ljava/util/Locale;)Ljava/util/Calendar$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Calendar_Builder::setTimeOfDay(jint arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setTimeOfDay",
 			"(III)Ljava/util/Calendar$Builder;",
 			arg0,
@@ -105,7 +105,7 @@ namespace java::util
 	}
 	QAndroidJniObject Calendar_Builder::setTimeOfDay(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setTimeOfDay",
 			"(IIII)Ljava/util/Calendar$Builder;",
 			arg0,
@@ -116,15 +116,15 @@ namespace java::util
 	}
 	QAndroidJniObject Calendar_Builder::setTimeZone(java::util::TimeZone arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setTimeZone",
 			"(Ljava/util/TimeZone;)Ljava/util/Calendar$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Calendar_Builder::setWeekDate(jint arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setWeekDate",
 			"(III)Ljava/util/Calendar$Builder;",
 			arg0,
@@ -134,7 +134,7 @@ namespace java::util
 	}
 	QAndroidJniObject Calendar_Builder::setWeekDefinition(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setWeekDefinition",
 			"(II)Ljava/util/Calendar$Builder;",
 			arg0,

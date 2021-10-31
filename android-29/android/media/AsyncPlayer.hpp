@@ -22,10 +22,12 @@ namespace android::media
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AsyncPlayer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AsyncPlayer(QAndroidJniObject obj);
+		
 		// Constructors
 		AsyncPlayer(jstring arg0);
-		AsyncPlayer() = default;
 		
 		// Methods
 		void play(android::content::Context arg0, android::net::Uri arg1, jboolean arg2, android::media::AudioAttributes arg3);

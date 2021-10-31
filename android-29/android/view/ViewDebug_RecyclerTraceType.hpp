@@ -17,9 +17,11 @@ namespace android::view
 		static QAndroidJniObject RECYCLE_FROM_ACTIVE_HEAP();
 		static QAndroidJniObject RECYCLE_FROM_SCRAP_HEAP();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ViewDebug_RecyclerTraceType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		ViewDebug_RecyclerTraceType(QAndroidJniObject obj);
+		
 		// Constructors
-		ViewDebug_RecyclerTraceType() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

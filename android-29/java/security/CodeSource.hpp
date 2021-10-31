@@ -30,10 +30,12 @@ namespace java::security
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CodeSource(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		CodeSource(QAndroidJniObject obj);
+		
 		// Constructors
 		CodeSource(java::net::URL arg0, jarray arg1);
-		CodeSource() = default;
 		
 		// Methods
 		jboolean equals(jobject arg0);

@@ -260,7 +260,10 @@ namespace android::content::pm
 		static jint VERIFICATION_REJECT();
 		static jint VERSION_CODE_HIGHEST();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PackageManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PackageManager(QAndroidJniObject obj);
+		
 		// Constructors
 		PackageManager();
 		

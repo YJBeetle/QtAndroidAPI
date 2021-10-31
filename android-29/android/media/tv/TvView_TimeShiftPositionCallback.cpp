@@ -4,20 +4,20 @@ namespace android::media::tv
 {
 	// Fields
 	
-	TvView_TimeShiftPositionCallback::TvView_TimeShiftPositionCallback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TvView_TimeShiftPositionCallback::TvView_TimeShiftPositionCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	TvView_TimeShiftPositionCallback::TvView_TimeShiftPositionCallback()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.tv.TvView$TimeShiftPositionCallback",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void TvView_TimeShiftPositionCallback::onTimeShiftCurrentPositionChanged(jstring arg0, jlong arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onTimeShiftCurrentPositionChanged",
 			"(Ljava/lang/String;J)V",
 			arg0,
@@ -26,7 +26,7 @@ namespace android::media::tv
 	}
 	void TvView_TimeShiftPositionCallback::onTimeShiftStartPositionChanged(jstring arg0, jlong arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onTimeShiftStartPositionChanged",
 			"(Ljava/lang/String;J)V",
 			arg0,

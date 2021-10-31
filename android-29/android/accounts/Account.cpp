@@ -14,50 +14,48 @@ namespace android::accounts
 	}
 	jstring Account::name()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"name",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Account::type()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"type",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	
-	Account::Account(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Account::Account(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Account::Account(android::os::Parcel arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.accounts.Account",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	Account::Account(jstring arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.accounts.Account",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jint Account::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean Account::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -65,24 +63,24 @@ namespace android::accounts
 	}
 	jint Account::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring Account::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void Account::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

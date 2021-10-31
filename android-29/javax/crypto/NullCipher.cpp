@@ -4,15 +4,15 @@ namespace javax::crypto
 {
 	// Fields
 	
-	NullCipher::NullCipher(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NullCipher::NullCipher(QAndroidJniObject obj) : javax::crypto::Cipher(obj) {}
+	
 	// Constructors
 	NullCipher::NullCipher()
-	{
-		__thiz = QAndroidJniObject(
+		: javax::crypto::Cipher(
 			"javax.crypto.NullCipher",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace javax::crypto

@@ -27,9 +27,11 @@ namespace android::graphics::drawable
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DrawableContainer_DrawableContainerState(const char *className, const char *sig, Ts...agv) : android::graphics::drawable::Drawable_ConstantState(className, sig, std::forward<Ts>(agv)...) {}
 		DrawableContainer_DrawableContainerState(QAndroidJniObject obj);
+		
 		// Constructors
-		DrawableContainer_DrawableContainerState() = default;
 		
 		// Methods
 		jint addChild(android::graphics::drawable::Drawable arg0);

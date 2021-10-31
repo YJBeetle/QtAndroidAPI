@@ -11,20 +11,22 @@ namespace android::net::wifi::aware
 {
 	// Fields
 	
-	WifiAwareSession::WifiAwareSession(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WifiAwareSession::WifiAwareSession(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void WifiAwareSession::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	QAndroidJniObject WifiAwareSession::createNetworkSpecifierOpen(jint arg0, jbyteArray arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"createNetworkSpecifierOpen",
 			"(I[B)Landroid/net/NetworkSpecifier;",
 			arg0,
@@ -33,7 +35,7 @@ namespace android::net::wifi::aware
 	}
 	QAndroidJniObject WifiAwareSession::createNetworkSpecifierPassphrase(jint arg0, jbyteArray arg1, jstring arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"createNetworkSpecifierPassphrase",
 			"(I[BLjava/lang/String;)Landroid/net/NetworkSpecifier;",
 			arg0,
@@ -43,22 +45,22 @@ namespace android::net::wifi::aware
 	}
 	void WifiAwareSession::publish(android::net::wifi::aware::PublishConfig arg0, android::net::wifi::aware::DiscoverySessionCallback arg1, android::os::Handler arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"publish",
 			"(Landroid/net/wifi/aware/PublishConfig;Landroid/net/wifi/aware/DiscoverySessionCallback;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	void WifiAwareSession::subscribe(android::net::wifi::aware::SubscribeConfig arg0, android::net::wifi::aware::DiscoverySessionCallback arg1, android::os::Handler arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"subscribe",
 			"(Landroid/net/wifi/aware/SubscribeConfig;Landroid/net/wifi/aware/DiscoverySessionCallback;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 } // namespace android::net::wifi::aware

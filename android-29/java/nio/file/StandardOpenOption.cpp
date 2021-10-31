@@ -84,7 +84,9 @@ namespace java::nio::file
 		);
 	}
 	
-	StandardOpenOption::StandardOpenOption(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	StandardOpenOption::StandardOpenOption(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

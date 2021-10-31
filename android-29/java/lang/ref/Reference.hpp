@@ -14,9 +14,11 @@ namespace java::lang::ref
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Reference(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Reference(QAndroidJniObject obj);
+		
 		// Constructors
-		Reference() = default;
 		
 		// Methods
 		static void reachabilityFence(jobject arg0);

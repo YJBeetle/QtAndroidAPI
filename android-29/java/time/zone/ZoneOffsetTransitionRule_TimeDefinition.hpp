@@ -22,9 +22,11 @@ namespace java::time::zone
 		static QAndroidJniObject UTC();
 		static QAndroidJniObject WALL();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ZoneOffsetTransitionRule_TimeDefinition(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		ZoneOffsetTransitionRule_TimeDefinition(QAndroidJniObject obj);
+		
 		// Constructors
-		ZoneOffsetTransitionRule_TimeDefinition() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

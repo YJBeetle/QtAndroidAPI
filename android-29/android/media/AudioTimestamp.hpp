@@ -14,7 +14,10 @@ namespace android::media
 		jlong framePosition();
 		jlong nanoTime();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AudioTimestamp(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AudioTimestamp(QAndroidJniObject obj);
+		
 		// Constructors
 		AudioTimestamp();
 		

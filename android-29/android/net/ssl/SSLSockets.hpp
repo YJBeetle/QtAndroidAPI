@@ -14,9 +14,11 @@ namespace android::net::ssl
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SSLSockets(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SSLSockets(QAndroidJniObject obj);
+		
 		// Constructors
-		SSLSockets() = default;
 		
 		// Methods
 		static jboolean isSupportedSocket(javax::net::ssl::SSLSocket arg0);

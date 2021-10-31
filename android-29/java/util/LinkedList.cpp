@@ -6,28 +6,26 @@ namespace java::util
 {
 	// Fields
 	
-	LinkedList::LinkedList(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	LinkedList::LinkedList(QAndroidJniObject obj) : java::util::AbstractSequentialList(obj) {}
+	
 	// Constructors
 	LinkedList::LinkedList()
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::AbstractSequentialList(
 			"java.util.LinkedList",
 			"()V"
-		);
-	}
+		) {}
 	LinkedList::LinkedList(__JniBaseClass arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::AbstractSequentialList(
 			"java.util.LinkedList",
 			"(Ljava/util/Collection;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jboolean LinkedList::add(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"add",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -35,7 +33,7 @@ namespace java::util
 	}
 	void LinkedList::add(jint arg0, jobject arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"add",
 			"(ILjava/lang/Object;)V",
 			arg0,
@@ -44,24 +42,24 @@ namespace java::util
 	}
 	jboolean LinkedList::addAll(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"addAll",
 			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean LinkedList::addAll(jint arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"addAll",
 			"(ILjava/util/Collection;)Z",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void LinkedList::addFirst(jobject arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addFirst",
 			"(Ljava/lang/Object;)V",
 			arg0
@@ -69,7 +67,7 @@ namespace java::util
 	}
 	void LinkedList::addLast(jobject arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addLast",
 			"(Ljava/lang/Object;)V",
 			arg0
@@ -77,21 +75,21 @@ namespace java::util
 	}
 	void LinkedList::clear()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
 	jobject LinkedList::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jboolean LinkedList::contains(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"contains",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -99,21 +97,21 @@ namespace java::util
 	}
 	QAndroidJniObject LinkedList::descendingIterator()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"descendingIterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
 	jobject LinkedList::element()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"element",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobject LinkedList::get(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"(I)Ljava/lang/Object;",
 			arg0
@@ -121,21 +119,21 @@ namespace java::util
 	}
 	jobject LinkedList::getFirst()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFirst",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobject LinkedList::getLast()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLast",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jint LinkedList::indexOf(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"indexOf",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -143,7 +141,7 @@ namespace java::util
 	}
 	jint LinkedList::lastIndexOf(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"lastIndexOf",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -151,7 +149,7 @@ namespace java::util
 	}
 	QAndroidJniObject LinkedList::listIterator(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"listIterator",
 			"(I)Ljava/util/ListIterator;",
 			arg0
@@ -159,7 +157,7 @@ namespace java::util
 	}
 	jboolean LinkedList::offer(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"offer",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -167,7 +165,7 @@ namespace java::util
 	}
 	jboolean LinkedList::offerFirst(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"offerFirst",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -175,7 +173,7 @@ namespace java::util
 	}
 	jboolean LinkedList::offerLast(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"offerLast",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -183,56 +181,56 @@ namespace java::util
 	}
 	jobject LinkedList::peek()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"peek",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobject LinkedList::peekFirst()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"peekFirst",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobject LinkedList::peekLast()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"peekLast",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobject LinkedList::poll()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"poll",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobject LinkedList::pollFirst()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"pollFirst",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobject LinkedList::pollLast()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"pollLast",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobject LinkedList::pop()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"pop",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	void LinkedList::push(jobject arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"push",
 			"(Ljava/lang/Object;)V",
 			arg0
@@ -240,7 +238,7 @@ namespace java::util
 	}
 	jboolean LinkedList::remove(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"remove",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -248,14 +246,14 @@ namespace java::util
 	}
 	jobject LinkedList::remove()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"remove",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobject LinkedList::remove(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"remove",
 			"(I)Ljava/lang/Object;",
 			arg0
@@ -263,14 +261,14 @@ namespace java::util
 	}
 	jobject LinkedList::removeFirst()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"removeFirst",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jboolean LinkedList::removeFirstOccurrence(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"removeFirstOccurrence",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -278,14 +276,14 @@ namespace java::util
 	}
 	jobject LinkedList::removeLast()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"removeLast",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jboolean LinkedList::removeLastOccurrence(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"removeLastOccurrence",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -293,7 +291,7 @@ namespace java::util
 	}
 	jobject LinkedList::set(jint arg0, jobject arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"set",
 			"(ILjava/lang/Object;)Ljava/lang/Object;",
 			arg0,
@@ -302,28 +300,28 @@ namespace java::util
 	}
 	jint LinkedList::size()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
 	QAndroidJniObject LinkedList::spliterator()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"spliterator",
 			"()Ljava/util/Spliterator;"
 		);
 	}
 	jobjectArray LinkedList::toArray()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toArray",
 			"()[Ljava/lang/Object;"
 		).object<jobjectArray>();
 	}
 	jobjectArray LinkedList::toArray(jobjectArray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toArray",
 			"([Ljava/lang/Object;)[Ljava/lang/Object;",
 			arg0

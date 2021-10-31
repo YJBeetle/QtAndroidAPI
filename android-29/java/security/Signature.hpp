@@ -35,9 +35,11 @@ namespace java::security
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Signature(const char *className, const char *sig, Ts...agv) : java::security::SignatureSpi(className, sig, std::forward<Ts>(agv)...) {}
 		Signature(QAndroidJniObject obj);
+		
 		// Constructors
-		Signature() = default;
 		
 		// Methods
 		static QAndroidJniObject getInstance(jstring arg0);

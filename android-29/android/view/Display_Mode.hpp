@@ -15,9 +15,11 @@ namespace android::view
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Display_Mode(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Display_Mode(QAndroidJniObject obj);
+		
 		// Constructors
-		Display_Mode() = default;
 		
 		// Methods
 		jint describeContents();

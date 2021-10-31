@@ -5,30 +5,28 @@ namespace android::view::animation
 {
 	// Fields
 	
-	CycleInterpolator::CycleInterpolator(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CycleInterpolator::CycleInterpolator(QAndroidJniObject obj) : android::view::animation::BaseInterpolator(obj) {}
+	
 	// Constructors
 	CycleInterpolator::CycleInterpolator(jfloat arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::view::animation::BaseInterpolator(
 			"android.view.animation.CycleInterpolator",
 			"(F)V",
 			arg0
-		);
-	}
+		) {}
 	CycleInterpolator::CycleInterpolator(android::content::Context arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::view::animation::BaseInterpolator(
 			"android.view.animation.CycleInterpolator",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	
 	// Methods
 	jfloat CycleInterpolator::getInterpolation(jfloat arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getInterpolation",
 			"(F)F",
 			arg0

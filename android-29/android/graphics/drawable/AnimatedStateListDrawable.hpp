@@ -29,7 +29,10 @@ namespace android::graphics::drawable
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AnimatedStateListDrawable(const char *className, const char *sig, Ts...agv) : android::graphics::drawable::StateListDrawable(className, sig, std::forward<Ts>(agv)...) {}
 		AnimatedStateListDrawable(QAndroidJniObject obj);
+		
 		// Constructors
 		AnimatedStateListDrawable();
 		

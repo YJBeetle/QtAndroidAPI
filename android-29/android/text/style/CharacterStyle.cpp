@@ -5,15 +5,15 @@ namespace android::text::style
 {
 	// Fields
 	
-	CharacterStyle::CharacterStyle(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CharacterStyle::CharacterStyle(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	CharacterStyle::CharacterStyle()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.text.style.CharacterStyle",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject CharacterStyle::wrap(android::text::style::CharacterStyle arg0)
@@ -22,22 +22,22 @@ namespace android::text::style
 			"android.text.style.CharacterStyle",
 			"wrap",
 			"(Landroid/text/style/CharacterStyle;)Landroid/text/style/CharacterStyle;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject CharacterStyle::getUnderlying()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getUnderlying",
 			"()Landroid/text/style/CharacterStyle;"
 		);
 	}
 	void CharacterStyle::updateDrawState(android::text::TextPaint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"updateDrawState",
 			"(Landroid/text/TextPaint;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::text::style

@@ -212,7 +212,9 @@ namespace android::icu::text
 		);
 	}
 	
-	DateFormat_Field::DateFormat_Field(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DateFormat_Field::DateFormat_Field(QAndroidJniObject obj) : java::text::Format_Field(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -227,7 +229,7 @@ namespace android::icu::text
 	}
 	jint DateFormat_Field::getCalendarField()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCalendarField",
 			"()I"
 		);

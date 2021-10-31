@@ -76,7 +76,9 @@ namespace android::renderscript
 		);
 	}
 	
-	Type_CubemapFace::Type_CubemapFace(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Type_CubemapFace::Type_CubemapFace(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

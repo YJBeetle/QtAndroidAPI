@@ -47,13 +47,15 @@ namespace android::view
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TextureView(const char *className, const char *sig, Ts...agv) : android::view::View(className, sig, std::forward<Ts>(agv)...) {}
 		TextureView(QAndroidJniObject obj);
+		
 		// Constructors
 		TextureView(android::content::Context arg0);
 		TextureView(android::content::Context arg0, __JniBaseClass arg1);
 		TextureView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		TextureView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
-		TextureView() = default;
 		
 		// Methods
 		void buildLayer();

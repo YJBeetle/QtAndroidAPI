@@ -22,9 +22,11 @@ namespace java::security::cert
 		static QAndroidJniObject UNSPECIFIED();
 		static QAndroidJniObject UNUSED();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CRLReason(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		CRLReason(QAndroidJniObject obj);
+		
 		// Constructors
-		CRLReason() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

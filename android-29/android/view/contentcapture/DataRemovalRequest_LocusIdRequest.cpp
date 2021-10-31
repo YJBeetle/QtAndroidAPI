@@ -6,20 +6,22 @@ namespace android::view::contentcapture
 {
 	// Fields
 	
-	DataRemovalRequest_LocusIdRequest::DataRemovalRequest_LocusIdRequest(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DataRemovalRequest_LocusIdRequest::DataRemovalRequest_LocusIdRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint DataRemovalRequest_LocusIdRequest::getFlags()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getFlags",
 			"()I"
 		);
 	}
 	QAndroidJniObject DataRemovalRequest_LocusIdRequest::getLocusId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLocusId",
 			"()Landroid/content/LocusId;"
 		);

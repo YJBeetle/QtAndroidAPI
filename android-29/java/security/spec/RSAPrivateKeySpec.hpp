@@ -14,11 +14,13 @@ namespace java::security::spec
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit RSAPrivateKeySpec(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		RSAPrivateKeySpec(QAndroidJniObject obj);
+		
 		// Constructors
 		RSAPrivateKeySpec(java::math::BigInteger arg0, java::math::BigInteger arg1);
 		RSAPrivateKeySpec(java::math::BigInteger arg0, java::math::BigInteger arg1, __JniBaseClass arg2);
-		RSAPrivateKeySpec() = default;
 		
 		// Methods
 		QAndroidJniObject getModulus();

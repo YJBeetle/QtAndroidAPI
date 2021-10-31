@@ -19,9 +19,11 @@ namespace android::media
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Session2CommandGroup(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Session2CommandGroup(QAndroidJniObject obj);
+		
 		// Constructors
-		Session2CommandGroup() = default;
 		
 		// Methods
 		jint describeContents();

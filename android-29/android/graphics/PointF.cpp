@@ -15,43 +15,39 @@ namespace android::graphics
 	}
 	jfloat PointF::x()
 	{
-		return __thiz.getField<jfloat>(
+		return getField<jfloat>(
 			"x"
 		);
 	}
 	jfloat PointF::y()
 	{
-		return __thiz.getField<jfloat>(
+		return getField<jfloat>(
 			"y"
 		);
 	}
 	
-	PointF::PointF(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PointF::PointF(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	PointF::PointF()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.graphics.PointF",
 			"()V"
-		);
-	}
+		) {}
 	PointF::PointF(android::graphics::Point arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.graphics.PointF",
 			"(Landroid/graphics/Point;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	PointF::PointF(jfloat arg0, jfloat arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.graphics.PointF",
 			"(FF)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jfloat PointF::length(jfloat arg0, jfloat arg1)
@@ -66,14 +62,14 @@ namespace android::graphics
 	}
 	jint PointF::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean PointF::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -81,7 +77,7 @@ namespace android::graphics
 	}
 	jboolean PointF::equals(jfloat arg0, jfloat arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(FF)Z",
 			arg0,
@@ -90,28 +86,28 @@ namespace android::graphics
 	}
 	jint PointF::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jfloat PointF::length()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"length",
 			"()F"
 		);
 	}
 	void PointF::negate()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"negate",
 			"()V"
 		);
 	}
 	void PointF::offset(jfloat arg0, jfloat arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"offset",
 			"(FF)V",
 			arg0,
@@ -120,23 +116,23 @@ namespace android::graphics
 	}
 	void PointF::readFromParcel(android::os::Parcel arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"readFromParcel",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void PointF::set(android::graphics::PointF arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"set",
 			"(Landroid/graphics/PointF;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void PointF::set(jfloat arg0, jfloat arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"set",
 			"(FF)V",
 			arg0,
@@ -145,17 +141,17 @@ namespace android::graphics
 	}
 	jstring PointF::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void PointF::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

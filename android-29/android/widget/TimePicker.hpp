@@ -33,13 +33,15 @@ namespace android::widget
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TimePicker(const char *className, const char *sig, Ts...agv) : android::widget::FrameLayout(className, sig, std::forward<Ts>(agv)...) {}
 		TimePicker(QAndroidJniObject obj);
+		
 		// Constructors
 		TimePicker(android::content::Context arg0);
 		TimePicker(android::content::Context arg0, __JniBaseClass arg1);
 		TimePicker(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		TimePicker(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
-		TimePicker() = default;
 		
 		// Methods
 		void autofill(android::view::autofill::AutofillValue arg0);

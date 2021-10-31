@@ -20,7 +20,10 @@ namespace android::os
 		static QAndroidJniObject SERIAL_EXECUTOR();
 		static QAndroidJniObject THREAD_POOL_EXECUTOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AsyncTask(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AsyncTask(QAndroidJniObject obj);
+		
 		// Constructors
 		AsyncTask();
 		

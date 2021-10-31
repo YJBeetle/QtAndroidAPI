@@ -15,10 +15,12 @@ namespace android::util
 		static QAndroidJniObject POSITIVE_INFINITY();
 		static QAndroidJniObject ZERO();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Rational(const char *className, const char *sig, Ts...agv) : java::lang::Number(className, sig, std::forward<Ts>(agv)...) {}
 		Rational(QAndroidJniObject obj);
+		
 		// Constructors
 		Rational(jint arg0, jint arg1);
-		Rational() = default;
 		
 		// Methods
 		static QAndroidJniObject parseRational(jstring arg0);

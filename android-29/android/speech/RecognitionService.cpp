@@ -22,28 +22,28 @@ namespace android::speech
 		).object<jstring>();
 	}
 	
-	RecognitionService::RecognitionService(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	RecognitionService::RecognitionService(QAndroidJniObject obj) : android::app::Service(obj) {}
+	
 	// Constructors
 	RecognitionService::RecognitionService()
-	{
-		__thiz = QAndroidJniObject(
+		: android::app::Service(
 			"android.speech.RecognitionService",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject RecognitionService::onBind(android::content::Intent arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onBind",
 			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void RecognitionService::onDestroy()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onDestroy",
 			"()V"
 		);

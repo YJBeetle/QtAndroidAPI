@@ -6,127 +6,129 @@ namespace javax::net::ssl
 {
 	// Fields
 	
-	SSLSocket::SSLSocket(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SSLSocket::SSLSocket(QAndroidJniObject obj) : java::net::Socket(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void SSLSocket::addHandshakeCompletedListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addHandshakeCompletedListener",
 			"(Ljavax/net/ssl/HandshakeCompletedListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring SSLSocket::getApplicationProtocol()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getApplicationProtocol",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jboolean SSLSocket::getEnableSessionCreation()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getEnableSessionCreation",
 			"()Z"
 		);
 	}
 	jarray SSLSocket::getEnabledCipherSuites()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEnabledCipherSuites",
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	jarray SSLSocket::getEnabledProtocols()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEnabledProtocols",
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	jstring SSLSocket::getHandshakeApplicationProtocol()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getHandshakeApplicationProtocol",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject SSLSocket::getHandshakeApplicationProtocolSelector()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getHandshakeApplicationProtocolSelector",
 			"()Ljava/util/function/BiFunction;"
 		);
 	}
 	QAndroidJniObject SSLSocket::getHandshakeSession()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getHandshakeSession",
 			"()Ljavax/net/ssl/SSLSession;"
 		);
 	}
 	jboolean SSLSocket::getNeedClientAuth()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getNeedClientAuth",
 			"()Z"
 		);
 	}
 	QAndroidJniObject SSLSocket::getSSLParameters()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSSLParameters",
 			"()Ljavax/net/ssl/SSLParameters;"
 		);
 	}
 	QAndroidJniObject SSLSocket::getSession()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSession",
 			"()Ljavax/net/ssl/SSLSession;"
 		);
 	}
 	jarray SSLSocket::getSupportedCipherSuites()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSupportedCipherSuites",
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	jarray SSLSocket::getSupportedProtocols()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSupportedProtocols",
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	jboolean SSLSocket::getUseClientMode()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getUseClientMode",
 			"()Z"
 		);
 	}
 	jboolean SSLSocket::getWantClientAuth()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getWantClientAuth",
 			"()Z"
 		);
 	}
 	void SSLSocket::removeHandshakeCompletedListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeHandshakeCompletedListener",
 			"(Ljavax/net/ssl/HandshakeCompletedListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void SSLSocket::setEnableSessionCreation(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setEnableSessionCreation",
 			"(Z)V",
 			arg0
@@ -134,7 +136,7 @@ namespace javax::net::ssl
 	}
 	void SSLSocket::setEnabledCipherSuites(jarray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setEnabledCipherSuites",
 			"([Ljava/lang/String;)V",
 			arg0
@@ -142,7 +144,7 @@ namespace javax::net::ssl
 	}
 	void SSLSocket::setEnabledProtocols(jarray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setEnabledProtocols",
 			"([Ljava/lang/String;)V",
 			arg0
@@ -150,15 +152,15 @@ namespace javax::net::ssl
 	}
 	void SSLSocket::setHandshakeApplicationProtocolSelector(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setHandshakeApplicationProtocolSelector",
 			"(Ljava/util/function/BiFunction;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void SSLSocket::setNeedClientAuth(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setNeedClientAuth",
 			"(Z)V",
 			arg0
@@ -166,15 +168,15 @@ namespace javax::net::ssl
 	}
 	void SSLSocket::setSSLParameters(javax::net::ssl::SSLParameters arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSSLParameters",
 			"(Ljavax/net/ssl/SSLParameters;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void SSLSocket::setUseClientMode(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setUseClientMode",
 			"(Z)V",
 			arg0
@@ -182,7 +184,7 @@ namespace javax::net::ssl
 	}
 	void SSLSocket::setWantClientAuth(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setWantClientAuth",
 			"(Z)V",
 			arg0
@@ -190,7 +192,7 @@ namespace javax::net::ssl
 	}
 	void SSLSocket::startHandshake()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"startHandshake",
 			"()V"
 		);

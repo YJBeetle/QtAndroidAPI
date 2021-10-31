@@ -10,15 +10,15 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	ForkJoinTask::ForkJoinTask(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ForkJoinTask::ForkJoinTask(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ForkJoinTask::ForkJoinTask()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.concurrent.ForkJoinTask",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject ForkJoinTask::adapt(__JniBaseClass arg0)
@@ -27,7 +27,7 @@ namespace java::util::concurrent
 			"java.util.concurrent.ForkJoinTask",
 			"adapt",
 			"(Ljava/lang/Runnable;)Ljava/util/concurrent/ForkJoinTask;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ForkJoinTask::adapt(__JniBaseClass arg0, jobject arg1)
@@ -36,7 +36,7 @@ namespace java::util::concurrent
 			"java.util.concurrent.ForkJoinTask",
 			"adapt",
 			"(Ljava/lang/Runnable;Ljava/lang/Object;)Ljava/util/concurrent/ForkJoinTask;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -86,7 +86,7 @@ namespace java::util::concurrent
 			"java.util.concurrent.ForkJoinTask",
 			"invokeAll",
 			"(Ljava/util/Collection;)Ljava/util/Collection;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ForkJoinTask::invokeAll(jarray arg0)
@@ -104,13 +104,13 @@ namespace java::util::concurrent
 			"java.util.concurrent.ForkJoinTask",
 			"invokeAll",
 			"(Ljava/util/concurrent/ForkJoinTask;Ljava/util/concurrent/ForkJoinTask;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jboolean ForkJoinTask::cancel(jboolean arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"cancel",
 			"(Z)Z",
 			arg0
@@ -118,7 +118,7 @@ namespace java::util::concurrent
 	}
 	jboolean ForkJoinTask::compareAndSetForkJoinTaskTag(jshort arg0, jshort arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"compareAndSetForkJoinTaskTag",
 			"(SS)Z",
 			arg0,
@@ -127,7 +127,7 @@ namespace java::util::concurrent
 	}
 	void ForkJoinTask::complete(jobject arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"complete",
 			"(Ljava/lang/Object;)V",
 			arg0
@@ -135,7 +135,7 @@ namespace java::util::concurrent
 	}
 	void ForkJoinTask::completeExceptionally(jthrowable arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"completeExceptionally",
 			"(Ljava/lang/Throwable;)V",
 			arg0
@@ -143,121 +143,121 @@ namespace java::util::concurrent
 	}
 	QAndroidJniObject ForkJoinTask::fork()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"fork",
 			"()Ljava/util/concurrent/ForkJoinTask;"
 		);
 	}
 	jobject ForkJoinTask::get()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobject ForkJoinTask::get(jlong arg0, java::util::concurrent::TimeUnit arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		).object<jobject>();
 	}
 	jthrowable ForkJoinTask::getException()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getException",
 			"()Ljava/lang/Throwable;"
 		).object<jthrowable>();
 	}
 	jshort ForkJoinTask::getForkJoinTaskTag()
 	{
-		return __thiz.callMethod<jshort>(
+		return callMethod<jshort>(
 			"getForkJoinTaskTag",
 			"()S"
 		);
 	}
 	jobject ForkJoinTask::getRawResult()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRawResult",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobject ForkJoinTask::invoke()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"invoke",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jboolean ForkJoinTask::isCancelled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isCancelled",
 			"()Z"
 		);
 	}
 	jboolean ForkJoinTask::isCompletedAbnormally()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isCompletedAbnormally",
 			"()Z"
 		);
 	}
 	jboolean ForkJoinTask::isCompletedNormally()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isCompletedNormally",
 			"()Z"
 		);
 	}
 	jboolean ForkJoinTask::isDone()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isDone",
 			"()Z"
 		);
 	}
 	jobject ForkJoinTask::join()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"join",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	void ForkJoinTask::quietlyComplete()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"quietlyComplete",
 			"()V"
 		);
 	}
 	void ForkJoinTask::quietlyInvoke()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"quietlyInvoke",
 			"()V"
 		);
 	}
 	void ForkJoinTask::quietlyJoin()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"quietlyJoin",
 			"()V"
 		);
 	}
 	void ForkJoinTask::reinitialize()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"reinitialize",
 			"()V"
 		);
 	}
 	jshort ForkJoinTask::setForkJoinTaskTag(jshort arg0)
 	{
-		return __thiz.callMethod<jshort>(
+		return callMethod<jshort>(
 			"setForkJoinTaskTag",
 			"(S)S",
 			arg0
@@ -265,7 +265,7 @@ namespace java::util::concurrent
 	}
 	jboolean ForkJoinTask::tryUnfork()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"tryUnfork",
 			"()Z"
 		);

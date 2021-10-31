@@ -26,11 +26,13 @@ namespace java::security::cert
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PKIXParameters(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PKIXParameters(QAndroidJniObject obj);
+		
 		// Constructors
 		PKIXParameters(java::security::KeyStore arg0);
 		PKIXParameters(__JniBaseClass arg0);
-		PKIXParameters() = default;
 		
 		// Methods
 		void addCertPathChecker(java::security::cert::PKIXCertPathChecker arg0);

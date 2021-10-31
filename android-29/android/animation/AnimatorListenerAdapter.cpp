@@ -5,63 +5,63 @@ namespace android::animation
 {
 	// Fields
 	
-	AnimatorListenerAdapter::AnimatorListenerAdapter(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AnimatorListenerAdapter::AnimatorListenerAdapter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	AnimatorListenerAdapter::AnimatorListenerAdapter()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.animation.AnimatorListenerAdapter",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void AnimatorListenerAdapter::onAnimationCancel(android::animation::Animator arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onAnimationCancel",
 			"(Landroid/animation/Animator;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AnimatorListenerAdapter::onAnimationEnd(android::animation::Animator arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onAnimationEnd",
 			"(Landroid/animation/Animator;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AnimatorListenerAdapter::onAnimationPause(android::animation::Animator arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onAnimationPause",
 			"(Landroid/animation/Animator;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AnimatorListenerAdapter::onAnimationRepeat(android::animation::Animator arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onAnimationRepeat",
 			"(Landroid/animation/Animator;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AnimatorListenerAdapter::onAnimationResume(android::animation::Animator arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onAnimationResume",
 			"(Landroid/animation/Animator;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AnimatorListenerAdapter::onAnimationStart(android::animation::Animator arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onAnimationStart",
 			"(Landroid/animation/Animator;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::animation

@@ -29,11 +29,13 @@ namespace android::widget
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SimpleCursorAdapter(const char *className, const char *sig, Ts...agv) : android::widget::ResourceCursorAdapter(className, sig, std::forward<Ts>(agv)...) {}
 		SimpleCursorAdapter(QAndroidJniObject obj);
+		
 		// Constructors
 		SimpleCursorAdapter(android::content::Context arg0, jint arg1, __JniBaseClass arg2, jarray arg3, jintArray arg4);
 		SimpleCursorAdapter(android::content::Context arg0, jint arg1, __JniBaseClass arg2, jarray arg3, jintArray arg4, jint arg5);
-		SimpleCursorAdapter() = default;
 		
 		// Methods
 		void bindView(android::view::View arg0, android::content::Context arg1, __JniBaseClass arg2);

@@ -4,65 +4,65 @@ namespace android::webkit
 {
 	// Fields
 	
-	ClientCertRequest::ClientCertRequest(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ClientCertRequest::ClientCertRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ClientCertRequest::ClientCertRequest()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.webkit.ClientCertRequest",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void ClientCertRequest::cancel()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"cancel",
 			"()V"
 		);
 	}
 	jstring ClientCertRequest::getHost()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getHost",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jarray ClientCertRequest::getKeyTypes()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getKeyTypes",
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	jint ClientCertRequest::getPort()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPort",
 			"()I"
 		);
 	}
 	jarray ClientCertRequest::getPrincipals()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPrincipals",
 			"()[Ljava/security/Principal;"
 		).object<jarray>();
 	}
 	void ClientCertRequest::ignore()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"ignore",
 			"()V"
 		);
 	}
 	void ClientCertRequest::proceed(__JniBaseClass arg0, jarray arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"proceed",
 			"(Ljava/security/PrivateKey;[Ljava/security/cert/X509Certificate;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

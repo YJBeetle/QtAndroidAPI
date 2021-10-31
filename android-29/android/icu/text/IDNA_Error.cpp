@@ -124,7 +124,9 @@ namespace android::icu::text
 		);
 	}
 	
-	IDNA_Error::IDNA_Error(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	IDNA_Error::IDNA_Error(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

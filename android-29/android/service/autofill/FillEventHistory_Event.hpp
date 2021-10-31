@@ -27,9 +27,11 @@ namespace android::service::autofill
 		static jint TYPE_DATASET_SELECTED();
 		static jint TYPE_SAVE_SHOWN();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit FillEventHistory_Event(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		FillEventHistory_Event(QAndroidJniObject obj);
+		
 		// Constructors
-		FillEventHistory_Event() = default;
 		
 		// Methods
 		QAndroidJniObject getChangedFields();

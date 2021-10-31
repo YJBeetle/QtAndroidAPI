@@ -26,9 +26,11 @@ namespace android::os
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TestLooperManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		TestLooperManager(QAndroidJniObject obj);
+		
 		// Constructors
-		TestLooperManager() = default;
 		
 		// Methods
 		void execute(android::os::Message arg0);

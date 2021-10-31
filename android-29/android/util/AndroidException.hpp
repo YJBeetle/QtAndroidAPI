@@ -15,7 +15,10 @@ namespace android::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AndroidException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
 		AndroidException(QAndroidJniObject obj);
+		
 		// Constructors
 		AndroidException();
 		AndroidException(java::lang::Exception arg0);

@@ -4,29 +4,29 @@ namespace android::service::carrier
 {
 	// Fields
 	
-	CarrierMessagingService_SendMultipartSmsResult::CarrierMessagingService_SendMultipartSmsResult(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CarrierMessagingService_SendMultipartSmsResult::CarrierMessagingService_SendMultipartSmsResult(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	CarrierMessagingService_SendMultipartSmsResult::CarrierMessagingService_SendMultipartSmsResult(jint arg0, jintArray arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.service.carrier.CarrierMessagingService$SendMultipartSmsResult",
 			"(I[I)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jintArray CarrierMessagingService_SendMultipartSmsResult::getMessageRefs()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMessageRefs",
 			"()[I"
 		).object<jintArray>();
 	}
 	jint CarrierMessagingService_SendMultipartSmsResult::getSendStatus()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSendStatus",
 			"()I"
 		);

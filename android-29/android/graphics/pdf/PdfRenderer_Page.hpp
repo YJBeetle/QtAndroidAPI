@@ -28,9 +28,11 @@ namespace android::graphics::pdf
 		static jint RENDER_MODE_FOR_DISPLAY();
 		static jint RENDER_MODE_FOR_PRINT();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PdfRenderer_Page(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PdfRenderer_Page(QAndroidJniObject obj);
+		
 		// Constructors
-		PdfRenderer_Page() = default;
 		
 		// Methods
 		void close();

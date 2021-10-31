@@ -35,9 +35,11 @@ namespace java::time
 		static QAndroidJniObject OCTOBER();
 		static QAndroidJniObject SEPTEMBER();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Month(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		Month(QAndroidJniObject obj);
+		
 		// Constructors
-		Month() = default;
 		
 		// Methods
 		static QAndroidJniObject from(__JniBaseClass arg0);

@@ -10,10 +10,12 @@ namespace android::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SizeF(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SizeF(QAndroidJniObject obj);
+		
 		// Constructors
 		SizeF(jfloat arg0, jfloat arg1);
-		SizeF() = default;
 		
 		// Methods
 		static QAndroidJniObject parseSizeF(jstring arg0);

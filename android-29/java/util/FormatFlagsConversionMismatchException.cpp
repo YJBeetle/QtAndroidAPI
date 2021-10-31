@@ -4,36 +4,36 @@ namespace java::util
 {
 	// Fields
 	
-	FormatFlagsConversionMismatchException::FormatFlagsConversionMismatchException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FormatFlagsConversionMismatchException::FormatFlagsConversionMismatchException(QAndroidJniObject obj) : java::util::IllegalFormatException(obj) {}
+	
 	// Constructors
 	FormatFlagsConversionMismatchException::FormatFlagsConversionMismatchException(jstring arg0, jchar arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::IllegalFormatException(
 			"java.util.FormatFlagsConversionMismatchException",
 			"(Ljava/lang/String;C)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jchar FormatFlagsConversionMismatchException::getConversion()
 	{
-		return __thiz.callMethod<jchar>(
+		return callMethod<jchar>(
 			"getConversion",
 			"()C"
 		);
 	}
 	jstring FormatFlagsConversionMismatchException::getFlags()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFlags",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring FormatFlagsConversionMismatchException::getMessage()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
 		).object<jstring>();

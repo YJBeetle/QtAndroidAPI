@@ -8,55 +8,57 @@ namespace android::service::voice
 {
 	// Fields
 	
-	VoiceInteractionSession_AssistState::VoiceInteractionSession_AssistState(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	VoiceInteractionSession_AssistState::VoiceInteractionSession_AssistState(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject VoiceInteractionSession_AssistState::getActivityId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getActivityId",
 			"()Landroid/service/voice/VoiceInteractionSession$ActivityId;"
 		);
 	}
 	QAndroidJniObject VoiceInteractionSession_AssistState::getAssistContent()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAssistContent",
 			"()Landroid/app/assist/AssistContent;"
 		);
 	}
 	QAndroidJniObject VoiceInteractionSession_AssistState::getAssistData()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAssistData",
 			"()Landroid/os/Bundle;"
 		);
 	}
 	QAndroidJniObject VoiceInteractionSession_AssistState::getAssistStructure()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAssistStructure",
 			"()Landroid/app/assist/AssistStructure;"
 		);
 	}
 	jint VoiceInteractionSession_AssistState::getCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCount",
 			"()I"
 		);
 	}
 	jint VoiceInteractionSession_AssistState::getIndex()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getIndex",
 			"()I"
 		);
 	}
 	jboolean VoiceInteractionSession_AssistState::isFocused()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isFocused",
 			"()Z"
 		);

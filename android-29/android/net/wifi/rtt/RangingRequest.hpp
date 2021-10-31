@@ -15,9 +15,11 @@ namespace android::net::wifi::rtt
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit RangingRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		RangingRequest(QAndroidJniObject obj);
+		
 		// Constructors
-		RangingRequest() = default;
 		
 		// Methods
 		static jint getMaxPeers();

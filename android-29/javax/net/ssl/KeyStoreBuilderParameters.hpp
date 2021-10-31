@@ -14,11 +14,13 @@ namespace javax::net::ssl
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit KeyStoreBuilderParameters(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		KeyStoreBuilderParameters(QAndroidJniObject obj);
+		
 		// Constructors
 		KeyStoreBuilderParameters(java::security::KeyStore_Builder arg0);
 		KeyStoreBuilderParameters(__JniBaseClass arg0);
-		KeyStoreBuilderParameters() = default;
 		
 		// Methods
 		QAndroidJniObject getParameters();

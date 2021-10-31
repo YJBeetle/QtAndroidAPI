@@ -31,7 +31,10 @@ namespace android::webkit
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit WebViewFragment(const char *className, const char *sig, Ts...agv) : android::app::Fragment(className, sig, std::forward<Ts>(agv)...) {}
 		WebViewFragment(QAndroidJniObject obj);
+		
 		// Constructors
 		WebViewFragment();
 		

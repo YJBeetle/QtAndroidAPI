@@ -5,13 +5,15 @@ namespace javax::xml::validation
 {
 	// Fields
 	
-	SchemaFactoryLoader::SchemaFactoryLoader(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SchemaFactoryLoader::SchemaFactoryLoader(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject SchemaFactoryLoader::newFactory(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newFactory",
 			"(Ljava/lang/String;)Ljavax/xml/validation/SchemaFactory;",
 			arg0

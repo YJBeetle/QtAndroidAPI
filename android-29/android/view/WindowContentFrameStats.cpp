@@ -13,20 +13,22 @@ namespace android::view
 		);
 	}
 	
-	WindowContentFrameStats::WindowContentFrameStats(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WindowContentFrameStats::WindowContentFrameStats(QAndroidJniObject obj) : android::view::FrameStats(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint WindowContentFrameStats::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jlong WindowContentFrameStats::getFramePostedTimeNano(jint arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getFramePostedTimeNano",
 			"(I)J",
 			arg0
@@ -34,7 +36,7 @@ namespace android::view
 	}
 	jlong WindowContentFrameStats::getFrameReadyTimeNano(jint arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getFrameReadyTimeNano",
 			"(I)J",
 			arg0
@@ -42,17 +44,17 @@ namespace android::view
 	}
 	jstring WindowContentFrameStats::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void WindowContentFrameStats::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

@@ -15,7 +15,9 @@ namespace android::hardware::usb
 		);
 	}
 	
-	UsbDevice::UsbDevice(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UsbDevice::UsbDevice(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -39,14 +41,14 @@ namespace android::hardware::usb
 	}
 	jint UsbDevice::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean UsbDevice::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -54,7 +56,7 @@ namespace android::hardware::usb
 	}
 	QAndroidJniObject UsbDevice::getConfiguration(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getConfiguration",
 			"(I)Landroid/hardware/usb/UsbConfiguration;",
 			arg0
@@ -62,49 +64,49 @@ namespace android::hardware::usb
 	}
 	jint UsbDevice::getConfigurationCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getConfigurationCount",
 			"()I"
 		);
 	}
 	jint UsbDevice::getDeviceClass()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDeviceClass",
 			"()I"
 		);
 	}
 	jint UsbDevice::getDeviceId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDeviceId",
 			"()I"
 		);
 	}
 	jstring UsbDevice::getDeviceName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDeviceName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint UsbDevice::getDeviceProtocol()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDeviceProtocol",
 			"()I"
 		);
 	}
 	jint UsbDevice::getDeviceSubclass()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDeviceSubclass",
 			"()I"
 		);
 	}
 	QAndroidJniObject UsbDevice::getInterface(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getInterface",
 			"(I)Landroid/hardware/usb/UsbInterface;",
 			arg0
@@ -112,73 +114,73 @@ namespace android::hardware::usb
 	}
 	jint UsbDevice::getInterfaceCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getInterfaceCount",
 			"()I"
 		);
 	}
 	jstring UsbDevice::getManufacturerName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getManufacturerName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint UsbDevice::getProductId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getProductId",
 			"()I"
 		);
 	}
 	jstring UsbDevice::getProductName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getProductName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring UsbDevice::getSerialNumber()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSerialNumber",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint UsbDevice::getVendorId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getVendorId",
 			"()I"
 		);
 	}
 	jstring UsbDevice::getVersion()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getVersion",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint UsbDevice::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring UsbDevice::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void UsbDevice::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

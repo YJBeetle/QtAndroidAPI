@@ -4,22 +4,22 @@ namespace java::lang
 {
 	// Fields
 	
-	TypeNotPresentException::TypeNotPresentException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TypeNotPresentException::TypeNotPresentException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	
 	// Constructors
 	TypeNotPresentException::TypeNotPresentException(jstring arg0, jthrowable arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::RuntimeException(
 			"java.lang.TypeNotPresentException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring TypeNotPresentException::typeName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"typeName",
 			"()Ljava/lang/String;"
 		).object<jstring>();

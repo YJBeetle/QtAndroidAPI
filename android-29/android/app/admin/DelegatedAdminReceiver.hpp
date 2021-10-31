@@ -23,7 +23,10 @@ namespace android::app::admin
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DelegatedAdminReceiver(const char *className, const char *sig, Ts...agv) : android::content::BroadcastReceiver(className, sig, std::forward<Ts>(agv)...) {}
 		DelegatedAdminReceiver(QAndroidJniObject obj);
+		
 		// Constructors
 		DelegatedAdminReceiver();
 		

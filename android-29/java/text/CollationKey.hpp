@@ -10,9 +10,11 @@ namespace java::text
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CollationKey(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		CollationKey(QAndroidJniObject obj);
+		
 		// Constructors
-		CollationKey() = default;
 		
 		// Methods
 		jint compareTo(jobject arg0);

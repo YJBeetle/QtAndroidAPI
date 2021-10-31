@@ -6,13 +6,15 @@ namespace android::media
 {
 	// Fields
 	
-	MediaSession2_ControllerInfo::MediaSession2_ControllerInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaSession2_ControllerInfo::MediaSession2_ControllerInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jboolean MediaSession2_ControllerInfo::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -20,42 +22,42 @@ namespace android::media
 	}
 	QAndroidJniObject MediaSession2_ControllerInfo::getConnectionHints()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getConnectionHints",
 			"()Landroid/os/Bundle;"
 		);
 	}
 	jstring MediaSession2_ControllerInfo::getPackageName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject MediaSession2_ControllerInfo::getRemoteUserInfo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRemoteUserInfo",
 			"()Landroid/media/session/MediaSessionManager$RemoteUserInfo;"
 		);
 	}
 	jint MediaSession2_ControllerInfo::getUid()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getUid",
 			"()I"
 		);
 	}
 	jint MediaSession2_ControllerInfo::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring MediaSession2_ControllerInfo::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

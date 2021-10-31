@@ -14,9 +14,11 @@ namespace android::icu::text
 		static QAndroidJniObject LONGER_FIRST();
 		static QAndroidJniObject SHORTER_FIRST();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit UnicodeSet_ComparisonStyle(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		UnicodeSet_ComparisonStyle(QAndroidJniObject obj);
+		
 		// Constructors
-		UnicodeSet_ComparisonStyle() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

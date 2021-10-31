@@ -15,7 +15,10 @@ namespace android::graphics
 		jfloat leading();
 		jfloat top();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Paint_FontMetrics(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Paint_FontMetrics(QAndroidJniObject obj);
+		
 		// Constructors
 		Paint_FontMetrics();
 		

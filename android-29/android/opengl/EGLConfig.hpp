@@ -11,9 +11,11 @@ namespace android::opengl
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit EGLConfig(const char *className, const char *sig, Ts...agv) : android::opengl::EGLObjectHandle(className, sig, std::forward<Ts>(agv)...) {}
 		EGLConfig(QAndroidJniObject obj);
+		
 		// Constructors
-		EGLConfig() = default;
 		
 		// Methods
 		jboolean equals(jobject arg0);

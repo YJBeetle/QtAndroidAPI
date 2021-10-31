@@ -17,9 +17,11 @@ namespace android::icu::text
 		static QAndroidJniObject PLAIN();
 		static QAndroidJniObject THIS();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit RelativeDateTimeFormatter_Direction(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		RelativeDateTimeFormatter_Direction(QAndroidJniObject obj);
+		
 		// Constructors
-		RelativeDateTimeFormatter_Direction() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

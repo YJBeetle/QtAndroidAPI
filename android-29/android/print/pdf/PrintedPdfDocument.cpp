@@ -8,43 +8,43 @@ namespace android::print::pdf
 {
 	// Fields
 	
-	PrintedPdfDocument::PrintedPdfDocument(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PrintedPdfDocument::PrintedPdfDocument(QAndroidJniObject obj) : android::graphics::pdf::PdfDocument(obj) {}
+	
 	// Constructors
 	PrintedPdfDocument::PrintedPdfDocument(android::content::Context arg0, android::print::PrintAttributes arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::graphics::pdf::PdfDocument(
 			"android.print.pdf.PrintedPdfDocument",
 			"(Landroid/content/Context;Landroid/print/PrintAttributes;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject PrintedPdfDocument::getPageContentRect()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPageContentRect",
 			"()Landroid/graphics/Rect;"
 		);
 	}
 	jint PrintedPdfDocument::getPageHeight()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPageHeight",
 			"()I"
 		);
 	}
 	jint PrintedPdfDocument::getPageWidth()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPageWidth",
 			"()I"
 		);
 	}
 	QAndroidJniObject PrintedPdfDocument::startPage(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"startPage",
 			"(I)Landroid/graphics/pdf/PdfDocument$Page;",
 			arg0

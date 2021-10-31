@@ -6,24 +6,26 @@ namespace android::view
 {
 	// Fields
 	
-	ViewGroupOverlay::ViewGroupOverlay(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ViewGroupOverlay::ViewGroupOverlay(QAndroidJniObject obj) : android::view::ViewOverlay(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void ViewGroupOverlay::add(android::view::View arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"add",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ViewGroupOverlay::remove(android::view::View arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"remove",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::view

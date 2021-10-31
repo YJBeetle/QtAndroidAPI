@@ -92,28 +92,28 @@ namespace android::telecom
 		);
 	}
 	
-	Connection_VideoProvider::Connection_VideoProvider(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Connection_VideoProvider::Connection_VideoProvider(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Connection_VideoProvider::Connection_VideoProvider()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.telecom.Connection$VideoProvider",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void Connection_VideoProvider::changeCameraCapabilities(android::telecom::VideoProfile_CameraCapabilities arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"changeCameraCapabilities",
 			"(Landroid/telecom/VideoProfile$CameraCapabilities;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Connection_VideoProvider::changePeerDimensions(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"changePeerDimensions",
 			"(II)V",
 			arg0,
@@ -122,7 +122,7 @@ namespace android::telecom
 	}
 	void Connection_VideoProvider::changeVideoQuality(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"changeVideoQuality",
 			"(I)V",
 			arg0
@@ -130,7 +130,7 @@ namespace android::telecom
 	}
 	void Connection_VideoProvider::handleCallSessionEvent(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"handleCallSessionEvent",
 			"(I)V",
 			arg0
@@ -138,38 +138,38 @@ namespace android::telecom
 	}
 	void Connection_VideoProvider::onRequestCameraCapabilities()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onRequestCameraCapabilities",
 			"()V"
 		);
 	}
 	void Connection_VideoProvider::onRequestConnectionDataUsage()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onRequestConnectionDataUsage",
 			"()V"
 		);
 	}
 	void Connection_VideoProvider::onSendSessionModifyRequest(android::telecom::VideoProfile arg0, android::telecom::VideoProfile arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onSendSessionModifyRequest",
 			"(Landroid/telecom/VideoProfile;Landroid/telecom/VideoProfile;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void Connection_VideoProvider::onSendSessionModifyResponse(android::telecom::VideoProfile arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onSendSessionModifyResponse",
 			"(Landroid/telecom/VideoProfile;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Connection_VideoProvider::onSetCamera(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onSetCamera",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -177,7 +177,7 @@ namespace android::telecom
 	}
 	void Connection_VideoProvider::onSetDeviceOrientation(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onSetDeviceOrientation",
 			"(I)V",
 			arg0
@@ -185,31 +185,31 @@ namespace android::telecom
 	}
 	void Connection_VideoProvider::onSetDisplaySurface(android::view::Surface arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onSetDisplaySurface",
 			"(Landroid/view/Surface;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Connection_VideoProvider::onSetPauseImage(android::net::Uri arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onSetPauseImage",
 			"(Landroid/net/Uri;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Connection_VideoProvider::onSetPreviewSurface(android::view::Surface arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onSetPreviewSurface",
 			"(Landroid/view/Surface;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Connection_VideoProvider::onSetZoom(jfloat arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onSetZoom",
 			"(F)V",
 			arg0
@@ -217,25 +217,25 @@ namespace android::telecom
 	}
 	void Connection_VideoProvider::receiveSessionModifyRequest(android::telecom::VideoProfile arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"receiveSessionModifyRequest",
 			"(Landroid/telecom/VideoProfile;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Connection_VideoProvider::receiveSessionModifyResponse(jint arg0, android::telecom::VideoProfile arg1, android::telecom::VideoProfile arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"receiveSessionModifyResponse",
 			"(ILandroid/telecom/VideoProfile;Landroid/telecom/VideoProfile;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	void Connection_VideoProvider::setCallDataUsage(jlong arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCallDataUsage",
 			"(J)V",
 			arg0

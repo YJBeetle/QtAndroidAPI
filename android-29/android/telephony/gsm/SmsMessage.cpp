@@ -55,15 +55,15 @@ namespace android::telephony::gsm
 		);
 	}
 	
-	SmsMessage::SmsMessage(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SmsMessage::SmsMessage(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	SmsMessage::SmsMessage()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.telephony.gsm.SmsMessage",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jintArray SmsMessage::calculateLength(jstring arg0, jboolean arg1)
@@ -121,168 +121,168 @@ namespace android::telephony::gsm
 	}
 	jstring SmsMessage::getDisplayMessageBody()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDisplayMessageBody",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring SmsMessage::getDisplayOriginatingAddress()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDisplayOriginatingAddress",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring SmsMessage::getEmailBody()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEmailBody",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring SmsMessage::getEmailFrom()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEmailFrom",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint SmsMessage::getIndexOnSim()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getIndexOnSim",
 			"()I"
 		);
 	}
 	jstring SmsMessage::getMessageBody()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMessageBody",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject SmsMessage::getMessageClass()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMessageClass",
 			"()Landroid/telephony/gsm/SmsMessage$MessageClass;"
 		);
 	}
 	jstring SmsMessage::getOriginatingAddress()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getOriginatingAddress",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jbyteArray SmsMessage::getPdu()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPdu",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jint SmsMessage::getProtocolIdentifier()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getProtocolIdentifier",
 			"()I"
 		);
 	}
 	jstring SmsMessage::getPseudoSubject()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPseudoSubject",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring SmsMessage::getServiceCenterAddress()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getServiceCenterAddress",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint SmsMessage::getStatus()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getStatus",
 			"()I"
 		);
 	}
 	jint SmsMessage::getStatusOnSim()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getStatusOnSim",
 			"()I"
 		);
 	}
 	jlong SmsMessage::getTimestampMillis()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getTimestampMillis",
 			"()J"
 		);
 	}
 	jbyteArray SmsMessage::getUserData()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getUserData",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jboolean SmsMessage::isCphsMwiMessage()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isCphsMwiMessage",
 			"()Z"
 		);
 	}
 	jboolean SmsMessage::isEmail()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEmail",
 			"()Z"
 		);
 	}
 	jboolean SmsMessage::isMWIClearMessage()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isMWIClearMessage",
 			"()Z"
 		);
 	}
 	jboolean SmsMessage::isMWISetMessage()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isMWISetMessage",
 			"()Z"
 		);
 	}
 	jboolean SmsMessage::isMwiDontStore()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isMwiDontStore",
 			"()Z"
 		);
 	}
 	jboolean SmsMessage::isReplace()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isReplace",
 			"()Z"
 		);
 	}
 	jboolean SmsMessage::isReplyPathPresent()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isReplyPathPresent",
 			"()Z"
 		);
 	}
 	jboolean SmsMessage::isStatusReportMessage()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isStatusReportMessage",
 			"()Z"
 		);

@@ -5,41 +5,43 @@ namespace android::icu::text
 {
 	// Fields
 	
-	AlphabeticIndex_Bucket::AlphabeticIndex_Bucket(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AlphabeticIndex_Bucket::AlphabeticIndex_Bucket(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jstring AlphabeticIndex_Bucket::getLabel()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject AlphabeticIndex_Bucket::getLabelType()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLabelType",
 			"()Landroid/icu/text/AlphabeticIndex$Bucket$LabelType;"
 		);
 	}
 	QAndroidJniObject AlphabeticIndex_Bucket::iterator()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
 	jint AlphabeticIndex_Bucket::size()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
 	jstring AlphabeticIndex_Bucket::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

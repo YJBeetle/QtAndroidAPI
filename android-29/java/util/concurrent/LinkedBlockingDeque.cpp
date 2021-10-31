@@ -8,36 +8,32 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	LinkedBlockingDeque::LinkedBlockingDeque(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	LinkedBlockingDeque::LinkedBlockingDeque(QAndroidJniObject obj) : java::util::AbstractQueue(obj) {}
+	
 	// Constructors
 	LinkedBlockingDeque::LinkedBlockingDeque()
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::AbstractQueue(
 			"java.util.concurrent.LinkedBlockingDeque",
 			"()V"
-		);
-	}
+		) {}
 	LinkedBlockingDeque::LinkedBlockingDeque(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::AbstractQueue(
 			"java.util.concurrent.LinkedBlockingDeque",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	LinkedBlockingDeque::LinkedBlockingDeque(__JniBaseClass arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::AbstractQueue(
 			"java.util.concurrent.LinkedBlockingDeque",
 			"(Ljava/util/Collection;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jboolean LinkedBlockingDeque::add(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"add",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -45,15 +41,15 @@ namespace java::util::concurrent
 	}
 	jboolean LinkedBlockingDeque::addAll(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"addAll",
 			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void LinkedBlockingDeque::addFirst(jobject arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addFirst",
 			"(Ljava/lang/Object;)V",
 			arg0
@@ -61,7 +57,7 @@ namespace java::util::concurrent
 	}
 	void LinkedBlockingDeque::addLast(jobject arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addLast",
 			"(Ljava/lang/Object;)V",
 			arg0
@@ -69,14 +65,14 @@ namespace java::util::concurrent
 	}
 	void LinkedBlockingDeque::clear()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
 	jboolean LinkedBlockingDeque::contains(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"contains",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -84,67 +80,67 @@ namespace java::util::concurrent
 	}
 	QAndroidJniObject LinkedBlockingDeque::descendingIterator()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"descendingIterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
 	jint LinkedBlockingDeque::drainTo(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"drainTo",
 			"(Ljava/util/Collection;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint LinkedBlockingDeque::drainTo(__JniBaseClass arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"drainTo",
 			"(Ljava/util/Collection;I)I",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	jobject LinkedBlockingDeque::element()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"element",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	void LinkedBlockingDeque::forEach(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"forEach",
 			"(Ljava/util/function/Consumer;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jobject LinkedBlockingDeque::getFirst()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFirst",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobject LinkedBlockingDeque::getLast()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLast",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	QAndroidJniObject LinkedBlockingDeque::iterator()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
 	jboolean LinkedBlockingDeque::offer(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"offer",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -152,17 +148,17 @@ namespace java::util::concurrent
 	}
 	jboolean LinkedBlockingDeque::offer(jobject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"offer",
 			"(Ljava/lang/Object;JLjava/util/concurrent/TimeUnit;)Z",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	jboolean LinkedBlockingDeque::offerFirst(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"offerFirst",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -170,17 +166,17 @@ namespace java::util::concurrent
 	}
 	jboolean LinkedBlockingDeque::offerFirst(jobject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"offerFirst",
 			"(Ljava/lang/Object;JLjava/util/concurrent/TimeUnit;)Z",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	jboolean LinkedBlockingDeque::offerLast(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"offerLast",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -188,93 +184,93 @@ namespace java::util::concurrent
 	}
 	jboolean LinkedBlockingDeque::offerLast(jobject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"offerLast",
 			"(Ljava/lang/Object;JLjava/util/concurrent/TimeUnit;)Z",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	jobject LinkedBlockingDeque::peek()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"peek",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobject LinkedBlockingDeque::peekFirst()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"peekFirst",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobject LinkedBlockingDeque::peekLast()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"peekLast",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobject LinkedBlockingDeque::poll()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"poll",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobject LinkedBlockingDeque::poll(jlong arg0, java::util::concurrent::TimeUnit arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"poll",
 			"(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		).object<jobject>();
 	}
 	jobject LinkedBlockingDeque::pollFirst()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"pollFirst",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobject LinkedBlockingDeque::pollFirst(jlong arg0, java::util::concurrent::TimeUnit arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"pollFirst",
 			"(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		).object<jobject>();
 	}
 	jobject LinkedBlockingDeque::pollLast()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"pollLast",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobject LinkedBlockingDeque::pollLast(jlong arg0, java::util::concurrent::TimeUnit arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"pollLast",
 			"(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		).object<jobject>();
 	}
 	jobject LinkedBlockingDeque::pop()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"pop",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	void LinkedBlockingDeque::push(jobject arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"push",
 			"(Ljava/lang/Object;)V",
 			arg0
@@ -282,7 +278,7 @@ namespace java::util::concurrent
 	}
 	void LinkedBlockingDeque::put(jobject arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"put",
 			"(Ljava/lang/Object;)V",
 			arg0
@@ -290,7 +286,7 @@ namespace java::util::concurrent
 	}
 	void LinkedBlockingDeque::putFirst(jobject arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putFirst",
 			"(Ljava/lang/Object;)V",
 			arg0
@@ -298,7 +294,7 @@ namespace java::util::concurrent
 	}
 	void LinkedBlockingDeque::putLast(jobject arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putLast",
 			"(Ljava/lang/Object;)V",
 			arg0
@@ -306,14 +302,14 @@ namespace java::util::concurrent
 	}
 	jint LinkedBlockingDeque::remainingCapacity()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"remainingCapacity",
 			"()I"
 		);
 	}
 	jboolean LinkedBlockingDeque::remove(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"remove",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -321,29 +317,29 @@ namespace java::util::concurrent
 	}
 	jobject LinkedBlockingDeque::remove()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"remove",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jboolean LinkedBlockingDeque::removeAll(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"removeAll",
 			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jobject LinkedBlockingDeque::removeFirst()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"removeFirst",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jboolean LinkedBlockingDeque::removeFirstOccurrence(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"removeFirstOccurrence",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -351,22 +347,22 @@ namespace java::util::concurrent
 	}
 	jboolean LinkedBlockingDeque::removeIf(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"removeIf",
 			"(Ljava/util/function/Predicate;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jobject LinkedBlockingDeque::removeLast()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"removeLast",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jboolean LinkedBlockingDeque::removeLastOccurrence(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"removeLastOccurrence",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -374,57 +370,57 @@ namespace java::util::concurrent
 	}
 	jboolean LinkedBlockingDeque::retainAll(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"retainAll",
 			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint LinkedBlockingDeque::size()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
 	QAndroidJniObject LinkedBlockingDeque::spliterator()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"spliterator",
 			"()Ljava/util/Spliterator;"
 		);
 	}
 	jobject LinkedBlockingDeque::take()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"take",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobject LinkedBlockingDeque::takeFirst()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"takeFirst",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobject LinkedBlockingDeque::takeLast()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"takeLast",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobjectArray LinkedBlockingDeque::toArray()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toArray",
 			"()[Ljava/lang/Object;"
 		).object<jobjectArray>();
 	}
 	jobjectArray LinkedBlockingDeque::toArray(jobjectArray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toArray",
 			"([Ljava/lang/Object;)[Ljava/lang/Object;",
 			arg0
@@ -432,7 +428,7 @@ namespace java::util::concurrent
 	}
 	jstring LinkedBlockingDeque::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

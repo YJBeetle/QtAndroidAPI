@@ -37,15 +37,15 @@ namespace android::provider
 		);
 	}
 	
-	MediaStore_Video_Media::MediaStore_Video_Media(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaStore_Video_Media::MediaStore_Video_Media(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MediaStore_Video_Media::MediaStore_Video_Media()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.provider.MediaStore$Video$Media",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject MediaStore_Video_Media::getContentUri(jstring arg0)

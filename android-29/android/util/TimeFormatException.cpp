@@ -4,7 +4,9 @@ namespace android::util
 {
 	// Fields
 	
-	TimeFormatException::TimeFormatException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TimeFormatException::TimeFormatException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	
 	// Constructors
 	
 	// Methods

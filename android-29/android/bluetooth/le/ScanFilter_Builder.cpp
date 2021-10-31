@@ -6,27 +6,27 @@ namespace android::bluetooth::le
 {
 	// Fields
 	
-	ScanFilter_Builder::ScanFilter_Builder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ScanFilter_Builder::ScanFilter_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ScanFilter_Builder::ScanFilter_Builder()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.bluetooth.le.ScanFilter$Builder",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject ScanFilter_Builder::build()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"build",
 			"()Landroid/bluetooth/le/ScanFilter;"
 		);
 	}
 	QAndroidJniObject ScanFilter_Builder::setDeviceAddress(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setDeviceAddress",
 			"(Ljava/lang/String;)Landroid/bluetooth/le/ScanFilter$Builder;",
 			arg0
@@ -34,7 +34,7 @@ namespace android::bluetooth::le
 	}
 	QAndroidJniObject ScanFilter_Builder::setDeviceName(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setDeviceName",
 			"(Ljava/lang/String;)Landroid/bluetooth/le/ScanFilter$Builder;",
 			arg0
@@ -42,7 +42,7 @@ namespace android::bluetooth::le
 	}
 	QAndroidJniObject ScanFilter_Builder::setManufacturerData(jint arg0, jbyteArray arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setManufacturerData",
 			"(I[B)Landroid/bluetooth/le/ScanFilter$Builder;",
 			arg0,
@@ -51,7 +51,7 @@ namespace android::bluetooth::le
 	}
 	QAndroidJniObject ScanFilter_Builder::setManufacturerData(jint arg0, jbyteArray arg1, jbyteArray arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setManufacturerData",
 			"(I[B[B)Landroid/bluetooth/le/ScanFilter$Builder;",
 			arg0,
@@ -61,55 +61,55 @@ namespace android::bluetooth::le
 	}
 	QAndroidJniObject ScanFilter_Builder::setServiceData(android::os::ParcelUuid arg0, jbyteArray arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setServiceData",
 			"(Landroid/os/ParcelUuid;[B)Landroid/bluetooth/le/ScanFilter$Builder;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	QAndroidJniObject ScanFilter_Builder::setServiceData(android::os::ParcelUuid arg0, jbyteArray arg1, jbyteArray arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setServiceData",
 			"(Landroid/os/ParcelUuid;[B[B)Landroid/bluetooth/le/ScanFilter$Builder;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
 	}
 	QAndroidJniObject ScanFilter_Builder::setServiceSolicitationUuid(android::os::ParcelUuid arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setServiceSolicitationUuid",
 			"(Landroid/os/ParcelUuid;)Landroid/bluetooth/le/ScanFilter$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ScanFilter_Builder::setServiceSolicitationUuid(android::os::ParcelUuid arg0, android::os::ParcelUuid arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setServiceSolicitationUuid",
 			"(Landroid/os/ParcelUuid;Landroid/os/ParcelUuid;)Landroid/bluetooth/le/ScanFilter$Builder;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject ScanFilter_Builder::setServiceUuid(android::os::ParcelUuid arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setServiceUuid",
 			"(Landroid/os/ParcelUuid;)Landroid/bluetooth/le/ScanFilter$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ScanFilter_Builder::setServiceUuid(android::os::ParcelUuid arg0, android::os::ParcelUuid arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setServiceUuid",
 			"(Landroid/os/ParcelUuid;Landroid/os/ParcelUuid;)Landroid/bluetooth/le/ScanFilter$Builder;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 } // namespace android::bluetooth::le

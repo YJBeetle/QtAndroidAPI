@@ -7,44 +7,44 @@ namespace android::view::textclassifier
 {
 	// Fields
 	
-	TextLanguage_Builder::TextLanguage_Builder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TextLanguage_Builder::TextLanguage_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	TextLanguage_Builder::TextLanguage_Builder()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.textclassifier.TextLanguage$Builder",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject TextLanguage_Builder::build()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"build",
 			"()Landroid/view/textclassifier/TextLanguage;"
 		);
 	}
 	QAndroidJniObject TextLanguage_Builder::putLocale(android::icu::util::ULocale arg0, jfloat arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"putLocale",
 			"(Landroid/icu/util/ULocale;F)Landroid/view/textclassifier/TextLanguage$Builder;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	QAndroidJniObject TextLanguage_Builder::setExtras(android::os::Bundle arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setExtras",
 			"(Landroid/os/Bundle;)Landroid/view/textclassifier/TextLanguage$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject TextLanguage_Builder::setId(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setId",
 			"(Ljava/lang/String;)Landroid/view/textclassifier/TextLanguage$Builder;",
 			arg0

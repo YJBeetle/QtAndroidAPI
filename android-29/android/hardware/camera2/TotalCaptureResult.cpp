@@ -4,20 +4,22 @@ namespace android::hardware::camera2
 {
 	// Fields
 	
-	TotalCaptureResult::TotalCaptureResult(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TotalCaptureResult::TotalCaptureResult(QAndroidJniObject obj) : android::hardware::camera2::CaptureResult(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject TotalCaptureResult::getPartialResults()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPartialResults",
 			"()Ljava/util/List;"
 		);
 	}
 	QAndroidJniObject TotalCaptureResult::getPhysicalCameraResults()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPhysicalCameraResults",
 			"()Ljava/util/Map;"
 		);

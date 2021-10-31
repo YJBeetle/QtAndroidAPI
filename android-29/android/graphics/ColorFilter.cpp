@@ -4,15 +4,15 @@ namespace android::graphics
 {
 	// Fields
 	
-	ColorFilter::ColorFilter(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ColorFilter::ColorFilter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ColorFilter::ColorFilter()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.graphics.ColorFilter",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::graphics

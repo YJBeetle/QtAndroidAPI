@@ -4,16 +4,16 @@ namespace java::io
 {
 	// Fields
 	
-	InvalidObjectException::InvalidObjectException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	InvalidObjectException::InvalidObjectException(QAndroidJniObject obj) : java::io::ObjectStreamException(obj) {}
+	
 	// Constructors
 	InvalidObjectException::InvalidObjectException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::ObjectStreamException(
 			"java.io.InvalidObjectException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::io

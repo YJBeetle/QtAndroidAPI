@@ -12,23 +12,23 @@ namespace android::media
 		);
 	}
 	
-	MediaTimestamp::MediaTimestamp(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaTimestamp::MediaTimestamp(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MediaTimestamp::MediaTimestamp(jlong arg0, jlong arg1, jfloat arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.MediaTimestamp",
 			"(JJF)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean MediaTimestamp::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -36,35 +36,35 @@ namespace android::media
 	}
 	jlong MediaTimestamp::getAnchorMediaTimeUs()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getAnchorMediaTimeUs",
 			"()J"
 		);
 	}
 	jlong MediaTimestamp::getAnchorSystemNanoTime()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getAnchorSystemNanoTime",
 			"()J"
 		);
 	}
 	jlong MediaTimestamp::getAnchorSytemNanoTime()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getAnchorSytemNanoTime",
 			"()J"
 		);
 	}
 	jfloat MediaTimestamp::getMediaClockRate()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getMediaClockRate",
 			"()F"
 		);
 	}
 	jstring MediaTimestamp::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

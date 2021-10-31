@@ -4,7 +4,9 @@ namespace android::graphics::fonts
 {
 	// Fields
 	
-	SystemFonts::SystemFonts(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SystemFonts::SystemFonts(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

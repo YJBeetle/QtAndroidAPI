@@ -9,13 +9,15 @@ namespace java::time::chrono
 {
 	// Fields
 	
-	AbstractChronology::AbstractChronology(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AbstractChronology::AbstractChronology(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint AbstractChronology::compareTo(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -23,15 +25,15 @@ namespace java::time::chrono
 	}
 	jint AbstractChronology::compareTo(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/time/chrono/Chronology;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean AbstractChronology::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -39,23 +41,23 @@ namespace java::time::chrono
 	}
 	jint AbstractChronology::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	QAndroidJniObject AbstractChronology::resolveDate(__JniBaseClass arg0, java::time::format::ResolverStyle arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"resolveDate",
 			"(Ljava/util/Map;Ljava/time/format/ResolverStyle;)Ljava/time/chrono/ChronoLocalDate;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jstring AbstractChronology::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

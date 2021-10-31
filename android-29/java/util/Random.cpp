@@ -7,35 +7,33 @@ namespace java::util
 {
 	// Fields
 	
-	Random::Random(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Random::Random(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Random::Random()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.Random",
 			"()V"
-		);
-	}
+		) {}
 	Random::Random(jlong arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.Random",
 			"(J)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject Random::doubles()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"doubles",
 			"()Ljava/util/stream/DoubleStream;"
 		);
 	}
 	QAndroidJniObject Random::doubles(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"doubles",
 			"(J)Ljava/util/stream/DoubleStream;",
 			arg0
@@ -43,7 +41,7 @@ namespace java::util
 	}
 	QAndroidJniObject Random::doubles(jdouble arg0, jdouble arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"doubles",
 			"(DD)Ljava/util/stream/DoubleStream;",
 			arg0,
@@ -52,7 +50,7 @@ namespace java::util
 	}
 	QAndroidJniObject Random::doubles(jlong arg0, jdouble arg1, jdouble arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"doubles",
 			"(JDD)Ljava/util/stream/DoubleStream;",
 			arg0,
@@ -62,14 +60,14 @@ namespace java::util
 	}
 	QAndroidJniObject Random::ints()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"ints",
 			"()Ljava/util/stream/IntStream;"
 		);
 	}
 	QAndroidJniObject Random::ints(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"ints",
 			"(J)Ljava/util/stream/IntStream;",
 			arg0
@@ -77,7 +75,7 @@ namespace java::util
 	}
 	QAndroidJniObject Random::ints(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"ints",
 			"(II)Ljava/util/stream/IntStream;",
 			arg0,
@@ -86,7 +84,7 @@ namespace java::util
 	}
 	QAndroidJniObject Random::ints(jlong arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"ints",
 			"(JII)Ljava/util/stream/IntStream;",
 			arg0,
@@ -96,14 +94,14 @@ namespace java::util
 	}
 	QAndroidJniObject Random::longs()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"longs",
 			"()Ljava/util/stream/LongStream;"
 		);
 	}
 	QAndroidJniObject Random::longs(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"longs",
 			"(J)Ljava/util/stream/LongStream;",
 			arg0
@@ -111,7 +109,7 @@ namespace java::util
 	}
 	QAndroidJniObject Random::longs(jlong arg0, jlong arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"longs",
 			"(JJ)Ljava/util/stream/LongStream;",
 			arg0,
@@ -120,7 +118,7 @@ namespace java::util
 	}
 	QAndroidJniObject Random::longs(jlong arg0, jlong arg1, jlong arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"longs",
 			"(JJJ)Ljava/util/stream/LongStream;",
 			arg0,
@@ -130,14 +128,14 @@ namespace java::util
 	}
 	jboolean Random::nextBoolean()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"nextBoolean",
 			"()Z"
 		);
 	}
 	void Random::nextBytes(jbyteArray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"nextBytes",
 			"([B)V",
 			arg0
@@ -145,35 +143,35 @@ namespace java::util
 	}
 	jdouble Random::nextDouble()
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"nextDouble",
 			"()D"
 		);
 	}
 	jfloat Random::nextFloat()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"nextFloat",
 			"()F"
 		);
 	}
 	jdouble Random::nextGaussian()
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"nextGaussian",
 			"()D"
 		);
 	}
 	jint Random::nextInt()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"nextInt",
 			"()I"
 		);
 	}
 	jint Random::nextInt(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"nextInt",
 			"(I)I",
 			arg0
@@ -181,14 +179,14 @@ namespace java::util
 	}
 	jlong Random::nextLong()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"nextLong",
 			"()J"
 		);
 	}
 	void Random::setSeed(jlong arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSeed",
 			"(J)V",
 			arg0

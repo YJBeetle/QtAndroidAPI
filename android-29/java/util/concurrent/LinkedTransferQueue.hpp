@@ -24,7 +24,10 @@ namespace java::util::concurrent
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit LinkedTransferQueue(const char *className, const char *sig, Ts...agv) : java::util::AbstractQueue(className, sig, std::forward<Ts>(agv)...) {}
 		LinkedTransferQueue(QAndroidJniObject obj);
+		
 		// Constructors
 		LinkedTransferQueue();
 		LinkedTransferQueue(__JniBaseClass arg0);

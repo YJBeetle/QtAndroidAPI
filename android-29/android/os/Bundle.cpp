@@ -28,80 +28,72 @@ namespace android::os
 		);
 	}
 	
-	Bundle::Bundle(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Bundle::Bundle(QAndroidJniObject obj) : android::os::BaseBundle(obj) {}
+	
 	// Constructors
 	Bundle::Bundle()
-	{
-		__thiz = QAndroidJniObject(
+		: android::os::BaseBundle(
 			"android.os.Bundle",
 			"()V"
-		);
-	}
+		) {}
 	Bundle::Bundle(android::os::Bundle &arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::os::BaseBundle(
 			"android.os.Bundle",
 			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	Bundle::Bundle(android::os::PersistableBundle arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::os::BaseBundle(
 			"android.os.Bundle",
 			"(Landroid/os/PersistableBundle;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	Bundle::Bundle(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::os::BaseBundle(
 			"android.os.Bundle",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	Bundle::Bundle(java::lang::ClassLoader arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::os::BaseBundle(
 			"android.os.Bundle",
 			"(Ljava/lang/ClassLoader;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	void Bundle::clear()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
 	jobject Bundle::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	QAndroidJniObject Bundle::deepCopy()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"deepCopy",
 			"()Landroid/os/Bundle;"
 		);
 	}
 	jint Bundle::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	QAndroidJniObject Bundle::getBinder(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBinder",
 			"(Ljava/lang/String;)Landroid/os/IBinder;",
 			arg0
@@ -109,7 +101,7 @@ namespace android::os
 	}
 	QAndroidJniObject Bundle::getBundle(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBundle",
 			"(Ljava/lang/String;)Landroid/os/Bundle;",
 			arg0
@@ -117,7 +109,7 @@ namespace android::os
 	}
 	jbyte Bundle::getByte(jstring arg0)
 	{
-		return __thiz.callMethod<jbyte>(
+		return callMethod<jbyte>(
 			"getByte",
 			"(Ljava/lang/String;)B",
 			arg0
@@ -125,7 +117,7 @@ namespace android::os
 	}
 	QAndroidJniObject Bundle::getByte(jstring arg0, jbyte arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getByte",
 			"(Ljava/lang/String;B)Ljava/lang/Byte;",
 			arg0,
@@ -134,7 +126,7 @@ namespace android::os
 	}
 	jbyteArray Bundle::getByteArray(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getByteArray",
 			"(Ljava/lang/String;)[B",
 			arg0
@@ -142,7 +134,7 @@ namespace android::os
 	}
 	jchar Bundle::getChar(jstring arg0)
 	{
-		return __thiz.callMethod<jchar>(
+		return callMethod<jchar>(
 			"getChar",
 			"(Ljava/lang/String;)C",
 			arg0
@@ -150,7 +142,7 @@ namespace android::os
 	}
 	jchar Bundle::getChar(jstring arg0, jchar arg1)
 	{
-		return __thiz.callMethod<jchar>(
+		return callMethod<jchar>(
 			"getChar",
 			"(Ljava/lang/String;C)C",
 			arg0,
@@ -159,7 +151,7 @@ namespace android::os
 	}
 	jcharArray Bundle::getCharArray(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCharArray",
 			"(Ljava/lang/String;)[C",
 			arg0
@@ -167,7 +159,7 @@ namespace android::os
 	}
 	jstring Bundle::getCharSequence(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCharSequence",
 			"(Ljava/lang/String;)Ljava/lang/CharSequence;",
 			arg0
@@ -175,7 +167,7 @@ namespace android::os
 	}
 	jstring Bundle::getCharSequence(jstring arg0, jstring arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCharSequence",
 			"(Ljava/lang/String;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;",
 			arg0,
@@ -184,7 +176,7 @@ namespace android::os
 	}
 	jarray Bundle::getCharSequenceArray(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCharSequenceArray",
 			"(Ljava/lang/String;)[Ljava/lang/CharSequence;",
 			arg0
@@ -192,7 +184,7 @@ namespace android::os
 	}
 	QAndroidJniObject Bundle::getCharSequenceArrayList(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCharSequenceArrayList",
 			"(Ljava/lang/String;)Ljava/util/ArrayList;",
 			arg0
@@ -200,14 +192,14 @@ namespace android::os
 	}
 	QAndroidJniObject Bundle::getClassLoader()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getClassLoader",
 			"()Ljava/lang/ClassLoader;"
 		);
 	}
 	jfloat Bundle::getFloat(jstring arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getFloat",
 			"(Ljava/lang/String;)F",
 			arg0
@@ -215,7 +207,7 @@ namespace android::os
 	}
 	jfloat Bundle::getFloat(jstring arg0, jfloat arg1)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getFloat",
 			"(Ljava/lang/String;F)F",
 			arg0,
@@ -224,7 +216,7 @@ namespace android::os
 	}
 	jfloatArray Bundle::getFloatArray(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFloatArray",
 			"(Ljava/lang/String;)[F",
 			arg0
@@ -232,7 +224,7 @@ namespace android::os
 	}
 	QAndroidJniObject Bundle::getIntegerArrayList(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getIntegerArrayList",
 			"(Ljava/lang/String;)Ljava/util/ArrayList;",
 			arg0
@@ -240,7 +232,7 @@ namespace android::os
 	}
 	QAndroidJniObject Bundle::getParcelable(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getParcelable",
 			"(Ljava/lang/String;)Landroid/os/Parcelable;",
 			arg0
@@ -248,7 +240,7 @@ namespace android::os
 	}
 	jarray Bundle::getParcelableArray(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getParcelableArray",
 			"(Ljava/lang/String;)[Landroid/os/Parcelable;",
 			arg0
@@ -256,7 +248,7 @@ namespace android::os
 	}
 	QAndroidJniObject Bundle::getParcelableArrayList(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getParcelableArrayList",
 			"(Ljava/lang/String;)Ljava/util/ArrayList;",
 			arg0
@@ -264,7 +256,7 @@ namespace android::os
 	}
 	QAndroidJniObject Bundle::getSerializable(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSerializable",
 			"(Ljava/lang/String;)Ljava/io/Serializable;",
 			arg0
@@ -272,7 +264,7 @@ namespace android::os
 	}
 	jshort Bundle::getShort(jstring arg0)
 	{
-		return __thiz.callMethod<jshort>(
+		return callMethod<jshort>(
 			"getShort",
 			"(Ljava/lang/String;)S",
 			arg0
@@ -280,7 +272,7 @@ namespace android::os
 	}
 	jshort Bundle::getShort(jstring arg0, jshort arg1)
 	{
-		return __thiz.callMethod<jshort>(
+		return callMethod<jshort>(
 			"getShort",
 			"(Ljava/lang/String;S)S",
 			arg0,
@@ -289,7 +281,7 @@ namespace android::os
 	}
 	jshortArray Bundle::getShortArray(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getShortArray",
 			"(Ljava/lang/String;)[S",
 			arg0
@@ -297,7 +289,7 @@ namespace android::os
 	}
 	QAndroidJniObject Bundle::getSize(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSize",
 			"(Ljava/lang/String;)Landroid/util/Size;",
 			arg0
@@ -305,7 +297,7 @@ namespace android::os
 	}
 	QAndroidJniObject Bundle::getSizeF(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSizeF",
 			"(Ljava/lang/String;)Landroid/util/SizeF;",
 			arg0
@@ -313,7 +305,7 @@ namespace android::os
 	}
 	QAndroidJniObject Bundle::getSparseParcelableArray(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSparseParcelableArray",
 			"(Ljava/lang/String;)Landroid/util/SparseArray;",
 			arg0
@@ -321,7 +313,7 @@ namespace android::os
 	}
 	QAndroidJniObject Bundle::getStringArrayList(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getStringArrayList",
 			"(Ljava/lang/String;)Ljava/util/ArrayList;",
 			arg0
@@ -329,40 +321,40 @@ namespace android::os
 	}
 	jboolean Bundle::hasFileDescriptors()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasFileDescriptors",
 			"()Z"
 		);
 	}
 	void Bundle::putAll(android::os::Bundle arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putAll",
 			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Bundle::putBinder(jstring arg0, __JniBaseClass arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putBinder",
 			"(Ljava/lang/String;Landroid/os/IBinder;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void Bundle::putBundle(jstring arg0, android::os::Bundle arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putBundle",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void Bundle::putByte(jstring arg0, jbyte arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putByte",
 			"(Ljava/lang/String;B)V",
 			arg0,
@@ -371,7 +363,7 @@ namespace android::os
 	}
 	void Bundle::putByteArray(jstring arg0, jbyteArray arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putByteArray",
 			"(Ljava/lang/String;[B)V",
 			arg0,
@@ -380,7 +372,7 @@ namespace android::os
 	}
 	void Bundle::putChar(jstring arg0, jchar arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putChar",
 			"(Ljava/lang/String;C)V",
 			arg0,
@@ -389,7 +381,7 @@ namespace android::os
 	}
 	void Bundle::putCharArray(jstring arg0, jcharArray arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putCharArray",
 			"(Ljava/lang/String;[C)V",
 			arg0,
@@ -398,7 +390,7 @@ namespace android::os
 	}
 	void Bundle::putCharSequence(jstring arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putCharSequence",
 			"(Ljava/lang/String;Ljava/lang/CharSequence;)V",
 			arg0,
@@ -407,7 +399,7 @@ namespace android::os
 	}
 	void Bundle::putCharSequenceArray(jstring arg0, jarray arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putCharSequenceArray",
 			"(Ljava/lang/String;[Ljava/lang/CharSequence;)V",
 			arg0,
@@ -416,16 +408,16 @@ namespace android::os
 	}
 	void Bundle::putCharSequenceArrayList(jstring arg0, java::util::ArrayList arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putCharSequenceArrayList",
 			"(Ljava/lang/String;Ljava/util/ArrayList;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void Bundle::putFloat(jstring arg0, jfloat arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putFloat",
 			"(Ljava/lang/String;F)V",
 			arg0,
@@ -434,7 +426,7 @@ namespace android::os
 	}
 	void Bundle::putFloatArray(jstring arg0, jfloatArray arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putFloatArray",
 			"(Ljava/lang/String;[F)V",
 			arg0,
@@ -443,25 +435,25 @@ namespace android::os
 	}
 	void Bundle::putIntegerArrayList(jstring arg0, java::util::ArrayList arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putIntegerArrayList",
 			"(Ljava/lang/String;Ljava/util/ArrayList;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void Bundle::putParcelable(jstring arg0, __JniBaseClass arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putParcelable",
 			"(Ljava/lang/String;Landroid/os/Parcelable;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void Bundle::putParcelableArray(jstring arg0, jarray arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putParcelableArray",
 			"(Ljava/lang/String;[Landroid/os/Parcelable;)V",
 			arg0,
@@ -470,25 +462,25 @@ namespace android::os
 	}
 	void Bundle::putParcelableArrayList(jstring arg0, java::util::ArrayList arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putParcelableArrayList",
 			"(Ljava/lang/String;Ljava/util/ArrayList;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void Bundle::putSerializable(jstring arg0, __JniBaseClass arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putSerializable",
 			"(Ljava/lang/String;Ljava/io/Serializable;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void Bundle::putShort(jstring arg0, jshort arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putShort",
 			"(Ljava/lang/String;S)V",
 			arg0,
@@ -497,7 +489,7 @@ namespace android::os
 	}
 	void Bundle::putShortArray(jstring arg0, jshortArray arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putShortArray",
 			"(Ljava/lang/String;[S)V",
 			arg0,
@@ -506,51 +498,51 @@ namespace android::os
 	}
 	void Bundle::putSize(jstring arg0, android::util::Size arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putSize",
 			"(Ljava/lang/String;Landroid/util/Size;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void Bundle::putSizeF(jstring arg0, android::util::SizeF arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putSizeF",
 			"(Ljava/lang/String;Landroid/util/SizeF;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void Bundle::putSparseParcelableArray(jstring arg0, android::util::SparseArray arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putSparseParcelableArray",
 			"(Ljava/lang/String;Landroid/util/SparseArray;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void Bundle::putStringArrayList(jstring arg0, java::util::ArrayList arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putStringArrayList",
 			"(Ljava/lang/String;Ljava/util/ArrayList;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void Bundle::readFromParcel(android::os::Parcel arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"readFromParcel",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Bundle::remove(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"remove",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -558,25 +550,25 @@ namespace android::os
 	}
 	void Bundle::setClassLoader(java::lang::ClassLoader arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setClassLoader",
 			"(Ljava/lang/ClassLoader;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring Bundle::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void Bundle::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

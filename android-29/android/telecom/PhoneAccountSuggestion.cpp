@@ -49,30 +49,30 @@ namespace android::telecom
 		);
 	}
 	
-	PhoneAccountSuggestion::PhoneAccountSuggestion(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PhoneAccountSuggestion::PhoneAccountSuggestion(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	PhoneAccountSuggestion::PhoneAccountSuggestion(android::telecom::PhoneAccountHandle arg0, jint arg1, jboolean arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.telecom.PhoneAccountSuggestion",
 			"(Landroid/telecom/PhoneAccountHandle;IZ)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	jint PhoneAccountSuggestion::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean PhoneAccountSuggestion::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -80,38 +80,38 @@ namespace android::telecom
 	}
 	QAndroidJniObject PhoneAccountSuggestion::getPhoneAccountHandle()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPhoneAccountHandle",
 			"()Landroid/telecom/PhoneAccountHandle;"
 		);
 	}
 	jint PhoneAccountSuggestion::getReason()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getReason",
 			"()I"
 		);
 	}
 	jint PhoneAccountSuggestion::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean PhoneAccountSuggestion::shouldAutoSelect()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"shouldAutoSelect",
 			"()Z"
 		);
 	}
 	void PhoneAccountSuggestion::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

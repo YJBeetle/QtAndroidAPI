@@ -7,29 +7,31 @@ namespace android::gesture
 {
 	// Fields
 	
-	GestureLibrary::GestureLibrary(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	GestureLibrary::GestureLibrary(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void GestureLibrary::addGesture(jstring arg0, android::gesture::Gesture arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addGesture",
 			"(Ljava/lang/String;Landroid/gesture/Gesture;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject GestureLibrary::getGestureEntries()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getGestureEntries",
 			"()Ljava/util/Set;"
 		);
 	}
 	QAndroidJniObject GestureLibrary::getGestures(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getGestures",
 			"(Ljava/lang/String;)Ljava/util/ArrayList;",
 			arg0
@@ -37,43 +39,43 @@ namespace android::gesture
 	}
 	jint GestureLibrary::getOrientationStyle()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getOrientationStyle",
 			"()I"
 		);
 	}
 	jint GestureLibrary::getSequenceType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSequenceType",
 			"()I"
 		);
 	}
 	jboolean GestureLibrary::isReadOnly()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isReadOnly",
 			"()Z"
 		);
 	}
 	jboolean GestureLibrary::load()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"load",
 			"()Z"
 		);
 	}
 	QAndroidJniObject GestureLibrary::recognize(android::gesture::Gesture arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"recognize",
 			"(Landroid/gesture/Gesture;)Ljava/util/ArrayList;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void GestureLibrary::removeEntry(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeEntry",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -81,23 +83,23 @@ namespace android::gesture
 	}
 	void GestureLibrary::removeGesture(jstring arg0, android::gesture::Gesture arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeGesture",
 			"(Ljava/lang/String;Landroid/gesture/Gesture;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jboolean GestureLibrary::save()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"save",
 			"()Z"
 		);
 	}
 	void GestureLibrary::setOrientationStyle(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOrientationStyle",
 			"(I)V",
 			arg0
@@ -105,7 +107,7 @@ namespace android::gesture
 	}
 	void GestureLibrary::setSequenceType(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSequenceType",
 			"(I)V",
 			arg0

@@ -7,36 +7,36 @@ namespace android::view::textclassifier
 {
 	// Fields
 	
-	ConversationAction_Builder::ConversationAction_Builder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ConversationAction_Builder::ConversationAction_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ConversationAction_Builder::ConversationAction_Builder(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.textclassifier.ConversationAction$Builder",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject ConversationAction_Builder::build()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"build",
 			"()Landroid/view/textclassifier/ConversationAction;"
 		);
 	}
 	QAndroidJniObject ConversationAction_Builder::setAction(android::app::RemoteAction arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setAction",
 			"(Landroid/app/RemoteAction;)Landroid/view/textclassifier/ConversationAction$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ConversationAction_Builder::setConfidenceScore(jfloat arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setConfidenceScore",
 			"(F)Landroid/view/textclassifier/ConversationAction$Builder;",
 			arg0
@@ -44,15 +44,15 @@ namespace android::view::textclassifier
 	}
 	QAndroidJniObject ConversationAction_Builder::setExtras(android::os::Bundle arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setExtras",
 			"(Landroid/os/Bundle;)Landroid/view/textclassifier/ConversationAction$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ConversationAction_Builder::setTextReply(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setTextReply",
 			"(Ljava/lang/CharSequence;)Landroid/view/textclassifier/ConversationAction$Builder;",
 			arg0

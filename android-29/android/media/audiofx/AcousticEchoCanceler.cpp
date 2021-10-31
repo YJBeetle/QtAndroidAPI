@@ -4,7 +4,9 @@ namespace android::media::audiofx
 {
 	// Fields
 	
-	AcousticEchoCanceler::AcousticEchoCanceler(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AcousticEchoCanceler::AcousticEchoCanceler(QAndroidJniObject obj) : android::media::audiofx::AudioEffect(obj) {}
+	
 	// Constructors
 	
 	// Methods

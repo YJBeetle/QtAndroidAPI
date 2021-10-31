@@ -20,59 +20,53 @@ namespace android::preference
 		);
 	}
 	
-	Preference::Preference(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Preference::Preference(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Preference::Preference(android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.preference.Preference",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	Preference::Preference(android::content::Context arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.preference.Preference",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	Preference::Preference(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.preference.Preference",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
-		);
-	}
+		) {}
 	Preference::Preference(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.preference.Preference",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	
 	// Methods
 	jint Preference::compareTo(android::preference::Preference arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Landroid/preference/Preference;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint Preference::compareTo(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -80,220 +74,220 @@ namespace android::preference
 	}
 	QAndroidJniObject Preference::getContext()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getContext",
 			"()Landroid/content/Context;"
 		);
 	}
 	jstring Preference::getDependency()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDependency",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject Preference::getEditor()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEditor",
 			"()Landroid/content/SharedPreferences$Editor;"
 		);
 	}
 	QAndroidJniObject Preference::getExtras()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
 	jstring Preference::getFragment()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFragment",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject Preference::getIcon()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getIcon",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
 	QAndroidJniObject Preference::getIntent()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getIntent",
 			"()Landroid/content/Intent;"
 		);
 	}
 	jstring Preference::getKey()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getKey",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint Preference::getLayoutResource()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLayoutResource",
 			"()I"
 		);
 	}
 	QAndroidJniObject Preference::getOnPreferenceChangeListener()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getOnPreferenceChangeListener",
 			"()Landroid/preference/Preference$OnPreferenceChangeListener;"
 		);
 	}
 	QAndroidJniObject Preference::getOnPreferenceClickListener()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getOnPreferenceClickListener",
 			"()Landroid/preference/Preference$OnPreferenceClickListener;"
 		);
 	}
 	jint Preference::getOrder()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getOrder",
 			"()I"
 		);
 	}
 	QAndroidJniObject Preference::getParent()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getParent",
 			"()Landroid/preference/PreferenceGroup;"
 		);
 	}
 	QAndroidJniObject Preference::getPersistedStringSet(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPersistedStringSet",
 			"(Ljava/util/Set;)Ljava/util/Set;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Preference::getPreferenceDataStore()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPreferenceDataStore",
 			"()Landroid/preference/PreferenceDataStore;"
 		);
 	}
 	QAndroidJniObject Preference::getPreferenceManager()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPreferenceManager",
 			"()Landroid/preference/PreferenceManager;"
 		);
 	}
 	QAndroidJniObject Preference::getSharedPreferences()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSharedPreferences",
 			"()Landroid/content/SharedPreferences;"
 		);
 	}
 	jboolean Preference::getShouldDisableView()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getShouldDisableView",
 			"()Z"
 		);
 	}
 	jstring Preference::getSummary()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSummary",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jstring Preference::getTitle()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTitle",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jint Preference::getTitleRes()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTitleRes",
 			"()I"
 		);
 	}
 	QAndroidJniObject Preference::getView(android::view::View arg0, android::view::ViewGroup arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getView",
 			"(Landroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jint Preference::getWidgetLayoutResource()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getWidgetLayoutResource",
 			"()I"
 		);
 	}
 	jboolean Preference::hasKey()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasKey",
 			"()Z"
 		);
 	}
 	jboolean Preference::isEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEnabled",
 			"()Z"
 		);
 	}
 	jboolean Preference::isIconSpaceReserved()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isIconSpaceReserved",
 			"()Z"
 		);
 	}
 	jboolean Preference::isPersistent()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isPersistent",
 			"()Z"
 		);
 	}
 	jboolean Preference::isRecycleEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isRecycleEnabled",
 			"()Z"
 		);
 	}
 	jboolean Preference::isSelectable()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isSelectable",
 			"()Z"
 		);
 	}
 	jboolean Preference::isSingleLineTitle()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isSingleLineTitle",
 			"()Z"
 		);
 	}
 	void Preference::notifyDependencyChange(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"notifyDependencyChange",
 			"(Z)V",
 			arg0
@@ -301,56 +295,56 @@ namespace android::preference
 	}
 	void Preference::onDependencyChanged(android::preference::Preference arg0, jboolean arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onDependencyChanged",
 			"(Landroid/preference/Preference;Z)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void Preference::onParentChanged(android::preference::Preference arg0, jboolean arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onParentChanged",
 			"(Landroid/preference/Preference;Z)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	QAndroidJniObject Preference::peekExtras()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"peekExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
 	jboolean Preference::persistStringSet(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"persistStringSet",
 			"(Ljava/util/Set;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Preference::restoreHierarchyState(android::os::Bundle arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"restoreHierarchyState",
 			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Preference::saveHierarchyState(android::os::Bundle arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"saveHierarchyState",
 			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Preference::setDefaultValue(jobject arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDefaultValue",
 			"(Ljava/lang/Object;)V",
 			arg0
@@ -358,7 +352,7 @@ namespace android::preference
 	}
 	void Preference::setDependency(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDependency",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -366,7 +360,7 @@ namespace android::preference
 	}
 	void Preference::setEnabled(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setEnabled",
 			"(Z)V",
 			arg0
@@ -374,7 +368,7 @@ namespace android::preference
 	}
 	void Preference::setFragment(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFragment",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -382,15 +376,15 @@ namespace android::preference
 	}
 	void Preference::setIcon(android::graphics::drawable::Drawable arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setIcon",
 			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Preference::setIcon(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setIcon",
 			"(I)V",
 			arg0
@@ -398,7 +392,7 @@ namespace android::preference
 	}
 	void Preference::setIconSpaceReserved(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setIconSpaceReserved",
 			"(Z)V",
 			arg0
@@ -406,15 +400,15 @@ namespace android::preference
 	}
 	void Preference::setIntent(android::content::Intent arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setIntent",
 			"(Landroid/content/Intent;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Preference::setKey(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setKey",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -422,7 +416,7 @@ namespace android::preference
 	}
 	void Preference::setLayoutResource(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLayoutResource",
 			"(I)V",
 			arg0
@@ -430,23 +424,23 @@ namespace android::preference
 	}
 	void Preference::setOnPreferenceChangeListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnPreferenceChangeListener",
 			"(Landroid/preference/Preference$OnPreferenceChangeListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Preference::setOnPreferenceClickListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnPreferenceClickListener",
 			"(Landroid/preference/Preference$OnPreferenceClickListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Preference::setOrder(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOrder",
 			"(I)V",
 			arg0
@@ -454,7 +448,7 @@ namespace android::preference
 	}
 	void Preference::setPersistent(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPersistent",
 			"(Z)V",
 			arg0
@@ -462,15 +456,15 @@ namespace android::preference
 	}
 	void Preference::setPreferenceDataStore(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPreferenceDataStore",
 			"(Landroid/preference/PreferenceDataStore;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Preference::setRecycleEnabled(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setRecycleEnabled",
 			"(Z)V",
 			arg0
@@ -478,7 +472,7 @@ namespace android::preference
 	}
 	void Preference::setSelectable(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSelectable",
 			"(Z)V",
 			arg0
@@ -486,7 +480,7 @@ namespace android::preference
 	}
 	void Preference::setShouldDisableView(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setShouldDisableView",
 			"(Z)V",
 			arg0
@@ -494,7 +488,7 @@ namespace android::preference
 	}
 	void Preference::setSingleLineTitle(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSingleLineTitle",
 			"(Z)V",
 			arg0
@@ -502,7 +496,7 @@ namespace android::preference
 	}
 	void Preference::setSummary(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSummary",
 			"(I)V",
 			arg0
@@ -510,7 +504,7 @@ namespace android::preference
 	}
 	void Preference::setSummary(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSummary",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
@@ -518,7 +512,7 @@ namespace android::preference
 	}
 	void Preference::setTitle(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTitle",
 			"(I)V",
 			arg0
@@ -526,7 +520,7 @@ namespace android::preference
 	}
 	void Preference::setTitle(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTitle",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
@@ -534,7 +528,7 @@ namespace android::preference
 	}
 	void Preference::setWidgetLayoutResource(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setWidgetLayoutResource",
 			"(I)V",
 			arg0
@@ -542,21 +536,21 @@ namespace android::preference
 	}
 	jboolean Preference::shouldCommit()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"shouldCommit",
 			"()Z"
 		);
 	}
 	jboolean Preference::shouldDisableDependents()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"shouldDisableDependents",
 			"()Z"
 		);
 	}
 	jstring Preference::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

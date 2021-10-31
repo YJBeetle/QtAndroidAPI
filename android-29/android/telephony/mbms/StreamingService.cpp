@@ -90,27 +90,29 @@ namespace android::telephony::mbms
 		);
 	}
 	
-	StreamingService::StreamingService(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	StreamingService::StreamingService(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void StreamingService::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	QAndroidJniObject StreamingService::getInfo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getInfo",
 			"()Landroid/telephony/mbms/StreamingServiceInfo;"
 		);
 	}
 	QAndroidJniObject StreamingService::getPlaybackUri()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPlaybackUri",
 			"()Landroid/net/Uri;"
 		);

@@ -44,215 +44,215 @@ namespace android::content::pm
 	}
 	jarray PackageInfo::activities()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"activities",
 			"[Landroid/content/pm/ActivityInfo;"
 		).object<jarray>();
 	}
 	QAndroidJniObject PackageInfo::applicationInfo()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"applicationInfo",
 			"Landroid/content/pm/ApplicationInfo;"
 		);
 	}
 	jint PackageInfo::baseRevisionCode()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"baseRevisionCode"
 		);
 	}
 	jarray PackageInfo::configPreferences()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"configPreferences",
 			"[Landroid/content/pm/ConfigurationInfo;"
 		).object<jarray>();
 	}
 	jarray PackageInfo::featureGroups()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"featureGroups",
 			"[Landroid/content/pm/FeatureGroupInfo;"
 		).object<jarray>();
 	}
 	jlong PackageInfo::firstInstallTime()
 	{
-		return __thiz.getField<jlong>(
+		return getField<jlong>(
 			"firstInstallTime"
 		);
 	}
 	jintArray PackageInfo::gids()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"gids",
 			"[I"
 		).object<jintArray>();
 	}
 	jint PackageInfo::installLocation()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"installLocation"
 		);
 	}
 	jarray PackageInfo::instrumentation()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"instrumentation",
 			"[Landroid/content/pm/InstrumentationInfo;"
 		).object<jarray>();
 	}
 	jboolean PackageInfo::isApex()
 	{
-		return __thiz.getField<jboolean>(
+		return getField<jboolean>(
 			"isApex"
 		);
 	}
 	jlong PackageInfo::lastUpdateTime()
 	{
-		return __thiz.getField<jlong>(
+		return getField<jlong>(
 			"lastUpdateTime"
 		);
 	}
 	jstring PackageInfo::packageName()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"packageName",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jarray PackageInfo::permissions()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"permissions",
 			"[Landroid/content/pm/PermissionInfo;"
 		).object<jarray>();
 	}
 	jarray PackageInfo::providers()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"providers",
 			"[Landroid/content/pm/ProviderInfo;"
 		).object<jarray>();
 	}
 	jarray PackageInfo::receivers()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"receivers",
 			"[Landroid/content/pm/ActivityInfo;"
 		).object<jarray>();
 	}
 	jarray PackageInfo::reqFeatures()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"reqFeatures",
 			"[Landroid/content/pm/FeatureInfo;"
 		).object<jarray>();
 	}
 	jarray PackageInfo::requestedPermissions()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"requestedPermissions",
 			"[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	jintArray PackageInfo::requestedPermissionsFlags()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"requestedPermissionsFlags",
 			"[I"
 		).object<jintArray>();
 	}
 	jarray PackageInfo::services()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"services",
 			"[Landroid/content/pm/ServiceInfo;"
 		).object<jarray>();
 	}
 	jstring PackageInfo::sharedUserId()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"sharedUserId",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint PackageInfo::sharedUserLabel()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"sharedUserLabel"
 		);
 	}
 	jarray PackageInfo::signatures()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"signatures",
 			"[Landroid/content/pm/Signature;"
 		).object<jarray>();
 	}
 	QAndroidJniObject PackageInfo::signingInfo()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"signingInfo",
 			"Landroid/content/pm/SigningInfo;"
 		);
 	}
 	jarray PackageInfo::splitNames()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"splitNames",
 			"[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	jintArray PackageInfo::splitRevisionCodes()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"splitRevisionCodes",
 			"[I"
 		).object<jintArray>();
 	}
 	jint PackageInfo::versionCode()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"versionCode"
 		);
 	}
 	jstring PackageInfo::versionName()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"versionName",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	
-	PackageInfo::PackageInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PackageInfo::PackageInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	PackageInfo::PackageInfo()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.content.pm.PackageInfo",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jint PackageInfo::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jlong PackageInfo::getLongVersionCode()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getLongVersionCode",
 			"()J"
 		);
 	}
 	void PackageInfo::setLongVersionCode(jlong arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLongVersionCode",
 			"(J)V",
 			arg0
@@ -260,17 +260,17 @@ namespace android::content::pm
 	}
 	jstring PackageInfo::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void PackageInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

@@ -4,7 +4,9 @@ namespace android::os::strictmode
 {
 	// Fields
 	
-	NonSdkApiUsedViolation::NonSdkApiUsedViolation(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NonSdkApiUsedViolation::NonSdkApiUsedViolation(QAndroidJniObject obj) : android::os::strictmode::Violation(obj) {}
+	
 	// Constructors
 	
 	// Methods

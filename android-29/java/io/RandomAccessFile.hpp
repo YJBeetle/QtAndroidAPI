@@ -22,11 +22,13 @@ namespace java::io
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit RandomAccessFile(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		RandomAccessFile(QAndroidJniObject obj);
+		
 		// Constructors
 		RandomAccessFile(java::io::File arg0, jstring arg1);
 		RandomAccessFile(jstring arg0, jstring arg1);
-		RandomAccessFile() = default;
 		
 		// Methods
 		void close();

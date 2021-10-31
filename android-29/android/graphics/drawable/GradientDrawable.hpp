@@ -66,7 +66,10 @@ namespace android::graphics::drawable
 		static jint RING();
 		static jint SWEEP_GRADIENT();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit GradientDrawable(const char *className, const char *sig, Ts...agv) : android::graphics::drawable::Drawable(className, sig, std::forward<Ts>(agv)...) {}
 		GradientDrawable(QAndroidJniObject obj);
+		
 		// Constructors
 		GradientDrawable();
 		GradientDrawable(android::graphics::drawable::GradientDrawable_Orientation arg0, jintArray arg1);

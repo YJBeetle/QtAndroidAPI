@@ -5,40 +5,40 @@ namespace android::inputmethodservice
 {
 	// Fields
 	
-	AbstractInputMethodService_AbstractInputMethodImpl::AbstractInputMethodService_AbstractInputMethodImpl(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AbstractInputMethodService_AbstractInputMethodImpl::AbstractInputMethodService_AbstractInputMethodImpl(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	AbstractInputMethodService_AbstractInputMethodImpl::AbstractInputMethodService_AbstractInputMethodImpl(android::inputmethodservice::AbstractInputMethodService arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.inputmethodservice.AbstractInputMethodService$AbstractInputMethodImpl",
 			"(Landroid/inputmethodservice/AbstractInputMethodService;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	void AbstractInputMethodService_AbstractInputMethodImpl::createSession(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"createSession",
 			"(Landroid/view/inputmethod/InputMethod$SessionCallback;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AbstractInputMethodService_AbstractInputMethodImpl::revokeSession(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"revokeSession",
 			"(Landroid/view/inputmethod/InputMethodSession;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AbstractInputMethodService_AbstractInputMethodImpl::setSessionEnabled(__JniBaseClass arg0, jboolean arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSessionEnabled",
 			"(Landroid/view/inputmethod/InputMethodSession;Z)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

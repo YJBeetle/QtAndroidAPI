@@ -19,9 +19,11 @@ namespace android::hardware::usb
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit UsbConfiguration(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		UsbConfiguration(QAndroidJniObject obj);
+		
 		// Constructors
-		UsbConfiguration() = default;
 		
 		// Methods
 		jint describeContents();

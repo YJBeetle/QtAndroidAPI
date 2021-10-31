@@ -18,77 +18,77 @@ namespace android::gesture
 		);
 	}
 	
-	Gesture::Gesture(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Gesture::Gesture(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Gesture::Gesture()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.gesture.Gesture",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void Gesture::addStroke(android::gesture::GestureStroke arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addStroke",
 			"(Landroid/gesture/GestureStroke;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jobject Gesture::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jint Gesture::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	QAndroidJniObject Gesture::getBoundingBox()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBoundingBox",
 			"()Landroid/graphics/RectF;"
 		);
 	}
 	jlong Gesture::getID()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getID",
 			"()J"
 		);
 	}
 	jfloat Gesture::getLength()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getLength",
 			"()F"
 		);
 	}
 	QAndroidJniObject Gesture::getStrokes()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getStrokes",
 			"()Ljava/util/ArrayList;"
 		);
 	}
 	jint Gesture::getStrokesCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getStrokesCount",
 			"()I"
 		);
 	}
 	QAndroidJniObject Gesture::toBitmap(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toBitmap",
 			"(IIII)Landroid/graphics/Bitmap;",
 			arg0,
@@ -99,7 +99,7 @@ namespace android::gesture
 	}
 	QAndroidJniObject Gesture::toBitmap(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toBitmap",
 			"(IIIII)Landroid/graphics/Bitmap;",
 			arg0,
@@ -111,22 +111,22 @@ namespace android::gesture
 	}
 	QAndroidJniObject Gesture::toPath()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toPath",
 			"()Landroid/graphics/Path;"
 		);
 	}
 	QAndroidJniObject Gesture::toPath(android::graphics::Path arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toPath",
 			"(Landroid/graphics/Path;)Landroid/graphics/Path;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Gesture::toPath(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toPath",
 			"(IIII)Landroid/graphics/Path;",
 			arg0,
@@ -137,10 +137,10 @@ namespace android::gesture
 	}
 	QAndroidJniObject Gesture::toPath(android::graphics::Path arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toPath",
 			"(Landroid/graphics/Path;IIII)Landroid/graphics/Path;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
@@ -149,10 +149,10 @@ namespace android::gesture
 	}
 	void Gesture::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

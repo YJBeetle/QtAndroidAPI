@@ -17,11 +17,13 @@ namespace java::lang
 		static QAndroidJniObject TRUE();
 		static jclass TYPE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Boolean(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Boolean(QAndroidJniObject obj);
+		
 		// Constructors
 		Boolean(jboolean arg0);
 		Boolean(jstring arg0);
-		Boolean() = default;
 		
 		// Methods
 		static jint compare(jboolean arg0, jboolean arg1);

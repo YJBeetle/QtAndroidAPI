@@ -22,15 +22,15 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	Settings_NameValueTable::Settings_NameValueTable(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Settings_NameValueTable::Settings_NameValueTable(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Settings_NameValueTable::Settings_NameValueTable()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.provider.Settings$NameValueTable",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject Settings_NameValueTable::getUriFor(android::net::Uri arg0, jstring arg1)
@@ -39,7 +39,7 @@ namespace android::provider
 			"android.provider.Settings$NameValueTable",
 			"getUriFor",
 			"(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

@@ -7,52 +7,52 @@ namespace android::app
 {
 	// Fields
 	
-	ExpandableListActivity::ExpandableListActivity(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ExpandableListActivity::ExpandableListActivity(QAndroidJniObject obj) : android::app::Activity(obj) {}
+	
 	// Constructors
 	ExpandableListActivity::ExpandableListActivity()
-	{
-		__thiz = QAndroidJniObject(
+		: android::app::Activity(
 			"android.app.ExpandableListActivity",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject ExpandableListActivity::getExpandableListAdapter()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExpandableListAdapter",
 			"()Landroid/widget/ExpandableListAdapter;"
 		);
 	}
 	QAndroidJniObject ExpandableListActivity::getExpandableListView()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExpandableListView",
 			"()Landroid/widget/ExpandableListView;"
 		);
 	}
 	jlong ExpandableListActivity::getSelectedId()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getSelectedId",
 			"()J"
 		);
 	}
 	jlong ExpandableListActivity::getSelectedPosition()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getSelectedPosition",
 			"()J"
 		);
 	}
 	jboolean ExpandableListActivity::onChildClick(android::widget::ExpandableListView arg0, android::view::View arg1, jint arg2, jint arg3, jlong arg4)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onChildClick",
 			"(Landroid/widget/ExpandableListView;Landroid/view/View;IIJ)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3,
 			arg4
@@ -60,24 +60,24 @@ namespace android::app
 	}
 	void ExpandableListActivity::onContentChanged()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onContentChanged",
 			"()V"
 		);
 	}
 	void ExpandableListActivity::onCreateContextMenu(__JniBaseClass arg0, android::view::View arg1, __JniBaseClass arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onCreateContextMenu",
 			"(Landroid/view/ContextMenu;Landroid/view/View;Landroid/view/ContextMenu$ContextMenuInfo;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	void ExpandableListActivity::onGroupCollapse(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onGroupCollapse",
 			"(I)V",
 			arg0
@@ -85,7 +85,7 @@ namespace android::app
 	}
 	void ExpandableListActivity::onGroupExpand(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onGroupExpand",
 			"(I)V",
 			arg0
@@ -93,15 +93,15 @@ namespace android::app
 	}
 	void ExpandableListActivity::setListAdapter(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setListAdapter",
 			"(Landroid/widget/ExpandableListAdapter;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean ExpandableListActivity::setSelectedChild(jint arg0, jint arg1, jboolean arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"setSelectedChild",
 			"(IIZ)Z",
 			arg0,
@@ -111,7 +111,7 @@ namespace android::app
 	}
 	void ExpandableListActivity::setSelectedGroup(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSelectedGroup",
 			"(I)V",
 			arg0

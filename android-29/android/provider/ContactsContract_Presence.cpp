@@ -4,15 +4,15 @@ namespace android::provider
 {
 	// Fields
 	
-	ContactsContract_Presence::ContactsContract_Presence(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ContactsContract_Presence::ContactsContract_Presence(QAndroidJniObject obj) : android::provider::ContactsContract_StatusUpdates(obj) {}
+	
 	// Constructors
 	ContactsContract_Presence::ContactsContract_Presence()
-	{
-		__thiz = QAndroidJniObject(
+		: android::provider::ContactsContract_StatusUpdates(
 			"android.provider.ContactsContract$Presence",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::provider

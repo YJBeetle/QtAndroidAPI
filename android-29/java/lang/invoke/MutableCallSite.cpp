@@ -7,24 +7,22 @@ namespace java::lang::invoke
 {
 	// Fields
 	
-	MutableCallSite::MutableCallSite(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MutableCallSite::MutableCallSite(QAndroidJniObject obj) : java::lang::invoke::CallSite(obj) {}
+	
 	// Constructors
 	MutableCallSite::MutableCallSite(java::lang::invoke::MethodHandle arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::invoke::CallSite(
 			"java.lang.invoke.MutableCallSite",
 			"(Ljava/lang/invoke/MethodHandle;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	MutableCallSite::MutableCallSite(java::lang::invoke::MethodType arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::invoke::CallSite(
 			"java.lang.invoke.MutableCallSite",
 			"(Ljava/lang/invoke/MethodType;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	void MutableCallSite::syncAll(jarray arg0)
@@ -38,24 +36,24 @@ namespace java::lang::invoke
 	}
 	QAndroidJniObject MutableCallSite::dynamicInvoker()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"dynamicInvoker",
 			"()Ljava/lang/invoke/MethodHandle;"
 		);
 	}
 	QAndroidJniObject MutableCallSite::getTarget()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTarget",
 			"()Ljava/lang/invoke/MethodHandle;"
 		);
 	}
 	void MutableCallSite::setTarget(java::lang::invoke::MethodHandle arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTarget",
 			"(Ljava/lang/invoke/MethodHandle;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace java::lang::invoke

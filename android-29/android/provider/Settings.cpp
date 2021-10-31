@@ -693,15 +693,15 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	Settings::Settings(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Settings::Settings(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Settings::Settings()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.provider.Settings",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean Settings::canDrawOverlays(android::content::Context arg0)
@@ -710,7 +710,7 @@ namespace android::provider
 			"android.provider.Settings",
 			"canDrawOverlays",
 			"(Landroid/content/Context;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::provider

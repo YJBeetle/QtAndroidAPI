@@ -21,10 +21,12 @@ namespace java::security::spec
 		static QAndroidJniObject SHA512_224();
 		static QAndroidJniObject SHA512_256();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MGF1ParameterSpec(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MGF1ParameterSpec(QAndroidJniObject obj);
+		
 		// Constructors
 		MGF1ParameterSpec(jstring arg0);
-		MGF1ParameterSpec() = default;
 		
 		// Methods
 		jstring getDigestAlgorithm();

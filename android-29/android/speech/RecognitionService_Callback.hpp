@@ -18,9 +18,11 @@ namespace android::speech
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit RecognitionService_Callback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		RecognitionService_Callback(QAndroidJniObject obj);
+		
 		// Constructors
-		RecognitionService_Callback() = default;
 		
 		// Methods
 		void beginningOfSpeech();

@@ -32,7 +32,9 @@ namespace android::graphics
 		);
 	}
 	
-	Bitmap::Bitmap(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Bitmap::Bitmap(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -42,7 +44,7 @@ namespace android::graphics
 			"android.graphics.Bitmap",
 			"createBitmap",
 			"(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Bitmap::createBitmap(android::graphics::Picture arg0)
@@ -51,7 +53,7 @@ namespace android::graphics
 			"android.graphics.Bitmap",
 			"createBitmap",
 			"(Landroid/graphics/Picture;)Landroid/graphics/Bitmap;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Bitmap::createBitmap(jint arg0, jint arg1, android::graphics::Bitmap_Config arg2)
@@ -62,7 +64,7 @@ namespace android::graphics
 			"(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	QAndroidJniObject Bitmap::createBitmap(jintArray arg0, jint arg1, jint arg2, android::graphics::Bitmap_Config arg3)
@@ -74,7 +76,7 @@ namespace android::graphics
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	QAndroidJniObject Bitmap::createBitmap(android::graphics::Picture arg0, jint arg1, jint arg2, android::graphics::Bitmap_Config arg3)
@@ -83,10 +85,10 @@ namespace android::graphics
 			"android.graphics.Bitmap",
 			"createBitmap",
 			"(Landroid/graphics/Picture;IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	QAndroidJniObject Bitmap::createBitmap(android::util::DisplayMetrics arg0, jint arg1, jint arg2, android::graphics::Bitmap_Config arg3)
@@ -95,10 +97,10 @@ namespace android::graphics
 			"android.graphics.Bitmap",
 			"createBitmap",
 			"(Landroid/util/DisplayMetrics;IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	QAndroidJniObject Bitmap::createBitmap(jint arg0, jint arg1, android::graphics::Bitmap_Config arg2, jboolean arg3)
@@ -109,7 +111,7 @@ namespace android::graphics
 			"(IILandroid/graphics/Bitmap$Config;Z)Landroid/graphics/Bitmap;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
+			arg2.object(),
 			arg3
 		);
 	}
@@ -119,7 +121,7 @@ namespace android::graphics
 			"android.graphics.Bitmap",
 			"createBitmap",
 			"(Landroid/graphics/Bitmap;IIII)Landroid/graphics/Bitmap;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
@@ -132,11 +134,11 @@ namespace android::graphics
 			"android.graphics.Bitmap",
 			"createBitmap",
 			"(Landroid/util/DisplayMetrics;[IIILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object()
+			arg4.object()
 		);
 	}
 	QAndroidJniObject Bitmap::createBitmap(android::util::DisplayMetrics arg0, jint arg1, jint arg2, android::graphics::Bitmap_Config arg3, jboolean arg4)
@@ -145,10 +147,10 @@ namespace android::graphics
 			"android.graphics.Bitmap",
 			"createBitmap",
 			"(Landroid/util/DisplayMetrics;IILandroid/graphics/Bitmap$Config;Z)Landroid/graphics/Bitmap;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
+			arg3.object(),
 			arg4
 		);
 	}
@@ -160,9 +162,9 @@ namespace android::graphics
 			"(IILandroid/graphics/Bitmap$Config;ZLandroid/graphics/ColorSpace;)Landroid/graphics/Bitmap;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
+			arg2.object(),
 			arg3,
-			arg4.__jniObject().object()
+			arg4.object()
 		);
 	}
 	QAndroidJniObject Bitmap::createBitmap(jintArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, android::graphics::Bitmap_Config arg5)
@@ -176,7 +178,7 @@ namespace android::graphics
 			arg2,
 			arg3,
 			arg4,
-			arg5.__jniObject().object()
+			arg5.object()
 		);
 	}
 	QAndroidJniObject Bitmap::createBitmap(android::util::DisplayMetrics arg0, jint arg1, jint arg2, android::graphics::Bitmap_Config arg3, jboolean arg4, android::graphics::ColorSpace arg5)
@@ -185,12 +187,12 @@ namespace android::graphics
 			"android.graphics.Bitmap",
 			"createBitmap",
 			"(Landroid/util/DisplayMetrics;IILandroid/graphics/Bitmap$Config;ZLandroid/graphics/ColorSpace;)Landroid/graphics/Bitmap;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
+			arg3.object(),
 			arg4,
-			arg5.__jniObject().object()
+			arg5.object()
 		);
 	}
 	QAndroidJniObject Bitmap::createBitmap(android::graphics::Bitmap arg0, jint arg1, jint arg2, jint arg3, jint arg4, android::graphics::Matrix arg5, jboolean arg6)
@@ -199,12 +201,12 @@ namespace android::graphics
 			"android.graphics.Bitmap",
 			"createBitmap",
 			"(Landroid/graphics/Bitmap;IIIILandroid/graphics/Matrix;Z)Landroid/graphics/Bitmap;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
 			arg4,
-			arg5.__jniObject().object(),
+			arg5.object(),
 			arg6
 		);
 	}
@@ -214,13 +216,13 @@ namespace android::graphics
 			"android.graphics.Bitmap",
 			"createBitmap",
 			"(Landroid/util/DisplayMetrics;[IIIIILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
 			arg4,
 			arg5,
-			arg6.__jniObject().object()
+			arg6.object()
 		);
 	}
 	QAndroidJniObject Bitmap::createScaledBitmap(android::graphics::Bitmap arg0, jint arg1, jint arg2, jboolean arg3)
@@ -229,7 +231,7 @@ namespace android::graphics
 			"android.graphics.Bitmap",
 			"createScaledBitmap",
 			"(Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3
@@ -241,55 +243,55 @@ namespace android::graphics
 			"android.graphics.Bitmap",
 			"wrapHardwareBuffer",
 			"(Landroid/hardware/HardwareBuffer;Landroid/graphics/ColorSpace;)Landroid/graphics/Bitmap;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jboolean Bitmap::compress(android::graphics::Bitmap_CompressFormat arg0, jint arg1, java::io::OutputStream arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"compress",
 			"(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	QAndroidJniObject Bitmap::copy(android::graphics::Bitmap_Config arg0, jboolean arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"copy",
 			"(Landroid/graphics/Bitmap$Config;Z)Landroid/graphics/Bitmap;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void Bitmap::copyPixelsFromBuffer(java::nio::Buffer arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"copyPixelsFromBuffer",
 			"(Ljava/nio/Buffer;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Bitmap::copyPixelsToBuffer(java::nio::Buffer arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"copyPixelsToBuffer",
 			"(Ljava/nio/Buffer;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint Bitmap::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	void Bitmap::eraseColor(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"eraseColor",
 			"(I)V",
 			arg0
@@ -297,7 +299,7 @@ namespace android::graphics
 	}
 	void Bitmap::eraseColor(jlong arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"eraseColor",
 			"(J)V",
 			arg0
@@ -305,37 +307,37 @@ namespace android::graphics
 	}
 	QAndroidJniObject Bitmap::extractAlpha()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"extractAlpha",
 			"()Landroid/graphics/Bitmap;"
 		);
 	}
 	QAndroidJniObject Bitmap::extractAlpha(android::graphics::Paint arg0, jintArray arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"extractAlpha",
 			"(Landroid/graphics/Paint;[I)Landroid/graphics/Bitmap;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	jint Bitmap::getAllocationByteCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAllocationByteCount",
 			"()I"
 		);
 	}
 	jint Bitmap::getByteCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getByteCount",
 			"()I"
 		);
 	}
 	QAndroidJniObject Bitmap::getColor(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getColor",
 			"(II)Landroid/graphics/Color;",
 			arg0,
@@ -344,49 +346,49 @@ namespace android::graphics
 	}
 	QAndroidJniObject Bitmap::getColorSpace()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getColorSpace",
 			"()Landroid/graphics/ColorSpace;"
 		);
 	}
 	QAndroidJniObject Bitmap::getConfig()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getConfig",
 			"()Landroid/graphics/Bitmap$Config;"
 		);
 	}
 	jint Bitmap::getDensity()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDensity",
 			"()I"
 		);
 	}
 	jint Bitmap::getGenerationId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getGenerationId",
 			"()I"
 		);
 	}
 	jint Bitmap::getHeight()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getHeight",
 			"()I"
 		);
 	}
 	jbyteArray Bitmap::getNinePatchChunk()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getNinePatchChunk",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jint Bitmap::getPixel(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPixel",
 			"(II)I",
 			arg0,
@@ -395,7 +397,7 @@ namespace android::graphics
 	}
 	void Bitmap::getPixels(jintArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"getPixels",
 			"([IIIIIII)V",
 			arg0,
@@ -409,30 +411,30 @@ namespace android::graphics
 	}
 	jint Bitmap::getRowBytes()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRowBytes",
 			"()I"
 		);
 	}
 	jint Bitmap::getScaledHeight(android::graphics::Canvas arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getScaledHeight",
 			"(Landroid/graphics/Canvas;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint Bitmap::getScaledHeight(android::util::DisplayMetrics arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getScaledHeight",
 			"(Landroid/util/DisplayMetrics;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint Bitmap::getScaledHeight(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getScaledHeight",
 			"(I)I",
 			arg0
@@ -440,23 +442,23 @@ namespace android::graphics
 	}
 	jint Bitmap::getScaledWidth(android::graphics::Canvas arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getScaledWidth",
 			"(Landroid/graphics/Canvas;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint Bitmap::getScaledWidth(android::util::DisplayMetrics arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getScaledWidth",
 			"(Landroid/util/DisplayMetrics;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint Bitmap::getScaledWidth(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getScaledWidth",
 			"(I)I",
 			arg0
@@ -464,97 +466,97 @@ namespace android::graphics
 	}
 	jint Bitmap::getWidth()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getWidth",
 			"()I"
 		);
 	}
 	jboolean Bitmap::hasAlpha()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasAlpha",
 			"()Z"
 		);
 	}
 	jboolean Bitmap::hasMipMap()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasMipMap",
 			"()Z"
 		);
 	}
 	jboolean Bitmap::isMutable()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isMutable",
 			"()Z"
 		);
 	}
 	jboolean Bitmap::isPremultiplied()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isPremultiplied",
 			"()Z"
 		);
 	}
 	jboolean Bitmap::isRecycled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isRecycled",
 			"()Z"
 		);
 	}
 	void Bitmap::prepareToDraw()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"prepareToDraw",
 			"()V"
 		);
 	}
 	void Bitmap::reconfigure(jint arg0, jint arg1, android::graphics::Bitmap_Config arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"reconfigure",
 			"(IILandroid/graphics/Bitmap$Config;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void Bitmap::recycle()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"recycle",
 			"()V"
 		);
 	}
 	jboolean Bitmap::sameAs(android::graphics::Bitmap arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"sameAs",
 			"(Landroid/graphics/Bitmap;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Bitmap::setColorSpace(android::graphics::ColorSpace arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setColorSpace",
 			"(Landroid/graphics/ColorSpace;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Bitmap::setConfig(android::graphics::Bitmap_Config arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setConfig",
 			"(Landroid/graphics/Bitmap$Config;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Bitmap::setDensity(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDensity",
 			"(I)V",
 			arg0
@@ -562,7 +564,7 @@ namespace android::graphics
 	}
 	void Bitmap::setHasAlpha(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setHasAlpha",
 			"(Z)V",
 			arg0
@@ -570,7 +572,7 @@ namespace android::graphics
 	}
 	void Bitmap::setHasMipMap(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setHasMipMap",
 			"(Z)V",
 			arg0
@@ -578,7 +580,7 @@ namespace android::graphics
 	}
 	void Bitmap::setHeight(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setHeight",
 			"(I)V",
 			arg0
@@ -586,7 +588,7 @@ namespace android::graphics
 	}
 	void Bitmap::setPixel(jint arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPixel",
 			"(III)V",
 			arg0,
@@ -596,7 +598,7 @@ namespace android::graphics
 	}
 	void Bitmap::setPixels(jintArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPixels",
 			"([IIIIIII)V",
 			arg0,
@@ -610,7 +612,7 @@ namespace android::graphics
 	}
 	void Bitmap::setPremultiplied(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPremultiplied",
 			"(Z)V",
 			arg0
@@ -618,7 +620,7 @@ namespace android::graphics
 	}
 	void Bitmap::setWidth(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setWidth",
 			"(I)V",
 			arg0
@@ -626,10 +628,10 @@ namespace android::graphics
 	}
 	void Bitmap::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

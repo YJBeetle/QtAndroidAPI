@@ -13,9 +13,11 @@ namespace java::net
 		static QAndroidJniObject PROXY();
 		static QAndroidJniObject SERVER();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Authenticator_RequestorType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		Authenticator_RequestorType(QAndroidJniObject obj);
+		
 		// Constructors
-		Authenticator_RequestorType() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

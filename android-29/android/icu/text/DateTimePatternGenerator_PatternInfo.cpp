@@ -26,27 +26,27 @@ namespace android::icu::text
 	}
 	jstring DateTimePatternGenerator_PatternInfo::conflictingPattern()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"conflictingPattern",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint DateTimePatternGenerator_PatternInfo::status()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"status"
 		);
 	}
 	
-	DateTimePatternGenerator_PatternInfo::DateTimePatternGenerator_PatternInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DateTimePatternGenerator_PatternInfo::DateTimePatternGenerator_PatternInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	DateTimePatternGenerator_PatternInfo::DateTimePatternGenerator_PatternInfo()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.icu.text.DateTimePatternGenerator$PatternInfo",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::icu::text

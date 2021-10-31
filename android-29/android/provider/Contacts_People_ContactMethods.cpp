@@ -20,7 +20,9 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	Contacts_People_ContactMethods::Contacts_People_ContactMethods(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Contacts_People_ContactMethods::Contacts_People_ContactMethods(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

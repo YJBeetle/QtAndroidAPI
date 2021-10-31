@@ -4,40 +4,38 @@ namespace javax::crypto::spec
 {
 	// Fields
 	
-	GCMParameterSpec::GCMParameterSpec(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	GCMParameterSpec::GCMParameterSpec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	GCMParameterSpec::GCMParameterSpec(jint arg0, jbyteArray arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"javax.crypto.spec.GCMParameterSpec",
 			"(I[B)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	GCMParameterSpec::GCMParameterSpec(jint arg0, jbyteArray arg1, jint arg2, jint arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"javax.crypto.spec.GCMParameterSpec",
 			"(I[BII)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	
 	// Methods
 	jbyteArray GCMParameterSpec::getIV()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getIV",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jint GCMParameterSpec::getTLen()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTLen",
 			"()I"
 		);

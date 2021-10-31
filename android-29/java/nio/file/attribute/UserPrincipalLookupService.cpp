@@ -4,13 +4,15 @@ namespace java::nio::file::attribute
 {
 	// Fields
 	
-	UserPrincipalLookupService::UserPrincipalLookupService(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UserPrincipalLookupService::UserPrincipalLookupService(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject UserPrincipalLookupService::lookupPrincipalByGroupName(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"lookupPrincipalByGroupName",
 			"(Ljava/lang/String;)Ljava/nio/file/attribute/GroupPrincipal;",
 			arg0
@@ -18,7 +20,7 @@ namespace java::nio::file::attribute
 	}
 	QAndroidJniObject UserPrincipalLookupService::lookupPrincipalByName(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"lookupPrincipalByName",
 			"(Ljava/lang/String;)Ljava/nio/file/attribute/UserPrincipal;",
 			arg0

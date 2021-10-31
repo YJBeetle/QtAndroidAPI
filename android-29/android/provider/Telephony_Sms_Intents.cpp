@@ -160,7 +160,9 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	Telephony_Sms_Intents::Telephony_Sms_Intents(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Telephony_Sms_Intents::Telephony_Sms_Intents(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -170,7 +172,7 @@ namespace android::provider
 			"android.provider.Telephony$Sms$Intents",
 			"getMessagesFromIntent",
 			"(Landroid/content/Intent;)[Landroid/telephony/SmsMessage;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jarray>();
 	}
 } // namespace android::provider

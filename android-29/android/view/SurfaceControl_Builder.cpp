@@ -5,27 +5,27 @@ namespace android::view
 {
 	// Fields
 	
-	SurfaceControl_Builder::SurfaceControl_Builder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SurfaceControl_Builder::SurfaceControl_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	SurfaceControl_Builder::SurfaceControl_Builder()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.SurfaceControl$Builder",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject SurfaceControl_Builder::build()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"build",
 			"()Landroid/view/SurfaceControl;"
 		);
 	}
 	QAndroidJniObject SurfaceControl_Builder::setBufferSize(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setBufferSize",
 			"(II)Landroid/view/SurfaceControl$Builder;",
 			arg0,
@@ -34,7 +34,7 @@ namespace android::view
 	}
 	QAndroidJniObject SurfaceControl_Builder::setFormat(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setFormat",
 			"(I)Landroid/view/SurfaceControl$Builder;",
 			arg0
@@ -42,7 +42,7 @@ namespace android::view
 	}
 	QAndroidJniObject SurfaceControl_Builder::setName(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setName",
 			"(Ljava/lang/String;)Landroid/view/SurfaceControl$Builder;",
 			arg0
@@ -50,7 +50,7 @@ namespace android::view
 	}
 	QAndroidJniObject SurfaceControl_Builder::setOpaque(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setOpaque",
 			"(Z)Landroid/view/SurfaceControl$Builder;",
 			arg0
@@ -58,10 +58,10 @@ namespace android::view
 	}
 	QAndroidJniObject SurfaceControl_Builder::setParent(android::view::SurfaceControl arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setParent",
 			"(Landroid/view/SurfaceControl;)Landroid/view/SurfaceControl$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::view

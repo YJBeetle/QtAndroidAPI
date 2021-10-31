@@ -47,7 +47,9 @@ namespace java::util
 		);
 	}
 	
-	ResourceBundle_Control::ResourceBundle_Control(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ResourceBundle_Control::ResourceBundle_Control(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -57,7 +59,7 @@ namespace java::util
 			"java.util.ResourceBundle$Control",
 			"getControl",
 			"(Ljava/util/List;)Ljava/util/ResourceBundle$Control;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ResourceBundle_Control::getNoFallbackControl(__JniBaseClass arg0)
@@ -66,30 +68,30 @@ namespace java::util
 			"java.util.ResourceBundle$Control",
 			"getNoFallbackControl",
 			"(Ljava/util/List;)Ljava/util/ResourceBundle$Control;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ResourceBundle_Control::getCandidateLocales(jstring arg0, java::util::Locale arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCandidateLocales",
 			"(Ljava/lang/String;Ljava/util/Locale;)Ljava/util/List;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject ResourceBundle_Control::getFallbackLocale(jstring arg0, java::util::Locale arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFallbackLocale",
 			"(Ljava/lang/String;Ljava/util/Locale;)Ljava/util/Locale;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject ResourceBundle_Control::getFormats(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFormats",
 			"(Ljava/lang/String;)Ljava/util/List;",
 			arg0
@@ -97,50 +99,50 @@ namespace java::util
 	}
 	jlong ResourceBundle_Control::getTimeToLive(jstring arg0, java::util::Locale arg1)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getTimeToLive",
 			"(Ljava/lang/String;Ljava/util/Locale;)J",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jboolean ResourceBundle_Control::needsReload(jstring arg0, java::util::Locale arg1, jstring arg2, java::lang::ClassLoader arg3, java::util::ResourceBundle arg4, jlong arg5)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"needsReload",
 			"(Ljava/lang/String;Ljava/util/Locale;Ljava/lang/String;Ljava/lang/ClassLoader;Ljava/util/ResourceBundle;J)Z",
 			arg0,
-			arg1.__jniObject().object(),
+			arg1.object(),
 			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
+			arg3.object(),
+			arg4.object(),
 			arg5
 		);
 	}
 	QAndroidJniObject ResourceBundle_Control::newBundle(jstring arg0, java::util::Locale arg1, jstring arg2, java::lang::ClassLoader arg3, jboolean arg4)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newBundle",
 			"(Ljava/lang/String;Ljava/util/Locale;Ljava/lang/String;Ljava/lang/ClassLoader;Z)Ljava/util/ResourceBundle;",
 			arg0,
-			arg1.__jniObject().object(),
+			arg1.object(),
 			arg2,
-			arg3.__jniObject().object(),
+			arg3.object(),
 			arg4
 		);
 	}
 	jstring ResourceBundle_Control::toBundleName(jstring arg0, java::util::Locale arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toBundleName",
 			"(Ljava/lang/String;Ljava/util/Locale;)Ljava/lang/String;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		).object<jstring>();
 	}
 	jstring ResourceBundle_Control::toResourceName(jstring arg0, jstring arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toResourceName",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
 			arg0,

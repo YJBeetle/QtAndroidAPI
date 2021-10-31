@@ -18,7 +18,10 @@ namespace android::webkit
 		static jstring RESOURCE_PROTECTED_MEDIA_ID();
 		static jstring RESOURCE_VIDEO_CAPTURE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PermissionRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PermissionRequest(QAndroidJniObject obj);
+		
 		// Constructors
 		PermissionRequest();
 		

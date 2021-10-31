@@ -79,7 +79,9 @@ namespace android::media::tv
 		).object<jstring>();
 	}
 	
-	TvContract::TvContract(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TvContract::TvContract(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -89,7 +91,7 @@ namespace android::media::tv
 			"android.media.tv.TvContract",
 			"buildChannelLogoUri",
 			"(Landroid/net/Uri;)Landroid/net/Uri;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject TvContract::buildChannelLogoUri(jlong arg0)
@@ -134,7 +136,7 @@ namespace android::media::tv
 			"android.media.tv.TvContract",
 			"buildInputId",
 			"(Landroid/content/ComponentName;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	QAndroidJniObject TvContract::buildPreviewProgramUri(jlong arg0)
@@ -152,7 +154,7 @@ namespace android::media::tv
 			"android.media.tv.TvContract",
 			"buildPreviewProgramsUriForChannel",
 			"(Landroid/net/Uri;)Landroid/net/Uri;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject TvContract::buildPreviewProgramsUriForChannel(jlong arg0)
@@ -179,7 +181,7 @@ namespace android::media::tv
 			"android.media.tv.TvContract",
 			"buildProgramsUriForChannel",
 			"(Landroid/net/Uri;)Landroid/net/Uri;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject TvContract::buildProgramsUriForChannel(jlong arg0)
@@ -197,7 +199,7 @@ namespace android::media::tv
 			"android.media.tv.TvContract",
 			"buildProgramsUriForChannel",
 			"(Landroid/net/Uri;JJ)Landroid/net/Uri;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
@@ -237,7 +239,7 @@ namespace android::media::tv
 			"android.media.tv.TvContract",
 			"isChannelUri",
 			"(Landroid/net/Uri;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean TvContract::isChannelUriForPassthroughInput(android::net::Uri arg0)
@@ -246,7 +248,7 @@ namespace android::media::tv
 			"android.media.tv.TvContract",
 			"isChannelUriForPassthroughInput",
 			"(Landroid/net/Uri;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean TvContract::isChannelUriForTunerInput(android::net::Uri arg0)
@@ -255,7 +257,7 @@ namespace android::media::tv
 			"android.media.tv.TvContract",
 			"isChannelUriForTunerInput",
 			"(Landroid/net/Uri;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean TvContract::isProgramUri(android::net::Uri arg0)
@@ -264,7 +266,7 @@ namespace android::media::tv
 			"android.media.tv.TvContract",
 			"isProgramUri",
 			"(Landroid/net/Uri;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean TvContract::isRecordedProgramUri(android::net::Uri arg0)
@@ -273,7 +275,7 @@ namespace android::media::tv
 			"android.media.tv.TvContract",
 			"isRecordedProgramUri",
 			"(Landroid/net/Uri;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TvContract::requestChannelBrowsable(android::content::Context arg0, jlong arg1)
@@ -282,7 +284,7 @@ namespace android::media::tv
 			"android.media.tv.TvContract",
 			"requestChannelBrowsable",
 			"(Landroid/content/Context;J)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

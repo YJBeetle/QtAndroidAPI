@@ -167,7 +167,10 @@ namespace android::app
 		jint visibility();
 		jlong when();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Notification(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Notification(QAndroidJniObject obj);
+		
 		// Constructors
 		Notification();
 		Notification(android::os::Parcel arg0);

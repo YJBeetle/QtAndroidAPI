@@ -92,47 +92,49 @@ namespace android::bluetooth
 		);
 	}
 	
-	BluetoothHealth::BluetoothHealth(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BluetoothHealth::BluetoothHealth(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jboolean BluetoothHealth::connectChannelToSource(android::bluetooth::BluetoothDevice arg0, android::bluetooth::BluetoothHealthAppConfiguration arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"connectChannelToSource",
 			"(Landroid/bluetooth/BluetoothDevice;Landroid/bluetooth/BluetoothHealthAppConfiguration;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jboolean BluetoothHealth::disconnectChannel(android::bluetooth::BluetoothDevice arg0, android::bluetooth::BluetoothHealthAppConfiguration arg1, jint arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"disconnectChannel",
 			"(Landroid/bluetooth/BluetoothDevice;Landroid/bluetooth/BluetoothHealthAppConfiguration;I)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
 	QAndroidJniObject BluetoothHealth::getConnectedDevices()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getConnectedDevices",
 			"()Ljava/util/List;"
 		);
 	}
 	jint BluetoothHealth::getConnectionState(android::bluetooth::BluetoothDevice arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getConnectionState",
 			"(Landroid/bluetooth/BluetoothDevice;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject BluetoothHealth::getDevicesMatchingConnectionStates(jintArray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDevicesMatchingConnectionStates",
 			"([I)Ljava/util/List;",
 			arg0
@@ -140,29 +142,29 @@ namespace android::bluetooth
 	}
 	QAndroidJniObject BluetoothHealth::getMainChannelFd(android::bluetooth::BluetoothDevice arg0, android::bluetooth::BluetoothHealthAppConfiguration arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMainChannelFd",
 			"(Landroid/bluetooth/BluetoothDevice;Landroid/bluetooth/BluetoothHealthAppConfiguration;)Landroid/os/ParcelFileDescriptor;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jboolean BluetoothHealth::registerSinkAppConfiguration(jstring arg0, jint arg1, android::bluetooth::BluetoothHealthCallback arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"registerSinkAppConfiguration",
 			"(Ljava/lang/String;ILandroid/bluetooth/BluetoothHealthCallback;)Z",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	jboolean BluetoothHealth::unregisterAppConfiguration(android::bluetooth::BluetoothHealthAppConfiguration arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"unregisterAppConfiguration",
 			"(Landroid/bluetooth/BluetoothHealthAppConfiguration;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::bluetooth

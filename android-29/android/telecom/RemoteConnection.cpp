@@ -13,153 +13,155 @@ namespace android::telecom
 {
 	// Fields
 	
-	RemoteConnection::RemoteConnection(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	RemoteConnection::RemoteConnection(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void RemoteConnection::abort()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"abort",
 			"()V"
 		);
 	}
 	void RemoteConnection::answer()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"answer",
 			"()V"
 		);
 	}
 	void RemoteConnection::disconnect()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"disconnect",
 			"()V"
 		);
 	}
 	QAndroidJniObject RemoteConnection::getAddress()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAddress",
 			"()Landroid/net/Uri;"
 		);
 	}
 	jint RemoteConnection::getAddressPresentation()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAddressPresentation",
 			"()I"
 		);
 	}
 	jstring RemoteConnection::getCallerDisplayName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCallerDisplayName",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jint RemoteConnection::getCallerDisplayNamePresentation()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCallerDisplayNamePresentation",
 			"()I"
 		);
 	}
 	QAndroidJniObject RemoteConnection::getConference()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getConference",
 			"()Landroid/telecom/RemoteConference;"
 		);
 	}
 	QAndroidJniObject RemoteConnection::getConferenceableConnections()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getConferenceableConnections",
 			"()Ljava/util/List;"
 		);
 	}
 	jint RemoteConnection::getConnectionCapabilities()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getConnectionCapabilities",
 			"()I"
 		);
 	}
 	jint RemoteConnection::getConnectionProperties()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getConnectionProperties",
 			"()I"
 		);
 	}
 	QAndroidJniObject RemoteConnection::getDisconnectCause()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDisconnectCause",
 			"()Landroid/telecom/DisconnectCause;"
 		);
 	}
 	QAndroidJniObject RemoteConnection::getExtras()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
 	jint RemoteConnection::getState()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getState",
 			"()I"
 		);
 	}
 	QAndroidJniObject RemoteConnection::getStatusHints()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getStatusHints",
 			"()Landroid/telecom/StatusHints;"
 		);
 	}
 	QAndroidJniObject RemoteConnection::getVideoProvider()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getVideoProvider",
 			"()Landroid/telecom/RemoteConnection$VideoProvider;"
 		);
 	}
 	jint RemoteConnection::getVideoState()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getVideoState",
 			"()I"
 		);
 	}
 	void RemoteConnection::hold()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"hold",
 			"()V"
 		);
 	}
 	jboolean RemoteConnection::isRingbackRequested()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isRingbackRequested",
 			"()Z"
 		);
 	}
 	jboolean RemoteConnection::isVoipAudioMode()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isVoipAudioMode",
 			"()Z"
 		);
 	}
 	void RemoteConnection::playDtmfTone(jchar arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"playDtmfTone",
 			"(C)V",
 			arg0
@@ -167,7 +169,7 @@ namespace android::telecom
 	}
 	void RemoteConnection::postDialContinue(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"postDialContinue",
 			"(Z)V",
 			arg0
@@ -175,63 +177,63 @@ namespace android::telecom
 	}
 	void RemoteConnection::pullExternalCall()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"pullExternalCall",
 			"()V"
 		);
 	}
 	void RemoteConnection::registerCallback(android::telecom::RemoteConnection_Callback arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"registerCallback",
 			"(Landroid/telecom/RemoteConnection$Callback;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void RemoteConnection::registerCallback(android::telecom::RemoteConnection_Callback arg0, android::os::Handler arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"registerCallback",
 			"(Landroid/telecom/RemoteConnection$Callback;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void RemoteConnection::reject()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"reject",
 			"()V"
 		);
 	}
 	void RemoteConnection::setCallAudioState(android::telecom::CallAudioState arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCallAudioState",
 			"(Landroid/telecom/CallAudioState;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void RemoteConnection::stopDtmfTone()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"stopDtmfTone",
 			"()V"
 		);
 	}
 	void RemoteConnection::unhold()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"unhold",
 			"()V"
 		);
 	}
 	void RemoteConnection::unregisterCallback(android::telecom::RemoteConnection_Callback arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"unregisterCallback",
 			"(Landroid/telecom/RemoteConnection$Callback;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::telecom

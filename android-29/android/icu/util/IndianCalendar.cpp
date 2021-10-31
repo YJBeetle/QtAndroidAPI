@@ -99,78 +99,63 @@ namespace android::icu::util
 		);
 	}
 	
-	IndianCalendar::IndianCalendar(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	IndianCalendar::IndianCalendar(QAndroidJniObject obj) : android::icu::util::Calendar(obj) {}
+	
 	// Constructors
 	IndianCalendar::IndianCalendar()
-	{
-		__thiz = QAndroidJniObject(
+		: android::icu::util::Calendar(
 			"android.icu.util.IndianCalendar",
 			"()V"
-		);
-	}
+		) {}
 	IndianCalendar::IndianCalendar(android::icu::util::TimeZone arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::icu::util::Calendar(
 			"android.icu.util.IndianCalendar",
 			"(Landroid/icu/util/TimeZone;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	IndianCalendar::IndianCalendar(android::icu::util::ULocale arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::icu::util::Calendar(
 			"android.icu.util.IndianCalendar",
 			"(Landroid/icu/util/ULocale;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	IndianCalendar::IndianCalendar(java::util::Date arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::icu::util::Calendar(
 			"android.icu.util.IndianCalendar",
 			"(Ljava/util/Date;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	IndianCalendar::IndianCalendar(java::util::Locale arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::icu::util::Calendar(
 			"android.icu.util.IndianCalendar",
 			"(Ljava/util/Locale;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	IndianCalendar::IndianCalendar(android::icu::util::TimeZone arg0, android::icu::util::ULocale arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::icu::util::Calendar(
 			"android.icu.util.IndianCalendar",
 			"(Landroid/icu/util/TimeZone;Landroid/icu/util/ULocale;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	IndianCalendar::IndianCalendar(android::icu::util::TimeZone arg0, java::util::Locale arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::icu::util::Calendar(
 			"android.icu.util.IndianCalendar",
 			"(Landroid/icu/util/TimeZone;Ljava/util/Locale;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	IndianCalendar::IndianCalendar(jint arg0, jint arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: android::icu::util::Calendar(
 			"android.icu.util.IndianCalendar",
 			"(III)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	IndianCalendar::IndianCalendar(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
-	{
-		__thiz = QAndroidJniObject(
+		: android::icu::util::Calendar(
 			"android.icu.util.IndianCalendar",
 			"(IIIIII)V",
 			arg0,
@@ -179,13 +164,12 @@ namespace android::icu::util
 			arg3,
 			arg4,
 			arg5
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring IndianCalendar::getType()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
 		).object<jstring>();

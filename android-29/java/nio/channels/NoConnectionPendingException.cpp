@@ -4,15 +4,15 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	NoConnectionPendingException::NoConnectionPendingException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NoConnectionPendingException::NoConnectionPendingException(QAndroidJniObject obj) : java::lang::IllegalStateException(obj) {}
+	
 	// Constructors
 	NoConnectionPendingException::NoConnectionPendingException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::IllegalStateException(
 			"java.nio.channels.NoConnectionPendingException",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::nio::channels

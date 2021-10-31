@@ -14,38 +14,38 @@ namespace android::service::autofill
 		);
 	}
 	
-	DateValueSanitizer::DateValueSanitizer(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DateValueSanitizer::DateValueSanitizer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	DateValueSanitizer::DateValueSanitizer(android::icu::text::DateFormat arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.service.autofill.DateValueSanitizer",
 			"(Landroid/icu/text/DateFormat;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jint DateValueSanitizer::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jstring DateValueSanitizer::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void DateValueSanitizer::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

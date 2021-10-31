@@ -4,15 +4,15 @@ namespace android::graphics
 {
 	// Fields
 	
-	MaskFilter::MaskFilter(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MaskFilter::MaskFilter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MaskFilter::MaskFilter()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.graphics.MaskFilter",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::graphics

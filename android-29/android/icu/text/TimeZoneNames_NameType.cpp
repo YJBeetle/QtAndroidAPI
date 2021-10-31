@@ -60,7 +60,9 @@ namespace android::icu::text
 		);
 	}
 	
-	TimeZoneNames_NameType::TimeZoneNames_NameType(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TimeZoneNames_NameType::TimeZoneNames_NameType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

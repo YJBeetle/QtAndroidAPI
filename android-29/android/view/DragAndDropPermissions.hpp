@@ -15,9 +15,11 @@ namespace android::view
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DragAndDropPermissions(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DragAndDropPermissions(QAndroidJniObject obj);
+		
 		// Constructors
-		DragAndDropPermissions() = default;
 		
 		// Methods
 		jint describeContents();

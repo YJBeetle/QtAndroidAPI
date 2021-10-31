@@ -95,7 +95,9 @@ namespace android::text
 		);
 	}
 	
-	Layout::Layout(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Layout::Layout(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -106,7 +108,7 @@ namespace android::text
 			"getDesiredWidth",
 			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;)F",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jfloat Layout::getDesiredWidth(jstring arg0, jint arg1, jint arg2, android::text::TextPaint arg3)
@@ -118,55 +120,55 @@ namespace android::text
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	void Layout::draw(android::graphics::Canvas arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"draw",
 			"(Landroid/graphics/Canvas;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Layout::draw(android::graphics::Canvas arg0, android::graphics::Path arg1, android::graphics::Paint arg2, jint arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"draw",
 			"(Landroid/graphics/Canvas;Landroid/graphics/Path;Landroid/graphics/Paint;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
 			arg3
 		);
 	}
 	QAndroidJniObject Layout::getAlignment()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAlignment",
 			"()Landroid/text/Layout$Alignment;"
 		);
 	}
 	jint Layout::getBottomPadding()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getBottomPadding",
 			"()I"
 		);
 	}
 	void Layout::getCursorPath(jint arg0, android::graphics::Path arg1, jstring arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"getCursorPath",
 			"(ILandroid/graphics/Path;Ljava/lang/CharSequence;)V",
 			arg0,
-			arg1.__jniObject().object(),
+			arg1.object(),
 			arg2
 		);
 	}
 	jint Layout::getEllipsisCount(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getEllipsisCount",
 			"(I)I",
 			arg0
@@ -174,7 +176,7 @@ namespace android::text
 	}
 	jint Layout::getEllipsisStart(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getEllipsisStart",
 			"(I)I",
 			arg0
@@ -182,21 +184,21 @@ namespace android::text
 	}
 	jint Layout::getEllipsizedWidth()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getEllipsizedWidth",
 			"()I"
 		);
 	}
 	jint Layout::getHeight()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getHeight",
 			"()I"
 		);
 	}
 	jint Layout::getLineAscent(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLineAscent",
 			"(I)I",
 			arg0
@@ -204,7 +206,7 @@ namespace android::text
 	}
 	jint Layout::getLineBaseline(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLineBaseline",
 			"(I)I",
 			arg0
@@ -212,7 +214,7 @@ namespace android::text
 	}
 	jint Layout::getLineBottom(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLineBottom",
 			"(I)I",
 			arg0
@@ -220,16 +222,16 @@ namespace android::text
 	}
 	jint Layout::getLineBounds(jint arg0, android::graphics::Rect arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLineBounds",
 			"(ILandroid/graphics/Rect;)I",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jboolean Layout::getLineContainsTab(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getLineContainsTab",
 			"(I)Z",
 			arg0
@@ -237,14 +239,14 @@ namespace android::text
 	}
 	jint Layout::getLineCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLineCount",
 			"()I"
 		);
 	}
 	jint Layout::getLineDescent(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLineDescent",
 			"(I)I",
 			arg0
@@ -252,7 +254,7 @@ namespace android::text
 	}
 	QAndroidJniObject Layout::getLineDirections(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLineDirections",
 			"(I)Landroid/text/Layout$Directions;",
 			arg0
@@ -260,7 +262,7 @@ namespace android::text
 	}
 	jint Layout::getLineEnd(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLineEnd",
 			"(I)I",
 			arg0
@@ -268,7 +270,7 @@ namespace android::text
 	}
 	jint Layout::getLineForOffset(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLineForOffset",
 			"(I)I",
 			arg0
@@ -276,7 +278,7 @@ namespace android::text
 	}
 	jint Layout::getLineForVertical(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLineForVertical",
 			"(I)I",
 			arg0
@@ -284,7 +286,7 @@ namespace android::text
 	}
 	jfloat Layout::getLineLeft(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getLineLeft",
 			"(I)F",
 			arg0
@@ -292,7 +294,7 @@ namespace android::text
 	}
 	jfloat Layout::getLineMax(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getLineMax",
 			"(I)F",
 			arg0
@@ -300,7 +302,7 @@ namespace android::text
 	}
 	jfloat Layout::getLineRight(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getLineRight",
 			"(I)F",
 			arg0
@@ -308,7 +310,7 @@ namespace android::text
 	}
 	jint Layout::getLineStart(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLineStart",
 			"(I)I",
 			arg0
@@ -316,7 +318,7 @@ namespace android::text
 	}
 	jint Layout::getLineTop(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLineTop",
 			"(I)I",
 			arg0
@@ -324,7 +326,7 @@ namespace android::text
 	}
 	jint Layout::getLineVisibleEnd(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLineVisibleEnd",
 			"(I)I",
 			arg0
@@ -332,7 +334,7 @@ namespace android::text
 	}
 	jfloat Layout::getLineWidth(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getLineWidth",
 			"(I)F",
 			arg0
@@ -340,7 +342,7 @@ namespace android::text
 	}
 	jint Layout::getOffsetForHorizontal(jint arg0, jfloat arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getOffsetForHorizontal",
 			"(IF)I",
 			arg0,
@@ -349,7 +351,7 @@ namespace android::text
 	}
 	jint Layout::getOffsetToLeftOf(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getOffsetToLeftOf",
 			"(I)I",
 			arg0
@@ -357,7 +359,7 @@ namespace android::text
 	}
 	jint Layout::getOffsetToRightOf(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getOffsetToRightOf",
 			"(I)I",
 			arg0
@@ -365,14 +367,14 @@ namespace android::text
 	}
 	QAndroidJniObject Layout::getPaint()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPaint",
 			"()Landroid/text/TextPaint;"
 		);
 	}
 	QAndroidJniObject Layout::getParagraphAlignment(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getParagraphAlignment",
 			"(I)Landroid/text/Layout$Alignment;",
 			arg0
@@ -380,7 +382,7 @@ namespace android::text
 	}
 	jint Layout::getParagraphDirection(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getParagraphDirection",
 			"(I)I",
 			arg0
@@ -388,7 +390,7 @@ namespace android::text
 	}
 	jint Layout::getParagraphLeft(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getParagraphLeft",
 			"(I)I",
 			arg0
@@ -396,7 +398,7 @@ namespace android::text
 	}
 	jint Layout::getParagraphRight(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getParagraphRight",
 			"(I)I",
 			arg0
@@ -404,7 +406,7 @@ namespace android::text
 	}
 	jfloat Layout::getPrimaryHorizontal(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getPrimaryHorizontal",
 			"(I)F",
 			arg0
@@ -412,7 +414,7 @@ namespace android::text
 	}
 	jfloat Layout::getSecondaryHorizontal(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getSecondaryHorizontal",
 			"(I)F",
 			arg0
@@ -420,52 +422,52 @@ namespace android::text
 	}
 	void Layout::getSelectionPath(jint arg0, jint arg1, android::graphics::Path arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"getSelectionPath",
 			"(IILandroid/graphics/Path;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	jfloat Layout::getSpacingAdd()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getSpacingAdd",
 			"()F"
 		);
 	}
 	jfloat Layout::getSpacingMultiplier()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getSpacingMultiplier",
 			"()F"
 		);
 	}
 	jstring Layout::getText()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jint Layout::getTopPadding()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTopPadding",
 			"()I"
 		);
 	}
 	jint Layout::getWidth()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getWidth",
 			"()I"
 		);
 	}
 	void Layout::increaseWidthTo(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"increaseWidthTo",
 			"(I)V",
 			arg0
@@ -473,7 +475,7 @@ namespace android::text
 	}
 	jboolean Layout::isRtlCharAt(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isRtlCharAt",
 			"(I)Z",
 			arg0

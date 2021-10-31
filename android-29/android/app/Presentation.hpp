@@ -23,11 +23,13 @@ namespace android::app
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Presentation(const char *className, const char *sig, Ts...agv) : android::app::Dialog(className, sig, std::forward<Ts>(agv)...) {}
 		Presentation(QAndroidJniObject obj);
+		
 		// Constructors
 		Presentation(android::content::Context arg0, android::view::Display arg1);
 		Presentation(android::content::Context arg0, android::view::Display arg1, jint arg2);
-		Presentation() = default;
 		
 		// Methods
 		QAndroidJniObject getDisplay();

@@ -40,7 +40,10 @@ namespace android::icu::util
 		static jint TOBA();
 		static jint TOUT();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CopticCalendar(const char *className, const char *sig, Ts...agv) : android::icu::util::Calendar(className, sig, std::forward<Ts>(agv)...) {}
 		CopticCalendar(QAndroidJniObject obj);
+		
 		// Constructors
 		CopticCalendar();
 		CopticCalendar(android::icu::util::TimeZone arg0);

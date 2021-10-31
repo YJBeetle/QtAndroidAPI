@@ -4,15 +4,15 @@ namespace android::animation
 {
 	// Fields
 	
-	Keyframe::Keyframe(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Keyframe::Keyframe(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Keyframe::Keyframe()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.animation.Keyframe",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject Keyframe::ofFloat(jfloat arg0)
@@ -74,49 +74,49 @@ namespace android::animation
 	}
 	QAndroidJniObject Keyframe::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Landroid/animation/Keyframe;"
 		);
 	}
 	jfloat Keyframe::getFraction()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getFraction",
 			"()F"
 		);
 	}
 	QAndroidJniObject Keyframe::getInterpolator()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getInterpolator",
 			"()Landroid/animation/TimeInterpolator;"
 		);
 	}
 	jclass Keyframe::getType()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/Class;"
 		).object<jclass>();
 	}
 	jobject Keyframe::getValue()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getValue",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jboolean Keyframe::hasValue()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasValue",
 			"()Z"
 		);
 	}
 	void Keyframe::setFraction(jfloat arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFraction",
 			"(F)V",
 			arg0
@@ -124,15 +124,15 @@ namespace android::animation
 	}
 	void Keyframe::setInterpolator(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setInterpolator",
 			"(Landroid/animation/TimeInterpolator;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Keyframe::setValue(jobject arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setValue",
 			"(Ljava/lang/Object;)V",
 			arg0

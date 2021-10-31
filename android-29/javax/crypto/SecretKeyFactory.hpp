@@ -18,9 +18,11 @@ namespace javax::crypto
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SecretKeyFactory(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SecretKeyFactory(QAndroidJniObject obj);
+		
 		// Constructors
-		SecretKeyFactory() = default;
 		
 		// Methods
 		static QAndroidJniObject getInstance(jstring arg0);

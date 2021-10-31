@@ -4,15 +4,15 @@ namespace java::nio::file
 {
 	// Fields
 	
-	ClosedDirectoryStreamException::ClosedDirectoryStreamException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ClosedDirectoryStreamException::ClosedDirectoryStreamException(QAndroidJniObject obj) : java::lang::IllegalStateException(obj) {}
+	
 	// Constructors
 	ClosedDirectoryStreamException::ClosedDirectoryStreamException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::IllegalStateException(
 			"java.nio.file.ClosedDirectoryStreamException",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::nio::file

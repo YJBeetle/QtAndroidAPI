@@ -5,177 +5,175 @@ namespace android::os
 {
 	// Fields
 	
-	StrictMode_ThreadPolicy_Builder::StrictMode_ThreadPolicy_Builder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	StrictMode_ThreadPolicy_Builder::StrictMode_ThreadPolicy_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	StrictMode_ThreadPolicy_Builder::StrictMode_ThreadPolicy_Builder()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.os.StrictMode$ThreadPolicy$Builder",
 			"()V"
-		);
-	}
+		) {}
 	StrictMode_ThreadPolicy_Builder::StrictMode_ThreadPolicy_Builder(android::os::StrictMode_ThreadPolicy arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.os.StrictMode$ThreadPolicy$Builder",
 			"(Landroid/os/StrictMode$ThreadPolicy;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject StrictMode_ThreadPolicy_Builder::build()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"build",
 			"()Landroid/os/StrictMode$ThreadPolicy;"
 		);
 	}
 	QAndroidJniObject StrictMode_ThreadPolicy_Builder::detectAll()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"detectAll",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
 	QAndroidJniObject StrictMode_ThreadPolicy_Builder::detectCustomSlowCalls()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"detectCustomSlowCalls",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
 	QAndroidJniObject StrictMode_ThreadPolicy_Builder::detectDiskReads()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"detectDiskReads",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
 	QAndroidJniObject StrictMode_ThreadPolicy_Builder::detectDiskWrites()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"detectDiskWrites",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
 	QAndroidJniObject StrictMode_ThreadPolicy_Builder::detectNetwork()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"detectNetwork",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
 	QAndroidJniObject StrictMode_ThreadPolicy_Builder::detectResourceMismatches()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"detectResourceMismatches",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
 	QAndroidJniObject StrictMode_ThreadPolicy_Builder::detectUnbufferedIo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"detectUnbufferedIo",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
 	QAndroidJniObject StrictMode_ThreadPolicy_Builder::penaltyDeath()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"penaltyDeath",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
 	QAndroidJniObject StrictMode_ThreadPolicy_Builder::penaltyDeathOnNetwork()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"penaltyDeathOnNetwork",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
 	QAndroidJniObject StrictMode_ThreadPolicy_Builder::penaltyDialog()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"penaltyDialog",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
 	QAndroidJniObject StrictMode_ThreadPolicy_Builder::penaltyDropBox()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"penaltyDropBox",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
 	QAndroidJniObject StrictMode_ThreadPolicy_Builder::penaltyFlashScreen()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"penaltyFlashScreen",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
 	QAndroidJniObject StrictMode_ThreadPolicy_Builder::penaltyListener(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"penaltyListener",
 			"(Ljava/util/concurrent/Executor;Landroid/os/StrictMode$OnThreadViolationListener;)Landroid/os/StrictMode$ThreadPolicy$Builder;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject StrictMode_ThreadPolicy_Builder::penaltyLog()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"penaltyLog",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
 	QAndroidJniObject StrictMode_ThreadPolicy_Builder::permitAll()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"permitAll",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
 	QAndroidJniObject StrictMode_ThreadPolicy_Builder::permitCustomSlowCalls()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"permitCustomSlowCalls",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
 	QAndroidJniObject StrictMode_ThreadPolicy_Builder::permitDiskReads()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"permitDiskReads",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
 	QAndroidJniObject StrictMode_ThreadPolicy_Builder::permitDiskWrites()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"permitDiskWrites",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
 	QAndroidJniObject StrictMode_ThreadPolicy_Builder::permitNetwork()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"permitNetwork",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
 	QAndroidJniObject StrictMode_ThreadPolicy_Builder::permitResourceMismatches()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"permitResourceMismatches",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
 	QAndroidJniObject StrictMode_ThreadPolicy_Builder::permitUnbufferedIo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"permitUnbufferedIo",
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);

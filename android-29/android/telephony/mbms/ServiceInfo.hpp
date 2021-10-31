@@ -22,9 +22,11 @@ namespace android::telephony::mbms
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ServiceInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ServiceInfo(QAndroidJniObject obj);
+		
 		// Constructors
-		ServiceInfo() = default;
 		
 		// Methods
 		jboolean equals(jobject arg0);

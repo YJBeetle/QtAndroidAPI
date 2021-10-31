@@ -18,7 +18,10 @@ namespace android::view::inputmethod
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CursorAnchorInfo_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		CursorAnchorInfo_Builder(QAndroidJniObject obj);
+		
 		// Constructors
 		CursorAnchorInfo_Builder();
 		

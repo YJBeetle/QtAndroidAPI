@@ -18,9 +18,11 @@ namespace android::graphics::pdf
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PdfDocument_Page(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PdfDocument_Page(QAndroidJniObject obj);
+		
 		// Constructors
-		PdfDocument_Page() = default;
 		
 		// Methods
 		QAndroidJniObject getCanvas();

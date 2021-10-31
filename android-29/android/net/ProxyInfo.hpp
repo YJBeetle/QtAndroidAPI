@@ -19,9 +19,11 @@ namespace android::net
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ProxyInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ProxyInfo(QAndroidJniObject obj);
+		
 		// Constructors
-		ProxyInfo() = default;
 		
 		// Methods
 		static QAndroidJniObject buildDirectProxy(jstring arg0, jint arg1);

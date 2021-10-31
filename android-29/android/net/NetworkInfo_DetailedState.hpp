@@ -24,9 +24,11 @@ namespace android::net
 		static QAndroidJniObject SUSPENDED();
 		static QAndroidJniObject VERIFYING_POOR_LINK();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit NetworkInfo_DetailedState(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		NetworkInfo_DetailedState(QAndroidJniObject obj);
+		
 		// Constructors
-		NetworkInfo_DetailedState() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

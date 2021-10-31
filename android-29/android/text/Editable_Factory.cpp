@@ -4,15 +4,15 @@ namespace android::text
 {
 	// Fields
 	
-	Editable_Factory::Editable_Factory(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Editable_Factory::Editable_Factory(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Editable_Factory::Editable_Factory()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.text.Editable$Factory",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject Editable_Factory::getInstance()
@@ -25,7 +25,7 @@ namespace android::text
 	}
 	QAndroidJniObject Editable_Factory::newEditable(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newEditable",
 			"(Ljava/lang/CharSequence;)Landroid/text/Editable;",
 			arg0

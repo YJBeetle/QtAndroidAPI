@@ -20,12 +20,14 @@ namespace java::util::concurrent
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ScheduledThreadPoolExecutor(const char *className, const char *sig, Ts...agv) : java::util::concurrent::ThreadPoolExecutor(className, sig, std::forward<Ts>(agv)...) {}
 		ScheduledThreadPoolExecutor(QAndroidJniObject obj);
+		
 		// Constructors
 		ScheduledThreadPoolExecutor(jint arg0);
 		ScheduledThreadPoolExecutor(jint arg0, __JniBaseClass arg1);
 		ScheduledThreadPoolExecutor(jint arg0, __JniBaseClass arg1, __JniBaseClass arg2);
-		ScheduledThreadPoolExecutor() = default;
 		
 		// Methods
 		void execute(__JniBaseClass arg0);

@@ -10,9 +10,11 @@ namespace android::media
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaDrm_ProvisionRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaDrm_ProvisionRequest(QAndroidJniObject obj);
+		
 		// Constructors
-		MediaDrm_ProvisionRequest() = default;
 		
 		// Methods
 		jbyteArray getData();

@@ -62,27 +62,29 @@ namespace android::telephony
 		);
 	}
 	
-	SubscriptionPlan::SubscriptionPlan(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SubscriptionPlan::SubscriptionPlan(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject SubscriptionPlan::cycleIterator()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"cycleIterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
 	jint SubscriptionPlan::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean SubscriptionPlan::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -90,66 +92,66 @@ namespace android::telephony
 	}
 	jint SubscriptionPlan::getDataLimitBehavior()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDataLimitBehavior",
 			"()I"
 		);
 	}
 	jlong SubscriptionPlan::getDataLimitBytes()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getDataLimitBytes",
 			"()J"
 		);
 	}
 	jlong SubscriptionPlan::getDataUsageBytes()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getDataUsageBytes",
 			"()J"
 		);
 	}
 	jlong SubscriptionPlan::getDataUsageTime()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getDataUsageTime",
 			"()J"
 		);
 	}
 	jstring SubscriptionPlan::getSummary()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSummary",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jstring SubscriptionPlan::getTitle()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTitle",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jint SubscriptionPlan::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring SubscriptionPlan::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void SubscriptionPlan::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

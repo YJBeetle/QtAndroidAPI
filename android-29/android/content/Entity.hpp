@@ -22,10 +22,12 @@ namespace android::content
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Entity(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Entity(QAndroidJniObject obj);
+		
 		// Constructors
 		Entity(android::content::ContentValues arg0);
-		Entity() = default;
 		
 		// Methods
 		void addSubValue(android::net::Uri arg0, android::content::ContentValues arg1);

@@ -4,55 +4,51 @@ namespace java::text
 {
 	// Fields
 	
-	StringCharacterIterator::StringCharacterIterator(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	StringCharacterIterator::StringCharacterIterator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	StringCharacterIterator::StringCharacterIterator(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.text.StringCharacterIterator",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	StringCharacterIterator::StringCharacterIterator(jstring arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.text.StringCharacterIterator",
 			"(Ljava/lang/String;I)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	StringCharacterIterator::StringCharacterIterator(jstring arg0, jint arg1, jint arg2, jint arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.text.StringCharacterIterator",
 			"(Ljava/lang/String;III)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	
 	// Methods
 	jobject StringCharacterIterator::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jchar StringCharacterIterator::current()
 	{
-		return __thiz.callMethod<jchar>(
+		return callMethod<jchar>(
 			"current",
 			"()C"
 		);
 	}
 	jboolean StringCharacterIterator::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -60,63 +56,63 @@ namespace java::text
 	}
 	jchar StringCharacterIterator::first()
 	{
-		return __thiz.callMethod<jchar>(
+		return callMethod<jchar>(
 			"first",
 			"()C"
 		);
 	}
 	jint StringCharacterIterator::getBeginIndex()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getBeginIndex",
 			"()I"
 		);
 	}
 	jint StringCharacterIterator::getEndIndex()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getEndIndex",
 			"()I"
 		);
 	}
 	jint StringCharacterIterator::getIndex()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getIndex",
 			"()I"
 		);
 	}
 	jint StringCharacterIterator::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jchar StringCharacterIterator::last()
 	{
-		return __thiz.callMethod<jchar>(
+		return callMethod<jchar>(
 			"last",
 			"()C"
 		);
 	}
 	jchar StringCharacterIterator::next()
 	{
-		return __thiz.callMethod<jchar>(
+		return callMethod<jchar>(
 			"next",
 			"()C"
 		);
 	}
 	jchar StringCharacterIterator::previous()
 	{
-		return __thiz.callMethod<jchar>(
+		return callMethod<jchar>(
 			"previous",
 			"()C"
 		);
 	}
 	jchar StringCharacterIterator::setIndex(jint arg0)
 	{
-		return __thiz.callMethod<jchar>(
+		return callMethod<jchar>(
 			"setIndex",
 			"(I)C",
 			arg0
@@ -124,7 +120,7 @@ namespace java::text
 	}
 	void StringCharacterIterator::setText(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setText",
 			"(Ljava/lang/String;)V",
 			arg0

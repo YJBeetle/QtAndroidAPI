@@ -38,7 +38,9 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	Contacts_Settings::Contacts_Settings(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Contacts_Settings::Contacts_Settings(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -48,7 +50,7 @@ namespace android::provider
 			"android.provider.Contacts$Settings",
 			"getSetting",
 			"(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		).object<jstring>();
@@ -59,7 +61,7 @@ namespace android::provider
 			"android.provider.Contacts$Settings",
 			"setSetting",
 			"(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3

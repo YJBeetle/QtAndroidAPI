@@ -34,7 +34,10 @@ namespace android::service::notification
 		static jstring META_DATA_RULE_TYPE();
 		static jstring SERVICE_INTERFACE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ConditionProviderService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
 		ConditionProviderService(QAndroidJniObject obj);
+		
 		// Constructors
 		ConditionProviderService();
 		

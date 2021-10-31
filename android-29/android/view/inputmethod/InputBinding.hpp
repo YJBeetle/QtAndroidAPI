@@ -15,11 +15,13 @@ namespace android::view::inputmethod
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit InputBinding(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		InputBinding(QAndroidJniObject obj);
+		
 		// Constructors
 		InputBinding(__JniBaseClass arg0, android::view::inputmethod::InputBinding &arg1);
 		InputBinding(__JniBaseClass arg0, __JniBaseClass arg1, jint arg2, jint arg3);
-		InputBinding() = default;
 		
 		// Methods
 		jint describeContents();

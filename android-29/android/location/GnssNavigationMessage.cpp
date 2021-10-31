@@ -104,72 +104,74 @@ namespace android::location
 		);
 	}
 	
-	GnssNavigationMessage::GnssNavigationMessage(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	GnssNavigationMessage::GnssNavigationMessage(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint GnssNavigationMessage::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jbyteArray GnssNavigationMessage::getData()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getData",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jint GnssNavigationMessage::getMessageId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMessageId",
 			"()I"
 		);
 	}
 	jint GnssNavigationMessage::getStatus()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getStatus",
 			"()I"
 		);
 	}
 	jint GnssNavigationMessage::getSubmessageId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSubmessageId",
 			"()I"
 		);
 	}
 	jint GnssNavigationMessage::getSvid()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSvid",
 			"()I"
 		);
 	}
 	jint GnssNavigationMessage::getType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getType",
 			"()I"
 		);
 	}
 	jstring GnssNavigationMessage::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void GnssNavigationMessage::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

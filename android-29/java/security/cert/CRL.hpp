@@ -14,9 +14,11 @@ namespace java::security::cert
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CRL(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		CRL(QAndroidJniObject obj);
+		
 		// Constructors
-		CRL() = default;
 		
 		// Methods
 		jstring getType();

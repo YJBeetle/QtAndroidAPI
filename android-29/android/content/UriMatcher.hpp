@@ -15,10 +15,12 @@ namespace android::content
 		// Fields
 		static jint NO_MATCH();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit UriMatcher(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		UriMatcher(QAndroidJniObject obj);
+		
 		// Constructors
 		UriMatcher(jint arg0);
-		UriMatcher() = default;
 		
 		// Methods
 		void addURI(jstring arg0, jstring arg1, jint arg2);

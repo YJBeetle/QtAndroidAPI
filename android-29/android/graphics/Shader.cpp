@@ -5,31 +5,31 @@ namespace android::graphics
 {
 	// Fields
 	
-	Shader::Shader(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Shader::Shader(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Shader::Shader()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.graphics.Shader",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean Shader::getLocalMatrix(android::graphics::Matrix arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getLocalMatrix",
 			"(Landroid/graphics/Matrix;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Shader::setLocalMatrix(android::graphics::Matrix arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLocalMatrix",
 			"(Landroid/graphics/Matrix;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::graphics

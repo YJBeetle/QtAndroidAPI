@@ -5,49 +5,51 @@ namespace android::os
 {
 	// Fields
 	
-	MessageQueue::MessageQueue(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MessageQueue::MessageQueue(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void MessageQueue::addIdleHandler(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addIdleHandler",
 			"(Landroid/os/MessageQueue$IdleHandler;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MessageQueue::addOnFileDescriptorEventListener(java::io::FileDescriptor arg0, jint arg1, __JniBaseClass arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addOnFileDescriptorEventListener",
 			"(Ljava/io/FileDescriptor;ILandroid/os/MessageQueue$OnFileDescriptorEventListener;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	jboolean MessageQueue::isIdle()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isIdle",
 			"()Z"
 		);
 	}
 	void MessageQueue::removeIdleHandler(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeIdleHandler",
 			"(Landroid/os/MessageQueue$IdleHandler;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MessageQueue::removeOnFileDescriptorEventListener(java::io::FileDescriptor arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeOnFileDescriptorEventListener",
 			"(Ljava/io/FileDescriptor;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::os

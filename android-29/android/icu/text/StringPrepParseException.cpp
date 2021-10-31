@@ -88,31 +88,28 @@ namespace android::icu::text
 		);
 	}
 	
-	StringPrepParseException::StringPrepParseException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	StringPrepParseException::StringPrepParseException(QAndroidJniObject obj) : java::text::ParseException(obj) {}
+	
 	// Constructors
 	StringPrepParseException::StringPrepParseException(jstring arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::text::ParseException(
 			"android.icu.text.StringPrepParseException",
 			"(Ljava/lang/String;I)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	StringPrepParseException::StringPrepParseException(jstring arg0, jint arg1, jstring arg2, jint arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: java::text::ParseException(
 			"android.icu.text.StringPrepParseException",
 			"(Ljava/lang/String;ILjava/lang/String;I)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	StringPrepParseException::StringPrepParseException(jstring arg0, jint arg1, jstring arg2, jint arg3, jint arg4)
-	{
-		__thiz = QAndroidJniObject(
+		: java::text::ParseException(
 			"android.icu.text.StringPrepParseException",
 			"(Ljava/lang/String;ILjava/lang/String;II)V",
 			arg0,
@@ -120,13 +117,12 @@ namespace android::icu::text
 			arg2,
 			arg3,
 			arg4
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean StringPrepParseException::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -134,21 +130,21 @@ namespace android::icu::text
 	}
 	jint StringPrepParseException::getError()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getError",
 			"()I"
 		);
 	}
 	jint StringPrepParseException::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring StringPrepParseException::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

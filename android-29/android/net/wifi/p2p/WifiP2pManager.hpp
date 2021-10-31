@@ -54,9 +54,11 @@ namespace android::net::wifi::p2p
 		static jint WIFI_P2P_STATE_ENABLED();
 		static jstring WIFI_P2P_THIS_DEVICE_CHANGED_ACTION();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit WifiP2pManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		WifiP2pManager(QAndroidJniObject obj);
+		
 		// Constructors
-		WifiP2pManager() = default;
 		
 		// Methods
 		void addLocalService(android::net::wifi::p2p::WifiP2pManager_Channel arg0, android::net::wifi::p2p::nsd::WifiP2pServiceInfo arg1, __JniBaseClass arg2);

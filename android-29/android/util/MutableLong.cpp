@@ -5,21 +5,21 @@ namespace android::util
 	// Fields
 	jlong MutableLong::value()
 	{
-		return __thiz.getField<jlong>(
+		return getField<jlong>(
 			"value"
 		);
 	}
 	
-	MutableLong::MutableLong(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MutableLong::MutableLong(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MutableLong::MutableLong(jlong arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.util.MutableLong",
 			"(J)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::util

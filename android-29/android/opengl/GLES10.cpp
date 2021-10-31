@@ -1666,15 +1666,15 @@ namespace android::opengl
 		);
 	}
 	
-	GLES10::GLES10(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	GLES10::GLES10(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	GLES10::GLES10()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.opengl.GLES10",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void GLES10::glActiveTexture(jint arg0)
@@ -1840,7 +1840,7 @@ namespace android::opengl
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	void GLES10::glCompressedTexImage2D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, java::nio::Buffer arg7)
@@ -1856,7 +1856,7 @@ namespace android::opengl
 			arg4,
 			arg5,
 			arg6,
-			arg7.__jniObject().object()
+			arg7.object()
 		);
 	}
 	void GLES10::glCompressedTexSubImage2D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, java::nio::Buffer arg8)
@@ -1873,7 +1873,7 @@ namespace android::opengl
 			arg5,
 			arg6,
 			arg7,
-			arg8.__jniObject().object()
+			arg8.object()
 		);
 	}
 	void GLES10::glCopyTexImage2D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7)
@@ -1924,7 +1924,7 @@ namespace android::opengl
 			"glDeleteTextures",
 			"(ILjava/nio/IntBuffer;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void GLES10::glDeleteTextures(jint arg0, jintArray arg1, jint arg2)
@@ -2014,7 +2014,7 @@ namespace android::opengl
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	void GLES10::glEnable(jint arg0)
@@ -2068,7 +2068,7 @@ namespace android::opengl
 			"glFogfv",
 			"(ILjava/nio/FloatBuffer;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void GLES10::glFogfv(jint arg0, jfloatArray arg1, jint arg2)
@@ -2099,7 +2099,7 @@ namespace android::opengl
 			"glFogxv",
 			"(ILjava/nio/IntBuffer;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void GLES10::glFogxv(jint arg0, jintArray arg1, jint arg2)
@@ -2157,7 +2157,7 @@ namespace android::opengl
 			"glGenTextures",
 			"(ILjava/nio/IntBuffer;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void GLES10::glGenTextures(jint arg0, jintArray arg1, jint arg2)
@@ -2186,7 +2186,7 @@ namespace android::opengl
 			"glGetIntegerv",
 			"(ILjava/nio/IntBuffer;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void GLES10::glGetIntegerv(jint arg0, jintArray arg1, jint arg2)
@@ -2236,7 +2236,7 @@ namespace android::opengl
 			"glLightModelfv",
 			"(ILjava/nio/FloatBuffer;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void GLES10::glLightModelfv(jint arg0, jfloatArray arg1, jint arg2)
@@ -2267,7 +2267,7 @@ namespace android::opengl
 			"glLightModelxv",
 			"(ILjava/nio/IntBuffer;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void GLES10::glLightModelxv(jint arg0, jintArray arg1, jint arg2)
@@ -2300,7 +2300,7 @@ namespace android::opengl
 			"(IILjava/nio/FloatBuffer;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void GLES10::glLightfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3)
@@ -2334,7 +2334,7 @@ namespace android::opengl
 			"(IILjava/nio/IntBuffer;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void GLES10::glLightxv(jint arg0, jint arg1, jintArray arg2, jint arg3)
@@ -2381,7 +2381,7 @@ namespace android::opengl
 			"android.opengl.GLES10",
 			"glLoadMatrixf",
 			"(Ljava/nio/FloatBuffer;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void GLES10::glLoadMatrixf(jfloatArray arg0, jint arg1)
@@ -2400,7 +2400,7 @@ namespace android::opengl
 			"android.opengl.GLES10",
 			"glLoadMatrixx",
 			"(Ljava/nio/IntBuffer;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void GLES10::glLoadMatrixx(jintArray arg0, jint arg1)
@@ -2441,7 +2441,7 @@ namespace android::opengl
 			"(IILjava/nio/FloatBuffer;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void GLES10::glMaterialfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3)
@@ -2475,7 +2475,7 @@ namespace android::opengl
 			"(IILjava/nio/IntBuffer;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void GLES10::glMaterialxv(jint arg0, jint arg1, jintArray arg2, jint arg3)
@@ -2505,7 +2505,7 @@ namespace android::opengl
 			"android.opengl.GLES10",
 			"glMultMatrixf",
 			"(Ljava/nio/FloatBuffer;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void GLES10::glMultMatrixf(jfloatArray arg0, jint arg1)
@@ -2524,7 +2524,7 @@ namespace android::opengl
 			"android.opengl.GLES10",
 			"glMultMatrixx",
 			"(Ljava/nio/IntBuffer;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void GLES10::glMultMatrixx(jintArray arg0, jint arg1)
@@ -2593,7 +2593,7 @@ namespace android::opengl
 			"(IILjava/nio/Buffer;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void GLES10::glOrthof(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5)
@@ -2700,7 +2700,7 @@ namespace android::opengl
 			arg3,
 			arg4,
 			arg5,
-			arg6.__jniObject().object()
+			arg6.object()
 		);
 	}
 	void GLES10::glRotatef(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
@@ -2830,7 +2830,7 @@ namespace android::opengl
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	void GLES10::glTexEnvf(jint arg0, jint arg1, jfloat arg2)
@@ -2852,7 +2852,7 @@ namespace android::opengl
 			"(IILjava/nio/FloatBuffer;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void GLES10::glTexEnvfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3)
@@ -2886,7 +2886,7 @@ namespace android::opengl
 			"(IILjava/nio/IntBuffer;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void GLES10::glTexEnvxv(jint arg0, jint arg1, jintArray arg2, jint arg3)
@@ -2915,7 +2915,7 @@ namespace android::opengl
 			arg5,
 			arg6,
 			arg7,
-			arg8.__jniObject().object()
+			arg8.object()
 		);
 	}
 	void GLES10::glTexParameterf(jint arg0, jint arg1, jfloat arg2)
@@ -2954,7 +2954,7 @@ namespace android::opengl
 			arg5,
 			arg6,
 			arg7,
-			arg8.__jniObject().object()
+			arg8.object()
 		);
 	}
 	void GLES10::glTranslatef(jfloat arg0, jfloat arg1, jfloat arg2)
@@ -2988,7 +2988,7 @@ namespace android::opengl
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	void GLES10::glViewport(jint arg0, jint arg1, jint arg2, jint arg3)

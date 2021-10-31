@@ -14,26 +14,24 @@ namespace android::appwidget
 {
 	// Fields
 	
-	AppWidgetHostView::AppWidgetHostView(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AppWidgetHostView::AppWidgetHostView(QAndroidJniObject obj) : android::widget::FrameLayout(obj) {}
+	
 	// Constructors
 	AppWidgetHostView::AppWidgetHostView(android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::FrameLayout(
 			"android.appwidget.AppWidgetHostView",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	AppWidgetHostView::AppWidgetHostView(android::content::Context arg0, jint arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::FrameLayout(
 			"android.appwidget.AppWidgetHostView",
 			"(Landroid/content/Context;II)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject AppWidgetHostView::getDefaultPaddingForWidget(android::content::Context arg0, android::content::ComponentName arg1, android::graphics::Rect arg2)
@@ -42,53 +40,53 @@ namespace android::appwidget
 			"android.appwidget.AppWidgetHostView",
 			"getDefaultPaddingForWidget",
 			"(Landroid/content/Context;Landroid/content/ComponentName;Landroid/graphics/Rect;)Landroid/graphics/Rect;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject AppWidgetHostView::generateLayoutParams(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"generateLayoutParams",
 			"(Landroid/util/AttributeSet;)Landroid/widget/FrameLayout$LayoutParams;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint AppWidgetHostView::getAppWidgetId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAppWidgetId",
 			"()I"
 		);
 	}
 	QAndroidJniObject AppWidgetHostView::getAppWidgetInfo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAppWidgetInfo",
 			"()Landroid/appwidget/AppWidgetProviderInfo;"
 		);
 	}
 	void AppWidgetHostView::setAppWidget(jint arg0, android::appwidget::AppWidgetProviderInfo arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAppWidget",
 			"(ILandroid/appwidget/AppWidgetProviderInfo;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void AppWidgetHostView::setExecutor(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setExecutor",
 			"(Ljava/util/concurrent/Executor;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AppWidgetHostView::setOnLightBackground(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnLightBackground",
 			"(Z)V",
 			arg0
@@ -96,26 +94,26 @@ namespace android::appwidget
 	}
 	void AppWidgetHostView::updateAppWidget(android::widget::RemoteViews arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"updateAppWidget",
 			"(Landroid/widget/RemoteViews;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AppWidgetHostView::updateAppWidgetOptions(android::os::Bundle arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"updateAppWidgetOptions",
 			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AppWidgetHostView::updateAppWidgetSize(android::os::Bundle arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"updateAppWidgetSize",
 			"(Landroid/os/Bundle;IIII)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,

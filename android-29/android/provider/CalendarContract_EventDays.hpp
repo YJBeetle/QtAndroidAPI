@@ -19,9 +19,11 @@ namespace android::provider
 		// Fields
 		static QAndroidJniObject CONTENT_URI();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CalendarContract_EventDays(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		CalendarContract_EventDays(QAndroidJniObject obj);
+		
 		// Constructors
-		CalendarContract_EventDays() = default;
 		
 		// Methods
 		static QAndroidJniObject query(android::content::ContentResolver arg0, jint arg1, jint arg2, jarray arg3);

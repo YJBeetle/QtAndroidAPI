@@ -14,10 +14,12 @@ namespace android::view
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SearchEvent(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SearchEvent(QAndroidJniObject obj);
+		
 		// Constructors
 		SearchEvent(android::view::InputDevice arg0);
-		SearchEvent() = default;
 		
 		// Methods
 		QAndroidJniObject getInputDevice();

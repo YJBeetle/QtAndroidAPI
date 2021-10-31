@@ -92,7 +92,9 @@ namespace android::icu::text
 		);
 	}
 	
-	NumberFormat_Field::NumberFormat_Field(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NumberFormat_Field::NumberFormat_Field(QAndroidJniObject obj) : java::text::Format_Field(obj) {}
+	
 	// Constructors
 	
 	// Methods

@@ -14,11 +14,13 @@ namespace android::hardware::camera2::params
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ColorSpaceTransform(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ColorSpaceTransform(QAndroidJniObject obj);
+		
 		// Constructors
 		ColorSpaceTransform(jintArray arg0);
 		ColorSpaceTransform(jarray arg0);
-		ColorSpaceTransform() = default;
 		
 		// Methods
 		void copyElements(jintArray arg0, jint arg1);

@@ -15,10 +15,12 @@ namespace android::app
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit VoiceInteractor_CommandRequest(const char *className, const char *sig, Ts...agv) : android::app::VoiceInteractor_Request(className, sig, std::forward<Ts>(agv)...) {}
 		VoiceInteractor_CommandRequest(QAndroidJniObject obj);
+		
 		// Constructors
 		VoiceInteractor_CommandRequest(jstring arg0, android::os::Bundle arg1);
-		VoiceInteractor_CommandRequest() = default;
 		
 		// Methods
 		void onCommandResult(jboolean arg0, android::os::Bundle arg1);

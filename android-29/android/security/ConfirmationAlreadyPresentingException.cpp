@@ -4,23 +4,21 @@ namespace android::security
 {
 	// Fields
 	
-	ConfirmationAlreadyPresentingException::ConfirmationAlreadyPresentingException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ConfirmationAlreadyPresentingException::ConfirmationAlreadyPresentingException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
+	
 	// Constructors
 	ConfirmationAlreadyPresentingException::ConfirmationAlreadyPresentingException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Exception(
 			"android.security.ConfirmationAlreadyPresentingException",
 			"()V"
-		);
-	}
+		) {}
 	ConfirmationAlreadyPresentingException::ConfirmationAlreadyPresentingException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Exception(
 			"android.security.ConfirmationAlreadyPresentingException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::security

@@ -14,9 +14,11 @@ namespace android::media
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaCodecInfo_VideoCapabilities(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaCodecInfo_VideoCapabilities(QAndroidJniObject obj);
+		
 		// Constructors
-		MediaCodecInfo_VideoCapabilities() = default;
 		
 		// Methods
 		jboolean areSizeAndRateSupported(jint arg0, jint arg1, jdouble arg2);

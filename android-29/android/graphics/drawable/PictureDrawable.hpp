@@ -23,10 +23,12 @@ namespace android::graphics::drawable
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PictureDrawable(const char *className, const char *sig, Ts...agv) : android::graphics::drawable::Drawable(className, sig, std::forward<Ts>(agv)...) {}
 		PictureDrawable(QAndroidJniObject obj);
+		
 		// Constructors
 		PictureDrawable(android::graphics::Picture arg0);
-		PictureDrawable() = default;
 		
 		// Methods
 		void draw(android::graphics::Canvas arg0);

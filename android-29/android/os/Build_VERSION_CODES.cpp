@@ -214,15 +214,15 @@ namespace android::os
 		);
 	}
 	
-	Build_VERSION_CODES::Build_VERSION_CODES(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Build_VERSION_CODES::Build_VERSION_CODES(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Build_VERSION_CODES::Build_VERSION_CODES()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.os.Build$VERSION_CODES",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::os

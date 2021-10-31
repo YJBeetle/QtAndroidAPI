@@ -14,53 +14,53 @@ namespace android::view::inputmethod
 	}
 	jint ExtractedTextRequest::flags()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"flags"
 		);
 	}
 	jint ExtractedTextRequest::hintMaxChars()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"hintMaxChars"
 		);
 	}
 	jint ExtractedTextRequest::hintMaxLines()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"hintMaxLines"
 		);
 	}
 	jint ExtractedTextRequest::token()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"token"
 		);
 	}
 	
-	ExtractedTextRequest::ExtractedTextRequest(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ExtractedTextRequest::ExtractedTextRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ExtractedTextRequest::ExtractedTextRequest()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.inputmethod.ExtractedTextRequest",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jint ExtractedTextRequest::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	void ExtractedTextRequest::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

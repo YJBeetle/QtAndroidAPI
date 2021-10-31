@@ -88,7 +88,10 @@ namespace android::media
 		jintArray colorFormats();
 		jarray profileLevels();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaCodecInfo_CodecCapabilities(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaCodecInfo_CodecCapabilities(QAndroidJniObject obj);
+		
 		// Constructors
 		MediaCodecInfo_CodecCapabilities();
 		

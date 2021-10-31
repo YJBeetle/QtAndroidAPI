@@ -12,7 +12,10 @@ namespace java::security
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit UnrecoverableEntryException(const char *className, const char *sig, Ts...agv) : java::security::GeneralSecurityException(className, sig, std::forward<Ts>(agv)...) {}
 		UnrecoverableEntryException(QAndroidJniObject obj);
+		
 		// Constructors
 		UnrecoverableEntryException();
 		UnrecoverableEntryException(jstring arg0);

@@ -20,7 +20,10 @@ namespace java::sql
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BatchUpdateException(const char *className, const char *sig, Ts...agv) : java::sql::SQLException(className, sig, std::forward<Ts>(agv)...) {}
 		BatchUpdateException(QAndroidJniObject obj);
+		
 		// Constructors
 		BatchUpdateException();
 		BatchUpdateException(jintArray arg0);

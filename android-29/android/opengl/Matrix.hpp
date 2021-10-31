@@ -10,7 +10,10 @@ namespace android::opengl
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Matrix(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Matrix(QAndroidJniObject obj);
+		
 		// Constructors
 		Matrix();
 		

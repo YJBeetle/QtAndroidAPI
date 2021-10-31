@@ -14,7 +14,9 @@ namespace android::service::autofill
 		);
 	}
 	
-	UserData::UserData(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UserData::UserData(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -60,21 +62,21 @@ namespace android::service::autofill
 	}
 	jint UserData::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jstring UserData::getFieldClassificationAlgorithm()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFieldClassificationAlgorithm",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring UserData::getFieldClassificationAlgorithmForCategory(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFieldClassificationAlgorithmForCategory",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
@@ -82,24 +84,24 @@ namespace android::service::autofill
 	}
 	jstring UserData::getId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring UserData::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void UserData::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

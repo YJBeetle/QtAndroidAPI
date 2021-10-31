@@ -37,15 +37,15 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	Browser::Browser(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Browser::Browser(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Browser::Browser()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.provider.Browser",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void Browser::sendString(android::content::Context arg0, jstring arg1)
@@ -54,7 +54,7 @@ namespace android::provider
 			"android.provider.Browser",
 			"sendString",
 			"(Landroid/content/Context;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

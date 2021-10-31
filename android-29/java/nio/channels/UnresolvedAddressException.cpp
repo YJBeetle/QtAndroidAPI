@@ -4,15 +4,15 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	UnresolvedAddressException::UnresolvedAddressException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UnresolvedAddressException::UnresolvedAddressException(QAndroidJniObject obj) : java::lang::IllegalArgumentException(obj) {}
+	
 	// Constructors
 	UnresolvedAddressException::UnresolvedAddressException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::IllegalArgumentException(
 			"java.nio.channels.UnresolvedAddressException",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::nio::channels

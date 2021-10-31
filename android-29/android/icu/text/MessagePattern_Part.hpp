@@ -18,9 +18,11 @@ namespace android::icu::text
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MessagePattern_Part(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MessagePattern_Part(QAndroidJniObject obj);
+		
 		// Constructors
-		MessagePattern_Part() = default;
 		
 		// Methods
 		jboolean equals(jobject arg0);

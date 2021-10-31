@@ -20,12 +20,14 @@ namespace java::util::zip
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit InflaterOutputStream(const char *className, const char *sig, Ts...agv) : java::io::FilterOutputStream(className, sig, std::forward<Ts>(agv)...) {}
 		InflaterOutputStream(QAndroidJniObject obj);
+		
 		// Constructors
 		InflaterOutputStream(java::io::OutputStream arg0);
 		InflaterOutputStream(java::io::OutputStream arg0, java::util::zip::Inflater arg1);
 		InflaterOutputStream(java::io::OutputStream arg0, java::util::zip::Inflater arg1, jint arg2);
-		InflaterOutputStream() = default;
 		
 		// Methods
 		void close();

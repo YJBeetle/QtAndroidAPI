@@ -451,125 +451,127 @@ namespace android::hardware
 		);
 	}
 	
-	Sensor::Sensor(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Sensor::Sensor(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint Sensor::getFifoMaxEventCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getFifoMaxEventCount",
 			"()I"
 		);
 	}
 	jint Sensor::getFifoReservedEventCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getFifoReservedEventCount",
 			"()I"
 		);
 	}
 	jint Sensor::getHighestDirectReportRateLevel()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getHighestDirectReportRateLevel",
 			"()I"
 		);
 	}
 	jint Sensor::getId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getId",
 			"()I"
 		);
 	}
 	jint Sensor::getMaxDelay()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMaxDelay",
 			"()I"
 		);
 	}
 	jfloat Sensor::getMaximumRange()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getMaximumRange",
 			"()F"
 		);
 	}
 	jint Sensor::getMinDelay()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMinDelay",
 			"()I"
 		);
 	}
 	jstring Sensor::getName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jfloat Sensor::getPower()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getPower",
 			"()F"
 		);
 	}
 	jint Sensor::getReportingMode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getReportingMode",
 			"()I"
 		);
 	}
 	jfloat Sensor::getResolution()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getResolution",
 			"()F"
 		);
 	}
 	jstring Sensor::getStringType()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getStringType",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint Sensor::getType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getType",
 			"()I"
 		);
 	}
 	jstring Sensor::getVendor()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getVendor",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint Sensor::getVersion()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getVersion",
 			"()I"
 		);
 	}
 	jboolean Sensor::isAdditionalInfoSupported()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isAdditionalInfoSupported",
 			"()Z"
 		);
 	}
 	jboolean Sensor::isDirectChannelTypeSupported(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isDirectChannelTypeSupported",
 			"(I)Z",
 			arg0
@@ -577,21 +579,21 @@ namespace android::hardware
 	}
 	jboolean Sensor::isDynamicSensor()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isDynamicSensor",
 			"()Z"
 		);
 	}
 	jboolean Sensor::isWakeUpSensor()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isWakeUpSensor",
 			"()Z"
 		);
 	}
 	jstring Sensor::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

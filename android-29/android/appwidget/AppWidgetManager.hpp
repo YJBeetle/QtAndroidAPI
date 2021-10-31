@@ -65,9 +65,11 @@ namespace android::appwidget
 		static jstring OPTION_APPWIDGET_MIN_HEIGHT();
 		static jstring OPTION_APPWIDGET_MIN_WIDTH();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AppWidgetManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AppWidgetManager(QAndroidJniObject obj);
+		
 		// Constructors
-		AppWidgetManager() = default;
 		
 		// Methods
 		static QAndroidJniObject getInstance(android::content::Context arg0);

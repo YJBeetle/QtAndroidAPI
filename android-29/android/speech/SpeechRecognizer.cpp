@@ -86,7 +86,9 @@ namespace android::speech
 		).object<jstring>();
 	}
 	
-	SpeechRecognizer::SpeechRecognizer(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SpeechRecognizer::SpeechRecognizer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -96,7 +98,7 @@ namespace android::speech
 			"android.speech.SpeechRecognizer",
 			"createSpeechRecognizer",
 			"(Landroid/content/Context;)Landroid/speech/SpeechRecognizer;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject SpeechRecognizer::createSpeechRecognizer(android::content::Context arg0, android::content::ComponentName arg1)
@@ -105,8 +107,8 @@ namespace android::speech
 			"android.speech.SpeechRecognizer",
 			"createSpeechRecognizer",
 			"(Landroid/content/Context;Landroid/content/ComponentName;)Landroid/speech/SpeechRecognizer;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jboolean SpeechRecognizer::isRecognitionAvailable(android::content::Context arg0)
@@ -115,42 +117,42 @@ namespace android::speech
 			"android.speech.SpeechRecognizer",
 			"isRecognitionAvailable",
 			"(Landroid/content/Context;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void SpeechRecognizer::cancel()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"cancel",
 			"()V"
 		);
 	}
 	void SpeechRecognizer::destroy()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"destroy",
 			"()V"
 		);
 	}
 	void SpeechRecognizer::setRecognitionListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setRecognitionListener",
 			"(Landroid/speech/RecognitionListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void SpeechRecognizer::startListening(android::content::Intent arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"startListening",
 			"(Landroid/content/Intent;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void SpeechRecognizer::stopListening()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"stopListening",
 			"()V"
 		);

@@ -48,15 +48,15 @@ namespace android::service::notification
 		).object<jstring>();
 	}
 	
-	ConditionProviderService::ConditionProviderService(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ConditionProviderService::ConditionProviderService(QAndroidJniObject obj) : android::app::Service(obj) {}
+	
 	// Constructors
 	ConditionProviderService::ConditionProviderService()
-	{
-		__thiz = QAndroidJniObject(
+		: android::app::Service(
 			"android.service.notification.ConditionProviderService",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void ConditionProviderService::requestRebind(android::content::ComponentName arg0)
@@ -65,20 +65,20 @@ namespace android::service::notification
 			"android.service.notification.ConditionProviderService",
 			"requestRebind",
 			"(Landroid/content/ComponentName;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ConditionProviderService::notifyCondition(android::service::notification::Condition arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"notifyCondition",
 			"(Landroid/service/notification/Condition;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ConditionProviderService::notifyConditions(jarray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"notifyConditions",
 			"([Landroid/service/notification/Condition;)V",
 			arg0
@@ -86,22 +86,22 @@ namespace android::service::notification
 	}
 	QAndroidJniObject ConditionProviderService::onBind(android::content::Intent arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onBind",
 			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ConditionProviderService::onConnected()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onConnected",
 			"()V"
 		);
 	}
 	void ConditionProviderService::onRequestConditions(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onRequestConditions",
 			"(I)V",
 			arg0
@@ -109,23 +109,23 @@ namespace android::service::notification
 	}
 	void ConditionProviderService::onSubscribe(android::net::Uri arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onSubscribe",
 			"(Landroid/net/Uri;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ConditionProviderService::onUnsubscribe(android::net::Uri arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onUnsubscribe",
 			"(Landroid/net/Uri;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ConditionProviderService::requestUnbind()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"requestUnbind",
 			"()V"
 		);

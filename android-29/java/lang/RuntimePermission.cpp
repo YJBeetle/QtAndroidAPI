@@ -4,25 +4,23 @@ namespace java::lang
 {
 	// Fields
 	
-	RuntimePermission::RuntimePermission(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	RuntimePermission::RuntimePermission(QAndroidJniObject obj) : java::security::BasicPermission(obj) {}
+	
 	// Constructors
 	RuntimePermission::RuntimePermission(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::security::BasicPermission(
 			"java.lang.RuntimePermission",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	RuntimePermission::RuntimePermission(jstring arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::security::BasicPermission(
 			"java.lang.RuntimePermission",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::lang

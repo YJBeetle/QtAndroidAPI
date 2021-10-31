@@ -35,7 +35,10 @@ namespace android::app
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit LauncherActivity(const char *className, const char *sig, Ts...agv) : android::app::ListActivity(className, sig, std::forward<Ts>(agv)...) {}
 		LauncherActivity(QAndroidJniObject obj);
+		
 		// Constructors
 		LauncherActivity();
 		

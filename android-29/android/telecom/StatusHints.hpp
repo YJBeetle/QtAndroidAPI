@@ -23,10 +23,12 @@ namespace android::telecom
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit StatusHints(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		StatusHints(QAndroidJniObject obj);
+		
 		// Constructors
 		StatusHints(jstring arg0, android::graphics::drawable::Icon arg1, android::os::Bundle arg2);
-		StatusHints() = default;
 		
 		// Methods
 		jint describeContents();

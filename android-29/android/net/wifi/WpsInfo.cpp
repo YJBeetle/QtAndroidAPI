@@ -6,7 +6,7 @@ namespace android::net::wifi
 	// Fields
 	jstring WpsInfo::BSSID()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"BSSID",
 			"Ljava/lang/String;"
 		).object<jstring>();
@@ -56,57 +56,55 @@ namespace android::net::wifi
 	}
 	jstring WpsInfo::pin()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"pin",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint WpsInfo::setup()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"setup"
 		);
 	}
 	
-	WpsInfo::WpsInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WpsInfo::WpsInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	WpsInfo::WpsInfo()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.net.wifi.WpsInfo",
 			"()V"
-		);
-	}
+		) {}
 	WpsInfo::WpsInfo(android::net::wifi::WpsInfo &arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.net.wifi.WpsInfo",
 			"(Landroid/net/wifi/WpsInfo;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jint WpsInfo::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jstring WpsInfo::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void WpsInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

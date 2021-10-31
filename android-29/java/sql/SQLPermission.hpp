@@ -12,11 +12,13 @@ namespace java::sql
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SQLPermission(const char *className, const char *sig, Ts...agv) : java::security::BasicPermission(className, sig, std::forward<Ts>(agv)...) {}
 		SQLPermission(QAndroidJniObject obj);
+		
 		// Constructors
 		SQLPermission(jstring arg0);
 		SQLPermission(jstring arg0, jstring arg1);
-		SQLPermission() = default;
 		
 		// Methods
 	};

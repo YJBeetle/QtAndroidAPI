@@ -5,28 +5,28 @@ namespace android::companion
 {
 	// Fields
 	
-	CompanionDeviceManager_Callback::CompanionDeviceManager_Callback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CompanionDeviceManager_Callback::CompanionDeviceManager_Callback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	CompanionDeviceManager_Callback::CompanionDeviceManager_Callback()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.companion.CompanionDeviceManager$Callback",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void CompanionDeviceManager_Callback::onDeviceFound(android::content::IntentSender arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onDeviceFound",
 			"(Landroid/content/IntentSender;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void CompanionDeviceManager_Callback::onFailure(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onFailure",
 			"(Ljava/lang/CharSequence;)V",
 			arg0

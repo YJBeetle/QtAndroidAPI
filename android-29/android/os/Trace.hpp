@@ -10,9 +10,11 @@ namespace android::os
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Trace(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Trace(QAndroidJniObject obj);
+		
 		// Constructors
-		Trace() = default;
 		
 		// Methods
 		static void beginAsyncSection(jstring arg0, jint arg1);

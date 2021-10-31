@@ -14,7 +14,10 @@ namespace android::mtp
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MtpObjectInfo_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MtpObjectInfo_Builder(QAndroidJniObject obj);
+		
 		// Constructors
 		MtpObjectInfo_Builder();
 		MtpObjectInfo_Builder(android::mtp::MtpObjectInfo arg0);

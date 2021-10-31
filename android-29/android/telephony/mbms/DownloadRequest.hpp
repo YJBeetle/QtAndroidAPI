@@ -19,9 +19,11 @@ namespace android::telephony::mbms
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DownloadRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DownloadRequest(QAndroidJniObject obj);
+		
 		// Constructors
-		DownloadRequest() = default;
 		
 		// Methods
 		static jint getMaxAppIntentSize();

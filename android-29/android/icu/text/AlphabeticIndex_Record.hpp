@@ -10,9 +10,11 @@ namespace android::icu::text
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AlphabeticIndex_Record(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AlphabeticIndex_Record(QAndroidJniObject obj);
+		
 		// Constructors
-		AlphabeticIndex_Record() = default;
 		
 		// Methods
 		jobject getData();

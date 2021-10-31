@@ -6,7 +6,9 @@ namespace java::nio
 {
 	// Fields
 	
-	DoubleBuffer::DoubleBuffer(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DoubleBuffer::DoubleBuffer(QAndroidJniObject obj) : java::nio::Buffer(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -41,42 +43,42 @@ namespace java::nio
 	}
 	jdoubleArray DoubleBuffer::array()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"array",
 			"()[D"
 		).object<jdoubleArray>();
 	}
 	jint DoubleBuffer::arrayOffset()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"arrayOffset",
 			"()I"
 		);
 	}
 	QAndroidJniObject DoubleBuffer::asReadOnlyBuffer()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"asReadOnlyBuffer",
 			"()Ljava/nio/DoubleBuffer;"
 		);
 	}
 	QAndroidJniObject DoubleBuffer::clear()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clear",
 			"()Ljava/nio/DoubleBuffer;"
 		);
 	}
 	QAndroidJniObject DoubleBuffer::compact()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"compact",
 			"()Ljava/nio/DoubleBuffer;"
 		);
 	}
 	jint DoubleBuffer::compareTo(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -84,22 +86,22 @@ namespace java::nio
 	}
 	jint DoubleBuffer::compareTo(java::nio::DoubleBuffer arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/nio/DoubleBuffer;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject DoubleBuffer::duplicate()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"duplicate",
 			"()Ljava/nio/DoubleBuffer;"
 		);
 	}
 	jboolean DoubleBuffer::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -107,21 +109,21 @@ namespace java::nio
 	}
 	QAndroidJniObject DoubleBuffer::flip()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"flip",
 			"()Ljava/nio/DoubleBuffer;"
 		);
 	}
 	jdouble DoubleBuffer::get()
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"get",
 			"()D"
 		);
 	}
 	jdouble DoubleBuffer::get(jint arg0)
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"get",
 			"(I)D",
 			arg0
@@ -129,7 +131,7 @@ namespace java::nio
 	}
 	QAndroidJniObject DoubleBuffer::get(jdoubleArray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"([D)Ljava/nio/DoubleBuffer;",
 			arg0
@@ -137,7 +139,7 @@ namespace java::nio
 	}
 	QAndroidJniObject DoubleBuffer::get(jint arg0, jdoubleArray arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"(I[D)Ljava/nio/DoubleBuffer;",
 			arg0,
@@ -146,7 +148,7 @@ namespace java::nio
 	}
 	QAndroidJniObject DoubleBuffer::get(jdoubleArray arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"([DII)Ljava/nio/DoubleBuffer;",
 			arg0,
@@ -156,7 +158,7 @@ namespace java::nio
 	}
 	QAndroidJniObject DoubleBuffer::get(jint arg0, jdoubleArray arg1, jint arg2, jint arg3)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"(I[DII)Ljava/nio/DoubleBuffer;",
 			arg0,
@@ -167,28 +169,28 @@ namespace java::nio
 	}
 	jboolean DoubleBuffer::hasArray()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasArray",
 			"()Z"
 		);
 	}
 	jint DoubleBuffer::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean DoubleBuffer::isDirect()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isDirect",
 			"()Z"
 		);
 	}
 	QAndroidJniObject DoubleBuffer::limit(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"limit",
 			"(I)Ljava/nio/DoubleBuffer;",
 			arg0
@@ -196,29 +198,29 @@ namespace java::nio
 	}
 	QAndroidJniObject DoubleBuffer::mark()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"mark",
 			"()Ljava/nio/DoubleBuffer;"
 		);
 	}
 	jint DoubleBuffer::mismatch(java::nio::DoubleBuffer arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"mismatch",
 			"(Ljava/nio/DoubleBuffer;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject DoubleBuffer::order()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"order",
 			"()Ljava/nio/ByteOrder;"
 		);
 	}
 	QAndroidJniObject DoubleBuffer::position(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"position",
 			"(I)Ljava/nio/DoubleBuffer;",
 			arg0
@@ -226,7 +228,7 @@ namespace java::nio
 	}
 	QAndroidJniObject DoubleBuffer::put(jdoubleArray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"put",
 			"([D)Ljava/nio/DoubleBuffer;",
 			arg0
@@ -234,7 +236,7 @@ namespace java::nio
 	}
 	QAndroidJniObject DoubleBuffer::put(jdouble arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"put",
 			"(D)Ljava/nio/DoubleBuffer;",
 			arg0
@@ -242,15 +244,15 @@ namespace java::nio
 	}
 	QAndroidJniObject DoubleBuffer::put(java::nio::DoubleBuffer arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"put",
 			"(Ljava/nio/DoubleBuffer;)Ljava/nio/DoubleBuffer;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject DoubleBuffer::put(jint arg0, jdoubleArray arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"put",
 			"(I[D)Ljava/nio/DoubleBuffer;",
 			arg0,
@@ -259,7 +261,7 @@ namespace java::nio
 	}
 	QAndroidJniObject DoubleBuffer::put(jint arg0, jdouble arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"put",
 			"(ID)Ljava/nio/DoubleBuffer;",
 			arg0,
@@ -268,7 +270,7 @@ namespace java::nio
 	}
 	QAndroidJniObject DoubleBuffer::put(jdoubleArray arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"put",
 			"([DII)Ljava/nio/DoubleBuffer;",
 			arg0,
@@ -278,7 +280,7 @@ namespace java::nio
 	}
 	QAndroidJniObject DoubleBuffer::put(jint arg0, jdoubleArray arg1, jint arg2, jint arg3)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"put",
 			"(I[DII)Ljava/nio/DoubleBuffer;",
 			arg0,
@@ -289,39 +291,39 @@ namespace java::nio
 	}
 	QAndroidJniObject DoubleBuffer::put(jint arg0, java::nio::DoubleBuffer arg1, jint arg2, jint arg3)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"put",
 			"(ILjava/nio/DoubleBuffer;II)Ljava/nio/DoubleBuffer;",
 			arg0,
-			arg1.__jniObject().object(),
+			arg1.object(),
 			arg2,
 			arg3
 		);
 	}
 	QAndroidJniObject DoubleBuffer::reset()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"reset",
 			"()Ljava/nio/DoubleBuffer;"
 		);
 	}
 	QAndroidJniObject DoubleBuffer::rewind()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"rewind",
 			"()Ljava/nio/DoubleBuffer;"
 		);
 	}
 	QAndroidJniObject DoubleBuffer::slice()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"slice",
 			"()Ljava/nio/DoubleBuffer;"
 		);
 	}
 	QAndroidJniObject DoubleBuffer::slice(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"slice",
 			"(II)Ljava/nio/DoubleBuffer;",
 			arg0,
@@ -330,7 +332,7 @@ namespace java::nio
 	}
 	jstring DoubleBuffer::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

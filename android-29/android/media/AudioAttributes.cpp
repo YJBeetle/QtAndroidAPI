@@ -202,27 +202,29 @@ namespace android::media
 		);
 	}
 	
-	AudioAttributes::AudioAttributes(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AudioAttributes::AudioAttributes(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jboolean AudioAttributes::areHapticChannelsMuted()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"areHapticChannelsMuted",
 			"()Z"
 		);
 	}
 	jint AudioAttributes::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean AudioAttributes::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -230,59 +232,59 @@ namespace android::media
 	}
 	jint AudioAttributes::getAllowedCapturePolicy()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAllowedCapturePolicy",
 			"()I"
 		);
 	}
 	jint AudioAttributes::getContentType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getContentType",
 			"()I"
 		);
 	}
 	jint AudioAttributes::getFlags()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getFlags",
 			"()I"
 		);
 	}
 	jint AudioAttributes::getUsage()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getUsage",
 			"()I"
 		);
 	}
 	jint AudioAttributes::getVolumeControlStream()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getVolumeControlStream",
 			"()I"
 		);
 	}
 	jint AudioAttributes::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring AudioAttributes::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void AudioAttributes::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

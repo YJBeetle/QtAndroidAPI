@@ -5,125 +5,127 @@ namespace android::security::keystore
 {
 	// Fields
 	
-	KeyProtection::KeyProtection(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	KeyProtection::KeyProtection(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jarray KeyProtection::getBlockModes()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBlockModes",
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	jarray KeyProtection::getDigests()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDigests",
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	jarray KeyProtection::getEncryptionPaddings()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEncryptionPaddings",
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	QAndroidJniObject KeyProtection::getKeyValidityForConsumptionEnd()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getKeyValidityForConsumptionEnd",
 			"()Ljava/util/Date;"
 		);
 	}
 	QAndroidJniObject KeyProtection::getKeyValidityForOriginationEnd()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getKeyValidityForOriginationEnd",
 			"()Ljava/util/Date;"
 		);
 	}
 	QAndroidJniObject KeyProtection::getKeyValidityStart()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getKeyValidityStart",
 			"()Ljava/util/Date;"
 		);
 	}
 	jint KeyProtection::getPurposes()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPurposes",
 			"()I"
 		);
 	}
 	jarray KeyProtection::getSignaturePaddings()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSignaturePaddings",
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	jint KeyProtection::getUserAuthenticationValidityDurationSeconds()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getUserAuthenticationValidityDurationSeconds",
 			"()I"
 		);
 	}
 	jboolean KeyProtection::isDigestsSpecified()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isDigestsSpecified",
 			"()Z"
 		);
 	}
 	jboolean KeyProtection::isInvalidatedByBiometricEnrollment()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isInvalidatedByBiometricEnrollment",
 			"()Z"
 		);
 	}
 	jboolean KeyProtection::isRandomizedEncryptionRequired()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isRandomizedEncryptionRequired",
 			"()Z"
 		);
 	}
 	jboolean KeyProtection::isUnlockedDeviceRequired()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isUnlockedDeviceRequired",
 			"()Z"
 		);
 	}
 	jboolean KeyProtection::isUserAuthenticationRequired()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isUserAuthenticationRequired",
 			"()Z"
 		);
 	}
 	jboolean KeyProtection::isUserAuthenticationValidWhileOnBody()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isUserAuthenticationValidWhileOnBody",
 			"()Z"
 		);
 	}
 	jboolean KeyProtection::isUserConfirmationRequired()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isUserConfirmationRequired",
 			"()Z"
 		);
 	}
 	jboolean KeyProtection::isUserPresenceRequired()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isUserPresenceRequired",
 			"()Z"
 		);

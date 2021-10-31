@@ -14,29 +14,29 @@ namespace java::net
 		);
 	}
 	
-	Proxy::Proxy(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Proxy::Proxy(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Proxy::Proxy(java::net::Proxy_Type arg0, java::net::SocketAddress arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.net.Proxy",
 			"(Ljava/net/Proxy$Type;Ljava/net/SocketAddress;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject Proxy::address()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"address",
 			"()Ljava/net/SocketAddress;"
 		);
 	}
 	jboolean Proxy::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -44,21 +44,21 @@ namespace java::net
 	}
 	jint Proxy::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring Proxy::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject Proxy::type()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"type",
 			"()Ljava/net/Proxy$Type;"
 		);

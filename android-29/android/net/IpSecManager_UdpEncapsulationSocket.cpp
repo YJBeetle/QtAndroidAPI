@@ -5,34 +5,36 @@ namespace android::net
 {
 	// Fields
 	
-	IpSecManager_UdpEncapsulationSocket::IpSecManager_UdpEncapsulationSocket(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	IpSecManager_UdpEncapsulationSocket::IpSecManager_UdpEncapsulationSocket(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void IpSecManager_UdpEncapsulationSocket::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	QAndroidJniObject IpSecManager_UdpEncapsulationSocket::getFileDescriptor()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFileDescriptor",
 			"()Ljava/io/FileDescriptor;"
 		);
 	}
 	jint IpSecManager_UdpEncapsulationSocket::getPort()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPort",
 			"()I"
 		);
 	}
 	jstring IpSecManager_UdpEncapsulationSocket::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

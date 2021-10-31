@@ -38,7 +38,10 @@ namespace android::provider
 		static jstring THUMB_DATA();
 		static jstring WIDTH();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaStore_Images_Thumbnails(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaStore_Images_Thumbnails(QAndroidJniObject obj);
+		
 		// Constructors
 		MediaStore_Images_Thumbnails();
 		

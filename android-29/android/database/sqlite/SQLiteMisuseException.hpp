@@ -14,7 +14,10 @@ namespace android::database::sqlite
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SQLiteMisuseException(const char *className, const char *sig, Ts...agv) : android::database::sqlite::SQLiteException(className, sig, std::forward<Ts>(agv)...) {}
 		SQLiteMisuseException(QAndroidJniObject obj);
+		
 		// Constructors
 		SQLiteMisuseException();
 		SQLiteMisuseException(jstring arg0);

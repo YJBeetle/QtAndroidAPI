@@ -22,11 +22,13 @@ namespace android::icu::text
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DateIntervalInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DateIntervalInfo(QAndroidJniObject obj);
+		
 		// Constructors
 		DateIntervalInfo(android::icu::util::ULocale arg0);
 		DateIntervalInfo(java::util::Locale arg0);
-		DateIntervalInfo() = default;
 		
 		// Methods
 		jobject clone();

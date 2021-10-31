@@ -15,39 +15,37 @@ namespace android::telecom
 		);
 	}
 	
-	PhoneAccountHandle::PhoneAccountHandle(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PhoneAccountHandle::PhoneAccountHandle(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	PhoneAccountHandle::PhoneAccountHandle(android::content::ComponentName arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.telecom.PhoneAccountHandle",
 			"(Landroid/content/ComponentName;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
-		);
-	}
+		) {}
 	PhoneAccountHandle::PhoneAccountHandle(android::content::ComponentName arg0, jstring arg1, android::os::UserHandle arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.telecom.PhoneAccountHandle",
 			"(Landroid/content/ComponentName;Ljava/lang/String;Landroid/os/UserHandle;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object()
-		);
-	}
+			arg2.object()
+		) {}
 	
 	// Methods
 	jint PhoneAccountHandle::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean PhoneAccountHandle::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -55,45 +53,45 @@ namespace android::telecom
 	}
 	QAndroidJniObject PhoneAccountHandle::getComponentName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getComponentName",
 			"()Landroid/content/ComponentName;"
 		);
 	}
 	jstring PhoneAccountHandle::getId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject PhoneAccountHandle::getUserHandle()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getUserHandle",
 			"()Landroid/os/UserHandle;"
 		);
 	}
 	jint PhoneAccountHandle::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring PhoneAccountHandle::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void PhoneAccountHandle::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

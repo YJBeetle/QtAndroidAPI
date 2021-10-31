@@ -24,9 +24,11 @@ namespace android::telephony
 		static jint BAND_T410();
 		static jint BAND_T810();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AccessNetworkConstants_GeranBand(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AccessNetworkConstants_GeranBand(QAndroidJniObject obj);
+		
 		// Constructors
-		AccessNetworkConstants_GeranBand() = default;
 		
 		// Methods
 	};

@@ -246,7 +246,9 @@ namespace java::time::temporal
 		);
 	}
 	
-	ChronoField::ChronoField(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ChronoField::ChronoField(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -269,16 +271,16 @@ namespace java::time::temporal
 	}
 	QAndroidJniObject ChronoField::adjustInto(__JniBaseClass arg0, jlong arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"adjustInto",
 			"(Ljava/time/temporal/Temporal;J)Ljava/time/temporal/Temporal;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	jint ChronoField::checkValidIntValue(jlong arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"checkValidIntValue",
 			"(J)I",
 			arg0
@@ -286,7 +288,7 @@ namespace java::time::temporal
 	}
 	jlong ChronoField::checkValidValue(jlong arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"checkValidValue",
 			"(J)J",
 			arg0
@@ -294,74 +296,74 @@ namespace java::time::temporal
 	}
 	QAndroidJniObject ChronoField::getBaseUnit()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBaseUnit",
 			"()Ljava/time/temporal/TemporalUnit;"
 		);
 	}
 	jstring ChronoField::getDisplayName(java::util::Locale arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDisplayName",
 			"(Ljava/util/Locale;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jlong ChronoField::getFrom(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getFrom",
 			"(Ljava/time/temporal/TemporalAccessor;)J",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ChronoField::getRangeUnit()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRangeUnit",
 			"()Ljava/time/temporal/TemporalUnit;"
 		);
 	}
 	jboolean ChronoField::isDateBased()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isDateBased",
 			"()Z"
 		);
 	}
 	jboolean ChronoField::isSupportedBy(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isSupportedBy",
 			"(Ljava/time/temporal/TemporalAccessor;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean ChronoField::isTimeBased()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isTimeBased",
 			"()Z"
 		);
 	}
 	QAndroidJniObject ChronoField::range()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"range",
 			"()Ljava/time/temporal/ValueRange;"
 		);
 	}
 	QAndroidJniObject ChronoField::rangeRefinedBy(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"rangeRefinedBy",
 			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/temporal/ValueRange;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring ChronoField::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

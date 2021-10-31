@@ -14,9 +14,11 @@ namespace android::nfc::tech
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit NfcA(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		NfcA(QAndroidJniObject obj);
+		
 		// Constructors
-		NfcA() = default;
 		
 		// Methods
 		static QAndroidJniObject get(android::nfc::Tag arg0);

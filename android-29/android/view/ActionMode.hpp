@@ -21,7 +21,10 @@ namespace android::view
 		static jint TYPE_FLOATING();
 		static jint TYPE_PRIMARY();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ActionMode(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ActionMode(QAndroidJniObject obj);
+		
 		// Constructors
 		ActionMode();
 		

@@ -240,15 +240,15 @@ namespace android::media
 		);
 	}
 	
-	MediaPlayer::MediaPlayer(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaPlayer::MediaPlayer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MediaPlayer::MediaPlayer()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.MediaPlayer",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject MediaPlayer::create(android::content::Context arg0, android::net::Uri arg1)
@@ -257,8 +257,8 @@ namespace android::media
 			"android.media.MediaPlayer",
 			"create",
 			"(Landroid/content/Context;Landroid/net/Uri;)Landroid/media/MediaPlayer;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject MediaPlayer::create(android::content::Context arg0, jint arg1)
@@ -267,7 +267,7 @@ namespace android::media
 			"android.media.MediaPlayer",
 			"create",
 			"(Landroid/content/Context;I)Landroid/media/MediaPlayer;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -277,9 +277,9 @@ namespace android::media
 			"android.media.MediaPlayer",
 			"create",
 			"(Landroid/content/Context;Landroid/net/Uri;Landroid/view/SurfaceHolder;)Landroid/media/MediaPlayer;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject MediaPlayer::create(android::content::Context arg0, jint arg1, android::media::AudioAttributes arg2, jint arg3)
@@ -288,9 +288,9 @@ namespace android::media
 			"android.media.MediaPlayer",
 			"create",
 			"(Landroid/content/Context;ILandroid/media/AudioAttributes;I)Landroid/media/MediaPlayer;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object(),
+			arg2.object(),
 			arg3
 		);
 	}
@@ -300,34 +300,34 @@ namespace android::media
 			"android.media.MediaPlayer",
 			"create",
 			"(Landroid/content/Context;Landroid/net/Uri;Landroid/view/SurfaceHolder;Landroid/media/AudioAttributes;I)Landroid/media/MediaPlayer;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object(),
 			arg4
 		);
 	}
 	void MediaPlayer::addOnRoutingChangedListener(__JniBaseClass arg0, android::os::Handler arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addOnRoutingChangedListener",
 			"(Landroid/media/AudioRouting$OnRoutingChangedListener;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void MediaPlayer::addTimedTextSource(java::io::FileDescriptor arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addTimedTextSource",
 			"(Ljava/io/FileDescriptor;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void MediaPlayer::addTimedTextSource(jstring arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addTimedTextSource",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
@@ -336,20 +336,20 @@ namespace android::media
 	}
 	void MediaPlayer::addTimedTextSource(android::content::Context arg0, android::net::Uri arg1, jstring arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addTimedTextSource",
 			"(Landroid/content/Context;Landroid/net/Uri;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
 	void MediaPlayer::addTimedTextSource(java::io::FileDescriptor arg0, jlong arg1, jlong arg2, jstring arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addTimedTextSource",
 			"(Ljava/io/FileDescriptor;JJLjava/lang/String;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3
@@ -357,7 +357,7 @@ namespace android::media
 	}
 	void MediaPlayer::attachAuxEffect(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"attachAuxEffect",
 			"(I)V",
 			arg0
@@ -365,29 +365,29 @@ namespace android::media
 	}
 	void MediaPlayer::clearOnMediaTimeDiscontinuityListener()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clearOnMediaTimeDiscontinuityListener",
 			"()V"
 		);
 	}
 	void MediaPlayer::clearOnSubtitleDataListener()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clearOnSubtitleDataListener",
 			"()V"
 		);
 	}
 	QAndroidJniObject MediaPlayer::createVolumeShaper(android::media::VolumeShaper_Configuration arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"createVolumeShaper",
 			"(Landroid/media/VolumeShaper$Configuration;)Landroid/media/VolumeShaper;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaPlayer::deselectTrack(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"deselectTrack",
 			"(I)V",
 			arg0
@@ -395,28 +395,28 @@ namespace android::media
 	}
 	jint MediaPlayer::getAudioSessionId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAudioSessionId",
 			"()I"
 		);
 	}
 	jint MediaPlayer::getCurrentPosition()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCurrentPosition",
 			"()I"
 		);
 	}
 	QAndroidJniObject MediaPlayer::getDrmInfo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDrmInfo",
 			"()Landroid/media/MediaPlayer$DrmInfo;"
 		);
 	}
 	jstring MediaPlayer::getDrmPropertyString(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDrmPropertyString",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
@@ -424,54 +424,54 @@ namespace android::media
 	}
 	jint MediaPlayer::getDuration()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDuration",
 			"()I"
 		);
 	}
 	QAndroidJniObject MediaPlayer::getKeyRequest(jbyteArray arg0, jbyteArray arg1, jstring arg2, jint arg3, __JniBaseClass arg4)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getKeyRequest",
 			"([B[BLjava/lang/String;ILjava/util/Map;)Landroid/media/MediaDrm$KeyRequest;",
 			arg0,
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object()
+			arg4.object()
 		);
 	}
 	QAndroidJniObject MediaPlayer::getMetrics()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMetrics",
 			"()Landroid/os/PersistableBundle;"
 		);
 	}
 	QAndroidJniObject MediaPlayer::getPlaybackParams()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPlaybackParams",
 			"()Landroid/media/PlaybackParams;"
 		);
 	}
 	QAndroidJniObject MediaPlayer::getPreferredDevice()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPreferredDevice",
 			"()Landroid/media/AudioDeviceInfo;"
 		);
 	}
 	QAndroidJniObject MediaPlayer::getRoutedDevice()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRoutedDevice",
 			"()Landroid/media/AudioDeviceInfo;"
 		);
 	}
 	jint MediaPlayer::getSelectedTrack(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSelectedTrack",
 			"(I)I",
 			arg0
@@ -479,85 +479,85 @@ namespace android::media
 	}
 	QAndroidJniObject MediaPlayer::getSyncParams()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSyncParams",
 			"()Landroid/media/SyncParams;"
 		);
 	}
 	QAndroidJniObject MediaPlayer::getTimestamp()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTimestamp",
 			"()Landroid/media/MediaTimestamp;"
 		);
 	}
 	jarray MediaPlayer::getTrackInfo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTrackInfo",
 			"()[Landroid/media/MediaPlayer$TrackInfo;"
 		).object<jarray>();
 	}
 	jint MediaPlayer::getVideoHeight()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getVideoHeight",
 			"()I"
 		);
 	}
 	jint MediaPlayer::getVideoWidth()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getVideoWidth",
 			"()I"
 		);
 	}
 	jboolean MediaPlayer::isLooping()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isLooping",
 			"()Z"
 		);
 	}
 	jboolean MediaPlayer::isPlaying()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isPlaying",
 			"()Z"
 		);
 	}
 	void MediaPlayer::pause()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"pause",
 			"()V"
 		);
 	}
 	void MediaPlayer::prepare()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"prepare",
 			"()V"
 		);
 	}
 	void MediaPlayer::prepareAsync()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"prepareAsync",
 			"()V"
 		);
 	}
 	void MediaPlayer::prepareDrm(java::util::UUID arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"prepareDrm",
 			"(Ljava/util/UUID;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jbyteArray MediaPlayer::provideKeyResponse(jbyteArray arg0, jbyteArray arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"provideKeyResponse",
 			"([B[B)[B",
 			arg0,
@@ -566,36 +566,36 @@ namespace android::media
 	}
 	void MediaPlayer::release()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
 	void MediaPlayer::releaseDrm()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"releaseDrm",
 			"()V"
 		);
 	}
 	void MediaPlayer::removeOnRoutingChangedListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeOnRoutingChangedListener",
 			"(Landroid/media/AudioRouting$OnRoutingChangedListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaPlayer::reset()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
 	void MediaPlayer::restoreKeys(jbyteArray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"restoreKeys",
 			"([B)V",
 			arg0
@@ -603,7 +603,7 @@ namespace android::media
 	}
 	void MediaPlayer::seekTo(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"seekTo",
 			"(I)V",
 			arg0
@@ -611,7 +611,7 @@ namespace android::media
 	}
 	void MediaPlayer::seekTo(jlong arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"seekTo",
 			"(JI)V",
 			arg0,
@@ -620,7 +620,7 @@ namespace android::media
 	}
 	void MediaPlayer::selectTrack(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"selectTrack",
 			"(I)V",
 			arg0
@@ -628,15 +628,15 @@ namespace android::media
 	}
 	void MediaPlayer::setAudioAttributes(android::media::AudioAttributes arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAudioAttributes",
 			"(Landroid/media/AudioAttributes;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaPlayer::setAudioSessionId(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAudioSessionId",
 			"(I)V",
 			arg0
@@ -644,7 +644,7 @@ namespace android::media
 	}
 	void MediaPlayer::setAudioStreamType(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAudioStreamType",
 			"(I)V",
 			arg0
@@ -652,7 +652,7 @@ namespace android::media
 	}
 	void MediaPlayer::setAuxEffectSendLevel(jfloat arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAuxEffectSendLevel",
 			"(F)V",
 			arg0
@@ -660,31 +660,31 @@ namespace android::media
 	}
 	void MediaPlayer::setDataSource(android::content::res::AssetFileDescriptor arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDataSource",
 			"(Landroid/content/res/AssetFileDescriptor;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaPlayer::setDataSource(android::media::MediaDataSource arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDataSource",
 			"(Landroid/media/MediaDataSource;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaPlayer::setDataSource(java::io::FileDescriptor arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDataSource",
 			"(Ljava/io/FileDescriptor;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaPlayer::setDataSource(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDataSource",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -692,55 +692,55 @@ namespace android::media
 	}
 	void MediaPlayer::setDataSource(android::content::Context arg0, android::net::Uri arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDataSource",
 			"(Landroid/content/Context;Landroid/net/Uri;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void MediaPlayer::setDataSource(android::content::Context arg0, android::net::Uri arg1, __JniBaseClass arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDataSource",
 			"(Landroid/content/Context;Landroid/net/Uri;Ljava/util/Map;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	void MediaPlayer::setDataSource(java::io::FileDescriptor arg0, jlong arg1, jlong arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDataSource",
 			"(Ljava/io/FileDescriptor;JJ)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
 	}
 	void MediaPlayer::setDataSource(android::content::Context arg0, android::net::Uri arg1, __JniBaseClass arg2, __JniBaseClass arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDataSource",
 			"(Landroid/content/Context;Landroid/net/Uri;Ljava/util/Map;Ljava/util/List;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
 		);
 	}
 	void MediaPlayer::setDisplay(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDisplay",
 			"(Landroid/view/SurfaceHolder;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaPlayer::setDrmPropertyString(jstring arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDrmPropertyString",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
@@ -749,7 +749,7 @@ namespace android::media
 	}
 	void MediaPlayer::setLooping(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLooping",
 			"(Z)V",
 			arg0
@@ -757,179 +757,179 @@ namespace android::media
 	}
 	void MediaPlayer::setNextMediaPlayer(android::media::MediaPlayer arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setNextMediaPlayer",
 			"(Landroid/media/MediaPlayer;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaPlayer::setOnBufferingUpdateListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnBufferingUpdateListener",
 			"(Landroid/media/MediaPlayer$OnBufferingUpdateListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaPlayer::setOnCompletionListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnCompletionListener",
 			"(Landroid/media/MediaPlayer$OnCompletionListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaPlayer::setOnDrmConfigHelper(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnDrmConfigHelper",
 			"(Landroid/media/MediaPlayer$OnDrmConfigHelper;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaPlayer::setOnDrmInfoListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnDrmInfoListener",
 			"(Landroid/media/MediaPlayer$OnDrmInfoListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaPlayer::setOnDrmInfoListener(__JniBaseClass arg0, android::os::Handler arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnDrmInfoListener",
 			"(Landroid/media/MediaPlayer$OnDrmInfoListener;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void MediaPlayer::setOnDrmPreparedListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnDrmPreparedListener",
 			"(Landroid/media/MediaPlayer$OnDrmPreparedListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaPlayer::setOnDrmPreparedListener(__JniBaseClass arg0, android::os::Handler arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnDrmPreparedListener",
 			"(Landroid/media/MediaPlayer$OnDrmPreparedListener;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void MediaPlayer::setOnErrorListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnErrorListener",
 			"(Landroid/media/MediaPlayer$OnErrorListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaPlayer::setOnInfoListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnInfoListener",
 			"(Landroid/media/MediaPlayer$OnInfoListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaPlayer::setOnMediaTimeDiscontinuityListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnMediaTimeDiscontinuityListener",
 			"(Landroid/media/MediaPlayer$OnMediaTimeDiscontinuityListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaPlayer::setOnMediaTimeDiscontinuityListener(__JniBaseClass arg0, android::os::Handler arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnMediaTimeDiscontinuityListener",
 			"(Landroid/media/MediaPlayer$OnMediaTimeDiscontinuityListener;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void MediaPlayer::setOnPreparedListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnPreparedListener",
 			"(Landroid/media/MediaPlayer$OnPreparedListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaPlayer::setOnSeekCompleteListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnSeekCompleteListener",
 			"(Landroid/media/MediaPlayer$OnSeekCompleteListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaPlayer::setOnSubtitleDataListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnSubtitleDataListener",
 			"(Landroid/media/MediaPlayer$OnSubtitleDataListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaPlayer::setOnSubtitleDataListener(__JniBaseClass arg0, android::os::Handler arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnSubtitleDataListener",
 			"(Landroid/media/MediaPlayer$OnSubtitleDataListener;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void MediaPlayer::setOnTimedMetaDataAvailableListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnTimedMetaDataAvailableListener",
 			"(Landroid/media/MediaPlayer$OnTimedMetaDataAvailableListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaPlayer::setOnTimedTextListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnTimedTextListener",
 			"(Landroid/media/MediaPlayer$OnTimedTextListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaPlayer::setOnVideoSizeChangedListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnVideoSizeChangedListener",
 			"(Landroid/media/MediaPlayer$OnVideoSizeChangedListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaPlayer::setPlaybackParams(android::media::PlaybackParams arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPlaybackParams",
 			"(Landroid/media/PlaybackParams;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean MediaPlayer::setPreferredDevice(android::media::AudioDeviceInfo arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"setPreferredDevice",
 			"(Landroid/media/AudioDeviceInfo;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaPlayer::setScreenOnWhilePlaying(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setScreenOnWhilePlaying",
 			"(Z)V",
 			arg0
@@ -937,23 +937,23 @@ namespace android::media
 	}
 	void MediaPlayer::setSurface(android::view::Surface arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSurface",
 			"(Landroid/view/Surface;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaPlayer::setSyncParams(android::media::SyncParams arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSyncParams",
 			"(Landroid/media/SyncParams;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaPlayer::setVideoScalingMode(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setVideoScalingMode",
 			"(I)V",
 			arg0
@@ -961,7 +961,7 @@ namespace android::media
 	}
 	void MediaPlayer::setVolume(jfloat arg0, jfloat arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setVolume",
 			"(FF)V",
 			arg0,
@@ -970,23 +970,23 @@ namespace android::media
 	}
 	void MediaPlayer::setWakeMode(android::content::Context arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setWakeMode",
 			"(Landroid/content/Context;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void MediaPlayer::start()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"start",
 			"()V"
 		);
 	}
 	void MediaPlayer::stop()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"stop",
 			"()V"
 		);

@@ -230,28 +230,28 @@ namespace android::net
 		);
 	}
 	
-	NetworkCapabilities::NetworkCapabilities(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NetworkCapabilities::NetworkCapabilities(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	NetworkCapabilities::NetworkCapabilities(android::net::NetworkCapabilities &arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.net.NetworkCapabilities",
 			"(Landroid/net/NetworkCapabilities;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jint NetworkCapabilities::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean NetworkCapabilities::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -259,35 +259,35 @@ namespace android::net
 	}
 	jint NetworkCapabilities::getLinkDownstreamBandwidthKbps()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLinkDownstreamBandwidthKbps",
 			"()I"
 		);
 	}
 	jint NetworkCapabilities::getLinkUpstreamBandwidthKbps()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLinkUpstreamBandwidthKbps",
 			"()I"
 		);
 	}
 	jint NetworkCapabilities::getSignalStrength()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSignalStrength",
 			"()I"
 		);
 	}
 	QAndroidJniObject NetworkCapabilities::getTransportInfo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTransportInfo",
 			"()Landroid/net/TransportInfo;"
 		);
 	}
 	jboolean NetworkCapabilities::hasCapability(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasCapability",
 			"(I)Z",
 			arg0
@@ -295,7 +295,7 @@ namespace android::net
 	}
 	jboolean NetworkCapabilities::hasTransport(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasTransport",
 			"(I)Z",
 			arg0
@@ -303,24 +303,24 @@ namespace android::net
 	}
 	jint NetworkCapabilities::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring NetworkCapabilities::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void NetworkCapabilities::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

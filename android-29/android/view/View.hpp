@@ -335,13 +335,15 @@ namespace android::view
 		static QAndroidJniObject Y();
 		static QAndroidJniObject Z();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit View(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		View(QAndroidJniObject obj);
+		
 		// Constructors
 		View(android::content::Context arg0);
 		View(android::content::Context arg0, __JniBaseClass arg1);
 		View(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		View(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
-		View() = default;
 		
 		// Methods
 		static jint combineMeasuredStates(jint arg0, jint arg1);

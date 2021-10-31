@@ -8,52 +8,54 @@ namespace android::view::accessibility
 {
 	// Fields
 	
-	CaptioningManager::CaptioningManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CaptioningManager::CaptioningManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void CaptioningManager::addCaptioningChangeListener(android::view::accessibility::CaptioningManager_CaptioningChangeListener arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addCaptioningChangeListener",
 			"(Landroid/view/accessibility/CaptioningManager$CaptioningChangeListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jfloat CaptioningManager::getFontScale()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getFontScale",
 			"()F"
 		);
 	}
 	QAndroidJniObject CaptioningManager::getLocale()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLocale",
 			"()Ljava/util/Locale;"
 		);
 	}
 	QAndroidJniObject CaptioningManager::getUserStyle()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getUserStyle",
 			"()Landroid/view/accessibility/CaptioningManager$CaptionStyle;"
 		);
 	}
 	jboolean CaptioningManager::isEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEnabled",
 			"()Z"
 		);
 	}
 	void CaptioningManager::removeCaptioningChangeListener(android::view::accessibility::CaptioningManager_CaptioningChangeListener arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeCaptioningChangeListener",
 			"(Landroid/view/accessibility/CaptioningManager$CaptioningChangeListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::view::accessibility

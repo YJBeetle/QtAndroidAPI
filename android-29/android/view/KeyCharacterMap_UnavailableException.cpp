@@ -4,16 +4,16 @@ namespace android::view
 {
 	// Fields
 	
-	KeyCharacterMap_UnavailableException::KeyCharacterMap_UnavailableException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	KeyCharacterMap_UnavailableException::KeyCharacterMap_UnavailableException(QAndroidJniObject obj) : android::util::AndroidRuntimeException(obj) {}
+	
 	// Constructors
 	KeyCharacterMap_UnavailableException::KeyCharacterMap_UnavailableException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::util::AndroidRuntimeException(
 			"android.view.KeyCharacterMap$UnavailableException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::view

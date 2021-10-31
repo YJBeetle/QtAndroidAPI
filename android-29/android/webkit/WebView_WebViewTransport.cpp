@@ -5,31 +5,31 @@ namespace android::webkit
 {
 	// Fields
 	
-	WebView_WebViewTransport::WebView_WebViewTransport(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WebView_WebViewTransport::WebView_WebViewTransport(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	WebView_WebViewTransport::WebView_WebViewTransport(android::webkit::WebView arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.webkit.WebView$WebViewTransport",
 			"(Landroid/webkit/WebView;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject WebView_WebViewTransport::getWebView()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getWebView",
 			"()Landroid/webkit/WebView;"
 		);
 	}
 	void WebView_WebViewTransport::setWebView(android::webkit::WebView arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setWebView",
 			"(Landroid/webkit/WebView;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::webkit

@@ -10,9 +10,11 @@ namespace android::webkit
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit JsResult(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		JsResult(QAndroidJniObject obj);
+		
 		// Constructors
-		JsResult() = default;
 		
 		// Methods
 		void cancel();

@@ -25,10 +25,12 @@ namespace android::media::audiofx
 		static jint PARAM_NUM_BANDS();
 		static jint PARAM_STRING_SIZE_MAX();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Equalizer(const char *className, const char *sig, Ts...agv) : android::media::audiofx::AudioEffect(className, sig, std::forward<Ts>(agv)...) {}
 		Equalizer(QAndroidJniObject obj);
+		
 		// Constructors
 		Equalizer(jint arg0, jint arg1);
-		Equalizer() = default;
 		
 		// Methods
 		jshort getBand(jint arg0);

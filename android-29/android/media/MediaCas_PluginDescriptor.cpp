@@ -4,27 +4,29 @@ namespace android::media
 {
 	// Fields
 	
-	MediaCas_PluginDescriptor::MediaCas_PluginDescriptor(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaCas_PluginDescriptor::MediaCas_PluginDescriptor(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jstring MediaCas_PluginDescriptor::getName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint MediaCas_PluginDescriptor::getSystemId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSystemId",
 			"()I"
 		);
 	}
 	jstring MediaCas_PluginDescriptor::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

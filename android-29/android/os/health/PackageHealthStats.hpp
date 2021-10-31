@@ -12,9 +12,11 @@ namespace android::os::health
 		static jint MEASUREMENTS_WAKEUP_ALARMS_COUNT();
 		static jint STATS_SERVICES();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PackageHealthStats(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PackageHealthStats(QAndroidJniObject obj);
+		
 		// Constructors
-		PackageHealthStats() = default;
 		
 		// Methods
 	};

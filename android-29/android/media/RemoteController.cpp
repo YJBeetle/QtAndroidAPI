@@ -22,53 +22,51 @@ namespace android::media
 		);
 	}
 	
-	RemoteController::RemoteController(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	RemoteController::RemoteController(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	RemoteController::RemoteController(android::content::Context arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.RemoteController",
 			"(Landroid/content/Context;Landroid/media/RemoteController$OnClientUpdateListener;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	RemoteController::RemoteController(android::content::Context arg0, __JniBaseClass arg1, android::os::Looper arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.RemoteController",
 			"(Landroid/content/Context;Landroid/media/RemoteController$OnClientUpdateListener;Landroid/os/Looper;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		) {}
 	
 	// Methods
 	jboolean RemoteController::clearArtworkConfiguration()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"clearArtworkConfiguration",
 			"()Z"
 		);
 	}
 	QAndroidJniObject RemoteController::editMetadata()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"editMetadata",
 			"()Landroid/media/RemoteController$MetadataEditor;"
 		);
 	}
 	jlong RemoteController::getEstimatedMediaPosition()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getEstimatedMediaPosition",
 			"()J"
 		);
 	}
 	jboolean RemoteController::seekTo(jlong arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"seekTo",
 			"(J)Z",
 			arg0
@@ -76,15 +74,15 @@ namespace android::media
 	}
 	jboolean RemoteController::sendMediaKeyEvent(android::view::KeyEvent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"sendMediaKeyEvent",
 			"(Landroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean RemoteController::setArtworkConfiguration(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"setArtworkConfiguration",
 			"(II)Z",
 			arg0,
@@ -93,7 +91,7 @@ namespace android::media
 	}
 	jboolean RemoteController::setSynchronizationMode(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"setSynchronizationMode",
 			"(I)Z",
 			arg0

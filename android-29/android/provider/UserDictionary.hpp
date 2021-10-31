@@ -16,7 +16,10 @@ namespace android::provider
 		static jstring AUTHORITY();
 		static QAndroidJniObject CONTENT_URI();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit UserDictionary(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		UserDictionary(QAndroidJniObject obj);
+		
 		// Constructors
 		UserDictionary();
 		

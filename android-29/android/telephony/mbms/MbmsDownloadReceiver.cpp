@@ -6,24 +6,24 @@ namespace android::telephony::mbms
 {
 	// Fields
 	
-	MbmsDownloadReceiver::MbmsDownloadReceiver(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MbmsDownloadReceiver::MbmsDownloadReceiver(QAndroidJniObject obj) : android::content::BroadcastReceiver(obj) {}
+	
 	// Constructors
 	MbmsDownloadReceiver::MbmsDownloadReceiver()
-	{
-		__thiz = QAndroidJniObject(
+		: android::content::BroadcastReceiver(
 			"android.telephony.mbms.MbmsDownloadReceiver",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void MbmsDownloadReceiver::onReceive(android::content::Context arg0, android::content::Intent arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onReceive",
 			"(Landroid/content/Context;Landroid/content/Intent;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 } // namespace android::telephony::mbms

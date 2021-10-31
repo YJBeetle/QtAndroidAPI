@@ -12,7 +12,10 @@ namespace android::database
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SQLException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
 		SQLException(QAndroidJniObject obj);
+		
 		// Constructors
 		SQLException();
 		SQLException(jstring arg0);

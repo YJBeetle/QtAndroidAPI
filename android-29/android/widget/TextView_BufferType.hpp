@@ -14,9 +14,11 @@ namespace android::widget
 		static QAndroidJniObject NORMAL();
 		static QAndroidJniObject SPANNABLE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TextView_BufferType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		TextView_BufferType(QAndroidJniObject obj);
+		
 		// Constructors
-		TextView_BufferType() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

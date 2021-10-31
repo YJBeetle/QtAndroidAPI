@@ -36,40 +36,40 @@ namespace android::view
 		);
 	}
 	
-	TouchDelegate::TouchDelegate(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TouchDelegate::TouchDelegate(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	TouchDelegate::TouchDelegate(android::graphics::Rect arg0, android::view::View arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.TouchDelegate",
 			"(Landroid/graphics/Rect;Landroid/view/View;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject TouchDelegate::getTouchDelegateInfo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTouchDelegateInfo",
 			"()Landroid/view/accessibility/AccessibilityNodeInfo$TouchDelegateInfo;"
 		);
 	}
 	jboolean TouchDelegate::onTouchEvent(android::view::MotionEvent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onTouchEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean TouchDelegate::onTouchExplorationHoverEvent(android::view::MotionEvent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onTouchExplorationHoverEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::view

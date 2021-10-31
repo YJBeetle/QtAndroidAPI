@@ -27,11 +27,13 @@ namespace android::widget
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ImageSwitcher(const char *className, const char *sig, Ts...agv) : android::widget::ViewSwitcher(className, sig, std::forward<Ts>(agv)...) {}
 		ImageSwitcher(QAndroidJniObject obj);
+		
 		// Constructors
 		ImageSwitcher(android::content::Context arg0);
 		ImageSwitcher(android::content::Context arg0, __JniBaseClass arg1);
-		ImageSwitcher() = default;
 		
 		// Methods
 		jstring getAccessibilityClassName();

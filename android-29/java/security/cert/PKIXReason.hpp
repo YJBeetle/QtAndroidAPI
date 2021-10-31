@@ -19,9 +19,11 @@ namespace java::security::cert
 		static QAndroidJniObject PATH_TOO_LONG();
 		static QAndroidJniObject UNRECOGNIZED_CRIT_EXT();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PKIXReason(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		PKIXReason(QAndroidJniObject obj);
+		
 		// Constructors
-		PKIXReason() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

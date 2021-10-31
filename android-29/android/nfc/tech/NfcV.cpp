@@ -5,7 +5,9 @@ namespace android::nfc::tech
 {
 	// Fields
 	
-	NfcV::NfcV(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NfcV::NfcV(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -15,61 +17,61 @@ namespace android::nfc::tech
 			"android.nfc.tech.NfcV",
 			"get",
 			"(Landroid/nfc/Tag;)Landroid/nfc/tech/NfcV;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void NfcV::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	void NfcV::connect()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"connect",
 			"()V"
 		);
 	}
 	jbyte NfcV::getDsfId()
 	{
-		return __thiz.callMethod<jbyte>(
+		return callMethod<jbyte>(
 			"getDsfId",
 			"()B"
 		);
 	}
 	jint NfcV::getMaxTransceiveLength()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMaxTransceiveLength",
 			"()I"
 		);
 	}
 	jbyte NfcV::getResponseFlags()
 	{
-		return __thiz.callMethod<jbyte>(
+		return callMethod<jbyte>(
 			"getResponseFlags",
 			"()B"
 		);
 	}
 	QAndroidJniObject NfcV::getTag()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTag",
 			"()Landroid/nfc/Tag;"
 		);
 	}
 	jboolean NfcV::isConnected()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isConnected",
 			"()Z"
 		);
 	}
 	jbyteArray NfcV::transceive(jbyteArray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"transceive",
 			"([B)[B",
 			arg0

@@ -11,9 +11,11 @@ namespace java::net
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Inet4Address(const char *className, const char *sig, Ts...agv) : java::net::InetAddress(className, sig, std::forward<Ts>(agv)...) {}
 		Inet4Address(QAndroidJniObject obj);
+		
 		// Constructors
-		Inet4Address() = default;
 		
 		// Methods
 		jboolean equals(jobject arg0);

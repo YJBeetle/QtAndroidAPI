@@ -39,10 +39,12 @@ namespace java::io
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ObjectInputStream(const char *className, const char *sig, Ts...agv) : java::io::InputStream(className, sig, std::forward<Ts>(agv)...) {}
 		ObjectInputStream(QAndroidJniObject obj);
+		
 		// Constructors
 		ObjectInputStream(java::io::InputStream arg0);
-		ObjectInputStream() = default;
 		
 		// Methods
 		jint available();

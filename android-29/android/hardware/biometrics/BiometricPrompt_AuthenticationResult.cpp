@@ -5,13 +5,15 @@ namespace android::hardware::biometrics
 {
 	// Fields
 	
-	BiometricPrompt_AuthenticationResult::BiometricPrompt_AuthenticationResult(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BiometricPrompt_AuthenticationResult::BiometricPrompt_AuthenticationResult(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject BiometricPrompt_AuthenticationResult::getCryptoObject()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCryptoObject",
 			"()Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;"
 		);

@@ -5,85 +5,85 @@ namespace android::speech::tts
 {
 	// Fields
 	
-	SynthesisRequest::SynthesisRequest(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SynthesisRequest::SynthesisRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	SynthesisRequest::SynthesisRequest(jstring arg0, android::os::Bundle arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.speech.tts.SynthesisRequest",
 			"(Ljava/lang/CharSequence;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
+			arg1.object()
+		) {}
 	
 	// Methods
 	jint SynthesisRequest::getCallerUid()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCallerUid",
 			"()I"
 		);
 	}
 	jstring SynthesisRequest::getCharSequenceText()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCharSequenceText",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jstring SynthesisRequest::getCountry()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCountry",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring SynthesisRequest::getLanguage()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLanguage",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject SynthesisRequest::getParams()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getParams",
 			"()Landroid/os/Bundle;"
 		);
 	}
 	jint SynthesisRequest::getPitch()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPitch",
 			"()I"
 		);
 	}
 	jint SynthesisRequest::getSpeechRate()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSpeechRate",
 			"()I"
 		);
 	}
 	jstring SynthesisRequest::getText()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring SynthesisRequest::getVariant()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getVariant",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring SynthesisRequest::getVoiceName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getVoiceName",
 			"()Ljava/lang/String;"
 		).object<jstring>();

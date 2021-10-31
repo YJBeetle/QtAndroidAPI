@@ -6,20 +6,22 @@ namespace android::printservice
 {
 	// Fields
 	
-	PrintDocument::PrintDocument(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PrintDocument::PrintDocument(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject PrintDocument::getData()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getData",
 			"()Landroid/os/ParcelFileDescriptor;"
 		);
 	}
 	QAndroidJniObject PrintDocument::getInfo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getInfo",
 			"()Landroid/print/PrintDocumentInfo;"
 		);

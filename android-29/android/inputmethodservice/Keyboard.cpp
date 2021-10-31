@@ -78,84 +78,78 @@ namespace android::inputmethodservice
 		);
 	}
 	
-	Keyboard::Keyboard(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Keyboard::Keyboard(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Keyboard::Keyboard(android::content::Context arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.inputmethodservice.Keyboard",
 			"(Landroid/content/Context;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
-		);
-	}
+		) {}
 	Keyboard::Keyboard(android::content::Context arg0, jint arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.inputmethodservice.Keyboard",
 			"(Landroid/content/Context;II)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	Keyboard::Keyboard(android::content::Context arg0, jint arg1, jint arg2, jint arg3, jint arg4)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.inputmethodservice.Keyboard",
 			"(Landroid/content/Context;IIII)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
 			arg4
-		);
-	}
+		) {}
 	Keyboard::Keyboard(android::content::Context arg0, jint arg1, jstring arg2, jint arg3, jint arg4)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.inputmethodservice.Keyboard",
 			"(Landroid/content/Context;ILjava/lang/CharSequence;II)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
 			arg4
-		);
-	}
+		) {}
 	
 	// Methods
 	jint Keyboard::getHeight()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getHeight",
 			"()I"
 		);
 	}
 	QAndroidJniObject Keyboard::getKeys()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getKeys",
 			"()Ljava/util/List;"
 		);
 	}
 	jint Keyboard::getMinWidth()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMinWidth",
 			"()I"
 		);
 	}
 	QAndroidJniObject Keyboard::getModifierKeys()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getModifierKeys",
 			"()Ljava/util/List;"
 		);
 	}
 	jintArray Keyboard::getNearestKeys(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getNearestKeys",
 			"(II)[I",
 			arg0,
@@ -164,21 +158,21 @@ namespace android::inputmethodservice
 	}
 	jint Keyboard::getShiftKeyIndex()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getShiftKeyIndex",
 			"()I"
 		);
 	}
 	jboolean Keyboard::isShifted()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isShifted",
 			"()Z"
 		);
 	}
 	jboolean Keyboard::setShifted(jboolean arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"setShifted",
 			"(Z)Z",
 			arg0

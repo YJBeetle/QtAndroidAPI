@@ -58,27 +58,27 @@ namespace android::media
 		);
 	}
 	
-	MediaExtractor::MediaExtractor(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaExtractor::MediaExtractor(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MediaExtractor::MediaExtractor()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.MediaExtractor",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean MediaExtractor::advance()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"advance",
 			"()Z"
 		);
 	}
 	QAndroidJniObject MediaExtractor::getAudioPresentations(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAudioPresentations",
 			"(I)Ljava/util/List;",
 			arg0
@@ -86,14 +86,14 @@ namespace android::media
 	}
 	jlong MediaExtractor::getCachedDuration()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getCachedDuration",
 			"()J"
 		);
 	}
 	QAndroidJniObject MediaExtractor::getCasInfo(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCasInfo",
 			"(I)Landroid/media/MediaExtractor$CasInfo;",
 			arg0
@@ -101,71 +101,71 @@ namespace android::media
 	}
 	QAndroidJniObject MediaExtractor::getDrmInitData()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDrmInitData",
 			"()Landroid/media/DrmInitData;"
 		);
 	}
 	QAndroidJniObject MediaExtractor::getMetrics()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMetrics",
 			"()Landroid/os/PersistableBundle;"
 		);
 	}
 	QAndroidJniObject MediaExtractor::getPsshInfo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPsshInfo",
 			"()Ljava/util/Map;"
 		);
 	}
 	jboolean MediaExtractor::getSampleCryptoInfo(android::media::MediaCodec_CryptoInfo arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getSampleCryptoInfo",
 			"(Landroid/media/MediaCodec$CryptoInfo;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint MediaExtractor::getSampleFlags()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSampleFlags",
 			"()I"
 		);
 	}
 	jlong MediaExtractor::getSampleSize()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getSampleSize",
 			"()J"
 		);
 	}
 	jlong MediaExtractor::getSampleTime()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getSampleTime",
 			"()J"
 		);
 	}
 	jint MediaExtractor::getSampleTrackIndex()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSampleTrackIndex",
 			"()I"
 		);
 	}
 	jint MediaExtractor::getTrackCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTrackCount",
 			"()I"
 		);
 	}
 	QAndroidJniObject MediaExtractor::getTrackFormat(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTrackFormat",
 			"(I)Landroid/media/MediaFormat;",
 			arg0
@@ -173,30 +173,30 @@ namespace android::media
 	}
 	jboolean MediaExtractor::hasCacheReachedEndOfStream()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasCacheReachedEndOfStream",
 			"()Z"
 		);
 	}
 	jint MediaExtractor::readSampleData(java::nio::ByteBuffer arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"readSampleData",
 			"(Ljava/nio/ByteBuffer;I)I",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void MediaExtractor::release()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
 	void MediaExtractor::seekTo(jlong arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"seekTo",
 			"(JI)V",
 			arg0,
@@ -205,7 +205,7 @@ namespace android::media
 	}
 	void MediaExtractor::selectTrack(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"selectTrack",
 			"(I)V",
 			arg0
@@ -213,31 +213,31 @@ namespace android::media
 	}
 	void MediaExtractor::setDataSource(android::content::res::AssetFileDescriptor arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDataSource",
 			"(Landroid/content/res/AssetFileDescriptor;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaExtractor::setDataSource(android::media::MediaDataSource arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDataSource",
 			"(Landroid/media/MediaDataSource;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaExtractor::setDataSource(java::io::FileDescriptor arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDataSource",
 			"(Ljava/io/FileDescriptor;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaExtractor::setDataSource(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDataSource",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -245,44 +245,44 @@ namespace android::media
 	}
 	void MediaExtractor::setDataSource(jstring arg0, __JniBaseClass arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDataSource",
 			"(Ljava/lang/String;Ljava/util/Map;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void MediaExtractor::setDataSource(android::content::Context arg0, android::net::Uri arg1, __JniBaseClass arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDataSource",
 			"(Landroid/content/Context;Landroid/net/Uri;Ljava/util/Map;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	void MediaExtractor::setDataSource(java::io::FileDescriptor arg0, jlong arg1, jlong arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDataSource",
 			"(Ljava/io/FileDescriptor;JJ)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
 	}
 	void MediaExtractor::setMediaCas(android::media::MediaCas arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMediaCas",
 			"(Landroid/media/MediaCas;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaExtractor::unselectTrack(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"unselectTrack",
 			"(I)V",
 			arg0

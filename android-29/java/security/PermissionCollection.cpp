@@ -5,64 +5,64 @@ namespace java::security
 {
 	// Fields
 	
-	PermissionCollection::PermissionCollection(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PermissionCollection::PermissionCollection(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	PermissionCollection::PermissionCollection()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.security.PermissionCollection",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void PermissionCollection::add(java::security::Permission arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"add",
 			"(Ljava/security/Permission;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject PermissionCollection::elements()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"elements",
 			"()Ljava/util/Enumeration;"
 		);
 	}
 	QAndroidJniObject PermissionCollection::elementsAsStream()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"elementsAsStream",
 			"()Ljava/util/stream/Stream;"
 		);
 	}
 	jboolean PermissionCollection::implies(java::security::Permission arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"implies",
 			"(Ljava/security/Permission;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean PermissionCollection::isReadOnly()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isReadOnly",
 			"()Z"
 		);
 	}
 	void PermissionCollection::setReadOnly()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setReadOnly",
 			"()V"
 		);
 	}
 	jstring PermissionCollection::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

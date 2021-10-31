@@ -10,7 +10,10 @@ namespace android::app
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DownloadManager_Query(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DownloadManager_Query(QAndroidJniObject obj);
+		
 		// Constructors
 		DownloadManager_Query();
 		

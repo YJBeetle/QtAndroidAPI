@@ -14,9 +14,11 @@ namespace java::lang::annotation
 		static QAndroidJniObject RUNTIME();
 		static QAndroidJniObject SOURCE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit RetentionPolicy(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		RetentionPolicy(QAndroidJniObject obj);
+		
 		// Constructors
-		RetentionPolicy() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

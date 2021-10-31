@@ -14,9 +14,11 @@ namespace android::graphics
 		static QAndroidJniObject MITER();
 		static QAndroidJniObject ROUND();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Paint_Join(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		Paint_Join(QAndroidJniObject obj);
+		
 		// Constructors
-		Paint_Join() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

@@ -11,7 +11,10 @@ namespace javax::xml::datatype
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DatatypeConfigurationException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
 		DatatypeConfigurationException(QAndroidJniObject obj);
+		
 		// Constructors
 		DatatypeConfigurationException();
 		DatatypeConfigurationException(jstring arg0);

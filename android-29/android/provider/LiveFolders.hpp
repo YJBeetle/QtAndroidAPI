@@ -23,9 +23,11 @@ namespace android::provider
 		static jstring INTENT();
 		static jstring NAME();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit LiveFolders(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		LiveFolders(QAndroidJniObject obj);
+		
 		// Constructors
-		LiveFolders() = default;
 		
 		// Methods
 	};

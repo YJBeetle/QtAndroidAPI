@@ -19,26 +19,26 @@ namespace android::media
 	}
 	jlong AudioTimestamp::framePosition()
 	{
-		return __thiz.getField<jlong>(
+		return getField<jlong>(
 			"framePosition"
 		);
 	}
 	jlong AudioTimestamp::nanoTime()
 	{
-		return __thiz.getField<jlong>(
+		return getField<jlong>(
 			"nanoTime"
 		);
 	}
 	
-	AudioTimestamp::AudioTimestamp(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AudioTimestamp::AudioTimestamp(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	AudioTimestamp::AudioTimestamp()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.AudioTimestamp",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::media

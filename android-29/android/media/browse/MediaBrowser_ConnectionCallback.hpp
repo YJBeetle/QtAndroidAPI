@@ -10,7 +10,10 @@ namespace android::media::browse
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaBrowser_ConnectionCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaBrowser_ConnectionCallback(QAndroidJniObject obj);
+		
 		// Constructors
 		MediaBrowser_ConnectionCallback();
 		

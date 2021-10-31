@@ -688,342 +688,338 @@ namespace android::app
 	}
 	jarray Notification::actions()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"actions",
 			"[Landroid/app/Notification$Action;"
 		).object<jarray>();
 	}
 	QAndroidJniObject Notification::audioAttributes()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"audioAttributes",
 			"Landroid/media/AudioAttributes;"
 		);
 	}
 	jint Notification::audioStreamType()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"audioStreamType"
 		);
 	}
 	QAndroidJniObject Notification::bigContentView()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"bigContentView",
 			"Landroid/widget/RemoteViews;"
 		);
 	}
 	jstring Notification::category()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"category",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint Notification::color()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"color"
 		);
 	}
 	QAndroidJniObject Notification::contentIntent()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"contentIntent",
 			"Landroid/app/PendingIntent;"
 		);
 	}
 	QAndroidJniObject Notification::contentView()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"contentView",
 			"Landroid/widget/RemoteViews;"
 		);
 	}
 	jint Notification::defaults()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"defaults"
 		);
 	}
 	QAndroidJniObject Notification::deleteIntent()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"deleteIntent",
 			"Landroid/app/PendingIntent;"
 		);
 	}
 	QAndroidJniObject Notification::extras()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"extras",
 			"Landroid/os/Bundle;"
 		);
 	}
 	jint Notification::flags()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"flags"
 		);
 	}
 	QAndroidJniObject Notification::fullScreenIntent()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"fullScreenIntent",
 			"Landroid/app/PendingIntent;"
 		);
 	}
 	QAndroidJniObject Notification::headsUpContentView()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"headsUpContentView",
 			"Landroid/widget/RemoteViews;"
 		);
 	}
 	jint Notification::icon()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"icon"
 		);
 	}
 	jint Notification::iconLevel()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"iconLevel"
 		);
 	}
 	QAndroidJniObject Notification::largeIcon()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"largeIcon",
 			"Landroid/graphics/Bitmap;"
 		);
 	}
 	jint Notification::ledARGB()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"ledARGB"
 		);
 	}
 	jint Notification::ledOffMS()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"ledOffMS"
 		);
 	}
 	jint Notification::ledOnMS()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"ledOnMS"
 		);
 	}
 	jint Notification::number()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"number"
 		);
 	}
 	jint Notification::priority()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"priority"
 		);
 	}
 	QAndroidJniObject Notification::publicVersion()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"publicVersion",
 			"Landroid/app/Notification;"
 		);
 	}
 	QAndroidJniObject Notification::sound()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"sound",
 			"Landroid/net/Uri;"
 		);
 	}
 	jstring Notification::tickerText()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"tickerText",
 			"Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	QAndroidJniObject Notification::tickerView()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"tickerView",
 			"Landroid/widget/RemoteViews;"
 		);
 	}
 	jlongArray Notification::vibrate()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"vibrate",
 			"[J"
 		).object<jlongArray>();
 	}
 	jint Notification::visibility()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"visibility"
 		);
 	}
 	jlong Notification::when()
 	{
-		return __thiz.getField<jlong>(
+		return getField<jlong>(
 			"when"
 		);
 	}
 	
-	Notification::Notification(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Notification::Notification(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Notification::Notification()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.app.Notification",
 			"()V"
-		);
-	}
+		) {}
 	Notification::Notification(android::os::Parcel arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.app.Notification",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	Notification::Notification(jint arg0, jstring arg1, jlong arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.app.Notification",
 			"(ILjava/lang/CharSequence;J)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject Notification::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Landroid/app/Notification;"
 		);
 	}
 	jint Notification::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean Notification::getAllowSystemGeneratedContextualActions()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getAllowSystemGeneratedContextualActions",
 			"()Z"
 		);
 	}
 	jint Notification::getBadgeIconType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getBadgeIconType",
 			"()I"
 		);
 	}
 	QAndroidJniObject Notification::getBubbleMetadata()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBubbleMetadata",
 			"()Landroid/app/Notification$BubbleMetadata;"
 		);
 	}
 	jstring Notification::getChannelId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getChannelId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Notification::getGroup()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getGroup",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint Notification::getGroupAlertBehavior()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getGroupAlertBehavior",
 			"()I"
 		);
 	}
 	QAndroidJniObject Notification::getLargeIcon()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLargeIcon",
 			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
 	QAndroidJniObject Notification::getLocusId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLocusId",
 			"()Landroid/content/LocusId;"
 		);
 	}
 	jstring Notification::getSettingsText()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSettingsText",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jstring Notification::getShortcutId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getShortcutId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject Notification::getSmallIcon()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSmallIcon",
 			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
 	jstring Notification::getSortKey()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSortKey",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jlong Notification::getTimeoutAfter()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getTimeoutAfter",
 			"()J"
 		);
 	}
 	jstring Notification::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void Notification::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

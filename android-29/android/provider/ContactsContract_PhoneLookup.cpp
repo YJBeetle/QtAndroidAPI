@@ -29,7 +29,9 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	ContactsContract_PhoneLookup::ContactsContract_PhoneLookup(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ContactsContract_PhoneLookup::ContactsContract_PhoneLookup(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

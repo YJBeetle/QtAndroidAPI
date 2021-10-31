@@ -15,72 +15,74 @@ namespace android::app
 		);
 	}
 	
-	Notification_BubbleMetadata::Notification_BubbleMetadata(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Notification_BubbleMetadata::Notification_BubbleMetadata(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint Notification_BubbleMetadata::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean Notification_BubbleMetadata::getAutoExpandBubble()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getAutoExpandBubble",
 			"()Z"
 		);
 	}
 	QAndroidJniObject Notification_BubbleMetadata::getDeleteIntent()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDeleteIntent",
 			"()Landroid/app/PendingIntent;"
 		);
 	}
 	jint Notification_BubbleMetadata::getDesiredHeight()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDesiredHeight",
 			"()I"
 		);
 	}
 	jint Notification_BubbleMetadata::getDesiredHeightResId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDesiredHeightResId",
 			"()I"
 		);
 	}
 	QAndroidJniObject Notification_BubbleMetadata::getIcon()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getIcon",
 			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
 	QAndroidJniObject Notification_BubbleMetadata::getIntent()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getIntent",
 			"()Landroid/app/PendingIntent;"
 		);
 	}
 	jboolean Notification_BubbleMetadata::isNotificationSuppressed()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isNotificationSuppressed",
 			"()Z"
 		);
 	}
 	void Notification_BubbleMetadata::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

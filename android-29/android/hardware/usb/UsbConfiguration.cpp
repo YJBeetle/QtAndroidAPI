@@ -14,27 +14,29 @@ namespace android::hardware::usb
 		);
 	}
 	
-	UsbConfiguration::UsbConfiguration(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UsbConfiguration::UsbConfiguration(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint UsbConfiguration::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jint UsbConfiguration::getId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getId",
 			"()I"
 		);
 	}
 	QAndroidJniObject UsbConfiguration::getInterface(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getInterface",
 			"(I)Landroid/hardware/usb/UsbInterface;",
 			arg0
@@ -42,52 +44,52 @@ namespace android::hardware::usb
 	}
 	jint UsbConfiguration::getInterfaceCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getInterfaceCount",
 			"()I"
 		);
 	}
 	jint UsbConfiguration::getMaxPower()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMaxPower",
 			"()I"
 		);
 	}
 	jstring UsbConfiguration::getName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jboolean UsbConfiguration::isRemoteWakeup()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isRemoteWakeup",
 			"()Z"
 		);
 	}
 	jboolean UsbConfiguration::isSelfPowered()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isSelfPowered",
 			"()Z"
 		);
 	}
 	jstring UsbConfiguration::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void UsbConfiguration::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

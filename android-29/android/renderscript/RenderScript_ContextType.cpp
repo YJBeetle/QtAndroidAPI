@@ -28,7 +28,9 @@ namespace android::renderscript
 		);
 	}
 	
-	RenderScript_ContextType::RenderScript_ContextType(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	RenderScript_ContextType::RenderScript_ContextType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

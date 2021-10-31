@@ -12,7 +12,10 @@ namespace android::os
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit RemoteException(const char *className, const char *sig, Ts...agv) : android::util::AndroidException(className, sig, std::forward<Ts>(agv)...) {}
 		RemoteException(QAndroidJniObject obj);
+		
 		// Constructors
 		RemoteException();
 		RemoteException(jstring arg0);

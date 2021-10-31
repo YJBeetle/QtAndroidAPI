@@ -30,7 +30,9 @@ namespace java::util
 		);
 	}
 	
-	Collections::Collections(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Collections::Collections(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -40,7 +42,7 @@ namespace java::util
 			"java.util.Collections",
 			"addAll",
 			"(Ljava/util/Collection;[Ljava/lang/Object;)Z",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -50,7 +52,7 @@ namespace java::util
 			"java.util.Collections",
 			"asLifoQueue",
 			"(Ljava/util/Deque;)Ljava/util/Queue;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint Collections::binarySearch(__JniBaseClass arg0, jobject arg1)
@@ -59,7 +61,7 @@ namespace java::util
 			"java.util.Collections",
 			"binarySearch",
 			"(Ljava/util/List;Ljava/lang/Object;)I",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -69,9 +71,9 @@ namespace java::util
 			"java.util.Collections",
 			"binarySearch",
 			"(Ljava/util/List;Ljava/lang/Object;Ljava/util/Comparator;)I",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	QAndroidJniObject Collections::checkedCollection(__JniBaseClass arg0, jclass arg1)
@@ -80,7 +82,7 @@ namespace java::util
 			"java.util.Collections",
 			"checkedCollection",
 			"(Ljava/util/Collection;Ljava/lang/Class;)Ljava/util/Collection;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -90,7 +92,7 @@ namespace java::util
 			"java.util.Collections",
 			"checkedList",
 			"(Ljava/util/List;Ljava/lang/Class;)Ljava/util/List;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -100,7 +102,7 @@ namespace java::util
 			"java.util.Collections",
 			"checkedMap",
 			"(Ljava/util/Map;Ljava/lang/Class;Ljava/lang/Class;)Ljava/util/Map;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
@@ -111,7 +113,7 @@ namespace java::util
 			"java.util.Collections",
 			"checkedNavigableMap",
 			"(Ljava/util/NavigableMap;Ljava/lang/Class;Ljava/lang/Class;)Ljava/util/NavigableMap;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
@@ -122,7 +124,7 @@ namespace java::util
 			"java.util.Collections",
 			"checkedNavigableSet",
 			"(Ljava/util/NavigableSet;Ljava/lang/Class;)Ljava/util/NavigableSet;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -132,7 +134,7 @@ namespace java::util
 			"java.util.Collections",
 			"checkedQueue",
 			"(Ljava/util/Queue;Ljava/lang/Class;)Ljava/util/Queue;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -142,7 +144,7 @@ namespace java::util
 			"java.util.Collections",
 			"checkedSet",
 			"(Ljava/util/Set;Ljava/lang/Class;)Ljava/util/Set;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -152,7 +154,7 @@ namespace java::util
 			"java.util.Collections",
 			"checkedSortedMap",
 			"(Ljava/util/SortedMap;Ljava/lang/Class;Ljava/lang/Class;)Ljava/util/SortedMap;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
@@ -163,7 +165,7 @@ namespace java::util
 			"java.util.Collections",
 			"checkedSortedSet",
 			"(Ljava/util/SortedSet;Ljava/lang/Class;)Ljava/util/SortedSet;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -173,8 +175,8 @@ namespace java::util
 			"java.util.Collections",
 			"copy",
 			"(Ljava/util/List;Ljava/util/List;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jboolean Collections::disjoint(__JniBaseClass arg0, __JniBaseClass arg1)
@@ -183,8 +185,8 @@ namespace java::util
 			"java.util.Collections",
 			"disjoint",
 			"(Ljava/util/Collection;Ljava/util/Collection;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject Collections::emptyEnumeration()
@@ -273,7 +275,7 @@ namespace java::util
 			"java.util.Collections",
 			"enumeration",
 			"(Ljava/util/Collection;)Ljava/util/Enumeration;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Collections::fill(__JniBaseClass arg0, jobject arg1)
@@ -282,7 +284,7 @@ namespace java::util
 			"java.util.Collections",
 			"fill",
 			"(Ljava/util/List;Ljava/lang/Object;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -292,7 +294,7 @@ namespace java::util
 			"java.util.Collections",
 			"frequency",
 			"(Ljava/util/Collection;Ljava/lang/Object;)I",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -302,8 +304,8 @@ namespace java::util
 			"java.util.Collections",
 			"indexOfSubList",
 			"(Ljava/util/List;Ljava/util/List;)I",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jint Collections::lastIndexOfSubList(__JniBaseClass arg0, __JniBaseClass arg1)
@@ -312,8 +314,8 @@ namespace java::util
 			"java.util.Collections",
 			"lastIndexOfSubList",
 			"(Ljava/util/List;Ljava/util/List;)I",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject Collections::list(__JniBaseClass arg0)
@@ -322,7 +324,7 @@ namespace java::util
 			"java.util.Collections",
 			"list",
 			"(Ljava/util/Enumeration;)Ljava/util/ArrayList;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jobject Collections::max(__JniBaseClass arg0)
@@ -331,7 +333,7 @@ namespace java::util
 			"java.util.Collections",
 			"max",
 			"(Ljava/util/Collection;)Ljava/lang/Object;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jobject>();
 	}
 	jobject Collections::max(__JniBaseClass arg0, __JniBaseClass arg1)
@@ -340,8 +342,8 @@ namespace java::util
 			"java.util.Collections",
 			"max",
 			"(Ljava/util/Collection;Ljava/util/Comparator;)Ljava/lang/Object;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		).object<jobject>();
 	}
 	jobject Collections::min(__JniBaseClass arg0)
@@ -350,7 +352,7 @@ namespace java::util
 			"java.util.Collections",
 			"min",
 			"(Ljava/util/Collection;)Ljava/lang/Object;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jobject>();
 	}
 	jobject Collections::min(__JniBaseClass arg0, __JniBaseClass arg1)
@@ -359,8 +361,8 @@ namespace java::util
 			"java.util.Collections",
 			"min",
 			"(Ljava/util/Collection;Ljava/util/Comparator;)Ljava/lang/Object;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		).object<jobject>();
 	}
 	QAndroidJniObject Collections::nCopies(jint arg0, jobject arg1)
@@ -379,7 +381,7 @@ namespace java::util
 			"java.util.Collections",
 			"newSetFromMap",
 			"(Ljava/util/Map;)Ljava/util/Set;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean Collections::replaceAll(__JniBaseClass arg0, jobject arg1, jobject arg2)
@@ -388,7 +390,7 @@ namespace java::util
 			"java.util.Collections",
 			"replaceAll",
 			"(Ljava/util/List;Ljava/lang/Object;Ljava/lang/Object;)Z",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
@@ -399,7 +401,7 @@ namespace java::util
 			"java.util.Collections",
 			"reverse",
 			"(Ljava/util/List;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Collections::reverseOrder()
@@ -416,7 +418,7 @@ namespace java::util
 			"java.util.Collections",
 			"reverseOrder",
 			"(Ljava/util/Comparator;)Ljava/util/Comparator;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Collections::rotate(__JniBaseClass arg0, jint arg1)
@@ -425,7 +427,7 @@ namespace java::util
 			"java.util.Collections",
 			"rotate",
 			"(Ljava/util/List;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -435,7 +437,7 @@ namespace java::util
 			"java.util.Collections",
 			"shuffle",
 			"(Ljava/util/List;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Collections::shuffle(__JniBaseClass arg0, java::util::Random arg1)
@@ -444,8 +446,8 @@ namespace java::util
 			"java.util.Collections",
 			"shuffle",
 			"(Ljava/util/List;Ljava/util/Random;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject Collections::singleton(jobject arg0)
@@ -482,7 +484,7 @@ namespace java::util
 			"java.util.Collections",
 			"sort",
 			"(Ljava/util/List;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Collections::sort(__JniBaseClass arg0, __JniBaseClass arg1)
@@ -491,8 +493,8 @@ namespace java::util
 			"java.util.Collections",
 			"sort",
 			"(Ljava/util/List;Ljava/util/Comparator;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void Collections::swap(__JniBaseClass arg0, jint arg1, jint arg2)
@@ -501,7 +503,7 @@ namespace java::util
 			"java.util.Collections",
 			"swap",
 			"(Ljava/util/List;II)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
@@ -512,7 +514,7 @@ namespace java::util
 			"java.util.Collections",
 			"synchronizedCollection",
 			"(Ljava/util/Collection;)Ljava/util/Collection;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Collections::synchronizedList(__JniBaseClass arg0)
@@ -521,7 +523,7 @@ namespace java::util
 			"java.util.Collections",
 			"synchronizedList",
 			"(Ljava/util/List;)Ljava/util/List;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Collections::synchronizedMap(__JniBaseClass arg0)
@@ -530,7 +532,7 @@ namespace java::util
 			"java.util.Collections",
 			"synchronizedMap",
 			"(Ljava/util/Map;)Ljava/util/Map;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Collections::synchronizedNavigableMap(__JniBaseClass arg0)
@@ -539,7 +541,7 @@ namespace java::util
 			"java.util.Collections",
 			"synchronizedNavigableMap",
 			"(Ljava/util/NavigableMap;)Ljava/util/NavigableMap;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Collections::synchronizedNavigableSet(__JniBaseClass arg0)
@@ -548,7 +550,7 @@ namespace java::util
 			"java.util.Collections",
 			"synchronizedNavigableSet",
 			"(Ljava/util/NavigableSet;)Ljava/util/NavigableSet;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Collections::synchronizedSet(__JniBaseClass arg0)
@@ -557,7 +559,7 @@ namespace java::util
 			"java.util.Collections",
 			"synchronizedSet",
 			"(Ljava/util/Set;)Ljava/util/Set;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Collections::synchronizedSortedMap(__JniBaseClass arg0)
@@ -566,7 +568,7 @@ namespace java::util
 			"java.util.Collections",
 			"synchronizedSortedMap",
 			"(Ljava/util/SortedMap;)Ljava/util/SortedMap;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Collections::synchronizedSortedSet(__JniBaseClass arg0)
@@ -575,7 +577,7 @@ namespace java::util
 			"java.util.Collections",
 			"synchronizedSortedSet",
 			"(Ljava/util/SortedSet;)Ljava/util/SortedSet;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Collections::unmodifiableCollection(__JniBaseClass arg0)
@@ -584,7 +586,7 @@ namespace java::util
 			"java.util.Collections",
 			"unmodifiableCollection",
 			"(Ljava/util/Collection;)Ljava/util/Collection;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Collections::unmodifiableList(__JniBaseClass arg0)
@@ -593,7 +595,7 @@ namespace java::util
 			"java.util.Collections",
 			"unmodifiableList",
 			"(Ljava/util/List;)Ljava/util/List;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Collections::unmodifiableMap(__JniBaseClass arg0)
@@ -602,7 +604,7 @@ namespace java::util
 			"java.util.Collections",
 			"unmodifiableMap",
 			"(Ljava/util/Map;)Ljava/util/Map;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Collections::unmodifiableNavigableMap(__JniBaseClass arg0)
@@ -611,7 +613,7 @@ namespace java::util
 			"java.util.Collections",
 			"unmodifiableNavigableMap",
 			"(Ljava/util/NavigableMap;)Ljava/util/NavigableMap;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Collections::unmodifiableNavigableSet(__JniBaseClass arg0)
@@ -620,7 +622,7 @@ namespace java::util
 			"java.util.Collections",
 			"unmodifiableNavigableSet",
 			"(Ljava/util/NavigableSet;)Ljava/util/NavigableSet;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Collections::unmodifiableSet(__JniBaseClass arg0)
@@ -629,7 +631,7 @@ namespace java::util
 			"java.util.Collections",
 			"unmodifiableSet",
 			"(Ljava/util/Set;)Ljava/util/Set;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Collections::unmodifiableSortedMap(__JniBaseClass arg0)
@@ -638,7 +640,7 @@ namespace java::util
 			"java.util.Collections",
 			"unmodifiableSortedMap",
 			"(Ljava/util/SortedMap;)Ljava/util/SortedMap;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Collections::unmodifiableSortedSet(__JniBaseClass arg0)
@@ -647,7 +649,7 @@ namespace java::util
 			"java.util.Collections",
 			"unmodifiableSortedSet",
 			"(Ljava/util/SortedSet;)Ljava/util/SortedSet;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace java::util

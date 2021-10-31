@@ -13,9 +13,11 @@ namespace android::icu::util
 		static QAndroidJniObject CASH();
 		static QAndroidJniObject STANDARD();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Currency_CurrencyUsage(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		Currency_CurrencyUsage(QAndroidJniObject obj);
+		
 		// Constructors
-		Currency_CurrencyUsage() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

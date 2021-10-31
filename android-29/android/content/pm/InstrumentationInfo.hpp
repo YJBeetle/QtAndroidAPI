@@ -26,7 +26,10 @@ namespace android::content::pm
 		jstring targetPackage();
 		jstring targetProcesses();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit InstrumentationInfo(const char *className, const char *sig, Ts...agv) : android::content::pm::PackageItemInfo(className, sig, std::forward<Ts>(agv)...) {}
 		InstrumentationInfo(QAndroidJniObject obj);
+		
 		// Constructors
 		InstrumentationInfo();
 		InstrumentationInfo(android::content::pm::InstrumentationInfo &arg0);

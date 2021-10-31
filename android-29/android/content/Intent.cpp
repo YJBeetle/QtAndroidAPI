@@ -2334,60 +2334,50 @@ namespace android::content
 		);
 	}
 	
-	Intent::Intent(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Intent::Intent(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Intent::Intent()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.content.Intent",
 			"()V"
-		);
-	}
+		) {}
 	Intent::Intent(android::content::Intent &arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.content.Intent",
 			"(Landroid/content/Intent;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	Intent::Intent(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.content.Intent",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	Intent::Intent(android::content::Context arg0, jclass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.content.Intent",
 			"(Landroid/content/Context;Ljava/lang/Class;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
-		);
-	}
+		) {}
 	Intent::Intent(jstring arg0, android::net::Uri arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.content.Intent",
 			"(Ljava/lang/String;Landroid/net/Uri;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
+			arg1.object()
+		) {}
 	Intent::Intent(jstring arg0, android::net::Uri arg1, android::content::Context arg2, jclass arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.content.Intent",
 			"(Ljava/lang/String;Landroid/net/Uri;Landroid/content/Context;Ljava/lang/Class;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
+			arg1.object(),
+			arg2.object(),
 			arg3
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject Intent::createChooser(android::content::Intent arg0, jstring arg1)
@@ -2396,7 +2386,7 @@ namespace android::content
 			"android.content.Intent",
 			"createChooser",
 			"(Landroid/content/Intent;Ljava/lang/CharSequence;)Landroid/content/Intent;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -2406,9 +2396,9 @@ namespace android::content
 			"android.content.Intent",
 			"createChooser",
 			"(Landroid/content/Intent;Ljava/lang/CharSequence;Landroid/content/IntentSender;)Landroid/content/Intent;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	QAndroidJniObject Intent::getIntent(jstring arg0)
@@ -2435,7 +2425,7 @@ namespace android::content
 			"android.content.Intent",
 			"makeMainActivity",
 			"(Landroid/content/ComponentName;)Landroid/content/Intent;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Intent::makeMainSelectorActivity(jstring arg0, jstring arg1)
@@ -2454,7 +2444,7 @@ namespace android::content
 			"android.content.Intent",
 			"makeRestartActivityTask",
 			"(Landroid/content/ComponentName;)Landroid/content/Intent;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring Intent::normalizeMimeType(jstring arg0)
@@ -2472,9 +2462,9 @@ namespace android::content
 			"android.content.Intent",
 			"parseIntent",
 			"(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;)Landroid/content/Intent;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject Intent::parseUri(jstring arg0, jint arg1)
@@ -2489,7 +2479,7 @@ namespace android::content
 	}
 	QAndroidJniObject Intent::addCategory(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"addCategory",
 			"(Ljava/lang/String;)Landroid/content/Intent;",
 			arg0
@@ -2497,7 +2487,7 @@ namespace android::content
 	}
 	QAndroidJniObject Intent::addFlags(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"addFlags",
 			"(I)Landroid/content/Intent;",
 			arg0
@@ -2505,59 +2495,59 @@ namespace android::content
 	}
 	jobject Intent::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	QAndroidJniObject Intent::cloneFilter()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"cloneFilter",
 			"()Landroid/content/Intent;"
 		);
 	}
 	jint Intent::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jint Intent::fillIn(android::content::Intent arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"fillIn",
 			"(Landroid/content/Intent;I)I",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	jboolean Intent::filterEquals(android::content::Intent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"filterEquals",
 			"(Landroid/content/Intent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint Intent::filterHashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"filterHashCode",
 			"()I"
 		);
 	}
 	jstring Intent::getAction()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAction",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jbooleanArray Intent::getBooleanArrayExtra(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBooleanArrayExtra",
 			"(Ljava/lang/String;)[Z",
 			arg0
@@ -2565,7 +2555,7 @@ namespace android::content
 	}
 	jboolean Intent::getBooleanExtra(jstring arg0, jboolean arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getBooleanExtra",
 			"(Ljava/lang/String;Z)Z",
 			arg0,
@@ -2574,7 +2564,7 @@ namespace android::content
 	}
 	QAndroidJniObject Intent::getBundleExtra(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBundleExtra",
 			"(Ljava/lang/String;)Landroid/os/Bundle;",
 			arg0
@@ -2582,7 +2572,7 @@ namespace android::content
 	}
 	jbyteArray Intent::getByteArrayExtra(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getByteArrayExtra",
 			"(Ljava/lang/String;)[B",
 			arg0
@@ -2590,7 +2580,7 @@ namespace android::content
 	}
 	jbyte Intent::getByteExtra(jstring arg0, jbyte arg1)
 	{
-		return __thiz.callMethod<jbyte>(
+		return callMethod<jbyte>(
 			"getByteExtra",
 			"(Ljava/lang/String;B)B",
 			arg0,
@@ -2599,14 +2589,14 @@ namespace android::content
 	}
 	QAndroidJniObject Intent::getCategories()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCategories",
 			"()Ljava/util/Set;"
 		);
 	}
 	jcharArray Intent::getCharArrayExtra(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCharArrayExtra",
 			"(Ljava/lang/String;)[C",
 			arg0
@@ -2614,7 +2604,7 @@ namespace android::content
 	}
 	jchar Intent::getCharExtra(jstring arg0, jchar arg1)
 	{
-		return __thiz.callMethod<jchar>(
+		return callMethod<jchar>(
 			"getCharExtra",
 			"(Ljava/lang/String;C)C",
 			arg0,
@@ -2623,7 +2613,7 @@ namespace android::content
 	}
 	jarray Intent::getCharSequenceArrayExtra(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCharSequenceArrayExtra",
 			"(Ljava/lang/String;)[Ljava/lang/CharSequence;",
 			arg0
@@ -2631,7 +2621,7 @@ namespace android::content
 	}
 	QAndroidJniObject Intent::getCharSequenceArrayListExtra(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCharSequenceArrayListExtra",
 			"(Ljava/lang/String;)Ljava/util/ArrayList;",
 			arg0
@@ -2639,7 +2629,7 @@ namespace android::content
 	}
 	jstring Intent::getCharSequenceExtra(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCharSequenceExtra",
 			"(Ljava/lang/String;)Ljava/lang/CharSequence;",
 			arg0
@@ -2647,35 +2637,35 @@ namespace android::content
 	}
 	QAndroidJniObject Intent::getClipData()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getClipData",
 			"()Landroid/content/ClipData;"
 		);
 	}
 	QAndroidJniObject Intent::getComponent()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getComponent",
 			"()Landroid/content/ComponentName;"
 		);
 	}
 	QAndroidJniObject Intent::getData()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getData",
 			"()Landroid/net/Uri;"
 		);
 	}
 	jstring Intent::getDataString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDataString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jdoubleArray Intent::getDoubleArrayExtra(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDoubleArrayExtra",
 			"(Ljava/lang/String;)[D",
 			arg0
@@ -2683,7 +2673,7 @@ namespace android::content
 	}
 	jdouble Intent::getDoubleExtra(jstring arg0, jdouble arg1)
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"getDoubleExtra",
 			"(Ljava/lang/String;D)D",
 			arg0,
@@ -2692,21 +2682,21 @@ namespace android::content
 	}
 	QAndroidJniObject Intent::getExtras()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
 	jint Intent::getFlags()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getFlags",
 			"()I"
 		);
 	}
 	jfloatArray Intent::getFloatArrayExtra(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFloatArrayExtra",
 			"(Ljava/lang/String;)[F",
 			arg0
@@ -2714,7 +2704,7 @@ namespace android::content
 	}
 	jfloat Intent::getFloatExtra(jstring arg0, jfloat arg1)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getFloatExtra",
 			"(Ljava/lang/String;F)F",
 			arg0,
@@ -2723,14 +2713,14 @@ namespace android::content
 	}
 	jstring Intent::getIdentifier()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getIdentifier",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jintArray Intent::getIntArrayExtra(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getIntArrayExtra",
 			"(Ljava/lang/String;)[I",
 			arg0
@@ -2738,7 +2728,7 @@ namespace android::content
 	}
 	jint Intent::getIntExtra(jstring arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getIntExtra",
 			"(Ljava/lang/String;I)I",
 			arg0,
@@ -2747,7 +2737,7 @@ namespace android::content
 	}
 	QAndroidJniObject Intent::getIntegerArrayListExtra(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getIntegerArrayListExtra",
 			"(Ljava/lang/String;)Ljava/util/ArrayList;",
 			arg0
@@ -2755,7 +2745,7 @@ namespace android::content
 	}
 	jlongArray Intent::getLongArrayExtra(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLongArrayExtra",
 			"(Ljava/lang/String;)[J",
 			arg0
@@ -2763,7 +2753,7 @@ namespace android::content
 	}
 	jlong Intent::getLongExtra(jstring arg0, jlong arg1)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getLongExtra",
 			"(Ljava/lang/String;J)J",
 			arg0,
@@ -2772,14 +2762,14 @@ namespace android::content
 	}
 	jstring Intent::getPackage()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPackage",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jarray Intent::getParcelableArrayExtra(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getParcelableArrayExtra",
 			"(Ljava/lang/String;)[Landroid/os/Parcelable;",
 			arg0
@@ -2787,7 +2777,7 @@ namespace android::content
 	}
 	QAndroidJniObject Intent::getParcelableArrayListExtra(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getParcelableArrayListExtra",
 			"(Ljava/lang/String;)Ljava/util/ArrayList;",
 			arg0
@@ -2795,7 +2785,7 @@ namespace android::content
 	}
 	QAndroidJniObject Intent::getParcelableExtra(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getParcelableExtra",
 			"(Ljava/lang/String;)Landroid/os/Parcelable;",
 			arg0
@@ -2803,21 +2793,21 @@ namespace android::content
 	}
 	jstring Intent::getScheme()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getScheme",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject Intent::getSelector()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSelector",
 			"()Landroid/content/Intent;"
 		);
 	}
 	QAndroidJniObject Intent::getSerializableExtra(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSerializableExtra",
 			"(Ljava/lang/String;)Ljava/io/Serializable;",
 			arg0
@@ -2825,7 +2815,7 @@ namespace android::content
 	}
 	jshortArray Intent::getShortArrayExtra(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getShortArrayExtra",
 			"(Ljava/lang/String;)[S",
 			arg0
@@ -2833,7 +2823,7 @@ namespace android::content
 	}
 	jshort Intent::getShortExtra(jstring arg0, jshort arg1)
 	{
-		return __thiz.callMethod<jshort>(
+		return callMethod<jshort>(
 			"getShortExtra",
 			"(Ljava/lang/String;S)S",
 			arg0,
@@ -2842,14 +2832,14 @@ namespace android::content
 	}
 	QAndroidJniObject Intent::getSourceBounds()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSourceBounds",
 			"()Landroid/graphics/Rect;"
 		);
 	}
 	jarray Intent::getStringArrayExtra(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getStringArrayExtra",
 			"(Ljava/lang/String;)[Ljava/lang/String;",
 			arg0
@@ -2857,7 +2847,7 @@ namespace android::content
 	}
 	QAndroidJniObject Intent::getStringArrayListExtra(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getStringArrayListExtra",
 			"(Ljava/lang/String;)Ljava/util/ArrayList;",
 			arg0
@@ -2865,7 +2855,7 @@ namespace android::content
 	}
 	jstring Intent::getStringExtra(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getStringExtra",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
@@ -2873,14 +2863,14 @@ namespace android::content
 	}
 	jstring Intent::getType()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jboolean Intent::hasCategory(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasCategory",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -2888,7 +2878,7 @@ namespace android::content
 	}
 	jboolean Intent::hasExtra(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasExtra",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -2896,23 +2886,23 @@ namespace android::content
 	}
 	jboolean Intent::hasFileDescriptors()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasFileDescriptors",
 			"()Z"
 		);
 	}
 	QAndroidJniObject Intent::putCharSequenceArrayListExtra(jstring arg0, java::util::ArrayList arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"putCharSequenceArrayListExtra",
 			"(Ljava/lang/String;Ljava/util/ArrayList;)Landroid/content/Intent;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject Intent::putExtra(jstring arg0, jbyteArray arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"putExtra",
 			"(Ljava/lang/String;[B)Landroid/content/Intent;",
 			arg0,
@@ -2921,7 +2911,7 @@ namespace android::content
 	}
 	QAndroidJniObject Intent::putExtra(jstring arg0, jcharArray arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"putExtra",
 			"(Ljava/lang/String;[C)Landroid/content/Intent;",
 			arg0,
@@ -2930,7 +2920,7 @@ namespace android::content
 	}
 	QAndroidJniObject Intent::putExtra(jstring arg0, jdoubleArray arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"putExtra",
 			"(Ljava/lang/String;[D)Landroid/content/Intent;",
 			arg0,
@@ -2939,7 +2929,7 @@ namespace android::content
 	}
 	QAndroidJniObject Intent::putExtra(jstring arg0, jfloatArray arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"putExtra",
 			"(Ljava/lang/String;[F)Landroid/content/Intent;",
 			arg0,
@@ -2948,7 +2938,7 @@ namespace android::content
 	}
 	QAndroidJniObject Intent::putExtra(jstring arg0, jintArray arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"putExtra",
 			"(Ljava/lang/String;[I)Landroid/content/Intent;",
 			arg0,
@@ -2957,7 +2947,7 @@ namespace android::content
 	}
 	QAndroidJniObject Intent::putExtra(jstring arg0, jlongArray arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"putExtra",
 			"(Ljava/lang/String;[J)Landroid/content/Intent;",
 			arg0,
@@ -2966,7 +2956,7 @@ namespace android::content
 	}
 	QAndroidJniObject Intent::putExtra(jstring arg0, jarray arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"putExtra",
 			"(Ljava/lang/String;[Landroid/os/Parcelable;)Landroid/content/Intent;",
 			arg0,
@@ -2975,7 +2965,7 @@ namespace android::content
 	}
 	QAndroidJniObject Intent::putExtra(jstring arg0, jshortArray arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"putExtra",
 			"(Ljava/lang/String;[S)Landroid/content/Intent;",
 			arg0,
@@ -2984,7 +2974,7 @@ namespace android::content
 	}
 	QAndroidJniObject Intent::putExtra(jstring arg0, jbooleanArray arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"putExtra",
 			"(Ljava/lang/String;[Z)Landroid/content/Intent;",
 			arg0,
@@ -2993,25 +2983,25 @@ namespace android::content
 	}
 	QAndroidJniObject Intent::putExtra(jstring arg0, android::os::Bundle arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"putExtra",
 			"(Ljava/lang/String;Landroid/os/Bundle;)Landroid/content/Intent;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject Intent::putExtra(jstring arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"putExtra",
 			"(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject Intent::putExtra(jstring arg0, jboolean arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"putExtra",
 			"(Ljava/lang/String;Z)Landroid/content/Intent;",
 			arg0,
@@ -3020,7 +3010,7 @@ namespace android::content
 	}
 	QAndroidJniObject Intent::putExtra(jstring arg0, jbyte arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"putExtra",
 			"(Ljava/lang/String;B)Landroid/content/Intent;",
 			arg0,
@@ -3029,7 +3019,7 @@ namespace android::content
 	}
 	QAndroidJniObject Intent::putExtra(jstring arg0, jchar arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"putExtra",
 			"(Ljava/lang/String;C)Landroid/content/Intent;",
 			arg0,
@@ -3038,7 +3028,7 @@ namespace android::content
 	}
 	QAndroidJniObject Intent::putExtra(jstring arg0, jdouble arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"putExtra",
 			"(Ljava/lang/String;D)Landroid/content/Intent;",
 			arg0,
@@ -3047,7 +3037,7 @@ namespace android::content
 	}
 	QAndroidJniObject Intent::putExtra(jstring arg0, jfloat arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"putExtra",
 			"(Ljava/lang/String;F)Landroid/content/Intent;",
 			arg0,
@@ -3056,7 +3046,7 @@ namespace android::content
 	}
 	QAndroidJniObject Intent::putExtra(jstring arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"putExtra",
 			"(Ljava/lang/String;I)Landroid/content/Intent;",
 			arg0,
@@ -3065,7 +3055,7 @@ namespace android::content
 	}
 	QAndroidJniObject Intent::putExtra(jstring arg0, jstring arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"putExtra",
 			"(Ljava/lang/String;Ljava/lang/CharSequence;)Landroid/content/Intent;",
 			arg0,
@@ -3074,7 +3064,7 @@ namespace android::content
 	}
 	QAndroidJniObject Intent::putExtra(jstring arg0, jlong arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"putExtra",
 			"(Ljava/lang/String;J)Landroid/content/Intent;",
 			arg0,
@@ -3083,7 +3073,7 @@ namespace android::content
 	}
 	QAndroidJniObject Intent::putExtra(jstring arg0, jshort arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"putExtra",
 			"(Ljava/lang/String;S)Landroid/content/Intent;",
 			arg0,
@@ -3092,58 +3082,58 @@ namespace android::content
 	}
 	QAndroidJniObject Intent::putExtras(android::content::Intent arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"putExtras",
 			"(Landroid/content/Intent;)Landroid/content/Intent;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Intent::putExtras(android::os::Bundle arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"putExtras",
 			"(Landroid/os/Bundle;)Landroid/content/Intent;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Intent::putIntegerArrayListExtra(jstring arg0, java::util::ArrayList arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"putIntegerArrayListExtra",
 			"(Ljava/lang/String;Ljava/util/ArrayList;)Landroid/content/Intent;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject Intent::putParcelableArrayListExtra(jstring arg0, java::util::ArrayList arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"putParcelableArrayListExtra",
 			"(Ljava/lang/String;Ljava/util/ArrayList;)Landroid/content/Intent;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject Intent::putStringArrayListExtra(jstring arg0, java::util::ArrayList arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"putStringArrayListExtra",
 			"(Ljava/lang/String;Ljava/util/ArrayList;)Landroid/content/Intent;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void Intent::readFromParcel(android::os::Parcel arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"readFromParcel",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Intent::removeCategory(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeCategory",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -3151,7 +3141,7 @@ namespace android::content
 	}
 	void Intent::removeExtra(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeExtra",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -3159,7 +3149,7 @@ namespace android::content
 	}
 	void Intent::removeFlags(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeFlags",
 			"(I)V",
 			arg0
@@ -3167,64 +3157,64 @@ namespace android::content
 	}
 	QAndroidJniObject Intent::replaceExtras(android::content::Intent arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"replaceExtras",
 			"(Landroid/content/Intent;)Landroid/content/Intent;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Intent::replaceExtras(android::os::Bundle arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"replaceExtras",
 			"(Landroid/os/Bundle;)Landroid/content/Intent;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Intent::resolveActivity(android::content::pm::PackageManager arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"resolveActivity",
 			"(Landroid/content/pm/PackageManager;)Landroid/content/ComponentName;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Intent::resolveActivityInfo(android::content::pm::PackageManager arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"resolveActivityInfo",
 			"(Landroid/content/pm/PackageManager;I)Landroid/content/pm/ActivityInfo;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	jstring Intent::resolveType(android::content::ContentResolver arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"resolveType",
 			"(Landroid/content/ContentResolver;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jstring Intent::resolveType(android::content::Context arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"resolveType",
 			"(Landroid/content/Context;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jstring Intent::resolveTypeIfNeeded(android::content::ContentResolver arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"resolveTypeIfNeeded",
 			"(Landroid/content/ContentResolver;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	QAndroidJniObject Intent::setAction(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setAction",
 			"(Ljava/lang/String;)Landroid/content/Intent;",
 			arg0
@@ -3232,25 +3222,25 @@ namespace android::content
 	}
 	QAndroidJniObject Intent::setClass(android::content::Context arg0, jclass arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setClass",
 			"(Landroid/content/Context;Ljava/lang/Class;)Landroid/content/Intent;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	QAndroidJniObject Intent::setClassName(android::content::Context arg0, jstring arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setClassName",
 			"(Landroid/content/Context;Ljava/lang/String;)Landroid/content/Intent;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	QAndroidJniObject Intent::setClassName(jstring arg0, jstring arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setClassName",
 			"(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;",
 			arg0,
@@ -3259,65 +3249,65 @@ namespace android::content
 	}
 	void Intent::setClipData(android::content::ClipData arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setClipData",
 			"(Landroid/content/ClipData;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Intent::setComponent(android::content::ComponentName arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setComponent",
 			"(Landroid/content/ComponentName;)Landroid/content/Intent;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Intent::setData(android::net::Uri arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setData",
 			"(Landroid/net/Uri;)Landroid/content/Intent;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Intent::setDataAndNormalize(android::net::Uri arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setDataAndNormalize",
 			"(Landroid/net/Uri;)Landroid/content/Intent;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Intent::setDataAndType(android::net::Uri arg0, jstring arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setDataAndType",
 			"(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/Intent;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	QAndroidJniObject Intent::setDataAndTypeAndNormalize(android::net::Uri arg0, jstring arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setDataAndTypeAndNormalize",
 			"(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/Intent;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void Intent::setExtrasClassLoader(java::lang::ClassLoader arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setExtrasClassLoader",
 			"(Ljava/lang/ClassLoader;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Intent::setFlags(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setFlags",
 			"(I)Landroid/content/Intent;",
 			arg0
@@ -3325,7 +3315,7 @@ namespace android::content
 	}
 	QAndroidJniObject Intent::setIdentifier(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setIdentifier",
 			"(Ljava/lang/String;)Landroid/content/Intent;",
 			arg0
@@ -3333,7 +3323,7 @@ namespace android::content
 	}
 	QAndroidJniObject Intent::setPackage(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setPackage",
 			"(Ljava/lang/String;)Landroid/content/Intent;",
 			arg0
@@ -3341,23 +3331,23 @@ namespace android::content
 	}
 	void Intent::setSelector(android::content::Intent arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSelector",
 			"(Landroid/content/Intent;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Intent::setSourceBounds(android::graphics::Rect arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSourceBounds",
 			"(Landroid/graphics/Rect;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Intent::setType(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setType",
 			"(Ljava/lang/String;)Landroid/content/Intent;",
 			arg0
@@ -3365,7 +3355,7 @@ namespace android::content
 	}
 	QAndroidJniObject Intent::setTypeAndNormalize(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setTypeAndNormalize",
 			"(Ljava/lang/String;)Landroid/content/Intent;",
 			arg0
@@ -3373,21 +3363,21 @@ namespace android::content
 	}
 	jstring Intent::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Intent::toURI()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toURI",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Intent::toUri(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toUri",
 			"(I)Ljava/lang/String;",
 			arg0
@@ -3395,10 +3385,10 @@ namespace android::content
 	}
 	void Intent::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

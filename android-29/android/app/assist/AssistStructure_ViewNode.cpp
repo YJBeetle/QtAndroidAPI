@@ -45,55 +45,57 @@ namespace android::app::assist
 		);
 	}
 	
-	AssistStructure_ViewNode::AssistStructure_ViewNode(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AssistStructure_ViewNode::AssistStructure_ViewNode(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jfloat AssistStructure_ViewNode::getAlpha()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getAlpha",
 			"()F"
 		);
 	}
 	jarray AssistStructure_ViewNode::getAutofillHints()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAutofillHints",
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	QAndroidJniObject AssistStructure_ViewNode::getAutofillId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAutofillId",
 			"()Landroid/view/autofill/AutofillId;"
 		);
 	}
 	jarray AssistStructure_ViewNode::getAutofillOptions()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAutofillOptions",
 			"()[Ljava/lang/CharSequence;"
 		).object<jarray>();
 	}
 	jint AssistStructure_ViewNode::getAutofillType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAutofillType",
 			"()I"
 		);
 	}
 	QAndroidJniObject AssistStructure_ViewNode::getAutofillValue()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAutofillValue",
 			"()Landroid/view/autofill/AutofillValue;"
 		);
 	}
 	QAndroidJniObject AssistStructure_ViewNode::getChildAt(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getChildAt",
 			"(I)Landroid/app/assist/AssistStructure$ViewNode;",
 			arg0
@@ -101,350 +103,350 @@ namespace android::app::assist
 	}
 	jint AssistStructure_ViewNode::getChildCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getChildCount",
 			"()I"
 		);
 	}
 	jstring AssistStructure_ViewNode::getClassName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getClassName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring AssistStructure_ViewNode::getContentDescription()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getContentDescription",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jfloat AssistStructure_ViewNode::getElevation()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getElevation",
 			"()F"
 		);
 	}
 	QAndroidJniObject AssistStructure_ViewNode::getExtras()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
 	jint AssistStructure_ViewNode::getHeight()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getHeight",
 			"()I"
 		);
 	}
 	jstring AssistStructure_ViewNode::getHint()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getHint",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject AssistStructure_ViewNode::getHtmlInfo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getHtmlInfo",
 			"()Landroid/view/ViewStructure$HtmlInfo;"
 		);
 	}
 	jint AssistStructure_ViewNode::getId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getId",
 			"()I"
 		);
 	}
 	jstring AssistStructure_ViewNode::getIdEntry()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getIdEntry",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring AssistStructure_ViewNode::getIdPackage()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getIdPackage",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring AssistStructure_ViewNode::getIdType()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getIdType",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint AssistStructure_ViewNode::getImportantForAutofill()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getImportantForAutofill",
 			"()I"
 		);
 	}
 	jint AssistStructure_ViewNode::getInputType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getInputType",
 			"()I"
 		);
 	}
 	jint AssistStructure_ViewNode::getLeft()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLeft",
 			"()I"
 		);
 	}
 	QAndroidJniObject AssistStructure_ViewNode::getLocaleList()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLocaleList",
 			"()Landroid/os/LocaleList;"
 		);
 	}
 	jint AssistStructure_ViewNode::getMaxTextEms()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMaxTextEms",
 			"()I"
 		);
 	}
 	jint AssistStructure_ViewNode::getMaxTextLength()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMaxTextLength",
 			"()I"
 		);
 	}
 	jint AssistStructure_ViewNode::getMinTextEms()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMinTextEms",
 			"()I"
 		);
 	}
 	jint AssistStructure_ViewNode::getScrollX()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getScrollX",
 			"()I"
 		);
 	}
 	jint AssistStructure_ViewNode::getScrollY()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getScrollY",
 			"()I"
 		);
 	}
 	jstring AssistStructure_ViewNode::getText()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jint AssistStructure_ViewNode::getTextBackgroundColor()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTextBackgroundColor",
 			"()I"
 		);
 	}
 	jint AssistStructure_ViewNode::getTextColor()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTextColor",
 			"()I"
 		);
 	}
 	jstring AssistStructure_ViewNode::getTextIdEntry()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTextIdEntry",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jintArray AssistStructure_ViewNode::getTextLineBaselines()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTextLineBaselines",
 			"()[I"
 		).object<jintArray>();
 	}
 	jintArray AssistStructure_ViewNode::getTextLineCharOffsets()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTextLineCharOffsets",
 			"()[I"
 		).object<jintArray>();
 	}
 	jint AssistStructure_ViewNode::getTextSelectionEnd()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTextSelectionEnd",
 			"()I"
 		);
 	}
 	jint AssistStructure_ViewNode::getTextSelectionStart()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTextSelectionStart",
 			"()I"
 		);
 	}
 	jfloat AssistStructure_ViewNode::getTextSize()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getTextSize",
 			"()F"
 		);
 	}
 	jint AssistStructure_ViewNode::getTextStyle()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTextStyle",
 			"()I"
 		);
 	}
 	jint AssistStructure_ViewNode::getTop()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTop",
 			"()I"
 		);
 	}
 	QAndroidJniObject AssistStructure_ViewNode::getTransformation()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTransformation",
 			"()Landroid/graphics/Matrix;"
 		);
 	}
 	jint AssistStructure_ViewNode::getVisibility()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getVisibility",
 			"()I"
 		);
 	}
 	jstring AssistStructure_ViewNode::getWebDomain()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getWebDomain",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring AssistStructure_ViewNode::getWebScheme()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getWebScheme",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint AssistStructure_ViewNode::getWidth()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getWidth",
 			"()I"
 		);
 	}
 	jboolean AssistStructure_ViewNode::isAccessibilityFocused()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isAccessibilityFocused",
 			"()Z"
 		);
 	}
 	jboolean AssistStructure_ViewNode::isActivated()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isActivated",
 			"()Z"
 		);
 	}
 	jboolean AssistStructure_ViewNode::isAssistBlocked()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isAssistBlocked",
 			"()Z"
 		);
 	}
 	jboolean AssistStructure_ViewNode::isCheckable()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isCheckable",
 			"()Z"
 		);
 	}
 	jboolean AssistStructure_ViewNode::isChecked()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isChecked",
 			"()Z"
 		);
 	}
 	jboolean AssistStructure_ViewNode::isClickable()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isClickable",
 			"()Z"
 		);
 	}
 	jboolean AssistStructure_ViewNode::isContextClickable()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isContextClickable",
 			"()Z"
 		);
 	}
 	jboolean AssistStructure_ViewNode::isEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEnabled",
 			"()Z"
 		);
 	}
 	jboolean AssistStructure_ViewNode::isFocusable()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isFocusable",
 			"()Z"
 		);
 	}
 	jboolean AssistStructure_ViewNode::isFocused()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isFocused",
 			"()Z"
 		);
 	}
 	jboolean AssistStructure_ViewNode::isLongClickable()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isLongClickable",
 			"()Z"
 		);
 	}
 	jboolean AssistStructure_ViewNode::isOpaque()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isOpaque",
 			"()Z"
 		);
 	}
 	jboolean AssistStructure_ViewNode::isSelected()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isSelected",
 			"()Z"
 		);

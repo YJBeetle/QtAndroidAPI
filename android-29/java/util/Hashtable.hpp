@@ -23,7 +23,10 @@ namespace java::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Hashtable(const char *className, const char *sig, Ts...agv) : java::util::Dictionary(className, sig, std::forward<Ts>(agv)...) {}
 		Hashtable(QAndroidJniObject obj);
+		
 		// Constructors
 		Hashtable();
 		Hashtable(jint arg0);

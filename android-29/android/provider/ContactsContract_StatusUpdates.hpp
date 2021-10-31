@@ -18,9 +18,11 @@ namespace android::provider
 		static QAndroidJniObject CONTENT_URI();
 		static QAndroidJniObject PROFILE_CONTENT_URI();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ContactsContract_StatusUpdates(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ContactsContract_StatusUpdates(QAndroidJniObject obj);
+		
 		// Constructors
-		ContactsContract_StatusUpdates() = default;
 		
 		// Methods
 		static jint getPresenceIconResourceId(jint arg0);

@@ -25,9 +25,11 @@ namespace android::view::accessibility
 		jint foregroundColor();
 		jint windowColor();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CaptioningManager_CaptionStyle(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		CaptioningManager_CaptionStyle(QAndroidJniObject obj);
+		
 		// Constructors
-		CaptioningManager_CaptionStyle() = default;
 		
 		// Methods
 		QAndroidJniObject getTypeface();

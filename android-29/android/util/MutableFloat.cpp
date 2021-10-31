@@ -5,21 +5,21 @@ namespace android::util
 	// Fields
 	jfloat MutableFloat::value()
 	{
-		return __thiz.getField<jfloat>(
+		return getField<jfloat>(
 			"value"
 		);
 	}
 	
-	MutableFloat::MutableFloat(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MutableFloat::MutableFloat(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MutableFloat::MutableFloat(jfloat arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.util.MutableFloat",
 			"(F)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::util

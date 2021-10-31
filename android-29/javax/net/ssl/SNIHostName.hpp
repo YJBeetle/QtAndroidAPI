@@ -15,11 +15,13 @@ namespace javax::net::ssl
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SNIHostName(const char *className, const char *sig, Ts...agv) : javax::net::ssl::SNIServerName(className, sig, std::forward<Ts>(agv)...) {}
 		SNIHostName(QAndroidJniObject obj);
+		
 		// Constructors
 		SNIHostName(jbyteArray arg0);
 		SNIHostName(jstring arg0);
-		SNIHostName() = default;
 		
 		// Methods
 		static QAndroidJniObject createSNIMatcher(jstring arg0);

@@ -22,7 +22,9 @@ namespace android::provider
 		);
 	}
 	
-	BlockedNumberContract::BlockedNumberContract(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BlockedNumberContract::BlockedNumberContract(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -32,7 +34,7 @@ namespace android::provider
 			"android.provider.BlockedNumberContract",
 			"canCurrentUserBlockNumbers",
 			"(Landroid/content/Context;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean BlockedNumberContract::isBlocked(android::content::Context arg0, jstring arg1)
@@ -41,7 +43,7 @@ namespace android::provider
 			"android.provider.BlockedNumberContract",
 			"isBlocked",
 			"(Landroid/content/Context;Ljava/lang/String;)Z",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -51,7 +53,7 @@ namespace android::provider
 			"android.provider.BlockedNumberContract",
 			"unblock",
 			"(Landroid/content/Context;Ljava/lang/String;)I",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

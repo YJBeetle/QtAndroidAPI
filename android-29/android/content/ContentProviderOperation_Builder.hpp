@@ -22,9 +22,11 @@ namespace android::content
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ContentProviderOperation_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ContentProviderOperation_Builder(QAndroidJniObject obj);
+		
 		// Constructors
-		ContentProviderOperation_Builder() = default;
 		
 		// Methods
 		QAndroidJniObject build();

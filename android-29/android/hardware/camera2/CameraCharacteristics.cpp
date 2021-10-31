@@ -702,70 +702,72 @@ namespace android::hardware::camera2
 		);
 	}
 	
-	CameraCharacteristics::CameraCharacteristics(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CameraCharacteristics::CameraCharacteristics(QAndroidJniObject obj) : android::hardware::camera2::CameraMetadata(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jobject CameraCharacteristics::get(android::hardware::camera2::CameraCharacteristics_Key arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jobject>();
 	}
 	QAndroidJniObject CameraCharacteristics::getAvailableCaptureRequestKeys()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAvailableCaptureRequestKeys",
 			"()Ljava/util/List;"
 		);
 	}
 	QAndroidJniObject CameraCharacteristics::getAvailableCaptureResultKeys()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAvailableCaptureResultKeys",
 			"()Ljava/util/List;"
 		);
 	}
 	QAndroidJniObject CameraCharacteristics::getAvailablePhysicalCameraRequestKeys()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAvailablePhysicalCameraRequestKeys",
 			"()Ljava/util/List;"
 		);
 	}
 	QAndroidJniObject CameraCharacteristics::getAvailableSessionKeys()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAvailableSessionKeys",
 			"()Ljava/util/List;"
 		);
 	}
 	QAndroidJniObject CameraCharacteristics::getKeys()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getKeys",
 			"()Ljava/util/List;"
 		);
 	}
 	QAndroidJniObject CameraCharacteristics::getKeysNeedingPermission()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getKeysNeedingPermission",
 			"()Ljava/util/List;"
 		);
 	}
 	QAndroidJniObject CameraCharacteristics::getPhysicalCameraIds()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPhysicalCameraIds",
 			"()Ljava/util/Set;"
 		);
 	}
 	QAndroidJniObject CameraCharacteristics::getRecommendedStreamConfigurationMap(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRecommendedStreamConfigurationMap",
 			"(I)Landroid/hardware/camera2/params/RecommendedStreamConfigurationMap;",
 			arg0

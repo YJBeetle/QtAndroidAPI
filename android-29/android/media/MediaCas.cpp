@@ -6,16 +6,16 @@ namespace android::media
 {
 	// Fields
 	
-	MediaCas::MediaCas(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaCas::MediaCas(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MediaCas::MediaCas(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.MediaCas",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jarray MediaCas::enumeratePlugins()
@@ -37,21 +37,21 @@ namespace android::media
 	}
 	void MediaCas::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	QAndroidJniObject MediaCas::openSession()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"openSession",
 			"()Landroid/media/MediaCas$Session;"
 		);
 	}
 	void MediaCas::processEmm(jbyteArray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"processEmm",
 			"([B)V",
 			arg0
@@ -59,7 +59,7 @@ namespace android::media
 	}
 	void MediaCas::processEmm(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"processEmm",
 			"([BII)V",
 			arg0,
@@ -69,7 +69,7 @@ namespace android::media
 	}
 	void MediaCas::provision(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"provision",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -77,7 +77,7 @@ namespace android::media
 	}
 	void MediaCas::refreshEntitlements(jint arg0, jbyteArray arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"refreshEntitlements",
 			"(I[B)V",
 			arg0,
@@ -86,7 +86,7 @@ namespace android::media
 	}
 	void MediaCas::sendEvent(jint arg0, jint arg1, jbyteArray arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"sendEvent",
 			"(II[B)V",
 			arg0,
@@ -96,16 +96,16 @@ namespace android::media
 	}
 	void MediaCas::setEventListener(__JniBaseClass arg0, android::os::Handler arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setEventListener",
 			"(Landroid/media/MediaCas$EventListener;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void MediaCas::setPrivateData(jbyteArray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPrivateData",
 			"([B)V",
 			arg0

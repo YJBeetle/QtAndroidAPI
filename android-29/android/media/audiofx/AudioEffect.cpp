@@ -234,7 +234,9 @@ namespace android::media::audiofx
 		);
 	}
 	
-	AudioEffect::AudioEffect(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AudioEffect::AudioEffect(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -248,58 +250,58 @@ namespace android::media::audiofx
 	}
 	QAndroidJniObject AudioEffect::getDescriptor()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDescriptor",
 			"()Landroid/media/audiofx/AudioEffect$Descriptor;"
 		);
 	}
 	jboolean AudioEffect::getEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getEnabled",
 			"()Z"
 		);
 	}
 	jint AudioEffect::getId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getId",
 			"()I"
 		);
 	}
 	jboolean AudioEffect::hasControl()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasControl",
 			"()Z"
 		);
 	}
 	void AudioEffect::release()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
 	void AudioEffect::setControlStatusListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setControlStatusListener",
 			"(Landroid/media/audiofx/AudioEffect$OnControlStatusChangeListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AudioEffect::setEnableStatusListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setEnableStatusListener",
 			"(Landroid/media/audiofx/AudioEffect$OnEnableStatusChangeListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint AudioEffect::setEnabled(jboolean arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"setEnabled",
 			"(Z)I",
 			arg0

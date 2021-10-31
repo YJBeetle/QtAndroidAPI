@@ -10,44 +10,44 @@ namespace android::database
 {
 	// Fields
 	
-	CursorWrapper::CursorWrapper(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CursorWrapper::CursorWrapper(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	CursorWrapper::CursorWrapper(__JniBaseClass arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.database.CursorWrapper",
 			"(Landroid/database/Cursor;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	void CursorWrapper::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	void CursorWrapper::copyStringToBuffer(jint arg0, android::database::CharArrayBuffer arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"copyStringToBuffer",
 			"(ILandroid/database/CharArrayBuffer;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void CursorWrapper::deactivate()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"deactivate",
 			"()V"
 		);
 	}
 	jbyteArray CursorWrapper::getBlob(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBlob",
 			"(I)[B",
 			arg0
@@ -55,14 +55,14 @@ namespace android::database
 	}
 	jint CursorWrapper::getColumnCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getColumnCount",
 			"()I"
 		);
 	}
 	jint CursorWrapper::getColumnIndex(jstring arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getColumnIndex",
 			"(Ljava/lang/String;)I",
 			arg0
@@ -70,7 +70,7 @@ namespace android::database
 	}
 	jint CursorWrapper::getColumnIndexOrThrow(jstring arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getColumnIndexOrThrow",
 			"(Ljava/lang/String;)I",
 			arg0
@@ -78,7 +78,7 @@ namespace android::database
 	}
 	jstring CursorWrapper::getColumnName(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getColumnName",
 			"(I)Ljava/lang/String;",
 			arg0
@@ -86,21 +86,21 @@ namespace android::database
 	}
 	jarray CursorWrapper::getColumnNames()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getColumnNames",
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	jint CursorWrapper::getCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCount",
 			"()I"
 		);
 	}
 	jdouble CursorWrapper::getDouble(jint arg0)
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"getDouble",
 			"(I)D",
 			arg0
@@ -108,14 +108,14 @@ namespace android::database
 	}
 	QAndroidJniObject CursorWrapper::getExtras()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
 	jfloat CursorWrapper::getFloat(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getFloat",
 			"(I)F",
 			arg0
@@ -123,7 +123,7 @@ namespace android::database
 	}
 	jint CursorWrapper::getInt(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getInt",
 			"(I)I",
 			arg0
@@ -131,7 +131,7 @@ namespace android::database
 	}
 	jlong CursorWrapper::getLong(jint arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getLong",
 			"(I)J",
 			arg0
@@ -139,28 +139,28 @@ namespace android::database
 	}
 	QAndroidJniObject CursorWrapper::getNotificationUri()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getNotificationUri",
 			"()Landroid/net/Uri;"
 		);
 	}
 	QAndroidJniObject CursorWrapper::getNotificationUris()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getNotificationUris",
 			"()Ljava/util/List;"
 		);
 	}
 	jint CursorWrapper::getPosition()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPosition",
 			"()I"
 		);
 	}
 	jshort CursorWrapper::getShort(jint arg0)
 	{
-		return __thiz.callMethod<jshort>(
+		return callMethod<jshort>(
 			"getShort",
 			"(I)S",
 			arg0
@@ -168,7 +168,7 @@ namespace android::database
 	}
 	jstring CursorWrapper::getString(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getString",
 			"(I)Ljava/lang/String;",
 			arg0
@@ -176,7 +176,7 @@ namespace android::database
 	}
 	jint CursorWrapper::getType(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getType",
 			"(I)I",
 			arg0
@@ -184,56 +184,56 @@ namespace android::database
 	}
 	jboolean CursorWrapper::getWantsAllOnMoveCalls()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getWantsAllOnMoveCalls",
 			"()Z"
 		);
 	}
 	QAndroidJniObject CursorWrapper::getWrappedCursor()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getWrappedCursor",
 			"()Landroid/database/Cursor;"
 		);
 	}
 	jboolean CursorWrapper::isAfterLast()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isAfterLast",
 			"()Z"
 		);
 	}
 	jboolean CursorWrapper::isBeforeFirst()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isBeforeFirst",
 			"()Z"
 		);
 	}
 	jboolean CursorWrapper::isClosed()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isClosed",
 			"()Z"
 		);
 	}
 	jboolean CursorWrapper::isFirst()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isFirst",
 			"()Z"
 		);
 	}
 	jboolean CursorWrapper::isLast()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isLast",
 			"()Z"
 		);
 	}
 	jboolean CursorWrapper::isNull(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isNull",
 			"(I)Z",
 			arg0
@@ -241,7 +241,7 @@ namespace android::database
 	}
 	jboolean CursorWrapper::move(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"move",
 			"(I)Z",
 			arg0
@@ -249,28 +249,28 @@ namespace android::database
 	}
 	jboolean CursorWrapper::moveToFirst()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"moveToFirst",
 			"()Z"
 		);
 	}
 	jboolean CursorWrapper::moveToLast()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"moveToLast",
 			"()Z"
 		);
 	}
 	jboolean CursorWrapper::moveToNext()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"moveToNext",
 			"()Z"
 		);
 	}
 	jboolean CursorWrapper::moveToPosition(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"moveToPosition",
 			"(I)Z",
 			arg0
@@ -278,82 +278,82 @@ namespace android::database
 	}
 	jboolean CursorWrapper::moveToPrevious()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"moveToPrevious",
 			"()Z"
 		);
 	}
 	void CursorWrapper::registerContentObserver(android::database::ContentObserver arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"registerContentObserver",
 			"(Landroid/database/ContentObserver;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void CursorWrapper::registerDataSetObserver(android::database::DataSetObserver arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"registerDataSetObserver",
 			"(Landroid/database/DataSetObserver;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean CursorWrapper::requery()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"requery",
 			"()Z"
 		);
 	}
 	QAndroidJniObject CursorWrapper::respond(android::os::Bundle arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"respond",
 			"(Landroid/os/Bundle;)Landroid/os/Bundle;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void CursorWrapper::setExtras(android::os::Bundle arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setExtras",
 			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void CursorWrapper::setNotificationUri(android::content::ContentResolver arg0, android::net::Uri arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setNotificationUri",
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void CursorWrapper::setNotificationUris(android::content::ContentResolver arg0, __JniBaseClass arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setNotificationUris",
 			"(Landroid/content/ContentResolver;Ljava/util/List;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void CursorWrapper::unregisterContentObserver(android::database::ContentObserver arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"unregisterContentObserver",
 			"(Landroid/database/ContentObserver;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void CursorWrapper::unregisterDataSetObserver(android::database::DataSetObserver arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"unregisterDataSetObserver",
 			"(Landroid/database/DataSetObserver;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::database

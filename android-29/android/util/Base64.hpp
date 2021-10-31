@@ -16,9 +16,11 @@ namespace android::util
 		static jint NO_WRAP();
 		static jint URL_SAFE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Base64(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Base64(QAndroidJniObject obj);
+		
 		// Constructors
-		Base64() = default;
 		
 		// Methods
 		static jbyteArray decode(jbyteArray arg0, jint arg1);

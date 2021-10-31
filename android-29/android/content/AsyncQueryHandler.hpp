@@ -35,10 +35,12 @@ namespace android::content
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AsyncQueryHandler(const char *className, const char *sig, Ts...agv) : android::os::Handler(className, sig, std::forward<Ts>(agv)...) {}
 		AsyncQueryHandler(QAndroidJniObject obj);
+		
 		// Constructors
 		AsyncQueryHandler(android::content::ContentResolver arg0);
-		AsyncQueryHandler() = default;
 		
 		// Methods
 		void cancelOperation(jint arg0);

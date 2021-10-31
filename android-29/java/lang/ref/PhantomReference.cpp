@@ -5,22 +5,22 @@ namespace java::lang::ref
 {
 	// Fields
 	
-	PhantomReference::PhantomReference(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PhantomReference::PhantomReference(QAndroidJniObject obj) : java::lang::ref::Reference(obj) {}
+	
 	// Constructors
 	PhantomReference::PhantomReference(jobject arg0, java::lang::ref::ReferenceQueue arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::ref::Reference(
 			"java.lang.ref.PhantomReference",
 			"(Ljava/lang/Object;Ljava/lang/ref/ReferenceQueue;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
+			arg1.object()
+		) {}
 	
 	// Methods
 	jobject PhantomReference::get()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"()Ljava/lang/Object;"
 		).object<jobject>();

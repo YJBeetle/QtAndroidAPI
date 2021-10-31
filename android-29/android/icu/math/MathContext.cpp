@@ -89,79 +89,73 @@ namespace android::icu::math
 		);
 	}
 	
-	MathContext::MathContext(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MathContext::MathContext(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MathContext::MathContext(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.icu.math.MathContext",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	MathContext::MathContext(jint arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.icu.math.MathContext",
 			"(II)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	MathContext::MathContext(jint arg0, jint arg1, jboolean arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.icu.math.MathContext",
 			"(IIZ)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	MathContext::MathContext(jint arg0, jint arg1, jboolean arg2, jint arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.icu.math.MathContext",
 			"(IIZI)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	
 	// Methods
 	jint MathContext::getDigits()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDigits",
 			"()I"
 		);
 	}
 	jint MathContext::getForm()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getForm",
 			"()I"
 		);
 	}
 	jboolean MathContext::getLostDigits()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getLostDigits",
 			"()Z"
 		);
 	}
 	jint MathContext::getRoundingMode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRoundingMode",
 			"()I"
 		);
 	}
 	jstring MathContext::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

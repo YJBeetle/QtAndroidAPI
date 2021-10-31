@@ -7,15 +7,15 @@ namespace android::text::method
 {
 	// Fields
 	
-	LinkMovementMethod::LinkMovementMethod(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	LinkMovementMethod::LinkMovementMethod(QAndroidJniObject obj) : android::text::method::ScrollingMovementMethod(obj) {}
+	
 	// Constructors
 	LinkMovementMethod::LinkMovementMethod()
-	{
-		__thiz = QAndroidJniObject(
+		: android::text::method::ScrollingMovementMethod(
 			"android.text.method.LinkMovementMethod",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject LinkMovementMethod::getInstance()
@@ -28,38 +28,38 @@ namespace android::text::method
 	}
 	jboolean LinkMovementMethod::canSelectArbitrarily()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"canSelectArbitrarily",
 			"()Z"
 		);
 	}
 	void LinkMovementMethod::initialize(android::widget::TextView arg0, __JniBaseClass arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"initialize",
 			"(Landroid/widget/TextView;Landroid/text/Spannable;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void LinkMovementMethod::onTakeFocus(android::widget::TextView arg0, __JniBaseClass arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onTakeFocus",
 			"(Landroid/widget/TextView;Landroid/text/Spannable;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
 	jboolean LinkMovementMethod::onTouchEvent(android::widget::TextView arg0, __JniBaseClass arg1, android::view::MotionEvent arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onTouchEvent",
 			"(Landroid/widget/TextView;Landroid/text/Spannable;Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 } // namespace android::text::method

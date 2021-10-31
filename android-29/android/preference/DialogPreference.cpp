@@ -10,132 +10,126 @@ namespace android::preference
 {
 	// Fields
 	
-	DialogPreference::DialogPreference(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DialogPreference::DialogPreference(QAndroidJniObject obj) : android::preference::Preference(obj) {}
+	
 	// Constructors
 	DialogPreference::DialogPreference(android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::preference::Preference(
 			"android.preference.DialogPreference",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	DialogPreference::DialogPreference(android::content::Context arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::preference::Preference(
 			"android.preference.DialogPreference",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	DialogPreference::DialogPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: android::preference::Preference(
 			"android.preference.DialogPreference",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
-		);
-	}
+		) {}
 	DialogPreference::DialogPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: android::preference::Preference(
 			"android.preference.DialogPreference",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject DialogPreference::getDialog()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDialog",
 			"()Landroid/app/Dialog;"
 		);
 	}
 	QAndroidJniObject DialogPreference::getDialogIcon()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDialogIcon",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
 	jint DialogPreference::getDialogLayoutResource()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDialogLayoutResource",
 			"()I"
 		);
 	}
 	jstring DialogPreference::getDialogMessage()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDialogMessage",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jstring DialogPreference::getDialogTitle()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDialogTitle",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jstring DialogPreference::getNegativeButtonText()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getNegativeButtonText",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jstring DialogPreference::getPositiveButtonText()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPositiveButtonText",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	void DialogPreference::onActivityDestroy()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onActivityDestroy",
 			"()V"
 		);
 	}
 	void DialogPreference::onClick(__JniBaseClass arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onClick",
 			"(Landroid/content/DialogInterface;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void DialogPreference::onDismiss(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onDismiss",
 			"(Landroid/content/DialogInterface;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void DialogPreference::setDialogIcon(android::graphics::drawable::Drawable arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDialogIcon",
 			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void DialogPreference::setDialogIcon(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDialogIcon",
 			"(I)V",
 			arg0
@@ -143,7 +137,7 @@ namespace android::preference
 	}
 	void DialogPreference::setDialogLayoutResource(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDialogLayoutResource",
 			"(I)V",
 			arg0
@@ -151,7 +145,7 @@ namespace android::preference
 	}
 	void DialogPreference::setDialogMessage(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDialogMessage",
 			"(I)V",
 			arg0
@@ -159,7 +153,7 @@ namespace android::preference
 	}
 	void DialogPreference::setDialogMessage(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDialogMessage",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
@@ -167,7 +161,7 @@ namespace android::preference
 	}
 	void DialogPreference::setDialogTitle(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDialogTitle",
 			"(I)V",
 			arg0
@@ -175,7 +169,7 @@ namespace android::preference
 	}
 	void DialogPreference::setDialogTitle(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDialogTitle",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
@@ -183,7 +177,7 @@ namespace android::preference
 	}
 	void DialogPreference::setNegativeButtonText(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setNegativeButtonText",
 			"(I)V",
 			arg0
@@ -191,7 +185,7 @@ namespace android::preference
 	}
 	void DialogPreference::setNegativeButtonText(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setNegativeButtonText",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
@@ -199,7 +193,7 @@ namespace android::preference
 	}
 	void DialogPreference::setPositiveButtonText(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPositiveButtonText",
 			"(I)V",
 			arg0
@@ -207,7 +201,7 @@ namespace android::preference
 	}
 	void DialogPreference::setPositiveButtonText(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPositiveButtonText",
 			"(Ljava/lang/CharSequence;)V",
 			arg0

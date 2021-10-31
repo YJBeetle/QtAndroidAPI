@@ -6,24 +6,24 @@ namespace android::webkit
 {
 	// Fields
 	
-	WebMessagePort_WebMessageCallback::WebMessagePort_WebMessageCallback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WebMessagePort_WebMessageCallback::WebMessagePort_WebMessageCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	WebMessagePort_WebMessageCallback::WebMessagePort_WebMessageCallback()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.webkit.WebMessagePort$WebMessageCallback",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void WebMessagePort_WebMessageCallback::onMessage(android::webkit::WebMessagePort arg0, android::webkit::WebMessage arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onMessage",
 			"(Landroid/webkit/WebMessagePort;Landroid/webkit/WebMessage;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 } // namespace android::webkit

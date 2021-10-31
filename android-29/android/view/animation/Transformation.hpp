@@ -18,7 +18,10 @@ namespace android::view::animation
 		static jint TYPE_IDENTITY();
 		static jint TYPE_MATRIX();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Transformation(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Transformation(QAndroidJniObject obj);
+		
 		// Constructors
 		Transformation();
 		

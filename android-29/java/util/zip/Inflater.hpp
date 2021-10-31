@@ -14,7 +14,10 @@ namespace java::util::zip
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Inflater(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Inflater(QAndroidJniObject obj);
+		
 		// Constructors
 		Inflater();
 		Inflater(jboolean arg0);

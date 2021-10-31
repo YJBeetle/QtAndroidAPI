@@ -169,98 +169,96 @@ namespace android::content::pm
 	}
 	jint PermissionInfo::descriptionRes()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"descriptionRes"
 		);
 	}
 	jint PermissionInfo::flags()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"flags"
 		);
 	}
 	jstring PermissionInfo::group()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"group",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring PermissionInfo::nonLocalizedDescription()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"nonLocalizedDescription",
 			"Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jint PermissionInfo::protectionLevel()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"protectionLevel"
 		);
 	}
 	
-	PermissionInfo::PermissionInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PermissionInfo::PermissionInfo(QAndroidJniObject obj) : android::content::pm::PackageItemInfo(obj) {}
+	
 	// Constructors
 	PermissionInfo::PermissionInfo()
-	{
-		__thiz = QAndroidJniObject(
+		: android::content::pm::PackageItemInfo(
 			"android.content.pm.PermissionInfo",
 			"()V"
-		);
-	}
+		) {}
 	PermissionInfo::PermissionInfo(android::content::pm::PermissionInfo &arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::content::pm::PackageItemInfo(
 			"android.content.pm.PermissionInfo",
 			"(Landroid/content/pm/PermissionInfo;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jint PermissionInfo::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jint PermissionInfo::getProtection()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getProtection",
 			"()I"
 		);
 	}
 	jint PermissionInfo::getProtectionFlags()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getProtectionFlags",
 			"()I"
 		);
 	}
 	jstring PermissionInfo::loadDescription(android::content::pm::PackageManager arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"loadDescription",
 			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jstring PermissionInfo::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void PermissionInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

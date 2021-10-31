@@ -27,11 +27,13 @@ namespace android::widget
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TextSwitcher(const char *className, const char *sig, Ts...agv) : android::widget::ViewSwitcher(className, sig, std::forward<Ts>(agv)...) {}
 		TextSwitcher(QAndroidJniObject obj);
+		
 		// Constructors
 		TextSwitcher(android::content::Context arg0);
 		TextSwitcher(android::content::Context arg0, __JniBaseClass arg1);
-		TextSwitcher() = default;
 		
 		// Methods
 		void addView(android::view::View arg0, jint arg1, android::view::ViewGroup_LayoutParams arg2);

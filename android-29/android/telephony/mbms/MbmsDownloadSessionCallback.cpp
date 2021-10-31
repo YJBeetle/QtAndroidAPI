@@ -4,20 +4,20 @@ namespace android::telephony::mbms
 {
 	// Fields
 	
-	MbmsDownloadSessionCallback::MbmsDownloadSessionCallback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MbmsDownloadSessionCallback::MbmsDownloadSessionCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MbmsDownloadSessionCallback::MbmsDownloadSessionCallback()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.telephony.mbms.MbmsDownloadSessionCallback",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void MbmsDownloadSessionCallback::onError(jint arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onError",
 			"(ILjava/lang/String;)V",
 			arg0,
@@ -26,15 +26,15 @@ namespace android::telephony::mbms
 	}
 	void MbmsDownloadSessionCallback::onFileServicesUpdated(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onFileServicesUpdated",
 			"(Ljava/util/List;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MbmsDownloadSessionCallback::onMiddlewareReady()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onMiddlewareReady",
 			"()V"
 		);

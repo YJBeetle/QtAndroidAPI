@@ -84,7 +84,9 @@ namespace java::security
 		);
 	}
 	
-	CryptoPrimitive::CryptoPrimitive(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CryptoPrimitive::CryptoPrimitive(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

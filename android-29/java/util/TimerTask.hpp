@@ -10,9 +10,11 @@ namespace java::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TimerTask(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		TimerTask(QAndroidJniObject obj);
+		
 		// Constructors
-		TimerTask() = default;
 		
 		// Methods
 		jboolean cancel();

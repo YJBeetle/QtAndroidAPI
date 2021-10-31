@@ -61,7 +61,10 @@ namespace android::preference
 		static jstring EXTRA_SHOW_FRAGMENT_TITLE();
 		static jlong HEADER_ID_UNDEFINED();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PreferenceActivity(const char *className, const char *sig, Ts...agv) : android::app::ListActivity(className, sig, std::forward<Ts>(agv)...) {}
 		PreferenceActivity(QAndroidJniObject obj);
+		
 		// Constructors
 		PreferenceActivity();
 		

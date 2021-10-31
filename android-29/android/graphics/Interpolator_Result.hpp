@@ -14,9 +14,11 @@ namespace android::graphics
 		static QAndroidJniObject FREEZE_START();
 		static QAndroidJniObject NORMAL();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Interpolator_Result(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		Interpolator_Result(QAndroidJniObject obj);
+		
 		// Constructors
-		Interpolator_Result() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

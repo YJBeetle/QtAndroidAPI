@@ -5,15 +5,15 @@ namespace android::text::format
 {
 	// Fields
 	
-	Formatter::Formatter(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Formatter::Formatter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Formatter::Formatter()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.text.format.Formatter",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring Formatter::formatFileSize(android::content::Context arg0, jlong arg1)
@@ -22,7 +22,7 @@ namespace android::text::format
 			"android.text.format.Formatter",
 			"formatFileSize",
 			"(Landroid/content/Context;J)Ljava/lang/String;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		).object<jstring>();
 	}
@@ -41,7 +41,7 @@ namespace android::text::format
 			"android.text.format.Formatter",
 			"formatShortFileSize",
 			"(Landroid/content/Context;J)Ljava/lang/String;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		).object<jstring>();
 	}

@@ -24,7 +24,10 @@ namespace java::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit HashSet(const char *className, const char *sig, Ts...agv) : java::util::AbstractSet(className, sig, std::forward<Ts>(agv)...) {}
 		HashSet(QAndroidJniObject obj);
+		
 		// Constructors
 		HashSet();
 		HashSet(jint arg0);

@@ -10,10 +10,12 @@ namespace java::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit UUID(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		UUID(QAndroidJniObject obj);
+		
 		// Constructors
 		UUID(jlong arg0, jlong arg1);
-		UUID() = default;
 		
 		// Methods
 		static QAndroidJniObject fromString(jstring arg0);

@@ -4,7 +4,9 @@ namespace android::view::accessibility
 {
 	// Fields
 	
-	AccessibilityNodeInfo_CollectionItemInfo::AccessibilityNodeInfo_CollectionItemInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AccessibilityNodeInfo_CollectionItemInfo::AccessibilityNodeInfo_CollectionItemInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -37,42 +39,42 @@ namespace android::view::accessibility
 	}
 	jint AccessibilityNodeInfo_CollectionItemInfo::getColumnIndex()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getColumnIndex",
 			"()I"
 		);
 	}
 	jint AccessibilityNodeInfo_CollectionItemInfo::getColumnSpan()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getColumnSpan",
 			"()I"
 		);
 	}
 	jint AccessibilityNodeInfo_CollectionItemInfo::getRowIndex()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRowIndex",
 			"()I"
 		);
 	}
 	jint AccessibilityNodeInfo_CollectionItemInfo::getRowSpan()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRowSpan",
 			"()I"
 		);
 	}
 	jboolean AccessibilityNodeInfo_CollectionItemInfo::isHeading()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isHeading",
 			"()Z"
 		);
 	}
 	jboolean AccessibilityNodeInfo_CollectionItemInfo::isSelected()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isSelected",
 			"()Z"
 		);

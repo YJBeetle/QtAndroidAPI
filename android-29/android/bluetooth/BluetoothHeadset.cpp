@@ -126,28 +126,30 @@ namespace android::bluetooth
 		).object<jstring>();
 	}
 	
-	BluetoothHeadset::BluetoothHeadset(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BluetoothHeadset::BluetoothHeadset(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject BluetoothHeadset::getConnectedDevices()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getConnectedDevices",
 			"()Ljava/util/List;"
 		);
 	}
 	jint BluetoothHeadset::getConnectionState(android::bluetooth::BluetoothDevice arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getConnectionState",
 			"(Landroid/bluetooth/BluetoothDevice;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject BluetoothHeadset::getDevicesMatchingConnectionStates(jintArray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDevicesMatchingConnectionStates",
 			"([I)Ljava/util/List;",
 			arg0
@@ -155,36 +157,36 @@ namespace android::bluetooth
 	}
 	jboolean BluetoothHeadset::isAudioConnected(android::bluetooth::BluetoothDevice arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isAudioConnected",
 			"(Landroid/bluetooth/BluetoothDevice;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean BluetoothHeadset::sendVendorSpecificResultCode(android::bluetooth::BluetoothDevice arg0, jstring arg1, jstring arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"sendVendorSpecificResultCode",
 			"(Landroid/bluetooth/BluetoothDevice;Ljava/lang/String;Ljava/lang/String;)Z",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
 	}
 	jboolean BluetoothHeadset::startVoiceRecognition(android::bluetooth::BluetoothDevice arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"startVoiceRecognition",
 			"(Landroid/bluetooth/BluetoothDevice;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean BluetoothHeadset::stopVoiceRecognition(android::bluetooth::BluetoothDevice arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"stopVoiceRecognition",
 			"(Landroid/bluetooth/BluetoothDevice;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::bluetooth

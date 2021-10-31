@@ -4,7 +4,9 @@ namespace java::text
 {
 	// Fields
 	
-	Format_Field::Format_Field(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Format_Field::Format_Field(QAndroidJniObject obj) : java::text::AttributedCharacterIterator_Attribute(obj) {}
+	
 	// Constructors
 	
 	// Methods

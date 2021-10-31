@@ -7,7 +7,9 @@ namespace javax::xml::parsers
 {
 	// Fields
 	
-	DocumentBuilderFactory::DocumentBuilderFactory(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DocumentBuilderFactory::DocumentBuilderFactory(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -42,7 +44,7 @@ namespace javax::xml::parsers
 			"newInstance",
 			"(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljavax/xml/parsers/DocumentBuilderFactory;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject DocumentBuilderFactory::newNSInstance()
@@ -60,12 +62,12 @@ namespace javax::xml::parsers
 			"newNSInstance",
 			"(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljavax/xml/parsers/DocumentBuilderFactory;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jobject DocumentBuilderFactory::getAttribute(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAttribute",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
 			arg0
@@ -73,7 +75,7 @@ namespace javax::xml::parsers
 	}
 	jboolean DocumentBuilderFactory::getFeature(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getFeature",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -81,70 +83,70 @@ namespace javax::xml::parsers
 	}
 	QAndroidJniObject DocumentBuilderFactory::getSchema()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSchema",
 			"()Ljavax/xml/validation/Schema;"
 		);
 	}
 	jboolean DocumentBuilderFactory::isCoalescing()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isCoalescing",
 			"()Z"
 		);
 	}
 	jboolean DocumentBuilderFactory::isExpandEntityReferences()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isExpandEntityReferences",
 			"()Z"
 		);
 	}
 	jboolean DocumentBuilderFactory::isIgnoringComments()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isIgnoringComments",
 			"()Z"
 		);
 	}
 	jboolean DocumentBuilderFactory::isIgnoringElementContentWhitespace()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isIgnoringElementContentWhitespace",
 			"()Z"
 		);
 	}
 	jboolean DocumentBuilderFactory::isNamespaceAware()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isNamespaceAware",
 			"()Z"
 		);
 	}
 	jboolean DocumentBuilderFactory::isValidating()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isValidating",
 			"()Z"
 		);
 	}
 	jboolean DocumentBuilderFactory::isXIncludeAware()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isXIncludeAware",
 			"()Z"
 		);
 	}
 	QAndroidJniObject DocumentBuilderFactory::newDocumentBuilder()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newDocumentBuilder",
 			"()Ljavax/xml/parsers/DocumentBuilder;"
 		);
 	}
 	void DocumentBuilderFactory::setAttribute(jstring arg0, jobject arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAttribute",
 			"(Ljava/lang/String;Ljava/lang/Object;)V",
 			arg0,
@@ -153,7 +155,7 @@ namespace javax::xml::parsers
 	}
 	void DocumentBuilderFactory::setCoalescing(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCoalescing",
 			"(Z)V",
 			arg0
@@ -161,7 +163,7 @@ namespace javax::xml::parsers
 	}
 	void DocumentBuilderFactory::setExpandEntityReferences(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setExpandEntityReferences",
 			"(Z)V",
 			arg0
@@ -169,7 +171,7 @@ namespace javax::xml::parsers
 	}
 	void DocumentBuilderFactory::setFeature(jstring arg0, jboolean arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFeature",
 			"(Ljava/lang/String;Z)V",
 			arg0,
@@ -178,7 +180,7 @@ namespace javax::xml::parsers
 	}
 	void DocumentBuilderFactory::setIgnoringComments(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setIgnoringComments",
 			"(Z)V",
 			arg0
@@ -186,7 +188,7 @@ namespace javax::xml::parsers
 	}
 	void DocumentBuilderFactory::setIgnoringElementContentWhitespace(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setIgnoringElementContentWhitespace",
 			"(Z)V",
 			arg0
@@ -194,7 +196,7 @@ namespace javax::xml::parsers
 	}
 	void DocumentBuilderFactory::setNamespaceAware(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setNamespaceAware",
 			"(Z)V",
 			arg0
@@ -202,15 +204,15 @@ namespace javax::xml::parsers
 	}
 	void DocumentBuilderFactory::setSchema(javax::xml::validation::Schema arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSchema",
 			"(Ljavax/xml/validation/Schema;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void DocumentBuilderFactory::setValidating(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setValidating",
 			"(Z)V",
 			arg0
@@ -218,7 +220,7 @@ namespace javax::xml::parsers
 	}
 	void DocumentBuilderFactory::setXIncludeAware(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setXIncludeAware",
 			"(Z)V",
 			arg0

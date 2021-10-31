@@ -10,9 +10,11 @@ namespace android::webkit
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MimeTypeMap(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MimeTypeMap(QAndroidJniObject obj);
+		
 		// Constructors
-		MimeTypeMap() = default;
 		
 		// Methods
 		static jstring getFileExtensionFromUrl(jstring arg0);

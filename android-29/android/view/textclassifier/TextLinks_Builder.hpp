@@ -18,10 +18,12 @@ namespace android::view::textclassifier
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TextLinks_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		TextLinks_Builder(QAndroidJniObject obj);
+		
 		// Constructors
 		TextLinks_Builder(jstring arg0);
-		TextLinks_Builder() = default;
 		
 		// Methods
 		QAndroidJniObject addLink(jint arg0, jint arg1, __JniBaseClass arg2);

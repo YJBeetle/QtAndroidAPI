@@ -42,9 +42,11 @@ namespace android::content
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ContentProviderClient(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ContentProviderClient(QAndroidJniObject obj);
+		
 		// Constructors
-		ContentProviderClient() = default;
 		
 		// Methods
 		jarray applyBatch(java::util::ArrayList arg0);

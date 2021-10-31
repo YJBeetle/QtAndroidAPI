@@ -24,7 +24,10 @@ namespace android::service::voice
 		jint touchableInsets();
 		QAndroidJniObject touchableRegion();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit VoiceInteractionSession_Insets(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		VoiceInteractionSession_Insets(QAndroidJniObject obj);
+		
 		// Constructors
 		VoiceInteractionSession_Insets();
 		

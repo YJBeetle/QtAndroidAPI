@@ -92,28 +92,28 @@ namespace java::security::spec
 		);
 	}
 	
-	MGF1ParameterSpec::MGF1ParameterSpec(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MGF1ParameterSpec::MGF1ParameterSpec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MGF1ParameterSpec::MGF1ParameterSpec(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.security.spec.MGF1ParameterSpec",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring MGF1ParameterSpec::getDigestAlgorithm()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDigestAlgorithm",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring MGF1ParameterSpec::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

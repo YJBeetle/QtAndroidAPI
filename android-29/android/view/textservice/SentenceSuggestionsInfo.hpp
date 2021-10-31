@@ -19,11 +19,13 @@ namespace android::view::textservice
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SentenceSuggestionsInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SentenceSuggestionsInfo(QAndroidJniObject obj);
+		
 		// Constructors
 		SentenceSuggestionsInfo(android::os::Parcel arg0);
 		SentenceSuggestionsInfo(jarray arg0, jintArray arg1, jintArray arg2);
-		SentenceSuggestionsInfo() = default;
 		
 		// Methods
 		jint describeContents();

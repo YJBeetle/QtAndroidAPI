@@ -14,10 +14,12 @@ namespace java::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit IllegalFormatPrecisionException(const char *className, const char *sig, Ts...agv) : java::util::IllegalFormatException(className, sig, std::forward<Ts>(agv)...) {}
 		IllegalFormatPrecisionException(QAndroidJniObject obj);
+		
 		// Constructors
 		IllegalFormatPrecisionException(jint arg0);
-		IllegalFormatPrecisionException() = default;
 		
 		// Methods
 		jstring getMessage();

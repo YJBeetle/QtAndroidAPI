@@ -18,11 +18,13 @@ namespace java::util::concurrent
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CyclicBarrier(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		CyclicBarrier(QAndroidJniObject obj);
+		
 		// Constructors
 		CyclicBarrier(jint arg0);
 		CyclicBarrier(jint arg0, __JniBaseClass arg1);
-		CyclicBarrier() = default;
 		
 		// Methods
 		jint await();

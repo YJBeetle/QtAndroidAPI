@@ -4,20 +4,20 @@ namespace android::telephony::mbms
 {
 	// Fields
 	
-	MbmsStreamingSessionCallback::MbmsStreamingSessionCallback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MbmsStreamingSessionCallback::MbmsStreamingSessionCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MbmsStreamingSessionCallback::MbmsStreamingSessionCallback()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.telephony.mbms.MbmsStreamingSessionCallback",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void MbmsStreamingSessionCallback::onError(jint arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onError",
 			"(ILjava/lang/String;)V",
 			arg0,
@@ -26,17 +26,17 @@ namespace android::telephony::mbms
 	}
 	void MbmsStreamingSessionCallback::onMiddlewareReady()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onMiddlewareReady",
 			"()V"
 		);
 	}
 	void MbmsStreamingSessionCallback::onStreamingServicesUpdated(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onStreamingServicesUpdated",
 			"(Ljava/util/List;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::telephony::mbms

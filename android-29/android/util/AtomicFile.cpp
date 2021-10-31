@@ -7,65 +7,65 @@ namespace android::util
 {
 	// Fields
 	
-	AtomicFile::AtomicFile(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AtomicFile::AtomicFile(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	AtomicFile::AtomicFile(java::io::File arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.util.AtomicFile",
 			"(Ljava/io/File;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	void AtomicFile::_delete()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"delete",
 			"()V"
 		);
 	}
 	void AtomicFile::failWrite(java::io::FileOutputStream arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"failWrite",
 			"(Ljava/io/FileOutputStream;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AtomicFile::finishWrite(java::io::FileOutputStream arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"finishWrite",
 			"(Ljava/io/FileOutputStream;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject AtomicFile::getBaseFile()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBaseFile",
 			"()Ljava/io/File;"
 		);
 	}
 	QAndroidJniObject AtomicFile::openRead()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"openRead",
 			"()Ljava/io/FileInputStream;"
 		);
 	}
 	jbyteArray AtomicFile::readFully()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"readFully",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	QAndroidJniObject AtomicFile::startWrite()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"startWrite",
 			"()Ljava/io/FileOutputStream;"
 		);

@@ -4,37 +4,35 @@ namespace java::util::concurrent::atomic
 {
 	// Fields
 	
-	AtomicInteger::AtomicInteger(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AtomicInteger::AtomicInteger(QAndroidJniObject obj) : java::lang::Number(obj) {}
+	
 	// Constructors
 	AtomicInteger::AtomicInteger()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Number(
 			"java.util.concurrent.atomic.AtomicInteger",
 			"()V"
-		);
-	}
+		) {}
 	AtomicInteger::AtomicInteger(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Number(
 			"java.util.concurrent.atomic.AtomicInteger",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jint AtomicInteger::accumulateAndGet(jint arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"accumulateAndGet",
 			"(ILjava/util/function/IntBinaryOperator;)I",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jint AtomicInteger::addAndGet(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"addAndGet",
 			"(I)I",
 			arg0
@@ -42,7 +40,7 @@ namespace java::util::concurrent::atomic
 	}
 	jint AtomicInteger::compareAndExchange(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareAndExchange",
 			"(II)I",
 			arg0,
@@ -51,7 +49,7 @@ namespace java::util::concurrent::atomic
 	}
 	jint AtomicInteger::compareAndExchangeAcquire(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareAndExchangeAcquire",
 			"(II)I",
 			arg0,
@@ -60,7 +58,7 @@ namespace java::util::concurrent::atomic
 	}
 	jint AtomicInteger::compareAndExchangeRelease(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareAndExchangeRelease",
 			"(II)I",
 			arg0,
@@ -69,7 +67,7 @@ namespace java::util::concurrent::atomic
 	}
 	jboolean AtomicInteger::compareAndSet(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"compareAndSet",
 			"(II)Z",
 			arg0,
@@ -78,51 +76,51 @@ namespace java::util::concurrent::atomic
 	}
 	jint AtomicInteger::decrementAndGet()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"decrementAndGet",
 			"()I"
 		);
 	}
 	jdouble AtomicInteger::doubleValue()
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"doubleValue",
 			"()D"
 		);
 	}
 	jfloat AtomicInteger::floatValue()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"floatValue",
 			"()F"
 		);
 	}
 	jint AtomicInteger::get()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"get",
 			"()I"
 		);
 	}
 	jint AtomicInteger::getAcquire()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAcquire",
 			"()I"
 		);
 	}
 	jint AtomicInteger::getAndAccumulate(jint arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAndAccumulate",
 			"(ILjava/util/function/IntBinaryOperator;)I",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jint AtomicInteger::getAndAdd(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAndAdd",
 			"(I)I",
 			arg0
@@ -130,21 +128,21 @@ namespace java::util::concurrent::atomic
 	}
 	jint AtomicInteger::getAndDecrement()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAndDecrement",
 			"()I"
 		);
 	}
 	jint AtomicInteger::getAndIncrement()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAndIncrement",
 			"()I"
 		);
 	}
 	jint AtomicInteger::getAndSet(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAndSet",
 			"(I)I",
 			arg0
@@ -152,43 +150,43 @@ namespace java::util::concurrent::atomic
 	}
 	jint AtomicInteger::getAndUpdate(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAndUpdate",
 			"(Ljava/util/function/IntUnaryOperator;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint AtomicInteger::getOpaque()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getOpaque",
 			"()I"
 		);
 	}
 	jint AtomicInteger::getPlain()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPlain",
 			"()I"
 		);
 	}
 	jint AtomicInteger::incrementAndGet()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"incrementAndGet",
 			"()I"
 		);
 	}
 	jint AtomicInteger::intValue()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"intValue",
 			"()I"
 		);
 	}
 	void AtomicInteger::lazySet(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"lazySet",
 			"(I)V",
 			arg0
@@ -196,14 +194,14 @@ namespace java::util::concurrent::atomic
 	}
 	jlong AtomicInteger::longValue()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"longValue",
 			"()J"
 		);
 	}
 	void AtomicInteger::set(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"set",
 			"(I)V",
 			arg0
@@ -211,7 +209,7 @@ namespace java::util::concurrent::atomic
 	}
 	void AtomicInteger::setOpaque(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOpaque",
 			"(I)V",
 			arg0
@@ -219,7 +217,7 @@ namespace java::util::concurrent::atomic
 	}
 	void AtomicInteger::setPlain(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPlain",
 			"(I)V",
 			arg0
@@ -227,7 +225,7 @@ namespace java::util::concurrent::atomic
 	}
 	void AtomicInteger::setRelease(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setRelease",
 			"(I)V",
 			arg0
@@ -235,22 +233,22 @@ namespace java::util::concurrent::atomic
 	}
 	jstring AtomicInteger::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint AtomicInteger::updateAndGet(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"updateAndGet",
 			"(Ljava/util/function/IntUnaryOperator;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean AtomicInteger::weakCompareAndSet(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"weakCompareAndSet",
 			"(II)Z",
 			arg0,
@@ -259,7 +257,7 @@ namespace java::util::concurrent::atomic
 	}
 	jboolean AtomicInteger::weakCompareAndSetAcquire(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"weakCompareAndSetAcquire",
 			"(II)Z",
 			arg0,
@@ -268,7 +266,7 @@ namespace java::util::concurrent::atomic
 	}
 	jboolean AtomicInteger::weakCompareAndSetPlain(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"weakCompareAndSetPlain",
 			"(II)Z",
 			arg0,
@@ -277,7 +275,7 @@ namespace java::util::concurrent::atomic
 	}
 	jboolean AtomicInteger::weakCompareAndSetRelease(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"weakCompareAndSetRelease",
 			"(II)Z",
 			arg0,
@@ -286,7 +284,7 @@ namespace java::util::concurrent::atomic
 	}
 	jboolean AtomicInteger::weakCompareAndSetVolatile(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"weakCompareAndSetVolatile",
 			"(II)Z",
 			arg0,

@@ -6,24 +6,24 @@ namespace android::media
 {
 	// Fields
 	
-	MediaSync_Callback::MediaSync_Callback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaSync_Callback::MediaSync_Callback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MediaSync_Callback::MediaSync_Callback()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.MediaSync$Callback",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void MediaSync_Callback::onAudioBufferConsumed(android::media::MediaSync arg0, java::nio::ByteBuffer arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onAudioBufferConsumed",
 			"(Landroid/media/MediaSync;Ljava/nio/ByteBuffer;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}

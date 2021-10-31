@@ -4,7 +4,9 @@ namespace android::os::strictmode
 {
 	// Fields
 	
-	LeakedClosableViolation::LeakedClosableViolation(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	LeakedClosableViolation::LeakedClosableViolation(QAndroidJniObject obj) : android::os::strictmode::Violation(obj) {}
+	
 	// Constructors
 	
 	// Methods

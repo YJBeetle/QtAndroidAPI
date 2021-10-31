@@ -13,10 +13,12 @@ namespace javax::net::ssl
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SSLPeerUnverifiedException(const char *className, const char *sig, Ts...agv) : javax::net::ssl::SSLException(className, sig, std::forward<Ts>(agv)...) {}
 		SSLPeerUnverifiedException(QAndroidJniObject obj);
+		
 		// Constructors
 		SSLPeerUnverifiedException(jstring arg0);
-		SSLPeerUnverifiedException() = default;
 		
 		// Methods
 	};

@@ -116,7 +116,9 @@ namespace android::icu::text
 		);
 	}
 	
-	MessagePattern_Part_Type::MessagePattern_Part_Type(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MessagePattern_Part_Type::MessagePattern_Part_Type(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -139,7 +141,7 @@ namespace android::icu::text
 	}
 	jboolean MessagePattern_Part_Type::hasNumericValue()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasNumericValue",
 			"()Z"
 		);

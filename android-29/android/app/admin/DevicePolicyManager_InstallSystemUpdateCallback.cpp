@@ -39,20 +39,20 @@ namespace android::app::admin
 		);
 	}
 	
-	DevicePolicyManager_InstallSystemUpdateCallback::DevicePolicyManager_InstallSystemUpdateCallback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DevicePolicyManager_InstallSystemUpdateCallback::DevicePolicyManager_InstallSystemUpdateCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	DevicePolicyManager_InstallSystemUpdateCallback::DevicePolicyManager_InstallSystemUpdateCallback()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.app.admin.DevicePolicyManager$InstallSystemUpdateCallback",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void DevicePolicyManager_InstallSystemUpdateCallback::onInstallUpdateError(jint arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onInstallUpdateError",
 			"(ILjava/lang/String;)V",
 			arg0,

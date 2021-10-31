@@ -4,20 +4,22 @@ namespace android::webkit
 {
 	// Fields
 	
-	WebResourceError::WebResourceError(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WebResourceError::WebResourceError(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jstring WebResourceError::getDescription()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jint WebResourceError::getErrorCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getErrorCode",
 			"()I"
 		);

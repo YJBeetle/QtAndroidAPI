@@ -99,78 +99,63 @@ namespace android::icu::util
 		);
 	}
 	
-	CopticCalendar::CopticCalendar(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CopticCalendar::CopticCalendar(QAndroidJniObject obj) : android::icu::util::Calendar(obj) {}
+	
 	// Constructors
 	CopticCalendar::CopticCalendar()
-	{
-		__thiz = QAndroidJniObject(
+		: android::icu::util::Calendar(
 			"android.icu.util.CopticCalendar",
 			"()V"
-		);
-	}
+		) {}
 	CopticCalendar::CopticCalendar(android::icu::util::TimeZone arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::icu::util::Calendar(
 			"android.icu.util.CopticCalendar",
 			"(Landroid/icu/util/TimeZone;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	CopticCalendar::CopticCalendar(android::icu::util::ULocale arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::icu::util::Calendar(
 			"android.icu.util.CopticCalendar",
 			"(Landroid/icu/util/ULocale;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	CopticCalendar::CopticCalendar(java::util::Date arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::icu::util::Calendar(
 			"android.icu.util.CopticCalendar",
 			"(Ljava/util/Date;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	CopticCalendar::CopticCalendar(java::util::Locale arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::icu::util::Calendar(
 			"android.icu.util.CopticCalendar",
 			"(Ljava/util/Locale;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	CopticCalendar::CopticCalendar(android::icu::util::TimeZone arg0, android::icu::util::ULocale arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::icu::util::Calendar(
 			"android.icu.util.CopticCalendar",
 			"(Landroid/icu/util/TimeZone;Landroid/icu/util/ULocale;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	CopticCalendar::CopticCalendar(android::icu::util::TimeZone arg0, java::util::Locale arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::icu::util::Calendar(
 			"android.icu.util.CopticCalendar",
 			"(Landroid/icu/util/TimeZone;Ljava/util/Locale;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	CopticCalendar::CopticCalendar(jint arg0, jint arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: android::icu::util::Calendar(
 			"android.icu.util.CopticCalendar",
 			"(III)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	CopticCalendar::CopticCalendar(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
-	{
-		__thiz = QAndroidJniObject(
+		: android::icu::util::Calendar(
 			"android.icu.util.CopticCalendar",
 			"(IIIIII)V",
 			arg0,
@@ -179,13 +164,12 @@ namespace android::icu::util
 			arg3,
 			arg4,
 			arg5
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring CopticCalendar::getType()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
 		).object<jstring>();

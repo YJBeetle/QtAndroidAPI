@@ -23,9 +23,11 @@ namespace android::view::textclassifier
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TextLanguage(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		TextLanguage(QAndroidJniObject obj);
+		
 		// Constructors
-		TextLanguage() = default;
 		
 		// Methods
 		jint describeContents();

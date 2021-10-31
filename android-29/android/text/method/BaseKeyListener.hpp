@@ -19,7 +19,10 @@ namespace android::text::method
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BaseKeyListener(const char *className, const char *sig, Ts...agv) : android::text::method::MetaKeyKeyListener(className, sig, std::forward<Ts>(agv)...) {}
 		BaseKeyListener(QAndroidJniObject obj);
+		
 		// Constructors
 		BaseKeyListener();
 		

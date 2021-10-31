@@ -10,9 +10,11 @@ namespace java::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Spliterators_AbstractIntSpliterator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Spliterators_AbstractIntSpliterator(QAndroidJniObject obj);
+		
 		// Constructors
-		Spliterators_AbstractIntSpliterator() = default;
 		
 		// Methods
 		jint characteristics();

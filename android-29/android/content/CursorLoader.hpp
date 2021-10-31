@@ -28,11 +28,13 @@ namespace android::content
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CursorLoader(const char *className, const char *sig, Ts...agv) : android::content::AsyncTaskLoader(className, sig, std::forward<Ts>(agv)...) {}
 		CursorLoader(QAndroidJniObject obj);
+		
 		// Constructors
 		CursorLoader(android::content::Context arg0);
 		CursorLoader(android::content::Context arg0, android::net::Uri arg1, jarray arg2, jstring arg3, jarray arg4, jstring arg5);
-		CursorLoader() = default;
 		
 		// Methods
 		void cancelLoadInBackground();

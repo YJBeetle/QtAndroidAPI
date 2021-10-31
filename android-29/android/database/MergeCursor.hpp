@@ -19,10 +19,12 @@ namespace android::database
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MergeCursor(const char *className, const char *sig, Ts...agv) : android::database::AbstractCursor(className, sig, std::forward<Ts>(agv)...) {}
 		MergeCursor(QAndroidJniObject obj);
+		
 		// Constructors
 		MergeCursor(jarray arg0);
-		MergeCursor() = default;
 		
 		// Methods
 		void close();

@@ -28,7 +28,9 @@ namespace android::graphics
 		);
 	}
 	
-	Bitmap_CompressFormat::Bitmap_CompressFormat(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Bitmap_CompressFormat::Bitmap_CompressFormat(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

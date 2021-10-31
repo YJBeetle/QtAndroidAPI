@@ -12,7 +12,10 @@ namespace org::xml::sax::helpers
 		static jstring NSDECL();
 		static jstring XMLNS();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit NamespaceSupport(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		NamespaceSupport(QAndroidJniObject obj);
+		
 		// Constructors
 		NamespaceSupport();
 		

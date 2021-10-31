@@ -5,7 +5,9 @@ namespace android::net::ssl
 {
 	// Fields
 	
-	SSLSockets::SSLSockets(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SSLSockets::SSLSockets(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -15,7 +17,7 @@ namespace android::net::ssl
 			"android.net.ssl.SSLSockets",
 			"isSupportedSocket",
 			"(Ljavax/net/ssl/SSLSocket;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void SSLSockets::setUseSessionTickets(javax::net::ssl::SSLSocket arg0, jboolean arg1)
@@ -24,7 +26,7 @@ namespace android::net::ssl
 			"android.net.ssl.SSLSockets",
 			"setUseSessionTickets",
 			"(Ljavax/net/ssl/SSLSocket;Z)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

@@ -10,10 +10,12 @@ namespace java::util::concurrent::atomic
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AtomicStampedReference(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AtomicStampedReference(QAndroidJniObject obj);
+		
 		// Constructors
 		AtomicStampedReference(jobject arg0, jint arg1);
-		AtomicStampedReference() = default;
 		
 		// Methods
 		jboolean attemptStamp(jobject arg0, jint arg1);

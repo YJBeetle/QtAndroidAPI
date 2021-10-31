@@ -44,7 +44,9 @@ namespace android::graphics
 		);
 	}
 	
-	Path_Op::Path_Op(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Path_Op::Path_Op(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

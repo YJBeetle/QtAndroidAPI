@@ -17,9 +17,11 @@ namespace android::media
 		static QAndroidJniObject PLAY();
 		static QAndroidJniObject REVERSE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit VolumeShaper_Operation(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		VolumeShaper_Operation(QAndroidJniObject obj);
+		
 		// Constructors
-		VolumeShaper_Operation() = default;
 		
 		// Methods
 		jint describeContents();

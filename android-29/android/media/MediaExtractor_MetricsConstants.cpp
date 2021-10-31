@@ -28,7 +28,9 @@ namespace android::media
 		).object<jstring>();
 	}
 	
-	MediaExtractor_MetricsConstants::MediaExtractor_MetricsConstants(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaExtractor_MetricsConstants::MediaExtractor_MetricsConstants(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

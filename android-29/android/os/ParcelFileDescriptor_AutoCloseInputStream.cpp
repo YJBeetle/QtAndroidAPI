@@ -5,35 +5,35 @@ namespace android::os
 {
 	// Fields
 	
-	ParcelFileDescriptor_AutoCloseInputStream::ParcelFileDescriptor_AutoCloseInputStream(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ParcelFileDescriptor_AutoCloseInputStream::ParcelFileDescriptor_AutoCloseInputStream(QAndroidJniObject obj) : java::io::FileInputStream(obj) {}
+	
 	// Constructors
 	ParcelFileDescriptor_AutoCloseInputStream::ParcelFileDescriptor_AutoCloseInputStream(android::os::ParcelFileDescriptor arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::FileInputStream(
 			"android.os.ParcelFileDescriptor$AutoCloseInputStream",
 			"(Landroid/os/ParcelFileDescriptor;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	void ParcelFileDescriptor_AutoCloseInputStream::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	jint ParcelFileDescriptor_AutoCloseInputStream::read()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"read",
 			"()I"
 		);
 	}
 	jint ParcelFileDescriptor_AutoCloseInputStream::read(jbyteArray arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"read",
 			"([B)I",
 			arg0
@@ -41,7 +41,7 @@ namespace android::os
 	}
 	jint ParcelFileDescriptor_AutoCloseInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"read",
 			"([BII)I",
 			arg0,

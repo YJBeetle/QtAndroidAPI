@@ -24,9 +24,11 @@ namespace android::app::admin
 		static jint ERROR_NEW_FREEZE_PERIOD_TOO_LONG();
 		static jint ERROR_UNKNOWN();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SystemUpdatePolicy_ValidationFailedException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalArgumentException(className, sig, std::forward<Ts>(agv)...) {}
 		SystemUpdatePolicy_ValidationFailedException(QAndroidJniObject obj);
+		
 		// Constructors
-		SystemUpdatePolicy_ValidationFailedException() = default;
 		
 		// Methods
 		jint describeContents();

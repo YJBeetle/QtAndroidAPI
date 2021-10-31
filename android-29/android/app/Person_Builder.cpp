@@ -6,27 +6,27 @@ namespace android::app
 {
 	// Fields
 	
-	Person_Builder::Person_Builder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Person_Builder::Person_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Person_Builder::Person_Builder()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.app.Person$Builder",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject Person_Builder::build()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"build",
 			"()Landroid/app/Person;"
 		);
 	}
 	QAndroidJniObject Person_Builder::setBot(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setBot",
 			"(Z)Landroid/app/Person$Builder;",
 			arg0
@@ -34,15 +34,15 @@ namespace android::app
 	}
 	QAndroidJniObject Person_Builder::setIcon(android::graphics::drawable::Icon arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setIcon",
 			"(Landroid/graphics/drawable/Icon;)Landroid/app/Person$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Person_Builder::setImportant(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setImportant",
 			"(Z)Landroid/app/Person$Builder;",
 			arg0
@@ -50,7 +50,7 @@ namespace android::app
 	}
 	QAndroidJniObject Person_Builder::setKey(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setKey",
 			"(Ljava/lang/String;)Landroid/app/Person$Builder;",
 			arg0
@@ -58,7 +58,7 @@ namespace android::app
 	}
 	QAndroidJniObject Person_Builder::setName(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setName",
 			"(Ljava/lang/CharSequence;)Landroid/app/Person$Builder;",
 			arg0
@@ -66,7 +66,7 @@ namespace android::app
 	}
 	QAndroidJniObject Person_Builder::setUri(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setUri",
 			"(Ljava/lang/String;)Landroid/app/Person$Builder;",
 			arg0

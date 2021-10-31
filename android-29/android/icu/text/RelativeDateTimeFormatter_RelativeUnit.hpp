@@ -18,9 +18,11 @@ namespace android::icu::text
 		static QAndroidJniObject WEEKS();
 		static QAndroidJniObject YEARS();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit RelativeDateTimeFormatter_RelativeUnit(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		RelativeDateTimeFormatter_RelativeUnit(QAndroidJniObject obj);
+		
 		// Constructors
-		RelativeDateTimeFormatter_RelativeUnit() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

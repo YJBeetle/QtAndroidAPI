@@ -8,127 +8,127 @@ namespace java::lang
 {
 	// Fields
 	
-	Process::Process(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Process::Process(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Process::Process()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.lang.Process",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject Process::children()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"children",
 			"()Ljava/util/stream/Stream;"
 		);
 	}
 	QAndroidJniObject Process::descendants()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"descendants",
 			"()Ljava/util/stream/Stream;"
 		);
 	}
 	void Process::destroy()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"destroy",
 			"()V"
 		);
 	}
 	QAndroidJniObject Process::destroyForcibly()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"destroyForcibly",
 			"()Ljava/lang/Process;"
 		);
 	}
 	jint Process::exitValue()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"exitValue",
 			"()I"
 		);
 	}
 	QAndroidJniObject Process::getErrorStream()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getErrorStream",
 			"()Ljava/io/InputStream;"
 		);
 	}
 	QAndroidJniObject Process::getInputStream()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getInputStream",
 			"()Ljava/io/InputStream;"
 		);
 	}
 	QAndroidJniObject Process::getOutputStream()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getOutputStream",
 			"()Ljava/io/OutputStream;"
 		);
 	}
 	QAndroidJniObject Process::info()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"info",
 			"()Ljava/lang/ProcessHandle$Info;"
 		);
 	}
 	jboolean Process::isAlive()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isAlive",
 			"()Z"
 		);
 	}
 	QAndroidJniObject Process::onExit()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onExit",
 			"()Ljava/util/concurrent/CompletableFuture;"
 		);
 	}
 	jlong Process::pid()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"pid",
 			"()J"
 		);
 	}
 	jboolean Process::supportsNormalTermination()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"supportsNormalTermination",
 			"()Z"
 		);
 	}
 	QAndroidJniObject Process::toHandle()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toHandle",
 			"()Ljava/lang/ProcessHandle;"
 		);
 	}
 	jboolean Process::waitFor(jlong arg0, java::util::concurrent::TimeUnit arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"waitFor",
 			"(JLjava/util/concurrent/TimeUnit;)Z",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jint Process::waitFor()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"waitFor",
 			"()I"
 		);

@@ -63,7 +63,10 @@ namespace android::graphics::drawable
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ShapeDrawable(const char *className, const char *sig, Ts...agv) : android::graphics::drawable::Drawable(className, sig, std::forward<Ts>(agv)...) {}
 		ShapeDrawable(QAndroidJniObject obj);
+		
 		// Constructors
 		ShapeDrawable();
 		ShapeDrawable(android::graphics::drawable::shapes::Shape arg0);

@@ -19,9 +19,11 @@ namespace java::text
 		// Fields
 		static jint NULLORDER();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CollationElementIterator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		CollationElementIterator(QAndroidJniObject obj);
+		
 		// Constructors
-		CollationElementIterator() = default;
 		
 		// Methods
 		static jint primaryOrder(jint arg0);

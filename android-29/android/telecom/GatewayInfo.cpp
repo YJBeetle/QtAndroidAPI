@@ -14,61 +14,61 @@ namespace android::telecom
 		);
 	}
 	
-	GatewayInfo::GatewayInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	GatewayInfo::GatewayInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	GatewayInfo::GatewayInfo(jstring arg0, android::net::Uri arg1, android::net::Uri arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.telecom.GatewayInfo",
 			"(Ljava/lang/String;Landroid/net/Uri;Landroid/net/Uri;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
+			arg1.object(),
+			arg2.object()
+		) {}
 	
 	// Methods
 	jint GatewayInfo::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	QAndroidJniObject GatewayInfo::getGatewayAddress()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getGatewayAddress",
 			"()Landroid/net/Uri;"
 		);
 	}
 	jstring GatewayInfo::getGatewayProviderPackageName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getGatewayProviderPackageName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject GatewayInfo::getOriginalAddress()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getOriginalAddress",
 			"()Landroid/net/Uri;"
 		);
 	}
 	jboolean GatewayInfo::isEmpty()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
 	void GatewayInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

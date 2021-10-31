@@ -6,23 +6,23 @@ namespace android::transition
 {
 	// Fields
 	
-	Transition_EpicenterCallback::Transition_EpicenterCallback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Transition_EpicenterCallback::Transition_EpicenterCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Transition_EpicenterCallback::Transition_EpicenterCallback()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.transition.Transition$EpicenterCallback",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject Transition_EpicenterCallback::onGetEpicenter(android::transition::Transition arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onGetEpicenter",
 			"(Landroid/transition/Transition;)Landroid/graphics/Rect;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::transition

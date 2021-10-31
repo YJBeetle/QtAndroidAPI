@@ -14,7 +14,10 @@ namespace android::security::keystore
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit KeyNotYetValidException(const char *className, const char *sig, Ts...agv) : java::security::InvalidKeyException(className, sig, std::forward<Ts>(agv)...) {}
 		KeyNotYetValidException(QAndroidJniObject obj);
+		
 		// Constructors
 		KeyNotYetValidException();
 		KeyNotYetValidException(jstring arg0);

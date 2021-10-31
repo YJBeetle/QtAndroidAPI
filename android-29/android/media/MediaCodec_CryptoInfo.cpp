@@ -6,59 +6,59 @@ namespace android::media
 	// Fields
 	jbyteArray MediaCodec_CryptoInfo::iv()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"iv",
 			"[B"
 		).object<jbyteArray>();
 	}
 	jbyteArray MediaCodec_CryptoInfo::key()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"key",
 			"[B"
 		).object<jbyteArray>();
 	}
 	jint MediaCodec_CryptoInfo::mode()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"mode"
 		);
 	}
 	jintArray MediaCodec_CryptoInfo::numBytesOfClearData()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"numBytesOfClearData",
 			"[I"
 		).object<jintArray>();
 	}
 	jintArray MediaCodec_CryptoInfo::numBytesOfEncryptedData()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"numBytesOfEncryptedData",
 			"[I"
 		).object<jintArray>();
 	}
 	jint MediaCodec_CryptoInfo::numSubSamples()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"numSubSamples"
 		);
 	}
 	
-	MediaCodec_CryptoInfo::MediaCodec_CryptoInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaCodec_CryptoInfo::MediaCodec_CryptoInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MediaCodec_CryptoInfo::MediaCodec_CryptoInfo()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.MediaCodec$CryptoInfo",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void MediaCodec_CryptoInfo::set(jint arg0, jintArray arg1, jintArray arg2, jbyteArray arg3, jbyteArray arg4, jint arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"set",
 			"(I[I[I[B[BI)V",
 			arg0,
@@ -71,15 +71,15 @@ namespace android::media
 	}
 	void MediaCodec_CryptoInfo::setPattern(android::media::MediaCodec_CryptoInfo_Pattern arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPattern",
 			"(Landroid/media/MediaCodec$CryptoInfo$Pattern;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring MediaCodec_CryptoInfo::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

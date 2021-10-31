@@ -8,13 +8,15 @@ namespace android::content::res
 {
 	// Fields
 	
-	Resources_Theme::Resources_Theme(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Resources_Theme::Resources_Theme(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void Resources_Theme::applyStyle(jint arg0, jboolean arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"applyStyle",
 			"(IZ)V",
 			arg0,
@@ -23,7 +25,7 @@ namespace android::content::res
 	}
 	void Resources_Theme::dump(jint arg0, jstring arg1, jstring arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"dump",
 			"(ILjava/lang/String;Ljava/lang/String;)V",
 			arg0,
@@ -33,7 +35,7 @@ namespace android::content::res
 	}
 	jintArray Resources_Theme::getAttributeResolutionStack(jint arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAttributeResolutionStack",
 			"(III)[I",
 			arg0,
@@ -43,14 +45,14 @@ namespace android::content::res
 	}
 	jint Resources_Theme::getChangingConfigurations()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getChangingConfigurations",
 			"()I"
 		);
 	}
 	QAndroidJniObject Resources_Theme::getDrawable(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDrawable",
 			"(I)Landroid/graphics/drawable/Drawable;",
 			arg0
@@ -58,22 +60,22 @@ namespace android::content::res
 	}
 	jint Resources_Theme::getExplicitStyle(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getExplicitStyle",
 			"(Landroid/util/AttributeSet;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Resources_Theme::getResources()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getResources",
 			"()Landroid/content/res/Resources;"
 		);
 	}
 	QAndroidJniObject Resources_Theme::obtainStyledAttributes(jintArray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"obtainStyledAttributes",
 			"([I)Landroid/content/res/TypedArray;",
 			arg0
@@ -81,7 +83,7 @@ namespace android::content::res
 	}
 	QAndroidJniObject Resources_Theme::obtainStyledAttributes(jint arg0, jintArray arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"obtainStyledAttributes",
 			"(I[I)Landroid/content/res/TypedArray;",
 			arg0,
@@ -90,10 +92,10 @@ namespace android::content::res
 	}
 	QAndroidJniObject Resources_Theme::obtainStyledAttributes(__JniBaseClass arg0, jintArray arg1, jint arg2, jint arg3)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"obtainStyledAttributes",
 			"(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3
@@ -101,27 +103,27 @@ namespace android::content::res
 	}
 	void Resources_Theme::rebase()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"rebase",
 			"()V"
 		);
 	}
 	jboolean Resources_Theme::resolveAttribute(jint arg0, android::util::TypedValue arg1, jboolean arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"resolveAttribute",
 			"(ILandroid/util/TypedValue;Z)Z",
 			arg0,
-			arg1.__jniObject().object(),
+			arg1.object(),
 			arg2
 		);
 	}
 	void Resources_Theme::setTo(android::content::res::Resources_Theme arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTo",
 			"(Landroid/content/res/Resources$Theme;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::content::res

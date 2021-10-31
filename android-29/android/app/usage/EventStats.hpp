@@ -15,10 +15,12 @@ namespace android::app::usage
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit EventStats(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		EventStats(QAndroidJniObject obj);
+		
 		// Constructors
 		EventStats(android::app::usage::EventStats &arg0);
-		EventStats() = default;
 		
 		// Methods
 		void add(android::app::usage::EventStats arg0);

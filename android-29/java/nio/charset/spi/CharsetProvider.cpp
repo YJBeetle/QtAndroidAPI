@@ -6,13 +6,15 @@ namespace java::nio::charset::spi
 {
 	// Fields
 	
-	CharsetProvider::CharsetProvider(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CharsetProvider::CharsetProvider(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject CharsetProvider::charsetForName(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"charsetForName",
 			"(Ljava/lang/String;)Ljava/nio/charset/Charset;",
 			arg0
@@ -20,7 +22,7 @@ namespace java::nio::charset::spi
 	}
 	QAndroidJniObject CharsetProvider::charsets()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"charsets",
 			"()Ljava/util/Iterator;"
 		);

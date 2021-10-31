@@ -5,61 +5,55 @@ namespace android::widget
 {
 	// Fields
 	
-	SeekBar::SeekBar(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SeekBar::SeekBar(QAndroidJniObject obj) : android::widget::AbsSeekBar(obj) {}
+	
 	// Constructors
 	SeekBar::SeekBar(android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::AbsSeekBar(
 			"android.widget.SeekBar",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	SeekBar::SeekBar(android::content::Context arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::AbsSeekBar(
 			"android.widget.SeekBar",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	SeekBar::SeekBar(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::AbsSeekBar(
 			"android.widget.SeekBar",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
-		);
-	}
+		) {}
 	SeekBar::SeekBar(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::AbsSeekBar(
 			"android.widget.SeekBar",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring SeekBar::getAccessibilityClassName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	void SeekBar::setOnSeekBarChangeListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnSeekBarChangeListener",
 			"(Landroid/widget/SeekBar$OnSeekBarChangeListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::widget

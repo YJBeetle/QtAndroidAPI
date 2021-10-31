@@ -4,7 +4,9 @@ namespace android::icu::lang
 {
 	// Fields
 	
-	UCharacterCategory::UCharacterCategory(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UCharacterCategory::UCharacterCategory(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

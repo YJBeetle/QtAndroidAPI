@@ -4,27 +4,27 @@ namespace java::util
 {
 	// Fields
 	
-	Dictionary::Dictionary(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Dictionary::Dictionary(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Dictionary::Dictionary()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.Dictionary",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject Dictionary::elements()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"elements",
 			"()Ljava/util/Enumeration;"
 		);
 	}
 	jobject Dictionary::get(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0
@@ -32,21 +32,21 @@ namespace java::util
 	}
 	jboolean Dictionary::isEmpty()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
 	QAndroidJniObject Dictionary::keys()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"keys",
 			"()Ljava/util/Enumeration;"
 		);
 	}
 	jobject Dictionary::put(jobject arg0, jobject arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"put",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
@@ -55,7 +55,7 @@ namespace java::util
 	}
 	jobject Dictionary::remove(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"remove",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0
@@ -63,7 +63,7 @@ namespace java::util
 	}
 	jint Dictionary::size()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"size",
 			"()I"
 		);

@@ -20,7 +20,9 @@ namespace android::graphics
 		);
 	}
 	
-	Canvas_EdgeType::Canvas_EdgeType(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Canvas_EdgeType::Canvas_EdgeType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

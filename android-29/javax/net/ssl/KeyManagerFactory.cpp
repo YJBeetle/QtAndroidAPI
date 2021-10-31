@@ -7,7 +7,9 @@ namespace javax::net::ssl
 {
 	// Fields
 	
-	KeyManagerFactory::KeyManagerFactory(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	KeyManagerFactory::KeyManagerFactory(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -45,44 +47,44 @@ namespace javax::net::ssl
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljavax/net/ssl/KeyManagerFactory;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jstring KeyManagerFactory::getAlgorithm()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jarray KeyManagerFactory::getKeyManagers()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getKeyManagers",
 			"()[Ljavax/net/ssl/KeyManager;"
 		).object<jarray>();
 	}
 	QAndroidJniObject KeyManagerFactory::getProvider()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getProvider",
 			"()Ljava/security/Provider;"
 		);
 	}
 	void KeyManagerFactory::init(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"init",
 			"(Ljavax/net/ssl/ManagerFactoryParameters;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void KeyManagerFactory::init(java::security::KeyStore arg0, jcharArray arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"init",
 			"(Ljava/security/KeyStore;[C)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

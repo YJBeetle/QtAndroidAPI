@@ -5,55 +5,57 @@ namespace android::content
 {
 	// Fields
 	
-	BroadcastReceiver_PendingResult::BroadcastReceiver_PendingResult(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BroadcastReceiver_PendingResult::BroadcastReceiver_PendingResult(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void BroadcastReceiver_PendingResult::abortBroadcast()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"abortBroadcast",
 			"()V"
 		);
 	}
 	void BroadcastReceiver_PendingResult::clearAbortBroadcast()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clearAbortBroadcast",
 			"()V"
 		);
 	}
 	void BroadcastReceiver_PendingResult::finish()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"finish",
 			"()V"
 		);
 	}
 	jboolean BroadcastReceiver_PendingResult::getAbortBroadcast()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getAbortBroadcast",
 			"()Z"
 		);
 	}
 	jint BroadcastReceiver_PendingResult::getResultCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getResultCode",
 			"()I"
 		);
 	}
 	jstring BroadcastReceiver_PendingResult::getResultData()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getResultData",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject BroadcastReceiver_PendingResult::getResultExtras(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getResultExtras",
 			"(Z)Landroid/os/Bundle;",
 			arg0
@@ -61,17 +63,17 @@ namespace android::content
 	}
 	void BroadcastReceiver_PendingResult::setResult(jint arg0, jstring arg1, android::os::Bundle arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setResult",
 			"(ILjava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void BroadcastReceiver_PendingResult::setResultCode(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setResultCode",
 			"(I)V",
 			arg0
@@ -79,7 +81,7 @@ namespace android::content
 	}
 	void BroadcastReceiver_PendingResult::setResultData(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setResultData",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -87,10 +89,10 @@ namespace android::content
 	}
 	void BroadcastReceiver_PendingResult::setResultExtras(android::os::Bundle arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setResultExtras",
 			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::content

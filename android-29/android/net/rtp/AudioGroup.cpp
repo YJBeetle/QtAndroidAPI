@@ -32,41 +32,41 @@ namespace android::net::rtp
 		);
 	}
 	
-	AudioGroup::AudioGroup(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AudioGroup::AudioGroup(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	AudioGroup::AudioGroup()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.net.rtp.AudioGroup",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void AudioGroup::clear()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
 	jint AudioGroup::getMode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMode",
 			"()I"
 		);
 	}
 	jarray AudioGroup::getStreams()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getStreams",
 			"()[Landroid/net/rtp/AudioStream;"
 		).object<jarray>();
 	}
 	void AudioGroup::sendDtmf(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"sendDtmf",
 			"(I)V",
 			arg0
@@ -74,7 +74,7 @@ namespace android::net::rtp
 	}
 	void AudioGroup::setMode(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMode",
 			"(I)V",
 			arg0

@@ -46,7 +46,9 @@ namespace java::time
 		);
 	}
 	
-	LocalTime::LocalTime(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	LocalTime::LocalTime(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -56,7 +58,7 @@ namespace java::time
 			"java.time.LocalTime",
 			"from",
 			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/LocalTime;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject LocalTime::now()
@@ -73,7 +75,7 @@ namespace java::time
 			"java.time.LocalTime",
 			"now",
 			"(Ljava/time/Clock;)Ljava/time/LocalTime;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject LocalTime::now(java::time::ZoneId arg0)
@@ -82,7 +84,7 @@ namespace java::time
 			"java.time.LocalTime",
 			"now",
 			"(Ljava/time/ZoneId;)Ljava/time/LocalTime;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject LocalTime::of(jint arg0, jint arg1)
@@ -124,8 +126,8 @@ namespace java::time
 			"java.time.LocalTime",
 			"ofInstant",
 			"(Ljava/time/Instant;Ljava/time/ZoneId;)Ljava/time/LocalTime;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject LocalTime::ofNanoOfDay(jlong arg0)
@@ -162,36 +164,36 @@ namespace java::time
 			"parse",
 			"(Ljava/lang/CharSequence;Ljava/time/format/DateTimeFormatter;)Ljava/time/LocalTime;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject LocalTime::adjustInto(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"adjustInto",
 			"(Ljava/time/temporal/Temporal;)Ljava/time/temporal/Temporal;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject LocalTime::atDate(java::time::LocalDate arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"atDate",
 			"(Ljava/time/LocalDate;)Ljava/time/LocalDateTime;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject LocalTime::atOffset(java::time::ZoneOffset arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"atOffset",
 			"(Ljava/time/ZoneOffset;)Ljava/time/OffsetTime;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint LocalTime::compareTo(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -199,15 +201,15 @@ namespace java::time
 	}
 	jint LocalTime::compareTo(java::time::LocalTime arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/time/LocalTime;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean LocalTime::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -215,107 +217,107 @@ namespace java::time
 	}
 	jstring LocalTime::format(java::time::format::DateTimeFormatter arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"format",
 			"(Ljava/time/format/DateTimeFormatter;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jint LocalTime::get(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"get",
 			"(Ljava/time/temporal/TemporalField;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint LocalTime::getHour()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getHour",
 			"()I"
 		);
 	}
 	jlong LocalTime::getLong(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getLong",
 			"(Ljava/time/temporal/TemporalField;)J",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint LocalTime::getMinute()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMinute",
 			"()I"
 		);
 	}
 	jint LocalTime::getNano()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getNano",
 			"()I"
 		);
 	}
 	jint LocalTime::getSecond()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSecond",
 			"()I"
 		);
 	}
 	jint LocalTime::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean LocalTime::isAfter(java::time::LocalTime arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isAfter",
 			"(Ljava/time/LocalTime;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean LocalTime::isBefore(java::time::LocalTime arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isBefore",
 			"(Ljava/time/LocalTime;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean LocalTime::isSupported(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isSupported",
 			"(Ljava/time/temporal/TemporalField;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject LocalTime::minus(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"minus",
 			"(Ljava/time/temporal/TemporalAmount;)Ljava/time/LocalTime;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject LocalTime::minus(jlong arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"minus",
 			"(JLjava/time/temporal/TemporalUnit;)Ljava/time/LocalTime;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject LocalTime::minusHours(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"minusHours",
 			"(J)Ljava/time/LocalTime;",
 			arg0
@@ -323,7 +325,7 @@ namespace java::time
 	}
 	QAndroidJniObject LocalTime::minusMinutes(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"minusMinutes",
 			"(J)Ljava/time/LocalTime;",
 			arg0
@@ -331,7 +333,7 @@ namespace java::time
 	}
 	QAndroidJniObject LocalTime::minusNanos(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"minusNanos",
 			"(J)Ljava/time/LocalTime;",
 			arg0
@@ -339,7 +341,7 @@ namespace java::time
 	}
 	QAndroidJniObject LocalTime::minusSeconds(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"minusSeconds",
 			"(J)Ljava/time/LocalTime;",
 			arg0
@@ -347,24 +349,24 @@ namespace java::time
 	}
 	QAndroidJniObject LocalTime::plus(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"plus",
 			"(Ljava/time/temporal/TemporalAmount;)Ljava/time/LocalTime;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject LocalTime::plus(jlong arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"plus",
 			"(JLjava/time/temporal/TemporalUnit;)Ljava/time/LocalTime;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject LocalTime::plusHours(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"plusHours",
 			"(J)Ljava/time/LocalTime;",
 			arg0
@@ -372,7 +374,7 @@ namespace java::time
 	}
 	QAndroidJniObject LocalTime::plusMinutes(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"plusMinutes",
 			"(J)Ljava/time/LocalTime;",
 			arg0
@@ -380,7 +382,7 @@ namespace java::time
 	}
 	QAndroidJniObject LocalTime::plusNanos(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"plusNanos",
 			"(J)Ljava/time/LocalTime;",
 			arg0
@@ -388,7 +390,7 @@ namespace java::time
 	}
 	QAndroidJniObject LocalTime::plusSeconds(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"plusSeconds",
 			"(J)Ljava/time/LocalTime;",
 			arg0
@@ -396,87 +398,87 @@ namespace java::time
 	}
 	jobject LocalTime::query(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"query",
 			"(Ljava/time/temporal/TemporalQuery;)Ljava/lang/Object;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jobject>();
 	}
 	QAndroidJniObject LocalTime::range(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"range",
 			"(Ljava/time/temporal/TemporalField;)Ljava/time/temporal/ValueRange;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jlong LocalTime::toEpochSecond(java::time::LocalDate arg0, java::time::ZoneOffset arg1)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"toEpochSecond",
 			"(Ljava/time/LocalDate;Ljava/time/ZoneOffset;)J",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jlong LocalTime::toNanoOfDay()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"toNanoOfDay",
 			"()J"
 		);
 	}
 	jint LocalTime::toSecondOfDay()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"toSecondOfDay",
 			"()I"
 		);
 	}
 	jstring LocalTime::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject LocalTime::truncatedTo(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"truncatedTo",
 			"(Ljava/time/temporal/TemporalUnit;)Ljava/time/LocalTime;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jlong LocalTime::until(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"until",
 			"(Ljava/time/temporal/Temporal;Ljava/time/temporal/TemporalUnit;)J",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject LocalTime::with(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"with",
 			"(Ljava/time/temporal/TemporalAdjuster;)Ljava/time/LocalTime;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject LocalTime::with(__JniBaseClass arg0, jlong arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"with",
 			"(Ljava/time/temporal/TemporalField;J)Ljava/time/LocalTime;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	QAndroidJniObject LocalTime::withHour(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withHour",
 			"(I)Ljava/time/LocalTime;",
 			arg0
@@ -484,7 +486,7 @@ namespace java::time
 	}
 	QAndroidJniObject LocalTime::withMinute(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withMinute",
 			"(I)Ljava/time/LocalTime;",
 			arg0
@@ -492,7 +494,7 @@ namespace java::time
 	}
 	QAndroidJniObject LocalTime::withNano(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withNano",
 			"(I)Ljava/time/LocalTime;",
 			arg0
@@ -500,7 +502,7 @@ namespace java::time
 	}
 	QAndroidJniObject LocalTime::withSecond(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withSecond",
 			"(I)Ljava/time/LocalTime;",
 			arg0

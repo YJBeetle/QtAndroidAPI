@@ -158,21 +158,21 @@ namespace android::net
 		);
 	}
 	
-	UrlQuerySanitizer_IllegalCharacterValueSanitizer::UrlQuerySanitizer_IllegalCharacterValueSanitizer(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UrlQuerySanitizer_IllegalCharacterValueSanitizer::UrlQuerySanitizer_IllegalCharacterValueSanitizer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	UrlQuerySanitizer_IllegalCharacterValueSanitizer::UrlQuerySanitizer_IllegalCharacterValueSanitizer(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring UrlQuerySanitizer_IllegalCharacterValueSanitizer::sanitize(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"sanitize",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0

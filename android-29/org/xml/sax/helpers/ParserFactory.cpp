@@ -4,7 +4,9 @@ namespace org::xml::sax::helpers
 {
 	// Fields
 	
-	ParserFactory::ParserFactory(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ParserFactory::ParserFactory(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

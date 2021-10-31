@@ -19,68 +19,66 @@ namespace java::security::spec
 		);
 	}
 	
-	PSSParameterSpec::PSSParameterSpec(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PSSParameterSpec::PSSParameterSpec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	PSSParameterSpec::PSSParameterSpec(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.security.spec.PSSParameterSpec",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	PSSParameterSpec::PSSParameterSpec(jstring arg0, jstring arg1, __JniBaseClass arg2, jint arg3, jint arg4)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.security.spec.PSSParameterSpec",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/security/spec/AlgorithmParameterSpec;II)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
+			arg2.object(),
 			arg3,
 			arg4
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring PSSParameterSpec::getDigestAlgorithm()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDigestAlgorithm",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring PSSParameterSpec::getMGFAlgorithm()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMGFAlgorithm",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject PSSParameterSpec::getMGFParameters()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMGFParameters",
 			"()Ljava/security/spec/AlgorithmParameterSpec;"
 		);
 	}
 	jint PSSParameterSpec::getSaltLength()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSaltLength",
 			"()I"
 		);
 	}
 	jint PSSParameterSpec::getTrailerField()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTrailerField",
 			"()I"
 		);
 	}
 	jstring PSSParameterSpec::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

@@ -185,107 +185,109 @@ namespace android::view::textclassifier
 		);
 	}
 	
-	TextClassifierEvent::TextClassifierEvent(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TextClassifierEvent::TextClassifierEvent(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint TextClassifierEvent::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jintArray TextClassifierEvent::getActionIndices()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getActionIndices",
 			"()[I"
 		).object<jintArray>();
 	}
 	jarray TextClassifierEvent::getEntityTypes()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEntityTypes",
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	jint TextClassifierEvent::getEventCategory()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getEventCategory",
 			"()I"
 		);
 	}
 	QAndroidJniObject TextClassifierEvent::getEventContext()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEventContext",
 			"()Landroid/view/textclassifier/TextClassificationContext;"
 		);
 	}
 	jint TextClassifierEvent::getEventIndex()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getEventIndex",
 			"()I"
 		);
 	}
 	jint TextClassifierEvent::getEventType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getEventType",
 			"()I"
 		);
 	}
 	QAndroidJniObject TextClassifierEvent::getExtras()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
 	QAndroidJniObject TextClassifierEvent::getLocale()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLocale",
 			"()Landroid/icu/util/ULocale;"
 		);
 	}
 	jstring TextClassifierEvent::getModelName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getModelName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring TextClassifierEvent::getResultId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getResultId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jfloatArray TextClassifierEvent::getScores()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getScores",
 			"()[F"
 		).object<jfloatArray>();
 	}
 	jstring TextClassifierEvent::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void TextClassifierEvent::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

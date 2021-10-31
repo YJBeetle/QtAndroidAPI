@@ -8,17 +8,17 @@ namespace android::telephony::mbms
 {
 	// Fields
 	
-	DownloadRequest_Builder::DownloadRequest_Builder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DownloadRequest_Builder::DownloadRequest_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	DownloadRequest_Builder::DownloadRequest_Builder(android::net::Uri arg0, android::net::Uri arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.telephony.mbms.DownloadRequest$Builder",
 			"(Landroid/net/Uri;Landroid/net/Uri;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject DownloadRequest_Builder::fromDownloadRequest(android::telephony::mbms::DownloadRequest arg0)
@@ -27,7 +27,7 @@ namespace android::telephony::mbms
 			"android.telephony.mbms.DownloadRequest$Builder",
 			"fromDownloadRequest",
 			"(Landroid/telephony/mbms/DownloadRequest;)Landroid/telephony/mbms/DownloadRequest$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject DownloadRequest_Builder::fromSerializedRequest(jbyteArray arg0)
@@ -41,30 +41,30 @@ namespace android::telephony::mbms
 	}
 	QAndroidJniObject DownloadRequest_Builder::build()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"build",
 			"()Landroid/telephony/mbms/DownloadRequest;"
 		);
 	}
 	QAndroidJniObject DownloadRequest_Builder::setAppIntent(android::content::Intent arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setAppIntent",
 			"(Landroid/content/Intent;)Landroid/telephony/mbms/DownloadRequest$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject DownloadRequest_Builder::setServiceInfo(android::telephony::mbms::FileServiceInfo arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setServiceInfo",
 			"(Landroid/telephony/mbms/FileServiceInfo;)Landroid/telephony/mbms/DownloadRequest$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject DownloadRequest_Builder::setSubscriptionId(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setSubscriptionId",
 			"(I)Landroid/telephony/mbms/DownloadRequest$Builder;",
 			arg0

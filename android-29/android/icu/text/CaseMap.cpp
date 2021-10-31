@@ -8,7 +8,9 @@ namespace android::icu::text
 {
 	// Fields
 	
-	CaseMap::CaseMap(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CaseMap::CaseMap(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -46,7 +48,7 @@ namespace android::icu::text
 	}
 	QAndroidJniObject CaseMap::omitUnchangedText()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"omitUnchangedText",
 			"()Landroid/icu/text/CaseMap;"
 		);

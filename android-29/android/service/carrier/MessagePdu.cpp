@@ -13,38 +13,38 @@ namespace android::service::carrier
 		);
 	}
 	
-	MessagePdu::MessagePdu(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MessagePdu::MessagePdu(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MessagePdu::MessagePdu(__JniBaseClass arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.service.carrier.MessagePdu",
 			"(Ljava/util/List;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jint MessagePdu::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	QAndroidJniObject MessagePdu::getPdus()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPdus",
 			"()Ljava/util/List;"
 		);
 	}
 	void MessagePdu::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

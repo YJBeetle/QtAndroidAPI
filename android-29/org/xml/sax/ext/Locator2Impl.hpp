@@ -11,7 +11,10 @@ namespace org::xml::sax::ext
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Locator2Impl(const char *className, const char *sig, Ts...agv) : org::xml::sax::helpers::LocatorImpl(className, sig, std::forward<Ts>(agv)...) {}
 		Locator2Impl(QAndroidJniObject obj);
+		
 		// Constructors
 		Locator2Impl();
 		Locator2Impl(__JniBaseClass arg0);

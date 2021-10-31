@@ -15,11 +15,13 @@ namespace javax::sql
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ConnectionEvent(const char *className, const char *sig, Ts...agv) : java::util::EventObject(className, sig, std::forward<Ts>(agv)...) {}
 		ConnectionEvent(QAndroidJniObject obj);
+		
 		// Constructors
 		ConnectionEvent(__JniBaseClass arg0);
 		ConnectionEvent(__JniBaseClass arg0, java::sql::SQLException arg1);
-		ConnectionEvent() = default;
 		
 		// Methods
 		QAndroidJniObject getSQLException();

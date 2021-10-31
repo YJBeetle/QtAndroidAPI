@@ -10,21 +10,21 @@ namespace android::content
 {
 	// Fields
 	
-	AsyncQueryHandler::AsyncQueryHandler(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AsyncQueryHandler::AsyncQueryHandler(QAndroidJniObject obj) : android::os::Handler(obj) {}
+	
 	// Constructors
 	AsyncQueryHandler::AsyncQueryHandler(android::content::ContentResolver arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::os::Handler(
 			"android.content.AsyncQueryHandler",
 			"(Landroid/content/ContentResolver;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	void AsyncQueryHandler::cancelOperation(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"cancelOperation",
 			"(I)V",
 			arg0
@@ -32,43 +32,43 @@ namespace android::content
 	}
 	void AsyncQueryHandler::handleMessage(android::os::Message arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"handleMessage",
 			"(Landroid/os/Message;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AsyncQueryHandler::startDelete(jint arg0, jobject arg1, android::net::Uri arg2, jstring arg3, jarray arg4)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"startDelete",
 			"(ILjava/lang/Object;Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
+			arg2.object(),
 			arg3,
 			arg4
 		);
 	}
 	void AsyncQueryHandler::startInsert(jint arg0, jobject arg1, android::net::Uri arg2, android::content::ContentValues arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"startInsert",
 			"(ILjava/lang/Object;Landroid/net/Uri;Landroid/content/ContentValues;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
+			arg2.object(),
+			arg3.object()
 		);
 	}
 	void AsyncQueryHandler::startQuery(jint arg0, jobject arg1, android::net::Uri arg2, jarray arg3, jstring arg4, jarray arg5, jstring arg6)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"startQuery",
 			"(ILjava/lang/Object;Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
+			arg2.object(),
 			arg3,
 			arg4,
 			arg5,
@@ -77,13 +77,13 @@ namespace android::content
 	}
 	void AsyncQueryHandler::startUpdate(jint arg0, jobject arg1, android::net::Uri arg2, android::content::ContentValues arg3, jstring arg4, jarray arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"startUpdate",
 			"(ILjava/lang/Object;Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
+			arg2.object(),
+			arg3.object(),
 			arg4,
 			arg5
 		);

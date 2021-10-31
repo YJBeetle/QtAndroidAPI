@@ -5,45 +5,43 @@ namespace java::io
 {
 	// Fields
 	
-	ByteArrayInputStream::ByteArrayInputStream(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ByteArrayInputStream::ByteArrayInputStream(QAndroidJniObject obj) : java::io::InputStream(obj) {}
+	
 	// Constructors
 	ByteArrayInputStream::ByteArrayInputStream(jbyteArray arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::InputStream(
 			"java.io.ByteArrayInputStream",
 			"([B)V",
 			arg0
-		);
-	}
+		) {}
 	ByteArrayInputStream::ByteArrayInputStream(jbyteArray arg0, jint arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::InputStream(
 			"java.io.ByteArrayInputStream",
 			"([BII)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	jint ByteArrayInputStream::available()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"available",
 			"()I"
 		);
 	}
 	void ByteArrayInputStream::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	void ByteArrayInputStream::mark(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"mark",
 			"(I)V",
 			arg0
@@ -51,21 +49,21 @@ namespace java::io
 	}
 	jboolean ByteArrayInputStream::markSupported()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"markSupported",
 			"()Z"
 		);
 	}
 	jint ByteArrayInputStream::read()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"read",
 			"()I"
 		);
 	}
 	jint ByteArrayInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"read",
 			"([BII)I",
 			arg0,
@@ -75,14 +73,14 @@ namespace java::io
 	}
 	jbyteArray ByteArrayInputStream::readAllBytes()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"readAllBytes",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jint ByteArrayInputStream::readNBytes(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"readNBytes",
 			"([BII)I",
 			arg0,
@@ -92,14 +90,14 @@ namespace java::io
 	}
 	void ByteArrayInputStream::reset()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
 	jlong ByteArrayInputStream::skip(jlong arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"skip",
 			"(J)J",
 			arg0
@@ -107,10 +105,10 @@ namespace java::io
 	}
 	jlong ByteArrayInputStream::transferTo(java::io::OutputStream arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"transferTo",
 			"(Ljava/io/OutputStream;)J",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace java::io

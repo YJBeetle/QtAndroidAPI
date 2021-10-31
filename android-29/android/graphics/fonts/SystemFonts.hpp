@@ -10,9 +10,11 @@ namespace android::graphics::fonts
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SystemFonts(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SystemFonts(QAndroidJniObject obj);
+		
 		// Constructors
-		SystemFonts() = default;
 		
 		// Methods
 		static QAndroidJniObject getAvailableFonts();

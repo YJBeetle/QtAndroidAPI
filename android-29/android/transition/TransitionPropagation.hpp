@@ -22,7 +22,10 @@ namespace android::transition
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TransitionPropagation(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		TransitionPropagation(QAndroidJniObject obj);
+		
 		// Constructors
 		TransitionPropagation();
 		

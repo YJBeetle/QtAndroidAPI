@@ -25,9 +25,11 @@ namespace java::time::temporal
 		static QAndroidJniObject SUNDAY_START();
 		static QAndroidJniObject WEEK_BASED_YEARS();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit WeekFields(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		WeekFields(QAndroidJniObject obj);
+		
 		// Constructors
-		WeekFields() = default;
 		
 		// Methods
 		static QAndroidJniObject of(java::util::Locale arg0);

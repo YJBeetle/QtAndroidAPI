@@ -10,11 +10,13 @@ namespace android::provider
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit FontRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		FontRequest(QAndroidJniObject obj);
+		
 		// Constructors
 		FontRequest(jstring arg0, jstring arg1, jstring arg2);
 		FontRequest(jstring arg0, jstring arg1, jstring arg2, __JniBaseClass arg3);
-		FontRequest() = default;
 		
 		// Methods
 		QAndroidJniObject getCertificates();

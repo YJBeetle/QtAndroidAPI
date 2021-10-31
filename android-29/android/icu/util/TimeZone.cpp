@@ -103,15 +103,15 @@ namespace android::icu::util
 		).object<jstring>();
 	}
 	
-	TimeZone::TimeZone(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TimeZone::TimeZone(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	TimeZone::TimeZone()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.icu.util.TimeZone",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jint TimeZone::countEquivalentIDs(jstring arg0)
@@ -155,9 +155,9 @@ namespace android::icu::util
 			"android.icu.util.TimeZone",
 			"getAvailableIDs",
 			"(Landroid/icu/util/TimeZone$SystemTimeZoneType;Ljava/lang/String;Ljava/lang/Integer;)Ljava/util/Set;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	jstring TimeZone::getCanonicalID(jstring arg0)
@@ -263,21 +263,21 @@ namespace android::icu::util
 	}
 	jobject TimeZone::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	QAndroidJniObject TimeZone::cloneAsThawed()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"cloneAsThawed",
 			"()Landroid/icu/util/TimeZone;"
 		);
 	}
 	jboolean TimeZone::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -285,44 +285,44 @@ namespace android::icu::util
 	}
 	QAndroidJniObject TimeZone::freeze()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"freeze",
 			"()Landroid/icu/util/TimeZone;"
 		);
 	}
 	jint TimeZone::getDSTSavings()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDSTSavings",
 			"()I"
 		);
 	}
 	jstring TimeZone::getDisplayName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDisplayName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring TimeZone::getDisplayName(android::icu::util::ULocale arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDisplayName",
 			"(Landroid/icu/util/ULocale;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jstring TimeZone::getDisplayName(java::util::Locale arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDisplayName",
 			"(Ljava/util/Locale;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jstring TimeZone::getDisplayName(jboolean arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDisplayName",
 			"(ZI)Ljava/lang/String;",
 			arg0,
@@ -331,34 +331,34 @@ namespace android::icu::util
 	}
 	jstring TimeZone::getDisplayName(jboolean arg0, jint arg1, android::icu::util::ULocale arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDisplayName",
 			"(ZILandroid/icu/util/ULocale;)Ljava/lang/String;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		).object<jstring>();
 	}
 	jstring TimeZone::getDisplayName(jboolean arg0, jint arg1, java::util::Locale arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDisplayName",
 			"(ZILjava/util/Locale;)Ljava/lang/String;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		).object<jstring>();
 	}
 	jstring TimeZone::getID()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getID",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint TimeZone::getOffset(jlong arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getOffset",
 			"(J)I",
 			arg0
@@ -366,7 +366,7 @@ namespace android::icu::util
 	}
 	jint TimeZone::getOffset(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getOffset",
 			"(IIIIII)I",
 			arg0,
@@ -379,7 +379,7 @@ namespace android::icu::util
 	}
 	void TimeZone::getOffset(jlong arg0, jboolean arg1, jintArray arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"getOffset",
 			"(JZ[I)V",
 			arg0,
@@ -389,51 +389,51 @@ namespace android::icu::util
 	}
 	jint TimeZone::getRawOffset()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRawOffset",
 			"()I"
 		);
 	}
 	jboolean TimeZone::hasSameRules(android::icu::util::TimeZone arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasSameRules",
 			"(Landroid/icu/util/TimeZone;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint TimeZone::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean TimeZone::inDaylightTime(java::util::Date arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"inDaylightTime",
 			"(Ljava/util/Date;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean TimeZone::isFrozen()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isFrozen",
 			"()Z"
 		);
 	}
 	jboolean TimeZone::observesDaylightTime()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"observesDaylightTime",
 			"()Z"
 		);
 	}
 	void TimeZone::setID(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setID",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -441,7 +441,7 @@ namespace android::icu::util
 	}
 	void TimeZone::setRawOffset(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setRawOffset",
 			"(I)V",
 			arg0
@@ -449,7 +449,7 @@ namespace android::icu::util
 	}
 	jboolean TimeZone::useDaylightTime()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"useDaylightTime",
 			"()Z"
 		);

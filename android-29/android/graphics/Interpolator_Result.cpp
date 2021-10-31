@@ -28,7 +28,9 @@ namespace android::graphics
 		);
 	}
 	
-	Interpolator_Result::Interpolator_Result(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Interpolator_Result::Interpolator_Result(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

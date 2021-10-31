@@ -10,9 +10,11 @@ namespace android::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DebugUtils(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DebugUtils(QAndroidJniObject obj);
+		
 		// Constructors
-		DebugUtils() = default;
 		
 		// Methods
 		static jboolean isObjectSelected(jobject arg0);

@@ -18,7 +18,10 @@ namespace org::xml::sax
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit HandlerBase(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		HandlerBase(QAndroidJniObject obj);
+		
 		// Constructors
 		HandlerBase();
 		

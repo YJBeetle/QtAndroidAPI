@@ -8,27 +8,27 @@ namespace android::media
 {
 	// Fields
 	
-	MediaDescription_Builder::MediaDescription_Builder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaDescription_Builder::MediaDescription_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MediaDescription_Builder::MediaDescription_Builder()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.MediaDescription$Builder",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject MediaDescription_Builder::build()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"build",
 			"()Landroid/media/MediaDescription;"
 		);
 	}
 	QAndroidJniObject MediaDescription_Builder::setDescription(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setDescription",
 			"(Ljava/lang/CharSequence;)Landroid/media/MediaDescription$Builder;",
 			arg0
@@ -36,31 +36,31 @@ namespace android::media
 	}
 	QAndroidJniObject MediaDescription_Builder::setExtras(android::os::Bundle arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setExtras",
 			"(Landroid/os/Bundle;)Landroid/media/MediaDescription$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject MediaDescription_Builder::setIconBitmap(android::graphics::Bitmap arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setIconBitmap",
 			"(Landroid/graphics/Bitmap;)Landroid/media/MediaDescription$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject MediaDescription_Builder::setIconUri(android::net::Uri arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setIconUri",
 			"(Landroid/net/Uri;)Landroid/media/MediaDescription$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject MediaDescription_Builder::setMediaId(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setMediaId",
 			"(Ljava/lang/String;)Landroid/media/MediaDescription$Builder;",
 			arg0
@@ -68,15 +68,15 @@ namespace android::media
 	}
 	QAndroidJniObject MediaDescription_Builder::setMediaUri(android::net::Uri arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setMediaUri",
 			"(Landroid/net/Uri;)Landroid/media/MediaDescription$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject MediaDescription_Builder::setSubtitle(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setSubtitle",
 			"(Ljava/lang/CharSequence;)Landroid/media/MediaDescription$Builder;",
 			arg0
@@ -84,7 +84,7 @@ namespace android::media
 	}
 	QAndroidJniObject MediaDescription_Builder::setTitle(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setTitle",
 			"(Ljava/lang/CharSequence;)Landroid/media/MediaDescription$Builder;",
 			arg0

@@ -44,7 +44,9 @@ namespace android::telephony::gsm
 		);
 	}
 	
-	SmsMessage_MessageClass::SmsMessage_MessageClass(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SmsMessage_MessageClass::SmsMessage_MessageClass(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

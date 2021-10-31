@@ -15,9 +15,11 @@ namespace android::media
 		static jstring STREAMTYPE();
 		static jstring USAGE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AudioTrack_MetricsConstants(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AudioTrack_MetricsConstants(QAndroidJniObject obj);
+		
 		// Constructors
-		AudioTrack_MetricsConstants() = default;
 		
 		// Methods
 	};

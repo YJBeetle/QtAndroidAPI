@@ -6,15 +6,15 @@ namespace android::webkit
 {
 	// Fields
 	
-	TracingController::TracingController(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TracingController::TracingController(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	TracingController::TracingController()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.webkit.TracingController",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject TracingController::getInstance()
@@ -27,26 +27,26 @@ namespace android::webkit
 	}
 	jboolean TracingController::isTracing()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isTracing",
 			"()Z"
 		);
 	}
 	void TracingController::start(android::webkit::TracingConfig arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"start",
 			"(Landroid/webkit/TracingConfig;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean TracingController::stop(java::io::OutputStream arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"stop",
 			"(Ljava/io/OutputStream;Ljava/util/concurrent/Executor;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 } // namespace android::webkit

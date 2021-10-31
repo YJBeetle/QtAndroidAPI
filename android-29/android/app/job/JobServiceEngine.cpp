@@ -6,48 +6,48 @@ namespace android::app::job
 {
 	// Fields
 	
-	JobServiceEngine::JobServiceEngine(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	JobServiceEngine::JobServiceEngine(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	JobServiceEngine::JobServiceEngine(android::app::Service arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.app.job.JobServiceEngine",
 			"(Landroid/app/Service;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject JobServiceEngine::getBinder()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBinder",
 			"()Landroid/os/IBinder;"
 		);
 	}
 	void JobServiceEngine::jobFinished(android::app::job::JobParameters arg0, jboolean arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"jobFinished",
 			"(Landroid/app/job/JobParameters;Z)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	jboolean JobServiceEngine::onStartJob(android::app::job::JobParameters arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onStartJob",
 			"(Landroid/app/job/JobParameters;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean JobServiceEngine::onStopJob(android::app::job::JobParameters arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onStopJob",
 			"(Landroid/app/job/JobParameters;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::app::job

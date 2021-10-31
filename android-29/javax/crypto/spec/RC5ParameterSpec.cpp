@@ -4,32 +4,29 @@ namespace javax::crypto::spec
 {
 	// Fields
 	
-	RC5ParameterSpec::RC5ParameterSpec(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	RC5ParameterSpec::RC5ParameterSpec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	RC5ParameterSpec::RC5ParameterSpec(jint arg0, jint arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"javax.crypto.spec.RC5ParameterSpec",
 			"(III)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	RC5ParameterSpec::RC5ParameterSpec(jint arg0, jint arg1, jint arg2, jbyteArray arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"javax.crypto.spec.RC5ParameterSpec",
 			"(III[B)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	RC5ParameterSpec::RC5ParameterSpec(jint arg0, jint arg1, jint arg2, jbyteArray arg3, jint arg4)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"javax.crypto.spec.RC5ParameterSpec",
 			"(III[BI)V",
 			arg0,
@@ -37,13 +34,12 @@ namespace javax::crypto::spec
 			arg2,
 			arg3,
 			arg4
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean RC5ParameterSpec::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -51,35 +47,35 @@ namespace javax::crypto::spec
 	}
 	jbyteArray RC5ParameterSpec::getIV()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getIV",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jint RC5ParameterSpec::getRounds()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRounds",
 			"()I"
 		);
 	}
 	jint RC5ParameterSpec::getVersion()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getVersion",
 			"()I"
 		);
 	}
 	jint RC5ParameterSpec::getWordSize()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getWordSize",
 			"()I"
 		);
 	}
 	jint RC5ParameterSpec::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);

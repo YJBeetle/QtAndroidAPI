@@ -627,61 +627,59 @@ namespace android::text::style
 		);
 	}
 	
-	TtsSpan::TtsSpan(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TtsSpan::TtsSpan(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	TtsSpan::TtsSpan(android::os::Parcel arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.text.style.TtsSpan",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	TtsSpan::TtsSpan(jstring arg0, android::os::PersistableBundle arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.text.style.TtsSpan",
 			"(Ljava/lang/String;Landroid/os/PersistableBundle;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
+			arg1.object()
+		) {}
 	
 	// Methods
 	jint TtsSpan::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	QAndroidJniObject TtsSpan::getArgs()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getArgs",
 			"()Landroid/os/PersistableBundle;"
 		);
 	}
 	jint TtsSpan::getSpanTypeId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSpanTypeId",
 			"()I"
 		);
 	}
 	jstring TtsSpan::getType()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void TtsSpan::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

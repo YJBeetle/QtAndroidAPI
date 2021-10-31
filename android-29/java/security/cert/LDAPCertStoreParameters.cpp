@@ -4,58 +4,54 @@ namespace java::security::cert
 {
 	// Fields
 	
-	LDAPCertStoreParameters::LDAPCertStoreParameters(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	LDAPCertStoreParameters::LDAPCertStoreParameters(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	LDAPCertStoreParameters::LDAPCertStoreParameters()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.security.cert.LDAPCertStoreParameters",
 			"()V"
-		);
-	}
+		) {}
 	LDAPCertStoreParameters::LDAPCertStoreParameters(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.security.cert.LDAPCertStoreParameters",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	LDAPCertStoreParameters::LDAPCertStoreParameters(jstring arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.security.cert.LDAPCertStoreParameters",
 			"(Ljava/lang/String;I)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jobject LDAPCertStoreParameters::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jint LDAPCertStoreParameters::getPort()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPort",
 			"()I"
 		);
 	}
 	jstring LDAPCertStoreParameters::getServerName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getServerName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring LDAPCertStoreParameters::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

@@ -18,9 +18,11 @@ namespace android::os
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PowerManager_WakeLock(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PowerManager_WakeLock(QAndroidJniObject obj);
+		
 		// Constructors
-		PowerManager_WakeLock() = default;
 		
 		// Methods
 		void acquire();

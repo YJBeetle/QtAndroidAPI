@@ -100,7 +100,9 @@ namespace java::lang::annotation
 		);
 	}
 	
-	ElementType::ElementType(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ElementType::ElementType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

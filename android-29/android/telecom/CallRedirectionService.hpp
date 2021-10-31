@@ -26,7 +26,10 @@ namespace android::telecom
 		// Fields
 		static jstring SERVICE_INTERFACE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CallRedirectionService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
 		CallRedirectionService(QAndroidJniObject obj);
+		
 		// Constructors
 		CallRedirectionService();
 		

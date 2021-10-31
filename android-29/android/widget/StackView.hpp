@@ -26,13 +26,15 @@ namespace android::widget
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit StackView(const char *className, const char *sig, Ts...agv) : android::widget::AdapterViewAnimator(className, sig, std::forward<Ts>(agv)...) {}
 		StackView(QAndroidJniObject obj);
+		
 		// Constructors
 		StackView(android::content::Context arg0);
 		StackView(android::content::Context arg0, __JniBaseClass arg1);
 		StackView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		StackView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
-		StackView() = default;
 		
 		// Methods
 		void advance();

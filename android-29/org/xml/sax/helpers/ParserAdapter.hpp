@@ -26,7 +26,10 @@ namespace org::xml::sax::helpers
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ParserAdapter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ParserAdapter(QAndroidJniObject obj);
+		
 		// Constructors
 		ParserAdapter();
 		ParserAdapter(__JniBaseClass arg0);

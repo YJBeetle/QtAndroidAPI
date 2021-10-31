@@ -93,7 +93,9 @@ namespace android::provider
 		);
 	}
 	
-	Contacts_GroupMembership::Contacts_GroupMembership(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Contacts_GroupMembership::Contacts_GroupMembership(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

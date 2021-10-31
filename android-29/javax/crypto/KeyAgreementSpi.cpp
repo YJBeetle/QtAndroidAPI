@@ -5,15 +5,15 @@ namespace javax::crypto
 {
 	// Fields
 	
-	KeyAgreementSpi::KeyAgreementSpi(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	KeyAgreementSpi::KeyAgreementSpi(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	KeyAgreementSpi::KeyAgreementSpi()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"javax.crypto.KeyAgreementSpi",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace javax::crypto

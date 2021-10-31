@@ -13,7 +13,10 @@ namespace android::icu::util
 		jint start();
 		jint value();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit RangeValueIterator_Element(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		RangeValueIterator_Element(QAndroidJniObject obj);
+		
 		// Constructors
 		RangeValueIterator_Element();
 		

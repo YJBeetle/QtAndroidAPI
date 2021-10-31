@@ -14,9 +14,11 @@ namespace android::media
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaDrm_CryptoSession(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaDrm_CryptoSession(QAndroidJniObject obj);
+		
 		// Constructors
-		MediaDrm_CryptoSession() = default;
 		
 		// Methods
 		jbyteArray decrypt(jbyteArray arg0, jbyteArray arg1, jbyteArray arg2);

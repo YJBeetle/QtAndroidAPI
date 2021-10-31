@@ -28,7 +28,9 @@ namespace android::graphics
 		);
 	}
 	
-	PathDashPathEffect_Style::PathDashPathEffect_Style(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PathDashPathEffect_Style::PathDashPathEffect_Style(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

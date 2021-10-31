@@ -43,7 +43,10 @@ namespace android::icu::util
 		static jint SHABAN();
 		static jint SHAWWAL();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit IslamicCalendar(const char *className, const char *sig, Ts...agv) : android::icu::util::Calendar(className, sig, std::forward<Ts>(agv)...) {}
 		IslamicCalendar(QAndroidJniObject obj);
+		
 		// Constructors
 		IslamicCalendar();
 		IslamicCalendar(android::icu::util::TimeZone arg0);

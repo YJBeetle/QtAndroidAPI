@@ -22,9 +22,11 @@ namespace java::nio::file::attribute
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit FileTime(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		FileTime(QAndroidJniObject obj);
+		
 		// Constructors
-		FileTime() = default;
 		
 		// Methods
 		static QAndroidJniObject from(java::time::Instant arg0);

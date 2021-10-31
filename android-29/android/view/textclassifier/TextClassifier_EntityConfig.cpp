@@ -13,7 +13,9 @@ namespace android::view::textclassifier
 		);
 	}
 	
-	TextClassifier_EntityConfig::TextClassifier_EntityConfig(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TextClassifier_EntityConfig::TextClassifier_EntityConfig(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -23,9 +25,9 @@ namespace android::view::textclassifier
 			"android.view.textclassifier.TextClassifier$EntityConfig",
 			"create",
 			"(Ljava/util/Collection;Ljava/util/Collection;Ljava/util/Collection;)Landroid/view/textclassifier/TextClassifier$EntityConfig;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject TextClassifier_EntityConfig::createWithExplicitEntityList(__JniBaseClass arg0)
@@ -34,7 +36,7 @@ namespace android::view::textclassifier
 			"android.view.textclassifier.TextClassifier$EntityConfig",
 			"createWithExplicitEntityList",
 			"(Ljava/util/Collection;)Landroid/view/textclassifier/TextClassifier$EntityConfig;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject TextClassifier_EntityConfig::createWithHints(__JniBaseClass arg0)
@@ -43,44 +45,44 @@ namespace android::view::textclassifier
 			"android.view.textclassifier.TextClassifier$EntityConfig",
 			"createWithHints",
 			"(Ljava/util/Collection;)Landroid/view/textclassifier/TextClassifier$EntityConfig;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint TextClassifier_EntityConfig::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	QAndroidJniObject TextClassifier_EntityConfig::getHints()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getHints",
 			"()Ljava/util/Collection;"
 		);
 	}
 	QAndroidJniObject TextClassifier_EntityConfig::resolveEntityListModifications(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"resolveEntityListModifications",
 			"(Ljava/util/Collection;)Ljava/util/Collection;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean TextClassifier_EntityConfig::shouldIncludeTypesFromTextClassifier()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"shouldIncludeTypesFromTextClassifier",
 			"()Z"
 		);
 	}
 	void TextClassifier_EntityConfig::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

@@ -95,40 +95,34 @@ namespace android::util
 		);
 	}
 	
-	Half::Half(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Half::Half(QAndroidJniObject obj) : java::lang::Number(obj) {}
+	
 	// Constructors
 	Half::Half(jdouble arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Number(
 			"android.util.Half",
 			"(D)V",
 			arg0
-		);
-	}
+		) {}
 	Half::Half(jfloat arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Number(
 			"android.util.Half",
 			"(F)V",
 			arg0
-		);
-	}
+		) {}
 	Half::Half(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Number(
 			"android.util.Half",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	Half::Half(jshort arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Number(
 			"android.util.Half",
 			"(S)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jshort Half::abs(jshort arg0)
@@ -439,22 +433,22 @@ namespace android::util
 	}
 	jbyte Half::byteValue()
 	{
-		return __thiz.callMethod<jbyte>(
+		return callMethod<jbyte>(
 			"byteValue",
 			"()B"
 		);
 	}
 	jint Half::compareTo(android::util::Half arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Landroid/util/Half;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint Half::compareTo(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -462,14 +456,14 @@ namespace android::util
 	}
 	jdouble Half::doubleValue()
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"doubleValue",
 			"()D"
 		);
 	}
 	jboolean Half::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -477,56 +471,56 @@ namespace android::util
 	}
 	jfloat Half::floatValue()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"floatValue",
 			"()F"
 		);
 	}
 	jshort Half::halfValue()
 	{
-		return __thiz.callMethod<jshort>(
+		return callMethod<jshort>(
 			"halfValue",
 			"()S"
 		);
 	}
 	jint Half::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jint Half::intValue()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"intValue",
 			"()I"
 		);
 	}
 	jboolean Half::isNaN()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isNaN",
 			"()Z"
 		);
 	}
 	jlong Half::longValue()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"longValue",
 			"()J"
 		);
 	}
 	jshort Half::shortValue()
 	{
-		return __thiz.callMethod<jshort>(
+		return callMethod<jshort>(
 			"shortValue",
 			"()S"
 		);
 	}
 	jstring Half::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

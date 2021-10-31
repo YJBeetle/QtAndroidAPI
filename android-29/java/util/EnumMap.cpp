@@ -7,51 +7,47 @@ namespace java::util
 {
 	// Fields
 	
-	EnumMap::EnumMap(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	EnumMap::EnumMap(QAndroidJniObject obj) : java::util::AbstractMap(obj) {}
+	
 	// Constructors
 	EnumMap::EnumMap(jclass arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::AbstractMap(
 			"java.util.EnumMap",
 			"(Ljava/lang/Class;)V",
 			arg0
-		);
-	}
+		) {}
 	EnumMap::EnumMap(java::util::EnumMap &arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::AbstractMap(
 			"java.util.EnumMap",
 			"(Ljava/util/EnumMap;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	EnumMap::EnumMap(__JniBaseClass arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::AbstractMap(
 			"java.util.EnumMap",
 			"(Ljava/util/Map;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	void EnumMap::clear()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
 	QAndroidJniObject EnumMap::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Ljava/util/EnumMap;"
 		);
 	}
 	jboolean EnumMap::containsKey(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"containsKey",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -59,7 +55,7 @@ namespace java::util
 	}
 	jboolean EnumMap::containsValue(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"containsValue",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -67,14 +63,14 @@ namespace java::util
 	}
 	QAndroidJniObject EnumMap::entrySet()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"entrySet",
 			"()Ljava/util/Set;"
 		);
 	}
 	jboolean EnumMap::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -82,7 +78,7 @@ namespace java::util
 	}
 	jobject EnumMap::get(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0
@@ -90,30 +86,30 @@ namespace java::util
 	}
 	jint EnumMap::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	QAndroidJniObject EnumMap::keySet()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"keySet",
 			"()Ljava/util/Set;"
 		);
 	}
 	jobject EnumMap::put(java::lang::Enum arg0, jobject arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"put",
 			"(Ljava/lang/Enum;Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		).object<jobject>();
 	}
 	jobject EnumMap::put(jobject arg0, jobject arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"put",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
@@ -122,15 +118,15 @@ namespace java::util
 	}
 	void EnumMap::putAll(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putAll",
 			"(Ljava/util/Map;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jobject EnumMap::remove(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"remove",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0
@@ -138,14 +134,14 @@ namespace java::util
 	}
 	jint EnumMap::size()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
 	QAndroidJniObject EnumMap::values()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"values",
 			"()Ljava/util/Collection;"
 		);

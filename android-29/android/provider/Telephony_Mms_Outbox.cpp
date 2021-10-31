@@ -21,7 +21,9 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	Telephony_Mms_Outbox::Telephony_Mms_Outbox(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Telephony_Mms_Outbox::Telephony_Mms_Outbox(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

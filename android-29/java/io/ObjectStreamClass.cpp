@@ -22,7 +22,9 @@ namespace java::io
 		).object<jarray>();
 	}
 	
-	ObjectStreamClass::ObjectStreamClass(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ObjectStreamClass::ObjectStreamClass(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -46,14 +48,14 @@ namespace java::io
 	}
 	jclass ObjectStreamClass::forClass()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"forClass",
 			"()Ljava/lang/Class;"
 		).object<jclass>();
 	}
 	QAndroidJniObject ObjectStreamClass::getField(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getField",
 			"(Ljava/lang/String;)Ljava/io/ObjectStreamField;",
 			arg0
@@ -61,28 +63,28 @@ namespace java::io
 	}
 	jarray ObjectStreamClass::getFields()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFields",
 			"()[Ljava/io/ObjectStreamField;"
 		).object<jarray>();
 	}
 	jstring ObjectStreamClass::getName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jlong ObjectStreamClass::getSerialVersionUID()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getSerialVersionUID",
 			"()J"
 		);
 	}
 	jstring ObjectStreamClass::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

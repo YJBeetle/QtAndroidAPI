@@ -7,7 +7,9 @@ namespace android::graphics
 {
 	// Fields
 	
-	Movie::Movie(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Movie::Movie(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -37,54 +39,54 @@ namespace android::graphics
 			"android.graphics.Movie",
 			"decodeStream",
 			"(Ljava/io/InputStream;)Landroid/graphics/Movie;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Movie::draw(android::graphics::Canvas arg0, jfloat arg1, jfloat arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"draw",
 			"(Landroid/graphics/Canvas;FF)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
 	}
 	void Movie::draw(android::graphics::Canvas arg0, jfloat arg1, jfloat arg2, android::graphics::Paint arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"draw",
 			"(Landroid/graphics/Canvas;FFLandroid/graphics/Paint;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	jint Movie::duration()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"duration",
 			"()I"
 		);
 	}
 	jint Movie::height()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"height",
 			"()I"
 		);
 	}
 	jboolean Movie::isOpaque()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isOpaque",
 			"()Z"
 		);
 	}
 	jboolean Movie::setTime(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"setTime",
 			"(I)Z",
 			arg0
@@ -92,7 +94,7 @@ namespace android::graphics
 	}
 	jint Movie::width()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"width",
 			"()I"
 		);

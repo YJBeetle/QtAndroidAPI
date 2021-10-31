@@ -16,10 +16,12 @@ namespace java::io
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit LineNumberInputStream(const char *className, const char *sig, Ts...agv) : java::io::FilterInputStream(className, sig, std::forward<Ts>(agv)...) {}
 		LineNumberInputStream(QAndroidJniObject obj);
+		
 		// Constructors
 		LineNumberInputStream(java::io::InputStream arg0);
-		LineNumberInputStream() = default;
 		
 		// Methods
 		jint available();

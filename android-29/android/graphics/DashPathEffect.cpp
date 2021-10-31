@@ -4,17 +4,17 @@ namespace android::graphics
 {
 	// Fields
 	
-	DashPathEffect::DashPathEffect(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DashPathEffect::DashPathEffect(QAndroidJniObject obj) : android::graphics::PathEffect(obj) {}
+	
 	// Constructors
 	DashPathEffect::DashPathEffect(jfloatArray arg0, jfloat arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::graphics::PathEffect(
 			"android.graphics.DashPathEffect",
 			"([FF)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::graphics

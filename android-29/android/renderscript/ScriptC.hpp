@@ -20,9 +20,11 @@ namespace android::renderscript
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ScriptC(const char *className, const char *sig, Ts...agv) : android::renderscript::Script(className, sig, std::forward<Ts>(agv)...) {}
 		ScriptC(QAndroidJniObject obj);
+		
 		// Constructors
-		ScriptC() = default;
 		
 		// Methods
 	};

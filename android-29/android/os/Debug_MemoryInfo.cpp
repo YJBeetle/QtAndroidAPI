@@ -14,80 +14,80 @@ namespace android::os
 	}
 	jint Debug_MemoryInfo::dalvikPrivateDirty()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"dalvikPrivateDirty"
 		);
 	}
 	jint Debug_MemoryInfo::dalvikPss()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"dalvikPss"
 		);
 	}
 	jint Debug_MemoryInfo::dalvikSharedDirty()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"dalvikSharedDirty"
 		);
 	}
 	jint Debug_MemoryInfo::nativePrivateDirty()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"nativePrivateDirty"
 		);
 	}
 	jint Debug_MemoryInfo::nativePss()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"nativePss"
 		);
 	}
 	jint Debug_MemoryInfo::nativeSharedDirty()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"nativeSharedDirty"
 		);
 	}
 	jint Debug_MemoryInfo::otherPrivateDirty()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"otherPrivateDirty"
 		);
 	}
 	jint Debug_MemoryInfo::otherPss()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"otherPss"
 		);
 	}
 	jint Debug_MemoryInfo::otherSharedDirty()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"otherSharedDirty"
 		);
 	}
 	
-	Debug_MemoryInfo::Debug_MemoryInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Debug_MemoryInfo::Debug_MemoryInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Debug_MemoryInfo::Debug_MemoryInfo()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.os.Debug$MemoryInfo",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jint Debug_MemoryInfo::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jstring Debug_MemoryInfo::getMemoryStat(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMemoryStat",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
@@ -95,67 +95,67 @@ namespace android::os
 	}
 	QAndroidJniObject Debug_MemoryInfo::getMemoryStats()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMemoryStats",
 			"()Ljava/util/Map;"
 		);
 	}
 	jint Debug_MemoryInfo::getTotalPrivateClean()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTotalPrivateClean",
 			"()I"
 		);
 	}
 	jint Debug_MemoryInfo::getTotalPrivateDirty()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTotalPrivateDirty",
 			"()I"
 		);
 	}
 	jint Debug_MemoryInfo::getTotalPss()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTotalPss",
 			"()I"
 		);
 	}
 	jint Debug_MemoryInfo::getTotalSharedClean()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTotalSharedClean",
 			"()I"
 		);
 	}
 	jint Debug_MemoryInfo::getTotalSharedDirty()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTotalSharedDirty",
 			"()I"
 		);
 	}
 	jint Debug_MemoryInfo::getTotalSwappablePss()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTotalSwappablePss",
 			"()I"
 		);
 	}
 	void Debug_MemoryInfo::readFromParcel(android::os::Parcel arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"readFromParcel",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Debug_MemoryInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

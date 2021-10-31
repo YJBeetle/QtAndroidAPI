@@ -12,7 +12,10 @@ namespace java::security
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit InvalidAlgorithmParameterException(const char *className, const char *sig, Ts...agv) : java::security::GeneralSecurityException(className, sig, std::forward<Ts>(agv)...) {}
 		InvalidAlgorithmParameterException(QAndroidJniObject obj);
+		
 		// Constructors
 		InvalidAlgorithmParameterException();
 		InvalidAlgorithmParameterException(jstring arg0);

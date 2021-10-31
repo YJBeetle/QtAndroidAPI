@@ -4,16 +4,16 @@ namespace android::provider
 {
 	// Fields
 	
-	Settings_SettingNotFoundException::Settings_SettingNotFoundException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Settings_SettingNotFoundException::Settings_SettingNotFoundException(QAndroidJniObject obj) : android::util::AndroidException(obj) {}
+	
 	// Constructors
 	Settings_SettingNotFoundException::Settings_SettingNotFoundException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::util::AndroidException(
 			"android.provider.Settings$SettingNotFoundException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::provider

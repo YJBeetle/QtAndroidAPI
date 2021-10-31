@@ -5,20 +5,22 @@ namespace java::nio::channels::spi
 {
 	// Fields
 	
-	AbstractInterruptibleChannel::AbstractInterruptibleChannel(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AbstractInterruptibleChannel::AbstractInterruptibleChannel(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void AbstractInterruptibleChannel::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	jboolean AbstractInterruptibleChannel::isOpen()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isOpen",
 			"()Z"
 		);

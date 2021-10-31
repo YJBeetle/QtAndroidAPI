@@ -130,76 +130,78 @@ namespace android::mtp
 		);
 	}
 	
-	MtpEvent::MtpEvent(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MtpEvent::MtpEvent(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint MtpEvent::getDevicePropCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDevicePropCode",
 			"()I"
 		);
 	}
 	jint MtpEvent::getEventCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getEventCode",
 			"()I"
 		);
 	}
 	jint MtpEvent::getObjectFormatCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getObjectFormatCode",
 			"()I"
 		);
 	}
 	jint MtpEvent::getObjectHandle()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getObjectHandle",
 			"()I"
 		);
 	}
 	jint MtpEvent::getObjectPropCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getObjectPropCode",
 			"()I"
 		);
 	}
 	jint MtpEvent::getParameter1()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getParameter1",
 			"()I"
 		);
 	}
 	jint MtpEvent::getParameter2()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getParameter2",
 			"()I"
 		);
 	}
 	jint MtpEvent::getParameter3()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getParameter3",
 			"()I"
 		);
 	}
 	jint MtpEvent::getStorageId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getStorageId",
 			"()I"
 		);
 	}
 	jint MtpEvent::getTransactionId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTransactionId",
 			"()I"
 		);

@@ -11,7 +11,10 @@ namespace java::util::concurrent
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit RecursiveTask(const char *className, const char *sig, Ts...agv) : java::util::concurrent::ForkJoinTask(className, sig, std::forward<Ts>(agv)...) {}
 		RecursiveTask(QAndroidJniObject obj);
+		
 		// Constructors
 		RecursiveTask();
 		

@@ -4,7 +4,9 @@ namespace android::service::autofill
 {
 	// Fields
 	
-	Validators::Validators(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Validators::Validators(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -23,7 +25,7 @@ namespace android::service::autofill
 			"android.service.autofill.Validators",
 			"not",
 			"(Landroid/service/autofill/Validator;)Landroid/service/autofill/Validator;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Validators::_or(jarray arg0)

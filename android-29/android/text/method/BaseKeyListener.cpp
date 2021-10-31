@@ -6,58 +6,58 @@ namespace android::text::method
 {
 	// Fields
 	
-	BaseKeyListener::BaseKeyListener(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BaseKeyListener::BaseKeyListener(QAndroidJniObject obj) : android::text::method::MetaKeyKeyListener(obj) {}
+	
 	// Constructors
 	BaseKeyListener::BaseKeyListener()
-	{
-		__thiz = QAndroidJniObject(
+		: android::text::method::MetaKeyKeyListener(
 			"android.text.method.BaseKeyListener",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean BaseKeyListener::backspace(android::view::View arg0, __JniBaseClass arg1, jint arg2, android::view::KeyEvent arg3)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"backspace",
 			"(Landroid/view/View;Landroid/text/Editable;ILandroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	jboolean BaseKeyListener::forwardDelete(android::view::View arg0, __JniBaseClass arg1, jint arg2, android::view::KeyEvent arg3)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"forwardDelete",
 			"(Landroid/view/View;Landroid/text/Editable;ILandroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	jboolean BaseKeyListener::onKeyDown(android::view::View arg0, __JniBaseClass arg1, jint arg2, android::view::KeyEvent arg3)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onKeyDown",
 			"(Landroid/view/View;Landroid/text/Editable;ILandroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	jboolean BaseKeyListener::onKeyOther(android::view::View arg0, __JniBaseClass arg1, android::view::KeyEvent arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onKeyOther",
 			"(Landroid/view/View;Landroid/text/Editable;Landroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 } // namespace android::text::method

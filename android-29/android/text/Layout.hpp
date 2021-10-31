@@ -50,9 +50,11 @@ namespace android::text
 		static jint JUSTIFICATION_MODE_INTER_WORD();
 		static jint JUSTIFICATION_MODE_NONE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Layout(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Layout(QAndroidJniObject obj);
+		
 		// Constructors
-		Layout() = default;
 		
 		// Methods
 		static jfloat getDesiredWidth(jstring arg0, android::text::TextPaint arg1);

@@ -19,10 +19,12 @@ namespace android::media::tv
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TvInputService_HardwareSession(const char *className, const char *sig, Ts...agv) : android::media::tv::TvInputService_Session(className, sig, std::forward<Ts>(agv)...) {}
 		TvInputService_HardwareSession(QAndroidJniObject obj);
+		
 		// Constructors
 		TvInputService_HardwareSession(android::content::Context arg0);
-		TvInputService_HardwareSession() = default;
 		
 		// Methods
 		jstring getHardwareInputId();

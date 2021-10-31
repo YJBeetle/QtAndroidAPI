@@ -28,12 +28,14 @@ namespace android::text::style
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit LocaleSpan(const char *className, const char *sig, Ts...agv) : android::text::style::MetricAffectingSpan(className, sig, std::forward<Ts>(agv)...) {}
 		LocaleSpan(QAndroidJniObject obj);
+		
 		// Constructors
 		LocaleSpan(android::os::LocaleList arg0);
 		LocaleSpan(android::os::Parcel arg0);
 		LocaleSpan(java::util::Locale arg0);
-		LocaleSpan() = default;
 		
 		// Methods
 		jint describeContents();

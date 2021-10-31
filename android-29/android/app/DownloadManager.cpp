@@ -288,7 +288,9 @@ namespace android::app
 		);
 	}
 	
-	DownloadManager::DownloadManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DownloadManager::DownloadManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -298,7 +300,7 @@ namespace android::app
 			"android.app.DownloadManager",
 			"getMaxBytesOverMobile",
 			"(Landroid/content/Context;)Ljava/lang/Long;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject DownloadManager::getRecommendedMaxBytesOverMobile(android::content::Context arg0)
@@ -307,12 +309,12 @@ namespace android::app
 			"android.app.DownloadManager",
 			"getRecommendedMaxBytesOverMobile",
 			"(Landroid/content/Context;)Ljava/lang/Long;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jlong DownloadManager::addCompletedDownload(jstring arg0, jstring arg1, jboolean arg2, jstring arg3, jstring arg4, jlong arg5, jboolean arg6)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"addCompletedDownload",
 			"(Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;JZ)J",
 			arg0,
@@ -326,7 +328,7 @@ namespace android::app
 	}
 	jlong DownloadManager::addCompletedDownload(jstring arg0, jstring arg1, jboolean arg2, jstring arg3, jstring arg4, jlong arg5, jboolean arg6, android::net::Uri arg7, android::net::Uri arg8)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"addCompletedDownload",
 			"(Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;JZLandroid/net/Uri;Landroid/net/Uri;)J",
 			arg0,
@@ -336,21 +338,21 @@ namespace android::app
 			arg4,
 			arg5,
 			arg6,
-			arg7.__jniObject().object(),
-			arg8.__jniObject().object()
+			arg7.object(),
+			arg8.object()
 		);
 	}
 	jlong DownloadManager::enqueue(android::app::DownloadManager_Request arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"enqueue",
 			"(Landroid/app/DownloadManager$Request;)J",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring DownloadManager::getMimeTypeForDownloadedFile(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMimeTypeForDownloadedFile",
 			"(J)Ljava/lang/String;",
 			arg0
@@ -358,7 +360,7 @@ namespace android::app
 	}
 	QAndroidJniObject DownloadManager::getUriForDownloadedFile(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getUriForDownloadedFile",
 			"(J)Landroid/net/Uri;",
 			arg0
@@ -366,7 +368,7 @@ namespace android::app
 	}
 	QAndroidJniObject DownloadManager::openDownloadedFile(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"openDownloadedFile",
 			"(J)Landroid/os/ParcelFileDescriptor;",
 			arg0
@@ -374,15 +376,15 @@ namespace android::app
 	}
 	QAndroidJniObject DownloadManager::query(android::app::DownloadManager_Query arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"query",
 			"(Landroid/app/DownloadManager$Query;)Landroid/database/Cursor;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint DownloadManager::remove(jlongArray arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"remove",
 			"([J)I",
 			arg0

@@ -21,23 +21,23 @@ namespace android::nfc::cardemulation
 		).object<jstring>();
 	}
 	
-	OffHostApduService::OffHostApduService(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	OffHostApduService::OffHostApduService(QAndroidJniObject obj) : android::app::Service(obj) {}
+	
 	// Constructors
 	OffHostApduService::OffHostApduService()
-	{
-		__thiz = QAndroidJniObject(
+		: android::app::Service(
 			"android.nfc.cardemulation.OffHostApduService",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject OffHostApduService::onBind(android::content::Intent arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onBind",
 			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::nfc::cardemulation

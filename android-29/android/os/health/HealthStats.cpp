@@ -5,20 +5,22 @@ namespace android::os::health
 {
 	// Fields
 	
-	HealthStats::HealthStats(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	HealthStats::HealthStats(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jstring HealthStats::getDataType()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDataType",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jlong HealthStats::getMeasurement(jint arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getMeasurement",
 			"(I)J",
 			arg0
@@ -26,7 +28,7 @@ namespace android::os::health
 	}
 	jint HealthStats::getMeasurementKeyAt(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMeasurementKeyAt",
 			"(I)I",
 			arg0
@@ -34,14 +36,14 @@ namespace android::os::health
 	}
 	jint HealthStats::getMeasurementKeyCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMeasurementKeyCount",
 			"()I"
 		);
 	}
 	QAndroidJniObject HealthStats::getMeasurements(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMeasurements",
 			"(I)Ljava/util/Map;",
 			arg0
@@ -49,7 +51,7 @@ namespace android::os::health
 	}
 	jint HealthStats::getMeasurementsKeyAt(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMeasurementsKeyAt",
 			"(I)I",
 			arg0
@@ -57,14 +59,14 @@ namespace android::os::health
 	}
 	jint HealthStats::getMeasurementsKeyCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMeasurementsKeyCount",
 			"()I"
 		);
 	}
 	QAndroidJniObject HealthStats::getStats(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getStats",
 			"(I)Ljava/util/Map;",
 			arg0
@@ -72,7 +74,7 @@ namespace android::os::health
 	}
 	jint HealthStats::getStatsKeyAt(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getStatsKeyAt",
 			"(I)I",
 			arg0
@@ -80,14 +82,14 @@ namespace android::os::health
 	}
 	jint HealthStats::getStatsKeyCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getStatsKeyCount",
 			"()I"
 		);
 	}
 	QAndroidJniObject HealthStats::getTimer(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTimer",
 			"(I)Landroid/os/health/TimerStat;",
 			arg0
@@ -95,7 +97,7 @@ namespace android::os::health
 	}
 	jint HealthStats::getTimerCount(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTimerCount",
 			"(I)I",
 			arg0
@@ -103,7 +105,7 @@ namespace android::os::health
 	}
 	jint HealthStats::getTimerKeyAt(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTimerKeyAt",
 			"(I)I",
 			arg0
@@ -111,14 +113,14 @@ namespace android::os::health
 	}
 	jint HealthStats::getTimerKeyCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTimerKeyCount",
 			"()I"
 		);
 	}
 	jlong HealthStats::getTimerTime(jint arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getTimerTime",
 			"(I)J",
 			arg0
@@ -126,7 +128,7 @@ namespace android::os::health
 	}
 	QAndroidJniObject HealthStats::getTimers(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTimers",
 			"(I)Ljava/util/Map;",
 			arg0
@@ -134,7 +136,7 @@ namespace android::os::health
 	}
 	jint HealthStats::getTimersKeyAt(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTimersKeyAt",
 			"(I)I",
 			arg0
@@ -142,14 +144,14 @@ namespace android::os::health
 	}
 	jint HealthStats::getTimersKeyCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTimersKeyCount",
 			"()I"
 		);
 	}
 	jboolean HealthStats::hasMeasurement(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasMeasurement",
 			"(I)Z",
 			arg0
@@ -157,7 +159,7 @@ namespace android::os::health
 	}
 	jboolean HealthStats::hasMeasurements(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasMeasurements",
 			"(I)Z",
 			arg0
@@ -165,7 +167,7 @@ namespace android::os::health
 	}
 	jboolean HealthStats::hasStats(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasStats",
 			"(I)Z",
 			arg0
@@ -173,7 +175,7 @@ namespace android::os::health
 	}
 	jboolean HealthStats::hasTimer(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasTimer",
 			"(I)Z",
 			arg0
@@ -181,7 +183,7 @@ namespace android::os::health
 	}
 	jboolean HealthStats::hasTimers(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasTimers",
 			"(I)Z",
 			arg0

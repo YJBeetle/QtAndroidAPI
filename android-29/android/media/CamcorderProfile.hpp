@@ -46,9 +46,11 @@ namespace android::media
 		jint videoFrameRate();
 		jint videoFrameWidth();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CamcorderProfile(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		CamcorderProfile(QAndroidJniObject obj);
+		
 		// Constructors
-		CamcorderProfile() = default;
 		
 		// Methods
 		static QAndroidJniObject get(jint arg0);

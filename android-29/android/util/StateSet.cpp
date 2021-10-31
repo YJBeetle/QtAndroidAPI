@@ -20,7 +20,9 @@ namespace android::util
 		).object<jintArray>();
 	}
 	
-	StateSet::StateSet(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	StateSet::StateSet(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

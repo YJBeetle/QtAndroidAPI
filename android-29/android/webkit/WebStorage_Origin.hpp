@@ -10,9 +10,11 @@ namespace android::webkit
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit WebStorage_Origin(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		WebStorage_Origin(QAndroidJniObject obj);
+		
 		// Constructors
-		WebStorage_Origin() = default;
 		
 		// Methods
 		jstring getOrigin();

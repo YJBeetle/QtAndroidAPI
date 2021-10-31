@@ -6,102 +6,96 @@ namespace org::xml::sax
 {
 	// Fields
 	
-	InputSource::InputSource(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	InputSource::InputSource(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	InputSource::InputSource()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"org.xml.sax.InputSource",
 			"()V"
-		);
-	}
+		) {}
 	InputSource::InputSource(java::io::InputStream arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"org.xml.sax.InputSource",
 			"(Ljava/io/InputStream;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	InputSource::InputSource(java::io::Reader arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"org.xml.sax.InputSource",
 			"(Ljava/io/Reader;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	InputSource::InputSource(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"org.xml.sax.InputSource",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject InputSource::getByteStream()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getByteStream",
 			"()Ljava/io/InputStream;"
 		);
 	}
 	QAndroidJniObject InputSource::getCharacterStream()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCharacterStream",
 			"()Ljava/io/Reader;"
 		);
 	}
 	jstring InputSource::getEncoding()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEncoding",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring InputSource::getPublicId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPublicId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring InputSource::getSystemId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSystemId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jboolean InputSource::isEmpty()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
 	void InputSource::setByteStream(java::io::InputStream arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setByteStream",
 			"(Ljava/io/InputStream;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void InputSource::setCharacterStream(java::io::Reader arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCharacterStream",
 			"(Ljava/io/Reader;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void InputSource::setEncoding(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setEncoding",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -109,7 +103,7 @@ namespace org::xml::sax
 	}
 	void InputSource::setPublicId(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPublicId",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -117,7 +111,7 @@ namespace org::xml::sax
 	}
 	void InputSource::setSystemId(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSystemId",
 			"(Ljava/lang/String;)V",
 			arg0

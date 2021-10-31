@@ -10,62 +10,64 @@ namespace java::net
 {
 	// Fields
 	
-	JarURLConnection::JarURLConnection(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	JarURLConnection::JarURLConnection(QAndroidJniObject obj) : java::net::URLConnection(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject JarURLConnection::getAttributes()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAttributes",
 			"()Ljava/util/jar/Attributes;"
 		);
 	}
 	jarray JarURLConnection::getCertificates()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCertificates",
 			"()[Ljava/security/cert/Certificate;"
 		).object<jarray>();
 	}
 	jstring JarURLConnection::getEntryName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEntryName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject JarURLConnection::getJarEntry()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getJarEntry",
 			"()Ljava/util/jar/JarEntry;"
 		);
 	}
 	QAndroidJniObject JarURLConnection::getJarFile()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getJarFile",
 			"()Ljava/util/jar/JarFile;"
 		);
 	}
 	QAndroidJniObject JarURLConnection::getJarFileURL()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getJarFileURL",
 			"()Ljava/net/URL;"
 		);
 	}
 	QAndroidJniObject JarURLConnection::getMainAttributes()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMainAttributes",
 			"()Ljava/util/jar/Attributes;"
 		);
 	}
 	QAndroidJniObject JarURLConnection::getManifest()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getManifest",
 			"()Ljava/util/jar/Manifest;"
 		);

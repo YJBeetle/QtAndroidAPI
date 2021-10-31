@@ -4,7 +4,9 @@ namespace java::lang::reflect
 {
 	// Fields
 	
-	AccessibleObject::AccessibleObject(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AccessibleObject::AccessibleObject(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -20,7 +22,7 @@ namespace java::lang::reflect
 	}
 	jboolean AccessibleObject::canAccess(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"canAccess",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -28,7 +30,7 @@ namespace java::lang::reflect
 	}
 	QAndroidJniObject AccessibleObject::getAnnotation(jclass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAnnotation",
 			"(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;",
 			arg0
@@ -36,14 +38,14 @@ namespace java::lang::reflect
 	}
 	jarray AccessibleObject::getAnnotations()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAnnotations",
 			"()[Ljava/lang/annotation/Annotation;"
 		).object<jarray>();
 	}
 	jarray AccessibleObject::getAnnotationsByType(jclass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAnnotationsByType",
 			"(Ljava/lang/Class;)[Ljava/lang/annotation/Annotation;",
 			arg0
@@ -51,7 +53,7 @@ namespace java::lang::reflect
 	}
 	QAndroidJniObject AccessibleObject::getDeclaredAnnotation(jclass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDeclaredAnnotation",
 			"(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;",
 			arg0
@@ -59,14 +61,14 @@ namespace java::lang::reflect
 	}
 	jarray AccessibleObject::getDeclaredAnnotations()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDeclaredAnnotations",
 			"()[Ljava/lang/annotation/Annotation;"
 		).object<jarray>();
 	}
 	jarray AccessibleObject::getDeclaredAnnotationsByType(jclass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDeclaredAnnotationsByType",
 			"(Ljava/lang/Class;)[Ljava/lang/annotation/Annotation;",
 			arg0
@@ -74,14 +76,14 @@ namespace java::lang::reflect
 	}
 	jboolean AccessibleObject::isAccessible()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isAccessible",
 			"()Z"
 		);
 	}
 	jboolean AccessibleObject::isAnnotationPresent(jclass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isAnnotationPresent",
 			"(Ljava/lang/Class;)Z",
 			arg0
@@ -89,7 +91,7 @@ namespace java::lang::reflect
 	}
 	void AccessibleObject::setAccessible(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAccessible",
 			"(Z)V",
 			arg0
@@ -97,7 +99,7 @@ namespace java::lang::reflect
 	}
 	jboolean AccessibleObject::trySetAccessible()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"trySetAccessible",
 			"()Z"
 		);

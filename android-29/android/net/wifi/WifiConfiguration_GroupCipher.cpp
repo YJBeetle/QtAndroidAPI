@@ -55,7 +55,9 @@ namespace android::net::wifi
 		).object<jstring>();
 	}
 	
-	WifiConfiguration_GroupCipher::WifiConfiguration_GroupCipher(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WifiConfiguration_GroupCipher::WifiConfiguration_GroupCipher(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

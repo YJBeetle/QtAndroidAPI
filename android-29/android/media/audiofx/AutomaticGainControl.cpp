@@ -4,7 +4,9 @@ namespace android::media::audiofx
 {
 	// Fields
 	
-	AutomaticGainControl::AutomaticGainControl(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AutomaticGainControl::AutomaticGainControl(QAndroidJniObject obj) : android::media::audiofx::AudioEffect(obj) {}
+	
 	// Constructors
 	
 	// Methods

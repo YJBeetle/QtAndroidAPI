@@ -23,11 +23,13 @@ namespace android::view::animation
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AnimationSet(const char *className, const char *sig, Ts...agv) : android::view::animation::Animation(className, sig, std::forward<Ts>(agv)...) {}
 		AnimationSet(QAndroidJniObject obj);
+		
 		// Constructors
 		AnimationSet(jboolean arg0);
 		AnimationSet(android::content::Context arg0, __JniBaseClass arg1);
-		AnimationSet() = default;
 		
 		// Methods
 		void addAnimation(android::view::animation::Animation arg0);

@@ -30,10 +30,12 @@ namespace android::net::sip
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SipAudioCall(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SipAudioCall(QAndroidJniObject obj);
+		
 		// Constructors
 		SipAudioCall(android::content::Context arg0, android::net::sip::SipProfile arg1);
-		SipAudioCall() = default;
 		
 		// Methods
 		void answerCall(jint arg0);

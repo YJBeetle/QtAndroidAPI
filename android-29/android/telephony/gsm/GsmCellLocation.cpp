@@ -5,28 +5,26 @@ namespace android::telephony::gsm
 {
 	// Fields
 	
-	GsmCellLocation::GsmCellLocation(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	GsmCellLocation::GsmCellLocation(QAndroidJniObject obj) : android::telephony::CellLocation(obj) {}
+	
 	// Constructors
 	GsmCellLocation::GsmCellLocation()
-	{
-		__thiz = QAndroidJniObject(
+		: android::telephony::CellLocation(
 			"android.telephony.gsm.GsmCellLocation",
 			"()V"
-		);
-	}
+		) {}
 	GsmCellLocation::GsmCellLocation(android::os::Bundle arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::telephony::CellLocation(
 			"android.telephony.gsm.GsmCellLocation",
 			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jboolean GsmCellLocation::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -34,43 +32,43 @@ namespace android::telephony::gsm
 	}
 	void GsmCellLocation::fillInNotifierBundle(android::os::Bundle arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"fillInNotifierBundle",
 			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint GsmCellLocation::getCid()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCid",
 			"()I"
 		);
 	}
 	jint GsmCellLocation::getLac()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLac",
 			"()I"
 		);
 	}
 	jint GsmCellLocation::getPsc()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPsc",
 			"()I"
 		);
 	}
 	jint GsmCellLocation::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	void GsmCellLocation::setLacAndCid(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLacAndCid",
 			"(II)V",
 			arg0,
@@ -79,14 +77,14 @@ namespace android::telephony::gsm
 	}
 	void GsmCellLocation::setStateInvalid()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setStateInvalid",
 			"()V"
 		);
 	}
 	jstring GsmCellLocation::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

@@ -50,9 +50,11 @@ namespace android::speech
 		static jint RESULT_NO_MATCH();
 		static jint RESULT_SERVER_ERROR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit RecognizerIntent(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		RecognizerIntent(QAndroidJniObject obj);
+		
 		// Constructors
-		RecognizerIntent() = default;
 		
 		// Methods
 		static QAndroidJniObject getVoiceDetailsIntent(android::content::Context arg0);

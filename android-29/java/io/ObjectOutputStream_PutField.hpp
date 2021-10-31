@@ -10,7 +10,10 @@ namespace java::io
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ObjectOutputStream_PutField(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ObjectOutputStream_PutField(QAndroidJniObject obj);
+		
 		// Constructors
 		ObjectOutputStream_PutField();
 		

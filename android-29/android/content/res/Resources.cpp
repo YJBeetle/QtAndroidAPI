@@ -24,18 +24,18 @@ namespace android::content::res
 		);
 	}
 	
-	Resources::Resources(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Resources::Resources(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Resources::Resources(android::content::res::AssetManager arg0, android::util::DisplayMetrics arg1, android::content::res::Configuration arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.content.res.Resources",
 			"(Landroid/content/res/AssetManager;Landroid/util/DisplayMetrics;Landroid/content/res/Configuration;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		) {}
 	
 	// Methods
 	jint Resources::getAttributeSetSourceResId(__JniBaseClass arg0)
@@ -44,7 +44,7 @@ namespace android::content::res
 			"android.content.res.Resources",
 			"getAttributeSetSourceResId",
 			"(Landroid/util/AttributeSet;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Resources::getSystem()
@@ -57,21 +57,21 @@ namespace android::content::res
 	}
 	void Resources::finishPreloading()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"finishPreloading",
 			"()V"
 		);
 	}
 	void Resources::flushLayoutCache()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"flushLayoutCache",
 			"()V"
 		);
 	}
 	QAndroidJniObject Resources::getAnimation(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAnimation",
 			"(I)Landroid/content/res/XmlResourceParser;",
 			arg0
@@ -79,14 +79,14 @@ namespace android::content::res
 	}
 	QAndroidJniObject Resources::getAssets()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAssets",
 			"()Landroid/content/res/AssetManager;"
 		);
 	}
 	jboolean Resources::getBoolean(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getBoolean",
 			"(I)Z",
 			arg0
@@ -94,7 +94,7 @@ namespace android::content::res
 	}
 	jint Resources::getColor(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getColor",
 			"(I)I",
 			arg0
@@ -102,16 +102,16 @@ namespace android::content::res
 	}
 	jint Resources::getColor(jint arg0, android::content::res::Resources_Theme arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getColor",
 			"(ILandroid/content/res/Resources$Theme;)I",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject Resources::getColorStateList(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getColorStateList",
 			"(I)Landroid/content/res/ColorStateList;",
 			arg0
@@ -119,23 +119,23 @@ namespace android::content::res
 	}
 	QAndroidJniObject Resources::getColorStateList(jint arg0, android::content::res::Resources_Theme arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getColorStateList",
 			"(ILandroid/content/res/Resources$Theme;)Landroid/content/res/ColorStateList;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject Resources::getConfiguration()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getConfiguration",
 			"()Landroid/content/res/Configuration;"
 		);
 	}
 	jfloat Resources::getDimension(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getDimension",
 			"(I)F",
 			arg0
@@ -143,7 +143,7 @@ namespace android::content::res
 	}
 	jint Resources::getDimensionPixelOffset(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDimensionPixelOffset",
 			"(I)I",
 			arg0
@@ -151,7 +151,7 @@ namespace android::content::res
 	}
 	jint Resources::getDimensionPixelSize(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDimensionPixelSize",
 			"(I)I",
 			arg0
@@ -159,14 +159,14 @@ namespace android::content::res
 	}
 	QAndroidJniObject Resources::getDisplayMetrics()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDisplayMetrics",
 			"()Landroid/util/DisplayMetrics;"
 		);
 	}
 	QAndroidJniObject Resources::getDrawable(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDrawable",
 			"(I)Landroid/graphics/drawable/Drawable;",
 			arg0
@@ -174,16 +174,16 @@ namespace android::content::res
 	}
 	QAndroidJniObject Resources::getDrawable(jint arg0, android::content::res::Resources_Theme arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDrawable",
 			"(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject Resources::getDrawableForDensity(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDrawableForDensity",
 			"(II)Landroid/graphics/drawable/Drawable;",
 			arg0,
@@ -192,17 +192,17 @@ namespace android::content::res
 	}
 	QAndroidJniObject Resources::getDrawableForDensity(jint arg0, jint arg1, android::content::res::Resources_Theme arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDrawableForDensity",
 			"(IILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	jfloat Resources::getFloat(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getFloat",
 			"(I)F",
 			arg0
@@ -210,7 +210,7 @@ namespace android::content::res
 	}
 	QAndroidJniObject Resources::getFont(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFont",
 			"(I)Landroid/graphics/Typeface;",
 			arg0
@@ -218,7 +218,7 @@ namespace android::content::res
 	}
 	jfloat Resources::getFraction(jint arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getFraction",
 			"(III)F",
 			arg0,
@@ -228,7 +228,7 @@ namespace android::content::res
 	}
 	jint Resources::getIdentifier(jstring arg0, jstring arg1, jstring arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getIdentifier",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I",
 			arg0,
@@ -238,7 +238,7 @@ namespace android::content::res
 	}
 	jintArray Resources::getIntArray(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getIntArray",
 			"(I)[I",
 			arg0
@@ -246,7 +246,7 @@ namespace android::content::res
 	}
 	jint Resources::getInteger(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getInteger",
 			"(I)I",
 			arg0
@@ -254,7 +254,7 @@ namespace android::content::res
 	}
 	QAndroidJniObject Resources::getLayout(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLayout",
 			"(I)Landroid/content/res/XmlResourceParser;",
 			arg0
@@ -262,7 +262,7 @@ namespace android::content::res
 	}
 	QAndroidJniObject Resources::getMovie(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMovie",
 			"(I)Landroid/graphics/Movie;",
 			arg0
@@ -270,7 +270,7 @@ namespace android::content::res
 	}
 	jstring Resources::getQuantityString(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getQuantityString",
 			"(II)Ljava/lang/String;",
 			arg0,
@@ -279,7 +279,7 @@ namespace android::content::res
 	}
 	jstring Resources::getQuantityString(jint arg0, jint arg1, jobjectArray arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getQuantityString",
 			"(II[Ljava/lang/Object;)Ljava/lang/String;",
 			arg0,
@@ -289,7 +289,7 @@ namespace android::content::res
 	}
 	jstring Resources::getQuantityText(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getQuantityText",
 			"(II)Ljava/lang/CharSequence;",
 			arg0,
@@ -298,7 +298,7 @@ namespace android::content::res
 	}
 	jstring Resources::getResourceEntryName(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getResourceEntryName",
 			"(I)Ljava/lang/String;",
 			arg0
@@ -306,7 +306,7 @@ namespace android::content::res
 	}
 	jstring Resources::getResourceName(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getResourceName",
 			"(I)Ljava/lang/String;",
 			arg0
@@ -314,7 +314,7 @@ namespace android::content::res
 	}
 	jstring Resources::getResourcePackageName(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getResourcePackageName",
 			"(I)Ljava/lang/String;",
 			arg0
@@ -322,7 +322,7 @@ namespace android::content::res
 	}
 	jstring Resources::getResourceTypeName(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getResourceTypeName",
 			"(I)Ljava/lang/String;",
 			arg0
@@ -330,7 +330,7 @@ namespace android::content::res
 	}
 	jstring Resources::getString(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getString",
 			"(I)Ljava/lang/String;",
 			arg0
@@ -338,7 +338,7 @@ namespace android::content::res
 	}
 	jstring Resources::getString(jint arg0, jobjectArray arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getString",
 			"(I[Ljava/lang/Object;)Ljava/lang/String;",
 			arg0,
@@ -347,7 +347,7 @@ namespace android::content::res
 	}
 	jarray Resources::getStringArray(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getStringArray",
 			"(I)[Ljava/lang/String;",
 			arg0
@@ -355,7 +355,7 @@ namespace android::content::res
 	}
 	jstring Resources::getText(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getText",
 			"(I)Ljava/lang/CharSequence;",
 			arg0
@@ -363,7 +363,7 @@ namespace android::content::res
 	}
 	jstring Resources::getText(jint arg0, jstring arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getText",
 			"(ILjava/lang/CharSequence;)Ljava/lang/CharSequence;",
 			arg0,
@@ -372,7 +372,7 @@ namespace android::content::res
 	}
 	jarray Resources::getTextArray(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTextArray",
 			"(I)[Ljava/lang/CharSequence;",
 			arg0
@@ -380,38 +380,38 @@ namespace android::content::res
 	}
 	void Resources::getValue(jint arg0, android::util::TypedValue arg1, jboolean arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"getValue",
 			"(ILandroid/util/TypedValue;Z)V",
 			arg0,
-			arg1.__jniObject().object(),
+			arg1.object(),
 			arg2
 		);
 	}
 	void Resources::getValue(jstring arg0, android::util::TypedValue arg1, jboolean arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"getValue",
 			"(Ljava/lang/String;Landroid/util/TypedValue;Z)V",
 			arg0,
-			arg1.__jniObject().object(),
+			arg1.object(),
 			arg2
 		);
 	}
 	void Resources::getValueForDensity(jint arg0, jint arg1, android::util::TypedValue arg2, jboolean arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"getValueForDensity",
 			"(IILandroid/util/TypedValue;Z)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
+			arg2.object(),
 			arg3
 		);
 	}
 	QAndroidJniObject Resources::getXml(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getXml",
 			"(I)Landroid/content/res/XmlResourceParser;",
 			arg0
@@ -419,23 +419,23 @@ namespace android::content::res
 	}
 	QAndroidJniObject Resources::newTheme()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newTheme",
 			"()Landroid/content/res/Resources$Theme;"
 		);
 	}
 	QAndroidJniObject Resources::obtainAttributes(__JniBaseClass arg0, jintArray arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"obtainAttributes",
 			"(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	QAndroidJniObject Resources::obtainTypedArray(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"obtainTypedArray",
 			"(I)Landroid/content/res/TypedArray;",
 			arg0
@@ -443,7 +443,7 @@ namespace android::content::res
 	}
 	QAndroidJniObject Resources::openRawResource(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"openRawResource",
 			"(I)Ljava/io/InputStream;",
 			arg0
@@ -451,16 +451,16 @@ namespace android::content::res
 	}
 	QAndroidJniObject Resources::openRawResource(jint arg0, android::util::TypedValue arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"openRawResource",
 			"(ILandroid/util/TypedValue;)Ljava/io/InputStream;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject Resources::openRawResourceFd(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"openRawResourceFd",
 			"(I)Landroid/content/res/AssetFileDescriptor;",
 			arg0
@@ -468,30 +468,30 @@ namespace android::content::res
 	}
 	void Resources::parseBundleExtra(jstring arg0, __JniBaseClass arg1, android::os::Bundle arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"parseBundleExtra",
 			"(Ljava/lang/String;Landroid/util/AttributeSet;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	void Resources::parseBundleExtras(__JniBaseClass arg0, android::os::Bundle arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"parseBundleExtras",
 			"(Landroid/content/res/XmlResourceParser;Landroid/os/Bundle;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void Resources::updateConfiguration(android::content::res::Configuration arg0, android::util::DisplayMetrics arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"updateConfiguration",
 			"(Landroid/content/res/Configuration;Landroid/util/DisplayMetrics;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 } // namespace android::content::res

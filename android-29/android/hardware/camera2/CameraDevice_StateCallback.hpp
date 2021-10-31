@@ -19,7 +19,10 @@ namespace android::hardware::camera2
 		static jint ERROR_CAMERA_SERVICE();
 		static jint ERROR_MAX_CAMERAS_IN_USE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CameraDevice_StateCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		CameraDevice_StateCallback(QAndroidJniObject obj);
+		
 		// Constructors
 		CameraDevice_StateCallback();
 		

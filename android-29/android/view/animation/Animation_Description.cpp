@@ -5,18 +5,20 @@ namespace android::view::animation
 	// Fields
 	jint Animation_Description::type()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"type"
 		);
 	}
 	jfloat Animation_Description::value()
 	{
-		return __thiz.getField<jfloat>(
+		return getField<jfloat>(
 			"value"
 		);
 	}
 	
-	Animation_Description::Animation_Description(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Animation_Description::Animation_Description(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

@@ -27,10 +27,12 @@ namespace android::accounts
 		// Fields
 		static jstring KEY_CUSTOM_TOKEN_EXPIRY();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AbstractAccountAuthenticator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AbstractAccountAuthenticator(QAndroidJniObject obj);
+		
 		// Constructors
 		AbstractAccountAuthenticator(android::content::Context arg0);
-		AbstractAccountAuthenticator() = default;
 		
 		// Methods
 		QAndroidJniObject addAccount(android::accounts::AccountAuthenticatorResponse arg0, jstring arg1, jstring arg2, jarray arg3, android::os::Bundle arg4);

@@ -5,28 +5,30 @@ namespace java::security::cert
 {
 	// Fields
 	
-	CRL::CRL(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CRL::CRL(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jstring CRL::getType()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jboolean CRL::isRevoked(java::security::cert::Certificate arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isRevoked",
 			"(Ljava/security/cert/Certificate;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring CRL::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

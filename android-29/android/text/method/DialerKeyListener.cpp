@@ -13,15 +13,15 @@ namespace android::text::method
 		).object<jcharArray>();
 	}
 	
-	DialerKeyListener::DialerKeyListener(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DialerKeyListener::DialerKeyListener(QAndroidJniObject obj) : android::text::method::NumberKeyListener(obj) {}
+	
 	// Constructors
 	DialerKeyListener::DialerKeyListener()
-	{
-		__thiz = QAndroidJniObject(
+		: android::text::method::NumberKeyListener(
 			"android.text.method.DialerKeyListener",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject DialerKeyListener::getInstance()
@@ -34,7 +34,7 @@ namespace android::text::method
 	}
 	jint DialerKeyListener::getInputType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getInputType",
 			"()I"
 		);

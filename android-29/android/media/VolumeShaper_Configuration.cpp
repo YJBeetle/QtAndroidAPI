@@ -73,7 +73,9 @@ namespace android::media
 		);
 	}
 	
-	VolumeShaper_Configuration::VolumeShaper_Configuration(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	VolumeShaper_Configuration::VolumeShaper_Configuration(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -87,14 +89,14 @@ namespace android::media
 	}
 	jint VolumeShaper_Configuration::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean VolumeShaper_Configuration::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -102,52 +104,52 @@ namespace android::media
 	}
 	jlong VolumeShaper_Configuration::getDuration()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getDuration",
 			"()J"
 		);
 	}
 	jint VolumeShaper_Configuration::getInterpolatorType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getInterpolatorType",
 			"()I"
 		);
 	}
 	jfloatArray VolumeShaper_Configuration::getTimes()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTimes",
 			"()[F"
 		).object<jfloatArray>();
 	}
 	jfloatArray VolumeShaper_Configuration::getVolumes()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getVolumes",
 			"()[F"
 		).object<jfloatArray>();
 	}
 	jint VolumeShaper_Configuration::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring VolumeShaper_Configuration::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void VolumeShaper_Configuration::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

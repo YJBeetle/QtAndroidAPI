@@ -4,23 +4,21 @@ namespace java::net
 {
 	// Fields
 	
-	BindException::BindException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BindException::BindException(QAndroidJniObject obj) : java::net::SocketException(obj) {}
+	
 	// Constructors
 	BindException::BindException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::net::SocketException(
 			"java.net.BindException",
 			"()V"
-		);
-	}
+		) {}
 	BindException::BindException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::net::SocketException(
 			"java.net.BindException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::net

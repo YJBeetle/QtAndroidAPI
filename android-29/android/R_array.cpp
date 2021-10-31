@@ -39,15 +39,15 @@ namespace android
 		);
 	}
 	
-	R_array::R_array(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	R_array::R_array(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	R_array::R_array()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.R$array",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android

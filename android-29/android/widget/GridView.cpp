@@ -46,167 +46,161 @@ namespace android::widget
 		);
 	}
 	
-	GridView::GridView(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	GridView::GridView(QAndroidJniObject obj) : android::widget::AbsListView(obj) {}
+	
 	// Constructors
 	GridView::GridView(android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::AbsListView(
 			"android.widget.GridView",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	GridView::GridView(android::content::Context arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::AbsListView(
 			"android.widget.GridView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	GridView::GridView(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::AbsListView(
 			"android.widget.GridView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
-		);
-	}
+		) {}
 	GridView::GridView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::AbsListView(
 			"android.widget.GridView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring GridView::getAccessibilityClassName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	QAndroidJniObject GridView::getAdapter()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAdapter",
 			"()Landroid/widget/ListAdapter;"
 		);
 	}
 	jint GridView::getColumnWidth()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getColumnWidth",
 			"()I"
 		);
 	}
 	jint GridView::getGravity()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getGravity",
 			"()I"
 		);
 	}
 	jint GridView::getHorizontalSpacing()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getHorizontalSpacing",
 			"()I"
 		);
 	}
 	jint GridView::getNumColumns()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getNumColumns",
 			"()I"
 		);
 	}
 	jint GridView::getRequestedColumnWidth()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRequestedColumnWidth",
 			"()I"
 		);
 	}
 	jint GridView::getRequestedHorizontalSpacing()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRequestedHorizontalSpacing",
 			"()I"
 		);
 	}
 	jint GridView::getStretchMode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getStretchMode",
 			"()I"
 		);
 	}
 	jint GridView::getVerticalSpacing()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getVerticalSpacing",
 			"()I"
 		);
 	}
 	void GridView::onInitializeAccessibilityNodeInfoForItem(android::view::View arg0, jint arg1, android::view::accessibility::AccessibilityNodeInfo arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onInitializeAccessibilityNodeInfoForItem",
 			"(Landroid/view/View;ILandroid/view/accessibility/AccessibilityNodeInfo;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	jboolean GridView::onKeyDown(jint arg0, android::view::KeyEvent arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onKeyDown",
 			"(ILandroid/view/KeyEvent;)Z",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jboolean GridView::onKeyMultiple(jint arg0, jint arg1, android::view::KeyEvent arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onKeyMultiple",
 			"(IILandroid/view/KeyEvent;)Z",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	jboolean GridView::onKeyUp(jint arg0, android::view::KeyEvent arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onKeyUp",
 			"(ILandroid/view/KeyEvent;)Z",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void GridView::setAdapter(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAdapter",
 			"(Landroid/widget/Adapter;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void GridView::setColumnWidth(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setColumnWidth",
 			"(I)V",
 			arg0
@@ -214,7 +208,7 @@ namespace android::widget
 	}
 	void GridView::setGravity(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setGravity",
 			"(I)V",
 			arg0
@@ -222,7 +216,7 @@ namespace android::widget
 	}
 	void GridView::setHorizontalSpacing(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setHorizontalSpacing",
 			"(I)V",
 			arg0
@@ -230,7 +224,7 @@ namespace android::widget
 	}
 	void GridView::setNumColumns(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setNumColumns",
 			"(I)V",
 			arg0
@@ -238,15 +232,15 @@ namespace android::widget
 	}
 	void GridView::setRemoteViewsAdapter(android::content::Intent arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setRemoteViewsAdapter",
 			"(Landroid/content/Intent;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void GridView::setSelection(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSelection",
 			"(I)V",
 			arg0
@@ -254,7 +248,7 @@ namespace android::widget
 	}
 	void GridView::setStretchMode(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setStretchMode",
 			"(I)V",
 			arg0
@@ -262,7 +256,7 @@ namespace android::widget
 	}
 	void GridView::setVerticalSpacing(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setVerticalSpacing",
 			"(I)V",
 			arg0
@@ -270,7 +264,7 @@ namespace android::widget
 	}
 	void GridView::smoothScrollByOffset(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"smoothScrollByOffset",
 			"(I)V",
 			arg0
@@ -278,7 +272,7 @@ namespace android::widget
 	}
 	void GridView::smoothScrollToPosition(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"smoothScrollToPosition",
 			"(I)V",
 			arg0

@@ -20,10 +20,12 @@ namespace android::widget
 		static jint LENGTH_LONG();
 		static jint LENGTH_SHORT();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Toast(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Toast(QAndroidJniObject obj);
+		
 		// Constructors
 		Toast(android::content::Context arg0);
-		Toast() = default;
 		
 		// Methods
 		static QAndroidJniObject makeText(android::content::Context arg0, jint arg1, jint arg2);

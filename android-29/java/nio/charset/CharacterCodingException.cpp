@@ -4,15 +4,15 @@ namespace java::nio::charset
 {
 	// Fields
 	
-	CharacterCodingException::CharacterCodingException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CharacterCodingException::CharacterCodingException(QAndroidJniObject obj) : java::io::IOException(obj) {}
+	
 	// Constructors
 	CharacterCodingException::CharacterCodingException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::IOException(
 			"java.nio.charset.CharacterCodingException",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::nio::charset

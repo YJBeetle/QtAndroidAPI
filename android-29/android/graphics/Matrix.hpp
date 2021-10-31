@@ -27,7 +27,10 @@ namespace android::graphics
 		static jint MTRANS_X();
 		static jint MTRANS_Y();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Matrix(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Matrix(QAndroidJniObject obj);
+		
 		// Constructors
 		Matrix();
 		Matrix(android::graphics::Matrix &arg0);

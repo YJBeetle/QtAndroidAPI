@@ -48,9 +48,11 @@ namespace android::content::pm
 		static jint DISABLED_REASON_VERSION_LOWER();
 		static jstring SHORTCUT_CATEGORY_CONVERSATION();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ShortcutInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ShortcutInfo(QAndroidJniObject obj);
+		
 		// Constructors
-		ShortcutInfo() = default;
 		
 		// Methods
 		jint describeContents();

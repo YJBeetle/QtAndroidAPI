@@ -7,16 +7,16 @@ namespace android::app::backup
 {
 	// Fields
 	
-	BackupManager::BackupManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BackupManager::BackupManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	BackupManager::BackupManager(android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.app.backup.BackupManager",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	void BackupManager::dataChanged(jstring arg0)
@@ -30,14 +30,14 @@ namespace android::app::backup
 	}
 	void BackupManager::dataChanged()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"dataChanged",
 			"()V"
 		);
 	}
 	QAndroidJniObject BackupManager::getUserForAncestralSerialNumber(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getUserForAncestralSerialNumber",
 			"(J)Landroid/os/UserHandle;",
 			arg0
@@ -45,10 +45,10 @@ namespace android::app::backup
 	}
 	jint BackupManager::requestRestore(android::app::backup::RestoreObserver arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"requestRestore",
 			"(Landroid/app/backup/RestoreObserver;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::app::backup

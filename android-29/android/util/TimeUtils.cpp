@@ -5,7 +5,9 @@ namespace android::util
 {
 	// Fields
 	
-	TimeUtils::TimeUtils(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TimeUtils::TimeUtils(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

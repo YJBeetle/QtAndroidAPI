@@ -32,9 +32,11 @@ namespace android::app
 		static jint RTC();
 		static jint RTC_WAKEUP();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AlarmManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AlarmManager(QAndroidJniObject obj);
+		
 		// Constructors
-		AlarmManager() = default;
 		
 		// Methods
 		void cancel(__JniBaseClass arg0);

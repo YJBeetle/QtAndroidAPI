@@ -34,7 +34,10 @@ namespace javax::xml::datatype
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Duration(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Duration(QAndroidJniObject obj);
+		
 		// Constructors
 		Duration();
 		

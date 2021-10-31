@@ -41,7 +41,10 @@ namespace android::view
 		static jint TOP();
 		static jint VERTICAL_GRAVITY_MASK();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Gravity(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Gravity(QAndroidJniObject obj);
+		
 		// Constructors
 		Gravity();
 		

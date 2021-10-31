@@ -26,7 +26,10 @@ namespace android::app
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Notification_CarExtender(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Notification_CarExtender(QAndroidJniObject obj);
+		
 		// Constructors
 		Notification_CarExtender();
 		Notification_CarExtender(android::app::Notification arg0);

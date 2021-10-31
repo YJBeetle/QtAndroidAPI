@@ -96,41 +96,43 @@ namespace android::media::tv
 		);
 	}
 	
-	TvInputInfo::TvInputInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TvInputInfo::TvInputInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jboolean TvInputInfo::canRecord()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"canRecord",
 			"()Z"
 		);
 	}
 	QAndroidJniObject TvInputInfo::createSettingsIntent()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"createSettingsIntent",
 			"()Landroid/content/Intent;"
 		);
 	}
 	QAndroidJniObject TvInputInfo::createSetupIntent()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"createSetupIntent",
 			"()Landroid/content/Intent;"
 		);
 	}
 	jint TvInputInfo::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean TvInputInfo::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -138,105 +140,105 @@ namespace android::media::tv
 	}
 	QAndroidJniObject TvInputInfo::getExtras()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
 	jstring TvInputInfo::getId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring TvInputInfo::getParentId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getParentId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject TvInputInfo::getServiceInfo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getServiceInfo",
 			"()Landroid/content/pm/ServiceInfo;"
 		);
 	}
 	jint TvInputInfo::getTunerCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTunerCount",
 			"()I"
 		);
 	}
 	jint TvInputInfo::getType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getType",
 			"()I"
 		);
 	}
 	jint TvInputInfo::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean TvInputInfo::isHidden(android::content::Context arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isHidden",
 			"(Landroid/content/Context;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean TvInputInfo::isPassthroughInput()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isPassthroughInput",
 			"()Z"
 		);
 	}
 	jstring TvInputInfo::loadCustomLabel(android::content::Context arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"loadCustomLabel",
 			"(Landroid/content/Context;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	QAndroidJniObject TvInputInfo::loadIcon(android::content::Context arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"loadIcon",
 			"(Landroid/content/Context;)Landroid/graphics/drawable/Drawable;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring TvInputInfo::loadLabel(android::content::Context arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"loadLabel",
 			"(Landroid/content/Context;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jstring TvInputInfo::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void TvInputInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

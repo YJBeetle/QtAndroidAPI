@@ -13,7 +13,10 @@ namespace java::lang::reflect
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit GenericSignatureFormatError(const char *className, const char *sig, Ts...agv) : java::lang::ClassFormatError(className, sig, std::forward<Ts>(agv)...) {}
 		GenericSignatureFormatError(QAndroidJniObject obj);
+		
 		// Constructors
 		GenericSignatureFormatError();
 		GenericSignatureFormatError(jstring arg0);

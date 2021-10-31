@@ -16,9 +16,11 @@ namespace android::provider
 		static jstring IDENTITY();
 		static jstring NAMESPACE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ContactsContract_CommonDataKinds_Identity(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ContactsContract_CommonDataKinds_Identity(QAndroidJniObject obj);
+		
 		// Constructors
-		ContactsContract_CommonDataKinds_Identity() = default;
 		
 		// Methods
 	};

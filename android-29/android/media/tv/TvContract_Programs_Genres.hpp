@@ -27,9 +27,11 @@ namespace android::media::tv
 		static jstring TECH_SCIENCE();
 		static jstring TRAVEL();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TvContract_Programs_Genres(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		TvContract_Programs_Genres(QAndroidJniObject obj);
+		
 		// Constructors
-		TvContract_Programs_Genres() = default;
 		
 		// Methods
 		static jarray decode(jstring arg0);

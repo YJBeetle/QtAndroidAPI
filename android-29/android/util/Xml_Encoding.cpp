@@ -36,7 +36,9 @@ namespace android::util
 		);
 	}
 	
-	Xml_Encoding::Xml_Encoding(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Xml_Encoding::Xml_Encoding(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

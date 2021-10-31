@@ -14,9 +14,11 @@ namespace android::app::backup
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BackupDataOutput(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		BackupDataOutput(QAndroidJniObject obj);
+		
 		// Constructors
-		BackupDataOutput() = default;
 		
 		// Methods
 		jlong getQuota();

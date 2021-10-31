@@ -52,69 +52,63 @@ namespace android::widget
 		);
 	}
 	
-	TextView::TextView(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TextView::TextView(QAndroidJniObject obj) : android::view::View(obj) {}
+	
 	// Constructors
 	TextView::TextView(android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::view::View(
 			"android.widget.TextView",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	TextView::TextView(android::content::Context arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::view::View(
 			"android.widget.TextView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	TextView::TextView(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: android::view::View(
 			"android.widget.TextView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
-		);
-	}
+		) {}
 	TextView::TextView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: android::view::View(
 			"android.widget.TextView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	
 	// Methods
 	void TextView::addExtraDataToAccessibilityNodeInfo(android::view::accessibility::AccessibilityNodeInfo arg0, jstring arg1, android::os::Bundle arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addExtraDataToAccessibilityNodeInfo",
 			"(Landroid/view/accessibility/AccessibilityNodeInfo;Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void TextView::addTextChangedListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addTextChangedListener",
 			"(Landroid/text/TextWatcher;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TextView::append(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"append",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
@@ -122,7 +116,7 @@ namespace android::widget
 	}
 	void TextView::append(jstring arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"append",
 			"(Ljava/lang/CharSequence;II)V",
 			arg0,
@@ -132,22 +126,22 @@ namespace android::widget
 	}
 	void TextView::autofill(android::view::autofill::AutofillValue arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"autofill",
 			"(Landroid/view/autofill/AutofillValue;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TextView::beginBatchEdit()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"beginBatchEdit",
 			"()V"
 		);
 	}
 	jboolean TextView::bringPointIntoView(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"bringPointIntoView",
 			"(I)Z",
 			arg0
@@ -155,28 +149,28 @@ namespace android::widget
 	}
 	void TextView::cancelLongPress()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"cancelLongPress",
 			"()V"
 		);
 	}
 	void TextView::clearComposingText()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clearComposingText",
 			"()V"
 		);
 	}
 	void TextView::computeScroll()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"computeScroll",
 			"()V"
 		);
 	}
 	void TextView::debug(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"debug",
 			"(I)V",
 			arg0
@@ -184,14 +178,14 @@ namespace android::widget
 	}
 	jboolean TextView::didTouchFocusSelect()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"didTouchFocusSelect",
 			"()Z"
 		);
 	}
 	void TextView::drawableHotspotChanged(jfloat arg0, jfloat arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"drawableHotspotChanged",
 			"(FF)V",
 			arg0,
@@ -200,370 +194,370 @@ namespace android::widget
 	}
 	void TextView::endBatchEdit()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"endBatchEdit",
 			"()V"
 		);
 	}
 	jboolean TextView::extractText(android::view::inputmethod::ExtractedTextRequest arg0, android::view::inputmethod::ExtractedText arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"extractText",
 			"(Landroid/view/inputmethod/ExtractedTextRequest;Landroid/view/inputmethod/ExtractedText;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void TextView::findViewsWithText(java::util::ArrayList arg0, jstring arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"findViewsWithText",
 			"(Ljava/util/ArrayList;Ljava/lang/CharSequence;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
 	}
 	jstring TextView::getAccessibilityClassName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jint TextView::getAutoLinkMask()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAutoLinkMask",
 			"()I"
 		);
 	}
 	jint TextView::getAutoSizeMaxTextSize()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAutoSizeMaxTextSize",
 			"()I"
 		);
 	}
 	jint TextView::getAutoSizeMinTextSize()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAutoSizeMinTextSize",
 			"()I"
 		);
 	}
 	jint TextView::getAutoSizeStepGranularity()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAutoSizeStepGranularity",
 			"()I"
 		);
 	}
 	jintArray TextView::getAutoSizeTextAvailableSizes()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAutoSizeTextAvailableSizes",
 			"()[I"
 		).object<jintArray>();
 	}
 	jint TextView::getAutoSizeTextType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAutoSizeTextType",
 			"()I"
 		);
 	}
 	jint TextView::getAutofillType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAutofillType",
 			"()I"
 		);
 	}
 	QAndroidJniObject TextView::getAutofillValue()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAutofillValue",
 			"()Landroid/view/autofill/AutofillValue;"
 		);
 	}
 	jint TextView::getBaseline()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getBaseline",
 			"()I"
 		);
 	}
 	jint TextView::getBreakStrategy()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getBreakStrategy",
 			"()I"
 		);
 	}
 	jint TextView::getCompoundDrawablePadding()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCompoundDrawablePadding",
 			"()I"
 		);
 	}
 	QAndroidJniObject TextView::getCompoundDrawableTintBlendMode()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCompoundDrawableTintBlendMode",
 			"()Landroid/graphics/BlendMode;"
 		);
 	}
 	QAndroidJniObject TextView::getCompoundDrawableTintList()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCompoundDrawableTintList",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
 	QAndroidJniObject TextView::getCompoundDrawableTintMode()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCompoundDrawableTintMode",
 			"()Landroid/graphics/PorterDuff$Mode;"
 		);
 	}
 	jarray TextView::getCompoundDrawables()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCompoundDrawables",
 			"()[Landroid/graphics/drawable/Drawable;"
 		).object<jarray>();
 	}
 	jarray TextView::getCompoundDrawablesRelative()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCompoundDrawablesRelative",
 			"()[Landroid/graphics/drawable/Drawable;"
 		).object<jarray>();
 	}
 	jint TextView::getCompoundPaddingBottom()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCompoundPaddingBottom",
 			"()I"
 		);
 	}
 	jint TextView::getCompoundPaddingEnd()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCompoundPaddingEnd",
 			"()I"
 		);
 	}
 	jint TextView::getCompoundPaddingLeft()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCompoundPaddingLeft",
 			"()I"
 		);
 	}
 	jint TextView::getCompoundPaddingRight()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCompoundPaddingRight",
 			"()I"
 		);
 	}
 	jint TextView::getCompoundPaddingStart()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCompoundPaddingStart",
 			"()I"
 		);
 	}
 	jint TextView::getCompoundPaddingTop()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCompoundPaddingTop",
 			"()I"
 		);
 	}
 	jint TextView::getCurrentHintTextColor()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCurrentHintTextColor",
 			"()I"
 		);
 	}
 	jint TextView::getCurrentTextColor()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCurrentTextColor",
 			"()I"
 		);
 	}
 	QAndroidJniObject TextView::getCustomInsertionActionModeCallback()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCustomInsertionActionModeCallback",
 			"()Landroid/view/ActionMode$Callback;"
 		);
 	}
 	QAndroidJniObject TextView::getCustomSelectionActionModeCallback()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCustomSelectionActionModeCallback",
 			"()Landroid/view/ActionMode$Callback;"
 		);
 	}
 	QAndroidJniObject TextView::getEditableText()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEditableText",
 			"()Landroid/text/Editable;"
 		);
 	}
 	QAndroidJniObject TextView::getEllipsize()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEllipsize",
 			"()Landroid/text/TextUtils$TruncateAt;"
 		);
 	}
 	jstring TextView::getError()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getError",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jint TextView::getExtendedPaddingBottom()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getExtendedPaddingBottom",
 			"()I"
 		);
 	}
 	jint TextView::getExtendedPaddingTop()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getExtendedPaddingTop",
 			"()I"
 		);
 	}
 	jarray TextView::getFilters()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFilters",
 			"()[Landroid/text/InputFilter;"
 		).object<jarray>();
 	}
 	jint TextView::getFirstBaselineToTopHeight()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getFirstBaselineToTopHeight",
 			"()I"
 		);
 	}
 	void TextView::getFocusedRect(android::graphics::Rect arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"getFocusedRect",
 			"(Landroid/graphics/Rect;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring TextView::getFontFeatureSettings()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFontFeatureSettings",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring TextView::getFontVariationSettings()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFontVariationSettings",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jboolean TextView::getFreezesText()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getFreezesText",
 			"()Z"
 		);
 	}
 	jint TextView::getGravity()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getGravity",
 			"()I"
 		);
 	}
 	jint TextView::getHighlightColor()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getHighlightColor",
 			"()I"
 		);
 	}
 	jstring TextView::getHint()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getHint",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	QAndroidJniObject TextView::getHintTextColors()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getHintTextColors",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
 	jint TextView::getHyphenationFrequency()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getHyphenationFrequency",
 			"()I"
 		);
 	}
 	jint TextView::getImeActionId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getImeActionId",
 			"()I"
 		);
 	}
 	jstring TextView::getImeActionLabel()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getImeActionLabel",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	QAndroidJniObject TextView::getImeHintLocales()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getImeHintLocales",
 			"()Landroid/os/LocaleList;"
 		);
 	}
 	jint TextView::getImeOptions()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getImeOptions",
 			"()I"
 		);
 	}
 	jboolean TextView::getIncludeFontPadding()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getIncludeFontPadding",
 			"()Z"
 		);
 	}
 	QAndroidJniObject TextView::getInputExtras(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getInputExtras",
 			"(Z)Landroid/os/Bundle;",
 			arg0
@@ -571,170 +565,170 @@ namespace android::widget
 	}
 	jint TextView::getInputType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getInputType",
 			"()I"
 		);
 	}
 	jint TextView::getJustificationMode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getJustificationMode",
 			"()I"
 		);
 	}
 	QAndroidJniObject TextView::getKeyListener()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getKeyListener",
 			"()Landroid/text/method/KeyListener;"
 		);
 	}
 	jint TextView::getLastBaselineToBottomHeight()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLastBaselineToBottomHeight",
 			"()I"
 		);
 	}
 	QAndroidJniObject TextView::getLayout()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLayout",
 			"()Landroid/text/Layout;"
 		);
 	}
 	jfloat TextView::getLetterSpacing()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getLetterSpacing",
 			"()F"
 		);
 	}
 	jint TextView::getLineBounds(jint arg0, android::graphics::Rect arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLineBounds",
 			"(ILandroid/graphics/Rect;)I",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jint TextView::getLineCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLineCount",
 			"()I"
 		);
 	}
 	jint TextView::getLineHeight()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLineHeight",
 			"()I"
 		);
 	}
 	jfloat TextView::getLineSpacingExtra()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getLineSpacingExtra",
 			"()F"
 		);
 	}
 	jfloat TextView::getLineSpacingMultiplier()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getLineSpacingMultiplier",
 			"()F"
 		);
 	}
 	QAndroidJniObject TextView::getLinkTextColors()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLinkTextColors",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
 	jboolean TextView::getLinksClickable()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getLinksClickable",
 			"()Z"
 		);
 	}
 	jint TextView::getMarqueeRepeatLimit()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMarqueeRepeatLimit",
 			"()I"
 		);
 	}
 	jint TextView::getMaxEms()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMaxEms",
 			"()I"
 		);
 	}
 	jint TextView::getMaxHeight()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMaxHeight",
 			"()I"
 		);
 	}
 	jint TextView::getMaxLines()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMaxLines",
 			"()I"
 		);
 	}
 	jint TextView::getMaxWidth()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMaxWidth",
 			"()I"
 		);
 	}
 	jint TextView::getMinEms()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMinEms",
 			"()I"
 		);
 	}
 	jint TextView::getMinHeight()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMinHeight",
 			"()I"
 		);
 	}
 	jint TextView::getMinLines()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMinLines",
 			"()I"
 		);
 	}
 	jint TextView::getMinWidth()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMinWidth",
 			"()I"
 		);
 	}
 	QAndroidJniObject TextView::getMovementMethod()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMovementMethod",
 			"()Landroid/text/method/MovementMethod;"
 		);
 	}
 	jint TextView::getOffsetForPosition(jfloat arg0, jfloat arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getOffsetForPosition",
 			"(FF)I",
 			arg0,
@@ -743,383 +737,383 @@ namespace android::widget
 	}
 	QAndroidJniObject TextView::getPaint()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPaint",
 			"()Landroid/text/TextPaint;"
 		);
 	}
 	jint TextView::getPaintFlags()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPaintFlags",
 			"()I"
 		);
 	}
 	jstring TextView::getPrivateImeOptions()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPrivateImeOptions",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint TextView::getSelectionEnd()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSelectionEnd",
 			"()I"
 		);
 	}
 	jint TextView::getSelectionStart()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSelectionStart",
 			"()I"
 		);
 	}
 	jint TextView::getShadowColor()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getShadowColor",
 			"()I"
 		);
 	}
 	jfloat TextView::getShadowDx()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getShadowDx",
 			"()F"
 		);
 	}
 	jfloat TextView::getShadowDy()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getShadowDy",
 			"()F"
 		);
 	}
 	jfloat TextView::getShadowRadius()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getShadowRadius",
 			"()F"
 		);
 	}
 	jboolean TextView::getShowSoftInputOnFocus()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getShowSoftInputOnFocus",
 			"()Z"
 		);
 	}
 	jstring TextView::getText()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	QAndroidJniObject TextView::getTextClassifier()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTextClassifier",
 			"()Landroid/view/textclassifier/TextClassifier;"
 		);
 	}
 	QAndroidJniObject TextView::getTextColors()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTextColors",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
 	QAndroidJniObject TextView::getTextCursorDrawable()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTextCursorDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
 	QAndroidJniObject TextView::getTextDirectionHeuristic()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTextDirectionHeuristic",
 			"()Landroid/text/TextDirectionHeuristic;"
 		);
 	}
 	QAndroidJniObject TextView::getTextLocale()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTextLocale",
 			"()Ljava/util/Locale;"
 		);
 	}
 	QAndroidJniObject TextView::getTextLocales()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTextLocales",
 			"()Landroid/os/LocaleList;"
 		);
 	}
 	QAndroidJniObject TextView::getTextMetricsParams()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTextMetricsParams",
 			"()Landroid/text/PrecomputedText$Params;"
 		);
 	}
 	jfloat TextView::getTextScaleX()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getTextScaleX",
 			"()F"
 		);
 	}
 	QAndroidJniObject TextView::getTextSelectHandle()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTextSelectHandle",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
 	QAndroidJniObject TextView::getTextSelectHandleLeft()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTextSelectHandleLeft",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
 	QAndroidJniObject TextView::getTextSelectHandleRight()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTextSelectHandleRight",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
 	jfloat TextView::getTextSize()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getTextSize",
 			"()F"
 		);
 	}
 	jint TextView::getTotalPaddingBottom()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTotalPaddingBottom",
 			"()I"
 		);
 	}
 	jint TextView::getTotalPaddingEnd()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTotalPaddingEnd",
 			"()I"
 		);
 	}
 	jint TextView::getTotalPaddingLeft()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTotalPaddingLeft",
 			"()I"
 		);
 	}
 	jint TextView::getTotalPaddingRight()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTotalPaddingRight",
 			"()I"
 		);
 	}
 	jint TextView::getTotalPaddingStart()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTotalPaddingStart",
 			"()I"
 		);
 	}
 	jint TextView::getTotalPaddingTop()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTotalPaddingTop",
 			"()I"
 		);
 	}
 	QAndroidJniObject TextView::getTransformationMethod()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTransformationMethod",
 			"()Landroid/text/method/TransformationMethod;"
 		);
 	}
 	QAndroidJniObject TextView::getTypeface()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTypeface",
 			"()Landroid/graphics/Typeface;"
 		);
 	}
 	jarray TextView::getUrls()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getUrls",
 			"()[Landroid/text/style/URLSpan;"
 		).object<jarray>();
 	}
 	jboolean TextView::hasOverlappingRendering()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasOverlappingRendering",
 			"()Z"
 		);
 	}
 	jboolean TextView::hasSelection()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasSelection",
 			"()Z"
 		);
 	}
 	void TextView::invalidateDrawable(android::graphics::drawable::Drawable arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"invalidateDrawable",
 			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean TextView::isAllCaps()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isAllCaps",
 			"()Z"
 		);
 	}
 	jboolean TextView::isCursorVisible()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isCursorVisible",
 			"()Z"
 		);
 	}
 	jboolean TextView::isElegantTextHeight()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isElegantTextHeight",
 			"()Z"
 		);
 	}
 	jboolean TextView::isFallbackLineSpacing()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isFallbackLineSpacing",
 			"()Z"
 		);
 	}
 	jboolean TextView::isHorizontallyScrollable()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isHorizontallyScrollable",
 			"()Z"
 		);
 	}
 	jboolean TextView::isInputMethodTarget()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isInputMethodTarget",
 			"()Z"
 		);
 	}
 	jboolean TextView::isSingleLine()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isSingleLine",
 			"()Z"
 		);
 	}
 	jboolean TextView::isSuggestionsEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isSuggestionsEnabled",
 			"()Z"
 		);
 	}
 	jboolean TextView::isTextSelectable()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isTextSelectable",
 			"()Z"
 		);
 	}
 	void TextView::jumpDrawablesToCurrentState()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"jumpDrawablesToCurrentState",
 			"()V"
 		);
 	}
 	jint TextView::length()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"length",
 			"()I"
 		);
 	}
 	jboolean TextView::moveCursorToVisibleOffset()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"moveCursorToVisibleOffset",
 			"()Z"
 		);
 	}
 	void TextView::onBeginBatchEdit()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onBeginBatchEdit",
 			"()V"
 		);
 	}
 	jboolean TextView::onCheckIsTextEditor()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onCheckIsTextEditor",
 			"()Z"
 		);
 	}
 	void TextView::onCommitCompletion(android::view::inputmethod::CompletionInfo arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onCommitCompletion",
 			"(Landroid/view/inputmethod/CompletionInfo;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TextView::onCommitCorrection(android::view::inputmethod::CorrectionInfo arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onCommitCorrection",
 			"(Landroid/view/inputmethod/CorrectionInfo;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject TextView::onCreateInputConnection(android::view::inputmethod::EditorInfo arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onCreateInputConnection",
 			"(Landroid/view/inputmethod/EditorInfo;)Landroid/view/inputmethod/InputConnection;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean TextView::onDragEvent(android::view::DragEvent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onDragEvent",
 			"(Landroid/view/DragEvent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TextView::onEditorAction(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onEditorAction",
 			"(I)V",
 			arg0
@@ -1127,101 +1121,101 @@ namespace android::widget
 	}
 	void TextView::onEndBatchEdit()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onEndBatchEdit",
 			"()V"
 		);
 	}
 	jboolean TextView::onGenericMotionEvent(android::view::MotionEvent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onGenericMotionEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean TextView::onKeyDown(jint arg0, android::view::KeyEvent arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onKeyDown",
 			"(ILandroid/view/KeyEvent;)Z",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jboolean TextView::onKeyMultiple(jint arg0, jint arg1, android::view::KeyEvent arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onKeyMultiple",
 			"(IILandroid/view/KeyEvent;)Z",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	jboolean TextView::onKeyPreIme(jint arg0, android::view::KeyEvent arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onKeyPreIme",
 			"(ILandroid/view/KeyEvent;)Z",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jboolean TextView::onKeyShortcut(jint arg0, android::view::KeyEvent arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onKeyShortcut",
 			"(ILandroid/view/KeyEvent;)Z",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jboolean TextView::onKeyUp(jint arg0, android::view::KeyEvent arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onKeyUp",
 			"(ILandroid/view/KeyEvent;)Z",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jboolean TextView::onPreDraw()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onPreDraw",
 			"()Z"
 		);
 	}
 	jboolean TextView::onPrivateIMECommand(jstring arg0, android::os::Bundle arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onPrivateIMECommand",
 			"(Ljava/lang/String;Landroid/os/Bundle;)Z",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject TextView::onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onResolvePointerIcon",
 			"(Landroid/view/MotionEvent;I)Landroid/view/PointerIcon;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void TextView::onRestoreInstanceState(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onRestoreInstanceState",
 			"(Landroid/os/Parcelable;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TextView::onRtlPropertiesChanged(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onRtlPropertiesChanged",
 			"(I)V",
 			arg0
@@ -1229,14 +1223,14 @@ namespace android::widget
 	}
 	QAndroidJniObject TextView::onSaveInstanceState()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onSaveInstanceState",
 			"()Landroid/os/Parcelable;"
 		);
 	}
 	void TextView::onScreenStateChanged(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onScreenStateChanged",
 			"(I)V",
 			arg0
@@ -1244,7 +1238,7 @@ namespace android::widget
 	}
 	jboolean TextView::onTextContextMenuItem(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onTextContextMenuItem",
 			"(I)Z",
 			arg0
@@ -1252,23 +1246,23 @@ namespace android::widget
 	}
 	jboolean TextView::onTouchEvent(android::view::MotionEvent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onTouchEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean TextView::onTrackballEvent(android::view::MotionEvent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onTrackballEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TextView::onWindowFocusChanged(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onWindowFocusChanged",
 			"(Z)V",
 			arg0
@@ -1276,30 +1270,30 @@ namespace android::widget
 	}
 	jboolean TextView::performLongClick()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"performLongClick",
 			"()Z"
 		);
 	}
 	void TextView::removeTextChangedListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeTextChangedListener",
 			"(Landroid/text/TextWatcher;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TextView::sendAccessibilityEventUnchecked(android::view::accessibility::AccessibilityEvent arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"sendAccessibilityEventUnchecked",
 			"(Landroid/view/accessibility/AccessibilityEvent;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TextView::setAllCaps(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAllCaps",
 			"(Z)V",
 			arg0
@@ -1307,7 +1301,7 @@ namespace android::widget
 	}
 	void TextView::setAutoLinkMask(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAutoLinkMask",
 			"(I)V",
 			arg0
@@ -1315,7 +1309,7 @@ namespace android::widget
 	}
 	void TextView::setAutoSizeTextTypeUniformWithConfiguration(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAutoSizeTextTypeUniformWithConfiguration",
 			"(IIII)V",
 			arg0,
@@ -1326,7 +1320,7 @@ namespace android::widget
 	}
 	void TextView::setAutoSizeTextTypeUniformWithPresetSizes(jintArray arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAutoSizeTextTypeUniformWithPresetSizes",
 			"([II)V",
 			arg0,
@@ -1335,7 +1329,7 @@ namespace android::widget
 	}
 	void TextView::setAutoSizeTextTypeWithDefaults(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAutoSizeTextTypeWithDefaults",
 			"(I)V",
 			arg0
@@ -1343,7 +1337,7 @@ namespace android::widget
 	}
 	void TextView::setBreakStrategy(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setBreakStrategy",
 			"(I)V",
 			arg0
@@ -1351,7 +1345,7 @@ namespace android::widget
 	}
 	void TextView::setCompoundDrawablePadding(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCompoundDrawablePadding",
 			"(I)V",
 			arg0
@@ -1359,64 +1353,64 @@ namespace android::widget
 	}
 	void TextView::setCompoundDrawableTintBlendMode(android::graphics::BlendMode arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCompoundDrawableTintBlendMode",
 			"(Landroid/graphics/BlendMode;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TextView::setCompoundDrawableTintList(android::content::res::ColorStateList arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCompoundDrawableTintList",
 			"(Landroid/content/res/ColorStateList;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TextView::setCompoundDrawableTintMode(android::graphics::PorterDuff_Mode arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCompoundDrawableTintMode",
 			"(Landroid/graphics/PorterDuff$Mode;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TextView::setCompoundDrawables(android::graphics::drawable::Drawable arg0, android::graphics::drawable::Drawable arg1, android::graphics::drawable::Drawable arg2, android::graphics::drawable::Drawable arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCompoundDrawables",
 			"(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
 		);
 	}
 	void TextView::setCompoundDrawablesRelative(android::graphics::drawable::Drawable arg0, android::graphics::drawable::Drawable arg1, android::graphics::drawable::Drawable arg2, android::graphics::drawable::Drawable arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCompoundDrawablesRelative",
 			"(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
 		);
 	}
 	void TextView::setCompoundDrawablesRelativeWithIntrinsicBounds(android::graphics::drawable::Drawable arg0, android::graphics::drawable::Drawable arg1, android::graphics::drawable::Drawable arg2, android::graphics::drawable::Drawable arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCompoundDrawablesRelativeWithIntrinsicBounds",
 			"(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
 		);
 	}
 	void TextView::setCompoundDrawablesRelativeWithIntrinsicBounds(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCompoundDrawablesRelativeWithIntrinsicBounds",
 			"(IIII)V",
 			arg0,
@@ -1427,18 +1421,18 @@ namespace android::widget
 	}
 	void TextView::setCompoundDrawablesWithIntrinsicBounds(android::graphics::drawable::Drawable arg0, android::graphics::drawable::Drawable arg1, android::graphics::drawable::Drawable arg2, android::graphics::drawable::Drawable arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCompoundDrawablesWithIntrinsicBounds",
 			"(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
 		);
 	}
 	void TextView::setCompoundDrawablesWithIntrinsicBounds(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCompoundDrawablesWithIntrinsicBounds",
 			"(IIII)V",
 			arg0,
@@ -1449,7 +1443,7 @@ namespace android::widget
 	}
 	void TextView::setCursorVisible(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCursorVisible",
 			"(Z)V",
 			arg0
@@ -1457,31 +1451,31 @@ namespace android::widget
 	}
 	void TextView::setCustomInsertionActionModeCallback(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCustomInsertionActionModeCallback",
 			"(Landroid/view/ActionMode$Callback;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TextView::setCustomSelectionActionModeCallback(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCustomSelectionActionModeCallback",
 			"(Landroid/view/ActionMode$Callback;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TextView::setEditableFactory(android::text::Editable_Factory arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setEditableFactory",
 			"(Landroid/text/Editable$Factory;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TextView::setElegantTextHeight(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setElegantTextHeight",
 			"(Z)V",
 			arg0
@@ -1489,15 +1483,15 @@ namespace android::widget
 	}
 	void TextView::setEllipsize(android::text::TextUtils_TruncateAt arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setEllipsize",
 			"(Landroid/text/TextUtils$TruncateAt;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TextView::setEms(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setEms",
 			"(I)V",
 			arg0
@@ -1505,7 +1499,7 @@ namespace android::widget
 	}
 	void TextView::setEnabled(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setEnabled",
 			"(Z)V",
 			arg0
@@ -1513,7 +1507,7 @@ namespace android::widget
 	}
 	void TextView::setError(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setError",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
@@ -1521,24 +1515,24 @@ namespace android::widget
 	}
 	void TextView::setError(jstring arg0, android::graphics::drawable::Drawable arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setError",
 			"(Ljava/lang/CharSequence;Landroid/graphics/drawable/Drawable;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void TextView::setExtractedText(android::view::inputmethod::ExtractedText arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setExtractedText",
 			"(Landroid/view/inputmethod/ExtractedText;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TextView::setFallbackLineSpacing(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFallbackLineSpacing",
 			"(Z)V",
 			arg0
@@ -1546,7 +1540,7 @@ namespace android::widget
 	}
 	void TextView::setFilters(jarray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFilters",
 			"([Landroid/text/InputFilter;)V",
 			arg0
@@ -1554,7 +1548,7 @@ namespace android::widget
 	}
 	void TextView::setFirstBaselineToTopHeight(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFirstBaselineToTopHeight",
 			"(I)V",
 			arg0
@@ -1562,7 +1556,7 @@ namespace android::widget
 	}
 	void TextView::setFontFeatureSettings(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFontFeatureSettings",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -1570,7 +1564,7 @@ namespace android::widget
 	}
 	jboolean TextView::setFontVariationSettings(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"setFontVariationSettings",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -1578,7 +1572,7 @@ namespace android::widget
 	}
 	void TextView::setFreezesText(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFreezesText",
 			"(Z)V",
 			arg0
@@ -1586,7 +1580,7 @@ namespace android::widget
 	}
 	void TextView::setGravity(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setGravity",
 			"(I)V",
 			arg0
@@ -1594,7 +1588,7 @@ namespace android::widget
 	}
 	void TextView::setHeight(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setHeight",
 			"(I)V",
 			arg0
@@ -1602,7 +1596,7 @@ namespace android::widget
 	}
 	void TextView::setHighlightColor(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setHighlightColor",
 			"(I)V",
 			arg0
@@ -1610,7 +1604,7 @@ namespace android::widget
 	}
 	void TextView::setHint(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setHint",
 			"(I)V",
 			arg0
@@ -1618,7 +1612,7 @@ namespace android::widget
 	}
 	void TextView::setHint(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setHint",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
@@ -1626,15 +1620,15 @@ namespace android::widget
 	}
 	void TextView::setHintTextColor(android::content::res::ColorStateList arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setHintTextColor",
 			"(Landroid/content/res/ColorStateList;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TextView::setHintTextColor(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setHintTextColor",
 			"(I)V",
 			arg0
@@ -1642,7 +1636,7 @@ namespace android::widget
 	}
 	void TextView::setHorizontallyScrolling(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setHorizontallyScrolling",
 			"(Z)V",
 			arg0
@@ -1650,7 +1644,7 @@ namespace android::widget
 	}
 	void TextView::setHyphenationFrequency(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setHyphenationFrequency",
 			"(I)V",
 			arg0
@@ -1658,7 +1652,7 @@ namespace android::widget
 	}
 	void TextView::setImeActionLabel(jstring arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setImeActionLabel",
 			"(Ljava/lang/CharSequence;I)V",
 			arg0,
@@ -1667,15 +1661,15 @@ namespace android::widget
 	}
 	void TextView::setImeHintLocales(android::os::LocaleList arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setImeHintLocales",
 			"(Landroid/os/LocaleList;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TextView::setImeOptions(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setImeOptions",
 			"(I)V",
 			arg0
@@ -1683,7 +1677,7 @@ namespace android::widget
 	}
 	void TextView::setIncludeFontPadding(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setIncludeFontPadding",
 			"(Z)V",
 			arg0
@@ -1691,7 +1685,7 @@ namespace android::widget
 	}
 	void TextView::setInputExtras(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setInputExtras",
 			"(I)V",
 			arg0
@@ -1699,7 +1693,7 @@ namespace android::widget
 	}
 	void TextView::setInputType(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setInputType",
 			"(I)V",
 			arg0
@@ -1707,7 +1701,7 @@ namespace android::widget
 	}
 	void TextView::setJustificationMode(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setJustificationMode",
 			"(I)V",
 			arg0
@@ -1715,15 +1709,15 @@ namespace android::widget
 	}
 	void TextView::setKeyListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setKeyListener",
 			"(Landroid/text/method/KeyListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TextView::setLastBaselineToBottomHeight(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLastBaselineToBottomHeight",
 			"(I)V",
 			arg0
@@ -1731,7 +1725,7 @@ namespace android::widget
 	}
 	void TextView::setLetterSpacing(jfloat arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLetterSpacing",
 			"(F)V",
 			arg0
@@ -1739,7 +1733,7 @@ namespace android::widget
 	}
 	void TextView::setLineHeight(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLineHeight",
 			"(I)V",
 			arg0
@@ -1747,7 +1741,7 @@ namespace android::widget
 	}
 	void TextView::setLineSpacing(jfloat arg0, jfloat arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLineSpacing",
 			"(FF)V",
 			arg0,
@@ -1756,7 +1750,7 @@ namespace android::widget
 	}
 	void TextView::setLines(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLines",
 			"(I)V",
 			arg0
@@ -1764,15 +1758,15 @@ namespace android::widget
 	}
 	void TextView::setLinkTextColor(android::content::res::ColorStateList arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLinkTextColor",
 			"(Landroid/content/res/ColorStateList;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TextView::setLinkTextColor(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLinkTextColor",
 			"(I)V",
 			arg0
@@ -1780,7 +1774,7 @@ namespace android::widget
 	}
 	void TextView::setLinksClickable(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLinksClickable",
 			"(Z)V",
 			arg0
@@ -1788,7 +1782,7 @@ namespace android::widget
 	}
 	void TextView::setMarqueeRepeatLimit(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMarqueeRepeatLimit",
 			"(I)V",
 			arg0
@@ -1796,7 +1790,7 @@ namespace android::widget
 	}
 	void TextView::setMaxEms(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMaxEms",
 			"(I)V",
 			arg0
@@ -1804,7 +1798,7 @@ namespace android::widget
 	}
 	void TextView::setMaxHeight(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMaxHeight",
 			"(I)V",
 			arg0
@@ -1812,7 +1806,7 @@ namespace android::widget
 	}
 	void TextView::setMaxLines(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMaxLines",
 			"(I)V",
 			arg0
@@ -1820,7 +1814,7 @@ namespace android::widget
 	}
 	void TextView::setMaxWidth(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMaxWidth",
 			"(I)V",
 			arg0
@@ -1828,7 +1822,7 @@ namespace android::widget
 	}
 	void TextView::setMinEms(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMinEms",
 			"(I)V",
 			arg0
@@ -1836,7 +1830,7 @@ namespace android::widget
 	}
 	void TextView::setMinHeight(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMinHeight",
 			"(I)V",
 			arg0
@@ -1844,7 +1838,7 @@ namespace android::widget
 	}
 	void TextView::setMinLines(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMinLines",
 			"(I)V",
 			arg0
@@ -1852,7 +1846,7 @@ namespace android::widget
 	}
 	void TextView::setMinWidth(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMinWidth",
 			"(I)V",
 			arg0
@@ -1860,23 +1854,23 @@ namespace android::widget
 	}
 	void TextView::setMovementMethod(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMovementMethod",
 			"(Landroid/text/method/MovementMethod;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TextView::setOnEditorActionListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnEditorActionListener",
 			"(Landroid/widget/TextView$OnEditorActionListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TextView::setPadding(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPadding",
 			"(IIII)V",
 			arg0,
@@ -1887,7 +1881,7 @@ namespace android::widget
 	}
 	void TextView::setPaddingRelative(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPaddingRelative",
 			"(IIII)V",
 			arg0,
@@ -1898,7 +1892,7 @@ namespace android::widget
 	}
 	void TextView::setPaintFlags(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPaintFlags",
 			"(I)V",
 			arg0
@@ -1906,7 +1900,7 @@ namespace android::widget
 	}
 	void TextView::setPrivateImeOptions(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPrivateImeOptions",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -1914,7 +1908,7 @@ namespace android::widget
 	}
 	void TextView::setRawInputType(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setRawInputType",
 			"(I)V",
 			arg0
@@ -1922,15 +1916,15 @@ namespace android::widget
 	}
 	void TextView::setScroller(android::widget::Scroller arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setScroller",
 			"(Landroid/widget/Scroller;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TextView::setSelectAllOnFocus(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSelectAllOnFocus",
 			"(Z)V",
 			arg0
@@ -1938,7 +1932,7 @@ namespace android::widget
 	}
 	void TextView::setSelected(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSelected",
 			"(Z)V",
 			arg0
@@ -1946,7 +1940,7 @@ namespace android::widget
 	}
 	void TextView::setShadowLayer(jfloat arg0, jfloat arg1, jfloat arg2, jint arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setShadowLayer",
 			"(FFFI)V",
 			arg0,
@@ -1957,7 +1951,7 @@ namespace android::widget
 	}
 	void TextView::setShowSoftInputOnFocus(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setShowSoftInputOnFocus",
 			"(Z)V",
 			arg0
@@ -1965,14 +1959,14 @@ namespace android::widget
 	}
 	void TextView::setSingleLine()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSingleLine",
 			"()V"
 		);
 	}
 	void TextView::setSingleLine(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSingleLine",
 			"(Z)V",
 			arg0
@@ -1980,15 +1974,15 @@ namespace android::widget
 	}
 	void TextView::setSpannableFactory(android::text::Spannable_Factory arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSpannableFactory",
 			"(Landroid/text/Spannable$Factory;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TextView::setText(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setText",
 			"(I)V",
 			arg0
@@ -1996,7 +1990,7 @@ namespace android::widget
 	}
 	void TextView::setText(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setText",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
@@ -2004,25 +1998,25 @@ namespace android::widget
 	}
 	void TextView::setText(jint arg0, android::widget::TextView_BufferType arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setText",
 			"(ILandroid/widget/TextView$BufferType;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void TextView::setText(jstring arg0, android::widget::TextView_BufferType arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setText",
 			"(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void TextView::setText(jcharArray arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setText",
 			"([CII)V",
 			arg0,
@@ -2032,7 +2026,7 @@ namespace android::widget
 	}
 	void TextView::setTextAppearance(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTextAppearance",
 			"(I)V",
 			arg0
@@ -2040,32 +2034,32 @@ namespace android::widget
 	}
 	void TextView::setTextAppearance(android::content::Context arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTextAppearance",
 			"(Landroid/content/Context;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void TextView::setTextClassifier(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTextClassifier",
 			"(Landroid/view/textclassifier/TextClassifier;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TextView::setTextColor(android::content::res::ColorStateList arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTextColor",
 			"(Landroid/content/res/ColorStateList;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TextView::setTextColor(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTextColor",
 			"(I)V",
 			arg0
@@ -2073,15 +2067,15 @@ namespace android::widget
 	}
 	void TextView::setTextCursorDrawable(android::graphics::drawable::Drawable arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTextCursorDrawable",
 			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TextView::setTextCursorDrawable(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTextCursorDrawable",
 			"(I)V",
 			arg0
@@ -2089,7 +2083,7 @@ namespace android::widget
 	}
 	void TextView::setTextIsSelectable(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTextIsSelectable",
 			"(Z)V",
 			arg0
@@ -2097,7 +2091,7 @@ namespace android::widget
 	}
 	void TextView::setTextKeepState(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTextKeepState",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
@@ -2105,40 +2099,40 @@ namespace android::widget
 	}
 	void TextView::setTextKeepState(jstring arg0, android::widget::TextView_BufferType arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTextKeepState",
 			"(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void TextView::setTextLocale(java::util::Locale arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTextLocale",
 			"(Ljava/util/Locale;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TextView::setTextLocales(android::os::LocaleList arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTextLocales",
 			"(Landroid/os/LocaleList;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TextView::setTextMetricsParams(android::text::PrecomputedText_Params arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTextMetricsParams",
 			"(Landroid/text/PrecomputedText$Params;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TextView::setTextScaleX(jfloat arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTextScaleX",
 			"(F)V",
 			arg0
@@ -2146,15 +2140,15 @@ namespace android::widget
 	}
 	void TextView::setTextSelectHandle(android::graphics::drawable::Drawable arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTextSelectHandle",
 			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TextView::setTextSelectHandle(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTextSelectHandle",
 			"(I)V",
 			arg0
@@ -2162,15 +2156,15 @@ namespace android::widget
 	}
 	void TextView::setTextSelectHandleLeft(android::graphics::drawable::Drawable arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTextSelectHandleLeft",
 			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TextView::setTextSelectHandleLeft(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTextSelectHandleLeft",
 			"(I)V",
 			arg0
@@ -2178,15 +2172,15 @@ namespace android::widget
 	}
 	void TextView::setTextSelectHandleRight(android::graphics::drawable::Drawable arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTextSelectHandleRight",
 			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TextView::setTextSelectHandleRight(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTextSelectHandleRight",
 			"(I)V",
 			arg0
@@ -2194,7 +2188,7 @@ namespace android::widget
 	}
 	void TextView::setTextSize(jfloat arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTextSize",
 			"(F)V",
 			arg0
@@ -2202,7 +2196,7 @@ namespace android::widget
 	}
 	void TextView::setTextSize(jint arg0, jfloat arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTextSize",
 			"(IF)V",
 			arg0,
@@ -2211,32 +2205,32 @@ namespace android::widget
 	}
 	void TextView::setTransformationMethod(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTransformationMethod",
 			"(Landroid/text/method/TransformationMethod;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TextView::setTypeface(android::graphics::Typeface arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTypeface",
 			"(Landroid/graphics/Typeface;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TextView::setTypeface(android::graphics::Typeface arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTypeface",
 			"(Landroid/graphics/Typeface;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void TextView::setWidth(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setWidth",
 			"(I)V",
 			arg0
@@ -2244,14 +2238,14 @@ namespace android::widget
 	}
 	jboolean TextView::showContextMenu()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"showContextMenu",
 			"()Z"
 		);
 	}
 	jboolean TextView::showContextMenu(jfloat arg0, jfloat arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"showContextMenu",
 			"(FF)Z",
 			arg0,

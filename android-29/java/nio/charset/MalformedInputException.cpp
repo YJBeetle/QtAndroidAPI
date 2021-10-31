@@ -4,28 +4,28 @@ namespace java::nio::charset
 {
 	// Fields
 	
-	MalformedInputException::MalformedInputException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MalformedInputException::MalformedInputException(QAndroidJniObject obj) : java::nio::charset::CharacterCodingException(obj) {}
+	
 	// Constructors
 	MalformedInputException::MalformedInputException(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::nio::charset::CharacterCodingException(
 			"java.nio.charset.MalformedInputException",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jint MalformedInputException::getInputLength()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getInputLength",
 			"()I"
 		);
 	}
 	jstring MalformedInputException::getMessage()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
 		).object<jstring>();

@@ -260,7 +260,9 @@ namespace android::icu::util
 		);
 	}
 	
-	VersionInfo::VersionInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	VersionInfo::VersionInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -317,15 +319,15 @@ namespace android::icu::util
 	}
 	jint VersionInfo::compareTo(android::icu::util::VersionInfo arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Landroid/icu/util/VersionInfo;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint VersionInfo::compareTo(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -333,7 +335,7 @@ namespace android::icu::util
 	}
 	jboolean VersionInfo::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -341,42 +343,42 @@ namespace android::icu::util
 	}
 	jint VersionInfo::getMajor()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMajor",
 			"()I"
 		);
 	}
 	jint VersionInfo::getMicro()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMicro",
 			"()I"
 		);
 	}
 	jint VersionInfo::getMilli()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMilli",
 			"()I"
 		);
 	}
 	jint VersionInfo::getMinor()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMinor",
 			"()I"
 		);
 	}
 	jint VersionInfo::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring VersionInfo::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

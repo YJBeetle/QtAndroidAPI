@@ -11,59 +11,53 @@ namespace android::widget
 {
 	// Fields
 	
-	CompoundButton::CompoundButton(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CompoundButton::CompoundButton(QAndroidJniObject obj) : android::widget::Button(obj) {}
+	
 	// Constructors
 	CompoundButton::CompoundButton(android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::Button(
 			"android.widget.CompoundButton",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	CompoundButton::CompoundButton(android::content::Context arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::Button(
 			"android.widget.CompoundButton",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	CompoundButton::CompoundButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::Button(
 			"android.widget.CompoundButton",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
-		);
-	}
+		) {}
 	CompoundButton::CompoundButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::Button(
 			"android.widget.CompoundButton",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	
 	// Methods
 	void CompoundButton::autofill(android::view::autofill::AutofillValue arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"autofill",
 			"(Landroid/view/autofill/AutofillValue;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void CompoundButton::drawableHotspotChanged(jfloat arg0, jfloat arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"drawableHotspotChanged",
 			"(FF)V",
 			arg0,
@@ -72,114 +66,114 @@ namespace android::widget
 	}
 	jstring CompoundButton::getAccessibilityClassName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jint CompoundButton::getAutofillType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAutofillType",
 			"()I"
 		);
 	}
 	QAndroidJniObject CompoundButton::getAutofillValue()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAutofillValue",
 			"()Landroid/view/autofill/AutofillValue;"
 		);
 	}
 	QAndroidJniObject CompoundButton::getButtonDrawable()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getButtonDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
 	QAndroidJniObject CompoundButton::getButtonTintBlendMode()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getButtonTintBlendMode",
 			"()Landroid/graphics/BlendMode;"
 		);
 	}
 	QAndroidJniObject CompoundButton::getButtonTintList()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getButtonTintList",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
 	QAndroidJniObject CompoundButton::getButtonTintMode()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getButtonTintMode",
 			"()Landroid/graphics/PorterDuff$Mode;"
 		);
 	}
 	jint CompoundButton::getCompoundPaddingLeft()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCompoundPaddingLeft",
 			"()I"
 		);
 	}
 	jint CompoundButton::getCompoundPaddingRight()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCompoundPaddingRight",
 			"()I"
 		);
 	}
 	jboolean CompoundButton::isChecked()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isChecked",
 			"()Z"
 		);
 	}
 	void CompoundButton::jumpDrawablesToCurrentState()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"jumpDrawablesToCurrentState",
 			"()V"
 		);
 	}
 	void CompoundButton::onRestoreInstanceState(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onRestoreInstanceState",
 			"(Landroid/os/Parcelable;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject CompoundButton::onSaveInstanceState()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onSaveInstanceState",
 			"()Landroid/os/Parcelable;"
 		);
 	}
 	jboolean CompoundButton::performClick()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"performClick",
 			"()Z"
 		);
 	}
 	void CompoundButton::setButtonDrawable(android::graphics::drawable::Drawable arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setButtonDrawable",
 			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void CompoundButton::setButtonDrawable(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setButtonDrawable",
 			"(I)V",
 			arg0
@@ -187,31 +181,31 @@ namespace android::widget
 	}
 	void CompoundButton::setButtonTintBlendMode(android::graphics::BlendMode arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setButtonTintBlendMode",
 			"(Landroid/graphics/BlendMode;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void CompoundButton::setButtonTintList(android::content::res::ColorStateList arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setButtonTintList",
 			"(Landroid/content/res/ColorStateList;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void CompoundButton::setButtonTintMode(android::graphics::PorterDuff_Mode arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setButtonTintMode",
 			"(Landroid/graphics/PorterDuff$Mode;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void CompoundButton::setChecked(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setChecked",
 			"(Z)V",
 			arg0
@@ -219,15 +213,15 @@ namespace android::widget
 	}
 	void CompoundButton::setOnCheckedChangeListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnCheckedChangeListener",
 			"(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void CompoundButton::toggle()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"toggle",
 			"()V"
 		);

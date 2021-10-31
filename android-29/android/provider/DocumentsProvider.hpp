@@ -55,7 +55,10 @@ namespace android::provider
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DocumentsProvider(const char *className, const char *sig, Ts...agv) : android::content::ContentProvider(className, sig, std::forward<Ts>(agv)...) {}
 		DocumentsProvider(QAndroidJniObject obj);
+		
 		// Constructors
 		DocumentsProvider();
 		

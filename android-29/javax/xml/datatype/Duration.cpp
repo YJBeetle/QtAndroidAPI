@@ -10,52 +10,52 @@ namespace javax::xml::datatype
 {
 	// Fields
 	
-	Duration::Duration(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Duration::Duration(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Duration::Duration()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"javax.xml.datatype.Duration",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject Duration::add(javax::xml::datatype::Duration arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"add",
 			"(Ljavax/xml/datatype/Duration;)Ljavax/xml/datatype/Duration;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Duration::addTo(java::util::Calendar arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addTo",
 			"(Ljava/util/Calendar;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Duration::addTo(java::util::Date arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addTo",
 			"(Ljava/util/Date;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint Duration::compare(javax::xml::datatype::Duration arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compare",
 			"(Ljavax/xml/datatype/Duration;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean Duration::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -63,118 +63,118 @@ namespace javax::xml::datatype
 	}
 	jint Duration::getDays()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDays",
 			"()I"
 		);
 	}
 	QAndroidJniObject Duration::getField(javax::xml::datatype::DatatypeConstants_Field arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getField",
 			"(Ljavax/xml/datatype/DatatypeConstants$Field;)Ljava/lang/Number;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint Duration::getHours()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getHours",
 			"()I"
 		);
 	}
 	jint Duration::getMinutes()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMinutes",
 			"()I"
 		);
 	}
 	jint Duration::getMonths()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMonths",
 			"()I"
 		);
 	}
 	jint Duration::getSeconds()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSeconds",
 			"()I"
 		);
 	}
 	jint Duration::getSign()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSign",
 			"()I"
 		);
 	}
 	jlong Duration::getTimeInMillis(java::util::Calendar arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getTimeInMillis",
 			"(Ljava/util/Calendar;)J",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jlong Duration::getTimeInMillis(java::util::Date arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getTimeInMillis",
 			"(Ljava/util/Date;)J",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Duration::getXMLSchemaType()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getXMLSchemaType",
 			"()Ljavax/xml/namespace/QName;"
 		);
 	}
 	jint Duration::getYears()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getYears",
 			"()I"
 		);
 	}
 	jint Duration::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean Duration::isLongerThan(javax::xml::datatype::Duration arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isLongerThan",
 			"(Ljavax/xml/datatype/Duration;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean Duration::isSet(javax::xml::datatype::DatatypeConstants_Field arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isSet",
 			"(Ljavax/xml/datatype/DatatypeConstants$Field;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean Duration::isShorterThan(javax::xml::datatype::Duration arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isShorterThan",
 			"(Ljavax/xml/datatype/Duration;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Duration::multiply(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"multiply",
 			"(I)Ljavax/xml/datatype/Duration;",
 			arg0
@@ -182,38 +182,38 @@ namespace javax::xml::datatype
 	}
 	QAndroidJniObject Duration::multiply(java::math::BigDecimal arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"multiply",
 			"(Ljava/math/BigDecimal;)Ljavax/xml/datatype/Duration;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Duration::negate()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"negate",
 			"()Ljavax/xml/datatype/Duration;"
 		);
 	}
 	QAndroidJniObject Duration::normalizeWith(java::util::Calendar arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"normalizeWith",
 			"(Ljava/util/Calendar;)Ljavax/xml/datatype/Duration;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Duration::subtract(javax::xml::datatype::Duration arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"subtract",
 			"(Ljavax/xml/datatype/Duration;)Ljavax/xml/datatype/Duration;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring Duration::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

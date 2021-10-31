@@ -7,66 +7,60 @@ namespace org::xml::sax
 {
 	// Fields
 	
-	SAXException::SAXException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SAXException::SAXException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
+	
 	// Constructors
 	SAXException::SAXException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Exception(
 			"org.xml.sax.SAXException",
 			"()V"
-		);
-	}
+		) {}
 	SAXException::SAXException(java::lang::Exception arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Exception(
 			"org.xml.sax.SAXException",
 			"(Ljava/lang/Exception;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	SAXException::SAXException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Exception(
 			"org.xml.sax.SAXException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	SAXException::SAXException(jstring arg0, java::lang::Exception arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Exception(
 			"org.xml.sax.SAXException",
 			"(Ljava/lang/String;Ljava/lang/Exception;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
+			arg1.object()
+		) {}
 	
 	// Methods
 	jthrowable SAXException::getCause()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCause",
 			"()Ljava/lang/Throwable;"
 		).object<jthrowable>();
 	}
 	QAndroidJniObject SAXException::getException()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getException",
 			"()Ljava/lang/Exception;"
 		);
 	}
 	jstring SAXException::getMessage()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring SAXException::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

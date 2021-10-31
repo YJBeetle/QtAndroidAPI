@@ -10,9 +10,11 @@ namespace android::mtp
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MtpStorageInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MtpStorageInfo(QAndroidJniObject obj);
+		
 		// Constructors
-		MtpStorageInfo() = default;
 		
 		// Methods
 		jstring getDescription();

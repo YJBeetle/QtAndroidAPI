@@ -47,7 +47,10 @@ namespace android::icu::text
 		static jshort REORDER_RUNS_ONLY();
 		static jbyte RTL();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Bidi(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Bidi(QAndroidJniObject obj);
+		
 		// Constructors
 		Bidi();
 		Bidi(__JniBaseClass arg0);

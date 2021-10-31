@@ -190,9 +190,11 @@ namespace android::telephony
 		static jstring KEY_VVM_TYPE_STRING();
 		static jstring KEY_WORLD_PHONE_BOOL();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CarrierConfigManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		CarrierConfigManager(QAndroidJniObject obj);
+		
 		// Constructors
-		CarrierConfigManager() = default;
 		
 		// Methods
 		static jboolean isConfigForIdentifiedCarrier(android::os::PersistableBundle arg0);

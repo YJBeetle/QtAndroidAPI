@@ -4,17 +4,17 @@ namespace java::util
 {
 	// Fields
 	
-	UUID::UUID(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UUID::UUID(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	UUID::UUID(jlong arg0, jlong arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.UUID",
 			"(JJ)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject UUID::fromString(jstring arg0)
@@ -45,14 +45,14 @@ namespace java::util
 	}
 	jint UUID::clockSequence()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"clockSequence",
 			"()I"
 		);
 	}
 	jint UUID::compareTo(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -60,15 +60,15 @@ namespace java::util
 	}
 	jint UUID::compareTo(java::util::UUID arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/util/UUID;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean UUID::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -76,56 +76,56 @@ namespace java::util
 	}
 	jlong UUID::getLeastSignificantBits()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getLeastSignificantBits",
 			"()J"
 		);
 	}
 	jlong UUID::getMostSignificantBits()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getMostSignificantBits",
 			"()J"
 		);
 	}
 	jint UUID::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jlong UUID::node()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"node",
 			"()J"
 		);
 	}
 	jlong UUID::timestamp()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"timestamp",
 			"()J"
 		);
 	}
 	jstring UUID::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint UUID::variant()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"variant",
 			"()I"
 		);
 	}
 	jint UUID::version()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"version",
 			"()I"
 		);

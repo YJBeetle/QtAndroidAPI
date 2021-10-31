@@ -4,20 +4,20 @@ namespace android::renderscript
 {
 	// Fields
 	
-	RenderScript_RSErrorHandler::RenderScript_RSErrorHandler(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	RenderScript_RSErrorHandler::RenderScript_RSErrorHandler(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	RenderScript_RSErrorHandler::RenderScript_RSErrorHandler()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.renderscript.RenderScript$RSErrorHandler",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void RenderScript_RSErrorHandler::run()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"run",
 			"()V"
 		);

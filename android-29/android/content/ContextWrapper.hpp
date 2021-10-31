@@ -119,10 +119,12 @@ namespace android::content
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ContextWrapper(const char *className, const char *sig, Ts...agv) : android::content::Context(className, sig, std::forward<Ts>(agv)...) {}
 		ContextWrapper(QAndroidJniObject obj);
+		
 		// Constructors
 		ContextWrapper(android::content::Context arg0);
-		ContextWrapper() = default;
 		
 		// Methods
 		jboolean bindIsolatedService(android::content::Intent arg0, jint arg1, jstring arg2, __JniBaseClass arg3, __JniBaseClass arg4);

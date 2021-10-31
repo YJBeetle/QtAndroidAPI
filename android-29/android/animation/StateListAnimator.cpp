@@ -5,36 +5,36 @@ namespace android::animation
 {
 	// Fields
 	
-	StateListAnimator::StateListAnimator(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	StateListAnimator::StateListAnimator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	StateListAnimator::StateListAnimator()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.animation.StateListAnimator",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void StateListAnimator::addState(jintArray arg0, android::animation::Animator arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addState",
 			"([ILandroid/animation/Animator;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject StateListAnimator::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Landroid/animation/StateListAnimator;"
 		);
 	}
 	void StateListAnimator::jumpToCurrentState()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"jumpToCurrentState",
 			"()V"
 		);

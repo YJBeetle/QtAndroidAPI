@@ -16,9 +16,11 @@ namespace android::graphics
 		static QAndroidJniObject UNION();
 		static QAndroidJniObject XOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Path_Op(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		Path_Op(QAndroidJniObject obj);
+		
 		// Constructors
-		Path_Op() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

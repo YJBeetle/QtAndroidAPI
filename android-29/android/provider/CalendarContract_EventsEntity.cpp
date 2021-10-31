@@ -15,7 +15,9 @@ namespace android::provider
 		);
 	}
 	
-	CalendarContract_EventsEntity::CalendarContract_EventsEntity(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CalendarContract_EventsEntity::CalendarContract_EventsEntity(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -25,8 +27,8 @@ namespace android::provider
 			"android.provider.CalendarContract$EventsEntity",
 			"newEntityIterator",
 			"(Landroid/database/Cursor;Landroid/content/ContentProviderClient;)Landroid/content/EntityIterator;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject CalendarContract_EventsEntity::newEntityIterator(__JniBaseClass arg0, android::content::ContentResolver arg1)
@@ -35,8 +37,8 @@ namespace android::provider
 			"android.provider.CalendarContract$EventsEntity",
 			"newEntityIterator",
 			"(Landroid/database/Cursor;Landroid/content/ContentResolver;)Landroid/content/EntityIterator;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 } // namespace android::provider

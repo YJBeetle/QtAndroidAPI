@@ -811,15 +811,15 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	Settings_System::Settings_System(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Settings_System::Settings_System(QAndroidJniObject obj) : android::provider::Settings_NameValueTable(obj) {}
+	
 	// Constructors
 	Settings_System::Settings_System()
-	{
-		__thiz = QAndroidJniObject(
+		: android::provider::Settings_NameValueTable(
 			"android.provider.Settings$System",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean Settings_System::canWrite(android::content::Context arg0)
@@ -828,7 +828,7 @@ namespace android::provider
 			"android.provider.Settings$System",
 			"canWrite",
 			"(Landroid/content/Context;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Settings_System::getConfiguration(android::content::ContentResolver arg0, android::content::res::Configuration arg1)
@@ -837,8 +837,8 @@ namespace android::provider
 			"android.provider.Settings$System",
 			"getConfiguration",
 			"(Landroid/content/ContentResolver;Landroid/content/res/Configuration;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jfloat Settings_System::getFloat(android::content::ContentResolver arg0, jstring arg1)
@@ -847,7 +847,7 @@ namespace android::provider
 			"android.provider.Settings$System",
 			"getFloat",
 			"(Landroid/content/ContentResolver;Ljava/lang/String;)F",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -857,7 +857,7 @@ namespace android::provider
 			"android.provider.Settings$System",
 			"getFloat",
 			"(Landroid/content/ContentResolver;Ljava/lang/String;F)F",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
@@ -868,7 +868,7 @@ namespace android::provider
 			"android.provider.Settings$System",
 			"getInt",
 			"(Landroid/content/ContentResolver;Ljava/lang/String;)I",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -878,7 +878,7 @@ namespace android::provider
 			"android.provider.Settings$System",
 			"getInt",
 			"(Landroid/content/ContentResolver;Ljava/lang/String;I)I",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
@@ -889,7 +889,7 @@ namespace android::provider
 			"android.provider.Settings$System",
 			"getLong",
 			"(Landroid/content/ContentResolver;Ljava/lang/String;)J",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -899,7 +899,7 @@ namespace android::provider
 			"android.provider.Settings$System",
 			"getLong",
 			"(Landroid/content/ContentResolver;Ljava/lang/String;J)J",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
@@ -910,7 +910,7 @@ namespace android::provider
 			"android.provider.Settings$System",
 			"getShowGTalkServiceStatus",
 			"(Landroid/content/ContentResolver;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring Settings_System::getString(android::content::ContentResolver arg0, jstring arg1)
@@ -919,7 +919,7 @@ namespace android::provider
 			"android.provider.Settings$System",
 			"getString",
 			"(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		).object<jstring>();
 	}
@@ -938,8 +938,8 @@ namespace android::provider
 			"android.provider.Settings$System",
 			"putConfiguration",
 			"(Landroid/content/ContentResolver;Landroid/content/res/Configuration;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jboolean Settings_System::putFloat(android::content::ContentResolver arg0, jstring arg1, jfloat arg2)
@@ -948,7 +948,7 @@ namespace android::provider
 			"android.provider.Settings$System",
 			"putFloat",
 			"(Landroid/content/ContentResolver;Ljava/lang/String;F)Z",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
@@ -959,7 +959,7 @@ namespace android::provider
 			"android.provider.Settings$System",
 			"putInt",
 			"(Landroid/content/ContentResolver;Ljava/lang/String;I)Z",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
@@ -970,7 +970,7 @@ namespace android::provider
 			"android.provider.Settings$System",
 			"putLong",
 			"(Landroid/content/ContentResolver;Ljava/lang/String;J)Z",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
@@ -981,7 +981,7 @@ namespace android::provider
 			"android.provider.Settings$System",
 			"putString",
 			"(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
@@ -992,7 +992,7 @@ namespace android::provider
 			"android.provider.Settings$System",
 			"setShowGTalkServiceStatus",
 			"(Landroid/content/ContentResolver;Z)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

@@ -6,7 +6,9 @@ namespace java::net
 {
 	// Fields
 	
-	URLEncoder::URLEncoder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	URLEncoder::URLEncoder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -36,7 +38,7 @@ namespace java::net
 			"encode",
 			"(Ljava/lang/String;Ljava/nio/charset/Charset;)Ljava/lang/String;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		).object<jstring>();
 	}
 } // namespace java::net

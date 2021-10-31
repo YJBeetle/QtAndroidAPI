@@ -20,7 +20,10 @@ namespace java::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Vector(const char *className, const char *sig, Ts...agv) : java::util::AbstractList(className, sig, std::forward<Ts>(agv)...) {}
 		Vector(QAndroidJniObject obj);
+		
 		// Constructors
 		Vector();
 		Vector(jint arg0);

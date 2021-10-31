@@ -19,10 +19,12 @@ namespace android::bluetooth
 		static jint SERVICE_GUARANTEED();
 		static jint SERVICE_NO_TRAFFIC();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BluetoothHidDeviceAppQosSettings(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		BluetoothHidDeviceAppQosSettings(QAndroidJniObject obj);
+		
 		// Constructors
 		BluetoothHidDeviceAppQosSettings(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
-		BluetoothHidDeviceAppQosSettings() = default;
 		
 		// Methods
 		jint describeContents();

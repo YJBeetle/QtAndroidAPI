@@ -56,9 +56,11 @@ namespace android::telephony
 		static jint STATUS_PENDING_REPAIR();
 		static jint STATUS_UNKNOWN();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MbmsDownloadSession(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MbmsDownloadSession(QAndroidJniObject obj);
+		
 		// Constructors
-		MbmsDownloadSession() = default;
 		
 		// Methods
 		static QAndroidJniObject create(android::content::Context arg0, __JniBaseClass arg1, android::telephony::mbms::MbmsDownloadSessionCallback arg2);

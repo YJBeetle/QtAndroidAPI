@@ -10,10 +10,12 @@ namespace java::security::cert
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PolicyQualifierInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PolicyQualifierInfo(QAndroidJniObject obj);
+		
 		// Constructors
 		PolicyQualifierInfo(jbyteArray arg0);
-		PolicyQualifierInfo() = default;
 		
 		// Methods
 		jbyteArray getEncoded();

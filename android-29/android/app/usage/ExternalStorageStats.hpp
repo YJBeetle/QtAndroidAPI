@@ -15,9 +15,11 @@ namespace android::app::usage
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ExternalStorageStats(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ExternalStorageStats(QAndroidJniObject obj);
+		
 		// Constructors
-		ExternalStorageStats() = default;
 		
 		// Methods
 		jint describeContents();

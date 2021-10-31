@@ -27,10 +27,12 @@ namespace android::content
 		QAndroidJniObject extras();
 		jlong period();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PeriodicSync(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PeriodicSync(QAndroidJniObject obj);
+		
 		// Constructors
 		PeriodicSync(android::accounts::Account arg0, jstring arg1, android::os::Bundle arg2, jlong arg3);
-		PeriodicSync() = default;
 		
 		// Methods
 		jint describeContents();

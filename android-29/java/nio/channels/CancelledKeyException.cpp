@@ -4,15 +4,15 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	CancelledKeyException::CancelledKeyException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CancelledKeyException::CancelledKeyException(QAndroidJniObject obj) : java::lang::IllegalStateException(obj) {}
+	
 	// Constructors
 	CancelledKeyException::CancelledKeyException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::IllegalStateException(
 			"java.nio.channels.CancelledKeyException",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::nio::channels

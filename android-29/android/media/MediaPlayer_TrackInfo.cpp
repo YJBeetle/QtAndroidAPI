@@ -48,51 +48,53 @@ namespace android::media
 		);
 	}
 	
-	MediaPlayer_TrackInfo::MediaPlayer_TrackInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaPlayer_TrackInfo::MediaPlayer_TrackInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint MediaPlayer_TrackInfo::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	QAndroidJniObject MediaPlayer_TrackInfo::getFormat()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFormat",
 			"()Landroid/media/MediaFormat;"
 		);
 	}
 	jstring MediaPlayer_TrackInfo::getLanguage()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLanguage",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint MediaPlayer_TrackInfo::getTrackType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTrackType",
 			"()I"
 		);
 	}
 	jstring MediaPlayer_TrackInfo::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void MediaPlayer_TrackInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

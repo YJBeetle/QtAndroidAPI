@@ -456,161 +456,159 @@ namespace android::content::pm
 	}
 	jint ActivityInfo::colorMode()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"colorMode"
 		);
 	}
 	jint ActivityInfo::configChanges()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"configChanges"
 		);
 	}
 	jint ActivityInfo::documentLaunchMode()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"documentLaunchMode"
 		);
 	}
 	jint ActivityInfo::flags()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"flags"
 		);
 	}
 	jint ActivityInfo::launchMode()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"launchMode"
 		);
 	}
 	jint ActivityInfo::maxRecents()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"maxRecents"
 		);
 	}
 	jstring ActivityInfo::parentActivityName()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"parentActivityName",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring ActivityInfo::permission()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"permission",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint ActivityInfo::persistableMode()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"persistableMode"
 		);
 	}
 	jint ActivityInfo::screenOrientation()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"screenOrientation"
 		);
 	}
 	jint ActivityInfo::softInputMode()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"softInputMode"
 		);
 	}
 	jstring ActivityInfo::targetActivity()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"targetActivity",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring ActivityInfo::taskAffinity()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"taskAffinity",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint ActivityInfo::theme()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"theme"
 		);
 	}
 	jint ActivityInfo::uiOptions()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"uiOptions"
 		);
 	}
 	QAndroidJniObject ActivityInfo::windowLayout()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"windowLayout",
 			"Landroid/content/pm/ActivityInfo$WindowLayout;"
 		);
 	}
 	
-	ActivityInfo::ActivityInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ActivityInfo::ActivityInfo(QAndroidJniObject obj) : android::content::pm::ComponentInfo(obj) {}
+	
 	// Constructors
 	ActivityInfo::ActivityInfo()
-	{
-		__thiz = QAndroidJniObject(
+		: android::content::pm::ComponentInfo(
 			"android.content.pm.ActivityInfo",
 			"()V"
-		);
-	}
+		) {}
 	ActivityInfo::ActivityInfo(android::content::pm::ActivityInfo &arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::content::pm::ComponentInfo(
 			"android.content.pm.ActivityInfo",
 			"(Landroid/content/pm/ActivityInfo;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jint ActivityInfo::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	void ActivityInfo::dump(__JniBaseClass arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"dump",
 			"(Landroid/util/Printer;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	jint ActivityInfo::getThemeResource()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getThemeResource",
 			"()I"
 		);
 	}
 	jstring ActivityInfo::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void ActivityInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

@@ -5,27 +5,29 @@ namespace android::app::backup
 {
 	// Fields
 	
-	BackupDataOutput::BackupDataOutput(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BackupDataOutput::BackupDataOutput(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jlong BackupDataOutput::getQuota()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getQuota",
 			"()J"
 		);
 	}
 	jint BackupDataOutput::getTransportFlags()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTransportFlags",
 			"()I"
 		);
 	}
 	jint BackupDataOutput::writeEntityData(jbyteArray arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"writeEntityData",
 			"([BI)I",
 			arg0,
@@ -34,7 +36,7 @@ namespace android::app::backup
 	}
 	jint BackupDataOutput::writeEntityHeader(jstring arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"writeEntityHeader",
 			"(Ljava/lang/String;I)I",
 			arg0,

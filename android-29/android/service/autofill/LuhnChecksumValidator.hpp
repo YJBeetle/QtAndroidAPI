@@ -15,10 +15,12 @@ namespace android::service::autofill
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit LuhnChecksumValidator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		LuhnChecksumValidator(QAndroidJniObject obj);
+		
 		// Constructors
 		LuhnChecksumValidator(jarray arg0);
-		LuhnChecksumValidator() = default;
 		
 		// Methods
 		jint describeContents();

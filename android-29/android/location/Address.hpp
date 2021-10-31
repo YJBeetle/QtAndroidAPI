@@ -23,10 +23,12 @@ namespace android::location
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Address(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Address(QAndroidJniObject obj);
+		
 		// Constructors
 		Address(java::util::Locale arg0);
-		Address() = default;
 		
 		// Methods
 		void clearLatitude();

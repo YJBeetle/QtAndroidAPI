@@ -28,7 +28,9 @@ namespace java::util::stream
 		);
 	}
 	
-	Collector_Characteristics::Collector_Characteristics(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Collector_Characteristics::Collector_Characteristics(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

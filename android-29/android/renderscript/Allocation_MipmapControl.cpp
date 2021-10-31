@@ -28,7 +28,9 @@ namespace android::renderscript
 		);
 	}
 	
-	Allocation_MipmapControl::Allocation_MipmapControl(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Allocation_MipmapControl::Allocation_MipmapControl(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

@@ -7,15 +7,15 @@ namespace android::text::method
 {
 	// Fields
 	
-	ArrowKeyMovementMethod::ArrowKeyMovementMethod(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ArrowKeyMovementMethod::ArrowKeyMovementMethod(QAndroidJniObject obj) : android::text::method::BaseMovementMethod(obj) {}
+	
 	// Constructors
 	ArrowKeyMovementMethod::ArrowKeyMovementMethod()
-	{
-		__thiz = QAndroidJniObject(
+		: android::text::method::BaseMovementMethod(
 			"android.text.method.ArrowKeyMovementMethod",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject ArrowKeyMovementMethod::getInstance()
@@ -28,38 +28,38 @@ namespace android::text::method
 	}
 	jboolean ArrowKeyMovementMethod::canSelectArbitrarily()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"canSelectArbitrarily",
 			"()Z"
 		);
 	}
 	void ArrowKeyMovementMethod::initialize(android::widget::TextView arg0, __JniBaseClass arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"initialize",
 			"(Landroid/widget/TextView;Landroid/text/Spannable;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void ArrowKeyMovementMethod::onTakeFocus(android::widget::TextView arg0, __JniBaseClass arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onTakeFocus",
 			"(Landroid/widget/TextView;Landroid/text/Spannable;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
 	jboolean ArrowKeyMovementMethod::onTouchEvent(android::widget::TextView arg0, __JniBaseClass arg1, android::view::MotionEvent arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onTouchEvent",
 			"(Landroid/widget/TextView;Landroid/text/Spannable;Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 } // namespace android::text::method

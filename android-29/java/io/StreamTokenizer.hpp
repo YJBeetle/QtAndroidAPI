@@ -25,11 +25,13 @@ namespace java::io
 		jstring sval();
 		jint ttype();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit StreamTokenizer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		StreamTokenizer(QAndroidJniObject obj);
+		
 		// Constructors
 		StreamTokenizer(java::io::InputStream arg0);
 		StreamTokenizer(java::io::Reader arg0);
-		StreamTokenizer() = default;
 		
 		// Methods
 		void commentChar(jint arg0);

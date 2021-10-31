@@ -34,9 +34,11 @@ namespace android::print
 		static jint STATE_QUEUED();
 		static jint STATE_STARTED();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PrintJobInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PrintJobInfo(QAndroidJniObject obj);
+		
 		// Constructors
-		PrintJobInfo() = default;
 		
 		// Methods
 		jint describeContents();

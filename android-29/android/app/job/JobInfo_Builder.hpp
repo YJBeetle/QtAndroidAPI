@@ -38,10 +38,12 @@ namespace android::app::job
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit JobInfo_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		JobInfo_Builder(QAndroidJniObject obj);
+		
 		// Constructors
 		JobInfo_Builder(jint arg0, android::content::ComponentName arg1);
-		JobInfo_Builder() = default;
 		
 		// Methods
 		QAndroidJniObject addTriggerContentUri(android::app::job::JobInfo_TriggerContentUri arg0);

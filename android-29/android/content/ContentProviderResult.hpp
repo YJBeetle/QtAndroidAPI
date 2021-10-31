@@ -25,12 +25,14 @@ namespace android::content
 		QAndroidJniObject count();
 		QAndroidJniObject uri();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ContentProviderResult(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ContentProviderResult(QAndroidJniObject obj);
+		
 		// Constructors
 		ContentProviderResult(android::net::Uri arg0);
 		ContentProviderResult(android::os::Parcel arg0);
 		ContentProviderResult(jint arg0);
-		ContentProviderResult() = default;
 		
 		// Methods
 		jint describeContents();

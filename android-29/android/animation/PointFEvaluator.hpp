@@ -14,7 +14,10 @@ namespace android::animation
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PointFEvaluator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PointFEvaluator(QAndroidJniObject obj);
+		
 		// Constructors
 		PointFEvaluator();
 		PointFEvaluator(android::graphics::PointF arg0);

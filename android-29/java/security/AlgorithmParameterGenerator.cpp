@@ -8,7 +8,9 @@ namespace java::security
 {
 	// Fields
 	
-	AlgorithmParameterGenerator::AlgorithmParameterGenerator(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AlgorithmParameterGenerator::AlgorithmParameterGenerator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -38,33 +40,33 @@ namespace java::security
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/AlgorithmParameterGenerator;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject AlgorithmParameterGenerator::generateParameters()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"generateParameters",
 			"()Ljava/security/AlgorithmParameters;"
 		);
 	}
 	jstring AlgorithmParameterGenerator::getAlgorithm()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject AlgorithmParameterGenerator::getProvider()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getProvider",
 			"()Ljava/security/Provider;"
 		);
 	}
 	void AlgorithmParameterGenerator::init(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"init",
 			"(I)V",
 			arg0
@@ -72,28 +74,28 @@ namespace java::security
 	}
 	void AlgorithmParameterGenerator::init(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"init",
 			"(Ljava/security/spec/AlgorithmParameterSpec;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AlgorithmParameterGenerator::init(jint arg0, java::security::SecureRandom arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"init",
 			"(ILjava/security/SecureRandom;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void AlgorithmParameterGenerator::init(__JniBaseClass arg0, java::security::SecureRandom arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"init",
 			"(Ljava/security/spec/AlgorithmParameterSpec;Ljava/security/SecureRandom;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 } // namespace java::security

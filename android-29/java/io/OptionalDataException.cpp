@@ -5,18 +5,20 @@ namespace java::io
 	// Fields
 	jboolean OptionalDataException::eof()
 	{
-		return __thiz.getField<jboolean>(
+		return getField<jboolean>(
 			"eof"
 		);
 	}
 	jint OptionalDataException::length()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"length"
 		);
 	}
 	
-	OptionalDataException::OptionalDataException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	OptionalDataException::OptionalDataException(QAndroidJniObject obj) : java::io::ObjectStreamException(obj) {}
+	
 	// Constructors
 	
 	// Methods

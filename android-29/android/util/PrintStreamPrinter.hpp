@@ -14,10 +14,12 @@ namespace android::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PrintStreamPrinter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PrintStreamPrinter(QAndroidJniObject obj);
+		
 		// Constructors
 		PrintStreamPrinter(java::io::PrintStream arg0);
-		PrintStreamPrinter() = default;
 		
 		// Methods
 		void println(jstring arg0);

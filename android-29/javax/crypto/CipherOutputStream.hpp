@@ -20,10 +20,12 @@ namespace javax::crypto
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CipherOutputStream(const char *className, const char *sig, Ts...agv) : java::io::FilterOutputStream(className, sig, std::forward<Ts>(agv)...) {}
 		CipherOutputStream(QAndroidJniObject obj);
+		
 		// Constructors
 		CipherOutputStream(java::io::OutputStream arg0, javax::crypto::Cipher arg1);
-		CipherOutputStream() = default;
 		
 		// Methods
 		void close();

@@ -6,28 +6,28 @@ namespace android::security
 {
 	// Fields
 	
-	ConfirmationPrompt_Builder::ConfirmationPrompt_Builder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ConfirmationPrompt_Builder::ConfirmationPrompt_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ConfirmationPrompt_Builder::ConfirmationPrompt_Builder(android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.security.ConfirmationPrompt$Builder",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject ConfirmationPrompt_Builder::build()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"build",
 			"()Landroid/security/ConfirmationPrompt;"
 		);
 	}
 	QAndroidJniObject ConfirmationPrompt_Builder::setExtraData(jbyteArray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setExtraData",
 			"([B)Landroid/security/ConfirmationPrompt$Builder;",
 			arg0
@@ -35,7 +35,7 @@ namespace android::security
 	}
 	QAndroidJniObject ConfirmationPrompt_Builder::setPromptText(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setPromptText",
 			"(Ljava/lang/CharSequence;)Landroid/security/ConfirmationPrompt$Builder;",
 			arg0

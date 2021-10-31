@@ -4,28 +4,28 @@ namespace java::util
 {
 	// Fields
 	
-	EventObject::EventObject(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	EventObject::EventObject(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	EventObject::EventObject(jobject arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.EventObject",
 			"(Ljava/lang/Object;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jobject EventObject::getSource()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSource",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jstring EventObject::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

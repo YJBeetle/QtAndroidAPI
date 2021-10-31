@@ -20,10 +20,12 @@ namespace android::net::wifi::aware
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ParcelablePeerHandle(const char *className, const char *sig, Ts...agv) : android::net::wifi::aware::PeerHandle(className, sig, std::forward<Ts>(agv)...) {}
 		ParcelablePeerHandle(QAndroidJniObject obj);
+		
 		// Constructors
 		ParcelablePeerHandle(android::net::wifi::aware::PeerHandle arg0);
-		ParcelablePeerHandle() = default;
 		
 		// Methods
 		jint describeContents();

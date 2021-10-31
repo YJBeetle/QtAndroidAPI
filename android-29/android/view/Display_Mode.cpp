@@ -13,20 +13,22 @@ namespace android::view
 		);
 	}
 	
-	Display_Mode::Display_Mode(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Display_Mode::Display_Mode(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint Display_Mode::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean Display_Mode::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -34,52 +36,52 @@ namespace android::view
 	}
 	jint Display_Mode::getModeId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getModeId",
 			"()I"
 		);
 	}
 	jint Display_Mode::getPhysicalHeight()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPhysicalHeight",
 			"()I"
 		);
 	}
 	jint Display_Mode::getPhysicalWidth()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPhysicalWidth",
 			"()I"
 		);
 	}
 	jfloat Display_Mode::getRefreshRate()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getRefreshRate",
 			"()F"
 		);
 	}
 	jint Display_Mode::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring Display_Mode::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void Display_Mode::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

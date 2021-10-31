@@ -23,12 +23,14 @@ namespace java::io
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit FileInputStream(const char *className, const char *sig, Ts...agv) : java::io::InputStream(className, sig, std::forward<Ts>(agv)...) {}
 		FileInputStream(QAndroidJniObject obj);
+		
 		// Constructors
 		FileInputStream(java::io::File arg0);
 		FileInputStream(java::io::FileDescriptor arg0);
 		FileInputStream(jstring arg0);
-		FileInputStream() = default;
 		
 		// Methods
 		jint available();

@@ -228,37 +228,37 @@ namespace android::accessibilityservice
 		);
 	}
 	
-	AccessibilityService::AccessibilityService(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AccessibilityService::AccessibilityService(QAndroidJniObject obj) : android::app::Service(obj) {}
+	
 	// Constructors
 	AccessibilityService::AccessibilityService()
-	{
-		__thiz = QAndroidJniObject(
+		: android::app::Service(
 			"android.accessibilityservice.AccessibilityService",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void AccessibilityService::disableSelf()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"disableSelf",
 			"()V"
 		);
 	}
 	jboolean AccessibilityService::dispatchGesture(android::accessibilityservice::GestureDescription arg0, android::accessibilityservice::AccessibilityService_GestureResultCallback arg1, android::os::Handler arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"dispatchGesture",
 			"(Landroid/accessibilityservice/GestureDescription;Landroid/accessibilityservice/AccessibilityService$GestureResultCallback;Landroid/os/Handler;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject AccessibilityService::findFocus(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"findFocus",
 			"(I)Landroid/view/accessibility/AccessibilityNodeInfo;",
 			arg0
@@ -266,49 +266,49 @@ namespace android::accessibilityservice
 	}
 	QAndroidJniObject AccessibilityService::getAccessibilityButtonController()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAccessibilityButtonController",
 			"()Landroid/accessibilityservice/AccessibilityButtonController;"
 		);
 	}
 	QAndroidJniObject AccessibilityService::getFingerprintGestureController()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFingerprintGestureController",
 			"()Landroid/accessibilityservice/FingerprintGestureController;"
 		);
 	}
 	QAndroidJniObject AccessibilityService::getMagnificationController()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMagnificationController",
 			"()Landroid/accessibilityservice/AccessibilityService$MagnificationController;"
 		);
 	}
 	QAndroidJniObject AccessibilityService::getRootInActiveWindow()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRootInActiveWindow",
 			"()Landroid/view/accessibility/AccessibilityNodeInfo;"
 		);
 	}
 	QAndroidJniObject AccessibilityService::getServiceInfo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getServiceInfo",
 			"()Landroid/accessibilityservice/AccessibilityServiceInfo;"
 		);
 	}
 	QAndroidJniObject AccessibilityService::getSoftKeyboardController()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSoftKeyboardController",
 			"()Landroid/accessibilityservice/AccessibilityService$SoftKeyboardController;"
 		);
 	}
 	jobject AccessibilityService::getSystemService(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSystemService",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
 			arg0
@@ -316,37 +316,37 @@ namespace android::accessibilityservice
 	}
 	QAndroidJniObject AccessibilityService::getWindows()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getWindows",
 			"()Ljava/util/List;"
 		);
 	}
 	void AccessibilityService::onAccessibilityEvent(android::view::accessibility::AccessibilityEvent arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onAccessibilityEvent",
 			"(Landroid/view/accessibility/AccessibilityEvent;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject AccessibilityService::onBind(android::content::Intent arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onBind",
 			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AccessibilityService::onInterrupt()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onInterrupt",
 			"()V"
 		);
 	}
 	jboolean AccessibilityService::performGlobalAction(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"performGlobalAction",
 			"(I)Z",
 			arg0
@@ -354,10 +354,10 @@ namespace android::accessibilityservice
 	}
 	void AccessibilityService::setServiceInfo(android::accessibilityservice::AccessibilityServiceInfo arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setServiceInfo",
 			"(Landroid/accessibilityservice/AccessibilityServiceInfo;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::accessibilityservice

@@ -12,7 +12,10 @@ namespace java::nio::channels
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit InterruptedByTimeoutException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
 		InterruptedByTimeoutException(QAndroidJniObject obj);
+		
 		// Constructors
 		InterruptedByTimeoutException();
 		

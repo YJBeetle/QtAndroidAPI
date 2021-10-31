@@ -15,9 +15,11 @@ namespace android::telephony::euicc
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DownloadableSubscription(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DownloadableSubscription(QAndroidJniObject obj);
+		
 		// Constructors
-		DownloadableSubscription() = default;
 		
 		// Methods
 		static QAndroidJniObject forActivationCode(jstring arg0);

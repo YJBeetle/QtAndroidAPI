@@ -15,9 +15,11 @@ namespace android::hardware::camera2::params
 		// Fields
 		static jfloat MINIMUM_GAIN_FACTOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit LensShadingMap(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		LensShadingMap(QAndroidJniObject obj);
+		
 		// Constructors
-		LensShadingMap() = default;
 		
 		// Methods
 		void copyGainFactors(jfloatArray arg0, jint arg1);

@@ -4,20 +4,20 @@ namespace android::view::inspector
 {
 	// Fields
 	
-	IntFlagMapping::IntFlagMapping(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	IntFlagMapping::IntFlagMapping(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	IntFlagMapping::IntFlagMapping()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.inspector.IntFlagMapping",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void IntFlagMapping::add(jint arg0, jint arg1, jstring arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"add",
 			"(IILjava/lang/String;)V",
 			arg0,
@@ -27,7 +27,7 @@ namespace android::view::inspector
 	}
 	QAndroidJniObject IntFlagMapping::get(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"(I)Ljava/util/Set;",
 			arg0

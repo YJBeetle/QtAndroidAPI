@@ -21,37 +21,35 @@ namespace android::media
 		);
 	}
 	
-	Session2Command::Session2Command(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Session2Command::Session2Command(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Session2Command::Session2Command(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.Session2Command",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	Session2Command::Session2Command(jstring arg0, android::os::Bundle arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.Session2Command",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
+			arg1.object()
+		) {}
 	
 	// Methods
 	jint Session2Command::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean Session2Command::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -59,38 +57,38 @@ namespace android::media
 	}
 	jint Session2Command::getCommandCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCommandCode",
 			"()I"
 		);
 	}
 	jstring Session2Command::getCustomAction()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCustomAction",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject Session2Command::getCustomExtras()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCustomExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
 	jint Session2Command::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	void Session2Command::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

@@ -5,7 +5,9 @@ namespace java::net
 {
 	// Fields
 	
-	NetworkInterface::NetworkInterface(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NetworkInterface::NetworkInterface(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -24,7 +26,7 @@ namespace java::net
 			"java.net.NetworkInterface",
 			"getByInetAddress",
 			"(Ljava/net/InetAddress;)Ljava/net/NetworkInterface;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject NetworkInterface::getByName(jstring arg0)
@@ -54,7 +56,7 @@ namespace java::net
 	}
 	jboolean NetworkInterface::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -62,126 +64,126 @@ namespace java::net
 	}
 	jstring NetworkInterface::getDisplayName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDisplayName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jbyteArray NetworkInterface::getHardwareAddress()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getHardwareAddress",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jint NetworkInterface::getIndex()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getIndex",
 			"()I"
 		);
 	}
 	QAndroidJniObject NetworkInterface::getInetAddresses()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getInetAddresses",
 			"()Ljava/util/Enumeration;"
 		);
 	}
 	QAndroidJniObject NetworkInterface::getInterfaceAddresses()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getInterfaceAddresses",
 			"()Ljava/util/List;"
 		);
 	}
 	jint NetworkInterface::getMTU()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMTU",
 			"()I"
 		);
 	}
 	jstring NetworkInterface::getName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject NetworkInterface::getParent()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getParent",
 			"()Ljava/net/NetworkInterface;"
 		);
 	}
 	QAndroidJniObject NetworkInterface::getSubInterfaces()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSubInterfaces",
 			"()Ljava/util/Enumeration;"
 		);
 	}
 	jint NetworkInterface::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	QAndroidJniObject NetworkInterface::inetAddresses()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"inetAddresses",
 			"()Ljava/util/stream/Stream;"
 		);
 	}
 	jboolean NetworkInterface::isLoopback()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isLoopback",
 			"()Z"
 		);
 	}
 	jboolean NetworkInterface::isPointToPoint()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isPointToPoint",
 			"()Z"
 		);
 	}
 	jboolean NetworkInterface::isUp()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isUp",
 			"()Z"
 		);
 	}
 	jboolean NetworkInterface::isVirtual()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isVirtual",
 			"()Z"
 		);
 	}
 	QAndroidJniObject NetworkInterface::subInterfaces()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"subInterfaces",
 			"()Ljava/util/stream/Stream;"
 		);
 	}
 	jboolean NetworkInterface::supportsMulticast()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"supportsMulticast",
 			"()Z"
 		);
 	}
 	jstring NetworkInterface::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

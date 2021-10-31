@@ -5,48 +5,50 @@ namespace android::provider
 {
 	// Fields
 	
-	FontsContract_FontInfo::FontsContract_FontInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FontsContract_FontInfo::FontsContract_FontInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jarray FontsContract_FontInfo::getAxes()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAxes",
 			"()[Landroid/graphics/fonts/FontVariationAxis;"
 		).object<jarray>();
 	}
 	jint FontsContract_FontInfo::getResultCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getResultCode",
 			"()I"
 		);
 	}
 	jint FontsContract_FontInfo::getTtcIndex()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTtcIndex",
 			"()I"
 		);
 	}
 	QAndroidJniObject FontsContract_FontInfo::getUri()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getUri",
 			"()Landroid/net/Uri;"
 		);
 	}
 	jint FontsContract_FontInfo::getWeight()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getWeight",
 			"()I"
 		);
 	}
 	jboolean FontsContract_FontInfo::isItalic()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isItalic",
 			"()Z"
 		);

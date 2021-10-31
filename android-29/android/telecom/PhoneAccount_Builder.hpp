@@ -30,11 +30,13 @@ namespace android::telecom
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PhoneAccount_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PhoneAccount_Builder(QAndroidJniObject obj);
+		
 		// Constructors
 		PhoneAccount_Builder(android::telecom::PhoneAccount arg0);
 		PhoneAccount_Builder(android::telecom::PhoneAccountHandle arg0, jstring arg1);
-		PhoneAccount_Builder() = default;
 		
 		// Methods
 		QAndroidJniObject addSupportedUriScheme(jstring arg0);

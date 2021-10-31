@@ -32,13 +32,15 @@ namespace android::hardware::biometrics
 		);
 	}
 	
-	BiometricManager::BiometricManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BiometricManager::BiometricManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint BiometricManager::canAuthenticate()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"canAuthenticate",
 			"()I"
 		);

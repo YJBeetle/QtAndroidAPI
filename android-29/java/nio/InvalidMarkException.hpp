@@ -13,7 +13,10 @@ namespace java::nio
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit InvalidMarkException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalStateException(className, sig, std::forward<Ts>(agv)...) {}
 		InvalidMarkException(QAndroidJniObject obj);
+		
 		// Constructors
 		InvalidMarkException();
 		

@@ -14,9 +14,11 @@ namespace android::net
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit IpSecManager_UdpEncapsulationSocket(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		IpSecManager_UdpEncapsulationSocket(QAndroidJniObject obj);
+		
 		// Constructors
-		IpSecManager_UdpEncapsulationSocket() = default;
 		
 		// Methods
 		void close();

@@ -8,50 +8,46 @@ namespace java::util::jar
 {
 	// Fields
 	
-	Manifest::Manifest(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Manifest::Manifest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Manifest::Manifest()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.jar.Manifest",
 			"()V"
-		);
-	}
+		) {}
 	Manifest::Manifest(java::io::InputStream arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.jar.Manifest",
 			"(Ljava/io/InputStream;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	Manifest::Manifest(java::util::jar::Manifest &arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.jar.Manifest",
 			"(Ljava/util/jar/Manifest;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	void Manifest::clear()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
 	jobject Manifest::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jboolean Manifest::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -59,7 +55,7 @@ namespace java::util::jar
 	}
 	QAndroidJniObject Manifest::getAttributes(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAttributes",
 			"(Ljava/lang/String;)Ljava/util/jar/Attributes;",
 			arg0
@@ -67,39 +63,39 @@ namespace java::util::jar
 	}
 	QAndroidJniObject Manifest::getEntries()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEntries",
 			"()Ljava/util/Map;"
 		);
 	}
 	QAndroidJniObject Manifest::getMainAttributes()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMainAttributes",
 			"()Ljava/util/jar/Attributes;"
 		);
 	}
 	jint Manifest::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	void Manifest::read(java::io::InputStream arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"read",
 			"(Ljava/io/InputStream;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Manifest::write(java::io::OutputStream arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"write",
 			"(Ljava/io/OutputStream;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace java::util::jar

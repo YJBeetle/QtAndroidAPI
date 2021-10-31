@@ -12,7 +12,10 @@ namespace java::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit NoSuchElementException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
 		NoSuchElementException(QAndroidJniObject obj);
+		
 		// Constructors
 		NoSuchElementException();
 		NoSuchElementException(jstring arg0);

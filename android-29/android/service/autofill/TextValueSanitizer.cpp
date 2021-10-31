@@ -14,39 +14,39 @@ namespace android::service::autofill
 		);
 	}
 	
-	TextValueSanitizer::TextValueSanitizer(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TextValueSanitizer::TextValueSanitizer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	TextValueSanitizer::TextValueSanitizer(java::util::regex::Pattern arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.service.autofill.TextValueSanitizer",
 			"(Ljava/util/regex/Pattern;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jint TextValueSanitizer::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jstring TextValueSanitizer::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void TextValueSanitizer::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

@@ -210,43 +210,39 @@ namespace android::graphics
 		);
 	}
 	
-	Paint::Paint(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Paint::Paint(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Paint::Paint()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.graphics.Paint",
 			"()V"
-		);
-	}
+		) {}
 	Paint::Paint(android::graphics::Paint &arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.graphics.Paint",
 			"(Landroid/graphics/Paint;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	Paint::Paint(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.graphics.Paint",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jfloat Paint::ascent()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"ascent",
 			"()F"
 		);
 	}
 	jint Paint::breakText(jstring arg0, jboolean arg1, jfloat arg2, jfloatArray arg3)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"breakText",
 			"(Ljava/lang/String;ZF[F)I",
 			arg0,
@@ -257,7 +253,7 @@ namespace android::graphics
 	}
 	jint Paint::breakText(jcharArray arg0, jint arg1, jint arg2, jfloat arg3, jfloatArray arg4)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"breakText",
 			"([CIIF[F)I",
 			arg0,
@@ -269,7 +265,7 @@ namespace android::graphics
 	}
 	jint Paint::breakText(jstring arg0, jint arg1, jint arg2, jboolean arg3, jfloat arg4, jfloatArray arg5)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"breakText",
 			"(Ljava/lang/CharSequence;IIZF[F)I",
 			arg0,
@@ -282,159 +278,159 @@ namespace android::graphics
 	}
 	void Paint::clearShadowLayer()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clearShadowLayer",
 			"()V"
 		);
 	}
 	jfloat Paint::descent()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"descent",
 			"()F"
 		);
 	}
 	jboolean Paint::equalsForTextMeasurement(android::graphics::Paint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equalsForTextMeasurement",
 			"(Landroid/graphics/Paint;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint Paint::getAlpha()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAlpha",
 			"()I"
 		);
 	}
 	QAndroidJniObject Paint::getBlendMode()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBlendMode",
 			"()Landroid/graphics/BlendMode;"
 		);
 	}
 	jint Paint::getColor()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getColor",
 			"()I"
 		);
 	}
 	QAndroidJniObject Paint::getColorFilter()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getColorFilter",
 			"()Landroid/graphics/ColorFilter;"
 		);
 	}
 	jlong Paint::getColorLong()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getColorLong",
 			"()J"
 		);
 	}
 	jint Paint::getEndHyphenEdit()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getEndHyphenEdit",
 			"()I"
 		);
 	}
 	jboolean Paint::getFillPath(android::graphics::Path arg0, android::graphics::Path arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getFillPath",
 			"(Landroid/graphics/Path;Landroid/graphics/Path;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jint Paint::getFlags()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getFlags",
 			"()I"
 		);
 	}
 	jstring Paint::getFontFeatureSettings()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFontFeatureSettings",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject Paint::getFontMetrics()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFontMetrics",
 			"()Landroid/graphics/Paint$FontMetrics;"
 		);
 	}
 	jfloat Paint::getFontMetrics(android::graphics::Paint_FontMetrics arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getFontMetrics",
 			"(Landroid/graphics/Paint$FontMetrics;)F",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Paint::getFontMetricsInt()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFontMetricsInt",
 			"()Landroid/graphics/Paint$FontMetricsInt;"
 		);
 	}
 	jint Paint::getFontMetricsInt(android::graphics::Paint_FontMetricsInt arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getFontMetricsInt",
 			"(Landroid/graphics/Paint$FontMetricsInt;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jfloat Paint::getFontSpacing()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getFontSpacing",
 			"()F"
 		);
 	}
 	jstring Paint::getFontVariationSettings()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFontVariationSettings",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint Paint::getHinting()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getHinting",
 			"()I"
 		);
 	}
 	jfloat Paint::getLetterSpacing()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getLetterSpacing",
 			"()F"
 		);
 	}
 	QAndroidJniObject Paint::getMaskFilter()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMaskFilter",
 			"()Landroid/graphics/MaskFilter;"
 		);
 	}
 	jint Paint::getOffsetForAdvance(jcharArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jfloat arg6)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getOffsetForAdvance",
 			"([CIIIIZF)I",
 			arg0,
@@ -448,7 +444,7 @@ namespace android::graphics
 	}
 	jint Paint::getOffsetForAdvance(jstring arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jfloat arg6)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getOffsetForAdvance",
 			"(Ljava/lang/CharSequence;IIIIZF)I",
 			arg0,
@@ -462,14 +458,14 @@ namespace android::graphics
 	}
 	QAndroidJniObject Paint::getPathEffect()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPathEffect",
 			"()Landroid/graphics/PathEffect;"
 		);
 	}
 	jfloat Paint::getRunAdvance(jcharArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jint arg6)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getRunAdvance",
 			"([CIIIIZI)F",
 			arg0,
@@ -483,7 +479,7 @@ namespace android::graphics
 	}
 	jfloat Paint::getRunAdvance(jstring arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jint arg6)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getRunAdvance",
 			"(Ljava/lang/CharSequence;IIIIZI)F",
 			arg0,
@@ -497,148 +493,148 @@ namespace android::graphics
 	}
 	QAndroidJniObject Paint::getShader()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getShader",
 			"()Landroid/graphics/Shader;"
 		);
 	}
 	jint Paint::getShadowLayerColor()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getShadowLayerColor",
 			"()I"
 		);
 	}
 	jlong Paint::getShadowLayerColorLong()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getShadowLayerColorLong",
 			"()J"
 		);
 	}
 	jfloat Paint::getShadowLayerDx()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getShadowLayerDx",
 			"()F"
 		);
 	}
 	jfloat Paint::getShadowLayerDy()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getShadowLayerDy",
 			"()F"
 		);
 	}
 	jfloat Paint::getShadowLayerRadius()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getShadowLayerRadius",
 			"()F"
 		);
 	}
 	jint Paint::getStartHyphenEdit()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getStartHyphenEdit",
 			"()I"
 		);
 	}
 	jfloat Paint::getStrikeThruPosition()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getStrikeThruPosition",
 			"()F"
 		);
 	}
 	jfloat Paint::getStrikeThruThickness()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getStrikeThruThickness",
 			"()F"
 		);
 	}
 	QAndroidJniObject Paint::getStrokeCap()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getStrokeCap",
 			"()Landroid/graphics/Paint$Cap;"
 		);
 	}
 	QAndroidJniObject Paint::getStrokeJoin()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getStrokeJoin",
 			"()Landroid/graphics/Paint$Join;"
 		);
 	}
 	jfloat Paint::getStrokeMiter()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getStrokeMiter",
 			"()F"
 		);
 	}
 	jfloat Paint::getStrokeWidth()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getStrokeWidth",
 			"()F"
 		);
 	}
 	QAndroidJniObject Paint::getStyle()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getStyle",
 			"()Landroid/graphics/Paint$Style;"
 		);
 	}
 	QAndroidJniObject Paint::getTextAlign()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTextAlign",
 			"()Landroid/graphics/Paint$Align;"
 		);
 	}
 	void Paint::getTextBounds(jcharArray arg0, jint arg1, jint arg2, android::graphics::Rect arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"getTextBounds",
 			"([CIILandroid/graphics/Rect;)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	void Paint::getTextBounds(jstring arg0, jint arg1, jint arg2, android::graphics::Rect arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"getTextBounds",
 			"(Ljava/lang/CharSequence;IILandroid/graphics/Rect;)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	QAndroidJniObject Paint::getTextLocale()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTextLocale",
 			"()Ljava/util/Locale;"
 		);
 	}
 	QAndroidJniObject Paint::getTextLocales()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTextLocales",
 			"()Landroid/os/LocaleList;"
 		);
 	}
 	void Paint::getTextPath(jcharArray arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, android::graphics::Path arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"getTextPath",
 			"([CIIFFLandroid/graphics/Path;)V",
 			arg0,
@@ -646,12 +642,12 @@ namespace android::graphics
 			arg2,
 			arg3,
 			arg4,
-			arg5.__jniObject().object()
+			arg5.object()
 		);
 	}
 	void Paint::getTextPath(jstring arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, android::graphics::Path arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"getTextPath",
 			"(Ljava/lang/String;IIFFLandroid/graphics/Path;)V",
 			arg0,
@@ -659,12 +655,12 @@ namespace android::graphics
 			arg2,
 			arg3,
 			arg4,
-			arg5.__jniObject().object()
+			arg5.object()
 		);
 	}
 	jfloat Paint::getTextRunAdvances(jcharArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jfloatArray arg6, jint arg7)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getTextRunAdvances",
 			"([CIIIIZ[FI)F",
 			arg0,
@@ -679,7 +675,7 @@ namespace android::graphics
 	}
 	jint Paint::getTextRunCursor(jcharArray arg0, jint arg1, jint arg2, jboolean arg3, jint arg4, jint arg5)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTextRunCursor",
 			"([CIIZII)I",
 			arg0,
@@ -692,7 +688,7 @@ namespace android::graphics
 	}
 	jint Paint::getTextRunCursor(jstring arg0, jint arg1, jint arg2, jboolean arg3, jint arg4, jint arg5)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTextRunCursor",
 			"(Ljava/lang/CharSequence;IIZII)I",
 			arg0,
@@ -705,28 +701,28 @@ namespace android::graphics
 	}
 	jfloat Paint::getTextScaleX()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getTextScaleX",
 			"()F"
 		);
 	}
 	jfloat Paint::getTextSize()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getTextSize",
 			"()F"
 		);
 	}
 	jfloat Paint::getTextSkewX()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getTextSkewX",
 			"()F"
 		);
 	}
 	jint Paint::getTextWidths(jstring arg0, jfloatArray arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTextWidths",
 			"(Ljava/lang/String;[F)I",
 			arg0,
@@ -735,7 +731,7 @@ namespace android::graphics
 	}
 	jint Paint::getTextWidths(jcharArray arg0, jint arg1, jint arg2, jfloatArray arg3)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTextWidths",
 			"([CII[F)I",
 			arg0,
@@ -746,7 +742,7 @@ namespace android::graphics
 	}
 	jint Paint::getTextWidths(jstring arg0, jint arg1, jint arg2, jfloatArray arg3)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTextWidths",
 			"(Ljava/lang/CharSequence;II[F)I",
 			arg0,
@@ -757,42 +753,42 @@ namespace android::graphics
 	}
 	QAndroidJniObject Paint::getTypeface()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTypeface",
 			"()Landroid/graphics/Typeface;"
 		);
 	}
 	jfloat Paint::getUnderlinePosition()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getUnderlinePosition",
 			"()F"
 		);
 	}
 	jfloat Paint::getUnderlineThickness()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getUnderlineThickness",
 			"()F"
 		);
 	}
 	jfloat Paint::getWordSpacing()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getWordSpacing",
 			"()F"
 		);
 	}
 	QAndroidJniObject Paint::getXfermode()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getXfermode",
 			"()Landroid/graphics/Xfermode;"
 		);
 	}
 	jboolean Paint::hasGlyph(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasGlyph",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -800,70 +796,70 @@ namespace android::graphics
 	}
 	jboolean Paint::isAntiAlias()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isAntiAlias",
 			"()Z"
 		);
 	}
 	jboolean Paint::isDither()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isDither",
 			"()Z"
 		);
 	}
 	jboolean Paint::isElegantTextHeight()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isElegantTextHeight",
 			"()Z"
 		);
 	}
 	jboolean Paint::isFakeBoldText()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isFakeBoldText",
 			"()Z"
 		);
 	}
 	jboolean Paint::isFilterBitmap()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isFilterBitmap",
 			"()Z"
 		);
 	}
 	jboolean Paint::isLinearText()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isLinearText",
 			"()Z"
 		);
 	}
 	jboolean Paint::isStrikeThruText()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isStrikeThruText",
 			"()Z"
 		);
 	}
 	jboolean Paint::isSubpixelText()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isSubpixelText",
 			"()Z"
 		);
 	}
 	jboolean Paint::isUnderlineText()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isUnderlineText",
 			"()Z"
 		);
 	}
 	jfloat Paint::measureText(jstring arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"measureText",
 			"(Ljava/lang/String;)F",
 			arg0
@@ -871,7 +867,7 @@ namespace android::graphics
 	}
 	jfloat Paint::measureText(jcharArray arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"measureText",
 			"([CII)F",
 			arg0,
@@ -881,7 +877,7 @@ namespace android::graphics
 	}
 	jfloat Paint::measureText(jstring arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"measureText",
 			"(Ljava/lang/CharSequence;II)F",
 			arg0,
@@ -891,22 +887,22 @@ namespace android::graphics
 	}
 	void Paint::reset()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
 	void Paint::set(android::graphics::Paint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"set",
 			"(Landroid/graphics/Paint;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Paint::setARGB(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setARGB",
 			"(IIII)V",
 			arg0,
@@ -917,7 +913,7 @@ namespace android::graphics
 	}
 	void Paint::setAlpha(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAlpha",
 			"(I)V",
 			arg0
@@ -925,7 +921,7 @@ namespace android::graphics
 	}
 	void Paint::setAntiAlias(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAntiAlias",
 			"(Z)V",
 			arg0
@@ -933,15 +929,15 @@ namespace android::graphics
 	}
 	void Paint::setBlendMode(android::graphics::BlendMode arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setBlendMode",
 			"(Landroid/graphics/BlendMode;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Paint::setColor(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setColor",
 			"(I)V",
 			arg0
@@ -949,7 +945,7 @@ namespace android::graphics
 	}
 	void Paint::setColor(jlong arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setColor",
 			"(J)V",
 			arg0
@@ -957,15 +953,15 @@ namespace android::graphics
 	}
 	QAndroidJniObject Paint::setColorFilter(android::graphics::ColorFilter arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setColorFilter",
 			"(Landroid/graphics/ColorFilter;)Landroid/graphics/ColorFilter;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Paint::setDither(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDither",
 			"(Z)V",
 			arg0
@@ -973,7 +969,7 @@ namespace android::graphics
 	}
 	void Paint::setElegantTextHeight(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setElegantTextHeight",
 			"(Z)V",
 			arg0
@@ -981,7 +977,7 @@ namespace android::graphics
 	}
 	void Paint::setEndHyphenEdit(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setEndHyphenEdit",
 			"(I)V",
 			arg0
@@ -989,7 +985,7 @@ namespace android::graphics
 	}
 	void Paint::setFakeBoldText(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFakeBoldText",
 			"(Z)V",
 			arg0
@@ -997,7 +993,7 @@ namespace android::graphics
 	}
 	void Paint::setFilterBitmap(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFilterBitmap",
 			"(Z)V",
 			arg0
@@ -1005,7 +1001,7 @@ namespace android::graphics
 	}
 	void Paint::setFlags(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFlags",
 			"(I)V",
 			arg0
@@ -1013,7 +1009,7 @@ namespace android::graphics
 	}
 	void Paint::setFontFeatureSettings(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFontFeatureSettings",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -1021,7 +1017,7 @@ namespace android::graphics
 	}
 	jboolean Paint::setFontVariationSettings(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"setFontVariationSettings",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -1029,7 +1025,7 @@ namespace android::graphics
 	}
 	void Paint::setHinting(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setHinting",
 			"(I)V",
 			arg0
@@ -1037,7 +1033,7 @@ namespace android::graphics
 	}
 	void Paint::setLetterSpacing(jfloat arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLetterSpacing",
 			"(F)V",
 			arg0
@@ -1045,7 +1041,7 @@ namespace android::graphics
 	}
 	void Paint::setLinearText(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLinearText",
 			"(Z)V",
 			arg0
@@ -1053,31 +1049,31 @@ namespace android::graphics
 	}
 	QAndroidJniObject Paint::setMaskFilter(android::graphics::MaskFilter arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setMaskFilter",
 			"(Landroid/graphics/MaskFilter;)Landroid/graphics/MaskFilter;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Paint::setPathEffect(android::graphics::PathEffect arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setPathEffect",
 			"(Landroid/graphics/PathEffect;)Landroid/graphics/PathEffect;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Paint::setShader(android::graphics::Shader arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setShader",
 			"(Landroid/graphics/Shader;)Landroid/graphics/Shader;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Paint::setShadowLayer(jfloat arg0, jfloat arg1, jfloat arg2, jint arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setShadowLayer",
 			"(FFFI)V",
 			arg0,
@@ -1088,7 +1084,7 @@ namespace android::graphics
 	}
 	void Paint::setShadowLayer(jfloat arg0, jfloat arg1, jfloat arg2, jlong arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setShadowLayer",
 			"(FFFJ)V",
 			arg0,
@@ -1099,7 +1095,7 @@ namespace android::graphics
 	}
 	void Paint::setStartHyphenEdit(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setStartHyphenEdit",
 			"(I)V",
 			arg0
@@ -1107,7 +1103,7 @@ namespace android::graphics
 	}
 	void Paint::setStrikeThruText(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setStrikeThruText",
 			"(Z)V",
 			arg0
@@ -1115,23 +1111,23 @@ namespace android::graphics
 	}
 	void Paint::setStrokeCap(android::graphics::Paint_Cap arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setStrokeCap",
 			"(Landroid/graphics/Paint$Cap;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Paint::setStrokeJoin(android::graphics::Paint_Join arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setStrokeJoin",
 			"(Landroid/graphics/Paint$Join;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Paint::setStrokeMiter(jfloat arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setStrokeMiter",
 			"(F)V",
 			arg0
@@ -1139,7 +1135,7 @@ namespace android::graphics
 	}
 	void Paint::setStrokeWidth(jfloat arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setStrokeWidth",
 			"(F)V",
 			arg0
@@ -1147,15 +1143,15 @@ namespace android::graphics
 	}
 	void Paint::setStyle(android::graphics::Paint_Style arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setStyle",
 			"(Landroid/graphics/Paint$Style;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Paint::setSubpixelText(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSubpixelText",
 			"(Z)V",
 			arg0
@@ -1163,31 +1159,31 @@ namespace android::graphics
 	}
 	void Paint::setTextAlign(android::graphics::Paint_Align arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTextAlign",
 			"(Landroid/graphics/Paint$Align;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Paint::setTextLocale(java::util::Locale arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTextLocale",
 			"(Ljava/util/Locale;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Paint::setTextLocales(android::os::LocaleList arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTextLocales",
 			"(Landroid/os/LocaleList;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Paint::setTextScaleX(jfloat arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTextScaleX",
 			"(F)V",
 			arg0
@@ -1195,7 +1191,7 @@ namespace android::graphics
 	}
 	void Paint::setTextSize(jfloat arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTextSize",
 			"(F)V",
 			arg0
@@ -1203,7 +1199,7 @@ namespace android::graphics
 	}
 	void Paint::setTextSkewX(jfloat arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTextSkewX",
 			"(F)V",
 			arg0
@@ -1211,15 +1207,15 @@ namespace android::graphics
 	}
 	QAndroidJniObject Paint::setTypeface(android::graphics::Typeface arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setTypeface",
 			"(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Paint::setUnderlineText(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setUnderlineText",
 			"(Z)V",
 			arg0
@@ -1227,7 +1223,7 @@ namespace android::graphics
 	}
 	void Paint::setWordSpacing(jfloat arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setWordSpacing",
 			"(F)V",
 			arg0
@@ -1235,10 +1231,10 @@ namespace android::graphics
 	}
 	QAndroidJniObject Paint::setXfermode(android::graphics::Xfermode arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setXfermode",
 			"(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::graphics

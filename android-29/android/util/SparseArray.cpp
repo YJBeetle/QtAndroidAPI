@@ -4,28 +4,26 @@ namespace android::util
 {
 	// Fields
 	
-	SparseArray::SparseArray(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SparseArray::SparseArray(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	SparseArray::SparseArray()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.util.SparseArray",
 			"()V"
-		);
-	}
+		) {}
 	SparseArray::SparseArray(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.util.SparseArray",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	void SparseArray::append(jint arg0, jobject arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"append",
 			"(ILjava/lang/Object;)V",
 			arg0,
@@ -34,21 +32,21 @@ namespace android::util
 	}
 	void SparseArray::clear()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
 	QAndroidJniObject SparseArray::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Landroid/util/SparseArray;"
 		);
 	}
 	void SparseArray::_delete(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"delete",
 			"(I)V",
 			arg0
@@ -56,7 +54,7 @@ namespace android::util
 	}
 	jobject SparseArray::get(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"(I)Ljava/lang/Object;",
 			arg0
@@ -64,7 +62,7 @@ namespace android::util
 	}
 	jobject SparseArray::get(jint arg0, jobject arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"(ILjava/lang/Object;)Ljava/lang/Object;",
 			arg0,
@@ -73,7 +71,7 @@ namespace android::util
 	}
 	jint SparseArray::indexOfKey(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"indexOfKey",
 			"(I)I",
 			arg0
@@ -81,7 +79,7 @@ namespace android::util
 	}
 	jint SparseArray::indexOfValue(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"indexOfValue",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -89,7 +87,7 @@ namespace android::util
 	}
 	jint SparseArray::keyAt(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"keyAt",
 			"(I)I",
 			arg0
@@ -97,7 +95,7 @@ namespace android::util
 	}
 	void SparseArray::put(jint arg0, jobject arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"put",
 			"(ILjava/lang/Object;)V",
 			arg0,
@@ -106,7 +104,7 @@ namespace android::util
 	}
 	void SparseArray::remove(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"remove",
 			"(I)V",
 			arg0
@@ -114,7 +112,7 @@ namespace android::util
 	}
 	void SparseArray::removeAt(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeAt",
 			"(I)V",
 			arg0
@@ -122,7 +120,7 @@ namespace android::util
 	}
 	void SparseArray::removeAtRange(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeAtRange",
 			"(II)V",
 			arg0,
@@ -131,7 +129,7 @@ namespace android::util
 	}
 	void SparseArray::setValueAt(jint arg0, jobject arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setValueAt",
 			"(ILjava/lang/Object;)V",
 			arg0,
@@ -140,21 +138,21 @@ namespace android::util
 	}
 	jint SparseArray::size()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
 	jstring SparseArray::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jobject SparseArray::valueAt(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"valueAt",
 			"(I)Ljava/lang/Object;",
 			arg0

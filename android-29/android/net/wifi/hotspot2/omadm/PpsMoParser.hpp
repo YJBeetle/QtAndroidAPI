@@ -14,9 +14,11 @@ namespace android::net::wifi::hotspot2::omadm
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PpsMoParser(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PpsMoParser(QAndroidJniObject obj);
+		
 		// Constructors
-		PpsMoParser() = default;
 		
 		// Methods
 		static QAndroidJniObject parseMoText(jstring arg0);

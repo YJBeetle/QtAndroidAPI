@@ -11,9 +11,11 @@ namespace android::os::strictmode
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit NonSdkApiUsedViolation(const char *className, const char *sig, Ts...agv) : android::os::strictmode::Violation(className, sig, std::forward<Ts>(agv)...) {}
 		NonSdkApiUsedViolation(QAndroidJniObject obj);
+		
 		// Constructors
-		NonSdkApiUsedViolation() = default;
 		
 		// Methods
 	};

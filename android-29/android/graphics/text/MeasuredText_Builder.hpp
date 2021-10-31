@@ -18,11 +18,13 @@ namespace android::graphics::text
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MeasuredText_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MeasuredText_Builder(QAndroidJniObject obj);
+		
 		// Constructors
 		MeasuredText_Builder(jcharArray arg0);
 		MeasuredText_Builder(android::graphics::text::MeasuredText arg0);
-		MeasuredText_Builder() = default;
 		
 		// Methods
 		QAndroidJniObject appendReplacementRun(android::graphics::Paint arg0, jint arg1, jfloat arg2);

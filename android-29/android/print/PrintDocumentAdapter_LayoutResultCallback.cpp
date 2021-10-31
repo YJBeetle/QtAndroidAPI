@@ -5,20 +5,22 @@ namespace android::print
 {
 	// Fields
 	
-	PrintDocumentAdapter_LayoutResultCallback::PrintDocumentAdapter_LayoutResultCallback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PrintDocumentAdapter_LayoutResultCallback::PrintDocumentAdapter_LayoutResultCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void PrintDocumentAdapter_LayoutResultCallback::onLayoutCancelled()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onLayoutCancelled",
 			"()V"
 		);
 	}
 	void PrintDocumentAdapter_LayoutResultCallback::onLayoutFailed(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onLayoutFailed",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
@@ -26,10 +28,10 @@ namespace android::print
 	}
 	void PrintDocumentAdapter_LayoutResultCallback::onLayoutFinished(android::print::PrintDocumentInfo arg0, jboolean arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onLayoutFinished",
 			"(Landroid/print/PrintDocumentInfo;Z)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

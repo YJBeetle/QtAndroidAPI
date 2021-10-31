@@ -41,9 +41,11 @@ namespace java::time
 		static QAndroidJniObject MAX();
 		static QAndroidJniObject MIN();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Instant(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Instant(QAndroidJniObject obj);
+		
 		// Constructors
-		Instant() = default;
 		
 		// Methods
 		static QAndroidJniObject from(__JniBaseClass arg0);

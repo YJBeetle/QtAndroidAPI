@@ -23,9 +23,11 @@ namespace java::net
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Inet6Address(const char *className, const char *sig, Ts...agv) : java::net::InetAddress(className, sig, std::forward<Ts>(agv)...) {}
 		Inet6Address(QAndroidJniObject obj);
+		
 		// Constructors
-		Inet6Address() = default;
 		
 		// Methods
 		static QAndroidJniObject getByAddress(jstring arg0, jbyteArray arg1, jint arg2);

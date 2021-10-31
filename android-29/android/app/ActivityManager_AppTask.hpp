@@ -26,9 +26,11 @@ namespace android::app
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ActivityManager_AppTask(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ActivityManager_AppTask(QAndroidJniObject obj);
+		
 		// Constructors
-		ActivityManager_AppTask() = default;
 		
 		// Methods
 		void finishAndRemoveTask();

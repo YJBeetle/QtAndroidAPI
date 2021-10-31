@@ -36,7 +36,9 @@ namespace android::text
 		);
 	}
 	
-	TextUtils_TruncateAt::TextUtils_TruncateAt(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TextUtils_TruncateAt::TextUtils_TruncateAt(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

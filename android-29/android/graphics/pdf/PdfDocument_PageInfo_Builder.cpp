@@ -6,33 +6,33 @@ namespace android::graphics::pdf
 {
 	// Fields
 	
-	PdfDocument_PageInfo_Builder::PdfDocument_PageInfo_Builder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PdfDocument_PageInfo_Builder::PdfDocument_PageInfo_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	PdfDocument_PageInfo_Builder::PdfDocument_PageInfo_Builder(jint arg0, jint arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.graphics.pdf.PdfDocument$PageInfo$Builder",
 			"(III)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject PdfDocument_PageInfo_Builder::create()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"create",
 			"()Landroid/graphics/pdf/PdfDocument$PageInfo;"
 		);
 	}
 	QAndroidJniObject PdfDocument_PageInfo_Builder::setContentRect(android::graphics::Rect arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setContentRect",
 			"(Landroid/graphics/Rect;)Landroid/graphics/pdf/PdfDocument$PageInfo$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::graphics::pdf

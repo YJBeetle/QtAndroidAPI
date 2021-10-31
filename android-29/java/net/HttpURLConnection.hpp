@@ -63,9 +63,11 @@ namespace java::net
 		static jint HTTP_USE_PROXY();
 		static jint HTTP_VERSION();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit HttpURLConnection(const char *className, const char *sig, Ts...agv) : java::net::URLConnection(className, sig, std::forward<Ts>(agv)...) {}
 		HttpURLConnection(QAndroidJniObject obj);
+		
 		// Constructors
-		HttpURLConnection() = default;
 		
 		// Methods
 		static jboolean getFollowRedirects();

@@ -11,9 +11,11 @@ namespace android::os
 		// Fields
 		static jstring PARTITION_NAME_SYSTEM();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Build_Partition(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Build_Partition(QAndroidJniObject obj);
+		
 		// Constructors
-		Build_Partition() = default;
 		
 		// Methods
 		jboolean equals(jobject arg0);

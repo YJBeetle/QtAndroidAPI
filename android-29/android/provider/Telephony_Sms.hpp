@@ -20,9 +20,11 @@ namespace android::provider
 		static QAndroidJniObject CONTENT_URI();
 		static jstring DEFAULT_SORT_ORDER();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Telephony_Sms(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Telephony_Sms(QAndroidJniObject obj);
+		
 		// Constructors
-		Telephony_Sms() = default;
 		
 		// Methods
 		static jstring getDefaultSmsPackage(android::content::Context arg0);

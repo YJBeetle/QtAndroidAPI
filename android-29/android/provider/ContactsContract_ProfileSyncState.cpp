@@ -25,7 +25,9 @@ namespace android::provider
 		);
 	}
 	
-	ContactsContract_ProfileSyncState::ContactsContract_ProfileSyncState(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ContactsContract_ProfileSyncState::ContactsContract_ProfileSyncState(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -35,8 +37,8 @@ namespace android::provider
 			"android.provider.ContactsContract$ProfileSyncState",
 			"get",
 			"(Landroid/content/ContentProviderClient;Landroid/accounts/Account;)[B",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		).object<jbyteArray>();
 	}
 	QAndroidJniObject ContactsContract_ProfileSyncState::getWithUri(android::content::ContentProviderClient arg0, android::accounts::Account arg1)
@@ -45,8 +47,8 @@ namespace android::provider
 			"android.provider.ContactsContract$ProfileSyncState",
 			"getWithUri",
 			"(Landroid/content/ContentProviderClient;Landroid/accounts/Account;)Landroid/util/Pair;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject ContactsContract_ProfileSyncState::newSetOperation(android::accounts::Account arg0, jbyteArray arg1)
@@ -55,7 +57,7 @@ namespace android::provider
 			"android.provider.ContactsContract$ProfileSyncState",
 			"newSetOperation",
 			"(Landroid/accounts/Account;[B)Landroid/content/ContentProviderOperation;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -65,8 +67,8 @@ namespace android::provider
 			"android.provider.ContactsContract$ProfileSyncState",
 			"set",
 			"(Landroid/content/ContentProviderClient;Landroid/accounts/Account;[B)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}

@@ -4,7 +4,9 @@ namespace android::os
 {
 	// Fields
 	
-	Trace::Trace(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Trace::Trace(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

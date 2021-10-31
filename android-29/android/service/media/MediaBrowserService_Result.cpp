@@ -5,20 +5,22 @@ namespace android::service::media
 {
 	// Fields
 	
-	MediaBrowserService_Result::MediaBrowserService_Result(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaBrowserService_Result::MediaBrowserService_Result(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void MediaBrowserService_Result::detach()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"detach",
 			"()V"
 		);
 	}
 	void MediaBrowserService_Result::sendResult(jobject arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"sendResult",
 			"(Ljava/lang/Object;)V",
 			arg0

@@ -11,13 +11,15 @@ namespace android::hardware::camera2::params
 		);
 	}
 	
-	BlackLevelPattern::BlackLevelPattern(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BlackLevelPattern::BlackLevelPattern(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void BlackLevelPattern::copyTo(jintArray arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"copyTo",
 			"([II)V",
 			arg0,
@@ -26,7 +28,7 @@ namespace android::hardware::camera2::params
 	}
 	jboolean BlackLevelPattern::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -34,7 +36,7 @@ namespace android::hardware::camera2::params
 	}
 	jint BlackLevelPattern::getOffsetForIndex(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getOffsetForIndex",
 			"(II)I",
 			arg0,
@@ -43,14 +45,14 @@ namespace android::hardware::camera2::params
 	}
 	jint BlackLevelPattern::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring BlackLevelPattern::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

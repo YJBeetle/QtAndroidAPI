@@ -4,15 +4,15 @@ namespace android::provider
 {
 	// Fields
 	
-	SyncStateContract::SyncStateContract(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SyncStateContract::SyncStateContract(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	SyncStateContract::SyncStateContract()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.provider.SyncStateContract",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::provider

@@ -13,9 +13,11 @@ namespace android::icu::text
 		static QAndroidJniObject ALL_STYLES();
 		static QAndroidJniObject TZ_DATABASE_ABBREVIATIONS();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TimeZoneFormat_ParseOption(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		TimeZoneFormat_ParseOption(QAndroidJniObject obj);
+		
 		// Constructors
-		TimeZoneFormat_ParseOption() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

@@ -14,11 +14,13 @@ namespace android::graphics
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Interpolator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Interpolator(QAndroidJniObject obj);
+		
 		// Constructors
 		Interpolator(jint arg0);
 		Interpolator(jint arg0, jint arg1);
-		Interpolator() = default;
 		
 		// Methods
 		jint getKeyFrameCount();

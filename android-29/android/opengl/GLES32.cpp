@@ -1450,7 +1450,9 @@ namespace android::opengl
 		);
 	}
 	
-	GLES32::GLES32(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	GLES32::GLES32(QAndroidJniObject obj) : android::opengl::GLES31(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -1549,7 +1551,7 @@ namespace android::opengl
 			"android.opengl.GLES32",
 			"glDebugMessageCallback",
 			"(Landroid/opengl/GLES32$DebugProc;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void GLES32::glDebugMessageControl(jint arg0, jint arg1, jint arg2, jint arg3, java::nio::IntBuffer arg4, jboolean arg5)
@@ -1562,7 +1564,7 @@ namespace android::opengl
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object(),
+			arg4.object(),
 			arg5
 		);
 	}
@@ -1614,7 +1616,7 @@ namespace android::opengl
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
+			arg3.object(),
 			arg4
 		);
 	}
@@ -1641,7 +1643,7 @@ namespace android::opengl
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
+			arg3.object(),
 			arg4,
 			arg5
 		);
@@ -1657,7 +1659,7 @@ namespace android::opengl
 			arg2,
 			arg3,
 			arg4,
-			arg5.__jniObject().object(),
+			arg5.object(),
 			arg6
 		);
 	}
@@ -1690,10 +1692,10 @@ namespace android::opengl
 			"glGetDebugMessageLog",
 			"(ILjava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;)[Ljava/lang/String;",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object()
+			arg1.object(),
+			arg2.object(),
+			arg3.object(),
+			arg4.object()
 		).object<jarray>();
 	}
 	jarray GLES32::glGetDebugMessageLog(jint arg0, jintArray arg1, jint arg2, jintArray arg3, jint arg4, jintArray arg5, jint arg6, jintArray arg7, jint arg8)
@@ -1720,12 +1722,12 @@ namespace android::opengl
 			"glGetDebugMessageLog",
 			"(ILjava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/ByteBuffer;)I",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
-			arg5.__jniObject().object(),
-			arg6.__jniObject().object()
+			arg1.object(),
+			arg2.object(),
+			arg3.object(),
+			arg4.object(),
+			arg5.object(),
+			arg6.object()
 		);
 	}
 	jint GLES32::glGetDebugMessageLog(jint arg0, jint arg1, jintArray arg2, jint arg3, jintArray arg4, jint arg5, jintArray arg6, jint arg7, jintArray arg8, jint arg9, jintArray arg10, jint arg11, jbyteArray arg12, jint arg13)
@@ -1794,7 +1796,7 @@ namespace android::opengl
 			"(IILjava/nio/IntBuffer;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void GLES32::glGetSamplerParameterIiv(jint arg0, jint arg1, jintArray arg2, jint arg3)
@@ -1817,7 +1819,7 @@ namespace android::opengl
 			"(IILjava/nio/IntBuffer;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void GLES32::glGetSamplerParameterIuiv(jint arg0, jint arg1, jintArray arg2, jint arg3)
@@ -1840,7 +1842,7 @@ namespace android::opengl
 			"(IILjava/nio/IntBuffer;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void GLES32::glGetTexParameterIiv(jint arg0, jint arg1, jintArray arg2, jint arg3)
@@ -1863,7 +1865,7 @@ namespace android::opengl
 			"(IILjava/nio/IntBuffer;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void GLES32::glGetTexParameterIuiv(jint arg0, jint arg1, jintArray arg2, jint arg3)
@@ -1887,7 +1889,7 @@ namespace android::opengl
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	void GLES32::glGetnUniformfv(jint arg0, jint arg1, jint arg2, jfloatArray arg3, jint arg4)
@@ -1912,7 +1914,7 @@ namespace android::opengl
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	void GLES32::glGetnUniformiv(jint arg0, jint arg1, jint arg2, jintArray arg3, jint arg4)
@@ -1937,7 +1939,7 @@ namespace android::opengl
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	void GLES32::glGetnUniformuiv(jint arg0, jint arg1, jint arg2, jintArray arg3, jint arg4)
@@ -2053,7 +2055,7 @@ namespace android::opengl
 			arg4,
 			arg5,
 			arg6,
-			arg7.__jniObject().object()
+			arg7.object()
 		);
 	}
 	void GLES32::glSamplerParameterIiv(jint arg0, jint arg1, java::nio::IntBuffer arg2)
@@ -2064,7 +2066,7 @@ namespace android::opengl
 			"(IILjava/nio/IntBuffer;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void GLES32::glSamplerParameterIiv(jint arg0, jint arg1, jintArray arg2, jint arg3)
@@ -2087,7 +2089,7 @@ namespace android::opengl
 			"(IILjava/nio/IntBuffer;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void GLES32::glSamplerParameterIuiv(jint arg0, jint arg1, jintArray arg2, jint arg3)
@@ -2134,7 +2136,7 @@ namespace android::opengl
 			"(IILjava/nio/IntBuffer;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void GLES32::glTexParameterIiv(jint arg0, jint arg1, jintArray arg2, jint arg3)
@@ -2157,7 +2159,7 @@ namespace android::opengl
 			"(IILjava/nio/IntBuffer;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void GLES32::glTexParameterIuiv(jint arg0, jint arg1, jintArray arg2, jint arg3)

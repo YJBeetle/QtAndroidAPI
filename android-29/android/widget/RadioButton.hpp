@@ -18,13 +18,15 @@ namespace android::widget
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit RadioButton(const char *className, const char *sig, Ts...agv) : android::widget::CompoundButton(className, sig, std::forward<Ts>(agv)...) {}
 		RadioButton(QAndroidJniObject obj);
+		
 		// Constructors
 		RadioButton(android::content::Context arg0);
 		RadioButton(android::content::Context arg0, __JniBaseClass arg1);
 		RadioButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		RadioButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
-		RadioButton() = default;
 		
 		// Methods
 		jstring getAccessibilityClassName();

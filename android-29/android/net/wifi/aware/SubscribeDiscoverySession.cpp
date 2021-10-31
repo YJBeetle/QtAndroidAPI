@@ -6,16 +6,18 @@ namespace android::net::wifi::aware
 {
 	// Fields
 	
-	SubscribeDiscoverySession::SubscribeDiscoverySession(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SubscribeDiscoverySession::SubscribeDiscoverySession(QAndroidJniObject obj) : android::net::wifi::aware::DiscoverySession(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void SubscribeDiscoverySession::updateSubscribe(android::net::wifi::aware::SubscribeConfig arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"updateSubscribe",
 			"(Landroid/net/wifi/aware/SubscribeConfig;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::net::wifi::aware

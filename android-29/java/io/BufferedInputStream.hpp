@@ -16,11 +16,13 @@ namespace java::io
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BufferedInputStream(const char *className, const char *sig, Ts...agv) : java::io::FilterInputStream(className, sig, std::forward<Ts>(agv)...) {}
 		BufferedInputStream(QAndroidJniObject obj);
+		
 		// Constructors
 		BufferedInputStream(java::io::InputStream arg0);
 		BufferedInputStream(java::io::InputStream arg0, jint arg1);
-		BufferedInputStream() = default;
 		
 		// Methods
 		jint available();

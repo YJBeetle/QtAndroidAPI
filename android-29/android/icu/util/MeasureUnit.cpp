@@ -1085,7 +1085,9 @@ namespace android::icu::util
 		);
 	}
 	
-	MeasureUnit::MeasureUnit(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MeasureUnit::MeasureUnit(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -1116,7 +1118,7 @@ namespace android::icu::util
 	}
 	jboolean MeasureUnit::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -1124,28 +1126,28 @@ namespace android::icu::util
 	}
 	jstring MeasureUnit::getSubtype()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSubtype",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring MeasureUnit::getType()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint MeasureUnit::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring MeasureUnit::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

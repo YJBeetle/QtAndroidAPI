@@ -53,7 +53,10 @@ namespace android::accessibilityservice
 		jlong notificationTimeout();
 		jarray packageNames();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AccessibilityServiceInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AccessibilityServiceInfo(QAndroidJniObject obj);
+		
 		// Constructors
 		AccessibilityServiceInfo();
 		

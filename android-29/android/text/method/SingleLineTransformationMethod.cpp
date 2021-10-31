@@ -4,15 +4,15 @@ namespace android::text::method
 {
 	// Fields
 	
-	SingleLineTransformationMethod::SingleLineTransformationMethod(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SingleLineTransformationMethod::SingleLineTransformationMethod(QAndroidJniObject obj) : android::text::method::ReplacementTransformationMethod(obj) {}
+	
 	// Constructors
 	SingleLineTransformationMethod::SingleLineTransformationMethod()
-	{
-		__thiz = QAndroidJniObject(
+		: android::text::method::ReplacementTransformationMethod(
 			"android.text.method.SingleLineTransformationMethod",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject SingleLineTransformationMethod::getInstance()

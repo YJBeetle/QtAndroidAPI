@@ -30,99 +30,95 @@ namespace android::view::animation
 		);
 	}
 	
-	LayoutAnimationController::LayoutAnimationController(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	LayoutAnimationController::LayoutAnimationController(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	LayoutAnimationController::LayoutAnimationController(android::view::animation::Animation arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.animation.LayoutAnimationController",
 			"(Landroid/view/animation/Animation;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	LayoutAnimationController::LayoutAnimationController(android::content::Context arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.animation.LayoutAnimationController",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	LayoutAnimationController::LayoutAnimationController(android::view::animation::Animation arg0, jfloat arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.animation.LayoutAnimationController",
 			"(Landroid/view/animation/Animation;F)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject LayoutAnimationController::getAnimation()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAnimation",
 			"()Landroid/view/animation/Animation;"
 		);
 	}
 	QAndroidJniObject LayoutAnimationController::getAnimationForView(android::view::View arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAnimationForView",
 			"(Landroid/view/View;)Landroid/view/animation/Animation;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jfloat LayoutAnimationController::getDelay()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getDelay",
 			"()F"
 		);
 	}
 	QAndroidJniObject LayoutAnimationController::getInterpolator()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getInterpolator",
 			"()Landroid/view/animation/Interpolator;"
 		);
 	}
 	jint LayoutAnimationController::getOrder()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getOrder",
 			"()I"
 		);
 	}
 	jboolean LayoutAnimationController::isDone()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isDone",
 			"()Z"
 		);
 	}
 	void LayoutAnimationController::setAnimation(android::view::animation::Animation arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAnimation",
 			"(Landroid/view/animation/Animation;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void LayoutAnimationController::setAnimation(android::content::Context arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAnimation",
 			"(Landroid/content/Context;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void LayoutAnimationController::setDelay(jfloat arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDelay",
 			"(F)V",
 			arg0
@@ -130,24 +126,24 @@ namespace android::view::animation
 	}
 	void LayoutAnimationController::setInterpolator(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setInterpolator",
 			"(Landroid/view/animation/Interpolator;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void LayoutAnimationController::setInterpolator(android::content::Context arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setInterpolator",
 			"(Landroid/content/Context;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void LayoutAnimationController::setOrder(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOrder",
 			"(I)V",
 			arg0
@@ -155,14 +151,14 @@ namespace android::view::animation
 	}
 	void LayoutAnimationController::start()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"start",
 			"()V"
 		);
 	}
 	jboolean LayoutAnimationController::willOverlap()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"willOverlap",
 			"()Z"
 		);

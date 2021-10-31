@@ -15,10 +15,12 @@ namespace android::webkit
 		// Fields
 		static jint DAY_COUNT();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DateSorter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DateSorter(QAndroidJniObject obj);
+		
 		// Constructors
 		DateSorter(android::content::Context arg0);
-		DateSorter() = default;
 		
 		// Methods
 		jlong getBoundary(jint arg0);

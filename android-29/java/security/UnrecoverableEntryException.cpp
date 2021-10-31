@@ -4,23 +4,21 @@ namespace java::security
 {
 	// Fields
 	
-	UnrecoverableEntryException::UnrecoverableEntryException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UnrecoverableEntryException::UnrecoverableEntryException(QAndroidJniObject obj) : java::security::GeneralSecurityException(obj) {}
+	
 	// Constructors
 	UnrecoverableEntryException::UnrecoverableEntryException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::security::GeneralSecurityException(
 			"java.security.UnrecoverableEntryException",
 			"()V"
-		);
-	}
+		) {}
 	UnrecoverableEntryException::UnrecoverableEntryException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::security::GeneralSecurityException(
 			"java.security.UnrecoverableEntryException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::security

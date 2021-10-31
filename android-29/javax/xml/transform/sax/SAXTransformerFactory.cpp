@@ -20,38 +20,40 @@ namespace javax::xml::transform::sax
 		).object<jstring>();
 	}
 	
-	SAXTransformerFactory::SAXTransformerFactory(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SAXTransformerFactory::SAXTransformerFactory(QAndroidJniObject obj) : javax::xml::transform::TransformerFactory(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject SAXTransformerFactory::newTemplatesHandler()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newTemplatesHandler",
 			"()Ljavax/xml/transform/sax/TemplatesHandler;"
 		);
 	}
 	QAndroidJniObject SAXTransformerFactory::newTransformerHandler()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newTransformerHandler",
 			"()Ljavax/xml/transform/sax/TransformerHandler;"
 		);
 	}
 	QAndroidJniObject SAXTransformerFactory::newTransformerHandler(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newTransformerHandler",
 			"(Ljavax/xml/transform/Source;)Ljavax/xml/transform/sax/TransformerHandler;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject SAXTransformerFactory::newXMLFilter(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newXMLFilter",
 			"(Ljavax/xml/transform/Source;)Lorg/xml/sax/XMLFilter;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace javax::xml::transform::sax

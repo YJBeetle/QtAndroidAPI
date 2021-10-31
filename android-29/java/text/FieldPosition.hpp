@@ -14,12 +14,14 @@ namespace java::text
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit FieldPosition(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		FieldPosition(QAndroidJniObject obj);
+		
 		// Constructors
 		FieldPosition(jint arg0);
 		FieldPosition(java::text::Format_Field arg0);
 		FieldPosition(java::text::Format_Field arg0, jint arg1);
-		FieldPosition() = default;
 		
 		// Methods
 		jboolean equals(jobject arg0);

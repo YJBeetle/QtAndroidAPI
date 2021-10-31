@@ -14,7 +14,9 @@ namespace android::system
 {
 	// Fields
 	
-	Os::Os(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Os::Os(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -24,8 +26,8 @@ namespace android::system
 			"android.system.Os",
 			"accept",
 			"(Ljava/io/FileDescriptor;Ljava/net/InetSocketAddress;)Ljava/io/FileDescriptor;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jboolean Os::access(jstring arg0, jint arg1)
@@ -44,8 +46,8 @@ namespace android::system
 			"android.system.Os",
 			"bind",
 			"(Ljava/io/FileDescriptor;Ljava/net/SocketAddress;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void Os::bind(java::io::FileDescriptor arg0, java::net::InetAddress arg1, jint arg2)
@@ -54,8 +56,8 @@ namespace android::system
 			"android.system.Os",
 			"bind",
 			"(Ljava/io/FileDescriptor;Ljava/net/InetAddress;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
@@ -86,7 +88,7 @@ namespace android::system
 			"android.system.Os",
 			"close",
 			"(Ljava/io/FileDescriptor;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Os::connect(java::io::FileDescriptor arg0, java::net::SocketAddress arg1)
@@ -95,8 +97,8 @@ namespace android::system
 			"android.system.Os",
 			"connect",
 			"(Ljava/io/FileDescriptor;Ljava/net/SocketAddress;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void Os::connect(java::io::FileDescriptor arg0, java::net::InetAddress arg1, jint arg2)
@@ -105,8 +107,8 @@ namespace android::system
 			"android.system.Os",
 			"connect",
 			"(Ljava/io/FileDescriptor;Ljava/net/InetAddress;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
@@ -116,7 +118,7 @@ namespace android::system
 			"android.system.Os",
 			"dup",
 			"(Ljava/io/FileDescriptor;)Ljava/io/FileDescriptor;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Os::dup2(java::io::FileDescriptor arg0, jint arg1)
@@ -125,7 +127,7 @@ namespace android::system
 			"android.system.Os",
 			"dup2",
 			"(Ljava/io/FileDescriptor;I)Ljava/io/FileDescriptor;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -164,7 +166,7 @@ namespace android::system
 			"android.system.Os",
 			"fchmod",
 			"(Ljava/io/FileDescriptor;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -174,7 +176,7 @@ namespace android::system
 			"android.system.Os",
 			"fchown",
 			"(Ljava/io/FileDescriptor;II)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
@@ -185,7 +187,7 @@ namespace android::system
 			"android.system.Os",
 			"fdatasync",
 			"(Ljava/io/FileDescriptor;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Os::fstat(java::io::FileDescriptor arg0)
@@ -194,7 +196,7 @@ namespace android::system
 			"android.system.Os",
 			"fstat",
 			"(Ljava/io/FileDescriptor;)Landroid/system/StructStat;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Os::fstatvfs(java::io::FileDescriptor arg0)
@@ -203,7 +205,7 @@ namespace android::system
 			"android.system.Os",
 			"fstatvfs",
 			"(Ljava/io/FileDescriptor;)Landroid/system/StructStatVfs;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Os::fsync(java::io::FileDescriptor arg0)
@@ -212,7 +214,7 @@ namespace android::system
 			"android.system.Os",
 			"fsync",
 			"(Ljava/io/FileDescriptor;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Os::ftruncate(java::io::FileDescriptor arg0, jlong arg1)
@@ -221,7 +223,7 @@ namespace android::system
 			"android.system.Os",
 			"ftruncate",
 			"(Ljava/io/FileDescriptor;J)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -273,7 +275,7 @@ namespace android::system
 			"android.system.Os",
 			"getpeername",
 			"(Ljava/io/FileDescriptor;)Ljava/net/SocketAddress;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint Os::getpid()
@@ -298,7 +300,7 @@ namespace android::system
 			"android.system.Os",
 			"getsockname",
 			"(Ljava/io/FileDescriptor;)Ljava/net/SocketAddress;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Os::getsockoptTimeval(java::io::FileDescriptor arg0, jint arg1, jint arg2)
@@ -307,7 +309,7 @@ namespace android::system
 			"android.system.Os",
 			"getsockoptTimeval",
 			"(Ljava/io/FileDescriptor;II)Landroid/system/StructTimeval;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
@@ -372,7 +374,7 @@ namespace android::system
 			"android.system.Os",
 			"isatty",
 			"(Ljava/io/FileDescriptor;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Os::kill(jint arg0, jint arg1)
@@ -412,7 +414,7 @@ namespace android::system
 			"android.system.Os",
 			"listen",
 			"(Ljava/io/FileDescriptor;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -431,7 +433,7 @@ namespace android::system
 			"android.system.Os",
 			"lseek",
 			"(Ljava/io/FileDescriptor;JI)J",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
@@ -496,7 +498,7 @@ namespace android::system
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object(),
+			arg4.object(),
 			arg5
 		);
 	}
@@ -566,7 +568,7 @@ namespace android::system
 			"android.system.Os",
 			"posix_fallocate",
 			"(Ljava/io/FileDescriptor;JJ)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
@@ -590,8 +592,8 @@ namespace android::system
 			"android.system.Os",
 			"pread",
 			"(Ljava/io/FileDescriptor;Ljava/nio/ByteBuffer;J)I",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
@@ -601,7 +603,7 @@ namespace android::system
 			"android.system.Os",
 			"pread",
 			"(Ljava/io/FileDescriptor;[BIIJ)I",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
@@ -614,8 +616,8 @@ namespace android::system
 			"android.system.Os",
 			"pwrite",
 			"(Ljava/io/FileDescriptor;Ljava/nio/ByteBuffer;J)I",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
@@ -625,7 +627,7 @@ namespace android::system
 			"android.system.Os",
 			"pwrite",
 			"(Ljava/io/FileDescriptor;[BIIJ)I",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
@@ -638,8 +640,8 @@ namespace android::system
 			"android.system.Os",
 			"read",
 			"(Ljava/io/FileDescriptor;Ljava/nio/ByteBuffer;)I",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jint Os::read(java::io::FileDescriptor arg0, jbyteArray arg1, jint arg2, jint arg3)
@@ -648,7 +650,7 @@ namespace android::system
 			"android.system.Os",
 			"read",
 			"(Ljava/io/FileDescriptor;[BII)I",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3
@@ -669,7 +671,7 @@ namespace android::system
 			"android.system.Os",
 			"readv",
 			"(Ljava/io/FileDescriptor;[Ljava/lang/Object;[I[I)I",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3
@@ -681,10 +683,10 @@ namespace android::system
 			"android.system.Os",
 			"recvfrom",
 			"(Ljava/io/FileDescriptor;Ljava/nio/ByteBuffer;ILjava/net/InetSocketAddress;)I",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	jint Os::recvfrom(java::io::FileDescriptor arg0, jbyteArray arg1, jint arg2, jint arg3, jint arg4, java::net::InetSocketAddress arg5)
@@ -693,12 +695,12 @@ namespace android::system
 			"android.system.Os",
 			"recvfrom",
 			"(Ljava/io/FileDescriptor;[BIIILjava/net/InetSocketAddress;)I",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
 			arg4,
-			arg5.__jniObject().object()
+			arg5.object()
 		);
 	}
 	void Os::remove(jstring arg0)
@@ -736,9 +738,9 @@ namespace android::system
 			"android.system.Os",
 			"sendfile",
 			"(Ljava/io/FileDescriptor;Ljava/io/FileDescriptor;Landroid/system/Int64Ref;J)J",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
 			arg3
 		);
 	}
@@ -748,10 +750,10 @@ namespace android::system
 			"android.system.Os",
 			"sendto",
 			"(Ljava/io/FileDescriptor;Ljava/nio/ByteBuffer;ILjava/net/InetAddress;I)I",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
-			arg3.__jniObject().object(),
+			arg3.object(),
 			arg4
 		);
 	}
@@ -761,12 +763,12 @@ namespace android::system
 			"android.system.Os",
 			"sendto",
 			"(Ljava/io/FileDescriptor;[BIIILjava/net/SocketAddress;)I",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
 			arg4,
-			arg5.__jniObject().object()
+			arg5.object()
 		);
 	}
 	jint Os::sendto(java::io::FileDescriptor arg0, jbyteArray arg1, jint arg2, jint arg3, jint arg4, java::net::InetAddress arg5, jint arg6)
@@ -775,12 +777,12 @@ namespace android::system
 			"android.system.Os",
 			"sendto",
 			"(Ljava/io/FileDescriptor;[BIIILjava/net/InetAddress;I)I",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
 			arg4,
-			arg5.__jniObject().object(),
+			arg5.object(),
 			arg6
 		);
 	}
@@ -836,7 +838,7 @@ namespace android::system
 			"android.system.Os",
 			"setsockoptInt",
 			"(Ljava/io/FileDescriptor;III)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3
@@ -848,10 +850,10 @@ namespace android::system
 			"android.system.Os",
 			"setsockoptTimeval",
 			"(Ljava/io/FileDescriptor;IILandroid/system/StructTimeval;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	void Os::setuid(jint arg0)
@@ -881,7 +883,7 @@ namespace android::system
 			"android.system.Os",
 			"shutdown",
 			"(Ljava/io/FileDescriptor;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -905,8 +907,8 @@ namespace android::system
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object()
+			arg3.object(),
+			arg4.object()
 		);
 	}
 	QAndroidJniObject Os::stat(jstring arg0)
@@ -970,7 +972,7 @@ namespace android::system
 			"android.system.Os",
 			"tcdrain",
 			"(Ljava/io/FileDescriptor;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Os::tcsendbreak(java::io::FileDescriptor arg0, jint arg1)
@@ -979,7 +981,7 @@ namespace android::system
 			"android.system.Os",
 			"tcsendbreak",
 			"(Ljava/io/FileDescriptor;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -1015,8 +1017,8 @@ namespace android::system
 			"android.system.Os",
 			"write",
 			"(Ljava/io/FileDescriptor;Ljava/nio/ByteBuffer;)I",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jint Os::write(java::io::FileDescriptor arg0, jbyteArray arg1, jint arg2, jint arg3)
@@ -1025,7 +1027,7 @@ namespace android::system
 			"android.system.Os",
 			"write",
 			"(Ljava/io/FileDescriptor;[BII)I",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3
@@ -1037,7 +1039,7 @@ namespace android::system
 			"android.system.Os",
 			"writev",
 			"(Ljava/io/FileDescriptor;[Ljava/lang/Object;[I[I)I",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3

@@ -4,7 +4,9 @@ namespace java::util::concurrent::atomic
 {
 	// Fields
 	
-	AtomicIntegerFieldUpdater::AtomicIntegerFieldUpdater(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AtomicIntegerFieldUpdater::AtomicIntegerFieldUpdater(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -20,17 +22,17 @@ namespace java::util::concurrent::atomic
 	}
 	jint AtomicIntegerFieldUpdater::accumulateAndGet(jobject arg0, jint arg1, __JniBaseClass arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"accumulateAndGet",
 			"(Ljava/lang/Object;ILjava/util/function/IntBinaryOperator;)I",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	jint AtomicIntegerFieldUpdater::addAndGet(jobject arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"addAndGet",
 			"(Ljava/lang/Object;I)I",
 			arg0,
@@ -39,7 +41,7 @@ namespace java::util::concurrent::atomic
 	}
 	jboolean AtomicIntegerFieldUpdater::compareAndSet(jobject arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"compareAndSet",
 			"(Ljava/lang/Object;II)Z",
 			arg0,
@@ -49,7 +51,7 @@ namespace java::util::concurrent::atomic
 	}
 	jint AtomicIntegerFieldUpdater::decrementAndGet(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"decrementAndGet",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -57,7 +59,7 @@ namespace java::util::concurrent::atomic
 	}
 	jint AtomicIntegerFieldUpdater::get(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"get",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -65,17 +67,17 @@ namespace java::util::concurrent::atomic
 	}
 	jint AtomicIntegerFieldUpdater::getAndAccumulate(jobject arg0, jint arg1, __JniBaseClass arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAndAccumulate",
 			"(Ljava/lang/Object;ILjava/util/function/IntBinaryOperator;)I",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	jint AtomicIntegerFieldUpdater::getAndAdd(jobject arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAndAdd",
 			"(Ljava/lang/Object;I)I",
 			arg0,
@@ -84,7 +86,7 @@ namespace java::util::concurrent::atomic
 	}
 	jint AtomicIntegerFieldUpdater::getAndDecrement(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAndDecrement",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -92,7 +94,7 @@ namespace java::util::concurrent::atomic
 	}
 	jint AtomicIntegerFieldUpdater::getAndIncrement(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAndIncrement",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -100,7 +102,7 @@ namespace java::util::concurrent::atomic
 	}
 	jint AtomicIntegerFieldUpdater::getAndSet(jobject arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAndSet",
 			"(Ljava/lang/Object;I)I",
 			arg0,
@@ -109,16 +111,16 @@ namespace java::util::concurrent::atomic
 	}
 	jint AtomicIntegerFieldUpdater::getAndUpdate(jobject arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAndUpdate",
 			"(Ljava/lang/Object;Ljava/util/function/IntUnaryOperator;)I",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jint AtomicIntegerFieldUpdater::incrementAndGet(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"incrementAndGet",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -126,7 +128,7 @@ namespace java::util::concurrent::atomic
 	}
 	void AtomicIntegerFieldUpdater::lazySet(jobject arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"lazySet",
 			"(Ljava/lang/Object;I)V",
 			arg0,
@@ -135,7 +137,7 @@ namespace java::util::concurrent::atomic
 	}
 	void AtomicIntegerFieldUpdater::set(jobject arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"set",
 			"(Ljava/lang/Object;I)V",
 			arg0,
@@ -144,16 +146,16 @@ namespace java::util::concurrent::atomic
 	}
 	jint AtomicIntegerFieldUpdater::updateAndGet(jobject arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"updateAndGet",
 			"(Ljava/lang/Object;Ljava/util/function/IntUnaryOperator;)I",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jboolean AtomicIntegerFieldUpdater::weakCompareAndSet(jobject arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"weakCompareAndSet",
 			"(Ljava/lang/Object;II)Z",
 			arg0,

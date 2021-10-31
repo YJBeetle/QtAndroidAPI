@@ -6,69 +6,67 @@ namespace android::text::style
 {
 	// Fields
 	
-	RelativeSizeSpan::RelativeSizeSpan(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	RelativeSizeSpan::RelativeSizeSpan(QAndroidJniObject obj) : android::text::style::MetricAffectingSpan(obj) {}
+	
 	// Constructors
 	RelativeSizeSpan::RelativeSizeSpan(android::os::Parcel arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::text::style::MetricAffectingSpan(
 			"android.text.style.RelativeSizeSpan",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	RelativeSizeSpan::RelativeSizeSpan(jfloat arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::text::style::MetricAffectingSpan(
 			"android.text.style.RelativeSizeSpan",
 			"(F)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jint RelativeSizeSpan::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jfloat RelativeSizeSpan::getSizeChange()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getSizeChange",
 			"()F"
 		);
 	}
 	jint RelativeSizeSpan::getSpanTypeId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSpanTypeId",
 			"()I"
 		);
 	}
 	void RelativeSizeSpan::updateDrawState(android::text::TextPaint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"updateDrawState",
 			"(Landroid/text/TextPaint;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void RelativeSizeSpan::updateMeasureState(android::text::TextPaint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"updateMeasureState",
 			"(Landroid/text/TextPaint;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void RelativeSizeSpan::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

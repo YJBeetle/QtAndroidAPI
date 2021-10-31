@@ -6,7 +6,9 @@ namespace android::security
 {
 	// Fields
 	
-	ConfirmationPrompt::ConfirmationPrompt(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ConfirmationPrompt::ConfirmationPrompt(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -16,23 +18,23 @@ namespace android::security
 			"android.security.ConfirmationPrompt",
 			"isSupported",
 			"(Landroid/content/Context;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ConfirmationPrompt::cancelPrompt()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"cancelPrompt",
 			"()V"
 		);
 	}
 	void ConfirmationPrompt::presentPrompt(__JniBaseClass arg0, android::security::ConfirmationCallback arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"presentPrompt",
 			"(Ljava/util/concurrent/Executor;Landroid/security/ConfirmationCallback;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 } // namespace android::security

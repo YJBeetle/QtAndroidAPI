@@ -27,7 +27,10 @@ namespace android::media
 		// Fields
 		static jint OPTIONS_RECYCLE_INPUT();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ThumbnailUtils(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ThumbnailUtils(QAndroidJniObject obj);
+		
 		// Constructors
 		ThumbnailUtils();
 		

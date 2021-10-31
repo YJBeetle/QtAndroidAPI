@@ -11,10 +11,12 @@ namespace java::text
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ParseException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
 		ParseException(QAndroidJniObject obj);
+		
 		// Constructors
 		ParseException(jstring arg0, jint arg1);
-		ParseException() = default;
 		
 		// Methods
 		jint getErrorOffset();

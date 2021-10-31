@@ -7,15 +7,15 @@ namespace javax::crypto
 {
 	// Fields
 	
-	CipherSpi::CipherSpi(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CipherSpi::CipherSpi(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	CipherSpi::CipherSpi()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"javax.crypto.CipherSpi",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace javax::crypto

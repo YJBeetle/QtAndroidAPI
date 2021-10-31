@@ -10,11 +10,13 @@ namespace android::drm
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DrmInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DrmInfo(QAndroidJniObject obj);
+		
 		// Constructors
 		DrmInfo(jint arg0, jbyteArray arg1, jstring arg2);
 		DrmInfo(jint arg0, jstring arg1, jstring arg2);
-		DrmInfo() = default;
 		
 		// Methods
 		jobject get(jstring arg0);

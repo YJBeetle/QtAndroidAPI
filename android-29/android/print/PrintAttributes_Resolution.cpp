@@ -4,24 +4,24 @@ namespace android::print
 {
 	// Fields
 	
-	PrintAttributes_Resolution::PrintAttributes_Resolution(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PrintAttributes_Resolution::PrintAttributes_Resolution(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	PrintAttributes_Resolution::PrintAttributes_Resolution(jstring arg0, jstring arg1, jint arg2, jint arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.print.PrintAttributes$Resolution",
 			"(Ljava/lang/String;Ljava/lang/String;II)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean PrintAttributes_Resolution::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -29,42 +29,42 @@ namespace android::print
 	}
 	jint PrintAttributes_Resolution::getHorizontalDpi()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getHorizontalDpi",
 			"()I"
 		);
 	}
 	jstring PrintAttributes_Resolution::getId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring PrintAttributes_Resolution::getLabel()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint PrintAttributes_Resolution::getVerticalDpi()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getVerticalDpi",
 			"()I"
 		);
 	}
 	jint PrintAttributes_Resolution::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring PrintAttributes_Resolution::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

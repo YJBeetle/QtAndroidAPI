@@ -30,9 +30,11 @@ namespace android::telephony
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MbmsStreamingSession(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MbmsStreamingSession(QAndroidJniObject obj);
+		
 		// Constructors
-		MbmsStreamingSession() = default;
 		
 		// Methods
 		static QAndroidJniObject create(android::content::Context arg0, __JniBaseClass arg1, android::telephony::mbms::MbmsStreamingSessionCallback arg2);

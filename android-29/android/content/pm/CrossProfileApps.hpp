@@ -22,9 +22,11 @@ namespace android::content::pm
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CrossProfileApps(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		CrossProfileApps(QAndroidJniObject obj);
+		
 		// Constructors
-		CrossProfileApps() = default;
 		
 		// Methods
 		QAndroidJniObject getProfileSwitchingIconDrawable(android::os::UserHandle arg0);

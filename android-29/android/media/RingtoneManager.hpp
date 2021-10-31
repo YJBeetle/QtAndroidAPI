@@ -46,11 +46,13 @@ namespace android::media
 		static jint TYPE_RINGTONE();
 		static jint URI_COLUMN_INDEX();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit RingtoneManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		RingtoneManager(QAndroidJniObject obj);
+		
 		// Constructors
 		RingtoneManager(android::app::Activity arg0);
 		RingtoneManager(android::content::Context arg0);
-		RingtoneManager() = default;
 		
 		// Methods
 		static QAndroidJniObject getActualDefaultRingtoneUri(android::content::Context arg0, jint arg1);

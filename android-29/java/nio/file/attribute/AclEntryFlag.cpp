@@ -36,7 +36,9 @@ namespace java::nio::file::attribute
 		);
 	}
 	
-	AclEntryFlag::AclEntryFlag(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AclEntryFlag::AclEntryFlag(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

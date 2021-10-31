@@ -18,9 +18,11 @@ namespace java::nio::file
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SimpleFileVisitor(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SimpleFileVisitor(QAndroidJniObject obj);
+		
 		// Constructors
-		SimpleFileVisitor() = default;
 		
 		// Methods
 		QAndroidJniObject postVisitDirectory(jobject arg0, java::io::IOException arg1);

@@ -4,62 +4,64 @@ namespace android::icu::text
 {
 	// Fields
 	
-	BidiRun::BidiRun(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BidiRun::BidiRun(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jbyte BidiRun::getDirection()
 	{
-		return __thiz.callMethod<jbyte>(
+		return callMethod<jbyte>(
 			"getDirection",
 			"()B"
 		);
 	}
 	jbyte BidiRun::getEmbeddingLevel()
 	{
-		return __thiz.callMethod<jbyte>(
+		return callMethod<jbyte>(
 			"getEmbeddingLevel",
 			"()B"
 		);
 	}
 	jint BidiRun::getLength()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLength",
 			"()I"
 		);
 	}
 	jint BidiRun::getLimit()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLimit",
 			"()I"
 		);
 	}
 	jint BidiRun::getStart()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getStart",
 			"()I"
 		);
 	}
 	jboolean BidiRun::isEvenRun()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEvenRun",
 			"()Z"
 		);
 	}
 	jboolean BidiRun::isOddRun()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isOddRun",
 			"()Z"
 		);
 	}
 	jstring BidiRun::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

@@ -49,18 +49,18 @@ namespace android::telecom
 		);
 	}
 	
-	CallAudioState::CallAudioState(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CallAudioState::CallAudioState(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	CallAudioState::CallAudioState(jboolean arg0, jint arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.telecom.CallAudioState",
 			"(ZII)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring CallAudioState::audioRouteToString(jint arg0)
@@ -74,14 +74,14 @@ namespace android::telecom
 	}
 	jint CallAudioState::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean CallAudioState::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -89,52 +89,52 @@ namespace android::telecom
 	}
 	QAndroidJniObject CallAudioState::getActiveBluetoothDevice()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getActiveBluetoothDevice",
 			"()Landroid/bluetooth/BluetoothDevice;"
 		);
 	}
 	jint CallAudioState::getRoute()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRoute",
 			"()I"
 		);
 	}
 	QAndroidJniObject CallAudioState::getSupportedBluetoothDevices()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSupportedBluetoothDevices",
 			"()Ljava/util/Collection;"
 		);
 	}
 	jint CallAudioState::getSupportedRouteMask()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSupportedRouteMask",
 			"()I"
 		);
 	}
 	jboolean CallAudioState::isMuted()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isMuted",
 			"()Z"
 		);
 	}
 	jstring CallAudioState::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void CallAudioState::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

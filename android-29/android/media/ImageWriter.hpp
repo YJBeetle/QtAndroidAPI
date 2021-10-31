@@ -22,9 +22,11 @@ namespace android::media
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ImageWriter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ImageWriter(QAndroidJniObject obj);
+		
 		// Constructors
-		ImageWriter() = default;
 		
 		// Methods
 		static QAndroidJniObject newInstance(android::view::Surface arg0, jint arg1);

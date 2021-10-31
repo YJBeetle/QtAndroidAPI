@@ -31,7 +31,10 @@ namespace java::math
 		static QAndroidJniObject TWO();
 		static QAndroidJniObject ZERO();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BigInteger(const char *className, const char *sig, Ts...agv) : java::lang::Number(className, sig, std::forward<Ts>(agv)...) {}
 		BigInteger(QAndroidJniObject obj);
+		
 		// Constructors
 		BigInteger(jbyteArray arg0);
 		BigInteger(jstring arg0);
@@ -41,7 +44,6 @@ namespace java::math
 		BigInteger(jbyteArray arg0, jint arg1, jint arg2);
 		BigInteger(jint arg0, jint arg1, java::util::Random arg2);
 		BigInteger(jint arg0, jbyteArray arg1, jint arg2, jint arg3);
-		BigInteger() = default;
 		
 		// Methods
 		static QAndroidJniObject probablePrime(jint arg0, java::util::Random arg1);

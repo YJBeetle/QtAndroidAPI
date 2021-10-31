@@ -38,7 +38,10 @@ namespace android::graphics
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BitmapFactory(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		BitmapFactory(QAndroidJniObject obj);
+		
 		// Constructors
 		BitmapFactory();
 		

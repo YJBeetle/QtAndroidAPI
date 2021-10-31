@@ -4,15 +4,15 @@ namespace android::provider
 {
 	// Fields
 	
-	MediaStore_Images::MediaStore_Images(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaStore_Images::MediaStore_Images(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MediaStore_Images::MediaStore_Images()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.provider.MediaStore$Images",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::provider

@@ -19,13 +19,15 @@ namespace android::content
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ComponentName(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ComponentName(QAndroidJniObject obj);
+		
 		// Constructors
 		ComponentName(android::os::Parcel arg0);
 		ComponentName(android::content::Context arg0, jclass arg1);
 		ComponentName(android::content::Context arg0, jstring arg1);
 		ComponentName(jstring arg0, jstring arg1);
-		ComponentName() = default;
 		
 		// Methods
 		static QAndroidJniObject createRelative(android::content::Context arg0, jstring arg1);

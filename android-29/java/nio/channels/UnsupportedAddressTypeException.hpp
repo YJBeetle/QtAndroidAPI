@@ -13,7 +13,10 @@ namespace java::nio::channels
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit UnsupportedAddressTypeException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalArgumentException(className, sig, std::forward<Ts>(agv)...) {}
 		UnsupportedAddressTypeException(QAndroidJniObject obj);
+		
 		// Constructors
 		UnsupportedAddressTypeException();
 		

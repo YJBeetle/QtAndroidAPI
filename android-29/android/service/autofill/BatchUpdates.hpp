@@ -19,9 +19,11 @@ namespace android::service::autofill
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BatchUpdates(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		BatchUpdates(QAndroidJniObject obj);
+		
 		// Constructors
-		BatchUpdates() = default;
 		
 		// Methods
 		jint describeContents();

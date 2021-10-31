@@ -35,11 +35,13 @@ namespace android::content
 		// Fields
 		static jint LOG_SYNC_DETAILS();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AbstractThreadedSyncAdapter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AbstractThreadedSyncAdapter(QAndroidJniObject obj);
+		
 		// Constructors
 		AbstractThreadedSyncAdapter(android::content::Context arg0, jboolean arg1);
 		AbstractThreadedSyncAdapter(android::content::Context arg0, jboolean arg1, jboolean arg2);
-		AbstractThreadedSyncAdapter() = default;
 		
 		// Methods
 		QAndroidJniObject getContext();

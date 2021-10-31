@@ -13,9 +13,11 @@ namespace android::telephony::mbms
 		static jint ERROR_UNKNOWN_DOWNLOAD_REQUEST();
 		static jint ERROR_UNKNOWN_FILE_INFO();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MbmsErrors_DownloadErrors(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MbmsErrors_DownloadErrors(QAndroidJniObject obj);
+		
 		// Constructors
-		MbmsErrors_DownloadErrors() = default;
 		
 		// Methods
 	};

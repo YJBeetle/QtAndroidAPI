@@ -11,34 +11,34 @@ namespace android::view
 		);
 	}
 	
-	FrameStats::FrameStats(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FrameStats::FrameStats(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	FrameStats::FrameStats()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.FrameStats",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jlong FrameStats::getEndTimeNano()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getEndTimeNano",
 			"()J"
 		);
 	}
 	jint FrameStats::getFrameCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getFrameCount",
 			"()I"
 		);
 	}
 	jlong FrameStats::getFramePresentedTimeNano(jint arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getFramePresentedTimeNano",
 			"(I)J",
 			arg0
@@ -46,14 +46,14 @@ namespace android::view
 	}
 	jlong FrameStats::getRefreshPeriodNano()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getRefreshPeriodNano",
 			"()J"
 		);
 	}
 	jlong FrameStats::getStartTimeNano()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getStartTimeNano",
 			"()J"
 		);

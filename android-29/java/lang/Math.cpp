@@ -18,7 +18,9 @@ namespace java::lang
 		);
 	}
 	
-	Math::Math(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Math::Math(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

@@ -22,10 +22,12 @@ namespace android::media
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SoundPool(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SoundPool(QAndroidJniObject obj);
+		
 		// Constructors
 		SoundPool(jint arg0, jint arg1, jint arg2);
-		SoundPool() = default;
 		
 		// Methods
 		void autoPause();

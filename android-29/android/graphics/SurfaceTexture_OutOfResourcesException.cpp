@@ -4,23 +4,21 @@ namespace android::graphics
 {
 	// Fields
 	
-	SurfaceTexture_OutOfResourcesException::SurfaceTexture_OutOfResourcesException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SurfaceTexture_OutOfResourcesException::SurfaceTexture_OutOfResourcesException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
+	
 	// Constructors
 	SurfaceTexture_OutOfResourcesException::SurfaceTexture_OutOfResourcesException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Exception(
 			"android.graphics.SurfaceTexture$OutOfResourcesException",
 			"()V"
-		);
-	}
+		) {}
 	SurfaceTexture_OutOfResourcesException::SurfaceTexture_OutOfResourcesException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Exception(
 			"android.graphics.SurfaceTexture$OutOfResourcesException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::graphics

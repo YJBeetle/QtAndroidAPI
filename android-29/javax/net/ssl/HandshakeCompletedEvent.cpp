@@ -5,71 +5,71 @@ namespace javax::net::ssl
 {
 	// Fields
 	
-	HandshakeCompletedEvent::HandshakeCompletedEvent(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	HandshakeCompletedEvent::HandshakeCompletedEvent(QAndroidJniObject obj) : java::util::EventObject(obj) {}
+	
 	// Constructors
 	HandshakeCompletedEvent::HandshakeCompletedEvent(javax::net::ssl::SSLSocket arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::EventObject(
 			"javax.net.ssl.HandshakeCompletedEvent",
 			"(Ljavax/net/ssl/SSLSocket;Ljavax/net/ssl/SSLSession;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	
 	// Methods
 	jstring HandshakeCompletedEvent::getCipherSuite()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCipherSuite",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jarray HandshakeCompletedEvent::getLocalCertificates()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLocalCertificates",
 			"()[Ljava/security/cert/Certificate;"
 		).object<jarray>();
 	}
 	QAndroidJniObject HandshakeCompletedEvent::getLocalPrincipal()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLocalPrincipal",
 			"()Ljava/security/Principal;"
 		);
 	}
 	jarray HandshakeCompletedEvent::getPeerCertificateChain()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPeerCertificateChain",
 			"()[Ljavax/security/cert/X509Certificate;"
 		).object<jarray>();
 	}
 	jarray HandshakeCompletedEvent::getPeerCertificates()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPeerCertificates",
 			"()[Ljava/security/cert/Certificate;"
 		).object<jarray>();
 	}
 	QAndroidJniObject HandshakeCompletedEvent::getPeerPrincipal()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPeerPrincipal",
 			"()Ljava/security/Principal;"
 		);
 	}
 	QAndroidJniObject HandshakeCompletedEvent::getSession()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSession",
 			"()Ljavax/net/ssl/SSLSession;"
 		);
 	}
 	QAndroidJniObject HandshakeCompletedEvent::getSocket()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSocket",
 			"()Ljavax/net/ssl/SSLSocket;"
 		);

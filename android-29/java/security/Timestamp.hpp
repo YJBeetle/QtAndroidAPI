@@ -22,10 +22,12 @@ namespace java::security
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Timestamp(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Timestamp(QAndroidJniObject obj);
+		
 		// Constructors
 		Timestamp(java::util::Date arg0, java::security::cert::CertPath arg1);
-		Timestamp() = default;
 		
 		// Methods
 		jboolean equals(jobject arg0);

@@ -15,9 +15,11 @@ namespace android::net::sip
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SipProfile(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SipProfile(QAndroidJniObject obj);
+		
 		// Constructors
-		SipProfile() = default;
 		
 		// Methods
 		jint describeContents();

@@ -11,47 +11,47 @@ namespace android::renderscript
 {
 	// Fields
 	
-	ScriptGroup_Builder2::ScriptGroup_Builder2(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ScriptGroup_Builder2::ScriptGroup_Builder2(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ScriptGroup_Builder2::ScriptGroup_Builder2(android::renderscript::RenderScript arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.renderscript.ScriptGroup$Builder2",
 			"(Landroid/renderscript/RenderScript;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject ScriptGroup_Builder2::addInput()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"addInput",
 			"()Landroid/renderscript/ScriptGroup$Input;"
 		);
 	}
 	QAndroidJniObject ScriptGroup_Builder2::addInvoke(android::renderscript::Script_InvokeID arg0, jobjectArray arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"addInvoke",
 			"(Landroid/renderscript/Script$InvokeID;[Ljava/lang/Object;)Landroid/renderscript/ScriptGroup$Closure;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	QAndroidJniObject ScriptGroup_Builder2::addKernel(android::renderscript::Script_KernelID arg0, android::renderscript::Type arg1, jobjectArray arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"addKernel",
 			"(Landroid/renderscript/Script$KernelID;Landroid/renderscript/Type;[Ljava/lang/Object;)Landroid/renderscript/ScriptGroup$Closure;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
 	QAndroidJniObject ScriptGroup_Builder2::create(jstring arg0, jarray arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"create",
 			"(Ljava/lang/String;[Landroid/renderscript/ScriptGroup$Future;)Landroid/renderscript/ScriptGroup;",
 			arg0,

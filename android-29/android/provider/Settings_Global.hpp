@@ -63,7 +63,10 @@ namespace android::provider
 		static jstring WIFI_WATCHDOG_ON();
 		static jstring WINDOW_ANIMATION_SCALE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Settings_Global(const char *className, const char *sig, Ts...agv) : android::provider::Settings_NameValueTable(className, sig, std::forward<Ts>(agv)...) {}
 		Settings_Global(QAndroidJniObject obj);
+		
 		// Constructors
 		Settings_Global();
 		

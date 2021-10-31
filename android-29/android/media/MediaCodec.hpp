@@ -86,9 +86,11 @@ namespace android::media
 		static jint VIDEO_SCALING_MODE_SCALE_TO_FIT();
 		static jint VIDEO_SCALING_MODE_SCALE_TO_FIT_WITH_CROPPING();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaCodec(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaCodec(QAndroidJniObject obj);
+		
 		// Constructors
-		MediaCodec() = default;
 		
 		// Methods
 		static QAndroidJniObject createByCodecName(jstring arg0);

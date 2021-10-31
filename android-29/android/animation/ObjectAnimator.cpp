@@ -9,15 +9,15 @@ namespace android::animation
 {
 	// Fields
 	
-	ObjectAnimator::ObjectAnimator(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ObjectAnimator::ObjectAnimator(QAndroidJniObject obj) : android::animation::ValueAnimator(obj) {}
+	
 	// Constructors
 	ObjectAnimator::ObjectAnimator()
-	{
-		__thiz = QAndroidJniObject(
+		: android::animation::ValueAnimator(
 			"android.animation.ObjectAnimator",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject ObjectAnimator::ofArgb(jobject arg0, android::util::Property arg1, jintArray arg2)
@@ -27,7 +27,7 @@ namespace android::animation
 			"ofArgb",
 			"(Ljava/lang/Object;Landroid/util/Property;[I)Landroid/animation/ObjectAnimator;",
 			arg0,
-			arg1.__jniObject().object(),
+			arg1.object(),
 			arg2
 		);
 	}
@@ -49,7 +49,7 @@ namespace android::animation
 			"ofFloat",
 			"(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;",
 			arg0,
-			arg1.__jniObject().object(),
+			arg1.object(),
 			arg2
 		);
 	}
@@ -71,9 +71,9 @@ namespace android::animation
 			"ofFloat",
 			"(Ljava/lang/Object;Landroid/util/Property;Landroid/util/Property;Landroid/graphics/Path;)Landroid/animation/ObjectAnimator;",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
 		);
 	}
 	QAndroidJniObject ObjectAnimator::ofFloat(jobject arg0, jstring arg1, jstring arg2, android::graphics::Path arg3)
@@ -85,7 +85,7 @@ namespace android::animation
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	QAndroidJniObject ObjectAnimator::ofInt(jobject arg0, android::util::Property arg1, jintArray arg2)
@@ -95,7 +95,7 @@ namespace android::animation
 			"ofInt",
 			"(Ljava/lang/Object;Landroid/util/Property;[I)Landroid/animation/ObjectAnimator;",
 			arg0,
-			arg1.__jniObject().object(),
+			arg1.object(),
 			arg2
 		);
 	}
@@ -117,9 +117,9 @@ namespace android::animation
 			"ofInt",
 			"(Ljava/lang/Object;Landroid/util/Property;Landroid/util/Property;Landroid/graphics/Path;)Landroid/animation/ObjectAnimator;",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
 		);
 	}
 	QAndroidJniObject ObjectAnimator::ofInt(jobject arg0, jstring arg1, jstring arg2, android::graphics::Path arg3)
@@ -131,7 +131,7 @@ namespace android::animation
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	QAndroidJniObject ObjectAnimator::ofMultiFloat(jobject arg0, jstring arg1, jarray arg2)
@@ -153,7 +153,7 @@ namespace android::animation
 			"(Ljava/lang/Object;Ljava/lang/String;Landroid/graphics/Path;)Landroid/animation/ObjectAnimator;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	QAndroidJniObject ObjectAnimator::ofMultiFloat(jobject arg0, jstring arg1, android::animation::TypeConverter arg2, __JniBaseClass arg3, jobjectArray arg4)
@@ -164,8 +164,8 @@ namespace android::animation
 			"(Ljava/lang/Object;Ljava/lang/String;Landroid/animation/TypeConverter;Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/ObjectAnimator;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
+			arg2.object(),
+			arg3.object(),
 			arg4
 		);
 	}
@@ -188,7 +188,7 @@ namespace android::animation
 			"(Ljava/lang/Object;Ljava/lang/String;Landroid/graphics/Path;)Landroid/animation/ObjectAnimator;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	QAndroidJniObject ObjectAnimator::ofMultiInt(jobject arg0, jstring arg1, android::animation::TypeConverter arg2, __JniBaseClass arg3, jobjectArray arg4)
@@ -199,8 +199,8 @@ namespace android::animation
 			"(Ljava/lang/Object;Ljava/lang/String;Landroid/animation/TypeConverter;Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/ObjectAnimator;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
+			arg2.object(),
+			arg3.object(),
 			arg4
 		);
 	}
@@ -211,9 +211,9 @@ namespace android::animation
 			"ofObject",
 			"(Ljava/lang/Object;Landroid/util/Property;Landroid/animation/TypeConverter;Landroid/graphics/Path;)Landroid/animation/ObjectAnimator;",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
 		);
 	}
 	QAndroidJniObject ObjectAnimator::ofObject(jobject arg0, android::util::Property arg1, __JniBaseClass arg2, jobjectArray arg3)
@@ -223,8 +223,8 @@ namespace android::animation
 			"ofObject",
 			"(Ljava/lang/Object;Landroid/util/Property;Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/ObjectAnimator;",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
+			arg1.object(),
+			arg2.object(),
 			arg3
 		);
 	}
@@ -236,8 +236,8 @@ namespace android::animation
 			"(Ljava/lang/Object;Ljava/lang/String;Landroid/animation/TypeConverter;Landroid/graphics/Path;)Landroid/animation/ObjectAnimator;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
+			arg2.object(),
+			arg3.object()
 		);
 	}
 	QAndroidJniObject ObjectAnimator::ofObject(jobject arg0, jstring arg1, __JniBaseClass arg2, jobjectArray arg3)
@@ -248,7 +248,7 @@ namespace android::animation
 			"(Ljava/lang/Object;Ljava/lang/String;Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/ObjectAnimator;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
+			arg2.object(),
 			arg3
 		);
 	}
@@ -259,9 +259,9 @@ namespace android::animation
 			"ofObject",
 			"(Ljava/lang/Object;Landroid/util/Property;Landroid/animation/TypeConverter;Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/ObjectAnimator;",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object(),
 			arg4
 		);
 	}
@@ -277,28 +277,28 @@ namespace android::animation
 	}
 	QAndroidJniObject ObjectAnimator::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Landroid/animation/ObjectAnimator;"
 		);
 	}
 	jstring ObjectAnimator::getPropertyName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPropertyName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jobject ObjectAnimator::getTarget()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTarget",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	void ObjectAnimator::setAutoCancel(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAutoCancel",
 			"(Z)V",
 			arg0
@@ -306,7 +306,7 @@ namespace android::animation
 	}
 	QAndroidJniObject ObjectAnimator::setDuration(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setDuration",
 			"(J)Landroid/animation/ObjectAnimator;",
 			arg0
@@ -314,7 +314,7 @@ namespace android::animation
 	}
 	void ObjectAnimator::setFloatValues(jfloatArray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFloatValues",
 			"([F)V",
 			arg0
@@ -322,7 +322,7 @@ namespace android::animation
 	}
 	void ObjectAnimator::setIntValues(jintArray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setIntValues",
 			"([I)V",
 			arg0
@@ -330,7 +330,7 @@ namespace android::animation
 	}
 	void ObjectAnimator::setObjectValues(jobjectArray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setObjectValues",
 			"([Ljava/lang/Object;)V",
 			arg0
@@ -338,15 +338,15 @@ namespace android::animation
 	}
 	void ObjectAnimator::setProperty(android::util::Property arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setProperty",
 			"(Landroid/util/Property;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ObjectAnimator::setPropertyName(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPropertyName",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -354,7 +354,7 @@ namespace android::animation
 	}
 	void ObjectAnimator::setTarget(jobject arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTarget",
 			"(Ljava/lang/Object;)V",
 			arg0
@@ -362,28 +362,28 @@ namespace android::animation
 	}
 	void ObjectAnimator::setupEndValues()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setupEndValues",
 			"()V"
 		);
 	}
 	void ObjectAnimator::setupStartValues()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setupStartValues",
 			"()V"
 		);
 	}
 	void ObjectAnimator::start()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"start",
 			"()V"
 		);
 	}
 	jstring ObjectAnimator::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

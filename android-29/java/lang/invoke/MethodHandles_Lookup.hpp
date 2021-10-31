@@ -49,9 +49,11 @@ namespace java::lang::invoke
 		static jint PUBLIC();
 		static jint UNCONDITIONAL();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MethodHandles_Lookup(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MethodHandles_Lookup(QAndroidJniObject obj);
+		
 		// Constructors
-		MethodHandles_Lookup() = default;
 		
 		// Methods
 		jclass accessClass(jclass arg0);

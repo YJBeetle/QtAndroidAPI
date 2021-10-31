@@ -13,21 +13,20 @@ namespace android::service::carrier
 		);
 	}
 	
-	CarrierIdentifier::CarrierIdentifier(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CarrierIdentifier::CarrierIdentifier(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	CarrierIdentifier::CarrierIdentifier(jbyteArray arg0, jstring arg1, jstring arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.service.carrier.CarrierIdentifier",
 			"([BLjava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	CarrierIdentifier::CarrierIdentifier(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4, jstring arg5)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.service.carrier.CarrierIdentifier",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
@@ -36,11 +35,9 @@ namespace android::service::carrier
 			arg3,
 			arg4,
 			arg5
-		);
-	}
+		) {}
 	CarrierIdentifier::CarrierIdentifier(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4, jstring arg5, jint arg6, jint arg7)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.service.carrier.CarrierIdentifier",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;II)V",
 			arg0,
@@ -51,20 +48,19 @@ namespace android::service::carrier
 			arg5,
 			arg6,
 			arg7
-		);
-	}
+		) {}
 	
 	// Methods
 	jint CarrierIdentifier::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean CarrierIdentifier::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -72,80 +68,80 @@ namespace android::service::carrier
 	}
 	jint CarrierIdentifier::getCarrierId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCarrierId",
 			"()I"
 		);
 	}
 	jstring CarrierIdentifier::getGid1()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getGid1",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring CarrierIdentifier::getGid2()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getGid2",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring CarrierIdentifier::getImsi()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getImsi",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring CarrierIdentifier::getMcc()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMcc",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring CarrierIdentifier::getMnc()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMnc",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint CarrierIdentifier::getSpecificCarrierId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSpecificCarrierId",
 			"()I"
 		);
 	}
 	jstring CarrierIdentifier::getSpn()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSpn",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint CarrierIdentifier::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring CarrierIdentifier::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void CarrierIdentifier::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

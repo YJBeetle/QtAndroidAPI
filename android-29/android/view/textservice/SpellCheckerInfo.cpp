@@ -18,55 +18,57 @@ namespace android::view::textservice
 		);
 	}
 	
-	SpellCheckerInfo::SpellCheckerInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SpellCheckerInfo::SpellCheckerInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint SpellCheckerInfo::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	QAndroidJniObject SpellCheckerInfo::getComponent()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getComponent",
 			"()Landroid/content/ComponentName;"
 		);
 	}
 	jstring SpellCheckerInfo::getId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring SpellCheckerInfo::getPackageName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject SpellCheckerInfo::getServiceInfo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getServiceInfo",
 			"()Landroid/content/pm/ServiceInfo;"
 		);
 	}
 	jstring SpellCheckerInfo::getSettingsActivity()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSettingsActivity",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject SpellCheckerInfo::getSubtypeAt(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSubtypeAt",
 			"(I)Landroid/view/textservice/SpellCheckerSubtype;",
 			arg0
@@ -74,33 +76,33 @@ namespace android::view::textservice
 	}
 	jint SpellCheckerInfo::getSubtypeCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSubtypeCount",
 			"()I"
 		);
 	}
 	QAndroidJniObject SpellCheckerInfo::loadIcon(android::content::pm::PackageManager arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"loadIcon",
 			"(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring SpellCheckerInfo::loadLabel(android::content::pm::PackageManager arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"loadLabel",
 			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	void SpellCheckerInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

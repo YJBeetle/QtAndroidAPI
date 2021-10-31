@@ -24,59 +24,57 @@ namespace java::util::zip
 		);
 	}
 	
-	ZipOutputStream::ZipOutputStream(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ZipOutputStream::ZipOutputStream(QAndroidJniObject obj) : java::util::zip::DeflaterOutputStream(obj) {}
+	
 	// Constructors
 	ZipOutputStream::ZipOutputStream(java::io::OutputStream arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::zip::DeflaterOutputStream(
 			"java.util.zip.ZipOutputStream",
 			"(Ljava/io/OutputStream;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	ZipOutputStream::ZipOutputStream(java::io::OutputStream arg0, java::nio::charset::Charset arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::zip::DeflaterOutputStream(
 			"java.util.zip.ZipOutputStream",
 			"(Ljava/io/OutputStream;Ljava/nio/charset/Charset;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	
 	// Methods
 	void ZipOutputStream::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	void ZipOutputStream::closeEntry()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"closeEntry",
 			"()V"
 		);
 	}
 	void ZipOutputStream::finish()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"finish",
 			"()V"
 		);
 	}
 	void ZipOutputStream::putNextEntry(java::util::zip::ZipEntry arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putNextEntry",
 			"(Ljava/util/zip/ZipEntry;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ZipOutputStream::setComment(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setComment",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -84,7 +82,7 @@ namespace java::util::zip
 	}
 	void ZipOutputStream::setLevel(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLevel",
 			"(I)V",
 			arg0
@@ -92,7 +90,7 @@ namespace java::util::zip
 	}
 	void ZipOutputStream::setMethod(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMethod",
 			"(I)V",
 			arg0
@@ -100,7 +98,7 @@ namespace java::util::zip
 	}
 	void ZipOutputStream::write(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"write",
 			"([BII)V",
 			arg0,

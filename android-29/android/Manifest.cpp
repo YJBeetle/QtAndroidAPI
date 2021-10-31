@@ -4,15 +4,15 @@ namespace android
 {
 	// Fields
 	
-	Manifest::Manifest(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Manifest::Manifest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Manifest::Manifest()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.Manifest",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android

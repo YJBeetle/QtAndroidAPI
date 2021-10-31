@@ -4,34 +4,34 @@ namespace android::text
 {
 	// Fields
 	
-	ClipboardManager::ClipboardManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ClipboardManager::ClipboardManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ClipboardManager::ClipboardManager()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.text.ClipboardManager",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring ClipboardManager::getText()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jboolean ClipboardManager::hasText()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasText",
 			"()Z"
 		);
 	}
 	void ClipboardManager::setText(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setText",
 			"(Ljava/lang/CharSequence;)V",
 			arg0

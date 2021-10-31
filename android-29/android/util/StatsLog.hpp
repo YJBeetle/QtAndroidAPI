@@ -10,9 +10,11 @@ namespace android::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit StatsLog(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		StatsLog(QAndroidJniObject obj);
+		
 		// Constructors
-		StatsLog() = default;
 		
 		// Methods
 		static jboolean logBinaryPushStateChanged(jstring arg0, jlong arg1, jint arg2, jint arg3, jlongArray arg4);

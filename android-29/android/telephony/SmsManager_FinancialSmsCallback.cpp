@@ -5,23 +5,23 @@ namespace android::telephony
 {
 	// Fields
 	
-	SmsManager_FinancialSmsCallback::SmsManager_FinancialSmsCallback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SmsManager_FinancialSmsCallback::SmsManager_FinancialSmsCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	SmsManager_FinancialSmsCallback::SmsManager_FinancialSmsCallback()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.telephony.SmsManager$FinancialSmsCallback",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void SmsManager_FinancialSmsCallback::onFinancialSmsMessages(android::database::CursorWindow arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onFinancialSmsMessages",
 			"(Landroid/database/CursorWindow;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::telephony

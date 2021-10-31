@@ -35,9 +35,11 @@ namespace android::media
 		static jint ROUTE_TYPE_LIVE_VIDEO();
 		static jint ROUTE_TYPE_USER();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaRouter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaRouter(QAndroidJniObject obj);
+		
 		// Constructors
-		MediaRouter() = default;
 		
 		// Methods
 		void addCallback(jint arg0, android::media::MediaRouter_Callback arg1);

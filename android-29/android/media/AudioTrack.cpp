@@ -142,23 +142,22 @@ namespace android::media
 		);
 	}
 	
-	AudioTrack::AudioTrack(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AudioTrack::AudioTrack(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	AudioTrack::AudioTrack(android::media::AudioAttributes arg0, android::media::AudioFormat arg1, jint arg2, jint arg3, jint arg4)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.AudioTrack",
 			"(Landroid/media/AudioAttributes;Landroid/media/AudioFormat;III)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3,
 			arg4
-		);
-	}
+		) {}
 	AudioTrack::AudioTrack(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.AudioTrack",
 			"(IIIIII)V",
 			arg0,
@@ -167,11 +166,9 @@ namespace android::media
 			arg3,
 			arg4,
 			arg5
-		);
-	}
+		) {}
 	AudioTrack::AudioTrack(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.AudioTrack",
 			"(IIIIIII)V",
 			arg0,
@@ -181,8 +178,7 @@ namespace android::media
 			arg4,
 			arg5,
 			arg6
-		);
-	}
+		) {}
 	
 	// Methods
 	jfloat AudioTrack::getMaxVolume()
@@ -227,22 +223,22 @@ namespace android::media
 			"android.media.AudioTrack",
 			"isDirectPlaybackSupported",
 			"(Landroid/media/AudioFormat;Landroid/media/AudioAttributes;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void AudioTrack::addOnRoutingChangedListener(__JniBaseClass arg0, android::os::Handler arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addOnRoutingChangedListener",
 			"(Landroid/media/AudioRouting$OnRoutingChangedListener;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jint AudioTrack::attachAuxEffect(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"attachAuxEffect",
 			"(I)I",
 			arg0
@@ -250,250 +246,250 @@ namespace android::media
 	}
 	QAndroidJniObject AudioTrack::createVolumeShaper(android::media::VolumeShaper_Configuration arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"createVolumeShaper",
 			"(Landroid/media/VolumeShaper$Configuration;)Landroid/media/VolumeShaper;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AudioTrack::flush()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"flush",
 			"()V"
 		);
 	}
 	QAndroidJniObject AudioTrack::getAudioAttributes()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAudioAttributes",
 			"()Landroid/media/AudioAttributes;"
 		);
 	}
 	jint AudioTrack::getAudioFormat()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAudioFormat",
 			"()I"
 		);
 	}
 	jint AudioTrack::getAudioSessionId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAudioSessionId",
 			"()I"
 		);
 	}
 	jint AudioTrack::getBufferCapacityInFrames()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getBufferCapacityInFrames",
 			"()I"
 		);
 	}
 	jint AudioTrack::getBufferSizeInFrames()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getBufferSizeInFrames",
 			"()I"
 		);
 	}
 	jint AudioTrack::getChannelConfiguration()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getChannelConfiguration",
 			"()I"
 		);
 	}
 	jint AudioTrack::getChannelCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getChannelCount",
 			"()I"
 		);
 	}
 	QAndroidJniObject AudioTrack::getFormat()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFormat",
 			"()Landroid/media/AudioFormat;"
 		);
 	}
 	QAndroidJniObject AudioTrack::getMetrics()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMetrics",
 			"()Landroid/os/PersistableBundle;"
 		);
 	}
 	jint AudioTrack::getNotificationMarkerPosition()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getNotificationMarkerPosition",
 			"()I"
 		);
 	}
 	jint AudioTrack::getOffloadDelay()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getOffloadDelay",
 			"()I"
 		);
 	}
 	jint AudioTrack::getOffloadPadding()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getOffloadPadding",
 			"()I"
 		);
 	}
 	jint AudioTrack::getPerformanceMode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPerformanceMode",
 			"()I"
 		);
 	}
 	jint AudioTrack::getPlayState()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPlayState",
 			"()I"
 		);
 	}
 	jint AudioTrack::getPlaybackHeadPosition()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPlaybackHeadPosition",
 			"()I"
 		);
 	}
 	QAndroidJniObject AudioTrack::getPlaybackParams()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPlaybackParams",
 			"()Landroid/media/PlaybackParams;"
 		);
 	}
 	jint AudioTrack::getPlaybackRate()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPlaybackRate",
 			"()I"
 		);
 	}
 	jint AudioTrack::getPositionNotificationPeriod()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPositionNotificationPeriod",
 			"()I"
 		);
 	}
 	QAndroidJniObject AudioTrack::getPreferredDevice()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPreferredDevice",
 			"()Landroid/media/AudioDeviceInfo;"
 		);
 	}
 	QAndroidJniObject AudioTrack::getRoutedDevice()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRoutedDevice",
 			"()Landroid/media/AudioDeviceInfo;"
 		);
 	}
 	jint AudioTrack::getSampleRate()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSampleRate",
 			"()I"
 		);
 	}
 	jint AudioTrack::getState()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getState",
 			"()I"
 		);
 	}
 	jint AudioTrack::getStreamType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getStreamType",
 			"()I"
 		);
 	}
 	jboolean AudioTrack::getTimestamp(android::media::AudioTimestamp arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getTimestamp",
 			"(Landroid/media/AudioTimestamp;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint AudioTrack::getUnderrunCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getUnderrunCount",
 			"()I"
 		);
 	}
 	jboolean AudioTrack::isOffloadedPlayback()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isOffloadedPlayback",
 			"()Z"
 		);
 	}
 	void AudioTrack::pause()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"pause",
 			"()V"
 		);
 	}
 	void AudioTrack::play()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"play",
 			"()V"
 		);
 	}
 	void AudioTrack::registerStreamEventCallback(__JniBaseClass arg0, android::media::AudioTrack_StreamEventCallback arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"registerStreamEventCallback",
 			"(Ljava/util/concurrent/Executor;Landroid/media/AudioTrack$StreamEventCallback;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void AudioTrack::release()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
 	jint AudioTrack::reloadStaticData()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"reloadStaticData",
 			"()I"
 		);
 	}
 	void AudioTrack::removeOnRoutingChangedListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeOnRoutingChangedListener",
 			"(Landroid/media/AudioRouting$OnRoutingChangedListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint AudioTrack::setAuxEffectSendLevel(jfloat arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"setAuxEffectSendLevel",
 			"(F)I",
 			arg0
@@ -501,7 +497,7 @@ namespace android::media
 	}
 	jint AudioTrack::setBufferSizeInFrames(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"setBufferSizeInFrames",
 			"(I)I",
 			arg0
@@ -509,7 +505,7 @@ namespace android::media
 	}
 	jint AudioTrack::setLoopPoints(jint arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"setLoopPoints",
 			"(III)I",
 			arg0,
@@ -519,7 +515,7 @@ namespace android::media
 	}
 	jint AudioTrack::setNotificationMarkerPosition(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"setNotificationMarkerPosition",
 			"(I)I",
 			arg0
@@ -527,7 +523,7 @@ namespace android::media
 	}
 	void AudioTrack::setOffloadDelayPadding(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOffloadDelayPadding",
 			"(II)V",
 			arg0,
@@ -536,14 +532,14 @@ namespace android::media
 	}
 	void AudioTrack::setOffloadEndOfStream()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOffloadEndOfStream",
 			"()V"
 		);
 	}
 	jint AudioTrack::setPlaybackHeadPosition(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"setPlaybackHeadPosition",
 			"(I)I",
 			arg0
@@ -551,32 +547,32 @@ namespace android::media
 	}
 	void AudioTrack::setPlaybackParams(android::media::PlaybackParams arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPlaybackParams",
 			"(Landroid/media/PlaybackParams;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AudioTrack::setPlaybackPositionUpdateListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPlaybackPositionUpdateListener",
 			"(Landroid/media/AudioTrack$OnPlaybackPositionUpdateListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AudioTrack::setPlaybackPositionUpdateListener(__JniBaseClass arg0, android::os::Handler arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPlaybackPositionUpdateListener",
 			"(Landroid/media/AudioTrack$OnPlaybackPositionUpdateListener;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jint AudioTrack::setPlaybackRate(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"setPlaybackRate",
 			"(I)I",
 			arg0
@@ -584,7 +580,7 @@ namespace android::media
 	}
 	jint AudioTrack::setPositionNotificationPeriod(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"setPositionNotificationPeriod",
 			"(I)I",
 			arg0
@@ -592,23 +588,23 @@ namespace android::media
 	}
 	jboolean AudioTrack::setPreferredDevice(android::media::AudioDeviceInfo arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"setPreferredDevice",
 			"(Landroid/media/AudioDeviceInfo;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint AudioTrack::setPresentation(android::media::AudioPresentation arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"setPresentation",
 			"(Landroid/media/AudioPresentation;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint AudioTrack::setStereoVolume(jfloat arg0, jfloat arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"setStereoVolume",
 			"(FF)I",
 			arg0,
@@ -617,7 +613,7 @@ namespace android::media
 	}
 	jint AudioTrack::setVolume(jfloat arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"setVolume",
 			"(F)I",
 			arg0
@@ -625,22 +621,22 @@ namespace android::media
 	}
 	void AudioTrack::stop()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"stop",
 			"()V"
 		);
 	}
 	void AudioTrack::unregisterStreamEventCallback(android::media::AudioTrack_StreamEventCallback arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"unregisterStreamEventCallback",
 			"(Landroid/media/AudioTrack$StreamEventCallback;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint AudioTrack::write(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"write",
 			"([BII)I",
 			arg0,
@@ -650,7 +646,7 @@ namespace android::media
 	}
 	jint AudioTrack::write(jshortArray arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"write",
 			"([SII)I",
 			arg0,
@@ -660,17 +656,17 @@ namespace android::media
 	}
 	jint AudioTrack::write(java::nio::ByteBuffer arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"write",
 			"(Ljava/nio/ByteBuffer;II)I",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
 	}
 	jint AudioTrack::write(jbyteArray arg0, jint arg1, jint arg2, jint arg3)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"write",
 			"([BIII)I",
 			arg0,
@@ -681,7 +677,7 @@ namespace android::media
 	}
 	jint AudioTrack::write(jfloatArray arg0, jint arg1, jint arg2, jint arg3)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"write",
 			"([FIII)I",
 			arg0,
@@ -692,7 +688,7 @@ namespace android::media
 	}
 	jint AudioTrack::write(jshortArray arg0, jint arg1, jint arg2, jint arg3)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"write",
 			"([SIII)I",
 			arg0,
@@ -703,10 +699,10 @@ namespace android::media
 	}
 	jint AudioTrack::write(java::nio::ByteBuffer arg0, jint arg1, jint arg2, jlong arg3)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"write",
 			"(Ljava/nio/ByteBuffer;IIJ)I",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3

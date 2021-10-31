@@ -28,7 +28,9 @@ namespace java::lang::annotation
 		);
 	}
 	
-	RetentionPolicy::RetentionPolicy(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	RetentionPolicy::RetentionPolicy(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

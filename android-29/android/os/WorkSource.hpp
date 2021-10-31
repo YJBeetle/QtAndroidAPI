@@ -15,7 +15,10 @@ namespace android::os
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit WorkSource(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		WorkSource(QAndroidJniObject obj);
+		
 		// Constructors
 		WorkSource();
 		WorkSource(android::os::WorkSource &arg0);

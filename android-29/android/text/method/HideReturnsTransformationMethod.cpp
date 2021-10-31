@@ -4,15 +4,15 @@ namespace android::text::method
 {
 	// Fields
 	
-	HideReturnsTransformationMethod::HideReturnsTransformationMethod(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	HideReturnsTransformationMethod::HideReturnsTransformationMethod(QAndroidJniObject obj) : android::text::method::ReplacementTransformationMethod(obj) {}
+	
 	// Constructors
 	HideReturnsTransformationMethod::HideReturnsTransformationMethod()
-	{
-		__thiz = QAndroidJniObject(
+		: android::text::method::ReplacementTransformationMethod(
 			"android.text.method.HideReturnsTransformationMethod",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject HideReturnsTransformationMethod::getInstance()

@@ -45,15 +45,15 @@ namespace android::provider
 		);
 	}
 	
-	MediaStore_Audio_Albums::MediaStore_Audio_Albums(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaStore_Audio_Albums::MediaStore_Audio_Albums(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MediaStore_Audio_Albums::MediaStore_Audio_Albums()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.provider.MediaStore$Audio$Albums",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject MediaStore_Audio_Albums::getContentUri(jstring arg0)

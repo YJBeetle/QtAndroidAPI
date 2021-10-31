@@ -6,7 +6,9 @@ namespace java::nio
 {
 	// Fields
 	
-	ShortBuffer::ShortBuffer(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ShortBuffer::ShortBuffer(QAndroidJniObject obj) : java::nio::Buffer(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -41,42 +43,42 @@ namespace java::nio
 	}
 	jshortArray ShortBuffer::array()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"array",
 			"()[S"
 		).object<jshortArray>();
 	}
 	jint ShortBuffer::arrayOffset()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"arrayOffset",
 			"()I"
 		);
 	}
 	QAndroidJniObject ShortBuffer::asReadOnlyBuffer()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"asReadOnlyBuffer",
 			"()Ljava/nio/ShortBuffer;"
 		);
 	}
 	QAndroidJniObject ShortBuffer::clear()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clear",
 			"()Ljava/nio/ShortBuffer;"
 		);
 	}
 	QAndroidJniObject ShortBuffer::compact()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"compact",
 			"()Ljava/nio/ShortBuffer;"
 		);
 	}
 	jint ShortBuffer::compareTo(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -84,22 +86,22 @@ namespace java::nio
 	}
 	jint ShortBuffer::compareTo(java::nio::ShortBuffer arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/nio/ShortBuffer;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ShortBuffer::duplicate()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"duplicate",
 			"()Ljava/nio/ShortBuffer;"
 		);
 	}
 	jboolean ShortBuffer::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -107,14 +109,14 @@ namespace java::nio
 	}
 	QAndroidJniObject ShortBuffer::flip()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"flip",
 			"()Ljava/nio/ShortBuffer;"
 		);
 	}
 	QAndroidJniObject ShortBuffer::get(jshortArray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"([S)Ljava/nio/ShortBuffer;",
 			arg0
@@ -122,7 +124,7 @@ namespace java::nio
 	}
 	QAndroidJniObject ShortBuffer::get(jint arg0, jshortArray arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"(I[S)Ljava/nio/ShortBuffer;",
 			arg0,
@@ -131,7 +133,7 @@ namespace java::nio
 	}
 	QAndroidJniObject ShortBuffer::get(jshortArray arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"([SII)Ljava/nio/ShortBuffer;",
 			arg0,
@@ -141,7 +143,7 @@ namespace java::nio
 	}
 	QAndroidJniObject ShortBuffer::get(jint arg0, jshortArray arg1, jint arg2, jint arg3)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"(I[SII)Ljava/nio/ShortBuffer;",
 			arg0,
@@ -152,14 +154,14 @@ namespace java::nio
 	}
 	jshort ShortBuffer::get()
 	{
-		return __thiz.callMethod<jshort>(
+		return callMethod<jshort>(
 			"get",
 			"()S"
 		);
 	}
 	jshort ShortBuffer::get(jint arg0)
 	{
-		return __thiz.callMethod<jshort>(
+		return callMethod<jshort>(
 			"get",
 			"(I)S",
 			arg0
@@ -167,28 +169,28 @@ namespace java::nio
 	}
 	jboolean ShortBuffer::hasArray()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasArray",
 			"()Z"
 		);
 	}
 	jint ShortBuffer::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean ShortBuffer::isDirect()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isDirect",
 			"()Z"
 		);
 	}
 	QAndroidJniObject ShortBuffer::limit(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"limit",
 			"(I)Ljava/nio/ShortBuffer;",
 			arg0
@@ -196,29 +198,29 @@ namespace java::nio
 	}
 	QAndroidJniObject ShortBuffer::mark()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"mark",
 			"()Ljava/nio/ShortBuffer;"
 		);
 	}
 	jint ShortBuffer::mismatch(java::nio::ShortBuffer arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"mismatch",
 			"(Ljava/nio/ShortBuffer;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ShortBuffer::order()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"order",
 			"()Ljava/nio/ByteOrder;"
 		);
 	}
 	QAndroidJniObject ShortBuffer::position(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"position",
 			"(I)Ljava/nio/ShortBuffer;",
 			arg0
@@ -226,7 +228,7 @@ namespace java::nio
 	}
 	QAndroidJniObject ShortBuffer::put(jshortArray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"put",
 			"([S)Ljava/nio/ShortBuffer;",
 			arg0
@@ -234,15 +236,15 @@ namespace java::nio
 	}
 	QAndroidJniObject ShortBuffer::put(java::nio::ShortBuffer arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"put",
 			"(Ljava/nio/ShortBuffer;)Ljava/nio/ShortBuffer;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ShortBuffer::put(jshort arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"put",
 			"(S)Ljava/nio/ShortBuffer;",
 			arg0
@@ -250,7 +252,7 @@ namespace java::nio
 	}
 	QAndroidJniObject ShortBuffer::put(jint arg0, jshortArray arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"put",
 			"(I[S)Ljava/nio/ShortBuffer;",
 			arg0,
@@ -259,7 +261,7 @@ namespace java::nio
 	}
 	QAndroidJniObject ShortBuffer::put(jint arg0, jshort arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"put",
 			"(IS)Ljava/nio/ShortBuffer;",
 			arg0,
@@ -268,7 +270,7 @@ namespace java::nio
 	}
 	QAndroidJniObject ShortBuffer::put(jshortArray arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"put",
 			"([SII)Ljava/nio/ShortBuffer;",
 			arg0,
@@ -278,7 +280,7 @@ namespace java::nio
 	}
 	QAndroidJniObject ShortBuffer::put(jint arg0, jshortArray arg1, jint arg2, jint arg3)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"put",
 			"(I[SII)Ljava/nio/ShortBuffer;",
 			arg0,
@@ -289,39 +291,39 @@ namespace java::nio
 	}
 	QAndroidJniObject ShortBuffer::put(jint arg0, java::nio::ShortBuffer arg1, jint arg2, jint arg3)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"put",
 			"(ILjava/nio/ShortBuffer;II)Ljava/nio/ShortBuffer;",
 			arg0,
-			arg1.__jniObject().object(),
+			arg1.object(),
 			arg2,
 			arg3
 		);
 	}
 	QAndroidJniObject ShortBuffer::reset()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"reset",
 			"()Ljava/nio/ShortBuffer;"
 		);
 	}
 	QAndroidJniObject ShortBuffer::rewind()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"rewind",
 			"()Ljava/nio/ShortBuffer;"
 		);
 	}
 	QAndroidJniObject ShortBuffer::slice()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"slice",
 			"()Ljava/nio/ShortBuffer;"
 		);
 	}
 	QAndroidJniObject ShortBuffer::slice(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"slice",
 			"(II)Ljava/nio/ShortBuffer;",
 			arg0,
@@ -330,7 +332,7 @@ namespace java::nio
 	}
 	jstring ShortBuffer::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

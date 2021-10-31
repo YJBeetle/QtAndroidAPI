@@ -23,7 +23,10 @@ namespace org::xml::sax
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SAXException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
 		SAXException(QAndroidJniObject obj);
+		
 		// Constructors
 		SAXException();
 		SAXException(java::lang::Exception arg0);

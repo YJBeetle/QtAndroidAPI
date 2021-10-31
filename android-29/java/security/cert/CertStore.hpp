@@ -22,9 +22,11 @@ namespace java::security::cert
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CertStore(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		CertStore(QAndroidJniObject obj);
+		
 		// Constructors
-		CertStore() = default;
 		
 		// Methods
 		static jstring getDefaultType();

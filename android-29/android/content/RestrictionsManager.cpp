@@ -239,7 +239,9 @@ namespace android::content
 		);
 	}
 	
-	RestrictionsManager::RestrictionsManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	RestrictionsManager::RestrictionsManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -249,26 +251,26 @@ namespace android::content
 			"android.content.RestrictionsManager",
 			"convertRestrictionsToBundle",
 			"(Ljava/util/List;)Landroid/os/Bundle;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject RestrictionsManager::createLocalApprovalIntent()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"createLocalApprovalIntent",
 			"()Landroid/content/Intent;"
 		);
 	}
 	QAndroidJniObject RestrictionsManager::getApplicationRestrictions()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getApplicationRestrictions",
 			"()Landroid/os/Bundle;"
 		);
 	}
 	QAndroidJniObject RestrictionsManager::getManifestRestrictions(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getManifestRestrictions",
 			"(Ljava/lang/String;)Ljava/util/List;",
 			arg0
@@ -276,28 +278,28 @@ namespace android::content
 	}
 	jboolean RestrictionsManager::hasRestrictionsProvider()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasRestrictionsProvider",
 			"()Z"
 		);
 	}
 	void RestrictionsManager::notifyPermissionResponse(jstring arg0, android::os::PersistableBundle arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"notifyPermissionResponse",
 			"(Ljava/lang/String;Landroid/os/PersistableBundle;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void RestrictionsManager::requestPermission(jstring arg0, jstring arg1, android::os::PersistableBundle arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"requestPermission",
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/os/PersistableBundle;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 } // namespace android::content

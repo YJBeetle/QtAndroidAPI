@@ -4,23 +4,21 @@ namespace java::lang
 {
 	// Fields
 	
-	IllegalAccessError::IllegalAccessError(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	IllegalAccessError::IllegalAccessError(QAndroidJniObject obj) : java::lang::IncompatibleClassChangeError(obj) {}
+	
 	// Constructors
 	IllegalAccessError::IllegalAccessError()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::IncompatibleClassChangeError(
 			"java.lang.IllegalAccessError",
 			"()V"
-		);
-	}
+		) {}
 	IllegalAccessError::IllegalAccessError(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::IncompatibleClassChangeError(
 			"java.lang.IllegalAccessError",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::lang

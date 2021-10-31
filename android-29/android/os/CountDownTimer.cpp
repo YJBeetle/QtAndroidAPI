@@ -4,36 +4,36 @@ namespace android::os
 {
 	// Fields
 	
-	CountDownTimer::CountDownTimer(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CountDownTimer::CountDownTimer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	CountDownTimer::CountDownTimer(jlong arg0, jlong arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.os.CountDownTimer",
 			"(JJ)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	void CountDownTimer::cancel()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"cancel",
 			"()V"
 		);
 	}
 	void CountDownTimer::onFinish()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onFinish",
 			"()V"
 		);
 	}
 	void CountDownTimer::onTick(jlong arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onTick",
 			"(J)V",
 			arg0
@@ -41,7 +41,7 @@ namespace android::os
 	}
 	QAndroidJniObject CountDownTimer::start()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"start",
 			"()Landroid/os/CountDownTimer;"
 		);

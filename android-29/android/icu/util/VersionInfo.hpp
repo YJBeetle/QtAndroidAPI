@@ -42,9 +42,11 @@ namespace android::icu::util
 		static QAndroidJniObject UNICODE_8_0();
 		static QAndroidJniObject UNICODE_9_0();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit VersionInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		VersionInfo(QAndroidJniObject obj);
+		
 		// Constructors
-		VersionInfo() = default;
 		
 		// Methods
 		static QAndroidJniObject getInstance(jint arg0);

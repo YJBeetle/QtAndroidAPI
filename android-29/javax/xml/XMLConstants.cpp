@@ -132,7 +132,9 @@ namespace javax::xml
 		).object<jstring>();
 	}
 	
-	XMLConstants::XMLConstants(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	XMLConstants::XMLConstants(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

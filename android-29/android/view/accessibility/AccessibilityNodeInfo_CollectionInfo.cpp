@@ -25,7 +25,9 @@ namespace android::view::accessibility
 		);
 	}
 	
-	AccessibilityNodeInfo_CollectionInfo::AccessibilityNodeInfo_CollectionInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AccessibilityNodeInfo_CollectionInfo::AccessibilityNodeInfo_CollectionInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -54,28 +56,28 @@ namespace android::view::accessibility
 	}
 	jint AccessibilityNodeInfo_CollectionInfo::getColumnCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getColumnCount",
 			"()I"
 		);
 	}
 	jint AccessibilityNodeInfo_CollectionInfo::getRowCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRowCount",
 			"()I"
 		);
 	}
 	jint AccessibilityNodeInfo_CollectionInfo::getSelectionMode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSelectionMode",
 			"()I"
 		);
 	}
 	jboolean AccessibilityNodeInfo_CollectionInfo::isHierarchical()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isHierarchical",
 			"()Z"
 		);

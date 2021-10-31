@@ -10,10 +10,12 @@ namespace android::hardware::camera2::params
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit InputConfiguration(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		InputConfiguration(QAndroidJniObject obj);
+		
 		// Constructors
 		InputConfiguration(jint arg0, jint arg1, jint arg2);
-		InputConfiguration() = default;
 		
 		// Methods
 		jboolean equals(jobject arg0);

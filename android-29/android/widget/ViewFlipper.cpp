@@ -5,58 +5,56 @@ namespace android::widget
 {
 	// Fields
 	
-	ViewFlipper::ViewFlipper(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ViewFlipper::ViewFlipper(QAndroidJniObject obj) : android::widget::ViewAnimator(obj) {}
+	
 	// Constructors
 	ViewFlipper::ViewFlipper(android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::ViewAnimator(
 			"android.widget.ViewFlipper",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	ViewFlipper::ViewFlipper(android::content::Context arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::ViewAnimator(
 			"android.widget.ViewFlipper",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	
 	// Methods
 	jstring ViewFlipper::getAccessibilityClassName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jint ViewFlipper::getFlipInterval()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getFlipInterval",
 			"()I"
 		);
 	}
 	jboolean ViewFlipper::isAutoStart()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isAutoStart",
 			"()Z"
 		);
 	}
 	jboolean ViewFlipper::isFlipping()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isFlipping",
 			"()Z"
 		);
 	}
 	void ViewFlipper::setAutoStart(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAutoStart",
 			"(Z)V",
 			arg0
@@ -64,7 +62,7 @@ namespace android::widget
 	}
 	void ViewFlipper::setFlipInterval(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFlipInterval",
 			"(I)V",
 			arg0
@@ -72,14 +70,14 @@ namespace android::widget
 	}
 	void ViewFlipper::startFlipping()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"startFlipping",
 			"()V"
 		);
 	}
 	void ViewFlipper::stopFlipping()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"stopFlipping",
 			"()V"
 		);

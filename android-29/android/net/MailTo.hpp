@@ -11,9 +11,11 @@ namespace android::net
 		// Fields
 		static jstring MAILTO_SCHEME();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MailTo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MailTo(QAndroidJniObject obj);
+		
 		// Constructors
-		MailTo() = default;
 		
 		// Methods
 		static jboolean isMailTo(jstring arg0);

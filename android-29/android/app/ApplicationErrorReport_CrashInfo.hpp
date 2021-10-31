@@ -21,7 +21,10 @@ namespace android::app
 		jint throwLineNumber();
 		jstring throwMethodName();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ApplicationErrorReport_CrashInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ApplicationErrorReport_CrashInfo(QAndroidJniObject obj);
+		
 		// Constructors
 		ApplicationErrorReport_CrashInfo();
 		ApplicationErrorReport_CrashInfo(android::os::Parcel arg0);

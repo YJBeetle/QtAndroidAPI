@@ -18,10 +18,12 @@ namespace javax::crypto
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SealedObject(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SealedObject(QAndroidJniObject obj);
+		
 		// Constructors
 		SealedObject(__JniBaseClass arg0, javax::crypto::Cipher arg1);
-		SealedObject() = default;
 		
 		// Methods
 		jstring getAlgorithm();

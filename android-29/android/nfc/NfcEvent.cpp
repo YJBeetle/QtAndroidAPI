@@ -6,25 +6,27 @@ namespace android::nfc
 	// Fields
 	QAndroidJniObject NfcEvent::nfcAdapter()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"nfcAdapter",
 			"Landroid/nfc/NfcAdapter;"
 		);
 	}
 	jint NfcEvent::peerLlcpMajorVersion()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"peerLlcpMajorVersion"
 		);
 	}
 	jint NfcEvent::peerLlcpMinorVersion()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"peerLlcpMinorVersion"
 		);
 	}
 	
-	NfcEvent::NfcEvent(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NfcEvent::NfcEvent(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

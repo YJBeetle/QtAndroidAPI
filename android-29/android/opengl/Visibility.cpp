@@ -4,15 +4,15 @@ namespace android::opengl
 {
 	// Fields
 	
-	Visibility::Visibility(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Visibility::Visibility(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Visibility::Visibility()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.opengl.Visibility",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void Visibility::computeBoundingSphere(jfloatArray arg0, jint arg1, jint arg2, jfloatArray arg3, jint arg4)

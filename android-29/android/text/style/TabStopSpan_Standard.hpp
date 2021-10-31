@@ -10,10 +10,12 @@ namespace android::text::style
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TabStopSpan_Standard(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		TabStopSpan_Standard(QAndroidJniObject obj);
+		
 		// Constructors
 		TabStopSpan_Standard(jint arg0);
-		TabStopSpan_Standard() = default;
 		
 		// Methods
 		jint getTabStop();

@@ -13,51 +13,53 @@ namespace android::view::textclassifier
 		);
 	}
 	
-	TextClassificationContext::TextClassificationContext(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TextClassificationContext::TextClassificationContext(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint TextClassificationContext::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jstring TextClassificationContext::getPackageName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring TextClassificationContext::getWidgetType()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getWidgetType",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring TextClassificationContext::getWidgetVersion()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getWidgetVersion",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring TextClassificationContext::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void TextClassificationContext::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

@@ -4,23 +4,21 @@ namespace java::lang
 {
 	// Fields
 	
-	CloneNotSupportedException::CloneNotSupportedException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CloneNotSupportedException::CloneNotSupportedException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
+	
 	// Constructors
 	CloneNotSupportedException::CloneNotSupportedException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Exception(
 			"java.lang.CloneNotSupportedException",
 			"()V"
-		);
-	}
+		) {}
 	CloneNotSupportedException::CloneNotSupportedException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Exception(
 			"java.lang.CloneNotSupportedException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::lang

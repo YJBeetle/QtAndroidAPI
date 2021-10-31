@@ -6,7 +6,9 @@ namespace android::icu::text
 {
 	// Fields
 	
-	ScientificNumberFormatter::ScientificNumberFormatter(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ScientificNumberFormatter::ScientificNumberFormatter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -16,7 +18,7 @@ namespace android::icu::text
 			"android.icu.text.ScientificNumberFormatter",
 			"getMarkupInstance",
 			"(Landroid/icu/text/DecimalFormat;Ljava/lang/String;Ljava/lang/String;)Landroid/icu/text/ScientificNumberFormatter;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
@@ -27,7 +29,7 @@ namespace android::icu::text
 			"android.icu.text.ScientificNumberFormatter",
 			"getMarkupInstance",
 			"(Landroid/icu/util/ULocale;Ljava/lang/String;Ljava/lang/String;)Landroid/icu/text/ScientificNumberFormatter;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
@@ -38,7 +40,7 @@ namespace android::icu::text
 			"android.icu.text.ScientificNumberFormatter",
 			"getSuperscriptInstance",
 			"(Landroid/icu/text/DecimalFormat;)Landroid/icu/text/ScientificNumberFormatter;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ScientificNumberFormatter::getSuperscriptInstance(android::icu::util::ULocale arg0)
@@ -47,12 +49,12 @@ namespace android::icu::text
 			"android.icu.text.ScientificNumberFormatter",
 			"getSuperscriptInstance",
 			"(Landroid/icu/util/ULocale;)Landroid/icu/text/ScientificNumberFormatter;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring ScientificNumberFormatter::format(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"format",
 			"(Ljava/lang/Object;)Ljava/lang/String;",
 			arg0

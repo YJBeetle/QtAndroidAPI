@@ -6,7 +6,9 @@ namespace javax::xml::transform
 {
 	// Fields
 	
-	TransformerFactory::TransformerFactory(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TransformerFactory::TransformerFactory(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -33,15 +35,15 @@ namespace javax::xml::transform
 			"newInstance",
 			"(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljavax/xml/transform/TransformerFactory;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject TransformerFactory::getAssociatedStylesheet(__JniBaseClass arg0, jstring arg1, jstring arg2, jstring arg3)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAssociatedStylesheet",
 			"(Ljavax/xml/transform/Source;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljavax/xml/transform/Source;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3
@@ -49,7 +51,7 @@ namespace javax::xml::transform
 	}
 	jobject TransformerFactory::getAttribute(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAttribute",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
 			arg0
@@ -57,14 +59,14 @@ namespace javax::xml::transform
 	}
 	QAndroidJniObject TransformerFactory::getErrorListener()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getErrorListener",
 			"()Ljavax/xml/transform/ErrorListener;"
 		);
 	}
 	jboolean TransformerFactory::getFeature(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getFeature",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -72,37 +74,37 @@ namespace javax::xml::transform
 	}
 	QAndroidJniObject TransformerFactory::getURIResolver()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getURIResolver",
 			"()Ljavax/xml/transform/URIResolver;"
 		);
 	}
 	QAndroidJniObject TransformerFactory::newTemplates(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newTemplates",
 			"(Ljavax/xml/transform/Source;)Ljavax/xml/transform/Templates;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject TransformerFactory::newTransformer()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newTransformer",
 			"()Ljavax/xml/transform/Transformer;"
 		);
 	}
 	QAndroidJniObject TransformerFactory::newTransformer(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newTransformer",
 			"(Ljavax/xml/transform/Source;)Ljavax/xml/transform/Transformer;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TransformerFactory::setAttribute(jstring arg0, jobject arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAttribute",
 			"(Ljava/lang/String;Ljava/lang/Object;)V",
 			arg0,
@@ -111,15 +113,15 @@ namespace javax::xml::transform
 	}
 	void TransformerFactory::setErrorListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setErrorListener",
 			"(Ljavax/xml/transform/ErrorListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TransformerFactory::setFeature(jstring arg0, jboolean arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFeature",
 			"(Ljava/lang/String;Z)V",
 			arg0,
@@ -128,10 +130,10 @@ namespace javax::xml::transform
 	}
 	void TransformerFactory::setURIResolver(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setURIResolver",
 			"(Ljavax/xml/transform/URIResolver;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace javax::xml::transform

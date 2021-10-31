@@ -42,9 +42,11 @@ namespace android::net::wifi::rtt
 		static jint SUBBRANCH_ROAD_NAME();
 		static jint TYPE_OF_PLACE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CivicLocationKeys(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		CivicLocationKeys(QAndroidJniObject obj);
+		
 		// Constructors
-		CivicLocationKeys() = default;
 		
 		// Methods
 	};

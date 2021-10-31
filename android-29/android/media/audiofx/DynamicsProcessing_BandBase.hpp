@@ -10,10 +10,12 @@ namespace android::media::audiofx
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DynamicsProcessing_BandBase(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DynamicsProcessing_BandBase(QAndroidJniObject obj);
+		
 		// Constructors
 		DynamicsProcessing_BandBase(jboolean arg0, jfloat arg1);
-		DynamicsProcessing_BandBase() = default;
 		
 		// Methods
 		jfloat getCutoffFrequency();

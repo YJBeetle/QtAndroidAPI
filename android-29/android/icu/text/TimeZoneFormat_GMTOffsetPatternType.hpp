@@ -17,9 +17,11 @@ namespace android::icu::text
 		static QAndroidJniObject POSITIVE_HM();
 		static QAndroidJniObject POSITIVE_HMS();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TimeZoneFormat_GMTOffsetPatternType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		TimeZoneFormat_GMTOffsetPatternType(QAndroidJniObject obj);
+		
 		// Constructors
-		TimeZoneFormat_GMTOffsetPatternType() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

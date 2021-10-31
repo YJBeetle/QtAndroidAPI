@@ -19,9 +19,11 @@ namespace org::xmlpull::v1
 		// Fields
 		static jstring PROPERTY_NAME();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit XmlPullParserFactory(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		XmlPullParserFactory(QAndroidJniObject obj);
+		
 		// Constructors
-		XmlPullParserFactory() = default;
 		
 		// Methods
 		static QAndroidJniObject newInstance();

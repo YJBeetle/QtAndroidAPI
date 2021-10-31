@@ -12,7 +12,10 @@ namespace javax::security::auth::login
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit LoginException(const char *className, const char *sig, Ts...agv) : java::security::GeneralSecurityException(className, sig, std::forward<Ts>(agv)...) {}
 		LoginException(QAndroidJniObject obj);
+		
 		// Constructors
 		LoginException();
 		LoginException(jstring arg0);

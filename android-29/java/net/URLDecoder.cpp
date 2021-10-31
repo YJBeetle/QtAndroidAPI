@@ -5,15 +5,15 @@ namespace java::net
 {
 	// Fields
 	
-	URLDecoder::URLDecoder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	URLDecoder::URLDecoder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	URLDecoder::URLDecoder()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.net.URLDecoder",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring URLDecoder::decode(jstring arg0)
@@ -42,7 +42,7 @@ namespace java::net
 			"decode",
 			"(Ljava/lang/String;Ljava/nio/charset/Charset;)Ljava/lang/String;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		).object<jstring>();
 	}
 } // namespace java::net

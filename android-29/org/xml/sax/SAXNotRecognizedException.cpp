@@ -4,23 +4,21 @@ namespace org::xml::sax
 {
 	// Fields
 	
-	SAXNotRecognizedException::SAXNotRecognizedException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SAXNotRecognizedException::SAXNotRecognizedException(QAndroidJniObject obj) : org::xml::sax::SAXException(obj) {}
+	
 	// Constructors
 	SAXNotRecognizedException::SAXNotRecognizedException()
-	{
-		__thiz = QAndroidJniObject(
+		: org::xml::sax::SAXException(
 			"org.xml.sax.SAXNotRecognizedException",
 			"()V"
-		);
-	}
+		) {}
 	SAXNotRecognizedException::SAXNotRecognizedException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: org::xml::sax::SAXException(
 			"org.xml.sax.SAXNotRecognizedException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace org::xml::sax

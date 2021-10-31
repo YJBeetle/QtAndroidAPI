@@ -21,7 +21,9 @@ namespace javax::xml::xpath
 		).object<jstring>();
 	}
 	
-	XPathFactory::XPathFactory(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	XPathFactory::XPathFactory(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -58,12 +60,12 @@ namespace javax::xml::xpath
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/ClassLoader;)Ljavax/xml/xpath/XPathFactory;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	jboolean XPathFactory::getFeature(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getFeature",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -71,7 +73,7 @@ namespace javax::xml::xpath
 	}
 	jboolean XPathFactory::isObjectModelSupported(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isObjectModelSupported",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -79,14 +81,14 @@ namespace javax::xml::xpath
 	}
 	QAndroidJniObject XPathFactory::newXPath()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newXPath",
 			"()Ljavax/xml/xpath/XPath;"
 		);
 	}
 	void XPathFactory::setFeature(jstring arg0, jboolean arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFeature",
 			"(Ljava/lang/String;Z)V",
 			arg0,
@@ -95,18 +97,18 @@ namespace javax::xml::xpath
 	}
 	void XPathFactory::setXPathFunctionResolver(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setXPathFunctionResolver",
 			"(Ljavax/xml/xpath/XPathFunctionResolver;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void XPathFactory::setXPathVariableResolver(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setXPathVariableResolver",
 			"(Ljavax/xml/xpath/XPathVariableResolver;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace javax::xml::xpath

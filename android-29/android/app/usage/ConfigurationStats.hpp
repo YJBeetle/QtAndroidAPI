@@ -19,10 +19,12 @@ namespace android::app::usage
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ConfigurationStats(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ConfigurationStats(QAndroidJniObject obj);
+		
 		// Constructors
 		ConfigurationStats(android::app::usage::ConfigurationStats &arg0);
-		ConfigurationStats() = default;
 		
 		// Methods
 		jint describeContents();

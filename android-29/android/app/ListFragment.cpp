@@ -9,85 +9,85 @@ namespace android::app
 {
 	// Fields
 	
-	ListFragment::ListFragment(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ListFragment::ListFragment(QAndroidJniObject obj) : android::app::Fragment(obj) {}
+	
 	// Constructors
 	ListFragment::ListFragment()
-	{
-		__thiz = QAndroidJniObject(
+		: android::app::Fragment(
 			"android.app.ListFragment",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject ListFragment::getListAdapter()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getListAdapter",
 			"()Landroid/widget/ListAdapter;"
 		);
 	}
 	QAndroidJniObject ListFragment::getListView()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getListView",
 			"()Landroid/widget/ListView;"
 		);
 	}
 	jlong ListFragment::getSelectedItemId()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getSelectedItemId",
 			"()J"
 		);
 	}
 	jint ListFragment::getSelectedItemPosition()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSelectedItemPosition",
 			"()I"
 		);
 	}
 	QAndroidJniObject ListFragment::onCreateView(android::view::LayoutInflater arg0, android::view::ViewGroup arg1, android::os::Bundle arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onCreateView",
 			"(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	void ListFragment::onDestroyView()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onDestroyView",
 			"()V"
 		);
 	}
 	void ListFragment::onListItemClick(android::widget::ListView arg0, android::view::View arg1, jint arg2, jlong arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onListItemClick",
 			"(Landroid/widget/ListView;Landroid/view/View;IJ)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3
 		);
 	}
 	void ListFragment::onViewCreated(android::view::View arg0, android::os::Bundle arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onViewCreated",
 			"(Landroid/view/View;Landroid/os/Bundle;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void ListFragment::setEmptyText(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setEmptyText",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
@@ -95,15 +95,15 @@ namespace android::app
 	}
 	void ListFragment::setListAdapter(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setListAdapter",
 			"(Landroid/widget/ListAdapter;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ListFragment::setListShown(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setListShown",
 			"(Z)V",
 			arg0
@@ -111,7 +111,7 @@ namespace android::app
 	}
 	void ListFragment::setListShownNoAnimation(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setListShownNoAnimation",
 			"(Z)V",
 			arg0
@@ -119,7 +119,7 @@ namespace android::app
 	}
 	void ListFragment::setSelection(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSelection",
 			"(I)V",
 			arg0

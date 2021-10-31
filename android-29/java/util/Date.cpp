@@ -8,44 +8,37 @@ namespace java::util
 {
 	// Fields
 	
-	Date::Date(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Date::Date(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Date::Date()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.Date",
 			"()V"
-		);
-	}
+		) {}
 	Date::Date(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.Date",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	Date::Date(jlong arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.Date",
 			"(J)V",
 			arg0
-		);
-	}
+		) {}
 	Date::Date(jint arg0, jint arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.Date",
 			"(III)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	Date::Date(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.Date",
 			"(IIIII)V",
 			arg0,
@@ -53,11 +46,9 @@ namespace java::util
 			arg2,
 			arg3,
 			arg4
-		);
-	}
+		) {}
 	Date::Date(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.Date",
 			"(IIIIII)V",
 			arg0,
@@ -66,8 +57,7 @@ namespace java::util
 			arg3,
 			arg4,
 			arg5
-		);
-	}
+		) {}
 	
 	// Methods
 	jlong Date::UTC(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
@@ -90,7 +80,7 @@ namespace java::util
 			"java.util.Date",
 			"from",
 			"(Ljava/time/Instant;)Ljava/util/Date;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jlong Date::parse(jstring arg0)
@@ -104,30 +94,30 @@ namespace java::util
 	}
 	jboolean Date::after(java::util::Date arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"after",
 			"(Ljava/util/Date;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean Date::before(java::util::Date arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"before",
 			"(Ljava/util/Date;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jobject Date::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jint Date::compareTo(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -135,15 +125,15 @@ namespace java::util
 	}
 	jint Date::compareTo(java::util::Date arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/util/Date;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean Date::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -151,77 +141,77 @@ namespace java::util
 	}
 	jint Date::getDate()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDate",
 			"()I"
 		);
 	}
 	jint Date::getDay()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDay",
 			"()I"
 		);
 	}
 	jint Date::getHours()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getHours",
 			"()I"
 		);
 	}
 	jint Date::getMinutes()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMinutes",
 			"()I"
 		);
 	}
 	jint Date::getMonth()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMonth",
 			"()I"
 		);
 	}
 	jint Date::getSeconds()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSeconds",
 			"()I"
 		);
 	}
 	jlong Date::getTime()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getTime",
 			"()J"
 		);
 	}
 	jint Date::getTimezoneOffset()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTimezoneOffset",
 			"()I"
 		);
 	}
 	jint Date::getYear()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getYear",
 			"()I"
 		);
 	}
 	jint Date::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	void Date::setDate(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDate",
 			"(I)V",
 			arg0
@@ -229,7 +219,7 @@ namespace java::util
 	}
 	void Date::setHours(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setHours",
 			"(I)V",
 			arg0
@@ -237,7 +227,7 @@ namespace java::util
 	}
 	void Date::setMinutes(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMinutes",
 			"(I)V",
 			arg0
@@ -245,7 +235,7 @@ namespace java::util
 	}
 	void Date::setMonth(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMonth",
 			"(I)V",
 			arg0
@@ -253,7 +243,7 @@ namespace java::util
 	}
 	void Date::setSeconds(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSeconds",
 			"(I)V",
 			arg0
@@ -261,7 +251,7 @@ namespace java::util
 	}
 	void Date::setTime(jlong arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTime",
 			"(J)V",
 			arg0
@@ -269,7 +259,7 @@ namespace java::util
 	}
 	void Date::setYear(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setYear",
 			"(I)V",
 			arg0
@@ -277,28 +267,28 @@ namespace java::util
 	}
 	jstring Date::toGMTString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toGMTString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject Date::toInstant()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toInstant",
 			"()Ljava/time/Instant;"
 		);
 	}
 	jstring Date::toLocaleString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toLocaleString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Date::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

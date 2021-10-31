@@ -18,7 +18,10 @@ namespace android::content::pm
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit LauncherApps_Callback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		LauncherApps_Callback(QAndroidJniObject obj);
+		
 		// Constructors
 		LauncherApps_Callback();
 		

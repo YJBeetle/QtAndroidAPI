@@ -10,10 +10,12 @@ namespace android::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Range(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Range(QAndroidJniObject obj);
+		
 		// Constructors
 		Range(__JniBaseClass arg0, __JniBaseClass arg1);
-		Range() = default;
 		
 		// Methods
 		static QAndroidJniObject create(__JniBaseClass arg0, __JniBaseClass arg1);

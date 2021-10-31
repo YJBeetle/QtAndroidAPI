@@ -14,45 +14,41 @@ namespace android::nfc
 		);
 	}
 	
-	NdefMessage::NdefMessage(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NdefMessage::NdefMessage(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	NdefMessage::NdefMessage(jbyteArray arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.nfc.NdefMessage",
 			"([B)V",
 			arg0
-		);
-	}
+		) {}
 	NdefMessage::NdefMessage(jarray arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.nfc.NdefMessage",
 			"([Landroid/nfc/NdefRecord;)V",
 			arg0
-		);
-	}
+		) {}
 	NdefMessage::NdefMessage(android::nfc::NdefRecord arg0, jarray arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.nfc.NdefMessage",
 			"(Landroid/nfc/NdefRecord;[Landroid/nfc/NdefRecord;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jint NdefMessage::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean NdefMessage::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -60,45 +56,45 @@ namespace android::nfc
 	}
 	jint NdefMessage::getByteArrayLength()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getByteArrayLength",
 			"()I"
 		);
 	}
 	jarray NdefMessage::getRecords()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRecords",
 			"()[Landroid/nfc/NdefRecord;"
 		).object<jarray>();
 	}
 	jint NdefMessage::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jbyteArray NdefMessage::toByteArray()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toByteArray",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jstring NdefMessage::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void NdefMessage::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

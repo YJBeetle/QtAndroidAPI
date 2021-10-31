@@ -16,9 +16,11 @@ namespace android::hardware::camera2
 		static jint REASON_ERROR();
 		static jint REASON_FLUSHED();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CaptureFailure(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		CaptureFailure(QAndroidJniObject obj);
+		
 		// Constructors
-		CaptureFailure() = default;
 		
 		// Methods
 		jlong getFrameNumber();

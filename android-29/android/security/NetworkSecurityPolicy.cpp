@@ -4,7 +4,9 @@ namespace android::security
 {
 	// Fields
 	
-	NetworkSecurityPolicy::NetworkSecurityPolicy(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NetworkSecurityPolicy::NetworkSecurityPolicy(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -18,14 +20,14 @@ namespace android::security
 	}
 	jboolean NetworkSecurityPolicy::isCleartextTrafficPermitted()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isCleartextTrafficPermitted",
 			"()Z"
 		);
 	}
 	jboolean NetworkSecurityPolicy::isCleartextTrafficPermitted(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isCleartextTrafficPermitted",
 			"(Ljava/lang/String;)Z",
 			arg0

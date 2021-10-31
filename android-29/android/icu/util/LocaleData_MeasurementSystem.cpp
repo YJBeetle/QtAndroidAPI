@@ -28,7 +28,9 @@ namespace android::icu::util
 		);
 	}
 	
-	LocaleData_MeasurementSystem::LocaleData_MeasurementSystem(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	LocaleData_MeasurementSystem::LocaleData_MeasurementSystem(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

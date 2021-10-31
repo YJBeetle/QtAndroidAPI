@@ -5,24 +5,22 @@ namespace javax::net::ssl
 {
 	// Fields
 	
-	SNIHostName::SNIHostName(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SNIHostName::SNIHostName(QAndroidJniObject obj) : javax::net::ssl::SNIServerName(obj) {}
+	
 	// Constructors
 	SNIHostName::SNIHostName(jbyteArray arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: javax::net::ssl::SNIServerName(
 			"javax.net.ssl.SNIHostName",
 			"([B)V",
 			arg0
-		);
-	}
+		) {}
 	SNIHostName::SNIHostName(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: javax::net::ssl::SNIServerName(
 			"javax.net.ssl.SNIHostName",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject SNIHostName::createSNIMatcher(jstring arg0)
@@ -36,7 +34,7 @@ namespace javax::net::ssl
 	}
 	jboolean SNIHostName::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -44,21 +42,21 @@ namespace javax::net::ssl
 	}
 	jstring SNIHostName::getAsciiName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAsciiName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint SNIHostName::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring SNIHostName::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

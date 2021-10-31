@@ -12,7 +12,10 @@ namespace java::security
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SignatureException(const char *className, const char *sig, Ts...agv) : java::security::GeneralSecurityException(className, sig, std::forward<Ts>(agv)...) {}
 		SignatureException(QAndroidJniObject obj);
+		
 		// Constructors
 		SignatureException();
 		SignatureException(jstring arg0);

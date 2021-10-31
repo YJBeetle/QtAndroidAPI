@@ -6,7 +6,9 @@ namespace java::nio::file::attribute
 {
 	// Fields
 	
-	AclEntry::AclEntry(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AclEntry::AclEntry(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -24,12 +26,12 @@ namespace java::nio::file::attribute
 			"java.nio.file.attribute.AclEntry",
 			"newBuilder",
 			"(Ljava/nio/file/attribute/AclEntry;)Ljava/nio/file/attribute/AclEntry$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean AclEntry::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -37,42 +39,42 @@ namespace java::nio::file::attribute
 	}
 	QAndroidJniObject AclEntry::flags()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"flags",
 			"()Ljava/util/Set;"
 		);
 	}
 	jint AclEntry::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	QAndroidJniObject AclEntry::permissions()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"permissions",
 			"()Ljava/util/Set;"
 		);
 	}
 	QAndroidJniObject AclEntry::principal()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"principal",
 			"()Ljava/nio/file/attribute/UserPrincipal;"
 		);
 	}
 	jstring AclEntry::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject AclEntry::type()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"type",
 			"()Ljava/nio/file/attribute/AclEntryType;"
 		);

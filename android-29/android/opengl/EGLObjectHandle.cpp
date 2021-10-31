@@ -4,27 +4,29 @@ namespace android::opengl
 {
 	// Fields
 	
-	EGLObjectHandle::EGLObjectHandle(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	EGLObjectHandle::EGLObjectHandle(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint EGLObjectHandle::getHandle()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getHandle",
 			"()I"
 		);
 	}
 	jlong EGLObjectHandle::getNativeHandle()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getNativeHandle",
 			"()J"
 		);
 	}
 	jint EGLObjectHandle::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);

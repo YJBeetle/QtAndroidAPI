@@ -4,16 +4,16 @@ namespace javax::net::ssl
 {
 	// Fields
 	
-	SSLProtocolException::SSLProtocolException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SSLProtocolException::SSLProtocolException(QAndroidJniObject obj) : javax::net::ssl::SSLException(obj) {}
+	
 	// Constructors
 	SSLProtocolException::SSLProtocolException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: javax::net::ssl::SSLException(
 			"javax.net.ssl.SSLProtocolException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace javax::net::ssl

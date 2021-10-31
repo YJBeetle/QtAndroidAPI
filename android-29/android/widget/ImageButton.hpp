@@ -24,13 +24,15 @@ namespace android::widget
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ImageButton(const char *className, const char *sig, Ts...agv) : android::widget::ImageView(className, sig, std::forward<Ts>(agv)...) {}
 		ImageButton(QAndroidJniObject obj);
+		
 		// Constructors
 		ImageButton(android::content::Context arg0);
 		ImageButton(android::content::Context arg0, __JniBaseClass arg1);
 		ImageButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		ImageButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
-		ImageButton() = default;
 		
 		// Methods
 		jstring getAccessibilityClassName();

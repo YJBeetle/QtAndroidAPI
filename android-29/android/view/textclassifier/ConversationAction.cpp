@@ -95,58 +95,60 @@ namespace android::view::textclassifier
 		).object<jstring>();
 	}
 	
-	ConversationAction::ConversationAction(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ConversationAction::ConversationAction(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint ConversationAction::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	QAndroidJniObject ConversationAction::getAction()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAction",
 			"()Landroid/app/RemoteAction;"
 		);
 	}
 	jfloat ConversationAction::getConfidenceScore()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getConfidenceScore",
 			"()F"
 		);
 	}
 	QAndroidJniObject ConversationAction::getExtras()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
 	jstring ConversationAction::getTextReply()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTextReply",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jstring ConversationAction::getType()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void ConversationAction::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

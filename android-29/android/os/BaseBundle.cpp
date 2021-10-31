@@ -5,20 +5,22 @@ namespace android::os
 {
 	// Fields
 	
-	BaseBundle::BaseBundle(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BaseBundle::BaseBundle(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void BaseBundle::clear()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
 	jboolean BaseBundle::containsKey(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"containsKey",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -26,7 +28,7 @@ namespace android::os
 	}
 	jobject BaseBundle::get(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
 			arg0
@@ -34,7 +36,7 @@ namespace android::os
 	}
 	jboolean BaseBundle::getBoolean(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getBoolean",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -42,7 +44,7 @@ namespace android::os
 	}
 	jboolean BaseBundle::getBoolean(jstring arg0, jboolean arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getBoolean",
 			"(Ljava/lang/String;Z)Z",
 			arg0,
@@ -51,7 +53,7 @@ namespace android::os
 	}
 	jbooleanArray BaseBundle::getBooleanArray(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBooleanArray",
 			"(Ljava/lang/String;)[Z",
 			arg0
@@ -59,7 +61,7 @@ namespace android::os
 	}
 	jdouble BaseBundle::getDouble(jstring arg0)
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"getDouble",
 			"(Ljava/lang/String;)D",
 			arg0
@@ -67,7 +69,7 @@ namespace android::os
 	}
 	jdouble BaseBundle::getDouble(jstring arg0, jdouble arg1)
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"getDouble",
 			"(Ljava/lang/String;D)D",
 			arg0,
@@ -76,7 +78,7 @@ namespace android::os
 	}
 	jdoubleArray BaseBundle::getDoubleArray(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDoubleArray",
 			"(Ljava/lang/String;)[D",
 			arg0
@@ -84,7 +86,7 @@ namespace android::os
 	}
 	jint BaseBundle::getInt(jstring arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getInt",
 			"(Ljava/lang/String;)I",
 			arg0
@@ -92,7 +94,7 @@ namespace android::os
 	}
 	jint BaseBundle::getInt(jstring arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getInt",
 			"(Ljava/lang/String;I)I",
 			arg0,
@@ -101,7 +103,7 @@ namespace android::os
 	}
 	jintArray BaseBundle::getIntArray(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getIntArray",
 			"(Ljava/lang/String;)[I",
 			arg0
@@ -109,7 +111,7 @@ namespace android::os
 	}
 	jlong BaseBundle::getLong(jstring arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getLong",
 			"(Ljava/lang/String;)J",
 			arg0
@@ -117,7 +119,7 @@ namespace android::os
 	}
 	jlong BaseBundle::getLong(jstring arg0, jlong arg1)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getLong",
 			"(Ljava/lang/String;J)J",
 			arg0,
@@ -126,7 +128,7 @@ namespace android::os
 	}
 	jlongArray BaseBundle::getLongArray(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLongArray",
 			"(Ljava/lang/String;)[J",
 			arg0
@@ -134,7 +136,7 @@ namespace android::os
 	}
 	jstring BaseBundle::getString(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getString",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
@@ -142,7 +144,7 @@ namespace android::os
 	}
 	jstring BaseBundle::getString(jstring arg0, jstring arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getString",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
 			arg0,
@@ -151,7 +153,7 @@ namespace android::os
 	}
 	jarray BaseBundle::getStringArray(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getStringArray",
 			"(Ljava/lang/String;)[Ljava/lang/String;",
 			arg0
@@ -159,29 +161,29 @@ namespace android::os
 	}
 	jboolean BaseBundle::isEmpty()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
 	QAndroidJniObject BaseBundle::keySet()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"keySet",
 			"()Ljava/util/Set;"
 		);
 	}
 	void BaseBundle::putAll(android::os::PersistableBundle arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putAll",
 			"(Landroid/os/PersistableBundle;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void BaseBundle::putBoolean(jstring arg0, jboolean arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putBoolean",
 			"(Ljava/lang/String;Z)V",
 			arg0,
@@ -190,7 +192,7 @@ namespace android::os
 	}
 	void BaseBundle::putBooleanArray(jstring arg0, jbooleanArray arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putBooleanArray",
 			"(Ljava/lang/String;[Z)V",
 			arg0,
@@ -199,7 +201,7 @@ namespace android::os
 	}
 	void BaseBundle::putDouble(jstring arg0, jdouble arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putDouble",
 			"(Ljava/lang/String;D)V",
 			arg0,
@@ -208,7 +210,7 @@ namespace android::os
 	}
 	void BaseBundle::putDoubleArray(jstring arg0, jdoubleArray arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putDoubleArray",
 			"(Ljava/lang/String;[D)V",
 			arg0,
@@ -217,7 +219,7 @@ namespace android::os
 	}
 	void BaseBundle::putInt(jstring arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putInt",
 			"(Ljava/lang/String;I)V",
 			arg0,
@@ -226,7 +228,7 @@ namespace android::os
 	}
 	void BaseBundle::putIntArray(jstring arg0, jintArray arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putIntArray",
 			"(Ljava/lang/String;[I)V",
 			arg0,
@@ -235,7 +237,7 @@ namespace android::os
 	}
 	void BaseBundle::putLong(jstring arg0, jlong arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putLong",
 			"(Ljava/lang/String;J)V",
 			arg0,
@@ -244,7 +246,7 @@ namespace android::os
 	}
 	void BaseBundle::putLongArray(jstring arg0, jlongArray arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putLongArray",
 			"(Ljava/lang/String;[J)V",
 			arg0,
@@ -253,7 +255,7 @@ namespace android::os
 	}
 	void BaseBundle::putString(jstring arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putString",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
@@ -262,7 +264,7 @@ namespace android::os
 	}
 	void BaseBundle::putStringArray(jstring arg0, jarray arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putStringArray",
 			"(Ljava/lang/String;[Ljava/lang/String;)V",
 			arg0,
@@ -271,7 +273,7 @@ namespace android::os
 	}
 	void BaseBundle::remove(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"remove",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -279,7 +281,7 @@ namespace android::os
 	}
 	jint BaseBundle::size()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"size",
 			"()I"
 		);

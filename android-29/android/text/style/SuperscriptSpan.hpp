@@ -20,7 +20,10 @@ namespace android::text::style
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SuperscriptSpan(const char *className, const char *sig, Ts...agv) : android::text::style::MetricAffectingSpan(className, sig, std::forward<Ts>(agv)...) {}
 		SuperscriptSpan(QAndroidJniObject obj);
+		
 		// Constructors
 		SuperscriptSpan();
 		SuperscriptSpan(android::os::Parcel arg0);

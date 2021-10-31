@@ -26,9 +26,11 @@ namespace android::media
 		static jstring VIDEO_TIMESCALE();
 		static jstring WIDTH();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaRecorder_MetricsConstants(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaRecorder_MetricsConstants(QAndroidJniObject obj);
+		
 		// Constructors
-		MediaRecorder_MetricsConstants() = default;
 		
 		// Methods
 	};

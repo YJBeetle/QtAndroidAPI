@@ -35,9 +35,11 @@ namespace android::media
 		static QAndroidJniObject CREATOR();
 		static jstring EXTRA_BT_FOLDER_TYPE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaDescription(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaDescription(QAndroidJniObject obj);
+		
 		// Constructors
-		MediaDescription() = default;
 		
 		// Methods
 		jint describeContents();

@@ -18,7 +18,10 @@ namespace android::graphics
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Camera(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Camera(QAndroidJniObject obj);
+		
 		// Constructors
 		Camera();
 		

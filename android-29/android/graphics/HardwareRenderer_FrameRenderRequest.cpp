@@ -5,22 +5,24 @@ namespace android::graphics
 {
 	// Fields
 	
-	HardwareRenderer_FrameRenderRequest::HardwareRenderer_FrameRenderRequest(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	HardwareRenderer_FrameRenderRequest::HardwareRenderer_FrameRenderRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject HardwareRenderer_FrameRenderRequest::setFrameCommitCallback(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setFrameCommitCallback",
 			"(Ljava/util/concurrent/Executor;Ljava/lang/Runnable;)Landroid/graphics/HardwareRenderer$FrameRenderRequest;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject HardwareRenderer_FrameRenderRequest::setVsyncTime(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setVsyncTime",
 			"(J)Landroid/graphics/HardwareRenderer$FrameRenderRequest;",
 			arg0
@@ -28,7 +30,7 @@ namespace android::graphics
 	}
 	QAndroidJniObject HardwareRenderer_FrameRenderRequest::setWaitForPresent(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setWaitForPresent",
 			"(Z)Landroid/graphics/HardwareRenderer$FrameRenderRequest;",
 			arg0
@@ -36,7 +38,7 @@ namespace android::graphics
 	}
 	jint HardwareRenderer_FrameRenderRequest::syncAndDraw()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"syncAndDraw",
 			"()I"
 		);

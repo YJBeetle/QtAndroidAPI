@@ -23,13 +23,15 @@ namespace android::view
 		jint rightMargin();
 		jint topMargin();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ViewGroup_MarginLayoutParams(const char *className, const char *sig, Ts...agv) : android::view::ViewGroup_LayoutParams(className, sig, std::forward<Ts>(agv)...) {}
 		ViewGroup_MarginLayoutParams(QAndroidJniObject obj);
+		
 		// Constructors
 		ViewGroup_MarginLayoutParams(android::view::ViewGroup_LayoutParams arg0);
 		ViewGroup_MarginLayoutParams(android::view::ViewGroup_MarginLayoutParams &arg0);
 		ViewGroup_MarginLayoutParams(android::content::Context arg0, __JniBaseClass arg1);
 		ViewGroup_MarginLayoutParams(jint arg0, jint arg1);
-		ViewGroup_MarginLayoutParams() = default;
 		
 		// Methods
 		jint getLayoutDirection();

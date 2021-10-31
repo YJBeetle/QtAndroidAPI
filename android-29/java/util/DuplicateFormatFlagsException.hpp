@@ -14,10 +14,12 @@ namespace java::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DuplicateFormatFlagsException(const char *className, const char *sig, Ts...agv) : java::util::IllegalFormatException(className, sig, std::forward<Ts>(agv)...) {}
 		DuplicateFormatFlagsException(QAndroidJniObject obj);
+		
 		// Constructors
 		DuplicateFormatFlagsException(jstring arg0);
-		DuplicateFormatFlagsException() = default;
 		
 		// Methods
 		jstring getFlags();

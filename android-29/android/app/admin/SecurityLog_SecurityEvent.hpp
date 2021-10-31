@@ -15,9 +15,11 @@ namespace android::app::admin
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SecurityLog_SecurityEvent(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SecurityLog_SecurityEvent(QAndroidJniObject obj);
+		
 		// Constructors
-		SecurityLog_SecurityEvent() = default;
 		
 		// Methods
 		jint describeContents();

@@ -4,25 +4,23 @@ namespace android::opengl
 {
 	// Fields
 	
-	GLException::GLException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	GLException::GLException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	
 	// Constructors
 	GLException::GLException(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::RuntimeException(
 			"android.opengl.GLException",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	GLException::GLException(jint arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::RuntimeException(
 			"android.opengl.GLException",
 			"(ILjava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::opengl

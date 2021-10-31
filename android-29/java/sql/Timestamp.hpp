@@ -23,11 +23,13 @@ namespace java::sql
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Timestamp(const char *className, const char *sig, Ts...agv) : java::util::Date(className, sig, std::forward<Ts>(agv)...) {}
 		Timestamp(QAndroidJniObject obj);
+		
 		// Constructors
 		Timestamp(jlong arg0);
 		Timestamp(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6);
-		Timestamp() = default;
 		
 		// Methods
 		static QAndroidJniObject from(java::time::Instant arg0);

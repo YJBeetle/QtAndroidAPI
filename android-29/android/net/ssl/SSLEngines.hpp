@@ -14,9 +14,11 @@ namespace android::net::ssl
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SSLEngines(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SSLEngines(QAndroidJniObject obj);
+		
 		// Constructors
-		SSLEngines() = default;
 		
 		// Methods
 		static jboolean isSupportedEngine(javax::net::ssl::SSLEngine arg0);

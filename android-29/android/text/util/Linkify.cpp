@@ -65,15 +65,15 @@ namespace android::text::util
 		);
 	}
 	
-	Linkify::Linkify(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Linkify::Linkify(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Linkify::Linkify()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.text.util.Linkify",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean Linkify::addLinks(__JniBaseClass arg0, jint arg1)
@@ -82,7 +82,7 @@ namespace android::text::util
 			"android.text.util.Linkify",
 			"addLinks",
 			"(Landroid/text/Spannable;I)Z",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -92,7 +92,7 @@ namespace android::text::util
 			"android.text.util.Linkify",
 			"addLinks",
 			"(Landroid/widget/TextView;I)Z",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -102,9 +102,9 @@ namespace android::text::util
 			"android.text.util.Linkify",
 			"addLinks",
 			"(Landroid/text/Spannable;ILjava/util/function/Function;)Z",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	jboolean Linkify::addLinks(__JniBaseClass arg0, java::util::regex::Pattern arg1, jstring arg2)
@@ -113,8 +113,8 @@ namespace android::text::util
 			"android.text.util.Linkify",
 			"addLinks",
 			"(Landroid/text/Spannable;Ljava/util/regex/Pattern;Ljava/lang/String;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
@@ -124,11 +124,11 @@ namespace android::text::util
 			"android.text.util.Linkify",
 			"addLinks",
 			"(Landroid/text/Spannable;Ljava/util/regex/Pattern;Ljava/lang/String;Landroid/text/util/Linkify$MatchFilter;Landroid/text/util/Linkify$TransformFilter;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object()
+			arg3.object(),
+			arg4.object()
 		);
 	}
 	jboolean Linkify::addLinks(__JniBaseClass arg0, java::util::regex::Pattern arg1, jstring arg2, jarray arg3, __JniBaseClass arg4, __JniBaseClass arg5)
@@ -137,12 +137,12 @@ namespace android::text::util
 			"android.text.util.Linkify",
 			"addLinks",
 			"(Landroid/text/Spannable;Ljava/util/regex/Pattern;Ljava/lang/String;[Ljava/lang/String;Landroid/text/util/Linkify$MatchFilter;Landroid/text/util/Linkify$TransformFilter;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3,
-			arg4.__jniObject().object(),
-			arg5.__jniObject().object()
+			arg4.object(),
+			arg5.object()
 		);
 	}
 	jboolean Linkify::addLinks(__JniBaseClass arg0, java::util::regex::Pattern arg1, jstring arg2, jarray arg3, __JniBaseClass arg4, __JniBaseClass arg5, __JniBaseClass arg6)
@@ -151,13 +151,13 @@ namespace android::text::util
 			"android.text.util.Linkify",
 			"addLinks",
 			"(Landroid/text/Spannable;Ljava/util/regex/Pattern;Ljava/lang/String;[Ljava/lang/String;Landroid/text/util/Linkify$MatchFilter;Landroid/text/util/Linkify$TransformFilter;Ljava/util/function/Function;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3,
-			arg4.__jniObject().object(),
-			arg5.__jniObject().object(),
-			arg6.__jniObject().object()
+			arg4.object(),
+			arg5.object(),
+			arg6.object()
 		);
 	}
 	void Linkify::addLinks(android::widget::TextView arg0, java::util::regex::Pattern arg1, jstring arg2)
@@ -166,8 +166,8 @@ namespace android::text::util
 			"android.text.util.Linkify",
 			"addLinks",
 			"(Landroid/widget/TextView;Ljava/util/regex/Pattern;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
@@ -177,11 +177,11 @@ namespace android::text::util
 			"android.text.util.Linkify",
 			"addLinks",
 			"(Landroid/widget/TextView;Ljava/util/regex/Pattern;Ljava/lang/String;Landroid/text/util/Linkify$MatchFilter;Landroid/text/util/Linkify$TransformFilter;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object()
+			arg3.object(),
+			arg4.object()
 		);
 	}
 	void Linkify::addLinks(android::widget::TextView arg0, java::util::regex::Pattern arg1, jstring arg2, jarray arg3, __JniBaseClass arg4, __JniBaseClass arg5)
@@ -190,12 +190,12 @@ namespace android::text::util
 			"android.text.util.Linkify",
 			"addLinks",
 			"(Landroid/widget/TextView;Ljava/util/regex/Pattern;Ljava/lang/String;[Ljava/lang/String;Landroid/text/util/Linkify$MatchFilter;Landroid/text/util/Linkify$TransformFilter;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3,
-			arg4.__jniObject().object(),
-			arg5.__jniObject().object()
+			arg4.object(),
+			arg5.object()
 		);
 	}
 } // namespace android::text::util

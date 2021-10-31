@@ -28,7 +28,9 @@ namespace android::icu::util
 		);
 	}
 	
-	TimeZone_SystemTimeZoneType::TimeZone_SystemTimeZoneType(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TimeZone_SystemTimeZoneType::TimeZone_SystemTimeZoneType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

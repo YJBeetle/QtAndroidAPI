@@ -14,7 +14,9 @@ namespace android::telephony::mbms
 		);
 	}
 	
-	DownloadRequest::DownloadRequest(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DownloadRequest::DownloadRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -36,14 +38,14 @@ namespace android::telephony::mbms
 	}
 	jint DownloadRequest::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean DownloadRequest::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -51,52 +53,52 @@ namespace android::telephony::mbms
 	}
 	QAndroidJniObject DownloadRequest::getDestinationUri()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDestinationUri",
 			"()Landroid/net/Uri;"
 		);
 	}
 	jstring DownloadRequest::getFileServiceId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFileServiceId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject DownloadRequest::getSourceUri()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSourceUri",
 			"()Landroid/net/Uri;"
 		);
 	}
 	jint DownloadRequest::getSubscriptionId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSubscriptionId",
 			"()I"
 		);
 	}
 	jint DownloadRequest::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jbyteArray DownloadRequest::toByteArray()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toByteArray",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	void DownloadRequest::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

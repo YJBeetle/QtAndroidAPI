@@ -4,13 +4,15 @@ namespace android::net
 {
 	// Fields
 	
-	IpSecManager_SpiUnavailableException::IpSecManager_SpiUnavailableException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	IpSecManager_SpiUnavailableException::IpSecManager_SpiUnavailableException(QAndroidJniObject obj) : android::util::AndroidException(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint IpSecManager_SpiUnavailableException::getSpi()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSpi",
 			"()I"
 		);

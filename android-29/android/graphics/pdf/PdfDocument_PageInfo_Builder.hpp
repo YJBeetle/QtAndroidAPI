@@ -18,10 +18,12 @@ namespace android::graphics::pdf
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PdfDocument_PageInfo_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PdfDocument_PageInfo_Builder(QAndroidJniObject obj);
+		
 		// Constructors
 		PdfDocument_PageInfo_Builder(jint arg0, jint arg1, jint arg2);
-		PdfDocument_PageInfo_Builder() = default;
 		
 		// Methods
 		QAndroidJniObject create();

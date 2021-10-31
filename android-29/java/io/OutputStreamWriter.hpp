@@ -27,13 +27,15 @@ namespace java::io
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit OutputStreamWriter(const char *className, const char *sig, Ts...agv) : java::io::Writer(className, sig, std::forward<Ts>(agv)...) {}
 		OutputStreamWriter(QAndroidJniObject obj);
+		
 		// Constructors
 		OutputStreamWriter(java::io::OutputStream arg0);
 		OutputStreamWriter(java::io::OutputStream arg0, jstring arg1);
 		OutputStreamWriter(java::io::OutputStream arg0, java::nio::charset::Charset arg1);
 		OutputStreamWriter(java::io::OutputStream arg0, java::nio::charset::CharsetEncoder arg1);
-		OutputStreamWriter() = default;
 		
 		// Methods
 		QAndroidJniObject append(jstring arg0);

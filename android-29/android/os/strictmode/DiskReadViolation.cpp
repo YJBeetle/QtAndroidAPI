@@ -4,7 +4,9 @@ namespace android::os::strictmode
 {
 	// Fields
 	
-	DiskReadViolation::DiskReadViolation(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DiskReadViolation::DiskReadViolation(QAndroidJniObject obj) : android::os::strictmode::Violation(obj) {}
+	
 	// Constructors
 	
 	// Methods

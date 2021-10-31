@@ -4,34 +4,34 @@ namespace android::app
 {
 	// Fields
 	
-	KeyguardManager_KeyguardDismissCallback::KeyguardManager_KeyguardDismissCallback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	KeyguardManager_KeyguardDismissCallback::KeyguardManager_KeyguardDismissCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	KeyguardManager_KeyguardDismissCallback::KeyguardManager_KeyguardDismissCallback()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.app.KeyguardManager$KeyguardDismissCallback",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void KeyguardManager_KeyguardDismissCallback::onDismissCancelled()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onDismissCancelled",
 			"()V"
 		);
 	}
 	void KeyguardManager_KeyguardDismissCallback::onDismissError()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onDismissError",
 			"()V"
 		);
 	}
 	void KeyguardManager_KeyguardDismissCallback::onDismissSucceeded()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onDismissSucceeded",
 			"()V"
 		);

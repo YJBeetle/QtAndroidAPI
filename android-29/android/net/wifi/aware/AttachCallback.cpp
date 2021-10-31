@@ -5,30 +5,30 @@ namespace android::net::wifi::aware
 {
 	// Fields
 	
-	AttachCallback::AttachCallback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AttachCallback::AttachCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	AttachCallback::AttachCallback()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.net.wifi.aware.AttachCallback",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void AttachCallback::onAttachFailed()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onAttachFailed",
 			"()V"
 		);
 	}
 	void AttachCallback::onAttached(android::net::wifi::aware::WifiAwareSession arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onAttached",
 			"(Landroid/net/wifi/aware/WifiAwareSession;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::net::wifi::aware

@@ -33,7 +33,10 @@ namespace android::transition
 		static jint MODE_IN();
 		static jint MODE_OUT();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Visibility(const char *className, const char *sig, Ts...agv) : android::transition::Transition(className, sig, std::forward<Ts>(agv)...) {}
 		Visibility(QAndroidJniObject obj);
+		
 		// Constructors
 		Visibility();
 		Visibility(android::content::Context arg0, __JniBaseClass arg1);

@@ -7,7 +7,9 @@ namespace javax::net::ssl
 {
 	// Fields
 	
-	HttpsURLConnection::HttpsURLConnection(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	HttpsURLConnection::HttpsURLConnection(QAndroidJniObject obj) : java::net::HttpURLConnection(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -33,7 +35,7 @@ namespace javax::net::ssl
 			"javax.net.ssl.HttpsURLConnection",
 			"setDefaultHostnameVerifier",
 			"(Ljavax/net/ssl/HostnameVerifier;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void HttpsURLConnection::setDefaultSSLSocketFactory(javax::net::ssl::SSLSocketFactory arg0)
@@ -42,79 +44,79 @@ namespace javax::net::ssl
 			"javax.net.ssl.HttpsURLConnection",
 			"setDefaultSSLSocketFactory",
 			"(Ljavax/net/ssl/SSLSocketFactory;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring HttpsURLConnection::getCipherSuite()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCipherSuite",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject HttpsURLConnection::getHostnameVerifier()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getHostnameVerifier",
 			"()Ljavax/net/ssl/HostnameVerifier;"
 		);
 	}
 	jarray HttpsURLConnection::getLocalCertificates()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLocalCertificates",
 			"()[Ljava/security/cert/Certificate;"
 		).object<jarray>();
 	}
 	QAndroidJniObject HttpsURLConnection::getLocalPrincipal()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLocalPrincipal",
 			"()Ljava/security/Principal;"
 		);
 	}
 	QAndroidJniObject HttpsURLConnection::getPeerPrincipal()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPeerPrincipal",
 			"()Ljava/security/Principal;"
 		);
 	}
 	QAndroidJniObject HttpsURLConnection::getSSLSession()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSSLSession",
 			"()Ljava/util/Optional;"
 		);
 	}
 	QAndroidJniObject HttpsURLConnection::getSSLSocketFactory()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSSLSocketFactory",
 			"()Ljavax/net/ssl/SSLSocketFactory;"
 		);
 	}
 	jarray HttpsURLConnection::getServerCertificates()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getServerCertificates",
 			"()[Ljava/security/cert/Certificate;"
 		).object<jarray>();
 	}
 	void HttpsURLConnection::setHostnameVerifier(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setHostnameVerifier",
 			"(Ljavax/net/ssl/HostnameVerifier;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void HttpsURLConnection::setSSLSocketFactory(javax::net::ssl::SSLSocketFactory arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSSLSocketFactory",
 			"(Ljavax/net/ssl/SSLSocketFactory;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace javax::net::ssl

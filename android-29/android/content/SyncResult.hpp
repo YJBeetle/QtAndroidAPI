@@ -29,7 +29,10 @@ namespace android::content
 		jboolean tooManyDeletions();
 		jboolean tooManyRetries();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SyncResult(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SyncResult(QAndroidJniObject obj);
+		
 		// Constructors
 		SyncResult();
 		

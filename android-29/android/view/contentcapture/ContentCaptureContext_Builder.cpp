@@ -7,31 +7,31 @@ namespace android::view::contentcapture
 {
 	// Fields
 	
-	ContentCaptureContext_Builder::ContentCaptureContext_Builder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ContentCaptureContext_Builder::ContentCaptureContext_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ContentCaptureContext_Builder::ContentCaptureContext_Builder(android::content::LocusId arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.contentcapture.ContentCaptureContext$Builder",
 			"(Landroid/content/LocusId;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject ContentCaptureContext_Builder::build()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"build",
 			"()Landroid/view/contentcapture/ContentCaptureContext;"
 		);
 	}
 	QAndroidJniObject ContentCaptureContext_Builder::setExtras(android::os::Bundle arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setExtras",
 			"(Landroid/os/Bundle;)Landroid/view/contentcapture/ContentCaptureContext$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::view::contentcapture

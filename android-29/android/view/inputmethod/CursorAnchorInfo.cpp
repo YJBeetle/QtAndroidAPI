@@ -36,28 +36,28 @@ namespace android::view::inputmethod
 		);
 	}
 	
-	CursorAnchorInfo::CursorAnchorInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CursorAnchorInfo::CursorAnchorInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	CursorAnchorInfo::CursorAnchorInfo(android::os::Parcel arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.inputmethod.CursorAnchorInfo",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jint CursorAnchorInfo::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean CursorAnchorInfo::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -65,7 +65,7 @@ namespace android::view::inputmethod
 	}
 	QAndroidJniObject CursorAnchorInfo::getCharacterBounds(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCharacterBounds",
 			"(I)Landroid/graphics/RectF;",
 			arg0
@@ -73,7 +73,7 @@ namespace android::view::inputmethod
 	}
 	jint CursorAnchorInfo::getCharacterBoundsFlags(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCharacterBoundsFlags",
 			"(I)I",
 			arg0
@@ -81,94 +81,94 @@ namespace android::view::inputmethod
 	}
 	jstring CursorAnchorInfo::getComposingText()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getComposingText",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jint CursorAnchorInfo::getComposingTextStart()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getComposingTextStart",
 			"()I"
 		);
 	}
 	jfloat CursorAnchorInfo::getInsertionMarkerBaseline()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getInsertionMarkerBaseline",
 			"()F"
 		);
 	}
 	jfloat CursorAnchorInfo::getInsertionMarkerBottom()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getInsertionMarkerBottom",
 			"()F"
 		);
 	}
 	jint CursorAnchorInfo::getInsertionMarkerFlags()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getInsertionMarkerFlags",
 			"()I"
 		);
 	}
 	jfloat CursorAnchorInfo::getInsertionMarkerHorizontal()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getInsertionMarkerHorizontal",
 			"()F"
 		);
 	}
 	jfloat CursorAnchorInfo::getInsertionMarkerTop()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getInsertionMarkerTop",
 			"()F"
 		);
 	}
 	QAndroidJniObject CursorAnchorInfo::getMatrix()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMatrix",
 			"()Landroid/graphics/Matrix;"
 		);
 	}
 	jint CursorAnchorInfo::getSelectionEnd()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSelectionEnd",
 			"()I"
 		);
 	}
 	jint CursorAnchorInfo::getSelectionStart()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSelectionStart",
 			"()I"
 		);
 	}
 	jint CursorAnchorInfo::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring CursorAnchorInfo::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void CursorAnchorInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

@@ -4,30 +4,30 @@ namespace java::util
 {
 	// Fields
 	
-	MissingResourceException::MissingResourceException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MissingResourceException::MissingResourceException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	
 	// Constructors
 	MissingResourceException::MissingResourceException(jstring arg0, jstring arg1, jstring arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::RuntimeException(
 			"java.util.MissingResourceException",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring MissingResourceException::getClassName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getClassName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring MissingResourceException::getKey()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getKey",
 			"()Ljava/lang/String;"
 		).object<jstring>();

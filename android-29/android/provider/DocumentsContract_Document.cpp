@@ -181,7 +181,9 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	DocumentsContract_Document::DocumentsContract_Document(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DocumentsContract_Document::DocumentsContract_Document(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

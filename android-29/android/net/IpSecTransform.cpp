@@ -4,20 +4,22 @@ namespace android::net
 {
 	// Fields
 	
-	IpSecTransform::IpSecTransform(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	IpSecTransform::IpSecTransform(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void IpSecTransform::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	jstring IpSecTransform::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

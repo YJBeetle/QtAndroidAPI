@@ -15,11 +15,13 @@ namespace java::security::cert
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PKIXBuilderParameters(const char *className, const char *sig, Ts...agv) : java::security::cert::PKIXParameters(className, sig, std::forward<Ts>(agv)...) {}
 		PKIXBuilderParameters(QAndroidJniObject obj);
+		
 		// Constructors
 		PKIXBuilderParameters(java::security::KeyStore arg0, __JniBaseClass arg1);
 		PKIXBuilderParameters(__JniBaseClass arg0, __JniBaseClass arg1);
-		PKIXBuilderParameters() = default;
 		
 		// Methods
 		jint getMaxPathLength();

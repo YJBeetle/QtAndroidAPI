@@ -4,7 +4,9 @@ namespace java::util
 {
 	// Fields
 	
-	Spliterators::Spliterators(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Spliterators::Spliterators(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -46,7 +48,7 @@ namespace java::util
 			"java.util.Spliterators",
 			"iterator",
 			"(Ljava/util/Spliterator;)Ljava/util/Iterator;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Spliterators::spliterator(jobjectArray arg0, jint arg1)
@@ -65,7 +67,7 @@ namespace java::util
 			"java.util.Spliterators",
 			"spliterator",
 			"(Ljava/util/Collection;I)Ljava/util/Spliterator;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -75,7 +77,7 @@ namespace java::util
 			"java.util.Spliterators",
 			"spliterator",
 			"(Ljava/util/Iterator;JI)Ljava/util/Spliterator;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
@@ -164,7 +166,7 @@ namespace java::util
 			"java.util.Spliterators",
 			"spliteratorUnknownSize",
 			"(Ljava/util/Iterator;I)Ljava/util/Spliterator;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

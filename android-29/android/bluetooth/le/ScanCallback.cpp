@@ -33,28 +33,28 @@ namespace android::bluetooth::le
 		);
 	}
 	
-	ScanCallback::ScanCallback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ScanCallback::ScanCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ScanCallback::ScanCallback()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.bluetooth.le.ScanCallback",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void ScanCallback::onBatchScanResults(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onBatchScanResults",
 			"(Ljava/util/List;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ScanCallback::onScanFailed(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onScanFailed",
 			"(I)V",
 			arg0
@@ -62,11 +62,11 @@ namespace android::bluetooth::le
 	}
 	void ScanCallback::onScanResult(jint arg0, android::bluetooth::le::ScanResult arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onScanResult",
 			"(ILandroid/bluetooth/le/ScanResult;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 } // namespace android::bluetooth::le

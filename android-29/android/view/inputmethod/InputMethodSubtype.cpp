@@ -15,11 +15,12 @@ namespace android::view::inputmethod
 		);
 	}
 	
-	InputMethodSubtype::InputMethodSubtype(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	InputMethodSubtype::InputMethodSubtype(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	InputMethodSubtype::InputMethodSubtype(jint arg0, jint arg1, jstring arg2, jstring arg3, jstring arg4, jboolean arg5, jboolean arg6)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.inputmethod.InputMethodSubtype",
 			"(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZ)V",
 			arg0,
@@ -29,11 +30,9 @@ namespace android::view::inputmethod
 			arg4,
 			arg5,
 			arg6
-		);
-	}
+		) {}
 	InputMethodSubtype::InputMethodSubtype(jint arg0, jint arg1, jstring arg2, jstring arg3, jstring arg4, jboolean arg5, jboolean arg6, jint arg7)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.inputmethod.InputMethodSubtype",
 			"(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZI)V",
 			arg0,
@@ -44,13 +43,12 @@ namespace android::view::inputmethod
 			arg5,
 			arg6,
 			arg7
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean InputMethodSubtype::containsExtraValueKey(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"containsExtraValueKey",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -58,14 +56,14 @@ namespace android::view::inputmethod
 	}
 	jint InputMethodSubtype::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean InputMethodSubtype::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -73,24 +71,24 @@ namespace android::view::inputmethod
 	}
 	jstring InputMethodSubtype::getDisplayName(android::content::Context arg0, jstring arg1, android::content::pm::ApplicationInfo arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDisplayName",
 			"(Landroid/content/Context;Ljava/lang/String;Landroid/content/pm/ApplicationInfo;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		).object<jstring>();
 	}
 	jstring InputMethodSubtype::getExtraValue()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExtraValue",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring InputMethodSubtype::getExtraValueOf(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExtraValueOf",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
@@ -98,73 +96,73 @@ namespace android::view::inputmethod
 	}
 	jint InputMethodSubtype::getIconResId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getIconResId",
 			"()I"
 		);
 	}
 	jstring InputMethodSubtype::getLanguageTag()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLanguageTag",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring InputMethodSubtype::getLocale()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLocale",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring InputMethodSubtype::getMode()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMode",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint InputMethodSubtype::getNameResId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getNameResId",
 			"()I"
 		);
 	}
 	jint InputMethodSubtype::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean InputMethodSubtype::isAsciiCapable()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isAsciiCapable",
 			"()Z"
 		);
 	}
 	jboolean InputMethodSubtype::isAuxiliary()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isAuxiliary",
 			"()Z"
 		);
 	}
 	jboolean InputMethodSubtype::overridesImplicitlyEnabledSubtype()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"overridesImplicitlyEnabledSubtype",
 			"()Z"
 		);
 	}
 	void InputMethodSubtype::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

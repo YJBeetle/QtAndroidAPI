@@ -22,9 +22,11 @@ namespace android::graphics
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Movie(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Movie(QAndroidJniObject obj);
+		
 		// Constructors
-		Movie() = default;
 		
 		// Methods
 		static QAndroidJniObject decodeByteArray(jbyteArray arg0, jint arg1, jint arg2);

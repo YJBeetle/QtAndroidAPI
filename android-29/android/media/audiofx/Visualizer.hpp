@@ -29,10 +29,12 @@ namespace android::media::audiofx
 		static jint STATE_UNINITIALIZED();
 		static jint SUCCESS();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Visualizer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Visualizer(QAndroidJniObject obj);
+		
 		// Constructors
 		Visualizer(jint arg0);
-		Visualizer() = default;
 		
 		// Methods
 		static jintArray getCaptureSizeRange();

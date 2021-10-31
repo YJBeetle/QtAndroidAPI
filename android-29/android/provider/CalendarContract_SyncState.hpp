@@ -15,9 +15,11 @@ namespace android::provider
 		// Fields
 		static QAndroidJniObject CONTENT_URI();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CalendarContract_SyncState(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		CalendarContract_SyncState(QAndroidJniObject obj);
+		
 		// Constructors
-		CalendarContract_SyncState() = default;
 		
 		// Methods
 	};

@@ -13,7 +13,10 @@ namespace java::io
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit StreamCorruptedException(const char *className, const char *sig, Ts...agv) : java::io::ObjectStreamException(className, sig, std::forward<Ts>(agv)...) {}
 		StreamCorruptedException(QAndroidJniObject obj);
+		
 		// Constructors
 		StreamCorruptedException();
 		StreamCorruptedException(jstring arg0);

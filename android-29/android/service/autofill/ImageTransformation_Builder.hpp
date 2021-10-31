@@ -22,11 +22,13 @@ namespace android::service::autofill
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ImageTransformation_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ImageTransformation_Builder(QAndroidJniObject obj);
+		
 		// Constructors
 		ImageTransformation_Builder(android::view::autofill::AutofillId arg0, java::util::regex::Pattern arg1, jint arg2);
 		ImageTransformation_Builder(android::view::autofill::AutofillId arg0, java::util::regex::Pattern arg1, jint arg2, jstring arg3);
-		ImageTransformation_Builder() = default;
 		
 		// Methods
 		QAndroidJniObject addOption(java::util::regex::Pattern arg0, jint arg1);

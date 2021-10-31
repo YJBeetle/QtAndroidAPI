@@ -10,10 +10,12 @@ namespace android::hardware
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit GeomagneticField(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		GeomagneticField(QAndroidJniObject obj);
+		
 		// Constructors
 		GeomagneticField(jfloat arg0, jfloat arg1, jfloat arg2, jlong arg3);
-		GeomagneticField() = default;
 		
 		// Methods
 		jfloat getDeclination();

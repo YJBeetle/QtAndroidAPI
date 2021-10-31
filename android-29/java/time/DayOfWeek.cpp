@@ -63,7 +63,9 @@ namespace java::time
 		);
 	}
 	
-	DayOfWeek::DayOfWeek(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DayOfWeek::DayOfWeek(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -73,7 +75,7 @@ namespace java::time
 			"java.time.DayOfWeek",
 			"from",
 			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/DayOfWeek;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject DayOfWeek::of(jint arg0)
@@ -104,55 +106,55 @@ namespace java::time
 	}
 	QAndroidJniObject DayOfWeek::adjustInto(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"adjustInto",
 			"(Ljava/time/temporal/Temporal;)Ljava/time/temporal/Temporal;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint DayOfWeek::get(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"get",
 			"(Ljava/time/temporal/TemporalField;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring DayOfWeek::getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDisplayName",
 			"(Ljava/time/format/TextStyle;Ljava/util/Locale;)Ljava/lang/String;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		).object<jstring>();
 	}
 	jlong DayOfWeek::getLong(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getLong",
 			"(Ljava/time/temporal/TemporalField;)J",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint DayOfWeek::getValue()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getValue",
 			"()I"
 		);
 	}
 	jboolean DayOfWeek::isSupported(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isSupported",
 			"(Ljava/time/temporal/TemporalField;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject DayOfWeek::minus(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"minus",
 			"(J)Ljava/time/DayOfWeek;",
 			arg0
@@ -160,7 +162,7 @@ namespace java::time
 	}
 	QAndroidJniObject DayOfWeek::plus(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"plus",
 			"(J)Ljava/time/DayOfWeek;",
 			arg0
@@ -168,18 +170,18 @@ namespace java::time
 	}
 	jobject DayOfWeek::query(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"query",
 			"(Ljava/time/temporal/TemporalQuery;)Ljava/lang/Object;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jobject>();
 	}
 	QAndroidJniObject DayOfWeek::range(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"range",
 			"(Ljava/time/temporal/TemporalField;)Ljava/time/temporal/ValueRange;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace java::time

@@ -14,9 +14,11 @@ namespace android::webkit
 		static QAndroidJniObject FAR();
 		static QAndroidJniObject MEDIUM();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit WebSettings_ZoomDensity(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		WebSettings_ZoomDensity(QAndroidJniObject obj);
+		
 		// Constructors
-		WebSettings_ZoomDensity() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

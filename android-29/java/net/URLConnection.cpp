@@ -11,7 +11,9 @@ namespace java::net
 {
 	// Fields
 	
-	URLConnection::URLConnection(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	URLConnection::URLConnection(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -64,7 +66,7 @@ namespace java::net
 			"java.net.URLConnection",
 			"guessContentTypeFromStream",
 			"(Ljava/io/InputStream;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	void URLConnection::setContentHandlerFactory(__JniBaseClass arg0)
@@ -73,7 +75,7 @@ namespace java::net
 			"java.net.URLConnection",
 			"setContentHandlerFactory",
 			"(Ljava/net/ContentHandlerFactory;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void URLConnection::setDefaultAllowUserInteraction(jboolean arg0)
@@ -111,12 +113,12 @@ namespace java::net
 			"java.net.URLConnection",
 			"setFileNameMap",
 			"(Ljava/net/FileNameMap;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void URLConnection::addRequestProperty(jstring arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addRequestProperty",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
@@ -125,35 +127,35 @@ namespace java::net
 	}
 	void URLConnection::connect()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"connect",
 			"()V"
 		);
 	}
 	jboolean URLConnection::getAllowUserInteraction()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getAllowUserInteraction",
 			"()Z"
 		);
 	}
 	jint URLConnection::getConnectTimeout()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getConnectTimeout",
 			"()I"
 		);
 	}
 	jobject URLConnection::getContent()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getContent",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobject URLConnection::getContent(jarray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getContent",
 			"([Ljava/lang/Class;)Ljava/lang/Object;",
 			arg0
@@ -161,70 +163,70 @@ namespace java::net
 	}
 	jstring URLConnection::getContentEncoding()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getContentEncoding",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint URLConnection::getContentLength()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getContentLength",
 			"()I"
 		);
 	}
 	jlong URLConnection::getContentLengthLong()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getContentLengthLong",
 			"()J"
 		);
 	}
 	jstring URLConnection::getContentType()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getContentType",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jlong URLConnection::getDate()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getDate",
 			"()J"
 		);
 	}
 	jboolean URLConnection::getDefaultUseCaches()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getDefaultUseCaches",
 			"()Z"
 		);
 	}
 	jboolean URLConnection::getDoInput()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getDoInput",
 			"()Z"
 		);
 	}
 	jboolean URLConnection::getDoOutput()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getDoOutput",
 			"()Z"
 		);
 	}
 	jlong URLConnection::getExpiration()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getExpiration",
 			"()J"
 		);
 	}
 	jstring URLConnection::getHeaderField(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getHeaderField",
 			"(I)Ljava/lang/String;",
 			arg0
@@ -232,7 +234,7 @@ namespace java::net
 	}
 	jstring URLConnection::getHeaderField(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getHeaderField",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
@@ -240,7 +242,7 @@ namespace java::net
 	}
 	jlong URLConnection::getHeaderFieldDate(jstring arg0, jlong arg1)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getHeaderFieldDate",
 			"(Ljava/lang/String;J)J",
 			arg0,
@@ -249,7 +251,7 @@ namespace java::net
 	}
 	jint URLConnection::getHeaderFieldInt(jstring arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getHeaderFieldInt",
 			"(Ljava/lang/String;I)I",
 			arg0,
@@ -258,7 +260,7 @@ namespace java::net
 	}
 	jstring URLConnection::getHeaderFieldKey(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getHeaderFieldKey",
 			"(I)Ljava/lang/String;",
 			arg0
@@ -266,7 +268,7 @@ namespace java::net
 	}
 	jlong URLConnection::getHeaderFieldLong(jstring arg0, jlong arg1)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getHeaderFieldLong",
 			"(Ljava/lang/String;J)J",
 			arg0,
@@ -275,63 +277,63 @@ namespace java::net
 	}
 	QAndroidJniObject URLConnection::getHeaderFields()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getHeaderFields",
 			"()Ljava/util/Map;"
 		);
 	}
 	jlong URLConnection::getIfModifiedSince()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getIfModifiedSince",
 			"()J"
 		);
 	}
 	QAndroidJniObject URLConnection::getInputStream()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getInputStream",
 			"()Ljava/io/InputStream;"
 		);
 	}
 	jlong URLConnection::getLastModified()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getLastModified",
 			"()J"
 		);
 	}
 	QAndroidJniObject URLConnection::getOutputStream()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getOutputStream",
 			"()Ljava/io/OutputStream;"
 		);
 	}
 	QAndroidJniObject URLConnection::getPermission()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPermission",
 			"()Ljava/security/Permission;"
 		);
 	}
 	jint URLConnection::getReadTimeout()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getReadTimeout",
 			"()I"
 		);
 	}
 	QAndroidJniObject URLConnection::getRequestProperties()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRequestProperties",
 			"()Ljava/util/Map;"
 		);
 	}
 	jstring URLConnection::getRequestProperty(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRequestProperty",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
@@ -339,21 +341,21 @@ namespace java::net
 	}
 	QAndroidJniObject URLConnection::getURL()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getURL",
 			"()Ljava/net/URL;"
 		);
 	}
 	jboolean URLConnection::getUseCaches()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getUseCaches",
 			"()Z"
 		);
 	}
 	void URLConnection::setAllowUserInteraction(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAllowUserInteraction",
 			"(Z)V",
 			arg0
@@ -361,7 +363,7 @@ namespace java::net
 	}
 	void URLConnection::setConnectTimeout(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setConnectTimeout",
 			"(I)V",
 			arg0
@@ -369,7 +371,7 @@ namespace java::net
 	}
 	void URLConnection::setDefaultUseCaches(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDefaultUseCaches",
 			"(Z)V",
 			arg0
@@ -377,7 +379,7 @@ namespace java::net
 	}
 	void URLConnection::setDoInput(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDoInput",
 			"(Z)V",
 			arg0
@@ -385,7 +387,7 @@ namespace java::net
 	}
 	void URLConnection::setDoOutput(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDoOutput",
 			"(Z)V",
 			arg0
@@ -393,7 +395,7 @@ namespace java::net
 	}
 	void URLConnection::setIfModifiedSince(jlong arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setIfModifiedSince",
 			"(J)V",
 			arg0
@@ -401,7 +403,7 @@ namespace java::net
 	}
 	void URLConnection::setReadTimeout(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setReadTimeout",
 			"(I)V",
 			arg0
@@ -409,7 +411,7 @@ namespace java::net
 	}
 	void URLConnection::setRequestProperty(jstring arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setRequestProperty",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
@@ -418,7 +420,7 @@ namespace java::net
 	}
 	void URLConnection::setUseCaches(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setUseCaches",
 			"(Z)V",
 			arg0
@@ -426,7 +428,7 @@ namespace java::net
 	}
 	jstring URLConnection::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

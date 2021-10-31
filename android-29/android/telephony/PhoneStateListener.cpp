@@ -105,28 +105,26 @@ namespace android::telephony
 		);
 	}
 	
-	PhoneStateListener::PhoneStateListener(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PhoneStateListener::PhoneStateListener(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	PhoneStateListener::PhoneStateListener()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.telephony.PhoneStateListener",
 			"()V"
-		);
-	}
+		) {}
 	PhoneStateListener::PhoneStateListener(__JniBaseClass arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.telephony.PhoneStateListener",
 			"(Ljava/util/concurrent/Executor;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	void PhoneStateListener::onActiveDataSubscriptionIdChanged(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onActiveDataSubscriptionIdChanged",
 			"(I)V",
 			arg0
@@ -134,7 +132,7 @@ namespace android::telephony
 	}
 	void PhoneStateListener::onCallForwardingIndicatorChanged(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onCallForwardingIndicatorChanged",
 			"(Z)V",
 			arg0
@@ -142,7 +140,7 @@ namespace android::telephony
 	}
 	void PhoneStateListener::onCallStateChanged(jint arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onCallStateChanged",
 			"(ILjava/lang/String;)V",
 			arg0,
@@ -151,23 +149,23 @@ namespace android::telephony
 	}
 	void PhoneStateListener::onCellInfoChanged(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onCellInfoChanged",
 			"(Ljava/util/List;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void PhoneStateListener::onCellLocationChanged(android::telephony::CellLocation arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onCellLocationChanged",
 			"(Landroid/telephony/CellLocation;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void PhoneStateListener::onDataActivity(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onDataActivity",
 			"(I)V",
 			arg0
@@ -175,7 +173,7 @@ namespace android::telephony
 	}
 	void PhoneStateListener::onDataConnectionStateChanged(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onDataConnectionStateChanged",
 			"(I)V",
 			arg0
@@ -183,7 +181,7 @@ namespace android::telephony
 	}
 	void PhoneStateListener::onDataConnectionStateChanged(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onDataConnectionStateChanged",
 			"(II)V",
 			arg0,
@@ -192,7 +190,7 @@ namespace android::telephony
 	}
 	void PhoneStateListener::onMessageWaitingIndicatorChanged(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onMessageWaitingIndicatorChanged",
 			"(Z)V",
 			arg0
@@ -200,15 +198,15 @@ namespace android::telephony
 	}
 	void PhoneStateListener::onServiceStateChanged(android::telephony::ServiceState arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onServiceStateChanged",
 			"(Landroid/telephony/ServiceState;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void PhoneStateListener::onSignalStrengthChanged(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onSignalStrengthChanged",
 			"(I)V",
 			arg0
@@ -216,15 +214,15 @@ namespace android::telephony
 	}
 	void PhoneStateListener::onSignalStrengthsChanged(android::telephony::SignalStrength arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onSignalStrengthsChanged",
 			"(Landroid/telephony/SignalStrength;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void PhoneStateListener::onUserMobileDataStateChanged(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onUserMobileDataStateChanged",
 			"(Z)V",
 			arg0

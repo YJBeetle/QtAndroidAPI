@@ -28,7 +28,9 @@ namespace android::graphics
 		);
 	}
 	
-	Paint_Style::Paint_Style(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Paint_Style::Paint_Style(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

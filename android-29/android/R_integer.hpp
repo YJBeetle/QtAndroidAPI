@@ -14,7 +14,10 @@ namespace android
 		static jint config_shortAnimTime();
 		static jint status_bar_notification_info_maxnum();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit R_integer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		R_integer(QAndroidJniObject obj);
+		
 		// Constructors
 		R_integer();
 		

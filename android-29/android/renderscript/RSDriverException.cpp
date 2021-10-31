@@ -4,16 +4,16 @@ namespace android::renderscript
 {
 	// Fields
 	
-	RSDriverException::RSDriverException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	RSDriverException::RSDriverException(QAndroidJniObject obj) : android::renderscript::RSRuntimeException(obj) {}
+	
 	// Constructors
 	RSDriverException::RSDriverException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::renderscript::RSRuntimeException(
 			"android.renderscript.RSDriverException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::renderscript

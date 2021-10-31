@@ -5,21 +5,21 @@ namespace android::util
 	// Fields
 	jboolean MutableBoolean::value()
 	{
-		return __thiz.getField<jboolean>(
+		return getField<jboolean>(
 			"value"
 		);
 	}
 	
-	MutableBoolean::MutableBoolean(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MutableBoolean::MutableBoolean(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MutableBoolean::MutableBoolean(jboolean arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.util.MutableBoolean",
 			"(Z)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::util

@@ -6,58 +6,52 @@ namespace android::preference
 {
 	// Fields
 	
-	PreferenceCategory::PreferenceCategory(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PreferenceCategory::PreferenceCategory(QAndroidJniObject obj) : android::preference::PreferenceGroup(obj) {}
+	
 	// Constructors
 	PreferenceCategory::PreferenceCategory(android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::preference::PreferenceGroup(
 			"android.preference.PreferenceCategory",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	PreferenceCategory::PreferenceCategory(android::content::Context arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::preference::PreferenceGroup(
 			"android.preference.PreferenceCategory",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	PreferenceCategory::PreferenceCategory(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: android::preference::PreferenceGroup(
 			"android.preference.PreferenceCategory",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
-		);
-	}
+		) {}
 	PreferenceCategory::PreferenceCategory(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: android::preference::PreferenceGroup(
 			"android.preference.PreferenceCategory",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean PreferenceCategory::isEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEnabled",
 			"()Z"
 		);
 	}
 	jboolean PreferenceCategory::shouldDisableDependents()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"shouldDisableDependents",
 			"()Z"
 		);

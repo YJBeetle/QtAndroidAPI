@@ -55,51 +55,45 @@ namespace android::net::http
 		);
 	}
 	
-	SslError::SslError(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SslError::SslError(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	SslError::SslError(jint arg0, android::net::http::SslCertificate arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.net.http.SslError",
 			"(ILandroid/net/http/SslCertificate;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
+			arg1.object()
+		) {}
 	SslError::SslError(jint arg0, java::security::cert::X509Certificate arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.net.http.SslError",
 			"(ILjava/security/cert/X509Certificate;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
+			arg1.object()
+		) {}
 	SslError::SslError(jint arg0, android::net::http::SslCertificate arg1, jstring arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.net.http.SslError",
 			"(ILandroid/net/http/SslCertificate;Ljava/lang/String;)V",
 			arg0,
-			arg1.__jniObject().object(),
+			arg1.object(),
 			arg2
-		);
-	}
+		) {}
 	SslError::SslError(jint arg0, java::security::cert::X509Certificate arg1, jstring arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.net.http.SslError",
 			"(ILjava/security/cert/X509Certificate;Ljava/lang/String;)V",
 			arg0,
-			arg1.__jniObject().object(),
+			arg1.object(),
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean SslError::addError(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"addError",
 			"(I)Z",
 			arg0
@@ -107,28 +101,28 @@ namespace android::net::http
 	}
 	QAndroidJniObject SslError::getCertificate()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCertificate",
 			"()Landroid/net/http/SslCertificate;"
 		);
 	}
 	jint SslError::getPrimaryError()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPrimaryError",
 			"()I"
 		);
 	}
 	jstring SslError::getUrl()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getUrl",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jboolean SslError::hasError(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasError",
 			"(I)Z",
 			arg0
@@ -136,7 +130,7 @@ namespace android::net::http
 	}
 	jstring SslError::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

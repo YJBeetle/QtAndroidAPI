@@ -500,9 +500,11 @@ namespace android::system
 		static jint _SC_XOPEN_VERSION();
 		static jint _SC_XOPEN_XCU_VERSION();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit OsConstants(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		OsConstants(QAndroidJniObject obj);
+		
 		// Constructors
-		OsConstants() = default;
 		
 		// Methods
 		static jboolean S_ISBLK(jint arg0);

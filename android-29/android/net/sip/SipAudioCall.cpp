@@ -9,22 +9,22 @@ namespace android::net::sip
 {
 	// Fields
 	
-	SipAudioCall::SipAudioCall(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SipAudioCall::SipAudioCall(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	SipAudioCall::SipAudioCall(android::content::Context arg0, android::net::sip::SipProfile arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.net.sip.SipAudioCall",
 			"(Landroid/content/Context;Landroid/net/sip/SipProfile;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	
 	// Methods
 	void SipAudioCall::answerCall(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"answerCall",
 			"(I)V",
 			arg0
@@ -32,23 +32,23 @@ namespace android::net::sip
 	}
 	void SipAudioCall::attachCall(android::net::sip::SipSession arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"attachCall",
 			"(Landroid/net/sip/SipSession;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void SipAudioCall::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	void SipAudioCall::continueCall(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"continueCall",
 			"(I)V",
 			arg0
@@ -56,35 +56,35 @@ namespace android::net::sip
 	}
 	void SipAudioCall::endCall()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"endCall",
 			"()V"
 		);
 	}
 	QAndroidJniObject SipAudioCall::getLocalProfile()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLocalProfile",
 			"()Landroid/net/sip/SipProfile;"
 		);
 	}
 	QAndroidJniObject SipAudioCall::getPeerProfile()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPeerProfile",
 			"()Landroid/net/sip/SipProfile;"
 		);
 	}
 	jint SipAudioCall::getState()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getState",
 			"()I"
 		);
 	}
 	void SipAudioCall::holdCall(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"holdCall",
 			"(I)V",
 			arg0
@@ -92,38 +92,38 @@ namespace android::net::sip
 	}
 	jboolean SipAudioCall::isInCall()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isInCall",
 			"()Z"
 		);
 	}
 	jboolean SipAudioCall::isMuted()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isMuted",
 			"()Z"
 		);
 	}
 	jboolean SipAudioCall::isOnHold()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isOnHold",
 			"()Z"
 		);
 	}
 	void SipAudioCall::makeCall(android::net::sip::SipProfile arg0, android::net::sip::SipSession arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"makeCall",
 			"(Landroid/net/sip/SipProfile;Landroid/net/sip/SipSession;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
 	void SipAudioCall::sendDtmf(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"sendDtmf",
 			"(I)V",
 			arg0
@@ -131,33 +131,33 @@ namespace android::net::sip
 	}
 	void SipAudioCall::sendDtmf(jint arg0, android::os::Message arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"sendDtmf",
 			"(ILandroid/os/Message;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void SipAudioCall::setListener(android::net::sip::SipAudioCall_Listener arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setListener",
 			"(Landroid/net/sip/SipAudioCall$Listener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void SipAudioCall::setListener(android::net::sip::SipAudioCall_Listener arg0, jboolean arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setListener",
 			"(Landroid/net/sip/SipAudioCall$Listener;Z)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void SipAudioCall::setSpeakerMode(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSpeakerMode",
 			"(Z)V",
 			arg0
@@ -165,14 +165,14 @@ namespace android::net::sip
 	}
 	void SipAudioCall::startAudio()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"startAudio",
 			"()V"
 		);
 	}
 	void SipAudioCall::toggleMute()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"toggleMute",
 			"()V"
 		);

@@ -17,9 +17,11 @@ namespace android::provider
 		static QAndroidJniObject EXTERNAL_CONTENT_URI();
 		static QAndroidJniObject INTERNAL_CONTENT_URI();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaStore_Downloads(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaStore_Downloads(QAndroidJniObject obj);
+		
 		// Constructors
-		MediaStore_Downloads() = default;
 		
 		// Methods
 		static QAndroidJniObject getContentUri(jstring arg0);

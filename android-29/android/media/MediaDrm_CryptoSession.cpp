@@ -5,13 +5,15 @@ namespace android::media
 {
 	// Fields
 	
-	MediaDrm_CryptoSession::MediaDrm_CryptoSession(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaDrm_CryptoSession::MediaDrm_CryptoSession(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jbyteArray MediaDrm_CryptoSession::decrypt(jbyteArray arg0, jbyteArray arg1, jbyteArray arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"decrypt",
 			"([B[B[B)[B",
 			arg0,
@@ -21,7 +23,7 @@ namespace android::media
 	}
 	jbyteArray MediaDrm_CryptoSession::encrypt(jbyteArray arg0, jbyteArray arg1, jbyteArray arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"encrypt",
 			"([B[B[B)[B",
 			arg0,
@@ -31,7 +33,7 @@ namespace android::media
 	}
 	jbyteArray MediaDrm_CryptoSession::sign(jbyteArray arg0, jbyteArray arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"sign",
 			"([B[B)[B",
 			arg0,
@@ -40,7 +42,7 @@ namespace android::media
 	}
 	jboolean MediaDrm_CryptoSession::verify(jbyteArray arg0, jbyteArray arg1, jbyteArray arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"verify",
 			"([B[B[B)Z",
 			arg0,

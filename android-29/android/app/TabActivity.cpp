@@ -8,41 +8,41 @@ namespace android::app
 {
 	// Fields
 	
-	TabActivity::TabActivity(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TabActivity::TabActivity(QAndroidJniObject obj) : android::app::ActivityGroup(obj) {}
+	
 	// Constructors
 	TabActivity::TabActivity()
-	{
-		__thiz = QAndroidJniObject(
+		: android::app::ActivityGroup(
 			"android.app.TabActivity",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject TabActivity::getTabHost()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTabHost",
 			"()Landroid/widget/TabHost;"
 		);
 	}
 	QAndroidJniObject TabActivity::getTabWidget()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTabWidget",
 			"()Landroid/widget/TabWidget;"
 		);
 	}
 	void TabActivity::onContentChanged()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onContentChanged",
 			"()V"
 		);
 	}
 	void TabActivity::setDefaultTab(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDefaultTab",
 			"(I)V",
 			arg0
@@ -50,7 +50,7 @@ namespace android::app
 	}
 	void TabActivity::setDefaultTab(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDefaultTab",
 			"(Ljava/lang/String;)V",
 			arg0

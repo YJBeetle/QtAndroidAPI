@@ -4,16 +4,16 @@ namespace java::io
 {
 	// Fields
 	
-	SyncFailedException::SyncFailedException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SyncFailedException::SyncFailedException(QAndroidJniObject obj) : java::io::IOException(obj) {}
+	
 	// Constructors
 	SyncFailedException::SyncFailedException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::IOException(
 			"java.io.SyncFailedException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::io

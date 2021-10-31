@@ -5,27 +5,27 @@ namespace java::net
 {
 	// Fields
 	
-	CacheResponse::CacheResponse(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CacheResponse::CacheResponse(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	CacheResponse::CacheResponse()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.net.CacheResponse",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject CacheResponse::getBody()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBody",
 			"()Ljava/io/InputStream;"
 		);
 	}
 	QAndroidJniObject CacheResponse::getHeaders()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getHeaders",
 			"()Ljava/util/Map;"
 		);

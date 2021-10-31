@@ -80,7 +80,9 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	FontsContract_Columns::FontsContract_Columns(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FontsContract_Columns::FontsContract_Columns(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

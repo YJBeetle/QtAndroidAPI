@@ -4,37 +4,35 @@ namespace java::util::concurrent::atomic
 {
 	// Fields
 	
-	AtomicReference::AtomicReference(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AtomicReference::AtomicReference(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	AtomicReference::AtomicReference()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.concurrent.atomic.AtomicReference",
 			"()V"
-		);
-	}
+		) {}
 	AtomicReference::AtomicReference(jobject arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.concurrent.atomic.AtomicReference",
 			"(Ljava/lang/Object;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jobject AtomicReference::accumulateAndGet(jobject arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"accumulateAndGet",
 			"(Ljava/lang/Object;Ljava/util/function/BinaryOperator;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		).object<jobject>();
 	}
 	jobject AtomicReference::compareAndExchange(jobject arg0, jobject arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"compareAndExchange",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
@@ -43,7 +41,7 @@ namespace java::util::concurrent::atomic
 	}
 	jobject AtomicReference::compareAndExchangeAcquire(jobject arg0, jobject arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"compareAndExchangeAcquire",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
@@ -52,7 +50,7 @@ namespace java::util::concurrent::atomic
 	}
 	jobject AtomicReference::compareAndExchangeRelease(jobject arg0, jobject arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"compareAndExchangeRelease",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
@@ -61,7 +59,7 @@ namespace java::util::concurrent::atomic
 	}
 	jboolean AtomicReference::compareAndSet(jobject arg0, jobject arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"compareAndSet",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Z",
 			arg0,
@@ -70,30 +68,30 @@ namespace java::util::concurrent::atomic
 	}
 	jobject AtomicReference::get()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobject AtomicReference::getAcquire()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAcquire",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobject AtomicReference::getAndAccumulate(jobject arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAndAccumulate",
 			"(Ljava/lang/Object;Ljava/util/function/BinaryOperator;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		).object<jobject>();
 	}
 	jobject AtomicReference::getAndSet(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAndSet",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0
@@ -101,29 +99,29 @@ namespace java::util::concurrent::atomic
 	}
 	jobject AtomicReference::getAndUpdate(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAndUpdate",
 			"(Ljava/util/function/UnaryOperator;)Ljava/lang/Object;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jobject>();
 	}
 	jobject AtomicReference::getOpaque()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getOpaque",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobject AtomicReference::getPlain()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPlain",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	void AtomicReference::lazySet(jobject arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"lazySet",
 			"(Ljava/lang/Object;)V",
 			arg0
@@ -131,7 +129,7 @@ namespace java::util::concurrent::atomic
 	}
 	void AtomicReference::set(jobject arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"set",
 			"(Ljava/lang/Object;)V",
 			arg0
@@ -139,7 +137,7 @@ namespace java::util::concurrent::atomic
 	}
 	void AtomicReference::setOpaque(jobject arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOpaque",
 			"(Ljava/lang/Object;)V",
 			arg0
@@ -147,7 +145,7 @@ namespace java::util::concurrent::atomic
 	}
 	void AtomicReference::setPlain(jobject arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPlain",
 			"(Ljava/lang/Object;)V",
 			arg0
@@ -155,7 +153,7 @@ namespace java::util::concurrent::atomic
 	}
 	void AtomicReference::setRelease(jobject arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setRelease",
 			"(Ljava/lang/Object;)V",
 			arg0
@@ -163,22 +161,22 @@ namespace java::util::concurrent::atomic
 	}
 	jstring AtomicReference::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jobject AtomicReference::updateAndGet(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"updateAndGet",
 			"(Ljava/util/function/UnaryOperator;)Ljava/lang/Object;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jobject>();
 	}
 	jboolean AtomicReference::weakCompareAndSet(jobject arg0, jobject arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"weakCompareAndSet",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Z",
 			arg0,
@@ -187,7 +185,7 @@ namespace java::util::concurrent::atomic
 	}
 	jboolean AtomicReference::weakCompareAndSetAcquire(jobject arg0, jobject arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"weakCompareAndSetAcquire",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Z",
 			arg0,
@@ -196,7 +194,7 @@ namespace java::util::concurrent::atomic
 	}
 	jboolean AtomicReference::weakCompareAndSetPlain(jobject arg0, jobject arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"weakCompareAndSetPlain",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Z",
 			arg0,
@@ -205,7 +203,7 @@ namespace java::util::concurrent::atomic
 	}
 	jboolean AtomicReference::weakCompareAndSetRelease(jobject arg0, jobject arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"weakCompareAndSetRelease",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Z",
 			arg0,
@@ -214,7 +212,7 @@ namespace java::util::concurrent::atomic
 	}
 	jboolean AtomicReference::weakCompareAndSetVolatile(jobject arg0, jobject arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"weakCompareAndSetVolatile",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Z",
 			arg0,

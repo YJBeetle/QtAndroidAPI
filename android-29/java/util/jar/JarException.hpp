@@ -13,7 +13,10 @@ namespace java::util::jar
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit JarException(const char *className, const char *sig, Ts...agv) : java::util::zip::ZipException(className, sig, std::forward<Ts>(agv)...) {}
 		JarException(QAndroidJniObject obj);
+		
 		// Constructors
 		JarException();
 		JarException(jstring arg0);

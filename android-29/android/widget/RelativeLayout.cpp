@@ -168,94 +168,88 @@ namespace android::widget
 		);
 	}
 	
-	RelativeLayout::RelativeLayout(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	RelativeLayout::RelativeLayout(QAndroidJniObject obj) : android::view::ViewGroup(obj) {}
+	
 	// Constructors
 	RelativeLayout::RelativeLayout(android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::view::ViewGroup(
 			"android.widget.RelativeLayout",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	RelativeLayout::RelativeLayout(android::content::Context arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::view::ViewGroup(
 			"android.widget.RelativeLayout",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	RelativeLayout::RelativeLayout(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: android::view::ViewGroup(
 			"android.widget.RelativeLayout",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
-		);
-	}
+		) {}
 	RelativeLayout::RelativeLayout(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: android::view::ViewGroup(
 			"android.widget.RelativeLayout",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject RelativeLayout::generateLayoutParams(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"generateLayoutParams",
 			"(Landroid/util/AttributeSet;)Landroid/widget/RelativeLayout$LayoutParams;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring RelativeLayout::getAccessibilityClassName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jint RelativeLayout::getBaseline()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getBaseline",
 			"()I"
 		);
 	}
 	jint RelativeLayout::getGravity()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getGravity",
 			"()I"
 		);
 	}
 	jint RelativeLayout::getIgnoreGravity()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getIgnoreGravity",
 			"()I"
 		);
 	}
 	void RelativeLayout::requestLayout()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"requestLayout",
 			"()V"
 		);
 	}
 	void RelativeLayout::setGravity(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setGravity",
 			"(I)V",
 			arg0
@@ -263,7 +257,7 @@ namespace android::widget
 	}
 	void RelativeLayout::setHorizontalGravity(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setHorizontalGravity",
 			"(I)V",
 			arg0
@@ -271,7 +265,7 @@ namespace android::widget
 	}
 	void RelativeLayout::setIgnoreGravity(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setIgnoreGravity",
 			"(I)V",
 			arg0
@@ -279,7 +273,7 @@ namespace android::widget
 	}
 	void RelativeLayout::setVerticalGravity(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setVerticalGravity",
 			"(I)V",
 			arg0
@@ -287,7 +281,7 @@ namespace android::widget
 	}
 	jboolean RelativeLayout::shouldDelayChildPressedState()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"shouldDelayChildPressedState",
 			"()Z"
 		);

@@ -14,7 +14,10 @@ namespace android::database::sqlite
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SQLiteDatabase_OpenParams_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SQLiteDatabase_OpenParams_Builder(QAndroidJniObject obj);
+		
 		// Constructors
 		SQLiteDatabase_OpenParams_Builder();
 		SQLiteDatabase_OpenParams_Builder(android::database::sqlite::SQLiteDatabase_OpenParams arg0);

@@ -4,31 +4,29 @@ namespace java::util
 {
 	// Fields
 	
-	IntSummaryStatistics::IntSummaryStatistics(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	IntSummaryStatistics::IntSummaryStatistics(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	IntSummaryStatistics::IntSummaryStatistics()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.IntSummaryStatistics",
 			"()V"
-		);
-	}
+		) {}
 	IntSummaryStatistics::IntSummaryStatistics(jlong arg0, jint arg1, jint arg2, jlong arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.IntSummaryStatistics",
 			"(JIIJ)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	
 	// Methods
 	void IntSummaryStatistics::accept(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"accept",
 			"(I)V",
 			arg0
@@ -36,50 +34,50 @@ namespace java::util
 	}
 	void IntSummaryStatistics::combine(java::util::IntSummaryStatistics arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"combine",
 			"(Ljava/util/IntSummaryStatistics;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jdouble IntSummaryStatistics::getAverage()
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"getAverage",
 			"()D"
 		);
 	}
 	jlong IntSummaryStatistics::getCount()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getCount",
 			"()J"
 		);
 	}
 	jint IntSummaryStatistics::getMax()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMax",
 			"()I"
 		);
 	}
 	jint IntSummaryStatistics::getMin()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMin",
 			"()I"
 		);
 	}
 	jlong IntSummaryStatistics::getSum()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getSum",
 			"()J"
 		);
 	}
 	jstring IntSummaryStatistics::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

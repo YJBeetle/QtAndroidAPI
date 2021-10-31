@@ -5,36 +5,36 @@ namespace android::app::admin
 {
 	// Fields
 	
-	FreezePeriod::FreezePeriod(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FreezePeriod::FreezePeriod(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	FreezePeriod::FreezePeriod(java::time::MonthDay arg0, java::time::MonthDay arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.app.admin.FreezePeriod",
 			"(Ljava/time/MonthDay;Ljava/time/MonthDay;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject FreezePeriod::getEnd()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEnd",
 			"()Ljava/time/MonthDay;"
 		);
 	}
 	QAndroidJniObject FreezePeriod::getStart()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getStart",
 			"()Ljava/time/MonthDay;"
 		);
 	}
 	jstring FreezePeriod::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

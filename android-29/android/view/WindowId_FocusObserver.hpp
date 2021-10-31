@@ -14,7 +14,10 @@ namespace android::view
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit WindowId_FocusObserver(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		WindowId_FocusObserver(QAndroidJniObject obj);
+		
 		// Constructors
 		WindowId_FocusObserver();
 		

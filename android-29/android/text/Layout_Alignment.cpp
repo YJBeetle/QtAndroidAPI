@@ -28,7 +28,9 @@ namespace android::text
 		);
 	}
 	
-	Layout_Alignment::Layout_Alignment(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Layout_Alignment::Layout_Alignment(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

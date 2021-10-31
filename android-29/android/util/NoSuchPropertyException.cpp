@@ -4,16 +4,16 @@ namespace android::util
 {
 	// Fields
 	
-	NoSuchPropertyException::NoSuchPropertyException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NoSuchPropertyException::NoSuchPropertyException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	
 	// Constructors
 	NoSuchPropertyException::NoSuchPropertyException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::RuntimeException(
 			"android.util.NoSuchPropertyException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::util

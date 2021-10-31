@@ -30,9 +30,11 @@ namespace android::hardware::usb
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit UsbDeviceConnection(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		UsbDeviceConnection(QAndroidJniObject obj);
+		
 		// Constructors
-		UsbDeviceConnection() = default;
 		
 		// Methods
 		jint bulkTransfer(android::hardware::usb::UsbEndpoint arg0, jbyteArray arg1, jint arg2, jint arg3);

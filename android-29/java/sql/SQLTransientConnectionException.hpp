@@ -13,7 +13,10 @@ namespace java::sql
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SQLTransientConnectionException(const char *className, const char *sig, Ts...agv) : java::sql::SQLTransientException(className, sig, std::forward<Ts>(agv)...) {}
 		SQLTransientConnectionException(QAndroidJniObject obj);
+		
 		// Constructors
 		SQLTransientConnectionException();
 		SQLTransientConnectionException(jstring arg0);

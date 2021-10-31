@@ -6,24 +6,24 @@ namespace android::graphics
 {
 	// Fields
 	
-	RegionIterator::RegionIterator(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	RegionIterator::RegionIterator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	RegionIterator::RegionIterator(android::graphics::Region arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.graphics.RegionIterator",
 			"(Landroid/graphics/Region;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jboolean RegionIterator::next(android::graphics::Rect arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"next",
 			"(Landroid/graphics/Rect;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::graphics

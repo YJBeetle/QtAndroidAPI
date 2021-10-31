@@ -17,7 +17,10 @@ namespace android::service::notification
 		static jint USER_SENTIMENT_NEUTRAL();
 		static jint USER_SENTIMENT_POSITIVE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit NotificationListenerService_Ranking(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		NotificationListenerService_Ranking(QAndroidJniObject obj);
+		
 		// Constructors
 		NotificationListenerService_Ranking();
 		

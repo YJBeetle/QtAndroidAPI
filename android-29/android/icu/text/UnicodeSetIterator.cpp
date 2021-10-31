@@ -13,77 +13,75 @@ namespace android::icu::text
 	}
 	jint UnicodeSetIterator::codepoint()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"codepoint"
 		);
 	}
 	jint UnicodeSetIterator::codepointEnd()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"codepointEnd"
 		);
 	}
 	jstring UnicodeSetIterator::string()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"string",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	
-	UnicodeSetIterator::UnicodeSetIterator(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UnicodeSetIterator::UnicodeSetIterator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	UnicodeSetIterator::UnicodeSetIterator()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.icu.text.UnicodeSetIterator",
 			"()V"
-		);
-	}
+		) {}
 	UnicodeSetIterator::UnicodeSetIterator(android::icu::text::UnicodeSet arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.icu.text.UnicodeSetIterator",
 			"(Landroid/icu/text/UnicodeSet;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jstring UnicodeSetIterator::getString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jboolean UnicodeSetIterator::next()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"next",
 			"()Z"
 		);
 	}
 	jboolean UnicodeSetIterator::nextRange()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"nextRange",
 			"()Z"
 		);
 	}
 	void UnicodeSetIterator::reset()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
 	void UnicodeSetIterator::reset(android::icu::text::UnicodeSet arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"reset",
 			"(Landroid/icu/text/UnicodeSet;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::icu::text

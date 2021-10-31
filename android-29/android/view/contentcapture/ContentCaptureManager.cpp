@@ -6,42 +6,44 @@ namespace android::view::contentcapture
 {
 	// Fields
 	
-	ContentCaptureManager::ContentCaptureManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ContentCaptureManager::ContentCaptureManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject ContentCaptureManager::getContentCaptureConditions()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getContentCaptureConditions",
 			"()Ljava/util/Set;"
 		);
 	}
 	QAndroidJniObject ContentCaptureManager::getServiceComponentName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getServiceComponentName",
 			"()Landroid/content/ComponentName;"
 		);
 	}
 	jboolean ContentCaptureManager::isContentCaptureEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isContentCaptureEnabled",
 			"()Z"
 		);
 	}
 	void ContentCaptureManager::removeData(android::view::contentcapture::DataRemovalRequest arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeData",
 			"(Landroid/view/contentcapture/DataRemovalRequest;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ContentCaptureManager::setContentCaptureEnabled(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setContentCaptureEnabled",
 			"(Z)V",
 			arg0

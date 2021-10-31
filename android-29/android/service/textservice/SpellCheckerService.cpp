@@ -14,30 +14,30 @@ namespace android::service::textservice
 		).object<jstring>();
 	}
 	
-	SpellCheckerService::SpellCheckerService(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SpellCheckerService::SpellCheckerService(QAndroidJniObject obj) : android::app::Service(obj) {}
+	
 	// Constructors
 	SpellCheckerService::SpellCheckerService()
-	{
-		__thiz = QAndroidJniObject(
+		: android::app::Service(
 			"android.service.textservice.SpellCheckerService",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject SpellCheckerService::createSession()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"createSession",
 			"()Landroid/service/textservice/SpellCheckerService$Session;"
 		);
 	}
 	QAndroidJniObject SpellCheckerService::onBind(android::content::Intent arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onBind",
 			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::service::textservice

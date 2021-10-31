@@ -4,20 +4,20 @@ namespace android::accessibilityservice
 {
 	// Fields
 	
-	FingerprintGestureController_FingerprintGestureCallback::FingerprintGestureController_FingerprintGestureCallback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FingerprintGestureController_FingerprintGestureCallback::FingerprintGestureController_FingerprintGestureCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	FingerprintGestureController_FingerprintGestureCallback::FingerprintGestureController_FingerprintGestureCallback()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.accessibilityservice.FingerprintGestureController$FingerprintGestureCallback",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void FingerprintGestureController_FingerprintGestureCallback::onGestureDetected(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onGestureDetected",
 			"(I)V",
 			arg0
@@ -25,7 +25,7 @@ namespace android::accessibilityservice
 	}
 	void FingerprintGestureController_FingerprintGestureCallback::onGestureDetectionAvailabilityChanged(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onGestureDetectionAvailabilityChanged",
 			"(Z)V",
 			arg0

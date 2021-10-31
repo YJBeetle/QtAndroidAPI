@@ -4,7 +4,9 @@ namespace android::media::audiofx
 {
 	// Fields
 	
-	NoiseSuppressor::NoiseSuppressor(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NoiseSuppressor::NoiseSuppressor(QAndroidJniObject obj) : android::media::audiofx::AudioEffect(obj) {}
+	
 	// Constructors
 	
 	// Methods

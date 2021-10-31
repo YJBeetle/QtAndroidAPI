@@ -4,15 +4,15 @@ namespace java::security
 {
 	// Fields
 	
-	KeyFactorySpi::KeyFactorySpi(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	KeyFactorySpi::KeyFactorySpi(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	KeyFactorySpi::KeyFactorySpi()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.security.KeyFactorySpi",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::security

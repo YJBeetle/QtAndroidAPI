@@ -20,7 +20,9 @@ namespace android::icu::text
 		);
 	}
 	
-	CollationElementIterator::CollationElementIterator(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CollationElementIterator::CollationElementIterator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -53,7 +55,7 @@ namespace android::icu::text
 	}
 	jboolean CollationElementIterator::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -61,7 +63,7 @@ namespace android::icu::text
 	}
 	jint CollationElementIterator::getMaxExpansion(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMaxExpansion",
 			"(I)I",
 			arg0
@@ -69,42 +71,42 @@ namespace android::icu::text
 	}
 	jint CollationElementIterator::getOffset()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getOffset",
 			"()I"
 		);
 	}
 	jint CollationElementIterator::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jint CollationElementIterator::next()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"next",
 			"()I"
 		);
 	}
 	jint CollationElementIterator::previous()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"previous",
 			"()I"
 		);
 	}
 	void CollationElementIterator::reset()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
 	void CollationElementIterator::setOffset(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOffset",
 			"(I)V",
 			arg0
@@ -112,15 +114,15 @@ namespace android::icu::text
 	}
 	void CollationElementIterator::setText(android::icu::text::UCharacterIterator arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setText",
 			"(Landroid/icu/text/UCharacterIterator;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void CollationElementIterator::setText(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setText",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -128,10 +130,10 @@ namespace android::icu::text
 	}
 	void CollationElementIterator::setText(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setText",
 			"(Ljava/text/CharacterIterator;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::icu::text

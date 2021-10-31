@@ -27,7 +27,10 @@ namespace android::animation
 		static jint CHANGING();
 		static jint DISAPPEARING();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit LayoutTransition(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		LayoutTransition(QAndroidJniObject obj);
+		
 		// Constructors
 		LayoutTransition();
 		

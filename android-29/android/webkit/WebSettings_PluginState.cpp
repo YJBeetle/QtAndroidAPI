@@ -28,7 +28,9 @@ namespace android::webkit
 		);
 	}
 	
-	WebSettings_PluginState::WebSettings_PluginState(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WebSettings_PluginState::WebSettings_PluginState(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

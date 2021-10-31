@@ -23,9 +23,11 @@ namespace android::app
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Person(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Person(QAndroidJniObject obj);
+		
 		// Constructors
-		Person() = default;
 		
 		// Methods
 		jint describeContents();

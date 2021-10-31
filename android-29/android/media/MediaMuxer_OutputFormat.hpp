@@ -15,9 +15,11 @@ namespace android::media
 		static jint MUXER_OUTPUT_OGG();
 		static jint MUXER_OUTPUT_WEBM();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaMuxer_OutputFormat(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaMuxer_OutputFormat(QAndroidJniObject obj);
+		
 		// Constructors
-		MediaMuxer_OutputFormat() = default;
 		
 		// Methods
 	};

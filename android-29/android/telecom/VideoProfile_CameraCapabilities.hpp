@@ -15,11 +15,13 @@ namespace android::telecom
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit VideoProfile_CameraCapabilities(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		VideoProfile_CameraCapabilities(QAndroidJniObject obj);
+		
 		// Constructors
 		VideoProfile_CameraCapabilities(jint arg0, jint arg1);
 		VideoProfile_CameraCapabilities(jint arg0, jint arg1, jboolean arg2, jfloat arg3);
-		VideoProfile_CameraCapabilities() = default;
 		
 		// Methods
 		jint describeContents();

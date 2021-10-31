@@ -26,7 +26,10 @@ namespace android::media::midi
 		// Fields
 		static jstring SERVICE_INTERFACE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MidiDeviceService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
 		MidiDeviceService(QAndroidJniObject obj);
+		
 		// Constructors
 		MidiDeviceService();
 		

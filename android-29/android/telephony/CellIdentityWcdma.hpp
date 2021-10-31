@@ -16,9 +16,11 @@ namespace android::telephony
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CellIdentityWcdma(const char *className, const char *sig, Ts...agv) : android::telephony::CellIdentity(className, sig, std::forward<Ts>(agv)...) {}
 		CellIdentityWcdma(QAndroidJniObject obj);
+		
 		// Constructors
-		CellIdentityWcdma() = default;
 		
 		// Methods
 		jboolean equals(jobject arg0);

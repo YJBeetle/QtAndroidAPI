@@ -32,13 +32,15 @@ namespace org::apache::http::conn::ssl
 		static QAndroidJniObject STRICT_HOSTNAME_VERIFIER();
 		static jstring TLS();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SSLSocketFactory(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SSLSocketFactory(QAndroidJniObject obj);
+		
 		// Constructors
 		SSLSocketFactory(java::security::KeyStore arg0);
 		SSLSocketFactory(java::security::KeyStore arg0, jstring arg1);
 		SSLSocketFactory(java::security::KeyStore arg0, jstring arg1, java::security::KeyStore arg2);
 		SSLSocketFactory(jstring arg0, java::security::KeyStore arg1, jstring arg2, java::security::KeyStore arg3, java::security::SecureRandom arg4, __JniBaseClass arg5);
-		SSLSocketFactory() = default;
 		
 		// Methods
 		static QAndroidJniObject getSocketFactory();

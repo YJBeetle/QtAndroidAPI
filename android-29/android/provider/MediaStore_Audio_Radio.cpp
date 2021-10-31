@@ -12,7 +12,9 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	MediaStore_Audio_Radio::MediaStore_Audio_Radio(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaStore_Audio_Radio::MediaStore_Audio_Radio(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

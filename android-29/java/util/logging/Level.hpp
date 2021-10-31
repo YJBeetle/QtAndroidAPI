@@ -23,9 +23,11 @@ namespace java::util::logging
 		static QAndroidJniObject SEVERE();
 		static QAndroidJniObject WARNING();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Level(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Level(QAndroidJniObject obj);
+		
 		// Constructors
-		Level() = default;
 		
 		// Methods
 		static QAndroidJniObject parse(jstring arg0);

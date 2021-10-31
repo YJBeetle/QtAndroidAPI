@@ -54,9 +54,11 @@ namespace java::time
 		static QAndroidJniObject MIN();
 		static QAndroidJniObject NOON();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit LocalTime(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		LocalTime(QAndroidJniObject obj);
+		
 		// Constructors
-		LocalTime() = default;
 		
 		// Methods
 		static QAndroidJniObject from(__JniBaseClass arg0);

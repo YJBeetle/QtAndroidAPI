@@ -56,9 +56,11 @@ namespace android::graphics::drawable
 		static jint TYPE_RESOURCE();
 		static jint TYPE_URI();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Icon(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Icon(QAndroidJniObject obj);
+		
 		// Constructors
-		Icon() = default;
 		
 		// Methods
 		static QAndroidJniObject createWithAdaptiveBitmap(android::graphics::Bitmap arg0);

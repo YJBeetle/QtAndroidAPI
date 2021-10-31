@@ -5,30 +5,28 @@ namespace java::security
 {
 	// Fields
 	
-	AccessControlException::AccessControlException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AccessControlException::AccessControlException(QAndroidJniObject obj) : java::lang::SecurityException(obj) {}
+	
 	// Constructors
 	AccessControlException::AccessControlException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::SecurityException(
 			"java.security.AccessControlException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	AccessControlException::AccessControlException(jstring arg0, java::security::Permission arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::SecurityException(
 			"java.security.AccessControlException",
 			"(Ljava/lang/String;Ljava/security/Permission;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
+			arg1.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject AccessControlException::getPermission()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPermission",
 			"()Ljava/security/Permission;"
 		);

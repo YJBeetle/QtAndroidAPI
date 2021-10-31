@@ -15,9 +15,11 @@ namespace android::os
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CpuUsageInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		CpuUsageInfo(QAndroidJniObject obj);
+		
 		// Constructors
-		CpuUsageInfo() = default;
 		
 		// Methods
 		jint describeContents();

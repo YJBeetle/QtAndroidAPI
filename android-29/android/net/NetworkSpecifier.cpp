@@ -4,15 +4,15 @@ namespace android::net
 {
 	// Fields
 	
-	NetworkSpecifier::NetworkSpecifier(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NetworkSpecifier::NetworkSpecifier(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	NetworkSpecifier::NetworkSpecifier()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.net.NetworkSpecifier",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::net

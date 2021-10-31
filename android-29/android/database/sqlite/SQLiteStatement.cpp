@@ -6,55 +6,57 @@ namespace android::database::sqlite
 {
 	// Fields
 	
-	SQLiteStatement::SQLiteStatement(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SQLiteStatement::SQLiteStatement(QAndroidJniObject obj) : android::database::sqlite::SQLiteProgram(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void SQLiteStatement::execute()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"execute",
 			"()V"
 		);
 	}
 	jlong SQLiteStatement::executeInsert()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"executeInsert",
 			"()J"
 		);
 	}
 	jint SQLiteStatement::executeUpdateDelete()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"executeUpdateDelete",
 			"()I"
 		);
 	}
 	QAndroidJniObject SQLiteStatement::simpleQueryForBlobFileDescriptor()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"simpleQueryForBlobFileDescriptor",
 			"()Landroid/os/ParcelFileDescriptor;"
 		);
 	}
 	jlong SQLiteStatement::simpleQueryForLong()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"simpleQueryForLong",
 			"()J"
 		);
 	}
 	jstring SQLiteStatement::simpleQueryForString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"simpleQueryForString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring SQLiteStatement::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

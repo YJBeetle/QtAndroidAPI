@@ -18,52 +18,52 @@ namespace android::print
 		).object<jstring>();
 	}
 	
-	PrintDocumentAdapter::PrintDocumentAdapter(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PrintDocumentAdapter::PrintDocumentAdapter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	PrintDocumentAdapter::PrintDocumentAdapter()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.print.PrintDocumentAdapter",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void PrintDocumentAdapter::onFinish()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onFinish",
 			"()V"
 		);
 	}
 	void PrintDocumentAdapter::onLayout(android::print::PrintAttributes arg0, android::print::PrintAttributes arg1, android::os::CancellationSignal arg2, android::print::PrintDocumentAdapter_LayoutResultCallback arg3, android::os::Bundle arg4)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onLayout",
 			"(Landroid/print/PrintAttributes;Landroid/print/PrintAttributes;Landroid/os/CancellationSignal;Landroid/print/PrintDocumentAdapter$LayoutResultCallback;Landroid/os/Bundle;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object(),
+			arg4.object()
 		);
 	}
 	void PrintDocumentAdapter::onStart()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onStart",
 			"()V"
 		);
 	}
 	void PrintDocumentAdapter::onWrite(jarray arg0, android::os::ParcelFileDescriptor arg1, android::os::CancellationSignal arg2, android::print::PrintDocumentAdapter_WriteResultCallback arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onWrite",
 			"([Landroid/print/PageRange;Landroid/os/ParcelFileDescriptor;Landroid/os/CancellationSignal;Landroid/print/PrintDocumentAdapter$WriteResultCallback;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
 		);
 	}
 } // namespace android::print

@@ -14,61 +14,61 @@ namespace android::app
 	}
 	jlong ActivityManager_MemoryInfo::availMem()
 	{
-		return __thiz.getField<jlong>(
+		return getField<jlong>(
 			"availMem"
 		);
 	}
 	jboolean ActivityManager_MemoryInfo::lowMemory()
 	{
-		return __thiz.getField<jboolean>(
+		return getField<jboolean>(
 			"lowMemory"
 		);
 	}
 	jlong ActivityManager_MemoryInfo::threshold()
 	{
-		return __thiz.getField<jlong>(
+		return getField<jlong>(
 			"threshold"
 		);
 	}
 	jlong ActivityManager_MemoryInfo::totalMem()
 	{
-		return __thiz.getField<jlong>(
+		return getField<jlong>(
 			"totalMem"
 		);
 	}
 	
-	ActivityManager_MemoryInfo::ActivityManager_MemoryInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ActivityManager_MemoryInfo::ActivityManager_MemoryInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ActivityManager_MemoryInfo::ActivityManager_MemoryInfo()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.app.ActivityManager$MemoryInfo",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jint ActivityManager_MemoryInfo::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	void ActivityManager_MemoryInfo::readFromParcel(android::os::Parcel arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"readFromParcel",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ActivityManager_MemoryInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

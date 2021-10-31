@@ -28,9 +28,11 @@ namespace android::location
 		static jint TYPE_GPS_L5CNAV();
 		static jint TYPE_UNKNOWN();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit GnssNavigationMessage(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		GnssNavigationMessage(QAndroidJniObject obj);
+		
 		// Constructors
-		GnssNavigationMessage() = default;
 		
 		// Methods
 		jint describeContents();

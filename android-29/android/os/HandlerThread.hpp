@@ -15,11 +15,13 @@ namespace android::os
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit HandlerThread(const char *className, const char *sig, Ts...agv) : java::lang::Thread(className, sig, std::forward<Ts>(agv)...) {}
 		HandlerThread(QAndroidJniObject obj);
+		
 		// Constructors
 		HandlerThread(jstring arg0);
 		HandlerThread(jstring arg0, jint arg1);
-		HandlerThread() = default;
 		
 		// Methods
 		QAndroidJniObject getLooper();

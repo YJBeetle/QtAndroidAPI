@@ -6,15 +6,15 @@ namespace org::apache::http::conn::ssl
 {
 	// Fields
 	
-	AbstractVerifier::AbstractVerifier(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AbstractVerifier::AbstractVerifier(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	AbstractVerifier::AbstractVerifier()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"org.apache.http.conn.ssl.AbstractVerifier",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean AbstractVerifier::acceptableCountryWildcard(jstring arg0)
@@ -41,7 +41,7 @@ namespace org::apache::http::conn::ssl
 			"org.apache.http.conn.ssl.AbstractVerifier",
 			"getCNs",
 			"(Ljava/security/cert/X509Certificate;)[Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jarray>();
 	}
 	jarray AbstractVerifier::getDNSSubjectAlts(java::security::cert::X509Certificate arg0)
@@ -50,39 +50,39 @@ namespace org::apache::http::conn::ssl
 			"org.apache.http.conn.ssl.AbstractVerifier",
 			"getDNSSubjectAlts",
 			"(Ljava/security/cert/X509Certificate;)[Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jarray>();
 	}
 	jboolean AbstractVerifier::verify(jstring arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"verify",
 			"(Ljava/lang/String;Ljavax/net/ssl/SSLSession;)Z",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void AbstractVerifier::verify(jstring arg0, java::security::cert::X509Certificate arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"verify",
 			"(Ljava/lang/String;Ljava/security/cert/X509Certificate;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void AbstractVerifier::verify(jstring arg0, javax::net::ssl::SSLSocket arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"verify",
 			"(Ljava/lang/String;Ljavax/net/ssl/SSLSocket;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void AbstractVerifier::verify(jstring arg0, jarray arg1, jarray arg2, jboolean arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"verify",
 			"(Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;Z)V",
 			arg0,

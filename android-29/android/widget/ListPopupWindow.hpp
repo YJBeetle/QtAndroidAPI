@@ -41,13 +41,15 @@ namespace android::widget
 		static jint POSITION_PROMPT_BELOW();
 		static jint WRAP_CONTENT();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ListPopupWindow(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ListPopupWindow(QAndroidJniObject obj);
+		
 		// Constructors
 		ListPopupWindow(android::content::Context arg0);
 		ListPopupWindow(android::content::Context arg0, __JniBaseClass arg1);
 		ListPopupWindow(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		ListPopupWindow(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
-		ListPopupWindow() = default;
 		
 		// Methods
 		void clearListSelection();

@@ -10,13 +10,15 @@ namespace android::media::audiofx
 {
 	// Fields
 	
-	DynamicsProcessing_Config::DynamicsProcessing_Config(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DynamicsProcessing_Config::DynamicsProcessing_Config(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject DynamicsProcessing_Config::getChannelByChannelIndex(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getChannelByChannelIndex",
 			"(I)Landroid/media/audiofx/DynamicsProcessing$Channel;",
 			arg0
@@ -24,7 +26,7 @@ namespace android::media::audiofx
 	}
 	jfloat DynamicsProcessing_Config::getInputGainByChannelIndex(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getInputGainByChannelIndex",
 			"(I)F",
 			arg0
@@ -32,7 +34,7 @@ namespace android::media::audiofx
 	}
 	QAndroidJniObject DynamicsProcessing_Config::getLimiterByChannelIndex(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLimiterByChannelIndex",
 			"(I)Landroid/media/audiofx/DynamicsProcessing$Limiter;",
 			arg0
@@ -40,7 +42,7 @@ namespace android::media::audiofx
 	}
 	QAndroidJniObject DynamicsProcessing_Config::getMbcBandByChannelIndex(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMbcBandByChannelIndex",
 			"(II)Landroid/media/audiofx/DynamicsProcessing$MbcBand;",
 			arg0,
@@ -49,14 +51,14 @@ namespace android::media::audiofx
 	}
 	jint DynamicsProcessing_Config::getMbcBandCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMbcBandCount",
 			"()I"
 		);
 	}
 	QAndroidJniObject DynamicsProcessing_Config::getMbcByChannelIndex(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMbcByChannelIndex",
 			"(I)Landroid/media/audiofx/DynamicsProcessing$Mbc;",
 			arg0
@@ -64,7 +66,7 @@ namespace android::media::audiofx
 	}
 	QAndroidJniObject DynamicsProcessing_Config::getPostEqBandByChannelIndex(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPostEqBandByChannelIndex",
 			"(II)Landroid/media/audiofx/DynamicsProcessing$EqBand;",
 			arg0,
@@ -73,14 +75,14 @@ namespace android::media::audiofx
 	}
 	jint DynamicsProcessing_Config::getPostEqBandCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPostEqBandCount",
 			"()I"
 		);
 	}
 	QAndroidJniObject DynamicsProcessing_Config::getPostEqByChannelIndex(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPostEqByChannelIndex",
 			"(I)Landroid/media/audiofx/DynamicsProcessing$Eq;",
 			arg0
@@ -88,7 +90,7 @@ namespace android::media::audiofx
 	}
 	QAndroidJniObject DynamicsProcessing_Config::getPreEqBandByChannelIndex(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPreEqBandByChannelIndex",
 			"(II)Landroid/media/audiofx/DynamicsProcessing$EqBand;",
 			arg0,
@@ -97,14 +99,14 @@ namespace android::media::audiofx
 	}
 	jint DynamicsProcessing_Config::getPreEqBandCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPreEqBandCount",
 			"()I"
 		);
 	}
 	QAndroidJniObject DynamicsProcessing_Config::getPreEqByChannelIndex(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPreEqByChannelIndex",
 			"(I)Landroid/media/audiofx/DynamicsProcessing$Eq;",
 			arg0
@@ -112,66 +114,66 @@ namespace android::media::audiofx
 	}
 	jfloat DynamicsProcessing_Config::getPreferredFrameDuration()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getPreferredFrameDuration",
 			"()F"
 		);
 	}
 	jint DynamicsProcessing_Config::getVariant()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getVariant",
 			"()I"
 		);
 	}
 	jboolean DynamicsProcessing_Config::isLimiterInUse()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isLimiterInUse",
 			"()Z"
 		);
 	}
 	jboolean DynamicsProcessing_Config::isMbcInUse()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isMbcInUse",
 			"()Z"
 		);
 	}
 	jboolean DynamicsProcessing_Config::isPostEqInUse()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isPostEqInUse",
 			"()Z"
 		);
 	}
 	jboolean DynamicsProcessing_Config::isPreEqInUse()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isPreEqInUse",
 			"()Z"
 		);
 	}
 	void DynamicsProcessing_Config::setAllChannelsTo(android::media::audiofx::DynamicsProcessing_Channel arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAllChannelsTo",
 			"(Landroid/media/audiofx/DynamicsProcessing$Channel;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void DynamicsProcessing_Config::setChannelTo(jint arg0, android::media::audiofx::DynamicsProcessing_Channel arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setChannelTo",
 			"(ILandroid/media/audiofx/DynamicsProcessing$Channel;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void DynamicsProcessing_Config::setInputGainAllChannelsTo(jfloat arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setInputGainAllChannelsTo",
 			"(F)V",
 			arg0
@@ -179,7 +181,7 @@ namespace android::media::audiofx
 	}
 	void DynamicsProcessing_Config::setInputGainByChannelIndex(jint arg0, jfloat arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setInputGainByChannelIndex",
 			"(IF)V",
 			arg0,
@@ -188,132 +190,132 @@ namespace android::media::audiofx
 	}
 	void DynamicsProcessing_Config::setLimiterAllChannelsTo(android::media::audiofx::DynamicsProcessing_Limiter arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLimiterAllChannelsTo",
 			"(Landroid/media/audiofx/DynamicsProcessing$Limiter;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void DynamicsProcessing_Config::setLimiterByChannelIndex(jint arg0, android::media::audiofx::DynamicsProcessing_Limiter arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLimiterByChannelIndex",
 			"(ILandroid/media/audiofx/DynamicsProcessing$Limiter;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void DynamicsProcessing_Config::setMbcAllChannelsTo(android::media::audiofx::DynamicsProcessing_Mbc arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMbcAllChannelsTo",
 			"(Landroid/media/audiofx/DynamicsProcessing$Mbc;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void DynamicsProcessing_Config::setMbcBandAllChannelsTo(jint arg0, android::media::audiofx::DynamicsProcessing_MbcBand arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMbcBandAllChannelsTo",
 			"(ILandroid/media/audiofx/DynamicsProcessing$MbcBand;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void DynamicsProcessing_Config::setMbcBandByChannelIndex(jint arg0, jint arg1, android::media::audiofx::DynamicsProcessing_MbcBand arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMbcBandByChannelIndex",
 			"(IILandroid/media/audiofx/DynamicsProcessing$MbcBand;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void DynamicsProcessing_Config::setMbcByChannelIndex(jint arg0, android::media::audiofx::DynamicsProcessing_Mbc arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMbcByChannelIndex",
 			"(ILandroid/media/audiofx/DynamicsProcessing$Mbc;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void DynamicsProcessing_Config::setPostEqAllChannelsTo(android::media::audiofx::DynamicsProcessing_Eq arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPostEqAllChannelsTo",
 			"(Landroid/media/audiofx/DynamicsProcessing$Eq;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void DynamicsProcessing_Config::setPostEqBandAllChannelsTo(jint arg0, android::media::audiofx::DynamicsProcessing_EqBand arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPostEqBandAllChannelsTo",
 			"(ILandroid/media/audiofx/DynamicsProcessing$EqBand;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void DynamicsProcessing_Config::setPostEqBandByChannelIndex(jint arg0, jint arg1, android::media::audiofx::DynamicsProcessing_EqBand arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPostEqBandByChannelIndex",
 			"(IILandroid/media/audiofx/DynamicsProcessing$EqBand;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void DynamicsProcessing_Config::setPostEqByChannelIndex(jint arg0, android::media::audiofx::DynamicsProcessing_Eq arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPostEqByChannelIndex",
 			"(ILandroid/media/audiofx/DynamicsProcessing$Eq;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void DynamicsProcessing_Config::setPreEqAllChannelsTo(android::media::audiofx::DynamicsProcessing_Eq arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPreEqAllChannelsTo",
 			"(Landroid/media/audiofx/DynamicsProcessing$Eq;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void DynamicsProcessing_Config::setPreEqBandAllChannelsTo(jint arg0, android::media::audiofx::DynamicsProcessing_EqBand arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPreEqBandAllChannelsTo",
 			"(ILandroid/media/audiofx/DynamicsProcessing$EqBand;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void DynamicsProcessing_Config::setPreEqBandByChannelIndex(jint arg0, jint arg1, android::media::audiofx::DynamicsProcessing_EqBand arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPreEqBandByChannelIndex",
 			"(IILandroid/media/audiofx/DynamicsProcessing$EqBand;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void DynamicsProcessing_Config::setPreEqByChannelIndex(jint arg0, android::media::audiofx::DynamicsProcessing_Eq arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPreEqByChannelIndex",
 			"(ILandroid/media/audiofx/DynamicsProcessing$Eq;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jstring DynamicsProcessing_Config::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

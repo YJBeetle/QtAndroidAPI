@@ -39,7 +39,9 @@ namespace android::view
 		);
 	}
 	
-	SoundEffectConstants::SoundEffectConstants(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SoundEffectConstants::SoundEffectConstants(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

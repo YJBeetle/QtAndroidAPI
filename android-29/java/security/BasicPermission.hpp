@@ -23,11 +23,13 @@ namespace java::security
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BasicPermission(const char *className, const char *sig, Ts...agv) : java::security::Permission(className, sig, std::forward<Ts>(agv)...) {}
 		BasicPermission(QAndroidJniObject obj);
+		
 		// Constructors
 		BasicPermission(jstring arg0);
 		BasicPermission(jstring arg0, jstring arg1);
-		BasicPermission() = default;
 		
 		// Methods
 		jboolean equals(jobject arg0);

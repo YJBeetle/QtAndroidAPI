@@ -4,16 +4,16 @@ namespace android::renderscript
 {
 	// Fields
 	
-	RSInvalidStateException::RSInvalidStateException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	RSInvalidStateException::RSInvalidStateException(QAndroidJniObject obj) : android::renderscript::RSRuntimeException(obj) {}
+	
 	// Constructors
 	RSInvalidStateException::RSInvalidStateException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::renderscript::RSRuntimeException(
 			"android.renderscript.RSInvalidStateException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::renderscript

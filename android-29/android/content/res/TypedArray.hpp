@@ -30,9 +30,11 @@ namespace android::content::res
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TypedArray(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		TypedArray(QAndroidJniObject obj);
+		
 		// Constructors
-		TypedArray() = default;
 		
 		// Methods
 		jboolean getBoolean(jint arg0, jboolean arg1);

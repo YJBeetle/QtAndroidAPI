@@ -7,47 +7,45 @@ namespace android::widget
 {
 	// Fields
 	
-	TextSwitcher::TextSwitcher(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TextSwitcher::TextSwitcher(QAndroidJniObject obj) : android::widget::ViewSwitcher(obj) {}
+	
 	// Constructors
 	TextSwitcher::TextSwitcher(android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::ViewSwitcher(
 			"android.widget.TextSwitcher",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	TextSwitcher::TextSwitcher(android::content::Context arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::ViewSwitcher(
 			"android.widget.TextSwitcher",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	
 	// Methods
 	void TextSwitcher::addView(android::view::View arg0, jint arg1, android::view::ViewGroup_LayoutParams arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addView",
 			"(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	jstring TextSwitcher::getAccessibilityClassName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	void TextSwitcher::setCurrentText(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCurrentText",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
@@ -55,7 +53,7 @@ namespace android::widget
 	}
 	void TextSwitcher::setText(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setText",
 			"(Ljava/lang/CharSequence;)V",
 			arg0

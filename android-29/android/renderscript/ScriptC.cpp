@@ -6,7 +6,9 @@ namespace android::renderscript
 {
 	// Fields
 	
-	ScriptC::ScriptC(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ScriptC::ScriptC(QAndroidJniObject obj) : android::renderscript::Script(obj) {}
+	
 	// Constructors
 	
 	// Methods

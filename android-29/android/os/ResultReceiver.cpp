@@ -15,40 +15,40 @@ namespace android::os
 		);
 	}
 	
-	ResultReceiver::ResultReceiver(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ResultReceiver::ResultReceiver(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ResultReceiver::ResultReceiver(android::os::Handler arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.os.ResultReceiver",
 			"(Landroid/os/Handler;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jint ResultReceiver::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	void ResultReceiver::send(jint arg0, android::os::Bundle arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"send",
 			"(ILandroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void ResultReceiver::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

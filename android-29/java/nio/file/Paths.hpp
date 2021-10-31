@@ -14,9 +14,11 @@ namespace java::nio::file
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Paths(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Paths(QAndroidJniObject obj);
+		
 		// Constructors
-		Paths() = default;
 		
 		// Methods
 		static QAndroidJniObject get(java::net::URI arg0);

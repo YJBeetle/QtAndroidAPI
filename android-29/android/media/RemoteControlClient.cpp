@@ -141,30 +141,28 @@ namespace android::media
 		);
 	}
 	
-	RemoteControlClient::RemoteControlClient(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	RemoteControlClient::RemoteControlClient(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	RemoteControlClient::RemoteControlClient(android::app::PendingIntent arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.RemoteControlClient",
 			"(Landroid/app/PendingIntent;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	RemoteControlClient::RemoteControlClient(android::app::PendingIntent arg0, android::os::Looper arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.RemoteControlClient",
 			"(Landroid/app/PendingIntent;Landroid/os/Looper;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject RemoteControlClient::editMetadata(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"editMetadata",
 			"(Z)Landroid/media/RemoteControlClient$MetadataEditor;",
 			arg0
@@ -172,38 +170,38 @@ namespace android::media
 	}
 	QAndroidJniObject RemoteControlClient::getMediaSession()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMediaSession",
 			"()Landroid/media/session/MediaSession;"
 		);
 	}
 	void RemoteControlClient::setMetadataUpdateListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMetadataUpdateListener",
 			"(Landroid/media/RemoteControlClient$OnMetadataUpdateListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void RemoteControlClient::setOnGetPlaybackPositionListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnGetPlaybackPositionListener",
 			"(Landroid/media/RemoteControlClient$OnGetPlaybackPositionListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void RemoteControlClient::setPlaybackPositionUpdateListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPlaybackPositionUpdateListener",
 			"(Landroid/media/RemoteControlClient$OnPlaybackPositionUpdateListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void RemoteControlClient::setPlaybackState(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPlaybackState",
 			"(I)V",
 			arg0
@@ -211,7 +209,7 @@ namespace android::media
 	}
 	void RemoteControlClient::setPlaybackState(jint arg0, jlong arg1, jfloat arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPlaybackState",
 			"(IJF)V",
 			arg0,
@@ -221,7 +219,7 @@ namespace android::media
 	}
 	void RemoteControlClient::setTransportControlFlags(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTransportControlFlags",
 			"(I)V",
 			arg0

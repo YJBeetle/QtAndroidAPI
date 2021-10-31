@@ -8,153 +8,151 @@ namespace android::inputmethodservice
 	// Fields
 	jintArray Keyboard_Key::codes()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"codes",
 			"[I"
 		).object<jintArray>();
 	}
 	jint Keyboard_Key::edgeFlags()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"edgeFlags"
 		);
 	}
 	jint Keyboard_Key::gap()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"gap"
 		);
 	}
 	jint Keyboard_Key::height()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"height"
 		);
 	}
 	QAndroidJniObject Keyboard_Key::icon()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"icon",
 			"Landroid/graphics/drawable/Drawable;"
 		);
 	}
 	QAndroidJniObject Keyboard_Key::iconPreview()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"iconPreview",
 			"Landroid/graphics/drawable/Drawable;"
 		);
 	}
 	jstring Keyboard_Key::label()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"label",
 			"Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jboolean Keyboard_Key::modifier()
 	{
-		return __thiz.getField<jboolean>(
+		return getField<jboolean>(
 			"modifier"
 		);
 	}
 	jboolean Keyboard_Key::on()
 	{
-		return __thiz.getField<jboolean>(
+		return getField<jboolean>(
 			"on"
 		);
 	}
 	jstring Keyboard_Key::popupCharacters()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"popupCharacters",
 			"Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jint Keyboard_Key::popupResId()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"popupResId"
 		);
 	}
 	jboolean Keyboard_Key::pressed()
 	{
-		return __thiz.getField<jboolean>(
+		return getField<jboolean>(
 			"pressed"
 		);
 	}
 	jboolean Keyboard_Key::repeatable()
 	{
-		return __thiz.getField<jboolean>(
+		return getField<jboolean>(
 			"repeatable"
 		);
 	}
 	jboolean Keyboard_Key::sticky()
 	{
-		return __thiz.getField<jboolean>(
+		return getField<jboolean>(
 			"sticky"
 		);
 	}
 	jstring Keyboard_Key::text()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"text",
 			"Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jint Keyboard_Key::width()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"width"
 		);
 	}
 	jint Keyboard_Key::x()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"x"
 		);
 	}
 	jint Keyboard_Key::y()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"y"
 		);
 	}
 	
-	Keyboard_Key::Keyboard_Key(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Keyboard_Key::Keyboard_Key(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Keyboard_Key::Keyboard_Key(android::inputmethodservice::Keyboard_Row arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.inputmethodservice.Keyboard$Key",
 			"(Landroid/inputmethodservice/Keyboard$Row;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	Keyboard_Key::Keyboard_Key(android::content::res::Resources arg0, android::inputmethodservice::Keyboard_Row arg1, jint arg2, jint arg3, __JniBaseClass arg4)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.inputmethodservice.Keyboard$Key",
 			"(Landroid/content/res/Resources;Landroid/inputmethodservice/Keyboard$Row;IILandroid/content/res/XmlResourceParser;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3,
-			arg4.__jniObject().object()
-		);
-	}
+			arg4.object()
+		) {}
 	
 	// Methods
 	jintArray Keyboard_Key::getCurrentDrawableState()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCurrentDrawableState",
 			"()[I"
 		).object<jintArray>();
 	}
 	jboolean Keyboard_Key::isInside(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isInside",
 			"(II)Z",
 			arg0,
@@ -163,14 +161,14 @@ namespace android::inputmethodservice
 	}
 	void Keyboard_Key::onPressed()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onPressed",
 			"()V"
 		);
 	}
 	void Keyboard_Key::onReleased(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onReleased",
 			"(Z)V",
 			arg0
@@ -178,7 +176,7 @@ namespace android::inputmethodservice
 	}
 	jint Keyboard_Key::squaredDistanceFrom(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"squaredDistanceFrom",
 			"(II)I",
 			arg0,

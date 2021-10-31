@@ -18,7 +18,9 @@ namespace android::os::health
 		);
 	}
 	
-	PackageHealthStats::PackageHealthStats(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PackageHealthStats::PackageHealthStats(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

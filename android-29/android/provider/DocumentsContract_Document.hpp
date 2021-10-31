@@ -34,9 +34,11 @@ namespace android::provider
 		static jint FLAG_WEB_LINKABLE();
 		static jstring MIME_TYPE_DIR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DocumentsContract_Document(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DocumentsContract_Document(QAndroidJniObject obj);
+		
 		// Constructors
-		DocumentsContract_Document() = default;
 		
 		// Methods
 	};

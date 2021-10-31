@@ -48,7 +48,10 @@ namespace android::icu::text
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PluralFormat(const char *className, const char *sig, Ts...agv) : android::icu::text::UFormat(className, sig, std::forward<Ts>(agv)...) {}
 		PluralFormat(QAndroidJniObject obj);
+		
 		// Constructors
 		PluralFormat();
 		PluralFormat(android::icu::text::PluralRules arg0);

@@ -19,11 +19,13 @@ namespace java::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PropertyResourceBundle(const char *className, const char *sig, Ts...agv) : java::util::ResourceBundle(className, sig, std::forward<Ts>(agv)...) {}
 		PropertyResourceBundle(QAndroidJniObject obj);
+		
 		// Constructors
 		PropertyResourceBundle(java::io::InputStream arg0);
 		PropertyResourceBundle(java::io::Reader arg0);
-		PropertyResourceBundle() = default;
 		
 		// Methods
 		QAndroidJniObject getKeys();

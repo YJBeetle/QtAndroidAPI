@@ -13,46 +13,46 @@ namespace android::view::textclassifier
 		);
 	}
 	
-	ConversationActions::ConversationActions(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ConversationActions::ConversationActions(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ConversationActions::ConversationActions(__JniBaseClass arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.textclassifier.ConversationActions",
 			"(Ljava/util/List;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jint ConversationActions::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	QAndroidJniObject ConversationActions::getConversationActions()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getConversationActions",
 			"()Ljava/util/List;"
 		);
 	}
 	jstring ConversationActions::getId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void ConversationActions::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

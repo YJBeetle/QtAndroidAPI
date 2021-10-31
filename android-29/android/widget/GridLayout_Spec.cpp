@@ -5,13 +5,15 @@ namespace android::widget
 {
 	// Fields
 	
-	GridLayout_Spec::GridLayout_Spec(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	GridLayout_Spec::GridLayout_Spec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jboolean GridLayout_Spec::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -19,7 +21,7 @@ namespace android::widget
 	}
 	jint GridLayout_Spec::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);

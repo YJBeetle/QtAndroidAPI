@@ -5,25 +5,23 @@ namespace java::lang::ref
 {
 	// Fields
 	
-	WeakReference::WeakReference(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WeakReference::WeakReference(QAndroidJniObject obj) : java::lang::ref::Reference(obj) {}
+	
 	// Constructors
 	WeakReference::WeakReference(jobject arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::ref::Reference(
 			"java.lang.ref.WeakReference",
 			"(Ljava/lang/Object;)V",
 			arg0
-		);
-	}
+		) {}
 	WeakReference::WeakReference(jobject arg0, java::lang::ref::ReferenceQueue arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::ref::Reference(
 			"java.lang.ref.WeakReference",
 			"(Ljava/lang/Object;Ljava/lang/ref/ReferenceQueue;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
+			arg1.object()
+		) {}
 	
 	// Methods
 } // namespace java::lang::ref

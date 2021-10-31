@@ -6,48 +6,50 @@ namespace android::se::omapi
 {
 	// Fields
 	
-	Session::Session(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Session::Session(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void Session::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	void Session::closeChannels()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"closeChannels",
 			"()V"
 		);
 	}
 	jbyteArray Session::getATR()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getATR",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	QAndroidJniObject Session::getReader()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getReader",
 			"()Landroid/se/omapi/Reader;"
 		);
 	}
 	jboolean Session::isClosed()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isClosed",
 			"()Z"
 		);
 	}
 	QAndroidJniObject Session::openBasicChannel(jbyteArray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"openBasicChannel",
 			"([B)Landroid/se/omapi/Channel;",
 			arg0
@@ -55,7 +57,7 @@ namespace android::se::omapi
 	}
 	QAndroidJniObject Session::openBasicChannel(jbyteArray arg0, jbyte arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"openBasicChannel",
 			"([BB)Landroid/se/omapi/Channel;",
 			arg0,
@@ -64,7 +66,7 @@ namespace android::se::omapi
 	}
 	QAndroidJniObject Session::openLogicalChannel(jbyteArray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"openLogicalChannel",
 			"([B)Landroid/se/omapi/Channel;",
 			arg0
@@ -72,7 +74,7 @@ namespace android::se::omapi
 	}
 	QAndroidJniObject Session::openLogicalChannel(jbyteArray arg0, jbyte arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"openLogicalChannel",
 			"([BB)Landroid/se/omapi/Channel;",
 			arg0,

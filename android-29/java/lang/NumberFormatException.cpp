@@ -4,23 +4,21 @@ namespace java::lang
 {
 	// Fields
 	
-	NumberFormatException::NumberFormatException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NumberFormatException::NumberFormatException(QAndroidJniObject obj) : java::lang::IllegalArgumentException(obj) {}
+	
 	// Constructors
 	NumberFormatException::NumberFormatException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::IllegalArgumentException(
 			"java.lang.NumberFormatException",
 			"()V"
-		);
-	}
+		) {}
 	NumberFormatException::NumberFormatException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::IllegalArgumentException(
 			"java.lang.NumberFormatException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::lang

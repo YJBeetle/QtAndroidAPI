@@ -28,7 +28,9 @@ namespace java::security
 		);
 	}
 	
-	KeyRep_Type::KeyRep_Type(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	KeyRep_Type::KeyRep_Type(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

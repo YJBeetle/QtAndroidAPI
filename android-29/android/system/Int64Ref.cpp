@@ -5,21 +5,21 @@ namespace android::system
 	// Fields
 	jlong Int64Ref::value()
 	{
-		return __thiz.getField<jlong>(
+		return getField<jlong>(
 			"value"
 		);
 	}
 	
-	Int64Ref::Int64Ref(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Int64Ref::Int64Ref(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Int64Ref::Int64Ref(jlong arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.system.Int64Ref",
 			"(J)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::system

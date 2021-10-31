@@ -16,76 +16,76 @@ namespace android::media
 		).object<jstring>();
 	}
 	
-	MediaSession2Service::MediaSession2Service(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaSession2Service::MediaSession2Service(QAndroidJniObject obj) : android::app::Service(obj) {}
+	
 	// Constructors
 	MediaSession2Service::MediaSession2Service()
-	{
-		__thiz = QAndroidJniObject(
+		: android::app::Service(
 			"android.media.MediaSession2Service",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void MediaSession2Service::addSession(android::media::MediaSession2 arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addSession",
 			"(Landroid/media/MediaSession2;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject MediaSession2Service::getSessions()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSessions",
 			"()Ljava/util/List;"
 		);
 	}
 	QAndroidJniObject MediaSession2Service::onBind(android::content::Intent arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onBind",
 			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaSession2Service::onCreate()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onCreate",
 			"()V"
 		);
 	}
 	void MediaSession2Service::onDestroy()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onDestroy",
 			"()V"
 		);
 	}
 	QAndroidJniObject MediaSession2Service::onGetSession(android::media::MediaSession2_ControllerInfo arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onGetSession",
 			"(Landroid/media/MediaSession2$ControllerInfo;)Landroid/media/MediaSession2;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject MediaSession2Service::onUpdateNotification(android::media::MediaSession2 arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onUpdateNotification",
 			"(Landroid/media/MediaSession2;)Landroid/media/MediaSession2Service$MediaNotification;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaSession2Service::removeSession(android::media::MediaSession2 arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeSession",
 			"(Landroid/media/MediaSession2;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::media

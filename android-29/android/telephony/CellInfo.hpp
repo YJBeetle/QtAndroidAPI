@@ -21,9 +21,11 @@ namespace android::telephony
 		static jint UNAVAILABLE();
 		static jlong UNAVAILABLE_LONG();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CellInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		CellInfo(QAndroidJniObject obj);
+		
 		// Constructors
-		CellInfo() = default;
 		
 		// Methods
 		jint describeContents();

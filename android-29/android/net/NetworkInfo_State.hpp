@@ -17,9 +17,11 @@ namespace android::net
 		static QAndroidJniObject SUSPENDED();
 		static QAndroidJniObject UNKNOWN();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit NetworkInfo_State(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		NetworkInfo_State(QAndroidJniObject obj);
+		
 		// Constructors
-		NetworkInfo_State() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

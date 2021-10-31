@@ -4,27 +4,27 @@ namespace android::database
 {
 	// Fields
 	
-	DataSetObservable::DataSetObservable(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DataSetObservable::DataSetObservable(QAndroidJniObject obj) : android::database::Observable(obj) {}
+	
 	// Constructors
 	DataSetObservable::DataSetObservable()
-	{
-		__thiz = QAndroidJniObject(
+		: android::database::Observable(
 			"android.database.DataSetObservable",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void DataSetObservable::notifyChanged()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"notifyChanged",
 			"()V"
 		);
 	}
 	void DataSetObservable::notifyInvalidated()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"notifyInvalidated",
 			"()V"
 		);

@@ -5,7 +5,9 @@ namespace android::webkit
 {
 	// Fields
 	
-	CookieSyncManager::CookieSyncManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CookieSyncManager::CookieSyncManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -15,7 +17,7 @@ namespace android::webkit
 			"android.webkit.CookieSyncManager",
 			"createInstance",
 			"(Landroid/content/Context;)Landroid/webkit/CookieSyncManager;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject CookieSyncManager::getInstance()
@@ -28,35 +30,35 @@ namespace android::webkit
 	}
 	void CookieSyncManager::resetSync()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"resetSync",
 			"()V"
 		);
 	}
 	void CookieSyncManager::run()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"run",
 			"()V"
 		);
 	}
 	void CookieSyncManager::startSync()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"startSync",
 			"()V"
 		);
 	}
 	void CookieSyncManager::stopSync()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"stopSync",
 			"()V"
 		);
 	}
 	void CookieSyncManager::sync()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"sync",
 			"()V"
 		);

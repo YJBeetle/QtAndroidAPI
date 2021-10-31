@@ -4,7 +4,9 @@ namespace android::util
 {
 	// Fields
 	
-	StatsLog::StatsLog(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	StatsLog::StatsLog(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

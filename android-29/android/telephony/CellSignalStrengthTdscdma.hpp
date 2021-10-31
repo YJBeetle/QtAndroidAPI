@@ -16,9 +16,11 @@ namespace android::telephony
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CellSignalStrengthTdscdma(const char *className, const char *sig, Ts...agv) : android::telephony::CellSignalStrength(className, sig, std::forward<Ts>(agv)...) {}
 		CellSignalStrengthTdscdma(QAndroidJniObject obj);
+		
 		// Constructors
-		CellSignalStrengthTdscdma() = default;
 		
 		// Methods
 		jint describeContents();

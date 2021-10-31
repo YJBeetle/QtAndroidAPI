@@ -4,19 +4,18 @@ namespace android::media::audiofx
 {
 	// Fields
 	
-	DynamicsProcessing_Limiter::DynamicsProcessing_Limiter(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DynamicsProcessing_Limiter::DynamicsProcessing_Limiter(QAndroidJniObject obj) : android::media::audiofx::DynamicsProcessing_Stage(obj) {}
+	
 	// Constructors
 	DynamicsProcessing_Limiter::DynamicsProcessing_Limiter(android::media::audiofx::DynamicsProcessing_Limiter &arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::media::audiofx::DynamicsProcessing_Stage(
 			"android.media.audiofx.DynamicsProcessing$Limiter",
 			"(Landroid/media/audiofx/DynamicsProcessing$Limiter;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	DynamicsProcessing_Limiter::DynamicsProcessing_Limiter(jboolean arg0, jboolean arg1, jint arg2, jfloat arg3, jfloat arg4, jfloat arg5, jfloat arg6, jfloat arg7)
-	{
-		__thiz = QAndroidJniObject(
+		: android::media::audiofx::DynamicsProcessing_Stage(
 			"android.media.audiofx.DynamicsProcessing$Limiter",
 			"(ZZIFFFFF)V",
 			arg0,
@@ -27,55 +26,54 @@ namespace android::media::audiofx
 			arg5,
 			arg6,
 			arg7
-		);
-	}
+		) {}
 	
 	// Methods
 	jfloat DynamicsProcessing_Limiter::getAttackTime()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getAttackTime",
 			"()F"
 		);
 	}
 	jint DynamicsProcessing_Limiter::getLinkGroup()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLinkGroup",
 			"()I"
 		);
 	}
 	jfloat DynamicsProcessing_Limiter::getPostGain()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getPostGain",
 			"()F"
 		);
 	}
 	jfloat DynamicsProcessing_Limiter::getRatio()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getRatio",
 			"()F"
 		);
 	}
 	jfloat DynamicsProcessing_Limiter::getReleaseTime()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getReleaseTime",
 			"()F"
 		);
 	}
 	jfloat DynamicsProcessing_Limiter::getThreshold()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getThreshold",
 			"()F"
 		);
 	}
 	void DynamicsProcessing_Limiter::setAttackTime(jfloat arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAttackTime",
 			"(F)V",
 			arg0
@@ -83,7 +81,7 @@ namespace android::media::audiofx
 	}
 	void DynamicsProcessing_Limiter::setLinkGroup(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLinkGroup",
 			"(I)V",
 			arg0
@@ -91,7 +89,7 @@ namespace android::media::audiofx
 	}
 	void DynamicsProcessing_Limiter::setPostGain(jfloat arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPostGain",
 			"(F)V",
 			arg0
@@ -99,7 +97,7 @@ namespace android::media::audiofx
 	}
 	void DynamicsProcessing_Limiter::setRatio(jfloat arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setRatio",
 			"(F)V",
 			arg0
@@ -107,7 +105,7 @@ namespace android::media::audiofx
 	}
 	void DynamicsProcessing_Limiter::setReleaseTime(jfloat arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setReleaseTime",
 			"(F)V",
 			arg0
@@ -115,7 +113,7 @@ namespace android::media::audiofx
 	}
 	void DynamicsProcessing_Limiter::setThreshold(jfloat arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setThreshold",
 			"(F)V",
 			arg0
@@ -123,7 +121,7 @@ namespace android::media::audiofx
 	}
 	jstring DynamicsProcessing_Limiter::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

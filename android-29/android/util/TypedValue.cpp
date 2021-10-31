@@ -286,63 +286,63 @@ namespace android::util
 	}
 	jint TypedValue::assetCookie()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"assetCookie"
 		);
 	}
 	jint TypedValue::changingConfigurations()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"changingConfigurations"
 		);
 	}
 	jint TypedValue::data()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"data"
 		);
 	}
 	jint TypedValue::density()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"density"
 		);
 	}
 	jint TypedValue::resourceId()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"resourceId"
 		);
 	}
 	jint TypedValue::sourceResourceId()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"sourceResourceId"
 		);
 	}
 	jstring TypedValue::string()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"string",
 			"Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jint TypedValue::type()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"type"
 		);
 	}
 	
-	TypedValue::TypedValue(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TypedValue::TypedValue(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	TypedValue::TypedValue()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.util.TypedValue",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jfloat TypedValue::applyDimension(jint arg0, jfloat arg1, android::util::DisplayMetrics arg2)
@@ -353,7 +353,7 @@ namespace android::util
 			"(IFLandroid/util/DisplayMetrics;)F",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	jstring TypedValue::coerceToString(jint arg0, jint arg1)
@@ -373,7 +373,7 @@ namespace android::util
 			"complexToDimension",
 			"(ILandroid/util/DisplayMetrics;)F",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jint TypedValue::complexToDimensionPixelOffset(jint arg0, android::util::DisplayMetrics arg1)
@@ -383,7 +383,7 @@ namespace android::util
 			"complexToDimensionPixelOffset",
 			"(ILandroid/util/DisplayMetrics;)I",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jint TypedValue::complexToDimensionPixelSize(jint arg0, android::util::DisplayMetrics arg1)
@@ -393,7 +393,7 @@ namespace android::util
 			"complexToDimensionPixelSize",
 			"(ILandroid/util/DisplayMetrics;)I",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jfloat TypedValue::complexToFloat(jint arg0)
@@ -418,36 +418,36 @@ namespace android::util
 	}
 	jstring TypedValue::coerceToString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"coerceToString",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jint TypedValue::getComplexUnit()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getComplexUnit",
 			"()I"
 		);
 	}
 	jfloat TypedValue::getDimension(android::util::DisplayMetrics arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getDimension",
 			"(Landroid/util/DisplayMetrics;)F",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jfloat TypedValue::getFloat()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getFloat",
 			"()F"
 		);
 	}
 	jfloat TypedValue::getFraction(jfloat arg0, jfloat arg1)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getFraction",
 			"(FF)F",
 			arg0,
@@ -456,22 +456,22 @@ namespace android::util
 	}
 	jboolean TypedValue::isColorType()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isColorType",
 			"()Z"
 		);
 	}
 	void TypedValue::setTo(android::util::TypedValue arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTo",
 			"(Landroid/util/TypedValue;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring TypedValue::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

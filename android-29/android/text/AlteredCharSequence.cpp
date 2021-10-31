@@ -4,7 +4,9 @@ namespace android::text
 {
 	// Fields
 	
-	AlteredCharSequence::AlteredCharSequence(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AlteredCharSequence::AlteredCharSequence(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -22,7 +24,7 @@ namespace android::text
 	}
 	jchar AlteredCharSequence::charAt(jint arg0)
 	{
-		return __thiz.callMethod<jchar>(
+		return callMethod<jchar>(
 			"charAt",
 			"(I)C",
 			arg0
@@ -30,7 +32,7 @@ namespace android::text
 	}
 	void AlteredCharSequence::getChars(jint arg0, jint arg1, jcharArray arg2, jint arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"getChars",
 			"(II[CI)V",
 			arg0,
@@ -41,14 +43,14 @@ namespace android::text
 	}
 	jint AlteredCharSequence::length()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"length",
 			"()I"
 		);
 	}
 	jstring AlteredCharSequence::subSequence(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"subSequence",
 			"(II)Ljava/lang/CharSequence;",
 			arg0,
@@ -57,7 +59,7 @@ namespace android::text
 	}
 	jstring AlteredCharSequence::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

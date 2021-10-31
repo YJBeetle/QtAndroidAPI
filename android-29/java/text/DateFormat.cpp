@@ -173,7 +173,9 @@ namespace java::text
 		);
 	}
 	
-	DateFormat::DateFormat(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DateFormat::DateFormat(QAndroidJniObject obj) : java::text::Format(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -209,7 +211,7 @@ namespace java::text
 			"getDateInstance",
 			"(ILjava/util/Locale;)Ljava/text/DateFormat;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject DateFormat::getDateTimeInstance()
@@ -238,7 +240,7 @@ namespace java::text
 			"(IILjava/util/Locale;)Ljava/text/DateFormat;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	QAndroidJniObject DateFormat::getInstance()
@@ -273,19 +275,19 @@ namespace java::text
 			"getTimeInstance",
 			"(ILjava/util/Locale;)Ljava/text/DateFormat;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jobject DateFormat::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jboolean DateFormat::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -293,70 +295,70 @@ namespace java::text
 	}
 	jstring DateFormat::format(java::util::Date arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"format",
 			"(Ljava/util/Date;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	QAndroidJniObject DateFormat::format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"format",
 			"(Ljava/lang/Object;Ljava/lang/StringBuffer;Ljava/text/FieldPosition;)Ljava/lang/StringBuffer;",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject DateFormat::format(java::util::Date arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"format",
 			"(Ljava/util/Date;Ljava/lang/StringBuffer;Ljava/text/FieldPosition;)Ljava/lang/StringBuffer;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject DateFormat::getCalendar()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCalendar",
 			"()Ljava/util/Calendar;"
 		);
 	}
 	QAndroidJniObject DateFormat::getNumberFormat()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getNumberFormat",
 			"()Ljava/text/NumberFormat;"
 		);
 	}
 	QAndroidJniObject DateFormat::getTimeZone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTimeZone",
 			"()Ljava/util/TimeZone;"
 		);
 	}
 	jint DateFormat::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean DateFormat::isLenient()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isLenient",
 			"()Z"
 		);
 	}
 	QAndroidJniObject DateFormat::parse(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"parse",
 			"(Ljava/lang/String;)Ljava/util/Date;",
 			arg0
@@ -364,33 +366,33 @@ namespace java::text
 	}
 	QAndroidJniObject DateFormat::parse(jstring arg0, java::text::ParsePosition arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"parse",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/util/Date;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jobject DateFormat::parseObject(jstring arg0, java::text::ParsePosition arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"parseObject",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		).object<jobject>();
 	}
 	void DateFormat::setCalendar(java::util::Calendar arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCalendar",
 			"(Ljava/util/Calendar;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void DateFormat::setLenient(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLenient",
 			"(Z)V",
 			arg0
@@ -398,18 +400,18 @@ namespace java::text
 	}
 	void DateFormat::setNumberFormat(java::text::NumberFormat arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setNumberFormat",
 			"(Ljava/text/NumberFormat;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void DateFormat::setTimeZone(java::util::TimeZone arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTimeZone",
 			"(Ljava/util/TimeZone;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace java::text

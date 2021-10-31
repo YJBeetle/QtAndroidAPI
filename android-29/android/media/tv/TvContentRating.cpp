@@ -12,7 +12,9 @@ namespace android::media::tv
 		);
 	}
 	
-	TvContentRating::TvContentRating(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TvContentRating::TvContentRating(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -39,15 +41,15 @@ namespace android::media::tv
 	}
 	jboolean TvContentRating::contains(android::media::tv::TvContentRating arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"contains",
 			"(Landroid/media/tv/TvContentRating;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean TvContentRating::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -55,42 +57,42 @@ namespace android::media::tv
 	}
 	jstring TvContentRating::flattenToString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"flattenToString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring TvContentRating::getDomain()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDomain",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring TvContentRating::getMainRating()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMainRating",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring TvContentRating::getRatingSystem()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRatingSystem",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject TvContentRating::getSubRatings()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSubRatings",
 			"()Ljava/util/List;"
 		);
 	}
 	jint TvContentRating::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);

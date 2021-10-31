@@ -84,7 +84,9 @@ namespace android::util
 		);
 	}
 	
-	JsonToken::JsonToken(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	JsonToken::JsonToken(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

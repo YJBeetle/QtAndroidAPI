@@ -5,23 +5,23 @@ namespace android::database
 {
 	// Fields
 	
-	DefaultDatabaseErrorHandler::DefaultDatabaseErrorHandler(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DefaultDatabaseErrorHandler::DefaultDatabaseErrorHandler(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	DefaultDatabaseErrorHandler::DefaultDatabaseErrorHandler()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.database.DefaultDatabaseErrorHandler",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void DefaultDatabaseErrorHandler::onCorruption(android::database::sqlite::SQLiteDatabase arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onCorruption",
 			"(Landroid/database/sqlite/SQLiteDatabase;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::database

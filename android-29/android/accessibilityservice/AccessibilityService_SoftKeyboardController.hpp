@@ -18,9 +18,11 @@ namespace android::accessibilityservice
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AccessibilityService_SoftKeyboardController(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AccessibilityService_SoftKeyboardController(QAndroidJniObject obj);
+		
 		// Constructors
-		AccessibilityService_SoftKeyboardController() = default;
 		
 		// Methods
 		void addOnShowModeChangedListener(__JniBaseClass arg0);

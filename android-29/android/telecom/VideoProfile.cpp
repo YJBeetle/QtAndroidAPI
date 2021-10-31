@@ -76,25 +76,23 @@ namespace android::telecom
 		);
 	}
 	
-	VideoProfile::VideoProfile(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	VideoProfile::VideoProfile(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	VideoProfile::VideoProfile(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.telecom.VideoProfile",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	VideoProfile::VideoProfile(jint arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.telecom.VideoProfile",
 			"(II)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean VideoProfile::isAudioOnly(jint arg0)
@@ -162,38 +160,38 @@ namespace android::telecom
 	}
 	jint VideoProfile::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jint VideoProfile::getQuality()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getQuality",
 			"()I"
 		);
 	}
 	jint VideoProfile::getVideoState()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getVideoState",
 			"()I"
 		);
 	}
 	jstring VideoProfile::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void VideoProfile::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

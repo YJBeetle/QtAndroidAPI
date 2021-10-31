@@ -26,11 +26,13 @@ namespace android::app
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AlertDialog_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AlertDialog_Builder(QAndroidJniObject obj);
+		
 		// Constructors
 		AlertDialog_Builder(android::content::Context arg0);
 		AlertDialog_Builder(android::content::Context arg0, jint arg1);
-		AlertDialog_Builder() = default;
 		
 		// Methods
 		QAndroidJniObject create();

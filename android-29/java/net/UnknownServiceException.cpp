@@ -4,23 +4,21 @@ namespace java::net
 {
 	// Fields
 	
-	UnknownServiceException::UnknownServiceException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UnknownServiceException::UnknownServiceException(QAndroidJniObject obj) : java::io::IOException(obj) {}
+	
 	// Constructors
 	UnknownServiceException::UnknownServiceException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::IOException(
 			"java.net.UnknownServiceException",
 			"()V"
-		);
-	}
+		) {}
 	UnknownServiceException::UnknownServiceException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::IOException(
 			"java.net.UnknownServiceException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::net

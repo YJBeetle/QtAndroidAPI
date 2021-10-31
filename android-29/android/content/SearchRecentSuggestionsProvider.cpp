@@ -20,57 +20,57 @@ namespace android::content
 		);
 	}
 	
-	SearchRecentSuggestionsProvider::SearchRecentSuggestionsProvider(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SearchRecentSuggestionsProvider::SearchRecentSuggestionsProvider(QAndroidJniObject obj) : android::content::ContentProvider(obj) {}
+	
 	// Constructors
 	SearchRecentSuggestionsProvider::SearchRecentSuggestionsProvider()
-	{
-		__thiz = QAndroidJniObject(
+		: android::content::ContentProvider(
 			"android.content.SearchRecentSuggestionsProvider",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jint SearchRecentSuggestionsProvider::_delete(android::net::Uri arg0, jstring arg1, jarray arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"delete",
 			"(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
 	}
 	jstring SearchRecentSuggestionsProvider::getType(android::net::Uri arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getType",
 			"(Landroid/net/Uri;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	QAndroidJniObject SearchRecentSuggestionsProvider::insert(android::net::Uri arg0, android::content::ContentValues arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"insert",
 			"(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jboolean SearchRecentSuggestionsProvider::onCreate()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onCreate",
 			"()Z"
 		);
 	}
 	QAndroidJniObject SearchRecentSuggestionsProvider::query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"query",
 			"(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
@@ -79,11 +79,11 @@ namespace android::content
 	}
 	jint SearchRecentSuggestionsProvider::update(android::net::Uri arg0, android::content::ContentValues arg1, jstring arg2, jarray arg3)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"update",
 			"(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3
 		);

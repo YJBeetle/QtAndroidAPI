@@ -28,7 +28,9 @@ namespace android::graphics
 		);
 	}
 	
-	Shader_TileMode::Shader_TileMode(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Shader_TileMode::Shader_TileMode(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

@@ -36,7 +36,10 @@ namespace java::util::concurrent
 		// Fields
 		static QAndroidJniObject defaultForkJoinWorkerThreadFactory();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ForkJoinPool(const char *className, const char *sig, Ts...agv) : java::util::concurrent::AbstractExecutorService(className, sig, std::forward<Ts>(agv)...) {}
 		ForkJoinPool(QAndroidJniObject obj);
+		
 		// Constructors
 		ForkJoinPool();
 		ForkJoinPool(jint arg0);

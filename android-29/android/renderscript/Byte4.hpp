@@ -14,7 +14,10 @@ namespace android::renderscript
 		jbyte y();
 		jbyte z();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Byte4(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Byte4(QAndroidJniObject obj);
+		
 		// Constructors
 		Byte4();
 		Byte4(jbyte arg0, jbyte arg1, jbyte arg2, jbyte arg3);

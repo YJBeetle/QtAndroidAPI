@@ -15,7 +15,10 @@ namespace javax::xml::parsers
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit FactoryConfigurationError(const char *className, const char *sig, Ts...agv) : java::lang::Error(className, sig, std::forward<Ts>(agv)...) {}
 		FactoryConfigurationError(QAndroidJniObject obj);
+		
 		// Constructors
 		FactoryConfigurationError();
 		FactoryConfigurationError(java::lang::Exception arg0);

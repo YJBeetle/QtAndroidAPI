@@ -8,23 +8,23 @@ namespace android::text::style
 {
 	// Fields
 	
-	ReplacementSpan::ReplacementSpan(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ReplacementSpan::ReplacementSpan(QAndroidJniObject obj) : android::text::style::MetricAffectingSpan(obj) {}
+	
 	// Constructors
 	ReplacementSpan::ReplacementSpan()
-	{
-		__thiz = QAndroidJniObject(
+		: android::text::style::MetricAffectingSpan(
 			"android.text.style.ReplacementSpan",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void ReplacementSpan::draw(android::graphics::Canvas arg0, jstring arg1, jint arg2, jint arg3, jfloat arg4, jint arg5, jint arg6, jint arg7, android::graphics::Paint arg8)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"draw",
 			"(Landroid/graphics/Canvas;Ljava/lang/CharSequence;IIFIIILandroid/graphics/Paint;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
@@ -32,35 +32,35 @@ namespace android::text::style
 			arg5,
 			arg6,
 			arg7,
-			arg8.__jniObject().object()
+			arg8.object()
 		);
 	}
 	jint ReplacementSpan::getSize(android::graphics::Paint arg0, jstring arg1, jint arg2, jint arg3, android::graphics::Paint_FontMetricsInt arg4)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSize",
 			"(Landroid/graphics/Paint;Ljava/lang/CharSequence;IILandroid/graphics/Paint$FontMetricsInt;)I",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object()
+			arg4.object()
 		);
 	}
 	void ReplacementSpan::updateDrawState(android::text::TextPaint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"updateDrawState",
 			"(Landroid/text/TextPaint;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ReplacementSpan::updateMeasureState(android::text::TextPaint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"updateMeasureState",
 			"(Landroid/text/TextPaint;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::text::style

@@ -8,65 +8,59 @@ namespace android::preference
 {
 	// Fields
 	
-	EditTextPreference::EditTextPreference(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	EditTextPreference::EditTextPreference(QAndroidJniObject obj) : android::preference::DialogPreference(obj) {}
+	
 	// Constructors
 	EditTextPreference::EditTextPreference(android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::preference::DialogPreference(
 			"android.preference.EditTextPreference",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	EditTextPreference::EditTextPreference(android::content::Context arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::preference::DialogPreference(
 			"android.preference.EditTextPreference",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	EditTextPreference::EditTextPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: android::preference::DialogPreference(
 			"android.preference.EditTextPreference",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
-		);
-	}
+		) {}
 	EditTextPreference::EditTextPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: android::preference::DialogPreference(
 			"android.preference.EditTextPreference",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject EditTextPreference::getEditText()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEditText",
 			"()Landroid/widget/EditText;"
 		);
 	}
 	jstring EditTextPreference::getText()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void EditTextPreference::setText(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setText",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -74,7 +68,7 @@ namespace android::preference
 	}
 	jboolean EditTextPreference::shouldDisableDependents()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"shouldDisableDependents",
 			"()Z"
 		);

@@ -414,7 +414,9 @@ namespace android::telephony
 		);
 	}
 	
-	SmsManager::SmsManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SmsManager::SmsManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -445,24 +447,24 @@ namespace android::telephony
 	}
 	jstring SmsManager::createAppSpecificSmsToken(android::app::PendingIntent arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"createAppSpecificSmsToken",
 			"(Landroid/app/PendingIntent;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jstring SmsManager::createAppSpecificSmsTokenWithPackageInfo(jstring arg0, android::app::PendingIntent arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"createAppSpecificSmsTokenWithPackageInfo",
 			"(Ljava/lang/String;Landroid/app/PendingIntent;)Ljava/lang/String;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		).object<jstring>();
 	}
 	QAndroidJniObject SmsManager::divideMessage(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"divideMessage",
 			"(Ljava/lang/String;)Ljava/util/ArrayList;",
 			arg0
@@ -470,109 +472,109 @@ namespace android::telephony
 	}
 	void SmsManager::downloadMultimediaMessage(android::content::Context arg0, jstring arg1, android::net::Uri arg2, android::os::Bundle arg3, android::app::PendingIntent arg4)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"downloadMultimediaMessage",
 			"(Landroid/content/Context;Ljava/lang/String;Landroid/net/Uri;Landroid/os/Bundle;Landroid/app/PendingIntent;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object()
+			arg2.object(),
+			arg3.object(),
+			arg4.object()
 		);
 	}
 	QAndroidJniObject SmsManager::getCarrierConfigValues()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCarrierConfigValues",
 			"()Landroid/os/Bundle;"
 		);
 	}
 	void SmsManager::getSmsMessagesForFinancialApp(android::os::Bundle arg0, __JniBaseClass arg1, android::telephony::SmsManager_FinancialSmsCallback arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"getSmsMessagesForFinancialApp",
 			"(Landroid/os/Bundle;Ljava/util/concurrent/Executor;Landroid/telephony/SmsManager$FinancialSmsCallback;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	jint SmsManager::getSubscriptionId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSubscriptionId",
 			"()I"
 		);
 	}
 	void SmsManager::injectSmsPdu(jbyteArray arg0, jstring arg1, android::app::PendingIntent arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"injectSmsPdu",
 			"([BLjava/lang/String;Landroid/app/PendingIntent;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void SmsManager::sendDataMessage(jstring arg0, jstring arg1, jshort arg2, jbyteArray arg3, android::app::PendingIntent arg4, android::app::PendingIntent arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"sendDataMessage",
 			"(Ljava/lang/String;Ljava/lang/String;S[BLandroid/app/PendingIntent;Landroid/app/PendingIntent;)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object(),
-			arg5.__jniObject().object()
+			arg4.object(),
+			arg5.object()
 		);
 	}
 	void SmsManager::sendMultimediaMessage(android::content::Context arg0, android::net::Uri arg1, jstring arg2, android::os::Bundle arg3, android::app::PendingIntent arg4)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"sendMultimediaMessage",
 			"(Landroid/content/Context;Landroid/net/Uri;Ljava/lang/String;Landroid/os/Bundle;Landroid/app/PendingIntent;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object()
+			arg3.object(),
+			arg4.object()
 		);
 	}
 	void SmsManager::sendMultipartTextMessage(jstring arg0, jstring arg1, java::util::ArrayList arg2, java::util::ArrayList arg3, java::util::ArrayList arg4)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"sendMultipartTextMessage",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object()
+			arg2.object(),
+			arg3.object(),
+			arg4.object()
 		);
 	}
 	void SmsManager::sendTextMessage(jstring arg0, jstring arg1, jstring arg2, android::app::PendingIntent arg3, android::app::PendingIntent arg4)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"sendTextMessage",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;Landroid/app/PendingIntent;)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object()
+			arg3.object(),
+			arg4.object()
 		);
 	}
 	void SmsManager::sendTextMessageWithoutPersisting(jstring arg0, jstring arg1, jstring arg2, android::app::PendingIntent arg3, android::app::PendingIntent arg4)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"sendTextMessageWithoutPersisting",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;Landroid/app/PendingIntent;)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object()
+			arg3.object(),
+			arg4.object()
 		);
 	}
 } // namespace android::telephony

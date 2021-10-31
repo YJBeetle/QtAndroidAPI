@@ -14,10 +14,12 @@ namespace android::media
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit FaceDetector(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		FaceDetector(QAndroidJniObject obj);
+		
 		// Constructors
 		FaceDetector(jint arg0, jint arg1, jint arg2);
-		FaceDetector() = default;
 		
 		// Methods
 		jint findFaces(android::graphics::Bitmap arg0, jarray arg1);

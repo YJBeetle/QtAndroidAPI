@@ -5,32 +5,32 @@ namespace android::media
 {
 	// Fields
 	
-	MediaRouter_VolumeCallback::MediaRouter_VolumeCallback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaRouter_VolumeCallback::MediaRouter_VolumeCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MediaRouter_VolumeCallback::MediaRouter_VolumeCallback()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.MediaRouter$VolumeCallback",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void MediaRouter_VolumeCallback::onVolumeSetRequest(android::media::MediaRouter_RouteInfo arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onVolumeSetRequest",
 			"(Landroid/media/MediaRouter$RouteInfo;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void MediaRouter_VolumeCallback::onVolumeUpdateRequest(android::media::MediaRouter_RouteInfo arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onVolumeUpdateRequest",
 			"(Landroid/media/MediaRouter$RouteInfo;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

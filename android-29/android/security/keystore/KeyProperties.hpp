@@ -45,9 +45,11 @@ namespace android::security::keystore
 		static jstring SIGNATURE_PADDING_RSA_PKCS1();
 		static jstring SIGNATURE_PADDING_RSA_PSS();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit KeyProperties(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		KeyProperties(QAndroidJniObject obj);
+		
 		// Constructors
-		KeyProperties() = default;
 		
 		// Methods
 	};

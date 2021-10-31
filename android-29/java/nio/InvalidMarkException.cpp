@@ -4,15 +4,15 @@ namespace java::nio
 {
 	// Fields
 	
-	InvalidMarkException::InvalidMarkException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	InvalidMarkException::InvalidMarkException(QAndroidJniObject obj) : java::lang::IllegalStateException(obj) {}
+	
 	// Constructors
 	InvalidMarkException::InvalidMarkException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::IllegalStateException(
 			"java.nio.InvalidMarkException",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::nio

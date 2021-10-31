@@ -21,44 +21,46 @@ namespace android::view::contentcapture
 		);
 	}
 	
-	DataRemovalRequest::DataRemovalRequest(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DataRemovalRequest::DataRemovalRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint DataRemovalRequest::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	QAndroidJniObject DataRemovalRequest::getLocusIdRequests()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLocusIdRequests",
 			"()Ljava/util/List;"
 		);
 	}
 	jstring DataRemovalRequest::getPackageName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jboolean DataRemovalRequest::isForEverything()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isForEverything",
 			"()Z"
 		);
 	}
 	void DataRemovalRequest::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

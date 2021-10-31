@@ -5,28 +5,28 @@ namespace android::content::res
 {
 	// Fields
 	
-	AssetFileDescriptor_AutoCloseInputStream::AssetFileDescriptor_AutoCloseInputStream(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AssetFileDescriptor_AutoCloseInputStream::AssetFileDescriptor_AutoCloseInputStream(QAndroidJniObject obj) : android::os::ParcelFileDescriptor_AutoCloseInputStream(obj) {}
+	
 	// Constructors
 	AssetFileDescriptor_AutoCloseInputStream::AssetFileDescriptor_AutoCloseInputStream(android::content::res::AssetFileDescriptor arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::os::ParcelFileDescriptor_AutoCloseInputStream(
 			"android.content.res.AssetFileDescriptor$AutoCloseInputStream",
 			"(Landroid/content/res/AssetFileDescriptor;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jint AssetFileDescriptor_AutoCloseInputStream::available()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"available",
 			"()I"
 		);
 	}
 	void AssetFileDescriptor_AutoCloseInputStream::mark(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"mark",
 			"(I)V",
 			arg0
@@ -34,21 +34,21 @@ namespace android::content::res
 	}
 	jboolean AssetFileDescriptor_AutoCloseInputStream::markSupported()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"markSupported",
 			"()Z"
 		);
 	}
 	jint AssetFileDescriptor_AutoCloseInputStream::read()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"read",
 			"()I"
 		);
 	}
 	jint AssetFileDescriptor_AutoCloseInputStream::read(jbyteArray arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"read",
 			"([B)I",
 			arg0
@@ -56,7 +56,7 @@ namespace android::content::res
 	}
 	jint AssetFileDescriptor_AutoCloseInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"read",
 			"([BII)I",
 			arg0,
@@ -66,14 +66,14 @@ namespace android::content::res
 	}
 	void AssetFileDescriptor_AutoCloseInputStream::reset()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
 	jlong AssetFileDescriptor_AutoCloseInputStream::skip(jlong arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"skip",
 			"(J)J",
 			arg0

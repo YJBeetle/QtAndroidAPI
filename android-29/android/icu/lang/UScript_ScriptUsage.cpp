@@ -52,7 +52,9 @@ namespace android::icu::lang
 		);
 	}
 	
-	UScript_ScriptUsage::UScript_ScriptUsage(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UScript_ScriptUsage::UScript_ScriptUsage(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

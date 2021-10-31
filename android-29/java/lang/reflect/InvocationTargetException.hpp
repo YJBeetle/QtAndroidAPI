@@ -12,11 +12,13 @@ namespace java::lang::reflect
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit InvocationTargetException(const char *className, const char *sig, Ts...agv) : java::lang::ReflectiveOperationException(className, sig, std::forward<Ts>(agv)...) {}
 		InvocationTargetException(QAndroidJniObject obj);
+		
 		// Constructors
 		InvocationTargetException(jthrowable arg0);
 		InvocationTargetException(jthrowable arg0, jstring arg1);
-		InvocationTargetException() = default;
 		
 		// Methods
 		jthrowable getCause();

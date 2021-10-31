@@ -5,32 +5,30 @@ namespace android::graphics
 {
 	// Fields
 	
-	ColorMatrixColorFilter::ColorMatrixColorFilter(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ColorMatrixColorFilter::ColorMatrixColorFilter(QAndroidJniObject obj) : android::graphics::ColorFilter(obj) {}
+	
 	// Constructors
 	ColorMatrixColorFilter::ColorMatrixColorFilter(jfloatArray arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::graphics::ColorFilter(
 			"android.graphics.ColorMatrixColorFilter",
 			"([F)V",
 			arg0
-		);
-	}
+		) {}
 	ColorMatrixColorFilter::ColorMatrixColorFilter(android::graphics::ColorMatrix arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::graphics::ColorFilter(
 			"android.graphics.ColorMatrixColorFilter",
 			"(Landroid/graphics/ColorMatrix;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	void ColorMatrixColorFilter::getColorMatrix(android::graphics::ColorMatrix arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"getColorMatrix",
 			"(Landroid/graphics/ColorMatrix;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::graphics

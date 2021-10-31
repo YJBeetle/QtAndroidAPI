@@ -101,15 +101,15 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	MediaStore_Images_Thumbnails::MediaStore_Images_Thumbnails(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaStore_Images_Thumbnails::MediaStore_Images_Thumbnails(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MediaStore_Images_Thumbnails::MediaStore_Images_Thumbnails()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.provider.MediaStore$Images$Thumbnails",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void MediaStore_Images_Thumbnails::cancelThumbnailRequest(android::content::ContentResolver arg0, jlong arg1)
@@ -118,7 +118,7 @@ namespace android::provider
 			"android.provider.MediaStore$Images$Thumbnails",
 			"cancelThumbnailRequest",
 			"(Landroid/content/ContentResolver;J)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -128,7 +128,7 @@ namespace android::provider
 			"android.provider.MediaStore$Images$Thumbnails",
 			"cancelThumbnailRequest",
 			"(Landroid/content/ContentResolver;JJ)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
@@ -148,10 +148,10 @@ namespace android::provider
 			"android.provider.MediaStore$Images$Thumbnails",
 			"getThumbnail",
 			"(Landroid/content/ContentResolver;JILandroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	QAndroidJniObject MediaStore_Images_Thumbnails::getThumbnail(android::content::ContentResolver arg0, jlong arg1, jlong arg2, jint arg3, android::graphics::BitmapFactory_Options arg4)
@@ -160,11 +160,11 @@ namespace android::provider
 			"android.provider.MediaStore$Images$Thumbnails",
 			"getThumbnail",
 			"(Landroid/content/ContentResolver;JJILandroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object()
+			arg4.object()
 		);
 	}
 	QAndroidJniObject MediaStore_Images_Thumbnails::query(android::content::ContentResolver arg0, android::net::Uri arg1, jarray arg2)
@@ -173,8 +173,8 @@ namespace android::provider
 			"android.provider.MediaStore$Images$Thumbnails",
 			"query",
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;[Ljava/lang/String;)Landroid/database/Cursor;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
@@ -184,7 +184,7 @@ namespace android::provider
 			"android.provider.MediaStore$Images$Thumbnails",
 			"queryMiniThumbnail",
 			"(Landroid/content/ContentResolver;JI[Ljava/lang/String;)Landroid/database/Cursor;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3
@@ -196,8 +196,8 @@ namespace android::provider
 			"android.provider.MediaStore$Images$Thumbnails",
 			"queryMiniThumbnails",
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;I[Ljava/lang/String;)Landroid/database/Cursor;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3
 		);

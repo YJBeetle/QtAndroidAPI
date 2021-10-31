@@ -14,9 +14,11 @@ namespace android::telecom
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Connection_RttTextStream(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Connection_RttTextStream(QAndroidJniObject obj);
+		
 		// Constructors
-		Connection_RttTextStream() = default;
 		
 		// Methods
 		jstring read();

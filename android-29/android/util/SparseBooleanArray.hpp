@@ -10,7 +10,10 @@ namespace android::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SparseBooleanArray(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SparseBooleanArray(QAndroidJniObject obj);
+		
 		// Constructors
 		SparseBooleanArray();
 		SparseBooleanArray(jint arg0);

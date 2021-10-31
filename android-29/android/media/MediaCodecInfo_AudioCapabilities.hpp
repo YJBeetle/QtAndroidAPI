@@ -14,9 +14,11 @@ namespace android::media
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaCodecInfo_AudioCapabilities(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaCodecInfo_AudioCapabilities(QAndroidJniObject obj);
+		
 		// Constructors
-		MediaCodecInfo_AudioCapabilities() = default;
 		
 		// Methods
 		QAndroidJniObject getBitrateRange();

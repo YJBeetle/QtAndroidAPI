@@ -11,7 +11,10 @@ namespace java::util::concurrent
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TimeoutException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
 		TimeoutException(QAndroidJniObject obj);
+		
 		// Constructors
 		TimeoutException();
 		TimeoutException(jstring arg0);

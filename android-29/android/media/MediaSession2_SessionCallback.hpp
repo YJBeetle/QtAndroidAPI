@@ -34,7 +34,10 @@ namespace android::media
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaSession2_SessionCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaSession2_SessionCallback(QAndroidJniObject obj);
+		
 		// Constructors
 		MediaSession2_SessionCallback();
 		

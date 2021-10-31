@@ -4,28 +4,28 @@ namespace java::security::cert
 {
 	// Fields
 	
-	CertPathBuilderSpi::CertPathBuilderSpi(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CertPathBuilderSpi::CertPathBuilderSpi(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	CertPathBuilderSpi::CertPathBuilderSpi()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.security.cert.CertPathBuilderSpi",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject CertPathBuilderSpi::engineBuild(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"engineBuild",
 			"(Ljava/security/cert/CertPathParameters;)Ljava/security/cert/CertPathBuilderResult;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject CertPathBuilderSpi::engineGetRevocationChecker()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"engineGetRevocationChecker",
 			"()Ljava/security/cert/CertPathChecker;"
 		);

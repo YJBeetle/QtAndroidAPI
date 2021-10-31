@@ -9,38 +9,38 @@ namespace java::security
 {
 	// Fields
 	
-	Permissions::Permissions(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Permissions::Permissions(QAndroidJniObject obj) : java::security::PermissionCollection(obj) {}
+	
 	// Constructors
 	Permissions::Permissions()
-	{
-		__thiz = QAndroidJniObject(
+		: java::security::PermissionCollection(
 			"java.security.Permissions",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void Permissions::add(java::security::Permission arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"add",
 			"(Ljava/security/Permission;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Permissions::elements()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"elements",
 			"()Ljava/util/Enumeration;"
 		);
 	}
 	jboolean Permissions::implies(java::security::Permission arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"implies",
 			"(Ljava/security/Permission;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace java::security

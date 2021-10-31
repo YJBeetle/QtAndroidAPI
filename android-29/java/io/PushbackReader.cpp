@@ -5,37 +5,35 @@ namespace java::io
 {
 	// Fields
 	
-	PushbackReader::PushbackReader(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PushbackReader::PushbackReader(QAndroidJniObject obj) : java::io::FilterReader(obj) {}
+	
 	// Constructors
 	PushbackReader::PushbackReader(java::io::Reader arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::FilterReader(
 			"java.io.PushbackReader",
 			"(Ljava/io/Reader;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	PushbackReader::PushbackReader(java::io::Reader arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::FilterReader(
 			"java.io.PushbackReader",
 			"(Ljava/io/Reader;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	void PushbackReader::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	void PushbackReader::mark(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"mark",
 			"(I)V",
 			arg0
@@ -43,21 +41,21 @@ namespace java::io
 	}
 	jboolean PushbackReader::markSupported()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"markSupported",
 			"()Z"
 		);
 	}
 	jint PushbackReader::read()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"read",
 			"()I"
 		);
 	}
 	jint PushbackReader::read(jcharArray arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"read",
 			"([CII)I",
 			arg0,
@@ -67,21 +65,21 @@ namespace java::io
 	}
 	jboolean PushbackReader::ready()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"ready",
 			"()Z"
 		);
 	}
 	void PushbackReader::reset()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
 	jlong PushbackReader::skip(jlong arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"skip",
 			"(J)J",
 			arg0
@@ -89,7 +87,7 @@ namespace java::io
 	}
 	void PushbackReader::unread(jcharArray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"unread",
 			"([C)V",
 			arg0
@@ -97,7 +95,7 @@ namespace java::io
 	}
 	void PushbackReader::unread(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"unread",
 			"(I)V",
 			arg0
@@ -105,7 +103,7 @@ namespace java::io
 	}
 	void PushbackReader::unread(jcharArray arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"unread",
 			"([CII)V",
 			arg0,

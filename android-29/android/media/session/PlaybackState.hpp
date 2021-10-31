@@ -50,9 +50,11 @@ namespace android::media::session
 		static jint STATE_SKIPPING_TO_QUEUE_ITEM();
 		static jint STATE_STOPPED();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PlaybackState(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PlaybackState(QAndroidJniObject obj);
+		
 		// Constructors
-		PlaybackState() = default;
 		
 		// Methods
 		jint describeContents();

@@ -14,7 +14,10 @@ namespace android::database::sqlite
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SQLiteDatatypeMismatchException(const char *className, const char *sig, Ts...agv) : android::database::sqlite::SQLiteException(className, sig, std::forward<Ts>(agv)...) {}
 		SQLiteDatatypeMismatchException(QAndroidJniObject obj);
+		
 		// Constructors
 		SQLiteDatatypeMismatchException();
 		SQLiteDatatypeMismatchException(jstring arg0);

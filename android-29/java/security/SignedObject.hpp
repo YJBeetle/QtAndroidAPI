@@ -18,10 +18,12 @@ namespace java::security
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SignedObject(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SignedObject(QAndroidJniObject obj);
+		
 		// Constructors
 		SignedObject(__JniBaseClass arg0, __JniBaseClass arg1, java::security::Signature arg2);
-		SignedObject() = default;
 		
 		// Methods
 		jstring getAlgorithm();

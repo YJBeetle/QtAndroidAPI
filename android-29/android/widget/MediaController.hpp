@@ -29,12 +29,14 @@ namespace android::widget
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaController(const char *className, const char *sig, Ts...agv) : android::widget::FrameLayout(className, sig, std::forward<Ts>(agv)...) {}
 		MediaController(QAndroidJniObject obj);
+		
 		// Constructors
 		MediaController(android::content::Context arg0);
 		MediaController(android::content::Context arg0, __JniBaseClass arg1);
 		MediaController(android::content::Context arg0, jboolean arg1);
-		MediaController() = default;
 		
 		// Methods
 		jboolean dispatchKeyEvent(android::view::KeyEvent arg0);

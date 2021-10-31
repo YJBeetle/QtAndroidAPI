@@ -13,11 +13,13 @@ namespace java::time::format
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DateTimeParseException(const char *className, const char *sig, Ts...agv) : java::time::DateTimeException(className, sig, std::forward<Ts>(agv)...) {}
 		DateTimeParseException(QAndroidJniObject obj);
+		
 		// Constructors
 		DateTimeParseException(jstring arg0, jstring arg1, jint arg2);
 		DateTimeParseException(jstring arg0, jstring arg1, jint arg2, jthrowable arg3);
-		DateTimeParseException() = default;
 		
 		// Methods
 		jint getErrorIndex();

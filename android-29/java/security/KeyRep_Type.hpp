@@ -14,9 +14,11 @@ namespace java::security
 		static QAndroidJniObject PUBLIC();
 		static QAndroidJniObject SECRET();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit KeyRep_Type(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		KeyRep_Type(QAndroidJniObject obj);
+		
 		// Constructors
-		KeyRep_Type() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

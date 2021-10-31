@@ -30,9 +30,11 @@ namespace java::time
 		static QAndroidJniObject TUESDAY();
 		static QAndroidJniObject WEDNESDAY();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DayOfWeek(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		DayOfWeek(QAndroidJniObject obj);
+		
 		// Constructors
-		DayOfWeek() = default;
 		
 		// Methods
 		static QAndroidJniObject from(__JniBaseClass arg0);

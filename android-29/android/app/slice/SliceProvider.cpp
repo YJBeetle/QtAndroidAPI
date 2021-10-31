@@ -21,137 +21,135 @@ namespace android::app::slice
 		).object<jstring>();
 	}
 	
-	SliceProvider::SliceProvider(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SliceProvider::SliceProvider(QAndroidJniObject obj) : android::content::ContentProvider(obj) {}
+	
 	// Constructors
 	SliceProvider::SliceProvider()
-	{
-		__thiz = QAndroidJniObject(
+		: android::content::ContentProvider(
 			"android.app.slice.SliceProvider",
 			"()V"
-		);
-	}
+		) {}
 	SliceProvider::SliceProvider(jarray arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::content::ContentProvider(
 			"android.app.slice.SliceProvider",
 			"([Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	void SliceProvider::attachInfo(android::content::Context arg0, android::content::pm::ProviderInfo arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"attachInfo",
 			"(Landroid/content/Context;Landroid/content/pm/ProviderInfo;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject SliceProvider::call(jstring arg0, jstring arg1, android::os::Bundle arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"call",
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)Landroid/os/Bundle;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	jint SliceProvider::_delete(android::net::Uri arg0, jstring arg1, jarray arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"delete",
 			"(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
 	}
 	jstring SliceProvider::getType(android::net::Uri arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getType",
 			"(Landroid/net/Uri;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	QAndroidJniObject SliceProvider::insert(android::net::Uri arg0, android::content::ContentValues arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"insert",
 			"(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject SliceProvider::onBindSlice(android::net::Uri arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onBindSlice",
 			"(Landroid/net/Uri;Ljava/util/Set;)Landroid/app/slice/Slice;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject SliceProvider::onCreatePermissionRequest(android::net::Uri arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onCreatePermissionRequest",
 			"(Landroid/net/Uri;)Landroid/app/PendingIntent;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject SliceProvider::onGetSliceDescendants(android::net::Uri arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onGetSliceDescendants",
 			"(Landroid/net/Uri;)Ljava/util/Collection;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject SliceProvider::onMapIntentToUri(android::content::Intent arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onMapIntentToUri",
 			"(Landroid/content/Intent;)Landroid/net/Uri;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void SliceProvider::onSlicePinned(android::net::Uri arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onSlicePinned",
 			"(Landroid/net/Uri;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void SliceProvider::onSliceUnpinned(android::net::Uri arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onSliceUnpinned",
 			"(Landroid/net/Uri;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject SliceProvider::query(android::net::Uri arg0, jarray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"query",
 			"(Landroid/net/Uri;[Ljava/lang/String;Landroid/os/Bundle;Landroid/os/CancellationSignal;)Landroid/database/Cursor;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
+			arg2.object(),
+			arg3.object()
 		);
 	}
 	QAndroidJniObject SliceProvider::query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"query",
 			"(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
@@ -160,24 +158,24 @@ namespace android::app::slice
 	}
 	QAndroidJniObject SliceProvider::query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, android::os::CancellationSignal arg5)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"query",
 			"(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/database/Cursor;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
 			arg4,
-			arg5.__jniObject().object()
+			arg5.object()
 		);
 	}
 	jint SliceProvider::update(android::net::Uri arg0, android::content::ContentValues arg1, jstring arg2, jarray arg3)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"update",
 			"(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3
 		);

@@ -20,13 +20,15 @@ namespace android::widget
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Chronometer(const char *className, const char *sig, Ts...agv) : android::widget::TextView(className, sig, std::forward<Ts>(agv)...) {}
 		Chronometer(QAndroidJniObject obj);
+		
 		// Constructors
 		Chronometer(android::content::Context arg0);
 		Chronometer(android::content::Context arg0, __JniBaseClass arg1);
 		Chronometer(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		Chronometer(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
-		Chronometer() = default;
 		
 		// Methods
 		jstring getAccessibilityClassName();

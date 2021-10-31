@@ -39,13 +39,15 @@ namespace android::telephony
 		);
 	}
 	
-	CellSignalStrength::CellSignalStrength(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CellSignalStrength::CellSignalStrength(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jboolean CellSignalStrength::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -53,28 +55,28 @@ namespace android::telephony
 	}
 	jint CellSignalStrength::getAsuLevel()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAsuLevel",
 			"()I"
 		);
 	}
 	jint CellSignalStrength::getDbm()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDbm",
 			"()I"
 		);
 	}
 	jint CellSignalStrength::getLevel()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLevel",
 			"()I"
 		);
 	}
 	jint CellSignalStrength::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);

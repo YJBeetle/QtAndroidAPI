@@ -8,15 +8,15 @@ namespace java::security
 {
 	// Fields
 	
-	PolicySpi::PolicySpi(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PolicySpi::PolicySpi(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	PolicySpi::PolicySpi()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.security.PolicySpi",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::security

@@ -255,65 +255,67 @@ namespace android::app::slice
 		).object<jstring>();
 	}
 	
-	Slice::Slice(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Slice::Slice(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint Slice::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	QAndroidJniObject Slice::getHints()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getHints",
 			"()Ljava/util/List;"
 		);
 	}
 	QAndroidJniObject Slice::getItems()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getItems",
 			"()Ljava/util/List;"
 		);
 	}
 	QAndroidJniObject Slice::getSpec()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSpec",
 			"()Landroid/app/slice/SliceSpec;"
 		);
 	}
 	QAndroidJniObject Slice::getUri()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getUri",
 			"()Landroid/net/Uri;"
 		);
 	}
 	jboolean Slice::isCallerNeeded()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isCallerNeeded",
 			"()Z"
 		);
 	}
 	jstring Slice::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void Slice::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

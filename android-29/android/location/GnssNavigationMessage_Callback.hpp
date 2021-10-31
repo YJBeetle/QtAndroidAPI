@@ -17,7 +17,10 @@ namespace android::location
 		static jint STATUS_NOT_SUPPORTED();
 		static jint STATUS_READY();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit GnssNavigationMessage_Callback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		GnssNavigationMessage_Callback(QAndroidJniObject obj);
+		
 		// Constructors
 		GnssNavigationMessage_Callback();
 		

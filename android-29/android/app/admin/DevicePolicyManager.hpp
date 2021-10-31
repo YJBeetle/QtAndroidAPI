@@ -217,9 +217,11 @@ namespace android::app::admin
 		static jint WIPE_RESET_PROTECTION_DATA();
 		static jint WIPE_SILENTLY();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DevicePolicyManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DevicePolicyManager(QAndroidJniObject obj);
+		
 		// Constructors
-		DevicePolicyManager() = default;
 		
 		// Methods
 		void addCrossProfileIntentFilter(android::content::ComponentName arg0, android::content::IntentFilter arg1, jint arg2);

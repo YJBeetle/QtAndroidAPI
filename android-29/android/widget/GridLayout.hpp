@@ -50,13 +50,15 @@ namespace android::widget
 		static jint UNDEFINED();
 		static jint VERTICAL();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit GridLayout(const char *className, const char *sig, Ts...agv) : android::view::ViewGroup(className, sig, std::forward<Ts>(agv)...) {}
 		GridLayout(QAndroidJniObject obj);
+		
 		// Constructors
 		GridLayout(android::content::Context arg0);
 		GridLayout(android::content::Context arg0, __JniBaseClass arg1);
 		GridLayout(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		GridLayout(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
-		GridLayout() = default;
 		
 		// Methods
 		static QAndroidJniObject spec(jint arg0);

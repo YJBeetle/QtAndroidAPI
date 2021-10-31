@@ -12,7 +12,10 @@ namespace java::security
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ProviderException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
 		ProviderException(QAndroidJniObject obj);
+		
 		// Constructors
 		ProviderException();
 		ProviderException(jstring arg0);

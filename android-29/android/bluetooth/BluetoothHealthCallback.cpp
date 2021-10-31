@@ -7,36 +7,36 @@ namespace android::bluetooth
 {
 	// Fields
 	
-	BluetoothHealthCallback::BluetoothHealthCallback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BluetoothHealthCallback::BluetoothHealthCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	BluetoothHealthCallback::BluetoothHealthCallback()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.bluetooth.BluetoothHealthCallback",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void BluetoothHealthCallback::onHealthAppConfigurationStatusChange(android::bluetooth::BluetoothHealthAppConfiguration arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onHealthAppConfigurationStatusChange",
 			"(Landroid/bluetooth/BluetoothHealthAppConfiguration;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void BluetoothHealthCallback::onHealthChannelStateChange(android::bluetooth::BluetoothHealthAppConfiguration arg0, android::bluetooth::BluetoothDevice arg1, jint arg2, jint arg3, android::os::ParcelFileDescriptor arg4, jint arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onHealthChannelStateChange",
 			"(Landroid/bluetooth/BluetoothHealthAppConfiguration;Landroid/bluetooth/BluetoothDevice;IILandroid/os/ParcelFileDescriptor;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3,
-			arg4.__jniObject().object(),
+			arg4.object(),
 			arg5
 		);
 	}

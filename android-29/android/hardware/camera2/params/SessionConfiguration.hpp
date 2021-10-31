@@ -29,10 +29,12 @@ namespace android::hardware::camera2::params
 		static jint SESSION_HIGH_SPEED();
 		static jint SESSION_REGULAR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SessionConfiguration(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SessionConfiguration(QAndroidJniObject obj);
+		
 		// Constructors
 		SessionConfiguration(jint arg0, __JniBaseClass arg1, __JniBaseClass arg2, android::hardware::camera2::CameraCaptureSession_StateCallback arg3);
-		SessionConfiguration() = default;
 		
 		// Methods
 		jint describeContents();

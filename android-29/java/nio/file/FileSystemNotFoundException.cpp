@@ -4,23 +4,21 @@ namespace java::nio::file
 {
 	// Fields
 	
-	FileSystemNotFoundException::FileSystemNotFoundException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FileSystemNotFoundException::FileSystemNotFoundException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	
 	// Constructors
 	FileSystemNotFoundException::FileSystemNotFoundException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::RuntimeException(
 			"java.nio.file.FileSystemNotFoundException",
 			"()V"
-		);
-	}
+		) {}
 	FileSystemNotFoundException::FileSystemNotFoundException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::RuntimeException(
 			"java.nio.file.FileSystemNotFoundException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::nio::file

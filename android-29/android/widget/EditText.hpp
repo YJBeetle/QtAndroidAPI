@@ -24,13 +24,15 @@ namespace android::widget
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit EditText(const char *className, const char *sig, Ts...agv) : android::widget::TextView(className, sig, std::forward<Ts>(agv)...) {}
 		EditText(QAndroidJniObject obj);
+		
 		// Constructors
 		EditText(android::content::Context arg0);
 		EditText(android::content::Context arg0, __JniBaseClass arg1);
 		EditText(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		EditText(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
-		EditText() = default;
 		
 		// Methods
 		void extendSelection(jint arg0);

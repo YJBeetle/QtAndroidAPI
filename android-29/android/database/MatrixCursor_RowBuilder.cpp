@@ -5,13 +5,15 @@ namespace android::database
 {
 	// Fields
 	
-	MatrixCursor_RowBuilder::MatrixCursor_RowBuilder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MatrixCursor_RowBuilder::MatrixCursor_RowBuilder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject MatrixCursor_RowBuilder::add(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"add",
 			"(Ljava/lang/Object;)Landroid/database/MatrixCursor$RowBuilder;",
 			arg0
@@ -19,7 +21,7 @@ namespace android::database
 	}
 	QAndroidJniObject MatrixCursor_RowBuilder::add(jstring arg0, jobject arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"add",
 			"(Ljava/lang/String;Ljava/lang/Object;)Landroid/database/MatrixCursor$RowBuilder;",
 			arg0,

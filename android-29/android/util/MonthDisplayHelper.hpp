@@ -10,11 +10,13 @@ namespace android::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MonthDisplayHelper(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MonthDisplayHelper(QAndroidJniObject obj);
+		
 		// Constructors
 		MonthDisplayHelper(jint arg0, jint arg1);
 		MonthDisplayHelper(jint arg0, jint arg1, jint arg2);
-		MonthDisplayHelper() = default;
 		
 		// Methods
 		jint getColumnOf(jint arg0);

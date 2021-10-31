@@ -28,7 +28,10 @@ namespace android::app
 		static jstring META_DATA_FUNC_NAME();
 		static jstring META_DATA_LIB_NAME();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit NativeActivity(const char *className, const char *sig, Ts...agv) : android::app::Activity(className, sig, std::forward<Ts>(agv)...) {}
 		NativeActivity(QAndroidJniObject obj);
+		
 		// Constructors
 		NativeActivity();
 		

@@ -12,265 +12,259 @@ namespace android::widget
 {
 	// Fields
 	
-	ListView::ListView(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ListView::ListView(QAndroidJniObject obj) : android::widget::AbsListView(obj) {}
+	
 	// Constructors
 	ListView::ListView(android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::AbsListView(
 			"android.widget.ListView",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	ListView::ListView(android::content::Context arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::AbsListView(
 			"android.widget.ListView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	ListView::ListView(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::AbsListView(
 			"android.widget.ListView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
-		);
-	}
+		) {}
 	ListView::ListView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::AbsListView(
 			"android.widget.ListView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	
 	// Methods
 	void ListView::addFooterView(android::view::View arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addFooterView",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ListView::addFooterView(android::view::View arg0, jobject arg1, jboolean arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addFooterView",
 			"(Landroid/view/View;Ljava/lang/Object;Z)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
 	}
 	void ListView::addHeaderView(android::view::View arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addHeaderView",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ListView::addHeaderView(android::view::View arg0, jobject arg1, jboolean arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addHeaderView",
 			"(Landroid/view/View;Ljava/lang/Object;Z)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
 	}
 	jboolean ListView::areFooterDividersEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"areFooterDividersEnabled",
 			"()Z"
 		);
 	}
 	jboolean ListView::areHeaderDividersEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"areHeaderDividersEnabled",
 			"()Z"
 		);
 	}
 	jboolean ListView::dispatchKeyEvent(android::view::KeyEvent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"dispatchKeyEvent",
 			"(Landroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring ListView::getAccessibilityClassName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	QAndroidJniObject ListView::getAdapter()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAdapter",
 			"()Landroid/widget/ListAdapter;"
 		);
 	}
 	jlongArray ListView::getCheckItemIds()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCheckItemIds",
 			"()[J"
 		).object<jlongArray>();
 	}
 	QAndroidJniObject ListView::getDivider()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDivider",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
 	jint ListView::getDividerHeight()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDividerHeight",
 			"()I"
 		);
 	}
 	jint ListView::getFooterViewsCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getFooterViewsCount",
 			"()I"
 		);
 	}
 	jint ListView::getHeaderViewsCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getHeaderViewsCount",
 			"()I"
 		);
 	}
 	jboolean ListView::getItemsCanFocus()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getItemsCanFocus",
 			"()Z"
 		);
 	}
 	jint ListView::getMaxScrollAmount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMaxScrollAmount",
 			"()I"
 		);
 	}
 	QAndroidJniObject ListView::getOverscrollFooter()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getOverscrollFooter",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
 	QAndroidJniObject ListView::getOverscrollHeader()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getOverscrollHeader",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
 	jboolean ListView::isOpaque()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isOpaque",
 			"()Z"
 		);
 	}
 	void ListView::onInitializeAccessibilityNodeInfoForItem(android::view::View arg0, jint arg1, android::view::accessibility::AccessibilityNodeInfo arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onInitializeAccessibilityNodeInfoForItem",
 			"(Landroid/view/View;ILandroid/view/accessibility/AccessibilityNodeInfo;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	jboolean ListView::onKeyDown(jint arg0, android::view::KeyEvent arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onKeyDown",
 			"(ILandroid/view/KeyEvent;)Z",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jboolean ListView::onKeyMultiple(jint arg0, jint arg1, android::view::KeyEvent arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onKeyMultiple",
 			"(IILandroid/view/KeyEvent;)Z",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	jboolean ListView::onKeyUp(jint arg0, android::view::KeyEvent arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onKeyUp",
 			"(ILandroid/view/KeyEvent;)Z",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jboolean ListView::removeFooterView(android::view::View arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"removeFooterView",
 			"(Landroid/view/View;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean ListView::removeHeaderView(android::view::View arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"removeHeaderView",
 			"(Landroid/view/View;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean ListView::requestChildRectangleOnScreen(android::view::View arg0, android::graphics::Rect arg1, jboolean arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"requestChildRectangleOnScreen",
 			"(Landroid/view/View;Landroid/graphics/Rect;Z)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
 	void ListView::setAdapter(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAdapter",
 			"(Landroid/widget/Adapter;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ListView::setCacheColorHint(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCacheColorHint",
 			"(I)V",
 			arg0
@@ -278,15 +272,15 @@ namespace android::widget
 	}
 	void ListView::setDivider(android::graphics::drawable::Drawable arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDivider",
 			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ListView::setDividerHeight(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDividerHeight",
 			"(I)V",
 			arg0
@@ -294,7 +288,7 @@ namespace android::widget
 	}
 	void ListView::setFooterDividersEnabled(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFooterDividersEnabled",
 			"(Z)V",
 			arg0
@@ -302,7 +296,7 @@ namespace android::widget
 	}
 	void ListView::setHeaderDividersEnabled(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setHeaderDividersEnabled",
 			"(Z)V",
 			arg0
@@ -310,7 +304,7 @@ namespace android::widget
 	}
 	void ListView::setItemsCanFocus(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setItemsCanFocus",
 			"(Z)V",
 			arg0
@@ -318,31 +312,31 @@ namespace android::widget
 	}
 	void ListView::setOverscrollFooter(android::graphics::drawable::Drawable arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOverscrollFooter",
 			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ListView::setOverscrollHeader(android::graphics::drawable::Drawable arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOverscrollHeader",
 			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ListView::setRemoteViewsAdapter(android::content::Intent arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setRemoteViewsAdapter",
 			"(Landroid/content/Intent;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ListView::setSelection(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSelection",
 			"(I)V",
 			arg0
@@ -350,14 +344,14 @@ namespace android::widget
 	}
 	void ListView::setSelectionAfterHeaderView()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSelectionAfterHeaderView",
 			"()V"
 		);
 	}
 	void ListView::smoothScrollByOffset(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"smoothScrollByOffset",
 			"(I)V",
 			arg0
@@ -365,7 +359,7 @@ namespace android::widget
 	}
 	void ListView::smoothScrollToPosition(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"smoothScrollToPosition",
 			"(I)V",
 			arg0

@@ -4,23 +4,21 @@ namespace java::io
 {
 	// Fields
 	
-	StreamCorruptedException::StreamCorruptedException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	StreamCorruptedException::StreamCorruptedException(QAndroidJniObject obj) : java::io::ObjectStreamException(obj) {}
+	
 	// Constructors
 	StreamCorruptedException::StreamCorruptedException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::ObjectStreamException(
 			"java.io.StreamCorruptedException",
 			"()V"
-		);
-	}
+		) {}
 	StreamCorruptedException::StreamCorruptedException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::ObjectStreamException(
 			"java.io.StreamCorruptedException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::io

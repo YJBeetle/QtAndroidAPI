@@ -18,10 +18,12 @@ namespace android::view
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ActionProvider(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ActionProvider(QAndroidJniObject obj);
+		
 		// Constructors
 		ActionProvider(android::content::Context arg0);
-		ActionProvider() = default;
 		
 		// Methods
 		jboolean hasSubMenu();

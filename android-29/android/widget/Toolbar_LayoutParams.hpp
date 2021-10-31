@@ -29,7 +29,10 @@ namespace android::widget
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Toolbar_LayoutParams(const char *className, const char *sig, Ts...agv) : android::app::ActionBar_LayoutParams(className, sig, std::forward<Ts>(agv)...) {}
 		Toolbar_LayoutParams(QAndroidJniObject obj);
+		
 		// Constructors
 		Toolbar_LayoutParams(android::app::ActionBar_LayoutParams arg0);
 		Toolbar_LayoutParams(android::view::ViewGroup_LayoutParams arg0);
@@ -39,7 +42,6 @@ namespace android::widget
 		Toolbar_LayoutParams(android::content::Context arg0, __JniBaseClass arg1);
 		Toolbar_LayoutParams(jint arg0, jint arg1);
 		Toolbar_LayoutParams(jint arg0, jint arg1, jint arg2);
-		Toolbar_LayoutParams() = default;
 		
 		// Methods
 	};

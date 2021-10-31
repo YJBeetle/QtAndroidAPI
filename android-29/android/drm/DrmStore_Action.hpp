@@ -18,7 +18,10 @@ namespace android::drm
 		static jint RINGTONE();
 		static jint TRANSFER();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DrmStore_Action(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DrmStore_Action(QAndroidJniObject obj);
+		
 		// Constructors
 		DrmStore_Action();
 		

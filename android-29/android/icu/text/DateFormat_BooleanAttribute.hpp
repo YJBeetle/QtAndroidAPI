@@ -15,9 +15,11 @@ namespace android::icu::text
 		static QAndroidJniObject PARSE_MULTIPLE_PATTERNS_FOR_MATCH();
 		static QAndroidJniObject PARSE_PARTIAL_LITERAL_MATCH();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DateFormat_BooleanAttribute(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		DateFormat_BooleanAttribute(QAndroidJniObject obj);
+		
 		// Constructors
-		DateFormat_BooleanAttribute() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

@@ -4,23 +4,21 @@ namespace java::security::spec
 {
 	// Fields
 	
-	InvalidParameterSpecException::InvalidParameterSpecException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	InvalidParameterSpecException::InvalidParameterSpecException(QAndroidJniObject obj) : java::security::GeneralSecurityException(obj) {}
+	
 	// Constructors
 	InvalidParameterSpecException::InvalidParameterSpecException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::security::GeneralSecurityException(
 			"java.security.spec.InvalidParameterSpecException",
 			"()V"
-		);
-	}
+		) {}
 	InvalidParameterSpecException::InvalidParameterSpecException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::security::GeneralSecurityException(
 			"java.security.spec.InvalidParameterSpecException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::security::spec

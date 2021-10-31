@@ -15,9 +15,11 @@ namespace java::lang::reflect
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Field(const char *className, const char *sig, Ts...agv) : java::lang::reflect::AccessibleObject(className, sig, std::forward<Ts>(agv)...) {}
 		Field(QAndroidJniObject obj);
+		
 		// Constructors
-		Field() = default;
 		
 		// Methods
 		jboolean equals(jobject arg0);

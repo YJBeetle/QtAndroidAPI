@@ -30,12 +30,14 @@ namespace android::icu::text
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AlphabeticIndex(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AlphabeticIndex(QAndroidJniObject obj);
+		
 		// Constructors
 		AlphabeticIndex(android::icu::text::RuleBasedCollator arg0);
 		AlphabeticIndex(android::icu::util::ULocale arg0);
 		AlphabeticIndex(java::util::Locale arg0);
-		AlphabeticIndex() = default;
 		
 		// Methods
 		QAndroidJniObject addLabels(jarray arg0);

@@ -4,42 +4,42 @@ namespace java::security::cert
 {
 	// Fields
 	
-	PolicyQualifierInfo::PolicyQualifierInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PolicyQualifierInfo::PolicyQualifierInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	PolicyQualifierInfo::PolicyQualifierInfo(jbyteArray arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.security.cert.PolicyQualifierInfo",
 			"([B)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jbyteArray PolicyQualifierInfo::getEncoded()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEncoded",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jbyteArray PolicyQualifierInfo::getPolicyQualifier()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPolicyQualifier",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jstring PolicyQualifierInfo::getPolicyQualifierId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPolicyQualifierId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring PolicyQualifierInfo::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

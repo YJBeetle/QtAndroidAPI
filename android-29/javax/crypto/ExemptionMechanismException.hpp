@@ -12,7 +12,10 @@ namespace javax::crypto
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ExemptionMechanismException(const char *className, const char *sig, Ts...agv) : java::security::GeneralSecurityException(className, sig, std::forward<Ts>(agv)...) {}
 		ExemptionMechanismException(QAndroidJniObject obj);
+		
 		// Constructors
 		ExemptionMechanismException();
 		ExemptionMechanismException(jstring arg0);

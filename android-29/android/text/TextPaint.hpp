@@ -22,7 +22,10 @@ namespace android::text
 		jint underlineColor();
 		jfloat underlineThickness();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TextPaint(const char *className, const char *sig, Ts...agv) : android::graphics::Paint(className, sig, std::forward<Ts>(agv)...) {}
 		TextPaint(QAndroidJniObject obj);
+		
 		// Constructors
 		TextPaint();
 		TextPaint(android::graphics::Paint arg0);

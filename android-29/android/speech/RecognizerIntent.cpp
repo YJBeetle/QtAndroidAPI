@@ -257,7 +257,9 @@ namespace android::speech
 		);
 	}
 	
-	RecognizerIntent::RecognizerIntent(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	RecognizerIntent::RecognizerIntent(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -267,7 +269,7 @@ namespace android::speech
 			"android.speech.RecognizerIntent",
 			"getVoiceDetailsIntent",
 			"(Landroid/content/Context;)Landroid/content/Intent;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::speech

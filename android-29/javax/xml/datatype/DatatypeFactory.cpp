@@ -27,7 +27,9 @@ namespace javax::xml::datatype
 		).object<jstring>();
 	}
 	
-	DatatypeFactory::DatatypeFactory(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DatatypeFactory::DatatypeFactory(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -54,12 +56,12 @@ namespace javax::xml::datatype
 			"newInstance",
 			"(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljavax/xml/datatype/DatatypeFactory;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject DatatypeFactory::newDuration(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newDuration",
 			"(Ljava/lang/String;)Ljavax/xml/datatype/Duration;",
 			arg0
@@ -67,7 +69,7 @@ namespace javax::xml::datatype
 	}
 	QAndroidJniObject DatatypeFactory::newDuration(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newDuration",
 			"(J)Ljavax/xml/datatype/Duration;",
 			arg0
@@ -75,7 +77,7 @@ namespace javax::xml::datatype
 	}
 	QAndroidJniObject DatatypeFactory::newDuration(jboolean arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newDuration",
 			"(ZIIIIII)Ljavax/xml/datatype/Duration;",
 			arg0,
@@ -89,21 +91,21 @@ namespace javax::xml::datatype
 	}
 	QAndroidJniObject DatatypeFactory::newDuration(jboolean arg0, java::math::BigInteger arg1, java::math::BigInteger arg2, java::math::BigInteger arg3, java::math::BigInteger arg4, java::math::BigInteger arg5, java::math::BigDecimal arg6)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newDuration",
 			"(ZLjava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigDecimal;)Ljavax/xml/datatype/Duration;",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
-			arg5.__jniObject().object(),
-			arg6.__jniObject().object()
+			arg1.object(),
+			arg2.object(),
+			arg3.object(),
+			arg4.object(),
+			arg5.object(),
+			arg6.object()
 		);
 	}
 	QAndroidJniObject DatatypeFactory::newDurationDayTime(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newDurationDayTime",
 			"(Ljava/lang/String;)Ljavax/xml/datatype/Duration;",
 			arg0
@@ -111,7 +113,7 @@ namespace javax::xml::datatype
 	}
 	QAndroidJniObject DatatypeFactory::newDurationDayTime(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newDurationDayTime",
 			"(J)Ljavax/xml/datatype/Duration;",
 			arg0
@@ -119,7 +121,7 @@ namespace javax::xml::datatype
 	}
 	QAndroidJniObject DatatypeFactory::newDurationDayTime(jboolean arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newDurationDayTime",
 			"(ZIIII)Ljavax/xml/datatype/Duration;",
 			arg0,
@@ -131,19 +133,19 @@ namespace javax::xml::datatype
 	}
 	QAndroidJniObject DatatypeFactory::newDurationDayTime(jboolean arg0, java::math::BigInteger arg1, java::math::BigInteger arg2, java::math::BigInteger arg3, java::math::BigInteger arg4)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newDurationDayTime",
 			"(ZLjava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;)Ljavax/xml/datatype/Duration;",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object()
+			arg1.object(),
+			arg2.object(),
+			arg3.object(),
+			arg4.object()
 		);
 	}
 	QAndroidJniObject DatatypeFactory::newDurationYearMonth(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newDurationYearMonth",
 			"(Ljava/lang/String;)Ljavax/xml/datatype/Duration;",
 			arg0
@@ -151,7 +153,7 @@ namespace javax::xml::datatype
 	}
 	QAndroidJniObject DatatypeFactory::newDurationYearMonth(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newDurationYearMonth",
 			"(J)Ljavax/xml/datatype/Duration;",
 			arg0
@@ -159,7 +161,7 @@ namespace javax::xml::datatype
 	}
 	QAndroidJniObject DatatypeFactory::newDurationYearMonth(jboolean arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newDurationYearMonth",
 			"(ZII)Ljavax/xml/datatype/Duration;",
 			arg0,
@@ -169,24 +171,24 @@ namespace javax::xml::datatype
 	}
 	QAndroidJniObject DatatypeFactory::newDurationYearMonth(jboolean arg0, java::math::BigInteger arg1, java::math::BigInteger arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newDurationYearMonth",
 			"(ZLjava/math/BigInteger;Ljava/math/BigInteger;)Ljavax/xml/datatype/Duration;",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject DatatypeFactory::newXMLGregorianCalendar()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newXMLGregorianCalendar",
 			"()Ljavax/xml/datatype/XMLGregorianCalendar;"
 		);
 	}
 	QAndroidJniObject DatatypeFactory::newXMLGregorianCalendar(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newXMLGregorianCalendar",
 			"(Ljava/lang/String;)Ljavax/xml/datatype/XMLGregorianCalendar;",
 			arg0
@@ -194,15 +196,15 @@ namespace javax::xml::datatype
 	}
 	QAndroidJniObject DatatypeFactory::newXMLGregorianCalendar(java::util::GregorianCalendar arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newXMLGregorianCalendar",
 			"(Ljava/util/GregorianCalendar;)Ljavax/xml/datatype/XMLGregorianCalendar;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject DatatypeFactory::newXMLGregorianCalendar(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newXMLGregorianCalendar",
 			"(IIIIIIII)Ljavax/xml/datatype/XMLGregorianCalendar;",
 			arg0,
@@ -217,22 +219,22 @@ namespace javax::xml::datatype
 	}
 	QAndroidJniObject DatatypeFactory::newXMLGregorianCalendar(java::math::BigInteger arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, java::math::BigDecimal arg6, jint arg7)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newXMLGregorianCalendar",
 			"(Ljava/math/BigInteger;IIIIILjava/math/BigDecimal;I)Ljavax/xml/datatype/XMLGregorianCalendar;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
 			arg4,
 			arg5,
-			arg6.__jniObject().object(),
+			arg6.object(),
 			arg7
 		);
 	}
 	QAndroidJniObject DatatypeFactory::newXMLGregorianCalendarDate(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newXMLGregorianCalendarDate",
 			"(IIII)Ljavax/xml/datatype/XMLGregorianCalendar;",
 			arg0,
@@ -243,7 +245,7 @@ namespace javax::xml::datatype
 	}
 	QAndroidJniObject DatatypeFactory::newXMLGregorianCalendarTime(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newXMLGregorianCalendarTime",
 			"(IIII)Ljavax/xml/datatype/XMLGregorianCalendar;",
 			arg0,
@@ -254,7 +256,7 @@ namespace javax::xml::datatype
 	}
 	QAndroidJniObject DatatypeFactory::newXMLGregorianCalendarTime(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newXMLGregorianCalendarTime",
 			"(IIIII)Ljavax/xml/datatype/XMLGregorianCalendar;",
 			arg0,
@@ -266,13 +268,13 @@ namespace javax::xml::datatype
 	}
 	QAndroidJniObject DatatypeFactory::newXMLGregorianCalendarTime(jint arg0, jint arg1, jint arg2, java::math::BigDecimal arg3, jint arg4)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newXMLGregorianCalendarTime",
 			"(IIILjava/math/BigDecimal;I)Ljavax/xml/datatype/XMLGregorianCalendar;",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
+			arg3.object(),
 			arg4
 		);
 	}

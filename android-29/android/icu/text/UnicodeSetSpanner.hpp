@@ -26,10 +26,12 @@ namespace android::icu::text
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit UnicodeSetSpanner(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		UnicodeSetSpanner(QAndroidJniObject obj);
+		
 		// Constructors
 		UnicodeSetSpanner(android::icu::text::UnicodeSet arg0);
-		UnicodeSetSpanner() = default;
 		
 		// Methods
 		jint countIn(jstring arg0);

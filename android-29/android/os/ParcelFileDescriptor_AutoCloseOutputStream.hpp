@@ -16,10 +16,12 @@ namespace android::os
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ParcelFileDescriptor_AutoCloseOutputStream(const char *className, const char *sig, Ts...agv) : java::io::FileOutputStream(className, sig, std::forward<Ts>(agv)...) {}
 		ParcelFileDescriptor_AutoCloseOutputStream(QAndroidJniObject obj);
+		
 		// Constructors
 		ParcelFileDescriptor_AutoCloseOutputStream(android::os::ParcelFileDescriptor arg0);
-		ParcelFileDescriptor_AutoCloseOutputStream() = default;
 		
 		// Methods
 		void close();

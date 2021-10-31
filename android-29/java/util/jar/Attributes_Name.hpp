@@ -28,10 +28,12 @@ namespace java::util::jar
 		static QAndroidJniObject SPECIFICATION_VENDOR();
 		static QAndroidJniObject SPECIFICATION_VERSION();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Attributes_Name(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Attributes_Name(QAndroidJniObject obj);
+		
 		// Constructors
 		Attributes_Name(jstring arg0);
-		Attributes_Name() = default;
 		
 		// Methods
 		jboolean equals(jobject arg0);

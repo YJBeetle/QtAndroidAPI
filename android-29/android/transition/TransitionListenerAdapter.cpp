@@ -5,55 +5,55 @@ namespace android::transition
 {
 	// Fields
 	
-	TransitionListenerAdapter::TransitionListenerAdapter(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TransitionListenerAdapter::TransitionListenerAdapter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	TransitionListenerAdapter::TransitionListenerAdapter()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.transition.TransitionListenerAdapter",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void TransitionListenerAdapter::onTransitionCancel(android::transition::Transition arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onTransitionCancel",
 			"(Landroid/transition/Transition;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TransitionListenerAdapter::onTransitionEnd(android::transition::Transition arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onTransitionEnd",
 			"(Landroid/transition/Transition;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TransitionListenerAdapter::onTransitionPause(android::transition::Transition arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onTransitionPause",
 			"(Landroid/transition/Transition;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TransitionListenerAdapter::onTransitionResume(android::transition::Transition arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onTransitionResume",
 			"(Landroid/transition/Transition;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TransitionListenerAdapter::onTransitionStart(android::transition::Transition arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onTransitionStart",
 			"(Landroid/transition/Transition;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::transition

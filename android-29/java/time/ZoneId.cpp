@@ -17,7 +17,9 @@ namespace java::time
 		);
 	}
 	
-	ZoneId::ZoneId(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ZoneId::ZoneId(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -27,7 +29,7 @@ namespace java::time
 			"java.time.ZoneId",
 			"from",
 			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/ZoneId;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ZoneId::getAvailableZoneIds()
@@ -54,7 +56,7 @@ namespace java::time
 			"of",
 			"(Ljava/lang/String;Ljava/util/Map;)Ljava/time/ZoneId;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject ZoneId::ofOffset(jstring arg0, java::time::ZoneOffset arg1)
@@ -64,7 +66,7 @@ namespace java::time
 			"ofOffset",
 			"(Ljava/lang/String;Ljava/time/ZoneOffset;)Ljava/time/ZoneId;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject ZoneId::systemDefault()
@@ -77,7 +79,7 @@ namespace java::time
 	}
 	jboolean ZoneId::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -85,44 +87,44 @@ namespace java::time
 	}
 	jstring ZoneId::getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDisplayName",
 			"(Ljava/time/format/TextStyle;Ljava/util/Locale;)Ljava/lang/String;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		).object<jstring>();
 	}
 	jstring ZoneId::getId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject ZoneId::getRules()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRules",
 			"()Ljava/time/zone/ZoneRules;"
 		);
 	}
 	jint ZoneId::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	QAndroidJniObject ZoneId::normalized()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"normalized",
 			"()Ljava/time/ZoneId;"
 		);
 	}
 	jstring ZoneId::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

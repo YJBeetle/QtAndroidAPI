@@ -6,54 +6,50 @@ namespace java::util::zip
 {
 	// Fields
 	
-	DeflaterInputStream::DeflaterInputStream(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DeflaterInputStream::DeflaterInputStream(QAndroidJniObject obj) : java::io::FilterInputStream(obj) {}
+	
 	// Constructors
 	DeflaterInputStream::DeflaterInputStream(java::io::InputStream arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::FilterInputStream(
 			"java.util.zip.DeflaterInputStream",
 			"(Ljava/io/InputStream;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	DeflaterInputStream::DeflaterInputStream(java::io::InputStream arg0, java::util::zip::Deflater arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::FilterInputStream(
 			"java.util.zip.DeflaterInputStream",
 			"(Ljava/io/InputStream;Ljava/util/zip/Deflater;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	DeflaterInputStream::DeflaterInputStream(java::io::InputStream arg0, java::util::zip::Deflater arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::FilterInputStream(
 			"java.util.zip.DeflaterInputStream",
 			"(Ljava/io/InputStream;Ljava/util/zip/Deflater;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	jint DeflaterInputStream::available()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"available",
 			"()I"
 		);
 	}
 	void DeflaterInputStream::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	void DeflaterInputStream::mark(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"mark",
 			"(I)V",
 			arg0
@@ -61,21 +57,21 @@ namespace java::util::zip
 	}
 	jboolean DeflaterInputStream::markSupported()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"markSupported",
 			"()Z"
 		);
 	}
 	jint DeflaterInputStream::read()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"read",
 			"()I"
 		);
 	}
 	jint DeflaterInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"read",
 			"([BII)I",
 			arg0,
@@ -85,14 +81,14 @@ namespace java::util::zip
 	}
 	void DeflaterInputStream::reset()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
 	jlong DeflaterInputStream::skip(jlong arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"skip",
 			"(J)J",
 			arg0

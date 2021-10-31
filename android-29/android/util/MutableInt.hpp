@@ -11,10 +11,12 @@ namespace android::util
 		// Fields
 		jint value();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MutableInt(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MutableInt(QAndroidJniObject obj);
+		
 		// Constructors
 		MutableInt(jint arg0);
-		MutableInt() = default;
 		
 		// Methods
 	};

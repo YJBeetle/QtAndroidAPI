@@ -18,15 +18,15 @@ namespace android
 		);
 	}
 	
-	R_animator::R_animator(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	R_animator::R_animator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	R_animator::R_animator()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.R$animator",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android

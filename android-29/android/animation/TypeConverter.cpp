@@ -4,22 +4,22 @@ namespace android::animation
 {
 	// Fields
 	
-	TypeConverter::TypeConverter(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TypeConverter::TypeConverter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	TypeConverter::TypeConverter(jclass arg0, jclass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.animation.TypeConverter",
 			"(Ljava/lang/Class;Ljava/lang/Class;)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jobject TypeConverter::convert(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"convert",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0

@@ -26,10 +26,12 @@ namespace android::telephony::mbms
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DownloadRequest_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DownloadRequest_Builder(QAndroidJniObject obj);
+		
 		// Constructors
 		DownloadRequest_Builder(android::net::Uri arg0, android::net::Uri arg1);
-		DownloadRequest_Builder() = default;
 		
 		// Methods
 		static QAndroidJniObject fromDownloadRequest(android::telephony::mbms::DownloadRequest arg0);

@@ -15,20 +15,22 @@ namespace android::bluetooth::le
 		);
 	}
 	
-	ScanFilter::ScanFilter(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ScanFilter::ScanFilter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint ScanFilter::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean ScanFilter::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -36,116 +38,116 @@ namespace android::bluetooth::le
 	}
 	jstring ScanFilter::getDeviceAddress()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDeviceAddress",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring ScanFilter::getDeviceName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDeviceName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jbyteArray ScanFilter::getManufacturerData()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getManufacturerData",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jbyteArray ScanFilter::getManufacturerDataMask()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getManufacturerDataMask",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jint ScanFilter::getManufacturerId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getManufacturerId",
 			"()I"
 		);
 	}
 	jbyteArray ScanFilter::getServiceData()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getServiceData",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jbyteArray ScanFilter::getServiceDataMask()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getServiceDataMask",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	QAndroidJniObject ScanFilter::getServiceDataUuid()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getServiceDataUuid",
 			"()Landroid/os/ParcelUuid;"
 		);
 	}
 	QAndroidJniObject ScanFilter::getServiceSolicitationUuid()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getServiceSolicitationUuid",
 			"()Landroid/os/ParcelUuid;"
 		);
 	}
 	QAndroidJniObject ScanFilter::getServiceSolicitationUuidMask()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getServiceSolicitationUuidMask",
 			"()Landroid/os/ParcelUuid;"
 		);
 	}
 	QAndroidJniObject ScanFilter::getServiceUuid()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getServiceUuid",
 			"()Landroid/os/ParcelUuid;"
 		);
 	}
 	QAndroidJniObject ScanFilter::getServiceUuidMask()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getServiceUuidMask",
 			"()Landroid/os/ParcelUuid;"
 		);
 	}
 	jint ScanFilter::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean ScanFilter::matches(android::bluetooth::le::ScanResult arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"matches",
 			"(Landroid/bluetooth/le/ScanResult;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring ScanFilter::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void ScanFilter::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

@@ -14,10 +14,12 @@ namespace java::net
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit HttpCookie(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		HttpCookie(QAndroidJniObject obj);
+		
 		// Constructors
 		HttpCookie(jstring arg0, jstring arg1);
-		HttpCookie() = default;
 		
 		// Methods
 		static jboolean domainMatches(jstring arg0, jstring arg1);

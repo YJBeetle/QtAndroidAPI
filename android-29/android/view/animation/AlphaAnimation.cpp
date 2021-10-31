@@ -6,38 +6,36 @@ namespace android::view::animation
 {
 	// Fields
 	
-	AlphaAnimation::AlphaAnimation(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AlphaAnimation::AlphaAnimation(QAndroidJniObject obj) : android::view::animation::Animation(obj) {}
+	
 	// Constructors
 	AlphaAnimation::AlphaAnimation(android::content::Context arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::view::animation::Animation(
 			"android.view.animation.AlphaAnimation",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	AlphaAnimation::AlphaAnimation(jfloat arg0, jfloat arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::view::animation::Animation(
 			"android.view.animation.AlphaAnimation",
 			"(FF)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean AlphaAnimation::willChangeBounds()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"willChangeBounds",
 			"()Z"
 		);
 	}
 	jboolean AlphaAnimation::willChangeTransformationMatrix()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"willChangeTransformationMatrix",
 			"()Z"
 		);

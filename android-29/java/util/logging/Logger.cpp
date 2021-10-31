@@ -29,7 +29,9 @@ namespace java::util::logging
 		);
 	}
 	
-	Logger::Logger(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Logger::Logger(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -79,15 +81,15 @@ namespace java::util::logging
 	}
 	void Logger::addHandler(java::util::logging::Handler arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addHandler",
 			"(Ljava/util/logging/Handler;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Logger::config(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"config",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -95,15 +97,15 @@ namespace java::util::logging
 	}
 	void Logger::config(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"config",
 			"(Ljava/util/function/Supplier;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Logger::entering(jstring arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"entering",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
@@ -112,7 +114,7 @@ namespace java::util::logging
 	}
 	void Logger::entering(jstring arg0, jstring arg1, jobjectArray arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"entering",
 			"(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V",
 			arg0,
@@ -122,7 +124,7 @@ namespace java::util::logging
 	}
 	void Logger::entering(jstring arg0, jstring arg1, jobject arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"entering",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V",
 			arg0,
@@ -132,7 +134,7 @@ namespace java::util::logging
 	}
 	void Logger::exiting(jstring arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"exiting",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
@@ -141,7 +143,7 @@ namespace java::util::logging
 	}
 	void Logger::exiting(jstring arg0, jstring arg1, jobject arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"exiting",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V",
 			arg0,
@@ -151,7 +153,7 @@ namespace java::util::logging
 	}
 	void Logger::fine(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"fine",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -159,15 +161,15 @@ namespace java::util::logging
 	}
 	void Logger::fine(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"fine",
 			"(Ljava/util/function/Supplier;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Logger::finer(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"finer",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -175,15 +177,15 @@ namespace java::util::logging
 	}
 	void Logger::finer(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"finer",
 			"(Ljava/util/function/Supplier;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Logger::finest(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"finest",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -191,71 +193,71 @@ namespace java::util::logging
 	}
 	void Logger::finest(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"finest",
 			"(Ljava/util/function/Supplier;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Logger::getFilter()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFilter",
 			"()Ljava/util/logging/Filter;"
 		);
 	}
 	jarray Logger::getHandlers()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getHandlers",
 			"()[Ljava/util/logging/Handler;"
 		).object<jarray>();
 	}
 	QAndroidJniObject Logger::getLevel()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLevel",
 			"()Ljava/util/logging/Level;"
 		);
 	}
 	jstring Logger::getName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject Logger::getParent()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getParent",
 			"()Ljava/util/logging/Logger;"
 		);
 	}
 	QAndroidJniObject Logger::getResourceBundle()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getResourceBundle",
 			"()Ljava/util/ResourceBundle;"
 		);
 	}
 	jstring Logger::getResourceBundleName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getResourceBundleName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jboolean Logger::getUseParentHandlers()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getUseParentHandlers",
 			"()Z"
 		);
 	}
 	void Logger::info(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"info",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -263,92 +265,92 @@ namespace java::util::logging
 	}
 	void Logger::info(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"info",
 			"(Ljava/util/function/Supplier;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean Logger::isLoggable(java::util::logging::Level arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isLoggable",
 			"(Ljava/util/logging/Level;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Logger::log(java::util::logging::LogRecord arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"log",
 			"(Ljava/util/logging/LogRecord;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Logger::log(java::util::logging::Level arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"log",
 			"(Ljava/util/logging/Level;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void Logger::log(java::util::logging::Level arg0, __JniBaseClass arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"log",
 			"(Ljava/util/logging/Level;Ljava/util/function/Supplier;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void Logger::log(java::util::logging::Level arg0, jstring arg1, jobjectArray arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"log",
 			"(Ljava/util/logging/Level;Ljava/lang/String;[Ljava/lang/Object;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
 	}
 	void Logger::log(java::util::logging::Level arg0, jstring arg1, jobject arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"log",
 			"(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Object;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
 	}
 	void Logger::log(java::util::logging::Level arg0, jstring arg1, jthrowable arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"log",
 			"(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
 	}
 	void Logger::log(java::util::logging::Level arg0, jthrowable arg1, __JniBaseClass arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"log",
 			"(Ljava/util/logging/Level;Ljava/lang/Throwable;Ljava/util/function/Supplier;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void Logger::logp(java::util::logging::Level arg0, jstring arg1, jstring arg2, jstring arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"logp",
 			"(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3
@@ -356,21 +358,21 @@ namespace java::util::logging
 	}
 	void Logger::logp(java::util::logging::Level arg0, jstring arg1, jstring arg2, __JniBaseClass arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"logp",
 			"(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/util/function/Supplier;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	void Logger::logp(java::util::logging::Level arg0, jstring arg1, jstring arg2, jstring arg3, jobjectArray arg4)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"logp",
 			"(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
@@ -379,10 +381,10 @@ namespace java::util::logging
 	}
 	void Logger::logp(java::util::logging::Level arg0, jstring arg1, jstring arg2, jstring arg3, jobject arg4)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"logp",
 			"(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
@@ -391,10 +393,10 @@ namespace java::util::logging
 	}
 	void Logger::logp(java::util::logging::Level arg0, jstring arg1, jstring arg2, jstring arg3, jthrowable arg4)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"logp",
 			"(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
@@ -403,44 +405,44 @@ namespace java::util::logging
 	}
 	void Logger::logp(java::util::logging::Level arg0, jstring arg1, jstring arg2, jthrowable arg3, __JniBaseClass arg4)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"logp",
 			"(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;Ljava/util/function/Supplier;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object()
+			arg4.object()
 		);
 	}
 	void Logger::logrb(java::util::logging::Level arg0, java::util::ResourceBundle arg1, jstring arg2, jobjectArray arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"logrb",
 			"(Ljava/util/logging/Level;Ljava/util/ResourceBundle;Ljava/lang/String;[Ljava/lang/Object;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3
 		);
 	}
 	void Logger::logrb(java::util::logging::Level arg0, java::util::ResourceBundle arg1, jstring arg2, jthrowable arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"logrb",
 			"(Ljava/util/logging/Level;Ljava/util/ResourceBundle;Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3
 		);
 	}
 	void Logger::logrb(java::util::logging::Level arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"logrb",
 			"(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
@@ -449,10 +451,10 @@ namespace java::util::logging
 	}
 	void Logger::logrb(java::util::logging::Level arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4, jobjectArray arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"logrb",
 			"(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
@@ -462,10 +464,10 @@ namespace java::util::logging
 	}
 	void Logger::logrb(java::util::logging::Level arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4, jobject arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"logrb",
 			"(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
@@ -475,10 +477,10 @@ namespace java::util::logging
 	}
 	void Logger::logrb(java::util::logging::Level arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4, jthrowable arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"logrb",
 			"(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
@@ -488,73 +490,73 @@ namespace java::util::logging
 	}
 	void Logger::logrb(java::util::logging::Level arg0, jstring arg1, jstring arg2, java::util::ResourceBundle arg3, jstring arg4, jobjectArray arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"logrb",
 			"(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/util/ResourceBundle;Ljava/lang/String;[Ljava/lang/Object;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
+			arg3.object(),
 			arg4,
 			arg5
 		);
 	}
 	void Logger::logrb(java::util::logging::Level arg0, jstring arg1, jstring arg2, java::util::ResourceBundle arg3, jstring arg4, jthrowable arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"logrb",
 			"(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/util/ResourceBundle;Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
+			arg3.object(),
 			arg4,
 			arg5
 		);
 	}
 	void Logger::removeHandler(java::util::logging::Handler arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeHandler",
 			"(Ljava/util/logging/Handler;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Logger::setFilter(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFilter",
 			"(Ljava/util/logging/Filter;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Logger::setLevel(java::util::logging::Level arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLevel",
 			"(Ljava/util/logging/Level;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Logger::setParent(java::util::logging::Logger arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setParent",
 			"(Ljava/util/logging/Logger;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Logger::setResourceBundle(java::util::ResourceBundle arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setResourceBundle",
 			"(Ljava/util/ResourceBundle;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Logger::setUseParentHandlers(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setUseParentHandlers",
 			"(Z)V",
 			arg0
@@ -562,7 +564,7 @@ namespace java::util::logging
 	}
 	void Logger::severe(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"severe",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -570,15 +572,15 @@ namespace java::util::logging
 	}
 	void Logger::severe(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"severe",
 			"(Ljava/util/function/Supplier;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Logger::throwing(jstring arg0, jstring arg1, jthrowable arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"throwing",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
@@ -588,7 +590,7 @@ namespace java::util::logging
 	}
 	void Logger::warning(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"warning",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -596,10 +598,10 @@ namespace java::util::logging
 	}
 	void Logger::warning(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"warning",
 			"(Ljava/util/function/Supplier;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace java::util::logging

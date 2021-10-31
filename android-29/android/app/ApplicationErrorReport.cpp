@@ -55,81 +55,81 @@ namespace android::app
 	}
 	QAndroidJniObject ApplicationErrorReport::anrInfo()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"anrInfo",
 			"Landroid/app/ApplicationErrorReport$AnrInfo;"
 		);
 	}
 	QAndroidJniObject ApplicationErrorReport::batteryInfo()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"batteryInfo",
 			"Landroid/app/ApplicationErrorReport$BatteryInfo;"
 		);
 	}
 	QAndroidJniObject ApplicationErrorReport::crashInfo()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"crashInfo",
 			"Landroid/app/ApplicationErrorReport$CrashInfo;"
 		);
 	}
 	jstring ApplicationErrorReport::installerPackageName()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"installerPackageName",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring ApplicationErrorReport::packageName()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"packageName",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring ApplicationErrorReport::processName()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"processName",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject ApplicationErrorReport::runningServiceInfo()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"runningServiceInfo",
 			"Landroid/app/ApplicationErrorReport$RunningServiceInfo;"
 		);
 	}
 	jboolean ApplicationErrorReport::systemApp()
 	{
-		return __thiz.getField<jboolean>(
+		return getField<jboolean>(
 			"systemApp"
 		);
 	}
 	jlong ApplicationErrorReport::time()
 	{
-		return __thiz.getField<jlong>(
+		return getField<jlong>(
 			"time"
 		);
 	}
 	jint ApplicationErrorReport::type()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"type"
 		);
 	}
 	
-	ApplicationErrorReport::ApplicationErrorReport(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ApplicationErrorReport::ApplicationErrorReport(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ApplicationErrorReport::ApplicationErrorReport()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.app.ApplicationErrorReport",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject ApplicationErrorReport::getErrorReportReceiver(android::content::Context arg0, jstring arg1, jint arg2)
@@ -138,41 +138,41 @@ namespace android::app
 			"android.app.ApplicationErrorReport",
 			"getErrorReportReceiver",
 			"(Landroid/content/Context;Ljava/lang/String;I)Landroid/content/ComponentName;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
 	}
 	jint ApplicationErrorReport::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	void ApplicationErrorReport::dump(__JniBaseClass arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"dump",
 			"(Landroid/util/Printer;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void ApplicationErrorReport::readFromParcel(android::os::Parcel arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"readFromParcel",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ApplicationErrorReport::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

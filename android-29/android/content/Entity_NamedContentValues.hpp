@@ -20,10 +20,12 @@ namespace android::content
 		QAndroidJniObject uri();
 		QAndroidJniObject values();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Entity_NamedContentValues(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Entity_NamedContentValues(QAndroidJniObject obj);
+		
 		// Constructors
 		Entity_NamedContentValues(android::net::Uri arg0, android::content::ContentValues arg1);
-		Entity_NamedContentValues() = default;
 		
 		// Methods
 	};

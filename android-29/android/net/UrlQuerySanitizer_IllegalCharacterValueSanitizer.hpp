@@ -32,10 +32,12 @@ namespace android::net
 		static jint URL_AND_SPACE_LEGAL();
 		static jint URL_LEGAL();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit UrlQuerySanitizer_IllegalCharacterValueSanitizer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		UrlQuerySanitizer_IllegalCharacterValueSanitizer(QAndroidJniObject obj);
+		
 		// Constructors
 		UrlQuerySanitizer_IllegalCharacterValueSanitizer(jint arg0);
-		UrlQuerySanitizer_IllegalCharacterValueSanitizer() = default;
 		
 		// Methods
 		jstring sanitize(jstring arg0);

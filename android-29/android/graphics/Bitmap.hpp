@@ -64,9 +64,11 @@ namespace android::graphics
 		static QAndroidJniObject CREATOR();
 		static jint DENSITY_NONE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Bitmap(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Bitmap(QAndroidJniObject obj);
+		
 		// Constructors
-		Bitmap() = default;
 		
 		// Methods
 		static QAndroidJniObject createBitmap(android::graphics::Bitmap arg0);

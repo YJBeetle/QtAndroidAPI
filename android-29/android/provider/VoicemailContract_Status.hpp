@@ -45,9 +45,11 @@ namespace android::provider
 		static jstring SOURCE_TYPE();
 		static jstring VOICEMAIL_ACCESS_URI();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit VoicemailContract_Status(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		VoicemailContract_Status(QAndroidJniObject obj);
+		
 		// Constructors
-		VoicemailContract_Status() = default;
 		
 		// Methods
 		static QAndroidJniObject buildSourceUri(jstring arg0);

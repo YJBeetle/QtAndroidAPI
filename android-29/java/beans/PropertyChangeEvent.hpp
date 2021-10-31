@@ -15,10 +15,12 @@ namespace java::beans
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PropertyChangeEvent(const char *className, const char *sig, Ts...agv) : java::util::EventObject(className, sig, std::forward<Ts>(agv)...) {}
 		PropertyChangeEvent(QAndroidJniObject obj);
+		
 		// Constructors
 		PropertyChangeEvent(jobject arg0, jstring arg1, jobject arg2, jobject arg3);
-		PropertyChangeEvent() = default;
 		
 		// Methods
 		jobject getNewValue();

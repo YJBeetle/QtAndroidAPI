@@ -10,9 +10,11 @@ namespace android::icu::text
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BidiRun(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		BidiRun(QAndroidJniObject obj);
+		
 		// Constructors
-		BidiRun() = default;
 		
 		// Methods
 		jbyte getDirection();

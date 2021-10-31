@@ -6,7 +6,9 @@ namespace java::nio
 {
 	// Fields
 	
-	IntBuffer::IntBuffer(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	IntBuffer::IntBuffer(QAndroidJniObject obj) : java::nio::Buffer(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -41,42 +43,42 @@ namespace java::nio
 	}
 	jintArray IntBuffer::array()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"array",
 			"()[I"
 		).object<jintArray>();
 	}
 	jint IntBuffer::arrayOffset()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"arrayOffset",
 			"()I"
 		);
 	}
 	QAndroidJniObject IntBuffer::asReadOnlyBuffer()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"asReadOnlyBuffer",
 			"()Ljava/nio/IntBuffer;"
 		);
 	}
 	QAndroidJniObject IntBuffer::clear()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clear",
 			"()Ljava/nio/IntBuffer;"
 		);
 	}
 	QAndroidJniObject IntBuffer::compact()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"compact",
 			"()Ljava/nio/IntBuffer;"
 		);
 	}
 	jint IntBuffer::compareTo(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -84,22 +86,22 @@ namespace java::nio
 	}
 	jint IntBuffer::compareTo(java::nio::IntBuffer arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/nio/IntBuffer;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject IntBuffer::duplicate()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"duplicate",
 			"()Ljava/nio/IntBuffer;"
 		);
 	}
 	jboolean IntBuffer::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -107,21 +109,21 @@ namespace java::nio
 	}
 	QAndroidJniObject IntBuffer::flip()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"flip",
 			"()Ljava/nio/IntBuffer;"
 		);
 	}
 	jint IntBuffer::get()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"get",
 			"()I"
 		);
 	}
 	jint IntBuffer::get(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"get",
 			"(I)I",
 			arg0
@@ -129,7 +131,7 @@ namespace java::nio
 	}
 	QAndroidJniObject IntBuffer::get(jintArray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"([I)Ljava/nio/IntBuffer;",
 			arg0
@@ -137,7 +139,7 @@ namespace java::nio
 	}
 	QAndroidJniObject IntBuffer::get(jint arg0, jintArray arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"(I[I)Ljava/nio/IntBuffer;",
 			arg0,
@@ -146,7 +148,7 @@ namespace java::nio
 	}
 	QAndroidJniObject IntBuffer::get(jintArray arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"([III)Ljava/nio/IntBuffer;",
 			arg0,
@@ -156,7 +158,7 @@ namespace java::nio
 	}
 	QAndroidJniObject IntBuffer::get(jint arg0, jintArray arg1, jint arg2, jint arg3)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"(I[III)Ljava/nio/IntBuffer;",
 			arg0,
@@ -167,28 +169,28 @@ namespace java::nio
 	}
 	jboolean IntBuffer::hasArray()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasArray",
 			"()Z"
 		);
 	}
 	jint IntBuffer::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean IntBuffer::isDirect()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isDirect",
 			"()Z"
 		);
 	}
 	QAndroidJniObject IntBuffer::limit(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"limit",
 			"(I)Ljava/nio/IntBuffer;",
 			arg0
@@ -196,29 +198,29 @@ namespace java::nio
 	}
 	QAndroidJniObject IntBuffer::mark()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"mark",
 			"()Ljava/nio/IntBuffer;"
 		);
 	}
 	jint IntBuffer::mismatch(java::nio::IntBuffer arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"mismatch",
 			"(Ljava/nio/IntBuffer;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject IntBuffer::order()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"order",
 			"()Ljava/nio/ByteOrder;"
 		);
 	}
 	QAndroidJniObject IntBuffer::position(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"position",
 			"(I)Ljava/nio/IntBuffer;",
 			arg0
@@ -226,7 +228,7 @@ namespace java::nio
 	}
 	QAndroidJniObject IntBuffer::put(jintArray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"put",
 			"([I)Ljava/nio/IntBuffer;",
 			arg0
@@ -234,7 +236,7 @@ namespace java::nio
 	}
 	QAndroidJniObject IntBuffer::put(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"put",
 			"(I)Ljava/nio/IntBuffer;",
 			arg0
@@ -242,15 +244,15 @@ namespace java::nio
 	}
 	QAndroidJniObject IntBuffer::put(java::nio::IntBuffer arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"put",
 			"(Ljava/nio/IntBuffer;)Ljava/nio/IntBuffer;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject IntBuffer::put(jint arg0, jintArray arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"put",
 			"(I[I)Ljava/nio/IntBuffer;",
 			arg0,
@@ -259,7 +261,7 @@ namespace java::nio
 	}
 	QAndroidJniObject IntBuffer::put(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"put",
 			"(II)Ljava/nio/IntBuffer;",
 			arg0,
@@ -268,7 +270,7 @@ namespace java::nio
 	}
 	QAndroidJniObject IntBuffer::put(jintArray arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"put",
 			"([III)Ljava/nio/IntBuffer;",
 			arg0,
@@ -278,7 +280,7 @@ namespace java::nio
 	}
 	QAndroidJniObject IntBuffer::put(jint arg0, jintArray arg1, jint arg2, jint arg3)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"put",
 			"(I[III)Ljava/nio/IntBuffer;",
 			arg0,
@@ -289,39 +291,39 @@ namespace java::nio
 	}
 	QAndroidJniObject IntBuffer::put(jint arg0, java::nio::IntBuffer arg1, jint arg2, jint arg3)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"put",
 			"(ILjava/nio/IntBuffer;II)Ljava/nio/IntBuffer;",
 			arg0,
-			arg1.__jniObject().object(),
+			arg1.object(),
 			arg2,
 			arg3
 		);
 	}
 	QAndroidJniObject IntBuffer::reset()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"reset",
 			"()Ljava/nio/IntBuffer;"
 		);
 	}
 	QAndroidJniObject IntBuffer::rewind()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"rewind",
 			"()Ljava/nio/IntBuffer;"
 		);
 	}
 	QAndroidJniObject IntBuffer::slice()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"slice",
 			"()Ljava/nio/IntBuffer;"
 		);
 	}
 	QAndroidJniObject IntBuffer::slice(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"slice",
 			"(II)Ljava/nio/IntBuffer;",
 			arg0,
@@ -330,7 +332,7 @@ namespace java::nio
 	}
 	jstring IntBuffer::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

@@ -15,64 +15,64 @@ namespace android::widget
 		);
 	}
 	
-	EdgeEffect::EdgeEffect(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	EdgeEffect::EdgeEffect(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	EdgeEffect::EdgeEffect(android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.widget.EdgeEffect",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jboolean EdgeEffect::draw(android::graphics::Canvas arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"draw",
 			"(Landroid/graphics/Canvas;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void EdgeEffect::finish()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"finish",
 			"()V"
 		);
 	}
 	QAndroidJniObject EdgeEffect::getBlendMode()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBlendMode",
 			"()Landroid/graphics/BlendMode;"
 		);
 	}
 	jint EdgeEffect::getColor()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getColor",
 			"()I"
 		);
 	}
 	jint EdgeEffect::getMaxHeight()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMaxHeight",
 			"()I"
 		);
 	}
 	jboolean EdgeEffect::isFinished()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isFinished",
 			"()Z"
 		);
 	}
 	void EdgeEffect::onAbsorb(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onAbsorb",
 			"(I)V",
 			arg0
@@ -80,7 +80,7 @@ namespace android::widget
 	}
 	void EdgeEffect::onPull(jfloat arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onPull",
 			"(F)V",
 			arg0
@@ -88,7 +88,7 @@ namespace android::widget
 	}
 	void EdgeEffect::onPull(jfloat arg0, jfloat arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onPull",
 			"(FF)V",
 			arg0,
@@ -97,22 +97,22 @@ namespace android::widget
 	}
 	void EdgeEffect::onRelease()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onRelease",
 			"()V"
 		);
 	}
 	void EdgeEffect::setBlendMode(android::graphics::BlendMode arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setBlendMode",
 			"(Landroid/graphics/BlendMode;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void EdgeEffect::setColor(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setColor",
 			"(I)V",
 			arg0
@@ -120,7 +120,7 @@ namespace android::widget
 	}
 	void EdgeEffect::setSize(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSize",
 			"(II)V",
 			arg0,

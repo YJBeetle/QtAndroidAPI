@@ -20,15 +20,15 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	ContactsContract_SearchSnippets::ContactsContract_SearchSnippets(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ContactsContract_SearchSnippets::ContactsContract_SearchSnippets(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ContactsContract_SearchSnippets::ContactsContract_SearchSnippets()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.provider.ContactsContract$SearchSnippets",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::provider

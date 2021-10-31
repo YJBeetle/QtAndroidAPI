@@ -19,10 +19,12 @@ namespace android::service::autofill
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DateValueSanitizer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DateValueSanitizer(QAndroidJniObject obj);
+		
 		// Constructors
 		DateValueSanitizer(android::icu::text::DateFormat arg0);
-		DateValueSanitizer() = default;
 		
 		// Methods
 		jint describeContents();

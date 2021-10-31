@@ -18,9 +18,11 @@ namespace android::telephony
 		static jint ERROR_UNSUPPORTED();
 		static jint SUCCESS();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit NetworkScan(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		NetworkScan(QAndroidJniObject obj);
+		
 		// Constructors
-		NetworkScan() = default;
 		
 		// Methods
 		void stopScan();

@@ -4,16 +4,16 @@ namespace java::nio::file
 {
 	// Fields
 	
-	DirectoryNotEmptyException::DirectoryNotEmptyException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DirectoryNotEmptyException::DirectoryNotEmptyException(QAndroidJniObject obj) : java::nio::file::FileSystemException(obj) {}
+	
 	// Constructors
 	DirectoryNotEmptyException::DirectoryNotEmptyException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::nio::file::FileSystemException(
 			"java.nio.file.DirectoryNotEmptyException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::nio::file

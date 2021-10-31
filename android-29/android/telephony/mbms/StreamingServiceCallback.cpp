@@ -11,20 +11,20 @@ namespace android::telephony::mbms
 		);
 	}
 	
-	StreamingServiceCallback::StreamingServiceCallback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	StreamingServiceCallback::StreamingServiceCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	StreamingServiceCallback::StreamingServiceCallback()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.telephony.mbms.StreamingServiceCallback",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void StreamingServiceCallback::onBroadcastSignalStrengthUpdated(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onBroadcastSignalStrengthUpdated",
 			"(I)V",
 			arg0
@@ -32,7 +32,7 @@ namespace android::telephony::mbms
 	}
 	void StreamingServiceCallback::onError(jint arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onError",
 			"(ILjava/lang/String;)V",
 			arg0,
@@ -41,14 +41,14 @@ namespace android::telephony::mbms
 	}
 	void StreamingServiceCallback::onMediaDescriptionUpdated()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onMediaDescriptionUpdated",
 			"()V"
 		);
 	}
 	void StreamingServiceCallback::onStreamMethodUpdated(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onStreamMethodUpdated",
 			"(I)V",
 			arg0
@@ -56,7 +56,7 @@ namespace android::telephony::mbms
 	}
 	void StreamingServiceCallback::onStreamStateUpdated(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onStreamStateUpdated",
 			"(II)V",
 			arg0,

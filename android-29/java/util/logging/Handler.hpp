@@ -34,9 +34,11 @@ namespace java::util::logging
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Handler(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Handler(QAndroidJniObject obj);
+		
 		// Constructors
-		Handler() = default;
 		
 		// Methods
 		void close();

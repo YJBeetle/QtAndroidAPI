@@ -15,51 +15,53 @@ namespace android::telephony
 		);
 	}
 	
-	VisualVoicemailSms::VisualVoicemailSms(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	VisualVoicemailSms::VisualVoicemailSms(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint VisualVoicemailSms::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	QAndroidJniObject VisualVoicemailSms::getFields()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFields",
 			"()Landroid/os/Bundle;"
 		);
 	}
 	jstring VisualVoicemailSms::getMessageBody()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMessageBody",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject VisualVoicemailSms::getPhoneAccountHandle()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPhoneAccountHandle",
 			"()Landroid/telecom/PhoneAccountHandle;"
 		);
 	}
 	jstring VisualVoicemailSms::getPrefix()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPrefix",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void VisualVoicemailSms::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

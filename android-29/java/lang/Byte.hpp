@@ -20,11 +20,13 @@ namespace java::lang
 		static jint SIZE();
 		static jclass TYPE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Byte(const char *className, const char *sig, Ts...agv) : java::lang::Number(className, sig, std::forward<Ts>(agv)...) {}
 		Byte(QAndroidJniObject obj);
+		
 		// Constructors
 		Byte(jbyte arg0);
 		Byte(jstring arg0);
-		Byte() = default;
 		
 		// Methods
 		static jint compare(jbyte arg0, jbyte arg1);

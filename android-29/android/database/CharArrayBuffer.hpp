@@ -12,11 +12,13 @@ namespace android::database
 		jcharArray data();
 		jint sizeCopied();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CharArrayBuffer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		CharArrayBuffer(QAndroidJniObject obj);
+		
 		// Constructors
 		CharArrayBuffer(jcharArray arg0);
 		CharArrayBuffer(jint arg0);
-		CharArrayBuffer() = default;
 		
 		// Methods
 	};

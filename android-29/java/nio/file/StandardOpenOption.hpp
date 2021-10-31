@@ -21,9 +21,11 @@ namespace java::nio::file
 		static QAndroidJniObject TRUNCATE_EXISTING();
 		static QAndroidJniObject WRITE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit StandardOpenOption(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		StandardOpenOption(QAndroidJniObject obj);
+		
 		// Constructors
-		StandardOpenOption() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

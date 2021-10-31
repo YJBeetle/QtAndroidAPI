@@ -4,15 +4,15 @@ namespace android::graphics
 {
 	// Fields
 	
-	DrawFilter::DrawFilter(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DrawFilter::DrawFilter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	DrawFilter::DrawFilter()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.graphics.DrawFilter",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::graphics

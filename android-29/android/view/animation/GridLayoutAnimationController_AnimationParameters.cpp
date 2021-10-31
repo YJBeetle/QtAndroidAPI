@@ -5,38 +5,38 @@ namespace android::view::animation
 	// Fields
 	jint GridLayoutAnimationController_AnimationParameters::column()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"column"
 		);
 	}
 	jint GridLayoutAnimationController_AnimationParameters::columnsCount()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"columnsCount"
 		);
 	}
 	jint GridLayoutAnimationController_AnimationParameters::row()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"row"
 		);
 	}
 	jint GridLayoutAnimationController_AnimationParameters::rowsCount()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"rowsCount"
 		);
 	}
 	
-	GridLayoutAnimationController_AnimationParameters::GridLayoutAnimationController_AnimationParameters(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	GridLayoutAnimationController_AnimationParameters::GridLayoutAnimationController_AnimationParameters(QAndroidJniObject obj) : android::view::animation::LayoutAnimationController_AnimationParameters(obj) {}
+	
 	// Constructors
 	GridLayoutAnimationController_AnimationParameters::GridLayoutAnimationController_AnimationParameters()
-	{
-		__thiz = QAndroidJniObject(
+		: android::view::animation::LayoutAnimationController_AnimationParameters(
 			"android.view.animation.GridLayoutAnimationController$AnimationParameters",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::view::animation

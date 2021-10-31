@@ -6,50 +6,48 @@ namespace android::transition
 {
 	// Fields
 	
-	ArcMotion::ArcMotion(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ArcMotion::ArcMotion(QAndroidJniObject obj) : android::transition::PathMotion(obj) {}
+	
 	// Constructors
 	ArcMotion::ArcMotion()
-	{
-		__thiz = QAndroidJniObject(
+		: android::transition::PathMotion(
 			"android.transition.ArcMotion",
 			"()V"
-		);
-	}
+		) {}
 	ArcMotion::ArcMotion(android::content::Context arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::transition::PathMotion(
 			"android.transition.ArcMotion",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	
 	// Methods
 	jfloat ArcMotion::getMaximumAngle()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getMaximumAngle",
 			"()F"
 		);
 	}
 	jfloat ArcMotion::getMinimumHorizontalAngle()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getMinimumHorizontalAngle",
 			"()F"
 		);
 	}
 	jfloat ArcMotion::getMinimumVerticalAngle()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getMinimumVerticalAngle",
 			"()F"
 		);
 	}
 	QAndroidJniObject ArcMotion::getPath(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPath",
 			"(FFFF)Landroid/graphics/Path;",
 			arg0,
@@ -60,7 +58,7 @@ namespace android::transition
 	}
 	void ArcMotion::setMaximumAngle(jfloat arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMaximumAngle",
 			"(F)V",
 			arg0
@@ -68,7 +66,7 @@ namespace android::transition
 	}
 	void ArcMotion::setMinimumHorizontalAngle(jfloat arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMinimumHorizontalAngle",
 			"(F)V",
 			arg0
@@ -76,7 +74,7 @@ namespace android::transition
 	}
 	void ArcMotion::setMinimumVerticalAngle(jfloat arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMinimumVerticalAngle",
 			"(F)V",
 			arg0

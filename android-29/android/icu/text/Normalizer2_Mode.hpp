@@ -15,9 +15,11 @@ namespace android::icu::text
 		static QAndroidJniObject DECOMPOSE();
 		static QAndroidJniObject FCD();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Normalizer2_Mode(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		Normalizer2_Mode(QAndroidJniObject obj);
+		
 		// Constructors
-		Normalizer2_Mode() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

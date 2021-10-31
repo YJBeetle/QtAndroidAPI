@@ -4,23 +4,21 @@ namespace android::view
 {
 	// Fields
 	
-	WindowManager_InvalidDisplayException::WindowManager_InvalidDisplayException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WindowManager_InvalidDisplayException::WindowManager_InvalidDisplayException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	
 	// Constructors
 	WindowManager_InvalidDisplayException::WindowManager_InvalidDisplayException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::RuntimeException(
 			"android.view.WindowManager$InvalidDisplayException",
 			"()V"
-		);
-	}
+		) {}
 	WindowManager_InvalidDisplayException::WindowManager_InvalidDisplayException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::RuntimeException(
 			"android.view.WindowManager$InvalidDisplayException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::view

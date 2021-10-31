@@ -55,30 +55,32 @@ namespace android::app::admin
 		);
 	}
 	
-	SystemUpdatePolicy_ValidationFailedException::SystemUpdatePolicy_ValidationFailedException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SystemUpdatePolicy_ValidationFailedException::SystemUpdatePolicy_ValidationFailedException(QAndroidJniObject obj) : java::lang::IllegalArgumentException(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint SystemUpdatePolicy_ValidationFailedException::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jint SystemUpdatePolicy_ValidationFailedException::getErrorCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getErrorCode",
 			"()I"
 		);
 	}
 	void SystemUpdatePolicy_ValidationFailedException::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

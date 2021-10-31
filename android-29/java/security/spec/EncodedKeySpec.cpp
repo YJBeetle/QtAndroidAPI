@@ -4,35 +4,35 @@ namespace java::security::spec
 {
 	// Fields
 	
-	EncodedKeySpec::EncodedKeySpec(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	EncodedKeySpec::EncodedKeySpec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	EncodedKeySpec::EncodedKeySpec(jbyteArray arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.security.spec.EncodedKeySpec",
 			"([B)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring EncodedKeySpec::getAlgorithm()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jbyteArray EncodedKeySpec::getEncoded()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEncoded",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jstring EncodedKeySpec::getFormat()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFormat",
 			"()Ljava/lang/String;"
 		).object<jstring>();

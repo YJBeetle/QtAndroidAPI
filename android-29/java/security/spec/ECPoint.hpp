@@ -15,10 +15,12 @@ namespace java::security::spec
 		// Fields
 		static QAndroidJniObject POINT_INFINITY();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ECPoint(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ECPoint(QAndroidJniObject obj);
+		
 		// Constructors
 		ECPoint(java::math::BigInteger arg0, java::math::BigInteger arg1);
-		ECPoint() = default;
 		
 		// Methods
 		jboolean equals(jobject arg0);

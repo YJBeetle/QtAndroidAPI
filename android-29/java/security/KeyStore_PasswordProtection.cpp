@@ -4,59 +4,57 @@ namespace java::security
 {
 	// Fields
 	
-	KeyStore_PasswordProtection::KeyStore_PasswordProtection(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	KeyStore_PasswordProtection::KeyStore_PasswordProtection(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	KeyStore_PasswordProtection::KeyStore_PasswordProtection(jcharArray arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.security.KeyStore$PasswordProtection",
 			"([C)V",
 			arg0
-		);
-	}
+		) {}
 	KeyStore_PasswordProtection::KeyStore_PasswordProtection(jcharArray arg0, jstring arg1, __JniBaseClass arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.security.KeyStore$PasswordProtection",
 			"([CLjava/lang/String;Ljava/security/spec/AlgorithmParameterSpec;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
-		);
-	}
+			arg2.object()
+		) {}
 	
 	// Methods
 	void KeyStore_PasswordProtection::destroy()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"destroy",
 			"()V"
 		);
 	}
 	jcharArray KeyStore_PasswordProtection::getPassword()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPassword",
 			"()[C"
 		).object<jcharArray>();
 	}
 	jstring KeyStore_PasswordProtection::getProtectionAlgorithm()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getProtectionAlgorithm",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject KeyStore_PasswordProtection::getProtectionParameters()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getProtectionParameters",
 			"()Ljava/security/spec/AlgorithmParameterSpec;"
 		);
 	}
 	jboolean KeyStore_PasswordProtection::isDestroyed()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isDestroyed",
 			"()Z"
 		);

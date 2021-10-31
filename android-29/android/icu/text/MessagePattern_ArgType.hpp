@@ -17,9 +17,11 @@ namespace android::icu::text
 		static QAndroidJniObject SELECTORDINAL();
 		static QAndroidJniObject SIMPLE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MessagePattern_ArgType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		MessagePattern_ArgType(QAndroidJniObject obj);
+		
 		// Constructors
-		MessagePattern_ArgType() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

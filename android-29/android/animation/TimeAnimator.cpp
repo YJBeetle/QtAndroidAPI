@@ -4,20 +4,20 @@ namespace android::animation
 {
 	// Fields
 	
-	TimeAnimator::TimeAnimator(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TimeAnimator::TimeAnimator(QAndroidJniObject obj) : android::animation::ValueAnimator(obj) {}
+	
 	// Constructors
 	TimeAnimator::TimeAnimator()
-	{
-		__thiz = QAndroidJniObject(
+		: android::animation::ValueAnimator(
 			"android.animation.TimeAnimator",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void TimeAnimator::setCurrentPlayTime(jlong arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCurrentPlayTime",
 			"(J)V",
 			arg0
@@ -25,15 +25,15 @@ namespace android::animation
 	}
 	void TimeAnimator::setTimeListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTimeListener",
 			"(Landroid/animation/TimeAnimator$TimeListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TimeAnimator::start()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"start",
 			"()V"
 		);

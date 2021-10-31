@@ -13,9 +13,11 @@ namespace android::telecom
 		static jint RTT_MODE_HCO();
 		static jint RTT_MODE_VCO();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Call_RttCall(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Call_RttCall(QAndroidJniObject obj);
+		
 		// Constructors
-		Call_RttCall() = default;
 		
 		// Methods
 		jint getRttAudioMode();

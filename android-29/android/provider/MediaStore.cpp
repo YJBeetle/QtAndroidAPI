@@ -310,15 +310,15 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	MediaStore::MediaStore(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaStore::MediaStore(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MediaStore::MediaStore()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.provider.MediaStore",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject MediaStore::getDocumentUri(android::content::Context arg0, android::net::Uri arg1)
@@ -327,8 +327,8 @@ namespace android::provider
 			"android.provider.MediaStore",
 			"getDocumentUri",
 			"(Landroid/content/Context;Landroid/net/Uri;)Landroid/net/Uri;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject MediaStore::getExternalVolumeNames(android::content::Context arg0)
@@ -337,7 +337,7 @@ namespace android::provider
 			"android.provider.MediaStore",
 			"getExternalVolumeNames",
 			"(Landroid/content/Context;)Ljava/util/Set;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject MediaStore::getMediaScannerUri()
@@ -354,8 +354,8 @@ namespace android::provider
 			"android.provider.MediaStore",
 			"getMediaUri",
 			"(Landroid/content/Context;Landroid/net/Uri;)Landroid/net/Uri;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jstring MediaStore::getVersion(android::content::Context arg0)
@@ -364,7 +364,7 @@ namespace android::provider
 			"android.provider.MediaStore",
 			"getVersion",
 			"(Landroid/content/Context;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jstring MediaStore::getVersion(android::content::Context arg0, jstring arg1)
@@ -373,7 +373,7 @@ namespace android::provider
 			"android.provider.MediaStore",
 			"getVersion",
 			"(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		).object<jstring>();
 	}
@@ -383,7 +383,7 @@ namespace android::provider
 			"android.provider.MediaStore",
 			"getVolumeName",
 			"(Landroid/net/Uri;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	QAndroidJniObject MediaStore::setIncludePending(android::net::Uri arg0)
@@ -392,7 +392,7 @@ namespace android::provider
 			"android.provider.MediaStore",
 			"setIncludePending",
 			"(Landroid/net/Uri;)Landroid/net/Uri;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject MediaStore::setRequireOriginal(android::net::Uri arg0)
@@ -401,7 +401,7 @@ namespace android::provider
 			"android.provider.MediaStore",
 			"setRequireOriginal",
 			"(Landroid/net/Uri;)Landroid/net/Uri;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::provider

@@ -12,33 +12,33 @@ namespace android::view
 	}
 	jchar KeyCharacterMap_KeyData::displayLabel()
 	{
-		return __thiz.getField<jchar>(
+		return getField<jchar>(
 			"displayLabel"
 		);
 	}
 	jcharArray KeyCharacterMap_KeyData::meta()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"meta",
 			"[C"
 		).object<jcharArray>();
 	}
 	jchar KeyCharacterMap_KeyData::number()
 	{
-		return __thiz.getField<jchar>(
+		return getField<jchar>(
 			"number"
 		);
 	}
 	
-	KeyCharacterMap_KeyData::KeyCharacterMap_KeyData(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	KeyCharacterMap_KeyData::KeyCharacterMap_KeyData(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	KeyCharacterMap_KeyData::KeyCharacterMap_KeyData()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.KeyCharacterMap$KeyData",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::view

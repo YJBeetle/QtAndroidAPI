@@ -8,15 +8,15 @@ namespace java::net
 {
 	// Fields
 	
-	ResponseCache::ResponseCache(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ResponseCache::ResponseCache(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ResponseCache::ResponseCache()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.net.ResponseCache",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject ResponseCache::getDefault()
@@ -33,26 +33,26 @@ namespace java::net
 			"java.net.ResponseCache",
 			"setDefault",
 			"(Ljava/net/ResponseCache;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ResponseCache::get(java::net::URI arg0, jstring arg1, __JniBaseClass arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"(Ljava/net/URI;Ljava/lang/String;Ljava/util/Map;)Ljava/net/CacheResponse;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	QAndroidJniObject ResponseCache::put(java::net::URI arg0, java::net::URLConnection arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"put",
 			"(Ljava/net/URI;Ljava/net/URLConnection;)Ljava/net/CacheRequest;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 } // namespace java::net

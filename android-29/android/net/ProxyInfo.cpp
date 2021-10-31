@@ -14,7 +14,9 @@ namespace android::net
 		);
 	}
 	
-	ProxyInfo::ProxyInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ProxyInfo::ProxyInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -36,7 +38,7 @@ namespace android::net
 			"(Ljava/lang/String;ILjava/util/List;)Landroid/net/ProxyInfo;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	QAndroidJniObject ProxyInfo::buildPacProxy(android::net::Uri arg0)
@@ -45,19 +47,19 @@ namespace android::net
 			"android.net.ProxyInfo",
 			"buildPacProxy",
 			"(Landroid/net/Uri;)Landroid/net/ProxyInfo;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint ProxyInfo::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean ProxyInfo::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -65,52 +67,52 @@ namespace android::net
 	}
 	jarray ProxyInfo::getExclusionList()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExclusionList",
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	jstring ProxyInfo::getHost()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getHost",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject ProxyInfo::getPacFileUrl()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPacFileUrl",
 			"()Landroid/net/Uri;"
 		);
 	}
 	jint ProxyInfo::getPort()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPort",
 			"()I"
 		);
 	}
 	jint ProxyInfo::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring ProxyInfo::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void ProxyInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

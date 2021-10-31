@@ -46,10 +46,12 @@ namespace android::view::inputmethod
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BaseInputConnection(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		BaseInputConnection(QAndroidJniObject obj);
+		
 		// Constructors
 		BaseInputConnection(android::view::View arg0, jboolean arg1);
-		BaseInputConnection() = default;
 		
 		// Methods
 		static jint getComposingSpanEnd(__JniBaseClass arg0);

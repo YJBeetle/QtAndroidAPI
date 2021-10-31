@@ -18,25 +18,23 @@ namespace java::util
 		);
 	}
 	
-	Locale_LanguageRange::Locale_LanguageRange(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Locale_LanguageRange::Locale_LanguageRange(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Locale_LanguageRange::Locale_LanguageRange(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.Locale$LanguageRange",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	Locale_LanguageRange::Locale_LanguageRange(jstring arg0, jdouble arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.Locale$LanguageRange",
 			"(Ljava/lang/String;D)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject Locale_LanguageRange::mapEquivalents(__JniBaseClass arg0, __JniBaseClass arg1)
@@ -45,8 +43,8 @@ namespace java::util
 			"java.util.Locale$LanguageRange",
 			"mapEquivalents",
 			"(Ljava/util/List;Ljava/util/Map;)Ljava/util/List;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject Locale_LanguageRange::parse(jstring arg0)
@@ -65,12 +63,12 @@ namespace java::util
 			"parse",
 			"(Ljava/lang/String;Ljava/util/Map;)Ljava/util/List;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jboolean Locale_LanguageRange::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -78,28 +76,28 @@ namespace java::util
 	}
 	jstring Locale_LanguageRange::getRange()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRange",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jdouble Locale_LanguageRange::getWeight()
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"getWeight",
 			"()D"
 		);
 	}
 	jint Locale_LanguageRange::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring Locale_LanguageRange::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

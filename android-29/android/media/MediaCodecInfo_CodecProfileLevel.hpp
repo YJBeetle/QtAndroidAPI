@@ -212,7 +212,10 @@ namespace android::media
 		jint level();
 		jint profile();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaCodecInfo_CodecProfileLevel(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaCodecInfo_CodecProfileLevel(QAndroidJniObject obj);
+		
 		// Constructors
 		MediaCodecInfo_CodecProfileLevel();
 		

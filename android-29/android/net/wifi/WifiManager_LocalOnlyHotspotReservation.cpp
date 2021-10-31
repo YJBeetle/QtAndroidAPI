@@ -6,20 +6,22 @@ namespace android::net::wifi
 {
 	// Fields
 	
-	WifiManager_LocalOnlyHotspotReservation::WifiManager_LocalOnlyHotspotReservation(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WifiManager_LocalOnlyHotspotReservation::WifiManager_LocalOnlyHotspotReservation(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void WifiManager_LocalOnlyHotspotReservation::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	QAndroidJniObject WifiManager_LocalOnlyHotspotReservation::getWifiConfiguration()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getWifiConfiguration",
 			"()Landroid/net/wifi/WifiConfiguration;"
 		);

@@ -82,37 +82,33 @@ namespace java::util::zip
 		);
 	}
 	
-	Deflater::Deflater(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Deflater::Deflater(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Deflater::Deflater()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.zip.Deflater",
 			"()V"
-		);
-	}
+		) {}
 	Deflater::Deflater(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.zip.Deflater",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	Deflater::Deflater(jint arg0, jboolean arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.zip.Deflater",
 			"(IZ)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jint Deflater::deflate(jbyteArray arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"deflate",
 			"([B)I",
 			arg0
@@ -120,24 +116,24 @@ namespace java::util::zip
 	}
 	jint Deflater::deflate(java::nio::ByteBuffer arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"deflate",
 			"(Ljava/nio/ByteBuffer;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint Deflater::deflate(java::nio::ByteBuffer arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"deflate",
 			"(Ljava/nio/ByteBuffer;I)I",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	jint Deflater::deflate(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"deflate",
 			"([BII)I",
 			arg0,
@@ -147,7 +143,7 @@ namespace java::util::zip
 	}
 	jint Deflater::deflate(jbyteArray arg0, jint arg1, jint arg2, jint arg3)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"deflate",
 			"([BIII)I",
 			arg0,
@@ -158,77 +154,77 @@ namespace java::util::zip
 	}
 	void Deflater::end()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"end",
 			"()V"
 		);
 	}
 	void Deflater::finish()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"finish",
 			"()V"
 		);
 	}
 	jboolean Deflater::finished()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"finished",
 			"()Z"
 		);
 	}
 	jint Deflater::getAdler()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAdler",
 			"()I"
 		);
 	}
 	jlong Deflater::getBytesRead()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getBytesRead",
 			"()J"
 		);
 	}
 	jlong Deflater::getBytesWritten()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getBytesWritten",
 			"()J"
 		);
 	}
 	jint Deflater::getTotalIn()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTotalIn",
 			"()I"
 		);
 	}
 	jint Deflater::getTotalOut()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTotalOut",
 			"()I"
 		);
 	}
 	jboolean Deflater::needsInput()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"needsInput",
 			"()Z"
 		);
 	}
 	void Deflater::reset()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
 	void Deflater::setDictionary(jbyteArray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDictionary",
 			"([B)V",
 			arg0
@@ -236,15 +232,15 @@ namespace java::util::zip
 	}
 	void Deflater::setDictionary(java::nio::ByteBuffer arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDictionary",
 			"(Ljava/nio/ByteBuffer;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Deflater::setDictionary(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDictionary",
 			"([BII)V",
 			arg0,
@@ -254,7 +250,7 @@ namespace java::util::zip
 	}
 	void Deflater::setInput(jbyteArray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setInput",
 			"([B)V",
 			arg0
@@ -262,15 +258,15 @@ namespace java::util::zip
 	}
 	void Deflater::setInput(java::nio::ByteBuffer arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setInput",
 			"(Ljava/nio/ByteBuffer;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Deflater::setInput(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setInput",
 			"([BII)V",
 			arg0,
@@ -280,7 +276,7 @@ namespace java::util::zip
 	}
 	void Deflater::setLevel(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLevel",
 			"(I)V",
 			arg0
@@ -288,7 +284,7 @@ namespace java::util::zip
 	}
 	void Deflater::setStrategy(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setStrategy",
 			"(I)V",
 			arg0

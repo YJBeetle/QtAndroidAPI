@@ -22,9 +22,11 @@ namespace java::security
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit KeyStore_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		KeyStore_Builder(QAndroidJniObject obj);
+		
 		// Constructors
-		KeyStore_Builder() = default;
 		
 		// Methods
 		static QAndroidJniObject newInstance(java::io::File arg0, __JniBaseClass arg1);

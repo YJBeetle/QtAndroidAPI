@@ -4,13 +4,15 @@ namespace android::os::strictmode
 {
 	// Fields
 	
-	InstanceCountViolation::InstanceCountViolation(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	InstanceCountViolation::InstanceCountViolation(QAndroidJniObject obj) : android::os::strictmode::Violation(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jlong InstanceCountViolation::getNumberOfInstances()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getNumberOfInstances",
 			"()J"
 		);

@@ -5,7 +5,9 @@ namespace android::content::res
 {
 	// Fields
 	
-	ObbScanner::ObbScanner(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ObbScanner::ObbScanner(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

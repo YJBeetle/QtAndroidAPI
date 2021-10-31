@@ -10,71 +10,67 @@ namespace android::inputmethodservice
 {
 	// Fields
 	
-	KeyboardView::KeyboardView(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	KeyboardView::KeyboardView(QAndroidJniObject obj) : android::view::View(obj) {}
+	
 	// Constructors
 	KeyboardView::KeyboardView(android::content::Context arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::view::View(
 			"android.inputmethodservice.KeyboardView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	KeyboardView::KeyboardView(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: android::view::View(
 			"android.inputmethodservice.KeyboardView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
-		);
-	}
+		) {}
 	KeyboardView::KeyboardView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: android::view::View(
 			"android.inputmethodservice.KeyboardView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	
 	// Methods
 	void KeyboardView::closing()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"closing",
 			"()V"
 		);
 	}
 	QAndroidJniObject KeyboardView::getKeyboard()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getKeyboard",
 			"()Landroid/inputmethodservice/Keyboard;"
 		);
 	}
 	jboolean KeyboardView::handleBack()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"handleBack",
 			"()Z"
 		);
 	}
 	void KeyboardView::invalidateAllKeys()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"invalidateAllKeys",
 			"()V"
 		);
 	}
 	void KeyboardView::invalidateKey(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"invalidateKey",
 			"(I)V",
 			arg0
@@ -82,59 +78,59 @@ namespace android::inputmethodservice
 	}
 	jboolean KeyboardView::isPreviewEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isPreviewEnabled",
 			"()Z"
 		);
 	}
 	jboolean KeyboardView::isProximityCorrectionEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isProximityCorrectionEnabled",
 			"()Z"
 		);
 	}
 	jboolean KeyboardView::isShifted()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isShifted",
 			"()Z"
 		);
 	}
 	void KeyboardView::onClick(android::view::View arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onClick",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void KeyboardView::onDetachedFromWindow()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onDetachedFromWindow",
 			"()V"
 		);
 	}
 	void KeyboardView::onDraw(android::graphics::Canvas arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onDraw",
 			"(Landroid/graphics/Canvas;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean KeyboardView::onHoverEvent(android::view::MotionEvent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onHoverEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void KeyboardView::onMeasure(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onMeasure",
 			"(II)V",
 			arg0,
@@ -143,7 +139,7 @@ namespace android::inputmethodservice
 	}
 	void KeyboardView::onSizeChanged(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onSizeChanged",
 			"(IIII)V",
 			arg0,
@@ -154,31 +150,31 @@ namespace android::inputmethodservice
 	}
 	jboolean KeyboardView::onTouchEvent(android::view::MotionEvent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onTouchEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void KeyboardView::setKeyboard(android::inputmethodservice::Keyboard arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setKeyboard",
 			"(Landroid/inputmethodservice/Keyboard;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void KeyboardView::setOnKeyboardActionListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnKeyboardActionListener",
 			"(Landroid/inputmethodservice/KeyboardView$OnKeyboardActionListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void KeyboardView::setPopupOffset(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPopupOffset",
 			"(II)V",
 			arg0,
@@ -187,15 +183,15 @@ namespace android::inputmethodservice
 	}
 	void KeyboardView::setPopupParent(android::view::View arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPopupParent",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void KeyboardView::setPreviewEnabled(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPreviewEnabled",
 			"(Z)V",
 			arg0
@@ -203,7 +199,7 @@ namespace android::inputmethodservice
 	}
 	void KeyboardView::setProximityCorrectionEnabled(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setProximityCorrectionEnabled",
 			"(Z)V",
 			arg0
@@ -211,7 +207,7 @@ namespace android::inputmethodservice
 	}
 	jboolean KeyboardView::setShifted(jboolean arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"setShifted",
 			"(Z)Z",
 			arg0
@@ -219,7 +215,7 @@ namespace android::inputmethodservice
 	}
 	void KeyboardView::setVerticalCorrection(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setVerticalCorrection",
 			"(I)V",
 			arg0

@@ -4,23 +4,23 @@ namespace android::media
 {
 	// Fields
 	
-	AudioManager_AudioPlaybackCallback::AudioManager_AudioPlaybackCallback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AudioManager_AudioPlaybackCallback::AudioManager_AudioPlaybackCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	AudioManager_AudioPlaybackCallback::AudioManager_AudioPlaybackCallback()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.AudioManager$AudioPlaybackCallback",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void AudioManager_AudioPlaybackCallback::onPlaybackConfigChanged(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onPlaybackConfigChanged",
 			"(Ljava/util/List;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::media

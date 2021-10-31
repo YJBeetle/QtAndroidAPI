@@ -7,7 +7,9 @@ namespace android::text::method
 {
 	// Fields
 	
-	Touch::Touch(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Touch::Touch(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -17,8 +19,8 @@ namespace android::text::method
 			"android.text.method.Touch",
 			"getInitialScrollX",
 			"(Landroid/widget/TextView;Landroid/text/Spannable;)I",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jint Touch::getInitialScrollY(android::widget::TextView arg0, __JniBaseClass arg1)
@@ -27,8 +29,8 @@ namespace android::text::method
 			"android.text.method.Touch",
 			"getInitialScrollY",
 			"(Landroid/widget/TextView;Landroid/text/Spannable;)I",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jboolean Touch::onTouchEvent(android::widget::TextView arg0, __JniBaseClass arg1, android::view::MotionEvent arg2)
@@ -37,9 +39,9 @@ namespace android::text::method
 			"android.text.method.Touch",
 			"onTouchEvent",
 			"(Landroid/widget/TextView;Landroid/text/Spannable;Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	void Touch::scrollTo(android::widget::TextView arg0, android::text::Layout arg1, jint arg2, jint arg3)
@@ -48,8 +50,8 @@ namespace android::text::method
 			"android.text.method.Touch",
 			"scrollTo",
 			"(Landroid/widget/TextView;Landroid/text/Layout;II)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3
 		);

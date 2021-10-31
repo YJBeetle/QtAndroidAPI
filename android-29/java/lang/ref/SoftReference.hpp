@@ -15,11 +15,13 @@ namespace java::lang::ref
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SoftReference(const char *className, const char *sig, Ts...agv) : java::lang::ref::Reference(className, sig, std::forward<Ts>(agv)...) {}
 		SoftReference(QAndroidJniObject obj);
+		
 		// Constructors
 		SoftReference(jobject arg0);
 		SoftReference(jobject arg0, java::lang::ref::ReferenceQueue arg1);
-		SoftReference() = default;
 		
 		// Methods
 		jobject get();

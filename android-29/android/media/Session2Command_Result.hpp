@@ -17,10 +17,12 @@ namespace android::media
 		static jint RESULT_INFO_SKIPPED();
 		static jint RESULT_SUCCESS();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Session2Command_Result(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Session2Command_Result(QAndroidJniObject obj);
+		
 		// Constructors
 		Session2Command_Result(jint arg0, android::os::Bundle arg1);
-		Session2Command_Result() = default;
 		
 		// Methods
 		jint getResultCode();

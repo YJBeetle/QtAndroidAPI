@@ -43,24 +43,22 @@ namespace java::lang
 		).object<jclass>();
 	}
 	
-	Long::Long(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Long::Long(QAndroidJniObject obj) : java::lang::Number(obj) {}
+	
 	// Constructors
 	Long::Long(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Number(
 			"java.lang.Long",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	Long::Long(jlong arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Number(
 			"java.lang.Long",
 			"(J)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jint Long::bitCount(jlong arg0)
@@ -127,7 +125,7 @@ namespace java::lang
 			"getLong",
 			"(Ljava/lang/String;Ljava/lang/Long;)Ljava/lang/Long;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject Long::getLong(jstring arg0, jlong arg1)
@@ -429,22 +427,22 @@ namespace java::lang
 	}
 	jbyte Long::byteValue()
 	{
-		return __thiz.callMethod<jbyte>(
+		return callMethod<jbyte>(
 			"byteValue",
 			"()B"
 		);
 	}
 	jint Long::compareTo(java::lang::Long arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Long;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint Long::compareTo(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -452,21 +450,21 @@ namespace java::lang
 	}
 	QAndroidJniObject Long::describeConstable()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"describeConstable",
 			"()Ljava/util/Optional;"
 		);
 	}
 	jdouble Long::doubleValue()
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"doubleValue",
 			"()D"
 		);
 	}
 	jboolean Long::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -474,50 +472,50 @@ namespace java::lang
 	}
 	jfloat Long::floatValue()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"floatValue",
 			"()F"
 		);
 	}
 	jint Long::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jint Long::intValue()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"intValue",
 			"()I"
 		);
 	}
 	jlong Long::longValue()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"longValue",
 			"()J"
 		);
 	}
 	QAndroidJniObject Long::resolveConstantDesc(java::lang::invoke::MethodHandles_Lookup arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"resolveConstantDesc",
 			"(Ljava/lang/invoke/MethodHandles$Lookup;)Ljava/lang/Long;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jshort Long::shortValue()
 	{
-		return __thiz.callMethod<jshort>(
+		return callMethod<jshort>(
 			"shortValue",
 			"()S"
 		);
 	}
 	jstring Long::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

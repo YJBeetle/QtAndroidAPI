@@ -5,13 +5,15 @@ namespace android::media
 {
 	// Fields
 	
-	RemoteController_MetadataEditor::RemoteController_MetadataEditor(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	RemoteController_MetadataEditor::RemoteController_MetadataEditor(QAndroidJniObject obj) : android::media::MediaMetadataEditor(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void RemoteController_MetadataEditor::apply()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"apply",
 			"()V"
 		);

@@ -7,80 +7,74 @@ namespace android::widget
 {
 	// Fields
 	
-	FrameLayout::FrameLayout(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FrameLayout::FrameLayout(QAndroidJniObject obj) : android::view::ViewGroup(obj) {}
+	
 	// Constructors
 	FrameLayout::FrameLayout(android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::view::ViewGroup(
 			"android.widget.FrameLayout",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	FrameLayout::FrameLayout(android::content::Context arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::view::ViewGroup(
 			"android.widget.FrameLayout",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	FrameLayout::FrameLayout(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: android::view::ViewGroup(
 			"android.widget.FrameLayout",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
-		);
-	}
+		) {}
 	FrameLayout::FrameLayout(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: android::view::ViewGroup(
 			"android.widget.FrameLayout",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject FrameLayout::generateLayoutParams(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"generateLayoutParams",
 			"(Landroid/util/AttributeSet;)Landroid/widget/FrameLayout$LayoutParams;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring FrameLayout::getAccessibilityClassName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jboolean FrameLayout::getConsiderGoneChildrenWhenMeasuring()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getConsiderGoneChildrenWhenMeasuring",
 			"()Z"
 		);
 	}
 	jboolean FrameLayout::getMeasureAllChildren()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getMeasureAllChildren",
 			"()Z"
 		);
 	}
 	void FrameLayout::setForegroundGravity(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setForegroundGravity",
 			"(I)V",
 			arg0
@@ -88,7 +82,7 @@ namespace android::widget
 	}
 	void FrameLayout::setMeasureAllChildren(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMeasureAllChildren",
 			"(Z)V",
 			arg0
@@ -96,7 +90,7 @@ namespace android::widget
 	}
 	jboolean FrameLayout::shouldDelayChildPressedState()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"shouldDelayChildPressedState",
 			"()Z"
 		);

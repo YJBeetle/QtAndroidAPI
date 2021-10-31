@@ -14,10 +14,12 @@ namespace org::json
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit JSONTokener(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		JSONTokener(QAndroidJniObject obj);
+		
 		// Constructors
 		JSONTokener(jstring arg0);
-		JSONTokener() = default;
 		
 		// Methods
 		static jint dehexchar(jchar arg0);

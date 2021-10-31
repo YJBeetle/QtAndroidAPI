@@ -4,33 +4,31 @@ namespace javax::crypto::spec
 {
 	// Fields
 	
-	SecretKeySpec::SecretKeySpec(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SecretKeySpec::SecretKeySpec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	SecretKeySpec::SecretKeySpec(jbyteArray arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"javax.crypto.spec.SecretKeySpec",
 			"([BLjava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	SecretKeySpec::SecretKeySpec(jbyteArray arg0, jint arg1, jint arg2, jstring arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"javax.crypto.spec.SecretKeySpec",
 			"([BIILjava/lang/String;)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean SecretKeySpec::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -38,28 +36,28 @@ namespace javax::crypto::spec
 	}
 	jstring SecretKeySpec::getAlgorithm()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jbyteArray SecretKeySpec::getEncoded()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEncoded",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jstring SecretKeySpec::getFormat()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFormat",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint SecretKeySpec::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);

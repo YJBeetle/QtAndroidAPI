@@ -91,20 +91,22 @@ namespace android::media::midi
 		);
 	}
 	
-	MidiDeviceInfo::MidiDeviceInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MidiDeviceInfo::MidiDeviceInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint MidiDeviceInfo::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean MidiDeviceInfo::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -112,73 +114,73 @@ namespace android::media::midi
 	}
 	jint MidiDeviceInfo::getId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getId",
 			"()I"
 		);
 	}
 	jint MidiDeviceInfo::getInputPortCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getInputPortCount",
 			"()I"
 		);
 	}
 	jint MidiDeviceInfo::getOutputPortCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getOutputPortCount",
 			"()I"
 		);
 	}
 	jarray MidiDeviceInfo::getPorts()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPorts",
 			"()[Landroid/media/midi/MidiDeviceInfo$PortInfo;"
 		).object<jarray>();
 	}
 	QAndroidJniObject MidiDeviceInfo::getProperties()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getProperties",
 			"()Landroid/os/Bundle;"
 		);
 	}
 	jint MidiDeviceInfo::getType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getType",
 			"()I"
 		);
 	}
 	jint MidiDeviceInfo::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean MidiDeviceInfo::isPrivate()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isPrivate",
 			"()Z"
 		);
 	}
 	jstring MidiDeviceInfo::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void MidiDeviceInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

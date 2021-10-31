@@ -4,27 +4,27 @@ namespace android::telephony
 {
 	// Fields
 	
-	TelephonyScanManager_NetworkScanCallback::TelephonyScanManager_NetworkScanCallback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TelephonyScanManager_NetworkScanCallback::TelephonyScanManager_NetworkScanCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	TelephonyScanManager_NetworkScanCallback::TelephonyScanManager_NetworkScanCallback()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.telephony.TelephonyScanManager$NetworkScanCallback",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void TelephonyScanManager_NetworkScanCallback::onComplete()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onComplete",
 			"()V"
 		);
 	}
 	void TelephonyScanManager_NetworkScanCallback::onError(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onError",
 			"(I)V",
 			arg0
@@ -32,10 +32,10 @@ namespace android::telephony
 	}
 	void TelephonyScanManager_NetworkScanCallback::onResults(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onResults",
 			"(Ljava/util/List;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::telephony

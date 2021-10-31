@@ -18,9 +18,11 @@ namespace javax::xml::transform
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TransformerFactory(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		TransformerFactory(QAndroidJniObject obj);
+		
 		// Constructors
-		TransformerFactory() = default;
 		
 		// Methods
 		static QAndroidJniObject newDefaultInstance();

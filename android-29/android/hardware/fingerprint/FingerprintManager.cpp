@@ -127,32 +127,34 @@ namespace android::hardware::fingerprint
 		);
 	}
 	
-	FingerprintManager::FingerprintManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FingerprintManager::FingerprintManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void FingerprintManager::authenticate(android::hardware::fingerprint::FingerprintManager_CryptoObject arg0, android::os::CancellationSignal arg1, jint arg2, android::hardware::fingerprint::FingerprintManager_AuthenticationCallback arg3, android::os::Handler arg4)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"authenticate",
 			"(Landroid/hardware/fingerprint/FingerprintManager$CryptoObject;Landroid/os/CancellationSignal;ILandroid/hardware/fingerprint/FingerprintManager$AuthenticationCallback;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object()
+			arg3.object(),
+			arg4.object()
 		);
 	}
 	jboolean FingerprintManager::hasEnrolledFingerprints()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasEnrolledFingerprints",
 			"()Z"
 		);
 	}
 	jboolean FingerprintManager::isHardwareDetected()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isHardwareDetected",
 			"()Z"
 		);

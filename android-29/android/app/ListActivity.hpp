@@ -26,7 +26,10 @@ namespace android::app
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ListActivity(const char *className, const char *sig, Ts...agv) : android::app::Activity(className, sig, std::forward<Ts>(agv)...) {}
 		ListActivity(QAndroidJniObject obj);
+		
 		// Constructors
 		ListActivity();
 		

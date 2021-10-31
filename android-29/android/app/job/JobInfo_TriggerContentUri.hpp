@@ -20,10 +20,12 @@ namespace android::app::job
 		static QAndroidJniObject CREATOR();
 		static jint FLAG_NOTIFY_FOR_DESCENDANTS();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit JobInfo_TriggerContentUri(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		JobInfo_TriggerContentUri(QAndroidJniObject obj);
+		
 		// Constructors
 		JobInfo_TriggerContentUri(android::net::Uri arg0, jint arg1);
-		JobInfo_TriggerContentUri() = default;
 		
 		// Methods
 		jint describeContents();

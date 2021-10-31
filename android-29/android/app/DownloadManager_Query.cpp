@@ -4,20 +4,20 @@ namespace android::app
 {
 	// Fields
 	
-	DownloadManager_Query::DownloadManager_Query(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DownloadManager_Query::DownloadManager_Query(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	DownloadManager_Query::DownloadManager_Query()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.app.DownloadManager$Query",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject DownloadManager_Query::setFilterById(jlongArray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setFilterById",
 			"([J)Landroid/app/DownloadManager$Query;",
 			arg0
@@ -25,7 +25,7 @@ namespace android::app
 	}
 	QAndroidJniObject DownloadManager_Query::setFilterByStatus(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setFilterByStatus",
 			"(I)Landroid/app/DownloadManager$Query;",
 			arg0

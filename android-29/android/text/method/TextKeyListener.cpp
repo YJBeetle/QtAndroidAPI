@@ -7,17 +7,17 @@ namespace android::text::method
 {
 	// Fields
 	
-	TextKeyListener::TextKeyListener(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TextKeyListener::TextKeyListener(QAndroidJniObject obj) : android::text::method::BaseKeyListener(obj) {}
+	
 	// Constructors
 	TextKeyListener::TextKeyListener(android::text::method::TextKeyListener_Capitalize arg0, jboolean arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::text::method::BaseKeyListener(
 			"android.text.method.TextKeyListener",
 			"(Landroid/text/method/TextKeyListener$Capitalize;Z)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	void TextKeyListener::clear(__JniBaseClass arg0)
@@ -26,7 +26,7 @@ namespace android::text::method
 			"android.text.method.TextKeyListener",
 			"clear",
 			"(Landroid/text/Editable;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject TextKeyListener::getInstance()
@@ -44,7 +44,7 @@ namespace android::text::method
 			"getInstance",
 			"(ZLandroid/text/method/TextKeyListener$Capitalize;)Landroid/text/method/TextKeyListener;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jboolean TextKeyListener::shouldCap(android::text::method::TextKeyListener_Capitalize arg0, jstring arg1, jint arg2)
@@ -53,56 +53,56 @@ namespace android::text::method
 			"android.text.method.TextKeyListener",
 			"shouldCap",
 			"(Landroid/text/method/TextKeyListener$Capitalize;Ljava/lang/CharSequence;I)Z",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
 	}
 	jint TextKeyListener::getInputType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getInputType",
 			"()I"
 		);
 	}
 	jboolean TextKeyListener::onKeyDown(android::view::View arg0, __JniBaseClass arg1, jint arg2, android::view::KeyEvent arg3)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onKeyDown",
 			"(Landroid/view/View;Landroid/text/Editable;ILandroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	jboolean TextKeyListener::onKeyOther(android::view::View arg0, __JniBaseClass arg1, android::view::KeyEvent arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onKeyOther",
 			"(Landroid/view/View;Landroid/text/Editable;Landroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	jboolean TextKeyListener::onKeyUp(android::view::View arg0, __JniBaseClass arg1, jint arg2, android::view::KeyEvent arg3)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onKeyUp",
 			"(Landroid/view/View;Landroid/text/Editable;ILandroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	void TextKeyListener::onSpanAdded(__JniBaseClass arg0, jobject arg1, jint arg2, jint arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onSpanAdded",
 			"(Landroid/text/Spannable;Ljava/lang/Object;II)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3
@@ -110,10 +110,10 @@ namespace android::text::method
 	}
 	void TextKeyListener::onSpanChanged(__JniBaseClass arg0, jobject arg1, jint arg2, jint arg3, jint arg4, jint arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onSpanChanged",
 			"(Landroid/text/Spannable;Ljava/lang/Object;IIII)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
@@ -123,10 +123,10 @@ namespace android::text::method
 	}
 	void TextKeyListener::onSpanRemoved(__JniBaseClass arg0, jobject arg1, jint arg2, jint arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onSpanRemoved",
 			"(Landroid/text/Spannable;Ljava/lang/Object;II)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3
@@ -134,7 +134,7 @@ namespace android::text::method
 	}
 	void TextKeyListener::release()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"release",
 			"()V"
 		);

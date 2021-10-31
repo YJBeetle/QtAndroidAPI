@@ -199,35 +199,31 @@ namespace java::util
 		);
 	}
 	
-	Locale::Locale(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Locale::Locale(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Locale::Locale(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.Locale",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	Locale::Locale(jstring arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.Locale",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	Locale::Locale(jstring arg0, jstring arg1, jstring arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.Locale",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject Locale::filter(__JniBaseClass arg0, __JniBaseClass arg1)
@@ -236,8 +232,8 @@ namespace java::util
 			"java.util.Locale",
 			"filter",
 			"(Ljava/util/List;Ljava/util/Collection;)Ljava/util/List;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject Locale::filter(__JniBaseClass arg0, __JniBaseClass arg1, java::util::Locale_FilteringMode arg2)
@@ -246,9 +242,9 @@ namespace java::util
 			"java.util.Locale",
 			"filter",
 			"(Ljava/util/List;Ljava/util/Collection;Ljava/util/Locale$FilteringMode;)Ljava/util/List;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject Locale::filterTags(__JniBaseClass arg0, __JniBaseClass arg1)
@@ -257,8 +253,8 @@ namespace java::util
 			"java.util.Locale",
 			"filterTags",
 			"(Ljava/util/List;Ljava/util/Collection;)Ljava/util/List;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject Locale::filterTags(__JniBaseClass arg0, __JniBaseClass arg1, java::util::Locale_FilteringMode arg2)
@@ -267,9 +263,9 @@ namespace java::util
 			"java.util.Locale",
 			"filterTags",
 			"(Ljava/util/List;Ljava/util/Collection;Ljava/util/Locale$FilteringMode;)Ljava/util/List;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject Locale::forLanguageTag(jstring arg0)
@@ -303,7 +299,7 @@ namespace java::util
 			"java.util.Locale",
 			"getDefault",
 			"(Ljava/util/Locale$Category;)Ljava/util/Locale;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jarray Locale::getISOCountries()
@@ -320,7 +316,7 @@ namespace java::util
 			"java.util.Locale",
 			"getISOCountries",
 			"(Ljava/util/Locale$IsoCountryCode;)Ljava/util/Set;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jarray Locale::getISOLanguages()
@@ -337,8 +333,8 @@ namespace java::util
 			"java.util.Locale",
 			"lookup",
 			"(Ljava/util/List;Ljava/util/Collection;)Ljava/util/Locale;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jstring Locale::lookupTag(__JniBaseClass arg0, __JniBaseClass arg1)
@@ -347,8 +343,8 @@ namespace java::util
 			"java.util.Locale",
 			"lookupTag",
 			"(Ljava/util/List;Ljava/util/Collection;)Ljava/lang/String;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		).object<jstring>();
 	}
 	void Locale::setDefault(java::util::Locale arg0)
@@ -357,7 +353,7 @@ namespace java::util
 			"java.util.Locale",
 			"setDefault",
 			"(Ljava/util/Locale;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Locale::setDefault(java::util::Locale_Category arg0, java::util::Locale arg1)
@@ -366,20 +362,20 @@ namespace java::util
 			"java.util.Locale",
 			"setDefault",
 			"(Ljava/util/Locale$Category;Ljava/util/Locale;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jobject Locale::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jboolean Locale::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -387,89 +383,89 @@ namespace java::util
 	}
 	jstring Locale::getCountry()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCountry",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Locale::getDisplayCountry()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDisplayCountry",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Locale::getDisplayCountry(java::util::Locale arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDisplayCountry",
 			"(Ljava/util/Locale;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jstring Locale::getDisplayLanguage()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDisplayLanguage",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Locale::getDisplayLanguage(java::util::Locale arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDisplayLanguage",
 			"(Ljava/util/Locale;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jstring Locale::getDisplayName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDisplayName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Locale::getDisplayName(java::util::Locale arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDisplayName",
 			"(Ljava/util/Locale;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jstring Locale::getDisplayScript()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDisplayScript",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Locale::getDisplayScript(java::util::Locale arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDisplayScript",
 			"(Ljava/util/Locale;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jstring Locale::getDisplayVariant()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDisplayVariant",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Locale::getDisplayVariant(java::util::Locale arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDisplayVariant",
 			"(Ljava/util/Locale;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jstring Locale::getExtension(jchar arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExtension",
 			"(C)Ljava/lang/String;",
 			arg0
@@ -477,56 +473,56 @@ namespace java::util
 	}
 	QAndroidJniObject Locale::getExtensionKeys()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExtensionKeys",
 			"()Ljava/util/Set;"
 		);
 	}
 	jstring Locale::getISO3Country()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getISO3Country",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Locale::getISO3Language()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getISO3Language",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Locale::getLanguage()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLanguage",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Locale::getScript()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getScript",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject Locale::getUnicodeLocaleAttributes()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getUnicodeLocaleAttributes",
 			"()Ljava/util/Set;"
 		);
 	}
 	QAndroidJniObject Locale::getUnicodeLocaleKeys()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getUnicodeLocaleKeys",
 			"()Ljava/util/Set;"
 		);
 	}
 	jstring Locale::getUnicodeLocaleType(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getUnicodeLocaleType",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
@@ -534,42 +530,42 @@ namespace java::util
 	}
 	jstring Locale::getVariant()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getVariant",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jboolean Locale::hasExtensions()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasExtensions",
 			"()Z"
 		);
 	}
 	jint Locale::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	QAndroidJniObject Locale::stripExtensions()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"stripExtensions",
 			"()Ljava/util/Locale;"
 		);
 	}
 	jstring Locale::toLanguageTag()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toLanguageTag",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Locale::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

@@ -4,202 +4,204 @@ namespace android::mtp
 {
 	// Fields
 	
-	MtpObjectInfo::MtpObjectInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MtpObjectInfo::MtpObjectInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint MtpObjectInfo::getAssociationDesc()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAssociationDesc",
 			"()I"
 		);
 	}
 	jint MtpObjectInfo::getAssociationType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAssociationType",
 			"()I"
 		);
 	}
 	jint MtpObjectInfo::getCompressedSize()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCompressedSize",
 			"()I"
 		);
 	}
 	jlong MtpObjectInfo::getCompressedSizeLong()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getCompressedSizeLong",
 			"()J"
 		);
 	}
 	jlong MtpObjectInfo::getDateCreated()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getDateCreated",
 			"()J"
 		);
 	}
 	jlong MtpObjectInfo::getDateModified()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getDateModified",
 			"()J"
 		);
 	}
 	jint MtpObjectInfo::getFormat()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getFormat",
 			"()I"
 		);
 	}
 	jint MtpObjectInfo::getImagePixDepth()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getImagePixDepth",
 			"()I"
 		);
 	}
 	jlong MtpObjectInfo::getImagePixDepthLong()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getImagePixDepthLong",
 			"()J"
 		);
 	}
 	jint MtpObjectInfo::getImagePixHeight()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getImagePixHeight",
 			"()I"
 		);
 	}
 	jlong MtpObjectInfo::getImagePixHeightLong()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getImagePixHeightLong",
 			"()J"
 		);
 	}
 	jint MtpObjectInfo::getImagePixWidth()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getImagePixWidth",
 			"()I"
 		);
 	}
 	jlong MtpObjectInfo::getImagePixWidthLong()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getImagePixWidthLong",
 			"()J"
 		);
 	}
 	jstring MtpObjectInfo::getKeywords()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getKeywords",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring MtpObjectInfo::getName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint MtpObjectInfo::getObjectHandle()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getObjectHandle",
 			"()I"
 		);
 	}
 	jint MtpObjectInfo::getParent()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getParent",
 			"()I"
 		);
 	}
 	jint MtpObjectInfo::getProtectionStatus()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getProtectionStatus",
 			"()I"
 		);
 	}
 	jint MtpObjectInfo::getSequenceNumber()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSequenceNumber",
 			"()I"
 		);
 	}
 	jlong MtpObjectInfo::getSequenceNumberLong()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getSequenceNumberLong",
 			"()J"
 		);
 	}
 	jint MtpObjectInfo::getStorageId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getStorageId",
 			"()I"
 		);
 	}
 	jint MtpObjectInfo::getThumbCompressedSize()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getThumbCompressedSize",
 			"()I"
 		);
 	}
 	jlong MtpObjectInfo::getThumbCompressedSizeLong()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getThumbCompressedSizeLong",
 			"()J"
 		);
 	}
 	jint MtpObjectInfo::getThumbFormat()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getThumbFormat",
 			"()I"
 		);
 	}
 	jint MtpObjectInfo::getThumbPixHeight()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getThumbPixHeight",
 			"()I"
 		);
 	}
 	jlong MtpObjectInfo::getThumbPixHeightLong()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getThumbPixHeightLong",
 			"()J"
 		);
 	}
 	jint MtpObjectInfo::getThumbPixWidth()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getThumbPixWidth",
 			"()I"
 		);
 	}
 	jlong MtpObjectInfo::getThumbPixWidthLong()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getThumbPixWidthLong",
 			"()J"
 		);

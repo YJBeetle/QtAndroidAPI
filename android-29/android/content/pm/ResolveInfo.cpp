@@ -20,166 +20,164 @@ namespace android::content::pm
 	}
 	QAndroidJniObject ResolveInfo::activityInfo()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"activityInfo",
 			"Landroid/content/pm/ActivityInfo;"
 		);
 	}
 	QAndroidJniObject ResolveInfo::filter()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"filter",
 			"Landroid/content/IntentFilter;"
 		);
 	}
 	jint ResolveInfo::icon()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"icon"
 		);
 	}
 	jboolean ResolveInfo::isDefault()
 	{
-		return __thiz.getField<jboolean>(
+		return getField<jboolean>(
 			"isDefault"
 		);
 	}
 	jboolean ResolveInfo::isInstantAppAvailable()
 	{
-		return __thiz.getField<jboolean>(
+		return getField<jboolean>(
 			"isInstantAppAvailable"
 		);
 	}
 	jint ResolveInfo::labelRes()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"labelRes"
 		);
 	}
 	jint ResolveInfo::match()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"match"
 		);
 	}
 	jstring ResolveInfo::nonLocalizedLabel()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"nonLocalizedLabel",
 			"Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jint ResolveInfo::preferredOrder()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"preferredOrder"
 		);
 	}
 	jint ResolveInfo::priority()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"priority"
 		);
 	}
 	QAndroidJniObject ResolveInfo::providerInfo()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"providerInfo",
 			"Landroid/content/pm/ProviderInfo;"
 		);
 	}
 	jstring ResolveInfo::resolvePackageName()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"resolvePackageName",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject ResolveInfo::serviceInfo()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"serviceInfo",
 			"Landroid/content/pm/ServiceInfo;"
 		);
 	}
 	jint ResolveInfo::specificIndex()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"specificIndex"
 		);
 	}
 	
-	ResolveInfo::ResolveInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ResolveInfo::ResolveInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ResolveInfo::ResolveInfo()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.content.pm.ResolveInfo",
 			"()V"
-		);
-	}
+		) {}
 	ResolveInfo::ResolveInfo(android::content::pm::ResolveInfo &arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.content.pm.ResolveInfo",
 			"(Landroid/content/pm/ResolveInfo;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jint ResolveInfo::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	void ResolveInfo::dump(__JniBaseClass arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"dump",
 			"(Landroid/util/Printer;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	jint ResolveInfo::getIconResource()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getIconResource",
 			"()I"
 		);
 	}
 	QAndroidJniObject ResolveInfo::loadIcon(android::content::pm::PackageManager arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"loadIcon",
 			"(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring ResolveInfo::loadLabel(android::content::pm::PackageManager arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"loadLabel",
 			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jstring ResolveInfo::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void ResolveInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

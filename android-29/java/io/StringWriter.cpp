@@ -6,28 +6,26 @@ namespace java::io
 {
 	// Fields
 	
-	StringWriter::StringWriter(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	StringWriter::StringWriter(QAndroidJniObject obj) : java::io::Writer(obj) {}
+	
 	// Constructors
 	StringWriter::StringWriter()
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::Writer(
 			"java.io.StringWriter",
 			"()V"
-		);
-	}
+		) {}
 	StringWriter::StringWriter(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::Writer(
 			"java.io.StringWriter",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject StringWriter::append(jchar arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"append",
 			"(C)Ljava/io/StringWriter;",
 			arg0
@@ -35,7 +33,7 @@ namespace java::io
 	}
 	QAndroidJniObject StringWriter::append(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"append",
 			"(Ljava/lang/CharSequence;)Ljava/io/StringWriter;",
 			arg0
@@ -43,7 +41,7 @@ namespace java::io
 	}
 	QAndroidJniObject StringWriter::append(jstring arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"append",
 			"(Ljava/lang/CharSequence;II)Ljava/io/StringWriter;",
 			arg0,
@@ -53,35 +51,35 @@ namespace java::io
 	}
 	void StringWriter::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	void StringWriter::flush()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"flush",
 			"()V"
 		);
 	}
 	QAndroidJniObject StringWriter::getBuffer()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBuffer",
 			"()Ljava/lang/StringBuffer;"
 		);
 	}
 	jstring StringWriter::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void StringWriter::write(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"write",
 			"(I)V",
 			arg0
@@ -89,7 +87,7 @@ namespace java::io
 	}
 	void StringWriter::write(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"write",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -97,7 +95,7 @@ namespace java::io
 	}
 	void StringWriter::write(jcharArray arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"write",
 			"([CII)V",
 			arg0,
@@ -107,7 +105,7 @@ namespace java::io
 	}
 	void StringWriter::write(jstring arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"write",
 			"(Ljava/lang/String;II)V",
 			arg0,

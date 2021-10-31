@@ -11,7 +11,9 @@ namespace java::lang::reflect
 {
 	// Fields
 	
-	Proxy::Proxy(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Proxy::Proxy(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -30,7 +32,7 @@ namespace java::lang::reflect
 			"java.lang.reflect.Proxy",
 			"getProxyClass",
 			"(Ljava/lang/ClassLoader;[Ljava/lang/Class;)Ljava/lang/Class;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		).object<jclass>();
 	}
@@ -49,9 +51,9 @@ namespace java::lang::reflect
 			"java.lang.reflect.Proxy",
 			"newProxyInstance",
 			"(Ljava/lang/ClassLoader;[Ljava/lang/Class;Ljava/lang/reflect/InvocationHandler;)Ljava/lang/Object;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		).object<jobject>();
 	}
 } // namespace java::lang::reflect

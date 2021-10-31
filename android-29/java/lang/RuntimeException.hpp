@@ -11,7 +11,10 @@ namespace java::lang
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit RuntimeException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
 		RuntimeException(QAndroidJniObject obj);
+		
 		// Constructors
 		RuntimeException();
 		RuntimeException(jstring arg0);

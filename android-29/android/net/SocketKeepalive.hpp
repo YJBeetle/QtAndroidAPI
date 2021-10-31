@@ -20,9 +20,11 @@ namespace android::net
 		static jint ERROR_SOCKET_NOT_IDLE();
 		static jint ERROR_UNSUPPORTED();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SocketKeepalive(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SocketKeepalive(QAndroidJniObject obj);
+		
 		// Constructors
-		SocketKeepalive() = default;
 		
 		// Methods
 		void close();

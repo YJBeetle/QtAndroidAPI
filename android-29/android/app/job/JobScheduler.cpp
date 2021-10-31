@@ -20,20 +20,20 @@ namespace android::app::job
 		);
 	}
 	
-	JobScheduler::JobScheduler(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	JobScheduler::JobScheduler(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	JobScheduler::JobScheduler()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.app.job.JobScheduler",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void JobScheduler::cancel(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"cancel",
 			"(I)V",
 			arg0
@@ -41,30 +41,30 @@ namespace android::app::job
 	}
 	void JobScheduler::cancelAll()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"cancelAll",
 			"()V"
 		);
 	}
 	jint JobScheduler::enqueue(android::app::job::JobInfo arg0, android::app::job::JobWorkItem arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"enqueue",
 			"(Landroid/app/job/JobInfo;Landroid/app/job/JobWorkItem;)I",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject JobScheduler::getAllPendingJobs()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAllPendingJobs",
 			"()Ljava/util/List;"
 		);
 	}
 	QAndroidJniObject JobScheduler::getPendingJob(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPendingJob",
 			"(I)Landroid/app/job/JobInfo;",
 			arg0
@@ -72,10 +72,10 @@ namespace android::app::job
 	}
 	jint JobScheduler::schedule(android::app::job::JobInfo arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"schedule",
 			"(Landroid/app/job/JobInfo;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::app::job

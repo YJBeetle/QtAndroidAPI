@@ -10,10 +10,12 @@ namespace android::service::carrier
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CarrierMessagingService_SendMmsResult(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		CarrierMessagingService_SendMmsResult(QAndroidJniObject obj);
+		
 		// Constructors
 		CarrierMessagingService_SendMmsResult(jint arg0, jbyteArray arg1);
-		CarrierMessagingService_SendMmsResult() = default;
 		
 		// Methods
 		jbyteArray getSendConfPdu();

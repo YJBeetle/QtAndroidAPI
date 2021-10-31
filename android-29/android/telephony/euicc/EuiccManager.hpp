@@ -42,9 +42,11 @@ namespace android::telephony::euicc
 		static jstring EXTRA_EMBEDDED_SUBSCRIPTION_DOWNLOADABLE_SUBSCRIPTION();
 		static jstring META_DATA_CARRIER_ICON();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit EuiccManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		EuiccManager(QAndroidJniObject obj);
+		
 		// Constructors
-		EuiccManager() = default;
 		
 		// Methods
 		QAndroidJniObject createForCardId(jint arg0);

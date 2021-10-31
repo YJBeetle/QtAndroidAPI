@@ -21,7 +21,9 @@ namespace android::net
 		);
 	}
 	
-	Network::Network(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Network::Network(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -36,38 +38,38 @@ namespace android::net
 	}
 	void Network::bindSocket(java::io::FileDescriptor arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"bindSocket",
 			"(Ljava/io/FileDescriptor;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Network::bindSocket(java::net::DatagramSocket arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"bindSocket",
 			"(Ljava/net/DatagramSocket;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Network::bindSocket(java::net::Socket arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"bindSocket",
 			"(Ljava/net/Socket;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint Network::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean Network::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -75,7 +77,7 @@ namespace android::net
 	}
 	jarray Network::getAllByName(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAllByName",
 			"(Ljava/lang/String;)[Ljava/net/InetAddress;",
 			arg0
@@ -83,7 +85,7 @@ namespace android::net
 	}
 	QAndroidJniObject Network::getByName(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getByName",
 			"(Ljava/lang/String;)Ljava/net/InetAddress;",
 			arg0
@@ -91,55 +93,55 @@ namespace android::net
 	}
 	jlong Network::getNetworkHandle()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getNetworkHandle",
 			"()J"
 		);
 	}
 	QAndroidJniObject Network::getSocketFactory()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSocketFactory",
 			"()Ljavax/net/SocketFactory;"
 		);
 	}
 	jint Network::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	QAndroidJniObject Network::openConnection(java::net::URL arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"openConnection",
 			"(Ljava/net/URL;)Ljava/net/URLConnection;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Network::openConnection(java::net::URL arg0, java::net::Proxy arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"openConnection",
 			"(Ljava/net/URL;Ljava/net/Proxy;)Ljava/net/URLConnection;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jstring Network::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void Network::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

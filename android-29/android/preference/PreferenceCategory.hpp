@@ -20,13 +20,15 @@ namespace android::preference
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PreferenceCategory(const char *className, const char *sig, Ts...agv) : android::preference::PreferenceGroup(className, sig, std::forward<Ts>(agv)...) {}
 		PreferenceCategory(QAndroidJniObject obj);
+		
 		// Constructors
 		PreferenceCategory(android::content::Context arg0);
 		PreferenceCategory(android::content::Context arg0, __JniBaseClass arg1);
 		PreferenceCategory(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		PreferenceCategory(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
-		PreferenceCategory() = default;
 		
 		// Methods
 		jboolean isEnabled();

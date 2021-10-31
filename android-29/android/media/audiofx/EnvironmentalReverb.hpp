@@ -25,10 +25,12 @@ namespace android::media::audiofx
 		static jint PARAM_ROOM_HF_LEVEL();
 		static jint PARAM_ROOM_LEVEL();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit EnvironmentalReverb(const char *className, const char *sig, Ts...agv) : android::media::audiofx::AudioEffect(className, sig, std::forward<Ts>(agv)...) {}
 		EnvironmentalReverb(QAndroidJniObject obj);
+		
 		// Constructors
 		EnvironmentalReverb(jint arg0, jint arg1);
-		EnvironmentalReverb() = default;
 		
 		// Methods
 		jshort getDecayHFRatio();

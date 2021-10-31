@@ -5,50 +5,50 @@ namespace java::sql
 	// Fields
 	jarray DriverPropertyInfo::choices()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"choices",
 			"[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	jstring DriverPropertyInfo::description()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"description",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring DriverPropertyInfo::name()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"name",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jboolean DriverPropertyInfo::required()
 	{
-		return __thiz.getField<jboolean>(
+		return getField<jboolean>(
 			"required"
 		);
 	}
 	jstring DriverPropertyInfo::value()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"value",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	
-	DriverPropertyInfo::DriverPropertyInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DriverPropertyInfo::DriverPropertyInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	DriverPropertyInfo::DriverPropertyInfo(jstring arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.sql.DriverPropertyInfo",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::sql

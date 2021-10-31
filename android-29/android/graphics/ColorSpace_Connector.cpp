@@ -6,34 +6,36 @@ namespace android::graphics
 {
 	// Fields
 	
-	ColorSpace_Connector::ColorSpace_Connector(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ColorSpace_Connector::ColorSpace_Connector(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject ColorSpace_Connector::getDestination()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDestination",
 			"()Landroid/graphics/ColorSpace;"
 		);
 	}
 	QAndroidJniObject ColorSpace_Connector::getRenderIntent()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRenderIntent",
 			"()Landroid/graphics/ColorSpace$RenderIntent;"
 		);
 	}
 	QAndroidJniObject ColorSpace_Connector::getSource()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSource",
 			"()Landroid/graphics/ColorSpace;"
 		);
 	}
 	jfloatArray ColorSpace_Connector::transform(jfloatArray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"transform",
 			"([F)[F",
 			arg0
@@ -41,7 +43,7 @@ namespace android::graphics
 	}
 	jfloatArray ColorSpace_Connector::transform(jfloat arg0, jfloat arg1, jfloat arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"transform",
 			"(FFF)[F",
 			arg0,

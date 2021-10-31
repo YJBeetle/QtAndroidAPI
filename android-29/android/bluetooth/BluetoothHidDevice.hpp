@@ -53,9 +53,11 @@ namespace android::bluetooth
 		static jbyte SUBCLASS2_SENSING_DEVICE();
 		static jbyte SUBCLASS2_UNCATEGORIZED();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BluetoothHidDevice(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		BluetoothHidDevice(QAndroidJniObject obj);
+		
 		// Constructors
-		BluetoothHidDevice() = default;
 		
 		// Methods
 		jboolean connect(android::bluetooth::BluetoothDevice arg0);

@@ -4,13 +4,15 @@ namespace java::util
 {
 	// Fields
 	
-	AbstractSet::AbstractSet(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AbstractSet::AbstractSet(QAndroidJniObject obj) : java::util::AbstractCollection(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jboolean AbstractSet::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -18,17 +20,17 @@ namespace java::util
 	}
 	jint AbstractSet::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean AbstractSet::removeAll(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"removeAll",
 			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace java::util

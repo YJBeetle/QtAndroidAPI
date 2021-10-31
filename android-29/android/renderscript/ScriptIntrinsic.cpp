@@ -5,7 +5,9 @@ namespace android::renderscript
 {
 	// Fields
 	
-	ScriptIntrinsic::ScriptIntrinsic(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ScriptIntrinsic::ScriptIntrinsic(QAndroidJniObject obj) : android::renderscript::Script(obj) {}
+	
 	// Constructors
 	
 	// Methods

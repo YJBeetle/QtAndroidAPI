@@ -13,79 +13,77 @@ namespace android::view::inputmethod
 		);
 	}
 	
-	CompletionInfo::CompletionInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CompletionInfo::CompletionInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	CompletionInfo::CompletionInfo(jlong arg0, jint arg1, jstring arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.inputmethod.CompletionInfo",
 			"(JILjava/lang/CharSequence;)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	CompletionInfo::CompletionInfo(jlong arg0, jint arg1, jstring arg2, jstring arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.inputmethod.CompletionInfo",
 			"(JILjava/lang/CharSequence;Ljava/lang/CharSequence;)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	
 	// Methods
 	jint CompletionInfo::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jlong CompletionInfo::getId()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getId",
 			"()J"
 		);
 	}
 	jstring CompletionInfo::getLabel()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jint CompletionInfo::getPosition()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPosition",
 			"()I"
 		);
 	}
 	jstring CompletionInfo::getText()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jstring CompletionInfo::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void CompletionInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

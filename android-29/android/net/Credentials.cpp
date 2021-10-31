@@ -4,37 +4,37 @@ namespace android::net
 {
 	// Fields
 	
-	Credentials::Credentials(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Credentials::Credentials(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Credentials::Credentials(jint arg0, jint arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.net.Credentials",
 			"(III)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	jint Credentials::getGid()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getGid",
 			"()I"
 		);
 	}
 	jint Credentials::getPid()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPid",
 			"()I"
 		);
 	}
 	jint Credentials::getUid()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getUid",
 			"()I"
 		);

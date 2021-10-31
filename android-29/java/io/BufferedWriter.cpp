@@ -5,51 +5,49 @@ namespace java::io
 {
 	// Fields
 	
-	BufferedWriter::BufferedWriter(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BufferedWriter::BufferedWriter(QAndroidJniObject obj) : java::io::Writer(obj) {}
+	
 	// Constructors
 	BufferedWriter::BufferedWriter(java::io::Writer arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::Writer(
 			"java.io.BufferedWriter",
 			"(Ljava/io/Writer;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	BufferedWriter::BufferedWriter(java::io::Writer arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::Writer(
 			"java.io.BufferedWriter",
 			"(Ljava/io/Writer;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	void BufferedWriter::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	void BufferedWriter::flush()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"flush",
 			"()V"
 		);
 	}
 	void BufferedWriter::newLine()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"newLine",
 			"()V"
 		);
 	}
 	void BufferedWriter::write(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"write",
 			"(I)V",
 			arg0
@@ -57,7 +55,7 @@ namespace java::io
 	}
 	void BufferedWriter::write(jcharArray arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"write",
 			"([CII)V",
 			arg0,
@@ -67,7 +65,7 @@ namespace java::io
 	}
 	void BufferedWriter::write(jstring arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"write",
 			"(Ljava/lang/String;II)V",
 			arg0,

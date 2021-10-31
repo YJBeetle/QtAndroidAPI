@@ -5,7 +5,9 @@ namespace android::nfc::tech
 {
 	// Fields
 	
-	NfcA::NfcA(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NfcA::NfcA(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -15,68 +17,68 @@ namespace android::nfc::tech
 			"android.nfc.tech.NfcA",
 			"get",
 			"(Landroid/nfc/Tag;)Landroid/nfc/tech/NfcA;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void NfcA::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	void NfcA::connect()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"connect",
 			"()V"
 		);
 	}
 	jbyteArray NfcA::getAtqa()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAtqa",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jint NfcA::getMaxTransceiveLength()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMaxTransceiveLength",
 			"()I"
 		);
 	}
 	jshort NfcA::getSak()
 	{
-		return __thiz.callMethod<jshort>(
+		return callMethod<jshort>(
 			"getSak",
 			"()S"
 		);
 	}
 	QAndroidJniObject NfcA::getTag()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTag",
 			"()Landroid/nfc/Tag;"
 		);
 	}
 	jint NfcA::getTimeout()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTimeout",
 			"()I"
 		);
 	}
 	jboolean NfcA::isConnected()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isConnected",
 			"()Z"
 		);
 	}
 	void NfcA::setTimeout(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTimeout",
 			"(I)V",
 			arg0
@@ -84,7 +86,7 @@ namespace android::nfc::tech
 	}
 	jbyteArray NfcA::transceive(jbyteArray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"transceive",
 			"([B)[B",
 			arg0

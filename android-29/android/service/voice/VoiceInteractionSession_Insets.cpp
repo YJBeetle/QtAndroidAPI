@@ -28,34 +28,34 @@ namespace android::service::voice
 	}
 	QAndroidJniObject VoiceInteractionSession_Insets::contentInsets()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"contentInsets",
 			"Landroid/graphics/Rect;"
 		);
 	}
 	jint VoiceInteractionSession_Insets::touchableInsets()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"touchableInsets"
 		);
 	}
 	QAndroidJniObject VoiceInteractionSession_Insets::touchableRegion()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"touchableRegion",
 			"Landroid/graphics/Region;"
 		);
 	}
 	
-	VoiceInteractionSession_Insets::VoiceInteractionSession_Insets(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	VoiceInteractionSession_Insets::VoiceInteractionSession_Insets(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	VoiceInteractionSession_Insets::VoiceInteractionSession_Insets()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.service.voice.VoiceInteractionSession$Insets",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::service::voice

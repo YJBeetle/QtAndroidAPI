@@ -7,103 +7,101 @@ namespace android::content::pm
 	// Fields
 	QAndroidJniObject ComponentInfo::applicationInfo()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"applicationInfo",
 			"Landroid/content/pm/ApplicationInfo;"
 		);
 	}
 	jint ComponentInfo::descriptionRes()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"descriptionRes"
 		);
 	}
 	jboolean ComponentInfo::directBootAware()
 	{
-		return __thiz.getField<jboolean>(
+		return getField<jboolean>(
 			"directBootAware"
 		);
 	}
 	jboolean ComponentInfo::enabled()
 	{
-		return __thiz.getField<jboolean>(
+		return getField<jboolean>(
 			"enabled"
 		);
 	}
 	jboolean ComponentInfo::exported()
 	{
-		return __thiz.getField<jboolean>(
+		return getField<jboolean>(
 			"exported"
 		);
 	}
 	jstring ComponentInfo::processName()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"processName",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring ComponentInfo::splitName()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"splitName",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	
-	ComponentInfo::ComponentInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ComponentInfo::ComponentInfo(QAndroidJniObject obj) : android::content::pm::PackageItemInfo(obj) {}
+	
 	// Constructors
 	ComponentInfo::ComponentInfo()
-	{
-		__thiz = QAndroidJniObject(
+		: android::content::pm::PackageItemInfo(
 			"android.content.pm.ComponentInfo",
 			"()V"
-		);
-	}
+		) {}
 	ComponentInfo::ComponentInfo(android::content::pm::ComponentInfo &arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::content::pm::PackageItemInfo(
 			"android.content.pm.ComponentInfo",
 			"(Landroid/content/pm/ComponentInfo;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jint ComponentInfo::getBannerResource()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getBannerResource",
 			"()I"
 		);
 	}
 	jint ComponentInfo::getIconResource()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getIconResource",
 			"()I"
 		);
 	}
 	jint ComponentInfo::getLogoResource()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLogoResource",
 			"()I"
 		);
 	}
 	jboolean ComponentInfo::isEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEnabled",
 			"()Z"
 		);
 	}
 	void ComponentInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

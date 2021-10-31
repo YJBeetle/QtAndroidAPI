@@ -14,9 +14,11 @@ namespace java::text
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Normalizer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Normalizer(QAndroidJniObject obj);
+		
 		// Constructors
-		Normalizer() = default;
 		
 		// Methods
 		static jboolean isNormalized(jstring arg0, java::text::Normalizer_Form arg1);

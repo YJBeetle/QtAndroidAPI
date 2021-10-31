@@ -32,7 +32,10 @@ namespace android::graphics::drawable
 		// Fields
 		static jint REPEAT_INFINITE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AnimatedImageDrawable(const char *className, const char *sig, Ts...agv) : android::graphics::drawable::Drawable(className, sig, std::forward<Ts>(agv)...) {}
 		AnimatedImageDrawable(QAndroidJniObject obj);
+		
 		// Constructors
 		AnimatedImageDrawable();
 		

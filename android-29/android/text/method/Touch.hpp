@@ -22,9 +22,11 @@ namespace android::text::method
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Touch(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Touch(QAndroidJniObject obj);
+		
 		// Constructors
-		Touch() = default;
 		
 		// Methods
 		static jint getInitialScrollX(android::widget::TextView arg0, __JniBaseClass arg1);

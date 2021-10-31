@@ -6,28 +6,26 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	ConcurrentLinkedDeque::ConcurrentLinkedDeque(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ConcurrentLinkedDeque::ConcurrentLinkedDeque(QAndroidJniObject obj) : java::util::AbstractCollection(obj) {}
+	
 	// Constructors
 	ConcurrentLinkedDeque::ConcurrentLinkedDeque()
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::AbstractCollection(
 			"java.util.concurrent.ConcurrentLinkedDeque",
 			"()V"
-		);
-	}
+		) {}
 	ConcurrentLinkedDeque::ConcurrentLinkedDeque(__JniBaseClass arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::AbstractCollection(
 			"java.util.concurrent.ConcurrentLinkedDeque",
 			"(Ljava/util/Collection;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jboolean ConcurrentLinkedDeque::add(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"add",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -35,15 +33,15 @@ namespace java::util::concurrent
 	}
 	jboolean ConcurrentLinkedDeque::addAll(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"addAll",
 			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ConcurrentLinkedDeque::addFirst(jobject arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addFirst",
 			"(Ljava/lang/Object;)V",
 			arg0
@@ -51,7 +49,7 @@ namespace java::util::concurrent
 	}
 	void ConcurrentLinkedDeque::addLast(jobject arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addLast",
 			"(Ljava/lang/Object;)V",
 			arg0
@@ -59,14 +57,14 @@ namespace java::util::concurrent
 	}
 	void ConcurrentLinkedDeque::clear()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
 	jboolean ConcurrentLinkedDeque::contains(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"contains",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -74,57 +72,57 @@ namespace java::util::concurrent
 	}
 	QAndroidJniObject ConcurrentLinkedDeque::descendingIterator()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"descendingIterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
 	jobject ConcurrentLinkedDeque::element()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"element",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	void ConcurrentLinkedDeque::forEach(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"forEach",
 			"(Ljava/util/function/Consumer;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jobject ConcurrentLinkedDeque::getFirst()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFirst",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobject ConcurrentLinkedDeque::getLast()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLast",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jboolean ConcurrentLinkedDeque::isEmpty()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
 	QAndroidJniObject ConcurrentLinkedDeque::iterator()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
 	jboolean ConcurrentLinkedDeque::offer(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"offer",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -132,7 +130,7 @@ namespace java::util::concurrent
 	}
 	jboolean ConcurrentLinkedDeque::offerFirst(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"offerFirst",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -140,7 +138,7 @@ namespace java::util::concurrent
 	}
 	jboolean ConcurrentLinkedDeque::offerLast(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"offerLast",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -148,56 +146,56 @@ namespace java::util::concurrent
 	}
 	jobject ConcurrentLinkedDeque::peek()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"peek",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobject ConcurrentLinkedDeque::peekFirst()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"peekFirst",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobject ConcurrentLinkedDeque::peekLast()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"peekLast",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobject ConcurrentLinkedDeque::poll()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"poll",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobject ConcurrentLinkedDeque::pollFirst()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"pollFirst",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobject ConcurrentLinkedDeque::pollLast()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"pollLast",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobject ConcurrentLinkedDeque::pop()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"pop",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	void ConcurrentLinkedDeque::push(jobject arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"push",
 			"(Ljava/lang/Object;)V",
 			arg0
@@ -205,7 +203,7 @@ namespace java::util::concurrent
 	}
 	jboolean ConcurrentLinkedDeque::remove(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"remove",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -213,29 +211,29 @@ namespace java::util::concurrent
 	}
 	jobject ConcurrentLinkedDeque::remove()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"remove",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jboolean ConcurrentLinkedDeque::removeAll(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"removeAll",
 			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jobject ConcurrentLinkedDeque::removeFirst()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"removeFirst",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jboolean ConcurrentLinkedDeque::removeFirstOccurrence(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"removeFirstOccurrence",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -243,22 +241,22 @@ namespace java::util::concurrent
 	}
 	jboolean ConcurrentLinkedDeque::removeIf(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"removeIf",
 			"(Ljava/util/function/Predicate;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jobject ConcurrentLinkedDeque::removeLast()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"removeLast",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jboolean ConcurrentLinkedDeque::removeLastOccurrence(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"removeLastOccurrence",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -266,36 +264,36 @@ namespace java::util::concurrent
 	}
 	jboolean ConcurrentLinkedDeque::retainAll(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"retainAll",
 			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint ConcurrentLinkedDeque::size()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
 	QAndroidJniObject ConcurrentLinkedDeque::spliterator()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"spliterator",
 			"()Ljava/util/Spliterator;"
 		);
 	}
 	jobjectArray ConcurrentLinkedDeque::toArray()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toArray",
 			"()[Ljava/lang/Object;"
 		).object<jobjectArray>();
 	}
 	jobjectArray ConcurrentLinkedDeque::toArray(jobjectArray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toArray",
 			"([Ljava/lang/Object;)[Ljava/lang/Object;",
 			arg0
@@ -303,7 +301,7 @@ namespace java::util::concurrent
 	}
 	jstring ConcurrentLinkedDeque::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

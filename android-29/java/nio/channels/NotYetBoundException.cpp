@@ -4,15 +4,15 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	NotYetBoundException::NotYetBoundException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NotYetBoundException::NotYetBoundException(QAndroidJniObject obj) : java::lang::IllegalStateException(obj) {}
+	
 	// Constructors
 	NotYetBoundException::NotYetBoundException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::IllegalStateException(
 			"java.nio.channels.NotYetBoundException",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::nio::channels

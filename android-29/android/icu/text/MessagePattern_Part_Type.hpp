@@ -25,9 +25,11 @@ namespace android::icu::text
 		static QAndroidJniObject REPLACE_NUMBER();
 		static QAndroidJniObject SKIP_SYNTAX();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MessagePattern_Part_Type(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		MessagePattern_Part_Type(QAndroidJniObject obj);
+		
 		// Constructors
-		MessagePattern_Part_Type() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

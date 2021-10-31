@@ -21,9 +21,11 @@ namespace android::provider
 		static jint STATUS_EMPTY();
 		static jint STATUS_NORMAL();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ContactsContract_ProviderStatus(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ContactsContract_ProviderStatus(QAndroidJniObject obj);
+		
 		// Constructors
-		ContactsContract_ProviderStatus() = default;
 		
 		// Methods
 	};

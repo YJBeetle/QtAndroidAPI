@@ -22,10 +22,12 @@ namespace java::beans
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PropertyChangeSupport(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PropertyChangeSupport(QAndroidJniObject obj);
+		
 		// Constructors
 		PropertyChangeSupport(jobject arg0);
-		PropertyChangeSupport() = default;
 		
 		// Methods
 		void addPropertyChangeListener(__JniBaseClass arg0);

@@ -53,9 +53,11 @@ namespace android::app
 		static jint ROTATION_FREEZE_CURRENT();
 		static jint ROTATION_UNFREEZE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit UiAutomation(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		UiAutomation(QAndroidJniObject obj);
+		
 		// Constructors
-		UiAutomation() = default;
 		
 		// Methods
 		void adoptShellPermissionIdentity();

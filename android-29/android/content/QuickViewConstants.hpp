@@ -16,9 +16,11 @@ namespace android::content
 		static jstring FEATURE_SEND();
 		static jstring FEATURE_VIEW();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit QuickViewConstants(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		QuickViewConstants(QAndroidJniObject obj);
+		
 		// Constructors
-		QuickViewConstants() = default;
 		
 		// Methods
 	};

@@ -10,7 +10,9 @@ namespace java::sql
 {
 	// Fields
 	
-	DriverManager::DriverManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DriverManager::DriverManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -20,7 +22,7 @@ namespace java::sql
 			"java.sql.DriverManager",
 			"deregisterDriver",
 			"(Ljava/sql/Driver;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject DriverManager::drivers()
@@ -47,7 +49,7 @@ namespace java::sql
 			"getConnection",
 			"(Ljava/lang/String;Ljava/util/Properties;)Ljava/sql/Connection;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject DriverManager::getConnection(jstring arg0, jstring arg1, jstring arg2)
@@ -117,7 +119,7 @@ namespace java::sql
 			"java.sql.DriverManager",
 			"registerDriver",
 			"(Ljava/sql/Driver;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void DriverManager::registerDriver(__JniBaseClass arg0, __JniBaseClass arg1)
@@ -126,8 +128,8 @@ namespace java::sql
 			"java.sql.DriverManager",
 			"registerDriver",
 			"(Ljava/sql/Driver;Ljava/sql/DriverAction;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void DriverManager::setLogStream(java::io::PrintStream arg0)
@@ -136,7 +138,7 @@ namespace java::sql
 			"java.sql.DriverManager",
 			"setLogStream",
 			"(Ljava/io/PrintStream;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void DriverManager::setLogWriter(java::io::PrintWriter arg0)
@@ -145,7 +147,7 @@ namespace java::sql
 			"java.sql.DriverManager",
 			"setLogWriter",
 			"(Ljava/io/PrintWriter;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void DriverManager::setLoginTimeout(jint arg0)

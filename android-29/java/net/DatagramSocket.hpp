@@ -38,7 +38,10 @@ namespace java::net
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DatagramSocket(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DatagramSocket(QAndroidJniObject obj);
+		
 		// Constructors
 		DatagramSocket();
 		DatagramSocket(jint arg0);

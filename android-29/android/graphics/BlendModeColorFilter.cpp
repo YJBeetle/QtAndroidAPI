@@ -5,22 +5,22 @@ namespace android::graphics
 {
 	// Fields
 	
-	BlendModeColorFilter::BlendModeColorFilter(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BlendModeColorFilter::BlendModeColorFilter(QAndroidJniObject obj) : android::graphics::ColorFilter(obj) {}
+	
 	// Constructors
 	BlendModeColorFilter::BlendModeColorFilter(jint arg0, android::graphics::BlendMode arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::graphics::ColorFilter(
 			"android.graphics.BlendModeColorFilter",
 			"(ILandroid/graphics/BlendMode;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
+			arg1.object()
+		) {}
 	
 	// Methods
 	jboolean BlendModeColorFilter::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -28,21 +28,21 @@ namespace android::graphics
 	}
 	jint BlendModeColorFilter::getColor()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getColor",
 			"()I"
 		);
 	}
 	QAndroidJniObject BlendModeColorFilter::getMode()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMode",
 			"()Landroid/graphics/BlendMode;"
 		);
 	}
 	jint BlendModeColorFilter::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);

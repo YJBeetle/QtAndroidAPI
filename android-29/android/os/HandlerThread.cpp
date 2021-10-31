@@ -5,58 +5,56 @@ namespace android::os
 {
 	// Fields
 	
-	HandlerThread::HandlerThread(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	HandlerThread::HandlerThread(QAndroidJniObject obj) : java::lang::Thread(obj) {}
+	
 	// Constructors
 	HandlerThread::HandlerThread(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Thread(
 			"android.os.HandlerThread",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	HandlerThread::HandlerThread(jstring arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Thread(
 			"android.os.HandlerThread",
 			"(Ljava/lang/String;I)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject HandlerThread::getLooper()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLooper",
 			"()Landroid/os/Looper;"
 		);
 	}
 	jint HandlerThread::getThreadId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getThreadId",
 			"()I"
 		);
 	}
 	jboolean HandlerThread::quit()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"quit",
 			"()Z"
 		);
 	}
 	jboolean HandlerThread::quitSafely()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"quitSafely",
 			"()Z"
 		);
 	}
 	void HandlerThread::run()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"run",
 			"()V"
 		);

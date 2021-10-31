@@ -109,7 +109,10 @@ namespace android::mtp
 		static jint PROTECTION_STATUS_READ_ONLY();
 		static jint PROTECTION_STATUS_READ_ONLY_DATA();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MtpConstants(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MtpConstants(QAndroidJniObject obj);
+		
 		// Constructors
 		MtpConstants();
 		

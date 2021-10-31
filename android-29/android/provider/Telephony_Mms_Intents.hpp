@@ -12,9 +12,11 @@ namespace android::provider
 		static jstring CONTENT_CHANGED_ACTION();
 		static jstring DELETED_CONTENTS();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Telephony_Mms_Intents(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Telephony_Mms_Intents(QAndroidJniObject obj);
+		
 		// Constructors
-		Telephony_Mms_Intents() = default;
 		
 		// Methods
 	};

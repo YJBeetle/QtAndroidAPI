@@ -49,68 +49,66 @@ namespace android::net::wifi::p2p
 	}
 	jstring WifiP2pDevice::deviceAddress()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"deviceAddress",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring WifiP2pDevice::deviceName()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"deviceName",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring WifiP2pDevice::primaryDeviceType()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"primaryDeviceType",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring WifiP2pDevice::secondaryDeviceType()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"secondaryDeviceType",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint WifiP2pDevice::status()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"status"
 		);
 	}
 	
-	WifiP2pDevice::WifiP2pDevice(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WifiP2pDevice::WifiP2pDevice(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	WifiP2pDevice::WifiP2pDevice()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.net.wifi.p2p.WifiP2pDevice",
 			"()V"
-		);
-	}
+		) {}
 	WifiP2pDevice::WifiP2pDevice(android::net::wifi::p2p::WifiP2pDevice &arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.net.wifi.p2p.WifiP2pDevice",
 			"(Landroid/net/wifi/p2p/WifiP2pDevice;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jint WifiP2pDevice::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean WifiP2pDevice::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -118,59 +116,59 @@ namespace android::net::wifi::p2p
 	}
 	jint WifiP2pDevice::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean WifiP2pDevice::isGroupOwner()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isGroupOwner",
 			"()Z"
 		);
 	}
 	jboolean WifiP2pDevice::isServiceDiscoveryCapable()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isServiceDiscoveryCapable",
 			"()Z"
 		);
 	}
 	jstring WifiP2pDevice::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jboolean WifiP2pDevice::wpsDisplaySupported()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"wpsDisplaySupported",
 			"()Z"
 		);
 	}
 	jboolean WifiP2pDevice::wpsKeypadSupported()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"wpsKeypadSupported",
 			"()Z"
 		);
 	}
 	jboolean WifiP2pDevice::wpsPbcSupported()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"wpsPbcSupported",
 			"()Z"
 		);
 	}
 	void WifiP2pDevice::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

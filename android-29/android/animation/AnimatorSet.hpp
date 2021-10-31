@@ -23,7 +23,10 @@ namespace android::animation
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AnimatorSet(const char *className, const char *sig, Ts...agv) : android::animation::Animator(className, sig, std::forward<Ts>(agv)...) {}
 		AnimatorSet(QAndroidJniObject obj);
+		
 		// Constructors
 		AnimatorSet();
 		

@@ -21,15 +21,15 @@ namespace android::provider
 		);
 	}
 	
-	UserDictionary::UserDictionary(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UserDictionary::UserDictionary(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	UserDictionary::UserDictionary()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.provider.UserDictionary",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::provider

@@ -4,7 +4,9 @@ namespace android::os::strictmode
 {
 	// Fields
 	
-	NetworkViolation::NetworkViolation(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NetworkViolation::NetworkViolation(QAndroidJniObject obj) : android::os::strictmode::Violation(obj) {}
+	
 	// Constructors
 	
 	// Methods

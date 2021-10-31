@@ -5,29 +5,29 @@ namespace android::view::textclassifier
 {
 	// Fields
 	
-	TextClassificationContext_Builder::TextClassificationContext_Builder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TextClassificationContext_Builder::TextClassificationContext_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	TextClassificationContext_Builder::TextClassificationContext_Builder(jstring arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.textclassifier.TextClassificationContext$Builder",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject TextClassificationContext_Builder::build()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"build",
 			"()Landroid/view/textclassifier/TextClassificationContext;"
 		);
 	}
 	QAndroidJniObject TextClassificationContext_Builder::setWidgetVersion(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setWidgetVersion",
 			"(Ljava/lang/String;)Landroid/view/textclassifier/TextClassificationContext$Builder;",
 			arg0

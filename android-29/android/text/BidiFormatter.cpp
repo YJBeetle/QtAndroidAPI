@@ -5,7 +5,9 @@ namespace android::text
 {
 	// Fields
 	
-	BidiFormatter::BidiFormatter(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BidiFormatter::BidiFormatter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -32,19 +34,19 @@ namespace android::text
 			"android.text.BidiFormatter",
 			"getInstance",
 			"(Ljava/util/Locale;)Landroid/text/BidiFormatter;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean BidiFormatter::getStereoReset()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getStereoReset",
 			"()Z"
 		);
 	}
 	jboolean BidiFormatter::isRtl(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isRtl",
 			"(Ljava/lang/CharSequence;)Z",
 			arg0
@@ -52,14 +54,14 @@ namespace android::text
 	}
 	jboolean BidiFormatter::isRtlContext()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isRtlContext",
 			"()Z"
 		);
 	}
 	jstring BidiFormatter::unicodeWrap(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"unicodeWrap",
 			"(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;",
 			arg0
@@ -67,16 +69,16 @@ namespace android::text
 	}
 	jstring BidiFormatter::unicodeWrap(jstring arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"unicodeWrap",
 			"(Ljava/lang/CharSequence;Landroid/text/TextDirectionHeuristic;)Ljava/lang/CharSequence;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		).object<jstring>();
 	}
 	jstring BidiFormatter::unicodeWrap(jstring arg0, jboolean arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"unicodeWrap",
 			"(Ljava/lang/CharSequence;Z)Ljava/lang/CharSequence;",
 			arg0,
@@ -85,11 +87,11 @@ namespace android::text
 	}
 	jstring BidiFormatter::unicodeWrap(jstring arg0, __JniBaseClass arg1, jboolean arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"unicodeWrap",
 			"(Ljava/lang/CharSequence;Landroid/text/TextDirectionHeuristic;Z)Ljava/lang/CharSequence;",
 			arg0,
-			arg1.__jniObject().object(),
+			arg1.object(),
 			arg2
 		).object<jstring>();
 	}

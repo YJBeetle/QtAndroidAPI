@@ -116,97 +116,97 @@ namespace android::app::usage
 		);
 	}
 	
-	NetworkStats_Bucket::NetworkStats_Bucket(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NetworkStats_Bucket::NetworkStats_Bucket(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	NetworkStats_Bucket::NetworkStats_Bucket()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.app.usage.NetworkStats$Bucket",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jint NetworkStats_Bucket::getDefaultNetworkStatus()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDefaultNetworkStatus",
 			"()I"
 		);
 	}
 	jlong NetworkStats_Bucket::getEndTimeStamp()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getEndTimeStamp",
 			"()J"
 		);
 	}
 	jint NetworkStats_Bucket::getMetered()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMetered",
 			"()I"
 		);
 	}
 	jint NetworkStats_Bucket::getRoaming()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRoaming",
 			"()I"
 		);
 	}
 	jlong NetworkStats_Bucket::getRxBytes()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getRxBytes",
 			"()J"
 		);
 	}
 	jlong NetworkStats_Bucket::getRxPackets()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getRxPackets",
 			"()J"
 		);
 	}
 	jlong NetworkStats_Bucket::getStartTimeStamp()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getStartTimeStamp",
 			"()J"
 		);
 	}
 	jint NetworkStats_Bucket::getState()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getState",
 			"()I"
 		);
 	}
 	jint NetworkStats_Bucket::getTag()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTag",
 			"()I"
 		);
 	}
 	jlong NetworkStats_Bucket::getTxBytes()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getTxBytes",
 			"()J"
 		);
 	}
 	jlong NetworkStats_Bucket::getTxPackets()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getTxPackets",
 			"()J"
 		);
 	}
 	jint NetworkStats_Bucket::getUid()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getUid",
 			"()I"
 		);

@@ -4,20 +4,20 @@ namespace android::webkit
 {
 	// Fields
 	
-	SafeBrowsingResponse::SafeBrowsingResponse(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SafeBrowsingResponse::SafeBrowsingResponse(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	SafeBrowsingResponse::SafeBrowsingResponse()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.webkit.SafeBrowsingResponse",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void SafeBrowsingResponse::backToSafety(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"backToSafety",
 			"(Z)V",
 			arg0
@@ -25,7 +25,7 @@ namespace android::webkit
 	}
 	void SafeBrowsingResponse::proceed(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"proceed",
 			"(Z)V",
 			arg0
@@ -33,7 +33,7 @@ namespace android::webkit
 	}
 	void SafeBrowsingResponse::showInterstitial(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"showInterstitial",
 			"(Z)V",
 			arg0

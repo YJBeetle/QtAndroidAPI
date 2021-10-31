@@ -11,7 +11,9 @@ namespace java::util
 {
 	// Fields
 	
-	ServiceLoader::ServiceLoader(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ServiceLoader::ServiceLoader(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -31,7 +33,7 @@ namespace java::util
 			"load",
 			"(Ljava/lang/Class;Ljava/lang/ClassLoader;)Ljava/util/ServiceLoader;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject ServiceLoader::load(__JniBaseClass arg0, jclass arg1)
@@ -40,7 +42,7 @@ namespace java::util
 			"java.util.ServiceLoader",
 			"load",
 			"(Ljava/lang/ModuleLayer;Ljava/lang/Class;)Ljava/util/ServiceLoader;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -55,35 +57,35 @@ namespace java::util
 	}
 	QAndroidJniObject ServiceLoader::findFirst()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"findFirst",
 			"()Ljava/util/Optional;"
 		);
 	}
 	QAndroidJniObject ServiceLoader::iterator()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
 	void ServiceLoader::reload()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"reload",
 			"()V"
 		);
 	}
 	QAndroidJniObject ServiceLoader::stream()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"stream",
 			"()Ljava/util/stream/Stream;"
 		);
 	}
 	jstring ServiceLoader::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

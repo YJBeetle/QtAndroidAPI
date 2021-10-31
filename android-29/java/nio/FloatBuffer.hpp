@@ -19,9 +19,11 @@ namespace java::nio
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit FloatBuffer(const char *className, const char *sig, Ts...agv) : java::nio::Buffer(className, sig, std::forward<Ts>(agv)...) {}
 		FloatBuffer(QAndroidJniObject obj);
+		
 		// Constructors
-		FloatBuffer() = default;
 		
 		// Methods
 		static QAndroidJniObject allocate(jint arg0);

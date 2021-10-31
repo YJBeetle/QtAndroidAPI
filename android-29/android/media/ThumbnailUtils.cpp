@@ -15,15 +15,15 @@ namespace android::media
 		);
 	}
 	
-	ThumbnailUtils::ThumbnailUtils(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ThumbnailUtils::ThumbnailUtils(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ThumbnailUtils::ThumbnailUtils()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.ThumbnailUtils",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject ThumbnailUtils::createAudioThumbnail(jstring arg0, jint arg1)
@@ -42,9 +42,9 @@ namespace android::media
 			"android.media.ThumbnailUtils",
 			"createAudioThumbnail",
 			"(Ljava/io/File;Landroid/util/Size;Landroid/os/CancellationSignal;)Landroid/graphics/Bitmap;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject ThumbnailUtils::createImageThumbnail(jstring arg0, jint arg1)
@@ -63,9 +63,9 @@ namespace android::media
 			"android.media.ThumbnailUtils",
 			"createImageThumbnail",
 			"(Ljava/io/File;Landroid/util/Size;Landroid/os/CancellationSignal;)Landroid/graphics/Bitmap;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject ThumbnailUtils::createVideoThumbnail(jstring arg0, jint arg1)
@@ -84,9 +84,9 @@ namespace android::media
 			"android.media.ThumbnailUtils",
 			"createVideoThumbnail",
 			"(Ljava/io/File;Landroid/util/Size;Landroid/os/CancellationSignal;)Landroid/graphics/Bitmap;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject ThumbnailUtils::extractThumbnail(android::graphics::Bitmap arg0, jint arg1, jint arg2)
@@ -95,7 +95,7 @@ namespace android::media
 			"android.media.ThumbnailUtils",
 			"extractThumbnail",
 			"(Landroid/graphics/Bitmap;II)Landroid/graphics/Bitmap;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
@@ -106,7 +106,7 @@ namespace android::media
 			"android.media.ThumbnailUtils",
 			"extractThumbnail",
 			"(Landroid/graphics/Bitmap;III)Landroid/graphics/Bitmap;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3

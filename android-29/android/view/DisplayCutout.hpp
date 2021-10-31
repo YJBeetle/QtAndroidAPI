@@ -18,11 +18,13 @@ namespace android::view
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DisplayCutout(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DisplayCutout(QAndroidJniObject obj);
+		
 		// Constructors
 		DisplayCutout(android::graphics::Rect arg0, __JniBaseClass arg1);
 		DisplayCutout(android::graphics::Insets arg0, android::graphics::Rect arg1, android::graphics::Rect arg2, android::graphics::Rect arg3, android::graphics::Rect arg4);
-		DisplayCutout() = default;
 		
 		// Methods
 		jboolean equals(jobject arg0);

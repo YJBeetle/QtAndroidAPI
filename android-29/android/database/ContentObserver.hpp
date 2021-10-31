@@ -18,10 +18,12 @@ namespace android::database
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ContentObserver(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ContentObserver(QAndroidJniObject obj);
+		
 		// Constructors
 		ContentObserver(android::os::Handler arg0);
-		ContentObserver() = default;
 		
 		// Methods
 		jboolean deliverSelfNotifications();

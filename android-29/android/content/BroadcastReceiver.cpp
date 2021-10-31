@@ -8,62 +8,62 @@ namespace android::content
 {
 	// Fields
 	
-	BroadcastReceiver::BroadcastReceiver(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BroadcastReceiver::BroadcastReceiver(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	BroadcastReceiver::BroadcastReceiver()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.content.BroadcastReceiver",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void BroadcastReceiver::abortBroadcast()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"abortBroadcast",
 			"()V"
 		);
 	}
 	void BroadcastReceiver::clearAbortBroadcast()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clearAbortBroadcast",
 			"()V"
 		);
 	}
 	jboolean BroadcastReceiver::getAbortBroadcast()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getAbortBroadcast",
 			"()Z"
 		);
 	}
 	jboolean BroadcastReceiver::getDebugUnregister()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getDebugUnregister",
 			"()Z"
 		);
 	}
 	jint BroadcastReceiver::getResultCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getResultCode",
 			"()I"
 		);
 	}
 	jstring BroadcastReceiver::getResultData()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getResultData",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject BroadcastReceiver::getResultExtras(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getResultExtras",
 			"(Z)Landroid/os/Bundle;",
 			arg0
@@ -71,46 +71,46 @@ namespace android::content
 	}
 	QAndroidJniObject BroadcastReceiver::goAsync()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"goAsync",
 			"()Landroid/content/BroadcastReceiver$PendingResult;"
 		);
 	}
 	jboolean BroadcastReceiver::isInitialStickyBroadcast()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isInitialStickyBroadcast",
 			"()Z"
 		);
 	}
 	jboolean BroadcastReceiver::isOrderedBroadcast()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isOrderedBroadcast",
 			"()Z"
 		);
 	}
 	void BroadcastReceiver::onReceive(android::content::Context arg0, android::content::Intent arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onReceive",
 			"(Landroid/content/Context;Landroid/content/Intent;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject BroadcastReceiver::peekService(android::content::Context arg0, android::content::Intent arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"peekService",
 			"(Landroid/content/Context;Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void BroadcastReceiver::setDebugUnregister(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDebugUnregister",
 			"(Z)V",
 			arg0
@@ -118,7 +118,7 @@ namespace android::content
 	}
 	void BroadcastReceiver::setOrderedHint(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOrderedHint",
 			"(Z)V",
 			arg0
@@ -126,17 +126,17 @@ namespace android::content
 	}
 	void BroadcastReceiver::setResult(jint arg0, jstring arg1, android::os::Bundle arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setResult",
 			"(ILjava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void BroadcastReceiver::setResultCode(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setResultCode",
 			"(I)V",
 			arg0
@@ -144,7 +144,7 @@ namespace android::content
 	}
 	void BroadcastReceiver::setResultData(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setResultData",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -152,10 +152,10 @@ namespace android::content
 	}
 	void BroadcastReceiver::setResultExtras(android::os::Bundle arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setResultExtras",
 			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::content

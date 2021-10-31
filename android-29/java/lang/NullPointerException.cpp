@@ -4,35 +4,33 @@ namespace java::lang
 {
 	// Fields
 	
-	NullPointerException::NullPointerException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NullPointerException::NullPointerException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	
 	// Constructors
 	NullPointerException::NullPointerException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::RuntimeException(
 			"java.lang.NullPointerException",
 			"()V"
-		);
-	}
+		) {}
 	NullPointerException::NullPointerException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::RuntimeException(
 			"java.lang.NullPointerException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jthrowable NullPointerException::fillInStackTrace()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"fillInStackTrace",
 			"()Ljava/lang/Throwable;"
 		).object<jthrowable>();
 	}
 	jstring NullPointerException::getMessage()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
 		).object<jstring>();

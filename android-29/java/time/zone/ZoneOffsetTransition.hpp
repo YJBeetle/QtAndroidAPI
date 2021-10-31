@@ -30,9 +30,11 @@ namespace java::time::zone
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ZoneOffsetTransition(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ZoneOffsetTransition(QAndroidJniObject obj);
+		
 		// Constructors
-		ZoneOffsetTransition() = default;
 		
 		// Methods
 		static QAndroidJniObject of(java::time::LocalDateTime arg0, java::time::ZoneOffset arg1, java::time::ZoneOffset arg2);

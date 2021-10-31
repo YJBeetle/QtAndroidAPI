@@ -7,60 +7,58 @@ namespace android::app
 {
 	// Fields
 	
-	Presentation::Presentation(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Presentation::Presentation(QAndroidJniObject obj) : android::app::Dialog(obj) {}
+	
 	// Constructors
 	Presentation::Presentation(android::content::Context arg0, android::view::Display arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::app::Dialog(
 			"android.app.Presentation",
 			"(Landroid/content/Context;Landroid/view/Display;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	Presentation::Presentation(android::content::Context arg0, android::view::Display arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: android::app::Dialog(
 			"android.app.Presentation",
 			"(Landroid/content/Context;Landroid/view/Display;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject Presentation::getDisplay()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDisplay",
 			"()Landroid/view/Display;"
 		);
 	}
 	QAndroidJniObject Presentation::getResources()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getResources",
 			"()Landroid/content/res/Resources;"
 		);
 	}
 	void Presentation::onDisplayChanged()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onDisplayChanged",
 			"()V"
 		);
 	}
 	void Presentation::onDisplayRemoved()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onDisplayRemoved",
 			"()V"
 		);
 	}
 	void Presentation::show()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"show",
 			"()V"
 		);

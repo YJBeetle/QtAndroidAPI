@@ -30,9 +30,11 @@ namespace java::io
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Console(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Console(QAndroidJniObject obj);
+		
 		// Constructors
-		Console() = default;
 		
 		// Methods
 		void flush();

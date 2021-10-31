@@ -39,49 +39,43 @@ namespace android::hardware::camera2
 		);
 	}
 	
-	CameraAccessException::CameraAccessException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CameraAccessException::CameraAccessException(QAndroidJniObject obj) : android::util::AndroidException(obj) {}
+	
 	// Constructors
 	CameraAccessException::CameraAccessException(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::util::AndroidException(
 			"android.hardware.camera2.CameraAccessException",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	CameraAccessException::CameraAccessException(jint arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::util::AndroidException(
 			"android.hardware.camera2.CameraAccessException",
 			"(ILjava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	CameraAccessException::CameraAccessException(jint arg0, jthrowable arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::util::AndroidException(
 			"android.hardware.camera2.CameraAccessException",
 			"(ILjava/lang/Throwable;)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	CameraAccessException::CameraAccessException(jint arg0, jstring arg1, jthrowable arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: android::util::AndroidException(
 			"android.hardware.camera2.CameraAccessException",
 			"(ILjava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	jint CameraAccessException::getReason()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getReason",
 			"()I"
 		);

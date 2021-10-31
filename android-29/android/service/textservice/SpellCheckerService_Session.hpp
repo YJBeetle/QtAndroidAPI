@@ -22,7 +22,10 @@ namespace android::service::textservice
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SpellCheckerService_Session(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SpellCheckerService_Session(QAndroidJniObject obj);
+		
 		// Constructors
 		SpellCheckerService_Session();
 		

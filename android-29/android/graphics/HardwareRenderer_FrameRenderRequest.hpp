@@ -14,9 +14,11 @@ namespace android::graphics
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit HardwareRenderer_FrameRenderRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		HardwareRenderer_FrameRenderRequest(QAndroidJniObject obj);
+		
 		// Constructors
-		HardwareRenderer_FrameRenderRequest() = default;
 		
 		// Methods
 		QAndroidJniObject setFrameCommitCallback(__JniBaseClass arg0, __JniBaseClass arg1);

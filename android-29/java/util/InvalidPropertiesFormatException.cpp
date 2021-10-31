@@ -6,24 +6,22 @@ namespace java::util
 {
 	// Fields
 	
-	InvalidPropertiesFormatException::InvalidPropertiesFormatException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	InvalidPropertiesFormatException::InvalidPropertiesFormatException(QAndroidJniObject obj) : java::io::IOException(obj) {}
+	
 	// Constructors
 	InvalidPropertiesFormatException::InvalidPropertiesFormatException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::IOException(
 			"java.util.InvalidPropertiesFormatException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	InvalidPropertiesFormatException::InvalidPropertiesFormatException(jthrowable arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::IOException(
 			"java.util.InvalidPropertiesFormatException",
 			"(Ljava/lang/Throwable;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::util

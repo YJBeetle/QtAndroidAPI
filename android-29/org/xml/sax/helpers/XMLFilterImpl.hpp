@@ -18,7 +18,10 @@ namespace org::xml::sax::helpers
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit XMLFilterImpl(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		XMLFilterImpl(QAndroidJniObject obj);
+		
 		// Constructors
 		XMLFilterImpl();
 		XMLFilterImpl(__JniBaseClass arg0);

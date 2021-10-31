@@ -34,35 +34,37 @@ namespace android::media
 		);
 	}
 	
-	FaceDetector_Face::FaceDetector_Face(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FaceDetector_Face::FaceDetector_Face(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jfloat FaceDetector_Face::confidence()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"confidence",
 			"()F"
 		);
 	}
 	jfloat FaceDetector_Face::eyesDistance()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"eyesDistance",
 			"()F"
 		);
 	}
 	void FaceDetector_Face::getMidPoint(android::graphics::PointF arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"getMidPoint",
 			"(Landroid/graphics/PointF;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jfloat FaceDetector_Face::pose(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"pose",
 			"(I)F",
 			arg0

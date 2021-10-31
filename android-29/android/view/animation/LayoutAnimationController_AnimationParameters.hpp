@@ -12,7 +12,10 @@ namespace android::view::animation
 		jint count();
 		jint index();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit LayoutAnimationController_AnimationParameters(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		LayoutAnimationController_AnimationParameters(QAndroidJniObject obj);
+		
 		// Constructors
 		LayoutAnimationController_AnimationParameters();
 		

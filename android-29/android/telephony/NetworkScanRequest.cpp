@@ -28,11 +28,12 @@ namespace android::telephony
 		);
 	}
 	
-	NetworkScanRequest::NetworkScanRequest(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NetworkScanRequest::NetworkScanRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	NetworkScanRequest::NetworkScanRequest(jint arg0, jarray arg1, jint arg2, jint arg3, jboolean arg4, jint arg5, java::util::ArrayList arg6)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.telephony.NetworkScanRequest",
 			"(I[Landroid/telephony/RadioAccessSpecifier;IIZILjava/util/ArrayList;)V",
 			arg0,
@@ -41,21 +42,20 @@ namespace android::telephony
 			arg3,
 			arg4,
 			arg5,
-			arg6.__jniObject().object()
-		);
-	}
+			arg6.object()
+		) {}
 	
 	// Methods
 	jint NetworkScanRequest::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean NetworkScanRequest::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -63,66 +63,66 @@ namespace android::telephony
 	}
 	jboolean NetworkScanRequest::getIncrementalResults()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getIncrementalResults",
 			"()Z"
 		);
 	}
 	jint NetworkScanRequest::getIncrementalResultsPeriodicity()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getIncrementalResultsPeriodicity",
 			"()I"
 		);
 	}
 	jint NetworkScanRequest::getMaxSearchTime()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMaxSearchTime",
 			"()I"
 		);
 	}
 	QAndroidJniObject NetworkScanRequest::getPlmns()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPlmns",
 			"()Ljava/util/ArrayList;"
 		);
 	}
 	jint NetworkScanRequest::getScanType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getScanType",
 			"()I"
 		);
 	}
 	jint NetworkScanRequest::getSearchPeriodicity()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSearchPeriodicity",
 			"()I"
 		);
 	}
 	jarray NetworkScanRequest::getSpecifiers()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSpecifiers",
 			"()[Landroid/telephony/RadioAccessSpecifier;"
 		).object<jarray>();
 	}
 	jint NetworkScanRequest::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	void NetworkScanRequest::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

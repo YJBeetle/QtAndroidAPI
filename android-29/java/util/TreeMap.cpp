@@ -6,28 +6,26 @@ namespace java::util
 {
 	// Fields
 	
-	TreeMap::TreeMap(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TreeMap::TreeMap(QAndroidJniObject obj) : java::util::AbstractMap(obj) {}
+	
 	// Constructors
 	TreeMap::TreeMap()
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::AbstractMap(
 			"java.util.TreeMap",
 			"()V"
-		);
-	}
+		) {}
 	TreeMap::TreeMap(__JniBaseClass arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::AbstractMap(
 			"java.util.TreeMap",
 			"(Ljava/util/Comparator;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject TreeMap::ceilingEntry(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"ceilingEntry",
 			"(Ljava/lang/Object;)Ljava/util/Map$Entry;",
 			arg0
@@ -35,7 +33,7 @@ namespace java::util
 	}
 	jobject TreeMap::ceilingKey(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"ceilingKey",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0
@@ -43,55 +41,55 @@ namespace java::util
 	}
 	void TreeMap::clear()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
 	jobject TreeMap::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	QAndroidJniObject TreeMap::comparator()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"comparator",
 			"()Ljava/util/Comparator;"
 		);
 	}
 	jobject TreeMap::compute(jobject arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"compute",
 			"(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		).object<jobject>();
 	}
 	jobject TreeMap::computeIfAbsent(jobject arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"computeIfAbsent",
 			"(Ljava/lang/Object;Ljava/util/function/Function;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		).object<jobject>();
 	}
 	jobject TreeMap::computeIfPresent(jobject arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"computeIfPresent",
 			"(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		).object<jobject>();
 	}
 	jboolean TreeMap::containsKey(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"containsKey",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -99,7 +97,7 @@ namespace java::util
 	}
 	jboolean TreeMap::containsValue(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"containsValue",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -107,42 +105,42 @@ namespace java::util
 	}
 	QAndroidJniObject TreeMap::descendingKeySet()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"descendingKeySet",
 			"()Ljava/util/NavigableSet;"
 		);
 	}
 	QAndroidJniObject TreeMap::descendingMap()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"descendingMap",
 			"()Ljava/util/NavigableMap;"
 		);
 	}
 	QAndroidJniObject TreeMap::entrySet()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"entrySet",
 			"()Ljava/util/Set;"
 		);
 	}
 	QAndroidJniObject TreeMap::firstEntry()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"firstEntry",
 			"()Ljava/util/Map$Entry;"
 		);
 	}
 	jobject TreeMap::firstKey()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"firstKey",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	QAndroidJniObject TreeMap::floorEntry(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"floorEntry",
 			"(Ljava/lang/Object;)Ljava/util/Map$Entry;",
 			arg0
@@ -150,7 +148,7 @@ namespace java::util
 	}
 	jobject TreeMap::floorKey(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"floorKey",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0
@@ -158,15 +156,15 @@ namespace java::util
 	}
 	void TreeMap::forEach(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"forEach",
 			"(Ljava/util/function/BiConsumer;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jobject TreeMap::get(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0
@@ -174,7 +172,7 @@ namespace java::util
 	}
 	QAndroidJniObject TreeMap::headMap(jobject arg0, jboolean arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"headMap",
 			"(Ljava/lang/Object;Z)Ljava/util/NavigableMap;",
 			arg0,
@@ -183,7 +181,7 @@ namespace java::util
 	}
 	QAndroidJniObject TreeMap::headMap(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"headMap",
 			"(Ljava/lang/Object;)Ljava/util/SortedMap;",
 			arg0
@@ -191,7 +189,7 @@ namespace java::util
 	}
 	QAndroidJniObject TreeMap::higherEntry(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"higherEntry",
 			"(Ljava/lang/Object;)Ljava/util/Map$Entry;",
 			arg0
@@ -199,7 +197,7 @@ namespace java::util
 	}
 	jobject TreeMap::higherKey(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"higherKey",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0
@@ -207,28 +205,28 @@ namespace java::util
 	}
 	QAndroidJniObject TreeMap::keySet()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"keySet",
 			"()Ljava/util/Set;"
 		);
 	}
 	QAndroidJniObject TreeMap::lastEntry()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"lastEntry",
 			"()Ljava/util/Map$Entry;"
 		);
 	}
 	jobject TreeMap::lastKey()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"lastKey",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	QAndroidJniObject TreeMap::lowerEntry(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"lowerEntry",
 			"(Ljava/lang/Object;)Ljava/util/Map$Entry;",
 			arg0
@@ -236,7 +234,7 @@ namespace java::util
 	}
 	jobject TreeMap::lowerKey(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"lowerKey",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0
@@ -244,38 +242,38 @@ namespace java::util
 	}
 	jobject TreeMap::merge(jobject arg0, jobject arg1, __JniBaseClass arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"merge",
 			"(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		).object<jobject>();
 	}
 	QAndroidJniObject TreeMap::navigableKeySet()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"navigableKeySet",
 			"()Ljava/util/NavigableSet;"
 		);
 	}
 	QAndroidJniObject TreeMap::pollFirstEntry()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"pollFirstEntry",
 			"()Ljava/util/Map$Entry;"
 		);
 	}
 	QAndroidJniObject TreeMap::pollLastEntry()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"pollLastEntry",
 			"()Ljava/util/Map$Entry;"
 		);
 	}
 	jobject TreeMap::put(jobject arg0, jobject arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"put",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
@@ -284,15 +282,15 @@ namespace java::util
 	}
 	void TreeMap::putAll(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putAll",
 			"(Ljava/util/Map;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jobject TreeMap::putIfAbsent(jobject arg0, jobject arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"putIfAbsent",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
@@ -301,7 +299,7 @@ namespace java::util
 	}
 	jobject TreeMap::remove(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"remove",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0
@@ -309,7 +307,7 @@ namespace java::util
 	}
 	jboolean TreeMap::replace(jobject arg0, jobject arg1, jobject arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"replace",
 			"(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z",
 			arg0,
@@ -319,7 +317,7 @@ namespace java::util
 	}
 	jobject TreeMap::replace(jobject arg0, jobject arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"replace",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
@@ -328,22 +326,22 @@ namespace java::util
 	}
 	void TreeMap::replaceAll(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"replaceAll",
 			"(Ljava/util/function/BiFunction;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint TreeMap::size()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
 	QAndroidJniObject TreeMap::subMap(jobject arg0, jboolean arg1, jobject arg2, jboolean arg3)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"subMap",
 			"(Ljava/lang/Object;ZLjava/lang/Object;Z)Ljava/util/NavigableMap;",
 			arg0,
@@ -354,7 +352,7 @@ namespace java::util
 	}
 	QAndroidJniObject TreeMap::subMap(jobject arg0, jobject arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"subMap",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/SortedMap;",
 			arg0,
@@ -363,7 +361,7 @@ namespace java::util
 	}
 	QAndroidJniObject TreeMap::tailMap(jobject arg0, jboolean arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"tailMap",
 			"(Ljava/lang/Object;Z)Ljava/util/NavigableMap;",
 			arg0,
@@ -372,7 +370,7 @@ namespace java::util
 	}
 	QAndroidJniObject TreeMap::tailMap(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"tailMap",
 			"(Ljava/lang/Object;)Ljava/util/SortedMap;",
 			arg0
@@ -380,7 +378,7 @@ namespace java::util
 	}
 	QAndroidJniObject TreeMap::values()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"values",
 			"()Ljava/util/Collection;"
 		);

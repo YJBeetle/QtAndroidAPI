@@ -5,7 +5,9 @@ namespace android::content
 {
 	// Fields
 	
-	ContentProvider_CallingIdentity::ContentProvider_CallingIdentity(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ContentProvider_CallingIdentity::ContentProvider_CallingIdentity(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

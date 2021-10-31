@@ -7,7 +7,9 @@ namespace javax::crypto
 {
 	// Fields
 	
-	ExemptionMechanism::ExemptionMechanism(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ExemptionMechanism::ExemptionMechanism(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -37,19 +39,19 @@ namespace javax::crypto
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljavax/crypto/ExemptionMechanism;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jbyteArray ExemptionMechanism::genExemptionBlob()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"genExemptionBlob",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jint ExemptionMechanism::genExemptionBlob(jbyteArray arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"genExemptionBlob",
 			"([B)I",
 			arg0
@@ -57,7 +59,7 @@ namespace javax::crypto
 	}
 	jint ExemptionMechanism::genExemptionBlob(jbyteArray arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"genExemptionBlob",
 			"([BI)I",
 			arg0,
@@ -66,14 +68,14 @@ namespace javax::crypto
 	}
 	jstring ExemptionMechanism::getName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint ExemptionMechanism::getOutputSize(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getOutputSize",
 			"(I)I",
 			arg0
@@ -81,43 +83,43 @@ namespace javax::crypto
 	}
 	QAndroidJniObject ExemptionMechanism::getProvider()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getProvider",
 			"()Ljava/security/Provider;"
 		);
 	}
 	void ExemptionMechanism::init(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"init",
 			"(Ljava/security/Key;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ExemptionMechanism::init(__JniBaseClass arg0, java::security::AlgorithmParameters arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"init",
 			"(Ljava/security/Key;Ljava/security/AlgorithmParameters;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void ExemptionMechanism::init(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"init",
 			"(Ljava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jboolean ExemptionMechanism::isCryptoAllowed(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isCryptoAllowed",
 			"(Ljava/security/Key;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace javax::crypto

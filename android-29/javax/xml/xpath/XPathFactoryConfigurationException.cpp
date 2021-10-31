@@ -4,24 +4,22 @@ namespace javax::xml::xpath
 {
 	// Fields
 	
-	XPathFactoryConfigurationException::XPathFactoryConfigurationException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	XPathFactoryConfigurationException::XPathFactoryConfigurationException(QAndroidJniObject obj) : javax::xml::xpath::XPathException(obj) {}
+	
 	// Constructors
 	XPathFactoryConfigurationException::XPathFactoryConfigurationException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: javax::xml::xpath::XPathException(
 			"javax.xml.xpath.XPathFactoryConfigurationException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	XPathFactoryConfigurationException::XPathFactoryConfigurationException(jthrowable arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: javax::xml::xpath::XPathException(
 			"javax.xml.xpath.XPathFactoryConfigurationException",
 			"(Ljava/lang/Throwable;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace javax::xml::xpath

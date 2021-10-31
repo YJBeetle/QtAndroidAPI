@@ -10,7 +10,10 @@ namespace java::lang
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Exception(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Exception(QAndroidJniObject obj);
+		
 		// Constructors
 		Exception();
 		Exception(jstring arg0);

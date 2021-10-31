@@ -164,7 +164,9 @@ namespace android::media
 		);
 	}
 	
-	MediaCodec::MediaCodec(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaCodec::MediaCodec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -205,36 +207,36 @@ namespace android::media
 	}
 	void MediaCodec::configure(android::media::MediaFormat arg0, android::view::Surface arg1, android::media::MediaCrypto arg2, jint arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"configure",
 			"(Landroid/media/MediaFormat;Landroid/view/Surface;Landroid/media/MediaCrypto;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
 			arg3
 		);
 	}
 	void MediaCodec::configure(android::media::MediaFormat arg0, android::view::Surface arg1, jint arg2, android::media::MediaDescrambler arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"configure",
 			"(Landroid/media/MediaFormat;Landroid/view/Surface;ILandroid/media/MediaDescrambler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	QAndroidJniObject MediaCodec::createInputSurface()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"createInputSurface",
 			"()Landroid/view/Surface;"
 		);
 	}
 	jint MediaCodec::dequeueInputBuffer(jlong arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"dequeueInputBuffer",
 			"(J)I",
 			arg0
@@ -242,37 +244,37 @@ namespace android::media
 	}
 	jint MediaCodec::dequeueOutputBuffer(android::media::MediaCodec_BufferInfo arg0, jlong arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"dequeueOutputBuffer",
 			"(Landroid/media/MediaCodec$BufferInfo;J)I",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void MediaCodec::flush()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"flush",
 			"()V"
 		);
 	}
 	jstring MediaCodec::getCanonicalName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCanonicalName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject MediaCodec::getCodecInfo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCodecInfo",
 			"()Landroid/media/MediaCodecInfo;"
 		);
 	}
 	QAndroidJniObject MediaCodec::getInputBuffer(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getInputBuffer",
 			"(I)Ljava/nio/ByteBuffer;",
 			arg0
@@ -280,21 +282,21 @@ namespace android::media
 	}
 	jarray MediaCodec::getInputBuffers()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getInputBuffers",
 			"()[Ljava/nio/ByteBuffer;"
 		).object<jarray>();
 	}
 	QAndroidJniObject MediaCodec::getInputFormat()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getInputFormat",
 			"()Landroid/media/MediaFormat;"
 		);
 	}
 	QAndroidJniObject MediaCodec::getInputImage(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getInputImage",
 			"(I)Landroid/media/Image;",
 			arg0
@@ -302,21 +304,21 @@ namespace android::media
 	}
 	QAndroidJniObject MediaCodec::getMetrics()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMetrics",
 			"()Landroid/os/PersistableBundle;"
 		);
 	}
 	jstring MediaCodec::getName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject MediaCodec::getOutputBuffer(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getOutputBuffer",
 			"(I)Ljava/nio/ByteBuffer;",
 			arg0
@@ -324,21 +326,21 @@ namespace android::media
 	}
 	jarray MediaCodec::getOutputBuffers()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getOutputBuffers",
 			"()[Ljava/nio/ByteBuffer;"
 		).object<jarray>();
 	}
 	QAndroidJniObject MediaCodec::getOutputFormat()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getOutputFormat",
 			"()Landroid/media/MediaFormat;"
 		);
 	}
 	QAndroidJniObject MediaCodec::getOutputFormat(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getOutputFormat",
 			"(I)Landroid/media/MediaFormat;",
 			arg0
@@ -346,7 +348,7 @@ namespace android::media
 	}
 	QAndroidJniObject MediaCodec::getOutputImage(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getOutputImage",
 			"(I)Landroid/media/Image;",
 			arg0
@@ -354,7 +356,7 @@ namespace android::media
 	}
 	void MediaCodec::queueInputBuffer(jint arg0, jint arg1, jint arg2, jlong arg3, jint arg4)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"queueInputBuffer",
 			"(IIIJI)V",
 			arg0,
@@ -366,26 +368,26 @@ namespace android::media
 	}
 	void MediaCodec::queueSecureInputBuffer(jint arg0, jint arg1, android::media::MediaCodec_CryptoInfo arg2, jlong arg3, jint arg4)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"queueSecureInputBuffer",
 			"(IILandroid/media/MediaCodec$CryptoInfo;JI)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
+			arg2.object(),
 			arg3,
 			arg4
 		);
 	}
 	void MediaCodec::release()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
 	void MediaCodec::releaseOutputBuffer(jint arg0, jboolean arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"releaseOutputBuffer",
 			"(IZ)V",
 			arg0,
@@ -394,7 +396,7 @@ namespace android::media
 	}
 	void MediaCodec::releaseOutputBuffer(jint arg0, jlong arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"releaseOutputBuffer",
 			"(IJ)V",
 			arg0,
@@ -403,72 +405,72 @@ namespace android::media
 	}
 	void MediaCodec::reset()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
 	void MediaCodec::setAudioPresentation(android::media::AudioPresentation arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAudioPresentation",
 			"(Landroid/media/AudioPresentation;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaCodec::setCallback(android::media::MediaCodec_Callback arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCallback",
 			"(Landroid/media/MediaCodec$Callback;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaCodec::setCallback(android::media::MediaCodec_Callback arg0, android::os::Handler arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCallback",
 			"(Landroid/media/MediaCodec$Callback;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void MediaCodec::setInputSurface(android::view::Surface arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setInputSurface",
 			"(Landroid/view/Surface;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaCodec::setOnFrameRenderedListener(__JniBaseClass arg0, android::os::Handler arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnFrameRenderedListener",
 			"(Landroid/media/MediaCodec$OnFrameRenderedListener;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void MediaCodec::setOutputSurface(android::view::Surface arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOutputSurface",
 			"(Landroid/view/Surface;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaCodec::setParameters(android::os::Bundle arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setParameters",
 			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaCodec::setVideoScalingMode(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setVideoScalingMode",
 			"(I)V",
 			arg0
@@ -476,21 +478,21 @@ namespace android::media
 	}
 	void MediaCodec::signalEndOfInputStream()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"signalEndOfInputStream",
 			"()V"
 		);
 	}
 	void MediaCodec::start()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"start",
 			"()V"
 		);
 	}
 	void MediaCodec::stop()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"stop",
 			"()V"
 		);

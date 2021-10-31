@@ -30,9 +30,11 @@ namespace java::util::concurrent
 		static QAndroidJniObject NANOSECONDS();
 		static QAndroidJniObject SECONDS();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TimeUnit(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		TimeUnit(QAndroidJniObject obj);
+		
 		// Constructors
-		TimeUnit() = default;
 		
 		// Methods
 		static QAndroidJniObject of(java::time::temporal::ChronoUnit arg0);

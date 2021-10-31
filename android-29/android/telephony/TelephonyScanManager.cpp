@@ -4,15 +4,15 @@ namespace android::telephony
 {
 	// Fields
 	
-	TelephonyScanManager::TelephonyScanManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TelephonyScanManager::TelephonyScanManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	TelephonyScanManager::TelephonyScanManager()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.telephony.TelephonyScanManager",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::telephony

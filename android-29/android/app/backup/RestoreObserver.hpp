@@ -10,7 +10,10 @@ namespace android::app::backup
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit RestoreObserver(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		RestoreObserver(QAndroidJniObject obj);
+		
 		// Constructors
 		RestoreObserver();
 		

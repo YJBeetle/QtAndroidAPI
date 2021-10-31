@@ -12,93 +12,85 @@ namespace javax::xml::transform::dom
 		).object<jstring>();
 	}
 	
-	DOMResult::DOMResult(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DOMResult::DOMResult(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	DOMResult::DOMResult()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"javax.xml.transform.dom.DOMResult",
 			"()V"
-		);
-	}
+		) {}
 	DOMResult::DOMResult(__JniBaseClass arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"javax.xml.transform.dom.DOMResult",
 			"(Lorg/w3c/dom/Node;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	DOMResult::DOMResult(__JniBaseClass arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"javax.xml.transform.dom.DOMResult",
 			"(Lorg/w3c/dom/Node;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
-		);
-	}
+		) {}
 	DOMResult::DOMResult(__JniBaseClass arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"javax.xml.transform.dom.DOMResult",
 			"(Lorg/w3c/dom/Node;Lorg/w3c/dom/Node;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	DOMResult::DOMResult(__JniBaseClass arg0, __JniBaseClass arg1, jstring arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"javax.xml.transform.dom.DOMResult",
 			"(Lorg/w3c/dom/Node;Lorg/w3c/dom/Node;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject DOMResult::getNextSibling()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getNextSibling",
 			"()Lorg/w3c/dom/Node;"
 		);
 	}
 	QAndroidJniObject DOMResult::getNode()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getNode",
 			"()Lorg/w3c/dom/Node;"
 		);
 	}
 	jstring DOMResult::getSystemId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSystemId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void DOMResult::setNextSibling(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setNextSibling",
 			"(Lorg/w3c/dom/Node;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void DOMResult::setNode(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setNode",
 			"(Lorg/w3c/dom/Node;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void DOMResult::setSystemId(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSystemId",
 			"(Ljava/lang/String;)V",
 			arg0

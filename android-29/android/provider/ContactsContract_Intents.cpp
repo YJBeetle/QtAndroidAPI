@@ -124,15 +124,15 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	ContactsContract_Intents::ContactsContract_Intents(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ContactsContract_Intents::ContactsContract_Intents(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ContactsContract_Intents::ContactsContract_Intents()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.provider.ContactsContract$Intents",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::provider

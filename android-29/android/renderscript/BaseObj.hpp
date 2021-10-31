@@ -14,9 +14,11 @@ namespace android::renderscript
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BaseObj(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		BaseObj(QAndroidJniObject obj);
+		
 		// Constructors
-		BaseObj() = default;
 		
 		// Methods
 		void destroy();

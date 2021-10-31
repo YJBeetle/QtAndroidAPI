@@ -19,7 +19,10 @@ namespace android::text::style
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ClickableSpan(const char *className, const char *sig, Ts...agv) : android::text::style::CharacterStyle(className, sig, std::forward<Ts>(agv)...) {}
 		ClickableSpan(QAndroidJniObject obj);
+		
 		// Constructors
 		ClickableSpan();
 		

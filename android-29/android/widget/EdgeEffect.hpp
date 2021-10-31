@@ -23,10 +23,12 @@ namespace android::widget
 		// Fields
 		static QAndroidJniObject DEFAULT_BLEND_MODE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit EdgeEffect(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		EdgeEffect(QAndroidJniObject obj);
+		
 		// Constructors
 		EdgeEffect(android::content::Context arg0);
-		EdgeEffect() = default;
 		
 		// Methods
 		jboolean draw(android::graphics::Canvas arg0);

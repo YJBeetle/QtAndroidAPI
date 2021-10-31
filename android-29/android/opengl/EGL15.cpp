@@ -345,7 +345,9 @@ namespace android::opengl
 		);
 	}
 	
-	EGL15::EGL15(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	EGL15::EGL15(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -355,8 +357,8 @@ namespace android::opengl
 			"android.opengl.EGL15",
 			"eglClientWaitSync",
 			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSync;IJ)I",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3
 		);
@@ -367,8 +369,8 @@ namespace android::opengl
 			"android.opengl.EGL15",
 			"eglCreateImage",
 			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLContext;IJ[JI)Landroid/opengl/EGLImage;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3,
 			arg4,
@@ -381,9 +383,9 @@ namespace android::opengl
 			"android.opengl.EGL15",
 			"eglCreatePlatformPixmapSurface",
 			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLConfig;Ljava/nio/Buffer;[JI)Landroid/opengl/EGLSurface;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
 			arg3,
 			arg4
 		);
@@ -394,9 +396,9 @@ namespace android::opengl
 			"android.opengl.EGL15",
 			"eglCreatePlatformWindowSurface",
 			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLConfig;Ljava/nio/Buffer;[JI)Landroid/opengl/EGLSurface;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
 			arg3,
 			arg4
 		);
@@ -407,7 +409,7 @@ namespace android::opengl
 			"android.opengl.EGL15",
 			"eglCreateSync",
 			"(Landroid/opengl/EGLDisplay;I[JI)Landroid/opengl/EGLSync;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3
@@ -419,8 +421,8 @@ namespace android::opengl
 			"android.opengl.EGL15",
 			"eglDestroyImage",
 			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLImage;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jboolean EGL15::eglDestroySync(android::opengl::EGLDisplay arg0, android::opengl::EGLSync arg1)
@@ -429,8 +431,8 @@ namespace android::opengl
 			"android.opengl.EGL15",
 			"eglDestroySync",
 			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSync;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject EGL15::eglGetPlatformDisplay(jint arg0, jlong arg1, jlongArray arg2, jint arg3)
@@ -451,8 +453,8 @@ namespace android::opengl
 			"android.opengl.EGL15",
 			"eglGetSyncAttrib",
 			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSync;I[JI)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3,
 			arg4
@@ -464,8 +466,8 @@ namespace android::opengl
 			"android.opengl.EGL15",
 			"eglWaitSync",
 			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSync;I)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}

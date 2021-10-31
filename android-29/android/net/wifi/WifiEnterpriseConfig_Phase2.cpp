@@ -60,7 +60,9 @@ namespace android::net::wifi
 		);
 	}
 	
-	WifiEnterpriseConfig_Phase2::WifiEnterpriseConfig_Phase2(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WifiEnterpriseConfig_Phase2::WifiEnterpriseConfig_Phase2(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

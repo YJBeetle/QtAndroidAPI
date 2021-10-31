@@ -12,7 +12,10 @@ namespace android::nfc
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TagLostException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
 		TagLostException(QAndroidJniObject obj);
+		
 		// Constructors
 		TagLostException();
 		TagLostException(jstring arg0);

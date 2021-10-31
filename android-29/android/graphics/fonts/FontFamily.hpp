@@ -18,9 +18,11 @@ namespace android::graphics::fonts
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit FontFamily(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		FontFamily(QAndroidJniObject obj);
+		
 		// Constructors
-		FontFamily() = default;
 		
 		// Methods
 		QAndroidJniObject getFont(jint arg0);

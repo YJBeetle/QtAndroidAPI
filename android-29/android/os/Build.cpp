@@ -195,15 +195,15 @@ namespace android::os
 		).object<jstring>();
 	}
 	
-	Build::Build(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Build::Build(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Build::Build()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.os.Build",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject Build::getFingerprintedPartitions()

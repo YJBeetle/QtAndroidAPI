@@ -12,7 +12,10 @@ namespace android::accounts
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit NetworkErrorException(const char *className, const char *sig, Ts...agv) : android::accounts::AccountsException(className, sig, std::forward<Ts>(agv)...) {}
 		NetworkErrorException(QAndroidJniObject obj);
+		
 		// Constructors
 		NetworkErrorException();
 		NetworkErrorException(jstring arg0);

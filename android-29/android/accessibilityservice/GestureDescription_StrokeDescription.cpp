@@ -5,37 +5,35 @@ namespace android::accessibilityservice
 {
 	// Fields
 	
-	GestureDescription_StrokeDescription::GestureDescription_StrokeDescription(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	GestureDescription_StrokeDescription::GestureDescription_StrokeDescription(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	GestureDescription_StrokeDescription::GestureDescription_StrokeDescription(android::graphics::Path arg0, jlong arg1, jlong arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.accessibilityservice.GestureDescription$StrokeDescription",
 			"(Landroid/graphics/Path;JJ)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	GestureDescription_StrokeDescription::GestureDescription_StrokeDescription(android::graphics::Path arg0, jlong arg1, jlong arg2, jboolean arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.accessibilityservice.GestureDescription$StrokeDescription",
 			"(Landroid/graphics/Path;JJZ)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject GestureDescription_StrokeDescription::continueStroke(android::graphics::Path arg0, jlong arg1, jlong arg2, jboolean arg3)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"continueStroke",
 			"(Landroid/graphics/Path;JJZ)Landroid/accessibilityservice/GestureDescription$StrokeDescription;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3
@@ -43,28 +41,28 @@ namespace android::accessibilityservice
 	}
 	jlong GestureDescription_StrokeDescription::getDuration()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getDuration",
 			"()J"
 		);
 	}
 	QAndroidJniObject GestureDescription_StrokeDescription::getPath()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPath",
 			"()Landroid/graphics/Path;"
 		);
 	}
 	jlong GestureDescription_StrokeDescription::getStartTime()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getStartTime",
 			"()J"
 		);
 	}
 	jboolean GestureDescription_StrokeDescription::willContinue()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"willContinue",
 			"()Z"
 		);

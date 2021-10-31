@@ -4,15 +4,15 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	IllegalChannelGroupException::IllegalChannelGroupException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	IllegalChannelGroupException::IllegalChannelGroupException(QAndroidJniObject obj) : java::lang::IllegalArgumentException(obj) {}
+	
 	// Constructors
 	IllegalChannelGroupException::IllegalChannelGroupException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::IllegalArgumentException(
 			"java.nio.channels.IllegalChannelGroupException",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::nio::channels

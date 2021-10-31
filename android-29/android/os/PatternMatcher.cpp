@@ -41,51 +41,49 @@ namespace android::os
 		);
 	}
 	
-	PatternMatcher::PatternMatcher(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PatternMatcher::PatternMatcher(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	PatternMatcher::PatternMatcher(android::os::Parcel arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.os.PatternMatcher",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	PatternMatcher::PatternMatcher(jstring arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.os.PatternMatcher",
 			"(Ljava/lang/String;I)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jint PatternMatcher::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jstring PatternMatcher::getPath()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPath",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint PatternMatcher::getType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getType",
 			"()I"
 		);
 	}
 	jboolean PatternMatcher::match(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"match",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -93,17 +91,17 @@ namespace android::os
 	}
 	jstring PatternMatcher::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void PatternMatcher::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

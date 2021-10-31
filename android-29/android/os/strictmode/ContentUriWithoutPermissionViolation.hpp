@@ -15,9 +15,11 @@ namespace android::os::strictmode
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ContentUriWithoutPermissionViolation(const char *className, const char *sig, Ts...agv) : android::os::strictmode::Violation(className, sig, std::forward<Ts>(agv)...) {}
 		ContentUriWithoutPermissionViolation(QAndroidJniObject obj);
+		
 		// Constructors
-		ContentUriWithoutPermissionViolation() = default;
 		
 		// Methods
 	};

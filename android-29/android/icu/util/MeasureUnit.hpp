@@ -149,9 +149,11 @@ namespace android::icu::util
 		static QAndroidJniObject YARD();
 		static QAndroidJniObject YEAR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MeasureUnit(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MeasureUnit(QAndroidJniObject obj);
+		
 		// Constructors
-		MeasureUnit() = default;
 		
 		// Methods
 		static QAndroidJniObject getAvailable();

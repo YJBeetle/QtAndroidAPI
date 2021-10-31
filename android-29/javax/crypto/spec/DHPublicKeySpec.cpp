@@ -5,37 +5,37 @@ namespace javax::crypto::spec
 {
 	// Fields
 	
-	DHPublicKeySpec::DHPublicKeySpec(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DHPublicKeySpec::DHPublicKeySpec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	DHPublicKeySpec::DHPublicKeySpec(java::math::BigInteger arg0, java::math::BigInteger arg1, java::math::BigInteger arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"javax.crypto.spec.DHPublicKeySpec",
 			"(Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject DHPublicKeySpec::getG()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getG",
 			"()Ljava/math/BigInteger;"
 		);
 	}
 	QAndroidJniObject DHPublicKeySpec::getP()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getP",
 			"()Ljava/math/BigInteger;"
 		);
 	}
 	QAndroidJniObject DHPublicKeySpec::getY()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getY",
 			"()Ljava/math/BigInteger;"
 		);

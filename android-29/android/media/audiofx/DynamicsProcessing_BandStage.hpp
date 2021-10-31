@@ -11,10 +11,12 @@ namespace android::media::audiofx
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DynamicsProcessing_BandStage(const char *className, const char *sig, Ts...agv) : android::media::audiofx::DynamicsProcessing_Stage(className, sig, std::forward<Ts>(agv)...) {}
 		DynamicsProcessing_BandStage(QAndroidJniObject obj);
+		
 		// Constructors
 		DynamicsProcessing_BandStage(jboolean arg0, jboolean arg1, jint arg2);
-		DynamicsProcessing_BandStage() = default;
 		
 		// Methods
 		jint getBandCount();

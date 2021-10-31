@@ -42,9 +42,11 @@ namespace java::nio::channels
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Channels(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Channels(QAndroidJniObject obj);
+		
 		// Constructors
-		Channels() = default;
 		
 		// Methods
 		static QAndroidJniObject newChannel(java::io::InputStream arg0);

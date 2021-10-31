@@ -5,51 +5,51 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	CountDownLatch::CountDownLatch(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CountDownLatch::CountDownLatch(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	CountDownLatch::CountDownLatch(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.concurrent.CountDownLatch",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean CountDownLatch::await(jlong arg0, java::util::concurrent::TimeUnit arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"await",
 			"(JLjava/util/concurrent/TimeUnit;)Z",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void CountDownLatch::await()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"await",
 			"()V"
 		);
 	}
 	void CountDownLatch::countDown()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"countDown",
 			"()V"
 		);
 	}
 	jlong CountDownLatch::getCount()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getCount",
 			"()J"
 		);
 	}
 	jstring CountDownLatch::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

@@ -9,59 +9,59 @@ namespace java::security::cert
 {
 	// Fields
 	
-	CertificateRevokedException::CertificateRevokedException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CertificateRevokedException::CertificateRevokedException(QAndroidJniObject obj) : java::security::cert::CertificateException(obj) {}
+	
 	// Constructors
 	CertificateRevokedException::CertificateRevokedException(java::util::Date arg0, java::security::cert::CRLReason arg1, javax::security::auth::x500::X500Principal arg2, __JniBaseClass arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: java::security::cert::CertificateException(
 			"java.security.cert.CertificateRevokedException",
 			"(Ljava/util/Date;Ljava/security/cert/CRLReason;Ljavax/security/auth/x500/X500Principal;Ljava/util/Map;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject CertificateRevokedException::getAuthorityName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAuthorityName",
 			"()Ljavax/security/auth/x500/X500Principal;"
 		);
 	}
 	QAndroidJniObject CertificateRevokedException::getExtensions()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExtensions",
 			"()Ljava/util/Map;"
 		);
 	}
 	QAndroidJniObject CertificateRevokedException::getInvalidityDate()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getInvalidityDate",
 			"()Ljava/util/Date;"
 		);
 	}
 	jstring CertificateRevokedException::getMessage()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject CertificateRevokedException::getRevocationDate()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRevocationDate",
 			"()Ljava/util/Date;"
 		);
 	}
 	QAndroidJniObject CertificateRevokedException::getRevocationReason()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRevocationReason",
 			"()Ljava/security/cert/CRLReason;"
 		);

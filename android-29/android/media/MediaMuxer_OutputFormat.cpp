@@ -39,7 +39,9 @@ namespace android::media
 		);
 	}
 	
-	MediaMuxer_OutputFormat::MediaMuxer_OutputFormat(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaMuxer_OutputFormat::MediaMuxer_OutputFormat(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

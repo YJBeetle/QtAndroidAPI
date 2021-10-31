@@ -34,7 +34,10 @@ namespace android::os
 		static jstring UNKNOWN();
 		static jstring USER();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Build(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Build(QAndroidJniObject obj);
+		
 		// Constructors
 		Build();
 		

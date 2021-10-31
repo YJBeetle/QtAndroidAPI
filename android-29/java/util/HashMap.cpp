@@ -6,86 +6,80 @@ namespace java::util
 {
 	// Fields
 	
-	HashMap::HashMap(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	HashMap::HashMap(QAndroidJniObject obj) : java::util::AbstractMap(obj) {}
+	
 	// Constructors
 	HashMap::HashMap()
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::AbstractMap(
 			"java.util.HashMap",
 			"()V"
-		);
-	}
+		) {}
 	HashMap::HashMap(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::AbstractMap(
 			"java.util.HashMap",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	HashMap::HashMap(__JniBaseClass arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::AbstractMap(
 			"java.util.HashMap",
 			"(Ljava/util/Map;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	HashMap::HashMap(jint arg0, jfloat arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::AbstractMap(
 			"java.util.HashMap",
 			"(IF)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	void HashMap::clear()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
 	jobject HashMap::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobject HashMap::compute(jobject arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"compute",
 			"(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		).object<jobject>();
 	}
 	jobject HashMap::computeIfAbsent(jobject arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"computeIfAbsent",
 			"(Ljava/lang/Object;Ljava/util/function/Function;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		).object<jobject>();
 	}
 	jobject HashMap::computeIfPresent(jobject arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"computeIfPresent",
 			"(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		).object<jobject>();
 	}
 	jboolean HashMap::containsKey(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"containsKey",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -93,7 +87,7 @@ namespace java::util
 	}
 	jboolean HashMap::containsValue(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"containsValue",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -101,22 +95,22 @@ namespace java::util
 	}
 	QAndroidJniObject HashMap::entrySet()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"entrySet",
 			"()Ljava/util/Set;"
 		);
 	}
 	void HashMap::forEach(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"forEach",
 			"(Ljava/util/function/BiConsumer;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jobject HashMap::get(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0
@@ -124,7 +118,7 @@ namespace java::util
 	}
 	jobject HashMap::getOrDefault(jobject arg0, jobject arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getOrDefault",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
@@ -133,31 +127,31 @@ namespace java::util
 	}
 	jboolean HashMap::isEmpty()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
 	QAndroidJniObject HashMap::keySet()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"keySet",
 			"()Ljava/util/Set;"
 		);
 	}
 	jobject HashMap::merge(jobject arg0, jobject arg1, __JniBaseClass arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"merge",
 			"(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		).object<jobject>();
 	}
 	jobject HashMap::put(jobject arg0, jobject arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"put",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
@@ -166,15 +160,15 @@ namespace java::util
 	}
 	void HashMap::putAll(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putAll",
 			"(Ljava/util/Map;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jobject HashMap::putIfAbsent(jobject arg0, jobject arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"putIfAbsent",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
@@ -183,7 +177,7 @@ namespace java::util
 	}
 	jboolean HashMap::remove(jobject arg0, jobject arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"remove",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Z",
 			arg0,
@@ -192,7 +186,7 @@ namespace java::util
 	}
 	jobject HashMap::remove(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"remove",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0
@@ -200,7 +194,7 @@ namespace java::util
 	}
 	jboolean HashMap::replace(jobject arg0, jobject arg1, jobject arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"replace",
 			"(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z",
 			arg0,
@@ -210,7 +204,7 @@ namespace java::util
 	}
 	jobject HashMap::replace(jobject arg0, jobject arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"replace",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
@@ -219,22 +213,22 @@ namespace java::util
 	}
 	void HashMap::replaceAll(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"replaceAll",
 			"(Ljava/util/function/BiFunction;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint HashMap::size()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
 	QAndroidJniObject HashMap::values()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"values",
 			"()Ljava/util/Collection;"
 		);

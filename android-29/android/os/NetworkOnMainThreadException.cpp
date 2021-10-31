@@ -4,15 +4,15 @@ namespace android::os
 {
 	// Fields
 	
-	NetworkOnMainThreadException::NetworkOnMainThreadException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NetworkOnMainThreadException::NetworkOnMainThreadException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	
 	// Constructors
 	NetworkOnMainThreadException::NetworkOnMainThreadException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::RuntimeException(
 			"android.os.NetworkOnMainThreadException",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::os

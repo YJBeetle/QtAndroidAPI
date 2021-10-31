@@ -17,148 +17,146 @@ namespace android::graphics::drawable
 {
 	// Fields
 	
-	ShapeDrawable::ShapeDrawable(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ShapeDrawable::ShapeDrawable(QAndroidJniObject obj) : android::graphics::drawable::Drawable(obj) {}
+	
 	// Constructors
 	ShapeDrawable::ShapeDrawable()
-	{
-		__thiz = QAndroidJniObject(
+		: android::graphics::drawable::Drawable(
 			"android.graphics.drawable.ShapeDrawable",
 			"()V"
-		);
-	}
+		) {}
 	ShapeDrawable::ShapeDrawable(android::graphics::drawable::shapes::Shape arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::graphics::drawable::Drawable(
 			"android.graphics.drawable.ShapeDrawable",
 			"(Landroid/graphics/drawable/shapes/Shape;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	void ShapeDrawable::applyTheme(android::content::res::Resources_Theme arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"applyTheme",
 			"(Landroid/content/res/Resources$Theme;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ShapeDrawable::draw(android::graphics::Canvas arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"draw",
 			"(Landroid/graphics/Canvas;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint ShapeDrawable::getAlpha()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAlpha",
 			"()I"
 		);
 	}
 	jint ShapeDrawable::getChangingConfigurations()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getChangingConfigurations",
 			"()I"
 		);
 	}
 	QAndroidJniObject ShapeDrawable::getConstantState()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getConstantState",
 			"()Landroid/graphics/drawable/Drawable$ConstantState;"
 		);
 	}
 	jint ShapeDrawable::getIntrinsicHeight()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getIntrinsicHeight",
 			"()I"
 		);
 	}
 	jint ShapeDrawable::getIntrinsicWidth()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getIntrinsicWidth",
 			"()I"
 		);
 	}
 	jint ShapeDrawable::getOpacity()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getOpacity",
 			"()I"
 		);
 	}
 	void ShapeDrawable::getOutline(android::graphics::Outline arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"getOutline",
 			"(Landroid/graphics/Outline;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean ShapeDrawable::getPadding(android::graphics::Rect arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getPadding",
 			"(Landroid/graphics/Rect;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ShapeDrawable::getPaint()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPaint",
 			"()Landroid/graphics/Paint;"
 		);
 	}
 	QAndroidJniObject ShapeDrawable::getShaderFactory()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getShaderFactory",
 			"()Landroid/graphics/drawable/ShapeDrawable$ShaderFactory;"
 		);
 	}
 	QAndroidJniObject ShapeDrawable::getShape()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getShape",
 			"()Landroid/graphics/drawable/shapes/Shape;"
 		);
 	}
 	void ShapeDrawable::inflate(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2, android::content::res::Resources_Theme arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"inflate",
 			"(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
 		);
 	}
 	jboolean ShapeDrawable::isStateful()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isStateful",
 			"()Z"
 		);
 	}
 	QAndroidJniObject ShapeDrawable::mutate()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"mutate",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
 	void ShapeDrawable::setAlpha(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAlpha",
 			"(I)V",
 			arg0
@@ -166,15 +164,15 @@ namespace android::graphics::drawable
 	}
 	void ShapeDrawable::setColorFilter(android::graphics::ColorFilter arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setColorFilter",
 			"(Landroid/graphics/ColorFilter;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ShapeDrawable::setDither(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDither",
 			"(Z)V",
 			arg0
@@ -182,7 +180,7 @@ namespace android::graphics::drawable
 	}
 	void ShapeDrawable::setIntrinsicHeight(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setIntrinsicHeight",
 			"(I)V",
 			arg0
@@ -190,7 +188,7 @@ namespace android::graphics::drawable
 	}
 	void ShapeDrawable::setIntrinsicWidth(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setIntrinsicWidth",
 			"(I)V",
 			arg0
@@ -198,15 +196,15 @@ namespace android::graphics::drawable
 	}
 	void ShapeDrawable::setPadding(android::graphics::Rect arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPadding",
 			"(Landroid/graphics/Rect;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ShapeDrawable::setPadding(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPadding",
 			"(IIII)V",
 			arg0,
@@ -217,34 +215,34 @@ namespace android::graphics::drawable
 	}
 	void ShapeDrawable::setShaderFactory(android::graphics::drawable::ShapeDrawable_ShaderFactory arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setShaderFactory",
 			"(Landroid/graphics/drawable/ShapeDrawable$ShaderFactory;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ShapeDrawable::setShape(android::graphics::drawable::shapes::Shape arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setShape",
 			"(Landroid/graphics/drawable/shapes/Shape;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ShapeDrawable::setTintBlendMode(android::graphics::BlendMode arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTintBlendMode",
 			"(Landroid/graphics/BlendMode;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ShapeDrawable::setTintList(android::content::res::ColorStateList arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTintList",
 			"(Landroid/content/res/ColorStateList;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::graphics::drawable

@@ -32,20 +32,22 @@ namespace android::provider
 		);
 	}
 	
-	FontsContract_FontFamilyResult::FontsContract_FontFamilyResult(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FontsContract_FontFamilyResult::FontsContract_FontFamilyResult(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jarray FontsContract_FontFamilyResult::getFonts()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFonts",
 			"()[Landroid/provider/FontsContract$FontInfo;"
 		).object<jarray>();
 	}
 	jint FontsContract_FontFamilyResult::getStatusCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getStatusCode",
 			"()I"
 		);

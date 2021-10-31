@@ -26,9 +26,11 @@ namespace android::icu::text
 		static QAndroidJniObject PUNYCODE();
 		static QAndroidJniObject TRAILING_HYPHEN();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit IDNA_Error(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		IDNA_Error(QAndroidJniObject obj);
+		
 		// Constructors
-		IDNA_Error() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

@@ -41,13 +41,15 @@ namespace android::widget
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit HorizontalScrollView(const char *className, const char *sig, Ts...agv) : android::widget::FrameLayout(className, sig, std::forward<Ts>(agv)...) {}
 		HorizontalScrollView(QAndroidJniObject obj);
+		
 		// Constructors
 		HorizontalScrollView(android::content::Context arg0);
 		HorizontalScrollView(android::content::Context arg0, __JniBaseClass arg1);
 		HorizontalScrollView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		HorizontalScrollView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
-		HorizontalScrollView() = default;
 		
 		// Methods
 		void addView(android::view::View arg0);

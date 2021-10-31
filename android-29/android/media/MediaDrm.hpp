@@ -68,10 +68,12 @@ namespace android::media
 		static jint SECURITY_LEVEL_SW_SECURE_DECODE();
 		static jint SECURITY_LEVEL_UNKNOWN();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaDrm(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaDrm(QAndroidJniObject obj);
+		
 		// Constructors
 		MediaDrm(java::util::UUID arg0);
-		MediaDrm() = default;
 		
 		// Methods
 		static jint getMaxSecurityLevel();

@@ -5,15 +5,15 @@ namespace android::provider
 {
 	// Fields
 	
-	MediaStore_Audio_Artists_Albums::MediaStore_Audio_Artists_Albums(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaStore_Audio_Artists_Albums::MediaStore_Audio_Artists_Albums(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MediaStore_Audio_Artists_Albums::MediaStore_Audio_Artists_Albums()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.provider.MediaStore$Audio$Artists$Albums",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject MediaStore_Audio_Artists_Albums::getContentUri(jstring arg0, jlong arg1)

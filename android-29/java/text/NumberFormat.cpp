@@ -27,7 +27,9 @@ namespace java::text
 		);
 	}
 	
-	NumberFormat::NumberFormat(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NumberFormat::NumberFormat(QAndroidJniObject obj) : java::text::Format(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -53,8 +55,8 @@ namespace java::text
 			"java.text.NumberFormat",
 			"getCompactNumberInstance",
 			"(Ljava/util/Locale;Ljava/text/NumberFormat$Style;)Ljava/text/NumberFormat;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject NumberFormat::getCurrencyInstance()
@@ -71,7 +73,7 @@ namespace java::text
 			"java.text.NumberFormat",
 			"getCurrencyInstance",
 			"(Ljava/util/Locale;)Ljava/text/NumberFormat;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject NumberFormat::getInstance()
@@ -88,7 +90,7 @@ namespace java::text
 			"java.text.NumberFormat",
 			"getInstance",
 			"(Ljava/util/Locale;)Ljava/text/NumberFormat;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject NumberFormat::getIntegerInstance()
@@ -105,7 +107,7 @@ namespace java::text
 			"java.text.NumberFormat",
 			"getIntegerInstance",
 			"(Ljava/util/Locale;)Ljava/text/NumberFormat;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject NumberFormat::getNumberInstance()
@@ -122,7 +124,7 @@ namespace java::text
 			"java.text.NumberFormat",
 			"getNumberInstance",
 			"(Ljava/util/Locale;)Ljava/text/NumberFormat;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject NumberFormat::getPercentInstance()
@@ -139,19 +141,19 @@ namespace java::text
 			"java.text.NumberFormat",
 			"getPercentInstance",
 			"(Ljava/util/Locale;)Ljava/text/NumberFormat;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jobject NumberFormat::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jboolean NumberFormat::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -159,7 +161,7 @@ namespace java::text
 	}
 	jstring NumberFormat::format(jdouble arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"format",
 			"(D)Ljava/lang/String;",
 			arg0
@@ -167,7 +169,7 @@ namespace java::text
 	}
 	jstring NumberFormat::format(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"format",
 			"(J)Ljava/lang/String;",
 			arg0
@@ -175,100 +177,100 @@ namespace java::text
 	}
 	QAndroidJniObject NumberFormat::format(jdouble arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"format",
 			"(DLjava/lang/StringBuffer;Ljava/text/FieldPosition;)Ljava/lang/StringBuffer;",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject NumberFormat::format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"format",
 			"(Ljava/lang/Object;Ljava/lang/StringBuffer;Ljava/text/FieldPosition;)Ljava/lang/StringBuffer;",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject NumberFormat::format(jlong arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"format",
 			"(JLjava/lang/StringBuffer;Ljava/text/FieldPosition;)Ljava/lang/StringBuffer;",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject NumberFormat::getCurrency()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCurrency",
 			"()Ljava/util/Currency;"
 		);
 	}
 	jint NumberFormat::getMaximumFractionDigits()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMaximumFractionDigits",
 			"()I"
 		);
 	}
 	jint NumberFormat::getMaximumIntegerDigits()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMaximumIntegerDigits",
 			"()I"
 		);
 	}
 	jint NumberFormat::getMinimumFractionDigits()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMinimumFractionDigits",
 			"()I"
 		);
 	}
 	jint NumberFormat::getMinimumIntegerDigits()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMinimumIntegerDigits",
 			"()I"
 		);
 	}
 	QAndroidJniObject NumberFormat::getRoundingMode()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRoundingMode",
 			"()Ljava/math/RoundingMode;"
 		);
 	}
 	jint NumberFormat::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean NumberFormat::isGroupingUsed()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isGroupingUsed",
 			"()Z"
 		);
 	}
 	jboolean NumberFormat::isParseIntegerOnly()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isParseIntegerOnly",
 			"()Z"
 		);
 	}
 	QAndroidJniObject NumberFormat::parse(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"parse",
 			"(Ljava/lang/String;)Ljava/lang/Number;",
 			arg0
@@ -276,33 +278,33 @@ namespace java::text
 	}
 	QAndroidJniObject NumberFormat::parse(jstring arg0, java::text::ParsePosition arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"parse",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Number;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jobject NumberFormat::parseObject(jstring arg0, java::text::ParsePosition arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"parseObject",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		).object<jobject>();
 	}
 	void NumberFormat::setCurrency(java::util::Currency arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCurrency",
 			"(Ljava/util/Currency;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void NumberFormat::setGroupingUsed(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setGroupingUsed",
 			"(Z)V",
 			arg0
@@ -310,7 +312,7 @@ namespace java::text
 	}
 	void NumberFormat::setMaximumFractionDigits(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMaximumFractionDigits",
 			"(I)V",
 			arg0
@@ -318,7 +320,7 @@ namespace java::text
 	}
 	void NumberFormat::setMaximumIntegerDigits(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMaximumIntegerDigits",
 			"(I)V",
 			arg0
@@ -326,7 +328,7 @@ namespace java::text
 	}
 	void NumberFormat::setMinimumFractionDigits(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMinimumFractionDigits",
 			"(I)V",
 			arg0
@@ -334,7 +336,7 @@ namespace java::text
 	}
 	void NumberFormat::setMinimumIntegerDigits(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMinimumIntegerDigits",
 			"(I)V",
 			arg0
@@ -342,7 +344,7 @@ namespace java::text
 	}
 	void NumberFormat::setParseIntegerOnly(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setParseIntegerOnly",
 			"(Z)V",
 			arg0
@@ -350,10 +352,10 @@ namespace java::text
 	}
 	void NumberFormat::setRoundingMode(java::math::RoundingMode arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setRoundingMode",
 			"(Ljava/math/RoundingMode;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace java::text

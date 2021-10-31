@@ -133,111 +133,113 @@ namespace android::media
 		);
 	}
 	
-	MicrophoneInfo::MicrophoneInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MicrophoneInfo::MicrophoneInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jstring MicrophoneInfo::getAddress()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAddress",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject MicrophoneInfo::getChannelMapping()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getChannelMapping",
 			"()Ljava/util/List;"
 		);
 	}
 	jstring MicrophoneInfo::getDescription()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint MicrophoneInfo::getDirectionality()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDirectionality",
 			"()I"
 		);
 	}
 	QAndroidJniObject MicrophoneInfo::getFrequencyResponse()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFrequencyResponse",
 			"()Ljava/util/List;"
 		);
 	}
 	jint MicrophoneInfo::getGroup()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getGroup",
 			"()I"
 		);
 	}
 	jint MicrophoneInfo::getId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getId",
 			"()I"
 		);
 	}
 	jint MicrophoneInfo::getIndexInTheGroup()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getIndexInTheGroup",
 			"()I"
 		);
 	}
 	jint MicrophoneInfo::getLocation()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLocation",
 			"()I"
 		);
 	}
 	jfloat MicrophoneInfo::getMaxSpl()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getMaxSpl",
 			"()F"
 		);
 	}
 	jfloat MicrophoneInfo::getMinSpl()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getMinSpl",
 			"()F"
 		);
 	}
 	QAndroidJniObject MicrophoneInfo::getOrientation()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getOrientation",
 			"()Landroid/media/MicrophoneInfo$Coordinate3F;"
 		);
 	}
 	QAndroidJniObject MicrophoneInfo::getPosition()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPosition",
 			"()Landroid/media/MicrophoneInfo$Coordinate3F;"
 		);
 	}
 	jfloat MicrophoneInfo::getSensitivity()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getSensitivity",
 			"()F"
 		);
 	}
 	jint MicrophoneInfo::getType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getType",
 			"()I"
 		);

@@ -10,9 +10,11 @@ namespace java::io
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Writer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Writer(QAndroidJniObject obj);
+		
 		// Constructors
-		Writer() = default;
 		
 		// Methods
 		static QAndroidJniObject nullWriter();

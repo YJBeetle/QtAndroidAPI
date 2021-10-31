@@ -15,10 +15,12 @@ namespace android::app::usage
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit UsageStats(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		UsageStats(QAndroidJniObject obj);
+		
 		// Constructors
 		UsageStats(android::app::usage::UsageStats &arg0);
-		UsageStats() = default;
 		
 		// Methods
 		void add(android::app::usage::UsageStats arg0);

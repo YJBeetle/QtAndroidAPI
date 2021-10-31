@@ -19,10 +19,12 @@ namespace android::app
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit VoiceInteractor_AbortVoiceRequest(const char *className, const char *sig, Ts...agv) : android::app::VoiceInteractor_Request(className, sig, std::forward<Ts>(agv)...) {}
 		VoiceInteractor_AbortVoiceRequest(QAndroidJniObject obj);
+		
 		// Constructors
 		VoiceInteractor_AbortVoiceRequest(android::app::VoiceInteractor_Prompt arg0, android::os::Bundle arg1);
-		VoiceInteractor_AbortVoiceRequest() = default;
 		
 		// Methods
 		void onAbortResult(android::os::Bundle arg0);

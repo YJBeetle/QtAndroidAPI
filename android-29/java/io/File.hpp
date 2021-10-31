@@ -30,13 +30,15 @@ namespace java::io
 		static jstring separator();
 		static jchar separatorChar();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit File(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		File(QAndroidJniObject obj);
+		
 		// Constructors
 		File(jstring arg0);
 		File(java::net::URI arg0);
 		File(java::io::File &arg0, jstring arg1);
 		File(jstring arg0, jstring arg1);
-		File() = default;
 		
 		// Methods
 		static QAndroidJniObject createTempFile(jstring arg0, jstring arg1);

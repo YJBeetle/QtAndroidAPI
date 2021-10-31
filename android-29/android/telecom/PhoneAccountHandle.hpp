@@ -23,11 +23,13 @@ namespace android::telecom
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PhoneAccountHandle(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PhoneAccountHandle(QAndroidJniObject obj);
+		
 		// Constructors
 		PhoneAccountHandle(android::content::ComponentName arg0, jstring arg1);
 		PhoneAccountHandle(android::content::ComponentName arg0, jstring arg1, android::os::UserHandle arg2);
-		PhoneAccountHandle() = default;
 		
 		// Methods
 		jint describeContents();

@@ -447,20 +447,22 @@ namespace android::media
 		);
 	}
 	
-	AudioFormat::AudioFormat(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AudioFormat::AudioFormat(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint AudioFormat::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean AudioFormat::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -468,66 +470,66 @@ namespace android::media
 	}
 	jint AudioFormat::getChannelCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getChannelCount",
 			"()I"
 		);
 	}
 	jint AudioFormat::getChannelIndexMask()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getChannelIndexMask",
 			"()I"
 		);
 	}
 	jint AudioFormat::getChannelMask()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getChannelMask",
 			"()I"
 		);
 	}
 	jint AudioFormat::getEncoding()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getEncoding",
 			"()I"
 		);
 	}
 	jint AudioFormat::getFrameSizeInBytes()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getFrameSizeInBytes",
 			"()I"
 		);
 	}
 	jint AudioFormat::getSampleRate()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSampleRate",
 			"()I"
 		);
 	}
 	jint AudioFormat::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring AudioFormat::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void AudioFormat::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

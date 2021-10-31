@@ -6,13 +6,15 @@ namespace android::media::midi
 {
 	// Fields
 	
-	MidiDevice_MidiConnection::MidiDevice_MidiConnection(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MidiDevice_MidiConnection::MidiDevice_MidiConnection(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void MidiDevice_MidiConnection::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);

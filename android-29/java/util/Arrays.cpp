@@ -5,7 +5,9 @@ namespace java::util
 {
 	// Fields
 	
-	Arrays::Arrays(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Arrays::Arrays(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -106,7 +108,7 @@ namespace java::util
 			"([Ljava/lang/Object;Ljava/lang/Object;Ljava/util/Comparator;)I",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	jint Arrays::binarySearch(jbyteArray arg0, jint arg1, jint arg2, jbyte arg3)
@@ -215,7 +217,7 @@ namespace java::util
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object()
+			arg4.object()
 		);
 	}
 	jint Arrays::compare(jbyteArray arg0, jbyteArray arg1)
@@ -316,7 +318,7 @@ namespace java::util
 			"([Ljava/lang/Object;[Ljava/lang/Object;Ljava/util/Comparator;)I",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	jint Arrays::compare(jbyteArray arg0, jint arg1, jint arg2, jbyteArray arg3, jint arg4, jint arg5)
@@ -457,7 +459,7 @@ namespace java::util
 			arg3,
 			arg4,
 			arg5,
-			arg6.__jniObject().object()
+			arg6.object()
 		);
 	}
 	jint Arrays::compareUnsigned(jbyteArray arg0, jbyteArray arg1)
@@ -894,7 +896,7 @@ namespace java::util
 			"([Ljava/lang/Object;[Ljava/lang/Object;Ljava/util/Comparator;)Z",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	jboolean Arrays::equals(jbyteArray arg0, jint arg1, jint arg2, jbyteArray arg3, jint arg4, jint arg5)
@@ -1035,7 +1037,7 @@ namespace java::util
 			arg3,
 			arg4,
 			arg5,
-			arg6.__jniObject().object()
+			arg6.object()
 		);
 	}
 	void Arrays::fill(jbyteArray arg0, jbyte arg1)
@@ -1415,7 +1417,7 @@ namespace java::util
 			"([Ljava/lang/Object;[Ljava/lang/Object;Ljava/util/Comparator;)I",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	jint Arrays::mismatch(jbyteArray arg0, jint arg1, jint arg2, jbyteArray arg3, jint arg4, jint arg5)
@@ -1556,7 +1558,7 @@ namespace java::util
 			arg3,
 			arg4,
 			arg5,
-			arg6.__jniObject().object()
+			arg6.object()
 		);
 	}
 	void Arrays::parallelPrefix(jdoubleArray arg0, __JniBaseClass arg1)
@@ -1566,7 +1568,7 @@ namespace java::util
 			"parallelPrefix",
 			"([DLjava/util/function/DoubleBinaryOperator;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void Arrays::parallelPrefix(jintArray arg0, __JniBaseClass arg1)
@@ -1576,7 +1578,7 @@ namespace java::util
 			"parallelPrefix",
 			"([ILjava/util/function/IntBinaryOperator;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void Arrays::parallelPrefix(jlongArray arg0, __JniBaseClass arg1)
@@ -1586,7 +1588,7 @@ namespace java::util
 			"parallelPrefix",
 			"([JLjava/util/function/LongBinaryOperator;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void Arrays::parallelPrefix(jobjectArray arg0, __JniBaseClass arg1)
@@ -1596,7 +1598,7 @@ namespace java::util
 			"parallelPrefix",
 			"([Ljava/lang/Object;Ljava/util/function/BinaryOperator;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void Arrays::parallelPrefix(jdoubleArray arg0, jint arg1, jint arg2, __JniBaseClass arg3)
@@ -1608,7 +1610,7 @@ namespace java::util
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	void Arrays::parallelPrefix(jintArray arg0, jint arg1, jint arg2, __JniBaseClass arg3)
@@ -1620,7 +1622,7 @@ namespace java::util
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	void Arrays::parallelPrefix(jlongArray arg0, jint arg1, jint arg2, __JniBaseClass arg3)
@@ -1632,7 +1634,7 @@ namespace java::util
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	void Arrays::parallelPrefix(jobjectArray arg0, jint arg1, jint arg2, __JniBaseClass arg3)
@@ -1644,7 +1646,7 @@ namespace java::util
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	void Arrays::parallelSetAll(jdoubleArray arg0, __JniBaseClass arg1)
@@ -1654,7 +1656,7 @@ namespace java::util
 			"parallelSetAll",
 			"([DLjava/util/function/IntToDoubleFunction;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void Arrays::parallelSetAll(jintArray arg0, __JniBaseClass arg1)
@@ -1664,7 +1666,7 @@ namespace java::util
 			"parallelSetAll",
 			"([ILjava/util/function/IntUnaryOperator;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void Arrays::parallelSetAll(jlongArray arg0, __JniBaseClass arg1)
@@ -1674,7 +1676,7 @@ namespace java::util
 			"parallelSetAll",
 			"([JLjava/util/function/IntToLongFunction;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void Arrays::parallelSetAll(jobjectArray arg0, __JniBaseClass arg1)
@@ -1684,7 +1686,7 @@ namespace java::util
 			"parallelSetAll",
 			"([Ljava/lang/Object;Ljava/util/function/IntFunction;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void Arrays::parallelSort(jbyteArray arg0)
@@ -1766,7 +1768,7 @@ namespace java::util
 			"parallelSort",
 			"([Ljava/lang/Object;Ljava/util/Comparator;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void Arrays::parallelSort(jbyteArray arg0, jint arg1, jint arg2)
@@ -1866,7 +1868,7 @@ namespace java::util
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	void Arrays::setAll(jdoubleArray arg0, __JniBaseClass arg1)
@@ -1876,7 +1878,7 @@ namespace java::util
 			"setAll",
 			"([DLjava/util/function/IntToDoubleFunction;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void Arrays::setAll(jintArray arg0, __JniBaseClass arg1)
@@ -1886,7 +1888,7 @@ namespace java::util
 			"setAll",
 			"([ILjava/util/function/IntUnaryOperator;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void Arrays::setAll(jlongArray arg0, __JniBaseClass arg1)
@@ -1896,7 +1898,7 @@ namespace java::util
 			"setAll",
 			"([JLjava/util/function/IntToLongFunction;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void Arrays::setAll(jobjectArray arg0, __JniBaseClass arg1)
@@ -1906,7 +1908,7 @@ namespace java::util
 			"setAll",
 			"([Ljava/lang/Object;Ljava/util/function/IntFunction;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void Arrays::sort(jbyteArray arg0)
@@ -1988,7 +1990,7 @@ namespace java::util
 			"sort",
 			"([Ljava/lang/Object;Ljava/util/Comparator;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void Arrays::sort(jbyteArray arg0, jint arg1, jint arg2)
@@ -2088,7 +2090,7 @@ namespace java::util
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	QAndroidJniObject Arrays::spliterator(jobjectArray arg0)

@@ -20,9 +20,11 @@ namespace android::app
 		static jint MODE_NIGHT_NO();
 		static jint MODE_NIGHT_YES();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit UiModeManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		UiModeManager(QAndroidJniObject obj);
+		
 		// Constructors
-		UiModeManager() = default;
 		
 		// Methods
 		void disableCarMode(jint arg0);

@@ -30,24 +30,24 @@ namespace android::view
 		);
 	}
 	
-	ViewOutlineProvider::ViewOutlineProvider(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ViewOutlineProvider::ViewOutlineProvider(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ViewOutlineProvider::ViewOutlineProvider()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.ViewOutlineProvider",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void ViewOutlineProvider::getOutline(android::view::View arg0, android::graphics::Outline arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"getOutline",
 			"(Landroid/view/View;Landroid/graphics/Outline;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 } // namespace android::view

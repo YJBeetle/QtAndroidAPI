@@ -14,9 +14,11 @@ namespace java::net
 		static QAndroidJniObject INET6();
 		static QAndroidJniObject UNIX();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit StandardProtocolFamily(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		StandardProtocolFamily(QAndroidJniObject obj);
+		
 		// Constructors
-		StandardProtocolFamily() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

@@ -93,15 +93,15 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	MediaStore_Video_Thumbnails::MediaStore_Video_Thumbnails(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaStore_Video_Thumbnails::MediaStore_Video_Thumbnails(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MediaStore_Video_Thumbnails::MediaStore_Video_Thumbnails()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.provider.MediaStore$Video$Thumbnails",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void MediaStore_Video_Thumbnails::cancelThumbnailRequest(android::content::ContentResolver arg0, jlong arg1)
@@ -110,7 +110,7 @@ namespace android::provider
 			"android.provider.MediaStore$Video$Thumbnails",
 			"cancelThumbnailRequest",
 			"(Landroid/content/ContentResolver;J)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -120,7 +120,7 @@ namespace android::provider
 			"android.provider.MediaStore$Video$Thumbnails",
 			"cancelThumbnailRequest",
 			"(Landroid/content/ContentResolver;JJ)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
@@ -140,10 +140,10 @@ namespace android::provider
 			"android.provider.MediaStore$Video$Thumbnails",
 			"getThumbnail",
 			"(Landroid/content/ContentResolver;JILandroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	QAndroidJniObject MediaStore_Video_Thumbnails::getThumbnail(android::content::ContentResolver arg0, jlong arg1, jlong arg2, jint arg3, android::graphics::BitmapFactory_Options arg4)
@@ -152,11 +152,11 @@ namespace android::provider
 			"android.provider.MediaStore$Video$Thumbnails",
 			"getThumbnail",
 			"(Landroid/content/ContentResolver;JJILandroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object()
+			arg4.object()
 		);
 	}
 } // namespace android::provider

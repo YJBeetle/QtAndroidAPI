@@ -74,7 +74,9 @@ namespace android::graphics
 		);
 	}
 	
-	Typeface::Typeface(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Typeface::Typeface(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -84,7 +86,7 @@ namespace android::graphics
 			"android.graphics.Typeface",
 			"create",
 			"(Landroid/graphics/Typeface;I)Landroid/graphics/Typeface;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -104,7 +106,7 @@ namespace android::graphics
 			"android.graphics.Typeface",
 			"create",
 			"(Landroid/graphics/Typeface;IZ)Landroid/graphics/Typeface;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
@@ -115,7 +117,7 @@ namespace android::graphics
 			"android.graphics.Typeface",
 			"createFromAsset",
 			"(Landroid/content/res/AssetManager;Ljava/lang/String;)Landroid/graphics/Typeface;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -125,7 +127,7 @@ namespace android::graphics
 			"android.graphics.Typeface",
 			"createFromFile",
 			"(Ljava/io/File;)Landroid/graphics/Typeface;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Typeface::createFromFile(jstring arg0)
@@ -148,7 +150,7 @@ namespace android::graphics
 	}
 	jboolean Typeface::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -156,35 +158,35 @@ namespace android::graphics
 	}
 	jint Typeface::getStyle()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getStyle",
 			"()I"
 		);
 	}
 	jint Typeface::getWeight()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getWeight",
 			"()I"
 		);
 	}
 	jint Typeface::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean Typeface::isBold()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isBold",
 			"()Z"
 		);
 	}
 	jboolean Typeface::isItalic()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isItalic",
 			"()Z"
 		);

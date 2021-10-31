@@ -39,7 +39,10 @@ namespace java::security
 		// Fields
 		static QAndroidJniObject UNSUPPORTED_EMPTY_COLLECTION();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Policy(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Policy(QAndroidJniObject obj);
+		
 		// Constructors
 		Policy();
 		

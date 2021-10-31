@@ -42,9 +42,11 @@ namespace java::time::chrono
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit JapaneseDate(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		JapaneseDate(QAndroidJniObject obj);
+		
 		// Constructors
-		JapaneseDate() = default;
 		
 		// Methods
 		static QAndroidJniObject from(__JniBaseClass arg0);

@@ -36,13 +36,15 @@ namespace android::text::style
 		static jstring SUGGESTION_SPAN_PICKED_BEFORE();
 		static jstring SUGGESTION_SPAN_PICKED_HASHCODE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SuggestionSpan(const char *className, const char *sig, Ts...agv) : android::text::style::CharacterStyle(className, sig, std::forward<Ts>(agv)...) {}
 		SuggestionSpan(QAndroidJniObject obj);
+		
 		// Constructors
 		SuggestionSpan(android::os::Parcel arg0);
 		SuggestionSpan(android::content::Context arg0, jarray arg1, jint arg2);
 		SuggestionSpan(java::util::Locale arg0, jarray arg1, jint arg2);
 		SuggestionSpan(android::content::Context arg0, java::util::Locale arg1, jarray arg2, jint arg3, jclass arg4);
-		SuggestionSpan() = default;
 		
 		// Methods
 		jint describeContents();

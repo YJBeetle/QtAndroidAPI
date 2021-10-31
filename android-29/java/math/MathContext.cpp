@@ -38,38 +38,34 @@ namespace java::math
 		);
 	}
 	
-	MathContext::MathContext(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MathContext::MathContext(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MathContext::MathContext(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.math.MathContext",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	MathContext::MathContext(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.math.MathContext",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	MathContext::MathContext(jint arg0, java::math::RoundingMode arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.math.MathContext",
 			"(ILjava/math/RoundingMode;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
+			arg1.object()
+		) {}
 	
 	// Methods
 	jboolean MathContext::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -77,28 +73,28 @@ namespace java::math
 	}
 	jint MathContext::getPrecision()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPrecision",
 			"()I"
 		);
 	}
 	QAndroidJniObject MathContext::getRoundingMode()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRoundingMode",
 			"()Ljava/math/RoundingMode;"
 		);
 	}
 	jint MathContext::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring MathContext::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

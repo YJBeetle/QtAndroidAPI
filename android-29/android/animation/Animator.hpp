@@ -15,7 +15,10 @@ namespace android::animation
 		// Fields
 		static jlong DURATION_INFINITE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Animator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Animator(QAndroidJniObject obj);
+		
 		// Constructors
 		Animator();
 		

@@ -5,25 +5,25 @@ namespace android::text
 	// Fields
 	jint BoringLayout_Metrics::width()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"width"
 		);
 	}
 	
-	BoringLayout_Metrics::BoringLayout_Metrics(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BoringLayout_Metrics::BoringLayout_Metrics(QAndroidJniObject obj) : android::graphics::Paint_FontMetricsInt(obj) {}
+	
 	// Constructors
 	BoringLayout_Metrics::BoringLayout_Metrics()
-	{
-		__thiz = QAndroidJniObject(
+		: android::graphics::Paint_FontMetricsInt(
 			"android.text.BoringLayout$Metrics",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring BoringLayout_Metrics::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

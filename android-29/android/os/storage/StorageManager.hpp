@@ -50,9 +50,11 @@ namespace android::os::storage
 		static jstring EXTRA_UUID();
 		static QAndroidJniObject UUID_DEFAULT();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit StorageManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		StorageManager(QAndroidJniObject obj);
+		
 		// Constructors
-		StorageManager() = default;
 		
 		// Methods
 		void allocateBytes(java::io::FileDescriptor arg0, jlong arg1);

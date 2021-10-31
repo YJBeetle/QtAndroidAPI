@@ -34,9 +34,11 @@ namespace android::hardware::camera2
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CameraManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		CameraManager(QAndroidJniObject obj);
+		
 		// Constructors
-		CameraManager() = default;
 		
 		// Methods
 		QAndroidJniObject getCameraCharacteristics(jstring arg0);

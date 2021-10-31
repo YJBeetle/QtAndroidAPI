@@ -86,7 +86,10 @@ namespace android::app
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Fragment(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Fragment(QAndroidJniObject obj);
+		
 		// Constructors
 		Fragment();
 		

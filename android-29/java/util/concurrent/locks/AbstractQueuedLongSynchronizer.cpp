@@ -6,20 +6,20 @@ namespace java::util::concurrent::locks
 {
 	// Fields
 	
-	AbstractQueuedLongSynchronizer::AbstractQueuedLongSynchronizer(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AbstractQueuedLongSynchronizer::AbstractQueuedLongSynchronizer(QAndroidJniObject obj) : java::util::concurrent::locks::AbstractOwnableSynchronizer(obj) {}
+	
 	// Constructors
 	AbstractQueuedLongSynchronizer::AbstractQueuedLongSynchronizer()
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::concurrent::locks::AbstractOwnableSynchronizer(
 			"java.util.concurrent.locks.AbstractQueuedLongSynchronizer",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void AbstractQueuedLongSynchronizer::acquire(jlong arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"acquire",
 			"(J)V",
 			arg0
@@ -27,7 +27,7 @@ namespace java::util::concurrent::locks
 	}
 	void AbstractQueuedLongSynchronizer::acquireInterruptibly(jlong arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"acquireInterruptibly",
 			"(J)V",
 			arg0
@@ -35,7 +35,7 @@ namespace java::util::concurrent::locks
 	}
 	void AbstractQueuedLongSynchronizer::acquireShared(jlong arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"acquireShared",
 			"(J)V",
 			arg0
@@ -43,7 +43,7 @@ namespace java::util::concurrent::locks
 	}
 	void AbstractQueuedLongSynchronizer::acquireSharedInterruptibly(jlong arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"acquireSharedInterruptibly",
 			"(J)V",
 			arg0
@@ -51,103 +51,103 @@ namespace java::util::concurrent::locks
 	}
 	QAndroidJniObject AbstractQueuedLongSynchronizer::getExclusiveQueuedThreads()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExclusiveQueuedThreads",
 			"()Ljava/util/Collection;"
 		);
 	}
 	QAndroidJniObject AbstractQueuedLongSynchronizer::getFirstQueuedThread()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFirstQueuedThread",
 			"()Ljava/lang/Thread;"
 		);
 	}
 	jint AbstractQueuedLongSynchronizer::getQueueLength()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getQueueLength",
 			"()I"
 		);
 	}
 	QAndroidJniObject AbstractQueuedLongSynchronizer::getQueuedThreads()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getQueuedThreads",
 			"()Ljava/util/Collection;"
 		);
 	}
 	QAndroidJniObject AbstractQueuedLongSynchronizer::getSharedQueuedThreads()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSharedQueuedThreads",
 			"()Ljava/util/Collection;"
 		);
 	}
 	jint AbstractQueuedLongSynchronizer::getWaitQueueLength(java::util::concurrent::locks::AbstractQueuedLongSynchronizer_ConditionObject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getWaitQueueLength",
 			"(Ljava/util/concurrent/locks/AbstractQueuedLongSynchronizer$ConditionObject;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject AbstractQueuedLongSynchronizer::getWaitingThreads(java::util::concurrent::locks::AbstractQueuedLongSynchronizer_ConditionObject arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getWaitingThreads",
 			"(Ljava/util/concurrent/locks/AbstractQueuedLongSynchronizer$ConditionObject;)Ljava/util/Collection;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean AbstractQueuedLongSynchronizer::hasContended()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasContended",
 			"()Z"
 		);
 	}
 	jboolean AbstractQueuedLongSynchronizer::hasQueuedPredecessors()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasQueuedPredecessors",
 			"()Z"
 		);
 	}
 	jboolean AbstractQueuedLongSynchronizer::hasQueuedThreads()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasQueuedThreads",
 			"()Z"
 		);
 	}
 	jboolean AbstractQueuedLongSynchronizer::hasWaiters(java::util::concurrent::locks::AbstractQueuedLongSynchronizer_ConditionObject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasWaiters",
 			"(Ljava/util/concurrent/locks/AbstractQueuedLongSynchronizer$ConditionObject;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean AbstractQueuedLongSynchronizer::isQueued(java::lang::Thread arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isQueued",
 			"(Ljava/lang/Thread;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean AbstractQueuedLongSynchronizer::owns(java::util::concurrent::locks::AbstractQueuedLongSynchronizer_ConditionObject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"owns",
 			"(Ljava/util/concurrent/locks/AbstractQueuedLongSynchronizer$ConditionObject;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean AbstractQueuedLongSynchronizer::release(jlong arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"release",
 			"(J)Z",
 			arg0
@@ -155,7 +155,7 @@ namespace java::util::concurrent::locks
 	}
 	jboolean AbstractQueuedLongSynchronizer::releaseShared(jlong arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"releaseShared",
 			"(J)Z",
 			arg0
@@ -163,14 +163,14 @@ namespace java::util::concurrent::locks
 	}
 	jstring AbstractQueuedLongSynchronizer::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jboolean AbstractQueuedLongSynchronizer::tryAcquireNanos(jlong arg0, jlong arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"tryAcquireNanos",
 			"(JJ)Z",
 			arg0,
@@ -179,7 +179,7 @@ namespace java::util::concurrent::locks
 	}
 	jboolean AbstractQueuedLongSynchronizer::tryAcquireSharedNanos(jlong arg0, jlong arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"tryAcquireSharedNanos",
 			"(JJ)Z",
 			arg0,

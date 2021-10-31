@@ -48,14 +48,16 @@ namespace java::net
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit URLClassLoader(const char *className, const char *sig, Ts...agv) : java::security::SecureClassLoader(className, sig, std::forward<Ts>(agv)...) {}
 		URLClassLoader(QAndroidJniObject obj);
+		
 		// Constructors
 		URLClassLoader(jarray arg0);
 		URLClassLoader(jarray arg0, java::lang::ClassLoader arg1);
 		URLClassLoader(jarray arg0, java::lang::ClassLoader arg1, __JniBaseClass arg2);
 		URLClassLoader(jstring arg0, jarray arg1, java::lang::ClassLoader arg2);
 		URLClassLoader(jstring arg0, jarray arg1, java::lang::ClassLoader arg2, __JniBaseClass arg3);
-		URLClassLoader() = default;
 		
 		// Methods
 		static QAndroidJniObject newInstance(jarray arg0);

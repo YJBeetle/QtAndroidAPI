@@ -25,7 +25,9 @@ namespace android::view::accessibility
 		);
 	}
 	
-	AccessibilityNodeInfo_RangeInfo::AccessibilityNodeInfo_RangeInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AccessibilityNodeInfo_RangeInfo::AccessibilityNodeInfo_RangeInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -43,28 +45,28 @@ namespace android::view::accessibility
 	}
 	jfloat AccessibilityNodeInfo_RangeInfo::getCurrent()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getCurrent",
 			"()F"
 		);
 	}
 	jfloat AccessibilityNodeInfo_RangeInfo::getMax()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getMax",
 			"()F"
 		);
 	}
 	jfloat AccessibilityNodeInfo_RangeInfo::getMin()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getMin",
 			"()F"
 		);
 	}
 	jint AccessibilityNodeInfo_RangeInfo::getType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getType",
 			"()I"
 		);

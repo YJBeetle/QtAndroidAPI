@@ -4,15 +4,15 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	IllegalSelectorException::IllegalSelectorException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	IllegalSelectorException::IllegalSelectorException(QAndroidJniObject obj) : java::lang::IllegalArgumentException(obj) {}
+	
 	// Constructors
 	IllegalSelectorException::IllegalSelectorException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::IllegalArgumentException(
 			"java.nio.channels.IllegalSelectorException",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::nio::channels

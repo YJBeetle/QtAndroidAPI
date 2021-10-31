@@ -52,7 +52,9 @@ namespace java::lang
 		);
 	}
 	
-	Thread_State::Thread_State(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Thread_State::Thread_State(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

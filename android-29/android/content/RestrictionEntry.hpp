@@ -27,7 +27,10 @@ namespace android::content
 		static jint TYPE_NULL();
 		static jint TYPE_STRING();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit RestrictionEntry(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		RestrictionEntry(QAndroidJniObject obj);
+		
 		// Constructors
 		RestrictionEntry(android::os::Parcel arg0);
 		RestrictionEntry(jint arg0, jstring arg1);
@@ -35,7 +38,6 @@ namespace android::content
 		RestrictionEntry(jstring arg0, jboolean arg1);
 		RestrictionEntry(jstring arg0, jint arg1);
 		RestrictionEntry(jstring arg0, jstring arg1);
-		RestrictionEntry() = default;
 		
 		// Methods
 		static QAndroidJniObject createBundleArrayEntry(jstring arg0, jarray arg1);

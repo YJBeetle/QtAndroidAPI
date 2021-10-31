@@ -11,20 +11,20 @@ namespace android::view
 {
 	// Fields
 	
-	ViewStructure::ViewStructure(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ViewStructure::ViewStructure(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ViewStructure::ViewStructure()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.ViewStructure",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jint ViewStructure::addChildCount(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"addChildCount",
 			"(I)I",
 			arg0
@@ -32,14 +32,14 @@ namespace android::view
 	}
 	void ViewStructure::asyncCommit()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"asyncCommit",
 			"()V"
 		);
 	}
 	QAndroidJniObject ViewStructure::asyncNewChild(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"asyncNewChild",
 			"(I)Landroid/view/ViewStructure;",
 			arg0
@@ -47,63 +47,63 @@ namespace android::view
 	}
 	QAndroidJniObject ViewStructure::getAutofillId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAutofillId",
 			"()Landroid/view/autofill/AutofillId;"
 		);
 	}
 	jint ViewStructure::getChildCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getChildCount",
 			"()I"
 		);
 	}
 	QAndroidJniObject ViewStructure::getExtras()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
 	jstring ViewStructure::getHint()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getHint",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jstring ViewStructure::getText()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jint ViewStructure::getTextSelectionEnd()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTextSelectionEnd",
 			"()I"
 		);
 	}
 	jint ViewStructure::getTextSelectionStart()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTextSelectionStart",
 			"()I"
 		);
 	}
 	jboolean ViewStructure::hasExtras()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasExtras",
 			"()Z"
 		);
 	}
 	QAndroidJniObject ViewStructure::newChild(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newChild",
 			"(I)Landroid/view/ViewStructure;",
 			arg0
@@ -111,7 +111,7 @@ namespace android::view
 	}
 	QAndroidJniObject ViewStructure::newHtmlInfoBuilder(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newHtmlInfoBuilder",
 			"(Ljava/lang/String;)Landroid/view/ViewStructure$HtmlInfo$Builder;",
 			arg0
@@ -119,7 +119,7 @@ namespace android::view
 	}
 	void ViewStructure::setAccessibilityFocused(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAccessibilityFocused",
 			"(Z)V",
 			arg0
@@ -127,7 +127,7 @@ namespace android::view
 	}
 	void ViewStructure::setActivated(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setActivated",
 			"(Z)V",
 			arg0
@@ -135,7 +135,7 @@ namespace android::view
 	}
 	void ViewStructure::setAlpha(jfloat arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAlpha",
 			"(F)V",
 			arg0
@@ -143,7 +143,7 @@ namespace android::view
 	}
 	void ViewStructure::setAutofillHints(jarray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAutofillHints",
 			"([Ljava/lang/String;)V",
 			arg0
@@ -151,24 +151,24 @@ namespace android::view
 	}
 	void ViewStructure::setAutofillId(android::view::autofill::AutofillId arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAutofillId",
 			"(Landroid/view/autofill/AutofillId;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ViewStructure::setAutofillId(android::view::autofill::AutofillId arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAutofillId",
 			"(Landroid/view/autofill/AutofillId;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void ViewStructure::setAutofillOptions(jarray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAutofillOptions",
 			"([Ljava/lang/CharSequence;)V",
 			arg0
@@ -176,7 +176,7 @@ namespace android::view
 	}
 	void ViewStructure::setAutofillType(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAutofillType",
 			"(I)V",
 			arg0
@@ -184,15 +184,15 @@ namespace android::view
 	}
 	void ViewStructure::setAutofillValue(android::view::autofill::AutofillValue arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAutofillValue",
 			"(Landroid/view/autofill/AutofillValue;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ViewStructure::setCheckable(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCheckable",
 			"(Z)V",
 			arg0
@@ -200,7 +200,7 @@ namespace android::view
 	}
 	void ViewStructure::setChecked(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setChecked",
 			"(Z)V",
 			arg0
@@ -208,7 +208,7 @@ namespace android::view
 	}
 	void ViewStructure::setChildCount(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setChildCount",
 			"(I)V",
 			arg0
@@ -216,7 +216,7 @@ namespace android::view
 	}
 	void ViewStructure::setClassName(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setClassName",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -224,7 +224,7 @@ namespace android::view
 	}
 	void ViewStructure::setClickable(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setClickable",
 			"(Z)V",
 			arg0
@@ -232,7 +232,7 @@ namespace android::view
 	}
 	void ViewStructure::setContentDescription(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setContentDescription",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
@@ -240,7 +240,7 @@ namespace android::view
 	}
 	void ViewStructure::setContextClickable(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setContextClickable",
 			"(Z)V",
 			arg0
@@ -248,7 +248,7 @@ namespace android::view
 	}
 	void ViewStructure::setDataIsSensitive(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDataIsSensitive",
 			"(Z)V",
 			arg0
@@ -256,7 +256,7 @@ namespace android::view
 	}
 	void ViewStructure::setDimens(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDimens",
 			"(IIIIII)V",
 			arg0,
@@ -269,7 +269,7 @@ namespace android::view
 	}
 	void ViewStructure::setElevation(jfloat arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setElevation",
 			"(F)V",
 			arg0
@@ -277,7 +277,7 @@ namespace android::view
 	}
 	void ViewStructure::setEnabled(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setEnabled",
 			"(Z)V",
 			arg0
@@ -285,7 +285,7 @@ namespace android::view
 	}
 	void ViewStructure::setFocusable(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFocusable",
 			"(Z)V",
 			arg0
@@ -293,7 +293,7 @@ namespace android::view
 	}
 	void ViewStructure::setFocused(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFocused",
 			"(Z)V",
 			arg0
@@ -301,7 +301,7 @@ namespace android::view
 	}
 	void ViewStructure::setHint(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setHint",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
@@ -309,15 +309,15 @@ namespace android::view
 	}
 	void ViewStructure::setHtmlInfo(android::view::ViewStructure_HtmlInfo arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setHtmlInfo",
 			"(Landroid/view/ViewStructure$HtmlInfo;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ViewStructure::setId(jint arg0, jstring arg1, jstring arg2, jstring arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setId",
 			"(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
@@ -328,7 +328,7 @@ namespace android::view
 	}
 	void ViewStructure::setImportantForAutofill(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setImportantForAutofill",
 			"(I)V",
 			arg0
@@ -336,7 +336,7 @@ namespace android::view
 	}
 	void ViewStructure::setInputType(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setInputType",
 			"(I)V",
 			arg0
@@ -344,15 +344,15 @@ namespace android::view
 	}
 	void ViewStructure::setLocaleList(android::os::LocaleList arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLocaleList",
 			"(Landroid/os/LocaleList;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ViewStructure::setLongClickable(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLongClickable",
 			"(Z)V",
 			arg0
@@ -360,7 +360,7 @@ namespace android::view
 	}
 	void ViewStructure::setMaxTextEms(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMaxTextEms",
 			"(I)V",
 			arg0
@@ -368,7 +368,7 @@ namespace android::view
 	}
 	void ViewStructure::setMaxTextLength(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMaxTextLength",
 			"(I)V",
 			arg0
@@ -376,7 +376,7 @@ namespace android::view
 	}
 	void ViewStructure::setMinTextEms(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMinTextEms",
 			"(I)V",
 			arg0
@@ -384,7 +384,7 @@ namespace android::view
 	}
 	void ViewStructure::setOpaque(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOpaque",
 			"(Z)V",
 			arg0
@@ -392,7 +392,7 @@ namespace android::view
 	}
 	void ViewStructure::setSelected(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSelected",
 			"(Z)V",
 			arg0
@@ -400,7 +400,7 @@ namespace android::view
 	}
 	void ViewStructure::setText(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setText",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
@@ -408,7 +408,7 @@ namespace android::view
 	}
 	void ViewStructure::setText(jstring arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setText",
 			"(Ljava/lang/CharSequence;II)V",
 			arg0,
@@ -418,7 +418,7 @@ namespace android::view
 	}
 	void ViewStructure::setTextIdEntry(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTextIdEntry",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -426,7 +426,7 @@ namespace android::view
 	}
 	void ViewStructure::setTextLines(jintArray arg0, jintArray arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTextLines",
 			"([I[I)V",
 			arg0,
@@ -435,7 +435,7 @@ namespace android::view
 	}
 	void ViewStructure::setTextStyle(jfloat arg0, jint arg1, jint arg2, jint arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTextStyle",
 			"(FIII)V",
 			arg0,
@@ -446,15 +446,15 @@ namespace android::view
 	}
 	void ViewStructure::setTransformation(android::graphics::Matrix arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTransformation",
 			"(Landroid/graphics/Matrix;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ViewStructure::setVisibility(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setVisibility",
 			"(I)V",
 			arg0
@@ -462,7 +462,7 @@ namespace android::view
 	}
 	void ViewStructure::setWebDomain(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setWebDomain",
 			"(Ljava/lang/String;)V",
 			arg0

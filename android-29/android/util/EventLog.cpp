@@ -4,7 +4,9 @@ namespace android::util
 {
 	// Fields
 	
-	EventLog::EventLog(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	EventLog::EventLog(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -33,7 +35,7 @@ namespace android::util
 			"readEvents",
 			"([ILjava/util/Collection;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jint EventLog::writeEvent(jint arg0, jobjectArray arg1)

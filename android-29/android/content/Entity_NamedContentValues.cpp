@@ -7,30 +7,30 @@ namespace android::content
 	// Fields
 	QAndroidJniObject Entity_NamedContentValues::uri()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"uri",
 			"Landroid/net/Uri;"
 		);
 	}
 	QAndroidJniObject Entity_NamedContentValues::values()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"values",
 			"Landroid/content/ContentValues;"
 		);
 	}
 	
-	Entity_NamedContentValues::Entity_NamedContentValues(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Entity_NamedContentValues::Entity_NamedContentValues(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Entity_NamedContentValues::Entity_NamedContentValues(android::net::Uri arg0, android::content::ContentValues arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.content.Entity$NamedContentValues",
 			"(Landroid/net/Uri;Landroid/content/ContentValues;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	
 	// Methods
 } // namespace android::content

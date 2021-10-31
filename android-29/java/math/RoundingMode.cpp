@@ -68,7 +68,9 @@ namespace java::math
 		);
 	}
 	
-	RoundingMode::RoundingMode(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	RoundingMode::RoundingMode(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

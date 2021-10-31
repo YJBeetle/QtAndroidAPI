@@ -41,24 +41,22 @@ namespace java::lang
 		).object<jclass>();
 	}
 	
-	Byte::Byte(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Byte::Byte(QAndroidJniObject obj) : java::lang::Number(obj) {}
+	
 	// Constructors
 	Byte::Byte(jbyte arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Number(
 			"java.lang.Byte",
 			"(B)V",
 			arg0
-		);
-	}
+		) {}
 	Byte::Byte(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Number(
 			"java.lang.Byte",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jint Byte::compare(jbyte arg0, jbyte arg1)
@@ -175,22 +173,22 @@ namespace java::lang
 	}
 	jbyte Byte::byteValue()
 	{
-		return __thiz.callMethod<jbyte>(
+		return callMethod<jbyte>(
 			"byteValue",
 			"()B"
 		);
 	}
 	jint Byte::compareTo(java::lang::Byte arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Byte;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint Byte::compareTo(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -198,21 +196,21 @@ namespace java::lang
 	}
 	QAndroidJniObject Byte::describeConstable()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"describeConstable",
 			"()Ljava/util/Optional;"
 		);
 	}
 	jdouble Byte::doubleValue()
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"doubleValue",
 			"()D"
 		);
 	}
 	jboolean Byte::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -220,42 +218,42 @@ namespace java::lang
 	}
 	jfloat Byte::floatValue()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"floatValue",
 			"()F"
 		);
 	}
 	jint Byte::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jint Byte::intValue()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"intValue",
 			"()I"
 		);
 	}
 	jlong Byte::longValue()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"longValue",
 			"()J"
 		);
 	}
 	jshort Byte::shortValue()
 	{
-		return __thiz.callMethod<jshort>(
+		return callMethod<jshort>(
 			"shortValue",
 			"()S"
 		);
 	}
 	jstring Byte::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

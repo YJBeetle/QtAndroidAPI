@@ -6,25 +6,23 @@ namespace android::location
 {
 	// Fields
 	
-	Geocoder::Geocoder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Geocoder::Geocoder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Geocoder::Geocoder(android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.location.Geocoder",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	Geocoder::Geocoder(android::content::Context arg0, java::util::Locale arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.location.Geocoder",
 			"(Landroid/content/Context;Ljava/util/Locale;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	
 	// Methods
 	jboolean Geocoder::isPresent()
@@ -37,7 +35,7 @@ namespace android::location
 	}
 	QAndroidJniObject Geocoder::getFromLocation(jdouble arg0, jdouble arg1, jint arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFromLocation",
 			"(DDI)Ljava/util/List;",
 			arg0,
@@ -47,7 +45,7 @@ namespace android::location
 	}
 	QAndroidJniObject Geocoder::getFromLocationName(jstring arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFromLocationName",
 			"(Ljava/lang/String;I)Ljava/util/List;",
 			arg0,
@@ -56,7 +54,7 @@ namespace android::location
 	}
 	QAndroidJniObject Geocoder::getFromLocationName(jstring arg0, jint arg1, jdouble arg2, jdouble arg3, jdouble arg4, jdouble arg5)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFromLocationName",
 			"(Ljava/lang/String;IDDDD)Ljava/util/List;",
 			arg0,

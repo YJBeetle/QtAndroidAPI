@@ -83,7 +83,9 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	Contacts_People::Contacts_People(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Contacts_People::Contacts_People(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -93,7 +95,7 @@ namespace android::provider
 			"android.provider.Contacts$People",
 			"addToGroup",
 			"(Landroid/content/ContentResolver;JLjava/lang/String;)Landroid/net/Uri;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
@@ -104,7 +106,7 @@ namespace android::provider
 			"android.provider.Contacts$People",
 			"addToGroup",
 			"(Landroid/content/ContentResolver;JJ)Landroid/net/Uri;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
@@ -115,7 +117,7 @@ namespace android::provider
 			"android.provider.Contacts$People",
 			"addToMyContactsGroup",
 			"(Landroid/content/ContentResolver;J)Landroid/net/Uri;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -125,8 +127,8 @@ namespace android::provider
 			"android.provider.Contacts$People",
 			"createPersonInMyContactsGroup",
 			"(Landroid/content/ContentResolver;Landroid/content/ContentValues;)Landroid/net/Uri;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject Contacts_People::loadContactPhoto(android::content::Context arg0, android::net::Uri arg1, jint arg2, android::graphics::BitmapFactory_Options arg3)
@@ -135,10 +137,10 @@ namespace android::provider
 			"android.provider.Contacts$People",
 			"loadContactPhoto",
 			"(Landroid/content/Context;Landroid/net/Uri;ILandroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	void Contacts_People::markAsContacted(android::content::ContentResolver arg0, jlong arg1)
@@ -147,7 +149,7 @@ namespace android::provider
 			"android.provider.Contacts$People",
 			"markAsContacted",
 			"(Landroid/content/ContentResolver;J)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -157,8 +159,8 @@ namespace android::provider
 			"android.provider.Contacts$People",
 			"openContactPhotoInputStream",
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;)Ljava/io/InputStream;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject Contacts_People::queryGroups(android::content::ContentResolver arg0, jlong arg1)
@@ -167,7 +169,7 @@ namespace android::provider
 			"android.provider.Contacts$People",
 			"queryGroups",
 			"(Landroid/content/ContentResolver;J)Landroid/database/Cursor;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -177,8 +179,8 @@ namespace android::provider
 			"android.provider.Contacts$People",
 			"setPhotoData",
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;[B)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}

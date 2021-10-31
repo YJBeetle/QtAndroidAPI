@@ -4,15 +4,15 @@ namespace android::graphics
 {
 	// Fields
 	
-	Xfermode::Xfermode(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Xfermode::Xfermode(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Xfermode::Xfermode()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.graphics.Xfermode",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::graphics

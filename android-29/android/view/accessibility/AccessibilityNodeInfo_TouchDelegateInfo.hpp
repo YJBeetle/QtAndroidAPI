@@ -23,10 +23,12 @@ namespace android::view::accessibility
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AccessibilityNodeInfo_TouchDelegateInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AccessibilityNodeInfo_TouchDelegateInfo(QAndroidJniObject obj);
+		
 		// Constructors
 		AccessibilityNodeInfo_TouchDelegateInfo(__JniBaseClass arg0);
-		AccessibilityNodeInfo_TouchDelegateInfo() = default;
 		
 		// Methods
 		jint describeContents();

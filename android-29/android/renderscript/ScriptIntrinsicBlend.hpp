@@ -33,9 +33,11 @@ namespace android::renderscript
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ScriptIntrinsicBlend(const char *className, const char *sig, Ts...agv) : android::renderscript::ScriptIntrinsic(className, sig, std::forward<Ts>(agv)...) {}
 		ScriptIntrinsicBlend(QAndroidJniObject obj);
+		
 		// Constructors
-		ScriptIntrinsicBlend() = default;
 		
 		// Methods
 		static QAndroidJniObject create(android::renderscript::RenderScript arg0, android::renderscript::Element arg1);

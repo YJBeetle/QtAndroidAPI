@@ -9,36 +9,36 @@ namespace android::graphics::drawable::shapes
 {
 	// Fields
 	
-	RectShape::RectShape(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	RectShape::RectShape(QAndroidJniObject obj) : android::graphics::drawable::shapes::Shape(obj) {}
+	
 	// Constructors
 	RectShape::RectShape()
-	{
-		__thiz = QAndroidJniObject(
+		: android::graphics::drawable::shapes::Shape(
 			"android.graphics.drawable.shapes.RectShape",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject RectShape::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Landroid/graphics/drawable/shapes/RectShape;"
 		);
 	}
 	void RectShape::draw(android::graphics::Canvas arg0, android::graphics::Paint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"draw",
 			"(Landroid/graphics/Canvas;Landroid/graphics/Paint;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jboolean RectShape::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -46,15 +46,15 @@ namespace android::graphics::drawable::shapes
 	}
 	void RectShape::getOutline(android::graphics::Outline arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"getOutline",
 			"(Landroid/graphics/Outline;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint RectShape::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);

@@ -5,30 +5,30 @@ namespace android::util
 {
 	// Fields
 	
-	FloatProperty::FloatProperty(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FloatProperty::FloatProperty(QAndroidJniObject obj) : android::util::Property(obj) {}
+	
 	// Constructors
 	FloatProperty::FloatProperty(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::util::Property(
 			"android.util.FloatProperty",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	void FloatProperty::set(jobject arg0, java::lang::Float arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"set",
 			"(Ljava/lang/Object;Ljava/lang/Float;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void FloatProperty::set(jobject arg0, jobject arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"set",
 			"(Ljava/lang/Object;Ljava/lang/Object;)V",
 			arg0,
@@ -37,7 +37,7 @@ namespace android::util
 	}
 	void FloatProperty::setValue(jobject arg0, jfloat arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setValue",
 			"(Ljava/lang/Object;F)V",
 			arg0,

@@ -4,42 +4,42 @@ namespace android::os
 {
 	// Fields
 	
-	CancellationSignal::CancellationSignal(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CancellationSignal::CancellationSignal(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	CancellationSignal::CancellationSignal()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.os.CancellationSignal",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void CancellationSignal::cancel()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"cancel",
 			"()V"
 		);
 	}
 	jboolean CancellationSignal::isCanceled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isCanceled",
 			"()Z"
 		);
 	}
 	void CancellationSignal::setOnCancelListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnCancelListener",
 			"(Landroid/os/CancellationSignal$OnCancelListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void CancellationSignal::throwIfCanceled()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"throwIfCanceled",
 			"()V"
 		);

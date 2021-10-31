@@ -10,9 +10,11 @@ namespace android::text
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AlteredCharSequence(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AlteredCharSequence(QAndroidJniObject obj);
+		
 		// Constructors
-		AlteredCharSequence() = default;
 		
 		// Methods
 		static QAndroidJniObject make(jstring arg0, jcharArray arg1, jint arg2, jint arg3);

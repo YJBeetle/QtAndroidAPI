@@ -486,15 +486,15 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	CallLog_Calls::CallLog_Calls(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CallLog_Calls::CallLog_Calls(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	CallLog_Calls::CallLog_Calls()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.provider.CallLog$Calls",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring CallLog_Calls::getLastOutgoingCall(android::content::Context arg0)
@@ -503,7 +503,7 @@ namespace android::provider
 			"android.provider.CallLog$Calls",
 			"getLastOutgoingCall",
 			"(Landroid/content/Context;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 } // namespace android::provider

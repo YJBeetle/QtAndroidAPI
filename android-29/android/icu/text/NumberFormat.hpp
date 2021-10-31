@@ -76,7 +76,10 @@ namespace android::icu::text
 		static jint SCIENTIFICSTYLE();
 		static jint STANDARDCURRENCYSTYLE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit NumberFormat(const char *className, const char *sig, Ts...agv) : android::icu::text::UFormat(className, sig, std::forward<Ts>(agv)...) {}
 		NumberFormat(QAndroidJniObject obj);
+		
 		// Constructors
 		NumberFormat();
 		

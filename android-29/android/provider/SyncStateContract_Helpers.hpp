@@ -30,7 +30,10 @@ namespace android::provider
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SyncStateContract_Helpers(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SyncStateContract_Helpers(QAndroidJniObject obj);
+		
 		// Constructors
 		SyncStateContract_Helpers();
 		

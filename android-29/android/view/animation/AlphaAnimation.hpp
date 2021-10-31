@@ -19,11 +19,13 @@ namespace android::view::animation
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AlphaAnimation(const char *className, const char *sig, Ts...agv) : android::view::animation::Animation(className, sig, std::forward<Ts>(agv)...) {}
 		AlphaAnimation(QAndroidJniObject obj);
+		
 		// Constructors
 		AlphaAnimation(android::content::Context arg0, __JniBaseClass arg1);
 		AlphaAnimation(jfloat arg0, jfloat arg1);
-		AlphaAnimation() = default;
 		
 		// Methods
 		jboolean willChangeBounds();

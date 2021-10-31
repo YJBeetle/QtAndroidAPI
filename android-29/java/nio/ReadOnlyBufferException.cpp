@@ -4,15 +4,15 @@ namespace java::nio
 {
 	// Fields
 	
-	ReadOnlyBufferException::ReadOnlyBufferException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ReadOnlyBufferException::ReadOnlyBufferException(QAndroidJniObject obj) : java::lang::UnsupportedOperationException(obj) {}
+	
 	// Constructors
 	ReadOnlyBufferException::ReadOnlyBufferException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::UnsupportedOperationException(
 			"java.nio.ReadOnlyBufferException",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::nio

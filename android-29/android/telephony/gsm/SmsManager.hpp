@@ -27,9 +27,11 @@ namespace android::telephony::gsm
 		static jint STATUS_ON_SIM_UNREAD();
 		static jint STATUS_ON_SIM_UNSENT();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SmsManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SmsManager(QAndroidJniObject obj);
+		
 		// Constructors
-		SmsManager() = default;
 		
 		// Methods
 		static QAndroidJniObject getDefault();

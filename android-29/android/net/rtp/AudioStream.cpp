@@ -7,65 +7,65 @@ namespace android::net::rtp
 {
 	// Fields
 	
-	AudioStream::AudioStream(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AudioStream::AudioStream(QAndroidJniObject obj) : android::net::rtp::RtpStream(obj) {}
+	
 	// Constructors
 	AudioStream::AudioStream(java::net::InetAddress arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::net::rtp::RtpStream(
 			"android.net.rtp.AudioStream",
 			"(Ljava/net/InetAddress;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject AudioStream::getCodec()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCodec",
 			"()Landroid/net/rtp/AudioCodec;"
 		);
 	}
 	jint AudioStream::getDtmfType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDtmfType",
 			"()I"
 		);
 	}
 	QAndroidJniObject AudioStream::getGroup()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getGroup",
 			"()Landroid/net/rtp/AudioGroup;"
 		);
 	}
 	jboolean AudioStream::isBusy()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isBusy",
 			"()Z"
 		);
 	}
 	void AudioStream::join(android::net::rtp::AudioGroup arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"join",
 			"(Landroid/net/rtp/AudioGroup;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AudioStream::setCodec(android::net::rtp::AudioCodec arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCodec",
 			"(Landroid/net/rtp/AudioCodec;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AudioStream::setDtmfType(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDtmfType",
 			"(I)V",
 			arg0

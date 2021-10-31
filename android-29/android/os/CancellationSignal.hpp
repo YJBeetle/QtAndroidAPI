@@ -10,7 +10,10 @@ namespace android::os
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CancellationSignal(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		CancellationSignal(QAndroidJniObject obj);
+		
 		// Constructors
 		CancellationSignal();
 		

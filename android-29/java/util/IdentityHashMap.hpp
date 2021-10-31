@@ -19,7 +19,10 @@ namespace java::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit IdentityHashMap(const char *className, const char *sig, Ts...agv) : java::util::AbstractMap(className, sig, std::forward<Ts>(agv)...) {}
 		IdentityHashMap(QAndroidJniObject obj);
+		
 		// Constructors
 		IdentityHashMap();
 		IdentityHashMap(jint arg0);

@@ -64,9 +64,11 @@ namespace android::location
 		static jstring PASSIVE_PROVIDER();
 		static jstring PROVIDERS_CHANGED_ACTION();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit LocationManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		LocationManager(QAndroidJniObject obj);
+		
 		// Constructors
-		LocationManager() = default;
 		
 		// Methods
 		jboolean addGpsStatusListener(__JniBaseClass arg0);

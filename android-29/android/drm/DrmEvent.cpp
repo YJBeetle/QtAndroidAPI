@@ -35,13 +35,15 @@ namespace android::drm
 		);
 	}
 	
-	DrmEvent::DrmEvent(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DrmEvent::DrmEvent(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jobject DrmEvent::getAttribute(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAttribute",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
 			arg0
@@ -49,21 +51,21 @@ namespace android::drm
 	}
 	jstring DrmEvent::getMessage()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint DrmEvent::getType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getType",
 			"()I"
 		);
 	}
 	jint DrmEvent::getUniqueId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getUniqueId",
 			"()I"
 		);

@@ -11,7 +11,10 @@ namespace java::lang
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit InterruptedException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
 		InterruptedException(QAndroidJniObject obj);
+		
 		// Constructors
 		InterruptedException();
 		InterruptedException(jstring arg0);

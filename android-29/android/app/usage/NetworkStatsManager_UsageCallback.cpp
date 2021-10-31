@@ -4,20 +4,20 @@ namespace android::app::usage
 {
 	// Fields
 	
-	NetworkStatsManager_UsageCallback::NetworkStatsManager_UsageCallback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NetworkStatsManager_UsageCallback::NetworkStatsManager_UsageCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	NetworkStatsManager_UsageCallback::NetworkStatsManager_UsageCallback()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.app.usage.NetworkStatsManager$UsageCallback",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void NetworkStatsManager_UsageCallback::onThresholdReached(jint arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onThresholdReached",
 			"(ILjava/lang/String;)V",
 			arg0,

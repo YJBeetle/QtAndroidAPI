@@ -15,9 +15,11 @@ namespace android::print
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PrintJobId(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PrintJobId(QAndroidJniObject obj);
+		
 		// Constructors
-		PrintJobId() = default;
 		
 		// Methods
 		jint describeContents();

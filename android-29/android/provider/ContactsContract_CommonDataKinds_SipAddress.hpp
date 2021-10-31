@@ -22,9 +22,11 @@ namespace android::provider
 		static jint TYPE_OTHER();
 		static jint TYPE_WORK();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ContactsContract_CommonDataKinds_SipAddress(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ContactsContract_CommonDataKinds_SipAddress(QAndroidJniObject obj);
+		
 		// Constructors
-		ContactsContract_CommonDataKinds_SipAddress() = default;
 		
 		// Methods
 		static jstring getTypeLabel(android::content::res::Resources arg0, jint arg1, jstring arg2);

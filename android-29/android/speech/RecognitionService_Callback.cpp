@@ -6,20 +6,22 @@ namespace android::speech
 {
 	// Fields
 	
-	RecognitionService_Callback::RecognitionService_Callback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	RecognitionService_Callback::RecognitionService_Callback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void RecognitionService_Callback::beginningOfSpeech()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"beginningOfSpeech",
 			"()V"
 		);
 	}
 	void RecognitionService_Callback::bufferReceived(jbyteArray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"bufferReceived",
 			"([B)V",
 			arg0
@@ -27,14 +29,14 @@ namespace android::speech
 	}
 	void RecognitionService_Callback::endOfSpeech()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"endOfSpeech",
 			"()V"
 		);
 	}
 	void RecognitionService_Callback::error(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"error",
 			"(I)V",
 			arg0
@@ -42,38 +44,38 @@ namespace android::speech
 	}
 	jint RecognitionService_Callback::getCallingUid()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCallingUid",
 			"()I"
 		);
 	}
 	void RecognitionService_Callback::partialResults(android::os::Bundle arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"partialResults",
 			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void RecognitionService_Callback::readyForSpeech(android::os::Bundle arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"readyForSpeech",
 			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void RecognitionService_Callback::results(android::os::Bundle arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"results",
 			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void RecognitionService_Callback::rmsChanged(jfloat arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"rmsChanged",
 			"(F)V",
 			arg0

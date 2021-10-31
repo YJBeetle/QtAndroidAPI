@@ -5,37 +5,37 @@ namespace android::media
 {
 	// Fields
 	
-	MediaMetadataRetriever_BitmapParams::MediaMetadataRetriever_BitmapParams(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaMetadataRetriever_BitmapParams::MediaMetadataRetriever_BitmapParams(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MediaMetadataRetriever_BitmapParams::MediaMetadataRetriever_BitmapParams()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.MediaMetadataRetriever$BitmapParams",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject MediaMetadataRetriever_BitmapParams::getActualConfig()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getActualConfig",
 			"()Landroid/graphics/Bitmap$Config;"
 		);
 	}
 	QAndroidJniObject MediaMetadataRetriever_BitmapParams::getPreferredConfig()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPreferredConfig",
 			"()Landroid/graphics/Bitmap$Config;"
 		);
 	}
 	void MediaMetadataRetriever_BitmapParams::setPreferredConfig(android::graphics::Bitmap_Config arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPreferredConfig",
 			"(Landroid/graphics/Bitmap$Config;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::media

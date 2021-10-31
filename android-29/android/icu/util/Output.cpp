@@ -5,34 +5,32 @@ namespace android::icu::util
 	// Fields
 	jobject Output::value()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"value",
 			"Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	
-	Output::Output(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Output::Output(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Output::Output()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.icu.util.Output",
 			"()V"
-		);
-	}
+		) {}
 	Output::Output(jobject arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.icu.util.Output",
 			"(Ljava/lang/Object;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring Output::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

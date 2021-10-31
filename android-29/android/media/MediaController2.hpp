@@ -30,9 +30,11 @@ namespace android::media
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaController2(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaController2(QAndroidJniObject obj);
+		
 		// Constructors
-		MediaController2() = default;
 		
 		// Methods
 		void cancelSessionCommand(jobject arg0);

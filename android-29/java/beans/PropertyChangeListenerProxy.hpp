@@ -15,10 +15,12 @@ namespace java::beans
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PropertyChangeListenerProxy(const char *className, const char *sig, Ts...agv) : java::util::EventListenerProxy(className, sig, std::forward<Ts>(agv)...) {}
 		PropertyChangeListenerProxy(QAndroidJniObject obj);
+		
 		// Constructors
 		PropertyChangeListenerProxy(jstring arg0, __JniBaseClass arg1);
-		PropertyChangeListenerProxy() = default;
 		
 		// Methods
 		jstring getPropertyName();

@@ -6,36 +6,32 @@ namespace java::lang
 {
 	// Fields
 	
-	StringBuffer::StringBuffer(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	StringBuffer::StringBuffer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	StringBuffer::StringBuffer()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.lang.StringBuffer",
 			"()V"
-		);
-	}
+		) {}
 	StringBuffer::StringBuffer(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.lang.StringBuffer",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	StringBuffer::StringBuffer(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.lang.StringBuffer",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject StringBuffer::append(jcharArray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"append",
 			"([C)Ljava/lang/StringBuffer;",
 			arg0
@@ -43,7 +39,7 @@ namespace java::lang
 	}
 	QAndroidJniObject StringBuffer::append(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"append",
 			"(Z)Ljava/lang/StringBuffer;",
 			arg0
@@ -51,7 +47,7 @@ namespace java::lang
 	}
 	QAndroidJniObject StringBuffer::append(jchar arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"append",
 			"(C)Ljava/lang/StringBuffer;",
 			arg0
@@ -59,7 +55,7 @@ namespace java::lang
 	}
 	QAndroidJniObject StringBuffer::append(jdouble arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"append",
 			"(D)Ljava/lang/StringBuffer;",
 			arg0
@@ -67,7 +63,7 @@ namespace java::lang
 	}
 	QAndroidJniObject StringBuffer::append(jfloat arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"append",
 			"(F)Ljava/lang/StringBuffer;",
 			arg0
@@ -75,7 +71,7 @@ namespace java::lang
 	}
 	QAndroidJniObject StringBuffer::append(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"append",
 			"(I)Ljava/lang/StringBuffer;",
 			arg0
@@ -83,7 +79,7 @@ namespace java::lang
 	}
 	QAndroidJniObject StringBuffer::append(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"append",
 			"(Ljava/lang/CharSequence;)Ljava/lang/StringBuffer;",
 			arg0
@@ -91,7 +87,7 @@ namespace java::lang
 	}
 	QAndroidJniObject StringBuffer::append(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"append",
 			"(Ljava/lang/Object;)Ljava/lang/StringBuffer;",
 			arg0
@@ -99,15 +95,15 @@ namespace java::lang
 	}
 	QAndroidJniObject StringBuffer::append(java::lang::StringBuffer arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"append",
 			"(Ljava/lang/StringBuffer;)Ljava/lang/StringBuffer;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject StringBuffer::append(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"append",
 			"(J)Ljava/lang/StringBuffer;",
 			arg0
@@ -115,7 +111,7 @@ namespace java::lang
 	}
 	QAndroidJniObject StringBuffer::append(jcharArray arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"append",
 			"([CII)Ljava/lang/StringBuffer;",
 			arg0,
@@ -125,7 +121,7 @@ namespace java::lang
 	}
 	QAndroidJniObject StringBuffer::append(jstring arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"append",
 			"(Ljava/lang/CharSequence;II)Ljava/lang/StringBuffer;",
 			arg0,
@@ -135,7 +131,7 @@ namespace java::lang
 	}
 	QAndroidJniObject StringBuffer::appendCodePoint(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"appendCodePoint",
 			"(I)Ljava/lang/StringBuffer;",
 			arg0
@@ -143,14 +139,14 @@ namespace java::lang
 	}
 	jint StringBuffer::capacity()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"capacity",
 			"()I"
 		);
 	}
 	jchar StringBuffer::charAt(jint arg0)
 	{
-		return __thiz.callMethod<jchar>(
+		return callMethod<jchar>(
 			"charAt",
 			"(I)C",
 			arg0
@@ -158,14 +154,14 @@ namespace java::lang
 	}
 	QAndroidJniObject StringBuffer::chars()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"chars",
 			"()Ljava/util/stream/IntStream;"
 		);
 	}
 	jint StringBuffer::codePointAt(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"codePointAt",
 			"(I)I",
 			arg0
@@ -173,7 +169,7 @@ namespace java::lang
 	}
 	jint StringBuffer::codePointBefore(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"codePointBefore",
 			"(I)I",
 			arg0
@@ -181,7 +177,7 @@ namespace java::lang
 	}
 	jint StringBuffer::codePointCount(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"codePointCount",
 			"(II)I",
 			arg0,
@@ -190,14 +186,14 @@ namespace java::lang
 	}
 	QAndroidJniObject StringBuffer::codePoints()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"codePoints",
 			"()Ljava/util/stream/IntStream;"
 		);
 	}
 	jint StringBuffer::compareTo(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -205,15 +201,15 @@ namespace java::lang
 	}
 	jint StringBuffer::compareTo(java::lang::StringBuffer arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/StringBuffer;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject StringBuffer::_delete(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"delete",
 			"(II)Ljava/lang/StringBuffer;",
 			arg0,
@@ -222,7 +218,7 @@ namespace java::lang
 	}
 	QAndroidJniObject StringBuffer::deleteCharAt(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"deleteCharAt",
 			"(I)Ljava/lang/StringBuffer;",
 			arg0
@@ -230,7 +226,7 @@ namespace java::lang
 	}
 	void StringBuffer::ensureCapacity(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"ensureCapacity",
 			"(I)V",
 			arg0
@@ -238,7 +234,7 @@ namespace java::lang
 	}
 	void StringBuffer::getChars(jint arg0, jint arg1, jcharArray arg2, jint arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"getChars",
 			"(II[CI)V",
 			arg0,
@@ -249,7 +245,7 @@ namespace java::lang
 	}
 	jint StringBuffer::indexOf(jstring arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"indexOf",
 			"(Ljava/lang/String;)I",
 			arg0
@@ -257,7 +253,7 @@ namespace java::lang
 	}
 	jint StringBuffer::indexOf(jstring arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"indexOf",
 			"(Ljava/lang/String;I)I",
 			arg0,
@@ -266,7 +262,7 @@ namespace java::lang
 	}
 	QAndroidJniObject StringBuffer::insert(jint arg0, jcharArray arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"insert",
 			"(I[C)Ljava/lang/StringBuffer;",
 			arg0,
@@ -275,7 +271,7 @@ namespace java::lang
 	}
 	QAndroidJniObject StringBuffer::insert(jint arg0, jboolean arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"insert",
 			"(IZ)Ljava/lang/StringBuffer;",
 			arg0,
@@ -284,7 +280,7 @@ namespace java::lang
 	}
 	QAndroidJniObject StringBuffer::insert(jint arg0, jchar arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"insert",
 			"(IC)Ljava/lang/StringBuffer;",
 			arg0,
@@ -293,7 +289,7 @@ namespace java::lang
 	}
 	QAndroidJniObject StringBuffer::insert(jint arg0, jdouble arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"insert",
 			"(ID)Ljava/lang/StringBuffer;",
 			arg0,
@@ -302,7 +298,7 @@ namespace java::lang
 	}
 	QAndroidJniObject StringBuffer::insert(jint arg0, jfloat arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"insert",
 			"(IF)Ljava/lang/StringBuffer;",
 			arg0,
@@ -311,7 +307,7 @@ namespace java::lang
 	}
 	QAndroidJniObject StringBuffer::insert(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"insert",
 			"(II)Ljava/lang/StringBuffer;",
 			arg0,
@@ -320,7 +316,7 @@ namespace java::lang
 	}
 	QAndroidJniObject StringBuffer::insert(jint arg0, jstring arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"insert",
 			"(ILjava/lang/CharSequence;)Ljava/lang/StringBuffer;",
 			arg0,
@@ -329,7 +325,7 @@ namespace java::lang
 	}
 	QAndroidJniObject StringBuffer::insert(jint arg0, jobject arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"insert",
 			"(ILjava/lang/Object;)Ljava/lang/StringBuffer;",
 			arg0,
@@ -338,7 +334,7 @@ namespace java::lang
 	}
 	QAndroidJniObject StringBuffer::insert(jint arg0, jlong arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"insert",
 			"(IJ)Ljava/lang/StringBuffer;",
 			arg0,
@@ -347,7 +343,7 @@ namespace java::lang
 	}
 	QAndroidJniObject StringBuffer::insert(jint arg0, jcharArray arg1, jint arg2, jint arg3)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"insert",
 			"(I[CII)Ljava/lang/StringBuffer;",
 			arg0,
@@ -358,7 +354,7 @@ namespace java::lang
 	}
 	QAndroidJniObject StringBuffer::insert(jint arg0, jstring arg1, jint arg2, jint arg3)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"insert",
 			"(ILjava/lang/CharSequence;II)Ljava/lang/StringBuffer;",
 			arg0,
@@ -369,7 +365,7 @@ namespace java::lang
 	}
 	jint StringBuffer::lastIndexOf(jstring arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"lastIndexOf",
 			"(Ljava/lang/String;)I",
 			arg0
@@ -377,7 +373,7 @@ namespace java::lang
 	}
 	jint StringBuffer::lastIndexOf(jstring arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"lastIndexOf",
 			"(Ljava/lang/String;I)I",
 			arg0,
@@ -386,14 +382,14 @@ namespace java::lang
 	}
 	jint StringBuffer::length()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"length",
 			"()I"
 		);
 	}
 	jint StringBuffer::offsetByCodePoints(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"offsetByCodePoints",
 			"(II)I",
 			arg0,
@@ -402,7 +398,7 @@ namespace java::lang
 	}
 	QAndroidJniObject StringBuffer::replace(jint arg0, jint arg1, jstring arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"replace",
 			"(IILjava/lang/String;)Ljava/lang/StringBuffer;",
 			arg0,
@@ -412,14 +408,14 @@ namespace java::lang
 	}
 	QAndroidJniObject StringBuffer::reverse()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"reverse",
 			"()Ljava/lang/StringBuffer;"
 		);
 	}
 	void StringBuffer::setCharAt(jint arg0, jchar arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCharAt",
 			"(IC)V",
 			arg0,
@@ -428,7 +424,7 @@ namespace java::lang
 	}
 	void StringBuffer::setLength(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLength",
 			"(I)V",
 			arg0
@@ -436,7 +432,7 @@ namespace java::lang
 	}
 	jstring StringBuffer::subSequence(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"subSequence",
 			"(II)Ljava/lang/CharSequence;",
 			arg0,
@@ -445,7 +441,7 @@ namespace java::lang
 	}
 	jstring StringBuffer::substring(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"substring",
 			"(I)Ljava/lang/String;",
 			arg0
@@ -453,7 +449,7 @@ namespace java::lang
 	}
 	jstring StringBuffer::substring(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"substring",
 			"(II)Ljava/lang/String;",
 			arg0,
@@ -462,14 +458,14 @@ namespace java::lang
 	}
 	jstring StringBuffer::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void StringBuffer::trimToSize()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"trimToSize",
 			"()V"
 		);

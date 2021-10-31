@@ -48,13 +48,15 @@ namespace android::widget
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit VideoView(const char *className, const char *sig, Ts...agv) : android::view::SurfaceView(className, sig, std::forward<Ts>(agv)...) {}
 		VideoView(QAndroidJniObject obj);
+		
 		// Constructors
 		VideoView(android::content::Context arg0);
 		VideoView(android::content::Context arg0, __JniBaseClass arg1);
 		VideoView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		VideoView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
-		VideoView() = default;
 		
 		// Methods
 		void addSubtitleSource(java::io::InputStream arg0, android::media::MediaFormat arg1);

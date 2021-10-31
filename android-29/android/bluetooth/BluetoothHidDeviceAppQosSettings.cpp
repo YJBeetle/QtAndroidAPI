@@ -41,11 +41,12 @@ namespace android::bluetooth
 		);
 	}
 	
-	BluetoothHidDeviceAppQosSettings::BluetoothHidDeviceAppQosSettings(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BluetoothHidDeviceAppQosSettings::BluetoothHidDeviceAppQosSettings(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	BluetoothHidDeviceAppQosSettings::BluetoothHidDeviceAppQosSettings(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.bluetooth.BluetoothHidDeviceAppQosSettings",
 			"(IIIIII)V",
 			arg0,
@@ -54,65 +55,64 @@ namespace android::bluetooth
 			arg3,
 			arg4,
 			arg5
-		);
-	}
+		) {}
 	
 	// Methods
 	jint BluetoothHidDeviceAppQosSettings::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jint BluetoothHidDeviceAppQosSettings::getDelayVariation()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDelayVariation",
 			"()I"
 		);
 	}
 	jint BluetoothHidDeviceAppQosSettings::getLatency()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLatency",
 			"()I"
 		);
 	}
 	jint BluetoothHidDeviceAppQosSettings::getPeakBandwidth()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPeakBandwidth",
 			"()I"
 		);
 	}
 	jint BluetoothHidDeviceAppQosSettings::getServiceType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getServiceType",
 			"()I"
 		);
 	}
 	jint BluetoothHidDeviceAppQosSettings::getTokenBucketSize()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTokenBucketSize",
 			"()I"
 		);
 	}
 	jint BluetoothHidDeviceAppQosSettings::getTokenRate()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTokenRate",
 			"()I"
 		);
 	}
 	void BluetoothHidDeviceAppQosSettings::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

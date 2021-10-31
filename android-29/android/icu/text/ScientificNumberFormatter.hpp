@@ -18,9 +18,11 @@ namespace android::icu::text
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ScientificNumberFormatter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ScientificNumberFormatter(QAndroidJniObject obj);
+		
 		// Constructors
-		ScientificNumberFormatter() = default;
 		
 		// Methods
 		static QAndroidJniObject getMarkupInstance(android::icu::text::DecimalFormat arg0, jstring arg1, jstring arg2);

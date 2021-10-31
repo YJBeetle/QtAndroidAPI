@@ -9,7 +9,9 @@ namespace java::security
 {
 	// Fields
 	
-	AccessController::AccessController(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AccessController::AccessController(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -19,7 +21,7 @@ namespace java::security
 			"java.security.AccessController",
 			"checkPermission",
 			"(Ljava/security/Permission;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jobject AccessController::doPrivileged(__JniBaseClass arg0)
@@ -28,7 +30,7 @@ namespace java::security
 			"java.security.AccessController",
 			"doPrivileged",
 			"(Ljava/security/PrivilegedAction;)Ljava/lang/Object;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jobject>();
 	}
 	jobject AccessController::doPrivileged(__JniBaseClass arg0, java::security::AccessControlContext arg1)
@@ -37,8 +39,8 @@ namespace java::security
 			"java.security.AccessController",
 			"doPrivileged",
 			"(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		).object<jobject>();
 	}
 	jobject AccessController::doPrivileged(__JniBaseClass arg0, java::security::AccessControlContext arg1, jarray arg2)
@@ -47,8 +49,8 @@ namespace java::security
 			"java.security.AccessController",
 			"doPrivileged",
 			"(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;[Ljava/security/Permission;)Ljava/lang/Object;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		).object<jobject>();
 	}
@@ -58,7 +60,7 @@ namespace java::security
 			"java.security.AccessController",
 			"doPrivilegedWithCombiner",
 			"(Ljava/security/PrivilegedAction;)Ljava/lang/Object;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jobject>();
 	}
 	jobject AccessController::doPrivilegedWithCombiner(__JniBaseClass arg0, java::security::AccessControlContext arg1, jarray arg2)
@@ -67,8 +69,8 @@ namespace java::security
 			"java.security.AccessController",
 			"doPrivilegedWithCombiner",
 			"(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;[Ljava/security/Permission;)Ljava/lang/Object;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		).object<jobject>();
 	}

@@ -94,108 +94,108 @@ namespace android::app
 	}
 	QAndroidJniObject Notification_Action::actionIntent()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"actionIntent",
 			"Landroid/app/PendingIntent;"
 		);
 	}
 	jint Notification_Action::icon()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"icon"
 		);
 	}
 	jstring Notification_Action::title()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"title",
 			"Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	
-	Notification_Action::Notification_Action(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Notification_Action::Notification_Action(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Notification_Action::Notification_Action(jint arg0, jstring arg1, android::app::PendingIntent arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.app.Notification$Action",
 			"(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
-		);
-	}
+			arg2.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject Notification_Action::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Landroid/app/Notification$Action;"
 		);
 	}
 	jint Notification_Action::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean Notification_Action::getAllowGeneratedReplies()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getAllowGeneratedReplies",
 			"()Z"
 		);
 	}
 	jarray Notification_Action::getDataOnlyRemoteInputs()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDataOnlyRemoteInputs",
 			"()[Landroid/app/RemoteInput;"
 		).object<jarray>();
 	}
 	QAndroidJniObject Notification_Action::getExtras()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
 	QAndroidJniObject Notification_Action::getIcon()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getIcon",
 			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
 	jarray Notification_Action::getRemoteInputs()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRemoteInputs",
 			"()[Landroid/app/RemoteInput;"
 		).object<jarray>();
 	}
 	jint Notification_Action::getSemanticAction()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSemanticAction",
 			"()I"
 		);
 	}
 	jboolean Notification_Action::isContextual()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isContextual",
 			"()Z"
 		);
 	}
 	void Notification_Action::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

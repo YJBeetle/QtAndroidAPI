@@ -26,7 +26,10 @@ namespace android::content::pm
 		jstring processName();
 		jstring splitName();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ComponentInfo(const char *className, const char *sig, Ts...agv) : android::content::pm::PackageItemInfo(className, sig, std::forward<Ts>(agv)...) {}
 		ComponentInfo(QAndroidJniObject obj);
+		
 		// Constructors
 		ComponentInfo();
 		ComponentInfo(android::content::pm::ComponentInfo &arg0);

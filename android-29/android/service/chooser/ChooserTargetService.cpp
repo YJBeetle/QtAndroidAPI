@@ -31,32 +31,32 @@ namespace android::service::chooser
 		).object<jstring>();
 	}
 	
-	ChooserTargetService::ChooserTargetService(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ChooserTargetService::ChooserTargetService(QAndroidJniObject obj) : android::app::Service(obj) {}
+	
 	// Constructors
 	ChooserTargetService::ChooserTargetService()
-	{
-		__thiz = QAndroidJniObject(
+		: android::app::Service(
 			"android.service.chooser.ChooserTargetService",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject ChooserTargetService::onBind(android::content::Intent arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onBind",
 			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ChooserTargetService::onGetChooserTargets(android::content::ComponentName arg0, android::content::IntentFilter arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onGetChooserTargets",
 			"(Landroid/content/ComponentName;Landroid/content/IntentFilter;)Ljava/util/List;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 } // namespace android::service::chooser

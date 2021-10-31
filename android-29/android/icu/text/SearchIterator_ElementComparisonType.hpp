@@ -14,9 +14,11 @@ namespace android::icu::text
 		static QAndroidJniObject PATTERN_BASE_WEIGHT_IS_WILDCARD();
 		static QAndroidJniObject STANDARD_ELEMENT_COMPARISON();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SearchIterator_ElementComparisonType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		SearchIterator_ElementComparisonType(QAndroidJniObject obj);
+		
 		// Constructors
-		SearchIterator_ElementComparisonType() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

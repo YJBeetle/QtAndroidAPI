@@ -5,31 +5,31 @@ namespace android::graphics::drawable
 {
 	// Fields
 	
-	Animatable2_AnimationCallback::Animatable2_AnimationCallback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Animatable2_AnimationCallback::Animatable2_AnimationCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Animatable2_AnimationCallback::Animatable2_AnimationCallback()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.graphics.drawable.Animatable2$AnimationCallback",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void Animatable2_AnimationCallback::onAnimationEnd(android::graphics::drawable::Drawable arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onAnimationEnd",
 			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Animatable2_AnimationCallback::onAnimationStart(android::graphics::drawable::Drawable arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onAnimationStart",
 			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::graphics::drawable

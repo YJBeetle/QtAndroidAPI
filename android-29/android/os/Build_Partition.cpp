@@ -12,13 +12,15 @@ namespace android::os
 		).object<jstring>();
 	}
 	
-	Build_Partition::Build_Partition(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Build_Partition::Build_Partition(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jboolean Build_Partition::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -26,28 +28,28 @@ namespace android::os
 	}
 	jlong Build_Partition::getBuildTimeMillis()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getBuildTimeMillis",
 			"()J"
 		);
 	}
 	jstring Build_Partition::getFingerprint()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFingerprint",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Build_Partition::getName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint Build_Partition::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);

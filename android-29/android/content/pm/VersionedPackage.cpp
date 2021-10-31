@@ -13,69 +13,67 @@ namespace android::content::pm
 		);
 	}
 	
-	VersionedPackage::VersionedPackage(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	VersionedPackage::VersionedPackage(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	VersionedPackage::VersionedPackage(jstring arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.content.pm.VersionedPackage",
 			"(Ljava/lang/String;I)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	VersionedPackage::VersionedPackage(jstring arg0, jlong arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.content.pm.VersionedPackage",
 			"(Ljava/lang/String;J)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jint VersionedPackage::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jlong VersionedPackage::getLongVersionCode()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getLongVersionCode",
 			"()J"
 		);
 	}
 	jstring VersionedPackage::getPackageName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint VersionedPackage::getVersionCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getVersionCode",
 			"()I"
 		);
 	}
 	jstring VersionedPackage::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void VersionedPackage::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

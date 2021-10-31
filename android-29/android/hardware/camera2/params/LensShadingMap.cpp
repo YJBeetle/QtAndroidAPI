@@ -12,13 +12,15 @@ namespace android::hardware::camera2::params
 		);
 	}
 	
-	LensShadingMap::LensShadingMap(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	LensShadingMap::LensShadingMap(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void LensShadingMap::copyGainFactors(jfloatArray arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"copyGainFactors",
 			"([FI)V",
 			arg0,
@@ -27,7 +29,7 @@ namespace android::hardware::camera2::params
 	}
 	jboolean LensShadingMap::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -35,14 +37,14 @@ namespace android::hardware::camera2::params
 	}
 	jint LensShadingMap::getColumnCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getColumnCount",
 			"()I"
 		);
 	}
 	jfloat LensShadingMap::getGainFactor(jint arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getGainFactor",
 			"(III)F",
 			arg0,
@@ -52,14 +54,14 @@ namespace android::hardware::camera2::params
 	}
 	jint LensShadingMap::getGainFactorCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getGainFactorCount",
 			"()I"
 		);
 	}
 	QAndroidJniObject LensShadingMap::getGainFactorVector(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getGainFactorVector",
 			"(II)Landroid/hardware/camera2/params/RggbChannelVector;",
 			arg0,
@@ -68,21 +70,21 @@ namespace android::hardware::camera2::params
 	}
 	jint LensShadingMap::getRowCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRowCount",
 			"()I"
 		);
 	}
 	jint LensShadingMap::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring LensShadingMap::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

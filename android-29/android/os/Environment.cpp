@@ -189,15 +189,15 @@ namespace android::os
 		).object<jstring>();
 	}
 	
-	Environment::Environment(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Environment::Environment(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Environment::Environment()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.os.Environment",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject Environment::getDataDirectory()
@@ -247,7 +247,7 @@ namespace android::os
 			"android.os.Environment",
 			"getExternalStorageState",
 			"(Ljava/io/File;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	QAndroidJniObject Environment::getRootDirectory()
@@ -264,7 +264,7 @@ namespace android::os
 			"android.os.Environment",
 			"getStorageState",
 			"(Ljava/io/File;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jboolean Environment::isExternalStorageEmulated()
@@ -281,7 +281,7 @@ namespace android::os
 			"android.os.Environment",
 			"isExternalStorageEmulated",
 			"(Ljava/io/File;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean Environment::isExternalStorageLegacy()
@@ -298,7 +298,7 @@ namespace android::os
 			"android.os.Environment",
 			"isExternalStorageLegacy",
 			"(Ljava/io/File;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean Environment::isExternalStorageRemovable()
@@ -315,7 +315,7 @@ namespace android::os
 			"android.os.Environment",
 			"isExternalStorageRemovable",
 			"(Ljava/io/File;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::os

@@ -10,7 +10,10 @@ namespace android::media
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AudioManager_AudioPlaybackCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AudioManager_AudioPlaybackCallback(QAndroidJniObject obj);
+		
 		// Constructors
 		AudioManager_AudioPlaybackCallback();
 		

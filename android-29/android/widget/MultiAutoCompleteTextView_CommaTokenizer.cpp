@@ -4,20 +4,20 @@ namespace android::widget
 {
 	// Fields
 	
-	MultiAutoCompleteTextView_CommaTokenizer::MultiAutoCompleteTextView_CommaTokenizer(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MultiAutoCompleteTextView_CommaTokenizer::MultiAutoCompleteTextView_CommaTokenizer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MultiAutoCompleteTextView_CommaTokenizer::MultiAutoCompleteTextView_CommaTokenizer()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.widget.MultiAutoCompleteTextView$CommaTokenizer",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jint MultiAutoCompleteTextView_CommaTokenizer::findTokenEnd(jstring arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"findTokenEnd",
 			"(Ljava/lang/CharSequence;I)I",
 			arg0,
@@ -26,7 +26,7 @@ namespace android::widget
 	}
 	jint MultiAutoCompleteTextView_CommaTokenizer::findTokenStart(jstring arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"findTokenStart",
 			"(Ljava/lang/CharSequence;I)I",
 			arg0,
@@ -35,7 +35,7 @@ namespace android::widget
 	}
 	jstring MultiAutoCompleteTextView_CommaTokenizer::terminateToken(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"terminateToken",
 			"(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;",
 			arg0

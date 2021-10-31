@@ -24,7 +24,10 @@ namespace android::hardware
 		QAndroidJniObject rightEye();
 		jint score();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Camera_Face(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Camera_Face(QAndroidJniObject obj);
+		
 		// Constructors
 		Camera_Face();
 		

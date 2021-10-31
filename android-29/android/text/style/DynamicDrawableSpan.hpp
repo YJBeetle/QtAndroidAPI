@@ -32,7 +32,10 @@ namespace android::text::style
 		static jint ALIGN_BOTTOM();
 		static jint ALIGN_CENTER();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DynamicDrawableSpan(const char *className, const char *sig, Ts...agv) : android::text::style::ReplacementSpan(className, sig, std::forward<Ts>(agv)...) {}
 		DynamicDrawableSpan(QAndroidJniObject obj);
+		
 		// Constructors
 		DynamicDrawableSpan();
 		

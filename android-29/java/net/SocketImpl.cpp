@@ -9,20 +9,20 @@ namespace java::net
 {
 	// Fields
 	
-	SocketImpl::SocketImpl(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SocketImpl::SocketImpl(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	SocketImpl::SocketImpl()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.net.SocketImpl",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring SocketImpl::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

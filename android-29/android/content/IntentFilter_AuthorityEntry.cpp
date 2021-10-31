@@ -5,22 +5,22 @@ namespace android::content
 {
 	// Fields
 	
-	IntentFilter_AuthorityEntry::IntentFilter_AuthorityEntry(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	IntentFilter_AuthorityEntry::IntentFilter_AuthorityEntry(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	IntentFilter_AuthorityEntry::IntentFilter_AuthorityEntry(jstring arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.content.IntentFilter$AuthorityEntry",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean IntentFilter_AuthorityEntry::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -28,24 +28,24 @@ namespace android::content
 	}
 	jstring IntentFilter_AuthorityEntry::getHost()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getHost",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint IntentFilter_AuthorityEntry::getPort()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPort",
 			"()I"
 		);
 	}
 	jint IntentFilter_AuthorityEntry::match(android::net::Uri arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"match",
 			"(Landroid/net/Uri;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::content

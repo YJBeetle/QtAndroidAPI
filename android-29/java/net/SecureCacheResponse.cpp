@@ -5,55 +5,55 @@ namespace java::net
 {
 	// Fields
 	
-	SecureCacheResponse::SecureCacheResponse(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SecureCacheResponse::SecureCacheResponse(QAndroidJniObject obj) : java::net::CacheResponse(obj) {}
+	
 	// Constructors
 	SecureCacheResponse::SecureCacheResponse()
-	{
-		__thiz = QAndroidJniObject(
+		: java::net::CacheResponse(
 			"java.net.SecureCacheResponse",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring SecureCacheResponse::getCipherSuite()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCipherSuite",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject SecureCacheResponse::getLocalCertificateChain()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLocalCertificateChain",
 			"()Ljava/util/List;"
 		);
 	}
 	QAndroidJniObject SecureCacheResponse::getLocalPrincipal()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLocalPrincipal",
 			"()Ljava/security/Principal;"
 		);
 	}
 	QAndroidJniObject SecureCacheResponse::getPeerPrincipal()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPeerPrincipal",
 			"()Ljava/security/Principal;"
 		);
 	}
 	QAndroidJniObject SecureCacheResponse::getSSLSession()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSSLSession",
 			"()Ljava/util/Optional;"
 		);
 	}
 	QAndroidJniObject SecureCacheResponse::getServerCertificateChain()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getServerCertificateChain",
 			"()Ljava/util/List;"
 		);

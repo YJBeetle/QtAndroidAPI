@@ -5,23 +5,21 @@ namespace android::telephony::cdma
 {
 	// Fields
 	
-	CdmaCellLocation::CdmaCellLocation(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CdmaCellLocation::CdmaCellLocation(QAndroidJniObject obj) : android::telephony::CellLocation(obj) {}
+	
 	// Constructors
 	CdmaCellLocation::CdmaCellLocation()
-	{
-		__thiz = QAndroidJniObject(
+		: android::telephony::CellLocation(
 			"android.telephony.cdma.CdmaCellLocation",
 			"()V"
-		);
-	}
+		) {}
 	CdmaCellLocation::CdmaCellLocation(android::os::Bundle arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::telephony::CellLocation(
 			"android.telephony.cdma.CdmaCellLocation",
 			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jdouble CdmaCellLocation::convertQuartSecToDecDegrees(jint arg0)
@@ -35,7 +33,7 @@ namespace android::telephony::cdma
 	}
 	jboolean CdmaCellLocation::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -43,57 +41,57 @@ namespace android::telephony::cdma
 	}
 	void CdmaCellLocation::fillInNotifierBundle(android::os::Bundle arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"fillInNotifierBundle",
 			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint CdmaCellLocation::getBaseStationId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getBaseStationId",
 			"()I"
 		);
 	}
 	jint CdmaCellLocation::getBaseStationLatitude()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getBaseStationLatitude",
 			"()I"
 		);
 	}
 	jint CdmaCellLocation::getBaseStationLongitude()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getBaseStationLongitude",
 			"()I"
 		);
 	}
 	jint CdmaCellLocation::getNetworkId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getNetworkId",
 			"()I"
 		);
 	}
 	jint CdmaCellLocation::getSystemId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSystemId",
 			"()I"
 		);
 	}
 	jint CdmaCellLocation::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	void CdmaCellLocation::setCellLocationData(jint arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCellLocationData",
 			"(III)V",
 			arg0,
@@ -103,7 +101,7 @@ namespace android::telephony::cdma
 	}
 	void CdmaCellLocation::setCellLocationData(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCellLocationData",
 			"(IIIII)V",
 			arg0,
@@ -115,14 +113,14 @@ namespace android::telephony::cdma
 	}
 	void CdmaCellLocation::setStateInvalid()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setStateInvalid",
 			"()V"
 		);
 	}
 	jstring CdmaCellLocation::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

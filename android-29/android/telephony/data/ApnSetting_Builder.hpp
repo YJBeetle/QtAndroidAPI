@@ -22,7 +22,10 @@ namespace android::telephony::data
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ApnSetting_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ApnSetting_Builder(QAndroidJniObject obj);
+		
 		// Constructors
 		ApnSetting_Builder();
 		

@@ -23,9 +23,11 @@ namespace android::net
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit LinkAddress(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		LinkAddress(QAndroidJniObject obj);
+		
 		// Constructors
-		LinkAddress() = default;
 		
 		// Methods
 		jint describeContents();

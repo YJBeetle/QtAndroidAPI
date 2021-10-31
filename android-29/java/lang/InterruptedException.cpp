@@ -4,23 +4,21 @@ namespace java::lang
 {
 	// Fields
 	
-	InterruptedException::InterruptedException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	InterruptedException::InterruptedException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
+	
 	// Constructors
 	InterruptedException::InterruptedException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Exception(
 			"java.lang.InterruptedException",
 			"()V"
-		);
-	}
+		) {}
 	InterruptedException::InterruptedException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Exception(
 			"java.lang.InterruptedException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::lang

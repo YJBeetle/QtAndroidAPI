@@ -31,9 +31,11 @@ namespace java::time::temporal
 		static QAndroidJniObject WEEKS();
 		static QAndroidJniObject YEARS();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ChronoUnit(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		ChronoUnit(QAndroidJniObject obj);
+		
 		// Constructors
-		ChronoUnit() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

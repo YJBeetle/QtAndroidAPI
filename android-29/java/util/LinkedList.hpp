@@ -21,7 +21,10 @@ namespace java::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit LinkedList(const char *className, const char *sig, Ts...agv) : java::util::AbstractSequentialList(className, sig, std::forward<Ts>(agv)...) {}
 		LinkedList(QAndroidJniObject obj);
+		
 		// Constructors
 		LinkedList();
 		LinkedList(__JniBaseClass arg0);

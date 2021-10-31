@@ -6,36 +6,34 @@ namespace android::app
 {
 	// Fields
 	
-	Notification_MediaStyle::Notification_MediaStyle(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Notification_MediaStyle::Notification_MediaStyle(QAndroidJniObject obj) : android::app::Notification_Style(obj) {}
+	
 	// Constructors
 	Notification_MediaStyle::Notification_MediaStyle()
-	{
-		__thiz = QAndroidJniObject(
+		: android::app::Notification_Style(
 			"android.app.Notification$MediaStyle",
 			"()V"
-		);
-	}
+		) {}
 	Notification_MediaStyle::Notification_MediaStyle(android::app::Notification_Builder arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::app::Notification_Style(
 			"android.app.Notification$MediaStyle",
 			"(Landroid/app/Notification$Builder;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject Notification_MediaStyle::setMediaSession(android::media::session::MediaSession_Token arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setMediaSession",
 			"(Landroid/media/session/MediaSession$Token;)Landroid/app/Notification$MediaStyle;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Notification_MediaStyle::setShowActionsInCompactView(jintArray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setShowActionsInCompactView",
 			"([I)Landroid/app/Notification$MediaStyle;",
 			arg0

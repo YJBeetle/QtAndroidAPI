@@ -6,13 +6,15 @@ namespace android::nfc
 {
 	// Fields
 	
-	NfcManager::NfcManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NfcManager::NfcManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject NfcManager::getDefaultAdapter()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDefaultAdapter",
 			"()Landroid/nfc/NfcAdapter;"
 		);

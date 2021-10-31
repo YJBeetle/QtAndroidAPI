@@ -13,11 +13,13 @@ namespace java::time::zone
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ZoneRulesException(const char *className, const char *sig, Ts...agv) : java::time::DateTimeException(className, sig, std::forward<Ts>(agv)...) {}
 		ZoneRulesException(QAndroidJniObject obj);
+		
 		// Constructors
 		ZoneRulesException(jstring arg0);
 		ZoneRulesException(jstring arg0, jthrowable arg1);
-		ZoneRulesException() = default;
 		
 		// Methods
 	};

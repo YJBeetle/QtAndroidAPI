@@ -24,15 +24,15 @@ namespace android::net
 		).object<jstring>();
 	}
 	
-	VpnService::VpnService(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	VpnService::VpnService(QAndroidJniObject obj) : android::app::Service(obj) {}
+	
 	// Constructors
 	VpnService::VpnService()
-	{
-		__thiz = QAndroidJniObject(
+		: android::app::Service(
 			"android.net.VpnService",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject VpnService::prepare(android::content::Context arg0)
@@ -41,41 +41,41 @@ namespace android::net
 			"android.net.VpnService",
 			"prepare",
 			"(Landroid/content/Context;)Landroid/content/Intent;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean VpnService::isAlwaysOn()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isAlwaysOn",
 			"()Z"
 		);
 	}
 	jboolean VpnService::isLockdownEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isLockdownEnabled",
 			"()Z"
 		);
 	}
 	QAndroidJniObject VpnService::onBind(android::content::Intent arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onBind",
 			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void VpnService::onRevoke()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onRevoke",
 			"()V"
 		);
 	}
 	jboolean VpnService::protect(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"protect",
 			"(I)Z",
 			arg0
@@ -83,23 +83,23 @@ namespace android::net
 	}
 	jboolean VpnService::protect(java::net::DatagramSocket arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"protect",
 			"(Ljava/net/DatagramSocket;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean VpnService::protect(java::net::Socket arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"protect",
 			"(Ljava/net/Socket;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean VpnService::setUnderlyingNetworks(jarray arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"setUnderlyingNetworks",
 			"([Landroid/net/Network;)Z",
 			arg0

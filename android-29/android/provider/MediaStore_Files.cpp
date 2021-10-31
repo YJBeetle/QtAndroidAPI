@@ -5,15 +5,15 @@ namespace android::provider
 {
 	// Fields
 	
-	MediaStore_Files::MediaStore_Files(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaStore_Files::MediaStore_Files(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MediaStore_Files::MediaStore_Files()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.provider.MediaStore$Files",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject MediaStore_Files::getContentUri(jstring arg0)

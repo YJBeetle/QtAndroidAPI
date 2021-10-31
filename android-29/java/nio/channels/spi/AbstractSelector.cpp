@@ -8,27 +8,29 @@ namespace java::nio::channels::spi
 {
 	// Fields
 	
-	AbstractSelector::AbstractSelector(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AbstractSelector::AbstractSelector(QAndroidJniObject obj) : java::nio::channels::Selector(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void AbstractSelector::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	jboolean AbstractSelector::isOpen()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isOpen",
 			"()Z"
 		);
 	}
 	QAndroidJniObject AbstractSelector::provider()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"provider",
 			"()Ljava/nio/channels/spi/SelectorProvider;"
 		);

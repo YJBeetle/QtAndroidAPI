@@ -9,15 +9,15 @@ namespace java::net
 {
 	// Fields
 	
-	DatagramSocketImpl::DatagramSocketImpl(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DatagramSocketImpl::DatagramSocketImpl(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	DatagramSocketImpl::DatagramSocketImpl()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.net.DatagramSocketImpl",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::net

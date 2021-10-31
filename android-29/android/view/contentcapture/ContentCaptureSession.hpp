@@ -30,9 +30,11 @@ namespace android::view::contentcapture
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ContentCaptureSession(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ContentCaptureSession(QAndroidJniObject obj);
+		
 		// Constructors
-		ContentCaptureSession() = default;
 		
 		// Methods
 		void close();

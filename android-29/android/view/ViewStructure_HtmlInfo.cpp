@@ -4,27 +4,27 @@ namespace android::view
 {
 	// Fields
 	
-	ViewStructure_HtmlInfo::ViewStructure_HtmlInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ViewStructure_HtmlInfo::ViewStructure_HtmlInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ViewStructure_HtmlInfo::ViewStructure_HtmlInfo()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.ViewStructure$HtmlInfo",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject ViewStructure_HtmlInfo::getAttributes()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAttributes",
 			"()Ljava/util/List;"
 		);
 	}
 	jstring ViewStructure_HtmlInfo::getTag()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTag",
 			"()Ljava/lang/String;"
 		).object<jstring>();

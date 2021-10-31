@@ -154,52 +154,50 @@ namespace android::app
 	}
 	jint NotificationManager_Policy::priorityCallSenders()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"priorityCallSenders"
 		);
 	}
 	jint NotificationManager_Policy::priorityCategories()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"priorityCategories"
 		);
 	}
 	jint NotificationManager_Policy::priorityMessageSenders()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"priorityMessageSenders"
 		);
 	}
 	jint NotificationManager_Policy::suppressedVisualEffects()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"suppressedVisualEffects"
 		);
 	}
 	
-	NotificationManager_Policy::NotificationManager_Policy(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NotificationManager_Policy::NotificationManager_Policy(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	NotificationManager_Policy::NotificationManager_Policy(jint arg0, jint arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.app.NotificationManager$Policy",
 			"(III)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	NotificationManager_Policy::NotificationManager_Policy(jint arg0, jint arg1, jint arg2, jint arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.app.NotificationManager$Policy",
 			"(IIII)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring NotificationManager_Policy::priorityCategoriesToString(jint arg0)
@@ -231,14 +229,14 @@ namespace android::app
 	}
 	jint NotificationManager_Policy::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean NotificationManager_Policy::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -246,24 +244,24 @@ namespace android::app
 	}
 	jint NotificationManager_Policy::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring NotificationManager_Policy::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void NotificationManager_Policy::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

@@ -1488,13 +1488,15 @@ namespace android::hardware::camera2
 		);
 	}
 	
-	CameraMetadata::CameraMetadata(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CameraMetadata::CameraMetadata(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject CameraMetadata::getKeys()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getKeys",
 			"()Ljava/util/List;"
 		);

@@ -46,13 +46,15 @@ namespace android::widget
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Switch(const char *className, const char *sig, Ts...agv) : android::widget::CompoundButton(className, sig, std::forward<Ts>(agv)...) {}
 		Switch(QAndroidJniObject obj);
+		
 		// Constructors
 		Switch(android::content::Context arg0);
 		Switch(android::content::Context arg0, __JniBaseClass arg1);
 		Switch(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		Switch(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
-		Switch() = default;
 		
 		// Methods
 		void draw(android::graphics::Canvas arg0);

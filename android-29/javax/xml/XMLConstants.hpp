@@ -26,9 +26,11 @@ namespace javax::xml
 		static jstring XML_NS_PREFIX();
 		static jstring XML_NS_URI();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit XMLConstants(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		XMLConstants(QAndroidJniObject obj);
+		
 		// Constructors
-		XMLConstants() = default;
 		
 		// Methods
 	};

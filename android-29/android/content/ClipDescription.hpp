@@ -23,11 +23,13 @@ namespace android::content
 		static jstring MIMETYPE_TEXT_PLAIN();
 		static jstring MIMETYPE_TEXT_URILIST();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ClipDescription(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ClipDescription(QAndroidJniObject obj);
+		
 		// Constructors
 		ClipDescription(android::content::ClipDescription &arg0);
 		ClipDescription(jstring arg0, jarray arg1);
-		ClipDescription() = default;
 		
 		// Methods
 		static jboolean compareMimeTypes(jstring arg0, jstring arg1);

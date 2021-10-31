@@ -11,15 +11,15 @@ namespace android::graphics
 {
 	// Fields
 	
-	BitmapFactory::BitmapFactory(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BitmapFactory::BitmapFactory(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	BitmapFactory::BitmapFactory()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.graphics.BitmapFactory",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject BitmapFactory::decodeByteArray(jbyteArray arg0, jint arg1, jint arg2)
@@ -42,7 +42,7 @@ namespace android::graphics
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	QAndroidJniObject BitmapFactory::decodeFile(jstring arg0)
@@ -61,7 +61,7 @@ namespace android::graphics
 			"decodeFile",
 			"(Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject BitmapFactory::decodeFileDescriptor(java::io::FileDescriptor arg0)
@@ -70,7 +70,7 @@ namespace android::graphics
 			"android.graphics.BitmapFactory",
 			"decodeFileDescriptor",
 			"(Ljava/io/FileDescriptor;)Landroid/graphics/Bitmap;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject BitmapFactory::decodeFileDescriptor(java::io::FileDescriptor arg0, android::graphics::Rect arg1, android::graphics::BitmapFactory_Options arg2)
@@ -79,9 +79,9 @@ namespace android::graphics
 			"android.graphics.BitmapFactory",
 			"decodeFileDescriptor",
 			"(Ljava/io/FileDescriptor;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject BitmapFactory::decodeResource(android::content::res::Resources arg0, jint arg1)
@@ -90,7 +90,7 @@ namespace android::graphics
 			"android.graphics.BitmapFactory",
 			"decodeResource",
 			"(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -100,9 +100,9 @@ namespace android::graphics
 			"android.graphics.BitmapFactory",
 			"decodeResource",
 			"(Landroid/content/res/Resources;ILandroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	QAndroidJniObject BitmapFactory::decodeResourceStream(android::content::res::Resources arg0, android::util::TypedValue arg1, java::io::InputStream arg2, android::graphics::Rect arg3, android::graphics::BitmapFactory_Options arg4)
@@ -111,11 +111,11 @@ namespace android::graphics
 			"android.graphics.BitmapFactory",
 			"decodeResourceStream",
 			"(Landroid/content/res/Resources;Landroid/util/TypedValue;Ljava/io/InputStream;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object(),
+			arg4.object()
 		);
 	}
 	QAndroidJniObject BitmapFactory::decodeStream(java::io::InputStream arg0)
@@ -124,7 +124,7 @@ namespace android::graphics
 			"android.graphics.BitmapFactory",
 			"decodeStream",
 			"(Ljava/io/InputStream;)Landroid/graphics/Bitmap;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject BitmapFactory::decodeStream(java::io::InputStream arg0, android::graphics::Rect arg1, android::graphics::BitmapFactory_Options arg2)
@@ -133,9 +133,9 @@ namespace android::graphics
 			"android.graphics.BitmapFactory",
 			"decodeStream",
 			"(Ljava/io/InputStream;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 } // namespace android::graphics

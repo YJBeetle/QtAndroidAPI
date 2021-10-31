@@ -11,15 +11,15 @@ namespace android
 		);
 	}
 	
-	R_mipmap::R_mipmap(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	R_mipmap::R_mipmap(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	R_mipmap::R_mipmap()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.R$mipmap",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android

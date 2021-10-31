@@ -6,7 +6,7 @@ namespace android::net::wifi
 	// Fields
 	jstring ScanResult::BSSID()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"BSSID",
 			"Ljava/lang/String;"
 		).object<jstring>();
@@ -48,107 +48,109 @@ namespace android::net::wifi
 	}
 	jstring ScanResult::SSID()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"SSID",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring ScanResult::capabilities()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"capabilities",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint ScanResult::centerFreq0()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"centerFreq0"
 		);
 	}
 	jint ScanResult::centerFreq1()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"centerFreq1"
 		);
 	}
 	jint ScanResult::channelWidth()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"channelWidth"
 		);
 	}
 	jint ScanResult::frequency()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"frequency"
 		);
 	}
 	jint ScanResult::level()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"level"
 		);
 	}
 	jstring ScanResult::operatorFriendlyName()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"operatorFriendlyName",
 			"Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jlong ScanResult::timestamp()
 	{
-		return __thiz.getField<jlong>(
+		return getField<jlong>(
 			"timestamp"
 		);
 	}
 	jstring ScanResult::venueName()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"venueName",
 			"Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	
-	ScanResult::ScanResult(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ScanResult::ScanResult(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint ScanResult::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean ScanResult::is80211mcResponder()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"is80211mcResponder",
 			"()Z"
 		);
 	}
 	jboolean ScanResult::isPasspointNetwork()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isPasspointNetwork",
 			"()Z"
 		);
 	}
 	jstring ScanResult::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void ScanResult::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

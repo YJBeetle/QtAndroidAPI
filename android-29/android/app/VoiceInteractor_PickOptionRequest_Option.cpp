@@ -14,22 +14,22 @@ namespace android::app
 		);
 	}
 	
-	VoiceInteractor_PickOptionRequest_Option::VoiceInteractor_PickOptionRequest_Option(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	VoiceInteractor_PickOptionRequest_Option::VoiceInteractor_PickOptionRequest_Option(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	VoiceInteractor_PickOptionRequest_Option::VoiceInteractor_PickOptionRequest_Option(jstring arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.app.VoiceInteractor$PickOptionRequest$Option",
 			"(Ljava/lang/CharSequence;I)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject VoiceInteractor_PickOptionRequest_Option::addSynonym(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"addSynonym",
 			"(Ljava/lang/CharSequence;)Landroid/app/VoiceInteractor$PickOptionRequest$Option;",
 			arg0
@@ -37,42 +37,42 @@ namespace android::app
 	}
 	jint VoiceInteractor_PickOptionRequest_Option::countSynonyms()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"countSynonyms",
 			"()I"
 		);
 	}
 	jint VoiceInteractor_PickOptionRequest_Option::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	QAndroidJniObject VoiceInteractor_PickOptionRequest_Option::getExtras()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
 	jint VoiceInteractor_PickOptionRequest_Option::getIndex()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getIndex",
 			"()I"
 		);
 	}
 	jstring VoiceInteractor_PickOptionRequest_Option::getLabel()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jstring VoiceInteractor_PickOptionRequest_Option::getSynonymAt(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSynonymAt",
 			"(I)Ljava/lang/CharSequence;",
 			arg0
@@ -80,18 +80,18 @@ namespace android::app
 	}
 	void VoiceInteractor_PickOptionRequest_Option::setExtras(android::os::Bundle arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setExtras",
 			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void VoiceInteractor_PickOptionRequest_Option::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

@@ -20,7 +20,10 @@ namespace android::provider
 		static jint FAIL_REASON_PROVIDER_NOT_FOUND();
 		static jint FAIL_REASON_WRONG_CERTIFICATES();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit FontsContract_FontRequestCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		FontsContract_FontRequestCallback(QAndroidJniObject obj);
+		
 		// Constructors
 		FontsContract_FontRequestCallback();
 		

@@ -669,38 +669,38 @@ namespace android::print
 		);
 	}
 	
-	PrintAttributes_MediaSize::PrintAttributes_MediaSize(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PrintAttributes_MediaSize::PrintAttributes_MediaSize(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	PrintAttributes_MediaSize::PrintAttributes_MediaSize(jstring arg0, jstring arg1, jint arg2, jint arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.print.PrintAttributes$MediaSize",
 			"(Ljava/lang/String;Ljava/lang/String;II)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject PrintAttributes_MediaSize::asLandscape()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"asLandscape",
 			"()Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
 	QAndroidJniObject PrintAttributes_MediaSize::asPortrait()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"asPortrait",
 			"()Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
 	jboolean PrintAttributes_MediaSize::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -708,50 +708,50 @@ namespace android::print
 	}
 	jint PrintAttributes_MediaSize::getHeightMils()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getHeightMils",
 			"()I"
 		);
 	}
 	jstring PrintAttributes_MediaSize::getId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring PrintAttributes_MediaSize::getLabel(android::content::pm::PackageManager arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLabel",
 			"(Landroid/content/pm/PackageManager;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jint PrintAttributes_MediaSize::getWidthMils()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getWidthMils",
 			"()I"
 		);
 	}
 	jint PrintAttributes_MediaSize::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean PrintAttributes_MediaSize::isPortrait()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isPortrait",
 			"()Z"
 		);
 	}
 	jstring PrintAttributes_MediaSize::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

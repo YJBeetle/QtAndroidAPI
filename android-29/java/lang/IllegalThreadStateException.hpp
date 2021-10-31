@@ -13,7 +13,10 @@ namespace java::lang
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit IllegalThreadStateException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalArgumentException(className, sig, std::forward<Ts>(agv)...) {}
 		IllegalThreadStateException(QAndroidJniObject obj);
+		
 		// Constructors
 		IllegalThreadStateException();
 		IllegalThreadStateException(jstring arg0);

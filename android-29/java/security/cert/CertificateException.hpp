@@ -12,7 +12,10 @@ namespace java::security::cert
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CertificateException(const char *className, const char *sig, Ts...agv) : java::security::GeneralSecurityException(className, sig, std::forward<Ts>(agv)...) {}
 		CertificateException(QAndroidJniObject obj);
+		
 		// Constructors
 		CertificateException();
 		CertificateException(jstring arg0);

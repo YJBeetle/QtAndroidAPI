@@ -13,23 +13,21 @@ namespace android::text::method
 		).object<jcharArray>();
 	}
 	
-	DateKeyListener::DateKeyListener(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DateKeyListener::DateKeyListener(QAndroidJniObject obj) : android::text::method::NumberKeyListener(obj) {}
+	
 	// Constructors
 	DateKeyListener::DateKeyListener()
-	{
-		__thiz = QAndroidJniObject(
+		: android::text::method::NumberKeyListener(
 			"android.text.method.DateKeyListener",
 			"()V"
-		);
-	}
+		) {}
 	DateKeyListener::DateKeyListener(java::util::Locale arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::text::method::NumberKeyListener(
 			"android.text.method.DateKeyListener",
 			"(Ljava/util/Locale;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject DateKeyListener::getInstance()
@@ -46,12 +44,12 @@ namespace android::text::method
 			"android.text.method.DateKeyListener",
 			"getInstance",
 			"(Ljava/util/Locale;)Landroid/text/method/DateKeyListener;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint DateKeyListener::getInputType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getInputType",
 			"()I"
 		);

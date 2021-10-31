@@ -27,10 +27,12 @@ namespace android::text::method
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CharacterPickerDialog(const char *className, const char *sig, Ts...agv) : android::app::Dialog(className, sig, std::forward<Ts>(agv)...) {}
 		CharacterPickerDialog(QAndroidJniObject obj);
+		
 		// Constructors
 		CharacterPickerDialog(android::content::Context arg0, android::view::View arg1, __JniBaseClass arg2, jstring arg3, jboolean arg4);
-		CharacterPickerDialog() = default;
 		
 		// Methods
 		void onClick(android::view::View arg0);

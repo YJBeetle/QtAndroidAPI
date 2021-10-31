@@ -31,7 +31,9 @@ namespace java::time::temporal
 		);
 	}
 	
-	WeekFields::WeekFields(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WeekFields::WeekFields(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -41,7 +43,7 @@ namespace java::time::temporal
 			"java.time.temporal.WeekFields",
 			"of",
 			"(Ljava/util/Locale;)Ljava/time/temporal/WeekFields;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject WeekFields::of(java::time::DayOfWeek arg0, jint arg1)
@@ -50,20 +52,20 @@ namespace java::time::temporal
 			"java.time.temporal.WeekFields",
 			"of",
 			"(Ljava/time/DayOfWeek;I)Ljava/time/temporal/WeekFields;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	QAndroidJniObject WeekFields::dayOfWeek()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"dayOfWeek",
 			"()Ljava/time/temporal/TemporalField;"
 		);
 	}
 	jboolean WeekFields::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -71,56 +73,56 @@ namespace java::time::temporal
 	}
 	QAndroidJniObject WeekFields::getFirstDayOfWeek()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFirstDayOfWeek",
 			"()Ljava/time/DayOfWeek;"
 		);
 	}
 	jint WeekFields::getMinimalDaysInFirstWeek()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMinimalDaysInFirstWeek",
 			"()I"
 		);
 	}
 	jint WeekFields::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring WeekFields::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject WeekFields::weekBasedYear()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"weekBasedYear",
 			"()Ljava/time/temporal/TemporalField;"
 		);
 	}
 	QAndroidJniObject WeekFields::weekOfMonth()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"weekOfMonth",
 			"()Ljava/time/temporal/TemporalField;"
 		);
 	}
 	QAndroidJniObject WeekFields::weekOfWeekBasedYear()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"weekOfWeekBasedYear",
 			"()Ljava/time/temporal/TemporalField;"
 		);
 	}
 	QAndroidJniObject WeekFields::weekOfYear()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"weekOfYear",
 			"()Ljava/time/temporal/TemporalField;"
 		);

@@ -5,39 +5,39 @@ namespace android::media::browse
 {
 	// Fields
 	
-	MediaBrowser_SubscriptionCallback::MediaBrowser_SubscriptionCallback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaBrowser_SubscriptionCallback::MediaBrowser_SubscriptionCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MediaBrowser_SubscriptionCallback::MediaBrowser_SubscriptionCallback()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.browse.MediaBrowser$SubscriptionCallback",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void MediaBrowser_SubscriptionCallback::onChildrenLoaded(jstring arg0, __JniBaseClass arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onChildrenLoaded",
 			"(Ljava/lang/String;Ljava/util/List;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void MediaBrowser_SubscriptionCallback::onChildrenLoaded(jstring arg0, __JniBaseClass arg1, android::os::Bundle arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onChildrenLoaded",
 			"(Ljava/lang/String;Ljava/util/List;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	void MediaBrowser_SubscriptionCallback::onError(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onError",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -45,11 +45,11 @@ namespace android::media::browse
 	}
 	void MediaBrowser_SubscriptionCallback::onError(jstring arg0, android::os::Bundle arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onError",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 } // namespace android::media::browse

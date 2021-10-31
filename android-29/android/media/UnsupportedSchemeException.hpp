@@ -12,10 +12,12 @@ namespace android::media
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit UnsupportedSchemeException(const char *className, const char *sig, Ts...agv) : android::media::MediaDrmException(className, sig, std::forward<Ts>(agv)...) {}
 		UnsupportedSchemeException(QAndroidJniObject obj);
+		
 		// Constructors
 		UnsupportedSchemeException(jstring arg0);
-		UnsupportedSchemeException() = default;
 		
 		// Methods
 	};

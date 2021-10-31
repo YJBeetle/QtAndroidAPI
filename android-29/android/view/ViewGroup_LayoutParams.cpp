@@ -29,57 +29,53 @@ namespace android::view
 	}
 	jint ViewGroup_LayoutParams::height()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"height"
 		);
 	}
 	QAndroidJniObject ViewGroup_LayoutParams::layoutAnimationParameters()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"layoutAnimationParameters",
 			"Landroid/view/animation/LayoutAnimationController$AnimationParameters;"
 		);
 	}
 	jint ViewGroup_LayoutParams::width()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"width"
 		);
 	}
 	
-	ViewGroup_LayoutParams::ViewGroup_LayoutParams(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ViewGroup_LayoutParams::ViewGroup_LayoutParams(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ViewGroup_LayoutParams::ViewGroup_LayoutParams(android::view::ViewGroup_LayoutParams &arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.ViewGroup$LayoutParams",
 			"(Landroid/view/ViewGroup$LayoutParams;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	ViewGroup_LayoutParams::ViewGroup_LayoutParams(android::content::Context arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.ViewGroup$LayoutParams",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	ViewGroup_LayoutParams::ViewGroup_LayoutParams(jint arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.ViewGroup$LayoutParams",
 			"(II)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	void ViewGroup_LayoutParams::resolveLayoutDirection(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"resolveLayoutDirection",
 			"(I)V",
 			arg0

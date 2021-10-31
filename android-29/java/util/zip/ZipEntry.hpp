@@ -20,11 +20,13 @@ namespace java::util::zip
 		static jint DEFLATED();
 		static jint STORED();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ZipEntry(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ZipEntry(QAndroidJniObject obj);
+		
 		// Constructors
 		ZipEntry(jstring arg0);
 		ZipEntry(java::util::zip::ZipEntry &arg0);
-		ZipEntry() = default;
 		
 		// Methods
 		jobject clone();

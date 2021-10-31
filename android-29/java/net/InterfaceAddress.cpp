@@ -6,13 +6,15 @@ namespace java::net
 {
 	// Fields
 	
-	InterfaceAddress::InterfaceAddress(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	InterfaceAddress::InterfaceAddress(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jboolean InterfaceAddress::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -20,35 +22,35 @@ namespace java::net
 	}
 	QAndroidJniObject InterfaceAddress::getAddress()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAddress",
 			"()Ljava/net/InetAddress;"
 		);
 	}
 	QAndroidJniObject InterfaceAddress::getBroadcast()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBroadcast",
 			"()Ljava/net/InetAddress;"
 		);
 	}
 	jshort InterfaceAddress::getNetworkPrefixLength()
 	{
-		return __thiz.callMethod<jshort>(
+		return callMethod<jshort>(
 			"getNetworkPrefixLength",
 			"()S"
 		);
 	}
 	jint InterfaceAddress::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring InterfaceAddress::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

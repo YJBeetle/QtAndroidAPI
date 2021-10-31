@@ -36,13 +36,15 @@ namespace android::widget
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit QuickContactBadge(const char *className, const char *sig, Ts...agv) : android::widget::ImageView(className, sig, std::forward<Ts>(agv)...) {}
 		QuickContactBadge(QAndroidJniObject obj);
+		
 		// Constructors
 		QuickContactBadge(android::content::Context arg0);
 		QuickContactBadge(android::content::Context arg0, __JniBaseClass arg1);
 		QuickContactBadge(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		QuickContactBadge(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
-		QuickContactBadge() = default;
 		
 		// Methods
 		void assignContactFromEmail(jstring arg0, jboolean arg1);

@@ -69,9 +69,11 @@ namespace java::time::format
 		static QAndroidJniObject ISO_ZONED_DATE_TIME();
 		static QAndroidJniObject RFC_1123_DATE_TIME();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DateTimeFormatter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DateTimeFormatter(QAndroidJniObject obj);
+		
 		// Constructors
-		DateTimeFormatter() = default;
 		
 		// Methods
 		static QAndroidJniObject ofLocalizedDate(java::time::format::FormatStyle arg0);

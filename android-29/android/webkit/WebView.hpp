@@ -155,14 +155,16 @@ namespace android::webkit
 		static jstring SCHEME_MAILTO();
 		static jstring SCHEME_TEL();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit WebView(const char *className, const char *sig, Ts...agv) : android::widget::AbsoluteLayout(className, sig, std::forward<Ts>(agv)...) {}
 		WebView(QAndroidJniObject obj);
+		
 		// Constructors
 		WebView(android::content::Context arg0);
 		WebView(android::content::Context arg0, __JniBaseClass arg1);
 		WebView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		WebView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jboolean arg3);
 		WebView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
-		WebView() = default;
 		
 		// Methods
 		static void clearClientCertPreferences(__JniBaseClass arg0);

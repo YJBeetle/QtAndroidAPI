@@ -15,9 +15,11 @@ namespace android::nfc
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Tag(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Tag(QAndroidJniObject obj);
+		
 		// Constructors
-		Tag() = default;
 		
 		// Methods
 		jint describeContents();

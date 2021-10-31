@@ -18,11 +18,13 @@ namespace android::text::style
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit LineHeightSpan_Standard(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		LineHeightSpan_Standard(QAndroidJniObject obj);
+		
 		// Constructors
 		LineHeightSpan_Standard(android::os::Parcel arg0);
 		LineHeightSpan_Standard(jint arg0);
-		LineHeightSpan_Standard() = default;
 		
 		// Methods
 		void chooseHeight(jstring arg0, jint arg1, jint arg2, jint arg3, jint arg4, android::graphics::Paint_FontMetricsInt arg5);

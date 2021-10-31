@@ -13,10 +13,12 @@ namespace java::nio::file
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit FileSystemLoopException(const char *className, const char *sig, Ts...agv) : java::nio::file::FileSystemException(className, sig, std::forward<Ts>(agv)...) {}
 		FileSystemLoopException(QAndroidJniObject obj);
+		
 		// Constructors
 		FileSystemLoopException(jstring arg0);
-		FileSystemLoopException() = default;
 		
 		// Methods
 	};

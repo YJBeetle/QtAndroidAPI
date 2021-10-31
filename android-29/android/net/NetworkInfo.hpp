@@ -23,9 +23,11 @@ namespace android::net
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit NetworkInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		NetworkInfo(QAndroidJniObject obj);
+		
 		// Constructors
-		NetworkInfo() = default;
 		
 		// Methods
 		jint describeContents();

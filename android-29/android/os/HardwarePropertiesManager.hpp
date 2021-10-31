@@ -19,9 +19,11 @@ namespace android::os
 		static jint TEMPERATURE_THROTTLING_BELOW_VR_MIN();
 		static jfloat UNDEFINED_TEMPERATURE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit HardwarePropertiesManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		HardwarePropertiesManager(QAndroidJniObject obj);
+		
 		// Constructors
-		HardwarePropertiesManager() = default;
 		
 		// Methods
 		jarray getCpuUsages();

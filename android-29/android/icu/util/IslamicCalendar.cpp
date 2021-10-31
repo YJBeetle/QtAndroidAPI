@@ -93,78 +93,63 @@ namespace android::icu::util
 		);
 	}
 	
-	IslamicCalendar::IslamicCalendar(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	IslamicCalendar::IslamicCalendar(QAndroidJniObject obj) : android::icu::util::Calendar(obj) {}
+	
 	// Constructors
 	IslamicCalendar::IslamicCalendar()
-	{
-		__thiz = QAndroidJniObject(
+		: android::icu::util::Calendar(
 			"android.icu.util.IslamicCalendar",
 			"()V"
-		);
-	}
+		) {}
 	IslamicCalendar::IslamicCalendar(android::icu::util::TimeZone arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::icu::util::Calendar(
 			"android.icu.util.IslamicCalendar",
 			"(Landroid/icu/util/TimeZone;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	IslamicCalendar::IslamicCalendar(android::icu::util::ULocale arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::icu::util::Calendar(
 			"android.icu.util.IslamicCalendar",
 			"(Landroid/icu/util/ULocale;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	IslamicCalendar::IslamicCalendar(java::util::Date arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::icu::util::Calendar(
 			"android.icu.util.IslamicCalendar",
 			"(Ljava/util/Date;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	IslamicCalendar::IslamicCalendar(java::util::Locale arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::icu::util::Calendar(
 			"android.icu.util.IslamicCalendar",
 			"(Ljava/util/Locale;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	IslamicCalendar::IslamicCalendar(android::icu::util::TimeZone arg0, android::icu::util::ULocale arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::icu::util::Calendar(
 			"android.icu.util.IslamicCalendar",
 			"(Landroid/icu/util/TimeZone;Landroid/icu/util/ULocale;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	IslamicCalendar::IslamicCalendar(android::icu::util::TimeZone arg0, java::util::Locale arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::icu::util::Calendar(
 			"android.icu.util.IslamicCalendar",
 			"(Landroid/icu/util/TimeZone;Ljava/util/Locale;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	IslamicCalendar::IslamicCalendar(jint arg0, jint arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: android::icu::util::Calendar(
 			"android.icu.util.IslamicCalendar",
 			"(III)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	IslamicCalendar::IslamicCalendar(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
-	{
-		__thiz = QAndroidJniObject(
+		: android::icu::util::Calendar(
 			"android.icu.util.IslamicCalendar",
 			"(IIIIII)V",
 			arg0,
@@ -173,30 +158,29 @@ namespace android::icu::util
 			arg3,
 			arg4,
 			arg5
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject IslamicCalendar::getCalculationType()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCalculationType",
 			"()Landroid/icu/util/IslamicCalendar$CalculationType;"
 		);
 	}
 	jstring IslamicCalendar::getType()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void IslamicCalendar::setCalculationType(android::icu::util::IslamicCalendar_CalculationType arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCalculationType",
 			"(Landroid/icu/util/IslamicCalendar$CalculationType;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::icu::util

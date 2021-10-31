@@ -6,22 +6,22 @@ namespace android::os
 {
 	// Fields
 	
-	MemoryFile::MemoryFile(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MemoryFile::MemoryFile(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MemoryFile::MemoryFile(jstring arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.os.MemoryFile",
 			"(Ljava/lang/String;I)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean MemoryFile::allowPurging(jboolean arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"allowPurging",
 			"(Z)Z",
 			arg0
@@ -29,42 +29,42 @@ namespace android::os
 	}
 	void MemoryFile::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	QAndroidJniObject MemoryFile::getInputStream()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getInputStream",
 			"()Ljava/io/InputStream;"
 		);
 	}
 	QAndroidJniObject MemoryFile::getOutputStream()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getOutputStream",
 			"()Ljava/io/OutputStream;"
 		);
 	}
 	jboolean MemoryFile::isPurgingAllowed()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isPurgingAllowed",
 			"()Z"
 		);
 	}
 	jint MemoryFile::length()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"length",
 			"()I"
 		);
 	}
 	jint MemoryFile::readBytes(jbyteArray arg0, jint arg1, jint arg2, jint arg3)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"readBytes",
 			"([BIII)I",
 			arg0,
@@ -75,7 +75,7 @@ namespace android::os
 	}
 	void MemoryFile::writeBytes(jbyteArray arg0, jint arg1, jint arg2, jint arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeBytes",
 			"([BIII)V",
 			arg0,

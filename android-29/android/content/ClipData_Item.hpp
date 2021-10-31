@@ -22,7 +22,10 @@ namespace android::content
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ClipData_Item(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ClipData_Item(QAndroidJniObject obj);
+		
 		// Constructors
 		ClipData_Item(android::content::Intent arg0);
 		ClipData_Item(android::net::Uri arg0);
@@ -30,7 +33,6 @@ namespace android::content
 		ClipData_Item(jstring arg0, jstring arg1);
 		ClipData_Item(jstring arg0, android::content::Intent arg1, android::net::Uri arg2);
 		ClipData_Item(jstring arg0, jstring arg1, android::content::Intent arg2, android::net::Uri arg3);
-		ClipData_Item() = default;
 		
 		// Methods
 		jstring coerceToHtmlText(android::content::Context arg0);

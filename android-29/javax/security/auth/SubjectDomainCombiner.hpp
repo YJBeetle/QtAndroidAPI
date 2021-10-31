@@ -18,10 +18,12 @@ namespace javax::security::auth
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SubjectDomainCombiner(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SubjectDomainCombiner(QAndroidJniObject obj);
+		
 		// Constructors
 		SubjectDomainCombiner(javax::security::auth::Subject arg0);
-		SubjectDomainCombiner() = default;
 		
 		// Methods
 		jarray combine(jarray arg0, jarray arg1);

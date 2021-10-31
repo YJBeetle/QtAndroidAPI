@@ -20,11 +20,13 @@ namespace android::media
 		static jint COMMAND_CODE_CUSTOM();
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Session2Command(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Session2Command(QAndroidJniObject obj);
+		
 		// Constructors
 		Session2Command(jint arg0);
 		Session2Command(jstring arg0, android::os::Bundle arg1);
-		Session2Command() = default;
 		
 		// Methods
 		jint describeContents();

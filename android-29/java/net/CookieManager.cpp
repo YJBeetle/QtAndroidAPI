@@ -6,57 +6,55 @@ namespace java::net
 {
 	// Fields
 	
-	CookieManager::CookieManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CookieManager::CookieManager(QAndroidJniObject obj) : java::net::CookieHandler(obj) {}
+	
 	// Constructors
 	CookieManager::CookieManager()
-	{
-		__thiz = QAndroidJniObject(
+		: java::net::CookieHandler(
 			"java.net.CookieManager",
 			"()V"
-		);
-	}
+		) {}
 	CookieManager::CookieManager(__JniBaseClass arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::net::CookieHandler(
 			"java.net.CookieManager",
 			"(Ljava/net/CookieStore;Ljava/net/CookiePolicy;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject CookieManager::get(java::net::URI arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"(Ljava/net/URI;Ljava/util/Map;)Ljava/util/Map;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject CookieManager::getCookieStore()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCookieStore",
 			"()Ljava/net/CookieStore;"
 		);
 	}
 	void CookieManager::put(java::net::URI arg0, __JniBaseClass arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"put",
 			"(Ljava/net/URI;Ljava/util/Map;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void CookieManager::setCookiePolicy(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCookiePolicy",
 			"(Ljava/net/CookiePolicy;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace java::net

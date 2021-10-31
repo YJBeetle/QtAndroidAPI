@@ -4,22 +4,22 @@ namespace java::text
 {
 	// Fields
 	
-	ParseException::ParseException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ParseException::ParseException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
+	
 	// Constructors
 	ParseException::ParseException(jstring arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Exception(
 			"java.text.ParseException",
 			"(Ljava/lang/String;I)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jint ParseException::getErrorOffset()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getErrorOffset",
 			"()I"
 		);

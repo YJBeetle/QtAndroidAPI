@@ -11,87 +11,81 @@ namespace android::widget
 {
 	// Fields
 	
-	HorizontalScrollView::HorizontalScrollView(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	HorizontalScrollView::HorizontalScrollView(QAndroidJniObject obj) : android::widget::FrameLayout(obj) {}
+	
 	// Constructors
 	HorizontalScrollView::HorizontalScrollView(android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::FrameLayout(
 			"android.widget.HorizontalScrollView",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	HorizontalScrollView::HorizontalScrollView(android::content::Context arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::FrameLayout(
 			"android.widget.HorizontalScrollView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	HorizontalScrollView::HorizontalScrollView(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::FrameLayout(
 			"android.widget.HorizontalScrollView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
-		);
-	}
+		) {}
 	HorizontalScrollView::HorizontalScrollView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::FrameLayout(
 			"android.widget.HorizontalScrollView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	
 	// Methods
 	void HorizontalScrollView::addView(android::view::View arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addView",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void HorizontalScrollView::addView(android::view::View arg0, android::view::ViewGroup_LayoutParams arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addView",
 			"(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void HorizontalScrollView::addView(android::view::View arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addView",
 			"(Landroid/view/View;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void HorizontalScrollView::addView(android::view::View arg0, jint arg1, android::view::ViewGroup_LayoutParams arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addView",
 			"(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	jboolean HorizontalScrollView::arrowScroll(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"arrowScroll",
 			"(I)Z",
 			arg0
@@ -99,38 +93,38 @@ namespace android::widget
 	}
 	void HorizontalScrollView::computeScroll()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"computeScroll",
 			"()V"
 		);
 	}
 	jboolean HorizontalScrollView::dispatchKeyEvent(android::view::KeyEvent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"dispatchKeyEvent",
 			"(Landroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void HorizontalScrollView::draw(android::graphics::Canvas arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"draw",
 			"(Landroid/graphics/Canvas;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean HorizontalScrollView::executeKeyEvent(android::view::KeyEvent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"executeKeyEvent",
 			"(Landroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void HorizontalScrollView::fling(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"fling",
 			"(I)V",
 			arg0
@@ -138,7 +132,7 @@ namespace android::widget
 	}
 	jboolean HorizontalScrollView::fullScroll(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"fullScroll",
 			"(I)Z",
 			arg0
@@ -146,73 +140,73 @@ namespace android::widget
 	}
 	jstring HorizontalScrollView::getAccessibilityClassName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jint HorizontalScrollView::getLeftEdgeEffectColor()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLeftEdgeEffectColor",
 			"()I"
 		);
 	}
 	jint HorizontalScrollView::getMaxScrollAmount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMaxScrollAmount",
 			"()I"
 		);
 	}
 	jint HorizontalScrollView::getRightEdgeEffectColor()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRightEdgeEffectColor",
 			"()I"
 		);
 	}
 	jboolean HorizontalScrollView::isFillViewport()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isFillViewport",
 			"()Z"
 		);
 	}
 	jboolean HorizontalScrollView::isSmoothScrollingEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isSmoothScrollingEnabled",
 			"()Z"
 		);
 	}
 	jboolean HorizontalScrollView::onGenericMotionEvent(android::view::MotionEvent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onGenericMotionEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean HorizontalScrollView::onInterceptTouchEvent(android::view::MotionEvent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onInterceptTouchEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean HorizontalScrollView::onTouchEvent(android::view::MotionEvent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onTouchEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean HorizontalScrollView::pageScroll(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"pageScroll",
 			"(I)Z",
 			arg0
@@ -220,26 +214,26 @@ namespace android::widget
 	}
 	void HorizontalScrollView::requestChildFocus(android::view::View arg0, android::view::View arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"requestChildFocus",
 			"(Landroid/view/View;Landroid/view/View;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jboolean HorizontalScrollView::requestChildRectangleOnScreen(android::view::View arg0, android::graphics::Rect arg1, jboolean arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"requestChildRectangleOnScreen",
 			"(Landroid/view/View;Landroid/graphics/Rect;Z)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
 	void HorizontalScrollView::requestDisallowInterceptTouchEvent(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"requestDisallowInterceptTouchEvent",
 			"(Z)V",
 			arg0
@@ -247,14 +241,14 @@ namespace android::widget
 	}
 	void HorizontalScrollView::requestLayout()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"requestLayout",
 			"()V"
 		);
 	}
 	void HorizontalScrollView::scrollTo(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"scrollTo",
 			"(II)V",
 			arg0,
@@ -263,7 +257,7 @@ namespace android::widget
 	}
 	void HorizontalScrollView::setEdgeEffectColor(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setEdgeEffectColor",
 			"(I)V",
 			arg0
@@ -271,7 +265,7 @@ namespace android::widget
 	}
 	void HorizontalScrollView::setFillViewport(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFillViewport",
 			"(Z)V",
 			arg0
@@ -279,7 +273,7 @@ namespace android::widget
 	}
 	void HorizontalScrollView::setLeftEdgeEffectColor(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLeftEdgeEffectColor",
 			"(I)V",
 			arg0
@@ -287,7 +281,7 @@ namespace android::widget
 	}
 	void HorizontalScrollView::setRightEdgeEffectColor(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setRightEdgeEffectColor",
 			"(I)V",
 			arg0
@@ -295,7 +289,7 @@ namespace android::widget
 	}
 	void HorizontalScrollView::setSmoothScrollingEnabled(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSmoothScrollingEnabled",
 			"(Z)V",
 			arg0
@@ -303,14 +297,14 @@ namespace android::widget
 	}
 	jboolean HorizontalScrollView::shouldDelayChildPressedState()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"shouldDelayChildPressedState",
 			"()Z"
 		);
 	}
 	void HorizontalScrollView::smoothScrollBy(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"smoothScrollBy",
 			"(II)V",
 			arg0,
@@ -319,7 +313,7 @@ namespace android::widget
 	}
 	void HorizontalScrollView::smoothScrollTo(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"smoothScrollTo",
 			"(II)V",
 			arg0,

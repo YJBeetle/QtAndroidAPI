@@ -9,104 +9,106 @@ namespace java::nio::charset
 {
 	// Fields
 	
-	CharsetDecoder::CharsetDecoder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CharsetDecoder::CharsetDecoder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jfloat CharsetDecoder::averageCharsPerByte()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"averageCharsPerByte",
 			"()F"
 		);
 	}
 	QAndroidJniObject CharsetDecoder::charset()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"charset",
 			"()Ljava/nio/charset/Charset;"
 		);
 	}
 	QAndroidJniObject CharsetDecoder::decode(java::nio::ByteBuffer arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"decode",
 			"(Ljava/nio/ByteBuffer;)Ljava/nio/CharBuffer;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject CharsetDecoder::decode(java::nio::ByteBuffer arg0, java::nio::CharBuffer arg1, jboolean arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"decode",
 			"(Ljava/nio/ByteBuffer;Ljava/nio/CharBuffer;Z)Ljava/nio/charset/CoderResult;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
 	QAndroidJniObject CharsetDecoder::detectedCharset()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"detectedCharset",
 			"()Ljava/nio/charset/Charset;"
 		);
 	}
 	QAndroidJniObject CharsetDecoder::flush(java::nio::CharBuffer arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"flush",
 			"(Ljava/nio/CharBuffer;)Ljava/nio/charset/CoderResult;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean CharsetDecoder::isAutoDetecting()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isAutoDetecting",
 			"()Z"
 		);
 	}
 	jboolean CharsetDecoder::isCharsetDetected()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isCharsetDetected",
 			"()Z"
 		);
 	}
 	QAndroidJniObject CharsetDecoder::malformedInputAction()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"malformedInputAction",
 			"()Ljava/nio/charset/CodingErrorAction;"
 		);
 	}
 	jfloat CharsetDecoder::maxCharsPerByte()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"maxCharsPerByte",
 			"()F"
 		);
 	}
 	QAndroidJniObject CharsetDecoder::onMalformedInput(java::nio::charset::CodingErrorAction arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onMalformedInput",
 			"(Ljava/nio/charset/CodingErrorAction;)Ljava/nio/charset/CharsetDecoder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject CharsetDecoder::onUnmappableCharacter(java::nio::charset::CodingErrorAction arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onUnmappableCharacter",
 			"(Ljava/nio/charset/CodingErrorAction;)Ljava/nio/charset/CharsetDecoder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject CharsetDecoder::replaceWith(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"replaceWith",
 			"(Ljava/lang/String;)Ljava/nio/charset/CharsetDecoder;",
 			arg0
@@ -114,21 +116,21 @@ namespace java::nio::charset
 	}
 	jstring CharsetDecoder::replacement()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"replacement",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject CharsetDecoder::reset()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"reset",
 			"()Ljava/nio/charset/CharsetDecoder;"
 		);
 	}
 	QAndroidJniObject CharsetDecoder::unmappableCharacterAction()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"unmappableCharacterAction",
 			"()Ljava/nio/charset/CodingErrorAction;"
 		);

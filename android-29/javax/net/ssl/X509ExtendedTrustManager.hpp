@@ -18,7 +18,10 @@ namespace javax::net::ssl
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit X509ExtendedTrustManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		X509ExtendedTrustManager(QAndroidJniObject obj);
+		
 		// Constructors
 		X509ExtendedTrustManager();
 		

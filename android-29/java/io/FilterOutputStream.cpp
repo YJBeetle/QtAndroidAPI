@@ -5,35 +5,35 @@ namespace java::io
 {
 	// Fields
 	
-	FilterOutputStream::FilterOutputStream(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FilterOutputStream::FilterOutputStream(QAndroidJniObject obj) : java::io::OutputStream(obj) {}
+	
 	// Constructors
 	FilterOutputStream::FilterOutputStream(java::io::OutputStream arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::OutputStream(
 			"java.io.FilterOutputStream",
 			"(Ljava/io/OutputStream;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	void FilterOutputStream::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	void FilterOutputStream::flush()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"flush",
 			"()V"
 		);
 	}
 	void FilterOutputStream::write(jbyteArray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"write",
 			"([B)V",
 			arg0
@@ -41,7 +41,7 @@ namespace java::io
 	}
 	void FilterOutputStream::write(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"write",
 			"(I)V",
 			arg0
@@ -49,7 +49,7 @@ namespace java::io
 	}
 	void FilterOutputStream::write(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"write",
 			"([BII)V",
 			arg0,

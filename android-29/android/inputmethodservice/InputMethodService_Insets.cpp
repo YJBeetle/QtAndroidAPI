@@ -34,39 +34,39 @@ namespace android::inputmethodservice
 	}
 	jint InputMethodService_Insets::contentTopInsets()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"contentTopInsets"
 		);
 	}
 	jint InputMethodService_Insets::touchableInsets()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"touchableInsets"
 		);
 	}
 	QAndroidJniObject InputMethodService_Insets::touchableRegion()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"touchableRegion",
 			"Landroid/graphics/Region;"
 		);
 	}
 	jint InputMethodService_Insets::visibleTopInsets()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"visibleTopInsets"
 		);
 	}
 	
-	InputMethodService_Insets::InputMethodService_Insets(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	InputMethodService_Insets::InputMethodService_Insets(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	InputMethodService_Insets::InputMethodService_Insets()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.inputmethodservice.InputMethodService$Insets",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::inputmethodservice

@@ -4,20 +4,20 @@ namespace android::telephony
 {
 	// Fields
 	
-	SubscriptionManager_OnSubscriptionsChangedListener::SubscriptionManager_OnSubscriptionsChangedListener(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SubscriptionManager_OnSubscriptionsChangedListener::SubscriptionManager_OnSubscriptionsChangedListener(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	SubscriptionManager_OnSubscriptionsChangedListener::SubscriptionManager_OnSubscriptionsChangedListener()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.telephony.SubscriptionManager$OnSubscriptionsChangedListener",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void SubscriptionManager_OnSubscriptionsChangedListener::onSubscriptionsChanged()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onSubscriptionsChanged",
 			"()V"
 		);

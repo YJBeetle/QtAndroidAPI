@@ -24,7 +24,10 @@ namespace java::io
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit FileWriter(const char *className, const char *sig, Ts...agv) : java::io::OutputStreamWriter(className, sig, std::forward<Ts>(agv)...) {}
 		FileWriter(QAndroidJniObject obj);
+		
 		// Constructors
 		FileWriter(java::io::File arg0);
 		FileWriter(java::io::FileDescriptor arg0);
@@ -35,7 +38,6 @@ namespace java::io
 		FileWriter(jstring arg0, java::nio::charset::Charset arg1);
 		FileWriter(java::io::File arg0, java::nio::charset::Charset arg1, jboolean arg2);
 		FileWriter(jstring arg0, java::nio::charset::Charset arg1, jboolean arg2);
-		FileWriter() = default;
 		
 		// Methods
 	};

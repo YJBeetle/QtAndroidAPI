@@ -17,10 +17,12 @@ namespace android::app
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Fragment_InstantiationException(const char *className, const char *sig, Ts...agv) : android::util::AndroidRuntimeException(className, sig, std::forward<Ts>(agv)...) {}
 		Fragment_InstantiationException(QAndroidJniObject obj);
+		
 		// Constructors
 		Fragment_InstantiationException(jstring arg0, java::lang::Exception arg1);
-		Fragment_InstantiationException() = default;
 		
 		// Methods
 	};

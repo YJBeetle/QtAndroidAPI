@@ -12,13 +12,15 @@ namespace android::os
 		);
 	}
 	
-	StrictMode_ThreadPolicy::StrictMode_ThreadPolicy(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	StrictMode_ThreadPolicy::StrictMode_ThreadPolicy(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jstring StrictMode_ThreadPolicy::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

@@ -48,9 +48,11 @@ namespace android::media::audiofx
 		static jstring EXTRA_PACKAGE_NAME();
 		static jint SUCCESS();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AudioEffect(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AudioEffect(QAndroidJniObject obj);
+		
 		// Constructors
-		AudioEffect() = default;
 		
 		// Methods
 		static jarray queryEffects();

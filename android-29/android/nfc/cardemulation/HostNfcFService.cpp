@@ -29,28 +29,28 @@ namespace android::nfc::cardemulation
 		).object<jstring>();
 	}
 	
-	HostNfcFService::HostNfcFService(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	HostNfcFService::HostNfcFService(QAndroidJniObject obj) : android::app::Service(obj) {}
+	
 	// Constructors
 	HostNfcFService::HostNfcFService()
-	{
-		__thiz = QAndroidJniObject(
+		: android::app::Service(
 			"android.nfc.cardemulation.HostNfcFService",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject HostNfcFService::onBind(android::content::Intent arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onBind",
 			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void HostNfcFService::onDeactivated(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onDeactivated",
 			"(I)V",
 			arg0
@@ -58,16 +58,16 @@ namespace android::nfc::cardemulation
 	}
 	jbyteArray HostNfcFService::processNfcFPacket(jbyteArray arg0, android::os::Bundle arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"processNfcFPacket",
 			"([BLandroid/os/Bundle;)[B",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		).object<jbyteArray>();
 	}
 	void HostNfcFService::sendResponsePacket(jbyteArray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"sendResponsePacket",
 			"([B)V",
 			arg0

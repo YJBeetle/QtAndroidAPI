@@ -259,7 +259,10 @@ namespace android::opengl
 		static jint GL_XOR();
 		static jint GL_ZERO();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit GLES10(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		GLES10(QAndroidJniObject obj);
+		
 		// Constructors
 		GLES10();
 		

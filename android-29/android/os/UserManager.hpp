@@ -91,9 +91,11 @@ namespace android::os
 		static jint USER_OPERATION_ERROR_UNKNOWN();
 		static jint USER_OPERATION_SUCCESS();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit UserManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		UserManager(QAndroidJniObject obj);
+		
 		// Constructors
-		UserManager() = default;
 		
 		// Methods
 		static QAndroidJniObject createUserCreationIntent(jstring arg0, jstring arg1, jstring arg2, android::os::PersistableBundle arg3);

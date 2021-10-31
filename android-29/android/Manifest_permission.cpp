@@ -1268,15 +1268,15 @@ namespace android
 		).object<jstring>();
 	}
 	
-	Manifest_permission::Manifest_permission(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Manifest_permission::Manifest_permission(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Manifest_permission::Manifest_permission()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.Manifest$permission",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android

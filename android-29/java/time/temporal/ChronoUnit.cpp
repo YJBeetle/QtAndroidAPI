@@ -133,7 +133,9 @@ namespace java::time::temporal
 		);
 	}
 	
-	ChronoUnit::ChronoUnit(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ChronoUnit::ChronoUnit(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -156,61 +158,61 @@ namespace java::time::temporal
 	}
 	QAndroidJniObject ChronoUnit::addTo(__JniBaseClass arg0, jlong arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"addTo",
 			"(Ljava/time/temporal/Temporal;J)Ljava/time/temporal/Temporal;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	jlong ChronoUnit::between(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"between",
 			"(Ljava/time/temporal/Temporal;Ljava/time/temporal/Temporal;)J",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject ChronoUnit::getDuration()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDuration",
 			"()Ljava/time/Duration;"
 		);
 	}
 	jboolean ChronoUnit::isDateBased()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isDateBased",
 			"()Z"
 		);
 	}
 	jboolean ChronoUnit::isDurationEstimated()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isDurationEstimated",
 			"()Z"
 		);
 	}
 	jboolean ChronoUnit::isSupportedBy(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isSupportedBy",
 			"(Ljava/time/temporal/Temporal;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean ChronoUnit::isTimeBased()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isTimeBased",
 			"()Z"
 		);
 	}
 	jstring ChronoUnit::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

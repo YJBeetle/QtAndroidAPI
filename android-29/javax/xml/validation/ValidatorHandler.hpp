@@ -14,9 +14,11 @@ namespace javax::xml::validation
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ValidatorHandler(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ValidatorHandler(QAndroidJniObject obj);
+		
 		// Constructors
-		ValidatorHandler() = default;
 		
 		// Methods
 		QAndroidJniObject getContentHandler();

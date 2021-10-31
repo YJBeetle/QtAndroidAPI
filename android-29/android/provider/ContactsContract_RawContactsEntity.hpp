@@ -18,9 +18,11 @@ namespace android::provider
 		static jstring DATA_ID();
 		static QAndroidJniObject PROFILE_CONTENT_URI();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ContactsContract_RawContactsEntity(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ContactsContract_RawContactsEntity(QAndroidJniObject obj);
+		
 		// Constructors
-		ContactsContract_RawContactsEntity() = default;
 		
 		// Methods
 	};

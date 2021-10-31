@@ -8,39 +8,39 @@ namespace java::util::logging
 {
 	// Fields
 	
-	XMLFormatter::XMLFormatter(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	XMLFormatter::XMLFormatter(QAndroidJniObject obj) : java::util::logging::Formatter(obj) {}
+	
 	// Constructors
 	XMLFormatter::XMLFormatter()
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::logging::Formatter(
 			"java.util.logging.XMLFormatter",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring XMLFormatter::format(java::util::logging::LogRecord arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"format",
 			"(Ljava/util/logging/LogRecord;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jstring XMLFormatter::getHead(java::util::logging::Handler arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getHead",
 			"(Ljava/util/logging/Handler;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jstring XMLFormatter::getTail(java::util::logging::Handler arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTail",
 			"(Ljava/util/logging/Handler;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 } // namespace java::util::logging

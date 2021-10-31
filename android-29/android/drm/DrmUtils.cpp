@@ -5,15 +5,15 @@ namespace android::drm
 {
 	// Fields
 	
-	DrmUtils::DrmUtils(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DrmUtils::DrmUtils(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	DrmUtils::DrmUtils()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.drm.DrmUtils",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject DrmUtils::getExtendedMetadataParser(jbyteArray arg0)

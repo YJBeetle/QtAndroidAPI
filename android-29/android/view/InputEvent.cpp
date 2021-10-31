@@ -13,48 +13,50 @@ namespace android::view
 		);
 	}
 	
-	InputEvent::InputEvent(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	InputEvent::InputEvent(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint InputEvent::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	QAndroidJniObject InputEvent::getDevice()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDevice",
 			"()Landroid/view/InputDevice;"
 		);
 	}
 	jint InputEvent::getDeviceId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDeviceId",
 			"()I"
 		);
 	}
 	jlong InputEvent::getEventTime()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getEventTime",
 			"()J"
 		);
 	}
 	jint InputEvent::getSource()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSource",
 			"()I"
 		);
 	}
 	jboolean InputEvent::isFromSource(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isFromSource",
 			"(I)Z",
 			arg0

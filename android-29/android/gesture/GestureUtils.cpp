@@ -8,7 +8,9 @@ namespace android::gesture
 {
 	// Fields
 	
-	GestureUtils::GestureUtils(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	GestureUtils::GestureUtils(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -27,7 +29,7 @@ namespace android::gesture
 			"android.gesture.GestureUtils",
 			"computeOrientedBoundingBox",
 			"(Ljava/util/ArrayList;)Landroid/gesture/OrientedBoundingBox;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jfloatArray GestureUtils::spatialSampling(android::gesture::Gesture arg0, jint arg1)
@@ -36,7 +38,7 @@ namespace android::gesture
 			"android.gesture.GestureUtils",
 			"spatialSampling",
 			"(Landroid/gesture/Gesture;I)[F",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		).object<jfloatArray>();
 	}
@@ -46,7 +48,7 @@ namespace android::gesture
 			"android.gesture.GestureUtils",
 			"spatialSampling",
 			"(Landroid/gesture/Gesture;IZ)[F",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		).object<jfloatArray>();
@@ -57,7 +59,7 @@ namespace android::gesture
 			"android.gesture.GestureUtils",
 			"temporalSampling",
 			"(Landroid/gesture/GestureStroke;I)[F",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		).object<jfloatArray>();
 	}

@@ -15,28 +15,28 @@ namespace android::view::accessibility
 		);
 	}
 	
-	AccessibilityNodeInfo_TouchDelegateInfo::AccessibilityNodeInfo_TouchDelegateInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AccessibilityNodeInfo_TouchDelegateInfo::AccessibilityNodeInfo_TouchDelegateInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	AccessibilityNodeInfo_TouchDelegateInfo::AccessibilityNodeInfo_TouchDelegateInfo(__JniBaseClass arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.accessibility.AccessibilityNodeInfo$TouchDelegateInfo",
 			"(Ljava/util/Map;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jint AccessibilityNodeInfo_TouchDelegateInfo::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	QAndroidJniObject AccessibilityNodeInfo_TouchDelegateInfo::getRegionAt(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRegionAt",
 			"(I)Landroid/graphics/Region;",
 			arg0
@@ -44,25 +44,25 @@ namespace android::view::accessibility
 	}
 	jint AccessibilityNodeInfo_TouchDelegateInfo::getRegionCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRegionCount",
 			"()I"
 		);
 	}
 	QAndroidJniObject AccessibilityNodeInfo_TouchDelegateInfo::getTargetForRegion(android::graphics::Region arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTargetForRegion",
 			"(Landroid/graphics/Region;)Landroid/view/accessibility/AccessibilityNodeInfo;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AccessibilityNodeInfo_TouchDelegateInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

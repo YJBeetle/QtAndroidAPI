@@ -30,7 +30,10 @@ namespace android::graphics
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Path(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Path(QAndroidJniObject obj);
+		
 		// Constructors
 		Path();
 		Path(android::graphics::Path &arg0);

@@ -4,28 +4,26 @@ namespace org::xml::sax::helpers
 {
 	// Fields
 	
-	AttributesImpl::AttributesImpl(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AttributesImpl::AttributesImpl(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	AttributesImpl::AttributesImpl()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"org.xml.sax.helpers.AttributesImpl",
 			"()V"
-		);
-	}
+		) {}
 	AttributesImpl::AttributesImpl(__JniBaseClass arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"org.xml.sax.helpers.AttributesImpl",
 			"(Lorg/xml/sax/Attributes;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	void AttributesImpl::addAttribute(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addAttribute",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
@@ -37,14 +35,14 @@ namespace org::xml::sax::helpers
 	}
 	void AttributesImpl::clear()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
 	jint AttributesImpl::getIndex(jstring arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getIndex",
 			"(Ljava/lang/String;)I",
 			arg0
@@ -52,7 +50,7 @@ namespace org::xml::sax::helpers
 	}
 	jint AttributesImpl::getIndex(jstring arg0, jstring arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getIndex",
 			"(Ljava/lang/String;Ljava/lang/String;)I",
 			arg0,
@@ -61,14 +59,14 @@ namespace org::xml::sax::helpers
 	}
 	jint AttributesImpl::getLength()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLength",
 			"()I"
 		);
 	}
 	jstring AttributesImpl::getLocalName(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLocalName",
 			"(I)Ljava/lang/String;",
 			arg0
@@ -76,7 +74,7 @@ namespace org::xml::sax::helpers
 	}
 	jstring AttributesImpl::getQName(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getQName",
 			"(I)Ljava/lang/String;",
 			arg0
@@ -84,7 +82,7 @@ namespace org::xml::sax::helpers
 	}
 	jstring AttributesImpl::getType(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getType",
 			"(I)Ljava/lang/String;",
 			arg0
@@ -92,7 +90,7 @@ namespace org::xml::sax::helpers
 	}
 	jstring AttributesImpl::getType(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getType",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
@@ -100,7 +98,7 @@ namespace org::xml::sax::helpers
 	}
 	jstring AttributesImpl::getType(jstring arg0, jstring arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getType",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
 			arg0,
@@ -109,7 +107,7 @@ namespace org::xml::sax::helpers
 	}
 	jstring AttributesImpl::getURI(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getURI",
 			"(I)Ljava/lang/String;",
 			arg0
@@ -117,7 +115,7 @@ namespace org::xml::sax::helpers
 	}
 	jstring AttributesImpl::getValue(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getValue",
 			"(I)Ljava/lang/String;",
 			arg0
@@ -125,7 +123,7 @@ namespace org::xml::sax::helpers
 	}
 	jstring AttributesImpl::getValue(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getValue",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
@@ -133,7 +131,7 @@ namespace org::xml::sax::helpers
 	}
 	jstring AttributesImpl::getValue(jstring arg0, jstring arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getValue",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
 			arg0,
@@ -142,7 +140,7 @@ namespace org::xml::sax::helpers
 	}
 	void AttributesImpl::removeAttribute(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeAttribute",
 			"(I)V",
 			arg0
@@ -150,7 +148,7 @@ namespace org::xml::sax::helpers
 	}
 	void AttributesImpl::setAttribute(jint arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4, jstring arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAttribute",
 			"(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
@@ -163,15 +161,15 @@ namespace org::xml::sax::helpers
 	}
 	void AttributesImpl::setAttributes(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAttributes",
 			"(Lorg/xml/sax/Attributes;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AttributesImpl::setLocalName(jint arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLocalName",
 			"(ILjava/lang/String;)V",
 			arg0,
@@ -180,7 +178,7 @@ namespace org::xml::sax::helpers
 	}
 	void AttributesImpl::setQName(jint arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setQName",
 			"(ILjava/lang/String;)V",
 			arg0,
@@ -189,7 +187,7 @@ namespace org::xml::sax::helpers
 	}
 	void AttributesImpl::setType(jint arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setType",
 			"(ILjava/lang/String;)V",
 			arg0,
@@ -198,7 +196,7 @@ namespace org::xml::sax::helpers
 	}
 	void AttributesImpl::setURI(jint arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setURI",
 			"(ILjava/lang/String;)V",
 			arg0,
@@ -207,7 +205,7 @@ namespace org::xml::sax::helpers
 	}
 	void AttributesImpl::setValue(jint arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setValue",
 			"(ILjava/lang/String;)V",
 			arg0,

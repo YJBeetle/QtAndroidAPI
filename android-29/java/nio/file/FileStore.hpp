@@ -10,9 +10,11 @@ namespace java::nio::file
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit FileStore(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		FileStore(QAndroidJniObject obj);
+		
 		// Constructors
-		FileStore() = default;
 		
 		// Methods
 		jobject getAttribute(jstring arg0);

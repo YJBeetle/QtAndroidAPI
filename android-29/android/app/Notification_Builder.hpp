@@ -66,11 +66,13 @@ namespace android::app
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Notification_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Notification_Builder(QAndroidJniObject obj);
+		
 		// Constructors
 		Notification_Builder(android::content::Context arg0);
 		Notification_Builder(android::content::Context arg0, jstring arg1);
-		Notification_Builder() = default;
 		
 		// Methods
 		static QAndroidJniObject recoverBuilder(android::content::Context arg0, android::app::Notification arg1);

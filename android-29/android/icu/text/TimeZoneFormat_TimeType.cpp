@@ -28,7 +28,9 @@ namespace android::icu::text
 		);
 	}
 	
-	TimeZoneFormat_TimeType::TimeZoneFormat_TimeType(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TimeZoneFormat_TimeType::TimeZoneFormat_TimeType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

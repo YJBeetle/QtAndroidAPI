@@ -14,15 +14,15 @@ namespace android::net
 		);
 	}
 	
-	TrafficStats::TrafficStats(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TrafficStats::TrafficStats(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	TrafficStats::TrafficStats()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.net.TrafficStats",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void TrafficStats::clearThreadStatsTag()
@@ -281,7 +281,7 @@ namespace android::net
 			"android.net.TrafficStats",
 			"tagDatagramSocket",
 			"(Ljava/net/DatagramSocket;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TrafficStats::tagFileDescriptor(java::io::FileDescriptor arg0)
@@ -290,7 +290,7 @@ namespace android::net
 			"android.net.TrafficStats",
 			"tagFileDescriptor",
 			"(Ljava/io/FileDescriptor;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TrafficStats::tagSocket(java::net::Socket arg0)
@@ -299,7 +299,7 @@ namespace android::net
 			"android.net.TrafficStats",
 			"tagSocket",
 			"(Ljava/net/Socket;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TrafficStats::untagDatagramSocket(java::net::DatagramSocket arg0)
@@ -308,7 +308,7 @@ namespace android::net
 			"android.net.TrafficStats",
 			"untagDatagramSocket",
 			"(Ljava/net/DatagramSocket;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TrafficStats::untagFileDescriptor(java::io::FileDescriptor arg0)
@@ -317,7 +317,7 @@ namespace android::net
 			"android.net.TrafficStats",
 			"untagFileDescriptor",
 			"(Ljava/io/FileDescriptor;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void TrafficStats::untagSocket(java::net::Socket arg0)
@@ -326,7 +326,7 @@ namespace android::net
 			"android.net.TrafficStats",
 			"untagSocket",
 			"(Ljava/net/Socket;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::net

@@ -4,7 +4,9 @@ namespace android::graphics
 {
 	// Fields
 	
-	ImageDecoder_Source::ImageDecoder_Source(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ImageDecoder_Source::ImageDecoder_Source(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

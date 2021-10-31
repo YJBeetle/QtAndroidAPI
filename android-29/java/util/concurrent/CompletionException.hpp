@@ -12,11 +12,13 @@ namespace java::util::concurrent
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CompletionException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
 		CompletionException(QAndroidJniObject obj);
+		
 		// Constructors
 		CompletionException(jthrowable arg0);
 		CompletionException(jstring arg0, jthrowable arg1);
-		CompletionException() = default;
 		
 		// Methods
 	};

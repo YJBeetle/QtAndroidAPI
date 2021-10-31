@@ -4,15 +4,15 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	UnsupportedAddressTypeException::UnsupportedAddressTypeException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UnsupportedAddressTypeException::UnsupportedAddressTypeException(QAndroidJniObject obj) : java::lang::IllegalArgumentException(obj) {}
+	
 	// Constructors
 	UnsupportedAddressTypeException::UnsupportedAddressTypeException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::IllegalArgumentException(
 			"java.nio.channels.UnsupportedAddressTypeException",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::nio::channels

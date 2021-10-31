@@ -22,9 +22,11 @@ namespace android::view
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit LayoutInflater(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		LayoutInflater(QAndroidJniObject obj);
+		
 		// Constructors
-		LayoutInflater() = default;
 		
 		// Methods
 		static QAndroidJniObject from(android::content::Context arg0);

@@ -25,10 +25,12 @@ namespace android::bluetooth
 		static jint SERVICE_TYPE_PRIMARY();
 		static jint SERVICE_TYPE_SECONDARY();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BluetoothGattService(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		BluetoothGattService(QAndroidJniObject obj);
+		
 		// Constructors
 		BluetoothGattService(java::util::UUID arg0, jint arg1);
-		BluetoothGattService() = default;
 		
 		// Methods
 		jboolean addCharacteristic(android::bluetooth::BluetoothGattCharacteristic arg0);

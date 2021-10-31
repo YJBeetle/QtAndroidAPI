@@ -43,11 +43,13 @@ namespace android::view::inputmethod
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit InputMethodInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		InputMethodInfo(QAndroidJniObject obj);
+		
 		// Constructors
 		InputMethodInfo(android::content::Context arg0, android::content::pm::ResolveInfo arg1);
 		InputMethodInfo(jstring arg0, jstring arg1, jstring arg2, jstring arg3);
-		InputMethodInfo() = default;
 		
 		// Methods
 		jint describeContents();

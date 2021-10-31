@@ -65,20 +65,20 @@ namespace android::printservice
 		).object<jstring>();
 	}
 	
-	PrintService::PrintService(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PrintService::PrintService(QAndroidJniObject obj) : android::app::Service(obj) {}
+	
 	// Constructors
 	PrintService::PrintService()
-	{
-		__thiz = QAndroidJniObject(
+		: android::app::Service(
 			"android.printservice.PrintService",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject PrintService::generatePrinterId(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"generatePrinterId",
 			"(Ljava/lang/String;)Landroid/print/PrinterId;",
 			arg0
@@ -86,17 +86,17 @@ namespace android::printservice
 	}
 	QAndroidJniObject PrintService::getActivePrintJobs()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getActivePrintJobs",
 			"()Ljava/util/List;"
 		);
 	}
 	QAndroidJniObject PrintService::onBind(android::content::Intent arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onBind",
 			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::printservice

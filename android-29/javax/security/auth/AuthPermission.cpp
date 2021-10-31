@@ -4,25 +4,23 @@ namespace javax::security::auth
 {
 	// Fields
 	
-	AuthPermission::AuthPermission(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AuthPermission::AuthPermission(QAndroidJniObject obj) : java::security::BasicPermission(obj) {}
+	
 	// Constructors
 	AuthPermission::AuthPermission(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::security::BasicPermission(
 			"javax.security.auth.AuthPermission",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	AuthPermission::AuthPermission(jstring arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::security::BasicPermission(
 			"javax.security.auth.AuthPermission",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace javax::security::auth

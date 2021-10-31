@@ -24,12 +24,14 @@ namespace android::icu::text
 		static jint VERIFICATION_ERROR();
 		static jint ZERO_LENGTH_LABEL();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit StringPrepParseException(const char *className, const char *sig, Ts...agv) : java::text::ParseException(className, sig, std::forward<Ts>(agv)...) {}
 		StringPrepParseException(QAndroidJniObject obj);
+		
 		// Constructors
 		StringPrepParseException(jstring arg0, jint arg1);
 		StringPrepParseException(jstring arg0, jint arg1, jstring arg2, jint arg3);
 		StringPrepParseException(jstring arg0, jint arg1, jstring arg2, jint arg3, jint arg4);
-		StringPrepParseException() = default;
 		
 		// Methods
 		jboolean equals(jobject arg0);

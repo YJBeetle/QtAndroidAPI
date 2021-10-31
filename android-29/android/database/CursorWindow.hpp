@@ -20,12 +20,14 @@ namespace android::database
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CursorWindow(const char *className, const char *sig, Ts...agv) : android::database::sqlite::SQLiteClosable(className, sig, std::forward<Ts>(agv)...) {}
 		CursorWindow(QAndroidJniObject obj);
+		
 		// Constructors
 		CursorWindow(jboolean arg0);
 		CursorWindow(jstring arg0);
 		CursorWindow(jstring arg0, jlong arg1);
-		CursorWindow() = default;
 		
 		// Methods
 		static QAndroidJniObject newFromParcel(android::os::Parcel arg0);

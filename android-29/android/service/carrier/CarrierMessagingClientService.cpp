@@ -5,23 +5,23 @@ namespace android::service::carrier
 {
 	// Fields
 	
-	CarrierMessagingClientService::CarrierMessagingClientService(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CarrierMessagingClientService::CarrierMessagingClientService(QAndroidJniObject obj) : android::app::Service(obj) {}
+	
 	// Constructors
 	CarrierMessagingClientService::CarrierMessagingClientService()
-	{
-		__thiz = QAndroidJniObject(
+		: android::app::Service(
 			"android.service.carrier.CarrierMessagingClientService",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject CarrierMessagingClientService::onBind(android::content::Intent arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onBind",
 			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::service::carrier

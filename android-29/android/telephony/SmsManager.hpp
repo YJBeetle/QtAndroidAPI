@@ -87,9 +87,11 @@ namespace android::telephony
 		static jint STATUS_ON_ICC_UNREAD();
 		static jint STATUS_ON_ICC_UNSENT();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SmsManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SmsManager(QAndroidJniObject obj);
+		
 		// Constructors
-		SmsManager() = default;
 		
 		// Methods
 		static QAndroidJniObject getDefault();

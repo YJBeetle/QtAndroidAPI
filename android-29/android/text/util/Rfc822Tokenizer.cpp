@@ -4,15 +4,15 @@ namespace android::text::util
 {
 	// Fields
 	
-	Rfc822Tokenizer::Rfc822Tokenizer(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Rfc822Tokenizer::Rfc822Tokenizer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Rfc822Tokenizer::Rfc822Tokenizer()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.text.util.Rfc822Tokenizer",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jarray Rfc822Tokenizer::tokenize(jstring arg0)
@@ -31,12 +31,12 @@ namespace android::text::util
 			"tokenize",
 			"(Ljava/lang/CharSequence;Ljava/util/Collection;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jint Rfc822Tokenizer::findTokenEnd(jstring arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"findTokenEnd",
 			"(Ljava/lang/CharSequence;I)I",
 			arg0,
@@ -45,7 +45,7 @@ namespace android::text::util
 	}
 	jint Rfc822Tokenizer::findTokenStart(jstring arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"findTokenStart",
 			"(Ljava/lang/CharSequence;I)I",
 			arg0,
@@ -54,7 +54,7 @@ namespace android::text::util
 	}
 	jstring Rfc822Tokenizer::terminateToken(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"terminateToken",
 			"(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;",
 			arg0

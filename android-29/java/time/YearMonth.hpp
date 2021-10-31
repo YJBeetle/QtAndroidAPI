@@ -38,9 +38,11 @@ namespace java::time
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit YearMonth(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		YearMonth(QAndroidJniObject obj);
+		
 		// Constructors
-		YearMonth() = default;
 		
 		// Methods
 		static QAndroidJniObject from(__JniBaseClass arg0);

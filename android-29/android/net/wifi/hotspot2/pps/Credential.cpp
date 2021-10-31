@@ -17,35 +17,33 @@ namespace android::net::wifi::hotspot2::pps
 		);
 	}
 	
-	Credential::Credential(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Credential::Credential(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Credential::Credential()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.net.wifi.hotspot2.pps.Credential",
 			"()V"
-		);
-	}
+		) {}
 	Credential::Credential(android::net::wifi::hotspot2::pps::Credential &arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.net.wifi.hotspot2.pps.Credential",
 			"(Landroid/net/wifi/hotspot2/pps/Credential;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jint Credential::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean Credential::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -53,79 +51,79 @@ namespace android::net::wifi::hotspot2::pps
 	}
 	QAndroidJniObject Credential::getCaCertificate()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCaCertificate",
 			"()Ljava/security/cert/X509Certificate;"
 		);
 	}
 	QAndroidJniObject Credential::getCertCredential()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCertCredential",
 			"()Landroid/net/wifi/hotspot2/pps/Credential$CertificateCredential;"
 		);
 	}
 	jarray Credential::getClientCertificateChain()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getClientCertificateChain",
 			"()[Ljava/security/cert/X509Certificate;"
 		).object<jarray>();
 	}
 	QAndroidJniObject Credential::getClientPrivateKey()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getClientPrivateKey",
 			"()Ljava/security/PrivateKey;"
 		);
 	}
 	jstring Credential::getRealm()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRealm",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject Credential::getSimCredential()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSimCredential",
 			"()Landroid/net/wifi/hotspot2/pps/Credential$SimCredential;"
 		);
 	}
 	QAndroidJniObject Credential::getUserCredential()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getUserCredential",
 			"()Landroid/net/wifi/hotspot2/pps/Credential$UserCredential;"
 		);
 	}
 	jint Credential::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	void Credential::setCaCertificate(java::security::cert::X509Certificate arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCaCertificate",
 			"(Ljava/security/cert/X509Certificate;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Credential::setCertCredential(android::net::wifi::hotspot2::pps::Credential_CertificateCredential arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCertCredential",
 			"(Landroid/net/wifi/hotspot2/pps/Credential$CertificateCredential;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Credential::setClientCertificateChain(jarray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setClientCertificateChain",
 			"([Ljava/security/cert/X509Certificate;)V",
 			arg0
@@ -133,15 +131,15 @@ namespace android::net::wifi::hotspot2::pps
 	}
 	void Credential::setClientPrivateKey(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setClientPrivateKey",
 			"(Ljava/security/PrivateKey;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Credential::setRealm(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setRealm",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -149,33 +147,33 @@ namespace android::net::wifi::hotspot2::pps
 	}
 	void Credential::setSimCredential(android::net::wifi::hotspot2::pps::Credential_SimCredential arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSimCredential",
 			"(Landroid/net/wifi/hotspot2/pps/Credential$SimCredential;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Credential::setUserCredential(android::net::wifi::hotspot2::pps::Credential_UserCredential arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setUserCredential",
 			"(Landroid/net/wifi/hotspot2/pps/Credential$UserCredential;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring Credential::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void Credential::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

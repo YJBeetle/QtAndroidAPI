@@ -28,27 +28,27 @@ namespace java::io
 		);
 	}
 	
-	FileDescriptor::FileDescriptor(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FileDescriptor::FileDescriptor(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	FileDescriptor::FileDescriptor()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.io.FileDescriptor",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void FileDescriptor::sync()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"sync",
 			"()V"
 		);
 	}
 	jboolean FileDescriptor::valid()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"valid",
 			"()Z"
 		);

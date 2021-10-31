@@ -44,7 +44,9 @@ namespace android::hardware
 		);
 	}
 	
-	Camera::Camera(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Camera::Camera(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -55,7 +57,7 @@ namespace android::hardware
 			"getCameraInfo",
 			"(ILandroid/hardware/Camera$CameraInfo;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jint Camera::getNumberOfCameras()
@@ -85,7 +87,7 @@ namespace android::hardware
 	}
 	void Camera::addCallbackBuffer(jbyteArray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addCallbackBuffer",
 			"([B)V",
 			arg0
@@ -93,22 +95,22 @@ namespace android::hardware
 	}
 	void Camera::autoFocus(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"autoFocus",
 			"(Landroid/hardware/Camera$AutoFocusCallback;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Camera::cancelAutoFocus()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"cancelAutoFocus",
 			"()V"
 		);
 	}
 	jboolean Camera::enableShutterSound(jboolean arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"enableShutterSound",
 			"(Z)Z",
 			arg0
@@ -116,43 +118,43 @@ namespace android::hardware
 	}
 	QAndroidJniObject Camera::getParameters()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getParameters",
 			"()Landroid/hardware/Camera$Parameters;"
 		);
 	}
 	void Camera::lock()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"lock",
 			"()V"
 		);
 	}
 	void Camera::reconnect()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"reconnect",
 			"()V"
 		);
 	}
 	void Camera::release()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
 	void Camera::setAutoFocusMoveCallback(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAutoFocusMoveCallback",
 			"(Landroid/hardware/Camera$AutoFocusMoveCallback;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Camera::setDisplayOrientation(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDisplayOrientation",
 			"(I)V",
 			arg0
@@ -160,93 +162,93 @@ namespace android::hardware
 	}
 	void Camera::setErrorCallback(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setErrorCallback",
 			"(Landroid/hardware/Camera$ErrorCallback;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Camera::setFaceDetectionListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFaceDetectionListener",
 			"(Landroid/hardware/Camera$FaceDetectionListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Camera::setOneShotPreviewCallback(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOneShotPreviewCallback",
 			"(Landroid/hardware/Camera$PreviewCallback;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Camera::setParameters(android::hardware::Camera_Parameters arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setParameters",
 			"(Landroid/hardware/Camera$Parameters;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Camera::setPreviewCallback(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPreviewCallback",
 			"(Landroid/hardware/Camera$PreviewCallback;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Camera::setPreviewCallbackWithBuffer(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPreviewCallbackWithBuffer",
 			"(Landroid/hardware/Camera$PreviewCallback;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Camera::setPreviewDisplay(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPreviewDisplay",
 			"(Landroid/view/SurfaceHolder;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Camera::setPreviewTexture(android::graphics::SurfaceTexture arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPreviewTexture",
 			"(Landroid/graphics/SurfaceTexture;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Camera::setZoomChangeListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setZoomChangeListener",
 			"(Landroid/hardware/Camera$OnZoomChangeListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Camera::startFaceDetection()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"startFaceDetection",
 			"()V"
 		);
 	}
 	void Camera::startPreview()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"startPreview",
 			"()V"
 		);
 	}
 	void Camera::startSmoothZoom(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"startSmoothZoom",
 			"(I)V",
 			arg0
@@ -254,49 +256,49 @@ namespace android::hardware
 	}
 	void Camera::stopFaceDetection()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"stopFaceDetection",
 			"()V"
 		);
 	}
 	void Camera::stopPreview()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"stopPreview",
 			"()V"
 		);
 	}
 	void Camera::stopSmoothZoom()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"stopSmoothZoom",
 			"()V"
 		);
 	}
 	void Camera::takePicture(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"takePicture",
 			"(Landroid/hardware/Camera$ShutterCallback;Landroid/hardware/Camera$PictureCallback;Landroid/hardware/Camera$PictureCallback;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	void Camera::takePicture(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2, __JniBaseClass arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"takePicture",
 			"(Landroid/hardware/Camera$ShutterCallback;Landroid/hardware/Camera$PictureCallback;Landroid/hardware/Camera$PictureCallback;Landroid/hardware/Camera$PictureCallback;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
 		);
 	}
 	void Camera::unlock()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"unlock",
 			"()V"
 		);

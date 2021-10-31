@@ -17,13 +17,15 @@ namespace android::widget
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit RatingBar(const char *className, const char *sig, Ts...agv) : android::widget::AbsSeekBar(className, sig, std::forward<Ts>(agv)...) {}
 		RatingBar(QAndroidJniObject obj);
+		
 		// Constructors
 		RatingBar(android::content::Context arg0);
 		RatingBar(android::content::Context arg0, __JniBaseClass arg1);
 		RatingBar(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		RatingBar(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
-		RatingBar() = default;
 		
 		// Methods
 		jstring getAccessibilityClassName();

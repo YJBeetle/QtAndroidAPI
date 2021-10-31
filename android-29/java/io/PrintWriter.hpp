@@ -39,7 +39,10 @@ namespace java::io
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PrintWriter(const char *className, const char *sig, Ts...agv) : java::io::Writer(className, sig, std::forward<Ts>(agv)...) {}
 		PrintWriter(QAndroidJniObject obj);
+		
 		// Constructors
 		PrintWriter(java::io::File arg0);
 		PrintWriter(java::io::OutputStream arg0);
@@ -52,7 +55,6 @@ namespace java::io
 		PrintWriter(jstring arg0, jstring arg1);
 		PrintWriter(jstring arg0, java::nio::charset::Charset arg1);
 		PrintWriter(java::io::OutputStream arg0, jboolean arg1, java::nio::charset::Charset arg2);
-		PrintWriter() = default;
 		
 		// Methods
 		QAndroidJniObject append(jchar arg0);

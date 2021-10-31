@@ -10,10 +10,12 @@ namespace android::net
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Credentials(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Credentials(QAndroidJniObject obj);
+		
 		// Constructors
 		Credentials(jint arg0, jint arg1, jint arg2);
-		Credentials() = default;
 		
 		// Methods
 		jint getGid();

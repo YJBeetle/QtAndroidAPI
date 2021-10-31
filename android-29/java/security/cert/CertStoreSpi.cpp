@@ -4,32 +4,32 @@ namespace java::security::cert
 {
 	// Fields
 	
-	CertStoreSpi::CertStoreSpi(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CertStoreSpi::CertStoreSpi(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	CertStoreSpi::CertStoreSpi(__JniBaseClass arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.security.cert.CertStoreSpi",
 			"(Ljava/security/cert/CertStoreParameters;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject CertStoreSpi::engineGetCRLs(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"engineGetCRLs",
 			"(Ljava/security/cert/CRLSelector;)Ljava/util/Collection;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject CertStoreSpi::engineGetCertificates(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"engineGetCertificates",
 			"(Ljava/security/cert/CertSelector;)Ljava/util/Collection;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace java::security::cert

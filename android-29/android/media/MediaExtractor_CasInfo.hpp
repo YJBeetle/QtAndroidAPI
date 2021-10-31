@@ -14,9 +14,11 @@ namespace android::media
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaExtractor_CasInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaExtractor_CasInfo(QAndroidJniObject obj);
+		
 		// Constructors
-		MediaExtractor_CasInfo() = default;
 		
 		// Methods
 		jbyteArray getPrivateData();

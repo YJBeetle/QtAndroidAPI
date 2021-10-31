@@ -15,10 +15,12 @@ namespace android::app
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit NotificationChannelGroup(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		NotificationChannelGroup(QAndroidJniObject obj);
+		
 		// Constructors
 		NotificationChannelGroup(jstring arg0, jstring arg1);
-		NotificationChannelGroup() = default;
 		
 		// Methods
 		QAndroidJniObject clone();

@@ -10,111 +10,109 @@ namespace android::widget
 {
 	// Fields
 	
-	ActionMenuView::ActionMenuView(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ActionMenuView::ActionMenuView(QAndroidJniObject obj) : android::widget::LinearLayout(obj) {}
+	
 	// Constructors
 	ActionMenuView::ActionMenuView(android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::LinearLayout(
 			"android.widget.ActionMenuView",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	ActionMenuView::ActionMenuView(android::content::Context arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::LinearLayout(
 			"android.widget.ActionMenuView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	
 	// Methods
 	void ActionMenuView::dismissPopupMenus()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"dismissPopupMenus",
 			"()V"
 		);
 	}
 	QAndroidJniObject ActionMenuView::generateLayoutParams(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"generateLayoutParams",
 			"(Landroid/util/AttributeSet;)Landroid/widget/ActionMenuView$LayoutParams;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ActionMenuView::getMenu()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMenu",
 			"()Landroid/view/Menu;"
 		);
 	}
 	QAndroidJniObject ActionMenuView::getOverflowIcon()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getOverflowIcon",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
 	jint ActionMenuView::getPopupTheme()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPopupTheme",
 			"()I"
 		);
 	}
 	jboolean ActionMenuView::hideOverflowMenu()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hideOverflowMenu",
 			"()Z"
 		);
 	}
 	jboolean ActionMenuView::isOverflowMenuShowing()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isOverflowMenuShowing",
 			"()Z"
 		);
 	}
 	void ActionMenuView::onConfigurationChanged(android::content::res::Configuration arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onConfigurationChanged",
 			"(Landroid/content/res/Configuration;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ActionMenuView::onDetachedFromWindow()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onDetachedFromWindow",
 			"()V"
 		);
 	}
 	void ActionMenuView::setOnMenuItemClickListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnMenuItemClickListener",
 			"(Landroid/widget/ActionMenuView$OnMenuItemClickListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ActionMenuView::setOverflowIcon(android::graphics::drawable::Drawable arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOverflowIcon",
 			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ActionMenuView::setPopupTheme(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPopupTheme",
 			"(I)V",
 			arg0
@@ -122,7 +120,7 @@ namespace android::widget
 	}
 	jboolean ActionMenuView::showOverflowMenu()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"showOverflowMenu",
 			"()Z"
 		);

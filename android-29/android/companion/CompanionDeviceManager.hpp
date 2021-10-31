@@ -27,9 +27,11 @@ namespace android::companion
 		// Fields
 		static jstring EXTRA_DEVICE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CompanionDeviceManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		CompanionDeviceManager(QAndroidJniObject obj);
+		
 		// Constructors
-		CompanionDeviceManager() = default;
 		
 		// Methods
 		void associate(android::companion::AssociationRequest arg0, android::companion::CompanionDeviceManager_Callback arg1, android::os::Handler arg2);

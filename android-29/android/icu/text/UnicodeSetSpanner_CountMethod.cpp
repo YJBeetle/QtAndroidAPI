@@ -20,7 +20,9 @@ namespace android::icu::text
 		);
 	}
 	
-	UnicodeSetSpanner_CountMethod::UnicodeSetSpanner_CountMethod(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UnicodeSetSpanner_CountMethod::UnicodeSetSpanner_CountMethod(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

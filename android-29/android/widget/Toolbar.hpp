@@ -32,13 +32,15 @@ namespace android::widget
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Toolbar(const char *className, const char *sig, Ts...agv) : android::view::ViewGroup(className, sig, std::forward<Ts>(agv)...) {}
 		Toolbar(QAndroidJniObject obj);
+		
 		// Constructors
 		Toolbar(android::content::Context arg0);
 		Toolbar(android::content::Context arg0, __JniBaseClass arg1);
 		Toolbar(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		Toolbar(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
-		Toolbar() = default;
 		
 		// Methods
 		void collapseActionView();

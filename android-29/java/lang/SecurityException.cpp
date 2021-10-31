@@ -4,40 +4,34 @@ namespace java::lang
 {
 	// Fields
 	
-	SecurityException::SecurityException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SecurityException::SecurityException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	
 	// Constructors
 	SecurityException::SecurityException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::RuntimeException(
 			"java.lang.SecurityException",
 			"()V"
-		);
-	}
+		) {}
 	SecurityException::SecurityException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::RuntimeException(
 			"java.lang.SecurityException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	SecurityException::SecurityException(jthrowable arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::RuntimeException(
 			"java.lang.SecurityException",
 			"(Ljava/lang/Throwable;)V",
 			arg0
-		);
-	}
+		) {}
 	SecurityException::SecurityException(jstring arg0, jthrowable arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::RuntimeException(
 			"java.lang.SecurityException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::lang

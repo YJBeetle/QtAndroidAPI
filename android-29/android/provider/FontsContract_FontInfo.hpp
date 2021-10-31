@@ -14,9 +14,11 @@ namespace android::provider
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit FontsContract_FontInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		FontsContract_FontInfo(QAndroidJniObject obj);
+		
 		// Constructors
-		FontsContract_FontInfo() = default;
 		
 		// Methods
 		jarray getAxes();

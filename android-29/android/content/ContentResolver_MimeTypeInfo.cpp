@@ -5,27 +5,29 @@ namespace android::content
 {
 	// Fields
 	
-	ContentResolver_MimeTypeInfo::ContentResolver_MimeTypeInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ContentResolver_MimeTypeInfo::ContentResolver_MimeTypeInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jstring ContentResolver_MimeTypeInfo::getContentDescription()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getContentDescription",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	QAndroidJniObject ContentResolver_MimeTypeInfo::getIcon()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getIcon",
 			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
 	jstring ContentResolver_MimeTypeInfo::getLabel()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();

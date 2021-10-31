@@ -6,7 +6,9 @@ namespace android::nfc::tech
 {
 	// Fields
 	
-	NdefFormatable::NdefFormatable(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NdefFormatable::NdefFormatable(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -16,49 +18,49 @@ namespace android::nfc::tech
 			"android.nfc.tech.NdefFormatable",
 			"get",
 			"(Landroid/nfc/Tag;)Landroid/nfc/tech/NdefFormatable;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void NdefFormatable::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	void NdefFormatable::connect()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"connect",
 			"()V"
 		);
 	}
 	void NdefFormatable::format(android::nfc::NdefMessage arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"format",
 			"(Landroid/nfc/NdefMessage;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void NdefFormatable::formatReadOnly(android::nfc::NdefMessage arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"formatReadOnly",
 			"(Landroid/nfc/NdefMessage;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject NdefFormatable::getTag()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTag",
 			"()Landroid/nfc/Tag;"
 		);
 	}
 	jboolean NdefFormatable::isConnected()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isConnected",
 			"()Z"
 		);

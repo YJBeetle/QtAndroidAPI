@@ -18,9 +18,11 @@ namespace java::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Base64(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Base64(QAndroidJniObject obj);
+		
 		// Constructors
-		Base64() = default;
 		
 		// Methods
 		static QAndroidJniObject getDecoder();

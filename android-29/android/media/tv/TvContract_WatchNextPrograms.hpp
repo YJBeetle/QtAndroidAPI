@@ -98,9 +98,11 @@ namespace android::media::tv
 		static jint WATCH_NEXT_TYPE_NEXT();
 		static jint WATCH_NEXT_TYPE_WATCHLIST();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TvContract_WatchNextPrograms(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		TvContract_WatchNextPrograms(QAndroidJniObject obj);
+		
 		// Constructors
-		TvContract_WatchNextPrograms() = default;
 		
 		// Methods
 	};

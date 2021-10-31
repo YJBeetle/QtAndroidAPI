@@ -23,7 +23,9 @@ namespace android::preference
 		).object<jstring>();
 	}
 	
-	PreferenceManager::PreferenceManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PreferenceManager::PreferenceManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -33,7 +35,7 @@ namespace android::preference
 			"android.preference.PreferenceManager",
 			"getDefaultSharedPreferences",
 			"(Landroid/content/Context;)Landroid/content/SharedPreferences;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring PreferenceManager::getDefaultSharedPreferencesName(android::content::Context arg0)
@@ -42,7 +44,7 @@ namespace android::preference
 			"android.preference.PreferenceManager",
 			"getDefaultSharedPreferencesName",
 			"(Landroid/content/Context;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	void PreferenceManager::setDefaultValues(android::content::Context arg0, jint arg1, jboolean arg2)
@@ -51,7 +53,7 @@ namespace android::preference
 			"android.preference.PreferenceManager",
 			"setDefaultValues",
 			"(Landroid/content/Context;IZ)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
@@ -62,7 +64,7 @@ namespace android::preference
 			"android.preference.PreferenceManager",
 			"setDefaultValues",
 			"(Landroid/content/Context;Ljava/lang/String;IIZ)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
@@ -71,15 +73,15 @@ namespace android::preference
 	}
 	QAndroidJniObject PreferenceManager::createPreferenceScreen(android::content::Context arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"createPreferenceScreen",
 			"(Landroid/content/Context;)Landroid/preference/PreferenceScreen;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject PreferenceManager::findPreference(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"findPreference",
 			"(Ljava/lang/CharSequence;)Landroid/preference/Preference;",
 			arg0
@@ -87,57 +89,57 @@ namespace android::preference
 	}
 	QAndroidJniObject PreferenceManager::getPreferenceDataStore()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPreferenceDataStore",
 			"()Landroid/preference/PreferenceDataStore;"
 		);
 	}
 	QAndroidJniObject PreferenceManager::getSharedPreferences()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSharedPreferences",
 			"()Landroid/content/SharedPreferences;"
 		);
 	}
 	jint PreferenceManager::getSharedPreferencesMode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSharedPreferencesMode",
 			"()I"
 		);
 	}
 	jstring PreferenceManager::getSharedPreferencesName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSharedPreferencesName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jboolean PreferenceManager::isStorageDefault()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isStorageDefault",
 			"()Z"
 		);
 	}
 	jboolean PreferenceManager::isStorageDeviceProtected()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isStorageDeviceProtected",
 			"()Z"
 		);
 	}
 	void PreferenceManager::setPreferenceDataStore(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPreferenceDataStore",
 			"(Landroid/preference/PreferenceDataStore;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void PreferenceManager::setSharedPreferencesMode(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSharedPreferencesMode",
 			"(I)V",
 			arg0
@@ -145,7 +147,7 @@ namespace android::preference
 	}
 	void PreferenceManager::setSharedPreferencesName(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSharedPreferencesName",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -153,14 +155,14 @@ namespace android::preference
 	}
 	void PreferenceManager::setStorageDefault()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setStorageDefault",
 			"()V"
 		);
 	}
 	void PreferenceManager::setStorageDeviceProtected()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setStorageDeviceProtected",
 			"()V"
 		);

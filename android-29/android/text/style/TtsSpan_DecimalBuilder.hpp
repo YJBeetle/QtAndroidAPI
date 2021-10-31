@@ -12,7 +12,10 @@ namespace android::text::style
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TtsSpan_DecimalBuilder(const char *className, const char *sig, Ts...agv) : android::text::style::TtsSpan_SemioticClassBuilder(className, sig, std::forward<Ts>(agv)...) {}
 		TtsSpan_DecimalBuilder(QAndroidJniObject obj);
+		
 		// Constructors
 		TtsSpan_DecimalBuilder();
 		TtsSpan_DecimalBuilder(jstring arg0, jstring arg1);

@@ -6,7 +6,9 @@ namespace android::renderscript
 {
 	// Fields
 	
-	Sampler::Sampler(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Sampler::Sampler(QAndroidJniObject obj) : android::renderscript::BaseObj(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -16,7 +18,7 @@ namespace android::renderscript
 			"android.renderscript.Sampler",
 			"CLAMP_LINEAR",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Sampler;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Sampler::CLAMP_LINEAR_MIP_LINEAR(android::renderscript::RenderScript arg0)
@@ -25,7 +27,7 @@ namespace android::renderscript
 			"android.renderscript.Sampler",
 			"CLAMP_LINEAR_MIP_LINEAR",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Sampler;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Sampler::CLAMP_NEAREST(android::renderscript::RenderScript arg0)
@@ -34,7 +36,7 @@ namespace android::renderscript
 			"android.renderscript.Sampler",
 			"CLAMP_NEAREST",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Sampler;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Sampler::MIRRORED_REPEAT_LINEAR(android::renderscript::RenderScript arg0)
@@ -43,7 +45,7 @@ namespace android::renderscript
 			"android.renderscript.Sampler",
 			"MIRRORED_REPEAT_LINEAR",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Sampler;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Sampler::MIRRORED_REPEAT_LINEAR_MIP_LINEAR(android::renderscript::RenderScript arg0)
@@ -52,7 +54,7 @@ namespace android::renderscript
 			"android.renderscript.Sampler",
 			"MIRRORED_REPEAT_LINEAR_MIP_LINEAR",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Sampler;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Sampler::MIRRORED_REPEAT_NEAREST(android::renderscript::RenderScript arg0)
@@ -61,7 +63,7 @@ namespace android::renderscript
 			"android.renderscript.Sampler",
 			"MIRRORED_REPEAT_NEAREST",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Sampler;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Sampler::WRAP_LINEAR(android::renderscript::RenderScript arg0)
@@ -70,7 +72,7 @@ namespace android::renderscript
 			"android.renderscript.Sampler",
 			"WRAP_LINEAR",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Sampler;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Sampler::WRAP_LINEAR_MIP_LINEAR(android::renderscript::RenderScript arg0)
@@ -79,7 +81,7 @@ namespace android::renderscript
 			"android.renderscript.Sampler",
 			"WRAP_LINEAR_MIP_LINEAR",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Sampler;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Sampler::WRAP_NEAREST(android::renderscript::RenderScript arg0)
@@ -88,40 +90,40 @@ namespace android::renderscript
 			"android.renderscript.Sampler",
 			"WRAP_NEAREST",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Sampler;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jfloat Sampler::getAnisotropy()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getAnisotropy",
 			"()F"
 		);
 	}
 	QAndroidJniObject Sampler::getMagnification()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMagnification",
 			"()Landroid/renderscript/Sampler$Value;"
 		);
 	}
 	QAndroidJniObject Sampler::getMinification()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMinification",
 			"()Landroid/renderscript/Sampler$Value;"
 		);
 	}
 	QAndroidJniObject Sampler::getWrapS()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getWrapS",
 			"()Landroid/renderscript/Sampler$Value;"
 		);
 	}
 	QAndroidJniObject Sampler::getWrapT()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getWrapT",
 			"()Landroid/renderscript/Sampler$Value;"
 		);

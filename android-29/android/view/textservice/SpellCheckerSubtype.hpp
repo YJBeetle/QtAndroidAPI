@@ -23,10 +23,12 @@ namespace android::view::textservice
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SpellCheckerSubtype(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SpellCheckerSubtype(QAndroidJniObject obj);
+		
 		// Constructors
 		SpellCheckerSubtype(jint arg0, jstring arg1, jstring arg2);
-		SpellCheckerSubtype() = default;
 		
 		// Methods
 		jboolean containsExtraValueKey(jstring arg0);

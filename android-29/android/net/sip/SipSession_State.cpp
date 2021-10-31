@@ -81,7 +81,9 @@ namespace android::net::sip
 		);
 	}
 	
-	SipSession_State::SipSession_State(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SipSession_State::SipSession_State(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

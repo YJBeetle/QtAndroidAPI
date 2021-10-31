@@ -17,9 +17,11 @@ namespace javax::net::ssl
 		static QAndroidJniObject NEED_WRAP();
 		static QAndroidJniObject NOT_HANDSHAKING();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SSLEngineResult_HandshakeStatus(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		SSLEngineResult_HandshakeStatus(QAndroidJniObject obj);
+		
 		// Constructors
-		SSLEngineResult_HandshakeStatus() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

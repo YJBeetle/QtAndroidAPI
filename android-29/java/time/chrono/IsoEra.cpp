@@ -20,7 +20,9 @@ namespace java::time::chrono
 		);
 	}
 	
-	IsoEra::IsoEra(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	IsoEra::IsoEra(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -52,7 +54,7 @@ namespace java::time::chrono
 	}
 	jint IsoEra::getValue()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getValue",
 			"()I"
 		);

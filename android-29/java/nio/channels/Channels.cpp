@@ -12,7 +12,9 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	Channels::Channels(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Channels::Channels(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -22,7 +24,7 @@ namespace java::nio::channels
 			"java.nio.channels.Channels",
 			"newChannel",
 			"(Ljava/io/InputStream;)Ljava/nio/channels/ReadableByteChannel;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Channels::newChannel(java::io::OutputStream arg0)
@@ -31,7 +33,7 @@ namespace java::nio::channels
 			"java.nio.channels.Channels",
 			"newChannel",
 			"(Ljava/io/OutputStream;)Ljava/nio/channels/WritableByteChannel;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Channels::newInputStream(__JniBaseClass arg0)
@@ -40,7 +42,7 @@ namespace java::nio::channels
 			"java.nio.channels.Channels",
 			"newInputStream",
 			"(Ljava/nio/channels/AsynchronousByteChannel;)Ljava/io/InputStream;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Channels::newOutputStream(__JniBaseClass arg0)
@@ -49,7 +51,7 @@ namespace java::nio::channels
 			"java.nio.channels.Channels",
 			"newOutputStream",
 			"(Ljava/nio/channels/AsynchronousByteChannel;)Ljava/io/OutputStream;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Channels::newReader(__JniBaseClass arg0, jstring arg1)
@@ -58,7 +60,7 @@ namespace java::nio::channels
 			"java.nio.channels.Channels",
 			"newReader",
 			"(Ljava/nio/channels/ReadableByteChannel;Ljava/lang/String;)Ljava/io/Reader;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -68,8 +70,8 @@ namespace java::nio::channels
 			"java.nio.channels.Channels",
 			"newReader",
 			"(Ljava/nio/channels/ReadableByteChannel;Ljava/nio/charset/Charset;)Ljava/io/Reader;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject Channels::newReader(__JniBaseClass arg0, java::nio::charset::CharsetDecoder arg1, jint arg2)
@@ -78,8 +80,8 @@ namespace java::nio::channels
 			"java.nio.channels.Channels",
 			"newReader",
 			"(Ljava/nio/channels/ReadableByteChannel;Ljava/nio/charset/CharsetDecoder;I)Ljava/io/Reader;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
@@ -89,7 +91,7 @@ namespace java::nio::channels
 			"java.nio.channels.Channels",
 			"newWriter",
 			"(Ljava/nio/channels/WritableByteChannel;Ljava/lang/String;)Ljava/io/Writer;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -99,8 +101,8 @@ namespace java::nio::channels
 			"java.nio.channels.Channels",
 			"newWriter",
 			"(Ljava/nio/channels/WritableByteChannel;Ljava/nio/charset/Charset;)Ljava/io/Writer;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject Channels::newWriter(__JniBaseClass arg0, java::nio::charset::CharsetEncoder arg1, jint arg2)
@@ -109,8 +111,8 @@ namespace java::nio::channels
 			"java.nio.channels.Channels",
 			"newWriter",
 			"(Ljava/nio/channels/WritableByteChannel;Ljava/nio/charset/CharsetEncoder;I)Ljava/io/Writer;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}

@@ -18,9 +18,11 @@ namespace android::se::omapi
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Session(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Session(QAndroidJniObject obj);
+		
 		// Constructors
-		Session() = default;
 		
 		// Methods
 		void close();

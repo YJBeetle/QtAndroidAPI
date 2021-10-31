@@ -5,30 +5,28 @@ namespace android::database
 {
 	// Fields
 	
-	MatrixCursor::MatrixCursor(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MatrixCursor::MatrixCursor(QAndroidJniObject obj) : android::database::AbstractCursor(obj) {}
+	
 	// Constructors
 	MatrixCursor::MatrixCursor(jarray arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::database::AbstractCursor(
 			"android.database.MatrixCursor",
 			"([Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	MatrixCursor::MatrixCursor(jarray arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::database::AbstractCursor(
 			"android.database.MatrixCursor",
 			"([Ljava/lang/String;I)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	void MatrixCursor::addRow(jobjectArray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addRow",
 			"([Ljava/lang/Object;)V",
 			arg0
@@ -36,15 +34,15 @@ namespace android::database
 	}
 	void MatrixCursor::addRow(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addRow",
 			"(Ljava/lang/Iterable;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jbyteArray MatrixCursor::getBlob(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBlob",
 			"(I)[B",
 			arg0
@@ -52,21 +50,21 @@ namespace android::database
 	}
 	jarray MatrixCursor::getColumnNames()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getColumnNames",
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	jint MatrixCursor::getCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCount",
 			"()I"
 		);
 	}
 	jdouble MatrixCursor::getDouble(jint arg0)
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"getDouble",
 			"(I)D",
 			arg0
@@ -74,7 +72,7 @@ namespace android::database
 	}
 	jfloat MatrixCursor::getFloat(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getFloat",
 			"(I)F",
 			arg0
@@ -82,7 +80,7 @@ namespace android::database
 	}
 	jint MatrixCursor::getInt(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getInt",
 			"(I)I",
 			arg0
@@ -90,7 +88,7 @@ namespace android::database
 	}
 	jlong MatrixCursor::getLong(jint arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getLong",
 			"(I)J",
 			arg0
@@ -98,7 +96,7 @@ namespace android::database
 	}
 	jshort MatrixCursor::getShort(jint arg0)
 	{
-		return __thiz.callMethod<jshort>(
+		return callMethod<jshort>(
 			"getShort",
 			"(I)S",
 			arg0
@@ -106,7 +104,7 @@ namespace android::database
 	}
 	jstring MatrixCursor::getString(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getString",
 			"(I)Ljava/lang/String;",
 			arg0
@@ -114,7 +112,7 @@ namespace android::database
 	}
 	jint MatrixCursor::getType(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getType",
 			"(I)I",
 			arg0
@@ -122,7 +120,7 @@ namespace android::database
 	}
 	jboolean MatrixCursor::isNull(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isNull",
 			"(I)Z",
 			arg0
@@ -130,7 +128,7 @@ namespace android::database
 	}
 	QAndroidJniObject MatrixCursor::newRow()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newRow",
 			"()Landroid/database/MatrixCursor$RowBuilder;"
 		);

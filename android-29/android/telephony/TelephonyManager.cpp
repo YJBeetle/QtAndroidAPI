@@ -778,28 +778,30 @@ namespace android::telephony
 		).object<jstring>();
 	}
 	
-	TelephonyManager::TelephonyManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TelephonyManager::TelephonyManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jboolean TelephonyManager::canChangeDtmfToneLength()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"canChangeDtmfToneLength",
 			"()Z"
 		);
 	}
 	QAndroidJniObject TelephonyManager::createForPhoneAccountHandle(android::telecom::PhoneAccountHandle arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"createForPhoneAccountHandle",
 			"(Landroid/telecom/PhoneAccountHandle;)Landroid/telephony/TelephonyManager;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject TelephonyManager::createForSubscriptionId(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"createForSubscriptionId",
 			"(I)Landroid/telephony/TelephonyManager;",
 			arg0
@@ -807,84 +809,84 @@ namespace android::telephony
 	}
 	jboolean TelephonyManager::doesSwitchMultiSimConfigTriggerReboot()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"doesSwitchMultiSimConfigTriggerReboot",
 			"()Z"
 		);
 	}
 	QAndroidJniObject TelephonyManager::getAllCellInfo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAllCellInfo",
 			"()Ljava/util/List;"
 		);
 	}
 	jint TelephonyManager::getCallState()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCallState",
 			"()I"
 		);
 	}
 	jint TelephonyManager::getCardIdForDefaultEuicc()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCardIdForDefaultEuicc",
 			"()I"
 		);
 	}
 	QAndroidJniObject TelephonyManager::getCarrierConfig()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCarrierConfig",
 			"()Landroid/os/PersistableBundle;"
 		);
 	}
 	jint TelephonyManager::getCarrierIdFromSimMccMnc()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCarrierIdFromSimMccMnc",
 			"()I"
 		);
 	}
 	QAndroidJniObject TelephonyManager::getCellLocation()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCellLocation",
 			"()Landroid/telephony/CellLocation;"
 		);
 	}
 	jint TelephonyManager::getDataActivity()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDataActivity",
 			"()I"
 		);
 	}
 	jint TelephonyManager::getDataNetworkType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDataNetworkType",
 			"()I"
 		);
 	}
 	jint TelephonyManager::getDataState()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDataState",
 			"()I"
 		);
 	}
 	jstring TelephonyManager::getDeviceId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDeviceId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring TelephonyManager::getDeviceId(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDeviceId",
 			"(I)Ljava/lang/String;",
 			arg0
@@ -892,21 +894,21 @@ namespace android::telephony
 	}
 	jstring TelephonyManager::getDeviceSoftwareVersion()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDeviceSoftwareVersion",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject TelephonyManager::getEmergencyNumberList()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEmergencyNumberList",
 			"()Ljava/util/Map;"
 		);
 	}
 	QAndroidJniObject TelephonyManager::getEmergencyNumberList(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEmergencyNumberList",
 			"(I)Ljava/util/Map;",
 			arg0
@@ -914,21 +916,21 @@ namespace android::telephony
 	}
 	jarray TelephonyManager::getForbiddenPlmns()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getForbiddenPlmns",
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	jstring TelephonyManager::getGroupIdLevel1()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getGroupIdLevel1",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring TelephonyManager::getIccAuthentication(jint arg0, jint arg1, jstring arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getIccAuthentication",
 			"(IILjava/lang/String;)Ljava/lang/String;",
 			arg0,
@@ -938,14 +940,14 @@ namespace android::telephony
 	}
 	jstring TelephonyManager::getImei()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getImei",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring TelephonyManager::getImei(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getImei",
 			"(I)Ljava/lang/String;",
 			arg0
@@ -953,21 +955,21 @@ namespace android::telephony
 	}
 	jstring TelephonyManager::getLine1Number()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLine1Number",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring TelephonyManager::getManufacturerCode()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getManufacturerCode",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring TelephonyManager::getManufacturerCode(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getManufacturerCode",
 			"(I)Ljava/lang/String;",
 			arg0
@@ -975,14 +977,14 @@ namespace android::telephony
 	}
 	jstring TelephonyManager::getMeid()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMeid",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring TelephonyManager::getMeid(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMeid",
 			"(I)Ljava/lang/String;",
 			arg0
@@ -990,161 +992,161 @@ namespace android::telephony
 	}
 	jstring TelephonyManager::getMmsUAProfUrl()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMmsUAProfUrl",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring TelephonyManager::getMmsUserAgent()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMmsUserAgent",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring TelephonyManager::getNai()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getNai",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring TelephonyManager::getNetworkCountryIso()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getNetworkCountryIso",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring TelephonyManager::getNetworkOperator()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getNetworkOperator",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring TelephonyManager::getNetworkOperatorName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getNetworkOperatorName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring TelephonyManager::getNetworkSpecifier()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getNetworkSpecifier",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint TelephonyManager::getNetworkType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getNetworkType",
 			"()I"
 		);
 	}
 	jint TelephonyManager::getPhoneCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPhoneCount",
 			"()I"
 		);
 	}
 	jint TelephonyManager::getPhoneType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPhoneType",
 			"()I"
 		);
 	}
 	jint TelephonyManager::getPreferredOpportunisticDataSubscription()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPreferredOpportunisticDataSubscription",
 			"()I"
 		);
 	}
 	QAndroidJniObject TelephonyManager::getServiceState()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getServiceState",
 			"()Landroid/telephony/ServiceState;"
 		);
 	}
 	QAndroidJniObject TelephonyManager::getSignalStrength()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSignalStrength",
 			"()Landroid/telephony/SignalStrength;"
 		);
 	}
 	jint TelephonyManager::getSimCarrierId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSimCarrierId",
 			"()I"
 		);
 	}
 	jstring TelephonyManager::getSimCarrierIdName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSimCarrierIdName",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jstring TelephonyManager::getSimCountryIso()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSimCountryIso",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring TelephonyManager::getSimOperator()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSimOperator",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring TelephonyManager::getSimOperatorName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSimOperatorName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring TelephonyManager::getSimSerialNumber()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSimSerialNumber",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint TelephonyManager::getSimSpecificCarrierId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSimSpecificCarrierId",
 			"()I"
 		);
 	}
 	jstring TelephonyManager::getSimSpecificCarrierIdName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSimSpecificCarrierIdName",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jint TelephonyManager::getSimState()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSimState",
 			"()I"
 		);
 	}
 	jint TelephonyManager::getSimState(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSimState",
 			"(I)I",
 			arg0
@@ -1152,21 +1154,21 @@ namespace android::telephony
 	}
 	jstring TelephonyManager::getSubscriberId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSubscriberId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring TelephonyManager::getTypeAllocationCode()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTypeAllocationCode",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring TelephonyManager::getTypeAllocationCode(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTypeAllocationCode",
 			"(I)Ljava/lang/String;",
 			arg0
@@ -1174,64 +1176,64 @@ namespace android::telephony
 	}
 	QAndroidJniObject TelephonyManager::getUiccCardsInfo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getUiccCardsInfo",
 			"()Ljava/util/List;"
 		);
 	}
 	jstring TelephonyManager::getVisualVoicemailPackageName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getVisualVoicemailPackageName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring TelephonyManager::getVoiceMailAlphaTag()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getVoiceMailAlphaTag",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring TelephonyManager::getVoiceMailNumber()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getVoiceMailNumber",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint TelephonyManager::getVoiceNetworkType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getVoiceNetworkType",
 			"()I"
 		);
 	}
 	QAndroidJniObject TelephonyManager::getVoicemailRingtoneUri(android::telecom::PhoneAccountHandle arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getVoicemailRingtoneUri",
 			"(Landroid/telecom/PhoneAccountHandle;)Landroid/net/Uri;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean TelephonyManager::hasCarrierPrivileges()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasCarrierPrivileges",
 			"()Z"
 		);
 	}
 	jboolean TelephonyManager::hasIccCard()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasIccCard",
 			"()Z"
 		);
 	}
 	jboolean TelephonyManager::iccCloseLogicalChannel(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"iccCloseLogicalChannel",
 			"(I)Z",
 			arg0
@@ -1239,7 +1241,7 @@ namespace android::telephony
 	}
 	jbyteArray TelephonyManager::iccExchangeSimIO(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jstring arg5)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"iccExchangeSimIO",
 			"(IIIIILjava/lang/String;)[B",
 			arg0,
@@ -1252,7 +1254,7 @@ namespace android::telephony
 	}
 	QAndroidJniObject TelephonyManager::iccOpenLogicalChannel(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"iccOpenLogicalChannel",
 			"(Ljava/lang/String;)Landroid/telephony/IccOpenLogicalChannelResponse;",
 			arg0
@@ -1260,7 +1262,7 @@ namespace android::telephony
 	}
 	QAndroidJniObject TelephonyManager::iccOpenLogicalChannel(jstring arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"iccOpenLogicalChannel",
 			"(Ljava/lang/String;I)Landroid/telephony/IccOpenLogicalChannelResponse;",
 			arg0,
@@ -1269,7 +1271,7 @@ namespace android::telephony
 	}
 	jstring TelephonyManager::iccTransmitApduBasicChannel(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jstring arg5)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"iccTransmitApduBasicChannel",
 			"(IIIIILjava/lang/String;)Ljava/lang/String;",
 			arg0,
@@ -1282,7 +1284,7 @@ namespace android::telephony
 	}
 	jstring TelephonyManager::iccTransmitApduLogicalChannel(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jstring arg6)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"iccTransmitApduLogicalChannel",
 			"(IIIIIILjava/lang/String;)Ljava/lang/String;",
 			arg0,
@@ -1296,28 +1298,28 @@ namespace android::telephony
 	}
 	jboolean TelephonyManager::isConcurrentVoiceAndDataSupported()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isConcurrentVoiceAndDataSupported",
 			"()Z"
 		);
 	}
 	jboolean TelephonyManager::isDataEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isDataEnabled",
 			"()Z"
 		);
 	}
 	jboolean TelephonyManager::isDataRoamingEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isDataRoamingEnabled",
 			"()Z"
 		);
 	}
 	jboolean TelephonyManager::isEmergencyNumber(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEmergencyNumber",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -1325,99 +1327,99 @@ namespace android::telephony
 	}
 	jboolean TelephonyManager::isHearingAidCompatibilitySupported()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isHearingAidCompatibilitySupported",
 			"()Z"
 		);
 	}
 	jint TelephonyManager::isMultiSimSupported()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"isMultiSimSupported",
 			"()I"
 		);
 	}
 	jboolean TelephonyManager::isNetworkRoaming()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isNetworkRoaming",
 			"()Z"
 		);
 	}
 	jboolean TelephonyManager::isRttSupported()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isRttSupported",
 			"()Z"
 		);
 	}
 	jboolean TelephonyManager::isSmsCapable()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isSmsCapable",
 			"()Z"
 		);
 	}
 	jboolean TelephonyManager::isTtyModeSupported()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isTtyModeSupported",
 			"()Z"
 		);
 	}
 	jboolean TelephonyManager::isVoiceCapable()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isVoiceCapable",
 			"()Z"
 		);
 	}
 	jboolean TelephonyManager::isVoicemailVibrationEnabled(android::telecom::PhoneAccountHandle arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isVoicemailVibrationEnabled",
 			"(Landroid/telecom/PhoneAccountHandle;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean TelephonyManager::isWorldPhone()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isWorldPhone",
 			"()Z"
 		);
 	}
 	void TelephonyManager::listen(android::telephony::PhoneStateListener arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"listen",
 			"(Landroid/telephony/PhoneStateListener;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void TelephonyManager::requestCellInfoUpdate(__JniBaseClass arg0, android::telephony::TelephonyManager_CellInfoCallback arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"requestCellInfoUpdate",
 			"(Ljava/util/concurrent/Executor;Landroid/telephony/TelephonyManager$CellInfoCallback;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject TelephonyManager::requestNetworkScan(android::telephony::NetworkScanRequest arg0, __JniBaseClass arg1, android::telephony::TelephonyScanManager_NetworkScanCallback arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"requestNetworkScan",
 			"(Landroid/telephony/NetworkScanRequest;Ljava/util/concurrent/Executor;Landroid/telephony/TelephonyScanManager$NetworkScanCallback;)Landroid/telephony/NetworkScan;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	void TelephonyManager::sendDialerSpecialCode(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"sendDialerSpecialCode",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -1425,7 +1427,7 @@ namespace android::telephony
 	}
 	jstring TelephonyManager::sendEnvelopeWithStatus(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"sendEnvelopeWithStatus",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
@@ -1433,28 +1435,28 @@ namespace android::telephony
 	}
 	void TelephonyManager::sendUssdRequest(jstring arg0, android::telephony::TelephonyManager_UssdResponseCallback arg1, android::os::Handler arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"sendUssdRequest",
 			"(Ljava/lang/String;Landroid/telephony/TelephonyManager$UssdResponseCallback;Landroid/os/Handler;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	void TelephonyManager::sendVisualVoicemailSms(jstring arg0, jint arg1, jstring arg2, android::app::PendingIntent arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"sendVisualVoicemailSms",
 			"(Ljava/lang/String;ILjava/lang/String;Landroid/app/PendingIntent;)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	void TelephonyManager::setDataEnabled(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDataEnabled",
 			"(Z)V",
 			arg0
@@ -1462,7 +1464,7 @@ namespace android::telephony
 	}
 	jboolean TelephonyManager::setLine1NumberForDisplay(jstring arg0, jstring arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"setLine1NumberForDisplay",
 			"(Ljava/lang/String;Ljava/lang/String;)Z",
 			arg0,
@@ -1471,14 +1473,14 @@ namespace android::telephony
 	}
 	void TelephonyManager::setNetworkSelectionModeAutomatic()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setNetworkSelectionModeAutomatic",
 			"()V"
 		);
 	}
 	jboolean TelephonyManager::setNetworkSelectionModeManual(jstring arg0, jboolean arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"setNetworkSelectionModeManual",
 			"(Ljava/lang/String;Z)Z",
 			arg0,
@@ -1487,7 +1489,7 @@ namespace android::telephony
 	}
 	jboolean TelephonyManager::setOperatorBrandOverride(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"setOperatorBrandOverride",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -1495,33 +1497,33 @@ namespace android::telephony
 	}
 	jboolean TelephonyManager::setPreferredNetworkTypeToGlobal()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"setPreferredNetworkTypeToGlobal",
 			"()Z"
 		);
 	}
 	void TelephonyManager::setPreferredOpportunisticDataSubscription(jint arg0, jboolean arg1, __JniBaseClass arg2, __JniBaseClass arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPreferredOpportunisticDataSubscription",
 			"(IZLjava/util/concurrent/Executor;Ljava/util/function/Consumer;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
+			arg2.object(),
+			arg3.object()
 		);
 	}
 	void TelephonyManager::setVisualVoicemailSmsFilterSettings(android::telephony::VisualVoicemailSmsFilterSettings arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setVisualVoicemailSmsFilterSettings",
 			"(Landroid/telephony/VisualVoicemailSmsFilterSettings;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean TelephonyManager::setVoiceMailNumber(jstring arg0, jstring arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"setVoiceMailNumber",
 			"(Ljava/lang/String;Ljava/lang/String;)Z",
 			arg0,
@@ -1530,25 +1532,25 @@ namespace android::telephony
 	}
 	void TelephonyManager::setVoicemailRingtoneUri(android::telecom::PhoneAccountHandle arg0, android::net::Uri arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setVoicemailRingtoneUri",
 			"(Landroid/telecom/PhoneAccountHandle;Landroid/net/Uri;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void TelephonyManager::setVoicemailVibrationEnabled(android::telecom::PhoneAccountHandle arg0, jboolean arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setVoicemailVibrationEnabled",
 			"(Landroid/telecom/PhoneAccountHandle;Z)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void TelephonyManager::switchMultiSimConfig(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"switchMultiSimConfig",
 			"(I)V",
 			arg0
@@ -1556,12 +1558,12 @@ namespace android::telephony
 	}
 	void TelephonyManager::updateAvailableNetworks(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"updateAvailableNetworks",
 			"(Ljava/util/List;Ljava/util/concurrent/Executor;Ljava/util/function/Consumer;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 } // namespace android::telephony

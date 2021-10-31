@@ -24,7 +24,10 @@ namespace android::text::method
 		static jint META_SYM_LOCKED();
 		static jint META_SYM_ON();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MetaKeyKeyListener(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MetaKeyKeyListener(QAndroidJniObject obj);
+		
 		// Constructors
 		MetaKeyKeyListener();
 		

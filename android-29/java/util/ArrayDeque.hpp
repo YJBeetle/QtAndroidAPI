@@ -19,7 +19,10 @@ namespace java::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ArrayDeque(const char *className, const char *sig, Ts...agv) : java::util::AbstractCollection(className, sig, std::forward<Ts>(agv)...) {}
 		ArrayDeque(QAndroidJniObject obj);
+		
 		// Constructors
 		ArrayDeque();
 		ArrayDeque(jint arg0);

@@ -27,12 +27,14 @@ namespace android::app
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AutomaticZenRule(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AutomaticZenRule(QAndroidJniObject obj);
+		
 		// Constructors
 		AutomaticZenRule(android::os::Parcel arg0);
 		AutomaticZenRule(jstring arg0, android::content::ComponentName arg1, android::net::Uri arg2, jint arg3, jboolean arg4);
 		AutomaticZenRule(jstring arg0, android::content::ComponentName arg1, android::content::ComponentName arg2, android::net::Uri arg3, android::service::notification::ZenPolicy arg4, jint arg5, jboolean arg6);
-		AutomaticZenRule() = default;
 		
 		// Methods
 		jint describeContents();

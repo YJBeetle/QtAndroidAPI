@@ -4,34 +4,34 @@ namespace android::icu::text
 {
 	// Fields
 	
-	IDNA_Info::IDNA_Info(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	IDNA_Info::IDNA_Info(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	IDNA_Info::IDNA_Info()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.icu.text.IDNA$Info",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject IDNA_Info::getErrors()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getErrors",
 			"()Ljava/util/Set;"
 		);
 	}
 	jboolean IDNA_Info::hasErrors()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasErrors",
 			"()Z"
 		);
 	}
 	jboolean IDNA_Info::isTransitionalDifferent()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isTransitionalDifferent",
 			"()Z"
 		);

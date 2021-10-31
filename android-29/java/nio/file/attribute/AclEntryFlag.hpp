@@ -15,9 +15,11 @@ namespace java::nio::file::attribute
 		static QAndroidJniObject INHERIT_ONLY();
 		static QAndroidJniObject NO_PROPAGATE_INHERIT();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AclEntryFlag(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		AclEntryFlag(QAndroidJniObject obj);
+		
 		// Constructors
-		AclEntryFlag() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

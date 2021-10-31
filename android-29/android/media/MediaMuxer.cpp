@@ -8,46 +8,44 @@ namespace android::media
 {
 	// Fields
 	
-	MediaMuxer::MediaMuxer(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaMuxer::MediaMuxer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MediaMuxer::MediaMuxer(java::io::FileDescriptor arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.MediaMuxer",
 			"(Ljava/io/FileDescriptor;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
-		);
-	}
+		) {}
 	MediaMuxer::MediaMuxer(jstring arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.MediaMuxer",
 			"(Ljava/lang/String;I)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jint MediaMuxer::addTrack(android::media::MediaFormat arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"addTrack",
 			"(Landroid/media/MediaFormat;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaMuxer::release()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
 	void MediaMuxer::setLocation(jfloat arg0, jfloat arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLocation",
 			"(FF)V",
 			arg0,
@@ -56,7 +54,7 @@ namespace android::media
 	}
 	void MediaMuxer::setOrientationHint(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOrientationHint",
 			"(I)V",
 			arg0
@@ -64,26 +62,26 @@ namespace android::media
 	}
 	void MediaMuxer::start()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"start",
 			"()V"
 		);
 	}
 	void MediaMuxer::stop()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"stop",
 			"()V"
 		);
 	}
 	void MediaMuxer::writeSampleData(jint arg0, java::nio::ByteBuffer arg1, android::media::MediaCodec_BufferInfo arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeSampleData",
 			"(ILjava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg1.object(),
+			arg2.object()
 		);
 	}
 } // namespace android::media

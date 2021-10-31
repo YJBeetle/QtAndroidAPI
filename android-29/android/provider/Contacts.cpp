@@ -56,7 +56,9 @@ namespace android::provider
 		);
 	}
 	
-	Contacts::Contacts(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Contacts::Contacts(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

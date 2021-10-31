@@ -8,65 +8,67 @@ namespace android::app
 	// Fields
 	QAndroidJniObject TaskInfo::baseActivity()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"baseActivity",
 			"Landroid/content/ComponentName;"
 		);
 	}
 	QAndroidJniObject TaskInfo::baseIntent()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"baseIntent",
 			"Landroid/content/Intent;"
 		);
 	}
 	jboolean TaskInfo::isRunning()
 	{
-		return __thiz.getField<jboolean>(
+		return getField<jboolean>(
 			"isRunning"
 		);
 	}
 	jint TaskInfo::numActivities()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"numActivities"
 		);
 	}
 	QAndroidJniObject TaskInfo::origActivity()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"origActivity",
 			"Landroid/content/ComponentName;"
 		);
 	}
 	QAndroidJniObject TaskInfo::taskDescription()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"taskDescription",
 			"Landroid/app/ActivityManager$TaskDescription;"
 		);
 	}
 	jint TaskInfo::taskId()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"taskId"
 		);
 	}
 	QAndroidJniObject TaskInfo::topActivity()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"topActivity",
 			"Landroid/content/ComponentName;"
 		);
 	}
 	
-	TaskInfo::TaskInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TaskInfo::TaskInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jstring TaskInfo::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

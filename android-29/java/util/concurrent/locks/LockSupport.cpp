@@ -5,7 +5,9 @@ namespace java::util::concurrent::locks
 {
 	// Fields
 	
-	LockSupport::LockSupport(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	LockSupport::LockSupport(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -15,7 +17,7 @@ namespace java::util::concurrent::locks
 			"java.util.concurrent.locks.LockSupport",
 			"getBlocker",
 			"(Ljava/lang/Thread;)Ljava/lang/Object;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jobject>();
 	}
 	void LockSupport::park()
@@ -88,7 +90,7 @@ namespace java::util::concurrent::locks
 			"java.util.concurrent.locks.LockSupport",
 			"unpark",
 			"(Ljava/lang/Thread;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace java::util::concurrent::locks

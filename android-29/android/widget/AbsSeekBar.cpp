@@ -12,51 +12,45 @@ namespace android::widget
 {
 	// Fields
 	
-	AbsSeekBar::AbsSeekBar(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AbsSeekBar::AbsSeekBar(QAndroidJniObject obj) : android::widget::ProgressBar(obj) {}
+	
 	// Constructors
 	AbsSeekBar::AbsSeekBar(android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::ProgressBar(
 			"android.widget.AbsSeekBar",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	AbsSeekBar::AbsSeekBar(android::content::Context arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::ProgressBar(
 			"android.widget.AbsSeekBar",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	AbsSeekBar::AbsSeekBar(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::ProgressBar(
 			"android.widget.AbsSeekBar",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
-		);
-	}
+		) {}
 	AbsSeekBar::AbsSeekBar(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::ProgressBar(
 			"android.widget.AbsSeekBar",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	
 	// Methods
 	void AbsSeekBar::drawableHotspotChanged(jfloat arg0, jfloat arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"drawableHotspotChanged",
 			"(FF)V",
 			arg0,
@@ -65,107 +59,107 @@ namespace android::widget
 	}
 	jstring AbsSeekBar::getAccessibilityClassName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jint AbsSeekBar::getKeyProgressIncrement()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getKeyProgressIncrement",
 			"()I"
 		);
 	}
 	jboolean AbsSeekBar::getSplitTrack()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getSplitTrack",
 			"()Z"
 		);
 	}
 	QAndroidJniObject AbsSeekBar::getThumb()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getThumb",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
 	jint AbsSeekBar::getThumbOffset()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getThumbOffset",
 			"()I"
 		);
 	}
 	QAndroidJniObject AbsSeekBar::getThumbTintBlendMode()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getThumbTintBlendMode",
 			"()Landroid/graphics/BlendMode;"
 		);
 	}
 	QAndroidJniObject AbsSeekBar::getThumbTintList()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getThumbTintList",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
 	QAndroidJniObject AbsSeekBar::getThumbTintMode()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getThumbTintMode",
 			"()Landroid/graphics/PorterDuff$Mode;"
 		);
 	}
 	QAndroidJniObject AbsSeekBar::getTickMark()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTickMark",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
 	QAndroidJniObject AbsSeekBar::getTickMarkTintBlendMode()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTickMarkTintBlendMode",
 			"()Landroid/graphics/BlendMode;"
 		);
 	}
 	QAndroidJniObject AbsSeekBar::getTickMarkTintList()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTickMarkTintList",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
 	QAndroidJniObject AbsSeekBar::getTickMarkTintMode()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTickMarkTintMode",
 			"()Landroid/graphics/PorterDuff$Mode;"
 		);
 	}
 	void AbsSeekBar::jumpDrawablesToCurrentState()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"jumpDrawablesToCurrentState",
 			"()V"
 		);
 	}
 	jboolean AbsSeekBar::onKeyDown(jint arg0, android::view::KeyEvent arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onKeyDown",
 			"(ILandroid/view/KeyEvent;)Z",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void AbsSeekBar::onRtlPropertiesChanged(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onRtlPropertiesChanged",
 			"(I)V",
 			arg0
@@ -173,15 +167,15 @@ namespace android::widget
 	}
 	jboolean AbsSeekBar::onTouchEvent(android::view::MotionEvent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onTouchEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AbsSeekBar::setKeyProgressIncrement(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setKeyProgressIncrement",
 			"(I)V",
 			arg0
@@ -189,7 +183,7 @@ namespace android::widget
 	}
 	void AbsSeekBar::setMax(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMax",
 			"(I)V",
 			arg0
@@ -197,7 +191,7 @@ namespace android::widget
 	}
 	void AbsSeekBar::setMin(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMin",
 			"(I)V",
 			arg0
@@ -205,7 +199,7 @@ namespace android::widget
 	}
 	void AbsSeekBar::setSplitTrack(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSplitTrack",
 			"(Z)V",
 			arg0
@@ -213,23 +207,23 @@ namespace android::widget
 	}
 	void AbsSeekBar::setSystemGestureExclusionRects(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSystemGestureExclusionRects",
 			"(Ljava/util/List;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AbsSeekBar::setThumb(android::graphics::drawable::Drawable arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setThumb",
 			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AbsSeekBar::setThumbOffset(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setThumbOffset",
 			"(I)V",
 			arg0
@@ -237,58 +231,58 @@ namespace android::widget
 	}
 	void AbsSeekBar::setThumbTintBlendMode(android::graphics::BlendMode arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setThumbTintBlendMode",
 			"(Landroid/graphics/BlendMode;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AbsSeekBar::setThumbTintList(android::content::res::ColorStateList arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setThumbTintList",
 			"(Landroid/content/res/ColorStateList;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AbsSeekBar::setThumbTintMode(android::graphics::PorterDuff_Mode arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setThumbTintMode",
 			"(Landroid/graphics/PorterDuff$Mode;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AbsSeekBar::setTickMark(android::graphics::drawable::Drawable arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTickMark",
 			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AbsSeekBar::setTickMarkTintBlendMode(android::graphics::BlendMode arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTickMarkTintBlendMode",
 			"(Landroid/graphics/BlendMode;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AbsSeekBar::setTickMarkTintList(android::content::res::ColorStateList arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTickMarkTintList",
 			"(Landroid/content/res/ColorStateList;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AbsSeekBar::setTickMarkTintMode(android::graphics::PorterDuff_Mode arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTickMarkTintMode",
 			"(Landroid/graphics/PorterDuff$Mode;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::widget

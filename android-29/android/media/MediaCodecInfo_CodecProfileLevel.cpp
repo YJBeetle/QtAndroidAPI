@@ -1405,31 +1405,31 @@ namespace android::media
 	}
 	jint MediaCodecInfo_CodecProfileLevel::level()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"level"
 		);
 	}
 	jint MediaCodecInfo_CodecProfileLevel::profile()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"profile"
 		);
 	}
 	
-	MediaCodecInfo_CodecProfileLevel::MediaCodecInfo_CodecProfileLevel(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaCodecInfo_CodecProfileLevel::MediaCodecInfo_CodecProfileLevel(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MediaCodecInfo_CodecProfileLevel::MediaCodecInfo_CodecProfileLevel()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.MediaCodecInfo$CodecProfileLevel",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean MediaCodecInfo_CodecProfileLevel::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -1437,7 +1437,7 @@ namespace android::media
 	}
 	jint MediaCodecInfo_CodecProfileLevel::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);

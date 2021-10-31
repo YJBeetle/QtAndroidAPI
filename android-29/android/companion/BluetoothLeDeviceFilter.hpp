@@ -23,9 +23,11 @@ namespace android::companion
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BluetoothLeDeviceFilter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		BluetoothLeDeviceFilter(QAndroidJniObject obj);
+		
 		// Constructors
-		BluetoothLeDeviceFilter() = default;
 		
 		// Methods
 		static jint getRenamePrefixLengthLimit();

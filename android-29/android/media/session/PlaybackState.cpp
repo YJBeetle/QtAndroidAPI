@@ -231,100 +231,102 @@ namespace android::media::session
 		);
 	}
 	
-	PlaybackState::PlaybackState(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PlaybackState::PlaybackState(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint PlaybackState::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jlong PlaybackState::getActions()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getActions",
 			"()J"
 		);
 	}
 	jlong PlaybackState::getActiveQueueItemId()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getActiveQueueItemId",
 			"()J"
 		);
 	}
 	jlong PlaybackState::getBufferedPosition()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getBufferedPosition",
 			"()J"
 		);
 	}
 	QAndroidJniObject PlaybackState::getCustomActions()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCustomActions",
 			"()Ljava/util/List;"
 		);
 	}
 	jstring PlaybackState::getErrorMessage()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getErrorMessage",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	QAndroidJniObject PlaybackState::getExtras()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
 	jlong PlaybackState::getLastPositionUpdateTime()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getLastPositionUpdateTime",
 			"()J"
 		);
 	}
 	jfloat PlaybackState::getPlaybackSpeed()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getPlaybackSpeed",
 			"()F"
 		);
 	}
 	jlong PlaybackState::getPosition()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getPosition",
 			"()J"
 		);
 	}
 	jint PlaybackState::getState()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getState",
 			"()I"
 		);
 	}
 	jstring PlaybackState::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void PlaybackState::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

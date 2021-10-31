@@ -6,33 +6,33 @@ namespace android::webkit
 {
 	// Fields
 	
-	WebViewRenderProcessClient::WebViewRenderProcessClient(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WebViewRenderProcessClient::WebViewRenderProcessClient(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	WebViewRenderProcessClient::WebViewRenderProcessClient()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.webkit.WebViewRenderProcessClient",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void WebViewRenderProcessClient::onRenderProcessResponsive(android::webkit::WebView arg0, android::webkit::WebViewRenderProcess arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onRenderProcessResponsive",
 			"(Landroid/webkit/WebView;Landroid/webkit/WebViewRenderProcess;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void WebViewRenderProcessClient::onRenderProcessUnresponsive(android::webkit::WebView arg0, android::webkit::WebViewRenderProcess arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onRenderProcessUnresponsive",
 			"(Landroid/webkit/WebView;Landroid/webkit/WebViewRenderProcess;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 } // namespace android::webkit

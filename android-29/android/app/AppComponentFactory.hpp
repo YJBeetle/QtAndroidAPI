@@ -42,7 +42,10 @@ namespace android::app
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AppComponentFactory(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AppComponentFactory(QAndroidJniObject obj);
+		
 		// Constructors
 		AppComponentFactory();
 		

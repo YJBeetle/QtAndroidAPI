@@ -14,9 +14,11 @@ namespace android::media
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaCodecInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaCodecInfo(QAndroidJniObject obj);
+		
 		// Constructors
-		MediaCodecInfo() = default;
 		
 		// Methods
 		jstring getCanonicalName();

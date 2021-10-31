@@ -6,30 +6,28 @@ namespace java::lang::reflect
 {
 	// Fields
 	
-	UndeclaredThrowableException::UndeclaredThrowableException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UndeclaredThrowableException::UndeclaredThrowableException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	
 	// Constructors
 	UndeclaredThrowableException::UndeclaredThrowableException(jthrowable arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::RuntimeException(
 			"java.lang.reflect.UndeclaredThrowableException",
 			"(Ljava/lang/Throwable;)V",
 			arg0
-		);
-	}
+		) {}
 	UndeclaredThrowableException::UndeclaredThrowableException(jthrowable arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::RuntimeException(
 			"java.lang.reflect.UndeclaredThrowableException",
 			"(Ljava/lang/Throwable;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jthrowable UndeclaredThrowableException::getUndeclaredThrowable()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getUndeclaredThrowable",
 			"()Ljava/lang/Throwable;"
 		).object<jthrowable>();

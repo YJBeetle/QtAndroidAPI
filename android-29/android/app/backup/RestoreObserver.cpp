@@ -4,20 +4,20 @@ namespace android::app::backup
 {
 	// Fields
 	
-	RestoreObserver::RestoreObserver(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	RestoreObserver::RestoreObserver(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	RestoreObserver::RestoreObserver()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.app.backup.RestoreObserver",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void RestoreObserver::onUpdate(jint arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onUpdate",
 			"(ILjava/lang/String;)V",
 			arg0,
@@ -26,7 +26,7 @@ namespace android::app::backup
 	}
 	void RestoreObserver::restoreFinished(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"restoreFinished",
 			"(I)V",
 			arg0
@@ -34,7 +34,7 @@ namespace android::app::backup
 	}
 	void RestoreObserver::restoreStarting(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"restoreStarting",
 			"(I)V",
 			arg0

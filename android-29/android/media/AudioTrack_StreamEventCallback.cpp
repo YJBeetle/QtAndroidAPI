@@ -5,40 +5,40 @@ namespace android::media
 {
 	// Fields
 	
-	AudioTrack_StreamEventCallback::AudioTrack_StreamEventCallback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AudioTrack_StreamEventCallback::AudioTrack_StreamEventCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	AudioTrack_StreamEventCallback::AudioTrack_StreamEventCallback()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.AudioTrack$StreamEventCallback",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void AudioTrack_StreamEventCallback::onDataRequest(android::media::AudioTrack arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onDataRequest",
 			"(Landroid/media/AudioTrack;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void AudioTrack_StreamEventCallback::onPresentationEnded(android::media::AudioTrack arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onPresentationEnded",
 			"(Landroid/media/AudioTrack;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AudioTrack_StreamEventCallback::onTearDown(android::media::AudioTrack arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onTearDown",
 			"(Landroid/media/AudioTrack;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::media

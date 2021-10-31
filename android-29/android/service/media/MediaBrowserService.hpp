@@ -46,7 +46,10 @@ namespace android::service::media
 		// Fields
 		static jstring SERVICE_INTERFACE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaBrowserService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
 		MediaBrowserService(QAndroidJniObject obj);
+		
 		// Constructors
 		MediaBrowserService();
 		

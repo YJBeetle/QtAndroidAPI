@@ -22,9 +22,11 @@ namespace android::net::nsd
 		static jint NSD_STATE_ENABLED();
 		static jint PROTOCOL_DNS_SD();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit NsdManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		NsdManager(QAndroidJniObject obj);
+		
 		// Constructors
-		NsdManager() = default;
 		
 		// Methods
 		void discoverServices(jstring arg0, jint arg1, __JniBaseClass arg2);

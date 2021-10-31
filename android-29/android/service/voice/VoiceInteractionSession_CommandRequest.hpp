@@ -15,9 +15,11 @@ namespace android::service::voice
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit VoiceInteractionSession_CommandRequest(const char *className, const char *sig, Ts...agv) : android::service::voice::VoiceInteractionSession_Request(className, sig, std::forward<Ts>(agv)...) {}
 		VoiceInteractionSession_CommandRequest(QAndroidJniObject obj);
+		
 		// Constructors
-		VoiceInteractionSession_CommandRequest() = default;
 		
 		// Methods
 		jstring getCommand();

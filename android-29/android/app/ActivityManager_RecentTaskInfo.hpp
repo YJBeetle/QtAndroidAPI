@@ -20,7 +20,10 @@ namespace android::app
 		jint id();
 		jint persistentId();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ActivityManager_RecentTaskInfo(const char *className, const char *sig, Ts...agv) : android::app::TaskInfo(className, sig, std::forward<Ts>(agv)...) {}
 		ActivityManager_RecentTaskInfo(QAndroidJniObject obj);
+		
 		// Constructors
 		ActivityManager_RecentTaskInfo();
 		

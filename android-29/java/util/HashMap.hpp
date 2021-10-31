@@ -19,7 +19,10 @@ namespace java::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit HashMap(const char *className, const char *sig, Ts...agv) : java::util::AbstractMap(className, sig, std::forward<Ts>(agv)...) {}
 		HashMap(QAndroidJniObject obj);
+		
 		// Constructors
 		HashMap();
 		HashMap(jint arg0);

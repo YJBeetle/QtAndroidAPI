@@ -14,9 +14,11 @@ namespace android::graphics::text
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MeasuredText(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MeasuredText(QAndroidJniObject obj);
+		
 		// Constructors
-		MeasuredText() = default;
 		
 		// Methods
 		void getBounds(jint arg0, jint arg1, android::graphics::Rect arg2);

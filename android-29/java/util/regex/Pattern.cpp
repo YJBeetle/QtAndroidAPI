@@ -71,7 +71,9 @@ namespace java::util::regex
 		);
 	}
 	
-	Pattern::Pattern(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Pattern::Pattern(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -115,28 +117,28 @@ namespace java::util::regex
 	}
 	QAndroidJniObject Pattern::asMatchPredicate()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"asMatchPredicate",
 			"()Ljava/util/function/Predicate;"
 		);
 	}
 	QAndroidJniObject Pattern::asPredicate()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"asPredicate",
 			"()Ljava/util/function/Predicate;"
 		);
 	}
 	jint Pattern::flags()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"flags",
 			"()I"
 		);
 	}
 	QAndroidJniObject Pattern::matcher(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"matcher",
 			"(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;",
 			arg0
@@ -144,14 +146,14 @@ namespace java::util::regex
 	}
 	jstring Pattern::pattern()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"pattern",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jarray Pattern::split(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"split",
 			"(Ljava/lang/CharSequence;)[Ljava/lang/String;",
 			arg0
@@ -159,7 +161,7 @@ namespace java::util::regex
 	}
 	jarray Pattern::split(jstring arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"split",
 			"(Ljava/lang/CharSequence;I)[Ljava/lang/String;",
 			arg0,
@@ -168,7 +170,7 @@ namespace java::util::regex
 	}
 	QAndroidJniObject Pattern::splitAsStream(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"splitAsStream",
 			"(Ljava/lang/CharSequence;)Ljava/util/stream/Stream;",
 			arg0
@@ -176,7 +178,7 @@ namespace java::util::regex
 	}
 	jstring Pattern::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

@@ -12,59 +12,53 @@ namespace android::widget
 {
 	// Fields
 	
-	Switch::Switch(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Switch::Switch(QAndroidJniObject obj) : android::widget::CompoundButton(obj) {}
+	
 	// Constructors
 	Switch::Switch(android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::CompoundButton(
 			"android.widget.Switch",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	Switch::Switch(android::content::Context arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::CompoundButton(
 			"android.widget.Switch",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	Switch::Switch(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::CompoundButton(
 			"android.widget.Switch",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
-		);
-	}
+		) {}
 	Switch::Switch(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::CompoundButton(
 			"android.widget.Switch",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	
 	// Methods
 	void Switch::draw(android::graphics::Canvas arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"draw",
 			"(Landroid/graphics/Canvas;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Switch::drawableHotspotChanged(jfloat arg0, jfloat arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"drawableHotspotChanged",
 			"(FF)V",
 			arg0,
@@ -73,140 +67,140 @@ namespace android::widget
 	}
 	jstring Switch::getAccessibilityClassName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jint Switch::getCompoundPaddingLeft()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCompoundPaddingLeft",
 			"()I"
 		);
 	}
 	jint Switch::getCompoundPaddingRight()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCompoundPaddingRight",
 			"()I"
 		);
 	}
 	jboolean Switch::getShowText()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getShowText",
 			"()Z"
 		);
 	}
 	jboolean Switch::getSplitTrack()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getSplitTrack",
 			"()Z"
 		);
 	}
 	jint Switch::getSwitchMinWidth()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSwitchMinWidth",
 			"()I"
 		);
 	}
 	jint Switch::getSwitchPadding()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSwitchPadding",
 			"()I"
 		);
 	}
 	jstring Switch::getTextOff()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTextOff",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jstring Switch::getTextOn()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTextOn",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	QAndroidJniObject Switch::getThumbDrawable()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getThumbDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
 	jint Switch::getThumbTextPadding()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getThumbTextPadding",
 			"()I"
 		);
 	}
 	QAndroidJniObject Switch::getThumbTintBlendMode()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getThumbTintBlendMode",
 			"()Landroid/graphics/BlendMode;"
 		);
 	}
 	QAndroidJniObject Switch::getThumbTintList()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getThumbTintList",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
 	QAndroidJniObject Switch::getThumbTintMode()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getThumbTintMode",
 			"()Landroid/graphics/PorterDuff$Mode;"
 		);
 	}
 	QAndroidJniObject Switch::getTrackDrawable()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTrackDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
 	QAndroidJniObject Switch::getTrackTintBlendMode()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTrackTintBlendMode",
 			"()Landroid/graphics/BlendMode;"
 		);
 	}
 	QAndroidJniObject Switch::getTrackTintList()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTrackTintList",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
 	QAndroidJniObject Switch::getTrackTintMode()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTrackTintMode",
 			"()Landroid/graphics/PorterDuff$Mode;"
 		);
 	}
 	void Switch::jumpDrawablesToCurrentState()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"jumpDrawablesToCurrentState",
 			"()V"
 		);
 	}
 	void Switch::onMeasure(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onMeasure",
 			"(II)V",
 			arg0,
@@ -215,15 +209,15 @@ namespace android::widget
 	}
 	jboolean Switch::onTouchEvent(android::view::MotionEvent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onTouchEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Switch::setChecked(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setChecked",
 			"(Z)V",
 			arg0
@@ -231,7 +225,7 @@ namespace android::widget
 	}
 	void Switch::setShowText(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setShowText",
 			"(Z)V",
 			arg0
@@ -239,7 +233,7 @@ namespace android::widget
 	}
 	void Switch::setSplitTrack(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSplitTrack",
 			"(Z)V",
 			arg0
@@ -247,7 +241,7 @@ namespace android::widget
 	}
 	void Switch::setSwitchMinWidth(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSwitchMinWidth",
 			"(I)V",
 			arg0
@@ -255,7 +249,7 @@ namespace android::widget
 	}
 	void Switch::setSwitchPadding(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSwitchPadding",
 			"(I)V",
 			arg0
@@ -263,33 +257,33 @@ namespace android::widget
 	}
 	void Switch::setSwitchTextAppearance(android::content::Context arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSwitchTextAppearance",
 			"(Landroid/content/Context;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void Switch::setSwitchTypeface(android::graphics::Typeface arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSwitchTypeface",
 			"(Landroid/graphics/Typeface;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Switch::setSwitchTypeface(android::graphics::Typeface arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSwitchTypeface",
 			"(Landroid/graphics/Typeface;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void Switch::setTextOff(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTextOff",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
@@ -297,7 +291,7 @@ namespace android::widget
 	}
 	void Switch::setTextOn(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTextOn",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
@@ -305,15 +299,15 @@ namespace android::widget
 	}
 	void Switch::setThumbDrawable(android::graphics::drawable::Drawable arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setThumbDrawable",
 			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Switch::setThumbResource(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setThumbResource",
 			"(I)V",
 			arg0
@@ -321,7 +315,7 @@ namespace android::widget
 	}
 	void Switch::setThumbTextPadding(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setThumbTextPadding",
 			"(I)V",
 			arg0
@@ -329,39 +323,39 @@ namespace android::widget
 	}
 	void Switch::setThumbTintBlendMode(android::graphics::BlendMode arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setThumbTintBlendMode",
 			"(Landroid/graphics/BlendMode;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Switch::setThumbTintList(android::content::res::ColorStateList arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setThumbTintList",
 			"(Landroid/content/res/ColorStateList;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Switch::setThumbTintMode(android::graphics::PorterDuff_Mode arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setThumbTintMode",
 			"(Landroid/graphics/PorterDuff$Mode;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Switch::setTrackDrawable(android::graphics::drawable::Drawable arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTrackDrawable",
 			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Switch::setTrackResource(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTrackResource",
 			"(I)V",
 			arg0
@@ -369,31 +363,31 @@ namespace android::widget
 	}
 	void Switch::setTrackTintBlendMode(android::graphics::BlendMode arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTrackTintBlendMode",
 			"(Landroid/graphics/BlendMode;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Switch::setTrackTintList(android::content::res::ColorStateList arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTrackTintList",
 			"(Landroid/content/res/ColorStateList;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Switch::setTrackTintMode(android::graphics::PorterDuff_Mode arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTrackTintMode",
 			"(Landroid/graphics/PorterDuff$Mode;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Switch::toggle()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"toggle",
 			"()V"
 		);

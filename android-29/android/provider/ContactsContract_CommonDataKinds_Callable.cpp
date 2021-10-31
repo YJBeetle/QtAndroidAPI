@@ -53,15 +53,15 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	ContactsContract_CommonDataKinds_Callable::ContactsContract_CommonDataKinds_Callable(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ContactsContract_CommonDataKinds_Callable::ContactsContract_CommonDataKinds_Callable(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ContactsContract_CommonDataKinds_Callable::ContactsContract_CommonDataKinds_Callable()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.provider.ContactsContract$CommonDataKinds$Callable",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::provider

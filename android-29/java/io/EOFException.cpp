@@ -4,23 +4,21 @@ namespace java::io
 {
 	// Fields
 	
-	EOFException::EOFException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	EOFException::EOFException(QAndroidJniObject obj) : java::io::IOException(obj) {}
+	
 	// Constructors
 	EOFException::EOFException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::IOException(
 			"java.io.EOFException",
 			"()V"
-		);
-	}
+		) {}
 	EOFException::EOFException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::IOException(
 			"java.io.EOFException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::io

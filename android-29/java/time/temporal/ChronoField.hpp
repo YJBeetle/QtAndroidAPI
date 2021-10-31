@@ -49,9 +49,11 @@ namespace java::time::temporal
 		static QAndroidJniObject YEAR();
 		static QAndroidJniObject YEAR_OF_ERA();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ChronoField(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		ChronoField(QAndroidJniObject obj);
+		
 		// Constructors
-		ChronoField() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

@@ -18,7 +18,10 @@ namespace org::xml::sax
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit InputSource(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		InputSource(QAndroidJniObject obj);
+		
 		// Constructors
 		InputSource();
 		InputSource(java::io::InputStream arg0);

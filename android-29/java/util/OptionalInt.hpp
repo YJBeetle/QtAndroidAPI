@@ -10,9 +10,11 @@ namespace java::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit OptionalInt(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		OptionalInt(QAndroidJniObject obj);
+		
 		// Constructors
-		OptionalInt() = default;
 		
 		// Methods
 		static QAndroidJniObject empty();

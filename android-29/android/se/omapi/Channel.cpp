@@ -5,55 +5,57 @@ namespace android::se::omapi
 {
 	// Fields
 	
-	Channel::Channel(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Channel::Channel(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void Channel::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	jbyteArray Channel::getSelectResponse()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSelectResponse",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	QAndroidJniObject Channel::getSession()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSession",
 			"()Landroid/se/omapi/Session;"
 		);
 	}
 	jboolean Channel::isBasicChannel()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isBasicChannel",
 			"()Z"
 		);
 	}
 	jboolean Channel::isOpen()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isOpen",
 			"()Z"
 		);
 	}
 	jboolean Channel::selectNext()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"selectNext",
 			"()Z"
 		);
 	}
 	jbyteArray Channel::transmit(jbyteArray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"transmit",
 			"([B)[B",
 			arg0

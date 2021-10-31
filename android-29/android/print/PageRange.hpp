@@ -16,10 +16,12 @@ namespace android::print
 		static QAndroidJniObject ALL_PAGES();
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PageRange(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PageRange(QAndroidJniObject obj);
+		
 		// Constructors
 		PageRange(jint arg0, jint arg1);
-		PageRange() = default;
 		
 		// Methods
 		jint describeContents();

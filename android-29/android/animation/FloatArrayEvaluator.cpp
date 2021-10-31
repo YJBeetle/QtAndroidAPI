@@ -4,28 +4,26 @@ namespace android::animation
 {
 	// Fields
 	
-	FloatArrayEvaluator::FloatArrayEvaluator(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FloatArrayEvaluator::FloatArrayEvaluator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	FloatArrayEvaluator::FloatArrayEvaluator()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.animation.FloatArrayEvaluator",
 			"()V"
-		);
-	}
+		) {}
 	FloatArrayEvaluator::FloatArrayEvaluator(jfloatArray arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.animation.FloatArrayEvaluator",
 			"([F)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jfloatArray FloatArrayEvaluator::evaluate(jfloat arg0, jfloatArray arg1, jfloatArray arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"evaluate",
 			"(F[F[F)[F",
 			arg0,
@@ -35,7 +33,7 @@ namespace android::animation
 	}
 	jobject FloatArrayEvaluator::evaluate(jfloat arg0, jobject arg1, jobject arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"evaluate",
 			"(FLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,

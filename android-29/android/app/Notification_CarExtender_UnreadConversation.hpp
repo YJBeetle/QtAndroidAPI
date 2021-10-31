@@ -18,9 +18,11 @@ namespace android::app
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Notification_CarExtender_UnreadConversation(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Notification_CarExtender_UnreadConversation(QAndroidJniObject obj);
+		
 		// Constructors
-		Notification_CarExtender_UnreadConversation() = default;
 		
 		// Methods
 		jlong getLatestTimestamp();

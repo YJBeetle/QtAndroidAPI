@@ -4,15 +4,15 @@ namespace android::webkit
 {
 	// Fields
 	
-	WebIconDatabase::WebIconDatabase(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WebIconDatabase::WebIconDatabase(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	WebIconDatabase::WebIconDatabase()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.webkit.WebIconDatabase",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject WebIconDatabase::getInstance()
@@ -25,14 +25,14 @@ namespace android::webkit
 	}
 	void WebIconDatabase::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	void WebIconDatabase::open(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"open",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -40,7 +40,7 @@ namespace android::webkit
 	}
 	void WebIconDatabase::releaseIconForPageUrl(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"releaseIconForPageUrl",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -48,23 +48,23 @@ namespace android::webkit
 	}
 	void WebIconDatabase::removeAllIcons()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeAllIcons",
 			"()V"
 		);
 	}
 	void WebIconDatabase::requestIconForPageUrl(jstring arg0, __JniBaseClass arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"requestIconForPageUrl",
 			"(Ljava/lang/String;Landroid/webkit/WebIconDatabase$IconListener;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void WebIconDatabase::retainIconForPageUrl(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"retainIconForPageUrl",
 			"(Ljava/lang/String;)V",
 			arg0

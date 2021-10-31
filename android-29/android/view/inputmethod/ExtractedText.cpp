@@ -28,79 +28,79 @@ namespace android::view::inputmethod
 	}
 	jint ExtractedText::flags()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"flags"
 		);
 	}
 	jstring ExtractedText::hint()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"hint",
 			"Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jint ExtractedText::partialEndOffset()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"partialEndOffset"
 		);
 	}
 	jint ExtractedText::partialStartOffset()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"partialStartOffset"
 		);
 	}
 	jint ExtractedText::selectionEnd()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"selectionEnd"
 		);
 	}
 	jint ExtractedText::selectionStart()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"selectionStart"
 		);
 	}
 	jint ExtractedText::startOffset()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"startOffset"
 		);
 	}
 	jstring ExtractedText::text()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"text",
 			"Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	
-	ExtractedText::ExtractedText(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ExtractedText::ExtractedText(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ExtractedText::ExtractedText()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.inputmethod.ExtractedText",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jint ExtractedText::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	void ExtractedText::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

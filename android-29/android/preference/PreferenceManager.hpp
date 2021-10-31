@@ -24,9 +24,11 @@ namespace android::preference
 		static jstring KEY_HAS_SET_DEFAULT_VALUES();
 		static jstring METADATA_KEY_PREFERENCES();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PreferenceManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PreferenceManager(QAndroidJniObject obj);
+		
 		// Constructors
-		PreferenceManager() = default;
 		
 		// Methods
 		static QAndroidJniObject getDefaultSharedPreferences(android::content::Context arg0);

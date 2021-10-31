@@ -41,15 +41,15 @@ namespace android::opengl
 		);
 	}
 	
-	EGLExt::EGLExt(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	EGLExt::EGLExt(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	EGLExt::EGLExt()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.opengl.EGLExt",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean EGLExt::eglPresentationTimeANDROID(android::opengl::EGLDisplay arg0, android::opengl::EGLSurface arg1, jlong arg2)
@@ -58,8 +58,8 @@ namespace android::opengl
 			"android.opengl.EGLExt",
 			"eglPresentationTimeANDROID",
 			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;J)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}

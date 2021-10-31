@@ -4,20 +4,22 @@ namespace android::app::backup
 {
 	// Fields
 	
-	FullBackupDataOutput::FullBackupDataOutput(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FullBackupDataOutput::FullBackupDataOutput(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jlong FullBackupDataOutput::getQuota()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getQuota",
 			"()J"
 		);
 	}
 	jint FullBackupDataOutput::getTransportFlags()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTransportFlags",
 			"()I"
 		);

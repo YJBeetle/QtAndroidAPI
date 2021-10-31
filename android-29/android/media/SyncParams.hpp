@@ -17,7 +17,10 @@ namespace android::media
 		static jint SYNC_SOURCE_SYSTEM_CLOCK();
 		static jint SYNC_SOURCE_VSYNC();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SyncParams(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SyncParams(QAndroidJniObject obj);
+		
 		// Constructors
 		SyncParams();
 		

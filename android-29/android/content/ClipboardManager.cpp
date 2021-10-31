@@ -6,79 +6,81 @@ namespace android::content
 {
 	// Fields
 	
-	ClipboardManager::ClipboardManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ClipboardManager::ClipboardManager(QAndroidJniObject obj) : android::text::ClipboardManager(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void ClipboardManager::addPrimaryClipChangedListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addPrimaryClipChangedListener",
 			"(Landroid/content/ClipboardManager$OnPrimaryClipChangedListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ClipboardManager::clearPrimaryClip()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clearPrimaryClip",
 			"()V"
 		);
 	}
 	QAndroidJniObject ClipboardManager::getPrimaryClip()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPrimaryClip",
 			"()Landroid/content/ClipData;"
 		);
 	}
 	QAndroidJniObject ClipboardManager::getPrimaryClipDescription()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPrimaryClipDescription",
 			"()Landroid/content/ClipDescription;"
 		);
 	}
 	jstring ClipboardManager::getText()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jboolean ClipboardManager::hasPrimaryClip()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasPrimaryClip",
 			"()Z"
 		);
 	}
 	jboolean ClipboardManager::hasText()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasText",
 			"()Z"
 		);
 	}
 	void ClipboardManager::removePrimaryClipChangedListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removePrimaryClipChangedListener",
 			"(Landroid/content/ClipboardManager$OnPrimaryClipChangedListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ClipboardManager::setPrimaryClip(android::content::ClipData arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPrimaryClip",
 			"(Landroid/content/ClipData;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ClipboardManager::setText(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setText",
 			"(Ljava/lang/CharSequence;)V",
 			arg0

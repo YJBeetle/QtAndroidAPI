@@ -27,14 +27,16 @@ namespace android::icu::text
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit StringSearch(const char *className, const char *sig, Ts...agv) : android::icu::text::SearchIterator(className, sig, std::forward<Ts>(agv)...) {}
 		StringSearch(QAndroidJniObject obj);
+		
 		// Constructors
 		StringSearch(jstring arg0, jstring arg1);
 		StringSearch(jstring arg0, __JniBaseClass arg1, android::icu::text::RuleBasedCollator arg2);
 		StringSearch(jstring arg0, __JniBaseClass arg1, android::icu::util::ULocale arg2);
 		StringSearch(jstring arg0, __JniBaseClass arg1, java::util::Locale arg2);
 		StringSearch(jstring arg0, __JniBaseClass arg1, android::icu::text::RuleBasedCollator arg2, android::icu::text::BreakIterator arg3);
-		StringSearch() = default;
 		
 		// Methods
 		QAndroidJniObject getCollator();

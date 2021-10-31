@@ -4,44 +4,42 @@ namespace java::security
 {
 	// Fields
 	
-	KeyStore_SecretKeyEntry::KeyStore_SecretKeyEntry(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	KeyStore_SecretKeyEntry::KeyStore_SecretKeyEntry(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	KeyStore_SecretKeyEntry::KeyStore_SecretKeyEntry(__JniBaseClass arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.security.KeyStore$SecretKeyEntry",
 			"(Ljavax/crypto/SecretKey;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	KeyStore_SecretKeyEntry::KeyStore_SecretKeyEntry(__JniBaseClass arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.security.KeyStore$SecretKeyEntry",
 			"(Ljavax/crypto/SecretKey;Ljava/util/Set;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject KeyStore_SecretKeyEntry::getAttributes()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAttributes",
 			"()Ljava/util/Set;"
 		);
 	}
 	QAndroidJniObject KeyStore_SecretKeyEntry::getSecretKey()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSecretKey",
 			"()Ljavax/crypto/SecretKey;"
 		);
 	}
 	jstring KeyStore_SecretKeyEntry::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

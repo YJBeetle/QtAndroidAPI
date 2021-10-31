@@ -68,9 +68,11 @@ namespace android::telecom
 		static jint PROPERTY_VOIP_AUDIO_MODE();
 		static jint PROPERTY_WIFI();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Call_Details(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Call_Details(QAndroidJniObject obj);
+		
 		// Constructors
-		Call_Details() = default;
 		
 		// Methods
 		static jboolean can(jint arg0, jint arg1);

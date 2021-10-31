@@ -20,7 +20,10 @@ namespace android::media::audiofx
 		jshort roomHFLevel();
 		jshort roomLevel();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit EnvironmentalReverb_Settings(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		EnvironmentalReverb_Settings(QAndroidJniObject obj);
+		
 		// Constructors
 		EnvironmentalReverb_Settings();
 		EnvironmentalReverb_Settings(jstring arg0);

@@ -8,47 +8,47 @@ namespace android::view::textclassifier
 {
 	// Fields
 	
-	TextLinks_Request_Builder::TextLinks_Request_Builder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TextLinks_Request_Builder::TextLinks_Request_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	TextLinks_Request_Builder::TextLinks_Request_Builder(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.textclassifier.TextLinks$Request$Builder",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject TextLinks_Request_Builder::build()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"build",
 			"()Landroid/view/textclassifier/TextLinks$Request;"
 		);
 	}
 	QAndroidJniObject TextLinks_Request_Builder::setDefaultLocales(android::os::LocaleList arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setDefaultLocales",
 			"(Landroid/os/LocaleList;)Landroid/view/textclassifier/TextLinks$Request$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject TextLinks_Request_Builder::setEntityConfig(android::view::textclassifier::TextClassifier_EntityConfig arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setEntityConfig",
 			"(Landroid/view/textclassifier/TextClassifier$EntityConfig;)Landroid/view/textclassifier/TextLinks$Request$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject TextLinks_Request_Builder::setExtras(android::os::Bundle arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setExtras",
 			"(Landroid/os/Bundle;)Landroid/view/textclassifier/TextLinks$Request$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::view::textclassifier

@@ -28,7 +28,9 @@ namespace java::nio::file
 		);
 	}
 	
-	AccessMode::AccessMode(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AccessMode::AccessMode(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

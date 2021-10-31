@@ -4,28 +4,28 @@ namespace java::util
 {
 	// Fields
 	
-	UnknownFormatConversionException::UnknownFormatConversionException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UnknownFormatConversionException::UnknownFormatConversionException(QAndroidJniObject obj) : java::util::IllegalFormatException(obj) {}
+	
 	// Constructors
 	UnknownFormatConversionException::UnknownFormatConversionException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::IllegalFormatException(
 			"java.util.UnknownFormatConversionException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring UnknownFormatConversionException::getConversion()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getConversion",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring UnknownFormatConversionException::getMessage()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
 		).object<jstring>();

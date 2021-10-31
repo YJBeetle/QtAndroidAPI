@@ -40,9 +40,11 @@ namespace android::graphics
 		static QAndroidJniObject SRC_OVER();
 		static QAndroidJniObject XOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BlendMode(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		BlendMode(QAndroidJniObject obj);
+		
 		// Constructors
-		BlendMode() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

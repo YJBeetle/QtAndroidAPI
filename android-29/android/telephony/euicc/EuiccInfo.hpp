@@ -15,10 +15,12 @@ namespace android::telephony::euicc
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit EuiccInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		EuiccInfo(QAndroidJniObject obj);
+		
 		// Constructors
 		EuiccInfo(jstring arg0);
-		EuiccInfo() = default;
 		
 		// Methods
 		jint describeContents();

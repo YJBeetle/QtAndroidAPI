@@ -13,10 +13,12 @@ namespace java::nio::file
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DirectoryNotEmptyException(const char *className, const char *sig, Ts...agv) : java::nio::file::FileSystemException(className, sig, std::forward<Ts>(agv)...) {}
 		DirectoryNotEmptyException(QAndroidJniObject obj);
+		
 		// Constructors
 		DirectoryNotEmptyException(jstring arg0);
-		DirectoryNotEmptyException() = default;
 		
 		// Methods
 	};

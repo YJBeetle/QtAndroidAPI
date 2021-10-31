@@ -298,7 +298,9 @@ namespace android::media::tv
 		);
 	}
 	
-	TvContract_Programs::TvContract_Programs(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TvContract_Programs::TvContract_Programs(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

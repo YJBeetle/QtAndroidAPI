@@ -26,7 +26,10 @@ namespace android::bluetooth
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BluetoothGattServerCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		BluetoothGattServerCallback(QAndroidJniObject obj);
+		
 		// Constructors
 		BluetoothGattServerCallback();
 		

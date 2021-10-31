@@ -202,219 +202,221 @@ namespace android::location
 		);
 	}
 	
-	GnssMeasurement::GnssMeasurement(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	GnssMeasurement::GnssMeasurement(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint GnssMeasurement::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jdouble GnssMeasurement::getAccumulatedDeltaRangeMeters()
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"getAccumulatedDeltaRangeMeters",
 			"()D"
 		);
 	}
 	jint GnssMeasurement::getAccumulatedDeltaRangeState()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAccumulatedDeltaRangeState",
 			"()I"
 		);
 	}
 	jdouble GnssMeasurement::getAccumulatedDeltaRangeUncertaintyMeters()
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"getAccumulatedDeltaRangeUncertaintyMeters",
 			"()D"
 		);
 	}
 	jdouble GnssMeasurement::getAutomaticGainControlLevelDb()
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"getAutomaticGainControlLevelDb",
 			"()D"
 		);
 	}
 	jlong GnssMeasurement::getCarrierCycles()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getCarrierCycles",
 			"()J"
 		);
 	}
 	jfloat GnssMeasurement::getCarrierFrequencyHz()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getCarrierFrequencyHz",
 			"()F"
 		);
 	}
 	jdouble GnssMeasurement::getCarrierPhase()
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"getCarrierPhase",
 			"()D"
 		);
 	}
 	jdouble GnssMeasurement::getCarrierPhaseUncertainty()
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"getCarrierPhaseUncertainty",
 			"()D"
 		);
 	}
 	jdouble GnssMeasurement::getCn0DbHz()
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"getCn0DbHz",
 			"()D"
 		);
 	}
 	jstring GnssMeasurement::getCodeType()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCodeType",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint GnssMeasurement::getConstellationType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getConstellationType",
 			"()I"
 		);
 	}
 	jint GnssMeasurement::getMultipathIndicator()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMultipathIndicator",
 			"()I"
 		);
 	}
 	jdouble GnssMeasurement::getPseudorangeRateMetersPerSecond()
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"getPseudorangeRateMetersPerSecond",
 			"()D"
 		);
 	}
 	jdouble GnssMeasurement::getPseudorangeRateUncertaintyMetersPerSecond()
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"getPseudorangeRateUncertaintyMetersPerSecond",
 			"()D"
 		);
 	}
 	jlong GnssMeasurement::getReceivedSvTimeNanos()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getReceivedSvTimeNanos",
 			"()J"
 		);
 	}
 	jlong GnssMeasurement::getReceivedSvTimeUncertaintyNanos()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getReceivedSvTimeUncertaintyNanos",
 			"()J"
 		);
 	}
 	jdouble GnssMeasurement::getSnrInDb()
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"getSnrInDb",
 			"()D"
 		);
 	}
 	jint GnssMeasurement::getState()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getState",
 			"()I"
 		);
 	}
 	jint GnssMeasurement::getSvid()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSvid",
 			"()I"
 		);
 	}
 	jdouble GnssMeasurement::getTimeOffsetNanos()
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"getTimeOffsetNanos",
 			"()D"
 		);
 	}
 	jboolean GnssMeasurement::hasAutomaticGainControlLevelDb()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasAutomaticGainControlLevelDb",
 			"()Z"
 		);
 	}
 	jboolean GnssMeasurement::hasCarrierCycles()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasCarrierCycles",
 			"()Z"
 		);
 	}
 	jboolean GnssMeasurement::hasCarrierFrequencyHz()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasCarrierFrequencyHz",
 			"()Z"
 		);
 	}
 	jboolean GnssMeasurement::hasCarrierPhase()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasCarrierPhase",
 			"()Z"
 		);
 	}
 	jboolean GnssMeasurement::hasCarrierPhaseUncertainty()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasCarrierPhaseUncertainty",
 			"()Z"
 		);
 	}
 	jboolean GnssMeasurement::hasCodeType()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasCodeType",
 			"()Z"
 		);
 	}
 	jboolean GnssMeasurement::hasSnrInDb()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasSnrInDb",
 			"()Z"
 		);
 	}
 	jstring GnssMeasurement::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void GnssMeasurement::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

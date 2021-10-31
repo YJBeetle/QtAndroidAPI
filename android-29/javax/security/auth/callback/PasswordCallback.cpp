@@ -4,50 +4,50 @@ namespace javax::security::auth::callback
 {
 	// Fields
 	
-	PasswordCallback::PasswordCallback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PasswordCallback::PasswordCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	PasswordCallback::PasswordCallback(jstring arg0, jboolean arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"javax.security.auth.callback.PasswordCallback",
 			"(Ljava/lang/String;Z)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	void PasswordCallback::clearPassword()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clearPassword",
 			"()V"
 		);
 	}
 	jcharArray PasswordCallback::getPassword()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPassword",
 			"()[C"
 		).object<jcharArray>();
 	}
 	jstring PasswordCallback::getPrompt()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPrompt",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jboolean PasswordCallback::isEchoOn()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEchoOn",
 			"()Z"
 		);
 	}
 	void PasswordCallback::setPassword(jcharArray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPassword",
 			"([C)V",
 			arg0

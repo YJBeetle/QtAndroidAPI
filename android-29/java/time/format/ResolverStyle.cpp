@@ -28,7 +28,9 @@ namespace java::time::format
 		);
 	}
 	
-	ResolverStyle::ResolverStyle(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ResolverStyle::ResolverStyle(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

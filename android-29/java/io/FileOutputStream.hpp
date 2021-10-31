@@ -23,14 +23,16 @@ namespace java::io
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit FileOutputStream(const char *className, const char *sig, Ts...agv) : java::io::OutputStream(className, sig, std::forward<Ts>(agv)...) {}
 		FileOutputStream(QAndroidJniObject obj);
+		
 		// Constructors
 		FileOutputStream(java::io::File arg0);
 		FileOutputStream(java::io::FileDescriptor arg0);
 		FileOutputStream(jstring arg0);
 		FileOutputStream(java::io::File arg0, jboolean arg1);
 		FileOutputStream(jstring arg0, jboolean arg1);
-		FileOutputStream() = default;
 		
 		// Methods
 		void close();

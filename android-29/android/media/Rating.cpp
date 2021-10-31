@@ -62,7 +62,9 @@ namespace android::media
 		);
 	}
 	
-	Rating::Rating(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Rating::Rating(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -114,66 +116,66 @@ namespace android::media
 	}
 	jint Rating::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jfloat Rating::getPercentRating()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getPercentRating",
 			"()F"
 		);
 	}
 	jint Rating::getRatingStyle()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRatingStyle",
 			"()I"
 		);
 	}
 	jfloat Rating::getStarRating()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getStarRating",
 			"()F"
 		);
 	}
 	jboolean Rating::hasHeart()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasHeart",
 			"()Z"
 		);
 	}
 	jboolean Rating::isRated()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isRated",
 			"()Z"
 		);
 	}
 	jboolean Rating::isThumbUp()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isThumbUp",
 			"()Z"
 		);
 	}
 	jstring Rating::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void Rating::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

@@ -39,7 +39,10 @@ namespace android::app
 		static jint SIZE_XSMALL();
 		static jint UNSET_ACTION_INDEX();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Notification_WearableExtender(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Notification_WearableExtender(QAndroidJniObject obj);
+		
 		// Constructors
 		Notification_WearableExtender();
 		Notification_WearableExtender(android::app::Notification arg0);

@@ -4,53 +4,51 @@ namespace java::net
 {
 	// Fields
 	
-	URISyntaxException::URISyntaxException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	URISyntaxException::URISyntaxException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
+	
 	// Constructors
 	URISyntaxException::URISyntaxException(jstring arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Exception(
 			"java.net.URISyntaxException",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	URISyntaxException::URISyntaxException(jstring arg0, jstring arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Exception(
 			"java.net.URISyntaxException",
 			"(Ljava/lang/String;Ljava/lang/String;I)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	jint URISyntaxException::getIndex()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getIndex",
 			"()I"
 		);
 	}
 	jstring URISyntaxException::getInput()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getInput",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring URISyntaxException::getMessage()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring URISyntaxException::getReason()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getReason",
 			"()Ljava/lang/String;"
 		).object<jstring>();

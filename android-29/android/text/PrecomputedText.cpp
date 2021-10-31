@@ -6,7 +6,9 @@ namespace android::text
 {
 	// Fields
 	
-	PrecomputedText::PrecomputedText(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PrecomputedText::PrecomputedText(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -17,12 +19,12 @@ namespace android::text
 			"create",
 			"(Ljava/lang/CharSequence;Landroid/text/PrecomputedText$Params;)Landroid/text/PrecomputedText;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jchar PrecomputedText::charAt(jint arg0)
 	{
-		return __thiz.callMethod<jchar>(
+		return callMethod<jchar>(
 			"charAt",
 			"(I)C",
 			arg0
@@ -30,24 +32,24 @@ namespace android::text
 	}
 	void PrecomputedText::getBounds(jint arg0, jint arg1, android::graphics::Rect arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"getBounds",
 			"(IILandroid/graphics/Rect;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	jint PrecomputedText::getParagraphCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getParagraphCount",
 			"()I"
 		);
 	}
 	jint PrecomputedText::getParagraphEnd(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getParagraphEnd",
 			"(I)I",
 			arg0
@@ -55,7 +57,7 @@ namespace android::text
 	}
 	jint PrecomputedText::getParagraphStart(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getParagraphStart",
 			"(I)I",
 			arg0
@@ -63,14 +65,14 @@ namespace android::text
 	}
 	QAndroidJniObject PrecomputedText::getParams()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getParams",
 			"()Landroid/text/PrecomputedText$Params;"
 		);
 	}
 	jint PrecomputedText::getSpanEnd(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSpanEnd",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -78,7 +80,7 @@ namespace android::text
 	}
 	jint PrecomputedText::getSpanFlags(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSpanFlags",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -86,7 +88,7 @@ namespace android::text
 	}
 	jint PrecomputedText::getSpanStart(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSpanStart",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -94,7 +96,7 @@ namespace android::text
 	}
 	jobjectArray PrecomputedText::getSpans(jint arg0, jint arg1, jclass arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSpans",
 			"(IILjava/lang/Class;)[Ljava/lang/Object;",
 			arg0,
@@ -104,7 +106,7 @@ namespace android::text
 	}
 	jfloat PrecomputedText::getWidth(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getWidth",
 			"(II)F",
 			arg0,
@@ -113,14 +115,14 @@ namespace android::text
 	}
 	jint PrecomputedText::length()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"length",
 			"()I"
 		);
 	}
 	jint PrecomputedText::nextSpanTransition(jint arg0, jint arg1, jclass arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"nextSpanTransition",
 			"(IILjava/lang/Class;)I",
 			arg0,
@@ -130,7 +132,7 @@ namespace android::text
 	}
 	void PrecomputedText::removeSpan(jobject arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeSpan",
 			"(Ljava/lang/Object;)V",
 			arg0
@@ -138,7 +140,7 @@ namespace android::text
 	}
 	void PrecomputedText::setSpan(jobject arg0, jint arg1, jint arg2, jint arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSpan",
 			"(Ljava/lang/Object;III)V",
 			arg0,
@@ -149,7 +151,7 @@ namespace android::text
 	}
 	jstring PrecomputedText::subSequence(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"subSequence",
 			"(II)Ljava/lang/CharSequence;",
 			arg0,
@@ -158,7 +160,7 @@ namespace android::text
 	}
 	jstring PrecomputedText::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

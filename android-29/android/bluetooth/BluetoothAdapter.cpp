@@ -222,7 +222,9 @@ namespace android::bluetooth
 		);
 	}
 	
-	BluetoothAdapter::BluetoothAdapter(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BluetoothAdapter::BluetoothAdapter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -245,79 +247,79 @@ namespace android::bluetooth
 	}
 	jboolean BluetoothAdapter::cancelDiscovery()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"cancelDiscovery",
 			"()Z"
 		);
 	}
 	void BluetoothAdapter::closeProfileProxy(jint arg0, __JniBaseClass arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"closeProfileProxy",
 			"(ILandroid/bluetooth/BluetoothProfile;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jboolean BluetoothAdapter::disable()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"disable",
 			"()Z"
 		);
 	}
 	jboolean BluetoothAdapter::enable()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"enable",
 			"()Z"
 		);
 	}
 	jstring BluetoothAdapter::getAddress()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAddress",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject BluetoothAdapter::getBluetoothLeAdvertiser()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBluetoothLeAdvertiser",
 			"()Landroid/bluetooth/le/BluetoothLeAdvertiser;"
 		);
 	}
 	QAndroidJniObject BluetoothAdapter::getBluetoothLeScanner()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBluetoothLeScanner",
 			"()Landroid/bluetooth/le/BluetoothLeScanner;"
 		);
 	}
 	QAndroidJniObject BluetoothAdapter::getBondedDevices()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBondedDevices",
 			"()Ljava/util/Set;"
 		);
 	}
 	jint BluetoothAdapter::getLeMaximumAdvertisingDataLength()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLeMaximumAdvertisingDataLength",
 			"()I"
 		);
 	}
 	jstring BluetoothAdapter::getName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint BluetoothAdapter::getProfileConnectionState(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getProfileConnectionState",
 			"(I)I",
 			arg0
@@ -325,17 +327,17 @@ namespace android::bluetooth
 	}
 	jboolean BluetoothAdapter::getProfileProxy(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getProfileProxy",
 			"(Landroid/content/Context;Landroid/bluetooth/BluetoothProfile$ServiceListener;I)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
 	QAndroidJniObject BluetoothAdapter::getRemoteDevice(jbyteArray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRemoteDevice",
 			"([B)Landroid/bluetooth/BluetoothDevice;",
 			arg0
@@ -343,7 +345,7 @@ namespace android::bluetooth
 	}
 	QAndroidJniObject BluetoothAdapter::getRemoteDevice(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRemoteDevice",
 			"(Ljava/lang/String;)Landroid/bluetooth/BluetoothDevice;",
 			arg0
@@ -351,116 +353,116 @@ namespace android::bluetooth
 	}
 	jint BluetoothAdapter::getScanMode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getScanMode",
 			"()I"
 		);
 	}
 	jint BluetoothAdapter::getState()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getState",
 			"()I"
 		);
 	}
 	jboolean BluetoothAdapter::isDiscovering()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isDiscovering",
 			"()Z"
 		);
 	}
 	jboolean BluetoothAdapter::isEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEnabled",
 			"()Z"
 		);
 	}
 	jboolean BluetoothAdapter::isLe2MPhySupported()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isLe2MPhySupported",
 			"()Z"
 		);
 	}
 	jboolean BluetoothAdapter::isLeCodedPhySupported()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isLeCodedPhySupported",
 			"()Z"
 		);
 	}
 	jboolean BluetoothAdapter::isLeExtendedAdvertisingSupported()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isLeExtendedAdvertisingSupported",
 			"()Z"
 		);
 	}
 	jboolean BluetoothAdapter::isLePeriodicAdvertisingSupported()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isLePeriodicAdvertisingSupported",
 			"()Z"
 		);
 	}
 	jboolean BluetoothAdapter::isMultipleAdvertisementSupported()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isMultipleAdvertisementSupported",
 			"()Z"
 		);
 	}
 	jboolean BluetoothAdapter::isOffloadedFilteringSupported()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isOffloadedFilteringSupported",
 			"()Z"
 		);
 	}
 	jboolean BluetoothAdapter::isOffloadedScanBatchingSupported()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isOffloadedScanBatchingSupported",
 			"()Z"
 		);
 	}
 	QAndroidJniObject BluetoothAdapter::listenUsingInsecureL2capChannel()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"listenUsingInsecureL2capChannel",
 			"()Landroid/bluetooth/BluetoothServerSocket;"
 		);
 	}
 	QAndroidJniObject BluetoothAdapter::listenUsingInsecureRfcommWithServiceRecord(jstring arg0, java::util::UUID arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"listenUsingInsecureRfcommWithServiceRecord",
 			"(Ljava/lang/String;Ljava/util/UUID;)Landroid/bluetooth/BluetoothServerSocket;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject BluetoothAdapter::listenUsingL2capChannel()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"listenUsingL2capChannel",
 			"()Landroid/bluetooth/BluetoothServerSocket;"
 		);
 	}
 	QAndroidJniObject BluetoothAdapter::listenUsingRfcommWithServiceRecord(jstring arg0, java::util::UUID arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"listenUsingRfcommWithServiceRecord",
 			"(Ljava/lang/String;Ljava/util/UUID;)Landroid/bluetooth/BluetoothServerSocket;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jboolean BluetoothAdapter::setName(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"setName",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -468,34 +470,34 @@ namespace android::bluetooth
 	}
 	jboolean BluetoothAdapter::startDiscovery()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"startDiscovery",
 			"()Z"
 		);
 	}
 	jboolean BluetoothAdapter::startLeScan(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"startLeScan",
 			"(Landroid/bluetooth/BluetoothAdapter$LeScanCallback;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean BluetoothAdapter::startLeScan(jarray arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"startLeScan",
 			"([Ljava/util/UUID;Landroid/bluetooth/BluetoothAdapter$LeScanCallback;)Z",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void BluetoothAdapter::stopLeScan(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"stopLeScan",
 			"(Landroid/bluetooth/BluetoothAdapter$LeScanCallback;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::bluetooth

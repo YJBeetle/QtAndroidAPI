@@ -14,7 +14,10 @@ namespace android::media::tv
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TvRecordingClient_RecordingCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		TvRecordingClient_RecordingCallback(QAndroidJniObject obj);
+		
 		// Constructors
 		TvRecordingClient_RecordingCallback();
 		

@@ -26,9 +26,11 @@ namespace android::bluetooth::le
 		static jint TX_POWER_MIN();
 		static jint TX_POWER_ULTRA_LOW();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AdvertisingSetParameters(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AdvertisingSetParameters(QAndroidJniObject obj);
+		
 		// Constructors
-		AdvertisingSetParameters() = default;
 		
 		// Methods
 		jint describeContents();

@@ -4,23 +4,21 @@ namespace java::lang
 {
 	// Fields
 	
-	NoSuchFieldException::NoSuchFieldException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NoSuchFieldException::NoSuchFieldException(QAndroidJniObject obj) : java::lang::ReflectiveOperationException(obj) {}
+	
 	// Constructors
 	NoSuchFieldException::NoSuchFieldException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::ReflectiveOperationException(
 			"java.lang.NoSuchFieldException",
 			"()V"
-		);
-	}
+		) {}
 	NoSuchFieldException::NoSuchFieldException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::ReflectiveOperationException(
 			"java.lang.NoSuchFieldException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::lang

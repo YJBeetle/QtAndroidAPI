@@ -32,11 +32,13 @@ namespace java::text
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ChoiceFormat(const char *className, const char *sig, Ts...agv) : java::text::NumberFormat(className, sig, std::forward<Ts>(agv)...) {}
 		ChoiceFormat(QAndroidJniObject obj);
+		
 		// Constructors
 		ChoiceFormat(jstring arg0);
 		ChoiceFormat(jdoubleArray arg0, jarray arg1);
-		ChoiceFormat() = default;
 		
 		// Methods
 		static jdouble nextDouble(jdouble arg0);

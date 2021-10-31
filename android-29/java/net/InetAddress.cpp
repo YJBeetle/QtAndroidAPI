@@ -7,7 +7,9 @@ namespace java::net
 {
 	// Fields
 	
-	InetAddress::InetAddress(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	InetAddress::InetAddress(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -66,7 +68,7 @@ namespace java::net
 	}
 	jboolean InetAddress::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -74,105 +76,105 @@ namespace java::net
 	}
 	jbyteArray InetAddress::getAddress()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAddress",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jstring InetAddress::getCanonicalHostName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCanonicalHostName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring InetAddress::getHostAddress()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getHostAddress",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring InetAddress::getHostName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getHostName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint InetAddress::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean InetAddress::isAnyLocalAddress()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isAnyLocalAddress",
 			"()Z"
 		);
 	}
 	jboolean InetAddress::isLinkLocalAddress()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isLinkLocalAddress",
 			"()Z"
 		);
 	}
 	jboolean InetAddress::isLoopbackAddress()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isLoopbackAddress",
 			"()Z"
 		);
 	}
 	jboolean InetAddress::isMCGlobal()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isMCGlobal",
 			"()Z"
 		);
 	}
 	jboolean InetAddress::isMCLinkLocal()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isMCLinkLocal",
 			"()Z"
 		);
 	}
 	jboolean InetAddress::isMCNodeLocal()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isMCNodeLocal",
 			"()Z"
 		);
 	}
 	jboolean InetAddress::isMCOrgLocal()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isMCOrgLocal",
 			"()Z"
 		);
 	}
 	jboolean InetAddress::isMCSiteLocal()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isMCSiteLocal",
 			"()Z"
 		);
 	}
 	jboolean InetAddress::isMulticastAddress()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isMulticastAddress",
 			"()Z"
 		);
 	}
 	jboolean InetAddress::isReachable(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isReachable",
 			"(I)Z",
 			arg0
@@ -180,24 +182,24 @@ namespace java::net
 	}
 	jboolean InetAddress::isReachable(java::net::NetworkInterface arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isReachable",
 			"(Ljava/net/NetworkInterface;II)Z",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
 	}
 	jboolean InetAddress::isSiteLocalAddress()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isSiteLocalAddress",
 			"()Z"
 		);
 	}
 	jstring InetAddress::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

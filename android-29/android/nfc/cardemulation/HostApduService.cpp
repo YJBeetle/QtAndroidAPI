@@ -36,35 +36,35 @@ namespace android::nfc::cardemulation
 		).object<jstring>();
 	}
 	
-	HostApduService::HostApduService(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	HostApduService::HostApduService(QAndroidJniObject obj) : android::app::Service(obj) {}
+	
 	// Constructors
 	HostApduService::HostApduService()
-	{
-		__thiz = QAndroidJniObject(
+		: android::app::Service(
 			"android.nfc.cardemulation.HostApduService",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void HostApduService::notifyUnhandled()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"notifyUnhandled",
 			"()V"
 		);
 	}
 	QAndroidJniObject HostApduService::onBind(android::content::Intent arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onBind",
 			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void HostApduService::onDeactivated(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onDeactivated",
 			"(I)V",
 			arg0
@@ -72,16 +72,16 @@ namespace android::nfc::cardemulation
 	}
 	jbyteArray HostApduService::processCommandApdu(jbyteArray arg0, android::os::Bundle arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"processCommandApdu",
 			"([BLandroid/os/Bundle;)[B",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		).object<jbyteArray>();
 	}
 	void HostApduService::sendResponseApdu(jbyteArray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"sendResponseApdu",
 			"([B)V",
 			arg0

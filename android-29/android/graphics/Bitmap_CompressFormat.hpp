@@ -14,9 +14,11 @@ namespace android::graphics
 		static QAndroidJniObject PNG();
 		static QAndroidJniObject WEBP();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Bitmap_CompressFormat(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		Bitmap_CompressFormat(QAndroidJniObject obj);
+		
 		// Constructors
-		Bitmap_CompressFormat() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

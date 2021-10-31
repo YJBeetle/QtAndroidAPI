@@ -43,9 +43,11 @@ namespace android::bluetooth
 		static jint GATT_SUCCESS();
 		static jint GATT_WRITE_NOT_PERMITTED();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BluetoothGatt(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		BluetoothGatt(QAndroidJniObject obj);
+		
 		// Constructors
-		BluetoothGatt() = default;
 		
 		// Methods
 		void abortReliableWrite();

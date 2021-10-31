@@ -5,23 +5,23 @@ namespace android::hardware
 {
 	// Fields
 	
-	TriggerEventListener::TriggerEventListener(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TriggerEventListener::TriggerEventListener(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	TriggerEventListener::TriggerEventListener()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.hardware.TriggerEventListener",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void TriggerEventListener::onTrigger(android::hardware::TriggerEvent arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onTrigger",
 			"(Landroid/hardware/TriggerEvent;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::hardware

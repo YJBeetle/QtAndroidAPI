@@ -5,31 +5,27 @@ namespace android::content
 {
 	// Fields
 	
-	IntentSender_SendIntentException::IntentSender_SendIntentException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	IntentSender_SendIntentException::IntentSender_SendIntentException(QAndroidJniObject obj) : android::util::AndroidException(obj) {}
+	
 	// Constructors
 	IntentSender_SendIntentException::IntentSender_SendIntentException()
-	{
-		__thiz = QAndroidJniObject(
+		: android::util::AndroidException(
 			"android.content.IntentSender$SendIntentException",
 			"()V"
-		);
-	}
+		) {}
 	IntentSender_SendIntentException::IntentSender_SendIntentException(java::lang::Exception arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::util::AndroidException(
 			"android.content.IntentSender$SendIntentException",
 			"(Ljava/lang/Exception;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	IntentSender_SendIntentException::IntentSender_SendIntentException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::util::AndroidException(
 			"android.content.IntentSender$SendIntentException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::content

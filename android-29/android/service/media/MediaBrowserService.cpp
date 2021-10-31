@@ -20,51 +20,51 @@ namespace android::service::media
 		).object<jstring>();
 	}
 	
-	MediaBrowserService::MediaBrowserService(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaBrowserService::MediaBrowserService(QAndroidJniObject obj) : android::app::Service(obj) {}
+	
 	// Constructors
 	MediaBrowserService::MediaBrowserService()
-	{
-		__thiz = QAndroidJniObject(
+		: android::app::Service(
 			"android.service.media.MediaBrowserService",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void MediaBrowserService::dump(java::io::FileDescriptor arg0, java::io::PrintWriter arg1, jarray arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"dump",
 			"(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
 	QAndroidJniObject MediaBrowserService::getBrowserRootHints()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBrowserRootHints",
 			"()Landroid/os/Bundle;"
 		);
 	}
 	QAndroidJniObject MediaBrowserService::getCurrentBrowserInfo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCurrentBrowserInfo",
 			"()Landroid/media/session/MediaSessionManager$RemoteUserInfo;"
 		);
 	}
 	QAndroidJniObject MediaBrowserService::getSessionToken()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSessionToken",
 			"()Landroid/media/session/MediaSession$Token;"
 		);
 	}
 	void MediaBrowserService::notifyChildrenChanged(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"notifyChildrenChanged",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -72,72 +72,72 @@ namespace android::service::media
 	}
 	void MediaBrowserService::notifyChildrenChanged(jstring arg0, android::os::Bundle arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"notifyChildrenChanged",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject MediaBrowserService::onBind(android::content::Intent arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onBind",
 			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaBrowserService::onCreate()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onCreate",
 			"()V"
 		);
 	}
 	QAndroidJniObject MediaBrowserService::onGetRoot(jstring arg0, jint arg1, android::os::Bundle arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onGetRoot",
 			"(Ljava/lang/String;ILandroid/os/Bundle;)Landroid/service/media/MediaBrowserService$BrowserRoot;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void MediaBrowserService::onLoadChildren(jstring arg0, android::service::media::MediaBrowserService_Result arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onLoadChildren",
 			"(Ljava/lang/String;Landroid/service/media/MediaBrowserService$Result;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void MediaBrowserService::onLoadChildren(jstring arg0, android::service::media::MediaBrowserService_Result arg1, android::os::Bundle arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onLoadChildren",
 			"(Ljava/lang/String;Landroid/service/media/MediaBrowserService$Result;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	void MediaBrowserService::onLoadItem(jstring arg0, android::service::media::MediaBrowserService_Result arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onLoadItem",
 			"(Ljava/lang/String;Landroid/service/media/MediaBrowserService$Result;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void MediaBrowserService::setSessionToken(android::media::session::MediaSession_Token arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSessionToken",
 			"(Landroid/media/session/MediaSession$Token;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::service::media

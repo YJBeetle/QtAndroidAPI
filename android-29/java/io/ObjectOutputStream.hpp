@@ -35,10 +35,12 @@ namespace java::io
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ObjectOutputStream(const char *className, const char *sig, Ts...agv) : java::io::OutputStream(className, sig, std::forward<Ts>(agv)...) {}
 		ObjectOutputStream(QAndroidJniObject obj);
+		
 		// Constructors
 		ObjectOutputStream(java::io::OutputStream arg0);
-		ObjectOutputStream() = default;
 		
 		// Methods
 		void close();

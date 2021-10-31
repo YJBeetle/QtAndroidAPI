@@ -10,7 +10,10 @@ namespace java::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit LongSummaryStatistics(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		LongSummaryStatistics(QAndroidJniObject obj);
+		
 		// Constructors
 		LongSummaryStatistics();
 		LongSummaryStatistics(jlong arg0, jlong arg1, jlong arg2, jlong arg3);

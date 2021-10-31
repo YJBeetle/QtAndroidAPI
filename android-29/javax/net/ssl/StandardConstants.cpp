@@ -11,7 +11,9 @@ namespace javax::net::ssl
 		);
 	}
 	
-	StandardConstants::StandardConstants(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	StandardConstants::StandardConstants(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

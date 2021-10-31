@@ -6,61 +6,57 @@ namespace java::util::zip
 {
 	// Fields
 	
-	InflaterOutputStream::InflaterOutputStream(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	InflaterOutputStream::InflaterOutputStream(QAndroidJniObject obj) : java::io::FilterOutputStream(obj) {}
+	
 	// Constructors
 	InflaterOutputStream::InflaterOutputStream(java::io::OutputStream arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::FilterOutputStream(
 			"java.util.zip.InflaterOutputStream",
 			"(Ljava/io/OutputStream;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	InflaterOutputStream::InflaterOutputStream(java::io::OutputStream arg0, java::util::zip::Inflater arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::FilterOutputStream(
 			"java.util.zip.InflaterOutputStream",
 			"(Ljava/io/OutputStream;Ljava/util/zip/Inflater;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	InflaterOutputStream::InflaterOutputStream(java::io::OutputStream arg0, java::util::zip::Inflater arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::FilterOutputStream(
 			"java.util.zip.InflaterOutputStream",
 			"(Ljava/io/OutputStream;Ljava/util/zip/Inflater;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	void InflaterOutputStream::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	void InflaterOutputStream::finish()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"finish",
 			"()V"
 		);
 	}
 	void InflaterOutputStream::flush()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"flush",
 			"()V"
 		);
 	}
 	void InflaterOutputStream::write(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"write",
 			"(I)V",
 			arg0
@@ -68,7 +64,7 @@ namespace java::util::zip
 	}
 	void InflaterOutputStream::write(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"write",
 			"([BII)V",
 			arg0,

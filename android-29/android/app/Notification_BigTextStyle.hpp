@@ -15,7 +15,10 @@ namespace android::app
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Notification_BigTextStyle(const char *className, const char *sig, Ts...agv) : android::app::Notification_Style(className, sig, std::forward<Ts>(agv)...) {}
 		Notification_BigTextStyle(QAndroidJniObject obj);
+		
 		// Constructors
 		Notification_BigTextStyle();
 		Notification_BigTextStyle(android::app::Notification_Builder arg0);

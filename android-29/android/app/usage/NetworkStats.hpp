@@ -14,9 +14,11 @@ namespace android::app::usage
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit NetworkStats(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		NetworkStats(QAndroidJniObject obj);
+		
 		// Constructors
-		NetworkStats() = default;
 		
 		// Methods
 		void close();

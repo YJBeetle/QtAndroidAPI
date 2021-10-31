@@ -21,9 +21,11 @@ namespace java::lang
 		static QAndroidJniObject INHERIT();
 		static QAndroidJniObject PIPE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ProcessBuilder_Redirect(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ProcessBuilder_Redirect(QAndroidJniObject obj);
+		
 		// Constructors
-		ProcessBuilder_Redirect() = default;
 		
 		// Methods
 		static QAndroidJniObject appendTo(java::io::File arg0);

@@ -50,7 +50,9 @@ namespace android::view::accessibility
 		);
 	}
 	
-	AccessibilityWindowInfo::AccessibilityWindowInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AccessibilityWindowInfo::AccessibilityWindowInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -68,19 +70,19 @@ namespace android::view::accessibility
 			"android.view.accessibility.AccessibilityWindowInfo",
 			"obtain",
 			"(Landroid/view/accessibility/AccessibilityWindowInfo;)Landroid/view/accessibility/AccessibilityWindowInfo;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint AccessibilityWindowInfo::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean AccessibilityWindowInfo::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -88,22 +90,22 @@ namespace android::view::accessibility
 	}
 	QAndroidJniObject AccessibilityWindowInfo::getAnchor()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAnchor",
 			"()Landroid/view/accessibility/AccessibilityNodeInfo;"
 		);
 	}
 	void AccessibilityWindowInfo::getBoundsInScreen(android::graphics::Rect arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"getBoundsInScreen",
 			"(Landroid/graphics/Rect;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject AccessibilityWindowInfo::getChild(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getChild",
 			"(I)Landroid/view/accessibility/AccessibilityWindowInfo;",
 			arg0
@@ -111,108 +113,108 @@ namespace android::view::accessibility
 	}
 	jint AccessibilityWindowInfo::getChildCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getChildCount",
 			"()I"
 		);
 	}
 	jint AccessibilityWindowInfo::getId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getId",
 			"()I"
 		);
 	}
 	jint AccessibilityWindowInfo::getLayer()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLayer",
 			"()I"
 		);
 	}
 	QAndroidJniObject AccessibilityWindowInfo::getParent()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getParent",
 			"()Landroid/view/accessibility/AccessibilityWindowInfo;"
 		);
 	}
 	QAndroidJniObject AccessibilityWindowInfo::getRoot()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRoot",
 			"()Landroid/view/accessibility/AccessibilityNodeInfo;"
 		);
 	}
 	jstring AccessibilityWindowInfo::getTitle()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTitle",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jint AccessibilityWindowInfo::getType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getType",
 			"()I"
 		);
 	}
 	jint AccessibilityWindowInfo::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean AccessibilityWindowInfo::isAccessibilityFocused()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isAccessibilityFocused",
 			"()Z"
 		);
 	}
 	jboolean AccessibilityWindowInfo::isActive()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isActive",
 			"()Z"
 		);
 	}
 	jboolean AccessibilityWindowInfo::isFocused()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isFocused",
 			"()Z"
 		);
 	}
 	jboolean AccessibilityWindowInfo::isInPictureInPictureMode()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isInPictureInPictureMode",
 			"()Z"
 		);
 	}
 	void AccessibilityWindowInfo::recycle()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"recycle",
 			"()V"
 		);
 	}
 	jstring AccessibilityWindowInfo::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void AccessibilityWindowInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

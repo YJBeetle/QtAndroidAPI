@@ -8,71 +8,73 @@ namespace javax::xml::parsers
 {
 	// Fields
 	
-	DocumentBuilder::DocumentBuilder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DocumentBuilder::DocumentBuilder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject DocumentBuilder::getDOMImplementation()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDOMImplementation",
 			"()Lorg/w3c/dom/DOMImplementation;"
 		);
 	}
 	QAndroidJniObject DocumentBuilder::getSchema()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSchema",
 			"()Ljavax/xml/validation/Schema;"
 		);
 	}
 	jboolean DocumentBuilder::isNamespaceAware()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isNamespaceAware",
 			"()Z"
 		);
 	}
 	jboolean DocumentBuilder::isValidating()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isValidating",
 			"()Z"
 		);
 	}
 	jboolean DocumentBuilder::isXIncludeAware()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isXIncludeAware",
 			"()Z"
 		);
 	}
 	QAndroidJniObject DocumentBuilder::newDocument()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newDocument",
 			"()Lorg/w3c/dom/Document;"
 		);
 	}
 	QAndroidJniObject DocumentBuilder::parse(java::io::File arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"parse",
 			"(Ljava/io/File;)Lorg/w3c/dom/Document;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject DocumentBuilder::parse(java::io::InputStream arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"parse",
 			"(Ljava/io/InputStream;)Lorg/w3c/dom/Document;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject DocumentBuilder::parse(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"parse",
 			"(Ljava/lang/String;)Lorg/w3c/dom/Document;",
 			arg0
@@ -80,42 +82,42 @@ namespace javax::xml::parsers
 	}
 	QAndroidJniObject DocumentBuilder::parse(org::xml::sax::InputSource arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"parse",
 			"(Lorg/xml/sax/InputSource;)Lorg/w3c/dom/Document;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject DocumentBuilder::parse(java::io::InputStream arg0, jstring arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"parse",
 			"(Ljava/io/InputStream;Ljava/lang/String;)Lorg/w3c/dom/Document;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void DocumentBuilder::reset()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
 	void DocumentBuilder::setEntityResolver(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setEntityResolver",
 			"(Lorg/xml/sax/EntityResolver;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void DocumentBuilder::setErrorHandler(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setErrorHandler",
 			"(Lorg/xml/sax/ErrorHandler;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace javax::xml::parsers

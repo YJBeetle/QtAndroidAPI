@@ -4,28 +4,28 @@ namespace java::util
 {
 	// Fields
 	
-	MissingFormatWidthException::MissingFormatWidthException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MissingFormatWidthException::MissingFormatWidthException(QAndroidJniObject obj) : java::util::IllegalFormatException(obj) {}
+	
 	// Constructors
 	MissingFormatWidthException::MissingFormatWidthException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::IllegalFormatException(
 			"java.util.MissingFormatWidthException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring MissingFormatWidthException::getFormatSpecifier()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFormatSpecifier",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring MissingFormatWidthException::getMessage()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
 		).object<jstring>();

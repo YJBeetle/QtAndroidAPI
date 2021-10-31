@@ -5,21 +5,21 @@ namespace java::security::spec
 {
 	// Fields
 	
-	ECFieldFp::ECFieldFp(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ECFieldFp::ECFieldFp(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ECFieldFp::ECFieldFp(java::math::BigInteger arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.security.spec.ECFieldFp",
 			"(Ljava/math/BigInteger;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jboolean ECFieldFp::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -27,21 +27,21 @@ namespace java::security::spec
 	}
 	jint ECFieldFp::getFieldSize()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getFieldSize",
 			"()I"
 		);
 	}
 	QAndroidJniObject ECFieldFp::getP()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getP",
 			"()Ljava/math/BigInteger;"
 		);
 	}
 	jint ECFieldFp::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);

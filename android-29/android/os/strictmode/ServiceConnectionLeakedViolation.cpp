@@ -4,7 +4,9 @@ namespace android::os::strictmode
 {
 	// Fields
 	
-	ServiceConnectionLeakedViolation::ServiceConnectionLeakedViolation(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ServiceConnectionLeakedViolation::ServiceConnectionLeakedViolation(QAndroidJniObject obj) : android::os::strictmode::Violation(obj) {}
+	
 	// Constructors
 	
 	// Methods

@@ -5,32 +5,32 @@ namespace java::beans
 {
 	// Fields
 	
-	PropertyChangeListenerProxy::PropertyChangeListenerProxy(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PropertyChangeListenerProxy::PropertyChangeListenerProxy(QAndroidJniObject obj) : java::util::EventListenerProxy(obj) {}
+	
 	// Constructors
 	PropertyChangeListenerProxy::PropertyChangeListenerProxy(jstring arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::EventListenerProxy(
 			"java.beans.PropertyChangeListenerProxy",
 			"(Ljava/lang/String;Ljava/beans/PropertyChangeListener;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
+			arg1.object()
+		) {}
 	
 	// Methods
 	jstring PropertyChangeListenerProxy::getPropertyName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPropertyName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void PropertyChangeListenerProxy::propertyChange(java::beans::PropertyChangeEvent arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"propertyChange",
 			"(Ljava/beans/PropertyChangeEvent;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace java::beans

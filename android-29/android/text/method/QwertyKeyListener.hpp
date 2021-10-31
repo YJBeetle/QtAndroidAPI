@@ -24,10 +24,12 @@ namespace android::text::method
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit QwertyKeyListener(const char *className, const char *sig, Ts...agv) : android::text::method::BaseKeyListener(className, sig, std::forward<Ts>(agv)...) {}
 		QwertyKeyListener(QAndroidJniObject obj);
+		
 		// Constructors
 		QwertyKeyListener(android::text::method::TextKeyListener_Capitalize arg0, jboolean arg1);
-		QwertyKeyListener() = default;
 		
 		// Methods
 		static QAndroidJniObject getInstance(jboolean arg0, android::text::method::TextKeyListener_Capitalize arg1);

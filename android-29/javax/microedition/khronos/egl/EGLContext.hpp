@@ -10,7 +10,10 @@ namespace javax::microedition::khronos::egl
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit EGLContext(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		EGLContext(QAndroidJniObject obj);
+		
 		// Constructors
 		EGLContext();
 		

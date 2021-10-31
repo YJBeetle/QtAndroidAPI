@@ -7,29 +7,29 @@ namespace java::util::prefs
 {
 	// Fields
 	
-	NodeChangeEvent::NodeChangeEvent(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NodeChangeEvent::NodeChangeEvent(QAndroidJniObject obj) : java::util::EventObject(obj) {}
+	
 	// Constructors
 	NodeChangeEvent::NodeChangeEvent(java::util::prefs::Preferences arg0, java::util::prefs::Preferences arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::EventObject(
 			"java.util.prefs.NodeChangeEvent",
 			"(Ljava/util/prefs/Preferences;Ljava/util/prefs/Preferences;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject NodeChangeEvent::getChild()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getChild",
 			"()Ljava/util/prefs/Preferences;"
 		);
 	}
 	QAndroidJniObject NodeChangeEvent::getParent()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getParent",
 			"()Ljava/util/prefs/Preferences;"
 		);

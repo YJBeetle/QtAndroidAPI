@@ -16,11 +16,13 @@ namespace java::security::spec
 		static QAndroidJniObject F0();
 		static QAndroidJniObject F4();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit RSAKeyGenParameterSpec(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		RSAKeyGenParameterSpec(QAndroidJniObject obj);
+		
 		// Constructors
 		RSAKeyGenParameterSpec(jint arg0, java::math::BigInteger arg1);
 		RSAKeyGenParameterSpec(jint arg0, java::math::BigInteger arg1, __JniBaseClass arg2);
-		RSAKeyGenParameterSpec() = default;
 		
 		// Methods
 		QAndroidJniObject getKeyParams();

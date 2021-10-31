@@ -10,9 +10,11 @@ namespace android::webkit
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit WebStorage(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		WebStorage(QAndroidJniObject obj);
+		
 		// Constructors
-		WebStorage() = default;
 		
 		// Methods
 		static QAndroidJniObject getInstance();

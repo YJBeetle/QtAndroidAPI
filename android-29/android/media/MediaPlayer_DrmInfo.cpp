@@ -5,20 +5,22 @@ namespace android::media
 {
 	// Fields
 	
-	MediaPlayer_DrmInfo::MediaPlayer_DrmInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaPlayer_DrmInfo::MediaPlayer_DrmInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject MediaPlayer_DrmInfo::getPssh()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPssh",
 			"()Ljava/util/Map;"
 		);
 	}
 	jarray MediaPlayer_DrmInfo::getSupportedSchemes()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSupportedSchemes",
 			"()[Ljava/util/UUID;"
 		).object<jarray>();

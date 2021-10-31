@@ -4,23 +4,21 @@ namespace java::lang
 {
 	// Fields
 	
-	UnknownError::UnknownError(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UnknownError::UnknownError(QAndroidJniObject obj) : java::lang::VirtualMachineError(obj) {}
+	
 	// Constructors
 	UnknownError::UnknownError()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::VirtualMachineError(
 			"java.lang.UnknownError",
 			"()V"
-		);
-	}
+		) {}
 	UnknownError::UnknownError(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::VirtualMachineError(
 			"java.lang.UnknownError",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::lang

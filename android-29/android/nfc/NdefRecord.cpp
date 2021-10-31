@@ -119,27 +119,25 @@ namespace android::nfc
 		);
 	}
 	
-	NdefRecord::NdefRecord(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NdefRecord::NdefRecord(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	NdefRecord::NdefRecord(jbyteArray arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.nfc.NdefRecord",
 			"([B)V",
 			arg0
-		);
-	}
+		) {}
 	NdefRecord::NdefRecord(jshort arg0, jbyteArray arg1, jbyteArray arg2, jbyteArray arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.nfc.NdefRecord",
 			"(S[B[B[B)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject NdefRecord::createApplicationRecord(jstring arg0)
@@ -188,7 +186,7 @@ namespace android::nfc
 			"android.nfc.NdefRecord",
 			"createUri",
 			"(Landroid/net/Uri;)Landroid/nfc/NdefRecord;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject NdefRecord::createUri(jstring arg0)
@@ -202,14 +200,14 @@ namespace android::nfc
 	}
 	jint NdefRecord::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean NdefRecord::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -217,73 +215,73 @@ namespace android::nfc
 	}
 	jbyteArray NdefRecord::getId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getId",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jbyteArray NdefRecord::getPayload()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPayload",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jshort NdefRecord::getTnf()
 	{
-		return __thiz.callMethod<jshort>(
+		return callMethod<jshort>(
 			"getTnf",
 			"()S"
 		);
 	}
 	jbyteArray NdefRecord::getType()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getType",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jint NdefRecord::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jbyteArray NdefRecord::toByteArray()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toByteArray",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jstring NdefRecord::toMimeType()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toMimeType",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring NdefRecord::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject NdefRecord::toUri()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toUri",
 			"()Landroid/net/Uri;"
 		);
 	}
 	void NdefRecord::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

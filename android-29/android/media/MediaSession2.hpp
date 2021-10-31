@@ -38,9 +38,11 @@ namespace android::media
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaSession2(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaSession2(QAndroidJniObject obj);
+		
 		// Constructors
-		MediaSession2() = default;
 		
 		// Methods
 		void broadcastSessionCommand(android::media::Session2Command arg0, android::os::Bundle arg1);

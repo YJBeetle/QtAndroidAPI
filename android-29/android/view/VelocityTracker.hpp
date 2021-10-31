@@ -14,9 +14,11 @@ namespace android::view
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit VelocityTracker(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		VelocityTracker(QAndroidJniObject obj);
+		
 		// Constructors
-		VelocityTracker() = default;
 		
 		// Methods
 		static QAndroidJniObject obtain();

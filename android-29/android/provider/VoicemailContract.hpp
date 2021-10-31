@@ -17,9 +17,11 @@ namespace android::provider
 		static jstring EXTRA_SELF_CHANGE();
 		static jstring PARAM_KEY_SOURCE_PACKAGE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit VoicemailContract(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		VoicemailContract(QAndroidJniObject obj);
+		
 		// Constructors
-		VoicemailContract() = default;
 		
 		// Methods
 	};

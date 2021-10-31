@@ -96,9 +96,11 @@ namespace android::hardware
 		static jint SENSOR_TRICORDER();
 		static jfloat STANDARD_GRAVITY();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SensorManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SensorManager(QAndroidJniObject obj);
+		
 		// Constructors
-		SensorManager() = default;
 		
 		// Methods
 		static jfloat getAltitude(jfloat arg0, jfloat arg1);

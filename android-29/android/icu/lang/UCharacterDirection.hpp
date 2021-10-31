@@ -10,9 +10,11 @@ namespace android::icu::lang
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit UCharacterDirection(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		UCharacterDirection(QAndroidJniObject obj);
+		
 		// Constructors
-		UCharacterDirection() = default;
 		
 		// Methods
 		static jstring toString(jint arg0);

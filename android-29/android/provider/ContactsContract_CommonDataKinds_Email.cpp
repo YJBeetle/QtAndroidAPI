@@ -130,7 +130,9 @@ namespace android::provider
 		);
 	}
 	
-	ContactsContract_CommonDataKinds_Email::ContactsContract_CommonDataKinds_Email(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ContactsContract_CommonDataKinds_Email::ContactsContract_CommonDataKinds_Email(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -140,7 +142,7 @@ namespace android::provider
 			"android.provider.ContactsContract$CommonDataKinds$Email",
 			"getTypeLabel",
 			"(Landroid/content/res/Resources;ILjava/lang/CharSequence;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		).object<jstring>();

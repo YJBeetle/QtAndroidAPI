@@ -5,35 +5,33 @@ namespace android::renderscript
 	// Fields
 	jdouble Double2::x()
 	{
-		return __thiz.getField<jdouble>(
+		return getField<jdouble>(
 			"x"
 		);
 	}
 	jdouble Double2::y()
 	{
-		return __thiz.getField<jdouble>(
+		return getField<jdouble>(
 			"y"
 		);
 	}
 	
-	Double2::Double2(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Double2::Double2(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Double2::Double2()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.renderscript.Double2",
 			"()V"
-		);
-	}
+		) {}
 	Double2::Double2(jdouble arg0, jdouble arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.renderscript.Double2",
 			"(DD)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::renderscript

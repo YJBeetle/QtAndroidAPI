@@ -18,7 +18,10 @@ namespace android::graphics
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Outline(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Outline(QAndroidJniObject obj);
+		
 		// Constructors
 		Outline();
 		Outline(android::graphics::Outline &arg0);

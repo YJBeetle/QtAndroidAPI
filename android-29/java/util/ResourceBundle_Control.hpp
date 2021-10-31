@@ -35,9 +35,11 @@ namespace java::util
 		static jlong TTL_DONT_CACHE();
 		static jlong TTL_NO_EXPIRATION_CONTROL();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ResourceBundle_Control(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ResourceBundle_Control(QAndroidJniObject obj);
+		
 		// Constructors
-		ResourceBundle_Control() = default;
 		
 		// Methods
 		static QAndroidJniObject getControl(__JniBaseClass arg0);

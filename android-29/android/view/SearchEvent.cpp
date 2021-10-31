@@ -5,21 +5,21 @@ namespace android::view
 {
 	// Fields
 	
-	SearchEvent::SearchEvent(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SearchEvent::SearchEvent(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	SearchEvent::SearchEvent(android::view::InputDevice arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.SearchEvent",
 			"(Landroid/view/InputDevice;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject SearchEvent::getInputDevice()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getInputDevice",
 			"()Landroid/view/InputDevice;"
 		);

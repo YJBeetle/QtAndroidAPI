@@ -102,7 +102,9 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	CalendarContract::CalendarContract(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CalendarContract::CalendarContract(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -112,7 +114,7 @@ namespace android::provider
 			"android.provider.CalendarContract",
 			"startViewCalendarEventInManagedProfile",
 			"(Landroid/content/Context;JJJZI)Z",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,

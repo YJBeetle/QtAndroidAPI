@@ -22,7 +22,10 @@ namespace android::view
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit View_DragShadowBuilder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		View_DragShadowBuilder(QAndroidJniObject obj);
+		
 		// Constructors
 		View_DragShadowBuilder();
 		View_DragShadowBuilder(android::view::View arg0);

@@ -18,11 +18,13 @@ namespace java::io
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ObjectStreamField(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ObjectStreamField(QAndroidJniObject obj);
+		
 		// Constructors
 		ObjectStreamField(jstring arg0, jclass arg1);
 		ObjectStreamField(jstring arg0, jclass arg1, jboolean arg2);
-		ObjectStreamField() = default;
 		
 		// Methods
 		jint compareTo(jobject arg0);

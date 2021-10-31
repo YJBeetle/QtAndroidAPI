@@ -22,9 +22,11 @@ namespace java::lang::invoke
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CallSite(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		CallSite(QAndroidJniObject obj);
+		
 		// Constructors
-		CallSite() = default;
 		
 		// Methods
 		QAndroidJniObject dynamicInvoker();

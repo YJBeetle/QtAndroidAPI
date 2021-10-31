@@ -16,27 +16,29 @@ namespace android::view::textclassifier
 		);
 	}
 	
-	TextClassification::TextClassification(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TextClassification::TextClassification(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint TextClassification::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	QAndroidJniObject TextClassification::getActions()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getActions",
 			"()Ljava/util/List;"
 		);
 	}
 	jfloat TextClassification::getConfidenceScore(jstring arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getConfidenceScore",
 			"(Ljava/lang/String;)F",
 			arg0
@@ -44,7 +46,7 @@ namespace android::view::textclassifier
 	}
 	jstring TextClassification::getEntity(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEntity",
 			"(I)Ljava/lang/String;",
 			arg0
@@ -52,73 +54,73 @@ namespace android::view::textclassifier
 	}
 	jint TextClassification::getEntityCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getEntityCount",
 			"()I"
 		);
 	}
 	QAndroidJniObject TextClassification::getExtras()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
 	QAndroidJniObject TextClassification::getIcon()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getIcon",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
 	jstring TextClassification::getId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject TextClassification::getIntent()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getIntent",
 			"()Landroid/content/Intent;"
 		);
 	}
 	jstring TextClassification::getLabel()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	QAndroidJniObject TextClassification::getOnClickListener()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getOnClickListener",
 			"()Landroid/view/View$OnClickListener;"
 		);
 	}
 	jstring TextClassification::getText()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring TextClassification::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void TextClassification::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

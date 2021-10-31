@@ -17,9 +17,11 @@ namespace android::icu::lang
 		static QAndroidJniObject RECOMMENDED();
 		static QAndroidJniObject UNKNOWN();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit UScript_ScriptUsage(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		UScript_ScriptUsage(QAndroidJniObject obj);
+		
 		// Constructors
-		UScript_ScriptUsage() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

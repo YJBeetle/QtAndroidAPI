@@ -25,9 +25,11 @@ namespace android::provider
 		static jstring PERSON_ID();
 		static QAndroidJniObject RAW_CONTENT_URI();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Contacts_GroupMembership(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Contacts_GroupMembership(QAndroidJniObject obj);
+		
 		// Constructors
-		Contacts_GroupMembership() = default;
 		
 		// Methods
 	};

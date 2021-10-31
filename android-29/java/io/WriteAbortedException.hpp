@@ -18,10 +18,12 @@ namespace java::io
 		// Fields
 		QAndroidJniObject detail();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit WriteAbortedException(const char *className, const char *sig, Ts...agv) : java::io::ObjectStreamException(className, sig, std::forward<Ts>(agv)...) {}
 		WriteAbortedException(QAndroidJniObject obj);
+		
 		// Constructors
 		WriteAbortedException(jstring arg0, java::lang::Exception arg1);
-		WriteAbortedException() = default;
 		
 		// Methods
 		jthrowable getCause();

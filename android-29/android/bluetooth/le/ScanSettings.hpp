@@ -28,9 +28,11 @@ namespace android::bluetooth::le
 		static jint SCAN_MODE_LOW_POWER();
 		static jint SCAN_MODE_OPPORTUNISTIC();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ScanSettings(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ScanSettings(QAndroidJniObject obj);
+		
 		// Constructors
-		ScanSettings() = default;
 		
 		// Methods
 		jint describeContents();

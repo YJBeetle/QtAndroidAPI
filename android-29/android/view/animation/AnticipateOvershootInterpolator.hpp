@@ -15,7 +15,10 @@ namespace android::view::animation
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AnticipateOvershootInterpolator(const char *className, const char *sig, Ts...agv) : android::view::animation::BaseInterpolator(className, sig, std::forward<Ts>(agv)...) {}
 		AnticipateOvershootInterpolator(QAndroidJniObject obj);
+		
 		// Constructors
 		AnticipateOvershootInterpolator();
 		AnticipateOvershootInterpolator(jfloat arg0);

@@ -5,27 +5,27 @@ namespace android::widget
 {
 	// Fields
 	
-	BaseExpandableListAdapter::BaseExpandableListAdapter(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BaseExpandableListAdapter::BaseExpandableListAdapter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	BaseExpandableListAdapter::BaseExpandableListAdapter()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.widget.BaseExpandableListAdapter",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean BaseExpandableListAdapter::areAllItemsEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"areAllItemsEnabled",
 			"()Z"
 		);
 	}
 	jint BaseExpandableListAdapter::getChildType(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getChildType",
 			"(II)I",
 			arg0,
@@ -34,14 +34,14 @@ namespace android::widget
 	}
 	jint BaseExpandableListAdapter::getChildTypeCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getChildTypeCount",
 			"()I"
 		);
 	}
 	jlong BaseExpandableListAdapter::getCombinedChildId(jlong arg0, jlong arg1)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getCombinedChildId",
 			"(JJ)J",
 			arg0,
@@ -50,7 +50,7 @@ namespace android::widget
 	}
 	jlong BaseExpandableListAdapter::getCombinedGroupId(jlong arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getCombinedGroupId",
 			"(J)J",
 			arg0
@@ -58,7 +58,7 @@ namespace android::widget
 	}
 	jint BaseExpandableListAdapter::getGroupType(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getGroupType",
 			"(I)I",
 			arg0
@@ -66,35 +66,35 @@ namespace android::widget
 	}
 	jint BaseExpandableListAdapter::getGroupTypeCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getGroupTypeCount",
 			"()I"
 		);
 	}
 	jboolean BaseExpandableListAdapter::isEmpty()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
 	void BaseExpandableListAdapter::notifyDataSetChanged()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"notifyDataSetChanged",
 			"()V"
 		);
 	}
 	void BaseExpandableListAdapter::notifyDataSetInvalidated()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"notifyDataSetInvalidated",
 			"()V"
 		);
 	}
 	void BaseExpandableListAdapter::onGroupCollapsed(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onGroupCollapsed",
 			"(I)V",
 			arg0
@@ -102,7 +102,7 @@ namespace android::widget
 	}
 	void BaseExpandableListAdapter::onGroupExpanded(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onGroupExpanded",
 			"(I)V",
 			arg0
@@ -110,18 +110,18 @@ namespace android::widget
 	}
 	void BaseExpandableListAdapter::registerDataSetObserver(android::database::DataSetObserver arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"registerDataSetObserver",
 			"(Landroid/database/DataSetObserver;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void BaseExpandableListAdapter::unregisterDataSetObserver(android::database::DataSetObserver arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"unregisterDataSetObserver",
 			"(Landroid/database/DataSetObserver;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::widget

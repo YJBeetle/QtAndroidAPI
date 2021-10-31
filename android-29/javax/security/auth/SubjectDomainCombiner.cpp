@@ -6,21 +6,21 @@ namespace javax::security::auth
 {
 	// Fields
 	
-	SubjectDomainCombiner::SubjectDomainCombiner(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SubjectDomainCombiner::SubjectDomainCombiner(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	SubjectDomainCombiner::SubjectDomainCombiner(javax::security::auth::Subject arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"javax.security.auth.SubjectDomainCombiner",
 			"(Ljavax/security/auth/Subject;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jarray SubjectDomainCombiner::combine(jarray arg0, jarray arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"combine",
 			"([Ljava/security/ProtectionDomain;[Ljava/security/ProtectionDomain;)[Ljava/security/ProtectionDomain;",
 			arg0,
@@ -29,7 +29,7 @@ namespace javax::security::auth
 	}
 	QAndroidJniObject SubjectDomainCombiner::getSubject()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSubject",
 			"()Ljavax/security/auth/Subject;"
 		);

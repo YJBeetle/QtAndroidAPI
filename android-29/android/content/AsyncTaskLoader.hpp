@@ -23,10 +23,12 @@ namespace android::content
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AsyncTaskLoader(const char *className, const char *sig, Ts...agv) : android::content::Loader(className, sig, std::forward<Ts>(agv)...) {}
 		AsyncTaskLoader(QAndroidJniObject obj);
+		
 		// Constructors
 		AsyncTaskLoader(android::content::Context arg0);
-		AsyncTaskLoader() = default;
 		
 		// Methods
 		void cancelLoadInBackground();

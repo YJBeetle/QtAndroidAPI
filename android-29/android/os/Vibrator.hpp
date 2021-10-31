@@ -18,9 +18,11 @@ namespace android::os
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Vibrator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Vibrator(QAndroidJniObject obj);
+		
 		// Constructors
-		Vibrator() = default;
 		
 		// Methods
 		void cancel();

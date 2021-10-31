@@ -5,33 +5,31 @@ namespace android::media::audiofx
 	// Fields
 	jshort BassBoost_Settings::strength()
 	{
-		return __thiz.getField<jshort>(
+		return getField<jshort>(
 			"strength"
 		);
 	}
 	
-	BassBoost_Settings::BassBoost_Settings(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BassBoost_Settings::BassBoost_Settings(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	BassBoost_Settings::BassBoost_Settings()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.audiofx.BassBoost$Settings",
 			"()V"
-		);
-	}
+		) {}
 	BassBoost_Settings::BassBoost_Settings(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.audiofx.BassBoost$Settings",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring BassBoost_Settings::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

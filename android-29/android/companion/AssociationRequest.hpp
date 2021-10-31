@@ -15,9 +15,11 @@ namespace android::companion
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AssociationRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AssociationRequest(QAndroidJniObject obj);
+		
 		// Constructors
-		AssociationRequest() = default;
 		
 		// Methods
 		jint describeContents();

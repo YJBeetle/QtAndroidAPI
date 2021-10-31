@@ -52,9 +52,11 @@ namespace android::content
 		static jint RESULT_NO_RESPONSE();
 		static jint RESULT_UNKNOWN_REQUEST();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit RestrictionsManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		RestrictionsManager(QAndroidJniObject obj);
+		
 		// Constructors
-		RestrictionsManager() = default;
 		
 		// Methods
 		static QAndroidJniObject convertRestrictionsToBundle(__JniBaseClass arg0);

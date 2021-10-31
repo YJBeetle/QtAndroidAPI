@@ -7,33 +7,35 @@ namespace android::icu::text
 {
 	// Fields
 	
-	CaseMap_Lower::CaseMap_Lower(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CaseMap_Lower::CaseMap_Lower(QAndroidJniObject obj) : android::icu::text::CaseMap(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject CaseMap_Lower::apply(java::util::Locale arg0, jstring arg1, __JniBaseClass arg2, android::icu::text::Edits arg3)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"apply",
 			"(Ljava/util/Locale;Ljava/lang/CharSequence;Ljava/lang/Appendable;Landroid/icu/text/Edits;)Ljava/lang/Appendable;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
+			arg2.object(),
+			arg3.object()
 		);
 	}
 	jstring CaseMap_Lower::apply(java::util::Locale arg0, jstring arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"apply",
 			"(Ljava/util/Locale;Ljava/lang/CharSequence;)Ljava/lang/String;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		).object<jstring>();
 	}
 	QAndroidJniObject CaseMap_Lower::omitUnchangedText()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"omitUnchangedText",
 			"()Landroid/icu/text/CaseMap$Lower;"
 		);

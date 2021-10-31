@@ -44,7 +44,9 @@ namespace android::webkit
 		);
 	}
 	
-	ConsoleMessage_MessageLevel::ConsoleMessage_MessageLevel(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ConsoleMessage_MessageLevel::ConsoleMessage_MessageLevel(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

@@ -5,7 +5,9 @@ namespace java::nio::file
 {
 	// Fields
 	
-	Paths::Paths(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Paths::Paths(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -15,7 +17,7 @@ namespace java::nio::file
 			"java.nio.file.Paths",
 			"get",
 			"(Ljava/net/URI;)Ljava/nio/file/Path;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Paths::get(jstring arg0, jarray arg1)

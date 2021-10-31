@@ -10,9 +10,11 @@ namespace java::lang
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Character_Subset(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Character_Subset(QAndroidJniObject obj);
+		
 		// Constructors
-		Character_Subset() = default;
 		
 		// Methods
 		jboolean equals(jobject arg0);

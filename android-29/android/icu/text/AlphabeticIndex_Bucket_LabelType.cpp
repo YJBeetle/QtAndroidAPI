@@ -36,7 +36,9 @@ namespace android::icu::text
 		);
 	}
 	
-	AlphabeticIndex_Bucket_LabelType::AlphabeticIndex_Bucket_LabelType(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AlphabeticIndex_Bucket_LabelType::AlphabeticIndex_Bucket_LabelType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

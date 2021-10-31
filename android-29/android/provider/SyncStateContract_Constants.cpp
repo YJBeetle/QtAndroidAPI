@@ -12,15 +12,15 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	SyncStateContract_Constants::SyncStateContract_Constants(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SyncStateContract_Constants::SyncStateContract_Constants(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	SyncStateContract_Constants::SyncStateContract_Constants()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.provider.SyncStateContract$Constants",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::provider

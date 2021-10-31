@@ -1593,7 +1593,9 @@ namespace android::bluetooth
 		);
 	}
 	
-	BluetoothAssignedNumbers::BluetoothAssignedNumbers(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BluetoothAssignedNumbers::BluetoothAssignedNumbers(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

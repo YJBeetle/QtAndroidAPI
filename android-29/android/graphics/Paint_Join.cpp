@@ -28,7 +28,9 @@ namespace android::graphics
 		);
 	}
 	
-	Paint_Join::Paint_Join(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Paint_Join::Paint_Join(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

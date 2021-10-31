@@ -34,7 +34,10 @@ namespace android::graphics::fonts
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Font_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Font_Builder(QAndroidJniObject obj);
+		
 		// Constructors
 		Font_Builder(android::os::ParcelFileDescriptor arg0);
 		Font_Builder(java::io::File arg0);
@@ -42,7 +45,6 @@ namespace android::graphics::fonts
 		Font_Builder(android::content::res::AssetManager arg0, jstring arg1);
 		Font_Builder(android::content::res::Resources arg0, jint arg1);
 		Font_Builder(android::os::ParcelFileDescriptor arg0, jlong arg1, jlong arg2);
-		Font_Builder() = default;
 		
 		// Methods
 		QAndroidJniObject build();

@@ -7,91 +7,83 @@ namespace android::view
 {
 	// Fields
 	
-	GestureDetector::GestureDetector(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	GestureDetector::GestureDetector(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	GestureDetector::GestureDetector(__JniBaseClass arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.GestureDetector",
 			"(Landroid/view/GestureDetector$OnGestureListener;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	GestureDetector::GestureDetector(android::content::Context arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.GestureDetector",
 			"(Landroid/content/Context;Landroid/view/GestureDetector$OnGestureListener;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	GestureDetector::GestureDetector(__JniBaseClass arg0, android::os::Handler arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.GestureDetector",
 			"(Landroid/view/GestureDetector$OnGestureListener;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	GestureDetector::GestureDetector(android::content::Context arg0, __JniBaseClass arg1, android::os::Handler arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.GestureDetector",
 			"(Landroid/content/Context;Landroid/view/GestureDetector$OnGestureListener;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		) {}
 	GestureDetector::GestureDetector(android::content::Context arg0, __JniBaseClass arg1, android::os::Handler arg2, jboolean arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.GestureDetector",
 			"(Landroid/content/Context;Landroid/view/GestureDetector$OnGestureListener;Landroid/os/Handler;Z)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
 			arg3
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean GestureDetector::isLongpressEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isLongpressEnabled",
 			"()Z"
 		);
 	}
 	jboolean GestureDetector::onGenericMotionEvent(android::view::MotionEvent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onGenericMotionEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean GestureDetector::onTouchEvent(android::view::MotionEvent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onTouchEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void GestureDetector::setContextClickListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setContextClickListener",
 			"(Landroid/view/GestureDetector$OnContextClickListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void GestureDetector::setIsLongpressEnabled(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setIsLongpressEnabled",
 			"(Z)V",
 			arg0
@@ -99,10 +91,10 @@ namespace android::view
 	}
 	void GestureDetector::setOnDoubleTapListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnDoubleTapListener",
 			"(Landroid/view/GestureDetector$OnDoubleTapListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::view

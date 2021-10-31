@@ -24,12 +24,14 @@ namespace android::widget
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ResourceCursorTreeAdapter(const char *className, const char *sig, Ts...agv) : android::widget::CursorTreeAdapter(className, sig, std::forward<Ts>(agv)...) {}
 		ResourceCursorTreeAdapter(QAndroidJniObject obj);
+		
 		// Constructors
 		ResourceCursorTreeAdapter(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		ResourceCursorTreeAdapter(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3, jint arg4);
 		ResourceCursorTreeAdapter(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3, jint arg4, jint arg5);
-		ResourceCursorTreeAdapter() = default;
 		
 		// Methods
 		QAndroidJniObject newChildView(android::content::Context arg0, __JniBaseClass arg1, jboolean arg2, android::view::ViewGroup arg3);

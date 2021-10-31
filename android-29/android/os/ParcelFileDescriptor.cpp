@@ -74,16 +74,16 @@ namespace android::os
 		);
 	}
 	
-	ParcelFileDescriptor::ParcelFileDescriptor(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ParcelFileDescriptor::ParcelFileDescriptor(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ParcelFileDescriptor::ParcelFileDescriptor(android::os::ParcelFileDescriptor &arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.os.ParcelFileDescriptor",
 			"(Landroid/os/ParcelFileDescriptor;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject ParcelFileDescriptor::adoptFd(jint arg0)
@@ -133,7 +133,7 @@ namespace android::os
 			"android.os.ParcelFileDescriptor",
 			"dup",
 			"(Ljava/io/FileDescriptor;)Landroid/os/ParcelFileDescriptor;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ParcelFileDescriptor::fromDatagramSocket(java::net::DatagramSocket arg0)
@@ -142,7 +142,7 @@ namespace android::os
 			"android.os.ParcelFileDescriptor",
 			"fromDatagramSocket",
 			"(Ljava/net/DatagramSocket;)Landroid/os/ParcelFileDescriptor;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ParcelFileDescriptor::fromFd(jint arg0)
@@ -160,7 +160,7 @@ namespace android::os
 			"android.os.ParcelFileDescriptor",
 			"fromSocket",
 			"(Ljava/net/Socket;)Landroid/os/ParcelFileDescriptor;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ParcelFileDescriptor::open(java::io::File arg0, jint arg1)
@@ -169,7 +169,7 @@ namespace android::os
 			"android.os.ParcelFileDescriptor",
 			"open",
 			"(Ljava/io/File;I)Landroid/os/ParcelFileDescriptor;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -179,10 +179,10 @@ namespace android::os
 			"android.os.ParcelFileDescriptor",
 			"open",
 			"(Ljava/io/File;ILandroid/os/Handler;Landroid/os/ParcelFileDescriptor$OnCloseListener;)Landroid/os/ParcelFileDescriptor;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
+			arg2.object(),
+			arg3.object()
 		);
 	}
 	jint ParcelFileDescriptor::parseMode(jstring arg0)
@@ -196,28 +196,28 @@ namespace android::os
 	}
 	jboolean ParcelFileDescriptor::canDetectErrors()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"canDetectErrors",
 			"()Z"
 		);
 	}
 	void ParcelFileDescriptor::checkError()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"checkError",
 			"()V"
 		);
 	}
 	void ParcelFileDescriptor::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	void ParcelFileDescriptor::closeWithError(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"closeWithError",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -225,59 +225,59 @@ namespace android::os
 	}
 	jint ParcelFileDescriptor::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jint ParcelFileDescriptor::detachFd()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"detachFd",
 			"()I"
 		);
 	}
 	QAndroidJniObject ParcelFileDescriptor::dup()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"dup",
 			"()Landroid/os/ParcelFileDescriptor;"
 		);
 	}
 	jint ParcelFileDescriptor::getFd()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getFd",
 			"()I"
 		);
 	}
 	QAndroidJniObject ParcelFileDescriptor::getFileDescriptor()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFileDescriptor",
 			"()Ljava/io/FileDescriptor;"
 		);
 	}
 	jlong ParcelFileDescriptor::getStatSize()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getStatSize",
 			"()J"
 		);
 	}
 	jstring ParcelFileDescriptor::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void ParcelFileDescriptor::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

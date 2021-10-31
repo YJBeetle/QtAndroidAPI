@@ -22,7 +22,10 @@ namespace android::inputmethodservice
 		QAndroidJniObject touchableRegion();
 		jint visibleTopInsets();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit InputMethodService_Insets(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		InputMethodService_Insets(QAndroidJniObject obj);
+		
 		// Constructors
 		InputMethodService_Insets();
 		

@@ -23,7 +23,9 @@ namespace android::icu::text
 		);
 	}
 	
-	Transliterator::Transliterator(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Transliterator::Transliterator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -89,7 +91,7 @@ namespace android::icu::text
 			"getDisplayName",
 			"(Ljava/lang/String;Landroid/icu/util/ULocale;)Ljava/lang/String;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		).object<jstring>();
 	}
 	jstring Transliterator::getDisplayName(jstring arg0, java::util::Locale arg1)
@@ -99,7 +101,7 @@ namespace android::icu::text
 			"getDisplayName",
 			"(Ljava/lang/String;Ljava/util/Locale;)Ljava/lang/String;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		).object<jstring>();
 	}
 	QAndroidJniObject Transliterator::getInstance(jstring arg0)
@@ -123,83 +125,83 @@ namespace android::icu::text
 	}
 	void Transliterator::filteredTransliterate(__JniBaseClass arg0, android::icu::text::Transliterator_Position arg1, jboolean arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"filteredTransliterate",
 			"(Landroid/icu/text/Replaceable;Landroid/icu/text/Transliterator$Position;Z)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
 	void Transliterator::finishTransliteration(__JniBaseClass arg0, android::icu::text::Transliterator_Position arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"finishTransliteration",
 			"(Landroid/icu/text/Replaceable;Landroid/icu/text/Transliterator$Position;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jarray Transliterator::getElements()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getElements",
 			"()[Landroid/icu/text/Transliterator;"
 		).object<jarray>();
 	}
 	QAndroidJniObject Transliterator::getFilter()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFilter",
 			"()Landroid/icu/text/UnicodeFilter;"
 		);
 	}
 	jstring Transliterator::getID()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getID",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject Transliterator::getInverse()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getInverse",
 			"()Landroid/icu/text/Transliterator;"
 		);
 	}
 	jint Transliterator::getMaximumContextLength()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMaximumContextLength",
 			"()I"
 		);
 	}
 	QAndroidJniObject Transliterator::getSourceSet()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSourceSet",
 			"()Landroid/icu/text/UnicodeSet;"
 		);
 	}
 	QAndroidJniObject Transliterator::getTargetSet()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTargetSet",
 			"()Landroid/icu/text/UnicodeSet;"
 		);
 	}
 	void Transliterator::setFilter(android::icu::text::UnicodeFilter arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFilter",
 			"(Landroid/icu/text/UnicodeFilter;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring Transliterator::toRules(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toRules",
 			"(Z)Ljava/lang/String;",
 			arg0
@@ -207,17 +209,17 @@ namespace android::icu::text
 	}
 	jint Transliterator::transliterate(__JniBaseClass arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"transliterate",
 			"(Landroid/icu/text/Replaceable;II)I",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
 	}
 	jstring Transliterator::transliterate(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"transliterate",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
@@ -225,38 +227,38 @@ namespace android::icu::text
 	}
 	void Transliterator::transliterate(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"transliterate",
 			"(Landroid/icu/text/Replaceable;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Transliterator::transliterate(__JniBaseClass arg0, android::icu::text::Transliterator_Position arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"transliterate",
 			"(Landroid/icu/text/Replaceable;Landroid/icu/text/Transliterator$Position;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void Transliterator::transliterate(__JniBaseClass arg0, android::icu::text::Transliterator_Position arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"transliterate",
 			"(Landroid/icu/text/Replaceable;Landroid/icu/text/Transliterator$Position;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
 	void Transliterator::transliterate(__JniBaseClass arg0, android::icu::text::Transliterator_Position arg1, jstring arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"transliterate",
 			"(Landroid/icu/text/Replaceable;Landroid/icu/text/Transliterator$Position;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}

@@ -17,9 +17,11 @@ namespace android::graphics
 		static QAndroidJniObject RGBA_F16();
 		static QAndroidJniObject RGB_565();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Bitmap_Config(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		Bitmap_Config(QAndroidJniObject obj);
+		
 		// Constructors
-		Bitmap_Config() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

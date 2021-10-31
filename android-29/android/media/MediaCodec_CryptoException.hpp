@@ -21,10 +21,12 @@ namespace android::media
 		static jint ERROR_SESSION_NOT_OPENED();
 		static jint ERROR_UNSUPPORTED_OPERATION();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaCodec_CryptoException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
 		MediaCodec_CryptoException(QAndroidJniObject obj);
+		
 		// Constructors
 		MediaCodec_CryptoException(jint arg0, jstring arg1);
-		MediaCodec_CryptoException() = default;
 		
 		// Methods
 		jint getErrorCode();

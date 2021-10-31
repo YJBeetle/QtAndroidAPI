@@ -8,52 +8,54 @@ namespace android::media::midi
 {
 	// Fields
 	
-	MidiManager::MidiManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MidiManager::MidiManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jarray MidiManager::getDevices()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDevices",
 			"()[Landroid/media/midi/MidiDeviceInfo;"
 		).object<jarray>();
 	}
 	void MidiManager::openBluetoothDevice(android::bluetooth::BluetoothDevice arg0, __JniBaseClass arg1, android::os::Handler arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"openBluetoothDevice",
 			"(Landroid/bluetooth/BluetoothDevice;Landroid/media/midi/MidiManager$OnDeviceOpenedListener;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	void MidiManager::openDevice(android::media::midi::MidiDeviceInfo arg0, __JniBaseClass arg1, android::os::Handler arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"openDevice",
 			"(Landroid/media/midi/MidiDeviceInfo;Landroid/media/midi/MidiManager$OnDeviceOpenedListener;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	void MidiManager::registerDeviceCallback(android::media::midi::MidiManager_DeviceCallback arg0, android::os::Handler arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"registerDeviceCallback",
 			"(Landroid/media/midi/MidiManager$DeviceCallback;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void MidiManager::unregisterDeviceCallback(android::media::midi::MidiManager_DeviceCallback arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"unregisterDeviceCallback",
 			"(Landroid/media/midi/MidiManager$DeviceCallback;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::media::midi

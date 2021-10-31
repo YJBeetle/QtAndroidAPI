@@ -809,15 +809,15 @@ namespace android::opengl
 		);
 	}
 	
-	EGL14::EGL14(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	EGL14::EGL14(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	EGL14::EGL14()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.opengl.EGL14",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean EGL14::eglBindAPI(jint arg0)
@@ -835,8 +835,8 @@ namespace android::opengl
 			"android.opengl.EGL14",
 			"eglBindTexImage",
 			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;I)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
@@ -846,7 +846,7 @@ namespace android::opengl
 			"android.opengl.EGL14",
 			"eglChooseConfig",
 			"(Landroid/opengl/EGLDisplay;[II[Landroid/opengl/EGLConfig;II[II)Z",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
@@ -862,8 +862,8 @@ namespace android::opengl
 			"android.opengl.EGL14",
 			"eglCopyBuffers",
 			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;I)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
@@ -873,9 +873,9 @@ namespace android::opengl
 			"android.opengl.EGL14",
 			"eglCreateContext",
 			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLConfig;Landroid/opengl/EGLContext;[II)Landroid/opengl/EGLContext;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
 			arg3,
 			arg4
 		);
@@ -886,10 +886,10 @@ namespace android::opengl
 			"android.opengl.EGL14",
 			"eglCreatePbufferFromClientBuffer",
 			"(Landroid/opengl/EGLDisplay;IILandroid/opengl/EGLConfig;[II)Landroid/opengl/EGLSurface;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
+			arg3.object(),
 			arg4,
 			arg5
 		);
@@ -900,8 +900,8 @@ namespace android::opengl
 			"android.opengl.EGL14",
 			"eglCreatePbufferSurface",
 			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLConfig;[II)Landroid/opengl/EGLSurface;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3
 		);
@@ -912,8 +912,8 @@ namespace android::opengl
 			"android.opengl.EGL14",
 			"eglCreatePixmapSurface",
 			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLConfig;I[II)Landroid/opengl/EGLSurface;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3,
 			arg4
@@ -925,8 +925,8 @@ namespace android::opengl
 			"android.opengl.EGL14",
 			"eglCreateWindowSurface",
 			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLConfig;Ljava/lang/Object;[II)Landroid/opengl/EGLSurface;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3,
 			arg4
@@ -938,8 +938,8 @@ namespace android::opengl
 			"android.opengl.EGL14",
 			"eglDestroyContext",
 			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLContext;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jboolean EGL14::eglDestroySurface(android::opengl::EGLDisplay arg0, android::opengl::EGLSurface arg1)
@@ -948,8 +948,8 @@ namespace android::opengl
 			"android.opengl.EGL14",
 			"eglDestroySurface",
 			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jboolean EGL14::eglGetConfigAttrib(android::opengl::EGLDisplay arg0, android::opengl::EGLConfig arg1, jint arg2, jintArray arg3, jint arg4)
@@ -958,8 +958,8 @@ namespace android::opengl
 			"android.opengl.EGL14",
 			"eglGetConfigAttrib",
 			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLConfig;I[II)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3,
 			arg4
@@ -971,7 +971,7 @@ namespace android::opengl
 			"android.opengl.EGL14",
 			"eglGetConfigs",
 			"(Landroid/opengl/EGLDisplay;[Landroid/opengl/EGLConfig;II[II)Z",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
@@ -1027,7 +1027,7 @@ namespace android::opengl
 			"android.opengl.EGL14",
 			"eglInitialize",
 			"(Landroid/opengl/EGLDisplay;[II[II)Z",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
@@ -1040,10 +1040,10 @@ namespace android::opengl
 			"android.opengl.EGL14",
 			"eglMakeCurrent",
 			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;Landroid/opengl/EGLSurface;Landroid/opengl/EGLContext;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
 		);
 	}
 	jint EGL14::eglQueryAPI()
@@ -1060,8 +1060,8 @@ namespace android::opengl
 			"android.opengl.EGL14",
 			"eglQueryContext",
 			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLContext;I[II)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3,
 			arg4
@@ -1073,7 +1073,7 @@ namespace android::opengl
 			"android.opengl.EGL14",
 			"eglQueryString",
 			"(Landroid/opengl/EGLDisplay;I)Ljava/lang/String;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		).object<jstring>();
 	}
@@ -1083,8 +1083,8 @@ namespace android::opengl
 			"android.opengl.EGL14",
 			"eglQuerySurface",
 			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;I[II)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3,
 			arg4
@@ -1096,8 +1096,8 @@ namespace android::opengl
 			"android.opengl.EGL14",
 			"eglReleaseTexImage",
 			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;I)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
@@ -1115,8 +1115,8 @@ namespace android::opengl
 			"android.opengl.EGL14",
 			"eglSurfaceAttrib",
 			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;II)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3
 		);
@@ -1127,8 +1127,8 @@ namespace android::opengl
 			"android.opengl.EGL14",
 			"eglSwapBuffers",
 			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jboolean EGL14::eglSwapInterval(android::opengl::EGLDisplay arg0, jint arg1)
@@ -1137,7 +1137,7 @@ namespace android::opengl
 			"android.opengl.EGL14",
 			"eglSwapInterval",
 			"(Landroid/opengl/EGLDisplay;I)Z",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -1147,7 +1147,7 @@ namespace android::opengl
 			"android.opengl.EGL14",
 			"eglTerminate",
 			"(Landroid/opengl/EGLDisplay;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean EGL14::eglWaitClient()

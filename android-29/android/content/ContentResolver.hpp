@@ -123,10 +123,12 @@ namespace android::content
 		static jint SYNC_OBSERVER_TYPE_PENDING();
 		static jint SYNC_OBSERVER_TYPE_SETTINGS();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ContentResolver(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ContentResolver(QAndroidJniObject obj);
+		
 		// Constructors
 		ContentResolver(android::content::Context arg0);
-		ContentResolver() = default;
 		
 		// Methods
 		static void addPeriodicSync(android::accounts::Account arg0, jstring arg1, android::os::Bundle arg2, jlong arg3);

@@ -6,61 +6,59 @@ namespace android::text::style
 {
 	// Fields
 	
-	SubscriptSpan::SubscriptSpan(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SubscriptSpan::SubscriptSpan(QAndroidJniObject obj) : android::text::style::MetricAffectingSpan(obj) {}
+	
 	// Constructors
 	SubscriptSpan::SubscriptSpan()
-	{
-		__thiz = QAndroidJniObject(
+		: android::text::style::MetricAffectingSpan(
 			"android.text.style.SubscriptSpan",
 			"()V"
-		);
-	}
+		) {}
 	SubscriptSpan::SubscriptSpan(android::os::Parcel arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::text::style::MetricAffectingSpan(
 			"android.text.style.SubscriptSpan",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jint SubscriptSpan::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jint SubscriptSpan::getSpanTypeId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSpanTypeId",
 			"()I"
 		);
 	}
 	void SubscriptSpan::updateDrawState(android::text::TextPaint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"updateDrawState",
 			"(Landroid/text/TextPaint;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void SubscriptSpan::updateMeasureState(android::text::TextPaint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"updateMeasureState",
 			"(Landroid/text/TextPaint;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void SubscriptSpan::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

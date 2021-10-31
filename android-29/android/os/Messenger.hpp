@@ -23,11 +23,13 @@ namespace android::os
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Messenger(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Messenger(QAndroidJniObject obj);
+		
 		// Constructors
 		Messenger(android::os::Handler arg0);
 		Messenger(__JniBaseClass arg0);
-		Messenger() = default;
 		
 		// Methods
 		static QAndroidJniObject readMessengerOrNullFromParcel(android::os::Parcel arg0);

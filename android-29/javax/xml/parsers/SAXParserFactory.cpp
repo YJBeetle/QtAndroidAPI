@@ -7,7 +7,9 @@ namespace javax::xml::parsers
 {
 	// Fields
 	
-	SAXParserFactory::SAXParserFactory(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SAXParserFactory::SAXParserFactory(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -42,7 +44,7 @@ namespace javax::xml::parsers
 			"newInstance",
 			"(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljavax/xml/parsers/SAXParserFactory;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject SAXParserFactory::newNSInstance()
@@ -60,12 +62,12 @@ namespace javax::xml::parsers
 			"newNSInstance",
 			"(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljavax/xml/parsers/SAXParserFactory;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jboolean SAXParserFactory::getFeature(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getFeature",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -73,42 +75,42 @@ namespace javax::xml::parsers
 	}
 	QAndroidJniObject SAXParserFactory::getSchema()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSchema",
 			"()Ljavax/xml/validation/Schema;"
 		);
 	}
 	jboolean SAXParserFactory::isNamespaceAware()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isNamespaceAware",
 			"()Z"
 		);
 	}
 	jboolean SAXParserFactory::isValidating()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isValidating",
 			"()Z"
 		);
 	}
 	jboolean SAXParserFactory::isXIncludeAware()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isXIncludeAware",
 			"()Z"
 		);
 	}
 	QAndroidJniObject SAXParserFactory::newSAXParser()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newSAXParser",
 			"()Ljavax/xml/parsers/SAXParser;"
 		);
 	}
 	void SAXParserFactory::setFeature(jstring arg0, jboolean arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFeature",
 			"(Ljava/lang/String;Z)V",
 			arg0,
@@ -117,7 +119,7 @@ namespace javax::xml::parsers
 	}
 	void SAXParserFactory::setNamespaceAware(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setNamespaceAware",
 			"(Z)V",
 			arg0
@@ -125,15 +127,15 @@ namespace javax::xml::parsers
 	}
 	void SAXParserFactory::setSchema(javax::xml::validation::Schema arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSchema",
 			"(Ljavax/xml/validation/Schema;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void SAXParserFactory::setValidating(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setValidating",
 			"(Z)V",
 			arg0
@@ -141,7 +143,7 @@ namespace javax::xml::parsers
 	}
 	void SAXParserFactory::setXIncludeAware(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setXIncludeAware",
 			"(Z)V",
 			arg0

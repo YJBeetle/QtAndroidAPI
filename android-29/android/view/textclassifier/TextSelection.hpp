@@ -19,9 +19,11 @@ namespace android::view::textclassifier
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TextSelection(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		TextSelection(QAndroidJniObject obj);
+		
 		// Constructors
-		TextSelection() = default;
 		
 		// Methods
 		jint describeContents();

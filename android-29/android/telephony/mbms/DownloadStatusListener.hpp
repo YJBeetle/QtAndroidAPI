@@ -18,7 +18,10 @@ namespace android::telephony::mbms
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DownloadStatusListener(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DownloadStatusListener(QAndroidJniObject obj);
+		
 		// Constructors
 		DownloadStatusListener();
 		

@@ -4,51 +4,47 @@ namespace android::util
 {
 	// Fields
 	
-	ArrayMap::ArrayMap(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ArrayMap::ArrayMap(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ArrayMap::ArrayMap()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.util.ArrayMap",
 			"()V"
-		);
-	}
+		) {}
 	ArrayMap::ArrayMap(android::util::ArrayMap &arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.util.ArrayMap",
 			"(Landroid/util/ArrayMap;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	ArrayMap::ArrayMap(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.util.ArrayMap",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	void ArrayMap::clear()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
 	jboolean ArrayMap::containsAll(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"containsAll",
 			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean ArrayMap::containsKey(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"containsKey",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -56,7 +52,7 @@ namespace android::util
 	}
 	jboolean ArrayMap::containsValue(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"containsValue",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -64,7 +60,7 @@ namespace android::util
 	}
 	void ArrayMap::ensureCapacity(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"ensureCapacity",
 			"(I)V",
 			arg0
@@ -72,14 +68,14 @@ namespace android::util
 	}
 	QAndroidJniObject ArrayMap::entrySet()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"entrySet",
 			"()Ljava/util/Set;"
 		);
 	}
 	jboolean ArrayMap::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -87,7 +83,7 @@ namespace android::util
 	}
 	jobject ArrayMap::get(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0
@@ -95,14 +91,14 @@ namespace android::util
 	}
 	jint ArrayMap::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jint ArrayMap::indexOfKey(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"indexOfKey",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -110,7 +106,7 @@ namespace android::util
 	}
 	jint ArrayMap::indexOfValue(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"indexOfValue",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -118,14 +114,14 @@ namespace android::util
 	}
 	jboolean ArrayMap::isEmpty()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
 	jobject ArrayMap::keyAt(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"keyAt",
 			"(I)Ljava/lang/Object;",
 			arg0
@@ -133,14 +129,14 @@ namespace android::util
 	}
 	QAndroidJniObject ArrayMap::keySet()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"keySet",
 			"()Ljava/util/Set;"
 		);
 	}
 	jobject ArrayMap::put(jobject arg0, jobject arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"put",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
@@ -149,23 +145,23 @@ namespace android::util
 	}
 	void ArrayMap::putAll(android::util::ArrayMap arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putAll",
 			"(Landroid/util/ArrayMap;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ArrayMap::putAll(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putAll",
 			"(Ljava/util/Map;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jobject ArrayMap::remove(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"remove",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0
@@ -173,15 +169,15 @@ namespace android::util
 	}
 	jboolean ArrayMap::removeAll(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"removeAll",
 			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jobject ArrayMap::removeAt(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"removeAt",
 			"(I)Ljava/lang/Object;",
 			arg0
@@ -189,15 +185,15 @@ namespace android::util
 	}
 	jboolean ArrayMap::retainAll(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"retainAll",
 			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jobject ArrayMap::setValueAt(jint arg0, jobject arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setValueAt",
 			"(ILjava/lang/Object;)Ljava/lang/Object;",
 			arg0,
@@ -206,21 +202,21 @@ namespace android::util
 	}
 	jint ArrayMap::size()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
 	jstring ArrayMap::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jobject ArrayMap::valueAt(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"valueAt",
 			"(I)Ljava/lang/Object;",
 			arg0
@@ -228,7 +224,7 @@ namespace android::util
 	}
 	QAndroidJniObject ArrayMap::values()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"values",
 			"()Ljava/util/Collection;"
 		);

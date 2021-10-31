@@ -8,27 +8,29 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	ForkJoinWorkerThread::ForkJoinWorkerThread(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ForkJoinWorkerThread::ForkJoinWorkerThread(QAndroidJniObject obj) : java::lang::Thread(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject ForkJoinWorkerThread::getPool()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPool",
 			"()Ljava/util/concurrent/ForkJoinPool;"
 		);
 	}
 	jint ForkJoinWorkerThread::getPoolIndex()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPoolIndex",
 			"()I"
 		);
 	}
 	void ForkJoinWorkerThread::run()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"run",
 			"()V"
 		);

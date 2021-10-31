@@ -69,7 +69,9 @@ namespace android::telephony::gsm
 		);
 	}
 	
-	SmsManager::SmsManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SmsManager::SmsManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -83,7 +85,7 @@ namespace android::telephony::gsm
 	}
 	QAndroidJniObject SmsManager::divideMessage(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"divideMessage",
 			"(Ljava/lang/String;)Ljava/util/ArrayList;",
 			arg0
@@ -91,39 +93,39 @@ namespace android::telephony::gsm
 	}
 	void SmsManager::sendDataMessage(jstring arg0, jstring arg1, jshort arg2, jbyteArray arg3, android::app::PendingIntent arg4, android::app::PendingIntent arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"sendDataMessage",
 			"(Ljava/lang/String;Ljava/lang/String;S[BLandroid/app/PendingIntent;Landroid/app/PendingIntent;)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object(),
-			arg5.__jniObject().object()
+			arg4.object(),
+			arg5.object()
 		);
 	}
 	void SmsManager::sendMultipartTextMessage(jstring arg0, jstring arg1, java::util::ArrayList arg2, java::util::ArrayList arg3, java::util::ArrayList arg4)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"sendMultipartTextMessage",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object()
+			arg2.object(),
+			arg3.object(),
+			arg4.object()
 		);
 	}
 	void SmsManager::sendTextMessage(jstring arg0, jstring arg1, jstring arg2, android::app::PendingIntent arg3, android::app::PendingIntent arg4)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"sendTextMessage",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;Landroid/app/PendingIntent;)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object()
+			arg3.object(),
+			arg4.object()
 		);
 	}
 } // namespace android::telephony::gsm

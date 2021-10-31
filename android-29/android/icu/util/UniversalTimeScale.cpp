@@ -131,7 +131,9 @@ namespace android::icu::util
 		);
 	}
 	
-	UniversalTimeScale::UniversalTimeScale(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UniversalTimeScale::UniversalTimeScale(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -141,7 +143,7 @@ namespace android::icu::util
 			"android.icu.util.UniversalTimeScale",
 			"bigDecimalFrom",
 			"(Landroid/icu/math/BigDecimal;I)Landroid/icu/math/BigDecimal;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -191,7 +193,7 @@ namespace android::icu::util
 			"android.icu.util.UniversalTimeScale",
 			"toBigDecimal",
 			"(Landroid/icu/math/BigDecimal;I)Landroid/icu/math/BigDecimal;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

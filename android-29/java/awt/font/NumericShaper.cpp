@@ -146,7 +146,9 @@ namespace java::awt::font
 		);
 	}
 	
-	NumericShaper::NumericShaper(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NumericShaper::NumericShaper(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -165,7 +167,7 @@ namespace java::awt::font
 			"java.awt.font.NumericShaper",
 			"getContextualShaper",
 			"(Ljava/util/Set;)Ljava/awt/font/NumericShaper;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject NumericShaper::getContextualShaper(jint arg0, jint arg1)
@@ -184,8 +186,8 @@ namespace java::awt::font
 			"java.awt.font.NumericShaper",
 			"getContextualShaper",
 			"(Ljava/util/Set;Ljava/awt/font/NumericShaper$Range;)Ljava/awt/font/NumericShaper;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject NumericShaper::getShaper(jint arg0)
@@ -203,12 +205,12 @@ namespace java::awt::font
 			"java.awt.font.NumericShaper",
 			"getShaper",
 			"(Ljava/awt/font/NumericShaper$Range;)Ljava/awt/font/NumericShaper;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean NumericShaper::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -216,35 +218,35 @@ namespace java::awt::font
 	}
 	QAndroidJniObject NumericShaper::getRangeSet()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRangeSet",
 			"()Ljava/util/Set;"
 		);
 	}
 	jint NumericShaper::getRanges()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRanges",
 			"()I"
 		);
 	}
 	jint NumericShaper::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean NumericShaper::isContextual()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isContextual",
 			"()Z"
 		);
 	}
 	void NumericShaper::shape(jcharArray arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"shape",
 			"([CII)V",
 			arg0,
@@ -254,7 +256,7 @@ namespace java::awt::font
 	}
 	void NumericShaper::shape(jcharArray arg0, jint arg1, jint arg2, jint arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"shape",
 			"([CIII)V",
 			arg0,
@@ -265,18 +267,18 @@ namespace java::awt::font
 	}
 	void NumericShaper::shape(jcharArray arg0, jint arg1, jint arg2, java::awt::font::NumericShaper_Range arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"shape",
 			"([CIILjava/awt/font/NumericShaper$Range;)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	jstring NumericShaper::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

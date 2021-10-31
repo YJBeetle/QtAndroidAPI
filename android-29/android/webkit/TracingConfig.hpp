@@ -20,9 +20,11 @@ namespace android::webkit
 		static jint RECORD_CONTINUOUSLY();
 		static jint RECORD_UNTIL_FULL();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TracingConfig(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		TracingConfig(QAndroidJniObject obj);
+		
 		// Constructors
-		TracingConfig() = default;
 		
 		// Methods
 		QAndroidJniObject getCustomIncludedCategories();

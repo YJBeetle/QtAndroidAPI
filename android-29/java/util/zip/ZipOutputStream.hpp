@@ -39,11 +39,13 @@ namespace java::util::zip
 		static jint DEFLATED();
 		static jint STORED();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ZipOutputStream(const char *className, const char *sig, Ts...agv) : java::util::zip::DeflaterOutputStream(className, sig, std::forward<Ts>(agv)...) {}
 		ZipOutputStream(QAndroidJniObject obj);
+		
 		// Constructors
 		ZipOutputStream(java::io::OutputStream arg0);
 		ZipOutputStream(java::io::OutputStream arg0, java::nio::charset::Charset arg1);
-		ZipOutputStream() = default;
 		
 		// Methods
 		void close();

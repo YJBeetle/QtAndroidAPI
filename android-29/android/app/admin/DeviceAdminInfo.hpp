@@ -48,10 +48,12 @@ namespace android::app::admin
 		static jint USES_POLICY_WATCH_LOGIN();
 		static jint USES_POLICY_WIPE_DATA();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DeviceAdminInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DeviceAdminInfo(QAndroidJniObject obj);
+		
 		// Constructors
 		DeviceAdminInfo(android::content::Context arg0, android::content::pm::ResolveInfo arg1);
-		DeviceAdminInfo() = default;
 		
 		// Methods
 		jint describeContents();

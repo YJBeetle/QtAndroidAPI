@@ -32,10 +32,12 @@ namespace android::net
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SSLCertificateSocketFactory(const char *className, const char *sig, Ts...agv) : javax::net::ssl::SSLSocketFactory(className, sig, std::forward<Ts>(agv)...) {}
 		SSLCertificateSocketFactory(QAndroidJniObject obj);
+		
 		// Constructors
 		SSLCertificateSocketFactory(jint arg0);
-		SSLCertificateSocketFactory() = default;
 		
 		// Methods
 		static QAndroidJniObject getDefault(jint arg0);

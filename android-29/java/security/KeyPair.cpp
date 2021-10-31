@@ -4,29 +4,29 @@ namespace java::security
 {
 	// Fields
 	
-	KeyPair::KeyPair(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	KeyPair::KeyPair(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	KeyPair::KeyPair(__JniBaseClass arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.security.KeyPair",
 			"(Ljava/security/PublicKey;Ljava/security/PrivateKey;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject KeyPair::getPrivate()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPrivate",
 			"()Ljava/security/PrivateKey;"
 		);
 	}
 	QAndroidJniObject KeyPair::getPublic()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPublic",
 			"()Ljava/security/PublicKey;"
 		);

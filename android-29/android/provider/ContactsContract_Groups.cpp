@@ -37,7 +37,9 @@ namespace android::provider
 		);
 	}
 	
-	ContactsContract_Groups::ContactsContract_Groups(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ContactsContract_Groups::ContactsContract_Groups(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -47,7 +49,7 @@ namespace android::provider
 			"android.provider.ContactsContract$Groups",
 			"newEntityIterator",
 			"(Landroid/database/Cursor;)Landroid/content/EntityIterator;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::provider

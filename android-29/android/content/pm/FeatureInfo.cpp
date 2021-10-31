@@ -28,76 +28,74 @@ namespace android::content::pm
 	}
 	jint FeatureInfo::flags()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"flags"
 		);
 	}
 	jstring FeatureInfo::name()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"name",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint FeatureInfo::reqGlEsVersion()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"reqGlEsVersion"
 		);
 	}
 	jint FeatureInfo::version()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"version"
 		);
 	}
 	
-	FeatureInfo::FeatureInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FeatureInfo::FeatureInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	FeatureInfo::FeatureInfo()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.content.pm.FeatureInfo",
 			"()V"
-		);
-	}
+		) {}
 	FeatureInfo::FeatureInfo(android::content::pm::FeatureInfo &arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.content.pm.FeatureInfo",
 			"(Landroid/content/pm/FeatureInfo;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jint FeatureInfo::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jstring FeatureInfo::getGlEsVersion()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getGlEsVersion",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring FeatureInfo::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void FeatureInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

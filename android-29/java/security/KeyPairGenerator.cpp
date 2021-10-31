@@ -7,7 +7,9 @@ namespace java::security
 {
 	// Fields
 	
-	KeyPairGenerator::KeyPairGenerator(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	KeyPairGenerator::KeyPairGenerator(QAndroidJniObject obj) : java::security::KeyPairGeneratorSpi(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -37,40 +39,40 @@ namespace java::security
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/KeyPairGenerator;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject KeyPairGenerator::genKeyPair()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"genKeyPair",
 			"()Ljava/security/KeyPair;"
 		);
 	}
 	QAndroidJniObject KeyPairGenerator::generateKeyPair()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"generateKeyPair",
 			"()Ljava/security/KeyPair;"
 		);
 	}
 	jstring KeyPairGenerator::getAlgorithm()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject KeyPairGenerator::getProvider()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getProvider",
 			"()Ljava/security/Provider;"
 		);
 	}
 	void KeyPairGenerator::initialize(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"initialize",
 			"(I)V",
 			arg0
@@ -78,28 +80,28 @@ namespace java::security
 	}
 	void KeyPairGenerator::initialize(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"initialize",
 			"(Ljava/security/spec/AlgorithmParameterSpec;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void KeyPairGenerator::initialize(jint arg0, java::security::SecureRandom arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"initialize",
 			"(ILjava/security/SecureRandom;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void KeyPairGenerator::initialize(__JniBaseClass arg0, java::security::SecureRandom arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"initialize",
 			"(Ljava/security/spec/AlgorithmParameterSpec;Ljava/security/SecureRandom;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 } // namespace java::security

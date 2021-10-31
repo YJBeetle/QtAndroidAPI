@@ -33,12 +33,14 @@ namespace android::widget
 		static jint FLAG_AUTO_REQUERY();
 		static jint FLAG_REGISTER_CONTENT_OBSERVER();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CursorAdapter(const char *className, const char *sig, Ts...agv) : android::widget::BaseAdapter(className, sig, std::forward<Ts>(agv)...) {}
 		CursorAdapter(QAndroidJniObject obj);
+		
 		// Constructors
 		CursorAdapter(android::content::Context arg0, __JniBaseClass arg1);
 		CursorAdapter(android::content::Context arg0, __JniBaseClass arg1, jboolean arg2);
 		CursorAdapter(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		CursorAdapter() = default;
 		
 		// Methods
 		void bindView(android::view::View arg0, android::content::Context arg1, __JniBaseClass arg2);

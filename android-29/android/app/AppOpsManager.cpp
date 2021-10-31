@@ -318,7 +318,9 @@ namespace android::app
 		);
 	}
 	
-	AppOpsManager::AppOpsManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AppOpsManager::AppOpsManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -333,7 +335,7 @@ namespace android::app
 	}
 	jint AppOpsManager::checkOp(jstring arg0, jint arg1, jstring arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"checkOp",
 			"(Ljava/lang/String;ILjava/lang/String;)I",
 			arg0,
@@ -343,7 +345,7 @@ namespace android::app
 	}
 	jint AppOpsManager::checkOpNoThrow(jstring arg0, jint arg1, jstring arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"checkOpNoThrow",
 			"(Ljava/lang/String;ILjava/lang/String;)I",
 			arg0,
@@ -353,7 +355,7 @@ namespace android::app
 	}
 	void AppOpsManager::checkPackage(jint arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"checkPackage",
 			"(ILjava/lang/String;)V",
 			arg0,
@@ -362,7 +364,7 @@ namespace android::app
 	}
 	void AppOpsManager::finishOp(jstring arg0, jint arg1, jstring arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"finishOp",
 			"(Ljava/lang/String;ILjava/lang/String;)V",
 			arg0,
@@ -372,7 +374,7 @@ namespace android::app
 	}
 	jint AppOpsManager::noteOp(jstring arg0, jint arg1, jstring arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"noteOp",
 			"(Ljava/lang/String;ILjava/lang/String;)I",
 			arg0,
@@ -382,7 +384,7 @@ namespace android::app
 	}
 	jint AppOpsManager::noteOpNoThrow(jstring arg0, jint arg1, jstring arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"noteOpNoThrow",
 			"(Ljava/lang/String;ILjava/lang/String;)I",
 			arg0,
@@ -392,7 +394,7 @@ namespace android::app
 	}
 	jint AppOpsManager::noteProxyOp(jstring arg0, jstring arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"noteProxyOp",
 			"(Ljava/lang/String;Ljava/lang/String;)I",
 			arg0,
@@ -401,7 +403,7 @@ namespace android::app
 	}
 	jint AppOpsManager::noteProxyOpNoThrow(jstring arg0, jstring arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"noteProxyOpNoThrow",
 			"(Ljava/lang/String;Ljava/lang/String;)I",
 			arg0,
@@ -410,7 +412,7 @@ namespace android::app
 	}
 	jint AppOpsManager::noteProxyOpNoThrow(jstring arg0, jstring arg1, jint arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"noteProxyOpNoThrow",
 			"(Ljava/lang/String;Ljava/lang/String;I)I",
 			arg0,
@@ -420,7 +422,7 @@ namespace android::app
 	}
 	jint AppOpsManager::startOp(jstring arg0, jint arg1, jstring arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"startOp",
 			"(Ljava/lang/String;ILjava/lang/String;)I",
 			arg0,
@@ -430,7 +432,7 @@ namespace android::app
 	}
 	jint AppOpsManager::startOpNoThrow(jstring arg0, jint arg1, jstring arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"startOpNoThrow",
 			"(Ljava/lang/String;ILjava/lang/String;)I",
 			arg0,
@@ -440,36 +442,36 @@ namespace android::app
 	}
 	void AppOpsManager::startWatchingMode(jstring arg0, jstring arg1, __JniBaseClass arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"startWatchingMode",
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/app/AppOpsManager$OnOpChangedListener;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void AppOpsManager::startWatchingMode(jstring arg0, jstring arg1, jint arg2, __JniBaseClass arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"startWatchingMode",
 			"(Ljava/lang/String;Ljava/lang/String;ILandroid/app/AppOpsManager$OnOpChangedListener;)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	void AppOpsManager::stopWatchingMode(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"stopWatchingMode",
 			"(Landroid/app/AppOpsManager$OnOpChangedListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint AppOpsManager::unsafeCheckOp(jstring arg0, jint arg1, jstring arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"unsafeCheckOp",
 			"(Ljava/lang/String;ILjava/lang/String;)I",
 			arg0,
@@ -479,7 +481,7 @@ namespace android::app
 	}
 	jint AppOpsManager::unsafeCheckOpNoThrow(jstring arg0, jint arg1, jstring arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"unsafeCheckOpNoThrow",
 			"(Ljava/lang/String;ILjava/lang/String;)I",
 			arg0,
@@ -489,7 +491,7 @@ namespace android::app
 	}
 	jint AppOpsManager::unsafeCheckOpRaw(jstring arg0, jint arg1, jstring arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"unsafeCheckOpRaw",
 			"(Ljava/lang/String;ILjava/lang/String;)I",
 			arg0,
@@ -499,7 +501,7 @@ namespace android::app
 	}
 	jint AppOpsManager::unsafeCheckOpRawNoThrow(jstring arg0, jint arg1, jstring arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"unsafeCheckOpRawNoThrow",
 			"(Ljava/lang/String;ILjava/lang/String;)I",
 			arg0,

@@ -10,9 +10,11 @@ namespace android::mtp
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MtpDeviceInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MtpDeviceInfo(QAndroidJniObject obj);
+		
 		// Constructors
-		MtpDeviceInfo() = default;
 		
 		// Methods
 		jintArray getEventsSupported();

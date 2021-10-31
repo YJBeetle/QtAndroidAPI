@@ -24,7 +24,10 @@ namespace android::view
 		static jboolean TRACE_HIERARCHY();
 		static jboolean TRACE_RECYCLER();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ViewDebug(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ViewDebug(QAndroidJniObject obj);
+		
 		// Constructors
 		ViewDebug();
 		

@@ -18,9 +18,11 @@ namespace android::text
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AutoText(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AutoText(QAndroidJniObject obj);
+		
 		// Constructors
-		AutoText() = default;
 		
 		// Methods
 		static jstring get(jstring arg0, jint arg1, jint arg2, android::view::View arg3);

@@ -5,15 +5,15 @@ namespace javax::net::ssl
 {
 	// Fields
 	
-	KeyManagerFactorySpi::KeyManagerFactorySpi(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	KeyManagerFactorySpi::KeyManagerFactorySpi(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	KeyManagerFactorySpi::KeyManagerFactorySpi()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"javax.net.ssl.KeyManagerFactorySpi",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace javax::net::ssl

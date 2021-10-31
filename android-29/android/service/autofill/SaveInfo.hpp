@@ -30,9 +30,11 @@ namespace android::service::autofill
 		static jint SAVE_DATA_TYPE_PASSWORD();
 		static jint SAVE_DATA_TYPE_USERNAME();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SaveInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SaveInfo(QAndroidJniObject obj);
+		
 		// Constructors
-		SaveInfo() = default;
 		
 		// Methods
 		jint describeContents();

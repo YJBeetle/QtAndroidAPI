@@ -209,44 +209,37 @@ namespace android::icu::text
 		);
 	}
 	
-	Bidi::Bidi(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Bidi::Bidi(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Bidi::Bidi()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.icu.text.Bidi",
 			"()V"
-		);
-	}
+		) {}
 	Bidi::Bidi(__JniBaseClass arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.icu.text.Bidi",
 			"(Ljava/text/AttributedCharacterIterator;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	Bidi::Bidi(jint arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.icu.text.Bidi",
 			"(II)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	Bidi::Bidi(jstring arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.icu.text.Bidi",
 			"(Ljava/lang/String;I)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	Bidi::Bidi(jcharArray arg0, jint arg1, jbyteArray arg2, jint arg3, jint arg4, jint arg5)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.icu.text.Bidi",
 			"([CI[BIII)V",
 			arg0,
@@ -255,8 +248,7 @@ namespace android::icu::text
 			arg3,
 			arg4,
 			arg5
-		);
-	}
+		) {}
 	
 	// Methods
 	jbyte Bidi::getBaseDirection(jstring arg0)
@@ -331,28 +323,28 @@ namespace android::icu::text
 	}
 	jboolean Bidi::baseIsLeftToRight()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"baseIsLeftToRight",
 			"()Z"
 		);
 	}
 	jint Bidi::countParagraphs()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"countParagraphs",
 			"()I"
 		);
 	}
 	jint Bidi::countRuns()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"countRuns",
 			"()I"
 		);
 	}
 	QAndroidJniObject Bidi::createLineBidi(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"createLineBidi",
 			"(II)Landroid/icu/text/Bidi;",
 			arg0,
@@ -361,21 +353,21 @@ namespace android::icu::text
 	}
 	jint Bidi::getBaseLevel()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getBaseLevel",
 			"()I"
 		);
 	}
 	QAndroidJniObject Bidi::getCustomClassifier()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCustomClassifier",
 			"()Landroid/icu/text/BidiClassifier;"
 		);
 	}
 	jint Bidi::getCustomizedClass(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCustomizedClass",
 			"(I)I",
 			arg0
@@ -383,21 +375,21 @@ namespace android::icu::text
 	}
 	jbyte Bidi::getDirection()
 	{
-		return __thiz.callMethod<jbyte>(
+		return callMethod<jbyte>(
 			"getDirection",
 			"()B"
 		);
 	}
 	jint Bidi::getLength()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLength",
 			"()I"
 		);
 	}
 	jbyte Bidi::getLevelAt(jint arg0)
 	{
-		return __thiz.callMethod<jbyte>(
+		return callMethod<jbyte>(
 			"getLevelAt",
 			"(I)B",
 			arg0
@@ -405,14 +397,14 @@ namespace android::icu::text
 	}
 	jbyteArray Bidi::getLevels()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLevels",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jint Bidi::getLogicalIndex(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLogicalIndex",
 			"(I)I",
 			arg0
@@ -420,14 +412,14 @@ namespace android::icu::text
 	}
 	jintArray Bidi::getLogicalMap()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLogicalMap",
 			"()[I"
 		).object<jintArray>();
 	}
 	QAndroidJniObject Bidi::getLogicalRun(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLogicalRun",
 			"(I)Landroid/icu/text/BidiRun;",
 			arg0
@@ -435,14 +427,14 @@ namespace android::icu::text
 	}
 	jbyte Bidi::getParaLevel()
 	{
-		return __thiz.callMethod<jbyte>(
+		return callMethod<jbyte>(
 			"getParaLevel",
 			"()B"
 		);
 	}
 	QAndroidJniObject Bidi::getParagraph(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getParagraph",
 			"(I)Landroid/icu/text/BidiRun;",
 			arg0
@@ -450,7 +442,7 @@ namespace android::icu::text
 	}
 	QAndroidJniObject Bidi::getParagraphByIndex(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getParagraphByIndex",
 			"(I)Landroid/icu/text/BidiRun;",
 			arg0
@@ -458,7 +450,7 @@ namespace android::icu::text
 	}
 	jint Bidi::getParagraphIndex(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getParagraphIndex",
 			"(I)I",
 			arg0
@@ -466,42 +458,42 @@ namespace android::icu::text
 	}
 	jint Bidi::getProcessedLength()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getProcessedLength",
 			"()I"
 		);
 	}
 	jint Bidi::getReorderingMode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getReorderingMode",
 			"()I"
 		);
 	}
 	jint Bidi::getReorderingOptions()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getReorderingOptions",
 			"()I"
 		);
 	}
 	jint Bidi::getResultLength()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getResultLength",
 			"()I"
 		);
 	}
 	jint Bidi::getRunCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRunCount",
 			"()I"
 		);
 	}
 	jint Bidi::getRunLevel(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRunLevel",
 			"(I)I",
 			arg0
@@ -509,7 +501,7 @@ namespace android::icu::text
 	}
 	jint Bidi::getRunLimit(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRunLimit",
 			"(I)I",
 			arg0
@@ -517,7 +509,7 @@ namespace android::icu::text
 	}
 	jint Bidi::getRunStart(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRunStart",
 			"(I)I",
 			arg0
@@ -525,21 +517,21 @@ namespace android::icu::text
 	}
 	jcharArray Bidi::getText()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getText",
 			"()[C"
 		).object<jcharArray>();
 	}
 	jstring Bidi::getTextAsString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTextAsString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint Bidi::getVisualIndex(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getVisualIndex",
 			"(I)I",
 			arg0
@@ -547,14 +539,14 @@ namespace android::icu::text
 	}
 	jintArray Bidi::getVisualMap()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getVisualMap",
 			"()[I"
 		).object<jintArray>();
 	}
 	QAndroidJniObject Bidi::getVisualRun(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getVisualRun",
 			"(I)Landroid/icu/text/BidiRun;",
 			arg0
@@ -562,42 +554,42 @@ namespace android::icu::text
 	}
 	jboolean Bidi::isInverse()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isInverse",
 			"()Z"
 		);
 	}
 	jboolean Bidi::isLeftToRight()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isLeftToRight",
 			"()Z"
 		);
 	}
 	jboolean Bidi::isMixed()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isMixed",
 			"()Z"
 		);
 	}
 	jboolean Bidi::isOrderParagraphsLTR()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isOrderParagraphsLTR",
 			"()Z"
 		);
 	}
 	jboolean Bidi::isRightToLeft()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isRightToLeft",
 			"()Z"
 		);
 	}
 	void Bidi::orderParagraphsLTR(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"orderParagraphsLTR",
 			"(Z)V",
 			arg0
@@ -605,7 +597,7 @@ namespace android::icu::text
 	}
 	void Bidi::setContext(jstring arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setContext",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
@@ -614,15 +606,15 @@ namespace android::icu::text
 	}
 	void Bidi::setCustomClassifier(android::icu::text::BidiClassifier arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCustomClassifier",
 			"(Landroid/icu/text/BidiClassifier;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Bidi::setInverse(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setInverse",
 			"(Z)V",
 			arg0
@@ -630,7 +622,7 @@ namespace android::icu::text
 	}
 	QAndroidJniObject Bidi::setLine(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setLine",
 			"(II)Landroid/icu/text/Bidi;",
 			arg0,
@@ -639,15 +631,15 @@ namespace android::icu::text
 	}
 	void Bidi::setPara(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPara",
 			"(Ljava/text/AttributedCharacterIterator;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Bidi::setPara(jcharArray arg0, jbyte arg1, jbyteArray arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPara",
 			"([CB[B)V",
 			arg0,
@@ -657,7 +649,7 @@ namespace android::icu::text
 	}
 	void Bidi::setPara(jstring arg0, jbyte arg1, jbyteArray arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPara",
 			"(Ljava/lang/String;B[B)V",
 			arg0,
@@ -667,7 +659,7 @@ namespace android::icu::text
 	}
 	void Bidi::setReorderingMode(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setReorderingMode",
 			"(I)V",
 			arg0
@@ -675,7 +667,7 @@ namespace android::icu::text
 	}
 	void Bidi::setReorderingOptions(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setReorderingOptions",
 			"(I)V",
 			arg0
@@ -683,7 +675,7 @@ namespace android::icu::text
 	}
 	jstring Bidi::writeReordered(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"writeReordered",
 			"(I)Ljava/lang/String;",
 			arg0

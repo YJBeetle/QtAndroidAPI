@@ -40,11 +40,13 @@ namespace android::inputmethodservice
 		jint x();
 		jint y();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Keyboard_Key(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Keyboard_Key(QAndroidJniObject obj);
+		
 		// Constructors
 		Keyboard_Key(android::inputmethodservice::Keyboard_Row arg0);
 		Keyboard_Key(android::content::res::Resources arg0, android::inputmethodservice::Keyboard_Row arg1, jint arg2, jint arg3, __JniBaseClass arg4);
-		Keyboard_Key() = default;
 		
 		// Methods
 		jintArray getCurrentDrawableState();

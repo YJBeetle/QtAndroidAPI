@@ -4,7 +4,9 @@ namespace java::io
 {
 	// Fields
 	
-	ObjectStreamException::ObjectStreamException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ObjectStreamException::ObjectStreamException(QAndroidJniObject obj) : java::io::IOException(obj) {}
+	
 	// Constructors
 	
 	// Methods

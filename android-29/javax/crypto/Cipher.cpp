@@ -61,7 +61,9 @@ namespace javax::crypto
 		);
 	}
 	
-	Cipher::Cipher(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Cipher::Cipher(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -91,7 +93,7 @@ namespace javax::crypto
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljavax/crypto/Cipher;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jint Cipher::getMaxAllowedKeyLength(jstring arg0)
@@ -114,14 +116,14 @@ namespace javax::crypto
 	}
 	jbyteArray Cipher::doFinal()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"doFinal",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jbyteArray Cipher::doFinal(jbyteArray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"doFinal",
 			"([B)[B",
 			arg0
@@ -129,7 +131,7 @@ namespace javax::crypto
 	}
 	jbyteArray Cipher::doFinal(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"doFinal",
 			"([BII)[B",
 			arg0,
@@ -139,7 +141,7 @@ namespace javax::crypto
 	}
 	jint Cipher::doFinal(jbyteArray arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"doFinal",
 			"([BI)I",
 			arg0,
@@ -148,16 +150,16 @@ namespace javax::crypto
 	}
 	jint Cipher::doFinal(java::nio::ByteBuffer arg0, java::nio::ByteBuffer arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"doFinal",
 			"(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;)I",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jint Cipher::doFinal(jbyteArray arg0, jint arg1, jint arg2, jbyteArray arg3)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"doFinal",
 			"([BII[B)I",
 			arg0,
@@ -168,7 +170,7 @@ namespace javax::crypto
 	}
 	jint Cipher::doFinal(jbyteArray arg0, jint arg1, jint arg2, jbyteArray arg3, jint arg4)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"doFinal",
 			"([BII[BI)I",
 			arg0,
@@ -180,35 +182,35 @@ namespace javax::crypto
 	}
 	jstring Cipher::getAlgorithm()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint Cipher::getBlockSize()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getBlockSize",
 			"()I"
 		);
 	}
 	QAndroidJniObject Cipher::getExemptionMechanism()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExemptionMechanism",
 			"()Ljavax/crypto/ExemptionMechanism;"
 		);
 	}
 	jbyteArray Cipher::getIV()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getIV",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jint Cipher::getOutputSize(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getOutputSize",
 			"(I)I",
 			arg0
@@ -216,108 +218,108 @@ namespace javax::crypto
 	}
 	QAndroidJniObject Cipher::getParameters()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getParameters",
 			"()Ljava/security/AlgorithmParameters;"
 		);
 	}
 	QAndroidJniObject Cipher::getProvider()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getProvider",
 			"()Ljava/security/Provider;"
 		);
 	}
 	void Cipher::init(jint arg0, __JniBaseClass arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"init",
 			"(ILjava/security/Key;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void Cipher::init(jint arg0, java::security::cert::Certificate arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"init",
 			"(ILjava/security/cert/Certificate;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void Cipher::init(jint arg0, __JniBaseClass arg1, java::security::AlgorithmParameters arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"init",
 			"(ILjava/security/Key;Ljava/security/AlgorithmParameters;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	void Cipher::init(jint arg0, __JniBaseClass arg1, java::security::SecureRandom arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"init",
 			"(ILjava/security/Key;Ljava/security/SecureRandom;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	void Cipher::init(jint arg0, __JniBaseClass arg1, __JniBaseClass arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"init",
 			"(ILjava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	void Cipher::init(jint arg0, java::security::cert::Certificate arg1, java::security::SecureRandom arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"init",
 			"(ILjava/security/cert/Certificate;Ljava/security/SecureRandom;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	void Cipher::init(jint arg0, __JniBaseClass arg1, java::security::AlgorithmParameters arg2, java::security::SecureRandom arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"init",
 			"(ILjava/security/Key;Ljava/security/AlgorithmParameters;Ljava/security/SecureRandom;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
 		);
 	}
 	void Cipher::init(jint arg0, __JniBaseClass arg1, __JniBaseClass arg2, java::security::SecureRandom arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"init",
 			"(ILjava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;Ljava/security/SecureRandom;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
 		);
 	}
 	jstring Cipher::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject Cipher::unwrap(jbyteArray arg0, jstring arg1, jint arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"unwrap",
 			"([BLjava/lang/String;I)Ljava/security/Key;",
 			arg0,
@@ -327,7 +329,7 @@ namespace javax::crypto
 	}
 	jbyteArray Cipher::update(jbyteArray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"update",
 			"([B)[B",
 			arg0
@@ -335,7 +337,7 @@ namespace javax::crypto
 	}
 	jbyteArray Cipher::update(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"update",
 			"([BII)[B",
 			arg0,
@@ -345,16 +347,16 @@ namespace javax::crypto
 	}
 	jint Cipher::update(java::nio::ByteBuffer arg0, java::nio::ByteBuffer arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"update",
 			"(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;)I",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jint Cipher::update(jbyteArray arg0, jint arg1, jint arg2, jbyteArray arg3)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"update",
 			"([BII[B)I",
 			arg0,
@@ -365,7 +367,7 @@ namespace javax::crypto
 	}
 	jint Cipher::update(jbyteArray arg0, jint arg1, jint arg2, jbyteArray arg3, jint arg4)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"update",
 			"([BII[BI)I",
 			arg0,
@@ -377,7 +379,7 @@ namespace javax::crypto
 	}
 	void Cipher::updateAAD(jbyteArray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"updateAAD",
 			"([B)V",
 			arg0
@@ -385,15 +387,15 @@ namespace javax::crypto
 	}
 	void Cipher::updateAAD(java::nio::ByteBuffer arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"updateAAD",
 			"(Ljava/nio/ByteBuffer;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Cipher::updateAAD(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"updateAAD",
 			"([BII)V",
 			arg0,
@@ -403,10 +405,10 @@ namespace javax::crypto
 	}
 	jbyteArray Cipher::wrap(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"wrap",
 			"(Ljava/security/Key;)[B",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jbyteArray>();
 	}
 } // namespace javax::crypto

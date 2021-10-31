@@ -8,15 +8,15 @@ namespace android::opengl
 {
 	// Fields
 	
-	ETC1Util::ETC1Util(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ETC1Util::ETC1Util(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ETC1Util::ETC1Util()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.opengl.ETC1Util",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject ETC1Util::compressTexture(java::nio::Buffer arg0, jint arg1, jint arg2, jint arg3, jint arg4)
@@ -25,7 +25,7 @@ namespace android::opengl
 			"android.opengl.ETC1Util",
 			"compressTexture",
 			"(Ljava/nio/Buffer;IIII)Landroid/opengl/ETC1Util$ETC1Texture;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
@@ -38,7 +38,7 @@ namespace android::opengl
 			"android.opengl.ETC1Util",
 			"createTexture",
 			"(Ljava/io/InputStream;)Landroid/opengl/ETC1Util$ETC1Texture;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean ETC1Util::isETC1Supported()
@@ -60,7 +60,7 @@ namespace android::opengl
 			arg2,
 			arg3,
 			arg4,
-			arg5.__jniObject().object()
+			arg5.object()
 		);
 	}
 	void ETC1Util::loadTexture(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, java::io::InputStream arg5)
@@ -74,7 +74,7 @@ namespace android::opengl
 			arg2,
 			arg3,
 			arg4,
-			arg5.__jniObject().object()
+			arg5.object()
 		);
 	}
 	void ETC1Util::writeTexture(android::opengl::ETC1Util_ETC1Texture arg0, java::io::OutputStream arg1)
@@ -83,8 +83,8 @@ namespace android::opengl
 			"android.opengl.ETC1Util",
 			"writeTexture",
 			"(Landroid/opengl/ETC1Util$ETC1Texture;Ljava/io/OutputStream;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 } // namespace android::opengl

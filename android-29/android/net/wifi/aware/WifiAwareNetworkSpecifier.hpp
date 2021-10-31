@@ -16,9 +16,11 @@ namespace android::net::wifi::aware
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit WifiAwareNetworkSpecifier(const char *className, const char *sig, Ts...agv) : android::net::NetworkSpecifier(className, sig, std::forward<Ts>(agv)...) {}
 		WifiAwareNetworkSpecifier(QAndroidJniObject obj);
+		
 		// Constructors
-		WifiAwareNetworkSpecifier() = default;
 		
 		// Methods
 		jint describeContents();

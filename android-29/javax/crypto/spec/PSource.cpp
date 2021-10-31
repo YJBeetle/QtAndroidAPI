@@ -4,13 +4,15 @@ namespace javax::crypto::spec
 {
 	// Fields
 	
-	PSource::PSource(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PSource::PSource(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jstring PSource::getAlgorithm()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
 		).object<jstring>();

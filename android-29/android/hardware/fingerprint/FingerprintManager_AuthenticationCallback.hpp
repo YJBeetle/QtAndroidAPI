@@ -14,7 +14,10 @@ namespace android::hardware::fingerprint
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit FingerprintManager_AuthenticationCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		FingerprintManager_AuthenticationCallback(QAndroidJniObject obj);
+		
 		// Constructors
 		FingerprintManager_AuthenticationCallback();
 		

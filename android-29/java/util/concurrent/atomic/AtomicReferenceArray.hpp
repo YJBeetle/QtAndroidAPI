@@ -18,11 +18,13 @@ namespace java::util::concurrent::atomic
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AtomicReferenceArray(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AtomicReferenceArray(QAndroidJniObject obj);
+		
 		// Constructors
 		AtomicReferenceArray(jobjectArray arg0);
 		AtomicReferenceArray(jint arg0);
-		AtomicReferenceArray() = default;
 		
 		// Methods
 		jobject accumulateAndGet(jint arg0, jobject arg1, __JniBaseClass arg2);

@@ -4,20 +4,22 @@ namespace java::nio::channels::spi
 {
 	// Fields
 	
-	AbstractSelectionKey::AbstractSelectionKey(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AbstractSelectionKey::AbstractSelectionKey(QAndroidJniObject obj) : java::nio::channels::SelectionKey(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void AbstractSelectionKey::cancel()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"cancel",
 			"()V"
 		);
 	}
 	jboolean AbstractSelectionKey::isValid()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isValid",
 			"()Z"
 		);

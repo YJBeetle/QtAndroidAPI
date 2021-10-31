@@ -216,7 +216,9 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	ContactsContract_Directory::ContactsContract_Directory(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ContactsContract_Directory::ContactsContract_Directory(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -244,7 +246,7 @@ namespace android::provider
 			"android.provider.ContactsContract$Directory",
 			"notifyDirectoryChange",
 			"(Landroid/content/ContentResolver;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::provider

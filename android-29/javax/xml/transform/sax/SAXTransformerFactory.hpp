@@ -13,9 +13,11 @@ namespace javax::xml::transform::sax
 		static jstring FEATURE();
 		static jstring FEATURE_XMLFILTER();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SAXTransformerFactory(const char *className, const char *sig, Ts...agv) : javax::xml::transform::TransformerFactory(className, sig, std::forward<Ts>(agv)...) {}
 		SAXTransformerFactory(QAndroidJniObject obj);
+		
 		// Constructors
-		SAXTransformerFactory() = default;
 		
 		// Methods
 		QAndroidJniObject newTemplatesHandler();

@@ -57,7 +57,10 @@ namespace android::app::admin
 		static jstring EXTRA_LOCK_TASK_PACKAGE();
 		static jstring EXTRA_TRANSFER_OWNERSHIP_ADMIN_EXTRAS_BUNDLE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DeviceAdminReceiver(const char *className, const char *sig, Ts...agv) : android::content::BroadcastReceiver(className, sig, std::forward<Ts>(agv)...) {}
 		DeviceAdminReceiver(QAndroidJniObject obj);
+		
 		// Constructors
 		DeviceAdminReceiver();
 		

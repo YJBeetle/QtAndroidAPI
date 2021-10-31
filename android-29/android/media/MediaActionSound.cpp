@@ -32,20 +32,20 @@ namespace android::media
 		);
 	}
 	
-	MediaActionSound::MediaActionSound(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaActionSound::MediaActionSound(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MediaActionSound::MediaActionSound()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.MediaActionSound",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void MediaActionSound::load(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"load",
 			"(I)V",
 			arg0
@@ -53,7 +53,7 @@ namespace android::media
 	}
 	void MediaActionSound::play(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"play",
 			"(I)V",
 			arg0
@@ -61,7 +61,7 @@ namespace android::media
 	}
 	void MediaActionSound::release()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"release",
 			"()V"
 		);

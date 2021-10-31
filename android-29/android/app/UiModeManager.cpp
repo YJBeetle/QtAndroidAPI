@@ -78,13 +78,15 @@ namespace android::app
 		);
 	}
 	
-	UiModeManager::UiModeManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UiModeManager::UiModeManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void UiModeManager::disableCarMode(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"disableCarMode",
 			"(I)V",
 			arg0
@@ -92,7 +94,7 @@ namespace android::app
 	}
 	void UiModeManager::enableCarMode(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"enableCarMode",
 			"(I)V",
 			arg0
@@ -100,21 +102,21 @@ namespace android::app
 	}
 	jint UiModeManager::getCurrentModeType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCurrentModeType",
 			"()I"
 		);
 	}
 	jint UiModeManager::getNightMode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getNightMode",
 			"()I"
 		);
 	}
 	void UiModeManager::setNightMode(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setNightMode",
 			"(I)V",
 			arg0

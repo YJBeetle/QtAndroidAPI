@@ -173,78 +173,80 @@ namespace android::media
 	}
 	jint CamcorderProfile::audioBitRate()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"audioBitRate"
 		);
 	}
 	jint CamcorderProfile::audioChannels()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"audioChannels"
 		);
 	}
 	jint CamcorderProfile::audioCodec()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"audioCodec"
 		);
 	}
 	jint CamcorderProfile::audioSampleRate()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"audioSampleRate"
 		);
 	}
 	jint CamcorderProfile::duration()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"duration"
 		);
 	}
 	jint CamcorderProfile::fileFormat()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"fileFormat"
 		);
 	}
 	jint CamcorderProfile::quality()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"quality"
 		);
 	}
 	jint CamcorderProfile::videoBitRate()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"videoBitRate"
 		);
 	}
 	jint CamcorderProfile::videoCodec()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"videoCodec"
 		);
 	}
 	jint CamcorderProfile::videoFrameHeight()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"videoFrameHeight"
 		);
 	}
 	jint CamcorderProfile::videoFrameRate()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"videoFrameRate"
 		);
 	}
 	jint CamcorderProfile::videoFrameWidth()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"videoFrameWidth"
 		);
 	}
 	
-	CamcorderProfile::CamcorderProfile(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CamcorderProfile::CamcorderProfile(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

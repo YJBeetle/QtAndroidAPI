@@ -20,9 +20,11 @@ namespace android::provider
 		static jstring VARIATION_SETTINGS();
 		static jstring WEIGHT();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit FontsContract_Columns(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		FontsContract_Columns(QAndroidJniObject obj);
+		
 		// Constructors
-		FontsContract_Columns() = default;
 		
 		// Methods
 	};

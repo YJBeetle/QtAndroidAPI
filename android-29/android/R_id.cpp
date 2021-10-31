@@ -522,15 +522,15 @@ namespace android
 		);
 	}
 	
-	R_id::R_id(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	R_id::R_id(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	R_id::R_id()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.R$id",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android

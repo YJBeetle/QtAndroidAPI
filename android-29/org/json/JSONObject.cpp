@@ -15,48 +15,40 @@ namespace org::json
 		).object<jobject>();
 	}
 	
-	JSONObject::JSONObject(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	JSONObject::JSONObject(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	JSONObject::JSONObject()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"org.json.JSONObject",
 			"()V"
-		);
-	}
+		) {}
 	JSONObject::JSONObject(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"org.json.JSONObject",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	JSONObject::JSONObject(__JniBaseClass arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"org.json.JSONObject",
 			"(Ljava/util/Map;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	JSONObject::JSONObject(org::json::JSONTokener arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"org.json.JSONObject",
 			"(Lorg/json/JSONTokener;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	JSONObject::JSONObject(org::json::JSONObject &arg0, jarray arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"org.json.JSONObject",
 			"(Lorg/json/JSONObject;[Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring JSONObject::numberToString(java::lang::Number arg0)
@@ -65,7 +57,7 @@ namespace org::json
 			"org.json.JSONObject",
 			"numberToString",
 			"(Ljava/lang/Number;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jstring JSONObject::quote(jstring arg0)
@@ -88,7 +80,7 @@ namespace org::json
 	}
 	QAndroidJniObject JSONObject::accumulate(jstring arg0, jobject arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"accumulate",
 			"(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;",
 			arg0,
@@ -97,7 +89,7 @@ namespace org::json
 	}
 	jobject JSONObject::get(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
 			arg0
@@ -105,7 +97,7 @@ namespace org::json
 	}
 	jboolean JSONObject::getBoolean(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getBoolean",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -113,7 +105,7 @@ namespace org::json
 	}
 	jdouble JSONObject::getDouble(jstring arg0)
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"getDouble",
 			"(Ljava/lang/String;)D",
 			arg0
@@ -121,7 +113,7 @@ namespace org::json
 	}
 	jint JSONObject::getInt(jstring arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getInt",
 			"(Ljava/lang/String;)I",
 			arg0
@@ -129,7 +121,7 @@ namespace org::json
 	}
 	QAndroidJniObject JSONObject::getJSONArray(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getJSONArray",
 			"(Ljava/lang/String;)Lorg/json/JSONArray;",
 			arg0
@@ -137,7 +129,7 @@ namespace org::json
 	}
 	QAndroidJniObject JSONObject::getJSONObject(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getJSONObject",
 			"(Ljava/lang/String;)Lorg/json/JSONObject;",
 			arg0
@@ -145,7 +137,7 @@ namespace org::json
 	}
 	jlong JSONObject::getLong(jstring arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getLong",
 			"(Ljava/lang/String;)J",
 			arg0
@@ -153,7 +145,7 @@ namespace org::json
 	}
 	jstring JSONObject::getString(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getString",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
@@ -161,7 +153,7 @@ namespace org::json
 	}
 	jboolean JSONObject::has(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"has",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -169,7 +161,7 @@ namespace org::json
 	}
 	jboolean JSONObject::isNull(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isNull",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -177,28 +169,28 @@ namespace org::json
 	}
 	QAndroidJniObject JSONObject::keys()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"keys",
 			"()Ljava/util/Iterator;"
 		);
 	}
 	jint JSONObject::length()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"length",
 			"()I"
 		);
 	}
 	QAndroidJniObject JSONObject::names()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"names",
 			"()Lorg/json/JSONArray;"
 		);
 	}
 	jobject JSONObject::opt(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"opt",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
 			arg0
@@ -206,7 +198,7 @@ namespace org::json
 	}
 	jboolean JSONObject::optBoolean(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"optBoolean",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -214,7 +206,7 @@ namespace org::json
 	}
 	jboolean JSONObject::optBoolean(jstring arg0, jboolean arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"optBoolean",
 			"(Ljava/lang/String;Z)Z",
 			arg0,
@@ -223,7 +215,7 @@ namespace org::json
 	}
 	jdouble JSONObject::optDouble(jstring arg0)
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"optDouble",
 			"(Ljava/lang/String;)D",
 			arg0
@@ -231,7 +223,7 @@ namespace org::json
 	}
 	jdouble JSONObject::optDouble(jstring arg0, jdouble arg1)
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"optDouble",
 			"(Ljava/lang/String;D)D",
 			arg0,
@@ -240,7 +232,7 @@ namespace org::json
 	}
 	jint JSONObject::optInt(jstring arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"optInt",
 			"(Ljava/lang/String;)I",
 			arg0
@@ -248,7 +240,7 @@ namespace org::json
 	}
 	jint JSONObject::optInt(jstring arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"optInt",
 			"(Ljava/lang/String;I)I",
 			arg0,
@@ -257,7 +249,7 @@ namespace org::json
 	}
 	QAndroidJniObject JSONObject::optJSONArray(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"optJSONArray",
 			"(Ljava/lang/String;)Lorg/json/JSONArray;",
 			arg0
@@ -265,7 +257,7 @@ namespace org::json
 	}
 	QAndroidJniObject JSONObject::optJSONObject(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"optJSONObject",
 			"(Ljava/lang/String;)Lorg/json/JSONObject;",
 			arg0
@@ -273,7 +265,7 @@ namespace org::json
 	}
 	jlong JSONObject::optLong(jstring arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"optLong",
 			"(Ljava/lang/String;)J",
 			arg0
@@ -281,7 +273,7 @@ namespace org::json
 	}
 	jlong JSONObject::optLong(jstring arg0, jlong arg1)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"optLong",
 			"(Ljava/lang/String;J)J",
 			arg0,
@@ -290,7 +282,7 @@ namespace org::json
 	}
 	jstring JSONObject::optString(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"optString",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
@@ -298,7 +290,7 @@ namespace org::json
 	}
 	jstring JSONObject::optString(jstring arg0, jstring arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"optString",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
 			arg0,
@@ -307,7 +299,7 @@ namespace org::json
 	}
 	QAndroidJniObject JSONObject::put(jstring arg0, jboolean arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"put",
 			"(Ljava/lang/String;Z)Lorg/json/JSONObject;",
 			arg0,
@@ -316,7 +308,7 @@ namespace org::json
 	}
 	QAndroidJniObject JSONObject::put(jstring arg0, jdouble arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"put",
 			"(Ljava/lang/String;D)Lorg/json/JSONObject;",
 			arg0,
@@ -325,7 +317,7 @@ namespace org::json
 	}
 	QAndroidJniObject JSONObject::put(jstring arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"put",
 			"(Ljava/lang/String;I)Lorg/json/JSONObject;",
 			arg0,
@@ -334,7 +326,7 @@ namespace org::json
 	}
 	QAndroidJniObject JSONObject::put(jstring arg0, jobject arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"put",
 			"(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;",
 			arg0,
@@ -343,7 +335,7 @@ namespace org::json
 	}
 	QAndroidJniObject JSONObject::put(jstring arg0, jlong arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"put",
 			"(Ljava/lang/String;J)Lorg/json/JSONObject;",
 			arg0,
@@ -352,7 +344,7 @@ namespace org::json
 	}
 	QAndroidJniObject JSONObject::putOpt(jstring arg0, jobject arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"putOpt",
 			"(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;",
 			arg0,
@@ -361,7 +353,7 @@ namespace org::json
 	}
 	jobject JSONObject::remove(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"remove",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
 			arg0
@@ -369,22 +361,22 @@ namespace org::json
 	}
 	QAndroidJniObject JSONObject::toJSONArray(org::json::JSONArray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toJSONArray",
 			"(Lorg/json/JSONArray;)Lorg/json/JSONArray;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring JSONObject::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring JSONObject::toString(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"(I)Ljava/lang/String;",
 			arg0

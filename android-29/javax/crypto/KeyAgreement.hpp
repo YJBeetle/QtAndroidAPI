@@ -26,9 +26,11 @@ namespace javax::crypto
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit KeyAgreement(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		KeyAgreement(QAndroidJniObject obj);
+		
 		// Constructors
-		KeyAgreement() = default;
 		
 		// Methods
 		static QAndroidJniObject getInstance(jstring arg0);

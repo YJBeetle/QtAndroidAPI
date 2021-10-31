@@ -5,30 +5,30 @@ namespace android::util
 {
 	// Fields
 	
-	IntProperty::IntProperty(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	IntProperty::IntProperty(QAndroidJniObject obj) : android::util::Property(obj) {}
+	
 	// Constructors
 	IntProperty::IntProperty(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::util::Property(
 			"android.util.IntProperty",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	void IntProperty::set(jobject arg0, java::lang::Integer arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"set",
 			"(Ljava/lang/Object;Ljava/lang/Integer;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void IntProperty::set(jobject arg0, jobject arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"set",
 			"(Ljava/lang/Object;Ljava/lang/Object;)V",
 			arg0,
@@ -37,7 +37,7 @@ namespace android::util
 	}
 	void IntProperty::setValue(jobject arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setValue",
 			"(Ljava/lang/Object;I)V",
 			arg0,

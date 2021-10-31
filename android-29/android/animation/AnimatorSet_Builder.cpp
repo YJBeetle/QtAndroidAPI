@@ -6,21 +6,23 @@ namespace android::animation
 {
 	// Fields
 	
-	AnimatorSet_Builder::AnimatorSet_Builder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AnimatorSet_Builder::AnimatorSet_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject AnimatorSet_Builder::after(android::animation::Animator arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"after",
 			"(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject AnimatorSet_Builder::after(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"after",
 			"(J)Landroid/animation/AnimatorSet$Builder;",
 			arg0
@@ -28,18 +30,18 @@ namespace android::animation
 	}
 	QAndroidJniObject AnimatorSet_Builder::before(android::animation::Animator arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"before",
 			"(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject AnimatorSet_Builder::with(android::animation::Animator arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"with",
 			"(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::animation

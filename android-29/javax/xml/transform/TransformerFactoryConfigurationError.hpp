@@ -15,7 +15,10 @@ namespace javax::xml::transform
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TransformerFactoryConfigurationError(const char *className, const char *sig, Ts...agv) : java::lang::Error(className, sig, std::forward<Ts>(agv)...) {}
 		TransformerFactoryConfigurationError(QAndroidJniObject obj);
+		
 		// Constructors
 		TransformerFactoryConfigurationError();
 		TransformerFactoryConfigurationError(java::lang::Exception arg0);

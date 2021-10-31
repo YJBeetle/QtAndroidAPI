@@ -11,11 +11,13 @@ namespace java::util::prefs
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BackingStoreException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
 		BackingStoreException(QAndroidJniObject obj);
+		
 		// Constructors
 		BackingStoreException(jstring arg0);
 		BackingStoreException(jthrowable arg0);
-		BackingStoreException() = default;
 		
 		// Methods
 	};

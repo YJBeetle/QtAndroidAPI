@@ -336,7 +336,9 @@ namespace android::view::accessibility
 		);
 	}
 	
-	AccessibilityEvent::AccessibilityEvent(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AccessibilityEvent::AccessibilityEvent(QAndroidJniObject obj) : android::view::accessibility::AccessibilityRecord(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -363,7 +365,7 @@ namespace android::view::accessibility
 			"android.view.accessibility.AccessibilityEvent",
 			"obtain",
 			"(Landroid/view/accessibility/AccessibilityEvent;)Landroid/view/accessibility/AccessibilityEvent;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject AccessibilityEvent::obtain(jint arg0)
@@ -377,64 +379,64 @@ namespace android::view::accessibility
 	}
 	void AccessibilityEvent::appendRecord(android::view::accessibility::AccessibilityRecord arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"appendRecord",
 			"(Landroid/view/accessibility/AccessibilityRecord;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint AccessibilityEvent::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jint AccessibilityEvent::getAction()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAction",
 			"()I"
 		);
 	}
 	jint AccessibilityEvent::getContentChangeTypes()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getContentChangeTypes",
 			"()I"
 		);
 	}
 	jlong AccessibilityEvent::getEventTime()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getEventTime",
 			"()J"
 		);
 	}
 	jint AccessibilityEvent::getEventType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getEventType",
 			"()I"
 		);
 	}
 	jint AccessibilityEvent::getMovementGranularity()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMovementGranularity",
 			"()I"
 		);
 	}
 	jstring AccessibilityEvent::getPackageName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	QAndroidJniObject AccessibilityEvent::getRecord(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRecord",
 			"(I)Landroid/view/accessibility/AccessibilityRecord;",
 			arg0
@@ -442,36 +444,36 @@ namespace android::view::accessibility
 	}
 	jint AccessibilityEvent::getRecordCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRecordCount",
 			"()I"
 		);
 	}
 	jint AccessibilityEvent::getWindowChanges()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getWindowChanges",
 			"()I"
 		);
 	}
 	void AccessibilityEvent::initFromParcel(android::os::Parcel arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"initFromParcel",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void AccessibilityEvent::recycle()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"recycle",
 			"()V"
 		);
 	}
 	void AccessibilityEvent::setAction(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAction",
 			"(I)V",
 			arg0
@@ -479,7 +481,7 @@ namespace android::view::accessibility
 	}
 	void AccessibilityEvent::setContentChangeTypes(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setContentChangeTypes",
 			"(I)V",
 			arg0
@@ -487,7 +489,7 @@ namespace android::view::accessibility
 	}
 	void AccessibilityEvent::setEventTime(jlong arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setEventTime",
 			"(J)V",
 			arg0
@@ -495,7 +497,7 @@ namespace android::view::accessibility
 	}
 	void AccessibilityEvent::setEventType(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setEventType",
 			"(I)V",
 			arg0
@@ -503,7 +505,7 @@ namespace android::view::accessibility
 	}
 	void AccessibilityEvent::setMovementGranularity(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMovementGranularity",
 			"(I)V",
 			arg0
@@ -511,7 +513,7 @@ namespace android::view::accessibility
 	}
 	void AccessibilityEvent::setPackageName(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPackageName",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
@@ -519,17 +521,17 @@ namespace android::view::accessibility
 	}
 	jstring AccessibilityEvent::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void AccessibilityEvent::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

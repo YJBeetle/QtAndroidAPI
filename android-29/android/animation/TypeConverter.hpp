@@ -10,10 +10,12 @@ namespace android::animation
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TypeConverter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		TypeConverter(QAndroidJniObject obj);
+		
 		// Constructors
 		TypeConverter(jclass arg0, jclass arg1);
-		TypeConverter() = default;
 		
 		// Methods
 		jobject convert(jobject arg0);

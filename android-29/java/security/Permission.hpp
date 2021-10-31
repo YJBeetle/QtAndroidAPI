@@ -14,10 +14,12 @@ namespace java::security
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Permission(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Permission(QAndroidJniObject obj);
+		
 		// Constructors
 		Permission(jstring arg0);
-		Permission() = default;
 		
 		// Methods
 		void checkGuard(jobject arg0);

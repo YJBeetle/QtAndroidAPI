@@ -38,7 +38,10 @@ namespace android::database
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AbstractCursor(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AbstractCursor(QAndroidJniObject obj);
+		
 		// Constructors
 		AbstractCursor();
 		

@@ -140,7 +140,9 @@ namespace android::media::tv
 		).object<jstring>();
 	}
 	
-	TvContract_Programs_Genres::TvContract_Programs_Genres(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TvContract_Programs_Genres::TvContract_Programs_Genres(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

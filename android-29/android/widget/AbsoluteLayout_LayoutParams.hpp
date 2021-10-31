@@ -21,12 +21,14 @@ namespace android::widget
 		jint x();
 		jint y();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AbsoluteLayout_LayoutParams(const char *className, const char *sig, Ts...agv) : android::view::ViewGroup_LayoutParams(className, sig, std::forward<Ts>(agv)...) {}
 		AbsoluteLayout_LayoutParams(QAndroidJniObject obj);
+		
 		// Constructors
 		AbsoluteLayout_LayoutParams(android::view::ViewGroup_LayoutParams arg0);
 		AbsoluteLayout_LayoutParams(android::content::Context arg0, __JniBaseClass arg1);
 		AbsoluteLayout_LayoutParams(jint arg0, jint arg1, jint arg2, jint arg3);
-		AbsoluteLayout_LayoutParams() = default;
 		
 		// Methods
 		jstring debug(jstring arg0);

@@ -4,20 +4,22 @@ namespace android::webkit
 {
 	// Fields
 	
-	JsResult::JsResult(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	JsResult::JsResult(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void JsResult::cancel()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"cancel",
 			"()V"
 		);
 	}
 	void JsResult::confirm()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"confirm",
 			"()V"
 		);

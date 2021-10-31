@@ -4,15 +4,15 @@ namespace java::util
 {
 	// Fields
 	
-	EmptyStackException::EmptyStackException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	EmptyStackException::EmptyStackException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	
 	// Constructors
 	EmptyStackException::EmptyStackException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::RuntimeException(
 			"java.util.EmptyStackException",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::util

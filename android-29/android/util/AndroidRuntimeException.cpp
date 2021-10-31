@@ -5,40 +5,34 @@ namespace android::util
 {
 	// Fields
 	
-	AndroidRuntimeException::AndroidRuntimeException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AndroidRuntimeException::AndroidRuntimeException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	
 	// Constructors
 	AndroidRuntimeException::AndroidRuntimeException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::RuntimeException(
 			"android.util.AndroidRuntimeException",
 			"()V"
-		);
-	}
+		) {}
 	AndroidRuntimeException::AndroidRuntimeException(java::lang::Exception arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::RuntimeException(
 			"android.util.AndroidRuntimeException",
 			"(Ljava/lang/Exception;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	AndroidRuntimeException::AndroidRuntimeException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::RuntimeException(
 			"android.util.AndroidRuntimeException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	AndroidRuntimeException::AndroidRuntimeException(jstring arg0, jthrowable arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::RuntimeException(
 			"android.util.AndroidRuntimeException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::util

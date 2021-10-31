@@ -69,70 +69,68 @@ namespace android::net
 		).object<jstring>();
 	}
 	
-	IpSecAlgorithm::IpSecAlgorithm(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	IpSecAlgorithm::IpSecAlgorithm(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	IpSecAlgorithm::IpSecAlgorithm(jstring arg0, jbyteArray arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.net.IpSecAlgorithm",
 			"(Ljava/lang/String;[B)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	IpSecAlgorithm::IpSecAlgorithm(jstring arg0, jbyteArray arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.net.IpSecAlgorithm",
 			"(Ljava/lang/String;[BI)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	jint IpSecAlgorithm::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jbyteArray IpSecAlgorithm::getKey()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getKey",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jstring IpSecAlgorithm::getName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint IpSecAlgorithm::getTruncationLengthBits()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTruncationLengthBits",
 			"()I"
 		);
 	}
 	jstring IpSecAlgorithm::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void IpSecAlgorithm::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

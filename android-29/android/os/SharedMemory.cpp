@@ -15,7 +15,9 @@ namespace android::os
 		);
 	}
 	
-	SharedMemory::SharedMemory(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SharedMemory::SharedMemory(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -35,33 +37,33 @@ namespace android::os
 			"android.os.SharedMemory",
 			"unmap",
 			"(Ljava/nio/ByteBuffer;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void SharedMemory::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	jint SharedMemory::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jint SharedMemory::getSize()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSize",
 			"()I"
 		);
 	}
 	QAndroidJniObject SharedMemory::map(jint arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"map",
 			"(III)Ljava/nio/ByteBuffer;",
 			arg0,
@@ -71,21 +73,21 @@ namespace android::os
 	}
 	QAndroidJniObject SharedMemory::mapReadOnly()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"mapReadOnly",
 			"()Ljava/nio/ByteBuffer;"
 		);
 	}
 	QAndroidJniObject SharedMemory::mapReadWrite()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"mapReadWrite",
 			"()Ljava/nio/ByteBuffer;"
 		);
 	}
 	jboolean SharedMemory::setProtect(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"setProtect",
 			"(I)Z",
 			arg0
@@ -93,10 +95,10 @@ namespace android::os
 	}
 	void SharedMemory::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

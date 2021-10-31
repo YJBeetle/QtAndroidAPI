@@ -242,7 +242,9 @@ namespace android::provider
 		);
 	}
 	
-	ContactsContract_CommonDataKinds_Phone::ContactsContract_CommonDataKinds_Phone(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ContactsContract_CommonDataKinds_Phone::ContactsContract_CommonDataKinds_Phone(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -252,7 +254,7 @@ namespace android::provider
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
 			"getTypeLabel",
 			"(Landroid/content/res/Resources;ILjava/lang/CharSequence;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		).object<jstring>();

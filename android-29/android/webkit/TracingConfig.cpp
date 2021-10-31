@@ -74,27 +74,29 @@ namespace android::webkit
 		);
 	}
 	
-	TracingConfig::TracingConfig(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TracingConfig::TracingConfig(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject TracingConfig::getCustomIncludedCategories()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCustomIncludedCategories",
 			"()Ljava/util/List;"
 		);
 	}
 	jint TracingConfig::getPredefinedCategories()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPredefinedCategories",
 			"()I"
 		);
 	}
 	jint TracingConfig::getTracingMode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTracingMode",
 			"()I"
 		);

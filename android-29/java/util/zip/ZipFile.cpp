@@ -23,87 +23,77 @@ namespace java::util::zip
 		);
 	}
 	
-	ZipFile::ZipFile(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ZipFile::ZipFile(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ZipFile::ZipFile(java::io::File arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.zip.ZipFile",
 			"(Ljava/io/File;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	ZipFile::ZipFile(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.zip.ZipFile",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	ZipFile::ZipFile(java::io::File arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.zip.ZipFile",
 			"(Ljava/io/File;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
-		);
-	}
+		) {}
 	ZipFile::ZipFile(java::io::File arg0, java::nio::charset::Charset arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.zip.ZipFile",
 			"(Ljava/io/File;Ljava/nio/charset/Charset;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	ZipFile::ZipFile(jstring arg0, java::nio::charset::Charset arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.zip.ZipFile",
 			"(Ljava/lang/String;Ljava/nio/charset/Charset;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
+			arg1.object()
+		) {}
 	ZipFile::ZipFile(java::io::File arg0, jint arg1, java::nio::charset::Charset arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.zip.ZipFile",
 			"(Ljava/io/File;ILjava/nio/charset/Charset;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object()
-		);
-	}
+			arg2.object()
+		) {}
 	
 	// Methods
 	void ZipFile::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	QAndroidJniObject ZipFile::entries()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"entries",
 			"()Ljava/util/Enumeration;"
 		);
 	}
 	jstring ZipFile::getComment()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getComment",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject ZipFile::getEntry(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEntry",
 			"(Ljava/lang/String;)Ljava/util/zip/ZipEntry;",
 			arg0
@@ -111,29 +101,29 @@ namespace java::util::zip
 	}
 	QAndroidJniObject ZipFile::getInputStream(java::util::zip::ZipEntry arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getInputStream",
 			"(Ljava/util/zip/ZipEntry;)Ljava/io/InputStream;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring ZipFile::getName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint ZipFile::size()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
 	QAndroidJniObject ZipFile::stream()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"stream",
 			"()Ljava/util/stream/Stream;"
 		);

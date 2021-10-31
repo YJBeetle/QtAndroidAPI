@@ -4,20 +4,20 @@ namespace android::webkit
 {
 	// Fields
 	
-	WebViewRenderProcess::WebViewRenderProcess(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WebViewRenderProcess::WebViewRenderProcess(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	WebViewRenderProcess::WebViewRenderProcess()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.webkit.WebViewRenderProcess",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean WebViewRenderProcess::terminate()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"terminate",
 			"()Z"
 		);

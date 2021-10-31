@@ -24,10 +24,12 @@ namespace android::widget
 		static jint SOURCE_BOUND_MAX_IN_SURFACE();
 		static jint SOURCE_BOUND_MAX_VISIBLE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Magnifier(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Magnifier(QAndroidJniObject obj);
+		
 		// Constructors
 		Magnifier(android::view::View arg0);
-		Magnifier() = default;
 		
 		// Methods
 		void dismiss();

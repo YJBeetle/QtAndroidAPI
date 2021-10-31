@@ -20,7 +20,9 @@ namespace android::renderscript
 		);
 	}
 	
-	RenderScript_Priority::RenderScript_Priority(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	RenderScript_Priority::RenderScript_Priority(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

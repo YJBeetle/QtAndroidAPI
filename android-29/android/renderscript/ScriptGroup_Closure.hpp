@@ -23,9 +23,11 @@ namespace android::renderscript
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ScriptGroup_Closure(const char *className, const char *sig, Ts...agv) : android::renderscript::BaseObj(className, sig, std::forward<Ts>(agv)...) {}
 		ScriptGroup_Closure(QAndroidJniObject obj);
+		
 		// Constructors
-		ScriptGroup_Closure() = default;
 		
 		// Methods
 		void destroy();

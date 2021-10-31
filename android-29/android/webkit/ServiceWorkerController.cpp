@@ -6,15 +6,15 @@ namespace android::webkit
 {
 	// Fields
 	
-	ServiceWorkerController::ServiceWorkerController(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ServiceWorkerController::ServiceWorkerController(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ServiceWorkerController::ServiceWorkerController()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.webkit.ServiceWorkerController",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject ServiceWorkerController::getInstance()
@@ -27,17 +27,17 @@ namespace android::webkit
 	}
 	QAndroidJniObject ServiceWorkerController::getServiceWorkerWebSettings()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getServiceWorkerWebSettings",
 			"()Landroid/webkit/ServiceWorkerWebSettings;"
 		);
 	}
 	void ServiceWorkerController::setServiceWorkerClient(android::webkit::ServiceWorkerClient arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setServiceWorkerClient",
 			"(Landroid/webkit/ServiceWorkerClient;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::webkit

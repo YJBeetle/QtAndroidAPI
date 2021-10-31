@@ -27,55 +27,57 @@ namespace android::hardware::camera2::params
 		);
 	}
 	
-	Face::Face(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Face::Face(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject Face::getBounds()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBounds",
 			"()Landroid/graphics/Rect;"
 		);
 	}
 	jint Face::getId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getId",
 			"()I"
 		);
 	}
 	QAndroidJniObject Face::getLeftEyePosition()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLeftEyePosition",
 			"()Landroid/graphics/Point;"
 		);
 	}
 	QAndroidJniObject Face::getMouthPosition()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMouthPosition",
 			"()Landroid/graphics/Point;"
 		);
 	}
 	QAndroidJniObject Face::getRightEyePosition()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRightEyePosition",
 			"()Landroid/graphics/Point;"
 		);
 	}
 	jint Face::getScore()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getScore",
 			"()I"
 		);
 	}
 	jstring Face::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

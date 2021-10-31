@@ -75,9 +75,11 @@ namespace android::app
 		static jint RECENT_IGNORE_UNAVAILABLE();
 		static jint RECENT_WITH_EXCLUDED();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ActivityManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ActivityManager(QAndroidJniObject obj);
+		
 		// Constructors
-		ActivityManager() = default;
 		
 		// Methods
 		static void getMyMemoryState(android::app::ActivityManager_RunningAppProcessInfo arg0);

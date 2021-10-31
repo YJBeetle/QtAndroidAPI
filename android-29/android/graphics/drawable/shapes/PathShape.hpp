@@ -27,10 +27,12 @@ namespace android::graphics::drawable::shapes
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PathShape(const char *className, const char *sig, Ts...agv) : android::graphics::drawable::shapes::Shape(className, sig, std::forward<Ts>(agv)...) {}
 		PathShape(QAndroidJniObject obj);
+		
 		// Constructors
 		PathShape(android::graphics::Path arg0, jfloat arg1, jfloat arg2);
-		PathShape() = default;
 		
 		// Methods
 		QAndroidJniObject clone();

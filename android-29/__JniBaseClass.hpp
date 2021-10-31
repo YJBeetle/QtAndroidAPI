@@ -2,14 +2,10 @@
 
 #include <QtAndroidExtras/QAndroidJniObject>
 
-class __JniBaseClass
+class __JniBaseClass : public QAndroidJniObject
 {
-protected:
-    QAndroidJniObject __thiz;
-
 public:
-    __JniBaseClass() = default;
+    template<typename ...Ts>
+    explicit __JniBaseClass(const char *className, const char *sig, Ts...agv) : QAndroidJniObject(className, sig, std::forward<Ts>(agv)...) {}
     __JniBaseClass(QAndroidJniObject obj);
-
-    QAndroidJniObject __jniObject();
 };

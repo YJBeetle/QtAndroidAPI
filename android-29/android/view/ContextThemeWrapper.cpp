@@ -9,60 +9,56 @@ namespace android::view
 {
 	// Fields
 	
-	ContextThemeWrapper::ContextThemeWrapper(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ContextThemeWrapper::ContextThemeWrapper(QAndroidJniObject obj) : android::content::ContextWrapper(obj) {}
+	
 	// Constructors
 	ContextThemeWrapper::ContextThemeWrapper()
-	{
-		__thiz = QAndroidJniObject(
+		: android::content::ContextWrapper(
 			"android.view.ContextThemeWrapper",
 			"()V"
-		);
-	}
+		) {}
 	ContextThemeWrapper::ContextThemeWrapper(android::content::Context arg0, android::content::res::Resources_Theme arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::content::ContextWrapper(
 			"android.view.ContextThemeWrapper",
 			"(Landroid/content/Context;Landroid/content/res/Resources$Theme;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	ContextThemeWrapper::ContextThemeWrapper(android::content::Context arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::content::ContextWrapper(
 			"android.view.ContextThemeWrapper",
 			"(Landroid/content/Context;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	void ContextThemeWrapper::applyOverrideConfiguration(android::content::res::Configuration arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"applyOverrideConfiguration",
 			"(Landroid/content/res/Configuration;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject ContextThemeWrapper::getAssets()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAssets",
 			"()Landroid/content/res/AssetManager;"
 		);
 	}
 	QAndroidJniObject ContextThemeWrapper::getResources()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getResources",
 			"()Landroid/content/res/Resources;"
 		);
 	}
 	jobject ContextThemeWrapper::getSystemService(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSystemService",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
 			arg0
@@ -70,22 +66,22 @@ namespace android::view
 	}
 	QAndroidJniObject ContextThemeWrapper::getTheme()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTheme",
 			"()Landroid/content/res/Resources$Theme;"
 		);
 	}
 	void ContextThemeWrapper::setTheme(android::content::res::Resources_Theme arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTheme",
 			"(Landroid/content/res/Resources$Theme;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ContextThemeWrapper::setTheme(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTheme",
 			"(I)V",
 			arg0

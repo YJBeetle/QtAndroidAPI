@@ -4,7 +4,9 @@ namespace android::os::strictmode
 {
 	// Fields
 	
-	FileUriExposedViolation::FileUriExposedViolation(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FileUriExposedViolation::FileUriExposedViolation(QAndroidJniObject obj) : android::os::strictmode::Violation(obj) {}
+	
 	// Constructors
 	
 	// Methods

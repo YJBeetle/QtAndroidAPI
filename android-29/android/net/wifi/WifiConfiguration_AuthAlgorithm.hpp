@@ -15,9 +15,11 @@ namespace android::net::wifi
 		static jarray strings();
 		static jstring varName();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit WifiConfiguration_AuthAlgorithm(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		WifiConfiguration_AuthAlgorithm(QAndroidJniObject obj);
+		
 		// Constructors
-		WifiConfiguration_AuthAlgorithm() = default;
 		
 		// Methods
 	};

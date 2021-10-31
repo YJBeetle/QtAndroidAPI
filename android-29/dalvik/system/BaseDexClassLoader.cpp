@@ -8,24 +8,24 @@ namespace dalvik::system
 {
 	// Fields
 	
-	BaseDexClassLoader::BaseDexClassLoader(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BaseDexClassLoader::BaseDexClassLoader(QAndroidJniObject obj) : java::lang::ClassLoader(obj) {}
+	
 	// Constructors
 	BaseDexClassLoader::BaseDexClassLoader(jstring arg0, java::io::File arg1, jstring arg2, java::lang::ClassLoader arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::ClassLoader(
 			"dalvik.system.BaseDexClassLoader",
 			"(Ljava/lang/String;Ljava/io/File;Ljava/lang/String;Ljava/lang/ClassLoader;)V",
 			arg0,
-			arg1.__jniObject().object(),
+			arg1.object(),
 			arg2,
-			arg3.__jniObject().object()
-		);
-	}
+			arg3.object()
+		) {}
 	
 	// Methods
 	jstring BaseDexClassLoader::findLibrary(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"findLibrary",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
@@ -33,7 +33,7 @@ namespace dalvik::system
 	}
 	jstring BaseDexClassLoader::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

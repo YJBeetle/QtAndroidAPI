@@ -46,13 +46,15 @@ namespace android::widget
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ListView(const char *className, const char *sig, Ts...agv) : android::widget::AbsListView(className, sig, std::forward<Ts>(agv)...) {}
 		ListView(QAndroidJniObject obj);
+		
 		// Constructors
 		ListView(android::content::Context arg0);
 		ListView(android::content::Context arg0, __JniBaseClass arg1);
 		ListView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		ListView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
-		ListView() = default;
 		
 		// Methods
 		void addFooterView(android::view::View arg0);

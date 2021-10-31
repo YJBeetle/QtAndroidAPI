@@ -43,9 +43,11 @@ namespace android::hardware::fingerprint
 		static jint FINGERPRINT_ERROR_USER_CANCELED();
 		static jint FINGERPRINT_ERROR_VENDOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit FingerprintManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		FingerprintManager(QAndroidJniObject obj);
+		
 		// Constructors
-		FingerprintManager() = default;
 		
 		// Methods
 		void authenticate(android::hardware::fingerprint::FingerprintManager_CryptoObject arg0, android::os::CancellationSignal arg1, jint arg2, android::hardware::fingerprint::FingerprintManager_AuthenticationCallback arg3, android::os::Handler arg4);

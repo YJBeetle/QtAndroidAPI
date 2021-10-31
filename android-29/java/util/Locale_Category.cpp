@@ -20,7 +20,9 @@ namespace java::util
 		);
 	}
 	
-	Locale_Category::Locale_Category(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Locale_Category::Locale_Category(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

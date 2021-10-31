@@ -13,30 +13,32 @@ namespace android::telephony::mbms
 		);
 	}
 	
-	FileServiceInfo::FileServiceInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FileServiceInfo::FileServiceInfo(QAndroidJniObject obj) : android::telephony::mbms::ServiceInfo(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint FileServiceInfo::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	QAndroidJniObject FileServiceInfo::getFiles()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFiles",
 			"()Ljava/util/List;"
 		);
 	}
 	void FileServiceInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

@@ -26,7 +26,10 @@ namespace android::app
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SharedElementCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SharedElementCallback(QAndroidJniObject obj);
+		
 		// Constructors
 		SharedElementCallback();
 		

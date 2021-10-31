@@ -8,26 +8,24 @@ namespace javax::security::auth
 {
 	// Fields
 	
-	Subject::Subject(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Subject::Subject(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Subject::Subject()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"javax.security.auth.Subject",
 			"()V"
-		);
-	}
+		) {}
 	Subject::Subject(jboolean arg0, __JniBaseClass arg1, __JniBaseClass arg2, __JniBaseClass arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"javax.security.auth.Subject",
 			"(ZLjava/util/Set;Ljava/util/Set;Ljava/util/Set;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
-		);
-	}
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
+		) {}
 	
 	// Methods
 	jobject Subject::doAs(javax::security::auth::Subject arg0, __JniBaseClass arg1)
@@ -36,8 +34,8 @@ namespace javax::security::auth
 			"javax.security.auth.Subject",
 			"doAs",
 			"(Ljavax/security/auth/Subject;Ljava/security/PrivilegedAction;)Ljava/lang/Object;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		).object<jobject>();
 	}
 	jobject Subject::doAsPrivileged(javax::security::auth::Subject arg0, __JniBaseClass arg1, java::security::AccessControlContext arg2)
@@ -46,9 +44,9 @@ namespace javax::security::auth
 			"javax.security.auth.Subject",
 			"doAsPrivileged",
 			"(Ljavax/security/auth/Subject;Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		).object<jobject>();
 	}
 	QAndroidJniObject Subject::getSubject(java::security::AccessControlContext arg0)
@@ -57,12 +55,12 @@ namespace javax::security::auth
 			"javax.security.auth.Subject",
 			"getSubject",
 			"(Ljava/security/AccessControlContext;)Ljavax/security/auth/Subject;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean Subject::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -70,14 +68,14 @@ namespace javax::security::auth
 	}
 	QAndroidJniObject Subject::getPrincipals()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPrincipals",
 			"()Ljava/util/Set;"
 		);
 	}
 	QAndroidJniObject Subject::getPrincipals(jclass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPrincipals",
 			"(Ljava/lang/Class;)Ljava/util/Set;",
 			arg0
@@ -85,14 +83,14 @@ namespace javax::security::auth
 	}
 	QAndroidJniObject Subject::getPrivateCredentials()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPrivateCredentials",
 			"()Ljava/util/Set;"
 		);
 	}
 	QAndroidJniObject Subject::getPrivateCredentials(jclass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPrivateCredentials",
 			"(Ljava/lang/Class;)Ljava/util/Set;",
 			arg0
@@ -100,14 +98,14 @@ namespace javax::security::auth
 	}
 	QAndroidJniObject Subject::getPublicCredentials()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPublicCredentials",
 			"()Ljava/util/Set;"
 		);
 	}
 	QAndroidJniObject Subject::getPublicCredentials(jclass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPublicCredentials",
 			"(Ljava/lang/Class;)Ljava/util/Set;",
 			arg0
@@ -115,28 +113,28 @@ namespace javax::security::auth
 	}
 	jint Subject::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean Subject::isReadOnly()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isReadOnly",
 			"()Z"
 		);
 	}
 	void Subject::setReadOnly()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setReadOnly",
 			"()V"
 		);
 	}
 	jstring Subject::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

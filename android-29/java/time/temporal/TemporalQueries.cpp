@@ -4,7 +4,9 @@ namespace java::time::temporal
 {
 	// Fields
 	
-	TemporalQueries::TemporalQueries(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TemporalQueries::TemporalQueries(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

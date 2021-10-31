@@ -362,7 +362,9 @@ namespace java::util
 		);
 	}
 	
-	Calendar::Calendar(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Calendar::Calendar(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -396,7 +398,7 @@ namespace java::util
 			"java.util.Calendar",
 			"getInstance",
 			"(Ljava/util/Locale;)Ljava/util/Calendar;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Calendar::getInstance(java::util::TimeZone arg0)
@@ -405,7 +407,7 @@ namespace java::util
 			"java.util.Calendar",
 			"getInstance",
 			"(Ljava/util/TimeZone;)Ljava/util/Calendar;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Calendar::getInstance(java::util::TimeZone arg0, java::util::Locale arg1)
@@ -414,13 +416,13 @@ namespace java::util
 			"java.util.Calendar",
 			"getInstance",
 			"(Ljava/util/TimeZone;Ljava/util/Locale;)Ljava/util/Calendar;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void Calendar::add(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"add",
 			"(II)V",
 			arg0,
@@ -429,7 +431,7 @@ namespace java::util
 	}
 	jboolean Calendar::after(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"after",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -437,7 +439,7 @@ namespace java::util
 	}
 	jboolean Calendar::before(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"before",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -445,14 +447,14 @@ namespace java::util
 	}
 	void Calendar::clear()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
 	void Calendar::clear(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clear",
 			"(I)V",
 			arg0
@@ -460,14 +462,14 @@ namespace java::util
 	}
 	jobject Calendar::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jint Calendar::compareTo(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -475,15 +477,15 @@ namespace java::util
 	}
 	jint Calendar::compareTo(java::util::Calendar arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/util/Calendar;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean Calendar::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -491,7 +493,7 @@ namespace java::util
 	}
 	jint Calendar::get(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"get",
 			"(I)I",
 			arg0
@@ -499,7 +501,7 @@ namespace java::util
 	}
 	jint Calendar::getActualMaximum(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getActualMaximum",
 			"(I)I",
 			arg0
@@ -507,7 +509,7 @@ namespace java::util
 	}
 	jint Calendar::getActualMinimum(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getActualMinimum",
 			"(I)I",
 			arg0
@@ -515,41 +517,41 @@ namespace java::util
 	}
 	jstring Calendar::getCalendarType()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCalendarType",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Calendar::getDisplayName(jint arg0, jint arg1, java::util::Locale arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDisplayName",
 			"(IILjava/util/Locale;)Ljava/lang/String;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		).object<jstring>();
 	}
 	QAndroidJniObject Calendar::getDisplayNames(jint arg0, jint arg1, java::util::Locale arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDisplayNames",
 			"(IILjava/util/Locale;)Ljava/util/Map;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	jint Calendar::getFirstDayOfWeek()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getFirstDayOfWeek",
 			"()I"
 		);
 	}
 	jint Calendar::getGreatestMinimum(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getGreatestMinimum",
 			"(I)I",
 			arg0
@@ -557,7 +559,7 @@ namespace java::util
 	}
 	jint Calendar::getLeastMaximum(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLeastMaximum",
 			"(I)I",
 			arg0
@@ -565,7 +567,7 @@ namespace java::util
 	}
 	jint Calendar::getMaximum(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMaximum",
 			"(I)I",
 			arg0
@@ -573,14 +575,14 @@ namespace java::util
 	}
 	jint Calendar::getMinimalDaysInFirstWeek()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMinimalDaysInFirstWeek",
 			"()I"
 		);
 	}
 	jint Calendar::getMinimum(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMinimum",
 			"(I)I",
 			arg0
@@ -588,56 +590,56 @@ namespace java::util
 	}
 	QAndroidJniObject Calendar::getTime()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTime",
 			"()Ljava/util/Date;"
 		);
 	}
 	jlong Calendar::getTimeInMillis()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getTimeInMillis",
 			"()J"
 		);
 	}
 	QAndroidJniObject Calendar::getTimeZone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTimeZone",
 			"()Ljava/util/TimeZone;"
 		);
 	}
 	jint Calendar::getWeekYear()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getWeekYear",
 			"()I"
 		);
 	}
 	jint Calendar::getWeeksInWeekYear()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getWeeksInWeekYear",
 			"()I"
 		);
 	}
 	jint Calendar::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean Calendar::isLenient()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isLenient",
 			"()Z"
 		);
 	}
 	jboolean Calendar::isSet(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isSet",
 			"(I)Z",
 			arg0
@@ -645,14 +647,14 @@ namespace java::util
 	}
 	jboolean Calendar::isWeekDateSupported()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isWeekDateSupported",
 			"()Z"
 		);
 	}
 	void Calendar::roll(jint arg0, jboolean arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"roll",
 			"(IZ)V",
 			arg0,
@@ -661,7 +663,7 @@ namespace java::util
 	}
 	void Calendar::roll(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"roll",
 			"(II)V",
 			arg0,
@@ -670,7 +672,7 @@ namespace java::util
 	}
 	void Calendar::set(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"set",
 			"(II)V",
 			arg0,
@@ -679,7 +681,7 @@ namespace java::util
 	}
 	void Calendar::set(jint arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"set",
 			"(III)V",
 			arg0,
@@ -689,7 +691,7 @@ namespace java::util
 	}
 	void Calendar::set(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"set",
 			"(IIIII)V",
 			arg0,
@@ -701,7 +703,7 @@ namespace java::util
 	}
 	void Calendar::set(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"set",
 			"(IIIIII)V",
 			arg0,
@@ -714,7 +716,7 @@ namespace java::util
 	}
 	void Calendar::setFirstDayOfWeek(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFirstDayOfWeek",
 			"(I)V",
 			arg0
@@ -722,7 +724,7 @@ namespace java::util
 	}
 	void Calendar::setLenient(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLenient",
 			"(Z)V",
 			arg0
@@ -730,7 +732,7 @@ namespace java::util
 	}
 	void Calendar::setMinimalDaysInFirstWeek(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMinimalDaysInFirstWeek",
 			"(I)V",
 			arg0
@@ -738,15 +740,15 @@ namespace java::util
 	}
 	void Calendar::setTime(java::util::Date arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTime",
 			"(Ljava/util/Date;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Calendar::setTimeInMillis(jlong arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTimeInMillis",
 			"(J)V",
 			arg0
@@ -754,15 +756,15 @@ namespace java::util
 	}
 	void Calendar::setTimeZone(java::util::TimeZone arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTimeZone",
 			"(Ljava/util/TimeZone;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Calendar::setWeekDate(jint arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setWeekDate",
 			"(III)V",
 			arg0,
@@ -772,14 +774,14 @@ namespace java::util
 	}
 	QAndroidJniObject Calendar::toInstant()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toInstant",
 			"()Ljava/time/Instant;"
 		);
 	}
 	jstring Calendar::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

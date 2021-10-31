@@ -11,10 +11,12 @@ namespace android::widget
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AlphabetIndexer(const char *className, const char *sig, Ts...agv) : android::database::DataSetObserver(className, sig, std::forward<Ts>(agv)...) {}
 		AlphabetIndexer(QAndroidJniObject obj);
+		
 		// Constructors
 		AlphabetIndexer(__JniBaseClass arg0, jint arg1, jstring arg2);
-		AlphabetIndexer() = default;
 		
 		// Methods
 		jint getPositionForSection(jint arg0);

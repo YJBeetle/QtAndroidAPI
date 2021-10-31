@@ -4,21 +4,21 @@ namespace javax::net::ssl
 {
 	// Fields
 	
-	CertPathTrustManagerParameters::CertPathTrustManagerParameters(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CertPathTrustManagerParameters::CertPathTrustManagerParameters(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	CertPathTrustManagerParameters::CertPathTrustManagerParameters(__JniBaseClass arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"javax.net.ssl.CertPathTrustManagerParameters",
 			"(Ljava/security/cert/CertPathParameters;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject CertPathTrustManagerParameters::getParameters()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getParameters",
 			"()Ljava/security/cert/CertPathParameters;"
 		);

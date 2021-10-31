@@ -13,10 +13,12 @@ namespace android::renderscript
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit RSIllegalArgumentException(const char *className, const char *sig, Ts...agv) : android::renderscript::RSRuntimeException(className, sig, std::forward<Ts>(agv)...) {}
 		RSIllegalArgumentException(QAndroidJniObject obj);
+		
 		// Constructors
 		RSIllegalArgumentException(jstring arg0);
-		RSIllegalArgumentException() = default;
 		
 		// Methods
 	};

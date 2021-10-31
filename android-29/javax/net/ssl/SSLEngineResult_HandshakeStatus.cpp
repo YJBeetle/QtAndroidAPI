@@ -52,7 +52,9 @@ namespace javax::net::ssl
 		);
 	}
 	
-	SSLEngineResult_HandshakeStatus::SSLEngineResult_HandshakeStatus(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SSLEngineResult_HandshakeStatus::SSLEngineResult_HandshakeStatus(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

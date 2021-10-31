@@ -462,20 +462,22 @@ namespace android::hardware::camera2
 		);
 	}
 	
-	CaptureRequest::CaptureRequest(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CaptureRequest::CaptureRequest(QAndroidJniObject obj) : android::hardware::camera2::CameraMetadata(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint CaptureRequest::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean CaptureRequest::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -483,46 +485,46 @@ namespace android::hardware::camera2
 	}
 	jobject CaptureRequest::get(android::hardware::camera2::CaptureRequest_Key arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"(Landroid/hardware/camera2/CaptureRequest$Key;)Ljava/lang/Object;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jobject>();
 	}
 	QAndroidJniObject CaptureRequest::getKeys()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getKeys",
 			"()Ljava/util/List;"
 		);
 	}
 	jobject CaptureRequest::getTag()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTag",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jint CaptureRequest::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean CaptureRequest::isReprocess()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isReprocess",
 			"()Z"
 		);
 	}
 	void CaptureRequest::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

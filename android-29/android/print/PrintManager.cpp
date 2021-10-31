@@ -7,25 +7,27 @@ namespace android::print
 {
 	// Fields
 	
-	PrintManager::PrintManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PrintManager::PrintManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject PrintManager::getPrintJobs()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPrintJobs",
 			"()Ljava/util/List;"
 		);
 	}
 	QAndroidJniObject PrintManager::print(jstring arg0, android::print::PrintDocumentAdapter arg1, android::print::PrintAttributes arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"print",
 			"(Ljava/lang/String;Landroid/print/PrintDocumentAdapter;Landroid/print/PrintAttributes;)Landroid/print/PrintJob;",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg1.object(),
+			arg2.object()
 		);
 	}
 } // namespace android::print

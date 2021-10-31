@@ -4,23 +4,21 @@ namespace java::nio::file
 {
 	// Fields
 	
-	ProviderNotFoundException::ProviderNotFoundException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ProviderNotFoundException::ProviderNotFoundException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	
 	// Constructors
 	ProviderNotFoundException::ProviderNotFoundException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::RuntimeException(
 			"java.nio.file.ProviderNotFoundException",
 			"()V"
-		);
-	}
+		) {}
 	ProviderNotFoundException::ProviderNotFoundException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::RuntimeException(
 			"java.nio.file.ProviderNotFoundException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::nio::file

@@ -81,9 +81,11 @@ namespace android::content::pm
 		static jstring ACTION_CONFIRM_PIN_SHORTCUT();
 		static jstring EXTRA_PIN_ITEM_REQUEST();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit LauncherApps(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		LauncherApps(QAndroidJniObject obj);
+		
 		// Constructors
-		LauncherApps() = default;
 		
 		// Methods
 		QAndroidJniObject getActivityList(jstring arg0, android::os::UserHandle arg1);

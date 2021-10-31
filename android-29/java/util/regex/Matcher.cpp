@@ -7,7 +7,9 @@ namespace java::util::regex
 {
 	// Fields
 	
-	Matcher::Matcher(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Matcher::Matcher(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -22,48 +24,48 @@ namespace java::util::regex
 	}
 	QAndroidJniObject Matcher::appendReplacement(java::lang::StringBuffer arg0, jstring arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"appendReplacement",
 			"(Ljava/lang/StringBuffer;Ljava/lang/String;)Ljava/util/regex/Matcher;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	QAndroidJniObject Matcher::appendReplacement(java::lang::StringBuilder arg0, jstring arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"appendReplacement",
 			"(Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/util/regex/Matcher;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	QAndroidJniObject Matcher::appendTail(java::lang::StringBuffer arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"appendTail",
 			"(Ljava/lang/StringBuffer;)Ljava/lang/StringBuffer;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Matcher::appendTail(java::lang::StringBuilder arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"appendTail",
 			"(Ljava/lang/StringBuilder;)Ljava/lang/StringBuilder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint Matcher::end()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"end",
 			"()I"
 		);
 	}
 	jint Matcher::end(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"end",
 			"(I)I",
 			arg0
@@ -71,7 +73,7 @@ namespace java::util::regex
 	}
 	jint Matcher::end(jstring arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"end",
 			"(Ljava/lang/String;)I",
 			arg0
@@ -79,14 +81,14 @@ namespace java::util::regex
 	}
 	jboolean Matcher::find()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"find",
 			"()Z"
 		);
 	}
 	jboolean Matcher::find(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"find",
 			"(I)Z",
 			arg0
@@ -94,14 +96,14 @@ namespace java::util::regex
 	}
 	jstring Matcher::group()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"group",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Matcher::group(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"group",
 			"(I)Ljava/lang/String;",
 			arg0
@@ -109,7 +111,7 @@ namespace java::util::regex
 	}
 	jstring Matcher::group(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"group",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
@@ -117,56 +119,56 @@ namespace java::util::regex
 	}
 	jint Matcher::groupCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"groupCount",
 			"()I"
 		);
 	}
 	jboolean Matcher::hasAnchoringBounds()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasAnchoringBounds",
 			"()Z"
 		);
 	}
 	jboolean Matcher::hasTransparentBounds()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasTransparentBounds",
 			"()Z"
 		);
 	}
 	jboolean Matcher::hitEnd()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hitEnd",
 			"()Z"
 		);
 	}
 	jboolean Matcher::lookingAt()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"lookingAt",
 			"()Z"
 		);
 	}
 	jboolean Matcher::matches()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"matches",
 			"()Z"
 		);
 	}
 	QAndroidJniObject Matcher::pattern()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"pattern",
 			"()Ljava/util/regex/Pattern;"
 		);
 	}
 	QAndroidJniObject Matcher::region(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"region",
 			"(II)Ljava/util/regex/Matcher;",
 			arg0,
@@ -175,21 +177,21 @@ namespace java::util::regex
 	}
 	jint Matcher::regionEnd()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"regionEnd",
 			"()I"
 		);
 	}
 	jint Matcher::regionStart()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"regionStart",
 			"()I"
 		);
 	}
 	jstring Matcher::replaceAll(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"replaceAll",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
@@ -197,15 +199,15 @@ namespace java::util::regex
 	}
 	jstring Matcher::replaceAll(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"replaceAll",
 			"(Ljava/util/function/Function;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jstring Matcher::replaceFirst(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"replaceFirst",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
@@ -213,29 +215,29 @@ namespace java::util::regex
 	}
 	jstring Matcher::replaceFirst(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"replaceFirst",
 			"(Ljava/util/function/Function;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jboolean Matcher::requireEnd()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"requireEnd",
 			"()Z"
 		);
 	}
 	QAndroidJniObject Matcher::reset()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"reset",
 			"()Ljava/util/regex/Matcher;"
 		);
 	}
 	QAndroidJniObject Matcher::reset(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"reset",
 			"(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;",
 			arg0
@@ -243,21 +245,21 @@ namespace java::util::regex
 	}
 	QAndroidJniObject Matcher::results()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"results",
 			"()Ljava/util/stream/Stream;"
 		);
 	}
 	jint Matcher::start()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"start",
 			"()I"
 		);
 	}
 	jint Matcher::start(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"start",
 			"(I)I",
 			arg0
@@ -265,7 +267,7 @@ namespace java::util::regex
 	}
 	jint Matcher::start(jstring arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"start",
 			"(Ljava/lang/String;)I",
 			arg0
@@ -273,21 +275,21 @@ namespace java::util::regex
 	}
 	QAndroidJniObject Matcher::toMatchResult()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toMatchResult",
 			"()Ljava/util/regex/MatchResult;"
 		);
 	}
 	jstring Matcher::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject Matcher::useAnchoringBounds(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"useAnchoringBounds",
 			"(Z)Ljava/util/regex/Matcher;",
 			arg0
@@ -295,15 +297,15 @@ namespace java::util::regex
 	}
 	QAndroidJniObject Matcher::usePattern(java::util::regex::Pattern arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"usePattern",
 			"(Ljava/util/regex/Pattern;)Ljava/util/regex/Matcher;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Matcher::useTransparentBounds(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"useTransparentBounds",
 			"(Z)Ljava/util/regex/Matcher;",
 			arg0

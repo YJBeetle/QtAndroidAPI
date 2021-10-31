@@ -6,7 +6,9 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	AsynchronousChannelGroup::AsynchronousChannelGroup(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AsynchronousChannelGroup::AsynchronousChannelGroup(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -16,7 +18,7 @@ namespace java::nio::channels
 			"java.nio.channels.AsynchronousChannelGroup",
 			"withCachedThreadPool",
 			"(Ljava/util/concurrent/ExecutorService;I)Ljava/nio/channels/AsynchronousChannelGroup;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -27,7 +29,7 @@ namespace java::nio::channels
 			"withFixedThreadPool",
 			"(ILjava/util/concurrent/ThreadFactory;)Ljava/nio/channels/AsynchronousChannelGroup;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject AsynchronousChannelGroup::withThreadPool(__JniBaseClass arg0)
@@ -36,49 +38,49 @@ namespace java::nio::channels
 			"java.nio.channels.AsynchronousChannelGroup",
 			"withThreadPool",
 			"(Ljava/util/concurrent/ExecutorService;)Ljava/nio/channels/AsynchronousChannelGroup;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean AsynchronousChannelGroup::awaitTermination(jlong arg0, java::util::concurrent::TimeUnit arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"awaitTermination",
 			"(JLjava/util/concurrent/TimeUnit;)Z",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jboolean AsynchronousChannelGroup::isShutdown()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isShutdown",
 			"()Z"
 		);
 	}
 	jboolean AsynchronousChannelGroup::isTerminated()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isTerminated",
 			"()Z"
 		);
 	}
 	QAndroidJniObject AsynchronousChannelGroup::provider()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"provider",
 			"()Ljava/nio/channels/spi/AsynchronousChannelProvider;"
 		);
 	}
 	void AsynchronousChannelGroup::shutdown()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"shutdown",
 			"()V"
 		);
 	}
 	void AsynchronousChannelGroup::shutdownNow()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"shutdownNow",
 			"()V"
 		);

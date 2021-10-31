@@ -13,11 +13,13 @@ namespace java::nio::file
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit FileAlreadyExistsException(const char *className, const char *sig, Ts...agv) : java::nio::file::FileSystemException(className, sig, std::forward<Ts>(agv)...) {}
 		FileAlreadyExistsException(QAndroidJniObject obj);
+		
 		// Constructors
 		FileAlreadyExistsException(jstring arg0);
 		FileAlreadyExistsException(jstring arg0, jstring arg1, jstring arg2);
-		FileAlreadyExistsException() = default;
 		
 		// Methods
 	};

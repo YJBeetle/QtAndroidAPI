@@ -10,15 +10,15 @@ namespace javax::net::ssl
 {
 	// Fields
 	
-	SSLContextSpi::SSLContextSpi(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SSLContextSpi::SSLContextSpi(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	SSLContextSpi::SSLContextSpi()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"javax.net.ssl.SSLContextSpi",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace javax::net::ssl

@@ -16,11 +16,13 @@ namespace android::media::audiofx
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DynamicsProcessing_Mbc(const char *className, const char *sig, Ts...agv) : android::media::audiofx::DynamicsProcessing_BandStage(className, sig, std::forward<Ts>(agv)...) {}
 		DynamicsProcessing_Mbc(QAndroidJniObject obj);
+		
 		// Constructors
 		DynamicsProcessing_Mbc(android::media::audiofx::DynamicsProcessing_Mbc &arg0);
 		DynamicsProcessing_Mbc(jboolean arg0, jboolean arg1, jint arg2);
-		DynamicsProcessing_Mbc() = default;
 		
 		// Methods
 		QAndroidJniObject getBand(jint arg0);

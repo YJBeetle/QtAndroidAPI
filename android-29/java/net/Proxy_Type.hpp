@@ -14,9 +14,11 @@ namespace java::net
 		static QAndroidJniObject HTTP();
 		static QAndroidJniObject SOCKS();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Proxy_Type(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		Proxy_Type(QAndroidJniObject obj);
+		
 		// Constructors
-		Proxy_Type() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

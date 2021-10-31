@@ -8,7 +8,9 @@ namespace android::icu::text
 {
 	// Fields
 	
-	Normalizer2::Normalizer2(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Normalizer2::Normalizer2(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -18,9 +20,9 @@ namespace android::icu::text
 			"android.icu.text.Normalizer2",
 			"getInstance",
 			"(Ljava/io/InputStream;Ljava/lang/String;Landroid/icu/text/Normalizer2$Mode;)Landroid/icu/text/Normalizer2;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	QAndroidJniObject Normalizer2::getNFCInstance()
@@ -65,16 +67,16 @@ namespace android::icu::text
 	}
 	QAndroidJniObject Normalizer2::append(java::lang::StringBuilder arg0, jstring arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"append",
 			"(Ljava/lang/StringBuilder;Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	jint Normalizer2::composePair(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"composePair",
 			"(II)I",
 			arg0,
@@ -83,7 +85,7 @@ namespace android::icu::text
 	}
 	jint Normalizer2::getCombiningClass(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCombiningClass",
 			"(I)I",
 			arg0
@@ -91,7 +93,7 @@ namespace android::icu::text
 	}
 	jstring Normalizer2::getDecomposition(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDecomposition",
 			"(I)Ljava/lang/String;",
 			arg0
@@ -99,7 +101,7 @@ namespace android::icu::text
 	}
 	jstring Normalizer2::getRawDecomposition(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRawDecomposition",
 			"(I)Ljava/lang/String;",
 			arg0
@@ -107,7 +109,7 @@ namespace android::icu::text
 	}
 	jboolean Normalizer2::hasBoundaryAfter(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasBoundaryAfter",
 			"(I)Z",
 			arg0
@@ -115,7 +117,7 @@ namespace android::icu::text
 	}
 	jboolean Normalizer2::hasBoundaryBefore(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasBoundaryBefore",
 			"(I)Z",
 			arg0
@@ -123,7 +125,7 @@ namespace android::icu::text
 	}
 	jboolean Normalizer2::isInert(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isInert",
 			"(I)Z",
 			arg0
@@ -131,7 +133,7 @@ namespace android::icu::text
 	}
 	jboolean Normalizer2::isNormalized(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isNormalized",
 			"(Ljava/lang/CharSequence;)Z",
 			arg0
@@ -139,16 +141,16 @@ namespace android::icu::text
 	}
 	QAndroidJniObject Normalizer2::normalize(jstring arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"normalize",
 			"(Ljava/lang/CharSequence;Ljava/lang/Appendable;)Ljava/lang/Appendable;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jstring Normalizer2::normalize(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"normalize",
 			"(Ljava/lang/CharSequence;)Ljava/lang/String;",
 			arg0
@@ -156,25 +158,25 @@ namespace android::icu::text
 	}
 	QAndroidJniObject Normalizer2::normalize(jstring arg0, java::lang::StringBuilder arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"normalize",
 			"(Ljava/lang/CharSequence;Ljava/lang/StringBuilder;)Ljava/lang/StringBuilder;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject Normalizer2::normalizeSecondAndAppend(java::lang::StringBuilder arg0, jstring arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"normalizeSecondAndAppend",
 			"(Ljava/lang/StringBuilder;Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	QAndroidJniObject Normalizer2::quickCheck(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"quickCheck",
 			"(Ljava/lang/CharSequence;)Landroid/icu/text/Normalizer$QuickCheckResult;",
 			arg0
@@ -182,7 +184,7 @@ namespace android::icu::text
 	}
 	jint Normalizer2::spanQuickCheckYes(jstring arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"spanQuickCheckYes",
 			"(Ljava/lang/CharSequence;)I",
 			arg0

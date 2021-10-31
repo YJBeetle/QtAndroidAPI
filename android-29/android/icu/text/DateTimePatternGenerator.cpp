@@ -140,7 +140,9 @@ namespace android::icu::text
 		);
 	}
 	
-	DateTimePatternGenerator::DateTimePatternGenerator(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DateTimePatternGenerator::DateTimePatternGenerator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -166,7 +168,7 @@ namespace android::icu::text
 			"android.icu.text.DateTimePatternGenerator",
 			"getInstance",
 			"(Landroid/icu/util/ULocale;)Landroid/icu/text/DateTimePatternGenerator;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject DateTimePatternGenerator::getInstance(java::util::Locale arg0)
@@ -175,43 +177,43 @@ namespace android::icu::text
 			"android.icu.text.DateTimePatternGenerator",
 			"getInstance",
 			"(Ljava/util/Locale;)Landroid/icu/text/DateTimePatternGenerator;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject DateTimePatternGenerator::addPattern(jstring arg0, jboolean arg1, android::icu::text::DateTimePatternGenerator_PatternInfo arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"addPattern",
 			"(Ljava/lang/String;ZLandroid/icu/text/DateTimePatternGenerator$PatternInfo;)Landroid/icu/text/DateTimePatternGenerator;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	jobject DateTimePatternGenerator::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	QAndroidJniObject DateTimePatternGenerator::cloneAsThawed()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"cloneAsThawed",
 			"()Landroid/icu/text/DateTimePatternGenerator;"
 		);
 	}
 	QAndroidJniObject DateTimePatternGenerator::freeze()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"freeze",
 			"()Landroid/icu/text/DateTimePatternGenerator;"
 		);
 	}
 	jstring DateTimePatternGenerator::getAppendItemFormat(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAppendItemFormat",
 			"(I)Ljava/lang/String;",
 			arg0
@@ -219,7 +221,7 @@ namespace android::icu::text
 	}
 	jstring DateTimePatternGenerator::getAppendItemName(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAppendItemName",
 			"(I)Ljava/lang/String;",
 			arg0
@@ -227,7 +229,7 @@ namespace android::icu::text
 	}
 	jstring DateTimePatternGenerator::getBaseSkeleton(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBaseSkeleton",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
@@ -235,15 +237,15 @@ namespace android::icu::text
 	}
 	QAndroidJniObject DateTimePatternGenerator::getBaseSkeletons(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBaseSkeletons",
 			"(Ljava/util/Set;)Ljava/util/Set;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring DateTimePatternGenerator::getBestPattern(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBestPattern",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
@@ -251,7 +253,7 @@ namespace android::icu::text
 	}
 	jstring DateTimePatternGenerator::getBestPattern(jstring arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBestPattern",
 			"(Ljava/lang/String;I)Ljava/lang/String;",
 			arg0,
@@ -260,21 +262,21 @@ namespace android::icu::text
 	}
 	jstring DateTimePatternGenerator::getDateTimeFormat()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDateTimeFormat",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring DateTimePatternGenerator::getDecimal()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDecimal",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring DateTimePatternGenerator::getSkeleton(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSkeleton",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
@@ -282,22 +284,22 @@ namespace android::icu::text
 	}
 	QAndroidJniObject DateTimePatternGenerator::getSkeletons(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSkeletons",
 			"(Ljava/util/Map;)Ljava/util/Map;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean DateTimePatternGenerator::isFrozen()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isFrozen",
 			"()Z"
 		);
 	}
 	jstring DateTimePatternGenerator::replaceFieldTypes(jstring arg0, jstring arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"replaceFieldTypes",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
 			arg0,
@@ -306,7 +308,7 @@ namespace android::icu::text
 	}
 	jstring DateTimePatternGenerator::replaceFieldTypes(jstring arg0, jstring arg1, jint arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"replaceFieldTypes",
 			"(Ljava/lang/String;Ljava/lang/String;I)Ljava/lang/String;",
 			arg0,
@@ -316,7 +318,7 @@ namespace android::icu::text
 	}
 	void DateTimePatternGenerator::setAppendItemFormat(jint arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAppendItemFormat",
 			"(ILjava/lang/String;)V",
 			arg0,
@@ -325,7 +327,7 @@ namespace android::icu::text
 	}
 	void DateTimePatternGenerator::setAppendItemName(jint arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAppendItemName",
 			"(ILjava/lang/String;)V",
 			arg0,
@@ -334,7 +336,7 @@ namespace android::icu::text
 	}
 	void DateTimePatternGenerator::setDateTimeFormat(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDateTimeFormat",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -342,7 +344,7 @@ namespace android::icu::text
 	}
 	void DateTimePatternGenerator::setDecimal(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDecimal",
 			"(Ljava/lang/String;)V",
 			arg0

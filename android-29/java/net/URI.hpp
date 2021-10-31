@@ -30,14 +30,16 @@ namespace java::net
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit URI(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		URI(QAndroidJniObject obj);
+		
 		// Constructors
 		URI(jstring arg0);
 		URI(jstring arg0, jstring arg1, jstring arg2);
 		URI(jstring arg0, jstring arg1, jstring arg2, jstring arg3);
 		URI(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4);
 		URI(jstring arg0, jstring arg1, jstring arg2, jint arg3, jstring arg4, jstring arg5, jstring arg6);
-		URI() = default;
 		
 		// Methods
 		static QAndroidJniObject create(jstring arg0);

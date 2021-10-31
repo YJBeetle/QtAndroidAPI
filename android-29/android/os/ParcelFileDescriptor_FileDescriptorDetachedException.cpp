@@ -4,15 +4,15 @@ namespace android::os
 {
 	// Fields
 	
-	ParcelFileDescriptor_FileDescriptorDetachedException::ParcelFileDescriptor_FileDescriptorDetachedException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ParcelFileDescriptor_FileDescriptorDetachedException::ParcelFileDescriptor_FileDescriptorDetachedException(QAndroidJniObject obj) : java::io::IOException(obj) {}
+	
 	// Constructors
 	ParcelFileDescriptor_FileDescriptorDetachedException::ParcelFileDescriptor_FileDescriptorDetachedException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::IOException(
 			"android.os.ParcelFileDescriptor$FileDescriptorDetachedException",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::os

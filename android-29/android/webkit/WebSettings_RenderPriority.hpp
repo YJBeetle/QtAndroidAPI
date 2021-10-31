@@ -14,9 +14,11 @@ namespace android::webkit
 		static QAndroidJniObject LOW();
 		static QAndroidJniObject NORMAL();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit WebSettings_RenderPriority(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		WebSettings_RenderPriority(QAndroidJniObject obj);
+		
 		// Constructors
-		WebSettings_RenderPriority() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

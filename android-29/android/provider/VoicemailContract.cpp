@@ -60,7 +60,9 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	VoicemailContract::VoicemailContract(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	VoicemailContract::VoicemailContract(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

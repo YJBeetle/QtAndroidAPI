@@ -23,9 +23,11 @@ namespace android::service::autofill
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit FillContext(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		FillContext(QAndroidJniObject obj);
+		
 		// Constructors
-		FillContext() = default;
 		
 		// Methods
 		jint describeContents();

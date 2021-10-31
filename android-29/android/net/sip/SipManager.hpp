@@ -45,9 +45,11 @@ namespace android::net::sip
 		static jstring EXTRA_OFFER_SD();
 		static jint INCOMING_CALL_RESULT_CODE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SipManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SipManager(QAndroidJniObject obj);
+		
 		// Constructors
-		SipManager() = default;
 		
 		// Methods
 		static jstring getCallId(android::content::Intent arg0);

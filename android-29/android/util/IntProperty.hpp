@@ -15,10 +15,12 @@ namespace android::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit IntProperty(const char *className, const char *sig, Ts...agv) : android::util::Property(className, sig, std::forward<Ts>(agv)...) {}
 		IntProperty(QAndroidJniObject obj);
+		
 		// Constructors
 		IntProperty(jstring arg0);
-		IntProperty() = default;
 		
 		// Methods
 		void set(jobject arg0, java::lang::Integer arg1);

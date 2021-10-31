@@ -5,7 +5,9 @@ namespace android::net::ssl
 {
 	// Fields
 	
-	SSLEngines::SSLEngines(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SSLEngines::SSLEngines(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -15,7 +17,7 @@ namespace android::net::ssl
 			"android.net.ssl.SSLEngines",
 			"isSupportedEngine",
 			"(Ljavax/net/ssl/SSLEngine;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void SSLEngines::setUseSessionTickets(javax::net::ssl::SSLEngine arg0, jboolean arg1)
@@ -24,7 +26,7 @@ namespace android::net::ssl
 			"android.net.ssl.SSLEngines",
 			"setUseSessionTickets",
 			"(Ljavax/net/ssl/SSLEngine;Z)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

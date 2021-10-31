@@ -324,7 +324,10 @@ namespace android::opengl
 		static jint GL_VIEWPORT();
 		static jint GL_ZERO();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit GLES20(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		GLES20(QAndroidJniObject obj);
+		
 		// Constructors
 		GLES20();
 		

@@ -21,9 +21,11 @@ namespace java::security
 		static QAndroidJniObject SIGNATURE();
 		static QAndroidJniObject STREAM_CIPHER();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CryptoPrimitive(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		CryptoPrimitive(QAndroidJniObject obj);
+		
 		// Constructors
-		CryptoPrimitive() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

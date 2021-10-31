@@ -11,9 +11,11 @@ namespace android::os::strictmode
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ImplicitDirectBootViolation(const char *className, const char *sig, Ts...agv) : android::os::strictmode::Violation(className, sig, std::forward<Ts>(agv)...) {}
 		ImplicitDirectBootViolation(QAndroidJniObject obj);
+		
 		// Constructors
-		ImplicitDirectBootViolation() = default;
 		
 		// Methods
 	};

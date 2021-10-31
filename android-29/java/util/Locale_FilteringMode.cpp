@@ -44,7 +44,9 @@ namespace java::util
 		);
 	}
 	
-	Locale_FilteringMode::Locale_FilteringMode(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Locale_FilteringMode::Locale_FilteringMode(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

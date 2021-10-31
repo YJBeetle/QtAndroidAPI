@@ -13,7 +13,9 @@ namespace java::time::format
 		);
 	}
 	
-	DecimalStyle::DecimalStyle(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DecimalStyle::DecimalStyle(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -31,7 +33,7 @@ namespace java::time::format
 			"java.time.format.DecimalStyle",
 			"of",
 			"(Ljava/util/Locale;)Ljava/time/format/DecimalStyle;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject DecimalStyle::ofDefaultLocale()
@@ -44,7 +46,7 @@ namespace java::time::format
 	}
 	jboolean DecimalStyle::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -52,49 +54,49 @@ namespace java::time::format
 	}
 	jchar DecimalStyle::getDecimalSeparator()
 	{
-		return __thiz.callMethod<jchar>(
+		return callMethod<jchar>(
 			"getDecimalSeparator",
 			"()C"
 		);
 	}
 	jchar DecimalStyle::getNegativeSign()
 	{
-		return __thiz.callMethod<jchar>(
+		return callMethod<jchar>(
 			"getNegativeSign",
 			"()C"
 		);
 	}
 	jchar DecimalStyle::getPositiveSign()
 	{
-		return __thiz.callMethod<jchar>(
+		return callMethod<jchar>(
 			"getPositiveSign",
 			"()C"
 		);
 	}
 	jchar DecimalStyle::getZeroDigit()
 	{
-		return __thiz.callMethod<jchar>(
+		return callMethod<jchar>(
 			"getZeroDigit",
 			"()C"
 		);
 	}
 	jint DecimalStyle::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring DecimalStyle::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject DecimalStyle::withDecimalSeparator(jchar arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withDecimalSeparator",
 			"(C)Ljava/time/format/DecimalStyle;",
 			arg0
@@ -102,7 +104,7 @@ namespace java::time::format
 	}
 	QAndroidJniObject DecimalStyle::withNegativeSign(jchar arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withNegativeSign",
 			"(C)Ljava/time/format/DecimalStyle;",
 			arg0
@@ -110,7 +112,7 @@ namespace java::time::format
 	}
 	QAndroidJniObject DecimalStyle::withPositiveSign(jchar arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withPositiveSign",
 			"(C)Ljava/time/format/DecimalStyle;",
 			arg0
@@ -118,7 +120,7 @@ namespace java::time::format
 	}
 	QAndroidJniObject DecimalStyle::withZeroDigit(jchar arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withZeroDigit",
 			"(C)Ljava/time/format/DecimalStyle;",
 			arg0

@@ -49,9 +49,11 @@ namespace java::text
 		static jint FRACTION_FIELD();
 		static jint INTEGER_FIELD();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit NumberFormat(const char *className, const char *sig, Ts...agv) : java::text::Format(className, sig, std::forward<Ts>(agv)...) {}
 		NumberFormat(QAndroidJniObject obj);
+		
 		// Constructors
-		NumberFormat() = default;
 		
 		// Methods
 		static jarray getAvailableLocales();

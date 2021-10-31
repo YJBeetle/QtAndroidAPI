@@ -4,29 +4,29 @@ namespace android::service::carrier
 {
 	// Fields
 	
-	CarrierMessagingService_SendMmsResult::CarrierMessagingService_SendMmsResult(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CarrierMessagingService_SendMmsResult::CarrierMessagingService_SendMmsResult(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	CarrierMessagingService_SendMmsResult::CarrierMessagingService_SendMmsResult(jint arg0, jbyteArray arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.service.carrier.CarrierMessagingService$SendMmsResult",
 			"(I[B)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jbyteArray CarrierMessagingService_SendMmsResult::getSendConfPdu()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSendConfPdu",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jint CarrierMessagingService_SendMmsResult::getSendStatus()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSendStatus",
 			"()I"
 		);

@@ -32,12 +32,14 @@ namespace android::view::animation
 		static jint PRIORITY_NONE();
 		static jint PRIORITY_ROW();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit GridLayoutAnimationController(const char *className, const char *sig, Ts...agv) : android::view::animation::LayoutAnimationController(className, sig, std::forward<Ts>(agv)...) {}
 		GridLayoutAnimationController(QAndroidJniObject obj);
+		
 		// Constructors
 		GridLayoutAnimationController(android::view::animation::Animation arg0);
 		GridLayoutAnimationController(android::content::Context arg0, __JniBaseClass arg1);
 		GridLayoutAnimationController(android::view::animation::Animation arg0, jfloat arg1, jfloat arg2);
-		GridLayoutAnimationController() = default;
 		
 		// Methods
 		jfloat getColumnDelay();

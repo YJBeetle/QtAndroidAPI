@@ -4,15 +4,15 @@ namespace javax::crypto
 {
 	// Fields
 	
-	SecretKeyFactorySpi::SecretKeyFactorySpi(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SecretKeyFactorySpi::SecretKeyFactorySpi(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	SecretKeyFactorySpi::SecretKeyFactorySpi()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"javax.crypto.SecretKeyFactorySpi",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace javax::crypto

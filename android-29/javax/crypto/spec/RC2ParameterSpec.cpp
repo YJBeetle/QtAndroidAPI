@@ -4,40 +4,36 @@ namespace javax::crypto::spec
 {
 	// Fields
 	
-	RC2ParameterSpec::RC2ParameterSpec(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	RC2ParameterSpec::RC2ParameterSpec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	RC2ParameterSpec::RC2ParameterSpec(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"javax.crypto.spec.RC2ParameterSpec",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	RC2ParameterSpec::RC2ParameterSpec(jint arg0, jbyteArray arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"javax.crypto.spec.RC2ParameterSpec",
 			"(I[B)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	RC2ParameterSpec::RC2ParameterSpec(jint arg0, jbyteArray arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"javax.crypto.spec.RC2ParameterSpec",
 			"(I[BI)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean RC2ParameterSpec::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -45,21 +41,21 @@ namespace javax::crypto::spec
 	}
 	jint RC2ParameterSpec::getEffectiveKeyBits()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getEffectiveKeyBits",
 			"()I"
 		);
 	}
 	jbyteArray RC2ParameterSpec::getIV()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getIV",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jint RC2ParameterSpec::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);

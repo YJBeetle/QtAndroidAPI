@@ -19,9 +19,11 @@ namespace android::net
 		static jint TYPE_MULTICAST();
 		static jint TYPE_UNICAST();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MacAddress(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MacAddress(QAndroidJniObject obj);
+		
 		// Constructors
-		MacAddress() = default;
 		
 		// Methods
 		static QAndroidJniObject fromBytes(jbyteArray arg0);

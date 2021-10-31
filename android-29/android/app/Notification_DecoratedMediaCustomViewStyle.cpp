@@ -4,15 +4,15 @@ namespace android::app
 {
 	// Fields
 	
-	Notification_DecoratedMediaCustomViewStyle::Notification_DecoratedMediaCustomViewStyle(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Notification_DecoratedMediaCustomViewStyle::Notification_DecoratedMediaCustomViewStyle(QAndroidJniObject obj) : android::app::Notification_MediaStyle(obj) {}
+	
 	// Constructors
 	Notification_DecoratedMediaCustomViewStyle::Notification_DecoratedMediaCustomViewStyle()
-	{
-		__thiz = QAndroidJniObject(
+		: android::app::Notification_MediaStyle(
 			"android.app.Notification$DecoratedMediaCustomViewStyle",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::app

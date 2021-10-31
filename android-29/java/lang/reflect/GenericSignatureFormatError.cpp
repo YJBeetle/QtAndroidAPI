@@ -4,23 +4,21 @@ namespace java::lang::reflect
 {
 	// Fields
 	
-	GenericSignatureFormatError::GenericSignatureFormatError(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	GenericSignatureFormatError::GenericSignatureFormatError(QAndroidJniObject obj) : java::lang::ClassFormatError(obj) {}
+	
 	// Constructors
 	GenericSignatureFormatError::GenericSignatureFormatError()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::ClassFormatError(
 			"java.lang.reflect.GenericSignatureFormatError",
 			"()V"
-		);
-	}
+		) {}
 	GenericSignatureFormatError::GenericSignatureFormatError(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::ClassFormatError(
 			"java.lang.reflect.GenericSignatureFormatError",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::lang::reflect

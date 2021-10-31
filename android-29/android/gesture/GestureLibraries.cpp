@@ -7,7 +7,9 @@ namespace android::gesture
 {
 	// Fields
 	
-	GestureLibraries::GestureLibraries(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	GestureLibraries::GestureLibraries(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -17,7 +19,7 @@ namespace android::gesture
 			"android.gesture.GestureLibraries",
 			"fromFile",
 			"(Ljava/io/File;)Landroid/gesture/GestureLibrary;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject GestureLibraries::fromFile(jstring arg0)
@@ -35,7 +37,7 @@ namespace android::gesture
 			"android.gesture.GestureLibraries",
 			"fromPrivateFile",
 			"(Landroid/content/Context;Ljava/lang/String;)Landroid/gesture/GestureLibrary;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -45,7 +47,7 @@ namespace android::gesture
 			"android.gesture.GestureLibraries",
 			"fromRawResource",
 			"(Landroid/content/Context;I)Landroid/gesture/GestureLibrary;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

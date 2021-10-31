@@ -93,7 +93,9 @@ namespace android::icu::text
 		);
 	}
 	
-	DisplayContext::DisplayContext(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DisplayContext::DisplayContext(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -116,14 +118,14 @@ namespace android::icu::text
 	}
 	QAndroidJniObject DisplayContext::type()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"type",
 			"()Landroid/icu/text/DisplayContext$Type;"
 		);
 	}
 	jint DisplayContext::value()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"value",
 			"()I"
 		);

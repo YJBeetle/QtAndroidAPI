@@ -30,10 +30,12 @@ namespace android::media::tv
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TvRecordingClient(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		TvRecordingClient(QAndroidJniObject obj);
+		
 		// Constructors
 		TvRecordingClient(android::content::Context arg0, jstring arg1, android::media::tv::TvRecordingClient_RecordingCallback arg2, android::os::Handler arg3);
-		TvRecordingClient() = default;
 		
 		// Methods
 		void release();

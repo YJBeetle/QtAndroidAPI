@@ -23,7 +23,10 @@ namespace android::app
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Notification_BigPictureStyle(const char *className, const char *sig, Ts...agv) : android::app::Notification_Style(className, sig, std::forward<Ts>(agv)...) {}
 		Notification_BigPictureStyle(QAndroidJniObject obj);
+		
 		// Constructors
 		Notification_BigPictureStyle();
 		Notification_BigPictureStyle(android::app::Notification_Builder arg0);

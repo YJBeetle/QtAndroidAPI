@@ -18,9 +18,11 @@ namespace java::io
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Reader(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Reader(QAndroidJniObject obj);
+		
 		// Constructors
-		Reader() = default;
 		
 		// Methods
 		static QAndroidJniObject nullReader();

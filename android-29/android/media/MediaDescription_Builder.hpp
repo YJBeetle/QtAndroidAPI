@@ -26,7 +26,10 @@ namespace android::media
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaDescription_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaDescription_Builder(QAndroidJniObject obj);
+		
 		// Constructors
 		MediaDescription_Builder();
 		

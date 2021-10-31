@@ -7,35 +7,33 @@ namespace android::app
 {
 	// Fields
 	
-	ActivityGroup::ActivityGroup(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ActivityGroup::ActivityGroup(QAndroidJniObject obj) : android::app::Activity(obj) {}
+	
 	// Constructors
 	ActivityGroup::ActivityGroup()
-	{
-		__thiz = QAndroidJniObject(
+		: android::app::Activity(
 			"android.app.ActivityGroup",
 			"()V"
-		);
-	}
+		) {}
 	ActivityGroup::ActivityGroup(jboolean arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::app::Activity(
 			"android.app.ActivityGroup",
 			"(Z)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject ActivityGroup::getCurrentActivity()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCurrentActivity",
 			"()Landroid/app/Activity;"
 		);
 	}
 	QAndroidJniObject ActivityGroup::getLocalActivityManager()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLocalActivityManager",
 			"()Landroid/app/LocalActivityManager;"
 		);

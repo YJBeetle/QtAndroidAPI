@@ -6,7 +6,9 @@ namespace java::security
 {
 	// Fields
 	
-	MessageDigest::MessageDigest(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MessageDigest::MessageDigest(QAndroidJniObject obj) : java::security::MessageDigestSpi(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -36,7 +38,7 @@ namespace java::security
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/MessageDigest;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jboolean MessageDigest::isEqual(jbyteArray arg0, jbyteArray arg1)
@@ -51,21 +53,21 @@ namespace java::security
 	}
 	jobject MessageDigest::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jbyteArray MessageDigest::digest()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"digest",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jbyteArray MessageDigest::digest(jbyteArray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"digest",
 			"([B)[B",
 			arg0
@@ -73,7 +75,7 @@ namespace java::security
 	}
 	jint MessageDigest::digest(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"digest",
 			"([BII)I",
 			arg0,
@@ -83,42 +85,42 @@ namespace java::security
 	}
 	jstring MessageDigest::getAlgorithm()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint MessageDigest::getDigestLength()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDigestLength",
 			"()I"
 		);
 	}
 	QAndroidJniObject MessageDigest::getProvider()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getProvider",
 			"()Ljava/security/Provider;"
 		);
 	}
 	void MessageDigest::reset()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
 	jstring MessageDigest::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void MessageDigest::update(jbyteArray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"update",
 			"([B)V",
 			arg0
@@ -126,7 +128,7 @@ namespace java::security
 	}
 	void MessageDigest::update(jbyte arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"update",
 			"(B)V",
 			arg0
@@ -134,15 +136,15 @@ namespace java::security
 	}
 	void MessageDigest::update(java::nio::ByteBuffer arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"update",
 			"(Ljava/nio/ByteBuffer;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MessageDigest::update(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"update",
 			"([BII)V",
 			arg0,

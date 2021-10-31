@@ -5,21 +5,21 @@ namespace android::content
 {
 	// Fields
 	
-	Intent_FilterComparison::Intent_FilterComparison(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Intent_FilterComparison::Intent_FilterComparison(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Intent_FilterComparison::Intent_FilterComparison(android::content::Intent arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.content.Intent$FilterComparison",
 			"(Landroid/content/Intent;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jboolean Intent_FilterComparison::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -27,14 +27,14 @@ namespace android::content
 	}
 	QAndroidJniObject Intent_FilterComparison::getIntent()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getIntent",
 			"()Landroid/content/Intent;"
 		);
 	}
 	jint Intent_FilterComparison::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);

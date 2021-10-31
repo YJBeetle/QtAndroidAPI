@@ -8,7 +8,9 @@ namespace android::text
 {
 	// Fields
 	
-	DynamicLayout_Builder::DynamicLayout_Builder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DynamicLayout_Builder::DynamicLayout_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -19,28 +21,28 @@ namespace android::text
 			"obtain",
 			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;I)Landroid/text/DynamicLayout$Builder;",
 			arg0,
-			arg1.__jniObject().object(),
+			arg1.object(),
 			arg2
 		);
 	}
 	QAndroidJniObject DynamicLayout_Builder::build()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"build",
 			"()Landroid/text/DynamicLayout;"
 		);
 	}
 	QAndroidJniObject DynamicLayout_Builder::setAlignment(android::text::Layout_Alignment arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setAlignment",
 			"(Landroid/text/Layout$Alignment;)Landroid/text/DynamicLayout$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject DynamicLayout_Builder::setBreakStrategy(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setBreakStrategy",
 			"(I)Landroid/text/DynamicLayout$Builder;",
 			arg0
@@ -48,7 +50,7 @@ namespace android::text
 	}
 	QAndroidJniObject DynamicLayout_Builder::setDisplayText(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setDisplayText",
 			"(Ljava/lang/CharSequence;)Landroid/text/DynamicLayout$Builder;",
 			arg0
@@ -56,15 +58,15 @@ namespace android::text
 	}
 	QAndroidJniObject DynamicLayout_Builder::setEllipsize(android::text::TextUtils_TruncateAt arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setEllipsize",
 			"(Landroid/text/TextUtils$TruncateAt;)Landroid/text/DynamicLayout$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject DynamicLayout_Builder::setEllipsizedWidth(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setEllipsizedWidth",
 			"(I)Landroid/text/DynamicLayout$Builder;",
 			arg0
@@ -72,7 +74,7 @@ namespace android::text
 	}
 	QAndroidJniObject DynamicLayout_Builder::setHyphenationFrequency(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setHyphenationFrequency",
 			"(I)Landroid/text/DynamicLayout$Builder;",
 			arg0
@@ -80,7 +82,7 @@ namespace android::text
 	}
 	QAndroidJniObject DynamicLayout_Builder::setIncludePad(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setIncludePad",
 			"(Z)Landroid/text/DynamicLayout$Builder;",
 			arg0
@@ -88,7 +90,7 @@ namespace android::text
 	}
 	QAndroidJniObject DynamicLayout_Builder::setJustificationMode(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setJustificationMode",
 			"(I)Landroid/text/DynamicLayout$Builder;",
 			arg0
@@ -96,7 +98,7 @@ namespace android::text
 	}
 	QAndroidJniObject DynamicLayout_Builder::setLineSpacing(jfloat arg0, jfloat arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setLineSpacing",
 			"(FF)Landroid/text/DynamicLayout$Builder;",
 			arg0,
@@ -105,15 +107,15 @@ namespace android::text
 	}
 	QAndroidJniObject DynamicLayout_Builder::setTextDirection(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setTextDirection",
 			"(Landroid/text/TextDirectionHeuristic;)Landroid/text/DynamicLayout$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject DynamicLayout_Builder::setUseLineSpacingFromFallbacks(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setUseLineSpacingFromFallbacks",
 			"(Z)Landroid/text/DynamicLayout$Builder;",
 			arg0

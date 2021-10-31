@@ -57,7 +57,9 @@ namespace android::graphics::drawable
 		);
 	}
 	
-	Icon::Icon(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Icon::Icon(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -67,7 +69,7 @@ namespace android::graphics::drawable
 			"android.graphics.drawable.Icon",
 			"createWithAdaptiveBitmap",
 			"(Landroid/graphics/Bitmap;)Landroid/graphics/drawable/Icon;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Icon::createWithBitmap(android::graphics::Bitmap arg0)
@@ -76,7 +78,7 @@ namespace android::graphics::drawable
 			"android.graphics.drawable.Icon",
 			"createWithBitmap",
 			"(Landroid/graphics/Bitmap;)Landroid/graphics/drawable/Icon;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Icon::createWithContentUri(android::net::Uri arg0)
@@ -85,7 +87,7 @@ namespace android::graphics::drawable
 			"android.graphics.drawable.Icon",
 			"createWithContentUri",
 			"(Landroid/net/Uri;)Landroid/graphics/drawable/Icon;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Icon::createWithContentUri(jstring arg0)
@@ -123,7 +125,7 @@ namespace android::graphics::drawable
 			"android.graphics.drawable.Icon",
 			"createWithResource",
 			"(Landroid/content/Context;I)Landroid/graphics/drawable/Icon;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -139,69 +141,69 @@ namespace android::graphics::drawable
 	}
 	jint Icon::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jint Icon::getResId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getResId",
 			"()I"
 		);
 	}
 	jstring Icon::getResPackage()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getResPackage",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint Icon::getType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getType",
 			"()I"
 		);
 	}
 	QAndroidJniObject Icon::getUri()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getUri",
 			"()Landroid/net/Uri;"
 		);
 	}
 	QAndroidJniObject Icon::loadDrawable(android::content::Context arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"loadDrawable",
 			"(Landroid/content/Context;)Landroid/graphics/drawable/Drawable;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Icon::loadDrawableAsync(android::content::Context arg0, android::os::Message arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"loadDrawableAsync",
 			"(Landroid/content/Context;Landroid/os/Message;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void Icon::loadDrawableAsync(android::content::Context arg0, __JniBaseClass arg1, android::os::Handler arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"loadDrawableAsync",
 			"(Landroid/content/Context;Landroid/graphics/drawable/Icon$OnDrawableLoadedListener;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject Icon::setTint(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setTint",
 			"(I)Landroid/graphics/drawable/Icon;",
 			arg0
@@ -209,41 +211,41 @@ namespace android::graphics::drawable
 	}
 	QAndroidJniObject Icon::setTintBlendMode(android::graphics::BlendMode arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setTintBlendMode",
 			"(Landroid/graphics/BlendMode;)Landroid/graphics/drawable/Icon;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Icon::setTintList(android::content::res::ColorStateList arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setTintList",
 			"(Landroid/content/res/ColorStateList;)Landroid/graphics/drawable/Icon;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Icon::setTintMode(android::graphics::PorterDuff_Mode arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setTintMode",
 			"(Landroid/graphics/PorterDuff$Mode;)Landroid/graphics/drawable/Icon;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring Icon::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void Icon::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

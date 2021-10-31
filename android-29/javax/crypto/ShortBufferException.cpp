@@ -4,23 +4,21 @@ namespace javax::crypto
 {
 	// Fields
 	
-	ShortBufferException::ShortBufferException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ShortBufferException::ShortBufferException(QAndroidJniObject obj) : java::security::GeneralSecurityException(obj) {}
+	
 	// Constructors
 	ShortBufferException::ShortBufferException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::security::GeneralSecurityException(
 			"javax.crypto.ShortBufferException",
 			"()V"
-		);
-	}
+		) {}
 	ShortBufferException::ShortBufferException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::security::GeneralSecurityException(
 			"javax.crypto.ShortBufferException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace javax::crypto

@@ -10,7 +10,10 @@ namespace android::text
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Editable_Factory(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Editable_Factory(QAndroidJniObject obj);
+		
 		// Constructors
 		Editable_Factory();
 		

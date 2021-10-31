@@ -4,27 +4,27 @@ namespace android::security
 {
 	// Fields
 	
-	ConfirmationCallback::ConfirmationCallback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ConfirmationCallback::ConfirmationCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ConfirmationCallback::ConfirmationCallback()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.security.ConfirmationCallback",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void ConfirmationCallback::onCanceled()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onCanceled",
 			"()V"
 		);
 	}
 	void ConfirmationCallback::onConfirmed(jbyteArray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onConfirmed",
 			"([B)V",
 			arg0
@@ -32,14 +32,14 @@ namespace android::security
 	}
 	void ConfirmationCallback::onDismissed()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onDismissed",
 			"()V"
 		);
 	}
 	void ConfirmationCallback::onError(jthrowable arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onError",
 			"(Ljava/lang/Throwable;)V",
 			arg0

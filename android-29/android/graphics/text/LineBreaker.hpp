@@ -30,9 +30,11 @@ namespace android::graphics::text
 		static jint JUSTIFICATION_MODE_INTER_WORD();
 		static jint JUSTIFICATION_MODE_NONE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit LineBreaker(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		LineBreaker(QAndroidJniObject obj);
+		
 		// Constructors
-		LineBreaker() = default;
 		
 		// Methods
 		QAndroidJniObject computeLineBreaks(android::graphics::text::MeasuredText arg0, android::graphics::text::LineBreaker_ParagraphConstraints arg1, jint arg2);

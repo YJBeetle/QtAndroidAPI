@@ -7,23 +7,21 @@ namespace java::security
 {
 	// Fields
 	
-	SecureRandom::SecureRandom(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SecureRandom::SecureRandom(QAndroidJniObject obj) : java::util::Random(obj) {}
+	
 	// Constructors
 	SecureRandom::SecureRandom()
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::Random(
 			"java.security.SecureRandom",
 			"()V"
-		);
-	}
+		) {}
 	SecureRandom::SecureRandom(jbyteArray arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::Random(
 			"java.security.SecureRandom",
 			"([B)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject SecureRandom::getInstance(jstring arg0)
@@ -52,7 +50,7 @@ namespace java::security
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/SecureRandom;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject SecureRandom::getInstance(jstring arg0, __JniBaseClass arg1)
@@ -62,7 +60,7 @@ namespace java::security
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/SecureRandomParameters;)Ljava/security/SecureRandom;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject SecureRandom::getInstance(jstring arg0, __JniBaseClass arg1, jstring arg2)
@@ -72,7 +70,7 @@ namespace java::security
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/SecureRandomParameters;Ljava/lang/String;)Ljava/security/SecureRandom;",
 			arg0,
-			arg1.__jniObject().object(),
+			arg1.object(),
 			arg2
 		);
 	}
@@ -83,8 +81,8 @@ namespace java::security
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/SecureRandomParameters;Ljava/security/Provider;)Ljava/security/SecureRandom;",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject SecureRandom::getInstanceStrong()
@@ -106,7 +104,7 @@ namespace java::security
 	}
 	jbyteArray SecureRandom::generateSeed(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"generateSeed",
 			"(I)[B",
 			arg0
@@ -114,28 +112,28 @@ namespace java::security
 	}
 	jstring SecureRandom::getAlgorithm()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject SecureRandom::getParameters()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getParameters",
 			"()Ljava/security/SecureRandomParameters;"
 		);
 	}
 	QAndroidJniObject SecureRandom::getProvider()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getProvider",
 			"()Ljava/security/Provider;"
 		);
 	}
 	void SecureRandom::nextBytes(jbyteArray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"nextBytes",
 			"([B)V",
 			arg0
@@ -143,31 +141,31 @@ namespace java::security
 	}
 	void SecureRandom::nextBytes(jbyteArray arg0, __JniBaseClass arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"nextBytes",
 			"([BLjava/security/SecureRandomParameters;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void SecureRandom::reseed()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"reseed",
 			"()V"
 		);
 	}
 	void SecureRandom::reseed(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"reseed",
 			"(Ljava/security/SecureRandomParameters;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void SecureRandom::setSeed(jbyteArray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSeed",
 			"([B)V",
 			arg0
@@ -175,7 +173,7 @@ namespace java::security
 	}
 	void SecureRandom::setSeed(jlong arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSeed",
 			"(J)V",
 			arg0
@@ -183,7 +181,7 @@ namespace java::security
 	}
 	jstring SecureRandom::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

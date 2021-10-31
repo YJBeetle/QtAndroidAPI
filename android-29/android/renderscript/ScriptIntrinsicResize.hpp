@@ -33,9 +33,11 @@ namespace android::renderscript
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ScriptIntrinsicResize(const char *className, const char *sig, Ts...agv) : android::renderscript::ScriptIntrinsic(className, sig, std::forward<Ts>(agv)...) {}
 		ScriptIntrinsicResize(QAndroidJniObject obj);
+		
 		// Constructors
-		ScriptIntrinsicResize() = default;
 		
 		// Methods
 		static QAndroidJniObject create(android::renderscript::RenderScript arg0);

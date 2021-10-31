@@ -13,31 +13,31 @@ namespace android::view::accessibility
 		);
 	}
 	
-	AccessibilityNodeProvider::AccessibilityNodeProvider(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AccessibilityNodeProvider::AccessibilityNodeProvider(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	AccessibilityNodeProvider::AccessibilityNodeProvider()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.accessibility.AccessibilityNodeProvider",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void AccessibilityNodeProvider::addExtraDataToAccessibilityNodeInfo(jint arg0, android::view::accessibility::AccessibilityNodeInfo arg1, jstring arg2, android::os::Bundle arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addExtraDataToAccessibilityNodeInfo",
 			"(ILandroid/view/accessibility/AccessibilityNodeInfo;Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object(),
+			arg1.object(),
 			arg2,
-			arg3.__jniObject().object()
+			arg3.object()
 		);
 	}
 	QAndroidJniObject AccessibilityNodeProvider::createAccessibilityNodeInfo(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"createAccessibilityNodeInfo",
 			"(I)Landroid/view/accessibility/AccessibilityNodeInfo;",
 			arg0
@@ -45,7 +45,7 @@ namespace android::view::accessibility
 	}
 	QAndroidJniObject AccessibilityNodeProvider::findAccessibilityNodeInfosByText(jstring arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"findAccessibilityNodeInfosByText",
 			"(Ljava/lang/String;I)Ljava/util/List;",
 			arg0,
@@ -54,7 +54,7 @@ namespace android::view::accessibility
 	}
 	QAndroidJniObject AccessibilityNodeProvider::findFocus(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"findFocus",
 			"(I)Landroid/view/accessibility/AccessibilityNodeInfo;",
 			arg0
@@ -62,12 +62,12 @@ namespace android::view::accessibility
 	}
 	jboolean AccessibilityNodeProvider::performAction(jint arg0, jint arg1, android::os::Bundle arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"performAction",
 			"(IILandroid/os/Bundle;)Z",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 } // namespace android::view::accessibility

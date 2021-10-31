@@ -18,7 +18,10 @@ namespace java::text
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DateFormatSymbols(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DateFormatSymbols(QAndroidJniObject obj);
+		
 		// Constructors
 		DateFormatSymbols();
 		DateFormatSymbols(java::util::Locale arg0);

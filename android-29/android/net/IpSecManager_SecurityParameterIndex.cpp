@@ -4,27 +4,29 @@ namespace android::net
 {
 	// Fields
 	
-	IpSecManager_SecurityParameterIndex::IpSecManager_SecurityParameterIndex(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	IpSecManager_SecurityParameterIndex::IpSecManager_SecurityParameterIndex(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void IpSecManager_SecurityParameterIndex::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	jint IpSecManager_SecurityParameterIndex::getSpi()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSpi",
 			"()I"
 		);
 	}
 	jstring IpSecManager_SecurityParameterIndex::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

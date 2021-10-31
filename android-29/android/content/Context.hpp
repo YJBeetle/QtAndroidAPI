@@ -212,7 +212,10 @@ namespace android::content
 		static jstring WIFI_SERVICE();
 		static jstring WINDOW_SERVICE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Context(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Context(QAndroidJniObject obj);
+		
 		// Constructors
 		Context();
 		

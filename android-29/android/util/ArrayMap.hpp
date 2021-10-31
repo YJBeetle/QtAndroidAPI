@@ -10,7 +10,10 @@ namespace android::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ArrayMap(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ArrayMap(QAndroidJniObject obj);
+		
 		// Constructors
 		ArrayMap();
 		ArrayMap(android::util::ArrayMap &arg0);

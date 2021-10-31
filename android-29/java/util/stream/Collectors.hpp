@@ -62,9 +62,11 @@ namespace java::util::stream
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Collectors(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Collectors(QAndroidJniObject obj);
+		
 		// Constructors
-		Collectors() = default;
 		
 		// Methods
 		static QAndroidJniObject averagingDouble(__JniBaseClass arg0);

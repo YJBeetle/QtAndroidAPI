@@ -4,16 +4,16 @@ namespace android::media
 {
 	// Fields
 	
-	NotProvisionedException::NotProvisionedException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NotProvisionedException::NotProvisionedException(QAndroidJniObject obj) : android::media::MediaDrmException(obj) {}
+	
 	// Constructors
 	NotProvisionedException::NotProvisionedException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::media::MediaDrmException(
 			"android.media.NotProvisionedException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::media

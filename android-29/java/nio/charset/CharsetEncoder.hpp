@@ -34,9 +34,11 @@ namespace java::nio::charset
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CharsetEncoder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		CharsetEncoder(QAndroidJniObject obj);
+		
 		// Constructors
-		CharsetEncoder() = default;
 		
 		// Methods
 		jfloat averageBytesPerChar();

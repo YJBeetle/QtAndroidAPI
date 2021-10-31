@@ -222,7 +222,9 @@ namespace android::media::effect
 		).object<jstring>();
 	}
 	
-	EffectFactory::EffectFactory(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	EffectFactory::EffectFactory(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -237,7 +239,7 @@ namespace android::media::effect
 	}
 	QAndroidJniObject EffectFactory::createEffect(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"createEffect",
 			"(Ljava/lang/String;)Landroid/media/effect/Effect;",
 			arg0

@@ -4,45 +4,39 @@ namespace java::util
 {
 	// Fields
 	
-	LinkedHashSet::LinkedHashSet(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	LinkedHashSet::LinkedHashSet(QAndroidJniObject obj) : java::util::HashSet(obj) {}
+	
 	// Constructors
 	LinkedHashSet::LinkedHashSet()
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::HashSet(
 			"java.util.LinkedHashSet",
 			"()V"
-		);
-	}
+		) {}
 	LinkedHashSet::LinkedHashSet(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::HashSet(
 			"java.util.LinkedHashSet",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	LinkedHashSet::LinkedHashSet(__JniBaseClass arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::HashSet(
 			"java.util.LinkedHashSet",
 			"(Ljava/util/Collection;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	LinkedHashSet::LinkedHashSet(jint arg0, jfloat arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::HashSet(
 			"java.util.LinkedHashSet",
 			"(IF)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject LinkedHashSet::spliterator()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"spliterator",
 			"()Ljava/util/Spliterator;"
 		);

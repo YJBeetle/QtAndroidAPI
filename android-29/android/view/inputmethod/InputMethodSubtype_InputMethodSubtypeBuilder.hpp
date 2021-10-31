@@ -14,7 +14,10 @@ namespace android::view::inputmethod
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit InputMethodSubtype_InputMethodSubtypeBuilder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		InputMethodSubtype_InputMethodSubtypeBuilder(QAndroidJniObject obj);
+		
 		// Constructors
 		InputMethodSubtype_InputMethodSubtypeBuilder();
 		

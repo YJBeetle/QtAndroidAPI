@@ -12,7 +12,10 @@ namespace android::database
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit StaleDataException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
 		StaleDataException(QAndroidJniObject obj);
+		
 		// Constructors
 		StaleDataException();
 		StaleDataException(jstring arg0);

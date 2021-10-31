@@ -32,9 +32,11 @@ namespace android::provider
 		static jint SMS_PROTO();
 		static jstring TYPE_DISCRIMINATOR_COLUMN();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Telephony_MmsSms(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Telephony_MmsSms(QAndroidJniObject obj);
+		
 		// Constructors
-		Telephony_MmsSms() = default;
 		
 		// Methods
 	};

@@ -31,9 +31,11 @@ namespace android::icu::text
 		static QAndroidJniObject ZONE_ID();
 		static QAndroidJniObject ZONE_ID_SHORT();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TimeZoneFormat_Style(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		TimeZoneFormat_Style(QAndroidJniObject obj);
+		
 		// Constructors
-		TimeZoneFormat_Style() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

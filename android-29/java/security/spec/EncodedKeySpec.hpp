@@ -10,10 +10,12 @@ namespace java::security::spec
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit EncodedKeySpec(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		EncodedKeySpec(QAndroidJniObject obj);
+		
 		// Constructors
 		EncodedKeySpec(jbyteArray arg0);
-		EncodedKeySpec() = default;
 		
 		// Methods
 		jstring getAlgorithm();

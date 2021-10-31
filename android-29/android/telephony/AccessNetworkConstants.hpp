@@ -10,9 +10,11 @@ namespace android::telephony
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AccessNetworkConstants(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AccessNetworkConstants(QAndroidJniObject obj);
+		
 		// Constructors
-		AccessNetworkConstants() = default;
 		
 		// Methods
 	};

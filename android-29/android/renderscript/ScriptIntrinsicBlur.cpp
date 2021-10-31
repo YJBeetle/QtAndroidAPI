@@ -10,7 +10,9 @@ namespace android::renderscript
 {
 	// Fields
 	
-	ScriptIntrinsicBlur::ScriptIntrinsicBlur(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ScriptIntrinsicBlur::ScriptIntrinsicBlur(QAndroidJniObject obj) : android::renderscript::ScriptIntrinsic(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -20,52 +22,52 @@ namespace android::renderscript
 			"android.renderscript.ScriptIntrinsicBlur",
 			"create",
 			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Element;)Landroid/renderscript/ScriptIntrinsicBlur;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void ScriptIntrinsicBlur::forEach(android::renderscript::Allocation arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"forEach",
 			"(Landroid/renderscript/Allocation;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ScriptIntrinsicBlur::forEach(android::renderscript::Allocation arg0, android::renderscript::Script_LaunchOptions arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"forEach",
 			"(Landroid/renderscript/Allocation;Landroid/renderscript/Script$LaunchOptions;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject ScriptIntrinsicBlur::getFieldID_Input()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFieldID_Input",
 			"()Landroid/renderscript/Script$FieldID;"
 		);
 	}
 	QAndroidJniObject ScriptIntrinsicBlur::getKernelID()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getKernelID",
 			"()Landroid/renderscript/Script$KernelID;"
 		);
 	}
 	void ScriptIntrinsicBlur::setInput(android::renderscript::Allocation arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setInput",
 			"(Landroid/renderscript/Allocation;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ScriptIntrinsicBlur::setRadius(jfloat arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setRadius",
 			"(F)V",
 			arg0

@@ -28,7 +28,10 @@ namespace android::graphics::drawable
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit LevelListDrawable(const char *className, const char *sig, Ts...agv) : android::graphics::drawable::DrawableContainer(className, sig, std::forward<Ts>(agv)...) {}
 		LevelListDrawable(QAndroidJniObject obj);
+		
 		// Constructors
 		LevelListDrawable();
 		

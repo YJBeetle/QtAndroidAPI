@@ -23,11 +23,13 @@ namespace java::lang::invoke
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MutableCallSite(const char *className, const char *sig, Ts...agv) : java::lang::invoke::CallSite(className, sig, std::forward<Ts>(agv)...) {}
 		MutableCallSite(QAndroidJniObject obj);
+		
 		// Constructors
 		MutableCallSite(java::lang::invoke::MethodHandle arg0);
 		MutableCallSite(java::lang::invoke::MethodType arg0);
-		MutableCallSite() = default;
 		
 		// Methods
 		static void syncAll(jarray arg0);

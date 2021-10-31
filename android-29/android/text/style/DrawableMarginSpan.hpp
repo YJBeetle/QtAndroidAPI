@@ -30,11 +30,13 @@ namespace android::text::style
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DrawableMarginSpan(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		DrawableMarginSpan(QAndroidJniObject obj);
+		
 		// Constructors
 		DrawableMarginSpan(android::graphics::drawable::Drawable arg0);
 		DrawableMarginSpan(android::graphics::drawable::Drawable arg0, jint arg1);
-		DrawableMarginSpan() = default;
 		
 		// Methods
 		void chooseHeight(jstring arg0, jint arg1, jint arg2, jint arg3, jint arg4, android::graphics::Paint_FontMetricsInt arg5);

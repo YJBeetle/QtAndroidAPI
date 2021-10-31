@@ -15,9 +15,11 @@ namespace android::telecom
 		static jint SESSION_MODIFY_REQUEST_SUCCESS();
 		static jint SESSION_MODIFY_REQUEST_TIMED_OUT();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Connection_RttModifyStatus(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Connection_RttModifyStatus(QAndroidJniObject obj);
+		
 		// Constructors
-		Connection_RttModifyStatus() = default;
 		
 		// Methods
 	};

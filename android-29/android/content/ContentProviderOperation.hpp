@@ -35,9 +35,11 @@ namespace android::content
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ContentProviderOperation(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ContentProviderOperation(QAndroidJniObject obj);
+		
 		// Constructors
-		ContentProviderOperation() = default;
 		
 		// Methods
 		static QAndroidJniObject newAssertQuery(android::net::Uri arg0);

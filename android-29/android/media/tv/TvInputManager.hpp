@@ -48,9 +48,11 @@ namespace android::media::tv
 		static jint VIDEO_UNAVAILABLE_REASON_UNKNOWN();
 		static jint VIDEO_UNAVAILABLE_REASON_WEAK_SIGNAL();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TvInputManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		TvInputManager(QAndroidJniObject obj);
+		
 		// Constructors
-		TvInputManager() = default;
 		
 		// Methods
 		QAndroidJniObject getBlockedRatings();

@@ -22,9 +22,11 @@ namespace java::lang::reflect
 		static jint TRANSIENT();
 		static jint VOLATILE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Modifier(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Modifier(QAndroidJniObject obj);
+		
 		// Constructors
-		Modifier() = default;
 		
 		// Methods
 		static jint classModifiers();

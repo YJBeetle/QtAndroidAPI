@@ -15,10 +15,12 @@ namespace android::graphics
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BlendModeColorFilter(const char *className, const char *sig, Ts...agv) : android::graphics::ColorFilter(className, sig, std::forward<Ts>(agv)...) {}
 		BlendModeColorFilter(QAndroidJniObject obj);
+		
 		// Constructors
 		BlendModeColorFilter(jint arg0, android::graphics::BlendMode arg1);
-		BlendModeColorFilter() = default;
 		
 		// Methods
 		jboolean equals(jobject arg0);

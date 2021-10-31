@@ -22,7 +22,10 @@ namespace android::graphics::drawable::shapes
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Shape(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Shape(QAndroidJniObject obj);
+		
 		// Constructors
 		Shape();
 		

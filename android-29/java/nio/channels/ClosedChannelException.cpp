@@ -4,15 +4,15 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	ClosedChannelException::ClosedChannelException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ClosedChannelException::ClosedChannelException(QAndroidJniObject obj) : java::io::IOException(obj) {}
+	
 	// Constructors
 	ClosedChannelException::ClosedChannelException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::IOException(
 			"java.nio.channels.ClosedChannelException",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::nio::channels

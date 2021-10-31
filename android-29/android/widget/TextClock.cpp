@@ -21,79 +21,73 @@ namespace android::widget
 		).object<jstring>();
 	}
 	
-	TextClock::TextClock(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TextClock::TextClock(QAndroidJniObject obj) : android::widget::TextView(obj) {}
+	
 	// Constructors
 	TextClock::TextClock(android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::TextView(
 			"android.widget.TextClock",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	TextClock::TextClock(android::content::Context arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::TextView(
 			"android.widget.TextClock",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	TextClock::TextClock(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::TextView(
 			"android.widget.TextClock",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
-		);
-	}
+		) {}
 	TextClock::TextClock(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::TextView(
 			"android.widget.TextClock",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	
 	// Methods
 	jstring TextClock::getFormat12Hour()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFormat12Hour",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jstring TextClock::getFormat24Hour()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFormat24Hour",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jstring TextClock::getTimeZone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTimeZone",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jboolean TextClock::is24HourModeEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"is24HourModeEnabled",
 			"()Z"
 		);
 	}
 	void TextClock::onVisibilityAggregated(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onVisibilityAggregated",
 			"(Z)V",
 			arg0
@@ -101,7 +95,7 @@ namespace android::widget
 	}
 	void TextClock::setFormat12Hour(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFormat12Hour",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
@@ -109,7 +103,7 @@ namespace android::widget
 	}
 	void TextClock::setFormat24Hour(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFormat24Hour",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
@@ -117,7 +111,7 @@ namespace android::widget
 	}
 	void TextClock::setTimeZone(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTimeZone",
 			"(Ljava/lang/String;)V",
 			arg0

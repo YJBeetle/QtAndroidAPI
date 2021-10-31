@@ -25,9 +25,11 @@ namespace android::bluetooth::le
 		static jstring EXTRA_ERROR_CODE();
 		static jstring EXTRA_LIST_SCAN_RESULT();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BluetoothLeScanner(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		BluetoothLeScanner(QAndroidJniObject obj);
+		
 		// Constructors
-		BluetoothLeScanner() = default;
 		
 		// Methods
 		void flushPendingScanResults(android::bluetooth::le::ScanCallback arg0);

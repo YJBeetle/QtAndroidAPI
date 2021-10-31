@@ -20,46 +20,44 @@ namespace android::graphics
 		);
 	}
 	
-	PathMeasure::PathMeasure(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PathMeasure::PathMeasure(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	PathMeasure::PathMeasure()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.graphics.PathMeasure",
 			"()V"
-		);
-	}
+		) {}
 	PathMeasure::PathMeasure(android::graphics::Path arg0, jboolean arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.graphics.PathMeasure",
 			"(Landroid/graphics/Path;Z)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jfloat PathMeasure::getLength()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getLength",
 			"()F"
 		);
 	}
 	jboolean PathMeasure::getMatrix(jfloat arg0, android::graphics::Matrix arg1, jint arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getMatrix",
 			"(FLandroid/graphics/Matrix;I)Z",
 			arg0,
-			arg1.__jniObject().object(),
+			arg1.object(),
 			arg2
 		);
 	}
 	jboolean PathMeasure::getPosTan(jfloat arg0, jfloatArray arg1, jfloatArray arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getPosTan",
 			"(F[F[F)Z",
 			arg0,
@@ -69,35 +67,35 @@ namespace android::graphics
 	}
 	jboolean PathMeasure::getSegment(jfloat arg0, jfloat arg1, android::graphics::Path arg2, jboolean arg3)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getSegment",
 			"(FFLandroid/graphics/Path;Z)Z",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
+			arg2.object(),
 			arg3
 		);
 	}
 	jboolean PathMeasure::isClosed()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isClosed",
 			"()Z"
 		);
 	}
 	jboolean PathMeasure::nextContour()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"nextContour",
 			"()Z"
 		);
 	}
 	void PathMeasure::setPath(android::graphics::Path arg0, jboolean arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPath",
 			"(Landroid/graphics/Path;Z)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

@@ -42,9 +42,11 @@ namespace java::time::chrono
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ThaiBuddhistDate(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ThaiBuddhistDate(QAndroidJniObject obj);
+		
 		// Constructors
-		ThaiBuddhistDate() = default;
 		
 		// Methods
 		static QAndroidJniObject from(__JniBaseClass arg0);

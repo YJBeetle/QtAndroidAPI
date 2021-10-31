@@ -24,7 +24,9 @@ namespace java::util::logging
 		).object<jstring>();
 	}
 	
-	LogManager::LogManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	LogManager::LogManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -46,30 +48,30 @@ namespace java::util::logging
 	}
 	QAndroidJniObject LogManager::addConfigurationListener(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"addConfigurationListener",
 			"(Ljava/lang/Runnable;)Ljava/util/logging/LogManager;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean LogManager::addLogger(java::util::logging::Logger arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"addLogger",
 			"(Ljava/util/logging/Logger;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void LogManager::checkAccess()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"checkAccess",
 			"()V"
 		);
 	}
 	QAndroidJniObject LogManager::getLogger(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLogger",
 			"(Ljava/lang/String;)Ljava/util/logging/Logger;",
 			arg0
@@ -77,14 +79,14 @@ namespace java::util::logging
 	}
 	QAndroidJniObject LogManager::getLoggerNames()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLoggerNames",
 			"()Ljava/util/Enumeration;"
 		);
 	}
 	jstring LogManager::getProperty(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getProperty",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
@@ -92,49 +94,49 @@ namespace java::util::logging
 	}
 	void LogManager::readConfiguration()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"readConfiguration",
 			"()V"
 		);
 	}
 	void LogManager::readConfiguration(java::io::InputStream arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"readConfiguration",
 			"(Ljava/io/InputStream;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void LogManager::removeConfigurationListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeConfigurationListener",
 			"(Ljava/lang/Runnable;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void LogManager::reset()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
 	void LogManager::updateConfiguration(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"updateConfiguration",
 			"(Ljava/util/function/Function;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void LogManager::updateConfiguration(java::io::InputStream arg0, __JniBaseClass arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"updateConfiguration",
 			"(Ljava/io/InputStream;Ljava/util/function/Function;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 } // namespace java::util::logging

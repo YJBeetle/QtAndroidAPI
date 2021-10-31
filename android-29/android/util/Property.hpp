@@ -10,10 +10,12 @@ namespace android::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Property(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Property(QAndroidJniObject obj);
+		
 		// Constructors
 		Property(jclass arg0, jstring arg1);
-		Property() = default;
 		
 		// Methods
 		static QAndroidJniObject of(jclass arg0, jclass arg1, jstring arg2);

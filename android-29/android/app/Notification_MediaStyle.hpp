@@ -19,7 +19,10 @@ namespace android::app
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Notification_MediaStyle(const char *className, const char *sig, Ts...agv) : android::app::Notification_Style(className, sig, std::forward<Ts>(agv)...) {}
 		Notification_MediaStyle(QAndroidJniObject obj);
+		
 		// Constructors
 		Notification_MediaStyle();
 		Notification_MediaStyle(android::app::Notification_Builder arg0);

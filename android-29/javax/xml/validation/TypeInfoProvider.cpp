@@ -4,13 +4,15 @@ namespace javax::xml::validation
 {
 	// Fields
 	
-	TypeInfoProvider::TypeInfoProvider(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TypeInfoProvider::TypeInfoProvider(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject TypeInfoProvider::getAttributeTypeInfo(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAttributeTypeInfo",
 			"(I)Lorg/w3c/dom/TypeInfo;",
 			arg0
@@ -18,14 +20,14 @@ namespace javax::xml::validation
 	}
 	QAndroidJniObject TypeInfoProvider::getElementTypeInfo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getElementTypeInfo",
 			"()Lorg/w3c/dom/TypeInfo;"
 		);
 	}
 	jboolean TypeInfoProvider::isIdAttribute(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isIdAttribute",
 			"(I)Z",
 			arg0
@@ -33,7 +35,7 @@ namespace javax::xml::validation
 	}
 	jboolean TypeInfoProvider::isSpecified(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isSpecified",
 			"(I)Z",
 			arg0

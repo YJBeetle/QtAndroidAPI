@@ -23,9 +23,11 @@ namespace android::os
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SharedMemory(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SharedMemory(QAndroidJniObject obj);
+		
 		// Constructors
-		SharedMemory() = default;
 		
 		// Methods
 		static QAndroidJniObject create(jstring arg0, jint arg1);

@@ -19,7 +19,10 @@ namespace android::icu::text
 		// Fields
 		static QAndroidJniObject LATIN();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit NumberingSystem(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		NumberingSystem(QAndroidJniObject obj);
+		
 		// Constructors
 		NumberingSystem();
 		

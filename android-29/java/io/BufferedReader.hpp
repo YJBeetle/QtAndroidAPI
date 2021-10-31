@@ -15,11 +15,13 @@ namespace java::io
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BufferedReader(const char *className, const char *sig, Ts...agv) : java::io::Reader(className, sig, std::forward<Ts>(agv)...) {}
 		BufferedReader(QAndroidJniObject obj);
+		
 		// Constructors
 		BufferedReader(java::io::Reader arg0);
 		BufferedReader(java::io::Reader arg0, jint arg1);
-		BufferedReader() = default;
 		
 		// Methods
 		void close();

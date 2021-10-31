@@ -18,7 +18,10 @@ namespace android::text
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BidiFormatter_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		BidiFormatter_Builder(QAndroidJniObject obj);
+		
 		// Constructors
 		BidiFormatter_Builder();
 		BidiFormatter_Builder(jboolean arg0);

@@ -4,15 +4,15 @@ namespace java::util
 {
 	// Fields
 	
-	FormatterClosedException::FormatterClosedException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FormatterClosedException::FormatterClosedException(QAndroidJniObject obj) : java::lang::IllegalStateException(obj) {}
+	
 	// Constructors
 	FormatterClosedException::FormatterClosedException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::IllegalStateException(
 			"java.util.FormatterClosedException",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::util

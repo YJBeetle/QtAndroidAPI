@@ -31,46 +31,40 @@ namespace javax::security::auth::x500
 		).object<jstring>();
 	}
 	
-	X500Principal::X500Principal(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	X500Principal::X500Principal(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	X500Principal::X500Principal(jbyteArray arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"javax.security.auth.x500.X500Principal",
 			"([B)V",
 			arg0
-		);
-	}
+		) {}
 	X500Principal::X500Principal(java::io::InputStream arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"javax.security.auth.x500.X500Principal",
 			"(Ljava/io/InputStream;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	X500Principal::X500Principal(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"javax.security.auth.x500.X500Principal",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	X500Principal::X500Principal(jstring arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"javax.security.auth.x500.X500Principal",
 			"(Ljava/lang/String;Ljava/util/Map;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
+			arg1.object()
+		) {}
 	
 	// Methods
 	jboolean X500Principal::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -78,21 +72,21 @@ namespace javax::security::auth::x500
 	}
 	jbyteArray X500Principal::getEncoded()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEncoded",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jstring X500Principal::getName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring X500Principal::getName(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getName",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
@@ -100,23 +94,23 @@ namespace javax::security::auth::x500
 	}
 	jstring X500Principal::getName(jstring arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getName",
 			"(Ljava/lang/String;Ljava/util/Map;)Ljava/lang/String;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		).object<jstring>();
 	}
 	jint X500Principal::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring X500Principal::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

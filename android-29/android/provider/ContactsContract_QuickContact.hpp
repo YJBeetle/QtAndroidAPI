@@ -33,7 +33,10 @@ namespace android::provider
 		static jint MODE_MEDIUM();
 		static jint MODE_SMALL();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ContactsContract_QuickContact(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ContactsContract_QuickContact(QAndroidJniObject obj);
+		
 		// Constructors
 		ContactsContract_QuickContact();
 		

@@ -23,7 +23,9 @@ namespace android::net
 		);
 	}
 	
-	Uri::Uri(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Uri::Uri(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -61,7 +63,7 @@ namespace android::net
 			"android.net.Uri",
 			"fromFile",
 			"(Ljava/io/File;)Landroid/net/Uri;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Uri::fromParts(jstring arg0, jstring arg1, jstring arg2)
@@ -90,7 +92,7 @@ namespace android::net
 			"android.net.Uri",
 			"withAppendedPath",
 			"(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -100,28 +102,28 @@ namespace android::net
 			"android.net.Uri",
 			"writeToParcel",
 			"(Landroid/os/Parcel;Landroid/net/Uri;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject Uri::buildUpon()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"buildUpon",
 			"()Landroid/net/Uri$Builder;"
 		);
 	}
 	jint Uri::compareTo(android::net::Uri arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Landroid/net/Uri;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint Uri::compareTo(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -129,7 +131,7 @@ namespace android::net
 	}
 	jboolean Uri::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -137,14 +139,14 @@ namespace android::net
 	}
 	jstring Uri::getAuthority()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAuthority",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jboolean Uri::getBooleanQueryParameter(jstring arg0, jboolean arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getBooleanQueryParameter",
 			"(Ljava/lang/String;Z)Z",
 			arg0,
@@ -153,98 +155,98 @@ namespace android::net
 	}
 	jstring Uri::getEncodedAuthority()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEncodedAuthority",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Uri::getEncodedFragment()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEncodedFragment",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Uri::getEncodedPath()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEncodedPath",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Uri::getEncodedQuery()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEncodedQuery",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Uri::getEncodedSchemeSpecificPart()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEncodedSchemeSpecificPart",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Uri::getEncodedUserInfo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEncodedUserInfo",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Uri::getFragment()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFragment",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Uri::getHost()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getHost",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Uri::getLastPathSegment()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLastPathSegment",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Uri::getPath()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPath",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject Uri::getPathSegments()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPathSegments",
 			"()Ljava/util/List;"
 		);
 	}
 	jint Uri::getPort()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPort",
 			"()I"
 		);
 	}
 	jstring Uri::getQuery()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getQuery",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Uri::getQueryParameter(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getQueryParameter",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
@@ -252,14 +254,14 @@ namespace android::net
 	}
 	QAndroidJniObject Uri::getQueryParameterNames()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getQueryParameterNames",
 			"()Ljava/util/Set;"
 		);
 	}
 	QAndroidJniObject Uri::getQueryParameters(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getQueryParameters",
 			"(Ljava/lang/String;)Ljava/util/List;",
 			arg0
@@ -267,70 +269,70 @@ namespace android::net
 	}
 	jstring Uri::getScheme()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getScheme",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Uri::getSchemeSpecificPart()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSchemeSpecificPart",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Uri::getUserInfo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getUserInfo",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint Uri::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean Uri::isAbsolute()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isAbsolute",
 			"()Z"
 		);
 	}
 	jboolean Uri::isHierarchical()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isHierarchical",
 			"()Z"
 		);
 	}
 	jboolean Uri::isOpaque()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isOpaque",
 			"()Z"
 		);
 	}
 	jboolean Uri::isRelative()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isRelative",
 			"()Z"
 		);
 	}
 	QAndroidJniObject Uri::normalizeScheme()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"normalizeScheme",
 			"()Landroid/net/Uri;"
 		);
 	}
 	jstring Uri::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

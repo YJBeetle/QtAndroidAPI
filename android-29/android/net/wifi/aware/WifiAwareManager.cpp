@@ -30,39 +30,41 @@ namespace android::net::wifi::aware
 		);
 	}
 	
-	WifiAwareManager::WifiAwareManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WifiAwareManager::WifiAwareManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void WifiAwareManager::attach(android::net::wifi::aware::AttachCallback arg0, android::os::Handler arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"attach",
 			"(Landroid/net/wifi/aware/AttachCallback;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void WifiAwareManager::attach(android::net::wifi::aware::AttachCallback arg0, android::net::wifi::aware::IdentityChangedListener arg1, android::os::Handler arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"attach",
 			"(Landroid/net/wifi/aware/AttachCallback;Landroid/net/wifi/aware/IdentityChangedListener;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject WifiAwareManager::getCharacteristics()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCharacteristics",
 			"()Landroid/net/wifi/aware/Characteristics;"
 		);
 	}
 	jboolean WifiAwareManager::isAvailable()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isAvailable",
 			"()Z"
 		);

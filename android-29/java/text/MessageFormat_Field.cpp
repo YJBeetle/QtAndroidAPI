@@ -12,7 +12,9 @@ namespace java::text
 		);
 	}
 	
-	MessageFormat_Field::MessageFormat_Field(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MessageFormat_Field::MessageFormat_Field(QAndroidJniObject obj) : java::text::Format_Field(obj) {}
+	
 	// Constructors
 	
 	// Methods

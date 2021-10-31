@@ -18,9 +18,11 @@ namespace android::media
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit JetPlayer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		JetPlayer(QAndroidJniObject obj);
+		
 		// Constructors
-		JetPlayer() = default;
 		
 		// Methods
 		static QAndroidJniObject getJetPlayer();

@@ -14,9 +14,11 @@ namespace android::content::res
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ObbScanner(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ObbScanner(QAndroidJniObject obj);
+		
 		// Constructors
-		ObbScanner() = default;
 		
 		// Methods
 		static QAndroidJniObject getObbInfo(jstring arg0);

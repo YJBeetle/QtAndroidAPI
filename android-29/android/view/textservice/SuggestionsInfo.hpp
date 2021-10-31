@@ -18,12 +18,14 @@ namespace android::view::textservice
 		static jint RESULT_ATTR_IN_THE_DICTIONARY();
 		static jint RESULT_ATTR_LOOKS_LIKE_TYPO();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SuggestionsInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SuggestionsInfo(QAndroidJniObject obj);
+		
 		// Constructors
 		SuggestionsInfo(android::os::Parcel arg0);
 		SuggestionsInfo(jint arg0, jarray arg1);
 		SuggestionsInfo(jint arg0, jarray arg1, jint arg2, jint arg3);
-		SuggestionsInfo() = default;
 		
 		// Methods
 		jint describeContents();

@@ -36,13 +36,15 @@ namespace android::widget
 		static jint PACKED_POSITION_TYPE_NULL();
 		static jlong PACKED_POSITION_VALUE_NULL();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ExpandableListView(const char *className, const char *sig, Ts...agv) : android::widget::ListView(className, sig, std::forward<Ts>(agv)...) {}
 		ExpandableListView(QAndroidJniObject obj);
+		
 		// Constructors
 		ExpandableListView(android::content::Context arg0);
 		ExpandableListView(android::content::Context arg0, __JniBaseClass arg1);
 		ExpandableListView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		ExpandableListView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
-		ExpandableListView() = default;
 		
 		// Methods
 		static jint getPackedPositionChild(jlong arg0);

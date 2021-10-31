@@ -32,9 +32,11 @@ namespace android::icu::util
 		static jint UNIX_TIME();
 		static jint WINDOWS_FILE_TIME();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit UniversalTimeScale(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		UniversalTimeScale(QAndroidJniObject obj);
+		
 		// Constructors
-		UniversalTimeScale() = default;
 		
 		// Methods
 		static QAndroidJniObject bigDecimalFrom(android::icu::math::BigDecimal arg0, jint arg1);

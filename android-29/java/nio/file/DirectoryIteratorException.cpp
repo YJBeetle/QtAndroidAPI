@@ -6,21 +6,21 @@ namespace java::nio::file
 {
 	// Fields
 	
-	DirectoryIteratorException::DirectoryIteratorException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DirectoryIteratorException::DirectoryIteratorException(QAndroidJniObject obj) : java::util::ConcurrentModificationException(obj) {}
+	
 	// Constructors
 	DirectoryIteratorException::DirectoryIteratorException(java::io::IOException arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::ConcurrentModificationException(
 			"java.nio.file.DirectoryIteratorException",
 			"(Ljava/io/IOException;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject DirectoryIteratorException::getCause()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCause",
 			"()Ljava/io/IOException;"
 		);

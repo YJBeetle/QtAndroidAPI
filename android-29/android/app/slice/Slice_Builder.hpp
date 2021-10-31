@@ -38,11 +38,13 @@ namespace android::app::slice
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Slice_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Slice_Builder(QAndroidJniObject obj);
+		
 		// Constructors
 		Slice_Builder(android::app::slice::Slice_Builder &arg0);
 		Slice_Builder(android::net::Uri arg0, android::app::slice::SliceSpec arg1);
-		Slice_Builder() = default;
 		
 		// Methods
 		QAndroidJniObject addAction(android::app::PendingIntent arg0, android::app::slice::Slice arg1, jstring arg2);

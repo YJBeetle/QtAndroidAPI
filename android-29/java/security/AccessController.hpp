@@ -30,9 +30,11 @@ namespace java::security
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AccessController(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AccessController(QAndroidJniObject obj);
+		
 		// Constructors
-		AccessController() = default;
 		
 		// Methods
 		static void checkPermission(java::security::Permission arg0);

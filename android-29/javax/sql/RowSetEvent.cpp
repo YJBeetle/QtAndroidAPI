@@ -4,16 +4,16 @@ namespace javax::sql
 {
 	// Fields
 	
-	RowSetEvent::RowSetEvent(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	RowSetEvent::RowSetEvent(QAndroidJniObject obj) : java::util::EventObject(obj) {}
+	
 	// Constructors
 	RowSetEvent::RowSetEvent(__JniBaseClass arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::EventObject(
 			"javax.sql.RowSetEvent",
 			"(Ljavax/sql/RowSet;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 } // namespace javax::sql

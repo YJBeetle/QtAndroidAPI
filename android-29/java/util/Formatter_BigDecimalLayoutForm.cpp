@@ -20,7 +20,9 @@ namespace java::util
 		);
 	}
 	
-	Formatter_BigDecimalLayoutForm::Formatter_BigDecimalLayoutForm(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Formatter_BigDecimalLayoutForm::Formatter_BigDecimalLayoutForm(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

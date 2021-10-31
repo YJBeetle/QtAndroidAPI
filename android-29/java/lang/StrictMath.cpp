@@ -18,7 +18,9 @@ namespace java::lang
 		);
 	}
 	
-	StrictMath::StrictMath(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	StrictMath::StrictMath(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

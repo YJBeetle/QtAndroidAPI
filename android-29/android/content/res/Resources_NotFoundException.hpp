@@ -16,7 +16,10 @@ namespace android::content::res
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Resources_NotFoundException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
 		Resources_NotFoundException(QAndroidJniObject obj);
+		
 		// Constructors
 		Resources_NotFoundException();
 		Resources_NotFoundException(jstring arg0);

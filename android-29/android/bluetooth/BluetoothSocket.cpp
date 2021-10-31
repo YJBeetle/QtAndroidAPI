@@ -28,69 +28,71 @@ namespace android::bluetooth
 		);
 	}
 	
-	BluetoothSocket::BluetoothSocket(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BluetoothSocket::BluetoothSocket(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void BluetoothSocket::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	void BluetoothSocket::connect()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"connect",
 			"()V"
 		);
 	}
 	jint BluetoothSocket::getConnectionType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getConnectionType",
 			"()I"
 		);
 	}
 	QAndroidJniObject BluetoothSocket::getInputStream()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getInputStream",
 			"()Ljava/io/InputStream;"
 		);
 	}
 	jint BluetoothSocket::getMaxReceivePacketSize()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMaxReceivePacketSize",
 			"()I"
 		);
 	}
 	jint BluetoothSocket::getMaxTransmitPacketSize()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMaxTransmitPacketSize",
 			"()I"
 		);
 	}
 	QAndroidJniObject BluetoothSocket::getOutputStream()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getOutputStream",
 			"()Ljava/io/OutputStream;"
 		);
 	}
 	QAndroidJniObject BluetoothSocket::getRemoteDevice()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRemoteDevice",
 			"()Landroid/bluetooth/BluetoothDevice;"
 		);
 	}
 	jboolean BluetoothSocket::isConnected()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isConnected",
 			"()Z"
 		);

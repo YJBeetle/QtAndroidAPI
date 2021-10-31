@@ -11,7 +11,9 @@ namespace java::time
 {
 	// Fields
 	
-	MonthDay::MonthDay(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MonthDay::MonthDay(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -21,7 +23,7 @@ namespace java::time
 			"java.time.MonthDay",
 			"from",
 			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/MonthDay;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject MonthDay::now()
@@ -38,7 +40,7 @@ namespace java::time
 			"java.time.MonthDay",
 			"now",
 			"(Ljava/time/Clock;)Ljava/time/MonthDay;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject MonthDay::now(java::time::ZoneId arg0)
@@ -47,7 +49,7 @@ namespace java::time
 			"java.time.MonthDay",
 			"now",
 			"(Ljava/time/ZoneId;)Ljava/time/MonthDay;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject MonthDay::of(jint arg0, jint arg1)
@@ -66,7 +68,7 @@ namespace java::time
 			"java.time.MonthDay",
 			"of",
 			"(Ljava/time/Month;I)Ljava/time/MonthDay;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -86,20 +88,20 @@ namespace java::time
 			"parse",
 			"(Ljava/lang/CharSequence;Ljava/time/format/DateTimeFormatter;)Ljava/time/MonthDay;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject MonthDay::adjustInto(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"adjustInto",
 			"(Ljava/time/temporal/Temporal;)Ljava/time/temporal/Temporal;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject MonthDay::atYear(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"atYear",
 			"(I)Ljava/time/LocalDate;",
 			arg0
@@ -107,7 +109,7 @@ namespace java::time
 	}
 	jint MonthDay::compareTo(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -115,15 +117,15 @@ namespace java::time
 	}
 	jint MonthDay::compareTo(java::time::MonthDay arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/time/MonthDay;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean MonthDay::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -131,83 +133,83 @@ namespace java::time
 	}
 	jstring MonthDay::format(java::time::format::DateTimeFormatter arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"format",
 			"(Ljava/time/format/DateTimeFormatter;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jint MonthDay::get(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"get",
 			"(Ljava/time/temporal/TemporalField;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint MonthDay::getDayOfMonth()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDayOfMonth",
 			"()I"
 		);
 	}
 	jlong MonthDay::getLong(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getLong",
 			"(Ljava/time/temporal/TemporalField;)J",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject MonthDay::getMonth()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMonth",
 			"()Ljava/time/Month;"
 		);
 	}
 	jint MonthDay::getMonthValue()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMonthValue",
 			"()I"
 		);
 	}
 	jint MonthDay::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean MonthDay::isAfter(java::time::MonthDay arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isAfter",
 			"(Ljava/time/MonthDay;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean MonthDay::isBefore(java::time::MonthDay arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isBefore",
 			"(Ljava/time/MonthDay;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean MonthDay::isSupported(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isSupported",
 			"(Ljava/time/temporal/TemporalField;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean MonthDay::isValidYear(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isValidYear",
 			"(I)Z",
 			arg0
@@ -215,38 +217,38 @@ namespace java::time
 	}
 	jobject MonthDay::query(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"query",
 			"(Ljava/time/temporal/TemporalQuery;)Ljava/lang/Object;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jobject>();
 	}
 	QAndroidJniObject MonthDay::range(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"range",
 			"(Ljava/time/temporal/TemporalField;)Ljava/time/temporal/ValueRange;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring MonthDay::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject MonthDay::with(java::time::Month arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"with",
 			"(Ljava/time/Month;)Ljava/time/MonthDay;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject MonthDay::withDayOfMonth(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withDayOfMonth",
 			"(I)Ljava/time/MonthDay;",
 			arg0
@@ -254,7 +256,7 @@ namespace java::time
 	}
 	QAndroidJniObject MonthDay::withMonth(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"withMonth",
 			"(I)Ljava/time/MonthDay;",
 			arg0

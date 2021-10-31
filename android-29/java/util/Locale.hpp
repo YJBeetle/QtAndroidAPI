@@ -54,12 +54,14 @@ namespace java::util
 		static jchar UNICODE_LOCALE_EXTENSION();
 		static QAndroidJniObject US();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Locale(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Locale(QAndroidJniObject obj);
+		
 		// Constructors
 		Locale(jstring arg0);
 		Locale(jstring arg0, jstring arg1);
 		Locale(jstring arg0, jstring arg1, jstring arg2);
-		Locale() = default;
 		
 		// Methods
 		static QAndroidJniObject filter(__JniBaseClass arg0, __JniBaseClass arg1);

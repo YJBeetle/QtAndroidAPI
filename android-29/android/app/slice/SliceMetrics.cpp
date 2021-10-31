@@ -6,38 +6,38 @@ namespace android::app::slice
 {
 	// Fields
 	
-	SliceMetrics::SliceMetrics(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SliceMetrics::SliceMetrics(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	SliceMetrics::SliceMetrics(android::content::Context arg0, android::net::Uri arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.app.slice.SliceMetrics",
 			"(Landroid/content/Context;Landroid/net/Uri;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	
 	// Methods
 	void SliceMetrics::logHidden()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"logHidden",
 			"()V"
 		);
 	}
 	void SliceMetrics::logTouch(jint arg0, android::net::Uri arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"logTouch",
 			"(ILandroid/net/Uri;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void SliceMetrics::logVisible()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"logVisible",
 			"()V"
 		);

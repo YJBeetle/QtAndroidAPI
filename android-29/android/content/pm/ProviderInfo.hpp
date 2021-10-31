@@ -29,7 +29,10 @@ namespace android::content::pm
 		jarray uriPermissionPatterns();
 		jstring writePermission();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ProviderInfo(const char *className, const char *sig, Ts...agv) : android::content::pm::ComponentInfo(className, sig, std::forward<Ts>(agv)...) {}
 		ProviderInfo(QAndroidJniObject obj);
+		
 		// Constructors
 		ProviderInfo();
 		ProviderInfo(android::content::pm::ProviderInfo &arg0);

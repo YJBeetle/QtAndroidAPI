@@ -5,50 +5,48 @@ namespace java::io
 {
 	// Fields
 	
-	PipedOutputStream::PipedOutputStream(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PipedOutputStream::PipedOutputStream(QAndroidJniObject obj) : java::io::OutputStream(obj) {}
+	
 	// Constructors
 	PipedOutputStream::PipedOutputStream()
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::OutputStream(
 			"java.io.PipedOutputStream",
 			"()V"
-		);
-	}
+		) {}
 	PipedOutputStream::PipedOutputStream(java::io::PipedInputStream arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::io::OutputStream(
 			"java.io.PipedOutputStream",
 			"(Ljava/io/PipedInputStream;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	void PipedOutputStream::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	void PipedOutputStream::connect(java::io::PipedInputStream arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"connect",
 			"(Ljava/io/PipedInputStream;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void PipedOutputStream::flush()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"flush",
 			"()V"
 		);
 	}
 	void PipedOutputStream::write(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"write",
 			"(I)V",
 			arg0
@@ -56,7 +54,7 @@ namespace java::io
 	}
 	void PipedOutputStream::write(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"write",
 			"([BII)V",
 			arg0,

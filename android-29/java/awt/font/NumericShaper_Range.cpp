@@ -300,7 +300,9 @@ namespace java::awt::font
 		);
 	}
 	
-	NumericShaper_Range::NumericShaper_Range(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	NumericShaper_Range::NumericShaper_Range(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

@@ -40,7 +40,10 @@ namespace java::io
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PrintStream(const char *className, const char *sig, Ts...agv) : java::io::FilterOutputStream(className, sig, std::forward<Ts>(agv)...) {}
 		PrintStream(QAndroidJniObject obj);
+		
 		// Constructors
 		PrintStream(java::io::File arg0);
 		PrintStream(java::io::OutputStream arg0);
@@ -52,7 +55,6 @@ namespace java::io
 		PrintStream(jstring arg0, java::nio::charset::Charset arg1);
 		PrintStream(java::io::OutputStream arg0, jboolean arg1, jstring arg2);
 		PrintStream(java::io::OutputStream arg0, jboolean arg1, java::nio::charset::Charset arg2);
-		PrintStream() = default;
 		
 		// Methods
 		QAndroidJniObject append(jchar arg0);

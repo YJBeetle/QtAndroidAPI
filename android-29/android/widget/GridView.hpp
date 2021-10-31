@@ -47,13 +47,15 @@ namespace android::widget
 		static jint STRETCH_SPACING();
 		static jint STRETCH_SPACING_UNIFORM();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit GridView(const char *className, const char *sig, Ts...agv) : android::widget::AbsListView(className, sig, std::forward<Ts>(agv)...) {}
 		GridView(QAndroidJniObject obj);
+		
 		// Constructors
 		GridView(android::content::Context arg0);
 		GridView(android::content::Context arg0, __JniBaseClass arg1);
 		GridView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		GridView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
-		GridView() = default;
 		
 		// Methods
 		jstring getAccessibilityClassName();

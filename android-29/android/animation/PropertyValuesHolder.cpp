@@ -7,7 +7,9 @@ namespace android::animation
 {
 	// Fields
 	
-	PropertyValuesHolder::PropertyValuesHolder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PropertyValuesHolder::PropertyValuesHolder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -17,7 +19,7 @@ namespace android::animation
 			"android.animation.PropertyValuesHolder",
 			"ofFloat",
 			"(Landroid/util/Property;[F)Landroid/animation/PropertyValuesHolder;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -37,7 +39,7 @@ namespace android::animation
 			"android.animation.PropertyValuesHolder",
 			"ofInt",
 			"(Landroid/util/Property;[I)Landroid/animation/PropertyValuesHolder;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -57,7 +59,7 @@ namespace android::animation
 			"android.animation.PropertyValuesHolder",
 			"ofKeyframe",
 			"(Landroid/util/Property;[Landroid/animation/Keyframe;)Landroid/animation/PropertyValuesHolder;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -88,7 +90,7 @@ namespace android::animation
 			"ofMultiFloat",
 			"(Ljava/lang/String;Landroid/graphics/Path;)Landroid/animation/PropertyValuesHolder;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject PropertyValuesHolder::ofMultiFloat(jstring arg0, android::animation::TypeConverter arg1, __JniBaseClass arg2, jarray arg3)
@@ -98,8 +100,8 @@ namespace android::animation
 			"ofMultiFloat",
 			"(Ljava/lang/String;Landroid/animation/TypeConverter;Landroid/animation/TypeEvaluator;[Landroid/animation/Keyframe;)Landroid/animation/PropertyValuesHolder;",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
+			arg1.object(),
+			arg2.object(),
 			arg3
 		);
 	}
@@ -110,8 +112,8 @@ namespace android::animation
 			"ofMultiFloat",
 			"(Ljava/lang/String;Landroid/animation/TypeConverter;Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/PropertyValuesHolder;",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
+			arg1.object(),
+			arg2.object(),
 			arg3
 		);
 	}
@@ -132,7 +134,7 @@ namespace android::animation
 			"ofMultiInt",
 			"(Ljava/lang/String;Landroid/graphics/Path;)Landroid/animation/PropertyValuesHolder;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject PropertyValuesHolder::ofMultiInt(jstring arg0, android::animation::TypeConverter arg1, __JniBaseClass arg2, jarray arg3)
@@ -142,8 +144,8 @@ namespace android::animation
 			"ofMultiInt",
 			"(Ljava/lang/String;Landroid/animation/TypeConverter;Landroid/animation/TypeEvaluator;[Landroid/animation/Keyframe;)Landroid/animation/PropertyValuesHolder;",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
+			arg1.object(),
+			arg2.object(),
 			arg3
 		);
 	}
@@ -154,8 +156,8 @@ namespace android::animation
 			"ofMultiInt",
 			"(Ljava/lang/String;Landroid/animation/TypeConverter;Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/PropertyValuesHolder;",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
+			arg1.object(),
+			arg2.object(),
 			arg3
 		);
 	}
@@ -165,9 +167,9 @@ namespace android::animation
 			"android.animation.PropertyValuesHolder",
 			"ofObject",
 			"(Landroid/util/Property;Landroid/animation/TypeConverter;Landroid/graphics/Path;)Landroid/animation/PropertyValuesHolder;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject PropertyValuesHolder::ofObject(android::util::Property arg0, __JniBaseClass arg1, jobjectArray arg2)
@@ -176,8 +178,8 @@ namespace android::animation
 			"android.animation.PropertyValuesHolder",
 			"ofObject",
 			"(Landroid/util/Property;Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/PropertyValuesHolder;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
@@ -188,8 +190,8 @@ namespace android::animation
 			"ofObject",
 			"(Ljava/lang/String;Landroid/animation/TypeConverter;Landroid/graphics/Path;)Landroid/animation/PropertyValuesHolder;",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject PropertyValuesHolder::ofObject(jstring arg0, __JniBaseClass arg1, jobjectArray arg2)
@@ -199,7 +201,7 @@ namespace android::animation
 			"ofObject",
 			"(Ljava/lang/String;Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/PropertyValuesHolder;",
 			arg0,
-			arg1.__jniObject().object(),
+			arg1.object(),
 			arg2
 		);
 	}
@@ -209,45 +211,45 @@ namespace android::animation
 			"android.animation.PropertyValuesHolder",
 			"ofObject",
 			"(Landroid/util/Property;Landroid/animation/TypeConverter;Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/PropertyValuesHolder;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
 			arg3
 		);
 	}
 	QAndroidJniObject PropertyValuesHolder::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Landroid/animation/PropertyValuesHolder;"
 		);
 	}
 	jstring PropertyValuesHolder::getPropertyName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPropertyName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void PropertyValuesHolder::setConverter(android::animation::TypeConverter arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setConverter",
 			"(Landroid/animation/TypeConverter;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void PropertyValuesHolder::setEvaluator(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setEvaluator",
 			"(Landroid/animation/TypeEvaluator;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void PropertyValuesHolder::setFloatValues(jfloatArray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFloatValues",
 			"([F)V",
 			arg0
@@ -255,7 +257,7 @@ namespace android::animation
 	}
 	void PropertyValuesHolder::setIntValues(jintArray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setIntValues",
 			"([I)V",
 			arg0
@@ -263,7 +265,7 @@ namespace android::animation
 	}
 	void PropertyValuesHolder::setKeyframes(jarray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setKeyframes",
 			"([Landroid/animation/Keyframe;)V",
 			arg0
@@ -271,7 +273,7 @@ namespace android::animation
 	}
 	void PropertyValuesHolder::setObjectValues(jobjectArray arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setObjectValues",
 			"([Ljava/lang/Object;)V",
 			arg0
@@ -279,15 +281,15 @@ namespace android::animation
 	}
 	void PropertyValuesHolder::setProperty(android::util::Property arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setProperty",
 			"(Landroid/util/Property;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void PropertyValuesHolder::setPropertyName(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPropertyName",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -295,7 +297,7 @@ namespace android::animation
 	}
 	jstring PropertyValuesHolder::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

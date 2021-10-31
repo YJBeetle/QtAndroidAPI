@@ -55,39 +55,41 @@ namespace android::hardware
 	}
 	jfloatArray SensorAdditionalInfo::floatValues()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"floatValues",
 			"[F"
 		).object<jfloatArray>();
 	}
 	jintArray SensorAdditionalInfo::intValues()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"intValues",
 			"[I"
 		).object<jintArray>();
 	}
 	QAndroidJniObject SensorAdditionalInfo::sensor()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"sensor",
 			"Landroid/hardware/Sensor;"
 		);
 	}
 	jint SensorAdditionalInfo::serial()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"serial"
 		);
 	}
 	jint SensorAdditionalInfo::type()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"type"
 		);
 	}
 	
-	SensorAdditionalInfo::SensorAdditionalInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SensorAdditionalInfo::SensorAdditionalInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

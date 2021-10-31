@@ -53,15 +53,15 @@ namespace android
 		);
 	}
 	
-	R_dimen::R_dimen(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	R_dimen::R_dimen(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	R_dimen::R_dimen()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.R$dimen",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android

@@ -52,20 +52,22 @@ namespace android::hardware::camera2
 		);
 	}
 	
-	CameraDevice::CameraDevice(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CameraDevice::CameraDevice(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void CameraDevice::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	QAndroidJniObject CameraDevice::createCaptureRequest(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"createCaptureRequest",
 			"(I)Landroid/hardware/camera2/CaptureRequest$Builder;",
 			arg0
@@ -73,94 +75,94 @@ namespace android::hardware::camera2
 	}
 	QAndroidJniObject CameraDevice::createCaptureRequest(jint arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"createCaptureRequest",
 			"(ILjava/util/Set;)Landroid/hardware/camera2/CaptureRequest$Builder;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void CameraDevice::createCaptureSession(android::hardware::camera2::params::SessionConfiguration arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"createCaptureSession",
 			"(Landroid/hardware/camera2/params/SessionConfiguration;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void CameraDevice::createCaptureSession(__JniBaseClass arg0, android::hardware::camera2::CameraCaptureSession_StateCallback arg1, android::os::Handler arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"createCaptureSession",
 			"(Ljava/util/List;Landroid/hardware/camera2/CameraCaptureSession$StateCallback;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	void CameraDevice::createCaptureSessionByOutputConfigurations(__JniBaseClass arg0, android::hardware::camera2::CameraCaptureSession_StateCallback arg1, android::os::Handler arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"createCaptureSessionByOutputConfigurations",
 			"(Ljava/util/List;Landroid/hardware/camera2/CameraCaptureSession$StateCallback;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	void CameraDevice::createConstrainedHighSpeedCaptureSession(__JniBaseClass arg0, android::hardware::camera2::CameraCaptureSession_StateCallback arg1, android::os::Handler arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"createConstrainedHighSpeedCaptureSession",
 			"(Ljava/util/List;Landroid/hardware/camera2/CameraCaptureSession$StateCallback;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject CameraDevice::createReprocessCaptureRequest(android::hardware::camera2::TotalCaptureResult arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"createReprocessCaptureRequest",
 			"(Landroid/hardware/camera2/TotalCaptureResult;)Landroid/hardware/camera2/CaptureRequest$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void CameraDevice::createReprocessableCaptureSession(android::hardware::camera2::params::InputConfiguration arg0, __JniBaseClass arg1, android::hardware::camera2::CameraCaptureSession_StateCallback arg2, android::os::Handler arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"createReprocessableCaptureSession",
 			"(Landroid/hardware/camera2/params/InputConfiguration;Ljava/util/List;Landroid/hardware/camera2/CameraCaptureSession$StateCallback;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
 		);
 	}
 	void CameraDevice::createReprocessableCaptureSessionByConfigurations(android::hardware::camera2::params::InputConfiguration arg0, __JniBaseClass arg1, android::hardware::camera2::CameraCaptureSession_StateCallback arg2, android::os::Handler arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"createReprocessableCaptureSessionByConfigurations",
 			"(Landroid/hardware/camera2/params/InputConfiguration;Ljava/util/List;Landroid/hardware/camera2/CameraCaptureSession$StateCallback;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
 		);
 	}
 	jstring CameraDevice::getId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jboolean CameraDevice::isSessionConfigurationSupported(android::hardware::camera2::params::SessionConfiguration arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isSessionConfigurationSupported",
 			"(Landroid/hardware/camera2/params/SessionConfiguration;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::hardware::camera2

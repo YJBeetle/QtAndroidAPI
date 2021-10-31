@@ -13,37 +13,35 @@ namespace java::util::zip
 		);
 	}
 	
-	GZIPInputStream::GZIPInputStream(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	GZIPInputStream::GZIPInputStream(QAndroidJniObject obj) : java::util::zip::InflaterInputStream(obj) {}
+	
 	// Constructors
 	GZIPInputStream::GZIPInputStream(java::io::InputStream arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::zip::InflaterInputStream(
 			"java.util.zip.GZIPInputStream",
 			"(Ljava/io/InputStream;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	GZIPInputStream::GZIPInputStream(java::io::InputStream arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::zip::InflaterInputStream(
 			"java.util.zip.GZIPInputStream",
 			"(Ljava/io/InputStream;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	void GZIPInputStream::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	jint GZIPInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"read",
 			"([BII)I",
 			arg0,

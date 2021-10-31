@@ -12,7 +12,10 @@ namespace android::text::style
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TtsSpan_FractionBuilder(const char *className, const char *sig, Ts...agv) : android::text::style::TtsSpan_SemioticClassBuilder(className, sig, std::forward<Ts>(agv)...) {}
 		TtsSpan_FractionBuilder(QAndroidJniObject obj);
+		
 		// Constructors
 		TtsSpan_FractionBuilder();
 		TtsSpan_FractionBuilder(jlong arg0, jlong arg1, jlong arg2);

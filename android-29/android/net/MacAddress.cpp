@@ -42,7 +42,9 @@ namespace android::net
 		);
 	}
 	
-	MacAddress::MacAddress(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MacAddress::MacAddress(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -66,14 +68,14 @@ namespace android::net
 	}
 	jint MacAddress::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean MacAddress::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -81,52 +83,52 @@ namespace android::net
 	}
 	jint MacAddress::getAddressType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getAddressType",
 			"()I"
 		);
 	}
 	jint MacAddress::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean MacAddress::isLocallyAssigned()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isLocallyAssigned",
 			"()Z"
 		);
 	}
 	jbyteArray MacAddress::toByteArray()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toByteArray",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jstring MacAddress::toOuiString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toOuiString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring MacAddress::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void MacAddress::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

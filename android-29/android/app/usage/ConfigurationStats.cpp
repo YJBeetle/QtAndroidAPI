@@ -14,73 +14,73 @@ namespace android::app::usage
 		);
 	}
 	
-	ConfigurationStats::ConfigurationStats(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ConfigurationStats::ConfigurationStats(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ConfigurationStats::ConfigurationStats(android::app::usage::ConfigurationStats &arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.app.usage.ConfigurationStats",
 			"(Landroid/app/usage/ConfigurationStats;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jint ConfigurationStats::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jint ConfigurationStats::getActivationCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getActivationCount",
 			"()I"
 		);
 	}
 	QAndroidJniObject ConfigurationStats::getConfiguration()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getConfiguration",
 			"()Landroid/content/res/Configuration;"
 		);
 	}
 	jlong ConfigurationStats::getFirstTimeStamp()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getFirstTimeStamp",
 			"()J"
 		);
 	}
 	jlong ConfigurationStats::getLastTimeActive()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getLastTimeActive",
 			"()J"
 		);
 	}
 	jlong ConfigurationStats::getLastTimeStamp()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getLastTimeStamp",
 			"()J"
 		);
 	}
 	jlong ConfigurationStats::getTotalTimeActive()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getTotalTimeActive",
 			"()J"
 		);
 	}
 	void ConfigurationStats::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

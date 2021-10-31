@@ -9,25 +9,23 @@ namespace java::text
 {
 	// Fields
 	
-	ChoiceFormat::ChoiceFormat(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ChoiceFormat::ChoiceFormat(QAndroidJniObject obj) : java::text::NumberFormat(obj) {}
+	
 	// Constructors
 	ChoiceFormat::ChoiceFormat(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::text::NumberFormat(
 			"java.text.ChoiceFormat",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	ChoiceFormat::ChoiceFormat(jdoubleArray arg0, jarray arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::text::NumberFormat(
 			"java.text.ChoiceFormat",
 			"([D[Ljava/lang/String;)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	jdouble ChoiceFormat::nextDouble(jdouble arg0)
@@ -60,7 +58,7 @@ namespace java::text
 	}
 	void ChoiceFormat::applyPattern(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"applyPattern",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -68,14 +66,14 @@ namespace java::text
 	}
 	jobject ChoiceFormat::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jboolean ChoiceFormat::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -83,57 +81,57 @@ namespace java::text
 	}
 	QAndroidJniObject ChoiceFormat::format(jdouble arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"format",
 			"(DLjava/lang/StringBuffer;Ljava/text/FieldPosition;)Ljava/lang/StringBuffer;",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject ChoiceFormat::format(jlong arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"format",
 			"(JLjava/lang/StringBuffer;Ljava/text/FieldPosition;)Ljava/lang/StringBuffer;",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	jobjectArray ChoiceFormat::getFormats()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFormats",
 			"()[Ljava/lang/Object;"
 		).object<jobjectArray>();
 	}
 	jdoubleArray ChoiceFormat::getLimits()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLimits",
 			"()[D"
 		).object<jdoubleArray>();
 	}
 	jint ChoiceFormat::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	QAndroidJniObject ChoiceFormat::parse(jstring arg0, java::text::ParsePosition arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"parse",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Number;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void ChoiceFormat::setChoices(jdoubleArray arg0, jarray arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setChoices",
 			"([D[Ljava/lang/String;)V",
 			arg0,
@@ -142,7 +140,7 @@ namespace java::text
 	}
 	jstring ChoiceFormat::toPattern()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toPattern",
 			"()Ljava/lang/String;"
 		).object<jstring>();

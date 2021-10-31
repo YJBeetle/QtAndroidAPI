@@ -14,20 +14,22 @@ namespace android::bluetooth::le
 		);
 	}
 	
-	AdvertiseData::AdvertiseData(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AdvertiseData::AdvertiseData(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint AdvertiseData::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean AdvertiseData::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -35,59 +37,59 @@ namespace android::bluetooth::le
 	}
 	jboolean AdvertiseData::getIncludeDeviceName()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getIncludeDeviceName",
 			"()Z"
 		);
 	}
 	jboolean AdvertiseData::getIncludeTxPowerLevel()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getIncludeTxPowerLevel",
 			"()Z"
 		);
 	}
 	QAndroidJniObject AdvertiseData::getManufacturerSpecificData()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getManufacturerSpecificData",
 			"()Landroid/util/SparseArray;"
 		);
 	}
 	QAndroidJniObject AdvertiseData::getServiceData()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getServiceData",
 			"()Ljava/util/Map;"
 		);
 	}
 	QAndroidJniObject AdvertiseData::getServiceUuids()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getServiceUuids",
 			"()Ljava/util/List;"
 		);
 	}
 	jint AdvertiseData::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring AdvertiseData::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void AdvertiseData::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

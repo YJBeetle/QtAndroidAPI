@@ -44,7 +44,10 @@ namespace android::graphics
 		jstring outMimeType();
 		jint outWidth();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BitmapFactory_Options(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		BitmapFactory_Options(QAndroidJniObject obj);
+		
 		// Constructors
 		BitmapFactory_Options();
 		

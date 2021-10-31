@@ -15,68 +15,58 @@ namespace java::net
 {
 	// Fields
 	
-	URL::URL(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	URL::URL(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	URL::URL(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.net.URL",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	URL::URL(java::net::URL &arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.net.URL",
 			"(Ljava/net/URL;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
-		);
-	}
+		) {}
 	URL::URL(jstring arg0, jstring arg1, jstring arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.net.URL",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	URL::URL(java::net::URL &arg0, jstring arg1, java::net::URLStreamHandler arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.net.URL",
 			"(Ljava/net/URL;Ljava/lang/String;Ljava/net/URLStreamHandler;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object()
-		);
-	}
+			arg2.object()
+		) {}
 	URL::URL(jstring arg0, jstring arg1, jint arg2, jstring arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.net.URL",
 			"(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	URL::URL(jstring arg0, jstring arg1, jint arg2, jstring arg3, java::net::URLStreamHandler arg4)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.net.URL",
 			"(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/net/URLStreamHandler;)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object()
-		);
-	}
+			arg4.object()
+		) {}
 	
 	// Methods
 	void URL::setURLStreamHandlerFactory(__JniBaseClass arg0)
@@ -85,12 +75,12 @@ namespace java::net
 			"java.net.URL",
 			"setURLStreamHandlerFactory",
 			"(Ljava/net/URLStreamHandlerFactory;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean URL::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -98,21 +88,21 @@ namespace java::net
 	}
 	jstring URL::getAuthority()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAuthority",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jobject URL::getContent()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getContent",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobject URL::getContent(jarray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getContent",
 			"([Ljava/lang/Class;)Ljava/lang/Object;",
 			arg0
@@ -120,121 +110,121 @@ namespace java::net
 	}
 	jint URL::getDefaultPort()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDefaultPort",
 			"()I"
 		);
 	}
 	jstring URL::getFile()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFile",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring URL::getHost()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getHost",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring URL::getPath()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPath",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint URL::getPort()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPort",
 			"()I"
 		);
 	}
 	jstring URL::getProtocol()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getProtocol",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring URL::getQuery()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getQuery",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring URL::getRef()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRef",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring URL::getUserInfo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getUserInfo",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint URL::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	QAndroidJniObject URL::openConnection()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"openConnection",
 			"()Ljava/net/URLConnection;"
 		);
 	}
 	QAndroidJniObject URL::openConnection(java::net::Proxy arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"openConnection",
 			"(Ljava/net/Proxy;)Ljava/net/URLConnection;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject URL::openStream()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"openStream",
 			"()Ljava/io/InputStream;"
 		);
 	}
 	jboolean URL::sameFile(java::net::URL arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"sameFile",
 			"(Ljava/net/URL;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring URL::toExternalForm()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toExternalForm",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring URL::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject URL::toURI()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toURI",
 			"()Ljava/net/URI;"
 		);

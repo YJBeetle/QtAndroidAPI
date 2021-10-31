@@ -30,11 +30,13 @@ namespace android::system
 		jlong st_size();
 		jint st_uid();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit StructStat(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		StructStat(QAndroidJniObject obj);
+		
 		// Constructors
 		StructStat(jlong arg0, jlong arg1, jint arg2, jlong arg3, jint arg4, jint arg5, jlong arg6, jlong arg7, android::system::StructTimespec arg8, android::system::StructTimespec arg9, android::system::StructTimespec arg10, jlong arg11, jlong arg12);
 		StructStat(jlong arg0, jlong arg1, jint arg2, jlong arg3, jint arg4, jint arg5, jlong arg6, jlong arg7, jlong arg8, jlong arg9, jlong arg10, jlong arg11, jlong arg12);
-		StructStat() = default;
 		
 		// Methods
 		jstring toString();

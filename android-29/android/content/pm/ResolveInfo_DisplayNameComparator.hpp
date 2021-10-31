@@ -18,10 +18,12 @@ namespace android::content::pm
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ResolveInfo_DisplayNameComparator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ResolveInfo_DisplayNameComparator(QAndroidJniObject obj);
+		
 		// Constructors
 		ResolveInfo_DisplayNameComparator(android::content::pm::PackageManager arg0);
-		ResolveInfo_DisplayNameComparator() = default;
 		
 		// Methods
 		jint compare(android::content::pm::ResolveInfo arg0, android::content::pm::ResolveInfo arg1);

@@ -33,15 +33,15 @@ namespace android::opengl
 		);
 	}
 	
-	ETC1::ETC1(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ETC1::ETC1(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ETC1::ETC1()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.opengl.ETC1",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void ETC1::decodeBlock(java::nio::Buffer arg0, java::nio::Buffer arg1)
@@ -50,8 +50,8 @@ namespace android::opengl
 			"android.opengl.ETC1",
 			"decodeBlock",
 			"(Ljava/nio/Buffer;Ljava/nio/Buffer;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void ETC1::decodeImage(java::nio::Buffer arg0, java::nio::Buffer arg1, jint arg2, jint arg3, jint arg4, jint arg5)
@@ -60,8 +60,8 @@ namespace android::opengl
 			"android.opengl.ETC1",
 			"decodeImage",
 			"(Ljava/nio/Buffer;Ljava/nio/Buffer;IIII)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3,
 			arg4,
@@ -74,9 +74,9 @@ namespace android::opengl
 			"android.opengl.ETC1",
 			"encodeBlock",
 			"(Ljava/nio/Buffer;ILjava/nio/Buffer;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void ETC1::encodeImage(java::nio::Buffer arg0, jint arg1, jint arg2, jint arg3, jint arg4, java::nio::Buffer arg5)
@@ -85,12 +85,12 @@ namespace android::opengl
 			"android.opengl.ETC1",
 			"encodeImage",
 			"(Ljava/nio/Buffer;IIIILjava/nio/Buffer;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
 			arg4,
-			arg5.__jniObject().object()
+			arg5.object()
 		);
 	}
 	void ETC1::formatHeader(java::nio::Buffer arg0, jint arg1, jint arg2)
@@ -99,7 +99,7 @@ namespace android::opengl
 			"android.opengl.ETC1",
 			"formatHeader",
 			"(Ljava/nio/Buffer;II)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
@@ -120,7 +120,7 @@ namespace android::opengl
 			"android.opengl.ETC1",
 			"getHeight",
 			"(Ljava/nio/Buffer;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint ETC1::getWidth(java::nio::Buffer arg0)
@@ -129,7 +129,7 @@ namespace android::opengl
 			"android.opengl.ETC1",
 			"getWidth",
 			"(Ljava/nio/Buffer;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean ETC1::isValid(java::nio::Buffer arg0)
@@ -138,7 +138,7 @@ namespace android::opengl
 			"android.opengl.ETC1",
 			"isValid",
 			"(Ljava/nio/Buffer;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::opengl

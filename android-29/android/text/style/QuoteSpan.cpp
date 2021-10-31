@@ -29,57 +29,51 @@ namespace android::text::style
 		);
 	}
 	
-	QuoteSpan::QuoteSpan(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	QuoteSpan::QuoteSpan(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	QuoteSpan::QuoteSpan()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.text.style.QuoteSpan",
 			"()V"
-		);
-	}
+		) {}
 	QuoteSpan::QuoteSpan(android::os::Parcel arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.text.style.QuoteSpan",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	QuoteSpan::QuoteSpan(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.text.style.QuoteSpan",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	QuoteSpan::QuoteSpan(jint arg0, jint arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.text.style.QuoteSpan",
 			"(III)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	jint QuoteSpan::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	void QuoteSpan::drawLeadingMargin(android::graphics::Canvas arg0, android::graphics::Paint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jstring arg7, jint arg8, jint arg9, jboolean arg10, android::text::Layout arg11)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"drawLeadingMargin",
 			"(Landroid/graphics/Canvas;Landroid/graphics/Paint;IIIIILjava/lang/CharSequence;IIZLandroid/text/Layout;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3,
 			arg4,
@@ -89,26 +83,26 @@ namespace android::text::style
 			arg8,
 			arg9,
 			arg10,
-			arg11.__jniObject().object()
+			arg11.object()
 		);
 	}
 	jint QuoteSpan::getColor()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getColor",
 			"()I"
 		);
 	}
 	jint QuoteSpan::getGapWidth()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getGapWidth",
 			"()I"
 		);
 	}
 	jint QuoteSpan::getLeadingMargin(jboolean arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLeadingMargin",
 			"(Z)I",
 			arg0
@@ -116,24 +110,24 @@ namespace android::text::style
 	}
 	jint QuoteSpan::getSpanTypeId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSpanTypeId",
 			"()I"
 		);
 	}
 	jint QuoteSpan::getStripeWidth()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getStripeWidth",
 			"()I"
 		);
 	}
 	void QuoteSpan::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

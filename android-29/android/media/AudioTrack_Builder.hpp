@@ -22,7 +22,10 @@ namespace android::media
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AudioTrack_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AudioTrack_Builder(QAndroidJniObject obj);
+		
 		// Constructors
 		AudioTrack_Builder();
 		

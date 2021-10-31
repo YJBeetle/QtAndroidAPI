@@ -13,7 +13,10 @@ namespace java::sql
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SQLSyntaxErrorException(const char *className, const char *sig, Ts...agv) : java::sql::SQLNonTransientException(className, sig, std::forward<Ts>(agv)...) {}
 		SQLSyntaxErrorException(QAndroidJniObject obj);
+		
 		// Constructors
 		SQLSyntaxErrorException();
 		SQLSyntaxErrorException(jstring arg0);

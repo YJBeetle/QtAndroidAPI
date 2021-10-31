@@ -24,9 +24,11 @@ namespace android::media
 		static jint THREE_GPP();
 		static jint WEBM();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaRecorder_OutputFormat(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaRecorder_OutputFormat(QAndroidJniObject obj);
+		
 		// Constructors
-		MediaRecorder_OutputFormat() = default;
 		
 		// Methods
 	};

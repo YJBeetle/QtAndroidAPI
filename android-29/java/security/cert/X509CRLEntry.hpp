@@ -26,7 +26,10 @@ namespace java::security::cert
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit X509CRLEntry(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		X509CRLEntry(QAndroidJniObject obj);
+		
 		// Constructors
 		X509CRLEntry();
 		

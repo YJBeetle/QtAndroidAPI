@@ -39,11 +39,13 @@ namespace java::text
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MessageFormat(const char *className, const char *sig, Ts...agv) : java::text::Format(className, sig, std::forward<Ts>(agv)...) {}
 		MessageFormat(QAndroidJniObject obj);
+		
 		// Constructors
 		MessageFormat(jstring arg0);
 		MessageFormat(jstring arg0, java::util::Locale arg1);
-		MessageFormat() = default;
 		
 		// Methods
 		static jstring format(jstring arg0, jobjectArray arg1);

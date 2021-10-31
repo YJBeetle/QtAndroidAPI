@@ -22,9 +22,11 @@ namespace android::media
 		static jint OPUS();
 		static jint VORBIS();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaRecorder_AudioEncoder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaRecorder_AudioEncoder(QAndroidJniObject obj);
+		
 		// Constructors
-		MediaRecorder_AudioEncoder() = default;
 		
 		// Methods
 	};

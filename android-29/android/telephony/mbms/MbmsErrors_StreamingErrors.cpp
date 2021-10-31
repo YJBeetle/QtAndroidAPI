@@ -25,7 +25,9 @@ namespace android::telephony::mbms
 		);
 	}
 	
-	MbmsErrors_StreamingErrors::MbmsErrors_StreamingErrors(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MbmsErrors_StreamingErrors::MbmsErrors_StreamingErrors(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

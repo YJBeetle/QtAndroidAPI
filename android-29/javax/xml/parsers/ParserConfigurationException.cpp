@@ -4,23 +4,21 @@ namespace javax::xml::parsers
 {
 	// Fields
 	
-	ParserConfigurationException::ParserConfigurationException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ParserConfigurationException::ParserConfigurationException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
+	
 	// Constructors
 	ParserConfigurationException::ParserConfigurationException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Exception(
 			"javax.xml.parsers.ParserConfigurationException",
 			"()V"
-		);
-	}
+		) {}
 	ParserConfigurationException::ParserConfigurationException(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::Exception(
 			"javax.xml.parsers.ParserConfigurationException",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace javax::xml::parsers

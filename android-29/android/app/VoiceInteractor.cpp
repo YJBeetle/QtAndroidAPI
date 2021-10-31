@@ -5,13 +5,15 @@ namespace android::app
 {
 	// Fields
 	
-	VoiceInteractor::VoiceInteractor(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	VoiceInteractor::VoiceInteractor(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject VoiceInteractor::getActiveRequest(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getActiveRequest",
 			"(Ljava/lang/String;)Landroid/app/VoiceInteractor$Request;",
 			arg0
@@ -19,54 +21,54 @@ namespace android::app
 	}
 	jarray VoiceInteractor::getActiveRequests()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getActiveRequests",
 			"()[Landroid/app/VoiceInteractor$Request;"
 		).object<jarray>();
 	}
 	jboolean VoiceInteractor::isDestroyed()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isDestroyed",
 			"()Z"
 		);
 	}
 	void VoiceInteractor::notifyDirectActionsChanged()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"notifyDirectActionsChanged",
 			"()V"
 		);
 	}
 	jboolean VoiceInteractor::registerOnDestroyedCallback(__JniBaseClass arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"registerOnDestroyedCallback",
 			"(Ljava/util/concurrent/Executor;Ljava/lang/Runnable;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jboolean VoiceInteractor::submitRequest(android::app::VoiceInteractor_Request arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"submitRequest",
 			"(Landroid/app/VoiceInteractor$Request;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean VoiceInteractor::submitRequest(android::app::VoiceInteractor_Request arg0, jstring arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"submitRequest",
 			"(Landroid/app/VoiceInteractor$Request;Ljava/lang/String;)Z",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	jbooleanArray VoiceInteractor::supportsCommands(jarray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"supportsCommands",
 			"([Ljava/lang/String;)[Z",
 			arg0
@@ -74,10 +76,10 @@ namespace android::app
 	}
 	jboolean VoiceInteractor::unregisterOnDestroyedCallback(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"unregisterOnDestroyedCallback",
 			"(Ljava/lang/Runnable;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::app

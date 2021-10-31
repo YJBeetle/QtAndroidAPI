@@ -14,7 +14,9 @@ namespace org::xmlpull::v1
 		).object<jstring>();
 	}
 	
-	XmlPullParserFactory::XmlPullParserFactory(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	XmlPullParserFactory::XmlPullParserFactory(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -38,7 +40,7 @@ namespace org::xmlpull::v1
 	}
 	jboolean XmlPullParserFactory::getFeature(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getFeature",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -46,35 +48,35 @@ namespace org::xmlpull::v1
 	}
 	jboolean XmlPullParserFactory::isNamespaceAware()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isNamespaceAware",
 			"()Z"
 		);
 	}
 	jboolean XmlPullParserFactory::isValidating()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isValidating",
 			"()Z"
 		);
 	}
 	QAndroidJniObject XmlPullParserFactory::newPullParser()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newPullParser",
 			"()Lorg/xmlpull/v1/XmlPullParser;"
 		);
 	}
 	QAndroidJniObject XmlPullParserFactory::newSerializer()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newSerializer",
 			"()Lorg/xmlpull/v1/XmlSerializer;"
 		);
 	}
 	void XmlPullParserFactory::setFeature(jstring arg0, jboolean arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFeature",
 			"(Ljava/lang/String;Z)V",
 			arg0,
@@ -83,7 +85,7 @@ namespace org::xmlpull::v1
 	}
 	void XmlPullParserFactory::setNamespaceAware(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setNamespaceAware",
 			"(Z)V",
 			arg0
@@ -91,7 +93,7 @@ namespace org::xmlpull::v1
 	}
 	void XmlPullParserFactory::setValidating(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setValidating",
 			"(Z)V",
 			arg0

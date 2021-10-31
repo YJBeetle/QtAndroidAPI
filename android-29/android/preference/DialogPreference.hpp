@@ -35,13 +35,15 @@ namespace android::preference
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DialogPreference(const char *className, const char *sig, Ts...agv) : android::preference::Preference(className, sig, std::forward<Ts>(agv)...) {}
 		DialogPreference(QAndroidJniObject obj);
+		
 		// Constructors
 		DialogPreference(android::content::Context arg0);
 		DialogPreference(android::content::Context arg0, __JniBaseClass arg1);
 		DialogPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		DialogPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
-		DialogPreference() = default;
 		
 		// Methods
 		QAndroidJniObject getDialog();

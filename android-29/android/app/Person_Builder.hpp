@@ -18,7 +18,10 @@ namespace android::app
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Person_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Person_Builder(QAndroidJniObject obj);
+		
 		// Constructors
 		Person_Builder();
 		

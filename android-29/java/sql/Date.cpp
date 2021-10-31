@@ -6,26 +6,24 @@ namespace java::sql
 {
 	// Fields
 	
-	Date::Date(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Date::Date(QAndroidJniObject obj) : java::util::Date(obj) {}
+	
 	// Constructors
 	Date::Date(jlong arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::Date(
 			"java.sql.Date",
 			"(J)V",
 			arg0
-		);
-	}
+		) {}
 	Date::Date(jint arg0, jint arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::Date(
 			"java.sql.Date",
 			"(III)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject Date::valueOf(jstring arg0)
@@ -43,33 +41,33 @@ namespace java::sql
 			"java.sql.Date",
 			"valueOf",
 			"(Ljava/time/LocalDate;)Ljava/sql/Date;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint Date::getHours()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getHours",
 			"()I"
 		);
 	}
 	jint Date::getMinutes()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMinutes",
 			"()I"
 		);
 	}
 	jint Date::getSeconds()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSeconds",
 			"()I"
 		);
 	}
 	void Date::setHours(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setHours",
 			"(I)V",
 			arg0
@@ -77,7 +75,7 @@ namespace java::sql
 	}
 	void Date::setMinutes(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMinutes",
 			"(I)V",
 			arg0
@@ -85,7 +83,7 @@ namespace java::sql
 	}
 	void Date::setSeconds(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSeconds",
 			"(I)V",
 			arg0
@@ -93,7 +91,7 @@ namespace java::sql
 	}
 	void Date::setTime(jlong arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTime",
 			"(J)V",
 			arg0
@@ -101,21 +99,21 @@ namespace java::sql
 	}
 	QAndroidJniObject Date::toInstant()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toInstant",
 			"()Ljava/time/Instant;"
 		);
 	}
 	QAndroidJniObject Date::toLocalDate()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toLocalDate",
 			"()Ljava/time/LocalDate;"
 		);
 	}
 	jstring Date::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

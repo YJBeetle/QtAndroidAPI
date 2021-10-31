@@ -5,20 +5,22 @@ namespace java::io
 {
 	// Fields
 	
-	FilterReader::FilterReader(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FilterReader::FilterReader(QAndroidJniObject obj) : java::io::Reader(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void FilterReader::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	void FilterReader::mark(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"mark",
 			"(I)V",
 			arg0
@@ -26,21 +28,21 @@ namespace java::io
 	}
 	jboolean FilterReader::markSupported()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"markSupported",
 			"()Z"
 		);
 	}
 	jint FilterReader::read()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"read",
 			"()I"
 		);
 	}
 	jint FilterReader::read(jcharArray arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"read",
 			"([CII)I",
 			arg0,
@@ -50,21 +52,21 @@ namespace java::io
 	}
 	jboolean FilterReader::ready()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"ready",
 			"()Z"
 		);
 	}
 	void FilterReader::reset()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
 	jlong FilterReader::skip(jlong arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"skip",
 			"(J)J",
 			arg0

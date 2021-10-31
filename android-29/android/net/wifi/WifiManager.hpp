@@ -96,9 +96,11 @@ namespace android::net::wifi
 		static jint WPS_TKIP_ONLY_PROHIBITED();
 		static jint WPS_WEP_PROHIBITED();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit WifiManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		WifiManager(QAndroidJniObject obj);
+		
 		// Constructors
-		WifiManager() = default;
 		
 		// Methods
 		static jint calculateSignalLevel(jint arg0, jint arg1);

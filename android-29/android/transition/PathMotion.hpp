@@ -18,7 +18,10 @@ namespace android::transition
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PathMotion(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PathMotion(QAndroidJniObject obj);
+		
 		// Constructors
 		PathMotion();
 		PathMotion(android::content::Context arg0, __JniBaseClass arg1);

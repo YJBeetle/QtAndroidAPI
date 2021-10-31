@@ -14,7 +14,10 @@ namespace android::location
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit GnssStatus_Callback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		GnssStatus_Callback(QAndroidJniObject obj);
+		
 		// Constructors
 		GnssStatus_Callback();
 		

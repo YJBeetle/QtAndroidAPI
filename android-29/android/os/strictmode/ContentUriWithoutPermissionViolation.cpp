@@ -5,7 +5,9 @@ namespace android::os::strictmode
 {
 	// Fields
 	
-	ContentUriWithoutPermissionViolation::ContentUriWithoutPermissionViolation(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ContentUriWithoutPermissionViolation::ContentUriWithoutPermissionViolation(QAndroidJniObject obj) : android::os::strictmode::Violation(obj) {}
+	
 	// Constructors
 	
 	// Methods

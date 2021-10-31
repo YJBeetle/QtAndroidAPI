@@ -14,7 +14,10 @@ namespace android::webkit
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TracingConfig_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		TracingConfig_Builder(QAndroidJniObject obj);
+		
 		// Constructors
 		TracingConfig_Builder();
 		

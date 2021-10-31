@@ -34,20 +34,22 @@ namespace android::app::admin
 		);
 	}
 	
-	SystemUpdateInfo::SystemUpdateInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SystemUpdateInfo::SystemUpdateInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint SystemUpdateInfo::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean SystemUpdateInfo::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -55,38 +57,38 @@ namespace android::app::admin
 	}
 	jlong SystemUpdateInfo::getReceivedTime()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getReceivedTime",
 			"()J"
 		);
 	}
 	jint SystemUpdateInfo::getSecurityPatchState()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSecurityPatchState",
 			"()I"
 		);
 	}
 	jint SystemUpdateInfo::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring SystemUpdateInfo::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void SystemUpdateInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

@@ -80,15 +80,15 @@ namespace android::security
 		).object<jstring>();
 	}
 	
-	KeyChain::KeyChain(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	KeyChain::KeyChain(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	KeyChain::KeyChain()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.security.KeyChain",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void KeyChain::choosePrivateKeyAlias(android::app::Activity arg0, __JniBaseClass arg1, jarray arg2, jarray arg3, android::net::Uri arg4, jstring arg5)
@@ -97,11 +97,11 @@ namespace android::security
 			"android.security.KeyChain",
 			"choosePrivateKeyAlias",
 			"(Landroid/app/Activity;Landroid/security/KeyChainAliasCallback;[Ljava/lang/String;[Ljava/security/Principal;Landroid/net/Uri;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3,
-			arg4.__jniObject().object(),
+			arg4.object(),
 			arg5
 		);
 	}
@@ -111,8 +111,8 @@ namespace android::security
 			"android.security.KeyChain",
 			"choosePrivateKeyAlias",
 			"(Landroid/app/Activity;Landroid/security/KeyChainAliasCallback;[Ljava/lang/String;[Ljava/security/Principal;Ljava/lang/String;ILjava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3,
 			arg4,
@@ -134,7 +134,7 @@ namespace android::security
 			"android.security.KeyChain",
 			"getCertificateChain",
 			"(Landroid/content/Context;Ljava/lang/String;)[Ljava/security/cert/X509Certificate;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		).object<jarray>();
 	}
@@ -144,7 +144,7 @@ namespace android::security
 			"android.security.KeyChain",
 			"getPrivateKey",
 			"(Landroid/content/Context;Ljava/lang/String;)Ljava/security/PrivateKey;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

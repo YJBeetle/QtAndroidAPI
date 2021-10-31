@@ -60,20 +60,20 @@ namespace android::os::storage
 		);
 	}
 	
-	OnObbStateChangeListener::OnObbStateChangeListener(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	OnObbStateChangeListener::OnObbStateChangeListener(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	OnObbStateChangeListener::OnObbStateChangeListener()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.os.storage.OnObbStateChangeListener",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void OnObbStateChangeListener::onObbStateChange(jstring arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onObbStateChange",
 			"(Ljava/lang/String;I)V",
 			arg0,

@@ -20,7 +20,9 @@ namespace android::icu::text
 		);
 	}
 	
-	MessagePattern_ApostropheMode::MessagePattern_ApostropheMode(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MessagePattern_ApostropheMode::MessagePattern_ApostropheMode(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

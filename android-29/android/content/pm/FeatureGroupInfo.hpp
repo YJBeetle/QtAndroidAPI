@@ -16,7 +16,10 @@ namespace android::content::pm
 		static QAndroidJniObject CREATOR();
 		jarray features();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit FeatureGroupInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		FeatureGroupInfo(QAndroidJniObject obj);
+		
 		// Constructors
 		FeatureGroupInfo();
 		FeatureGroupInfo(android::content::pm::FeatureGroupInfo &arg0);

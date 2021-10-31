@@ -25,15 +25,15 @@ namespace android::media
 		);
 	}
 	
-	CameraProfile::CameraProfile(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CameraProfile::CameraProfile(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	CameraProfile::CameraProfile()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.CameraProfile",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jint CameraProfile::getJpegEncodingQualityParameter(jint arg0)

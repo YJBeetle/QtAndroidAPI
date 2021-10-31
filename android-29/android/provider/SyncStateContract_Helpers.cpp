@@ -9,15 +9,15 @@ namespace android::provider
 {
 	// Fields
 	
-	SyncStateContract_Helpers::SyncStateContract_Helpers(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SyncStateContract_Helpers::SyncStateContract_Helpers(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	SyncStateContract_Helpers::SyncStateContract_Helpers()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.provider.SyncStateContract$Helpers",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jbyteArray SyncStateContract_Helpers::get(android::content::ContentProviderClient arg0, android::net::Uri arg1, android::accounts::Account arg2)
@@ -26,9 +26,9 @@ namespace android::provider
 			"android.provider.SyncStateContract$Helpers",
 			"get",
 			"(Landroid/content/ContentProviderClient;Landroid/net/Uri;Landroid/accounts/Account;)[B",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		).object<jbyteArray>();
 	}
 	QAndroidJniObject SyncStateContract_Helpers::getWithUri(android::content::ContentProviderClient arg0, android::net::Uri arg1, android::accounts::Account arg2)
@@ -37,9 +37,9 @@ namespace android::provider
 			"android.provider.SyncStateContract$Helpers",
 			"getWithUri",
 			"(Landroid/content/ContentProviderClient;Landroid/net/Uri;Landroid/accounts/Account;)Landroid/util/Pair;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject SyncStateContract_Helpers::insert(android::content::ContentProviderClient arg0, android::net::Uri arg1, android::accounts::Account arg2, jbyteArray arg3)
@@ -48,9 +48,9 @@ namespace android::provider
 			"android.provider.SyncStateContract$Helpers",
 			"insert",
 			"(Landroid/content/ContentProviderClient;Landroid/net/Uri;Landroid/accounts/Account;[B)Landroid/net/Uri;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
 			arg3
 		);
 	}
@@ -60,8 +60,8 @@ namespace android::provider
 			"android.provider.SyncStateContract$Helpers",
 			"newSetOperation",
 			"(Landroid/net/Uri;Landroid/accounts/Account;[B)Landroid/content/ContentProviderOperation;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
@@ -71,7 +71,7 @@ namespace android::provider
 			"android.provider.SyncStateContract$Helpers",
 			"newUpdateOperation",
 			"(Landroid/net/Uri;[B)Landroid/content/ContentProviderOperation;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -81,9 +81,9 @@ namespace android::provider
 			"android.provider.SyncStateContract$Helpers",
 			"set",
 			"(Landroid/content/ContentProviderClient;Landroid/net/Uri;Landroid/accounts/Account;[B)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
 			arg3
 		);
 	}
@@ -93,8 +93,8 @@ namespace android::provider
 			"android.provider.SyncStateContract$Helpers",
 			"update",
 			"(Landroid/content/ContentProviderClient;Landroid/net/Uri;[B)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}

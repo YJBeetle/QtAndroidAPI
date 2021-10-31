@@ -10,9 +10,11 @@ namespace android::text
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Layout_Directions(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Layout_Directions(QAndroidJniObject obj);
+		
 		// Constructors
-		Layout_Directions() = default;
 		
 		// Methods
 	};

@@ -20,9 +20,11 @@ namespace java::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit EnumSet(const char *className, const char *sig, Ts...agv) : java::util::AbstractSet(className, sig, std::forward<Ts>(agv)...) {}
 		EnumSet(QAndroidJniObject obj);
+		
 		// Constructors
-		EnumSet() = default;
 		
 		// Methods
 		static QAndroidJniObject allOf(jclass arg0);

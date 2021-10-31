@@ -18,7 +18,9 @@ namespace dalvik::bytecode
 		);
 	}
 	
-	OpcodeInfo::OpcodeInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	OpcodeInfo::OpcodeInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

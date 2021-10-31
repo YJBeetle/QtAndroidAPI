@@ -28,13 +28,15 @@ namespace java::nio::charset
 		);
 	}
 	
-	CodingErrorAction::CodingErrorAction(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CodingErrorAction::CodingErrorAction(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jstring CodingErrorAction::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

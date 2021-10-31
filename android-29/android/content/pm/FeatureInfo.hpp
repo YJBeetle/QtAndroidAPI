@@ -21,7 +21,10 @@ namespace android::content::pm
 		jint reqGlEsVersion();
 		jint version();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit FeatureInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		FeatureInfo(QAndroidJniObject obj);
+		
 		// Constructors
 		FeatureInfo();
 		FeatureInfo(android::content::pm::FeatureInfo &arg0);

@@ -27,13 +27,15 @@ namespace android::view
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SurfaceView(const char *className, const char *sig, Ts...agv) : android::view::View(className, sig, std::forward<Ts>(agv)...) {}
 		SurfaceView(QAndroidJniObject obj);
+		
 		// Constructors
 		SurfaceView(android::content::Context arg0);
 		SurfaceView(android::content::Context arg0, __JniBaseClass arg1);
 		SurfaceView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		SurfaceView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
-		SurfaceView() = default;
 		
 		// Methods
 		void draw(android::graphics::Canvas arg0);

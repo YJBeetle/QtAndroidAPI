@@ -13,9 +13,11 @@ namespace android::media
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaDrm_MediaDrmStateException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalStateException(className, sig, std::forward<Ts>(agv)...) {}
 		MediaDrm_MediaDrmStateException(QAndroidJniObject obj);
+		
 		// Constructors
-		MediaDrm_MediaDrmStateException() = default;
 		
 		// Methods
 		jstring getDiagnosticInfo();

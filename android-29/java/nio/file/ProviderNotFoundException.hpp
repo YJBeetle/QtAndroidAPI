@@ -12,7 +12,10 @@ namespace java::nio::file
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ProviderNotFoundException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
 		ProviderNotFoundException(QAndroidJniObject obj);
+		
 		// Constructors
 		ProviderNotFoundException();
 		ProviderNotFoundException(jstring arg0);

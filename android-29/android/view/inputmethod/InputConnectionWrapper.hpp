@@ -42,10 +42,12 @@ namespace android::view::inputmethod
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit InputConnectionWrapper(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		InputConnectionWrapper(QAndroidJniObject obj);
+		
 		// Constructors
 		InputConnectionWrapper(__JniBaseClass arg0, jboolean arg1);
-		InputConnectionWrapper() = default;
 		
 		// Methods
 		jboolean beginBatchEdit();

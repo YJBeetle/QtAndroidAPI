@@ -22,9 +22,11 @@ namespace android::nfc::cardemulation
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit NfcFCardEmulation(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		NfcFCardEmulation(QAndroidJniObject obj);
+		
 		// Constructors
-		NfcFCardEmulation() = default;
 		
 		// Methods
 		static QAndroidJniObject getInstance(android::nfc::NfcAdapter arg0);

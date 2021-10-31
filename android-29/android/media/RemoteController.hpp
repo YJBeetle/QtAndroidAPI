@@ -28,11 +28,13 @@ namespace android::media
 		static jint POSITION_SYNCHRONIZATION_CHECK();
 		static jint POSITION_SYNCHRONIZATION_NONE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit RemoteController(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		RemoteController(QAndroidJniObject obj);
+		
 		// Constructors
 		RemoteController(android::content::Context arg0, __JniBaseClass arg1);
 		RemoteController(android::content::Context arg0, __JniBaseClass arg1, android::os::Looper arg2);
-		RemoteController() = default;
 		
 		// Methods
 		jboolean clearArtworkConfiguration();

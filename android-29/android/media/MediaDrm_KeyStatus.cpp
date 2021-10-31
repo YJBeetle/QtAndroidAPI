@@ -46,20 +46,22 @@ namespace android::media
 		);
 	}
 	
-	MediaDrm_KeyStatus::MediaDrm_KeyStatus(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaDrm_KeyStatus::MediaDrm_KeyStatus(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jbyteArray MediaDrm_KeyStatus::getKeyId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getKeyId",
 			"()[B"
 		).object<jbyteArray>();
 	}
 	jint MediaDrm_KeyStatus::getStatusCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getStatusCode",
 			"()I"
 		);

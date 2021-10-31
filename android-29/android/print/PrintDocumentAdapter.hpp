@@ -35,7 +35,10 @@ namespace android::print
 		// Fields
 		static jstring EXTRA_PRINT_PREVIEW();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PrintDocumentAdapter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PrintDocumentAdapter(QAndroidJniObject obj);
+		
 		// Constructors
 		PrintDocumentAdapter();
 		

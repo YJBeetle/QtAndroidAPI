@@ -35,7 +35,10 @@ namespace android::icu::text
 		static jint MAX_VALUE();
 		static jint MIN_VALUE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit UnicodeSet(const char *className, const char *sig, Ts...agv) : android::icu::text::UnicodeFilter(className, sig, std::forward<Ts>(agv)...) {}
 		UnicodeSet(QAndroidJniObject obj);
+		
 		// Constructors
 		UnicodeSet();
 		UnicodeSet(jintArray arg0);

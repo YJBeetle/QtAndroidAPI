@@ -69,13 +69,15 @@ namespace android::app::role
 		).object<jstring>();
 	}
 	
-	RoleManager::RoleManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	RoleManager::RoleManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject RoleManager::createRequestRoleIntent(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"createRequestRoleIntent",
 			"(Ljava/lang/String;)Landroid/content/Intent;",
 			arg0
@@ -83,7 +85,7 @@ namespace android::app::role
 	}
 	jboolean RoleManager::isRoleAvailable(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isRoleAvailable",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -91,7 +93,7 @@ namespace android::app::role
 	}
 	jboolean RoleManager::isRoleHeld(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isRoleHeld",
 			"(Ljava/lang/String;)Z",
 			arg0

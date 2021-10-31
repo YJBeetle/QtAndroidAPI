@@ -4,34 +4,34 @@ namespace android::hardware::display
 {
 	// Fields
 	
-	VirtualDisplay_Callback::VirtualDisplay_Callback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	VirtualDisplay_Callback::VirtualDisplay_Callback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	VirtualDisplay_Callback::VirtualDisplay_Callback()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.hardware.display.VirtualDisplay$Callback",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void VirtualDisplay_Callback::onPaused()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onPaused",
 			"()V"
 		);
 	}
 	void VirtualDisplay_Callback::onResumed()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onResumed",
 			"()V"
 		);
 	}
 	void VirtualDisplay_Callback::onStopped()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onStopped",
 			"()V"
 		);

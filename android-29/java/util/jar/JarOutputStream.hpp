@@ -26,11 +26,13 @@ namespace java::util::jar
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit JarOutputStream(const char *className, const char *sig, Ts...agv) : java::util::zip::ZipOutputStream(className, sig, std::forward<Ts>(agv)...) {}
 		JarOutputStream(QAndroidJniObject obj);
+		
 		// Constructors
 		JarOutputStream(java::io::OutputStream arg0);
 		JarOutputStream(java::io::OutputStream arg0, java::util::jar::Manifest arg1);
-		JarOutputStream() = default;
 		
 		// Methods
 		void putNextEntry(java::util::zip::ZipEntry arg0);

@@ -9,7 +9,9 @@ namespace android::renderscript
 {
 	// Fields
 	
-	ScriptIntrinsicResize::ScriptIntrinsicResize(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ScriptIntrinsicResize::ScriptIntrinsicResize(QAndroidJniObject obj) : android::renderscript::ScriptIntrinsic(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -19,46 +21,46 @@ namespace android::renderscript
 			"android.renderscript.ScriptIntrinsicResize",
 			"create",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/ScriptIntrinsicResize;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ScriptIntrinsicResize::forEach_bicubic(android::renderscript::Allocation arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"forEach_bicubic",
 			"(Landroid/renderscript/Allocation;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ScriptIntrinsicResize::forEach_bicubic(android::renderscript::Allocation arg0, android::renderscript::Script_LaunchOptions arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"forEach_bicubic",
 			"(Landroid/renderscript/Allocation;Landroid/renderscript/Script$LaunchOptions;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject ScriptIntrinsicResize::getFieldID_Input()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFieldID_Input",
 			"()Landroid/renderscript/Script$FieldID;"
 		);
 	}
 	QAndroidJniObject ScriptIntrinsicResize::getKernelID_bicubic()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getKernelID_bicubic",
 			"()Landroid/renderscript/Script$KernelID;"
 		);
 	}
 	void ScriptIntrinsicResize::setInput(android::renderscript::Allocation arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setInput",
 			"(Landroid/renderscript/Allocation;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::renderscript

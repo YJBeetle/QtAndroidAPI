@@ -7,47 +7,49 @@ namespace java::security
 {
 	// Fields
 	
-	Provider::Provider(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Provider::Provider(QAndroidJniObject obj) : java::util::Properties(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void Provider::clear()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
 	jobject Provider::compute(jobject arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"compute",
 			"(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		).object<jobject>();
 	}
 	jobject Provider::computeIfAbsent(jobject arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"computeIfAbsent",
 			"(Ljava/lang/Object;Ljava/util/function/Function;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		).object<jobject>();
 	}
 	jobject Provider::computeIfPresent(jobject arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"computeIfPresent",
 			"(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		).object<jobject>();
 	}
 	QAndroidJniObject Provider::configure(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"configure",
 			"(Ljava/lang/String;)Ljava/security/Provider;",
 			arg0
@@ -55,29 +57,29 @@ namespace java::security
 	}
 	QAndroidJniObject Provider::elements()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"elements",
 			"()Ljava/util/Enumeration;"
 		);
 	}
 	QAndroidJniObject Provider::entrySet()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"entrySet",
 			"()Ljava/util/Set;"
 		);
 	}
 	void Provider::forEach(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"forEach",
 			"(Ljava/util/function/BiConsumer;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jobject Provider::get(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0
@@ -85,21 +87,21 @@ namespace java::security
 	}
 	jstring Provider::getInfo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getInfo",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Provider::getName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jobject Provider::getOrDefault(jobject arg0, jobject arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getOrDefault",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
@@ -108,7 +110,7 @@ namespace java::security
 	}
 	jstring Provider::getProperty(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getProperty",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
@@ -116,7 +118,7 @@ namespace java::security
 	}
 	QAndroidJniObject Provider::getService(jstring arg0, jstring arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getService",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/security/Provider$Service;",
 			arg0,
@@ -125,67 +127,67 @@ namespace java::security
 	}
 	QAndroidJniObject Provider::getServices()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getServices",
 			"()Ljava/util/Set;"
 		);
 	}
 	jdouble Provider::getVersion()
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"getVersion",
 			"()D"
 		);
 	}
 	jstring Provider::getVersionStr()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getVersionStr",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jboolean Provider::isConfigured()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isConfigured",
 			"()Z"
 		);
 	}
 	QAndroidJniObject Provider::keySet()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"keySet",
 			"()Ljava/util/Set;"
 		);
 	}
 	QAndroidJniObject Provider::keys()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"keys",
 			"()Ljava/util/Enumeration;"
 		);
 	}
 	void Provider::load(java::io::InputStream arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"load",
 			"(Ljava/io/InputStream;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jobject Provider::merge(jobject arg0, jobject arg1, __JniBaseClass arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"merge",
 			"(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		).object<jobject>();
 	}
 	jobject Provider::put(jobject arg0, jobject arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"put",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
@@ -194,15 +196,15 @@ namespace java::security
 	}
 	void Provider::putAll(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"putAll",
 			"(Ljava/util/Map;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jobject Provider::putIfAbsent(jobject arg0, jobject arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"putIfAbsent",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
@@ -211,7 +213,7 @@ namespace java::security
 	}
 	jboolean Provider::remove(jobject arg0, jobject arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"remove",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Z",
 			arg0,
@@ -220,7 +222,7 @@ namespace java::security
 	}
 	jobject Provider::remove(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"remove",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0
@@ -228,7 +230,7 @@ namespace java::security
 	}
 	jboolean Provider::replace(jobject arg0, jobject arg1, jobject arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"replace",
 			"(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z",
 			arg0,
@@ -238,7 +240,7 @@ namespace java::security
 	}
 	jobject Provider::replace(jobject arg0, jobject arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"replace",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
@@ -247,22 +249,22 @@ namespace java::security
 	}
 	void Provider::replaceAll(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"replaceAll",
 			"(Ljava/util/function/BiFunction;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring Provider::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject Provider::values()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"values",
 			"()Ljava/util/Collection;"
 		);

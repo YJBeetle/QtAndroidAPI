@@ -12,9 +12,11 @@ namespace java::lang
 		static jdouble E();
 		static jdouble PI();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Math(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Math(QAndroidJniObject obj);
+		
 		// Constructors
-		Math() = default;
 		
 		// Methods
 		static jdouble IEEEremainder(jdouble arg0, jdouble arg1);

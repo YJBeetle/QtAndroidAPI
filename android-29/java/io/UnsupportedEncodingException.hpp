@@ -12,7 +12,10 @@ namespace java::io
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit UnsupportedEncodingException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
 		UnsupportedEncodingException(QAndroidJniObject obj);
+		
 		// Constructors
 		UnsupportedEncodingException();
 		UnsupportedEncodingException(jstring arg0);

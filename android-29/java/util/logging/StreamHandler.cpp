@@ -9,59 +9,57 @@ namespace java::util::logging
 {
 	// Fields
 	
-	StreamHandler::StreamHandler(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	StreamHandler::StreamHandler(QAndroidJniObject obj) : java::util::logging::Handler(obj) {}
+	
 	// Constructors
 	StreamHandler::StreamHandler()
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::logging::Handler(
 			"java.util.logging.StreamHandler",
 			"()V"
-		);
-	}
+		) {}
 	StreamHandler::StreamHandler(java::io::OutputStream arg0, java::util::logging::Formatter arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::logging::Handler(
 			"java.util.logging.StreamHandler",
 			"(Ljava/io/OutputStream;Ljava/util/logging/Formatter;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	
 	// Methods
 	void StreamHandler::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	void StreamHandler::flush()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"flush",
 			"()V"
 		);
 	}
 	jboolean StreamHandler::isLoggable(java::util::logging::LogRecord arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isLoggable",
 			"(Ljava/util/logging/LogRecord;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void StreamHandler::publish(java::util::logging::LogRecord arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"publish",
 			"(Ljava/util/logging/LogRecord;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void StreamHandler::setEncoding(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setEncoding",
 			"(Ljava/lang/String;)V",
 			arg0

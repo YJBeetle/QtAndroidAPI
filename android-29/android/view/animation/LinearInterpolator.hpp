@@ -15,7 +15,10 @@ namespace android::view::animation
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit LinearInterpolator(const char *className, const char *sig, Ts...agv) : android::view::animation::BaseInterpolator(className, sig, std::forward<Ts>(agv)...) {}
 		LinearInterpolator(QAndroidJniObject obj);
+		
 		// Constructors
 		LinearInterpolator();
 		LinearInterpolator(android::content::Context arg0, __JniBaseClass arg1);

@@ -11,7 +11,9 @@ namespace java::nio::charset
 {
 	// Fields
 	
-	Charset::Charset(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Charset::Charset(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -51,21 +53,21 @@ namespace java::nio::charset
 	}
 	QAndroidJniObject Charset::aliases()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"aliases",
 			"()Ljava/util/Set;"
 		);
 	}
 	jboolean Charset::canEncode()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"canEncode",
 			"()Z"
 		);
 	}
 	jint Charset::compareTo(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -73,46 +75,46 @@ namespace java::nio::charset
 	}
 	jint Charset::compareTo(java::nio::charset::Charset arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"compareTo",
 			"(Ljava/nio/charset/Charset;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean Charset::contains(java::nio::charset::Charset arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"contains",
 			"(Ljava/nio/charset/Charset;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Charset::decode(java::nio::ByteBuffer arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"decode",
 			"(Ljava/nio/ByteBuffer;)Ljava/nio/CharBuffer;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring Charset::displayName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"displayName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Charset::displayName(java::util::Locale arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"displayName",
 			"(Ljava/util/Locale;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	QAndroidJniObject Charset::encode(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"encode",
 			"(Ljava/lang/String;)Ljava/nio/ByteBuffer;",
 			arg0
@@ -120,15 +122,15 @@ namespace java::nio::charset
 	}
 	QAndroidJniObject Charset::encode(java::nio::CharBuffer arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"encode",
 			"(Ljava/nio/CharBuffer;)Ljava/nio/ByteBuffer;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean Charset::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -136,42 +138,42 @@ namespace java::nio::charset
 	}
 	jint Charset::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean Charset::isRegistered()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isRegistered",
 			"()Z"
 		);
 	}
 	jstring Charset::name()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"name",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject Charset::newDecoder()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newDecoder",
 			"()Ljava/nio/charset/CharsetDecoder;"
 		);
 	}
 	QAndroidJniObject Charset::newEncoder()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"newEncoder",
 			"()Ljava/nio/charset/CharsetEncoder;"
 		);
 	}
 	jstring Charset::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

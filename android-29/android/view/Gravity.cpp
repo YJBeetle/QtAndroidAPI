@@ -194,15 +194,15 @@ namespace android::view
 		);
 	}
 	
-	Gravity::Gravity(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Gravity::Gravity(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Gravity::Gravity()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.Gravity",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void Gravity::apply(jint arg0, jint arg1, jint arg2, android::graphics::Rect arg3, android::graphics::Rect arg4)
@@ -214,8 +214,8 @@ namespace android::view
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object()
+			arg3.object(),
+			arg4.object()
 		);
 	}
 	void Gravity::apply(jint arg0, jint arg1, jint arg2, android::graphics::Rect arg3, android::graphics::Rect arg4, jint arg5)
@@ -227,8 +227,8 @@ namespace android::view
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
+			arg3.object(),
+			arg4.object(),
 			arg5
 		);
 	}
@@ -241,10 +241,10 @@ namespace android::view
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
+			arg3.object(),
 			arg4,
 			arg5,
-			arg6.__jniObject().object()
+			arg6.object()
 		);
 	}
 	void Gravity::apply(jint arg0, jint arg1, jint arg2, android::graphics::Rect arg3, jint arg4, jint arg5, android::graphics::Rect arg6, jint arg7)
@@ -256,10 +256,10 @@ namespace android::view
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
+			arg3.object(),
 			arg4,
 			arg5,
-			arg6.__jniObject().object(),
+			arg6.object(),
 			arg7
 		);
 	}
@@ -270,8 +270,8 @@ namespace android::view
 			"applyDisplay",
 			"(ILandroid/graphics/Rect;Landroid/graphics/Rect;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	void Gravity::applyDisplay(jint arg0, android::graphics::Rect arg1, android::graphics::Rect arg2, jint arg3)
@@ -281,8 +281,8 @@ namespace android::view
 			"applyDisplay",
 			"(ILandroid/graphics/Rect;Landroid/graphics/Rect;I)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
+			arg1.object(),
+			arg2.object(),
 			arg3
 		);
 	}

@@ -18,9 +18,11 @@ namespace java::nio::channels
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AsynchronousChannelGroup(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AsynchronousChannelGroup(QAndroidJniObject obj);
+		
 		// Constructors
-		AsynchronousChannelGroup() = default;
 		
 		// Methods
 		static QAndroidJniObject withCachedThreadPool(__JniBaseClass arg0, jint arg1);

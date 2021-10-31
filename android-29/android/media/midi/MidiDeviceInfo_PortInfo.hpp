@@ -12,9 +12,11 @@ namespace android::media::midi
 		static jint TYPE_INPUT();
 		static jint TYPE_OUTPUT();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MidiDeviceInfo_PortInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MidiDeviceInfo_PortInfo(QAndroidJniObject obj);
+		
 		// Constructors
-		MidiDeviceInfo_PortInfo() = default;
 		
 		// Methods
 		jstring getName();

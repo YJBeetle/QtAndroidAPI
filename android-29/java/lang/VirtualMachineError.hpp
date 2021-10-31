@@ -11,7 +11,10 @@ namespace java::lang
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit VirtualMachineError(const char *className, const char *sig, Ts...agv) : java::lang::Error(className, sig, std::forward<Ts>(agv)...) {}
 		VirtualMachineError(QAndroidJniObject obj);
+		
 		// Constructors
 		VirtualMachineError();
 		VirtualMachineError(jstring arg0);

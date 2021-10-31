@@ -17,9 +17,11 @@ namespace java::time::format
 		static QAndroidJniObject SHORT();
 		static QAndroidJniObject SHORT_STANDALONE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TextStyle(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
 		TextStyle(QAndroidJniObject obj);
+		
 		// Constructors
-		TextStyle() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);

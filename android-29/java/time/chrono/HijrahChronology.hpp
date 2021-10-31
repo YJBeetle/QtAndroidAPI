@@ -60,9 +60,11 @@ namespace java::time::chrono
 		// Fields
 		static QAndroidJniObject INSTANCE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit HijrahChronology(const char *className, const char *sig, Ts...agv) : java::time::chrono::AbstractChronology(className, sig, std::forward<Ts>(agv)...) {}
 		HijrahChronology(QAndroidJniObject obj);
+		
 		// Constructors
-		HijrahChronology() = default;
 		
 		// Methods
 		QAndroidJniObject date(__JniBaseClass arg0);

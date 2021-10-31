@@ -10,9 +10,11 @@ namespace java::util::stream
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit StreamSupport(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		StreamSupport(QAndroidJniObject obj);
+		
 		// Constructors
-		StreamSupport() = default;
 		
 		// Methods
 		static QAndroidJniObject doubleStream(__JniBaseClass arg0, jboolean arg1);

@@ -21,15 +21,15 @@ namespace android::view
 		);
 	}
 	
-	ViewDebug::ViewDebug(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ViewDebug::ViewDebug(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ViewDebug::ViewDebug()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.view.ViewDebug",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void ViewDebug::dumpCapturedView(jstring arg0, jobject arg1)
@@ -49,7 +49,7 @@ namespace android::view
 			"startHierarchyTracing",
 			"(Ljava/lang/String;Landroid/view/View;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void ViewDebug::startRecyclerTracing(jstring arg0, android::view::View arg1)
@@ -59,7 +59,7 @@ namespace android::view
 			"startRecyclerTracing",
 			"(Ljava/lang/String;Landroid/view/View;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void ViewDebug::stopHierarchyTracing()
@@ -84,8 +84,8 @@ namespace android::view
 			"android.view.ViewDebug",
 			"trace",
 			"(Landroid/view/View;Landroid/view/ViewDebug$HierarchyTraceType;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void ViewDebug::trace(android::view::View arg0, android::view::ViewDebug_RecyclerTraceType arg1, jintArray arg2)
@@ -94,8 +94,8 @@ namespace android::view
 			"android.view.ViewDebug",
 			"trace",
 			"(Landroid/view/View;Landroid/view/ViewDebug$RecyclerTraceType;[I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}

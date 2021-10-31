@@ -184,7 +184,10 @@ namespace android
 		static jint toast_frame();
 		static jint zoom_plate();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit R_drawable(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		R_drawable(QAndroidJniObject obj);
+		
 		// Constructors
 		R_drawable();
 		

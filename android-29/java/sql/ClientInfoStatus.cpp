@@ -36,7 +36,9 @@ namespace java::sql
 		);
 	}
 	
-	ClientInfoStatus::ClientInfoStatus(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ClientInfoStatus::ClientInfoStatus(QAndroidJniObject obj) : java::lang::Enum(obj) {}
+	
 	// Constructors
 	
 	// Methods

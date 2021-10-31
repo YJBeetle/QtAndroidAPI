@@ -45,7 +45,9 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	Telephony_ServiceStateTable::Telephony_ServiceStateTable(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Telephony_ServiceStateTable::Telephony_ServiceStateTable(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods

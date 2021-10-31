@@ -8,28 +8,26 @@ namespace org::xml::sax::helpers
 {
 	// Fields
 	
-	ParserAdapter::ParserAdapter(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ParserAdapter::ParserAdapter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ParserAdapter::ParserAdapter()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"org.xml.sax.helpers.ParserAdapter",
 			"()V"
-		);
-	}
+		) {}
 	ParserAdapter::ParserAdapter(__JniBaseClass arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"org.xml.sax.helpers.ParserAdapter",
 			"(Lorg/xml/sax/Parser;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	void ParserAdapter::characters(jcharArray arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"characters",
 			"([CII)V",
 			arg0,
@@ -39,14 +37,14 @@ namespace org::xml::sax::helpers
 	}
 	void ParserAdapter::endDocument()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"endDocument",
 			"()V"
 		);
 	}
 	void ParserAdapter::endElement(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"endElement",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -54,35 +52,35 @@ namespace org::xml::sax::helpers
 	}
 	QAndroidJniObject ParserAdapter::getContentHandler()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getContentHandler",
 			"()Lorg/xml/sax/ContentHandler;"
 		);
 	}
 	QAndroidJniObject ParserAdapter::getDTDHandler()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDTDHandler",
 			"()Lorg/xml/sax/DTDHandler;"
 		);
 	}
 	QAndroidJniObject ParserAdapter::getEntityResolver()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getEntityResolver",
 			"()Lorg/xml/sax/EntityResolver;"
 		);
 	}
 	QAndroidJniObject ParserAdapter::getErrorHandler()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getErrorHandler",
 			"()Lorg/xml/sax/ErrorHandler;"
 		);
 	}
 	jboolean ParserAdapter::getFeature(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getFeature",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -90,7 +88,7 @@ namespace org::xml::sax::helpers
 	}
 	jobject ParserAdapter::getProperty(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getProperty",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
 			arg0
@@ -98,7 +96,7 @@ namespace org::xml::sax::helpers
 	}
 	void ParserAdapter::ignorableWhitespace(jcharArray arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"ignorableWhitespace",
 			"([CII)V",
 			arg0,
@@ -108,7 +106,7 @@ namespace org::xml::sax::helpers
 	}
 	void ParserAdapter::parse(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"parse",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -116,15 +114,15 @@ namespace org::xml::sax::helpers
 	}
 	void ParserAdapter::parse(org::xml::sax::InputSource arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"parse",
 			"(Lorg/xml/sax/InputSource;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ParserAdapter::processingInstruction(jstring arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"processingInstruction",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
@@ -133,47 +131,47 @@ namespace org::xml::sax::helpers
 	}
 	void ParserAdapter::setContentHandler(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setContentHandler",
 			"(Lorg/xml/sax/ContentHandler;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ParserAdapter::setDTDHandler(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDTDHandler",
 			"(Lorg/xml/sax/DTDHandler;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ParserAdapter::setDocumentLocator(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDocumentLocator",
 			"(Lorg/xml/sax/Locator;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ParserAdapter::setEntityResolver(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setEntityResolver",
 			"(Lorg/xml/sax/EntityResolver;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ParserAdapter::setErrorHandler(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setErrorHandler",
 			"(Lorg/xml/sax/ErrorHandler;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ParserAdapter::setFeature(jstring arg0, jboolean arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFeature",
 			"(Ljava/lang/String;Z)V",
 			arg0,
@@ -182,7 +180,7 @@ namespace org::xml::sax::helpers
 	}
 	void ParserAdapter::setProperty(jstring arg0, jobject arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setProperty",
 			"(Ljava/lang/String;Ljava/lang/Object;)V",
 			arg0,
@@ -191,18 +189,18 @@ namespace org::xml::sax::helpers
 	}
 	void ParserAdapter::startDocument()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"startDocument",
 			"()V"
 		);
 	}
 	void ParserAdapter::startElement(jstring arg0, __JniBaseClass arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"startElement",
 			"(Ljava/lang/String;Lorg/xml/sax/AttributeList;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 } // namespace org::xml::sax::helpers

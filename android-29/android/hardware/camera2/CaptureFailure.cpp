@@ -19,48 +19,50 @@ namespace android::hardware::camera2
 		);
 	}
 	
-	CaptureFailure::CaptureFailure(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CaptureFailure::CaptureFailure(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jlong CaptureFailure::getFrameNumber()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getFrameNumber",
 			"()J"
 		);
 	}
 	jstring CaptureFailure::getPhysicalCameraId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPhysicalCameraId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint CaptureFailure::getReason()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getReason",
 			"()I"
 		);
 	}
 	QAndroidJniObject CaptureFailure::getRequest()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRequest",
 			"()Landroid/hardware/camera2/CaptureRequest;"
 		);
 	}
 	jint CaptureFailure::getSequenceId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSequenceId",
 			"()I"
 		);
 	}
 	jboolean CaptureFailure::wasImageCaptured()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"wasImageCaptured",
 			"()Z"
 		);

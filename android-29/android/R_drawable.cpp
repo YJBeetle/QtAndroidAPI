@@ -1222,15 +1222,15 @@ namespace android
 		);
 	}
 	
-	R_drawable::R_drawable(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	R_drawable::R_drawable(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	R_drawable::R_drawable()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.R$drawable",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android

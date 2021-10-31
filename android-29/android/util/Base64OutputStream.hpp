@@ -16,10 +16,12 @@ namespace android::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Base64OutputStream(const char *className, const char *sig, Ts...agv) : java::io::FilterOutputStream(className, sig, std::forward<Ts>(agv)...) {}
 		Base64OutputStream(QAndroidJniObject obj);
+		
 		// Constructors
 		Base64OutputStream(java::io::OutputStream arg0, jint arg1);
-		Base64OutputStream() = default;
 		
 		// Methods
 		void close();

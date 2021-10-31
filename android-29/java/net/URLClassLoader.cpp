@@ -13,56 +13,48 @@ namespace java::net
 {
 	// Fields
 	
-	URLClassLoader::URLClassLoader(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	URLClassLoader::URLClassLoader(QAndroidJniObject obj) : java::security::SecureClassLoader(obj) {}
+	
 	// Constructors
 	URLClassLoader::URLClassLoader(jarray arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::security::SecureClassLoader(
 			"java.net.URLClassLoader",
 			"([Ljava/net/URL;)V",
 			arg0
-		);
-	}
+		) {}
 	URLClassLoader::URLClassLoader(jarray arg0, java::lang::ClassLoader arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: java::security::SecureClassLoader(
 			"java.net.URLClassLoader",
 			"([Ljava/net/URL;Ljava/lang/ClassLoader;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
+			arg1.object()
+		) {}
 	URLClassLoader::URLClassLoader(jarray arg0, java::lang::ClassLoader arg1, __JniBaseClass arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: java::security::SecureClassLoader(
 			"java.net.URLClassLoader",
 			"([Ljava/net/URL;Ljava/lang/ClassLoader;Ljava/net/URLStreamHandlerFactory;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
+			arg1.object(),
+			arg2.object()
+		) {}
 	URLClassLoader::URLClassLoader(jstring arg0, jarray arg1, java::lang::ClassLoader arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: java::security::SecureClassLoader(
 			"java.net.URLClassLoader",
 			"(Ljava/lang/String;[Ljava/net/URL;Ljava/lang/ClassLoader;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
-		);
-	}
+			arg2.object()
+		) {}
 	URLClassLoader::URLClassLoader(jstring arg0, jarray arg1, java::lang::ClassLoader arg2, __JniBaseClass arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: java::security::SecureClassLoader(
 			"java.net.URLClassLoader",
 			"(Ljava/lang/String;[Ljava/net/URL;Ljava/lang/ClassLoader;Ljava/net/URLStreamHandlerFactory;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
-		);
-	}
+			arg2.object(),
+			arg3.object()
+		) {}
 	
 	// Methods
 	QAndroidJniObject URLClassLoader::newInstance(jarray arg0)
@@ -81,19 +73,19 @@ namespace java::net
 			"newInstance",
 			"([Ljava/net/URL;Ljava/lang/ClassLoader;)Ljava/net/URLClassLoader;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void URLClassLoader::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	QAndroidJniObject URLClassLoader::findResource(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"findResource",
 			"(Ljava/lang/String;)Ljava/net/URL;",
 			arg0
@@ -101,7 +93,7 @@ namespace java::net
 	}
 	QAndroidJniObject URLClassLoader::findResources(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"findResources",
 			"(Ljava/lang/String;)Ljava/util/Enumeration;",
 			arg0
@@ -109,7 +101,7 @@ namespace java::net
 	}
 	QAndroidJniObject URLClassLoader::getResourceAsStream(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getResourceAsStream",
 			"(Ljava/lang/String;)Ljava/io/InputStream;",
 			arg0
@@ -117,7 +109,7 @@ namespace java::net
 	}
 	jarray URLClassLoader::getURLs()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getURLs",
 			"()[Ljava/net/URL;"
 		).object<jarray>();

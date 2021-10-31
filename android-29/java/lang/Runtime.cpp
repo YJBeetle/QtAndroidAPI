@@ -7,7 +7,9 @@ namespace java::lang
 {
 	// Fields
 	
-	Runtime::Runtime(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Runtime::Runtime(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -29,22 +31,22 @@ namespace java::lang
 	}
 	void Runtime::addShutdownHook(java::lang::Thread arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addShutdownHook",
 			"(Ljava/lang/Thread;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint Runtime::availableProcessors()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"availableProcessors",
 			"()I"
 		);
 	}
 	QAndroidJniObject Runtime::exec(jarray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"exec",
 			"([Ljava/lang/String;)Ljava/lang/Process;",
 			arg0
@@ -52,7 +54,7 @@ namespace java::lang
 	}
 	QAndroidJniObject Runtime::exec(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"exec",
 			"(Ljava/lang/String;)Ljava/lang/Process;",
 			arg0
@@ -60,7 +62,7 @@ namespace java::lang
 	}
 	QAndroidJniObject Runtime::exec(jarray arg0, jarray arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"exec",
 			"([Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/Process;",
 			arg0,
@@ -69,7 +71,7 @@ namespace java::lang
 	}
 	QAndroidJniObject Runtime::exec(jstring arg0, jarray arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"exec",
 			"(Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/Process;",
 			arg0,
@@ -78,27 +80,27 @@ namespace java::lang
 	}
 	QAndroidJniObject Runtime::exec(jarray arg0, jarray arg1, java::io::File arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"exec",
 			"([Ljava/lang/String;[Ljava/lang/String;Ljava/io/File;)Ljava/lang/Process;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	QAndroidJniObject Runtime::exec(jstring arg0, jarray arg1, java::io::File arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"exec",
 			"(Ljava/lang/String;[Ljava/lang/String;Ljava/io/File;)Ljava/lang/Process;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void Runtime::exit(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"exit",
 			"(I)V",
 			arg0
@@ -106,21 +108,21 @@ namespace java::lang
 	}
 	jlong Runtime::freeMemory()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"freeMemory",
 			"()J"
 		);
 	}
 	void Runtime::gc()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"gc",
 			"()V"
 		);
 	}
 	void Runtime::halt(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"halt",
 			"(I)V",
 			arg0
@@ -128,7 +130,7 @@ namespace java::lang
 	}
 	void Runtime::load(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"load",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -136,7 +138,7 @@ namespace java::lang
 	}
 	void Runtime::loadLibrary(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"loadLibrary",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -144,29 +146,29 @@ namespace java::lang
 	}
 	jlong Runtime::maxMemory()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"maxMemory",
 			"()J"
 		);
 	}
 	jboolean Runtime::removeShutdownHook(java::lang::Thread arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"removeShutdownHook",
 			"(Ljava/lang/Thread;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Runtime::runFinalization()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"runFinalization",
 			"()V"
 		);
 	}
 	jlong Runtime::totalMemory()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"totalMemory",
 			"()J"
 		);

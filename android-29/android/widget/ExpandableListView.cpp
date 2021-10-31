@@ -43,46 +43,40 @@ namespace android::widget
 		);
 	}
 	
-	ExpandableListView::ExpandableListView(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ExpandableListView::ExpandableListView(QAndroidJniObject obj) : android::widget::ListView(obj) {}
+	
 	// Constructors
 	ExpandableListView::ExpandableListView(android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::ListView(
 			"android.widget.ExpandableListView",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	ExpandableListView::ExpandableListView(android::content::Context arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::ListView(
 			"android.widget.ExpandableListView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	ExpandableListView::ExpandableListView(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::ListView(
 			"android.widget.ExpandableListView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
-		);
-	}
+		) {}
 	ExpandableListView::ExpandableListView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
-	{
-		__thiz = QAndroidJniObject(
+		: android::widget::ListView(
 			"android.widget.ExpandableListView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	
 	// Methods
 	jint ExpandableListView::getPackedPositionChild(jlong arg0)
@@ -133,7 +127,7 @@ namespace android::widget
 	}
 	jboolean ExpandableListView::collapseGroup(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"collapseGroup",
 			"(I)Z",
 			arg0
@@ -141,7 +135,7 @@ namespace android::widget
 	}
 	jboolean ExpandableListView::expandGroup(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"expandGroup",
 			"(I)Z",
 			arg0
@@ -149,7 +143,7 @@ namespace android::widget
 	}
 	jboolean ExpandableListView::expandGroup(jint arg0, jboolean arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"expandGroup",
 			"(IZ)Z",
 			arg0,
@@ -158,28 +152,28 @@ namespace android::widget
 	}
 	jstring ExpandableListView::getAccessibilityClassName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	QAndroidJniObject ExpandableListView::getAdapter()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAdapter",
 			"()Landroid/widget/ListAdapter;"
 		);
 	}
 	QAndroidJniObject ExpandableListView::getExpandableListAdapter()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExpandableListAdapter",
 			"()Landroid/widget/ExpandableListAdapter;"
 		);
 	}
 	jlong ExpandableListView::getExpandableListPosition(jint arg0)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getExpandableListPosition",
 			"(I)J",
 			arg0
@@ -187,7 +181,7 @@ namespace android::widget
 	}
 	jint ExpandableListView::getFlatListPosition(jlong arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getFlatListPosition",
 			"(J)I",
 			arg0
@@ -195,21 +189,21 @@ namespace android::widget
 	}
 	jlong ExpandableListView::getSelectedId()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getSelectedId",
 			"()J"
 		);
 	}
 	jlong ExpandableListView::getSelectedPosition()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getSelectedPosition",
 			"()J"
 		);
 	}
 	jboolean ExpandableListView::isGroupExpanded(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isGroupExpanded",
 			"(I)Z",
 			arg0
@@ -217,15 +211,15 @@ namespace android::widget
 	}
 	void ExpandableListView::onRestoreInstanceState(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onRestoreInstanceState",
 			"(Landroid/os/Parcelable;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ExpandableListView::onRtlPropertiesChanged(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onRtlPropertiesChanged",
 			"(I)V",
 			arg0
@@ -233,48 +227,48 @@ namespace android::widget
 	}
 	QAndroidJniObject ExpandableListView::onSaveInstanceState()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onSaveInstanceState",
 			"()Landroid/os/Parcelable;"
 		);
 	}
 	jboolean ExpandableListView::performItemClick(android::view::View arg0, jint arg1, jlong arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"performItemClick",
 			"(Landroid/view/View;IJ)Z",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
 	}
 	void ExpandableListView::setAdapter(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAdapter",
 			"(Landroid/widget/Adapter;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ExpandableListView::setChildDivider(android::graphics::drawable::Drawable arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setChildDivider",
 			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ExpandableListView::setChildIndicator(android::graphics::drawable::Drawable arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setChildIndicator",
 			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ExpandableListView::setChildIndicatorBounds(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setChildIndicatorBounds",
 			"(II)V",
 			arg0,
@@ -283,7 +277,7 @@ namespace android::widget
 	}
 	void ExpandableListView::setChildIndicatorBoundsRelative(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setChildIndicatorBoundsRelative",
 			"(II)V",
 			arg0,
@@ -292,15 +286,15 @@ namespace android::widget
 	}
 	void ExpandableListView::setGroupIndicator(android::graphics::drawable::Drawable arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setGroupIndicator",
 			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ExpandableListView::setIndicatorBounds(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setIndicatorBounds",
 			"(II)V",
 			arg0,
@@ -309,7 +303,7 @@ namespace android::widget
 	}
 	void ExpandableListView::setIndicatorBoundsRelative(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setIndicatorBoundsRelative",
 			"(II)V",
 			arg0,
@@ -318,47 +312,47 @@ namespace android::widget
 	}
 	void ExpandableListView::setOnChildClickListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnChildClickListener",
 			"(Landroid/widget/ExpandableListView$OnChildClickListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ExpandableListView::setOnGroupClickListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnGroupClickListener",
 			"(Landroid/widget/ExpandableListView$OnGroupClickListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ExpandableListView::setOnGroupCollapseListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnGroupCollapseListener",
 			"(Landroid/widget/ExpandableListView$OnGroupCollapseListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ExpandableListView::setOnGroupExpandListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnGroupExpandListener",
 			"(Landroid/widget/ExpandableListView$OnGroupExpandListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ExpandableListView::setOnItemClickListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnItemClickListener",
 			"(Landroid/widget/AdapterView$OnItemClickListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean ExpandableListView::setSelectedChild(jint arg0, jint arg1, jboolean arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"setSelectedChild",
 			"(IIZ)Z",
 			arg0,
@@ -368,7 +362,7 @@ namespace android::widget
 	}
 	void ExpandableListView::setSelectedGroup(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSelectedGroup",
 			"(I)V",
 			arg0

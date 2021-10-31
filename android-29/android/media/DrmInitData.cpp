@@ -6,16 +6,18 @@ namespace android::media
 {
 	// Fields
 	
-	DrmInitData::DrmInitData(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DrmInitData::DrmInitData(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject DrmInitData::get(java::util::UUID arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"(Ljava/util/UUID;)Landroid/media/DrmInitData$SchemeInitData;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::media

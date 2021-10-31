@@ -4,41 +4,41 @@ namespace java::util
 {
 	// Fields
 	
-	Stack::Stack(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Stack::Stack(QAndroidJniObject obj) : java::util::Vector(obj) {}
+	
 	// Constructors
 	Stack::Stack()
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::Vector(
 			"java.util.Stack",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jboolean Stack::empty()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"empty",
 			"()Z"
 		);
 	}
 	jobject Stack::peek()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"peek",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobject Stack::pop()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"pop",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jobject Stack::push(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"push",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0
@@ -46,7 +46,7 @@ namespace java::util
 	}
 	jint Stack::search(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"search",
 			"(Ljava/lang/Object;)I",
 			arg0

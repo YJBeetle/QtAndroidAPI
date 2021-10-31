@@ -18,9 +18,11 @@ namespace android::net::rtp
 		jstring rtpmap();
 		jint type();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AudioCodec(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AudioCodec(QAndroidJniObject obj);
+		
 		// Constructors
-		AudioCodec() = default;
 		
 		// Methods
 		static QAndroidJniObject getCodec(jint arg0, jstring arg1, jstring arg2);

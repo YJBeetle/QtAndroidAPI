@@ -5,41 +5,41 @@ namespace android::webkit
 {
 	// Fields
 	
-	WebHistoryItem::WebHistoryItem(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WebHistoryItem::WebHistoryItem(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	WebHistoryItem::WebHistoryItem()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.webkit.WebHistoryItem",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject WebHistoryItem::getFavicon()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFavicon",
 			"()Landroid/graphics/Bitmap;"
 		);
 	}
 	jstring WebHistoryItem::getOriginalUrl()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getOriginalUrl",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring WebHistoryItem::getTitle()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTitle",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring WebHistoryItem::getUrl()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getUrl",
 			"()Ljava/lang/String;"
 		).object<jstring>();

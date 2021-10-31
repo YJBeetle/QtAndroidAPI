@@ -33,7 +33,9 @@ namespace android::nfc::tech
 		);
 	}
 	
-	MifareUltralight::MifareUltralight(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MifareUltralight::MifareUltralight(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -43,61 +45,61 @@ namespace android::nfc::tech
 			"android.nfc.tech.MifareUltralight",
 			"get",
 			"(Landroid/nfc/Tag;)Landroid/nfc/tech/MifareUltralight;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MifareUltralight::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
 	void MifareUltralight::connect()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"connect",
 			"()V"
 		);
 	}
 	jint MifareUltralight::getMaxTransceiveLength()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMaxTransceiveLength",
 			"()I"
 		);
 	}
 	QAndroidJniObject MifareUltralight::getTag()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTag",
 			"()Landroid/nfc/Tag;"
 		);
 	}
 	jint MifareUltralight::getTimeout()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTimeout",
 			"()I"
 		);
 	}
 	jint MifareUltralight::getType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getType",
 			"()I"
 		);
 	}
 	jboolean MifareUltralight::isConnected()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isConnected",
 			"()Z"
 		);
 	}
 	jbyteArray MifareUltralight::readPages(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"readPages",
 			"(I)[B",
 			arg0
@@ -105,7 +107,7 @@ namespace android::nfc::tech
 	}
 	void MifareUltralight::setTimeout(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTimeout",
 			"(I)V",
 			arg0
@@ -113,7 +115,7 @@ namespace android::nfc::tech
 	}
 	jbyteArray MifareUltralight::transceive(jbyteArray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"transceive",
 			"([B)[B",
 			arg0
@@ -121,7 +123,7 @@ namespace android::nfc::tech
 	}
 	void MifareUltralight::writePage(jint arg0, jbyteArray arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writePage",
 			"(I[B)V",
 			arg0,

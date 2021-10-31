@@ -6,15 +6,15 @@ namespace java::security
 {
 	// Fields
 	
-	AlgorithmParameterGeneratorSpi::AlgorithmParameterGeneratorSpi(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AlgorithmParameterGeneratorSpi::AlgorithmParameterGeneratorSpi(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	AlgorithmParameterGeneratorSpi::AlgorithmParameterGeneratorSpi()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.security.AlgorithmParameterGeneratorSpi",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::security

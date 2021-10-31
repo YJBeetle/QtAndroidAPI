@@ -9,7 +9,9 @@ namespace android::graphics
 {
 	// Fields
 	
-	BitmapRegionDecoder::BitmapRegionDecoder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BitmapRegionDecoder::BitmapRegionDecoder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -19,7 +21,7 @@ namespace android::graphics
 			"android.graphics.BitmapRegionDecoder",
 			"newInstance",
 			"(Ljava/io/FileDescriptor;Z)Landroid/graphics/BitmapRegionDecoder;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -29,7 +31,7 @@ namespace android::graphics
 			"android.graphics.BitmapRegionDecoder",
 			"newInstance",
 			"(Ljava/io/InputStream;Z)Landroid/graphics/BitmapRegionDecoder;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
@@ -57,37 +59,37 @@ namespace android::graphics
 	}
 	QAndroidJniObject BitmapRegionDecoder::decodeRegion(android::graphics::Rect arg0, android::graphics::BitmapFactory_Options arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"decodeRegion",
 			"(Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jint BitmapRegionDecoder::getHeight()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getHeight",
 			"()I"
 		);
 	}
 	jint BitmapRegionDecoder::getWidth()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getWidth",
 			"()I"
 		);
 	}
 	jboolean BitmapRegionDecoder::isRecycled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isRecycled",
 			"()Z"
 		);
 	}
 	void BitmapRegionDecoder::recycle()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"recycle",
 			"()V"
 		);

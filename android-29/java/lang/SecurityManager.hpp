@@ -30,7 +30,10 @@ namespace java::lang
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SecurityManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SecurityManager(QAndroidJniObject obj);
+		
 		// Constructors
 		SecurityManager();
 		

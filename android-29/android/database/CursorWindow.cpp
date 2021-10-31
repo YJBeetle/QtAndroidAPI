@@ -14,33 +14,29 @@ namespace android::database
 		);
 	}
 	
-	CursorWindow::CursorWindow(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CursorWindow::CursorWindow(QAndroidJniObject obj) : android::database::sqlite::SQLiteClosable(obj) {}
+	
 	// Constructors
 	CursorWindow::CursorWindow(jboolean arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::database::sqlite::SQLiteClosable(
 			"android.database.CursorWindow",
 			"(Z)V",
 			arg0
-		);
-	}
+		) {}
 	CursorWindow::CursorWindow(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::database::sqlite::SQLiteClosable(
 			"android.database.CursorWindow",
 			"(Ljava/lang/String;)V",
 			arg0
-		);
-	}
+		) {}
 	CursorWindow::CursorWindow(jstring arg0, jlong arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::database::sqlite::SQLiteClosable(
 			"android.database.CursorWindow",
 			"(Ljava/lang/String;J)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject CursorWindow::newFromParcel(android::os::Parcel arg0)
@@ -49,50 +45,50 @@ namespace android::database
 			"android.database.CursorWindow",
 			"newFromParcel",
 			"(Landroid/os/Parcel;)Landroid/database/CursorWindow;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean CursorWindow::allocRow()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"allocRow",
 			"()Z"
 		);
 	}
 	void CursorWindow::clear()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
 	void CursorWindow::copyStringToBuffer(jint arg0, jint arg1, android::database::CharArrayBuffer arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"copyStringToBuffer",
 			"(IILandroid/database/CharArrayBuffer;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	jint CursorWindow::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	void CursorWindow::freeLastRow()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"freeLastRow",
 			"()V"
 		);
 	}
 	jbyteArray CursorWindow::getBlob(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getBlob",
 			"(II)[B",
 			arg0,
@@ -101,7 +97,7 @@ namespace android::database
 	}
 	jdouble CursorWindow::getDouble(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"getDouble",
 			"(II)D",
 			arg0,
@@ -110,7 +106,7 @@ namespace android::database
 	}
 	jfloat CursorWindow::getFloat(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getFloat",
 			"(II)F",
 			arg0,
@@ -119,7 +115,7 @@ namespace android::database
 	}
 	jint CursorWindow::getInt(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getInt",
 			"(II)I",
 			arg0,
@@ -128,7 +124,7 @@ namespace android::database
 	}
 	jlong CursorWindow::getLong(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getLong",
 			"(II)J",
 			arg0,
@@ -137,14 +133,14 @@ namespace android::database
 	}
 	jint CursorWindow::getNumRows()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getNumRows",
 			"()I"
 		);
 	}
 	jshort CursorWindow::getShort(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jshort>(
+		return callMethod<jshort>(
 			"getShort",
 			"(II)S",
 			arg0,
@@ -153,14 +149,14 @@ namespace android::database
 	}
 	jint CursorWindow::getStartPosition()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getStartPosition",
 			"()I"
 		);
 	}
 	jstring CursorWindow::getString(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getString",
 			"(II)Ljava/lang/String;",
 			arg0,
@@ -169,7 +165,7 @@ namespace android::database
 	}
 	jint CursorWindow::getType(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getType",
 			"(II)I",
 			arg0,
@@ -178,7 +174,7 @@ namespace android::database
 	}
 	jboolean CursorWindow::isBlob(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isBlob",
 			"(II)Z",
 			arg0,
@@ -187,7 +183,7 @@ namespace android::database
 	}
 	jboolean CursorWindow::isFloat(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isFloat",
 			"(II)Z",
 			arg0,
@@ -196,7 +192,7 @@ namespace android::database
 	}
 	jboolean CursorWindow::isLong(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isLong",
 			"(II)Z",
 			arg0,
@@ -205,7 +201,7 @@ namespace android::database
 	}
 	jboolean CursorWindow::isNull(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isNull",
 			"(II)Z",
 			arg0,
@@ -214,7 +210,7 @@ namespace android::database
 	}
 	jboolean CursorWindow::isString(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isString",
 			"(II)Z",
 			arg0,
@@ -223,7 +219,7 @@ namespace android::database
 	}
 	jboolean CursorWindow::putBlob(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"putBlob",
 			"([BII)Z",
 			arg0,
@@ -233,7 +229,7 @@ namespace android::database
 	}
 	jboolean CursorWindow::putDouble(jdouble arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"putDouble",
 			"(DII)Z",
 			arg0,
@@ -243,7 +239,7 @@ namespace android::database
 	}
 	jboolean CursorWindow::putLong(jlong arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"putLong",
 			"(JII)Z",
 			arg0,
@@ -253,7 +249,7 @@ namespace android::database
 	}
 	jboolean CursorWindow::putNull(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"putNull",
 			"(II)Z",
 			arg0,
@@ -262,7 +258,7 @@ namespace android::database
 	}
 	jboolean CursorWindow::putString(jstring arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"putString",
 			"(Ljava/lang/String;II)Z",
 			arg0,
@@ -272,7 +268,7 @@ namespace android::database
 	}
 	jboolean CursorWindow::setNumColumns(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"setNumColumns",
 			"(I)Z",
 			arg0
@@ -280,7 +276,7 @@ namespace android::database
 	}
 	void CursorWindow::setStartPosition(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setStartPosition",
 			"(I)V",
 			arg0
@@ -288,17 +284,17 @@ namespace android::database
 	}
 	jstring CursorWindow::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void CursorWindow::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

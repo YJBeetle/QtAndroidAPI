@@ -13,13 +13,15 @@ namespace android::telephony
 		);
 	}
 	
-	CellIdentityLte::CellIdentityLte(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CellIdentityLte::CellIdentityLte(QAndroidJniObject obj) : android::telephony::CellIdentity(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jboolean CellIdentityLte::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -27,94 +29,94 @@ namespace android::telephony
 	}
 	jint CellIdentityLte::getBandwidth()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getBandwidth",
 			"()I"
 		);
 	}
 	jint CellIdentityLte::getCi()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getCi",
 			"()I"
 		);
 	}
 	jint CellIdentityLte::getEarfcn()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getEarfcn",
 			"()I"
 		);
 	}
 	jint CellIdentityLte::getMcc()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMcc",
 			"()I"
 		);
 	}
 	jstring CellIdentityLte::getMccString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMccString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint CellIdentityLte::getMnc()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMnc",
 			"()I"
 		);
 	}
 	jstring CellIdentityLte::getMncString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMncString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring CellIdentityLte::getMobileNetworkOperator()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMobileNetworkOperator",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint CellIdentityLte::getPci()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPci",
 			"()I"
 		);
 	}
 	jint CellIdentityLte::getTac()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTac",
 			"()I"
 		);
 	}
 	jint CellIdentityLte::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring CellIdentityLte::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void CellIdentityLte::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

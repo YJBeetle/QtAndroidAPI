@@ -4,15 +4,15 @@ namespace java::nio
 {
 	// Fields
 	
-	BufferOverflowException::BufferOverflowException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	BufferOverflowException::BufferOverflowException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
+	
 	// Constructors
 	BufferOverflowException::BufferOverflowException()
-	{
-		__thiz = QAndroidJniObject(
+		: java::lang::RuntimeException(
 			"java.nio.BufferOverflowException",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace java::nio

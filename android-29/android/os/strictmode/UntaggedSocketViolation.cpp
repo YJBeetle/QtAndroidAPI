@@ -4,7 +4,9 @@ namespace android::os::strictmode
 {
 	// Fields
 	
-	UntaggedSocketViolation::UntaggedSocketViolation(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UntaggedSocketViolation::UntaggedSocketViolation(QAndroidJniObject obj) : android::os::strictmode::Violation(obj) {}
+	
 	// Constructors
 	
 	// Methods

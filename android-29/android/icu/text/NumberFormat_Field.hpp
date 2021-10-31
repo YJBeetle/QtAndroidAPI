@@ -23,9 +23,11 @@ namespace android::icu::text
 		static QAndroidJniObject PERMILLE();
 		static QAndroidJniObject SIGN();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit NumberFormat_Field(const char *className, const char *sig, Ts...agv) : java::text::Format_Field(className, sig, std::forward<Ts>(agv)...) {}
 		NumberFormat_Field(QAndroidJniObject obj);
+		
 		// Constructors
-		NumberFormat_Field() = default;
 		
 		// Methods
 	};

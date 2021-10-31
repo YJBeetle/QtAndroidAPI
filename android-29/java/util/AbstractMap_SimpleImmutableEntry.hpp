@@ -10,11 +10,13 @@ namespace java::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AbstractMap_SimpleImmutableEntry(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AbstractMap_SimpleImmutableEntry(QAndroidJniObject obj);
+		
 		// Constructors
 		AbstractMap_SimpleImmutableEntry(__JniBaseClass arg0);
 		AbstractMap_SimpleImmutableEntry(jobject arg0, jobject arg1);
-		AbstractMap_SimpleImmutableEntry() = default;
 		
 		// Methods
 		jboolean equals(jobject arg0);

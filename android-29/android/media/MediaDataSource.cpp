@@ -4,27 +4,27 @@ namespace android::media
 {
 	// Fields
 	
-	MediaDataSource::MediaDataSource(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaDataSource::MediaDataSource(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MediaDataSource::MediaDataSource()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.MediaDataSource",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jlong MediaDataSource::getSize()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getSize",
 			"()J"
 		);
 	}
 	jint MediaDataSource::readAt(jlong arg0, jbyteArray arg1, jint arg2, jint arg3)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"readAt",
 			"(J[BII)I",
 			arg0,

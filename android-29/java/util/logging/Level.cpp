@@ -77,7 +77,9 @@ namespace java::util::logging
 		);
 	}
 	
-	Level::Level(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Level::Level(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -92,7 +94,7 @@ namespace java::util::logging
 	}
 	jboolean Level::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -100,42 +102,42 @@ namespace java::util::logging
 	}
 	jstring Level::getLocalizedName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLocalizedName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Level::getName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Level::getResourceBundleName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getResourceBundleName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint Level::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jint Level::intValue()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"intValue",
 			"()I"
 		);
 	}
 	jstring Level::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

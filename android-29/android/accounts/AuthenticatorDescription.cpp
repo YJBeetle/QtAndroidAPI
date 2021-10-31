@@ -14,54 +14,55 @@ namespace android::accounts
 	}
 	jint AuthenticatorDescription::accountPreferencesId()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"accountPreferencesId"
 		);
 	}
 	jboolean AuthenticatorDescription::customTokens()
 	{
-		return __thiz.getField<jboolean>(
+		return getField<jboolean>(
 			"customTokens"
 		);
 	}
 	jint AuthenticatorDescription::iconId()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"iconId"
 		);
 	}
 	jint AuthenticatorDescription::labelId()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"labelId"
 		);
 	}
 	jstring AuthenticatorDescription::packageName()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"packageName",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint AuthenticatorDescription::smallIconId()
 	{
-		return __thiz.getField<jint>(
+		return getField<jint>(
 			"smallIconId"
 		);
 	}
 	jstring AuthenticatorDescription::type()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"type",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	
-	AuthenticatorDescription::AuthenticatorDescription(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AuthenticatorDescription::AuthenticatorDescription(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	AuthenticatorDescription::AuthenticatorDescription(jstring arg0, jstring arg1, jint arg2, jint arg3, jint arg4, jint arg5)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.accounts.AuthenticatorDescription",
 			"(Ljava/lang/String;Ljava/lang/String;IIII)V",
 			arg0,
@@ -70,11 +71,9 @@ namespace android::accounts
 			arg3,
 			arg4,
 			arg5
-		);
-	}
+		) {}
 	AuthenticatorDescription::AuthenticatorDescription(jstring arg0, jstring arg1, jint arg2, jint arg3, jint arg4, jint arg5, jboolean arg6)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.accounts.AuthenticatorDescription",
 			"(Ljava/lang/String;Ljava/lang/String;IIIIZ)V",
 			arg0,
@@ -84,8 +83,7 @@ namespace android::accounts
 			arg4,
 			arg5,
 			arg6
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject AuthenticatorDescription::newKey(jstring arg0)
@@ -99,14 +97,14 @@ namespace android::accounts
 	}
 	jint AuthenticatorDescription::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean AuthenticatorDescription::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -114,24 +112,24 @@ namespace android::accounts
 	}
 	jint AuthenticatorDescription::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring AuthenticatorDescription::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void AuthenticatorDescription::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

@@ -6,53 +6,51 @@ namespace android::text::style
 {
 	// Fields
 	
-	UnderlineSpan::UnderlineSpan(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UnderlineSpan::UnderlineSpan(QAndroidJniObject obj) : android::text::style::CharacterStyle(obj) {}
+	
 	// Constructors
 	UnderlineSpan::UnderlineSpan()
-	{
-		__thiz = QAndroidJniObject(
+		: android::text::style::CharacterStyle(
 			"android.text.style.UnderlineSpan",
 			"()V"
-		);
-	}
+		) {}
 	UnderlineSpan::UnderlineSpan(android::os::Parcel arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::text::style::CharacterStyle(
 			"android.text.style.UnderlineSpan",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jint UnderlineSpan::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jint UnderlineSpan::getSpanTypeId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSpanTypeId",
 			"()I"
 		);
 	}
 	void UnderlineSpan::updateDrawState(android::text::TextPaint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"updateDrawState",
 			"(Landroid/text/TextPaint;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void UnderlineSpan::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

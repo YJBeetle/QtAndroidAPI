@@ -16,67 +16,63 @@ namespace android::content
 	}
 	QAndroidJniObject ContentProviderResult::count()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"count",
 			"Ljava/lang/Integer;"
 		);
 	}
 	QAndroidJniObject ContentProviderResult::uri()
 	{
-		return __thiz.getObjectField(
+		return getObjectField(
 			"uri",
 			"Landroid/net/Uri;"
 		);
 	}
 	
-	ContentProviderResult::ContentProviderResult(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ContentProviderResult::ContentProviderResult(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ContentProviderResult::ContentProviderResult(android::net::Uri arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.content.ContentProviderResult",
 			"(Landroid/net/Uri;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	ContentProviderResult::ContentProviderResult(android::os::Parcel arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.content.ContentProviderResult",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	ContentProviderResult::ContentProviderResult(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.content.ContentProviderResult",
 			"(I)V",
 			arg0
-		);
-	}
+		) {}
 	
 	// Methods
 	jint ContentProviderResult::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jstring ContentProviderResult::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void ContentProviderResult::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

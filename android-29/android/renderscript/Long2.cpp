@@ -5,35 +5,33 @@ namespace android::renderscript
 	// Fields
 	jlong Long2::x()
 	{
-		return __thiz.getField<jlong>(
+		return getField<jlong>(
 			"x"
 		);
 	}
 	jlong Long2::y()
 	{
-		return __thiz.getField<jlong>(
+		return getField<jlong>(
 			"y"
 		);
 	}
 	
-	Long2::Long2(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Long2::Long2(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Long2::Long2()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.renderscript.Long2",
 			"()V"
-		);
-	}
+		) {}
 	Long2::Long2(jlong arg0, jlong arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.renderscript.Long2",
 			"(JJ)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::renderscript

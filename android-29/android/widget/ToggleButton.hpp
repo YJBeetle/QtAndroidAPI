@@ -22,13 +22,15 @@ namespace android::widget
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ToggleButton(const char *className, const char *sig, Ts...agv) : android::widget::CompoundButton(className, sig, std::forward<Ts>(agv)...) {}
 		ToggleButton(QAndroidJniObject obj);
+		
 		// Constructors
 		ToggleButton(android::content::Context arg0);
 		ToggleButton(android::content::Context arg0, __JniBaseClass arg1);
 		ToggleButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		ToggleButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
-		ToggleButton() = default;
 		
 		// Methods
 		jstring getAccessibilityClassName();

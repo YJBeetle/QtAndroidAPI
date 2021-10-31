@@ -44,159 +44,159 @@ namespace android::telecom
 		);
 	}
 	
-	Call_Callback::Call_Callback(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Call_Callback::Call_Callback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Call_Callback::Call_Callback()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.telecom.Call$Callback",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void Call_Callback::onCallDestroyed(android::telecom::Call arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onCallDestroyed",
 			"(Landroid/telecom/Call;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Call_Callback::onCannedTextResponsesLoaded(android::telecom::Call arg0, __JniBaseClass arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onCannedTextResponsesLoaded",
 			"(Landroid/telecom/Call;Ljava/util/List;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void Call_Callback::onChildrenChanged(android::telecom::Call arg0, __JniBaseClass arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onChildrenChanged",
 			"(Landroid/telecom/Call;Ljava/util/List;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void Call_Callback::onConferenceableCallsChanged(android::telecom::Call arg0, __JniBaseClass arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onConferenceableCallsChanged",
 			"(Landroid/telecom/Call;Ljava/util/List;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void Call_Callback::onConnectionEvent(android::telecom::Call arg0, jstring arg1, android::os::Bundle arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onConnectionEvent",
 			"(Landroid/telecom/Call;Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void Call_Callback::onDetailsChanged(android::telecom::Call arg0, android::telecom::Call_Details arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onDetailsChanged",
 			"(Landroid/telecom/Call;Landroid/telecom/Call$Details;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void Call_Callback::onHandoverComplete(android::telecom::Call arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onHandoverComplete",
 			"(Landroid/telecom/Call;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Call_Callback::onHandoverFailed(android::telecom::Call arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onHandoverFailed",
 			"(Landroid/telecom/Call;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void Call_Callback::onParentChanged(android::telecom::Call arg0, android::telecom::Call arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onParentChanged",
 			"(Landroid/telecom/Call;Landroid/telecom/Call;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void Call_Callback::onPostDialWait(android::telecom::Call arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onPostDialWait",
 			"(Landroid/telecom/Call;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void Call_Callback::onRttInitiationFailure(android::telecom::Call arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onRttInitiationFailure",
 			"(Landroid/telecom/Call;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void Call_Callback::onRttModeChanged(android::telecom::Call arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onRttModeChanged",
 			"(Landroid/telecom/Call;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void Call_Callback::onRttRequest(android::telecom::Call arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onRttRequest",
 			"(Landroid/telecom/Call;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void Call_Callback::onRttStatusChanged(android::telecom::Call arg0, jboolean arg1, android::telecom::Call_RttCall arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onRttStatusChanged",
 			"(Landroid/telecom/Call;ZLandroid/telecom/Call$RttCall;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void Call_Callback::onStateChanged(android::telecom::Call arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onStateChanged",
 			"(Landroid/telecom/Call;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void Call_Callback::onVideoCallChanged(android::telecom::Call arg0, android::telecom::InCallService_VideoCall arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onVideoCallChanged",
 			"(Landroid/telecom/Call;Landroid/telecom/InCallService$VideoCall;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 } // namespace android::telecom

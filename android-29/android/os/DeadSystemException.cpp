@@ -4,15 +4,15 @@ namespace android::os
 {
 	// Fields
 	
-	DeadSystemException::DeadSystemException(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	DeadSystemException::DeadSystemException(QAndroidJniObject obj) : android::os::DeadObjectException(obj) {}
+	
 	// Constructors
 	DeadSystemException::DeadSystemException()
-	{
-		__thiz = QAndroidJniObject(
+		: android::os::DeadObjectException(
 			"android.os.DeadSystemException",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 } // namespace android::os

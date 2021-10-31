@@ -46,9 +46,11 @@ namespace java::lang
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ClassLoader(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ClassLoader(QAndroidJniObject obj);
+		
 		// Constructors
-		ClassLoader() = default;
 		
 		// Methods
 		static QAndroidJniObject getPlatformClassLoader();

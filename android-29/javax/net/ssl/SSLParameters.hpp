@@ -10,7 +10,10 @@ namespace javax::net::ssl
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SSLParameters(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SSLParameters(QAndroidJniObject obj);
+		
 		// Constructors
 		SSLParameters();
 		SSLParameters(jarray arg0);

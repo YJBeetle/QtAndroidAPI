@@ -13,10 +13,12 @@ namespace java::nio::file
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit NotDirectoryException(const char *className, const char *sig, Ts...agv) : java::nio::file::FileSystemException(className, sig, std::forward<Ts>(agv)...) {}
 		NotDirectoryException(QAndroidJniObject obj);
+		
 		// Constructors
 		NotDirectoryException(jstring arg0);
-		NotDirectoryException() = default;
 		
 		// Methods
 	};

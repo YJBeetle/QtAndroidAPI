@@ -13,46 +13,46 @@ namespace android::content::pm
 		);
 	}
 	
-	ChangedPackages::ChangedPackages(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ChangedPackages::ChangedPackages(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ChangedPackages::ChangedPackages(jint arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.content.pm.ChangedPackages",
 			"(ILjava/util/List;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
+			arg1.object()
+		) {}
 	
 	// Methods
 	jint ChangedPackages::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	QAndroidJniObject ChangedPackages::getPackageNames()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPackageNames",
 			"()Ljava/util/List;"
 		);
 	}
 	jint ChangedPackages::getSequenceNumber()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSequenceNumber",
 			"()I"
 		);
 	}
 	void ChangedPackages::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

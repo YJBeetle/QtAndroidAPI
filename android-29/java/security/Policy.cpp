@@ -19,15 +19,15 @@ namespace java::security
 		);
 	}
 	
-	Policy::Policy(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Policy::Policy(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Policy::Policy()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.security.Policy",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject Policy::getInstance(jstring arg0, __JniBaseClass arg1)
@@ -37,7 +37,7 @@ namespace java::security
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Policy$Parameters;)Ljava/security/Policy;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	QAndroidJniObject Policy::getInstance(jstring arg0, __JniBaseClass arg1, jstring arg2)
@@ -47,7 +47,7 @@ namespace java::security
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Policy$Parameters;Ljava/lang/String;)Ljava/security/Policy;",
 			arg0,
-			arg1.__jniObject().object(),
+			arg1.object(),
 			arg2
 		);
 	}
@@ -58,8 +58,8 @@ namespace java::security
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Policy$Parameters;Ljava/security/Provider;)Ljava/security/Policy;",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject Policy::getPolicy()
@@ -76,58 +76,58 @@ namespace java::security
 			"java.security.Policy",
 			"setPolicy",
 			"(Ljava/security/Policy;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Policy::getParameters()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getParameters",
 			"()Ljava/security/Policy$Parameters;"
 		);
 	}
 	QAndroidJniObject Policy::getPermissions(java::security::CodeSource arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPermissions",
 			"(Ljava/security/CodeSource;)Ljava/security/PermissionCollection;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Policy::getPermissions(java::security::ProtectionDomain arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPermissions",
 			"(Ljava/security/ProtectionDomain;)Ljava/security/PermissionCollection;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject Policy::getProvider()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getProvider",
 			"()Ljava/security/Provider;"
 		);
 	}
 	jstring Policy::getType()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jboolean Policy::implies(java::security::ProtectionDomain arg0, java::security::Permission arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"implies",
 			"(Ljava/security/ProtectionDomain;Ljava/security/Permission;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void Policy::refresh()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"refresh",
 			"()V"
 		);

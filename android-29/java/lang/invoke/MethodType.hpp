@@ -30,9 +30,11 @@ namespace java::lang::invoke
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MethodType(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MethodType(QAndroidJniObject obj);
+		
 		// Constructors
-		MethodType() = default;
 		
 		// Methods
 		static QAndroidJniObject fromMethodDescriptorString(jstring arg0, java::lang::ClassLoader arg1);

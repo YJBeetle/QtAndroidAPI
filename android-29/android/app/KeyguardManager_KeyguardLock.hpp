@@ -14,9 +14,11 @@ namespace android::app
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit KeyguardManager_KeyguardLock(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		KeyguardManager_KeyguardLock(QAndroidJniObject obj);
+		
 		// Constructors
-		KeyguardManager_KeyguardLock() = default;
 		
 		// Methods
 		void disableKeyguard();

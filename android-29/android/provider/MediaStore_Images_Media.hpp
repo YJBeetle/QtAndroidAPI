@@ -26,7 +26,10 @@ namespace android::provider
 		static QAndroidJniObject EXTERNAL_CONTENT_URI();
 		static QAndroidJniObject INTERNAL_CONTENT_URI();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaStore_Images_Media(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaStore_Images_Media(QAndroidJniObject obj);
+		
 		// Constructors
 		MediaStore_Images_Media();
 		

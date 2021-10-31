@@ -5,7 +5,9 @@ namespace java::time::temporal
 {
 	// Fields
 	
-	ValueRange::ValueRange(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ValueRange::ValueRange(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -44,25 +46,25 @@ namespace java::time::temporal
 	}
 	jint ValueRange::checkValidIntValue(jlong arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"checkValidIntValue",
 			"(JLjava/time/temporal/TemporalField;)I",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jlong ValueRange::checkValidValue(jlong arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"checkValidValue",
 			"(JLjava/time/temporal/TemporalField;)J",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jboolean ValueRange::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -70,56 +72,56 @@ namespace java::time::temporal
 	}
 	jlong ValueRange::getLargestMinimum()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getLargestMinimum",
 			"()J"
 		);
 	}
 	jlong ValueRange::getMaximum()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getMaximum",
 			"()J"
 		);
 	}
 	jlong ValueRange::getMinimum()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getMinimum",
 			"()J"
 		);
 	}
 	jlong ValueRange::getSmallestMaximum()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getSmallestMaximum",
 			"()J"
 		);
 	}
 	jint ValueRange::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jboolean ValueRange::isFixed()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isFixed",
 			"()Z"
 		);
 	}
 	jboolean ValueRange::isIntValue()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isIntValue",
 			"()Z"
 		);
 	}
 	jboolean ValueRange::isValidIntValue(jlong arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isValidIntValue",
 			"(J)Z",
 			arg0
@@ -127,7 +129,7 @@ namespace java::time::temporal
 	}
 	jboolean ValueRange::isValidValue(jlong arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isValidValue",
 			"(J)Z",
 			arg0
@@ -135,7 +137,7 @@ namespace java::time::temporal
 	}
 	jstring ValueRange::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

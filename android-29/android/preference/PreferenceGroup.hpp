@@ -23,12 +23,14 @@ namespace android::preference
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PreferenceGroup(const char *className, const char *sig, Ts...agv) : android::preference::Preference(className, sig, std::forward<Ts>(agv)...) {}
 		PreferenceGroup(QAndroidJniObject obj);
+		
 		// Constructors
 		PreferenceGroup(android::content::Context arg0, __JniBaseClass arg1);
 		PreferenceGroup(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
 		PreferenceGroup(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
-		PreferenceGroup() = default;
 		
 		// Methods
 		void addItemFromInflater(android::preference::Preference arg0);

@@ -15,42 +15,42 @@ namespace android::location
 		);
 	}
 	
-	Address::Address(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Address::Address(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Address::Address(java::util::Locale arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.location.Address",
 			"(Ljava/util/Locale;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	void Address::clearLatitude()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clearLatitude",
 			"()V"
 		);
 	}
 	void Address::clearLongitude()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clearLongitude",
 			"()V"
 		);
 	}
 	jint Address::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jstring Address::getAddressLine(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAddressLine",
 			"(I)Ljava/lang/String;",
 			arg0
@@ -58,147 +58,147 @@ namespace android::location
 	}
 	jstring Address::getAdminArea()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAdminArea",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Address::getCountryCode()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCountryCode",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Address::getCountryName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCountryName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	QAndroidJniObject Address::getExtras()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
 	jstring Address::getFeatureName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFeatureName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jdouble Address::getLatitude()
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"getLatitude",
 			"()D"
 		);
 	}
 	QAndroidJniObject Address::getLocale()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLocale",
 			"()Ljava/util/Locale;"
 		);
 	}
 	jstring Address::getLocality()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLocality",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jdouble Address::getLongitude()
 	{
-		return __thiz.callMethod<jdouble>(
+		return callMethod<jdouble>(
 			"getLongitude",
 			"()D"
 		);
 	}
 	jint Address::getMaxAddressLineIndex()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMaxAddressLineIndex",
 			"()I"
 		);
 	}
 	jstring Address::getPhone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPhone",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Address::getPostalCode()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPostalCode",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Address::getPremises()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPremises",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Address::getSubAdminArea()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSubAdminArea",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Address::getSubLocality()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSubLocality",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Address::getSubThoroughfare()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSubThoroughfare",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Address::getThoroughfare()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getThoroughfare",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring Address::getUrl()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getUrl",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jboolean Address::hasLatitude()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasLatitude",
 			"()Z"
 		);
 	}
 	jboolean Address::hasLongitude()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasLongitude",
 			"()Z"
 		);
 	}
 	void Address::setAddressLine(jint arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAddressLine",
 			"(ILjava/lang/String;)V",
 			arg0,
@@ -207,7 +207,7 @@ namespace android::location
 	}
 	void Address::setAdminArea(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAdminArea",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -215,7 +215,7 @@ namespace android::location
 	}
 	void Address::setCountryCode(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCountryCode",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -223,7 +223,7 @@ namespace android::location
 	}
 	void Address::setCountryName(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setCountryName",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -231,15 +231,15 @@ namespace android::location
 	}
 	void Address::setExtras(android::os::Bundle arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setExtras",
 			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Address::setFeatureName(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setFeatureName",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -247,7 +247,7 @@ namespace android::location
 	}
 	void Address::setLatitude(jdouble arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLatitude",
 			"(D)V",
 			arg0
@@ -255,7 +255,7 @@ namespace android::location
 	}
 	void Address::setLocality(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLocality",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -263,7 +263,7 @@ namespace android::location
 	}
 	void Address::setLongitude(jdouble arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLongitude",
 			"(D)V",
 			arg0
@@ -271,7 +271,7 @@ namespace android::location
 	}
 	void Address::setPhone(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPhone",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -279,7 +279,7 @@ namespace android::location
 	}
 	void Address::setPostalCode(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPostalCode",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -287,7 +287,7 @@ namespace android::location
 	}
 	void Address::setPremises(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPremises",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -295,7 +295,7 @@ namespace android::location
 	}
 	void Address::setSubAdminArea(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSubAdminArea",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -303,7 +303,7 @@ namespace android::location
 	}
 	void Address::setSubLocality(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSubLocality",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -311,7 +311,7 @@ namespace android::location
 	}
 	void Address::setSubThoroughfare(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSubThoroughfare",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -319,7 +319,7 @@ namespace android::location
 	}
 	void Address::setThoroughfare(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setThoroughfare",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -327,7 +327,7 @@ namespace android::location
 	}
 	void Address::setUrl(jstring arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setUrl",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -335,17 +335,17 @@ namespace android::location
 	}
 	jstring Address::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void Address::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

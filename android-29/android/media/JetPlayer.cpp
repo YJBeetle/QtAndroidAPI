@@ -6,7 +6,9 @@ namespace android::media
 {
 	// Fields
 	
-	JetPlayer::JetPlayer(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	JetPlayer::JetPlayer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
@@ -28,36 +30,36 @@ namespace android::media
 	}
 	jboolean JetPlayer::clearQueue()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"clearQueue",
 			"()Z"
 		);
 	}
 	jobject JetPlayer::clone()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jboolean JetPlayer::closeJetFile()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"closeJetFile",
 			"()Z"
 		);
 	}
 	jboolean JetPlayer::loadJetFile(android::content::res::AssetFileDescriptor arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"loadJetFile",
 			"(Landroid/content/res/AssetFileDescriptor;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean JetPlayer::loadJetFile(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"loadJetFile",
 			"(Ljava/lang/String;)Z",
 			arg0
@@ -65,21 +67,21 @@ namespace android::media
 	}
 	jboolean JetPlayer::pause()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"pause",
 			"()Z"
 		);
 	}
 	jboolean JetPlayer::play()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"play",
 			"()Z"
 		);
 	}
 	jboolean JetPlayer::queueJetSegment(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jbyte arg5)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"queueJetSegment",
 			"(IIIIIB)Z",
 			arg0,
@@ -92,7 +94,7 @@ namespace android::media
 	}
 	jboolean JetPlayer::queueJetSegmentMuteArray(jint arg0, jint arg1, jint arg2, jint arg3, jbooleanArray arg4, jbyte arg5)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"queueJetSegmentMuteArray",
 			"(IIII[ZB)Z",
 			arg0,
@@ -105,31 +107,31 @@ namespace android::media
 	}
 	void JetPlayer::release()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
 	void JetPlayer::setEventListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setEventListener",
 			"(Landroid/media/JetPlayer$OnJetEventListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void JetPlayer::setEventListener(__JniBaseClass arg0, android::os::Handler arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setEventListener",
 			"(Landroid/media/JetPlayer$OnJetEventListener;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jboolean JetPlayer::setMuteArray(jbooleanArray arg0, jboolean arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"setMuteArray",
 			"([ZZ)Z",
 			arg0,
@@ -138,7 +140,7 @@ namespace android::media
 	}
 	jboolean JetPlayer::setMuteFlag(jint arg0, jboolean arg1, jboolean arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"setMuteFlag",
 			"(IZZ)Z",
 			arg0,
@@ -148,7 +150,7 @@ namespace android::media
 	}
 	jboolean JetPlayer::setMuteFlags(jint arg0, jboolean arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"setMuteFlags",
 			"(IZ)Z",
 			arg0,
@@ -157,7 +159,7 @@ namespace android::media
 	}
 	jboolean JetPlayer::triggerClip(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"triggerClip",
 			"(I)Z",
 			arg0

@@ -14,7 +14,10 @@ namespace android::os
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DeadSystemException(const char *className, const char *sig, Ts...agv) : android::os::DeadObjectException(className, sig, std::forward<Ts>(agv)...) {}
 		DeadSystemException(QAndroidJniObject obj);
+		
 		// Constructors
 		DeadSystemException();
 		

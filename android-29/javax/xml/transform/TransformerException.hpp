@@ -23,14 +23,16 @@ namespace javax::xml::transform
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TransformerException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
 		TransformerException(QAndroidJniObject obj);
+		
 		// Constructors
 		TransformerException(jstring arg0);
 		TransformerException(jthrowable arg0);
 		TransformerException(jstring arg0, jthrowable arg1);
 		TransformerException(jstring arg0, __JniBaseClass arg1);
 		TransformerException(jstring arg0, __JniBaseClass arg1, jthrowable arg2);
-		TransformerException() = default;
 		
 		// Methods
 		jthrowable getCause();

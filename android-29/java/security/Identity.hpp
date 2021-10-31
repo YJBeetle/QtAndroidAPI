@@ -18,11 +18,13 @@ namespace java::security
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Identity(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Identity(QAndroidJniObject obj);
+		
 		// Constructors
 		Identity(jstring arg0);
 		Identity(jstring arg0, java::security::IdentityScope arg1);
-		Identity() = default;
 		
 		// Methods
 		void addCertificate(__JniBaseClass arg0);

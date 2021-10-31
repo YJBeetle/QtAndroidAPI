@@ -8,15 +8,15 @@ namespace android::app
 {
 	// Fields
 	
-	LoaderManager::LoaderManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	LoaderManager::LoaderManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	LoaderManager::LoaderManager()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.app.LoaderManager",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void LoaderManager::enableDebugLogging(jboolean arg0)
@@ -30,7 +30,7 @@ namespace android::app
 	}
 	void LoaderManager::destroyLoader(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"destroyLoader",
 			"(I)V",
 			arg0
@@ -38,18 +38,18 @@ namespace android::app
 	}
 	void LoaderManager::dump(jstring arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"dump",
 			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
+			arg1.object(),
+			arg2.object(),
 			arg3
 		);
 	}
 	QAndroidJniObject LoaderManager::getLoader(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLoader",
 			"(I)Landroid/content/Loader;",
 			arg0
@@ -57,22 +57,22 @@ namespace android::app
 	}
 	QAndroidJniObject LoaderManager::initLoader(jint arg0, android::os::Bundle arg1, __JniBaseClass arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"initLoader",
 			"(ILandroid/os/Bundle;Landroid/app/LoaderManager$LoaderCallbacks;)Landroid/content/Loader;",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	QAndroidJniObject LoaderManager::restartLoader(jint arg0, android::os::Bundle arg1, __JniBaseClass arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"restartLoader",
 			"(ILandroid/os/Bundle;Landroid/app/LoaderManager$LoaderCallbacks;)Landroid/content/Loader;",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg1.object(),
+			arg2.object()
 		);
 	}
 } // namespace android::app

@@ -30,7 +30,10 @@ namespace android::gesture
 		static jint SEQUENCE_INVARIANT();
 		static jint SEQUENCE_SENSITIVE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit GestureStore(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		GestureStore(QAndroidJniObject obj);
+		
 		// Constructors
 		GestureStore();
 		

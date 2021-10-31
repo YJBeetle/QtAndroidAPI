@@ -5,24 +5,24 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	ThreadPoolExecutor_AbortPolicy::ThreadPoolExecutor_AbortPolicy(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ThreadPoolExecutor_AbortPolicy::ThreadPoolExecutor_AbortPolicy(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ThreadPoolExecutor_AbortPolicy::ThreadPoolExecutor_AbortPolicy()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.concurrent.ThreadPoolExecutor$AbortPolicy",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void ThreadPoolExecutor_AbortPolicy::rejectedExecution(__JniBaseClass arg0, java::util::concurrent::ThreadPoolExecutor arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"rejectedExecution",
 			"(Ljava/lang/Runnable;Ljava/util/concurrent/ThreadPoolExecutor;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 } // namespace java::util::concurrent

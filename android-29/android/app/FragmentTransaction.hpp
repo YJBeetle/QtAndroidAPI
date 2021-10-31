@@ -25,7 +25,10 @@ namespace android::app
 		static jint TRANSIT_NONE();
 		static jint TRANSIT_UNSET();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit FragmentTransaction(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		FragmentTransaction(QAndroidJniObject obj);
+		
 		// Constructors
 		FragmentTransaction();
 		

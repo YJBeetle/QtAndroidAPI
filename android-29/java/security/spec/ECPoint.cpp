@@ -13,22 +13,22 @@ namespace java::security::spec
 		);
 	}
 	
-	ECPoint::ECPoint(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ECPoint::ECPoint(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ECPoint::ECPoint(java::math::BigInteger arg0, java::math::BigInteger arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.security.spec.ECPoint",
 			"(Ljava/math/BigInteger;Ljava/math/BigInteger;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	
 	// Methods
 	jboolean ECPoint::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -36,21 +36,21 @@ namespace java::security::spec
 	}
 	QAndroidJniObject ECPoint::getAffineX()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAffineX",
 			"()Ljava/math/BigInteger;"
 		);
 	}
 	QAndroidJniObject ECPoint::getAffineY()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAffineY",
 			"()Ljava/math/BigInteger;"
 		);
 	}
 	jint ECPoint::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);

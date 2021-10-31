@@ -6,67 +6,67 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	AbstractExecutorService::AbstractExecutorService(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AbstractExecutorService::AbstractExecutorService(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	AbstractExecutorService::AbstractExecutorService()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"java.util.concurrent.AbstractExecutorService",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject AbstractExecutorService::invokeAll(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"invokeAll",
 			"(Ljava/util/Collection;)Ljava/util/List;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject AbstractExecutorService::invokeAll(__JniBaseClass arg0, jlong arg1, java::util::concurrent::TimeUnit arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"invokeAll",
 			"(Ljava/util/Collection;JLjava/util/concurrent/TimeUnit;)Ljava/util/List;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	jobject AbstractExecutorService::invokeAny(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"invokeAny",
 			"(Ljava/util/Collection;)Ljava/lang/Object;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jobject>();
 	}
 	jobject AbstractExecutorService::invokeAny(__JniBaseClass arg0, jlong arg1, java::util::concurrent::TimeUnit arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"invokeAny",
 			"(Ljava/util/Collection;JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		).object<jobject>();
 	}
 	QAndroidJniObject AbstractExecutorService::submit(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"submit",
 			"(Ljava/lang/Runnable;)Ljava/util/concurrent/Future;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject AbstractExecutorService::submit(__JniBaseClass arg0, jobject arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"submit",
 			"(Ljava/lang/Runnable;Ljava/lang/Object;)Ljava/util/concurrent/Future;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

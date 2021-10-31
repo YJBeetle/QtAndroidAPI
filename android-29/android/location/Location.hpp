@@ -22,11 +22,13 @@ namespace android::location
 		static jint FORMAT_MINUTES();
 		static jint FORMAT_SECONDS();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Location(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Location(QAndroidJniObject obj);
+		
 		// Constructors
 		Location(android::location::Location &arg0);
 		Location(jstring arg0);
-		Location() = default;
 		
 		// Methods
 		static jdouble convert(jstring arg0);

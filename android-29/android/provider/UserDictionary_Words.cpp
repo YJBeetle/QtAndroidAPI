@@ -101,15 +101,15 @@ namespace android::provider
 		).object<jstring>();
 	}
 	
-	UserDictionary_Words::UserDictionary_Words(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	UserDictionary_Words::UserDictionary_Words(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	UserDictionary_Words::UserDictionary_Words()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.provider.UserDictionary$Words",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	void UserDictionary_Words::addWord(android::content::Context arg0, jstring arg1, jint arg2, jint arg3)
@@ -118,7 +118,7 @@ namespace android::provider
 			"android.provider.UserDictionary$Words",
 			"addWord",
 			"(Landroid/content/Context;Ljava/lang/String;II)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3
@@ -130,11 +130,11 @@ namespace android::provider
 			"android.provider.UserDictionary$Words",
 			"addWord",
 			"(Landroid/content/Context;Ljava/lang/String;ILjava/lang/String;Ljava/util/Locale;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object()
+			arg4.object()
 		);
 	}
 } // namespace android::provider

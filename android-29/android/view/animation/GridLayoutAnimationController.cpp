@@ -70,68 +70,64 @@ namespace android::view::animation
 		);
 	}
 	
-	GridLayoutAnimationController::GridLayoutAnimationController(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	GridLayoutAnimationController::GridLayoutAnimationController(QAndroidJniObject obj) : android::view::animation::LayoutAnimationController(obj) {}
+	
 	// Constructors
 	GridLayoutAnimationController::GridLayoutAnimationController(android::view::animation::Animation arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: android::view::animation::LayoutAnimationController(
 			"android.view.animation.GridLayoutAnimationController",
 			"(Landroid/view/animation/Animation;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	GridLayoutAnimationController::GridLayoutAnimationController(android::content::Context arg0, __JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::view::animation::LayoutAnimationController(
 			"android.view.animation.GridLayoutAnimationController",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	GridLayoutAnimationController::GridLayoutAnimationController(android::view::animation::Animation arg0, jfloat arg1, jfloat arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: android::view::animation::LayoutAnimationController(
 			"android.view.animation.GridLayoutAnimationController",
 			"(Landroid/view/animation/Animation;FF)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	jfloat GridLayoutAnimationController::getColumnDelay()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getColumnDelay",
 			"()F"
 		);
 	}
 	jint GridLayoutAnimationController::getDirection()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDirection",
 			"()I"
 		);
 	}
 	jint GridLayoutAnimationController::getDirectionPriority()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDirectionPriority",
 			"()I"
 		);
 	}
 	jfloat GridLayoutAnimationController::getRowDelay()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getRowDelay",
 			"()F"
 		);
 	}
 	void GridLayoutAnimationController::setColumnDelay(jfloat arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setColumnDelay",
 			"(F)V",
 			arg0
@@ -139,7 +135,7 @@ namespace android::view::animation
 	}
 	void GridLayoutAnimationController::setDirection(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDirection",
 			"(I)V",
 			arg0
@@ -147,7 +143,7 @@ namespace android::view::animation
 	}
 	void GridLayoutAnimationController::setDirectionPriority(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDirectionPriority",
 			"(I)V",
 			arg0
@@ -155,7 +151,7 @@ namespace android::view::animation
 	}
 	void GridLayoutAnimationController::setRowDelay(jfloat arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setRowDelay",
 			"(F)V",
 			arg0
@@ -163,7 +159,7 @@ namespace android::view::animation
 	}
 	jboolean GridLayoutAnimationController::willOverlap()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"willOverlap",
 			"()Z"
 		);

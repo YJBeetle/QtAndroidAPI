@@ -5,31 +5,31 @@ namespace android::widget
 {
 	// Fields
 	
-	RemoteViewsService::RemoteViewsService(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	RemoteViewsService::RemoteViewsService(QAndroidJniObject obj) : android::app::Service(obj) {}
+	
 	// Constructors
 	RemoteViewsService::RemoteViewsService()
-	{
-		__thiz = QAndroidJniObject(
+		: android::app::Service(
 			"android.widget.RemoteViewsService",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject RemoteViewsService::onBind(android::content::Intent arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onBind",
 			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject RemoteViewsService::onGetViewFactory(android::content::Intent arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onGetViewFactory",
 			"(Landroid/content/Intent;)Landroid/widget/RemoteViewsService$RemoteViewsFactory;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::widget

@@ -83,9 +83,11 @@ namespace android::icu::util
 		static jint YEAR_WOY();
 		static jint ZONE_OFFSET();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Calendar(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Calendar(QAndroidJniObject obj);
+		
 		// Constructors
-		Calendar() = default;
 		
 		// Methods
 		static jarray getAvailableLocales();

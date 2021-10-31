@@ -30,10 +30,12 @@ namespace android::net
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit VpnService_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		VpnService_Builder(QAndroidJniObject obj);
+		
 		// Constructors
 		VpnService_Builder(android::net::VpnService arg0);
-		VpnService_Builder() = default;
 		
 		// Methods
 		QAndroidJniObject addAddress(jstring arg0, jint arg1);

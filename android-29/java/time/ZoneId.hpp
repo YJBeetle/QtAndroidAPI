@@ -31,9 +31,11 @@ namespace java::time
 		// Fields
 		static QAndroidJniObject SHORT_IDS();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ZoneId(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ZoneId(QAndroidJniObject obj);
+		
 		// Constructors
-		ZoneId() = default;
 		
 		// Methods
 		static QAndroidJniObject from(__JniBaseClass arg0);

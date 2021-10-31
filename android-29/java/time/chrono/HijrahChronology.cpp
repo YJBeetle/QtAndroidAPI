@@ -24,21 +24,23 @@ namespace java::time::chrono
 		);
 	}
 	
-	HijrahChronology::HijrahChronology(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	HijrahChronology::HijrahChronology(QAndroidJniObject obj) : java::time::chrono::AbstractChronology(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	QAndroidJniObject HijrahChronology::date(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"date",
 			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/chrono/HijrahDate;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject HijrahChronology::date(jint arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"date",
 			"(III)Ljava/time/chrono/HijrahDate;",
 			arg0,
@@ -48,10 +50,10 @@ namespace java::time::chrono
 	}
 	QAndroidJniObject HijrahChronology::date(__JniBaseClass arg0, jint arg1, jint arg2, jint arg3)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"date",
 			"(Ljava/time/chrono/Era;III)Ljava/time/chrono/HijrahDate;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3
@@ -59,7 +61,7 @@ namespace java::time::chrono
 	}
 	QAndroidJniObject HijrahChronology::dateEpochDay(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"dateEpochDay",
 			"(J)Ljava/time/chrono/HijrahDate;",
 			arg0
@@ -67,30 +69,30 @@ namespace java::time::chrono
 	}
 	QAndroidJniObject HijrahChronology::dateNow()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"dateNow",
 			"()Ljava/time/chrono/HijrahDate;"
 		);
 	}
 	QAndroidJniObject HijrahChronology::dateNow(java::time::Clock arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"dateNow",
 			"(Ljava/time/Clock;)Ljava/time/chrono/HijrahDate;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject HijrahChronology::dateNow(java::time::ZoneId arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"dateNow",
 			"(Ljava/time/ZoneId;)Ljava/time/chrono/HijrahDate;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject HijrahChronology::dateYearDay(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"dateYearDay",
 			"(II)Ljava/time/chrono/HijrahDate;",
 			arg0,
@@ -99,17 +101,17 @@ namespace java::time::chrono
 	}
 	QAndroidJniObject HijrahChronology::dateYearDay(__JniBaseClass arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"dateYearDay",
 			"(Ljava/time/chrono/Era;II)Ljava/time/chrono/HijrahDate;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
 	}
 	QAndroidJniObject HijrahChronology::eraOf(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"eraOf",
 			"(I)Ljava/time/chrono/HijrahEra;",
 			arg0
@@ -117,28 +119,28 @@ namespace java::time::chrono
 	}
 	QAndroidJniObject HijrahChronology::eras()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"eras",
 			"()Ljava/util/List;"
 		);
 	}
 	jstring HijrahChronology::getCalendarType()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCalendarType",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring HijrahChronology::getId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jboolean HijrahChronology::isLeapYear(jlong arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isLeapYear",
 			"(J)Z",
 			arg0
@@ -146,53 +148,53 @@ namespace java::time::chrono
 	}
 	QAndroidJniObject HijrahChronology::localDateTime(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"localDateTime",
 			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/chrono/ChronoLocalDateTime;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint HijrahChronology::prolepticYear(__JniBaseClass arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"prolepticYear",
 			"(Ljava/time/chrono/Era;I)I",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	QAndroidJniObject HijrahChronology::range(java::time::temporal::ChronoField arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"range",
 			"(Ljava/time/temporal/ChronoField;)Ljava/time/temporal/ValueRange;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject HijrahChronology::resolveDate(__JniBaseClass arg0, java::time::format::ResolverStyle arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"resolveDate",
 			"(Ljava/util/Map;Ljava/time/format/ResolverStyle;)Ljava/time/chrono/HijrahDate;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	QAndroidJniObject HijrahChronology::zonedDateTime(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"zonedDateTime",
 			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/chrono/ChronoZonedDateTime;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	QAndroidJniObject HijrahChronology::zonedDateTime(java::time::Instant arg0, java::time::ZoneId arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"zonedDateTime",
 			"(Ljava/time/Instant;Ljava/time/ZoneId;)Ljava/time/chrono/ChronoZonedDateTime;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 } // namespace java::time::chrono

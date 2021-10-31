@@ -4,62 +4,62 @@ namespace android::renderscript
 {
 	// Fields
 	
-	Script_LaunchOptions::Script_LaunchOptions(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Script_LaunchOptions::Script_LaunchOptions(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Script_LaunchOptions::Script_LaunchOptions()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.renderscript.Script$LaunchOptions",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jint Script_LaunchOptions::getXEnd()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getXEnd",
 			"()I"
 		);
 	}
 	jint Script_LaunchOptions::getXStart()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getXStart",
 			"()I"
 		);
 	}
 	jint Script_LaunchOptions::getYEnd()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getYEnd",
 			"()I"
 		);
 	}
 	jint Script_LaunchOptions::getYStart()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getYStart",
 			"()I"
 		);
 	}
 	jint Script_LaunchOptions::getZEnd()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getZEnd",
 			"()I"
 		);
 	}
 	jint Script_LaunchOptions::getZStart()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getZStart",
 			"()I"
 		);
 	}
 	QAndroidJniObject Script_LaunchOptions::setX(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setX",
 			"(II)Landroid/renderscript/Script$LaunchOptions;",
 			arg0,
@@ -68,7 +68,7 @@ namespace android::renderscript
 	}
 	QAndroidJniObject Script_LaunchOptions::setY(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setY",
 			"(II)Landroid/renderscript/Script$LaunchOptions;",
 			arg0,
@@ -77,7 +77,7 @@ namespace android::renderscript
 	}
 	QAndroidJniObject Script_LaunchOptions::setZ(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setZ",
 			"(II)Landroid/renderscript/Script$LaunchOptions;",
 			arg0,

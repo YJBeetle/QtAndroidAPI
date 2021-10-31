@@ -23,12 +23,14 @@ namespace java::net
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit InetSocketAddress(const char *className, const char *sig, Ts...agv) : java::net::SocketAddress(className, sig, std::forward<Ts>(agv)...) {}
 		InetSocketAddress(QAndroidJniObject obj);
+		
 		// Constructors
 		InetSocketAddress(jint arg0);
 		InetSocketAddress(jstring arg0, jint arg1);
 		InetSocketAddress(java::net::InetAddress arg0, jint arg1);
-		InetSocketAddress() = default;
 		
 		// Methods
 		static QAndroidJniObject createUnresolved(jstring arg0, jint arg1);

@@ -6,26 +6,24 @@ namespace java::sql
 {
 	// Fields
 	
-	Time::Time(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Time::Time(QAndroidJniObject obj) : java::util::Date(obj) {}
+	
 	// Constructors
 	Time::Time(jlong arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::Date(
 			"java.sql.Time",
 			"(J)V",
 			arg0
-		);
-	}
+		) {}
 	Time::Time(jint arg0, jint arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
+		: java::util::Date(
 			"java.sql.Time",
 			"(III)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject Time::valueOf(jstring arg0)
@@ -43,40 +41,40 @@ namespace java::sql
 			"java.sql.Time",
 			"valueOf",
 			"(Ljava/time/LocalTime;)Ljava/sql/Time;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint Time::getDate()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDate",
 			"()I"
 		);
 	}
 	jint Time::getDay()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDay",
 			"()I"
 		);
 	}
 	jint Time::getMonth()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getMonth",
 			"()I"
 		);
 	}
 	jint Time::getYear()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getYear",
 			"()I"
 		);
 	}
 	void Time::setDate(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDate",
 			"(I)V",
 			arg0
@@ -84,7 +82,7 @@ namespace java::sql
 	}
 	void Time::setMonth(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMonth",
 			"(I)V",
 			arg0
@@ -92,7 +90,7 @@ namespace java::sql
 	}
 	void Time::setTime(jlong arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTime",
 			"(J)V",
 			arg0
@@ -100,7 +98,7 @@ namespace java::sql
 	}
 	void Time::setYear(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setYear",
 			"(I)V",
 			arg0
@@ -108,21 +106,21 @@ namespace java::sql
 	}
 	QAndroidJniObject Time::toInstant()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toInstant",
 			"()Ljava/time/Instant;"
 		);
 	}
 	QAndroidJniObject Time::toLocalTime()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toLocalTime",
 			"()Ljava/time/LocalTime;"
 		);
 	}
 	jstring Time::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();

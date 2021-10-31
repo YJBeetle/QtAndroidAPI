@@ -4,29 +4,27 @@ namespace android::text::style
 {
 	// Fields
 	
-	TtsSpan_TimeBuilder::TtsSpan_TimeBuilder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TtsSpan_TimeBuilder::TtsSpan_TimeBuilder(QAndroidJniObject obj) : android::text::style::TtsSpan_SemioticClassBuilder(obj) {}
+	
 	// Constructors
 	TtsSpan_TimeBuilder::TtsSpan_TimeBuilder()
-	{
-		__thiz = QAndroidJniObject(
+		: android::text::style::TtsSpan_SemioticClassBuilder(
 			"android.text.style.TtsSpan$TimeBuilder",
 			"()V"
-		);
-	}
+		) {}
 	TtsSpan_TimeBuilder::TtsSpan_TimeBuilder(jint arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
+		: android::text::style::TtsSpan_SemioticClassBuilder(
 			"android.text.style.TtsSpan$TimeBuilder",
 			"(II)V",
 			arg0,
 			arg1
-		);
-	}
+		) {}
 	
 	// Methods
 	QAndroidJniObject TtsSpan_TimeBuilder::setHours(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setHours",
 			"(I)Landroid/text/style/TtsSpan$TimeBuilder;",
 			arg0
@@ -34,7 +32,7 @@ namespace android::text::style
 	}
 	QAndroidJniObject TtsSpan_TimeBuilder::setMinutes(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setMinutes",
 			"(I)Landroid/text/style/TtsSpan$TimeBuilder;",
 			arg0

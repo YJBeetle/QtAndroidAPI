@@ -159,15 +159,15 @@ namespace android::os
 		);
 	}
 	
-	Process::Process(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Process::Process(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Process::Process()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.os.Process",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jlong Process::getElapsedCpuTime()
