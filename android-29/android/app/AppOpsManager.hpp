@@ -50,48 +50,32 @@ namespace android::app
 		static jstring OPSTR_WRITE_SETTINGS();
 		static jint WATCH_FOREGROUND_CHANGES();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AppOpsManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AppOpsManager(QAndroidJniObject obj);
+		
 		// Constructors
-		AppOpsManager() = default;
 		
 		// Methods
 		static jstring permissionToOp(jstring arg0);
-		static jstring permissionToOp(const QString &arg0);
 		jint checkOp(jstring arg0, jint arg1, jstring arg2);
-		jint checkOp(const QString &arg0, jint arg1, const QString &arg2);
 		jint checkOpNoThrow(jstring arg0, jint arg1, jstring arg2);
-		jint checkOpNoThrow(const QString &arg0, jint arg1, const QString &arg2);
 		void checkPackage(jint arg0, jstring arg1);
-		void checkPackage(jint arg0, const QString &arg1);
 		void finishOp(jstring arg0, jint arg1, jstring arg2);
-		void finishOp(const QString &arg0, jint arg1, const QString &arg2);
 		jint noteOp(jstring arg0, jint arg1, jstring arg2);
-		jint noteOp(const QString &arg0, jint arg1, const QString &arg2);
 		jint noteOpNoThrow(jstring arg0, jint arg1, jstring arg2);
-		jint noteOpNoThrow(const QString &arg0, jint arg1, const QString &arg2);
 		jint noteProxyOp(jstring arg0, jstring arg1);
-		jint noteProxyOp(const QString &arg0, const QString &arg1);
 		jint noteProxyOpNoThrow(jstring arg0, jstring arg1);
-		jint noteProxyOpNoThrow(const QString &arg0, const QString &arg1);
 		jint noteProxyOpNoThrow(jstring arg0, jstring arg1, jint arg2);
-		jint noteProxyOpNoThrow(const QString &arg0, const QString &arg1, jint arg2);
 		jint startOp(jstring arg0, jint arg1, jstring arg2);
-		jint startOp(const QString &arg0, jint arg1, const QString &arg2);
 		jint startOpNoThrow(jstring arg0, jint arg1, jstring arg2);
-		jint startOpNoThrow(const QString &arg0, jint arg1, const QString &arg2);
 		void startWatchingMode(jstring arg0, jstring arg1, __JniBaseClass arg2);
-		void startWatchingMode(const QString &arg0, const QString &arg1, __JniBaseClass arg2);
 		void startWatchingMode(jstring arg0, jstring arg1, jint arg2, __JniBaseClass arg3);
-		void startWatchingMode(const QString &arg0, const QString &arg1, jint arg2, __JniBaseClass arg3);
 		void stopWatchingMode(__JniBaseClass arg0);
 		jint unsafeCheckOp(jstring arg0, jint arg1, jstring arg2);
-		jint unsafeCheckOp(const QString &arg0, jint arg1, const QString &arg2);
 		jint unsafeCheckOpNoThrow(jstring arg0, jint arg1, jstring arg2);
-		jint unsafeCheckOpNoThrow(const QString &arg0, jint arg1, const QString &arg2);
 		jint unsafeCheckOpRaw(jstring arg0, jint arg1, jstring arg2);
-		jint unsafeCheckOpRaw(const QString &arg0, jint arg1, const QString &arg2);
 		jint unsafeCheckOpRawNoThrow(jstring arg0, jint arg1, jstring arg2);
-		jint unsafeCheckOpRawNoThrow(const QString &arg0, jint arg1, const QString &arg2);
 	};
 } // namespace android::app
 

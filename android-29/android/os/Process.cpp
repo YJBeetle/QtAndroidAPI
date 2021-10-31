@@ -6,173 +6,173 @@ namespace android::os
 	// Fields
 	jint Process::BLUETOOTH_UID()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.Process",
 			"BLUETOOTH_UID"
 		);
 	}
 	jint Process::FIRST_APPLICATION_UID()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.Process",
 			"FIRST_APPLICATION_UID"
 		);
 	}
 	jint Process::INVALID_UID()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.Process",
 			"INVALID_UID"
 		);
 	}
 	jint Process::LAST_APPLICATION_UID()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.Process",
 			"LAST_APPLICATION_UID"
 		);
 	}
 	jint Process::PHONE_UID()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.Process",
 			"PHONE_UID"
 		);
 	}
 	jint Process::ROOT_UID()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.Process",
 			"ROOT_UID"
 		);
 	}
 	jint Process::SHELL_UID()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.Process",
 			"SHELL_UID"
 		);
 	}
 	jint Process::SIGNAL_KILL()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.Process",
 			"SIGNAL_KILL"
 		);
 	}
 	jint Process::SIGNAL_QUIT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.Process",
 			"SIGNAL_QUIT"
 		);
 	}
 	jint Process::SIGNAL_USR1()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.Process",
 			"SIGNAL_USR1"
 		);
 	}
 	jint Process::SYSTEM_UID()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.Process",
 			"SYSTEM_UID"
 		);
 	}
 	jint Process::THREAD_PRIORITY_AUDIO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.Process",
 			"THREAD_PRIORITY_AUDIO"
 		);
 	}
 	jint Process::THREAD_PRIORITY_BACKGROUND()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.Process",
 			"THREAD_PRIORITY_BACKGROUND"
 		);
 	}
 	jint Process::THREAD_PRIORITY_DEFAULT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.Process",
 			"THREAD_PRIORITY_DEFAULT"
 		);
 	}
 	jint Process::THREAD_PRIORITY_DISPLAY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.Process",
 			"THREAD_PRIORITY_DISPLAY"
 		);
 	}
 	jint Process::THREAD_PRIORITY_FOREGROUND()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.Process",
 			"THREAD_PRIORITY_FOREGROUND"
 		);
 	}
 	jint Process::THREAD_PRIORITY_LESS_FAVORABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.Process",
 			"THREAD_PRIORITY_LESS_FAVORABLE"
 		);
 	}
 	jint Process::THREAD_PRIORITY_LOWEST()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.Process",
 			"THREAD_PRIORITY_LOWEST"
 		);
 	}
 	jint Process::THREAD_PRIORITY_MORE_FAVORABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.Process",
 			"THREAD_PRIORITY_MORE_FAVORABLE"
 		);
 	}
 	jint Process::THREAD_PRIORITY_URGENT_AUDIO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.Process",
 			"THREAD_PRIORITY_URGENT_AUDIO"
 		);
 	}
 	jint Process::THREAD_PRIORITY_URGENT_DISPLAY()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.Process",
 			"THREAD_PRIORITY_URGENT_DISPLAY"
 		);
 	}
 	jint Process::THREAD_PRIORITY_VIDEO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.os.Process",
 			"THREAD_PRIORITY_VIDEO"
 		);
 	}
 	
-	Process::Process(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Process::Process(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Process::Process()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.os.Process",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
 	jlong Process::getElapsedCpuTime()
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.os.Process",
 			"getElapsedCpuTime",
 			"()J"
@@ -180,7 +180,7 @@ namespace android::os
 	}
 	jintArray Process::getExclusiveCores()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.os.Process",
 			"getExclusiveCores",
 			"()[I"
@@ -188,25 +188,16 @@ namespace android::os
 	}
 	jint Process::getGidForName(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.os.Process",
 			"getGidForName",
 			"(Ljava/lang/String;)I",
 			arg0
 		);
 	}
-	jint Process::getGidForName(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.os.Process",
-			"getGidForName",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jlong Process::getStartElapsedRealtime()
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.os.Process",
 			"getStartElapsedRealtime",
 			"()J"
@@ -214,7 +205,7 @@ namespace android::os
 	}
 	jlong Process::getStartUptimeMillis()
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return callStaticMethod<jlong>(
 			"android.os.Process",
 			"getStartUptimeMillis",
 			"()J"
@@ -222,7 +213,7 @@ namespace android::os
 	}
 	jint Process::getThreadPriority(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.os.Process",
 			"getThreadPriority",
 			"(I)I",
@@ -231,25 +222,16 @@ namespace android::os
 	}
 	jint Process::getUidForName(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.os.Process",
 			"getUidForName",
 			"(Ljava/lang/String;)I",
 			arg0
 		);
 	}
-	jint Process::getUidForName(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.os.Process",
-			"getUidForName",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jboolean Process::is64Bit()
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.os.Process",
 			"is64Bit",
 			"()Z"
@@ -257,7 +239,7 @@ namespace android::os
 	}
 	jboolean Process::isApplicationUid(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.os.Process",
 			"isApplicationUid",
 			"(I)Z",
@@ -266,7 +248,7 @@ namespace android::os
 	}
 	jboolean Process::isIsolated()
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.os.Process",
 			"isIsolated",
 			"()Z"
@@ -274,7 +256,7 @@ namespace android::os
 	}
 	void Process::killProcess(jint arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Process",
 			"killProcess",
 			"(I)V",
@@ -283,7 +265,7 @@ namespace android::os
 	}
 	jint Process::myPid()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.os.Process",
 			"myPid",
 			"()I"
@@ -291,7 +273,7 @@ namespace android::os
 	}
 	jint Process::myTid()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.os.Process",
 			"myTid",
 			"()I"
@@ -299,15 +281,15 @@ namespace android::os
 	}
 	jint Process::myUid()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.os.Process",
 			"myUid",
 			"()I"
 		);
 	}
-	QAndroidJniObject Process::myUserHandle()
+	android::os::UserHandle Process::myUserHandle()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.os.Process",
 			"myUserHandle",
 			"()Landroid/os/UserHandle;"
@@ -315,7 +297,7 @@ namespace android::os
 	}
 	void Process::sendSignal(jint arg0, jint arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Process",
 			"sendSignal",
 			"(II)V",
@@ -325,7 +307,7 @@ namespace android::os
 	}
 	void Process::setThreadPriority(jint arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Process",
 			"setThreadPriority",
 			"(I)V",
@@ -334,7 +316,7 @@ namespace android::os
 	}
 	void Process::setThreadPriority(jint arg0, jint arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		callStaticMethod<void>(
 			"android.os.Process",
 			"setThreadPriority",
 			"(II)V",
@@ -344,7 +326,7 @@ namespace android::os
 	}
 	jboolean Process::supportsProcesses()
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.os.Process",
 			"supportsProcesses",
 			"()Z"

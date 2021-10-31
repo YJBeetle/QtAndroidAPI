@@ -14,12 +14,15 @@ namespace android::view
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ViewConfiguration(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ViewConfiguration(QAndroidJniObject obj);
+		
 		// Constructors
 		ViewConfiguration();
 		
 		// Methods
-		static QAndroidJniObject get(android::content::Context arg0);
+		static android::view::ViewConfiguration get(android::content::Context arg0);
 		static jfloat getAmbiguousGestureMultiplier();
 		static jlong getDefaultActionModeHideDuration();
 		static jint getDoubleTapTimeout();

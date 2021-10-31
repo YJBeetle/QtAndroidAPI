@@ -6,13 +6,15 @@ namespace android::graphics::fonts
 {
 	// Fields
 	
-	FontFamily::FontFamily(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FontFamily::FontFamily(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject FontFamily::getFont(jint arg0)
+	android::graphics::fonts::Font FontFamily::getFont(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFont",
 			"(I)Landroid/graphics/fonts/Font;",
 			arg0
@@ -20,7 +22,7 @@ namespace android::graphics::fonts
 	}
 	jint FontFamily::getSize()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSize",
 			"()I"
 		);

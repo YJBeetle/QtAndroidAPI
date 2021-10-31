@@ -29,23 +29,25 @@ namespace android::view
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint ROTATION_0();
 		static jint ROTATION_180();
 		static jint ROTATION_270();
 		static jint ROTATION_90();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Surface(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Surface(QAndroidJniObject obj);
+		
 		// Constructors
-		Surface(android::graphics::SurfaceTexture &arg0);
-		Surface(android::view::SurfaceControl &arg0);
-		Surface() = default;
+		Surface(android::graphics::SurfaceTexture arg0);
+		Surface(android::view::SurfaceControl arg0);
 		
 		// Methods
 		jint describeContents();
 		jboolean isValid();
-		QAndroidJniObject lockCanvas(android::graphics::Rect arg0);
-		QAndroidJniObject lockHardwareCanvas();
+		android::graphics::Canvas lockCanvas(android::graphics::Rect arg0);
+		android::graphics::Canvas lockHardwareCanvas();
 		void readFromParcel(android::os::Parcel arg0);
 		void release();
 		jstring toString();

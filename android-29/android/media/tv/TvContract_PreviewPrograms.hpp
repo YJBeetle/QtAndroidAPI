@@ -70,7 +70,7 @@ namespace android::media::tv
 		static jstring COLUMN_WEIGHT();
 		static jstring CONTENT_ITEM_TYPE();
 		static jstring CONTENT_TYPE();
-		static QAndroidJniObject CONTENT_URI();
+		static android::net::Uri CONTENT_URI();
 		static jint INTERACTION_TYPE_FANS();
 		static jint INTERACTION_TYPE_FOLLOWERS();
 		static jint INTERACTION_TYPE_LIKES();
@@ -94,9 +94,11 @@ namespace android::media::tv
 		static jint TYPE_TV_SEASON();
 		static jint TYPE_TV_SERIES();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TvContract_PreviewPrograms(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		TvContract_PreviewPrograms(QAndroidJniObject obj);
+		
 		// Constructors
-		TvContract_PreviewPrograms() = default;
 		
 		// Methods
 	};

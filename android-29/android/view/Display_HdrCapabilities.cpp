@@ -4,9 +4,9 @@
 namespace android::view
 {
 	// Fields
-	QAndroidJniObject Display_HdrCapabilities::CREATOR()
+	__JniBaseClass Display_HdrCapabilities::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.Display$HdrCapabilities",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -14,54 +14,56 @@ namespace android::view
 	}
 	jint Display_HdrCapabilities::HDR_TYPE_DOLBY_VISION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Display$HdrCapabilities",
 			"HDR_TYPE_DOLBY_VISION"
 		);
 	}
 	jint Display_HdrCapabilities::HDR_TYPE_HDR10()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Display$HdrCapabilities",
 			"HDR_TYPE_HDR10"
 		);
 	}
 	jint Display_HdrCapabilities::HDR_TYPE_HDR10_PLUS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Display$HdrCapabilities",
 			"HDR_TYPE_HDR10_PLUS"
 		);
 	}
 	jint Display_HdrCapabilities::HDR_TYPE_HLG()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Display$HdrCapabilities",
 			"HDR_TYPE_HLG"
 		);
 	}
 	jfloat Display_HdrCapabilities::INVALID_LUMINANCE()
 	{
-		return QAndroidJniObject::getStaticField<jfloat>(
+		return getStaticField<jfloat>(
 			"android.view.Display$HdrCapabilities",
 			"INVALID_LUMINANCE"
 		);
 	}
 	
-	Display_HdrCapabilities::Display_HdrCapabilities(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Display_HdrCapabilities::Display_HdrCapabilities(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint Display_HdrCapabilities::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean Display_HdrCapabilities::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -69,45 +71,45 @@ namespace android::view
 	}
 	jfloat Display_HdrCapabilities::getDesiredMaxAverageLuminance()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getDesiredMaxAverageLuminance",
 			"()F"
 		);
 	}
 	jfloat Display_HdrCapabilities::getDesiredMaxLuminance()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getDesiredMaxLuminance",
 			"()F"
 		);
 	}
 	jfloat Display_HdrCapabilities::getDesiredMinLuminance()
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getDesiredMinLuminance",
 			"()F"
 		);
 	}
 	jintArray Display_HdrCapabilities::getSupportedHdrTypes()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSupportedHdrTypes",
 			"()[I"
 		).object<jintArray>();
 	}
 	jint Display_HdrCapabilities::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	void Display_HdrCapabilities::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

@@ -13,7 +13,7 @@ namespace android::net
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint NET_CAPABILITY_CAPTIVE_PORTAL();
 		static jint NET_CAPABILITY_CBS();
 		static jint NET_CAPABILITY_DUN();
@@ -46,10 +46,12 @@ namespace android::net
 		static jint TRANSPORT_WIFI();
 		static jint TRANSPORT_WIFI_AWARE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit NetworkCapabilities(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		NetworkCapabilities(QAndroidJniObject obj);
+		
 		// Constructors
 		NetworkCapabilities(android::net::NetworkCapabilities &arg0);
-		NetworkCapabilities() = default;
 		
 		// Methods
 		jint describeContents();
@@ -57,7 +59,7 @@ namespace android::net
 		jint getLinkDownstreamBandwidthKbps();
 		jint getLinkUpstreamBandwidthKbps();
 		jint getSignalStrength();
-		QAndroidJniObject getTransportInfo();
+		__JniBaseClass getTransportInfo();
 		jboolean hasCapability(jint arg0);
 		jboolean hasTransport(jint arg0);
 		jint hashCode();

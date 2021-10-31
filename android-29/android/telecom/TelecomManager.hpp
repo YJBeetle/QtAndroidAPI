@@ -77,9 +77,11 @@ namespace android::telecom
 		static jint PRESENTATION_RESTRICTED();
 		static jint PRESENTATION_UNKNOWN();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TelecomManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		TelecomManager(QAndroidJniObject obj);
+		
 		// Constructors
-		TelecomManager() = default;
 		
 		// Methods
 		void acceptHandover(android::net::Uri arg0, jint arg1, android::telecom::PhoneAccountHandle arg2);
@@ -87,31 +89,27 @@ namespace android::telecom
 		void acceptRingingCall(jint arg0);
 		void addNewIncomingCall(android::telecom::PhoneAccountHandle arg0, android::os::Bundle arg1);
 		void cancelMissedCallsNotification();
-		QAndroidJniObject createManageBlockedNumbersIntent();
+		android::content::Intent createManageBlockedNumbersIntent();
 		jboolean endCall();
-		QAndroidJniObject getAdnUriForPhoneAccount(android::telecom::PhoneAccountHandle arg0);
-		QAndroidJniObject getCallCapablePhoneAccounts();
+		android::net::Uri getAdnUriForPhoneAccount(android::telecom::PhoneAccountHandle arg0);
+		__JniBaseClass getCallCapablePhoneAccounts();
 		jstring getDefaultDialerPackage();
-		QAndroidJniObject getDefaultOutgoingPhoneAccount(jstring arg0);
-		QAndroidJniObject getDefaultOutgoingPhoneAccount(const QString &arg0);
+		android::telecom::PhoneAccountHandle getDefaultOutgoingPhoneAccount(jstring arg0);
 		jstring getLine1Number(android::telecom::PhoneAccountHandle arg0);
-		QAndroidJniObject getPhoneAccount(android::telecom::PhoneAccountHandle arg0);
-		QAndroidJniObject getSelfManagedPhoneAccounts();
-		QAndroidJniObject getSimCallManager();
+		android::telecom::PhoneAccount getPhoneAccount(android::telecom::PhoneAccountHandle arg0);
+		__JniBaseClass getSelfManagedPhoneAccounts();
+		android::telecom::PhoneAccountHandle getSimCallManager();
 		jstring getSystemDialerPackage();
-		QAndroidJniObject getUserSelectedOutgoingPhoneAccount();
+		android::telecom::PhoneAccountHandle getUserSelectedOutgoingPhoneAccount();
 		jstring getVoiceMailNumber(android::telecom::PhoneAccountHandle arg0);
 		jboolean handleMmi(jstring arg0);
-		jboolean handleMmi(const QString &arg0);
 		jboolean handleMmi(jstring arg0, android::telecom::PhoneAccountHandle arg1);
-		jboolean handleMmi(const QString &arg0, android::telecom::PhoneAccountHandle arg1);
 		jboolean isInCall();
 		jboolean isInManagedCall();
 		jboolean isIncomingCallPermitted(android::telecom::PhoneAccountHandle arg0);
 		jboolean isOutgoingCallPermitted(android::telecom::PhoneAccountHandle arg0);
 		jboolean isTtySupported();
 		jboolean isVoiceMailNumber(android::telecom::PhoneAccountHandle arg0, jstring arg1);
-		jboolean isVoiceMailNumber(android::telecom::PhoneAccountHandle arg0, const QString &arg1);
 		void placeCall(android::net::Uri arg0, android::os::Bundle arg1);
 		void registerPhoneAccount(android::telecom::PhoneAccount arg0);
 		void showInCallScreen(jboolean arg0);

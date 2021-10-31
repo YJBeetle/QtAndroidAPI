@@ -17,18 +17,20 @@ namespace android::service::autofill
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint FLAG_COMPATIBILITY_MODE_REQUEST();
 		static jint FLAG_MANUAL_REQUEST();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit FillRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		FillRequest(QAndroidJniObject obj);
+		
 		// Constructors
-		FillRequest() = default;
 		
 		// Methods
 		jint describeContents();
-		QAndroidJniObject getClientState();
-		QAndroidJniObject getFillContexts();
+		android::os::Bundle getClientState();
+		__JniBaseClass getFillContexts();
 		jint getFlags();
 		jint getId();
 		jstring toString();

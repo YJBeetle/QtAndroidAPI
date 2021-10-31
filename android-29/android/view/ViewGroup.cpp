@@ -29,113 +29,107 @@ namespace android::view
 	// Fields
 	jint ViewGroup::FOCUS_AFTER_DESCENDANTS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.ViewGroup",
 			"FOCUS_AFTER_DESCENDANTS"
 		);
 	}
 	jint ViewGroup::FOCUS_BEFORE_DESCENDANTS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.ViewGroup",
 			"FOCUS_BEFORE_DESCENDANTS"
 		);
 	}
 	jint ViewGroup::FOCUS_BLOCK_DESCENDANTS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.ViewGroup",
 			"FOCUS_BLOCK_DESCENDANTS"
 		);
 	}
 	jint ViewGroup::LAYOUT_MODE_CLIP_BOUNDS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.ViewGroup",
 			"LAYOUT_MODE_CLIP_BOUNDS"
 		);
 	}
 	jint ViewGroup::LAYOUT_MODE_OPTICAL_BOUNDS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.ViewGroup",
 			"LAYOUT_MODE_OPTICAL_BOUNDS"
 		);
 	}
 	jint ViewGroup::PERSISTENT_ALL_CACHES()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.ViewGroup",
 			"PERSISTENT_ALL_CACHES"
 		);
 	}
 	jint ViewGroup::PERSISTENT_ANIMATION_CACHE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.ViewGroup",
 			"PERSISTENT_ANIMATION_CACHE"
 		);
 	}
 	jint ViewGroup::PERSISTENT_NO_CACHE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.ViewGroup",
 			"PERSISTENT_NO_CACHE"
 		);
 	}
 	jint ViewGroup::PERSISTENT_SCROLLING_CACHE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.ViewGroup",
 			"PERSISTENT_SCROLLING_CACHE"
 		);
 	}
 	
-	ViewGroup::ViewGroup(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ViewGroup::ViewGroup(QAndroidJniObject obj) : android::view::View(obj) {}
+	
 	// Constructors
-	ViewGroup::ViewGroup(android::content::Context &arg0)
-	{
-		__thiz = QAndroidJniObject(
+	ViewGroup::ViewGroup(android::content::Context arg0)
+		: android::view::View(
 			"android.view.ViewGroup",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	ViewGroup::ViewGroup(android::content::Context &arg0, __JniBaseClass &arg1)
-	{
-		__thiz = QAndroidJniObject(
+			arg0.object()
+		) {}
+	ViewGroup::ViewGroup(android::content::Context arg0, __JniBaseClass arg1)
+		: android::view::View(
 			"android.view.ViewGroup",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	ViewGroup::ViewGroup(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2)
-	{
-		__thiz = QAndroidJniObject(
+			arg0.object(),
+			arg1.object()
+		) {}
+	ViewGroup::ViewGroup(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+		: android::view::View(
 			"android.view.ViewGroup",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
-		);
-	}
-	ViewGroup::ViewGroup(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3)
-	{
-		__thiz = QAndroidJniObject(
+		) {}
+	ViewGroup::ViewGroup(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+		: android::view::View(
 			"android.view.ViewGroup",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2,
 			arg3
-		);
-	}
+		) {}
 	
 	// Methods
 	jint ViewGroup::getChildMeasureSpec(jint arg0, jint arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.view.ViewGroup",
 			"getChildMeasureSpec",
 			"(III)I",
@@ -146,166 +140,166 @@ namespace android::view
 	}
 	void ViewGroup::addChildrenForAccessibility(java::util::ArrayList arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addChildrenForAccessibility",
 			"(Ljava/util/ArrayList;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ViewGroup::addFocusables(java::util::ArrayList arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addFocusables",
 			"(Ljava/util/ArrayList;II)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
 	}
 	void ViewGroup::addKeyboardNavigationClusters(__JniBaseClass arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addKeyboardNavigationClusters",
 			"(Ljava/util/Collection;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	jboolean ViewGroup::addStatesFromChildren()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"addStatesFromChildren",
 			"()Z"
 		);
 	}
 	void ViewGroup::addTouchables(java::util::ArrayList arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addTouchables",
 			"(Ljava/util/ArrayList;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ViewGroup::addView(android::view::View arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addView",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ViewGroup::addView(android::view::View arg0, android::view::ViewGroup_LayoutParams arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addView",
 			"(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void ViewGroup::addView(android::view::View arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addView",
 			"(Landroid/view/View;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void ViewGroup::addView(android::view::View arg0, jint arg1, android::view::ViewGroup_LayoutParams arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addView",
 			"(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void ViewGroup::addView(android::view::View arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addView",
 			"(Landroid/view/View;II)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
 	}
 	void ViewGroup::bringChildToFront(android::view::View arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"bringChildToFront",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ViewGroup::childDrawableStateChanged(android::view::View arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"childDrawableStateChanged",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ViewGroup::childHasTransientStateChanged(android::view::View arg0, jboolean arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"childHasTransientStateChanged",
 			"(Landroid/view/View;Z)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void ViewGroup::clearChildFocus(android::view::View arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clearChildFocus",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ViewGroup::clearDisappearingChildren()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clearDisappearingChildren",
 			"()V"
 		);
 	}
 	void ViewGroup::clearFocus()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clearFocus",
 			"()V"
 		);
 	}
-	QAndroidJniObject ViewGroup::dispatchApplyWindowInsets(android::view::WindowInsets arg0)
+	android::view::WindowInsets ViewGroup::dispatchApplyWindowInsets(android::view::WindowInsets arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"dispatchApplyWindowInsets",
 			"(Landroid/view/WindowInsets;)Landroid/view/WindowInsets;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean ViewGroup::dispatchCapturedPointerEvent(android::view::MotionEvent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"dispatchCapturedPointerEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ViewGroup::dispatchConfigurationChanged(android::content::res::Configuration arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"dispatchConfigurationChanged",
 			"(Landroid/content/res/Configuration;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ViewGroup::dispatchDisplayHint(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"dispatchDisplayHint",
 			"(I)V",
 			arg0
@@ -313,15 +307,15 @@ namespace android::view
 	}
 	jboolean ViewGroup::dispatchDragEvent(android::view::DragEvent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"dispatchDragEvent",
 			"(Landroid/view/DragEvent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ViewGroup::dispatchDrawableHotspotChanged(jfloat arg0, jfloat arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"dispatchDrawableHotspotChanged",
 			"(FF)V",
 			arg0,
@@ -330,38 +324,38 @@ namespace android::view
 	}
 	void ViewGroup::dispatchFinishTemporaryDetach()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"dispatchFinishTemporaryDetach",
 			"()V"
 		);
 	}
 	jboolean ViewGroup::dispatchKeyEvent(android::view::KeyEvent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"dispatchKeyEvent",
 			"(Landroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean ViewGroup::dispatchKeyEventPreIme(android::view::KeyEvent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"dispatchKeyEventPreIme",
 			"(Landroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean ViewGroup::dispatchKeyShortcutEvent(android::view::KeyEvent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"dispatchKeyShortcutEvent",
 			"(Landroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ViewGroup::dispatchPointerCaptureChanged(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"dispatchPointerCaptureChanged",
 			"(Z)V",
 			arg0
@@ -369,24 +363,24 @@ namespace android::view
 	}
 	void ViewGroup::dispatchProvideAutofillStructure(android::view::ViewStructure arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"dispatchProvideAutofillStructure",
 			"(Landroid/view/ViewStructure;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void ViewGroup::dispatchProvideStructure(android::view::ViewStructure arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"dispatchProvideStructure",
 			"(Landroid/view/ViewStructure;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ViewGroup::dispatchSetActivated(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"dispatchSetActivated",
 			"(Z)V",
 			arg0
@@ -394,7 +388,7 @@ namespace android::view
 	}
 	void ViewGroup::dispatchSetSelected(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"dispatchSetSelected",
 			"(Z)V",
 			arg0
@@ -402,14 +396,14 @@ namespace android::view
 	}
 	void ViewGroup::dispatchStartTemporaryDetach()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"dispatchStartTemporaryDetach",
 			"()V"
 		);
 	}
 	void ViewGroup::dispatchSystemUiVisibilityChanged(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"dispatchSystemUiVisibilityChanged",
 			"(I)V",
 			arg0
@@ -417,32 +411,32 @@ namespace android::view
 	}
 	jboolean ViewGroup::dispatchTouchEvent(android::view::MotionEvent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"dispatchTouchEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean ViewGroup::dispatchTrackballEvent(android::view::MotionEvent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"dispatchTrackballEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean ViewGroup::dispatchUnhandledMove(android::view::View arg0, jint arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"dispatchUnhandledMove",
 			"(Landroid/view/View;I)Z",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void ViewGroup::dispatchWindowFocusChanged(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"dispatchWindowFocusChanged",
 			"(Z)V",
 			arg0
@@ -450,7 +444,7 @@ namespace android::view
 	}
 	void ViewGroup::dispatchWindowSystemUiVisiblityChanged(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"dispatchWindowSystemUiVisiblityChanged",
 			"(I)V",
 			arg0
@@ -458,7 +452,7 @@ namespace android::view
 	}
 	void ViewGroup::dispatchWindowVisibilityChanged(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"dispatchWindowVisibilityChanged",
 			"(I)V",
 			arg0
@@ -466,82 +460,72 @@ namespace android::view
 	}
 	void ViewGroup::endViewTransition(android::view::View arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"endViewTransition",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
-	QAndroidJniObject ViewGroup::findFocus()
+	android::view::View ViewGroup::findFocus()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"findFocus",
 			"()Landroid/view/View;"
 		);
 	}
 	void ViewGroup::findViewsWithText(java::util::ArrayList arg0, jstring arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"findViewsWithText",
 			"(Ljava/util/ArrayList;Ljava/lang/CharSequence;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
 	}
-	void ViewGroup::findViewsWithText(java::util::ArrayList arg0, const QString &arg1, jint arg2)
+	android::view::View ViewGroup::focusSearch(android::view::View arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
-			"findViewsWithText",
-			"(Ljava/util/ArrayList;Ljava/lang/CharSequence;I)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2
-		);
-	}
-	QAndroidJniObject ViewGroup::focusSearch(android::view::View arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"focusSearch",
 			"(Landroid/view/View;I)Landroid/view/View;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void ViewGroup::focusableViewAvailable(android::view::View arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"focusableViewAvailable",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean ViewGroup::gatherTransparentRegion(android::graphics::Region arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"gatherTransparentRegion",
 			"(Landroid/graphics/Region;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
-	QAndroidJniObject ViewGroup::generateLayoutParams(__JniBaseClass arg0)
+	android::view::ViewGroup_LayoutParams ViewGroup::generateLayoutParams(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"generateLayoutParams",
 			"(Landroid/util/AttributeSet;)Landroid/view/ViewGroup$LayoutParams;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jstring ViewGroup::getAccessibilityClassName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ViewGroup::getChildAt(jint arg0)
+	android::view::View ViewGroup::getChildAt(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getChildAt",
 			"(I)Landroid/view/View;",
 			arg0
@@ -549,14 +533,14 @@ namespace android::view
 	}
 	jint ViewGroup::getChildCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getChildCount",
 			"()I"
 		);
 	}
 	jint ViewGroup::getChildDrawingOrder(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getChildDrawingOrder",
 			"(I)I",
 			arg0
@@ -564,183 +548,183 @@ namespace android::view
 	}
 	jboolean ViewGroup::getChildVisibleRect(android::view::View arg0, android::graphics::Rect arg1, android::graphics::Point arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getChildVisibleRect",
 			"(Landroid/view/View;Landroid/graphics/Rect;Landroid/graphics/Point;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	jboolean ViewGroup::getClipChildren()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getClipChildren",
 			"()Z"
 		);
 	}
 	jboolean ViewGroup::getClipToPadding()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getClipToPadding",
 			"()Z"
 		);
 	}
 	jint ViewGroup::getDescendantFocusability()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDescendantFocusability",
 			"()I"
 		);
 	}
-	QAndroidJniObject ViewGroup::getFocusedChild()
+	android::view::View ViewGroup::getFocusedChild()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFocusedChild",
 			"()Landroid/view/View;"
 		);
 	}
-	QAndroidJniObject ViewGroup::getLayoutAnimation()
+	android::view::animation::LayoutAnimationController ViewGroup::getLayoutAnimation()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLayoutAnimation",
 			"()Landroid/view/animation/LayoutAnimationController;"
 		);
 	}
-	QAndroidJniObject ViewGroup::getLayoutAnimationListener()
+	__JniBaseClass ViewGroup::getLayoutAnimationListener()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLayoutAnimationListener",
 			"()Landroid/view/animation/Animation$AnimationListener;"
 		);
 	}
 	jint ViewGroup::getLayoutMode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getLayoutMode",
 			"()I"
 		);
 	}
-	QAndroidJniObject ViewGroup::getLayoutTransition()
+	android::animation::LayoutTransition ViewGroup::getLayoutTransition()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLayoutTransition",
 			"()Landroid/animation/LayoutTransition;"
 		);
 	}
 	jint ViewGroup::getNestedScrollAxes()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getNestedScrollAxes",
 			"()I"
 		);
 	}
-	QAndroidJniObject ViewGroup::getOverlay()
+	android::view::ViewGroupOverlay ViewGroup::getOverlay()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getOverlay",
 			"()Landroid/view/ViewGroupOverlay;"
 		);
 	}
 	jint ViewGroup::getPersistentDrawingCache()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPersistentDrawingCache",
 			"()I"
 		);
 	}
 	jboolean ViewGroup::getTouchscreenBlocksFocus()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"getTouchscreenBlocksFocus",
 			"()Z"
 		);
 	}
 	jboolean ViewGroup::hasFocus()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasFocus",
 			"()Z"
 		);
 	}
 	jboolean ViewGroup::hasTransientState()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasTransientState",
 			"()Z"
 		);
 	}
 	jint ViewGroup::indexOfChild(android::view::View arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"indexOfChild",
 			"(Landroid/view/View;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ViewGroup::invalidateChild(android::view::View arg0, android::graphics::Rect arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"invalidateChild",
 			"(Landroid/view/View;Landroid/graphics/Rect;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
-	QAndroidJniObject ViewGroup::invalidateChildInParent(jintArray arg0, android::graphics::Rect arg1)
+	__JniBaseClass ViewGroup::invalidateChildInParent(jintArray arg0, android::graphics::Rect arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"invalidateChildInParent",
 			"([ILandroid/graphics/Rect;)Landroid/view/ViewParent;",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jboolean ViewGroup::isAlwaysDrawnWithCacheEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isAlwaysDrawnWithCacheEnabled",
 			"()Z"
 		);
 	}
 	jboolean ViewGroup::isAnimationCacheEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isAnimationCacheEnabled",
 			"()Z"
 		);
 	}
 	jboolean ViewGroup::isLayoutSuppressed()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isLayoutSuppressed",
 			"()Z"
 		);
 	}
 	jboolean ViewGroup::isMotionEventSplittingEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isMotionEventSplittingEnabled",
 			"()Z"
 		);
 	}
 	jboolean ViewGroup::isTransitionGroup()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isTransitionGroup",
 			"()Z"
 		);
 	}
 	void ViewGroup::jumpDrawablesToCurrentState()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"jumpDrawablesToCurrentState",
 			"()V"
 		);
 	}
 	void ViewGroup::layout(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"layout",
 			"(IIII)V",
 			arg0,
@@ -751,63 +735,63 @@ namespace android::view
 	}
 	void ViewGroup::notifySubtreeAccessibilityStateChanged(android::view::View arg0, android::view::View arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"notifySubtreeAccessibilityStateChanged",
 			"(Landroid/view/View;Landroid/view/View;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
 	void ViewGroup::offsetDescendantRectToMyCoords(android::view::View arg0, android::graphics::Rect arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"offsetDescendantRectToMyCoords",
 			"(Landroid/view/View;Landroid/graphics/Rect;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void ViewGroup::offsetRectIntoDescendantCoords(android::view::View arg0, android::graphics::Rect arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"offsetRectIntoDescendantCoords",
 			"(Landroid/view/View;Landroid/graphics/Rect;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void ViewGroup::onDescendantInvalidated(android::view::View arg0, android::view::View arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onDescendantInvalidated",
 			"(Landroid/view/View;Landroid/view/View;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jboolean ViewGroup::onInterceptHoverEvent(android::view::MotionEvent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onInterceptHoverEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean ViewGroup::onInterceptTouchEvent(android::view::MotionEvent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onInterceptTouchEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean ViewGroup::onNestedFling(android::view::View arg0, jfloat arg1, jfloat arg2, jboolean arg3)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onNestedFling",
 			"(Landroid/view/View;FFZ)Z",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3
@@ -815,30 +799,30 @@ namespace android::view
 	}
 	jboolean ViewGroup::onNestedPreFling(android::view::View arg0, jfloat arg1, jfloat arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onNestedPreFling",
 			"(Landroid/view/View;FF)Z",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
 	}
 	jboolean ViewGroup::onNestedPrePerformAccessibilityAction(android::view::View arg0, jint arg1, android::os::Bundle arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onNestedPrePerformAccessibilityAction",
 			"(Landroid/view/View;ILandroid/os/Bundle;)Z",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	void ViewGroup::onNestedPreScroll(android::view::View arg0, jint arg1, jint arg2, jintArray arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onNestedPreScroll",
 			"(Landroid/view/View;II[I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3
@@ -846,10 +830,10 @@ namespace android::view
 	}
 	void ViewGroup::onNestedScroll(android::view::View arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onNestedScroll",
 			"(Landroid/view/View;IIII)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3,
@@ -858,99 +842,99 @@ namespace android::view
 	}
 	void ViewGroup::onNestedScrollAccepted(android::view::View arg0, android::view::View arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onNestedScrollAccepted",
 			"(Landroid/view/View;Landroid/view/View;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
 	jboolean ViewGroup::onRequestSendAccessibilityEvent(android::view::View arg0, android::view::accessibility::AccessibilityEvent arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onRequestSendAccessibilityEvent",
 			"(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
-	QAndroidJniObject ViewGroup::onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1)
+	android::view::PointerIcon ViewGroup::onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onResolvePointerIcon",
 			"(Landroid/view/MotionEvent;I)Landroid/view/PointerIcon;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	jboolean ViewGroup::onStartNestedScroll(android::view::View arg0, android::view::View arg1, jint arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"onStartNestedScroll",
 			"(Landroid/view/View;Landroid/view/View;I)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
 	void ViewGroup::onStopNestedScroll(android::view::View arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onStopNestedScroll",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ViewGroup::onViewAdded(android::view::View arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onViewAdded",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ViewGroup::onViewRemoved(android::view::View arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onViewRemoved",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ViewGroup::recomputeViewAttributes(android::view::View arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"recomputeViewAttributes",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ViewGroup::removeAllViews()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeAllViews",
 			"()V"
 		);
 	}
 	void ViewGroup::removeAllViewsInLayout()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeAllViewsInLayout",
 			"()V"
 		);
 	}
 	void ViewGroup::removeView(android::view::View arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeView",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ViewGroup::removeViewAt(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeViewAt",
 			"(I)V",
 			arg0
@@ -958,15 +942,15 @@ namespace android::view
 	}
 	void ViewGroup::removeViewInLayout(android::view::View arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeViewInLayout",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ViewGroup::removeViews(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeViews",
 			"(II)V",
 			arg0,
@@ -975,7 +959,7 @@ namespace android::view
 	}
 	void ViewGroup::removeViewsInLayout(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeViewsInLayout",
 			"(II)V",
 			arg0,
@@ -984,26 +968,26 @@ namespace android::view
 	}
 	void ViewGroup::requestChildFocus(android::view::View arg0, android::view::View arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"requestChildFocus",
 			"(Landroid/view/View;Landroid/view/View;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jboolean ViewGroup::requestChildRectangleOnScreen(android::view::View arg0, android::graphics::Rect arg1, jboolean arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"requestChildRectangleOnScreen",
 			"(Landroid/view/View;Landroid/graphics/Rect;Z)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
 	void ViewGroup::requestDisallowInterceptTouchEvent(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"requestDisallowInterceptTouchEvent",
 			"(Z)V",
 			arg0
@@ -1011,47 +995,47 @@ namespace android::view
 	}
 	jboolean ViewGroup::requestFocus(jint arg0, android::graphics::Rect arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"requestFocus",
 			"(ILandroid/graphics/Rect;)Z",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	jboolean ViewGroup::requestSendAccessibilityEvent(android::view::View arg0, android::view::accessibility::AccessibilityEvent arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"requestSendAccessibilityEvent",
 			"(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void ViewGroup::requestTransparentRegion(android::view::View arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"requestTransparentRegion",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean ViewGroup::restoreDefaultFocus()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"restoreDefaultFocus",
 			"()Z"
 		);
 	}
 	void ViewGroup::scheduleLayoutAnimation()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"scheduleLayoutAnimation",
 			"()V"
 		);
 	}
 	void ViewGroup::setAddStatesFromChildren(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAddStatesFromChildren",
 			"(Z)V",
 			arg0
@@ -1059,7 +1043,7 @@ namespace android::view
 	}
 	void ViewGroup::setAlwaysDrawnWithCacheEnabled(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAlwaysDrawnWithCacheEnabled",
 			"(Z)V",
 			arg0
@@ -1067,7 +1051,7 @@ namespace android::view
 	}
 	void ViewGroup::setAnimationCacheEnabled(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setAnimationCacheEnabled",
 			"(Z)V",
 			arg0
@@ -1075,7 +1059,7 @@ namespace android::view
 	}
 	void ViewGroup::setClipChildren(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setClipChildren",
 			"(Z)V",
 			arg0
@@ -1083,7 +1067,7 @@ namespace android::view
 	}
 	void ViewGroup::setClipToPadding(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setClipToPadding",
 			"(Z)V",
 			arg0
@@ -1091,7 +1075,7 @@ namespace android::view
 	}
 	void ViewGroup::setDescendantFocusability(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setDescendantFocusability",
 			"(I)V",
 			arg0
@@ -1099,23 +1083,23 @@ namespace android::view
 	}
 	void ViewGroup::setLayoutAnimation(android::view::animation::LayoutAnimationController arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLayoutAnimation",
 			"(Landroid/view/animation/LayoutAnimationController;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ViewGroup::setLayoutAnimationListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLayoutAnimationListener",
 			"(Landroid/view/animation/Animation$AnimationListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ViewGroup::setLayoutMode(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLayoutMode",
 			"(I)V",
 			arg0
@@ -1123,15 +1107,15 @@ namespace android::view
 	}
 	void ViewGroup::setLayoutTransition(android::animation::LayoutTransition arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setLayoutTransition",
 			"(Landroid/animation/LayoutTransition;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ViewGroup::setMotionEventSplittingEnabled(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setMotionEventSplittingEnabled",
 			"(Z)V",
 			arg0
@@ -1139,15 +1123,15 @@ namespace android::view
 	}
 	void ViewGroup::setOnHierarchyChangeListener(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOnHierarchyChangeListener",
 			"(Landroid/view/ViewGroup$OnHierarchyChangeListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ViewGroup::setPersistentDrawingCache(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPersistentDrawingCache",
 			"(I)V",
 			arg0
@@ -1155,7 +1139,7 @@ namespace android::view
 	}
 	void ViewGroup::setTouchscreenBlocksFocus(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTouchscreenBlocksFocus",
 			"(Z)V",
 			arg0
@@ -1163,7 +1147,7 @@ namespace android::view
 	}
 	void ViewGroup::setTransitionGroup(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTransitionGroup",
 			"(Z)V",
 			arg0
@@ -1171,66 +1155,66 @@ namespace android::view
 	}
 	jboolean ViewGroup::shouldDelayChildPressedState()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"shouldDelayChildPressedState",
 			"()Z"
 		);
 	}
 	jboolean ViewGroup::showContextMenuForChild(android::view::View arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"showContextMenuForChild",
 			"(Landroid/view/View;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean ViewGroup::showContextMenuForChild(android::view::View arg0, jfloat arg1, jfloat arg2)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"showContextMenuForChild",
 			"(Landroid/view/View;FF)Z",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2
 		);
 	}
-	QAndroidJniObject ViewGroup::startActionModeForChild(android::view::View arg0, __JniBaseClass arg1)
+	android::view::ActionMode ViewGroup::startActionModeForChild(android::view::View arg0, __JniBaseClass arg1)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"startActionModeForChild",
 			"(Landroid/view/View;Landroid/view/ActionMode$Callback;)Landroid/view/ActionMode;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
-	QAndroidJniObject ViewGroup::startActionModeForChild(android::view::View arg0, __JniBaseClass arg1, jint arg2)
+	android::view::ActionMode ViewGroup::startActionModeForChild(android::view::View arg0, __JniBaseClass arg1, jint arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"startActionModeForChild",
 			"(Landroid/view/View;Landroid/view/ActionMode$Callback;I)Landroid/view/ActionMode;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg0.object(),
+			arg1.object(),
 			arg2
 		);
 	}
 	void ViewGroup::startLayoutAnimation()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"startLayoutAnimation",
 			"()V"
 		);
 	}
 	void ViewGroup::startViewTransition(android::view::View arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"startViewTransition",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ViewGroup::suppressLayout(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"suppressLayout",
 			"(Z)V",
 			arg0
@@ -1238,11 +1222,11 @@ namespace android::view
 	}
 	void ViewGroup::updateViewLayout(android::view::View arg0, android::view::ViewGroup_LayoutParams arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"updateViewLayout",
 			"(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 } // namespace android::view

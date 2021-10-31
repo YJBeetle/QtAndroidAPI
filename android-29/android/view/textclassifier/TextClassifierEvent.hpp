@@ -33,7 +33,7 @@ namespace android::view::textclassifier
 		static jint CATEGORY_LANGUAGE_DETECTION();
 		static jint CATEGORY_LINKIFY();
 		static jint CATEGORY_SELECTION();
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint TYPE_ACTIONS_GENERATED();
 		static jint TYPE_ACTIONS_SHOWN();
 		static jint TYPE_AUTO_SELECTION();
@@ -55,20 +55,22 @@ namespace android::view::textclassifier
 		static jint TYPE_SMART_SELECTION_MULTI();
 		static jint TYPE_SMART_SELECTION_SINGLE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TextClassifierEvent(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		TextClassifierEvent(QAndroidJniObject obj);
+		
 		// Constructors
-		TextClassifierEvent() = default;
 		
 		// Methods
 		jint describeContents();
 		jintArray getActionIndices();
 		jarray getEntityTypes();
 		jint getEventCategory();
-		QAndroidJniObject getEventContext();
+		android::view::textclassifier::TextClassificationContext getEventContext();
 		jint getEventIndex();
 		jint getEventType();
-		QAndroidJniObject getExtras();
-		QAndroidJniObject getLocale();
+		android::os::Bundle getExtras();
+		android::icu::util::ULocale getLocale();
 		jstring getModelName();
 		jstring getResultId();
 		jfloatArray getScores();

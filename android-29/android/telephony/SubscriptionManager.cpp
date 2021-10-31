@@ -11,7 +11,7 @@ namespace android::telephony
 	// Fields
 	jstring SubscriptionManager::ACTION_DEFAULT_SMS_SUBSCRIPTION_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.SubscriptionManager",
 			"ACTION_DEFAULT_SMS_SUBSCRIPTION_CHANGED",
 			"Ljava/lang/String;"
@@ -19,7 +19,7 @@ namespace android::telephony
 	}
 	jstring SubscriptionManager::ACTION_DEFAULT_SUBSCRIPTION_CHANGED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.SubscriptionManager",
 			"ACTION_DEFAULT_SUBSCRIPTION_CHANGED",
 			"Ljava/lang/String;"
@@ -27,7 +27,7 @@ namespace android::telephony
 	}
 	jstring SubscriptionManager::ACTION_MANAGE_SUBSCRIPTION_PLANS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.SubscriptionManager",
 			"ACTION_MANAGE_SUBSCRIPTION_PLANS",
 			"Ljava/lang/String;"
@@ -35,7 +35,7 @@ namespace android::telephony
 	}
 	jstring SubscriptionManager::ACTION_REFRESH_SUBSCRIPTION_PLANS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.SubscriptionManager",
 			"ACTION_REFRESH_SUBSCRIPTION_PLANS",
 			"Ljava/lang/String;"
@@ -43,28 +43,28 @@ namespace android::telephony
 	}
 	jint SubscriptionManager::DATA_ROAMING_DISABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.SubscriptionManager",
 			"DATA_ROAMING_DISABLE"
 		);
 	}
 	jint SubscriptionManager::DATA_ROAMING_ENABLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.SubscriptionManager",
 			"DATA_ROAMING_ENABLE"
 		);
 	}
 	jint SubscriptionManager::DEFAULT_SUBSCRIPTION_ID()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.SubscriptionManager",
 			"DEFAULT_SUBSCRIPTION_ID"
 		);
 	}
 	jstring SubscriptionManager::EXTRA_SUBSCRIPTION_INDEX()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.SubscriptionManager",
 			"EXTRA_SUBSCRIPTION_INDEX",
 			"Ljava/lang/String;"
@@ -72,49 +72,51 @@ namespace android::telephony
 	}
 	jint SubscriptionManager::INVALID_SIM_SLOT_INDEX()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.SubscriptionManager",
 			"INVALID_SIM_SLOT_INDEX"
 		);
 	}
 	jint SubscriptionManager::INVALID_SUBSCRIPTION_ID()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.SubscriptionManager",
 			"INVALID_SUBSCRIPTION_ID"
 		);
 	}
 	jint SubscriptionManager::SUBSCRIPTION_TYPE_LOCAL_SIM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.SubscriptionManager",
 			"SUBSCRIPTION_TYPE_LOCAL_SIM"
 		);
 	}
 	jint SubscriptionManager::SUBSCRIPTION_TYPE_REMOTE_SIM()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.telephony.SubscriptionManager",
 			"SUBSCRIPTION_TYPE_REMOTE_SIM"
 		);
 	}
 	
-	SubscriptionManager::SubscriptionManager(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	SubscriptionManager::SubscriptionManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject SubscriptionManager::from(android::content::Context arg0)
+	android::telephony::SubscriptionManager SubscriptionManager::from(android::content::Context arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.telephony.SubscriptionManager",
 			"from",
 			"(Landroid/content/Context;)Landroid/telephony/SubscriptionManager;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint SubscriptionManager::getDefaultDataSubscriptionId()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.telephony.SubscriptionManager",
 			"getDefaultDataSubscriptionId",
 			"()I"
@@ -122,7 +124,7 @@ namespace android::telephony
 	}
 	jint SubscriptionManager::getDefaultSmsSubscriptionId()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.telephony.SubscriptionManager",
 			"getDefaultSmsSubscriptionId",
 			"()I"
@@ -130,7 +132,7 @@ namespace android::telephony
 	}
 	jint SubscriptionManager::getDefaultSubscriptionId()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.telephony.SubscriptionManager",
 			"getDefaultSubscriptionId",
 			"()I"
@@ -138,7 +140,7 @@ namespace android::telephony
 	}
 	jint SubscriptionManager::getDefaultVoiceSubscriptionId()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.telephony.SubscriptionManager",
 			"getDefaultVoiceSubscriptionId",
 			"()I"
@@ -146,7 +148,7 @@ namespace android::telephony
 	}
 	jint SubscriptionManager::getSlotIndex(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return callStaticMethod<jint>(
 			"android.telephony.SubscriptionManager",
 			"getSlotIndex",
 			"(I)I",
@@ -155,7 +157,7 @@ namespace android::telephony
 	}
 	jboolean SubscriptionManager::isUsableSubscriptionId(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.telephony.SubscriptionManager",
 			"isUsableSubscriptionId",
 			"(I)Z",
@@ -164,7 +166,7 @@ namespace android::telephony
 	}
 	jboolean SubscriptionManager::isValidSubscriptionId(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return callStaticMethod<jboolean>(
 			"android.telephony.SubscriptionManager",
 			"isValidSubscriptionId",
 			"(I)Z",
@@ -173,56 +175,56 @@ namespace android::telephony
 	}
 	void SubscriptionManager::addOnOpportunisticSubscriptionsChangedListener(__JniBaseClass arg0, android::telephony::SubscriptionManager_OnOpportunisticSubscriptionsChangedListener arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addOnOpportunisticSubscriptionsChangedListener",
 			"(Ljava/util/concurrent/Executor;Landroid/telephony/SubscriptionManager$OnOpportunisticSubscriptionsChangedListener;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void SubscriptionManager::addOnSubscriptionsChangedListener(android::telephony::SubscriptionManager_OnSubscriptionsChangedListener arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addOnSubscriptionsChangedListener",
 			"(Landroid/telephony/SubscriptionManager$OnSubscriptionsChangedListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void SubscriptionManager::addSubscriptionsIntoGroup(__JniBaseClass arg0, android::os::ParcelUuid arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addSubscriptionsIntoGroup",
 			"(Ljava/util/List;Landroid/os/ParcelUuid;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jboolean SubscriptionManager::canManageSubscription(android::telephony::SubscriptionInfo arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"canManageSubscription",
 			"(Landroid/telephony/SubscriptionInfo;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
-	QAndroidJniObject SubscriptionManager::createSubscriptionGroup(__JniBaseClass arg0)
+	android::os::ParcelUuid SubscriptionManager::createSubscriptionGroup(__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"createSubscriptionGroup",
 			"(Ljava/util/List;)Landroid/os/ParcelUuid;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
-	QAndroidJniObject SubscriptionManager::getAccessibleSubscriptionInfoList()
+	__JniBaseClass SubscriptionManager::getAccessibleSubscriptionInfoList()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAccessibleSubscriptionInfoList",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject SubscriptionManager::getActiveSubscriptionInfo(jint arg0)
+	android::telephony::SubscriptionInfo SubscriptionManager::getActiveSubscriptionInfo(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getActiveSubscriptionInfo",
 			"(I)Landroid/telephony/SubscriptionInfo;",
 			arg0
@@ -230,67 +232,67 @@ namespace android::telephony
 	}
 	jint SubscriptionManager::getActiveSubscriptionInfoCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getActiveSubscriptionInfoCount",
 			"()I"
 		);
 	}
 	jint SubscriptionManager::getActiveSubscriptionInfoCountMax()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getActiveSubscriptionInfoCountMax",
 			"()I"
 		);
 	}
-	QAndroidJniObject SubscriptionManager::getActiveSubscriptionInfoForSimSlotIndex(jint arg0)
+	android::telephony::SubscriptionInfo SubscriptionManager::getActiveSubscriptionInfoForSimSlotIndex(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getActiveSubscriptionInfoForSimSlotIndex",
 			"(I)Landroid/telephony/SubscriptionInfo;",
 			arg0
 		);
 	}
-	QAndroidJniObject SubscriptionManager::getActiveSubscriptionInfoList()
+	__JniBaseClass SubscriptionManager::getActiveSubscriptionInfoList()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getActiveSubscriptionInfoList",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject SubscriptionManager::getOpportunisticSubscriptions()
+	__JniBaseClass SubscriptionManager::getOpportunisticSubscriptions()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getOpportunisticSubscriptions",
 			"()Ljava/util/List;"
 		);
 	}
 	jintArray SubscriptionManager::getSubscriptionIds(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSubscriptionIds",
 			"(I)[I",
 			arg0
 		).object<jintArray>();
 	}
-	QAndroidJniObject SubscriptionManager::getSubscriptionPlans(jint arg0)
+	__JniBaseClass SubscriptionManager::getSubscriptionPlans(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSubscriptionPlans",
 			"(I)Ljava/util/List;",
 			arg0
 		);
 	}
-	QAndroidJniObject SubscriptionManager::getSubscriptionsInGroup(android::os::ParcelUuid arg0)
+	__JniBaseClass SubscriptionManager::getSubscriptionsInGroup(android::os::ParcelUuid arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSubscriptionsInGroup",
 			"(Landroid/os/ParcelUuid;)Ljava/util/List;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean SubscriptionManager::isActiveSubscriptionId(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isActiveSubscriptionId",
 			"(I)Z",
 			arg0
@@ -298,7 +300,7 @@ namespace android::telephony
 	}
 	jboolean SubscriptionManager::isNetworkRoaming(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isNetworkRoaming",
 			"(I)Z",
 			arg0
@@ -306,32 +308,32 @@ namespace android::telephony
 	}
 	void SubscriptionManager::removeOnOpportunisticSubscriptionsChangedListener(android::telephony::SubscriptionManager_OnOpportunisticSubscriptionsChangedListener arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeOnOpportunisticSubscriptionsChangedListener",
 			"(Landroid/telephony/SubscriptionManager$OnOpportunisticSubscriptionsChangedListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void SubscriptionManager::removeOnSubscriptionsChangedListener(android::telephony::SubscriptionManager_OnSubscriptionsChangedListener arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeOnSubscriptionsChangedListener",
 			"(Landroid/telephony/SubscriptionManager$OnSubscriptionsChangedListener;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void SubscriptionManager::removeSubscriptionsFromGroup(__JniBaseClass arg0, android::os::ParcelUuid arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"removeSubscriptionsFromGroup",
 			"(Ljava/util/List;Landroid/os/ParcelUuid;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jboolean SubscriptionManager::setOpportunistic(jboolean arg0, jint arg1)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"setOpportunistic",
 			"(ZI)Z",
 			arg0,
@@ -340,7 +342,7 @@ namespace android::telephony
 	}
 	void SubscriptionManager::setSubscriptionOverrideCongested(jint arg0, jboolean arg1, jlong arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSubscriptionOverrideCongested",
 			"(IZJ)V",
 			arg0,
@@ -350,7 +352,7 @@ namespace android::telephony
 	}
 	void SubscriptionManager::setSubscriptionOverrideUnmetered(jint arg0, jboolean arg1, jlong arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSubscriptionOverrideUnmetered",
 			"(IZJ)V",
 			arg0,
@@ -360,20 +362,20 @@ namespace android::telephony
 	}
 	void SubscriptionManager::setSubscriptionPlans(jint arg0, __JniBaseClass arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setSubscriptionPlans",
 			"(ILjava/util/List;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void SubscriptionManager::switchToSubscription(jint arg0, android::app::PendingIntent arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"switchToSubscription",
 			"(ILandroid/app/PendingIntent;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 } // namespace android::telephony

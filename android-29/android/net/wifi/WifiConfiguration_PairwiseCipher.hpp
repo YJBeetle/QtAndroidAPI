@@ -16,9 +16,11 @@ namespace android::net::wifi
 		static jarray strings();
 		static jstring varName();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit WifiConfiguration_PairwiseCipher(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		WifiConfiguration_PairwiseCipher(QAndroidJniObject obj);
+		
 		// Constructors
-		WifiConfiguration_PairwiseCipher() = default;
 		
 		// Methods
 	};

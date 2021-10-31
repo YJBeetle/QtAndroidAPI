@@ -7,75 +7,75 @@ namespace android::media
 {
 	// Fields
 	
-	AudioTrack_Builder::AudioTrack_Builder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	AudioTrack_Builder::AudioTrack_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	AudioTrack_Builder::AudioTrack_Builder()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.media.AudioTrack$Builder",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
-	QAndroidJniObject AudioTrack_Builder::build()
+	android::media::AudioTrack AudioTrack_Builder::build()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"build",
 			"()Landroid/media/AudioTrack;"
 		);
 	}
-	QAndroidJniObject AudioTrack_Builder::setAudioAttributes(android::media::AudioAttributes arg0)
+	android::media::AudioTrack_Builder AudioTrack_Builder::setAudioAttributes(android::media::AudioAttributes arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setAudioAttributes",
 			"(Landroid/media/AudioAttributes;)Landroid/media/AudioTrack$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
-	QAndroidJniObject AudioTrack_Builder::setAudioFormat(android::media::AudioFormat arg0)
+	android::media::AudioTrack_Builder AudioTrack_Builder::setAudioFormat(android::media::AudioFormat arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setAudioFormat",
 			"(Landroid/media/AudioFormat;)Landroid/media/AudioTrack$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
-	QAndroidJniObject AudioTrack_Builder::setBufferSizeInBytes(jint arg0)
+	android::media::AudioTrack_Builder AudioTrack_Builder::setBufferSizeInBytes(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setBufferSizeInBytes",
 			"(I)Landroid/media/AudioTrack$Builder;",
 			arg0
 		);
 	}
-	QAndroidJniObject AudioTrack_Builder::setOffloadedPlayback(jboolean arg0)
+	android::media::AudioTrack_Builder AudioTrack_Builder::setOffloadedPlayback(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setOffloadedPlayback",
 			"(Z)Landroid/media/AudioTrack$Builder;",
 			arg0
 		);
 	}
-	QAndroidJniObject AudioTrack_Builder::setPerformanceMode(jint arg0)
+	android::media::AudioTrack_Builder AudioTrack_Builder::setPerformanceMode(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setPerformanceMode",
 			"(I)Landroid/media/AudioTrack$Builder;",
 			arg0
 		);
 	}
-	QAndroidJniObject AudioTrack_Builder::setSessionId(jint arg0)
+	android::media::AudioTrack_Builder AudioTrack_Builder::setSessionId(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setSessionId",
 			"(I)Landroid/media/AudioTrack$Builder;",
 			arg0
 		);
 	}
-	QAndroidJniObject AudioTrack_Builder::setTransferMode(jint arg0)
+	android::media::AudioTrack_Builder AudioTrack_Builder::setTransferMode(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setTransferMode",
 			"(I)Landroid/media/AudioTrack$Builder;",
 			arg0

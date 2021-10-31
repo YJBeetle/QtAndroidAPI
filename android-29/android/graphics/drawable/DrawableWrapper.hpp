@@ -55,10 +55,12 @@ namespace android::graphics::drawable
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit DrawableWrapper(const char *className, const char *sig, Ts...agv) : android::graphics::drawable::Drawable(className, sig, std::forward<Ts>(agv)...) {}
 		DrawableWrapper(QAndroidJniObject obj);
+		
 		// Constructors
-		DrawableWrapper(android::graphics::drawable::Drawable &arg0);
-		DrawableWrapper() = default;
+		DrawableWrapper(android::graphics::drawable::Drawable arg0);
 		
 		// Methods
 		void applyTheme(android::content::res::Resources_Theme arg0);
@@ -66,20 +68,20 @@ namespace android::graphics::drawable
 		void draw(android::graphics::Canvas arg0);
 		jint getAlpha();
 		jint getChangingConfigurations();
-		QAndroidJniObject getColorFilter();
-		QAndroidJniObject getConstantState();
-		QAndroidJniObject getDrawable();
+		android::graphics::ColorFilter getColorFilter();
+		android::graphics::drawable::Drawable_ConstantState getConstantState();
+		android::graphics::drawable::Drawable getDrawable();
 		void getHotspotBounds(android::graphics::Rect arg0);
 		jint getIntrinsicHeight();
 		jint getIntrinsicWidth();
 		jint getOpacity();
-		QAndroidJniObject getOpticalInsets();
+		android::graphics::Insets getOpticalInsets();
 		void getOutline(android::graphics::Outline arg0);
 		jboolean getPadding(android::graphics::Rect arg0);
 		void inflate(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2, android::content::res::Resources_Theme arg3);
 		void invalidateDrawable(android::graphics::drawable::Drawable arg0);
 		jboolean isStateful();
-		QAndroidJniObject mutate();
+		android::graphics::drawable::Drawable mutate();
 		jboolean onLayoutDirectionChanged(jint arg0);
 		void scheduleDrawable(android::graphics::drawable::Drawable arg0, __JniBaseClass arg1, jlong arg2);
 		void setAlpha(jint arg0);

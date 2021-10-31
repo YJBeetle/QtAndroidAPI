@@ -5,53 +5,55 @@
 namespace android::view::textclassifier
 {
 	// Fields
-	QAndroidJniObject TextClassifierEvent_TextSelectionEvent::CREATOR()
+	__JniBaseClass TextClassifierEvent_TextSelectionEvent::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.textclassifier.TextClassifierEvent$TextSelectionEvent",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
 		);
 	}
 	
-	TextClassifierEvent_TextSelectionEvent::TextClassifierEvent_TextSelectionEvent(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TextClassifierEvent_TextSelectionEvent::TextClassifierEvent_TextSelectionEvent(QAndroidJniObject obj) : android::view::textclassifier::TextClassifierEvent(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint TextClassifierEvent_TextSelectionEvent::getRelativeSuggestedWordEndIndex()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRelativeSuggestedWordEndIndex",
 			"()I"
 		);
 	}
 	jint TextClassifierEvent_TextSelectionEvent::getRelativeSuggestedWordStartIndex()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRelativeSuggestedWordStartIndex",
 			"()I"
 		);
 	}
 	jint TextClassifierEvent_TextSelectionEvent::getRelativeWordEndIndex()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRelativeWordEndIndex",
 			"()I"
 		);
 	}
 	jint TextClassifierEvent_TextSelectionEvent::getRelativeWordStartIndex()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRelativeWordStartIndex",
 			"()I"
 		);
 	}
 	void TextClassifierEvent_TextSelectionEvent::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

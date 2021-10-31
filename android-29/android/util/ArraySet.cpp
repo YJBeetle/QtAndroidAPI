@@ -4,44 +4,38 @@ namespace android::util
 {
 	// Fields
 	
-	ArraySet::ArraySet(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ArraySet::ArraySet(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	ArraySet::ArraySet()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.util.ArraySet",
 			"()V"
-		);
-	}
+		) {}
 	ArraySet::ArraySet(android::util::ArraySet &arg0)
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.util.ArraySet",
 			"(Landroid/util/ArraySet;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	ArraySet::ArraySet(jint &arg0)
-	{
-		__thiz = QAndroidJniObject(
+			arg0.object()
+		) {}
+	ArraySet::ArraySet(jint arg0)
+		: __JniBaseClass(
 			"android.util.ArraySet",
 			"(I)V",
 			arg0
-		);
-	}
-	ArraySet::ArraySet(__JniBaseClass &arg0)
-	{
-		__thiz = QAndroidJniObject(
+		) {}
+	ArraySet::ArraySet(__JniBaseClass arg0)
+		: __JniBaseClass(
 			"android.util.ArraySet",
 			"(Ljava/util/Collection;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jboolean ArraySet::add(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"add",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -49,30 +43,30 @@ namespace android::util
 	}
 	jboolean ArraySet::addAll(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"addAll",
 			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ArraySet::addAll(android::util::ArraySet arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"addAll",
 			"(Landroid/util/ArraySet;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ArraySet::clear()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
 	jboolean ArraySet::contains(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"contains",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -80,15 +74,15 @@ namespace android::util
 	}
 	jboolean ArraySet::containsAll(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"containsAll",
 			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void ArraySet::ensureCapacity(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"ensureCapacity",
 			"(I)V",
 			arg0
@@ -96,7 +90,7 @@ namespace android::util
 	}
 	jboolean ArraySet::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -104,14 +98,14 @@ namespace android::util
 	}
 	jint ArraySet::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jint ArraySet::indexOf(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"indexOf",
 			"(Ljava/lang/Object;)I",
 			arg0
@@ -119,21 +113,21 @@ namespace android::util
 	}
 	jboolean ArraySet::isEmpty()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
-	QAndroidJniObject ArraySet::iterator()
+	__JniBaseClass ArraySet::iterator()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
 	jboolean ArraySet::remove(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"remove",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -141,23 +135,23 @@ namespace android::util
 	}
 	jboolean ArraySet::removeAll(android::util::ArraySet arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"removeAll",
 			"(Landroid/util/ArraySet;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean ArraySet::removeAll(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"removeAll",
 			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jobject ArraySet::removeAt(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"removeAt",
 			"(I)Ljava/lang/Object;",
 			arg0
@@ -165,37 +159,37 @@ namespace android::util
 	}
 	jboolean ArraySet::removeIf(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"removeIf",
 			"(Ljava/util/function/Predicate;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jboolean ArraySet::retainAll(__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"retainAll",
 			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	jint ArraySet::size()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
 	jobjectArray ArraySet::toArray()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toArray",
 			"()[Ljava/lang/Object;"
 		).object<jobjectArray>();
 	}
 	jobjectArray ArraySet::toArray(jobjectArray arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toArray",
 			"([Ljava/lang/Object;)[Ljava/lang/Object;",
 			arg0
@@ -203,14 +197,14 @@ namespace android::util
 	}
 	jstring ArraySet::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jobject ArraySet::valueAt(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"valueAt",
 			"(I)Ljava/lang/Object;",
 			arg0

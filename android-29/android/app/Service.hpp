@@ -45,14 +45,17 @@ namespace android::app
 		static jint STOP_FOREGROUND_DETACH();
 		static jint STOP_FOREGROUND_REMOVE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Service(const char *className, const char *sig, Ts...agv) : android::content::ContextWrapper(className, sig, std::forward<Ts>(agv)...) {}
 		Service(QAndroidJniObject obj);
+		
 		// Constructors
 		Service();
 		
 		// Methods
-		QAndroidJniObject getApplication();
+		android::app::Application getApplication();
 		jint getForegroundServiceType();
-		QAndroidJniObject onBind(android::content::Intent arg0);
+		__JniBaseClass onBind(android::content::Intent arg0);
 		void onConfigurationChanged(android::content::res::Configuration arg0);
 		void onCreate();
 		void onDestroy();

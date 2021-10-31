@@ -14,9 +14,11 @@ namespace android::view
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ViewTreeObserver(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ViewTreeObserver(QAndroidJniObject obj);
+		
 		// Constructors
-		ViewTreeObserver() = default;
 		
 		// Methods
 		void addOnDrawListener(__JniBaseClass arg0);

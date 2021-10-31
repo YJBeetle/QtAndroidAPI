@@ -14,11 +14,13 @@ namespace android::telephony
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CellIdentityNr(const char *className, const char *sig, Ts...agv) : android::telephony::CellIdentity(className, sig, std::forward<Ts>(agv)...) {}
 		CellIdentityNr(QAndroidJniObject obj);
+		
 		// Constructors
-		CellIdentityNr() = default;
 		
 		// Methods
 		jboolean equals(jobject arg0);

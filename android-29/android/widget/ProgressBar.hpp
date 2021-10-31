@@ -35,23 +35,25 @@ namespace android::widget
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ProgressBar(const char *className, const char *sig, Ts...agv) : android::view::View(className, sig, std::forward<Ts>(agv)...) {}
 		ProgressBar(QAndroidJniObject obj);
+		
 		// Constructors
-		ProgressBar(android::content::Context &arg0);
-		ProgressBar(android::content::Context &arg0, __JniBaseClass &arg1);
-		ProgressBar(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		ProgressBar(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
-		ProgressBar() = default;
+		ProgressBar(android::content::Context arg0);
+		ProgressBar(android::content::Context arg0, __JniBaseClass arg1);
+		ProgressBar(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		ProgressBar(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		
 		// Methods
 		void drawableHotspotChanged(jfloat arg0, jfloat arg1);
 		jstring getAccessibilityClassName();
-		QAndroidJniObject getCurrentDrawable();
-		QAndroidJniObject getIndeterminateDrawable();
-		QAndroidJniObject getIndeterminateTintBlendMode();
-		QAndroidJniObject getIndeterminateTintList();
-		QAndroidJniObject getIndeterminateTintMode();
-		QAndroidJniObject getInterpolator();
+		android::graphics::drawable::Drawable getCurrentDrawable();
+		android::graphics::drawable::Drawable getIndeterminateDrawable();
+		android::graphics::BlendMode getIndeterminateTintBlendMode();
+		android::content::res::ColorStateList getIndeterminateTintList();
+		android::graphics::PorterDuff_Mode getIndeterminateTintMode();
+		__JniBaseClass getInterpolator();
 		jint getMax();
 		jint getMaxHeight();
 		jint getMaxWidth();
@@ -59,17 +61,17 @@ namespace android::widget
 		jint getMinHeight();
 		jint getMinWidth();
 		jint getProgress();
-		QAndroidJniObject getProgressBackgroundTintBlendMode();
-		QAndroidJniObject getProgressBackgroundTintList();
-		QAndroidJniObject getProgressBackgroundTintMode();
-		QAndroidJniObject getProgressDrawable();
-		QAndroidJniObject getProgressTintBlendMode();
-		QAndroidJniObject getProgressTintList();
-		QAndroidJniObject getProgressTintMode();
+		android::graphics::BlendMode getProgressBackgroundTintBlendMode();
+		android::content::res::ColorStateList getProgressBackgroundTintList();
+		android::graphics::PorterDuff_Mode getProgressBackgroundTintMode();
+		android::graphics::drawable::Drawable getProgressDrawable();
+		android::graphics::BlendMode getProgressTintBlendMode();
+		android::content::res::ColorStateList getProgressTintList();
+		android::graphics::PorterDuff_Mode getProgressTintMode();
 		jint getSecondaryProgress();
-		QAndroidJniObject getSecondaryProgressTintBlendMode();
-		QAndroidJniObject getSecondaryProgressTintList();
-		QAndroidJniObject getSecondaryProgressTintMode();
+		android::graphics::BlendMode getSecondaryProgressTintBlendMode();
+		android::content::res::ColorStateList getSecondaryProgressTintList();
+		android::graphics::PorterDuff_Mode getSecondaryProgressTintMode();
 		void incrementProgressBy(jint arg0);
 		void incrementSecondaryProgressBy(jint arg0);
 		void invalidateDrawable(android::graphics::drawable::Drawable arg0);
@@ -77,7 +79,7 @@ namespace android::widget
 		jboolean isIndeterminate();
 		void jumpDrawablesToCurrentState();
 		void onRestoreInstanceState(__JniBaseClass arg0);
-		QAndroidJniObject onSaveInstanceState();
+		__JniBaseClass onSaveInstanceState();
 		void onVisibilityAggregated(jboolean arg0);
 		void postInvalidate();
 		void setIndeterminate(jboolean arg0);

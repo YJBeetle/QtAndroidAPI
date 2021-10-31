@@ -12,119 +12,106 @@ namespace android::service::wallpaper
 {
 	// Fields
 	
-	WallpaperService_Engine::WallpaperService_Engine(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	WallpaperService_Engine::WallpaperService_Engine(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
-	WallpaperService_Engine::WallpaperService_Engine(android::service::wallpaper::WallpaperService &arg0)
-	{
-		__thiz = QAndroidJniObject(
+	WallpaperService_Engine::WallpaperService_Engine(android::service::wallpaper::WallpaperService arg0)
+		: __JniBaseClass(
 			"android.service.wallpaper.WallpaperService$Engine",
 			"(Landroid/service/wallpaper/WallpaperService;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jint WallpaperService_Engine::getDesiredMinimumHeight()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDesiredMinimumHeight",
 			"()I"
 		);
 	}
 	jint WallpaperService_Engine::getDesiredMinimumWidth()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDesiredMinimumWidth",
 			"()I"
 		);
 	}
-	QAndroidJniObject WallpaperService_Engine::getDisplayContext()
+	android::content::Context WallpaperService_Engine::getDisplayContext()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDisplayContext",
 			"()Landroid/content/Context;"
 		);
 	}
-	QAndroidJniObject WallpaperService_Engine::getSurfaceHolder()
+	__JniBaseClass WallpaperService_Engine::getSurfaceHolder()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSurfaceHolder",
 			"()Landroid/view/SurfaceHolder;"
 		);
 	}
 	jboolean WallpaperService_Engine::isPreview()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isPreview",
 			"()Z"
 		);
 	}
 	jboolean WallpaperService_Engine::isVisible()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isVisible",
 			"()Z"
 		);
 	}
 	void WallpaperService_Engine::notifyColorsChanged()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"notifyColorsChanged",
 			"()V"
 		);
 	}
 	void WallpaperService_Engine::onApplyWindowInsets(android::view::WindowInsets arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onApplyWindowInsets",
 			"(Landroid/view/WindowInsets;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
-	QAndroidJniObject WallpaperService_Engine::onCommand(jstring arg0, jint arg1, jint arg2, jint arg3, android::os::Bundle arg4, jboolean arg5)
+	android::os::Bundle WallpaperService_Engine::onCommand(jstring arg0, jint arg1, jint arg2, jint arg3, android::os::Bundle arg4, jboolean arg5)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onCommand",
 			"(Ljava/lang/String;IIILandroid/os/Bundle;Z)Landroid/os/Bundle;",
 			arg0,
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object(),
+			arg4.object(),
 			arg5
 		);
 	}
-	QAndroidJniObject WallpaperService_Engine::onCommand(const QString &arg0, jint arg1, jint arg2, jint arg3, android::os::Bundle arg4, jboolean arg5)
+	android::app::WallpaperColors WallpaperService_Engine::onComputeColors()
 	{
-		return __thiz.callObjectMethod(
-			"onCommand",
-			"(Ljava/lang/String;IIILandroid/os/Bundle;Z)Landroid/os/Bundle;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2,
-			arg3,
-			arg4.__jniObject().object(),
-			arg5
-		);
-	}
-	QAndroidJniObject WallpaperService_Engine::onComputeColors()
-	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"onComputeColors",
 			"()Landroid/app/WallpaperColors;"
 		);
 	}
 	void WallpaperService_Engine::onCreate(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onCreate",
 			"(Landroid/view/SurfaceHolder;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void WallpaperService_Engine::onDesiredSizeChanged(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onDesiredSizeChanged",
 			"(II)V",
 			arg0,
@@ -133,14 +120,14 @@ namespace android::service::wallpaper
 	}
 	void WallpaperService_Engine::onDestroy()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onDestroy",
 			"()V"
 		);
 	}
 	void WallpaperService_Engine::onOffsetsChanged(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jint arg4, jint arg5)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onOffsetsChanged",
 			"(FFFFII)V",
 			arg0,
@@ -153,10 +140,10 @@ namespace android::service::wallpaper
 	}
 	void WallpaperService_Engine::onSurfaceChanged(__JniBaseClass arg0, jint arg1, jint arg2, jint arg3)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onSurfaceChanged",
 			"(Landroid/view/SurfaceHolder;III)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
 			arg2,
 			arg3
@@ -164,39 +151,39 @@ namespace android::service::wallpaper
 	}
 	void WallpaperService_Engine::onSurfaceCreated(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onSurfaceCreated",
 			"(Landroid/view/SurfaceHolder;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void WallpaperService_Engine::onSurfaceDestroyed(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onSurfaceDestroyed",
 			"(Landroid/view/SurfaceHolder;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void WallpaperService_Engine::onSurfaceRedrawNeeded(__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onSurfaceRedrawNeeded",
 			"(Landroid/view/SurfaceHolder;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void WallpaperService_Engine::onTouchEvent(android::view::MotionEvent arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onTouchEvent",
 			"(Landroid/view/MotionEvent;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void WallpaperService_Engine::onVisibilityChanged(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"onVisibilityChanged",
 			"(Z)V",
 			arg0
@@ -204,7 +191,7 @@ namespace android::service::wallpaper
 	}
 	void WallpaperService_Engine::setOffsetNotificationsEnabled(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setOffsetNotificationsEnabled",
 			"(Z)V",
 			arg0
@@ -212,7 +199,7 @@ namespace android::service::wallpaper
 	}
 	void WallpaperService_Engine::setTouchEventsEnabled(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setTouchEventsEnabled",
 			"(Z)V",
 			arg0

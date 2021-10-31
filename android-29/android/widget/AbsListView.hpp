@@ -84,19 +84,20 @@ namespace android::widget
 		static jint TRANSCRIPT_MODE_DISABLED();
 		static jint TRANSCRIPT_MODE_NORMAL();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AbsListView(const char *className, const char *sig, Ts...agv) : android::widget::AdapterView(className, sig, std::forward<Ts>(agv)...) {}
 		AbsListView(QAndroidJniObject obj);
+		
 		// Constructors
-		AbsListView(android::content::Context &arg0);
-		AbsListView(android::content::Context &arg0, __JniBaseClass &arg1);
-		AbsListView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		AbsListView(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
-		AbsListView() = default;
+		AbsListView(android::content::Context arg0);
+		AbsListView(android::content::Context arg0, __JniBaseClass arg1);
+		AbsListView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		AbsListView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		
 		// Methods
 		void addTouchables(java::util::ArrayList arg0);
 		void afterTextChanged(__JniBaseClass arg0);
 		void beforeTextChanged(jstring arg0, jint arg1, jint arg2, jint arg3);
-		void beforeTextChanged(const QString &arg0, jint arg1, jint arg2, jint arg3);
 		jboolean canScrollList(jint arg0);
 		jboolean checkInputConnectionProxy(android::view::View arg0);
 		void clearChoices();
@@ -105,22 +106,22 @@ namespace android::widget
 		void dispatchDrawableHotspotChanged(jfloat arg0, jfloat arg1);
 		void draw(android::graphics::Canvas arg0);
 		void fling(jint arg0);
-		QAndroidJniObject generateLayoutParams(__JniBaseClass arg0);
+		android::widget::AbsListView_LayoutParams generateLayoutParams(__JniBaseClass arg0);
 		jstring getAccessibilityClassName();
 		jint getBottomEdgeEffectColor();
 		jint getCacheColorHint();
 		jint getCheckedItemCount();
 		jlongArray getCheckedItemIds();
 		jint getCheckedItemPosition();
-		QAndroidJniObject getCheckedItemPositions();
+		android::util::SparseBooleanArray getCheckedItemPositions();
 		jint getChoiceMode();
 		void getFocusedRect(android::graphics::Rect arg0);
 		jint getListPaddingBottom();
 		jint getListPaddingLeft();
 		jint getListPaddingRight();
 		jint getListPaddingTop();
-		QAndroidJniObject getSelectedView();
-		QAndroidJniObject getSelector();
+		android::view::View getSelectedView();
+		android::graphics::drawable::Drawable getSelector();
 		jint getSolidColor();
 		jstring getTextFilter();
 		jint getTopEdgeEffectColor();
@@ -138,7 +139,7 @@ namespace android::widget
 		jboolean isTextFilterEnabled();
 		void jumpDrawablesToCurrentState();
 		void onCancelPendingInputEvents();
-		QAndroidJniObject onCreateInputConnection(android::view::inputmethod::EditorInfo arg0);
+		__JniBaseClass onCreateInputConnection(android::view::inputmethod::EditorInfo arg0);
 		void onFilterComplete(jint arg0);
 		jboolean onGenericMotionEvent(android::view::MotionEvent arg0);
 		void onGlobalLayout();
@@ -152,13 +153,12 @@ namespace android::widget
 		void onNestedScrollAccepted(android::view::View arg0, android::view::View arg1, jint arg2);
 		jboolean onRemoteAdapterConnected();
 		void onRemoteAdapterDisconnected();
-		QAndroidJniObject onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1);
+		android::view::PointerIcon onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1);
 		void onRestoreInstanceState(__JniBaseClass arg0);
 		void onRtlPropertiesChanged(jint arg0);
-		QAndroidJniObject onSaveInstanceState();
+		__JniBaseClass onSaveInstanceState();
 		jboolean onStartNestedScroll(android::view::View arg0, android::view::View arg1, jint arg2);
 		void onTextChanged(jstring arg0, jint arg1, jint arg2, jint arg3);
-		void onTextChanged(const QString &arg0, jint arg1, jint arg2, jint arg3);
 		jboolean onTouchEvent(android::view::MotionEvent arg0);
 		void onTouchModeChanged(jboolean arg0);
 		void onWindowFocusChanged(jboolean arg0);
@@ -180,7 +180,6 @@ namespace android::widget
 		void setFastScrollEnabled(jboolean arg0);
 		void setFastScrollStyle(jint arg0);
 		void setFilterText(jstring arg0);
-		void setFilterText(const QString &arg0);
 		void setFriction(jfloat arg0);
 		void setItemChecked(jint arg0, jboolean arg1);
 		void setMultiChoiceModeListener(__JniBaseClass arg0);

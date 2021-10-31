@@ -61,17 +61,19 @@ namespace android::os
 	{
 	public:
 		// Fields
-		static QAndroidJniObject STRING_CREATOR();
+		static __JniBaseClass STRING_CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Parcel(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Parcel(QAndroidJniObject obj);
+		
 		// Constructors
-		Parcel() = default;
 		
 		// Methods
-		static QAndroidJniObject obtain();
+		static android::os::Parcel obtain();
 		void appendFrom(android::os::Parcel arg0, jint arg1, jint arg2);
 		jarray createBinderArray();
-		QAndroidJniObject createBinderArrayList();
+		java::util::ArrayList createBinderArrayList();
 		jbooleanArray createBooleanArray();
 		jbyteArray createByteArray();
 		jcharArray createCharArray();
@@ -80,27 +82,26 @@ namespace android::os
 		jintArray createIntArray();
 		jlongArray createLongArray();
 		jarray createStringArray();
-		QAndroidJniObject createStringArrayList();
+		java::util::ArrayList createStringArrayList();
 		jobjectArray createTypedArray(__JniBaseClass arg0);
-		QAndroidJniObject createTypedArrayList(__JniBaseClass arg0);
-		QAndroidJniObject createTypedArrayMap(__JniBaseClass arg0);
-		QAndroidJniObject createTypedSparseArray(__JniBaseClass arg0);
+		java::util::ArrayList createTypedArrayList(__JniBaseClass arg0);
+		android::util::ArrayMap createTypedArrayMap(__JniBaseClass arg0);
+		android::util::SparseArray createTypedSparseArray(__JniBaseClass arg0);
 		jint dataAvail();
 		jint dataCapacity();
 		jint dataPosition();
 		jint dataSize();
 		void enforceInterface(jstring arg0);
-		void enforceInterface(const QString &arg0);
 		jboolean hasFileDescriptors();
 		jbyteArray marshall();
 		jobjectArray readArray(java::lang::ClassLoader arg0);
-		QAndroidJniObject readArrayList(java::lang::ClassLoader arg0);
+		java::util::ArrayList readArrayList(java::lang::ClassLoader arg0);
 		void readBinderArray(jarray arg0);
 		void readBinderList(__JniBaseClass arg0);
 		jboolean readBoolean();
 		void readBooleanArray(jbooleanArray arg0);
-		QAndroidJniObject readBundle();
-		QAndroidJniObject readBundle(java::lang::ClassLoader arg0);
+		android::os::Bundle readBundle();
+		android::os::Bundle readBundle(java::lang::ClassLoader arg0);
 		jbyte readByte();
 		void readByteArray(jbyteArray arg0);
 		void readCharArray(jcharArray arg0);
@@ -108,31 +109,30 @@ namespace android::os
 		void readDoubleArray(jdoubleArray arg0);
 		void readException();
 		void readException(jint arg0, jstring arg1);
-		void readException(jint arg0, const QString &arg1);
-		QAndroidJniObject readFileDescriptor();
+		android::os::ParcelFileDescriptor readFileDescriptor();
 		jfloat readFloat();
 		void readFloatArray(jfloatArray arg0);
-		QAndroidJniObject readHashMap(java::lang::ClassLoader arg0);
+		java::util::HashMap readHashMap(java::lang::ClassLoader arg0);
 		jint readInt();
 		void readIntArray(jintArray arg0);
 		void readList(__JniBaseClass arg0, java::lang::ClassLoader arg1);
 		jlong readLong();
 		void readLongArray(jlongArray arg0);
 		void readMap(__JniBaseClass arg0, java::lang::ClassLoader arg1);
-		QAndroidJniObject readParcelable(java::lang::ClassLoader arg0);
+		__JniBaseClass readParcelable(java::lang::ClassLoader arg0);
 		jarray readParcelableArray(java::lang::ClassLoader arg0);
-		QAndroidJniObject readParcelableList(__JniBaseClass arg0, java::lang::ClassLoader arg1);
-		QAndroidJniObject readPersistableBundle();
-		QAndroidJniObject readPersistableBundle(java::lang::ClassLoader arg0);
-		QAndroidJniObject readSerializable();
-		QAndroidJniObject readSize();
-		QAndroidJniObject readSizeF();
-		QAndroidJniObject readSparseArray(java::lang::ClassLoader arg0);
-		QAndroidJniObject readSparseBooleanArray();
+		__JniBaseClass readParcelableList(__JniBaseClass arg0, java::lang::ClassLoader arg1);
+		android::os::PersistableBundle readPersistableBundle();
+		android::os::PersistableBundle readPersistableBundle(java::lang::ClassLoader arg0);
+		__JniBaseClass readSerializable();
+		android::util::Size readSize();
+		android::util::SizeF readSizeF();
+		android::util::SparseArray readSparseArray(java::lang::ClassLoader arg0);
+		android::util::SparseBooleanArray readSparseBooleanArray();
 		jstring readString();
 		void readStringArray(jarray arg0);
 		void readStringList(__JniBaseClass arg0);
-		QAndroidJniObject readStrongBinder();
+		__JniBaseClass readStrongBinder();
 		void readTypedArray(jobjectArray arg0, __JniBaseClass arg1);
 		void readTypedList(__JniBaseClass arg0, __JniBaseClass arg1);
 		jobject readTypedObject(__JniBaseClass arg0);
@@ -161,7 +161,6 @@ namespace android::os
 		void writeInt(jint arg0);
 		void writeIntArray(jintArray arg0);
 		void writeInterfaceToken(jstring arg0);
-		void writeInterfaceToken(const QString &arg0);
 		void writeList(__JniBaseClass arg0);
 		void writeLong(jlong arg0);
 		void writeLongArray(jlongArray arg0);
@@ -177,7 +176,6 @@ namespace android::os
 		void writeSparseArray(android::util::SparseArray arg0);
 		void writeSparseBooleanArray(android::util::SparseBooleanArray arg0);
 		void writeString(jstring arg0);
-		void writeString(const QString &arg0);
 		void writeStringArray(jarray arg0);
 		void writeStringList(__JniBaseClass arg0);
 		void writeStrongBinder(__JniBaseClass arg0);

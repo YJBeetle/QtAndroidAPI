@@ -62,12 +62,14 @@ namespace android::nfc
 		static jint STATE_TURNING_OFF();
 		static jint STATE_TURNING_ON();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit NfcAdapter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		NfcAdapter(QAndroidJniObject obj);
+		
 		// Constructors
-		NfcAdapter() = default;
 		
 		// Methods
-		static QAndroidJniObject getDefaultAdapter(android::content::Context arg0);
+		static android::nfc::NfcAdapter getDefaultAdapter(android::content::Context arg0);
 		void disableForegroundDispatch(android::app::Activity arg0);
 		void disableForegroundNdefPush(android::app::Activity arg0);
 		void disableReaderMode(android::app::Activity arg0);

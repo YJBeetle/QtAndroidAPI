@@ -5,9 +5,9 @@
 namespace android::service::autofill
 {
 	// Fields
-	QAndroidJniObject FillRequest::CREATOR()
+	__JniBaseClass FillRequest::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.service.autofill.FillRequest",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -15,71 +15,73 @@ namespace android::service::autofill
 	}
 	jint FillRequest::FLAG_COMPATIBILITY_MODE_REQUEST()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.autofill.FillRequest",
 			"FLAG_COMPATIBILITY_MODE_REQUEST"
 		);
 	}
 	jint FillRequest::FLAG_MANUAL_REQUEST()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.service.autofill.FillRequest",
 			"FLAG_MANUAL_REQUEST"
 		);
 	}
 	
-	FillRequest::FillRequest(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	FillRequest::FillRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint FillRequest::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	QAndroidJniObject FillRequest::getClientState()
+	android::os::Bundle FillRequest::getClientState()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getClientState",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	QAndroidJniObject FillRequest::getFillContexts()
+	__JniBaseClass FillRequest::getFillContexts()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getFillContexts",
 			"()Ljava/util/List;"
 		);
 	}
 	jint FillRequest::getFlags()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getFlags",
 			"()I"
 		);
 	}
 	jint FillRequest::getId()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getId",
 			"()I"
 		);
 	}
 	jstring FillRequest::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void FillRequest::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

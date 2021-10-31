@@ -21,17 +21,18 @@ namespace android::os::storage
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jstring EXTRA_STORAGE_VOLUME();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit StorageVolume(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		StorageVolume(QAndroidJniObject obj);
+		
 		// Constructors
-		StorageVolume() = default;
 		
 		// Methods
-		QAndroidJniObject createAccessIntent(jstring arg0);
-		QAndroidJniObject createAccessIntent(const QString &arg0);
-		QAndroidJniObject createOpenDocumentTreeIntent();
+		android::content::Intent createAccessIntent(jstring arg0);
+		android::content::Intent createOpenDocumentTreeIntent();
 		jint describeContents();
 		jboolean equals(jobject arg0);
 		jstring getDescription(android::content::Context arg0);

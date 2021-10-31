@@ -71,9 +71,11 @@ namespace android::app
 		static jstring META_DATA_AUTOMATIC_RULE_TYPE();
 		static jstring META_DATA_RULE_INSTANCE_LIMIT();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit NotificationManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		NotificationManager(QAndroidJniObject obj);
+		
 		// Constructors
-		NotificationManager() = default;
 		
 		// Methods
 		jstring addAutomaticZenRule(android::app::AutomaticZenRule arg0);
@@ -81,51 +83,38 @@ namespace android::app
 		jboolean areNotificationsEnabled();
 		jboolean areNotificationsPaused();
 		jboolean canNotifyAsPackage(jstring arg0);
-		jboolean canNotifyAsPackage(const QString &arg0);
 		void cancel(jint arg0);
 		void cancel(jstring arg0, jint arg1);
-		void cancel(const QString &arg0, jint arg1);
 		void cancelAll();
 		void createNotificationChannel(android::app::NotificationChannel arg0);
 		void createNotificationChannelGroup(android::app::NotificationChannelGroup arg0);
 		void createNotificationChannelGroups(__JniBaseClass arg0);
 		void createNotificationChannels(__JniBaseClass arg0);
 		void deleteNotificationChannel(jstring arg0);
-		void deleteNotificationChannel(const QString &arg0);
 		void deleteNotificationChannelGroup(jstring arg0);
-		void deleteNotificationChannelGroup(const QString &arg0);
 		jarray getActiveNotifications();
-		QAndroidJniObject getAutomaticZenRule(jstring arg0);
-		QAndroidJniObject getAutomaticZenRule(const QString &arg0);
-		QAndroidJniObject getAutomaticZenRules();
+		android::app::AutomaticZenRule getAutomaticZenRule(jstring arg0);
+		__JniBaseClass getAutomaticZenRules();
 		jint getCurrentInterruptionFilter();
 		jint getImportance();
-		QAndroidJniObject getNotificationChannel(jstring arg0);
-		QAndroidJniObject getNotificationChannel(const QString &arg0);
-		QAndroidJniObject getNotificationChannelGroup(jstring arg0);
-		QAndroidJniObject getNotificationChannelGroup(const QString &arg0);
-		QAndroidJniObject getNotificationChannelGroups();
-		QAndroidJniObject getNotificationChannels();
+		android::app::NotificationChannel getNotificationChannel(jstring arg0);
+		android::app::NotificationChannelGroup getNotificationChannelGroup(jstring arg0);
+		__JniBaseClass getNotificationChannelGroups();
+		__JniBaseClass getNotificationChannels();
 		jstring getNotificationDelegate();
-		QAndroidJniObject getNotificationPolicy();
+		android::app::NotificationManager_Policy getNotificationPolicy();
 		jboolean isNotificationListenerAccessGranted(android::content::ComponentName arg0);
 		jboolean isNotificationPolicyAccessGranted();
 		void notify(jint arg0, android::app::Notification arg1);
 		void notify(jstring arg0, jint arg1, android::app::Notification arg2);
-		void notify(const QString &arg0, jint arg1, android::app::Notification arg2);
 		void notifyAsPackage(jstring arg0, jstring arg1, jint arg2, android::app::Notification arg3);
-		void notifyAsPackage(const QString &arg0, const QString &arg1, jint arg2, android::app::Notification arg3);
 		jboolean removeAutomaticZenRule(jstring arg0);
-		jboolean removeAutomaticZenRule(const QString &arg0);
 		void setAutomaticZenRuleState(jstring arg0, android::service::notification::Condition arg1);
-		void setAutomaticZenRuleState(const QString &arg0, android::service::notification::Condition arg1);
 		void setInterruptionFilter(jint arg0);
 		void setNotificationDelegate(jstring arg0);
-		void setNotificationDelegate(const QString &arg0);
 		void setNotificationPolicy(android::app::NotificationManager_Policy arg0);
 		jboolean shouldHideSilentStatusBarIcons();
 		jboolean updateAutomaticZenRule(jstring arg0, android::app::AutomaticZenRule arg1);
-		jboolean updateAutomaticZenRule(const QString &arg0, android::app::AutomaticZenRule arg1);
 	};
 } // namespace android::app
 

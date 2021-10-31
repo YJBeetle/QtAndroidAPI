@@ -153,9 +153,11 @@ namespace android::media
 		static jint VIBRATE_TYPE_NOTIFICATION();
 		static jint VIBRATE_TYPE_RINGER();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AudioManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AudioManager(QAndroidJniObject obj);
+		
 		// Constructors
-		AudioManager() = default;
 		
 		// Methods
 		static jboolean isHapticPlaybackSupported();
@@ -167,16 +169,14 @@ namespace android::media
 		void adjustVolume(jint arg0, jint arg1);
 		void dispatchMediaKeyEvent(android::view::KeyEvent arg0);
 		jint generateAudioSessionId();
-		QAndroidJniObject getActivePlaybackConfigurations();
-		QAndroidJniObject getActiveRecordingConfigurations();
+		__JniBaseClass getActivePlaybackConfigurations();
+		__JniBaseClass getActiveRecordingConfigurations();
 		jint getAllowedCapturePolicy();
 		jarray getDevices(jint arg0);
-		QAndroidJniObject getMicrophones();
+		__JniBaseClass getMicrophones();
 		jint getMode();
 		jstring getParameters(jstring arg0);
-		jstring getParameters(const QString &arg0);
 		jstring getProperty(jstring arg0);
-		jstring getProperty(const QString &arg0);
 		jint getRingerMode();
 		jint getRouting(jint arg0);
 		jint getStreamMaxVolume(jint arg0);
@@ -211,7 +211,6 @@ namespace android::media
 		void setMicrophoneMute(jboolean arg0);
 		void setMode(jint arg0);
 		void setParameters(jstring arg0);
-		void setParameters(const QString &arg0);
 		void setRingerMode(jint arg0);
 		void setRouting(jint arg0, jint arg1, jint arg2);
 		void setSpeakerphoneOn(jboolean arg0);

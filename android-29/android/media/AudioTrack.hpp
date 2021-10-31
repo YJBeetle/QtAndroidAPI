@@ -76,12 +76,14 @@ namespace android::media
 		static jint WRITE_BLOCKING();
 		static jint WRITE_NON_BLOCKING();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AudioTrack(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AudioTrack(QAndroidJniObject obj);
+		
 		// Constructors
-		AudioTrack(android::media::AudioAttributes &arg0, android::media::AudioFormat &arg1, jint &arg2, jint &arg3, jint &arg4);
-		AudioTrack(jint &arg0, jint &arg1, jint &arg2, jint &arg3, jint &arg4, jint &arg5);
-		AudioTrack(jint &arg0, jint &arg1, jint &arg2, jint &arg3, jint &arg4, jint &arg5, jint &arg6);
-		AudioTrack() = default;
+		AudioTrack(android::media::AudioAttributes arg0, android::media::AudioFormat arg1, jint arg2, jint arg3, jint arg4);
+		AudioTrack(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
+		AudioTrack(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6);
 		
 		// Methods
 		static jfloat getMaxVolume();
@@ -91,28 +93,28 @@ namespace android::media
 		static jboolean isDirectPlaybackSupported(android::media::AudioFormat arg0, android::media::AudioAttributes arg1);
 		void addOnRoutingChangedListener(__JniBaseClass arg0, android::os::Handler arg1);
 		jint attachAuxEffect(jint arg0);
-		QAndroidJniObject createVolumeShaper(android::media::VolumeShaper_Configuration arg0);
+		android::media::VolumeShaper createVolumeShaper(android::media::VolumeShaper_Configuration arg0);
 		void flush();
-		QAndroidJniObject getAudioAttributes();
+		android::media::AudioAttributes getAudioAttributes();
 		jint getAudioFormat();
 		jint getAudioSessionId();
 		jint getBufferCapacityInFrames();
 		jint getBufferSizeInFrames();
 		jint getChannelConfiguration();
 		jint getChannelCount();
-		QAndroidJniObject getFormat();
-		QAndroidJniObject getMetrics();
+		android::media::AudioFormat getFormat();
+		android::os::PersistableBundle getMetrics();
 		jint getNotificationMarkerPosition();
 		jint getOffloadDelay();
 		jint getOffloadPadding();
 		jint getPerformanceMode();
 		jint getPlayState();
 		jint getPlaybackHeadPosition();
-		QAndroidJniObject getPlaybackParams();
+		android::media::PlaybackParams getPlaybackParams();
 		jint getPlaybackRate();
 		jint getPositionNotificationPeriod();
-		QAndroidJniObject getPreferredDevice();
-		QAndroidJniObject getRoutedDevice();
+		android::media::AudioDeviceInfo getPreferredDevice();
+		android::media::AudioDeviceInfo getRoutedDevice();
 		jint getSampleRate();
 		jint getState();
 		jint getStreamType();

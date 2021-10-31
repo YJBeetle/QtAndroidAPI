@@ -7,71 +7,64 @@
 namespace android::view::contentcapture
 {
 	// Fields
-	QAndroidJniObject ContentCaptureContext::CREATOR()
+	__JniBaseClass ContentCaptureContext::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.contentcapture.ContentCaptureContext",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
 		);
 	}
 	
-	ContentCaptureContext::ContentCaptureContext(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ContentCaptureContext::ContentCaptureContext(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject ContentCaptureContext::forLocusId(jstring arg0)
+	android::view::contentcapture::ContentCaptureContext ContentCaptureContext::forLocusId(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.view.contentcapture.ContentCaptureContext",
 			"forLocusId",
 			"(Ljava/lang/String;)Landroid/view/contentcapture/ContentCaptureContext;",
 			arg0
 		);
 	}
-	QAndroidJniObject ContentCaptureContext::forLocusId(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.view.contentcapture.ContentCaptureContext",
-			"forLocusId",
-			"(Ljava/lang/String;)Landroid/view/contentcapture/ContentCaptureContext;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jint ContentCaptureContext::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	QAndroidJniObject ContentCaptureContext::getExtras()
+	android::os::Bundle ContentCaptureContext::getExtras()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	QAndroidJniObject ContentCaptureContext::getLocusId()
+	android::content::LocusId ContentCaptureContext::getLocusId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLocusId",
 			"()Landroid/content/LocusId;"
 		);
 	}
 	jstring ContentCaptureContext::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void ContentCaptureContext::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

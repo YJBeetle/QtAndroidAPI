@@ -17,20 +17,23 @@ namespace android::net::wifi::p2p
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit WifiP2pGroup(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		WifiP2pGroup(QAndroidJniObject obj);
+		
 		// Constructors
 		WifiP2pGroup();
 		WifiP2pGroup(android::net::wifi::p2p::WifiP2pGroup &arg0);
 		
 		// Methods
 		jint describeContents();
-		QAndroidJniObject getClientList();
+		__JniBaseClass getClientList();
 		jint getFrequency();
 		jstring getInterface();
 		jstring getNetworkName();
-		QAndroidJniObject getOwner();
+		android::net::wifi::p2p::WifiP2pDevice getOwner();
 		jstring getPassphrase();
 		jboolean isGroupOwner();
 		jstring toString();

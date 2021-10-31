@@ -56,24 +56,26 @@ namespace android::telecom
 		static jint STATE_RINGING();
 		static jint STATE_SELECT_PHONE_ACCOUNT();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Call(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Call(QAndroidJniObject obj);
+		
 		// Constructors
-		Call() = default;
 		
 		// Methods
 		void answer(jint arg0);
 		void conference(android::telecom::Call arg0);
 		void deflect(android::net::Uri arg0);
 		void disconnect();
-		QAndroidJniObject getCannedTextResponses();
-		QAndroidJniObject getChildren();
-		QAndroidJniObject getConferenceableCalls();
-		QAndroidJniObject getDetails();
-		QAndroidJniObject getParent();
+		__JniBaseClass getCannedTextResponses();
+		__JniBaseClass getChildren();
+		__JniBaseClass getConferenceableCalls();
+		android::telecom::Call_Details getDetails();
+		android::telecom::Call getParent();
 		jstring getRemainingPostDialSequence();
-		QAndroidJniObject getRttCall();
+		android::telecom::Call_RttCall getRttCall();
 		jint getState();
-		QAndroidJniObject getVideoCall();
+		android::telecom::InCallService_VideoCall getVideoCall();
 		void handoverTo(android::telecom::PhoneAccountHandle arg0, jint arg1, android::os::Bundle arg2);
 		void hold();
 		jboolean isRttActive();
@@ -86,12 +88,10 @@ namespace android::telecom
 		void registerCallback(android::telecom::Call_Callback arg0);
 		void registerCallback(android::telecom::Call_Callback arg0, android::os::Handler arg1);
 		void reject(jboolean arg0, jstring arg1);
-		void reject(jboolean arg0, const QString &arg1);
 		void removeExtras(jarray arg0);
 		void removeExtras(__JniBaseClass arg0);
 		void respondToRttRequest(jint arg0, jboolean arg1);
 		void sendCallEvent(jstring arg0, android::os::Bundle arg1);
-		void sendCallEvent(const QString &arg0, android::os::Bundle arg1);
 		void sendRttRequest();
 		void splitFromConference();
 		void stopDtmfTone();

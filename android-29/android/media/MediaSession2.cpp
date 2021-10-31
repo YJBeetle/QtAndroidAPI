@@ -11,76 +11,78 @@ namespace android::media
 {
 	// Fields
 	
-	MediaSession2::MediaSession2(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaSession2::MediaSession2(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void MediaSession2::broadcastSessionCommand(android::media::Session2Command arg0, android::os::Bundle arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"broadcastSessionCommand",
 			"(Landroid/media/Session2Command;Landroid/os/Bundle;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void MediaSession2::cancelSessionCommand(android::media::MediaSession2_ControllerInfo arg0, jobject arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"cancelSessionCommand",
 			"(Landroid/media/MediaSession2$ControllerInfo;Ljava/lang/Object;)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}
 	void MediaSession2::close()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	QAndroidJniObject MediaSession2::getConnectedControllers()
+	__JniBaseClass MediaSession2::getConnectedControllers()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getConnectedControllers",
 			"()Ljava/util/List;"
 		);
 	}
 	jstring MediaSession2::getId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject MediaSession2::getToken()
+	android::media::Session2Token MediaSession2::getToken()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getToken",
 			"()Landroid/media/Session2Token;"
 		);
 	}
 	jboolean MediaSession2::isPlaybackActive()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isPlaybackActive",
 			"()Z"
 		);
 	}
 	jobject MediaSession2::sendSessionCommand(android::media::MediaSession2_ControllerInfo arg0, android::media::Session2Command arg1, android::os::Bundle arg2)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"sendSessionCommand",
 			"(Landroid/media/MediaSession2$ControllerInfo;Landroid/media/Session2Command;Landroid/os/Bundle;)Ljava/lang/Object;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		).object<jobject>();
 	}
 	void MediaSession2::setPlaybackActive(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setPlaybackActive",
 			"(Z)V",
 			arg0

@@ -7,21 +7,21 @@ namespace android::view::textclassifier
 	// Fields
 	jint TextLinks::APPLY_STRATEGY_IGNORE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.textclassifier.TextLinks",
 			"APPLY_STRATEGY_IGNORE"
 		);
 	}
 	jint TextLinks::APPLY_STRATEGY_REPLACE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.textclassifier.TextLinks",
 			"APPLY_STRATEGY_REPLACE"
 		);
 	}
-	QAndroidJniObject TextLinks::CREATOR()
+	__JniBaseClass TextLinks::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.textclassifier.TextLinks",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -29,88 +29,90 @@ namespace android::view::textclassifier
 	}
 	jint TextLinks::STATUS_DIFFERENT_TEXT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.textclassifier.TextLinks",
 			"STATUS_DIFFERENT_TEXT"
 		);
 	}
 	jint TextLinks::STATUS_LINKS_APPLIED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.textclassifier.TextLinks",
 			"STATUS_LINKS_APPLIED"
 		);
 	}
 	jint TextLinks::STATUS_NO_LINKS_APPLIED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.textclassifier.TextLinks",
 			"STATUS_NO_LINKS_APPLIED"
 		);
 	}
 	jint TextLinks::STATUS_NO_LINKS_FOUND()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.textclassifier.TextLinks",
 			"STATUS_NO_LINKS_FOUND"
 		);
 	}
 	jint TextLinks::STATUS_UNSUPPORTED_CHARACTER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.textclassifier.TextLinks",
 			"STATUS_UNSUPPORTED_CHARACTER"
 		);
 	}
 	
-	TextLinks::TextLinks(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TextLinks::TextLinks(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint TextLinks::apply(__JniBaseClass arg0, jint arg1, __JniBaseClass arg2)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"apply",
 			"(Landroid/text/Spannable;ILjava/util/function/Function;)I",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
 	jint TextLinks::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	QAndroidJniObject TextLinks::getExtras()
+	android::os::Bundle TextLinks::getExtras()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	QAndroidJniObject TextLinks::getLinks()
+	__JniBaseClass TextLinks::getLinks()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLinks",
 			"()Ljava/util/Collection;"
 		);
 	}
 	jstring TextLinks::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void TextLinks::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

@@ -54,7 +54,7 @@ namespace android::media
 		static jint CHANNEL_OUT_SIDE_RIGHT();
 		static jint CHANNEL_OUT_STEREO();
 		static jint CHANNEL_OUT_SURROUND();
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint ENCODING_AAC_ELD();
 		static jint ENCODING_AAC_HE_V1();
 		static jint ENCODING_AAC_HE_V2();
@@ -77,9 +77,11 @@ namespace android::media
 		static jint ENCODING_PCM_FLOAT();
 		static jint SAMPLE_RATE_UNSPECIFIED();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AudioFormat(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AudioFormat(QAndroidJniObject obj);
+		
 		// Constructors
-		AudioFormat() = default;
 		
 		// Methods
 		jint describeContents();

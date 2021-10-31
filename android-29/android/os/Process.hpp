@@ -36,7 +36,10 @@ namespace android::os
 		static jint THREAD_PRIORITY_URGENT_DISPLAY();
 		static jint THREAD_PRIORITY_VIDEO();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Process(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Process(QAndroidJniObject obj);
+		
 		// Constructors
 		Process();
 		
@@ -44,12 +47,10 @@ namespace android::os
 		static jlong getElapsedCpuTime();
 		static jintArray getExclusiveCores();
 		static jint getGidForName(jstring arg0);
-		static jint getGidForName(const QString &arg0);
 		static jlong getStartElapsedRealtime();
 		static jlong getStartUptimeMillis();
 		static jint getThreadPriority(jint arg0);
 		static jint getUidForName(jstring arg0);
-		static jint getUidForName(const QString &arg0);
 		static jboolean is64Bit();
 		static jboolean isApplicationUid(jint arg0);
 		static jboolean isIsolated();
@@ -57,7 +58,7 @@ namespace android::os
 		static jint myPid();
 		static jint myTid();
 		static jint myUid();
-		static QAndroidJniObject myUserHandle();
+		static android::os::UserHandle myUserHandle();
 		static void sendSignal(jint arg0, jint arg1);
 		static void setThreadPriority(jint arg0);
 		static void setThreadPriority(jint arg0, jint arg1);

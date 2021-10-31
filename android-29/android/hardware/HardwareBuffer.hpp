@@ -14,7 +14,7 @@ namespace android::hardware
 	public:
 		// Fields
 		static jint BLOB();
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint DS_24UI8();
 		static jint DS_FP32UI8();
 		static jint D_16();
@@ -40,12 +40,14 @@ namespace android::hardware
 		static jlong USAGE_SENSOR_DIRECT_DATA();
 		static jlong USAGE_VIDEO_ENCODE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit HardwareBuffer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		HardwareBuffer(QAndroidJniObject obj);
+		
 		// Constructors
-		HardwareBuffer() = default;
 		
 		// Methods
-		static QAndroidJniObject create(jint arg0, jint arg1, jint arg2, jint arg3, jlong arg4);
+		static android::hardware::HardwareBuffer create(jint arg0, jint arg1, jint arg2, jint arg3, jlong arg4);
 		static jboolean isSupported(jint arg0, jint arg1, jint arg2, jint arg3, jlong arg4);
 		void close();
 		jint describeContents();

@@ -90,32 +90,35 @@ namespace android::telecom
 		static jint STATE_PULLING_CALL();
 		static jint STATE_RINGING();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Connection(const char *className, const char *sig, Ts...agv) : android::telecom::Conferenceable(className, sig, std::forward<Ts>(agv)...) {}
 		Connection(QAndroidJniObject obj);
+		
 		// Constructors
 		Connection();
 		
 		// Methods
 		static jstring capabilitiesToString(jint arg0);
-		static QAndroidJniObject createCanceledConnection();
-		static QAndroidJniObject createFailedConnection(android::telecom::DisconnectCause arg0);
+		static android::telecom::Connection createCanceledConnection();
+		static android::telecom::Connection createFailedConnection(android::telecom::DisconnectCause arg0);
 		static jstring propertiesToString(jint arg0);
 		static jstring stateToString(jint arg0);
 		void destroy();
-		QAndroidJniObject getAddress();
+		android::net::Uri getAddress();
 		jint getAddressPresentation();
 		jboolean getAudioModeIsVoip();
-		QAndroidJniObject getCallAudioState();
+		android::telecom::CallAudioState getCallAudioState();
 		jstring getCallerDisplayName();
 		jint getCallerDisplayNamePresentation();
-		QAndroidJniObject getConference();
-		QAndroidJniObject getConferenceables();
+		android::telecom::Conference getConference();
+		__JniBaseClass getConferenceables();
 		jint getConnectionCapabilities();
 		jint getConnectionProperties();
-		QAndroidJniObject getDisconnectCause();
-		QAndroidJniObject getExtras();
+		android::telecom::DisconnectCause getDisconnectCause();
+		android::os::Bundle getExtras();
 		jint getState();
-		QAndroidJniObject getStatusHints();
-		QAndroidJniObject getVideoProvider();
+		android::telecom::StatusHints getStatusHints();
+		android::telecom::Connection_VideoProvider getVideoProvider();
 		void handleRttUpgradeResponse(android::telecom::Connection_RttTextStream arg0);
 		jboolean isRingbackRequested();
 		void onAbort();
@@ -123,7 +126,6 @@ namespace android::telecom
 		void onAnswer(jint arg0);
 		void onCallAudioStateChanged(android::telecom::CallAudioState arg0);
 		void onCallEvent(jstring arg0, android::os::Bundle arg1);
-		void onCallEvent(const QString &arg0, android::os::Bundle arg1);
 		void onDeflect(android::net::Uri arg0);
 		void onDisconnect();
 		void onExtrasChanged(android::os::Bundle arg0);
@@ -134,7 +136,6 @@ namespace android::telecom
 		void onPullExternalCall();
 		void onReject();
 		void onReject(jstring arg0);
-		void onReject(const QString &arg0);
 		void onSeparate();
 		void onShowIncomingCallUi();
 		void onSilence();
@@ -148,7 +149,6 @@ namespace android::telecom
 		void removeExtras(__JniBaseClass arg0);
 		void requestBluetoothAudio(android::bluetooth::BluetoothDevice arg0);
 		void sendConnectionEvent(jstring arg0, android::os::Bundle arg1);
-		void sendConnectionEvent(const QString &arg0, android::os::Bundle arg1);
 		void sendRemoteRttRequest();
 		void sendRttInitiationFailure(jint arg0);
 		void sendRttInitiationSuccess();
@@ -158,7 +158,6 @@ namespace android::telecom
 		void setAudioModeIsVoip(jboolean arg0);
 		void setAudioRoute(jint arg0);
 		void setCallerDisplayName(jstring arg0, jint arg1);
-		void setCallerDisplayName(const QString &arg0, jint arg1);
 		void setConferenceableConnections(__JniBaseClass arg0);
 		void setConferenceables(__JniBaseClass arg0);
 		void setConnectionCapabilities(jint arg0);
@@ -171,7 +170,6 @@ namespace android::telecom
 		void setNextPostDialChar(jchar arg0);
 		void setOnHold();
 		void setPostDialWait(jstring arg0);
-		void setPostDialWait(const QString &arg0);
 		void setPulling();
 		void setRingbackRequested(jboolean arg0);
 		void setRinging();

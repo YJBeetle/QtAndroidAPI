@@ -15,7 +15,7 @@ namespace android::content::pm
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint FLAG_EXTERNAL_SERVICE();
 		static jint FLAG_ISOLATED_PROCESS();
 		static jint FLAG_SINGLE_USER();
@@ -32,7 +32,10 @@ namespace android::content::pm
 		jint flags();
 		jstring permission();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ServiceInfo(const char *className, const char *sig, Ts...agv) : android::content::pm::ComponentInfo(className, sig, std::forward<Ts>(agv)...) {}
 		ServiceInfo(QAndroidJniObject obj);
+		
 		// Constructors
 		ServiceInfo();
 		ServiceInfo(android::content::pm::ServiceInfo &arg0);
@@ -40,7 +43,6 @@ namespace android::content::pm
 		// Methods
 		jint describeContents();
 		void dump(__JniBaseClass arg0, jstring arg1);
-		void dump(__JniBaseClass arg0, const QString &arg1);
 		jint getForegroundServiceType();
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

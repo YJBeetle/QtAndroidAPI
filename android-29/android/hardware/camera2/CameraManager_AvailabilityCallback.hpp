@@ -10,16 +10,17 @@ namespace android::hardware::camera2
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CameraManager_AvailabilityCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		CameraManager_AvailabilityCallback(QAndroidJniObject obj);
+		
 		// Constructors
 		CameraManager_AvailabilityCallback();
 		
 		// Methods
 		void onCameraAccessPrioritiesChanged();
 		void onCameraAvailable(jstring arg0);
-		void onCameraAvailable(const QString &arg0);
 		void onCameraUnavailable(jstring arg0);
-		void onCameraUnavailable(const QString &arg0);
 	};
 } // namespace android::hardware::camera2
 

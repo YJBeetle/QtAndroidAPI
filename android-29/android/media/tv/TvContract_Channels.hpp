@@ -42,7 +42,7 @@ namespace android::media::tv
 		static jstring COLUMN_VIDEO_FORMAT();
 		static jstring CONTENT_ITEM_TYPE();
 		static jstring CONTENT_TYPE();
-		static QAndroidJniObject CONTENT_URI();
+		static android::net::Uri CONTENT_URI();
 		static jstring SERVICE_TYPE_AUDIO();
 		static jstring SERVICE_TYPE_AUDIO_VIDEO();
 		static jstring SERVICE_TYPE_OTHER();
@@ -89,13 +89,14 @@ namespace android::media::tv
 		static jstring VIDEO_RESOLUTION_SD();
 		static jstring VIDEO_RESOLUTION_UHD();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TvContract_Channels(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		TvContract_Channels(QAndroidJniObject obj);
+		
 		// Constructors
-		TvContract_Channels() = default;
 		
 		// Methods
 		static jstring getVideoResolution(jstring arg0);
-		static jstring getVideoResolution(const QString &arg0);
 	};
 } // namespace android::media::tv
 

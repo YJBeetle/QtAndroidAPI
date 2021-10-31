@@ -41,30 +41,32 @@ namespace android::widget
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CompoundButton(const char *className, const char *sig, Ts...agv) : android::widget::Button(className, sig, std::forward<Ts>(agv)...) {}
 		CompoundButton(QAndroidJniObject obj);
+		
 		// Constructors
-		CompoundButton(android::content::Context &arg0);
-		CompoundButton(android::content::Context &arg0, __JniBaseClass &arg1);
-		CompoundButton(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		CompoundButton(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
-		CompoundButton() = default;
+		CompoundButton(android::content::Context arg0);
+		CompoundButton(android::content::Context arg0, __JniBaseClass arg1);
+		CompoundButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		CompoundButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		
 		// Methods
 		void autofill(android::view::autofill::AutofillValue arg0);
 		void drawableHotspotChanged(jfloat arg0, jfloat arg1);
 		jstring getAccessibilityClassName();
 		jint getAutofillType();
-		QAndroidJniObject getAutofillValue();
-		QAndroidJniObject getButtonDrawable();
-		QAndroidJniObject getButtonTintBlendMode();
-		QAndroidJniObject getButtonTintList();
-		QAndroidJniObject getButtonTintMode();
+		android::view::autofill::AutofillValue getAutofillValue();
+		android::graphics::drawable::Drawable getButtonDrawable();
+		android::graphics::BlendMode getButtonTintBlendMode();
+		android::content::res::ColorStateList getButtonTintList();
+		android::graphics::PorterDuff_Mode getButtonTintMode();
 		jint getCompoundPaddingLeft();
 		jint getCompoundPaddingRight();
 		jboolean isChecked();
 		void jumpDrawablesToCurrentState();
 		void onRestoreInstanceState(__JniBaseClass arg0);
-		QAndroidJniObject onSaveInstanceState();
+		__JniBaseClass onSaveInstanceState();
 		jboolean performClick();
 		void setButtonDrawable(android::graphics::drawable::Drawable arg0);
 		void setButtonDrawable(jint arg0);

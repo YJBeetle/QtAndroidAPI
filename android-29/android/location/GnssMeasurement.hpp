@@ -19,7 +19,7 @@ namespace android::location
 		static jint ADR_STATE_RESET();
 		static jint ADR_STATE_UNKNOWN();
 		static jint ADR_STATE_VALID();
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint MULTIPATH_INDICATOR_DETECTED();
 		static jint MULTIPATH_INDICATOR_NOT_DETECTED();
 		static jint MULTIPATH_INDICATOR_UNKNOWN();
@@ -42,9 +42,11 @@ namespace android::location
 		static jint STATE_TOW_KNOWN();
 		static jint STATE_UNKNOWN();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit GnssMeasurement(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		GnssMeasurement(QAndroidJniObject obj);
+		
 		// Constructors
-		GnssMeasurement() = default;
 		
 		// Methods
 		jint describeContents();

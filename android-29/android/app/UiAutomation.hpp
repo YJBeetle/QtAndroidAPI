@@ -53,9 +53,11 @@ namespace android::app
 		static jint ROTATION_FREEZE_CURRENT();
 		static jint ROTATION_UNFREEZE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit UiAutomation(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		UiAutomation(QAndroidJniObject obj);
+		
 		// Constructors
-		UiAutomation() = default;
 		
 		// Methods
 		void adoptShellPermissionIdentity();
@@ -63,30 +65,25 @@ namespace android::app
 		void clearWindowAnimationFrameStats();
 		jboolean clearWindowContentFrameStats(jint arg0);
 		void dropShellPermissionIdentity();
-		QAndroidJniObject executeAndWaitForEvent(__JniBaseClass arg0, __JniBaseClass arg1, jlong arg2);
-		QAndroidJniObject executeShellCommand(jstring arg0);
-		QAndroidJniObject executeShellCommand(const QString &arg0);
-		QAndroidJniObject findFocus(jint arg0);
-		QAndroidJniObject getRootInActiveWindow();
-		QAndroidJniObject getServiceInfo();
-		QAndroidJniObject getWindowAnimationFrameStats();
-		QAndroidJniObject getWindowContentFrameStats(jint arg0);
-		QAndroidJniObject getWindows();
+		android::view::accessibility::AccessibilityEvent executeAndWaitForEvent(__JniBaseClass arg0, __JniBaseClass arg1, jlong arg2);
+		android::os::ParcelFileDescriptor executeShellCommand(jstring arg0);
+		android::view::accessibility::AccessibilityNodeInfo findFocus(jint arg0);
+		android::view::accessibility::AccessibilityNodeInfo getRootInActiveWindow();
+		android::accessibilityservice::AccessibilityServiceInfo getServiceInfo();
+		android::view::WindowAnimationFrameStats getWindowAnimationFrameStats();
+		android::view::WindowContentFrameStats getWindowContentFrameStats(jint arg0);
+		__JniBaseClass getWindows();
 		void grantRuntimePermission(jstring arg0, jstring arg1);
-		void grantRuntimePermission(const QString &arg0, const QString &arg1);
 		void grantRuntimePermissionAsUser(jstring arg0, jstring arg1, android::os::UserHandle arg2);
-		void grantRuntimePermissionAsUser(const QString &arg0, const QString &arg1, android::os::UserHandle arg2);
 		jboolean injectInputEvent(android::view::InputEvent arg0, jboolean arg1);
 		jboolean performGlobalAction(jint arg0);
 		void revokeRuntimePermission(jstring arg0, jstring arg1);
-		void revokeRuntimePermission(const QString &arg0, const QString &arg1);
 		void revokeRuntimePermissionAsUser(jstring arg0, jstring arg1, android::os::UserHandle arg2);
-		void revokeRuntimePermissionAsUser(const QString &arg0, const QString &arg1, android::os::UserHandle arg2);
 		void setOnAccessibilityEventListener(__JniBaseClass arg0);
 		jboolean setRotation(jint arg0);
 		void setRunAsMonkey(jboolean arg0);
 		void setServiceInfo(android::accessibilityservice::AccessibilityServiceInfo arg0);
-		QAndroidJniObject takeScreenshot();
+		android::graphics::Bitmap takeScreenshot();
 		void waitForIdle(jlong arg0, jlong arg1);
 	};
 } // namespace android::app

@@ -22,27 +22,27 @@ namespace android::net::wifi
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit WifiNetworkSuggestion_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		WifiNetworkSuggestion_Builder(QAndroidJniObject obj);
+		
 		// Constructors
 		WifiNetworkSuggestion_Builder();
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setBssid(android::net::MacAddress arg0);
-		QAndroidJniObject setIsAppInteractionRequired(jboolean arg0);
-		QAndroidJniObject setIsEnhancedOpen(jboolean arg0);
-		QAndroidJniObject setIsHiddenSsid(jboolean arg0);
-		QAndroidJniObject setIsMetered(jboolean arg0);
-		QAndroidJniObject setIsUserInteractionRequired(jboolean arg0);
-		QAndroidJniObject setPriority(jint arg0);
-		QAndroidJniObject setSsid(jstring arg0);
-		QAndroidJniObject setSsid(const QString &arg0);
-		QAndroidJniObject setWpa2EnterpriseConfig(android::net::wifi::WifiEnterpriseConfig arg0);
-		QAndroidJniObject setWpa2Passphrase(jstring arg0);
-		QAndroidJniObject setWpa2Passphrase(const QString &arg0);
-		QAndroidJniObject setWpa3EnterpriseConfig(android::net::wifi::WifiEnterpriseConfig arg0);
-		QAndroidJniObject setWpa3Passphrase(jstring arg0);
-		QAndroidJniObject setWpa3Passphrase(const QString &arg0);
+		android::net::wifi::WifiNetworkSuggestion build();
+		android::net::wifi::WifiNetworkSuggestion_Builder setBssid(android::net::MacAddress arg0);
+		android::net::wifi::WifiNetworkSuggestion_Builder setIsAppInteractionRequired(jboolean arg0);
+		android::net::wifi::WifiNetworkSuggestion_Builder setIsEnhancedOpen(jboolean arg0);
+		android::net::wifi::WifiNetworkSuggestion_Builder setIsHiddenSsid(jboolean arg0);
+		android::net::wifi::WifiNetworkSuggestion_Builder setIsMetered(jboolean arg0);
+		android::net::wifi::WifiNetworkSuggestion_Builder setIsUserInteractionRequired(jboolean arg0);
+		android::net::wifi::WifiNetworkSuggestion_Builder setPriority(jint arg0);
+		android::net::wifi::WifiNetworkSuggestion_Builder setSsid(jstring arg0);
+		android::net::wifi::WifiNetworkSuggestion_Builder setWpa2EnterpriseConfig(android::net::wifi::WifiEnterpriseConfig arg0);
+		android::net::wifi::WifiNetworkSuggestion_Builder setWpa2Passphrase(jstring arg0);
+		android::net::wifi::WifiNetworkSuggestion_Builder setWpa3EnterpriseConfig(android::net::wifi::WifiEnterpriseConfig arg0);
+		android::net::wifi::WifiNetworkSuggestion_Builder setWpa3Passphrase(jstring arg0);
 	};
 } // namespace android::net::wifi
 

@@ -13,16 +13,18 @@ namespace android::view
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint HDR_TYPE_DOLBY_VISION();
 		static jint HDR_TYPE_HDR10();
 		static jint HDR_TYPE_HDR10_PLUS();
 		static jint HDR_TYPE_HLG();
 		static jfloat INVALID_LUMINANCE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Display_HdrCapabilities(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Display_HdrCapabilities(QAndroidJniObject obj);
+		
 		// Constructors
-		Display_HdrCapabilities() = default;
 		
 		// Methods
 		jint describeContents();

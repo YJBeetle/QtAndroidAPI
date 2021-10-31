@@ -17,17 +17,19 @@ namespace android::media::session
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint PLAYBACK_TYPE_LOCAL();
 		static jint PLAYBACK_TYPE_REMOTE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaController_PlaybackInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaController_PlaybackInfo(QAndroidJniObject obj);
+		
 		// Constructors
-		MediaController_PlaybackInfo() = default;
 		
 		// Methods
 		jint describeContents();
-		QAndroidJniObject getAudioAttributes();
+		android::media::AudioAttributes getAudioAttributes();
 		jint getCurrentVolume();
 		jint getMaxVolume();
 		jint getPlaybackType();

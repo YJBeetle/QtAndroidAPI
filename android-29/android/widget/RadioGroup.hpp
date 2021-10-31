@@ -37,21 +37,23 @@ namespace android::widget
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit RadioGroup(const char *className, const char *sig, Ts...agv) : android::widget::LinearLayout(className, sig, std::forward<Ts>(agv)...) {}
 		RadioGroup(QAndroidJniObject obj);
+		
 		// Constructors
-		RadioGroup(android::content::Context &arg0);
-		RadioGroup(android::content::Context &arg0, __JniBaseClass &arg1);
-		RadioGroup() = default;
+		RadioGroup(android::content::Context arg0);
+		RadioGroup(android::content::Context arg0, __JniBaseClass arg1);
 		
 		// Methods
 		void addView(android::view::View arg0, jint arg1, android::view::ViewGroup_LayoutParams arg2);
 		void autofill(android::view::autofill::AutofillValue arg0);
 		void check(jint arg0);
 		void clearCheck();
-		QAndroidJniObject generateLayoutParams(__JniBaseClass arg0);
+		android::widget::RadioGroup_LayoutParams generateLayoutParams(__JniBaseClass arg0);
 		jstring getAccessibilityClassName();
 		jint getAutofillType();
-		QAndroidJniObject getAutofillValue();
+		android::view::autofill::AutofillValue getAutofillValue();
 		jint getCheckedRadioButtonId();
 		void setOnCheckedChangeListener(__JniBaseClass arg0);
 		void setOnHierarchyChangeListener(__JniBaseClass arg0);

@@ -15,17 +15,19 @@ namespace android::telephony
 		// Fields
 		static jint INVALID();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SignalStrength(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SignalStrength(QAndroidJniObject obj);
+		
 		// Constructors
-		SignalStrength() = default;
 		
 		// Methods
 		jint describeContents();
 		jboolean equals(jobject arg0);
 		jint getCdmaDbm();
 		jint getCdmaEcio();
-		QAndroidJniObject getCellSignalStrengths();
-		QAndroidJniObject getCellSignalStrengths(jclass arg0);
+		__JniBaseClass getCellSignalStrengths();
+		__JniBaseClass getCellSignalStrengths(jclass arg0);
 		jint getEvdoDbm();
 		jint getEvdoEcio();
 		jint getEvdoSnr();

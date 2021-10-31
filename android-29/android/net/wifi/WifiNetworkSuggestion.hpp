@@ -13,11 +13,13 @@ namespace android::net::wifi
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit WifiNetworkSuggestion(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		WifiNetworkSuggestion(QAndroidJniObject obj);
+		
 		// Constructors
-		WifiNetworkSuggestion() = default;
 		
 		// Methods
 		jint describeContents();

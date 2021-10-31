@@ -10,12 +10,15 @@ namespace android::util
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ArraySet(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ArraySet(QAndroidJniObject obj);
+		
 		// Constructors
 		ArraySet();
 		ArraySet(android::util::ArraySet &arg0);
-		ArraySet(jint &arg0);
-		ArraySet(__JniBaseClass &arg0);
+		ArraySet(jint arg0);
+		ArraySet(__JniBaseClass arg0);
 		
 		// Methods
 		jboolean add(jobject arg0);
@@ -29,7 +32,7 @@ namespace android::util
 		jint hashCode();
 		jint indexOf(jobject arg0);
 		jboolean isEmpty();
-		QAndroidJniObject iterator();
+		__JniBaseClass iterator();
 		jboolean remove(jobject arg0);
 		jboolean removeAll(android::util::ArraySet arg0);
 		jboolean removeAll(__JniBaseClass arg0);

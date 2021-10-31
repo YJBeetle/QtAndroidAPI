@@ -110,10 +110,12 @@ namespace android::view
 		static jint PROGRESS_VISIBILITY_ON();
 		static jstring STATUS_BAR_BACKGROUND_TRANSITION_NAME();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Window(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Window(QAndroidJniObject obj);
+		
 		// Constructors
-		Window(android::content::Context &arg0);
-		Window() = default;
+		Window(android::content::Context arg0);
 		
 		// Methods
 		static jint getDefaultFeatures(android::content::Context arg0);
@@ -123,37 +125,37 @@ namespace android::view
 		void clearFlags(jint arg0);
 		void closeAllPanels();
 		void closePanel(jint arg0);
-		QAndroidJniObject findViewById(jint arg0);
+		android::view::View findViewById(jint arg0);
 		jboolean getAllowEnterTransitionOverlap();
 		jboolean getAllowReturnTransitionOverlap();
-		QAndroidJniObject getAttributes();
-		QAndroidJniObject getCallback();
+		android::view::WindowManager_LayoutParams getAttributes();
+		__JniBaseClass getCallback();
 		jint getColorMode();
-		QAndroidJniObject getContainer();
-		QAndroidJniObject getContentScene();
-		QAndroidJniObject getContext();
-		QAndroidJniObject getCurrentFocus();
-		QAndroidJniObject getDecorView();
-		QAndroidJniObject getEnterTransition();
-		QAndroidJniObject getExitTransition();
-		QAndroidJniObject getLayoutInflater();
-		QAndroidJniObject getMediaController();
+		android::view::Window getContainer();
+		android::transition::Scene getContentScene();
+		android::content::Context getContext();
+		android::view::View getCurrentFocus();
+		android::view::View getDecorView();
+		android::transition::Transition getEnterTransition();
+		android::transition::Transition getExitTransition();
+		android::view::LayoutInflater getLayoutInflater();
+		android::media::session::MediaController getMediaController();
 		jint getNavigationBarColor();
 		jint getNavigationBarDividerColor();
-		QAndroidJniObject getReenterTransition();
-		QAndroidJniObject getReturnTransition();
-		QAndroidJniObject getSharedElementEnterTransition();
-		QAndroidJniObject getSharedElementExitTransition();
-		QAndroidJniObject getSharedElementReenterTransition();
-		QAndroidJniObject getSharedElementReturnTransition();
+		android::transition::Transition getReenterTransition();
+		android::transition::Transition getReturnTransition();
+		android::transition::Transition getSharedElementEnterTransition();
+		android::transition::Transition getSharedElementExitTransition();
+		android::transition::Transition getSharedElementReenterTransition();
+		android::transition::Transition getSharedElementReturnTransition();
 		jboolean getSharedElementsUseOverlay();
 		jint getStatusBarColor();
-		QAndroidJniObject getSystemGestureExclusionRects();
+		__JniBaseClass getSystemGestureExclusionRects();
 		jlong getTransitionBackgroundFadeDuration();
-		QAndroidJniObject getTransitionManager();
+		android::transition::TransitionManager getTransitionManager();
 		jint getVolumeControlStream();
-		QAndroidJniObject getWindowManager();
-		QAndroidJniObject getWindowStyle();
+		__JniBaseClass getWindowManager();
+		android::content::res::TypedArray getWindowStyle();
 		jboolean hasChildren();
 		jboolean hasFeature(jint arg0);
 		void injectInputEvent(android::view::InputEvent arg0);
@@ -167,15 +169,15 @@ namespace android::view
 		void makeActive();
 		void onConfigurationChanged(android::content::res::Configuration arg0);
 		void openPanel(jint arg0, android::view::KeyEvent arg1);
-		QAndroidJniObject peekDecorView();
+		android::view::View peekDecorView();
 		jboolean performContextMenuIdentifierAction(jint arg0, jint arg1);
 		jboolean performPanelIdentifierAction(jint arg0, jint arg1, jint arg2);
 		jboolean performPanelShortcut(jint arg0, jint arg1, android::view::KeyEvent arg2, jint arg3);
 		void removeOnFrameMetricsAvailableListener(__JniBaseClass arg0);
 		jboolean requestFeature(jint arg0);
-		QAndroidJniObject requireViewById(jint arg0);
+		android::view::View requireViewById(jint arg0);
 		void restoreHierarchyState(android::os::Bundle arg0);
-		QAndroidJniObject saveHierarchyState();
+		android::os::Bundle saveHierarchyState();
 		void setAllowEnterTransitionOverlap(jboolean arg0);
 		void setAllowReturnTransitionOverlap(jboolean arg0);
 		void setAttributes(android::view::WindowManager_LayoutParams arg0);
@@ -226,7 +228,6 @@ namespace android::view
 		void setSustainedPerformanceMode(jboolean arg0);
 		void setSystemGestureExclusionRects(__JniBaseClass arg0);
 		void setTitle(jstring arg0);
-		void setTitle(const QString &arg0);
 		void setTitleColor(jint arg0);
 		void setTransitionBackgroundFadeDuration(jlong arg0);
 		void setTransitionManager(android::transition::TransitionManager arg0);
@@ -236,9 +237,7 @@ namespace android::view
 		void setVolumeControlStream(jint arg0);
 		void setWindowAnimations(jint arg0);
 		void setWindowManager(__JniBaseClass arg0, __JniBaseClass arg1, jstring arg2);
-		void setWindowManager(__JniBaseClass arg0, __JniBaseClass arg1, const QString &arg2);
 		void setWindowManager(__JniBaseClass arg0, __JniBaseClass arg1, jstring arg2, jboolean arg3);
-		void setWindowManager(__JniBaseClass arg0, __JniBaseClass arg1, const QString &arg2, jboolean arg3);
 		jboolean superDispatchGenericMotionEvent(android::view::MotionEvent arg0);
 		jboolean superDispatchKeyEvent(android::view::KeyEvent arg0);
 		jboolean superDispatchKeyShortcutEvent(android::view::KeyEvent arg0);

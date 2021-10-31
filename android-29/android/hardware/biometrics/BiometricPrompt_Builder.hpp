@@ -18,23 +18,21 @@ namespace android::hardware::biometrics
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BiometricPrompt_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		BiometricPrompt_Builder(QAndroidJniObject obj);
+		
 		// Constructors
-		BiometricPrompt_Builder(android::content::Context &arg0);
-		BiometricPrompt_Builder() = default;
+		BiometricPrompt_Builder(android::content::Context arg0);
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setConfirmationRequired(jboolean arg0);
-		QAndroidJniObject setDescription(jstring arg0);
-		QAndroidJniObject setDescription(const QString &arg0);
-		QAndroidJniObject setDeviceCredentialAllowed(jboolean arg0);
-		QAndroidJniObject setNegativeButton(jstring arg0, __JniBaseClass arg1, __JniBaseClass arg2);
-		QAndroidJniObject setNegativeButton(const QString &arg0, __JniBaseClass arg1, __JniBaseClass arg2);
-		QAndroidJniObject setSubtitle(jstring arg0);
-		QAndroidJniObject setSubtitle(const QString &arg0);
-		QAndroidJniObject setTitle(jstring arg0);
-		QAndroidJniObject setTitle(const QString &arg0);
+		android::hardware::biometrics::BiometricPrompt build();
+		android::hardware::biometrics::BiometricPrompt_Builder setConfirmationRequired(jboolean arg0);
+		android::hardware::biometrics::BiometricPrompt_Builder setDescription(jstring arg0);
+		android::hardware::biometrics::BiometricPrompt_Builder setDeviceCredentialAllowed(jboolean arg0);
+		android::hardware::biometrics::BiometricPrompt_Builder setNegativeButton(jstring arg0, __JniBaseClass arg1, __JniBaseClass arg2);
+		android::hardware::biometrics::BiometricPrompt_Builder setSubtitle(jstring arg0);
+		android::hardware::biometrics::BiometricPrompt_Builder setTitle(jstring arg0);
 	};
 } // namespace android::hardware::biometrics
 

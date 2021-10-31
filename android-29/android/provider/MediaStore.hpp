@@ -23,7 +23,7 @@ namespace android::provider
 		static jstring ACTION_REVIEW_SECURE();
 		static jstring ACTION_VIDEO_CAPTURE();
 		static jstring AUTHORITY();
-		static QAndroidJniObject AUTHORITY_URI();
+		static android::net::Uri AUTHORITY_URI();
 		static jstring EXTRA_BRIGHTNESS();
 		static jstring EXTRA_DURATION_LIMIT();
 		static jstring EXTRA_FINISH_ON_COMPLETION();
@@ -56,21 +56,23 @@ namespace android::provider
 		static jstring VOLUME_EXTERNAL_PRIMARY();
 		static jstring VOLUME_INTERNAL();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaStore(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaStore(QAndroidJniObject obj);
+		
 		// Constructors
 		MediaStore();
 		
 		// Methods
-		static QAndroidJniObject getDocumentUri(android::content::Context arg0, android::net::Uri arg1);
-		static QAndroidJniObject getExternalVolumeNames(android::content::Context arg0);
-		static QAndroidJniObject getMediaScannerUri();
-		static QAndroidJniObject getMediaUri(android::content::Context arg0, android::net::Uri arg1);
+		static android::net::Uri getDocumentUri(android::content::Context arg0, android::net::Uri arg1);
+		static __JniBaseClass getExternalVolumeNames(android::content::Context arg0);
+		static android::net::Uri getMediaScannerUri();
+		static android::net::Uri getMediaUri(android::content::Context arg0, android::net::Uri arg1);
 		static jstring getVersion(android::content::Context arg0);
 		static jstring getVersion(android::content::Context arg0, jstring arg1);
-		static jstring getVersion(android::content::Context arg0, const QString &arg1);
 		static jstring getVolumeName(android::net::Uri arg0);
-		static QAndroidJniObject setIncludePending(android::net::Uri arg0);
-		static QAndroidJniObject setRequireOriginal(android::net::Uri arg0);
+		static android::net::Uri setIncludePending(android::net::Uri arg0);
+		static android::net::Uri setRequireOriginal(android::net::Uri arg0);
 	};
 } // namespace android::provider
 

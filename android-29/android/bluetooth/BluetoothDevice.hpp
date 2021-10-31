@@ -53,7 +53,7 @@ namespace android::bluetooth
 		static jint BOND_BONDED();
 		static jint BOND_BONDING();
 		static jint BOND_NONE();
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint DEVICE_TYPE_CLASSIC();
 		static jint DEVICE_TYPE_DUAL();
 		static jint DEVICE_TYPE_LE();
@@ -83,25 +83,27 @@ namespace android::bluetooth
 		static jint TRANSPORT_BREDR();
 		static jint TRANSPORT_LE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit BluetoothDevice(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		BluetoothDevice(QAndroidJniObject obj);
+		
 		// Constructors
-		BluetoothDevice() = default;
 		
 		// Methods
-		QAndroidJniObject connectGatt(android::content::Context arg0, jboolean arg1, android::bluetooth::BluetoothGattCallback arg2);
-		QAndroidJniObject connectGatt(android::content::Context arg0, jboolean arg1, android::bluetooth::BluetoothGattCallback arg2, jint arg3);
-		QAndroidJniObject connectGatt(android::content::Context arg0, jboolean arg1, android::bluetooth::BluetoothGattCallback arg2, jint arg3, jint arg4);
-		QAndroidJniObject connectGatt(android::content::Context arg0, jboolean arg1, android::bluetooth::BluetoothGattCallback arg2, jint arg3, jint arg4, android::os::Handler arg5);
+		android::bluetooth::BluetoothGatt connectGatt(android::content::Context arg0, jboolean arg1, android::bluetooth::BluetoothGattCallback arg2);
+		android::bluetooth::BluetoothGatt connectGatt(android::content::Context arg0, jboolean arg1, android::bluetooth::BluetoothGattCallback arg2, jint arg3);
+		android::bluetooth::BluetoothGatt connectGatt(android::content::Context arg0, jboolean arg1, android::bluetooth::BluetoothGattCallback arg2, jint arg3, jint arg4);
+		android::bluetooth::BluetoothGatt connectGatt(android::content::Context arg0, jboolean arg1, android::bluetooth::BluetoothGattCallback arg2, jint arg3, jint arg4, android::os::Handler arg5);
 		jboolean createBond();
-		QAndroidJniObject createInsecureL2capChannel(jint arg0);
-		QAndroidJniObject createInsecureRfcommSocketToServiceRecord(java::util::UUID arg0);
-		QAndroidJniObject createL2capChannel(jint arg0);
-		QAndroidJniObject createRfcommSocketToServiceRecord(java::util::UUID arg0);
+		android::bluetooth::BluetoothSocket createInsecureL2capChannel(jint arg0);
+		android::bluetooth::BluetoothSocket createInsecureRfcommSocketToServiceRecord(java::util::UUID arg0);
+		android::bluetooth::BluetoothSocket createL2capChannel(jint arg0);
+		android::bluetooth::BluetoothSocket createRfcommSocketToServiceRecord(java::util::UUID arg0);
 		jint describeContents();
 		jboolean equals(jobject arg0);
 		jboolean fetchUuidsWithSdp();
 		jstring getAddress();
-		QAndroidJniObject getBluetoothClass();
+		android::bluetooth::BluetoothClass getBluetoothClass();
 		jint getBondState();
 		jstring getName();
 		jint getType();

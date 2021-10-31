@@ -116,13 +116,15 @@ namespace android::view
 		static jint PERSISTENT_NO_CACHE();
 		static jint PERSISTENT_SCROLLING_CACHE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ViewGroup(const char *className, const char *sig, Ts...agv) : android::view::View(className, sig, std::forward<Ts>(agv)...) {}
 		ViewGroup(QAndroidJniObject obj);
+		
 		// Constructors
-		ViewGroup(android::content::Context &arg0);
-		ViewGroup(android::content::Context &arg0, __JniBaseClass &arg1);
-		ViewGroup(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2);
-		ViewGroup(android::content::Context &arg0, __JniBaseClass &arg1, jint &arg2, jint &arg3);
-		ViewGroup() = default;
+		ViewGroup(android::content::Context arg0);
+		ViewGroup(android::content::Context arg0, __JniBaseClass arg1);
+		ViewGroup(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		ViewGroup(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
 		
 		// Methods
 		static jint getChildMeasureSpec(jint arg0, jint arg1, jint arg2);
@@ -142,7 +144,7 @@ namespace android::view
 		void clearChildFocus(android::view::View arg0);
 		void clearDisappearingChildren();
 		void clearFocus();
-		QAndroidJniObject dispatchApplyWindowInsets(android::view::WindowInsets arg0);
+		android::view::WindowInsets dispatchApplyWindowInsets(android::view::WindowInsets arg0);
 		jboolean dispatchCapturedPointerEvent(android::view::MotionEvent arg0);
 		void dispatchConfigurationChanged(android::content::res::Configuration arg0);
 		void dispatchDisplayHint(jint arg0);
@@ -166,35 +168,34 @@ namespace android::view
 		void dispatchWindowSystemUiVisiblityChanged(jint arg0);
 		void dispatchWindowVisibilityChanged(jint arg0);
 		void endViewTransition(android::view::View arg0);
-		QAndroidJniObject findFocus();
+		android::view::View findFocus();
 		void findViewsWithText(java::util::ArrayList arg0, jstring arg1, jint arg2);
-		void findViewsWithText(java::util::ArrayList arg0, const QString &arg1, jint arg2);
-		QAndroidJniObject focusSearch(android::view::View arg0, jint arg1);
+		android::view::View focusSearch(android::view::View arg0, jint arg1);
 		void focusableViewAvailable(android::view::View arg0);
 		jboolean gatherTransparentRegion(android::graphics::Region arg0);
-		QAndroidJniObject generateLayoutParams(__JniBaseClass arg0);
+		android::view::ViewGroup_LayoutParams generateLayoutParams(__JniBaseClass arg0);
 		jstring getAccessibilityClassName();
-		QAndroidJniObject getChildAt(jint arg0);
+		android::view::View getChildAt(jint arg0);
 		jint getChildCount();
 		jint getChildDrawingOrder(jint arg0);
 		jboolean getChildVisibleRect(android::view::View arg0, android::graphics::Rect arg1, android::graphics::Point arg2);
 		jboolean getClipChildren();
 		jboolean getClipToPadding();
 		jint getDescendantFocusability();
-		QAndroidJniObject getFocusedChild();
-		QAndroidJniObject getLayoutAnimation();
-		QAndroidJniObject getLayoutAnimationListener();
+		android::view::View getFocusedChild();
+		android::view::animation::LayoutAnimationController getLayoutAnimation();
+		__JniBaseClass getLayoutAnimationListener();
 		jint getLayoutMode();
-		QAndroidJniObject getLayoutTransition();
+		android::animation::LayoutTransition getLayoutTransition();
 		jint getNestedScrollAxes();
-		QAndroidJniObject getOverlay();
+		android::view::ViewGroupOverlay getOverlay();
 		jint getPersistentDrawingCache();
 		jboolean getTouchscreenBlocksFocus();
 		jboolean hasFocus();
 		jboolean hasTransientState();
 		jint indexOfChild(android::view::View arg0);
 		void invalidateChild(android::view::View arg0, android::graphics::Rect arg1);
-		QAndroidJniObject invalidateChildInParent(jintArray arg0, android::graphics::Rect arg1);
+		__JniBaseClass invalidateChildInParent(jintArray arg0, android::graphics::Rect arg1);
 		jboolean isAlwaysDrawnWithCacheEnabled();
 		jboolean isAnimationCacheEnabled();
 		jboolean isLayoutSuppressed();
@@ -215,7 +216,7 @@ namespace android::view
 		void onNestedScroll(android::view::View arg0, jint arg1, jint arg2, jint arg3, jint arg4);
 		void onNestedScrollAccepted(android::view::View arg0, android::view::View arg1, jint arg2);
 		jboolean onRequestSendAccessibilityEvent(android::view::View arg0, android::view::accessibility::AccessibilityEvent arg1);
-		QAndroidJniObject onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1);
+		android::view::PointerIcon onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1);
 		jboolean onStartNestedScroll(android::view::View arg0, android::view::View arg1, jint arg2);
 		void onStopNestedScroll(android::view::View arg0);
 		void onViewAdded(android::view::View arg0);
@@ -254,8 +255,8 @@ namespace android::view
 		jboolean shouldDelayChildPressedState();
 		jboolean showContextMenuForChild(android::view::View arg0);
 		jboolean showContextMenuForChild(android::view::View arg0, jfloat arg1, jfloat arg2);
-		QAndroidJniObject startActionModeForChild(android::view::View arg0, __JniBaseClass arg1);
-		QAndroidJniObject startActionModeForChild(android::view::View arg0, __JniBaseClass arg1, jint arg2);
+		android::view::ActionMode startActionModeForChild(android::view::View arg0, __JniBaseClass arg1);
+		android::view::ActionMode startActionModeForChild(android::view::View arg0, __JniBaseClass arg1, jint arg2);
 		void startLayoutAnimation();
 		void startViewTransition(android::view::View arg0);
 		void suppressLayout(jboolean arg0);

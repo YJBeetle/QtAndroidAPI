@@ -61,30 +61,29 @@ namespace android::content::pm
 		static jint STATUS_PENDING_USER_ACTION();
 		static jint STATUS_SUCCESS();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PackageInstaller(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PackageInstaller(QAndroidJniObject obj);
+		
 		// Constructors
-		PackageInstaller() = default;
 		
 		// Methods
 		void abandonSession(jint arg0);
 		jint createSession(android::content::pm::PackageInstaller_SessionParams arg0);
-		QAndroidJniObject getActiveStagedSession();
-		QAndroidJniObject getAllSessions();
-		QAndroidJniObject getMySessions();
-		QAndroidJniObject getSessionInfo(jint arg0);
-		QAndroidJniObject getStagedSessions();
+		android::content::pm::PackageInstaller_SessionInfo getActiveStagedSession();
+		__JniBaseClass getAllSessions();
+		__JniBaseClass getMySessions();
+		android::content::pm::PackageInstaller_SessionInfo getSessionInfo(jint arg0);
+		__JniBaseClass getStagedSessions();
 		void installExistingPackage(jstring arg0, jint arg1, android::content::IntentSender arg2);
-		void installExistingPackage(const QString &arg0, jint arg1, android::content::IntentSender arg2);
-		QAndroidJniObject openSession(jint arg0);
+		android::content::pm::PackageInstaller_Session openSession(jint arg0);
 		void registerSessionCallback(android::content::pm::PackageInstaller_SessionCallback arg0);
 		void registerSessionCallback(android::content::pm::PackageInstaller_SessionCallback arg0, android::os::Handler arg1);
 		void uninstall(android::content::pm::VersionedPackage arg0, android::content::IntentSender arg1);
 		void uninstall(jstring arg0, android::content::IntentSender arg1);
-		void uninstall(const QString &arg0, android::content::IntentSender arg1);
 		void unregisterSessionCallback(android::content::pm::PackageInstaller_SessionCallback arg0);
 		void updateSessionAppIcon(jint arg0, android::graphics::Bitmap arg1);
 		void updateSessionAppLabel(jint arg0, jstring arg1);
-		void updateSessionAppLabel(jint arg0, const QString &arg1);
 	};
 } // namespace android::content::pm
 

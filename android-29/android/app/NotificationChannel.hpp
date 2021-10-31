@@ -21,14 +21,15 @@ namespace android::app
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jstring DEFAULT_CHANNEL_ID();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit NotificationChannel(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		NotificationChannel(QAndroidJniObject obj);
+		
 		// Constructors
-		NotificationChannel(jstring &arg0, jstring &arg1, jint &arg2);
-		NotificationChannel(const QString &arg0, const QString &arg1, jint &arg2);
-		NotificationChannel() = default;
+		NotificationChannel(jstring arg0, jstring arg1, jint arg2);
 		
 		// Methods
 		jboolean canBubble();
@@ -38,7 +39,7 @@ namespace android::app
 		void enableLights(jboolean arg0);
 		void enableVibration(jboolean arg0);
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getAudioAttributes();
+		android::media::AudioAttributes getAudioAttributes();
 		jstring getDescription();
 		jstring getGroup();
 		jstring getId();
@@ -46,21 +47,18 @@ namespace android::app
 		jint getLightColor();
 		jint getLockscreenVisibility();
 		jstring getName();
-		QAndroidJniObject getSound();
+		android::net::Uri getSound();
 		jlongArray getVibrationPattern();
 		jboolean hasUserSetImportance();
 		jint hashCode();
 		void setAllowBubbles(jboolean arg0);
 		void setBypassDnd(jboolean arg0);
 		void setDescription(jstring arg0);
-		void setDescription(const QString &arg0);
 		void setGroup(jstring arg0);
-		void setGroup(const QString &arg0);
 		void setImportance(jint arg0);
 		void setLightColor(jint arg0);
 		void setLockscreenVisibility(jint arg0);
 		void setName(jstring arg0);
-		void setName(const QString &arg0);
 		void setShowBadge(jboolean arg0);
 		void setSound(android::net::Uri arg0, android::media::AudioAttributes arg1);
 		void setVibrationPattern(jlongArray arg0);

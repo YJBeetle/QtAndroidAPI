@@ -176,39 +176,33 @@ namespace android::media
 		static jint WHITEBALANCE_AUTO();
 		static jint WHITEBALANCE_MANUAL();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ExifInterface(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ExifInterface(QAndroidJniObject obj);
+		
 		// Constructors
-		ExifInterface(java::io::File &arg0);
-		ExifInterface(java::io::FileDescriptor &arg0);
-		ExifInterface(java::io::InputStream &arg0);
-		ExifInterface(jstring &arg0);
-		ExifInterface(const QString &arg0);
-		ExifInterface() = default;
+		ExifInterface(java::io::File arg0);
+		ExifInterface(java::io::FileDescriptor arg0);
+		ExifInterface(java::io::InputStream arg0);
+		ExifInterface(jstring arg0);
 		
 		// Methods
 		jdouble getAltitude(jdouble arg0);
 		jstring getAttribute(jstring arg0);
-		jstring getAttribute(const QString &arg0);
 		jbyteArray getAttributeBytes(jstring arg0);
-		jbyteArray getAttributeBytes(const QString &arg0);
 		jdouble getAttributeDouble(jstring arg0, jdouble arg1);
-		jdouble getAttributeDouble(const QString &arg0, jdouble arg1);
 		jint getAttributeInt(jstring arg0, jint arg1);
-		jint getAttributeInt(const QString &arg0, jint arg1);
 		jlongArray getAttributeRange(jstring arg0);
-		jlongArray getAttributeRange(const QString &arg0);
 		jboolean getLatLong(jfloatArray arg0);
 		jbyteArray getThumbnail();
-		QAndroidJniObject getThumbnailBitmap();
+		android::graphics::Bitmap getThumbnailBitmap();
 		jbyteArray getThumbnailBytes();
 		jlongArray getThumbnailRange();
 		jboolean hasAttribute(jstring arg0);
-		jboolean hasAttribute(const QString &arg0);
 		jboolean hasThumbnail();
 		jboolean isThumbnailCompressed();
 		void saveAttributes();
 		void setAttribute(jstring arg0, jstring arg1);
-		void setAttribute(const QString &arg0, const QString &arg1);
 	};
 } // namespace android::media
 

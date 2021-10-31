@@ -30,23 +30,24 @@ namespace android::view::contentcapture
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ContentCaptureSession(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ContentCaptureSession(QAndroidJniObject obj);
+		
 		// Constructors
-		ContentCaptureSession() = default;
 		
 		// Methods
 		void close();
-		QAndroidJniObject createContentCaptureSession(android::view::contentcapture::ContentCaptureContext arg0);
+		android::view::contentcapture::ContentCaptureSession createContentCaptureSession(android::view::contentcapture::ContentCaptureContext arg0);
 		void destroy();
-		QAndroidJniObject getContentCaptureContext();
-		QAndroidJniObject getContentCaptureSessionId();
-		QAndroidJniObject newAutofillId(android::view::autofill::AutofillId arg0, jlong arg1);
-		QAndroidJniObject newViewStructure(android::view::View arg0);
-		QAndroidJniObject newVirtualViewStructure(android::view::autofill::AutofillId arg0, jlong arg1);
+		android::view::contentcapture::ContentCaptureContext getContentCaptureContext();
+		android::view::contentcapture::ContentCaptureSessionId getContentCaptureSessionId();
+		android::view::autofill::AutofillId newAutofillId(android::view::autofill::AutofillId arg0, jlong arg1);
+		android::view::ViewStructure newViewStructure(android::view::View arg0);
+		android::view::ViewStructure newVirtualViewStructure(android::view::autofill::AutofillId arg0, jlong arg1);
 		void notifyViewAppeared(android::view::ViewStructure arg0);
 		void notifyViewDisappeared(android::view::autofill::AutofillId arg0);
 		void notifyViewTextChanged(android::view::autofill::AutofillId arg0, jstring arg1);
-		void notifyViewTextChanged(android::view::autofill::AutofillId arg0, const QString &arg1);
 		void notifyViewsDisappeared(android::view::autofill::AutofillId arg0, jlongArray arg1);
 		void setContentCaptureContext(android::view::contentcapture::ContentCaptureContext arg0);
 		jstring toString();

@@ -7,75 +7,75 @@ namespace android::app
 {
 	// Fields
 	
-	Notification_BubbleMetadata_Builder::Notification_BubbleMetadata_Builder(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Notification_BubbleMetadata_Builder::Notification_BubbleMetadata_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	Notification_BubbleMetadata_Builder::Notification_BubbleMetadata_Builder()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.app.Notification$BubbleMetadata$Builder",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
-	QAndroidJniObject Notification_BubbleMetadata_Builder::build()
+	android::app::Notification_BubbleMetadata Notification_BubbleMetadata_Builder::build()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"build",
 			"()Landroid/app/Notification$BubbleMetadata;"
 		);
 	}
-	QAndroidJniObject Notification_BubbleMetadata_Builder::setAutoExpandBubble(jboolean arg0)
+	android::app::Notification_BubbleMetadata_Builder Notification_BubbleMetadata_Builder::setAutoExpandBubble(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setAutoExpandBubble",
 			"(Z)Landroid/app/Notification$BubbleMetadata$Builder;",
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_BubbleMetadata_Builder::setDeleteIntent(android::app::PendingIntent arg0)
+	android::app::Notification_BubbleMetadata_Builder Notification_BubbleMetadata_Builder::setDeleteIntent(android::app::PendingIntent arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setDeleteIntent",
 			"(Landroid/app/PendingIntent;)Landroid/app/Notification$BubbleMetadata$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
-	QAndroidJniObject Notification_BubbleMetadata_Builder::setDesiredHeight(jint arg0)
+	android::app::Notification_BubbleMetadata_Builder Notification_BubbleMetadata_Builder::setDesiredHeight(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setDesiredHeight",
 			"(I)Landroid/app/Notification$BubbleMetadata$Builder;",
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_BubbleMetadata_Builder::setDesiredHeightResId(jint arg0)
+	android::app::Notification_BubbleMetadata_Builder Notification_BubbleMetadata_Builder::setDesiredHeightResId(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setDesiredHeightResId",
 			"(I)Landroid/app/Notification$BubbleMetadata$Builder;",
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_BubbleMetadata_Builder::setIcon(android::graphics::drawable::Icon arg0)
+	android::app::Notification_BubbleMetadata_Builder Notification_BubbleMetadata_Builder::setIcon(android::graphics::drawable::Icon arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setIcon",
 			"(Landroid/graphics/drawable/Icon;)Landroid/app/Notification$BubbleMetadata$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
-	QAndroidJniObject Notification_BubbleMetadata_Builder::setIntent(android::app::PendingIntent arg0)
+	android::app::Notification_BubbleMetadata_Builder Notification_BubbleMetadata_Builder::setIntent(android::app::PendingIntent arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setIntent",
 			"(Landroid/app/PendingIntent;)Landroid/app/Notification$BubbleMetadata$Builder;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
-	QAndroidJniObject Notification_BubbleMetadata_Builder::setSuppressNotification(jboolean arg0)
+	android::app::Notification_BubbleMetadata_Builder Notification_BubbleMetadata_Builder::setSuppressNotification(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"setSuppressNotification",
 			"(Z)Landroid/app/Notification$BubbleMetadata$Builder;",
 			arg0

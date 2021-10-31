@@ -13,11 +13,13 @@ namespace android::location
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit GnssClock(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		GnssClock(QAndroidJniObject obj);
+		
 		// Constructors
-		GnssClock() = default;
 		
 		// Methods
 		jint describeContents();

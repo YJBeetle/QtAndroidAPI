@@ -6,68 +6,70 @@
 namespace android::telephony
 {
 	// Fields
-	QAndroidJniObject CellInfoTdscdma::CREATOR()
+	__JniBaseClass CellInfoTdscdma::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.CellInfoTdscdma",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
 		);
 	}
 	
-	CellInfoTdscdma::CellInfoTdscdma(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CellInfoTdscdma::CellInfoTdscdma(QAndroidJniObject obj) : android::telephony::CellInfo(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint CellInfoTdscdma::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean CellInfoTdscdma::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
 		);
 	}
-	QAndroidJniObject CellInfoTdscdma::getCellIdentity()
+	android::telephony::CellIdentityTdscdma CellInfoTdscdma::getCellIdentity()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCellIdentity",
 			"()Landroid/telephony/CellIdentityTdscdma;"
 		);
 	}
-	QAndroidJniObject CellInfoTdscdma::getCellSignalStrength()
+	android::telephony::CellSignalStrengthTdscdma CellInfoTdscdma::getCellSignalStrength()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCellSignalStrength",
 			"()Landroid/telephony/CellSignalStrengthTdscdma;"
 		);
 	}
 	jint CellInfoTdscdma::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring CellInfoTdscdma::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void CellInfoTdscdma::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

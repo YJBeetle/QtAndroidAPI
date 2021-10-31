@@ -217,24 +217,24 @@ namespace android::icu::lang
 		static jint YI();
 		static jint ZANABAZAR_SQUARE();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit UScript(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		UScript(QAndroidJniObject obj);
+		
 		// Constructors
-		UScript() = default;
 		
 		// Methods
 		static jboolean breaksBetweenLetters(jint arg0);
 		static jintArray getCode(android::icu::util::ULocale arg0);
 		static jintArray getCode(jstring arg0);
-		static jintArray getCode(const QString &arg0);
 		static jintArray getCode(java::util::Locale arg0);
 		static jint getCodeFromName(jstring arg0);
-		static jint getCodeFromName(const QString &arg0);
 		static jstring getName(jint arg0);
 		static jstring getSampleString(jint arg0);
 		static jint getScript(jint arg0);
 		static jint getScriptExtensions(jint arg0, java::util::BitSet arg1);
 		static jstring getShortName(jint arg0);
-		static QAndroidJniObject getUsage(jint arg0);
+		static android::icu::lang::UScript_ScriptUsage getUsage(jint arg0);
 		static jboolean hasScript(jint arg0, jint arg1);
 		static jboolean isCased(jint arg0);
 		static jboolean isRightToLeft(jint arg0);

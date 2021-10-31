@@ -48,14 +48,16 @@ namespace android::media::tv
 		static jstring COLUMN_VIDEO_WIDTH();
 		static jstring CONTENT_ITEM_TYPE();
 		static jstring CONTENT_TYPE();
-		static QAndroidJniObject CONTENT_URI();
+		static android::net::Uri CONTENT_URI();
 		static jint REVIEW_RATING_STYLE_PERCENTAGE();
 		static jint REVIEW_RATING_STYLE_STARS();
 		static jint REVIEW_RATING_STYLE_THUMBS_UP_DOWN();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TvContract_RecordedPrograms(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		TvContract_RecordedPrograms(QAndroidJniObject obj);
+		
 		// Constructors
-		TvContract_RecordedPrograms() = default;
 		
 		// Methods
 	};

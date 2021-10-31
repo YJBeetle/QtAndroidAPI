@@ -42,21 +42,22 @@ namespace android::telephony::euicc
 		static jstring EXTRA_EMBEDDED_SUBSCRIPTION_DOWNLOADABLE_SUBSCRIPTION();
 		static jstring META_DATA_CARRIER_ICON();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit EuiccManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		EuiccManager(QAndroidJniObject obj);
+		
 		// Constructors
-		EuiccManager() = default;
 		
 		// Methods
-		QAndroidJniObject createForCardId(jint arg0);
+		android::telephony::euicc::EuiccManager createForCardId(jint arg0);
 		void deleteSubscription(jint arg0, android::app::PendingIntent arg1);
 		void downloadSubscription(android::telephony::euicc::DownloadableSubscription arg0, jboolean arg1, android::app::PendingIntent arg2);
 		jstring getEid();
-		QAndroidJniObject getEuiccInfo();
+		android::telephony::euicc::EuiccInfo getEuiccInfo();
 		jboolean isEnabled();
 		void startResolutionActivity(android::app::Activity arg0, jint arg1, android::content::Intent arg2, android::app::PendingIntent arg3);
 		void switchToSubscription(jint arg0, android::app::PendingIntent arg1);
 		void updateSubscriptionNickname(jint arg0, jstring arg1, android::app::PendingIntent arg2);
-		void updateSubscriptionNickname(jint arg0, const QString &arg1, android::app::PendingIntent arg2);
 	};
 } // namespace android::telephony::euicc
 

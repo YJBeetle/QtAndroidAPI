@@ -88,23 +88,23 @@ namespace android::media
 		jintArray colorFormats();
 		jarray profileLevels();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaCodecInfo_CodecCapabilities(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaCodecInfo_CodecCapabilities(QAndroidJniObject obj);
+		
 		// Constructors
 		MediaCodecInfo_CodecCapabilities();
 		
 		// Methods
-		static QAndroidJniObject createFromProfileLevel(jstring arg0, jint arg1, jint arg2);
-		static QAndroidJniObject createFromProfileLevel(const QString &arg0, jint arg1, jint arg2);
-		QAndroidJniObject getAudioCapabilities();
-		QAndroidJniObject getDefaultFormat();
-		QAndroidJniObject getEncoderCapabilities();
+		static android::media::MediaCodecInfo_CodecCapabilities createFromProfileLevel(jstring arg0, jint arg1, jint arg2);
+		android::media::MediaCodecInfo_AudioCapabilities getAudioCapabilities();
+		android::media::MediaFormat getDefaultFormat();
+		android::media::MediaCodecInfo_EncoderCapabilities getEncoderCapabilities();
 		jint getMaxSupportedInstances();
 		jstring getMimeType();
-		QAndroidJniObject getVideoCapabilities();
+		android::media::MediaCodecInfo_VideoCapabilities getVideoCapabilities();
 		jboolean isFeatureRequired(jstring arg0);
-		jboolean isFeatureRequired(const QString &arg0);
 		jboolean isFeatureSupported(jstring arg0);
-		jboolean isFeatureSupported(const QString &arg0);
 		jboolean isFormatSupported(android::media::MediaFormat arg0);
 	};
 } // namespace android::media

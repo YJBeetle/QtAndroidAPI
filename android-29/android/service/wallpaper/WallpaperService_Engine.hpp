@@ -42,23 +42,24 @@ namespace android::service::wallpaper
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit WallpaperService_Engine(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		WallpaperService_Engine(QAndroidJniObject obj);
+		
 		// Constructors
-		WallpaperService_Engine(android::service::wallpaper::WallpaperService &arg0);
-		WallpaperService_Engine() = default;
+		WallpaperService_Engine(android::service::wallpaper::WallpaperService arg0);
 		
 		// Methods
 		jint getDesiredMinimumHeight();
 		jint getDesiredMinimumWidth();
-		QAndroidJniObject getDisplayContext();
-		QAndroidJniObject getSurfaceHolder();
+		android::content::Context getDisplayContext();
+		__JniBaseClass getSurfaceHolder();
 		jboolean isPreview();
 		jboolean isVisible();
 		void notifyColorsChanged();
 		void onApplyWindowInsets(android::view::WindowInsets arg0);
-		QAndroidJniObject onCommand(jstring arg0, jint arg1, jint arg2, jint arg3, android::os::Bundle arg4, jboolean arg5);
-		QAndroidJniObject onCommand(const QString &arg0, jint arg1, jint arg2, jint arg3, android::os::Bundle arg4, jboolean arg5);
-		QAndroidJniObject onComputeColors();
+		android::os::Bundle onCommand(jstring arg0, jint arg1, jint arg2, jint arg3, android::os::Bundle arg4, jboolean arg5);
+		android::app::WallpaperColors onComputeColors();
 		void onCreate(__JniBaseClass arg0);
 		void onDesiredSizeChanged(jint arg0, jint arg1);
 		void onDestroy();

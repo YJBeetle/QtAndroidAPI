@@ -8,45 +8,47 @@ namespace android::icu::text
 {
 	// Fields
 	
-	CaseMap::CaseMap(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CaseMap::CaseMap(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
-	QAndroidJniObject CaseMap::fold()
+	android::icu::text::CaseMap_Fold CaseMap::fold()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.CaseMap",
 			"fold",
 			"()Landroid/icu/text/CaseMap$Fold;"
 		);
 	}
-	QAndroidJniObject CaseMap::toLower()
+	android::icu::text::CaseMap_Lower CaseMap::toLower()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.CaseMap",
 			"toLower",
 			"()Landroid/icu/text/CaseMap$Lower;"
 		);
 	}
-	QAndroidJniObject CaseMap::toTitle()
+	android::icu::text::CaseMap_Title CaseMap::toTitle()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.CaseMap",
 			"toTitle",
 			"()Landroid/icu/text/CaseMap$Title;"
 		);
 	}
-	QAndroidJniObject CaseMap::toUpper()
+	android::icu::text::CaseMap_Upper CaseMap::toUpper()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.icu.text.CaseMap",
 			"toUpper",
 			"()Landroid/icu/text/CaseMap$Upper;"
 		);
 	}
-	QAndroidJniObject CaseMap::omitUnchangedText()
+	android::icu::text::CaseMap CaseMap::omitUnchangedText()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"omitUnchangedText",
 			"()Landroid/icu/text/CaseMap;"
 		);

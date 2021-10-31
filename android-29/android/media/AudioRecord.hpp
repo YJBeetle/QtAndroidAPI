@@ -57,29 +57,31 @@ namespace android::media
 		static jint STATE_UNINITIALIZED();
 		static jint SUCCESS();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AudioRecord(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		AudioRecord(QAndroidJniObject obj);
+		
 		// Constructors
-		AudioRecord(jint &arg0, jint &arg1, jint &arg2, jint &arg3, jint &arg4);
-		AudioRecord() = default;
+		AudioRecord(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
 		
 		// Methods
 		static jint getMinBufferSize(jint arg0, jint arg1, jint arg2);
 		void addOnRoutingChangedListener(__JniBaseClass arg0, android::os::Handler arg1);
-		QAndroidJniObject getActiveMicrophones();
-		QAndroidJniObject getActiveRecordingConfiguration();
+		__JniBaseClass getActiveMicrophones();
+		android::media::AudioRecordingConfiguration getActiveRecordingConfiguration();
 		jint getAudioFormat();
 		jint getAudioSessionId();
 		jint getAudioSource();
 		jint getBufferSizeInFrames();
 		jint getChannelConfiguration();
 		jint getChannelCount();
-		QAndroidJniObject getFormat();
-		QAndroidJniObject getMetrics();
+		android::media::AudioFormat getFormat();
+		android::os::PersistableBundle getMetrics();
 		jint getNotificationMarkerPosition();
 		jint getPositionNotificationPeriod();
-		QAndroidJniObject getPreferredDevice();
+		android::media::AudioDeviceInfo getPreferredDevice();
 		jint getRecordingState();
-		QAndroidJniObject getRoutedDevice();
+		android::media::AudioDeviceInfo getRoutedDevice();
 		jint getSampleRate();
 		jint getState();
 		jint getTimestamp(android::media::AudioTimestamp arg0, jint arg1);

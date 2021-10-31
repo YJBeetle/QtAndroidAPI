@@ -17,7 +17,7 @@ namespace android::service::autofill
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint FLAG_DELAY_SAVE();
 		static jint FLAG_DONT_SAVE_ON_FINISH();
 		static jint FLAG_SAVE_ON_ALL_VIEWS_INVISIBLE();
@@ -30,9 +30,11 @@ namespace android::service::autofill
 		static jint SAVE_DATA_TYPE_PASSWORD();
 		static jint SAVE_DATA_TYPE_USERNAME();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SaveInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SaveInfo(QAndroidJniObject obj);
+		
 		// Constructors
-		SaveInfo() = default;
 		
 		// Methods
 		jint describeContents();

@@ -36,9 +36,11 @@ namespace android::os
 		static jint THERMAL_STATUS_SEVERE();
 		static jint THERMAL_STATUS_SHUTDOWN();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PowerManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PowerManager(QAndroidJniObject obj);
+		
 		// Constructors
-		PowerManager() = default;
 		
 		// Methods
 		void addThermalStatusListener(__JniBaseClass arg0);
@@ -47,16 +49,13 @@ namespace android::os
 		jint getLocationPowerSaveMode();
 		jboolean isDeviceIdleMode();
 		jboolean isIgnoringBatteryOptimizations(jstring arg0);
-		jboolean isIgnoringBatteryOptimizations(const QString &arg0);
 		jboolean isInteractive();
 		jboolean isPowerSaveMode();
 		jboolean isScreenOn();
 		jboolean isSustainedPerformanceModeSupported();
 		jboolean isWakeLockLevelSupported(jint arg0);
-		QAndroidJniObject newWakeLock(jint arg0, jstring arg1);
-		QAndroidJniObject newWakeLock(jint arg0, const QString &arg1);
+		android::os::PowerManager_WakeLock newWakeLock(jint arg0, jstring arg1);
 		void reboot(jstring arg0);
-		void reboot(const QString &arg0);
 		void removeThermalStatusListener(__JniBaseClass arg0);
 	};
 } // namespace android::os

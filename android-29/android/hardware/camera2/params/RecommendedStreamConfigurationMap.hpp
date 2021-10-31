@@ -33,27 +33,29 @@ namespace android::hardware::camera2::params
 		static jint USECASE_VIDEO_SNAPSHOT();
 		static jint USECASE_ZSL();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit RecommendedStreamConfigurationMap(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		RecommendedStreamConfigurationMap(QAndroidJniObject obj);
+		
 		// Constructors
-		RecommendedStreamConfigurationMap() = default;
 		
 		// Methods
-		QAndroidJniObject getHighResolutionOutputSizes(jint arg0);
-		QAndroidJniObject getHighSpeedVideoFpsRanges();
-		QAndroidJniObject getHighSpeedVideoFpsRangesFor(android::util::Size arg0);
-		QAndroidJniObject getHighSpeedVideoSizes();
-		QAndroidJniObject getHighSpeedVideoSizesFor(android::util::Range arg0);
-		QAndroidJniObject getInputFormats();
-		QAndroidJniObject getInputSizes(jint arg0);
-		QAndroidJniObject getOutputFormats();
+		__JniBaseClass getHighResolutionOutputSizes(jint arg0);
+		__JniBaseClass getHighSpeedVideoFpsRanges();
+		__JniBaseClass getHighSpeedVideoFpsRangesFor(android::util::Size arg0);
+		__JniBaseClass getHighSpeedVideoSizes();
+		__JniBaseClass getHighSpeedVideoSizesFor(android::util::Range arg0);
+		__JniBaseClass getInputFormats();
+		__JniBaseClass getInputSizes(jint arg0);
+		__JniBaseClass getOutputFormats();
 		jlong getOutputMinFrameDuration(jint arg0, android::util::Size arg1);
 		jlong getOutputMinFrameDuration(jclass arg0, android::util::Size arg1);
-		QAndroidJniObject getOutputSizes(jint arg0);
-		QAndroidJniObject getOutputSizes(jclass arg0);
+		__JniBaseClass getOutputSizes(jint arg0);
+		__JniBaseClass getOutputSizes(jclass arg0);
 		jlong getOutputStallDuration(jint arg0, android::util::Size arg1);
 		jlong getOutputStallDuration(jclass arg0, android::util::Size arg1);
 		jint getRecommendedUseCase();
-		QAndroidJniObject getValidOutputFormatsForInput(jint arg0);
+		__JniBaseClass getValidOutputFormatsForInput(jint arg0);
 		jboolean isOutputSupportedFor(android::view::Surface arg0);
 		jboolean isOutputSupportedFor(jint arg0);
 	};

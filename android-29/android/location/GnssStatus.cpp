@@ -5,68 +5,70 @@ namespace android::location
 	// Fields
 	jint GnssStatus::CONSTELLATION_BEIDOU()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssStatus",
 			"CONSTELLATION_BEIDOU"
 		);
 	}
 	jint GnssStatus::CONSTELLATION_GALILEO()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssStatus",
 			"CONSTELLATION_GALILEO"
 		);
 	}
 	jint GnssStatus::CONSTELLATION_GLONASS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssStatus",
 			"CONSTELLATION_GLONASS"
 		);
 	}
 	jint GnssStatus::CONSTELLATION_GPS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssStatus",
 			"CONSTELLATION_GPS"
 		);
 	}
 	jint GnssStatus::CONSTELLATION_IRNSS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssStatus",
 			"CONSTELLATION_IRNSS"
 		);
 	}
 	jint GnssStatus::CONSTELLATION_QZSS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssStatus",
 			"CONSTELLATION_QZSS"
 		);
 	}
 	jint GnssStatus::CONSTELLATION_SBAS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssStatus",
 			"CONSTELLATION_SBAS"
 		);
 	}
 	jint GnssStatus::CONSTELLATION_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.location.GnssStatus",
 			"CONSTELLATION_UNKNOWN"
 		);
 	}
 	
-	GnssStatus::GnssStatus(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	GnssStatus::GnssStatus(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jfloat GnssStatus::getAzimuthDegrees(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getAzimuthDegrees",
 			"(I)F",
 			arg0
@@ -74,7 +76,7 @@ namespace android::location
 	}
 	jfloat GnssStatus::getCarrierFrequencyHz(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getCarrierFrequencyHz",
 			"(I)F",
 			arg0
@@ -82,7 +84,7 @@ namespace android::location
 	}
 	jfloat GnssStatus::getCn0DbHz(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getCn0DbHz",
 			"(I)F",
 			arg0
@@ -90,7 +92,7 @@ namespace android::location
 	}
 	jint GnssStatus::getConstellationType(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getConstellationType",
 			"(I)I",
 			arg0
@@ -98,7 +100,7 @@ namespace android::location
 	}
 	jfloat GnssStatus::getElevationDegrees(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
+		return callMethod<jfloat>(
 			"getElevationDegrees",
 			"(I)F",
 			arg0
@@ -106,14 +108,14 @@ namespace android::location
 	}
 	jint GnssStatus::getSatelliteCount()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSatelliteCount",
 			"()I"
 		);
 	}
 	jint GnssStatus::getSvid(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getSvid",
 			"(I)I",
 			arg0
@@ -121,7 +123,7 @@ namespace android::location
 	}
 	jboolean GnssStatus::hasAlmanacData(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasAlmanacData",
 			"(I)Z",
 			arg0
@@ -129,7 +131,7 @@ namespace android::location
 	}
 	jboolean GnssStatus::hasCarrierFrequencyHz(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasCarrierFrequencyHz",
 			"(I)Z",
 			arg0
@@ -137,7 +139,7 @@ namespace android::location
 	}
 	jboolean GnssStatus::hasEphemerisData(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasEphemerisData",
 			"(I)Z",
 			arg0
@@ -145,7 +147,7 @@ namespace android::location
 	}
 	jboolean GnssStatus::usedInFix(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"usedInFix",
 			"(I)Z",
 			arg0

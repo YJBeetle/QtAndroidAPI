@@ -21,9 +21,12 @@ namespace android::net
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit LinkProperties(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		LinkProperties(QAndroidJniObject obj);
+		
 		// Constructors
 		LinkProperties();
 		
@@ -32,22 +35,20 @@ namespace android::net
 		void clear();
 		jint describeContents();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getDnsServers();
+		__JniBaseClass getDnsServers();
 		jstring getDomains();
-		QAndroidJniObject getHttpProxy();
+		android::net::ProxyInfo getHttpProxy();
 		jstring getInterfaceName();
-		QAndroidJniObject getLinkAddresses();
+		__JniBaseClass getLinkAddresses();
 		jint getMtu();
 		jstring getPrivateDnsServerName();
-		QAndroidJniObject getRoutes();
+		__JniBaseClass getRoutes();
 		jint hashCode();
 		jboolean isPrivateDnsActive();
 		void setDnsServers(__JniBaseClass arg0);
 		void setDomains(jstring arg0);
-		void setDomains(const QString &arg0);
 		void setHttpProxy(android::net::ProxyInfo arg0);
 		void setInterfaceName(jstring arg0);
-		void setInterfaceName(const QString &arg0);
 		void setLinkAddresses(__JniBaseClass arg0);
 		void setMtu(jint arg0);
 		jstring toString();

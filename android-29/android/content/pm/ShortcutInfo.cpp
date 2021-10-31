@@ -10,9 +10,9 @@
 namespace android::content::pm
 {
 	// Fields
-	QAndroidJniObject ShortcutInfo::CREATOR()
+	__JniBaseClass ShortcutInfo::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.pm.ShortcutInfo",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -20,240 +20,242 @@ namespace android::content::pm
 	}
 	jint ShortcutInfo::DISABLED_REASON_APP_CHANGED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.ShortcutInfo",
 			"DISABLED_REASON_APP_CHANGED"
 		);
 	}
 	jint ShortcutInfo::DISABLED_REASON_BACKUP_NOT_SUPPORTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.ShortcutInfo",
 			"DISABLED_REASON_BACKUP_NOT_SUPPORTED"
 		);
 	}
 	jint ShortcutInfo::DISABLED_REASON_BY_APP()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.ShortcutInfo",
 			"DISABLED_REASON_BY_APP"
 		);
 	}
 	jint ShortcutInfo::DISABLED_REASON_NOT_DISABLED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.ShortcutInfo",
 			"DISABLED_REASON_NOT_DISABLED"
 		);
 	}
 	jint ShortcutInfo::DISABLED_REASON_OTHER_RESTORE_ISSUE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.ShortcutInfo",
 			"DISABLED_REASON_OTHER_RESTORE_ISSUE"
 		);
 	}
 	jint ShortcutInfo::DISABLED_REASON_SIGNATURE_MISMATCH()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.ShortcutInfo",
 			"DISABLED_REASON_SIGNATURE_MISMATCH"
 		);
 	}
 	jint ShortcutInfo::DISABLED_REASON_UNKNOWN()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.ShortcutInfo",
 			"DISABLED_REASON_UNKNOWN"
 		);
 	}
 	jint ShortcutInfo::DISABLED_REASON_VERSION_LOWER()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.ShortcutInfo",
 			"DISABLED_REASON_VERSION_LOWER"
 		);
 	}
 	jstring ShortcutInfo::SHORTCUT_CATEGORY_CONVERSATION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.pm.ShortcutInfo",
 			"SHORTCUT_CATEGORY_CONVERSATION",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	
-	ShortcutInfo::ShortcutInfo(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	ShortcutInfo::ShortcutInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jint ShortcutInfo::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	QAndroidJniObject ShortcutInfo::getActivity()
+	android::content::ComponentName ShortcutInfo::getActivity()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getActivity",
 			"()Landroid/content/ComponentName;"
 		);
 	}
-	QAndroidJniObject ShortcutInfo::getCategories()
+	__JniBaseClass ShortcutInfo::getCategories()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getCategories",
 			"()Ljava/util/Set;"
 		);
 	}
 	jstring ShortcutInfo::getDisabledMessage()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getDisabledMessage",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jint ShortcutInfo::getDisabledReason()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getDisabledReason",
 			"()I"
 		);
 	}
-	QAndroidJniObject ShortcutInfo::getExtras()
+	android::os::PersistableBundle ShortcutInfo::getExtras()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/PersistableBundle;"
 		);
 	}
 	jstring ShortcutInfo::getId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ShortcutInfo::getIntent()
+	android::content::Intent ShortcutInfo::getIntent()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getIntent",
 			"()Landroid/content/Intent;"
 		);
 	}
 	jarray ShortcutInfo::getIntents()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getIntents",
 			"()[Landroid/content/Intent;"
 		).object<jarray>();
 	}
 	jlong ShortcutInfo::getLastChangedTimestamp()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getLastChangedTimestamp",
 			"()J"
 		);
 	}
-	QAndroidJniObject ShortcutInfo::getLocusId()
+	android::content::LocusId ShortcutInfo::getLocusId()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLocusId",
 			"()Landroid/content/LocusId;"
 		);
 	}
 	jstring ShortcutInfo::getLongLabel()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getLongLabel",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jstring ShortcutInfo::getPackage()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPackage",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jint ShortcutInfo::getRank()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRank",
 			"()I"
 		);
 	}
 	jstring ShortcutInfo::getShortLabel()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getShortLabel",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ShortcutInfo::getUserHandle()
+	android::os::UserHandle ShortcutInfo::getUserHandle()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getUserHandle",
 			"()Landroid/os/UserHandle;"
 		);
 	}
 	jboolean ShortcutInfo::hasKeyFieldsOnly()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"hasKeyFieldsOnly",
 			"()Z"
 		);
 	}
 	jboolean ShortcutInfo::isDeclaredInManifest()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isDeclaredInManifest",
 			"()Z"
 		);
 	}
 	jboolean ShortcutInfo::isDynamic()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isDynamic",
 			"()Z"
 		);
 	}
 	jboolean ShortcutInfo::isEnabled()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isEnabled",
 			"()Z"
 		);
 	}
 	jboolean ShortcutInfo::isImmutable()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isImmutable",
 			"()Z"
 		);
 	}
 	jboolean ShortcutInfo::isPinned()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isPinned",
 			"()Z"
 		);
 	}
 	jstring ShortcutInfo::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void ShortcutInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

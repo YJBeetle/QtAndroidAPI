@@ -22,17 +22,19 @@ namespace android::telephony
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CellInfoTdscdma(const char *className, const char *sig, Ts...agv) : android::telephony::CellInfo(className, sig, std::forward<Ts>(agv)...) {}
 		CellInfoTdscdma(QAndroidJniObject obj);
+		
 		// Constructors
-		CellInfoTdscdma() = default;
 		
 		// Methods
 		jint describeContents();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getCellIdentity();
-		QAndroidJniObject getCellSignalStrength();
+		android::telephony::CellIdentityTdscdma getCellIdentity();
+		android::telephony::CellSignalStrengthTdscdma getCellSignalStrength();
 		jint hashCode();
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

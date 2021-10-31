@@ -39,11 +39,11 @@ namespace android::provider
 		static jstring CACHED_PHOTO_URI();
 		static jstring CALL_SCREENING_APP_NAME();
 		static jstring CALL_SCREENING_COMPONENT_NAME();
-		static QAndroidJniObject CONTENT_FILTER_URI();
+		static android::net::Uri CONTENT_FILTER_URI();
 		static jstring CONTENT_ITEM_TYPE();
 		static jstring CONTENT_TYPE();
-		static QAndroidJniObject CONTENT_URI();
-		static QAndroidJniObject CONTENT_URI_WITH_VOICEMAIL();
+		static android::net::Uri CONTENT_URI();
+		static android::net::Uri CONTENT_URI_WITH_VOICEMAIL();
 		static jstring COUNTRY_ISO();
 		static jstring DATA_USAGE();
 		static jstring DATE();
@@ -81,7 +81,10 @@ namespace android::provider
 		static jint VOICEMAIL_TYPE();
 		static jstring VOICEMAIL_URI();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CallLog_Calls(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		CallLog_Calls(QAndroidJniObject obj);
+		
 		// Constructors
 		CallLog_Calls();
 		

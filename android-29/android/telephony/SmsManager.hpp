@@ -87,36 +87,29 @@ namespace android::telephony
 		static jint STATUS_ON_ICC_UNREAD();
 		static jint STATUS_ON_ICC_UNSENT();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SmsManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		SmsManager(QAndroidJniObject obj);
+		
 		// Constructors
-		SmsManager() = default;
 		
 		// Methods
-		static QAndroidJniObject getDefault();
+		static android::telephony::SmsManager getDefault();
 		static jint getDefaultSmsSubscriptionId();
-		static QAndroidJniObject getSmsManagerForSubscriptionId(jint arg0);
+		static android::telephony::SmsManager getSmsManagerForSubscriptionId(jint arg0);
 		jstring createAppSpecificSmsToken(android::app::PendingIntent arg0);
 		jstring createAppSpecificSmsTokenWithPackageInfo(jstring arg0, android::app::PendingIntent arg1);
-		jstring createAppSpecificSmsTokenWithPackageInfo(const QString &arg0, android::app::PendingIntent arg1);
-		QAndroidJniObject divideMessage(jstring arg0);
-		QAndroidJniObject divideMessage(const QString &arg0);
+		java::util::ArrayList divideMessage(jstring arg0);
 		void downloadMultimediaMessage(android::content::Context arg0, jstring arg1, android::net::Uri arg2, android::os::Bundle arg3, android::app::PendingIntent arg4);
-		void downloadMultimediaMessage(android::content::Context arg0, const QString &arg1, android::net::Uri arg2, android::os::Bundle arg3, android::app::PendingIntent arg4);
-		QAndroidJniObject getCarrierConfigValues();
+		android::os::Bundle getCarrierConfigValues();
 		void getSmsMessagesForFinancialApp(android::os::Bundle arg0, __JniBaseClass arg1, android::telephony::SmsManager_FinancialSmsCallback arg2);
 		jint getSubscriptionId();
 		void injectSmsPdu(jbyteArray arg0, jstring arg1, android::app::PendingIntent arg2);
-		void injectSmsPdu(jbyteArray arg0, const QString &arg1, android::app::PendingIntent arg2);
 		void sendDataMessage(jstring arg0, jstring arg1, jshort arg2, jbyteArray arg3, android::app::PendingIntent arg4, android::app::PendingIntent arg5);
-		void sendDataMessage(const QString &arg0, const QString &arg1, jshort arg2, jbyteArray arg3, android::app::PendingIntent arg4, android::app::PendingIntent arg5);
 		void sendMultimediaMessage(android::content::Context arg0, android::net::Uri arg1, jstring arg2, android::os::Bundle arg3, android::app::PendingIntent arg4);
-		void sendMultimediaMessage(android::content::Context arg0, android::net::Uri arg1, const QString &arg2, android::os::Bundle arg3, android::app::PendingIntent arg4);
 		void sendMultipartTextMessage(jstring arg0, jstring arg1, java::util::ArrayList arg2, java::util::ArrayList arg3, java::util::ArrayList arg4);
-		void sendMultipartTextMessage(const QString &arg0, const QString &arg1, java::util::ArrayList arg2, java::util::ArrayList arg3, java::util::ArrayList arg4);
 		void sendTextMessage(jstring arg0, jstring arg1, jstring arg2, android::app::PendingIntent arg3, android::app::PendingIntent arg4);
-		void sendTextMessage(const QString &arg0, const QString &arg1, const QString &arg2, android::app::PendingIntent arg3, android::app::PendingIntent arg4);
 		void sendTextMessageWithoutPersisting(jstring arg0, jstring arg1, jstring arg2, android::app::PendingIntent arg3, android::app::PendingIntent arg4);
-		void sendTextMessageWithoutPersisting(const QString &arg0, const QString &arg1, const QString &arg2, android::app::PendingIntent arg3, android::app::PendingIntent arg4);
 	};
 } // namespace android::telephony
 

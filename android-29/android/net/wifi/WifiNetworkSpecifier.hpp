@@ -26,11 +26,13 @@ namespace android::net::wifi
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit WifiNetworkSpecifier(const char *className, const char *sig, Ts...agv) : android::net::NetworkSpecifier(className, sig, std::forward<Ts>(agv)...) {}
 		WifiNetworkSpecifier(QAndroidJniObject obj);
+		
 		// Constructors
-		WifiNetworkSpecifier() = default;
 		
 		// Methods
 		jint describeContents();

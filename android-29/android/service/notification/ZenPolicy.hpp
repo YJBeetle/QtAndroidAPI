@@ -13,7 +13,7 @@ namespace android::service::notification
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint PEOPLE_TYPE_ANYONE();
 		static jint PEOPLE_TYPE_CONTACTS();
 		static jint PEOPLE_TYPE_NONE();
@@ -23,9 +23,11 @@ namespace android::service::notification
 		static jint STATE_DISALLOW();
 		static jint STATE_UNSET();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ZenPolicy(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ZenPolicy(QAndroidJniObject obj);
+		
 		// Constructors
-		ZenPolicy() = default;
 		
 		// Methods
 		jint describeContents();

@@ -4,16 +4,18 @@
 namespace android::view::textclassifier
 {
 	// Fields
-	QAndroidJniObject TextClassifierEvent_TextLinkifyEvent::CREATOR()
+	__JniBaseClass TextClassifierEvent_TextLinkifyEvent::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.textclassifier.TextClassifierEvent$TextLinkifyEvent",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
 		);
 	}
 	
-	TextClassifierEvent_TextLinkifyEvent::TextClassifierEvent_TextLinkifyEvent(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	TextClassifierEvent_TextLinkifyEvent::TextClassifierEvent_TextLinkifyEvent(QAndroidJniObject obj) : android::view::textclassifier::TextClassifierEvent(obj) {}
+	
 	// Constructors
 	
 	// Methods

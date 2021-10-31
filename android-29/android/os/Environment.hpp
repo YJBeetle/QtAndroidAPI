@@ -37,19 +37,21 @@ namespace android::os
 		static jstring MEDIA_UNMOUNTABLE();
 		static jstring MEDIA_UNMOUNTED();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Environment(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Environment(QAndroidJniObject obj);
+		
 		// Constructors
 		Environment();
 		
 		// Methods
-		static QAndroidJniObject getDataDirectory();
-		static QAndroidJniObject getDownloadCacheDirectory();
-		static QAndroidJniObject getExternalStorageDirectory();
-		static QAndroidJniObject getExternalStoragePublicDirectory(jstring arg0);
-		static QAndroidJniObject getExternalStoragePublicDirectory(const QString &arg0);
+		static java::io::File getDataDirectory();
+		static java::io::File getDownloadCacheDirectory();
+		static java::io::File getExternalStorageDirectory();
+		static java::io::File getExternalStoragePublicDirectory(jstring arg0);
 		static jstring getExternalStorageState();
 		static jstring getExternalStorageState(java::io::File arg0);
-		static QAndroidJniObject getRootDirectory();
+		static java::io::File getRootDirectory();
 		static jstring getStorageState(java::io::File arg0);
 		static jboolean isExternalStorageEmulated();
 		static jboolean isExternalStorageEmulated(java::io::File arg0);

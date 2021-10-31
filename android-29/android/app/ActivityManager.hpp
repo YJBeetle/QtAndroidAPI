@@ -75,9 +75,11 @@ namespace android::app
 		static jint RECENT_IGNORE_UNAVAILABLE();
 		static jint RECENT_WITH_EXCLUDED();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ActivityManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ActivityManager(QAndroidJniObject obj);
+		
 		// Constructors
-		ActivityManager() = default;
 		
 		// Methods
 		static void getMyMemoryState(android::app::ActivityManager_RunningAppProcessInfo arg0);
@@ -89,10 +91,9 @@ namespace android::app
 		jboolean clearApplicationUserData();
 		void clearWatchHeapLimit();
 		void dumpPackageState(java::io::FileDescriptor arg0, jstring arg1);
-		void dumpPackageState(java::io::FileDescriptor arg0, const QString &arg1);
-		QAndroidJniObject getAppTaskThumbnailSize();
-		QAndroidJniObject getAppTasks();
-		QAndroidJniObject getDeviceConfigurationInfo();
+		android::util::Size getAppTaskThumbnailSize();
+		__JniBaseClass getAppTasks();
+		android::content::pm::ConfigurationInfo getDeviceConfigurationInfo();
 		jint getLargeMemoryClass();
 		jint getLauncherLargeIconDensity();
 		jint getLauncherLargeIconSize();
@@ -100,22 +101,20 @@ namespace android::app
 		jint getMemoryClass();
 		void getMemoryInfo(android::app::ActivityManager_MemoryInfo arg0);
 		jarray getProcessMemoryInfo(jintArray arg0);
-		QAndroidJniObject getProcessesInErrorState();
-		QAndroidJniObject getRecentTasks(jint arg0, jint arg1);
-		QAndroidJniObject getRunningAppProcesses();
-		QAndroidJniObject getRunningServiceControlPanel(android::content::ComponentName arg0);
-		QAndroidJniObject getRunningServices(jint arg0);
-		QAndroidJniObject getRunningTasks(jint arg0);
+		__JniBaseClass getProcessesInErrorState();
+		__JniBaseClass getRecentTasks(jint arg0, jint arg1);
+		__JniBaseClass getRunningAppProcesses();
+		android::app::PendingIntent getRunningServiceControlPanel(android::content::ComponentName arg0);
+		__JniBaseClass getRunningServices(jint arg0);
+		__JniBaseClass getRunningTasks(jint arg0);
 		jboolean isActivityStartAllowedOnDisplay(android::content::Context arg0, jint arg1, android::content::Intent arg2);
 		jboolean isBackgroundRestricted();
 		jboolean isInLockTaskMode();
 		jboolean isLowRamDevice();
 		void killBackgroundProcesses(jstring arg0);
-		void killBackgroundProcesses(const QString &arg0);
 		void moveTaskToFront(jint arg0, jint arg1);
 		void moveTaskToFront(jint arg0, jint arg1, android::os::Bundle arg2);
 		void restartPackage(jstring arg0);
-		void restartPackage(const QString &arg0);
 		void setWatchHeapLimit(jlong arg0);
 	};
 } // namespace android::app

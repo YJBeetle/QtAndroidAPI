@@ -17,11 +17,13 @@ namespace android::service::autofill
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit VisibilitySetterAction(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		VisibilitySetterAction(QAndroidJniObject obj);
+		
 		// Constructors
-		VisibilitySetterAction() = default;
 		
 		// Methods
 		jint describeContents();

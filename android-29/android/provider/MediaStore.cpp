@@ -7,7 +7,7 @@ namespace android::provider
 	// Fields
 	jstring MediaStore::ACTION_IMAGE_CAPTURE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"ACTION_IMAGE_CAPTURE",
 			"Ljava/lang/String;"
@@ -15,7 +15,7 @@ namespace android::provider
 	}
 	jstring MediaStore::ACTION_IMAGE_CAPTURE_SECURE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"ACTION_IMAGE_CAPTURE_SECURE",
 			"Ljava/lang/String;"
@@ -23,7 +23,7 @@ namespace android::provider
 	}
 	jstring MediaStore::ACTION_REVIEW()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"ACTION_REVIEW",
 			"Ljava/lang/String;"
@@ -31,7 +31,7 @@ namespace android::provider
 	}
 	jstring MediaStore::ACTION_REVIEW_SECURE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"ACTION_REVIEW_SECURE",
 			"Ljava/lang/String;"
@@ -39,7 +39,7 @@ namespace android::provider
 	}
 	jstring MediaStore::ACTION_VIDEO_CAPTURE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"ACTION_VIDEO_CAPTURE",
 			"Ljava/lang/String;"
@@ -47,15 +47,15 @@ namespace android::provider
 	}
 	jstring MediaStore::AUTHORITY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"AUTHORITY",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore::AUTHORITY_URI()
+	android::net::Uri MediaStore::AUTHORITY_URI()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"AUTHORITY_URI",
 			"Landroid/net/Uri;"
@@ -63,7 +63,7 @@ namespace android::provider
 	}
 	jstring MediaStore::EXTRA_BRIGHTNESS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_BRIGHTNESS",
 			"Ljava/lang/String;"
@@ -71,7 +71,7 @@ namespace android::provider
 	}
 	jstring MediaStore::EXTRA_DURATION_LIMIT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_DURATION_LIMIT",
 			"Ljava/lang/String;"
@@ -79,7 +79,7 @@ namespace android::provider
 	}
 	jstring MediaStore::EXTRA_FINISH_ON_COMPLETION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_FINISH_ON_COMPLETION",
 			"Ljava/lang/String;"
@@ -87,7 +87,7 @@ namespace android::provider
 	}
 	jstring MediaStore::EXTRA_FULL_SCREEN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_FULL_SCREEN",
 			"Ljava/lang/String;"
@@ -95,7 +95,7 @@ namespace android::provider
 	}
 	jstring MediaStore::EXTRA_MEDIA_ALBUM()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_MEDIA_ALBUM",
 			"Ljava/lang/String;"
@@ -103,7 +103,7 @@ namespace android::provider
 	}
 	jstring MediaStore::EXTRA_MEDIA_ARTIST()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_MEDIA_ARTIST",
 			"Ljava/lang/String;"
@@ -111,7 +111,7 @@ namespace android::provider
 	}
 	jstring MediaStore::EXTRA_MEDIA_FOCUS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_MEDIA_FOCUS",
 			"Ljava/lang/String;"
@@ -119,7 +119,7 @@ namespace android::provider
 	}
 	jstring MediaStore::EXTRA_MEDIA_GENRE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_MEDIA_GENRE",
 			"Ljava/lang/String;"
@@ -127,7 +127,7 @@ namespace android::provider
 	}
 	jstring MediaStore::EXTRA_MEDIA_PLAYLIST()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_MEDIA_PLAYLIST",
 			"Ljava/lang/String;"
@@ -135,7 +135,7 @@ namespace android::provider
 	}
 	jstring MediaStore::EXTRA_MEDIA_RADIO_CHANNEL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_MEDIA_RADIO_CHANNEL",
 			"Ljava/lang/String;"
@@ -143,7 +143,7 @@ namespace android::provider
 	}
 	jstring MediaStore::EXTRA_MEDIA_TITLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_MEDIA_TITLE",
 			"Ljava/lang/String;"
@@ -151,7 +151,7 @@ namespace android::provider
 	}
 	jstring MediaStore::EXTRA_OUTPUT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_OUTPUT",
 			"Ljava/lang/String;"
@@ -159,7 +159,7 @@ namespace android::provider
 	}
 	jstring MediaStore::EXTRA_SCREEN_ORIENTATION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_SCREEN_ORIENTATION",
 			"Ljava/lang/String;"
@@ -167,7 +167,7 @@ namespace android::provider
 	}
 	jstring MediaStore::EXTRA_SHOW_ACTION_ICONS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_SHOW_ACTION_ICONS",
 			"Ljava/lang/String;"
@@ -175,7 +175,7 @@ namespace android::provider
 	}
 	jstring MediaStore::EXTRA_SIZE_LIMIT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_SIZE_LIMIT",
 			"Ljava/lang/String;"
@@ -183,7 +183,7 @@ namespace android::provider
 	}
 	jstring MediaStore::EXTRA_VIDEO_QUALITY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_VIDEO_QUALITY",
 			"Ljava/lang/String;"
@@ -191,7 +191,7 @@ namespace android::provider
 	}
 	jstring MediaStore::INTENT_ACTION_MEDIA_PLAY_FROM_SEARCH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"INTENT_ACTION_MEDIA_PLAY_FROM_SEARCH",
 			"Ljava/lang/String;"
@@ -199,7 +199,7 @@ namespace android::provider
 	}
 	jstring MediaStore::INTENT_ACTION_MEDIA_SEARCH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"INTENT_ACTION_MEDIA_SEARCH",
 			"Ljava/lang/String;"
@@ -207,7 +207,7 @@ namespace android::provider
 	}
 	jstring MediaStore::INTENT_ACTION_MUSIC_PLAYER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"INTENT_ACTION_MUSIC_PLAYER",
 			"Ljava/lang/String;"
@@ -215,7 +215,7 @@ namespace android::provider
 	}
 	jstring MediaStore::INTENT_ACTION_STILL_IMAGE_CAMERA()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"INTENT_ACTION_STILL_IMAGE_CAMERA",
 			"Ljava/lang/String;"
@@ -223,7 +223,7 @@ namespace android::provider
 	}
 	jstring MediaStore::INTENT_ACTION_STILL_IMAGE_CAMERA_SECURE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"INTENT_ACTION_STILL_IMAGE_CAMERA_SECURE",
 			"Ljava/lang/String;"
@@ -231,7 +231,7 @@ namespace android::provider
 	}
 	jstring MediaStore::INTENT_ACTION_TEXT_OPEN_FROM_SEARCH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"INTENT_ACTION_TEXT_OPEN_FROM_SEARCH",
 			"Ljava/lang/String;"
@@ -239,7 +239,7 @@ namespace android::provider
 	}
 	jstring MediaStore::INTENT_ACTION_VIDEO_CAMERA()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"INTENT_ACTION_VIDEO_CAMERA",
 			"Ljava/lang/String;"
@@ -247,7 +247,7 @@ namespace android::provider
 	}
 	jstring MediaStore::INTENT_ACTION_VIDEO_PLAY_FROM_SEARCH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"INTENT_ACTION_VIDEO_PLAY_FROM_SEARCH",
 			"Ljava/lang/String;"
@@ -255,7 +255,7 @@ namespace android::provider
 	}
 	jstring MediaStore::MEDIA_IGNORE_FILENAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"MEDIA_IGNORE_FILENAME",
 			"Ljava/lang/String;"
@@ -263,7 +263,7 @@ namespace android::provider
 	}
 	jstring MediaStore::MEDIA_SCANNER_VOLUME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"MEDIA_SCANNER_VOLUME",
 			"Ljava/lang/String;"
@@ -271,7 +271,7 @@ namespace android::provider
 	}
 	jstring MediaStore::META_DATA_STILL_IMAGE_CAMERA_PREWARM_SERVICE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"META_DATA_STILL_IMAGE_CAMERA_PREWARM_SERVICE",
 			"Ljava/lang/String;"
@@ -279,7 +279,7 @@ namespace android::provider
 	}
 	jstring MediaStore::UNKNOWN_STRING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"UNKNOWN_STRING",
 			"Ljava/lang/String;"
@@ -287,7 +287,7 @@ namespace android::provider
 	}
 	jstring MediaStore::VOLUME_EXTERNAL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"VOLUME_EXTERNAL",
 			"Ljava/lang/String;"
@@ -295,7 +295,7 @@ namespace android::provider
 	}
 	jstring MediaStore::VOLUME_EXTERNAL_PRIMARY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"VOLUME_EXTERNAL_PRIMARY",
 			"Ljava/lang/String;"
@@ -303,115 +303,105 @@ namespace android::provider
 	}
 	jstring MediaStore::VOLUME_INTERNAL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.provider.MediaStore",
 			"VOLUME_INTERNAL",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
 	
-	MediaStore::MediaStore(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaStore::MediaStore(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	MediaStore::MediaStore()
-	{
-		__thiz = QAndroidJniObject(
+		: __JniBaseClass(
 			"android.provider.MediaStore",
 			"()V"
-		);
-	}
+		) {}
 	
 	// Methods
-	QAndroidJniObject MediaStore::getDocumentUri(android::content::Context arg0, android::net::Uri arg1)
+	android::net::Uri MediaStore::getDocumentUri(android::content::Context arg0, android::net::Uri arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.MediaStore",
 			"getDocumentUri",
 			"(Landroid/content/Context;Landroid/net/Uri;)Landroid/net/Uri;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
-	QAndroidJniObject MediaStore::getExternalVolumeNames(android::content::Context arg0)
+	__JniBaseClass MediaStore::getExternalVolumeNames(android::content::Context arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.MediaStore",
 			"getExternalVolumeNames",
 			"(Landroid/content/Context;)Ljava/util/Set;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
-	QAndroidJniObject MediaStore::getMediaScannerUri()
+	android::net::Uri MediaStore::getMediaScannerUri()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.MediaStore",
 			"getMediaScannerUri",
 			"()Landroid/net/Uri;"
 		);
 	}
-	QAndroidJniObject MediaStore::getMediaUri(android::content::Context arg0, android::net::Uri arg1)
+	android::net::Uri MediaStore::getMediaUri(android::content::Context arg0, android::net::Uri arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.MediaStore",
 			"getMediaUri",
 			"(Landroid/content/Context;Landroid/net/Uri;)Landroid/net/Uri;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	jstring MediaStore::getVersion(android::content::Context arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.MediaStore",
 			"getVersion",
 			"(Landroid/content/Context;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
 	jstring MediaStore::getVersion(android::content::Context arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.MediaStore",
 			"getVersion",
 			"(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
-		).object<jstring>();
-	}
-	jstring MediaStore::getVersion(android::content::Context arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.MediaStore",
-			"getVersion",
-			"(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		).object<jstring>();
 	}
 	jstring MediaStore::getVolumeName(android::net::Uri arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.MediaStore",
 			"getVolumeName",
 			"(Landroid/net/Uri;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore::setIncludePending(android::net::Uri arg0)
+	android::net::Uri MediaStore::setIncludePending(android::net::Uri arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.MediaStore",
 			"setIncludePending",
 			"(Landroid/net/Uri;)Landroid/net/Uri;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
-	QAndroidJniObject MediaStore::setRequireOriginal(android::net::Uri arg0)
+	android::net::Uri MediaStore::setRequireOriginal(android::net::Uri arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return callStaticObjectMethod(
 			"android.provider.MediaStore",
 			"setRequireOriginal",
 			"(Landroid/net/Uri;)Landroid/net/Uri;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::provider

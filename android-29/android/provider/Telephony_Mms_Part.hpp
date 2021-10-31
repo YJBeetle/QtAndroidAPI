@@ -18,7 +18,7 @@ namespace android::provider
 		static jstring CONTENT_ID();
 		static jstring CONTENT_LOCATION();
 		static jstring CONTENT_TYPE();
-		static QAndroidJniObject CONTENT_URI();
+		static android::net::Uri CONTENT_URI();
 		static jstring CT_START();
 		static jstring CT_TYPE();
 		static jstring FILENAME();
@@ -28,9 +28,11 @@ namespace android::provider
 		static jstring TEXT();
 		static jstring _DATA();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Telephony_Mms_Part(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		Telephony_Mms_Part(QAndroidJniObject obj);
+		
 		// Constructors
-		Telephony_Mms_Part() = default;
 		
 		// Methods
 	};

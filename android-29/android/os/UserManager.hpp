@@ -91,26 +91,25 @@ namespace android::os
 		static jint USER_OPERATION_ERROR_UNKNOWN();
 		static jint USER_OPERATION_SUCCESS();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit UserManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		UserManager(QAndroidJniObject obj);
+		
 		// Constructors
-		UserManager() = default;
 		
 		// Methods
-		static QAndroidJniObject createUserCreationIntent(jstring arg0, jstring arg1, jstring arg2, android::os::PersistableBundle arg3);
-		static QAndroidJniObject createUserCreationIntent(const QString &arg0, const QString &arg1, const QString &arg2, android::os::PersistableBundle arg3);
+		static android::content::Intent createUserCreationIntent(jstring arg0, jstring arg1, jstring arg2, android::os::PersistableBundle arg3);
 		static jboolean supportsMultipleUsers();
-		QAndroidJniObject getApplicationRestrictions(jstring arg0);
-		QAndroidJniObject getApplicationRestrictions(const QString &arg0);
+		android::os::Bundle getApplicationRestrictions(jstring arg0);
 		jlong getSerialNumberForUser(android::os::UserHandle arg0);
 		jint getUserCount();
 		jlong getUserCreationTime(android::os::UserHandle arg0);
-		QAndroidJniObject getUserForSerialNumber(jlong arg0);
+		android::os::UserHandle getUserForSerialNumber(jlong arg0);
 		jstring getUserName();
-		QAndroidJniObject getUserProfiles();
-		QAndroidJniObject getUserRestrictions();
-		QAndroidJniObject getUserRestrictions(android::os::UserHandle arg0);
+		__JniBaseClass getUserProfiles();
+		android::os::Bundle getUserRestrictions();
+		android::os::Bundle getUserRestrictions(android::os::UserHandle arg0);
 		jboolean hasUserRestriction(jstring arg0);
-		jboolean hasUserRestriction(const QString &arg0);
 		jboolean isDemoUser();
 		jboolean isQuietModeEnabled(android::os::UserHandle arg0);
 		jboolean isSystemUser();
@@ -121,9 +120,7 @@ namespace android::os
 		jboolean isUserUnlocked(android::os::UserHandle arg0);
 		jboolean requestQuietModeEnabled(jboolean arg0, android::os::UserHandle arg1);
 		jboolean setRestrictionsChallenge(jstring arg0);
-		jboolean setRestrictionsChallenge(const QString &arg0);
 		void setUserRestriction(jstring arg0, jboolean arg1);
-		void setUserRestriction(const QString &arg0, jboolean arg1);
 		void setUserRestrictions(android::os::Bundle arg0);
 		void setUserRestrictions(android::os::Bundle arg0, android::os::UserHandle arg1);
 	};

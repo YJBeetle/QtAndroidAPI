@@ -14,11 +14,13 @@ namespace android::view::textclassifier
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TextClassifierEvent_LanguageDetectionEvent(const char *className, const char *sig, Ts...agv) : android::view::textclassifier::TextClassifierEvent(className, sig, std::forward<Ts>(agv)...) {}
 		TextClassifierEvent_LanguageDetectionEvent(QAndroidJniObject obj);
+		
 		// Constructors
-		TextClassifierEvent_LanguageDetectionEvent() = default;
 		
 		// Methods
 	};

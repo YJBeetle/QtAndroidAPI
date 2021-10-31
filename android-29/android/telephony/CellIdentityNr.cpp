@@ -4,22 +4,24 @@
 namespace android::telephony
 {
 	// Fields
-	QAndroidJniObject CellIdentityNr::CREATOR()
+	__JniBaseClass CellIdentityNr::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.telephony.CellIdentityNr",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
 		);
 	}
 	
-	CellIdentityNr::CellIdentityNr(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CellIdentityNr::CellIdentityNr(QAndroidJniObject obj) : android::telephony::CellIdentity(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jboolean CellIdentityNr::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
@@ -27,66 +29,66 @@ namespace android::telephony
 	}
 	jstring CellIdentityNr::getMccString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMccString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jstring CellIdentityNr::getMncString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMncString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	jlong CellIdentityNr::getNci()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getNci",
 			"()J"
 		);
 	}
 	jint CellIdentityNr::getNrarfcn()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getNrarfcn",
 			"()I"
 		);
 	}
 	jint CellIdentityNr::getPci()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getPci",
 			"()I"
 		);
 	}
 	jint CellIdentityNr::getTac()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getTac",
 			"()I"
 		);
 	}
 	jint CellIdentityNr::hashCode()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
 	jstring CellIdentityNr::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void CellIdentityNr::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

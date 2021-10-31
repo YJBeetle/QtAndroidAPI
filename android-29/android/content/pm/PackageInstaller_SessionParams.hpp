@@ -21,23 +21,23 @@ namespace android::content::pm
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint MODE_FULL_INSTALL();
 		static jint MODE_INHERIT_EXISTING();
-		static QAndroidJniObject RESTRICTED_PERMISSIONS_ALL();
+		static __JniBaseClass RESTRICTED_PERMISSIONS_ALL();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PackageInstaller_SessionParams(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PackageInstaller_SessionParams(QAndroidJniObject obj);
+		
 		// Constructors
-		PackageInstaller_SessionParams(jint &arg0);
-		PackageInstaller_SessionParams() = default;
+		PackageInstaller_SessionParams(jint arg0);
 		
 		// Methods
 		jint describeContents();
 		void setAppIcon(android::graphics::Bitmap arg0);
 		void setAppLabel(jstring arg0);
-		void setAppLabel(const QString &arg0);
 		void setAppPackageName(jstring arg0);
-		void setAppPackageName(const QString &arg0);
 		void setInstallLocation(jint arg0);
 		void setInstallReason(jint arg0);
 		void setMultiPackage();

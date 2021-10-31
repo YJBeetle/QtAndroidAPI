@@ -43,7 +43,7 @@ namespace android::telecom
 		static jint CAPABILITY_SUPPORTS_VIDEO_CALLING();
 		static jint CAPABILITY_VIDEO_CALLING();
 		static jint CAPABILITY_VIDEO_CALLING_RELIES_ON_PRESENCE();
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jstring EXTRA_CALL_SUBJECT_CHARACTER_ENCODING();
 		static jstring EXTRA_CALL_SUBJECT_MAX_LENGTH();
 		static jstring EXTRA_LOG_SELF_MANAGED_CALLS();
@@ -55,31 +55,31 @@ namespace android::telecom
 		static jstring SCHEME_TEL();
 		static jstring SCHEME_VOICEMAIL();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit PhoneAccount(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		PhoneAccount(QAndroidJniObject obj);
+		
 		// Constructors
-		PhoneAccount() = default;
 		
 		// Methods
-		static QAndroidJniObject builder(android::telecom::PhoneAccountHandle arg0, jstring arg1);
-		static QAndroidJniObject builder(android::telecom::PhoneAccountHandle arg0, const QString &arg1);
+		static android::telecom::PhoneAccount_Builder builder(android::telecom::PhoneAccountHandle arg0, jstring arg1);
 		jint describeContents();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getAccountHandle();
-		QAndroidJniObject getAddress();
+		android::telecom::PhoneAccountHandle getAccountHandle();
+		android::net::Uri getAddress();
 		jint getCapabilities();
-		QAndroidJniObject getExtras();
+		android::os::Bundle getExtras();
 		jint getHighlightColor();
-		QAndroidJniObject getIcon();
+		android::graphics::drawable::Icon getIcon();
 		jstring getLabel();
 		jstring getShortDescription();
-		QAndroidJniObject getSubscriptionAddress();
-		QAndroidJniObject getSupportedUriSchemes();
+		android::net::Uri getSubscriptionAddress();
+		__JniBaseClass getSupportedUriSchemes();
 		jboolean hasCapabilities(jint arg0);
 		jint hashCode();
 		jboolean isEnabled();
 		jboolean supportsUriScheme(jstring arg0);
-		jboolean supportsUriScheme(const QString &arg0);
-		QAndroidJniObject toBuilder();
+		android::telecom::PhoneAccount_Builder toBuilder();
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

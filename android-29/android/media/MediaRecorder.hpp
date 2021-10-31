@@ -57,20 +57,23 @@ namespace android::media
 		static jint MEDIA_RECORDER_INFO_NEXT_OUTPUT_FILE_STARTED();
 		static jint MEDIA_RECORDER_INFO_UNKNOWN();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaRecorder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaRecorder(QAndroidJniObject obj);
+		
 		// Constructors
 		MediaRecorder();
 		
 		// Methods
 		static jint getAudioSourceMax();
 		void addOnRoutingChangedListener(__JniBaseClass arg0, android::os::Handler arg1);
-		QAndroidJniObject getActiveMicrophones();
-		QAndroidJniObject getActiveRecordingConfiguration();
+		__JniBaseClass getActiveMicrophones();
+		android::media::AudioRecordingConfiguration getActiveRecordingConfiguration();
 		jint getMaxAmplitude();
-		QAndroidJniObject getMetrics();
-		QAndroidJniObject getPreferredDevice();
-		QAndroidJniObject getRoutedDevice();
-		QAndroidJniObject getSurface();
+		android::os::PersistableBundle getMetrics();
+		android::media::AudioDeviceInfo getPreferredDevice();
+		android::media::AudioDeviceInfo getRoutedDevice();
+		android::view::Surface getSurface();
 		void pause();
 		void prepare();
 		void registerAudioRecordingCallback(__JniBaseClass arg0, android::media::AudioManager_AudioRecordingCallback arg1);
@@ -97,7 +100,6 @@ namespace android::media
 		void setOutputFile(java::io::File arg0);
 		void setOutputFile(java::io::FileDescriptor arg0);
 		void setOutputFile(jstring arg0);
-		void setOutputFile(const QString &arg0);
 		void setOutputFormat(jint arg0);
 		jboolean setPreferredDevice(android::media::AudioDeviceInfo arg0);
 		jboolean setPreferredMicrophoneDirection(jint arg0);

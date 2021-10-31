@@ -35,7 +35,7 @@ namespace android::content::pm
 		static jint CATEGORY_SOCIAL();
 		static jint CATEGORY_UNDEFINED();
 		static jint CATEGORY_VIDEO();
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint FLAG_ALLOW_BACKUP();
 		static jint FLAG_ALLOW_CLEAR_USER_DATA();
 		static jint FLAG_ALLOW_TASK_REPARENTING();
@@ -91,14 +91,17 @@ namespace android::content::pm
 		jarray splitNames();
 		jarray splitPublicSourceDirs();
 		jarray splitSourceDirs();
-		QAndroidJniObject storageUuid();
+		java::util::UUID storageUuid();
 		jint targetSdkVersion();
 		jstring taskAffinity();
 		jint theme();
 		jint uiOptions();
 		jint uid();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ApplicationInfo(const char *className, const char *sig, Ts...agv) : android::content::pm::PackageItemInfo(className, sig, std::forward<Ts>(agv)...) {}
 		ApplicationInfo(QAndroidJniObject obj);
+		
 		// Constructors
 		ApplicationInfo();
 		ApplicationInfo(android::content::pm::ApplicationInfo &arg0);
@@ -107,7 +110,6 @@ namespace android::content::pm
 		static jstring getCategoryTitle(android::content::Context arg0, jint arg1);
 		jint describeContents();
 		void dump(__JniBaseClass arg0, jstring arg1);
-		void dump(__JniBaseClass arg0, const QString &arg1);
 		jboolean isProfileableByShell();
 		jboolean isResourceOverlay();
 		jboolean isVirtualPreload();

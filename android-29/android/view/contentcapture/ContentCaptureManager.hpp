@@ -18,13 +18,15 @@ namespace android::view::contentcapture
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ContentCaptureManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ContentCaptureManager(QAndroidJniObject obj);
+		
 		// Constructors
-		ContentCaptureManager() = default;
 		
 		// Methods
-		QAndroidJniObject getContentCaptureConditions();
-		QAndroidJniObject getServiceComponentName();
+		__JniBaseClass getContentCaptureConditions();
+		android::content::ComponentName getServiceComponentName();
 		jboolean isContentCaptureEnabled();
 		void removeData(android::view::contentcapture::DataRemovalRequest arg0);
 		void setContentCaptureEnabled(jboolean arg0);

@@ -5,767 +5,769 @@
 namespace android::hardware::camera2
 {
 	// Fields
-	QAndroidJniObject CameraCharacteristics::COLOR_CORRECTION_AVAILABLE_ABERRATION_MODES()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::COLOR_CORRECTION_AVAILABLE_ABERRATION_MODES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"COLOR_CORRECTION_AVAILABLE_ABERRATION_MODES",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::CONTROL_AE_AVAILABLE_ANTIBANDING_MODES()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::CONTROL_AE_AVAILABLE_ANTIBANDING_MODES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"CONTROL_AE_AVAILABLE_ANTIBANDING_MODES",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::CONTROL_AE_AVAILABLE_MODES()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::CONTROL_AE_AVAILABLE_MODES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"CONTROL_AE_AVAILABLE_MODES",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::CONTROL_AE_AVAILABLE_TARGET_FPS_RANGES()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::CONTROL_AE_AVAILABLE_TARGET_FPS_RANGES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"CONTROL_AE_AVAILABLE_TARGET_FPS_RANGES",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::CONTROL_AE_COMPENSATION_RANGE()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::CONTROL_AE_COMPENSATION_RANGE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"CONTROL_AE_COMPENSATION_RANGE",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::CONTROL_AE_COMPENSATION_STEP()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::CONTROL_AE_COMPENSATION_STEP()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"CONTROL_AE_COMPENSATION_STEP",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::CONTROL_AE_LOCK_AVAILABLE()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::CONTROL_AE_LOCK_AVAILABLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"CONTROL_AE_LOCK_AVAILABLE",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::CONTROL_AF_AVAILABLE_MODES()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::CONTROL_AF_AVAILABLE_MODES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"CONTROL_AF_AVAILABLE_MODES",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::CONTROL_AVAILABLE_EFFECTS()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::CONTROL_AVAILABLE_EFFECTS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"CONTROL_AVAILABLE_EFFECTS",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::CONTROL_AVAILABLE_MODES()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::CONTROL_AVAILABLE_MODES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"CONTROL_AVAILABLE_MODES",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::CONTROL_AVAILABLE_SCENE_MODES()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::CONTROL_AVAILABLE_SCENE_MODES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"CONTROL_AVAILABLE_SCENE_MODES",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::CONTROL_AVAILABLE_VIDEO_STABILIZATION_MODES()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::CONTROL_AVAILABLE_VIDEO_STABILIZATION_MODES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"CONTROL_AVAILABLE_VIDEO_STABILIZATION_MODES",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::CONTROL_AWB_AVAILABLE_MODES()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::CONTROL_AWB_AVAILABLE_MODES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"CONTROL_AWB_AVAILABLE_MODES",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::CONTROL_AWB_LOCK_AVAILABLE()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::CONTROL_AWB_LOCK_AVAILABLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"CONTROL_AWB_LOCK_AVAILABLE",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::CONTROL_MAX_REGIONS_AE()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::CONTROL_MAX_REGIONS_AE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"CONTROL_MAX_REGIONS_AE",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::CONTROL_MAX_REGIONS_AF()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::CONTROL_MAX_REGIONS_AF()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"CONTROL_MAX_REGIONS_AF",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::CONTROL_MAX_REGIONS_AWB()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::CONTROL_MAX_REGIONS_AWB()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"CONTROL_MAX_REGIONS_AWB",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::CONTROL_POST_RAW_SENSITIVITY_BOOST_RANGE()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::CONTROL_POST_RAW_SENSITIVITY_BOOST_RANGE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"CONTROL_POST_RAW_SENSITIVITY_BOOST_RANGE",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::DEPTH_DEPTH_IS_EXCLUSIVE()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::DEPTH_DEPTH_IS_EXCLUSIVE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"DEPTH_DEPTH_IS_EXCLUSIVE",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::DISTORTION_CORRECTION_AVAILABLE_MODES()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::DISTORTION_CORRECTION_AVAILABLE_MODES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"DISTORTION_CORRECTION_AVAILABLE_MODES",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::EDGE_AVAILABLE_EDGE_MODES()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::EDGE_AVAILABLE_EDGE_MODES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"EDGE_AVAILABLE_EDGE_MODES",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::FLASH_INFO_AVAILABLE()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::FLASH_INFO_AVAILABLE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"FLASH_INFO_AVAILABLE",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::HOT_PIXEL_AVAILABLE_HOT_PIXEL_MODES()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::HOT_PIXEL_AVAILABLE_HOT_PIXEL_MODES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"HOT_PIXEL_AVAILABLE_HOT_PIXEL_MODES",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::INFO_SUPPORTED_HARDWARE_LEVEL()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::INFO_SUPPORTED_HARDWARE_LEVEL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"INFO_SUPPORTED_HARDWARE_LEVEL",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::INFO_VERSION()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::INFO_VERSION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"INFO_VERSION",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::JPEG_AVAILABLE_THUMBNAIL_SIZES()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::JPEG_AVAILABLE_THUMBNAIL_SIZES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"JPEG_AVAILABLE_THUMBNAIL_SIZES",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::LENS_DISTORTION()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::LENS_DISTORTION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"LENS_DISTORTION",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::LENS_FACING()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::LENS_FACING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"LENS_FACING",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::LENS_INFO_AVAILABLE_APERTURES()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::LENS_INFO_AVAILABLE_APERTURES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"LENS_INFO_AVAILABLE_APERTURES",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::LENS_INFO_AVAILABLE_FILTER_DENSITIES()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::LENS_INFO_AVAILABLE_FILTER_DENSITIES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"LENS_INFO_AVAILABLE_FILTER_DENSITIES",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::LENS_INFO_AVAILABLE_FOCAL_LENGTHS()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::LENS_INFO_AVAILABLE_FOCAL_LENGTHS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"LENS_INFO_AVAILABLE_FOCAL_LENGTHS",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::LENS_INFO_AVAILABLE_OPTICAL_STABILIZATION()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::LENS_INFO_AVAILABLE_OPTICAL_STABILIZATION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"LENS_INFO_AVAILABLE_OPTICAL_STABILIZATION",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::LENS_INFO_FOCUS_DISTANCE_CALIBRATION()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::LENS_INFO_FOCUS_DISTANCE_CALIBRATION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"LENS_INFO_FOCUS_DISTANCE_CALIBRATION",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::LENS_INFO_HYPERFOCAL_DISTANCE()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::LENS_INFO_HYPERFOCAL_DISTANCE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"LENS_INFO_HYPERFOCAL_DISTANCE",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::LENS_INFO_MINIMUM_FOCUS_DISTANCE()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::LENS_INFO_MINIMUM_FOCUS_DISTANCE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"LENS_INFO_MINIMUM_FOCUS_DISTANCE",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::LENS_INTRINSIC_CALIBRATION()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::LENS_INTRINSIC_CALIBRATION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"LENS_INTRINSIC_CALIBRATION",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::LENS_POSE_REFERENCE()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::LENS_POSE_REFERENCE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"LENS_POSE_REFERENCE",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::LENS_POSE_ROTATION()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::LENS_POSE_ROTATION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"LENS_POSE_ROTATION",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::LENS_POSE_TRANSLATION()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::LENS_POSE_TRANSLATION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"LENS_POSE_TRANSLATION",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::LENS_RADIAL_DISTORTION()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::LENS_RADIAL_DISTORTION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"LENS_RADIAL_DISTORTION",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::LOGICAL_MULTI_CAMERA_SENSOR_SYNC_TYPE()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::LOGICAL_MULTI_CAMERA_SENSOR_SYNC_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"LOGICAL_MULTI_CAMERA_SENSOR_SYNC_TYPE",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::NOISE_REDUCTION_AVAILABLE_NOISE_REDUCTION_MODES()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::NOISE_REDUCTION_AVAILABLE_NOISE_REDUCTION_MODES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"NOISE_REDUCTION_AVAILABLE_NOISE_REDUCTION_MODES",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::REPROCESS_MAX_CAPTURE_STALL()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::REPROCESS_MAX_CAPTURE_STALL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"REPROCESS_MAX_CAPTURE_STALL",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::REQUEST_AVAILABLE_CAPABILITIES()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::REQUEST_AVAILABLE_CAPABILITIES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"REQUEST_AVAILABLE_CAPABILITIES",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::REQUEST_MAX_NUM_INPUT_STREAMS()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::REQUEST_MAX_NUM_INPUT_STREAMS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"REQUEST_MAX_NUM_INPUT_STREAMS",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::REQUEST_MAX_NUM_OUTPUT_PROC()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::REQUEST_MAX_NUM_OUTPUT_PROC()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"REQUEST_MAX_NUM_OUTPUT_PROC",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::REQUEST_MAX_NUM_OUTPUT_PROC_STALLING()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::REQUEST_MAX_NUM_OUTPUT_PROC_STALLING()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"REQUEST_MAX_NUM_OUTPUT_PROC_STALLING",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::REQUEST_MAX_NUM_OUTPUT_RAW()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::REQUEST_MAX_NUM_OUTPUT_RAW()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"REQUEST_MAX_NUM_OUTPUT_RAW",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::REQUEST_PARTIAL_RESULT_COUNT()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::REQUEST_PARTIAL_RESULT_COUNT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"REQUEST_PARTIAL_RESULT_COUNT",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::REQUEST_PIPELINE_MAX_DEPTH()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::REQUEST_PIPELINE_MAX_DEPTH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"REQUEST_PIPELINE_MAX_DEPTH",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::SCALER_AVAILABLE_MAX_DIGITAL_ZOOM()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SCALER_AVAILABLE_MAX_DIGITAL_ZOOM()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"SCALER_AVAILABLE_MAX_DIGITAL_ZOOM",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::SCALER_CROPPING_TYPE()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SCALER_CROPPING_TYPE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"SCALER_CROPPING_TYPE",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::SCALER_MANDATORY_STREAM_COMBINATIONS()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SCALER_MANDATORY_STREAM_COMBINATIONS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"SCALER_MANDATORY_STREAM_COMBINATIONS",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::SCALER_STREAM_CONFIGURATION_MAP()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SCALER_STREAM_CONFIGURATION_MAP()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"SCALER_STREAM_CONFIGURATION_MAP",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::SENSOR_AVAILABLE_TEST_PATTERN_MODES()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_AVAILABLE_TEST_PATTERN_MODES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"SENSOR_AVAILABLE_TEST_PATTERN_MODES",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::SENSOR_BLACK_LEVEL_PATTERN()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_BLACK_LEVEL_PATTERN()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"SENSOR_BLACK_LEVEL_PATTERN",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::SENSOR_CALIBRATION_TRANSFORM1()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_CALIBRATION_TRANSFORM1()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"SENSOR_CALIBRATION_TRANSFORM1",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::SENSOR_CALIBRATION_TRANSFORM2()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_CALIBRATION_TRANSFORM2()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"SENSOR_CALIBRATION_TRANSFORM2",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::SENSOR_COLOR_TRANSFORM1()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_COLOR_TRANSFORM1()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"SENSOR_COLOR_TRANSFORM1",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::SENSOR_COLOR_TRANSFORM2()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_COLOR_TRANSFORM2()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"SENSOR_COLOR_TRANSFORM2",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::SENSOR_FORWARD_MATRIX1()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_FORWARD_MATRIX1()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"SENSOR_FORWARD_MATRIX1",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::SENSOR_FORWARD_MATRIX2()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_FORWARD_MATRIX2()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"SENSOR_FORWARD_MATRIX2",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::SENSOR_INFO_ACTIVE_ARRAY_SIZE()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_INFO_ACTIVE_ARRAY_SIZE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"SENSOR_INFO_ACTIVE_ARRAY_SIZE",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::SENSOR_INFO_COLOR_FILTER_ARRANGEMENT()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_INFO_COLOR_FILTER_ARRANGEMENT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"SENSOR_INFO_COLOR_FILTER_ARRANGEMENT",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::SENSOR_INFO_EXPOSURE_TIME_RANGE()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_INFO_EXPOSURE_TIME_RANGE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"SENSOR_INFO_EXPOSURE_TIME_RANGE",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::SENSOR_INFO_LENS_SHADING_APPLIED()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_INFO_LENS_SHADING_APPLIED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"SENSOR_INFO_LENS_SHADING_APPLIED",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::SENSOR_INFO_MAX_FRAME_DURATION()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_INFO_MAX_FRAME_DURATION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"SENSOR_INFO_MAX_FRAME_DURATION",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::SENSOR_INFO_PHYSICAL_SIZE()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_INFO_PHYSICAL_SIZE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"SENSOR_INFO_PHYSICAL_SIZE",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::SENSOR_INFO_PIXEL_ARRAY_SIZE()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_INFO_PIXEL_ARRAY_SIZE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"SENSOR_INFO_PIXEL_ARRAY_SIZE",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::SENSOR_INFO_PRE_CORRECTION_ACTIVE_ARRAY_SIZE()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_INFO_PRE_CORRECTION_ACTIVE_ARRAY_SIZE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"SENSOR_INFO_PRE_CORRECTION_ACTIVE_ARRAY_SIZE",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::SENSOR_INFO_SENSITIVITY_RANGE()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_INFO_SENSITIVITY_RANGE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"SENSOR_INFO_SENSITIVITY_RANGE",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::SENSOR_INFO_TIMESTAMP_SOURCE()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_INFO_TIMESTAMP_SOURCE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"SENSOR_INFO_TIMESTAMP_SOURCE",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::SENSOR_INFO_WHITE_LEVEL()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_INFO_WHITE_LEVEL()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"SENSOR_INFO_WHITE_LEVEL",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::SENSOR_MAX_ANALOG_SENSITIVITY()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_MAX_ANALOG_SENSITIVITY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"SENSOR_MAX_ANALOG_SENSITIVITY",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::SENSOR_OPTICAL_BLACK_REGIONS()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_OPTICAL_BLACK_REGIONS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"SENSOR_OPTICAL_BLACK_REGIONS",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::SENSOR_ORIENTATION()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_ORIENTATION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"SENSOR_ORIENTATION",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::SENSOR_REFERENCE_ILLUMINANT1()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_REFERENCE_ILLUMINANT1()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"SENSOR_REFERENCE_ILLUMINANT1",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::SENSOR_REFERENCE_ILLUMINANT2()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SENSOR_REFERENCE_ILLUMINANT2()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"SENSOR_REFERENCE_ILLUMINANT2",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::SHADING_AVAILABLE_MODES()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SHADING_AVAILABLE_MODES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"SHADING_AVAILABLE_MODES",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::STATISTICS_INFO_AVAILABLE_FACE_DETECT_MODES()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::STATISTICS_INFO_AVAILABLE_FACE_DETECT_MODES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"STATISTICS_INFO_AVAILABLE_FACE_DETECT_MODES",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::STATISTICS_INFO_AVAILABLE_HOT_PIXEL_MAP_MODES()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::STATISTICS_INFO_AVAILABLE_HOT_PIXEL_MAP_MODES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"STATISTICS_INFO_AVAILABLE_HOT_PIXEL_MAP_MODES",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::STATISTICS_INFO_AVAILABLE_LENS_SHADING_MAP_MODES()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::STATISTICS_INFO_AVAILABLE_LENS_SHADING_MAP_MODES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"STATISTICS_INFO_AVAILABLE_LENS_SHADING_MAP_MODES",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::STATISTICS_INFO_AVAILABLE_OIS_DATA_MODES()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::STATISTICS_INFO_AVAILABLE_OIS_DATA_MODES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"STATISTICS_INFO_AVAILABLE_OIS_DATA_MODES",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::STATISTICS_INFO_MAX_FACE_COUNT()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::STATISTICS_INFO_MAX_FACE_COUNT()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"STATISTICS_INFO_MAX_FACE_COUNT",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::SYNC_MAX_LATENCY()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::SYNC_MAX_LATENCY()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"SYNC_MAX_LATENCY",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::TONEMAP_AVAILABLE_TONE_MAP_MODES()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::TONEMAP_AVAILABLE_TONE_MAP_MODES()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"TONEMAP_AVAILABLE_TONE_MAP_MODES",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::TONEMAP_MAX_CURVE_POINTS()
+	android::hardware::camera2::CameraCharacteristics_Key CameraCharacteristics::TONEMAP_MAX_CURVE_POINTS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.hardware.camera2.CameraCharacteristics",
 			"TONEMAP_MAX_CURVE_POINTS",
 			"Landroid/hardware/camera2/CameraCharacteristics$Key;"
 		);
 	}
 	
-	CameraCharacteristics::CameraCharacteristics(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	CameraCharacteristics::CameraCharacteristics(QAndroidJniObject obj) : android::hardware::camera2::CameraMetadata(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	jobject CameraCharacteristics::get(android::hardware::camera2::CameraCharacteristics_Key arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"get",
 			"(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;",
-			arg0.__jniObject().object()
+			arg0.object()
 		).object<jobject>();
 	}
-	QAndroidJniObject CameraCharacteristics::getAvailableCaptureRequestKeys()
+	__JniBaseClass CameraCharacteristics::getAvailableCaptureRequestKeys()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAvailableCaptureRequestKeys",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::getAvailableCaptureResultKeys()
+	__JniBaseClass CameraCharacteristics::getAvailableCaptureResultKeys()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAvailableCaptureResultKeys",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::getAvailablePhysicalCameraRequestKeys()
+	__JniBaseClass CameraCharacteristics::getAvailablePhysicalCameraRequestKeys()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAvailablePhysicalCameraRequestKeys",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::getAvailableSessionKeys()
+	__JniBaseClass CameraCharacteristics::getAvailableSessionKeys()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAvailableSessionKeys",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::getKeys()
+	__JniBaseClass CameraCharacteristics::getKeys()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getKeys",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::getKeysNeedingPermission()
+	__JniBaseClass CameraCharacteristics::getKeysNeedingPermission()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getKeysNeedingPermission",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::getPhysicalCameraIds()
+	__JniBaseClass CameraCharacteristics::getPhysicalCameraIds()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPhysicalCameraIds",
 			"()Ljava/util/Set;"
 		);
 	}
-	QAndroidJniObject CameraCharacteristics::getRecommendedStreamConfigurationMap(jint arg0)
+	android::hardware::camera2::params::RecommendedStreamConfigurationMap CameraCharacteristics::getRecommendedStreamConfigurationMap(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getRecommendedStreamConfigurationMap",
 			"(I)Landroid/hardware/camera2/params/RecommendedStreamConfigurationMap;",
 			arg0

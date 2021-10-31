@@ -16,22 +16,22 @@ namespace android::media::session
 {
 	// Fields
 	
-	MediaController::MediaController(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	MediaController::MediaController(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
-	MediaController::MediaController(android::content::Context &arg0, android::media::session::MediaSession_Token &arg1)
-	{
-		__thiz = QAndroidJniObject(
+	MediaController::MediaController(android::content::Context arg0, android::media::session::MediaSession_Token arg1)
+		: __JniBaseClass(
 			"android.media.session.MediaController",
 			"(Landroid/content/Context;Landroid/media/session/MediaSession$Token;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
+			arg0.object(),
+			arg1.object()
+		) {}
 	
 	// Methods
 	void MediaController::adjustVolume(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"adjustVolume",
 			"(II)V",
 			arg0,
@@ -40,143 +40,133 @@ namespace android::media::session
 	}
 	jboolean MediaController::dispatchMediaButtonEvent(android::view::KeyEvent arg0)
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"dispatchMediaButtonEvent",
 			"(Landroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
-	QAndroidJniObject MediaController::getExtras()
+	android::os::Bundle MediaController::getExtras()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
 	jlong MediaController::getFlags()
 	{
-		return __thiz.callMethod<jlong>(
+		return callMethod<jlong>(
 			"getFlags",
 			"()J"
 		);
 	}
-	QAndroidJniObject MediaController::getMetadata()
+	android::media::MediaMetadata MediaController::getMetadata()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMetadata",
 			"()Landroid/media/MediaMetadata;"
 		);
 	}
 	jstring MediaController::getPackageName()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject MediaController::getPlaybackInfo()
+	android::media::session::MediaController_PlaybackInfo MediaController::getPlaybackInfo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPlaybackInfo",
 			"()Landroid/media/session/MediaController$PlaybackInfo;"
 		);
 	}
-	QAndroidJniObject MediaController::getPlaybackState()
+	android::media::session::PlaybackState MediaController::getPlaybackState()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getPlaybackState",
 			"()Landroid/media/session/PlaybackState;"
 		);
 	}
-	QAndroidJniObject MediaController::getQueue()
+	__JniBaseClass MediaController::getQueue()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getQueue",
 			"()Ljava/util/List;"
 		);
 	}
 	jstring MediaController::getQueueTitle()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getQueueTitle",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jint MediaController::getRatingType()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"getRatingType",
 			"()I"
 		);
 	}
-	QAndroidJniObject MediaController::getSessionActivity()
+	android::app::PendingIntent MediaController::getSessionActivity()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSessionActivity",
 			"()Landroid/app/PendingIntent;"
 		);
 	}
-	QAndroidJniObject MediaController::getSessionInfo()
+	android::os::Bundle MediaController::getSessionInfo()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSessionInfo",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	QAndroidJniObject MediaController::getSessionToken()
+	android::media::session::MediaSession_Token MediaController::getSessionToken()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSessionToken",
 			"()Landroid/media/session/MediaSession$Token;"
 		);
 	}
-	QAndroidJniObject MediaController::getTransportControls()
+	android::media::session::MediaController_TransportControls MediaController::getTransportControls()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getTransportControls",
 			"()Landroid/media/session/MediaController$TransportControls;"
 		);
 	}
 	void MediaController::registerCallback(android::media::session::MediaController_Callback arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"registerCallback",
 			"(Landroid/media/session/MediaController$Callback;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void MediaController::registerCallback(android::media::session::MediaController_Callback arg0, android::os::Handler arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"registerCallback",
 			"(Landroid/media/session/MediaController$Callback;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void MediaController::sendCommand(jstring arg0, android::os::Bundle arg1, android::os::ResultReceiver arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"sendCommand",
 			"(Ljava/lang/String;Landroid/os/Bundle;Landroid/os/ResultReceiver;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	void MediaController::sendCommand(const QString &arg0, android::os::Bundle arg1, android::os::ResultReceiver arg2)
-	{
-		__thiz.callMethod<void>(
-			"sendCommand",
-			"(Ljava/lang/String;Landroid/os/Bundle;Landroid/os/ResultReceiver;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	void MediaController::setVolumeTo(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"setVolumeTo",
 			"(II)V",
 			arg0,
@@ -185,10 +175,10 @@ namespace android::media::session
 	}
 	void MediaController::unregisterCallback(android::media::session::MediaController_Callback arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"unregisterCallback",
 			"(Landroid/media/session/MediaController$Callback;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 } // namespace android::media::session

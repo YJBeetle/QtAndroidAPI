@@ -70,7 +70,7 @@ namespace android::media::tv
 		static jstring COLUMN_WATCH_NEXT_TYPE();
 		static jstring CONTENT_ITEM_TYPE();
 		static jstring CONTENT_TYPE();
-		static QAndroidJniObject CONTENT_URI();
+		static android::net::Uri CONTENT_URI();
 		static jint INTERACTION_TYPE_FANS();
 		static jint INTERACTION_TYPE_FOLLOWERS();
 		static jint INTERACTION_TYPE_LIKES();
@@ -98,9 +98,11 @@ namespace android::media::tv
 		static jint WATCH_NEXT_TYPE_NEXT();
 		static jint WATCH_NEXT_TYPE_WATCHLIST();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit TvContract_WatchNextPrograms(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		TvContract_WatchNextPrograms(QAndroidJniObject obj);
+		
 		// Constructors
-		TvContract_WatchNextPrograms() = default;
 		
 		// Methods
 	};

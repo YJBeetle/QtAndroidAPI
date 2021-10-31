@@ -37,7 +37,7 @@ namespace android::content::pm
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint DISABLED_REASON_APP_CHANGED();
 		static jint DISABLED_REASON_BACKUP_NOT_SUPPORTED();
 		static jint DISABLED_REASON_BY_APP();
@@ -48,27 +48,29 @@ namespace android::content::pm
 		static jint DISABLED_REASON_VERSION_LOWER();
 		static jstring SHORTCUT_CATEGORY_CONVERSATION();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ShortcutInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ShortcutInfo(QAndroidJniObject obj);
+		
 		// Constructors
-		ShortcutInfo() = default;
 		
 		// Methods
 		jint describeContents();
-		QAndroidJniObject getActivity();
-		QAndroidJniObject getCategories();
+		android::content::ComponentName getActivity();
+		__JniBaseClass getCategories();
 		jstring getDisabledMessage();
 		jint getDisabledReason();
-		QAndroidJniObject getExtras();
+		android::os::PersistableBundle getExtras();
 		jstring getId();
-		QAndroidJniObject getIntent();
+		android::content::Intent getIntent();
 		jarray getIntents();
 		jlong getLastChangedTimestamp();
-		QAndroidJniObject getLocusId();
+		android::content::LocusId getLocusId();
 		jstring getLongLabel();
 		jstring getPackage();
 		jint getRank();
 		jstring getShortLabel();
-		QAndroidJniObject getUserHandle();
+		android::os::UserHandle getUserHandle();
 		jboolean hasKeyFieldsOnly();
 		jboolean isDeclaredInManifest();
 		jboolean isDynamic();

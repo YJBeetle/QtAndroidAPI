@@ -17,11 +17,13 @@ namespace android::service::autofill
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit UserData(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		UserData(QAndroidJniObject obj);
+		
 		// Constructors
-		UserData() = default;
 		
 		// Methods
 		static jint getMaxCategoryCount();
@@ -32,7 +34,6 @@ namespace android::service::autofill
 		jint describeContents();
 		jstring getFieldClassificationAlgorithm();
 		jstring getFieldClassificationAlgorithmForCategory(jstring arg0);
-		jstring getFieldClassificationAlgorithmForCategory(const QString &arg0);
 		jstring getId();
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

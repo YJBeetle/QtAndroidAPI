@@ -30,14 +30,16 @@ namespace android::media
 	public:
 		// Fields
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaController2(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaController2(QAndroidJniObject obj);
+		
 		// Constructors
-		MediaController2() = default;
 		
 		// Methods
 		void cancelSessionCommand(jobject arg0);
 		void close();
-		QAndroidJniObject getConnectedToken();
+		android::media::Session2Token getConnectedToken();
 		jboolean isPlaybackActive();
 		jobject sendSessionCommand(android::media::Session2Command arg0, android::os::Bundle arg1);
 	};

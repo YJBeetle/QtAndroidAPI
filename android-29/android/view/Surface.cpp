@@ -8,9 +8,9 @@
 namespace android::view
 {
 	// Fields
-	QAndroidJniObject Surface::CREATOR()
+	__JniBaseClass Surface::CREATOR()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.view.Surface",
 			"CREATOR",
 			"Landroid/os/Parcelable$Creator;"
@@ -18,126 +18,124 @@ namespace android::view
 	}
 	jint Surface::ROTATION_0()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Surface",
 			"ROTATION_0"
 		);
 	}
 	jint Surface::ROTATION_180()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Surface",
 			"ROTATION_180"
 		);
 	}
 	jint Surface::ROTATION_270()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Surface",
 			"ROTATION_270"
 		);
 	}
 	jint Surface::ROTATION_90()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.view.Surface",
 			"ROTATION_90"
 		);
 	}
 	
-	Surface::Surface(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	Surface::Surface(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
-	Surface::Surface(android::graphics::SurfaceTexture &arg0)
-	{
-		__thiz = QAndroidJniObject(
+	Surface::Surface(android::graphics::SurfaceTexture arg0)
+		: __JniBaseClass(
 			"android.view.Surface",
 			"(Landroid/graphics/SurfaceTexture;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	Surface::Surface(android::view::SurfaceControl &arg0)
-	{
-		__thiz = QAndroidJniObject(
+			arg0.object()
+		) {}
+	Surface::Surface(android::view::SurfaceControl arg0)
+		: __JniBaseClass(
 			"android.view.Surface",
 			"(Landroid/view/SurfaceControl;)V",
-			arg0.__jniObject().object()
-		);
-	}
+			arg0.object()
+		) {}
 	
 	// Methods
 	jint Surface::describeContents()
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
 	jboolean Surface::isValid()
 	{
-		return __thiz.callMethod<jboolean>(
+		return callMethod<jboolean>(
 			"isValid",
 			"()Z"
 		);
 	}
-	QAndroidJniObject Surface::lockCanvas(android::graphics::Rect arg0)
+	android::graphics::Canvas Surface::lockCanvas(android::graphics::Rect arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"lockCanvas",
 			"(Landroid/graphics/Rect;)Landroid/graphics/Canvas;",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
-	QAndroidJniObject Surface::lockHardwareCanvas()
+	android::graphics::Canvas Surface::lockHardwareCanvas()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"lockHardwareCanvas",
 			"()Landroid/graphics/Canvas;"
 		);
 	}
 	void Surface::readFromParcel(android::os::Parcel arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"readFromParcel",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Surface::release()
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
 	jstring Surface::toString()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 	void Surface::unlockCanvas(android::graphics::Canvas arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"unlockCanvas",
 			"(Landroid/graphics/Canvas;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Surface::unlockCanvasAndPost(android::graphics::Canvas arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"unlockCanvasAndPost",
 			"(Landroid/graphics/Canvas;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void Surface::writeToParcel(android::os::Parcel arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			arg0.object(),
 			arg1
 		);
 	}

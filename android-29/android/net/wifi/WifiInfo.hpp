@@ -25,12 +25,14 @@ namespace android::net::wifi
 		static jstring LINK_SPEED_UNITS();
 		static jint LINK_SPEED_UNKNOWN();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit WifiInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		WifiInfo(QAndroidJniObject obj);
+		
 		// Constructors
-		WifiInfo() = default;
 		
 		// Methods
-		static QAndroidJniObject getDetailedStateOf(android::net::wifi::SupplicantState arg0);
+		static android::net::NetworkInfo_DetailedState getDetailedStateOf(android::net::wifi::SupplicantState arg0);
 		jint describeContents();
 		jstring getBSSID();
 		jint getFrequency();
@@ -44,7 +46,7 @@ namespace android::net::wifi
 		jint getRssi();
 		jint getRxLinkSpeedMbps();
 		jstring getSSID();
-		QAndroidJniObject getSupplicantState();
+		android::net::wifi::SupplicantState getSupplicantState();
 		jint getTxLinkSpeedMbps();
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

@@ -71,7 +71,10 @@ namespace android::media
 		static jint OPTION_NEXT_SYNC();
 		static jint OPTION_PREVIOUS_SYNC();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaMetadataRetriever(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaMetadataRetriever(QAndroidJniObject obj);
+		
 		// Constructors
 		MediaMetadataRetriever();
 		
@@ -79,26 +82,24 @@ namespace android::media
 		void close();
 		jstring extractMetadata(jint arg0);
 		jbyteArray getEmbeddedPicture();
-		QAndroidJniObject getFrameAtIndex(jint arg0);
-		QAndroidJniObject getFrameAtIndex(jint arg0, android::media::MediaMetadataRetriever_BitmapParams arg1);
-		QAndroidJniObject getFrameAtTime();
-		QAndroidJniObject getFrameAtTime(jlong arg0);
-		QAndroidJniObject getFrameAtTime(jlong arg0, jint arg1);
-		QAndroidJniObject getFramesAtIndex(jint arg0, jint arg1);
-		QAndroidJniObject getFramesAtIndex(jint arg0, jint arg1, android::media::MediaMetadataRetriever_BitmapParams arg2);
-		QAndroidJniObject getImageAtIndex(jint arg0);
-		QAndroidJniObject getImageAtIndex(jint arg0, android::media::MediaMetadataRetriever_BitmapParams arg1);
-		QAndroidJniObject getPrimaryImage();
-		QAndroidJniObject getPrimaryImage(android::media::MediaMetadataRetriever_BitmapParams arg0);
-		QAndroidJniObject getScaledFrameAtTime(jlong arg0, jint arg1, jint arg2, jint arg3);
+		android::graphics::Bitmap getFrameAtIndex(jint arg0);
+		android::graphics::Bitmap getFrameAtIndex(jint arg0, android::media::MediaMetadataRetriever_BitmapParams arg1);
+		android::graphics::Bitmap getFrameAtTime();
+		android::graphics::Bitmap getFrameAtTime(jlong arg0);
+		android::graphics::Bitmap getFrameAtTime(jlong arg0, jint arg1);
+		__JniBaseClass getFramesAtIndex(jint arg0, jint arg1);
+		__JniBaseClass getFramesAtIndex(jint arg0, jint arg1, android::media::MediaMetadataRetriever_BitmapParams arg2);
+		android::graphics::Bitmap getImageAtIndex(jint arg0);
+		android::graphics::Bitmap getImageAtIndex(jint arg0, android::media::MediaMetadataRetriever_BitmapParams arg1);
+		android::graphics::Bitmap getPrimaryImage();
+		android::graphics::Bitmap getPrimaryImage(android::media::MediaMetadataRetriever_BitmapParams arg0);
+		android::graphics::Bitmap getScaledFrameAtTime(jlong arg0, jint arg1, jint arg2, jint arg3);
 		void release();
 		void setDataSource(android::media::MediaDataSource arg0);
 		void setDataSource(java::io::FileDescriptor arg0);
 		void setDataSource(jstring arg0);
-		void setDataSource(const QString &arg0);
 		void setDataSource(android::content::Context arg0, android::net::Uri arg1);
 		void setDataSource(jstring arg0, __JniBaseClass arg1);
-		void setDataSource(const QString &arg0, __JniBaseClass arg1);
 		void setDataSource(java::io::FileDescriptor arg0, jlong arg1, jlong arg2);
 	};
 } // namespace android::media

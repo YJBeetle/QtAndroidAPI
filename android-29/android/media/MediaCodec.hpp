@@ -86,37 +86,36 @@ namespace android::media
 		static jint VIDEO_SCALING_MODE_SCALE_TO_FIT();
 		static jint VIDEO_SCALING_MODE_SCALE_TO_FIT_WITH_CROPPING();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaCodec(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaCodec(QAndroidJniObject obj);
+		
 		// Constructors
-		MediaCodec() = default;
 		
 		// Methods
-		static QAndroidJniObject createByCodecName(jstring arg0);
-		static QAndroidJniObject createByCodecName(const QString &arg0);
-		static QAndroidJniObject createDecoderByType(jstring arg0);
-		static QAndroidJniObject createDecoderByType(const QString &arg0);
-		static QAndroidJniObject createEncoderByType(jstring arg0);
-		static QAndroidJniObject createEncoderByType(const QString &arg0);
-		static QAndroidJniObject createPersistentInputSurface();
+		static android::media::MediaCodec createByCodecName(jstring arg0);
+		static android::media::MediaCodec createDecoderByType(jstring arg0);
+		static android::media::MediaCodec createEncoderByType(jstring arg0);
+		static android::view::Surface createPersistentInputSurface();
 		void configure(android::media::MediaFormat arg0, android::view::Surface arg1, android::media::MediaCrypto arg2, jint arg3);
 		void configure(android::media::MediaFormat arg0, android::view::Surface arg1, jint arg2, android::media::MediaDescrambler arg3);
-		QAndroidJniObject createInputSurface();
+		android::view::Surface createInputSurface();
 		jint dequeueInputBuffer(jlong arg0);
 		jint dequeueOutputBuffer(android::media::MediaCodec_BufferInfo arg0, jlong arg1);
 		void flush();
 		jstring getCanonicalName();
-		QAndroidJniObject getCodecInfo();
-		QAndroidJniObject getInputBuffer(jint arg0);
+		android::media::MediaCodecInfo getCodecInfo();
+		java::nio::ByteBuffer getInputBuffer(jint arg0);
 		jarray getInputBuffers();
-		QAndroidJniObject getInputFormat();
-		QAndroidJniObject getInputImage(jint arg0);
-		QAndroidJniObject getMetrics();
+		android::media::MediaFormat getInputFormat();
+		android::media::Image getInputImage(jint arg0);
+		android::os::PersistableBundle getMetrics();
 		jstring getName();
-		QAndroidJniObject getOutputBuffer(jint arg0);
+		java::nio::ByteBuffer getOutputBuffer(jint arg0);
 		jarray getOutputBuffers();
-		QAndroidJniObject getOutputFormat();
-		QAndroidJniObject getOutputFormat(jint arg0);
-		QAndroidJniObject getOutputImage(jint arg0);
+		android::media::MediaFormat getOutputFormat();
+		android::media::MediaFormat getOutputFormat(jint arg0);
+		android::media::Image getOutputImage(jint arg0);
 		void queueInputBuffer(jint arg0, jint arg1, jint arg2, jlong arg3, jint arg4);
 		void queueSecureInputBuffer(jint arg0, jint arg1, android::media::MediaCodec_CryptoInfo arg2, jlong arg3, jint arg4);
 		void release();

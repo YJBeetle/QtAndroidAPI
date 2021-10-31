@@ -13,7 +13,7 @@ namespace android::content::pm
 	// Fields
 	jstring PackageInstaller::ACTION_SESSION_COMMITTED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.pm.PackageInstaller",
 			"ACTION_SESSION_COMMITTED",
 			"Ljava/lang/String;"
@@ -21,7 +21,7 @@ namespace android::content::pm
 	}
 	jstring PackageInstaller::ACTION_SESSION_DETAILS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.pm.PackageInstaller",
 			"ACTION_SESSION_DETAILS",
 			"Ljava/lang/String;"
@@ -29,7 +29,7 @@ namespace android::content::pm
 	}
 	jstring PackageInstaller::ACTION_SESSION_UPDATED()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.pm.PackageInstaller",
 			"ACTION_SESSION_UPDATED",
 			"Ljava/lang/String;"
@@ -37,7 +37,7 @@ namespace android::content::pm
 	}
 	jstring PackageInstaller::EXTRA_OTHER_PACKAGE_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.pm.PackageInstaller",
 			"EXTRA_OTHER_PACKAGE_NAME",
 			"Ljava/lang/String;"
@@ -45,7 +45,7 @@ namespace android::content::pm
 	}
 	jstring PackageInstaller::EXTRA_PACKAGE_NAME()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.pm.PackageInstaller",
 			"EXTRA_PACKAGE_NAME",
 			"Ljava/lang/String;"
@@ -53,7 +53,7 @@ namespace android::content::pm
 	}
 	jstring PackageInstaller::EXTRA_SESSION()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.pm.PackageInstaller",
 			"EXTRA_SESSION",
 			"Ljava/lang/String;"
@@ -61,7 +61,7 @@ namespace android::content::pm
 	}
 	jstring PackageInstaller::EXTRA_SESSION_ID()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.pm.PackageInstaller",
 			"EXTRA_SESSION_ID",
 			"Ljava/lang/String;"
@@ -69,7 +69,7 @@ namespace android::content::pm
 	}
 	jstring PackageInstaller::EXTRA_STATUS()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.pm.PackageInstaller",
 			"EXTRA_STATUS",
 			"Ljava/lang/String;"
@@ -77,7 +77,7 @@ namespace android::content::pm
 	}
 	jstring PackageInstaller::EXTRA_STATUS_MESSAGE()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.pm.PackageInstaller",
 			"EXTRA_STATUS_MESSAGE",
 			"Ljava/lang/String;"
@@ -85,7 +85,7 @@ namespace android::content::pm
 	}
 	jstring PackageInstaller::EXTRA_STORAGE_PATH()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return getStaticObjectField(
 			"android.content.pm.PackageInstaller",
 			"EXTRA_STORAGE_PATH",
 			"Ljava/lang/String;"
@@ -93,75 +93,77 @@ namespace android::content::pm
 	}
 	jint PackageInstaller::STATUS_FAILURE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PackageInstaller",
 			"STATUS_FAILURE"
 		);
 	}
 	jint PackageInstaller::STATUS_FAILURE_ABORTED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PackageInstaller",
 			"STATUS_FAILURE_ABORTED"
 		);
 	}
 	jint PackageInstaller::STATUS_FAILURE_BLOCKED()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PackageInstaller",
 			"STATUS_FAILURE_BLOCKED"
 		);
 	}
 	jint PackageInstaller::STATUS_FAILURE_CONFLICT()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PackageInstaller",
 			"STATUS_FAILURE_CONFLICT"
 		);
 	}
 	jint PackageInstaller::STATUS_FAILURE_INCOMPATIBLE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PackageInstaller",
 			"STATUS_FAILURE_INCOMPATIBLE"
 		);
 	}
 	jint PackageInstaller::STATUS_FAILURE_INVALID()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PackageInstaller",
 			"STATUS_FAILURE_INVALID"
 		);
 	}
 	jint PackageInstaller::STATUS_FAILURE_STORAGE()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PackageInstaller",
 			"STATUS_FAILURE_STORAGE"
 		);
 	}
 	jint PackageInstaller::STATUS_PENDING_USER_ACTION()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PackageInstaller",
 			"STATUS_PENDING_USER_ACTION"
 		);
 	}
 	jint PackageInstaller::STATUS_SUCCESS()
 	{
-		return QAndroidJniObject::getStaticField<jint>(
+		return getStaticField<jint>(
 			"android.content.pm.PackageInstaller",
 			"STATUS_SUCCESS"
 		);
 	}
 	
-	PackageInstaller::PackageInstaller(QAndroidJniObject obj) { __thiz = obj; }
+	// QAndroidJniObject forward
+	PackageInstaller::PackageInstaller(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	
 	// Constructors
 	
 	// Methods
 	void PackageInstaller::abandonSession(jint arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"abandonSession",
 			"(I)V",
 			arg0
@@ -169,71 +171,61 @@ namespace android::content::pm
 	}
 	jint PackageInstaller::createSession(android::content::pm::PackageInstaller_SessionParams arg0)
 	{
-		return __thiz.callMethod<jint>(
+		return callMethod<jint>(
 			"createSession",
 			"(Landroid/content/pm/PackageInstaller$SessionParams;)I",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
-	QAndroidJniObject PackageInstaller::getActiveStagedSession()
+	android::content::pm::PackageInstaller_SessionInfo PackageInstaller::getActiveStagedSession()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getActiveStagedSession",
 			"()Landroid/content/pm/PackageInstaller$SessionInfo;"
 		);
 	}
-	QAndroidJniObject PackageInstaller::getAllSessions()
+	__JniBaseClass PackageInstaller::getAllSessions()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getAllSessions",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject PackageInstaller::getMySessions()
+	__JniBaseClass PackageInstaller::getMySessions()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getMySessions",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject PackageInstaller::getSessionInfo(jint arg0)
+	android::content::pm::PackageInstaller_SessionInfo PackageInstaller::getSessionInfo(jint arg0)
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getSessionInfo",
 			"(I)Landroid/content/pm/PackageInstaller$SessionInfo;",
 			arg0
 		);
 	}
-	QAndroidJniObject PackageInstaller::getStagedSessions()
+	__JniBaseClass PackageInstaller::getStagedSessions()
 	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"getStagedSessions",
 			"()Ljava/util/List;"
 		);
 	}
 	void PackageInstaller::installExistingPackage(jstring arg0, jint arg1, android::content::IntentSender arg2)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"installExistingPackage",
 			"(Ljava/lang/String;ILandroid/content/IntentSender;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2.object()
 		);
 	}
-	void PackageInstaller::installExistingPackage(const QString &arg0, jint arg1, android::content::IntentSender arg2)
+	android::content::pm::PackageInstaller_Session PackageInstaller::openSession(jint arg0)
 	{
-		__thiz.callMethod<void>(
-			"installExistingPackage",
-			"(Ljava/lang/String;ILandroid/content/IntentSender;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	QAndroidJniObject PackageInstaller::openSession(jint arg0)
-	{
-		return __thiz.callObjectMethod(
+		return callObjectMethod(
 			"openSession",
 			"(I)Landroid/content/pm/PackageInstaller$Session;",
 			arg0
@@ -241,81 +233,63 @@ namespace android::content::pm
 	}
 	void PackageInstaller::registerSessionCallback(android::content::pm::PackageInstaller_SessionCallback arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"registerSessionCallback",
 			"(Landroid/content/pm/PackageInstaller$SessionCallback;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void PackageInstaller::registerSessionCallback(android::content::pm::PackageInstaller_SessionCallback arg0, android::os::Handler arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"registerSessionCallback",
 			"(Landroid/content/pm/PackageInstaller$SessionCallback;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void PackageInstaller::uninstall(android::content::pm::VersionedPackage arg0, android::content::IntentSender arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"uninstall",
 			"(Landroid/content/pm/VersionedPackage;Landroid/content/IntentSender;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	void PackageInstaller::uninstall(jstring arg0, android::content::IntentSender arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"uninstall",
 			"(Ljava/lang/String;Landroid/content/IntentSender;)V",
 			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void PackageInstaller::uninstall(const QString &arg0, android::content::IntentSender arg1)
-	{
-		__thiz.callMethod<void>(
-			"uninstall",
-			"(Ljava/lang/String;Landroid/content/IntentSender;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void PackageInstaller::unregisterSessionCallback(android::content::pm::PackageInstaller_SessionCallback arg0)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"unregisterSessionCallback",
 			"(Landroid/content/pm/PackageInstaller$SessionCallback;)V",
-			arg0.__jniObject().object()
+			arg0.object()
 		);
 	}
 	void PackageInstaller::updateSessionAppIcon(jint arg0, android::graphics::Bitmap arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"updateSessionAppIcon",
 			"(ILandroid/graphics/Bitmap;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.object()
 		);
 	}
 	void PackageInstaller::updateSessionAppLabel(jint arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
+		callMethod<void>(
 			"updateSessionAppLabel",
 			"(ILjava/lang/CharSequence;)V",
 			arg0,
 			arg1
-		);
-	}
-	void PackageInstaller::updateSessionAppLabel(jint arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"updateSessionAppLabel",
-			"(ILjava/lang/CharSequence;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 } // namespace android::content::pm

@@ -29,7 +29,7 @@ namespace android::telephony::data
 		static jint AUTH_TYPE_NONE();
 		static jint AUTH_TYPE_PAP();
 		static jint AUTH_TYPE_PAP_OR_CHAP();
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint MVNO_TYPE_GID();
 		static jint MVNO_TYPE_ICCID();
 		static jint MVNO_TYPE_IMSI();
@@ -52,9 +52,11 @@ namespace android::telephony::data
 		static jint TYPE_MMS();
 		static jint TYPE_SUPL();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ApnSetting(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		ApnSetting(QAndroidJniObject obj);
+		
 		// Constructors
-		ApnSetting() = default;
 		
 		// Methods
 		jint describeContents();
@@ -65,16 +67,16 @@ namespace android::telephony::data
 		jint getCarrierId();
 		jstring getEntryName();
 		jint getId();
-		QAndroidJniObject getMmsProxyAddress();
+		java::net::InetAddress getMmsProxyAddress();
 		jstring getMmsProxyAddressAsString();
 		jint getMmsProxyPort();
-		QAndroidJniObject getMmsc();
+		android::net::Uri getMmsc();
 		jint getMvnoType();
 		jint getNetworkTypeBitmask();
 		jstring getOperatorNumeric();
 		jstring getPassword();
 		jint getProtocol();
-		QAndroidJniObject getProxyAddress();
+		java::net::InetAddress getProxyAddress();
 		jstring getProxyAddressAsString();
 		jint getProxyPort();
 		jint getRoamingProtocol();

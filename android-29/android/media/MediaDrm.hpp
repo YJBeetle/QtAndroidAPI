@@ -68,18 +68,18 @@ namespace android::media
 		static jint SECURITY_LEVEL_SW_SECURE_DECODE();
 		static jint SECURITY_LEVEL_UNKNOWN();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit MediaDrm(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		MediaDrm(QAndroidJniObject obj);
+		
 		// Constructors
-		MediaDrm(java::util::UUID &arg0);
-		MediaDrm() = default;
+		MediaDrm(java::util::UUID arg0);
 		
 		// Methods
 		static jint getMaxSecurityLevel();
 		static jboolean isCryptoSchemeSupported(java::util::UUID arg0);
 		static jboolean isCryptoSchemeSupported(java::util::UUID arg0, jstring arg1);
-		static jboolean isCryptoSchemeSupported(java::util::UUID arg0, const QString &arg1);
 		static jboolean isCryptoSchemeSupported(java::util::UUID arg0, jstring arg1, jint arg2);
-		static jboolean isCryptoSchemeSupported(java::util::UUID arg0, const QString &arg1, jint arg2);
 		void clearOnEventListener();
 		void clearOnExpirationUpdateListener();
 		void clearOnKeyStatusChangeListener();
@@ -87,30 +87,26 @@ namespace android::media
 		void close();
 		void closeSession(jbyteArray arg0);
 		jint getConnectedHdcpLevel();
-		QAndroidJniObject getCryptoSession(jbyteArray arg0, jstring arg1, jstring arg2);
-		QAndroidJniObject getCryptoSession(jbyteArray arg0, const QString &arg1, const QString &arg2);
-		QAndroidJniObject getKeyRequest(jbyteArray arg0, jbyteArray arg1, jstring arg2, jint arg3, java::util::HashMap arg4);
-		QAndroidJniObject getKeyRequest(jbyteArray arg0, jbyteArray arg1, const QString &arg2, jint arg3, java::util::HashMap arg4);
+		android::media::MediaDrm_CryptoSession getCryptoSession(jbyteArray arg0, jstring arg1, jstring arg2);
+		android::media::MediaDrm_KeyRequest getKeyRequest(jbyteArray arg0, jbyteArray arg1, jstring arg2, jint arg3, java::util::HashMap arg4);
 		jint getMaxHdcpLevel();
 		jint getMaxSessionCount();
-		QAndroidJniObject getMetrics();
-		QAndroidJniObject getOfflineLicenseKeySetIds();
+		android::os::PersistableBundle getMetrics();
+		__JniBaseClass getOfflineLicenseKeySetIds();
 		jint getOfflineLicenseState(jbyteArray arg0);
 		jint getOpenSessionCount();
 		jbyteArray getPropertyByteArray(jstring arg0);
-		jbyteArray getPropertyByteArray(const QString &arg0);
 		jstring getPropertyString(jstring arg0);
-		jstring getPropertyString(const QString &arg0);
-		QAndroidJniObject getProvisionRequest();
+		android::media::MediaDrm_ProvisionRequest getProvisionRequest();
 		jbyteArray getSecureStop(jbyteArray arg0);
-		QAndroidJniObject getSecureStopIds();
-		QAndroidJniObject getSecureStops();
+		__JniBaseClass getSecureStopIds();
+		__JniBaseClass getSecureStops();
 		jint getSecurityLevel(jbyteArray arg0);
 		jbyteArray openSession();
 		jbyteArray openSession(jint arg0);
 		jbyteArray provideKeyResponse(jbyteArray arg0, jbyteArray arg1);
 		void provideProvisionResponse(jbyteArray arg0);
-		QAndroidJniObject queryKeyStatus(jbyteArray arg0);
+		java::util::HashMap queryKeyStatus(jbyteArray arg0);
 		void release();
 		void releaseAllSecureStops();
 		void releaseSecureStops(jbyteArray arg0);
@@ -129,9 +125,7 @@ namespace android::media
 		void setOnSessionLostStateListener(__JniBaseClass arg0, android::os::Handler arg1);
 		void setOnSessionLostStateListener(__JniBaseClass arg0, __JniBaseClass arg1);
 		void setPropertyByteArray(jstring arg0, jbyteArray arg1);
-		void setPropertyByteArray(const QString &arg0, jbyteArray arg1);
 		void setPropertyString(jstring arg0, jstring arg1);
-		void setPropertyString(const QString &arg0, const QString &arg1);
 	};
 } // namespace android::media
 

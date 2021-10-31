@@ -15,7 +15,7 @@ namespace android::net::wifi::p2p
 		// Fields
 		static jint AVAILABLE();
 		static jint CONNECTED();
-		static QAndroidJniObject CREATOR();
+		static __JniBaseClass CREATOR();
 		static jint FAILED();
 		static jint INVITED();
 		static jint UNAVAILABLE();
@@ -25,7 +25,10 @@ namespace android::net::wifi::p2p
 		jstring secondaryDeviceType();
 		jint status();
 		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit WifiP2pDevice(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
 		WifiP2pDevice(QAndroidJniObject obj);
+		
 		// Constructors
 		WifiP2pDevice();
 		WifiP2pDevice(android::net::wifi::p2p::WifiP2pDevice &arg0);
