@@ -1,0 +1,31 @@
+#pragma once
+
+#include "../../__JniBaseClass.hpp"
+
+namespace android::graphics
+{
+	class Bitmap;
+}
+
+namespace android::media
+{
+	class ThumbnailUtils : public __JniBaseClass
+	{
+	public:
+		// Fields
+		static jint OPTIONS_RECYCLE_INPUT();
+		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ThumbnailUtils(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		ThumbnailUtils(QAndroidJniObject obj);
+		
+		// Constructors
+		ThumbnailUtils();
+		
+		// Methods
+		static android::graphics::Bitmap createVideoThumbnail(jstring arg0, jint arg1);
+		static android::graphics::Bitmap extractThumbnail(android::graphics::Bitmap arg0, jint arg1, jint arg2);
+		static android::graphics::Bitmap extractThumbnail(android::graphics::Bitmap arg0, jint arg1, jint arg2, jint arg3);
+	};
+} // namespace android::media
+

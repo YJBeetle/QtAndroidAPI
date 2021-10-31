@@ -1,0 +1,35 @@
+#pragma once
+
+#include "../../__JniBaseClass.hpp"
+
+namespace android::media
+{
+	class AudioFormat;
+}
+namespace android::media
+{
+	class AudioRecord;
+}
+
+namespace android::media
+{
+	class AudioRecord_Builder : public __JniBaseClass
+	{
+	public:
+		// Fields
+		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AudioRecord_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		AudioRecord_Builder(QAndroidJniObject obj);
+		
+		// Constructors
+		AudioRecord_Builder();
+		
+		// Methods
+		android::media::AudioRecord build();
+		android::media::AudioRecord_Builder setAudioFormat(android::media::AudioFormat arg0);
+		android::media::AudioRecord_Builder setAudioSource(jint arg0);
+		android::media::AudioRecord_Builder setBufferSizeInBytes(jint arg0);
+	};
+} // namespace android::media
+
