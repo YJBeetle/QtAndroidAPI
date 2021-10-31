@@ -33,9 +33,9 @@ void MainWindow::on_showToast_clicked()
 {
     auto message = ui->toastText->text();
     QtAndroid::runOnAndroidThreadSync([message] {
-        Toast toast = Toast::makeText(CONTEXT,
-                                      JSTRING(message),
-                                      0);
+        auto toast = Toast::makeText(CONTEXT,
+                                     JSTRING(message),
+                                     0);
         toast.show();
     });
 }
@@ -103,7 +103,7 @@ void MainWindow::on_showProgressDialogHorizontal_clicked()
 void MainWindow::on_OpenFile_clicked()
 {
     QtAndroid::runOnAndroidThreadSync([] {
-        Intent intent = Intent(Intent::ACTION_GET_CONTENT());
+        auto intent = Intent(Intent::ACTION_GET_CONTENT());
         intent.setType(JSTRING("image/*"));
 
 
