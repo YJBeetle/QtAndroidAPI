@@ -8,6 +8,7 @@
 #include <__JniUtils.hpp>
 #include <android/widget/Toast.hpp>
 #include <android/app/ProgressDialog.hpp>
+#include <android/content/Context.hpp>
 #include <android/content/Intent.hpp>
 
 using namespace android::widget;
@@ -30,7 +31,7 @@ MainWindow::~MainWindow()
 void MainWindow::on_showToast_clicked()
 {
     auto message = ui->toastText->text();
-    QtAndroid::runOnAndroidThreadSync([message] {
+    QNativeInterface::QAndroidApplication::runOnAndroidMainThread([message] {
         auto toast = Toast::makeText(CONTEXT,
                                      JSTRING(message),
                                      0);
@@ -45,7 +46,7 @@ void MainWindow::on_showProgressDialogSpinner_clicked()
 
     std::shared_ptr<ProgressDialog> progressDialog;
 
-    QtAndroid::runOnAndroidThreadSync([&progressDialog, title, message] {
+    QNativeInterface::QAndroidApplication::runOnAndroidMainThread([&progressDialog, title, message] {
         progressDialog = std::make_shared<ProgressDialog>(CONTEXT);
 
         progressDialog->setCancelable(false);
@@ -67,7 +68,7 @@ void MainWindow::on_showProgressDialogHorizontal_clicked()
 
     std::shared_ptr<ProgressDialog> progressDialog;
 
-    QtAndroid::runOnAndroidThreadSync([&progressDialog, title, message] {
+    QNativeInterface::QAndroidApplication::runOnAndroidMainThread([&progressDialog, title, message] {
         progressDialog = std::make_shared<ProgressDialog>(CONTEXT);
 
         progressDialog->setCancelable(false);
@@ -78,29 +79,29 @@ void MainWindow::on_showProgressDialogHorizontal_clicked()
         progressDialog->setMax(PROGRESS_DIALOG_MAX);
 
         progressDialog->Dialog::show();
+    }).then([&progressDialog, this](){
+        static int i;
+        i = 0;
+        QTimer *timer = new QTimer(this);
+        connect(timer, &QTimer::timeout, [progressDialog, timer]() {
+            if (i < PROGRESS_DIALOG_MAX)
+            {
+                i += PROGRESS_DIALOG_MAX / 500;
+                progressDialog->setProgress(i);
+            }
+            else
+            {
+                progressDialog->cancel();
+                delete timer;
+            }
+        });
+        timer->start(10);
     });
-
-    static int i;
-    i = 0;
-    QTimer *timer = new QTimer(this);
-    connect(timer, &QTimer::timeout, [progressDialog, timer]() {
-        if (i < PROGRESS_DIALOG_MAX)
-        {
-            i += PROGRESS_DIALOG_MAX / 500;
-            progressDialog->setProgress(i);
-        }
-        else
-        {
-            progressDialog->cancel();
-            delete timer;
-        }
-    });
-    timer->start(10);
 }
 
 void MainWindow::on_OpenFile_clicked() // WIP
 {
-    QtAndroid::runOnAndroidThreadSync([] {
+    QNativeInterface::QAndroidApplication::runOnAndroidMainThread([] {
         auto intent = Intent(Intent::ACTION_GET_CONTENT());
         intent.setType(JSTRING("image/*"));
 
